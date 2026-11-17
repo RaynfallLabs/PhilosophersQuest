@@ -2247,13 +2247,13 @@
     ],
     "weight_lb": 1.0,
     "min_level": 9999,
-    "peak_floor": 9999,
+    "peak_floor": 58,
     "spread": 0,
     "charges_min": 2,
     "charges_max": 4,
     "max_charges": 4,
-    "tier": 4,
-    "quiz_tier": 4,
+    "tier": 3,
+    "quiz_tier": 3,
     "quiz_threshold": 1,
     "effect": "iron_mortar",
     "power": "",
@@ -2262,7 +2262,8 @@
     "is_unique": true,
     "identified": false,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "plot_locked": true
   },
   "aarons_rod": {
     "name": "Aaron's Rod",
@@ -2362,7 +2363,7 @@
     "mathTier": 5,
     "quiz_tier": 5,
     "min_level": 88,
-    "peak_floor": 92,
+    "peak_floor": 94,
     "peak_weight": 0.0,
     "spread": 6,
     "weight": 4.0,
@@ -2376,6 +2377,7 @@
     "is_unique": true,
     "lore": "In the Book of Tobit the demon Asmodeus killed seven husbands of Sarah, each on his wedding night, until the angel Raphael showed young Tobias how to drive him out with the smoke of a fish's heart and liver. Raphael chased the demon to Upper Egypt and bound him there. Later ages made him a king of Hell and gave him this sceptre. Its ruby holds a fire that has not cooled, and the rod spends it freely.",
     "design_notes": "Asmodeus L92 boss drop. Wired via monster.treasure.unique_drop_id.",
-    "quiz_threshold": 1
+    "quiz_threshold": 1,
+    "plot_locked": true
   }
 }

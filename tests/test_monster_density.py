@@ -214,7 +214,14 @@ def test_legendary_wanderers_are_once_per_run_and_never_random():
     """Tiamat, Surtur, Asmodeus, Ymir's Last Spawn and Hrungnir's Ghost are
     one-of-a-kind. They must not sit in the random spawn pool (a deep floor
     used to be able to roll several Tiamats) and the pre-rolled plan may hold
-    each at most once, never on a gate-boss or seal-demon floor."""
+    each at most once, never on a gate-boss or seal-demon floor.
+
+    Since ruling 13 (2026-11-17: "maybe one or two every 20 floors") they
+    ride the slots of their own band like every other mini-boss, so they
+    never add to a band's one or two: each one sits in its own band, and a
+    run that meets one meets no more named foes in that band than any other
+    (they used to roll on their own at 50% each: 2.5 a run, all deep)."""
+    import json
     import statistics
     from dungeon import _build_spawn_pool, _BOSS_LEVELS
     from level_manager import LevelManager
@@ -223,18 +230,26 @@ def test_legendary_wanderers_are_once_per_run_and_never_random():
     for lvl in range(1, 101):
         leaked = legends & set(_build_spawn_pool(lvl))
         assert not leaked, f'L{lvl}: {leaked} in the random pool'
+    with open(os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json'),
+              encoding='utf-8') as f:
+        peak = {mid: (int(m['peak_floor']) - 1) // 20 for mid, m in json.load(f).items()
+                if mid in legends}
     per_run = []
     for _ in range(200):
         lm = LevelManager()
-        placed = [(lvl, mid) for lvl, mid in lm._planned_mini_bosses.items()
-                  if mid in legends]
+        plan = lm._planned_mini_bosses
+        placed = [(lvl, mid) for lvl, mid in plan.items() if mid in legends]
         assert len({mid for _, mid in placed}) == len(placed)
-        for lvl, _mid in placed:
+        for lvl, mid in placed:
             assert lvl not in _BOSS_LEVELS
             assert lvl not in LevelManager._SEAL_DEMON_LEVELS
+            assert (lvl - 1) // 20 == peak[mid], (mid, lvl)          # in its own band
+        for b in range(5):
+            assert sum(1 for lvl in plan if (lvl - 1) // 20 == b) <= 2, plan
         per_run.append(len(placed))
-    # 5 legends at 50% each: about 2.5 a run, and a run can have none.
-    assert 1.8 <= statistics.mean(per_run) <= 3.2, statistics.mean(per_run)
+    # One of the five in some runs, never more than a band's two slots allow.
+    assert 0.3 <= statistics.mean(per_run) <= 1.5, statistics.mean(per_run)
+    assert max(per_run) <= 3
 
 
 def test_no_named_unique_in_the_random_pool():

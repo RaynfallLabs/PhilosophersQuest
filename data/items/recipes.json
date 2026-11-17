@@ -181,7 +181,7 @@
   ],
   "benefit": "hp",
   "flavor": "A ham for a hall of heroes; wounds close.",
-  "art": "dish_roast_t2_hp"
+  "art": "dish_roast_t1_hp"
  },
  "trophy_asterion_minotaur_recipe": {
   "name": "Crown of the Labyrinth",
@@ -383,7 +383,7 @@
   ],
   "benefit": "STR",
   "flavor": "Smoky beef; the strength of Heracles' herd.",
-  "art": "dish_sausage_t2_stat"
+  "art": "dish_sausage_t3_stat"
  },
  "cook_camazotz": {
   "name": "Bat-God Night Broth",
@@ -1671,7 +1671,7 @@
   ],
   "benefit": "shielded",
   "flavor": "Tough as its hide; blades glance off you.",
-  "art": "dish_leg_t3_special"
+  "art": "dish_leg_t1_special"
  },
  "cook_nidhogg_brood": {
   "name": "Root-Scale Tea",
@@ -1907,7 +1907,7 @@
   ],
   "benefit": "STR",
   "flavor": "It takes twenty arms to stir it, and it gives you one more.",
-  "art": "dish_stew_t4_stat"
+  "art": "dish_stew_t5_stat"
  },
  "cook_redcap": {
   "name": "Redcap Ember Stew",
@@ -2123,7 +2123,7 @@
   ],
   "benefit": "PER",
   "flavor": "Dry heat and sharp eyes.",
-  "art": "dish_steak_t4_stat"
+  "art": "dish_steak_t3_stat"
  },
  "cook_shade": {
   "name": "Gloom-Jelly on Toast",
@@ -2359,7 +2359,7 @@
   ],
   "benefit": "STR",
   "flavor": "It glows in the pan; you lift it one-handed afterwards.",
-  "art": "dish_roast_t2_stat"
+  "art": "dish_roast_t1_stat"
  },
  "cook_tengu_warrior": {
   "name": "Mountain Tengu Ham",
@@ -2559,7 +2559,7 @@
   ],
   "benefit": "sp",
   "flavor": "A strange broth that eats hunger itself.",
-  "art": "dish_soup_t5_sp"
+  "art": "dish_stew_t4_sp"
  },
  "cook_werebear": {
   "name": "Werebear Leg Stew",
@@ -2624,7 +2624,7 @@
   ],
   "benefit": "hasted",
   "flavor": "It sets your heart galloping, and your feet with it.",
-  "art": "dish_drink_t5_special"
+  "art": "dish_soup_t4_special"
  },
  "cook_will_o_wisp": {
   "name": "Wisp-Light Bone Broth",
@@ -3620,8 +3620,7 @@
   ],
   "benefit": "shielded",
   "flavor": "Lion's hide and beetle's shell; blows glance off.",
-  "art": "dish_roast_t4_special",
-  "cross_depth": true
+  "art": "dish_roast_t2_special"
  },
  "dish_028": {
   "name": "Watchful Hearth Hotpot",
@@ -3692,7 +3691,7 @@
   ],
   "benefit": "PER",
   "flavor": "Desert spice and cave spice; your eyes catch everything.",
-  "art": "dish_stirfry_t4_stat",
+  "art": "dish_stirfry_t3_stat",
   "cross_depth": true
  },
  "dish_034": {
@@ -3704,7 +3703,7 @@
   ],
   "benefit": "PER",
   "flavor": "Two noses' worth of meat on a bread plate.",
-  "art": "dish_bread_t4_stat",
+  "art": "dish_bread_t3_stat",
   "cross_depth": true
  },
  "dish_035": {
@@ -3845,7 +3844,7 @@
   ],
   "benefit": "sp",
   "flavor": "Hunger itself, eaten. You will not feel it for days.",
-  "art": "dish_stew_t5_sp",
+  "art": "dish_stew_t4_sp",
   "cross_depth": true
  },
  "dish_047": {
@@ -3857,7 +3856,7 @@
   ],
   "benefit": "sp",
   "flavor": "Every ration a long road ever needed.",
-  "art": "dish_roast_t5_sp",
+  "art": "dish_roast_t4_sp",
   "cross_depth": true
  },
  "dish_048": {
@@ -3904,7 +3903,7 @@
   ],
   "benefit": "hasted",
   "flavor": "Winged horse on a hunter's spit; your heart gallops with the hunt.",
-  "art": "dish_steak_t5_special",
+  "art": "dish_steak_t4_special",
   "cross_depth": true
  },
  "dish_052": {
@@ -4748,7 +4747,7 @@
   ],
   "benefit": "hasted",
   "flavor": "Wind in a cup; your feet leave before you do.",
-  "art": "dish_drink_t5_special"
+  "art": "dish_soup_t4_special"
  },
  "dish_125": {
   "name": "Nothing-and-Nowhere Fondue",
@@ -5756,7 +5755,7 @@
   ],
   "benefit": "STR",
   "flavor": "Smoky beef in a fierce brine.",
-  "art": "dish_sausage_t2_stat"
+  "art": "dish_sausage_t3_stat"
  },
  "dish_214": {
   "name": "Bronze Giant's Mixed Grill",
@@ -5768,7 +5767,7 @@
   ],
   "benefit": "STR",
   "flavor": "Iron, bronze and beef; lift anything.",
-  "art": "dish_steak_t3_stat"
+  "art": "dish_steak_t4_stat"
  },
  "dish_215": {
   "name": "Iron Marrowbones",
@@ -7128,7 +7127,7 @@
   ],
   "benefit": "STR",
   "flavor": "The demon king of Lanka's strength, brined and roasted.",
-  "art": "dish_roast_t4_stat",
+  "art": "dish_roast_t5_stat",
   "cross_depth": true
  },
  "dish_334": {
@@ -7209,8 +7208,7 @@
   ],
   "benefit": "STR",
   "flavor": "No blade could cut the Nemean lion, so Heracles strangled it with his bare arms. Eat its leg with a bull-man ham and see what yours can do.",
-  "art": "dish_roast_t3_stat",
-  "cross_depth": true
+  "art": "dish_roast_t1_stat"
  },
  "dish_347": {
   "name": "Old-Root Moss Pottage",

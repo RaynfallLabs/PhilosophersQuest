@@ -1118,6 +1118,31 @@ def fresh_monster(proto: Monster, knobs: dict, floor: int = 1) -> Monster:
     return m
 
 
+_DROP_CLASSES = ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'artifact', 'potion')
+_DROP_CLASS_OF: dict = {}
+
+
+def _signature_drop(uid: str):
+    """A fresh copy of a named foe's signature drop (Game._spawn_unique_item:
+    an enchanted piece made to a spec, or a named item by id), else None."""
+    made = items_mod.made_drop(uid)
+    if made is not None:
+        return made
+    cls = _DROP_CLASS_OF.get(uid)
+    if cls is None:
+        for c in _DROP_CLASSES:
+            if any(getattr(i, 'id', None) == uid for i in items_mod.load_items(c)):
+                cls = c
+                break
+        _DROP_CLASS_OF[uid] = cls or ''
+    if not cls:
+        return None
+    try:
+        return items_mod.make_item_by_id(cls, uid)
+    except Exception:
+        return None
+
+
 def is_named(m) -> bool:
     return bool(getattr(m, 'is_boss', False) or getattr(m, 'is_mini_boss', False)
                 or getattr(m, 'is_seal_demon', False))
@@ -3495,8 +3520,18 @@ class Run:
         fs['dmg_per_mon'] += m._sim_dmg / max(1, self.p.max_hp)
 
     def _drop_loot(self, m):
-        """game_combat._drop_treasure / _spawn_treasure_item."""
+        """game_combat._drop_treasure / _spawn_treasure_item, and a named
+        foe's signature drop (treasure.unique_drop_id, Game._spawn_unique_item:
+        a mini-boss's legend piece, its band's tier; 2026-11-17)."""
         tr = getattr(m, 'treasure', {}) or {}
+        uid = tr.get('unique_drop_id')
+        if uid and not getattr(self, '_is_fork', False):
+            got = self.__dict__.setdefault('_uniques_got', set())
+            if uid not in got:
+                got.add(uid)
+                piece = _signature_drop(uid)
+                if piece is not None:
+                    self.consider(piece)
         if random.random() >= float(tr.get('item_chance', 0.0)):
             return
         eff = max(1, int(tr.get('item_tier', 1)) * 5, self.floor)

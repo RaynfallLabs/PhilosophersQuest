@@ -214,7 +214,7 @@
     "is_unique": true,
     "template_basis": "tower_shield",
     "plot_locked": true,
-    "peak_floor": 1,
+    "peak_floor": 18,
     "spread": 1,
     "peak_weight": 0.0,
     "max_enchant": 2,
@@ -1437,7 +1437,7 @@
     "floorSpawnWeight": {},
     "is_unique": true,
     "template_basis": "heavy_wooden",
-    "peak_floor": 82,
+    "peak_floor": 86,
     "spread": 10,
     "peak_weight": 0.0,
     "max_enchant": 3,
@@ -1446,6 +1446,7 @@
     "value": 11000,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "ench_level": 10
+    "ench_level": 10,
+    "plot_locked": true
   }
 }

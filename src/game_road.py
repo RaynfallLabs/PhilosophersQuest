@@ -279,6 +279,21 @@ class RoadMixin:
                     st['seed'], f'cb:{tag}:{seq}:late', earliest, full_latest, deepest=d,
                     blocked=self._callback_blocked_floors(),
                     band=(enc or {}).get('band'))
+            if target is None and enc is not None:
+                # Every floor of its span is taken (an anchor, a Road slot, a
+                # pending scene, a system scene's floor): it comes on a free
+                # floor of the six after, rather than being lost. A lost
+                # callback closes its thread, and one that settles a sworn
+                # oath (the dead who come for the Book of Thoth) lapsed the
+                # oath the moment it was sworn (seen 2026-11-17: the Book due
+                # on 13 with floors 14-16 all held; Wat's lamp due on 8 with
+                # 5-10 held). A kept oath's due floor moves with it (below).
+                target = road.pick_target(
+                    st['seed'], f'cb:{tag}:{seq}:after', full_latest + 1, full_latest + 6,
+                    deepest=d, blocked=self._callback_blocked_floors(),
+                    band=(enc or {}).get('band'))
+                if target is not None:
+                    latest = target
             if target is None or enc is None:
                 self._callback_lost(tag, spec, source)
                 continue

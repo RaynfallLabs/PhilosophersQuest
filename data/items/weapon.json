@@ -3396,10 +3396,10 @@
     "name": "Hunt Captain's Sword",
     "class": "sword",
     "variant": "1h",
-    "tier": 5,
+    "tier": 4,
     "material": "spectral iron",
-    "mathTier": 5,
-    "baseDamage": 718,
+    "mathTier": 4,
+    "baseDamage": 430,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -3421,7 +3421,7 @@
     "weight": 3.0,
     "min_level": 9999,
     "equip_threshold": 3,
-    "quiz_tier": 5,
+    "quiz_tier": 4,
     "two_handed": false,
     "unidentified_name": "a ghostly iron longsword",
     "can_be_cursed": false,
@@ -3439,7 +3439,7 @@
     ],
     "template_basis": "longsword",
     "spread": 0,
-    "peak_floor": 0,
+    "peak_floor": 76,
     "chain_multipliers": [
       0.5,
       0.85,
@@ -3448,23 +3448,24 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 718,
+    "base_damage": 430,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "identified": false,
     "id_level": 0,
-    "chain_exponent": 1.15
+    "chain_exponent": 1.15,
+    "plot_locked": true
   },
   "wendigo_fang": {
     "name": "Wendigo's Fang",
     "class": "dagger",
     "variant": "1h",
-    "tier": 5,
+    "tier": 4,
     "material": "bone",
-    "mathTier": 5,
-    "baseDamage": 344,
+    "mathTier": 4,
+    "baseDamage": 184,
     "chainMultipliers": [
       0.2,
       0.55,
@@ -3486,7 +3487,7 @@
     "weight": 1.0,
     "min_level": 9999,
     "equip_threshold": 2,
-    "quiz_tier": 5,
+    "quiz_tier": 4,
     "two_handed": false,
     "unidentified_name": "a pale jagged tooth",
     "can_be_cursed": false,
@@ -3504,7 +3505,7 @@
     ],
     "template_basis": "dagger",
     "spread": 0,
-    "peak_floor": 0,
+    "peak_floor": 69,
     "chain_multipliers": [
       0.2,
       0.55,
@@ -3513,14 +3514,15 @@
       3.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 344,
+    "base_damage": 184,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
     "identified": false,
     "id_level": 0,
-    "chain_exponent": 1.15
+    "chain_exponent": 1.15,
+    "plot_locked": true
   },
   "echidna_fang": {
     "name": "Echidna's Fang",
@@ -3529,7 +3531,7 @@
     "tier": 2,
     "material": "fang",
     "mathTier": 2,
-    "baseDamage": 15,
+    "baseDamage": 29,
     "chainMultipliers": [
       0.2,
       0.55,
@@ -3569,7 +3571,7 @@
     ],
     "template_basis": "dagger",
     "spread": 0,
-    "peak_floor": 0,
+    "peak_floor": 37,
     "chain_multipliers": [
       0.2,
       0.55,
@@ -3578,7 +3580,7 @@
       3.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 15,
+    "base_damage": 29,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -3595,7 +3597,8 @@
       "chance": 0.4,
       "duration": 5
     },
-    "chain_exponent": 1.15
+    "chain_exponent": 1.15,
+    "plot_locked": true
   },
   "vulcans_brand": {
     "name": "Vulcan's Brand",
@@ -3604,7 +3607,7 @@
     "tier": 3,
     "material": "volcanic_iron",
     "mathTier": 3,
-    "baseDamage": 75,
+    "baseDamage": 128,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -3644,7 +3647,7 @@
     ],
     "template_basis": "longsword",
     "spread": 0,
-    "peak_floor": 0,
+    "peak_floor": 47,
     "chain_multipliers": [
       0.5,
       0.85,
@@ -3653,14 +3656,15 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 75,
+    "base_damage": 128,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "identified": false,
     "id_level": 0,
-    "chain_exponent": 1.15
+    "chain_exponent": 1.15,
+    "plot_locked": true
   },
   "sling_of_david": {
     "name": "Sling of David",
@@ -7356,5 +7360,272 @@
     "design_notes": "Merlin's staff (Brandon, 2026-11-16). What it IS, from Geoffrey of Monmouth and the Vulgate: the prophet of Vortigern's dragons, who moved the Giants' Dance by his art where strength failed, and whom no enchantment held but the one he taught Nimue. What belongs to it: art over strength (spell_tier_ease 1: a spell cast with it in hand asks its science question a tier easier, at its own power) and his ward (on_equip_status magic_resist, in hand). A walking staff, not a war staff: base 8 at maths tier 1 (its own, fixed), so its blows fade with depth and its art does not. Never random loot (min_level 9999, no spawn weight); every power works in any hand, so a path could give it to another hero later (none yet).",
     "id_level": 0,
     "chain_exponent": 1.15
+  },
+  "club_of_polyphemus": {
+    "name": "Club of Polyphemus",
+    "is_unique": true,
+    "class": "club",
+    "weapon_class": "blunt",
+    "variant": "2h",
+    "twoHanded": true,
+    "two_handed": true,
+    "template_basis": "maul",
+    "baseDamage": 38,
+    "base_damage": 38,
+    "chainMultipliers": [
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "chain_multipliers": [
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "maxChainLength": 5,
+    "max_chain_length": 5,
+    "weapon_class_chain": "heavy",
+    "damageTypes": [
+      "blunt"
+    ],
+    "damage_types": [
+      "blunt"
+    ],
+    "min_level": 9999,
+    "peak_floor": 27,
+    "spread": 0,
+    "peak_weight": 0.0,
+    "max_enchant": 3,
+    "symbol": ")",
+    "color": [
+      120,
+      105,
+      80
+    ],
+    "weight": 9.0,
+    "material": "legendary",
+    "unidentified_name": "a huge log of grey olive wood, cut off square at one end",
+    "identified": false,
+    "id_level": 0,
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "reach": 1,
+    "requiresAmmo": null,
+    "ignoreShield": false,
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "lore": "Odysseus found it lying beside the sheep-pens in the Cyclops' cave: a staff of green olive wood that Polyphemus had cut to carry when it dried, as long as the mast of a black ship of twenty oars. Odysseus cut a fathom off the end, sharpened it, hardened the point in the fire and drove it into the giant's one eye while he slept off the wine. The rest of the club is still a club. It is heavy enough that a blow from it leaves the one it lands on reeling.",
+    "stun_chance": 0.25,
+    "stunChance": 0.25,
+    "knockback": true,
+    "value": 420,
+    "tier": 2,
+    "quiz_tier": 2,
+    "mathTier": 2
+  },
+  "patriarchs_gavel": {
+    "name": "The Patriarch's Gavel",
+    "is_unique": true,
+    "class": "warhammer",
+    "weapon_class": "blunt",
+    "variant": "1h",
+    "twoHanded": false,
+    "two_handed": false,
+    "template_basis": "warhammer",
+    "baseDamage": 61,
+    "base_damage": 61,
+    "chainMultipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "chain_multipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "maxChainLength": 5,
+    "max_chain_length": 5,
+    "weapon_class_chain": "normal",
+    "damageTypes": [
+      "blunt"
+    ],
+    "damage_types": [
+      "blunt"
+    ],
+    "min_level": 9999,
+    "peak_floor": 32,
+    "spread": 0,
+    "peak_weight": 0.0,
+    "max_enchant": 3,
+    "symbol": ")",
+    "color": [
+      60,
+      55,
+      60
+    ],
+    "weight": 6.0,
+    "material": "legendary",
+    "unidentified_name": "a black iron hammer with a head like a judge's gavel",
+    "identified": false,
+    "id_level": 0,
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "reach": 1,
+    "requiresAmmo": null,
+    "ignoreShield": false,
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "lore": "The Iron Patriarch outlived every son, grandson and usurper of his line and sat on in his coronation plate until the kingdom gave out beneath him. He still granted every visitor a hearing. It was short, and this ended it: a black iron hammer with a head like a judge's gavel, banded in gold, with a little iron crown for a pommel. Whatever it lands on is in no state to answer back.",
+    "stun_chance": 0.25,
+    "stunChance": 0.25,
+    "value": 760,
+    "tier": 2,
+    "quiz_tier": 2,
+    "mathTier": 2
+  },
+  "rangdas_keris": {
+    "name": "Rangda's Keris",
+    "is_unique": true,
+    "class": "dagger",
+    "weapon_class": "dagger",
+    "variant": "1h",
+    "twoHanded": false,
+    "two_handed": false,
+    "template_basis": "dagger",
+    "baseDamage": 80,
+    "base_damage": 80,
+    "chainMultipliers": [
+      0.2,
+      0.55,
+      1.0,
+      1.8,
+      3.0
+    ],
+    "chain_multipliers": [
+      0.2,
+      0.55,
+      1.0,
+      1.8,
+      3.0
+    ],
+    "maxChainLength": 5,
+    "max_chain_length": 5,
+    "weapon_class_chain": "finesse",
+    "damageTypes": [
+      "pierce"
+    ],
+    "damage_types": [
+      "pierce"
+    ],
+    "min_level": 9999,
+    "peak_floor": 50,
+    "spread": 0,
+    "peak_weight": 0.0,
+    "max_enchant": 3,
+    "symbol": ")",
+    "color": [
+      110,
+      110,
+      120
+    ],
+    "weight": 1.0,
+    "material": "legendary",
+    "unidentified_name": "a wavy-bladed dagger with a carved demon hilt",
+    "identified": false,
+    "id_level": 0,
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "reach": 1,
+    "requiresAmmo": null,
+    "ignoreShield": false,
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "lore": "On Bali, Rangda is the widow-witch, queen of the leyaks, who fights the Barong forever and never quite loses. In the temple dance her spell falls on the Barong's warriors and they turn their own keris daggers against their chests, and only the Barong's magic keeps the blades from going in. This is her own keris: a blade that waves like a snake, with a little demon crouched on the hilt. A wound from it leaves the wounded unsure which side he is on.",
+    "confuse_chance": 0.2,
+    "confuseChance": 0.2,
+    "value": 740,
+    "tier": 3,
+    "quiz_tier": 3,
+    "mathTier": 3
+  },
+  "exsanguinating_blade": {
+    "name": "The Exsanguinating Blade",
+    "is_unique": true,
+    "class": "sword",
+    "weapon_class": "sword",
+    "variant": "1h",
+    "twoHanded": false,
+    "two_handed": false,
+    "template_basis": "longsword",
+    "baseDamage": 609,
+    "base_damage": 609,
+    "chainMultipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "chain_multipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "maxChainLength": 5,
+    "max_chain_length": 5,
+    "weapon_class_chain": "normal",
+    "damageTypes": [
+      "slash"
+    ],
+    "damage_types": [
+      "slash"
+    ],
+    "min_level": 9999,
+    "peak_floor": 84,
+    "spread": 0,
+    "peak_weight": 0.0,
+    "max_enchant": 3,
+    "symbol": ")",
+    "color": [
+      130,
+      30,
+      35
+    ],
+    "weight": 3.5,
+    "material": "legendary",
+    "unidentified_name": "a longsword with a blade the colour of dried blood",
+    "identified": false,
+    "id_level": 0,
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "reach": 1,
+    "requiresAmmo": null,
+    "ignoreShield": false,
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {},
+    "plot_locked": true,
+    "lore": "The Blood Archon kept his accounts in blood, and this was his pen. He fought the way he traded: he opened a vein, stood back and waited for the debt to come due. The blade is the colour of dried blood and the groove down its middle never quite dries. What it lets out of the one it cuts, it pays back in part to the hand that holds it. The interest is what it has always been.",
+    "bleed_chance": 0.3,
+    "bleedChance": 0.3,
+    "lifesteal_percent": 0.12,
+    "lifestealPercent": 0.12,
+    "value": 9000,
+    "tier": 5,
+    "quiz_tier": 5,
+    "mathTier": 5
   }
 }

@@ -1418,6 +1418,22 @@
    }
   },
   {
+   "id": "quest_polyphemus",
+   "name": "Polyphemus",
+   "category": "bosses",
+   "rarity": "rare",
+   "hint": "Defeat the shepherd who asked a hero his name and was told Nobody.",
+   "unlocked_text": "Polyphemus is defeated.",
+   "code_word": "NOBODY",
+   "art": "quest_polyphemus",
+   "trigger": {
+    "event": "kill",
+    "where": {
+     "monster": "polyphemus"
+    }
+   }
+  },
+  {
    "id": "quest_sphinx",
    "name": "The Sphinx",
    "category": "bosses",

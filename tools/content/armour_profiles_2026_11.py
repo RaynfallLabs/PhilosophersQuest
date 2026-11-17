@@ -259,6 +259,7 @@ MATS['worldtree']['sp_add'] = ['fire_resistant']           # Yggdrasil outlasts 
 # Named body armour: is it metal? (its lore; everything else about it is its own)
 NAMED_METAL = {
     'hide_of_nemean_lion': False,        # the lion's own hide
+    'calydonian_boar_hide': False,       # the boar's own bristled hide (2026-11-17)
     'carapace_of_the_hydra': False,      # a monster's shell
     'panoply_of_hephaestus': True,       # the smith god's bronze and gold
     'dragon_mail_of_sigurd': False,      # dragon's scale, not forged

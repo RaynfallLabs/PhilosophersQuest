@@ -52,22 +52,23 @@ CHUNK = 20
 
 
 def met_on() -> dict:
-    """{foe: floor it is met on}: its peak floor moved off a gate or seal
-    floor the way level_manager._roll_planned_mini_bosses moves it (down for
-    a band mini-boss, up for a legendary wanderer)."""
+    """{foe: floor it is met on}: its peak floor, or the free floor of its
+    band nearest it when the peak is a gate or seal floor, as
+    level_manager.plan_mini_bosses seats it (every rolled mini-boss, the
+    legendary ones too, since 2026-11-17)."""
+    import level_manager
     import mini_boss_bands as mb
     with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as f:
         monsters = json.load(f)
     out = {}
+    taken = BOSS_FLOORS | set(SEAL_FLOORS)
     for mid, g in mb.roster(monsters).items():
         if g == 'seal':
             out[mid] = next(fl for fl, s in SEAL_FLOORS.items() if s == mid)
             continue
-        t = mb.floor_of(monsters[mid])
-        step = 1 if g == 'legend' else -1
-        while t in BOSS_FLOORS or t in SEAL_FLOORS:
-            t += step
-        out[mid] = t
+        pf = mb.floor_of(monsters[mid])
+        lo = (pf - 1) // 20 * 20 + 1
+        out[mid] = level_manager._free_floor(pf, lo, lo + 19, taken, {})
     return out
 
 

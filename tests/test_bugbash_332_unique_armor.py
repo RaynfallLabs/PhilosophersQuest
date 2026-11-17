@@ -81,7 +81,9 @@ def test_a_starting_piece_built_from_the_data_has_its_enchantment():
 
 def test_body_armour_and_shields_are_base_plus_tier():
     # ...their template's base, raised to the named-armour floor of their
-    # depth (gear.named_ac_floor) when that base would leave them under it.
+    # depth (gear.named_ac_floor) when that base would leave them under it:
+    # a piece found by depth, or a mini-boss's signature drop at its foe's
+    # floor (ruling 13, 2026-11-17: the drop keeps its band's tier).
     import unique_armor_ladder_2026_11 as ua
     for cat, data, tpl_cat in (('armor', ARMOR, 'armor'), ('shield', SHIELD, 'shields')):
         kind = 'body' if cat == 'armor' else 'shield'
@@ -92,7 +94,7 @@ def test_body_armour_and_shields_are_base_plus_tier():
             tpl = items.get_template(tpl_cat, e['template_basis'])
             plus = min(gear.core_enchant_cap(), e['tier'])
             base = tpl['base_ac_value']
-            if ua.found_by_depth(e, k):
+            if ua.found_by_depth(e, k) or ua.dropped_by_mini_boss(k):
                 base = max(base, gear.named_ac_floor(kind, e['peak_floor']) - plus)
             assert e['ac_bonus'] == base, (cat, k)
             assert e['enchant_bonus'] == plus, (cat, k)

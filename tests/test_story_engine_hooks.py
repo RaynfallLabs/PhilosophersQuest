@@ -427,7 +427,14 @@ def test_winning_swears_the_return_and_schedules_the_dead_after_the_due_floor(st
     assert 3 + 8 <= o['due_floor'] <= 3 + 15
     cb = [p for p in g._deeds['pending'] if p.get('spec', {}).get('encounter') == 'flv_dead_come_for_the_book']
     assert len(cb) == 1
-    assert o['due_floor'] + 1 <= cb[0]['target'] <= o['due_floor'] + 3
+    # 1-3 floors after the due floor; on the first free floor after those
+    # only when all three are held by other scenes (game_road: a callback is
+    # never lost, and the oath never lapses the moment it is sworn).
+    t = cb[0]['target']
+    held = g._callback_blocked_floors() - {t}
+    assert (o['due_floor'] + 1 <= t <= o['due_floor'] + 3
+            or (o['due_floor'] + 3 < t <= o['due_floor'] + 9
+                and all(f in held for f in range(o['due_floor'] + 1, o['due_floor'] + 4))))
     assert cb[0]['oath'] == 'thoth_return'
     assert deeds.has(g._deeds, 'told.won_senet') and book is not None
     # High stakes, passed: the engine writes virtue:steadfast.

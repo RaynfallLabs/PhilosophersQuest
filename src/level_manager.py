@@ -9,9 +9,78 @@ from dungeon import _BOSS_LEVELS
 STONE_LEVEL = 100
 
 
+def band_candidates(all_defs: dict, lo: int, hi: int) -> list:
+    """[(id, defn, peak floor)] of the mini-bosses a band's slots draw from:
+    every `is_mini_boss` with a spawn_chance above 0 whose peak_floor lies in
+    the band. The seven seal demons (Abaddon's arc, placed by
+    LevelManager._try_spawn_seal_demon) and the hand-placed ones (the gate
+    floors' Asterion and Medusa, the Cow King, Old Nickel, Euryale beside
+    Stheno: spawn_chance 0 or none) are not in it."""
+    out = []
+    for mid, m in all_defs.items():
+        if not isinstance(m, dict) or not m.get('is_mini_boss') or mid.startswith('seal_demon'):
+            continue
+        if float(m.get('spawn_chance', 0) or 0) <= 0:
+            continue
+        pf = int(m.get('peak_floor', m.get('min_level', 1)) or 1)
+        if lo <= pf <= hi:
+            out.append((mid, m, pf))
+    return out
+
+
+def _free_floor(pf: int, lo: int, hi: int, taken: set, planned: dict):
+    """The floor nearest a mini-boss's peak_floor, inside its band, with no
+    gate boss, seal demon or other planned mini-boss: the peak itself, then
+    one below, one above, two below... (a gate floor is the band's last, so
+    one on a gate's floor is met the floor before it)."""
+    for d in range(0, hi - lo + 1):
+        for f in ((pf - d, pf + d) if d else (pf,)):
+            if lo <= f <= hi and f not in taken and f not in planned:
+                return f
+    return None
+
+
+def plan_mini_bosses(all_defs: dict, rng, bands=((1, 20), (21, 40), (41, 60), (61, 80), (81, 100)),
+                     first: float = 1.0, second: float = 0.30, taken=frozenset()) -> dict:
+    """{floor: mini-boss id}: each band's FIRST slot (chance `first`) and
+    SECOND (chance `second`), each a pick weighted by spawn_chance among the
+    band's candidates not picked yet (band_candidates), set on the free floor
+    nearest its peak (_free_floor). Never on a floor in `taken` (the gate and
+    seal floors)."""
+    planned: dict = {}
+    for lo, hi in bands:
+        cands = band_candidates(all_defs, lo, hi)
+        picked: set = set()
+        for chance in (first, second):
+            roll = rng.random()
+            pool = [c for c in cands if c[0] not in picked]
+            if roll >= chance or not pool:
+                continue
+            weights = [float(m.get('spawn_chance', 1.0) or 0) for _, m, _ in pool]
+            if sum(weights) <= 0:
+                continue
+            mid, _m, pf = rng.choices(pool, weights=weights, k=1)[0]
+            f = _free_floor(pf, lo, hi, set(taken), planned)
+            if f is not None:
+                planned[f] = mid
+                picked.add(mid)
+    return planned
+
+
 class LevelManager:
-    # Mini-boss spawn bands. Each band gets ONE primary roll (90%) plus ONE
-    # secondary roll (30%). Expected mini-bosses per 100-floor run: 5 × 1.2 = 6.
+    # Mini-boss bands (Brandon's ruling 13, 2026-11-16: "mini-bosses with cool
+    # unique drops are supposed to be spread through the whole game, maybe one
+    # or two every 20 floors"). Each 20-floor band, one per gate boss, has a
+    # FIRST slot that is always filled and a SECOND filled in about one run in
+    # three, so a run meets one or two named foes in every band: 6.5 a run.
+    # Guaranteed, but earned: each waits somewhere on its floor and is a
+    # fight. Who may fill a band is data: every rolled mini-boss whose
+    # peak_floor lies in it, its floor set by its legend (docs/systems/
+    # monsters.md, "Mini-bosses by lore"). The legendary ones (Ymir's Last
+    # Spawn, Hrungnir, Tiamat, Surtur, Asmodeus) ride the slots of their band
+    # like the rest; until 2026-11-17 each also rolled on its own at 50%, so
+    # floors 81-100 met three or four besides the seven seals and the
+    # shallow bands one run in ten met none.
     _MINI_BOSS_BANDS: list[tuple[int, int]] = [
         (1, 20),
         (21, 40),
@@ -19,14 +88,11 @@ class LevelManager:
         (61, 80),
         (81, 100),
     ]
-    _MINI_BOSS_PRIMARY_CHANCE = 0.90
-    _MINI_BOSS_SECONDARY_CHANCE = 0.30
-    # Legendary wanderers (Tiamat, Surtur, Asmodeus, Ymir's Last Spawn,
-    # Hrungnir's Ghost: mini-bosses tagged `legendary`). Each rolls on its
-    # own, independent of the band slots, and can appear at most once per run
-    # on a free floor at or just past its peak_floor. They used to sit in the
-    # random spawn pool, where one deep floor could roll several Tiamats.
-    _LEGENDARY_CHANCE = 0.50
+    _MINI_BOSS_FIRST_CHANCE = 1.0
+    _MINI_BOSS_SECOND_CHANCE = 0.30
+    # The plan's rules: 2 is the band plan above. A save made under the old
+    # rules (1) is planned again for the floors still ahead when it loads.
+    _PLAN_VERSION = 2
 
     def __init__(self):
         self._saved: dict = {}          # level_num -> (dungeon, monsters, items)
@@ -36,12 +102,12 @@ class LevelManager:
         self.max_level_reached: int = 1
         self.monsters_killed: int   = 0
         self._placed_mini_bosses: set = set()
-        # Mini-boss spawns are PRE-ROLLED at run start. Each band gets 0-2
-        # mini-bosses picked weighted by spawn_chance. Placement is locked to
-        # each chosen mini-boss's peak_floor. This guarantees fair variety
-        # across runs (every band member has weighted odds, not first-eligible-
-        # wins).
+        # Mini-boss spawns are PRE-ROLLED at run start. Each band gets one or
+        # two mini-bosses picked weighted by spawn_chance. Placement is each
+        # chosen mini-boss's peak_floor (or the nearest free floor of its
+        # band). Every band member has weighted odds every run.
         self._planned_mini_bosses: dict = self._roll_planned_mini_bosses()
+        self._plan_version: int = self._PLAN_VERSION
 
     def save(self, level_num: int, dungeon, monsters: list, ground_items: list):
         """Persist current level state so it can be restored later."""
@@ -60,6 +126,42 @@ class LevelManager:
     def __setstate__(self, state):
         self.__dict__.update(state)
         self._bind_uniques()
+        # A run saved under the old plan (before the mini-bosses were seated
+        # by lore, 2026-11-17) meets the new bands on the floors still ahead.
+        if (isinstance(self.__dict__.get('_planned_mini_bosses'), dict)
+                and int(self.__dict__.get('_plan_version', 1) or 1) < self._PLAN_VERSION):
+            try:
+                self._replan_ahead()
+            except Exception:
+                from game_log import log_error
+                log_error('level_manager.__setstate__: the old mini-boss plan was kept')
+            self._plan_version = self._PLAN_VERSION
+
+    def _replan_ahead(self) -> None:
+        """Plan the floors not yet reached by today's bands, keeping what an
+        old save already has on the floors behind (or already made). A band
+        the hero is part-way through keeps its earlier mini-boss and takes
+        new ones only up to the count its fresh plan has."""
+        reached = int(getattr(self, 'max_level_reached', 1) or 1)
+        made = set(getattr(self, '_saved', {}) or {})
+        placed = set(getattr(self, '_placed_mini_bosses', set()) or set())
+        old = dict(self._planned_mini_bosses)
+        keep = {f: m for f, m in old.items() if f <= reached or f in made}
+        fresh = self._roll_planned_mini_bosses()
+        used = set(keep.values()) | placed
+        for lo, hi in self._MINI_BOSS_BANDS:
+            want = sorted(f for f in fresh if lo <= f <= hi)
+            have = [f for f in keep if lo <= f <= hi]
+            for f in want:
+                if len(have) >= len(want):
+                    break
+                m = fresh[f]
+                if f <= reached or f in made or f in keep or m in used:
+                    continue
+                keep[f] = m
+                used.add(m)
+                have.append(f)
+        self._planned_mini_bosses = keep
 
     def _once_per_run(self, floor_items: list) -> list:
         """Drop any named unique this run has already produced, and record
@@ -204,13 +306,7 @@ class LevelManager:
     def _roll_planned_mini_bosses(self) -> dict:
         """Pre-roll which mini-bosses appear in this run and on which floors.
 
-        Returns dict[level_num] -> mini_boss_id.
-
-        Each band gets a primary slot (90%) and secondary slot (30%) chance.
-        Within a slot, candidates are weighted by spawn_chance. Placement
-        floor is the chosen mini-boss's peak_floor.
-
-        Expected per run: 5 × (0.90 + 0.30) = 6.0 mini-bosses, range 4-8.
+        Returns dict[level_num] -> mini_boss_id (plan_mini_bosses).
         """
         import json as _json
         import random as _rng
@@ -221,94 +317,10 @@ class LevelManager:
                 _all = _json.load(_f)
         except Exception:
             return {}
-
-        planned: dict = {}
-        for band_lo, band_hi in self._MINI_BOSS_BANDS:
-            candidates = []
-            for mid, m in _all.items():
-                if not m.get('is_mini_boss'):
-                    continue
-                # Seal demons are flagged is_mini_boss but use a separate
-                # forced-spawn path (_try_spawn_seal_demon). Don't compete
-                # with the random pool.
-                if mid.startswith('seal_demon'):
-                    continue
-                if m.get('spawn_chance', 0) <= 0:
-                    continue
-                # Legendary wanderers roll separately below.
-                if 'legendary' in (m.get('tags') or []):
-                    continue
-                pf = int(m.get('peak_floor', m.get('min_level', 1)))
-                if not (band_lo <= pf <= band_hi):
-                    continue
-                candidates.append((mid, m, pf))
-            if not candidates:
-                continue
-
-            placed_ids: set = set()
-
-            def _pick():
-                pool = [(mid, m, pf) for mid, m, pf in candidates if mid not in placed_ids]
-                if not pool:
-                    return None
-                weights = [float(m.get('spawn_chance', 1.0)) for _, m, _ in pool]
-                if sum(weights) <= 0:
-                    return None
-                return _rng.choices(pool, weights=weights, k=1)[0]
-
-            # Primary slot
-            if _rng.random() < self._MINI_BOSS_PRIMARY_CHANCE:
-                pick = _pick()
-                if pick is not None:
-                    mid, _, pf = pick
-                    # Avoid landing on a boss floor — if peak_floor collides,
-                    # shift -1. `generate_boss_level` ignores the mini-boss
-                    # plan, so a boss-floor target would silently vanish.
-                    target = pf if pf not in _BOSS_LEVELS else pf - 1
-                    # Nor on a seal demon's floor (the Wendigo's peak is 85,
-                    # which is Buer's floor): one named fight per floor.
-                    while target in self._SEAL_DEMON_LEVELS or target in _BOSS_LEVELS:
-                        target -= 1
-                    planned[target] = mid
-                    placed_ids.add(mid)
-
-            # Secondary slot
-            if _rng.random() < self._MINI_BOSS_SECONDARY_CHANCE:
-                pick = _pick()
-                if pick is not None:
-                    mid, _, pf = pick
-                    target = pf if pf not in _BOSS_LEVELS else pf - 1
-                    # If two mini-bosses share peak_floor OR the shifted
-                    # target collides, walk forward — but SKIP boss floors
-                    # so the mini-boss actually appears.
-                    while (target in planned or target in _BOSS_LEVELS
-                           or target in self._SEAL_DEMON_LEVELS):
-                        target += 1
-                        if target > band_hi:
-                            target = pf
-                            break
-                    if (target not in planned and target not in _BOSS_LEVELS
-                            and target not in self._SEAL_DEMON_LEVELS):
-                        planned[target] = mid
-                        placed_ids.add(mid)
-
-        # Legendary wanderers: one independent roll each. Never share a floor
-        # with a gate boss, a seal demon, or another planned mini-boss.
-        taken = set(_BOSS_LEVELS) | set(self._SEAL_DEMON_LEVELS)
-        for mid, m in _all.items():
-            if not m.get('is_mini_boss') or 'legendary' not in (m.get('tags') or []):
-                continue
-            if m.get('spawn_chance', 0) <= 0:
-                continue
-            if _rng.random() >= self._LEGENDARY_CHANCE:
-                continue
-            pf = int(m.get('peak_floor', m.get('min_level', 1)))
-            for target in range(pf, min(pf + 6, 100)):
-                if target not in planned and target not in taken:
-                    planned[target] = mid
-                    break
-
-        return planned
+        return plan_mini_bosses(
+            _all, _rng, bands=self._MINI_BOSS_BANDS, first=self._MINI_BOSS_FIRST_CHANCE,
+            second=self._MINI_BOSS_SECOND_CHANCE,
+            taken=set(_BOSS_LEVELS) | set(self._SEAL_DEMON_LEVELS))
 
     def _place_escort(self, eid: str, all_defs: dict, leader, dungeon, monsters: list):
         """Set a mini-boss's companion down on the nearest free tile it fits

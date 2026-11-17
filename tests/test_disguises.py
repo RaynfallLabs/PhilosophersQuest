@@ -58,7 +58,7 @@ def _common_kinds():
                 it = items.instantiate_shield(tid, mid)
                 out[it.id] = it
     # Fixed specs: the starting kits (welcome_screen) and a drop made to a
-    # spec ("armor:cloak:hide:elementward:3").
+    # spec ("armor:cloak:hide:elementward:2").
     from welcome_screen import SECRET_BUILDS
     for b in SECRET_BUILDS.values():
         sh, ar = b.get('_start_shield'), b.get('_start_armor')

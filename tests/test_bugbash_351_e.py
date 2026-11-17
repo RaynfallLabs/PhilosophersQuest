@@ -200,8 +200,11 @@ def test_journey_01_a_war_band_on_floor_one(make_game, monkeypatch):
     def reach(m):
         goal = {(m.x + dx, m.y + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))}
         return _path(g, (p.x, p.y), goal, set()) is not None
+    # (One that runs from the hero, a cowardly leprechaun, is never caught by
+    # a walk: the floor's first creature that stands and fights is taken.)
     other = min((m for m in g.monsters if m.alive and not getattr(m, 'is_allied', False)
                  and m.kind in monster_defs()
+                 and getattr(m, 'ai_pattern', '') not in ('cowardly', 'hit_and_run', 'flee')
                  and affinity.damage_profile({**monster_defs()[m.kind]}) and reach(m)),
                 key=lambda m: abs(m.x - p.x) + abs(m.y - p.y), default=None)
     if other is None:

@@ -304,7 +304,10 @@ def test_he_is_placed_on_his_floor_never_in_the_pups_room():
 def test_he_waits_only_on_his_floor_and_only_once():
     import emberpup_encounter as bloomleaf
     g = _game('__test_nickel_once__', seed=4)
-    g._emberpup['cloak_floor'] = 3
+    # His floor is set to 3 for the test. The run's own roll may have put him
+    # on floor 1, where the new game has already set him down: that one goes.
+    g.monsters[:] = [m for m in g.monsters if not bloomleaf.is_wearer(m)]
+    g._emberpup.update({'cloak_floor': 3, 'cloak_spawned': False})
     counts = {}
     for lvl in (2, 3, 4):
         g._change_level(lvl, enter_from_top=True)

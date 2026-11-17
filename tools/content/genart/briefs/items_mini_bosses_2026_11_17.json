@@ -1,0 +1,256 @@
+[
+ {
+  "id": "calydonian_boar_hide",
+  "family": "mini_boss_drops",
+  "rank": 1,
+  "body": "item",
+  "scale": "large",
+  "key": "magenta",
+  "what": "the hide of a gigantic wild boar made into a coat: a long, thick, rough hide of dark brown-black skin, covered all over with long stiff dark bristles that stand up in a ridge down its back like a row of spear shafts, with the boar's own head kept on as a hood at the top, the snout pointing up, two great curved ivory-white tusks curling out of its jaws.",
+  "colours": "Dark brown-black hide and dark grey-black bristles; two ivory-white curved tusks; a little dull brown leather lacing at the front edges.",
+  "pose": "Laid out flat and seen from above, the boar-head hood at the top and the long hide spread out below it, the whole coat inside the picture.",
+  "must_show": [
+   "a dark bristled boar hide made into a coat",
+   "a ridge of long stiff bristles",
+   "the boar's head as a hood at the top",
+   "two curved ivory tusks"
+  ],
+  "must_not_show": [
+   "person",
+   "hand",
+   "arm",
+   "golden fur",
+   "lion",
+   "metal plates",
+   "chain mail",
+   "blood",
+   "table",
+   "label with writing",
+   "second object",
+   "living boar with legs"
+  ]
+ },
+ {
+  "id": "eyes_of_lamia",
+  "family": "mini_boss_drops",
+  "rank": 2,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a small round jar of clear old glass, the size of a walnut, with a dark bronze lid and a small bronze loop on top, hung on a thin black leather cord; inside the jar, resting side by side at the bottom and touching each other like a pair of marbles, is one matched pair of whole round eyeballs, each a white ball with a golden-yellow iris and a narrow black slit pupil like a cat's or a serpent's; no eyelids and no skin around them.",
+  "colours": "Clear pale glass with a faint green tint; dark bronze lid and loop; a thin black leather cord; two golden-yellow eyes with black slit pupils.",
+  "pose": "The jar hangs from its cord, seen from the front and a little from above, the cord looping up out of the top of the picture.",
+  "must_show": [
+   "one small round glass jar",
+   "a dark bronze lid with a loop",
+   "a thin black cord",
+   "one pair of eyeballs side by side with golden irises and black slit pupils"
+  ],
+  "must_not_show": [
+   "face",
+   "woman",
+   "snake",
+   "skull",
+   "blood",
+   "label with writing",
+   "cork",
+   "hand",
+   "table",
+   "second jar",
+   "more than two eyes",
+   "glow around the jar",
+   "eyelids",
+   "eyebrows",
+   "eyes painted on the glass"
+  ]
+ },
+ {
+  "id": "club_of_polyphemus",
+  "family": "mini_boss_drops",
+  "rank": 3,
+  "body": "item",
+  "scale": "large",
+  "key": "magenta",
+  "what": "the club of a giant shepherd: a long, very thick, heavy log of old olive wood, as thick as a man's waist at one end, its bark rough, deeply furrowed and grey-brown like an old olive tree's, knotted and twisted, with a few stubby cut-off branch ends along it and one small sprig of narrow silver-grey olive leaves near the thick end; the thin end is trimmed bare and worn smooth and pale brown for a giant's grip, and the thick end is cut off flat and square, the pale cream wood showing where a length was sawn away.",
+  "colours": "Rough grey-brown furrowed bark, darker brown in the cracks; a pale cream-yellow cut face of wood at the thick end; a few narrow silver-grey olive leaves; a smooth pale brown grip.",
+  "pose": "It lies on a diagonal, the trimmed grip at the bottom left corner and the thick cut end at the top right corner, the whole club inside the picture.",
+  "must_show": [
+   "one huge club made of a thick olive log",
+   "rough grey-brown furrowed bark and branch stubs",
+   "one small sprig of silver-grey olive leaves",
+   "the thick end cut off flat, pale wood showing",
+   "diagonal, thick end at top right"
+  ],
+  "must_not_show": [
+   "metal",
+   "spikes",
+   "nails",
+   "hand",
+   "person",
+   "eye",
+   "sheep",
+   "fire",
+   "sharpened point",
+   "second club",
+   "table",
+   "label with writing",
+   "bright green bark",
+   "moss"
+  ]
+ },
+ {
+  "id": "patriarchs_gavel",
+  "family": "mini_boss_drops",
+  "rank": 4,
+  "body": "item",
+  "scale": "large",
+  "key": "green",
+  "what": "an old king's warhammer shaped like a judge's gavel: a heavy head of black iron that is a short thick cylinder with two broad flat striking faces, bound round its middle by two bands of tarnished gold, set on a long straight haft of black iron wrapped along its grip in faded dark red velvet, with a small pommel worked into a little iron crown with five points.",
+  "colours": "Black iron head and haft; two bands of tarnished dull gold on the head; faded dark red velvet on the grip; a small black iron crown at the pommel.",
+  "pose": "It lies on a diagonal, the crown pommel at the bottom left corner and the gavel head at the top right corner, the whole hammer inside the picture.",
+  "must_show": [
+   "one warhammer with a cylindrical gavel-shaped iron head",
+   "two flat striking faces",
+   "two tarnished gold bands",
+   "dark red velvet grip",
+   "a small iron crown at the pommel",
+   "diagonal, head at top right"
+  ],
+  "must_not_show": [
+   "spike on the head",
+   "axe blade",
+   "pick",
+   "hand",
+   "person",
+   "wooden block",
+   "table",
+   "label with writing",
+   "second hammer",
+   "bright gold all over",
+   "glow around the hammer"
+  ]
+ },
+ {
+  "id": "brazen_hands_of_stheno",
+  "family": "mini_boss_drops",
+  "rank": 5,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a pair of gauntlets of polished bronze, each shaped like a slender long-fingered hand, the backs of the hands and the fingers covered in small overlapping bronze scales like a serpent's skin, each finger ending in a long hooked bronze claw; the cuffs are plain and flare a little at the wrist.",
+  "colours": "Polished warm bronze, bright where the light catches it and dark brown-bronze in the hollows; a dark green-brown patina in the creases between the scales.",
+  "pose": "The two gauntlets lie side by side, fingers pointing up, palms down, seen from above, both inside the picture.",
+  "must_show": [
+   "two bronze gauntlets, a pair",
+   "small overlapping serpent scales on the backs",
+   "long hooked bronze claws at the fingertips"
+  ],
+  "must_not_show": [
+   "hand inside the gauntlets",
+   "arm",
+   "person",
+   "snake head",
+   "silver or steel",
+   "bright yellow gold",
+   "leather glove",
+   "table",
+   "label with writing",
+   "third gauntlet"
+  ]
+ },
+ {
+  "id": "rangdas_keris",
+  "family": "mini_boss_drops",
+  "rank": 6,
+  "body": "item",
+  "scale": "large",
+  "key": "green",
+  "what": "a Balinese keris dagger: a slender double-edged blade that waves from side to side in seven gentle curves, of dark grey steel with a pale silvery wavy grain running through it; a gold-coloured ring where the blade meets the hilt; and a hilt of carved dark wood shaped like a small crouching demon with bulging round eyes and a gaping mouth with fangs.",
+  "colours": "Dark grey steel blade with pale silver wavy grain; a dull gold ring; a dark red-brown carved wooden hilt with tiny white bulging eyes.",
+  "pose": "It lies on a diagonal, the hilt at the bottom left corner and the point at the top right corner, the whole dagger inside the picture.",
+  "must_show": [
+   "one dagger with a wavy blade of seven curves",
+   "dark steel with pale wavy grain",
+   "a carved wooden demon-figure hilt",
+   "diagonal, point at top right"
+  ],
+  "must_not_show": [
+   "straight blade",
+   "sheath",
+   "scabbard",
+   "hand",
+   "person",
+   "mask",
+   "flames",
+   "blood",
+   "table",
+   "label with writing",
+   "second dagger"
+  ]
+ },
+ {
+  "id": "crones_burial_veil",
+  "family": "mini_boss_drops",
+  "rank": 7,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "an old burial veil: a long hood of thin, pale, greyish-white linen, the kind a body is wrapped in for the grave, only faintly yellowed with age, frayed and torn along the hem, smudged with brown grave earth near the bottom, with a thin band of faded black stitching along its front edge and a short grey cord to tie it under the chin.",
+  "colours": "Pale greyish-white old linen with a faint yellow tinge; brown earth smudges near the hem; a thin band of faded black stitching; a short grey cord.",
+  "pose": "Laid out flat and seen from above, the hood at the top and the long veil hanging down below it, the whole veil inside the picture.",
+  "must_show": [
+   "one hooded veil of yellowed linen",
+   "a frayed torn hem",
+   "brown earth stains",
+   "a thin band of faded black stitching"
+  ],
+  "must_not_show": [
+   "face",
+   "skull",
+   "person",
+   "head inside the hood",
+   "hand",
+   "lace",
+   "ghost",
+   "glow",
+   "table",
+   "label with writing",
+   "second cloth",
+   "mustard yellow",
+   "gold"
+  ]
+ },
+ {
+  "id": "exsanguinating_blade",
+  "family": "mini_boss_drops",
+  "rank": 8,
+  "body": "item",
+  "scale": "large",
+  "key": "green",
+  "what": "a fiend's longsword: a long straight double-edged blade of dark red steel the colour of dried blood, with one deep narrow groove down its middle that shines a brighter wet crimson; a heavy straight crossguard of black iron with points at both ends; a grip bound in dark red leather; and a round black iron pommel set with one dark red stone.",
+  "colours": "Dark dried-blood red steel blade with a brighter crimson groove; black iron guard and pommel; dark red leather grip; one dark red stone.",
+  "pose": "It lies on a diagonal, pommel at the bottom left corner and point at the top right corner, the whole sword inside the picture.",
+  "must_show": [
+   "one longsword with a dark blood-red blade",
+   "a brighter crimson groove down the blade",
+   "black iron crossguard and pommel",
+   "dark red leather grip",
+   "diagonal, point at top right"
+  ],
+  "must_not_show": [
+   "dripping blood",
+   "blood drops",
+   "hand",
+   "person",
+   "skull",
+   "flames",
+   "silver blade",
+   "curved blade",
+   "scabbard",
+   "table",
+   "label with writing",
+   "second sword",
+   "glow around the sword"
+  ]
+ }
+]

@@ -2037,23 +2037,23 @@
     "min_level": 0,
     "slot": "amulet",
     "equip_threshold": 6,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "effects": {
       "stat": "WIS",
-      "amount": 2
+      "amount": 3
     },
     "can_be_cursed": false,
     "unidentified_name": "a golden riddle-crown",
     "lore": "The Sphinx sat on a rock outside Thebes and asked every traveller what goes on four legs in the morning, two at noon and three in the evening. She ate those who failed. Oedipus answered 'Man,' and she threw herself from the rock. Her crown stayed behind. It steadies the mind of anyone who has to answer under pressure.",
     "floorSpawnWeight": {},
-    "peak_floor": 0,
+    "peak_floor": 45,
     "spread": 10,
     "peak_weight": 0.0,
     "plot_locked": true,
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "tier": 2
+    "tier": 3
   },
   "sailors_amulet": {
     "name": "Sailor's Amulet",
@@ -2066,8 +2066,8 @@
     "weight": 0.2,
     "min_level": 0,
     "slot": "amulet",
-    "equip_threshold": 6,
-    "quiz_tier": 2,
+    "equip_threshold": 7,
+    "quiz_tier": 4,
     "effects": {
       "status": "cold_resist",
       "duration": -1
@@ -2076,14 +2076,14 @@
     "unidentified_name": "a driftwood amulet",
     "lore": "Three times a day Charybdis swallows the sea and three times spits it out. After Zeus wrecked his last ship, Odysseus drifted back over her and hung from the fig tree above the whirlpool like a bat until she gave back his mast and keel. This amulet was whittled from that timber. Its wearer feels trouble coming the way a sailor feels weather, and does not mind the cold.",
     "floorSpawnWeight": {},
-    "peak_floor": 0,
+    "peak_floor": 77,
     "spread": 10,
     "peak_weight": 0.0,
     "plot_locked": true,
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "tier": 2
+    "tier": 4
   },
   "anubis_scales": {
     "name": "Anubis's Scales",
@@ -2097,23 +2097,23 @@
     "min_level": 0,
     "slot": "amulet",
     "equip_threshold": 6,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "effects": {
       "stat": "CON",
-      "amount": 1
+      "amount": 3
     },
     "can_be_cursed": false,
     "unidentified_name": "balanced golden scales",
     "lore": "In the Hall of Two Truths the jackal-headed Anubis sets the dead man's heart on one pan of the scale and the feather of Ma'at on the other. Thoth writes down the result. Ammit, who is part crocodile, part lion and part hippopotamus, waits beside the scale for the hearts that fail. This small copy keeps a living heart steady.",
     "floorSpawnWeight": {},
-    "peak_floor": 0,
+    "peak_floor": 53,
     "spread": 10,
     "peak_weight": 0.0,
     "plot_locked": true,
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "tier": 2
+    "tier": 3
   },
   "ring_of_iron_grip": {
     "name": "Ring of Iron Grip",
@@ -2126,24 +2126,24 @@
     "weight": 0.3,
     "min_level": 0,
     "slot": "ring",
-    "equip_threshold": 5,
-    "quiz_tier": 2,
+    "equip_threshold": 6,
+    "quiz_tier": 5,
     "effects": {
       "stat": "STR",
-      "amount": 2
+      "amount": 5
     },
     "can_be_cursed": false,
     "unidentified_name": "a crude iron band",
     "lore": "Ravana, the ten-headed king of Lanka, once tried to tear Mount Kailash out of the ground and carry it off. Shiva pressed down with one toe and pinned him beneath it, and Ravana sang hymns for a thousand years before he was let go. This crude iron band was beaten out of a link of the demon king's armor. Its grip does not loosen.",
     "floorSpawnWeight": {},
-    "peak_floor": 0,
+    "peak_floor": 82,
     "spread": 10,
     "peak_weight": 0.0,
     "plot_locked": true,
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "tier": 2
+    "tier": 5
   },
   "obsidian_talisman": {
     "name": "Obsidian Talisman",
@@ -2157,7 +2157,7 @@
     "min_level": 0,
     "slot": "amulet",
     "equip_threshold": 6,
-    "quiz_tier": 3,
+    "quiz_tier": 2,
     "effects": {
       "status": "dark_vision",
       "duration": -1
@@ -2166,14 +2166,14 @@
     "unidentified_name": "a jagged black stone",
     "lore": "The Popol Vuh tells how the lords of Xibalba, the Maya underworld, tested the Hero Twins in a row of houses: the Dark House, the Cold House, the Jaguar House, the Bat House, and the Razor House, full of blades of living obsidian. Hunahpu and Xbalanque came through them all. This shard is from the last. Darkness does not hide much from its wearer.",
     "floorSpawnWeight": {},
-    "peak_floor": 0,
+    "peak_floor": 34,
     "spread": 10,
     "peak_weight": 0.0,
     "plot_locked": true,
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "tier": 3
+    "tier": 2
   },
   "ariadnes_thread": {
     "name": "Ariadne's Thread",
@@ -3382,5 +3382,36 @@
       "61-80": 1
     },
     "is_unique": false
+  },
+  "eyes_of_lamia": {
+    "name": "The Eyes of Lamia",
+    "symbol": "\"",
+    "color": [
+      210,
+      180,
+      60
+    ],
+    "weight": 0.2,
+    "min_level": 0,
+    "slot": "amulet",
+    "equip_threshold": 5,
+    "quiz_tier": 1,
+    "effects": {
+      "status": "sleep_resist",
+      "duration": -1
+    },
+    "can_be_cursed": false,
+    "unidentified_name": "a small glass jar with something floating in it",
+    "floorSpawnWeight": {},
+    "peak_floor": 15,
+    "spread": 10,
+    "peak_weight": 0.0,
+    "plot_locked": true,
+    "is_unique": true,
+    "identified": false,
+    "id_level": 0,
+    "tier": 1,
+    "special": "Hera never let her eyes close: whoever wears them cannot be put to sleep or held still.",
+    "lore": "Lamia was a queen of Libya whom Zeus loved, and Hera killed her children for it. Grief made her a monster, and Hera made sure she could never close her eyes on what she had lost. Zeus, in pity, gave her the power to take her eyes out and set them aside so that she could rest. Plutarch says she kept them in a jar at home and put them back in when she went out hunting. These are the eyes, in the jar. They have not blinked since."
   }
 }

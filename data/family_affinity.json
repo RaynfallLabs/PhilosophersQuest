@@ -1153,6 +1153,14 @@
           "holy"
         ]
       }
+    },
+    "polyphemus": {
+      "lore": "Odysseus got the Cyclops drunk on strong wine and, while he slept, drove a stake of olive wood into his one eye: wine and a blinding are what beat him, and the point of a stake, not a club.",
+      "source": "Homer, Odyssey 9 (the wine of Maron, the stake cut from the giant's own olive-wood club).",
+      "status_weak": [
+        "confused",
+        "blinded"
+      ]
     }
   }
 }

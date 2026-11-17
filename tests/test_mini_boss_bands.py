@@ -29,9 +29,11 @@ def monsters():
 
 
 def test_the_roster_is_every_rolled_mini_boss_and_the_seven_seals(monsters):
+    """26 band foes and Polyphemus, the named Cyclops seated in Medusa's
+    temple by ruling 13 (2026-11-17: tools/balance/mini_boss_seats.py)."""
     groups = mb.roster(monsters)
     count = {g: sum(1 for x in groups.values() if x == g) for g in ('band', 'legend', 'seal')}
-    assert count == {'band': 26, 'legend': 5, 'seal': 7}, count
+    assert count == {'band': 27, 'legend': 5, 'seal': 7}, count
     assert set(groups) == set(mb.FOES), sorted(set(groups) ^ set(mb.FOES))
 
 

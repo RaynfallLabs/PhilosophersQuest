@@ -113,6 +113,10 @@ FOES: dict[str, dict] = {
     # Bigger than a bull, bristles like spear shafts: swords glance off.
     # Its gore bleeds, its trample slows, and it charges.
     "calydonian_boar": dict(hp=15.5, blows=0.24),
+    # Poseidon's son (2026-11-17): his club stuns and he hurls crags from
+    # range; blunt blows are wasted on a giant's hide, the stake's point is
+    # not. Wine and a blinding are what beat him, so he falls to both.
+    "polyphemus": dict(hp=14.0, blows=0.20),
     # Fey, and cold iron spoils his mood; his lure confuses.
     "erlking": dict(hp=20.9, blows=0.21),
     # The death bat of Xibalba: his wing buffets blind.
@@ -157,8 +161,10 @@ FOES: dict[str, dict] = {
     "anansi": dict(hp=15.1, blows=0.30),
     # The corpse-gnawer's venom spray; at the cap.
     "nidhoggr_fragment": dict(hp=17.8, blows=0.19),
-    # --- legendary wanderers (optional: met if the hero goes looking) -------
-    # All five reach HP_CAP first: dangerous rather than long.
+    # --- the legendary ones (since 2026-11-17 they ride their band's slots:
+    # Ymir's Last Spawn in the frost, the other four in the abyss; seats by
+    # lore in tools/balance/mini_boss_seats.py). The deep four reach HP_CAP
+    # first: dangerous rather than long.
     "hrungnirs_ghost": dict(hp=22.6, blows=0.21),     # stone heart; his whetstone bleeds
     "tiamat": dict(hp=21.1, blows=0.28),              # five breaths, five when enraged
     "ymir_last_spawn": dict(hp=19.9, blows=0.24),     # frost that freezes, a glacier that stuns

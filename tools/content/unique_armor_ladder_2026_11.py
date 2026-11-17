@@ -63,6 +63,8 @@ PICKS = {
     'cestus_of_polydeuces': ('striking', "The cestus is the boxer's weighted hand-wrap, and Polydeuces dropped the never-beaten Amycus with one blow above the ear; Striking adds to the damage of your blows."),
     'gloves_of_wayland': ('the_locksmith', "Wayland was the master smith held prisoner on an island who worked his own way out; a smith's patient hands that free their owner are the Locksmith's."),
     'glove_of_tyr': ('striking', 'Snorri calls Tyr the boldest of the gods, with power over victory in battle, and his name was cut on sword hilts for victory; the glove from the hand he kept is a fighting hand, so Striking.'),
+    'brazen_hands_of_stheno': ('ogre_power', "Stheno's name means strength, the mighty one of the three Gorgons, and Apollodorus gives the Gorgons hands of bronze: the gorgon's grip is Ogre Power (Strength). A mini-boss drop (2026-11-17): tier III, its band's."),
+    'crones_burial_veil': ('iron_will', 'She heard her own death foretold in the grave every night until nothing could frighten her; Iron Will turns aside the gaze and shrugs off fear, the thing her whisper did to every listener. A mini-boss drop (2026-11-17): tier IV, its band\'s.'),
     'jarngreipr_gauntlets': ('ogre_power', "Jarngreipr are Thor's iron grippers, without which even he cannot swing Mjolnir; the iron gloves of the strongest god are the first gauntlets of power, so Ogre Power (Strength)."),
     'vambraces_of_achilles': ('deflection', "Hephaestus' armour for Achilles is the armour spears could not pierce: Aeneas' spear stuck in the shield and Hector's rebounded from it. Deflection turns aside thrown things."),
     'bracers_of_cu_chulainn': ('swift_strokes', "In the riastrad Cu Chulainn struck faster than eyes could follow; Swift Strokes adds seconds to every fight's clock, so more blows land and its every-third-blow wound opens more often."),
@@ -130,6 +132,25 @@ def found_by_depth(e: dict, k: str = '') -> bool:
     return not (e.get('plot_locked') or pf <= 1 or pf >= 999 or k in STARTERS)
 
 
+_MINI_BOSS_DROPS: set | None = None
+
+
+def dropped_by_mini_boss(k: str) -> bool:
+    """Is this named piece a mini-boss's signature drop (treasure.unique_drop_id)?
+    It keeps the tier of its foe's band (plot_locked: tools/content/
+    mini_boss_drops_2026_11_17.py), and as body armour or a shield it is still
+    at least the named armour of its foe's floor (gear.named_ac_floor at its
+    peak_floor, the seat): a legend's hide is worth taking (ruling 13)."""
+    global _MINI_BOSS_DROPS
+    if _MINI_BOSS_DROPS is None:
+        import json
+        with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as f:
+            mons = json.load(f)
+        _MINI_BOSS_DROPS = {(m.get('treasure') or {}).get('unique_drop_id') for m in mons.values()
+                            if isinstance(m, dict) and m.get('is_mini_boss')} - {None}
+    return k in _MINI_BOSS_DROPS
+
+
 def tier_of(e: dict, k: str = '') -> int:
     authored = max(1, min(5, int(e.get('tier', 1) or 1)))
     if not found_by_depth(e, k):
@@ -175,7 +196,7 @@ def ladder(e: dict, category: str, k: str) -> dict:
         # hero wore there).
         plus = min(gear.core_enchant_cap(), gear.plus_for_level(level))
         base = int(tpl.get('base_ac_value', e.get('ac_bonus', 0)) or 0)
-        if found_by_depth(e, k):
+        if found_by_depth(e, k) or dropped_by_mini_boss(k):
             kind = 'shield' if slot == 'shield' else 'body'
             base = max(base, gear.named_ac_floor(kind, int(e['peak_floor'])) - plus)
         e['ac_bonus'] = base

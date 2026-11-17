@@ -14,10 +14,11 @@ dungeon where an item is found").
     the census read the bands first, where the game reads the bell: it
     counted fifteen rings in tier 5 that the game drops on floors 70-80 on
     average, and no ring was really a tier-5 find. A piece
-    that is never rolled (a quest piece, an encounter's gift) is found
-    where its story puts it: its `story_floor` (the floor dungeon.py puts
-    it on), else the encounter or mystery altar that hands it over, else
-    its peak_floor or min_level. Nowhere (0 or past 100: starting kit,
+    that is never rolled (a quest piece, an encounter's gift, a mini-boss's
+    signature drop) is found where its story puts it: its `story_floor`
+    (the floor dungeon.py puts it on), else the encounter or mystery altar
+    that hands it over, else the mini-boss that drops it (its peak_floor),
+    else its peak_floor or min_level. Nowhere (0 or past 100: starting kit,
     shop only, locked) is "not dropped" and not counted;
   * containers: the chest kinds a floor really rolls (data/chest_templates.json,
     by spawn_weight_by_band; data/items/container.json is the old schema);
@@ -174,15 +175,41 @@ def _given_by_encounters() -> dict:
     return _given_cache
 
 
+_dropped_cache: dict | None = None
+
+
+def _dropped_by_mini_bosses() -> dict:
+    """{item id: the floor of the named foe that drops it on the kill}
+    (treasure.unique_drop_id: a mini-boss's signature drop is found where the
+    mini-boss lives, its peak_floor; ruling 13, 2026-11-16)."""
+    global _dropped_cache
+    if _dropped_cache is None:
+        out = {}
+        mons = json.load(open(_p('data', 'monsters.json'), encoding='utf-8'))
+        for m in mons.values():
+            if not isinstance(m, dict):
+                continue
+            iid = (m.get('treasure') or {}).get('unique_drop_id')
+            floor = m.get('peak_floor') or m.get('min_level')
+            if iid and isinstance(floor, (int, float)) and 1 <= floor <= 100:
+                out[iid] = float(floor)
+        _dropped_cache = out
+    return _dropped_cache
+
+
 def story_floor(row: dict):
     """Where a piece that is never rolled is found: its own `story_floor`
     (the floor its quest puts it on, dungeon.spawn_items), else the floor
-    where an encounter hands it over, else None."""
+    where an encounter hands it over, else the floor of the mini-boss that
+    drops it, else None."""
     v = row.get('story_floor')
     if isinstance(v, (int, float)) and v > 0:
         return float(v)
     iid = row.get('id') or row.get('_key')
-    return _given_by_encounters().get(iid)
+    given = _given_by_encounters().get(iid)
+    if given is not None:
+        return given
+    return _dropped_by_mini_bosses().get(iid)
 
 
 def found_floor(row: dict, food: bool = False):

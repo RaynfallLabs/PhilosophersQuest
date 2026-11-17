@@ -174,16 +174,16 @@
   "thirty_lives": "the Konami code typed on the title screen",
   "nice_try": "the Seeker named \"Dad\"",
   "hollow_voice": "the Caesar-shifted hint decoded to PLUGH and typed into the XYZZY terminal",
-  "first_labour": "the Nemean Lion (floor 53) killed with no weapon in hand (fists are crushing: it is weak to blunt and shrugs off blades)",
-  "bronze_heel": "Talos (floor 19) killed by a ranged blow: an arrow, bolt or thrown weapon (he is weak to pierce)",
+  "first_labour": "the Nemean Lion (floor 17) killed with no weapon in hand (fists are crushing: it is weak to blunt and shrugs off blades)",
+  "bronze_heel": "Talos (floor 18) killed by a ranged blow: an arrow, bolt or thrown weapon (he is weak to pierce)",
   "polished_shield": "Medusa killed in a journey in which a shield turned her gaze at least once (a mirror shield, the Aegis, or Perseus' Shield family knowledge)",
-  "deaf_to_riddles": "the Sphinx (floor 42) killed in a journey in which the beeswax earplugs stopped her Whispered Riddle at least once",
+  "deaf_to_riddles": "the Sphinx (floor 45) killed in a journey in which the beeswax earplugs stopped her Whispered Riddle at least once",
   "quest_bonnacon": "the Bonnacon slain (an early mini-boss, floor 4 onward; not in every run)",
-  "quest_calydonian_boar": "the Calydonian Boar slain (mini-boss, floor 25 onward)",
-  "gorgon_sisters": "Stheno and Euryale (floor 64 onward) both slain in one journey",
-  "quest_iron_patriarch": "the Iron Patriarch slain (floor 35 onward)",
+  "quest_calydonian_boar": "the Calydonian Boar slain (mini-boss, floor 10 onward; not in every run)",
+  "gorgon_sisters": "Stheno and Euryale (floor 40 onward) both slain in one journey",
+  "quest_iron_patriarch": "the Iron Patriarch slain (floor 30 onward; not in every run)",
   "quest_whispering_crone": "the Whispering Crone slain (floor 55 onward)",
-  "quest_blood_archon": "the Blood Archon slain (floor 75 onward)",
+  "quest_blood_archon": "the Blood Archon slain (floor 75 onward; not in every run)",
   "silver_edge": "a shapeshifter (a werewolf, wererat...) killed by a blow while the weapon carries a coat of silver dust (Shift+C, or Kit Apply)",
   "holy_water": "a creature killed by a thrown flask of holy water (or the Water of Siloam or the Water of Life)",
   "old_remedies": "all three named counters have worked at least once (lifetime): a shield turned a gaze, the beeswax stopped a voice, the cold-iron charm broke a fey glamour",
@@ -208,6 +208,7 @@
   "neither_would_give_way": "Robin Hood on his plank bridge (a path placed once a run on floors 12-18): fight him with staves (MATH, two of three, tier 1) and win; he goes into the stream and gives his horn (told.robin_in_the_stream)",
   "not_yet_the_hour": "the sleepers under the hill (a path placed once a run on floors 45-55): draw the sword, cut the garter, then blow the bugle (HISTORY, one question, tier 3); Arthur wakes and gives the bugle (told.arthur_woken). Sheathing the sword instead closes the hall",
   "one_who_listens": "Heimdall at the foot of the bridge (a path placed once a run on floors 70-78): keep the watch with him (HISTORY, two of three, tier 4) and he gives Gjallarhorn (told.heimdall_watch)",
-  "not_by_strength": "Merlin's stone (a path placed once a run on floors 10-16, never for the Merlin build): answer the voice's questions (SCIENCE, two of three, tier 1) and Merlin gives the Staff of Emrys out of the hawthorn (told.merlin_staff). Trying to lift the stone does nothing"
+  "not_by_strength": "Merlin's stone (a path placed once a run on floors 10-16, never for the Merlin build): answer the voice's questions (SCIENCE, two of three, tier 1) and Merlin gives the Staff of Emrys out of the hawthorn (told.merlin_staff). Trying to lift the stone does nothing",
+  "quest_polyphemus": "Polyphemus slain (polyphemus; a mini-boss of floors 21-40, seat 27; not in every run)"
  }
 }

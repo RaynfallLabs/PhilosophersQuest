@@ -859,6 +859,14 @@ def _banded(data: dict) -> dict:
     return mini_boss_bands.roster(data)
 
 
+def _seated() -> set:
+    """The mini-bosses tools/balance/mini_boss_seats.py seats by lore (with
+    the escorts that go where their leader goes)."""
+    sys.path.insert(0, str(ROOT / 'tools' / 'balance'))
+    import mini_boss_seats
+    return set(mini_boss_seats.SEATS) | set(mini_boss_seats.ESCORTS)
+
+
 def _moved() -> dict:
     """The kinds tools/balance/monster_pass_2026_11_17.py re-placed."""
     sys.path.insert(0, str(ROOT / 'tools' / 'balance'))
@@ -924,6 +932,20 @@ def apply(data: dict) -> list[str]:
                    if isinstance(a, dict)}
             want['attacks'] = [dict(a, damage=dmg.get(a.get('name'), a.get('damage')))
                                for a in want.get('attacks') or []]
+        # A mini-boss's seat by lore and its signature drop are decided by
+        # tools/balance/mini_boss_seats.py (ruling 13, 2026-11-17: Stheno and
+        # Euryale come for Medusa's killer on floor 44): the ones already
+        # written win.
+        if isinstance(cur, dict) and mid in _seated():
+            for k in ('peak_floor', 'min_level', 'harvest_tier', 'spawn_chance'):
+                if k in cur:
+                    want[k] = cur[k]
+            if isinstance(want.get('treasure'), dict):
+                tr = dict(want['treasure'])
+                for k in ('item_tier', 'unique_drop_id', 'gold'):
+                    if k in (cur.get('treasure') or {}):
+                        tr[k] = cur['treasure'][k]
+                want['treasure'] = tr
         # Its health and the weight of its blows, for a named foe, are decided
         # by tools/balance/mini_boss_bands.py (mini-boss tuning, 2026-11-14):
         # the ones already written win.

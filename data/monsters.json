@@ -4975,15 +4975,15 @@
     ],
     "family": "legend",
     "pronoun": "she",
-    "harvest_tier": 3,
+    "harvest_tier": 2,
     "treasure": {
       "gold": [
-        520,
+        530,
         980
       ],
       "item_chance": 1.0,
       "item_tier": 2,
-      "unique_drop_id": null,
+      "unique_drop_id": "eyes_of_lamia",
       "boss_scroll_id": "scroll_of_lamia",
       "purse": "kept"
     },
@@ -24922,11 +24922,11 @@
     ],
     "family": "vermin",
     "pronoun": "she",
-    "harvest_tier": 3,
+    "harvest_tier": 2,
     "treasure": {
       "gold": [
         340,
-        620
+        630
       ],
       "item_chance": 1.0,
       "item_tier": 2,
@@ -24953,24 +24953,24 @@
       160,
       100
     ],
-    "hp": "526d8+268",
+    "hp": "394d8+203",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 8,
-    "peak_floor": 21,
+    "peak_floor": 18,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 19,
+    "min_level": 16,
     "attacks": [
       {
         "name": "Crush",
-        "damage": "2d4+1",
+        "damage": "2d4",
         "type": "blunt",
         "delivery": "grapple"
       },
       {
         "name": "Red-Hot Hug",
-        "damage": "2d6+1",
+        "damage": "2d6",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.35,
@@ -24993,14 +24993,14 @@
     ],
     "family": "constructs",
     "pronoun": "he",
-    "harvest_tier": 3,
+    "harvest_tier": 2,
     "treasure": {
       "gold": [
-        710,
-        1330
+        620,
+        1150
       ],
       "item_chance": 1.0,
-      "item_tier": 3,
+      "item_tier": 2,
       "unique_drop_id": "bronze_aegis",
       "boss_scroll_id": "scroll_of_talos",
       "purse": "kept"
@@ -25029,18 +25029,18 @@
       100,
       160
     ],
-    "hp": "1302d8+1173",
+    "hp": "3142d8+2830",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 7,
-    "peak_floor": 24,
+    "thac0": 4,
+    "peak_floor": 37,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 22,
+    "min_level": 35,
     "attacks": [
       {
         "name": "Bite",
-        "damage": "5d4+6",
+        "damage": "7d4+9",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.45,
@@ -25049,7 +25049,7 @@
       },
       {
         "name": "Claw",
-        "damage": "3d4+4",
+        "damage": "4d4+7",
         "type": "slash",
         "delivery": "blow"
       }
@@ -25070,8 +25070,8 @@
     "harvest_tier": 3,
     "treasure": {
       "gold": [
-        810,
-        1500
+        1220,
+        2270
       ],
       "item_chance": 1.0,
       "item_tier": 3,
@@ -25141,7 +25141,7 @@
     "treasure": {
       "gold": [
         970,
-        1790
+        1800
       ],
       "item_chance": 1.0,
       "item_tier": 3,
@@ -25210,7 +25210,7 @@
     "harvest_tier": 3,
     "treasure": {
       "gold": [
-        1120,
+        1130,
         2090
       ],
       "item_chance": 1.0,
@@ -25240,18 +25240,18 @@
       100,
       40
     ],
-    "hp": "2301d10+4641",
+    "hp": "3351d10+6759",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 3,
-    "peak_floor": 39,
+    "thac0": 1,
+    "peak_floor": 47,
     "spread": 2,
     "peak_weight": 0.0,
     "min_level": 37,
     "attacks": [
       {
         "name": "Fire Breath",
-        "damage": "4d6+7",
+        "damage": "5d6+7",
         "type": "fire",
         "piercing": true,
         "effect": "burning",
@@ -25261,7 +25261,7 @@
       },
       {
         "name": "Breath of Smoke",
-        "damage": "1d6+5",
+        "damage": "1d6+7",
         "type": "fire",
         "effect": "blinded",
         "effect_chance": 0.4,
@@ -25282,14 +25282,14 @@
     ],
     "family": "giants",
     "pronoun": "he",
-    "harvest_tier": 3,
+    "harvest_tier": 4,
     "treasure": {
       "gold": [
-        1280,
-        2380
+        1540,
+        2850
       ],
       "item_chance": 1.0,
-      "item_tier": 3,
+      "item_tier": 4,
       "unique_drop_id": "vulcans_brand",
       "boss_scroll_id": "scroll_of_cacus",
       "purse": "kept"
@@ -25315,18 +25315,18 @@
       180,
       100
     ],
-    "hp": "2369d10+5219",
+    "hp": "2479d10+5449",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
+    "peak_floor": 45,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 42,
+    "min_level": 43,
     "attacks": [
       {
         "name": "Rake",
-        "damage": "6d8+7",
+        "damage": "7d8+5",
         "type": "slash",
         "delivery": "blow"
       },
@@ -25338,7 +25338,7 @@
       },
       {
         "name": "Whispered Riddle",
-        "damage": "2d4",
+        "damage": "1d4+2",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.4,
@@ -25358,11 +25358,11 @@
     ],
     "family": "legend",
     "pronoun": "she",
-    "harvest_tier": 3,
+    "harvest_tier": 4,
     "treasure": {
       "gold": [
-        1440,
-        2670
+        1470,
+        2730
       ],
       "item_chance": 1.0,
       "item_tier": 4,
@@ -25428,15 +25428,15 @@
     ],
     "family": "demons",
     "pronoun": "she",
-    "harvest_tier": 3,
+    "harvest_tier": 4,
     "treasure": {
       "gold": [
         1630,
-        3020
+        3030
       ],
       "item_chance": 1.0,
       "item_tier": 4,
-      "unique_drop_id": null,
+      "unique_drop_id": "rangdas_keris",
       "boss_scroll_id": "scroll_of_rangda",
       "purse": "kept"
     },
@@ -25461,18 +25461,18 @@
       180,
       80
     ],
-    "hp": "3085d10+8855",
+    "hp": "290d10+833",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 0,
-    "peak_floor": 55,
+    "thac0": 9,
+    "peak_floor": 17,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 53,
+    "min_level": 15,
     "attacks": [
       {
         "name": "Claw",
-        "damage": "7d6+22",
+        "damage": "3d6+6",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.35,
@@ -25481,7 +25481,7 @@
       },
       {
         "name": "Bite",
-        "damage": "4d4+4",
+        "damage": "1d4+3",
         "type": "pierce",
         "delivery": "bite"
       }
@@ -25495,14 +25495,14 @@
     ],
     "family": "great_beasts",
     "pronoun": "it",
-    "harvest_tier": 3,
+    "harvest_tier": 2,
     "treasure": {
       "gold": [
-        1780,
-        3320
+        590,
+        1090
       ],
       "item_chance": 1.0,
-      "item_tier": 4,
+      "item_tier": 2,
       "boss_scroll_id": "scroll_of_the_lion",
       "unique_drop_id": "hide_of_nemean_lion",
       "purse": "kept"
@@ -25529,18 +25529,18 @@
       120,
       80
     ],
-    "hp": "2430d10+5951",
+    "hp": "2215d10+5421",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -1,
-    "peak_floor": 60,
+    "peak_floor": 58,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 58,
+    "min_level": 56,
     "attacks": [
       {
         "name": "Iron Bite",
-        "damage": "8d6+34",
+        "damage": "8d6+32",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.45,
@@ -25549,7 +25549,7 @@
       },
       {
         "name": "Hex",
-        "damage": "2d6+10",
+        "damage": "2d6+9",
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 0.35,
@@ -25571,11 +25571,11 @@
     ],
     "family": "fair_folk",
     "pronoun": "she",
-    "harvest_tier": 3,
+    "harvest_tier": 4,
     "treasure": {
       "gold": [
-        1940,
-        3610
+        1880,
+        3490
       ],
       "item_chance": 1.0,
       "item_tier": 4,
@@ -25647,14 +25647,14 @@
     ],
     "family": "serpents",
     "pronoun": "it",
-    "harvest_tier": 3,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2130,
+        2140,
         3960
       ],
       "item_chance": 1.0,
-      "item_tier": 4,
+      "item_tier": 5,
       "boss_scroll_id": "scroll_of_jormungandr",
       "unique_drop_id": "serpent_scale_mail",
       "purse": "kept"
@@ -25678,24 +25678,24 @@
       100,
       40
     ],
-    "hp": "4829d10+12941",
+    "hp": "2421d10+6485",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": -3,
-    "peak_floor": 69,
+    "thac0": 1,
+    "peak_floor": 53,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 67,
+    "min_level": 51,
     "attacks": [
       {
         "name": "Shadow Strike",
-        "damage": "7d8+31",
+        "damage": "5d8+25",
         "type": "drain",
         "delivery": "blow"
       },
       {
         "name": "Darkness Shroud",
-        "damage": "4d6+6",
+        "damage": "3d6+5",
         "type": "shadow",
         "effect": "blinded",
         "effect_chance": 0.45,
@@ -25715,11 +25715,11 @@
     ],
     "family": "great_beasts",
     "pronoun": "it",
-    "harvest_tier": 3,
+    "harvest_tier": 4,
     "treasure": {
       "gold": [
-        2230,
-        4130
+        1730,
+        3200
       ],
       "item_chance": 1.0,
       "item_tier": 4,
@@ -25785,10 +25785,10 @@
     ],
     "family": "fair_folk",
     "pronoun": "he",
-    "harvest_tier": 3,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2380,
+        2390,
         4430
       ],
       "item_chance": 1.0,
@@ -25820,14 +25820,14 @@
       100,
       200
     ],
-    "hp": "8067d10+21409",
+    "hp": "7767d10+20610",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": -4,
-    "peak_floor": 78,
+    "thac0": -3,
+    "peak_floor": 77,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 76,
+    "min_level": 75,
     "attacks": [
       {
         "name": "Vortex Pull",
@@ -25856,11 +25856,11 @@
     ],
     "family": "legend",
     "pronoun": "she",
-    "harvest_tier": 3,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2510,
-        4660
+        2480,
+        4610
       ],
       "item_chance": 1.0,
       "item_tier": 5,
@@ -25888,11 +25888,11 @@
       60,
       60
     ],
-    "hp": "9711d10+25930",
+    "hp": "10163d10+27141",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -4,
-    "peak_floor": 80,
+    "peak_floor": 82,
     "spread": 2,
     "peak_weight": 0.0,
     "min_level": 78,
@@ -25931,11 +25931,11 @@
     ],
     "family": "demons",
     "pronoun": "it",
-    "harvest_tier": 3,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2570,
-        4780
+        2640,
+        4900
       ],
       "item_chance": 1.0,
       "item_tier": 5,
@@ -25964,18 +25964,18 @@
       220,
       255
     ],
-    "hp": "9425d10+23816",
+    "hp": "5526d10+13964",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": -5,
-    "peak_floor": 85,
+    "thac0": -2,
+    "peak_floor": 69,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 83,
+    "min_level": 67,
     "attacks": [
       {
         "name": "Ice Claw",
-        "damage": "12d10+15",
+        "damage": "9d10+14",
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -25984,7 +25984,7 @@
       },
       {
         "name": "Hunger Drain",
-        "damage": "7d6+12",
+        "damage": "5d6+11",
         "type": "drain",
         "effect": "diseased",
         "effect_chance": 0.55,
@@ -26006,11 +26006,11 @@
     ],
     "family": "shapeshifters",
     "pronoun": "he",
-    "harvest_tier": 3,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2730,
-        5070
+        2230,
+        4140
       ],
       "item_chance": 1.0,
       "item_tier": 5,
@@ -26041,18 +26041,18 @@
       180,
       220
     ],
-    "hp": "6503d12+36937",
+    "hp": "4450d12+25271",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": -5,
-    "peak_floor": 90,
+    "thac0": -3,
+    "peak_floor": 76,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 88,
+    "min_level": 74,
     "attacks": [
       {
         "name": "Spectral Blade",
-        "damage": "4d10+8",
+        "damage": "3d10+8",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -26061,7 +26061,7 @@
       },
       {
         "name": "Horn Blast",
-        "damage": "2d6+5",
+        "damage": "2d6+3",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.35,
@@ -26082,11 +26082,11 @@
     ],
     "family": "fair_folk",
     "pronoun": "he",
-    "harvest_tier": 3,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2890,
-        5360
+        2450,
+        4550
       ],
       "item_chance": 1.0,
       "item_tier": 5,
@@ -26124,7 +26124,7 @@
     "attacks": [
       {
         "name": "Web Trick",
-        "damage": "11d10+29",
+        "damage": "10d10+35",
         "type": "blunt",
         "effect": "confused",
         "effect_chance": 0.55,
@@ -26156,10 +26156,10 @@
     ],
     "family": "vermin",
     "pronoun": "he",
-    "harvest_tier": 3,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2950,
+        2960,
         5480
       ],
       "item_chance": 1.0,
@@ -26191,7 +26191,7 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -5,
-    "peak_floor": 95,
+    "peak_floor": 96,
     "spread": 2,
     "peak_weight": 0.0,
     "min_level": 93,
@@ -26232,11 +26232,11 @@
     ],
     "family": "dragons",
     "pronoun": "it",
-    "harvest_tier": 3,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
-        3040,
-        5660
+        3080,
+        5720
       ],
       "item_chance": 1.0,
       "item_tier": 5,
@@ -26268,7 +26268,7 @@
     "hp": "11648d10+29328",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": -5,
+    "thac0": -4,
     "peak_floor": 83,
     "spread": 2,
     "peak_weight": 0.0,
@@ -33535,13 +33535,13 @@
       70
     ],
     "ai_pattern": "aggressive",
-    "hp": "1514d10+2535",
+    "hp": "836d10+1403",
     "speed": 10,
-    "thac0": 2,
+    "thac0": 5,
     "attacks": [
       {
         "name": "Warhammer",
-        "damage": "4d6+9",
+        "damage": "3d6+8",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.2,
@@ -33550,7 +33550,7 @@
       },
       {
         "name": "Gauntlet Sweep",
-        "damage": "3d6+8",
+        "damage": "2d6+8",
         "type": "blunt",
         "delivery": "trample"
       }
@@ -33569,21 +33569,22 @@
     ],
     "family": "mortals",
     "pronoun": "he",
-    "min_level": 35,
-    "peak_floor": 42,
+    "min_level": 30,
+    "peak_floor": 32,
     "spread": 8,
     "peak_weight": 0.0,
     "frequency": 1,
     "spawn_chance": 0.3,
-    "harvest_tier": 4,
+    "harvest_tier": 3,
     "treasure": {
       "gold": [
         120,
         240
       ],
       "item_chance": 0.9,
-      "item_tier": 5,
-      "purse": "kept"
+      "item_tier": 3,
+      "purse": "kept",
+      "unique_drop_id": "patriarchs_gavel"
     },
     "lore": "He was father to a line of tyrants and he outlived every one of them. Sons, grandsons and usurpers went into the family crypt while he sat on, sealed in the plate he wore to his coronation, until the kingdom itself gave out beneath him. The dungeon found him still expecting an audience. His guards still answer his call. He grants each visitor a hearing, and it is short, and it ends with the hammer. Blades skate off the old plate. Lightning finds the man inside it.",
     "is_boss": true,
@@ -34114,7 +34115,7 @@
     "ai_pattern": "summoner",
     "hp": "5314d10+7072",
     "speed": 9,
-    "thac0": -2,
+    "thac0": -1,
     "summon_kind": [
       "skeleton_horde",
       "death_knight_lord"
@@ -34171,7 +34172,8 @@
       ],
       "item_chance": 0.95,
       "item_tier": 5,
-      "purse": "kept"
+      "purse": "kept",
+      "unique_drop_id": "crones_burial_veil"
     },
     "lore": "She told fortunes in a market town and told them too plainly: which child would not see spring, which husband would not come home. The town buried her alive for it. In the dark of the grave she went on whispering, and after some years things began to whisper back. Now specters and wraiths come at her call like hounds to a huntsman. Her voice carries no farther than a breath, yet every listener hears his own death foretold in it, with the day and the hour. She has not been wrong yet.",
     "is_boss": true,
@@ -34789,9 +34791,9 @@
       30
     ],
     "ai_pattern": "aggressive",
-    "hp": "11539d10+16478",
+    "hp": "12077d10+17244",
     "speed": 11,
-    "thac0": -5,
+    "thac0": -4,
     "attacks": [
       {
         "name": "Exsanguinating Blade",
@@ -34828,7 +34830,7 @@
     "family": "demons",
     "pronoun": "he",
     "min_level": 75,
-    "peak_floor": 82,
+    "peak_floor": 84,
     "spread": 8,
     "peak_weight": 0.0,
     "frequency": 1,
@@ -34841,7 +34843,8 @@
       ],
       "item_chance": 0.95,
       "item_tier": 5,
-      "purse": "kept"
+      "purse": "kept",
+      "unique_drop_id": "exsanguinating_blade"
     },
     "lore": "An older grade of fiend, from the days when bargains were written in blood and signed in the same. He keeps a ledger bound in something that was never calfskin. The column of debts is long, the column of repayments is short, and the interest is what it has always been. Kings signed with him for victories and merchants for fair winds, and he has collected from every one. He fights the way he trades, opening a vein and waiting. Steel only feeds the account. Fire and a blessing cancel it.",
     "is_boss": true,
@@ -34953,7 +34956,7 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -5,
-    "peak_floor": 85,
+    "peak_floor": 88,
     "spread": 5,
     "peak_weight": 0.0,
     "min_level": 85,
@@ -34971,35 +34974,35 @@
     "attacks": [
       {
         "name": "Cold Breath",
-        "damage": "5d10+7",
+        "damage": "5d10+9",
         "type": "cold",
         "piercing": true,
         "delivery": "breath"
       },
       {
         "name": "Fire Breath",
-        "damage": "5d10+10",
+        "damage": "5d10+12",
         "type": "fire",
         "piercing": true,
         "delivery": "breath"
       },
       {
         "name": "Lightning Breath",
-        "damage": "5d10+8",
+        "damage": "5d10+10",
         "type": "lightning",
         "piercing": true,
         "delivery": "breath"
       },
       {
         "name": "Acid Breath",
-        "damage": "5d10+7",
+        "damage": "5d10+9",
         "type": "acid",
         "piercing": true,
         "delivery": "breath"
       },
       {
         "name": "Poison Breath",
-        "damage": "5d10+7",
+        "damage": "5d10+9",
         "type": "poison",
         "piercing": true,
         "delivery": "breath"
@@ -35033,8 +35036,8 @@
     "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2730,
-        5070
+        2830,
+        5250
       ],
       "item_chance": 1.0,
       "item_tier": 5,
@@ -35043,7 +35046,7 @@
     },
     "lore": "In the Babylonian Enuma Elish, Tiamat is the salt sea, mother of the first gods and of the monsters she raised against them. The young god Marduk drove the winds into her open jaws, shot an arrow down her throat, and split her body in two to make the sky and the earth. Later storytellers gave her five dragon heads and named her queen of evil dragonkind. That is the shape that wakes beneath the dungeon: five crowned heads, each breathing a different ruin, frost, flame, lightning, acid and venom, and behind them the oldest grudge in the world.",
     "frequency": 1,
-    "spawn_chance": 1.0,
+    "spawn_chance": 0.3,
     "omen": "The air tastes of salt, and the stone is wet with something that is not water.",
     "thac0_lore": -14,
     "shrugs_off": [],
@@ -35065,7 +35068,7 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -5,
-    "peak_floor": 93,
+    "peak_floor": 94,
     "spread": 4,
     "peak_weight": 0.0,
     "min_level": 92,
@@ -35139,8 +35142,8 @@
     "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2980,
-        5540
+        3020,
+        5600
       ],
       "item_chance": 1.0,
       "item_tier": 5,
@@ -35150,7 +35153,7 @@
     },
     "lore": "The Book of Tobit names Asmodeus as the demon who killed seven husbands of Sarah, each on his wedding night. On the advice of the angel Raphael, young Tobias burned the heart and liver of a fish, and the smoke drove the demon to the far reaches of Egypt, where Raphael bound him. Later tradition made him a prince of Hell who rules by contract instead of fury. Every soul he owns signed its own surrender, and the ruby rod in his hand seals each bargain. He has not forgiven the fish.",
     "frequency": 1,
-    "spawn_chance": 1.0,
+    "spawn_chance": 0.3,
     "omen": "Somewhere on this floor a table is laid for two, and a bell is rung for dinner.",
     "thac0_lore": -12,
     "shrugs_off": [],
@@ -35235,7 +35238,7 @@
     "treasure": {
       "gold": [
         2890,
-        5360
+        5370
       ],
       "item_chance": 1.0,
       "item_tier": 5,
@@ -35245,7 +35248,7 @@
     "lore": "Surtur, whom the Norse poets called Surt, stands guard at the border of Muspelheim, the realm of fire, with a sword that outshines the sun. The Voluspa foretells that at Ragnarok he will ride from the south with flame before and behind him, cut down the god Freyr, and cast fire over the whole earth until it sinks into the sea. He has not yet been called to that battle. Until the horn sounds he waits below, and the stone around him runs like wax. Cold is the one thing a lord of fire has reason to respect.",
     "frequency": 1,
     "enraged_pattern": "aggressive",
-    "spawn_chance": 1.0,
+    "spawn_chance": 0.3,
     "omen": "The stone here is warm and runs like wax.",
     "thac0_lore": -10,
     "shrugs_off": [],
@@ -35265,14 +35268,14 @@
       220,
       255
     ],
-    "hp": "9547d12+47836",
+    "hp": "7898d12+39564",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": -5,
-    "peak_floor": 85,
+    "thac0": -4,
+    "peak_floor": 78,
     "spread": 4,
     "peak_weight": 0.0,
-    "min_level": 82,
+    "min_level": 76,
     "multi_attack_count": 2,
     "enraged_multi_attack_count": 3,
     "enrage_at_hp_pct": 0.35,
@@ -35280,14 +35283,14 @@
     "attacks": [
       {
         "name": "Frostmaul Smash",
-        "damage": "6d10+19",
+        "damage": "5d10+20",
         "type": "cold",
         "subtype": "blunt",
         "delivery": "blow"
       },
       {
         "name": "Icy Breath",
-        "damage": "5d10+15",
+        "damage": "5d10+11",
         "type": "cold",
         "piercing": true,
         "effect": "frozen",
@@ -35297,7 +35300,7 @@
       },
       {
         "name": "Hurled Glacier",
-        "damage": "5d8+15",
+        "damage": "5d8+12",
         "type": "cold",
         "effect": "stunned",
         "effect_chance": 0.3,
@@ -35306,7 +35309,7 @@
       },
       {
         "name": "Rime Aura",
-        "damage": "2d10+15",
+        "damage": "2d10+13",
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -35337,8 +35340,8 @@
     "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2730,
-        5070
+        2510,
+        4660
       ],
       "item_chance": 1.0,
       "item_tier": 5,
@@ -35348,7 +35351,7 @@
     "lore": "Ymir was the first of the frost giants, born where the ice of Niflheim met the sparks of Muspelheim. Odin and his brothers Vili and Ve killed him and built the world from the corpse: his flesh the soil, his blood the sea, his bones the mountains, his skull the dome of the sky. The blood drowned all his kin but Bergelmir and his wife. This giant claims descent from neither. It says it was there before the flood, and it carries the cold of that first morning in its breath.",
     "frequency": 1,
     "enraged_pattern": "aggressive",
-    "spawn_chance": 1.0,
+    "spawn_chance": 0.3,
     "omen": "Frost has grown on the inside of the walls.",
     "thac0_lore": -9,
     "shrugs_off": [],
@@ -35372,7 +35375,7 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -5,
-    "peak_floor": 82,
+    "peak_floor": 86,
     "spread": 3,
     "peak_weight": 0.0,
     "min_level": 80,
@@ -35381,13 +35384,13 @@
     "attacks": [
       {
         "name": "Stone Heart Strike",
-        "damage": "5d10+18",
+        "damage": "5d10+20",
         "type": "blunt",
         "delivery": "blow"
       },
       {
         "name": "Hurled Whetstone",
-        "damage": "4d8+16",
+        "damage": "4d8+18",
         "type": "blunt",
         "effect": "bleeding",
         "effect_chance": 0.35,
@@ -35396,7 +35399,7 @@
       },
       {
         "name": "Stone Skin Smash",
-        "damage": "4d10+16",
+        "damage": "4d10+18",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.4,
@@ -35428,11 +35431,11 @@
     ],
     "is_boss": false,
     "is_mini_boss": true,
-    "harvest_tier": 4,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
-        2640,
-        4890
+        2770,
+        5130
       ],
       "item_chance": 1.0,
       "item_tier": 5,
@@ -35442,7 +35445,7 @@
     "lore": "Hrungnir was the strongest of the giants, with a heart of hard stone, sharp-edged and three-cornered, and a head and shield of stone to match. Drunk in Asgard, he boasted he would carry Valhalla home, and Thor met him in a duel at the border. The giant threw his whetstone and Thor threw Mjolnir. The hammer broke the whetstone in the air and then broke Hrungnir's skull, and a splinter of the stone stayed lodged in Thor's head ever after. The ghost still walks, still hurling shards, still demanding a rematch.",
     "frequency": 1,
     "enraged_pattern": "aggressive",
-    "spawn_chance": 1.0,
+    "spawn_chance": 0.3,
     "enraged_multi_attack_count": 3,
     "omen": "Chips of whetstone are scattered across the floor, as if thrown.",
     "thac0_lore": -8,
@@ -35509,7 +35512,7 @@
       ],
       "item_chance": 1.0,
       "item_tier": 2,
-      "unique_drop_id": "armor:cloak:hide:elementward:3",
+      "unique_drop_id": "armor:cloak:hide:elementward:2",
       "purse": "kept"
     },
     "lore": "The bestiaries place the bonnacon in Paeonia and give it a bull's body and a horse's mane. Its horns curl so far back on themselves that they cannot hurt anyone, which Pliny noted with some sympathy. It has another defence. It runs, and as it runs it sprays dung across the ground behind it, and whatever the dung touches burns as if set alight. Monks painted this in the margins of their books for three hundred years, and the knight in the picture always looks as if he regrets his career.",
@@ -35531,18 +35534,18 @@
       90,
       70
     ],
-    "hp": "1092d8+1069",
+    "hp": "277d8+271",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 6,
-    "peak_floor": 27,
+    "thac0": 11,
+    "peak_floor": 12,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 25,
+    "min_level": 10,
     "attacks": [
       {
         "name": "Tusk Gore",
-        "damage": "5d4+6",
+        "damage": "3d4+3",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.3,
@@ -35551,7 +35554,7 @@
       },
       {
         "name": "Trampling Charge",
-        "damage": "2d6+6",
+        "damage": "1d6+4",
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.25,
@@ -35572,15 +35575,15 @@
     ],
     "family": "great_beasts",
     "pronoun": "it",
-    "harvest_tier": 4,
+    "harvest_tier": 2,
     "treasure": {
       "gold": [
-        900,
-        1680
+        430,
+        800
       ],
       "item_chance": 1.0,
-      "item_tier": 3,
-      "unique_drop_id": "meleager_spear",
+      "item_tier": 2,
+      "unique_drop_id": "calydonian_boar_hide",
       "purse": "kept"
     },
     "lore": "King Oeneus of Calydon gave first fruits to every god at harvest and forgot Artemis. She sent a boar. Ovid says it was bigger than a bull, with bristles like spear shafts and tusks like an elephant's, and that it trampled the vines and the corn alike. Half the heroes of Greece came to hunt it. Atalanta's arrow drew first blood, Meleager's spear ended it, and the quarrel over who should keep the hide killed more of them than the boar had.",
@@ -36664,18 +36667,18 @@
       130,
       60
     ],
-    "hp": "3452d10+3401",
+    "hp": "1142d10+1125",
     "speed": 11,
     "ai_pattern": "dancer",
-    "thac0": -3,
-    "peak_floor": 67,
+    "thac0": 2,
+    "peak_floor": 42,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 64,
+    "min_level": 40,
     "attacks": [
       {
         "name": "Bronze Claws",
-        "damage": "8d8+35",
+        "damage": "5d8+22",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.35,
@@ -36684,7 +36687,7 @@
       },
       {
         "name": "Serpent Hair",
-        "damage": "6d8+32",
+        "damage": "4d8+20",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.4,
@@ -36704,12 +36707,13 @@
     "harvest_tier": 4,
     "treasure": {
       "gold": [
-        1900,
-        3600
+        1210,
+        2240
       ],
       "item_chance": 1.0,
-      "item_tier": 5,
-      "purse": "kept"
+      "item_tier": 4,
+      "purse": "kept",
+      "unique_drop_id": "brazen_hands_of_stheno"
     },
     "lore": "Medusa was the only mortal one of three. Her sisters Stheno, the mighty, and Euryale, the far-roaming, cannot die. Hesiod gives them brazen hands and golden wings, and when Perseus fled with their sister's head they rose from their beds and chased him over the sea until the helm of Hades hid him. They have been looking for him ever since. Their gaze turns the living rigid as stone, and a killing blow only puts them down for a moment.",
     "frequency": 0,
@@ -36745,10 +36749,10 @@
     "speed": 11,
     "ai_pattern": "dancer",
     "thac0": 1,
-    "peak_floor": 67,
+    "peak_floor": 42,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 64,
+    "min_level": 40,
     "attacks": [
       {
         "name": "Euryale's Wail",
@@ -36781,11 +36785,11 @@
     "harvest_tier": 4,
     "treasure": {
       "gold": [
-        1900,
-        3600
+        1210,
+        2240
       ],
       "item_chance": 1.0,
-      "item_tier": 5,
+      "item_tier": 4,
       "purse": "kept"
     },
     "lore": "Pindar says Athena invented the music of the pipes to copy one sound: the shrill wailing Euryale raised over her beheaded sister, with the snakes in her hair keening along. Euryale has not stopped grieving and she has not stopped hunting. She goes nowhere without Stheno. Her wail drives men back, her gaze holds them where they stand, and like her sister she is immortal: she can be put down, but not for long. A polished shield or a blindfold is worth more here than a sword.",
@@ -40959,5 +40963,76 @@
       "poisoned"
     ],
     "status_weak": []
+  },
+  "polyphemus": {
+    "name": "Polyphemus",
+    "symbol": "G",
+    "color": [
+      150,
+      115,
+      75
+    ],
+    "hp": "831d10+833",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 6,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "attacks": [
+      {
+        "name": "Olive-Trunk Club",
+        "damage": "6d6+9",
+        "type": "blunt",
+        "delivery": "blow",
+        "effect": "stunned",
+        "effect_chance": 0.25,
+        "effect_duration": 1
+      },
+      {
+        "name": "Hurled Crag",
+        "damage": "4d6+8",
+        "type": "blunt",
+        "delivery": "ranged",
+        "ranged": true
+      }
+    ],
+    "resistances": [
+      "blunt"
+    ],
+    "weaknesses": [
+      "pierce"
+    ],
+    "tags": [
+      "humanoid",
+      "giant"
+    ],
+    "family": "giants",
+    "pronoun": "he",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        910,
+        1680
+      ],
+      "item_chance": 1.0,
+      "item_tier": 3,
+      "purse": "kept",
+      "unique_drop_id": "club_of_polyphemus"
+    },
+    "lore": "Polyphemus, a son of Poseidon, kept his flocks in a cave on the island of the Cyclopes and rolled a stone across its mouth that twenty-two wagons could not have moved. He shut Odysseus and his men inside and ate them two at a time. Odysseus gave him strong wine, told him his name was Nobody, and while he slept drove a stake into his one eye, a stake cut from the giant's own club of green olive wood, as long as the mast of a ship. Blind, he flung a hilltop after the ship. He has his sight back, and he has not forgotten a single face.",
+    "frequency": 0,
+    "spawn_chance": 0.4,
+    "is_mini_boss": true,
+    "omen": "Sheep are bleating somewhere on this floor, and the air smells of wet fleece and new cheese.",
+    "kill_chronicle": "Killed Polyphemus, the Cyclops who ate Odysseus's men two at a time. I stayed out from under his club, and nobody had to get him drunk first.",
+    "thac0_lore": 6,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": [
+      "confused",
+      "blinded"
+    ],
+    "peak_floor": 27,
+    "min_level": 25
   }
 }

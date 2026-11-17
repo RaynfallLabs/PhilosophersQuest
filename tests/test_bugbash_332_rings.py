@@ -284,4 +284,7 @@ def test_the_bonnacon_drops_its_own_fireproof_hide():
         spec = json.load(f)['bonnacon']['treasure']['unique_drop_id']
     _, tpl, mat, ench, lv = spec.split(':')
     cloak = items.instantiate_armor(tpl, mat, level=int(lv), ench_id=ench)
-    assert cloak.ench_id == 'elementward' and cloak.quiz_tier == 2
+    # Tier 1, the tier of the band the Bonnacon lives in (floor 6; ruling 13,
+    # 2026-11-17: tools/balance/mini_boss_seats.py DROPS). It was a level-3
+    # cloak, tier 2.
+    assert cloak.ench_id == 'elementward' and cloak.quiz_tier == 1

@@ -242,5 +242,9 @@ def test_assassin_ring_silent_walk():
 
 
 def test_starter_plot_lock_quiz_tier_dropped():
-    for sid in ('anubis_scales', 'sphinx_crown', 'sailors_amulet', 'prophets_amulet'):
-        assert ACCESSORY[sid]['quiz_tier'] == 2
+    assert ACCESSORY['prophets_amulet']['quiz_tier'] == 2
+    # The three mini-boss amulets ask the quiz of the band their foe lives in
+    # (ruling 13, 2026-11-17: tools/content/mini_boss_drops_2026_11_17.py):
+    # the Sphinx 45 and Set's Jackal 53 (tier 3), Charybdis 77 (tier 4).
+    for sid, tier in (('sphinx_crown', 3), ('anubis_scales', 3), ('sailors_amulet', 4)):
+        assert ACCESSORY[sid]['quiz_tier'] == tier, sid

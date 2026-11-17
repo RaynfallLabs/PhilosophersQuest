@@ -1,0 +1,35 @@
+[
+ {
+  "id": "polyphemus",
+  "family": "cyclopes_named",
+  "rank": 3,
+  "key": "magenta",
+  "what": "Polyphemus, the cyclops of the Odyssey, a one-eyed giant shepherd of Greek myth, a one-eyed monster. His face has no ordinary eyes: where a man's two eyes would be there is only smooth skin. Instead one single enormous round eyeball, as wide as half his face, bulges from the middle of his forehead above his nose, wide open, with a white eyeball and a big round dark brown iris; one single thick black eyebrow curves over it. He is a gigantic, heavy, thick-limbed giant man, bigger and wilder than any other cyclops, with a big head, a wild tangled mane of long black hair, a long matted black beard down to his chest, a broad flat nose, a wide mouth with crooked teeth and huge knotted arms.",
+  "colours": "weathered dark sun-browned skin, one giant central eyeball with a white eyeball and a big dark brown iris, long wild black hair and a long black beard, a shaggy cloak of thick creamy white sheep fleece, a loincloth of brown goatskin, a club of rough grey-brown olive wood with a few small silver-grey olive leaves.",
+  "wears": "He wears a shaggy cloak of thick creamy white sheep fleece, fleece outward, hanging from both shoulders down his back to his knees, and a loincloth of rough brown goatskin. No metal, no armour, nothing on his head, no shoes.",
+  "holds": "He holds exactly one enormous club in his right hand: a heavy log of olive wood as thick as his own thigh and as long as he is tall, with rough furrowed grey-brown bark, a few stubby cut-off branch ends, and one small sprig of silver-grey olive leaves near its top end. His left hand is empty and open.",
+  "pose": "He stands tall on two legs with his feet apart, the heavy olive-log club raised over his right shoulder ready to swing, his left hand open at his side, his big head lifted and turned to the viewer with the one great eye wide open and his mouth bellowing.",
+  "must_show": [
+   "exactly one eye: one enormous eye in the centre of the face, big enough to read in the small sprite",
+   "long wild black hair and a long black beard",
+   "a shaggy creamy white sheep-fleece cloak on both shoulders",
+   "one huge club: a thick log of grey-brown olive wood with a sprig of leaves"
+  ],
+  "must_not_show": [
+   "two eyes",
+   "a boulder or rock in his hands",
+   "armour",
+   "helmet",
+   "metal weapon",
+   "sword",
+   "axe",
+   "shield",
+   "sheep or ram beside him",
+   "second figure",
+   "horns",
+   "grey or blue skin",
+   "bald head",
+   "a thin leafy sapling"
+  ]
+ }
+]

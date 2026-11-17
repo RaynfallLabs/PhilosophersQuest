@@ -1,0 +1,26 @@
+[
+ {
+  "id": "quest_polyphemus",
+  "family": "bosses_named",
+  "rank": 3,
+  "body": "badge_scene",
+  "what": "Polyphemus the Cyclops, seen close from the chest up in the mouth of his cave above the sea: a huge shaggy giant whose face has no ordinary eyes, where a man's two eyes would be there is only smooth skin; instead one single enormous round eyeball, as wide as half his face, bulges from the middle of his forehead above his nose, wide open, with a white eyeball and a big dark brown iris, under one thick black brow. Long wild black hair and a long matted black beard; a cloak of thick creamy white sheep fleece over his shoulders; a heavy log of grey-brown olive wood resting on his right shoulder as a club. Behind him the dark rock of the cave mouth and, far below, a small black ship with one white sail on a bright blue sea.",
+  "colours": "Weathered dark sun-browned skin; one huge white eyeball with a dark brown iris; long black hair and beard; creamy white fleece; a grey-brown olive-log club; dark grey cave rock; a bright blue sea and sky; a small black ship with a white sail.",
+  "must_show": [
+   "exactly one huge eye in the middle of his forehead",
+   "a shaggy black-bearded giant in white fleece",
+   "an olive-log club on his shoulder",
+   "a small ship on the sea behind"
+  ],
+  "must_not_show": [
+   "two eyes",
+   "second figure",
+   "sheep in front of him",
+   "blood",
+   "armour",
+   "helmet",
+   "sword",
+   "writing"
+  ]
+ }
+]
