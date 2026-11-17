@@ -266,7 +266,15 @@ def sheet(images: dict) -> Image.Image:
 
 
 def main(argv) -> None:
+    # RETIRED 2026-11-16 (Brandon: "the icon for silver dust is terrible..
+    # looks like the old art we had"): these icons are painted by the
+    # pipeline now (briefs/arsenal_redo.json). Writing them from code again
+    # would put the old look back, so only the review sheet is made.
     images = {k: f() for k, f in SPRITES.items()}
+    if '--sheet' not in argv and '--overwrite-painted-art' not in argv:
+        print("Retired: these icons are painted (tools/content/genart/briefs/arsenal_redo.json). "
+              "Only the sheet is written.")
+        argv = list(argv) + ['--sheet']
     if '--sheet' not in argv:
         for k, im in images.items():
             path = os.path.join(ITEMS, f"{k}.png")

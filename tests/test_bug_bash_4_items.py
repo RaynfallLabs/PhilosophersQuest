@@ -568,7 +568,9 @@ def test_ui03_ui04_kit_hides_unknown_material_and_shows_real_weight():
     assert fcells[4] == f"{food.weight:.1f}" and fcells[4] != '0'
     lines = [str(line[0]) for line in g._kit_detail_lines_for_item('weapons', 'pack', w)]
     assert 'identification level' not in ' '.join(lines)
-    assert any('until you identify it' in t for t in lines)
+    # 2026-11-16: the card says it plainly, in one line, before anything else.
+    assert any(t.startswith('Not identified yet: identify it') for t in lines)
+    assert not any(t.lower().startswith('iron') for t in lines)
 
 
 # ---------------------------------------------------------------- UI-16

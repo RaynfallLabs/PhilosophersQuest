@@ -1624,10 +1624,10 @@ _QUIRK_PROGRESS = {
     'sage_counsel':  ('history_correct_total', 80, False),
     'ouroboros':     ('total_correct_answers', 6000, False),
     'diogenes':     ('levels_without_shard', 10, False),
-    # Duck of Doom: wear the cursed +2 AC headgear for 2026 turns to
-    # hatch the Waddlekind pet. Progress key counts turns the Duck
-    # has been welded to the player's head.
-    'duck_of_doom':  ('duck_of_doom_turns', 2026, False),
+    # Duck of Doom: wear the cursed headgear (it does nothing for you) for
+    # 10,000 turns to hatch the Waddlekind pet. Progress key counts turns
+    # the Duck has sat on the player's head.
+    'duck_of_doom':  ('duck_of_doom_turns', 10000, False),
     # --- added 2026-10-04 ---
     'eratosthenes':  ('geography_mastery_correct', 100, False),
     'aesop':         ('animal_mastery_correct', 150, False),
@@ -1832,7 +1832,7 @@ _QUIRK_TRIGGER = {
     'sage_counsel':  "You answered 80 history questions correctly.",
     'ouroboros':     "You answered 6,000 questions correctly in one run.",
     'diogenes':     "You dropped the Philosopher's Shard and survived 10 levels without it.",
-    'duck_of_doom': "You wore the Duck of Doom on your head for 2,026 turns without removing it.",
+    'duck_of_doom': "You wore the Duck of Doom on your head for 10,000 turns without removing it.",
     # --- added 2026-10-04 ---
     'eratosthenes':  "You answered 100 geography questions correctly.",
     'aesop':         "You answered 150 animal questions correctly.",

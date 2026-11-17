@@ -2856,6 +2856,15 @@ class CombatMixin:
         kind = getattr(m, 'kind', '')
         if not kind:
             return
+        # One still hidden (an invisible one, a lurker that has not sprung, a
+        # mimic in its disguise) is named "something" by the game: nothing is
+        # told of it until it is seen for what it is (Brandon 2026-11-16:
+        # "You know what something is made of. Huh?").
+        from monster import the_name as _the_name
+        if _the_name(m).lower().startswith('something') or (
+                not getattr(m, '_aware', False)
+                and getattr(m, 'ai_pattern', '') in ('ambush', 'mimic')):
+            return
         state = self.__dict__.setdefault('_dungeon_alive', {'domains_seen': []})
         told = state.setdefault('told_level', {})
         # A save from before the two versions kept only the kinds told.
@@ -2864,26 +2873,20 @@ class CombatMixin:
         if level <= was:
             return
         told[kind] = level
-        named = False
         # What the eye sees of it (a monster's `sight_sign`: Old Nickel's
         # leaf cloak), said the first time whatever the hero knows of it.
         if was < family_lore.UNKNOWN and getattr(m, 'sight_sign', ''):
             import senses as _senses
             self.add_message(_senses._fill(m, m.sight_sign), 'warning')
-            named = True
         keys = tells.abilities(m)
         if keys:
             fid = family_lore.family_of(m)
             self.add_message(tells.line(m, keys[0], level, family_lore.kin(fid) if fid else ''),
                              'warning')
-            named = True
         if level >= family_lore.KNOWN:
-            lore = tells.lore_lines(m)
-            # A kind with no tell and no sign: say which creature the lines
-            # are about, or "it" has no one to stand for (bug bash WB-E02).
-            if lore and not named:
-                self.add_message(tells.known_lead(m), 'info')
-            for line in lore:
+            # One line, naming the creature itself (tells.lore_line): no lead
+            # line before it and no line per kind of damage.
+            for line in tells.lore_lines(m):
                 self.add_message(line, 'info')
 
     def _scorch_line(self, x0: int, y0: int, x1: int, y1: int) -> None:

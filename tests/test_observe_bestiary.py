@@ -196,7 +196,7 @@ def test_o_on_a_monster_known_by_its_family_says_what_it_does_not_how_to_beat_it
     recent = _recent(g)
     assert 'hold you still' in recent and 'distance' not in recent
     assert 'not how to beat it' in recent
-    assert 'hurt it most' not in recent and 'do little to it' not in recent
+    assert 'weak to' not in recent and 'resists' not in recent
     lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
     assert not any(t.startswith('Weak to') or t.startswith('Resists') for t in lines)
     assert any('not yet studied' in t.lower() and 'fears' in t for t in lines)
@@ -208,9 +208,11 @@ def test_o_on_a_studied_monster_says_how_to_beat_it():
     recent = _recent(g)
     assert 'hold you still' in recent and 'distance' in recent
     # (a ghoul is "he": data/monsters.json pronoun, round 3)
-    assert 'Holy power and a cutting blow hurt him most (double damage).' in recent
-    # ...and what it resists and its nature (tells.lore_lines, winning-build plan 3.1)
-    assert 'do little to him' in recent and 'cannot be put to sleep' in recent
+    # One plain line (tells.lore_line, 2026-11-16): weaknesses, what it
+    # resists and its nature, named, with no "(double damage)".
+    assert 'The Ghoul: weak to slash, holy' in recent
+    assert 'resists pierce' in recent and "can't be put to sleep" in recent
+    assert 'double damage' not in recent
     lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
     assert any(t.startswith('Weak To') for t in lines)
 

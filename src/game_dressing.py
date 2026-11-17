@@ -13,7 +13,7 @@
   * The weapon At Your Back (Player.readied_weapon): readied from the Kit
     (R), swapped into the hand with S in one turn. A two-hander sends the
     shield to the pack (remembered: Player._shield_slung); a one-hander
-    taken up again, by S or the Kit, puts it back on at its donning time.
+    taken up again, by S or the Kit, puts it back on in the same one turn.
   * Loadouts: three saved kits (Shift+E). Putting one on takes the sum of
     its pieces' turns; a piece not in the pack is skipped, a piece not
     known by hand is refused (it must be put on once first).
@@ -353,11 +353,13 @@ class DressingMixin:
         return sh
 
     def _shield_back_on(self, sh) -> None:
-        """The remembered shield goes back on the arm, taking its donning
-        time like any piece (a turn for every shield today)."""
+        """The remembered shield goes back on the arm as part of the weapon
+        change itself: no turn of its own (Brandon 2026-11-16: "ready
+        swapping weapon set should only take 1 turn, even if you equip a
+        shield as well"). The caller spends the change's one turn."""
         p = self.player
         p.__dict__['_shield_slung'] = None
-        self._dress_begin_on(sh, tier=kbh.best_tier(p, sh))
+        self._put_on_now(sh, tier=kbh.best_tier(p, sh))
 
     # ------------------------------------------------------------------
     # Putting a piece on / taking it off, with the time it takes
@@ -694,8 +696,7 @@ class DressingMixin:
         in one turn. A cursed blade in the hand will not let go; a two-hander
         cannot come out past a shield that will not come off. A two-hander
         sends the shield to the pack, and drawing a one-hander again puts it
-        back on the arm (its donning time, a turn, on top). True when the
-        swap happened."""
+        back on the arm in the same one turn. True when the swap happened."""
         p = self.player
         back = p.readied_weapon
         hand = p.weapon
@@ -728,13 +729,9 @@ class DressingMixin:
         # earned, the swap costs no turn (the swap that earns it still does).
         _free = bool((getattr(p, 'quirk_progress', None) or {}).get('janus_active'))
         # A one-hander drawn: the shield the two-hander set aside goes back
-        # on the arm, at its own donning time on top of the swap's turn.
+        # on the arm in the same turn (Brandon 2026-11-16: one turn).
         sh = None if getattr(back, 'two_handed', False) else self._slung_shield()
-        tail = ''
-        if sh is not None:
-            turns = (0 if _free else 1) + self._don_turns(sh)
-            tail = (f" and reach for your {self._bare_name(sh)} "
-                    f"({quantity(turns, 'turn')})")
+        tail = f" and take up your {self._bare_name(sh)}" if sh is not None else ''
         if hand is not None and any(i is hand for i in p.inventory):
             p.readied_weapon = hand
             self.add_message(f"You sling the {self._bare_name(hand)} at your back and draw "
@@ -742,6 +739,8 @@ class DressingMixin:
         else:
             self.add_message(f"You draw the {self._bare_name(back)} from your back{tail}.",
                              'success')
+        if sh is not None:
+            self._shield_back_on(sh)
         _qs = getattr(self, 'quirk_system', None)
         if _qs is not None:
             try:
@@ -751,8 +750,6 @@ class DressingMixin:
             _qs.on_weapon_swap(_foe)
         if not _free:
             self._advance_turn()
-        if sh is not None and not self.player.is_dead():
-            self._shield_back_on(sh)
         return True
 
     # ------------------------------------------------------------------

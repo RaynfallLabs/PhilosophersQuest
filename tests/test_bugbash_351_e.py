@@ -154,8 +154,8 @@ def bestiary_page(h, kind):
     return [str(t) for t, *_ in g._encyclopedia_article_lines('bestiary', entry)]
 
 
-ROW_HEADS = ('Weak To (Double Damage)', 'Resists (Half Damage)', 'Shrugs Off (Quarter Damage)',
-             'Bane Materials (Double Damage)')
+ROW_HEADS = ('Weak To', 'Resists', 'Shrugs Off',
+             'Hurt Most By')
 
 
 # ---------------------------------------------------------------------------
@@ -719,7 +719,7 @@ def test_journey_04_the_counter_is_the_blow(make_game):
     p.studied_monster_ids.add('skeleton')
     p.lore_known_monster_ids.add('skeleton')
     strip = StripReader(g)
-    for kind, tag in (('skeleton', 'Weakness (Double): Blunt'), ('goblin', 'Blunt')):
+    for kind, tag in (('skeleton', 'Weakness: Blunt'), ('goblin', 'Blunt')):
         m = place_monster(g, kind, 1)
         m.hp = m.max_hp = 10 ** 6
         g._refresh_fov()

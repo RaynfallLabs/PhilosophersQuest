@@ -344,6 +344,19 @@ class ItemActionsMixin:
             self._charsheet_restore(ctx)
         return True
 
+    def _item_feedback_moved(self, key, was, now) -> None:
+        """After a navigation key on the Kit or the character sheet: the
+        selection is on another item (or another tab), so what the last
+        action said about the old one goes. It was kept until the next
+        action, and showed under every item (bug: the Duck of Doom's
+        identify line under every piece; Brandon 2026-11-16)."""
+        from game_input import _ITEM_NAV_KEYS
+        if key not in _ITEM_NAV_KEYS or getattr(self, '_item_screen_return', None):
+            return
+        _tab, item = now
+        if item is not was:
+            self._item_feedback = []
+
     def _item_feedback_lines(self) -> list[tuple[str, str]]:
         """The messages the last action wrote (newest last), for the screen."""
         return list(getattr(self, '_item_feedback', None) or [])[-3:]

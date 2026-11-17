@@ -211,7 +211,7 @@ def test_the_gear_page_lists_the_kit_and_sheet_keys_from_the_code():
     rows = {k: v for k, v in sec['rows']}
     assert set(rows) == {k for _a, k in ACTION_KEYS}
     assert {pygame.key.name(k).upper() for k in MenuMixin._KIT_ACTION_KEYS} == set(rows)
-    assert 'Ready' in rows['R'] and 'At Your Back' in rows['R']
+    assert 'Ready' in rows['R'] and 'at your back' in rows['R']
     assert 'Apply' in rows['A'] and 'earplugs' in rows['A']
 
 
@@ -227,7 +227,7 @@ def test_apply_is_how_the_earplugs_go_in():
 
 def test_the_gear_page_names_every_new_rule():
     text = _page_text('gear_and_load')
-    for must in ('At Your Back', 'S swaps it', 'Shift+E opens your Loadouts', 'Known by Hand',
+    for must in ('A readied weapon', 'S swaps it', 'Shift+E opens your Loadouts', 'Known by Hand',
                  'Keep dressing?', 'Shift+C: Coat', 'T: Throw', 'Flasks tab',
                  'Shift+S: Change your stance', 'Heavy:', 'Burdened:', 'Overloaded:'):
         assert must in text, must

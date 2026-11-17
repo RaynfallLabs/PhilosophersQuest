@@ -1873,6 +1873,42 @@ def _(g):
     g._kit_sel = next(i for i, (_s, it) in enumerate(rows) if it is spare)
 
 
+def _kit_two_gloves(g):
+    """Leather gloves of Life-Grip worn, and a pair of iron gauntlets of
+    another enchantment in the pack, both known: what each does, side by
+    side (Brandon 2026-11-16: "what are the actual benefits of the gloves I
+    have on vs what I'm selecting?")."""
+    from items import ARMOR_SLOTS, instantiate_armor
+    import enchantments as ench
+    p = g.player
+    worn = instantiate_armor('leather_gloves', 'leather')
+    worn.ench_level = 3
+    ench.apply_to(worn, 'life_grip')
+    other_id = next((k for k, v in ench.data()['enchantments'].items()
+                     if v.get('slot') == 'hands' and k != 'life_grip'), None) \
+        if 'enchantments' in ench.data() else None
+    spare = instantiate_armor('gauntlets', 'chain_steel')
+    spare.ench_level = 4
+    if other_id:
+        ench.apply_to(spare, other_id)
+    for it in (worn, spare):
+        it.id_level, it.buc_known, it.identified = 5, True, True
+    p.armor_slots[ARMOR_SLOTS.index('hands')] = worn
+    p.inventory.append(spare)
+    return worn, spare
+
+
+@scene('menu_kit_gloves', 'Menus',
+       'K, Armor: a pair of gloves in the pack against the pair worn: What It Does, '
+       'and Worn Now, before the lore.', expect='kit')
+def _(g):
+    _worn, spare = _kit_two_gloves(g)
+    press(g, pygame.K_k)
+    g._kit_tab = [t[1] for t in g._KIT_TABS].index('armor')
+    rows = g._kit_rows_for_slug('armor')
+    g._kit_sel = next(i for i, (_s, it) in enumerate(rows) if it is spare)
+
+
 @scene('menu_kit_at_your_back', 'Menus',
        'K, Weapons: a shortsword readied At Your Back (R readies, S swaps).', expect='kit')
 def _(g):

@@ -124,11 +124,11 @@ def test_let_go_forgets_the_back_and_every_kit():
 
 
 def test_the_back_line_reads():
-    assert sets.back_line('Plain Dagger', True, []) == 'The Plain Dagger is At Your Back again.'
+    assert sets.back_line('Plain Dagger', True, []) == 'The Plain Dagger is readied again.'
     assert sets.back_line('Iron Helm', False, ['Kit One', 'Kit Two']) == \
         'The Iron Helm is back in Kit One and Kit Two.'
     assert sets.back_line('Plain Mace', True, ['Kit One', 'Kit Two', 'Iron']) == \
-        'The Plain Mace is At Your Back again, and back in Kit One, Kit Two and Iron.'
+        'The Plain Mace is readied again, and back in Kit One, Kit Two and Iron.'
     assert sets.back_line('Plain Mace', False, []) == ''
     assert sets.not_carried('Silver Mace') == 'Silver Mace (not carried)'
 
@@ -160,7 +160,7 @@ def test_a_dropped_readied_weapon_is_remembered_and_back_when_picked_up(game):
     assert p.readied_weapon is mace
     said = _said(game, 6)
     i = said.index(f'You pick up the {name}.')
-    assert said[i + 1] == f'The {name} is At Your Back again.'
+    assert said[i + 1] == f'The {name} is readied again.'
     assert game._swap_weapons() and p.weapon is mace and p.readied_weapon is sword
 
 
@@ -177,7 +177,7 @@ def test_the_screens_draw_with_a_piece_away(game):
     game._do_drop_item(mace)
     game._do_drop_item(helm)
     p.x += 1
-    assert game._kit_lines(0) == [('At Your Back', f'{game._bare_name(mace)} (not carried)'),
+    assert game._kit_lines(0) == [('Readied', f'{game._bare_name(mace)} (not carried)'),
                                   ('Head', f'{game._bare_name(helm)} (not carried)')]
     for opener, state in ((game._open_kit_panel, STATE_KIT), (game._open_loadouts, STATE_LOADOUTS),
                           (game._open_character_sheet, None)):
@@ -194,8 +194,9 @@ def test_the_screens_draw_with_a_piece_away(game):
     assert rows[game._kit_sel][0] == 'away'
     assert [a['id'] for a in game._kit_actions()] == ['lore']
     card = [t for t, _c, _f in game._kit_detail_lines_for_item('weapons', 'away', mace)]
-    assert card[0].endswith('(not carried)') and 'Source: At Your Back' in card
-    assert 'Not with you: dropped, thrown or stolen. Pick it up again and S draws it.' in card
+    assert card[0].endswith('(not carried)')
+    assert ('Readied, but not with you: dropped, thrown or stolen. Pick it up again and '
+            'S draws it.') in card
     game.render()
     game.state = STATE_PLAYER
 
@@ -451,7 +452,7 @@ def test_journey_ready_a_dagger_throw_it_pick_it_up_and_s_draws_it(game, monkeyp
     h.said()
     h.key('g')
     said = h.said()
-    assert said[:2] == [f'You pick up the {name}.', f'The {name} is At Your Back again.'], said
+    assert said[:2] == [f'You pick up the {name}.', f'The {name} is readied again.'], said
     # S: it swaps in.
     h.key('s')
     assert p.weapon is dagger and p.readied_weapon is sword

@@ -2994,8 +2994,9 @@ class MagicMixin:
                 for eq in pool:
                     if eq is None:
                         continue
-                    # The Duck of Doom answers to patience, not to a scroll.
-                    if getattr(eq, 'buc', 'uncursed') == 'cursed' and getattr(eq, 'id', '') != 'duck_of_doom':
+                    # (The Duck of Doom's curse lifts too, 2026-11-16: it is
+                    # the one way to take it off before it hatches.)
+                    if getattr(eq, 'buc', 'uncursed') == 'cursed':
                         eq.buc = 'uncursed'
                         eq.buc_known = True
                         cursed_items.append(self._bare_name(eq))

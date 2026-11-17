@@ -193,11 +193,13 @@ def test_duck_of_doom_pet_species_defined():
     assert 'duck_of_doom' in _SPECIES
 
 
-def test_duck_of_doom_transform_after_2026_turns():
-    """The Duck of Doom hatches after wearing the cursed headgear 2026 turns."""
+def test_duck_of_doom_transform_after_10000_turns():
+    """The Duck of Doom hatches after wearing the cursed headgear 10,000
+    turns (2026 until 2026-11-16; Brandon: "too quick, just a few floors")."""
     src = _src('main')
     assert "_duck_of_doom_transform" in src
-    assert "2026" in src  # the magic number for transformation
+    import pet_system
+    assert pet_system.DUCK_OF_DOOM_TURNS_REQUIRED == 10000
 
 
 def test_charmander_stuffie_grants_fire_breath():

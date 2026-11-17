@@ -57,6 +57,21 @@
    ]
   },
   {
+   "heading": "What a creature's page means",
+   "paragraphs": [
+    "Once you know a creature, its Bestiary page and the line you see when you meet it use a few plain words:"
+   ],
+   "rows": [
+    ["Weak To", "your blow lands twice as hard"],
+    ["Hurt Most By", "a weapon of that metal lands twice as hard"],
+    ["Resists", "your blow lands half as hard"],
+    ["Shrugs Off", "your blow lands a quarter as hard"],
+    ["Hardest Blow", "both at once: three times as hard, the most a blow can gain"],
+    ["Immune To", "that effect never takes hold of it"],
+    ["Falls Easily To", "that effect lasts half again as long on it"]
+   ]
+  },
+  {
    "heading": "One wrong answer ends the rest",
    "paragraphs": [
     "Wearing armour, identifying, harvesting and cooking stop at the first wrong answer. Armour asks a few questions and you need every one. A wrong identify stuns you for ten turns. A failed harvest or cook uses up what you were working on.",
