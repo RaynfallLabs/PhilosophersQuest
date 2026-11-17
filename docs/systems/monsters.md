@@ -93,7 +93,8 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `is_boss` | bool | **Read from JSON since v2.18.0.** Grants boss-immunity to charm/paralyze/sleep/confuse via `hero_specials.is_boss_or_huge`. Also lifts `min_hit_chance` from 5% to 25%. Carried by: `abaddon_destroyer`, the 7 `seal_demon_*`, `iron_patriarch`, `whispering_crone`, `blood_archon`. **Fallback:** `max_hp > 500` also counts as boss, regardless of this flag — the hand-crafted boss-level `_spawn_boss` additionally forces `boss.is_boss = True` after construction. |
 | `is_mini_boss` | bool | Candidate for the pre-rolled mini-boss slot system. 36 monsters carry this flag; `_roll_planned_mini_bosses` filters out `seal_demon_*` (forced path) and `spawn_chance <= 0`. **Known overlap:** `blood_archon` + the 7 seal demons carry BOTH `is_boss` and `is_mini_boss` — audited as a conflict P4, kept as-is. |
 | `is_seal_demon` | bool | 7 monsters. On death, `game_combat._drop_treasure` adds the corresponding seal to `game.seals_broken` and writes a Journal line. 7/7 opens the Abyss narrative. |
-| `is_allied` | bool | Allied monster (currently only `heavenly_angel`). Does not attack the player; dispatched to `seek_locust` AI. |
+| `is_allied` | bool | Allied monster: `heavenly_angel` (does not attack the player; dispatched to `seek_locust` AI), the encounter people and performers, and the horns' allies (below). |
+| `horn` | str | The horn that calls this kind (`data/horns.json`): Robin Hood's men, Arthur's knights, the einherjar, Charlemagne's host. With `is_allied`, `quest_only`, `frequency` 0 and `min_level` 0 it is never spawned or found; on the map it is a `horns.CalledAlly` built from this entry's `hp` and first attack. |
 | `boss_immune` | — | NOT a Monster field; this is a flag on `hero_specials` entries declaring "my effect should skip bosses." The monster side is `is_boss` / `is_boss_or_huge`. |
 
 ### AI shape

@@ -90,7 +90,7 @@ def test_the_horns_data_is_whole():
         assert h['turns'] >= 20
         for key in ('raise', 'fail', 'arrive', 'leave', 'chronicle', 'chronicle_fail'):
             assert h['lines'].get(key), (hid, key)
-        assert 'Once a run.' in h['desc'] and len(h['desc']) <= 130     # three lines at 1280x720
+        assert 'Once a run.' in h['desc'] and len(h['desc']) <= 100     # whole at the smallest window
     assert horns.delay('olifant') > 0 and horns.line('olifant', 'far') and horns.line('olifant', 'on_road')
     assert all(horns.delay(h) == 0 for h in HORNS if h != 'olifant')
 
@@ -542,6 +542,18 @@ def test_the_einherjar_never_kill_fenrir_nor_any_gate_guardian():
         boss = Monster(dict(MONS[kind], id=kind), 0, 0)
         assert not horns.strikes(boss), kind
     assert horns.gate_guardians() == frozenset(GATE)
+
+
+def test_the_item_card_says_what_the_horn_does_and_whether_it_is_spent():
+    g = _game(name='__test_horns_card__')
+    _go(g, 88)
+    it = _give(g, 'olifant')
+    words = [t for t, _c, _f in g._lore_item_mechanic_lines(it, 5)]
+    assert 'Horn of legend' in words and 'Power (V): Blow the Olifant' in words
+    assert 'Ready, once a run' in words and 'They come 12 turns after the call' in words
+    assert "They never strike a gate's guardian" in words
+    _sound(g, 'olifant', 2)
+    assert 'On the road to you' in [t for t, _c, _f in g._lore_item_mechanic_lines(it, 5)]
 
 
 def test_the_hud_shows_a_horn_ready_and_a_host_on_the_road():

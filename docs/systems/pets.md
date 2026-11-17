@@ -251,7 +251,7 @@ Dad overrides to return 0 (invincible). Unicorn's `base_damage = 0` means the pe
 Brandon's rule: one bonded companion walks with the hero. Before a new one joins, `CombatMixin._companions_to_stasis()` puts the one at his side back into a Bound Soul Sphere in the pack (from any distance, state kept, exactly as Recall does; `_bound_sphere_for` builds the sphere for both). In the sphere it gains no XP and needs no food. A pack over its limit sets the sphere at the hero's feet; it is never lost. A save from before the rule may have several companions out: the next join stores all of them.
 
 - **Counts** (`pet_system.is_companion`): a pet from any of the six Soul Spheres or a bound sphere (the family cats and Shep too, and a rare hatch from the Unusual Soul Sphere), the Emberpup, the Mooble, the Bococho, Waddlekind, and the Summon Guardian and Gate spells.
-- **Extras, never stored:** Dad, a sketch (the Sketchbook's Manifest or Leonardo's helper), an ally sprung from a kill (`_temp_duration`), Fenrir, the Army of Darkness deadites (`_summoned_minion`), and the unicorn (a healer that never fights). A bound sphere holding one of these does not store the companion when thrown.
+- **Extras, never stored:** Dad, a sketch (the Sketchbook's Manifest or Leonardo's helper), one who answered a horn (`horns.CalledAlly`, §4.8), an ally sprung from a kill (`_temp_duration`), Fenrir, the Army of Darkness deadites (`_summoned_minion`), and the unicorn (a healer that never fights). A bound sphere holding one of these does not store the companion when thrown.
 
 ### 4.1 The six Soul Spheres — thrown by the player
 
@@ -362,9 +362,22 @@ Return value from `take_turn` is `('unicorn_actions', [messages])` where message
 
 ---
 
+### 4.8 CalledAlly — the horns of legend (2026-11-16)
+
+`src/horns.py::CalledAlly(Pet)`: one who answered Robin Hood's Horn, Arthur's Bugle,
+Gjallarhorn or the Olifant ([quests_mysteries §2.12](quests_mysteries.md)). Built from
+its kind's own entry in `data/monsters.json` (`horn`): health its mean `hp`, every blow
+its first attack's dice (`get_attack_damage`, no quiz scaling), struck as that attack's
+`type` (`bite_type`, read in `_do_pet_turns` as a sketch's is). `is_called` marks it.
+It never levels, heals or uses a special; it follows the hero and strikes the nearest
+foe within four tiles, never a gate's guardian (`horns.strikes`); monsters swipe at it
+like any pet. Its stay (`turns_remaining`) ticks in `_do_pet_turns` and it leaves with
+its horn's line (`HornsMixin._horn_ally_leaves`); leaving the floor sends it home
+(`_horn_allies_left_behind`). A helper that comes and goes: never the one companion.
+
 ## 5. The Shift+P pet menu
 
-`game_menus.py` opens the pet menu with Shift+P. Items eligible for the menu exclude sketch pets and Dad (both temporary).
+`game_menus.py` opens the pet menu with Shift+P. Items eligible for the menu exclude sketch pets, Dad and those who answered a horn (all temporary).
 
 **The card shows the pet** (round 3, 2026-11-14: "pet panel should show the pet, just like bestiary and item lore"). `_draw_pet_menu` gives each entry a `plate`: `lore_art.pet_ref(pet)`, the sprite the map draws for it NOW (`Pet.sprite_id`: the stage it has grown to; the Emberpup in the Bloomleaf Cloak has `<stage>_cloaked` for every stage). The decision menu heads the Detail pane with it (`_menu_draw_portrait`): `lore_art.plate` in the lore pages' framed well (`_draw_plate_well`), the largest whole enlargement (3x at UI scale 1, 2x or 1x when the card is long) that leaves the card room, with the name, level, HP, XP, sphere and command beside it, and the cloak, Shep's rescue and growl below. A pet with no art has no picture, never a letter glyph (the Bestiary's rule). The actions (F/P/H/R/C/S) sit in the Choices pane under the companion's row (`list_footer`), and the Detail pane is the wider one (`detail_share`): Shep's whole card did not fit one pane at 1280x720. Captures: `menu_pet`, `menu_pet_plain`, `menu_pet_final_stage`, `menu_pet_cloaked`, `menu_pet_cloaked_evolved`, `menu_pet_cloaked_final`, `menu_pet_shep`.
 

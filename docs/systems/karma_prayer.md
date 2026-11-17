@@ -5,7 +5,7 @@
 > gate and the Road are both ON (`data/karma_rules.json: gate_enabled`,
 > `road_enabled`).
 > Scope: karma scale (-10..+10), 37 block-anchor encounters (depth-true
-> since Dungeon Alive 7, 2026-11-12), 152
+> since Dungeon Alive 7, 2026-11-12), 155
 > story and flavor encounters, the Road, Ethereal Unicorn state machine, Magic
 > Dungeon Carrot, Prayer v2 (`\` key), Divine Intercession
 > (Shift+`\`), Fisher King cooldown mechanics, the Altar of the Last
@@ -364,7 +364,7 @@ chain exists.
 
 ---
 
-## 3. The 152 story and flavor encounters
+## 3. The 155 story and flavor encounters
 
 They live in `data/flavor_encounters.json` (no hardcoded list), loaded as
 `src/flavor_encounters.py::FLAVOR_ENCOUNTERS`, and share the NPC encounter UI
@@ -378,7 +378,10 @@ light (`road.py`); a slot binds on first arrival from the encounters whose `requ
 then. Callbacks (`schedule`) and delayed rewards land N floors after the deed that opened
 them, and The Gate (`flv_the_gate`, floors 94-98) is a run-start callback
 (`karma_rules.json: run_start_schedule`) that reads `data/gate_lines.json` about the people
-met on the way down. The old ~40%-per-floor roll (`select_flavor_encounters`) only places
+met on the way down; the three horn paths (Robin Hood's bridge 12-18, the sleepers under
+the hill 45-55, Heimdall's watch 70-78: [quests_mysteries §2.12](quests_mysteries.md))
+are run-start callbacks too, one each a run. A callback on its own floor is placed
+before one carried there from a skipped floor. The old ~40%-per-floor roll (`select_flavor_encounters`) only places
 encounters if the Road is switched off. Each is one-shot per run.
 
 **Setne's Tomb** (`src/setne_tomb.py`, `data/setne_tomb.json`) is a sealed room on one
@@ -431,6 +434,7 @@ it (`flv_dead_come_for_the_book`, hostile).
 | `flv_diogenes_lantern` | Diogenes | 10-30 | light | none |  |
 | `flv_lena_returns` | Lena | 11-45 | medium | owning | callback; escort |
 | `flv_ostrander_pit` | Ostrander | 12-20 | medium | none |  |
+| `flv_robin_hood_bridge` | Robin Hood | 12-18 | medium | none | callback (run start); Robin Hood's Horn |
 | `flv_grumwald_second_bridge` | Grumwald | 13-29 | medium | owning | callback |
 | `flv_elspeth_comes` | Elspeth | 13-35 | medium | none | callback |
 | `flv_man_who_is_owed` | Man Who Is Owed | 14-30 | medium | stance | stance: 3.9 |
@@ -493,6 +497,7 @@ it (`flv_dead_come_for_the_book`, hostile).
 | `flv_stone_singer` | Ysra Deepsong | 46-60 | light | none |  |
 | `flv_dream_weaver` | Dream Weaver | 47-60 | light | none |  |
 | `flv_cuthbert_chapel` | Brother Sacristan | 48-61 | medium | oath keep | callback; trigger `cuthberts_gospel`, fallback `None` |
+| `flv_sleepers_under_the_hill` | The Sleepers Under the Hill | 45-55 | medium | none | callback (run start); Arthur's Bugle |
 | `flv_pardoner` | The Pardoner | 11-30 | medium | cruelty (-1), forgo |  |
 | `weeping_mother` | Weeping Mother | 50-60 | light | none | a passed prayer schedules `flv_pip_ferrers` |
 | `flv_pip_ferrers` | Pip Ferrers | 52-68 | light | none | callback |
@@ -514,6 +519,7 @@ it (`flv_dead_come_for_the_book`, hostile).
 | `flv_green_chapel` | The Green Knight | 67-73 | high | owning (+1: the girdle given back, before the swings or after the nick) | callback; authority just |
 | `flv_vafthrudnir` | Vafthrudnir | 65-85 | high | none |  |
 | `flv_valkyrie_choice` | The Chooser of the Slain | 71-79 | high | judgment |  |
+| `flv_heimdalls_watch` | Heimdall | 70-78 | medium | none | callback (run start); Gjallarhorn |
 | `flv_crossroads_fiddler` | Crossroads Fiddler | 66-80 | medium | sacrilege (-1), forgo | disguise: devil |
 | `flv_djinn_in_a_bottle` | Something in a Copper Jar | 66-80 | light | none |  |
 | `flv_avatar_athena` | Grey-Eyed Woman | 31-39 | medium | none | disguise: athena |
@@ -530,7 +536,7 @@ it (`flv_dead_come_for_the_book`, hostile).
 | `flv_time_lost_general` | Publius Quinctilius Varus | 83-96 | light | none |  |
 | `flv_dying_oracle_cassandra` | Cassandra | 84-99 | light | none |  |
 | `flv_wondrous_memory_keeper` | Keeper of Last Memories | 85-100 | light | none |  |
-| `flv_rolands_horn` | Roland | 86-92 | medium | oath sworn, cruelty (-1) | tragedy: unsavable |
+| `flv_rolands_horn` | Roland | 86-92 | medium | oath sworn, cruelty (-1) | tragedy: unsavable; the Olifant (its summon: quests_mysteries §2.12) |
 | `flv_last_philosopher` | Boethius | 86-98 | medium | none | tragedy: unsavable |
 | `flv_azazel_bound` | The Bound Watcher | 91-98 | high | sacrilege (-1), judgment |  |
 | `flv_sisyphus` | Sisyphus | 81-98 | light | none |  |

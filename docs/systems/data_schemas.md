@@ -1069,7 +1069,7 @@ a gear offer may be `{"gear": "shield", "template": ...}`.
 
 ## 15. `data/flavor_encounters.json`
 
-**List, not dict.** 152 entries (Dungeon Alive slice 9, 2026-11-12). Each entry:
+**List, not dict.** 155 entries (Dungeon Alive slice 9, 2026-11-12; the three horn paths, 2026-11-16). Each entry:
 
 ```json
 {

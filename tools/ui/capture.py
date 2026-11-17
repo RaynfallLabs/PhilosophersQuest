@@ -1783,6 +1783,78 @@ def _(g):
     press(g, pygame.K_END)
 
 
+# -- The horns of legend (horns.py, game_horns.py) -------------------------------
+
+def _horns_in_pack(g, hids=('robin_hoods_horn', 'arthurs_bugle', 'gjallarhorn', 'olifant')):
+    from items import make_item_by_id
+    for hid in hids:
+        it = make_item_by_id('artifact', hid)
+        g.player.inventory.append(it)
+
+
+@scene('menu_powers_horns', 'Menus', 'V with all four horns of legend carried, none blown: '
+       'one row each, the first one\'s words.', expect='power_menu')
+def _(g):
+    _horns_in_pack(g)
+    press(g, pygame.K_v, 'v')
+
+
+@scene('horns_called_on_map', 'Menus', "Robin Hood's horn blown with a five-chain: his Merry Men "
+       'round the hero on the map (close zoom), the powers panel showing the horn spent.',
+       expect='player')
+def _(g):
+    from quiz_engine import QuizResult
+    _horns_in_pack(g, ('robin_hoods_horn',))
+    g._activate_horn('horn_robin_hood')
+    g.quiz_engine.callback(QuizResult(success=True, score=5, correct=5, asked=5))
+    g.zoom_mode = 'close'
+    g._refresh_fov()
+
+
+def _horn_path(g, tag):
+    import economy
+    import flavor_encounters
+    enc = economy.price_encounter(copy.deepcopy(next(
+        e for e in flavor_encounters.FLAVOR_ENCOUNTERS if e['tag'] == tag)))
+    g._flavor_encounter_levels[g.dungeon_level] = enc
+    m = _npc_monster(g, {'tag': enc['tag'], 'monster_id': enc['sprite_id']})
+    m._npc_encounter_tag = None
+    m._flavor_encounter_tag = enc['tag']
+    g._start_flavor_encounter(m)
+
+
+@scene('lore_horn', 'Lore', 'X / lore on Gjallarhorn (from Heimdall at his watch).', expect='lore')
+def _(g):
+    from items import make_item_by_id, grant_identified
+    h = make_item_by_id('artifact', 'gjallarhorn')
+    grant_identified(g, h)
+    g.player.inventory.append(h)
+    g._lore_subject = h
+    g.state = _S().STATE_LORE
+
+
+@scene('horn_path_bridge', 'Encounters', "Robin Hood's bridge (floors 12-18): the meeting.",
+       expect='npc_encounter')
+def _(g):
+    _horn_path(g, 'flv_robin_hood_bridge')
+
+
+@scene('horn_path_sleepers', 'Encounters', 'The sleepers under the hill (45-55), the sword '
+       'drawn: cut the garter, or put it back.', expect='npc_encounter')
+def _(g):
+    _horn_path(g, 'flv_sleepers_under_the_hill')
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_1)
+    press(g, pygame.K_RETURN)
+
+
+@scene('horn_path_heimdall', 'Encounters', "Heimdall's watch (70-78): the choices.",
+       expect='npc_encounter')
+def _(g):
+    _horn_path(g, 'flv_heimdalls_watch')
+    press(g, pygame.K_RETURN)
+
+
 @scene('menu_drop', 'Menus', 'D (off an altar/fountain): drop.', expect='drop_menu')
 def _(g):
     g._open_drop_menu()

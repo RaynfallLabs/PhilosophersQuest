@@ -675,6 +675,13 @@ pickup/identify doesn't leak the true name. Examples:
 - Pithos of Pandora → `"a sealed pithos"`
 - Lamp of Diogenes / Aladdin's Lamp → `"a tarnished brass lamp"`
 
+### The horns of legend (2026-11-16)
+
+`robin_hoods_horn`, `arthurs_bugle`, `gjallarhorn` and `olifant`: unique, plot-locked
+(a `plot_role`, no spawn weight), each from its story path only. Carried, each is one
+power in the V menu, blown once a run (`data/horns.json`, `src/horns.py`). See
+[quests_mysteries §2.12](quests_mysteries.md).
+
 ### The six Soul Spheres (2026-10-18)
 
 `soul_sphere`, `greater_soul_sphere`, `master_sphere`, `hearth_sphere`,

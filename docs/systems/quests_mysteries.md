@@ -260,6 +260,7 @@ are checked against `monsters.json` by `tests/test_know_your_enemy.py`.
 | Duck of Doom | Duck of Doom (armor) | L1-10 (one random) | n/a (2026 turns worn) | Waddlekind pet |
 | Excalibur | Excalibur (weapon pool) | Gaussian unique spawn | n/a (HP ≤ 25% trigger) | kill_heal + 1-shot nova |
 | Cow Level | — (NPC bump + 10 pokes) | L30-39 (one random) | L999 Moo Moo Farm | Hell Bovine loot pool |
+| Horns of legend (2.12) | — (a story path each) | L12-18, L45-55, L70-78 (run start); Roland's L86-92 | the path's scene | Robin Hood's Horn, Arthur's Bugle, Gjallarhorn, the Olifant's summon |
 
 ### 2.11 Chain-equip tier bonuses
 
@@ -271,6 +272,69 @@ encounter rewards whose karma award was actually applied
 (`game_encounters._apply_outcome`). It is a
 karma hook, not a quest-chain hook. See
 [progression.md](progression.md) for the full chain-passive table.
+
+### 2.12 The four horns of legend (2026-11-16)
+
+Brandon, 2026-11-16: horns of legend as items "tied to events, but... capture the
+mythology of it", received through PATH-style events "instead of randomly finding
+them", without spamming powerful gear; then, the same day: every horn's summon works
+**once a run** and must not be game-breaking, and Fenrir stays Gleipnir's to bind and
+the Sandal's to end. Data: `data/horns.json` (the powers), `data/items/artifact.json`
+(the items), `data/flavor_encounters.json` (the paths), `data/monsters.json` (the
+allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
+(`HornsMixin`). Tests: `tests/test_horns.py`.
+
+| Horn | Path (floors) | How it is earned | Who answers (chain 1 / 3 / 5) | Stay |
+|---|---|---|---|---|
+| Robin Hood's Horn | `flv_robin_hood_bridge` (12-18) | Robin Hood meets the hero on a plank bridge; neither gives way. Fight him with staves (MATH, two of three, tier 1): win and he goes into the stream, laughs, blows his horn for his men and gives it to you, as Little John won his place. Lose, or give way, and there is no horn. | Little John and Will Scarlet / + a Yeoman Archer, Friar Tuck / + Much the Miller's Son, a second archer, Alan-a-Dale (7) | 25 turns |
+| Arthur's Bugle | `flv_sleepers_under_the_hill` (45-55) | The Sewingshields hall: a king and his knights asleep, a sword, a garter and a bugle on the table. Draw the sword (they wake), cut the garter (they sit up), blow the bugle (HISTORY, one, tier 3): Arthur gives it back for the hour of greatest need. Sheathe the sword and he says the rhyme ("Who drew the sword, the garter cut, / But never blew the bugle-horn") and the hall closes. | King Arthur and Sir Bedivere / + Sir Kay, Sir Gawain / + Sir Percival, Sir Lancelot (6) | 30 turns |
+| Gjallarhorn | `flv_heimdalls_watch` (70-78) | Heimdall at the foot of the bridge of colour, who hears the grass grow and cannot leave his post with the wolf loose below. Keep the watch with him (HISTORY, two of three, tier 4) and he gives the horn to one who listens. | three / five / eight Einherjar | 30 turns |
+| The Olifant | Roland's chain, unchanged (`flv_rolands_horn`, 86-92; the oath at `flv_rolands_horn_gate`) | As before. The summon is a power while the horn is carried; blowing it at the Black Gate still keeps the oath. | Charlemagne and Duke Naimes / + Ogier the Dane, two Frankish Knights / + three more Franks (8) | 30 turns, **12 turns after the call** |
+
+- **Placement.** The three new paths are `callback_only` and placed once a run by
+  `data/karma_rules.json: run_start_schedule` (like The Gate), on a free floor of their
+  band picked from the road seed: guaranteed to be met, earned only by what the hero
+  does there. A path skipped (a trapdoor) is carried to the next new floor within three
+  floors of its band. A callback on its own floor now comes before one carried there
+  (`game_road._resolve_callbacks`). Roland's chain stays a Road story encounter.
+- **The power** (`HornsMixin._activate_horn`): V lists a carried horn not yet blown
+  (`horns.menu_rows`); choosing it spends it at once, then opens a HISTORY
+  `escalator_chain` from the horn's own tier (1, 3, 4, 5) to a chain of 5. The chain
+  indexes `allies_by_chain`; chain 0 is a cracked note and nobody comes, and the horn is
+  still spent (like a hero special). No room at all round the hero gives the blow back.
+  The HUD's powers panel shows "1 Use", and "Coming (N)" for the Olifant's host on the road.
+- **The Olifant's delay** (`delay_turns` 12): the call sets `player.horn_host_due`; each
+  world turn `_horn_tick` counts it down (a line halfway) and the host arrives beside
+  the hero wherever he is. Oliver's wisdom: blow it before the fight, not when you are
+  dying.
+- **The allies** are monster kinds (`is_allied`, `quest_only`, `frequency` 0,
+  `min_level` 0, `horn`: never found, never spawned, not in the tier census) with their
+  own numbers from their lore at the horn's tier. On the map each is a
+  `horns.CalledAlly`, a helper that comes and goes (never the one companion, never in
+  the Shift+P menu): its mean `hp`, its first attack's dice and type for every blow,
+  no healing, no specials (so nothing holds or binds). It follows the hero and fights
+  the nearest foe within four tiles, **never a gate's guardian** (the five bosses of
+  `data/domains.json`: `horns.strikes`), so Gleipnir and the Sandal still decide
+  Fenrir and no horn takes a gate. It stays its turns (ticked in `_do_pet_turns`) and
+  leaves with its horn's line; leaving the floor sends every one home
+  (`_horn_allies_left_behind`).
+- **Sizing** (`data/horns.json` `_meta.numbers`): a full band's stay is about a dozen
+  ordinary monsters of its tier (one hard fight: a war-band, a mini-boss, a seal demon),
+  and each ally lives through about eight blows of a mini-boss of that tier. Robin
+  Hood's men are tier-one mortals and matter less the deeper they are called.
+- **Never loot.** Each horn has a `plot_role` and no spawn weight (`items.scripted_only_ids`),
+  is unique and in `Game._QUEST_PIECE_IDS`: no chest, floor roll or shop; traders refuse
+  it, thieves skip it. Equipped gear only goes to bones, so no horn crosses runs.
+- **Saves.** `player.horns_sounded` and `player.horn_host_due` (getattr defaults: an old
+  save has every horn unblown); `CalledAlly` pickles with the pets. An old save started
+  before 2026-11-16 has no paths scheduled and simply meets none this run.
+- **Art.** Painted by the sprite pipeline only (Brandon, 2026-11-16: no art drawn in
+  code): briefs `tools/content/genart/briefs/horns_h01.json`, run into `_genart/horns_h01`,
+  picks installed by `tools/content/genart/install_horns.py` (and recorded in the install
+  manifests).
+- **QA** (Titivillus build): Shift+H sets each path's person beside the hero in turn
+  (Robin Hood, the sleepers, Heimdall, Roland), then puts every horn in the pack with
+  each ready to blow (`HornsMixin._qa_horns`).
 
 ---
 

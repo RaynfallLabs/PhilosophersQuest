@@ -9537,6 +9537,30 @@ class RenderMixin:
                 (f"{cb['stat']} +{cb['amount']} while carried", FP.CYAN_ACCENT, self.font_sm),
             ]
 
+        # A horn of legend (horns.py): its power in V, once a run.
+        import horns as _horns
+        _h = _horns.horn(getattr(item, 'id', ''))
+        if _h:
+            _pl = getattr(self, 'player', None)
+            _hid = item.id
+            if _hid in _horns.due(_pl):
+                _state = "On the road to you"
+            elif _horns.ready(_pl, _hid):
+                _state = "Ready, once a run"
+            else:
+                _state = "Blown: it will not sound again"
+            lines += [
+                ("Horn of legend", FP.GOLD_BRIGHT, self.font_sm),
+                (f"Power (V): {_h.get('label', '')}", FP.CYAN_ACCENT, self.font_sm),
+                ("Quiz: History chain: the longer it is, the more answer", FP.BODY_TEXT, self.font_sm),
+                ("They never strike a gate's guardian", FP.BODY_TEXT, self.font_sm),
+                (_state, FP.SUCCESS_TEXT if _state.startswith('Ready') else FP.FADED_TEXT,
+                 self.font_sm),
+            ]
+            if _horns.delay(_hid):
+                lines.append((f"They come {_horns.delay(_hid)} turns after the call",
+                              FP.BODY_TEXT, self.font_sm))
+
         return lines or [("No revealed mechanics recorded.", FP.FADED_TEXT, self.font_sm)]
 
     def _lore_corpse_lines(self, corpse, id_level):
