@@ -14,7 +14,9 @@ The data:
 
 A dish has one main benefit (``benefit``: hp, sp, mp, a stat or a timed
 power), which is its menu tab. Its tier is the band of its deepest
-ingredient. What it gives comes from the rules file by tier, by tab, by its
+ingredient, and a big dish (four or more different ingredients:
+cooking_rules.json ``big_dish``) is one tier richer, at most tier 5
+(Brandon, 2026-11-16: "Big dishes +1 tier"). What it gives comes from the rules file by tier, by tab, by its
 worth (what its ingredients add, times the size bonus) and, for a legendary
 feast, the legendary multiplier and a permanent bonus.
 
@@ -361,10 +363,44 @@ def band_of(floor: int) -> int:
     return max(1, min(5, (int(floor) - 1) // step + 1))
 
 
-def dish_tier(rec: dict) -> int:
-    """The band of the dish's deepest ingredient (1-5); the cook's question tier."""
+def base_tier(rec: dict) -> int:
+    """The band of the dish's deepest ingredient (1-5)."""
     ps = parts(rec)
     return band_of(max(part_floor(p) for p in ps)) if ps else 1
+
+
+def big_dish_bonus(rec: dict) -> int:
+    """The tiers a big dish rises above its deepest ingredient's band
+    (Brandon, 2026-11-16: "Big dishes +1 tier"; cooking_rules.json
+    ``big_dish``: a dish of ``parts`` or more different ingredients is
+    ``tier_bonus`` tiers richer), within tier 5; 0 for a smaller dish."""
+    big = rules().get('big_dish') or {}
+    need = int(big.get('parts', 0) or 0)
+    if not need or dish_size(rec) < need:
+        return 0
+    return max(0, min(5, base_tier(rec) + int(big.get('tier_bonus', 0) or 0)) - base_tier(rec))
+
+
+def dish_tier(rec: dict) -> int:
+    """The dish's tier (1-5), everywhere: the cook's question, the stat cap
+    it teaches to, its numbers. The band of its deepest ingredient, and a
+    big dish (``big_dish_bonus``) one tier richer, at most 5."""
+    return base_tier(rec) + big_dish_bonus(rec)
+
+
+_NUMBER_WORDS = {2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six'}
+_TIER_WORDS = {1: 'one tier', 2: 'two tiers', 3: 'three tiers'}
+
+
+def big_dish_line(rec: dict) -> str:
+    """Why a big dish's tier is above its deepest part's, for the cook menu:
+    "Five ingredients: one tier richer." ('' when it is not raised)."""
+    bonus = big_dish_bonus(rec)
+    if bonus <= 0:
+        return ''
+    n = dish_size(rec)
+    return (f"{_NUMBER_WORDS.get(n, str(n))} ingredients: "
+            f"{_TIER_WORDS.get(bonus, f'{bonus} tiers')} richer.")
 
 
 def dish_size(rec: dict) -> int:

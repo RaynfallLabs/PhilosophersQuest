@@ -837,7 +837,8 @@ frequencies (`part_freq.json`, rules in `part_rules.py`, edits by
   `sac`, `core`, `mote`, `jar`, `scale`, `wood`, `trophy`, `forage`); the
   name always says it.
 - `min_level` — the floor the ingredient belongs to (the median of its kin's
-  peak floors); a dish's tier is the band of its deepest ingredient.
+  peak floors); a dish's tier is the band of its deepest ingredient, one
+  more for a dish of four or more (`cooking_rules.json` `big_dish`).
 - `secret` — a part of a hidden creature (the cow level): dishes that need
   it never show as "building toward" until it is held.
 - `trophy_permanent_power` — a trophy's lasting power (the

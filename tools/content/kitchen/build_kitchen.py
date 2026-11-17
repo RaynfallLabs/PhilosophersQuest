@@ -602,10 +602,17 @@ def build():
     food = _load(os.path.join(ITEMS, 'food.json'))
     have_art = dish_art.drawn(ART_DIR)
 
+    big = _load(os.path.join(DATA, 'cooking_rules.json')).get('big_dish') or {}
+
     def tier_of(parts):
-        """kitchen.dish_tier: the band of the deepest ingredient."""
-        return band_of(max(ings[p]['floor'] if p in ings else int(food[p].get('min_level', 1) or 1)
+        """kitchen.dish_tier: the band of the deepest ingredient, and a big
+        dish (cooking_rules.json big_dish) a tier richer, at most 5; a
+        picture's vessel is the dish's tier."""
+        base = band_of(max(ings[p]['floor'] if p in ings else int(food[p].get('min_level', 1) or 1)
                            for p in parts))
+        if int(big.get('parts', 0) or 0) and len(set(parts)) >= int(big['parts']):
+            return min(5, base + int(big.get('tier_bonus', 0) or 0))
+        return base
     recipes = {}
     # Singles: one per ingredient.
     for iid, r in sorted(ings.items(), key=lambda kv: kv[0]):
@@ -825,9 +832,13 @@ def report(ings, recipes):
     tab_band = Counter()
     for r in recipes.values():
         tab, _ = _nature_split(r['benefit'])
-        tab_band[(tab, band_of(max(floor(p) for p in r['ingredients'])))] += 1
+        t = band_of(max(floor(p) for p in r['ingredients']))
+        big = _load(os.path.join(DATA, 'cooking_rules.json')).get('big_dish') or {}
+        if int(big.get('parts', 0) or 0) and len(set(r['ingredients'])) >= int(big['parts']):
+            t = min(5, t + int(big.get('tier_bonus', 0) or 0))     # kitchen.dish_tier
+        tab_band[(tab, t)] += 1
     print('dishes:', len(recipes), ' ingredients:', len(ings))
-    print('tab x band:')
+    print('tab x tier (kitchen.dish_tier):')
     for tab in TABS:
         print(' ', tab.ljust(8), [tab_band[(tab, b)] for b in range(1, 6)])
     multis = [r for r in recipes.values() if len(set(r['ingredients'])) > 1]

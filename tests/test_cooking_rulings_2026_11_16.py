@@ -102,14 +102,17 @@ def _obtain_floors(part):
 
 def _obtainable_at_tier(rec, tier):
     """Every part can be had by the end of ``tier``'s band, and the deepest
-    part within the band itself."""
-    top, bottom = 20 * tier, 20 * (tier - 1) + 1
+    part within its own band (the dish's tier, or the band below for a big
+    dish, which is a tier richer than its deepest part: cooking_rules.json
+    big_dish)."""
+    top = 20 * tier
     parts = kitchen.parts(rec)
     floors = {p: _obtain_floors(p) for p in parts}
     if any(not fs or min(fs) > top for fs in floors.values()):
         return False
     deepest = max(parts, key=kitchen.part_floor)
-    return any(bottom <= f <= top for f in floors[deepest])
+    base = kitchen.base_tier(rec)
+    return any(20 * (base - 1) + 1 <= f <= 20 * base for f in floors[deepest])
 
 
 # ---------------------------------------------------------------------------
@@ -149,6 +152,57 @@ def test_a_deep_stat_dish_teaches_up_to_its_tiers_cap():
     p.deepest_floor_reached = 90
     caps = RULES['stat']['cap_by_tier']
     assert p.cooking_stat_softcap('DEX', 5) == caps[4] > p.cooking_stat_softcap('DEX', 3)
+
+
+# ---------------------------------------------------------------------------
+# Big dishes +1 tier (Brandon, 2026-11-16, on a five-part Wild Game Pie of
+# floors 1 to 4 that was only tier 1)
+# ---------------------------------------------------------------------------
+
+def test_a_big_dish_is_one_tier_above_its_deepest_part_and_the_rule_is_data():
+    big = RULES['big_dish']
+    assert big['parts'] == 4 and big['tier_bonus'] == 1
+    for r in kitchen.book():
+        base = kitchen.base_tier(r)
+        if kitchen.dish_size(r) >= big['parts']:
+            assert kitchen.dish_tier(r) == min(5, base + big['tier_bonus']), r['id']
+        else:
+            assert kitchen.dish_tier(r) == base, r['id']
+    # A five-part dish of the top floors only: tier 2 now, not 1.
+    pie = next(r for r in kitchen.book() if kitchen.dish_size(r) == 5 and kitchen.base_tier(r) == 1)
+    assert kitchen.dish_tier(pie) == 2
+    assert kitchen.big_dish_line(pie) == 'Five ingredients: one tier richer.'
+    four = next(r for r in kitchen.book() if kitchen.dish_size(r) == 4 and kitchen.base_tier(r) == 2)
+    assert kitchen.big_dish_line(four) == 'Four ingredients: one tier richer.'
+    # Never past tier 5, and nothing to say when the tier is not raised.
+    top = next(r for r in kitchen.book() if kitchen.dish_size(r) >= 4 and kitchen.base_tier(r) == 5)
+    assert kitchen.dish_tier(top) == 5 and kitchen.big_dish_line(top) == ''
+    small = next(r for r in kitchen.book() if kitchen.dish_size(r) == 3)
+    assert kitchen.big_dish_line(small) == ''
+
+
+def test_the_raised_tier_is_the_dishs_tier_everywhere():
+    """The cook's question, the numbers, the stat cap it teaches to, the
+    menu's tier chip and the line that says why, the picture's vessel."""
+    import cook_menu
+    from food_system import _recipe_quiz_tier
+    from player import Player
+    rec = next(r for r in kitchen.book() if kitchen.dish_stat(r) and kitchen.dish_size(r) >= 4
+               and kitchen.base_tier(r) == 1)
+    assert kitchen.dish_tier(rec) == 2
+    assert _recipe_quiz_tier(rec) == 2
+    assert kitchen.dish_outcome(rec)['tier'] == 2
+    assert rec['art'].split('_t')[1].startswith('2_'), rec['art']
+    p = Player()
+    p.inventory = []
+    row = kitchen._row(p, rec, kitchen.held_counts(p.inventory))
+    assert row['tier'] == 2 and cook_menu.tier_line(row).endswith('2')
+    assert cook_menu.big_dish_line(row) in ('Four ingredients: one tier richer.',
+                                            'Five ingredients: one tier richer.')
+    stat = kitchen.dish_stat(rec)
+    caps = RULES['stat']['wis_cap_by_tier' if stat == 'WIS' else 'cap_by_tier']
+    assert p.cooking_stat_softcap(stat, kitchen.dish_tier(rec)) == caps[1]
+    assert any('Tier 2 dishes teach' in line for line in kitchen.dish_effects(p, rec))
 
 
 # ---------------------------------------------------------------------------
@@ -365,7 +419,10 @@ def test_the_special_foods_are_the_quest_and_one_of_a_kind_finds():
 @pytest.mark.parametrize('fid', sorted(SPECIAL))
 def test_each_special_food_has_a_decent_dish_of_its_tier(fid):
     rec = _special_dish(fid)
-    assert kitchen.dish_tier(rec) in _found_tiers(fid), (fid, kitchen.dish_tier(rec), _found_tiers(fid))
+    # Its deepest part is of a tier where the food is found; a big dish of
+    # four parts or more is a tier richer than that (big_dish, 2026-11-16).
+    assert kitchen.base_tier(rec) in _found_tiers(fid), (fid, kitchen.base_tier(rec), _found_tiers(fid))
+    assert kitchen.dish_tier(rec) == kitchen.base_tier(rec) + kitchen.big_dish_bonus(rec)
     # Decent: four parts or more (the size bonus), never the dish that makes it,
     # and every other part one a run turns up (at most one uncommon part).
     assert kitchen.dish_size(rec) >= 4, rec['id']

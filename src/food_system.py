@@ -479,8 +479,8 @@ def recipe_is_trophy(recipe: dict) -> bool:
 
 
 def _recipe_quiz_tier(recipe: dict) -> int:
-    """The cooking question's tier: the dish's tier, the band of its
-    deepest ingredient (kitchen.dish_tier)."""
+    """The cooking question's tier: the dish's tier (the band of its
+    deepest ingredient, a tier more for a big dish: kitchen.dish_tier)."""
     import kitchen
     return kitchen.dish_tier(recipe)
 

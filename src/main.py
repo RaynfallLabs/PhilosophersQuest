@@ -7152,8 +7152,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_title = f"COOKING {ingredient.name.upper()}  --  COOKING"
         self.state = STATE_QUIZ
 
-        # The dish's tier (the band of its deepest ingredient) is its
-        # "quality" for the cooking quirks.
+        # The dish's tier (kitchen.dish_tier: its deepest ingredient's band,
+        # a tier more for a big dish) is its "quality" for the cooking quirks.
         _outcome_tier = _recipe_quiz_tier(_recipe_for_quirk)
         # (the ingredient has just left the pack: its own stamp is read)
         _facts = _cook_facts(self.player, _recipe_for_quirk)

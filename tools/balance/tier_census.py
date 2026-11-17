@@ -12,7 +12,8 @@ dungeon where an item is found").
     shop only) is "not dropped" and not counted;
   * monsters: peak_floor, else min_level (ordinary kinds, mini-bosses and
     bosses apart, and every family on its own);
-  * dishes: the band of the deepest ingredient (kitchen.dish_tier), by tab
+  * dishes: their own tier (kitchen.dish_tier: the band of the deepest
+    ingredient, a tier more for a dish of four parts or more), by tab
     and, for stat dishes, by stat;
   * spells: their own tier (spells.LEARNABLE_SPELLS);
   * encounters: min_level, or the middle of an NPC's 10-floor block.
@@ -204,7 +205,7 @@ def census() -> dict:
     for s in sp.values():
         fam_sp[s.get('spell_family') or '?'].add(int(s.get('tier') or 0))
 
-    # Dishes: the kitchen's own tier (the deepest ingredient's band).
+    # Dishes: the kitchen's own tier (kitchen.dish_tier).
     import kitchen as K
     by_tab, by_stat = collections.defaultdict(list), collections.defaultdict(list)
     for rid in K.raw_recipes():

@@ -1,6 +1,11 @@
 {
-  "_doc": "Every number a cooked dish gives (the kitchen rebuild, 2026-11-14; src/kitchen.py reads it). A dish has one main benefit (hp, sp, mp, stat or special: its menu tab). Its tier is the band of its deepest ingredient. Its worth is the sum of what its ingredients add (worth, below) times the size bonus for how many different ingredients it has (size_mult). Lists by tier hold tiers 1 to 5. No recipe carries a number of its own.",
+  "_doc": "Every number a cooked dish gives (the kitchen rebuild, 2026-11-14; src/kitchen.py reads it). A dish has one main benefit (hp, sp, mp, stat or special: its menu tab). Its tier is the band of its deepest ingredient, one tier more for a big dish (big_dish). Its worth is the sum of what its ingredients add (worth, below) times the size bonus for how many different ingredients it has (size_mult). Lists by tier hold tiers 1 to 5. No recipe carries a number of its own.",
   "band_floors": 20,
+  "big_dish": {
+    "_doc": "Big dishes +1 tier (Brandon, 2026-11-16, on a five-part Wild Game Pie of floors 1 to 4 that was only tier 1): a dish of parts or more different ingredients is tier_bonus tiers above the band of its deepest ingredient, at most tier 5 (kitchen.dish_tier). The raised tier is the dish's tier everywhere: the cooking question, the stat cap it teaches to, its numbers, its picture. The size bonus (size_mult) is apart and unchanged.",
+    "parts": 4,
+    "tier_bonus": 1
+  },
   "worth": {
     "_doc": "What one ingredient adds to a dish's worth: a monster part or trophy 1, a foraged find 0.6, a ration 0.5.",
     "monster": 1.0,

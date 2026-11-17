@@ -233,8 +233,15 @@ def not_ready_line(row: dict) -> str:
 
 
 def tier_line(row: dict) -> str:
-    """The cooking question's tier (the band of the dish's deepest part)."""
+    """The cooking question's tier (kitchen.dish_tier: the band of the
+    dish's deepest part, a tier more for a big dish)."""
     return f"Question: Tier {row['tier']}"
+
+
+def big_dish_line(row: dict) -> str:
+    """Why a big dish's tier is above its deepest part's ("Five
+    ingredients: one tier richer."), or '' (kitchen.big_dish_line)."""
+    return kitchen.big_dish_line(row['recipe'])
 
 
 def list_items(rows: list, note: str = '') -> list:

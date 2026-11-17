@@ -7643,9 +7643,12 @@ class RenderMixin:
             head.append((row['name'], self._cook_ink(FP.GOLD_BRIGHT if legendary else FP.GOLD_PALE),
                          get_font('heading', 22)))
             keep = cm.keep_together
+            # A big dish says why it is a tier richer (Brandon, 2026-11-16).
+            big = cm.big_dish_line(row)
             core = ([(keep(cm.status_line(row)), self._cook_ink(status_col), fb),
-                     (cm.tier_line(row), self._cook_ink(FP.FADED_TEXT), f),
-                     ("What It Does Now", self._cook_ink(FP.GOLD_BRIGHT), fb)]
+                     (cm.tier_line(row), self._cook_ink(FP.FADED_TEXT), f)]
+                    + ([(big, self._cook_ink(FP.FADED_TEXT), f)] if big else [])
+                    + [("What It Does Now", self._cook_ink(FP.GOLD_BRIGHT), fb)]
                     + [(keep(e), self._cook_ink(FP.SUCCESS_TEXT if ready else FP.BODY_TEXT), f)
                        for e in now])
             good = ([("For Good", self._cook_ink(KT.GOLD_HI), fb)]

@@ -30,7 +30,8 @@ mode, a T1-T5 stack of parts), the potency formulas, the Single tab.
   parts a hero can get at that depth (§4.3).
 - **A special find is worth cooking.** Every quest, key or one-of-a-kind food has a decent dish
   of its own (§4.4); cooking it uses it up.
-- **LORE, NOT FLOOR.** A dish's numbers come from its tier (the band of its deepest ingredient) in
+- **LORE, NOT FLOOR.** A dish's numbers come from its tier (the band of its deepest ingredient, a
+  tier more for a dish of four parts or more: §5) in
   `data/cooking_rules.json`. Nothing is multiplied by the floor the hero stands on.
 
 ---
@@ -188,7 +189,7 @@ dish is named just like an ingredient (the build checks).
   the pack.
 - **Cross-depth:** about a third of the multi-dishes join an early part with a deep one: Goblin
   Gristle from floor 3 goes into the Gristle-and-Locust Harvest Pie with a floor-74 locust.
-- **Legendary feasts:** 36, five ingredients each, deep (tier 3+): each of the 14 trophies anchors
+- **Legendary feasts:** 36, five ingredients each, deep (their deepest part tier 3+, so tier 4+ as big dishes): each of the 14 trophies anchors
   two, and the seven seal demons and Baba Yaga one each.
 
 ### 4.1 A book a run can cook (`part_freq.json`, `part_rules.py`)
@@ -214,15 +215,17 @@ runs. Now: all 36 feasts once the trophy is won (19 counting the trophy's own od
 meets: the cow level's two (secret), the mimic (it waits in chests) and Charybdis (summoned by
 her scroll); each pairs only with common partners.
 
-Dishes per tab and depth band (the tier of the deepest ingredient):
+Dishes per tab and tier (`kitchen.dish_tier`: the deepest ingredient's band, a tier more for a
+big dish, §5; before the big-dish rule of 2026-11-16 in brackets):
 
-| Tab | 1-20 | 21-40 | 41-60 | 61-80 | 81-100 |
+| Tab | T1 | T2 | T3 | T4 | T5 |
 |-----|-----:|------:|------:|------:|-------:|
-| HP | 45 | 15 | 10 | 4 | 14 |
-| SP | 78 | 10 | 4 | 11 | 5 |
-| MP | 46 | 10 | 12 | 4 | 13 |
-| Stat | 140 | 38 | 32 | 18 | 26 |
-| Special | 80 | 42 | 18 | 8 | 20 |
+| HP | 36 (45) | 20 (15) | 12 (10) | 4 (4) | 16 (14) |
+| SP | 62 (78) | 26 (10) | 4 (4) | 9 (11) | 7 (5) |
+| MP | 41 (46) | 13 (10) | 13 (12) | 4 (4) | 14 (13) |
+| Stat | 109 (140) | 60 (38) | 32 (32) | 25 (18) | 28 (26) |
+| Special | 67 (80) | 42 (42) | 26 (18) | 10 (8) | 23 (20) |
+| All | 315 (389) | 161 (115) | 87 (76) | 52 (45) | 88 (78) |
 
 ### 4.3 Every stat at every tier (Brandon, 2026-11-16)
 
@@ -232,20 +235,22 @@ its stat (§5), so a stat with no deep dishes stopped early: Dexterity had nothi
 were added (dish_345 to dish_359), lore first: a deep part of the right depth whose lore is the
 stat, often with a shallower one carried down.
 
-| Stat | 1-20 | 21-40 | 41-60 | 61-80 | 81-100 | Added |
+Stat dishes per tier now (with the big-dish rule of §5):
+
+| Stat | T1 | T2 | T3 | T4 | T5 | Added |
 |------|-----:|------:|------:|------:|-------:|-------|
-| STR | 32 | 16 | 3 | 4 | 8 | Forge-Giant's Anvil Links, Lion-Strangler Roast (T3) |
-| CON | 17 | 7 | 3 | 3 | 6 | Old-Root Moss Pottage (T3); the Hesperides Garden Supper (T3) and the Monkey King's Stolen Peach Supper (T5) of §4.4 |
-| DEX | 35 | 4 | 5 | 2 | 2 | Coiling Serpent Skewers, Leaping Locust Fritters (T4); Night-and-Coil Wyrm Kebabs, Sky-Rider's Hunt Supper (T5) |
-| INT | 23 | 4 | 3 | 2 | 5 | Faust's Bargain Tea (T3); Dreaming Mind Broth, Frost-Bone Scholar Stew (T4) |
-| PER | 24 | 3 | 5 | 3 | 2 | Night Watch Skewers (T2); Morning Star Watch Supper, Dragon's-Eye Night Skewers (T5); the Night-Owl Carrot Stew (T1) of §4.4 |
-| WIS | 9 | 4 | 13 | 4 | 3 | Titan's Forethought Roast, Job's Whirlwind Supper (T4) |
+| STR | 26 | 20 | 5 | 4 | 8 | Forge-Giant's Anvil Links, Lion-Strangler Roast (T3) |
+| CON | 14 | 9 | 3 | 3 | 7 | Old-Root Moss Pottage (T3); the Hesperides Garden Supper (T4) and the Monkey King's Stolen Peach Supper (T5) of §4.4 |
+| DEX | 28 | 9 | 6 | 3 | 2 | Coiling Serpent Skewers, Leaping Locust Fritters (T4); Night-and-Coil Wyrm Kebabs, Sky-Rider's Hunt Supper (T5) |
+| INT | 20 | 5 | 5 | 2 | 5 | Faust's Bargain Tea (T3); Dreaming Mind Broth, Frost-Bone Scholar Stew (T4) |
+| PER | 15 | 11 | 5 | 4 | 2 | Night Watch Skewers (T2); Morning Star Watch Supper, Dragon's-Eye Night Skewers (T5); the Night-Owl Carrot Stew (T2) of §4.4 |
+| WIS | 6 | 6 | 8 | 9 | 4 | Titan's Forethought Roast, Job's Whirlwind Supper (T4) |
 
 The gate (`tests/test_cooking_rulings_2026_11_16.py`): every stat has at least two stat dishes at
 every tier whose parts a hero can get at that depth: each part's creature spawns by the end of
 the band (the spawn pool's bell, `dungeon._build_spawn_pool`) and its harvest gives the part, or
 the part is found there (forage from its first floor, food where it spawns), and the deepest part
-can be had within the band itself.
+can be had within its own band (for a big dish, the band below the dish's tier).
 
 ### 4.4 Special food (Brandon, 2026-11-16)
 
@@ -255,17 +260,17 @@ into one dish of its own (`build_kitchen.SPECIAL_FOOD`) and no other. Holding it
 under Building Toward, as a harvested part does (`kitchen.is_keystone`), and the detail pane says
 "Find" (or "Cook" for the tart) where a ration says "Find or buy" (`cook_menu.part_source`).
 Cooking it uses it up (`consume_ingredients`), so its event can no longer have that one; the
-events are unchanged. Each dish is four or five parts, of a tier where the food is found, its
+events are unchanged. Each dish is four or five parts, its deepest part of a tier where the food is found (the dish a tier richer: big dishes, §5), its
 other parts common (§4.1).
 
-| Food | Its event | Dish | Tier | Gives |
+| Food | Its event | Dish | Tier (deepest part) | Gives |
 |------|-----------|------|-----:|-------|
-| Magic Dungeon Carrot | the unicorn's trust | Night-Owl Carrot Stew (carrot, owlbear, beholder eyestalk, wild mushroom) | 1 | PER (the night pilots' carrots) |
-| Starnut Tart | the Mooble | Wishing-Star Miner's Pie (tart, star spawn ink, crystal shard, glabrezu ichor) | 2 | MP |
-| Tantalus's Plum | eaten, a big heal | Out-of-Reach Plum Pudding (plum, harpy, roc, healing herb) | 1 | HP |
-| Golden Apple of Hesperides | eaten, CON | Hesperides Garden Supper (apple, young dragon, hydra, Nemean lion, apple) | 3 | CON |
-| Ambrosia | eaten, every stat | Olympian Victory Banquet (ambrosia, titan, storm giant, pegasus, holy water) | 4 | HP |
-| Peach of Immortality | eaten, a stat | Monkey King's Stolen Peach Supper (peach, young dragon, fallen angel, apple, healing herb) | 5 | CON |
+| Magic Dungeon Carrot | the unicorn's trust | Night-Owl Carrot Stew (carrot, owlbear, beholder eyestalk, wild mushroom) | 2 (1) | PER (the night pilots' carrots) |
+| Starnut Tart | the Mooble | Wishing-Star Miner's Pie (tart, star spawn ink, crystal shard, glabrezu ichor) | 3 (2) | MP |
+| Tantalus's Plum | eaten, a big heal | Out-of-Reach Plum Pudding (plum, harpy, roc, healing herb) | 2 (1) | HP |
+| Golden Apple of Hesperides | eaten, CON | Hesperides Garden Supper (apple, young dragon, hydra, Nemean lion, apple) | 4 (3) | CON |
+| Ambrosia | eaten, every stat | Olympian Victory Banquet (ambrosia, titan, storm giant, pegasus, holy water) | 5 (4) | HP |
+| Peach of Immortality | eaten, a stat | Monkey King's Stolen Peach Supper (peach, young dragon, fallen angel, apple, healing herb) | 5 (5) | CON |
 
 Confirmed, not changed: the Mooble's Starnut and the Bococho's Sunroot (forage) each go into a
 single dish and two or more multi-dishes; caviar and tater tots make the dish that plays
@@ -303,8 +308,15 @@ and `items_feasts.json`.
 
 ## 5. What a dish gives (`data/cooking_rules.json`, `kitchen.dish_outcome`)
 
-**Tier** = the band of the deepest ingredient (floors 1-20 tier 1 ... 81-100 tier 5). It is also
-the cooking question's tier.
+**Tier** = the band of the deepest ingredient (floors 1-20 tier 1 ... 81-100 tier 5), and **a big
+dish one tier richer** (Brandon, 2026-11-16: "Big dishes +1 tier", on a five-part Wild Game Pie
+of floors 1 to 4 that was only tier 1): a dish of four or more different ingredients
+(`cooking_rules.json` `big_dish`: `parts` 4, `tier_bonus` 1) is a tier above its deepest part's
+band, at most 5 (`kitchen.dish_tier`, `base_tier`, `big_dish_bonus`). That tier is the dish's
+everywhere: the cooking question, the stat cap it teaches to, its numbers, its picture's vessel,
+the menu's "Question: Tier N", with one line under it saying why ("Five ingredients: one tier
+richer.": `kitchen.big_dish_line`), the census and the simulator. The size bonus is apart and
+unchanged.
 
 **Worth** = what the ingredients add (a monster part or trophy 1, a foraged find 0.6, a ration
 0.5) times the **size bonus** for the number of different ingredients (1.0, 1.2, 1.35, 1.5, 1.6
@@ -639,6 +651,7 @@ old saves; every special food in a decent dish of its tier, shown when held, use
 | S1 | 2026-11-15 | **A dish that plays a song** (§5.6): Caviar and Tater Tots, Brandon's song as A Man Before a King; caviar and tater tots, rare plain foods; half damage while the song plays; Robyn starts with both; a secret achievement. 694 dishes. |
 | SD | 2026-11-16 | **You are what you eat** (Brandon's rulings 1 and 2): one stat dish teaches one whole point, still one lesson a floor (two lessons a point, `COOK_MEALS_PER_STAT_POINT`, the banked meals `cook_stat_meals` and `full_point_worth` retired; an old save's half-point banked is dropped). A dish's tier caps how far it can raise a stat (`cap_by_tier`), replacing the cap that grew with the deepest floor (3 + floor / 4); the altar and rare foods go by the deepest band. |
 | HU | 2026-11-16 | **Hunting for a dish** (§7): H in the cook menu; what a hunted dish still needs shows gold under In Sight. |
+| BD | 2026-11-16 | **Big dishes +1 tier** (§5): a dish of four or more different ingredients is a tier above its deepest part's band, at most 5 (`cooking_rules.json` `big_dish`; `kitchen.dish_tier`, `base_tier`, `big_dish_bonus`, `big_dish_line`); the question, the numbers, the stat cap, the picture's vessel and the menu (with "Five ingredients: one tier richer.") all read it. 129 dishes rose a tier (T1 389 to 315, T2 115 to 161, T3 76 to 87, T4 45 to 52, T5 78 to 88). Two new pictures (a tier-2 Stat pie and platter) keep most dishes showing their own kind. |
 | HC | 2026-11-16 | **No cap across floors on max HP from meals** (Brandon: "there should be a per floor limit to hp gained, but not a max across several floors... that encourages cooking"). The lifetime cap (`Player.cooking_softcap`: 4 a floor reached, at least 20; `kitchen.lifetime_hp_room`; "Max HP: all cooking can give at this depth"; the sidebar's "Meals: go deeper for HP") is gone; the floor's cap (+5 a floor) stays, and a feast's lasting max HP always lands. |
 | PS | 2026-11-16 | **Brandon's three rulings.** People are searched, never harvested (§3.5, §8.1): 58 kinds in `people.txt`, twelve parts and their single dishes gone, 52 dishes re-sourced, old saves' parts become food. Every stat at every tier (§4.3): 15 stat dishes. Every special food in a dish of its own (§4.4): 6 dishes. Ingredients weigh nothing (a carried dish that does not fit is set down). 703 dishes, 306 ingredients. `part_rules.rare_foods` reads `floorSpawnWeight` too (the mythic fruits were counted common). |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |
