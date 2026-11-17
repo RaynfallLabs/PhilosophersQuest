@@ -61,7 +61,7 @@ reporter are small, independent JSON/text siblings. See
 |---|---|---|
 | [conventions.md](conventions.md) | Zero-tolerance, chain v2, math-only timing, no-masteries, resource-loss-is-the-penalty, flow-over-gradient, save-bonus cap, karma clamp, SP floor, system-change-sweep rule | **Read first.** The orientation doc. |
 | [quiz_engine.md](quiz_engine.md) | threshold / chain / escalator modes, zero-tolerance, per-run tier-clear auto-pass, timing | Any time you touch quiz flow |
-| [combat.md](combat.md) | Chain v2 peak-chain formula, hit resolution, _damage_multiplier, DR bypass tiers | Any combat change |
+| [combat.md](combat.md) | Chain v2 peak-chain formula, the hero's defence (AC, dodge, speed, the world's turns), hit resolution, _damage_multiplier, DR bypass tiers | Any combat change |
 | [weapons_and_materials.md](weapons_and_materials.md) | 96 weapons, 11 materials, 149 uniques, chain-passive hooks | Weapon tuning |
 | [monsters.md](monsters.md) | 527 monsters, AI patterns, boss / mini-boss flags, families | Monster add/edit |
 | [monster_families.md](monster_families.md) | The 22 monster families, tiers earned by studying distinct kinds (keystones count two), the five tiers (Recognise, Forewarned, Lore, Hunter, Bane), technique primitives (`family_edges`), Circles, Loremaster, Bestiary gating | Family, Bestiary or technique change |
@@ -100,6 +100,7 @@ the doc wins (and the row is a bug — please update it).
 | "What does chain-v2 do differently from v1?" | [combat.md](combat.md); peak-chain damage, miss = chain 0, wrong = strike-now |
 | "How does a scroll get identified?" | [identify_v3.md](identify_v3.md); one philosophy Q at derived id_tier |
 | "Where does damage math live?" | [combat.md](combat.md); `combat.player_attack`, `_damage_multiplier` |
+| "How do AC, dodge, speed and the load work?" | [armour.md](armour.md) section 1c and [combat.md](combat.md) "The hero's defence"; `src/defence.py`, `data/gear_rules.json` `defence` and `load` |
 | "How do coatings, thrown flasks, Press or Guard and the parry work?" | [combat.md](combat.md) "The arsenal's tools"; `coatings.py`, `stance.py`, `data/arsenal.json` |
 | "What blocks a gaze, a voice or fey glamour?" | [armour.md](armour.md) 6b; `counters.py` (mirror shield, beeswax earplugs, cold-iron charm) |
 | "Why does a piece I have worn before go on with no quiz? How long does plate take to put on?" | [armour.md](armour.md) 1b; `known_by_hand.py`, `game_dressing.py` (donning turns, the weapon At Your Back on S, the Loadouts on Shift+E), `busy.py`, `loadouts.py`, `data/gear_rules.json` `threshold` / `donning` |

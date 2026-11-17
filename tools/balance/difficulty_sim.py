@@ -684,8 +684,11 @@ PROFILES['mastery'] = dict(PROFILES['stacked'], saver=True, knobs=dict(
 # The same, as a Dexterity build: the meals, gifts and altars to DEX and CON,
 # so light armour's dodge and Dexterity's speed (the defence model,
 # 2026-11-16) are what keep him alive. He keeps what he can spare under the
-# Light line, where the load first costs dodge.
-PROFILES['mastery_dex'] = dict(PROFILES['mastery'], stat_focus=('DEX', 'CON'), pack_line='light')
+# Light line, where the load first costs dodge, and wears light body armour
+# only (`armour_class`): with Strength to pay plate's drag, the first runs
+# of the model found him in plate, no Dexterity build at all.
+PROFILES['mastery_dex'] = dict(PROFILES['mastery'], stat_focus=('DEX', 'CON'), pack_line='light',
+                               armour_class='light')
 # ... and as a caster (slice 7, magic as a style): meals and gifts to INT and
 # CON, light or mithril body armour (the metal tax), attack spells by element.
 PROFILES['mastery_mage'] = dict(PROFILES['mastery'], stat_focus=('INT', 'CON'), caster=True,
@@ -2096,6 +2099,11 @@ class Run:
             # against 0 for ever, so the hero kept the first helm, gloves and
             # boots he found all the way down (the 0% survival of v3.3.4 on).
             if item.slot == 'body':
+                # A build's own weight class (the Dexterity build wears light
+                # armour: his dodge and quickness are what keep him alive).
+                want = self.prof.get('armour_class')
+                if want and gear_mod.piece_weight_class(item) != want:
+                    return
                 new_v = self._body_value(item)
                 old_v = self._body_value(cur)
             else:

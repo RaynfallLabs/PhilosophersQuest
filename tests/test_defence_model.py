@@ -4,10 +4,11 @@
 * AC comes from armour, the shield and magic only: no Dexterity in AC.
 * Dodge: Dexterity, a point over 10, capped; light armour keeps all of it,
   medium half, heavy none; the load takes a share of what is left.
-* Speed: Dexterity makes the hero quicker, a point over 10, capped. Medium
-  and heavy armour cost speed and Strength pays it back: a STR-fit hero in
-  plate is at 10. Only armour too heavy for his Strength and a load he chose
-  to carry take him under 10.
+* Speed: Dexterity makes the hero quicker, a point over 10, capped; light
+  armour keeps all of that quickness, medium half, heavy none. Medium and
+  heavy armour cost speed and Strength pays it back: a STR-fit hero in
+  plate is at 10, whatever his Dexterity. Only armour too heavy for his
+  Strength and a load he chose to carry take him under 10.
 * The load: Light over half the limit (a little less dodge), Heavy over 70%
   (half the dodge, slower), Burdened over 90% (no dodge, much slower),
   Overloaded past the limit (a wall). Speed replaces the old rule that every
@@ -395,6 +396,24 @@ def test_the_simulators_kids_keep_under_the_line_that_slows():
     dex = ds.Run(ds.FloorCache(1), 'mastery_dex', 0.95, 1.0, 'greedy', 1, ds.parse_knobs(''))
     assert dex._pack_line() == dex.p.light_threshold()
     assert dex._need_line() == dex.p.heavy_threshold()
+
+
+def test_the_simulators_dexterity_kid_wears_light_armour_and_the_plate_kid_chooses():
+    import difficulty_sim as ds
+    assert ds.PROFILES['mastery_dex']['armour_class'] == 'light'
+    assert ds.PROFILES['b_hermes']['armour_class'] == 'light'
+    assert 'armour_class' not in ds.PROFILES['mastery']
+    dex = ds.Run(ds.FloorCache(1), 'mastery_dex', 0.95, 1.0, 'greedy', 1, ds.parse_knobs(''))
+    dex.fs = ds.new_floor_stats()
+    dex.consider(items.instantiate_armor('full_plate', 'chain_steel'))
+    assert gear.body_class(dex.p) == 'light'                    # plate left on the floor
+    dex.consider(items.instantiate_armor('studded_leather', 'studded_leather'))
+    assert gear.body_armour(dex.p) is not None and gear.body_class(dex.p) == 'light'
+    plate = ds.Run(ds.FloorCache(1), 'mastery', 0.95, 1.0, 'greedy', 1, ds.parse_knobs(''))
+    plate.fs = ds.new_floor_stats()
+    plate.p.STR = 20
+    plate.consider(items.instantiate_armor('full_plate', 'chain_steel'))
+    assert gear.body_class(plate.p) == 'heavy'
 
 
 def test_importing_the_simulator_patches_nothing():
