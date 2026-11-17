@@ -2,11 +2,18 @@
 
     py tools/dad/code_validator.py        (or double-click "Code Validator.bat")
 
-Choose the kid, type the code he or she shows you, press Enter (or pull the
-lever): the reels spin while the code is checked, and stop on three of the
-badge for a real code. A code seen for the first time is recorded in the same
-ledger check_code.py keeps (Documents\\PQ_Dad\\redeemed.csv), so it is marked
-complete, and the screen says what the reward is.
+Choose the kid, then give the two things on the kid's Seeker page in the
+game: the Seeker name the code was earned under (the kids play under names
+that need not be their own, on more than one computer; the name last used
+for the kid is filled in, and Up / Down or a click moves between the name
+and the code) and the code. Press Enter (or pull the lever): the reels spin
+while the code is checked with that name, and stop on three of the badge for
+a real code. A code seen for the first time is given to the kid chosen,
+recorded under the kid's name in the same ledger check_code.py keeps
+(Documents\\PQ_Dad\\redeemed.csv), so it is marked complete, and the screen
+says what the reward is. The Seeker name is remembered for the kid
+(Documents\\PQ_Dad\\kids.json). A code already used for another kid lands
+amber and says so: Enter gives it anyway, Esc goes back.
 
 The Badge Library is each kid's badges, the one place that holds every
 claim whichever machine the kid played on: every achievement by category as
@@ -47,6 +54,9 @@ MIN_SIZE = (1024, 680)
 FPS = 60
 
 KIDS, CODE, SPIN, RESULT, PARTY, TRACKER = 'kids', 'code', 'spin', 'result', 'party', 'tracker'
+NAME_ROW = 58                     # the Seeker name's row above the code boxes (unscaled px)
+NAME_LABEL = "Seeker name (the name on the kid's Seeker page)"
+NAME_LABELS = (NAME_LABEL, "Seeker name (on the kid's Seeker page)", "Seeker name")   # a narrow window
 TABS = ((KIDS, 'Choose a Kid'), (CODE, 'Check a Code'), (TRACKER, 'Badge Library'))
 
 # The kids' heroes (welcome_screen's Secret Builds: Fianna the Wizard, Corwin
@@ -246,6 +256,9 @@ class App:
         self.note_t = -99.0
         self.esc_t = -99.0                 # the last Esc on the kid screen (two to quit)
         self.raw = ''                      # the code's keys as typed
+        self.seeker_name = ''              # the Seeker name the code was earned under, as typed
+        self.field = 'code'                # the field the keys go to: 'name' or 'code'
+        self._name_for = None              # the kid (normalised) the Seeker name was filled in for
         self.entry = core.parse_entry('', self.words)
         self.line = ''                     # the hint under the slot
         self.shake_t = -99.0
@@ -296,10 +309,21 @@ class App:
         if state == KIDS:
             self._refresh_counts()
             self.adding = self.removing = None
+        if state == CODE:
+            self._fill_name()
         if state != PARTY:
             self.parts.clear()
         self.state = state
         self.state_t = 0.0
+
+    def _fill_name(self):
+        """The Seeker name field, filled in for the kid chosen (the name last
+        used for him or her, else the kid's own) when the kid has changed."""
+        norm = core.normalise(self.name)
+        if norm != self._name_for:
+            self._name_for = norm
+            self.seeker_name = core.prefill_name(self.name)
+            self.field = 'code'
 
     def _open_library(self, focus=None):
         """Read the kid's library from the ledger, picking ``focus`` (a badge
@@ -315,6 +339,7 @@ class App:
         rows = dadlib.ledger()
         ids = set(self.by_id)
         self._counts = {core.normalise(k): len(set(core.claims(k, rows)) & ids) for k in self.kids}
+        self._plays_as = {core.normalise(k): (core.seeker_names(k) or [''])[0] for k in self.kids}
 
     def badge(self, art, px, earned=True):
         """A badge from seeker_screen, kept here for good (the tracker shows all of them)."""
@@ -360,6 +385,10 @@ class App:
         import seeker_screen
         return seeker_screen.rarity_color(rarity)
 
+    def _duplicate(self) -> bool:
+        """The code on the reels is real but was used before for another kid."""
+        return self.state in (SPIN, RESULT) and (self.verdict or {}).get('status') == 'duplicate'
+
     # -- events ------------------------------------------------------------------
     def handle(self, ev):
         if ev.type == pygame.QUIT:
@@ -395,6 +424,8 @@ class App:
                 self._choose(arg)
         elif kind == 'lever' and self.state == CODE:
             self._pull()
+        elif kind == 'field' and self.state == CODE:
+            self._to_field(arg)
         elif kind == 'next':
             self._next()
         elif kind == 'track_kid' and self.kids:
@@ -533,6 +564,12 @@ class App:
         if k in (pygame.K_RETURN, pygame.K_KP_ENTER):
             self._pull()
             return
+        if k in (pygame.K_UP, pygame.K_DOWN):
+            self._to_field('name' if k == pygame.K_UP else 'code')
+            return
+        if self.field == 'name':
+            self._key_name(ev)
+            return
         if k == pygame.K_BACKSPACE:
             if ev.mod & pygame.KMOD_CTRL:
                 self.raw = ''
@@ -541,11 +578,7 @@ class App:
             self._typed('')
             return
         if k == pygame.K_v and ev.mod & pygame.KMOD_CTRL:
-            text = ''
-            try:
-                text = pygame.scrap.get_text() or ''
-            except Exception:
-                pass
+            text = self._paste()
             if text:
                 self.raw = core.entry_from_text(text, self.words)
                 self._typed(core.hint(core.parse_entry(self.raw, self.words)))
@@ -569,8 +602,54 @@ class App:
         self.entry = core.parse_entry(self.raw, self.words)
         self.line = line
 
+    @staticmethod
+    def _paste() -> str:
+        try:
+            return pygame.scrap.get_text() or ''
+        except Exception:
+            return ''
+
+    def _to_field(self, field):
+        """The keys go to the Seeker name ('name') or the code ('code') from now on."""
+        if field in ('name', 'code') and field != self.field:
+            self.field = field
+            self.line = ''
+            self.pop_t = self.t
+
+    def _key_name(self, ev):
+        """A key typed while the Seeker name field is active."""
+        import seeker_profile
+        k = ev.key
+        if k == pygame.K_BACKSPACE:
+            self.seeker_name = '' if ev.mod & pygame.KMOD_CTRL else self.seeker_name[:-1]
+            self.line = ''
+            return
+        if k == pygame.K_v and ev.mod & pygame.KMOD_CTRL:
+            text = ' '.join(self._paste().split())
+            self.seeker_name = (self.seeker_name + text)[:seeker_profile.NAME_MAX]
+            return
+        ch = getattr(ev, 'unicode', '') or ''
+        if len(ch) != 1 or not ch.isprintable():
+            return
+        if len(self.seeker_name) >= seeker_profile.NAME_MAX:
+            self.line = "That's as long as a Seeker name can be."
+            self.shake_t = self.t
+            self.fx.play('refuse')
+            return
+        self.seeker_name += ch
+        self.line = ''
+        self.pop_t = self.t
+        self.fx.play('key', 0.8)
+
     def _pull(self):
-        """Enter or the lever: check the code (and record a new one) now, then spin onto the answer."""
+        """Enter or the lever: check the code with the Seeker name (and record a
+        new one for the kid) now, then spin onto the answer."""
+        if not core.clean_seeker_name(self.seeker_name):
+            self._to_field('name')
+            self.line = "Type the Seeker name first: the name on the kid's Seeker page in the game."
+            self.shake_t = self.t
+            self.fx.play('refuse')
+            return
         e = self.entry
         if not e.dev and not e.complete:
             whole = core.complete_reading(self.raw, self.words)   # TABLE + T..., typed with no dash
@@ -579,12 +658,18 @@ class App:
                 self._typed('')
                 e = self.entry
         if not e.dev and not e.complete:
+            self._to_field('code')
             self.line = ("Type the whole code first: its word (any length), then eight letters and numbers."
                          if not e.empty else "Type the code the kid shows you, then press Enter.")
             self.shake_t = self.t
             self.fx.play('refuse')
             return
-        self.verdict = core.validate(self.name, e, self.kids)
+        self.seeker_name = core.clean_seeker_name(self.seeker_name)
+        self.verdict = core.validate(self.name, e, self.seeker_name)
+        self._spin()
+
+    def _spin(self):
+        """The lever comes down: the reels spin onto the answer already decided."""
         outcome = core.reel_outcome(self.verdict, self.pool, self.rng)
         self.plan = core.plan_reels(outcome, self.strips, self.rest)
         self.stops_heard = set()
@@ -607,17 +692,32 @@ class App:
         self.rest = list(self.plan.targets)
         v = self.verdict
         if v['status'] == 'new':
-            self.just = (core.normalise(self.name), v['achievement']['id'])
-            self.go(PARTY)
-            self._party_start()
+            self._celebrate()
         else:
             self.go(RESULT)
             if v['status'] == 'already':
                 self.fx.play('chime', 0.9)
+            elif v['status'] == 'duplicate':
+                self.fx.play('chime', 0.6)
             elif v['status'] == 'dev':
                 self.fx.play('secret', 0.8)
             else:
                 self.fx.play('nope')
+
+    def _celebrate(self):
+        """A badge given: the kid's Seeker name is remembered (core.validate wrote it), then the party."""
+        self.just = (core.normalise(self.name), self.verdict['achievement']['id'])
+        self._refresh_counts()
+        self.go(PARTY)
+        self._party_start()
+
+    def _give_anyway(self):
+        """Enter on "Already Used": Dad gives the code to this kid too."""
+        v = core.validate(self.name, self.entry, self.verdict.get('seeker') or self.seeker_name,
+                          allow_duplicate=True)
+        self.verdict = v
+        if v['status'] == 'new':
+            self._celebrate()
 
     def _party_start(self):
         a = self.verdict['achievement']
@@ -635,10 +735,17 @@ class App:
     # results
     def _key_result(self, ev):
         k = ev.key
-        if k == pygame.K_ESCAPE:
-            self.go(KIDS)
-        elif k == pygame.K_TAB:
+        dup = (self.verdict or {}).get('status') == 'duplicate'
+        if k == pygame.K_TAB:
             self._cycle_tab(bool(ev.mod & pygame.KMOD_SHIFT))
+        elif dup:
+            # "Already Used": Enter gives it anyway; Esc (or Backspace, Space) goes back.
+            if k in (pygame.K_RETURN, pygame.K_KP_ENTER):
+                self._give_anyway()
+            elif k in (pygame.K_ESCAPE, pygame.K_BACKSPACE, pygame.K_SPACE):
+                self._next(fresh=True)
+        elif k == pygame.K_ESCAPE:
+            self.go(KIDS)
         elif k in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_BACKSPACE):
             self._next()
         elif k == pygame.K_SPACE:
@@ -646,27 +753,27 @@ class App:
 
     def _result_hint(self) -> str:
         v = self.verdict or {}
-        if v.get('why') == 'sibling':
-            return f"Enter: check it for {v['sibling']}   Space: a new code   Esc: choose a kid"
+        if v.get('status') == 'duplicate':
+            return f"Enter: give it to {self.name} anyway   Esc: back   Tab: Badge Library"
         if v.get('status') == 'fake':
-            return "Enter: fix the code   Space: a new code   Tab: Badge Library   Esc: choose a kid"
+            return ("Enter: fix the code or the name   Space: a new code   Tab: Badge Library   "
+                    "Esc: choose a kid")
         return "Enter: next code   Tab: Badge Library   Esc: choose a kid"
 
     def _next(self, fresh=False):
         """Back to the slot for another code. A code that did not match stays,
-        to be fixed; one that is another kid's code goes over to that kid."""
+        to be fixed (in its letters, or in the Seeker name above it)."""
         v = self.verdict or {}
         keep = v.get('status') == 'fake' and not fresh
-        if keep and v.get('why') == 'sibling':
-            norm = core.normalise(v['sibling'])
-            self.kid = self.pick = next((i for i, n in enumerate(self.kids) if core.normalise(n) == norm),
-                                        self.kid)
-            self.raw = core.entry_from_text(v.get('code', ''), self.words)
-            self._typed(f"Now it's {self.name}'s code. Press Enter to check it.")
+        if keep and v.get('why') == 'name':
+            self._to_field('name')
+            self.line = "Type the Seeker name, then press Enter again."
         elif keep:
-            self._typed("Fix the letters that are wrong, then press Enter again.")
+            self._to_field('code')
+            self._typed("Fix the letters, or press Up to fix the Seeker name, then press Enter again.")
         else:
             self.raw = ''
+            self._to_field('code')
             self._typed('')
         self.go(CODE)
 
@@ -774,8 +881,8 @@ class App:
                 hint = "Y: yes, take it off   N: no"
         elif self.state in (CODE, SPIN, RESULT):
             self._draw_machine(body)
-            hint = {CODE: "Type the code   Enter: pull the lever   Backspace: fix a letter   Ctrl+V: paste   "
-                          "Tab: Badge Library   Esc: choose a kid",
+            hint = {CODE: "Up/Down: name or code   Enter: pull the lever   Backspace: fix   "
+                          "Ctrl+V: paste   Tab: Badge Library   Esc: choose a kid",
                     SPIN: "Esc: skip the spin",
                     RESULT: self._result_hint()}[self.state]
             if self.state == RESULT:
@@ -903,8 +1010,8 @@ class App:
         y = body.y + S(6)
         self._text("Whose Code Is It?", f_head, KT.TEXT_HEAD, body.centerx, y, centre=True)
         y += f_head.get_height() + S(4)
-        self._text("Choose the kid, then type the code he or she shows you.", f_sub, KT.TEXT_DIM,
-                   body.centerx, y, centre=True)
+        sub = "Choose the kid the badge is for, then type the Seeker name and the code he or she shows you."
+        self._text(ui.fit_text(sub, f_sub, body.w - S(20)), f_sub, KT.TEXT_DIM, body.centerx, y, centre=True)
         y += f_sub.get_height() + S(18)
         notice_h = 0 if self.key_ok else S(132)
         area = pygame.Rect(body.x, y, body.w, body.bottom - y - notice_h - S(34))
@@ -947,7 +1054,7 @@ class App:
                          border_radius=10)
         info = PORTRAITS.get(core.normalise(kid))
         well = pygame.Rect(r.x + S(18), r.y + S(18), r.w - S(36), r.w - S(36))
-        well.h = min(well.h, r.h - S(140))
+        well.h = min(well.h, r.h - S(162))
         pygame.draw.rect(self.screen, KT.WELL, well, border_radius=8)
         glow = self._glow(FP.ARCANE_BRIGHT if info and info[0] == 'player_wizard_f' else
                           FP.SUCCESS_TEXT if info else FP.GOLD, well.h // 2)
@@ -974,6 +1081,12 @@ class App:
         y += ui.get_font('italic', 18).get_height() + S(4)
         got = self._counts.get(core.normalise(kid), 0)
         self._text(f"{got} of {len(self.achs)} badges claimed", fs, KT.TEXT_BODY, r.centerx, y, centre=True)
+        plays = self._plays_as.get(core.normalise(kid))
+        if plays and core.normalise(plays) != core.normalise(kid):
+            y += fs.get_height() + S(4)
+            fp = ui.get_font('italic', 16)
+            self._text(ui.fit_text(f"Plays as: {plays}", fp, r.w - S(24)), fp, KT.TEXT_DIM, r.centerx, y,
+                       centre=True)
 
     def _plus_card(self, r, sel):
         ui = _ui()
@@ -1038,7 +1151,7 @@ class App:
         cw = min(body.w - lever_room - S(20), S(940))
         cab = pygame.Rect(body.centerx - (cw + lever_room) // 2, body.y + S(4), cw, body.h - S(8))
         marquee = pygame.Rect(cab.x + S(40), cab.y + S(30), cab.w - S(80), S(64))
-        slot_h = S(150)
+        slot_h = S(150) + S(NAME_ROW)          # the Seeker name, then the code
         reels_top = marquee.bottom + S(20)
         reels_h = cab.bottom - S(30) - slot_h - S(16) - reels_top
         rw = (cab.w - S(110)) // 3
@@ -1059,6 +1172,7 @@ class App:
         body_s = self.cached(('cab', cab.size), lambda: self._cabinet_surface(cab.size))
         self.screen.blit(body_s, cab.topleft)
         self._draw_bulbs(cab, win)
+        dup = win and self._duplicate()
         # The marquee.
         pygame.draw.rect(self.screen, FP.MIDNIGHT, marquee, border_radius=10)
         pygame.draw.rect(self.screen, FP.GOLD, marquee, 2, border_radius=10)
@@ -1068,10 +1182,10 @@ class App:
             dots = '.' * (1 + int(self.t * 3) % 3)
             title = f"Checking {self.name}'s Code"
         elif self.state == RESULT and self.verdict:
-            title = {'already': "A Real Code!", 'dev': "A Practice Code", 'fake': "No Match"}.get(
-                self.verdict['status'], "Checking")
+            title = {'already': "A Real Code!", 'duplicate': "Already Used", 'dev': "A Practice Code",
+                     'fake': "No Match"}.get(self.verdict['status'], "Checking")
         elif self.state == SPIN:
-            title = "A Real Code!" if win else "Hmm..."
+            title = "Already Used" if dup else "A Real Code!" if win else "Hmm..."
         else:
             title = f"{self.name}'s Code"
         title = ui.fit_text(title, ft, marquee.w - 2 * marquee.h - S(40))
@@ -1139,6 +1253,8 @@ class App:
         status = self.verdict.get('status') if self.verdict and self.state in (SPIN, RESULT) else None
         if self.state == SPIN and not win:
             speed, colour = 14.0, FP.GOLD_BRIGHT
+        elif win and self._duplicate():
+            speed, colour = 2.5, FP.AMBER_ACCENT            # a real code used before: amber, slow
         elif win:
             colour = self.rarity_colour(self.verdict['achievement']['rarity']) if self.verdict.get(
                 'achievement') else FP.GOLD_BRIGHT
@@ -1267,9 +1383,10 @@ class App:
         left, right = reels[0].x - S(26), reels[-1].right + S(26)
         colour = FP.GOLD_BRIGHT
         if win:
-            colour = self.rarity_colour(self.verdict['achievement']['rarity'])
+            dup = self._duplicate()
+            colour = FP.AMBER_ACCENT if dup else self.rarity_colour(self.verdict['achievement']['rarity'])
             cell = self._reel_cell(reels[0])
-            pulse = 0.5 + 0.5 * math.sin(self.t * 8)
+            pulse = 0.5 + 0.5 * math.sin(self.t * (3 if dup else 8))
             band = pygame.Rect(reels[0].x - S(8), cy - cell // 2, reels[-1].right - reels[0].x + S(16), cell)
             glow = pygame.Surface(band.size, pygame.SRCALPHA)
             pygame.draw.rect(glow, (*colour[:3], int(40 + 50 * pulse)), glow.get_rect(), border_radius=S(10))
@@ -1280,26 +1397,45 @@ class App:
             pygame.draw.polygon(self.screen, colour, pts)
             pygame.draw.polygon(self.screen, FP.INK, pts, 2)
 
-    def _draw_slot(self, r):
-        """The code, typed into its boxes: WORD - XXXX - XXXX."""
+    def _draw_slot(self, slot):
+        """The two things Dad types: the Seeker name on top, then the code in
+        its boxes, WORD - XXXX - XXXX. The field the keys go to is lit (a gold
+        band and frame, its caret); a click on either one moves there."""
         ui = _ui()
         FP, KT = ui.FP, ui.KT
         shake = int(S(10) * math.sin((self.t - self.shake_t) * 45)) if self.t - self.shake_t < 0.3 else 0
-        r = r.move(shake, 0)
-        pygame.draw.rect(self.screen, FP.INK, r.inflate(S(6), S(6)), border_radius=S(12))
-        pygame.draw.rect(self.screen, KT.WELL, r, border_radius=S(12))
-        pygame.draw.rect(self.screen, FP.GOLD_DARK, r, 2, border_radius=S(12))
-        e = self.entry
+        slot = slot.move(shake, 0)
+        pygame.draw.rect(self.screen, FP.INK, slot.inflate(S(6), S(6)), border_radius=S(12))
+        pygame.draw.rect(self.screen, KT.WELL, slot, border_radius=S(12))
+        pygame.draw.rect(self.screen, FP.GOLD_DARK, slot, 2, border_radius=S(12))
         typing = self.state == CODE
+        name_area = pygame.Rect(slot.x, slot.y, slot.w, S(NAME_ROW))
+        r = pygame.Rect(slot.x, name_area.bottom, slot.w, slot.bottom - name_area.bottom)
+        active = self.field if typing else None
+        for area, which in ((name_area, 'name'), (r, 'code')):
+            band = area.inflate(-S(14), -S(10) if which == 'name' else -S(4))
+            if active == which:
+                glow = self.cached(('fieldband', band.size), lambda b=band: self._band_surface(b.size))
+                self.screen.blit(glow, band.topleft)
+                pygame.draw.rect(self.screen, FP.GOLD_BRIGHT, band, 2, border_radius=S(8))
+            if typing:
+                self.hits.append((band, ('field', which)))
+        pygame.draw.line(self.screen, FP.GOLD_DARK, (slot.x + S(18), name_area.bottom),
+                         (slot.right - S(18), name_area.bottom), 1)
+        self._draw_name_field(name_area.inflate(-S(14), -S(10)), active == 'name')
+        e = self.entry
+        editing = typing                    # the code screen (either field)
+        typing = active == 'code'           # the keys go to the code
         f_lab = ui.get_font('body', 16, bold=True)
-        self._text("Type the Code", f_lab, KT.TEXT_HEAD, r.centerx, r.y + S(8), centre=True)
+        self._text("Type the Code", f_lab, KT.TEXT_HEAD if typing or not active else KT.TEXT_DIM,
+                   r.centerx, r.y + S(8), centre=True)
         # The word's boxes: one per letter, one more for the next while it is
         # being typed. Before anything is typed, ONE wide box reading "any
         # length": code words run from 3 letters (MOO) to 12 (HUNDREDTRIPS),
         # and four ghost boxes spelling WORD read as "four letters" (Brandon,
         # 2026-11-17).
         empty_word = not e.word
-        word_boxes = len(e.word) + (1 if typing and not e.in_chars and len(e.word) < core.WORD_MAX else 0)
+        word_boxes = len(e.word) + (1 if editing and not e.in_chars and len(e.word) < core.WORD_MAX else 0)
         if empty_word:
             word_boxes = 6
         n = word_boxes + core.CHARS
@@ -1363,14 +1499,56 @@ class App:
         code_x = first + word_w + dash_w
         self._text("Eight Letters and Numbers", fl, KT.TEXT_DIM,
                    code_x + (8 * (bw + gap) + dash_w) // 2, y + bh + S(4), centre=True)
-        line = self.line if typing else ''
+        line = self.line if editing else ''
         if typing and not line:
             line = core.hint(e) or ("Capitals and dashes are added for you. O counts as 0, I and L as 1."
                                     if not e.empty else "Type the code exactly as the kid shows it.")
+        elif editing and not line:
+            line = ("Type the name as the kid's Seeker page shows it, then press Down."
+                    if not e.complete else "Press Enter to check the code with this name!")
         if line:
             lf = ui.get_font('body', 16, bold=True)
             col = KT.TEXT_QUIZ if e.complete else KT.TEXT_HINT
             self._text(ui.fit_text(line, lf, r.w - S(30)), lf, col, r.centerx, r.bottom - S(26), centre=True)
+
+    def _band_surface(self, size):
+        """The soft gold light behind the field the keys go to."""
+        s = pygame.Surface(size, pygame.SRCALPHA)
+        pygame.draw.rect(s, (*_ui().FP.GOLD_BRIGHT[:3], 34), s.get_rect(), border_radius=S(8))
+        return s
+
+    def _draw_name_field(self, r, active):
+        """The Seeker name the code was earned under: its label, then the box."""
+        ui = _ui()
+        FP, KT = ui.FP, ui.KT
+        fl = ui.get_font('body', 16, bold=True)
+        room = int(r.w * 0.56)
+        label = next((lab for lab in NAME_LABELS if fl.size(lab)[0] <= room), NAME_LABELS[-1])
+        lab_w = min(fl.size(label)[0], room)
+        label = ui.fit_text(label, fl, lab_w)
+        self._text(label, fl, KT.TEXT_HEAD if active or self.state != CODE else KT.TEXT_DIM,
+                   r.x + S(12), r.centery - fl.get_height() // 2)
+        bx = r.x + S(12) + lab_w + S(14)
+        box = pygame.Rect(bx, r.y + S(5), r.right - S(10) - bx, r.h - S(10))
+        self.screen.blit(self._vgrad(box.w, box.h, KT.RAISED, KT.WELL), box.topleft)
+        pygame.draw.rect(self.screen, FP.GOLD_BRIGHT if active else FP.GOLD_DARK, box, 2 if active else 1,
+                         border_radius=4)
+        fi = ui.get_font('body', 20, bold=True)
+        shown = self.seeker_name
+        while shown and fi.size(shown)[0] > box.w - S(30):
+            shown = shown[1:]
+        tx = box.x + S(10)
+        if shown:
+            ts = fi.render(shown, True, KT.TEXT_QUIZ if active else KT.TEXT_BODY)
+            dy = -int(S(4) * max(0.0, 1 - (self.t - self.pop_t) / 0.15)) if active else 0
+            self.screen.blit(ts, (tx, box.centery - ts.get_height() // 2 + dy))
+            cx = tx + ts.get_width() + S(3)
+        else:
+            ph = ui.get_font('italic', 18).render("The name the kid plays under", True, KT.DIS_TEXT)
+            self.screen.blit(ph, (tx, box.centery - ph.get_height() // 2))
+            cx = tx
+        if active and int(self.t * 2.2) % 2 == 0:
+            pygame.draw.rect(self.screen, FP.GOLD_BRIGHT, (cx, box.y + S(7), max(2, S(3)), box.h - S(14)))
 
     def _slot_box(self, box, ch, col, active, caret_on, font, ghost, dy):
         ui = _ui()
@@ -1398,6 +1576,7 @@ class App:
         cab, _marquee, _reels, slot = self._machine_rects(body)
         k = min(1.0, self.state_t / 0.22)
         accent = {'already': FP.RARITY_RARE, 'dev': FP.ARCANE_BRIGHT}.get(v['status'], FP.AMBER_ACCENT)
+        badge = v['status'] in ('already', 'duplicate')          # a real code: its badge and name
         fb = ui.get_font('body', 16)
         fn = ui.get_font('heading', 24)
         cw = min(S(920), body.w - S(20))
@@ -1409,9 +1588,10 @@ class App:
         text_w = cw - text_x - b - S(22)
         wrapped = [part for line in lines for part in self._wrap(line, fb, text_w)]
         text_h = len(wrapped) * (fb.get_height() + S(4))
-        if v['status'] == 'already':
+        if badge:
             text_h += fn.get_height() + S(26)
         ch = head + S(14) + max(well_px, text_h) + S(10) + fb.get_height() + S(12) + b
+        ch = max(ch, slot.h + S(18))                    # covers the name and the code under it
         r = pygame.Rect(0, 0, cw, ch)
         r.midbottom = (cab.centerx, cab.bottom - S(12) + int(S(40) * (1 - k)))
         ui.draw_dark_panel(self.screen, r, border_color=accent)
@@ -1419,9 +1599,10 @@ class App:
                                 accent=accent, frame=(r, accent))
         well = pygame.Rect(r.x + b + S(22), hr.bottom + S(14), well_px, well_px)
         pygame.draw.rect(self.screen, KT.WELL, well, border_radius=8)
-        if v['status'] == 'already':
+        if badge:
             a = v['achievement']
-            pygame.draw.rect(self.screen, self.rarity_colour(a['rarity']), well, 2, border_radius=8)
+            pygame.draw.rect(self.screen, accent if v['status'] == 'duplicate' else self.rarity_colour(a['rarity']),
+                             well, 2, border_radius=8)
             bb = self.badge(a['art'], well_px - S(14))
             self.screen.blit(bb, (well.x + S(7), well.y + S(7)))
         else:
@@ -1431,7 +1612,7 @@ class App:
             self.screen.blit(mark, (well.centerx - mark.get_width() // 2, well.centery - mark.get_height() // 2))
         x = r.x + text_x
         y = hr.bottom + S(14)
-        if v['status'] == 'already':
+        if badge:
             a = v['achievement']
             self._text(ui.fit_text(a['name'], fn, text_w), fn, KT.TEXT_HEAD, x, y)
             y += fn.get_height() + S(2)
@@ -1442,7 +1623,10 @@ class App:
         for part in wrapped:
             self._text(part, fb, KT.TEXT_BODY, x, y)
             y += fb.get_height() + S(4)
-        self._text(f"Code checked: {v.get('code', '')}", fb, KT.TEXT_DIM, x,
+        checked = f"Code checked: {v.get('code', '')}"
+        if v.get('seeker') and v['status'] != 'dev':
+            checked += f"   Seeker name: {v['seeker']}"
+        self._text(ui.fit_text(checked, fb, text_w), fb, KT.TEXT_DIM, x,
                    max(y + S(6), well.bottom - fb.get_height()))
         self.hits.append((r, ('next', None)))
 

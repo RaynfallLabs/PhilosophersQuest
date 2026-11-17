@@ -1,13 +1,21 @@
-"""Shared helpers for Dad's tools (make_key, check_code, codebook).
+"""Shared helpers for Dad's tools (make_key, check_code, codebook, the Code
+Validator).
 
 Everything Dad keeps lives OUTSIDE the repo, in Documents\\PQ_Dad\\ (the
-redeemed-codes ledger and the printed Codebooks), because the repo is public
-and a Codebook lists every code. The key itself is src/_dad_key.py
-(gitignored); seeker_codes reads it the same way the game does.
+redeemed-codes ledger, the kids list and the printed Codebooks), because the
+repo is public and a Codebook lists every code. The key itself is
+src/_dad_key.py (gitignored); seeker_codes reads it the same way the game does.
+
+The ledger's ``seeker`` column is who the badge was given to: the Seeker name
+the code was checked with, or the kid it was given to (the Code Validator,
+check_code.py ``--for``). A code is made for the Seeker name the child plays
+under, which need not be the kid's own name.
 """
+import calendar
 import csv
 import json
 import os
+import re
 import sys
 import time
 
@@ -73,6 +81,37 @@ def redeemed(seeker: str, achievement: str) -> dict | None:
                 and row.get('achievement') == achievement):
             return row
     return None
+
+
+def code_key(code) -> str:
+    """A code as the ledger compares it: WORD-XXXX-XXXX whatever its case,
+    spacing, dashes or O/I/L slips (seeker_codes.split_code); text that is
+    no code at all, as typed, upper case, letters and digits only."""
+    parts = seeker_codes.split_code(code)
+    if parts is None:
+        return re.sub(r'[^A-Z0-9]', '', str(code or '').upper())
+    word, chars = parts
+    return f'{word}-{chars[:4]}-{chars[4:]}'
+
+
+def find_code(code) -> list[dict]:
+    """Every ledger row with this exact code (compared by code_key), oldest
+    first. Rows from before the ledger wrote codes tidily read the same."""
+    want = code_key(code)
+    if not want:
+        return []
+    return [row for row in ledger() if code_key(row.get('code', '')) == want]
+
+
+def nice_date(stamp, short: bool = False) -> str:
+    """'2026-11-17' -> '17 November 2026' ('17 Nov 2026' when ``short``; the
+    text as written if it will not read)."""
+    try:
+        y, m, d = str(stamp)[:10].split('-')
+        month = (calendar.month_abbr if short else calendar.month_name)[int(m)]
+        return f"{int(d)} {month} {int(y)}"
+    except (ValueError, IndexError):
+        return str(stamp or '')
 
 
 def record(seeker: str, code: str, aid: str, name: str):

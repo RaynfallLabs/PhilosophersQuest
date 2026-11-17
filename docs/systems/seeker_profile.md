@@ -14,7 +14,7 @@ A **Seeker** is the real child playing. A **hero** is who he or she plays in one
 | `seeker_session.py` | A profile + the rules + this run's counters behind one call, `emit(event, **fields)`. Used by the title screen, Study Mode and the Game. |
 | `game_seeker.py` | `SeekerMixin`: the Game's side. Opens the active Seeker per run, `_seeker_event`, the unlock popup queue, flushes, run end. |
 | `seeker_screen.py` | The Seeker Profile screen (title screen, F4), the badge cache (greyscale until earned), the gallery and the unlock card. |
-| `tools/dad/` | Dad's tools: `make_key.py`, `check_code.py` (with a redeemed ledger), `codebook.py` (a printable page per Seeker). They write to `Documents\PQ_Dad\`, outside the repo. |
+| `tools/dad/` | Dad's tools: `make_key.py`, `check_code.py` (with a redeemed ledger; `--for <kid>` records under a kid), `codebook.py` (a printable page per Seeker) and the Code Validator (`code_validator.py`, rules in `validator_core.py`; see "Dad's Code Validator" below). They write to `Documents\PQ_Dad\`, outside the repo. |
 
 ## Where the profile lives
 
@@ -59,6 +59,15 @@ JSON with schema 1: `stats` (sums), `best` (maxima), `sets` (distinct values), `
   - With no key, the game uses a public dev key and every code starts `DEV-`; no checker accepts those.
   - Rotating adds a key (`--rotate`). Old keys must be kept: they still check old codes and verify old seals.
 - **One system for every code (D3).** The 26 reward scrolls carry `"achievement"` in `data/items/scroll.json`, the Scroll of Death's Bane names `lake_of_fire`, and the victory popup's story entry names `stone_home`. Each shows the Seeker's own code, or a line saying to choose a Seeker.
+
+### Dad's Code Validator
+
+A code is made for the Seeker name the child plays under, and the kids play under names that need not be their own, on more than one computer (Brandon, 2026-11-17). So the validator never guesses a name:
+- **Choose the kid profile** (Fianna, Corwin, any name added): the badge goes to that kid, recorded in the ledger under the kid's name.
+- **The code screen asks for two things:** the Seeker name (the name on the kid's Seeker page) and the code. Up / Down or a click moves between them; Tab still switches the tabs. The name is filled in with the one last used for that kid, else the kid's own name, and stays editable.
+- **Enter checks the code with that name only** (`seeker_codes.check_code`). Real: the badge is given and the name remembered for the kid, newest first, in `kids.json` under `seeker_names` (a file from before reads with none). The kid card shows "Plays as: ...". Not real: "That code isn't real for the Seeker name ... Check the letters and the name."
+- **The same kid already holding that badge** gets the "Already Claimed" card. **This exact code already in the ledger for another kid** (compared after `seeker_codes.split_code`) lands amber with "Already Used": nothing is written unless Dad presses Enter to give it anyway; Esc goes back.
+- The CLI does the same with `py tools/dad/check_code.py --for Corwin <Seeker name> <code>` (`--allow-duplicate` to record a code used before).
 
 ## Achievements data
 
@@ -154,7 +163,8 @@ A thrown weapon's kill and a thrown flask's kill are kills from afar (`ranged`).
 | `test_seeker_profile.py` | round trip, merge, backup, damaged and edited files, newer schema, failed write, index |
 | `test_achievements_engine.py` | every counter and trigger kind, ladders, validator |
 | `test_achievements_data.py` | the catalogue: validity, shipped ids, Title Case, hint rules |
-| `test_dad_tools.py` | checker, ledger, codebook, key file, release step |
+| `test_dad_tools.py` | checker (`--for`, duplicates), ledger, codebook, key file, release step |
+| `test_dad_code_validator.py` | the validator: code entry, the Seeker name, assignment to the kid, remembered names, old `kids.json` files, duplicates, reels, library, every screen headless |
 | `test_seeker_wiring.py` | the spine, plus real game paths: kills, damage, quiz answers, deeds, pets, XYZZY, run end, a copied-back save, an edited profile, the save round trip, the reward scrolls |
 | `test_seeker_ui.py` | the screens |
 | `test_achievements_quirks_2026_11.py` | the audit (every creature, deed, flask, technique, outcome and pet line a trigger names is real and sent), the 2026-11-14 achievements through real game paths, an old profile, and the new quirks |

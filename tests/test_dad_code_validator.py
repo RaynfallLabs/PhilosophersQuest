@@ -1,7 +1,8 @@
 """Dad's Code Validator (tools/dad/code_validator.py, tools/dad/validator_core.py):
-the code entry, the check and its record, the reels' outcome and stop, the
-tracker, the kids list and the reward line, all without a window; then a
-headless run of every screen.
+the code entry, the check with the Seeker name typed and its record under the
+kid chosen, the names remembered per kid, duplicates, the reels' outcome and
+stop, the tracker, the kids list and the reward line, all without a window;
+then a headless run of every screen.
 
 Every test points the ledger at a temp dir (dadlib._DAD_DIR_OVERRIDE) and the
 codes at a test key (seeker_codes._KEYS_OVERRIDE): no real key, code or
@@ -127,13 +128,13 @@ def test_a_dev_code_is_seen_as_soon_as_it_starts():
 
 def test_a_real_code_is_recorded_once_in_the_ledger_check_code_reads():
     aid = 'duck_hatched'
-    v = core.validate('Fianna', entry(code_for(aid)), ['Fianna', 'Corwin'])
+    v = core.validate('Fianna', entry(code_for(aid)))
     assert v['status'] == 'new' and v['achievement']['id'] == aid and v['recorded']
     rows = dadlib.ledger()
     assert [(r['seeker'], r['achievement']) for r in rows] == [('Fianna', aid)]
     # check_code.py sees it as redeemed; the validator says already claimed.
     assert 'Already redeemed on' in check_code.check('Fianna', code_for(aid))
-    again = core.validate('fianna', entry(code_for(aid)), ['Fianna'])
+    again = core.validate('fianna', entry(code_for(aid)))
     assert again['status'] == 'already' and again['row']['date'] == rows[0]['date']
     assert len(dadlib.ledger()) == 1
     title, lines = core.result_lines(again)
@@ -144,25 +145,143 @@ def test_a_code_typed_with_forgiven_typos_still_checks():
     code = code_for('questions_100')
     word, rest = code.split('-', 1)
     slipped = word + '-' + rest.replace('0', 'O').replace('1', 'I')
-    assert core.validate('Fianna', entry(slipped), [])['status'] == 'new'
+    assert core.validate('Fianna', entry(slipped))['status'] == 'new'
 
 
 def test_a_code_that_does_not_match_says_why_and_records_nothing():
     code = code_for('duck_hatched')
     bad = code[:-1] + ('X' if code[-1] != 'X' else 'Y')
-    v = core.validate('Fianna', entry(bad), ['Fianna', 'Corwin'])
+    v = core.validate('Fianna', entry(bad))
     assert v['status'] == 'fake' and v['why'] == 'letters'
     title, lines = core.result_lines(v)
-    assert title == "That Code Doesn't Match" and 'for Fianna' in lines[0]
-    assert core.validate('Fianna', entry('GORGEN-ABCD-EFGH'), [])['why'] == 'word'
-    sib = core.validate('Fianna', entry(code_for('duck_hatched', 'Corwin')), ['Fianna', 'Corwin'])
-    assert sib['why'] == 'sibling' and sib['sibling'] == 'Corwin'
-    assert "Corwin's code" in core.result_lines(sib)[1][1]
+    assert title == "Not a Real Code"
+    assert lines[0] == "That code isn't real for the Seeker name Fianna. Check the letters and the name."
+    assert core.validate('Fianna', entry('GORGEN-ABCD-EFGH'))['why'] == 'word'
+    # Another kid's code is not real for this name: no "it looks like Corwin's code" any more.
+    other = core.validate('Fianna', entry(code_for('duck_hatched', 'Corwin')))
+    assert other['status'] == 'fake' and other['why'] == 'letters' and 'sibling' not in other
+    assert not any('Corwin' in ln for ln in core.result_lines(other)[1])
     assert dadlib.ledger() == []
+    assert core.seeker_names('Fianna') == []                     # nothing remembered either
+
+
+# -- the Seeker name (Brandon, 2026-11-17: "Ask for the code and the name of the Seeker used.
+#    Assign the badge to the kid profile.") ----------------------------------------------------------
+
+def test_the_code_is_checked_with_the_seeker_name_and_given_to_the_kid():
+    aid = 'duck_hatched'
+    v = core.validate('Corwin', entry(code_for(aid, 'Xyz')), 'Xyz')
+    assert v['status'] == 'new' and v['kid'] == 'Corwin' and v['seeker'] == 'Xyz'
+    rows = dadlib.ledger()
+    assert [(r['seeker'], r['achievement']) for r in rows] == [('Corwin', aid)]   # under the kid
+    assert dadlib.redeemed('Corwin', aid) and not dadlib.redeemed('Xyz', aid)
+    assert core.tracker('Corwin')['claimed'] == 1 and core.tracker('Xyz')['claimed'] == 0
+    # The name is remembered for the kid, and fills the field next time.
+    assert core.seeker_names('Corwin') == ['Xyz'] and core.prefill_name('corwin') == 'Xyz'
+    assert core.prefill_name('Fianna') == 'Fianna'               # nothing remembered: the kid's own name
+
+
+def test_only_the_name_typed_is_tried():
+    code = code_for('duck_hatched', 'Xyz')
+    core.remember_seeker_name('Corwin', 'Xyz')
+    v = core.validate('Corwin', entry(code), 'Corwin')           # Xyz is remembered, but not typed
+    assert v['status'] == 'fake' and v['seeker'] == 'Corwin'
+    assert "isn't real for the Seeker name Corwin" in core.result_lines(v)[1][0]
+    assert dadlib.ledger() == []
+    assert core.validate('Corwin', entry(code), 'xyz ')['status'] == 'new'   # as the game reads names
+    blank = core.validate('Corwin', entry(code), '  ')
+    assert blank['status'] == 'fake' and blank['why'] == 'name'
+    assert core.result_lines(blank)[0] == "No Seeker Name"
+
+
+def test_the_seeker_names_are_remembered_newest_first():
+    for aid, name in (('duck_hatched', 'Xyz'), ('questions_100', 'Abc'), ('streak_25', 'xyz')):
+        assert core.validate('Corwin', entry(code_for(aid, name)), name)['status'] == 'new'
+    assert core.seeker_names('Corwin') == ['xyz', 'Abc']         # once each, the last used first
+    assert core.prefill_name('Corwin') == 'xyz'
+    data = json.loads(Path(core.kids_path()).read_text(encoding='utf-8'))
+    assert data['kids'] == ['Fianna', 'Corwin'] and data['seeker_names'] == {'Corwin': ['xyz', 'Abc']}
+    # The kids list is written without losing them, and a kid put back finds them again.
+    core.save_kids(core.remove_kid(core.load_kids(), 1))
+    assert core.load_kids() == ['Fianna'] and core.seeker_names('Corwin') == ['xyz', 'Abc']
+    many = [f'Name{i}' for i in range(12)]
+    for n in many:
+        core.remember_seeker_name('Fianna', n)
+    assert core.seeker_names('Fianna') == many[::-1][:core.SEEKER_NAMES_KEPT]
+
+
+def test_old_kids_files_load(_env):
+    path = Path(dadlib.dad_dir(), 'kids.json')
+    path.write_text(json.dumps({'kids': ['Fianna', 'Corwin', 'Robyn']}), encoding='utf-8')   # before seeker_names
+    assert core.load_kids() == ['Fianna', 'Corwin', 'Robyn'] and core.seeker_names('Robyn') == []
+    assert core.prefill_name('Robyn') == 'Robyn'
+    core.remember_seeker_name('Robyn', 'Wren')
+    data = json.loads(path.read_text(encoding='utf-8'))
+    assert data == {'kids': ['Fianna', 'Corwin', 'Robyn'], 'seeker_names': {'Robyn': ['Wren']}}
+    path.write_text(json.dumps(['Ada', 'Bo']), encoding='utf-8')                             # a bare list
+    assert core.load_kids() == ['Ada', 'Bo'] and core.seeker_names('Ada') == []
+    for junk in ('{not json', json.dumps({'kids': 5, 'seeker_names': ['x']}),
+                 json.dumps({'kids': ['Ada'], 'seeker_names': {'Ada': 'Wren'}})):
+        path.write_text(junk, encoding='utf-8')
+        assert core.load_kids() in (['Fianna', 'Corwin'], ['Ada'])
+        assert core.seeker_names('Ada') == []
+    core.remember_seeker_name('Ada', 'Wren')                     # a damaged table is written fresh
+    assert core.seeker_names('Ada') == ['Wren']
+
+
+# -- duplicates ----------------------------------------------------------------------------------------
+
+def test_a_code_already_used_for_another_kid_is_flagged_not_recorded():
+    code = code_for('duck_hatched', 'Fianna')
+    assert core.validate('Fianna', entry(code))['status'] == 'new'
+    first = dadlib.ledger()[0]
+    # The same code for Corwin, typed any old way (case, spaces, O for 0): flagged.
+    sloppy = code.lower().replace('-', ' ').replace('0', 'o')
+    v = core.validate('Corwin', entry(sloppy), 'Fianna')
+    assert v['status'] == 'duplicate' and v['row']['seeker'] == 'Fianna'
+    title, lines = core.result_lines(v)
+    assert title == "Already Used"
+    assert lines[0] == f"This code was already used for Fianna on {core.nice_date(first['date'])}."
+    assert "Enter: give it to Corwin anyway." in lines[-1]
+    assert len(dadlib.ledger()) == 1 and core.seeker_names('Corwin') == []
+    assert core.reel_outcome(v, list(BY_ID), random.Random(1)) == ['duck_hatched'] * 3
+    # Dad says yes: it is Corwin's too.
+    yes = core.validate('Corwin', entry(code), 'Fianna', allow_duplicate=True)
+    assert yes['status'] == 'new' and yes['duplicate_of']['seeker'] == 'Fianna'
+    assert [(r['seeker'], r['achievement']) for r in dadlib.ledger()] == [('Fianna', 'duck_hatched'),
+                                                                         ('Corwin', 'duck_hatched')]
+    # Now each holds it: the same code again is "already claimed" for either.
+    for kid in ('Fianna', 'Corwin'):
+        again = core.validate(kid, entry(code), 'Fianna')
+        assert again['status'] == 'already' and core.result_lines(again)[0] == "Already Claimed"
+    assert len(dadlib.ledger()) == 2
+
+
+def test_the_same_kid_with_the_badge_from_another_name_is_already_claimed():
+    core.validate('Corwin', entry(code_for('duck_hatched', 'Xyz')), 'Xyz')
+    v = core.validate('Corwin', entry(code_for('duck_hatched', 'Abc')), 'Abc')    # another computer
+    assert v['status'] == 'already' and v['row']['seeker'] == 'Corwin'
+    assert len(dadlib.ledger()) == 1
+
+
+def test_a_ledger_row_written_by_hand_still_counts_as_used():
+    code = code_for('duck_hatched', 'Fianna')
+    _ledger_rows([('Fianna', 'duck_hatched', '2026-11-17')])
+    import csv
+    rows = dadlib.ledger()
+    rows[0]['code'] = code.lower().replace('-', ' ')
+    with open(dadlib.ledger_path(), 'w', newline='', encoding='utf-8') as f:
+        w = csv.DictWriter(f, fieldnames=dadlib.LEDGER_FIELDS)
+        w.writeheader()
+        w.writerows(rows)
+    assert [r['seeker'] for r in dadlib.find_code(code)] == ['Fianna']
+    v = core.validate('Corwin', entry(code), 'Fianna')
+    assert v['status'] == 'duplicate'
+    assert core.result_lines(v)[1][0] == "This code was already used for Fianna on 17 November 2026."
 
 
 def test_a_dev_code_is_explained_and_never_recorded():
-    v = core.validate('Fianna', entry('DEV-' + code_for('duck_hatched')), [])
+    v = core.validate('Fianna', entry('DEV-' + code_for('duck_hatched')))
     assert v['status'] == 'dev'
     title, lines = core.result_lines(v)
     assert title == "A Practice Code" and 'DEV' in lines[0]
@@ -230,8 +349,8 @@ def test_the_reels_stop_one_at_a_time_in_about_three_seconds():
 
 def test_the_tracker_reads_the_same_ledger_as_check_code():
     check_code.check('Corwin', code_for('duck_hatched', 'Corwin'))
-    core.validate('Corwin', entry(code_for('questions_100', 'Corwin')), [])
-    core.validate('Fianna', entry(code_for('questions_100', 'Fianna')), [])
+    core.validate('Corwin', entry(code_for('questions_100', 'Corwin')))
+    core.validate('Fianna', entry(code_for('questions_100', 'Fianna')))
     tr = core.tracker('corwin')
     assert tr['total'] == len(ACHS) and tr['claimed'] == 2
     got = {e['id']: e for e in tr['entries'] if e['claimed']}
@@ -466,7 +585,7 @@ def test_the_result_screens_draw_and_go_back_to_the_slot(app):
     code = code_for('duck_hatched')
     cases = [(code[:-1] + ('X' if code[-1] != 'X' else 'Y'), 'fake'), ('DEV-' + code, 'dev'),
              (code_for('duck_hatched', 'Corwin'), 'fake')]
-    core.validate('Fianna', entry(code), [])                     # so the real one is already claimed
+    core.validate('Fianna', entry(code))                         # so the real one is already claimed
     cases.append((code, 'already'))
     for text, status in cases:
         app.raw = ''
@@ -481,19 +600,108 @@ def test_the_result_screens_draw_and_go_back_to_the_slot(app):
     assert len(dadlib.ledger()) == 1
 
 
-def test_another_kids_code_goes_over_to_that_kid(app):
-    import code_validator as cv
-    _key(app, pygame.K_RETURN)                                   # Fianna
-    for ch in code_for('duck_hatched', 'Corwin'):
+def _type(app, text):
+    for ch in text:
         _key(app, 0, ch)
+
+
+def _hit(app, action):
+    """Click what the last frame drew for ``action``."""
+    rect = next(r for r, a in app.hits if a == action)
+    app.handle(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=rect.center))
+
+
+def test_the_code_screen_asks_for_the_seeker_name_and_the_code(app):
+    import code_validator as cv
+    _key(app, pygame.K_RIGHT)
+    _key(app, pygame.K_RETURN)                                   # Corwin
+    assert app.state == cv.CODE and app.name == 'Corwin'
+    assert app.seeker_name == 'Corwin' and app.field == 'code'   # nothing remembered: his own name
+    _key(app, pygame.K_UP)
+    assert app.field == 'name'
+    _key(app, pygame.K_BACKSPACE, mod=pygame.KMOD_CTRL)
+    _type(app, 'Xyzm')                                          # M is a letter here too
+    _key(app, pygame.K_BACKSPACE)
+    assert app.seeker_name == 'Xyz' and app.entry.empty         # the keys went to the name
+    app.draw()
+    _hit(app, ('field', 'code'))                                 # a click moves to the code
+    assert app.field == 'code'
+    app.draw()
+    _hit(app, ('field', 'name'))
+    assert app.field == 'name'
+    _key(app, pygame.K_DOWN)
+    code = code_for('duck_hatched', 'Xyz')
+    _type(app, code)
+    assert app.entry.code == code and app.seeker_name == 'Xyz'
+    app.draw()
     _key(app, pygame.K_RETURN)
     _run(app, 4.5)
-    assert app.verdict.get('sibling') == 'Corwin'
+    assert app.state == cv.PARTY and app.verdict['kid'] == 'Corwin'
+    assert [(r['seeker'], r['achievement']) for r in dadlib.ledger()] == [('Corwin', 'duck_hatched')]
+    app.draw()
+    # The kid card says what he plays as, and the name is filled in for him next time.
+    _key(app, pygame.K_ESCAPE)
+    assert app.state == cv.KIDS and app._plays_as['corwin'] == 'Xyz'
+    app.draw()
+    _key(app, pygame.K_LEFT)
+    _key(app, pygame.K_RETURN)                                   # Fianna: her own name
+    assert app.name == 'Fianna' and app.seeker_name == 'Fianna'
+    _key(app, pygame.K_ESCAPE)
+    _key(app, pygame.K_RIGHT)
     _key(app, pygame.K_RETURN)
-    assert app.state == cv.CODE and app.name == 'Corwin' and app.entry.complete
+    assert app.name == 'Corwin' and app.seeker_name == 'Xyz' and app.field == 'code'
+
+
+def test_a_code_needs_the_seeker_name_it_was_earned_under(app):
+    import code_validator as cv
+    _key(app, pygame.K_RETURN)                                   # Fianna, checked as Fianna
+    code = code_for('duck_hatched', 'Wren')
+    _type(app, code)
     _key(app, pygame.K_RETURN)
     _run(app, 4.5)
+    assert app.state == cv.RESULT and app.verdict['status'] == 'fake'
+    app.draw()
+    _key(app, pygame.K_RETURN)                                   # back to fix it: the code stays
+    assert app.state == cv.CODE and app.entry.code == code and 'Up' in app.line
+    _key(app, pygame.K_UP)
+    _key(app, pygame.K_BACKSPACE, mod=pygame.KMOD_CTRL)
+    _key(app, pygame.K_RETURN)                                   # no name: refused, on the name
+    assert app.state == cv.CODE and app.field == 'name' and 'Seeker name' in app.line
+    _type(app, 'Wren')
+    _key(app, pygame.K_RETURN)
+    _run(app, 4.5)
+    assert app.state == cv.PARTY and dadlib.redeemed('Fianna', 'duck_hatched')
+    assert core.seeker_names('Fianna') == ['Wren']
+
+
+def test_a_duplicate_lands_amber_and_is_given_only_on_enter(app):
+    import code_validator as cv
+    code = code_for('duck_hatched', 'Fianna')
+    core.validate('Fianna', entry(code))                         # Fianna had it first
+    _key(app, pygame.K_RIGHT)
+    _key(app, pygame.K_RETURN)                                   # Corwin
+    _key(app, pygame.K_UP)
+    _key(app, pygame.K_BACKSPACE, mod=pygame.KMOD_CTRL)
+    _type(app, 'Fianna')
+    _key(app, pygame.K_DOWN)
+    _type(app, code)
+    _key(app, pygame.K_RETURN)
+    _run(app, 4.5)
+    assert app.state == cv.RESULT and app.verdict['status'] == 'duplicate'
+    assert app._duplicate() and len(set(app.plan.outcome)) == 1
+    app.draw()
+    assert 'anyway' in app._result_hint()
+    _key(app, pygame.K_ESCAPE)                                   # back: nothing recorded
+    assert app.state == cv.CODE and app.raw == '' and len(dadlib.ledger()) == 1
+    _type(app, code)
+    _key(app, pygame.K_RETURN)
+    _run(app, 4.5)
+    assert app.verdict['status'] == 'duplicate'
+    _key(app, pygame.K_RETURN)                                   # give it to Corwin anyway
     assert app.state == cv.PARTY and dadlib.redeemed('Corwin', 'duck_hatched')
+    assert len(dadlib.ledger()) == 2
+    _run(app, 1.0)
+    app.draw()
 
 
 def test_skipping_the_spin_lands_the_same_answer(app):

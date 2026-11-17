@@ -1,12 +1,20 @@
 """Dad's Code Validator, everything but the window (code_validator.py draws
 it). No pygame here, so the tests drive every rule directly.
 
-* The kids: the Seeker names Dad checks codes for, kept in
-  Documents\\PQ_Dad\\kids.json (outside the repo: it is the children's data).
-* The code entry: the keys Dad typed, shaped into WORD-XXXX-XXXX as he types,
-  forgiving the slips seeker_codes forgives (O for 0, I or L for 1).
-* The check: check_code.verify, the same check, ledger and record as
-  check_code.py, plus a kind word on why a code did not match.
+* The kids: the profiles Dad gives badges to, kept in
+  Documents\\PQ_Dad\\kids.json (outside the repo: it is the children's data),
+  with the Seeker names each kid's codes were earned under, newest first
+  (``seeker_names``: the kids play on more than one machine, under names
+  that need not be their own).
+* The code entry: the Seeker name the code was earned under (the name on
+  the kid's Seeker page in the game), and the keys Dad typed, shaped into
+  WORD-XXXX-XXXX as he types, forgiving the slips seeker_codes forgives (O
+  for 0, I or L for 1).
+* The check: check_code.verify with that Seeker name, the same check, ledger
+  and record as check_code.py. A real code is given to the kid chosen
+  (recorded under the kid's name) and its Seeker name remembered for that
+  kid. A code already in the ledger for another kid is flagged, and given
+  only if Dad says so. Plus a kind word on why a code did not match.
 * The reels: which badges land on the payline (decided BEFORE they spin, by
   the real check) and where each reel is at any moment, so each one stops
   exactly there.
@@ -16,7 +24,6 @@ it). No pygame here, so the tests drive every rule directly.
 """
 from __future__ import annotations
 
-import calendar
 import json
 import math
 import os
@@ -41,20 +48,13 @@ def normalise(name) -> str:
     return seeker_codes.normalise_name(name)
 
 
-def nice_date(stamp, short: bool = False) -> str:
-    """'2026-11-17' -> '17 November 2026' ('17 Nov 2026' when ``short``; the
-    text as written if it will not read)."""
-    try:
-        y, m, d = str(stamp)[:10].split('-')
-        month = (calendar.month_abbr if short else calendar.month_name)[int(m)]
-        return f"{int(d)} {month} {int(y)}"
-    except (ValueError, IndexError):
-        return str(stamp or '')
+nice_date = dadlib.nice_date        # '2026-11-17' -> '17 November 2026'
 
 
 # -- the kids -------------------------------------------------------------------
 
 DEFAULT_KIDS = ('Fianna', 'Corwin')
+SEEKER_NAMES_KEPT = 8               # Seeker names remembered for one kid
 
 
 def kids_path() -> str:
@@ -70,25 +70,86 @@ def _dedupe(names) -> list[str]:
     return out
 
 
-def load_kids() -> list[str]:
-    """The names on the picker: kids.json, else Fianna and Corwin."""
+def _read_kids_file() -> dict:
+    """kids.json as {'kids': [...], 'seeker_names': {kid: [...]}}. A file
+    from before the Seeker names (``{"kids": [...]}``, or a bare list of
+    names) reads with none; a missing or damaged file reads as empty."""
     try:
         with open(kids_path(), encoding='utf-8') as f:
             data = json.load(f)
-        names = data.get('kids') if isinstance(data, dict) else data
+    except (OSError, ValueError):
+        return {}
+    if isinstance(data, list):
+        return {'kids': data}
+    return data if isinstance(data, dict) else {}
+
+
+def _write_kids_file(data: dict) -> None:
+    path = kids_path()
+    with open(path + '.tmp', 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=1)
+    os.replace(path + '.tmp', path)
+
+
+def load_kids() -> list[str]:
+    """The names on the picker: kids.json, else Fianna and Corwin."""
+    names = _read_kids_file().get('kids')
+    try:
         out = _dedupe(seeker_profile.clean_name(n) for n in names if isinstance(n, str))
         if out:
             return out
-    except (OSError, ValueError, TypeError, AttributeError):
+    except TypeError:
         pass
     return list(DEFAULT_KIDS)
 
 
 def save_kids(names) -> None:
-    path = kids_path()
-    with open(path + '.tmp', 'w', encoding='utf-8') as f:
-        json.dump({'kids': list(names)}, f, indent=1)
-    os.replace(path + '.tmp', path)
+    """The kids list, written; the Seeker names remembered stay as they were
+    (a kid taken off the list and put back finds them again)."""
+    data = _read_kids_file()
+    data['kids'] = list(names)
+    _write_kids_file(data)
+
+
+def seeker_names(kid) -> list[str]:
+    """The Seeker names this kid's codes were earned under, newest first."""
+    table = _read_kids_file().get('seeker_names')
+    if not isinstance(table, dict):
+        return []
+    norm = normalise(kid)
+    for k, names in table.items():
+        if normalise(k) == norm and isinstance(names, list):
+            return _dedupe(seeker_profile.clean_name(n) for n in names if isinstance(n, str))
+    return []
+
+
+def prefill_name(kid) -> str:
+    """The Seeker name the code screen starts with for this kid: the last one
+    a code of his or hers was earned under, else the kid's own name."""
+    names = seeker_names(kid)
+    return names[0] if names else str(kid or '')
+
+
+def remember_seeker_name(kid, name) -> list[str]:
+    """Put ``name`` first in this kid's Seeker names (once, whatever its
+    case) and write kids.json. Returns the kid's names, newest first."""
+    name = seeker_profile.clean_name(name)
+    if name is None or not normalise(kid):
+        return seeker_names(kid)
+    data = _read_kids_file()
+    if not isinstance(data.get('kids'), list):
+        data['kids'] = load_kids()
+    table = data.get('seeker_names')
+    table = dict(table) if isinstance(table, dict) else {}
+    norm = normalise(kid)
+    old = next((k for k in table if normalise(k) == norm), None)
+    before = table.pop(old, []) if old is not None else []
+    before = [n for n in before if isinstance(n, str)] if isinstance(before, list) else []
+    names = _dedupe([name] + before)[:SEEKER_NAMES_KEPT]
+    table[old if old is not None else str(kid)] = names
+    data['seeker_names'] = table
+    _write_kids_file(data)
+    return names
 
 
 def add_kid(names, typed) -> tuple[list[str], int, str]:
@@ -292,39 +353,55 @@ def entry_from_text(text, words) -> str:
 
 # -- the check ------------------------------------------------------------------
 
-def validate(seeker: str, entry: Entry, kids=(), *, data_path=None, record_it=True) -> dict:
-    """check_code.verify on the code typed (a real code seen for the first
-    time is recorded in the ledger then and there), with a kind word on a
-    code that did not match: 'why' is 'short' (letters missing), 'word' (no
-    code word is spelled so), 'sibling' (it is another kid's code: 'sibling'
-    names who) or 'letters' (the word is right, the rest is not)."""
-    achs = dadlib.achievements(data_path)
-    v = check_code.verify(seeker, entry.code, record_it=record_it, data_path=data_path)
+def clean_seeker_name(text) -> str:
+    """The Seeker name as typed, tidied as the game tidies it (spaces
+    collapsed, at most seeker_profile.NAME_MAX characters); '' if it has no
+    letter or digit in it."""
+    return seeker_profile.clean_name(text) or ''
+
+
+def validate(kid: str, entry: Entry, seeker: str | None = None, *, data_path=None,
+             record_it=True, allow_duplicate=False) -> dict:
+    """check_code.verify on the code typed, checked with the Seeker name it
+    was earned under (``seeker``; the kid's own name when not given) and
+    given to ``kid``. A real code seen for the first time is recorded in the
+    ledger under the kid then and there, and its Seeker name remembered for
+    the kid. A code that did not match gets a kind word: 'why' is 'short'
+    (letters missing), 'word' (no code word is spelled so) or 'letters' (the
+    word is right, the rest or the name is not) or 'name' (no Seeker name)."""
+    seeker = clean_seeker_name(kid if seeker is None else seeker)
+    if not seeker and not entry.dev:
+        return {'status': 'fake', 'why': 'name', 'seeker': '', 'kid': kid, 'code': entry.code}
+    v = check_code.verify(seeker, entry.code, kid=kid, record_it=record_it, data_path=data_path,
+                          allow_duplicate=allow_duplicate)
     v['code'] = entry.code
+    if v['status'] == 'new' and v.get('recorded'):
+        remember_seeker_name(kid, seeker)
     if v['status'] != 'fake':
         return v
-    pairs = [(a['id'], a['code_word']) for a in achs]
     if not entry.complete:
         v['why'] = 'short'
     elif not entry.known:
         v['why'] = 'word'
     else:
         v['why'] = 'letters'
-        for other in kids:
-            if normalise(other) != normalise(seeker) and seeker_codes.check_code(entry.code, other, pairs):
-                v['why'], v['sibling'] = 'sibling', other
-                break
     return v
 
 
 def result_lines(v: dict) -> tuple[str, list[str]]:
     """(the title, the lines) of the card for a code that is not a new claim."""
-    who = v.get('seeker', '')
+    who = v.get('kid') or v.get('seeker', '')
     if v['status'] == 'already':
         a = v['achievement']
         return ("Already Claimed",
                 [f"{who} claimed {a['name']} on {nice_date(v['row'].get('date'))}.",
                  "This reward was given already, so nothing new was written down."])
+    if v['status'] == 'duplicate':
+        row = v['row']
+        return ("Already Used",
+                [f"This code was already used for {row.get('seeker', '')} on {nice_date(row.get('date'))}.",
+                 "Nothing new was written down.",
+                 f"Enter: give it to {who} anyway.   Esc: back."])
     if v['status'] == 'dev':
         return ("A Practice Code",
                 ["Codes that start with DEV come from a copy of the game made without Dad's key, "
@@ -332,18 +409,21 @@ def result_lines(v: dict) -> tuple[str, list[str]]:
                  "Open the Seeker Profile (F4 on the title screen) in the installed game: "
                  "it shows the real code for every badge already won."])
     why = v.get('why')
-    lines = [f"That code doesn't match for {who}. Check the letters and try again."]
-    if why == 'sibling':
-        lines.append(f"It looks like {v['sibling']}'s code! Choose {v['sibling']} and check it there.")
-    elif why == 'word':
+    if why == 'name':
+        return "No Seeker Name", ["Type the Seeker name the code was earned under: the name on the kid's "
+                                  "Seeker page (F4 on the game's title screen)."]
+    lines = [f"That code isn't real for the Seeker name {v.get('seeker', '')}. "
+             "Check the letters and the name."]
+    if why == 'word':
         word = v.get('code', '').split('-')[0]
         lines.append(f"No achievement's code starts with {word}: check the word first.")
     elif why == 'short':
         lines.append("A code is its word, any length (DOOM, QUACK, HUNDRED...), then eight "
                      "letters and numbers: WORD-XXXX-XXXX.")
     else:
-        lines.append("The word is right, so check the eight letters and numbers after it.")
-    return "That Code Doesn't Match", lines
+        lines.append("The word is right: check the eight letters and numbers after it, and the Seeker "
+                     "name (it is on the kid's Seeker page, F4 on the game's title screen).")
+    return "Not a Real Code", lines
 
 
 # -- the reels --------------------------------------------------------------------
@@ -363,9 +443,9 @@ _EASE_START = _C1 + 3       # the ease's slope at its start (its speed matches t
 def reel_outcome(verdict: dict, pool, rng) -> list[str]:
     """The three badges (achievement ids) on the payline when the reels stop,
     decided by the real check before they spin: three of the code's own
-    badge for a real code (new or claimed before), three different ones for
-    any other."""
-    if verdict.get('status') in ('new', 'already'):
+    badge for a real code (new, claimed before, or used for another kid),
+    three different ones for any other."""
+    if verdict.get('status') in ('new', 'already', 'duplicate'):
         return [verdict['achievement']['id']] * REELS
     return rng.sample(sorted(set(pool)), REELS)
 
