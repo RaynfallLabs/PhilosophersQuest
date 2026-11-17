@@ -102,7 +102,8 @@ def _retire_status(item, ench_id: str, fresh) -> None:
 # those fields lacked them: bug bash WB-A09.)
 _ARMOR_FIELDS = ('ac_bonus', 'ench_id', 'ench_level', 'tier', 'quiz_tier',
                  'equip_threshold', 'weight_class', 'ench_line', 'effects', 'tier_bonuses',
-                 'metal', 'quiet', 'casting_free', 'wards', 'template_basis', 'counters')
+                 'metal', 'quiet', 'casting_free', 'wards', 'template_basis', 'counters',
+                 'special', 'guards_nothing')
 _ACC_FIELDS = ('effects', 'save_bonus', 'tier', 'quiz_tier', 'equip_threshold', 'tier_bonuses',
                'special', 'daimonion')
 
@@ -139,6 +140,10 @@ def refresh_named(item) -> bool:
     # (An attuned or chain body piece's AC is its tier's.)
     item.adopt_fields(fresh, [f for f in _ARMOR_FIELDS
                               if not (f in ('ac_bonus', 'tier_bonuses') and (attuned or (core and chain)))])
+    if not getattr(fresh, 'ench_id', ''):
+        # Its data no longer gives it an enchantment, so the line saying what
+        # one did goes too (the Duck of Doom's old Iron Will, 2026-11-16).
+        item.__dict__.pop('ench_line', None)
     _retire_status(item, getattr(fresh, 'ench_id', ''), fresh)
     if not getattr(item, 'on_equip_status', '') and getattr(fresh, 'on_equip_status', ''):
         item.on_equip_status = fresh.on_equip_status

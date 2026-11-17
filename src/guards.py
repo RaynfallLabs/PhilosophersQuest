@@ -97,6 +97,8 @@ def matches(fam: dict, atk: dict) -> tuple:
 def base_strength(piece) -> tuple:
     """(rider shrug, damage turn-aside) of the piece's make alone: its
     template's weight class, without any enchantment."""
+    if getattr(piece, 'guards_nothing', False):
+        return 0.0, 0.0
     base = rules()['base_by_weight_class'].get(
         str(getattr(piece, 'weight_class', None) or 'light'), {})
     return float(base.get('rider', 0.0)), float(base.get('damage', 0.0))
@@ -123,7 +125,7 @@ def guard_text(piece, short: bool = False, known: bool = True) -> str:
     so the card does not give the enchantment away. '' for anything else."""
     slot = getattr(piece, 'slot', '')
     fam = family(slot)
-    if not fam:
+    if not fam or getattr(piece, 'guards_nothing', False):
         return ''
     rider, dmg = piece_strength(piece) if known else base_strength(piece)
     name = str(fam.get('name', slot))
