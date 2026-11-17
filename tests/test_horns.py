@@ -549,9 +549,14 @@ def test_the_einherjar_never_kill_fenrir_nor_any_gate_guardian():
     _sound(g, 'gjallarhorn', 5)
     band = _called(g)
     assert len(band) == 8 and all(a.available_specials() == [] for a in band)   # no binding
-    a = band[0]
-    free = [(a.x + dx, a.y + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1) if dx or dy]
-    free = [t for t in free if g.dungeon.is_walkable(*t) and t not in g._occupants()]
+    def _free_around(m):
+        ts = [(m.x + dx, m.y + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1) if dx or dy]
+        return [t for t in ts if g.dungeon.is_walkable(*t) and t not in g._occupants()]
+    # A band of eight can crowd a corridor and box its first man in (seeds 12
+    # and 36 left him fewer than two free tiles): the wolf and the rat stand
+    # beside whichever of them has room.
+    _a, free = max(((m, _free_around(m)) for m in band), key=lambda p: len(p[1]))
+    assert len(free) >= 2, free
     wolf = Monster(dict(MONS['fenrir_wolf'], id='fenrir_wolf'), *free[0])
     wolf.hp = 1                                            # one blow would end him
     kin = Monster(dict(MONS['giant_rat'], id='giant_rat'), *free[1])
