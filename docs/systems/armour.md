@@ -533,8 +533,8 @@ and every signature power (`enchantments.apply_named`, the line in
 `ench_line`).
 
 **Secret Build shields and Joan's standard (2026-11-17).** Achilles starts
-with the **Shield of Achilles** (`shield_of_achilles`: heavy round, tier 2,
-AC 2 + 2, points that pierce do half damage: Iliad 18, 20, 22) and Alexander
+with the **Shield of Achilles** (`shield_of_achilles`: heavy round, tier 3
+like his spear, AC 2 + 3, points that pierce do half damage: Iliad 18, 20, 22) and Alexander
 with the **Shield of Ilion** (`shield_of_ilion`: bronze aspis, tier 1, AC
 2 + 1; once a floor the blow that leaves him at a quarter of his health or
 less finds him Shielded for 5 turns, `fallen_cover_turns`: Arrian 1.11, 6.10).

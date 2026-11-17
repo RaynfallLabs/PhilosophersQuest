@@ -340,6 +340,9 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": ("longsword", "iron"),
         "_start_shield": "joans_standard",
         "_start_accessory": "lyre_of_orpheus",
+        # A Soul Sphere, so her standard has someone to rally from the start
+        # (Brandon, 2026-11-17: "she needs a soul sphere, yes").
+        "_start_soul_spheres": 1,
         "_greeting": "Joan listens to the Voices. They say: 'Go forward, child.'",
     },
     "sir arthur conan doyle's sherlock holmes": {

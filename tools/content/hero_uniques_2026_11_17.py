@@ -13,7 +13,8 @@ it and thieves skip it), and does ONE thing beyond its AC or its blows:
     beneath (two bronze, two tin, one gold). Aeneas' spear stuck in its gold
     (Iliad 20.267-272) and Hector's leapt back from it (22.289-291): points
     that pierce do half their damage (damage_resistances pierce 0.5). A great
-    round shield (heavy_wooden), tier 2: AC 2 + 2.
+    round shield (heavy_wooden), tier 3 like his spear (Brandon, 2026-11-17):
+    AC 2 + 3.
   * The Shield of Ilion (Alexander, for the Bronze Heavy Shield). Arrian 1.11:
     at Troy he dedicated his own armour to Athena and took down sacred arms
     kept from the Trojan War, which his shield-bearers carried before him;
@@ -66,13 +67,13 @@ SHIELDS = {
         'color': [205, 160, 70],
         'weight': 12.0,
         'min_level': 9999,
-        'tier': 2,
+        'tier': 3,
         'material': 'bronze',
         'ac_bonus': 2,
-        'enchant_bonus': 2,
-        'ench_level': 4,
-        'equip_threshold': 5,
-        'quiz_tier': 2,
+        'enchant_bonus': 3,
+        'ench_level': 6,
+        'equip_threshold': 6,
+        'quiz_tier': 3,
         'damage_resistances': {'pierce': 0.5},
         'can_be_cursed': False,
         'cursed': False,

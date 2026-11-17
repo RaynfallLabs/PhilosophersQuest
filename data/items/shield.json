@@ -1459,13 +1459,13 @@
     ],
     "weight": 12.0,
     "min_level": 9999,
-    "tier": 2,
+    "tier": 3,
     "material": "bronze",
     "ac_bonus": 2,
-    "enchant_bonus": 2,
-    "ench_level": 4,
-    "equip_threshold": 5,
-    "quiz_tier": 2,
+    "enchant_bonus": 3,
+    "ench_level": 6,
+    "equip_threshold": 6,
+    "quiz_tier": 3,
     "damage_resistances": {
       "pierce": 0.5
     },

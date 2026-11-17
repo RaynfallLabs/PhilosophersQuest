@@ -105,13 +105,16 @@ def test_the_plain_pieces_they_replace_are_gone():
     j = _game(JOAN).player
     assert j.weapon.id == 'iron_longsword'                                  # her sword stays her weapon
     assert j.readied_weapon is None
+    # A Soul Sphere from the start, so her standard has someone to rally
+    # (Brandon, 2026-11-17: "she needs a soul sphere, yes").
+    assert any(getattr(i, 'id', '') == 'soul_sphere' for i in j.inventory)
 
 
 def test_the_starting_ac_per_build():
-    """No AC from Dexterity (the defence model): Achilles 9 to 6 (AC 4 for
+    """No AC from Dexterity (the defence model): Achilles 9 to 5 (AC 5 for
     AC 1), Alexander 8 to 7 (AC 3 for AC 2), Boudicca and Joan 10 as before
     (a spear and a standard give none)."""
-    want = {ACHILLES: 6, ALEXANDER: 7, BOUDICCA: 10, JOAN: 10}
+    want = {ACHILLES: 5, ALEXANDER: 7, BOUDICCA: 10, JOAN: 10}
     for key, ac in want.items():
         assert _game(key).player.get_ac() == ac, key
 
@@ -133,7 +136,7 @@ def test_each_piece_is_a_unique_that_is_never_random_loot(iid):
 def test_the_shield_of_achilles():
     d = SHIELDS['shield_of_achilles']
     assert d['name'] == 'Shield of Achilles'
-    assert (d['tier'], d['ac_bonus'], d['enchant_bonus']) == (2, 2, 2)      # AC 4
+    assert (d['tier'], d['ac_bonus'], d['enchant_bonus']) == (3, 2, 3)      # AC 5, tier 3 like his spear
     assert d['damage_resistances'] == {'pierce': 0.5}
     assert d['template_basis'] == 'heavy_wooden'
     for words in ('Hephaestus', 'Thetis', 'Ocean', 'two of bronze, two of tin and one of gold',
@@ -395,7 +398,7 @@ def test_the_cards_say_what_each_does_in_plain_words_before_the_lore():
     assert g._item_power_lines(ilion) == ['AC +3', cover]
     achilles = items.make_item_by_id('shield', 'shield_of_achilles')
     achilles.id_level = 5
-    assert g._item_power_lines(achilles) == ['AC +4', 'Resists: pierce 50%']
+    assert g._item_power_lines(achilles) == ['AC +5', 'Resists: pierce 50%']
     spear = items.make_item_by_id('weapon', SPEAR)
     spear.id_level = 5
     sl = g._item_power_lines(spear)
