@@ -26,6 +26,18 @@ what it gives when eaten. A dish the hero has LEARNED of (``player.
 dishes_learned``: the Mooble tells of his tart) shows under Building Toward
 even before any part of it is held.
 
+PEOPLE ARE NOT HARVESTED (Brandon, 2026-11-16: "that's weird, we're not
+cannibals"): a person's body (``is_person``: harvest_map.json ``people``,
+humans and the human-like folk) is searched for the food he carried
+(food_system.search_corpse), never harvested. An old save's part of a
+person becomes ordinary food on load (``person_part_food``).
+
+SPECIAL FOOD (Brandon, 2026-11-16): a quest, key or one-of-a-kind food
+(food.json ``special``: the Magic Dungeon Carrot, the Starnut Tart, the
+mythic fruits) goes into a dish of its own; cooking it uses it up. Held, it
+puts that dish under Building Toward, as a harvested part does
+(``is_keystone``).
+
 A DISH THAT PLAYS A SONG (3.5.2, songs.py): a dish may name ``song``, an id
 in data/songs.json (its benefit is 'song', so it sits on the Special tab).
 Eaten, it gives what every dish gives, and its power is the song's: it lasts
@@ -110,8 +122,49 @@ def resolve(item_id: str) -> str:
 
 
 def ingredient_for_monster(monster_id: str):
-    """The ingredient a corpse of ``monster_id`` yields, or None."""
+    """The ingredient a corpse of ``monster_id`` yields, or None (a person
+    yields none: ``is_person``)."""
     return (harvest_map().get('monsters', {}) or {}).get(monster_id)
+
+
+# ----------------------------------------------------------------------
+# People (Brandon, 2026-11-16: "Humans are not harvested. That's weird,
+# we're not cannibals.")
+# ----------------------------------------------------------------------
+
+def people() -> frozenset:
+    """The kinds whose body is searched, never harvested (harvest_map.json
+    ``people``: humans and the human-like folk, decided by lore in
+    tools/content/kitchen/people.txt)."""
+    if 'people' not in _cache:
+        _cache['people'] = frozenset(harvest_map().get('people', ()) or ())
+    return _cache['people']
+
+
+def is_person(kind, family=None) -> bool:
+    """A person: a brigand, a knight, a cultist, an elf. His body is
+    searched for what he carried (food_system.search_corpse), never
+    harvested. A creature the harvest map does not know (Gilt Varro of the
+    racing camp) is a person when its body says it is one of the mortals."""
+    kind = str(kind or '')
+    if kind in people():
+        return True
+    return family == 'mortals' and kind not in (harvest_map().get('monsters') or {})
+
+
+def person_part_food(part_id: str):
+    """The ordinary food an old save's part of a person becomes (harvest_map
+    ``people_parts``: Bandit Trail Ham is dried meat), or None."""
+    return (harvest_map().get('people_parts') or {}).get(part_id)
+
+
+def is_special_food(part_id: str) -> bool:
+    """A quest, key or one-of-a-kind food (food.json ``special``: the Magic
+    Dungeon Carrot, the Starnut Tart, the mythic fruits). It goes into a dish
+    of its own (Brandon, 2026-11-16: so a player is tempted to cook it), and
+    holding it shows that dish under Building Toward, as a harvested part
+    does."""
+    return bool((foods().get(part_id) or {}).get('special'))
 
 
 def book() -> list:
@@ -183,6 +236,13 @@ def is_secret_part(part_id: str) -> bool:
 def is_harvested(part_id: str) -> bool:
     """A part that only a corpse gives (a monster part or a trophy)."""
     return part_kind(part_id) in ('monster', 'trophy')
+
+
+def is_keystone(part_id: str) -> bool:
+    """A part that puts its dishes under Building Toward when held: a
+    harvested part, or a special food (``is_special_food``). A ration or a
+    foraged find alone does not, or bread would put a hundred dishes there."""
+    return is_harvested(part_id) or is_special_food(part_id)
 
 
 def is_raw_trophy(item) -> bool:
@@ -819,10 +879,11 @@ def menu_rows(player, inventory, tab: str) -> list:
 
     1. ``ready``: dishes the pack can cook now, the most giving first;
     2. ``building``: dishes the hero holds at least one HARVESTED part of
-       (a monster part or a trophy; a ration or a foraged find alone does
-       not count, or bread would put a hundred dishes here) but not all,
-       the closest first ("2 of 4", with what is missing named), and any
-       dish the hero has learned of (``player.dishes_learned``: the
+       (a monster part or a trophy) or a special food of (the Magic
+       Dungeon Carrot: ``is_keystone``; a ration or a foraged find alone
+       does not count, or bread would put a hundred dishes here) but not
+       all, the closest first ("2 of 4", with what is missing named), and
+       any dish the hero has learned of (``player.dishes_learned``: the
        Mooble's Starnut Tart), held parts or none;
     3. ``legendary``: legendary feasts and boss-trophy dishes, ready ones
        first, then the closest; shown once the hero holds any harvested
@@ -841,7 +902,7 @@ def menu_rows(player, inventory, tab: str) -> list:
         if any(is_secret_part(p) and counts.get(p, 0) <= 0 for p in ps):
             continue
         if not can_cook(rec, counts) and rec['id'] not in learned and not any(
-                is_harvested(p) and counts.get(p, 0) > 0 for p in ps):
+                is_keystone(p) and counts.get(p, 0) > 0 for p in ps):
             continue
         rows.append(_row(player, rec, counts))
     order = {g: i for i, g in enumerate(GROUPS)}

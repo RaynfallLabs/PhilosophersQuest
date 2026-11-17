@@ -1848,9 +1848,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ``aliases``), its name and fields come from today's data, and in the
         pack (and any sack) two stacks that are one ingredient now are
         joined. An id the kitchen does not know at all is still dropped.
+
+        People are not harvested (Brandon, 2026-11-16): a part a person once
+        gave (Bandit Trail Ham, Knight's Marching Ham, Elf-Light Acorn) is the
+        ordinary food it was in his pack now (harvest_map.json
+        ``people_parts``: dried meat, elvish bread), the same count, where
+        it lay.
         """
         import kitchen
-        from items import Ingredient
+        from items import Ingredient, make_item_by_id
 
         valid_ids = set(kitchen.ingredients().keys())
 
@@ -1862,6 +1868,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 item = items_list[i]
                 if not isinstance(item, Ingredient):
                     continue
+                food_id = kitchen.person_part_food(getattr(item, 'id', ''))
+                if food_id:
+                    food = make_item_by_id('food', food_id)
+                    if food is not None:
+                        food.count = max(1, int(getattr(item, 'count', 1) or 1))
+                        food.identified = True
+                        food.x, food.y = getattr(item, 'x', 0), getattr(item, 'y', 0)
+                        items_list[i] = food
+                        continue
                 if kitchen.resolve(item.id) not in valid_ids:
                     # Deleted ingredient (assorted/family/legacy) — drop it.
                     items_list.pop(i)
@@ -7027,10 +7042,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if corpse is None:
             self.add_message("There is no corpse here to harvest.", 'info')
             return
-        # A person of an encounter (a pilgrim, Gilt Varro, a trader) has no
-        # kin in the kitchen: nothing to harvest, and no question asked or
+        # A person (a brigand, a knight, a cultist, an elf, Gilt Varro) is
+        # never harvested (Brandon, 2026-11-16: "that's weird, we're not
+        # cannibals"): H searches the body for what he carried instead.
+        from food_system import corpse_yield, corpse_is_person
+        if corpse_is_person(corpse):
+            self._search_corpse(corpse)
+            return
+        # A being of an encounter with no family (a pilgrim, a trader) has
+        # no kin in the kitchen: nothing to harvest, and no question asked or
         # corpse spent on it (it gave Acid Blob Bladder: bug bash 3.5.1 A).
-        from food_system import corpse_yield
         if corpse_yield(corpse) is None:
             self.add_message(f"There is nothing on the {corpse.name} you would cook.", 'info')
             return
@@ -7083,6 +7104,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         harvest_corpse(self.player, corpse, self.quiz_engine, on_complete,
                        extra_seconds=_lore_bonus)
+
+    def _search_corpse(self, corpse):
+        """H on a person's body: take what he carried, like picking it up
+        (food_system.search_corpse: a couple of ordinary finds of the floor's
+        band). No question; the body is used up and the turn passes. What
+        does not fit stays on the floor."""
+        from food_system import search_corpse
+        px, py = self.player.x, self.player.y
+        if corpse in self.ground_items:
+            self.ground_items.remove(corpse)
+        items, message = search_corpse(self.player, corpse, int(getattr(self, 'dungeon_level', 1) or 1))
+        self.add_message(message, 'loot' if items else 'info')
+        for item in items:
+            if not self.player.add_to_inventory(item):
+                item.x, item.y = px, py
+                self.ground_items.append(item)
+                self.add_message(
+                    f"Too heavy: the {self._display_name(item)} stays on the floor "
+                    f"(your limit is {self.player.get_carry_limit()}).", 'warning')
+        self._advance_turn()
 
     # ------------------------------------------------------------------
     # Cook menu

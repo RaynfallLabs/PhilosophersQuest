@@ -31,7 +31,19 @@ The kitchen rebuild (COOKING_REBUILD_PLAN_2026_11_14, slice K1). Three steps:
 
 Inputs: data/monsters.json, data/items/food.json, the OLD ingredient.json
 (colours; read from git's copy in ``old_ingredients.json`` once the data has
-been rebuilt), kin_groups.txt, ingredients_*.txt.
+been rebuilt), kin_groups.txt, people.txt, ingredients_*.txt.
+
+PEOPLE (Brandon, 2026-11-16: "Humans are not harvested. That's weird, we're
+not cannibals"): ``people.txt`` lists the kinds whose body is searched, never
+harvested (humans and the human-like folk). A person is in no kin group and
+yields no ingredient; the build writes the list to harvest_map.json
+``people``, and ``people_parts``: each part a person once gave (an old
+save's Bandit Trail Ham) with the ordinary food it becomes on load.
+
+SPECIAL FOOD (Brandon, 2026-11-16: "every special item is used in at least
+one decent recipe"): a quest, key or one-of-a-kind food (the Magic Dungeon
+Carrot, the Starnut Tart, the mythic fruits) goes into the dish or dishes
+``SPECIAL_FOOD`` names for it and no other.
 
 Each dish's picture (``art``) comes from ``dish_art.py``: the kind its name
 says, at its tier and main benefit (a legendary feast has its own, a trophy
@@ -94,9 +106,8 @@ KEPT_OVERRIDE = {'calydonian_boar': 'asterion_minotaur_prime'}
 # as "building toward" until the hero holds that part (kitchen.menu_rows).
 SECRET_KEYS = ('hell_bovine', 'cow_king')
 
-# Common food that goes into dishes (data/items/food.json). Quest, secret and
-# one-shot food (the dungeon carrot, the Tantalus plum, the peach, ambrosia,
-# the golden apple) is never an ingredient. (nature it leans to, first floor.)
+# Common food that goes into dishes (data/items/food.json). (nature it leans
+# to, first floor.)
 FOOD = {
     'bread_ration': ('sp', 1), 'dried_meat': ('sp', 1), 'hard_cheese': ('hp', 1),
     'wild_mushroom': ('sp', 1), 'apple': ('hp', 1), 'trail_rations': ('sp', 1),
@@ -105,8 +116,23 @@ FOOD = {
 }
 # Rare food turns up in few dishes (it is rarely found).
 FOOD_RARITY = {'philosopher_tea': 0.15, 'deep_fungi': 0.3, 'void_ration': 0.3, 'elvish_bread': 0.6}
-FORBIDDEN_FOOD = ('magic_dungeon_carrot', 'tantalus_plum', 'peach_of_immortality', 'ambrosia',
-                  'golden_apple', 'hearty_stew', 'starnut_tart')
+# Special food: a quest or key piece, or a one-of-a-kind find (food.json
+# ``special``), goes into its own dish or dishes and no other (Brandon,
+# 2026-11-16: "every special item is used in at least one decent recipe, so a
+# player is tempted to cook it rather than save it for its special event").
+# Cooking it uses it up. food id -> the dish ids that may call for it. The
+# Starnut Tart is cooked to carry (dish_starnut_tart) and goes into a dish of
+# its own besides; never back into the dish that makes it.
+SPECIAL_FOOD = {
+    'magic_dungeon_carrot': ('dish_339',),
+    'starnut_tart': ('dish_340',),
+    'tantalus_plum': ('dish_341',),
+    'golden_apple': ('dish_342',),
+    'ambrosia': ('dish_343',),
+    'peach_of_immortality': ('dish_344',),
+}
+# Food that is never an ingredient: a stew is a meal already.
+FORBIDDEN_FOOD = ('hearty_stew',)
 # Food that goes into ONE dish only, the one that plays its song (songs.py,
 # 3.5.2): caviar and tater tots make Caviar and Tater Tots and nothing else.
 # Its structure row names ``song``; its picture is the song's (dish_art).
@@ -179,6 +205,24 @@ def _groups():
             if line and not line.startswith('#'):
                 out.append(line.split())
     return out
+
+
+def _people():
+    """The kinds whose body is searched, never harvested (people.txt), in order."""
+    out = []
+    with open(os.path.join(HERE, 'people.txt'), encoding='utf-8') as f:
+        for line in f:
+            line = line.split('#', 1)[0].strip()
+            if line:
+                out.append(line)
+    return out
+
+
+# What a part a person once gave becomes in an old save (people_parts): the
+# ordinary food it was, taken from the pack (the hams and sausages of the
+# packs were dried and salted meat; the elves' acorn-light their waybread).
+PERSON_PART_FOOD = {'light_elf_hostile': 'elvish_bread', 'huldufolk_raider': 'elvish_bread'}
+PERSON_PART_DEFAULT = 'dried_meat'
 
 
 def _content():
@@ -289,7 +333,14 @@ def build_ingredients():
             'members': [], 'role': 'dungeon', 'color': o.get('color', [120, 120, 120]), 'part': 'forage',
             'family': '', 'secret': False, 'source': '', 'terrain': o.get('terrain', ''),
         }
-    missing = [m for m in monsters if m not in harvest]
+    people = set(_people())
+    unknown = sorted(people - set(monsters))
+    if unknown:
+        raise SystemExit(f'people.txt names kinds monsters.json does not know: {unknown}')
+    harvested_people = sorted(people & set(harvest))
+    if harvested_people:
+        raise SystemExit(f'people in a kin group (a person is never harvested): {harvested_people}')
+    missing = [m for m in monsters if m not in harvest and m not in people]
     if missing:
         raise SystemExit(f'monsters with no ingredient: {missing}')
     unused = [k for k in content if not k.startswith('forage:')
@@ -528,7 +579,7 @@ def write_structure(ings):
 
 def _dish_names():
     out = {}
-    for n in (1, 2, 3):
+    for n in (1, 2, 3, 4):
         with open(os.path.join(HERE, f'dishes_{n}.txt'), encoding='utf-8') as f:
             for line in f:
                 line = line.rstrip('\n')
@@ -622,13 +673,24 @@ def build():
     with open(os.path.join(ITEMS, 'ingredient.json'), 'w', encoding='utf-8') as f:
         json.dump(ing_json, f, ensure_ascii=False, indent=2)
         f.write('\n')
+    old = _old_ingredients()
+    people = _people()
+    people_parts = {}
+    for k in people:
+        if f'{k}_prime' in old:
+            people_parts[f'{k}_prime'] = PERSON_PART_FOOD.get(k, PERSON_PART_DEFAULT)
     hmap = {
         '_doc': ('What a corpse yields when harvested (monster id -> ingredient id), and '
                  'the ingredient ids retired by the kitchen rebuild (2026-11-14), each with '
-                 'the kept id it became. Close kin share one ingredient. Built by '
-                 'tools/content/kitchen/build_kitchen.py.'),
+                 'the kept id it became. Close kin share one ingredient. "people": the kinds '
+                 'whose body is searched, never harvested (Brandon, 2026-11-16: we are not '
+                 'cannibals; data/cooking_rules.json "search"). "people_parts": each part a '
+                 'person once gave, and the ordinary food an old save\'s held one becomes. '
+                 'Built by tools/content/kitchen/build_kitchen.py.'),
         'monsters': dict(sorted(harvest.items())),
         'aliases': dict(sorted(aliases.items())),
+        'people': sorted(people),
+        'people_parts': dict(sorted(people_parts.items())),
     }
     with open(os.path.join(ITEMS, 'harvest_map.json'), 'w', encoding='utf-8') as f:
         json.dump(hmap, f, ensure_ascii=False, indent=1)
@@ -659,6 +721,12 @@ def check(ings, recipes):
                 if not r.get('song'):
                     problems.append(f'{rid}: {p} goes only into the dish of its song')
                 continue
+            if p in SPECIAL_FOOD:
+                if rid not in SPECIAL_FOOD[p]:
+                    problems.append(f'{rid}: special food {p} goes only into {SPECIAL_FOOD[p]}')
+                if p not in food or not food[p].get('special'):
+                    problems.append(f'{rid}: {p} must be in food.json with "special": true')
+                continue
             if p not in ings and p not in FOOD:
                 problems.append(f'{rid}: unknown ingredient {p}')
             if p in FORBIDDEN_FOOD:
@@ -680,8 +748,11 @@ def check(ings, recipes):
             # ingredient, and the dish is an ordinary one (not a feast).
             if r['makes'] not in food:
                 problems.append(f'{rid}: makes unknown food {r["makes"]}')
-            if r['makes'] not in FORBIDDEN_FOOD:
-                problems.append(f'{rid}: the food it makes ({r["makes"]}) must be in FORBIDDEN_FOOD')
+            if r['makes'] not in FORBIDDEN_FOOD and r['makes'] not in SPECIAL_FOOD:
+                problems.append(f'{rid}: the food it makes ({r["makes"]}) must be in '
+                                f'FORBIDDEN_FOOD or SPECIAL_FOOD')
+            if r['makes'] in parts:
+                problems.append(f'{rid}: a dish never calls for the food it makes')
             if r.get('legendary') or r.get('trophy'):
                 problems.append(f'{rid}: a feast or trophy dish is eaten, never carried')
     for iid, r in ings.items():
@@ -706,6 +777,14 @@ def check(ings, recipes):
     for fid in FOOD:
         if fid not in food:
             problems.append(f'food {fid} missing from food.json')
+    # Every special food has its dish (and is cooked up in it).
+    for fid, dids in SPECIAL_FOOD.items():
+        for did in dids:
+            if fid not in (recipes.get(did) or {}).get('ingredients', []):
+                problems.append(f'special food {fid}: its dish {did} does not call for it')
+    special_flagged = {k for k, v in food.items() if isinstance(v, dict) and v.get('special')}
+    for fid in sorted(special_flagged - set(SPECIAL_FOOD) - set(SONG_FOOD)):
+        problems.append(f'food {fid} is "special" in food.json but has no dish in SPECIAL_FOOD')
     # A dish is a meal, never just its ingredient's name ("Cave Bear Steak").
     ing_names = {r['name'].lower(): iid for iid, r in ings.items()}
     for rid, r in recipes.items():
@@ -722,21 +801,26 @@ def check(ings, recipes):
 def part_rules_for(ings, food):
     import part_rules
     freq = part_rules.load_freq()
-    rare = part_rules.rare_foods({k: food[k] for k in FOOD}, freq['rules']['rare_food_weight'])
+    kitchen_food = list(FOOD) + list(SPECIAL_FOOD)
+    rare = part_rules.rare_foods({k: food[k] for k in kitchen_food}, freq['rules']['rare_food_weight'])
 
     def role_of(p):
         if p in ings:
             return ings[p]['role']
-        return 'food' if p in FOOD else None
+        return 'food' if p in kitchen_food else None
     return part_rules.PartRules(freq, role_of, rare)
 
 
 def report(ings, recipes):
     from collections import Counter
 
+    food_json = _load(os.path.join(ITEMS, 'food.json'))
+
     def floor(p):
         if p in SONG_FOOD:
             return 1                      # caviar and tater tots: found from floor 1
+        if p in SPECIAL_FOOD:
+            return int(food_json[p].get('min_level', 1) or 1)
         return ings[p]['floor'] if p in ings else FOOD[p][1]
     tab_band = Counter()
     for r in recipes.values():

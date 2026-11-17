@@ -184,7 +184,9 @@ def hunt_action(row: dict) -> str:
 def part_source(part_id: str) -> str:
     """What to do about a missing part, for a kid deciding what to hunt:
     a monster part is hunted, a trophy is won from a boss, a foraged find
-    or a ration is found (or bought: traders stock both)."""
+    or a ration is found (or bought: traders stock both), and a special
+    food is cooked (the Starnut Tart, a dish cooked to carry) or only ever
+    found (the Magic Dungeon Carrot)."""
     kind = kitchen.part_kind(part_id)
     if kind == 'monster':
         return "Hunt"
@@ -192,6 +194,8 @@ def part_source(part_id: str) -> str:
         return "Boss trophy:"
     if kind == 'forage':
         return "Forage or buy"
+    if kitchen.is_special_food(part_id):
+        return "Cook" if any(kitchen.makes(r) == part_id for r in kitchen.book()) else "Find"
     return "Find or buy"
 
 

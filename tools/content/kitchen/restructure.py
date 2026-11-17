@@ -66,6 +66,12 @@ KEEP = {
 }
 # Hand-picked stand-ins, {dish: {part out: part in}}, where the rules' pick
 # would break the dish's theme (reviewed against each name and flavour line).
+# A record of slice K1b (2026-11-14): its stand-ins are frozen in
+# structure.json. Some name a part of a person (harrow_witch_prime,
+# cult_initiate_prime...), all gone since 2026-11-16 (people.txt: people are
+# never harvested); those dishes were re-sourced by hand. Before re-running
+# this, drop or replace every stand-in that names a part no longer in the
+# build.
 # A feast's stand-in follows its lore: Norse feasts take frost giants and the
 # World Serpent, Baba Yaga's hut takes a roc's drumstick.
 SWAP = {

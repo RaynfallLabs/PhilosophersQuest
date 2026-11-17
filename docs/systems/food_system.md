@@ -23,6 +23,12 @@ mode, a T1-T5 stack of parts), the potency formulas, the Single tab.
   failsafe (`feedback_sp_soft_boundary.md`). Do not remove starvation damage.
 - **Nothing spoils.** A part saved on floor 3 still cooks on floor 40: saving is a choice, paid in
   weight.
+- **People are not harvested** (Brandon, 2026-11-16: "that's weird, we're not cannibals"). A
+  person's body is searched for the food he carried (§8.1); no dish holds a part of a person.
+- **You are what you eat, at every depth.** Every stat has stat dishes at every tier, built from
+  parts a hero can get at that depth (§4.3).
+- **A special find is worth cooking.** Every quest, key or one-of-a-kind food has a decent dish
+  of its own (§4.4); cooking it uses it up.
 - **LORE, NOT FLOOR.** A dish's numbers come from its tier (the band of its deepest ingredient) in
   `data/cooking_rules.json`. Nothing is multiplied by the floor the hero stands on.
 
@@ -40,11 +46,11 @@ mode, a T1-T5 stack of parts), the potency formulas, the Single tab.
 | `src/player.py` | The caps: `feed_cut_stat(stat, tier)` (the floor's stat lesson, a whole point), `cut_stat_block(stat, tier)`, `stat_cap_for_tier`, `depth_tier`, `try_apply_cook_hp_gain`, `try_apply_cook_stat_gain`, `cooking_softcap`, `cooking_stat_softcap`, `food_taught`, `reset_floor_cook_caps`; `cooking_mp_gained` (max MP from feasts, read with `getattr`). |
 | `src/status_effects.py` | `apply_effect(..., cap=)`: a meal's power may run past the usual 60 turns, up to its `max_turns`. |
 | `data/items/ingredient.json` | Every ingredient (§3). Built. |
-| `data/items/harvest_map.json` | Monster -> ingredient; retired ids -> kept ids (§3.2). Built. |
+| `data/items/harvest_map.json` | Monster -> ingredient; retired ids -> kept ids (§3.2); `people`, the kinds searched, never harvested, and `people_parts`, what an old save's part of a person becomes (§3.5). Built. |
 | `data/items/recipes.json` | The recipe book (§4). Built. |
-| `data/cooking_rules.json` | Every number a dish gives (§5). Hand-written. |
-| `data/items/food.json` | Rations: eaten as they are, and called for by many dishes. |
-| `tools/content/kitchen/` | `build_kitchen.py` (the build and every check), the content (`kin_groups.txt`, `ingredients_*.txt`, `dishes_*.txt`), the frozen structure (`structure.json`), `dish_art.py` (which picture each dish shows) and the record it writes (`dish_art.json`), snapshots of the old data it reads colours and trophy text from. Keeping the book cookable (§4.1): `part_freq.json` (how often each part turns up in a simulated run), `part_freq.py` (makes it), `part_rules.py` (the rules), `restructure.py` (edits the structure by them). |
+| `data/cooking_rules.json` | Every number a dish gives (§5), and `search`: what a person's body gives when searched (§8.1). Hand-written. |
+| `data/items/food.json` | Rations: eaten as they are, and called for by many dishes. `special: true` marks the special foods, each in a dish of its own (§4.4). |
+| `tools/content/kitchen/` | `build_kitchen.py` (the build and every check), the content (`kin_groups.txt`, `people.txt`, `ingredients_*.txt`, `dishes_*.txt`), the frozen structure (`structure.json`), `dish_art.py` (which picture each dish shows) and the record it writes (`dish_art.json`), snapshots of the old data it reads colours and trophy text from. Keeping the book cookable (§4.1): `part_freq.json` (how often each part turns up in a simulated run), `part_freq.py` (makes it), `part_rules.py` (the rules), `restructure.py` (edits the structure by them). |
 
 The old generators (`tools/gen_recipes*.py`, `tools/gen_ingredients_v265.py`,
 `tools/tune_sp_soft_boundary.py`, `tools/balance/fix_broken_ingredients.py`,
@@ -52,8 +58,11 @@ The old generators (`tools/gen_recipes*.py`, `tools/gen_ingredients_v265.py`,
 
 ### 2.1 Rebuilding the data
 
-1. Edit the content: `kin_groups.txt` (who shares), `ingredients_*.txt` (`key | nature | name |
-   description | single dish | flavour`), `dishes_*.txt` (`dish_id | Name | flavour`).
+1. Edit the content: `kin_groups.txt` (who shares), `people.txt` (who is a person: searched,
+   in no kin group; the build fails on a monster in neither), `ingredients_*.txt` (`key | nature |
+   name | description | single dish | flavour`), `dishes_*.txt` (`dish_id | Name | flavour`). A
+   hand-made dish is a row added to `structure.json` and named in `dishes_4.txt` (as the
+   special-food and stat dishes of 2026-11-16 were).
 2. `py tools/content/kitchen/build_kitchen.py` merges them with the frozen `structure.json`,
    writes the three JSON files and checks every rule (one single and two multi-dishes per
    ingredient, 2-5 parts, no forbidden food, banned words, the name says the part, every picture,
@@ -71,7 +80,7 @@ The old generators (`tools/gen_recipes*.py`, `tools/gen_ingredients_v265.py`,
 
 ## 3. Ingredients
 
-**318 ingredients:** 294 monster parts, 14 boss trophies, 10 foraged finds (cave mushroom, swamp
+**306 ingredients:** 282 monster parts, 14 boss trophies, 10 foraged finds (cave mushroom, swamp
 moss, river salt, crystal shard, holy water, altar incense, deep-iron shaving, abyssal kelp, and
 the quest pets' Starnut and Sunroot, which also grow as ordinary forage from floors 25 and 40).
 
@@ -84,8 +93,8 @@ liquid (Hezrou Toad Venom), a sac a gland or bladder (Rust Monster Rust Gland), 
 heart (Clay Golem Amber Heart), a mote a glowing acorn or spark, an essence a jar (Bottled Blizzard), a
 scale a scale, heartwood a log or stalk. `part` in the data names the kind; the build and
 `tests/test_kitchen_rebuild.py` check the name says it. No "Prime Cut", "Choice Cut",
-"Pristine", "Pure", "Concentrated", "Engorged" or "Glittering". Human mortals give what they
-carried (Bandit Trail Ham, Cultist Blood Sausage), not themselves.
+"Pristine", "Pure", "Concentrated", "Engorged" or "Glittering". People give no part at all
+(§3.5).
 
 Every ingredient keeps its own existing picture (`assets/tiles/items/<id>.png`); no new art. The
 Calydonian Boar, which had none, took the unused `asterion_minotaur_prime` ham.
@@ -115,7 +124,7 @@ What a part is rich in, from its lore: `hp` (hearty: a troll, a bear), `sp` (fil
 glue, an ogre's bangers), `mp` (arcane: a wraith's ectoplasm, a lich's bone), `stat` with its
 stat (`stat_grant`: a cobra sharpens DEX), or `special` with a timed power (`temp_power`: a
 shade's gloom-jelly gives Dark Vision, a basilisk's tail a Body Ward). Counts: 47
-hp, 55 sp, 44 mp, 100 stat (STR 26, DEX 16, INT 15, WIS 15, CON 14, PER 14 with the forage), 72
+hp, 51 sp, 42 mp, 94 stat (STR 26, DEX 16, INT 14, CON 13, PER 13, WIS 12 with the forage), 72
 special. Every nature has parts in every depth band; casters find arcane parts from floor 1 to
 floor 97.
 
@@ -125,13 +134,37 @@ floor 97.
 dish needing one never shows on the menu until the hero holds that part. (The Stray Kids zombies
 leave no corpse; the deadites and Old Nickel share the zombie's and the goblin's part.)
 
+### 3.5 People are not harvested (Brandon, 2026-11-16)
+
+"Humans are not harvested. That's weird, we're not cannibals." Who is a person is decided by
+lore, in `tools/content/kitchen/people.txt` (the build writes it to `harvest_map.json`
+`people`, 58 kinds): humans and the human-like folk. That is every one of the mortals (the
+bandits, cultists, knights, guards, the angry villagers, witches, assassins, the Iron Patriarch,
+the Black Knight, the sown men, the mind flayer's thrall, the necromancer's apprentice), the
+horns' allies (Robin Hood's men, Arthur's knights, the einherjar, Charlemagne's host), and the
+elves, the hidden folk and the Nibelung dwarf. Goblinoids, orcs, gnolls, kobolds (Old Nickel
+too), lizardfolk, giants, ogres and the undead stay as they were, and so do the were-beasts, the
+serpent folk, the hags, Baba Yaga, the Green Knight, the Erlking and the fairies (people.txt says
+why for each). A creature monsters.json does not know is a person when its body says it is one
+of the mortals (Gilt Varro: `kitchen.is_person`).
+
+A person is in no kin group and yields no ingredient; his body is searched instead (§8.1). The
+twelve parts that came from people (Bandit Trail Ham, Cultist Blood Sausage, Knight's Marching
+Ham, Battle Mage's Salt Ham, Assassin's Shadow Ham, Witch's Hedge Sausage, Snake Charmer's Spiced
+Ham, Inquisitor's Fasting Ham, Iron Patriarch's Feast Links, Thrall's Pickled Ham, Drow
+Spider-Sausage, Elf-Light Acorn) and their single dishes are gone; each of the 52 multi-dishes
+that held one has a creature's part, a ration or a foraged find in its place, its benefit kept
+(each one is listed in the commit message of 2026-11-16). `people_parts` maps every part a
+person ever gave to the ordinary food it was in his pack: an old save's held one loads as dried
+meat (the elves' acorn as elvish bread), the same count, where it lay.
+
 ---
 
 ## 4. The recipe book (`recipes.json`)
 
-**693 dishes:** 318 single dishes (one per ingredient: the everyday choice) and 375
+**703 dishes:** 306 single dishes (one per ingredient: the everyday choice) and 397
 multi-ingredient dishes of 2 to 5 different ingredients. Every ingredient is in exactly one single
-dish and at least two multi-dishes. 36 multi-dishes are legendary feasts; 126 are cross-depth. No
+dish and at least two multi-dishes. 36 multi-dishes are legendary feasts; 142 are cross-depth. No
 dish is named just like an ingredient (the build checks).
 
 | Field | Meaning |
@@ -148,8 +181,10 @@ dish is named just like an ingredient (the build checks).
   (`trophy_<boss>_recipe`) and names.
 - **Common food goes in:** bread, dried meat, hard cheese, wild mushroom, apple, trail rations,
   healing herb, elvish bread, and the forage. Rare food (philosopher's tea; deep fungi and the
-  void ration are in no dish now) counts as an uncommon part (§4.1). Never quest, secret or one-shot food (the dungeon carrot, Tantalus' plum, the
-  peach, ambrosia, the golden apple). The cook takes the ration from the pack.
+  void ration are in no dish now) counts as an uncommon part (§4.1). A special food (the dungeon
+  carrot, the Starnut Tart, Tantalus' plum, the golden apple, ambrosia, the peach) goes only into
+  its own dish (§4.4); the hearty stew, a meal already, into none. The cook takes the ration from
+  the pack.
 - **Cross-depth:** about a third of the multi-dishes join an early part with a deep one: Goblin
   Gristle from floor 3 goes into the Gristle-and-Locust Harvest Pie with a floor-74 locust.
 - **Legendary feasts:** 36, five ingredients each, deep (tier 3+): each of the 14 trophies anchors
@@ -182,11 +217,60 @@ Dishes per tab and depth band (the tier of the deepest ingredient):
 
 | Tab | 1-20 | 21-40 | 41-60 | 61-80 | 81-100 |
 |-----|-----:|------:|------:|------:|-------:|
-| HP | 44 | 15 | 10 | 3 | 14 |
-| SP | 81 | 10 | 5 | 11 | 5 |
-| MP | 48 | 9 | 12 | 4 | 13 |
-| Stat | 143 | 36 | 25 | 17 | 21 |
-| Special | 79 | 41 | 19 | 8 | 20 |
+| HP | 45 | 15 | 10 | 4 | 14 |
+| SP | 78 | 10 | 4 | 11 | 5 |
+| MP | 46 | 10 | 12 | 4 | 13 |
+| Stat | 140 | 38 | 32 | 18 | 26 |
+| Special | 80 | 42 | 18 | 8 | 20 |
+
+### 4.3 Every stat at every tier (Brandon, 2026-11-16)
+
+"Fill the stat dishes in every tier." The dish's tier caps how far food and the altar can raise
+its stat (§5), so a stat with no deep dishes stopped early: Dexterity had nothing at tiers 4 and
+5 (it stopped at +18), Intelligence nothing at 4, Perception nothing at 5. Fifteen stat dishes
+were added (dish_345 to dish_359), lore first: a deep part of the right depth whose lore is the
+stat, often with a shallower one carried down.
+
+| Stat | 1-20 | 21-40 | 41-60 | 61-80 | 81-100 | Added |
+|------|-----:|------:|------:|------:|-------:|-------|
+| STR | 32 | 16 | 3 | 4 | 8 | Forge-Giant's Anvil Links, Lion-Strangler Roast (T3) |
+| CON | 17 | 7 | 3 | 3 | 6 | Old-Root Moss Pottage (T3); the Hesperides Garden Supper (T3) and the Monkey King's Stolen Peach Supper (T5) of §4.4 |
+| DEX | 35 | 4 | 5 | 2 | 2 | Coiling Serpent Skewers, Leaping Locust Fritters (T4); Night-and-Coil Wyrm Kebabs, Sky-Rider's Hunt Supper (T5) |
+| INT | 23 | 4 | 3 | 2 | 5 | Faust's Bargain Tea (T3); Dreaming Mind Broth, Frost-Bone Scholar Stew (T4) |
+| PER | 24 | 3 | 5 | 3 | 2 | Night Watch Skewers (T2); Morning Star Watch Supper, Dragon's-Eye Night Skewers (T5); the Night-Owl Carrot Stew (T1) of §4.4 |
+| WIS | 9 | 4 | 13 | 4 | 3 | Titan's Forethought Roast, Job's Whirlwind Supper (T4) |
+
+The gate (`tests/test_cooking_rulings_2026_11_16.py`): every stat has at least two stat dishes at
+every tier whose parts a hero can get at that depth: each part's creature spawns by the end of
+the band (the spawn pool's bell, `dungeon._build_spawn_pool`) and its harvest gives the part, or
+the part is found there (forage from its first floor, food where it spawns), and the deepest part
+can be had within the band itself.
+
+### 4.4 Special food (Brandon, 2026-11-16)
+
+"Every special item is used in at least one decent recipe, so a player is tempted to cook it
+rather than save it for its special event." A special food (`food.json` `special: true`) goes
+into one dish of its own (`build_kitchen.SPECIAL_FOOD`) and no other. Holding it shows that dish
+under Building Toward, as a harvested part does (`kitchen.is_keystone`), and the detail pane says
+"Find" (or "Cook" for the tart) where a ration says "Find or buy" (`cook_menu.part_source`).
+Cooking it uses it up (`consume_ingredients`), so its event can no longer have that one; the
+events are unchanged. Each dish is four or five parts, of a tier where the food is found, its
+other parts common (§4.1).
+
+| Food | Its event | Dish | Tier | Gives |
+|------|-----------|------|-----:|-------|
+| Magic Dungeon Carrot | the unicorn's trust | Night-Owl Carrot Stew (carrot, owlbear, beholder eyestalk, wild mushroom) | 1 | PER (the night pilots' carrots) |
+| Starnut Tart | the Mooble | Wishing-Star Miner's Pie (tart, star spawn ink, crystal shard, glabrezu ichor) | 2 | MP |
+| Tantalus's Plum | eaten, a big heal | Out-of-Reach Plum Pudding (plum, harpy, roc, healing herb) | 1 | HP |
+| Golden Apple of Hesperides | eaten, CON | Hesperides Garden Supper (apple, young dragon, hydra, Nemean lion, apple) | 3 | CON |
+| Ambrosia | eaten, every stat | Olympian Victory Banquet (ambrosia, titan, storm giant, pegasus, holy water) | 4 | HP |
+| Peach of Immortality | eaten, a stat | Monkey King's Stolen Peach Supper (peach, young dragon, fallen angel, apple, healing herb) | 5 | CON |
+
+Confirmed, not changed: the Mooble's Starnut and the Bococho's Sunroot (forage) each go into a
+single dish and two or more multi-dishes; caviar and tater tots make the dish that plays
+Brandon's song (§5.6); holy water (a coating too) is in 17 dishes. Not food, so not here:
+Gleipnir's six impossible things (the fetter's, not the kitchen's), Idunn's Apple (a worn
+accessory) and Soma (a potion). The hearty stew is an ordinary find, a meal already.
 
 ### 4.2 Pictures (`tools/content/kitchen/dish_art.py`)
 
@@ -294,14 +378,16 @@ are `kitchen.carry_lines` ("Made to carry: one Starnut Tart into your pack", "If
 
 The first is the **Starnut Tart** (`dish_starnut_tart`: Starnut, bread ration and apple), the
 Mooble's favourite (`mooble_encounter.py`, `docs/systems/pets.md`). The food `starnut_tart` never
-spawns (`floor_spawn_weight` 0), is never an ingredient (`build_kitchen.FORBIDDEN_FOOD`), is
+spawns (`floor_spawn_weight` 0), is a special food that goes into one dish of its own besides
+(Wishing-Star Miner's Pie, §4.4; never back into the dish that makes it), is
 never stolen, given as payment or sold (`items.WITHHELD_IDS`), and shows the dish's picture
 (`renderer._UNIQUE_SPRITE_FALLBACK`: `dish_pie_t2_special`) until it has one of its own.
 
 A dish the hero has **learned of** (`player.dishes_learned`, a set of recipe ids: the Mooble
 tells of his tart the first time he is met) shows under Building Toward even before any part of
 it is held (`menu_rows`). `build_kitchen.py` carries `makes` from `structure.json` and checks
-that the food exists, is forbidden as an ingredient, and that no feast is carried.
+that the food exists, is forbidden or special (`SPECIAL_FOOD`), is never in the dish that makes
+it, and that no feast is carried.
 
 ### 5.6 A dish that plays a song (`song`, 3.5.2)
 
@@ -376,10 +462,10 @@ and what its dish gives. Enter or Esc keeps it; Y goes ahead. The cow and the Em
   `ready`, `legendary`, `trophy`, `tier`, `have` / `missing` lists of `{id, name, have, need}`,
   `progress` "2 of 4", `value`, `effects`, `hunted`) in three groups:
   1. **ready** — cookable now, the most giving first (`dish_value`);
-  2. **building** — the hero holds at least one HARVESTED part of it (a monster part or trophy;
-     a ration or a foraged find alone does not count, or bread would list a hundred dishes) but
-     not all, or the hero has learned of it (`player.dishes_learned`, §5.5); the closest first,
-     then fewest missing, then value;
+  2. **building** — the hero holds at least one HARVESTED part of it (a monster part or trophy)
+     or a special food of it (§4.4; `is_keystone`; a ration or a foraged find alone does not
+     count, or bread would list a hundred dishes) but not all, or the hero has learned of it
+     (`player.dishes_learned`, §5.5); the closest first, then fewest missing, then value;
   3. **legendary** — the feasts and trophy dishes, their own group so the big payoff stands out:
      ready ones first, then the closest; shown once any harvested part is held.
   A dish needing a secret part never shows until that part is held.
@@ -408,15 +494,16 @@ and what its dish gives. Enter or Esc keeps it; Y goes ahead. The cow and the Em
 
 ## 8. Harvest (one animal question)
 
-`Game._harvest` (`H`) takes the corpse under the hero off the floor before the question, then
+`Game._harvest` (`H`) searches a person's body instead (§8.1). For a creature, it takes the
+corpse under the hero off the floor before the question, then
 `food_system.harvest_corpse` asks ONE animal question at the corpse's `harvest_tier`, never
 harder than the band the monster lives in (`_monster_band_tier`, the game's one band rule
 `items._floor_band_tier`: floors 1-20 tier 1 ... 81-100 tier 5, so a gate boss of floor 20 is
 tier 1; every kind in monsters.json carries a `harvest_tier` of 1-5). Right: the corpse yields its
 kin's ingredient (`kitchen.ingredient_for_monster`; a creature the map does not name borrows its
 nearest kin's, `_nearest_kin_ingredient`, by the family and floor in monsters.json or, for a
-creature monsters.json does not know, on its corpse: Gilt Varro, a mortal, gives a mortal's
-provisions; a person of an encounter with no family yields nothing, said before the question by
+creature monsters.json does not know, on its corpse; never a person's, who has no kin in the
+kitchen; a being of an encounter with no family yields nothing, said before the question by
 `Game._harvest` through `food_system.corpse_yield`), plus one portion more for a family the hero has
 learned to butcher (`family_edges.harvest_bonus`), never for a boss trophy (one of a kind: a
 second Fenrir's Tooth gave its power twice, bug bash 3.5.1). The part remembers the creature it came from
@@ -425,6 +512,21 @@ carry stays on the floor. `quirk_system.on_harvest` fires either way (Mithridate
 
 Untimed: animal questions are never on the clock. Corpses weigh what the body weighs
 (`items.corpse_weight`, `data/monster_sizes.json`: 2 lb tiny to 400 lb huge).
+
+### 8.1 Searching a person (Brandon, 2026-11-16)
+
+H on a person's body (§3.5; `food_system.corpse_is_person`) is `Game._search_corpse`: like
+picking something up, no question, the body used up, the turn passed. `food_system.search_corpse`
+gives one or two ordinary finds from what he carried (`search_finds`, `cooking_rules.json`
+`search`): each drawn from `pack` by its weight for the floor's band (bread, dried meat, cheese,
+apples and trail rations on top; elvish bread, philosopher's tea, deep fungi and the void ration
+deeper down), never one whose own first floor is deeper than the floor; a person of a tag in
+`by_tag` or a family in `by_family` carries one of his own first (a cultist his altar incense, a
+caster a herb or tea, a bandit dried meat or cheese, an elf his waybread). Never a meat of a
+new kind. The line: "You search the brigand corpse and take what was carried: Bread Ration and
+Hard Cheese." What does not fit stays at the hero's feet. The corpse dossier says "A person: H
+searches the body for food" in place of the Harvest line; under In Sight a person is never gold
+for a hunt (he has no harvest). The simulator searches people too (`difficulty_sim._harvest_all`).
 
 ---
 
@@ -478,8 +580,10 @@ deepest floor reached when it was harvested; a stack keeps the oldest (`Player.a
 - **Old ingredients** (`Game._migrate_legacy_ingredients`): every Ingredient in the pack, any
   sack, the floor and stored floors: a retired id becomes the kept one, its name and fields come
   from today's data (`kitchen.migrate_ingredient`), and in the pack and sacks two stacks that are
-  one ingredient now are joined (`kitchen.merge_stacks`). An id the kitchen does not know is
-  dropped.
+  one ingredient now are joined (`kitchen.merge_stacks`). A part a person once gave
+  (`harvest_map.json` `people_parts`) becomes the ordinary food it was in his pack (dried meat;
+  the elves' acorn elvish bread), the same count, where it lay. An id the kitchen does not know
+  is dropped. A hunt for a dish that is gone is quietly skipped (`hunted_parts`).
 - New fields read with defaults: `Player.cooking_mp_gained`.
 - Recipe ids already counted toward the Seeker's "recipes cooked" stay counted; the encyclopedia's
   Recipes page lists dishes by name.
@@ -506,6 +610,11 @@ the Special tab once both are held, half damage while the song plays and not aft
 clock, F5, a dance's hold, a save mid-song, a fall, Robyn's start, the achievement.
 `tests/test_dish_art.py`: every picture exists at 64 px, feasts own theirs, a shared picture is
 one tier and one tab, names say their kind, any renamed dish finds a true vessel and colour.
+`tests/test_cooking_rulings_2026_11_16.py`: every stat at every tier from parts got at that depth
+(§4.3); the people list, no part of a person anywhere, the search (no question, one or two
+ordinary finds of the band, a cultist's incense, an elf's bread), the corpse dossier, the hunt,
+old saves; every special food in a decent dish of its tier, shown when held, used up when cooked
+(§4.4).
 
 ---
 
@@ -523,4 +632,5 @@ one tier and one tab, names say their kind, any renamed dish finds a true vessel
 | S1 | 2026-11-15 | **A dish that plays a song** (§5.6): Caviar and Tater Tots, Brandon's song as A Man Before a King; caviar and tater tots, rare plain foods; half damage while the song plays; Robyn starts with both; a secret achievement. 694 dishes. |
 | SD | 2026-11-16 | **You are what you eat** (Brandon's rulings 1 and 2): one stat dish teaches one whole point, still one lesson a floor (two lessons a point, `COOK_MEALS_PER_STAT_POINT`, the banked meals `cook_stat_meals` and `full_point_worth` retired; an old save's half-point banked is dropped). A dish's tier caps how far it can raise a stat (`cap_by_tier`), replacing the cap that grew with the deepest floor (3 + floor / 4); the altar and rare foods go by the deepest band. |
 | HU | 2026-11-16 | **Hunting for a dish** (§7): H in the cook menu; what a hunted dish still needs shows gold under In Sight. |
+| PS | 2026-11-16 | **Brandon's three rulings.** People are searched, never harvested (§3.5, §8.1): 58 kinds in `people.txt`, twelve parts and their single dishes gone, 52 dishes re-sourced, old saves' parts become food. Every stat at every tier (§4.3): 15 stat dishes. Every special food in a dish of its own (§4.4): 6 dishes. 703 dishes, 306 ingredients. `part_rules.rare_foods` reads `floorSpawnWeight` too (the mythic fruits were counted common). |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |

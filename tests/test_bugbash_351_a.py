@@ -321,9 +321,11 @@ def test_a8_a_persons_corpse_is_not_acid_blob():
     Gilt Varro, the dead hero's ghost) fell to the nearest-kin fallback with
     no family, which took the first part in the book: the corpse of a
     murdered pilgrim gave Acid Blob Bladder. Now a corpse with a family
-    gives its kin's part (Varro, a mortal, his provisions; the ghost,
-    ectoplasm), and one with none yields nothing, said before any question
-    is asked, the corpse left where it lies."""
+    gives its kin's part (the ghost, ectoplasm), and one with none yields
+    nothing, said before any question is asked, the corpse left where it
+    lies. Gilt Varro, a mortal, is a person: never harvested (Brandon,
+    2026-11-16), his body searched with no question for the ordinary food
+    he carried."""
     from monster import Monster
     import bococho_encounter as be
     g = _game()
@@ -349,17 +351,27 @@ def test_a8_a_persons_corpse_is_not_acid_blob():
     assert p.inventory == pack_before
     assert any(getattr(i, 'monster_id', '') == 'npc_traveler' for i in g.ground_items)
     assert 'nothing on the' in str(g.msg_log.entries[-1][0])
-    # Gilt Varro is a mortal: what a mortal of his depth carries.
+    # Gilt Varro is a mortal, a person: searched, no question, what he
+    # carried (ordinary food, never a part of him), and his body used up.
     varro = be.make_creature('varro', p.x, p.y, 55)
     g.ground_items = [i for i in g.ground_items if getattr(i, 'monster_id', '') != 'npc_traveler']
     g.monsters.append(varro)
     varro.alive, varro.hp = False, 0
     g._on_monster_killed(varro)
+    held_before = kitchen.held_counts(p.inventory)
     _press(g, pygame.K_h, 'h')
-    assert len(asked) == 1
-    got = [i for i in p.inventory if i not in pack_before]
-    assert len(got) == 1 and got[0].id != 'acid_blob_prime'
-    assert kitchen.ingredients()[got[0].id]['family'] == 'mortals'
+    assert not asked
+    # (A find may join a stack the pack already holds: count, not objects.)
+    after = kitchen.held_counts(p.inventory)
+    got = {k: after[k] - held_before.get(k, 0) for k in after if after[k] > held_before.get(k, 0)}
+    assert 1 <= sum(got.values()) <= 2, got
+    for fid in got:
+        assert fid != 'acid_blob_prime'
+        assert not kitchen.is_harvested(fid), fid
+        assert fid in kitchen.foods() or kitchen.part_kind(fid) == 'forage', fid
+    assert not any(getattr(i, 'monster_id', '') == getattr(varro, 'kind', '') for i in g.ground_items)
+    assert 'You search the' in str(g.msg_log.entries[-1][0]) or any(
+        'You search the' in str(e[0]) for e in g.msg_log.entries[-3:])
     # A ghost of a past hero: ectoplasm, a ghost's part.
     from food_system import corpse_ingredient
     ghostly = corpse_ingredient('player_ghost', 'ghosts', 30)

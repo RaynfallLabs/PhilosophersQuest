@@ -67,7 +67,7 @@ rangda
 abyssal_hound
 pit_fiend_spawn pit_executioner
 abyssal_behemoth
-locust_swarmlord abyssal_locust locust_cultist locust_herald
+locust_swarmlord abyssal_locust
 ravanas_arm
 void_seraph azarael
 apocalypse_herald iron_horseman
@@ -107,8 +107,6 @@ satyr_warrior satyr_trickster
 pixie_swarm
 boggart
 leprechaun leprechaun_hostile
-dark_elf drow_warrior drow_mage drow_priestess nibelung_hoardwarden
-light_elf_hostile huldufolk_raider
 changeling
 redcap
 spriggan
@@ -193,16 +191,6 @@ hydra mythic_hydra
 scylla
 echidna
 cerberus
-cult_initiate dark_cultist cult_priest cult_zealot cult_hierophant
-bandit_captain brigand bandit_archer bandit_thug bandit_thief bandit_kingpin morrow
-battle_mage
-veteran_knight palace_guard villager_mob sown_warrior mercenary_veteran black_knight
-mind_flayer_thrall
-snake_charmer viper_priestess
-harrow_witch plague_witch endor_medium
-iron_patriarch
-mage_slayer_assassin shadow_assassin shadow_archer autolycus_heir
-veiled_inquisitor
 gelatinous_cube gelatinous_titan
 acid_blob gray_ooze corrosive_ooze
 green_slime
@@ -272,7 +260,7 @@ nosferatu
 vrykolakas
 strigoi
 lich demi_lich skeleton_lich lich_lord greater_lich lich_sovereign banshee_lich neferkaptah_risen lich_thrall lich_apprentice arch_lich ancient_lich
-death_mage necromancer_apprentice pale_master skeleton_necromancer necromancer_lord crypt_summoner
+death_mage pale_master skeleton_necromancer necromancer_lord crypt_summoner
 giant_rat dire_rat
 grid_bug
 bat

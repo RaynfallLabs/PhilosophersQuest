@@ -155,6 +155,10 @@ TAUGHT = {
     'oaths': r'promise',
     'the Emberpup': r'fire lizard',
     'Old Nickel': r'old nickel',
+    # Brandon, 2026-11-16: people are searched, never harvested; a special
+    # find has a dish of its own.
+    "a person's body is searched": r'what a fallen man carried',
+    'a rare find cooks into its own dish': r'more in a pot than in a pocket',
 }
 
 

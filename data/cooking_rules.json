@@ -84,5 +84,31 @@
   "salvage": {
     "_doc": "Persephone's Descent: a ruined dish still gives this share of its SP, healing and mana.",
     "share": 0.5
+  },
+  "search": {
+    "_doc": "A person's body is searched, never harvested (Brandon, 2026-11-16: 'that's weird, we're not cannibals'; the people are data/items/harvest_map.json 'people'). H on the body takes what the person carried, like picking it up: no question, the body is used up, and count[0] to count[1] ordinary finds (food_system.search_finds). Each is drawn from pack by its weight for the floor's band (five weights, tiers 1 to 5), never one whose own first floor is deeper than the floor. A person of a tag in by_tag, or a family in by_family, carries one of those first (a cultist his incense, an elf his waybread). Only ordinary food and foraged finds: never a meat of a new kind.",
+    "count": [1, 2],
+    "pack": {
+      "bread_ration": [6, 5, 4, 3, 3],
+      "dried_meat": [5, 5, 4, 3, 3],
+      "hard_cheese": [5, 4, 3, 2, 2],
+      "apple": [4, 3, 3, 2, 2],
+      "trail_rations": [3, 4, 4, 4, 4],
+      "wild_mushroom": [2, 2, 1, 1, 1],
+      "healing_herb": [2, 2, 2, 2, 2],
+      "river_salt": [1, 2, 2, 2, 2],
+      "elvish_bread": [0, 1, 2, 2, 2],
+      "philosopher_tea": [0, 1, 1, 1, 1],
+      "deep_fungi": [0, 0, 1, 2, 2],
+      "void_ration": [0, 0, 0, 2, 4]
+    },
+    "by_tag": {
+      "cultist": ["altar_incense"],
+      "caster": ["healing_herb", "philosopher_tea"],
+      "bandit": ["dried_meat", "hard_cheese"]
+    },
+    "by_family": {
+      "fair_folk": ["elvish_bread"]
+    }
   }
 }
