@@ -645,3 +645,79 @@ def test_the_qa_key_sets_each_path_beside_the_hero_then_every_horn_ready():
     assert all(_has(g, h) for h in HORNS) and horns.sounded(g.player) == set()
     g._open_power_menu()
     assert {horns.power_id(h) for h in HORNS} <= {p[0] for p in g._power_menu_list}
+
+
+# ---------------------------------------------------------------- the Seeker
+
+@pytest.fixture
+def seeker(tmp_path):
+    import seeker_codes
+    import seeker_profile
+    saved = seeker_codes._KEYS_OVERRIDE, seeker_profile._DIR_OVERRIDE
+    seeker_codes._KEYS_OVERRIDE = {'label': 'pq1', 'keys': {'pq1': bytes(range(32))}}
+    seeker_profile._DIR_OVERRIDE = str(tmp_path / 'seekers')
+    seeker_profile.set_active('Robyn')
+    yield 'Robyn'
+    seeker_codes._KEYS_OVERRIDE, seeker_profile._DIR_OVERRIDE = saved
+
+
+def _won(g, aid):
+    return g._seeker is not None and g._seeker.profile.is_unlocked(aid)
+
+
+def test_each_path_won_the_myths_way_is_its_achievement(seeker):
+    """Brandon, 2026-11-16: the achievements point at the three paths. Each
+    fires on its path's own deed, through the real encounter."""
+    g = _game(name='__test_horns_badges__')
+    assert g._seeker is not None
+    _open(g, _meet(g, 15, 'flv_robin_hood_bridge'))
+    _pick(g, 'Cut a staff and meet him on the bridge', quiz=PASS)
+    _continue(g)
+    assert _won(g, 'neither_would_give_way')
+    _open(g, _meet(g, 50, 'flv_sleepers_under_the_hill'))
+    for label in ('Draw the sword', 'Cut the garter with it'):
+        _pick(g, label)
+        _continue(g)
+    assert not _won(g, 'not_yet_the_hour')               # two of the three is not the waking
+    _pick(g, 'Blow the bugle', quiz=PASS)
+    _continue(g)
+    assert _won(g, 'not_yet_the_hour')
+    _open(g, _meet(g, 74, 'flv_heimdalls_watch'))
+    _pick(g, 'Keep the watch with him', quiz=PASS)
+    _continue(g)
+    assert _won(g, 'one_who_listens')
+
+
+def test_a_path_lost_or_left_is_no_achievement(seeker):
+    g = _game(name='__test_horns_no_badges__')
+    _open(g, _meet(g, 15, 'flv_robin_hood_bridge'))
+    _pick(g, 'Cut a staff and meet him on the bridge', quiz=FAIL)
+    _continue(g)
+    _open(g, _meet(g, 50, 'flv_sleepers_under_the_hill'))
+    for label in ('Draw the sword', 'Cut the garter with it'):
+        _pick(g, label)
+        _continue(g)
+    _pick(g, 'Sheathe the sword')
+    _continue(g)
+    _open(g, _meet(g, 74, 'flv_heimdalls_watch'))
+    _pick(g, 'Leave him to his watch')
+    _continue(g)
+    for aid in ('neither_would_give_way', 'not_yet_the_hour', 'one_who_listens'):
+        assert not _won(g, aid), aid
+
+
+def test_the_path_achievements_point_at_the_source_not_the_mechanic():
+    """Very light hints that name the ballad, the legend or the Eddas, never
+    the quiz, the horn or the hero's part; each lists its spoiler words."""
+    data = _load('data', 'achievements.json')
+    by = {a['id']: a for a in data['achievements']}
+    sources = {'neither_would_give_way': 'ballad', 'not_yet_the_hour': 'Roman Wall',
+               'one_who_listens': 'Eddas'}
+    for aid, source in sources.items():
+        a = by[aid]
+        assert a['category'] == 'secrets' and source in a['hint'], aid
+        assert len(a['hint']) <= 120, aid
+        low = a['hint'].lower()
+        assert a['spoiler_words'] and not any(w in low for w in a['spoiler_words']), aid
+        for word in ('quiz', 'math', 'history', 'chain', 'horn', 'win', 'beat'):
+            assert not __import__('re').search(rf'\b{word}\b', low), (aid, word)

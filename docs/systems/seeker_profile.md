@@ -91,6 +91,8 @@ A counter's `scope` is `life` (the profile, the default) or `run` (`RunTally`, s
 
 **Added 2026-11-14 (23):** the lore ways (The First Labour, The Bronze Heel, In the Polished Shield, Deaf to Riddles), the named foes with no badge yet (the Bonnacon, the Calydonian Boar, the Undying Sisters, the Iron Patriarch, the Whispering Crone, the Blood Archon), the arsenal (A Silver Edge, Holy Water, Old Remedies), the kitchen and the smiths (the `feasts` ladder A Feast for Heroes and The Long Table, Five Courses, Stone Soup, Worth the Wait, Made to Order), Leaves Against the Rain (the Emberpup's cloak), the Stray Kids (Stage Fright, Encore!) and one more fourth-wall secret, Rip Van Winkle. A profile from before has none of them, and nothing in it changes: the new ladders read counters it never had, so `settle` gives nothing (`tests/test_achievements_quirks_2026_11.py`).
 
+**The horn paths (2026-11-16, 3):** Neither Would Give Way (the deed `told.robin_in_the_stream`: Robin Hood knocked off his bridge), Not Yet the Hour (`told.arthur_woken`: the sleepers under the hill woken by the bugle) and One Who Listens (`told.heimdall_watch`: the watch kept with Heimdall), all `secrets`. Their hints point at the ballad, the Sewingshields legend and the Eddas; each lists its spoiler words. With them, Not by Strength (`told.merlin_staff`: Merlin's questions answered at his stone, the Staff of Emrys given), whose hint points at Malory.
+
 ## The event spine
 
 The game emits events with one line at the place each happens: `self._seeker_event('kill', monster=..., ...)`. Every name is in `achievements.KNOWN_EVENTS`, and `tests/test_seeker_wiring.py` checks that each is emitted somewhere in `src/`.

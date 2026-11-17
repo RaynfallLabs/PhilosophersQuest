@@ -14567,5 +14567,107 @@
         }
       }
     ]
+  },
+  {
+    "tag": "flv_merlins_stone",
+    "name": "The Great Stone",
+    "symbol": "@",
+    "color": [
+      176,
+      172,
+      160
+    ],
+    "sprite_id": "npc_merlins_stone",
+    "min_level": 10,
+    "max_level": 16,
+    "role": "story",
+    "stakes": "medium",
+    "callback_only": true,
+    "person": {
+      "id": "merlin",
+      "name": "Merlin"
+    },
+    "text": "A great grey stone lies across the passage, sunk into the floor as if it had been dropped there from a height, and out of the rock beside it grows a hawthorn, white with flowers that have no business blooming underground. Caught in its branches is a knotted staff with a chip of grey stone in its crook. From under the great stone comes a groaning, and then a voice. \"Don't,\" it says, before you have done anything. \"Everyone tries to lift it. A hundred men could not. Only she who put me here can let me out, and she will not.\"",
+    "options": [
+      {
+        "label": "Try to lift the stone",
+        "forbids": {
+          "deeds_any": [
+            "told.merlin_stone_heaved"
+          ]
+        },
+        "outcome": "You get your fingers under its edge and heave until your arms shake. It does not move a hair. \"I told you,\" says the voice, not unkindly. \"Leave your labour; it is all in vain. I moved the Giants' Dance out of Ireland, every stone of it, when no army could shift one, and I did not do it with my arms.\"",
+        "deeds": [
+          "told.merlin_stone_heaved"
+        ],
+        "then": "options"
+      },
+      {
+        "label": "\"Who are you?\"",
+        "forbids": {
+          "deeds_any": [
+            "told.merlins_story"
+          ]
+        },
+        "outcome": "\"Merlin,\" says the voice. \"I read a falling tower's luck in the fight of two dragons, and moved the stones of Stonehenge by my art. Then I taught a lady every spell I knew, and she used the last of them on me.\" A dry laugh comes up through the rock. \"That is my staff in the thorn. I cannot reach it, and it is no use to a man under a stone. Tell me how the world works, and it is yours.\"",
+        "deeds": [
+          "told.merlins_story"
+        ],
+        "then": "options"
+      },
+      {
+        "label": "Answer the voice's questions",
+        "requires": {
+          "items_none": [
+            "staff_of_emrys"
+          ]
+        },
+        "quiz": {
+          "subject": "science",
+          "tier": 1,
+          "mode": "threshold",
+          "threshold": 2,
+          "total_qs": 3,
+          "timed": false,
+          "title": "THE GREAT STONE  --  SCIENCE"
+        },
+        "pass": {
+          "outcome": "You answer, and the voice under the stone listens, and is quiet a long while. \"Not by strength,\" it says at last. \"Good. Take the staff out of the thorn.\" The hawthorn lets it go as if it had been waiting. \"Your spells will come easier with it in your hand, and no enchantment will hold you but your own. Be careful who you teach that one to.\"",
+          "reward": {
+            "type": "specific_item",
+            "item_type": "weapon",
+            "item_id": "staff_of_emrys"
+          },
+          "deeds": [
+            "met.merlin",
+            "told.merlin_staff"
+          ],
+          "chronicle": "Answered Merlin's questions at the great stone he lies under. He gave me his staff out of the hawthorn."
+        },
+        "fail": {
+          "outcome": "You answer as well as you can, and it is not well enough. \"No,\" says the voice, \"not yet. It would be no use to you.\" The hawthorn keeps the staff, and the voice under the stone says no more.",
+          "deeds": [
+            "met.merlin"
+          ],
+          "chronicle": "Tried Merlin's questions at the great stone and did not know enough. His staff stayed in the hawthorn."
+        },
+        "road": {
+          "id": "flv_merlins_stone.answer",
+          "hint": "Under the great stone, the voice wants answers, not muscle."
+        }
+      },
+      {
+        "label": "Leave him under his stone",
+        "outcome": "You go on. Behind you the groaning starts again, low, like wind under a door.",
+        "deeds": [
+          "met.merlin"
+        ],
+        "chronicle": "Heard Merlin groaning under a great stone, and went on.",
+        "road": {
+          "id": "flv_merlins_stone.leave",
+          "hint": "A staff left in a hawthorn waits for someone who listens."
+        }
+      }
+    ]
   }
 ]

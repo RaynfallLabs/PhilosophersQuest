@@ -331,6 +331,13 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
   demon), and each ally lives through about eight blows of a mini-boss of that tier.
   The allies' own numbers did not change. Robin Hood's men are tier-one mortals and
   matter less the deeper they are called.
+- **Recall Lore and the Seeker.** Each path has a hint in `data/hints.json` at its depth's
+  tier (Robin Hood's bridge at 1, the sleepers at 3, Heimdall at 4, the Olifant's lesson
+  at 5), and an achievement in `data/achievements.json` (category `secrets`, fired by
+  the path's own deed): Neither Would Give Way (`told.robin_in_the_stream`), Not Yet the
+  Hour (`told.arthur_woken`) and One Who Listens (`told.heimdall_watch`). The hints point
+  at the ballad, the legend and the Eddas, never at the quiz; the badges are painted
+  scenes (`tools/content/genart/briefs/achievements_a16.json`).
 - **Never loot.** Each horn has a `plot_role` and no spawn weight (`items.scripted_only_ids`),
   is unique and in `Game._QUEST_PIECE_IDS`: no chest, floor roll or shop; traders refuse
   it, thieves skip it. Equipped gear only goes to bones, so no horn crosses runs.
@@ -340,10 +347,46 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
 - **Art.** Painted by the sprite pipeline only (Brandon, 2026-11-16: no art drawn in
   code): briefs `tools/content/genart/briefs/horns_h01.json`, run into `_genart/horns_h01`,
   picks installed by `tools/content/genart/install_horns.py` (and recorded in the install
-  manifests).
+  manifests). Gjallarhorn and Heimdall were redrawn on 2026-11-16 bent like a crescent
+  (rounds `_genart/horns_h01_r3` and `_r5`; before and after in
+  `GJALLARHORN_REDRAW_2026_11_16.png`).
 - **QA** (Titivillus build): Shift+H sets each path's person beside the hero in turn
-  (Robin Hood, the sleepers, Heimdall, Roland), then puts every horn in the pack with
-  each ready to blow (`HornsMixin._qa_horns`).
+  (Robin Hood, the sleepers, Heimdall, Roland, then Merlin's stone, §2.13), then puts
+  every horn in the pack with each ready to blow (`HornsMixin._qa_horns`).
+
+### 2.13 Merlin's stone: the path to the Staff of Emrys (2026-11-16)
+
+Merlin starts with his own staff (`staff_of_emrys`, data/items/weapon.json; see
+[weapons_and_materials.md](weapons_and_materials.md)). Brandon, the same day: yes, other
+heroes can earn it on a path. One path, one staff, once a run.
+
+- **The legend.** Malory, *Le Morte d'Arthur* IV.1 and IV.5: Nimue shut Merlin under a
+  great stone with the craft he had taught her, and Sir Bagdemagus, hearing him groan,
+  tried to lift a stone "an hundred men" could not, and Merlin bade him leave his labour:
+  only she who put him there could let him out. The hawthorn is the French romance's (in
+  the *Livre d'Artus* he sleeps under one); Geoffrey of Monmouth (*Historia* VIII.12) has
+  him move the Giants' Dance by art and engines where strength failed.
+- **The encounter** (`flv_merlins_stone`, `callback_only`, sprite `npc_merlins_stone`):
+  a great stone in the passage, a hawthorn flowering out of the rock beside it, his staff
+  caught in its branches, and his voice under the stone. *Try to lift the stone* does
+  nothing ("Leave your labour; it is all in vain") and leads back; *"Who are you?"* tells
+  his story; *Answer the voice's questions* is a SCIENCE threshold (two of three, tier 1:
+  science is the game's subject of magic, and his art was knowledge, not muscle): pass and
+  he gives the staff out of the thorn (`told.merlin_staff`), fail and it stays; *Leave him
+  under his stone* walks on. Every exit writes `met.merlin` and a Journal line.
+- **Placement.** `karma_rules.json: run_start_schedule`, floors **10-16**: the staff is
+  maths tier 1, so its path is in tier one's floors (depth-true), on its own floor beside
+  Robin Hood's 12-18. Not earlier: on floors 6-11 it took the last free floor in the
+  narrow windows of the first oaths' callbacks (Wat's seventh lamp, met on floor 4 and
+  due by floor 9, was lost in 4 runs of 60; none on 10-16,
+  `tests/test_bug_bash_5_encounters.py`). `not_for_builds: ["merlin ambrosius"]` (read by `game_road._schedule_run_start`):
+  the path is never placed for Merlin himself, who has the staff in his hand and cannot
+  meet himself under the stone. The answer option also `requires items_none:
+  ["staff_of_emrys"]`, so no hero is ever handed a second copy.
+- **Hint and achievement.** A tier-1 Recall Lore hint (Malory's stone and Geoffrey's "art,
+  not by strength") and the `secrets` achievement Not by Strength (`told.merlin_staff`),
+  whose hint names Malory and not the quiz. Its badge and the stone's sprite are painted
+  (`briefs/achievements_a16.json`, `briefs/merlin_staff_s01.json`).
 
 ---
 
