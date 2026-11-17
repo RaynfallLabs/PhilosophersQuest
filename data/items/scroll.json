@@ -1953,6 +1953,31 @@
     "peak_weight": 0,
     "single_copy": true
   },
+  "scroll_of_polyphemus": {
+    "name": "Scroll of Polyphemus",
+    "symbol": "?",
+    "color": [
+      200,
+      170,
+      110
+    ],
+    "weight_lb": 0.1,
+    "min_level": 9999,
+    "peak_floor": 9999,
+    "spread": 0,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "boss_reward",
+    "achievement": "quest_polyphemus",
+    "unidentified_name": "Scroll of Polyphemus",
+    "lore": "Sealed with a smear of sheep's wool and wine. A reward scroll from Dad -- show him this code!",
+    "read_threshold": 1,
+    "item_class": "scroll",
+    "identified": true,
+    "weight": 0.3,
+    "peak_weight": 0,
+    "single_copy": true
+  },
   "scroll_of_the_sphinx": {
     "name": "Scroll of the Sphinx",
     "symbol": "?",
