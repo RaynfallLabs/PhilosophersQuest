@@ -623,6 +623,41 @@ RIDE_WALK_SHARE = 0.6
 for _n in ('mastery', 'mastery_dex'):
     PROFILES[_n] = dict(PROFILES[_n], quest_pet='bococho')
 
+
+# ---- The Secret Builds the kids play (2026-11-16) ------------------------------
+# A build starts with its own stats (src/welcome_screen.py SECRET_BUILDS) and
+# the core part of its kit: its melee weapon (a bow's shortsword for a ranger;
+# ranged play is not modelled), its armour, shield and ring, and a starting
+# spell a mage casts. The easter eggs that come with a family build (the
+# sketchbook, the Unusual Soul Sphere, the stuffie, a song's food) are left out:
+# the simulator plays the base game (tests/test_sim_core_only.py). Each plays
+# the mastery profile of its own kind.
+def secret_builds() -> dict:
+    """SECRET_BUILDS read from welcome_screen.py's source (it imports pygame)."""
+    global _SECRET_BUILDS
+    if _SECRET_BUILDS is None:
+        import ast
+        with open(os.path.join(_SRC, 'welcome_screen.py'), encoding='utf-8') as f:
+            tree = ast.parse(f.read())
+        _SECRET_BUILDS = {}
+        for node in tree.body:
+            tgt = getattr(node, 'target', None) or (
+                node.targets[0] if isinstance(node, ast.Assign) else None)
+            if isinstance(tgt, ast.Name) and tgt.id == 'SECRET_BUILDS':
+                _SECRET_BUILDS = ast.literal_eval(node.value)
+    return _SECRET_BUILDS
+
+
+_SECRET_BUILDS = None
+BUILD_EGGS = ('_start_extra_acc', '_start_unusual_sphere', '_start_food',
+              '_start_soul_spheres', '_start_spheres', '_start_wand', '_immortal')
+BUILD_CELLS = {'b_fianna': ('fianna', 'mastery_mage'), 'b_fluffs': ('fluffs', 'mastery_mage'),
+               'b_corwin': ('corwin', 'mastery'), 'b_cain': ('cain', 'mastery'),
+               'b_hermes': ('hermes trismegistus', 'mastery_dex'),
+               'b_odysseus': ('odysseus of ithaca', 'mastery_dex')}
+for _n, (_b, _base) in BUILD_CELLS.items():
+    PROFILES[_n] = dict(PROFILES[_base], build=_b)
+
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
 
 HEAL_SPELL_IDS = ('cure_light_spell', 'cure_wounds_spell', 'heal_spell',
@@ -1019,6 +1054,9 @@ class Run:
         self.quiz = QuizModel(accuracy, speed, policy, knobs)
         self.p = SimPlayer(knobs)
         self.p.x, self.p.y = 5, 5
+        self._build = secret_builds().get(self.prof['build']) if self.prof.get('build') else None
+        if self._build:
+            self._apply_build_stats()
         # What each stat was when the run began (main.py): an altar never
         # takes one below it (rededication.give_room).
         self.p.stats_at_start = {s: int(getattr(self.p, s)) for s in COOK_STATS}
@@ -1070,8 +1108,76 @@ class Run:
         return kval(self.knobs, name, self.floor)
 
     # ------------------------------------------------------------------ setup
+    def _apply_build_stats(self):
+        """A Secret Build's stats, and what they make (main.py: max HP from
+        CON, SP from STR, MP from INT), before anything is worn."""
+        p, b = self.p, self._build
+        for s in COOK_STATS:
+            if s in b:
+                setattr(p, s, int(b[s]))
+        p.max_hp = p.starting_max_hp()
+        if self.knobs['player_hp'] != 1.0:
+            p.max_hp = max(1, round(p.max_hp * self.knobs['player_hp']))
+        p.hp = p.max_hp
+        p.max_sp = p.BASE_SP + p.STR
+        p.sp = p.max_sp
+        p.max_mp = p.BASE_MP + p.INT
+        p.mp = p.max_mp
+
+    @staticmethod
+    def _make_build_item(cls, spec):
+        """A build's (template, material[, enchantment]) or a named id."""
+        if not spec:
+            return None
+        try:
+            if isinstance(spec, tuple):
+                make = {'weapon': items_mod.instantiate_weapon, 'armor': items_mod.instantiate_armor,
+                        'shield': items_mod.instantiate_shield}[cls]
+                if cls == 'armor' and len(spec) > 2:
+                    return make(spec[0], spec[1], level=1, ench_id=spec[2])
+                return make(spec[0], spec[1])
+            return items_mod.make_item_by_id(cls, spec)
+        except Exception:
+            return None
+
+    def _give_build_kit(self) -> bool:
+        """The core of a Secret Build's kit (BUILD_EGGS left out). True when
+        it put a melee weapon in his hand."""
+        b, armed = self._build, False
+        for key in ('_start_weapon', '_start_melee'):
+            w = self._make_build_item('weapon', b.get(key))
+            if w is not None and getattr(w, 'requires_ammo', None) is None and not armed:
+                self._equip(w)
+                armed = True
+        for cls, key in (('armor', '_start_armor'), ('shield', '_start_shield')):
+            it = self._make_build_item(cls, b.get(key))
+            if it is not None:
+                self._equip(it)
+        acc = b.get('_start_accessory')
+        if acc:
+            it = items_mod.make_item_by_id('accessory', acc)
+            if it is not None:
+                self._equip(it)
+        spells = list(b.get('_start_spells') or ())
+        book = b.get('_start_book')
+        if book:
+            bk = items_mod.make_item_by_id('spellbook', book)
+            if bk is not None and getattr(bk, 'spell_id', None):
+                spells.append(bk.spell_id)
+        for sid in spells:
+            sp = SPELLS.get(sid) or {}
+            fx = sp.get('effect')
+            if self.prof.get('magic') and fx in ATTACK_SPELLS:
+                self.attack_spells[sid] = (int(sp['mp_cost']), sp['power'],
+                                           int(sp.get('tier', 1)), ATTACK_SPELLS[fx], fx)
+            elif self.prof.get('casts') and sid in HEAL_SPELL_IDS:
+                self.spells[sid] = (int(sp['mp_cost']), sp['power'], int(sp.get('tier', 1)))
+        return armed
+
     def _give_starting_kit(self):
-        """A floor-1 common weapon. (Builds differ; this is the plain case.)"""
+        """A floor-1 common weapon (the plain case), or a Secret Build's kit."""
+        if self._build and self._give_build_kit():
+            return
         for _ in range(20):
             w = items_mod.pick_random_weapon_for_floor(1, random)
             if w is not None and getattr(w, 'requires_ammo', None) is None:
@@ -3545,6 +3651,13 @@ class Run:
         tier_now = p.load_tier()
         if tier_now:
             fs['load_' + tier_now] = fs.get('load_' + tier_now, 0) + 1
+        # The hero's defence as the floor ends (the defence model, 2026-11-16):
+        # his stats, speed and dodge, and the weight class of his body armour.
+        for s in ('STR', 'DEX', 'CON'):
+            fs['st_' + s] = fs.get('st_' + s, 0) + int(getattr(p, s))
+        fs['speed'] = fs.get('speed', 0.0) + float(p.get_speed())
+        fs['dodge'] = fs.get('dodge', 0.0) + float(p.dodge_chance())
+        fs['body_' + gear_mod.body_class(p)] = fs.get('body_' + gear_mod.body_class(p), 0) + 1
         fs['carried_lb'] = fs.get('carried_lb', 0.0) + p.get_current_weight()
         fs['wealth'] = fs.get('wealth', 0.0) + self.wealth()
         fs['hp_lost'] += (p._dmg_taken - dmg0) / max(1, hp_start_max)

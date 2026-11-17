@@ -4,7 +4,7 @@
 Usage: py tools/balance/monte_carlo_report.py <out_dir> [sections]
 Sections (default all): t targets, a ablation, l luck (mastery's deaths by
 floor and the gates), d death bands and killers, p pace (turns, newcomers,
-hunger, load).
+hunger, load), b defence (stats, AC, dodge, speed, armour class, load).
 
 The targets (Brandon 2026-11-13, feedback_mastery_survives; 2026-11-16
 "Systems other than cooking should have real impact; ignoring any of them
@@ -64,8 +64,10 @@ def name(key):
 
 
 def section_targets(cells):
-    print("1. WINS against the targets (kid model, win = Abaddon dead, no death all run)")
-    print(f"   {'cell':22} {'runs':>4} {'F20':>5} {'F40':>5} {'F60':>5} {'F80':>5} {'win':>5} {'+-':>3}  target")
+    print("1. WINS against the targets (kid model, win = Abaddon dead, no death all run;"
+          " 61-100 = share of those alive after floor 60 who win)")
+    print(f"   {'cell':22} {'runs':>4} {'F20':>5} {'F40':>5} {'F60':>5} {'F80':>5} {'win':>5} {'+-':>3}"
+          f" {'61-100':>6}  target")
     order = list(TARGETS) + sorted(k for k in cells if k not in TARGETS)
     for key in order:
         r = cells.get(key)
@@ -79,8 +81,9 @@ def section_targets(cells):
             w = 100 * s[100]
             verdict = f"{lo}-{hi}% ({why}): " + ('MET' if lo <= w <= hi else
                                                   'ABOVE' if w > hi else 'BELOW')
+        deep = s[100] / s[60] if s[60] > 0 else float('nan')
         print(f"   {name(key):22} {n:4} {s[20]:5.0%} {s[40]:5.0%} {s[60]:5.0%} {s[80]:5.0%} "
-              f"{s[100]:5.0%} {100 * ci(s[100], n):3.0f}  {verdict}")
+              f"{s[100]:5.0%} {100 * ci(s[100], n):3.0f} {deep:6.0%}  {verdict}")
 
 
 def section_ablation(cells):
@@ -168,9 +171,36 @@ def section_pace(cells):
                   f"{m('starved'):6.2f} {m('load_heavy'):6.0%} {m('load_burdened'):5.0%} {m('carried_lb'):5.0f}")
 
 
+def section_defence(cells):
+    """The defence model (2026-11-16): what each cell's hero has as a floor
+    ends, by band: stats, AC, dodge, speed, the body armour's weight class
+    and the load."""
+    print("\n6. DEFENCE: per floor visited, by band (STR, DEX, CON, AC, dodge %, speed,"
+          " body armour light / medium / heavy, floors ending Light / Heavy / Burdened)")
+    for key in sorted(cells):
+        st = cells[key]['stats']
+        if not any('speed' in fs for fs in st.values()):
+            continue
+        print(f"   {name(key)}")
+        print(f"   {'band':8} {'STR':>4} {'DEX':>4} {'CON':>4} {'AC':>4} {'dodge':>5} {'speed':>5}"
+              f" {'lt':>4} {'md':>4} {'hv':>4} {'Lgt':>4} {'Hvy':>4} {'Brd':>4}")
+        for lo, hi in BANDS:
+            fl = [st[f] for f in range(lo, hi + 1) if f in st and st[f]['visits']]
+            if not fl:
+                continue
+            v = sum(x['visits'] for x in fl)
+
+            def m(k):
+                return sum(x.get(k, 0) for x in fl) / v
+            print(f"   {lo:>3}-{hi:<4} {m('st_STR'):4.1f} {m('st_DEX'):4.1f} {m('st_CON'):4.1f}"
+                  f" {m('ac'):4.1f} {100 * m('dodge'):5.1f} {m('speed'):5.2f}"
+                  f" {m('body_light'):4.0%} {m('body_medium'):4.0%} {m('body_heavy'):4.0%}"
+                  f" {m('load_light'):4.0%} {m('load_heavy'):4.0%} {m('load_burdened'):4.0%}")
+
+
 def main(argv):
     d = argv[0]
-    sect = argv[1] if len(argv) > 1 else 'taldp'
+    sect = argv[1] if len(argv) > 1 else 'taldpb'
     cells = load(d)
     if not cells:
         print('no pickles in', d)
@@ -185,6 +215,8 @@ def main(argv):
         section_deaths(cells)
     if 'p' in sect:
         section_pace(cells)
+    if 'b' in sect:
+        section_defence(cells)
     return 0
 
 

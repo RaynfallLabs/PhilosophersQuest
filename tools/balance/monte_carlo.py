@@ -19,8 +19,9 @@ Cells (feedback: the win targets, Brandon 2026-11-13 and 2026-11-16):
 Usage:
     py tools/balance/monte_carlo.py <out_dir> <runs> [set ...]
     py tools/balance/monte_carlo_report.py <out_dir>
-Sets: targets, ablate, all (default all), or one profile as profile[@speed]
-(mastery@1.5). MC_WORKERS (default 12) sets the pool. Writes
+Sets: targets, ablate, all (default all), defence (the plate and Dexterity
+kids, committed, casual and the Secret Builds), builds, or one profile as
+profile[@speed] (mastery@1.5). MC_WORKERS (default 12) sets the pool. Writes
 <profile>_<tag>_<speed>.pkl into out_dir.
 """
 import os
@@ -71,6 +72,13 @@ SETS = {
                 ('mastery_mage', '', 'm', 1.0), ('mastery_dex', '', 'm', 1.0),
                 ('committed', '', 'base', 1.0), ('casual', '', 'base', 1.0)],
     'ablate': [(n, '', 'abl', 1.0) for n in ABLATIONS],
+    # The defence model (2026-11-16): the plate kid (mastery, STR and CON)
+    # against the Dexterity kid, the two that ignore systems, and the Secret
+    # Builds the kids play (difficulty_sim.BUILD_CELLS).
+    'defence': ([('mastery', '', 'm', 1.0), ('mastery_dex', '', 'm', 1.0),
+                 ('committed', '', 'base', 1.0), ('casual', '', 'base', 1.0)]
+                + [(n, '', 'build', 1.0) for n in ds.BUILD_CELLS]),
+    'builds': [(n, '', 'build', 1.0) for n in ds.BUILD_CELLS],
 }
 SETS['all'] = SETS['targets'] + SETS['ablate']
 
@@ -95,7 +103,8 @@ def _set(name):
     prof, _, speed = name.partition('@')
     if prof not in ds.PROFILES:
         raise SystemExit(f"unknown set or profile {name!r}: sets {', '.join(SETS)}")
-    tag = 'abl' if prof.startswith('m_no_') else ('m' if prof.startswith('mastery') else 'base')
+    tag = ('abl' if prof.startswith('m_no_') else 'm' if prof.startswith('mastery')
+           else 'build' if prof in ds.BUILD_CELLS else 'base')
     return [(prof, '', tag, float(speed or 1.0))]
 
 
