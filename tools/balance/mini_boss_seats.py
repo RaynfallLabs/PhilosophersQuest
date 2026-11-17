@@ -199,7 +199,7 @@ NEW: dict[str, dict] = {
         "peak_weight": 0.0,
         "attacks": [
             {"name": "Olive-Trunk Club", "damage": "4d6+6", "type": "blunt", "delivery": "blow",
-             "effect": "stunned", "effect_chance": 0.25, "effect_duration": 1},
+             "effect": "stunned", "effect_chance": 0.15, "effect_duration": 1},
             {"name": "Hurled Crag", "damage": "3d6+4", "type": "blunt", "delivery": "ranged",
              "ranged": True},
         ],
@@ -230,6 +230,21 @@ NEW: dict[str, dict] = {
         "status_immune": [],
         "status_weak": ["confused", "blinded"],
     },
+}
+
+
+# A technique eased for a foe's new, shallower floor, where the hero has less
+# to resist it with: {id: {attack name: {field: value}}}, with the reason.
+# Measured with the Monte Carlo (kid model, 100 runs a cell, 2026-11-17).
+TECHNIQUES: dict[str, dict] = {
+    # His hearing "is short, and it ends with the hammer": two blows a turn,
+    # and a two-turn stun meant four more while the hero stood dazed. On his
+    # new floor 32 that killed a careful kid (the Corwin build) twice in 100
+    # runs; a stun of one turn keeps the hammer's threat.
+    "iron_patriarch": {"Warhammer": {"effect_duration": 1}},
+    # Odysseus' men were seized and eaten, not clubbed senseless: the club's
+    # stun lands less often (it killed a careful kid once in 100 runs at 25%).
+    "polyphemus": {"Olive-Trunk Club": {"effect_chance": 0.15}},
 }
 
 
@@ -283,6 +298,12 @@ def apply(monsters: dict) -> list[str]:
             if tr.get(k) != v:
                 log.append(f"{mid}: treasure.{k} {tr.get(k)} -> {v}")
                 tr[k] = v
+    for mid, by_name in TECHNIQUES.items():
+        for atk in monsters[mid].get("attacks") or []:
+            for k, v in (by_name.get(atk.get("name")) or {}).items():
+                if atk.get(k) != v:
+                    log.append(f"{mid}: {atk['name']}.{k} {atk.get(k)} -> {v}")
+                    atk[k] = v
     return log
 
 

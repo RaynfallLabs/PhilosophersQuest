@@ -33545,7 +33545,7 @@
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.2,
-        "effect_duration": 2,
+        "effect_duration": 1,
         "delivery": "blow"
       },
       {
@@ -40985,7 +40985,7 @@
         "type": "blunt",
         "delivery": "blow",
         "effect": "stunned",
-        "effect_chance": 0.25,
+        "effect_chance": 0.15,
         "effect_duration": 1
       },
       {
