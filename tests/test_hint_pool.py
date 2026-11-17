@@ -162,7 +162,7 @@ TAUGHT = {
     'the sleepers under the hill': r'never blew the bugle-horn',
     "Heimdall's watch": r'hears the grass grow',
     "the Olifant's lesson": r'call for help early',
-    # Merlin's stone (the path to the Staff of Emrys, floors 6-11): Malory's
+    # Merlin's stone (the path to the Staff of Emrys, floors 10-16): Malory's
     # stone a hundred men could not lift, and Geoffrey's art over strength.
     "Merlin's stone": r'art, not by strength',
     # Brandon, 2026-11-16: people are searched, never harvested; a special
