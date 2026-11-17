@@ -323,9 +323,13 @@ def attack_line(monster, atk, actual: int) -> str:
     return f"{who} hits you with {with_attack(monster, atk)} for {actual} damage!"
 
 
-# Words in an attack's name that mark it as coming from a distance.
+# Words in an attack's name that mark it as coming from a distance. Not
+# 'spike': a Spiked Shield or a barbed devil's Tail Spike is a blow (the orc
+# marauder "fired" his shield, bug bash 3.5.1 Q18). A creature that shoots
+# its spikes says so in its data: the manticore's Tail Spike is `ranged`,
+# its elder's is a Tail Spike Volley. One list, used everywhere.
 _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
-                 'volley', 'ray', 'blast', 'breath', 'spike', 'gaze',
+                 'volley', 'ray', 'blast', 'breath', 'gaze',
                  'song', 'wail', 'charm', 'psionic', 'disintegrat',
                  'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
 # Attacks that work on the mind or the eye: they do not fly, they fail to take.
@@ -1650,7 +1654,7 @@ class Monster:
 
         # Hermes votive sandals (dodge_first_arrow_per_floor): first ranged attack
         # per floor auto-misses. _RANGED_WORDS already computed above.
-        _is_ranged_atk = any(w in atk_name for w in _RANGED_WORDS)
+        _is_ranged_atk = bool(atk.get('ranged')) or any(w in atk_name for w in _RANGED_WORDS)
         if _is_ranged_atk:
             try:
                 from armor_procs import consume_floor_charge
@@ -2701,11 +2705,8 @@ class Monster:
         return result
 
     def _has_piercing_ranged(self) -> bool:
-        """True if this monster has at least one piercing ranged attack."""
-        _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
-                         'volley', 'ray', 'blast', 'breath', 'spike', 'gaze',
-                         'song', 'wail', 'charm', 'psionic', 'disintegrat',
-                         'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
+        """True if this monster has at least one piercing ranged attack
+        (the module's _RANGED_WORDS)."""
         for a in self.attacks:
             if a.get('piercing') and any(w in a.get('name', '').lower() for w in _RANGED_WORDS):
                 return True

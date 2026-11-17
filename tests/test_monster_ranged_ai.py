@@ -12,7 +12,7 @@ from pathlib import Path
 
 # Mirror monster.py's _RANGED_WORDS (kept in sync by the tests below).
 _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl', 'volley', 'ray',
-                 'blast', 'breath', 'spike', 'gaze', 'song', 'wail', 'charm',
+                 'blast', 'breath', 'gaze', 'song', 'wail', 'charm',
                  'psionic', 'disintegrat', 'cast', 'bow', 'sling', 'javelin',
                  'spore', 'shock', 'hex'}
 _MON = json.loads((Path(__file__).resolve().parents[1] / 'data' / 'monsters.json')

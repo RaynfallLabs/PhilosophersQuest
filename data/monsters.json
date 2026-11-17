@@ -2005,7 +2005,8 @@
         "effect": "poisoned",
         "effect_chance": 0.3,
         "effect_duration": 6,
-        "delivery": "sting"
+        "delivery": "ranged",
+        "ranged": true
       },
       {
         "name": "Bite",
@@ -26827,7 +26828,7 @@
     ],
     "family": "demons",
     "pronoun": "it",
-    "harvest_tier": 0,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
         0,
@@ -26878,7 +26879,7 @@
     ],
     "family": "celestials",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
         0,
@@ -35634,7 +35635,7 @@
     "peak_weight": 0.0,
     "frequency": 0,
     "quest_only": true,
-    "harvest_tier": 0,
+    "harvest_tier": 2,
     "treasure": {
       "gold": [
         0,
@@ -35701,7 +35702,7 @@
     "peak_weight": 0.0,
     "frequency": 0,
     "quest_only": true,
-    "harvest_tier": 0,
+    "harvest_tier": 1,
     "treasure": {
       "gold": [
         0,
@@ -35768,7 +35769,7 @@
     "peak_weight": 0.0,
     "frequency": 0,
     "quest_only": true,
-    "harvest_tier": 0,
+    "harvest_tier": 2,
     "treasure": {
       "gold": [
         0,
@@ -35826,7 +35827,7 @@
     ],
     "family": "mortals",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 1,
     "treasure": {
       "gold": [
         0,
@@ -38363,7 +38364,7 @@
     ],
     "family": "vampires_liches",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 4,
     "treasure": {
       "gold": [
         600,
@@ -38433,7 +38434,7 @@
     ],
     "family": "demons",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 5,
     "treasure": {
       "gold": [
         900,
@@ -38864,7 +38865,7 @@
     ],
     "family": "restless_dead",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 1,
     "treasure": {
       "gold": [
         0,
@@ -38939,7 +38940,7 @@
     ],
     "family": "restless_dead",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 1,
     "treasure": {
       "gold": [
         0,
@@ -39014,7 +39015,7 @@
     ],
     "family": "restless_dead",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 1,
     "treasure": {
       "gold": [
         0,
@@ -39092,7 +39093,7 @@
     ],
     "family": "restless_dead",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 1,
     "treasure": {
       "gold": [
         0,
@@ -39167,7 +39168,7 @@
     ],
     "family": "restless_dead",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 1,
     "treasure": {
       "gold": [
         0,
@@ -39242,7 +39243,7 @@
     ],
     "family": "restless_dead",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 1,
     "treasure": {
       "gold": [
         0,
@@ -39318,7 +39319,7 @@
     ],
     "family": "restless_dead",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 1,
     "treasure": {
       "gold": [
         0,
@@ -39396,7 +39397,7 @@
     ],
     "family": "restless_dead",
     "pronoun": "he",
-    "harvest_tier": 0,
+    "harvest_tier": 1,
     "treasure": {
       "gold": [
         0,

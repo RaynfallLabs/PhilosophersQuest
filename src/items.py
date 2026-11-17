@@ -2190,7 +2190,7 @@ def material_tier(mat: dict) -> int:
     (Depth band of peak_floor is only the fallback for a file without one.)"""
     t = mat.get('tier')
     if t is None:
-        t = int(mat.get('peak_floor', 1)) // 20 + 1
+        t = _floor_band_tier(mat.get('peak_floor', 1)) or 1
     return max(1, min(5, int(t)))
 
 

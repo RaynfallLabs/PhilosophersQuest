@@ -3612,12 +3612,11 @@ class CombatMixin:
                     try:
                         from armor_procs import player_has_armor_proc
                         if player_has_armor_proc(self.player, 'webbed_strike'):
+                            from monster import _RANGED_WORDS as _RW
                             atks = getattr(m, 'attacks', []) or []
-                            _is_melee = atks and not any(
+                            _is_melee = atks and not atks[0].get('ranged') and not any(
                                 w in (atks[0].get('name', '') or '').lower()
-                                for w in ('shoot', 'arrow', 'bolt', 'dart', 'spit',
-                                         'hurl', 'volley', 'ray', 'blast', 'breath',
-                                         'spike', 'gaze', 'song', 'wail'))
+                                for w in _RW)
                             if _is_melee and hasattr(m, 'add_effect'):
                                 m.add_effect('slowed', 3)
                                 self.add_message(

@@ -26,7 +26,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
-                 'volley', 'ray', 'blast', 'breath', 'spike', 'gaze',
+                 'volley', 'ray', 'blast', 'breath', 'gaze',
                  'song', 'wail', 'charm', 'psionic', 'disintegrat',
                  'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
 

@@ -2243,6 +2243,15 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
                     and not any(i.x == rx and i.y == ry for i in ground_items)):
                 trap_candidates.append((rx, ry))
     rng.shuffle(trap_candidates)
+    # Never on the hero's first step: not the start tile, the up stair or
+    # any tile beside them (about one floor in 300 put a trap next to the up
+    # stair, floor 1 included: ROUND3 Q2). Filtered after the shuffle, so
+    # the floor's dice are thrown exactly as before.
+    _up, _down = _find_stair_tiles(dungeon.tiles, dungeon.width, dungeon.height)
+    _no_trap = set()
+    for _sx, _sy in [p for p in (start_center, _up) if p is not None]:
+        _no_trap.update((_sx + dx, _sy + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1))
+    trap_candidates = [t for t in trap_candidates if t not in _no_trap]
     for tx, ty in trap_candidates[:n_traps]:
         import hazards
         trap = dict(hazards.pick_trap(level, TRAP_TYPES, rng))

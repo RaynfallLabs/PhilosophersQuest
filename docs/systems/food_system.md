@@ -391,7 +391,9 @@ Tooth: STR...), at 1.5x.
 
 `Game._harvest` (`H`) takes the corpse under the hero off the floor before the question, then
 `food_system.harvest_corpse` asks ONE animal question at the corpse's `harvest_tier`, never
-harder than the band the monster lives in (`_monster_band_tier`). Right: the corpse yields its
+harder than the band the monster lives in (`_monster_band_tier`, the game's one band rule
+`items._floor_band_tier`: floors 1-20 tier 1 ... 81-100 tier 5, so a gate boss of floor 20 is
+tier 1; every kind in monsters.json carries a `harvest_tier` of 1-5). Right: the corpse yields its
 kin's ingredient (`kitchen.ingredient_for_monster`; a creature the map does not name borrows its
 nearest kin's, `_nearest_kin_ingredient`, by the family and floor in monsters.json or, for a
 creature monsters.json does not know, on its corpse: Gilt Varro, a mortal, gives a mortal's

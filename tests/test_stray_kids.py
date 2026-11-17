@@ -182,7 +182,9 @@ def test_every_member_is_a_low_danger_band_member_that_never_spawns_on_his_own()
         # mini-boss gold or health rules), a proper name all the same.
         assert not e.get('is_mini_boss') and e['proper_noun']
         assert e['treasure']['purse'] == 'kept'
-        assert e['harvest_tier'] == 0
+        # No corpse to harvest (_no_corpse): its harvest_tier is its band,
+        # as every kind's is (2026-11-16, bug bash 3.5.1 Q3).
+        assert e['harvest_tier'] == 1
         assert e['treasure']['gold'] == [0, 0] and e['treasure']['item_chance'] == 0
         assert e['lore'] and e['kill_chronicle'] and e['thac0'] >= 15
         for a in e['attacks']:
