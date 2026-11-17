@@ -553,6 +553,10 @@ class Weapon(Item):
         self.growing_power: bool        = bool(defn.get('growing_power', defn.get('growingPower', False)))
         self.kills_to_grow: int         = int(defn.get('kills_to_grow', defn.get('killsToGrow', 10)))
         self.on_equip_status: str       = defn.get('on_equip_status', defn.get('onEquipStatus', ''))
+        # Staff of Emrys: art over strength. Spells cast with it in hand ask
+        # their science question this many tiers easier (never below 1);
+        # the spell keeps its own power (game_magic._start_spell_quiz).
+        self.spell_tier_ease: int       = int(defn.get('spell_tier_ease', 0) or 0)
         self.can_dig: bool              = bool(defn.get('can_dig', False))
         self.ignore_resistances: bool   = bool(defn.get('ignore_resistances', False))
         self.abaddon_bonus_damage: str  = defn.get('abaddon_bonus_damage', '')

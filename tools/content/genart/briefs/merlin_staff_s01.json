@@ -1,0 +1,76 @@
+[
+ {
+  "id": "staff_of_emrys",
+  "family": "staffs_merlin",
+  "rank": 2,
+  "body": "item",
+  "scale": "huge",
+  "key": "blue",
+  "what": "Merlin's own walking staff: one long, thick, sturdy staff of dark brown hawthorn wood, a little crooked and knotted along its length like an old branch, with no metal on it anywhere. Near its top the wood splits in two and grows round into an open twisted loop, and gripped inside that loop sits one rough, unpolished chip of plain pale grey stone, about as wide as four shafts of the staff. A green vine with small leaves and a few tiny white flowers winds loosely round the upper half of the staff. Its bottom end is plain and blunt.",
+  "colours": "Dark brown hawthorn wood with lighter brown knots and grain; one rough plain pale grey stone with darker grey flecks; a green vine with small leaves and tiny white flowers.",
+  "pose": "It lies on a diagonal, the plain blunt bottom end at the bottom left corner and the loop holding the stone at the top right corner, the whole length inside the picture.",
+  "must_show": [
+   "one long knotted dark brown wooden staff",
+   "an open loop of wood at the top gripping a plain pale grey stone",
+   "a green vine with tiny white flowers on the upper half"
+  ],
+  "must_not_show": [
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "label with writing",
+   "glowing orb",
+   "crystal ball",
+   "glass ball",
+   "gem",
+   "jewel",
+   "shining crystal",
+   "metal",
+   "gold",
+   "blade",
+   "spear point",
+   "second staff",
+   "snake",
+   "dragon",
+   "moon",
+   "star",
+   "sword",
+   "wand",
+   "flame",
+   "glow"
+  ]
+ },
+ {
+  "id": "npc_merlins_stone",
+  "family": "merlin_stone",
+  "rank": 0,
+  "body": "object",
+  "key": "magenta",
+  "what": "Merlin's prison: one great rough grey boulder, wider than it is tall, solid and heavy, and growing up out of the rock right beside it on its left one small hawthorn tree about as tall as the boulder, its dark branches thick with green leaves and small white flowers and leaning over the boulder's top. Caught upright in the hawthorn's branches stands one long knotted dark brown wooden staff whose top is an open loop of wood gripping a small pale grey stone.",
+  "colours": "Rough pale grey stone with darker grey cracks and a little green moss; a hawthorn with dark brown branches, green leaves and small white flowers; a dark brown knotted wooden staff with a pale grey stone in its loop.",
+  "pose": "The boulder sits on the right, the hawthorn grows up beside it on the left with its branches leaning over the boulder, and the staff stands upright in the branches.",
+  "must_show": [
+   "one great grey boulder",
+   "a small hawthorn with white flowers growing beside it",
+   "a knotted wooden staff caught upright in the hawthorn"
+  ],
+  "must_not_show": [
+   "person",
+   "face",
+   "eyes",
+   "hand",
+   "ground",
+   "grass",
+   "door",
+   "glowing runes",
+   "writing",
+   "sword",
+   "gravestone",
+   "cross",
+   "skull",
+   "pink flowers",
+   "second staff"
+  ]
+ }
+]

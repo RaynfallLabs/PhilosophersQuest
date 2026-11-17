@@ -929,6 +929,12 @@ def test_journey_05_the_smith(make_game):
     p = g.player
     open_floor(g, p.x, p.y, 6)
     g.player_gold = 6000
+    # Titivillus no longer starts with a shield (the lore-true kit,
+    # 2026-11-16): the oak one he carried is put in his pack, known.
+    _oak = items.instantiate_shield('light_wooden', 'oak')
+    _oak.id_level, _oak.buc_known = 5, True
+    p.known_item_ids.add(_oak.id)
+    p.inventory.append(_oak)
     h.shift('I')
     sword = the_sword_in_hand(h, 'ongsword')
     cloak = items.instantiate_armor('cloak', 'linen')
@@ -1051,6 +1057,12 @@ def test_journey_07_the_emberpup(make_game):
     h.shift('I')
     sword = the_sword_in_hand(h, 'ongsword')
     h.said()
+    # Titivillus no longer starts with a shield (the lore-true kit,
+    # 2026-11-16): the oak one he carried is put in his pack, known.
+    _oak = items.instantiate_shield('light_wooden', 'oak')
+    _oak.id_level, _oak.buc_known = 5, True
+    p.known_item_ids.add(_oak.id)
+    p.inventory.append(_oak)
     h.shift('L')
     nickel = next(m for m in g.monsters if E.is_wearer(m))
     h.wait(2)
