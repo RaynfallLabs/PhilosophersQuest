@@ -551,7 +551,7 @@ class Sidebar:
         room = self.x + self.w - self.PAD - ax
         spd = float(player.get_speed())
         dodge = f"Dodge {round(100 * player.dodge_chance())}%"
-        speed = f"Speed {spd:g}"
+        speed = f"Speed {round(spd, 1):g}"
         gap = S(14)
         d_surf = self._fsm.render(dodge, True, FP.BODY_TEXT)
         s_col = (FP.GOLD_BRIGHT if spd > 10 else FP.DANGER_TEXT if spd < 10 else FP.BODY_TEXT)

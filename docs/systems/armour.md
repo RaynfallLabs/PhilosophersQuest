@@ -351,6 +351,19 @@ attack mix, the par body armour takes 1% off typed damage on floor 1, 4%
 on floors 10-20, 3-5% on 30-80, 9% on 100. The monsters' to-hit was baked
 to the AC of armour and shield alone (section 2), which is what AC is now.
 
+**The Monte Carlo of the defence model** (`tools/balance/monte_carlo.py`
+set `defence`, 100 runs a cell, kid model, accuracy 0.95, 2026-11-16): the
+plate kid (mastery, STR and CON) wins 93% (96% of those alive after floor
+60 win), the Dexterity kid in light armour 79% (89%), committed 1%, casual
+0%; the Secret Builds Fianna 87%, Fluffs 87%, Corwin 93%, Cain 97%, Hermes
+78%, Odysseus 87%. Deep down every mastery kid has Strength 30-48, so the
+armour's drag only bites on floors 10-40. **No common light or medium body
+armour drops past floor 40** (body finds by class, light / medium / heavy:
+floor 20 26 / 53 / 21%, floor 30 4 / 30 / 66%, floor 40 0 / 6 / 94%, floor
+60 on all heavy): a deep Dexterity hero wears the hide or studded leather of
+floor 20 (AC 5-7 with its wear) and lives on his dodge and speed, so a
+Dexterity build's deep AC waits on light armour that keeps spawning deep.
+
 ## 2. AC: body armour and shield only
 
 `Player.get_ac()` = 10 - (body base + plus) - (shield base + plus) -

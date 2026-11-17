@@ -1185,14 +1185,38 @@ class RenderMixin:
         cell_w = (body.w - cell_gap) // 2
         cell_h = lh + S(8)
 
-        def cell(idx, y0, label, value, col):
-            r = pygame.Rect(body.x + (idx % 2) * (cell_w + cell_gap),
-                            y0 + (idx // 2) * (cell_h + S(4)), cell_w, cell_h)
+        def cell_at(r, label, value, col):
             row_rect(r)
             ls = f16.render(label, True, readable(FP.FADED_TEXT, KT.RAISED))
             screen.blit(ls, (r.x + S(7), r.centery - ls.get_height() // 2))
             vs = f16b.render(str(value), True, readable(col, KT.RAISED))
             screen.blit(vs, (r.right - S(8) - vs.get_width(), r.centery - vs.get_height() // 2))
+
+        def cell(idx, y0, label, value, col):
+            cell_at(pygame.Rect(body.x + (idx % 2) * (cell_w + cell_gap),
+                                y0 + (idx // 2) * (cell_h + S(4)), cell_w, cell_h),
+                    label, value, col)
+
+        def flow(entries, y0) -> int:
+            """Two cells to a row; one whose label and value would not both
+            fit half a row (a speed like 15.6 beside "Speed" at a small
+            window ran into its label) takes the whole row, after the ones
+            that pair up. Returns the rows used."""
+            def wide_of(e):
+                return f16.size(e[0])[0] + f16b.size(str(e[1]))[0] + S(7) + S(8) + S(6) > cell_w
+            entries = ([e for e in entries if not wide_of(e)]
+                       + [e for e in entries if wide_of(e)])
+            slot = 0
+            for label, value, col in entries:
+                wide = wide_of((label, value, col))
+                if wide and slot % 2:
+                    slot += 1
+                r = pygame.Rect(body.x + (slot % 2) * (cell_w + cell_gap),
+                                y0 + (slot // 2) * (cell_h + S(4)),
+                                2 * cell_w + cell_gap if wide else cell_w, cell_h)
+                cell_at(r, label, value, col)
+                slot += 2 if wide else 1
+            return (slot + 1) // 2
 
         stats = [("STR", p.STR), ("CON", p.CON), ("DEX", p.DEX),
                  ("INT", p.INT), ("WIS", p.WIS), ("PER", p.PER)]
@@ -1214,14 +1238,12 @@ class RenderMixin:
         # makes it more, armour too heavy for Strength and the load less
         # (the defence model, 2026-11-16). Gold over 10, red under it.
         _spd = p.get_speed()
-        metrics.append(("Speed", f"{_spd:g}", FP.GOLD_BRIGHT if _spd > 10
+        metrics.append(("Speed", f"{round(_spd, 1):g}", FP.GOLD_BRIGHT if _spd > 10
                         else FP.DANGER_TEXT_LIGHT if _spd < 10 else FP.BODY_TEXT))
         dr = getattr(p, 'damage_resistances', {}) or {}
         for k, v in dr.items():
             metrics.append((f"{_cap(k)} DR", str(v), FP.MP_BLUE_TEXT))
-        for idx, (label, value, col) in enumerate(metrics):
-            cell(idx, y, label, value, col)
-        y += ((len(metrics) + 1) // 2) * (cell_h + S(4)) + S(8)
+        y += flow(metrics, y) * (cell_h + S(4)) + S(8)
 
         text("Effects", f16b, FP.GOLD_BRIGHT, body.x, y)
         y += lh + S(4)
@@ -1576,14 +1598,17 @@ class RenderMixin:
         # makes it more, armour too heavy for Strength and the load less
         # (the defence model, 2026-11-16). Gold over 10, red under it.
         _spd = p.get_speed()
-        metrics.append(("Speed", f"{_spd:g}", FP.GOLD_BRIGHT if _spd > 10
+        metrics.append(("Speed", f"{round(_spd, 1):g}", FP.GOLD_BRIGHT if _spd > 10
                         else FP.DANGER_TEXT_LIGHT if _spd < 10 else FP.BODY_TEXT))
         for idx, (label, value, col) in enumerate(metrics):
             r = pygame.Rect(body.x + (idx % 2) * (chip_w + S(10)), y + (idx // 2) * S(27),
                             chip_w, S(22))
             row_rect(r)
             text(label, font_tiny, FP.FADED_TEXT, r.x + S(7), r.y + S(4))
-            text(value, font_bold, col, r.x + S(58), r.y + S(3))
+            # Right-aligned inside the cell: a value like "15.6" from x + 58
+            # ran onto the cell's border at small windows (the contrast gate).
+            vx = min(r.x + S(58), r.right - S(6) - font_bold.size(str(value))[0])
+            text(value, font_bold, col, vx, r.y + S(3))
         y += ((len(metrics) + 1) // 2) * S(27) + S(14)
         text("Effects", font_bold, FP.GOLD_BRIGHT, body.x, y)
         y += S(22)
