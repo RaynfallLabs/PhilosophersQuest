@@ -2470,7 +2470,7 @@
     "is_unique": true,
     "peak_floor": 1,
     "plot_locked": true,
-    "special": "It does nothing for you, and it will not come off. Be patient with it."
+    "guards_nothing": true
   },
   "cestus_of_polydeuces": {
     "name": "Cestus of Polydeuces",

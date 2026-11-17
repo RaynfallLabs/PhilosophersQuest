@@ -878,6 +878,9 @@ class Armor(Item):
         # The template it is built on (gear.template_of: how long it takes
         # to put on; full plate is its own).
         self.template_basis: str = str(defn.get('template_basis') or '')
+        # A piece that guards nothing whatever its slot (guards.py): the Duck
+        # of Doom is a duck on your head, not a helm.
+        self.guards_nothing: bool = bool(defn.get('guards_nothing', False))
         self.equip_threshold     = int(defn.get('equip_threshold', 2))
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         # A named piece's own resistances (its JSON wins); a common piece's
