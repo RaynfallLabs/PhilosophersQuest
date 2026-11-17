@@ -131,23 +131,18 @@
   "body": "item",
   "scale": "huge",
   "key": "magenta",
-  "what": "the battle standard Joan of Arc carried: one tall straight pole of light brown wood with a small round brass knob on top, and fixed along the top of the pole a long white cloth banner that flies out to the right and ends in two pointed tails. The white cloth is scattered with small gold lilies. Near the pole, painted flat on the white cloth itself as part of the banner, is one round globe of the world in blue and green with a small thin gold cross standing on top of it. The banner has a thin gold fringe along its edges. Nothing stands below the banner: the pole runs down bare to its foot.",
-  "colours": "Bright clean white cloth banner; small gold lilies; a flat painted globe of blue sea and green land with a thin gold cross; light brown wooden pole; a brass knob; a thin gold fringe.",
+  "what": "the battle standard Joan of Arc carried, as she described it at her trial: one tall straight pole of light brown wood with a small round brass knob on top, and fixed along the top of the pole a long white linen banner that flies out to the right and ends in two pointed tails, edged with a thin fringe of yellow and white silk. The white field is sown with small gold fleurs-de-lis. In the middle of the banner, painted flat on the cloth like a church painting, is one small golden figure of Christ seated on a rainbow, with a gold halo, holding in one hand a small golden orb with a little cross on top, and with one small white angel on each side of him, also painted flat on the cloth. Nothing stands below the banner: the pole runs down bare to its foot.",
+  "colours": "Bright clean white linen; small gold fleurs-de-lis; a small golden seated figure with a gold halo on a thin rainbow arc; a tiny golden orb with a cross; two small white angels with pale gold wings; light brown pole; a brass knob; a yellow-and-white silk fringe.",
   "pose": "The pole stands on a slight diagonal from the bottom left corner up towards the top, and the white banner flies out to the right from the top of the pole, the whole standard inside the picture.",
   "must_show": [
    "one tall wooden pole, bare below the banner",
    "a long white banner with two pointed tails",
-   "small gold lilies on the white",
-   "a blue and green globe painted flat on the banner"
+   "small gold fleurs-de-lis on the white",
+   "a small golden seated figure with a halo painted flat in the middle of the banner",
+   "a small white angel painted on each side of the figure"
   ],
   "must_not_show": [
-   "person",
-   "figure",
-   "angel",
-   "woman",
-   "man",
    "statue",
-   "wings",
    "standing figure beside the pole",
    "spear point",
    "blade",
@@ -170,7 +165,15 @@
    "table",
    "label with writing",
    "letters",
-   "crown on the pole"
+   "crown on the pole",
+   "globe of the earth",
+   "continents",
+   "map",
+   "blue and green ball",
+   "figure standing beside the pole",
+   "figure standing on the ground",
+   "large figure",
+   "face filling the banner"
   ]
  }
 ]
