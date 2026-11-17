@@ -194,8 +194,9 @@ def test_no_ring_moves_ac_blessed_works_a_level_higher():
 def test_the_body_and_mind_kinds():
     p = _hero(_ring('regeneration', 9), _ring('sustenance', 9))
     assert rings.regen_share(p) == pytest.approx(0.01)
-    assert rings.hunger_interval(p, 2) == 8                 # three quarters slower
-    assert rings.hunger_interval(Player(), 2) == 2
+    from floor_curve import HUNGER_EVERY                   # the plain pace (4 since 2026-11-16)
+    assert rings.hunger_interval(p, HUNGER_EVERY) == 4 * HUNGER_EVERY    # three quarters slower
+    assert rings.hunger_interval(Player(), HUNGER_EVERY) == HUNGER_EVERY
     w = _hero(_ring('wizardry', 9))
     assert rings.spell_cost(w, 20) == 14 and rings.spell_cost(w, 1) == 1
     assert rings.life_saving_share(_ring('life_saving', 9)) == pytest.approx(0.75)

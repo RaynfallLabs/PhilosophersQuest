@@ -222,7 +222,10 @@ softness comes from **generous supply** — every cooked dish gives SP
 (60 at T1 → 150 at T5 for a single dish, `cooking_rules.json`; an SP
 dish far more, and Sustained) and food restores (20–115 SP) are tuned so
 that normal play never bottoms the tank. Raw monster parts are a 10 SP
-emergency.
+emergency. Hunger is one SP every `floor_curve.HUNGER_EVERY` (4) steps or
+waits since 2026-11-16 (it was 2): a kid takes 700-1,150 turns a floor
+(`floor_curve.kid_pace`, from Brandon's saves), and the supply was tuned
+for about 200 SP of hunger a floor.
 
 - Do NOT remove starvation damage.
 - Cook outcome tier bands:
