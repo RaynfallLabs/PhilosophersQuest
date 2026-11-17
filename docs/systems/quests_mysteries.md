@@ -286,10 +286,10 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
 
 | Horn | Path (floors) | How it is earned | Who answers (chain 1 / 3 / 5) | Stay |
 |---|---|---|---|---|
-| Robin Hood's Horn | `flv_robin_hood_bridge` (12-18) | Robin Hood meets the hero on a plank bridge; neither gives way. Fight him with staves (MATH, two of three, tier 1): win and he goes into the stream, laughs, blows his horn for his men and gives it to you, as Little John won his place. Lose, or give way, and there is no horn. | Little John and Will Scarlet / + a Yeoman Archer, Friar Tuck / + Much the Miller's Son, a second archer, Alan-a-Dale (7) | 25 turns |
-| Arthur's Bugle | `flv_sleepers_under_the_hill` (45-55) | The Sewingshields hall: a king and his knights asleep, a sword, a garter and a bugle on the table. Draw the sword (they wake), cut the garter (they sit up), blow the bugle (HISTORY, one, tier 3): Arthur gives it back for the hour of greatest need. Sheathe the sword and he says the rhyme ("Who drew the sword, the garter cut, / But never blew the bugle-horn") and the hall closes. | King Arthur and Sir Bedivere / + Sir Kay, Sir Gawain / + Sir Percival, Sir Lancelot (6) | 30 turns |
-| Gjallarhorn | `flv_heimdalls_watch` (70-78) | Heimdall at the foot of the bridge of colour, who hears the grass grow and cannot leave his post with the wolf loose below. Keep the watch with him (HISTORY, two of three, tier 4) and he gives the horn to one who listens. | three / five / eight Einherjar | 30 turns |
-| The Olifant | Roland's chain, unchanged (`flv_rolands_horn`, 86-92; the oath at `flv_rolands_horn_gate`) | As before. The summon is a power while the horn is carried; blowing it at the Black Gate still keeps the oath. | Charlemagne and Duke Naimes / + Ogier the Dane, two Frankish Knights / + three more Franks (8) | 30 turns, **12 turns after the call** |
+| Robin Hood's Horn | `flv_robin_hood_bridge` (12-18) | Robin Hood meets the hero on a plank bridge; neither gives way. Fight him with staves (MATH, two of three, tier 1): win and he goes into the stream, laughs, blows his horn for his men and gives it to you, as Little John won his place. Lose, or give way, and there is no horn. | Little John and Will Scarlet / + a Yeoman Archer, Friar Tuck / + Much the Miller's Son, a second archer, Alan-a-Dale (7) | 10 turns |
+| Arthur's Bugle | `flv_sleepers_under_the_hill` (45-55) | The Sewingshields hall: a king and his knights asleep, a sword, a garter and a bugle on the table. Draw the sword (they wake), cut the garter (they sit up), blow the bugle (HISTORY, one, tier 3): Arthur gives it back for the hour of greatest need. Sheathe the sword and he says the rhyme ("Who drew the sword, the garter cut, / But never blew the bugle-horn") and the hall closes. | King Arthur and Sir Bedivere / + Sir Kay, Sir Gawain / + Sir Percival, Sir Lancelot (6) | 10 turns |
+| Gjallarhorn | `flv_heimdalls_watch` (70-78) | Heimdall at the foot of the bridge of colour, who hears the grass grow and cannot leave his post with the wolf loose below. Keep the watch with him (HISTORY, two of three, tier 4) and he gives the horn to one who listens. | three / five / eight Einherjar | 10 turns |
+| The Olifant | Roland's chain, unchanged (`flv_rolands_horn`, 86-92; the oath at `flv_rolands_horn_gate`) | As before. The summon is a power while the horn is carried; blowing it at the Black Gate still keeps the oath. | Charlemagne and Duke Naimes / + Ogier the Dane, two Frankish Knights / + three more Franks (8) | 10 turns, **12 turns after the call** |
 
 - **Placement.** The three new paths are `callback_only` and placed once a run by
   `data/karma_rules.json: run_start_schedule` (like The Gate), on a free floor of their
@@ -306,7 +306,13 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
 - **The Olifant's delay** (`delay_turns` 12): the call sets `player.horn_host_due`; each
   world turn `_horn_tick` counts it down (a line halfway) and the host arrives beside
   the hero wherever he is. Oliver's wisdom: blow it before the fight, not when you are
-  dying.
+  dying. Brandon, 2026-11-16: the delay stays, and the legend teaches it, so a kid
+  sees he must blow it early and fall back. The item's lore tells Roncevaux (Oliver's
+  three pleas, Roland too proud, Charlemagne thirty leagues off and too late: "Help
+  called from far away comes late"), the V menu says "blow it early, then fall back",
+  the call's line ends "Give ground, and hold on until it comes", and the card says
+  "They come late, from far off: blow it before the fight". None of them gives the
+  count; the HUD's "Coming (N)" does, once the call is made.
 - **The allies** are monster kinds (`is_allied`, `quest_only`, `frequency` 0,
   `min_level` 0, `horn`: never found, never spawned, not in the tier census) with their
   own numbers from their lore at the horn's tier. On the map each is a
@@ -318,10 +324,13 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
   Fenrir and no horn takes a gate. It stays its turns (ticked in `_do_pet_turns`) and
   leaves with its horn's line; leaving the floor sends every one home
   (`_horn_allies_left_behind`).
-- **Sizing** (`data/horns.json` `_meta.numbers`): a full band's stay is about a dozen
-  ordinary monsters of its tier (one hard fight: a war-band, a mini-boss, a seal demon),
-  and each ally lives through about eight blows of a mini-boss of that tier. Robin
-  Hood's men are tier-one mortals and matter less the deeper they are called.
+- **Sizing** (`data/horns.json` `_meta.numbers`): every stay is **ten turns** (Brandon,
+  2026-11-16: the old 25 and 30 "may be too strong"). A full band's stay is about four
+  or five ordinary monsters of its tier (it was about a dozen at the old stays): help
+  through one hard fight (a war-band's followers, a third of a mini-boss or a seal
+  demon), and each ally lives through about eight blows of a mini-boss of that tier.
+  The allies' own numbers did not change. Robin Hood's men are tier-one mortals and
+  matter less the deeper they are called.
 - **Never loot.** Each horn has a `plot_role` and no spawn weight (`items.scripted_only_ids`),
   is unique and in `Game._QUEST_PIECE_IDS`: no chest, floor roll or shop; traders refuse
   it, thieves skip it. Equipped gear only goes to bones, so no horn crosses runs.

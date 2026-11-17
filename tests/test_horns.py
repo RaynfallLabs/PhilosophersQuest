@@ -87,7 +87,7 @@ def test_the_horns_data_is_whole():
         table = h['allies_by_chain']
         assert len(table) == 6 and table[0] == 0 and table == sorted(table) and table[1] >= 2
         assert len(h['roster']) >= table[-1]
-        assert h['turns'] >= 20
+        assert h['turns'] == 10                    # Brandon 2026-11-16: down from 25 and 30
         for key in ('raise', 'fail', 'arrive', 'leave', 'chronicle', 'chronicle_fail'):
             assert h['lines'].get(key), (hid, key)
         assert 'Once a run.' in h['desc'] and len(h['desc']) <= 100     # whole at the smallest window
@@ -117,19 +117,42 @@ def _band_damage(hid):
 
 def test_the_allies_are_sized_from_their_tier_and_help_one_hard_fight():
     """LORE, NOT FLOOR: their numbers are written, and they rise with their
-    horn's tier. A full band's stay (about three turns in five at blows) is
-    about a dozen ordinary monsters of its tier: one hard fight, not a floor."""
+    horn's tier. Every stay is ten turns (Brandon, 2026-11-16: the old 25
+    and 30 "may be too strong"), so a full band (about three turns in five at
+    blows) deals about four or five ordinary monsters of its tier: a
+    war-band's followers or a third of a mini-boss, still worth the call, and
+    never a floor. (It was about a dozen at the old stays; the allies' own
+    numbers did not change.)"""
     from floor_curve import target_hp
     floors = {'robin_hoods_horn': 15, 'arthurs_bugle': 50, 'gjallarhorn': 75, 'olifant': 90}
     per_turn = [_band_damage(h) for h in HORNS]
     assert per_turn == sorted(per_turn)
     for hid in HORNS:
+        assert horns.turns(hid) == 10, hid
         stay = _band_damage(hid) * horns.turns(hid) * 0.6
-        dozen = stay / target_hp(floors[hid])
-        assert 8 <= dozen <= 18, (hid, round(dozen, 1))
+        worth = stay / target_hp(floors[hid])
+        assert 3.5 <= worth <= 6, (hid, round(worth, 1))
     # And mortals of tier one matter less the deeper they are called: the
     # same band against floor 90's monsters is a fraction of one.
-    assert _band_damage('robin_hoods_horn') * 25 * 0.6 < target_hp(90)
+    assert _band_damage('robin_hoods_horn') * horns.turns('robin_hoods_horn') * 0.6 < target_hp(90)
+
+
+def test_the_olifant_tells_rolands_legend_so_the_lesson_is_plain():
+    """Brandon, 2026-11-16: the kid must see he blows it early and falls
+    back, and the lore must tell the legend (Roland too proud at Roncevaux,
+    Charlemagne coming from far off, too late). Told in words, never as a
+    count of turns: on the item, the power and the moment of sounding."""
+    lore = ART['olifant']['lore']
+    for words in ('Roncevaux', 'Oliver', 'too proud', 'thirty leagues', 'comes late',
+                  'blow it before the fight', 'give ground'):
+        assert words in lore, words
+    h = horns.horn('olifant')
+    assert 'blow it early, then fall back' in h['desc']
+    assert 'Give ground, and hold on until it comes' in h['lines']['far']
+    import re
+    for text in (lore, h['desc'], h['lines']['far']):
+        assert not re.search(r'\d', text), text           # the lesson, not the mechanic
+    assert horns.delay('olifant') == 12                    # the delay itself stays
 
 
 def test_the_three_paths_are_placed_once_a_run_on_their_floors():
@@ -550,7 +573,9 @@ def test_the_item_card_says_what_the_horn_does_and_whether_it_is_spent():
     it = _give(g, 'olifant')
     words = [t for t, _c, _f in g._lore_item_mechanic_lines(it, 5)]
     assert 'Horn of legend' in words and 'Power (V): Blow the Olifant' in words
-    assert 'Ready, once a run' in words and 'They come 12 turns after the call' in words
+    assert 'Ready, once a run' in words
+    assert 'They come late, from far off: blow it before the fight' in words
+    assert not any('12' in w for w in words)              # the lesson, not a count
     assert "They never strike a gate's guardian" in words
     _sound(g, 'olifant', 2)
     assert 'On the road to you' in [t for t, _c, _f in g._lore_item_mechanic_lines(it, 5)]

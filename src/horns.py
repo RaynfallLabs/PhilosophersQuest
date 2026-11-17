@@ -8,8 +8,10 @@ once a run by karma_rules.json run_start_schedule, and Roland's own chain for
 the Olifant (86-92). While it is carried its power is in the V menu. Sounding
 it is a HISTORY escalator chain; the chain sets how many answer the call
 (``allies_by_chain``). Every horn sounds ONCE A RUN, and a failed quiz still
-spends it. The Olifant's host rides from thirty leagues off and comes only
-``delay_turns`` after the call: blow it before the fight (Oliver's wisdom).
+spends it. Those who answer stay ten turns (``turns``). The Olifant's host
+rides from thirty leagues off and comes only ``delay_turns`` after the call:
+blow it before the fight and give ground until it comes (Oliver's wisdom,
+which Roland ignored at Roncevaux; the item's lore tells the legend).
 
 The allies are monster kinds in data/monsters.json (``is_allied``,
 ``quest_only``, ``min_level`` 0: never found, never spawned), with their own
@@ -153,7 +155,9 @@ def allies_for(hid, chain) -> list:
 
 
 def turns(hid) -> int:
-    return int(horn(hid).get('turns', 25) or 25)
+    """How long those who answer stay: ten turns for every horn (Brandon,
+    2026-11-16, down from 25 and 30)."""
+    return int(horn(hid).get('turns', 10) or 10)
 
 
 def delay(hid) -> int:

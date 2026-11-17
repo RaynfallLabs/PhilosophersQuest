@@ -9760,8 +9760,11 @@ class RenderMixin:
                 (_state, FP.SUCCESS_TEXT if _state.startswith('Ready') else FP.FADED_TEXT,
                  self.font_sm),
             ]
+            # The Olifant's lesson is Roland's, told by its lore (Brandon,
+            # 2026-11-16: the kid must see he blows it early and falls
+            # back), not a count of turns; the HUD counts down after the call.
             if _horns.delay(_hid):
-                lines.append((f"They come {_horns.delay(_hid)} turns after the call",
+                lines.append(("They come late, from far off: blow it before the fight",
                               FP.BODY_TEXT, self.font_sm))
 
         return lines or [("No revealed mechanics recorded.", FP.FADED_TEXT, self.font_sm)]
