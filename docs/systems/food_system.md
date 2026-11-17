@@ -356,8 +356,9 @@ old book wrote 100-300 turns and every one was cut to 60 while the message said 
 On top of the 1.5x main benefit, by tab:
 
 - **HP:** +4 / 4 / 4 / 6 / 8 max HP, past the floor's cap (there is none across floors).
-- **MP:** +2 / 2 / 2 / 3 / 4 max MP, inside the lifetime feast cap: a quarter of the deepest
-  floor reached, at least 4 (`kitchen.feast_mp_cap`; `Player.cooking_mp_gained`).
+- **MP:** +2 / 2 / 2 / 3 / 4 max MP, at most 4 a floor from feasts and no cap across floors
+  (Brandon, 2026-11-17: "same as HP"; `kitchen.feast_mp_cap`, cooking_rules `max_mp_floor_cap`;
+  `Player._feast_mp_gain_this_floor`, reset by `reset_floor_cook_caps`).
 - **Stat:** the floor's lesson (a whole point), and +1 more past the lesson
   (`try_apply_cook_stat_gain(bypass=True, tier=...)`), inside the cap of the feast's tier.
 - **Special:** the feast's resistance for good (its own power if a resistance, else one of its
@@ -376,7 +377,7 @@ Plain lines for THIS hero now, main benefit first: "+45 HP", "+3 Max HP", "+12 M
 for good", "+60 SP". A cap that would eat the benefit says so: "Max HP full this floor"
 (`kitchen.max_hp_room`, the floor's cap), "DEX lesson used this floor", "DEX has learned all a dish this simple can teach" (its tier's cap, with
 ": deeper creatures teach more" on the limit line), "DEX has learned all food can teach" (the tier-5
-cap), "Max MP: all feasts can give at this depth". A feast's For Good lines are held to the same
+cap), "Max MP: all a feast can give on this floor". A feast's For Good lines are held to the same
 caps ("+2 Max MP for good" when 2 is what is left; "No more STR for good from a dish this deep";
 its max HP has no cap: "+8 Max HP for good"), so the menu never promises more than the meal
 gives. Cooked, a stat dish at its tier's cap says
