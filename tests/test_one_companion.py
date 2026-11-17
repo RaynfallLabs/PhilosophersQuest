@@ -182,6 +182,7 @@ def test_every_way_a_companion_joins_stores_the_one_before_it():
         ('game_encounters.py', 'pet'),      # the unicorn
         ('game_magic.py', 'pet'),           # checked below by context
         ('main.py', 'fenrir'),
+        ('game_horns.py', 'ally'),          # one who answered a horn (horns.CalledAlly)
     }
     src_dir = os.path.join(ROOT, 'src')
     for fname in os.listdir(src_dir):
@@ -198,7 +199,7 @@ def test_every_way_a_companion_joins_stores_the_one_before_it():
             ctx = '\n'.join(lines[max(0, i - 30):i])
             ok = (('SketchedPet' in ctx) or ('DadPet' in ctx) or ('UnicornPet' in ctx)
                   or ('_temp_duration' in ctx) or ('_summoned_minion' in ctx)
-                  or ('fenrir' in ctx.lower()))
+                  or ('fenrir' in ctx.lower()) or ('CalledAlly' in ctx))
             assert ok, f"{fname}:{i + 1}: a pet joins without the one-companion rule"
             assert (fname, m.group(1)) in helpers or ok
 

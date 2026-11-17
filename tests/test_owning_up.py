@@ -264,6 +264,10 @@ def _game(seed=31):
     g.state = STATE_PLAYER
     g._npc_encounter_levels = {}
     g._flavor_encounter_levels = {}
+    # These scenes are set down by hand on the floors the tests jump to; the
+    # run's own set pieces (the horn paths, carried past a skipped floor)
+    # would take those floors first.
+    g._deeds['pending'] = [p for p in g._deeds['pending'] if p.get('source') != 'engine:run_start']
     return g
 
 

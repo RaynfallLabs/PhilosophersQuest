@@ -14240,5 +14240,332 @@
         "outcome": "He goes back to his net. \"Mind the last stairs,\" he says. \"They're the long ones.\""
       }
     ]
+  },
+  {
+    "tag": "flv_robin_hood_bridge",
+    "name": "Robin Hood",
+    "proper_noun": true,
+    "symbol": "@",
+    "color": [
+      60,
+      130,
+      50
+    ],
+    "sprite_id": "npc_robin_hood",
+    "min_level": 12,
+    "max_level": 18,
+    "role": "story",
+    "stakes": "medium",
+    "callback_only": true,
+    "person": {
+      "id": "robin_hood",
+      "name": "Robin Hood"
+    },
+    "text": "A plank bridge no wider than one man crosses a black stream that runs out of one wall and into another. As you step onto one end, a man in Lincoln green steps onto the other, with a longbow in his hand and a horn at his belt. Neither of you gives way. In the middle he stops and grins. \"It's a narrow bridge,\" he says. \"One of us is going in the water. Robin Hood, of Sherwood. And you?\"",
+    "options": [
+      {
+        "label": "\"A bow against a staff? That's a coward's fight.\"",
+        "outcome": "He looks at his bow, then at you, and laughs. \"Fair,\" he says. He lays the bow on the bank, cuts a staff of oak from the roots in the wall, and comes back out onto the planks. \"Now, then.\"",
+        "deeds": [
+          "told.robin_fair_fight"
+        ],
+        "then": "options"
+      },
+      {
+        "label": "Cut a staff and meet him on the bridge",
+        "quiz": {
+          "subject": "math",
+          "tier": 1,
+          "mode": "threshold",
+          "threshold": 2,
+          "total_qs": 3,
+          "timed": false,
+          "title": "THE NARROW BRIDGE  --  MATH"
+        },
+        "pass": {
+          "outcome": "The planks bounce under you both. He is quick, and you are quicker: a crack on the shoulder, a sweep at the knees, and Robin Hood goes off the bridge into the stream with a great splash. He comes up laughing, sets the horn to his lips and blows, and men in green come out of the dark along both banks to see what is so funny. \"Little John did the same to me once,\" he says, wringing out his hood, \"and he's been with me ever since.\" He hangs the horn round your neck. \"Blow it when you need us, and we'll come. Once. It's a long way from Sherwood.\"",
+          "reward": {
+            "type": "specific_item",
+            "item_type": "artifact",
+            "item_id": "robin_hoods_horn"
+          },
+          "deeds": [
+            "met.robin_hood",
+            "told.robin_in_the_stream"
+          ],
+          "thread": {
+            "id": "robin_hoods_horn",
+            "hint": "A horn on a green baldric, to blow once, in need."
+          },
+          "chronicle": "Knocked Robin Hood off a narrow bridge into the stream with a staff. He came up laughing and gave me his horn."
+        },
+        "fail": {
+          "outcome": "He is quick, and the planks are wet. A crack on the shoulder, a sweep at the knees, and it is you who goes into the stream. You come up spluttering. He is laughing on the bridge, and not unkindly. \"A good bout,\" he says, and blows his horn, and his men come out of the dark to laugh with him. Then they are gone, all of them, the way they came.",
+          "deeds": [
+            "met.robin_hood"
+          ],
+          "chronicle": "Fought Robin Hood with staves on a narrow bridge, and it was I who went into the stream. He laughed, not unkindly, and was gone."
+        },
+        "road": {
+          "id": "flv_robin_hood_bridge.win",
+          "hint": "On a narrow bridge, a fair fight wins a friend."
+        }
+      },
+      {
+        "label": "Step back and let him cross",
+        "outcome": "You step back off the planks. He crosses, gives you a bow from the waist that is only half a joke, and is gone into the dark. \"Courteous,\" he says over his shoulder. \"No use in a fight, courtesy.\"",
+        "deeds": [
+          "met.robin_hood"
+        ],
+        "chronicle": "Gave way to Robin Hood on a narrow bridge. He thanked me and was gone.",
+        "road": {
+          "id": "flv_robin_hood_bridge.give_way",
+          "hint": "Robin Hood keeps no one who gives way on a bridge."
+        }
+      }
+    ]
+  },
+  {
+    "tag": "flv_sleepers_under_the_hill",
+    "name": "The Sleepers Under the Hill",
+    "symbol": "@",
+    "color": [
+      200,
+      180,
+      110
+    ],
+    "sprite_id": "npc_sleeping_king",
+    "min_level": 45,
+    "max_level": 55,
+    "role": "story",
+    "stakes": "medium",
+    "callback_only": true,
+    "person": {
+      "id": "king_arthur",
+      "name": "King Arthur"
+    },
+    "text": "A ball of thread lies unwound across the floor and runs into a crack in the wall. Someone found this place before you. Beyond the crack is a vaulted hall, warm and lit by a fire that burns up out of the floor with nothing to feed it. A king sleeps on a throne with a queen beside him; knights sleep along the benches, their hounds asleep at their feet. On a table by the door lie a sword in an old scabbard, a garter, and a bugle-horn. Nobody stirs. The fire makes no smoke.",
+    "options": [
+      {
+        "label": "Draw the sword",
+        "forbids": {
+          "deeds_any": [
+            "told.arthur_sword_drawn"
+          ]
+        },
+        "outcome": "It comes out of the scabbard slowly, red with old rust. As the blade comes clear, every eye in the hall opens, and the king sits up on his throne.",
+        "deeds": [
+          "told.arthur_sword_drawn"
+        ],
+        "then": "options",
+        "hidden_group": "act"
+      },
+      {
+        "label": "Cut the garter with it",
+        "requires": {
+          "deeds_all": [
+            "told.arthur_sword_drawn"
+          ]
+        },
+        "forbids": {
+          "deeds_any": [
+            "told.arthur_garter_cut"
+          ]
+        },
+        "outcome": "The garter parts under the edge. All along the benches the knights sit up, slow as men in deep water, and a hound lifts its head and looks at you.",
+        "deeds": [
+          "told.arthur_garter_cut"
+        ],
+        "then": "options",
+        "hidden_group": "act"
+      },
+      {
+        "label": "Blow the bugle",
+        "requires": {
+          "deeds_all": [
+            "told.arthur_garter_cut"
+          ]
+        },
+        "quiz": {
+          "subject": "history",
+          "tier": 3,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false,
+          "title": "THE BUGLE-HORN  --  HISTORY"
+        },
+        "pass": {
+          "outcome": "You set the horn to your lips and blow, and the note goes all the way round the hall and comes back. The knights stand. The hounds stand. The king comes down from his throne and takes the bugle from your hands. \"Not yet,\" says Arthur. \"It is not yet the hour. But you did what the last one could not.\" He hangs it on you again. \"When your need is greatest, blow it, and we will come. Once.\" When you look back from the crack in the wall they are all asleep again, and the fire burns on.",
+          "reward": {
+            "type": "specific_item",
+            "item_type": "artifact",
+            "item_id": "arthurs_bugle"
+          },
+          "deeds": [
+            "met.king_arthur",
+            "told.arthur_woken"
+          ],
+          "thread": {
+            "id": "arthurs_bugle",
+            "hint": "A bugle from under the hill, for the hour of greatest need."
+          },
+          "chronicle": "Drew the sword, cut the garter and blew the bugle under the hill, and King Arthur woke. He gave me the bugle for my hour of need."
+        },
+        "fail": {
+          "outcome": "Your breath catches in the old horn and the note dies before it is out of it. The king's eyes are already closing. One by one the knights lie down along the benches, and the hounds put their heads on their paws, and when you look back from the crack in the wall it is only a crack.",
+          "deeds": [
+            "met.king_arthur"
+          ],
+          "chronicle": "Drew the sword and cut the garter under the hill, but blew the bugle too weakly. The sleepers slept on."
+        },
+        "hidden_group": "act",
+        "road": {
+          "id": "flv_sleepers_under_the_hill.blow",
+          "hint": "The sword, the garter and the horn, and all three of them."
+        }
+      },
+      {
+        "label": "Let the sleepers sleep",
+        "forbids": {
+          "deeds_any": [
+            "told.arthur_sword_drawn"
+          ]
+        },
+        "outcome": "You leave the hall as you found it. The thread runs out through the crack behind you.",
+        "chronicle": "Found a king and his knights asleep under the hill, and left them so.",
+        "road": {
+          "id": "flv_sleepers_under_the_hill.leave",
+          "hint": "A sleeping king waits for someone with the nerve to wake him."
+        },
+        "hidden_group": "stop"
+      },
+      {
+        "label": "Put the sword back and go",
+        "requires": {
+          "deeds_all": [
+            "told.arthur_sword_drawn"
+          ]
+        },
+        "forbids": {
+          "deeds_any": [
+            "told.arthur_garter_cut"
+          ]
+        },
+        "outcome": "You put the sword back in its scabbard. Before it is home their eyes have closed again, and the king is asleep on his throne. You follow the thread back out through the crack.",
+        "deeds": [
+          "met.king_arthur"
+        ],
+        "chronicle": "Woke the sleepers under the hill for a moment, and let them sleep again.",
+        "road": {
+          "id": "flv_sleepers_under_the_hill.put_back",
+          "hint": "Half a waking is no waking."
+        },
+        "hidden_group": "stop"
+      },
+      {
+        "label": "Sheathe the sword",
+        "requires": {
+          "deeds_all": [
+            "told.arthur_garter_cut"
+          ]
+        },
+        "outcome": "You slide the sword back into its scabbard, slowly. As it goes home the light goes out of their eyes, and the king sinks back on his throne. Before he sleeps he lifts his hands and says, sorrowfully: \"O woe betide that evil day / On which the witless wight was born, / Who drew the sword, the garter cut, / But never blew the bugle-horn.\" Then the hall is still, and the crack in the wall is only a crack.",
+        "deeds": [
+          "met.king_arthur",
+          "told.arthur_rhyme"
+        ],
+        "chronicle": "Drew the sword and cut the garter under the hill, then lost my nerve and sheathed it. King Arthur cursed the day I was born, and slept.",
+        "road": {
+          "id": "flv_sleepers_under_the_hill.sheathe",
+          "hint": "Who drew the sword, the garter cut, but never blew the bugle-horn."
+        },
+        "hidden_group": "stop"
+      }
+    ]
+  },
+  {
+    "tag": "flv_heimdalls_watch",
+    "name": "Heimdall",
+    "proper_noun": true,
+    "symbol": "@",
+    "color": [
+      235,
+      235,
+      245
+    ],
+    "sprite_id": "npc_heimdall",
+    "min_level": 70,
+    "max_level": 78,
+    "role": "story",
+    "stakes": "medium",
+    "callback_only": true,
+    "person": {
+      "id": "heimdall",
+      "name": "Heimdall"
+    },
+    "text": "The ice opens on a bridge of trembling colour that climbs out of the deep and out of sight, and at its foot sits a tall man in white with a great curved horn across his knees. When he smiles, his teeth are gold. \"Heimdall,\" he says. \"I heard you on the stair three floors up. I hear the grass grow and the wool on the sheep, and I need less sleep than a bird.\" He looks past you, down. \"And I hear the wolf. He is loose below you, and I cannot leave this bridge.\"",
+    "options": [
+      {
+        "label": "\"What is the horn?\"",
+        "outcome": "\"Gjallarhorn. It is heard in every world. When the end comes I blow it, and the gods wake, and out of Valhalla's doors ride the einherjar, Odin's chosen dead, who fight all day and stand up whole at evening.\" He turns the horn in his hands. \"I should carry it down to the wolf. If I leave this bridge, the giants cross it.\"",
+        "deeds": [
+          "told.gjallarhorn"
+        ],
+        "then": "options"
+      },
+      {
+        "label": "Keep the watch with him",
+        "quiz": {
+          "subject": "history",
+          "tier": 4,
+          "mode": "threshold",
+          "threshold": 2,
+          "total_qs": 3,
+          "timed": false,
+          "title": "HEIMDALL'S WATCH  --  HISTORY"
+        },
+        "pass": {
+          "outcome": "You sit the watch with him while the colours of the bridge tremble overhead. Three times he asks what you heard, and you heard it. \"You listen,\" he says at last. \"Good. Nobody down there does.\" He puts the horn in your hands; it is far heavier than it looks. \"Blow it once, where you need them, and they will hear it in Valhalla. They will ride beside you against the wolf's kin and the rest. Not against the wolf himself. Killing him is not theirs to do, nor binding him. It never was.\" He turns back to his watch.",
+          "reward": {
+            "type": "specific_item",
+            "item_type": "artifact",
+            "item_id": "gjallarhorn"
+          },
+          "deeds": [
+            "met.heimdall",
+            "told.heimdall_watch"
+          ],
+          "thread": {
+            "id": "gjallarhorn",
+            "hint": "The watchman's horn, to blow once, where you need them."
+          },
+          "chronicle": "Kept the watch with Heimdall at the foot of the bridge, and heard what he heard. He put Gjallarhorn in my hands."
+        },
+        "fail": {
+          "outcome": "You sit the watch with him, and the dark is very quiet, and you hear none of what he hears. \"You heard nothing,\" he says, not unkindly. \"Go down, then. Listen harder on the way.\" He keeps the horn across his knees.",
+          "deeds": [
+            "met.heimdall"
+          ],
+          "chronicle": "Kept the watch with Heimdall and heard nothing of what he heard. He kept his horn."
+        },
+        "road": {
+          "id": "flv_heimdalls_watch.watch",
+          "hint": "The watchman trusts his horn to one who listens."
+        }
+      },
+      {
+        "label": "Leave him to his watch",
+        "outcome": "He nods without looking round. He is listening to something a long way below you.",
+        "deeds": [
+          "met.heimdall"
+        ],
+        "chronicle": "Passed Heimdall at his watch by the foot of the bridge, and went on down.",
+        "road": {
+          "id": "flv_heimdalls_watch.pass",
+          "hint": "The watchman's horn stays where nobody sits the watch."
+        }
+      }
+    ]
   }
 ]

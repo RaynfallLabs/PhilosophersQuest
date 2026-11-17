@@ -512,8 +512,14 @@ class RoadMixin:
         import deeds
         reg = self._deeds_reg()
         placed = False
+        # A callback whose own floor this is comes first; one carried here
+        # from a floor the hero went past (a level warp, a trapdoor) waits
+        # for the next new floor rather than take this one from it (the horn
+        # paths' run-start callbacks, carried down, took the floor a deed's
+        # callback was set for).
         for p in sorted([p for p in reg.get('pending', ()) if p.get('kind') == 'encounter'],
-                        key=lambda p: (int(p.get('target') or 0), p.get('id', ''))):
+                        key=lambda p: (int(p.get('target') or 0) != int(new_level),
+                                       int(p.get('target') or 0), p.get('id', ''))):
             target = int(p.get('target') or 0)
             spec = p.get('spec') or {}
             tag = spec.get('encounter', '')

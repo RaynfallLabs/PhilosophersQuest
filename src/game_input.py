@@ -481,6 +481,13 @@ class InputMixin:
                 # pressed again, the photo in the pack (game_stray_kids.py).
                 self._qa_stray_kids()
                 return True
+            if uni == 'H' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: the next horn path beside the hero
+                # (Robin Hood's bridge, the sleepers under the hill, Heimdall,
+                # Roland); after the fourth, every horn in the pack, ready
+                # (lowercase h harvests; game_horns._qa_horns).
+                self._qa_horns()
+                return True
             if uni == 'V' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: the Dreamspun Sketchbook in the pack,
                 # every kind it can draw up to max(10, floor + 5) studied and

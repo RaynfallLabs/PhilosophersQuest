@@ -138,6 +138,8 @@ src/
   escort_system.py    - Escorts: people the hero walks somewhere
   sketch_manifest.py  - Manifest, the Dreamspun Sketchbook's power (pure): what she can draw (studied or in view, no bosses), the bite's type, INT + 5 turns a right answer, the menu's rows and tabs
   game_manifest.py    - ManifestMixin: the Manifest menu (V, Manifest), the AI quiz, the sketch set down beside her, the QA key (Shift+V)
+  horns.py            - The four horns of legend (data/horns.json): Robin Hood's Horn, Arthur's Bugle, Gjallarhorn, the Olifant; who answers a chain, once a run; CalledAlly (a helper that comes and goes, never a gate's guardian's foe)
+  game_horns.py       - HornsMixin: the horn powers in V (a history escalator chain), the Olifant's host on the road, the called going home, the QA key (Shift+H: each horn's path beside the hero)
 
   # Quiz
   quiz_engine.py      - All quiz logic (threshold, chain, escalator modes)

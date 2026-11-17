@@ -66,6 +66,8 @@ def test_monster_hp_curve_increases_with_depth():
     for mon in m.values():
         if not isinstance(mon, dict):
             continue
+        if mon.get('horn'):
+            continue        # answers a horn (horns.py): never on a floor's curve
         lvl = mon.get('min_level', 1)
         hp = _dice_avg(mon.get('hp', 10))
         band = min(9, max(0, (lvl - 1) // 10))

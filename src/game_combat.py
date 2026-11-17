@@ -4321,8 +4321,11 @@ class CombatMixin:
                     # resistance of what it bites applies; every other pet's
                     # plain bite is physical, as before (and so is a sketch
                     # pickled before its bite had a type).
+                    # One who answered a horn strikes as his own first
+                    # attack does (horns.CalledAlly: monsters.json).
                     _btype = (getattr(pet, 'bite_type', 'physical') or 'physical'
-                              if getattr(pet, 'is_sketch', False) else 'physical')
+                              if getattr(pet, 'is_sketch', False) or getattr(pet, 'is_called', False)
+                              else 'physical')
                     actual = target.take_damage(dmg, _btype)
                     # Bitten, it turns on the pet for a while (_monster_swipes).
                     target._pet_aggro = (id(pet), getattr(self, 'turn_count', 0))
@@ -4370,6 +4373,10 @@ class CombatMixin:
                     self.add_message(
                         f"The Sketched {pet.monster_name} shimmers, fades, and dissolves "
                         f"back into the pages of the sketchbook.", 'info')
+            elif getattr(pet, 'is_called', False) and pet.alive:
+                # One who answered a horn: his stay (game_horns.py).
+                if pet.tick_duration():
+                    self._horn_ally_leaves(pet)
 
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
         self._monster_swipes(self.pets)

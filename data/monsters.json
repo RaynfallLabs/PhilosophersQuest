@@ -39419,5 +39419,869 @@
       "charmed"
     ],
     "status_weak": []
+  },
+  "little_john": {
+    "name": "Little John",
+    "symbol": "@",
+    "color": [
+      70,
+      120,
+      50
+    ],
+    "hp": "20d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 12,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Quarterstaff",
+        "damage": "3d6+9",
+        "type": "blunt",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "John Little, seven feet tall, met Robin Hood on a narrow bridge, would not give way, and knocked him into the brook with a quarterstaff. Robin's men named him Little John for a joke, and he was Robin's right hand ever after. When Robin lay dying at Kirklees and blew three weak blasts on his horn, it was Little John who came.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "robin_hoods_horn",
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "will_scarlet": {
+    "name": "Will Scarlet",
+    "symbol": "@",
+    "color": [
+      190,
+      40,
+      40
+    ],
+    "hp": "16d10+2",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 12,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Sword",
+        "damage": "2d8+8",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Will Scarlet, Scarlok or Scathelock in the oldest ballads, is the band's quick, hot-tempered swordsman, first into a fight with the Sheriff's men and first to laugh after. It was Will who told Robin of a friar at Fountains Abbey who could beat Little John.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "robin_hoods_horn",
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "friar_tuck": {
+    "name": "Friar Tuck",
+    "symbol": "@",
+    "color": [
+      140,
+      100,
+      60
+    ],
+    "hp": "18d10+1",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 12,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Sword and Buckler",
+        "damage": "2d6+9",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "The curtal friar of Fountains Abbey carried Robin Hood across a river and threw him in halfway. When Robin blew his horn for his yeomen, the friar whistled for his dogs. They made peace, and the friar joined the band: a big, merry man of God who fights with sword and buckler and never says no to supper.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "robin_hoods_horn",
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "much_the_millers_son": {
+    "name": "Much the Miller's Son",
+    "symbol": "@",
+    "color": [
+      170,
+      150,
+      110
+    ],
+    "hp": "14d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 12,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Sword",
+        "damage": "2d6+7",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Much, the miller's son, is one of Robin Hood's oldest men, in the oldest ballads of all: a young yeoman, small and strong, who goes wherever Little John goes and does not run.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "robin_hoods_horn",
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "alan_a_dale": {
+    "name": "Alan-a-Dale",
+    "symbol": "@",
+    "color": [
+      120,
+      150,
+      70
+    ],
+    "hp": "11d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 12,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Longbow",
+        "damage": "1d8+6",
+        "type": "pierce",
+        "delivery": "ranged"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Alan-a-Dale was a minstrel whose sweetheart was to be married against her will to an old knight. Robin Hood stopped the wedding at the church door and saw the right pair married. Alan joined the band and sang for it, and he can use a bow as well as a harp.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "robin_hoods_horn",
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "yeoman_archer": {
+    "name": "yeoman archer",
+    "symbol": "@",
+    "color": [
+      60,
+      130,
+      60
+    ],
+    "hp": "13d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 12,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Longbow",
+        "damage": "2d8+6",
+        "type": "pierce",
+        "delivery": "ranged"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "One of Robin Hood's yeomen, in Lincoln green, with a longbow as tall as he is. In the ballads, when Robin blows his horn they come out of the greenwood by the dozen, and they do not miss.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "horn": "robin_hoods_horn",
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "king_arthur": {
+    "name": "King Arthur",
+    "symbol": "@",
+    "color": [
+      230,
+      200,
+      90
+    ],
+    "hp": "82d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 6,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Excalibur",
+        "damage": "8d20+100",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Arthur, the once and future king. At Sewingshields in Northumberland they say he sleeps under the hill with his queen, his knights and his hounds, until someone draws the sword, cuts the garter and blows the bugle that lie on the table by the door. He fights with Excalibur.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "arthurs_bugle",
+    "thac0_lore": 6,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "sir_lancelot": {
+    "name": "Sir Lancelot",
+    "symbol": "@",
+    "color": [
+      90,
+      110,
+      200
+    ],
+    "hp": "82d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 6,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Longsword",
+        "damage": "8d20+96",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Sir Lancelot du Lac, raised by the Lady of the Lake: in the French romances the greatest knight of the Round Table, and the best in every fight he ever rode into.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "arthurs_bugle",
+    "thac0_lore": 6,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "sir_gawain": {
+    "name": "Sir Gawain",
+    "symbol": "@",
+    "color": [
+      200,
+      60,
+      50
+    ],
+    "hp": "76d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 6,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Galatine",
+        "damage": "8d20+86",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Sir Gawain, Arthur's nephew, who bore the pentangle in gold on a red shield. In the old romances his strength grew every hour from morning until noon, and he kept his appointment with the Green Knight.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "arthurs_bugle",
+    "thac0_lore": 6,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "sir_percival": {
+    "name": "Sir Percival",
+    "symbol": "@",
+    "color": [
+      190,
+      50,
+      50
+    ],
+    "hp": "70d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 6,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Lance",
+        "damage": "8d20+70",
+        "type": "pierce",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Sir Percival came to Arthur's court a boy from the Welsh woods who had never seen a knight. He killed the Red Knight, took his red armour, and rode on to find the Grail.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "arthurs_bugle",
+    "thac0_lore": 6,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "sir_bedivere": {
+    "name": "Sir Bedivere",
+    "symbol": "@",
+    "color": [
+      130,
+      90,
+      170
+    ],
+    "hp": "70d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 6,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Sword",
+        "damage": "8d20+62",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Sir Bedivere was with Arthur from the oldest Welsh tales to the very end: one-handed in those tales and none the slower for it, and the last knight at Arthur's side, who threw Excalibur back into the lake.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "arthurs_bugle",
+    "thac0_lore": 6,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "sir_kay": {
+    "name": "Sir Kay",
+    "symbol": "@",
+    "color": [
+      200,
+      130,
+      50
+    ],
+    "hp": "66d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 6,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Sword",
+        "damage": "8d20+56",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Sir Kay, Arthur's foster-brother and steward, sharp of tongue in the romances. In the old Welsh tales he could go nine days and nights without sleep, and stand as tall as the tallest tree in the forest when he chose.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "arthurs_bugle",
+    "thac0_lore": 6,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "einherjar": {
+    "name": "Einherjar",
+    "symbol": "@",
+    "color": [
+      230,
+      210,
+      140
+    ],
+    "hp": "102d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 3,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "War Axe",
+        "damage": "10d20+235",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "One of the einherjar, the chosen dead of Valhalla. Odin's valkyries choose the bravest of the fallen, and in Valhalla they arm every morning, cut one another down in the yard, rise whole at evening and feast. When Heimdall blows Gjallarhorn they ride out of its five hundred and forty doors, eight hundred through each, to the last battle.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "horn": "gjallarhorn",
+    "thac0_lore": 3,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "charlemagne": {
+    "name": "Charlemagne",
+    "symbol": "@",
+    "color": [
+      220,
+      200,
+      120
+    ],
+    "hp": "145d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 2,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Joyeuse",
+        "damage": "12d20+430",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Charles the Great, emperor of the Franks, with his white beard and his sword Joyeuse. At Roncevaux he heard Roland's horn thirty leagues off, turned his army back too late, and avenged the rear guard on the Saracens of Spain.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "olifant",
+    "thac0_lore": 2,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "duke_naimes": {
+    "name": "Duke Naimes",
+    "symbol": "@",
+    "color": [
+      120,
+      140,
+      90
+    ],
+    "hp": "124d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 2,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Sword",
+        "damage": "12d20+380",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Duke Naimes, the wisest of Charlemagne's counsellors. When the Olifant sounded and Ganelon called it nothing, Naimes told the emperor the truth: Roland was in battle, and the man who said otherwise had betrayed him.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "olifant",
+    "thac0_lore": 2,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "ogier_the_dane": {
+    "name": "Ogier the Dane",
+    "symbol": "@",
+    "color": [
+      170,
+      50,
+      50
+    ],
+    "hp": "138d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 2,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Cortain",
+        "damage": "12d20+420",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "Ogier the Dane, one of Charlemagne's great barons, who led a column against the emir Baligant after Roncevaux. In the later legends he sleeps under the castle of Kronborg, waiting for Denmark to need him.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "proper_noun": true,
+    "horn": "olifant",
+    "thac0_lore": 2,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
+  },
+  "frankish_knight": {
+    "name": "Frankish knight",
+    "symbol": "@",
+    "color": [
+      70,
+      90,
+      160
+    ],
+    "hp": "124d10",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 2,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 0,
+    "attacks": [
+      {
+        "name": "Lance",
+        "damage": "12d20+386",
+        "type": "pierce",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "mortals",
+    "pronoun": "he",
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1,
+      "purse": "kept"
+    },
+    "lore": "A knight of Charlemagne's host, in mail, with a lance and a long shield. In the Song of Roland the Franks ride back to Roncevaux too late, find the rear guard dead, and do not stop until the Saracens are driven into the Ebro.",
+    "frequency": 0,
+    "is_allied": true,
+    "quest_only": true,
+    "horn": "olifant",
+    "thac0_lore": 2,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": []
   }
 }

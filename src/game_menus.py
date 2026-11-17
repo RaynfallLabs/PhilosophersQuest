@@ -1344,6 +1344,10 @@ class MenuMixin:
             }
             powers.append(('summon_heavenly_host', _scales_def, 1, 0))
 
+        # The horns of legend: each carried horn not yet sounded (horns.py,
+        # game_horns.py), once a run
+        powers.extend(self._horn_power_rows())
+
         # Hero specials (Phase 3B) — actives granted by the secret build,
         # always unlocked from game start. Show alongside quirk powers.
         for sp in getattr(pl, 'hero_specials', []) or []:
@@ -1444,6 +1448,11 @@ class MenuMixin:
         # quiz; chain depth feeds tier_effects in hero_specials.resolve_active_special.
         if pid.startswith('hero_'):
             return self._activate_hero_special(pid)
+
+        # ----- The horns of legend (game_horns.py): a HISTORY escalator chain -----
+        import horns as _horns
+        if _horns.is_horn_power(pid):
+            return self._activate_horn(pid)
 
         # ----- Engine wave 6: armor-granted + accessory-charge branches -----
         if pid == 'armor_seven_league_step':
@@ -2009,13 +2018,14 @@ class MenuMixin:
     def _open_pet_menu(self):
         """Open the pet menu showing alive companions and per-pet actions.
 
-        Hides transient pets (Dad, Sketched) — they expire fast enough that
-        menuing them is just clutter.
+        Hides transient pets (Dad, Sketched, those who answered a horn) —
+        they expire fast enough that menuing them is just clutter.
         """
         from pet_system import DadPet, SketchedPet
         eligible = [
             p for p in getattr(self, 'pets', [])
             if p.alive and not isinstance(p, (DadPet, SketchedPet))
+            and not getattr(p, 'is_called', False)
         ]
         if not eligible:
             self.add_message(
@@ -2251,6 +2261,7 @@ class MenuMixin:
         self.pet_menu_items = [
             p for p in self.pets
             if p.alive and not getattr(p, 'is_dad', False) and not getattr(p, 'is_sketch', False)
+            and not getattr(p, 'is_called', False)
         ]
         if not self.pet_menu_items:
             self.state = STATE_PLAYER

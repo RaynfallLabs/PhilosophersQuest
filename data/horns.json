@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "about": "The four horns of legend (src/horns.py, src/game_horns.py). Each is a carried artifact (data/items/artifact.json) that comes only through its story path (data/flavor_encounters.json; the three new paths are placed once a run by karma_rules.json run_start_schedule, the Olifant by Roland's own chain). Its power is in the V menu while it is carried: a HISTORY escalator chain whose length sets how many answer (allies_by_chain, indexed by the chain, 0 to 5). Every horn sounds ONCE A RUN (Brandon, 2026-11-16: 'once per game... must not be game-breaking'), and a failed quiz still spends it. The allies are monster kinds in data/monsters.json (is_allied, quest_only, min_level 0: never found, never spawned) whose numbers are their own, written from their lore at their horn's tier; they walk beside the hero as helpers that come and go (horns.CalledAlly, a Pet), stay 'turns', then leave with their line. They never strike a gate's guardian (the five gate bosses of data/domains.json): the gate's own quest rules decide that fight (Fenrir: Gleipnir binds him, the Sandal ends him; Brandon 2026-11-16). They stay on the floor they were called to.",
+    "sources": {
+      "robin_hoods_horn": "Child Ballad 125, Robin Hood and Little John (the bridge, the staves, Robin knocked into the brook, the horn, John Little renamed Little John); Child 123, Robin Hood and the Curtal Friar (Robin asks to blow his horn and his yeomen come; the friar is Friar Tuck); Child 120, Robin Hood's Death (at Kirklees he blows three weak blasts and Little John comes); A Gest of Robyn Hode (Lincoln green; Much the Miller's son; Will Scarlok); Robin Hood and Allen a Dale (the minstrel). Checked on Grokipedia (Little John; Merry Men; Robin Hood's Death), then Wikipedia (Robin Hood and Little John; Robin Hood and the Curtal Friar; Robin Hood's Death), 2026-11-16.",
+      "arthurs_bugle": "The Sewingshields legend: John Hodgson, History of Northumberland (1840), and The Denham Tracts vol. 2, ed. James Hardy (Folklore Society, 1895), pp. 125-27, retold in D. L. Ashliman, Sleeping Hero Legends (University of Pittsburgh): a farmer knitting on the ruins follows his rolling ball of thread into a vaulted hall with a fire burning without fuel, Arthur, Guinevere, the court and the hounds asleep, and a sword, a garter and a bugle-horn on a table; he draws the sword and they wake, cuts the garter, sheathes the sword and they sleep again; Arthur's rhyme ends 'But never blew the bugle-horn'. Also pantheon.org, Sewingshields Castle. Grokipedia has no page on it (searched 2026-11-16).",
+      "gjallarhorn": "Snorri Sturluson, Gylfaginning 27 (Heimdall: the white god, gold teeth, dwells at Himinbjorg by Bifrost, watchman of the gods against the mountain giants, needs less sleep than a bird, sees a hundred leagues by night as by day, hears grass grow and wool on sheep; Gjallarhorn is heard in all worlds) and 51 (at Ragnarok he blows it and wakes all the gods; he and Loki kill each other; the wolf swallows Odin; his son tears the wolf apart); Voluspa 46 ('loud blows Heimdall, the horn is aloft'); Grimnismal and Gylfaginning 38-41 (the einherjar: the chosen dead of Valhalla, who fight every day and rise whole at evening, 540 doors and 800 through each at Ragnarok). Checked on Grokipedia (Gjallarhorn; Heimdall; Einherjar; Vidarr), then Wikipedia (Heimdall), 2026-11-16.",
+      "olifant": "The Song of Roland (Oxford manuscript), laisses 83-85 (Oliver asks Roland three times to sound the olifant) and 133-135 (Roland sounds it; the sound carries thirty leagues; Ganelon tells Charlemagne it is nothing; Duke Naimes says Roland is in battle; the host turns back) and the pursuit and Baligant battle after (Naimes, Ogier the Dane, Geoffrey of Anjou; Charlemagne's sword Joyeuse). Checked on Wikipedia (The Song of Roland) and translations found by search (shmoop, longlongtimeago, Fordham Medieval Sourcebook), 2026-11-16; Grokipedia has no page under that title."
+    },
+    "numbers": "Sized for one call that turns one hard fight at the horn's tier (a war-band, a mini-boss, a seal demon), never a gate: the whole band, at blows about three turns in five, deals about twelve ordinary monsters' health of its tier over its stay (floor_curve.HP_ANCHORS at floors 15, 50, 75 and 90), and each ally lives through about eight blows of a mini-boss of that tier. The numbers are written in monsters.json; nothing scales them by the floor (LORE, NOT FLOOR), so Robin Hood's men, mortals at tier one, matter less the deeper they are called."
+  },
+  "horns": {
+    "robin_hoods_horn": {
+      "name": "Robin Hood's Horn",
+      "power": "horn_robin_hood",
+      "label": "Blow Robin Hood's Horn",
+      "desc": "His Merry Men come out of the greenwood to fight beside you for a while, never against a gate's guardian. Once a run.",
+      "tier": 1,
+      "quiz": {"subject": "history", "mode": "escalator_chain", "tier": 1, "max_chain": 5},
+      "title": "ROBIN HOOD'S HORN",
+      "allies_by_chain": [0, 2, 3, 4, 5, 7],
+      "roster": ["little_john", "will_scarlet", "yeoman_archer", "friar_tuck", "much_the_millers_son", "yeoman_archer", "alan_a_dale"],
+      "turns": 25,
+      "delay_turns": 0,
+      "lines": {
+        "raise": "You set Robin Hood's horn to your lips and blow.",
+        "fail": "The note cracks and dies in the dark, and nobody comes. The horn will not sound for you again.",
+        "arrive": "Men in Lincoln green come out of the dark as if out of the trees of Sherwood: {who}.",
+        "leave": "{name} raises a hand to you and goes back into the greenwood.",
+        "chronicle": "Blew Robin Hood's horn, and his men came out of the dark to fight beside me: {who}.",
+        "chronicle_fail": "Blew Robin Hood's horn badly, and nobody came."
+      }
+    },
+    "arthurs_bugle": {
+      "name": "Arthur's Bugle",
+      "power": "horn_arthur",
+      "label": "Blow Arthur's Bugle",
+      "desc": "The sleepers under the hill wake to fight beside you for a while, never against a gate's guardian. Once a run.",
+      "tier": 3,
+      "quiz": {"subject": "history", "mode": "escalator_chain", "tier": 3, "max_chain": 5},
+      "title": "ARTHUR'S BUGLE",
+      "allies_by_chain": [0, 2, 3, 4, 5, 6],
+      "roster": ["king_arthur", "sir_bedivere", "sir_kay", "sir_gawain", "sir_percival", "sir_lancelot"],
+      "turns": 30,
+      "delay_turns": 0,
+      "lines": {
+        "raise": "You set Arthur's bugle to your lips and blow.",
+        "fail": "Your breath catches in the old horn and the note is gone before it is out of it. Far off, something turns over in its sleep and is still.",
+        "arrive": "The air rings like a struck bell, and the sleepers come out of it awake and armed: {who}.",
+        "leave": "{name} bows his head to you and is gone, back to sleep under the hill.",
+        "chronicle": "Blew Arthur's bugle in my hour of need, and the sleepers under the hill came to me: {who}.",
+        "chronicle_fail": "Blew Arthur's bugle too weakly. The sleepers under the hill slept on."
+      }
+    },
+    "gjallarhorn": {
+      "name": "Gjallarhorn",
+      "power": "horn_gjallarhorn",
+      "label": "Blow Gjallarhorn",
+      "desc": "The einherjar ride out of Valhalla to fight beside you for a while, never against a gate's guardian. Once a run.",
+      "tier": 4,
+      "quiz": {"subject": "history", "mode": "escalator_chain", "tier": 4, "max_chain": 5},
+      "title": "GJALLARHORN",
+      "allies_by_chain": [0, 3, 4, 5, 6, 8],
+      "roster": ["einherjar", "einherjar", "einherjar", "einherjar", "einherjar", "einherjar", "einherjar", "einherjar"],
+      "turns": 30,
+      "delay_turns": 0,
+      "lines": {
+        "raise": "You lift Gjallarhorn and blow.",
+        "fail": "The great horn only groans, and far above you nobody wakes. It will not sound for you again.",
+        "arrive": "The note goes up through every floor above you and into Valhalla, and its doors open. Down out of the light ride {who}, Odin's chosen dead.",
+        "leave": "{name} turns back toward the light. He will fight again tomorrow, and stand up whole at evening.",
+        "chronicle": "Blew Gjallarhorn, and the einherjar rode down out of Valhalla to fight beside me: {who}.",
+        "chronicle_fail": "Blew Gjallarhorn and it only groaned. Nobody in Valhalla heard it."
+      }
+    },
+    "olifant": {
+      "name": "The Olifant",
+      "power": "horn_olifant",
+      "label": "Blow the Olifant",
+      "desc": "Charlemagne's host rides back from thirty leagues off: blow it before the fight. Never against a gate's guardian. Once a run.",
+      "tier": 5,
+      "quiz": {"subject": "history", "mode": "escalator_chain", "tier": 5, "max_chain": 5},
+      "title": "THE OLIFANT",
+      "allies_by_chain": [0, 2, 3, 5, 6, 8],
+      "roster": ["charlemagne", "duke_naimes", "ogier_the_dane", "frankish_knight", "frankish_knight", "frankish_knight", "frankish_knight", "frankish_knight"],
+      "turns": 30,
+      "delay_turns": 12,
+      "lines": {
+        "raise": "You set the Olifant to your lips and blow, as Roland did, until your temples ache.",
+        "fail": "The crack in the mouthpiece takes the note, and it dies in the pass. Nobody far off hears it.",
+        "far": "Thirty leagues off, an emperor hears it. A traitor tells him it is nothing; his oldest duke tells him no man blows like that unless he is fighting. The host turns back.",
+        "on_road": "Hooves behind you, a great many of them, and coming hard.",
+        "arrive": "Charlemagne's host comes up out of the dark at the gallop, too late for Roland and not too late for you: {who}.",
+        "leave": "{name} turns his horse for France.",
+        "chronicle": "Blew the Olifant before I needed it, as Oliver would have, and Charlemagne's host rode back for me: {who}.",
+        "chronicle_fail": "Blew the Olifant, and the crack in it took the note. Nobody far off heard."
+      }
+    }
+  },
+  "plurals": {
+    "yeoman_archer": "Yeoman Archers",
+    "einherjar": "Einherjar",
+    "frankish_knight": "Frankish Knights"
+  }
+}

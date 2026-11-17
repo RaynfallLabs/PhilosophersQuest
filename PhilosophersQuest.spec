@@ -31,6 +31,7 @@ block_cipher = None
 added_files = [
     # Game data — top-level JSONs
     ('data/monsters.json',          'data'),
+    ('data/horns.json',             'data'),   # the four horns of legend (horns.py)
     ('data/monster_sizes.json',     'data'),
     ('data/monster_families.json',  'data'),   # monster family knowledge (family_lore.py)
     ('data/senses.json',            'data'),   # how monsters notice the hero (senses.py)

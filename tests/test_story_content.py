@@ -328,6 +328,10 @@ def test_every_callback_target_exists_and_is_placed_by_something():
                 assert tgt is not None, (e['tag'], cb['encounter'])
                 assert tgt.get('callback_only'), cb['encounter']
                 scheduled.add(cb['encounter'])
+    # Placed at run start, whatever the hero does (karma_rules.json): The
+    # Gate and the three horn paths (data/horns.json).
+    with open(os.path.join(ROOT, 'data', 'karma_rules.json'), encoding='utf-8') as f:
+        scheduled |= {s['encounter'] for s in json.load(f).get('run_start_schedule') or ()}
     orphans = {e['tag'] for e in ENCS if e.get('callback_only')} - scheduled - OWN_PLACEMENT
     assert not orphans, f'callback-only encounters nothing schedules: {sorted(orphans)}'
 

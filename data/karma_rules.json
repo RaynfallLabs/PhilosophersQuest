@@ -4,9 +4,12 @@
   "road_enabled": true,
   "block_cap": 1,
   "constancy_cap": 2,
-  "run_start_schedule_doc": "Callbacks placed when a run begins, whatever the hero does (game_road._schedule_run_start). Skipped while the encounter is not in the data. The Gate (C18) reads the people met on the way down; it never touches the floor 99 Judgment.",
+  "run_start_schedule_doc": "Callbacks placed when a run begins, whatever the hero does (game_road._schedule_run_start). Skipped while the encounter is not in the data. The Gate (C18) reads the people met on the way down; it never touches the floor 99 Judgment. The three horn paths (data/horns.json: Robin Hood's bridge, the sleepers under the hill, Heimdall's watch) are placed here too, one each a run: guaranteed to be met, earned only by what the hero does there.",
   "run_start_schedule": [
-    {"encounter": "flv_the_gate", "floors": [94, 98]}
+    {"encounter": "flv_the_gate", "floors": [94, 98]},
+    {"encounter": "flv_robin_hood_bridge", "floors": [12, 18]},
+    {"encounter": "flv_sleepers_under_the_hill", "floors": [45, 55]},
+    {"encounter": "flv_heimdalls_watch", "floors": [70, 78]}
   ],
   "reward_value": {
     "_doc": "P7 scoring table: a 'forgo' option needs a visible sibling whose material reward scores strictly higher. value = flat + sum(coef * field) for each field listed; 'count' defaults to 1; gold with min/max uses their mean. 'multi' is the sum of its parts. 'deeds' prices the engine flags an outcome records that pay off later (a breath back from Death), so a pass that wins one counts as a reward.",

@@ -106,6 +106,7 @@ from game_riding import RidingMixin
 from game_bococho_render import BocochoRenderMixin
 from game_songs import SongsMixin
 from game_manifest import ManifestMixin
+from game_horns import HornsMixin
 from spells import LEARNABLE_SPELLS
 
 
@@ -274,7 +275,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
            HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin,
            MoobleMixin, MoobleDanceMixin,
            BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin, SongsMixin,
-           ManifestMixin):
+           ManifestMixin, HornsMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -2544,6 +2545,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Place deep-lore items on their designated levels (once per run)
         self._maybe_place_lore_items(dungeon, new_level)
 
+        # Whoever answered a horn stays with the floor he was called to
+        # (game_horns.py), and goes home now.
+        self._horn_allies_left_behind(new_level)
+
         # Reposition pets near player on floor change (spread to adjacent tiles;
         # never onto an escort, who is already set beside him: PET-05)
         _pet_placed = {(e.x, e.y) for e in self._escorts_here()}
@@ -4610,6 +4615,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         'lions_thorn', 'cuthberts_gospel', 'sealed_dispatch',
         # promises carried from the story encounters (an oath keeps on them)
         'book_of_thoth', 'brennans_sword', 'wats_oil_flask', 'olifant',
+        # the horns of legend, each from its own story path (horns.py)
+        'robin_hoods_horn', 'arthurs_bugle', 'gjallarhorn',
     ))
 
     @staticmethod
@@ -5392,6 +5399,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     # Escorts move and are attacked in their own pass, pet or no pet.
                     self._damage_by = 'escort'
                     self._do_escort_turns()
+                    # A horn's host on the road (the Olifant: game_horns.py).
+                    self._horn_tick()
                     self._damage_by = 'monster'
                     self._maybe_wander_spawn()
             finally:

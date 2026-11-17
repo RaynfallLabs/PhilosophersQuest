@@ -70,6 +70,8 @@ DYNAMIC_SOURCES = {
     "d['varro']['kill_chronicle']": 'data/bococho.json',
     "cfg['won_chronicle']": 'data/bococho.json race',
     "cfg['lost_chronicle']": 'data/bococho.json race',
+    "horns.chronicle_line(hid, who)": 'data/horns.json lines chronicle',
+    "horns.chronicle_line(hid, failed=True)": 'data/horns.json lines chronicle_fail',
 }
 
 # Bare variable names are only waved through in the functions known to fill

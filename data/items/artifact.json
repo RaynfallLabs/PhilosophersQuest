@@ -1204,17 +1204,103 @@
     "id_level": 0,
     "is_unique": true,
     "unidentified_name": "a great ivory horn bound in gold",
-    "lore": "Roland's horn, carved from one elephant's tusk and bound in gold. At Roncevaux his friend Oliver begged him three times to blow it and call Charlemagne back to save the rear guard, and three times Roland was too proud. When at last he blew it, he blew so hard that his temples burst, and the army came too late. There is a crack along the mouthpiece. It still sounds. He asked for it to be blown at the last gate, so the rear guard is remembered.",
+    "lore": "Roland's horn, carved from one elephant's tusk and bound in gold. At Roncevaux his friend Oliver begged him three times to blow it and call Charlemagne back to save the rear guard, and three times Roland was too proud. When at last he blew it, he blew so hard that his temples burst. Charlemagne heard it thirty leagues off. Ganelon told him it was nothing; Duke Naimes told him no man blows like that unless he is fighting. The host turned back, too late for the rear guard, and avenged it. There is a crack along the mouthpiece. It still sounds. He asked for it to be blown at the last gate, so the rear guard is remembered.",
     "special_properties": {
       "identified": true,
       "plot_role": "roland_promise",
       "effects": [
-        "blow_it_at_the_last_gate"
+        "blow_it_at_the_last_gate",
+        "v_power_summon_charlemagnes_host"
       ],
       "spawn_method": "flavor_encounter_rolands_horn"
     },
     "_meta": {
-      "plot_locked": true
+      "plot_locked": true,
+      "sources": "The Song of Roland (Oxford manuscript), laisses 83-85 and 133-135: Oliver's three pleas, the horn heard thirty leagues off, Ganelon's 'it is nothing', Naimes' 'he is in battle', the host turning back. The power is in data/horns.json."
+    }
+  },
+  "robin_hoods_horn": {
+    "name": "Robin Hood's Horn",
+    "symbol": "(",
+    "color": [
+      150,
+      110,
+      60
+    ],
+    "weight": 1.0,
+    "min_level": 0,
+    "identified": false,
+    "id_level": 0,
+    "is_unique": true,
+    "unidentified_name": "a hunting horn on a green baldric",
+    "lore": "Robin Hood's own hunting horn, on a baldric of Lincoln green. In the ballads he blows it and his yeomen come out of the greenwood: when Little John knocked him off a narrow bridge into the brook, when the curtal friar threw him in the river, and last of all at Kirklees, three weak blasts, when Little John came too late to save him. He hung it round your neck on the bridge, for a fair bout. Blow it once, in need, and his Merry Men will come.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "robin_hood_horn",
+      "effects": [
+        "v_power_summon_merry_men"
+      ],
+      "spawn_method": "flavor_encounter_robin_hood_bridge"
+    },
+    "_meta": {
+      "plot_locked": true,
+      "sources": "Child Ballads 125 (Robin Hood and Little John), 123 (Robin Hood and the Curtal Friar), 120 (Robin Hood's Death); A Gest of Robyn Hode. Grokipedia (Little John, Merry Men, Robin Hood's Death), Wikipedia (the three ballads). The power is in data/horns.json."
+    }
+  },
+  "arthurs_bugle": {
+    "name": "Arthur's Bugle",
+    "symbol": "(",
+    "color": [
+      225,
+      215,
+      180
+    ],
+    "weight": 2.0,
+    "min_level": 0,
+    "identified": false,
+    "id_level": 0,
+    "is_unique": true,
+    "unidentified_name": "an old bugle-horn on a baldric",
+    "lore": "The bugle-horn from the table under the hill. At Sewingshields, by the Roman Wall, they tell of a farmer who followed his ball of thread into the hall where Arthur sleeps with his queen, his knights and his hounds. He drew the sword and they woke; he cut the garter; then he lost his nerve and sheathed the sword, and they slept again, and Arthur cursed the day of the man who never blew the bugle-horn. You blew it. Arthur gave it back to you for your hour of greatest need: blow it once more, and the sleepers will come.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "sleeping_king_bugle",
+      "effects": [
+        "v_power_summon_round_table"
+      ],
+      "spawn_method": "flavor_encounter_sleepers_under_the_hill"
+    },
+    "_meta": {
+      "plot_locked": true,
+      "sources": "The Sewingshields legend: Hodgson, History of Northumberland (1840); The Denham Tracts vol. 2 (1895), pp. 125-27, via D. L. Ashliman, Sleeping Hero Legends; pantheon.org, Sewingshields Castle. No Grokipedia page (searched). The power is in data/horns.json."
+    }
+  },
+  "gjallarhorn": {
+    "name": "Gjallarhorn",
+    "symbol": "(",
+    "color": [
+      200,
+      180,
+      120
+    ],
+    "weight": 5.0,
+    "min_level": 0,
+    "identified": false,
+    "id_level": 0,
+    "is_unique": true,
+    "unidentified_name": "a great curved horn banded in gold",
+    "lore": "Gjallarhorn, the Yelling Horn of Heimdall, the white god with the gold teeth, who keeps watch at the bridge Bifrost, needs less sleep than a bird and hears the grass grow. Its blast is heard in every world. At Ragnarok he blows it to wake the gods, and out of Valhalla the einherjar, Odin's chosen dead, ride to the last battle. He cannot leave his bridge, so he put it in your hands. Blow it once and they will ride beside you. The wolf himself is not theirs to kill, nor to bind.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "heimdall_horn",
+      "effects": [
+        "v_power_summon_einherjar"
+      ],
+      "spawn_method": "flavor_encounter_heimdalls_watch"
+    },
+    "_meta": {
+      "plot_locked": true,
+      "sources": "Snorri, Gylfaginning 27 and 51; Voluspa 46; Grimnismal and Gylfaginning 38-41 on the einherjar. Grokipedia (Gjallarhorn, Heimdall, Einherjar), Wikipedia (Heimdall). The power is in data/horns.json."
     }
   },
   "raphaels_gall": {

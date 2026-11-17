@@ -309,6 +309,13 @@ def active_power_rows(player, *, secret_build: dict | None = None,
     if (any(getattr(item, "id", "") == "scales_of_michael" for item in inventory)
             and not heavenly_host_active):
         rows.append(PowerRow("Heavenly Host", "1 Use", "uses"))
+    # The horns of legend: one blow each a run, and a host still on the road.
+    try:
+        import horns as _horns
+        for label, value, kind in _horns.hud_rows(player):
+            rows.append(PowerRow(label, value, kind))
+    except Exception:
+        pass
 
     if (secret_build or {}).get("_elder_blood"):
         for pid, label in [("elder_blink", "Blink"), ("elder_charge", "Charge"), ("elder_scream", "Scream")]:
