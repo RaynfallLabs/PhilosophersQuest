@@ -1889,10 +1889,10 @@ def _(g):
 
 
 def _make_loaded(g, burdened=False):
-    """Spare mail shirts in the pack until past half the limit (a Heavy
-    load), or past three quarters (``burdened``: Burdened; Brandon
-    2026-11-14; worn gear counts, 2026-10-16). The game's own per-turn check
-    says so in the log."""
+    """Spare mail shirts in the pack until past 70% of the limit (a Heavy
+    load, the first that slows), or past 90% (``burdened``: Burdened; the
+    four load tiers of 2026-11-16; worn gear counts, 2026-10-16). The game's
+    own per-turn check says so in the log."""
     from items import instantiate_armor
     p = g.player
     while not (p.is_burdened() if burdened else p.is_heavy()):
@@ -1905,13 +1905,13 @@ def _make_loaded(g, burdened=False):
     g._note_burden()
 
 
-@scene('play_heavy', 'Play', 'In a game, carrying past half the limit: a Heavy load '
+@scene('play_heavy', 'Play', 'In a game, carrying past 70% of the limit: a Heavy load '
        '(amber Carrying line, EFFECTS chip, log message).', expect='player')
 def _(g):
     _make_loaded(g)
 
 
-@scene('play_burdened', 'Play', 'In a game, carrying past three quarters of the limit: '
+@scene('play_burdened', 'Play', 'In a game, carrying past 90% of the limit: '
        'Burdened (red Carrying line, EFFECTS chip, log message).', expect='player')
 def _(g):
     _make_loaded(g, burdened=True)
@@ -3816,7 +3816,7 @@ def _(g):
 
 
 @scene('menu_help_gear_end', 'Menus', '?, Tab, Tab, End: Gear and Load scrolled to its end '
-       '(the coatings, flasks and stance, and the three load tiers).', expect='help')
+       '(the coatings, flasks and stance, and the four load tiers).', expect='help')
 def _(g):
     press(g, pygame.K_SLASH, '?')
     press(g, pygame.K_TAB)
