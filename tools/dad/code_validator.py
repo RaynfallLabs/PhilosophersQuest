@@ -8,7 +8,7 @@ badge for a real code. A code seen for the first time is recorded in the same
 ledger check_code.py keeps (Documents\\PQ_Dad\\redeemed.csv), so it is marked
 complete, and the screen says what the reward is.
 
-The Tracker is each kid's badge library, the one place that holds every
+The Badge Library is each kid's badges, the one place that holds every
 claim whichever machine the kid played on: every achievement by category as
 the game's Seeker gallery shows it (claimed in colour with the date, the rest
 grey, a deep secret only its name and "???"), the picked badge's page beside
@@ -47,7 +47,7 @@ MIN_SIZE = (1024, 680)
 FPS = 60
 
 KIDS, CODE, SPIN, RESULT, PARTY, TRACKER = 'kids', 'code', 'spin', 'result', 'party', 'tracker'
-TABS = ((KIDS, 'Choose a Kid'), (CODE, 'Check a Code'), (TRACKER, 'Tracker'))
+TABS = ((KIDS, 'Choose a Kid'), (CODE, 'Check a Code'), (TRACKER, 'Badge Library'))
 
 # The kids' heroes (welcome_screen's Secret Builds: Fianna the Wizard, Corwin
 # the Ranger): the art on their cards. Any other name gets its initial.
@@ -455,7 +455,7 @@ class App:
                 core.save_kids(self.kids)
                 self.kid = min(self.kid, max(0, len(self.kids) - 1))
                 self.pick = min(self.pick, len(self.kids))
-                self._say(f"{gone} is off the list. Every code {gone} claimed is still in the tracker.")
+                self._say(f"{gone} is off the list. Every code {gone} claimed is still in the Badge Library.")
                 self._refresh_counts()
             self.removing = None
             return
@@ -643,8 +643,8 @@ class App:
         if v.get('why') == 'sibling':
             return f"Enter: check it for {v['sibling']}   Space: a new code   Esc: choose a kid"
         if v.get('status') == 'fake':
-            return "Enter: fix the code   Space: a new code   Tab: tracker   Esc: choose a kid"
-        return "Enter: next code   Tab: tracker   Esc: choose a kid"
+            return "Enter: fix the code   Space: a new code   Tab: Badge Library   Esc: choose a kid"
+        return "Enter: next code   Tab: Badge Library   Esc: choose a kid"
 
     def _next(self, fresh=False):
         """Back to the slot for another code. A code that did not match stays,
@@ -760,7 +760,7 @@ class App:
         body = self._chrome(outer)
         if self.state == KIDS:
             self._draw_kids(body)
-            hint = ("Left/Right: choose   Enter: check a code   T: tracker   +: add a name   "
+            hint = ("Left/Right: choose   Enter: check a code   T: Badge Library   +: add a name   "
                     "Del: take off the list   Esc: close")
             if self.adding is not None:
                 hint = "Type a name   Enter: add   Esc: cancel"
@@ -769,14 +769,14 @@ class App:
         elif self.state in (CODE, SPIN, RESULT):
             self._draw_machine(body)
             hint = {CODE: "Type the code   Enter: pull the lever   Backspace: fix a letter   Ctrl+V: paste   "
-                          "Tab: tracker   Esc: choose a kid",
+                          "Tab: Badge Library   Esc: choose a kid",
                     SPIN: "Esc: skip the spin",
                     RESULT: self._result_hint()}[self.state]
             if self.state == RESULT:
                 self._draw_result_card(body)
         elif self.state == PARTY:
             self._draw_party(body)
-            hint = "Enter: check another code   Tab: tracker   Esc: choose a kid"
+            hint = "Enter: check another code   Tab: Badge Library   Esc: choose a kid"
         else:
             self._draw_tracker(body)
             hint = ("Arrows: choose a badge   PgUp/PgDn: category   L: earned list   " if self.view == 'grid'
@@ -1021,7 +1021,7 @@ class App:
         f = ui.get_font('heading', 24)
         self._text(f"Take {kid} off the list?", f, KT.TEXT_HEAD, r.centerx, r.y + S(30), centre=True)
         fs = ui.get_font('body', 16)
-        self._text("The codes already claimed stay in the tracker.", fs, KT.TEXT_BODY, r.centerx,
+        self._text("The codes already claimed stay in the Badge Library.", fs, KT.TEXT_BODY, r.centerx,
                    r.y + S(78), centre=True)
         self._text("Y: Yes      N: No", ui.get_font('body', 18, bold=True), KT.TEXT_QUIZ, r.centerx,
                    r.y + S(114), centre=True)
@@ -1499,7 +1499,7 @@ class App:
             self._text(part, fr, KT.TEXT_QUIZ, cx, yy, centre=True)
             yy += fr.get_height() + S(4)
         if body.bottom - card.bottom > S(30):
-            self._text("Marked complete in the tracker.", ui.get_font('body', 16), KT.GOOD_TEXT, cx,
+            self._text("Marked complete in the Badge Library.", ui.get_font('body', 16), KT.GOOD_TEXT, cx,
                        card.bottom + S(10), centre=True)
         # The stamp.
         if t >= 1.0:
