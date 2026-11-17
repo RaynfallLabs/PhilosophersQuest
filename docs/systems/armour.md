@@ -285,7 +285,7 @@ and the Secret Builds the kids play):
   in studded leather (3 + 6) out-armoured full plate (8) deep down; a
   clumsy hero's minus went with it.
 - **Dodge** (`Player.dodge_chance`): `dodge_per_dex` a point of Dexterity
-  over 10, at most `dodge_cap` (1% and 35%), then the
+  over 10, at most `dodge_cap` (1.25% and 40%), then the
   body armour's share (all, half, none) and the load's (`load.<tier>.dodge`).
   Only a blow from beside the hero can be slipped (`Monster._slipped`).
 - **Speed** (`Player.get_speed`): 10 is ordinary, the scale of a monster's

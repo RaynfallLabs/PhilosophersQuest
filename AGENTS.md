@@ -26,7 +26,7 @@ A graphical roguelike where knowledge is power. Every action requires answering 
 ## Player Stats
 - **STR** — Carry capacity, and pays back the speed medium and heavy armour cost (full speed in medium armour from STR 13, in heavy from STR 16; a STR-fit hero in plate is at speed 10)
 - **CON** — Max HP (3 per point), toughness (1% less damage per point over 10, cap 40%) and a little carry (3 lb per point over 10)
-- **DEX** — No armour class (AC comes from armour, shield and magic only). Dodge (1% per point over 10, cap 35%) and speed (+1% per point over 10, cap +20%; 10 is ordinary), both half in medium armour and none in heavy; the dodge is less under a Light, Heavy or Burdened load
+- **DEX** — No armour class (AC comes from armour, shield and magic only). Dodge (1.25% per point over 10, cap 40%) and speed (+1% per point over 10, cap +20%; 10 is ordinary), both half in medium armour and none in heavy; the dodge is less under a Light, Heavy or Burdened load
 - **INT** — Max MP
 - **WIS** — Quiz timer bonus (+1 second per point)
 - **PER** — Sight radius

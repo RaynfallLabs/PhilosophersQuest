@@ -154,7 +154,7 @@ def test_a_slipped_blow_needs_the_dodge():
         p.x, p.y = 5, 5
     random.seed(4)
     slips = sum(m._slipped(leather, {'name': 'Claw'}) for _ in range(400))
-    assert slips > 80                                           # about 35% (the cap)
+    assert slips > 80                                           # the cap: 40% (defence.dodge_cap)
     assert not any(m._slipped(plate, {'name': 'Claw'}) for _ in range(200))
 
 

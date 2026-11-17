@@ -44,7 +44,7 @@ LOAD_WORDS = {'light': 'Light', 'heavy': 'Heavy', 'burdened': 'Burdened',
 WEIGHT_CLASSES = ('light', 'medium', 'heavy')
 
 _DEFAULTS = {
-    'dodge_per_dex': 0.01, 'dodge_cap': 0.35,
+    'dodge_per_dex': 0.0125, 'dodge_cap': 0.40,
     'speed_per_dex': 0.01, 'speed_cap': 0.20,
     'speed_share': {'light': 1.0, 'medium': 0.5, 'heavy': 0.0},
     'armour_drag': {'light': 0.0, 'medium': 0.06, 'heavy': 0.12},

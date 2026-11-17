@@ -1336,8 +1336,8 @@ class Player:
     # Dexterity's dodge, a point over 10, and its cap: data/gear_rules.json
     # `defence` (src/defence.py reads it; these are the file's numbers for
     # tools and tests). Dexterity gives no AC since 2026-11-16.
-    DODGE_PER_DEX = float(_defence_rule('dodge_per_dex', 0.01))
-    DODGE_CAP = float(_defence_rule('dodge_cap', 0.35))
+    DODGE_PER_DEX = float(_defence_rule('dodge_per_dex', 0.0125))
+    DODGE_CAP = float(_defence_rule('dodge_cap', 0.40))
     # Worn armor that says so adds to either, on top of what the stat gives,
     # by at most this much in all.
     GEAR_BONUS_CAP = 0.10
