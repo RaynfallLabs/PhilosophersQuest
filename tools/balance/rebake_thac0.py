@@ -20,7 +20,7 @@ half of each monster's own accuracy against its band (a wolf still bites
 straighter than a zombie).
 
 The named foes tools/balance/mini_boss_bands.py tunes (the band mini-bosses,
-the legendary wanderers and the seal demons) are aimed by its rule instead:
+the legendary ones and the seal demons) are aimed by its rule instead:
 they need a NAMED_NEED or better against the same hero (mini-boss tuning,
 2026-11-14: a rare big blow is luck, a sure one is a fight).
 

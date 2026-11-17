@@ -2889,6 +2889,10 @@ def _(g):
     enc = economy.price_encounter(copy.deepcopy(next(
         e for e in flavor_encounters.FLAVOR_ENCOUNTERS if e['tag'] == 'flv_green_chapel')))
     g._flavor_encounter_levels[70] = enc
+    # The chapel's floor holds no other scene: a run-start scene the Road
+    # aimed at floor 70 (Heimdall's watch, 70-78) would take the floor first.
+    reg = deeds.ensure_register(g)
+    reg['pending'] = [p for p in reg.get('pending', ()) if p.get('target') != 70]
     g._change_level(70, enter_from_top=True)
     k = next(m for m in g.monsters if getattr(m, '_flavor_encounter_tag', None) == enc['tag'])
     near = [(k.x + dx, k.y + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))]

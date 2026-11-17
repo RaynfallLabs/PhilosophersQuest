@@ -58,7 +58,7 @@ counts: every point of it is a point off the roll.
 
 HP_CAP: no mini-boss is tankier than the final boss (test_high_med_batch_
 finishing.test_no_mini_boss_is_tankier_than_abaddon). The mastery hero hits
-so hard deep down that the legendary wanderers and the deepest seal demons
+so hard deep down that the legendary ones and the deepest seal demons
 reach the cap before their attack target: they are dangerous rather than
 long.
 
@@ -111,8 +111,11 @@ FOES: dict[str, dict] = {
     # The mother of monsters "never grows old": a deep well of health.
     "echidna": dict(hp=22.7, blows=0.26),
     # Bigger than a bull, bristles like spear shafts: swords glance off.
-    # Its gore bleeds, its trample slows, and it charges.
-    "calydonian_boar": dict(hp=15.5, blows=0.24),
+    # Its gore bleeds, its trample slows, and it charges. Met on floor 12 since
+    # 2026-11-17 (mini_boss_seats.py): an early hero has little to mend with,
+    # so its blows are lighter (0.24 on floor 27; at 0.24 on floor 12 a
+    # careful kid died to it once in 100 runs).
+    "calydonian_boar": dict(hp=15.5, blows=0.19),
     # Poseidon's son (2026-11-17): his club stuns and he hurls crags from
     # range; blunt blows are wasted on a giant's hide, the stake's point is
     # not. Wine and a blinding are what beat him, so he falls to both.
@@ -121,8 +124,11 @@ FOES: dict[str, dict] = {
     "erlking": dict(hp=20.9, blows=0.21),
     # The death bat of Xibalba: his wing buffets blind.
     "camazotz": dict(hp=12.8, blows=0.18),
-    # Fire and smoke: his breath burns, his smoke blinds, from range.
-    "cacus": dict(hp=20.4, blows=0.17),
+    # Fire and smoke: his breath burns, his smoke blinds, from range. He
+    # turns fire and the club, so the fight ran twice the family's length
+    # (12 attacks, a median 78-92% of the kids' health, one in ten more than
+    # twice it, on 39 and on 47): less health, the same breath (2026-11-17).
+    "cacus": dict(hp=12.5, blows=0.17),
     # His warhammer stuns; he grows furious as the fight goes on.
     "iron_patriarch": dict(hp=11.0, blows=0.22),
     # She eats those who cannot answer: rake and bite, and a riddle that
@@ -131,8 +137,12 @@ FOES: dict[str, dict] = {
     # Her hex confuses; she drains.
     "rangda": dict(hp=13.2, blows=0.30),
     # Edges are wasted on its hide; its own claws are the only thing that
-    # cuts, and they bleed you.
-    "nemean_lion": dict(hp=14.5, blows=0.25),
+    # cuts, and they bleed you. Met on floor 17 since 2026-11-17 (Heracles'
+    # first labour): a hero there seldom has a crushing weapon yet and a
+    # blade does nothing, so the fight is long; less health and lighter claws
+    # keep it a fight he can read (at 14.5 and 0.25 on floor 17 two careful
+    # kids died in 115 fights, and one in ten lost twice his health).
+    "nemean_lion": dict(hp=10.0, blows=0.16),
     # Iron teeth that bleed, a hex that weakens, and she mends as she
     # fights: little health is needed.
     "baba_yaga": dict(hp=8.6, blows=0.30),

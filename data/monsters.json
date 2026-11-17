@@ -25240,7 +25240,7 @@
       100,
       40
     ],
-    "hp": "3351d10+6759",
+    "hp": "2053d10+4143",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 1,
@@ -25461,7 +25461,7 @@
       180,
       80
     ],
-    "hp": "290d10+833",
+    "hp": "200d10+574",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -25472,7 +25472,7 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "3d6+6",
+        "damage": "2d6+4",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.35,
@@ -25481,7 +25481,7 @@
       },
       {
         "name": "Bite",
-        "damage": "1d4+3",
+        "damage": "1d4+1",
         "type": "pierce",
         "delivery": "bite"
       }
@@ -35545,7 +35545,7 @@
     "attacks": [
       {
         "name": "Tusk Gore",
-        "damage": "3d4+3",
+        "damage": "2d4+3",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.3,
@@ -35554,7 +35554,7 @@
       },
       {
         "name": "Trampling Charge",
-        "damage": "1d6+4",
+        "damage": "1d6+2",
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.25,
