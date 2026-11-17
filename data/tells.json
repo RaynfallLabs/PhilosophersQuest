@@ -137,7 +137,10 @@
     "stalker": {
       "sign": "{The} keeps just out of reach and never takes {his} eyes off you.",
       "does": "{He} waits for you to rest. Rest, sleep or lose your wits near {him}, and {he} is on you in a moment.",
-      "counter": "Never rest where {he} can find you. Back {him} into a corner, or rest on another floor."
+      "counter": "Never rest where {he} can find you. Back {him} into a corner, or rest on another floor.",
+      "sign_friend": "{The} follows you, smiling, offering to keep watch.",
+      "does_friend": "{He} is no friend. {He} waits for you to rest, and then {he} strikes hard.",
+      "counter_friend": "Never rest where {he} can find you. Strike first, or rest on another floor."
     },
     "bleeding": {
       "sign": "{The} looks made for tearing.",

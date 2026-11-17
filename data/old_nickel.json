@@ -1,15 +1,16 @@
 {
-  "_about": "Old Nickel's voice (Brandon, 2026-11-17: 'Old Nickel is not nearly mean enough... make it clear he will murder people in their sleep for their things'; and 'his lines should be more like Gollum'). The kobold of the mines in his own words: iron, nails, buckles, counting, the drip, the dark, sleepers. He calls himself Nickel, talks to his iron, wheedles and then spits. Said in the log as Old Nickel: \"...\" and floating over him (src/old_nickel.py picks, src/emberpup_encounter.py BloomleafMixin says). His AI is data/monsters.json old_nickel 'stalker' (ai_pattern stalker_coward).",
+  "_about": "Old Nickel's voice (Brandon, 2026-11-17: 'Old Nickel is not nearly mean enough... make it clear he will murder people in their sleep for their things'; 'his lines should be more like Gollum'; then 'ham Old Nickel up as a false friend'). The kobold of the mines in his own words: iron, nails, buckles, counting, the drip, the dark, sleepers. He calls himself Nickel, talks to his iron, wheedles and then spits. Two phases. The FRIEND (from first sight): he comes up to the hero, offers to watch his back and guard his sleep, urges him to rest, mutters about shinies under his breath, and stabs a wounded monster busy with the hero to look the helper; never openly evil. The REVEAL: the hero rests, sleeps or is helpless near him (or strikes him first), and the act drops for good, with a shout and the sneak attack in the same moment. After it he is openly hostile. Said in the log as Old Nickel: \"...\" (an aside: Old Nickel, under his breath: \"...\") and floating over him (src/old_nickel.py picks, src/emberpup_encounter.py BloomleafMixin says). His AI is data/monsters.json old_nickel 'stalker' (ai_pattern stalker_coward).",
   "line_gap": 4,
-  "_line_gap_note": "Turns between his 'taunt' lines (rule 2: the hero moves toward him or around him in his sight). The 'taunt' pool, with 'iron' while the hero wears or carries iron and 'cloak' always, is said without repeats; when it runs out he says the 'recurring' lines, round and round.",
+  "_line_gap_note": "Turns between his lines as the hero moves (Brandon's rule 2: the hero moves toward him or around him in his sight). As a friend: 'offer' and 'aside' (with 'aside_iron' while the hero wears or carries iron), each once, then 'friend_recurring' round and round. Revealed: 'taunt' and 'cloak' (with 'iron' while the hero has iron), each once, then 'recurring' round and round.",
   "strike_chance": 0.35,
   "strike_gap": 3,
-  "_strike_note": "A 'strike' line after one of his blows lands in a fight: this chance, and never within strike_gap turns of another of his lines.",
+  "_strike_note": "A 'strike' line after one of his blows lands in a fight: this chance, and never within strike_gap turns of another of his lines. The sneak attack itself has the reveal line before it and nothing after.",
   "hurt_at": [
     0.5,
     0.25
   ],
   "_hurt_at_note": "A 'hurt' line, once each, the first time he is below these shares of his health.",
+  "_reveal_note": "The betrayal is sudden (Brandon): the act drops only the moment he reaches the hero at rest, with a shout from 'reveal' (danger colour, his speech bubble), and the sneak attack lands the same moment. 'helper': the friend's line as he darts in on a wounded monster busy with the hero, strikes it once and darts back.",
   "dash_groups": {
     "resting": "rest",
     "sleeping": "rest",
@@ -19,9 +20,51 @@
   },
   "lines": {
     "sight": [
-      "Ooh. Big one comes down Nickel's shafts. Big one with shiny things, yesss.",
-      "Who walks in Nickel's dark? Nobody asked you. Nobody ever asks Nickel.",
-      "Visitors. Nickel likes visitors. Visitors sleep so nicely, yesss."
+      "Ooh, a big one! Lost, yes? Nickel knows these shafts. Nickel will help.",
+      "Don't be scared of Nickel. Nickel is a friend. Nickel watches backs, yesss.",
+      "A visitor! Nickel never has visitors. Nickel will keep you safe, yes, safe."
+    ],
+    "offer": [
+      "Nickel will watch your back, yesss. Always behind you. Always.",
+      "Nickel guards you. Nobody sneaks up on Nickel's friend. Nobody.",
+      "Nickel knows the safe places to sleep. Quiet places. Dark places.",
+      "Rest, rest, Nickel keeps watch. Nickel never sleeps, yesss.",
+      "Big one walks so far. Big one must be tired. Sit down, sit down.",
+      "Nickel helped the miners too. Helped them lie down. They're still resting.",
+      "Nickel is a good friend. The best friend. Ask anyone. Well. Not anyone.",
+      "Such heavy boots. Take them off, yes? Nickel will mind them for you."
+    ],
+    "aside": [
+      "Shiny... no, no, Nickel is a good helper... shiny buckle though...",
+      "Count later, count later. Be nice now. Nice, nice.",
+      "Hush, hush, iron. Not yet. Soon you'll have company."
+    ],
+    "aside_iron": [
+      "Such a nice buckle. Nickel's buckle, soon... no. Friend's buckle. For now.",
+      "Iron blade, iron blade... it would look so nice on the pile..."
+    ],
+    "friend_recurring": [
+      "Yessss... eyes tired, yes? Rest, rest, Nickel will guard you.",
+      "Lie down, lie down. Nickel keeps watch. Nickel always keeps watch.",
+      "Close your eyes, friend. Just for a little. Nickel is right here."
+    ],
+    "reveal": [
+      "NOW, sleeper! Your bones for Nickel's pile!",
+      "Yesss! YESSS! Nickel was never your friend!",
+      "Your bones lie with the others! All who thought old Nickel was a friend!",
+      "Guard you? HA! Nickel guards the PILE!",
+      "Eyes shut! Buckles off! Nickel's NOW!"
+    ],
+    "reveal_struck": [
+      "So the big one is clever. Clever ones bleed too.",
+      "Ow! No more nice Nickel! Nickel was going to wait, and you spoiled it!",
+      "Ungrateful! Nickel offered to watch your back. Now Nickel will stick it!"
+    ],
+    "helper": [
+      "Nickel helps! Nickel protects the big one, yesss!",
+      "See? Good Nickel. Good helper.",
+      "Stick it! Nobody hurts Nickel's friend. Nobody but... nobody!",
+      "There! Nickel watches your back, see? Always, always."
     ],
     "taunt": [
       "Closer, closer... no! Not so close. Nickel is watching, yesss.",
@@ -46,9 +89,9 @@
       "Stop staring at Nickel's cloak! Found it. Off a crying thing. Found it."
     ],
     "recurring": [
-      "Yessss... eyes tired, yes? Rest, rest, Nickel will guard you.",
       "Go on, lie down. Nickel can wait. Nickel is good at waiting, yesss.",
-      "Tired? Rest your eyes. Nickel will keep watch... very close watch."
+      "Tired? Rest your eyes. Nickel will keep watch... very close watch.",
+      "Everyone sleeps sometime, big one. Everyone. Nickel will be there."
     ],
     "dash": {
       "rest": [
@@ -95,5 +138,7 @@
       "No... not Nickel... the nails are Nickel's... all Nickel's..."
     ]
   },
-  "seen_chronicle": "Met a kobold in a cloak of torn green leaves. He called himself Nickel, counted his nails at me, and kept telling me to lie down and rest. I did not rest."
+  "seen_chronicle": "Met a kobold in a cloak of torn green leaves who called himself Nickel. He offered to watch my back and guard me while I slept, and he would not stop smiling.",
+  "reveal_chronicle": "The moment I let my guard down, Nickel dropped the smile and came at me screaming. He never meant to guard me. He meant to put my bones on his pile with the others.",
+  "reveal_struck_chronicle": "I struck the kobold who called himself my friend, and the smile came off him at once. He had only been waiting for me to sleep."
 }

@@ -72,7 +72,8 @@ DYNAMIC_SOURCES = {
     "cfg['lost_chronicle']": 'data/bococho.json race',
     "horns.chronicle_line(hid, who)": 'data/horns.json lines chronicle',
     "horns.chronicle_line(hid, failed=True)": 'data/horns.json lines chronicle_fail',
-    "old_nickel.seen_chronicle()": 'data/old_nickel.json seen_chronicle',
+    "old_nickel.chronicle('seen')": 'data/old_nickel.json seen_chronicle',
+    "old_nickel.chronicle(reveal)": 'data/old_nickel.json reveal_chronicle, reveal_struck_chronicle',
 }
 
 # Bare variable names are only waved through in the functions known to fill

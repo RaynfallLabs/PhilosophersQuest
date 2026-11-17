@@ -4,23 +4,29 @@ murder people in their sleep for their things, more lines of dialogue").
 
 He is the kobold miser who wears the Bloomleaf Cloak (data/monsters.json
 ``old_nickel``; his AI is ``Monster._stalker_turn``, ai_pattern
-``stalker_coward``). His lines live in data/old_nickel.json, grouped by the
-moment that brings them:
+``stalker_coward``). He is a FALSE FRIEND (Brandon, 2026-11-17: "he
+initially approaches the player and tells him he'll protect him and watch
+his back... then declares his evil intent when the player finally rests").
+His lines live in data/old_nickel.json, grouped by the moment that brings
+them:
 
-* ``sight``: the first time the hero sees him.
-* ``taunt`` (Brandon's rule 2): the hero moves toward him or around him in
-  his sight, at most once every ``line_gap`` turns. The 'taunt' pool, with
-  'iron' while the hero wears or carries iron and 'cloak' (the leaves he tore
-  off a crying Bloomsaur), is said without repeats; once it has run out he
-  says the 'recurring' lines, round and round, all of them egging the hero
-  on to lie down and rest.
-* ``dash``: he darts in on a hero who rests or is helpless, by what holds the
-  hero ('dash_groups'); ``dash_unseen`` when the hero cannot see him, which
-  never names him.
-* ``prey_strike``: his blow on a hero at rest or helpless; ``strike``: now
-  and then, his blow in a fight.
-* ``cornered``, ``struck`` (the first time he is hurt), ``hurt`` (once at
-  each share of ``hurt_at``) and ``death``.
+* The friend, from first sight until the act drops:
+  - ``sight``: the first time the hero sees him, an offer of help;
+  - rule 2, the hero moves toward him or around him in his sight, at most
+    once every ``line_gap`` turns: 'offer' and the 'aside' lines he mutters
+    under his breath (with 'aside_iron' while the hero has iron), each once;
+    then 'friend_recurring' round and round, urging the hero to rest.
+* ``reveal``: the hero rests, sleeps or is helpless near him, and the act
+  drops for good before the sneak attack; ``reveal_struck``: the hero
+  struck him first.
+* Revealed, he is openly what he is: rule 2 says 'taunt' and 'cloak' (with
+  'iron' while the hero has iron), each once, then 'recurring', waiting
+  for the hero to sleep. ``dash``: he darts in on a hero at rest or
+  helpless again, by what holds the hero ('dash_groups'); ``dash_unseen``
+  when the hero cannot see him, which never names him. ``prey_strike``: his
+  blow on a hero at rest or helpless; ``strike``: now and then, his blow in
+  a fight. ``cornered``, ``struck`` (the first time he is hurt after the
+  act drops), ``hurt`` (once at each share of ``hurt_at``) and ``death``.
 
 What he has said is kept on him (``m._voice``), so it is saved with him.
 Pure module: no pygame, no Game. The game says the lines
@@ -83,31 +89,58 @@ def pick_once(m, moment: str, rng, group: str = '') -> str:
     return line
 
 
-def taunt_pool(iron: bool) -> list:
-    """Rule 2's pool: the taunts, the iron lines while the hero has iron,
-    and the cloak lines."""
+def taunt_pool(iron: bool, friendly: bool = False) -> list:
+    """Rule 2's pool. As a friend: his offers and the asides he mutters
+    (about the hero's iron too, while the hero has iron). Revealed: the
+    taunts and the cloak lines, and the iron lines while the hero has
+    iron."""
+    if friendly:
+        pool = lines('offer') + lines('aside')
+        if iron:
+            pool += lines('aside_iron')
+        return pool
     pool = lines('taunt') + lines('cloak')
     if iron:
         pool += lines('iron')
     return pool
 
 
-def taunt(m, rng, iron: bool) -> str:
+def recurring(friendly: bool = False) -> list:
+    """The lines he says round and round once the pool has run out: as a
+    friend, urging the hero to rest; revealed, waiting for him to."""
+    return lines('friend_recurring' if friendly else 'recurring')
+
+
+def is_aside(text: str) -> bool:
+    """A line he mutters under his breath (the friend's asides)."""
+    return text in lines('aside') or text in lines('aside_iron')
+
+
+def taunt(m, rng, iron: bool, friendly: bool = False) -> str:
     """Rule 2: a line of the pool he has not said yet; once the pool has run
-    out, the recurring lines in turn."""
+    out, the recurring lines in turn. The friend's pool and the revealed
+    one are counted apart."""
     v = voice(m)
-    said = v['said'].setdefault('taunt', [])
-    left = [t for t in taunt_pool(iron) if t not in said]
+    key = 'friend' if friendly else 'taunt'
+    said = v['said'].setdefault(key, [])
+    left = [t for t in taunt_pool(iron, friendly) if t not in said]
     if left:
         line = rng.choice(left)
         said.append(line)
         return line
-    rec = lines('recurring')
+    rec = recurring(friendly)
     if not rec:
         return ''
-    i = int(v.get('recurring', 0) or 0)
-    v['recurring'] = i + 1
+    rkey = f'{key}_recurring'
+    i = int(v.get(rkey, 0) or 0)
+    v[rkey] = i + 1
     return rec[i % len(rec)]
+
+
+def reveal_line(m, why: str, rng) -> str:
+    """The line that drops the act: 'prey' (the hero rests, sleeps or is
+    helpless) or 'struck' (the hero struck him first)."""
+    return pick_once(m, 'reveal_struck' if why == 'struck' else 'reveal', rng)
 
 
 def taunt_due(m, turn: int) -> bool:
@@ -190,5 +223,8 @@ def carries_iron(player) -> bool:
     return False
 
 
-def seen_chronicle() -> str:
-    return str(data().get('seen_chronicle', '') or '')
+def chronicle(moment: str) -> str:
+    """A Journal line: 'seen' (he offered to guard the hero), 'prey' (the
+    act dropped as the hero rested) or 'struck' (as the hero struck him)."""
+    key = {'prey': 'reveal', 'struck': 'reveal_struck'}.get(moment, moment)
+    return str(data().get(f'{key}_chronicle', '') or '')

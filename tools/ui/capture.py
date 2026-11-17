@@ -3749,7 +3749,7 @@ def _(g):
 
 @scene('play_old_nickel', 'Play',
        'Old Nickel, the kobold in the Bloomleaf Cloak, a few steps off in the same room: '
-       'his first-sight sign and his first line, floating over him (close zoom).', expect='player')
+       "his first-sight sign and the false friend's first offer, floating over him (close zoom).", expect='player')
 def _(g):
     import emberpup_encounter as ep
     import old_nickel

@@ -123,6 +123,12 @@ def parts(m, key: str) -> tuple:
     d = data()
     e = d['effects'][key]
     sign, does, counter = e.get('sign', ''), e.get('does', ''), e.get('counter', '')
+    if key == 'stalker' and not getattr(m, '_revealed', False):
+        # The false friend before the act drops (Old Nickel): a smile, an
+        # offer to keep watch. What he is, only for a hero who knows.
+        sign = e.get('sign_friend', sign)
+        does = e.get('does_friend', does)
+        counter = e.get('counter_friend', counter)
     if key == 'splits':
         spec = getattr(m, 'splits', None)
         by = spec.get('by', 'weak_blow') if isinstance(spec, dict) else 'weak_blow'

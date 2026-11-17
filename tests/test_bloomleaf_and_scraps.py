@@ -410,6 +410,7 @@ def test_cornered_he_turns_on_the_hero():
             t = (x0 + dx, y0 + dy)
             g.dungeon.tiles[t[1]][t[0]] = WALL if (dx < 0 or dy < 0) else FLOOR
     g.dungeon.fixture_blocks = frozenset()
+    nick._revealed = True                      # (the false friend never strikes)
     g.player.x, g.player.y = x0 + 1, y0 + 1
     g._refresh_fov()
     assert nick.take_turn(g.player, g.dungeon, g.monsters) is True

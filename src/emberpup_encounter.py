@@ -609,15 +609,24 @@ class EmberpupMixin:
 #     his hoard (Monster._wary_home, the tile Monster._hoard): he goes back
 #     to it when he has lost the hero, and is found there again when the hero
 #     comes back to the floor (``_old_nickel_home_again``).
-#   * He is a stalking coward (ai_pattern stalker_coward, Monster._stalker_turn):
-#     he follows the hero a few tiles off, backs away from him toward his
-#     hoard, strikes only when he is cornered with the hero beside him, and
-#     darts in at double speed on a hero who rests, sleeps or is paralysed,
-#     confused or stunned. Cornered, he is a real fight for his floor.
-#   * He talks (old_nickel.py, data/old_nickel.json): the first sight of the
-#     hero, a line as the hero comes at him or round him, then the lines that
-#     egg him on to rest; as he darts in, as he strikes, cornered, struck,
-#     hurt, and dying (``_old_nickel_turn``, ``_old_nickel_blow``).
+#   * He is a false friend, then a stalking coward (ai_pattern stalker_coward,
+#     Monster._stalker_turn). From first sight he comes up to the hero, keeps
+#     two tiles off, offers to watch his back and urges him to rest, and never
+#     strikes the hero (he stabs a wounded monster busy with the hero, once
+#     and safely, to look the helper). When the hero rests, sleeps or is
+#     paralysed, confused or stunned near him, he darts in at double speed
+#     still smiling, and as he reaches him the act drops for good: a shout,
+#     and a sneak attack three times as hard (no cap: it can kill). Struck
+#     first, the act drops too. After that he follows the
+#     hero a few tiles off, backs away from him toward his hoard, strikes
+#     only when cornered with the hero beside him, and darts in again on a
+#     hero at rest. Cornered, he is a real fight for his floor.
+#   * He talks (old_nickel.py, data/old_nickel.json): as the friend, an offer
+#     at first sight, then offers and asides under his breath as the hero
+#     comes at him or round him, then the lines urging him to rest; the line
+#     that drops the act; then the taunts, as he darts in, as he strikes,
+#     cornered, struck, hurt, and dying (``_old_nickel_turn``,
+#     ``_old_nickel_blow``).
 #   * He drops the cloak, identified (treasure.unique_drop_id, and
 #     special_properties.arrives_known in Game._spawn_unique_item); if a kill
 #     path gave nothing (a banishment takes his goods with him), the cloak is
@@ -851,6 +860,8 @@ class BloomleafMixin:
                     m.__dict__.pop(old, None)
                 if m.__dict__.get('_hoard') is None:
                     m._hoard = m._hoard_tile() or (m.x, m.y)
+                # One already in a fight with the hero has dropped the act.
+                m._revealed = bool(m.__dict__.get('_provoked') or m.__dict__.get('_struck'))
 
     def _old_nickel_home_again(self, m):
         """The hero has come back to his floor: Nickel went back to his
@@ -880,30 +891,39 @@ class BloomleafMixin:
                 m._path = None
                 return
 
-    def _old_nickel_say(self, m, text: str, kind: str = 'warning'):
+    def _old_nickel_say(self, m, text: str, kind: str = 'warning', aside: bool = False):
         """One of his lines: in the log after his name, and floating over him
-        (the speech bubble the Black Knight and the Stray Kids speak in)."""
+        (the speech bubble the Black Knight and the Stray Kids speak in). An
+        aside (the friend muttering about shinies) is said under his breath,
+        and floats in brackets."""
         if not text:
             return
         from monster import the_name
         import old_nickel
-        self.add_message(f'{the_name(m)}: "{text}"', kind)
+        who = f'{the_name(m)}, under his breath' if aside else the_name(m)
+        self.add_message(f'{who}: "{text}"', kind)
         try:
             import pygame
             now = pygame.time.get_ticks()
         except Exception:
             now = 0
         from black_knight import SPEECH_MS
-        self._bk_speech = {'text': text, 'knight': m, 'until': now + SPEECH_MS,
-                           'turn': getattr(self, 'turn_count', 0)}
+        self._bk_speech = {'text': f'({text})' if aside else text, 'knight': m,
+                           'until': now + SPEECH_MS, 'turn': getattr(self, 'turn_count', 0)}
         old_nickel.mark(m, getattr(self, 'turn_count', 0))
 
     def _old_nickel_turn(self, m, pos_before, did_attack: bool = False):
         """After his turn: at most one line, for what the hero did and what
-        his own turn did (Monster._stalk_event). Rule 2: the hero coming at
-        him or round him in his sight brings a line, at most one in
-        ``line_gap`` turns: the pool without repeats, then the lines that
-        egg him on to rest."""
+        his own turn did (Monster._stalk_event, _stalk_reveal).
+
+        The friend (until the act drops): an offer of help at first sight
+        (and the Journal's line), then rule 2, the hero coming at him or round
+        him in his sight, at most one line in ``line_gap`` turns: his offers
+        and his muttered asides without repeats, then the lines urging the
+        hero to rest. The reveal: the line that drops the act (and the
+        Journal's), once. Revealed: as the hero comes at him, the taunts
+        without repeats, then the lines waiting for him to sleep; darting in,
+        cornered, struck, hurt."""
         import old_nickel
         if not getattr(m, 'alive', False):
             return
@@ -917,7 +937,35 @@ class BloomleafMixin:
         last_ev, v['last_event'] = v.get('last_event', ''), ev
         if ev not in ('dash', 'prey'):
             v['dash_told'] = False
+        reveal = str(m.__dict__.pop('_stalk_reveal', '') or '')
+        revealed = bool(m.__dict__.get('_revealed', False))
         seen = self._sees_monster(m)
+        if reveal:
+            # The act drops: the line that says what he is, and the Journal's.
+            v['dash_told'] = True
+            if reveal == 'struck':
+                v['struck'] = True
+            v['sight'] = True                    # (no friendly greeting now)
+            if seen:
+                self._old_nickel_say(m, old_nickel.reveal_line(m, reveal, rng), 'danger')
+                self._chron('person', old_nickel.chronicle(reveal), person='old_nickel',
+                            once='old_nickel:reveal')
+            elif reveal == 'prey':
+                self.add_message(old_nickel.dash_line(m._stalk_prey, False, rng), 'danger')
+            return
+        # The friend's stab at a wounded monster busy with the hero (Monster.
+        # _stalker_help): the blow, his helper line, and a kill if it was one.
+        hit = m.__dict__.pop('_help_hit', None)
+        if hit:
+            victim, dmg = hit
+            if seen:
+                from monster import the_name
+                self.add_message(f"{the_name(m)} darts in and stabs "
+                                 f"{the_name(victim, lower=True)} for {dmg} damage!", 'combat')
+                self._old_nickel_say(m, old_nickel.pick_once(m, 'helper', rng), 'info')
+            if not victim.alive and not getattr(victim, '_kill_handled', False):
+                self._on_monster_killed(victim)
+            return
         if not seen:
             # Unseen, he is never named: only the patter of his feet as he
             # darts in, once a dash.
@@ -929,36 +977,43 @@ class BloomleafMixin:
         if not v.get('sight'):
             v['sight'] = True
             self._old_nickel_say(m, old_nickel.pick_once(m, 'sight', rng))
-            self._chron('person', old_nickel.seen_chronicle(), person='old_nickel',
+            self._chron('person', old_nickel.chronicle('seen'), person='old_nickel',
                         once='old_nickel:seen')
             return
-        if ev == 'dash':
-            if not v.get('dash_told'):
-                v['dash_told'] = True
-                self._old_nickel_say(m, old_nickel.dash_line(m._stalk_prey, True, rng, m), 'danger')
-            return
-        if ev == 'prey':
-            return                     # his blow's own line follows (_old_nickel_blow)
-        if ev == 'cornered':
-            if last_ev != 'cornered':
-                self._old_nickel_say(m, old_nickel.pick_once(m, 'cornered', rng), 'danger')
-            return
-        if m.__dict__.get('_struck') and not v.get('struck'):
-            v['struck'] = True
-            self._old_nickel_say(m, old_nickel.pick_once(m, 'struck', rng), 'danger')
-            return
-        line = old_nickel.hurt_line(m, rng)
-        if line:
-            self._old_nickel_say(m, line)
-            return
+        if revealed:
+            if ev == 'dash':
+                if not v.get('dash_told'):
+                    v['dash_told'] = True
+                    self._old_nickel_say(m, old_nickel.dash_line(m._stalk_prey, True, rng, m), 'danger')
+                return
+            if ev == 'prey':
+                return                     # his blow's own line follows (_old_nickel_blow)
+            if ev == 'cornered':
+                if last_ev != 'cornered':
+                    self._old_nickel_say(m, old_nickel.pick_once(m, 'cornered', rng), 'danger')
+                return
+            if m.__dict__.get('_struck') and not v.get('struck'):
+                v['struck'] = True
+                self._old_nickel_say(m, old_nickel.pick_once(m, 'struck', rng), 'danger')
+                return
+            line = old_nickel.hurt_line(m, rng)
+            if line:
+                self._old_nickel_say(m, line)
+                return
         if (old_nickel.came_on(prev_hero, hero, pos_before or (m.x, m.y))
                 and not m._adjacent_to(p) and old_nickel.taunt_due(m, turn)):
-            self._old_nickel_say(m, old_nickel.taunt(m, rng, old_nickel.carries_iron(p)))
+            line = old_nickel.taunt(m, rng, old_nickel.carries_iron(p), friendly=not revealed)
+            # The friend is all smiles; what he is shows only in his asides.
+            self._old_nickel_say(m, line, 'warning' if revealed else 'info',
+                                 aside=not revealed and old_nickel.is_aside(line))
 
     def _old_nickel_blow(self, m, dmg: int):
         """After one of his blows: on a hero at rest or helpless always a
-        line, in a fight now and then."""
+        line, in a fight now and then. The sneak attack has had its line (the
+        reveal) before it."""
         import old_nickel
+        if m.__dict__.pop('_last_sneak', False):
+            return
         if not dmg and getattr(m, '_last_attack_type', None) is None:
             return                     # a miss
         prey = m._stalk_prey if m.__dict__.get('_stalk_event') == 'prey' else ''

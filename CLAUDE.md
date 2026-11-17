@@ -80,7 +80,7 @@ src/
   stray_kids.py       - The Stray Kids easter egg (floors 8-12): the zombie band's dance-off rules (Simon Says rounds, strikes, the earworm), the stage, the stars
   game_stray_kids.py  - StrayKidsMixin: the idol, the Zombie Stage trip, the dance-off (Simon Says on the shared dance screen), the photo's show
   emberpup_encounter.py - The abandoned Emberpup (floors 3-8): three feeds, the Bloomleaf Cloak won from Old Nickel; he keeps it
-  old_nickel.py       - Old Nickel's voice (data/old_nickel.json): first sight, a paced line as the hero comes at him, then the lines that egg him to rest; his AI is Monster._stalker_turn (ai_pattern stalker_coward)
+  old_nickel.py       - Old Nickel's voice (data/old_nickel.json): the false friend's offers, asides and rest urges, the reveal that drops the act, then the open killer's taunts; his AI is Monster._stalker_turn (ai_pattern stalker_coward)
   mooble_encounter.py - The Mooble (floors 31-45): his side cave, the Starnut Tart, three dance-offs, "I choose you"; his gifts as a pet
   game_mooble_dance.py - MoobleDanceMixin: the dance screen (practice, the dance-off, his danced special), the beat, real-time keys
   rhythm.py           - Any dance scored, pure: the beat timeline (with or without a call), Perfect / Good / Miss, pass mark, score bands
@@ -207,7 +207,7 @@ data/
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
   traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)
-  old_nickel.json   - Old Nickel's lines by moment (sight, taunts, iron, the cloak, the rest lines, darting in, striking, hurt, dying) and their pacing
+  old_nickel.json   - Old Nickel's lines by phase and moment (the friend's offers and asides, the reveal, then taunts, iron, the cloak, darting in, striking, hurt, dying), their pacing and Journal lines
   mooble.json       - The Mooble: his floors, lines, the dance (windows, pass mark, phrases and tempi) and his pet species
   bococho.json      - The Bococho: the camp, Varro, the race's numbers and words, the pet, her saddlebags, riding
   songs.json        - Songs the hero plays: the track, its length, its power, its lines (from Brandon's lyrics)

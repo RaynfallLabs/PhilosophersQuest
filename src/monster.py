@@ -729,15 +729,22 @@ class Monster:
         self.quarrels_when_struck_by_thrown: int = int(
             defn.get('quarrels_when_struck_by_thrown', 0) or 0)
         # The stalking coward (ai_pattern 'stalker_coward', data 'stalker':
-        # Old Nickel, who wears the Bloomleaf Cloak; _stalker_turn). He
-        # strikes only a hero beside him he cannot back away from; he backs
-        # off from a hero who comes at him and follows one who walks away,
-        # a few tiles off; and he darts in on a hero who rests or lies
-        # helpless. `_wary_home` is his own room (his hoard: set where he is
+        # Old Nickel, who wears the Bloomleaf Cloak; _stalker_turn). A false
+        # friend until `_revealed`: he comes up to the hero and never
+        # strikes. The act drops (for good) when the hero rests or lies
+        # helpless near him, and his sneak attack follows (`_sneak_ready`),
+        # or when the hero strikes him first; `_stalk_reveal` is why, for
+        # the game's line. Revealed, he strikes only a hero beside him he
+        # cannot back away from, backs off from a hero who comes at him,
+        # follows one who walks away a few tiles off, and darts in on a hero
+        # at rest. `_wary_home` is his own room (his hoard: set where he is
         # placed), `_hoard` the tile he keeps there; `_provoked` that he has
         # been in a fight (he struck the hero, or was struck); `_stalk_event`
         # what his turn did, for the game's lines (game: _old_nickel_turn).
         self.stalker = defn.get('stalker') or None
+        self._revealed: bool = False
+        self._sneak_ready: bool = False
+        self._stalk_reveal: str = ''
         # 'it', 'he' or 'she' (data/monsters.json; see pronoun() above).
         self.pronoun: str = str(defn.get('pronoun') or kind_pronoun(self.kind))
         self._provoked: bool = False
@@ -807,7 +814,8 @@ class Monster:
         'wary': None, '_provoked': False, '_wary_warned': False, '_wary_home': None,
         '_wary_line': '', 'sight_sign': '',
         'stalker': None, '_hoard': None, '_stalk_lost': 0, '_stalk_seen_at': None,
-        '_stalk_event': '', '_stalk_prey': '',
+        '_stalk_event': '', '_stalk_prey': '', '_revealed': False, '_sneak_ready': False,
+        '_stalk_reveal': '', '_help_wait': 0, '_help_hit': None,
         # Footprint default — every saved Monster from before the
         # multi-tile feature gets (1, 1) automatically. Live Monster
         # instances set this in __init__; pickled instances inherit it
@@ -1514,6 +1522,10 @@ class Monster:
             # Adjacent: tooth and claw. The breath is for the approach.
             close_atks = [a for a in self.attacks if 'breath' not in a.get('name', '').lower()]
             atk = random.choice(close_atks or self.attacks)
+        elif self.__dict__.get('_sneak_ready') and self.stalker:
+            # The sneak attack comes with his first, best blow (Old Nickel's
+            # stolen spear), not a kick.
+            atk = self.attacks[0]
         else:
             atk = random.choice(self.attacks)
         return self._resolve_blow(atk, player)
@@ -1589,8 +1601,17 @@ class Monster:
         if is_breath and player.has_effect('in_pit'):
             return 0, f"{the_name(self)}'s {attack_noun(atk)} passes harmlessly over your pit!"
 
+        # The false friend's sneak attack (data 'stalker', Old Nickel): the
+        # blow as the act drops on a hero at rest never misses its roll, and
+        # lands 'sneak_mult' times as hard (sneak_blow; it can kill).
+        _sneak = bool(self.__dict__.pop('_sneak_ready', False)) and bool(self.stalker)
+        if _sneak:
+            self._last_sneak = True          # (the game's line after it: none)
+
         # -- THAC0 Attack Roll ----------------------------------------------
         d20 = random.randint(1, 20)
+        if _sneak:
+            d20 = 20
         # A touch ignores body armour and shield (bug bash 3.3.2, 3e "touch
         # AC"): the gloves guard against it instead (guards.py).
         import guards as _guards
@@ -1629,8 +1650,9 @@ class Monster:
             return 0, f"{the_name(self)} flails blindly and misses!"
 
         # Dodge (Dexterity): a blow from beside you can be slipped. Breath,
-        # spit and thrown things cannot, and nor can a gaze (handled above).
-        if not is_breath and self._slipped(player, atk):
+        # spit and thrown things cannot, and nor can a gaze (handled above),
+        # nor a friend's knife you never saw coming.
+        if not is_breath and not _sneak and self._slipped(player, atk):
             return 0, f"You slip {the_name(self, lower=True)}'s blow."
 
         # Displacement's 30% miss is rolled once, by the caller in game_combat
@@ -1638,7 +1660,7 @@ class Monster:
 
         # Bracers of Parrying (enchantments.py): a blow from beside you that
         # would land is parried. Not a breath, a missile, a gaze or a voice.
-        if _guards.delivery(atk) in ('blow', 'bite', 'sting', 'trample', 'grapple', 'touch'):
+        if _guards.delivery(atk) in ('blow', 'bite', 'sting', 'trample', 'grapple', 'touch') and not _sneak:
             try:
                 import enchantments as _ench
                 _parry = _ench.might(player, 'parrying')
@@ -1765,7 +1787,7 @@ class Monster:
         # A blow that is worse on a held hero (the mara's trample on a
         # sleeper): {"bonus_vs": {"sleeping": 1.5}} on the attack.
         _held_note = ''
-        for _eff, _mult in (atk.get('bonus_vs') or {}).items():
+        for _eff, _mult in ((atk.get('bonus_vs') or {}).items() if not _sneak else ()):
             if player.has_effect(_eff):
                 dmg = max(1, int(round(dmg * float(_mult))))
                 _held_note = f" It comes down on you while you are {_eff.replace('_', ' ')}!"
@@ -1786,6 +1808,9 @@ class Monster:
         _keep_d, _keep_r, _guard_piece = _guards.guard_keep(player, atk)
         if _keep_d < 1.0 and dmg > 0:
             dmg = max(1, int(round(dmg * _keep_d)))
+        if _sneak:
+            dmg = self.sneak_blow(dmg, player)
+            _held_note = " A friend's blow: you never saw it coming!"
         actual = player.take_damage(dmg, atk_type)
 
         if getattr(self, '_unseen', False) is True:
@@ -2568,28 +2593,49 @@ class Monster:
         """The stalking coward's turn (data 'stalker': Old Nickel; Brandon,
         2026-11-17). True when he strikes the hero this turn.
 
+        The FALSE FRIEND, until `_revealed` (Brandon: "he initially
+        approaches the player and tells him he'll protect him and watch his
+        back"): he comes up to the hero and keeps 'friend_keep' tiles off, a
+        step back when the hero comes beside him (never more), and never
+        strikes, cornered or not.
+
+        The REVEAL, for good: a hero at rest (the wait key this turn:
+        senses.TURN.rested) or held by one of his 'prey_on' statuses
+        (asleep, paralysed, confused, stunned), that he sees or hears within
+        'hears_prey' tiles (a sleeper's breath carries). He darts in at
+        'dash_steps' steps a turn, still smiling, and drops the act only the
+        moment he reaches him: his blow that same moment is the sneak attack
+        (`_sneak_ready`, Monster._resolve_blow), sudden and vicious. Struck
+        first, he drops it too, with no sneak attack. Until then the friend
+        also helps where it is safe (_stalker_help): one stab at a wounded
+        monster busy with the hero.
+
+        Revealed (rules 1-5):
         1. He strikes only a hero beside him, and only when he cannot back
            away from him (a wall or a corner at his back).
-        3. A hero at rest (the wait key this turn: senses.TURN.rested) or held
-           by one of his 'prey_on' statuses (asleep, paralysed, confused,
-           stunned) he darts in on at 'dash_steps' steps a turn, and strikes
-           him the turn he reaches him. He knows of him by his eyes, or by
-           ear within 'hears_prey' tiles: a sleeper's breath carries.
+        3. A hero at rest or helpless he darts in on again, and strikes him
+           the turn he reaches him.
         4. A hero walking away he follows, 'keep' to keep + 'slack' tiles off.
         5. A hero coming at him he backs away from, toward his hoard.
         Out of sight 'lose_after' turns, he goes back to his hoard.
 
         `_stalk_event` says what the turn did, for the game's lines: 'dash',
-        'prey' (the blow on a hero at rest), 'cornered', 'backs', 'follows',
-        'home' or ''."""
+        'creep' (the friend closing on a hero at rest, still smiling), 'prey'
+        (the blow on a hero at rest), 'help' (the friend's stab), 'cornered',
+        'backs', 'follows', 'home' or ''; `_stalk_reveal` ('prey' or
+        'struck') that the act has just dropped."""
         s = self.stalker or {}
-        keep = int(s.get('keep', 3))
-        slack = int(s.get('slack', 1))
-        lose_after = int(s.get('lose_after', 12))
         import senses as _senses
         self._stalk_event = ''
+        revealed = bool(self.__dict__.get('_revealed', False))
         if self.__dict__.get('_struck'):
             self._provoked = True                # he has been in a fight
+            if not revealed:
+                self._stalker_reveal('struck')   # struck first: the act drops
+                revealed = True
+        keep = int(s.get('keep', 3)) if revealed else int(s.get('friend_keep', 2))
+        slack = int(s.get('slack', 1)) if revealed else 0
+        lose_after = int(s.get('lose_after', 12))
         # He watches with his eyes, as every creature does (senses.sees: an
         # invisible hero, or one in the Boots of Elvenkind past half his
         # reach, is not seen; nor one a worn legend hides; bug bash WB-C05).
@@ -2605,13 +2651,15 @@ class Monster:
         else:
             self._stalk_lost = int(self.__dict__.get('_stalk_lost', 0) or 0) + 1
 
-        # 3. A hero at rest or helpless: he darts in and strikes.
+        # 3. A hero at rest or helpless: he darts in. The friend, still
+        # smiling, drops the act only the moment he reaches him, and strikes
+        # that same moment (Brandon: "sudden and vicious, never slow").
         prey = '' if hidden else self._prey_of(player, s)
         if prey and (seen or dist <= int(s.get('hears_prey', 6))):
             self._stalk_prey = prey
             self._tracking = True
             if not self._adjacent_to(player):
-                self._stalk_event = 'dash'
+                self._stalk_event = 'dash' if revealed else 'creep'
                 for _ in range(max(1, int(s.get('dash_steps', 2)))):
                     if not _senses.step_toward(self, dungeon, here, all_monsters,
                                                extra_occupied, player):
@@ -2619,16 +2667,29 @@ class Monster:
                     if self._adjacent_to(player):
                         break
             if self._adjacent_to(player):
+                if not revealed:
+                    self._stalker_reveal('prey')
+                    self._sneak_ready = True     # this blow: the sneak attack
                 self._provoked = True
                 self._stalk_event = 'prey'
                 return True
             return False
         self._stalk_prey = ''
+        self._sneak_ready = False                # he got up first: no sneak attack
 
-        # 1 and 5. Beside him: he backs off if he can; cornered, he strikes.
+        # The friend helps, where it is safe: a stab at a wounded monster
+        # busy with the hero, and back again.
+        if not revealed and seen and self._stalker_help(player, dungeon, all_monsters,
+                                                        extra_occupied, s):
+            return False
+
+        # 1 and 5. Beside him: he backs off if he can; cornered, he strikes
+        # (the friend never does: he steps back, or stays and smiles).
         if self._adjacent_to(player):
             if self._stalker_step_away(player, dungeon, all_monsters, extra_occupied):
                 self._stalk_event = 'backs'
+                return False
+            if not revealed:
                 return False
             self._provoked = True
             self._tracking = True
@@ -2655,11 +2716,86 @@ class Monster:
             if self._stalker_step_away(player, dungeon, all_monsters, extra_occupied):
                 self._stalk_event = 'backs'
             return False
-        # 4. Too far: he follows.
+        # 4. Too far: he follows (the friend comes up to the hero).
         if dist > keep + slack:
             if _senses.step_toward(self, dungeon, here, all_monsters, extra_occupied, player):
                 self._stalk_event = 'follows'
         return False
+
+    def _stalker_reveal(self, why: str) -> None:
+        """The act drops, for good: 'prey' (the hero at rest or helpless) or
+        'struck' (the hero struck him first). The game says the line."""
+        self._revealed = True
+        self._stalk_reveal = str(why)
+        self._tracking = True
+
+    def sneak_blow(self, dmg: int, player=None) -> int:
+        """The sneak attack's damage: 'sneak_mult' times the blow (data
+        'stalker'). No cap: it can kill (Brandon, 2026-11-17: "We're not
+        running a charity here")."""
+        s = self.stalker or {}
+        return max(1, int(round(dmg * float(s.get('sneak_mult', 3.0)))))
+
+    def _safe_to_stab(self, m, player, spec) -> bool:
+        """Will the friend dare strike this monster? Only a hostile, ordinary
+        one, at or under 'help_below' of its health, that will not be hitting
+        him: busy with the hero (beside him) or held fast. Never one at full
+        health, never one free to hit him back, never a story creature."""
+        if m is self or not getattr(m, 'alive', False):
+            return False
+        if (getattr(m, 'is_allied', False) or getattr(m, 'is_escort', False)
+                or getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)
+                or getattr(m, '_is_unicorn', False) or getattr(m, 'stationary', False)
+                or m._is_named_foe() or getattr(m, 'ai_pattern', '') == 'stalker_coward'):
+            return False
+        if not m.__dict__.get('_aware') or getattr(m, '_unseen', False):
+            return False                          # not in the hero's fight
+        max_hp = max(1, int(getattr(m, 'max_hp', 1) or 1))
+        if m.hp >= max_hp or m.hp > max_hp * float(spec.get('help_below', 0.5)):
+            return False
+        held = any(m.has_effect(e) for e in ('sleeping', 'paralyzed', 'stunned', 'frozen',
+                                             'stuck_in_pit', 'impaled', 'immobilized'))
+        return m._adjacent_to(player) or held or getattr(m, 'ai_pattern', '') == 'sessile'
+
+    def _stalker_help(self, player, dungeon, all_monsters, extra_occupied, spec) -> bool:
+        """The friend's stab (Brandon: "he attacks monsters too, during the
+        friendly act, but only when it's SAFE"): a monster _safe_to_stab within
+        his dart, at most once in 'help_gap' turns. He darts in, strikes it
+        once with his first attack, and darts back a step. The game says the
+        helper line and the blow (`_help_hit`: (victim, damage)). True if he
+        struck."""
+        import senses as _senses
+        gap = int(spec.get('help_gap', 4))
+        self._help_wait = int(self.__dict__.get('_help_wait', 0) or 0) - 1
+        if self._help_wait > 0 or not self.attacks:
+            return False
+        steps = max(1, int(spec.get('dash_steps', 2)))
+        near = [m for m in all_monsters or ()
+                if max(abs(m.x - self.x), abs(m.y - self.y)) <= steps + 1
+                and self._safe_to_stab(m, player, spec)]
+        if not near:
+            return False
+        target = min(near, key=lambda m: (m.hp / max(1, m.max_hp),
+                                          max(abs(m.x - self.x), abs(m.y - self.y))))
+        used = 0
+        while not target._adjacent_to(self) and used < steps:
+            if not _senses.step_toward(self, dungeon, (target.x, target.y), all_monsters,
+                                       extra_occupied, player):
+                break
+            used += 1
+        if not target._adjacent_to(self):
+            return False
+        from dice import roll
+        dmg = target.take_damage(roll(self.attacks[0].get('damage', '1d3')),
+                                 self.attacks[0].get('type', 'physical'))
+        self._help_hit = (target, dmg)
+        self._help_wait = gap
+        self._stalk_event = 'help'
+        if used < steps:
+            # (back a step from it, never onto the hero)
+            self._stalker_step_away(target, dungeon, all_monsters,
+                                    set(extra_occupied or ()) | {(player.x, player.y)})
+        return True
 
     @staticmethod
     def _prey_of(player, spec) -> str:

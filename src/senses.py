@@ -825,7 +825,9 @@ def status_line(m) -> str:
     if m.__dict__.get('_scavenge') and not m.__dict__.get('_tracking'):
         return _fill(m, lines.get('feeding', lines['unaware']))
     if getattr(m, 'ai_pattern', '') == 'stalker_coward' and m.__dict__.get('_tracking'):
-        return _fill(m, lines.get('stalking', lines['hunting']))
+        # The false friend, then the stalker he is (Old Nickel).
+        key = 'stalking' if m.__dict__.get('_revealed') else 'stalking_friend'
+        return _fill(m, lines.get(key, lines['hunting']))
     if m.__dict__.get('_tracking'):
         return _fill(m, lines['hunting'])
     if m.__dict__.get('_goal') is not None:
