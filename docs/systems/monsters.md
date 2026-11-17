@@ -44,7 +44,7 @@ Every monster is an instance of the single `Monster` class. Behavioural differen
 Bosses, seal demons, forced quest spawns, and the four orphan legendaries carry `peak_weight: 0`. They are placed by `level_manager` / `boss_levels` / mystery/encounter paths, never from `_build_spawn_pool`. The field is overloaded: `peak_weight > 0` means "procedurally spawnable at depth"; `peak_weight == 0` means "someone else places this."
 
 ### Mini-boss PRE-ROLLING
-On run start, `LevelManager.__init__` calls `_roll_planned_mini_bosses()`, which iterates five 20-floor bands (`1-20`, `21-40`, `41-60`, `61-80`, `81-100`) and in each band fills a primary slot (90% chance) and a secondary slot (30% chance). Each slot picks weighted by `spawn_chance`. Expected total per 100-floor run: 5 × 1.2 = **6 mini-bosses**, range 4-8. The placement floor is the chosen mini-boss's `peak_floor` (shifted ±1 if it collides with a boss floor or a planned slot). This replaces first-eligible-wins greedy placement — now every band member has weighted odds every run.
+On run start, `LevelManager.__init__` calls `_roll_planned_mini_bosses()` (the pure `level_manager.plan_mini_bosses`), which iterates five 20-floor bands (`1-20`, `21-40`, `41-60`, `61-80`, `81-100`), one per gate boss's domain, and in each band fills a FIRST slot (always) and a SECOND slot (30%): **a run meets one or two named foes in every band**, 6.5 a run (Brandon's ruling 13, 2026-11-16: "maybe one or two every 20 floors"). Each slot picks weighted by `spawn_chance` among the band's candidates (`band_candidates`: every rolled mini-boss whose `peak_floor` lies in the band, the legendary ones included). The placement floor is the chosen mini-boss's `peak_floor`, or the free floor of its band nearest it (`_free_floor`: never a gate, seal or other planned floor). Where each one sits is decided by its legend: see "Mini-bosses by lore" below.
 
 ### Seal demons are FORCED, not rolled
 `_SEAL_DEMON_LEVELS = {83, 85, 87, 89, 91, 93, 97}` → 7 fixed seal-demon ids. `_try_spawn_seal_demon` runs after mini-boss pre-rolling, is-mini-boss aware (the pre-roller ignores `seal_demon_*` ids), and guarantees placement. Each seal-demon kill is tracked in `game.seals_broken`; at 7/7 the game logs the "way to the Pit stands open" Journal entry.
@@ -55,10 +55,10 @@ On run start, `LevelManager.__init__` calls `_roll_planned_mini_bosses()`, which
 ### Multi-tile monsters are NW-anchored rectangles
 The default `footprint` is `[1, 1]` (every regular monster). Five bosses declare `[2, 2]`:
 - `fafnir_dragon` — L58-62, hand-placed in Dragon Hoard (L60).
-- `tiamat` — L85-95, procedural at depth.
-- `surtur` — L87-93, procedural at depth.
-- `ymir_last_spawn` — L82-88, procedural at depth.
-- `hrungnirs_ghost` — L80-85, procedural at depth.
+- `tiamat` — floor 88, a planned mini-boss of the abyss band.
+- `surtur` — floor 90, likewise.
+- `ymir_last_spawn` — floor 78, a planned mini-boss of the frost band (since 2026-11-17).
+- `hrungnirs_ghost` — floor 86, a planned mini-boss of the abyss band.
 
 A multi-tile monster occupies 4 tiles with its anchor at the NW corner. `Monster._can_move_to` validates every footprint tile is walkable (and phase-walls where applicable). `geom.monster_at_tile` / `is_adjacent` / `occupied_tiles` must be used everywhere the game queries "is monster at (x, y)" — a raw `(m.x, m.y)` compare would miss the SE 3 tiles of a 2×2. `boss_levels._spawn_boss` shifts the anchor NW up to 3 tiles if the naïve room center can't fit the whole footprint. `dungeon._footprint_fits` enforces the same at procedural spawn.
 
@@ -81,7 +81,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `peak_floor` | int | default `min_level` | Center of the Gaussian bell. The depth where this monster is most common. |
 | `spread` | int | default 10 | Sigma of the Gaussian. Larger spread = flatter, wider range. Clamped to `>= 1`. |
 | `peak_weight` | float | default 0 | Peak Gaussian weight (common ~ 1-10, rare ~ 0.5). `peak_weight <= 0` ⇒ monster is EXCLUDED from the procedural pool (bosses, seal demons, orphan legendaries). |
-| `spawn_chance` | float | optional | Only read by `_roll_planned_mini_bosses` — the per-slot weight for mini-boss selection. Unrelated to `peak_weight`. |
+| `spawn_chance` | float | optional | Only read by `_roll_planned_mini_bosses` (`plan_mini_bosses`) — the mini-boss's weight in its band's slots; 0 or none keeps a mini-boss out of the plan (hand-placed). The legendary ones carry 0.3 since 2026-11-17 (they ride their band's slots). Unrelated to `peak_weight`. |
 | `frequency` | int | legacy, default 3 | Only consulted inside `_spawn_one_in_room` for pack-size scaling (`freq >= 5` → +1 max). Not the main spawn knob. |
 | `thac0` | int | default `max(-10, 20 - min_level)` | AD&D-style "to-hit AC 0." Lower is more accurate. Since 3.3.2 rebaked to the armour line by `tools/balance/rebake_thac0.py` (a typical monster hits a hero of its floor about 55% of the time; [armour.md](armour.md)). |
 | `thac0_lore` | int | | The written THAC0 before the rebake: the tool always starts from it, keeping half of each monster's accuracy against its band. |
@@ -91,7 +91,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | field | type | notes |
 |---|---|---|
 | `is_boss` | bool | **Read from JSON since v2.18.0.** Grants boss-immunity to charm/paralyze/sleep/confuse via `hero_specials.is_boss_or_huge`. Also lifts `min_hit_chance` from 5% to 25%. Carried by: `abaddon_destroyer`, the 7 `seal_demon_*`, `iron_patriarch`, `whispering_crone`, `blood_archon`. **Fallback:** `max_hp > 500` also counts as boss, regardless of this flag — the hand-crafted boss-level `_spawn_boss` additionally forces `boss.is_boss = True` after construction. |
-| `is_mini_boss` | bool | Candidate for the pre-rolled mini-boss slot system. 36 monsters carry this flag; `_roll_planned_mini_bosses` filters out `seal_demon_*` (forced path) and `spawn_chance <= 0`. **Known overlap:** `blood_archon` + the 7 seal demons carry BOTH `is_boss` and `is_mini_boss` — audited as a conflict P4, kept as-is. |
+| `is_mini_boss` | bool | Candidate for the pre-rolled mini-boss slot system. 44 monsters carry this flag; `_roll_planned_mini_bosses` filters out `seal_demon_*` (forced path) and `spawn_chance <= 0` (32 are rolled). A mini-boss counts as a keystone kind of its family (`family_lore`). **Known overlap:** `blood_archon` + the 7 seal demons carry BOTH `is_boss` and `is_mini_boss` — audited as a conflict P4, kept as-is. |
 | `is_seal_demon` | bool | 7 monsters. On death, `game_combat._drop_treasure` adds the corresponding seal to `game.seals_broken` and writes a Journal line. 7/7 opens the Abyss narrative. |
 | `is_allied` | bool | Allied monster: `heavenly_angel` (does not attack the player; dispatched to `seek_locust` AI), the encounter people and performers, and the horns' allies (below). |
 | `horn` | str | The horn that calls this kind (`data/horns.json`): Robin Hood's men, Arthur's knights, the einherjar, Charlemagne's host. With `is_allied`, `quest_only`, `frequency` 0 and `min_level` 0 it is never spawned or found; on the map it is a `horns.CalledAlly` built from this entry's `hp` and first attack. |
@@ -236,7 +236,7 @@ Every monster carries ONE `family` (one of the 22 in `data/monster_families.json
 | `gold` | [min, max] | Rolled uniformly; `0, 0` yields no gold. |
 | `item_chance` | float | 0..1 chance to drop a procedural common from `_spawn_treasure_item`: half the time gear, half a "magic" item whose class comes from `container_system.DROP_MAGIC_SHARE` (potion 33, accessory 22, scroll 20, wand 20, ammo 5; it went by how many kinds each class has, which made a third of these rings). |
 | `item_tier` | int | 1-5. `_spawn_treasure_item` scales the "effective floor" as `max(1, tier * 5)` and rolls (30% weapon, 10% armor, 10% shield, 50% magic-pool from `accessory`/`wand`/`scroll`/`potion`/`ammo`) excluding uniques. **Cap:** 5. The pre-v2.18.0 catalog had 7 dragon-tier monsters with `item_tier` 6-10 (audit P4); those were clamped to 5 in the v2.18.0 pass. Current catalog is 1=61, 2=99, 3=151, 4=116, 5=100. |
-| `unique_drop_id` | str | Mini-boss fixed drop — looked up by id in the unique-item pools. 20 monsters have one (Talos → `bronze_aegis`, Echidna → `echidna_fang`, Camazotz → `obsidian_talisman`, Cacus → `vulcans_brand`, The Sphinx → `sphinx_crown`, Baba Yaga → `iron_mortar_wand`, Set's Jackal → `anubis_scales`, Charybdis → `sailor's_amulet`, Ravana's Arm → `ring_of_iron_grip`, Wendigo → `wendigo_fang`, Wild Hunt Captain → `hunt_captains_sword`, each of the 7 seal demons → `seal_of_*`, …). |
+| `unique_drop_id` | str | Mini-boss fixed drop (its signature piece) — looked up by id in the unique-item pools, or an enchanted piece made to a spec (`armor:<template>:<material>:<enchantment>:<level>`, the Bonnacon's cloak). Every rolled mini-boss but Tiamat has one (her signature is her boss scroll, the Scroll of Chromatic Doom), of its band's tier: see "Mini-bosses by lore". The seven seal demons drop their `seal_of_*`; Old Nickel the Bloomleaf Cloak. |
 | `boss_scroll_id` | str | Fafnir / Abaddon style — a one-shot scroll of the hoard / abyss. |
 | `ammo_drop` | dict | Archer monsters carry quivers. 8 archers use this: `skeletal_archer`, `bone_archer`, `drow_warrior`, `orc_archer`, `goblin_sniper`, `gnoll_archer`, `bandit_archer`, `shadow_archer`. |
 | `treasure_chance` | float | 0..1 chance to drop one piece of treasure (gem, jewellery, old coin, art; `src/treasure.py`), weighted to the floor like any loot. Written by `tools/balance/gold_by_lore.py` from `purse` (2026-10-18): dragons 0.03-0.09 by age, vampires and liches 0.025, thieves 0.02, leaders x2 (measured with gold_sim.py so treasure is about a tenth of a shallow floor's worth and three quarters of a deep one's). |
@@ -511,12 +511,61 @@ The nine new kinds: Corpse-Swallower (`hraesvelg_eagle`, birds, floor 72), Rime-
 
 Bands = `(1,20), (21,40), (41,60), (61,80), (81,100)`.
 
-Per band:
-1. Collect candidates: `is_mini_boss` **AND** not `seal_demon_*` **AND** `spawn_chance > 0` **AND** `band_lo ≤ peak_floor ≤ band_hi`.
-2. Primary slot (p=0.90): weighted pick by `spawn_chance`. Target floor = `peak_floor`, or `peak_floor - 1` if that collides with a `_BOSS_LEVELS` entry (20/40/60/80/100). Record in `planned[target]`.
-3. Secondary slot (p=0.30): same pool minus the already-placed id. Walk the target forward if it collides with another planned slot or a boss floor; abort if it walks past `band_hi`.
+Per band (`level_manager.plan_mini_bosses`, ruling 13, 2026-11-17):
+1. Candidates (`band_candidates`): `is_mini_boss` **AND** not `seal_demon_*` **AND** `spawn_chance > 0` **AND** `band_lo ≤ peak_floor ≤ band_hi`. The legendary ones (tag `legendary`) are candidates of their band like the rest; until 2026-11-17 each rolled on its own at 50%, all of them in floors 81-100.
+2. FIRST slot (`_MINI_BOSS_FIRST_CHANCE` 1.0): a pick weighted by `spawn_chance`, set on its `peak_floor` or the free floor of its band nearest it (`_free_floor`: the peak, then one below, one above...; never a gate floor, a seal demon's floor or another planned floor).
+3. SECOND slot (`_MINI_BOSS_SECOND_CHANCE` 0.30): the same, among the band's candidates not picked.
+
+So a run meets one or two named foes in every band, never none and never three (`tests/test_mini_bosses_by_lore.py`), 6.5 a run besides the seven seals. **Old saves:** a level manager pickled under the old plan (`_plan_version` 1) is planned again on load for the floors not yet reached (`_replan_ahead`): what is behind the hero or already made is kept, and a band he is part-way through takes new foes only up to its fresh count.
 
 **At floor-generate time** (`_try_spawn_mini_boss`): if `self._planned_mini_bosses[level_num]` is set and that id hasn't been placed yet, pick a middle room (not first or last), find a free walkable tile, instantiate — v2.18.0 added the implicit `is_boss` wire via `Monster.__init__`, so a mini-boss now gets boss-immunity automatically without an explicit `mb.is_boss = True` override at this call site. If his whole footprint fits nowhere (a 2 x 2 legend on a maze floor whose clearings the floor's own monsters fill: Surtur on 90, about one run in fourteen), `_carry_mini_boss` plans him on the next floor not yet made, within five, with no gate boss, seal demon or other planned mini-boss (bug bash 3.5.1; he used to be lost for the run).
+
+## Mini-bosses by lore (2026-11-17)
+
+Brandon's ruling 13 (2026-11-16): "mini-bosses with cool unique drops are supposed to be spread through the whole game, maybe one or two every 20 floors; gear they drop should be depth appropriate... why would they all be concentrated at the end game? Use lore to determine weaker vs later bosses." Before: the rolled roster was 3 / 6 / 5 / 7 / 10 by band (the five legendary ones all in 81-100), a run met 1.2 in each of the first four bands (none one run in ten) and about 3.7 in the last, and the drops' tiers ran from 1 to 5 whatever the floor (a tier-5 lion's hide on floor 55, a tier-2 ring on floor 80).
+
+**Seats** (`tools/balance/mini_boss_seats.py`, `SEATS`, with the reason for each): each band is a gate boss's domain, and a foe sits in the band its legend's might belongs to, in lore order inside it: the weaker legend shallower, the mightier nearer the gate. The domain decides between two bands where the might is close (the winter things are Fenrir's frost; Vulcan's son and the jackal of the red desert the scorched caves). Seats stay off the gate floors, the seal floors and the last floor before a gate (19, 39, 59, 79), where common gear is already the next band's tier. The tool writes `peak_floor`, `min_level` (two above the seat, unless a lore floor two to ten above it was written), `harvest_tier` and `treasure.item_tier` (one above the band, at most 5), `treasure.gold` (0.415-0.77 of a floor's income at the seat, as before) and the drop; `mini_boss_bands.py --write` then re-tunes health, blows and THAC0 against the new floor. The field is 6 / 5 / 6 / 7 / 8 rolled foes by band.
+
+**Drops** (`tools/content/mini_boss_drops_2026_11_17.py`): each mini-boss drops one signature piece of its own legend on the kill, of the tier of its band, tier = (floor - 1) // 20 + 1. Each is `plot_locked` (the named-armour ladder keeps its tier; traders refuse it, thieves skip it as a unique) and its `peak_floor` is its foe's seat; a weapon's base is 1.25 times its class's common median there (`rebase_unique_weapons.py`), and body armour and shields keep the named-armour floor of the seat (`unique_armor_ladder_2026_11.dropped_by_mini_boss`). The census counts a drop on its foe's floor (`tier_census._dropped_by_mini_bosses`) and the simulator picks it up (`difficulty_sim._signature_drop`). Tiamat's signature is her boss scroll (the Scroll of Chromatic Doom, tier 5). Easter eggs are left as they were: Old Nickel's Bloomleaf Cloak (tier 2 on floors 1-8) and the Cow King's Horns (tier 3 from the Cow Level, entered from floors 30-39).
+
+| Band | Floor | Mini-boss | Why here (lore) | Signature drop | Tier | Changed |
+|---|---|---|---|---|---|---|
+| 1 | 6 | Bonnacon | A bull of the bestiaries whose horns cannot hurt anyone; its only weapon is burning dung. The weakest legend there is: the game's first named fight. | Hide Cloak of Greater Elementward I (`armor:cloak:hide:elementward:2`) | 1 | drop tier 2 -> 1 |
+| 1 | 9 | Arachne | A mortal weaver changed into a spider by Athena: cursed, not mighty. | Arachne's Silk Cloak (`arachne_silk_cloak`) | 1 | drop tier 2 -> 1 |
+| 1 | 12 | Calydonian Boar | A boar, if a huge one, sent by Artemis to ravage Calydon. Atalanta's arrow drew its blood and Meleager's spear ended it: mortal hunters of the generation before Troy (it was floor 27). | Hide of the Calydonian Boar (`calydonian_boar_hide`) | 1 | floor 27 -> 12; new drop |
+| 1 | 15 | Lamia | A grieving queen turned child-stealing daemon: a terror of nurseries, not of armies. | The Eyes of Lamia (`eyes_of_lamia`) | 1 | new drop |
+| 1 | 17 | Nemean Lion | The first of Heracles' twelve labours, so before the Lernaean Hydra, his second (floor 23): a beast a mortal hero strangled with his arms (it was floor 55). | Hide of the Nemean Lion (`hide_of_nemean_lion`) | 1 | floor 55 -> 17; drop tier 5 -> 1 |
+| 1 | 18 | Talos | Hephaestus' bronze guard who ran around Crete three times a day: met at the shore of Minos' island, the last guard before the Labyrinth (it was floor 21). | Bronze Aegis (`bronze_aegis`) | 1 | floor 21 -> 18 |
+| 2 | 27 | Polyphemus | Poseidon's son, the shepherd giant of the Odyssey: a man-eater, but beaten with wine and a stake by one mortal. A named giant among the cyclopes of floors 26-30 (new). | Club of Polyphemus (`club_of_polyphemus`) | 2 | new; new drop |
+| 2 | 29 | Erlking | Goethe's elf-king of the night mist: a death spirit who takes a child, not a host. | Mantle of the Erlking (`erlking_mantle`) | 2 | drop tier 3 -> 2 |
+| 2 | 32 | The Iron Patriarch | A mortal tyrant who outlived his heirs in his coronation plate: a man, not a monster, the least of the temple floors' legends (he was floor 42). | The Patriarch's Gavel (`patriarchs_gavel`) | 2 | floor 42 -> 32; new drop |
+| 2 | 34 | Camazotz | The death bat of Xibalba's House of Bats: a god's creature in a temple of the dead. | Obsidian Talisman (`obsidian_talisman`) | 2 | drop tier 3 -> 2 |
+| 2 | 37 | Echidna | The mother of monsters, Hesiod's kin of the Gorgons, in the deepest part of their temple: her brood is met around her (the Hydra 23, the Chimera 31) and after her (the Sphinx 44). She was floor 24. | Echidna's Fang (`echidna_fang`) | 2 | floor 24 -> 37 |
+| 3 | 42 | Stheno the Gorgon | Medusa's immortal sisters: when Perseus fled with her head they rose and chased him. They come for her killer the floors after hers (they were floor 67). | Brazen Hands of Stheno (`brazen_hands_of_stheno`) | 3 | floor 67 -> 42; new drop |
+| 3 | 44 | The Sphinx | The riddler on the road to Thebes, whom the city could not beat for years and Oedipus beat with one answer: a monster of the heroic age, met after Echidna, whose brood Hesiod makes her (kept at 44). | Sphinx's Crown (`sphinx_crown`) | 3 | drop tier 2 -> 3 |
+| 3 | 47 | Cacus | Vulcan's fire-breathing son in his smoking cave on the Aventine: the scorched caves are his (he was floor 39). | Vulcan's Brand (`vulcans_brand`) | 3 | floor 39 -> 47 |
+| 3 | 50 | Rangda | Bali's widow-witch, queen of the leyaks, who fights the Barong forever and never loses. | Rangda's Keris (`rangdas_keris`) | 3 | new drop |
+| 3 | 53 | Set's Jackal | The beast of Set, lord of the red desert and of storms: the scorched place is his country (it was floor 69). | Anubis's Scales (`anubis_scales`) | 3 | floor 69 -> 53; drop tier 2 -> 3 |
+| 3 | 58 | Baba Yaga | The iron-toothed witch whose hut walks on chicken legs: older than any kingdom, met at the dragon's door. | Baba Yaga's Iron Mortar (`iron_mortar_wand`) | 3 | floor 60 -> 58; drop tier 4 -> 3 |
+| 4 | 62 | The Whispering Crone | A fortune-teller buried alive whose dead come at her call. | The Crone's Burial Veil (`crones_burial_veil`) | 4 | new drop |
+| 4 | 66 | Jörmungandr (Juvenile) | Fenrir's own brother, the World Serpent, young. | Serpent Scale Mail (`serpent_scale_mail`) | 4 | drop tier 5 -> 4 |
+| 4 | 69 | Wendigo | The winter hunger of the northern forests, whose heart is ice: the frost is its country (it was floor 85). | Wendigo's Fang (`wendigo_fang`) | 4 | floor 85 -> 69; drop tier 5 -> 4 |
+| 4 | 74 | The Green Knight | Morgan le Fay's enchanted knight, who keeps his chapel at the turn of the year, in the snow. | The Green Girdle (`green_girdle`) | 4 | drop tier 5 -> 4 |
+| 4 | 76 | Wild Hunt Captain | The riders of the winter storm, Wotan's or Herne's: the frost is theirs (he was floor 90). | Hunt Captain's Sword (`hunt_captains_sword`) | 4 | floor 90 -> 76; drop tier 5 -> 4 |
+| 4 | 77 | Charybdis | The whirlpool that swallows the sea three times a day, opposite Scylla (74). | Sailor's Amulet (`sailors_amulet`) | 4 | floor 78 -> 77; drop tier 2 -> 4 |
+| 4 | 78 | Ymir's Last Spawn | A frost giant of the first morning, before the flood of Ymir's blood: the mightiest of the frost, met at Fenrir's door (it was floor 85). | Vambraces of the First Winter (`vambraces_of_the_first_winter`) | 4 | floor 85 -> 78; drop tier 5 -> 4 |
+| 5 | 82 | Ravana's Arm | One arm of Ravana, king of the rakshasas, that did not die with him: a demon's remnant, the least of the abyss. | Ring of Iron Grip (`ring_of_iron_grip`) | 5 | floor 80 -> 82; drop tier 2 -> 5 |
+| 5 | 84 | Blood Archon | An older grade of fiend who keeps his ledger in blood. | The Exsanguinating Blade (`exsanguinating_blade`) | 5 | floor 82 -> 84; new drop |
+| 5 | 86 | Hrungnir's Ghost | The strongest of the giants, whom only Thor's hammer broke, walking again. | Hrungnir's Stone Shield (`hrungnirs_stone_shield`) | 5 | floor 82 -> 86 |
+| 5 | 88 | Tiamat the Five-Headed Dragon Queen | The salt sea of the Enuma Elish, mother of gods and monsters: the abyss itself. | Scroll of Chromatic Doom (`scroll_of_chromatic_doom`) | 5 | floor 85 -> 88 |
+| 5 | 90 | Surtur the Fire Giant Lord | The fire giant who burns the world at Ragnarok. | Surtur's Ember Mantle (`mantle_of_muspelheim`) | 5 | kept |
+| 5 | 92 | Anansi | The spider who bought every story in the world from Nyame, the Sky God himself, and paid in full: a trickster of the gods' own rank, among the gods and the world's end (kept at 92). | Anansi's Web Cloak (`anansi_web_cloak`) | 5 | kept |
+| 5 | 94 | Asmodeus, Prince of Hell | A prince of Hell, the last great fiend before the Pit. | Ruby Rod of Asmodeus (`ruby_rod`) | 5 | floor 93 -> 94 |
+| 5 | 96 | Níðhöggr Fragment | The corpse-gnawer at the root of the World Tree, who flies on after Ragnarok: the last thing before the end. | Nidhoggr's Scale (`nidhoggr_scale`) | 5 | floor 95 -> 96 |
+
+**Polyphemus** (new, floor 27): the Cyclops of the Odyssey, a named giant among the cyclopes of floors 26-30. His Olive-Trunk Club stuns and he hurls crags from range; blunt blows are wasted on him, the stake's point is not, and he falls to wine and a blinding (`status_weak` confused and blinded, his `family_affinity.json` kind entry). Family giants (a keystone kind), kin of the cyclopes in the kitchen (Cyclops Mutton Links), size huge, art `assets/tiles/monsters/polyphemus.png` (brief `tools/content/genart/briefs/mini_bosses_2026_11_17.json`), the Seeker's `quest_polyphemus` with its badge.
+
+**The kitchen** (`tools/content/kitchen/mini_boss_kitchen_2026_11_17.py`): the moved foes' parts moved with them; two dishes that no longer span the floors lost their cross-depth flag, and the build was re-run. The Sphinx stays at 44 and Anansi at 92 so the Wisdom stat dishes stay spread across the tiers.
 
 ## Seal demons
 
@@ -538,13 +587,13 @@ Note: there is NO seal-demon on floor 95. The levels are prime-ish by narrative 
 
 Brandon: "are our mini-bosses still working and tuned?" They were placed (every planned one, 331 of 331) but not tuned: after the weapon curve (2026-11-12) the mastery hero killed every band mini-boss, legendary wanderer and seal demon in 1 to 5 of his attacks for a median 0-15% of his health. "Yes, tune them."
 
-**Who.** `tools/balance/mini_boss_bands.py` owns 38 foes (`roster()`): the 26 band mini-bosses `_roll_planned_mini_bosses` rolls (`is_mini_boss`, `spawn_chance > 0`; Iron Patriarch, Whispering Crone and Blood Archon among them), the 5 legendary wanderers (`legendary` tag) and the 7 seal demons. The gate bosses, the Cow King, Old Nickel and Euryale (Stheno's escort, `spawn_chance` 0) are not in it.
+**Who.** `tools/balance/mini_boss_bands.py` owns 39 foes (`roster()`): the 27 band mini-bosses (Polyphemus since 2026-11-17) `_roll_planned_mini_bosses` rolls (`is_mini_boss`, `spawn_chance > 0`; Iron Patriarch, Whispering Crone and Blood Archon among them), the 5 legendary wanderers (`legendary` tag) and the 7 seal demons. The gate bosses, the Cow King, Old Nickel and Euryale (Stheno's escort, `spawn_chance` 0) are not in it.
 
 **How a foe is written (LORE, NOT FLOOR).** Real numbers in `data/monsters.json`, written by `mini_boss_bands.py --write` from its `FOES` table:
 - `hp`: its health in ordinary monsters of its peak floor (`floor_curve.target_hp`).
 - `blows`: what it lands in one turn if every blow hits (the attacks `Monster.attack` fires: the first N of a `multi_attack_count` under the attack count, all of a flurry, else one at random), as a share of a steady cook's health bar there (`floor_curve.health_bar`). At most `BLOWS_CAP` 30% of a bar, and the enraged flurry (`enraged_multi_attack_count`) at most `RAGE_CAP` 45%: no turn is a one-blow death.
 - To-hit: `named_thac0` = the armour line (`rebake_thac0.measure_line`, the mean AC a plain hero wears on that floor) + `NAMED_NEED` 6 + the foe's own `aim` (0 for all today). An ordinary monster needs a 10 against that hero; a named foe needs a 6. A big blow that rarely lands is luck; a surer, smaller one is a fight the kid can read, and his armour still takes a point off the roll for every point he wears. `rebake_thac0.py` calls `named_thac0` for these foes, and `respawn_by_hp.apply_stat_fixes` and `tools/content/late_game_monsters_2026_10.py` leave their health and dice to the band tool.
-- `HP_CAP`: no foe is tankier than 90% of Abaddon (`test_no_mini_boss_is_tankier_than_abaddon`). The legendary wanderers, Níðhöggr's Fragment and Abyzou reach it first: they are dangerous rather than long.
+- `HP_CAP`: no foe is tankier than 90% of Abaddon (`test_no_mini_boss_is_tankier_than_abaddon`). The deep legendary ones, Níðhöggr's Fragment and Abyzou reach it first: they are dangerous rather than long.
 
 **The bands** (`BANDS`, checked by `tests/test_mini_boss_bands.py`): band mini-boss hp 7-24 ordinary monsters, blows 5-30% of a bar; legendary 17-24, 18-30%; seal demon 11-19, 14-30%. Where in the band a foe sits was measured foe by foe so the mastery hero needs about six attacks for each (the family is the length of the fight): a foe whose hide, resistances, regeneration or second life turns his usual blows needs less health to last as long (the Green Knight 7.4, Stheno 7.5, Baba Yaga 8.6, Talos 10.6), one he cuts through needs more (Echidna 22.7, the Erlking 20.9). A foe whose technique bites carries fewer dice (the Bonnacon's burning dung, the Wild Hunt Captain's pace, Ravana's paralysing grab). Each `FOES` entry has a line of lore saying why.
 
@@ -573,10 +622,10 @@ Five monsters declare `footprint: [2, 2]`:
 | id | min / peak | spawn path | fits-fallback |
 |---|---|---|---|
 | `fafnir_dragon` | L58-60 | hand-placed (`_spawn_boss` in `_level_60_lair`) | NW-shift up to 3 tiles |
-| `tiamat` | ~L85-95 | procedural (`_spawn_one_in_room` with `_footprint_fits`) | tile skipped if footprint overlaps wall/monster |
-| `surtur` | L87-90 | procedural | same |
-| `ymir_last_spawn` | L82-85 | procedural | same |
-| `hrungnirs_ghost` | L80-82 | procedural | same |
+| `tiamat` | 85 / 88 | the mini-boss plan (`_try_spawn_mini_boss` with `_footprint_fits`) | another room, then any reachable tile, then carried to a later floor (`_carry_mini_boss`) |
+| `surtur` | 80 / 90 | the mini-boss plan | same |
+| `ymir_last_spawn` | 76 / 78 | the mini-boss plan | same |
+| `hrungnirs_ghost` | 80 / 86 | the mini-boss plan | same |
 
 Both placement paths validate ALL 4 footprint tiles before committing — `_footprint_fits` checks walkability + occupancy, `_can_move_to` checks walls + phase-wall exceptions per step. `geom.monster_at_tile(x, y, monsters)` returns the monster whose anchor-plus-footprint covers `(x, y)` — this is the correct way to query "is a monster here?" and must be used anywhere the code touches collision/adjacency involving multi-tile bosses.
 
@@ -603,7 +652,7 @@ Before v2.18.0, four `is_mini_boss` legendaries had NO `spawn_chance`, so `_roll
 | `ymir_last_spawn` | 82 | 85 | 1.0 |
 | `hrungnirs_ghost` | 80 | 82 | 1.0 |
 
-All four are now candidates for the band-5 (81-100) mini-boss slots. `surtur`, `ymir_last_spawn`, and `hrungnirs_ghost` are also `[2, 2]` footprint — they rely on `_footprint_fits` to find a 4-tile free pocket.
+Since 2026-11-17 they ride the slots of their own band like every other mini-boss, at a weight of 0.3 (Ymir's Last Spawn in the frost, 61-80; the rest in the abyss): see "Mini-bosses by lore". (Until then each also rolled on its own at 50%.) `surtur`, `ymir_last_spawn`, and `hrungnirs_ghost` are also `[2, 2]` footprint — they rely on `_footprint_fits` to find a 4-tile free pocket.
 
 ### `item_tier` cap (v2.18.0 clamp)
 
@@ -664,52 +713,9 @@ The design cap is 1-5 and `_spawn_treasure_item` scales as `effective_floor = ti
 - Multi-tile placement is tested by instantiating each of the 5 footprint-`[2,2]` monsters in a procedural room and asserting all 4 tiles land on walkable floor.
 - No play-test is practical for most of the 527-monster catalog; this is the regime where [play-test rule has limits](../feedback_play_test_limits.md) applies — logic tests on JSON + pure-function tests on `_damage_multiplier` / `_build_spawn_pool` / mini-boss planning are the primary guards.
 
-## Appendix: full mini-boss roster (36)
+## Appendix: full mini-boss roster (44)
 
-The `is_mini_boss` flag identifies the pool `_roll_planned_mini_bosses` draws from (minus the 7 seal demons, which take a forced path, and historically minus the 4 orphans — now fixed in v2.18.0).
-
-Alphabetical, with the key diagnostic fields:
-
-| id | peak_floor | spawn_chance | unique_drop_id | ai_pattern | footprint |
-|---|---|---|---|---|---|
-| `anansi` | — | set | — | summoner-ish | 1×1 |
-| `arachne` | — | set | — | — | 1×1 |
-| `asmodeus` | 93 | 1.0 (v2.18.0) | — | summoner | 1×1 |
-| `asterion_minotaur` | 20 | 0 (hand-placed L20) | — | hit_and_run | 1×1 |
-| `baba_yaga` | — | set | `iron_mortar_wand` | — | 1×1 |
-| `blood_archon` | — | set | — | — | 1×1 |
-| `cacus` | — | set | `vulcans_brand` | — | 1×1 |
-| `camazotz` | — | set | `obsidian_talisman` | — | 1×1 |
-| `charybdis` | — | set | `sailors_amulet` | — | 1×1 |
-| `cow_king` | 999 | 0 (hand-placed Cow Level) | — | — | 1×1 |
-| `echidna` | — | set | `echidna_fang` | — | 1×1 |
-| `erlking` | — | set | — | — | 1×1 |
-| `green_knight` | — | set | — | aggressive + revive | 1×1 |
-| `hrungnirs_ghost` | 82 | 1.0 (v2.18.0) | — | aggressive | 2×2 |
-| `jormungandr_juvenile` | — | set | — | — | 1×1 |
-| `lamia` | — | set | — | dancer | 1×1 |
-| `medusa_gorgon` | 40 | 0 (hand-placed L40) | — | dancer | 1×1 |
-| `nemean_lion` | — | set | — | aggressive | 1×1 |
-| `nidhoggr_fragment` | — | set | — | — | 1×1 |
-| `rangda` | — | set | — | — | 1×1 |
-| `ravanas_arm` | — | set | `ring_of_iron_grip` | — | 1×1 |
-| `seal_demon_wrath` | 83 | — (forced) | `seal_of_wrath` | — | 1×1 |
-| `seal_demon_pestilence` | 85 | — (forced) | `seal_of_pestilence` | — | 1×1 |
-| `seal_demon_famine` | 87 | — (forced) | `seal_of_famine` | — | 1×1 |
-| `seal_demon_war` | 89 | — (forced) | `seal_of_war` | — | 1×1 |
-| `seal_demon_death` | 91 | — (forced) | `seal_of_death` | — | 1×1 |
-| `seal_demon_earthquake` | 93 | — (forced) | `seal_of_earthquake` | — | 1×1 |
-| `seal_demon_silence` | 97 | — (forced) | `seal_of_silence` | — | 1×1 |
-| `sets_jackal` | — | set | `anubis_scales` | — | 1×1 |
-| `surtur` | 90 | 1.0 (v2.18.0) | — | — | 2×2 |
-| `talos` | — | set | `bronze_aegis` | — | 1×1 |
-| `the_sphinx` | — | set | `sphinx_crown` | — | 1×1 |
-| `tiamat` | — | set | — | summoner | 2×2 |
-| `wendigo` | — | set | `wendigo_fang` | — | 1×1 |
-| `wild_hunt_captain` | — | set | `hunt_captains_sword` | — | 1×1 |
-| `ymir_last_spawn` | 85 | 1.0 (v2.18.0) | — | — | 2×2 |
-
-The audit also notes `asterion_minotaur`, `medusa_gorgon`, and `cow_king` as `is_mini_boss` with **no `spawn_chance`** — all three are intentionally hand-placed (L20 / L40 / L999), so they never need the random pool. The pre-roller filters them correctly on the "no spawn_chance" rule.
+The 32 rolled ones, with their seats and signature drops, are in the table of "Mini-bosses by lore" above (`tools/balance/mini_boss_seats.py` is the source). The other twelve are placed by hand: the gate floors' `asterion_minotaur` (20) and `medusa_gorgon` (40), the `cow_king` (the Cow Level, entered from floors 30-39), `old_nickel` (one floor of 1-8, the Emberpup's story), `euryale_gorgon` (beside Stheno, her `escort`) and the seven seal demons (83-97, forced). None of the twelve has a `spawn_chance` above 0, so the planner never draws them.
 
 ## Appendix: elemental resistance table semantics
 

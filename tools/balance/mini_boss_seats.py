@@ -92,15 +92,15 @@ SEATS: dict[str, tuple[int, str]] = {
                      "the dead."),
     "echidna": (37, "The mother of monsters, Hesiod's kin of the Gorgons, in the deepest part "
                     "of their temple: her brood is met around her (the Hydra 23, the Chimera 31) "
-                    "and after her (the Sphinx 45). She was floor 24."),
+                    "and after her (the Sphinx 44). She was floor 24."),
     # --- floors 41-60: Fafnir's scorched caves. Witches, tricksters and the
     # sons and beasts of gods.
     "stheno_gorgon": (42, "Medusa's immortal sisters: when Perseus fled with her head they rose and "
                           "chased him. They come for her killer the floors after hers (they were "
                           "floor 67)."),
-    "the_sphinx": (45, "The riddler on the road to Thebes, whom the city could not beat for "
+    "the_sphinx": (44, "The riddler on the road to Thebes, whom the city could not beat for "
                        "years and Oedipus beat with one answer: a monster of the heroic age, met "
-                       "after Echidna, whose brood Hesiod makes her (she was floor 44)."),
+                       "after Echidna, whose brood Hesiod makes her (kept at 44)."),
     "cacus": (47, "Vulcan's fire-breathing son in his smoking cave on the Aventine: the scorched "
                   "caves are his (he was floor 39)."),
     "rangda": (50, "Bali's widow-witch, queen of the leyaks, who fights the Barong forever and "

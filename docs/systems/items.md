@@ -147,28 +147,32 @@ Canonical schema (unique example; a common piece is composed by
   "hide_of_nemean_lion": {
     "name": "Hide of the Nemean Lion",
     "symbol": "[", "color": [200, 180, 80],
-    "weight": 16.0, "min_level": 65,
+    "weight": 16.0, "min_level": 9999,
     "slot": "body",
-    "tier": 5,
-    "material": "adamantine",
-    "ac_bonus": 3,
-    "enchant_bonus": 5,
-    "ench_level": 10,
+    "tier": 1,
+    "material": "hide",
+    "ac_bonus": 5,
+    "enchant_bonus": 1,
+    "ench_level": 2,
     "equip_threshold": 4,
-    "quiz_tier": 5,
-    "damage_resistances": {"slash": 0.5, "pierce": 0.6, "blunt": 0.8},
+    "quiz_tier": 1,
+    "damage_resistances": {},
     "can_be_cursed": false,
     "identified": false,
     "unidentified_name": "a rough amber pelt of unnatural density",
-    "floorSpawnWeight": {"61-80": 1, "81-100": 2},
+    "floorSpawnWeight": {},
     "max_enchant": 3,
-    "peak_floor": 72, "spread": 12, "peak_weight": 0.3,
+    "peak_floor": 17, "spread": 12, "peak_weight": 0.0,
     "template_basis": "hide",
     "is_unique": true,
-    "unskinnable": true
+    "plot_locked": true,
+    "unskinnable": true,
+    "special": "Halves every cut, stab and blow a creature without magic lands on you."
   }
 }
 ```
+
+(The Nemean Lion drops it on floor 17, Heracles' first labour: a mini-boss's signature piece has its band's tier and is `plot_locked`, never rolled; its AC is still the named-armour floor of the floor it is found on. See monsters.md, "Mini-bosses by lore".)
 
 Required: `slot`, `ac_bonus`, `tier`, `material`. `ac_bonus` is the
 template's base AC (body armour; 0 on a minor piece), `enchant_bonus` the

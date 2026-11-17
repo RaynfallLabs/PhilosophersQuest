@@ -25315,14 +25315,14 @@
       180,
       100
     ],
-    "hp": "2479d10+5449",
+    "hp": "2371d10+5208",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 45,
+    "peak_floor": 44,
     "spread": 2,
     "peak_weight": 0.0,
-    "min_level": 43,
+    "min_level": 42,
     "attacks": [
       {
         "name": "Rake",
@@ -25361,8 +25361,8 @@
     "harvest_tier": 4,
     "treasure": {
       "gold": [
-        1470,
-        2730
+        1440,
+        2670
       ],
       "item_chance": 1.0,
       "item_tier": 4,

@@ -255,6 +255,10 @@ def apply(files: dict) -> list:
         d = files[fname][iid]
         want = dict(extra)
         want.update(tier=tier, quiz_tier=tier, peak_floor=where[iid], plot_locked=True)
+        # A floor written for the piece's old depth, deeper than its foe now
+        # lives, says nothing true: it is a drop only (never rolled).
+        if int(d.get('min_level', 0) or 0) > where[iid]:
+            want['min_level'] = 9999
         if fname == 'weapon':
             want['mathTier'] = tier
             base = _weapon_base(iid, {**d, **want}, where[iid])

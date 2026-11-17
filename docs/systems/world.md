@@ -347,19 +347,15 @@ Finding the room warns that its creatures are asleep and what wakes them (`_SPEC
 `_populate_hidden_chambers` reads `dungeon.hidden_chambers` (built in §2.7). A treasure chamber gets a cache from `dungeon.spawn_chamber_cache`: 3-5 things somebody walled up to keep, drawn from coin (`economy.CACHE_COIN_SHARE`), treasure, potions and scrolls, never gear, rings or chests. (It used to re-run `spawn_items` on its one room; once small floors rolled each room `MIN_LOOT_ROOMS` times, that pass made ten rooms' worth of gear and magic and kept the first 3-5: an armory behind every secret door, 12% of a run's gear.) Lair chambers get 3-6 themed monsters where theme is matched by keyword against monster names (`rat_nest` → `rat`/`rodent`, `undead_crypt` → `skeleton`/`zombie`/`ghoul`/`ghost`/`wraith`/`vampire`/`lich`/…). If no themed monster is level-appropriate, level-appropriate fallback monsters spawn — chambers never come up empty.
 
 ### 4.6 Mini-boss planning
-`LevelManager._roll_planned_mini_bosses()` runs **once at run start** and pre-rolls which mini-bosses appear and on which floors. The bands are hard-coded:
+`LevelManager._roll_planned_mini_bosses()` runs **once at run start** and pre-rolls which mini-bosses appear and on which floors (the pure `level_manager.plan_mini_bosses`). The bands are one per gate boss's domain:
 
 ```python
 _MINI_BOSS_BANDS = [(1, 20), (21, 40), (41, 60), (61, 80), (81, 100)]
-_MINI_BOSS_PRIMARY_CHANCE   = 0.90
-_MINI_BOSS_SECONDARY_CHANCE = 0.30
+_MINI_BOSS_FIRST_CHANCE  = 1.0
+_MINI_BOSS_SECOND_CHANCE = 0.30
 ```
 
-Each band gets a primary slot (90%) and secondary slot (30%). Candidates inside a band are every monster with `is_mini_boss=true`, `peak_floor` inside the band, `spawn_chance > 0`, and `id` NOT starting with `seal_demon` (seal demons use the forced path, §4.7). Each slot picks a candidate weighted by `spawn_chance`. Placement defaults to the chosen mini-boss's `peak_floor`.
-
-**Boss-floor collision skip (v2.18).** If `peak_floor` lands on `_BOSS_LEVELS`, the primary target shifts to `peak_floor - 1`. The secondary slot walks forward (`target += 1`) past both already-planned floors AND boss floors (`while target in planned or target in _BOSS_LEVELS`), capped at the band's upper bound. Without this guard, a mini-boss planned for L20/40/60/80/100 would be silently discarded — `generate_boss_level` doesn't check the plan.
-
-Expected mini-bosses per 100-floor run: 5 × (0.90 + 0.30) = **6.0**, range 4-8.
+Each band gets a FIRST slot, always filled, and a SECOND (30%): a run meets **one or two named foes in every band**, 6.5 a run besides the seven seals (Brandon's ruling 13, 2026-11-16: "maybe one or two every 20 floors"). Candidates inside a band (`band_candidates`) are every monster with `is_mini_boss=true`, `peak_floor` inside the band, `spawn_chance > 0`, and `id` NOT starting with `seal_demon` (seal demons use the forced path, §4.7); the legendary ones are candidates of their band like the rest. Each slot picks a candidate weighted by `spawn_chance`. Placement is the chosen mini-boss's `peak_floor`, or the free floor of its band nearest it (`_free_floor`: never a gate floor, a seal floor or another planned floor; a gate floor is its band's last, so a foe seated on one is met the floor before). Where each mini-boss sits is decided by its legend (`tools/balance/mini_boss_seats.py`; [monsters.md](monsters.md) "Mini-bosses by lore"). A run saved under the old plan (90% and 30% slots, the legendary ones on their own 50% rolls) is planned again on load for the floors still ahead (`_replan_ahead`).
 
 ### 4.7 Seal demons (forced spawn)
 ```python
