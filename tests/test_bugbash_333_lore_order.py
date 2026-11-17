@@ -46,6 +46,7 @@ pygame.init()
 import affinity  # noqa: E402
 import family_edges  # noqa: E402
 import family_lore  # noqa: E402
+import monster  # noqa: E402
 from quiz_engine import QuizResult  # noqa: E402
 
 MONS = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))
@@ -253,7 +254,9 @@ def test_garlic_and_ash_never_talks_about_a_bite_on_a_paralysis_save(game):
     spawn = _mon(game, 'vampire_spawn', dx=2)
     assert family_edges.drain_heal_blocked(game.player, spawn)
     # (a vampire spawn is "he": data/monsters.json pronoun, round 3)
-    assert family_edges.drain(game.player) == ['Garlic and Ash: the bite takes nothing back to heal him.']
+    assert family_edges.drain(game.player) == [
+        f"Garlic and Ash: {monster.the_name(spawn)} sinks his teeth in, then recoils, spitting. "
+        "Your garlic-soaked blood cannot heal him!"]
 
 
 # ---------------------------------------------------------------------------
@@ -327,7 +330,7 @@ def test_yield_comes_after_the_blow_and_the_purse_is_said_once(game):
     game._start_combat(m)
     log = _log(game)
     blow = _at(log, 'Chain x8!')
-    yld = _at(log, 'Yield! Your foe breaks and runs.')
+    yld = _at(log, 'Yield! The Bandit Thug has had enough, gives up the fight and runs for it!')
     gold = _at(log, 'throws down 40 gold.')
     assert 0 <= blow < yld < gold, log
     assert sum('purse' in t for t in log) == 0

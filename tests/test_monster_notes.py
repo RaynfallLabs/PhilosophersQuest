@@ -61,7 +61,8 @@ def test_every_tell_has_a_sign_what_it_does_and_a_counter():
         assert e.get('does', '').strip(), key
         assert 'counter' in e, key
     assert '{kin}' in d['kin_lead']
-    assert '{words}' in d['weak_one'] and '{words}' in d['weak_many']
+    # The per-kind lore templates went with the one lore line (2026-11-16).
+    assert 'weak_one' not in d and 'known_lead' not in d
     assert d['far_counter'].strip()
 
 
@@ -165,18 +166,23 @@ def test_splits_name_the_blows_that_split_it():
     assert 'weak blow' in tells.line(_m('tiamat_blood'), 'splits', KNOWN)
 
 
-def test_the_weakness_line():
-    # In the creature's own pronoun (round 3): a troll and a ghoul are "he".
-    # With how much (3.5.1 audit), and the metals a ghoul cannot bear.
-    assert tells.weak_line(_m('troll')) == 'Fire and acid hurt him most (double damage).'
-    ghoul = tells.weak_line(_m('ghoul'))
-    assert ghoul.startswith('Holy power and a cutting blow hurt him most (double damage). '
-                            'So does a weapon of ') and ' or sunsteel.' in ghoul
-    assert 'it most (double damage).' in tells.weak_line(_m('green_slime'))
+def test_the_lore_line():
+    # ONE plain line naming the creature, in the weapon cards' words, with
+    # no "(double damage)" (Brandon 2026-11-16: "this is clutter"; the help
+    # page says what the words mean), and the metals it cannot bear by one
+    # name, not the whole list.
+    assert tells.lore_line(_m('troll')) == 'The Troll: weak to fire and acid; easily confused; flees from fire.'
+    ghoul = tells.lore_line(_m('ghoul'))
+    assert ghoul.startswith('The Ghoul: weak to slash, holy and silver weapons (or metals like it); ')
+    assert 'resists pierce' in ghoul and "can't be put to sleep" in ghoul
+    assert not any(w in ghoul for w in ('double', 'half', 'quarter', 'damage'))
     m = _m('ghoul')
     m.weaknesses = []
     m.tags = []
-    assert tells.weak_line(m) == ''
+    m.resistances = []
+    m.status_immune = []
+    m.shrugs_off = []
+    assert tells.lore_line(m) == ''
 
 
 def test_every_line_fills_in_and_uses_no_singular_they():
@@ -222,10 +228,10 @@ def test_first_sight_says_more_as_the_hero_learns():
     # The tell with its counter, then what it is made of (tells.lore_lines,
     # winning-build plan 3.1): weaknesses, resistances, its nature.
     lore = tells.lore_lines(ghoul)
-    assert len(lore) == 3
+    assert len(lore) == 1
     assert len(g.msgs) == 3 + len(lore)
-    assert 'distance' in g.msgs[2] and g.msgs[3].startswith('Holy power and a cutting blow hurt him most (double damage).')
-    assert g.msgs[3:] == lore and 'a point' in lore[1] and 'put to sleep' in lore[2]
+    assert 'distance' in g.msgs[2] and g.msgs[3].startswith('The Ghoul: weak to ')
+    assert g.msgs[3:] == lore and 'pierce' in lore[0] and 'put to sleep' in lore[0]
     n = len(g.msgs)
     g._maybe_tell(ghoul)
     assert len(g.msgs) == n
@@ -236,8 +242,8 @@ def test_a_known_kind_seen_first_gets_the_whole_line_at_once():
     hero.studied_monster_ids.add('troll')
     g = _G(hero)
     g._maybe_tell(_m('troll'))
-    assert 'do not wear him down' in g.msgs[0] and g.msgs[1] == 'Fire and acid hurt him most (double damage).'
-    assert g.msgs[2] == 'He is easily confused. Fire puts him to flight.'
+    assert 'do not wear him down' in g.msgs[0]
+    assert g.msgs[1:] == ['The Troll: weak to fire and acid; easily confused; flees from fire.']
 
 
 def test_a_known_kind_with_no_tell_is_still_told_what_it_is_made_of():
@@ -250,9 +256,10 @@ def test_a_known_kind_with_no_tell_is_still_told_what_it_is_made_of():
     assert g.msgs == []
     hero.studied_monster_ids.add(plain)
     g._maybe_tell(_m(plain))
-    # Named first, so the lines' "it" stands for someone (bug bash WB-E02).
-    assert g.msgs == [tells.known_lead(_m(plain))] + tells.lore_lines(_m(plain))
-    assert _m(plain).name.lower() in g.msgs[0].lower()
+    # One line that names the creature itself (bug bash WB-E02; 2026-11-16:
+    # no lead line before it).
+    assert g.msgs == tells.lore_lines(_m(plain))
+    assert len(g.msgs) == 1 and _m(plain).name.lower() in g.msgs[0].lower()
 
 
 def test_a_save_from_before_the_versions_still_says_the_known_line():

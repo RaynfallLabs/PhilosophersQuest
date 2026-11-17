@@ -126,9 +126,10 @@ pack, as for any two-handed equip). **The shield comes back** (Brandon's
 play-test, 2026-11-16: "it doesn't automatically swap BACK my shield"): the
 shield a two-hander sent to the pack is remembered (`Player._shield_slung`,
 set in `Player._apply_equip`), and a one-hander taken up again, by S or the
-Kit's Equip, puts it back on the arm at its donning time, a turn on top of
-the swap ("You sling the Greatsword at your back and draw the Shortsword
-and reach for your Buckler (2 turns)."; `DressingMixin._slung_shield`,
+Kit's Equip, puts it back on the arm in the same one turn (Brandon: "ready
+swapping weapon set should only take 1 turn, even if you equip a shield as
+well"; "You sling the Greatsword at your back and draw the Shortsword and
+take up your Buckler."; `DressingMixin._slung_shield`,
 `_shield_back_on`). It is let go when another shield goes on or it leaves
 the pack; a loadout's own shield slot decides for a kit.
 

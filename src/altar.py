@@ -63,9 +63,10 @@ SCROLL_EFFECTS_BLESSING_HELPS = frozenset({
 # Gear a blessing always improves (worn or wielded).
 _GEAR_CLASSES = ('weapon', 'armor', 'shield', 'accessory')
 
-# A curse that is the point of the thing: the Duck of Doom answers to
-# patience, not to a scroll (game_magic remove_curse) and not to an altar.
-CURSE_KEEPS = frozenset({'duck_of_doom'})
+# A curse no altar lifts. Empty since 2026-11-16: the Duck of Doom's curse
+# lifts like any other (Brandon: "You can only remove it by uncursing it.
+# Players can 'hatch it'"), and patience still hatches it.
+CURSE_KEEPS = frozenset()
 
 
 def _kind_known(item, player) -> bool:

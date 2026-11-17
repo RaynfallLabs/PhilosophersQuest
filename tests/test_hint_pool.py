@@ -77,7 +77,7 @@ def test_every_hint_is_a_proper_sentence():
 LABELS_ANY_CASE = ('Kit Sense', 'Known by Hand', 'Loadout', 'Burdened', 'Overloaded',
                    'Recall Lore', 'Bestiary', 'Encyclopedia', 'Lore Hints', 'Rededicat',
                    'Forewarned', 'Field Notes', 'trade-in', 'karma')
-LABELS_AS_WRITTEN = ('At Your Back', 'Trade In', 'Kit', 'Press', 'Guard')
+LABELS_AS_WRITTEN = ('Readied', 'At Your Back', 'Trade In', 'Kit', 'Press', 'Guard')
 
 
 @pytest.mark.parametrize('tier,hint', ALL)

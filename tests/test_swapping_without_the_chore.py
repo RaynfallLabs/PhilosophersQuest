@@ -490,8 +490,9 @@ def _sword_and_shield(game):
 
 def test_the_shield_goes_back_on_when_the_one_hander_is_drawn(game):
     """Brandon's play-test (2026-11-16): swapping to the two-hander and back
-    left the shield in the pack. Now it goes back on the arm, at its donning
-    time (a turn) on top of the swap's."""
+    left the shield in the pack. Now it goes back on the arm, and the whole
+    change is one turn ("ready swapping weapon set should only take 1 turn,
+    even if you equip a shield as well")."""
     p = game.player
     sword, shield, great = _sword_and_shield(game)
     t0 = game.turn_count
@@ -503,8 +504,8 @@ def test_the_shield_goes_back_on_when_the_one_hander_is_drawn(game):
     assert game._swap_weapons()
     assert p.weapon is sword and p.readied_weapon is great
     assert p.shield is shield and shield not in p.inventory
-    assert game.turn_count - t0 == 2                 # the swap, then the buckler
-    assert any('reach for your' in t and '(2 turns)' in t for t in _said(game, 6))
+    assert game.turn_count - t0 == 1                 # the swap, shield and all
+    assert any('take up your' in t for t in _said(game, 6))
     # Round and round: it keeps working.
     assert game._swap_weapons() and p.shield is None
     assert game._swap_weapons() and p.shield is shield
@@ -516,8 +517,10 @@ def test_the_kit_equip_puts_the_shield_back_too(game):
     game._equip_item(great)                          # from the Kit, not S
     assert p.weapon is great and p.shield is None
     assert any('goes back on your arm' in t for t in _said(game, 6))
+    t0 = game.turn_count
     game._equip_item(sword)
     assert p.weapon is sword and p.shield is shield
+    assert game.turn_count - t0 == 1
 
 
 def test_a_shield_dropped_or_replaced_is_not_brought_back(game):
@@ -571,7 +574,7 @@ def test_the_kit_shows_the_weapon_at_your_back(game):
     game._ready_weapon(mace)
     rows = game._kit_collect_items()
     assert ('back', mace) in rows
-    assert game._kit_source_label('back') == 'At Your Back'
+    assert game._kit_source_label('back') == 'Readied'
     sheet = game._charsheet_loadout_entries()
     assert any(e['slot'] == 'readied' and e['item'] is mace for e in sheet)
 

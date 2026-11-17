@@ -33,7 +33,7 @@ KIT_NAME_MAX = 18
 KIT_ARMOR_SLOTS = ('head', 'body', 'arms', 'hands', 'legs', 'feet', 'cloak', 'shirt')
 # The slots a kit covers, in the order the Loadouts screen lists them.
 KIT_SLOT_LABELS = {
-    'weapon': 'Weapon', 'readied': 'At Your Back', 'shield': 'Shield',
+    'weapon': 'Weapon', 'readied': 'Readied', 'shield': 'Shield',
     'head': 'Head', 'body': 'Body', 'arms': 'Arms', 'hands': 'Hands', 'legs': 'Legs',
     'feet': 'Feet', 'cloak': 'Cloak', 'shirt': 'Shirt', 'amulet': 'Amulet', 'belt': 'Belt',
     'ring_0': 'Ring 1', 'ring_1': 'Ring 2', 'ring_2': 'Ring 3', 'ring_3': 'Ring 4',
@@ -143,9 +143,9 @@ def back_line(name: str, readied: bool, kit_names) -> str:
     """The one line when a remembered piece comes back into the pack."""
     kits = and_list(kit_names)
     if readied and kits:
-        return f"The {name} is At Your Back again, and back in {kits}."
+        return f"The {name} is readied again, and back in {kits}."
     if readied:
-        return f"The {name} is At Your Back again."
+        return f"The {name} is readied again."
     if kits:
         return f"The {name} is back in {kits}."
     return ''

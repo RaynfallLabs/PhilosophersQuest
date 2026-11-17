@@ -231,7 +231,7 @@ def test_wb_a06_a_dropped_readied_weapon_is_at_your_back_again_when_picked_up(ga
     assert p.readied_weapon is None and loadouts.readied_memory(p) is mace
     game._pickup(target=mace)
     assert p.readied_weapon is mace
-    assert _said(game, 3)[-1] == f'The {game._bare_name(mace)} is At Your Back again.'
+    assert _said(game, 3)[-1] == f'The {game._bare_name(mace)} is readied again.'
 
 
 def test_wb_a06_a_sold_readied_weapon_is_let_go(game):

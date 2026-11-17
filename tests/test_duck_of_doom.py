@@ -9,7 +9,7 @@ Spec (from user):
 - Identify reveals progressively: T1 name, T2 BUC, T3 stats, T4 lore,
   T5 mastery_blessing ("The Duck of Doom has no master!" — cosmetic
   humor only, no mechanical effect)
-- Worn for 2026 turns -> transforms into a Waddlekind pet
+- Worn for 10,000 turns -> transforms into a Waddlekind pet (2026 until 2026-11-16)
 - Pet evolves: Waddlekind (stage 0, Detect Monsters) -> Drake of the
   Covenant (stage 1, Psionic Blast) -> Seraphimallard (stage 2,
   Sometimes Goose)
@@ -95,7 +95,7 @@ def test_duck_pet_stage_names():
 
 def test_duck_pet_has_detect_monsters_at_stage_zero():
     """Unique to the Duck: stage 0 has a special already unlocked.
-    The 2026-turn cursed incubation IS the grind to unlock Detect Monsters."""
+    The 10,000-turn cursed incubation IS the grind to unlock Detect Monsters."""
     import pet_system
     sp = pet_system._SPECIES['duck_of_doom']
     detect = next(s for s in sp['specials'] if s['id'] == 'detect_monsters')
@@ -170,7 +170,7 @@ def test_pickup_intercept_present_in_main():
 
 
 def test_advance_turn_ticks_duck_counter():
-    """The 2026-turn counter must increment every turn."""
+    """The 10,000-turn counter must increment every turn."""
     import inspect
     import main
     src = inspect.getsource(main.Game._advance_turn)
@@ -187,10 +187,25 @@ def test_game_picks_duck_floor_at_init():
 
 
 def test_constants_match_spec():
-    """2026 was the year requested by the user — make sure no one
-    silently lowers it."""
+    """Brandon 2026-11-16: "it needs to be 10000 steps... 2026 is too quick,
+    just a few floors". One number, in pet_system, that main reads."""
     import main
-    assert main.Game.DUCK_OF_DOOM_TURNS_REQUIRED == 2026
+    import pet_system
+    assert pet_system.DUCK_OF_DOOM_TURNS_REQUIRED == 10000
+    assert main.Game.DUCK_OF_DOOM_TURNS_REQUIRED == pet_system.DUCK_OF_DOOM_TURNS_REQUIRED
+
+
+def test_the_duck_does_nothing_for_you():
+    """Brandon 2026-11-16: "It's supposed to SUCK to have it on your head.
+    No benefits, just a duck taking up your head slot." No AC, no
+    enchantment, no state it lends."""
+    import items
+    duck = items.make_item_by_id('armor', 'duck_of_doom')
+    assert duck is not None
+    assert int(getattr(duck, 'ac_bonus', 0) or 0) == 0
+    assert int(getattr(duck, 'enchant_bonus', 0) or 0) == 0
+    assert not getattr(duck, 'ench_id', '') and not getattr(duck, 'on_equip_status', '')
+    assert getattr(duck, 'cursed', False) or getattr(duck, 'buc', '') == 'cursed'
 
 
 # ---------------------------------------------------------------------------
@@ -214,9 +229,9 @@ def test_duck_quirk_registered_in_all_five_dicts():
 
 
 def test_duck_quirk_threshold_matches_spec():
-    """Progress key is `duck_of_doom_turns`, threshold 2026, is_set False."""
+    """Progress key is `duck_of_doom_turns`, threshold 10,000, is_set False."""
     import quirk_system as qs
-    assert qs._QUIRK_PROGRESS['duck_of_doom'] == ('duck_of_doom_turns', 2026, False)
+    assert qs._QUIRK_PROGRESS['duck_of_doom'] == ('duck_of_doom_turns', 10000, False)
 
 
 class _StubPlayer:
@@ -238,9 +253,9 @@ class _StubGame:
 
 
 def test_duck_quirk_progress_calculates_correctly():
-    """Halfway through the 2026 wear-counter, the menu should show ~50%."""
+    """Halfway through the 10,000 wear-counter, the menu should show ~50%."""
     from quirk_system import QuirkSystem
-    qsys = QuirkSystem(_StubGame(duck_turns=1013))
+    qsys = QuirkSystem(_StubGame(duck_turns=5000))
     pct = qsys.get_quirk_progress('duck_of_doom')
     assert 0.49 < pct < 0.51, f"50% progress should land near 0.5, got {pct}"
 

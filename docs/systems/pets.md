@@ -55,7 +55,7 @@ The four elemental species (`electric`, `water`, `plant`, `fire`) are the standa
 `mooble` is a **quest pet** (`quest_pet: True`): won by his own story (the Mooble, at the end of this file), never from a sphere (`random_species` leaves out every quest pet). His species lives in his own data file, `data/mooble.json` (`pet.species`), and `pet_system._load_quest_species` adds it to `_SPECIES` at import. A stage may name its own picture (`sprite`: `mooble_troupe_leader`, not the stage name's "troupe-leader"), with `sprite_standin` shown until that file is installed (`pet_system.art_or_standin`; never a letter on the map).
 
 ### 1.2 Random pool
-`pet_system.random_species()` returns a random key with equal probability from `_SPECIES`, **excluding `duck_of_doom`** (v2.18) **and every companion with its own name** (`has_own_name`: the family cats and Shep) **and every quest pet** (`quest_pet`: the Mooble). Waddlekind is the endpoint of the 2026-turn Duck-of-Doom quirk, not a Soul Sphere / Summon Guardian / Gate outcome; the exclusion closes a leak where throwing a Soul Sphere could pop a free Waddlekind without the quirk commitment. Call sites that need a random species import this helper as `random_pet_species`.
+`pet_system.random_species()` returns a random key with equal probability from `_SPECIES`, **excluding `duck_of_doom`** (v2.18) **and every companion with its own name** (`has_own_name`: the family cats and Shep) **and every quest pet** (`quest_pet`: the Mooble). Waddlekind is the endpoint of the 10,000-turn Duck-of-Doom quirk, not a Soul Sphere / Summon Guardian / Gate outcome; the exclusion closes a leak where throwing a Soul Sphere could pop a free Waddlekind without the quirk commitment. Call sites that need a random species import this helper as `random_pet_species`.
 
 ### 1.3 Evolution thresholds
 ```python
@@ -120,7 +120,7 @@ Shep's line is the one deliberately stronger family line (about a tenth: 1.7× a
 
 ### 2.2 Duck of Doom specials (unique shape)
 
-Unique among species: Waddlekind has a **Stage 0** special, because the player already paid 2026 cursed-turns to be here.
+Unique among species: Waddlekind has a **Stage 0** special, because the player already paid 10,000 cursed turns to be here.
 
 | Stage | Special                                             |
 |-------|-----------------------------------------------------|
@@ -163,7 +163,7 @@ def get_attack_damage(self, quiz_accuracy=0.5):
 | Pet-interaction      | menu action, `gain_xp(5)`           | +5 XP once per floor                     |
 | Feed food            | menu action                         | half of food's `sp_restore`, clamped 20-80 |
 
-**Starting level (LORE NOT FLOOR, 2026-10-18).** A pet starts at the level its ORIGIN gives it, never the floor's: `Pet(species, x, y, level=...)`. A sphere's pet starts at `pet_system.hatch_level(sphere)` (1, 25 or 55, from the sphere's data; §12); the Emberpup is a pup (level 1); Waddlekind starts with `DUCK_OF_DOOM_HATCH_XP` (2026 // 3 = 675 XP: what any companion riding along for 2026 turns would have learned, about level 8); summons take their spell's level (`SUMMON_GUARDIAN_LEVEL`, `GATE_ALLY_LEVEL`) or the slain creature's own. The old late-pickup grant (`apply_late_pickup_bonus`, floor x 50 XP up to 4,000) was a floor multiplier and is gone; `tests/test_lore_not_floor.py` fails if any hatch reads the floor again.
+**Starting level (LORE NOT FLOOR, 2026-10-18).** A pet starts at the level its ORIGIN gives it, never the floor's: `Pet(species, x, y, level=...)`. A sphere's pet starts at `pet_system.hatch_level(sphere)` (1, 25 or 55, from the sphere's data; §12); the Emberpup is a pup (level 1); Waddlekind starts with `DUCK_OF_DOOM_HATCH_XP` (10,000 // 3 = 3,333 XP: what any companion riding along for 10,000 turns would have learned); summons take their spell's level (`SUMMON_GUARDIAN_LEVEL`, `GATE_ALLY_LEVEL`) or the slain creature's own. The old late-pickup grant (`apply_late_pickup_bonus`, floor x 50 XP up to 4,000) was a floor multiplier and is gone; `tests/test_lore_not_floor.py` fails if any hatch reads the floor again.
 
 ### 3.3 Nickname + identity
 
@@ -266,7 +266,7 @@ The sphere lands at the thrown target tile; if the tile is occupied the pet fall
 
 ### 4.2 Duck of Doom transform — `main.py::_duck_of_doom_transform`
 
-The Duck of Doom is a cursed head-slot item. Each turn the player wears it, `_duck_of_doom_tick` increments `player.quirk_progress['duck_of_doom_turns']`. On turn 2026 (`DUCK_OF_DOOM_TURNS_REQUIRED = 2026`, exported from `pet_system.py`) the transform fires:
+The Duck of Doom is a cursed head-slot item that does nothing for the hero: no AC, no enchantment, just a duck taking up his head (Brandon 2026-11-16: "It's supposed to SUCK to have it on your head. No benefits"). Lifting its curse (a scroll of remove curse, an altar) is the one way to take it off early, and an uncursed duck can be taken off like any hat. Each turn the player wears it, `_duck_of_doom_tick` increments `player.quirk_progress['duck_of_doom_turns']`. On turn 10,000 (`DUCK_OF_DOOM_TURNS_REQUIRED = 10000`, exported from `pet_system.py`; it was 2026 until 2026-11-16, "too quick, just a few floors") the transform fires:
 
 ```python
 head = self.player.armor_slots[0]
@@ -412,7 +412,7 @@ A Soul Sphere thrown at F40 hatches the same newborn as one thrown at F1: the fl
 
 A Waddlekind hatched from the Duck of Doom quirk:
 - Spawns beside the hero with 675 XP (about L8) on any floor.
-- **Already has Stage 0 special Detect Monsters** — the duck's Stage 0 unlock is the design reward for 2026 cursed turns.
+- **Already has Stage 0 special Detect Monsters** — the duck's Stage 0 unlock is the design reward for 10,000 cursed turns.
 
 ---
 
@@ -603,7 +603,7 @@ Dead pets are not rendered. Sketch pets (and a Dad with no song) with `turns_rem
 ## 15. Design notes
 
 - **Pokémon pattern.** The 3-stage evolution + per-species single-target + AoE specials deliberately echoes a Pokémon starter. The 4 elemental species (electric/water/plant/fire) include the three classic Gen-1 starter types; Zappik is the Pikachu equivalent and the only standard species with a stage 0 lowercase glyph.
-- **Reward asymmetry.** Fenrir, Dad, and Unicorn are **reward pets** acquired through specific gates (XYZZY T5 hero-special, the Unusual Soul Sphere, Unicorn-encounter chain 5). None of them level — they come at full power. Waddlekind is the fifth reward pet, costing 2026 cursed-turns.
+- **Reward asymmetry.** Fenrir, Dad, and Unicorn are **reward pets** acquired through specific gates (XYZZY T5 hero-special, the Unusual Soul Sphere, Unicorn-encounter chain 5). None of them level — they come at full power. Waddlekind is the fifth reward pet, costing 10,000 cursed turns.
 - **Why L100 cap?** Pet stats scale to roughly match a mid-tier F100 monster. Beyond L100 the pet would overshoot even boss stat budgets, breaking the pet-as-helper design (pets are a *support* line, not a replacement for the player).
 - **Why command cycle, not toggles?** Each pet gets ONE menu action (vs. per-command checkboxes). Cycle is one keypress to iterate `return → stay → wander`, matching the one-keypress feel of the rest of the pet menu.
 - **Stronger starts come from stronger spheres (2026-10-18).** The late-pickup grant (floor x 50 XP) is gone: it was a floor multiplier. A player deep in the dungeon finds Greater and Master spheres there, or buys one, and those hatch grown. Brandon: "pets are a fun part of the game, want to make sure they do show up", so the floor chances run about 8% early and the traders carry spheres too.
@@ -612,7 +612,7 @@ Dead pets are not rendered. Sketch pets (and a Dad with no song) with `turns_rem
 
 ## 16. Invariants (do not break)
 
-1. **`DUCK_OF_DOOM_TURNS_REQUIRED = 2026` lives in `pet_system.py`.** Both the quirk timer in `main.py` and any future hero-special that references the threshold must import it from here.
+1. **`DUCK_OF_DOOM_TURNS_REQUIRED = 10000` lives in `pet_system.py`.** Both the quirk timer in `main.py` and any future hero-special that references the threshold must import it from here.
 2. **`random_species()` excludes `duck_of_doom`.** Waddlekind is the Duck quirk endpoint, not a random Soul Sphere outcome. If a new random spawner is written, use `random_pet_species` (the `game_combat.py` alias) and inherit the exclusion.
 3. **No pet's starting level reads the floor.** A sphere's pet starts at `hatch_level(sphere)`; every other source names its own level. `tests/test_lore_not_floor.py::test_no_pet_hatch_reads_the_floor` holds this.
 4. **Pet `_move_toward` consults `dungeon.pits` + `dungeon.traps`.** Pits are hard refuse (always); traps are soft avoid (pass 1 skip, pass 2 tolerate). Never collapse the two-pass structure — forgetting the goal because every direction is trapped is worse than stepping on an alarm.
