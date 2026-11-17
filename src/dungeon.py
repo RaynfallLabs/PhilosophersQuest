@@ -1779,20 +1779,25 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
 
     # Mimic chance scales with depth — keeps mimics a real threat through
     # endgame, when players have more HP and might otherwise treat chests as
-    # free loot. F1-20 = 6%; F21-50 = 9%; F51-80 = 12%; F81+ = 15%.
+    # free loot. Brandon, 2026-11-16: "i havent seen a mimic in a loooong
+    # while... they should be way more common." With about 3.4 chests a
+    # floor that was one mimic every five floors; now F8-20 = 18% (about one
+    # every other floor), F21-50 = 22%, F51-80 = 26%, F81+ = 30% (about one a
+    # floor). Was 6 / 9 / 12 / 15%. Mimic-Sense (aberrations) and a careful
+    # look are the answer to them.
     if level < MIMIC_FIRST_FLOOR:
         # The mimic is a floor-8 monster. On floor 1 it had three times the
         # hit points of anything else there and bit for a fifth of a new
         # character's health before the fight began.
         _MIMIC_CHANCE = 0.0
     elif level <= 20:
-        _MIMIC_CHANCE = 0.06
+        _MIMIC_CHANCE = 0.18
     elif level <= 50:
-        _MIMIC_CHANCE = 0.09
+        _MIMIC_CHANCE = 0.22
     elif level <= 80:
-        _MIMIC_CHANCE = 0.12
+        _MIMIC_CHANCE = 0.26
     else:
-        _MIMIC_CHANCE = 0.15
+        _MIMIC_CHANCE = 0.30
 
     # Pre-filter templates to those that spawn in this floor band
     _band_pool: list[tuple[str, dict, int]] = []
