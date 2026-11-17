@@ -532,6 +532,19 @@ slot chosen by its lore (`PICKS`, with the reason); it keeps its name, card
 and every signature power (`enchantments.apply_named`, the line in
 `ench_line`).
 
+**Secret Build shields and Joan's standard (2026-11-17).** Achilles starts
+with the **Shield of Achilles** (`shield_of_achilles`: heavy round, tier 2,
+AC 2 + 2, points that pierce do half damage: Iliad 18, 20, 22) and Alexander
+with the **Shield of Ilion** (`shield_of_ilion`: bronze aspis, tier 1, AC
+2 + 1; once a floor the blow that leaves him at a quarter of his health or
+less finds him Shielded for 5 turns, `fallen_cover_turns`: Arrian 1.11, 6.10).
+Joan of Arc's off hand holds **Joan of Arc's Standard** (`joans_standard`):
+a `standard`, not a shield (`gear.is_standard`). It gives no AC, takes no
+plus and no blessing's AC, loses nothing to wear, and its power is its
+rally: pets and allies she can see hit half again as hard
+(`rally_damage_mult`). Never random loot. Details and sources:
+[progression](progression.md), "Their own legends' pieces".
+
 ## 6b. Press or Guard, the parry, and the named counters (slice 5)
 
 `Player.get_ac` adds, beside the armour's own rules: the stance (Guard 2

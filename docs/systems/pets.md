@@ -154,6 +154,13 @@ def get_attack_damage(self, quiz_accuracy=0.5):
     return max(1, int(self.base_damage * mult))
 ```
 
+**A standard's rally (2026-11-17).** While the hero carries a standard with
+`rally_damage_mult` in the off hand (Joan of Arc's Standard: 1.5) and can see
+the pet (its tile in the hero's sight), every blow it lands is that many
+times as hard: its bite (`_do_pet_turns`), its specials (`_pet_hit`, the
+visible-all branch) and Shep's rescue. `CombatMixin._rally_mult`. Called
+allies, sketches and every other companion on the pets list are rallied too.
+
 ### 3.2 XP sources
 
 | Source               | Method                              | Amount                                   |

@@ -264,14 +264,23 @@ def named_ac_floor(kind: str, floor: int) -> int:
     return int(round(float(par[f - 1]) + float(t['margin'][kind])))
 
 
+def is_standard(item) -> bool:
+    """A standard carried in the off hand where a shield would be (Joan of
+    Arc's: data ``"standard": true``, 2026-11-17). It turns no blow: no AC,
+    no plus a scroll can raise or rust and fire can take, no blessing's AC,
+    and no polished face to watch a gaze in. Its power is its own field
+    (``rally_damage_mult``). False for anything else, or an old save's piece."""
+    return bool(getattr(item, 'standard', False))
+
+
 def is_core(item) -> bool:
-    """Does this piece carry AC: body armour or a shield."""
+    """Does this piece carry AC: body armour or a shield (never a standard)."""
     cls = str(getattr(item, 'item_class', '') or '')
     if cls not in ('armor', 'shield'):
         # (A piece built without its class: read it from what it is.)
         cls = {'Armor': 'armor', 'Shield': 'shield'}.get(type(item).__name__, cls)
     if cls == 'shield':
-        return True
+        return not is_standard(item)
     return cls == 'armor' and str(getattr(item, 'slot', 'body')) in CORE_SLOTS
 
 

@@ -440,8 +440,11 @@ def gaze_immune(player, attacker) -> bool:
     shield carried). Nothing is queued: the gaze's own line already says the
     shield turned it ("You watch the basilisk in the bright metal of your
     shield..."), and the technique's line said it a second time."""
+    import gear
+    sh = getattr(player, 'shield', None)
     for a, p in _mine(player, attacker, 'gaze_immune', recognise=False):
-        if p.get('requires') == 'shield' and getattr(player, 'shield', None) is None:
+        # (a standard in the off hand has no polished face to watch it in)
+        if p.get('requires') == 'shield' and (sh is None or gear.is_standard(sh)):
             continue
         return True
     return False

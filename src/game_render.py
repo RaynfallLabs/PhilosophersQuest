@@ -4423,16 +4423,25 @@ class RenderMixin:
             if int(getattr(item, 'spell_tier_ease', 0) or 0) > 0:
                 out.append("Spells you cast with it in hand ask an easier science question.")
             if self._kit_visible_level(item) >= 4:
-                for attr, word in (('stun_chance', 'stun'), ('bleed_chance', 'make it bleed'),
-                                   ('poison_chance', 'poison'), ('burn_chance', 'set it alight'),
-                                   ('confuse_chance', 'confuse')):
+                # ("to make it bleed its target" read as nonsense: each phrase
+                # names the target itself.)
+                for attr, words in (('stun_chance', 'stun its target'),
+                                    ('bleed_chance', 'make its target bleed'),
+                                    ('poison_chance', 'poison its target'),
+                                    ('burn_chance', 'set its target alight'),
+                                    ('confuse_chance', 'confuse its target')):
                     try:
                         v = float(getattr(item, attr, 0) or 0)
                     except (TypeError, ValueError):
                         v = 0.0
                     if v > 0:
                         pct = v * 100 if v <= 1 else v
-                        out.append(f"Each hit has a {pct:.0f}% chance to {word} its target.")
+                        out.append(f"Each hit has a {pct:.0f}% chance to {words}.")
+                # Its own on-hit state (`effects`: Boudicca's Spear frightens,
+                # Wendigo's Fang slows), in the same words.
+                _hit = self._weapon_hit_effect(item)
+                if _hit:
+                    out.append(f"Each hit has a {_hit[1]:.0f}% chance to {_hit[0]}.")
                 try:
                     ls = float(getattr(item, 'lifesteal_percent', 0) or 0)
                 except (TypeError, ValueError):
@@ -4443,6 +4452,9 @@ class RenderMixin:
             if _g.is_core(item):
                 base = int(getattr(item, 'ac_bonus', 0) or 0)
                 out.append(f"AC +{_g.ac_value(item)}" if known else f"AC +{base}, and a plus you have not learned")
+            elif _g.is_standard(item):
+                out.append("No AC: it is a standard, not a shield.")
+            out += self._off_hand_power_lines(item)
             gt = _gd.guard_text(item, known=known)
             if gt:
                 out.append(gt)
@@ -4477,6 +4489,48 @@ class RenderMixin:
             # Stormbringer's rage), worn gear while it is worn.
             out.append(f"{'In hand' if isinstance(item, Weapon) else 'While worn'}: {name}{what}")
         return [str(t) for t in out if str(t).strip()]
+
+    # A weapon's own on-hit state (`effects`), in the card's words.
+    _HIT_EFFECT_WORDS = {'feared': ('frighten its target', 'Fear'),
+                         'slowed': ('slow its target', 'Slow'),
+                         'poisoned': ('poison its target', 'Poison'),
+                         'burning': ('set its target alight', 'Burn'),
+                         'bleeding': ('make its target bleed', 'Bleed'),
+                         'confused': ('confuse its target', 'Confuse'),
+                         'stunned': ('stun its target', 'Stun'),
+                         'paralyzed': ('stun its target', 'Stun')}
+
+    @staticmethod
+    def _weapon_hit_effect(item):
+        """(words, percent, label) for a weapon's own on-hit state, its data's
+        ``effects`` block (Boudicca's Spear: 25% to frighten its target), or
+        None. Static: the Kit's Special column is read with no game too."""
+        fx = getattr(item, 'effects', None) or {}
+        st = fx.get('status') if isinstance(fx, dict) else None
+        try:
+            ch = float(fx.get('effect_chance', 0) or 0) if st else 0.0
+        except (TypeError, ValueError):
+            ch = 0.0
+        if not st or ch <= 0:
+            return None
+        _nm = _cap(str(st).replace('_', ' '))
+        words, label = RenderMixin._HIT_EFFECT_WORDS.get(str(st), (f"leave its target {_nm}", _nm))
+        return words, (ch * 100 if ch <= 1 else ch), label
+
+    @staticmethod
+    def _off_hand_power_lines(item) -> list:
+        """What a shield-slot piece does beyond its AC, one plain line each:
+        a standard's rally (Joan of Arc's) and the Shield of Ilion's cover."""
+        out = []
+        try:
+            if float(getattr(item, 'rally_damage_mult', 0) or 0) > 1.0:
+                out.append("Your pets and allies hit harder while they are in your sight.")
+        except (TypeError, ValueError):
+            pass
+        if int(getattr(item, 'fallen_cover_turns', 0) or 0) > 0:
+            out.append("Once a floor, when a blow leaves you at a quarter of your health, "
+                       "it covers you: you are Shielded.")
+        return out
 
     def _worn_rival(self, item):
         """The piece worn where ``item`` would go (the same slot), or None:
@@ -5461,8 +5515,11 @@ class RenderMixin:
                               if _known else "Weapon  Unidentified")
                 elif isinstance(item, Shield):
                     import gear as _gear
-                    detail = (f"+{_gear.ac_value(item)} AC  {_cap(item.material)}"
-                              if _known else "Shield  Unidentified")
+                    if _known and _gear.is_standard(item):
+                        detail = f"Standard  {_cap(item.material)}"     # no AC
+                    else:
+                        detail = (f"+{_gear.ac_value(item)} AC  {_cap(item.material)}"
+                                  if _known else "Shield  Unidentified")
                 elif isinstance(item, Armor):
                     import gear as _gear
                     _slot = _cap(str(getattr(item, 'slot', 'armor')).replace('_', ' '))
@@ -6332,6 +6389,9 @@ class RenderMixin:
                 if v > 0:
                     pct = v * 100 if v <= 1 else v
                     bits.append(f"{label} {pct:.0f}%")
+            _hit = RenderMixin._weapon_hit_effect(w)   # its own `effects` (Fear 25%)
+            if _hit:
+                bits.append(f"{_hit[2]} {_hit[1]:.0f}%")
         return ', '.join(bits) if bits else '-'
 
     def _kit_resist_str(self, a) -> str:
@@ -9543,6 +9603,8 @@ class RenderMixin:
         (the template's base and the plus, which shows once the copy is
         known); a minor piece its enchantment (bug bash 3.3.2)."""
         import gear as _gear
+        if _gear.is_standard(item):
+            return "No AC: a standard, not a shield"
         known = self._lore_enchant_text(item) != '?'
         if _gear.is_core(item):
             base = int(getattr(item, 'ac_bonus', 0) or 0)
@@ -9635,8 +9697,9 @@ class RenderMixin:
                 lines.append((_el, FP.CYAN_ACCENT, self.font_sm))
 
         elif isinstance(item, Shield):
+            import gear as _ap_std
             lines += [
-                ("Shield", FP.GOLD_BRIGHT, self.font_sm),
+                ("Standard" if _ap_std.is_standard(item) else "Shield", FP.GOLD_BRIGHT, self.font_sm),
                 (f"Material: {('Unique' if getattr(item, 'is_unique', False) and str(item.material).lower() in ('legendary', 'adamantine') else _cap(item.material))}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
                 (self._lore_armour_line(item), FP.BODY_TEXT, self.font_sm),
@@ -9645,6 +9708,9 @@ class RenderMixin:
             if getattr(item, 'damage_resistances', None):
                 lines.append((f"Resists: {self._kit_resist_str(item)}",
                               FP.CYAN_ACCENT, self.font_sm))
+            # A standard's rally, the Shield of Ilion's cover.
+            for _ohl in self._off_hand_power_lines(item):
+                lines.append((_ohl, FP.CYAN_ACCENT, self.font_sm))
             import gear as _ap_s
             _sl = _ap_s.protection_line(item)
             if _sl:

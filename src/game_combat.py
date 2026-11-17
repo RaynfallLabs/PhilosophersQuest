@@ -3991,7 +3991,7 @@ class CombatMixin:
                     continue
                 if (m.x, m.y) not in self.visible:
                     continue
-                dmg = max(1, int(base_dmg * dmg_mult))
+                dmg = max(1, int(base_dmg * dmg_mult * self._rally_mult(pet)))
                 pre_max = m.max_hp
                 m.take_damage(dmg, pet_damage_type(special.get('damage_type')
                                                    or pet.species.get('damage_type')))
@@ -4145,17 +4145,36 @@ class CombatMixin:
             m.x, m.y = min(free, key=lambda s: max(abs(s[0] - m.x), abs(s[1] - m.y)))
             self._spring_lurker(m)       # dragged out of its disguise (PET-04)
 
+    def _rally_mult(self, pet) -> float:
+        """What a standard in the hero's off hand lends a pet or an ally who
+        can see it (Joan of Arc's Standard: at Orleans her men watched it, and
+        when it touched the wall they went over): its ``rally_damage_mult``
+        while the hero sees that companion, else 1. A shield, no off hand,
+        or one pickled before the field lends nothing."""
+        sh = getattr(getattr(self, 'player', None), 'shield', None)
+        try:
+            m = float(getattr(sh, 'rally_damage_mult', 0) or 0)
+        except (TypeError, ValueError):
+            return 1.0
+        if m <= 1.0 or pet is None or not getattr(pet, 'alive', False):
+            return 1.0
+        if (getattr(pet, 'x', None), getattr(pet, 'y', None)) not in (getattr(self, 'visible', None) or ()):
+            return 1.0
+        return m
+
     def _pet_hit(self, pet, m, mult: float, status=None, chance: float = 0.0,
                  duration: int = 0, *, damage_type=None, knockback: int = 0) -> int:
         """One special-strength blow from a pet: its bite times `mult` of its
         `damage_type` (the special's: fire, cold, holy... meet resistances
         and weaknesses, a bite can split what a bite splits), a push of
         `knockback` tiles away from the pet, then the status at `chance`,
-        kill experience and the kill itself. Returns the damage dealt."""
+        kill experience and the kill itself. Returns the damage dealt.
+        A standard the pet can see lends its rally (_rally_mult)."""
         import random as _rng
         if not m.alive:
             return 0
         pre_max = m.max_hp
+        mult = mult * self._rally_mult(pet)
         dealt = m.take_damage(max(1, int(pet.base_damage * mult)),
                               pet_damage_type(damage_type or pet.species.get('damage_type')))
         if m.alive and dealt and knockback:
@@ -4314,6 +4333,10 @@ class CombatMixin:
                 target = result[1] if len(result) > 1 else None
                 if action == 'attack' and target.alive:
                     dmg = pet.get_attack_damage(quiz_acc)
+                    # A standard in sight rallies it (Joan of Arc's: _rally_mult).
+                    _rally = self._rally_mult(pet)
+                    if _rally > 1.0:
+                        dmg = max(1, int(round(dmg * _rally)))
                     pre_max = target.max_hp
                     # Named as the hero sees it, before the bite springs a
                     # lurker (bug bash 5 MON-04, PET-03, INT-05).

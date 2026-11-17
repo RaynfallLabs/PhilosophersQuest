@@ -10,6 +10,8 @@ enchantment of its own slot instead (enchantments.py). For each named piece:
   at its peak floor), never under its authored tier; a quest or starting
   piece (found nowhere, or on floor 1) keeps its own. Its level is the
   tier's greater form (2 x tier).
+- a standard in the off hand (Joan of Arc's, `standard`: gear.is_standard,
+  2026-11-17) carries no AC and no plus at any tier;
 - body armour and shields: AC is the template's base (template_basis) plus
   the tier's plus (gear.plus_for_level), as for a common piece of that level;
   a piece found by depth has at least gear.named_ac_floor of its peak floor
@@ -189,6 +191,12 @@ def ladder(e: dict, category: str, k: str) -> dict:
                 tb.pop('ac_bonus', None)
                 if not tb:
                     tb.update(RUNG_FILL.get(k, {}).get(rung, {}))
+    elif e.get('standard'):
+        # A standard in the off hand, not a shield (Joan of Arc's: gear.
+        # is_standard): no AC and no plus, whatever its tier.
+        e['ac_bonus'] = 0
+        e['enchant_bonus'] = 0
+        e.pop('ench_level', None)
     elif not chain:
         # The template's base, raised where that would leave a legend under
         # the common armour of its own floor (gear.named_ac_floor, 2026-11-12:

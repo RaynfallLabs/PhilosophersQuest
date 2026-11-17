@@ -22,6 +22,7 @@ and says what happened.
 What a blessing does, as the code reads it (so what may be blessed):
   * weapons: +1 damage, and the blow counts as holy (combat.py);
   * armour, shields, rings, amulets, belts: +1 AC while worn (player.py);
+    never a standard in the off hand (Joan of Arc's: gear.is_standard);
   * potions: healing and buffs x1.5, harm blocked (food_system.drink_potion),
     except the kinds in ``POTION_EFFECTS_BLESSING_IGNORES``;
   * scrolls: a stronger reading (game_magic._apply_scroll_effect), except
@@ -100,6 +101,12 @@ def blessing_helps(item, player=None) -> bool:
     except Exception:
         pass
     cls = str(getattr(item, 'item_class', '') or '')
+    if cls == 'shield':
+        # A standard in the off hand (Joan of Arc's) turns no blow: a
+        # blessing gives it no AC (gear.is_standard).
+        import gear
+        if gear.is_standard(item):
+            return False
     if cls in _GEAR_CLASSES:
         return True
     if cls in ('potion', 'scroll'):

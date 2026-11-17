@@ -403,8 +403,12 @@ def test_gifts_given_once_a_floor_cannot_be_farmed():
 def test_every_named_piece_has_something_to_say_on_its_card():
     plain = {'lionheart_shield', 'sandals_of_perseus'}        # no rule, by their own lore
     plain.add('duck_of_doom')           # does nothing and says nothing: a secret (2026-11-16)
+    # (fallen_cover_turns and rally_damage_mult: the Shield of Ilion's cover and
+    # Joan of Arc's Standard's rally, each its own card line:
+    # RenderMixin._off_hand_power_lines, 2026-11-17)
     said = ('special', 'tier_bonuses', 'dodge_bonus', 'toughness_bonus', 'quiz_timer_bonus',
-            'chain_bonus', 'spell_reflect', 'fire_reflect')
+            'chain_bonus', 'spell_reflect', 'fire_reflect', 'fallen_cover_turns',
+            'rally_damage_mult')
     for cat in ('armor', 'shield'):
         for iid, d in _data(f'items/{cat}.json').items():
             if not isinstance(d, dict) or not d.get('is_unique') or iid in plain:

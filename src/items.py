@@ -1033,6 +1033,16 @@ class Shield(Item):
         # Ancile: bonus seconds on quiz timers
         self.quiz_timer_bonus: int   = int(defn.get('quiz_timer_bonus', 0))
         self.special: str            = str(defn.get('special', '') or '')
+        # Joan of Arc's Standard (2026-11-17): a standard in the off hand,
+        # not a shield (gear.is_standard: no AC, no plus, no wear), and its
+        # rally: pets and allies the hero can see hit this many times as
+        # hard (CombatMixin._rally_mult). 0 = no rally.
+        self.standard: bool          = bool(defn.get('standard', False))
+        self.rally_damage_mult: float = float(defn.get('rally_damage_mult', 0.0) or 0.0)
+        # The Shield of Ilion (2026-11-17): once a floor, the blow that leaves
+        # the hero at a quarter of his health or less finds him under it,
+        # Shielded for this many turns (Player.take_damage). 0 = none.
+        self.fallen_cover_turns: int = int(defn.get('fallen_cover_turns', 0) or 0)
         # True for named/legendary shields; controls spawn pool filtering.
         self.is_unique: bool         = bool(defn.get('is_unique', False))
         # Chain-equip fields (see Armor)
@@ -1669,6 +1679,9 @@ def wear_down(item) -> bool:
     restore it (traders.py, the repair service), never above what the item
     had. True when a point was lost."""
     import gear
+    if gear.is_standard(item):
+        # A standard carries no plus to lose (Joan of Arc's): it holds.
+        return False
     if getattr(item, 'item_class', '') == 'armor' and not gear.is_core(item):
         # A minor piece carries no plus: wear takes a level of its
         # enchantment (bug bash 3.3.2); a smith gives it back.

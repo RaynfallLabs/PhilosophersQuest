@@ -7627,5 +7627,79 @@
     "tier": 5,
     "quiz_tier": 5,
     "mathTier": 5
+  },
+  "boudicca_spear": {
+    "name": "Boudicca's Spear",
+    "class": "spear",
+    "variant": "reach",
+    "tier": 2,
+    "material": "iron",
+    "mathTier": 2,
+    "baseDamage": 30,
+    "chainMultipliers": [
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": "/",
+    "color": [
+      150,
+      150,
+      160
+    ],
+    "weight": 4.0,
+    "twoHanded": false,
+    "reach": 2,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "legendary",
+    "value": 900,
+    "min_level": 9999,
+    "identified": false,
+    "unidentified_name": "a long iron-headed spear with a bronze collar of curling swirls",
+    "lore": "Boudicca was queen of the Iceni in eastern Britain. When her husband died, Roman officials seized his kingdom, had her flogged and abused her daughters, and she raised the tribes against Rome. The Roman historian Cassius Dio describes her before her army: very tall, with a fierce glare and a harsh voice, tawny hair falling to her hips and a great gold torc at her throat. Then, he writes, she took up a spear to strike terror into everyone who saw her, and spoke. Her army burned Camulodunum, Londinium and Verulamium before the legions stopped it.",
+    "quiz_tier": 2,
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "spear",
+    "spread": 8,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "peak_weight": 0.0,
+    "base_damage": 30,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "heavy",
+    "can_be_cursed": false,
+    "effects": {
+      "status": "feared",
+      "effect_chance": 0.25,
+      "effect_duration": 4
+    },
+    "design_notes": "Boudicca's own spear (Brandon, 2026-11-17). What it IS, from Cassius Dio 62.2: the spear she grasped 'to aid her in terrifying all beholders'. What belongs to it: terror (effects feared, 25% a hit, 4 turns; the mindless and the fearless are not frightened, Monster.hold). A mortal queen's war spear, the peer of the Dory of Leonidas and the Spear of Romulus: maths tier 2 (its own, fixed), base 30. Never random loot (min_level 9999, no spawn weight).",
+    "id_level": 0,
+    "chain_exponent": 1.15
   }
 }

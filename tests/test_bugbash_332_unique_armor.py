@@ -91,6 +91,12 @@ def test_body_armour_and_shields_are_base_plus_tier():
             if not e.get('is_unique') or e.get('slot', 'shield') in gear.MINOR_SLOTS \
                     or e.get('equip_chain_mode'):
                 continue
+            if e.get('standard'):
+                # A standard in the off hand (Joan of Arc's, 2026-11-17) is
+                # not armour: no AC and no plus at any tier.
+                assert e['ac_bonus'] == 0 and e['enchant_bonus'] == 0, (cat, k)
+                assert 'ench_level' not in e, (cat, k)
+                continue
             tpl = items.get_template(tpl_cat, e['template_basis'])
             plus = min(gear.core_enchant_cap(), e['tier'])
             base = tpl['base_ac_value']

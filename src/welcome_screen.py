@@ -37,9 +37,11 @@ NAME_MAX = 48
 #   _start_wand      -> wand item ID given at start
 #   _start_book      -> spellbook item ID given at start
 #   _start_accessory -> accessory item ID given at start
-#   _start_shield    -> shield item ID, on the arm from the first turn; only a
-#                       figure who fought with a shield in his lore has one
-#                       (Brandon 2026-11-16: "Geralt no, Leonidas yes")
+#   _start_shield    -> the off hand: a shield item ID, on the arm from the
+#                       first turn; only a figure who fought with a shield in
+#                       his lore has one (Brandon 2026-11-16: "Geralt no,
+#                       Leonidas yes"). Joan's is her standard, which is not
+#                       a shield (gear.is_standard: no AC).
 #   _start_armor     -> armor item ID given at start
 #   _start_soul_spheres -> int: number of plain Soul Spheres given at start
 #   _start_spheres   -> list of sphere item IDs given at start (QA: all six)
@@ -109,8 +111,9 @@ SECRET_BUILDS: dict[str, dict] = {
         "_no_dagger": True,
         "_start_weapon": "achilles_spear",
         # Iliad 18-22: the spear of Pelian ash in his hand, the shield
-        # Hephaestus made on his arm.
-        "_start_shield": ("light_wooden", "oak"),
+        # Hephaestus made on his arm (data/items/shield.json; Brandon
+        # 2026-11-17: "ok to give uniques that are lore accurate").
+        "_start_shield": "shield_of_achilles",
         "_greeting": "Achilles charges in. His heel tingles ominously.",
     },
     "leonidas of sparta": {
@@ -127,8 +130,8 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": ("longsword", "iron"),
         # Arrian 1.11 and 6.10: at Troy he took a sacred shield from Athena's
         # temple; it was carried before him, and among the Malli Peucestas
-        # held it over him when he fell. A bronze aspis.
-        "_start_shield": ("heavy_wooden", "bronze"),
+        # held it over him when he fell. A bronze aspis: the Shield of Ilion.
+        "_start_shield": "shield_of_ilion",
         "_start_accessory": "tablet_of_hammurabi",
         "_greeting": "Alexander the Great descends. He intends to conquer this too.",
     },
@@ -320,18 +323,22 @@ SECRET_BUILDS: dict[str, dict] = {
         "STR": 16, "CON": 17, "DEX": 12, "INT": 9, "WIS": 11, "PER": 12,
         "_sprite": "player_boudicca",
         "_no_dagger": True,
-        # Cassius Dio has her grasp a spear in a chariot, no shield; none
-        # of the sources gives her one.
-        "_start_weapon": ("longsword", "iron"),
+        # Cassius Dio 62.2: she "grasped a spear to aid her in terrifying
+        # all beholders" (her own spear, data/items/weapon.json); no shield,
+        # none of the sources gives her one.
+        "_start_weapon": "boudicca_spear",
         "_greeting": "Boudicca enters at the head of a host that exists only in her fury.",
     },
     "saint joan of arc maid of orleans": {
         "STR": 13, "CON": 13, "DEX": 12, "INT": 10, "WIS": 16, "PER": 14,
         "_sprite": "player_joan",
         "_no_dagger": True,
-        # Her banner in her other hand, not a shield: she carried it in the
-        # charge so as to kill no one, and wore white plate.
+        # Her standard in her other hand, not a shield: she carried it in
+        # the charge so as to kill no one (her trial, 27 February 1431). It
+        # gives no AC; her pets and allies in sight hit harder. Her sword
+        # stays her weapon.
         "_start_weapon": ("longsword", "iron"),
+        "_start_shield": "joans_standard",
         "_start_accessory": "lyre_of_orpheus",
         "_greeting": "Joan listens to the Voices. They say: 'Go forward, child.'",
     },

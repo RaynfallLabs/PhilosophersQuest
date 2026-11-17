@@ -2200,6 +2200,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._gold_offering_used_this_floor = False  # Gilgamesh bribe
         self.player._eluned_auto_invis_used = False  # Ring of Eluned
         self.player._hypatia_protected_used = False  # Ring of Hypatia
+        self.player._fallen_cover_used = False       # the Shield of Ilion
         # Bug-bash fix af6d: amazon_charge must reset between floors so the
         # player doesn't carry a free +50% melee from one floor to the next.
         self.player._amazon_charge_armed = False
@@ -4577,7 +4578,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _ONCE_A_FLOOR_PLAYER = ('_elder_blood_escape_used', '_hrunting_save_used',
                             '_death_save_used_this_floor', '_seven_league_used_this_floor',
                             '_gold_offering_used_this_floor', '_eluned_auto_invis_used',
-                            '_hypatia_protected_used', '_gorgoneion_used_this_floor')
+                            '_hypatia_protected_used', '_gorgoneion_used_this_floor',
+                            '_fallen_cover_used')
 
     def _once_a_floor_state(self) -> dict:
         p = self.player
@@ -9506,6 +9508,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return f"{item.slot}  {enchantments.label(item) or 'plain'}  tier {item.tier}"
         elif isinstance(item, Shield):
             import gear
+            if gear.is_standard(item):
+                return f"standard  no AC  tier {item.tier}"
             return f"shield  -{gear.ac_value(item)} AC  tier {item.tier}"
         elif isinstance(item, Accessory):
             fx = item.effects or {}

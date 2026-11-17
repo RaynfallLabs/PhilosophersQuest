@@ -157,6 +157,7 @@ class Player:
         self._gold_offering_used_this_floor = False
         self._eluned_auto_invis_used = False
         self._hypatia_protected_used = False
+        self._fallen_cover_used = False      # the Shield of Ilion, once a floor
         self._was_on_altar = False
         self._amazon_charge_armed = False
         self._straight_line_steps = 0
@@ -440,6 +441,22 @@ class Player:
                 self.hp > 0 and self.hp <= self.max_hp * 0.5 and \
                 self.status_effects.get('berserk', 0) <= 0:
             self.status_effects['berserk'] = max(self.status_effects.get('berserk', 0), 8)
+
+        # The Shield of Ilion (fallen_cover_turns): once a floor, the blow
+        # that leaves the hero at a quarter of his health or less finds him
+        # under it, as Peucestas held the sacred shield from Troy over the
+        # fallen Alexander (Arrian 6.10). Shielded for its turns.
+        _sh = getattr(self, 'shield', None)
+        _cover = int(getattr(_sh, 'fallen_cover_turns', 0) or 0) if _sh is not None else 0
+        if (_cover > 0 and actual > 0 and 0 < self.hp <= self.max_hp * 0.25
+                and not getattr(self, '_fallen_cover_used', False)):
+            self._fallen_cover_used = True
+            self.add_effect('shielded', _cover)
+            _g = getattr(self, '_combat_game_ref', None)
+            if _g is not None and hasattr(_g, 'add_message'):
+                _nm = _g._bare_name(_sh) if hasattr(_g, '_bare_name') else _sh.name
+                _g.add_message(f"Badly hurt, you crouch under the {_nm}. You are Shielded.",
+                               'success')
 
         # Excalibur: cast_me_away. At HP <= 25%, the blade ONE-SHOT drains
         # its own enchant by 1 and grants the wielder life_save. One use
@@ -1139,8 +1156,8 @@ class Player:
         total = 0
         pieces = [s for s in (self.armor_slots or ())
                   if s is not None and getattr(s, 'slot', 'body') in _gear.CORE_SLOTS]
-        if self.shield is not None:
-            pieces.append(self.shield)
+        if self.shield is not None and _gear.is_core(self.shield):
+            pieces.append(self.shield)          # (a standard carries no AC)
         for s in pieces:
             total += int(getattr(s, 'ac_bonus', 0) or 0) + int(getattr(s, 'enchant_bonus', 0) or 0)
             b = getattr(s, 'buc', 'uncursed')
@@ -1171,10 +1188,8 @@ class Player:
             for s in self.armor_slots
             if s is not None and getattr(s, 'slot', 'body') in _gear.CORE_SLOTS
         )
-        shield_bonus = (
-            getattr(self.shield, 'ac_bonus', 0) + getattr(self.shield, 'enchant_bonus', 0)
-            if self.shield else 0
-        )
+        # (gear.ac_value: base plus plus; none for a standard in the off hand)
+        shield_bonus = _gear.ac_value(self.shield) if self.shield else 0
         # BUC of the two armour pieces that carry AC: blessed +1, cursed -1
         # each (a blessed minor piece, ring or amulet works a level higher
         # instead; gear.py, rings.py). No ring or amulet gives AC.
@@ -1182,8 +1197,8 @@ class Player:
         for s in ([p for p in self.armor_slots
                    if p is not None and getattr(p, 'slot', 'body') in _gear.CORE_SLOTS]
                   + [self.shield]):
-            if s is None:
-                continue
+            if s is None or not _gear.is_core(s):
+                continue                  # (a standard in the off hand carries no AC)
             _b = getattr(s, 'buc', 'uncursed')
             if _b == 'blessed':
                 buc_ac += 1

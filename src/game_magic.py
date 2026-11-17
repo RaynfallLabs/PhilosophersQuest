@@ -3097,7 +3097,8 @@ class MagicMixin:
             equipped = [(s, ARMOR_SLOTS[i]) for i, s in enumerate(self.player.armor_slots)
                         if s is not None]
             equipped.sort(key=lambda p: 0 if p[1] in _gear.CORE_SLOTS else 2)
-            if self.player.shield is not None:
+            # (a standard in the off hand is not armour: it takes no plus)
+            if self.player.shield is not None and not _gear.is_standard(self.player.shield):
                 equipped.insert(1 if equipped and equipped[0][1] in _gear.CORE_SLOTS else 0,
                                 (self.player.shield, 'shield'))
             # Chain ladder (Path A): delta + how many armor slots get hit.
@@ -3152,8 +3153,9 @@ class MagicMixin:
             for i, s in enumerate(self.player.armor_slots):
                 if s:
                     candidates.append((s, ARMOR_SLOTS[i]))
-            if self.player.shield:
-                candidates.append((self.player.shield, 'shield'))
+            import gear as _gear_ei
+            if self.player.shield and not _gear_ei.is_standard(self.player.shield):
+                candidates.append((self.player.shield, 'shield'))   # (a standard takes no plus)
             for s in getattr(self.player, 'accessory_slots', []):
                 if s:
                     candidates.append((s, 'accessory'))

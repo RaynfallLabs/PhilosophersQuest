@@ -227,7 +227,12 @@ A shield's AC is its template's base (buckler 1, kite 2, tower 3) plus its
 level's plus; a chain-equip shield's tier ladder sets its full AC (as
 above). Shields cannot be equipped alongside a two-handed weapon
 (`Player.can_equip_shield`). Signature fields: `fire_reflect`
-(Svalinn), `quiz_timer_bonus` (Ancile — bonus seconds on quiz timers).
+(Svalinn), `quiz_timer_bonus` (Ancile — bonus seconds on quiz timers),
+`fallen_cover_turns` (the Shield of Ilion — once a floor, Shielded when a
+blow leaves the hero at a quarter of his health), and on a `standard` (Joan
+of Arc's Standard: the off hand, no AC, `gear.is_standard`)
+`rally_damage_mult` (pets and allies in sight hit harder). See
+[progression](progression.md), "Their own legends' pieces".
 
 ---
 

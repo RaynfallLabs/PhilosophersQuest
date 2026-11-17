@@ -13,6 +13,10 @@ in the pack:
     chariot, no source a shield), Joan of Arc (her banner in her other hand)
     and Titivillus (the demon of the scribes' slips carries a quill).
 
+Since 2026-11-17 Achilles' and Alexander's are their own legends' shields
+(the Shield of Achilles, the Shield of Ilion) and Joan's off hand holds her
+standard, which is not a shield (test_hero_uniques_2026_11_17.py).
+
 Merlin's greeting says he "descends with staff in hand", and he started with
 none: he now holds his own unique staff, the Staff of Emrys, a mage's staff
 whose power is in his casting and his ward, not his blows. Any other hero can
@@ -58,13 +62,28 @@ def _packed_shields(p):
     return [i for i in p.inventory if type(i).__name__ == 'Shield']
 
 
+def _is_a_shield(start):
+    """A `_start_shield` that is a shield: not a standard (Joan's), which
+    takes the off hand but is not one (gear.is_standard)."""
+    if not start:
+        return False
+    if isinstance(start, tuple):
+        return True
+    with open(os.path.join(ROOT, 'data', 'items', 'shield.json'), encoding='utf-8') as f:
+        return not json.load(f)[start].get('standard')
+
+
 # ---------------------------------------------------------------- shields
 
 def test_only_the_figures_whose_lore_has_a_shield_start_with_one():
-    with_shield = {k for k, b in SECRET_BUILDS.items() if b.get('_start_shield')}
+    with_shield = {k for k, b in SECRET_BUILDS.items() if _is_a_shield(b.get('_start_shield'))}
     assert with_shield == SHIELD_LORE
     for key in NO_SHIELD:
-        assert not SECRET_BUILDS[key].get('_start_shield'), key
+        assert not _is_a_shield(SECRET_BUILDS[key].get('_start_shield')), key
+    # The one off hand that is not a shield: Joan's standard.
+    off_hand_not_shield = {k for k, b in SECRET_BUILDS.items()
+                           if b.get('_start_shield') and not _is_a_shield(b['_start_shield'])}
+    assert off_hand_not_shield == {'saint joan of arc maid of orleans'}
 
 
 @pytest.mark.parametrize('key', sorted(SHIELD_LORE))
@@ -84,18 +103,29 @@ def test_a_lore_shield_is_on_the_arm_from_the_first_turn(key):
 
 
 def test_the_shields_themselves():
+    # Their own legends' shields since 2026-11-17 (Brandon: "ok to give
+    # uniques that are lore accurate to special builds").
     assert SECRET_BUILDS['leonidas of sparta']['_start_shield'] == 'shield_of_the_spartans'
-    assert SECRET_BUILDS['achilles son of peleus']['_start_shield'] == ('light_wooden', 'oak')
-    assert SECRET_BUILDS['alexander the great']['_start_shield'] == ('heavy_wooden', 'bronze')
+    assert SECRET_BUILDS['achilles son of peleus']['_start_shield'] == 'shield_of_achilles'
+    assert SECRET_BUILDS['alexander the great']['_start_shield'] == 'shield_of_ilion'
     g = _game('alexander the great')
-    assert g.player.shield.id == 'bronze_heavy_wooden' and g.player.weapon.id == 'iron_longsword'
+    assert g.player.shield.id == 'shield_of_ilion' and g.player.weapon.id == 'iron_longsword'
 
 
 @pytest.mark.parametrize('key', ('theseus of athens', 'boudicca queen of the iceni',
                                  'saint joan of arc maid of orleans'))
 def test_a_figure_with_no_shield_in_the_lore_starts_with_none(key):
+    """No shield on the arm or in the pack. Joan's off hand holds her
+    standard, which is not a shield: no AC (gear.is_standard)."""
+    import gear
     g = _game(key)
-    assert g.player.shield is None and not _packed_shields(g.player), key
+    sh = g.player.shield
+    assert sh is None or (gear.is_standard(sh) and gear.ac_value(sh) == 0), key
+    assert not [s for s in _packed_shields(g.player) if not gear.is_standard(s)], key
+    if key == 'saint joan of arc maid of orleans':
+        assert sh is not None and sh.id == 'joans_standard'
+    else:
+        assert sh is None, key
 
 
 def test_a_shield_that_meets_a_two_hander_waits_in_the_pack():
