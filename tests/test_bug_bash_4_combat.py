@@ -360,14 +360,16 @@ def test_c06_old_floor_monsters_stop_when_the_sandals_lift_the_hero(monkeypatch)
     assert not [m for m, lvl in acted if lvl == 1], 'an old-floor monster acted on the new floor'
 
 
-def test_burdened_extra_turn_is_not_spent_on_a_new_floor_or_under_a_popup(monkeypatch):
+def test_a_slow_heros_second_world_turn_is_not_spent_on_a_new_floor_or_under_a_popup(monkeypatch):
     """A Burdened step's extra dungeon turn fired after the step's own turn
     had moved the hero to another floor (the Winged Sandals) or opened a
-    popup, so the new floor's monsters got a free turn."""
+    popup, so the new floor's monsters got a free turn. Since 2026-11-16
+    the load costs speed: a slow hero's action can give the world two
+    turns (defence.world_turns), and the second must not run behind a new
+    floor or a popup either (Game._advance_turn)."""
     from game_states import STATE_PLAYER, STATE_STORY_POPUP
     from player import Player
-    monkeypatch.setattr(Player, 'is_burdened', lambda self: True)
-    monkeypatch.setattr(Player, 'burden_step', lambda self: True)
+    monkeypatch.setattr(Player, 'get_speed', lambda self: 5.0)   # two world turns an action
     g = _game(seed=31)
     g._change_level(2, enter_from_top=True)
     g.state = STATE_PLAYER
@@ -376,17 +378,12 @@ def test_burdened_extra_turn_is_not_spent_on_a_new_floor_or_under_a_popup(monkey
     g.dungeon.traps = {}
     _open_floor(g, 3)
     levels = []
-    real = type(g)._advance_turn
-
-    def spy(self, *a, **kw):
-        levels.append(self.dungeon_level)
-        return real(self, *a, **kw)
-
-    monkeypatch.setattr(type(g), '_advance_turn', spy)
-    # The step's own turn moves the hero up a floor; the extra one must not run.
+    # The step's first world turn moves the hero up a floor; the second
+    # must not run.
     real_tick = type(g)._do_monster_turns
 
     def lift(self):
+        levels.append(self.dungeon_level)
         if self.dungeon_level == 2:
             self._change_level(1, enter_from_top=False)
             self.state = STATE_PLAYER
@@ -397,17 +394,24 @@ def test_burdened_extra_turn_is_not_spent_on_a_new_floor_or_under_a_popup(monkey
     g._do_move(1, 0)
     assert g.dungeon_level == 1
     assert levels == [2], levels
-    # A popup opened by the step's turn: no extra turn behind it either.
+    # A popup opened by the first world turn: no second turn behind it either.
     levels.clear()
     _open_floor(g, 3)
     g.monsters = []
 
     def popup(self):
+        levels.append(self.dungeon_level)
         self.state = STATE_STORY_POPUP
 
     monkeypatch.setattr(type(g), '_do_monster_turns', popup)
     g._do_move(1, 0)
     assert levels == [1], levels
+    # With nothing in the way, a hero at speed 5 gives the world two turns.
+    levels.clear()
+    g.state = STATE_PLAYER
+    monkeypatch.setattr(type(g), '_do_monster_turns', lambda self: levels.append(self.dungeon_level))
+    g._advance_turn()
+    assert levels == [1, 1], levels
 
 
 # ---------------------------------------------------------------- C09

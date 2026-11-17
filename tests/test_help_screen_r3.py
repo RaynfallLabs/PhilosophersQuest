@@ -229,7 +229,8 @@ def test_the_gear_page_names_every_new_rule():
     text = _page_text('gear_and_load')
     for must in ('A readied weapon', 'S swaps it', 'Shift+E opens your Loadouts', 'Known by Hand',
                  'Keep dressing?', 'Shift+C: Coat', 'T: Throw', 'Flasks tab',
-                 'Shift+S: Change your stance', 'Heavy:', 'Burdened:', 'Overloaded:'):
+                 'Shift+S: Change your stance', 'Light:', 'Heavy:', 'Burdened:', 'Overloaded:',
+                 'Dodge:', 'Speed:', 'Heavy armour:'):
         assert must in text, must
 
 
@@ -253,16 +254,29 @@ def test_the_gear_page_numbers_are_the_datas():
     rows = {k: v for sec in _page('gear_and_load')['sections'] for k, v in sec.get('rows', [])}
     load = rules['load']
     assert set(Player.LOAD_WORDS.values()) <= set(rows)
-    heavy, burd, over = rows['Heavy'], rows['Burdened'], rows['Overloaded']
-    assert load['heavy']['share'] == 0.5 and heavy.startswith('Over half your limit')
+    light, heavy, burd, over = rows['Light'], rows['Heavy'], rows['Burdened'], rows['Overloaded']
+    # The four tiers of 2026-11-16 (src/defence.py): what the rows say is the data.
+    assert load['light']['share'] == 0.5 and light.startswith('Over half your limit')
+    assert 0 < load['light']['dodge'] < 1 and 'dodge a little less' in light
+    assert load['light']['speed'] == 0 and 'slower' not in light
+    assert load['heavy']['share'] == 0.7 and heavy.startswith('Over 70%')
     assert load['heavy']['dodge'] == 0.5 and 'dodge half as well' in heavy
-    assert load['burdened']['share'] == 0.75 and burd.startswith('Over three quarters')
+    assert load['heavy']['speed'] > 0 and 'you are slower' in heavy
+    assert load['burdened']['share'] == 0.9 and burd.startswith('Over 90%')
     assert load['burdened']['dodge'] == 0 and 'cannot dodge' in burd
-    assert load['burdened']['dex_ac'] == 0.5 and 'Dexterity guards you half as well' in burd
-    assert load['burdened']['step_every'] == 2 and 'every second step' in burd
+    assert load['burdened']['speed'] > load['heavy']['speed'] and 'much slower' in burd
     assert load['overloaded']['dodge'] == 0 and 'cannot dodge' in over
-    assert load['overloaded']['dex_ac'] == 0 and 'Dexterity no longer guards you' in over
-    assert load['overloaded']['step_every'] == 1 and 'every step costs an extra turn' in over
+    assert load['overloaded']['speed'] == 0.5 and 'half speed' in over
+    for row in (light, heavy, burd, over):
+        assert 'extra turn' not in row and 'Dexterity' not in row
+    # Armour, dodge and speed: no Dexterity in AC; the Strength lines are the data's.
+    import defence
+    assert 'Dexterity adds nothing to it' in text
+    assert 'medium armour half and heavy armour none' in rows['Dodge']
+    assert rules['armour_weight']['dodge_share'] == {'light': 1.0, 'medium': 0.5, 'heavy': 0.0}
+    assert (f"Strength {defence.fit_strength('medium')} wears medium armour at full speed and "
+            f"Strength {defence.fit_strength('heavy')} heavy armour") in rows['Heavy armour']
+    assert 'Constitution over 10 adds a little' in text and rules['defence']['con_carry'] > 0
 
     st = arsenal['stance']
     press, guard = st['press'], st['guard']

@@ -1257,7 +1257,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # load heavier than before (even past the limit). Nothing is taken
         # away: the hero is told at once and can drop or swap gear as usual.
         # _burdened and _load_tier are not trusted from the file; they are
-        # worked out afresh (Heavy, Burdened and Overloaded since 2026-11-14).
+        # worked out afresh (Light, Heavy, Burdened and Overloaded since
+        # 2026-11-16, at new lines: a save from before is simply told its
+        # load now). The old step counter a save may carry is read by
+        # nothing: the load costs speed now (Player.get_speed).
         self.player._burdened = False
         self.player._load_tier = ''
         self._sync_saddlebags()        # her saddlebags, before the load is read (game_riding)
@@ -3474,7 +3477,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Attempt a player move/action in direction (dx, dy)."""
         if self.state != STATE_PLAYER:
             return
-        self._step_floor = self.dungeon_level     # for _burden_extra_turn
 
         # Feared: force movement away from nearest visible monster
         if self.player.has_effect('feared'):
@@ -3667,7 +3669,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._notify_stairs(nx, ny)
                 self._notify_ground(nx, ny)
                 self._advance_turn()
-                self._burden_extra_turn()
         elif tile_at_dest == SECRET_DOOR:
             # Bump reveals secret door (chance based on PER)
             per_chance = min(0.85, 0.3 + self.player.PER * 0.04)
@@ -3847,7 +3848,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     pass
                 if not _free_move:
                     self._advance_turn()
-                    self._burden_extra_turn()       # Burdened: every second step costs two turns
                 # Haste no longer auto-fires a second _do_move (that doubled
                 # the player's keystroke). Speed lives in _advance_turn: the
                 # world's clock moves 10/speed of a turn each action
@@ -5393,24 +5393,33 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 pass
 
         # Speed (Player.get_speed, on the scale of a monster's speed: 10 is
-        # ordinary). Each action the hero takes moves the world's clock on by
-        # 10/speed of a turn, and the world (monsters, pets, escorts and
-        # wanderers) acts each time the clock passes a whole turn: haste
-        # (speed 20) is every other action, Speed boots about one action in
-        # twenty. No dice: the same actions always give the same turns.
-        # Player-side ticks (cooldowns, status durations, HP regen) happen
-        # on every action. A speed under 10 counts as 10 here (slowing costs
-        # the hero his own turn instead, in _do_move).
-        _speed = max(10.0, float(self.player.get_speed()))
-        _clock = float(self.__dict__.get('_world_clock', 0.0) or 0.0) + 10.0 / _speed
-        self._world_waits = _clock < 1.0 - 1e-9
-        if not self._world_waits:
-            _clock -= 1.0
-        # At ordinary speed the world keeps pace exactly, so the clock starts
-        # clean: a fresh haste always begins by waiting, as it always has.
-        self._world_clock = _clock if _speed > 10.0 else 0.0
+        # ordinary; the defence model, 2026-11-16). Each action the hero
+        # takes moves the world's clock on by 10/speed of a turn, and the
+        # world (monsters, pets, escorts and wanderers) takes a turn for each
+        # whole turn the clock passes (defence.world_turns): haste (speed 20)
+        # is every other action, a nimble hero at 11 one action in eleven;
+        # a hero slowed by armour too heavy for his Strength or by his load
+        # (speed 9) gives the world two turns one action in nine. No dice:
+        # the same actions always give the same turns. Player-side ticks
+        # (cooldowns, status durations, HP regen) happen on every action.
+        # (The Slowed status still costs the hero his own turn instead, in
+        # _do_move; the load's every-second-step rule is gone.)
+        import defence as _defence
+        _speed = float(self.player.get_speed())
+        _n_world, self._world_clock = _defence.world_turns(
+            float(self.__dict__.get('_world_clock', 0.0) or 0.0), _speed)
+        self._world_waits = _n_world == 0
+        _floor0, _state0 = self.dungeon_level, self.state
 
-        if not self._world_waits:
+        for _wt in range(_n_world):
+            if _wt:
+                # A second turn of the world only while nothing has changed:
+                # not once the first has killed the hero, opened a popup or
+                # a menu, or moved him to another floor (the turn would be a
+                # free one for monsters he never walked among).
+                if (self.player.is_dead() or self.state != _state0
+                        or self.dungeon_level != _floor0):
+                    break
             self._family_turn()            # families that flee on sight; hidden things shown
             # Whose blows these are, for the Seeker's damage achievements
             # (game_seeker.py): everything outside this block is the hero's.
@@ -5443,12 +5452,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._say_affinity_lines()
 
     # ------------------------------------------------------------------
-    # Carrying: Heavy, Burdened, Overloaded (plan: _genart/ui/WEIGHT_PLAN.md;
-    # Brandon 2026-11-14, data/gear_rules.json load)
+    # Carrying: Light, Heavy, Burdened, Overloaded (plan: _genart/ui/WEIGHT_PLAN.md;
+    # Brandon 2026-11-16, data/gear_rules.json load, src/defence.py)
     # ------------------------------------------------------------------
 
     def _note_burden(self):
-        """Say so when the hero's load changes tier (Heavy, Burdened,
+        """Say so when the hero's load changes tier (Light, Heavy, Burdened,
         Overloaded, or free). Checked every turn, so a pickup, a drop, a lost
         point of Strength or an old save that is suddenly heavy are all
         caught on the turn they happen."""
@@ -5456,41 +5465,46 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not change:
             return
         was, now = change
-        tiers = self.player.LOAD_TIERS
+        import defence as _defence
         words = self.player.LOAD_WORDS
-        if tiers.index(now) > tiers.index(was):
-            if now == 'heavy':
+        # The load's cost as it is for this hero: Marius' Mule keeps his
+        # stride (the line must not tell him he is slower when he is not).
+        stride = self.player.keeps_stride() and now in ('light', 'heavy', 'burdened')
+
+        if _defence.tier_rank(now) > _defence.tier_rank(was):
+            if now == 'light':
                 self.add_message(
-                    "Your load is Heavy. You dodge half as well and your steps "
+                    "Your load is Light. You dodge a little less and your steps "
                     "carry further until you lighten it.", 'warning')
+            elif now == 'heavy':
+                self.add_message(
+                    "Your load is Heavy. You dodge half as well"
+                    + (", but you keep your stride" if stride else ", you are slower")
+                    + " and your steps carry further until you lighten it.", 'warning')
             elif now == 'burdened':
-                # The step's cost as it is for this hero (Marius' Mule keeps
-                # his stride: the line said "every second step costs an
-                # extra turn" to a hero whose steps cost nothing more).
-                n = self.player.load_step_every()
-                if n > 0:
-                    nth = {2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth'}.get(n, f"{n}th")
-                    self.add_message(
-                        f"You are Burdened. You cannot dodge, your Dexterity guards "
-                        f"you half as well, and every {nth} step costs an extra turn "
-                        f"until you lighten your load.", 'warning')
-                else:
-                    self.add_message(
-                        "You are Burdened. You cannot dodge and your Dexterity guards "
-                        "you half as well until you lighten your load, but you keep "
-                        "your stride.", 'warning')
+                self.add_message(
+                    "You are Burdened. You cannot dodge"
+                    + (", but you keep your stride" if stride else " and you are much slower")
+                    + " until you lighten your load.", 'warning')
             else:
                 self.add_message(
-                    "You are Overloaded. You cannot dodge, your Dexterity no "
-                    "longer guards you, and every step costs an extra turn until "
-                    "you lighten your load.", 'danger')
+                    "You are Overloaded. You cannot dodge and you move at half speed "
+                    "until you lighten your load.", 'danger')
         elif not now:
-            self.add_message("Your load is no longer Heavy." if was == 'heavy'
-                             else f"You are no longer {words[was]}.", 'success')
+            self.add_message("Your load is no longer Light." if was == 'light'
+                             else ("Your load is no longer Heavy." if was == 'heavy'
+                                   else f"You are no longer {words[was]}."), 'success')
         else:
-            still = ("your load is still Heavy" if now == 'heavy'
-                     else f"you are still {words[now]}")
-            self.add_message(f"You are no longer {words[was]}, but {still}.", 'info')
+            # Lighter, but not free: "You are no longer Burdened, but your
+            # load is still Heavy"; "Your load is no longer Heavy, but it is
+            # still Light".
+            if was in ('light', 'heavy'):
+                self.add_message(f"Your load is no longer {words[was]}, but it is still "
+                                 f"{words[now]}.", 'info')
+            else:
+                still = (f"your load is still {words[now]}" if now in ('light', 'heavy')
+                         else f"you are still {words[now]}")
+                self.add_message(f"You are no longer {words[was]}, but {still}.", 'info')
 
     def _give_item(self, item) -> bool:
         """Hand the hero something (a reward, a conjured stack). Into the pack
@@ -5504,22 +5518,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             f"Too heavy to carry: the {self._display_name(item)} is at your feet "
             f"(your limit is {self.player.get_carry_limit()}).", 'warning')
         return False
-
-    def _burden_extra_turn(self):
-        """A Burdened hero's step: every Player.BURDENED_STEP_EVERY-th one
-        gives the dungeon one more turn, and every one when Overloaded.
-        Walking only; fighting, spells and the quiz clock are untouched."""
-        if self.state == STATE_DEAD or self.player.is_dead():
-            return
-        # Not once the step's own turn has opened a popup or menu, or moved
-        # the hero to another floor (the Winged Sandals): the extra turn was
-        # then a free turn for monsters the hero had not walked among.
-        if self.state != STATE_PLAYER:
-            return
-        if self.dungeon_level != getattr(self, '_step_floor', self.dungeon_level):
-            return
-        if self.player.burden_step():
-            self._advance_turn()
 
     def _maybe_wander_spawn(self):  # caps: WANDER_HUNTING_CAP / wander_alive_cap
         """The floor's clock, one world turn (src/wanderers.py): time to

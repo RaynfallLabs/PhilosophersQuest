@@ -2,17 +2,21 @@
 tables: _genart/ui/WEIGHT_PLAN.md; numbers measured with
 tools/balance/carry_sim.py.
 
-Weight that bites (Brandon 2026-11-14: "heavy at 50%, burdened at 75%,
-overloaded at 100%"; the limit stays a wall): Heavy above half the limit
-(half the dodge, footsteps a tile further), Burdened above three quarters
-(no dodge, half Dexterity's AC, every second step costs a turn), Overloaded
-past the limit itself (no Dexterity AC, every step costs a turn; only lost
-Strength, an old save or the Boulder gets there). data/gear_rules.json
-`load`. (Burdened 50% / Stressed 75% from 2026-11-13; before that one line.)
+Weight that bites (Brandon 2026-11-16: "Light load at half, minor dodge
+penalty, Heavy at 70%, larger dodge penalty and speed penalty, and Burdened
+at 90% (larger penalties)"; the limit stays a wall): Light above half the
+limit (a little less dodge, footsteps a tile further), Heavy above 70%
+(half the dodge, slower), Burdened above 90% (no dodge, much slower),
+Overloaded past the limit itself (half speed; only lost Strength, an old
+save or the Boulder gets there). data/gear_rules.json `load`, src/defence.py
+(tests/test_defence_model.py). The load costs speed, never the clock or a
+blow's AC; the every-second-step rule is gone. Constitution over 10 adds a
+little to Strength's limit. (Heavy 50% / Burdened 75% from 2026-11-14;
+Burdened 50% / Stressed 75% from 2026-11-13; before that one line.)
 
 Logic tests on Player and on a real headless Game. The FEEL of the tiers
-(is the warning seen, is every second step a chore) is a play-test
-question: Claude cannot drive Pygame.
+(is the warning seen, is being slower a real cost and not a chore) is a
+play-test question: Claude cannot drive Pygame.
 """
 import copy
 import os
@@ -85,8 +89,10 @@ def test_the_limit_is_twenty_plus_eight_per_strength():
     assert p.get_carry_limit() == 100                  # STR 10
     p.STR = 18
     assert p.get_carry_limit() == 164
-    assert Player.HEAVY_SHARE == 0.5 and Player.BURDENED_SHARE == 0.75
-    assert Player.BURDENED_STEP_EVERY == 2 and Player.OVERLOADED_STEP_EVERY == 1
+    assert (Player.LIGHT_SHARE, Player.HEAVY_SHARE, Player.BURDENED_SHARE) == (0.5, 0.7, 0.9)
+    import defence
+    p.CON = 14                                         # a little more from Constitution
+    assert p.get_carry_limit() == 164 + 4 * defence.rules()['con_carry']
 
 
 def test_item_weights_were_not_compressed():
@@ -149,62 +155,76 @@ def test_equip_and_unequip_through_the_game_keep_the_total():
 
 
 # ---------------------------------------------------------------------------
-# The three tiers: on and off at each line, with their penalties
+# The four tiers: on and off at each line, with their penalties
 # ---------------------------------------------------------------------------
 
-def test_heavy_above_half_burdened_above_three_quarters_overloaded_past_the_limit():
+def test_light_at_half_heavy_at_seventy_burdened_at_ninety_overloaded_past_the_limit():
     p = Player()                                      # limit 100
     p.inventory.append(_weight(50))
     assert not p.is_heavy() and p.load_tier() == '' and p.update_burden() is None
     extra = _weight(1)
     p.inventory.append(extra)                         # 51
-    assert p.is_heavy() and not p.is_burdened()
-    assert p.load_tier() == 'heavy' and p.update_burden() == ('', 'heavy')
+    assert p.load_tier() == 'light' and not p.is_heavy()
+    assert p.update_burden() == ('', 'light')
     assert p.update_burden() is None                  # said once
-    more = _weight(25)
-    p.inventory.append(more)                          # 76
+    step = _weight(20)
+    p.inventory.append(step)                          # 71
+    assert p.is_heavy() and not p.is_burdened()
+    assert p.load_tier() == 'heavy' and p.update_burden() == ('light', 'heavy')
+    more = _weight(20)
+    p.inventory.append(more)                          # 91
     assert p.is_burdened() and p.load_tier() == 'burdened'
     assert p.update_burden() == ('heavy', 'burdened')
     over = _weight(30)
-    p.inventory.append(over)                          # 106: only by hand, past the wall
+    p.inventory.append(over)                          # 121: only by hand, past the wall
     assert p.is_overloaded() and p.load_tier() == 'overloaded'
     assert p.update_burden() == ('burdened', 'overloaded')
     p.inventory.remove(over)
     p.inventory.remove(more)
     assert p.update_burden() == ('overloaded', 'heavy')
+    p.inventory.remove(step)
+    assert p.update_burden() == ('heavy', 'light')
     p.inventory.remove(extra)
-    assert p.update_burden() == ('heavy', '')
+    assert p.update_burden() == ('light', '')
 
 
 def test_an_old_saves_stressed_tier_is_told_afresh():
     p = Player()
     p.inventory.append(_weight(80))
     p._load_tier = 'stressed'                         # a 2026-11-13 save's word
-    assert p.update_burden() == ('', 'burdened')
+    assert p.update_burden() == ('', 'heavy')
 
 
 def test_strength_moves_the_threshold():
     p = Player()
-    p.inventory.append(_weight(52))
+    p.inventory.append(_weight(72))
     assert p.is_heavy()
-    p.apply_stat_bonus('STR', 1)                      # limit 108, line 54
+    p.apply_stat_bonus('STR', 1)                      # limit 108, line 75.6
     assert not p.is_heavy()
 
 
 def test_the_game_says_so_in_title_case():
     g = _game()
-    g.player.inventory.append(_weight(60))
+    base = g.player.get_current_weight()
+    g.player.inventory.append(_weight(55 - base))
     g._advance_turn()
     texts = _texts(g, 5)
-    assert any(t.startswith("Your load is Heavy.") for t in texts), texts
+    assert any(t.startswith("Your load is Light. You dodge a little less") for t in texts), texts
     g.player.inventory.append(_weight(20))
     g._advance_turn()
     texts = _texts(g, 5)
-    assert any(t.startswith("You are Burdened. You cannot dodge") for t in texts), texts
+    assert any(t.startswith("Your load is Heavy. You dodge half as well, you are slower")
+               for t in texts), texts
+    g.player.inventory.append(_weight(20))
+    g._advance_turn()
+    texts = _texts(g, 5)
+    assert any(t.startswith("You are Burdened. You cannot dodge and you are much slower")
+               for t in texts), texts
     g.player.inventory.append(_weight(30))
     g._advance_turn()
     texts = _texts(g, 5)
-    assert any(t.startswith("You are Overloaded.") for t in texts), texts
+    assert any(t.startswith("You are Overloaded. You cannot dodge and you move at half speed")
+               for t in texts), texts
     g.player.inventory.pop()
     g._advance_turn()
     texts = _texts(g, 5)
@@ -216,7 +236,11 @@ def test_the_game_says_so_in_title_case():
     g.player.inventory.pop()
     g._advance_turn()
     texts = _texts(g, 5)
-    assert any(t == "Your load is no longer Heavy." for t in texts), texts
+    assert any(t == "Your load is no longer Heavy, but it is still Light." for t in texts), texts
+    g.player.inventory.pop()
+    g._advance_turn()
+    texts = _texts(g, 5)
+    assert any(t == "Your load is no longer Light." for t in texts), texts
 
 
 def _open_step(g):
@@ -239,53 +263,77 @@ def _walk(g, n):
     return g.turn_count - start
 
 
-def test_burdened_costs_every_second_step_overloaded_every_step_heavy_none():
+def _monster_turns(g, n):
+    """World turns (the monsters' turns) in n steps of walking."""
+    seen = []
+    real = g._do_monster_turns
+    g._do_monster_turns = lambda: (seen.append(1), real())
+    try:
+        _walk(g, n)
+    finally:
+        g._do_monster_turns = real
+    return len(seen)
+
+
+def test_a_step_is_one_action_and_a_slow_hero_gives_the_world_more_turns():
+    """The every-second-step rule is gone: the load costs speed, which is
+    how often the world acts against the hero (defence.world_turns)."""
     g = _game()
-    assert _walk(g, 8) == 8                           # free: one turn a step
-    g.player.inventory.append(_weight(60))
-    g._advance_turn()                                 # Heavy: no step costs more
-    assert _walk(g, 8) == 8
-    g.player.inventory.append(_weight(20))
-    g._advance_turn()                                 # Burdened
-    assert _walk(g, 8) == 12                          # four of eight cost double
-    g.player.inventory.append(_weight(30))
-    g._advance_turn()                                 # Overloaded
-    assert _walk(g, 8) == 16                          # every step costs double
-    for _ in range(3):
-        g.player.inventory.pop()
+    assert _walk(g, 10) == 10                         # one action a step, whatever the load
+    assert _monster_turns(g, 10) == 10                # free: one world turn a step
+    base = g.player.get_current_weight()
+    g.player.inventory.append(_weight(60 - base))
+    g._advance_turn()                                 # Light: no slower
+    assert g.player.get_speed() == 10.0
+    assert _monster_turns(g, 10) == 10
+    g.player.inventory.append(_weight(35))
+    g._advance_turn()                                 # Burdened: much slower
+    spd = g.player.get_speed()
+    assert spd < 10.0
+    assert _walk(g, 10) == 10                         # still one action a step...
+    assert _monster_turns(g, 20) > 20                 # ...but the world takes more turns
+    g.player.inventory.pop()
     g._advance_turn()
-    assert _walk(g, 8) == 8                           # and it is gone again
+    g._world_clock = 0.0
+    assert _monster_turns(g, 10) == 10                # and it is gone again
 
 
-def test_the_load_takes_the_dodge_then_dexteritys_ac_but_never_the_clock():
+def test_the_load_takes_the_dodge_and_the_speed_but_never_the_ac_or_the_clock():
+    import defence
+    lr = defence.load_rules()
     p = Player()
-    p.DEX = 20                                        # +5 to AC in no armour
+    p.DEX = 20
     before = (p.get_quiz_timer('math'), p.get_quiz_timer_modifier(),
               p.combat_clock(), p.plain_clock())
     ac = p.get_ac()
     dodge = p.dodge_chance()
-    assert dodge > 0
+    speed = p.get_speed()
+    assert dodge > 0 and speed > 10
     p.inventory.append(_weight(60))
-    assert p.load_tier() == 'heavy'
-    assert p.dodge_chance() == pytest.approx(dodge / 2)        # half the dodge
-    assert p.get_ac() == ac                                    # Dexterity's AC whole
+    assert p.load_tier() == 'light'
+    assert p.dodge_chance() == pytest.approx(dodge * lr['light']['dodge'])
+    assert p.get_speed() == speed and p.get_ac() == ac
     p.inventory.append(_weight(20))
+    assert p.load_tier() == 'heavy'
+    assert p.dodge_chance() == pytest.approx(dodge * lr['heavy']['dodge'])
+    assert p.get_speed() < speed and p.get_ac() == ac
+    p.inventory.append(_weight(15))
     assert p.load_tier() == 'burdened'
-    assert p.dodge_chance() == 0.0                             # no dodge
-    assert p.get_ac() == ac + 5 - 2                            # half of +5, rounded down
+    assert p.dodge_chance() == pytest.approx(dodge * lr['burdened']['dodge'])
     p.inventory.append(_weight(50))                   # past the limit, too
-    assert p.is_overloaded() and p.dodge_chance() == 0.0
-    assert p.get_ac() == ac + 5                                # none of it
+    assert p.is_overloaded() and p.dodge_chance() == 0.0 and p.get_ac() == ac
     assert (p.get_quiz_timer('math'), p.get_quiz_timer_modifier(),
             p.combat_clock(), p.plain_clock()) == before
 
 
-def test_a_clumsy_heros_minus_counts_whatever_the_load():
+def test_a_clumsy_hero_loses_no_ac():
+    """Dexterity gives no AC, so a clumsy hero's old minus is gone too."""
     p = Player()
-    p.DEX = 6                                         # -2 to AC
     ac = p.get_ac()
+    p.DEX = 6
+    assert p.get_ac() == ac
     p.inventory.append(_weight(80))
-    assert p.load_tier() == 'burdened' and p.get_ac() == ac
+    assert p.load_tier() == 'heavy' and p.get_ac() == ac
 
 
 # ---------------------------------------------------------------------------
@@ -379,7 +427,9 @@ def test_mid_game_kits():
     """Weight that bites: the tiers each kit lands in. Rewritten 2026-11-13
     from the single 75% line, when the typical STR 10 kit and one spare
     suit were both free and plate at STR 18 was comfortable; tiers renamed
-    2026-11-14 (Heavy, Burdened, Overloaded), the lines unchanged."""
+    2026-11-14 (Heavy, Burdened, Overloaded); the four tiers of 2026-11-16
+    (Light at half, Heavy at 70%, Burdened at 90%), where Heavy is the
+    first that slows."""
     k = _kits()
 
     def tier(name):
@@ -390,22 +440,25 @@ def test_mid_game_kits():
             return 'burdened'
         if total > lim * Player.HEAVY_SHARE:
             return 'heavy'
+        if total > lim * Player.LIGHT_SHARE:
+            return 'light'
         return ''
 
     # Free: the early kit, and a low-STR caster in a robe.
     assert tier("Floor 1-5 hero, leather + shield") == ''
     assert tier("STR 6 caster, robe + staff") == ''
-    # A typical STR 10 mid kit sits just over half: a spare bow or a lighter
-    # helm is the choice; a spare suit is a real decision, not a free one.
-    assert tier("STR 10, typical mid kit") == 'heavy'
+    # A typical STR 10 mid kit sits just over half: Light, a little less
+    # dodge; a spare suit on top makes it Heavy, and slower: a real choice.
+    assert tier("STR 10, typical mid kit") == 'light'
     assert tier("STR 10, mid kit + 1 spare suit") == 'heavy'
     # Hoarding an armory at STR 10: past the limit (cannot be picked up).
     assert tier("STR 10, mid kit + 2 suits + 4 weapons") == 'over'
-    # Plate needs Strength: past the limit at 10, Burdened at 14, and only
-    # Heavy (it already has no dodge to halve) for a STR 18-20 warrior.
+    # Plate needs Strength: past the limit at 10, Heavy (slower) at 14, and
+    # only Light for a STR 18 warrior with a kite (no dodge to lose in plate);
+    # a tower shield on top makes even STR 20 Heavy.
     assert tier("STR 10, full plate + kite") == 'over'
-    assert tier("STR 14, full plate + kite") == 'burdened'
-    assert tier("STR 18, full plate + kite") == 'heavy'
+    assert tier("STR 14, full plate + kite") == 'heavy'
+    assert tier("STR 18, full plate + kite") == 'light'
     assert tier("STR 20, full plate + tower") == 'heavy'
 
 
@@ -422,7 +475,7 @@ def test_an_old_save_over_the_limit_loads_burdened_and_can_drop():
     p._apply_equip(_plain(items.instantiate_shield('tower_shield', 'chain_steel')))
     spare = _weight(20)
     p.inventory.append(spare)
-    for attr in ('_burdened', '_burden_steps'):           # what an old save lacks
+    for attr in ('_burdened', '_load_tier'):             # what an old save lacks
         p.__dict__.pop(attr, None)
     assert p.is_overloaded()                              # 115+ of 100
     try:
@@ -455,8 +508,10 @@ def test_readout_says_carrying_and_burdened():
     assert p.carry_line() == "Carrying 0 / 100"
     assert carry_state(p) == (0.0, 100, '')
     p.inventory.append(_weight(60))
-    assert carry_state(p)[2] == 'Heavy'
+    assert carry_state(p)[2] == 'Light'
     p.inventory.append(_weight(20))
+    assert carry_state(p)[2] == 'Heavy'
+    p.inventory.append(_weight(15))
     assert carry_state(p)[2] == 'Burdened'
     p.inventory.append(_weight(30))
     assert carry_state(p)[2] == 'Overloaded'

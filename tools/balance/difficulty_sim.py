@@ -92,6 +92,23 @@ needs to look at the base game and core systems, not every fringe"):
     its line, chain lightning up to three more (AREA_SPELLS). The default
     fights one monster at a time, so an area spell hit only that one.
 
+THE DEFENCE MODEL (2026-11-16, Brandon's approved design; src/defence.py):
+  * AC from armour, the shield and magic only; Dexterity is the dodge (a
+    point over 10, capped; light armour all of it, medium half, heavy none)
+    and the speed (a point over 10, capped). Medium and heavy body armour
+    cost speed until Strength pays it back. The load tiers are Light (half
+    the limit), Heavy (70%), Burdened (90%) and Overloaded, each costing
+    dodge and the last three speed; Constitution over 10 adds a little carry.
+  * every rule is the game's own (Player.get_ac, dodge_chance, get_speed,
+    load_tier), so the simulator plays it; the defence knobs (dodge_per_dex,
+    speed_cap, heavy_drag ...) change its numbers for a cell, for the tuning.
+  * speed under 10 gives the world two turns on some actions
+    (defence.world_turns, as Game._advance_turn); a careful kid keeps his
+    load under the Heavy line (Light for the Dexterity build) and chooses
+    body armour by its AC, its dodge and his speed in it (Run._body_value).
+  * the Secret Builds the kids play (BUILD_CELLS) start with their own stats
+    and the core of their kit.
+
 NOT MODELLED (MON-13): the real floors can hold the late-game monsters, but
 the sim fights each one as a plain stat block, so their mechanics are missing:
   * theft             thieves never cut the purse or run off with an item;
@@ -146,8 +163,8 @@ import level_manager as level_manager_mod        # noqa: E402
 from dice import roll                            # noqa: E402
 from floor_curve import dice_for_average, hazard, mend, target_dmg   # noqa: E402
 from game_magic import SPELL_HEAL_SHARE          # noqa: E402
-from items import (Accessory, Armor, Container, Food, Potion, Shield,   # noqa: E402
-                   Spellbook, Weapon)
+from items import (Accessory, Armor, Container, Food, Ingredient, Potion,   # noqa: E402
+                   Shield, Spellbook, Weapon)
 from monster import Monster                      # noqa: E402
 from player import Player                        # noqa: E402
 from quiz_engine import QuizResult               # noqa: E402
@@ -160,6 +177,7 @@ import game_magic as game_magic_mod              # noqa: E402
 import floor_curve as floor_curve_mod            # noqa: E402
 import wanderers as wanderers_mod                # noqa: E402
 import gear as gear_mod                          # noqa: E402
+import defence as defence_mod                    # noqa: E402
 import prayers as prayers_mod                    # noqa: E402
 import status_effects as status_effects_mod      # noqa: E402
 import family_edges as family_edges_mod          # noqa: E402
@@ -176,15 +194,12 @@ from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
 
-# bones.load_bones() creates a folder in the save dir and can DELETE a bones
-# file (level_manager.py:110-115). The simulator must never do that.
-level_manager_mod.LevelManager._maybe_spawn_bones = staticmethod(lambda *a, **k: None)
-
 # items.load_items() re-reads and re-parses its JSON file on every call, and
 # chest / drop loot calls it several times per roll. Cache the parsed lists
 # for this process (the simulator copies anything it goes on to equip).
 _ITEM_CACHE = {}
 _real_load_items = items_mod.load_items
+_CACHES_ON = False
 
 
 def _cached_load_items(item_class):
@@ -194,9 +209,24 @@ def _cached_load_items(item_class):
     return lst
 
 
-for _mod in (items_mod, container_system, dungeon_mod, level_manager_mod):
-    if getattr(_mod, 'load_items', None) is _real_load_items:
-        setattr(_mod, 'load_items', _cached_load_items)
+def install_caches() -> None:
+    """The simulator's process-wide patches: the item cache above, and
+    bones.load_bones() stubbed out (it creates a folder in the save dir and
+    can DELETE a bones file, level_manager.py:110-115; the simulator must
+    never do that). Installed by run_cell and the command line (and the
+    tools that play Runs themselves), never at import: a test process that
+    imported this module for one check handed every later test in it the
+    same shared item objects, and the ring-appearance tests failed when one
+    stamped a look on a cached ring (2026-11-16, under xdist)."""
+    global _CACHES_ON
+    if _CACHES_ON:
+        return
+    level_manager_mod.LevelManager._maybe_spawn_bones = staticmethod(lambda *a, **k: None)
+    for _mod in (items_mod, container_system, dungeon_mod, level_manager_mod):
+        if getattr(_mod, 'load_items', None) is _real_load_items:
+            setattr(_mod, 'load_items', _cached_load_items)
+    _CACHES_ON = True
+
 
 _POOL_CACHE = {}
 
@@ -239,7 +269,7 @@ KNOB_DEFAULTS = {
     'timer':      1.0,   # x the math chain timer (WIS seconds)
     'bleed':      1.0,   # x the monster-side bleed tick (max_hp//15 per turn,
                          #   monster.py:353). 0 = bleed does nothing.
-    'ac':         1.0,   # x the AC the player gets from gear and DEX
+    'ac':         1.0,   # x the AC the player gets from gear and magic
     'heal_spell': 1,     # 0 = healing spells unavailable
     'rest':       1.0,   # x the rest budget (turns of waiting per floor)
     'wander':     1.0,   # x wandering-monster spawn rate
@@ -310,7 +340,50 @@ KNOB_DEFAULTS = {
                          #   above dmg_cap x the floor's damage anchor
                          #   (floor_curve.target_dmg at the monster's peak floor)
                          #   is re-diced down to that. Named foes are exempt.
+    # --- the defence model (2026-11-16: src/defence.py, data/gear_rules.json
+    # `defence` and `load`). Each is the file's number unless set (>= 0); set,
+    # it changes the rule for the whole cell (defence.override), so the tuning
+    # sweeps run the game's own sums with other numbers.
+    'dodge_per_dex':  -1.0,   # dodge a point of DEX over 10
+    'dodge_cap':      -1.0,   # the most dodge DEX gives
+    'speed_per_dex':  -1.0,   # share of speed a point of DEX over 10
+    'speed_cap':      -1.0,   # the most speed DEX gives
+    'medium_drag':    -1.0,   # share of speed medium body armour costs
+    'heavy_drag':     -1.0,   # ... heavy body armour
+    'str_payback':    -1.0,   # share of the drag a point of STR over 10 pays back
+    'con_carry':      -1.0,   # lb of carry limit a point of CON over 10
+    'light_dodge':    -1.0,   # share of the dodge a Light load leaves
+    'heavy_dodge':    -1.0,   # ... a Heavy load
+    'heavy_speed':    -1.0,   # share of speed a Heavy load costs
+    'burdened_dodge': -1.0,   # share of the dodge a Burdened load leaves
+    'burdened_speed': -1.0,   # share of speed a Burdened load costs
 }
+
+DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_drag',
+                 'heavy_drag', 'str_payback', 'con_carry', 'light_dodge', 'heavy_dodge',
+                 'heavy_speed', 'burdened_dodge', 'burdened_speed')
+
+
+def apply_defence_knobs(knobs: dict) -> None:
+    """The defence knobs set (>= 0) change this process's rules
+    (defence.override); unset ones are the file's. Called once a cell."""
+    defence_mod.reset()
+    d, ld = {}, {}
+    for k in DEFENCE_KNOBS:
+        v = knobs.get(k, -1.0)
+        if v is None or float(v) < 0:
+            continue
+        v = float(v)
+        if k in ('medium_drag', 'heavy_drag'):
+            d.setdefault('armour_drag', {})[k.split('_')[0]] = v
+        elif k == 'con_carry':
+            d['con_carry'] = int(round(v))
+        elif k in ('light_dodge', 'heavy_dodge', 'heavy_speed', 'burdened_dodge', 'burdened_speed'):
+            tier, key = k.split('_')
+            ld.setdefault(tier, {})[key] = v
+        else:
+            d[k] = v
+    defence_mod.override(d or None, ld or None)
 
 
 SCHEDULED_KNOBS = ('mon_dmg', 'mon_hp', 'mon_hit', 'mon_count', 'heal',
@@ -435,9 +508,11 @@ PACE_SIGMA = 0.20
 WALK_CHUNK = 60                # turns of a walk between looks at the belly and the clock
 # ---- Weight (2026-11-16): the game's carry rules --------------------------------
 # A careful kid keeps his load under this share of the limit (Player.load_tier):
-# 'burdened' (three quarters: weight_model.py's careful rule) unless the
-# profile says 'heavy' (half: a Dexterity build keeps his whole dodge).
-PACK_LINE = 'burdened'
+# 'heavy' (70%, where the load starts to slow him: the defence model's tiers;
+# it was Burdened at three quarters, weight_model.py's careful rule, while the
+# load cost no speed in a fight) unless the profile says 'light' (half: a
+# Dexterity build keeps his whole dodge).
+PACK_LINE = 'heavy'
 FOOD_KEEP_BELLIES = 2.0        # food carried at most: SP worth this many full bellies
 KEEP_COIN_LB = 12.0            # coin kept at a stall; the rest changed to gems there
 # The share of a floor's pay that comes as treasure (gems and jewellery, which
@@ -602,8 +677,10 @@ PROFILES['mastery'] = dict(PROFILES['stacked'], saver=True, knobs=dict(
     families=1, study_rate=0.95, sword=1, tactics=1, practice=1, untimed=0.97,
     traders=1, altars=1))
 # The same, as a Dexterity build: the meals, gifts and altars to DEX and CON,
-# so light armour's DEX to AC and its dodge (slice 4) are what keep him alive.
-PROFILES['mastery_dex'] = dict(PROFILES['mastery'], stat_focus=('DEX', 'CON'), pack_line='heavy')
+# so light armour's dodge and Dexterity's speed (the defence model,
+# 2026-11-16) are what keep him alive. He keeps what he can spare under the
+# Light line, where the load first costs dodge.
+PROFILES['mastery_dex'] = dict(PROFILES['mastery'], stat_focus=('DEX', 'CON'), pack_line='light')
 # ... and as a caster (slice 7, magic as a style): meals and gifts to INT and
 # CON, light or mithril body armour (the metal tax), attack spells by element.
 PROFILES['mastery_mage'] = dict(PROFILES['mastery'], stat_focus=('INT', 'CON'), caster=True,
@@ -672,6 +749,20 @@ BANDS = [(1, 9), (10, 19), (21, 29), (30, 39), (41, 49), (50, 59),
 # =============================================================================
 # Small helpers
 # =============================================================================
+
+def weightless_part(item):
+    """Brandon, 2026-11-16: ingredients weigh nothing (in main,
+    items.Ingredient.weight is a property that always reads 0.0, old saves
+    included); food (rations, cooked dishes) keeps its weight. Until that
+    reaches this branch the simulator zeroes its own kitchen parts, so the
+    pantry never counts toward the load (Run._fit_pack, Player.load_tier)."""
+    if isinstance(item, Ingredient) and float(getattr(item, 'weight', 0) or 0) > 0:
+        try:
+            item.weight = 0.0
+        except AttributeError:          # the property: already weightless
+            pass
+    return item
+
 
 def dice_mean(expr) -> float:
     """Mean of a dice string like '4d8+10' (or a plain number)."""
@@ -1660,13 +1751,19 @@ class Run:
 
     # ------------------------------------------------------------ the load
     def _pack_line(self) -> float:
-        """The weight a careful kid keeps his load under: the Burdened line
-        (three quarters of the limit), or the Heavy line (half) for a profile
-        that keeps its whole dodge (Player.load_tier, data/gear_rules.json)."""
+        """The weight a careful kid keeps what he can spare under: the Heavy
+        line (70% of the limit, where the load starts to slow him), or the
+        Light line (half) for a profile that keeps its whole dodge
+        (Player.load_tier, data/gear_rules.json load)."""
         p = self.p
-        if self.prof.get('pack_line', PACK_LINE) == 'heavy':
-            return p.heavy_threshold()
-        return p.burden_threshold()
+        if self.prof.get('pack_line', PACK_LINE) == 'light':
+            return p.light_threshold()
+        return p.heavy_threshold()
+
+    def _need_line(self) -> float:
+        """What he needs (the pantry, the potions, a belly of food) he
+        carries up to the Heavy line, past which he is slowed."""
+        return self.p.heavy_threshold()
 
     def _mirror_purse(self) -> None:
         """The coin he carries weighs (Player.purse_coins, a tenth of an
@@ -1700,6 +1797,8 @@ class Run:
 
     @staticmethod
     def _wt(it) -> float:
+        if isinstance(it, Ingredient):
+            return 0.0                   # ingredients weigh nothing (weightless_part)
         try:
             return float(getattr(it, 'weight', 0) or 0) * int(getattr(it, 'count', 1) or 1)
         except (TypeError, ValueError):
@@ -1708,9 +1807,9 @@ class Run:
     def _fit_pack(self) -> None:
         """What a careful kid carries: never more food than FOOD_KEEP_BELLIES
         full bellies' worth (the poorest, by SP a pound, stays behind), and
-        a load under his line (_pack_line): food goes first, then the
-        pantry's least promising parts, then coin, flasks, the weakest
-        potions, then the arsenal's weakest. What he wears and Fenrir's
+        a load under his line (_pack_line): food goes first, then coin,
+        the arsenal's weakest, flasks, the weakest potions (the pantry's
+        parts weigh nothing, weightless_part). What he wears and Fenrir's
         scraps are never left (the scraps are Vidar's sandal: Brandon,
         2026-11-16). Counts what is left behind (fs['left_lb'])."""
         p = self.p
@@ -1734,24 +1833,32 @@ class Run:
                    + sum(self._wt(x) for x in self.potions) + sum(self._wt(x) for x in self.food)
                    + sum(self._wt(x) for x in self.flasks) + sum(self._wt(x) for x in self.pantry))
         total_lb = worn + carried + p.purse_weight()
-        # The profile's line (Heavy for the Dexterity build) is for what he
+        # The profile's line (Light for the Dexterity build) is for what he
         # can spare: food past a belly, coin, spare weapons, flasks. What he
-        # needs (the pantry, the potions, a belly of food) he carries up to
-        # the Burdened line like any careful kid: a Dexterity kid who dropped
-        # his healing potions to keep his dodge would be a strange kid (the
-        # first run of 2026-11-16 did, and its DEX build won 48%).
+        # needs (the potions, a belly of food) he carries up to the Heavy
+        # line like any careful kid: a Dexterity kid who dropped his healing
+        # potions to keep his dodge would be a strange kid (the first run of
+        # 2026-11-16 did, and its DEX build won 48%). The pantry's parts
+        # weigh nothing (Brandon 2026-11-16, weightless_part), so they are
+        # never what tips him over a line.
         over = total_lb - self._pack_line()
         if over <= 0:
             return
         spare_line = self._pack_line()
-        need_line = p.burden_threshold()
+        need_line = self._need_line()
 
         def shed(lst, key):
+            # Only what weighs something is left behind to lighten the load
+            # (a weightless kitchen part would go for nothing).
             nonlocal over
             lst.sort(key=key)
-            while over > 0 and lst:
-                it = lst.pop(0)
-                w = self._wt(it)
+            i = 0
+            while over > 0 and i < len(lst):
+                w = self._wt(lst[i])
+                if w <= 0:
+                    i += 1
+                    continue
+                lst.pop(i)
                 over -= w
                 fs['left_lb'] = fs.get('left_lb', 0.0) + w
         def food_value(f):
@@ -1778,16 +1885,9 @@ class Run:
             shed(self.arsenal, self._weapon_score)
         if over > 0:
             shed(self.flasks, lambda it: 0)
-        # What he needs only past the Burdened line.
+        # What he needs only past the Heavy line.
         over -= max(0.0, need_line - spare_line)
-        # 5. the pantry's least promising parts (never a part held for a feast)
-        if over > 0 and self.pantry:
-            held = kitchen_mod.held_counts(self._kitchen_inv())
-            hold = self._feast_hold()
-            spare = [it for it in self.pantry if not hold.get(kitchen_mod.resolve(getattr(it, 'id', '')))]
-            keep = [it for it in self.pantry if it not in spare]
-            shed(spare, lambda it: self._promise(kitchen_mod.resolve(getattr(it, 'id', '')), held))
-            self.pantry = keep + spare
+        # (5. The pantry weighs nothing since 2026-11-16: weightless_part.)
         # 6. the weakest potions, 7. the last of the food
         if over > 0:
             shed(self.potions, self._potion_value)
@@ -1795,16 +1895,19 @@ class Run:
             shed(self.food, food_value)
 
     def _body_value(self, piece) -> float:
-        """A body armour as it works on THIS hero (slice 4): the AC it leaves
-        him with, Dexterity's AC cap and dodge by its weight class, and its
-        weight under his carry limit. A dodged blow is about 11 points of
-        dodge per point of AC (a typical monster hits about 55% of the time)."""
+        """A body armour as it works on THIS hero (slice 4; the defence model,
+        2026-11-16): the AC it leaves him with, the dodge its weight class
+        and his load leave, and his speed in it (its drag after his
+        Strength, the load its weight puts him in). A dodged blow is about
+        11 points of dodge per point of AC (a typical monster hits about 55%
+        of the time), and speed s spares 1 - 10/s of the blows."""
         p = self.p
         idx = items_mod.ARMOR_SLOTS.index('body')
         cur = p.armor_slots[idx]
         p.armor_slots[idx] = piece
         try:
-            v = -float(p.get_ac()) + 11.0 * float(p.dodge_chance())
+            v = (-float(p.get_ac()) + 11.0 * float(p.dodge_chance())
+                 + 11.0 * (1.0 - 10.0 / max(1.0, float(p.get_speed()))))
             if self.prof.get('caster'):
                 # a caster weighs the armour's tax on every spell (slice 4)
                 v -= 4.0 * (p.spell_mp_cost(10) / 10.0 - 1.0)
@@ -2576,7 +2679,7 @@ class Run:
             iid = kitchen_mod.ingredient_for_monster(kind) if kind else None
             if not iid:
                 iid = self._floor_part()
-            item = food_system_mod.load_ingredient_for(iid) if iid else None
+            item = weightless_part(food_system_mod.load_ingredient_for(iid) if iid else None)
             if item is not None:
                 self.pantry.append(item)
                 self.fs['harvests'] = self.fs.get('harvests', 0) + 1
@@ -2596,7 +2699,7 @@ class Run:
                     if int(kitchen_mod.ingredients()[i].get('min_level', 1) or 1) <= self.floor]
         for _ in range(random.randint(1, 3)):
             if eligible and random.random() < self.prof['loot_fraction']:
-                item = food_system_mod.load_ingredient_for(random.choice(eligible))
+                item = weightless_part(food_system_mod.load_ingredient_for(random.choice(eligible)))
                 if item is not None:
                     self.pantry.append(item)
 
@@ -3046,6 +3149,7 @@ class Run:
         turn = 0
         retreats = 0
         world_clock = 0.0                     # Game._advance_turn: 10/speed of a turn an action
+        wturn = 0                             # world turns taken (Abaddon's locusts count these)
         strip_turns = 0                       # Abaddon altar window
         altars_left = 6 if ctx.get('altars') else 0
         p._combat_pets_ref = []
@@ -3213,46 +3317,44 @@ class Run:
                         * QUEST_PET_BITE.get(qp, 1.0)))
 
             # ---------------- the world's turn ----------------
-            # The hero's speed rating (Player.get_speed: haste doubles it,
-            # Boots of Speed add a share) moves the world's clock 10/speed of
-            # a turn an action; the world acts each time it passes a whole
-            # turn (main.py _advance_turn, 2026-11-12).
-            _spd = max(10.0, float(p.get_speed()))
-            world_clock += 10.0 / _spd
-            if world_clock < 1.0 - 1e-9:
-                continue
-            world_clock -= 1.0
-            if _spd <= 10.0:
-                world_clock = 0.0
-            self._world_tick(active, ctx)
-            if strip_turns > 0:
-                strip_turns -= 1
-                if strip_turns == 0:
-                    for m in active:
-                        if m.kind == 'abaddon_destroyer' and m.alive:
-                            m.resistances = list(getattr(m, 'base_resistances', []))
-                            m.damage_ward = float(getattr(m, 'base_damage_ward', 0.0) or 0.0)
-            # Abaddon's locusts (main._spawn_abaddon_locusts), unless the
-            # Scales of Michael's angels cancel them one for one.
-            if not ctx.get('scales'):
-                for m in list(active):
-                    if (m.kind == 'abaddon_destroyer' and m.alive
-                            and getattr(m, 'locust_interval', 0)
-                            and turn % int(m.locust_interval) == 0):
-                        live = sum(1 for x in active + queue
-                                   if x.alive and x.kind == 'abyssal_locust')
-                        lo, hi = m.locust_count
-                        for _ in range(random.randint(int(lo), int(hi))):
-                            if live >= 12:
-                                break
-                            loc = self._locust()
-                            if loc is None:
-                                break
-                            live += 1
-                            loc.x, loc.y = slots[len(active) % len(slots)]
-                            active.append(loc)        # swarms ignore the doorway limit
-            if p.hp <= 0 and self._player_dead():
-                return 'dead'
+            # The hero's speed rating (Player.get_speed: Dexterity, the
+            # armour's drag, the load, Boots of Speed, haste) moves the
+            # world's clock 10/speed of a turn an action; the world takes a
+            # turn for each whole turn it passes (defence.world_turns, as
+            # main.py _advance_turn does): over 10 it sometimes waits, under
+            # 10 it sometimes takes two (the defence model, 2026-11-16).
+            n_world, world_clock = defence_mod.world_turns(world_clock, float(p.get_speed()))
+            for _w in range(n_world):
+                wturn += 1
+                self._world_tick(active, ctx)
+                if strip_turns > 0:
+                    strip_turns -= 1
+                    if strip_turns == 0:
+                        for m in active:
+                            if m.kind == 'abaddon_destroyer' and m.alive:
+                                m.resistances = list(getattr(m, 'base_resistances', []))
+                                m.damage_ward = float(getattr(m, 'base_damage_ward', 0.0) or 0.0)
+                # Abaddon's locusts (main._spawn_abaddon_locusts), unless the
+                # Scales of Michael's angels cancel them one for one.
+                if not ctx.get('scales'):
+                    for m in list(active):
+                        if (m.kind == 'abaddon_destroyer' and m.alive
+                                and getattr(m, 'locust_interval', 0)
+                                and wturn % int(m.locust_interval) == 0):
+                            live = sum(1 for x in active + queue
+                                       if x.alive and x.kind == 'abyssal_locust')
+                            lo, hi = m.locust_count
+                            for _ in range(random.randint(int(lo), int(hi))):
+                                if live >= 12:
+                                    break
+                                loc = self._locust()
+                                if loc is None:
+                                    break
+                                live += 1
+                                loc.x, loc.y = slots[len(active) % len(slots)]
+                                active.append(loc)        # swarms ignore the doorway limit
+                if p.hp <= 0 and self._player_dead():
+                    return 'dead'
 
     def _between_rounds(self, active):
         """Retreat from a mandatory fight, recover, return. The foe keeps its
@@ -3787,6 +3889,8 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
         KID_MODEL = True
     knobs = parse_knobs(knobs) if not isinstance(knobs, dict) or \
         set(knobs) != set(KNOB_DEFAULTS) else knobs
+    install_caches()
+    apply_defence_knobs(knobs)
     random.seed(seed)
     cache = FloorCache(variants)
     lo, hi = floors
@@ -3999,6 +4103,7 @@ def main(argv=None):
             print(f"  {k:<14} default {v}")
         return 0
 
+    install_caches()
     try:
         lo, hi = (int(x) for x in args.floors.split('-'))
     except ValueError:

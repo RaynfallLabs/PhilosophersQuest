@@ -67,8 +67,7 @@
   },
 
   "armour_weight": {
-    "_doc": "What the BODY armour's weight class lets through (winning-build plan 3.3, slice 4; Brandon 2026-11-13: 'BALANCE armor and Dex (light vs heavy)... so that there are many ways to play'). No body armour counts as light. dex_ac_cap: the most AC Dexterity gives ((DEX - 10) // 2; a clumsy hero's minus always counts). dodge_share: the share of the dodge (Dexterity's and worn gear's) still there. footsteps: tiles further the hero's steps carry (senses.step_radius), and metal_footsteps more in metal unless the material is quiet (mithril, godweave); each such tile makes a deep sleeper sleeper_share_per_tile readier to stir (sleepers.factor). casting_mult: what a spell's mana costs in METAL body armour, unless the material casts freely (mithril, orichalcum, godweave). The template's forms and the material's elements are in the template and material files (gear.py, What armour does beyond AC).",
-    "dex_ac_cap": {"light": 6, "medium": 3, "heavy": 0},
+    "_doc": "What the BODY armour's weight class lets through (winning-build plan 3.3, slice 4; Brandon 2026-11-13: 'BALANCE armor and Dex (light vs heavy)... so that there are many ways to play'). No body armour counts as light. dodge_share: the share of the dodge (Dexterity's and worn gear's) still there. What the class costs in speed is `defence` armour_drag. footsteps: tiles further the hero's steps carry (senses.step_radius), and metal_footsteps more in metal unless the material is quiet (mithril, godweave); each such tile makes a deep sleeper sleeper_share_per_tile readier to stir (sleepers.factor). casting_mult: what a spell's mana costs in METAL body armour, unless the material casts freely (mithril, orichalcum, godweave). The template's forms and the material's elements are in the template and material files (gear.py, What armour does beyond AC). Until 2026-11-16 Dexterity also gave AC here (dex_ac_cap: 6 light, 3 medium, 0 heavy).",
     "dodge_share": {"light": 1.0, "medium": 0.5, "heavy": 0.0},
     "footsteps": {"light": 0, "medium": 1, "heavy": 2},
     "metal_footsteps": 1,
@@ -76,11 +75,24 @@
     "casting_mult": {"light": 1.0, "medium": 1.5, "heavy": 2.0}
   },
 
+  "defence": {
+    "_doc": "The defence model (Brandon 2026-11-16; src/defence.py; tuned by tools/balance/difficulty_sim.py). AC comes from armour, the shield and magic only. dodge_per_dex / dodge_cap: Dexterity's chance to slip a blow, a point over 10, and its most (then the body armour's dodge_share and the load's dodge). speed_per_dex / speed_cap: the share of speed Dexterity adds, a point over 10 (10 is ordinary, a monster's scale: Player.get_speed, Game._advance_turn). armour_drag: the share of speed a body armour's weight class costs; str_payback: the share of it Strength wins back a point over 10 (never more than the drag: a hero strong enough for his plate is at 10, defence.fit_strength). con_carry: pounds of carry limit a point of Constitution over 10 adds to Strength's (Player.get_carry_limit). min_speed_share: the least share of 10 armour and load leave.",
+    "dodge_per_dex": 0.01,
+    "dodge_cap": 0.35,
+    "speed_per_dex": 0.01,
+    "speed_cap": 0.20,
+    "armour_drag": {"light": 0.0, "medium": 0.06, "heavy": 0.12},
+    "str_payback": 0.02,
+    "con_carry": 3,
+    "min_speed_share": 0.25
+  },
+
   "load": {
-    "_doc": "Weight that bites (Brandon 2026-11-14: 'heavy at 50%, burdened at 75%, overloaded at 100%... some penalty to player speed or dex bonus to ac'; the limit stays a wall). Over heavy.share of the carry limit the load is Heavy, over burdened.share the hero is Burdened, over the limit itself (lost Strength, an old save, the Boulder; nothing more can be picked up) Overloaded. dodge: the share of the dodge left. dex_ac: the share of Dexterity's AC left (a clumsy hero's minus always counts in full). step_every: every Nth step costs the dungeon one more turn (1: every step). How much further the steps carry is in data/senses.json noise (heavy, burdened, overloaded). Before 2026-11-14 the tiers were Burdened (50%) and Stressed (75%); before 2026-11-13 there was one line, at 75%.",
-    "heavy": {"share": 0.5, "dodge": 0.5, "dex_ac": 1.0},
-    "burdened": {"share": 0.75, "dodge": 0.0, "dex_ac": 0.5, "step_every": 2},
-    "overloaded": {"dodge": 0.0, "dex_ac": 0.0, "step_every": 1}
+    "_doc": "Weight that bites (Brandon 2026-11-16: 'Light load at half, minor dodge penalty, Heavy at 70%, larger dodge penalty and speed penalty, and Burdened at 90% (larger penalties)'; the limit stays a wall). Over light.share of the carry limit the load is Light, over heavy.share Heavy, over burdened.share the hero is Burdened, over the limit itself (lost Strength, an old save, the Boulder; nothing more can be picked up) Overloaded. dodge: the share of the dodge left. speed: the share of speed it costs (src/defence.py speed_share; Marius' Mule keeps his stride under all but Overloaded). How much further the steps carry is in data/senses.json noise (light, heavy, burdened, overloaded). Until 2026-11-16 the tiers were Heavy (50%: half dodge) and Burdened (75%: no dodge, half Dexterity's AC, every second step costing an extra turn); before 2026-11-14 Burdened (50%) and Stressed (75%); before 2026-11-13 one line, at 75%.",
+    "light": {"share": 0.5, "dodge": 0.75, "speed": 0.0},
+    "heavy": {"share": 0.7, "dodge": 0.5, "speed": 0.10},
+    "burdened": {"share": 0.9, "dodge": 0.0, "speed": 0.25},
+    "overloaded": {"dodge": 0.0, "speed": 0.5}
   },
 
   "wards": {

@@ -18,10 +18,11 @@ entry in both tables and that no hint quotes its own threshold.
 """
 
 # What each stat does, appended to rewards that raise it.
-_STR = "Strength raises how much you can carry."
-_CON = "Constitution is 3 health a point and blunts every blow."
-_DEX = ("Dexterity adds to your armor and lets you slip blows: fully in light "
-        "armor, half as much in medium, not at all in heavy.")
+_STR = ("Strength raises how much you can carry, and a strong hero wears heavy armor "
+        "at full speed.")
+_CON = "Constitution is 3 health a point, blunts every blow and lets you carry a little more."
+_DEX = ("Dexterity makes you quicker in any armor and lets you slip blows: fully "
+        "in light armor, half as well in medium, not at all in heavy.")
 _INT = "Intelligence raises your maximum MP."
 _WIS = "Every point of Wisdom is a second on the combat clock."
 _PER = "Perception widens how far you can see."
@@ -277,7 +278,7 @@ QUIRK_DESC = {
     'fabius':        "Holding Guard costs you only half its usual damage, with all of its armour. You have learned to win slowly, and it no longer feels slow.",
     'wallace':       "A two-handed weapon held with no shield parries one point better (one more point of armour). Two hands on the hilt have become second nature.",
     'janus':         "Drawing the weapon at your back (S) costs no turn: the swap is done before the enemy sees it. You look both ways at once now.",
-    'marius_mule':   "Burdened no longer costs you extra steps: you keep your stride under a heavy pack. You still lose your dodge, and Overloaded still slows you. You march like one of Marius' mules.",
+    'marius_mule':   "Your load no longer slows you: you keep your stride under a Light, Heavy or Burdened pack. You still dodge less, and Overloaded still slows you. You march like one of Marius' mules.",
     'fatted_calf':   "Every legendary feast you cook also heals you fully. You know what it is to wait for a feast, and you sit down to one with everything you have.",
     'widows_jar':    "Rations, bread, cheese and every other plain food you eat as it is fill you half again as much. Like the widow's jar, your plain store goes further than it should.",
     'proteus':       "A kind of gear you have never worn needs one right answer fewer to put on (never fewer than one). You have taken so many shapes that a new one comes easily.",

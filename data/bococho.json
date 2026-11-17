@@ -239,7 +239,7 @@
     "start_level": 25,
     "_start_level_note": "She is a young runner who has just beaten the best bird in the Underway, grown enough to race and to carry a rider: she starts as a Bococho (stage 1, level 25: LORE NOT FLOOR, her own story, never the floor). The Chick is her line's first stage; no sphere hatches one.",
     "saddlebags_lb": 20,
-    "_saddlebags_note": "While she is out with the hero (alive, on his floor, not in her sphere), her saddlebags carry this much: Player.get_carry_limit adds it, so the Heavy, Burdened and Overloaded lines all move up with it (Player.saddlebag_lb, kept by Game._sync_saddlebags).",
+    "_saddlebags_note": "While she is out with the hero (alive, on his floor, not in her sphere), her saddlebags carry this much: Player.get_carry_limit adds it, so the Light, Heavy, Burdened and Overloaded lines all move up with it (Player.saddlebag_lb, kept by Game._sync_saddlebags).",
     "species": {
       "element": "earth",
       "damage_type": "crushing",

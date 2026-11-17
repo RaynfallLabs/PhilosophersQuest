@@ -146,23 +146,23 @@ def main(argv=None) -> int:
                f"{light:>5.2f} {med:>4.2f} {heavy:>5.2f} {metal:>5.2f}  "
                + '  '.join(f"{factor(a, mix):>12.3f}" for a in fixed.values()))
         print(row)
-    print("\nWhat the weight class takes from a DEX hero (vs the old cap of 3 in anything):")
-    print("(AC: the points of armour Dexterity gives now, minus what it gave; dodge: what is left)")
-    print(f"{'DEX':>4} {'mod':>4}   {'AC light':>8} {'medium':>6} {'heavy':>6}   "
-          f"{'dodge light':>11} {'medium':>6} {'heavy':>6}")
-    caps = gear.armour_rules()['dex_ac_cap']
+    # The defence model (2026-11-16, src/defence.py): Dexterity gives no AC;
+    # it is the dodge (by the weight class's share) and the speed, and the
+    # armour's drag is paid back by Strength.
+    import defence
+    print("\nWhat a DEX hero has in each weight class (STR 10; the defence model):")
+    print(f"{'DEX':>4}   {'dodge light':>11} {'medium':>6} {'heavy':>6}   "
+          f"{'speed light':>11} {'medium':>6} {'heavy':>6}")
     shares = gear.armour_rules()['dodge_share']
-    for dex in (10, 12, 14, 16, 18, 20, 22):
-        mod = (dex - 10) // 2
-        old = min(3, mod)
-        delta = [min(caps[c], mod) - old for c in ('light', 'medium', 'heavy')]
-        dodge = min(0.30, max(0, dex - 10) * 0.0075)
-        print(f"{dex:>4} {mod:>+4}   {delta[0]:>+8} {delta[1]:>+6} {delta[2]:>+6}   "
-              f"{dodge * shares['light']:>10.1%} {dodge * shares['medium']:>6.1%} "
-              f"{dodge * shares['heavy']:>6.1%}")
-    print("\n(An AC point is 5 points of a monster's hit chance: at the ~55% par, a heavy-armour")
-    print(" hero of DEX 14 who loses 2 AC is hit about 65% of the time, +18% damage taken;")
-    print(" one who lost 3.75% dodge takes about 4% more.)")
+    for dex in (10, 12, 14, 16, 18, 20, 22, 25, 30):
+        dodge = defence.dex_dodge(dex)
+        spd = [defence.speed_rating(defence.speed_share(dex, 10, c)) for c in ('light', 'medium', 'heavy')]
+        print(f"{dex:>4}   {dodge * shares['light']:>10.1%} {dodge * shares['medium']:>6.1%} "
+              f"{dodge * shares['heavy']:>6.1%}   {spd[0]:>11g} {spd[1]:>6g} {spd[2]:>6g}")
+    print(f"(Strength pays the drag back: medium armour at full speed from Strength "
+          f"{defence.fit_strength('medium')}, heavy from {defence.fit_strength('heavy')}.)")
+    print("\n(An AC point is 5 points of a monster's hit chance: at the ~55% par one point")
+    print(" is about 9% more damage taken; so is 9% less dodge, or speed 10 against 11.)")
     return 0
 
 

@@ -14,8 +14,11 @@ tools/balance/armor_model.py, data in data/gear_rules.json.
     file, "What armour does beyond AC" (winning-build plan 3.3, 2026-11-13:
     until then the material gave "the weight and the wear, never
     protection").
-  * AC comes from body armour, the shield and DEX only; how much DEX counts
-    is the body armour's weight class (6 light, 3 medium, 0 heavy).
+  * AC comes from body armour, the shield and magic only (the defence model,
+    2026-11-16: Dexterity is the dodge and the speed, src/defence.py). The
+    body armour's weight class sets how much of the dodge is left (all
+    light, half medium, none heavy) and what the armour costs in speed
+    until Strength pays it back.
   * The floor decides only which level is likely to be found (bells); every
     magnitude is fixed per level (LORE NOT FLOOR).
 
@@ -308,10 +311,11 @@ def wears_flag(holder, flag: str) -> bool:
 #   flame, cold iron wards off fey glamour (data/materials/armor/*.json
 #   `protection`, `metal`, `quiet`, `casting_free`, `wards`; written with
 #   their lore and their price by tools/content/armour_profiles_2026_11.py);
-# * the body armour's WEIGHT CLASS sets what Dexterity is worth, how well
-#   the hero dodges, how far his footsteps carry and what a spell costs in
-#   metal (data/gear_rules.json `armour_weight`; the load he carries is
-#   `load`, Player.load_tier).
+# * the body armour's WEIGHT CLASS sets how well the hero dodges, how far
+#   his footsteps carry and what a spell costs in metal (data/gear_rules.json
+#   `armour_weight`), and what it costs in speed until Strength pays it back
+#   (`defence`, src/defence.py); the load he carries is `load`,
+#   Player.load_tier.
 #
 # A NAMED piece keeps its own resistances (data/items/armor.json and
 # shield.json `damage_resistances`): its JSON wins, and its template and
@@ -506,12 +510,6 @@ def casts_freely(item) -> bool:
     return item is not None and _flag(item, 'casting_free')
 
 
-def dex_ac_cap(player) -> int:
-    """The most AC Dexterity gives in the body armour worn: 6 light (or
-    none), 3 medium, 0 heavy."""
-    return int(armour_rules()['dex_ac_cap'].get(body_class(player), 0))
-
-
 def class_dodge_share(item) -> float:
     return float(armour_rules()['dodge_share'].get(piece_weight_class(item), 1.0))
 
@@ -686,18 +684,27 @@ def wear_words(item) -> list:
     return out
 
 
-def weight_line(item) -> str:
-    """The body armour's weight-class line for its card: "Heavy metal: no
-    Dexterity to AC, no dodge, footsteps +3, spells cost x2 MP; rusts."
-    '' for anything but body armour."""
+def speed_words(item) -> str:
+    """What the body armour costs in speed, for its card: 'full speed' in
+    light armour, else 'slower below Strength 16' (the Strength that pays
+    its drag back: defence.fit_strength). '' for anything but body armour."""
     if not is_body(item):
         return ''
-    r = armour_rules()
+    import defence
+    cls = piece_weight_class(item)
+    fit = defence.fit_strength(cls)
+    return 'full speed' if fit <= 10 else f"slower below Strength {fit}"
+
+
+def weight_line(item) -> str:
+    """The body armour's weight-class line for its card: "Heavy metal:
+    slower below Strength 16, no dodge, footsteps +3, spells cost x2 MP;
+    rusts." '' for anything but body armour."""
+    if not is_body(item):
+        return ''
     cls = piece_weight_class(item)
     metal = is_metal(item)
-    bits = []
-    cap = int(r['dex_ac_cap'].get(cls, 0))
-    bits.append(f"Dexterity to AC up to {cap}" if cap else "no Dexterity to AC")
+    bits = [speed_words(item)]
     share = class_dodge_share(item)
     bits.append('full dodge' if share >= 1.0 else ('no dodge' if share <= 0.0 else 'half dodge'))
     steps = piece_footsteps(item)

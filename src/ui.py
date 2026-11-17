@@ -46,27 +46,26 @@ _line_color_cache: dict = {}
 
 
 def _load_lines(player) -> tuple:
-    """The shares of the limit where the load's state changes (Heavy,
-    Burdened: data/gear_rules.json load; the limit itself is Overloaded)."""
-    return (float(getattr(player, 'HEAVY_SHARE', 0.5)),
-            float(getattr(player, 'BURDENED_SHARE', 0.75)))
+    """The shares of the limit where the load's state changes (Light,
+    Heavy, Burdened: data/gear_rules.json load; the limit itself is
+    Overloaded)."""
+    lines = getattr(player, 'load_lines', None)
+    if callable(lines):
+        return tuple(float(x) for x in lines())
+    import defence
+    return defence.load_lines()
 
 
 def carry_state(player) -> tuple[float, int, str]:
-    """(weight carried, limit, state) where state is '' / 'Heavy' /
-    'Burdened' / 'Overloaded'. Worn gear and the pack both count
-    (Player.get_current_weight). One reading for the sidebar, the character
-    sheet and the menus."""
+    """(weight carried, limit, state) where state is '' / 'Light' /
+    'Heavy' / 'Burdened' / 'Overloaded' (defence.load_tier). Worn gear and
+    the pack both count (Player.get_current_weight). One reading for the
+    sidebar, the character sheet and the menus."""
+    import defence
     wt = float(player.get_current_weight())
     lim = int(player.get_carry_limit())
-    heavy, burdened = _load_lines(player)
-    if wt > lim:
-        return wt, lim, 'Overloaded'
-    if wt > lim * burdened:
-        return wt, lim, 'Burdened'
-    if wt > lim * heavy:
-        return wt, lim, 'Heavy'
-    return wt, lim, ''
+    tier = defence.load_tier(wt, lim)
+    return wt, lim, defence.LOAD_WORDS.get(tier, '')
 
 
 def carry_numbers(player) -> str:
@@ -509,8 +508,15 @@ class Sidebar:
         # as the sole dungeon-level readout; a second "Depth" line here
         # was a dupe. `dungeon_level` is kept in the signature in case a
         # future metric wants it.
+        # The defence model (2026-11-16): AC from armour and magic, the
+        # dodge and the speed from Dexterity, less what the armour and the
+        # load take. Speed is gold over 10, red under it.
+        spd = float(player.get_speed())
         metrics = [
             (f"AC {ac}", ac_color),
+            (f"Dodge {round(100 * player.dodge_chance())}%", FP.BODY_TEXT),
+            (f"Speed {spd:g}", FP.GOLD_BRIGHT if spd > 10 else
+             FP.DANGER_TEXT if spd < 10 else FP.BODY_TEXT),
             (f"Sight {player.get_sight_radius()}", FP.BODY_TEXT),
             # The clock the next fight will really get. Gold when something
             # is lengthening it (haste, a blessing, the Guiding Hand), red
@@ -561,9 +567,9 @@ class Sidebar:
 
     def _carrying(self, player, y: int) -> int:
         """One full-width line, 'Carrying 43 / 100': green, amber when
-        Heavy (half the dodge, louder steps), red when Burdened (no dodge,
-        half Dexterity's AC, every second step costs a turn) or Overloaded
-        (past the limit)."""
+        Light (a little less dodge, louder steps) or Heavy (half the dodge,
+        slower), red when Burdened (no dodge, much slower) or Overloaded
+        (past the limit: half speed)."""
         wt, lim, state = self.carry_state(player)
         cell_x = self.x + self.PAD
         ax = self._icon(self._STAT_ICONS['Wt'], cell_x, y, self._fsm.get_height())

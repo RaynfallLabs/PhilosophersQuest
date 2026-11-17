@@ -12,12 +12,15 @@ are many ways to play". This reverses the 3.3.2 rule that the material gives
   * The MATERIAL of the body armour sets the elements (iron carries the
     spark, leather burns, dragonscale sheds flame) and what it wards off
     (cold iron and fey glamour): data/materials/armor `protection`, `wards`.
-  * The body armour's WEIGHT CLASS sets Dexterity's AC (6 / 3 / 0), the
-    dodge (full / half / none), the footsteps (+0 / +1 / +2, metal +1) and
-    a spell's cost in metal (x1 / x1.5 / x2; mithril casts freely).
-  * The LOAD: Heavy over half the limit (half the dodge), Burdened over
-    three quarters (no dodge, half Dexterity's AC, every second step a
-    turn), Overloaded past the limit (no Dexterity AC, every step a turn).
+  * The body armour's WEIGHT CLASS sets the dodge (full / half / none), the
+    speed it costs until Strength pays it back (the defence model,
+    2026-11-16: Dexterity gives no AC since), the footsteps (+0 / +1 / +2,
+    metal +1) and a spell's cost in metal (x1 / x1.5 / x2; mithril casts
+    freely).
+  * The LOAD (the four tiers of 2026-11-16, tests/test_defence_model.py):
+    Light over half the limit (a little less dodge), Heavy over 70% (half
+    the dodge, slower), Burdened over 90% (no dodge, much slower),
+    Overloaded past the limit (half speed).
   * A named piece's own resistances win; an old save's common armour takes
     its profile from its template and material.
 
@@ -116,24 +119,26 @@ def test_a_named_piece_keeps_its_own_resistances():
 
 # ------------------------------------------------------------------ light vs heavy
 
-def test_a_dex_hero_in_leather_has_more_ac_than_in_plate():
+def test_plate_has_the_ac_and_a_dex_hero_in_leather_the_dodge_and_the_speed():
+    # The defence model (2026-11-16): AC from armour only, so plate always
+    # out-armours leather; Dexterity is the dodge and the speed instead.
     leather = _wearing('leather', 'leather', dex=22)
     plate = _wearing('plate', 'chain_steel', dex=22)
-    assert leather.dex_ac_cap() == 6 and plate.dex_ac_cap() == 0
-    assert leather.get_ac() == 10 - 2 - 6
+    assert leather.get_ac() == 10 - 2
     assert plate.get_ac() == 10 - 7
-    assert leather.get_ac() < plate.get_ac()                   # lower is better
-    studded = _wearing('studded_leather', 'studded_leather', dex=20)
-    assert studded.get_ac() < _wearing('plate', 'chain_steel', dex=20).get_ac()
-    assert _wearing('chain_shirt', 'chain_steel', dex=22).dex_ac_cap() == 3
+    assert plate.get_ac() < leather.get_ac()                   # lower is better
+    assert leather.dodge_chance() > 0 == plate.dodge_chance()
+    assert leather.get_speed() > plate.get_speed()             # STR 10 in plate: its drag
 
 
 def test_he_dodges_in_leather_and_not_in_plate():
+    import defence
+    per = defence.rules()['dodge_per_dex']
     leather = _wearing('leather', 'leather', dex=20)
     medium = _wearing('chain_shirt', 'chain_steel', dex=20)
     plate = _wearing('plate', 'chain_steel', dex=20)
-    assert leather.dodge_chance() == pytest.approx(0.075)
-    assert medium.dodge_chance() == pytest.approx(0.0375)
+    assert leather.dodge_chance() == pytest.approx(10 * per)
+    assert medium.dodge_chance() == pytest.approx(5 * per)
     assert plate.dodge_chance() == 0.0
 
 
@@ -149,7 +154,7 @@ def test_a_slipped_blow_needs_the_dodge():
         p.x, p.y = 5, 5
     random.seed(4)
     slips = sum(m._slipped(leather, {'name': 'Claw'}) for _ in range(400))
-    assert slips > 60                                           # about 30%
+    assert slips > 80                                           # about 35% (the cap)
     assert not any(m._slipped(plate, {'name': 'Claw'}) for _ in range(200))
 
 
@@ -187,37 +192,51 @@ def _weight(lb):
     return it
 
 
-def test_heavy_halves_the_dodge_and_burdened_takes_it():
-    p = _wearing('leather', 'leather', dex=20)
+def test_the_load_takes_the_dodge_a_tier_at_a_time():
+    import defence
+    lr = defence.load_rules()
+    p = _wearing('leather', 'leather', dex=20)        # 10 lb worn, limit 100
     full = p.dodge_chance()
-    p.inventory.append(_weight(45))                    # worn + 45: over half
+    p.inventory.append(_weight(45))                    # 55: over half
+    assert p.load_tier() == 'light'
+    assert p.dodge_chance() == pytest.approx(full * lr['light']['dodge'])
+    p.inventory.append(_weight(20))                    # 75: over 70%
     assert p.load_tier() == 'heavy'
-    assert p.dodge_chance() == pytest.approx(full / 2)
-    p.inventory.append(_weight(25))                    # over three quarters
+    assert p.dodge_chance() == pytest.approx(full * lr['heavy']['dodge'])
+    p.inventory.append(_weight(20))                    # 95: over 90%
     assert p.load_tier() == 'burdened'
-    assert p.dodge_chance() == 0.0
+    assert p.dodge_chance() == pytest.approx(full * lr['burdened']['dodge'])
 
 
-def test_burdened_costs_every_second_step_overloaded_every_step_heavy_free():
+def test_the_load_costs_speed_from_heavy_on():
     p = Player()
     p.inventory.append(_weight(60))
-    assert [p.burden_step() for _ in range(4)] == [False] * 4
+    assert p.load_tier() == 'light' and p.get_speed() == 10.0
     p.inventory.append(_weight(20))
-    assert [p.burden_step() for _ in range(4)] == [False, True, False, True]
+    heavy = p.get_speed()
+    assert p.load_tier() == 'heavy' and heavy < 10.0
+    p.inventory.append(_weight(15))
+    assert p.load_tier() == 'burdened' and p.get_speed() < heavy
     p.inventory.append(_weight(30))
-    assert [p.burden_step() for _ in range(3)] == [True, True, True]
+    assert p.load_tier() == 'overloaded' and p.get_speed() == 5.0
 
 
 def test_the_load_is_heard():
+    import json
     import senses
+    with open(os.path.join(ROOT, 'data', 'senses.json'), encoding='utf-8') as f:
+        noise = json.load(f)['noise']
     p = Player()
     base = senses.step_radius(p)
     p.inventory.append(_weight(60))
-    assert senses.step_radius(p) == base + 1          # Heavy
+    assert senses.step_radius(p) == base + noise['light']           # Light
     p.inventory.append(_weight(20))
-    assert senses.step_radius(p) == base + 2          # Burdened
+    assert senses.step_radius(p) == base + noise['heavy']           # Heavy
+    p.inventory.append(_weight(15))
+    assert senses.step_radius(p) == base + noise['burdened']        # Burdened
     p.inventory.append(_weight(30))
-    assert senses.step_radius(p) == base + 2          # Overloaded
+    assert senses.step_radius(p) == base + noise['overloaded']      # Overloaded
+    assert noise['light'] < noise['heavy'] < noise['burdened'] <= noise['overloaded']
 
 
 # ----------------------------------------------------------- wards: riders stopped
@@ -258,10 +277,13 @@ def test_the_card_says_it_in_one_honest_line():
     assert gear.protection_line(mail) == (
         "Turns an edge: slash x0.75; parts under a point: pierce x1.15; "
         "conducts lightning x1.25; cold iron: fey glamour slides off")
+    import defence
+    fit = defence.fit_strength('heavy')
     assert gear.weight_line(mail) == (
-        "Heavy metal: no Dexterity to AC, no dodge, footsteps +3, spells cost x2 MP; rusts.")
+        f"Heavy metal: slower below Strength {fit}, no dodge, footsteps +3, spells cost x2 MP; "
+        f"rusts.")
     leather = items.instantiate_armor('leather', 'leather')
-    assert gear.weight_line(leather) == "Light: Dexterity to AC up to 6, full dodge; scorches."
+    assert gear.weight_line(leather) == "Light: full speed, full dodge; scorches."
     mithril = items.instantiate_armor('chain_shirt', 'mithril')
     assert 'spells at full cost' in gear.weight_line(mithril)
     assert 'never rusts' in gear.weight_line(mithril)
@@ -383,11 +405,12 @@ def test_every_named_body_armour_says_whether_it_is_metal():
 
 def test_the_rules_are_in_the_data():
     r = gear.rules()
-    assert r['armour_weight']['dex_ac_cap'] == {'light': 6, 'medium': 3, 'heavy': 0}
+    assert 'dex_ac_cap' not in r['armour_weight']             # no Dexterity in AC (2026-11-16)
     assert r['armour_weight']['dodge_share'] == {'light': 1.0, 'medium': 0.5, 'heavy': 0.0}
     assert r['armour_weight']['casting_mult'] == {'light': 1.0, 'medium': 1.5, 'heavy': 2.0}
-    assert r['load']['heavy']['share'] == 0.5 and r['load']['burdened']['share'] == 0.75
-    assert r['load']['burdened']['dex_ac'] == 0.5 and r['load']['overloaded']['dex_ac'] == 0.0
+    assert (r['load']['light']['share'], r['load']['heavy']['share'],
+            r['load']['burdened']['share']) == (0.5, 0.7, 0.9)
+    assert r['defence']['armour_drag']['light'] == 0.0
 
 
 def test_the_profile_pass_is_written_and_idempotent():

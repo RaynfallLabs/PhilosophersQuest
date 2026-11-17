@@ -78,11 +78,13 @@ class HazardsMixin:
         if not hit:
             return
         fid, h = hit
-        # A "heavy pack" is a Burdened one, over three quarters of the limit
-        # (Brandon 2026-11-14), as it was before the load had three tiers.
+        # A "heavy pack" is a Heavy load or worse, over 70% of the limit
+        # (the load's four tiers, Brandon 2026-11-16): the nearest line to
+        # the three quarters it was from 2026-11-14, when Burdened began
+        # there.
         heavy = False
         try:
-            heavy = bool(self.player.is_burdened())
+            heavy = bool(self.player.is_heavy())
         except Exception:
             pass
         if not hazards.step_fires(h, heavy=heavy,

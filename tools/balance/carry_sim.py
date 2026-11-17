@@ -167,6 +167,7 @@ def start_rows(base, per) -> list:
 # ---------------------------------------------------------------------------
 def depth_rows(trials, floors, profiles) -> dict:
     import difficulty_sim as ds
+    ds.install_caches()
     out = {}
     marks = set(floors)
     for prof in profiles:
@@ -200,13 +201,16 @@ def pct(total, lim):
     return 100.0 * total / max(1, lim)
 
 
-def mark(total, lim, share=Player.HEAVY_SHARE):
+def mark(total, lim, share=Player.LIGHT_SHARE):
+    """The load's tier word (the four tiers of 2026-11-16: src/defence.py)."""
     if total > lim:
         return 'OVER'
     if total > lim * Player.BURDENED_SHARE:
         return 'Burdened'
-    if total > lim * share:
+    if total > lim * Player.HEAVY_SHARE:
         return 'Heavy'
+    if total > lim * share:
+        return 'Light'
     return 'ok'
 
 
@@ -219,7 +223,8 @@ def main(argv=None):
     a = ap.parse_args(argv)
     base, per = a.base, a.per_str
     print(f"Limit = {base:g} + {per:g} x STR   (STR 10 -> {base + 10 * per:g}); "
-          f"Heavy above {Player.HEAVY_SHARE:.0%}, Burdened above {Player.BURDENED_SHARE:.0%}\n")
+          f"Light above {Player.LIGHT_SHARE:.0%}, Heavy above {Player.HEAVY_SHARE:.0%}, "
+          f"Burdened above {Player.BURDENED_SHARE:.0%}\n")
 
     if not a.no_start:
         print("1. STARTING BUILDS (worn + pack, real Game)")

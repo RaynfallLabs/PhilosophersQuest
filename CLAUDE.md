@@ -24,9 +24,9 @@ A graphical roguelike where knowledge is power. Every action requires answering 
 | theology    | Praying                 |
 
 ## Player Stats
-- **STR** — Carry capacity
-- **CON** — Max HP (3 per point) and toughness (1% less damage per point over 10, cap 40%)
-- **DEX** — Armor class (up to 6 points in light body armour, 3 in medium, 0 in heavy; half when Burdened, none when Overloaded) and dodge (0.75% per point over 10, cap 30%; half in medium armour, none in heavy; half under a Heavy load, none when Burdened)
+- **STR** — Carry capacity, and pays back the speed medium and heavy armour cost (a STR-fit hero in plate is at speed 10)
+- **CON** — Max HP (3 per point), toughness (1% less damage per point over 10, cap 40%) and a little carry (3 lb per point over 10)
+- **DEX** — No armour class (AC comes from armour, shield and magic only). Dodge (1% per point over 10, cap 35%; half in medium armour, none in heavy; less under a Light, Heavy or Burdened load) and speed (+1% per point over 10, cap +20%; 10 is ordinary)
 - **INT** — Max MP, and the share of it meditation gives back each floor (half, +1% per point over 10, cap 80%)
 - **WIS** — Quiz timer bonus (+1 second per point)
 - **PER** — Sight radius
@@ -98,6 +98,7 @@ src/
   dice.py             - Dice notation parser ("2d6+3")
   items.py            - Item classes and equipment system
   gear.py             - Armour, shield, ring and amulet rules: levels, tiers, thresholds, core AC
+  defence.py          - The defence model, pure: AC from armour only, dodge and speed from DEX, armour's drag paid by STR, the load tiers
   guards.py           - What the minor armour slots guard: attack delivery, families, touch AC
   enchantments.py     - The minor-slot enchantment stable: guard, might, craft and way lanes
   rings.py            - Ring and amulet kinds: levels, ladders, names, what a worn kind does

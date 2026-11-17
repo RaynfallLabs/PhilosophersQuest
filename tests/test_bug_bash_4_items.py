@@ -495,11 +495,11 @@ def test_i18_every_readout_uses_the_shared_number():
     from player import Player
     p = Player()
     it = _known(_weapon())
-    it.weight = 75.4
+    it.weight = 90.4                       # over the Burdened line (90%), rounds to it
     p.inventory.append(it)
     assert p.is_burdened()
-    assert carry_numbers(p) == '75.4 / 100'
-    assert p.carry_line() == 'Carrying 75.4 / 100'
+    assert carry_numbers(p) == '90.4 / 100'
+    assert p.carry_line() == 'Carrying 90.4 / 100'
 
 
 # ---------------------------------------------------------------- UI-02 / UI-17

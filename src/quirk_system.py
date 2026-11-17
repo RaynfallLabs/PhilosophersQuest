@@ -428,9 +428,11 @@ class QuirkSystem:
         # and down again is not a new floor).
         going_down = from_level is not None and new_level > from_level
         if going_down and new_level < 900:
-            # Marius' Mule: down the stairs with a Burdened pack (or worse).
+            # Marius' Mule: down the stairs with a Heavy load or worse (the
+            # first tier that slows the hero, since 2026-11-16; it was
+            # Burdened at three quarters of the limit).
             try:
-                laden = bool(self._pl.is_burdened())
+                laden = bool(self._pl.is_heavy())
             except Exception:
                 laden = False
             if laden:
@@ -1850,7 +1852,7 @@ _QUIRK_TRIGGER = {
     'fabius':        "You struck down 40 foes while holding the Guard stance.",
     'wallace':       "You struck down 100 foes with a two-handed weapon and no shield.",
     'janus':         "You drew the weapon at your back 40 times with a foe in sight.",
-    'marius_mule':   "You went down the stairs to 10 different floors while Burdened.",
+    'marius_mule':   "You went down the stairs to 10 different floors with a Heavy load or worse.",
     'fatted_calf':   "You carried a boss trophy down to 12 new floors.",
     'widows_jar':    "You cooked 10 dishes with a ration or a foraged find in them.",
     'proteus':       "You put on 25 different kinds of gear in one run.",
@@ -2114,7 +2116,7 @@ _QUIRK_EFFECTS = {
     'fabius':        "Guard costs you only half its usual damage.",
     'wallace':       "A two-hander held with no shield parries 1 better.",
     'janus':         "Drawing the weapon at your back costs no turn.",
-    'marius_mule':   "Burdened no longer costs you extra steps.",
+    'marius_mule':   "Your load no longer slows you, unless you are Overloaded.",
     'fatted_calf':   "Every legendary feast you cook also heals you fully.",
     'widows_jar':    "Rations and other plain food fill you half again as much.",
     'proteus':       "A kind of gear you have never worn needs one right answer fewer.",

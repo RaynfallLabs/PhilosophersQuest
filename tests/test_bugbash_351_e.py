@@ -749,9 +749,10 @@ def test_journey_04_the_counter_is_the_blow(make_game):
 # ---------------------------------------------------------------------------
 
 def test_journey_05_plate_a_full_pack_and_two_kits(make_game):
-    """Steel plate on (four geography answers): Heavy. Ringmail and a
-    mace picked up: Burdened, and every second step gives the dungeon an
-    extra turn. Kit One saved in plate (Shift+E, S); the ringmail
+    """Steel plate on (four geography answers): a Light load. Ringmail and
+    a mace picked up: Heavy or worse, and slower (since 2026-11-16 the load
+    costs speed: a step is still one action, the world gets more turns).
+    Kit One saved in plate (Shift+E, S); the ringmail
     dropped, leather on, Kit Two saved; Kit One put back on. The mace at
     his back dropped and picked up: back at his back."""
     import items
@@ -777,9 +778,9 @@ def test_journey_05_plate_a_full_pack_and_two_kits(make_game):
     assert body_(g) is plate, h.said()
     said = h.said()
     tier = p.load_tier()
-    if tier == 'heavy':
-        assert any(s.startswith('Your load is Heavy.') for s in said), said
-    # Ringmail and a mace: Burdened.
+    if tier == 'light':
+        assert any(s.startswith('Your load is Light.') for s in said), said
+    # Ringmail and a mace: Heavy or worse.
     spare = drop_here_(g, items.instantiate_armor('ringmail', 'chain_steel'))
     mace = drop_here_(g, items.instantiate_weapon('mace', 'iron'))
     for _ in range(4):
@@ -787,15 +788,17 @@ def test_journey_05_plate_a_full_pack_and_two_kits(make_game):
             break
         h.key('g')
     said = h.said()
-    assert spare in p.inventory or p.load_tier() in ('burdened', 'overloaded'), said
-    assert p.load_tier() in ('burdened', 'overloaded'), (p.get_current_weight(), p.get_carry_limit())
-    assert any(s.startswith(('You are Burdened.', 'You are Overloaded.')) for s in said), said
-    # Burdened steps: every second one costs the dungeon a turn more.
-    if p.load_tier() == 'burdened':
-        t0 = g.turn_count
-        for dx in (1, -1, 1, -1):
-            h.move(dx, 0)
-        assert g.turn_count - t0 == 4 + 4 // p.BURDENED_STEP_EVERY, g.turn_count - t0
+    slowed = ('heavy', 'burdened', 'overloaded')
+    assert spare in p.inventory or p.load_tier() in slowed, said
+    assert p.load_tier() in slowed, (p.get_current_weight(), p.get_carry_limit())
+    assert any(s.startswith(('Your load is Heavy.', 'You are Burdened.', 'You are Overloaded.'))
+               for s in said), said
+    # A slowed hero: a step is one action, but the world takes more turns.
+    assert p.get_speed() < 10.0
+    t0 = g.turn_count
+    for dx in (1, -1, 1, -1):
+        h.move(dx, 0)
+    assert g.turn_count - t0 == 4, g.turn_count - t0
     # The mace At Your Back (Kit, R).
     if mace in p.inventory:
         h.key('k')
@@ -816,8 +819,9 @@ def test_journey_05_plate_a_full_pack_and_two_kits(make_game):
     h.key('d')
     pick(h, spare, g._get_drop_tab_items)
     said = h.said()
-    assert spare in g.ground_items and p.load_tier() in ('', 'heavy'), said
-    assert any(s.startswith(('You are no longer Burdened', 'You are no longer Overloaded'))
+    assert spare in g.ground_items and p.load_tier() in ('', 'light'), said
+    assert any(s.startswith(('Your load is no longer Heavy', 'You are no longer Burdened',
+                             'You are no longer Overloaded'))
                for s in said), said
     # Leather on (plate off first), and Kit Two saved.
     jerkin = items.instantiate_armor('leather', 'leather')

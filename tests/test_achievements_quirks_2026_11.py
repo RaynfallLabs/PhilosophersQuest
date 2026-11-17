@@ -655,7 +655,7 @@ def test_janus_by_the_real_key(seeker):
 
 def test_marius_mule_and_the_stride():
     q, pl = _qs()
-    pl.is_burdened = lambda: True
+    pl.is_heavy = lambda: True                        # a Heavy load or worse (2026-11-16)
     for lvl in range(2, 11):
         q.on_stair_use(lvl, lvl - 1)
     q.on_stair_use(10, 11)                            # back up: not a march down
@@ -663,13 +663,17 @@ def test_marius_mule_and_the_stride():
     assert not q.is_unlocked('marius_mule')
     q.on_stair_use(11, 10)
     assert q.is_unlocked('marius_mule')
+    # His reward: the load no longer slows him, save Overloaded (the load's
+    # speed, defence.speed_share; it was the Burdened step rule).
     from player import Player
     hero = Player()
-    hero.quirk_progress = {'marius_active': True}
     hero.load_tier = lambda: 'burdened'
-    assert hero.load_step_every() == 0
+    slow = hero.get_speed()
+    assert slow < 10.0
+    hero.quirk_progress = {'marius_active': True}
+    assert hero.get_speed() == 10.0
     hero.load_tier = lambda: 'overloaded'
-    assert hero.load_step_every() == Player.OVERLOADED_STEP_EVERY
+    assert hero.get_speed() < slow
 
 
 def test_the_fatted_calf_and_the_feast_that_heals():

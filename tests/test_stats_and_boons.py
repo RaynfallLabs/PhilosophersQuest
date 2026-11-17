@@ -59,9 +59,9 @@ def test_dexterity_dodges_and_a_held_body_cannot():
     p = Player()
     assert p.dodge_chance() == 0.0
     p.DEX = 20
-    assert abs(p.dodge_chance() - 0.075) < 1e-9
+    assert abs(p.dodge_chance() - 10 * p.DODGE_PER_DEX) < 1e-9
     p.DEX = 300
-    assert p.dodge_chance() == p.DODGE_CAP <= 0.30
+    assert p.dodge_chance() == p.DODGE_CAP <= 0.40         # the defence model: near 35-40%
     p.add_effect('paralyzed', 3)
     assert p.dodge_chance() == 0.0
 
@@ -141,31 +141,25 @@ def test_a_whole_run_of_cooking_needs_deep_dishes_for_a_speciality():
     assert 80 <= total <= 84            # each stat at its band's cap, floor by floor
 
 
-def test_dexterity_gives_armor_by_the_body_armours_weight_class():
-    """Rewritten 2026-11-13 (winning-build plan 3.3, slice 4): Dexterity was
-    worth at most 3 points of armor in anything, plate included. Now the
-    body armour decides: 6 in light armour or none, 3 in medium, 0 in heavy.
-    A clumsy hero's minus still counts."""
+def test_dexterity_gives_no_armor_but_speed_and_the_dodge():
+    """Rewritten 2026-11-16 (the defence model, Brandon's approved design):
+    AC comes from armour, the shield and magic only. Dexterity was worth up
+    to 6 points of armor in light armour (from 2026-11-13; 3 in anything
+    before), and a nimble hero in studded leather out-armoured full plate.
+    It is the dodge and the speed now, and a clumsy hero's minus is gone
+    with it (tests/test_defence_model.py)."""
     import items
     p = Player()
     naked = p.get_ac()
-    p.DEX = 16
-    assert p.get_ac() == naked - 3
-    p.DEX = 40
-    assert p.dex_ac_cap() == 6
-    assert p.get_ac() == naked - 6
-    p.DEX = 6
-    assert p.get_ac() == naked + 2
-    p.DEX = 40
-    p._apply_equip(items.instantiate_armor('chain_shirt', 'chain_steel'))
-    assert p.dex_ac_cap() == 3
+    for dex in (6, 16, 40):
+        p.DEX = dex
+        assert p.get_ac() == naked
+    assert p.get_speed() > 10 and p.dodge_chance() > 0
     q = Player()
     q.DEX = 40
     q._apply_equip(items.instantiate_armor('plate', 'chain_steel'))
-    assert q.dex_ac_cap() == 0
     assert q.get_ac() == 10 - 7
-    q.DEX = 6
-    assert q.get_ac() == 10 - 7 + 2
+    assert q.dodge_chance() == 0.0
 
 
 # ------------------------------------------------------------ gate-boss gifts

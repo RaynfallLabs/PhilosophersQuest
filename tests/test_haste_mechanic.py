@@ -50,12 +50,13 @@ def test_do_move_no_auto_second_step():
 
 
 def test_advance_turn_gates_the_world_on_the_clock():
-    """The world-tick methods sit inside the `if not self._world_waits:`
-    branch, and the clock is read from the hero's speed before them."""
+    """The world-tick methods sit inside the loop over the world's turns
+    (defence.world_turns: none, one or, for a slow hero, two), and the
+    clock is read from the hero's speed before them."""
     import main
     src = inspect.getsource(main.Game._advance_turn)
-    gate = "if not self._world_waits:"
-    assert "get_speed()" in src
+    gate = "for _wt in range(_n_world):"
+    assert "get_speed()" in src and "world_turns(" in src
     assert src.find("get_speed()") < src.find("self._do_monster_turns()")
     assert gate in src, f"expected gate line '{gate}' in _advance_turn"
     after_gate = src[src.index(gate):]
@@ -66,41 +67,41 @@ def test_advance_turn_gates_the_world_on_the_clock():
 
 
 # ---------------------------------------------------------------------------
-# The clock, by itself (a pure copy of _advance_turn's arithmetic)
+# The clock, by itself (defence.world_turns: _advance_turn's own arithmetic)
 # ---------------------------------------------------------------------------
 
-def _clock_step(state: dict, speed: float) -> bool:
-    """True if the world WAITS this action."""
-    speed = max(10.0, speed)
-    clock = state.get('clock', 0.0) + 10.0 / speed
-    waits = clock < 1.0 - 1e-9
-    if not waits:
-        clock -= 1.0
-    state['clock'] = clock if speed > 10.0 else 0.0
-    return waits
+def _clock_step(state: dict, speed: float) -> int:
+    """The world's turns this action (0: it waits)."""
+    import defence
+    n, state['clock'] = defence.world_turns(state.get('clock', 0.0), speed)
+    return n
 
 
 def _ticks(speed, actions):
     state: dict = {}
-    return sum(0 if _clock_step(state, speed) else 1 for _ in range(actions))
+    return sum(_clock_step(state, speed) for _ in range(actions))
 
 
 def test_haste_is_two_actions_to_a_world_turn():
     assert _ticks(20, 6) == 3
     state: dict = {}
-    assert [_clock_step(state, 20) for _ in range(4)] == [True, False, True, False]
+    assert [_clock_step(state, 20) for _ in range(4)] == [0, 1, 0, 1]
 
 
-def test_ordinary_speed_never_waits():
+def test_ordinary_speed_never_waits_and_a_slow_hero_gives_the_world_more():
     assert _ticks(10, 10) == 10
-    assert _ticks(7, 10) == 10                      # slowing is _do_move's, not the clock's
+    # Since 2026-11-16 a speed under 10 counts (armour too heavy for the
+    # hero's Strength, or his load): the world takes two turns on some
+    # actions. The Slowed status still costs him his own turn in _do_move.
+    assert _ticks(7, 7) == 10
+    assert _ticks(5, 10) == 20
 
 
 def test_a_fresh_haste_begins_by_waiting():
     state: dict = {}
-    assert _clock_step(state, 20) is True           # one hasted action, then it ends
-    assert _clock_step(state, 10) is False
-    assert _clock_step(state, 20) is True           # the next haste starts the same way
+    assert _clock_step(state, 20) == 0              # one hasted action, then it ends
+    assert _clock_step(state, 10) == 1
+    assert _clock_step(state, 20) == 0              # the next haste starts the same way
 
 
 def test_speed_boots_save_one_world_turn_in_twenty_one():

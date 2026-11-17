@@ -10,15 +10,16 @@ wealth. This model walks runs floor by floor with:
     treasure);
   * a careful hero's carrying: Strength 10 rising to 18 by floor 80 (meals,
     gate gifts), limit 20 + 8 x STR, a kit of armour, weapon and supplies
-    that grows from 40 to 60 lb, and the rule he plays by: never Burdened
-    (load at most 75% of the limit);
+    that grows from 40 to 60 lb, and the rule he plays by: never slowed
+    (load at most the Heavy line, 70% of the limit; 75%, Burdened, before
+    the four load tiers of 2026-11-16);
   * the real trader plan, stock and prices (traders.roll_plan, build_stock,
     economy.merchant_price), gems for sale at value x the spread, treasure
     taken at buy_rate (data/traders.json ``treasure``).
 
 Policies:
   careful   keeps every gem and piece of jewellery, keeps an art object only
-            while it fits under the Burdened line, takes coin up to that line
+            while it fits under the Heavy line, takes coin up to that line
             and leaves the rest; at a trader sells art, buys the sensible
             basket (potions, food, a scroll or two, a service one time in
             three), paying coin first and then treasure, and changes coin
@@ -66,11 +67,12 @@ def kit_weight(f):
 
 
 def burden_room(f):
-    """Pounds a careful hero can give to wealth without being Burdened
-    (three quarters of the limit; a Heavy load, at half, costs only dodge
-    and noise: src/player.py load_tier, tiers named 2026-11-14)."""
+    """Pounds a careful hero can give to wealth without being slowed: the
+    Heavy line, 70% of the limit (src/defence.py load tiers, 2026-11-16;
+    it was the Burdened line at three quarters from 2026-11-14, when a
+    load under it cost only dodge and noise)."""
     limit = 20 + 8 * strength(f)
-    return max(0.0, 0.75 * limit - kit_weight(f))
+    return max(0.0, 0.70 * limit - kit_weight(f))
 
 
 def stock_for(kind, floor, rng):
@@ -109,7 +111,7 @@ def run(policy, rng):
         while art and coin / treasure.COINS_PER_LB + light_lb + sum(w for _v, w in art) > room:
             art.sort(key=lambda a: a[0] / a[1])      # the worst value per pound goes first
             art.pop(0)
-        # Coin found: what fits under the Burdened line.
+        # Coin found: what fits under the Heavy line.
         found = r['total'] * k
         space = room - light_lb - sum(w for _v, w in art) - coin / treasure.COINS_PER_LB
         take = min(found, max(0.0, space) * treasure.COINS_PER_LB)

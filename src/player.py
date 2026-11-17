@@ -8,6 +8,16 @@ def _load_rule(tier: str, key: str, default):
         return default
 
 
+def _defence_rule(key: str, default):
+    """A number of the defence model (data/gear_rules.json `defence`), read
+    once when the class is made."""
+    try:
+        import gear
+        return gear.rules()['defence'][key]
+    except Exception:
+        return default
+
+
 class Player:
     BASE_HP = 20
     BASE_SP = 200
@@ -1156,18 +1166,15 @@ class Player:
 
     def get_ac(self) -> int:
         """Armor class -- lower is better (harder for monsters to hit).
-        Base 10, reduced by DEX modifier, armor ac_bonus + enchant_bonus, shield,
-        and status effects like invisibility."""
-        # Dexterity is worth armor up to dex_ac_cap() points, by the body
-        # armour's weight class: 6 light (or none), 3 medium, 0 heavy
-        # (gear.dex_ac_cap, winning-build plan 3.3), and the load leaves
-        # all of it, half when Burdened, none when Overloaded
-        # (load_dex_ac_share). A clumsy hero's minus always counts.
-        # (Uncapped, +22 Dexterity was eleven points of armor: more than a
-        # full suit of plate.)
-        dex_mod = min(self.dex_ac_cap(), (self.DEX - 10) // 2)
-        if dex_mod > 0:
-            dex_mod = int(dex_mod * self.load_dex_ac_share())
+        Base 10, reduced by the body armour and the shield (ac_bonus +
+        enchant_bonus, blessing or curse) and by magic: invisibility, a
+        shielding, a stance, a parry, a named piece's terrain procs.
+
+        Dexterity gives none (the defence model, Brandon 2026-11-16: "AC
+        comes from armour, shield and magic ONLY"). It gave up to 6 points
+        in light armour, and a nimble hero in studded leather out-armoured
+        full plate deep down; Dexterity is now the dodge and the speed
+        (dodge_chance, get_speed; src/defence.py)."""
         # AC comes from body armour and the shield (gear.py, bug bash 3.3.2):
         # a helm, gloves, boots, bracers, greaves, cloak or shirt gives none
         # (they guard against kinds of attack instead). Nine slots of AC put
@@ -1241,7 +1248,7 @@ class Player:
         import stance as _stance
         stance_ac = _stance.stance_ac(self)
         two_hand_parry = _stance.parry_ac(self)
-        return (10 - dex_mod - armor_bonus - shield_bonus - buc_ac - invisible_bonus - shield_effect
+        return (10 - armor_bonus - shield_bonus - buc_ac - invisible_bonus - shield_effect
                 - stand_ac - parry_ac - armor_proc_ac - stance_ac - two_hand_parry)
 
     def get_armor_resistance(self, damage_type: str) -> float:
@@ -1254,12 +1261,6 @@ class Player:
         column shows it: bug bash WB-A08)."""
         import gear
         return gear.worn_factor(self, damage_type)
-
-    def dex_ac_cap(self) -> int:
-        """The most AC Dexterity gives in the body armour worn (6 light or
-        none, 3 medium, 0 heavy: data/gear_rules.json armour_weight)."""
-        import gear
-        return gear.dex_ac_cap(self)
 
     def spell_mp_cost(self, base: int) -> int:
         """What a spell costs this hero: a Ring of Wizardry's cut, then the
@@ -1332,10 +1333,11 @@ class Player:
     HP_PER_CON = 3
     TOUGHNESS_PER_CON = 0.01      # of all damage, per point of CON above 10
     TOUGHNESS_CAP = 0.40
-    DODGE_PER_DEX = 0.0075        # chance per point of DEX above 10
-    # (The most AC Dexterity gives is by the body armour's weight class:
-    # dex_ac_cap(). It was 3 in anything, plate included, until 2026-11-13.)
-    DODGE_CAP = 0.30
+    # Dexterity's dodge, a point over 10, and its cap: data/gear_rules.json
+    # `defence` (src/defence.py reads it; these are the file's numbers for
+    # tools and tests). Dexterity gives no AC since 2026-11-16.
+    DODGE_PER_DEX = float(_defence_rule('dodge_per_dex', 0.01))
+    DODGE_CAP = float(_defence_rule('dodge_cap', 0.35))
     # Worn armor that says so adds to either, on top of what the stat gives,
     # by at most this much in all.
     GEAR_BONUS_CAP = 0.10
@@ -1439,17 +1441,18 @@ class Player:
     def dodge_chance(self) -> float:
         """Chance to slip a blow that would have landed (0 at DEX 10). Rolled
         after the monster's hit roll, so it also beats a glancing hit.
-        Dexterity's share and worn gear's, then what the body armour and the
-        load leave of it: all of it in light armour (or none), half in
-        medium, none in heavy; half again under a Heavy load, none when
-        Burdened or Overloaded (gear.dodge_share)."""
+        Dexterity's share (defence.dex_dodge: a point over 10, capped) and
+        worn gear's, then what the body armour and the load leave of it:
+        all of it in light armour (or none), half in medium, none in heavy;
+        then a little less under a Light load, half under a Heavy one, none
+        when Burdened or Overloaded (gear.dodge_share; data/gear_rules.json
+        `defence` and `load`)."""
         # Nobody who cannot act can sidestep.
         if any(self.has_effect(e) for e in ('paralyzed', 'sleeping', 'immobilized',
                                             'stunned', 'frozen', 'petrifying')):
             return 0.0
-        base = max(0.0, min(self.DODGE_CAP,
-                            (int(self.DEX) - 10) * self.DODGE_PER_DEX)) \
-            + self._worn_bonus('dodge_bonus')
+        import defence
+        base = defence.dex_dodge(self.DEX) + self._worn_bonus('dodge_bonus')
         if base <= 0.0:
             return 0.0
         import gear
@@ -1528,19 +1531,44 @@ class Player:
         """The hero's speed rating, on the scale of a monster's `speed`
         (data/monsters.json: 10 is a creature of ordinary speed). It sets
         how often he acts against how often the world does
-        (Game._advance_turn): at 20 the monsters act every other action, at
-        10.5 they miss one action in twenty-one. Haste doubles it; Speed
-        boots add their share (enchantments.quickness). Wisdom sets the
-        quiz clock, never this."""
+        (Game._advance_turn, defence.world_turns): at 20 the monsters act
+        every other action, at 11 they miss one action in eleven, at 9 they
+        take two turns one action in nine.
+
+        The defence model (Brandon 2026-11-16; src/defence.py,
+        data/gear_rules.json `defence`): Dexterity over 10 makes him
+        quicker, medium and heavy body armour slower unless his Strength
+        pays the armour back, and a Heavy, Burdened or Overloaded load
+        slower still (Marius' Mule keeps his stride under all but
+        Overloaded). Speed boots add their share (enchantments.quickness)
+        and haste doubles it. Wisdom sets the quiz clock, never this."""
+        import defence
+        import gear
         try:
             import enchantments
             quick = enchantments.quickness(self)
         except ImportError:
             quick = 0.0
-        s = 10.0 * (1.0 + quick)
-        if self.has_effect('hasted'):
-            s *= 2.0
-        return round(s, 2)
+        share = defence.speed_share(self.DEX, self.STR, gear.body_class(self),
+                                    self.load_tier(), ignore_load=self.keeps_stride())
+        return defence.speed_rating(share, quick, self.has_effect('hasted'))
+
+    def keeps_stride(self) -> bool:
+        """Marius' Mule (a trait): a Light, Heavy or Burdened load does not
+        slow him (Overloaded still does; the dodge is lost as for anyone)."""
+        return bool((getattr(self, 'quirk_progress', None) or {}).get('marius_active'))
+
+    def speed_parts(self) -> dict:
+        """What makes up the speed, for the character sheet: Dexterity's
+        share, the armour's unpaid drag, the load's (each a share of 10)."""
+        import defence
+        import gear
+        tier = self.load_tier()
+        load = 0.0 if (self.keeps_stride() and tier in ('light', 'heavy', 'burdened')) \
+            else defence.load_speed_drag(tier)
+        return {'dex': defence.dex_speed(self.DEX),
+                'armour': defence.armour_drag(gear.body_class(self), self.STR),
+                'load': load}
 
     def get_int_quiz_bonus(self) -> int:
         """Extra quiz seconds for magic subjects (science/grammar/philosophy).
@@ -1610,31 +1638,26 @@ class Player:
     # to weigh nothing, so a hero could carry an armory.) Equipping or taking
     # something off moves its weight between pack and body; the total stays.
     #
-    # Weight that bites (Brandon 2026-11-14, data/gear_rules.json `load`):
-    # above HEAVY_SHARE of the limit the load is Heavy (he dodges half as
-    # well and his footsteps carry a tile further); above BURDENED_SHARE he
-    # is Burdened (no dodge, half Dexterity's AC, footsteps further still,
-    # and every BURDENED_STEP_EVERY-th step costs the dungeon an extra
-    # turn); past the limit itself Overloaded (no Dexterity AC either, and
-    # every step costs an extra turn). The limit stays a wall: a pickup that
-    # would go past it is refused, so only lost Strength, an old save or
-    # the Boulder overloads him. Attacks, spells and the quiz clocks are
-    # untouched. (Burdened 50% and Stressed 75% from 2026-11-13; before
-    # that one line, Burdened at 75%.)
-    HEAVY_SHARE = float(_load_rule('heavy', 'share', 0.5))
-    BURDENED_SHARE = float(_load_rule('burdened', 'share', 0.75))
-    BURDENED_STEP_EVERY = int(_load_rule('burdened', 'step_every', 2))
-    OVERLOADED_STEP_EVERY = int(_load_rule('overloaded', 'step_every', 1))
-    LOAD_TIERS = ('', 'heavy', 'burdened', 'overloaded')
-    LOAD_WORDS = {'heavy': 'Heavy', 'burdened': 'Burdened', 'overloaded': 'Overloaded'}
-    LOAD_DODGE = {'': 1.0,
-                  'heavy': float(_load_rule('heavy', 'dodge', 0.5)),
-                  'burdened': float(_load_rule('burdened', 'dodge', 0.0)),
-                  'overloaded': float(_load_rule('overloaded', 'dodge', 0.0))}
-    LOAD_DEX_AC = {'': 1.0,
-                   'heavy': float(_load_rule('heavy', 'dex_ac', 1.0)),
-                   'burdened': float(_load_rule('burdened', 'dex_ac', 0.5)),
-                   'overloaded': float(_load_rule('overloaded', 'dex_ac', 0.0))}
+    # Weight that bites (Brandon 2026-11-16, data/gear_rules.json `load`,
+    # src/defence.py): over LIGHT_SHARE of the limit the load is Light (he
+    # dodges a little less and his steps carry a tile further), over
+    # HEAVY_SHARE Heavy (half the dodge, slower, louder), over
+    # BURDENED_SHARE Burdened (no dodge, much slower, louder still), past
+    # the limit itself Overloaded (no dodge, half speed). The limit stays a
+    # wall: a pickup that would go past it is refused, so only lost
+    # Strength, an old save or the Boulder overloads him. The quiz clocks
+    # are untouched; the load's cost is his speed (get_speed), which is how
+    # often the monsters act against him. (Until 2026-11-16: Heavy 50%,
+    # Burdened 75% with one step in two costing an extra turn and half
+    # Dexterity's AC; Burdened 50% and Stressed 75% from 2026-11-13; before
+    # that one line, Burdened at 75%.) Strength sets the limit, and
+    # Constitution over 10 adds a little (defence.carry_limit).
+    LIGHT_SHARE = float(_load_rule('light', 'share', 0.5))
+    HEAVY_SHARE = float(_load_rule('heavy', 'share', 0.7))
+    BURDENED_SHARE = float(_load_rule('burdened', 'share', 0.9))
+    LOAD_TIERS = ('', 'light', 'heavy', 'burdened', 'overloaded')
+    LOAD_WORDS = {'light': 'Light', 'heavy': 'Heavy', 'burdened': 'Burdened',
+                  'overloaded': 'Overloaded'}
 
     # The purse (Brandon's D2, 2026-10-18): coins weigh what coins weigh, a
     # tenth of an ounce each (treasure.COINS_PER_LB, 160 to the pound). The
@@ -1662,9 +1685,13 @@ class Player:
     riding = False
 
     def get_carry_limit(self) -> int:
-        limit = self.CARRY_BASE + self.STR * self.CARRY_PER_STR
+        """Strength's carry, a little more for Constitution over 10
+        (defence.carry_limit), her saddlebags and a porter."""
+        import defence
+        limit = defence.carry_limit(self.STR, getattr(self, 'CON', 10),
+                                    self.CARRY_BASE, self.CARRY_PER_STR)
         # Her saddlebags raise the limit, and so every load line with it
-        # (Heavy, Burdened and Overloaded are shares of this limit).
+        # (Light, Heavy, Burdened and Overloaded are shares of this limit).
         limit += int(getattr(self, 'saddlebag_lb', 0) or 0)
         if self.has_effect('porter'):
             # Someone else carries part of the load (a bought porter).
@@ -1744,6 +1771,9 @@ class Player:
         """Everything carried: worn gear, the pack, and the purse."""
         return self.get_worn_weight() + self.get_pack_weight() + self.purse_weight()
 
+    def light_threshold(self) -> float:
+        return self.get_carry_limit() * self.LIGHT_SHARE
+
     def heavy_threshold(self) -> float:
         return self.get_carry_limit() * self.HEAVY_SHARE
 
@@ -1751,35 +1781,28 @@ class Player:
         return self.get_carry_limit() * self.BURDENED_SHARE
 
     def load_tier(self) -> str:
-        """'' (free), 'heavy' (over half the limit), 'burdened' (over three
-        quarters) or 'overloaded' (past the limit itself)."""
-        wt = self.get_current_weight()
-        if wt > self.get_carry_limit():
-            return 'overloaded'
-        if wt > self.burden_threshold():
-            return 'burdened'
-        if wt > self.heavy_threshold():
-            return 'heavy'
-        return ''
+        """'' (free), 'light' (over half the limit), 'heavy' (over 70%),
+        'burdened' (over 90%) or 'overloaded' (past the limit itself):
+        defence.load_tier, by the shares in data/gear_rules.json `load`."""
+        import defence
+        return defence.load_tier(self.get_current_weight(), self.get_carry_limit())
 
     def is_heavy(self) -> bool:
-        """A Heavy load or worse: over half the limit (a pack that clinks)."""
+        """A Heavy load or worse, over 70% of the limit: the first that
+        slows him. A sleeper hears a Heavy pack clink (sleepers.py), and a
+        Heavy hero breaks the thin ice (the domain hazards' 'heavy pack')."""
         return self.get_current_weight() > self.heavy_threshold()
 
     def is_burdened(self) -> bool:
-        """Burdened or worse: over three quarters of the limit (the domain
-        hazards' 'heavy pack': a Burdened hero breaks the thin ice)."""
+        """Burdened or worse: over 90% of the limit (no dodge, much slower)."""
         return self.get_current_weight() > self.burden_threshold()
 
     def load_dodge_share(self) -> float:
-        """The share of the dodge the load leaves: all, half, none."""
-        return float(self.LOAD_DODGE.get(self.load_tier(), 1.0))
-
-    def load_dex_ac_share(self) -> float:
-        """The share of Dexterity's AC the load leaves: all, half when
-        Burdened, none when Overloaded. Safe on a half-built hero."""
+        """The share of the dodge the load leaves: all, three quarters when
+        Light, half when Heavy, none when Burdened or Overloaded."""
+        import defence
         try:
-            return float(self.LOAD_DEX_AC.get(self.load_tier(), 1.0))
+            return defence.load_dodge_share(self.load_tier())
         except Exception:
             return 1.0
 
@@ -1802,7 +1825,7 @@ class Player:
     def load_lines(self) -> tuple:
         """The shares of the limit where the readout's state changes (the
         limit itself is the last line: hud_context.load_number)."""
-        return (self.HEAVY_SHARE, self.BURDENED_SHARE)
+        return (self.LIGHT_SHARE, self.HEAVY_SHARE, self.BURDENED_SHARE)
 
     def carry_line(self) -> str:
         """'Carrying 43 / 100', the readout the sidebar and sheet show."""
@@ -1814,7 +1837,10 @@ class Player:
         """Note the load tier now. Returns (was, now) when it just changed,
         else None (the game turns it into a message: Game._note_burden).
         Tiers are those of load_tier; a tier this file does not know (an
-        old save's 'stressed') counts as free, so the hero is told afresh."""
+        old save's 'stressed') counts as free, so the hero is told afresh.
+        (A save from before the four tiers of 2026-11-16 remembers 'heavy'
+        or 'burdened' at the old lines: the weight is read again here, so
+        it is told what the load is now on its first turn.)"""
         now = self.load_tier()
         was = getattr(self, '_load_tier', None)
         if was is None:
@@ -1827,29 +1853,6 @@ class Player:
         if now == was:
             return None
         return (was, now)
-
-    def load_step_every(self) -> int:
-        """Every how many steps one costs an extra turn under this load
-        (0: never). Marius' Mule (a trait) keeps the stride when Burdened."""
-        tier = self.load_tier()
-        if tier == 'burdened' and (getattr(self, 'quirk_progress', None) or {}).get('marius_active'):
-            return 0
-        return {'burdened': self.BURDENED_STEP_EVERY,
-                'overloaded': self.OVERLOADED_STEP_EVERY}.get(tier, 0)
-
-    def burden_step(self) -> bool:
-        """Count one step taken. True when this step costs an extra turn:
-        every BURDENED_STEP_EVERY-th step when Burdened, every step when
-        Overloaded."""
-        every = self.load_step_every()
-        if every <= 0:
-            self._burden_steps = 0
-            return False
-        self._burden_steps = int(getattr(self, '_burden_steps', 0) or 0) + 1
-        if self._burden_steps >= every:
-            self._burden_steps = 0
-            return True
-        return False
 
     @staticmethod
     def _carries_past_limit(item) -> bool:

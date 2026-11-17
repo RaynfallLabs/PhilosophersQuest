@@ -1205,14 +1205,17 @@ class RenderMixin:
             ("Sight", str(p.get_sight_radius()), FP.BODY_TEXT),
             ("Clock", f"{p.combat_clock()}s", FP.GOLD_BRIGHT),
             ("Spells", str(len(getattr(p, 'known_spells', {}))), FP.MP_BLUE_TEXT),
-            # What Dexterity and Constitution are doing for you right now.
+            # What Dexterity and Constitution are doing for you right now
+            # (Dexterity gives no AC: the dodge, and the speed below).
             ("Dodge", f"{round(100 * p.dodge_chance())}%", FP.BODY_TEXT),
             ("Tough", f"{round(100 * p.toughness())}%", FP.BODY_TEXT),
         ]
-        # Speed, on the monsters' scale (10 is ordinary), when it is not 10.
+        # Speed, on the monsters' scale (10 is ordinary), always: Dexterity
+        # makes it more, armour too heavy for Strength and the load less
+        # (the defence model, 2026-11-16). Gold over 10, red under it.
         _spd = p.get_speed()
-        if _spd != 10:
-            metrics.append(("Speed", f"{_spd:g}", FP.GOLD_BRIGHT))
+        metrics.append(("Speed", f"{_spd:g}", FP.GOLD_BRIGHT if _spd > 10
+                        else FP.DANGER_TEXT_LIGHT if _spd < 10 else FP.BODY_TEXT))
         dr = getattr(p, 'damage_resistances', {}) or {}
         for k, v in dr.items():
             metrics.append((f"{_cap(k)} DR", str(v), FP.MP_BLUE_TEXT))
@@ -1564,14 +1567,17 @@ class RenderMixin:
             ("Sight", str(p.get_sight_radius()), FP.BODY_TEXT),
             ("Clock", f"{p.combat_clock()}s", FP.GOLD_BRIGHT),
             ("Spells", str(len(getattr(p, 'known_spells', {}))), FP.MP_BLUE_TEXT),
-            # What Dexterity and Constitution are doing for you right now.
+            # What Dexterity and Constitution are doing for you right now
+            # (Dexterity gives no AC: the dodge, and the speed below).
             ("Dodge", f"{round(100 * p.dodge_chance())}%", FP.BODY_TEXT),
             ("Tough", f"{round(100 * p.toughness())}%", FP.BODY_TEXT),
         ]
-        # Speed, on the monsters' scale (10 is ordinary), when it is not 10.
+        # Speed, on the monsters' scale (10 is ordinary), always: Dexterity
+        # makes it more, armour too heavy for Strength and the load less
+        # (the defence model, 2026-11-16). Gold over 10, red under it.
         _spd = p.get_speed()
-        if _spd != 10:
-            metrics.append(("Speed", f"{_spd:g}", FP.GOLD_BRIGHT))
+        metrics.append(("Speed", f"{_spd:g}", FP.GOLD_BRIGHT if _spd > 10
+                        else FP.DANGER_TEXT_LIGHT if _spd < 10 else FP.BODY_TEXT))
         for idx, (label, value, col) in enumerate(metrics):
             r = pygame.Rect(body.x + (idx % 2) * (chip_w + S(10)), y + (idx // 2) * S(27),
                             chip_w, S(22))

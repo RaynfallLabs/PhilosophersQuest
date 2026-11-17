@@ -251,6 +251,8 @@ def test_a_badge_of_a_counter_and_an_event_is_never_full_while_locked(seeker):
 
 # ---------------------------------------------------------------------------
 # 5. "Every second step costs an extra turn" to a hero with Marius' Mule
+#    (since 2026-11-16 the load costs speed instead: the line must not tell
+#    him he is slower when the trait keeps his stride)
 # ---------------------------------------------------------------------------
 
 def _burden(g):
@@ -260,7 +262,7 @@ def _burden(g):
     lim = pl.get_carry_limit()
     stone = make_item_by_id('food', 'bread_ration')
     stone.count = 1
-    stone.weight = max(0.1, lim * 0.85 - pl.get_current_weight())
+    stone.weight = max(0.1, lim * 0.95 - pl.get_current_weight())
     pl.inventory.append(stone)
     assert pl.load_tier() == 'burdened'
     return stone
@@ -278,17 +280,18 @@ def test_the_burdened_line_tells_a_hero_with_marius_mule_he_keeps_his_stride(no_
     g._note_burden()
     line = _last_lines(g, 1)[0]
     assert line.startswith('You are Burdened.')
-    assert 'step costs' not in line and 'keep your stride' in line
-    assert g.player.load_step_every() == 0
+    assert 'slower' not in line and 'keep your stride' in line
+    assert g.player.get_speed() >= 10.0
 
 
-def test_the_burdened_line_still_counts_the_steps_without_the_trait(no_seeker):
+def test_the_burdened_line_says_he_is_slower_without_the_trait(no_seeker):
     g = _game()
     g.player.update_burden()
     _burden(g)
     g._note_burden()
     line = _last_lines(g, 1)[0]
-    assert 'every second step costs an extra turn' in line
+    assert 'much slower' in line and 'step' not in line
+    assert g.player.get_speed() < 10.0
 
 
 # ---------------------------------------------------------------------------

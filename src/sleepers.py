@@ -38,7 +38,7 @@ RULES: dict[str, dict] = {
 DEEP = 1000                 # a sleep at least this long is a deep sleeper's
 DEX_STEP = 0.03             # each point of DEX over 10 lowers the chance this much
 DEX_FLOOR = 0.5             # ...down to half at most
-HEAVY_PACK = 2.0            # a Heavy pack clinks (Player.is_heavy)
+HEAVY_PACK = 2.0            # a Heavy pack clinks (Player.is_heavy: a Heavy load or worse)
 CATS_FOOTFALL = 'cats_footfall'
 HAND_OF_GLORY = 'hand_of_glory'
 

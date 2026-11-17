@@ -25,8 +25,8 @@ src/riding.py; the words and numbers data/bococho.json ``riding``).
   (game_bococho_render ``_draw_rider``).
 * **Saddlebags** (``_sync_saddlebags``): while the Bococho is out with the
   hero, ``Player.saddlebag_lb`` holds her carry (data ``pet.saddlebags_lb``)
-  and Player.get_carry_limit adds it, so every load line (Heavy, Burdened,
-  Overloaded) moves up with it. Synced every turn and when she joins,
+  and Player.get_carry_limit adds it, so every load line (Light, Heavy,
+  Burdened, Overloaded) moves up with it. Synced every turn and when she joins,
   leaves, is stored or falls.
 
 The hero's ``riding`` flag is on the Player (class default False: an old

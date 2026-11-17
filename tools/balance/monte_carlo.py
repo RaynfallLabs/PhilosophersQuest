@@ -21,7 +21,9 @@ Usage:
     py tools/balance/monte_carlo_report.py <out_dir>
 Sets: targets, ablate, all (default all), defence (the plate and Dexterity
 kids, committed, casual and the Secret Builds), builds, or one profile as
-profile[@speed] (mastery@1.5). MC_WORKERS (default 12) sets the pool. Writes
+profile[@speed] (mastery@1.5). MC_WORKERS (default 12) sets the pool;
+MC_KNOBS (e.g. "dodge_per_dex=0.015,speed_cap=0.25") adds knobs to every
+cell, for a tuning sweep into its own out_dir. Writes
 <profile>_<tag>_<speed>.pkl into out_dir.
 """
 import os
@@ -88,7 +90,14 @@ def _low_priority():
     try:
         import ctypes
         k = ctypes.windll.kernel32
-        k.SetPriorityClass(k.GetCurrentProcess(), 0x4000)      # BELOW_NORMAL_PRIORITY_CLASS
+        # The handle types spelled out: with ctypes' default int, the
+        # pseudo-handle -1 of GetCurrentProcess reached SetPriorityClass
+        # cut to 32 bits on 64-bit Windows, the call failed, and every
+        # worker ran at normal priority (seen 2026-11-16).
+        k.GetCurrentProcess.restype = ctypes.c_void_p
+        k.SetPriorityClass.argtypes = [ctypes.c_void_p, ctypes.c_uint32]
+        if not k.SetPriorityClass(k.GetCurrentProcess(), 0x4000):   # BELOW_NORMAL_PRIORITY_CLASS
+            raise OSError('SetPriorityClass failed')
     except Exception:
         try:
             os.nice(10)
@@ -111,11 +120,13 @@ def _set(name):
 def cells(sets, trials):
     out = []
     i = 0
+    extra = os.environ.get('MC_KNOBS', '')       # knobs for every cell (a tuning sweep)
     for s in sets:
         for prof, knob, tag, speed in _set(s):
+            kn = ','.join(x for x in (knob, extra) if x)
             for c in range(0, trials, CHUNK):
                 out.append(dict(profile=prof, accuracy=ACCURACY, trials=min(CHUNK, trials - c),
-                                floors=(1, 100), knobs=ds.parse_knobs(knob), speed=speed,
+                                floors=(1, 100), knobs=ds.parse_knobs(kn), speed=speed,
                                 seed=7 + 1000 * i + c, variants=24, kid=True,
                                 _tag=tag, _key=(prof, tag, speed)))
             i += 1
