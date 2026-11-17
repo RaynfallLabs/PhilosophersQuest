@@ -12,6 +12,19 @@ The picks below were reviewed on <run>/REVIEW_*.png at 64 px; verdicts are in
 (_genart/horns_h01_r2: the first drew brass instruments, cattle and a bull's
 skull; the shape is now described plainly, "a natural horn with no valves").
 
+Gjallarhorn and Heimdall were redrawn on 2026-11-16 (Brandon: "crescent-shaped
+(a curved horn), not straight"): round 2 gave a gently curved cone and, in
+Heimdall's hands, a straight trumpet. The horn is now told as plain geometry,
+"bent round in a deep half circle", with no simile to draw (no moon, sickle or
+animal): Gjallarhorn from _genart/horns_h01_r3, and Heimdall from
+_genart/horns_h01_r5, holding it low across his white robe so the dark crescent
+reads against it (round 3 held it up by his shoulder, a trumpet again; round 4
+out at his side, a crescent on a stick). Before and after:
+GJALLARHORN_REDRAW_2026_11_16.png in the project root.
+
+    <ComfyUI python> tools/content/genart/pipeline.py tools/content/genart/briefs/horns_h01.json --only gjallarhorn,npc_heimdall --n 4 --out _genart/horns_h01_r3 --seed 9500
+    <ComfyUI python> tools/content/genart/pipeline.py tools/content/genart/briefs/horns_h01.json --only npc_heimdall --n 4 --out _genart/horns_h01_r5 --seed 10100
+
 Where each goes:
   the allies and the people   assets/tiles/monsters (recorded in installed.json, the
                               people in installed_rest.json)
@@ -26,6 +39,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.a
 GENART = os.path.join(ROOT, 'tools', 'content', 'genart')
 
 R1, R2 = 'horns_h01', 'horns_h01_r2'
+R3, R5 = 'horns_h01_r3', 'horns_h01_r5'          # the crescent redraw, 2026-11-16
 PICKS = {
     # Robin Hood's band, and Robin Hood on his bridge
     'npc_robin_hood': (R1, 3), 'little_john': (R1, 3), 'will_scarlet': (R1, 2),
@@ -35,12 +49,12 @@ PICKS = {
     'npc_sleeping_king': (R1, 2), 'king_arthur': (R1, 3), 'sir_lancelot': (R1, 1),
     'sir_gawain': (R1, 2), 'sir_percival': (R1, 2), 'sir_bedivere': (R1, 3), 'sir_kay': (R1, 1),
     # Heimdall and the einherjar
-    'npc_heimdall': (R2, 1), 'einherjar': (R1, 1),
+    'npc_heimdall': (R5, 4), 'einherjar': (R1, 1),
     # Charlemagne's host
     'charlemagne': (R1, 2), 'duke_naimes': (R1, 1), 'ogier_the_dane': (R1, 2),
     'frankish_knight': (R1, 2),
     # the horns
-    'robin_hoods_horn': (R2, 3), 'arthurs_bugle': (R2, 1), 'gjallarhorn': (R2, 3),
+    'robin_hoods_horn': (R2, 3), 'arthurs_bugle': (R2, 1), 'gjallarhorn': (R3, 1),
 }
 
 ITEMS = ('robin_hoods_horn', 'arthurs_bugle', 'gjallarhorn')
