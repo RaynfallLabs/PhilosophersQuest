@@ -149,7 +149,9 @@ def test_the_ring_of_pythia_lowers_the_tier_mastery_reads():
 
         def get_identify_tier_reduction(self):
             return self._r
-    sick = make_item_by_id('potion', 'potion_of_sickness')       # tier 2
+    # Identify tier 2: a potion at home on floors 21-40 (potions by lore,
+    # 2026-11-17: sickness is a floor 41-60 brew now, tier 3).
+    sick = make_item_by_id('potion', 'potion_of_poison')
     assert not pm.covers(sick, _Hero(0))
     assert pm.identify_tier(sick, _Hero(1)) == 1 and pm.covers(sick, _Hero(1))
 

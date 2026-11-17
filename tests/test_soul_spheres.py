@@ -395,8 +395,10 @@ def test_the_spawn_table_by_band():
         10: {'soul_sphere': 0.08, 'hearth_sphere': 0.008},
         50: {'soul_sphere': 0.03, 'greater_soul_sphere': 0.04,
              'hearth_sphere': 0.003, 'greater_hearth_sphere': 0.004},
-        80: {'soul_sphere': 0.01, 'greater_soul_sphere': 0.02, 'master_sphere': 0.02,
-             'hearth_sphere': 0.001, 'greater_hearth_sphere': 0.002, 'master_hearth_sphere': 0.002},
+        # The Greater Spheres are the middle spheres: most of the deep share
+        # is the Master Sphere's (item tiers 2026-11-17; the deep total is kept).
+        80: {'soul_sphere': 0.01, 'greater_soul_sphere': 0.015, 'master_sphere': 0.025,
+             'hearth_sphere': 0.001, 'greater_hearth_sphere': 0.0015, 'master_hearth_sphere': 0.0025},
     }
     for floor, shares in want.items():
         got = {k: v for k, v in sphere_chances(floor) if v}

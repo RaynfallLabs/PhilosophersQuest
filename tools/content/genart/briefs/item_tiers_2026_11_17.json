@@ -1,0 +1,35 @@
+[
+ {
+  "id": "hydras_blood",
+  "family": "coatings",
+  "rank": 4,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a small round-bellied bottle of thick dark green glass with a short neck, closed with a dull grey lead cap pressed over the mouth, half full of dark oily blood so deep a green it is almost black, with a small leaf-shaped bronze arrowhead hanging from a thin leather thong tied around its neck: the blood Heracles dipped his arrows in.",
+  "colours": "Thick dark bottle-green glass; near-black dark green oily blood inside with a faint green sheen; dull grey lead cap; one small bronze arrowhead on a brown leather thong.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "one round-bellied dark green glass bottle",
+   "a dull grey lead cap on its mouth",
+   "dark oily green blood inside",
+   "one small bronze arrowhead on a thong at its neck"
+  ],
+  "must_not_show": [
+   "snake",
+   "fang",
+   "skull",
+   "crossbones",
+   "many-headed monster",
+   "bright green glow",
+   "cork",
+   "wax seal",
+   "label with writing",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "second object"
+  ]
+ }
+]

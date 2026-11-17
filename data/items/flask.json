@@ -7,7 +7,7 @@
     "min_level": 3,
     "tier": 2,
     "coat": {"substance": "silver", "blows": 12},
-    "floorSpawnWeight": {"1-20": 6, "21-40": 9, "41-60": 7, "61-80": 4, "81-100": 3},
+    "floorSpawnWeight": {"1-20": 6, "21-40": 9, "41-60": 5, "61-80": 2, "81-100": 1},
     "lore": "Filings of pure silver ground fine as flour and folded into a twist of oiled paper. Rubbed into a blade with a thumb of tallow, it makes plain iron bite the way a silver weapon does, until the blows wear it off. The story goes that the man who killed the Beast of Gevaudan had his bullets cast from silver; a hunter who cannot afford a silver blade makes do with this, and the dead and the shapechangers cannot tell the difference."
   },
   "frost_salts": {
@@ -29,7 +29,7 @@
     "min_level": 2,
     "tier": 1,
     "coat": {"substance": "poison", "blows": 10, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 4}},
-    "floorSpawnWeight": {"1-20": 8, "21-40": 8, "41-60": 6, "61-80": 4, "81-100": 3},
+    "floorSpawnWeight": {"1-20": 8, "21-40": 8, "41-60": 4, "61-80": 2, "81-100": 1},
     "lore": "A stoppered vial of yellow-green venom milked from the fangs of an adder. Heracles dipped his arrows in the Hydra's blood and every scratch they gave was death. This is a humbler poison, but painted along an edge it turns each cut into a wound that keeps hurting. It does nothing at all to what has no blood to poison: the dead, the stone and the things that live on venom themselves."
   },
   "flask_of_holy_water": {
@@ -80,7 +80,7 @@
     "tier": 1,
     "coat": {"substance": "fire", "blows": 12, "rider": {"effect": "burning", "chance": 0.25, "turns": 3}},
     "throw": {"damage_type": "fire", "damage": 16, "sized_at": 8, "status": {"effect": "burning", "turns": 3}},
-    "floorSpawnWeight": {"1-20": 10, "21-40": 6, "41-60": 2},
+    "floorSpawnWeight": {"1-20": 12, "21-40": 3, "41-60": 1},
     "lore": "A clay flask of thick lamp oil with a rag stuffed in its neck. Light the rag and throw it, and the flask bursts into clinging flame; smear the oil along a blade and light it, and the blade burns for a dozen blows. Beasts and trolls are afraid of fire, and a troll cannot close a burn the way it closes a cut."
   },
   "greek_fire": {
@@ -92,7 +92,7 @@
     "tier": 3,
     "coat": {"substance": "fire", "blows": 16, "rider": {"effect": "burning", "chance": 0.25, "turns": 4}},
     "throw": {"damage_type": "fire", "damage": 142, "sized_at": 35, "status": {"effect": "burning", "turns": 4}},
-    "floorSpawnWeight": {"21-40": 8, "41-60": 6, "61-80": 2},
+    "floorSpawnWeight": {"21-40": 10, "41-60": 4, "61-80": 1},
     "lore": "The fire the Byzantines poured on the Arab fleets before Constantinople in the 670s. Water would not put it out, and the recipe was so secret that it was lost with the empire. This flask holds something close to it: dark, sticky and smelling of pitch and quicklime. It burns on wet stone, and it keeps burning."
   },
   "medeas_fire": {
@@ -107,6 +107,17 @@
     "floorSpawnWeight": {"41-60": 1, "61-80": 7, "81-100": 5},
     "lore": "When Jason left her, the witch Medea sent his new bride a golden robe as a wedding gift. When the bride put it on, it burst into a fire that nothing could put out. This is the poison she steeped it in, sealed in a flask of black glass. It catches as soon as the air touches it."
   },
+  "hydras_blood": {
+    "name": "Hydra's Blood",
+    "symbol": "!",
+    "color": [70, 120, 50],
+    "weight": 0.2,
+    "min_level": 55,
+    "tier": 4,
+    "coat": {"substance": "poison", "blows": 16, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 6}},
+    "floorSpawnWeight": {"41-60": 1, "61-80": 7, "81-100": 4},
+    "lore": "When Heracles had burned the last of the Lernaean Hydra's heads, he cut the body open and dipped his arrows in its gall. Nothing it touched ever healed. One of those arrows fell on the foot of Chiron, the wise centaur who could not die, and the pain was so great that he gave his immortality away to be rid of it. Years later the centaur Nessus died of another, and his poisoned blood killed Heracles himself. This vial is dark green and oily, sealed with lead. Painted along an edge, it turns every cut into a wound that will not close. Like any venom, it does nothing to what has no blood."
+  },
   "flask_of_acid": {
     "name": "Flask of Acid",
     "symbol": "!",
@@ -115,7 +126,7 @@
     "min_level": 4,
     "tier": 1,
     "throw": {"damage_type": "acid", "damage": 27, "sized_at": 15, "status": {"effect": "armor_crack", "turns": 3}},
-    "floorSpawnWeight": {"1-20": 6, "21-40": 5, "41-60": 1},
+    "floorSpawnWeight": {"1-20": 8, "21-40": 2, "41-60": 1},
     "lore": "Oil of vitriol, the alchemists called it: a clear, heavy liquid in a stoppered glass flask that smokes when the stopper comes out. It eats cloth, leather and skin, and it pits a hide or a carapace so the next blows go deeper. It would eat a blade too, so nobody sensible puts it on one. Trolls hate it as they hate fire: their flesh cannot close an acid burn."
   },
   "aqua_regia": {

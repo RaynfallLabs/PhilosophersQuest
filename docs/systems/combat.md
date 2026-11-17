@@ -448,8 +448,10 @@ weaknesses, sacrificing defense for damage based on monster". Numbers are
 data (`data/arsenal.json`, `data/items/flask.json`); the rules are three
 pure modules and one Game mixin (`src/game_arsenal.py`).
 
-**Coatings** (`src/coatings.py`). Silver dust, frost salts, viper venom,
-holy water (three depths), fire oil (three depths). Shift+C (or Apply, A, on
+**Coatings** (`src/coatings.py`). Silver dust, frost salts, venom (viper
+venom near the top, Hydra's Blood from floor 55), holy water (three depths),
+fire oil (three depths). Each kind is found at its own depth
+(`floorSpawnWeight`, tier census 2026-11-17). Shift+C (or Apply, A, on
 the Kit) works one into the weapon in the hand: one turn, no question, as a
 potion is drunk. It is stored on the WEAPON (`Weapon.coating`: id, name,
 substance, blows, rider), so S to the weapon At Your Back and back keeps it,

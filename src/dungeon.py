@@ -2642,6 +2642,43 @@ def _create_odin_shrine(dungeon: Dungeon, rooms, ground_items, rng):
     ground_items.append(copy_at(shovel_t, spot[0], spot[1]))
 
 
+def _bell_weight(item, level: int) -> float:
+    """Gaussian weight from peak_floor/spread/peak_weight. 0 if not set or
+    outside ~2.5 standard deviations (so e.g. an F55 weapon doesn't show
+    up at F90)."""
+    import math
+    pf = getattr(item, 'peak_floor', 0) or 0
+    pw = getattr(item, 'peak_weight', 0.0) or 0.0
+    if pf <= 0 or pw <= 0:
+        return 0.0
+    sp = max(1, getattr(item, 'spread', 10))
+    dist = level - pf
+    bell = math.exp(-(dist * dist) / (2 * sp * sp))
+    if bell < 0.05:   # ~2.5 SDs out → not floor-appropriate
+        return 0.0
+    return pw * bell
+
+
+def floor_spawn_weight(item, level: int) -> int:
+    """An item's weight in a floor's random pool on `level` (0: not at home
+    there): its peak_floor bell when it has one, else its floor_spawn_weight
+    band, else 1; never below its min_level. One rule for the floor's pools
+    and for the tier census (tools/balance/tier_census.py reads where a thing
+    is found from this, so the census and the game cannot disagree)."""
+    if (getattr(item, 'min_level', 1) or 0) > level:
+        return 0
+    # Modern uniques use peak_floor — bell weighting is authoritative for them.
+    # If they're out of bell range at this floor, DROP (don't fall back to w=1).
+    if (getattr(item, 'peak_floor', 0) or 0) > 0 and (getattr(item, 'peak_weight', 0.0) or 0.0) > 0:
+        bw = _bell_weight(item, level)
+        # Rounded to zero: dropped instead of floored at 1.
+        return max(0, int(round(bw * 20))) if bw > 0 else 0
+    fw = getattr(item, 'floor_spawn_weight', {})
+    if fw:
+        return max(0, _food_weight(fw, level))   # 0: aged out of this level range
+    return 1
+
+
 def _item_eligible_weighted(templates: list, level: int,
                             rng: random.Random | None = None) -> list:
     """Build a category-balanced weighted pool for non-food items.
@@ -2657,52 +2694,19 @@ def _item_eligible_weighted(templates: list, level: int,
       3) fallback weight=1.
     """
     from collections import defaultdict
-    import math
 
     SLOTS_PER_TYPE = 20   # each item class gets this many weighted slots in the pool
     if rng is None:
         rng = random.Random()
-
-    def _bell_weight(item, level: int) -> float:
-        """Gaussian weight from peak_floor/spread/peak_weight. 0 if not set or
-        outside ~2.5 standard deviations (so e.g. an F55 weapon doesn't show
-        up at F90)."""
-        pf = getattr(item, 'peak_floor', 0)
-        pw = getattr(item, 'peak_weight', 0.0)
-        if pf <= 0 or pw <= 0:
-            return 0.0
-        sp = max(1, getattr(item, 'spread', 10))
-        dist = level - pf
-        bell = math.exp(-(dist * dist) / (2 * sp * sp))
-        if bell < 0.05:   # ~2.5 SDs out → not floor-appropriate
-            return 0.0
-        return pw * bell
 
     from items import is_random_loot
     templates = [t for t in templates if is_random_loot(t)]
 
     by_type: dict[str, list] = defaultdict(list)
     for item in templates:
-        if item.min_level > level:
+        w = floor_spawn_weight(item, level)
+        if w <= 0:
             continue
-        # Modern uniques use peak_floor — bell weighting is authoritative for them.
-        # If they're out of bell range at this floor, DROP (don't fall back to w=1).
-        has_bell = getattr(item, 'peak_floor', 0) > 0 and getattr(item, 'peak_weight', 0.0) > 0
-        if has_bell:
-            bw = _bell_weight(item, level)
-            if bw <= 0:
-                continue   # outside the bell — not floor-appropriate
-            w = int(round(bw * 20))
-            if w <= 0:
-                continue   # rounded to zero — drop instead of floor at 1
-        else:
-            fw = getattr(item, 'floor_spawn_weight', {})
-            if fw:
-                w = _food_weight(fw, level)
-                if w <= 0:
-                    continue   # aged out of this level range
-            else:
-                w = 1
         by_type[type(item).__name__].append((item, w))
 
     if not by_type:
