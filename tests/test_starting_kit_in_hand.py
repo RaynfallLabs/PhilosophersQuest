@@ -10,8 +10,8 @@ Achilles: his spear was two-handed, so his own starting shield could never
 go on with it. In the Iliad he fights with the Pelian ash in one hand and
 the shield Hephaestus made on his arm, so the spear is one-handed.
 
-Fianna starts with the Magic Dart spellbook, as Fluffs does; Fluffs stays a
-little better by his stats.
+Fianna starts with the Magic Dart spellbook, as Fluffs (her nickname build)
+does; Fluffs stays a little better by her stats.
 
 Headless Game tests: how this feels in play is a play-test question.
 """

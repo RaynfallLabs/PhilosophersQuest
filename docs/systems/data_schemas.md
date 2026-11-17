@@ -412,7 +412,9 @@ written by `tools/content/armour_profiles_2026_11.py`.
 - `equip_threshold: N` — N correct answers in the equip quiz
   (zero-tolerance, see conventions). Subject is **geography** for
   armor / shield, **history** for accessory. Asked once a kind: after
-  the first pass the kind is Known by Hand (armour.md §1b). Named
+  the first pass the kind is Known by Hand (armour.md §1b); a ring or
+  amulet kind once a tier (a stronger one asks its own). A failure costs
+  the piece's donning turns. Named
   pieces' values are written by the rule
   (`tools/content/known_by_hand_thresholds_2026_11.py`).
 - `equip_chain_mode: "escalator_chain"` on some uniques — turns the

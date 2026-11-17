@@ -392,6 +392,29 @@ class DressingMixin:
             line = f"You start {verb} the {name} ({quantity(total, 'turn')})."
         self._busy_start(BusyAction(steps, label=name), line)
 
+    def _equip_failed(self, item, struggle: str) -> int:
+        """A failed equip quiz costs the piece's donning time (Brandon,
+        2026-11-16: "If there is no penalty for missing putting on armor,
+        then use the equip length as 'lost' turns on a failure"). The hero
+        spent that long at it: the turns pass through the normal turn
+        advance, one at a time, so the monsters act on every one, and a
+        blow does not stop them (they are already spent). Only death, a
+        change of floor or of screen ends them early. ``struggle`` is the
+        line's opening ("You struggle with the Iron Full Plate"). Returns the
+        turns that passed."""
+        n = max(1, int(self._don_turns(item)))
+        self.add_message(f"{struggle} for {quantity(n, 'turn')} and give up.", 'warning')
+        start_state = self.state
+        floor = self.dungeon_level
+        spent = 0
+        for _ in range(n):
+            self._advance_turn()
+            spent += 1
+            if (self.player.is_dead() or self.state != start_state
+                    or self.dungeon_level != floor):
+                break
+        return spent
+
     def _dress_start_off(self, slot_name: str, item) -> None:
         """Take a worn piece off, taking the time it takes."""
         n = self._doff_turns(item)

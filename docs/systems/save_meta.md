@@ -582,6 +582,13 @@ loads with the piece still in the pack.
 `tests/test_swapping_without_the_chore.py` round-trips them and loads one
 without them.
 
+**2026-11-16** (a deeper ring asks its own quiz, [armour](armour.md) §1b): one
+new Player field, `by_hand_ring_tiers` ({ring or amulet item id: the highest
+tier of that kind put on}). A save without it (`Player.__setstate__`,
+`known_by_hand.migrate_ring_tiers`): a worn ring kind counts at its own tier,
+a ring kind in `known_by_hand` but not worn at the kind's first tier.
+`tests/test_decided_items_2026_11_16.py` loads one without it.
+
 ### 6.4 Adding a new migration
 
 If you remove or rename a Player attribute in a future version:

@@ -168,7 +168,11 @@ def test_a_unique_asks_once(game):
     assert p.armor_slots[ARMOR_SLOTS.index('head')] is helm
 
 
-def test_rings_are_known_by_kind_at_every_level(game):
+def test_rings_are_known_by_kind_and_tier(game):
+    """Brandon, 2026-11-16: a deeper level of a known kind asks its own
+    quiz (it used to be the kind at every level, so a Ring of Greater
+    Protection V asked nothing once any Protection ring was worn). A lower
+    or same-tier one goes on freely."""
     import rings
     p = game.player
     r1 = items.make_item_by_id('accessory', 'ring_of_protection')
@@ -177,12 +181,20 @@ def test_rings_are_known_by_kind_at_every_level(game):
     game._equip_accessory(r1)
     _pass_quiz(game)
     assert r1 in p.accessory_slots
+    r2 = items.make_item_by_id('accessory', 'ring_of_protection')
+    rings.relevel(r2, 2)                                # Greater I: the same tier
+    assert kbh.knows(p, r2)
     r9 = items.make_item_by_id('accessory', 'ring_of_protection')
     rings.relevel(r9, 9)
-    assert kbh.knows(p, r9)                             # the kind, not the level
+    assert not kbh.knows(p, r9)                         # tier V asks its own
     _carry(game, r9)
     game._equip_accessory(r9)
-    assert game.state == STATE_PLAYER and r9 in p.accessory_slots
+    assert game.state == STATE_QUIZ
+    _pass_quiz(game)
+    assert r9 in p.accessory_slots and kbh.knows(p, r9)
+    r5 = items.make_item_by_id('accessory', 'ring_of_protection')
+    rings.relevel(r5, 5)                                # lower than V: free
+    assert kbh.knows(p, r5)
     other = items.make_item_by_id('accessory', 'ring_of_regeneration')
     assert not kbh.knows(p, other)
 

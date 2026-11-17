@@ -70,9 +70,18 @@ plus as a minus.
 the equip quiz for a KIND, every copy of that kind goes on with no quiz,
 whatever its plus, enchantment level or blessing. The kind is the item's
 id: material + template for a common piece (`iron_breastplate`; a mithril
-breastplate is a new kind), the kind for a ring or amulet (its id carries
-no level: `ring_of_protection` at every level), and the unique itself for
-a named piece (one quiz each). A chain-equip legend remembers the best
+breastplate is a new kind), and the unique itself for a named piece (one
+quiz each). A ring or amulet KIND is known by kind AND tier (Brandon,
+2026-11-16: "a deeper level of a known kind asks its own quiz"; it was the
+kind at every level, so a Ring of Greater Protection V on floor 95 asked
+nothing once any Protection ring was worn): `Player.by_hand_ring_tiers`
+holds the highest tier of each kind put on (`known_by_hand.ring_tier`, the
+tier its quiz is set at, `gear.tier_for_level`: a lesser and a greater
+form share one). That tier or lower goes on with no quiz; a higher one
+asks its own once. Belts have no kinds today (each a named piece, one
+quiz). An old save counts a worn ring at its own tier and a ring kind
+known but not worn at the kind's first tier
+(`known_by_hand.migrate_ring_tiers`). A chain-equip legend remembers the best
 chain reached on it (`Player.by_hand_tiers`): put back on, it goes on at
 that tier with no quiz, or the hero attunes again to climb (the best is
 kept). Learnt for the run (`Player.known_by_hand`, saved); an old save
@@ -114,7 +123,18 @@ piece that is no longer in the pack (a thief's blow took it) is dropped
 from the action with a line, spending no more turns (bug bash 2026-11-13,
 WB-A02 to A04).
 The Hephaestus quirk halves both times. A first-time kind's quiz comes
-before the donning. A one-turn piece into an empty slot is exactly the old
+before the donning. **A failed equip quiz costs the donning time**
+(Brandon, 2026-11-16: "LORE over FLOOR means that I expect lore and logic
+to take priority over artificial balance... use the equip length as
+'lost' turns on a failure"; it cost one turn): the hero struggles with the
+piece for its donning turns and gives up (`game_dressing._equip_failed`:
+"You struggle with the {piece} for {n} turns and give up.": heavy body
+armour five, full plate six, a ring or shield one). The turns
+pass one at a time through `_advance_turn`, so the monsters act on each;
+a blow does not stop them (they are already spent), only death or a
+change of floor or screen. Armour and shields (`_start_armor_quiz`), rings,
+amulets and belts (`_equip_accessory`) and an attuning legend
+(`_start_chain_equip_quiz`) all pay it. A one-turn piece into an empty slot is exactly the old
 equip: on, then the monsters act.
 
 **At Your Back** (`Player.readied_weapon`). A melee weapon in the pack,

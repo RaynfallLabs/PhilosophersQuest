@@ -7957,7 +7957,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Put on armour or a shield: the geography threshold quiz the first
         time the hero wears its kind, then no quiz (Known by Hand,
         known_by_hand.py), and the time it takes to put on
-        (game_dressing._dress_begin_on).
+        (game_dressing._dress_begin_on). A failed quiz loses that time:
+        the turns pass, and the piece stays in the pack
+        (game_dressing._equip_failed).
 
         Legendary uniques with `equip_chain_mode` route to chain-equip instead.
         """
@@ -7982,10 +7984,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _kbh.learn(self.player, item)
                 self._dress_begin_on(item)
                 return
-            self.add_message(
-                f"You struggle with the {item_name} and give up.", 'warning'
-            )
-            self._advance_turn()
+            # A failure costs the piece's donning time in lost turns
+            # (game_dressing._equip_failed): plate, five.
+            self._equip_failed(item, f"You struggle with the {item_name}")
 
         self.quiz_engine.start_quiz(
             mode='threshold',
@@ -8052,10 +8053,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _kbh.learn(self.player, item)
                 self._dress_begin_on(item)
                 return
-            self.add_message(
-                f"You fumble with the {item_name} and give up.", 'warning'
-            )
-            self._advance_turn()
+            # Its donning time, lost (game_dressing._equip_failed).
+            self._equip_failed(item, f"You fumble with the {item_name}")
 
         self.quiz_engine.start_quiz(
             mode='threshold',
@@ -8081,7 +8080,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         it: put back on, it goes on at that tier with no quiz, and the hero
         may take the quiz again to climb (``retake``; the best is kept, so a
         worse chain costs nothing). The first time, a failure leaves it in
-        the pack. ``item_type`` is kept for callers; the slot is read from
+        the pack and costs its donning time in lost turns
+        (game_dressing._equip_failed). ``item_type`` is kept for callers; the slot is read from
         the item.
         """
         from chain_equip import get_chain_subject, get_chain_mode
@@ -8132,10 +8132,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _kbh.learn(self.player, item, tier)
                 self._dress_begin_on(item, tier=tier)
                 return
-            self.add_message(
-                f"The {item_name} does not recognize you. Try again.", 'warning'
-            )
-            self._advance_turn()
+            # Its donning time, lost (game_dressing._equip_failed).
+            self._equip_failed(item, f"The {item_name} does not recognize you. "
+                                     f"You struggle with it")
 
         # Engine accepts 'escalator_chain' and 'chain'. JSON uses these names
         # directly; the lenient fallback exists for legacy data only.
