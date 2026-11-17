@@ -34,8 +34,13 @@ FOOD = _json('data', 'items', 'food.json')
 FREQ = _json('tools', 'content', 'kitchen', 'part_freq.json')
 RULES = FREQ['rules']
 PARTS = FREQ['parts']
+def _weights(r):
+    # A food writes floor_spawn_weight or floorSpawnWeight (items.Item reads both).
+    return r.get('floor_spawn_weight') or r.get('floorSpawnWeight') or {}
+
+
 RARE_FOOD = {fid for fid, r in FOOD.items()
-             if r.get('floor_spawn_weight') and max(r['floor_spawn_weight'].values()) < RULES['rare_food_weight']}
+             if _weights(r) and max(_weights(r).values()) < RULES['rare_food_weight']}
 
 
 def _parts(r):

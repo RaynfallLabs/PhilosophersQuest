@@ -184,7 +184,9 @@ def hunt_action(row: dict) -> str:
 def part_source(part_id: str) -> str:
     """What to do about a missing part, for a kid deciding what to hunt:
     a monster part is hunted, a trophy is won from a boss, a foraged find
-    or a ration is found (or bought: traders stock both)."""
+    or a ration is found (or bought: traders stock both), and a special
+    food is cooked (the Starnut Tart, a dish cooked to carry) or only ever
+    found (the Magic Dungeon Carrot)."""
     kind = kitchen.part_kind(part_id)
     if kind == 'monster':
         return "Hunt"
@@ -192,6 +194,8 @@ def part_source(part_id: str) -> str:
         return "Boss trophy:"
     if kind == 'forage':
         return "Forage or buy"
+    if kitchen.is_special_food(part_id):
+        return "Cook" if any(kitchen.makes(r) == part_id for r in kitchen.book()) else "Find"
     return "Find or buy"
 
 
@@ -229,8 +233,15 @@ def not_ready_line(row: dict) -> str:
 
 
 def tier_line(row: dict) -> str:
-    """The cooking question's tier (the band of the dish's deepest part)."""
+    """The cooking question's tier (kitchen.dish_tier: the band of the
+    dish's deepest part, a tier more for a big dish)."""
     return f"Question: Tier {row['tier']}"
+
+
+def big_dish_line(row: dict) -> str:
+    """Why a big dish's tier is above its deepest part's ("Five
+    ingredients: one tier richer."), or '' (kitchen.big_dish_line)."""
+    return kitchen.big_dish_line(row['recipe'])
 
 
 def list_items(rows: list, note: str = '') -> list:

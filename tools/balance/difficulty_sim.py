@@ -17,7 +17,7 @@ REAL (the game's own code and data are called):
                       player goes through Monster.attack(player) (THAC0 vs
                       AC, min hit chance, multi-attack, gaze, rage, on-hit
                       effects and saving throws) and Monster.tick_effects().
-  * the player        player.Player: max HP, cooking softcap, get_ac(),
+  * the player        player.Player: max HP, the cooking caps, get_ac(),
                       take_damage(), status effects, saving throws, the quiz
                       timer. Gear goes on through Player._apply_equip().
   * the player's hit  combat.player_attack(): weapon base x chain^exponent,
@@ -2452,6 +2452,17 @@ class Run:
         saver = bool(self.prof.get('saver')) and float(self.prof.get('cooks_per_floor', 0) or 0) > 0
         while self.corpses and (self.cooks_left > 0 or (saver and self.hunt_left > 0)):
             kind = self.corpses.pop(0)
+            if kind and kitchen_mod.is_person(kind):
+                # A person is searched, never harvested (Brandon, 2026-11-16:
+                # main.Game._search_corpse): no question, a couple of
+                # ordinary finds of the floor's band, the body used up.
+                self.corpses_used += 1
+                for fid in food_system_mod.search_finds(kind, self.floor):
+                    item = food_system_mod.make_find(fid)
+                    if item is not None:
+                        (self.food if fid in kitchen_mod.foods() else self.pantry).append(item)
+                self.fs['searches'] = self.fs.get('searches', 0) + 1
+                continue
             if self.cooks_left <= 0:
                 # past the floor's ordinary harvests: a saver still takes the
                 # part a dish he is building needs (the menu's building rows)

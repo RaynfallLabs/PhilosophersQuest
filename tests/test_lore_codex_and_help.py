@@ -200,8 +200,10 @@ def test_meals_line_counts_this_floors_cooked_max_hp():
     p.try_apply_cook_hp_gain(10)
     assert cooking_hp_line(p)[1] == 'full'
     p.reset_floor_cook_caps()
-    p.cooking_hp_gained = p.cooking_softcap()
-    assert cooking_hp_line(p)[1] == 'capped'
+    # No cap across floors (Brandon, 2026-11-16): a new floor is open again,
+    # however much cooking has given before; "go deeper for HP" is gone.
+    p.cooking_hp_gained = 10_000
+    assert cooking_hp_line(p) == (f"Meals: +0/{p.PER_FLOOR_HP_CAP} Max HP", 'open')
 
 
 # -- Study Mode ------------------------------------------------------------------

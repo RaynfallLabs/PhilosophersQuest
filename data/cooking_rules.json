@@ -1,6 +1,11 @@
 {
-  "_doc": "Every number a cooked dish gives (the kitchen rebuild, 2026-11-14; src/kitchen.py reads it). A dish has one main benefit (hp, sp, mp, stat or special: its menu tab). Its tier is the band of its deepest ingredient. Its worth is the sum of what its ingredients add (worth, below) times the size bonus for how many different ingredients it has (size_mult). Lists by tier hold tiers 1 to 5. No recipe carries a number of its own.",
+  "_doc": "Every number a cooked dish gives (the kitchen rebuild, 2026-11-14; src/kitchen.py reads it). A dish has one main benefit (hp, sp, mp, stat or special: its menu tab). Its tier is the band of its deepest ingredient, one tier more for a big dish (big_dish). Its worth is the sum of what its ingredients add (worth, below) times the size bonus for how many different ingredients it has (size_mult). Lists by tier hold tiers 1 to 5. No recipe carries a number of its own.",
   "band_floors": 20,
+  "big_dish": {
+    "_doc": "Big dishes +1 tier (Brandon, 2026-11-16, on a five-part Wild Game Pie of floors 1 to 4 that was only tier 1): a dish of parts or more different ingredients is tier_bonus tiers above the band of its deepest ingredient, at most tier 5 (kitchen.dish_tier). The raised tier is the dish's tier everywhere: the cooking question, the stat cap it teaches to, its numbers, its picture. The size bonus (size_mult) is apart and unchanged.",
+    "parts": 4,
+    "tier_bonus": 1
+  },
   "worth": {
     "_doc": "What one ingredient adds to a dish's worth: a monster part or trophy 1, a foraged find 0.6, a ration 0.5.",
     "monster": 1.0,
@@ -73,7 +78,7 @@
     }
   },
   "legendary": {
-    "_doc": "A legendary feast (five ingredients, deep, often a boss trophy) gives its main benefit times mult, and a permanent bonus by its tab: hp max_hp past the floor's cap; mp max_mp; stat stat_points past the floor's lesson; special its resistance for good. None passes a lifetime cap: max HP from cooking (Player.cooking_softcap), the stat's cap for the feast's tier (Player.cooking_stat_softcap, stat.cap_by_tier), and max MP from feasts (max_mp_cap_per_floor of the deepest floor reached, at least max_mp_cap_min). A trophy's dish gives its trophy's own permanent power, and so does a feast that holds the trophy.",
+    "_doc": "A legendary feast (five ingredients, deep, often a boss trophy) gives its main benefit times mult, and a permanent bonus by its tab: hp max_hp past the floor's cap; mp max_mp; stat stat_points past the floor's lesson; special its resistance for good. Max HP has no cap across floors (Brandon, 2026-11-16: 'a per floor limit to hp gained, but not a max across several floors'), so the feast's max HP always lands. The others stay inside their caps: the stat's cap for the feast's tier (Player.cooking_stat_softcap, stat.cap_by_tier), and max MP from feasts (max_mp_cap_per_floor of the deepest floor reached, at least max_mp_cap_min). A trophy's dish gives its trophy's own permanent power, and so does a feast that holds the trophy.",
     "mult": 1.5,
     "max_hp": [4, 4, 4, 6, 8],
     "max_mp": [2, 2, 2, 3, 4],
@@ -84,5 +89,31 @@
   "salvage": {
     "_doc": "Persephone's Descent: a ruined dish still gives this share of its SP, healing and mana.",
     "share": 0.5
+  },
+  "search": {
+    "_doc": "A person's body is searched, never harvested (Brandon, 2026-11-16: 'that's weird, we're not cannibals'; the people are data/items/harvest_map.json 'people'). H on the body takes what the person carried, like picking it up: no question, the body is used up, and count[0] to count[1] ordinary finds (food_system.search_finds). Each is drawn from pack by its weight for the floor's band (five weights, tiers 1 to 5), never one whose own first floor is deeper than the floor. A person of a tag in by_tag, or a family in by_family, carries one of those first (a cultist his incense, an elf his waybread). Only ordinary food and foraged finds: never a meat of a new kind.",
+    "count": [1, 2],
+    "pack": {
+      "bread_ration": [6, 5, 4, 3, 3],
+      "dried_meat": [5, 5, 4, 3, 3],
+      "hard_cheese": [5, 4, 3, 2, 2],
+      "apple": [4, 3, 3, 2, 2],
+      "trail_rations": [3, 4, 4, 4, 4],
+      "wild_mushroom": [2, 2, 1, 1, 1],
+      "healing_herb": [2, 2, 2, 2, 2],
+      "river_salt": [1, 2, 2, 2, 2],
+      "elvish_bread": [0, 1, 2, 2, 2],
+      "philosopher_tea": [0, 1, 1, 1, 1],
+      "deep_fungi": [0, 0, 1, 2, 2],
+      "void_ration": [0, 0, 0, 2, 4]
+    },
+    "by_tag": {
+      "cultist": ["altar_incense"],
+      "caster": ["healing_herb", "philosopher_tea"],
+      "bandit": ["dried_meat", "hard_cheese"]
+    },
+    "by_family": {
+      "fair_folk": ["elvish_bread"]
+    }
   }
 }

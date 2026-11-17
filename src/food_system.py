@@ -71,7 +71,9 @@ def _nearest_kin_ingredient(monster_id: str, family: str | None = None,
         all_defs = {}
     known = all_defs.get(monster_id) or {}
     family = known.get('family') or family
-    if not family:
+    if not family or kitchen.is_person(monster_id, family):
+        # No family, no kin; and a person has no kin in the kitchen at all
+        # (his body is searched: search_corpse).
         return None
     here = floors.get(monster_id) or int(floor or 0) or 1
     best = None
@@ -102,10 +104,13 @@ def _harvest_outcome_for_tier(tier: int, monster_id: str, family: str | None = N
 def corpse_ingredient(monster_id: str, family: str | None = None,
                       floor: int | None = None) -> str | None:
     """The ingredient a corpse of ``monster_id`` yields, or None when it
-    yields nothing (a person of an encounter with no kin)."""
+    yields nothing (a person, searched instead: kitchen.is_person; or a
+    being of an encounter with no kin)."""
     if not monster_id:
         return None
     import kitchen
+    if kitchen.is_person(monster_id, family):
+        return None
     ing_id = kitchen.ingredient_for_monster(monster_id)
     if ing_id is None:
         # A creature the map does not name still feeds the pot.
@@ -120,6 +125,105 @@ def corpse_yield(corpse) -> str | None:
     return corpse_ingredient(getattr(corpse, 'monster_id', '') or '',
                              getattr(corpse, 'family', None),
                              int(md.get('peak_floor', 0) or 0) or None)
+
+
+# ------------------------------------------------------------------
+# Searching a person (Brandon, 2026-11-16: "Humans are not harvested.
+# That's weird, we're not cannibals.")
+# ------------------------------------------------------------------
+# A person's body (a brigand, a knight, a cultist, an elf: kitchen.is_person)
+# is SEARCHED: H takes a couple of ordinary finds from what he carried, like
+# picking something up. No question, the body used up, and nothing a person
+# gives is a meat of its own: bread, cheese, dried meat, a herb, the incense
+# a cultist burns (data/cooking_rules.json "search").
+
+def corpse_is_person(corpse) -> bool:
+    """A person's body: searched, never harvested (kitchen.is_person)."""
+    import kitchen
+    return kitchen.is_person(getattr(corpse, 'monster_id', '') or '', getattr(corpse, 'family', None))
+
+
+def search_finds(kind: str, floor: int, rng=None, tags=(), family=None) -> list:
+    """The ids a person's body gives when searched on ``floor``: count[0] to
+    count[1] ordinary finds (cooking_rules.json "search"), drawn from the
+    pack by their weights for the floor's band, never one whose own first
+    floor is deeper than ``floor``. A person of a tag in ``by_tag`` (a
+    cultist, a caster) or a family in ``by_family`` (an elf) carries one of
+    his own first."""
+    import kitchen
+    rng = rng or random
+    rules = kitchen.rules().get('search') or {}
+    count = list(rules.get('count') or [1, 2]) + [2]
+    n = rng.randint(int(count[0]), max(int(count[0]), int(count[1])))
+    floor = max(1, int(floor or 1))
+    band = kitchen.band_of(floor)
+
+    def ok(fid):
+        return ((fid in kitchen.foods() or fid in kitchen.ingredients())
+                and kitchen.part_floor(fid) <= floor)
+    own = []
+    for t in tags or ():
+        own += list((rules.get('by_tag') or {}).get(t, ()) or ())
+    if family:
+        own += list((rules.get('by_family') or {}).get(family, ()) or ())
+    own = [f for f in dict.fromkeys(own) if ok(f)]
+    out = []
+    if own and n > 0:
+        out.append(rng.choice(own))
+    pack = []
+    for fid, ws in (rules.get('pack') or {}).items():
+        if fid.startswith('_') or not ok(fid):
+            continue
+        ws = list(ws) if isinstance(ws, (list, tuple)) else [ws] * 5
+        w = float(ws[min(len(ws) - 1, band - 1)] or 0) if ws else 0.0
+        if w > 0:
+            pack.append((fid, w))
+    while len(out) < n and pack:
+        total = sum(w for _f, w in pack)
+        x = rng.uniform(0, total)
+        for fid, w in pack:
+            x -= w
+            if x <= 0:
+                out.append(fid)
+                break
+        else:
+            out.append(pack[-1][0])
+    return out
+
+
+def make_find(fid: str):
+    """A fresh item for a search find: a ration (food.json) or a foraged
+    find (ingredient.json), identified; None if neither knows it."""
+    import kitchen
+    from items import make_item_by_id
+    if fid in kitchen.foods():
+        item = make_item_by_id('food', fid)
+    else:
+        item = load_ingredient_for(fid)
+    if item is not None:
+        item.count = 1
+        item.identified = True
+    return item
+
+
+def search_corpse(player, corpse, floor: int, rng=None) -> tuple:
+    """Search a person's body (``corpse_is_person``) on ``floor``: ``(items,
+    message)``, the finds made fresh and the line that says what was found.
+    No question is asked; the caller takes the body off the floor."""
+    from naming import proper_name
+    md = getattr(corpse, 'monster_def', None) or {}
+    ids = search_finds(getattr(corpse, 'monster_id', '') or '', floor, rng,
+                       tags=md.get('tags') or (), family=getattr(corpse, 'family', None))
+    items = [it for it in (make_find(fid) for fid in ids) if it is not None]
+    counts: dict = {}
+    for it in items:
+        n = proper_name(getattr(it, 'name', '') or '')
+        counts[n] = counts.get(n, 0) + 1
+    names = [f"{c}x {n}" if c > 1 else n for n, c in counts.items()]
+    if not names:
+        return [], f"You search the {corpse.name}, but find nothing worth taking."
+    listing = names[0] if len(names) == 1 else ', '.join(names[:-1]) + ' and ' + names[-1]
+    return items, f"You search the {corpse.name} and take what was carried: {listing}."
 
 
 # ------------------------------------------------------------------
@@ -375,8 +479,8 @@ def recipe_is_trophy(recipe: dict) -> bool:
 
 
 def _recipe_quiz_tier(recipe: dict) -> int:
-    """The cooking question's tier: the dish's tier, the band of its
-    deepest ingredient (kitchen.dish_tier)."""
+    """The cooking question's tier: the dish's tier (the band of its
+    deepest ingredient, a tier more for a big dish: kitchen.dish_tier)."""
     import kitchen
     return kitchen.dish_tier(recipe)
 

@@ -45,9 +45,11 @@ RULES = _json('cooking_rules.json')
 ART = os.path.join(ROOT, 'assets', 'tiles', 'items')
 
 BANNED = ('Prime Cut', 'Choice Cut', 'Pristine', 'Pure', 'Concentrated', 'Engorged', 'Glittering')
-# Quest, secret and one-shot food never goes into a dish.
-FORBIDDEN_FOOD = ('magic_dungeon_carrot', 'tantalus_plum', 'peach_of_immortality', 'ambrosia',
-                  'golden_apple')
+# A stew is a meal already: it never goes into a dish.
+FORBIDDEN_FOOD = ('hearty_stew',)
+# Special food (food.json "special": the carrot, the tart, the mythic fruits)
+# goes into a dish of its own (Brandon, 2026-11-16) and no other.
+SPECIAL_FOOD = {k for k, v in FOOD.items() if v.get('special')}
 
 
 def _parts(r):
@@ -68,9 +70,16 @@ def test_monster_ingredient_count_is_in_the_planned_range():
 
 
 def test_every_monster_maps_to_an_existing_ingredient():
-    """Every monster that can leave a corpse yields an ingredient."""
+    """Every creature that can leave a corpse yields an ingredient; a person
+    (harvest_map.json "people": Brandon, 2026-11-16, we are not cannibals)
+    yields none and is searched instead."""
+    people = set(HMAP['people'])
     for mid in MONSTERS:
         iid = HMAP['monsters'].get(mid)
+        if mid in people:
+            assert iid is None, (mid, iid)
+            assert kitchen.ingredient_for_monster(mid) is None
+            continue
         assert iid in INGS, (mid, iid)
         assert kitchen.ingredient_for_monster(mid) == iid
 
@@ -166,10 +175,18 @@ def test_multi_dishes_have_two_to_five_distinct_ingredients():
 
 
 def test_every_recipe_ingredient_exists_and_is_never_secret_food():
+    special_dishes = {}
     for r in _book():
         for p in r['ingredients']:
             assert p in INGS or p in FOOD, (r['id'], p)
             assert p not in FORBIDDEN_FOOD, (r['id'], p)
+            if p in SPECIAL_FOOD:
+                special_dishes.setdefault(p, []).append(r['id'])
+    # Each special food is in exactly one dish, never the one that makes it.
+    assert set(special_dishes) == SPECIAL_FOOD, SPECIAL_FOOD - set(special_dishes)
+    for p, rids in special_dishes.items():
+        assert len(rids) == 1, (p, rids)
+        assert kitchen.makes(kitchen.recipe(rids[0])) != p, p
     used_food = {p for r in _book() for p in r['ingredients'] if p in FOOD}
     for staple in ('bread_ration', 'dried_meat', 'hard_cheese', 'apple', 'trail_rations'):
         assert staple in used_food, staple
@@ -303,14 +320,17 @@ def test_a_legendary_max_mp_respects_the_lifetime_cap():
     assert p.cooking_mp_gained == cap         # no more past the cap
 
 
-def test_a_legendary_max_hp_passes_the_floor_cap_but_not_the_lifetime_one():
+def test_a_legendary_max_hp_passes_the_floor_cap_and_has_no_cap_across_floors():
+    """Brandon, 2026-11-16: a per-floor limit to max HP, not a max across
+    several floors. The feast's lasting max HP lands in full, however much
+    cooking has given before (the old lifetime cap held it to 3 here)."""
     feast = kitchen.recipe('feast_05')        # Sigurd's Hearth Roast (hp)
     p = _player(deepest=1)
     p._cook_hp_gain_this_floor = p.PER_FLOOR_HP_CAP
-    p.cooking_hp_gained = p.cooking_softcap() - 3
+    p.cooking_hp_gained = 17                  # three short of the old cap of 20
     before = p.max_hp
     kitchen.apply_dish(p, feast)
-    assert p.max_hp - before == 3             # held to the lifetime cap
+    assert p.max_hp - before == kitchen.dish_outcome(feast)['permanent'][1]
 
 
 def test_a_feast_never_gives_the_resistance_its_trophy_already_gives():

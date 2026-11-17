@@ -52,7 +52,7 @@ machine id, with the value being the schema:
 The exceptions:
 
 - `harvest_map.json` — top-level is `{"_doc": "...", "monsters": {...},
-  "aliases": {...}}`
+  "aliases": {...}, "people": [...], "people_parts": {...}}`
 - `cooking_rules.json` — top-level is a dict of rule sections, each with a
   `_doc` line (§11.4)
 - `chest_traps.json` — top-level is `{"_meta": {...}, "traps_by_tier":
@@ -837,7 +837,8 @@ frequencies (`part_freq.json`, rules in `part_rules.py`, edits by
   `sac`, `core`, `mote`, `jar`, `scale`, `wood`, `trophy`, `forage`); the
   name always says it.
 - `min_level` — the floor the ingredient belongs to (the median of its kin's
-  peak floors); a dish's tier is the band of its deepest ingredient.
+  peak floors); a dish's tier is the band of its deepest ingredient, one
+  more for a dish of four or more (`cooking_rules.json` `big_dish`).
 - `secret` — a part of a hidden creature (the cow level): dishes that need
   it never show as "building toward" until it is held.
 - `trophy_permanent_power` — a trophy's lasting power (the
@@ -852,14 +853,27 @@ frequencies (`part_freq.json`, rules in `part_rules.py`, edits by
 {
   "_doc": "...",
   "monsters": {"goblin": "goblin_prime", "goblin_shaman": "goblin_prime", ...},
-  "aliases":  {"goblin_shaman_prime": "goblin_prime", ...}
+  "aliases":  {"goblin_shaman_prime": "goblin_prime", ...},
+  "people": ["alan_a_dale", "bandit_archer", ...],
+  "people_parts": {"bandit_captain_prime": "dried_meat", ...}
 }
 ```
 
-- `monsters` — every monster id to the ingredient its corpse yields. Close
-  kin (rank or role) share one; named creatures and bosses keep their own.
+- `monsters` — every monster id but a person to the ingredient its corpse
+  yields. Close kin (rank or role) share one; named creatures and bosses
+  keep their own.
 - `aliases` — every retired ingredient id to the kept one
   (`kitchen.resolve`): harvest, recipes and old saves read through it.
+- `people` — the kinds whose body is searched, never harvested (Brandon,
+  2026-11-16; from `tools/content/kitchen/people.txt`; `kitchen.is_person`).
+  What a search gives is `cooking_rules.json` `search` (§11.4).
+- `people_parts` — every part a person once gave, to the ordinary food an
+  old save's held one becomes (`Game._migrate_legacy_ingredients`).
+
+`food.json` `special: true` marks a special food (the Magic Dungeon Carrot,
+the Starnut Tart, the mythic fruits): it goes into one dish of its own
+(`build_kitchen.SPECIAL_FOOD`), and holding it shows that dish under
+Building Toward (`kitchen.is_keystone`).
 
 ### 11.3 `recipes.json` — the recipe book
 

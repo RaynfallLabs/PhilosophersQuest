@@ -284,7 +284,8 @@
    255,
    215,
    0
-  ]
+  ],
+  "special": true
  },
  "golden_apple": {
   "name": "Golden Apple of Hesperides",
@@ -310,7 +311,8 @@
    255,
    200,
    50
-  ]
+  ],
+  "special": true
  },
  "peach_of_immortality": {
   "name": "Peach of Immortality",
@@ -336,7 +338,8 @@
    255,
    180,
    200
-  ]
+  ],
+  "special": true
  },
  "tantalus_plum": {
   "name": "Tantalus's Plum",
@@ -364,7 +367,8 @@
    128,
    0,
    128
-  ]
+  ],
+  "special": true
  },
  "magic_dungeon_carrot": {
   "name": "Magic Dungeon Carrot",
@@ -392,7 +396,8 @@
   ],
   "floor_spawn_weight": {
    "1-100": 0
-  }
+  },
+  "special": true
  },
  "starnut_tart": {
   "name": "Starnut Tart",
@@ -420,7 +425,8 @@
   },
   "floor_spawn_weight": {
    "1-100": 0
-  }
+  },
+  "special": true
  },
  "caviar": {
   "name": "caviar",

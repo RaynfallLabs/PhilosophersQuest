@@ -116,16 +116,11 @@ def cooking_hp_line(player) -> tuple[str, str]:
     hero has cooked (Player.try_apply_cook_hp_gain). Max HP grows only by
     cooking, and nothing on screen said so (NEXT_STEPS_REVIEW item 6).
     Returns (text, state): 'open' while a meal can still add max HP on this
-    floor, 'full' once the floor's share is cooked, 'capped' when the
-    lifetime cap for the depth reached is met (going deeper raises it)."""
+    floor, 'full' once the floor's share is cooked. There is no cap across
+    floors (Brandon, 2026-11-16), so the old 'capped' state ("Meals: go
+    deeper for HP", at a lifetime cap of 4 a floor reached) is gone."""
     cap = int(getattr(player, 'PER_FLOOR_HP_CAP', 5) or 5)
     got = int(getattr(player, '_cook_hp_gain_this_floor', 0) or 0)
-    try:
-        lifetime_full = int(getattr(player, 'cooking_hp_gained', 0)) >= int(player.cooking_softcap())
-    except (AttributeError, TypeError, ValueError):
-        lifetime_full = False
-    if lifetime_full and got < cap:
-        return "Meals: go deeper for HP", 'capped'
     return f"Meals: +{min(got, cap)}/{cap} Max HP", ('full' if got >= cap else 'open')
 
 

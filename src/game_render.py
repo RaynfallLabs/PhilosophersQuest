@@ -7647,9 +7647,12 @@ class RenderMixin:
             head.append((row['name'], self._cook_ink(FP.GOLD_BRIGHT if legendary else FP.GOLD_PALE),
                          get_font('heading', 22)))
             keep = cm.keep_together
+            # A big dish says why it is a tier richer (Brandon, 2026-11-16).
+            big = cm.big_dish_line(row)
             core = ([(keep(cm.status_line(row)), self._cook_ink(status_col), fb),
-                     (cm.tier_line(row), self._cook_ink(FP.FADED_TEXT), f),
-                     ("What It Does Now", self._cook_ink(FP.GOLD_BRIGHT), fb)]
+                     (cm.tier_line(row), self._cook_ink(FP.FADED_TEXT), f)]
+                    + ([(big, self._cook_ink(FP.FADED_TEXT), f)] if big else [])
+                    + [("What It Does Now", self._cook_ink(FP.GOLD_BRIGHT), fb)]
                     + [(keep(e), self._cook_ink(FP.SUCCESS_TEXT if ready else FP.BODY_TEXT), f)
                        for e in now])
             good = ([("For Good", self._cook_ink(KT.GOLD_HI), fb)]
@@ -9864,13 +9867,20 @@ class RenderMixin:
             try:
                 import kitchen
                 from food_system import load_ingredient_for, get_recipes_for_ingredient
-                ingredient_id = kitchen.ingredient_for_monster(monster_id) if monster_id else None
+                person = kitchen.is_person(monster_id, getattr(corpse, 'family', None))
+                ingredient_id = (kitchen.ingredient_for_monster(monster_id)
+                                 if monster_id and not person else None)
                 ing = load_ingredient_for(ingredient_id) if ingredient_id else None
                 # Legacy fallback for pre-v2.6.5 corpses in old saves.
-                if not ing and legacy_id:
+                if not ing and legacy_id and not person:
                     ing = load_ingredient_for(legacy_id)
                     ingredient_id = legacy_id
-                if ing:
+                if person:
+                    # A person is searched, never harvested (Brandon,
+                    # 2026-11-16): H takes the food from the pack.
+                    mechanics.append(("A person: H searches the body for food",
+                                      FP.GOLD_PALE, self.font_sm))
+                elif ing:
                     label = "Trophy" if getattr(ing, 'tier_role', '') == 'trophy' else "Harvest"
                     mechanics.append((f"{label}: {ing.name}", FP.GOLD_PALE, self.font_sm))
                     recipes = get_recipes_for_ingredient(ingredient_id)
@@ -11492,7 +11502,7 @@ class RenderMixin:
                 ("E", "Equip menu", FP.BODY_TEXT),
                 ("X", "Examine item", FP.BODY_TEXT),
                 ("I", "Identify or study", FP.BODY_TEXT),
-                ("H", "Harvest corpse", FP.BODY_TEXT),
+                ("H", "Harvest or search", FP.BODY_TEXT),
                 ("C", "Cook menu", FP.BODY_TEXT),
                 ("D", "Drop, gold / use tile", FP.BODY_TEXT),
                 ("U / Q", "Eat / drink a potion", FP.BODY_TEXT),

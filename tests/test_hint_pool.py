@@ -165,6 +165,10 @@ TAUGHT = {
     # Merlin's stone (the path to the Staff of Emrys, floors 6-11): Malory's
     # stone a hundred men could not lift, and Geoffrey's art over strength.
     "Merlin's stone": r'art, not by strength',
+    # Brandon, 2026-11-16: people are searched, never harvested; a special
+    # find has a dish of its own.
+    "a person's body is searched": r'what a fallen man carried',
+    'a rare find cooks into its own dish': r'more in a pot than in a pocket',
 }
 
 

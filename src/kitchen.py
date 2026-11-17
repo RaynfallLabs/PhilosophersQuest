@@ -14,7 +14,9 @@ The data:
 
 A dish has one main benefit (``benefit``: hp, sp, mp, a stat or a timed
 power), which is its menu tab. Its tier is the band of its deepest
-ingredient. What it gives comes from the rules file by tier, by tab, by its
+ingredient, and a big dish (four or more different ingredients:
+cooking_rules.json ``big_dish``) is one tier richer, at most tier 5
+(Brandon, 2026-11-16: "Big dishes +1 tier"). What it gives comes from the rules file by tier, by tab, by its
 worth (what its ingredients add, times the size bonus) and, for a legendary
 feast, the legendary multiplier and a permanent bonus.
 
@@ -25,6 +27,18 @@ it sits on the Special tab, and its menu lines say it is made to carry and
 what it gives when eaten. A dish the hero has LEARNED of (``player.
 dishes_learned``: the Mooble tells of his tart) shows under Building Toward
 even before any part of it is held.
+
+PEOPLE ARE NOT HARVESTED (Brandon, 2026-11-16: "that's weird, we're not
+cannibals"): a person's body (``is_person``: harvest_map.json ``people``,
+humans and the human-like folk) is searched for the food he carried
+(food_system.search_corpse), never harvested. An old save's part of a
+person becomes ordinary food on load (``person_part_food``).
+
+SPECIAL FOOD (Brandon, 2026-11-16): a quest, key or one-of-a-kind food
+(food.json ``special``: the Magic Dungeon Carrot, the Starnut Tart, the
+mythic fruits) goes into a dish of its own; cooking it uses it up. Held, it
+puts that dish under Building Toward, as a harvested part does
+(``is_keystone``).
 
 A DISH THAT PLAYS A SONG (3.5.2, songs.py): a dish may name ``song``, an id
 in data/songs.json (its benefit is 'song', so it sits on the Special tab).
@@ -110,8 +124,49 @@ def resolve(item_id: str) -> str:
 
 
 def ingredient_for_monster(monster_id: str):
-    """The ingredient a corpse of ``monster_id`` yields, or None."""
+    """The ingredient a corpse of ``monster_id`` yields, or None (a person
+    yields none: ``is_person``)."""
     return (harvest_map().get('monsters', {}) or {}).get(monster_id)
+
+
+# ----------------------------------------------------------------------
+# People (Brandon, 2026-11-16: "Humans are not harvested. That's weird,
+# we're not cannibals.")
+# ----------------------------------------------------------------------
+
+def people() -> frozenset:
+    """The kinds whose body is searched, never harvested (harvest_map.json
+    ``people``: humans and the human-like folk, decided by lore in
+    tools/content/kitchen/people.txt)."""
+    if 'people' not in _cache:
+        _cache['people'] = frozenset(harvest_map().get('people', ()) or ())
+    return _cache['people']
+
+
+def is_person(kind, family=None) -> bool:
+    """A person: a brigand, a knight, a cultist, an elf. His body is
+    searched for what he carried (food_system.search_corpse), never
+    harvested. A creature the harvest map does not know (Gilt Varro of the
+    racing camp) is a person when its body says it is one of the mortals."""
+    kind = str(kind or '')
+    if kind in people():
+        return True
+    return family == 'mortals' and kind not in (harvest_map().get('monsters') or {})
+
+
+def person_part_food(part_id: str):
+    """The ordinary food an old save's part of a person becomes (harvest_map
+    ``people_parts``: Bandit Trail Ham is dried meat), or None."""
+    return (harvest_map().get('people_parts') or {}).get(part_id)
+
+
+def is_special_food(part_id: str) -> bool:
+    """A quest, key or one-of-a-kind food (food.json ``special``: the Magic
+    Dungeon Carrot, the Starnut Tart, the mythic fruits). It goes into a dish
+    of its own (Brandon, 2026-11-16: so a player is tempted to cook it), and
+    holding it shows that dish under Building Toward, as a harvested part
+    does."""
+    return bool((foods().get(part_id) or {}).get('special'))
 
 
 def book() -> list:
@@ -183,6 +238,13 @@ def is_secret_part(part_id: str) -> bool:
 def is_harvested(part_id: str) -> bool:
     """A part that only a corpse gives (a monster part or a trophy)."""
     return part_kind(part_id) in ('monster', 'trophy')
+
+
+def is_keystone(part_id: str) -> bool:
+    """A part that puts its dishes under Building Toward when held: a
+    harvested part, or a special food (``is_special_food``). A ration or a
+    foraged find alone does not, or bread would put a hundred dishes there."""
+    return is_harvested(part_id) or is_special_food(part_id)
 
 
 def is_raw_trophy(item) -> bool:
@@ -301,10 +363,44 @@ def band_of(floor: int) -> int:
     return max(1, min(5, (int(floor) - 1) // step + 1))
 
 
-def dish_tier(rec: dict) -> int:
-    """The band of the dish's deepest ingredient (1-5); the cook's question tier."""
+def base_tier(rec: dict) -> int:
+    """The band of the dish's deepest ingredient (1-5)."""
     ps = parts(rec)
     return band_of(max(part_floor(p) for p in ps)) if ps else 1
+
+
+def big_dish_bonus(rec: dict) -> int:
+    """The tiers a big dish rises above its deepest ingredient's band
+    (Brandon, 2026-11-16: "Big dishes +1 tier"; cooking_rules.json
+    ``big_dish``: a dish of ``parts`` or more different ingredients is
+    ``tier_bonus`` tiers richer), within tier 5; 0 for a smaller dish."""
+    big = rules().get('big_dish') or {}
+    need = int(big.get('parts', 0) or 0)
+    if not need or dish_size(rec) < need:
+        return 0
+    return max(0, min(5, base_tier(rec) + int(big.get('tier_bonus', 0) or 0)) - base_tier(rec))
+
+
+def dish_tier(rec: dict) -> int:
+    """The dish's tier (1-5), everywhere: the cook's question, the stat cap
+    it teaches to, its numbers. The band of its deepest ingredient, and a
+    big dish (``big_dish_bonus``) one tier richer, at most 5."""
+    return base_tier(rec) + big_dish_bonus(rec)
+
+
+_NUMBER_WORDS = {2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', 6: 'Six'}
+_TIER_WORDS = {1: 'one tier', 2: 'two tiers', 3: 'three tiers'}
+
+
+def big_dish_line(rec: dict) -> str:
+    """Why a big dish's tier is above its deepest part's, for the cook menu:
+    "Five ingredients: one tier richer." ('' when it is not raised)."""
+    bonus = big_dish_bonus(rec)
+    if bonus <= 0:
+        return ''
+    n = dish_size(rec)
+    return (f"{_NUMBER_WORDS.get(n, str(n))} ingredients: "
+            f"{_TIER_WORDS.get(bonus, f'{bonus} tiers')} richer.")
 
 
 def dish_size(rec: dict) -> int:
@@ -489,22 +585,14 @@ def floor_hp_room(player) -> int:
     return max(0, cap - int(getattr(player, '_cook_hp_gain_this_floor', 0) or 0))
 
 
-def lifetime_hp_room(player) -> int:
-    """Max HP cooking can still ever add at this depth (the lifetime cap,
-    Player.cooking_softcap, 4 a floor reached). A player without the cap
-    (a harness) has room without end."""
-    soft = getattr(player, 'cooking_softcap', None)
-    if not callable(soft):
-        return 10 ** 6
-    return max(0, int(soft()) - int(getattr(player, 'cooking_hp_gained', 0) or 0))
-
-
 def max_hp_room(player) -> int:
-    """Max HP an ordinary meal can still add now: the floor's cap and the
-    lifetime cap, whichever is nearer. The menu read the floor's cap alone
-    and promised "+5 Max HP" to a hero whose depth's cap was full, who got
-    nothing (bug bash 3.5.1 A)."""
-    return min(floor_hp_room(player), lifetime_hp_room(player))
+    """Max HP an ordinary meal can still add now: what is left of the
+    floor's cap. There is no cap across floors (Brandon, 2026-11-16: "there
+    should be a per floor limit to hp gained, but not a max across several
+    floors... that encourages cooking"); the lifetime cap of 4 a floor
+    reached, and the menu's "Max HP: all cooking can give at this depth",
+    are gone."""
+    return floor_hp_room(player)
 
 
 def feast_mp_cap(player) -> int:
@@ -564,7 +652,7 @@ def dish_effects(player, rec: dict) -> list:
         if gain > 0:
             lines.append(f"+{gain} Max HP")
         elif tab == 'hp':
-            lines.append(MAX_HP_FULL_FLOOR if floor_hp_room(player) <= 0 else MAX_HP_FULL_DEPTH)
+            lines.append(MAX_HP_FULL_FLOOR)
     lines.extend(_lasting_lines(player, out, rec))
     if tab != 'sp':
         lines.append(f"+{sp_shown} SP")
@@ -572,24 +660,19 @@ def dish_effects(player, rec: dict) -> list:
 
 
 MAX_HP_FULL_FLOOR = "Max HP full this floor"
-MAX_HP_FULL_DEPTH = "Max HP: all cooking can give at this depth"
 
 
 def _lasting_lines(player, out: dict, rec=None) -> list:
     """The part of ``dish_effects`` that lasts for good: a feast's permanent
     gift, then each boss trophy's own power. A gift a lifetime cap would
-    eat says so, as apply_dish will."""
+    eat (max MP, a stat) says so, as apply_dish will; a feast's max HP has
+    no cap (it passes the floor's, and there is none across floors)."""
     lines = []
     perm = out['permanent']
     if perm:
         kind, val = perm
         if kind == 'max_hp':
-            # The meal's own max HP lands first, then the feast's, both
-            # inside the lifetime cap (_apply_permanent).
-            first = min(int(out['max_hp']), max_hp_room(player))
-            room_hp = min(int(val), max(0, lifetime_hp_room(player) - first))
-            lines.append(f"+{room_hp} Max HP for good" if room_hp > 0
-                         else "No more Max HP for good at this depth")
+            lines.append(f"+{int(val)} Max HP for good")
         elif kind == 'max_mp':
             room_mp = min(val, feast_mp_room(player))
             lines.append(f"+{room_mp} Max MP for good" if room_mp > 0
@@ -819,10 +902,11 @@ def menu_rows(player, inventory, tab: str) -> list:
 
     1. ``ready``: dishes the pack can cook now, the most giving first;
     2. ``building``: dishes the hero holds at least one HARVESTED part of
-       (a monster part or a trophy; a ration or a foraged find alone does
-       not count, or bread would put a hundred dishes here) but not all,
-       the closest first ("2 of 4", with what is missing named), and any
-       dish the hero has learned of (``player.dishes_learned``: the
+       (a monster part or a trophy) or a special food of (the Magic
+       Dungeon Carrot: ``is_keystone``; a ration or a foraged find alone
+       does not count, or bread would put a hundred dishes here) but not
+       all, the closest first ("2 of 4", with what is missing named), and
+       any dish the hero has learned of (``player.dishes_learned``: the
        Mooble's Starnut Tart), held parts or none;
     3. ``legendary``: legendary feasts and boss-trophy dishes, ready ones
        first, then the closest; shown once the hero holds any harvested
@@ -841,7 +925,7 @@ def menu_rows(player, inventory, tab: str) -> list:
         if any(is_secret_part(p) and counts.get(p, 0) <= 0 for p in ps):
             continue
         if not can_cook(rec, counts) and rec['id'] not in learned and not any(
-                is_harvested(p) and counts.get(p, 0) > 0 for p in ps):
+                is_keystone(p) and counts.get(p, 0) > 0 for p in ps):
             continue
         rows.append(_row(player, rec, counts))
     order = {g: i for i, g in enumerate(GROUPS)}
@@ -972,7 +1056,6 @@ def apply_dish(player, rec: dict) -> list:
     if bits:
         msgs.append("You eat it: " + ", ".join(bits) + ".")
     # Max HP toward the floor's cap.
-    floor_open = floor_hp_room(player) > 0
     if hasattr(player, 'try_apply_cook_hp_gain'):
         applied = player.try_apply_cook_hp_gain(out['max_hp'])
     else:
@@ -982,10 +1065,7 @@ def apply_dish(player, rec: dict) -> list:
         msgs.append(f"{'The meal fortifies you' if tab == 'hp' else 'Good food builds you up'}. "
                     f"(+{applied} max HP)")
     elif tab == 'hp':
-        msgs.append("You feel sated, but your body is already full of nourishment this floor."
-                    if not floor_open else
-                    "You feel sated, but your body has taken all cooking can give at this "
-                    "depth. Go deeper to grow more.")
+        msgs.append("You feel sated, but your body is already full of nourishment this floor.")
     # The main benefit.
     if tab == 'sp' and out['sustained'] > 0:
         _add_effect(player, 'sustained', out['sustained'], int(rules()['sp'].get('sustained_cap', 800)))
@@ -1031,8 +1111,12 @@ def apply_dish(player, rec: dict) -> list:
 
 def make_to_carry(player, rec: dict) -> list:
     """A dish cooked to carry, cooked right: the food it makes goes in the
-    pack, uneaten (it weighs less than what went into it, so it always
-    fits). Returns the message lines (the first names the dish)."""
+    pack, uneaten. Ingredients weigh nothing (Brandon, 2026-11-16) and food
+    does, so the dish can weigh more than what went into it: when the pack
+    cannot take it, it is set down at the hero's feet (``take_set_down``,
+    which the Game empties onto the floor: Game._cook_compound), as a part
+    too heavy to carry is. Returns the message lines (the first names the
+    dish)."""
     from items import make_item_by_id
     from naming import proper_name
     name = rec.get('name', 'the dish')
@@ -1042,10 +1126,22 @@ def make_to_carry(player, rec: dict) -> list:
     item.count = 1
     item.identified = True
     adder = getattr(player, 'add_to_inventory', None)
-    if adder is None or not adder(item):
-        player.inventory.append(item)
+    if adder is None:
+        player.inventory.append(item)            # a harness player with no carry limit
+    elif not adder(item):
+        player.__dict__.setdefault('cooked_set_down', []).append(item)
+        return [f"You prepare {name}.",
+                f"You wrap the {proper_name(item.name)} to carry, but your pack is too heavy: "
+                f"you set it down at your feet."]
     return [f"You prepare {name}.",
             f"You wrap the {proper_name(item.name)} to carry. It is in your pack."]
+
+
+def take_set_down(player) -> list:
+    """The carried dishes the pack could not take (``make_to_carry``), now
+    handed to the caller to set on the floor; the list is emptied."""
+    d = getattr(player, '__dict__', None)
+    return list(d.pop('cooked_set_down', None) or ()) if d is not None else []
 
 
 def _teach(player, stat: str, tier: int) -> list:
@@ -1070,10 +1166,13 @@ def _teach(player, stat: str, tier: int) -> list:
 def _apply_permanent(player, rec: dict, out: dict) -> list:
     kind, val = out['permanent']
     if kind == 'max_hp':
-        got = player.try_apply_cook_hp_gain(int(val), bypass=True) \
-            if hasattr(player, 'try_apply_cook_hp_gain') else 0
-        return [f"A feast to remember: +{got} max HP for good."] if got > 0 else \
-            ["A feast to remember, but your body has taken all cooking can give at this depth."]
+        # Past the floor's cap, and no cap across floors (Brandon, 2026-11-16).
+        if hasattr(player, 'try_apply_cook_hp_gain'):
+            got = player.try_apply_cook_hp_gain(int(val), bypass=True)
+        else:
+            got = int(val)
+            player.increase_max_hp(got, from_cooking=True)
+        return [f"A feast to remember: +{got} max HP for good."] if got > 0 else []
     if kind == 'max_mp':
         got = min(int(val), feast_mp_room(player))
         if got <= 0:
