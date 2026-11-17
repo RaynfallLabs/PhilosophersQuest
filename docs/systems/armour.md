@@ -36,10 +36,20 @@ A common piece is **template x material x enchantment level**:
   down the whole run (scale from floor 12, chainmail and breastplates from
   20, banded and splint from 30, plate from 42, full plate from 55; kite
   and heavy wooden shields from 10, the tower shield from 35). Every other
-  template goes by its weight class's bell (`weight_class_bells`).
-  (2026-11-12: by weight class alone, any heavy find from floor 12 could
-  be full plate, and the average hero wore it by floor 30, after which the
-  plus was the only armour left to find.);
+  template goes by its weight class's bell (`weight_class_bells`). Five
+  light and medium body templates carry a second bell, `deep_bell`
+  (Brandon's defence-model decision 20, 2026-11-17): studded leather (from
+  35), hide (45), padded (45), the hauberk (32) and scale (50) come back on
+  the deep floors in the deep materials they take, so a Dexterity hero
+  finds a drakeskin or dragonhide jerkin, a spider-silk or elven-silk coat,
+  a mithril hauberk, dragonscale mail. They keep their template's AC
+  (studded leather 3 + its plus against full plate's 8 + its plus): the
+  lower AC is the trade for the dodge and the speed. Body finds by class,
+  light / medium / heavy: floors 41-60 9 / 12 / 79%, 61-80 22 / 22 / 56%,
+  81-100 30 / 25 / 45% (they were 0 / 1 / 99%, 0 / 0 / 100% and
+  0 / 0 / 100%). (2026-11-12: by weight class alone, any heavy find from
+  floor 12 could be full plate, and the average hero wore it by floor 30,
+  after which the plus was the only armour left to find.);
 - the **material** gives the weight, what wear can touch it (rust, acid,
   fire), the name and, on body armour, the elements it turns or lets
   through (section 1c; until 2026-11-13 it "never gave protection");

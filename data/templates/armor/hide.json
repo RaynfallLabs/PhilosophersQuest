@@ -11,6 +11,13 @@
     9,
     3
   ],
+  "deep_bell": [
+    72,
+    14,
+    45,
+    0.3
+  ],
+  "_deep_note": "Returns deep (deep_bell) in the dragon materials: dragonhide, dragonscale and, deepest, petrified dragon. Brandon's defence-model decision 20 (2026-11-17): a Dexterity hero finds light and medium armour all the way down; it keeps the template's lower AC (the trade for the dodge and the speed).",
   "base_weight_lb": 15.0,
   "_design_note": "F1-20 medium-light. AC 2 (vs leather/padded's 1) earns its weight: the early heavy option, same AC as studded leather but available sooner. Takes a crushing blow better.",
   "compatible_material_classes": [

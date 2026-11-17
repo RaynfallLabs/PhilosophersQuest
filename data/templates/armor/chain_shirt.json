@@ -10,6 +10,13 @@
     9,
     6
   ],
+  "deep_bell": [
+    58,
+    14,
+    32,
+    0.45
+  ],
+  "_deep_note": "Returns deep (deep_bell) in the deep metals: the mithril shirt first, then glassteel, starmetal and adamantine. Brandon's defence-model decision 20 (2026-11-17): a Dexterity hero finds light and medium armour all the way down; it keeps the template's lower AC (the trade for the dodge and the speed).",
   "base_weight_lb": 20.0,
   "_design_note": "F15-35 medium entry. Half hauberk.",
   "compatible_material_classes": [
