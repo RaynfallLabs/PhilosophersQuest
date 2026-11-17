@@ -354,8 +354,6 @@ class Sidebar:
         'INT': 'stat_int', 'WIS': 'stat_wis', 'PER': 'stat_per',
         'AC': 'stat_ac', 'Gold': 'stat_gold', 'Sight': 'stat_sight',
         'Clock': 'stat_clock', 'Wt': 'stat_weight', 'Spells': 'stat_spells',
-        # Dexterity's two gifts (the defence model, 2026-11-16) wear its icon.
-        'Dodge': 'stat_dex', 'Speed': 'stat_dex',
     }
 
     # Derived stats whose icon stands for the word (coin, hourglass). The
@@ -510,15 +508,8 @@ class Sidebar:
         # as the sole dungeon-level readout; a second "Depth" line here
         # was a dupe. `dungeon_level` is kept in the signature in case a
         # future metric wants it.
-        # The defence model (2026-11-16): AC from armour and magic, the
-        # dodge and the speed from Dexterity, less what the armour and the
-        # load take. Speed is gold over 10, red under it.
-        spd = float(player.get_speed())
         metrics = [
             (f"AC {ac}", ac_color),
-            (f"Dodge {round(100 * player.dodge_chance())}%", FP.BODY_TEXT),
-            (f"Speed {spd:g}", FP.GOLD_BRIGHT if spd > 10 else
-             FP.DANGER_TEXT if spd < 10 else FP.BODY_TEXT),
             (f"Sight {player.get_sight_radius()}", FP.BODY_TEXT),
             # The clock the next fight will really get. Gold when something
             # is lengthening it (haste, a blessing, the Guiding Hand), red
@@ -544,9 +535,34 @@ class Sidebar:
                 self._fit(self._fsm, label, metric_w - S(8) - (ax - cell_x)),
                 True, color), (ax, ay))
         y += ((len(metrics) + 1) // 2) * S(22)
+        y = self._nimble(player, y)
         y = self._purse(gold, y)
         y = self._carrying(player, y)
         return y + self.SECTION_GAP
+
+    def _nimble(self, player, y: int) -> int:
+        """One full-width line: 'Dodge 12%   Speed 11.2' (the defence
+        model, 2026-11-16: Dexterity's two gifts, less what the armour and
+        the load take; AC is armour and magic alone). Speed is gold over 10
+        and red under it. Full width because a speed like 10.5 would not
+        fit a half-width cell at every window size."""
+        cell_x = self.x + self.PAD
+        ax = self._icon(self._STAT_ICONS['DEX'], cell_x, y, self._fsm.get_height())
+        room = self.x + self.w - self.PAD - ax
+        spd = float(player.get_speed())
+        dodge = f"Dodge {round(100 * player.dodge_chance())}%"
+        speed = f"Speed {spd:g}"
+        gap = S(14)
+        d_surf = self._fsm.render(dodge, True, FP.BODY_TEXT)
+        s_col = (FP.GOLD_BRIGHT if spd > 10 else FP.DANGER_TEXT if spd < 10 else FP.BODY_TEXT)
+        s_surf = self._fsm.render(speed, True, s_col)
+        if d_surf.get_width() + gap + s_surf.get_width() <= room:
+            self.screen.blit(d_surf, (ax, y))
+            self.screen.blit(s_surf, (ax + d_surf.get_width() + gap, y))
+        else:
+            self.screen.blit(self._fsm.render(self._fit(self._fsm, f"{dodge}, {speed}", room),
+                                              True, s_col), (ax, y))
+        return y + S(22)
 
     def _purse(self, gold: int, y: int) -> int:
         """One full-width line: the purse and what it weighs ('1,234 gold,

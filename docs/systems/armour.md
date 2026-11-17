@@ -305,7 +305,8 @@ and the Secret Builds the kids play):
   takes a turn for each whole turn passed: at 11 the monsters miss one
   action in eleven, at 9 they take two turns one action in nine. The
   Slowed status still costs the hero his own turn (`_do_move`).
-- **Shown plainly**: the sidebar's DERIVED grid (AC, Dodge, Speed) and the
+- **Shown plainly**: the sidebar (AC in the DERIVED grid, then one line
+  `Dodge 12%   Speed 11.2`, `Sidebar._nimble`) and the
   character sheet (AC, Dodge, Speed, always), and each body armour's card
   ("Heavy metal: no dodge or quickness, slower below Strength 16,
   ...").

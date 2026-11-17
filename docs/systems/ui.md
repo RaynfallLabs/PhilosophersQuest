@@ -285,8 +285,12 @@ PER). Values are right-aligned inside each cell so 3-digit stats stay
 on their own side of the midpoint. Value color: `GOLD_BRIGHT` > 12,
 `BODY_TEXT` 10-12, `DANGER_TEXT` below 10.
 
-**DERIVED** (`_derived`): 2-column grid of 6 metrics —
-`AC`, `Dodge` (`Player.dodge_chance`), `Speed` (`Player.get_speed`: gold over 10, red under it; the defence model, 2026-11-16), `Sight`, `Clock`, `Spells` — then one full-width purse line
+**DERIVED** (`_derived`): 2-column grid of 4 metrics —
+`AC`, `Sight`, `Clock`, `Spells` — then one full-width line
+`Dodge 12%   Speed 11.2` (`_nimble`: `Player.dodge_chance` and
+`Player.get_speed`, gold over 10 and red under it; the defence model,
+2026-11-16: a speed like 10.5 did not fit a half-width cell at 3440x1440),
+then one full-width purse line
 `1,234 gold, 7.7 lb` (`_purse`; coins weigh 160 to the pound, 2026-10-18,
 [economy §11](economy.md)), then one full-width line
 `Carrying 43 / 100` (`_carrying`; worn gear + pack + purse, `ui.carry_state`):
