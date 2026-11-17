@@ -18,25 +18,46 @@ from dadlib import seeker_codes  # noqa: E402
 RARITY = {'common': 'bronze', 'rare': 'silver', 'epic': 'gold', 'legendary': 'violet'}
 
 
-def check(seeker: str, code: str, *, record_it: bool = True, data_path: str | None = None) -> str:
-    """The answer line for one code."""
+def verify(seeker: str, code: str, *, record_it: bool = True,
+           data_path: str | None = None) -> dict:
+    """What one code is, as data (check() words it; the Code Validator draws
+    it). 'status' is 'dev', 'fake', 'already' (with the ledger 'row') or
+    'new' ('recorded' says whether it was written down). A real code also
+    carries its 'achievement' (the data entry), 'category' name and key
+    'label'."""
     achs = dadlib.achievements(data_path)
     cats = dadlib.categories(data_path)
     if str(code).strip().upper().startswith('DEV'):
-        return ('NOT A REAL CODE. It is a DEV code, from a copy of the game built '
-                'without your key.')
+        return {'status': 'dev', 'seeker': seeker}
     hit = seeker_codes.check_code(code, seeker, [(a['id'], a['code_word']) for a in achs])
     if hit is None:
-        return f'NOT A REAL CODE for {seeker}.'
-    aid, _label = hit
+        return {'status': 'fake', 'seeker': seeker}
+    aid, label = hit
     a = next(x for x in achs if x['id'] == aid)
-    what = (f'REAL CODE: {seeker}, "{a["name"]}" ({cats.get(a["category"], a["category"])}, '
-            f'{a["rarity"]}, {RARITY.get(a["rarity"], "")} frame).')
+    out = {'seeker': seeker, 'achievement': a, 'label': label,
+           'category': cats.get(a['category'], a['category'])}
     before = dadlib.redeemed(seeker, aid)
     if before:
-        return what + f' Already redeemed on {before["date"]}.'
+        return {**out, 'status': 'already', 'row': before}
     if record_it:
         dadlib.record(seeker, code.strip().upper(), aid, a['name'])
+    return {**out, 'status': 'new', 'recorded': record_it}
+
+
+def check(seeker: str, code: str, *, record_it: bool = True, data_path: str | None = None) -> str:
+    """The answer line for one code."""
+    v = verify(seeker, code, record_it=record_it, data_path=data_path)
+    if v['status'] == 'dev':
+        return ('NOT A REAL CODE. It is a DEV code, from a copy of the game built '
+                'without your key.')
+    if v['status'] == 'fake':
+        return f'NOT A REAL CODE for {seeker}.'
+    a = v['achievement']
+    what = (f'REAL CODE: {seeker}, "{a["name"]}" ({v["category"]}, '
+            f'{a["rarity"]}, {RARITY.get(a["rarity"], "")} frame).')
+    if v['status'] == 'already':
+        return what + f' Already redeemed on {v["row"]["date"]}.'
+    if v['recorded']:
         return what + ' First time you have seen this code. Recorded.'
     return what + ' First time you have seen this code (not recorded).'
 
