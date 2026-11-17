@@ -120,6 +120,18 @@ def test_a_wrong_answer_breaks_the_run_the_clock_does_not():
     assert not g.quirk_system.is_unlocked('math_is_cool')
 
 
+def test_the_run_survives_save_and_exit():
+    """Brandon 2026-11-16: the streak is kept across sessions. It lives on
+    the hero (Player.quirk_progress), which the save pickles with the run;
+    Strike Now and Abort report no answer, so they never touch it."""
+    import pickle
+    g = _game()
+    for _ in range(60):
+        _answer(g, True)
+    back = pickle.loads(pickle.dumps(g.player))
+    assert back.quirk_progress['math_streak'] == 60
+
+
 # ---------------------------------------------------------------- using it
 
 def _attack_chain(g, right):

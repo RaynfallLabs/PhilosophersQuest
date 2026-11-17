@@ -9,7 +9,7 @@
    ],
    "rows": [
     ["E", "Wear or wield it, or take it off"],
-    ["R", "Ready a weapon At Your Back, or put it back in your pack"],
+    ["R", "Ready a weapon (it hangs at your back), or put it back in your pack"],
     ["A", "Apply a coating to the weapon in your hand, or put the earplugs in or take them out"],
     ["D", "Drop it"],
     ["I", "Identify it (you need the Philosopher's Shard)"],
@@ -23,15 +23,15 @@
    ]
   },
   {
-   "heading": "A weapon At Your Back",
+   "heading": "A readied weapon",
    "paragraphs": [
-    "Ready a weapon from the Kit (R) and it hangs At Your Back. S swaps it with the weapon in your hand in one turn, so you can change weapons in the middle of a fight. Drop it or throw it and it keeps its place: pick it up again and S draws it."
+    "Ready a weapon from the Kit (R) and it hangs at your back, readied. S swaps it with the weapon in your hand in one turn, so you can change weapons in the middle of a fight. A two-handed weapon sends your shield to your pack; swap back to a one-handed weapon and the shield goes back on your arm in the same turn. Drop it or throw it and it keeps its place: pick it up again and S draws it."
    ]
   },
   {
    "heading": "Three Loadouts",
    "paragraphs": [
-    "Shift+E opens your Loadouts: three saved kits. Dress as you like, pick a kit (1, 2 or 3) and press S to save what you wear into it, and N to give it a name. Enter puts a kit on. Each piece takes its own turns; a piece not in your pack is skipped, and one you have never worn stays off until you have put it on by hand."
+    "Shift+E opens your Loadouts: three saved kits. Dress as you like, pick a kit (1, 2 or 3) and press S to save what you wear into it, and N to give it a name. Enter puts a kit on. Only the pieces that change take time: each shows its turns beside it (taking off what is in its way counted in), with the total for the whole change. A piece not in your pack is skipped, and one you have never worn stays off until you have put it on by hand."
    ]
   },
   {

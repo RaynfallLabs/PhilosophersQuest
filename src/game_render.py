@@ -82,7 +82,7 @@ def _cap(raw) -> str:
 
 
 # Bestiary rows told in the warning colour: what hurts it (affinity.bestiary_rows),
-# "Both At Once" (the weakness and the bane together) among them.
+# "Hardest Blow" (the weakness and the bane together) among them.
 _BESTIARY_WARM = ('weak', 'banes', 'both', 'easily')
 
 
@@ -1353,7 +1353,7 @@ class RenderMixin:
             parts = [_cap(_kind), f"Wt {getattr(item, 'weight', 0):g}"]
             # Known by Hand (no quiz to put it on) or the weapon At Your
             # Back: second, so a narrow pack still shows it.
-            _mark = ('At Your Back' if item is getattr(p, 'readied_weapon', None)
+            _mark = ('Readied' if item is getattr(p, 'readied_weapon', None)
                      else self._known_by_hand_mark(item))
             if _mark:
                 parts.insert(1, _mark)
@@ -1722,7 +1722,7 @@ class RenderMixin:
             except Exception:
                 id_text = "Unknown"
             _kind = str(getattr(item, 'slot', None) or getattr(item, 'item_class', 'item'))
-            _mark = ('At Your Back' if item is getattr(p, 'readied_weapon', None)
+            _mark = ('Readied' if item is getattr(p, 'readied_weapon', None)
                      else self._known_by_hand_mark(item))
             meta = (f"{_kind.replace('_', ' ').title()}   " + (f"{_mark}   " if _mark else '')
                     + f"Wt {getattr(item, 'weight', 0):g}   {id_text}")
@@ -4082,13 +4082,14 @@ class RenderMixin:
         from combat import affinity_known as _aff_known
         if not _aff_known(self.player, monster):
             dm_text, dm_col = type_str, FP.FADED_TEXT
-        # With how much (3.5.1 audit): "Shrugs Off (Quarter): Slash".
+        # The word only (Brandon 2026-11-16: no "(Double)" clutter; the hints
+        # say what the words mean): "Shrugs Off: Slash".
         elif dm > 1.0:
-            dm_text, dm_col = f"Weakness ({_aff._size_word(dm)}): {type_str}", FP.SUCCESS_TEXT
+            dm_text, dm_col = f"Weakness: {type_str}", FP.SUCCESS_TEXT
         elif dm <= _aff.shrugs_step() + 1e-9:
-            dm_text, dm_col = f"Shrugs Off ({_aff._size_word(dm)}): {type_str}", FP.DANGER_TEXT
+            dm_text, dm_col = f"Shrugs Off: {type_str}", FP.DANGER_TEXT
         elif dm < 1.0:
-            dm_text, dm_col = f"Resisted ({_aff._size_word(dm)}): {type_str}", FP.DANGER_TEXT
+            dm_text, dm_col = f"Resisted: {type_str}", FP.DANGER_TEXT
         else:
             dm_text, dm_col = type_str, FP.FADED_TEXT
         put(dm_text, s['sub2'], _words(dm_col))
@@ -4355,6 +4356,112 @@ class RenderMixin:
         except Exception:
             return getattr(item, 'item_class', 'item').replace('_', ' ').title()
 
+    def _item_power_lines(self, item) -> list:
+        """What a piece does for the hero, in plain lines, powers first: its
+        AC, what it guards against, what its enchantment or ring kind does,
+        its resistances, the stats and states it lends, a weapon's damage and
+        its special (Brandon 2026-11-16: "what are the actual benefits of the
+        gloves I have on vs what I'm selecting?... tells me the top level
+        name like 'Life-Grip' but not what that actually does... I want to
+        see the powers it gives me before the lore"). [] while it is not
+        identified enough to say."""
+        from items import Weapon, Armor, Shield, Accessory
+        import gear as _g
+        import guards as _gd
+        import enchantments as _en
+        if item is None or self._kit_visible_level(item) < 3:
+            return []
+        known = self._lore_enchant_text(item) != '?'
+        out = []
+        if isinstance(item, Weapon):
+            dts = [str(d).replace('_', ' ') for d in (getattr(item, 'damage_types', []) or ['physical'])]
+            types = dts[0] if len(dts) == 1 else ', '.join(dts[:-1]) + ' or ' + dts[-1]
+            hands = 'two-handed' if getattr(item, 'two_handed', False) else 'one-handed'
+            out.append(f"Damage {self._kit_damage_str(item)}: {types}, {hands}.")
+            tier = int(getattr(item, 'quiz_tier', 0) or 0)
+            if tier:
+                hard = {1: 'the easiest', 2: 'easy', 3: 'middling', 4: 'hard',
+                        5: 'the hardest'}.get(tier, '')
+                out.append(f"Its sums are tier {tier}" + (f" ({hard})." if hard else "."))
+            mech = getattr(item, 'class_mechanic', None)
+            if mech:
+                from combat import class_mechanic_info
+                info = class_mechanic_info(mech)
+                if info:
+                    out.append(f"{info[0]}: {info[1]}" if len(info) > 1 and info[1] else str(info[0]))
+            if self._kit_visible_level(item) >= 4:
+                for attr, word in (('stun_chance', 'stun'), ('bleed_chance', 'make it bleed'),
+                                   ('poison_chance', 'poison'), ('burn_chance', 'set it alight'),
+                                   ('confuse_chance', 'confuse')):
+                    try:
+                        v = float(getattr(item, attr, 0) or 0)
+                    except (TypeError, ValueError):
+                        v = 0.0
+                    if v > 0:
+                        pct = v * 100 if v <= 1 else v
+                        out.append(f"Each hit has a {pct:.0f}% chance to {word} its target.")
+                try:
+                    ls = float(getattr(item, 'lifesteal_percent', 0) or 0)
+                except (TypeError, ValueError):
+                    ls = 0.0
+                if ls > 0:
+                    out.append(f"Heals you by {ls * 100 if ls <= 1 else ls:.0f}% of the damage it deals.")
+        if isinstance(item, (Armor, Shield)):
+            if _g.is_core(item):
+                base = int(getattr(item, 'ac_bonus', 0) or 0)
+                out.append(f"AC +{_g.ac_value(item)}" if known else f"AC +{base}, and a plus you have not learned")
+            gt = _gd.guard_text(item, known=known)
+            if gt:
+                out.append(gt)
+            el = getattr(item, 'ench_line', '') or ''
+            if el and known and not _en.is_slot_guard(item):
+                lab = _en.label(item)
+                out.append(f"{lab}: {el}" if lab and not el.lower().startswith(lab.lower()) else el)
+            if getattr(item, 'damage_resistances', None):
+                out.append(f"Resists: {self._kit_resist_str(item)}")
+            out += _g.card_lines(item)
+        if isinstance(item, Accessory):
+            sp = str(getattr(item, 'special', '') or '').strip()
+            if sp and sp != '-':
+                out.append(sp)
+            fx = getattr(item, 'effects', {}) or {}
+            bits = []
+            import rings as _rg
+            if 'stat' in fx and not (_rg.kind_of(item) and sp):
+                bits.append(f"{fx['stat']} {int(fx.get('amount', 0)):+d}")
+            if 'stat2' in fx:
+                bits.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
+            if bits:
+                out.append(', '.join(bits))
+        status = getattr(item, 'on_equip_status', '') or ((getattr(item, 'effects', {}) or {}).get('status')
+                                                          if isinstance(item, Accessory) else '')
+        if status:
+            from status_effects import EFFECT_INFO as _EI
+            info = _EI.get(status)
+            name = info[0] if info else _cap(str(status).replace('_', ' '))
+            what = f": {info[2]}" if info and len(info) > 2 and info[2] else ''
+            out.append(f"While worn: {name}{what}")
+        return [str(t) for t in out if str(t).strip()]
+
+    def _worn_rival(self, item):
+        """The piece worn where ``item`` would go (the same slot), or None:
+        the hand's weapon for a weapon, the slot's piece for armour, a
+        shield, an amulet or a belt; for a ring, the worn rings when every
+        finger is taken (a list), else None (it goes on a free finger)."""
+        from items import Weapon, Accessory
+        p = self.player
+        if isinstance(item, Weapon):
+            ranged = getattr(item, 'requires_ammo', None) is not None
+            w = p.ranged_weapon if ranged else p.weapon
+            return w if w is not item else None
+        if isinstance(item, Accessory) and getattr(item, 'slot', '') == 'ring':
+            worn = [r for r in p.accessory_slots if r is not None]
+            if item in worn or len(worn) < len(p.accessory_slots):
+                return None
+            return worn
+        _slot, occ = self._occupant_for(item) if hasattr(self, '_occupant_for') else ('', None)
+        return occ if occ is not item else None
+
     def _menu_item_detail_lines(self, item, action: str = 'Select') -> list:
         # Phase 1 beautification (2026-10-03): the kit inspector was dropping
         # five cosmetic rows per item that duplicated the name / section
@@ -4431,11 +4538,16 @@ class RenderMixin:
              FP.FADED_TEXT, self.font_sm),
         ]
 
-        if isinstance(item, Weapon):
-            special = self._kit_weapon_special(item, idl)
-            if special and special != '-':
-                lines += [("Weapon mechanic", FP.GOLD_BRIGHT, self.font_sm),
-                          (special, FP.BODY_TEXT, self.font_sm)]
+        # What it does, before anything else and before the lore (Brandon
+        # 2026-11-16, the drop screen: "tells me the top level name like
+        # 'Life-Grip' but not what that actually does... how do I know if
+        # it's worth dropping? I want to see the powers it gives me before
+        # the lore").
+        powers = self._item_power_lines(item)
+        if powers:
+            lines.append(("What It Does", FP.GOLD_BRIGHT, self.font_sm))
+            for t in powers:
+                lines.append((t, FP.CYAN_ACCENT, self.font_sm))
         if isinstance(item, (Armor, Shield, Accessory)) and getattr(item, 'tier_bonuses', None):
             from chain_equip import get_chain_mode, get_chain_subject
             lines += [
@@ -4453,18 +4565,7 @@ class RenderMixin:
                 lines.append((f"T{tier}: " + "; ".join(labels), FP.SUCCESS_TEXT, self.font_sm))
 
         if isinstance(item, Accessory):
-            fx = getattr(item, 'effects', {}) or {}
-            if fx:
-                effect_bits = []
-                if 'stat' in fx:
-                    effect_bits.append(f"{fx['stat']} {int(fx.get('amount', 0)):+d}")
-                if 'stat2' in fx:
-                    effect_bits.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
-                if 'status' in fx:
-                    effect_bits.append(f"Grants {_cap(fx['status'])}")
-                if effect_bits:
-                    lines += [("Accessory effect", FP.GOLD_BRIGHT, self.font_sm),
-                              (", ".join(effect_bits), FP.BODY_TEXT, self.font_sm)]
+            # (Its effect, stats and the state it lends are in What It Does.)
             if getattr(item, 'use_charged', False):
                 lines.append((f"Charges: {getattr(item, 'charges', 0)}/{getattr(item, 'max_charges', 0)}",
                               FP.CYAN_ACCENT, self.font_sm))
@@ -5496,8 +5597,8 @@ class RenderMixin:
         return stats, (extra_label, extra)
 
     def _kit_source_label(self, src: str) -> str:
-        return {'equip': 'Equipped', 'back': 'At Your Back', 'pack': 'Pack',
-                'floor': 'Floor', 'away': 'At Your Back'}.get(src, src)
+        return {'equip': 'Equipped', 'back': 'Readied', 'pack': 'In Pack',
+                'floor': 'On the Floor', 'away': 'Readied'}.get(src, src)
 
     def _kit_row_name(self, src: str, item) -> str:
         """A Kit row's name: the weapon At Your Back that is away is
@@ -5555,54 +5656,111 @@ class RenderMixin:
                       (lore, FP.LORE_BLUE_BODY, self.font_sm)]
         return lines
 
+    def _kit_status_line(self, src: str, item) -> tuple:
+        """Where the piece is, in plain words (Brandon 2026-11-16: "why have
+        'Source: On Your Back' when you could have 'Readied', or 'Equipped'
+        or 'In Pack'?"), and what that means for it: (text, colour)."""
+        two = bool(getattr(item, 'two_handed', False))
+        return {
+            'equip': ("Equipped", FP.SUCCESS_TEXT),
+            'back': ("Readied: press S to swap it into your hand (one turn)"
+                     + ("; your shield goes to your pack." if two else "."), FP.CYAN_ACCENT),
+            'pack': ("In Your Pack", FP.BODY_TEXT),
+            'floor': ("On the Floor Here", FP.BODY_TEXT),
+            'away': ("Readied, but not with you: dropped, thrown or stolen. Pick it up "
+                     "again and S draws it.", FP.WARNING_TEXT),
+        }.get(src, (self._kit_source_label(src), FP.BODY_TEXT))
+
+    def _compare_words(self, item, worn) -> tuple:
+        """One plain line of how ``item`` measures against the piece equipped
+        in its place, where there is a number to weigh: (text, colour), or
+        ('', None), e.g. "1.5 more damage a hit than your Iron Shortsword"."""
+        from items import Weapon
+        import gear as _g
+        name = self._bare_name(worn)
+        if isinstance(item, Weapon) and isinstance(worn, Weapon):
+            a, b = self._kit_avg_damage(item), self._kit_avg_damage(worn)
+            if a is None or b is None:
+                return '', None
+            d = float(a) - float(b)
+            if abs(d) < 0.05:
+                text, col = f"The same damage a hit as your {name}.", FP.BODY_TEXT
+            else:
+                text = f"{abs(d):.1f} {'more' if d > 0 else 'less'} damage a hit than your {name}."
+                col = FP.SUCCESS_TEXT if d > 0 else FP.WARNING_TEXT
+            ta = int(getattr(item, 'quiz_tier', 0) or 0)
+            tb = int(getattr(worn, 'quiz_tier', 0) or 0)
+            if ta and tb and ta != tb:
+                text += f" Its sums are tier {ta}; yours are tier {tb}."
+            return text, col
+        if (_g.is_core(item) and _g.is_core(worn) and self._lore_enchant_text(item) != '?'
+                and self._lore_enchant_text(worn) != '?'):
+            d = int(_g.ac_value(item)) - int(_g.ac_value(worn))
+            if d == 0:
+                return f"The same AC as your {name}.", FP.BODY_TEXT
+            return (f"{abs(d)} {'more' if d > 0 else 'less'} AC than your {name}.",
+                    FP.SUCCESS_TEXT if d > 0 else FP.WARNING_TEXT)
+        return '', None
+
     def _kit_detail_lines_for_item(self, slug: str, src: str, item):
+        """The Kit's Selected Comparison card, in the order a player asks
+        (Brandon 2026-11-16: "your kit comparison window is still BAD at
+        communicating"): where it is; what it does; how it measures against
+        what is equipped in its place; what putting it on takes; the plain
+        details; its chain abilities; the lore last."""
         if slug == 'valuables':
             return self._kit_detail_lines_for_treasure(src, item)
         idl = self._kit_visible_level(item)
-        lines = [
-            (self._kit_row_name(src, item), FP.GOLD_PALE, get_font('heading', 22)),
-            (f"Source: {self._kit_source_label(src)}", FP.FADED_TEXT, self.font_sm),
-            (f"Identity: {_identify_status_label(idl)}", FP.CYAN_ACCENT, self.font_sm),
-        ]
-        if src == 'away':
-            lines.append(("Not with you: dropped, thrown or stolen. Pick it up again "
-                          "and S draws it.", FP.WARNING_TEXT, self.font_sm))
-        delta = self._equip_delta_str(item)
-        if delta:
-            color = FP.SUCCESS_TEXT if '+' in delta else FP.WARNING_TEXT
-            lines.append((delta, color, self.font_sm))
-        # Known by Hand and the time it takes (game_dressing.py).
-        _kbh_mark = self._known_by_hand_mark(item) if src != 'equip' else ''
-        if _kbh_mark:
-            lines.append((f"{_kbh_mark}: it goes on with no quiz.", FP.SUCCESS_TEXT, self.font_sm))
-        _don = self._dress_time_text(item)
-        if _don:
-            lines.append((_don, FP.BODY_TEXT, self.font_sm))
-        if src == 'back':
-            lines.append(("At your back: S swaps it into your hand in one turn.",
-                          FP.BODY_TEXT, self.font_sm))
-        # A smith's work on it (smithing.py): seen done, so shown either way.
+        lines = [(self._kit_row_name(src, item), FP.GOLD_PALE, get_font('heading', 22))]
+        status, col = self._kit_status_line(src, item)
+        lines.append((status, col, self.font_sm))
+        powers = self._item_power_lines(item)
+        if idl < 3:
+            lines.append(("Not identified yet: identify it (I) to learn what it does.",
+                          FP.WARNING_TEXT, self.font_sm))
+        else:
+            lines.append(("What It Does", FP.GOLD_BRIGHT, self.font_sm))
+            for t in powers or ["Nothing beyond its stats."]:
+                lines.append((t, FP.CYAN_ACCENT, self.font_sm))
+        # What is equipped in its place, and how the two measure up (you
+        # "wear" armour but not a sword: Equipped Now).
+        if src != 'equip':
+            rival = self._worn_rival(item)
+            for worn in (rival if isinstance(rival, list) else [rival] if rival is not None else []):
+                lines.append((f"Equipped Now: {self._display_name(worn)}", FP.GOLD_BRIGHT, self.font_sm))
+                if idl >= 3:
+                    cmp_text, cmp_col = self._compare_words(item, worn)
+                    if cmp_text:
+                        lines.append((cmp_text, cmp_col, self.font_sm))
+                for t in self._item_power_lines(worn) or ["Nothing beyond its stats."]:
+                    lines.append((t, FP.BODY_TEXT, self.font_sm))
+        # What putting it on takes (game_dressing.py), and what has been done
+        # to it (a smith's work, a coating: seen, so shown either way).
+        if src != 'equip':
+            _kbh_mark = self._known_by_hand_mark(item)
+            if _kbh_mark:
+                lines.append((f"{_kbh_mark}: it goes on with no quiz.", FP.SUCCESS_TEXT, self.font_sm))
+            _don = self._dress_time_text(item)
+            if _don:
+                lines.append((_don, FP.BODY_TEXT, self.font_sm))
         import smithing as _smithing
         for _work in _smithing.work_lines(item):
             lines.append((_work, FP.CYAN_ACCENT, self.font_sm))
-        # The arsenal's tools: a coating and its blows left, "Parry +2", what
-        # a counter blocks, what a coating or flask does.
         for _al in self._arsenal_card_lines(item):
             lines.append((_al, FP.CYAN_ACCENT, self.font_sm))
-        if idl >= 3:
-            stats, (extra_label, extra) = self._kit_row_labelled(slug, src, item)
-            lines.append(("Visible stats", FP.GOLD_BRIGHT, self.font_sm))
-            for st in stats:
-                lines.append((st, FP.BODY_TEXT, self.font_sm))
-            if extra:
-                lines.append((f"{extra_label}: {extra}", FP.BODY_TEXT, self.font_sm))
-            # What a common body armour's build and material do to a blow,
-            # and what any body armour's weight class costs (gear.card_lines).
-            for _apl in gear.card_lines(item):
-                lines.append((_apl, FP.CYAN_ACCENT, self.font_sm))
+        # The plain details on one line: material, blessing, weight.
+        bits = []
+        mat = getattr(item, 'material', '') if idl >= 3 else ''
+        if mat:
+            bits.append(_cap(str(mat).replace('_', ' ')))
+        if self._copy_buc_known(item):
+            buc = getattr(item, 'buc', None) or ('cursed' if getattr(item, 'cursed', False) else 'uncursed')
+            bits.append({'blessed': 'Blessed', 'cursed': 'Cursed', 'uncursed': 'Uncursed'}.get(buc, _cap(buc)))
         else:
-            lines.append(("Stats remain hidden until you identify it.",
-                          FP.FADED_TEXT, self.font_sm))
+            bits.append('Blessing unknown')
+        bits.append(f"Weight {float(getattr(item, 'weight', 0) or 0):.1f}")
+        lines.append(("Details", FP.GOLD_BRIGHT, self.font_sm))
+        lines.append(("   ".join(bits), FP.BODY_TEXT, self.font_sm))
 
         tiers = getattr(item, 'tier_bonuses', None) or {}
         if tiers and idl >= 3:
@@ -5642,8 +5800,21 @@ class RenderMixin:
                 render_lines.append((line, color, fnt))
             if i == 0:
                 render_lines.append(("", color, fnt))
-        self._ui_draw_scroll_lines(render_lines, self.font_sm, FP.BODY_TEXT,
-                                   rect, 0, line_gap=5)
+        # Scrolled by Shift+Up / Shift+Down and the mouse wheel (game_menus
+        # _kit_input, game_input); the drawn offset is kept, clamped. When the
+        # card runs past the panel, its last line says how to scroll (here,
+        # not in the footer: the footer is full and would shrink below 16 px).
+        line_h = self.font_sm.get_height() + S(5)
+        if len(render_lines) > max(1, rect.h // line_h):
+            hf = get_font('body', 16)
+            hint_h = hf.get_height() + S(4)
+            rect = pygame.Rect(rect.x, rect.y, rect.w, max(0, rect.h - hint_h))
+            self._ui_blit_text("Shift+Up/Down or the mouse wheel: scroll", hf,
+                               FP.FADED_TEXT, rect.x, rect.bottom + S(2),
+                               max_width=rect.w - S(12))
+        self._kit_detail_scroll = self._ui_draw_scroll_lines(
+            render_lines, self.font_sm, FP.BODY_TEXT, rect,
+            int(getattr(self, '_kit_detail_scroll', 0) or 0), line_gap=5)
 
     # -- Item actions (shared by the Kit and the character sheet) ----------
 
@@ -5923,7 +6094,7 @@ class RenderMixin:
                 Column('Material',   0, flex=0, align='left'),
                 Column('BUC',        0, flex=0, align='left'),
                 Column('Wt',         0, flex=0, align='right'),
-                Column('Resists',  120, flex=3, align='left'),
+                Column('Powers',   120, flex=3, align='left'),
             ]
         if slug == 'shields':
             return [
@@ -6004,8 +6175,13 @@ class RenderMixin:
                 # beside its resistances (bug bash 3.3.2).
                 ac = f"+{_gear.ac_value(item)}" if _gear.is_core(item) else '-'
                 resists = self._kit_resist_str(item)
+                # What its enchantment does, not only its name (Brandon
+                # 2026-11-16: "tells me the top level name like 'Life-Grip'
+                # but not what that actually does").
                 lab = _ench.label(item)
+                el = (getattr(item, 'ench_line', '') or '').strip()
                 if lab:
+                    lab = f"{lab}: {el}" if el and not el.lower().startswith(lab.lower()) else lab
                     resists = lab if resists in ('', '-', None) else f"{lab}; {resists}"
             else:
                 ac, resists = '?', '?'
@@ -6233,7 +6409,9 @@ class RenderMixin:
             if same:
                 d = int(getattr(candidate, 'ench_level', 0)) - int(getattr(equipped, 'ench_level', 0))
                 return self._fmt_delta(d, 'lvl')
-            return _ench.label(candidate)
+            # Different enchantments: What It Does and Worn Now say each in
+            # full (the bare name here said nothing).
+            return ''
 
         if isinstance(candidate, Accessory):
             # Only useful when comparing same-stat accessories; otherwise
@@ -6836,41 +7014,53 @@ class RenderMixin:
             else:
                 t = plan['turns']
                 sub = (f"{n} piece{'s' if n != 1 else ''}: "
-                       f"{t} turn{'s' if t != 1 else ''} to put on")
+                       f"{t} turn{'s' if t != 1 else ''} to change")
                 if off:
                     sub += f", {off} stay{'s' if off == 1 else ''} off"
             sf, stext = self._fit_line(sub, tw, (17, 16, 15))
             self.screen.blit(sf.render(stext, True, readable(FP.BODY_TEXT, bg)),
                              (rect.x + S(12), rect.y + S(12) + name_f.get_height() + lead))
             y += row_h + S(8)
-        note = ("A kit holds the very pieces you saved. Putting it on takes each "
-                "piece's turns; a piece must be in your pack, and known by hand.")
+        note = ("A kit holds the very pieces you saved. Changing into it takes the "
+                "turns of each piece that changes (taking off what is in its way "
+                "counted in); a piece must be in your pack, and known by hand.")
         self._ui_wrap_text(note, line_f, readable(FP.FADED_TEXT, KT.RAISED),
                            pygame.Rect(lbody.x + S(4), y + S(6), lbody.w - S(8),
                                        max(0, lbody.bottom - y - S(6))))
-        # The chosen kit's pieces, two columns when they need it.
-        rows = self._kit_lines(sel)
+        # The chosen kit's pieces, two columns when they need it; beside
+        # each, what changing into the kit does to it ("3 turns", "On now").
         plan = self._kit_plan(sel)
+        rows = self._kit_rows(sel, plan)
         y = rbody.y
         if not rows:
             self._ui_wrap_text("Nothing saved here yet. Put on what you want, open this "
                                "screen and press S.", line_f,
                                readable(FP.FADED_TEXT, KT.RAISED), rbody)
         else:
-            lab_w = max(line_f.size(lab)[0] for lab, _n in rows) + S(14)
-            cols = 2 if len(rows) * (line_f.get_height() + S(6)) > rbody.h - S(90) else 1
+            lab_w = max(line_f.size(lab)[0] for lab, _n, _c in rows) + S(14)
+            cost_w = max(line_f.size(c)[0] for _l, _n, c in rows) + S(12)
+            cols = 2 if len(rows) * (line_f.get_height() + S(6)) > rbody.h - S(110) else 1
             col_w = (rbody.w - S(12) * (cols - 1)) // cols
             per = (len(rows) + cols - 1) // cols
-            for idx, (lab, nm) in enumerate(rows):
+            for idx, (lab, nm, cst) in enumerate(rows):
                 c, r = divmod(idx, per)
                 x = rbody.x + c * (col_w + S(12))
                 yy = y + r * (line_f.get_height() + S(6))
                 self.screen.blit(line_f.render(lab, True, readable(FP.FADED_TEXT, KT.RAISED)),
                                  (x, yy))
-                nf, ntext = self._fit_line(nm, col_w - lab_w, (17, 16, 15))
+                nf, ntext = self._fit_line(nm, max(S(40), col_w - lab_w - cost_w), (17, 16, 15))
                 self.screen.blit(nf.render(ntext, True, readable(FP.BODY_TEXT, KT.RAISED)),
                                  (x + lab_w, yy))
+                col = (FP.WARNING_TEXT if cst in ('Not carried', 'Stays off')
+                       else FP.FADED_TEXT if cst in ('On now', 'At your back', 'No time')
+                       else FP.GOLD_PALE)
+                cs = line_f.render(cst, True, readable(col, KT.RAISED))
+                self.screen.blit(cs, (x + col_w - cs.get_width() - S(4), yy))
             y += per * (line_f.get_height() + S(6)) + S(10)
+            total = self._kit_change_text(plan)
+            if total and y < rbody.bottom:
+                y = self._ui_wrap_text(total, line_f, readable(FP.GOLD_PALE, KT.RAISED),
+                                       pygame.Rect(rbody.x, y, rbody.w, rbody.bottom - y)) + S(4)
             notes = []
             if plan['missing']:
                 notes.append(("Not with you, so skipped: " + ', '.join(

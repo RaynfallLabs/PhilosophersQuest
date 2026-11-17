@@ -55,6 +55,16 @@ _MODIFIER_KEYS = frozenset((
     pygame.K_CAPSLOCK, pygame.K_NUMLOCK, pygame.K_SCROLLLOCK,
 ))
 
+# The keys that move the Kit's or the character sheet's selection: moving
+# off the item the last action was about takes its "Result" note away
+# (Brandon 2026-11-16: "no matter what item I'm on, that line says 'It is
+# the Duck of Doom. You sense a dark aura.'").
+_ITEM_NAV_KEYS = frozenset((
+    pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN, pygame.K_PAGEUP,
+    pygame.K_PAGEDOWN, pygame.K_HOME, pygame.K_END, pygame.K_TAB,
+    pygame.K_1, pygame.K_2, pygame.K_3, pygame.K_4,
+))
+
 
 def _command_char(event) -> str:
     """The character a key press means as a map command. With Caps Lock on
@@ -128,6 +138,12 @@ class InputMixin:
             if surf is not None and surf.get_size() != (event.x, event.y):
                 return True
             self.on_resize(event.x, event.y)
+            return True
+        if event.type == pygame.MOUSEWHEEL and self.state == STATE_KIT:
+            # The wheel scrolls the Kit's Selected Comparison pane (Brandon
+            # 2026-11-16: "there's no way to scroll on the comparison panel").
+            self._kit_detail_scroll = max(
+                0, int(getattr(self, '_kit_detail_scroll', 0) or 0) - 3 * int(event.y or 0))
             return True
         if event.type != pygame.KEYDOWN:
             return True
@@ -505,7 +521,10 @@ class InputMixin:
         elif self.state == STATE_EQUIP_MENU:
             self._equip_menu_input(key)
         elif self.state == STATE_KIT:
+            _was = self._kit_selected()[1] if key in _ITEM_NAV_KEYS else None
             self._kit_input(key)
+            self._item_feedback_moved(key, _was, (getattr(self, '_kit_tab', 0),
+                                                  self._kit_selected()[1]))
         elif self.state == STATE_DISCOVERIES:
             self._discoveries_input(key)
         elif self.state == STATE_WAND_MENU:
@@ -577,7 +596,10 @@ class InputMixin:
         elif self.state == STATE_RACE:
             self._race_input(key)
         elif self.state == STATE_CHARACTER_SHEET:
+            _was = self._charsheet_selection()[2] if key in _ITEM_NAV_KEYS else None
             self._character_sheet_input(key)
+            if self.state == STATE_CHARACTER_SHEET:
+                self._item_feedback_moved(key, _was, (None, self._charsheet_selection()[2]))
         elif self.state == STATE_DROP_MENU:
             self._drop_menu_input(key)
         elif self.state == STATE_DROP_GOLD_INPUT:

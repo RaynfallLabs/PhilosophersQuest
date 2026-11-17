@@ -147,9 +147,9 @@ _SPECIES = {
     },
     'duck_of_doom': {
         # The Duck of Doom pet — hatched when the cursed Duck of Doom
-        # headgear has been worn for 2026 turns. Unique among species:
+        # headgear has been worn for 10,000 turns. Unique among species:
         # it has a Stage 0 special (Detect Monsters) the moment it
-        # hatches, because the player already paid 2026 cursed-turns
+        # hatches, because the player already paid 10,000 cursed turns
         # to be here.
         'element': 'psychic',
         'damage_type': 'psychic',
@@ -609,7 +609,7 @@ def growth(what: str, level: int) -> int:
 # Waddlekind pet hatches. Single source of truth for both the quirk
 # gate in main.py and any hero-special / summon path that needs to
 # reference the threshold.
-DUCK_OF_DOOM_TURNS_REQUIRED = 2026
+DUCK_OF_DOOM_TURNS_REQUIRED = 10000   # Brandon 2026-11-16: "2026 is too quick, just a few floors"
 # The duckling rode on the hero's head for all of those turns and learned
 # what any companion at his side would have: the passive 1 XP every 3 turns
 # (gain_xp_passive). A fixed amount from its own story, never the floor.
@@ -1671,7 +1671,7 @@ def random_species() -> str:
     """Pick a random species key with equal probability.
 
     `duck_of_doom` is EXCLUDED from the random pool — Waddlekind is the
-    endpoint of the 2026-turn Duck-of-Doom quirk, not a Soul Sphere /
+    endpoint of the 10,000-turn Duck-of-Doom quirk, not a Soul Sphere /
     Summon Guardian / Gate outcome. It only spawns via `_duck_of_doom_transform`.
     """
     pool = [k for k in _SPECIES.keys()

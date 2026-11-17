@@ -265,10 +265,11 @@ TARGETS = [
 
 
 def make_item():
+    """The cloak drawn in code, NOT saved over the item icon: since
+    2026-11-16 the icon is painted by the pipeline (briefs/arsenal_redo.json;
+    Brandon: the code-drawn art "looks like the old art we had")."""
     rows, beads, stems = item_layout()
-    lay = outline(cape(rows, beads, stems))
-    lay.save(os.path.join(ITEMS, 'bloomleaf_cloak.png'))
-    return lay
+    return outline(cape(rows, beads, stems))
 
 
 def make_all(write=True):

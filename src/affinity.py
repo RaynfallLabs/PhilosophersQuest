@@ -411,15 +411,19 @@ def damage_profile(defn) -> list:
     res_l = [t for t in (get('resistances', None) or ())
              if t in HERO_TYPES and t not in weak_l and t not in shrug_l]
     banes = [m for m in bane_materials(defn) if m in materials]
+    # The words only, never "(Double Damage)" (Brandon 2026-11-16: "all the
+    # double and half damage is unnecessary; player can figure out what our
+    # descriptors mean and can be defined in our hints"): data/hints.json
+    # says what Weak To, Resists and Shrugs Off mean.
     out = []
     if weak_l:
-        out.append((WEAK, f"Weak To ({_size_word(weak_step())} Damage)", weak_l))
+        out.append((WEAK, "Weak To", weak_l))
     if banes:
-        out.append(('banes', f"Bane Materials ({_size_word(weak_step())} Damage)", banes))
+        out.append(('banes', "Hurt Most By", banes))
     if res_l:
-        out.append((RESISTED, f"Resists ({_size_word(resisted_step())} Damage)", res_l))
+        out.append((RESISTED, "Resists", res_l))
     if shrug_l:
-        out.append((SHRUGS_OFF, f"Shrugs Off ({_size_word(shrugs_step())} Damage)", shrug_l))
+        out.append((SHRUGS_OFF, "Shrugs Off", shrug_l))
     return out
 
 
@@ -451,8 +455,7 @@ def hard_rules(defn) -> list:
         ['one of a bane material' if 'holy' in weak_l else 'a weapon of a bane material']
         if bane_materials(defn) else [])
     if forms and subs and cap() > weak_step():
-        out.append(('both', f"Both At Once: {' or '.join(forms)} from {' or '.join(subs)} "
-                            f"lands {_size_word(cap()).lower()} damage, the most a blow can gain."))
+        out.append(('both', f"Hardest Blow: {' or '.join(forms)} from {' or '.join(subs)}."))
     return out
 
 

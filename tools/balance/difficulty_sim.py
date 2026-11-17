@@ -2277,7 +2277,13 @@ class Run:
         """Dishes ready to cook (of `tab`). A saver's held feast parts go
         only into a feast unless `spend_held` (the hero is near death)."""
         inv = self._kitchen_inv()
-        out = kitchen_mod.ready_dishes(inv)
+        # The simulator plays the base game and its core systems only
+        # (Brandon 2026-11-16: "I do not need every little easter egg
+        # modeled in the simulator"). A dish that plays one of his songs
+        # (Caviar and Tater Tots) is an easter egg: never cooked here. Its
+        # song runs on real seconds the simulator never passes, so its half
+        # damage lasted the whole run and the committed kid won 51%, not 1%.
+        out = [r for r in kitchen_mod.ready_dishes(inv) if not kitchen_mod.song_of(r)]
         if tab:
             out = [r for r in out if kitchen_mod.dish_tab(r) == tab]
         if not spend_held:

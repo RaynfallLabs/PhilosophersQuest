@@ -419,6 +419,8 @@ def test_no_named_piece_carries_a_rule_field_nothing_reads():
     assert armor['hide_of_nemean_lion']['floorSpawnWeight'] == {}
 
 
-def test_the_duck_of_doom_does_not_answer_to_a_scroll():
+def test_the_duck_of_doom_answers_to_a_scroll_now():
+    """Brandon 2026-11-16: "You can only remove it by uncursing it." The
+    remove-curse scroll no longer passes the Duck over."""
     src = open(os.path.join(ROOT, 'src', 'game_magic.py'), encoding='utf-8').read()
-    assert "getattr(eq, 'id', '') != 'duck_of_doom'" in src
+    assert "getattr(eq, 'id', '') != 'duck_of_doom'" not in src

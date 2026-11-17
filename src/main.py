@@ -4975,7 +4975,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     from monster import pronouns as _prn
                     self.add_message(f"{the_name(m)} succumbs to {_prn(m)[2]} wounds!", 'combat')
 
-        # Duck of Doom: advance the 2026-turn worn-on-head counter and
+        # Duck of Doom: advance the 10,000-turn worn-on-head counter and
         # trigger hatch on completion.
         self._duck_of_doom_tick()
 
@@ -6485,7 +6485,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # duck in a dungeon." Pickup bypasses inventory entirely; the
         # duck force-equips to the head slot (kicking even a cursed
         # existing helmet into inventory) and stays welded there until
-        # the 2026-turn quirk transforms it into a pet.
+        # the 10,000-turn quirk transforms it into a pet.
         if getattr(item, 'id', '') == 'duck_of_doom':
             self._duck_of_doom_pickup(item)
             return
@@ -6624,14 +6624,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
     # Duck of Doom — Munchkin reference. One per run, on a uniform-random
     # floor in {1..10}. Looks like an adorable yellow duckie sitting on
-    # the floor. Pickup auto-equips it as cursed headgear (+2 AC, can't
-    # remove). Worn for 2026 turns -> transforms into Waddlekind, a
+    # the floor. Pickup auto-equips it as cursed headgear: it does nothing
+    # for the hero and takes up his head (Brandon 2026-11-16: "It's supposed
+    # to SUCK"); only lifting its curse takes it off. Worn for 10,000 turns
+    # (pet_system.DUCK_OF_DOOM_TURNS_REQUIRED) -> transforms into Waddlekind, a
     # psychic-pet that follows standard pet rules (evolves at L25 and
     # L55 into Drake of the Covenant -> Seraphimallard). Permadeath for
     # the run if the pet dies.
     # ------------------------------------------------------------------
 
-    DUCK_OF_DOOM_TURNS_REQUIRED = 2026
+    from pet_system import DUCK_OF_DOOM_TURNS_REQUIRED     # one number (pets.md)
 
     def _maybe_place_duck_of_doom(self, level: int):
         """Drop the Duck of Doom on its assigned floor (first entry only)."""
@@ -6729,7 +6731,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._duck_of_doom_transform()
 
     def _duck_of_doom_transform(self):
-        """At 2026 turns, the Duck hatches: remove the item from the
+        """At 10,000 turns, the Duck hatches: remove the item from the
         head slot and spawn a Waddlekind pet at the player's tile."""
         from pet_system import Pet
         self._seeker_event('duck_hatched')
@@ -6745,7 +6747,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # It hops down onto a free tile beside him, never his own (PET-12).
         _spot = self._escort_tile_near_hero() or (self.player.x, self.player.y)
         pet = Pet('duck_of_doom', *_spot)
-        # It rode on his head for all 2026 turns and learned what any
+        # It rode on his head for all 10,000 turns and learned what any
         # companion at his side would have (LORE NOT FLOOR: a fixed amount
         # from its own story, the same on any floor).
         from pet_system import DUCK_OF_DOOM_HATCH_XP
@@ -7870,10 +7872,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(msg, 'warning')
                     return
             dname = self._bare_name(item)        # "the A Dark Curved Blade" otherwise
+            shield_before = self.player.shield
             self.player._apply_equip(item)
             self.player.remove_from_inventory(item)
             suffix = " (two-handed)" if getattr(item, 'two_handed', False) else ""
-            self.add_message(f"You equip the {dname}{suffix}.", 'success')
+            # A one-hander taken up: the shield a two-hander set aside goes
+            # back on the arm in the same turn (game_dressing; Brandon
+            # 2026-11-16: a weapon change takes one turn, shield and all).
+            sh = None if (_is_ranged or getattr(item, 'two_handed', False)) \
+                else self._slung_shield()
+            reach = (f" and take up your {self._bare_name(sh)}" if sh is not None else '')
+            self.add_message(f"You equip the {dname}{suffix}{reach}.", 'success')
+            if sh is not None:
+                self._shield_back_on(sh)
+            if shield_before is not None and self.player.shield is None:
+                self._say_shield_slung(shield_before, item)
             self._note_worn_curse(item)
             _qs_eq = getattr(self, 'quirk_system', None)
             if _qs_eq:

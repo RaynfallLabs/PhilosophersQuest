@@ -1945,6 +1945,42 @@ def _(g):
     g._kit_sel = next(i for i, (_s, it) in enumerate(rows) if it is spare)
 
 
+def _kit_two_gloves(g):
+    """Leather gloves of Life-Grip worn, and a pair of iron gauntlets of
+    another enchantment in the pack, both known: what each does, side by
+    side (Brandon 2026-11-16: "what are the actual benefits of the gloves I
+    have on vs what I'm selecting?")."""
+    from items import ARMOR_SLOTS, instantiate_armor
+    import enchantments as ench
+    p = g.player
+    worn = instantiate_armor('leather_gloves', 'leather')
+    worn.ench_level = 3
+    ench.apply_to(worn, 'life_grip')
+    other_id = next((k for k, v in ench.data()['enchantments'].items()
+                     if v.get('slot') == 'hands' and k != 'life_grip'), None) \
+        if 'enchantments' in ench.data() else None
+    spare = instantiate_armor('gauntlets', 'chain_steel')
+    spare.ench_level = 4
+    if other_id:
+        ench.apply_to(spare, other_id)
+    for it in (worn, spare):
+        it.id_level, it.buc_known, it.identified = 5, True, True
+    p.armor_slots[ARMOR_SLOTS.index('hands')] = worn
+    p.inventory.append(spare)
+    return worn, spare
+
+
+@scene('menu_kit_gloves', 'Menus',
+       'K, Armor: a pair of gloves in the pack against the pair worn: What It Does, '
+       'and Worn Now, before the lore.', expect='kit')
+def _(g):
+    _worn, spare = _kit_two_gloves(g)
+    press(g, pygame.K_k)
+    g._kit_tab = [t[1] for t in g._KIT_TABS].index('armor')
+    rows = g._kit_rows_for_slug('armor')
+    g._kit_sel = next(i for i, (_s, it) in enumerate(rows) if it is spare)
+
+
 @scene('menu_kit_at_your_back', 'Menus',
        'K, Weapons: a shortsword readied At Your Back (R readies, S swaps).', expect='kit')
 def _(g):
@@ -1990,6 +2026,30 @@ def _saved_kits(g):
        'known by hand.', expect='loadouts', key=True)
 def _(g):
     _saved_kits(g)
+    g.handle_event(key_event(pygame.K_e, 'E', pygame.KMOD_SHIFT))
+    press(g, pygame.K_2, '2')
+
+
+@scene('menu_loadouts_change', 'Menus',
+       'Shift+E, 2: a kit of plate, a mace and a kite shield over what is worn now: '
+       'each piece that changes shows its turns, and the total under them.',
+       expect='loadouts')
+def _(g):
+    from items import instantiate_armor, instantiate_weapon, instantiate_shield
+    import known_by_hand as kbh
+    p = g.player
+    g._kit_save(0)
+    plate = instantiate_armor('plate', 'chain_steel')
+    mace = instantiate_weapon('mace', 'steel')
+    kite = instantiate_shield('kite_shield', 'steel')
+    for it in (plate, mace, kite):
+        if it is not None:
+            kbh.learn(p, it)
+            p.inventory.append(it)
+    kits = g._kits()
+    kits[1]['name'] = 'Iron for Bones'
+    kits[1]['pieces'] = dict(kits[0]['pieces'], **{
+        k: v for k, v in (('body', plate), ('weapon', mace), ('shield', kite)) if v is not None})
     g.handle_event(key_event(pygame.K_e, 'E', pygame.KMOD_SHIFT))
     press(g, pygame.K_2, '2')
 

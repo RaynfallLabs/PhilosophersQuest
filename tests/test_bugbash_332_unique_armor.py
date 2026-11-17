@@ -45,6 +45,10 @@ def test_every_named_minor_piece_carries_one_enchantment_of_its_slot():
     for k, e in ARMOR.items():
         if e['slot'] not in gear.MINOR_SLOTS:
             continue
+        if ua.PICKS[k][0] is None:
+            # The Duck of Doom gives nothing (Brandon 2026-11-16).
+            assert 'ench_id' not in e and e['ac_bonus'] == 0, k
+            continue
         ench = enchantments.get(e.get('ench_id'))
         assert ench and ench['slot'] == e['slot'], k
         assert e['ench_id'] == ua.PICKS[k][0], k
@@ -61,6 +65,8 @@ def test_a_named_piece_keeps_its_name_card_and_powers():
         a = BUILT[k]
         assert a.name.lower() == e['name'].lower(), k        # (capitalised by naming.py)
         assert a.special == str(e.get('special', '') or ''), k
+        if not e.get('ench_id'):
+            continue                                         # the Duck of Doom: nothing
         assert a.ench_line.startswith(enchantments.get(e['ench_id'])['name']), k
     assert BUILT['blindfold'].on_equip_status == 'blinded'          # not replaced
     assert BUILT['greaves_of_hermes'].on_equip_status == 'hasted'   # folded into Speed

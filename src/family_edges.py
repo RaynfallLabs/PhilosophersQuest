@@ -225,12 +225,65 @@ def _mine(player, m, effect, *, recognise=True) -> list:
 # ---------------------------------------------------------------------------
 # Trigger lines: once per fight per technique
 # ---------------------------------------------------------------------------
+def _true_a(m, lower: bool = True) -> str:
+    """The creature's own name with its article, never its disguise."""
+    if m is None:
+        return 'something' if lower else 'Something'
+    from monster import an_article, _is_proper
+    name = getattr(m, 'name', '') or 'something'
+    low = name.lower()
+    if low.startswith(('the ', 'a ', 'an ')) or _is_proper(m, low):
+        return name
+    art = an_article(name)
+    return f"{art if lower else art.capitalize()} {name}"
+
+
+_COMPASS = {(0, -1): 'north', (1, -1): 'north-east', (1, 0): 'east', (1, 1): 'south-east',
+            (0, 1): 'south', (-1, 1): 'south-west', (-1, 0): 'west', (-1, -1): 'north-west'}
+
+
+def where(player, m) -> str:
+    """Where the creature is from the hero, in words that sit in the middle
+    of a sentence: "right beside you to the east", "a few steps to the
+    north-west", "to the south"."""
+    try:
+        dx, dy = int(m.x) - int(player.x), int(m.y) - int(player.y)
+    except (AttributeError, TypeError, ValueError):
+        return 'nearby'
+    if dx == 0 and dy == 0:
+        return 'right under your feet'
+    d = max(abs(dx), abs(dy))
+    # The nearer compass point: a lean of under half a step counts straight.
+    sx = 0 if abs(dx) * 2 < abs(dy) else (1 if dx > 0 else -1)
+    sy = 0 if abs(dy) * 2 < abs(dx) else (1 if dy > 0 else -1)
+    side = _COMPASS.get((sx, sy), 'nearby')
+    if d <= 1:
+        return f"right beside you to the {side}"
+    if d <= 3:
+        return f"a few steps to the {side}"
+    return f"to the {side}"
+
+
+def _variant(ability, m) -> str:
+    """The trigger line for this creature: the first of the ability's
+    `trigger_msg_if` whose `kinds` (pieces of a kind id) match it, else its
+    `trigger_msg` (Tremor-Sense: a web for a spider, the ceiling for a
+    piercer, the rock for anything else)."""
+    kind = str(getattr(m, 'kind', '') or getattr(m, 'id', '') or '')
+    for v in (ability or {}).get('trigger_msg_if') or ():
+        if any(k in kind for k in (v.get('kinds') or ())):
+            return str(v.get('msg') or '')
+    return str((ability or {}).get('trigger_msg') or '')
+
+
 def tell(player, m, ability, *, msg=None, key=None) -> bool:
     """Queue the ability's trigger line, once per creature it is used on.
     `msg` and `key` say a line of the ability's own other than its trigger
     line (a part's line, an execute's harder blow on a named foe), kept
     once per creature under its own key. True when the line was queued."""
-    msg = msg if msg is not None else (ability or {}).get('trigger_msg') or ''
+    msg = msg if msg is not None else _variant(ability, m)
+    if msg and '{where}' in msg and m is not None and player is not None:
+        msg = msg.replace('{where}', where(player, m))
     msg = line_for(msg, m)
     if not msg or player is None:
         return False
@@ -263,7 +316,20 @@ def line_for(text, m=None) -> str:
     if not text:
         return ''
     from monster import fill
-    return fill(m, str(text))
+    t = str(text)
+    # {true_a} / {True_A}: the creature as it really is ("a Giant Spider"),
+    # even while it hides (a hidden one is "something" to monster.fill); the
+    # line that reveals it names it.
+    if '{true_a}' in t or '{True_A}' in t:
+        t = t.replace('{true_a}', _true_a(m)).replace('{True_A}', _true_a(m, lower=False))
+    t = t.replace('{where}', 'nearby')
+    if m is None:
+        # A line sent with no creature (a technique used on a whole group, or
+        # on a trap) still reads: "{the}'s" is "its", "{A}" is "Something".
+        for slot, word in (("{The}'s", "Its"), ("{the}'s", "its"), ('{The}', 'It'),
+                           ('{the}', 'it'), ('{A}', 'Something'), ('{a}', 'something')):
+            t = t.replace(slot, word)
+    return fill(m, t)
 
 
 def say(player, msg: str) -> None:

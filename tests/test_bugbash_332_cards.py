@@ -79,7 +79,9 @@ def test_the_equip_delta_weighs_a_minor_piece_by_its_enchantment():
     p.armor_slots[items.ARMOR_SLOTS.index('head')] = _helm('iron_will', 3)
     f = _Fake(p)
     assert 'lvl' in f._equip_delta_str(_helm('iron_will', 7))
-    assert f._equip_delta_str(_helm('telepathy', 6)) == 'Greater Telepathy III'
+    # Another enchantment: no bare name here (it said nothing); the Kit's
+    # What It Does and Equipped Now say each in full (Brandon 2026-11-16).
+    assert f._equip_delta_str(_helm('telepathy', 6)) == ''
     # Body armour: base plus plus on both sides.
     p.armor_slots[items.ARMOR_SLOTS.index('body')] = items.instantiate_armor('padded', 'linen', level=1)
     assert 'AC' in f._equip_delta_str(items.instantiate_armor('plate', 'damascus_steel', level=5))

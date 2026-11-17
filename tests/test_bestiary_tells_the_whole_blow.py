@@ -95,18 +95,18 @@ def test_every_listed_type_is_one_the_page_can_tell():
 
 def test_the_stirge_swarm_and_the_beetle_say_it():
     rows = dict(affinity.bestiary_rows(MONS['stirge_swarm']))
-    assert rows['shrugs_off'] == 'Shrugs Off (Quarter Damage): Slash, Pierce'
-    assert rows['resisted'] == 'Resists (Half Damage): Blunt'
-    assert rows['weak'] == 'Weak To (Double Damage): Fire, Cold'
+    assert rows['shrugs_off'] == 'Shrugs Off: Slash, Pierce'
+    assert rows['resisted'] == 'Resists: Blunt'
+    assert rows['weak'] == 'Weak To: Fire, Cold'
     beetle = dict(affinity.bestiary_rows(MONS['giant_beetle']))
-    assert beetle['resisted'] == 'Resists (Half Damage): Slash'
-    assert beetle['weak'] == 'Weak To (Double Damage): Blunt'
+    assert beetle['resisted'] == 'Resists: Slash'
+    assert beetle['weak'] == 'Weak To: Blunt'
 
 
 def test_the_hidden_rules_are_told():
     skel = dict(affinity.bestiary_rows(MONS['skeleton']))
     assert 'Silver' in skel['banes'] and 'Sunsteel' in skel['banes']
-    assert 'triple damage' in skel['both']
+    assert skel['both'].startswith('Hardest Blow: ') and 'blessed' in skel['both']
     troll = dict(affinity.bestiary_rows(MONS['troll']))
     assert troll['regen'].startswith('Regenerates: ') and 'fire or acid stops it' in troll['regen']
     fafnir = dict(affinity.bestiary_rows(MONS['fafnir_dragon']))
