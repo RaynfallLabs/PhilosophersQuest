@@ -11680,6 +11680,27 @@ class RenderMixin:
         text_f = get_font('body', 18)
         head_f = get_font('body', 18, bold=True)
         w = body.w - S(14)
+        # The wrapped lines are kept between frames: wrapping every paragraph
+        # word by word on each frame put the quiz page over the UI gate's
+        # frame budget at 2560x1440 once it grew (16 ms of 15, 2026-11-16).
+        # The text is read once, so only the page, the width or the fonts
+        # (a new UI scale) make it wrap again.
+        key = (page, id(data), w, text_f.get_height(), head_f.get_height(),
+               text_f.size('Wm, ')[0], head_f.size('Wm, ')[0])
+        cached = getattr(self, '_help_lines_cache', None)
+        if cached is not None and cached[0] == key:
+            lines = cached[1]
+        else:
+            lines = self._help_text_lines(data, text_f, head_f, w)
+            self._help_lines_cache = (key, lines)
+        self._help_scroll = self._ui_draw_scroll_lines(
+            lines, text_f, FP.BODY_TEXT, body, getattr(self, '_help_scroll', 0), line_gap=5)
+        nxt = self._help_page_title((page + 1) % self.help_page_count())
+        self._ui_footer(panel, f"Tab: {nxt}   Up/Down/PgUp/PgDn: scroll   ? / ESC: close")
+
+    def _help_text_lines(self, data, text_f, head_f, w) -> list:
+        """A help page's sections as wrapped (text, colour, font[, indent])
+        lines for _ui_draw_scroll_lines."""
         lines = []
         for sec in data.get('sections', []) or []:
             if lines:
@@ -11699,10 +11720,7 @@ class RenderMixin:
                 for n, line in enumerate(self._ui_text_lines(str(row[1]), text_f, w - ind)):
                     lines.append((lead + line, FP.BODY_TEXT, text_f) if n == 0
                                  else (line, FP.BODY_TEXT, text_f, ind))
-        self._help_scroll = self._ui_draw_scroll_lines(
-            lines, text_f, FP.BODY_TEXT, body, getattr(self, '_help_scroll', 0), line_gap=5)
-        nxt = self._help_page_title((page + 1) % self.help_page_count())
-        self._ui_footer(panel, f"Tab: {nxt}   Up/Down/PgUp/PgDn: scroll   ? / ESC: close")
+        return lines
 
 
 # ------------------------------------------------------------------
