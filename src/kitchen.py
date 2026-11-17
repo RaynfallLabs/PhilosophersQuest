@@ -1092,8 +1092,12 @@ def apply_dish(player, rec: dict) -> list:
 
 def make_to_carry(player, rec: dict) -> list:
     """A dish cooked to carry, cooked right: the food it makes goes in the
-    pack, uneaten (it weighs less than what went into it, so it always
-    fits). Returns the message lines (the first names the dish)."""
+    pack, uneaten. Ingredients weigh nothing (Brandon, 2026-11-16) and food
+    does, so the dish can weigh more than what went into it: when the pack
+    cannot take it, it is set down at the hero's feet (``take_set_down``,
+    which the Game empties onto the floor: Game._cook_compound), as a part
+    too heavy to carry is. Returns the message lines (the first names the
+    dish)."""
     from items import make_item_by_id
     from naming import proper_name
     name = rec.get('name', 'the dish')
@@ -1103,10 +1107,22 @@ def make_to_carry(player, rec: dict) -> list:
     item.count = 1
     item.identified = True
     adder = getattr(player, 'add_to_inventory', None)
-    if adder is None or not adder(item):
-        player.inventory.append(item)
+    if adder is None:
+        player.inventory.append(item)            # a harness player with no carry limit
+    elif not adder(item):
+        player.__dict__.setdefault('cooked_set_down', []).append(item)
+        return [f"You prepare {name}.",
+                f"You wrap the {proper_name(item.name)} to carry, but your pack is too heavy: "
+                f"you set it down at your feet."]
     return [f"You prepare {name}.",
             f"You wrap the {proper_name(item.name)} to carry. It is in your pack."]
+
+
+def take_set_down(player) -> list:
+    """The carried dishes the pack could not take (``make_to_carry``), now
+    handed to the caller to set on the floor; the list is emptied."""
+    d = getattr(player, '__dict__', None)
+    return list(d.pop('cooked_set_down', None) or ()) if d is not None else []
 
 
 def _teach(player, stat: str, tier: int) -> list:

@@ -21,8 +21,9 @@ mode, a T1-T5 stack of parts), the potency formulas, the Single tab.
   the attempt either way; no stun, no debuff (`feedback_resource_loss_is_the_penalty.md`).
 - **SP soft boundary by generous supply.** Every dish gives SP; starvation at SP 0 stays as the
   failsafe (`feedback_sp_soft_boundary.md`). Do not remove starvation damage.
-- **Nothing spoils.** A part saved on floor 3 still cooks on floor 40: saving is a choice, paid in
-  weight.
+- **Nothing spoils.** A part saved on floor 3 still cooks on floor 40. Ingredients weigh nothing
+  (Brandon, 2026-11-16; rations and dishes still weigh what they weigh), so saving is a choice
+  paid only in the meal not eaten now.
 - **People are not harvested** (Brandon, 2026-11-16: "that's weird, we're not cannibals"). A
   person's body is searched for the food he carried (§8.1); no dish holds a part of a person.
 - **You are what you eat, at every depth.** Every stat has stat dishes at every tier, built from
@@ -371,8 +372,10 @@ A dish may be **cooked to carry**: its recipe names `makes`, a food id in `data/
 and cooking it right puts that food in the pack, wrapped, instead of eating it
 (`kitchen.make_to_carry`, from `apply_dish`). Nothing is eaten, so the hero's SP, HP and the
 cooking quirks are untouched (`Game._cook_compound` tells the quirks only when the food itself
-is eaten). A ruined one is wasted like any dish. The food weighs less than what went into it, so
-it always fits. Its benefit is `carry` (`dish_tab`: Special; `dish_power`: none), its menu lines
+is eaten). A ruined one is wasted like any dish. Ingredients weigh nothing and food does, so the
+dish can weigh more than what went into it: when the pack cannot take it, it is set down at the
+hero's feet ("your pack is too heavy: you set it down at your feet"; `kitchen.take_set_down`,
+emptied onto the floor by `Game._cook_compound`). Its benefit is `carry` (`dish_tab`: Special; `dish_power`: none), its menu lines
 are `kitchen.carry_lines` ("Made to carry: one Starnut Tart into your pack", "If eaten: +70 SP,
 +6 HP") and its chip says "To Carry" (`cook_menu.main_effect`).
 
@@ -632,5 +635,5 @@ old saves; every special food in a decent dish of its tier, shown when held, use
 | S1 | 2026-11-15 | **A dish that plays a song** (§5.6): Caviar and Tater Tots, Brandon's song as A Man Before a King; caviar and tater tots, rare plain foods; half damage while the song plays; Robyn starts with both; a secret achievement. 694 dishes. |
 | SD | 2026-11-16 | **You are what you eat** (Brandon's rulings 1 and 2): one stat dish teaches one whole point, still one lesson a floor (two lessons a point, `COOK_MEALS_PER_STAT_POINT`, the banked meals `cook_stat_meals` and `full_point_worth` retired; an old save's half-point banked is dropped). A dish's tier caps how far it can raise a stat (`cap_by_tier`), replacing the cap that grew with the deepest floor (3 + floor / 4); the altar and rare foods go by the deepest band. |
 | HU | 2026-11-16 | **Hunting for a dish** (§7): H in the cook menu; what a hunted dish still needs shows gold under In Sight. |
-| PS | 2026-11-16 | **Brandon's three rulings.** People are searched, never harvested (§3.5, §8.1): 58 kinds in `people.txt`, twelve parts and their single dishes gone, 52 dishes re-sourced, old saves' parts become food. Every stat at every tier (§4.3): 15 stat dishes. Every special food in a dish of its own (§4.4): 6 dishes. 703 dishes, 306 ingredients. `part_rules.rare_foods` reads `floorSpawnWeight` too (the mythic fruits were counted common). |
+| PS | 2026-11-16 | **Brandon's three rulings.** People are searched, never harvested (§3.5, §8.1): 58 kinds in `people.txt`, twelve parts and their single dishes gone, 52 dishes re-sourced, old saves' parts become food. Every stat at every tier (§4.3): 15 stat dishes. Every special food in a dish of its own (§4.4): 6 dishes. Ingredients weigh nothing (a carried dish that does not fit is set down). 703 dishes, 306 ingredients. `part_rules.rare_foods` reads `floorSpawnWeight` too (the mythic fruits were counted common). |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |

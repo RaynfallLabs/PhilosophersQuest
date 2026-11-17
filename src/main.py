@@ -7218,6 +7218,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _ruined = bool(messages) and str(messages[0]).startswith(RUINED_PREFIX)
             for i, msg in enumerate(messages):
                 self.add_message(msg, 'warning' if (i == 0 and _ruined) else 'success')
+            # A dish cooked to carry that the pack could not take (parts weigh
+            # nothing, so it can outweigh them: kitchen.make_to_carry) is set
+            # down at the hero's feet.
+            for _food in _kitchen.take_set_down(self.player):
+                _food.x, _food.y = self.player.x, self.player.y
+                self.ground_items.append(_food)
             if not getattr(self, '_chronicle_first_compound', False):
                 self._chronicle_first_compound = True
                 self._chron('milestone', f"Cooked my first proper recipe: {recipe['name']}. The dungeon smelled like a kitchen for once.",

@@ -426,6 +426,30 @@ def test_cooking_the_special_dish_uses_the_special_food_up(fid):
     assert any(rec['name'] in str(e[0]) for e in g.msg_log.entries[-8:])
 
 
+def test_a_carried_dish_the_pack_cannot_take_is_set_down_at_the_heros_feet():
+    """Ingredients weigh nothing (Brandon, 2026-11-16) and food does, so a
+    dish cooked to carry can outweigh what went into it: a full pack sets
+    the Starnut Tart down at the hero's feet, and says so."""
+    from items import make_item_by_id
+    from food_system import load_ingredient_for
+    g = _game()
+    g.quiz_engine.start_quiz = lambda **kw: kw['callback'](types.SimpleNamespace(success=True, score=1))
+    rec = kitchen.recipe('dish_starnut_tart')
+    p = g.player
+    for part in kitchen.parts(rec):
+        it = make_item_by_id('food', part) if part in FOOD else load_ingredient_for(part)
+        it.count = 1
+        it.identified = True
+        p.inventory.append(it)
+    p.add_to_inventory = lambda item: False          # the pack is full
+    g._cook_compound(rec)
+    tarts = [i for i in g.ground_items if getattr(i, 'id', '') == 'starnut_tart']
+    assert len(tarts) == 1 and (tarts[0].x, tarts[0].y) == (p.x, p.y)
+    assert not any(getattr(i, 'id', '') == 'starnut_tart' for i in p.inventory)
+    assert any('set it down at your feet' in str(e[0]) for e in g.msg_log.entries[-6:])
+    assert not kitchen.take_set_down(p), 'the Game took it off the hero'
+
+
 def test_the_pets_forage_and_the_songs_food_are_cooked_in_good_dishes():
     """Confirmed, not changed: the Mooble's starnuts and the Bococho's
     sunroots each go into two dishes or more besides their own; caviar and
