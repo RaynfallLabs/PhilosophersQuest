@@ -189,10 +189,20 @@ def main(argv=None):
     ap.add_argument('--ac', type=float, default=None,
                     help='the hero\'s AC (descending, 10 bare); default 10 - floor/3, capped at 1')
     ap.add_argument('--fights', type=int, default=3000)
+    ap.add_argument('--from', dest='src', default=None,
+                    help='a balance_study cell (.pkl): take each floor AC and max HP from it')
     ap.add_argument('--floors', default='1,3,5,7,10,13,16,19,22,25,28')
     args = ap.parse_args(argv)
     floors = [int(x) for x in args.floors.split(',')]
     rng = random.Random(17)
+    hero_of = {}
+    if args.src:
+        import pickle
+        with open(args.src, 'rb') as fh:
+            st = pickle.load(fh)['stats']
+        for f, fs in st.items():
+            v = max(1, fs.get('visits', 0))
+            hero_of[f] = (fs.get('ac', 0.0) / v, fs.get('max_hp', 0.0) / v)
     print("The game's own anchors (floor_curve): a typical monster's blow against the hero's health")
     print("floor  monster HP  blow  hero health  blow %health  hits to kill the hero")
     for f in (1, 5, 10, 15, 20, 25, 30, 40, 50, 60, 80, 100):
@@ -205,6 +215,8 @@ def main(argv=None):
         clock = wc.clock(f)
         ac = args.ac if args.ac is not None else max(1.0, 10.0 - f / 3.0)
         hero = floor_curve.health_bar(f)
+        if f in hero_of:
+            ac, hero = hero_of[f]
         print(f"floor {f}: base {base:.1f}, clock {clock} s, AC {ac:.0f}, hero health {hero:.0f}, "
               f"{len(rows)} kinds in the pool")
         for label, sec, acc in PLAYERS:

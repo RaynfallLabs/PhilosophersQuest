@@ -84,9 +84,30 @@ LEVERS = [
     ('edmg200', 'mon_dmg=2:2:2:1.5:1:1:1:1:1:1:1', 1, None),
     ('edmg150p2', 'mon_dmg=1.5:1.5:1.5:1.25:1:1:1:1:1:1:1', 2, None),
     ('ehit3', 'mon_hit=3:3:3:2:0:0:0:0:0:0:0', 1, None),
+    # Cooking carries the game (the ablation: 87% of healing is meals, and
+    # every point of max HP above the start): less from it.
+    ('heal60', 'heal=0.6', 1, None),
+    ('php80', 'player_hp=0.8', 1, None),
+    # Ordinary monsters only: boss_hp / boss_dmg cancel the knob for named
+    # foes (mini-bosses, gate bosses, seal demons), whose fights already
+    # carry the danger (the first sweep: a flat x1.5-2 blow mostly made the
+    # mini-bosses lethal while ordinary fights stayed cheap).
+    ('o_d150', 'mon_dmg=1.5,boss_dmg=0.6667', 1, None),
+    ('o_d200', 'mon_dmg=2,boss_dmg=0.5', 1, None),
+    ('o_h150', 'mon_hp=1.5,boss_hp=0.6667', 1, None),
+    ('o_h150d150', 'mon_hp=1.5,boss_hp=0.6667,mon_dmg=1.5,boss_dmg=0.6667', 1, None),
+    ('o_h125d150p2', 'mon_hp=1.25,boss_hp=0.8,mon_dmg=1.5,boss_dmg=0.6667', 2, None),
+    ('o_d150p2', 'mon_dmg=1.5,boss_dmg=0.6667', 2, None),
+    ('o_h150d200', 'mon_hp=1.5,boss_hp=0.6667,mon_dmg=2,boss_dmg=0.5', 1, None),
 ]
 
+# Which system makes the early fights free: mastery with one system taken
+# away (monte_carlo's m_no_* profiles), the sim kid, floors 1-30.
+ABLATE = [cell('A_' + n[5:], n) for n in mc.ABLATIONS] + [
+    cell('A_none', 'prepared'), cell('A_bare', 'unprepared')]
+
 SETS = {
+    'ablate': ABLATE,
     # Where we are: the early game for each player, and the other profiles.
     'base': (players('') + [
         cell('adult_committed', 'committed', 'adult', ADULT_SPEED),
@@ -102,6 +123,8 @@ SETS = {
              cell('F_casual', 'casual', floors=(1, 100)),
              cell('F_committed', 'committed', floors=(1, 100))],
     'levers': [c for tag, kn, eng, co in LEVERS for c in players(f'L_{tag}_', kn, (1, 30), eng, co)],
+    'olevers': [c for tag, kn, eng, co in LEVERS if tag.startswith('o_')
+                for c in players(f'L_{tag}_', kn, (1, 30), eng, co)],
 }
 
 
