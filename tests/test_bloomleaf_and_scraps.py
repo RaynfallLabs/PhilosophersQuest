@@ -320,10 +320,11 @@ def test_he_waits_only_on_his_floor_and_only_once():
     assert counts == {2: 0, 3: 1, 4: 0, 'back': 1}
 
 
-def _nickel_room(seed=6):
+def _nickel_room(seed=6, room_behind=False):
     """Old Nickel set down on a fresh floor, nothing else in it, in a room
     big enough to stand five steps off him (the first seed from `seed` that
-    gives one)."""
+    gives one). `room_behind`: also a tile beside him that leaves him a way
+    to back off (not a corner with his back to the wall)."""
     import emberpup_encounter as bloomleaf
     for s in range(seed, seed + 40):
         g = _game(f'__test_nickel_ai_{s}__', seed=s)
@@ -334,24 +335,44 @@ def _nickel_room(seed=6):
         g._emberpup.update({'cloak_floor': 2, 'cloak_spawned': False})
         g._maybe_spawn_cloak_wearer(2)
         nick = next(m for m in g.monsters if bloomleaf.is_wearer(m))
-        if nick._wary_home and _spot(g, nick, 5) and _spot(g, nick, 4):
+        if (nick._wary_home and _spot(g, nick, 5) and _spot(g, nick, 4)
+                and (not room_behind or _spot(g, nick, 1, room_behind=True))):
             return g, nick
     raise AssertionError('no room big enough in 40 seeds')
 
 
-def _spot(g, nick, dist):
+def _can_back_off(g, nick, spot):
+    """A free tile beside him that is farther from a hero standing at
+    `spot`: he is not cornered there."""
+    for dx in (-1, 0, 1):
+        for dy in (-1, 0, 1):
+            t = (nick.x + dx, nick.y + dy)
+            if ((dx or dy) and t != spot and nick._can_move_to(g.dungeon, *t)
+                    and max(abs(t[0] - spot[0]), abs(t[1] - spot[1])) > 1):
+                return True
+    return False
+
+
+def _spot(g, nick, dist, room_behind=False):
+    """A tile of his room `dist` steps off him, in his view. `room_behind`:
+    one that leaves him a tile to back away to. The seeded floor is not the
+    same on every run (its layout follows the iteration order of sets, which
+    changes from process to process with PYTHONHASHSEED and memory
+    addresses): CI of 3.5.4 put him in a corner with the first spot found
+    right in front of him, his back to the wall."""
     import senses
     x0, y0, x1, y1 = nick._wary_home
     for x in range(x0, x1 + 1):
         for y in range(y0, y1 + 1):
             if (g.dungeon.is_walkable(x, y) and max(abs(x - nick.x), abs(y - nick.y)) == dist
-                    and senses.clear_view(nick.x, nick.y, x, y, g.dungeon)):
+                    and senses.clear_view(nick.x, nick.y, x, y, g.dungeon)
+                    and (not room_behind or _can_back_off(g, nick, (x, y)))):
                 return (x, y)
     return None
 
 
-def _put_hero(g, nick, dist):
-    spot = _spot(g, nick, dist)
+def _put_hero(g, nick, dist, room_behind=False):
+    spot = _spot(g, nick, dist, room_behind)
     if spot is None:
         return False
     g.player.x, g.player.y = spot
@@ -387,8 +408,8 @@ def test_beside_the_hero_he_backs_off_and_strikes_only_cornered():
     """Brandon, 2026-11-17: he strikes only a hero beside him, and only once
     he cannot back away (tests/test_old_nickel.py has every rule)."""
     import monster
-    g, nick = _nickel_room()
-    assert _put_hero(g, nick, 1)
+    g, nick = _nickel_room(room_behind=True)
+    assert _put_hero(g, nick, 1, room_behind=True)
     assert nick.take_turn(g.player, g.dungeon, g.monsters) is False
     assert not nick._provoked and nick._stalk_event == 'backs'
     assert nick.ai_pattern == 'stalker_coward' and monster.the_name(nick) == 'Old Nickel'
