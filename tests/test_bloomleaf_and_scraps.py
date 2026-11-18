@@ -370,10 +370,13 @@ def test_he_watches_speaks_once_and_keeps_his_distance_without_attacking():
     assert _put_hero(g, nick, 4)
     g._sees_monster = lambda m: True              # (a dark room hides him; the lines are the point)
     hp = g.player.hp
-    home = nick._wary_home
+    # The false friend (2026-11-17): he comes up to the hero instead of
+    # keeping to his room, and never strikes while the act lasts. (This test
+    # once held him inside his room, which held only on some random draws.)
     for _ in range(6):
         g._advance_turn()
-        assert home[0] <= nick.x <= home[2] and home[1] <= nick.y <= home[3]
+        assert max(abs(nick.x - g.player.x), abs(nick.y - g.player.y)) >= 1
+    assert max(abs(nick.x - g.player.x), abs(nick.y - g.player.y)) <= 3
     assert g.player.hp == hp and not nick._provoked
     log = _texts(g, 30)
     assert len(_sight_lines(log)) == 1

@@ -159,9 +159,14 @@ def test_o_on_a_kind_whose_family_is_at_tier_one_opens_its_page():
               if k != 'ghoul' and not family_lore.is_keystone(k)][:need]
     g.player.studied_monster_ids.update(others)
     assert family_lore.tier(g.player, 'restless_dead') == 1
+    before = len(g.msg_log.entries)
     _observe(g, m)
     assert g.state == STATE_ENCYCLOPEDIA and g._encyclopedia_entry['_id'] == 'ghoul'
-    assert any('Restless Dead.' in str(e[0]) for e in g.msg_log.entries[-4:])
+    # Every line the look wrote, not the last four: a hint or the
+    # creature's state may follow the family's name (the serial run of
+    # 2026-11-17 caught the last-four window).
+    said = [str(e[0]) for e in g.msg_log.entries[before:]]
+    assert any('Restless Dead.' in t for t in said), said
     lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
     assert 'known by its family, not yet studied' in lines[1]
 
