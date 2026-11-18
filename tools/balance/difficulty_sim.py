@@ -984,6 +984,11 @@ class SimPlayer(Player):
         before = self.hp
         actual = super().take_damage(amount, damage_type)
         self._dmg_taken += max(0, before - self.hp)
+        # The low-water marks (the balance study, 2026-11-17): the lowest
+        # share of max HP he fell to in this fight and on this floor.
+        low = self.hp / max(1, self.max_hp)
+        self._fight_low = min(getattr(self, '_fight_low', 1.0), low)
+        self._floor_low = min(getattr(self, '_floor_low', 1.0), low)
         return actual
 
     def increase_max_hp(self, amount, from_cooking=False):
@@ -3583,7 +3588,11 @@ class Run:
     def _fight_and_account(self, group, mandatory=False, boss_ctx=None) -> bool:
         """Run a fight, book the results. Returns False if the run should stop
         this floor (death)."""
+        p = self.p
+        dmg0, t0 = p._dmg_taken, self.turn
+        p._fight_low = p.hp / max(1, p.max_hp)
         result = self.fight(group, mandatory=mandatory, boss_ctx=boss_ctx)
+        self._book_fight(group, result, (p._dmg_taken - dmg0) / max(1, p.max_hp), t0)
         kills = 0
         for m in group:
             self._record_monster(m)
@@ -3598,6 +3607,32 @@ class Run:
         if result == 'dead':
             self._on_death()
         return True
+
+    # What one fight cost (the balance study, 2026-11-17): ordinary fights
+    # and fights with a named foe apart. cost = HP lost as a share of max
+    # HP; 'free' under 5%; 'scary' fell under half; 'close' under a quarter.
+    COST_BUCKETS = ((0.05, 'lt5'), (0.15, 'lt15'), (0.30, 'lt30'), (0.50, 'lt50'),
+                    (1e9, 'ge50'))
+
+    def _book_fight(self, group, result, cost, t0):
+        fs = self.fs
+        pre = 'n' if any(is_named(m) for m in group) else 'o'
+        fs[pre + 'fights'] = fs.get(pre + 'fights', 0) + 1
+        fs[pre + 'fight_cost'] = fs.get(pre + 'fight_cost', 0.0) + cost
+        fs[pre + 'fight_mons'] = fs.get(pre + 'fight_mons', 0) + len(group)
+        fs[pre + 'fight_turns'] = fs.get(pre + 'fight_turns', 0) + (self.turn - t0)
+        low = getattr(self.p, '_fight_low', 1.0)
+        if cost < 0.05:
+            fs[pre + 'free'] = fs.get(pre + 'free', 0) + 1
+        if low < 0.5:
+            fs[pre + 'scary'] = fs.get(pre + 'scary', 0) + 1
+        if low < 0.25:
+            fs[pre + 'close'] = fs.get(pre + 'close', 0) + 1
+        if result == 'fled':
+            fs[pre + 'fled'] = fs.get(pre + 'fled', 0) + 1
+        h = fs.setdefault(pre + 'cost_hist', {})
+        key = next(k for c, k in self.COST_BUCKETS if cost < c)
+        h[key] = h.get(key, 0) + 1
 
     def _study(self, m):
         """Monster families: the corpse of a kind he has not studied is
@@ -3679,6 +3714,7 @@ class Run:
               self.quiz.chain_sum)
         dmg0 = p._dmg_taken
         hp_start_max = p.max_hp
+        p._floor_low = p.hp / max(1, p.max_hp)
         self.rest_left = int(self.prof['rest_turns'] * self.knobs['rest'])
         self.floor_kills = 0
         # this floor's cook attempts (the profile's rate, stochastically
@@ -3832,6 +3868,10 @@ class Run:
         fs['carried_lb'] = fs.get('carried_lb', 0.0) + p.get_current_weight()
         fs['wealth'] = fs.get('wealth', 0.0) + self.wealth()
         fs['hp_lost'] += (p._dmg_taken - dmg0) / max(1, hp_start_max)
+        low = getattr(p, '_floor_low', 1.0)
+        fs['floor_low'] = fs.get('floor_low', 0.0) + low
+        fs['floor_low50'] = fs.get('floor_low50', 0) + (1 if low < 0.5 else 0)
+        fs['floor_low25'] = fs.get('floor_low25', 0) + (1 if low < 0.25 else 0)
         fs['questions'] += self.quiz.n_questions - q0[0]
         fs['attacks'] += self.quiz.n_attacks - q0[1]
         fs['auto'] += self.quiz.n_auto - q0[2]
