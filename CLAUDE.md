@@ -97,6 +97,7 @@ src/
   kit_sense.py        - Kit Sense: the best tool carried for a family known to Hunter (tool providers)
   enemy_lore.py       - The Wand of Probing's reading (a probe teaches the kind, as a corpse study does), quests that teach the boss
   dice.py             - Dice notation parser ("2d6+3")
+  random_streams.py   - own_stream(): a floor builder's own generator, seeded from the shared stream (same seed, same floor in every process)
   items.py            - Item classes and equipment system
   gear.py             - Armour, shield, ring and amulet rules: levels, tiers, thresholds, core AC
   defence.py          - The defence model, pure: AC from armour only, dodge and speed from DEX, armour's drag paid by STR, the load tiers

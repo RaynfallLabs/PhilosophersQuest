@@ -28,7 +28,7 @@ Game.
 from __future__ import annotations
 
 import json
-import random
+from random_streams import own_stream
 
 _DATA: dict | None = None
 
@@ -79,7 +79,7 @@ def pick_clan(level: int, eligible: dict, rng=None):
     """The family that holds this floor, or None. ``eligible`` is the spawn
     pool before weighting ({kind: def})."""
     import decor
-    rng = rng or random.Random()
+    rng = rng or own_stream()
     cfg = decor.config().get('clans') or {}
     if rng.random() >= float(cfg.get('chance', 0.6)):
         return None
