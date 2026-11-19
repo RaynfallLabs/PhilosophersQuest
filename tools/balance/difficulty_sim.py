@@ -400,6 +400,24 @@ SCHEDULED_KNOBS = ('mon_dmg', 'mon_hp', 'mon_hit', 'mon_count', 'heal',
 def kval(knobs: dict, name: str, floor: int):
     """Value of a knob on a floor (resolves lo:hi depth schedules)."""
     v = knobs[name]
+    if isinstance(v, dict):
+        # floor@value points ('1.25@1;2@12;1.75@36'): straight lines between
+        # them, flat beyond the first and the last (the balance study's
+        # shaped schedules, 2026-11-18).
+        pts = sorted(v.items())
+        f = int(floor)
+        if f <= pts[0][0]:
+            v = pts[0][1]
+        elif f >= pts[-1][0]:
+            v = pts[-1][1]
+        else:
+            for (fa, va), (fb, vb) in zip(pts, pts[1:]):
+                if fa <= f <= fb:
+                    v = va + (vb - va) * (f - fa) / (fb - fa)
+                    break
+        if isinstance(KNOB_DEFAULTS[name], int):
+            v = int(round(v))
+        return v
     if isinstance(v, tuple):
         # lo:hi, or any number of points spaced evenly from floor 1 to 100
         pos = (max(1, min(100, floor)) - 1) / 99.0 * (len(v) - 1)
@@ -437,7 +455,11 @@ def parse_knobs(text) -> dict:
                              + ', '.join(sorted(KNOB_DEFAULTS)))
         if isinstance(v, (list, tuple)):
             v = ':'.join(str(x) for x in v)
-        if isinstance(v, str) and ':' in v:
+        if isinstance(v, str) and '@' in v:
+            if k not in SCHEDULED_KNOBS:
+                raise SystemExit(f"--knobs: {k} does not take a floor@value schedule")
+            knobs[k] = {int(f): float(x) for x, f in (pt.split('@') for pt in v.split(';'))}
+        elif isinstance(v, str) and ':' in v:
             if k not in SCHEDULED_KNOBS:
                 raise SystemExit(f"--knobs: {k} does not take a lo:hi schedule "
                                  f"(only {', '.join(SCHEDULED_KNOBS)})")
@@ -449,6 +471,8 @@ def parse_knobs(text) -> dict:
 
 def knobs_label(knobs: dict) -> str:
     def fmt(v):
+        if isinstance(v, dict):
+            return ';'.join(f"{x:g}@{f}" for f, x in sorted(v.items()))
         return ':'.join(f"{x:g}" for x in v) if isinstance(v, tuple) else f"{v:g}"
     diff = [f"{k}={fmt(knobs[k])}" for k in KNOB_DEFAULTS if knobs[k] != KNOB_DEFAULTS[k]]
     return ', '.join(diff) if diff else 'baseline (no knobs)'
