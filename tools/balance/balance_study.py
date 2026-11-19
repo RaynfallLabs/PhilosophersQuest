@@ -99,7 +99,25 @@ LEVERS = [
     ('o_h125d150p2', 'mon_hp=1.25,boss_hp=0.8,mon_dmg=1.5,boss_dmg=0.6667', 2, None),
     ('o_d150p2', 'mon_dmg=1.5,boss_dmg=0.6667', 2, None),
     ('o_h150d200', 'mon_hp=1.5,boss_hp=0.6667,mon_dmg=2,boss_dmg=0.5', 1, None),
+    # The sweet spot (Brandon, 2026-11-18: "maybe 1.75x harder?... find the
+    # sweet spot"); mon_hit has no named-foe twin, so +2 reaches them too.
+    ('o_d175', 'mon_dmg=1.75,boss_dmg=0.5714', 1, None),
+    ('o_d175h2', 'mon_dmg=1.75,boss_dmg=0.5714,mon_hit=2', 1, None),
 ]
+
+# Brandon's kids answer at "about .5-.7x my speed" (2026-11-18): 1.52 s / 0.7
+# to / 0.5 = 2.2-3.0 s a tier-1 sum, 1.2x and 1.7x the sim kid's 1.8 s.
+KID_FAST, KID_SLOW = 1.2, 1.7
+
+
+def sweet_set():
+    out = []
+    for tag, kn, eng, co in [('base', '', 1, None)] + [lv for lv in LEVERS if lv[0] in (
+            'o_d150', 'o_d175', 'o_d200', 'o_d175h2')]:
+        out += [cell(f'S_{tag}_adult', 'mastery', 'adult', ADULT_SPEED, kn, (1, 100), eng, co),
+                cell(f'S_{tag}_kidA', 'mastery', 'kid', KID_FAST, kn, (1, 100), eng, co),
+                cell(f'S_{tag}_kidB', 'mastery', 'kid', KID_SLOW, kn, (1, 100), eng, co)]
+    return out
 
 # Which system makes the early fights free: mastery with one system taken
 # away (monte_carlo's m_no_* profiles), the sim kid, floors 1-30.
@@ -108,6 +126,7 @@ ABLATE = [cell('A_' + n[5:], n) for n in mc.ABLATIONS] + [
 
 SETS = {
     'ablate': ABLATE,
+    'sweet': sweet_set(),
     # Where we are: the early game for each player, and the other profiles.
     'base': (players('') + [
         cell('adult_committed', 'committed', 'adult', ADULT_SPEED),
