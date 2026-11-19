@@ -25,8 +25,10 @@ REPEATABLE: every screen is drawn from a FRESH game built from the same seed.
 The harness pins every source of variation it can see, without touching game
 code:
   * ``random`` module seed, and every ``random.Random()`` the game creates
-    without a seed (dungeon, boss rooms, effects) gets a seed from a fixed
-    sequence;
+    without a seed (effects, lines) and every floor builder's
+    ``random_streams.own_stream()`` (dungeon, boss rooms, dressing) gets a
+    seed from a fixed sequence of the harness's own, apart from the shared
+    stream, so what a scene does before its floor is built never moves it;
   * ``pygame.time.get_ticks`` is frozen (the death/victory rune circles and
     the death-chase pulse read it);
   * the welcome / study loops get a fake clock with a fixed frame time;
@@ -491,6 +493,12 @@ def harness(trace: bool = True):
         if hasattr(sound_system, '_settings_path'):
             patch(sound_system, '_settings_path', lambda: str(tmp / 'settings.json'))
         patch(random, 'Random', DetRandom)
+        # The floor builders take their stream from own_stream (seeded from
+        # the shared stream in the game): here it comes from the harness's
+        # sequence, as a bare random.Random() does, so every capture keeps
+        # the floor it was drawn on.
+        import random_streams
+        patch(random_streams, 'own_stream', DetRandom)
         patch(pygame.time, 'get_ticks', lambda: FROZEN_TICKS_MS)
         # The Seeker scenes set a fixed code key (stable Reward Codes); it is
         # put back on exit like everything else here.

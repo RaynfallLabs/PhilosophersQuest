@@ -198,8 +198,8 @@ def _level_20_labyrinth(rng=None):
     Two thirds of it, and most of its alcoves, could not be reached by the
     player at all, and the stairs could be walked to without a fight.
     """
-    from random_streams import own_stream
-    rng = rng or own_stream()
+    import random_streams
+    rng = rng or random_streams.own_stream()
     tiles = _blank()
 
     # --- carve every maze cell -------------------------------------------

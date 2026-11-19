@@ -166,3 +166,33 @@ def test_own_stream_moves_the_shared_stream_on():
 def _first_draw(seed):
     r = random.Random(seed)
     return r.getrandbits(64)
+
+
+# The modules that build a floor. A bare Random() in one is seeded by the OS.
+_BUILDERS = ('dungeon', 'level_manager', 'decor', 'hazards', 'war_bands', 'senses',
+             'boss_levels')
+
+
+def test_no_floor_builder_makes_a_generator_the_os_seeds():
+    import re
+    bare = re.compile(r'\bRandom\(\s*\)')
+    found = []
+    for mod in _BUILDERS:
+        with open(os.path.join(ROOT, 'src', mod + '.py'), encoding='utf-8') as f:
+            for n, line in enumerate(f, 1):
+                if bare.search(line.split('#')[0]):
+                    found.append(f'src/{mod}.py:{n}: {line.strip()}')
+    assert not found, 'use random_streams.own_stream():\n' + '\n'.join(found)
+
+
+def test_own_stream_is_called_through_its_module():
+    """tools/ui/capture.py patches random_streams.own_stream so every capture
+    keeps its floor: a name imported with `from random_streams import` would
+    slip past the patch."""
+    hits = []
+    for name in sorted(os.listdir(os.path.join(ROOT, 'src'))):
+        if name.endswith('.py') and name != 'random_streams.py':
+            with open(os.path.join(ROOT, 'src', name), encoding='utf-8') as f:
+                if 'from random_streams import' in f.read():
+                    hits.append(name)
+    assert not hits, hits

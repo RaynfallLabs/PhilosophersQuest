@@ -561,7 +561,7 @@ def _spawn_monster_den_extras(dungeon, monsters: list, level_num: int):
 
 def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
     """Populate each hidden chamber with themed monsters or treasure items."""
-    from random_streams import own_stream
+    import random_streams
     from dungeon import spawn_chamber_cache
 
     # Theme keyword -> monster name/id substrings to prefer
@@ -608,7 +608,7 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
             # A cache of 3-5 things: coin, treasure, potions and scrolls
             # (dungeon.spawn_chamber_cache). It re-ran spawn_items here,
             # which handed out an armory behind every secret door.
-            items.extend(spawn_chamber_cache(room, level, dungeon, own_stream()))
+            items.extend(spawn_chamber_cache(room, level, dungeon, random_streams.own_stream()))
 
         elif ctype == 'lair':
             # The lair's own kind: its words first, then its families, then
@@ -616,7 +616,7 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
             final = spawn_themed(room, level, dungeon,
                                  words=THEME_KEYWORDS.get(theme, []),
                                  families=THEME_FAMILIES.get(theme, []),
-                                 count=(3, 6), existing=monsters, rng=own_stream())
+                                 count=(3, 6), existing=monsters, rng=random_streams.own_stream())
             monsters.extend(final)
 
 

@@ -42,7 +42,7 @@ from __future__ import annotations
 import json
 import random
 from collections import deque
-from random_streams import own_stream
+import random_streams
 
 _DATA: dict | None = None
 
@@ -753,7 +753,7 @@ def assign_jobs(monsters, rooms, rng=None, sleep_rooms=()) -> None:
     creature in ``sleep_rooms`` (a monster den) sleeps. Its own random
     generator by default, seeded from the shared stream
     (random_streams.own_stream), so a seeded game gives the same jobs."""
-    rng = rng or own_stream()
+    rng = rng or random_streams.own_stream()
     sleepy = {id(r) for r in sleep_rooms or ()}
     lo, hi = data()['jobs'].get('sleep_turns', [300, 700])
     by_room: dict = {}
