@@ -87,12 +87,74 @@ def _rearm(m) -> None:
         m.__dict__.pop('_aura_steady', None)
 
 
-def pulse(monsters, player, sees=None, rng=random) -> list:
+def _open_air(m, player, dungeon) -> bool:
+    """Heat and cold reach through open air only: a clear line from one of
+    its tiles to him (never through a wall or a shut door)."""
+    if dungeon is None:
+        return True
+    import senses
+    try:
+        from geom import occupied_tiles
+        tiles = list(occupied_tiles(m))
+    except ImportError:
+        tiles = [(m.x, m.y)]
+    return any(max(abs(tx - player.x), abs(ty - player.y)) <= 1
+               or senses.clear_view(tx, ty, player.x, player.y, dungeon) for tx, ty in tiles)
+
+
+def _smell_reaches(m, player, dungeon, radius: int) -> bool:
+    """A reek carries through open ground, round a corner if need be, never
+    through rock: a walk of at most radius + 1 steps over open tiles."""
+    if dungeon is None:
+        return True
+    from collections import deque
+    goal = (player.x, player.y)
+    start = (m.x, m.y)
+    seen = {start}
+    q = deque([(start, 0)])
+    limit = radius + 1
+    while q:
+        (cx, cy), d = q.popleft()
+        if (cx, cy) == goal or max(abs(cx - goal[0]), abs(cy - goal[1])) == 0:
+            return True
+        if d >= limit:
+            continue
+        for ox in (-1, 0, 1):
+            for oy in (-1, 0, 1):
+                nxt = (cx + ox, cy + oy)
+                if nxt in seen or not dungeon.in_bounds(*nxt):
+                    continue
+                seen.add(nxt)
+                if nxt == goal or dungeon.is_walkable(*nxt):
+                    q.append((nxt, d + 1))
+    return False
+
+
+def _said(m, a, key: str, seen: bool, **kw) -> str:
+    """Its line if the hero can see it, else a plain line that names no one."""
+    lines = rules().get('lines') or {}
+    if seen:
+        return ai_lines.fill(m, a.get('line') if key == a['kind'] and a.get('line') else
+                             (a.get('steady_line') if key.endswith('_steady') and a.get('steady_line')
+                              else lines.get(key, '')), **kw)
+    return ai_lines.fill(None, (rules().get('unseen') or {}).get(key, ''), **kw)
+
+
+def pulse(monsters, player, sees=None, rng=random, dungeon=None) -> list:
     """One world turn of every aura on the hero. ``sees(m)`` says whether he
     can see the creature (the Game's own test; None: he sees all, the
-    simulator's melee). Applies what lands; returns [(line, colour)]."""
+    simulator's melee); ``dungeon`` the floor (None in the simulator: no
+    walls). Applies what lands; returns [(line, colour)].
+
+    Reach by lore: dread needs sight and a waking creature; heat and cold
+    open air (a clear line, never through a wall); a stench smell (round a
+    corner, never through rock). A sleeping creature still burns, freezes and
+    stinks (it is its body), but fills no one with dread. Nothing outside a
+    creature that has swallowed the hero reaches him (holds.shields). A
+    creature he cannot see is never named."""
     if not ENABLED or player is None or getattr(player, 'hp', 0) <= 0:
         return []
+    import holds
     out = []
     burn = {}                              # type -> [damage of each aura]
     for m in monsters or ():
@@ -100,9 +162,15 @@ def pulse(monsters, player, sees=None, rng=random) -> list:
         if a is None or not _ruled(m):
             continue
         _rearm(m)
-        if not in_reach(m, player):
+        if not in_reach(m, player) or holds.shields(player, m):
             continue
         k = a['kind']
+        seen = sees is None or bool(sees(m))
+        if k in ('heat', 'cold') and not _open_air(m, player, dungeon):
+            continue
+        if k == 'stench' and not _smell_reaches(
+                m, player, dungeon, max(1, min(3, int(a.get('radius', 1) or 1)))):
+            continue
         if k == 'fear':
             if m.has_effect('sleeping') or not getattr(m, '_aware', True):
                 continue
@@ -113,7 +181,7 @@ def pulse(monsters, player, sees=None, rng=random) -> list:
             m._aura_rolled = True
             out.extend(_dread(m, a, player))
         elif k == 'stench':
-            out.extend(_stench(m, a, player, rng))
+            out.extend(_stench(m, a, player, rng, seen))
         else:
             share = max(0.0, min(0.08, float(a.get('share', 0.02) or 0.02)))
             from floor_curve import wound
@@ -124,18 +192,17 @@ def pulse(monsters, player, sees=None, rng=random) -> list:
             except (ImportError, AttributeError):
                 pass
             dtype = str(a.get('type') or ('fire' if k == 'heat' else 'cold'))
-            burn.setdefault(dtype, []).append((dmg, m, a))
+            burn.setdefault(dtype, []).append((dmg, m, a, seen))
     for dtype, hits in burn.items():
-        cap = 2 * max(d for d, _m, _a in hits)
-        total = min(cap, sum(d for d, _m, _a in hits))
+        cap = 2 * max(h[0] for h in hits)
+        total = min(cap, sum(h[0] for h in hits))
         got = player.take_damage(total, dtype)
-        _d, m, a = max(hits, key=lambda h: h[0])
+        _d, m, a, seen = max(hits, key=lambda h: h[0])
         counts = dict(m.__dict__.get('_aura_hits') or {})
         counts[a['kind']] = counts.get(a['kind'], 0) + 1
         m._aura_hits = counts
         if got > 0:
-            text = a.get('line') or (rules().get('lines') or {}).get(a['kind'], '')
-            out.append((ai_lines.fill(m, text, damage=got), 'danger'))
+            out.append((_said(m, a, a['kind'], seen, damage=got), 'danger'))
     return out
 
 
@@ -155,7 +222,7 @@ def _dread(m, a, player) -> list:
     return [(ai_lines.fill(m, steady), 'info')] if steady else ([(text, 'info')] if text else [])
 
 
-def _stench(m, a, player, rng) -> list:
+def _stench(m, a, player, rng, seen: bool = True) -> list:
     if m.__dict__.get('_aura_steady'):
         return []
     eff = str(a.get('effect') or 'weakened')
@@ -173,8 +240,8 @@ def _stench(m, a, player, rng) -> list:
         m._aura_steady = True
         counts['stench_steady'] = counts.get('stench_steady', 0) + 1
         m._aura_hits = counts
-        steady = a.get('steady_line') or (rules().get('lines') or {}).get('stench_steady', '')
-        return [(ai_lines.fill(m, steady), 'info')] if steady else []
+        steady = _said(m, a, 'stench_steady', seen)
+        return [(steady, 'info')] if steady else []
     from status_effects import apply_debuff_with_save
     applied, text = apply_debuff_with_save(player, eff, max(1, int(a.get('turns', 3) or 3)),
                                            _dc(m, a), source=m)
@@ -182,8 +249,7 @@ def _stench(m, a, player, rng) -> list:
         return [(text, 'info')] if text else []
     counts['stench'] = counts.get('stench', 0) + 1
     m._aura_hits = counts
-    line = a.get('line') or (rules().get('lines') or {}).get('stench', '')
-    return [(ai_lines.fill(m, line) + (' ' + text if text else ''), 'danger')]
+    return [(_said(m, a, 'stench', seen) + (' ' + text if text else ''), 'danger')]
 
 
 def tell_keys(m) -> list:

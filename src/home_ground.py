@@ -78,6 +78,19 @@ def leash(m, player, dungeon, all_monsters, extra_occupied, seen: bool) -> bool:
     hx, hy = home(m)
     hero_off = _cheb(player.x, player.y, hx, hy)
     d = m.__dict__
+    # Struck since its last turn: it turns and fights, and it does not walk
+    # home under fire until it has gone roused_turns unhurt.
+    was = d.get('_lair_hp')
+    d['_lair_hp'] = int(m.hp)
+    if was is not None and int(m.hp) < int(was):
+        d['_lair_roused'] = int(rules().get('roused_turns', 5))
+    roused = int(d.get('_lair_roused', 0) or 0)
+    if roused > 0:
+        d['_lair_roused'] = roused - 1
+        if d.pop('_leashed', None) and ai_lines.once(m, 'lair_roused'):
+            r = rules()
+            ai_lines.say(m, ai_lines.fill(m, r.get('roused_line', '')), '', 'warning')
+        return seen
     if d.get('_leashed'):
         if hero_off <= radius(m):
             d.pop('_leashed', None)       # he is back on its ground: it knows him

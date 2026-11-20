@@ -118,7 +118,9 @@ def kit(m, rng=random) -> tuple:
 def kit_is_its_loot(m) -> None:
     """It died: if it carried a kit, what it carried was its find (its
     random item roll is spent on it, so a kit adds no loot it did not
-    carry). The treasure dict is a new one: copies share none."""
+    carry). The treasure dict is a new one: copies share none. Its kit is
+    rolled now if nothing asked for it before (one killed in its sleep)."""
+    kit(m)
     if m.__dict__.get('_kit_had'):
         m.treasure = dict(getattr(m, 'treasure', None) or {}, item_chance=0.0)
 
@@ -181,17 +183,31 @@ def _drink(m, player, item_id: str, stolen=None) -> bool:
     return True
 
 
-def _throw_attack(item_id: str) -> dict:
+def entry(m, item_id: str) -> dict:
+    """The kind's kit entry for ``item_id`` ({} if none): its own throw
+    (``throw``: {name, damage, burn}) and whether it drops (``drops``)."""
+    for e in kind_data.field(m, 'kit', None) or ():
+        if isinstance(e, dict) and e.get('item') == item_id:
+            return e
+    return {}
+
+
+def _throw_attack(item_id: str, own: dict | None = None) -> dict:
+    """The thrown pot as a ranged blow: the alchemist's flask's own fire
+    (data/items/flask.json), unless the kind's kit gives its own crude pot
+    (``throw``: a brigand's rag-stoppered lamp oil is not Greek fire)."""
     t = throw_spec(item_id) or {}
     _cls, e = item_defs().get(item_id, (None, {}))
+    own = own or {}
     dmg = max(1, int(t.get('damage', 1) or 1))
     st = t.get('status') if isinstance(t.get('status'), dict) else {}
     # 'Thrown': a missile (wards.is_missile), never a spell a seal could stop.
-    atk = {'name': 'Thrown ' + str(e.get('name') or 'Fire Pot'), 'damage': f"1d2+{max(0, dmg - 2)}",
+    atk = {'name': 'Thrown ' + str(own.get('name') or e.get('name') or 'Fire Pot'),
+           'damage': str(own.get('damage') or f"1d2+{max(0, dmg - 2)}"),
            'type': 'fire', 'delivery': 'ranged', 'ranged': True, 'thrown_flask': item_id}
-    if st.get('effect'):
-        atk.update({'effect': st['effect'], 'effect_chance': 1.0,
-                    'effect_duration': int(st.get('turns', 3) or 3)})
+    burn = int(own['burn']) if 'burn' in own else int(st.get('turns', 3) or 3)
+    if st.get('effect') and burn > 0:
+        atk.update({'effect': st['effect'], 'effect_chance': 1.0, 'effect_duration': burn})
     return atk
 
 
@@ -212,6 +228,9 @@ def turn(m, player, dungeon, monsters, extra_occupied):
                 return False if _drink(m, player, item_id) else None
     if int(getattr(m, '_flee_timer', 0) or 0) > 0:
         return None
+    import holds
+    if holds.shields(player, m):
+        return None                       # he is inside another: nothing to throw at
     for item_id in kit(m):
         if throw_spec(item_id) is None:
             continue
@@ -221,7 +240,8 @@ def turn(m, player, dungeon, monsters, extra_occupied):
             continue
         if dungeon is not None and not m._has_clear_shot(player.x, player.y, dungeon, monsters or []):
             continue
-        atk = _throw_attack(item_id)
+        own = entry(m, item_id).get('throw')
+        atk = _throw_attack(item_id, own if isinstance(own, dict) else None)
         try:
             import attack_gates
             if attack_gates.blocks_attack(m, atk):
@@ -230,8 +250,9 @@ def turn(m, player, dungeon, monsters, extra_occupied):
             pass
         _spend(m, item_id)
         _cls, _e = item_defs().get(item_id, (None, {}))
-        ai_lines.say(m, ai_lines.fill(m, r.get('throw', ''),
-                                      flask=_with_article(str(_e.get('name') or 'fire pot').lower())),
+        shown = str((own or {}).get('name') if isinstance(own, dict) and own.get('name')
+                    else _e.get('name') or 'fire pot').lower()
+        ai_lines.say(m, ai_lines.fill(m, r.get('throw', ''), flask=_with_article(shown)),
                      r.get('throw_unseen', ''), 'danger')
         m._chosen_blow = atk
         return True
@@ -248,8 +269,8 @@ def leftovers(m) -> list:
         return out
     for item_id in kit(m):
         cls, _e = item_defs().get(item_id, (None, None))
-        if cls is None:
-            continue
+        if cls is None or entry(m, item_id).get('drops', True) is False:
+            continue                       # a crude pot breaks as he falls
         it = make_item_by_id(cls, item_id)
         if it is not None:
             out.append(it)

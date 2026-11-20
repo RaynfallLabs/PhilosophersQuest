@@ -3569,15 +3569,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._advance_turn()
             return
 
+        # Held (a coil, a gullet, a drowning grip: src/holds.py, AI-3): a step
+        # is a struggle; a step into the holder is a blow on it; swallowed,
+        # every step is (no bear trap or binding keeps that way out shut).
+        if self._ways_held_move(dx, dy):
+            return
+
         # Immobilized (bear trap): skip turn
         if self.player.has_effect('immobilized'):
             self.add_message("You're stuck and cannot move!", 'danger')
             self._advance_turn()
-            return
-
-        # Held (a coil, a gullet, a drowning grip: src/holds.py, AI-3): a step
-        # is a struggle; a step into the holder is a blow on it.
-        if self._ways_held_move(dx, dy):
             return
 
         # Slowed: skip every other turn
@@ -5525,6 +5526,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # or a trap's typed blow): said now, not after the hero's next action.
         self._say_affinity_lines()
         habits_mod.world_over(self)              # the world's turn is over (src/habits.py)
+        # A cornered leprechaun's offer, asked once the world's turn is over
+        # (nothing acts while the prompt is open: AI-3, game_monster_ways.py).
+        self._ways_after_world()
 
     # ------------------------------------------------------------------
     # Carrying: Light, Heavy, Burdened, Overloaded (plan: _genart/ui/WEIGHT_PLAN.md;

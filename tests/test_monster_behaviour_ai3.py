@@ -264,10 +264,16 @@ def test_the_curse_waits_for_a_hero_who_is_winning_and_goes_the_riders_road(monk
     assert m._casting == 'binding_litany'
     m._cast_ok = caster_ai.turn(m, hero, d, [m], set())        # the curse lands
     assert hero.status_effects.get('immobilized', 0) > 0
-    # Steadying after it (control_immune), no second curse is chosen.
+    # Steadying after it (control_immune) is a hidden timer the priest cannot
+    # see (the lead's ruling, never omniscient): he may chant again, and the
+    # grace turns the curse aside.
     hero.status_effects = {'control_immune': 3}
     m._spell_cd = {}
-    assert caster_ai.choose(m, caster_ai.Context(hero, d, [m])) is None
+    ch = caster_ai.choose(m, caster_ai.Context(hero, d, [m]))
+    assert ch and ch['id'] == 'binding_litany'
+    caster_ai.act(m, ch, hero, d, [m])
+    caster_ai.turn(m, hero, d, [m], set())
+    assert 'immobilized' not in hero.status_effects
 
 
 def test_wax_in_the_ears_stops_a_spoken_curse(monkeypatch):
@@ -326,7 +332,7 @@ def test_the_book_heals_only_its_own_side():
 
 def test_a_battle_mage_does_not_cast_fire_at_a_hero_who_wards_off_fire():
     hero = Hero(9, 5)
-    hero.status_effects = {'fire_resist': 20}
+    hero.status_effects = {'fire_shield': 20}                  # it glows on him: it can see it
     m = make('battle_mage', 5, 5)
     pick = caster_ai.pick_attack(m, hero, m._distance_attacks())
     assert pick['name'] == 'Frost Bolt'
@@ -340,10 +346,10 @@ def test_a_lich_tries_its_fear_then_blasts_a_hero_who_will_not_fear():
     m = make('lich', 5, 5)
     cands = m._distance_attacks()
     assert caster_ai.pick_attack(m, hero, cands)['name'] == 'Fear Gaze'
-    hero.status_effects = {'control_immune': 3}               # he stood it: steadying
+    hero.status_effects = {'feared': 3}                       # it can see him running
     assert caster_ai.pick_attack(m, hero, cands)['name'] == 'Cold Bolt'
-    hero.status_effects = {'magic_resist': 20}                # a resistance keeps the dread off
-    assert caster_ai.pick_attack(m, hero, cands)['name'] == 'Cold Bolt'
+    hero.status_effects = {'control_immune': 3}               # a hidden grace: it cannot know
+    assert caster_ai.pick_attack(m, hero, cands)['name'] == 'Fear Gaze'
     hero.status_effects = {}
     hero.hp = 60                                              # badly hurt: finish him
     assert caster_ai.pick_attack(m, hero, cands)['name'] == 'Cold Bolt'
@@ -356,7 +362,7 @@ def test_a_thinking_caster_casts_by_the_book_as_a_plain_one_does():
     assert tactical_mind.mind_of(make('battle_mage')) == 'caster'
     d = open_room()
     hero = Hero(9, 5)
-    hero.status_effects = {'fire_resist': 20}
+    hero.status_effects = {'fire_shield': 20}                  # a shield it can see
     m = make('battle_mage', 5, 5)
     for _ in range(10):                                        # never by chance
         assert tactical_mind.choose_cast(m, hero, d, [m])['name'] == 'Frost Bolt'

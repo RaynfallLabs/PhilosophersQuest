@@ -105,7 +105,7 @@ src/
   ways_tells.py       - The third wave's tells for src/tells.py, from each behaviour's own module
   game_monster_ways.py - MonsterWaysMixin: the Game's side (a held hero's step, the auras, the kit's drop, the bargain)
   wards.py            - Wards (data/wards.json): a family kept off (melee, riders, sight, damage), missiles stayed, mist, sanctuary, the Styx; what a strike breaks
-  attack_gates.py     - What a monster cannot use now: silenced (no voice, cast, summon, heal), unstrung (no missile, breath, gaze), babbled (no pack ways)
+  attack_gates.py     - What a monster cannot use now: silenced (no voice, cast, summon, heal), unstrung (missiles only: bows, slings, thrown things), babbled (no pack ways)
   decor.py            - The five domains (themes) and the fixture layer: what stands in a floor
   hazards.py          - Domain hazards (data), trap lean, kin weights and the floor's resident clan
   game_hazards.py     - HazardsMixin: hazards at work on the hero and the monsters; fire vents breathe

@@ -132,7 +132,9 @@ class BehaviourMixin:
         if (m.x, m.y) in getattr(self, 'visible', ()) and t.get('line'):
             self.add_message(ai_lines.fill(m, t['line']), 'danger')
         p = self.player
-        if death_throes.in_blast(m, p.x, p.y, self.dungeon):
+        import holds
+        # (Swallowed, the hero is inside another: no burst outside it reaches him. AI-3)
+        if death_throes.in_blast(m, p.x, p.y, self.dungeon) and not holds.shields(p, m):
             import wards
             dmg = death_throes.blast(m, p.max_hp)
             if dmg > 0:

@@ -46,7 +46,7 @@ def after_blow(m, player, atk, actual: int, msg: str) -> str:
         morale.futile_blow(m, actual)
     except ImportError:
         pass
-    for mod_name in ('life_drain', 'light_shy', 'shove', 'holds'):   # holds: Held Fast (AI-3)
+    for mod_name in ('life_drain', 'light_shy', 'shove', 'holds', 'caster_ai'):   # AI-3: holds, a resist seen
         try:
             mod = __import__(mod_name)
         except ImportError:

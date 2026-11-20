@@ -11743,7 +11743,7 @@
     "attacks": [
       {
         "name": "Plunge",
-        "damage": "2d6+1",
+        "damage": "2d6",
         "type": "pierce",
         "delivery": "blow"
       }
@@ -30652,7 +30652,7 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "6d10+26",
+        "damage": "6d10+20",
         "type": "blunt",
         "delivery": "blow"
       },
@@ -34594,7 +34594,13 @@
     "kit": [
       {
         "item": "flask_of_fire_oil",
-        "chance": 0.15
+        "chance": 0.15,
+        "throw": {
+          "name": "Pot of Lamp Oil",
+          "damage": "1d4+1",
+          "burn": 2
+        },
+        "drops": false
       }
     ]
   },
@@ -39482,7 +39488,7 @@
     "attacks": [
       {
         "name": "Bite Off the Head",
-        "damage": "7d10+40",
+        "damage": "7d10+30",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.45,
