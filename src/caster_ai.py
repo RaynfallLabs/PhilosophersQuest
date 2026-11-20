@@ -77,6 +77,12 @@ KINDS = ('ward', 'control', 'heal', 'escape', 'dispel', 'darkness', 'hurt')
 DISPEL_ORDER = ('hasted', 'shielded', 'displacement', 'fire_shield', 'cold_shield',
                 'reflecting', 'magic_resist', 'invisible', 'regenerating')
 # The hero's statuses that turn a damage type aside (pick_attack avoids them).
+# What the hero's statuses turn aside: a caster counts one only when it can
+# SEE it on him (a glowing shield: _VISIBLE) or it, or one of its band, saw
+# him shrug that kind of blow off on this floor (remember_resist). Never a
+# draught it did not see him drink, never a hidden timer (the lead's ruling,
+# 2026-11-20: never omniscient).
+_VISIBLE = ('fire_shield', 'cold_shield')
 _RESISTED_BY = {'fire': ('fire_resist', 'fire_shield'), 'cold': ('cold_resist', 'cold_shield'),
                 'lightning': ('shock_resist',), 'poison': ('poison_resist',),
                 'magic': ('magic_resist',), 'psionic': ('magic_resist',)}
@@ -170,6 +176,9 @@ def can_target(m, player, dungeon, reach: int) -> bool:
     wall by scent or hearing)."""
     if _cheb(m.x, m.y, player.x, player.y) > reach:
         return False
+    import holds
+    if holds.shields(player, m):
+        return False                    # he is inside another: out of every reach
     if dungeon is None:
         return True
     import senses
@@ -210,11 +219,19 @@ def hero_buff(player):
 
 
 def _lit(player) -> bool:
+    """A light the darkness can put out: a lit light in his hand that is not
+    everlasting, or the Light spell (never the Hero's Lamp, a weapon's own
+    glow or a light with a power: light_shy.snuffable)."""
     try:
         import light_shy
-        return light_shy.glare(player) > 0
+        import lights
     except ImportError:
         return False
+    lt = lights.held(player)
+    if lt is not None and light_shy.snuffable(lt):
+        return True
+    se = getattr(player, 'status_effects', None) or {}
+    return int(se.get('light', 0) or 0) > 0
 
 
 def conditions_hold(m, s: dict, ctx: Context) -> bool:
@@ -282,9 +299,7 @@ def usable(m, s: dict, ctx: Context) -> bool:
             return False
         se = getattr(p, 'status_effects', None) or {}
         if int(se.get(eff, 0) or 0) != 0:
-            return False                # it is on him already
-        if eff in _HARD and int(se.get('control_immune', 0) or 0) > 0:
-            return False                # he is steadying: the curse would slide off
+            return False                # it is on him already (it can see that)
         return True
     if kind == 'dispel':
         return hero_buff(p) is not None
@@ -318,30 +333,44 @@ def choose(m, ctx: Context):
 # Its bolt, chosen with sense
 # ---------------------------------------------------------------------------
 
-def _resisted(player, dtype: str) -> bool:
-    has = getattr(player, 'has_effect', None)
-    if has is None:
-        return False
-    return any(has(s) for s in _RESISTED_BY.get(str(dtype or ''), ()))
+def _resisted(player, dtype: str, m=None) -> bool:
+    """The caster knows the hero turns this kind of blow aside: a shield it
+    can see glowing on him, or it (or its band) saw him shrug one off."""
+    dtype = str(dtype or '')
+    se = getattr(player, 'status_effects', None) or {}
+    if any(int(se.get(s, 0) or 0) != 0 for s in _RESISTED_BY.get(dtype, ()) if s in _VISIBLE):
+        return True
+    return m is not None and dtype in (m.__dict__.get('_seen_resist') or ())
+
+
+def remember_resist(m, dtype: str) -> None:
+    """It saw its blow of ``dtype`` turned aside: it and its band know it
+    (a new set each time: copies share none)."""
+    who = [m]
+    band = m.__dict__.get('_band')
+    if band is not None:
+        who += [o for o in (m.__dict__.get('_cached_all_monsters') or ())
+                if o is not m and getattr(o, 'alive', False) and o.__dict__.get('_band') == band]
+    for o in who:
+        o._seen_resist = set(o.__dict__.get('_seen_resist') or ()) | {dtype}
+
+
+def after_blow(m, player, atk, actual: int, msg: str) -> str:
+    """ai_blow.after_blow: a typed blow of a caster's that the hero's
+    resistance turned aside is seen to fizzle; it remembers."""
+    dtype = str((atk or {}).get('type', '') or '')
+    if dtype in _RESISTED_BY and is_caster(m):
+        se = getattr(player, 'status_effects', None) or {}
+        if any(int(se.get(s, 0) or 0) != 0 for s in _RESISTED_BY[dtype]):
+            remember_resist(m, dtype)
+    return msg
 
 
 def rider_wasted(player, eff: str) -> bool:
-    """The curse a bolt carries would not take now: it is on him already,
-    he is steadying after a hold, Clear-Headed after a confusion, or a
-    resistance of his keeps it off (status_effects._RESIST_BLOCKS)."""
+    """The curse a bolt carries is on him already: the caster can see that.
+    (A hidden grace or a draught's ward it cannot know.)"""
     se = getattr(player, 'status_effects', None) or {}
-    if int(se.get(eff, 0) or 0) != 0:
-        return True
-    if eff in _HARD and int(se.get('control_immune', 0) or 0) != 0:
-        return True
-    try:
-        import status_effects
-        for resist, blocked in status_effects._RESIST_BLOCKS.items():
-            if eff in blocked and int(se.get(resist, 0) or 0) != 0:
-                return True
-    except (ImportError, AttributeError):
-        pass
-    return False
+    return int(se.get(eff, 0) or 0) != 0
 
 
 def _avg(atk) -> float:
@@ -369,7 +398,7 @@ def attack_score(m, player, atk: dict, strongest: float = 0.0) -> float:
     if strongest > 0:
         hurt = getattr(player, 'hp', 1) < 0.5 * max(1, getattr(player, 'max_hp', 1))
         sc += (1.0 if hurt else 0.5) * _avg(atk) / strongest
-    if _resisted(player, atk.get('type', '')):
+    if _resisted(player, atk.get('type', ''), m):
         sc -= 3.0
     return sc
 
@@ -559,9 +588,10 @@ def take_spell(m):
     return m.__dict__.pop('_chosen_blow', None)
 
 
-def spoil(m) -> bool:
+def spoil(m, why: str = 'blow') -> bool:
     """A blow landed while it chants (Monster.take_damage, never a wound's
-    tick): the spell breaks. It is spent (its cooldown runs). True if so."""
+    tick), or it was put to sleep, held, stunned, frightened or charmed
+    (tick): the spell breaks. It is spent (its cooldown runs). True if so."""
     sid = m.__dict__.get('_casting')
     if not sid:
         return False
@@ -570,8 +600,21 @@ def spoil(m) -> bool:
     counts = dict(m.__dict__.get('_spells_spoiled') or {})
     counts[s.get('kind', '')] = counts.get(s.get('kind', ''), 0) + 1
     m._spells_spoiled = counts
-    ai_lines.say(m, _line('spoil', m, s), '', 'success')
+    key = 'spoil' if why == 'blow' else 'spoil_held'
+    lines = rules().get('lines') or {}
+    ai_lines.say(m, ai_lines.fill(m, lines.get(key) or lines.get('spoil', '')), '', 'success')
     return True
+
+
+# A caster in one of these cannot keep a chant going (the conditions that
+# stop its turn: Monster.take_turn's held gate and its mind gate). Pinned
+# (immobilized) it can still speak.
+_STOPS_CHANT = ('sleeping', 'paralyzed', 'stunned', 'frozen', 'petrifying')
+
+
+def _chant_stopped(m) -> bool:
+    return (any(m.has_effect(e) for e in _STOPS_CHANT)
+            or m._under('feared') or m._under('charmed'))
 
 
 def tick(m) -> None:
@@ -580,6 +623,8 @@ def tick(m) -> None:
     cd = m.__dict__.get('_spell_cd')
     if cd:
         m._spell_cd = {k: v - 1 for k, v in cd.items() if v - 1 > 0}
+    if m.__dict__.get('_casting') and _chant_stopped(m):
+        spoil(m, 'held')                  # asleep, held, frightened...: the chant is lost
     if m.__dict__.get('_ward_base_kept') and not m.has_effect('spell_ward'):
         m.damage_ward = float(m.__dict__.pop('_ward_base', 0.0) or 0.0)
         m.__dict__.pop('_ward_base_kept', None)

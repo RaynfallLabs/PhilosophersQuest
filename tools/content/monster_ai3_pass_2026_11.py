@@ -36,13 +36,13 @@ HINTS = ROOT / 'data' / 'hints.json'
 HINTS_NEW: dict = {
     '4': [
         "Jonah came out of the great fish alive. Whatever takes a man whole can be cut open from within.",
-        "A brigand carries something for a bad day. Make his a short one, and whatever he saved is yours.",
+        "A bandit captain carries something for a bad day. Make his a short one, and whatever he saved is yours.",
         "Ask any Irishman: a leprechaun pays only when there is nowhere left for him to run.",
     ],
     '5': [
         "A spell takes a breath to say. A blow struck in that breath is worth two struck after it.",
         "The dead in their mounds guard what is theirs and no more. Leave the barrow, and the barrow lets you go.",
-        "The salamander's heat and the frost giant's cold reach a pace beyond their hands.",
+        "Stand beside a fire elemental or a frost giant and you burn or freeze, though neither has struck you.",
     ],
 }
 
@@ -256,6 +256,14 @@ HOLDS: dict = {
     ('each_uisce', 'Drown Drag'): {'hold': _hold('drag', 'cold', 0.10), **_NO_RIDER},
     ('mere_wife', 'Drag to the Mere'): {'hold': _hold('drag', 'blunt', 0.08), **_NO_RIDER},
     ('sobek_warrior', 'Death Roll'): {'hold': _hold('drag', 'slash', 0.10), **_NO_RIDER},
+    # Lurkers whose surprise blow (x1.75) went over the rubric's one-turn cap
+    # (25% of the hero's health at their peak floor; the AI-3 audit, D8). By
+    # lore their power is the drop, not the dice: the piercer's plunge is a
+    # snail's weight on a spike, the treant's slam and the gashadokuro's bite
+    # are slow and terrible, and both come first from hiding.
+    ('piercer', 'Plunge'): {'damage': '2d6'},
+    ('corrupted_treant', 'Slam'): {'damage': '6d10+20'},
+    ('gashadokuro', 'Bite Off the Head'): {'damage': '7d10+30'},
 }
 
 # ---------------------------------------------------------------------------
@@ -338,7 +346,12 @@ def _k(item, chance):
 KITS: dict = {
     'bandit_captain': [_k('potion_of_healing', 0.3)],
     'bandit_kingpin': [_k('potion_of_extra_healing', 0.4), _k('flask_of_fire_oil', 0.3)],
-    'bandit_thug': [_k('flask_of_fire_oil', 0.15)],
+    # A thug's is a rag-stoppered pot of lamp oil, badly thrown: far weaker
+    # than the alchemist's flask (the audit: the flask's own 16 fire was
+    # 37-46% of a floor-4 hero's health), and it breaks as he falls.
+    'bandit_thug': [{'item': 'flask_of_fire_oil', 'chance': 0.15,
+                     'throw': {'name': 'Pot of Lamp Oil', 'damage': '1d4+1', 'burn': 2},
+                     'drops': False}],
     'mercenary_veteran': [_k('potion_of_healing', 0.3)],
     'veteran_knight': [_k('potion_of_extra_healing', 0.3)],
     'orc_warchief': [_k('flask_of_fire_oil', 0.35), _k('potion_of_healing', 0.25)],
@@ -396,6 +409,7 @@ RULES: dict = {
             'cast_darkness': "{The} closes {his} fist, and the dark comes down.",
             'cast_escape': "{The} steps into nothing and is four paces off.",
             'spoil': "The blow breaks {the}'s chant!",
+            'spoil_held': "{The}'s chant falls silent, broken.",
             'ward_fades': "The ward about {the} fades away.",
             'gaze_blind': "You cannot meet a gaze you cannot see.",
             'resisted': "The curse finds no hold on you.",
@@ -431,9 +445,9 @@ RULES: dict = {
             'struggle_fail': "You fight {the}'s grip, but it holds you fast.",
             'free_struggle_constrict': "You twist out of {the}'s coils!",
             'free_struggle': "You wrench yourself free of {the}!",
-            'free_cut_constrict': "Your blow breaks {the}'s coils! You are free.",
-            'free_cut_swallow': "You hack your way out of {the}!",
-            'free_cut': "You tear free of {the}'s grip!",
+            'free_cut_constrict': "{The}'s coils break apart! You are free.",
+            'free_cut_swallow': "{The}'s gut splits open, and you climb out!",
+            'free_cut': "{The}'s grip breaks! You are free.",
             'free_dead_swallow': "You climb out of {the}'s body.",
             'free_dead': "{The}'s grip goes slack. You are free.",
             'free_held': "{The}'s grip goes slack. You are free.",
@@ -453,6 +467,12 @@ RULES: dict = {
             'heat': "The heat of {the} scorches you for {damage} damage.",
             'cold': "The cold of {the} bites into you for {damage} damage.",
         },
+        'unseen': {
+            'heat': "Heat beats at you from somewhere close. ({damage} damage)",
+            'cold': "A bitter cold reaches you from somewhere close. ({damage} damage)",
+            'stench': "A foul reek from somewhere close turns your stomach.",
+            'stench_steady': "You master your stomach against the reek.",
+        },
     },
     'home_ground': {
         '_doc': "src/home_ground.py (Home Ground). A 'territorial' kind lets the hero go once he is more than lair_radius + slack tiles from its home and walks back; it knows him again within lair_radius; on its own ground it never breaks. A kind's 'lair_line' before 'line'.",
@@ -460,6 +480,8 @@ RULES: dict = {
         'slack': 2,
         'line': "{The} stops at the edge of {his} ground and watches you go.",
         'line_unseen': '',
+        'roused_turns': 5,
+        'roused_line': "{The} turns on you: {he} will not be struck and walk away.",
     },
     'kit': {
         '_doc': "src/monster_kit.py (Uses What It Carries). A kind's 'kit' [{item, chance}] is rolled once. Under drink_below of its health a healing potion it carries (or stole) is drunk with its turn; a flask of fire oil is thrown at a hero throw_range tiles off with a clear throw. What is left falls where it dies. {potion} {potion_bare} {flask} {amount}.",
@@ -482,6 +504,7 @@ RULES: dict = {
         'accept_line': "{The} drops {his} purse and is gone.",
         'refuse_line': "{The} squares up to you.",
         'ask_line': "He holds up a fat purse: his gold for his freedom. Take it and let him go?",
+        'void_line': "The chance is gone, and the purse with it.",
     },
     'surprise': {
         '_doc': "src/surprise.py (Lurkers Keep Their Promise). An ambusher springs when the hero is within spring_reach tiles with nothing between them; unseen till then, its first blow that lands is a surprise (x1.75, as a mimic's). Spotted first, or a mimic of a kind he knows, it surprises no one.",
@@ -531,7 +554,7 @@ TELLS_NEW: dict = {
     'aura_cold': {
         'sign': "Frost creeps over the stones where {the} stands.",
         'does': "Standing beside {him} numbs you with cold every turn.",
-        'counter': "A ward or a draught against cold keeps it off; a sling, a bow or a wand keeps you out of it.",
+        'counter': "A draught against cold halves it and a cold shield turns it; a sling, a bow or a wand keeps you out of it.",
     },
     'aura_stench': {
         'sign': "A heavy reek hangs in the air round {the}.",
@@ -680,13 +703,44 @@ def apply_tells(raw: str) -> tuple:
         changes += [f"tell {k}" for k in missing]
     d = json.loads(raw)
     for k, e in TELLS_NEW.items():
+        for part, text in e.items():
+            cur = d['effects'][k].get(part)
+            if cur == text:
+                continue
+            old = f'"{part}": {json.dumps(cur, ensure_ascii=False)}'
+            seg_start = raw.index(f'    "{k}": {{')
+            seg_end = raw.index('    }', seg_start)
+            seg = raw[seg_start:seg_end]
+            if seg.count(old) != 1:
+                raise SystemExit(f"tell {k}.{part}: old text not found once")
+            seg = seg.replace(old, f'"{part}": {json.dumps(text, ensure_ascii=False)}')
+            raw = raw[:seg_start] + seg + raw[seg_end:]
+            changes.append(f"tell {k}.{part}")
+    d = json.loads(raw)
+    for k, e in TELLS_NEW.items():
         if d['effects'].get(k) != e:
-            raise SystemExit(f"tell {k} differs from the tool's text: edit it by hand or here")
+            raise SystemExit(f"tell {k} differs from the tool's text")
     return raw, changes
+
+
+# Hints first written wrong (the AI-3 audit, 2026-11-20): there is no
+# salamander kind and a frost giant's cold is felt only beside him; the
+# brigand carries no kit.
+HINTS_REPLACED = {
+    "A brigand carries something for a bad day. Make his a short one, and whatever he saved is yours.":
+        "A bandit captain carries something for a bad day. Make his a short one, and whatever he saved is yours.",
+    "The salamander's heat and the frost giant's cold reach a pace beyond their hands.":
+        "Stand beside a fire elemental or a frost giant and you burn or freeze, though neither has struck you.",
+}
 
 
 def apply_hints(d: dict) -> list:
     changes = []
+    for tier, lines in d.items():
+        for i, h in enumerate(lines):
+            if h in HINTS_REPLACED:
+                lines[i] = HINTS_REPLACED[h]
+                changes.append(f"hint {tier} rewritten: {h[:30]}")
     for tier, lines in HINTS_NEW.items():
         for h in lines:
             if h not in d[tier]:

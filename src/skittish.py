@@ -86,6 +86,11 @@ def turn(m, player, dungeon, monsters, extra_occupied):
         if morale.flee_away(m, player, dungeon, monsters, extra_occupied):
             return False
         return False
+    if int(getattr(m, '_flee_timer', 0) or 0) > 0:
+        m.__dict__.pop('_darting', None)  # a broken coward runs: morale first, no darts
+        if morale.flee_away(m, player, dungeon, monsters, extra_occupied):
+            return False
+        return _cornered(m, player)
     darting = bool(m.__dict__.pop('_darting', False))
     if not loot and (darting or near <= d <= far) and turned_away(player, m):
         return _dart(m, player, dungeon, monsters, extra_occupied, r)

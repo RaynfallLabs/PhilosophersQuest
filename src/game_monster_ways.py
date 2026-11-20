@@ -40,7 +40,8 @@ class MonsterWaysMixin:
         line = holds.validate(p, self.monsters)
         if line:
             self.add_message(line, 'success')
-        for text, colour in auras.pulse(self.monsters, p, self._sees_monster):
+        for text, colour in auras.pulse(self.monsters, p, self._sees_monster,
+                                        dungeon=getattr(self, 'dungeon', None)):
             if text:
                 self.add_message(text, colour)
         if p.hp <= 0:
@@ -66,7 +67,7 @@ class MonsterWaysMixin:
             if known is not None and learn not in known:
                 known.add(learn)
         if m.__dict__.get('_wants_bargain') and m.alive:
-            self._ways_offer_bargain(m)
+            self._bargain_pending = m           # asked once the world's turn is over
 
     def _ways_shield(self, m) -> bool:
         """True when this creature cannot strike the hero: he is inside
@@ -77,12 +78,29 @@ class MonsterWaysMixin:
     # The leprechaun's bargain (src/skittish.py)
     # ------------------------------------------------------------------
 
+    def _ways_after_world(self) -> None:
+        """After the world's turn (main._advance_turn, last): a cornered
+        leprechaun's offer waiting is asked now, when no pet, escort or
+        monster acts until the hero answers."""
+        m = self.__dict__.pop('_bargain_pending', None)
+        if m is not None and m.__dict__.get('_wants_bargain'):
+            self._ways_offer_bargain(m)
+
+    def _ways_bargain_stands(self, m) -> bool:
+        """The offer still stands: he is alive, on this floor, unpaid, and
+        still cornered beside the hero."""
+        p = self.player
+        return bool(m is not None and getattr(m, 'alive', False) and m in self.monsters
+                    and not m.__dict__.get('_bargained') and not m.__dict__.get('_bargain_refused')
+                    and max(abs(m.x - p.x), abs(m.y - p.y)) <= 2 and not p.is_dead())
+
     def _ways_offer_bargain(self, m) -> None:
         import skittish
         from game_states import STATE_PLAYER
         if self.state != STATE_PLAYER or self.player.is_dead():
-            return                              # never in a quiz or a menu: next turn
-        if not self._sees_monster(m):
+            self._bargain_pending = m           # never in a quiz or a menu: after the next turn
+            return
+        if not self._ways_bargain_stands(m) or not self._sees_monster(m):
             m.__dict__.pop('_wants_bargain', None)
             return
         from monster import the_name
@@ -93,7 +111,9 @@ class MonsterWaysMixin:
             self._ways_bargain_taken(m)
 
         def _no():
-            self.add_message(skittish.refuse(m), 'warning')
+            if self._ways_bargain_stands(m):
+                self.add_message(skittish.refuse(m), 'warning')
+            m.__dict__.pop('_wants_bargain', None)
 
         self._ask(title, [text], [('Y', 'Yes', 'Take the purse and let him go', _yes),
                                   ('N', 'No', 'Keep him cornered and fight', _no)],
@@ -103,6 +123,10 @@ class MonsterWaysMixin:
         import skittish
         import theft
         from items import add_gold_to_tile
+        if not self._ways_bargain_stands(m):
+            m.__dict__.pop('_wants_bargain', None)
+            self.add_message(skittish.rules().get('void_line', ''), 'info')
+            return                              # dead, gone or loose: the bargain is void
         gold = skittish.offer_gold(m, random)
         line = skittish.accept(m)
         if gold > 0:
@@ -124,6 +148,9 @@ class MonsterWaysMixin:
     # ------------------------------------------------------------------
 
     def _ways_on_kill(self, m, banished: bool = False) -> None:
+        m.__dict__.pop('_wants_bargain', None)  # a dead leprechaun offers nothing
+        if self.__dict__.get('_bargain_pending') is m:
+            self._bargain_pending = None
         if holds.is_holder(m, self.player):
             line = holds.release(self.player, m, 'dead')
             if line:
@@ -177,11 +204,11 @@ class MonsterWaysMixin:
             holds.release(p, None, 'dead')
             return False
         target = monster_at_tile(self.monsters, p.x + dx, p.y + dy)
-        if target is m:
-            return False                        # a blow on the holder: the fight goes on
         if holds.swallowed(p):
             self._start_combat(m)               # inside it, every way is its gut
             return True
+        if target is m or p.has_effect('immobilized'):
+            return False                        # a blow on the holder; or stuck fast (main says so)
         freed, text = holds.struggle(p, m)
         if text:
             self.add_message(text, 'success' if freed else 'warning')

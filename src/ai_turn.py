@@ -52,7 +52,15 @@ def turn(m, player, dungeon, monsters, extra_occupied=None):
 
 
 def blow(m, player):
-    """(damage, line) for the blow this turn's behaviour chose, or None."""
+    """(damage, line) for the blow this turn's behaviour chose, or None.
+
+    A lurker's surprise (src/surprise.py) is its FIRST blow, landed or not:
+    a drop that misses is spent, so 'drops on you from hiding' is never said
+    of a blow turns later."""
+    if m.__dict__.get('_mimic_surprise'):
+        if m.__dict__.get('_surprise_tried'):
+            m._mimic_surprise = False
+        m._surprise_tried = True
     import holds
     got = holds.blow(m, player)
     if got is not None:

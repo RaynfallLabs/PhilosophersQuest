@@ -257,6 +257,7 @@
       "cast_darkness": "{The} closes {his} fist, and the dark comes down.",
       "cast_escape": "{The} steps into nothing and is four paces off.",
       "spoil": "The blow breaks {the}'s chant!",
+      "spoil_held": "{The}'s chant falls silent, broken.",
       "ward_fades": "The ward about {the} fades away.",
       "gaze_blind": "You cannot meet a gaze you cannot see.",
       "resisted": "The curse finds no hold on you.",
@@ -301,9 +302,9 @@
       "struggle_fail": "You fight {the}'s grip, but it holds you fast.",
       "free_struggle_constrict": "You twist out of {the}'s coils!",
       "free_struggle": "You wrench yourself free of {the}!",
-      "free_cut_constrict": "Your blow breaks {the}'s coils! You are free.",
-      "free_cut_swallow": "You hack your way out of {the}!",
-      "free_cut": "You tear free of {the}'s grip!",
+      "free_cut_constrict": "{The}'s coils break apart! You are free.",
+      "free_cut_swallow": "{The}'s gut splits open, and you climb out!",
+      "free_cut": "{The}'s grip breaks! You are free.",
       "free_dead_swallow": "You climb out of {the}'s body.",
       "free_dead": "{The}'s grip goes slack. You are free.",
       "free_held": "{The}'s grip goes slack. You are free.",
@@ -322,6 +323,12 @@
       "stench_steady": "You master your stomach against the reek of {the}.",
       "heat": "The heat of {the} scorches you for {damage} damage.",
       "cold": "The cold of {the} bites into you for {damage} damage."
+    },
+    "unseen": {
+      "heat": "Heat beats at you from somewhere close. ({damage} damage)",
+      "cold": "A bitter cold reaches you from somewhere close. ({damage} damage)",
+      "stench": "A foul reek from somewhere close turns your stomach.",
+      "stench_steady": "You master your stomach against the reek."
     }
   },
   "home_ground": {
@@ -329,7 +336,9 @@
     "lair_radius": 8,
     "slack": 2,
     "line": "{The} stops at the edge of {his} ground and watches you go.",
-    "line_unseen": ""
+    "line_unseen": "",
+    "roused_turns": 5,
+    "roused_line": "{The} turns on you: {he} will not be struck and walk away."
   },
   "kit": {
     "_doc": "src/monster_kit.py (Uses What It Carries). A kind's 'kit' [{item, chance}] is rolled once. Under drink_below of its health a healing potion it carries (or stole) is drunk with its turn; a flask of fire oil is thrown at a hero throw_range tiles off with a clear throw. What is left falls where it dies. {potion} {potion_bare} {flask} {amount}.",
@@ -354,7 +363,8 @@
     "offer_line": "{The}, cornered, offers you gold to let {him} go.",
     "accept_line": "{The} drops {his} purse and is gone.",
     "refuse_line": "{The} squares up to you.",
-    "ask_line": "He holds up a fat purse: his gold for his freedom. Take it and let him go?"
+    "ask_line": "He holds up a fat purse: his gold for his freedom. Take it and let him go?",
+    "void_line": "The chance is gone, and the purse with it."
   },
   "surprise": {
     "_doc": "src/surprise.py (Lurkers Keep Their Promise). An ambusher springs when the hero is within spring_reach tiles with nothing between them; unseen till then, its first blow that lands is a surprise (x1.75, as a mimic's). Spotted first, or a mimic of a kind he knows, it surprises no one.",
