@@ -683,12 +683,13 @@ def test_a_sick_hero_heals_half_and_rest_stops():
     assert p.restore_hp(40) == 40
 
 
-def test_a_monster_disease_lingers_to_the_engine_cap():
-    assert grave_rot.linger(4) == 40
-    assert grave_rot.linger(8) == 60
+def test_a_disease_lasts_as_long_as_its_kinds_lore_says():
+    assert grave_rot.linger(make('giant_rat'), 4) == 4          # a rat's bite is short
+    assert grave_rot.linger(make('plague_zombie'), 6) == 24
+    assert grave_rot.linger(make('mummy'), 8) == 60             # mummy rot, to the cap
     grave_rot.ENABLED = False
     try:
-        assert grave_rot.linger(6) == 6
+        assert grave_rot.linger(make('mummy'), 6) == 6
     finally:
         grave_rot.ENABLED = True
 
@@ -993,3 +994,17 @@ def test_the_hints_tell_of_the_new_ways():
     text = ' '.join(h for lst in hints.values() for h in lst).lower()
     for word in ('draw breath', 'runner', 'lookout', 'chant', 'burst'):
         assert word in text, word
+
+
+def test_a_withdrawing_giant_strikes_a_hero_who_presses_it(monkeypatch):
+    dun = open_room()
+    giant = _hurt(make('hill_giant', 10, 10), 0.2)
+    hero = Hero(11, 10)
+    morale.turn(giant, hero, [giant], rng=Dice(10))
+    assert giant._flee_timer > 0 and morale.style(giant) == 'withdraw'
+    monkeypatch.setattr(random, 'random', lambda: 0.0)
+    assert morale.run(giant, hero, dun, [giant], set()) is True      # it strikes as it goes
+    monkeypatch.setattr(random, 'random', lambda: 0.99)
+    x0 = giant.x
+    assert morale.run(giant, hero, dun, [giant], set()) is False     # or backs off a step
+    assert giant.x < x0

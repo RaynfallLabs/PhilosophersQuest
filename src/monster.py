@@ -2056,7 +2056,7 @@ class Monster:
         chance   = atk.get('effect_chance', 0.30)
         duration = roll_duration(atk.get('effect_duration', 5))
         if effect_id == 'diseased':
-            duration = grave_rot.linger(duration)    # it lingers (Grave Rot, AI-1)
+            duration = grave_rot.linger(self, duration)   # it may linger (Grave Rot, AI-1)
         # The minor slots' guards shrug off a matching rider (guards.py):
         # the helm a stare's paralysis, the boots a slowing, the shirt a
         # poisoning... The roll that would have landed and did not is told.

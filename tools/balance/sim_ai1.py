@@ -27,17 +27,21 @@ a knob that defaults on (KNOBS, merged into difficulty_sim.KNOB_DEFAULTS), so
              (floor_start), all of it from a Mercy prayer at chain 4
              (prayed). Off: the old CON -1 once a floor. The physician's
              Restore is not modelled (the stall's services are its own).
-  ai_rot     Grave Rot (src/grave_rot.py): a disease lingers (x10, at most
-             60 turns), no regen in a fight while it lasts (regen_ok), heals
+  ai_rot     Grave Rot (src/grave_rot.py): a disease lasts as its kind's lore
+             says (disease_linger), no regen in a fight while it lasts (regen_ok), heals
              halved (the real Player.restore_hp); Mercy at chain 4 cures it.
              Between fights the simulator lets debuffs run out for free (its
              own rule), so the lost rest is under-counted.
   ai_light   Light-Shy (src/light_shy.py): the mastery hero (tactics=1)
-             facing a light-shy kind spends his first action raising a
-             light (the Light spell's glare: fight_start); in its glare a
-             light-shy creature needs +4 to hit (real _resolve_blow) and a
-             troll cannot regenerate (world_tick). A snuffer's blow puts it
-             out. The shield the light would cost is not modelled.
+             facing a troll (a light-shy kind that regenerates, where the
+             lore makes the light decisive) spends his first action raising
+             a carried light (glare 1: fight_start, _sim_glare); in it the
+             troll needs +2 to hit (real _resolve_blow) and cannot mend
+             (world_tick). The other light-shy kinds (kobolds, drow,
+             shadows) meet an unlit hero in the simulator, and the Light
+             spell's stiffening is not modelled: the simulator values the
+             light less than a kid who carries one would get. The shield a
+             carried light costs is not modelled either.
   ai_vanish  Gone Again (src/gone_again.py): the simulator's hit-and-run
              model (gone for 9-12 turns) is now right for every kind. Off:
              the old game, where a non-phasing hider stood in plain sight
@@ -114,19 +118,35 @@ def apply_flags(knobs: dict) -> None:
     death_throes.ENABLED = bool(knobs.get('ai_throes', 1))
     relurk.ENABLED = bool(knobs.get('ai_relurk', 1))
     shove.ENABLED = bool(knobs.get('ai_shove', 1))
+    if not getattr(light_shy.glare, '_sim', False):
+        light_shy.glare = _sim_glare
+
+
+_real_glare = light_shy.glare
+
+
+def _sim_glare(player) -> int:
+    """The simulator's hero holds no light item (his off hand keeps its
+    shield); the light he raises against a troll is a carried light's
+    glare (fight_start)."""
+    return max(_real_glare(player), 1 if getattr(player, '_sim_torch', False) else 0)
+
+
+_sim_glare._sim = True
 
 
 def fight_start(run, group) -> None:
     """Before the first blow: the mastery hero raises a light against a
     light-shy foe (one action)."""
     k = run.knobs
-    if not (k.get('ai_light', 1) and k.get('tactics')):
-        return
-    if any(light_shy.shy(m) for m in group):
-        p = run.p
-        p.status_effects['light'] = max(int(p.status_effects.get('light', 0) or 0), 60)
-        run._ai1_skip = int(getattr(run, '_ai1_skip', 0) or 0) + 1
+    p = run.p
+    trolls = (k.get('ai_light', 1) and k.get('tactics')
+              and any(light_shy.shy(m) and int(getattr(m, 'regeneration', 0) or 0) > 0
+                      for m in group))
+    if trolls and not getattr(p, '_sim_torch', False):
+        run._ai1_skip = int(getattr(run, '_ai1_skip', 0) or 0) + 1   # raising it
         run.fs['ai_lit'] = run.fs.get('ai_lit', 0) + 1
+    p._sim_torch = bool(trolls)
 
 
 def lost_action(run) -> bool:
@@ -268,12 +288,15 @@ def morale_turn(run, m):
     if int(m._flee_timer or 0) > 0:
         if was <= 0:
             st = morale.style(m)
+            run.fs['ai_broke_' + st] = run.fs.get('ai_broke_' + st, 0) + 1
             queue = getattr(run, '_ai1_queue', None) or []
             if st in ('regroup', 'yield') and any(faction.same_side(m, o) for o in queue):
                 m._sim_left = 'regroup'
             elif st == 'yield' and random.random() < 0.5:
                 morale.give_up(m)               # caught with no friend to run to
                 m._sim_left = 'yield'
+        if morale.style(m) == 'withdraw' and random.random() < morale.withdraw_strikes():
+            return None                         # a fighting withdrawal: it strikes
         return False
     return None
 

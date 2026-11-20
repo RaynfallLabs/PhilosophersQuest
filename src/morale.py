@@ -22,7 +22,9 @@ its family's, else the default; the mindless tags never):
             within reach, and reaching them rouses them all to the hero: he
             meets three goblins, not one (with none to run to, it withdraws);
   withdraw  giants, demons, dragons, the fair folk...: a fighting withdrawal
-            for a few turns, then back into the fight;
+            for a few turns (it backs off a step at a time, and half the
+            time a hero who presses it is struck as it goes), then back
+            into the fight;
   yield     a bandit, a mercenary, a cult initiate: as regroup, but with no
             friend to run to and nowhere to go, it throws down its weapon
             and its purse and begs; it never strikes again (the hero may
@@ -315,6 +317,9 @@ def run(m, player, dungeon, monsters, extra_occupied):
             import senses
             if senses.step_toward(m, dungeon, (kin.x, kin.y), monsters, extra_occupied, player):
                 return False
+    if (m._adjacent_to(player) and style(m) == 'withdraw'
+            and random.random() < withdraw_strikes()):
+        return True                           # a fighting withdrawal: it strikes
     if flee_away(m, player, dungeon, monsters, extra_occupied):
         return False
     if not m._adjacent_to(player):
@@ -329,6 +334,11 @@ def run(m, player, dungeon, monsters, extra_occupied):
     if ai_lines.once(m, 'at_bay'):
         ai_lines.say(m, ai_lines.fill(m, (r.get('lines') or {}).get('at_bay', '')), '')
     return True
+
+
+def withdraw_strikes() -> float:
+    """How often a withdrawing creature strikes the hero who presses it."""
+    return float(rules().get('withdraw_strikes', 0.5))
 
 
 def give_up(m) -> None:

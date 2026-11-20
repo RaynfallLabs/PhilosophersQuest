@@ -1987,7 +1987,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "disease_linger": 10
   },
   "giant_spider": {
     "name": "giant spider",
@@ -6525,7 +6526,8 @@
     "opener": {
       "attack": "Shadow Spit",
       "range": 4
-    }
+    },
+    "disease_linger": 6
   },
   "hugin_raven": {
     "name": "Huginn Raven",
@@ -8307,7 +8309,8 @@
       "effect_duration": 8,
       "line": "{The} bursts in a hot wind of plague!",
       "warn_line": "A sick wind gathers about {the}."
-    }
+    },
+    "disease_linger": 8
   },
   "lahamu": {
     "name": "Lahamu",
@@ -8779,7 +8782,8 @@
     "thac0_lore": 5,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "disease_linger": 5
   },
   "gibbering_mouther": {
     "name": "Gibbering Mouther",
@@ -11900,7 +11904,8 @@
     "opener": {
       "attack": "Tentacles",
       "range": 1
-    }
+    },
+    "disease_linger": 5
   },
   "xorn": {
     "name": "Xorn",
@@ -13543,7 +13548,8 @@
       "effect_duration": 4,
       "line": "{The} bursts, spattering you with rot!",
       "warn_line": "{The}'s belly swells, tight and green."
-    }
+    },
+    "disease_linger": 4
   },
   "rotting_zombie": {
     "name": "Rotting Zombie",
@@ -15916,7 +15922,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "disease_linger": 3
   },
   "lesser_death": {
     "name": "Lesser Death",
@@ -30559,7 +30566,8 @@
     "status_immune": [
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "disease_linger": 5
   },
   "zombie_legion": {
     "name": "zombie legion",
@@ -31063,7 +31071,8 @@
       "effect_duration": 8,
       "line": "{The} bursts in a spray of plague!",
       "warn_line": "{The} bubbles and heaves."
-    }
+    },
+    "disease_linger": 8
   },
   "abyssal_behemoth": {
     "name": "abyssal behemoth",
@@ -31833,7 +31842,8 @@
     "opener": {
       "attack": "Chaos Breath",
       "range": 5
-    }
+    },
+    "disease_linger": 5
   },
   "flesh_colossus": {
     "name": "flesh colossus",
@@ -34272,7 +34282,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "disease_linger": 4
   },
   "draugr_wight": {
     "name": "draugr wight",
@@ -34904,7 +34915,8 @@
     "opener": {
       "attack": "Hex Bolt",
       "range": 5
-    }
+    },
+    "disease_linger": 4
   },
   "moss_sentinel": {
     "name": "Moss Sentinel",
@@ -35353,7 +35365,8 @@
     "opener": {
       "attack": "Miasma",
       "range": 5
-    }
+    },
+    "disease_linger": 6
   },
   "vine_horror": {
     "name": "Vine Horror",
@@ -38242,7 +38255,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "disease_linger": 8
   },
   "stheno_gorgon": {
     "name": "Stheno the Gorgon",

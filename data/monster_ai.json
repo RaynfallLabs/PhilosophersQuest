@@ -28,7 +28,7 @@
     }
   },
   "morale": {
-    "_doc": "src/morale.py. A creature's style and nerve: its kind's own morale_style / morale in monsters.json, else its family's row, else default; a tag in never_tags, `fearless` or a status_immune 'feared' make it never. A check (2d10 over morale, less the trigger's penalty, breaks it) the first time it falls under break_share of its health, when one of its side falls within kin_sight while it is under courage_share, and after futile_blows landed blows in a row that did nothing. Healed above courage_share it steadies. A flight lasts flee_turns (a bolt bolt_turns); regroup runs to its side within rally_reach and rouses those within rally_rouse of the one it reached; cornered beside the hero it is at bay at_bay_turns turns, at_bay_hit better to hit. A bolted creature has given up the fight (cowed): it keeps away from a hero it can see.",
+    "_doc": "src/morale.py. A creature's style and nerve: its kind's own morale_style / morale in monsters.json, else its family's row, else default; a tag in never_tags, `fearless` or a status_immune 'feared' make it never. A check (2d10 over morale, less the trigger's penalty, breaks it) the first time it falls under break_share of its health, when one of its side falls within kin_sight while it is under courage_share, and after futile_blows landed blows in a row that did nothing. Healed above courage_share it steadies. A flight lasts flee_turns (a bolt bolt_turns); regroup runs to its side within rally_reach and rouses those within rally_rouse of the one it reached; a withdrawing creature strikes a hero who presses it withdraw_strikes of the time (a fighting withdrawal); cornered beside the hero it is at bay at_bay_turns turns, at_bay_hit better to hit. A bolted creature has given up the fight (cowed): it keeps away from a hero it can see.",
     "break_share": 0.25,
     "courage_share": 0.5,
     "flee_turns": 8,
@@ -41,6 +41,7 @@
     "flee_search": 6,
     "at_bay_turns": 3,
     "at_bay_hit": 2,
+    "withdraw_strikes": 0.5,
     "futile_blows": 5,
     "kin_sight": 8,
     "penalty": {
@@ -145,7 +146,7 @@
     "lines": {
       "bolt": "{The} breaks and bolts!",
       "regroup": "{The} breaks and runs for {his} friends!",
-      "withdraw": "{The} falls back, hurt.",
+      "withdraw": "{The} falls back, fighting as {he} goes.",
       "rally": "{The} brings {his} friends back into the fight!",
       "at_bay": "{The} turns at bay, cornered!",
       "yield": "{The} throws down {his} weapon and {his} purse and begs for {his} life!"
@@ -171,8 +172,8 @@
     "restore_line": "What the dead took from you comes back. (Max HP +{n})"
   },
   "grave_rot": {
-    "_doc": "src/grave_rot.py. A disease a monster gives lasts its own effect_duration x linger, at most cap (never past status_effects.MAX_EFFECT_DURATION, 60). While the hero is diseased, rest does not mend him and every heal does half. On a monster it costs a share of its health a turn (poison's rate) and stops its regeneration.",
-    "linger": 10,
+    "_doc": "src/grave_rot.py. A disease a monster gives lasts its own effect_duration, times its kind's disease_linger (default_linger 1 unless its lore makes it linger), at most cap (never past status_effects.MAX_EFFECT_DURATION, 60). While the hero is diseased, rest does not mend him and every heal does half. On a monster it costs a share of its health a turn (poison's rate) and stops its regeneration.",
+    "default_linger": 1,
     "cap": 60
   },
   "light_shy": {

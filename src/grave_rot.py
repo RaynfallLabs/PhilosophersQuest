@@ -10,10 +10,11 @@ healing until it is cured; the ghoul's grave-filth; the plague). Now:
 
   * on the hero: while diseased his wounds do not mend by rest (natural
     regeneration stops, main._tick_hp_regen) and every heal does half
-    (Player.restore_hp); the stat sap stays. A disease a monster gives
-    lingers: its kind's own `effect_duration` x linger (10), at most the
-    engine's cap on a status (60 turns), so a rat's bite is short and a
-    mummy's long, and it reaches the next fight;
+    (Player.restore_hp); the stat sap stays. How long a monster's disease
+    lasts is the kind's own: its rider's `effect_duration`, times its
+    `disease_linger` where its lore makes the sickness one that lingers
+    (mummy rot 10, the plague-bringers 4-8; a rat's bite or a zombie's claw
+    keeps its own few turns), at most the engine's cap on a status (60);
   * on a monster (a wand of disease, the hero's plague): it loses a share
     of its health every turn (poison's rate) and cannot regenerate while it
     lasts (a sick troll does not mend).
@@ -33,14 +34,18 @@ def rules() -> dict:
     return kind_data.rules('grave_rot')
 
 
-def linger(duration: int) -> int:
-    """How long a monster's disease lasts on the hero."""
+def linger(m, duration: int) -> int:
+    """How long a monster's disease lasts on the hero: its own turns, times
+    its kind's `disease_linger` (1 unless its lore says the sickness
+    lingers), at most the cap."""
     if not ENABLED:
         return int(duration)
     from status_effects import MAX_EFFECT_DURATION
     r = rules()
     cap = min(int(r.get('cap', MAX_EFFECT_DURATION)), MAX_EFFECT_DURATION)
-    return max(1, min(cap, int(duration) * int(r.get('linger', 10))))
+    times = 1 if kind_data.named(m) else int(
+        kind_data.field(m, 'disease_linger', r.get('default_linger', 1)) or 1)
+    return max(1, min(cap, int(duration) * max(1, times)))
 
 
 def sick(player) -> bool:

@@ -232,6 +232,21 @@ _THROES = {
 for _k, _t in _THROES.items():
     KIND_FIELDS.setdefault(_k, {})['death_throes'] = _t
 
+# --- Grave Rot (src/grave_rot.py; FIELDS: `disease_linger`, an int on the
+# kind): how long a sickness lingers is the
+# kind's own (its rider's turns, times this). Mummy rot does not heal until
+# it is cured (the tomb curse); the plague-bringers (Pazuzu, Hel's
+# sickbed, the plague ooze and witch, the corpse-gnawers of Nidhogg) carry
+# a sickness that lasts; the ghouls' and the otyugh's grave-filth and the
+# aboleth's slime fester. A rat's bite, a zombie's claw, a wererat's or a
+# death dog's bite keep their own few turns.
+_LINGER = {'mummy': 10, 'pazuzu_spawn': 8, 'hels_handmaid': 8, 'plague_ooze': 8,
+           'plague_witch': 6, 'nidhogg_brood': 6, 'aboleth_lesser': 5, 'otyugh': 5,
+           'demon_general': 5, 'abyssal_dragon': 5, 'plague_zombie': 4, 'harrow_witch': 4,
+           'ghast_eater': 4, 'huecuva': 3}
+for _k, _n in _LINGER.items():
+    KIND_FIELDS.setdefault(_k, {})['disease_linger'] = _n
+
 # --- Back to the Web (src/relurk.py): spiders go back to their webs, the
 # lurkers back to the ceiling, the jorogumo to her waterfall.
 for _k in ('piercer', 'darkmantle', 'lurker_above', 'trapper', 'cloaker', 'giant_spider',
