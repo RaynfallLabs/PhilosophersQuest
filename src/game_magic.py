@@ -585,6 +585,18 @@ class MagicMixin:
         reach = self._reachable_tiles(self.player.x, self.player.y)
         return [t for t in tiles if t in reach] or tiles
 
+    def _say_enchant_full(self, target, cap: int) -> None:
+        """The piece is at its material's cap (gear.enchant_cap_for): say so,
+        and why (its material's enchant_note). The number only when its
+        plus is known, or the line would identify it."""
+        import gear as _g
+        _tn = self._bare_name(target)
+        _n = f" (+{cap} at most)" if self._enchant_shown(target) else ""
+        self.add_message(f"Your {_tn} shudders but can hold no more enchantment{_n}.", 'info')
+        note = _g.enchant_note_for(target)
+        if note:
+            self.add_message(note, 'info')
+
     def _wand_effect_duration(self, wand, default_base: int) -> int:
         """v2.11.0: prefer the wand's authored duration in wand.power (plain
         integer string, e.g. "5" / "30"), else fall back to the legacy
@@ -3089,7 +3101,7 @@ class MagicMixin:
             self.add_message(f"Energy surges through you -- hasted for {quantity(duration, 'turn')}!", 'success')
 
         elif effect == 'enchant_armor':
-            from items import ENCHANT_CAP, ARMOR_SLOTS, set_ench_level
+            from items import ARMOR_SLOTS, set_ench_level
             import gear as _gear
             # Body armour and the shield first: they carry the plus (AC). A
             # minor piece gives no AC (bug bash 3.3.2): the scroll raises its
@@ -3125,21 +3137,24 @@ class MagicMixin:
                             self.add_message(
                                 f"Your {_tn} shudders but can hold no more enchantment.", 'info')
                         continue
-                    cap = ENCHANT_CAP.get(slot_name, 1)
+                    # Its material's own cap (gear.enchant_cap_for, by lore).
+                    cap = _gear.enchant_cap_for(target)
                     old_val = getattr(target, 'enchant_bonus', 0)
-                    target.enchant_bonus = max(-3, min(cap, old_val + delta))
+                    # (A curse takes its point off whatever the cap; a blessing
+                    # never pulls an old save's higher plus down to it.)
+                    target.enchant_bonus = max(-3, old_val + delta) if delta < 0                         else max(old_val, min(cap, old_val + delta))
                     actual = target.enchant_bonus - old_val
                     _tn = self._bare_name(target)
                     _te = (f" -- enchant {target.enchant_bonus:+d}"
                            if self._enchant_shown(target) else "")
                     if actual > 0:
                         self.add_message(f"Your {_tn} shines{_te}!", 'success')
+                        if target.enchant_bonus >= cap and delta > actual:
+                            self._say_enchant_full(target, cap)
                     elif actual < 0:
                         self.add_message(f"Your {_tn} tarnishes{_te}!", 'warning')
                     else:
-                        self.add_message(
-                            f"Your {_tn} shudders but can hold no more enchantment.", 'info'
-                        )
+                        self._say_enchant_full(target, cap)
             else:
                 self.add_message("You wear no armor to enchant.", 'info')
 
@@ -3173,7 +3188,9 @@ class MagicMixin:
                 for target, slot_key in candidates[:n]:
                     cap = effective_enchant_cap(self.player, slot_key, target)
                     old_val = getattr(target, 'enchant_bonus', 0)
-                    target.enchant_bonus = max(-3, min(cap, old_val + delta))
+                    # (as Enchant Armour: a curse takes its point off whatever the
+                    # cap; a blessing never pulls a higher plus down to the cap)
+                    target.enchant_bonus = max(-3, old_val + delta) if delta < 0                         else max(old_val, min(cap, old_val + delta))
                     actual = target.enchant_bonus - old_val
                     _tn = self._bare_name(target)
                     _te = (f" -- enchant {target.enchant_bonus:+d}"

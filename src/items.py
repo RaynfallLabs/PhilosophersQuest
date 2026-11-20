@@ -190,7 +190,8 @@ def is_split_type_known(player, item) -> bool:
 
 # Per-slot enchantment caps (max enchant_bonus allowed)
 ENCHANT_CAP = {
-    # Body armour and shields carry the plus (+1 to +5, gear.py); the minor
+    # Body armour and shields carry the plus (up to what the material holds,
+    # gear.enchant_cap_for; these 5s are the named pieces'); the minor
     # slots give no AC, so a plus on them was a scroll wasted (an Enchant
     # Armour scroll raises a minor piece's enchantment level instead).
     'head': 0, 'body': 5, 'arms': 0, 'hands': 0,
@@ -232,6 +233,11 @@ def effective_enchant_cap(player, slot_name: str, item=None) -> int:
     be enchanted at all.
     """
     cap = ENCHANT_CAP.get(slot_name, 1)
+    if slot_name in ('body', 'shield') and item is not None:
+        # Body armour and shields hold what their material holds, by lore
+        # (gear.enchant_cap_for, 2026-11-19).
+        import gear
+        return gear.enchant_cap_for(item)
     if player is None:
         return cap
     # An item's own `max_enchant` lowers the cap for it (Broken Gram and Dad's
@@ -2671,7 +2677,7 @@ def instantiate_armor(template_id: str, material_id: str, *,
     core = slot in gear.CORE_SLOTS
     base_ac = int(tpl.get('base_ac_value', 1)) if core else 0
     plus = (gear.plus_for_level(level) + int(enchant or 0)) if core else 0
-    plus = max(0, min(gear.core_enchant_cap(), plus))
+    plus = max(0, min(gear.material_enchant_cap(mat), plus))      # what its material holds
     tier = gear.tier_for_level(level)
     weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
     name = compose_item_name(mat['name'], tpl['name'], tpl.get('noun', ''))
@@ -2736,7 +2742,8 @@ def instantiate_shield(template_id: str, material_id: str, *,
         raise ValueError(f"Unknown shield material: {material_id}")
     level = max(0, min(gear.MAX_LEVEL, int(level or 0)))
     base_ac = int(tpl.get('base_ac_value', 1))
-    plus = max(0, min(gear.core_enchant_cap(), gear.plus_for_level(level) + int(enchant or 0)))
+    plus = max(0, min(gear.material_enchant_cap(mat),            # what its material holds
+                      gear.plus_for_level(level) + int(enchant or 0)))
     tier = gear.tier_for_level(level)
     weight = max(0.1, tpl.get('base_weight_lb', 5.0) * mat.get('weight_mult', 1.0))
     name = compose_item_name(mat['name'], tpl['name'], tpl.get('noun', ''))

@@ -2076,8 +2076,9 @@ class Run:
         (game_magic: enchant_armor / enchant_weapon). A hero who wears what
         he finds reads them, one grammar question: +1 uncursed, +2 blessed,
         -1 cursed (a prepared hero leaves a known-cursed one), on the body
-        armour, then the shield, or the wielded weapon, up to
-        items.ENCHANT_CAP."""
+        armour, then the shield, or the wielded weapon, up to its cap
+        (gear.enchant_cap_for: an armour piece holds what its material
+        holds; a weapon items.ENCHANT_CAP)."""
         eff = getattr(item, 'effect', '')
         if eff not in ('enchant_armor', 'enchant_weapon'):
             return
@@ -2092,8 +2093,9 @@ class Run:
             body = p.armor_slots[items_mod.ARMOR_SLOTS.index('body')]
             targets = ([(body, 'body')] if body is not None else []) + (
                 [(p.shield, 'shield')] if p.shield is not None else [])
+            import gear as _gear
             for piece, slot in targets:
-                cap = items_mod.ENCHANT_CAP.get(slot, 1)
+                cap = _gear.enchant_cap_for(piece)
                 if piece.enchant_bonus < cap or delta < 0:
                     piece.enchant_bonus = max(-3, min(cap, piece.enchant_bonus + delta))
                     break
