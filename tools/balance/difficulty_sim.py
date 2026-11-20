@@ -282,7 +282,11 @@ KNOB_DEFAULTS = {
     'mp_rest':    0.125, # MP regained per turn of waiting (meditation)
     'potions':    1.0,   # x healing potions found (count, stochastic rounding)
     'ranged_shots': 2,   # free shots a ranged monster gets while you close the
-                         #   distance (GUESSED; ranged AI fires at 2-6 tiles)
+                         #   distance (GUESSED; ranged AI fires at 2-6 tiles).
+                         #   A carried light (lights.py, 2026-11-19) lets the
+                         #   hero SEE the archer but does not shorten the walk
+                         #   in, so these stand; the shots from outside sight
+                         #   it answers were never modelled here.
     'hp_per_floor': 0.0, # + max HP on every new deepest floor (the game's
                          #   Player.HP_PER_LEVEL is 0; CURVE.md section 4 assumes
                          #   a no-cooking base that climbs 30 -> 200 by floor 100)

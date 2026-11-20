@@ -217,6 +217,8 @@ def _piece_kind(item) -> str:
                'Weapon': 'weapon'}.get(type(item).__name__, cls)
     if cls == 'shield':
         return 'shield'
+    if cls == 'light':
+        return 'light'                  # taken up in a turn (no 'light' key: 1)
     if cls == 'armor':
         return 'body' if str(getattr(item, 'slot', 'body')) in CORE_SLOTS else 'minor'
     if cls == 'weapon':
@@ -271,6 +273,23 @@ def is_standard(item) -> bool:
     and no polished face to watch a gaze in. Its power is its own field
     (``rally_damage_mult``). False for anything else, or an old save's piece."""
     return bool(getattr(item, 'standard', False))
+
+
+def is_light(item) -> bool:
+    """A torch, lantern or lamp carried in the off hand where a shield would
+    be (data/items/light.json, lights.py, 2026-11-19). Like a standard it
+    turns no blow: no AC, no plus, no wear, no blessing. Its item class is
+    'light', so it is never a shield to the rules in this file."""
+    import lights
+    return lights.is_light(item)
+
+
+def off_hand_word(item) -> str:
+    """'Shield', 'Standard' or 'Light': what a shield-slot piece is called
+    on the cards."""
+    if is_light(item):
+        return 'Light'
+    return 'Standard' if is_standard(item) else 'Shield'
 
 
 def is_core(item) -> bool:

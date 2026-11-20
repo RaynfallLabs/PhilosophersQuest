@@ -11,7 +11,9 @@ Both screens act on ONE selected item with the same keys:
     I  Identify (one philosophy question; needs the Philosopher's Shard,
        exactly like the I menu).
     A  Apply: work a coating into the weapon in the hand, or put the
-       earplugs in or take them out (game_arsenal.py; one turn, no quiz).
+       earplugs in or take them out (game_arsenal.py; one turn, no quiz);
+       put out or light the torch in the off hand, fill a lantern
+       (game_lights.py).
     X  Read the item's lore.
 
 Every action goes through the game's own paths (``_equip_item``,
@@ -196,8 +198,10 @@ class ItemActionsMixin:
         elif melee and where == 'pack':
             add('ready', 'Ready')
         # A -- Apply: a coating onto the weapon in the hand, the earplugs in
-        # or out (game_arsenal._apply_item).
-        if where == 'pack':
+        # or out, a light put out, lit or filled (game_arsenal._apply_item).
+        # A light in the hand is applied where it is.
+        import gear as _gear_a
+        if where == 'pack' or (where == 'equip' and _gear_a.is_light(item)):
             _label = self._apply_label(item)
             if _label:
                 add('apply', _label, self._apply_block(item))

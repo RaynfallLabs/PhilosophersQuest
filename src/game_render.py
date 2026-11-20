@@ -4422,6 +4422,10 @@ class RenderMixin:
                     out.append(f"{info[0]}: {info[1]}" if len(info) > 1 and info[1] else str(info[0]))
             if int(getattr(item, 'spell_tier_ease', 0) or 0) > 0:
                 out.append("Spells you cast with it in hand ask an easier science question.")
+            if int(getattr(item, 'equipped_light_aura', 0) or 0) > 0:
+                # A torch held as a weapon is one of the hero's lights (lights.py).
+                out.append(f"In hand it gives light: sight +{int(item.equipped_light_aura)}. "
+                           f"Only your brightest light counts.")
             if self._kit_visible_level(item) >= 4:
                 # ("to make it bleed its target" read as nonsense: each phrase
                 # names the target itself.)
@@ -4448,6 +4452,12 @@ class RenderMixin:
                     ls = 0.0
                 if ls > 0:
                     out.append(f"Heals you by {ls * 100 if ls <= 1 else ls:.0f}% of the damage it deals.")
+        if isinstance(item, Shield) and _g.is_light(item):
+            # A torch or a lantern: what it lights, its power, its burn, its
+            # price (lights.card_lines), and no AC.
+            import lights as _lights
+            return [str(t) for t in _lights.card_lines(item) + ["No AC: it is a light, not a shield."]
+                    if str(t).strip()]
         if isinstance(item, (Armor, Shield)):
             if _g.is_core(item):
                 base = int(getattr(item, 'ac_bonus', 0) or 0)
@@ -5485,6 +5495,8 @@ class RenderMixin:
                 cursed = (getattr(item, 'cursed', False)
                           and self._copy_buc_known(item))
                 slot_label = slot_name.replace('_', ' ').title()
+                if slot_name == 'shield':
+                    slot_label = gear.off_hand_word(item)      # a torch is a Light
                 detail = f"[{slot_label}]"
                 if cursed:
                     detail += "  CURSED"
@@ -5506,6 +5518,7 @@ class RenderMixin:
                         if cursed else "Unequip this slot and return the item to your pack."),
                 })
         else:
+            import lights as _lights
             for i, item in enumerate(display_items):
                 # Stats and material only once known (the same rule as the
                 # Kit): they showed an unidentified blade's true damage.
@@ -5513,6 +5526,11 @@ class RenderMixin:
                 if isinstance(item, Weapon):
                     detail = (f"{_cap(getattr(item, 'weapon_class', 'weapon'))}  {item.base_damage} Damage"
                               if _known else "Weapon  Unidentified")
+                elif isinstance(item, Shield) and _lights.is_light(item):
+                    # A light: what it lights (seen by anyone), and its burn.
+                    detail = f"Light  Sight +{_lights.sight_of(item)}"
+                    if not _lights.everlasting(item):
+                        detail += f"  {_lights.fuel_left(item)} turns"
                 elif isinstance(item, Shield):
                     import gear as _gear
                     if _known and _gear.is_standard(item):
@@ -5632,6 +5650,7 @@ class RenderMixin:
         elif slug in ('armor', 'shields'):
             import gear as _gear
             rows.sort(key=lambda r: (order.get(r[0], 9), -_gear.ac_value(r[1]),
+                                     -int(getattr(r[1], 'sight', 0) or 0),
                                      -int(getattr(r[1], 'ench_level', 0) or 0)))
         elif slug == 'valuables':
             # Dearest first, by what the hero can count on (a valued kind's
@@ -6189,6 +6208,8 @@ class RenderMixin:
                 Column('Powers',   120, flex=3, align='left'),
             ]
         if slug == 'shields':
+            # The off hand: a shield, a standard, or a light (lights.py),
+            # whose sight and burn are its powers.
             return [
                 Column('Name',     180, flex=2, align='left'),
                 Column('Src',        0, flex=0, align='left'),
@@ -6196,7 +6217,7 @@ class RenderMixin:
                 Column('Material',   0, flex=0, align='left'),
                 Column('BUC',        0, flex=0, align='left'),
                 Column('Wt',         0, flex=0, align='right'),
-                Column('Resists',  140, flex=3, align='left'),
+                Column('Powers',   140, flex=3, align='left'),
             ]
         if slug == 'accessories':
             return [
@@ -6280,9 +6301,16 @@ class RenderMixin:
             return [name, src_tag, slot_lbl, ac, mat, buc, wt, resists]
 
         if slug == 'shields':
+            import gear as _gear
+            if _gear.is_light(item):
+                # No AC; its kind (torch, lantern, lamp) where a material
+                # goes; what it lights and how long it has left (its sight
+                # shows identified or not; a named light's power waits for
+                # the identify).
+                return [name, src_tag, '-', str(getattr(item, 'noun', '') or 'light').title(), buc, wt,
+                        self._kit_light_cell(item, idl)]
             if idl >= 3:
-                import gear as _gear
-                ac = f"+{_gear.ac_value(item)}"
+                ac = '-' if _gear.is_standard(item) else f"+{_gear.ac_value(item)}"
                 resists = self._kit_resist_str(item)
             else:
                 ac, resists = '?', '?'
@@ -6394,6 +6422,24 @@ class RenderMixin:
                 bits.append(f"{_hit[2]} {_hit[1]:.0f}%")
         return ', '.join(bits) if bits else '-'
 
+    @staticmethod
+    def _kit_light_cell(item, idl: int) -> str:
+        """The Kit's Powers cell for a light: 'Sight +3; 640 turns; lit'.
+        A named light's own power shows once it is identified."""
+        import lights as _lights
+        bits = [f"Sight +{_lights.sight_of(item)}"]
+        if idl >= 3 and _lights.power_of(item):
+            bits.append(str((_lights.rules().get('powers_short') or {}).get(_lights.power_of(item), '')))
+        if _lights.everlasting(item):
+            bits.append("never burns out")
+        elif not _lights.has_fuel(item):
+            bits.append("dry" if _lights.fuel_kind(item) == 'oil' else "spent")
+        else:
+            bits.append(f"{_lights.fuel_left(item)} turns")
+        if getattr(item, 'lit', False) and _lights.has_fuel(item):
+            bits.append("lit")
+        return '; '.join(b for b in bits if b)
+
     def _kit_resist_str(self, a) -> str:
         # A named piece's own resistances; a common body armour's (or tower
         # shield's) template forms and material elements (gear.piece_profile),
@@ -6475,6 +6521,14 @@ class RenderMixin:
             equipped = self.player.shield
             if equipped is candidate or equipped is None:
                 return ''
+            import gear as _gear_l
+            if _gear_l.is_light(candidate) or _gear_l.is_light(equipped):
+                # A light against what is in the off hand: its sight (a
+                # shield lends none) against the AC given up.
+                import lights as _lights
+                d = _lights.sight_of(candidate) - (_lights.sight_of(equipped)
+                                                   if _gear_l.is_light(equipped) else 0)
+                return self._fmt_delta(d, 'sight') if d else ''
             if self._kit_visible_level(candidate) < 3 or self._kit_visible_level(equipped) < 3:
                 return ''
             import gear as _gear
@@ -9603,6 +9657,8 @@ class RenderMixin:
         (the template's base and the plus, which shows once the copy is
         known); a minor piece its enchantment (bug bash 3.3.2)."""
         import gear as _gear
+        if _gear.is_light(item):
+            return "No AC: a light, not a shield"
         if _gear.is_standard(item):
             return "No AC: a standard, not a shield"
         known = self._lore_enchant_text(item) != '?'
@@ -9696,10 +9752,21 @@ class RenderMixin:
             if _el and _known and not _ench_l.is_slot_guard(item):
                 lines.append((_el, FP.CYAN_ACCENT, self.font_sm))
 
+        elif isinstance(item, Shield) and gear.is_light(item):
+            # A torch, a lantern, a lamp (lights.py): held with no question,
+            # no AC; what it lights and how long it burns.
+            import lights as _lt
+            lines += [
+                ("Light", FP.GOLD_BRIGHT, self.font_sm),
+                (f"Tier: {item.tier}   Equip: in the off hand, no quiz", FP.BODY_TEXT, self.font_sm),
+            ]
+            for _ll in _lt.card_lines(item):
+                lines.append((_ll, FP.CYAN_ACCENT, self.font_sm))
+
         elif isinstance(item, Shield):
             import gear as _ap_std
             lines += [
-                ("Standard" if _ap_std.is_standard(item) else "Shield", FP.GOLD_BRIGHT, self.font_sm),
+                (_ap_std.off_hand_word(item), FP.GOLD_BRIGHT, self.font_sm),
                 (f"Material: {('Unique' if getattr(item, 'is_unique', False) and str(item.material).lower() in ('legendary', 'adamantine') else _cap(item.material))}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
                 (self._lore_armour_line(item), FP.BODY_TEXT, self.font_sm),
@@ -11602,6 +11669,7 @@ class RenderMixin:
                 # (The arsenal's keys, here for the same reason: slice 5.)
                 ("Shift+S", "Press / Guard", FP.BODY_TEXT),
                 ("Shift+C", "Coat weapon", FP.BODY_TEXT),
+                ("Shift+O", "Light / douse", FP.BODY_TEXT),
             ]),
             ("Combat", [
                 ("A", "Melee attack", FP.BODY_TEXT),

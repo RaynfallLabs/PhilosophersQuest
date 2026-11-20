@@ -122,8 +122,9 @@ def _is_other_cover(it) -> bool:
     """A cloak or a shield that is not the leaf cloak: it no longer turns
     his rain (winning-build plan 3.8)."""
     from items import Armor, Shield
-    if it is None or _is_leaf_cloak(it):
-        return False
+    import gear
+    if it is None or _is_leaf_cloak(it) or gear.is_light(it):
+        return False                     # (a torch is no cover from the rain)
     return isinstance(it, Shield) or (isinstance(it, Armor) and getattr(it, 'slot', '') == 'cloak')
 
 

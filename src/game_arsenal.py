@@ -10,6 +10,9 @@
   CombatMixin._confirm_throw_target.
 * **Press or Guard** (Shift+S): the next stance, one turn (stance.py).
 * **The earplugs** (Apply on the Kit): in or out, one turn (counters.py).
+* **A light** (Apply on the Kit, game_lights.py): a held torch or lantern
+  put out or lit again (no time, like Shift+O), a lantern filled from a
+  flask of fire oil (one turn).
 * **QA** (Titivillus build, Shift+T): every coating and flask, the three
   named counters and a two-hander, in the pack.
 
@@ -75,6 +78,15 @@ class ArsenalMixin:
         """The Kit's Apply label for ``item`` ('' when it cannot be applied)."""
         import coatings
         import counters
+        import lights
+        if lights.is_light(item):
+            # Held: put it out or light it (a dry lantern is filled first);
+            # in the pack: a lantern that burns oil is filled.
+            if item is getattr(self.player, 'shield', None):
+                if getattr(item, 'lit', False) and lights.has_fuel(item):
+                    return 'Put Out'
+                return 'Light' if lights.has_fuel(item) else 'Fill'
+            return 'Fill' if lights.fuel_kind(item) == 'oil' else ''
         if coatings.coat_spec(item) is not None:
             return 'Coat Weapon'
         if counters.is_applied(item):
@@ -84,6 +96,8 @@ class ArsenalMixin:
     def _apply_block(self, item) -> str:
         """Why Apply would be refused now, or ''."""
         import coatings
+        if self._apply_label(item) == 'Fill':
+            return self._fill_block(item)
         if coatings.coat_spec(item) is not None:
             why = coatings.refusal(self.player, item)
             return why.rstrip('.') if why else ''
@@ -94,8 +108,14 @@ class ArsenalMixin:
         hand, or the earplugs in or out. One turn. True when it was done."""
         import coatings
         import counters
+        _label = self._apply_label(item)
         self.state = STATE_PLAYER
         self._quaff_mode = 'quaff'
+        if _label == 'Fill':
+            return self._fill_light(item)
+        if _label in ('Put Out', 'Light'):
+            self._toggle_light()
+            return True
         if coatings.coat_spec(item) is not None:
             why = coatings.refusal(self.player, item)
             if why:
@@ -150,7 +170,8 @@ class ArsenalMixin:
         """Titivillus QA build only (Shift+T): two of every coating and
         flask, the earplugs, the cold-iron charm, a mirror shield and a
         greatsword in the pack, so coating, throwing, the stance, the parry
-        and the counters can be tried in a minute."""
+        and the counters can be tried in a minute; and every light, with
+        three torches and oil for the lanterns (game_lights._qa_lights)."""
         if not getattr(self.player, 'qa_tools', False):
             return
         import coatings
@@ -177,5 +198,7 @@ class ArsenalMixin:
                 it.identified = True
                 self.player.inventory.append(it)
                 given += 1
-        self.add_message(f"[QA] The arsenal: {given} things in your pack "
-                         f"(Shift+C coat, T throw, Shift+S stance).", 'info')
+        given += self._qa_lights()
+        self.add_message(f"[QA] The arsenal: {given} things in your pack, every light "
+                         f"among them (Shift+C coat, T throw, Shift+S stance, "
+                         f"Shift+O light).", 'info')

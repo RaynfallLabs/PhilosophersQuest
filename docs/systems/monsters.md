@@ -102,7 +102,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | field | type | notes |
 |---|---|---|
 | `ai_pattern` | str | One of 16 values — see §"AI dispatch" below. Default `aggressive`. |
-| `perception_range` | int | default 8 | How far a monster SEES (Chebyshev), along a real line of sight (`senses.clear_view`). It no longer notices through walls. `passive_silent_walk` (Hand of Glory, Boots of Elvenkind) halves it against the wearer and silences footsteps. See "Senses" below. |
+| `perception_range` | int | default 8 | How far a monster SEES (Chebyshev), along a real line of sight (`senses.clear_view`). It no longer notices through walls. `passive_silent_walk` (Hand of Glory, Boots of Elvenkind) halves it against the wearer and silences footsteps; a lit torch, lantern or Light spell lengthens it against the hero by the light's notice (`lights.shine`, 2026-11-19). See "Senses" below. |
 | `alert_radius` | int | default 5 | Chebyshev radius for `alert_nearby` (same-kind allies wake up when I'm adjacent to the player). |
 | `alert_all_tag` | bool | default False | Warlord/horn-blower mode — alert any monster sharing at least one tag, not just same-kind. |
 | `aggression` | — | Not a Monster field; "aggression" is expressed via `ai_pattern` + flags, not a scalar. |
@@ -276,7 +276,7 @@ The v2.18.0 commit kept these on disk because migrating would break every pickle
 Brandon: "NONE automatically know where you are unless it's thematically and lore appropriate." Until 3.4.0 every monster noticed the hero within 8 tiles THROUGH STONE, and then knew where he was for the rest of the floor. Now `Monster._spots_player` calls `senses.notice` (`src/senses.py`, data in `data/senses.json`).
 
 **How a monster notices him:**
-- **Sight:** a line of sight within `perception_range` (+4 for `keen_sight`). Walls, closed doors and tall fixtures (statues, stalagmites) block it; water and low furniture don't. An invisible hero is unseen except by `truesight` (celestials).
+- **Sight:** a line of sight within `perception_range` (+4 for `keen_sight`; plus the brightest light's notice against a lit hero: a torch 2, the Light spell 3, the dark lantern's shutter 2; see [items](items.md), "Lights in the off hand"). Walls, closed doors and tall fixtures (statues, stalagmites) block it; water and low furniture don't. An invisible hero is unseen except by `truesight` (celestials).
 - **Sound:** the game emits noises through `Game._make_noise(kind)`:
   - footsteps each turn the hero moves (`step_radius`: 3 at DEX 10, quieter with DEX, +1 under a Light load, +2 under a Heavy one and +3 when Burdened or Overloaded (data/senses.json noise, the four tiers of 2026-11-16), +1 in medium body armour and +2 in heavy, +1 more in metal unless it is quiet (`gear.footstep_tiles`), silent with Cat's Footfall or silent walking);
   - `melee` 5, `shot` 4, `spell` 5, `door` 4, `coin` 3, `struck` 5 (a monster's blow on him);

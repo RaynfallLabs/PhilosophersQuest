@@ -11,6 +11,8 @@ full mechanics are yet to be wired in -- the UI, tick, and
 resistance systems are fully active for all of them.
 """
 
+from lights import status_sight as _light_sight
+
 MAX_EFFECT_DURATION = 60  # hard cap on status effect turns (prevents infinite stacking)
 
 # --------------------------------------------------------------------------
@@ -123,13 +125,16 @@ EFFECT_INFO: dict[str, tuple] = {
     # ---- Story-encounter effects (ENCOUNTER_STORIES_DRAFT J3). Each lasts
     # whole floors or turns as its reward says; none changes a stat. ----
     'porter':             ('Porter',             (190, 160, 110), 'Someone carries part of your load: carry limit +50'),
-    'light':              ('Bright Lantern',     (255, 230, 140), 'Your lantern burns bright: sight radius +2'),
+    'light':              ('Light',              (255, 230, 140), f'A light burns about you: sight +{_light_sight()}, and you are seen from farther'),
     'sickly':             ('Sickly',             (160, 170,  90), 'A low fever: stamina drains twice as fast'),
 }
 
 # What each story effect does, read by the systems named (no stat changes).
 PORTER_CARRY_BONUS = 50      # Player.get_carry_limit
-LIGHT_SIGHT_BONUS = 2        # Player.get_sight_radius
+# The light status's sight (the Light spell, a wand of light, a story's
+# lantern): data/lights.json status_sight. Lights do not add up: the
+# brightest counts (lights.light_bonus, Player.get_sight_radius).
+LIGHT_SIGHT_BONUS = _light_sight()
 
 DEBUFFS: frozenset = frozenset({
     'paralyzed', 'sleeping', 'stunned', 'confused', 'blinded', 'hallucinating',
@@ -360,6 +365,8 @@ def material_wear(item):
 
 def _can_corrode(item) -> bool:
     """Return True if an item can be damaged by acid/corrosion."""
+    if _is_light(item):
+        return False
     mat = getattr(item, 'material', '')
     wear = material_wear(item)
     if wear is not None:
@@ -388,6 +395,8 @@ def _can_rust(item) -> bool:
     if is_legend(item):
         from items import lore_rust_ids
         return str(getattr(item, 'id', '') or '') in lore_rust_ids()
+    if _is_light(item):
+        return False
     mat = str(getattr(item, 'material', '') or '')
     wear = material_wear(item)
     if wear is not None:
@@ -408,8 +417,16 @@ def _can_rust(item) -> bool:
     return any(w in mat for w in ('iron', 'steel'))     # iron, steel, "dark iron"...
 
 
+def _is_light(item) -> bool:
+    """A torch or lantern in the off hand: no plus for wear to take."""
+    import lights
+    return lights.is_light(item)
+
+
 def _can_scorch(item) -> bool:
     """Return True if an item can be damaged by fire (flammable materials)."""
+    if _is_light(item):
+        return False
     mat = getattr(item, 'material', '')
     wear = material_wear(item)
     if wear is not None:
@@ -616,7 +633,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'hallucinating_pot': ('Reality snaps back into focus.',     'info'),
     'berserk':        ('The fury fades. You feel drained.',     'warning'),
     'porter':         ('Nobody is carrying your load any more.', 'info'),
-    'light':          ('Your lantern burns down to its usual glow.', 'info'),
+    'light':          ('The light about you fades.',             'info'),
     'sickly':         ('The fever breaks.',                     'success'),
     # v2.15+ audit sync: fill in expire messages that had been missing.
     'doom_dot':          ('The doom-tick releases you.',              'success'),

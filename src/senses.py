@@ -8,7 +8,8 @@ through solid stone, then knew where he was for the rest of the floor.
 A monster now notices the hero in one of three ways:
 
 * **Sight**: a real line of sight within its perception range. Invisibility
-  hides him from eyes, unless the eyes are a celestial's.
+  hides him from eyes, unless the eyes are a celestial's. A lit torch,
+  lantern or Light spell shows him from farther (lights.shine).
 * **Sound**: the noise he makes. Footsteps carry a few tiles; DEX, a heavy
   pack, Cat's Footfall and silent walking change how far. A fight, a door,
   coin or an alarm carries further. Sound travels along open ground, round
@@ -172,6 +173,12 @@ def sight_range(m, player=None) -> int:
         # its usual reach on the wearer, as the item text says.
         if gear.wears_flag(player, 'passive_silent_walk'):
             base = max(1, base // 2)
+        # A light shows the hero to every eye in the dark (lights.py,
+        # 2026-11-19): a lit hero is seen from farther by the brightest
+        # light's notice (a torch 2, the Light spell 3; the dark lantern's
+        # shutter keeps it to 2). Doused, it costs nothing.
+        import lights
+        base += lights.shine(player)
     return base
 
 

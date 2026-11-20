@@ -443,8 +443,8 @@ def gaze_immune(player, attacker) -> bool:
     import gear
     sh = getattr(player, 'shield', None)
     for a, p in _mine(player, attacker, 'gaze_immune', recognise=False):
-        # (a standard in the off hand has no polished face to watch it in)
-        if p.get('requires') == 'shield' and (sh is None or gear.is_standard(sh)):
+        # (a standard or a torch in the off hand has no polished face to watch it in)
+        if p.get('requires') == 'shield' and (sh is None or not gear.is_core(sh)):
             continue
         return True
     return False

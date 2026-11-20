@@ -145,7 +145,8 @@ cursor (`_target_input` via `_aimed_spell_reach`), and the confirm
 its own reach (it used the bow's). The reach is the spell's, not the
 effect's: Cold Bolt shares Frost Touch's effect and keeps its range. The
 cast menu shows it ("Reach: touch"). Intelligence lengthens effects (and
-Light); it does not lengthen reach.
+the Light spell, by its own numbers in data/lights.json); it does not
+lengthen reach.
 
 **Area spells need a clear line** (`_in_spell_sight`): a victim must be on a
 tile the hero sees AND in line of sight from him. Sight alone was not
@@ -508,7 +509,17 @@ are documented in [status_effects](status_effects.md).
 - **`drain_magic`** (wand) — same strip, mirror of dispel.
 - **`cancellation`** (wand) — same shape.
 - **`detect_monsters_spell`** — reveal + 20t clairvoyance.
-- **`light_spell`** — reveal tiles in radius 15 (self-tier scales up to full floor).
+- **`light_spell`** — (2026-11-19) the `light` status for
+  `lights.spell_turns(INT)` turns: 100 at INT 10, 5 more a point of INT over
+  10 (never under 50; a second cast adds to what is left, never past 250;
+  data/lights.json `spell`). While it lasts sight is +3, but lights do not
+  add up: only the brightest of the hero's lights counts (a torch, a
+  lantern, the spell: `lights.light_bonus`), and a lit hero is seen 3 tiles
+  farther (`lights.shine`). It no longer lights a spot of map. A wand of
+  light does the same for its `power` in turns (candle 60, torch 120, the
+  Lantern of Diogenes 120 and the unseen shown for as long,
+  `light_reveals`); see [items](items.md), "Lights in
+  the off hand".
 - **`cleanse_self`** — pop one debuff.
 - **`identify_item`** (Detect Magic / Identify / Omnisight family) — a
   three-tier BUC reveal: T1 reveals magic items in sight, T3 adds

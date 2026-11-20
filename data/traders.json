@@ -180,6 +180,7 @@
         {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 2},
         {"class": "accessory", "picks": 2}, {"class": "wand", "picks": 2},
         {"class": "ammo", "picks": 2}, {"class": "flask", "picks": 1},
+        {"ids": ["torch"], "cat": "light", "picks": 1, "floors": [1, 40]}, {"class": "light", "picks": 1},
         {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 3}, {"gear": "shield", "picks": 1},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.25, "floors": [1, 33]},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.12, "floors": [34, 66]},
@@ -187,7 +188,7 @@
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.06, "floors": [67, 100]},
         {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.12, "floors": [67, 100]}
       ],
-      "stock_size": [[1, 20, 4], [21, 50, 5], [51, 100, 6]],
+      "stock_size": [[1, 20, 5], [21, 50, 5], [51, 100, 6]],
       "spread": [["accessory"], ["weapon", "armor", "shield"], ["scroll", "spellbook"], ["potion", "wand", "ammo"]],
       "markup": 1.0,
       "purse": 1.0,
@@ -390,6 +391,7 @@
         {"class": "potion", "picks": 2}, {"class": "food", "picks": 2},
         {"class": "scroll", "picks": 1}, {"class": "ammo", "picks": 1},
         {"gear": "armor", "picks": 1}, {"class": "flask", "picks": 2},
+        {"ids": ["torch"], "cat": "light", "picks": 1}, {"class": "light", "picks": 1},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.30, "floors": [1, 33]},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.10, "floors": [34, 66]},
         {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.25, "floors": [34, 100]}
@@ -587,7 +589,7 @@
       "stock": [
         {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 2},
         {"class": "accessory", "picks": 2}, {"class": "wand", "picks": 2},
-        {"class": "ammo", "picks": 2},
+        {"class": "ammo", "picks": 2}, {"class": "light", "picks": 1},
         {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 3}, {"gear": "shield", "picks": 1},
         {"id": "soul_sphere", "cat": "artifact", "chance": 0.06, "floors": [67, 100]},
         {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.12, "floors": [67, 100]}

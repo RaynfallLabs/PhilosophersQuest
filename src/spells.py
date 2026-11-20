@@ -27,6 +27,11 @@ signature spells (welcome_screen builds only, NOT in the general drop pool).
 They keep their old shape for save-compat.
 """
 
+import lights as _lights  # noqa: E402
+
+_light = _lights.rules()['spell']
+_light_sight = _lights.status_sight()
+
 LEARNABLE_SPELLS: dict[str, dict] = {
 
     # ==================================================================
@@ -564,7 +569,12 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Light', 'effect': 'light', 'power': '',
         'mp_cost': 2, 'tier': 1, 'quiz_tier': 1, 'needs_target': False,
         'spell_family': 'light',
-        'desc': 'Reveal every tile within 15 squares.',
+        # (Since 2026-11-19 a light that stays, not a spot of map lit once:
+        # data/lights.json, game_magic.)
+        'desc': (f"A light stays about you for {_light['base_turns']} turns, "
+                 f"{_light['turns_per_int']} more for each point of INT over 10: "
+                 f"sight +{_light_sight}. Only your brightest light counts, "
+                 f"and you are seen from farther."),
     },
     'knock_spell': {
         'name': 'Knock', 'effect': 'knock_spell', 'power': '',

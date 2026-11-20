@@ -448,7 +448,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_QUIZ_CONTEXT` | `C` during a quiz whose question has a context card | `_quiz_context_input` | `_draw_quiz_context_modal` (both readers paint through `_draw_card_reader`) |
 | `STATE_TOPIC_CARD` | `C` on a missed question (`STATE_STUDY`, `STATE_REVIEW_MISSED`); returns to the state that opened it | `_topic_card_input` | `_draw_topic_card_modal` (card text and title from `src/topic_cards.py`) |
 | `STATE_EQUIP_MENU` | `E` | `_equip_menu_input` | `_draw_equip_menu` |
-| `STATE_KIT` | `K` | `_kit_input` | `_draw_kit_panel` → `_draw_kit_browser`; tabs Weapons / Armor / Shields / Accessories / Consumables / Valuables (treasure: kind, count, weight as the shop gives it, worth exact once a trader has valued the kind, else its order of magnitude; `treasure.worth_short`, `_kit_detail_lines_for_treasure`) / Spells |
+| `STATE_KIT` | `K` | `_kit_input` | `_draw_kit_panel` → `_draw_kit_browser`; tabs Weapons / Armor / Off Hand (shields, standards and lights: a light shows its sight and burn under Powers) / Accessories / Consumables / Valuables (treasure: kind, count, weight as the shop gives it, worth exact once a trader has valued the kind, else its order of magnitude; `treasure.worth_short`, `_kit_detail_lines_for_treasure`) / Spells |
 | `STATE_DISCOVERIES` | `J` | `_discoveries_input` | `_draw_discoveries_panel` |
 | `STATE_WAND_MENU` | `Z` | `_wand_menu_input` | `_draw_wand_menu` |
 | `STATE_SCROLL_MENU` | `R` | `_scroll_menu_input` | `_draw_scroll_menu` |

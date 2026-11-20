@@ -65,7 +65,7 @@ reporter are small, independent JSON/text siblings. See
 | [weapons_and_materials.md](weapons_and_materials.md) | 96 weapons, 11 materials, 149 uniques, chain-passive hooks | Weapon tuning |
 | [monsters.md](monsters.md) | 527 monsters, AI patterns, boss / mini-boss flags, families | Monster add/edit |
 | [monster_families.md](monster_families.md) | The 22 monster families, tiers earned by studying distinct kinds (keystones count two), the five tiers (Recognise, Forewarned, Lore, Hunter, Bane), technique primitives (`family_edges`), Circles, Loremaster, Bestiary gating | Family, Bestiary or technique change |
-| [items.md](items.md) | Item classes, slots, equip, BUC, one identification knows every copy | Item schema change |
+| [items.md](items.md) | Item classes, slots, equip, BUC, one identification knows every copy; lights in the off hand (torches, lanterns: sight, fuel, the price of being seen) | Item schema change |
 | [armour.md](armour.md) | AC from body armour and shield only, what armour does beyond AC (template forms, material elements, wards, light vs heavy: dodge, speed, noise, spell cost; the defence model, no Dexterity in AC; the load tiers), the minor slots' guard families and enchantments, the ring and amulet kinds, named pieces on the ladder, the 45 / 45 / 10 gear split, old saves (3.3.2) | Any AC, to-hit, armour, ring, weight or gear-loot change |
 | [identify_v3.md](identify_v3.md) | One philosophy Q, derived id_tier, a known kind fully identifies every copy (2026-10-18), NO masteries | Identify flow change |
 | [containers_lockpick.md](containers_lockpick.md) | Chest tiers, chest_traps.json, Lockpick v3 (1 Q, master pick, traps on fail) | Loot-gate change |

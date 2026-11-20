@@ -666,20 +666,25 @@ class MagicMixin:
             )
 
         elif effect == 'light':
-            # v2.11.0: radius reads from wand.power (integer string) per tier.
-            # T1 candle ~4, T2 torch ~8; falls back to 15 for legacy wands.
-            try:
-                radius = int(wand.power) if wand.power else 15
-            except (TypeError, ValueError):
-                radius = 15
-            px, py = self.player.x, self.player.y
-            for dy in range(-radius, radius + 1):
-                for dx in range(-radius, radius + 1):
-                    if dx*dx + dy*dy <= radius*radius:
-                        nx, ny = px + dx, py + dy
-                        if self.dungeon.in_bounds(nx, ny):
-                            self.dungeon.explored.add((nx, ny))
-            self.add_message("Brilliant light floods the area!", 'success')
+            # 2026-11-19: the light stays about the hero, as the Light
+            # spell's does, for the wand's power in turns (lights.wand_turns:
+            # a candle 60, a torch 120). The Lantern of Diogenes is still
+            # looking for an honest man: in its light the unseen are seen
+            # for as long (`light_reveals`).
+            import lights
+            _turns, _reveals = lights.wand_light(wand)
+            if self.player.status_effects.get('light', 0) == -1:
+                self.add_message(lights.line('spell_held'), 'info')
+            else:
+                self.player.add_effect('light', _turns, cap=lights.wand_cap())
+                turns = int(self.player.status_effects.get('light', 0) or 0)
+                self.add_message(lights.line('wand', sight=lights.status_sight(), turns=turns),
+                                 'success')
+                if _reveals:
+                    self.player.add_effect('see_invisible', turns, cap=lights.wand_cap())
+                    self._sync_unseen()
+                    self.add_message(lights.line('wand_reveals'), 'info')
+            self._refresh_fov()
 
         elif effect == 'sunlight':
             # v2.11.0 T4 wand_of_sunlight: reveal WHOLE floor + expose hidden
@@ -1919,19 +1924,22 @@ class MagicMixin:
                     f"The greatest of them will not be held so long: {quantity(_cap, 'turn')} at most.", 'warning')
             return
 
-        # Light spell: reveal tiles in a radius (tier scales radius)
+        # Light spell (2026-11-19): a light that stays about the hero for
+        # turns from Intelligence (lights.spell_turns, data/lights.json), not
+        # a spot of map lit once (nobody cast that). Its sight is the light
+        # status's; lights do not add up, so a hero with a brighter lantern
+        # gains nothing more by it. A second cast adds to what is left.
         if effect == 'light':
-            base_radius = 15
-            radius = max(5, int(base_radius * chain_scale))
-            px, py = self.player.x, self.player.y
-            for dy in range(-radius, radius + 1):
-                for dx in range(-radius, radius + 1):
-                    if dx*dx + dy*dy <= radius*radius:
-                        nx, ny = px + dx, py + dy
-                        if self.dungeon.in_bounds(nx, ny):
-                            self.dungeon.explored.add((nx, ny))
-            self.add_message(
-                f"Brilliant light floods the area! (radius {radius})", 'success')
+            import lights
+            if self.player.status_effects.get('light', 0) == -1:
+                self.add_message(lights.line('spell_held'), 'info')
+                return
+            self.player.add_effect('light', lights.spell_turns(self.player.INT),
+                                   cap=lights.spell_cap())
+            turns = int(self.player.status_effects.get('light', 0) or 0)
+            self._refresh_fov()
+            self.add_message(lights.line('spell', sight=lights.status_sight(), turns=turns),
+                             'success')
             return
 
         # --- 2026 SPELL EXPANSION: new self/AOE handlers --------------------
@@ -3097,8 +3105,8 @@ class MagicMixin:
             equipped = [(s, ARMOR_SLOTS[i]) for i, s in enumerate(self.player.armor_slots)
                         if s is not None]
             equipped.sort(key=lambda p: 0 if p[1] in _gear.CORE_SLOTS else 2)
-            # (a standard in the off hand is not armour: it takes no plus)
-            if self.player.shield is not None and not _gear.is_standard(self.player.shield):
+            # (a standard or a light in the off hand is not armour: it takes no plus)
+            if self.player.shield is not None and _gear.is_core(self.player.shield):
                 equipped.insert(1 if equipped and equipped[0][1] in _gear.CORE_SLOTS else 0,
                                 (self.player.shield, 'shield'))
             # Chain ladder (Path A): delta + how many armor slots get hit.
@@ -3154,8 +3162,8 @@ class MagicMixin:
                 if s:
                     candidates.append((s, ARMOR_SLOTS[i]))
             import gear as _gear_ei
-            if self.player.shield and not _gear_ei.is_standard(self.player.shield):
-                candidates.append((self.player.shield, 'shield'))   # (a standard takes no plus)
+            if self.player.shield and _gear_ei.is_core(self.player.shield):
+                candidates.append((self.player.shield, 'shield'))   # (a standard or a light takes no plus)
             for s in getattr(self.player, 'accessory_slots', []):
                 if s:
                     candidates.append((s, 'accessory'))

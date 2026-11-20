@@ -173,6 +173,12 @@ class DressingMixin:
             if _qs_acc:
                 _qs_acc.on_item_equipped(item.id, 'accessory', getattr(item, 'slot', 'accessory'))
             return True
+        if gear.is_light(item):
+            # A torch or a lantern, taken up and lit (game_lights.py): what
+            # it lights is the line, it moves no AC. The FOV widens now.
+            self.add_message(self._light_on_line(item), 'success')
+            self._refresh_fov()
+            return True
         # Armour or a shield. Its curse, if any, is now known and named once.
         # Only body armour and a shield move AC (bug bash 3.3.2): a helm or
         # boots say only that they are on.
@@ -296,7 +302,12 @@ class DressingMixin:
         else:
             return False
         p.inventory.append(item)
-        self.add_message(f"You remove the {self._bare_name(item)}.", 'info')
+        if gear.is_light(item):
+            # It goes out as it leaves the hand (Player.shed_worn_grants).
+            self.add_message(f"You put out the {self._bare_name(item)} and stow it.", 'info')
+            self._refresh_fov()
+        else:
+            self.add_message(f"You remove the {self._bare_name(item)}.", 'info')
         _qs_uneq = getattr(self, 'quirk_system', None)
         if _qs_uneq:
             itype = 'weapon' if slot_name in ('weapon', 'ranged_weapon') else \
@@ -331,9 +342,11 @@ class DressingMixin:
     # ------------------------------------------------------------------
 
     def _say_shield_slung(self, shield, weapon) -> None:
+        # A torch or a lantern goes out and back in the hand, not on the arm.
+        back = "it is lit in your hand again" if gear.is_light(shield) else "it goes back on your arm"
         self.add_message(f"Your {self._bare_name(shield)} goes to your pack: the "
                          f"{self._bare_name(weapon)} takes both hands. Take up a "
-                         f"one-handed weapon and it goes back on your arm.", 'info')
+                         f"one-handed weapon and {back}.", 'info')
 
     def _slung_shield(self):
         """The shield a two-hander sent to the pack (Player._shield_slung),

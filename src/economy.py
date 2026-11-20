@@ -57,6 +57,9 @@ MERCHANT_SHARE = {
     'scroll': 0.50, 'wand': 0.50, 'spellbook': 0.80,
     'weapon': 0.60, 'armor': 0.60, 'shield': 0.60,
     'accessory': 1.50,
+    # A light (lights.py): a bundle of torches costs what a bundle of
+    # arrows does; a lantern is worth more (data/item_worth.json).
+    'light': 0.10,
 }
 UNIQUE_GEAR_SHARE = 3.0
 # A named ring or amulet (Jade Cicada, Brisingamen) cost what a plain ring
@@ -134,7 +137,7 @@ def class_share(item) -> float:
     ic = getattr(item, 'item_class', 'misc')
     frac = MERCHANT_SHARE.get(ic, 0.5)
     if getattr(item, 'is_unique', False):
-        if ic in ('weapon', 'armor', 'shield'):
+        if ic in ('weapon', 'armor', 'shield', 'light'):
             frac = UNIQUE_GEAR_SHARE
         elif ic == 'accessory':
             frac = UNIQUE_ACCESSORY_SHARE
@@ -211,11 +214,13 @@ TRADE_IN_RATE = 0.50
 
 
 def ammo_bundles(item) -> float | None:
-    """For ammo: how many of a trader's bundles this stack is. A trader's
-    price for arrows is for one bundle, rolled count_min..count_max, so a
-    stack counts as its arrows over the middle of that roll (an average
-    bundle is one). None for anything that is not ammo."""
-    if getattr(item, 'item_class', '') != 'ammo':
+    """For ammo (and a bundle of torches, lights.py): how many of a
+    trader's bundles this stack is. A trader's price for arrows is for one
+    bundle, rolled count_min..count_max, so a stack counts as its arrows
+    over the middle of that roll (an average bundle is one). None for
+    anything that does not come in bundles."""
+    ic = getattr(item, 'item_class', '')
+    if ic != 'ammo' and not (ic == 'light' and getattr(item, 'stacks', False)):
         return None
     lo = int(getattr(item, 'count_min', 0) or 0)
     hi = int(getattr(item, 'count_max', 0) or 0)

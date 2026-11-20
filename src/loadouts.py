@@ -33,7 +33,7 @@ KIT_NAME_MAX = 18
 KIT_ARMOR_SLOTS = ('head', 'body', 'arms', 'hands', 'legs', 'feet', 'cloak', 'shirt')
 # The slots a kit covers, in the order the Loadouts screen lists them.
 KIT_SLOT_LABELS = {
-    'weapon': 'Weapon', 'readied': 'Readied', 'shield': 'Shield',
+    'weapon': 'Weapon', 'readied': 'Readied', 'shield': 'Off Hand',   # a shield or a light
     'head': 'Head', 'body': 'Body', 'arms': 'Arms', 'hands': 'Hands', 'legs': 'Legs',
     'feet': 'Feet', 'cloak': 'Cloak', 'shirt': 'Shirt', 'amulet': 'Amulet', 'belt': 'Belt',
     'ring_0': 'Ring 1', 'ring_1': 'Ring 2', 'ring_2': 'Ring 3', 'ring_3': 'Ring 4',

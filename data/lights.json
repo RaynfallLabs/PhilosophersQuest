@@ -1,0 +1,71 @@
+{
+  "_doc": "Carried lights and the Light spell (src/lights.py; Brandon 2026-11-19: ranged monsters shot from outside his sight, so a light in the off hand widens it, and the Light spell lasts a stretch of turns instead of lighting a spot). A light sits in the off hand where a shield would (it is not one: no AC, no plus, no block), so it cannot be held with a shield or a two-handed weapon. Lit, it adds its 'sight' to the hero's sight radius. Lights do not add up: the BRIGHTEST light the hero has counts (a carried light, the Light spell or a wand of light, a torch held as a weapon, an escort's lamp), and only one. Senses that are not light (dark vision, true sight, the Wild Road) add on top as before. The price: a lit hero is seen from farther, by the 'notice' of the brightest light (its sight unless its data says less: the dark lantern's shutter). Doused, a light gives nothing and costs nothing. The item data is data/items/light.json.",
+  "status_sight": 3,
+  "status_notice": 3,
+  "_doc_spell": "The Light spell gives the hero the 'light' status for base_turns + turns_per_int for every point of Intelligence over 10 (never under min_turns), and a second cast adds to what is left, never past max_turns. The spell has no chain (v2.12.0); Intelligence is its reach, written here. A wand of light gives the status for its own 'power' in turns.",
+  "spell": {
+    "base_turns": 100,
+    "turns_per_int": 5,
+    "min_turns": 50,
+    "max_turns": 250
+  },
+  "wand_max_turns": 250,
+  "_doc_fuel": "A torch burns itself away ('fuel': 'self'): when it is spent it is gone, and the next torch in the pack is lit at once. A lantern or a lamp burns oil ('fuel': 'oil'): when it runs dry the next flask of oil in the pack is poured in at once (oil_items), else it goes dark until filled (the Kit's Apply). 'burn' is the turns a fresh torch or a full lantern lasts; 0 means it never burns out. A light burns only while it is held and lit. low_share: below this share of its burn the sidebar shows how much is left, and the hero is told once.",
+  "oil_items": ["flask_of_fire_oil"],
+  "low_share": 0.2,
+  "lines": {
+    "taken_up": "You take up the {light} and light it.",
+    "taken_up_dry": "You take up the {light}. It is dry: fill it with a flask of fire oil.",
+    "doused": "You put out the {light}. The dark closes in, and you are harder to see.",
+    "relit": "You light the {light} again.",
+    "no_light": "You hold no light. Take a torch or a lantern in your off hand (E).",
+    "dry": "The {light} is dry: fill it with a flask of fire oil (the Kit, Apply).",
+    "low": "Your {light} burns low.",
+    "next_torch": "Your {light} gutters out. You light another ({left} left).",
+    "last_torch": "Your {light} gutters out. It was your last one.",
+    "oil_out": "Your {light} runs dry.",
+    "oil_refill": "Your {light} runs dry. You pour in a flask of fire oil and it burns again.",
+    "filled": "You fill the {light} from a flask of fire oil.",
+    "full": "The {light} is already full.",
+    "no_oil": "You have no oil for it: a flask of fire oil fills it.",
+    "spell": "A steady light kindles about you: sight +{sight} for {turns} turns.",
+    "spell_held": "A light already burns about you for good.",
+    "wand": "Light pours from the wand and stays about you: sight +{sight} for {turns} turns.",
+    "wand_reveals": "In its light you see what hides from sight.",
+    "way_down": "The {light} burns toward the way down: the stair shows on your map.",
+    "two_hander": "You need a free hand for the {light}: your weapon takes both."
+  },
+  "card": {
+    "sight": "Sight +{sight} while it is lit.",
+    "notice": "Monsters see you from {notice} tiles farther while it burns.",
+    "notice_less": "Its shutter throws the light ahead: monsters see you only {notice} tiles farther.",
+    "brightest": "Lights do not add up: only your brightest light counts.",
+    "hand": "Held in the off hand: not with a shield or a two-handed weapon.",
+    "burn_self": "Burns {burn} turns, then it is gone ({left} left).",
+    "burn_oil": "Burns lamp oil: {left} of {burn} turns left. A flask of fire oil fills it.",
+    "everlasting": "It never burns out.",
+    "unlit": "Not lit now.",
+    "douse": "Shift+O puts it out or lights it again, at no cost in time."
+  },
+  "powers": {
+    "_doc": "A named light's one power, by its data's 'power', while it is held and lit.",
+    "shows_invisible": "By its light you see invisible creatures.",
+    "unmasks": "By its light you see what lies in wait: ambushers and mimics show themselves.",
+    "shows_way": "It shows the way down: the down stair is on your map while it burns."
+  },
+  "powers_short": {
+    "_doc": "The same powers in a few words, for the Kit's table.",
+    "shows_invisible": "shows the invisible",
+    "unmasks": "shows what lies in wait",
+    "shows_way": "shows the way down"
+  },
+  "hud": {
+    "low": "{Light}: {left} turns",
+    "dry": "{Light}: dry",
+    "dark": "{Light}: out"
+  },
+  "spawn": {
+    "_doc": "Floor loot: each loot room has room_chance to hold a common light, chosen by each kind's floorSpawnWeight (about one a floor, like the flasks). The named lights roll with the other named uniques. Chests with a 'light' loot entry, the general traders and the sutler carry them too.",
+    "room_chance": 0.10
+  }
+}
