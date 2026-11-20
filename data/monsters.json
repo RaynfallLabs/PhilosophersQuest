@@ -77,6 +77,13 @@
         "damage": "1d4",
         "type": "pierce",
         "delivery": "blow"
+      },
+      {
+        "name": "Sling Stone",
+        "damage": "1d3",
+        "type": "blunt",
+        "delivery": "ranged",
+        "ranged": true
       }
     ],
     "resistances": [],
@@ -42372,5 +42379,174 @@
     ],
     "peak_floor": 27,
     "min_level": 25
+  },
+  "jackal": {
+    "name": "jackal",
+    "symbol": "d",
+    "color": [
+      200,
+      160,
+      90
+    ],
+    "hp": "4d4+4",
+    "speed": 14,
+    "ai_pattern": "aggressive",
+    "thac0": 19,
+    "peak_floor": 2,
+    "spread": 3,
+    "peak_weight": 6.0,
+    "min_level": 1,
+    "attacks": [
+      {
+        "name": "Snapping Bite",
+        "damage": "1d4",
+        "type": "pierce",
+        "delivery": "bite"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
+    "family": "great_beasts",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "none"
+    },
+    "lore": "The Egyptians watched jackals nosing at the edges of their desert graves and made the guardians of the dead jackals: Anubis, who weighs the heart, and Wepwawet, the Opener of the Ways. In the Indian fables of the Panchatantra the jackal is the trickster who wins by wit and never by strength. Golden jackals hunt in pairs and small families, and none of them will stand and fight: each darts in to snap and is gone again before the blow can fall, while its mate comes in from the other side.",
+    "frequency": 6,
+    "thac0_lore": 20,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": [
+      "fear_of_fire"
+    ],
+    "pack": true,
+    "pack_size": [
+      2,
+      3
+    ]
+  },
+  "wolf": {
+    "name": "wolf",
+    "symbol": "w",
+    "color": [
+      140,
+      140,
+      130
+    ],
+    "hp": "7d8+8",
+    "speed": 14,
+    "ai_pattern": "aggressive",
+    "thac0": 15,
+    "peak_floor": 6,
+    "spread": 4,
+    "peak_weight": 6.0,
+    "min_level": 4,
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "1d6+1",
+        "type": "pierce",
+        "delivery": "bite"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
+    "family": "great_beasts",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.08,
+      "item_tier": 1,
+      "purse": "none"
+    },
+    "lore": "The grey wolf runs down deer and elk by working as a pack: the fastest hold the quarry's eyes while the rest close on its flanks and go for the legs. Rome was founded, the story goes, by twins a she-wolf suckled, and Norse warriors named their sons for wolves. The dungeon wolves are the same lean grey hunters, and a passage does not fool them: they will not file down a corridor into a sword one at a time, but wait in the open for their prey to come to them.",
+    "frequency": 6,
+    "thac0_lore": 16,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": [
+      "fear_of_fire"
+    ],
+    "pack": true,
+    "pack_size": [
+      2,
+      3
+    ],
+    "opener": {
+      "attack": "Bite",
+      "range": 1
+    }
+  },
+  "cave_hyena": {
+    "name": "cave hyena",
+    "symbol": "d",
+    "color": [
+      170,
+      140,
+      90
+    ],
+    "hp": "27d10+120",
+    "speed": 12,
+    "ai_pattern": "aggressive",
+    "thac0": 10,
+    "peak_floor": 22,
+    "spread": 4,
+    "peak_weight": 4.0,
+    "min_level": 18,
+    "attacks": [
+      {
+        "name": "Bone-Crushing Bite",
+        "damage": "2d8+5",
+        "type": "pierce",
+        "delivery": "bite"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
+    "family": "great_beasts",
+    "pronoun": "it",
+    "harvest_tier": 2,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.1,
+      "item_tier": 2,
+      "purse": "none"
+    },
+    "lore": "In 1821 William Buckland crawled into Kirkdale Cave in Yorkshire and found its floor covered in the gnawed bones of elephants, rhinoceroses and hippopotamuses. From the tooth marks and the droppings he worked out what had happened: for thousands of years the cave had been a hyena den, and the hyenas had dragged their kills inside. The cave hyena of the Ice Age was bigger and heavier than the spotted hyena of Africa, its jaws cracked the bones of woolly rhinos, and its clans ran horses down for miles. Down here the breed never died out. A clan hangs back from strong prey, whooping to the rest, and closes in on anything that bleeds.",
+    "frequency": 4,
+    "thac0_lore": 11,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": [
+      "fear_of_fire"
+    ],
+    "pack": true,
+    "pack_size": [
+      3,
+      4
+    ]
   }
 }

@@ -121,6 +121,15 @@ def monster_trait_lines(mdef: dict, known: bool = True) -> list:
     if mdef.get('pack_size'):
         lo, hi = mdef['pack_size'][0], mdef['pack_size'][-1]
         out.append(f"Comes in packs of {lo}" + (f" to {hi}." if hi != lo else '.'))
+    # How its pack hunts (src/packs.py, data/packs.json), for a kind he knows:
+    # the trick is how to beat it, as its tell's counter is.
+    kind = mdef.get('_id') or mdef.get('id')
+    if kind and known:
+        import packs as _packs
+        for tid in _packs.spec(_packs.pack_of(kind)).get('tricks') or ():
+            line = _packs.trick(tid).get('bestiary')
+            if line:
+                out.append(line)
     return out
 
 

@@ -3,6 +3,7 @@ from dice import roll, roll_duration
 from combat import _line_of_sight
 from status_effects import MAX_EFFECT_DURATION
 from naming import ProperNameAttr
+import packs
 
 
 # Ceiling on escalating rage (Fenrir, and the mini-bosses that borrow his
@@ -1513,7 +1514,13 @@ class Monster:
         # Its opening move (take_turn armed it): that attack, alone.
         _op_atk = self.__dict__.pop('_opener_now', None)
         if _op_atk is not None:
+            self.__dict__.pop('_pack_blow', None)
             return self._resolve_blow(_op_atk, player)
+        # The blow its pack's trick chose (src/packs.py): a goblin's sling
+        # stone at range, its knife beside the hero.
+        _pk_atk = self.__dict__.pop('_pack_blow', None)
+        if _pk_atk is not None and not (self.multi_attack_count or self.multi_attack_always):
+            return self._resolve_blow(_pk_atk, player)
 
         # Fenrir rage: at 3+ stacks, use ALL attacks instead of random choice
         if self.rage_stacks >= 3 and len(self.attacks) > 1 and not _slipping:
@@ -1566,6 +1573,12 @@ class Monster:
         else:
             atk = random.choice(self.attacks)
         return self._resolve_blow(atk, player)
+
+    def _pack_company(self) -> list:
+        """The creatures about it this turn (take_turn keeps the list): its
+        pack's tricks count the packmates beside the hero."""
+        return [m for m in (self.__dict__.get('_cached_all_monsters') or ())
+                if getattr(m, 'alive', False)]
 
     def _miss_text(self, atk: dict, *, confused: bool = False, note: str = '') -> str:
         """The line for a blow that misses. Only a blow that swings swings: an
@@ -1835,6 +1848,15 @@ class Monster:
         if getattr(self, 'weighs_heart', False):
             dmg = max(1, int(round(dmg * heart_weight(player))))
 
+        # Its pack's trick (src/packs.py): a rat's bite is worth more for every
+        # other rat on the hero; hyenas harry a wounded hero; ghouls feed on a
+        # held one.
+        _pack_note = ''
+        if packs.pack_of(self.kind) and not _sneak:
+            _pm, _pack_note = packs.blow_mult(self, player, atk, self._pack_company())
+            if _pm != 1.0:
+                dmg = max(1, int(dmg * _pm + 0.5))
+
         dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
         # Family knowledge that turns this family's fire, cold or holy
         # light aside (Dragon-Ward, Ward of the Elements, Angel's Due).
@@ -1859,6 +1881,12 @@ class Monster:
             msg += f" {_vuln_note}"
         if _held_note and actual > 0:
             msg += _held_note
+        if packs.pack_of(self.kind):
+            if _pack_note and actual > 0:
+                msg += ' ' + _pack_note
+            # A wolf's hamstring with a packmate beside the hero; a harpy's
+            # snatch.
+            msg += packs.after_blow(self, player, atk, actual, self._pack_company())
         # A thief's blow (src/theft.py): the game takes the gold or the item
         # right after this blow, because the purse belongs to the Game.
         if atk.get('steal') and random.random() < float(atk.get('steal_chance', 1.0)):
@@ -2075,6 +2103,10 @@ class Monster:
                 or self.has_effect('stunned') or self.has_effect('frozen')):
             return False
 
+        # A hound of a pack that bayed keeps the hero's scent (src/packs.py).
+        if self.__dict__.get('_scent_left'):
+            packs.keep_scent(self, player)
+
         # Stuck in a pit: can attack if adjacent, but cannot move
         if self.has_effect('stuck_in_pit'):
             if self._adjacent_to(player):
@@ -2151,6 +2183,11 @@ class Monster:
                 and getattr(self._band_leader, 'alive', False):
             # A war-band follower holds its nerve while its leader lives
             # (src/war_bands.py).
+            self._flee_timer = 0
+        elif (not is_boss and self.ai_pattern == 'aggressive' and packs.has_trick(self, 'harry')
+              and packs.wounded(player)):
+            # Hyenas and gnolls smell blood: they never run from a wounded
+            # hero (src/packs.py 'harry').
             self._flee_timer = 0
         elif not is_boss and self.ai_pattern == 'aggressive':
             if self._flee_timer > 0:
@@ -2358,10 +2395,29 @@ class Monster:
                 if dxp == 0 or dyp == 0 or abs(dxp) == abs(dyp):
                     self._charge_ready = True
 
+        # A pack hunts together (src/packs.py, data/packs.json).
+        _pack = packs.pack_of(self.kind) if effective_pattern == 'aggressive' else None
+
         if self._adjacent_to(player):
             if effective_pattern != 'cowardly':
+                # Its pack's trick beside the hero: a jackal darts back out,
+                # a kobold backs off over a trap it lays.
+                if _pack and packs.adjacent_turn(self, player, dungeon, all_monsters,
+                                                 extra_occupied) == 'moved':
+                    return False
                 self._pounce_now()       # its first blow is its opener
             return True  # caller triggers the attack
+
+        # A pack hunter: it spreads round the hero in the open, holds a
+        # corridor's mouth or goes round, slings from range, darts in.
+        if _pack:
+            _pk = packs.hunt_turn(self, player, dungeon, all_monsters, extra_occupied)
+            if _pk == 'attack':
+                return True
+            if _pk == 'held':
+                return False
+            if _pk == 'moved':
+                return bool(self._adjacent_to(player) and self._pounce_now())
 
         # --- Standard movement ---
         if self._standard_move(player, dungeon, all_monsters, extra_occupied, effective_pattern):

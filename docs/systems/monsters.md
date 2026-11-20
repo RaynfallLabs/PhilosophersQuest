@@ -106,7 +106,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `alert_radius` | int | default 5 | Chebyshev radius for `alert_nearby` (same-kind allies wake up when I'm adjacent to the player). |
 | `alert_all_tag` | bool | default False | Warlord/horn-blower mode — alert any monster sharing at least one tag, not just same-kind. |
 | `aggression` | — | Not a Monster field; "aggression" is expressed via `ai_pattern` + flags, not a scalar. |
-| `pack` | bool | default False | Spawner hint: when this monster is picked for a room, extra copies also spawn in the same room. Pack size scales with depth (1-2 shallow, 2-3 mid, 2-4 deep) and gets +1 max when `frequency >= 5`. |
+| `pack` | bool | default False | Spawner hint: when this monster is picked for a room, extra copies also spawn in the same room. `pack_size: [min, max]` counts the whole pack, leader included (every pack kind has one since the lore pass); without it the size scales with depth (1-2 extras shallow, 2-3 mid, 2-4 deep, +1 max when `frequency >= 5`). Whether a pack HUNTS as one is `data/packs.json` (see "Packs" below). |
 | `pack_dependent` | bool | default False | Re-evaluates aggression each turn: `aggressive` when `pack_min_allies` same-kind/tag allies are within 5 tiles, else `cowardly`. Four monsters use this: `goblin_kingslayer`, `bandit_thug`, `bandit_archer`, `cult_initiate`. |
 | `pack_min_allies` | int | default 1 | Threshold used by `pack_dependent`. |
 | `prefers_flank` | bool | default False | Rotates approach direction 90° when an ally is already pressuring the player on the same vector. 3 monsters. |
@@ -372,6 +372,54 @@ Observe (`war_bands.observe_line`, data `observe`) says what anyone can see:
 - **the leader:** "The rest of the band keep glancing at it, as if waiting for orders."
 - **the leader, to a hero who knows its kind:** "It leads the band." plus what happens when it falls, by the band's morale ("If it falls, the dead it raised will fall with it.").
 
+## Packs: kin that hunt together (2026-11-19)
+
+Brandon, 2026-11-18: "add packs that fight 2+ at a time, the more diverse and unique our monsters are, the better"; the design he approved on 2026-11-19; and "rats swarm could add damage based on how many rats are adjacent to the player; build it". The rules are `src/packs.py`, the numbers and words `data/packs.json`.
+
+**A pack, not a war-band.** A pack is a kin group of one lore family set down together (`pack`, `pack_size`). `dungeon._spawn_one_in_room` calls `packs.on_spawned`: the members share a `_pack` uid, a wolf pack may be led by its parent (`leader`: a wolf pack leader takes one place, 40%, when the floor's pool holds him), and a kobold pack lays its den's traps (only while the floor is first peopled: `level_manager` sets `dungeon._dens_open`). A war-band's member keeps to its band and never uses pack tactics (`packs.in_pack`). Neither does a friend, an encounter's person or a named foe.
+
+**Which kinds hunt as a pack** (`packs`, by lore; every kind with `pack: true` and a `pack_size` is either here or among the `herds` with the reason it does not hunt as one, `tests/test_packs.py`):
+
+| Pack | Kinds | In a corridor | Trick |
+|---|---|---|---|
+| rats | giant rat, dire rat | press on | swarm |
+| wolves | wolf, wolf pack leader, dire wolf alpha, winter wolf | hold | hamstring (and they circle to his back) |
+| jackals | jackal | hold | dart |
+| hyenas | cave hyena | hold | harry |
+| gnolls | gnoll, gnoll archer | hold | harry |
+| goblins | goblin | hold (and sling) | sling, then charge |
+| kobolds | kobold | hold | traps |
+| ghouls | ghoul, ghast | hold | feast |
+| harpies | harpy | hold | snatch |
+| hounds | gravehound, shadow hound, blink dog, Fionn's hound, Hecate's hound, abyssal hound | hold | bay (and they circle) |
+
+**The hunt** (`packs.hunt_turn`, called by `Monster.take_turn` for an aggressive pack hunter that knows where the hero is and is not beside him; `tactics` holds the numbers):
+- **Far off or alone** (more than `engage_radius`, 5 tiles, or no packmate within `mates_radius`, 8): it comes on as any creature.
+- **In the open** (`packs.slots`: the tiles beside the hero the pack can reach from its side with a short walk, at most `reach_nodes` tiles searched): each takes a free tile beside him on its own side (`packs.choose_spot`: farthest round from where the pack already presses him, the walk there kept off the tiles beside him), and claims it so the next goes elsewhere. Wolves and hounds (`circle`) make for his back: away from the way he faces (`_facing_dx/_dy`), or from the first of them on him.
+- **At a choke** (`choke_slots`: one tile or none beside him can be reached from their side; a corridor, the far side of a doorway): the one already on him fights. The rest go round when there is another way to another side (`packs.round_path`: at most `round_nodes` tiles, `round_max` steps, kept `round_every` turns while he stands still). Failing that, they hold beyond the mouth out of his sight, in reach of it (`packs.hold_step`), for him to come out. A slinger holds where it can see him to pelt him. After `patience` (12) turns of holding, the nearest tries his luck. One hurt while it waits (an arrow, a flask) comes for him. Rats (`corridor: press`) pour in anyway: vermin do not think so far, so a corridor is the hero's answer to a swarm.
+- **Hunt together** (`packs.alarm`, from `senses.notice` when one first finds him): the pack is roused to him as far as its cry carries round corners (`rouse_radius`, 8; a hound's bay much farther).
+- **Lines** (`_pack_line`, said by `CombatMixin._pack_turn_after` after the monster's turn, once a fight for the pack): "The wolves will not follow you into the narrow way...", "One of the wolves slips away to come at you from another side.", "The goblins drop their slings and rush you together!"
+
+**The tricks** (`tricks`; each has a tell, `pack_<trick>` in `data/tells.json`, ranked with the others, and a Bestiary line, `bestiary`, for a kind the hero knows):
+
+| Trick | What it does | Numbers |
+|---|---|---|
+| swarm (rats) | Each rat's bite is worth more for every OTHER rat of its pack beside the hero (`packs.blow_mult`, in `Monster._resolve_blow`). One rat is a nuisance, four are deadly. Said when two or more others are on him and the count has grown. | +50% per other rat, at most +150% |
+| hamstring (wolves) | A wolf's bite that lands while a packmate stands beside him may hamstring him: slowed, through the one rider path (guards, wards, the DEX save halves it). Never while he is already slowed. | 25% a landed bite, 3 turns (within CONTROL_CAP 6) |
+| dart (jackals) | In the open a jackal that can reach him in one step darts in and snaps at once (no free blow for him); on its next turn beside him it darts back out of reach if a packmate is near to take its place. At most two on him at a time, each on its own beat. | max_in 2 |
+| harry (hyenas, gnolls) | While he is below half his health their bites are worth more, they never run from him when hurt, and they do not wait at a corridor's mouth. | x1.3 below 50% |
+| sling (goblins) | With a clear shot from 2-5 tiles a goblin pelts him with its Sling Stone while the pack gathers. When three (or all that live) are up within 5 tiles and each has thrown, they all rush him together. Into a choke they never rush: they keep pelting from the mouth. Beside him a goblin uses its knife. | Sling Stone 1d3 blunt, ranged |
+| traps (kobolds) | A kobold den is set down with 1-2 hidden snares or caltrops within 3 tiles. Beside him, a kobold may back off a step and lay one on the tile it leaves (always when it is hurt); one laid where he can see it is shown. Monsters never set off an ordinary trap, so kobolds walk over their own. The trap kinds are data (`traps.kinds`): `_check_floor_trap` applies a trap's `effect` through the saving throw, `_fire_trap_on_monster` turns a rewired one on a monster, and both disarm at AI tier 1. | snare: immobilized 1-2 turns; caltrop: 1d4 pierce (a share of his health, as every trap) and slowed 3-4; 1 each, 40% a turn beside him |
+| feast (ghouls) | When he is held (paralysed, asleep, stuck fast, stunned) every ghoul of the pack within 10 tiles comes for him past any mouth it held, and their bites on him are worth more. | x1.25 on a held hero |
+| snatch (harpies) | A harpy's Talon Rake that lands may snatch food or a raw cut from his pack (`theft.steal` 'food'); she flies off with it and drops it where she dies. | 35% a landed rake |
+| bay (hounds) | The first hound of a pack to find him bays: every hound of the pack the sound reaches is roused to him and keeps his scent (`packs.keep_scent`: it knows where he went) for 20 turns. Heard even out of sight. | radius 14, 20 turns |
+
+**The new pack kinds** (`tools/content/add_pack_kinds_2026_11.py`, by the lore rubric): the **jackal** (floor ~2, 1-6: 4d4+4 HP, a 1d4 Snapping Bite, speed 14, packs of 2-3), the **wolf** (floor ~6, 4-10: 7d8+8 HP, a 1d6+1 Bite it lunges with, speed 14, packs of 2-3, sometimes led by a wolf pack leader), and the **cave hyena** (floor ~22, 18-26: the Ice Age hyena of Kirkdale Cave, 27d10+120 HP, a 2d8+5 Bone-Crushing Bite, packs of 3-4). The hyena is the cave hyena of tier 2 because the tier census holds tier 1's ordinary kinds to 35% (it stood at 190 of 546; two new ones fit). A wolf and a jackal are butchered as the pack leader is, a cave hyena as the gnolls (hyena meat). The goblin gained the Sling Stone its trick throws.
+
+**The simulator** (`tools/balance/difficulty_sim.py`, knob `packs`, on by default): a pack's members come at the hero together rather than queue at the doorway (a rat pack half the time), and the tricks that change a fight's cost run in the monster's own code (the swarm, the hamstring, the harrying, the feast). The movement tricks have no map there. `packs=0` is the ablation.
+
+Tests: `tests/test_packs.py` (data, the swarm's numbers, the choke and the hold on hand-made maps, and the tricks in a game).
+
 ## Tells: a dangerous creature shows what it can do (slice 5)
 
 The tells live in `data/tells.json` and `src/tells.py`. Each tell has three parts:
@@ -393,7 +441,7 @@ How much is said follows `family_lore.knowledge` (Brandon, 2026-11-12: the notes
 - **The hit lines, the Strike Now preview and the combat strip's weakness tag** follow the same levels: see [combat](combat.md), "Knowledge decides what the line says".
 - **Honest about reach:** `tells.reach` is 'far' when the creature can put the effect on the hero from across a room. That covers a gaze, or an attack a ranged, dragon, healer, summoner or rooted creature uses at range (the same test as `Monster.attack`). A far effect gets `counter_far`, or the shared `far_counter` ("keep stone between you"), and never "fight it from a distance".
 - **Splitting:** the line names the blows that split the creature, from its own `splits.by`.
-- **What counts as a tell:** attack effects with `effect_chance` of at least 0.1, plus these flags: gaze, splits, revives, drain-heals, regeneration, summons, pull, SP drain, charge, phase-blink. They are ranked by `order`, worst first.
+- **What counts as a tell:** attack effects with `effect_chance` of at least 0.1, plus these flags: gaze, splits, revives, drain-heals, regeneration, summons, pull, SP drain, charge, phase-blink, and the trick of the creature's pack (`pack_swarm`, `pack_hamstring`...: see Packs). They are ranked by `order`, worst first.
 
 Tests: `tests/test_monster_notes.py`, and the Observe cases in `tests/test_observe_bestiary.py`.
 

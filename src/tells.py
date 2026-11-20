@@ -73,6 +73,13 @@ def abilities(m) -> list:
     for flag in _FLAGS:
         if getattr(m, flag, None):
             have.add(flag)
+    # Its pack's trick (src/packs.py, data/packs.json): the rat swarm, the
+    # wolves' hamstring, the goblins' slings...
+    try:
+        import packs
+        have.update(packs.tell_keys(m))
+    except (ImportError, OSError, ValueError):
+        pass
     return [k for k in d['order'] if k in have and k in d['effects']]
 
 

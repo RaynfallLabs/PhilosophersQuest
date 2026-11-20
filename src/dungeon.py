@@ -1452,6 +1452,7 @@ def _spawn_one_in_room(room, eligible, dungeon, monsters, rng) -> bool:
         # fall through to the next tile rather than placing half-in-the-wall.
         if not _footprint_fits(defn, tx, ty, dungeon, monsters):
             continue
+        _first = len(monsters)
         monsters.append(Monster(defn, tx, ty))
 
         # --- Pack spawning: variable extras based on level and frequency ---
@@ -1485,6 +1486,11 @@ def _spawn_one_in_room(room, eligible, dungeon, monsters, rng) -> bool:
                     continue
                 monsters.append(Monster({**defn}, ptx, pty))
                 pack_extra -= 1
+            # One pack (src/packs.py): a wolf pack may be led by its parent,
+            # a kobold den has its snares and caltrops laid round it.
+            import packs
+            if packs.pack_of(kind) is not None:
+                packs.on_spawned(monsters[_first:], dungeon, rng, pool=eligible, monsters=monsters)
         return True
     return False
 

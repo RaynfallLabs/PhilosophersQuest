@@ -1,0 +1,77 @@
+[
+ {
+  "id": "trap_snare",
+  "family": "trap_b",
+  "rank": 1,
+  "key": "magenta",
+  "body": "object",
+  "what": "a snare set on a floor stone: one square flagstone of plain grey stone, and lying flat on it a noose of thick, rough brown hemp rope tied in a running loop. The loop is laid open in a wide circle in the middle of the slab, and its free end runs off to a short wooden peg driven into a crack at the right-hand edge of the slab. The rope is drawn thick and bold.",
+  "colours": "plain grey stone, thick rough brown hemp rope, a pale split-wood peg.",
+  "pose": "Seen from directly above like a floor tile on a game map: the slab is a flat square with its edges parallel to the edges of the picture, the noose an open rope circle in its middle.",
+  "must_show": [
+   "grey stone slab",
+   "one open loop of thick brown rope",
+   "the rope's end tied to a small peg"
+  ],
+  "must_not_show": [
+   "hangman's noose hanging",
+   "gallows",
+   "snake",
+   "chain",
+   "iron jaws",
+   "teeth",
+   "person",
+   "foot",
+   "blood",
+   "hole",
+   "pit",
+   "wooden floor"
+  ]
+ },
+ {
+  "id": "trap_caltrop",
+  "family": "trap_b",
+  "rank": 2,
+  "key": "magenta",
+  "body": "object",
+  "what": "caltrops scattered on a floor stone: one square flagstone of plain grey stone, and lying scattered loosely across it, well apart from one another, eight small iron caltrops thrown down like a handful of gravel. Each caltrop is a tiny dark iron burr, about as big as a walnut, made of four short thick spikes: three rest on the stone like the legs of a tripod and the fourth points straight up, so seen from above each one looks like a small dark three-pointed iron knot with a bright steel tip in its centre. Nothing else lies on the stone.",
+  "colours": "plain grey stone, dark black iron caltrops with bright worn steel on their points.",
+  "pose": "Seen from directly above like a floor tile on a game map: the slab is a flat square with its edges parallel to the edges of the picture, the caltrops scattered across it.",
+  "must_show": [
+   "grey stone slab",
+   "eight or so small dark iron burrs scattered loosely apart",
+   "each a little three-pointed knot of short spikes"
+  ],
+  "must_not_show": [
+   "dagger",
+   "sword",
+   "blade",
+   "stars",
+   "star shapes",
+   "throwing stars",
+   "shuriken",
+   "many-pointed stars",
+   "nails",
+   "coins",
+   "bear trap",
+   "iron jaws",
+   "person",
+   "blood",
+   "hole",
+   "wooden floor"
+  ],
+  "edit": {
+   "cand": 4,
+   "pixel_seed": 8301,
+   "steps": [
+    {
+     "from": "_genart/traps_packs/trap_caltrop_r1/c1_draft.png",
+     "refs": [],
+     "seed": 8302,
+     "prompt": "Edit this painting. Keep the grey stone slab, the flat magenta background and the four spiked black iron pieces exactly as they are. Change only the long dark dagger-like spike standing upright in the middle of the slab: remove it completely, and in its place draw two more small spiked black iron pieces exactly like the four others, lying flat on the stone. There is no dagger, no blade and no tall upright thing left.",
+     "neg": "dagger, sword, blade, knife, tall upright spike, person, statue, figure"
+    }
+   ]
+  }
+ }
+]

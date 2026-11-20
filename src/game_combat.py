@@ -2966,6 +2966,23 @@ class CombatMixin:
             if cracks[pos] <= 0:
                 del cracks[pos]
 
+    def _pack_turn_after(self, m) -> None:
+        """What a pack hunter's turn left for the hero to see or hear
+        (src/packs.py): the pack's line (one he can see said as it is; a
+        hound's bay heard when it is out of sight), and a kobold's snare or
+        caltrops shown when he saw it laid."""
+        line = m.__dict__.pop('_pack_line', None)
+        laid = m.__dict__.pop('_laid_at', None)
+        seen = self._sees_monster(m)
+        if line:
+            text = line[0] if seen else (line[1] if len(line) > 1 else '')
+            if text:
+                self.add_message(text, 'warning')
+        if laid is not None:
+            trap = self.dungeon.traps.get(tuple(laid))
+            if trap is not None and (seen or tuple(laid) in self.visible):
+                trap['revealed'] = True
+
     def _say_sense_lines(self, m) -> None:
         """A lore sense said once a floor (it has your scent; it felt your
         steps), and the line when one the hero can see gives up the search.
@@ -3429,6 +3446,10 @@ class CombatMixin:
             _wu = m.__dict__.pop('_wind_up_message', '')
             if _wu and self._sees_monster(m):
                 self.add_message(_wu, 'warning')
+            # Its pack's line (src/packs.py): they hold the mouth, go round,
+            # charge; a hound bays (heard even unseen); a kobold's trap laid
+            # where the hero could see it is shown.
+            self._pack_turn_after(m)
             if did_attack:
                 # A blow on the hero carries (src/senses.py).
                 self._make_noise('struck')

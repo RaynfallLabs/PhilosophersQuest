@@ -5761,6 +5761,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(*got)
             else:
                 self.add_message("The water washes over you harmlessly.", 'info')
+        elif trap.get('effect'):
+            # A trap that holds or hobbles (a kobold's snare or caltrops,
+            # data/packs.json): its effect, through the saving throw.
+            from status_effects import apply_debuff_with_save
+            _dc = min(18, 12 + self.dungeon_level // 7)
+            _lo, _hi = (list(trap.get('effect_turns') or [2, 3]) + [3])[:2]
+            _ok, _smsg = apply_debuff_with_save(self.player, str(trap['effect']),
+                                                random.randint(int(_lo), int(_hi)), _dc)
+            if _smsg:
+                self.add_message(_smsg, 'danger' if _ok else 'success')
         elif trap_type == 'polymorph':
             # Ordinary gear only, into ordinary gear. The pools for weapons,
             # armor and shields hold nothing but named pieces now, so a tin
@@ -6065,6 +6075,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         'acid':          (3, 3), 'teleport':  (3, 3),
         'pit':           (3, 3), 'fire':      (3, 3),
         'polymorph':     (4, 4),
+        # A kobold's handiwork (data/packs.json): cord and scattered iron.
+        'snare':         (1, 1), 'caltrop':   (1, 1),
     }
 
     def _try_disarm_trap(self) -> bool:
@@ -6253,6 +6265,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             monster.add_effect('sleeping', _trng.randint(3, 8))
         elif trap_type == 'bear_trap':
             monster.add_effect('immobilized', _trng.randint(2, 4))
+        elif trap.get('effect') and trap_type not in ('pit', 'acid', 'fire', 'sleep_gas'):
+            # A kobold's snare or caltrops, turned on its maker's kind.
+            _lo, _hi = (list(trap.get('effect_turns') or [2, 3]) + [3])[:2]
+            monster.add_effect(str(trap['effect']), _trng.randint(int(_lo), int(_hi)))
         elif trap_type == 'alarm':
             import senses as _senses
             _senses.rouse_near(self.monsters, pos[0], pos[1], _senses.noise_radius('alarm'),

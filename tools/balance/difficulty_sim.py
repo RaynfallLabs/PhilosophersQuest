@@ -92,6 +92,22 @@ needs to look at the base game and core systems, not every fringe"):
     its line, chain lightning up to three more (AREA_SPELLS). The default
     fights one monster at a time, so an area spell hit only that one.
 
+PACKS (2026-11-19, src/packs.py, data/packs.json; knob packs=1):
+  * a pack's members come at the hero together rather than queue at the
+    doorway: in the game they spread round him in the open, and where only
+    one could reach him they hold the mouth or go round, so he must fight
+    them in the open. A rat pack (corridor 'press') still pours into a
+    passage, so it is met all at once PACK_SWARM_IN_THE_OPEN of the time
+    and at the doorway's pace the rest.
+  * the tricks that change a fight's cost are the game's own code, in
+    Monster.attack (packs.blow_mult, packs.after_blow): the rat swarm's
+    deeper bites, the wolves' hamstring, the hyenas and gnolls harrying a
+    wounded hero, the ghouls feeding on a held one. The movement tricks
+    (the goblins' slings, the jackals' darting, the kobolds' traps, the
+    hounds' baying) have no map to work on and are not modelled.
+  * packs=0 is the old rule: no pack id, so the members queue like any room
+    group and no trick fires (the ablation).
+
 THE DEFENCE MODEL (2026-11-16, Brandon's approved design; src/defence.py):
   * AC from armour, the shield and magic only; Dexterity is the dodge (a
     point over 10, capped; light armour all of it, medium half, heavy none)
@@ -118,8 +134,6 @@ the sim fights each one as a plain stat block, so their mechanics are missing:
                       of the room's group, nothing more;
   * heart-weighing    no karma is read (the player has no game), so every
                       heart weighs as karma 0;
-  * packs             a pack (pack_size) is met a few at a time like any
-                      room group, with no pack behaviour.
 So a "no spike" result on the floors where those monsters live says nothing
 about them. Their behaviour is tested in tests/test_late_game_monsters.py and
 tests/test_invisible_monsters.py.
@@ -191,6 +205,7 @@ import rededication as rededication_mod          # noqa: E402
 import coatings as coatings_mod                  # noqa: E402
 import rings as rings_mod                        # noqa: E402
 import treasure as treasure_mod                  # noqa: E402
+import packs as packs_mod                        # noqa: E402
 from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
@@ -338,6 +353,9 @@ KNOB_DEFAULTS = {
                          #   study, equip, cook, prayer: every subject but
                          #   maths waits, and every topic has a teaching card).
                          #   0 = the maths rule (acc_at) for those as well.
+    'packs':      1,     # 1 = packs come at him together and their tricks
+                         #   count (src/packs.py); 0 = met like any room
+                         #   group, no tricks (the ablation)
     'dmg_cap':    0.0,   # > 0: any ordinary monster attack whose mean damage is
                          #   above dmg_cap x the floor's damage anchor
                          #   (floor_curve.target_dmg at the monster's peak floor)
@@ -520,6 +538,11 @@ RANGED_PATTERNS = ('ranged', 'summoner', 'healer')
 RANGED_KITE_PROB = 0.30        # chance a ranged monster backs off and your
                                # turn is spent closing instead of hitting
 CHASE_HIT_PROB = 0.5           # chance per turn to land a blow on a fleeing monster
+# A rat pack pours into a corridor (data/packs.json corridor 'press'): a kid
+# meets the swarm in the open about this often, and at the doorway's pace the
+# rest. Every other pack holds the mouth or comes round, so it is always met
+# together (src/packs.py).
+PACK_SWARM_IN_THE_OPEN = 0.5
 NEIGHBOUR_JOIN_PROB = 0.25     # chance the next room's group arrives before
                                # you can rest (perception 8, no line of sight)
 MAX_FIGHT_TURNS = 400          # safety valve; a fight this long is a stalemate
@@ -3303,6 +3326,7 @@ class Run:
             """A monster joins the melee; resolve who strikes first."""
             m.x, m.y = slots[len(active) % len(slots)]
             active.append(m)
+            m._cached_all_monsters = active      # its pack's tricks count who is beside him
             free = 0
             pat = m.ai_pattern
             if pat in RANGED_PATTERNS or (pat == 'dragon' and not ctx.get('pit')):
@@ -3338,7 +3362,12 @@ class Run:
             active = [m for m in active if m.alive]
             queue = [m for m in queue if m.alive]       # an area spell can kill those waiting
             while len(active) < k and queue:
-                enter(queue.pop(0), opening=(turn == 0))
+                m0 = queue.pop(0)
+                enter(m0, opening=(turn == 0))
+                # A pack comes on together and spreads round him (src/packs.py).
+                for o in self._packmates_join(m0, queue, len(slots) - len(active)):
+                    queue.remove(o)
+                    enter(o, opening=(turn == 0))
             if p.hp <= 0 and self._player_dead():
                 return 'dead'
             if not active:
@@ -3490,6 +3519,18 @@ class Run:
                                 active.append(loc)        # swarms ignore the doorway limit
                 if p.hp <= 0 and self._player_dead():
                     return 'dead'
+
+    def _packmates_join(self, m, queue, room: int) -> list:
+        """The rest of ``m``'s pack waiting at the doorway, who come in with
+        it (at most ``room``): a holding pack always (it will not be fought
+        one at a time), a rat pack PACK_SWARM_IN_THE_OPEN of the fights."""
+        pid = packs_mod.pack_of(m) if self.knobs['packs'] else None
+        if pid is None or room <= 0 or not packs_mod.in_pack(m):
+            return []
+        if (packs_mod.spec(pid).get('corridor') == 'press'
+                and random.random() >= PACK_SWARM_IN_THE_OPEN):
+            return []
+        return [o for o in queue if packs_mod.pack_of(o) == pid and packs_mod.in_pack(o)][:room]
 
     def _between_rounds(self, active):
         """Retreat from a mandatory fight, recover, return. The foe keeps its
@@ -4071,6 +4112,7 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
         set(knobs) != set(KNOB_DEFAULTS) else knobs
     install_caches()
     apply_defence_knobs(knobs)
+    packs_mod.ENABLED = bool(knobs.get('packs', 1))
     random.seed(seed)
     cache = FloorCache(variants)
     lo, hi = floors

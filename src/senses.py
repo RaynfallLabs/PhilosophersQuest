@@ -593,6 +593,12 @@ def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:
             if getattr(m, '_band', None):
                 import war_bands
                 war_bands.alarm(m, all_monsters, player.x, player.y)
+            else:
+                # One of a pack has found him: it rouses the rest (a hound
+                # bays, and the pack keeps his scent: src/packs.py).
+                import packs
+                if packs.pack_of(m) is not None:
+                    packs.alarm(m, all_monsters, player.x, player.y, dungeon)
         m._aware = True
         m._tracking = True
         m._sensed_by = how

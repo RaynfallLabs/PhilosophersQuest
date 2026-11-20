@@ -464,6 +464,15 @@ A **side floor** is reached by an easter egg (or a scene) and left by its own po
 | rust           | 0          | Rusts equipped rustables                        |
 | polymorph      | 0          | Polymorphs the player                           |
 
+Kobolds lay two more kinds of their own (`data/packs.json` `traps.kinds`; [monsters](monsters.md) "Packs"): round a kobold den as the floor is peopled, and as a kobold backs away from the hero. They are never among the floor's random traps.
+
+| Type     | Damage     | Side effect                                         |
+|----------|------------|-----------------------------------------------------|
+| snare    | 0          | `immobilized` 1-2t (save vs DEX negates)            |
+| caltrop  | 1d4 pierce | `slowed` 3-4t (save vs DEX halves)                  |
+
+A trap with an `effect` (these two) applies it through the saving throw (`_check_floor_trap`), a rewired one on the monster that steps on it (`_fire_trap_on_monster`); both disarm at AI tier 1. One laid where the hero can see it is shown at once.
+
 Each trap carries `{'revealed': False, ...}`. The main-loop `_check_floor_trap` runs when the player steps onto a trap tile: if the trap is `safe_for_player` (rewired via disarm-chain ≥ 3) the player passes through, otherwise a PER-based sidestep check runs (`0.05 + PER * 0.02`, so PER 10 ≈ 25% dodge), and on failure the trap fires and is removed from the dict.
 
 ### 7.2 Pit traps (special)

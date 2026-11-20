@@ -6,7 +6,8 @@
 
 * `steal`: "gold" takes a share of the hero's purse (economy.THEFT_PURSE_SHARE),
   "item" takes one unworn thing from the pack (a piece of treasure catches a
-  thief's eye most of all), "any" takes gold or an item. What is taken leaves
+  thief's eye most of all), "any" takes gold or an item, "food" a meal or a
+  raw cut (a harpy's snatch, src/packs.py). What is taken leaves
   the hero lighter (coins weigh, treasure.py); a monster has no carry limit.
 * A blow with `steal` that lands rolls `steal_chance` (default 1.0); the
   monster notes the wish (`_wants_steal`) and the game carries it out here
@@ -119,6 +120,13 @@ def steal(game, m, kind: str, rng=random) -> str:
         pass
     purse = int(getattr(game, 'player_gold', 0) or 0)
     items = stealable(player)
+    snatch = kind == 'food'
+    if snatch:
+        # A harpy's snatch (data/packs.json): food from the pack, nothing
+        # else, as the harpies seized Phineus's dinner.
+        from items import Food, Ingredient
+        items = [it for it in items if isinstance(it, (Food, Ingredient))]
+        kind = 'item'
     if kind == 'any':
         kind = 'gold' if purse > 0 and (not items or rng.random() < 0.5) else 'item'
     who = the_name(m)
@@ -142,7 +150,8 @@ def steal(game, m, kind: str, rng=random) -> str:
             name = game._display_name(taken)
         except Exception:
             name = getattr(taken, 'name', 'something')
-        msg = f"{who} snatches your {name} and runs!"
+        msg = (f"{who} snatches your {name} out of your pack and makes off with it!" if snatch
+               else f"{who} snatches your {name} and runs!")
     m._aware = True
     m._flee_timer = 0
     if getattr(m, 'after_theft', 'flee') == 'teleport' and _teleport_away(game, m, rng):

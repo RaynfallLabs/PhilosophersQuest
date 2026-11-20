@@ -1,0 +1,207 @@
+{
+  "_doc": "Packs (src/packs.py; Brandon 2026-11-18: 'add packs that fight 2+ at a time, the more diverse and unique our monsters are, the better'; the design he approved 2026-11-19). A pack is a kin group that hunts together, set down at once (data/monsters.json pack + pack_size; dungeon._spawn_one_in_room). A war-band (data/war_bands.json) is a mixed group with a leader and roles; a band's member keeps to its band and never uses pack tactics. 'tactics' are the numbers of the hunt every pack below shares: in the open they spread round the hero, each to a free tile on its own side; where only one of them could reach him (a corridor, a doorway) they do not come on single file (corridor 'hold': they wait out of his sight beside the mouth for him to come out, or go round to come at him from another side; 'press': vermin pour in anyway); one that notices him rouses the rest. 'packs' are the lore groups (a kind belongs to one), each with its own trick in 'tricks'. 'herds' are the kinds that are set down in groups (pack: true) but do not hunt as a pack, with the reason. Every line is plain player text; {The}, {the}, {He}, {he}, {his}, {him} name the creature (monster.fill), {pack} the pack's plural, {n} a count in words.",
+  "tactics": {
+    "_doc": "engage_radius: tactics only within this many tiles of the hero (Chebyshev), so far-off members just come on. mates_radius: packmates this close count. choke_slots: the hero is at a choke when no more than this many tiles beside him can be reached from the pack's side (a short walk: slack steps more than the straight distance, at most reach_nodes tiles searched). round_*: the search for a way round (at most round_nodes tiles, a path of round_max steps; looked for again every round_every turns). patience: turns a pack holds a mouth before one of them tries his luck. rouse_radius: how far the first one's cry carries (as sound does, round corners, not through stone).",
+    "engage_radius": 5,
+    "mates_radius": 8,
+    "choke_slots": 1,
+    "slack": 3,
+    "reach_nodes": 300,
+    "round_nodes": 1200,
+    "round_max": 30,
+    "round_every": 6,
+    "patience": 12,
+    "rouse_radius": 8,
+    "hold_line": "The {pack} will not follow you into the narrow way. They wait beyond it, out of sight, for you to come out.",
+    "round_line": "One of the {pack} slips away to come at you from another side.",
+    "press_line": "Tired of waiting, one of the {pack} tries its luck.",
+    "surround_line": "The {pack} spread out to come at you from every side."
+  },
+  "packs": {
+    "rats": {
+      "plural": "rats",
+      "kinds": ["giant_rat", "dire_rat"],
+      "corridor": "press",
+      "tricks": ["swarm"],
+      "why": "Rats pour through every gap in a heap and bite all at once; they think no further than that, so in a passage they still come on, one behind the other."
+    },
+    "wolves": {
+      "plural": "wolves",
+      "kinds": ["wolf", "wolf_pack_leader", "dire_wolf_alpha", "winter_wolf"],
+      "corridor": "hold",
+      "circle": true,
+      "tricks": ["hamstring"],
+      "leader": {"wolf": {"kind": "wolf_pack_leader", "chance": 0.4}},
+      "why": "A wolf pack is a family that hunts as one: one holds the prey's eyes while the others circle to its flanks and go for the legs."
+    },
+    "jackals": {
+      "plural": "jackals",
+      "kinds": ["jackal"],
+      "corridor": "hold",
+      "tricks": ["dart"],
+      "why": "Jackals hunt in pairs and families and never stand to fight: each darts in to snap and is gone again while the next comes in."
+    },
+    "hyenas": {
+      "plural": "hyenas",
+      "kinds": ["cave_hyena"],
+      "corridor": "hold",
+      "tricks": ["harry"],
+      "why": "A hyena clan tests a herd, finds the weak one, and runs it for miles until it drops; the cave hyenas of the Ice Age dragged what they caught back to their dens."
+    },
+    "gnolls": {
+      "plural": "gnolls",
+      "kinds": ["gnoll", "gnoll_archer"],
+      "corridor": "hold",
+      "tricks": ["harry"],
+      "why": "Gnolls are hyenas walking as men, and hunt as hyenas do: they trail wounded prey until it falls."
+    },
+    "goblins": {
+      "plural": "goblins",
+      "kinds": ["goblin"],
+      "corridor": "hold",
+      "tricks": ["sling"],
+      "why": "Goblins are cowards alone and bold in a crowd: they pelt a foe with stones until enough of them are near, then rush him together."
+    },
+    "kobolds": {
+      "plural": "kobolds",
+      "kinds": ["kobold"],
+      "corridor": "hold",
+      "tricks": ["traps"],
+      "why": "Kobolds line every tunnel with snares and fight a retreat over their own traps."
+    },
+    "ghouls": {
+      "plural": "ghouls",
+      "kinds": ["ghoul", "ghast"],
+      "corridor": "hold",
+      "tricks": ["feast"],
+      "why": "Ghouls numb their prey with their claws, and the whole pack feeds on one who cannot move."
+    },
+    "harpies": {
+      "plural": "harpies",
+      "kinds": ["harpy"],
+      "corridor": "hold",
+      "tricks": ["snatch"],
+      "why": "The harpies are the snatchers: they swooped on Phineus's table to seize his food and fly off with it."
+    },
+    "hounds": {
+      "plural": "hounds",
+      "kinds": ["gravehound", "shadow_hound", "blink_dog", "fionn_hound", "hecate_hound", "abyssal_hound"],
+      "corridor": "hold",
+      "circle": true,
+      "tricks": ["bay"],
+      "why": "Hounds hunt by scent and voice: the first to find the quarry bays, and the whole pack runs to the sound and keeps the trail."
+    }
+  },
+  "tricks": {
+    "swarm": {
+      "bestiary": "Swarms: each rat bites harder for every other rat beside you.",
+      "_doc": "Each rat's bite is worth per_other more for every OTHER rat of its pack beside the hero, at most cap more: one rat is a nuisance, four are deadly. The line is said when line_at or more others are on him and the count has grown since it was last said.",
+      "per_other": 0.5,
+      "cap": 1.5,
+      "line_at": 2,
+      "line": "{n} rats are on you at once, and every bite goes deeper!"
+    },
+    "hamstring": {
+      "bestiary": "Hunts as a pack: with a packmate on you, a wolf can bite at your hamstring and slow you.",
+      "_doc": "A wolf's bite that lands while another of its pack stands beside the hero may hamstring him: slowed (a DEX save halves it), within status_effects.CONTROL_CAP. A hero already slowed is not hamstrung again until it wears off.",
+      "chance": 0.25,
+      "effect": "slowed",
+      "turns": 3,
+      "line": "{The} slips behind you and bites at your hamstring while {his} packmate holds your eyes!"
+    },
+    "dart": {
+      "bestiary": "Hunts as a pack: darts in to bite and back out of reach, by turns.",
+      "_doc": "A jackal that closes to the hero snaps at once (no free blow for him), and on its next turn darts back out of reach if a packmate is near to take its place; no more than max_in of the pack are on him at a time.",
+      "max_in": 2,
+      "line": "{The} darts in, snaps at you and is away again before you can strike."
+    },
+    "harry": {
+      "bestiary": "Hunts as a pack: closes in and bites harder once you are badly hurt.",
+      "_doc": "Hyenas and gnolls hang back from a strong hero and close on a wounded one: while he is below 'below' of his health their bites are worth mult more, they do not flee when hurt, and they do not wait at a corridor's mouth.",
+      "below": 0.5,
+      "mult": 1.3,
+      "line": "The {pack} smell your blood and close in, bolder now that you are hurt!"
+    },
+    "sling": {
+      "bestiary": "Hunts as a pack: slings stones until the pack has gathered, then rushes you together.",
+      "_doc": "Goblins with a ranged attack (their Sling) keep back and pelt the hero from up to 'range' tiles while the pack gathers; when charge_at of them (or all that live, if fewer) are within gather_radius of him, they all close at once. Next to him they use their knives.",
+      "range": 5,
+      "gather_radius": 5,
+      "charge_at": 3,
+      "line": "The goblins drop their slings and rush you together!"
+    },
+    "traps": {
+      "bestiary": "Hunts as a pack: lays snares and caltrops round its den and as it backs away.",
+      "_doc": "Kobolds lay simple traps: 'den' traps among the tiles near where the pack is set down (hidden), and as they back away from the hero each kobold may lay one of its 'each' traps on the tile it leaves (withdraw_chance a turn beside him). A trap laid where the hero can see it is shown. Monsters never set off an ordinary trap, so a kobold walks over its own.",
+      "den": [1, 2],
+      "den_radius": 3,
+      "each": 1,
+      "withdraw_chance": 0.4,
+      "line": "{The} backs away and scatters something on the floor where {he} stood.",
+      "kinds": {
+        "snare": {
+          "type": "snare",
+          "damage": "0",
+          "damage_type": "none",
+          "message": "A noose of cord jerks tight round your ankle!",
+          "effect": "immobilized",
+          "effect_turns": [1, 2],
+          "symbol": "^",
+          "color": [170, 140, 90]
+        },
+        "caltrop": {
+          "type": "caltrop",
+          "damage": "1d4",
+          "damage_type": "pierce",
+          "message": "You tread on a scatter of iron caltrops!",
+          "effect": "slowed",
+          "effect_turns": [3, 4],
+          "symbol": "^",
+          "color": [150, 150, 160]
+        }
+      }
+    },
+    "feast": {
+      "bestiary": "Hunts as a pack: the whole pack falls on a hero who cannot move.",
+      "_doc": "When the hero is held (paralysed, asleep, stuck fast or stunned) every ghoul of the pack within call_radius comes for him, past any mouth it was holding, and their bites on him are worth mult more.",
+      "held": ["paralyzed", "sleeping", "immobilized", "stunned"],
+      "call_radius": 10,
+      "mult": 1.25,
+      "line": "You cannot move, and the {pack} fall on you to feed!"
+    },
+    "snatch": {
+      "bestiary": "Snatches food from your pack and flies off with it. Killing it gives it back.",
+      "_doc": "A harpy's talon blow that lands may snatch food from the hero's pack (theft.steal 'food'); she flies off with it and gives it back only when she dies.",
+      "attacks": ["Talon Rake"],
+      "chance": 0.35,
+      "steal": "food"
+    },
+    "bay": {
+      "bestiary": "Hunts as a pack: the first to find you bays, and the rest come and keep your scent.",
+      "_doc": "The first hound of a pack to find the hero bays: every hound of the pack the sound reaches (radius) is roused to him and keeps his scent for scent_turns turns, wherever he goes.",
+      "radius": 14,
+      "scent_turns": 20,
+      "line": "{The} throws back {his} head and bays. The rest of the pack answer it.",
+      "line_unseen": "Somewhere close a hound bays, and others answer it."
+    }
+  },
+  "herds": {
+    "_doc": "Kinds set down in groups (data/monsters.json pack: true) that do not hunt as a pack: they keep their own ways (the dead walk where they are driven, demons are a rabble, birds and swarms are flocks, soldiers and assassins fight in war-bands or in pairs).",
+    "groups": [
+      {"why": "The mindless dead shamble in a crowd but have no hunt in them.",
+       "kinds": ["skeleton", "skeleton_archer", "skeleton_warrior", "skeleton_horde", "zombie_legion", "dread_knight_legion", "totentanz_dancer"]},
+      {"why": "Lesser demons are a rabble that boils out of the pit together, each for itself.",
+       "kinds": ["dretch", "rutterkin", "mane_demon", "lemure", "vrock", "galla_demon", "erinyes_lesser", "erinyes_greater"]},
+      {"why": "Flocks and swarms of the air: they wheel and stoop on their own, not as hunters.",
+       "kinds": ["bat", "hugin_raven", "stymphalian_bird", "strix", "stirge_swarm", "sluagh", "ker"]},
+      {"why": "Crawling swarms already fight as one body each.",
+       "kinds": ["scarab_swarm", "rot_grub_swarm"]},
+      {"why": "Soldiers, raiders and assassins: they fight in war-bands and by their own drill, not as hunting packs.",
+       "kinds": ["orc_warrior", "bandit_thug", "goblin_kingslayer", "sown_warrior", "shadow_assassin", "kallikantzaros", "oni", "girtablilu"]},
+      {"why": "Cave-dwelling hunters that keep to their own lairs: lizard-folk, frog-folk, hook horrors and clockwork things.",
+       "kinds": ["troglodyte", "bullywug", "hook_horror", "clockwork_horror"]},
+      {"why": "Lesser shades drift together but each feeds alone.",
+       "kinds": ["shade"]}
+    ]
+  }
+}

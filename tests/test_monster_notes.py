@@ -276,7 +276,9 @@ def test_a_creature_with_no_tell_says_nothing_on_sight():
     (a goblin is flesh like a man)."""
     hero = _hero()
     g = _G(hero)
-    plain = next(k for k in ('kobold', 'giant_rat', 'jackal', 'goblin')
+    # (The kobold, the rat and the goblin hunt in packs now, and a pack's
+    # trick is a tell: src/packs.py. An orc scout or a hobgoblin is plain.)
+    plain = next(k for k in ('kobold', 'giant_rat', 'jackal', 'goblin', 'orc_scout', 'hobgoblin')
                  if k in MONS and not tells.abilities(_m(k)) and not tells.lore_lines(_m(k)))
     g._maybe_tell(_m(plain))
     hero.studied_monster_ids.add(plain)

@@ -219,6 +219,9 @@ class LevelManager:
         from dungeon import generate_dungeon, spawn_items, populate_floor, FLOOR_DENSITY_BASE
 
         dungeon = generate_dungeon(80, 50, level_num)
+        # While the floor is first peopled a kobold pack lays its den's traps
+        # (src/packs.py); a newcomer later in the run brings none.
+        dungeon._dens_open = True
 
         # Monster spread scales with depth (2026-05-19 density rebuild;
         # 2026-06-06 per-room pass). `density` is the PER-ROOM probability of
@@ -288,6 +291,7 @@ class LevelManager:
             if dungeon.special_rooms.get(tuple(room.center)) == 'monster_den'])
 
         self.max_level_reached = max(self.max_level_reached, level_num)
+        dungeon.__dict__.pop('_dens_open', None)
         items = self._once_per_run(items)
         return dungeon, monsters, items
 

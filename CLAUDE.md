@@ -67,6 +67,7 @@ src/
   senses.py           - How a monster notices the hero: sight, sound, lore senses; searching; idle jobs
   wanderers.py        - The floor's clock: time to explore (a grace from its explore tour), then a trickle of newcomers
   war_bands.py        - War-bands: groups with a leader and roles, morale when he falls
+  packs.py            - Packs: kin that hunt together (surround in the open, hold a corridor's mouth or go round) and each family's trick (rats swarm, wolves hamstring, goblins sling...)
   tells.py            - Tells: what a dangerous creature shows it can do, and what to do about it
   decor.py            - The five domains (themes) and the fixture layer: what stands in a floor
   hazards.py          - Domain hazards (data), trap lean, kin weights and the floor's resident clan
@@ -207,6 +208,7 @@ data/
   enemy_lore.json, kit_sense.json - What Recall Lore, probing and the quests teach of a creature; Kit Sense's lines
   arsenal.json      - Coatings, thrown flasks, Press or Guard, the parry, the named counters
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
+  packs.json        - Packs: the hunt's numbers, the lore packs and their tricks, the herds that do not hunt as one
   traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)
   old_nickel.json   - Old Nickel's lines by phase and moment (the friend's offers and asides, the reveal, then taunts, iron, the cloak, darting in, striking, hurt, dying), their pacing and Journal lines

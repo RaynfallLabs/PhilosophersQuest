@@ -41,6 +41,7 @@ added_files = [
     ('data/room_dressing.json',     'data'),   # special-room furniture (decor.py)
     ('data/lore_fixtures.json',     'data'),   # lore fixtures (game_lore_fixtures.py)
     ('data/war_bands.json',         'data'),   # war-bands (war_bands.py)
+    ('data/packs.json',             'data'),   # packs: the hunt and the family tricks (packs.py)
     ('data/tells.json',             'data'),   # tells (tells.py)
     ('data/kit_sense.json',         'data'),   # Kit Sense lines (kit_sense.py)
     ('data/enemy_lore.json',        'data'),   # Recall Lore on monsters, probing, quests (enemy_lore.py)
