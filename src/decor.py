@@ -33,8 +33,8 @@ Pure module: no pygame.
 from __future__ import annotations
 
 import json
-import random
 from collections import deque
+import random_streams
 
 _DOMAINS: dict | None = None
 _FIXTURES: dict | None = None
@@ -754,7 +754,7 @@ def place_event_stand(dungeon, fid: str, monsters=(), items=(), rng=None):
     from the ways in), and failing that in the first room: an event that
     happens every run must find its floor. Returns its tile, or None only
     when no reachable floor tile can hold it."""
-    rng = rng or random.Random()
+    rng = rng or random_streams.own_stream()
     taken = _taken_tiles(dungeon, monsters, items)
     reach = _walk_set(dungeon)
     before = _reachable_count(dungeon)
@@ -1006,7 +1006,7 @@ def _spots(dungeon, where: str, layer: str, room, taken: set):
 
 def dress_boss_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
     """A gate floor dressed for its showdown (data/boss_floors.json)."""
-    rng = rng or random.Random()
+    rng = rng or random_streams.own_stream()
     apply_theme(dungeon, level)
     place_barrier(dungeon)
     spec = (boss_floors().get('floors') or {}).get(str(level))
@@ -1092,7 +1092,7 @@ def boss_phase(dungeon, keeper, rng=None) -> str:
     """The keeper has turned (its enrage): the room changes with it
     (boss_floors.json 'phase'). Returns '' (the keeper's own line is said
     by the game)."""
-    rng = rng or random.Random()
+    rng = rng or random_streams.own_stream()
     spec = (boss_floors().get('floors') or {}).get(str(getattr(dungeon, 'level', 0))) or {}
     ph = (spec.get('phase') or {}).get(getattr(keeper, 'kind', ''))
     if not ph:
@@ -1119,7 +1119,7 @@ def dress_floor(dungeon, level: int, monsters=(), items=(), rng=None) -> int:
     rooms' own furniture, the lore fixtures, the domain's decor and hazards,
     then the arrival lines. Returns how many fixtures were placed. Call
     after the monsters and items are down, so nothing lands under a statue."""
-    rng = rng or random.Random()
+    rng = rng or random_streams.own_stream()
     dom = apply_theme(dungeon, level)
     if not dom:
         return 0

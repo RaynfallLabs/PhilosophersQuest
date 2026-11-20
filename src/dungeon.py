@@ -18,6 +18,7 @@ import math
 import random
 from dataclasses import dataclass
 from typing import List, Optional, Set, Tuple
+import random_streams
 
 # ---------------------------------------------------------------------------
 # Tile constants
@@ -281,10 +282,11 @@ def generate_dungeon(width: int = 80, height: int = 50, level: int = 1,
     Generate a complete dungeon level using BSP + post-processing passes.
     Every room is guaranteed to be connected.  Room count scales with depth.
     On every 10th non-boss level (10, 30, 50, 70, 90), a maze is generated instead.
-    ``rng`` is the floor's own random stream: a fresh one when not given (the
-    game), a seeded one when a test must build the same floor every time.
+    ``rng`` is the floor's own random stream. When not given it is drawn
+    from the shared stream (random_streams.own_stream), so after
+    ``random.seed(s)`` the same floor comes out in every process.
     """
-    rng   = rng or random.Random()
+    rng   = rng or random_streams.own_stream()
     is_boss = level in _BOSS_LEVELS
 
     # -- Maze levels (every 10th level that is not a boss level) --------------
@@ -1504,7 +1506,7 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     eligible = _floor_pool(level, dungeon)
     if not eligible:
         return []
-    rng = random.Random()
+    rng = random_streams.own_stream()
     if min_count is None:
         min_count = min(4 + level // 10, 8)
     if max_count is None:
@@ -1534,7 +1536,7 @@ def spawn_themed(room: Room, level: int, dungeon: Dungeon, words=(), families=()
     ``families``; failing those, the plain pool. (A lair drew from the
     general pool and then hoped: a yuan-ti lair held a serpent 0% of the
     time, G2.) Only the new monsters are returned."""
-    rng = rng or random.Random()
+    rng = rng or random_streams.own_stream()
     eligible = _floor_pool(level, dungeon)
     words = [w.lower() for w in words or ()]
     themed = {k: v for k, v in eligible.items()
@@ -1617,7 +1619,7 @@ def populate_floor(rooms: List[Room], level: int, dungeon: Dungeon,
     eligible = _floor_pool(level, dungeon)
     if not eligible:
         return []
-    rng = random.Random()
+    rng = random_streams.own_stream()
     monsters = []
     spawn_rooms = rooms[1:]
     if not spawn_rooms:
@@ -1684,7 +1686,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     from items import (load_items, Container, pick_random_weapon_for_floor, pick_random_armor_for_floor,
                        pick_random_shield_for_floor)
 
-    rng          = random.Random()
+    rng          = random_streams.own_stream()
     ground_items = []
 
     # A floor with only a handful of rooms (the maze floors 10, 30, 50, 70
@@ -2697,7 +2699,7 @@ def _item_eligible_weighted(templates: list, level: int,
 
     SLOTS_PER_TYPE = 20   # each item class gets this many weighted slots in the pool
     if rng is None:
-        rng = random.Random()
+        rng = random_streams.own_stream()
 
     from items import is_random_loot
     templates = [t for t in templates if is_random_loot(t)]

@@ -54,8 +54,9 @@
   },
 
   "enchant_cap": {
-    "_doc": "The most plus an Enchant Armour scroll can raise a core piece to; a minor piece's scroll raises its enchantment one level instead.",
+    "_doc": "The most plus a core piece (body armour, a shield) can hold, from its level and from scrolls, smiths and altars; a minor piece's scroll raises its enchantment one level instead. A common piece holds what its MATERIAL holds (max_enchant in data/materials/armor, by lore, 2026-11-19: cold iron +2, leather +2, steel +3, bronze +4, mithril and elven silk +6; gear.enchant_cap_for), never past the ceiling; 'core' is a named piece's cap and any piece whose material says nothing.",
     "core": 5,
+    "ceiling": 6,
     "minor_level": 10
   },
 

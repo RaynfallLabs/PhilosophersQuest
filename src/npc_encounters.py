@@ -249,13 +249,12 @@ def shift_armor_enchant(player, target, amount: int) -> tuple:
     bug bash 3.3.2), moved 2 levels a point (one tier), 0 to 10.
     Returns (before, after) of whichever it moved."""
     import gear
-    from items import ARMOR_SLOTS, ENCHANT_CAP, set_ench_level
+    from items import set_ench_level
     if gear.is_core(target):
-        slot = 'shield' if getattr(target, 'item_class', '') == 'shield' else 'body'
+        cap = gear.enchant_cap_for(target)          # what its material holds, by lore
         old = int(getattr(target, 'enchant_bonus', 0) or 0)
         new = old + int(amount)
-        new = max(-3, min(ENCHANT_CAP.get(slot, 1), new)) if amount < 0 else \
-            max(old, min(ENCHANT_CAP.get(slot, 1), new))
+        new = max(-3, min(cap, new)) if amount < 0 else max(old, min(cap, new))
         target.enchant_bonus = new
         return old, new
     old = int(getattr(target, 'ench_level', 0) or 0)

@@ -632,8 +632,11 @@ class TraderMixin:
             body = slots[ARMOR_SLOTS.index('body')] if 'body' in ARMOR_SLOTS and \
                 ARMOR_SLOTS.index('body') < len(slots) else None
             body = body or next((s for s in slots if s is not None), None)
-            if body is not None and int(getattr(body, '_smith_bonus', 0) or 0) < economy.SMITH_ENCHANT_CAP:
-                return [body]
+            import gear
+            if body is not None and int(getattr(body, '_smith_bonus', 0) or 0) < economy.SMITH_ENCHANT_CAP \
+                    and (not gear.is_core(body)
+                         or int(getattr(body, 'enchant_bonus', 0) or 0) < gear.enchant_cap_for(body)):
+                return [body]           # (no smith adds plus past what the material holds)
             return []
         if sid == 'cut_curse':
             from player import _buc_known_to_player

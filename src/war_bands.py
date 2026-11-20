@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import json
 import random
+import random_streams
 
 _DATA: dict | None = None
 
@@ -120,7 +121,7 @@ def _band_room(dungeon, rng, monsters=()):
 def place_band(dungeon, monsters: list, level: int, rng=None) -> list:
     """Maybe set a war-band down on this floor. Returns its members (already
     added to ``monsters``)."""
-    rng = rng or random.Random()
+    rng = rng or random_streams.own_stream()
     d = data()
     if level < int(d.get('first_floor', 3)) or rng.random() >= float(d.get('chance', 0.4)):
         return []

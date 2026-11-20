@@ -621,6 +621,8 @@ def report(mons: dict) -> None:
 
 
 def main(argv=None) -> int:
+    import lore_pass_guard
+    lore_pass_guard.refuse("monster_pass_2026_11_17", argv)
     ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
     ap.add_argument('--write', action='store_true')
     ap.add_argument('--floors', action='store_true')

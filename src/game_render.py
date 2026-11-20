@@ -6507,6 +6507,12 @@ class RenderMixin:
         rows = []
         if _gear.is_core(item):
             rows.append(("AC", f"+{_gear.ac_value(item)}"))
+            # How much magic its material holds (gear.enchant_cap_for), once
+            # the material is known: the number would name it otherwise.
+            _mid = getattr(item, 'material', None)
+            if (_mid and not getattr(item, 'is_unique', False)
+                    and _mid in getattr(self.player, 'known_materials', ())):
+                rows.append(("Holds", f"Up to +{_gear.enchant_cap_for(item)}"))
         elif isinstance(item, Armor):
             import guards as _guards
             import enchantments as _ench

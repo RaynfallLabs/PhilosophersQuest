@@ -58,6 +58,19 @@ A common piece is **template x material x enchantment level**:
   Its **tier** is `ceil(level / 2)`: the quiz tier, and on body armour and
   shields the plus (`gear.plus_for_level`). Odd levels are a tier's lesser
   form, even levels its greater ("of Greater Iron Will II").
+- **How much magic a material holds** (2026-11-19, Brandon: "lore caps;
+  some materials hold magic better, even if they're not inherently
+  stronger"). A common body armour or shield holds at most its material's
+  `max_enchant` (`gear.enchant_cap_for`; ceiling 6 in `gear_rules.json`
+  `enchant_cap`), from its level and from scrolls, smiths, altars and
+  rewards alike. Cold iron turns magic aside (+2), leather and hide hold a
+  little (+2), steel +3, bronze +4 (Hephaestus' metal), mithril, elven
+  silk, starmetal and orichalcum +6; adamantine, the unyielding, only +3,
+  so the strongest metal is not the one that takes the most magic. Each
+  material's `enchant_note` says why, when a scroll finds the piece full;
+  the card shows "Holds: Up to +N" once the material is known. Named
+  pieces keep the core cap (+5). A piece an old save carries above its new
+  cap keeps its plus; it only takes no more.
 
 **Threshold** (Brandon's ruling: complexity and benefit set it):
 `gear.equip_threshold` = weight class (2 / 3 / 4) + benefit by tier

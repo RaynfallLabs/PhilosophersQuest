@@ -42,6 +42,7 @@ from __future__ import annotations
 import json
 import random
 from collections import deque
+import random_streams
 
 _DATA: dict | None = None
 
@@ -750,9 +751,9 @@ def assign_jobs(monsters, rooms, rng=None, sleep_rooms=()) -> None:
     """Give each freshly made floor's creatures their own business. The
     creatures of one room share a job, so a pack sleeps together; every
     creature in ``sleep_rooms`` (a monster den) sleeps. Its own random
-    generator by default, so the shared stream (seeded runs, tests) is not
-    moved by it."""
-    rng = rng or random.Random()
+    generator by default, seeded from the shared stream
+    (random_streams.own_stream), so a seeded game gives the same jobs."""
+    rng = rng or random_streams.own_stream()
     sleepy = {id(r) for r in sleep_rooms or ()}
     lo, hi = data()['jobs'].get('sleep_turns', [300, 700])
     by_room: dict = {}

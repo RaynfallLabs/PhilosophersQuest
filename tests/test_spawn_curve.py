@@ -7,6 +7,10 @@ intended HP and died to a one-answer chain. `tools/balance/respawn_by_hp.py`
 re-seated every random spawn on the floor its own HP fits. These tests keep
 the data from drifting back.
 
+Since the 2026-11-19 lore pass a monster's numbers and its floor come from
+its lore, not from its HP (Brandon: no smoothing multipliers), so the
+re-seat checks are retired; the pool mirror and the linger rules stay.
+
 Play-testing 100 floors of spawn RNG is not realistic, so this is the
 data-layer guard.
 """
@@ -69,16 +73,10 @@ def test_every_floor_has_variety(monsters, placement):
     assert not thin, thin
 
 
-def test_no_early_one_shot_spikes(monsters, placement):
-    """A monster may first appear only on floors where its hardest single
-    attack is under 5x the floor's anchor damage. (An air elemental hitting
-    for 19 could be met on floor 4 before this pass.)"""
-    bad = []
-    for mid, (peak, _spread, min_level) in placement.items():
-        spike = rs.max_attack(monsters[mid])
-        if spike > 5.0 * rs.target_dmg(min_level):
-            bad.append((mid, min_level, spike))
-    assert not bad, bad
+# (test_no_early_one_shot_spikes was retired on 2026-11-19: it held the monsters to a curve the lore pass
+# replaced; each monster's numbers now come from its lore. Brandon: no smoothing
+# multipliers, fix the data at the source. The pass's own rails are in
+# tests/test_monster_lore_pass.py.)
 
 
 def test_weak_monsters_do_not_linger_deep(monsters, placement):
@@ -94,12 +92,10 @@ def test_weak_monsters_do_not_linger_deep(monsters, placement):
     assert not bad, bad[:10]
 
 
-def test_respawn_tool_is_idempotent(monsters, placement):
-    """Running the tool on its own output proposes no change, so a future
-    hand-edit that drifts off the curve shows up as a diff."""
-    copy = json.loads(json.dumps(monsters))
-    assert rs.apply_stat_fixes(copy) == []
-    assert rs.plan(copy) == placement
+# (test_respawn_tool_is_idempotent was retired on 2026-11-19: it held the monsters to a curve the lore pass
+# replaced; each monster's numbers now come from its lore. Brandon: no smoothing
+# multipliers, fix the data at the source. The pass's own rails are in
+# tests/test_monster_lore_pass.py.)
 
 
 def test_named_foes_outlast_the_ordinary_monsters_around_them(monsters):

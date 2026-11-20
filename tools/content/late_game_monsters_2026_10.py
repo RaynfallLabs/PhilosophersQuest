@@ -993,6 +993,9 @@ def apply_potion(pots: dict) -> list[str]:
 
 
 def main():
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "balance"))
+    import lore_pass_guard
+    lore_pass_guard.refuse("late_game_monsters_2026_10")
     write = '--write' in sys.argv
     for path, fn in ((MONSTERS, apply), (SIZES_PATH, apply_sizes), (POTIONS, apply_potion)):
         data, fmt = jsonfmt.load(path)

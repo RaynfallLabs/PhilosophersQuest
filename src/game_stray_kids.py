@@ -84,8 +84,11 @@ class StrayKidsMixin:
         if st.get('spawned') or st.get('floor') != level:
             return
         import decor
+        # The floor's own kind of stream (random_streams), not the shouts':
+        # that one is seeded by the OS, and a seeded floor would set the
+        # idol down somewhere new in every process.
         pos = decor.place_event_stand(self.dungeon, stray_kids.idol_id(), self.monsters,
-                                      self.ground_items, self._stray_kids_rng())
+                                      self.ground_items)
         if pos is not None:
             st['spawned'] = True
             st['pos'] = [int(pos[0]), int(pos[1])]
