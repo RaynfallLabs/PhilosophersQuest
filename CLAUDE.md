@@ -70,6 +70,10 @@ src/
   war_bands.py        - War-bands: groups with a leader and roles, morale when he falls
   packs.py            - Packs: kin that hunt together (surround in the open, hold a corridor's mouth or go round) and each family's trick (rats swarm, wolves hamstring, goblins sling...)
   tells.py            - Tells: what a dangerous creature shows it can do, and what to do about it
+  tactics.py          - The Tactical Mind, pure: a thinking creature's options scored from what it sees (data/minds.json)
+  tactical_mind.py    - The Tactical Mind in play: who thinks, the View, the plan carried out, a band leader's orders, the feint, focus on a hurt pet
+  lanes.py            - Archers Find a Lane: each missile's reach, a lane past its friends, a step back, no walking into melee
+  habits.py           - They Learn Your Tricks: what a side SAW the hero do on this floor (corridors, blasts, kiting, resting)
 <<<<<<< HEAD
   # Monster behaviour, first wave (AI-1, 2026-11-19): small pure modules, numbers and lines in data/monster_ai.json
   kind_data.py        - A kind's own fields where the Monster keeps no copy; data/monster_ai.json; the behaviours' tells

@@ -450,6 +450,48 @@ def rouse_near(monsters, x: int, y: int, radius: int, dungeon=None) -> int:
 # Moving with purpose
 # ---------------------------------------------------------------------------
 
+# Wait Your Turn (AI-2, fix_corridor_pathing, 2026-11-20): a hunter stuck
+# behind one of its own side in a narrow way waits its turn instead of
+# walking off on any detour, however long, and searching again every turn;
+# a way round is taken only if it is at most `slack` steps longer than the
+# straight way (data/minds.json `queue`). QUEUE is the scenario harness's
+# ablation.
+QUEUE = True
+
+
+def queue_rules() -> dict:
+    try:
+        import tactics
+        return tactics.data().get('queue') or {}
+    except (ImportError, OSError, ValueError):
+        return {}
+
+
+def _friend_at(m, all_monsters, tile) -> bool:
+    """One of its own side stands on ``tile`` (a pet or a stranger is not:
+    a creature does not wait politely behind those)."""
+    import faction
+    for o in all_monsters or ():
+        if o is not m and getattr(o, 'alive', False) and (o.x, o.y) == tuple(tile):
+            return faction.same_side(m, o)
+    return False
+
+
+def _avoid_fn(m, dungeon):
+    """A creature that knows the floor's snares (tactical_mind: knows_traps)
+    keeps off them when it has another way; None for every other."""
+    try:
+        import tactical_mind
+        if not tactical_mind.flag(m, 'knows_traps'):
+            return None
+    except (ImportError, OSError, ValueError):
+        return None
+
+    def avoid(x, y):
+        return tactical_mind.hazard_here(dungeon, x, y) is not None
+    return avoid
+
+
 def _passable_fn(m, dungeon):
     from dungeon import DOOR
     fw, fh = tuple(getattr(m, 'footprint', (1, 1)) or (1, 1))
@@ -466,17 +508,27 @@ def _passable_fn(m, dungeon):
     return ok
 
 
-def find_path(m, dungeon, goal, blocked=frozenset(), max_nodes: int = 2500):
+def find_path(m, dungeon, goal, blocked=frozenset(), max_nodes: int = 2500,
+              max_len: int | None = None, avoid=None):
     """The tiles from the monster's next step to ``goal``, or None. Tiles in
     ``blocked`` (other creatures) are avoided. A goal the monster cannot
     stand on (the hero's tile, a wall a sound came through) is still
-    reached: the path ends on it."""
+    reached: the path ends on it. ``max_len``: no path longer than that
+    many steps (Wait Your Turn). ``avoid(x, y)``: tiles it keeps off while
+    it has another way (a kobold's own snares)."""
+    if avoid is not None and not isinstance(avoid, _Avoid):
+        got = find_path(m, dungeon, goal, blocked, max_nodes, max_len, _Avoid(avoid))
+        if got is not None:
+            return got
+        return find_path(m, dungeon, goal, blocked, max_nodes, max_len, None)
     start = (m.x, m.y)
     goal = (int(goal[0]), int(goal[1]))
     if start == goal:
         return []
     ok = _passable_fn(m, dungeon)
+    keep_off = avoid.fn if isinstance(avoid, _Avoid) else None
     prev = {start: None}
+    depth = {start: 0}
     q = deque([start])
     seen = 0
     gx, gy = goal
@@ -486,6 +538,8 @@ def find_path(m, dungeon, goal, blocked=frozenset(), max_nodes: int = 2500):
         seen += 1
         if seen > max_nodes:
             break
+        if max_len is not None and depth[cur] >= max_len:
+            continue
         cx, cy = cur
         nbrs = [(cx + ox, cy + oy) for ox in (-1, 0, 1) for oy in (-1, 0, 1) if ox or oy]
         nbrs.sort(key=lambda t: max(abs(t[0] - gx), abs(t[1] - gy)))
@@ -498,7 +552,10 @@ def find_path(m, dungeon, goal, blocked=frozenset(), max_nodes: int = 2500):
                 break
             if nxt in blocked or not ok(*nxt):
                 continue
+            if keep_off is not None and keep_off(*nxt):
+                continue
             prev[nxt] = cur
+            depth[nxt] = depth[cur] + 1
             q.append(nxt)
     if not found:
         return None
@@ -522,16 +579,38 @@ def _occupied(m, all_monsters, extra_occupied, player):
 
 
 def step_toward(m, dungeon, goal, all_monsters, extra_occupied, player) -> bool:
-    """One step along a real path toward ``goal``. True if it moved."""
+    """One step along a real path toward ``goal``. True if it moved.
+
+    Hunting the hero, it takes a way round the creatures in front only if
+    that way is short (Wait Your Turn); behind one of its own side on the
+    real way it waits its turn, a few turns with no new search, and steps
+    up as soon as the tile in front is free."""
     from dungeon import DOOR
     goal = (int(goal[0]), int(goal[1]))
     occ = _occupied(m, all_monsters, extra_occupied, player)
-    path = m.__dict__.get('_path')
-    if (not path or m.__dict__.get('_path_goal') != goal
-            or _cheb(m.x, m.y, *path[0]) != 1 or path[0] in occ):
-        near = {t for t in occ if _cheb(m.x, m.y, *t) <= 2 and t != goal}
-        path = find_path(m, dungeon, goal, blocked=near)
+    d = m.__dict__
+    hunting = QUEUE and player is not None and goal == (player.x, player.y)
+    if hunting and int(d.get('_queue_wait', 0) or 0) > 0:
+        m._queue_wait = int(d['_queue_wait']) - 1
+        nxt = d.get('_queue_step')
+        if not nxt or tuple(nxt) in occ or _cheb(m.x, m.y, *nxt) != 1:
+            return False                 # still behind its friend: no new search
+        m._queue_wait = 0
+        path = [tuple(nxt)] + [tuple(t) for t in (d.get('_queue_rest') or ())]
         m._path_goal = goal
+    else:
+        path = d.get('_path')
+        if (not path or d.get('_path_goal') != goal
+                or _cheb(m.x, m.y, *path[0]) != 1 or path[0] in occ):
+            near = {t for t in occ if _cheb(m.x, m.y, *t) <= 2 and t != goal}
+            avoid = _avoid_fn(m, dungeon)
+            if hunting:
+                path = _hunting_path(m, dungeon, goal, near, occ, all_monsters, avoid)
+                if path == 'queued':
+                    return False
+            else:
+                path = find_path(m, dungeon, goal, blocked=near, avoid=avoid)
+            m._path_goal = goal
     if not path:
         m._path = None
         return False
@@ -552,6 +631,38 @@ def step_toward(m, dungeon, goal, all_monsters, extra_occupied, player) -> bool:
     m.x, m.y = nx, ny
     m._path = path[1:]
     return True
+
+
+class _Avoid:
+    """find_path's keep-off rule, marked so the first search applies it."""
+
+    def __init__(self, fn):
+        self.fn = fn
+
+
+def _hunting_path(m, dungeon, goal, near, occ, all_monsters, avoid):
+    """Its way to the hero: round the creatures in front if the way round is
+    short; else the real way if its first step is free; 'queued' when one of
+    its own side stands on that step (it waits its turn); else, a pet or a
+    stranger in the way, the old search round them."""
+    q = queue_rules()
+    budget = _cheb(m.x, m.y, *goal) + int(q.get('slack', 6))
+    path = find_path(m, dungeon, goal, blocked=near, max_len=budget, avoid=avoid)
+    if path:
+        return path
+    way = find_path(m, dungeon, goal, avoid=avoid)
+    if not way:
+        return None
+    if way[0] not in occ:
+        return way
+    if _friend_at(m, all_monsters, way[0]):
+        m._queue_wait = int(q.get('wait', 3))
+        m._queue_step = tuple(way[0])
+        m._queue_rest = [tuple(t) for t in way[1:]]
+        m._queued = True
+        m._path = None
+        return 'queued'
+    return find_path(m, dungeon, goal, blocked=near, avoid=avoid)
 
 
 # ---------------------------------------------------------------------------
@@ -627,6 +738,14 @@ def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:
         m._lead_used = True
         return True
     m._tracking = False
+    if int(m.__dict__.get('_tm_watch', 0) or 0) > 0 and not hidden:
+        # It holds its post beyond a narrow way, out of the hero's sight,
+        # for him to come out (the Tactical Mind: src/tactical_mind.py); it
+        # does not walk in to look for him until its patience runs out.
+        m._tm_watch = int(m._tm_watch) - 1
+        import tactical_mind
+        tactical_mind.blind_turn(m, player, dungeon, all_monsters, extra_occupied)
+        return False
     if heard and not hidden:
         m._goal = (heard[0], heard[1])
         m._searching = False

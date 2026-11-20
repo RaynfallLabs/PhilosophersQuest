@@ -130,6 +130,9 @@ def monster_trait_lines(mdef: dict, known: bool = True) -> list:
             line = _packs.trick(tid).get('bestiary')
             if line:
                 out.append(line)
+        # How it thinks (the Tactical Mind, src/tactical_mind.py).
+        import tactical_mind as _tm
+        out.extend(_tm.bestiary_lines(kind))
     return out
 
 

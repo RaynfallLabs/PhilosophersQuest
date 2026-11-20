@@ -229,6 +229,9 @@ def test_the_imp_no_longer_hunts_from_across_the_floor():
 
 
 def test_an_archer_keeps_its_distance():
+    """Archers Find a Lane (AI-2, src/lanes.py): beside the hero an archer
+    with somewhere to shoot from steps back every time (it was half the
+    time), at most twice running: a hero who keeps after it gets it in melee."""
     dun = two_rooms()
     hero = Hero(5, 5)
     stepped = 0
@@ -241,7 +244,7 @@ def test_an_archer_keeps_its_distance():
         arc.take_turn(hero, dun, [arc])
         if max(abs(arc.x - hero.x), abs(arc.y - hero.y)) == 2:
             stepped += 1
-    assert 5 <= stepped <= 25, stepped
+    assert stepped == 30, stepped
 
 
 def test_a_den_sleeps():

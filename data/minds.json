@@ -1,0 +1,303 @@
+{
+  "_doc": "The Tactical Mind (AI-2, MONSTERS AND MAGIC, 2026-11-20): how a thinking creature weighs its turn. src/tactics.py scores the options from what the creature can see (pure); src/tactical_mind.py builds that view and carries the choice out with the moves the game already has (packs.hold_step / round_path / choose_spot, senses' paths, the ranged step back). A plain attack, or anything the mind does not plan, is today's code. Beasts, vermin and the mindless have no mind. Named foes, allies, encounter people, the unicorn, Death and Old Nickel never think here. Lines are filled by monster.fill: {The} {the} {He} {he} {him} {his}; {pet} is the pet's name, {hazard} what lies on the floor. Each option's line is said once a fight for the creature's side.",
+  "think_radius": 12,
+  "engage_radius": 6,
+  "commit_turns": 2,
+  "patience": 10,
+  "press_below": 0.35,
+  "adjacent_bonus": 1.0,
+  "line_again_after": 60,
+  "edge_retreats": 3,
+  "door_turns": 10,
+  "door_below": 0.5,
+  "door_reach": 4,
+  "bait_turns": 8,
+  "bait_reach": 3,
+  "rotate_below": 0.4,
+  "rotate_fresh": 0.7,
+  "rotate_rest": 6,
+  "focus": {
+    "_doc": "Go for the Weak One: a pet under pet_below of its health, within reach tiles and in sight, while the hero is above hero_above; at most share of the creatures that can see the pet go for it. Never an escort, the unicorn, a ridden Bococho or Dad.",
+    "pet_below": 0.35,
+    "hero_above": 0.35,
+    "reach": 6,
+    "share": 0.5
+  },
+  "feint": {
+    "_doc": "Feigned Flight: once a band a floor, a soldier at a corridor's mouth falls back `back` tiles into the room while at least `need` of his band wait beside the mouth out of the hero's sight; a hero who steps out within `turns` turns is struck by each of them, hit_bonus easier to land.",
+    "turns": 4,
+    "back": 3,
+    "need": 2,
+    "hit_bonus": 2
+  },
+  "minds": {
+    "cunning": {
+      "name": "Cunning",
+      "weights": {
+        "attack": 1.0,
+        "focus_pet": 1.3,
+        "cast": 1.1,
+        "screen": 1.3,
+        "fall_back": 1.2,
+        "hold_choke": 1.6,
+        "wait_allies": 1.4,
+        "hold_door": 1.1,
+        "bait": 1.5,
+        "flank": 1.2
+      },
+      "rotates": false,
+      "learns": true,
+      "focus_weak": true,
+      "presses_wounded": true,
+      "bestiary": "Cunning: it waits for its friends, will not follow you into a corridor, and goes for whoever is bleeding."
+    },
+    "soldier": {
+      "name": "Soldier",
+      "weights": {
+        "attack": 1.0,
+        "rotate": 1.5,
+        "feint": 1.3,
+        "cast": 1.0,
+        "screen": 1.5,
+        "fall_back": 1.3,
+        "hold_choke": 1.4,
+        "wait_allies": 1.1,
+        "hold_door": 1.2,
+        "flank": 1.1
+      },
+      "rotates": true,
+      "learns": true,
+      "focus_weak": false,
+      "presses_wounded": false,
+      "bestiary": "A drilled soldier: it holds a line, changes places when the front man tires, and may feign flight to draw you out."
+    },
+    "trickster": {
+      "name": "Trickster",
+      "weights": {
+        "attack": 1.0,
+        "cast": 1.2,
+        "screen": 1.1,
+        "fall_back": 1.1,
+        "hold_choke": 1.3,
+        "wait_allies": 1.1,
+        "leave_light": 1.6,
+        "bait": 1.4,
+        "flank": 1.4
+      },
+      "rotates": false,
+      "learns": true,
+      "focus_weak": false,
+      "presses_wounded": false,
+      "bestiary": "Tricky: it slips round to your side and will not be drawn into a corridor."
+    },
+    "caster": {
+      "name": "Caster",
+      "weights": {
+        "attack": 1.0,
+        "cast": 1.3,
+        "screen": 1.0,
+        "fall_back": 1.2,
+        "hold_choke": 1.0
+      },
+      "rotates": false,
+      "learns": false,
+      "focus_weak": false,
+      "presses_wounded": false,
+      "bestiary": "It keeps its distance behind its friends and casts."
+    }
+  },
+  "flags": {
+    "dark_edge": "It fights from the edge of your light, and steps back into the dark after it strikes.",
+    "knows_traps": "It fights from behind its own snares and the floor's hazards, and never steps on them."
+  },
+  "kinds": {
+    "goblin": {"mind": "cunning", "knows_traps": true},
+    "goblin_king": {"mind": "cunning", "knows_traps": true},
+    "goblin_sniper": {"mind": "cunning", "knows_traps": true},
+    "goblin_kingslayer": {"mind": "cunning"},
+    "kobold": {"mind": "cunning", "knows_traps": true},
+    "kobold_pack_leader": {"mind": "cunning", "knows_traps": true},
+    "kobold_trapsetter": {"mind": "cunning", "knows_traps": true},
+    "kobold_dragonshield": {"mind": "cunning", "knows_traps": true},
+    "kobold_sorcerer": {"mind": "caster", "knows_traps": true},
+    "bugbear": {"mind": "cunning", "knows_traps": true},
+    "bugbear_chieftain": {"mind": "cunning"},
+    "orc_scout": {"mind": "cunning"},
+    "gnoll": {"mind": "cunning"},
+    "gnoll_archer": {"mind": "cunning"},
+    "gnoll_pack_lord": {"mind": "cunning"},
+    "gnoll_fang_of_yeenoghu": {"mind": "cunning"},
+    "gnoll_alpha_of_yeenoghu": {"mind": "cunning"},
+    "bandit_thug": {"mind": "cunning"},
+    "bandit_archer": {"mind": "cunning"},
+    "bandit_thief": {"mind": "cunning"},
+    "bandit_captain": {"mind": "cunning"},
+    "bandit_kingpin": {"mind": "cunning"},
+    "hobgoblin": {"mind": "soldier"},
+    "hobgoblin_captain": {"mind": "soldier"},
+    "hobgoblin_warlord": {"mind": "soldier"},
+    "hobgoblin_marshal": {"mind": "soldier"},
+    "orc_warrior": {"mind": "soldier"},
+    "orc_marauder": {"mind": "soldier"},
+    "orc_archer": {"mind": "soldier"},
+    "orc_warchief": {"mind": "soldier"},
+    "orc_warbringer": {"mind": "soldier"},
+    "orc_warlord": {"mind": "soldier"},
+    "dread_orc_champion": {"mind": "soldier"},
+    "mercenary_veteran": {"mind": "soldier"},
+    "veteran_knight": {"mind": "soldier"},
+    "sown_warrior": {"mind": "soldier"},
+    "einherjar_ghost": {"mind": "soldier"},
+    "skeleton_warrior": {"mind": "soldier"},
+    "dark_elf": {"mind": "trickster", "dark_edge": true},
+    "drow_warrior": {"mind": "trickster", "dark_edge": true},
+    "drow_priestess": {"mind": "trickster", "dark_edge": true},
+    "drow_mage": {"mind": "caster", "dark_edge": true},
+    "huldufolk_raider": {"mind": "trickster", "dark_edge": true},
+    "shadow": {"mind": "trickster", "dark_edge": true},
+    "greater_shadow": {"mind": "trickster", "dark_edge": true},
+    "shadow_master": {"mind": "trickster", "dark_edge": true},
+    "nightshade_spawn": {"mind": "trickster", "dark_edge": true},
+    "shadow_assassin": {"mind": "trickster", "dark_edge": true},
+    "shadow_archer": {"mind": "trickster", "dark_edge": true},
+    "kyubi_kitsune": {"mind": "trickster"},
+    "rakshasa_illusionist": {"mind": "trickster"},
+    "will_o_wisp": {"mind": "trickster", "knows_traps": true},
+    "will_o_wisp_lesser": {"mind": "trickster", "knows_traps": true},
+    "centaur": {"mind": "soldier"},
+    "psoglav": {"mind": "cunning"},
+    "blue_men_of_the_minch": {"mind": "trickster"},
+    "vila": {"mind": "trickster"},
+    "yuki_onna": {"mind": "trickster"},
+    "tsuchigumo": {"mind": "trickster"},
+    "nahual": {"mind": "caster"},
+    "goblin_shaman": {"mind": "caster"},
+    "orc_shaman": {"mind": "caster"},
+    "necromancer_apprentice": {"mind": "caster"},
+    "dark_cultist": {"mind": "caster"},
+    "battle_mage": {"mind": "caster"},
+    "harrow_witch": {"mind": "caster"}
+  },
+  "lines": {
+    "hold_choke": "{The} and the others will not follow you into the narrow way: they wait for you out of sight.",
+    "hold_choke_alone": "{The} will not follow you into the narrow way. {He} waits for you out of sight.",
+    "round": "{The} slips away to come at you from another side.",
+    "wait_allies": "{The} hangs back, waiting for the others to come up.",
+    "flank": "{The} slips round to come at you from the side.",
+    "leave_light": "{The} melts back into the dark at the edge of your light.",
+    "hold_door": "{The} backs into the doorway, to fight you one at a time.",
+    "rotate": "{The} steps back, and a fresh fighter takes {his} place.",
+    "feint": "{The} breaks and runs!",
+    "feint_known": "{The} falls back too neatly. It is a feint: the others will be waiting beside the way out.",
+    "feint_sprung": "It was a trick! The rest of them were waiting for you beside the way out.",
+    "focus_pet": "{The} sees that {pet} is hurt, and goes for the kill!",
+    "press": "{The} and the others press in: they can see you are hurt.",
+    "bait": "{The} grins and waits on the far side of the {hazard}.",
+    "bait_hidden": "{The} waits very still, as if daring you to come straight at {him}.",
+    "cast": "{The} keeps {his} distance and casts.",
+    "lane": "{The} slips aside for a clear shot.",
+    "habit_choke_fighter": "{The} and the others have seen your corridor trick: they stay in their room.",
+    "habit_opens_with_area": "{The} and the others have seen your blasts: they spread out.",
+    "habit_kiter": "{The} and the others have seen you shoot and step back: they come at you fast.",
+    "habit_rester_near_foes": "{The} and the others have seen you rest with foes about: they rush you while you rest."
+  },
+  "unseen": {
+    "feint": "Somewhere ahead, running feet.",
+    "rotate": "",
+    "focus_pet": ""
+  },
+  "orders": {
+    "_doc": "The Captain's Orders: a band's leader, while he lives, sees the hero and can shout, gives the band an order: screen (guards stand between the hero and him, shooters loose from behind them, casters hang back), charge (the hero is under charge_below of his health or held: everyone presses in), fall_back (half the band is down, once: the rest gather round him for fall_back_turns turns). Silenced, held, frightened, charmed, confused, babbled or asleep, he gives none. A hero with wax in his ears sees him shout but hears no words; the band still obeys.",
+    "charge_below": 0.4,
+    "fall_back_turns": 6,
+    "screen_reach": 7,
+    "unseen": "Somewhere ahead, a voice barks orders.",
+    "wax": "You see {the} shout something, but the wax keeps out the words.",
+    "default": {
+      "screen": "{The} barks: \"Shields to me! Archers, loose!\"",
+      "charge": "{The} roars: \"Now, while the hero bleeds! All of you!\"",
+      "fall_back": "{The} shouts: \"Fall back! Fall back to me!\""
+    },
+    "goblin_scouts": {
+      "screen": "{The} snarls: \"Stay in front of me, you maggots!\"",
+      "charge": "{The} snarls: \"Get in there! The hero's bleeding!\"",
+      "fall_back": "{The} snarls: \"Back! Back to me, you cowards!\""
+    },
+    "gnoll_pack": {
+      "screen": "{The} gives a barking laugh, and the pack spreads out before {him}.",
+      "charge": "{The} howls, and the whole pack rushes in for the kill!",
+      "fall_back": "{The} yelps, and the pack falls back round {him}."
+    },
+    "bandit_crew": {
+      "screen": "{The} calls out: \"Hold the line, lads! Bows, take your shots!\"",
+      "charge": "{The} shouts: \"The hero's done for! Finish it!\"",
+      "fall_back": "{The} shouts: \"To me, lads! Close up!\""
+    },
+    "footpads": {
+      "screen": "{The} hisses: \"Keep in front of me!\"",
+      "charge": "{The} hisses: \"Now! While the hero's weak!\"",
+      "fall_back": "{The} hisses: \"Back here, quick!\""
+    },
+    "cult_circle": {
+      "screen": "{The} chants: \"Shield your master, faithful ones!\"",
+      "charge": "{The} cries: \"The unbeliever weakens! Strike!\"",
+      "fall_back": "{The} cries: \"To me, faithful! Close the circle!\""
+    },
+    "necro_procession": {
+      "screen": "{The} points, and {his} dead shuffle between you and {him}.",
+      "charge": "{The} hisses a word, and {his} dead lurch forward together!",
+      "fall_back": "{The} beckons, and {his} dead fall back round {him}."
+    },
+    "fae_hunt": {
+      "screen": "{The} sings out a high, cold call, and the hunt spreads before {him}.",
+      "charge": "{The} sings out, and the whole hunt rushes in!",
+      "fall_back": "{The} calls, and the hunt melts back round {him}."
+    },
+    "demon_warband": {
+      "screen": "{The} bellows, and the devils form a wall of horns before {him}.",
+      "charge": "{The} bellows: \"Tear the mortal apart!\"",
+      "fall_back": "{The} bellows, and the devils gather round {him}."
+    }
+  },
+  "habits": {
+    "_doc": "They Learn Your Tricks: what a side SAW the hero do on this floor (a witness is a creature that sees him at the time). A habit counts the times it was seen, each at least `apart` turns after the last, and only the last `memory` turns. At `choke_fighter` 2 a side holds its room harder; at `opens_with_area` 1 it spreads out; at `kiter` 2 it no longer waits to be shot; at `rester_near_foes` 2 it rushes a resting hero.",
+    "memory": 300,
+    "apart": 30,
+    "choke_fighter": 2,
+    "opens_with_area": 1,
+    "kiter": 2,
+    "rester_near_foes": 2
+  },
+  "ranges": {
+    "_doc": "Archers Find a Lane: how far each missile reaches, by the first word of the attack's name that matches (an attack's own `range` comes first); anything else reaches `default`.",
+    "default": 6,
+    "words": [
+      ["longbow", 8],
+      ["shortbow", 6],
+      ["hand crossbow", 5],
+      ["crossbow", 7],
+      ["bow", 7],
+      ["sling", 5],
+      ["javelin", 5],
+      ["throw", 4],
+      ["hurl", 4],
+      ["spit", 4],
+      ["breath", 7]
+    ]
+  },
+  "lanes": {
+    "_doc": "An archer whose shot is blocked looks for a lane: a free tile it can reach in `steps` steps, `min_range` to its reach from the hero and not beside him, with a clear shot; it likes `ideal` tiles off best, a tile beside a wall or a tall fixture (cover), and one out of the hero's sight. Beside the hero it steps back when it has such a tile, at most `backs` times running, then fights. With no shot and no lane it comes on, but stops `stop_at` tiles off.",
+    "steps": 3,
+    "min_range": 3,
+    "ideal": 4,
+    "backs": 2,
+    "stop_at": 2,
+    "hold": 4,
+    "keep": 2
+  },
+  "queue": {
+    "_doc": "Wait Your Turn: a hunter takes a way round only if it is at most `slack` steps longer than the straight way; stuck behind one of its own side in a narrow way it waits `wait` turns before it looks for another way.",
+    "slack": 6,
+    "wait": 3
+  }
+}

@@ -14,6 +14,8 @@ import grave_rot
 import morale
 import relurk
 import summoning
+import lanes            # Archers Find a Lane (AI-2)
+import tactical_mind    # the Tactical Mind (AI-2)
 
 
 # Ceiling on escalating rage (Fenrir, and the mini-bosses that borrow his
@@ -1660,6 +1662,7 @@ class Monster:
               and len(self.attacks) > 1):
             ranged_atks = [a for a in self.attacks
                           if a.get('ranged') or any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
+            ranged_atks = lanes.within_reach(self, player, ranged_atks)   # its own reach (AI-2)
             atk = random.choice(ranged_atks) if ranged_atks else random.choice(self.attacks)
         elif self.ai_pattern == 'dragon':
             # Adjacent: tooth and claw. The breath is for the approach.
@@ -2434,6 +2437,9 @@ class Monster:
             _op = self._opener_from_range(player, dungeon)
             if _op is not None:
                 return _op
+            _tm = tactical_mind.turn(self, player, dungeon, all_monsters, extra_occupied, 'ranged')
+            if _tm is not None:              # the Tactical Mind (src/tactical_mind.py, AI-2)
+                return _tm
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
 
         # --- Ambush AI: stay still until player is within 5 tiles ---
@@ -2509,6 +2515,10 @@ class Monster:
 
         # (Fear / charm / confusion / blindness are handled near the top of
         # take_turn so every AI pattern honours them.)
+
+        _tm = tactical_mind.turn(self, player, dungeon, all_monsters, extra_occupied, effective_pattern)
+        if _tm is not None:                  # the Tactical Mind (src/tactical_mind.py, AI-2)
+            return _tm
 
         # --- Charge: arm a damage bonus if approaching player on a clean straight ---
         # Conditions: can_charge flag, distance 2-5, AND player is on a cardinal or
@@ -3291,8 +3301,10 @@ class Monster:
         has_los = self._has_los(player.x, player.y, dungeon)
 
         # In range with LOS — check for clear shot or piercing override
-        if has_los and 2 <= dist <= self._RANGED_MAX:
+        # (each missile's own reach: src/lanes.py, AI-2)
+        if has_los and 2 <= dist <= lanes.reach(self):
             if self._has_clear_shot(player.x, player.y, dungeon, all_monsters):
+                lanes.shot(self)
                 return True
             # Shot blocked by ally — piercing monsters fire anyway
             if self._has_piercing_ranged():
@@ -3300,7 +3312,11 @@ class Monster:
                     player.x, player.y, all_monsters)
                 self._force_piercing = True
                 return True
-            # No piercing — try to reposition
+            # No piercing: step to a lane with a clear shot, or hold for the
+            # line to clear (src/lanes.py, AI-2), before it comes on.
+            _ln = lanes.blocked_turn(self, player, dungeon, all_monsters, extra_occupied)
+            if _ln is not None:
+                return _ln
             has_los = False  # fall through to approach/reposition
 
         # Adjacent: an archer keeps its distance when it can (G5: this used
@@ -3308,8 +3324,13 @@ class Monster:
         # it steps back to a tile two away that still sees you, and shoots
         # on its next turn; cornered, it fights in melee.
         if self._adjacent_to(player):
-            if random.random() < 0.5 and self._step_back(player, dungeon, all_monsters,
-                                                          extra_occupied):
+            if lanes.applies(self):
+                # Archers Find a Lane (AI-2): always, when it has somewhere
+                # to shoot from, at most twice running.
+                if lanes.back_off(self, player, dungeon, all_monsters, extra_occupied):
+                    return False
+            elif random.random() < 0.5 and self._step_back(player, dungeon, all_monsters,
+                                                            extra_occupied):
                 return False
             return True
 
@@ -3339,7 +3360,10 @@ class Monster:
             # Can't retreat — fight in melee
             return True if self._adjacent_to(player) else False
 
-        # Out of range or no LOS — approach (same as aggressive)
+        # Out of range or no LOS — approach (same as aggressive), but with
+        # no shot and no lane no nearer than two tiles (src/lanes.py).
+        if not has_los and lanes.hold_short(self, player, dungeon):
+            return False
         if self._standard_move(player, dungeon, all_monsters, extra_occupied, 'aggressive'):
             return True
         return False

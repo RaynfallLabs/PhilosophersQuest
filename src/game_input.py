@@ -752,6 +752,8 @@ class InputMixin:
             # Waiting makes you hungry like walking does. It cost nothing,
             # so any wound could be slept off for free between fights.
             self._tick_sp()
+            import habits as _habits_rest
+            _habits_rest.hero_rest(self)     # a rest seen by a clever foe (src/habits.py)
             self._advance_turn()
             return
 
