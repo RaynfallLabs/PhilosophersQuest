@@ -211,6 +211,7 @@ import treasure as treasure_mod                  # noqa: E402
 import packs as packs_mod                        # noqa: E402
 import lore_powers as lore_powers_mod            # noqa: E402  (slice M)
 import sim_ai1                                   # noqa: E402  (AI-1: monster behaviour)
+import sim_ai2                                   # noqa: E402  (AI-2: the Tactical Mind)
 from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
@@ -408,6 +409,10 @@ KNOB_DEFAULTS = {
 # ai_heal, ai_summon, ai_breath ...: 1 = the behaviour runs (the game's rule),
 # 0 = its ablation. Each is described in sim_ai1.py.
 KNOB_DEFAULTS.update(sim_ai1.KNOBS)
+# ---- AI-2: the Tactical Mind (2026-11-20; tools/balance/sim_ai2.py) ----
+# tac_mind, tac_lanes, both 1 (the game's rule); 0 is the ablation.
+KNOB_DEFAULTS.update(sim_ai2.KNOBS)
+# ---- end AI-2 ----
 # ---- end AI-1 ----
 
 DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_quick',
@@ -3652,6 +3657,7 @@ class Run(_MMMagicSim):
         self._coat_for(_first)
         self._set_stance(group)
         sim_ai1.fight_start(self, group)     # AI-1: a light against the light-shy
+        sim_ai2.fight_start(self, group)     # AI-2: who in the group thinks
         self._mm_open(group)                 # MONSTERS AND MAGIC (_MMMagicSim)
 
         def enter(m, opening: bool):
@@ -3792,7 +3798,7 @@ class Run(_MMMagicSim):
                     if target._flee_timer > 0 and random.random() > CHASE_HIT_PROB:
                         action = 'chase'
                     elif (target.ai_pattern in RANGED_PATTERNS
-                          and random.random() < RANGED_KITE_PROB):
+                          and random.random() < sim_ai2.kite_prob(self, target, RANGED_KITE_PROB)):
                         action = 'closing'
                     elif prof.get('magic') and self.cast_control(target):
                         action = 'cast'
@@ -3958,6 +3964,8 @@ class Run(_MMMagicSim):
             # --- end slice M ---
             if self.monster_acts(m, ctx):
                 self._monster_attack(m)
+                if sim_ai2.extra_blow(self, m):      # AI-2: the Tactical Mind
+                    self._monster_attack(m)
 
     def pass_time_in_fight(self):
         p = self.p
@@ -4477,6 +4485,7 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
     packs_mod.ENABLED = bool(knobs.get('packs', 1))
     lore_powers_mod.ENABLED = bool(knobs.get('mm_powers', 1))     # slice M
     sim_ai1.apply_flags(knobs)                    # AI-1: the behaviours' switches
+    sim_ai2.apply_flags(knobs)                    # AI-2: the Tactical Mind's switches
     random.seed(seed)
     cache = FloorCache(variants)
     lo, hi = floors

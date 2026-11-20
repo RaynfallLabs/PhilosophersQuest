@@ -167,6 +167,8 @@ class MagicWardsMixin:
             return
         if m not in (getattr(self, 'monsters', None) or ()):
             return
+        import habits
+        habits.hero_struck(self, m)          # two struck at once: a blast (src/habits.py)
         import wards
         for line in wards.hero_struck(self.player, m, getattr(self, 'turn_count', None)):
             self.add_message(line, 'info')

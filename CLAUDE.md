@@ -70,6 +70,10 @@ src/
   war_bands.py        - War-bands: groups with a leader and roles, morale when he falls
   packs.py            - Packs: kin that hunt together (surround in the open, hold a corridor's mouth or go round) and each family's trick (rats swarm, wolves hamstring, goblins sling...)
   tells.py            - Tells: what a dangerous creature shows it can do, and what to do about it
+  tactics.py          - The Tactical Mind, pure: a thinking creature's options scored from what it sees (data/minds.json)
+  tactical_mind.py    - The Tactical Mind in play: who thinks, the View, the plan carried out, a band leader's orders, the feint, focus on a hurt pet
+  lanes.py            - Archers Find a Lane: each missile's reach, a lane past its friends, a step back, no walking into melee
+  habits.py           - They Learn Your Tricks: what a side SAW the hero do on this floor (corridors, blasts, kiting, resting)
 <<<<<<< HEAD
   # Monster behaviour, first wave (AI-1, 2026-11-19): small pure modules, numbers and lines in data/monster_ai.json
   kind_data.py        - A kind's own fields where the Monster keeps no copy; data/monster_ai.json; the behaviours' tells
@@ -237,6 +241,7 @@ data/
   lights.json       - Carried lights and the Light spell: status sight, spell turns, the oil, lines, card and HUD words
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
   packs.json        - Packs: the hunt's numbers, the lore packs and their tricks, the herds that do not hunt as one
+  minds.json        - The Tactical Mind: which kinds think and how (cunning, soldier, trickster, caster), lines, Bestiary sentences, the captains' orders, each missile's reach and the archers' lanes
   monster_ai.json   - Monster behaviour (AI-1): healers, summoners, breath, morale, drain, rot, light, alarm, throes... numbers and lines
   traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)

@@ -96,6 +96,7 @@ the doc wins (and the row is a bug — please update it).
 | Question | Open |
 |---|---|
 | "How do I add a monster?" | [monsters.md](monsters.md), `data/monsters.json` |
+| "How does a goblin or a hobgoblin decide what to do?" | [monsters.md](monsters.md) "The Tactical Mind"; `src/tactics.py` (the scoring), `src/tactical_mind.py` (the view and the moves), `src/lanes.py` (archers), `src/habits.py`, `data/minds.json`; measured by `tools/balance/tactics_scenarios.py` |
 | "How hard is a mini-boss, and how do I retune one?" | [monsters.md](monsters.md) "Mini-boss tuning"; `tools/balance/mini_boss_bands.py` (the numbers), `tools/balance/mini_boss_fights.py` (the measuring) |
 | "Where does a mini-boss live, how many does a run meet, and what does it drop?" | [monsters.md](monsters.md) "Mini-bosses by lore"; `tools/balance/mini_boss_seats.py` (the seats), `tools/content/mini_boss_drops_2026_11_17.py` (the drops), `level_manager.plan_mini_bosses` (one or two a band) |
 | "How do I add a new quiz subject?" | [quiz_engine.md](quiz_engine.md), `data/questions/`, `fantasy_ui.FP.SUBJECT`, `player.SUBJECT_TIMER` |

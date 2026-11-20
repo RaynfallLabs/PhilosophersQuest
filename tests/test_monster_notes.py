@@ -279,9 +279,10 @@ def test_a_creature_with_no_tell_says_nothing_on_sight():
     # (The kobold, the rat and the goblin hunt in packs now, and a pack's
     # trick is a tell: src/packs.py. The orc scout and the hobgoblin raise
     # the alarm since AI-1 (src/alarm.py), a tell too. An orc warrior or a
-    # bandit captain is plain.)
+    # bandit captain thinks since AI-2 (src/tactical_mind.py: its mind is a
+    # tell). A berserker is plain: he only charges.)
     plain = next(k for k in ('kobold', 'giant_rat', 'jackal', 'goblin', 'orc_scout', 'hobgoblin',
-                             'orc_warrior', 'bandit_captain')
+                             'orc_warrior', 'bandit_captain', 'orc_berserker')
                  if k in MONS and not tells.abilities(_m(k)) and not tells.lore_lines(_m(k)))
     g._maybe_tell(_m(plain))
     hero.studied_monster_ids.add(plain)
