@@ -1518,6 +1518,12 @@ class DivineMixin:
             self._apply_prayer_cooldown_quirks()
             self._show_prayer_verse(karma_tier, min(chain, 5))
             return
+        # Deliver Us From Evil (karma 3+): a ward, not a mercy (game_wards.py).
+        if kind == 'deliver_us':
+            self._answer_deliver_us(chain, effective, hp_pct)
+            self._apply_prayer_cooldown_quirks()
+            self._show_prayer_verse(karma_tier, min(chain, 5))
+            return
 
         msgs: list[tuple[str, str]] = []
 

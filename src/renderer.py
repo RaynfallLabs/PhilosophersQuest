@@ -143,6 +143,10 @@ _WAND_EFFECT_SPRITE = {
     'disintegrate':           'wand_of_disintegration',
     'drain_life':             'wand_of_drain_life',
     'iron_mortar':            'iron_mortar_wand',
+    # MONSTERS AND MAGIC 2026-11-19 (each has its own picture; these are the
+    # fallbacks a later tier of the same effect would take)
+    'unstring_monster':       'wand_of_unstringing',
+    'family_rout':            'krotala_of_athena',
 }
 _WAND_ID_TO_SPRITE_CACHE: dict[str, 'str | None'] = {}
 
@@ -192,6 +196,13 @@ _SPELLBOOK_FAMILY_SPRITE = {
     'imprisonment':       'spellbook_imprisonment',
     'banishment':         'spellbook_banishment',
     'army_of_darkness':   'spellbook_army_of_darkness',
+    # MONSTERS AND MAGIC 2026-11-19 (each book has its own picture)
+    'galdr':              'spellbook_stayed_spear',
+    'silence':            'spellbook_tacitas_seal',
+    'entangle':           'spellbook_dionysus_vine',
+    'sanctuary':          'spellbook_sanctuary',
+    'darkness':           'spellbook_darkness_of_egypt',
+    'veil':               'spellbook_mist_of_manannan',
 }
 _SPELLBOOK_ID_TO_SPRITE_CACHE: dict[str, 'str | None'] = {}
 

@@ -101,6 +101,8 @@ def trick(tid) -> dict:
 
 
 def tricks_of(m) -> list:
+    if (getattr(m, 'status_effects', None) or {}).get('babbled', 0) > 0:
+        return []                     # the Confusion of Tongues: it forgets its pack's ways
     return list(spec(pack_of(m)).get('tricks', ()) or ())
 
 
@@ -147,6 +149,8 @@ def in_pack(m) -> bool:
     an encounter's person or a named foe: it hunts as its pack does."""
     if pack_of(m) is None or not getattr(m, 'alive', False):
         return False
+    if (getattr(m, 'status_effects', None) or {}).get('babbled', 0) > 0:
+        return False                  # babbling, it fights alone (attack_gates.py)
     d = getattr(m, '__dict__', {})
     if d.get('_band') or getattr(m, 'is_allied', False) or d.get('_npc_encounter_tag') \
             or d.get('_flavor_encounter_tag'):
@@ -210,7 +214,8 @@ def blow_mult(m, player, atk, all_monsters) -> tuple:
         return 1.0, ''
     mult = 1.0
     notes = []
-    if 'swarm' in tricks:
+    import wards
+    if 'swarm' in tricks and not wards.all_round(player):
         s = trick('swarm')
         on_him = beside_hero(m, player, all_monsters)
         n = len(on_him)
@@ -244,7 +249,9 @@ def after_blow(m, player, atk, actual: int, all_monsters) -> str:
     tricks = tricks_of(m)
     # (A hero already slowed is not hamstrung again until it wears off: three
     # wolves must not keep him slowed for the whole fight.)
+    import wards
     if ('hamstring' in tricks and not player.has_effect('slowed')
+            and not wards.all_round(player)              # the Breastplate's guard
             and beside_hero(m, player, all_monsters)):
         h = trick('hamstring')
         # Through the one rider path (guards, counters, wards, the saving

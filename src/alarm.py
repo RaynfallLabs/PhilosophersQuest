@@ -46,8 +46,18 @@ def shout(m, monsters, player, dungeon, rng=random) -> int:
     if not ENABLED or a is None or m.__dict__.get('_alarm_used'):
         return 0
     if (kind_data.named(m) or kind_data.outside_rules(m) or m.has_effect('sleeping')
-            or m.has_effect('feared') or m.has_effect('silenced')):
+            or m.has_effect('feared')):
         return 0
+    # A silenced lookout has no voice to shout with; a babbled one's shout is
+    # in a tongue its own no longer understand (attack_gates.py, the hero's
+    # Tacita's Seal and Confusion of Tongues).
+    try:
+        import attack_gates
+        if attack_gates.has(m, 'silenced') or attack_gates.babbled(m):
+            return 0
+    except ImportError:
+        if m.has_effect('silenced'):
+            return 0
     m._alarm_used = True
     import senses
     import sleepers

@@ -885,6 +885,41 @@ def _healed_line(player, got: int, line: str) -> str:
         else "The draught finds no wounds to close."
 
 
+# The ward potions and oils (MONSTERS AND MAGIC 2026-11-19): effect ->
+# (statuses it clears, statuses it lays down for its turns, the line).
+_WARD_POTIONS = {
+    'wakeful':    (('sleeping',), ('wakeful',),
+                   "The bitter brew lights you up from the inside. Nothing will put you to sleep"),
+    'fearless':   (('feared',), ('fear_immune',),
+                   "The wine tastes of Egypt, and fear goes out of you like a breath. Nothing can frighten you"),
+    'stoneproof': (('petrifying',), ('petrify_immune',),
+                   "You rub the bitter oil of rue on your eyelids and skin. Nothing can turn you to stone"),
+    'clear_mind': (('confused', 'hallucinating', 'hallucinating_pot', 'charmed'),
+                   ('confuse_immune', 'clear_sight'),
+                   "The black root and the white flower: your mind is your own. No muddle, glamour or false sight can take it"),
+    'antidote':   (('poisoned', 'diseased'), ('poison_resist',),
+                   "The theriac is thick and bitter with viper and honey. Poison drains out of you and stays out"),
+    'fireproof':  ((), ('fire_shield', 'shielded'),
+                   "You rub on the charm of Prometheus. Fire cannot burn you, and blows land half as hard"),
+    'styx_dipped': ((), ('styx_dipped',),
+                    "Black water from the Styx closes over your skin like iron. No blow, bite or claw can wound you, but mind your heel"),
+}
+
+
+def _ward_potion(player, effect: str, duration: int, buff_mult: float) -> list:
+    clears, lays, said = _WARD_POTIONS[effect]
+    cleared = [s for s in clears if player.status_effects.pop(s, None) is not None]
+    dur = max(1, int(int(duration or 1) * buff_mult))
+    for st in lays:
+        player.add_effect(st, dur, cap=max(dur, 60))
+    line = f"{said} ({quantity(dur, 'turn')})."
+    if cleared:
+        from status_effects import EFFECT_INFO
+        names = [(EFFECT_INFO.get(s) or (s.replace('_', ' '),))[0] for s in cleared]
+        line += f" It clears away: {', '.join(names)}."
+    return [line]
+
+
 def drink_potion(player, potion) -> list[str]:
     """
     Consume a Potion. Returns a list of message strings.
@@ -913,7 +948,7 @@ def drink_potion(player, potion) -> list[str]:
     #              caller re-adds a preserved potion to inventory)
     #   cursed  -> chance the magic fails outright (_fizzle)
     _BINARY_EFFECTS = {'teleport', 'cure_poison', 'cure_disease', 'cure_all',
-                       'restore_str', 'gain_level'}
+                       'restore_str', 'gain_level', 'restoration', 'treasure_sight'}
     _is_binary = effect in _BINARY_EFFECTS
     _preserve_chance = 0.0
     _fizzle = False
@@ -1242,6 +1277,34 @@ def drink_potion(player, potion) -> list[str]:
             messages.append(f"Pure magical brilliance floods your channels. (+{gained} MP)")
         else:
             messages.append("Your mana reserves are already brimming.")
+
+    elif effect in _WARD_POTIONS:
+        # The wards in a flask (MONSTERS AND MAGIC 2026-11-19): what it
+        # clears first, then the status it lays down, a blessed dose half as
+        # long again, a cursed one half (data/items/potion.json 'duration').
+        messages.extend(_ward_potion(player, effect, duration, _buff_mult))
+
+    elif effect == 'restoration':
+        # The spring of Asclepius: every point a drain, a poison or a disease
+        # took comes back (the physician's own work: restore_drained).
+        from status_effects import restore_drained
+        n = restore_drained(player)
+        life = int(player.__dict__.pop('_last_life_restored', 0) or 0)   # (life_drain.py)
+        cured = [s for s in ('diseased', 'sickly') if player.status_effects.pop(s, None) is not None]
+        if n or life:
+            got = ([f"{quantity(n, 'stat point')} restored"] if n else []) + (
+                [f"Max HP +{life}"] if life else [])
+            messages.append(f"The spring water runs cold through you, and what the dark took "
+                            f"comes back. ({', '.join(got)}.)")
+        elif cured:
+            messages.append("The spring water runs cold through you, and the sickness goes with it.")
+        else:
+            messages.append("The spring water is cold and clean. Nothing in you needed it.")
+
+    elif effect == 'treasure_sight':
+        # The fern flower of Kupala Night: the game marks where the floor's
+        # treasure lies (MagicWardsMixin._treasure_sight).
+        messages.append("_treasure_sight")
 
     elif effect == 'fafnirs_blood':
         # The Blood is drunk through MenuMixin._drink_fafnirs_blood, which

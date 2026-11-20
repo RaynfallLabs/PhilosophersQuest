@@ -1965,6 +1965,9 @@ class CombatMixin:
         pid = getattr(self, '_pending_power', None)
         self._power_targeting = False
         self._pending_power = None
+        if (pid or '').startswith('spell_') and (getattr(self, '_pending_spell', None) or {}).get('needs_tile'):
+            self._confirm_tile_spell(cx, cy)      # a spell aimed at a tile (game_wards.py)
+            return
 
         target = monster_at_tile(self.monsters, cx, cy)
         if not target or (cx, cy) not in self.visible:
@@ -3278,6 +3281,10 @@ class CombatMixin:
         line = rings.on_strike(self.player)
         if line:
             self.__dict__['_veil_slip_line'] = line
+        import wards                                   # a strike ends sanctuary
+        _sanct = wards.hostile_act(self.player)
+        if _sanct:
+            self.add_message(_sanct, 'info')
 
     def _say_veil_slip(self):
         """The veil's line, once the strike has been told."""
@@ -3591,7 +3598,8 @@ class CombatMixin:
                     # Unseen and not beside you: the only clue is where it came from.
                     msg += (" It came from the "
                             f"{self._compass_word(m.x - self.player.x, m.y - self.player.y)}.")
-                self.add_message(msg, 'danger')
+                if msg:                              # (a ward said its line once: wards.py)
+                    self.add_message(msg, 'danger')
                 if getattr(m, 'ai_pattern', '') == 'stalker_coward':
                     self._old_nickel_blow(m, dmg)        # his line after his blow
                 if self.player.hp <= 0:

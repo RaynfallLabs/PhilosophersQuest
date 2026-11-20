@@ -106,8 +106,12 @@ class BehaviourMixin:
             self.add_message(ai_lines.fill(m, t['line']), 'danger')
         p = self.player
         if death_throes.in_blast(m, p.x, p.y, self.dungeon):
+            import wards
             dmg = death_throes.blast(m, p.max_hp)
             if dmg > 0:
+                # A ward against its family turns the blast as it turns its
+                # blows (wards.py: Saint Martha's and the like).
+                dmg = max(1, int(round(dmg * wards.damage_mult(p, m))))
                 got = p.take_damage(dmg, kind)
                 if got:
                     self.add_message(f"The blast catches you for {got} damage!", 'danger')
@@ -115,8 +119,11 @@ class BehaviourMixin:
                 import counters
                 fake = {'name': 'Death Throes', 'delivery': str(t.get('delivery', '') or '')}
                 blocked = counters.blocks_rider(p, m, fake, eff)
+                warded = wards.rider_line(p, m, eff)
                 if blocked is not None:
                     self.add_message(counters.line(p, blocked[0], blocked[1], m), 'info')
+                elif warded:
+                    self.add_message(warded, 'info')       # a family ward keeps it off
                 else:
                     dc = min(18, 12 + int(getattr(m, 'min_level', 1) or 1) // 7)
                     _ok, text = apply_debuff_with_save(p, eff, dur, dc, source=m)

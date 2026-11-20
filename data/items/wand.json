@@ -2380,5 +2380,61 @@
     "design_notes": "Asmodeus L92 boss drop. Wired via monster.treasure.unique_drop_id.",
     "quiz_threshold": 1,
     "plot_locked": true
+  },
+  "wand_of_unstringing": {
+    "name": "wand of unstringing",
+    "symbol": "/",
+    "color": [
+      230,
+      225,
+      210
+    ],
+    "weight_lb": 1.0,
+    "min_level": 20,
+    "peak_floor": 50,
+    "spread": 10,
+    "charges_min": 4,
+    "charges_max": 6,
+    "max_charges": 6,
+    "tier": 3,
+    "quiz_tier": 3,
+    "quiz_threshold": 1,
+    "effect": "unstring_monster",
+    "power": "8",
+    "unidentified_name": "string-wound wand",
+    "lore": "Young Joukahainen drove his sledge into old Vainamoinen's on the road and challenged him to a singing match. The old singer sang the boy's bow into a rainbow over the lake, his arrows into hawks, his sledge into the reeds and the boy himself into the swamp to his chin. Birch-wood cut where the duel was sung still carries the song: point it, and a creature's long weapons will not answer it.",
+    "container_loot_tier": "uncommon",
+    "weight": 0.3,
+    "peak_weight": 0.25
+  },
+  "krotala_of_athena": {
+    "name": "Krotala of Athena",
+    "symbol": "/",
+    "color": [
+      230,
+      180,
+      60
+    ],
+    "weight_lb": 1.0,
+    "min_level": 8,
+    "peak_floor": 26,
+    "spread": 8,
+    "charges_min": 5,
+    "charges_max": 8,
+    "max_charges": 8,
+    "tier": 2,
+    "quiz_tier": 2,
+    "quiz_threshold": 1,
+    "effect": "family_rout",
+    "power": "10",
+    "family": "birds",
+    "status": "feared",
+    "unidentified_name": "pair of bronze clappers",
+    "lore": "The man-eating birds of Lake Stymphalia hid in a marsh too soft to walk and too thick to shoot into. Athena gave Heracles a pair of bronze clappers made by Hephaestus, and their clatter was so dreadful that the whole flock burst up out of the reeds. Each charge is one great clash of bronze.",
+    "zap_line": "You clash the bronze krotala, and the din is dreadful: every bird in sight bursts up and flies.",
+    "none_line": "You clash the bronze, and the din rolls round the walls. No bird is in sight to fly from it.",
+    "container_loot_tier": "uncommon",
+    "weight": 0.3,
+    "peak_weight": 0.25
   }
 }

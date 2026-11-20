@@ -43,6 +43,9 @@ MAX_MENDED = 5          # the chain's cap: five links, five things mended
 POTION_EFFECTS_BLESSING_IGNORES = frozenset({
     'brilliance_mp', 'cure_all', 'cure_disease', 'cure_poison', 'fafnirs_blood',
     'gain_level', 'mimir_wisdom', 'restore_mp', 'restore_str', 'teleport',
+    # MONSTERS AND MAGIC 2026-11-19: binary, like the cures (a blessed dose
+    # may linger: food_system._BINARY_EFFECTS)
+    'restoration', 'treasure_sight',
 })
 POTION_EFFECTS_BLESSING_HELPS = frozenset({
     'blindness', 'cold_resist', 'confusion', 'drain_con', 'drain_int', 'drain_str',
@@ -50,6 +53,8 @@ POTION_EFFECTS_BLESSING_HELPS = frozenset({
     'hallucination', 'haste', 'heal', 'heroism', 'invisibility', 'levitation',
     'paralysis', 'poison', 'regeneration', 'restore_sp', 'see_invisible',
     'shock_resist', 'sickness', 'sleep', 'slow', 'weakness',
+    # MONSTERS AND MAGIC 2026-11-19: the wards in a flask last half again as long
+    'wakeful', 'fearless', 'stoneproof', 'clear_mind', 'antidote', 'fireproof', 'styx_dipped',
 })
 SCROLL_EFFECTS_BLESSING_IGNORES = frozenset({
     'annihilate', 'boss_reward', 'charging', 'confuse_monsters', 'dead_sea_map',
@@ -59,6 +64,8 @@ SCROLL_EFFECTS_BLESSING_IGNORES = frozenset({
 SCROLL_EFFECTS_BLESSING_HELPS = frozenset({
     'enchant_accessory', 'enchant_armor', 'enchant_item', 'enchant_weapon',
     'full_light', 'heal', 'identify', 'protection', 'remove_curse',
+    # MONSTERS AND MAGIC 2026-11-19: a blessed rite holds half again as long
+    'family_ward', 'family_rout',
 })
 
 # Gear a blessing always improves (worn or wielded).

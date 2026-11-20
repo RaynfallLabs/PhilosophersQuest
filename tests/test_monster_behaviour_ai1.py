@@ -1008,3 +1008,36 @@ def test_a_withdrawing_giant_strikes_a_hero_who_presses_it(monkeypatch):
     x0 = giant.x
     assert morale.run(giant, hero, dun, [giant], set()) is False     # or backs off a step
     assert giant.x < x0
+
+
+# ===========================================================================
+# Slice G's gates and the one shared restore hold for these behaviours
+# ===========================================================================
+
+def test_a_silenced_or_babbled_lookout_raises_no_alarm():
+    dun = open_room(30, 10)
+    for gate in ('silenced', 'babbled'):
+        k = make('kobold', 5, 5)
+        friend = make('kobold', 12, 5)
+        friend._aware = False
+        k.status_effects[gate] = 5
+        assert alarm.shout(k, [k, friend], Hero(3, 5), dun) == 0
+        assert not friend._aware
+
+
+def test_a_silenced_summoner_neither_chants_nor_calls():
+    s = make('skeleton_necromancer', 5, 5)
+    s.summon_cooldown = 1
+    s.status_effects['silenced'] = 5
+    for _ in range(4):
+        assert summoning.step(s, Hero(8, 5), [s]) == ''
+    assert not s.__dict__.get('_chanting') and s._summons_made == 0
+
+
+def test_the_shared_restore_gives_back_drained_life_too():
+    from status_effects import restore_drained
+    p = _real_hero()
+    life_drain.take_life(p, 20)
+    restore_drained(p)
+    assert p.max_hp == 200 and life_drain.drained(p) == 0
+    assert p.__dict__.get('_last_life_restored') == 20

@@ -62,6 +62,13 @@ def step(m, player, monsters, dungeon=None) -> str:
     its turn is spent), 'call' (the chant is done: the game sets the
     summons down this turn; its turn is spent), '' (nothing: it fights)."""
     m._wants_summon = False
+    try:
+        import attack_gates
+        if not attack_gates.may_summon(m):        # silenced: no chant, no call
+            m.__dict__.pop('_chanting', None)
+            return ''
+    except ImportError:
+        pass
     if m.__dict__.get('_chanting'):
         m._chanting = False
         if not can_call(m, player, monsters, None):

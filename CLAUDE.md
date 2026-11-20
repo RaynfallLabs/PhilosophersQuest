@@ -43,6 +43,7 @@ src/
   game_render.py      - RenderMixin: render() and every _draw_* screen (help screen included)
   game_combat.py      - CombatMixin: attacks, monster turns, pet and escort swipes, kills
   game_magic.py       - MagicMixin: spells, wands, scrolls, spellbooks
+  game_wards.py       - MagicWardsMixin (MagicMixin's base): the MONSTERS AND MAGIC spells, scrolls, wands, the prayer Deliver Us, the Sceptre of Agamemnon's V power
   game_divine.py      - DivineMixin: prayer, intercession, Judgment
   game_encounters.py  - EncountersMixin: NPC, flavor and special-level encounters
   game_road.py        - RoadMixin: the Road, pending queue and oath lifecycle
@@ -69,6 +70,7 @@ src/
   war_bands.py        - War-bands: groups with a leader and roles, morale when he falls
   packs.py            - Packs: kin that hunt together (surround in the open, hold a corridor's mouth or go round) and each family's trick (rats swarm, wolves hamstring, goblins sling...)
   tells.py            - Tells: what a dangerous creature shows it can do, and what to do about it
+<<<<<<< HEAD
   # Monster behaviour, first wave (AI-1, 2026-11-19): small pure modules, numbers and lines in data/monster_ai.json
   kind_data.py        - A kind's own fields where the Monster keeps no copy; data/monster_ai.json; the behaviours' tells
   ai_lines.py         - What a behaviour leaves for the Game to say (seen / unseen)
@@ -86,6 +88,10 @@ src/
   relurk.py           - Back to the Web: a hurt ambusher out of sight hides again
   shove.py            - Shove: a giant's blow throws the hero back, never into deadly ground
   game_behaviour.py   - BehaviourMixin: the Game's side of the behaviours (lines, the map, the kill)
+=======
+  wards.py            - Wards (data/wards.json): a family kept off (melee, riders, sight, damage), missiles stayed, mist, sanctuary, the Styx; what a strike breaks
+  attack_gates.py     - What a monster cannot use now: silenced (no voice, cast, summon, heal), unstrung (no missile, breath, gaze), babbled (no pack ways)
+>>>>>>> main
   decor.py            - The five domains (themes) and the fixture layer: what stands in a floor
   hazards.py          - Domain hazards (data), trap lean, kin weights and the floor's resident clan
   game_hazards.py     - HazardsMixin: hazards at work on the hero and the monsters; fire vents breathe

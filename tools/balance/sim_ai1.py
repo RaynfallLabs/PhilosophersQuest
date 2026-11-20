@@ -210,7 +210,9 @@ def _throes(run, active) -> None:
             run.fs['ai_throes'] = run.fs.get('ai_throes', 0) + 1
             if not (run.knobs.get('tactics') and random.random() < THROES_READ):
                 if share > 0:
-                    p.take_damage(wound(share, p.max_hp), kind)
+                    import wards
+                    p.take_damage(max(1, int(round(wound(share, p.max_hp)
+                                                   * wards.damage_mult(p, m)))), kind)
                 if t.get('effect') and p.hp > 0:
                     dc = min(18, 12 + int(getattr(m, 'min_level', 1) or 1) // 7)
                     apply_debuff_with_save(p, t['effect'], int(t.get('effect_duration', 3) or 3),
@@ -249,6 +251,9 @@ def monster_turn(run, m, fresh_monster):
     to go on to the blow."""
     k = run.knobs
     active = m.__dict__.get('_cached_all_monsters') or []
+    import attack_gates
+    if attack_gates.has(m, 'silenced'):
+        return None                         # no prayer, no chant (attack_gates.py)
     if k.get('ai_heal', 1) and m.ai_pattern == 'healer':
         target = faction.heal_choice(m, active, run.p, reach=None)
         if target is not None:

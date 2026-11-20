@@ -2097,6 +2097,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             _wfx_status = _wfx.get('status')
             _wfx_chance = float(_wfx.get('effect_chance', 0.0) or 0.0)
             _wfx_dur = int(_wfx.get('effect_duration', 3) or 3)
+            _wfx_fams = _wfx.get('families')          # only these (the Sceptre: men and goblins)
+            if _wfx_fams:
+                import family_lore
+                if family_lore.family_of(monster) not in _wfx_fams:
+                    _wfx_status = None
             if _wfx_status and _wfx_chance > 0 and random.random() < _wfx_chance:
                 # Through hold (the longer of the two durations, as before):
                 # no blood, no bleed; what its nature refuses never takes hold.

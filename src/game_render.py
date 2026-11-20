@@ -2726,6 +2726,9 @@ class RenderMixin:
             weapon = self.player.ranged_weapon
             in_reach = weapon and (max(abs(cx - px), abs(cy - py)) <= weapon.reach)
         valid_shot = has_los and in_reach and target_monster is not None
+        if _spell_aim and (getattr(self, '_pending_spell', None) or {}).get('needs_tile'):
+            # A spell aimed at a tile (Shrink the Earth): good where it may land.
+            valid_shot = in_reach and not self._aimed_step_refused(cx, cy)
 
         # Draw trajectory dots from player to cursor (skip player tile)
         traj_surf = pygame.Surface((T, T), pygame.SRCALPHA)

@@ -667,6 +667,11 @@ ALLOWED_ELLIPSIS = {
     # the floor's own look; nothing on the card itself is cut.
     ('sk_dance_won', 'Autographed Stray'):
         "the rail's In Sight row for the dropped photo, under the modal",
+    # Floor 17's seeded layout has had a swamp since the magic of 2026-11-19
+    # joined the loot pools: its arrival line (data/room_dressing.json
+    # 'arrival') trails off on purpose, as the zoo's and the graveyard's do.
+    ('black_knight_bridge', 'The stench of marsh gas'):
+        "narration: the swamp's arrival line in the log, not truncated text",
 }
 
 
