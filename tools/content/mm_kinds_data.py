@@ -479,7 +479,8 @@ NEW['eitr'] = kind(
 
 NEW['bakunawa'] = kind(
     'Bakunawa', 'S', (60, 40, 80), '1290d10+4730', 12, 'aggressive', -3, 88, 84, 12, 2.0,
-    [atk('Moon-Swallowing Jaws', '4d10+30', 'magic', 'bite', 'blinded', 0.4, 8, snuffs_light='dark'),
+    [atk('Moon-Swallowing Jaws', '4d10+30', 'magic', 'bite', 'blinded', 0.4, 8, snuffs_light='dark',
+         snuff_chance=0.5),
      atk('Coiling Crush', '5d10+36', 'blunt', 'grapple', 'immobilized', 0.3, 2),
      atk('Horned Strike', '4d8+34', 'pierce', 'blow')],
     family='serpents', tags=['beast', 'reptile'], res=['cold', 'lightning'], weak=['fire'],

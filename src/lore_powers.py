@@ -147,17 +147,20 @@ def countdown_turn(m, player, dungeon):
     d = m.__dict__
     n = int(d.get('_lp_barks', 0) or 0)
     if not _in_sight(m, player, dungeon):
+        d.pop('_lp_barked', None)            # out of sight: the next sight barks again
         if n:
             d['_lp_barks'] = 0
             d['_lp_clock'] = 0
             if cv.get('safe_line'):
                 say(cv['safe_line'], 'info')
         return None
+    if d.get('_lp_barked'):
+        return None                          # the third bark is given: now it hunts
     every = max(1, int(cv.get('every', 3) or 3))
     clock = int(d.get('_lp_clock', 0) or 0) + 1
     d['_lp_clock'] = clock
     if n and (clock - 1) % every:
-        return None
+        return _hold(m, player, dungeon, cv)
     n += 1
     d['_lp_barks'] = n
     count = max(1, int(cv.get('count', 3) or 3))
@@ -167,11 +170,24 @@ def countdown_turn(m, player, dungeon):
         say(lines[min(n, len(lines)) - 1], 'danger' if n >= count else 'warning', m=m,
             unseen=heard[min(n, len(heard)) - 1] if heard else None)
     if n < count:
-        return None
+        return _hold(m, player, dungeon, cv)
     d['_lp_barks'] = 0
     d['_lp_clock'] = 0
+    d['_lp_barked'] = True
     d['_opener_now'] = dict(cv['attack'])
     return True
+
+
+def _hold(m, player, dungeon, cv):
+    """Between its barks the hound stands and watches the hero (False: the
+    turn spent) unless he is beside it (None: it bites as usual), so a hero
+    who reads the barks has the turns to get out of its sight. In the
+    simulator's fight it is always beside him."""
+    if dungeon is None or not cv.get('holds', True):
+        return None
+    if max(abs(m.x - player.x), abs(m.y - player.y)) <= 1:
+        return None
+    return False
 
 
 def sim_turn(m, player):
@@ -295,6 +311,10 @@ def after_struck(player, m, weapon, chain: int, actual: int) -> None:
         from status_effects import _can_rust
         if not _can_rust(weapon):
             return
+        import coatings
+        co = coatings.coating_of(weapon)
+        if co and co.get('substance') == 'fire':
+            return                  # a burning blade: its hide will not close on fire
     except Exception:
         return
     if random.random() >= float(me.get('wear_chance', 0.2) or 0.0):

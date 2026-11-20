@@ -197,6 +197,11 @@ def test_every_thrown_flask_is_sized_from_one_attack_at_its_own_depth():
         t = d.get('throw')
         if not t:
             continue
+        if t.get('counting'):
+            # A handful of seed is thrown to hold a vampire while it counts
+            # (2026-11-19, coatings._counting), not to hurt: no damage.
+            assert t['damage'] == 0 and t['counting']['kinds'], fid
+            continue
         seen += 1
         assert t['damage'] == int(round(floor_curve.one_attack(t['sized_at']) / 2)), fid
         assert t['damage_type'] in ('fire', 'holy', 'acid'), fid

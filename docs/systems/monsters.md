@@ -496,8 +496,9 @@ family assignment, harvest and the kitchen, packs.json herds, tells, hints, purs
 - **Lore powers** (`src/lore_powers.py`, pure; the game's side `src/game_lore_powers.py`).
   Each is a field on the kind and says one line when it fires:
   - `countdown_voice`: the Cu-Sith barks every 3 of its turns while the hero is in its
-    sight; the third bark is its attack (a voice: wax stops it). Out of its sight the
-    count is lost.
+    sight; the third bark is its attack (a voice: wax stops it). Between barks it stands
+    and watches unless he is beside it, so he has the turns to get away; after the third it
+    hunts like any hound. Out of its sight the count is lost.
   - `metal_eater`: the Bulgasari: a blade that can rust (status_effects._can_rust:
     iron and steel, never a unique) that lands may lose a point (items.wear_down), and
     the meal mends it, its body growing up to `grow_cap` past its health.

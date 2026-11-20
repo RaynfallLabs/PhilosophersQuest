@@ -230,12 +230,12 @@
   },
   "arrival": {
     "_doc": "D1/G1: what a floor says on arrival about its special rooms: the danger is told at once (these were written for _build_atmosphere, which ran before the rooms existed, so they never fired). Treasure is learned by exploring: 'explore_line' is said once half the floor has been seen, if a vault, a treasury or a hidden cache lies on it.",
-    "zoo": "You hear exotic roars in the distance...",
-    "graveyard": "The air grows cold and unnaturally quiet...",
-    "beehive": "You hear a low, persistent buzzing...",
-    "barracks": "You hear the sound of blades being sharpened...",
-    "swamp": "The stench of marsh gas fills your nostrils...",
-    "throne_room": "You sense an aura of ancient authority...",
+    "zoo": "You hear exotic roars in the distance.",
+    "graveyard": "The air grows cold and unnaturally quiet.",
+    "beehive": "You hear a low, persistent buzzing.",
+    "barracks": "You hear the sound of blades being sharpened.",
+    "swamp": "The stench of marsh gas fills your nostrils.",
+    "throne_room": "You sense an aura of ancient authority.",
     "monster_den": "Somewhere close, something large is snoring.",
     "explore_line": "Somebody has hidden something worth finding on this floor."
   }

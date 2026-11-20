@@ -209,10 +209,22 @@ def test_the_cu_sith_barks_three_times_and_the_third_is_its_attack():
     hero = _Hero(10, 10)
     m = _m('cu_sith', 14, 10)
     got = [lore_powers.countdown_turn(m, hero, d) for _ in range(7)]
-    assert got[:6] == [None] * 6 and got[6] is True
+    # It holds its ground between the barks (the turns to get away), and
+    # the third bark is its attack.
+    assert got[:6] == [False] * 6 and got[6] is True
     assert m.__dict__['_opener_now']['name'] == 'Third Bark'
     lines = [t for t, *_ in lore_powers.drain()]
     assert len(lines) == 3 and 'third' in lines[-1].lower()
+    # Then it hunts: no more barks or holding while it keeps him in sight.
+    assert all(lore_powers.countdown_turn(m, hero, d) is None for _ in range(9))
+
+
+def test_beside_the_hero_the_hound_bites_between_barks():
+    lore_powers.drain()
+    m = _m('cu_sith', 11, 10)
+    hero = _Hero(10, 10)
+    got = [lore_powers.countdown_turn(m, hero, _Map(OPEN)) for _ in range(7)]
+    assert got[:6] == [None] * 6 and got[6] is True
 
 
 def test_out_of_its_sight_the_count_is_lost():
@@ -283,6 +295,20 @@ def test_a_blade_it_cannot_eat_is_safe():
 
 
 # ---------------------------------------------------- the other lore powers
+
+def test_fire_oil_on_the_blade_keeps_the_bulgasari_off_it():
+    m = _m('bulgasari')
+    m.hp = m.max_hp // 2
+    w = _Blade('steel')
+    w.coating = {'id': 'flask_of_fire_oil', 'name': 'Fire Oil', 'substance': 'fire', 'blows': 5}
+    old = lore_powers.spec(m, 'metal_eater')['wear_chance']
+    try:
+        lore_powers._defs()['bulgasari']['metal_eater']['wear_chance'] = 1.0
+        lore_powers.after_struck(None, m, w, 3, 10)
+    finally:
+        lore_powers._defs()['bulgasari']['metal_eater']['wear_chance'] = old
+    assert w.enchant_bonus == 2 and m.hp == m.max_hp // 2
+
 
 def test_a_long_chain_finds_the_mapinguari_soft_place():
     m = _m('mapinguari')

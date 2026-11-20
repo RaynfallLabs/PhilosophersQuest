@@ -45052,7 +45052,8 @@
         "effect": "blinded",
         "effect_chance": 0.4,
         "effect_duration": 8,
-        "snuffs_light": "dark"
+        "snuffs_light": "dark",
+        "snuff_chance": 0.5
       },
       {
         "name": "Coiling Crush",
