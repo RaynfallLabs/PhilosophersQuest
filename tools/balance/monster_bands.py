@@ -165,7 +165,7 @@ def floor_row(defs: dict, f: int):
     for k, w in p.items():
         m = defs[k]
         one, t = turn_damage(m)
-        hit = min(0.95, max(0.05, (21 - (int(m.get('thac0', 20) or 20) - ac)) / 20.0))
+        hit = min(0.95, max(0.05, (21 - (int(m.get('thac0', 20) if m.get('thac0') is not None else 20) - ac)) / 20.0))
         hps.append((dice_mean(m.get('hp')), w))
         ts = hit * t / hp
         turns.append((ts, w))
@@ -212,7 +212,7 @@ def main(argv=None):
             for k, w in sorted(r['pool'].items(), key=lambda kv: -kv[1])[:args.kinds]:
                 m = defs[k]
                 one, t = turn_damage(m)
-                hit = min(0.95, max(0.05, (21 - (int(m.get('thac0', 20) or 20) - ac)) / 20.0))
+                hit = min(0.95, max(0.05, (21 - (int(m.get('thac0', 20) if m.get('thac0') is not None else 20) - ac)) / 20.0))
                 print(f"        {100 * w / tot:4.1f}%  {k:<28} hp {dice_mean(m.get('hp')):6.0f}  "
                       f"blow {100 * one / hp:5.1f}%  turn {100 * hit * t / hp:5.1f}%  hit {100 * hit:3.0f}%")
     return 0

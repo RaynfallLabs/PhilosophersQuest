@@ -87,13 +87,25 @@ def _avg_hp(hp) -> float:
 
 _CURVE: dict | None = None
 
+# The monsters the weapons were sized against: the curve below as it stood in
+# 3.5.4 (the last --write), frozen. The 2026-11-19 lore pass gave every ordinary monster its
+# own numbers from its lore (Brandon: "fix the data at the source"), and most
+# of the floors 4-22 kinds grew into their legends. The weapons were NOT
+# refitted to keep pace: refitting them would hand the hero back the one-blow
+# kills the pass exists to end. --live measures against today's monsters
+# instead (it only prints; --write always uses the frozen curve).
+FROZEN = Path(__file__).with_name("weapon_curve_monsters_3_5_4.json")
 
-def monster_curve() -> dict:
+
+def monster_curve(live: bool = False) -> dict:
     """{floor: typical HP of the floor's ordinary monsters, as they spawn}: the
     spawn-weighted geometric mean of the game's own pool (dungeon._build_spawn_pool;
     a median jumps whenever one heavy kind arrives, a typical fight does not), smoothed
-    in log space over SMOOTH floors either side."""
+    in log space over SMOOTH floors either side. The FROZEN curve unless `live`."""
     global _CURVE
+    if not live:
+        with open(FROZEN, encoding="utf-8") as fh:
+            return {int(k): float(v) for k, v in json.load(fh).items() if not k.startswith("_")}
     if _CURVE is not None:
         return _CURVE
     import bones
@@ -215,6 +227,12 @@ def main(argv=None) -> int:
     import items
     argv = sys.argv[1:] if argv is None else argv
     table = curve()
+    if "--live" in argv:
+        frozen, live = monster_curve(), monster_curve(live=True)
+        print("floor  frozen typical HP (3.5.4)  today's   today / frozen")
+        for f in (1, 3, 5, 7, 10, 13, 16, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100):
+            print(f"{f:5d}  {frozen[f]:12.0f}  {live[f]:12.0f}   {live[f] / frozen[f]:5.2f}")
+        return 0
     print(f"{'material':17} tier peak first(old->new)  longsword base (old -> curve)")
     for mid, (_f, m) in sorted(materials().items(), key=lambda kv: (items.material_tier(kv[1][1]), kv[1][1].get("peak_floor", 0))):
         try:

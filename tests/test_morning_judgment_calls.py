@@ -45,8 +45,11 @@ def test_ancient_dragon_frost_breath_nerf():
     monsters = _load('data/monsters.json')
     ad = monsters['ancient_dragon']
     fb = next(a for a in ad['attacks'] if (a.get('name') or '').lower().replace('_', ' ') == 'frost breath')
-    assert fb['effect_chance'] == 0.5
-    assert fb['effect_duration'] == '1d6'
+    # (The 2026-11-19 lore pass kept the nerf and wrote a fixed duration
+    # within the engine's freeze cap.)
+    from status_effects import CONTROL_CAP
+    assert fb['effect_chance'] <= 0.5
+    assert int(fb['effect_duration']) <= CONTROL_CAP['frozen']
 
 
 # ---------------------------------------------------------------------------

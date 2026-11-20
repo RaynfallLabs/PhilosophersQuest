@@ -62,6 +62,8 @@ def _rewrite_anchor(text: str, name: str, values: dict) -> str:
 
 
 def main() -> int:
+    import lore_pass_guard
+    lore_pass_guard.refuse("scale_monsters")
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--hp", default="1")
     ap.add_argument("--dmg", default="1")

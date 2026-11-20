@@ -156,7 +156,10 @@ def test_deep_monsters_hit_harder_than_before_and_the_anchors_say_so():
 def test_the_early_outliers_were_softened():
     d = _defs()
     elf = d['dark_elf']['attacks'][0]
-    assert elf['effect_chance'] <= 0.25 and elf['effect_duration'] <= 4
+    # (It was a floor-2 sleeper. The 2026-11 monster passes moved it to the
+    # deep, floors 39-50, and its dart's venom is short and not a sleep.)
+    assert d['dark_elf']['min_level'] >= 30
+    assert elf['effect'] != 'sleeping' and elf['effect_duration'] <= 5
     breath = d['anzu_bird']['attacks'][1]
     assert breath['effect'] == 'paralyzed' and breath['effect_duration'] <= 3
 

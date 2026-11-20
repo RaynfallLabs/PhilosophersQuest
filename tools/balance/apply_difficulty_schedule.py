@@ -74,6 +74,8 @@ def new_anchors() -> tuple[dict, dict]:
 
 
 def main() -> int:
+    import lore_pass_guard
+    lore_pass_guard.refuse("apply_difficulty_schedule")
     hp_a, dmg_a = new_anchors()
     print("HP_ANCHORS  =", hp_a)
     print("DMG_ANCHORS =", dmg_a)

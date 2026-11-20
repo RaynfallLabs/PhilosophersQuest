@@ -399,6 +399,20 @@ Tests: `tests/test_monster_notes.py`, and the Observe cases in `tests/test_obser
 
 **Patrols (C5).** A wandering monster now arrives beside a stair the hero can't see, as if coming down or up it, instead of out of nowhere. It goes to a fight or alarm it can hear from there, or roams.
 
+## The lore pass: each monster's numbers from its own lore (2026-11-19)
+
+Brandon, 2026-11-19: "Your fix SUCKS AGAIN, because you started using smoothing multipliers to hit a target ... NEVER DO THIS ... Fix the data at the source." And: "the more diverse and unique our monsters are, the better."
+
+- **What it replaced.** Earlier passes had seated every ordinary monster on a floor curve. Every floor-1 kind bit for 1d2, and every floor-16 kind (troll, xorn, banshee, specter) hit for 1d8+2. On every floor a landed blow was about 5% of that floor's hero's health and a turn about 3%. On floors 4-22 the median monster had 56-73% of the anchor HP and died to one maths chain.
+- **What it did.** 517 kinds were re-written by size, natural weapons or carried weapon, skill, speed and signature power. Each got its own dice, routines (`multi_attack_count`), HP, to-hit, rider durations, pack size and `opener`, with a one-line lore reason. The rules are in `docs/design/MONSTER_LORE_PASS_2026_11_19.md`: role ranges as a share of the hero who meets the monster, the engine's limits, and what not to touch. `tools/balance/apply_lore_pass.py` checks each proposal and writes it.
+- **Where it stands.** `tools/balance/monster_bands.py` measures each floor against the simulated hero of that floor.
+  - A turn now costs about 4-5.7% of the hero's health on average, and the hardest tenth of kinds costs 2.5-4 times the gentlest tenth.
+  - About half the kinds open with their power.
+  - The median HP sits at 0.85-1.1 of the anchor. Floors 4-11 are about 0.85, because early kinds linger many floors past their peak.
+- **Weapons were not refitted.** The weapon curve sizes against a frozen copy of the 3.5.4 monsters (`tools/balance/weapon_curve_monsters_3_5_4.json`). Today's typical monster is 1.1-1.3 times that, most of all on floors 7-20. Refitting the weapons would hand back the one-blow kills.
+- **The old tools now refuse to write:** `respawn_by_hp`, `scale_monsters`, `apply_difficulty_schedule`, `monster_pass_2026_11_17` and `late_game_monsters_2026_10` (`tools/balance/lore_pass_guard.py`). The tests that held monsters to the HP curve were retired. `tests/test_monster_lore_pass.py` holds the pass's own rails: no turn over a quarter of the peak floor's hero's health, riders within the engine's caps, no twin kinds from floor 4 down, every floor diverse.
+- **Edit a monster one by one, by lore.** Check the result with `apply_lore_pass.py` and `monster_bands.py`.
+
 ## Openers: a creature's power before the hero strikes (2026-11-19)
 
 Brandon: "openers for sure". The powers "dont seem to make a lot of difference" because a monster died to the first maths chain before it used one.

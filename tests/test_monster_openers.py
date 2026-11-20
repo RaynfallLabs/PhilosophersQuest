@@ -29,7 +29,7 @@ import monster as monster_mod  # noqa: E402
 with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as _f:
     MONS = json.load(_f)
 
-RANGED_DELIVERIES = ('range', 'gaze', 'voice', 'breath')
+RANGED_DELIVERIES = ('ranged', 'range', 'gaze', 'voice', 'breath')
 
 
 def test_every_opener_in_the_data_names_a_real_attack_and_a_fair_range():

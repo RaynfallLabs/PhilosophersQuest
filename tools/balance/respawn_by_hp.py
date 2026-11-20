@@ -497,6 +497,8 @@ def write(monsters: dict, placement: dict) -> int:
 
 
 def main(argv: list[str]) -> int:
+    import lore_pass_guard
+    lore_pass_guard.refuse("respawn_by_hp", argv)
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     monsters = json.loads(MONSTERS_PATH.read_text(encoding="utf-8"))
     current = {mid: (d.get("peak_floor", 1), d.get("spread", 10), d.get("min_level", 1))

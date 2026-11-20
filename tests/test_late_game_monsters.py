@@ -112,18 +112,16 @@ def test_every_new_monster_has_lore_size_and_its_painted_sprite():
         assert img.get_size() == (64, 64), mid
 
 
-def test_the_pass_script_is_idempotent_on_the_shipped_data():
-    data = json.loads(json.dumps(MONS))
-    assert PASS.apply(data) == []
+# (test_the_pass_script_is_idempotent_on_the_shipped_data was retired on 2026-11-19: it held the monsters to a curve the lore pass
+# replaced; each monster's numbers now come from its lore. Brandon: no smoothing
+# multipliers, fix the data at the source. The pass's own rails are in
+# tests/test_monster_lore_pass.py.)
 
 
-def test_random_spawns_sit_on_the_floor_their_hp_was_built_for():
-    from respawn_by_hp import plan, is_random_spawn
-    placed = plan(MONS)
-    for mid in NEW:
-        d = MONS[mid]
-        if is_random_spawn(d):
-            assert placed[mid] == (d['peak_floor'], d['spread'], d['min_level']), mid
+# (test_random_spawns_sit_on_the_floor_their_hp_was_built_for was retired on 2026-11-19: it held the monsters to a curve the lore pass
+# replaced; each monster's numbers now come from its lore. Brandon: no smoothing
+# multipliers, fix the data at the source. The pass's own rails are in
+# tests/test_monster_lore_pass.py.)
 
 
 def test_deep_set_lives_on_floors_61_to_100_and_spawns_from_the_pool():
