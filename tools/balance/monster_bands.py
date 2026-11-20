@@ -124,14 +124,35 @@ def pool(defs: dict, level: int) -> dict:
     return out
 
 
+def _distance(a: dict) -> bool:
+    """breath.is_distance: flagged `ranged` or named with a ranged word."""
+    try:
+        from monster import _RANGED_WORDS as words
+    except Exception:
+        words = ('shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl', 'volley', 'ray', 'blast',
+                 'breath', 'gaze', 'song', 'wail', 'charm', 'psionic', 'disintegrat', 'cast',
+                 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex')
+    name = str(a.get('name', '')).lower()
+    return bool(a.get('ranged')) or any(w in name for w in words)
+
+
 def turn_damage(m: dict) -> tuple[float, float]:
-    """(mean damage of one blow, mean damage of one turn)."""
+    """(mean damage of one blow, mean damage of one turn). A breather with a
+    routine (src/breath.py routine()) makes it of its first N close blows
+    that are no breath, while the breath is drawn up; the ready breath is a
+    turn of its own (one blow), so its turn is the routine."""
     atks = [a for a in (m.get('attacks') or []) if isinstance(a, dict)]
     if not atks:
         return 0.0, 0.0
     means = [dice_mean(a.get('damage')) for a in atks]
     one = sum(means) / len(means)
     n = int(m.get('multi_attack_count', 0) or 0)
+    if n > 0 and not is_named(m) and any(a.get('delivery') == 'breath'
+                                         and a.get('recharge', 3) for a in atks):
+        blows = [dice_mean(a.get('damage')) for a in atks
+                 if a.get('delivery') != 'breath' and not _distance(a)][:n]
+        return one, max(sum(blows), max(dice_mean(a.get('damage')) for a in atks
+                                        if a.get('delivery') == 'breath'))
     if m.get('multi_attack_always') or n >= len(atks):
         return one, sum(means)
     if n > 0:

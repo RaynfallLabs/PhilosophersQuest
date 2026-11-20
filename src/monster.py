@@ -1669,10 +1669,18 @@ class Monster:
         _emacnt = int(getattr(self, 'enraged_multi_attack_count', 0) or 0)
         if self._enraged and _emacnt > 0:
             _macnt = _emacnt
-        if _macnt > 0 and _macnt < len(self.attacks):
+        # A breather's routine (src/breath.py): the ready breath is the whole
+        # turn; while it is drawn up again, claws, bite and tail together.
+        _brt = breath.routine(self, player, _macnt)
+        if isinstance(_brt, dict):
+            return self._resolve_blow(_brt, player)
+        if _brt:
+            return (self._fenrir_multi_attack(player, routine=_brt) if len(_brt) > 1
+                    else self._resolve_blow(_brt[0], player))
+        if _brt is None and 0 < _macnt < len(self.attacks):
             return self._fenrir_multi_attack(player, attack_limit=_macnt)
-        if (getattr(self, 'multi_attack_always', False) or _macnt >= len(self.attacks)) \
-                and len(self.attacks) > 1:
+        if (_brt is None and (getattr(self, 'multi_attack_always', False) or _macnt >= len(self.attacks))
+                and len(self.attacks) > 1):
             return self._fenrir_multi_attack(player)
 
         # Ranged monsters at distance: prefer ranged attacks over melee
@@ -3662,13 +3670,15 @@ class Monster:
 
         return False  # angels never attack the player
 
-    def _fenrir_multi_attack(self, player, attack_limit: int = 0) -> tuple[int, str]:
+    def _fenrir_multi_attack(self, player, attack_limit: int = 0,
+                             routine: list | None = None) -> tuple[int, str]:
         """Fire multiple attacks in one turn. Returns (total_dmg, combined_msg).
 
         attack_limit > 0: use only the first N attacks (for tiered bosses
         like Tiamat phase 1 / Asmodeus phase 1 — see the multi_attack_count
         JSON field). attack_limit == 0: use ALL attacks (Fenrir / Abaddon
-        multi_attack_always).
+        multi_attack_always). routine: these blows (a breather's claws and
+        bite while its breath is drawn up, src/breath.py routine()).
         """
         total = 0
         parts = []
@@ -3676,7 +3686,8 @@ class Monster:
         self._flurry_effect_done = False
         # Only what is ready: a breath still drawing waits, and the next
         # attack in its routine comes instead (src/breath.py).
-        atks_to_fire = breath.flurry(self, self.attacks, attack_limit)
+        atks_to_fire = (list(routine) if routine is not None
+                        else breath.flurry(self, self.attacks, attack_limit))
         for atk in atks_to_fire:
             if not self.alive or player.hp <= 0:
                 break               # a blow turned back killed it, or the player is already down

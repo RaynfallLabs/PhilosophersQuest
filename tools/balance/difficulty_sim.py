@@ -3813,8 +3813,9 @@ class Run(_MMMagicSim):
                     target = sim_ai3.target(self, reachable, target)   # AI-3: the holder, a chant
                     if target._flee_timer > 0 and random.random() > CHASE_HIT_PROB:
                         action = 'chase'
-                    elif (target.ai_pattern in RANGED_PATTERNS
-                          and random.random() < sim_ai2.kite_prob(self, target, RANGED_KITE_PROB)):
+                    elif (target.ai_pattern in RANGED_PATTERNS                     # AI-1: a breather drawing
+                          and random.random() < sim_ai1.kite_prob(target, sim_ai2.kite_prob(   # breath comes in
+                              self, target, RANGED_KITE_PROB))):
                         action = 'closing'
                     elif prof.get('magic') and self.cast_control(target):
                         action = 'cast'

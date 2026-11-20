@@ -303,8 +303,8 @@
     },
     "breath_recharge": {
       "sign": "{The}'s chest heaves like a bellows.",
-      "does": "{He} breathes, then must draw breath again: for a few turns {he} has only tooth and claw.",
-      "counter": "Close in while {he} draws breath, or keep stone between you until {he} has spent it."
+      "does": "{He} breathes, then must draw breath again for a few turns. Meanwhile {he} fights you in reach with tooth and claw, in {his} full fury.",
+      "counter": "Strike hard while {he} draws breath. When the smoke at {his} jaws says the breath is back, put stone between you."
     },
     "heals_allies": {
       "sign": "{The} stays close behind the others, eyeing every wound.",
