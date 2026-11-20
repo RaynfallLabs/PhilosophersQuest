@@ -209,6 +209,7 @@ import coatings as coatings_mod                  # noqa: E402
 import rings as rings_mod                        # noqa: E402
 import treasure as treasure_mod                  # noqa: E402
 import packs as packs_mod                        # noqa: E402
+import lore_powers as lore_powers_mod            # noqa: E402  (slice M)
 from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
@@ -363,6 +364,14 @@ KNOB_DEFAULTS = {
     'packs':      1,     # 1 = packs come at him together and their tricks
                          #   count (src/packs.py); 0 = met like any room
                          #   group, no tricks (the ablation)
+    # --- slice M (MONSTERS AND MAGIC kinds, 2026-11-19) -----------------------
+    'mm_powers':  1,     # 1 = the new kinds' lore powers work (src/lore_powers.py:
+                         #   the Cu-Sith's barks, the Bulgasari eats iron, the
+                         #   Mapinguari's soft spot, the Lindworm's skins, the
+                         #   Kappa's dish, Likho's eye; the Blue Men's verse
+                         #   answered before the fight). 0 = the ablation: the
+                         #   kinds still spawn, their powers do nothing.
+    # --- end slice M ----------------------------------------------------------
     'dmg_cap':    0.0,   # > 0: any ordinary monster attack whose mean damage is
                          #   above dmg_cap x the floor's damage anchor
                          #   (floor_curve.target_dmg at the monster's peak floor)
@@ -3317,6 +3326,13 @@ class Run:
         p = self.p
         k = self.engagers
         queue = list(group)
+        # --- slice M: the Blue Men's verse (game_lore_powers.py), answered
+        # before the squall: one question; right, they sink away.
+        if self.knobs['mm_powers']:
+            queue = self._mm_parley(queue)
+            if not queue:
+                return 'won'
+        # --- end slice M ---
         active = []
         ctx = boss_ctx or {}
         turn = 0
@@ -3543,6 +3559,20 @@ class Run:
                 if p.hp <= 0 and self._player_dead():
                     return 'dead'
 
+    # --- slice M (MONSTERS AND MAGIC kinds) -----------------------------------
+    def _mm_parley(self, queue: list) -> list:
+        """The Blue Men of the Minch call out a verse and wait (game_lore_powers.py):
+        one grammar question at their tier, untimed; right, the whole pack
+        sinks away; wrong, they fight. Every hero answers: it costs nothing."""
+        kinds = {m.kind for m in queue if lore_powers_mod.spec(m, 'parley')}
+        for kind in kinds:
+            tier = max(1, min(5, int(next(m for m in queue if m.kind == kind).harvest_tier or 1)))
+            if self.quiz.one_question(tier):
+                self.fs['mm_parleys'] = self.fs.get('mm_parleys', 0) + 1
+                queue = [m for m in queue if m.kind != kind]
+        return queue
+    # --- end slice M ----------------------------------------------------------
+
     def _packmates_join(self, m, queue, room: int) -> list:
         """The rest of ``m``'s pack waiting at the doorway, who come in with
         it (at most ``room``): a holding pack always (it will not be fought
@@ -3619,6 +3649,11 @@ class Run:
         for m in active:
             if p.hp <= 0:
                 break
+            # --- slice M: the Cu-Sith barks; the third is its turn (lore_powers) ---
+            if self.knobs['mm_powers'] and m.alive and lore_powers_mod.sim_turn(m, p):
+                self._monster_attack(m)
+                continue
+            # --- end slice M ---
             if self.monster_acts(m, ctx):
                 self._monster_attack(m)
 
@@ -4136,6 +4171,7 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
     install_caches()
     apply_defence_knobs(knobs)
     packs_mod.ENABLED = bool(knobs.get('packs', 1))
+    lore_powers_mod.ENABLED = bool(knobs.get('mm_powers', 1))     # slice M
     random.seed(seed)
     cache = FloorCache(variants)
     lo, hi = floors

@@ -76,6 +76,9 @@ def senses(m, player) -> bool:
     except Exception:
         pass
     try:
+        import lore_powers
+        if lore_powers.shown_overhead(m, player):     # the Asanbosam above (slice M)
+            return True
         import family_edges
         return family_edges.senses(player, m)
     except Exception:

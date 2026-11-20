@@ -80,6 +80,11 @@ def abilities(m) -> list:
         have.update(packs.tell_keys(m))
     except (ImportError, OSError, ValueError):
         pass
+    try:
+        import lore_powers              # the 2026-11-19 kinds' powers (slice M)
+        have.update(lore_powers.tell_keys(m))
+    except (ImportError, OSError, ValueError):
+        pass
     return [k for k in d['order'] if k in have and k in d['effects']]
 
 

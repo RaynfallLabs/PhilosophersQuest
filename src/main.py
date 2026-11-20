@@ -108,6 +108,7 @@ from game_bococho_render import BocochoRenderMixin
 from game_songs import SongsMixin
 from game_manifest import ManifestMixin
 from game_horns import HornsMixin
+from game_lore_powers import LorePowersMixin
 from spells import LEARNABLE_SPELLS
 
 
@@ -276,7 +277,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
            HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin, LightsMixin,
            MoobleMixin, MoobleDanceMixin,
            BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin, SongsMixin,
-           ManifestMixin, HornsMixin):
+           ManifestMixin, HornsMixin, LorePowersMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -4913,6 +4914,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._say_affinity_lines()
         # A coating's rider refused or its last blow spent (coatings.py).
         self._say_arsenal_lines()
+        # What the 2026-11-19 kinds' powers did this turn (lore_powers.py).
+        self._lore_powers_say()
         # The torch or lantern in the off hand burns a turn (game_lights.py).
         self._light_tick()
         # A Ring of Invisibility's veil settles after its quiet turns (rings.py).

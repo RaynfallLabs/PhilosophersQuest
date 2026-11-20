@@ -4,6 +4,7 @@ from combat import _line_of_sight
 from status_effects import MAX_EFFECT_DURATION
 from naming import ProperNameAttr
 import packs
+import lore_powers
 
 
 # Ceiling on escalating rage (Fenrir, and the mini-bosses that borrow his
@@ -907,6 +908,7 @@ class Monster:
             return int(self.status_effects[name])
         current = self.status_effects.get(name, 0)
         self.status_effects[name] = min(current + duration, MAX_EFFECT_DURATION)
+        lore_powers.on_effect(self, name)          # the Kappa's dish spills (slice M)
         return int(self.status_effects[name])
 
     def hold(self, name: str, duration: int):
@@ -1313,6 +1315,7 @@ class Monster:
         if actual > 0:
             self.status_effects.pop('sleeping', None)
             self._after_typed_hit(damage_type, actual)
+            lore_powers.after_damage(self, actual)    # peace broken; the Lindworm's skins (slice M)
         return actual
 
     def _after_typed_hit(self, damage_type: str, actual: int) -> None:
@@ -1645,6 +1648,10 @@ class Monster:
             _mirror = _counters.blocks_gaze(player, self)
             if _mirror is not None:
                 return 0, _counters.line(player, _mirror, _counters.GAZE, self)
+
+        _lp_no = lore_powers.blow_refused(self, player, atk)    # Likho blinded (slice M)
+        if _lp_no:
+            return 0, _lp_no
 
         # Breath/spit/hurl attacks miss player hiding in a pit
         is_breath = any(w in atk_name for w in ('breath', 'spit', 'hurl', 'volley'))
@@ -1999,6 +2006,8 @@ class Monster:
             player._pending_pull_toward = (self.x, self.y)
             msg += f" {the_name(self)} drags you closer!"
 
+        msg += lore_powers.after_blow(self, player, atk, actual)   # carry-off, pull (slice M)
+
         # Apply status effect from attack (gated by a D&D-style saving throw).
         # In a flurry at most one lands, so a five-attack boss cannot stack a
         # stun, a freeze and a slow in one turn.
@@ -2238,6 +2247,12 @@ class Monster:
             if (self.x, self.y) == before and self._adjacent_to(player):
                 return True
             return False
+
+        # The lore powers of the 2026-11-19 kinds (src/lore_powers.py): fed or
+        # answered, gathering gold, waiting for an answer, the Cu-Sith's barks.
+        _lp = lore_powers.turn(self, player, dungeon, all_monsters, extra_occupied)
+        if _lp is not None:
+            return _lp
 
         # --- Phase-blink for the patterns that never reached it (G7): an
         # archer or a summoner that can blink steps out to a clear shot four

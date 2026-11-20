@@ -478,6 +478,68 @@ Brandon: "openers for sure". The powers "dont seem to make a lot of difference" 
 - **The simulator** gives an opener one free blow when the monster joins a fight (`difficulty_sim.Run.fight`). That slightly over-counts the drawn-up powers, which the game lets the hero answer.
 - **Tests:** `tests/test_monster_openers.py`.
 
+## The MONSTERS AND MAGIC kinds and their lore powers (2026-11-19)
+
+Thirty-two kinds from real myth, folklore, scripture and natural history (D&D gave
+only the mechanics; research in `_mm_2026_11_19/A/`), written by the lore rubric
+against the hero of each kind's floor. The data is written by
+`tools/content/add_mm_kinds_2026_11.py` from `tools/content/mm_kinds_data.py` and
+`mm_kitchen_data.py` (idempotent; every wiring row: affinity entries, sizes, senses,
+family assignment, harvest and the kitchen, packs.json herds, tells, hints, purse).
+
+- **Tier 1:** mandrake, kappa, eloko, asanbosam, ahuizotl, khalkotauros, cu_sith,
+  bulgasari, vetala, likho. **Tier 2:** centaur, nahual, blue_men_of_the_minch.
+  **Tier 3:** vila, myrmekes (gold-digging ant), ponaturi, taniwha, impundulu,
+  mapinguari, preta, upas_tree, nuckelavee, star_jelly. **Tier 4:** psoglav,
+  waq_waq_tree, yuki_onna, yacumama, tsuchigumo. **Tier 5:** bhuta_vahana_yanta
+  (Relic Guardian), reem (2x2), eitr, bakunawa.
+- **Lore powers** (`src/lore_powers.py`, pure; the game's side `src/game_lore_powers.py`).
+  Each is a field on the kind and says one line when it fires:
+  - `countdown_voice`: the Cu-Sith barks every 3 of its turns while the hero is in its
+    sight; the third bark is its attack (a voice: wax stops it). Out of its sight the
+    count is lost.
+  - `metal_eater`: the Bulgasari: a blade that can rust (status_effects._can_rust:
+    iron and steel, never a unique) that lands may lose a point (items.wear_down), and
+    the meal mends it, its body growing up to `grow_cap` past its health.
+  - `weak_spot_chain` (+ `weak_spot_line`): a chain that long ignores the Mapinguari's
+    resistances (combat.strike_damage).
+  - `sheds_skin`: the Lindworm at each share in `at` throws off its wounds (bleeding,
+    poison, cracked armour...; never a hold) and mends `heal_share`.
+  - `on_stunned`: the Kappa stunned or held is weakened (its dish spills).
+  - `blinded_loses`: Likho blinded cannot use the attacks named.
+  - `appeased_by`: plain food (lore_powers.is_plain_food: never a dish cooked to
+    carry) set down within 2 tiles is eaten and the creature keeps to itself for the
+    floor; struck, the peace is broken. The Kappa and the Preta.
+  - attack `steal: "offering"`: the Preta snatches plain food and eats it (theft.py).
+  - `parley`: the Blue Men call a verse on first sight and hold their fire 6 turns;
+    D answers (one question of `subject` at their tier); right, the pack is calm for
+    the floor; wrong, they attack at once. Walk away or strike and they attack.
+  - `gold_gatherer`: gold dropped within 2 tiles of a gold-digging ant is gathered
+    up (and gone); the ant spends `turns` doing it.
+  - `corpse_hop`: when the Vetala's body falls, the spirit rises in the nearest corpse
+    within `radius` at `hp_share` of its health, at most `max_hops` times. Harvest or
+    search the dead first.
+  - attack `carry_off`: the Roc lifts the hero (`chance`, halved under a Heavy load)
+    and sets him down `tiles` away on an explored, empty tile, held a turn.
+  - attack `pulls`: the Yacumama's breath draws the hero a step toward it.
+  - `hidden_overhead`: the Asanbosam and the star jelly hang above; a lit light (or
+    the Light spell) shows them inside its glow (unseen.senses).
+  - `talisman`: any scroll read while a Jiangshi can see the hero holds it 2 turns.
+  - Two new senses (`data/senses.json`): `breath` (the jiangshi: a hero who rests holds
+    his breath and is lost beyond arm's reach) and `blood_scent` (the Komodo brute: a
+    bleeding hero is found through walls from 24 tiles).
+- **Fields that wait on another slice's engine** (written with its shapes): `light_shy`
+  (ponaturi, star_jelly), attack `snuffs_light` (bakunawa), `death_throes` (mandrake),
+  `alarm` (waq_waq_tree), `relurks` (asanbosam, ahuizotl, tsuchigumo): slice AI-1;
+  attack `hold` (taniwha), `aura` (mapinguari, upas_tree, ghast), `enraged_form`
+  (nahual), `moves` (nuckelavee): slice AI-3. Until then each is a sound monster on
+  its plain attacks. `trail_hazard` (eitr) is written and not yet built.
+- **QA key:** Shift+Y (Titivillus only) sets the next new kind down beside the hero.
+- **Simulator:** knob `mm_powers` (default 1; 0 is the ablation): the powers run in
+  the real code the simulator calls, the Cu-Sith's barks in its world turn, and the
+  Blue Men's verse is answered before the fight.
+- **Tests:** `tests/test_mm_kinds.py`.
+
 ## Wanderers: the floor's clock (3.5.1)
 
 Brandon, play-testing floor 1: "I just don't think we need a constant stream of monsters... I'd rather have a larger population at first, with complex encounters set up, then a trickle if you hang around TOO LONG, but give the player some time to explore... walking back and forth becomes a massive chore."

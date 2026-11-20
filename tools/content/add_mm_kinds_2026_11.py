@@ -184,9 +184,9 @@ TELLS = {
                    "bless the ground with holy water and prayer."},
     'parley': {
         'sign': "{The} rises from the water and calls out, as if waiting for an answer.",
-        'does': "{He} and {his} kin ask a riddle in verse; a good answer and they let you pass, a poor "
-                "one and they raise the storm.",
-        'counter': "Answer well: it is a question of words and how they go together."},
+        'does': "{He} and {his} kin ask a riddle in verse; a good answer lets you pass, and a poor one "
+                "brings the storm down on you.",
+        'counter': "Answer well: it is a question of words and the way a sentence is built."},
     'appeased_by': {
         'sign': "{The} sniffs at your pack with a starving look.",
         'does': "Hunger drives {him}, and a gift of food can turn {him} away.",
@@ -244,7 +244,7 @@ TELLS = {
         'counter': "Do not let {him} touch you, or fight {him} with fire: old linen burns."},
     'talisman': {
         'sign': "{The} hops stiffly, arms out, a strip of yellow paper fluttering at {his} brow.",
-        'does': "{He} finds the living by their breath.",
+        'does': "{He} finds a living man by his breath.",
         'counter': "Read any scroll while {he} can see it: the written page stops {him} like a "
                    "talisman. Standing still holds your breath from {him}."},
 }

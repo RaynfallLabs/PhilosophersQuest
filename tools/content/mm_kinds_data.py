@@ -68,7 +68,7 @@ NEW['mandrake'] = kind(
           "roots have pulled themselves up on legs of their own, and they still scream when they die."))
 
 NEW['kappa'] = kind(
-    'Kappa', 'k', (90, 150, 80), '7d10+23', 12, 'aggressive', 13, 11, 9, 5, 3.0,
+    'Kappa', 'k', (90, 150, 80), '8d10+28', 12, 'aggressive', 13, 11, 9, 5, 3.0,
     [atk('Beak Bite', '1d6+2', 'pierce', 'bite'),
      atk('Sumo Grapple', '1d6+1', 'blunt', 'grapple', 'immobilized', 0.35, 2)],
     family='serpents', tags=['reptile'], res=['cold'], weak=['fire', 'iron'], opener=('Sumo Grapple', 1),

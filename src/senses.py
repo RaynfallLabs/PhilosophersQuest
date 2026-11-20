@@ -210,6 +210,10 @@ def lore_sense(m, player, dungeon):
             continue
         if spec.get('needs_motion') and not TURN.moved:
             continue
+        if spec.get('fails_at_rest') and TURN.rested and _cheb(m.x, m.y, player.x, player.y) > 1:
+            continue                      # he holds his breath (the jiangshi)
+        if spec.get('needs_bleeding') and not player.has_effect('bleeding'):
+            continue                      # no blood to follow (the Komodo)
         if s == 'tremor' and player.has_effect('levitating'):
             continue
         if s == 'guilt' and not TURN.guilty:

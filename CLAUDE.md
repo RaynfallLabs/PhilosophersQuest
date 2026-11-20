@@ -75,6 +75,8 @@ src/
   game_lore_fixtures.py - LoreFixturesMixin: Worth a Closer Look, one question at a lore fixture (D)
   false_stairs.py     - Hellmouth mimics that pose as the down stair
   splitting.py        - Creatures that split when struck the wrong way
+  lore_powers.py      - The 2026-11-19 kinds' own powers (pure): the Cu-Sith's three barks, the Bulgasari eats iron, the Mapinguari's soft spot, the Lindworm's skins, the Kappa's dish, the Roc's carry-off, what hangs overhead
+  game_lore_powers.py - LorePowersMixin: their game side (a gift of food, gold for the ants, the Blue Men's verse on D, the Vetala's corpse hop, the Jiangshi's talisman, the QA key Shift+Y)
   sleepers.py         - Zoo, graveyard and barracks sleepers stir at footsteps and gold taken
   theft.py            - Thieves that really steal, and give it back on death
   black_knight.py     - The Black Knight bridge easter egg (floors 15-19)
