@@ -328,3 +328,52 @@ def test_a_broken_archer_runs_and_never_stops_for_a_lane_or_a_plan(monkeypatch):
     for _ in range(3):
         assert a.take_turn(hero, open_room(), [a, friend]) is False
     assert max(abs(a.x - hero.x), abs(a.y - hero.y)) > d0
+
+
+# Every ruled pattern that AI-2 gives a plan or a lane: broken, it runs.
+_BROKEN_KINDS = (
+    ('bandit_archer', '_ranged_turn'),
+    ('imp', '_hit_and_run_turn'),
+    ('goblin_warpriest', '_healer_turn'),
+    ('skeleton_necromancer', '_summoner_turn'),
+)
+
+
+def _broken_runs_free_of_ai2(monkeypatch, kind, method):
+    import lanes
+    import tactical_mind
+
+    def _never(*a, **k):
+        raise AssertionError('a broken %s looked for a lane, a plan or a fight' % kind)
+    monkeypatch.setattr(lanes, 'blocked_turn', _never)
+    monkeypatch.setattr(lanes, 'back_off', _never)
+    monkeypatch.setattr(lanes, 'hold_short', _never)
+    monkeypatch.setattr(tactical_mind, 'turn', _never)
+    monkeypatch.setattr(Monster, method, _never)
+    m = hurt(make(kind, 10, 10), 0.2)
+    m._aware = True
+    m._tracking = True
+    m.can_phase_blink = False
+    hero = Hero(7, 10)
+    assert morale.ruled(m), kind
+    morale.start_flight(m, hero, [m], rng=Dice(10))
+    assert m._flee_timer > 0
+    d0 = max(abs(m.x - hero.x), abs(m.y - hero.y))
+    for _ in range(3):
+        assert m.take_turn(hero, open_room(), [m]) is False, kind
+    assert max(abs(m.x - hero.x), abs(m.y - hero.y)) > d0, kind
+
+
+def test_every_broken_pattern_runs_before_its_plan_or_lane(monkeypatch):
+    for kind, method in _BROKEN_KINDS:
+        with monkeypatch.context() as mp:
+            _broken_runs_free_of_ai2(mp, kind, method)
+
+
+def test_a_named_dragon_keeps_its_own_rule_under_the_tactical_mind():
+    """The only dragon-pattern kind is Fafnir, a named foe: morale is not
+    his (he keeps the old rules), so a flight is never forced on him."""
+    f = make('fafnir_dragon', 10, 10)
+    assert f.ai_pattern == 'dragon'
+    assert not morale.ruled(f)
+    assert morale.run(f, Hero(7, 10), open_room(), [f], set()) is None
