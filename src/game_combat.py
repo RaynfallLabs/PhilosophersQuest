@@ -1227,11 +1227,14 @@ class CombatMixin:
         # once he has fallen: "With the hobgoblin down, the scouts scatter!"
         # came before "The Hobgoblin is slain!" (bug bash 3.5.1 E).
         self._band_member_died(monster)
+        # Its own side saw it fall (AI-1: game_behaviour.py).
+        self._ai_on_kill(monster)
         if not _banished:
             self._drop_treasure(monster)
         # A thief gives back everything it stole (src/theft.py).
         for _tmsg in theft.give_back(self, monster):
             self.add_message(_tmsg, 'loot')
+        self._lore_powers_killed(monster)      # the Vetala's spirit finds another body (slice M)
         # A Stray Kid crumbles to nothing (a round of the dance-off won:
         # game_stray_kids._sk_fall); the last leaves the photo.
         self._stray_kids_member_died(monster)
@@ -3309,6 +3312,7 @@ class CombatMixin:
         self._say_veil_slip()
         self._family_drain()
         self._say_affinity_lines()
+        self._lore_powers_say()                # (slice M)
 
     def _say_affinity_lines(self):
         """The weakness and resistance lines for the hits noted since the
@@ -3445,6 +3449,7 @@ class CombatMixin:
             _pos_before = (m.x, m.y)
             _posing = false_stairs.poses_as_stairs(m)
             self._scavenge_prep(m)
+            self._lore_powers_before(m)        # gifts, gold, the Blue Men's verse (slice M)
             did_attack = m.take_turn(self.player, self.dungeon, self.monsters,
                                      extra_occupied=_pet_occ)
             self._scavenge_after(m)
@@ -3457,6 +3462,9 @@ class CombatMixin:
             # charge; a hound bays (heard even unseen); a kobold's trap laid
             # where the hero could see it is shown.
             self._pack_turn_after(m)
+            self._lore_powers_after(m)         # the Roc's carry-off, the lore powers' lines (slice M)
+            # What its behaviour left to be seen or heard (game_behaviour.py).
+            self._ai_turn_after(m)
             if did_attack:
                 # A blow on the hero carries (src/senses.py).
                 self._make_noise('struck')
@@ -4469,6 +4477,8 @@ class CombatMixin:
                     or getattr(m, '_npc_encounter_tag', None)
                     or getattr(m, '_flavor_encounter_tag', None)
                     or getattr(m, '_is_unicorn', False)
+                    # one that yielded strikes no one again (src/morale.py)
+                    or m.__dict__.get('_yielded')
                     # the stalking coward (Old Nickel) strikes no pet until
                     # he has been in a fight
                     or (getattr(m, 'ai_pattern', '') == 'stalker_coward'

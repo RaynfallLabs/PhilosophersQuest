@@ -1289,10 +1289,13 @@ def drink_potion(player, potion) -> list[str]:
         # took comes back (the physician's own work: restore_drained).
         from status_effects import restore_drained
         n = restore_drained(player)
+        life = int(player.__dict__.pop('_last_life_restored', 0) or 0)   # (life_drain.py)
         cured = [s for s in ('diseased', 'sickly') if player.status_effects.pop(s, None) is not None]
-        if n:
+        if n or life:
+            got = ([f"{quantity(n, 'stat point')} restored"] if n else []) + (
+                [f"Max HP +{life}"] if life else [])
             messages.append(f"The spring water runs cold through you, and what the dark took "
-                            f"comes back. ({quantity(n, 'stat point')} restored.)")
+                            f"comes back. ({', '.join(got)}.)")
         elif cured:
             messages.append("The spring water runs cold through you, and the sickness goes with it.")
         else:

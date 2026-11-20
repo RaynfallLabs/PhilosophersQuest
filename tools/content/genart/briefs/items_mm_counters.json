@@ -1,0 +1,42 @@
+[
+ {
+  "id": "seed_handful", "family": "mm_counters", "rank": 1, "body": "item", "scale": "small", "key": "blue",
+  "what": "a small twist of coarse undyed cloth tied at the neck with a red thread, opened at the top and spilling a heap of tiny round seeds, pale golden millet and dark grey poppy seed, a few seeds scattered beside it.",
+  "colours": "Coarse cream-grey undyed cloth; a bright red thread; pale golden millet grains; tiny dark grey poppy seeds.",
+  "pose": "Lying by itself on its side, seen from a little above, the seeds spilling from its open neck.",
+  "must_show": ["a small cloth pouch tied with red thread", "tiny seeds spilling out of it"],
+  "must_not_show": ["coins", "gold", "sand", "flour sack", "rice bowl", "bird", "hand", "arm", "person", "table", "label with writing"]
+ },
+ {
+  "id": "upas_latex", "family": "mm_counters", "rank": 2, "body": "item", "scale": "small", "key": "magenta",
+  "what": "a small dried gourd bottle, round-bellied with a narrow neck, stoppered with a plug of wood and bound with plaited grass cord, a drip of thick milky white sap running down its side, and one thin bamboo blowgun dart tied to its neck by the cord.",
+  "colours": "Tan and light brown dried gourd; a dark wooden stopper; pale straw-yellow grass cord; thick milky white sap; one pale bamboo dart.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": ["one small round gourd bottle", "a drip of milky white sap down its side", "one thin dart tied at its neck"],
+  "must_not_show": ["glass bottle", "skull", "crossbones", "snake", "tree", "leaves", "hand", "arm", "person", "table", "label with writing", "second object"]
+ },
+ {
+  "id": "eitr_venom", "family": "mm_counters", "rank": 3, "body": "item", "scale": "small", "key": "magenta",
+  "what": "a small squat vial of thick clear glass crusted all over with white frost, stoppered with dark grey iron, holding thick black-green venom with lumps of grey ice in it, a little cold smoke curling from the stopper.",
+  "colours": "Clear glass under a white frost crust; a dark grey iron stopper; glossy black-green venom; pale grey ice lumps; a thin white cold smoke.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": ["one small frost-crusted glass vial", "black-green venom inside", "an iron stopper"],
+  "must_not_show": ["snake", "skull", "crossbones", "bright green glow", "cork", "label with writing", "hand", "arm", "person", "table", "second object"]
+ },
+ {
+  "id": "whitethorn_branch", "family": "mm_counters", "rank": 4, "body": "item", "scale": "small", "key": "blue",
+  "what": "a short sprig of hawthorn cut from a hedge: a crooked dark brown twig with a few sharp thorns, small green leaves and a cluster of small white five-petalled blossoms at its tip.",
+  "colours": "Dark brown bark; sharp grey-brown thorns; small bright green leaves; small white blossoms with pale pink-brown centres.",
+  "pose": "Lying by itself on its side, seen from a little above.",
+  "must_show": ["a short thorny twig", "a cluster of small white blossoms", "small green leaves"],
+  "must_not_show": ["rose", "red flowers", "berries", "wand", "staff", "wreath", "vase", "hand", "arm", "person", "table", "second object"]
+ },
+ {
+  "id": "caged_cockerel", "family": "mm_counters", "rank": 5, "body": "item", "scale": "medium", "key": "blue",
+  "what": "a small round cage of woven brown wicker with a carrying handle on top, and inside it a real live red cockerel, a rooster with a red comb and wattles, red-brown and golden feathers, a dark green-black tail, its beak open as it crows.",
+  "colours": "Light brown woven wicker; a red and golden-brown cockerel with a bright red comb, a dark green-black tail and a yellow beak and legs.",
+  "pose": "Standing upright, the cage seen from the front, the cockerel inside it facing left with its head thrown back.",
+  "must_show": ["a round wicker cage with a handle", "a red cockerel inside it", "the cockerel's beak open, crowing"],
+  "must_not_show": ["hen", "chick", "egg", "parrot", "metal cage", "basket of food", "hand", "arm", "person", "table", "second bird"]
+ }
+]

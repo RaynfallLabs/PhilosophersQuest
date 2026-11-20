@@ -48,6 +48,9 @@ def test_known_multi_tile_bosses_pinned():
         # 2026-10 late-game pass: an ordinary 2x2 ambusher from the spawn
         # pool (dungeon._footprint_fits places it), not a boss-floor boss.
         'gashadokuro':     (2, 2),
+        # 2026-11-19 (MONSTERS AND MAGIC): the re'em, the wild ox as big as a
+        # hill, from the spawn pool the same way.
+        'reem':            (2, 2),
     }
     assert multi_tile == EXPECTED, \
         f"New multi-tile bosses detected — verify _spawn_boss handles them: {multi_tile}"

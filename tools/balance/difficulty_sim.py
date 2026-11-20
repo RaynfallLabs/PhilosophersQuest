@@ -209,6 +209,8 @@ import coatings as coatings_mod                  # noqa: E402
 import rings as rings_mod                        # noqa: E402
 import treasure as treasure_mod                  # noqa: E402
 import packs as packs_mod                        # noqa: E402
+import lore_powers as lore_powers_mod            # noqa: E402  (slice M)
+import sim_ai1                                   # noqa: E402  (AI-1: monster behaviour)
 from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
@@ -363,6 +365,14 @@ KNOB_DEFAULTS = {
     'packs':      1,     # 1 = packs come at him together and their tricks
                          #   count (src/packs.py); 0 = met like any room
                          #   group, no tricks (the ablation)
+    # --- slice M (MONSTERS AND MAGIC kinds, 2026-11-19) -----------------------
+    'mm_powers':  1,     # 1 = the new kinds' lore powers work (src/lore_powers.py:
+                         #   the Cu-Sith's barks, the Bulgasari eats iron, the
+                         #   Mapinguari's soft spot, the Lindworm's skins, the
+                         #   Kappa's dish, Likho's eye; the Blue Men's verse
+                         #   answered before the fight). 0 = the ablation: the
+                         #   kinds still spawn, their powers do nothing.
+    # --- end slice M ----------------------------------------------------------
     'dmg_cap':    0.0,   # > 0: any ordinary monster attack whose mean damage is
                          #   above dmg_cap x the floor's damage anchor
                          #   (floor_curve.target_dmg at the monster's peak floor)
@@ -393,6 +403,12 @@ KNOB_DEFAULTS = {
     'mm_potions': 1,
     'mm_wands':   1,
 }
+
+# ---- AI-1: monster behaviour, first wave (2026-11-19; tools/balance/sim_ai1.py) ----
+# ai_heal, ai_summon, ai_breath ...: 1 = the behaviour runs (the game's rule),
+# 0 = its ablation. Each is described in sim_ai1.py.
+KNOB_DEFAULTS.update(sim_ai1.KNOBS)
+# ---- end AI-1 ----
 
 DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_quick',
                  'heavy_quick', 'medium_drag',
@@ -2742,6 +2758,7 @@ class Run(_MMMagicSim):
             self._healed('prayer', p.heal(max(15, p.max_hp // 4)))
         if chain >= 3:
             p.restore_mp(max(5, p.max_mp // 4))
+        sim_ai1.prayed(self, chain)          # AI-1: drained life back, sickness lifted
         if chain >= 5:
             p.status_effects['shielded'] = max(p.status_effects.get('shielded', 0), 20)
         return True
@@ -3505,7 +3522,14 @@ class Run(_MMMagicSim):
             m._enraged = True
             m.ai_pattern = m.enraged_pattern
             m._sim_away = 0
-        named = m._is_named_foe() or m.max_hp > 500
+        # ---- AI-1 (sim_ai1.py): Morale by Nature; ai_morale=0 is the old
+        # rule just below (which the knob being on skips) ----
+        if self.knobs['ai_morale']:
+            _mor = sim_ai1.morale_turn(self, m)
+            if _mor is not None:
+                return _mor
+        named = m._is_named_foe() or m.max_hp > 500 or bool(self.knobs['ai_morale'])
+        # ---- end AI-1 ----
         if not named and m.ai_pattern == 'aggressive':
             if m._flee_timer > 0:
                 m._flee_timer -= 1
@@ -3522,6 +3546,11 @@ class Run(_MMMagicSim):
                 return False
             if m._under('blinded') and random.random() < 0.30:
                 return False
+        # ---- AI-1 (sim_ai1.py): a healer's prayer, a summoner's chant ----
+        _ai1 = sim_ai1.monster_turn(self, m, fresh_monster)
+        if _ai1 is not None:
+            return _ai1
+        # ---- end AI-1 ----
         pat = m.ai_pattern
         if pat == 'cowardly':
             return random.random() < 0.3
@@ -3540,9 +3569,8 @@ class Run(_MMMagicSim):
             if m._sim_hr_left <= 0:
                 m._sim_away = random.randint(*ASTERION_AWAY_TURNS)
             return True
-        if pat == 'dancer':
-            if m._gaze_cooldown > 0:
-                m._gaze_cooldown -= 1
+        # (AI-1: a gaze's cooldown is counted down in Monster.tick_effects
+        # now, for every gazer, so the dancer's own tick here is gone.)
         if pat == 'fenrir_rage':
             # monster.py _fenrir_rage_turn
             m._rage_turn_counter += 1
@@ -3554,6 +3582,8 @@ class Run(_MMMagicSim):
     def player_can_act(self) -> bool:
         """main._do_move / game_input._player_input turn-loss rules."""
         p = self.p
+        if sim_ai1.lost_action(self):        # AI-1: a light raised, a shove
+            return False
         if p.has_effect('sleeping') or p.has_effect('paralyzed'):
             return False
         if p.has_effect('frozen'):
@@ -3587,6 +3617,13 @@ class Run(_MMMagicSim):
         p = self.p
         k = self.engagers
         queue = list(group)
+        # --- slice M: the Blue Men's verse (game_lore_powers.py), answered
+        # before the squall: one question; right, they sink away.
+        if self.knobs['mm_powers']:
+            queue = self._mm_parley(queue)
+            if not queue:
+                return 'won'
+        # --- end slice M ---
         active = []
         ctx = boss_ctx or {}
         turn = 0
@@ -3614,6 +3651,7 @@ class Run(_MMMagicSim):
         self._tactical_pick(_first, free=True)
         self._coat_for(_first)
         self._set_stance(group)
+        sim_ai1.fight_start(self, group)     # AI-1: a light against the light-shy
         self._mm_open(group)                 # MONSTERS AND MAGIC (_MMMagicSim)
 
         def enter(m, opening: bool):
@@ -3653,6 +3691,10 @@ class Run(_MMMagicSim):
                     self._monster_attack(m)
 
         while True:
+            # ---- AI-1 (sim_ai1.py): who burst as they died, who left the
+            # fight (morale) ----
+            active, queue = sim_ai1.leavers(self, active, queue)
+            # ---- end AI-1 ----
             active = [m for m in active if m.alive]
             queue = [m for m in queue if m.alive]       # an area spell can kill those waiting
             while len(active) < k and queue:
@@ -3675,7 +3717,9 @@ class Run(_MMMagicSim):
             if self.player_can_act():
                 hpf = p.hp / max(1, p.max_hp)
                 prof = self.prof
-                reachable = [m for m in active if m._sim_away <= 0]
+                # (AI-1: ai_vanish=0, the old game's hider in plain sight)
+                reachable = [m for m in active
+                             if m._sim_away <= 0 or sim_ai1.visible_away(self, m)]
                 if hpf < prof['potion_at'] and self.potions:
                     self.drink()
                     action = 'heal'
@@ -3814,6 +3858,20 @@ class Run(_MMMagicSim):
                 if p.hp <= 0 and self._player_dead():
                     return 'dead'
 
+    # --- slice M (MONSTERS AND MAGIC kinds) -----------------------------------
+    def _mm_parley(self, queue: list) -> list:
+        """The Blue Men of the Minch call out a verse and wait (game_lore_powers.py):
+        one grammar question at their tier, untimed; right, the whole pack
+        sinks away; wrong, they fight. Every hero answers: it costs nothing."""
+        kinds = {m.kind for m in queue if lore_powers_mod.spec(m, 'parley')}
+        for kind in kinds:
+            tier = max(1, min(5, int(next(m for m in queue if m.kind == kind).harvest_tier or 1)))
+            if self.quiz.one_question(tier):
+                self.fs['mm_parleys'] = self.fs.get('mm_parleys', 0) + 1
+                queue = [m for m in queue if m.kind != kind]
+        return queue
+    # --- end slice M ----------------------------------------------------------
+
     def _packmates_join(self, m, queue, room: int) -> list:
         """The rest of ``m``'s pack waiting at the doorway, who come in with
         it (at most ``room``): a holding pack always (it will not be fought
@@ -3881,6 +3939,7 @@ class Run(_MMMagicSim):
             m._cached_all_monsters = active      # as take_turn does: a shared gaze sees its group
             if m.alive:
                 self._tick_monster(m)
+        sim_ai1.world_tick(self, active)     # AI-1: a troll in the light, a shove
         p._incoming_scale = self.kv('mon_dmg')
         msgs = p.tick_effects()
         p._incoming_scale = 1.0
@@ -3890,6 +3949,13 @@ class Run(_MMMagicSim):
         for m in active:
             if p.hp <= 0:
                 break
+            # --- slice M: the Cu-Sith barks; the third is its turn (lore_powers) ---
+            if (self.knobs['mm_powers'] and m.alive
+                    and not any(m.has_effect(e) for e in ('sleeping', 'paralyzed', 'stunned', 'frozen'))
+                    and lore_powers_mod.sim_turn(m, p)):
+                self._monster_attack(m)
+                continue
+            # --- end slice M ---
             if self.monster_acts(m, ctx):
                 self._monster_attack(m)
 
@@ -3899,7 +3965,8 @@ class Run(_MMMagicSim):
         if p.prayer_cooldown > 0:
             p.prayer_cooldown -= 1
         if (self.turn % self._regen_interval() == 0 and p.hp < p.max_hp
-                and not p.has_effect('bleeding') and not p.has_effect('poisoned')):
+                and not p.has_effect('bleeding') and not p.has_effect('poisoned')
+                and sim_ai1.regen_ok(self)):         # AI-1: Grave Rot
             got = p.heal(min(max(1, p.max_hp // 50) * self.knobs['regen'],
                              floor_curve_mod.rest_room(p.hp, p.max_hp)))
             self._healed('regen', got)
@@ -4111,6 +4178,7 @@ class Run(_MMMagicSim):
         p.reset_floor_cook_caps()
         p._death_save_used_this_floor = False
         p.on_level_change(ascending=False, first_visit=True)   # +15 SP, +MP, 0 HP
+        sim_ai1.floor_start(self)            # AI-1: the drained life, half back
         fs = self.fs = self.stats.setdefault(floor, new_floor_stats())
         fs['visits'] += 1
         fs['max_hp'] += p.max_hp
@@ -4227,7 +4295,7 @@ class Run(_MMMagicSim):
                 self._boss_side_fights(g)
             # sometimes the next room's occupants arrive mid-fight
             if (not named_group and i + 1 < len(groups)
-                    and random.random() < NEIGHBOUR_JOIN_PROB
+                    and random.random() < sim_ai1.join_prob(self, g, NEIGHBOUR_JOIN_PROB)
                     and not any(is_named(m) for m in groups[i + 1])):
                 g = g + groups[i + 1]
                 groups[i + 1] = []
@@ -4407,6 +4475,8 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
     install_caches()
     apply_defence_knobs(knobs)
     packs_mod.ENABLED = bool(knobs.get('packs', 1))
+    lore_powers_mod.ENABLED = bool(knobs.get('mm_powers', 1))     # slice M
+    sim_ai1.apply_flags(knobs)                    # AI-1: the behaviours' switches
     random.seed(seed)
     cache = FloorCache(variants)
     lo, hi = floors

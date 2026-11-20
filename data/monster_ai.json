@@ -1,0 +1,241 @@
+{
+  "_doc": "Monster behaviour, first wave (AI-1, 2026-11-19): the numbers and lines of each behaviour, one section each. The per-kind fields (light_shy, alarm, death_throes, relurks, hides_in_dark, drain_share, drain_con, morale, morale_style, heal_cooldown, heal_below, summon_live_cap; on an attack recharge, drains_life, snuffs_light, snuff_chance, shove) are in data/monsters.json and read through src/kind_data.py. Lines are filled by monster.fill: {The} {the} {A} {a} and the pronoun slots {he} {He} {him} {his} {His} {himself}. A line with 'unseen' in its key is said when the hero cannot see the creature: it never names it. docs/systems/monsters.md, 'Monster behaviour, first wave', says what each one does.",
+  "healer": {
+    "_doc": "src/faction.py: a healer mends only its own side (war-band, else pack, else family, else kind), only a friend under heal_below of its health, the one fighting the hero first, then the most hurt; then it rests its voice heal_cooldown turns.",
+    "heal_cooldown": 3,
+    "heal_below": 0.6
+  },
+  "summoner": {
+    "_doc": "src/summoning.py: the timer runs only while it hunts the hero; it calls only with the hero within reach and in sight and fewer than live_cap of its summoned standing; the call is a one-turn chant that a landed blow breaks.",
+    "live_cap": 2,
+    "reach": 8,
+    "chant_line": "{The} raises {his} hands and begins to chant.",
+    "chant_unseen": "Somewhere near, a voice begins a low chant.",
+    "spoil_line": "Your blow breaks {the}'s chant!"
+  },
+  "breath": {
+    "_doc": "src/breath.py: a delivery 'breath' attack of an ordinary kind needs 3 turns before it can come again (an attack's own `recharge` wins); named foes only when their data says. ready_lines by the breath's damage type, said when it is ready again and the hero can see it.",
+    "drawing_line": "{The} draws a rattling breath.",
+    "ready_lines": {
+      "fire": "Smoke curls from {the}'s jaws.",
+      "cold": "Frost gathers about {the}'s jaws.",
+      "lightning": "Sparks crackle about {the}'s jaws.",
+      "acid": "Something hisses and drips from {the}'s jaws.",
+      "poison": "A green haze seeps from {the}'s jaws.",
+      "necrotic": "A grave-cold mist gathers in {the}'s throat.",
+      "shadow": "Darkness pools in {the}'s throat.",
+      "default": "{The} draws in a long breath."
+    }
+  },
+  "morale": {
+    "_doc": "src/morale.py. A creature's style and nerve: its kind's own morale_style / morale in monsters.json, else its family's row, else default; a tag in never_tags, `fearless` or a status_immune 'feared' make it never. A check (2d10 over morale, less the trigger's penalty, breaks it) the first time it falls under break_share of its health, when one of its side falls within kin_sight while it is under courage_share, and after futile_blows landed blows in a row that did nothing. Healed above courage_share it steadies. A flight lasts flee_turns (a bolt bolt_turns); regroup runs to its side within rally_reach and rouses those within rally_rouse of the one it reached; a withdrawing creature strikes a hero who presses it withdraw_strikes of the time (a fighting withdrawal); cornered beside the hero it is at bay at_bay_turns turns, at_bay_hit better to hit. A bolted creature has given up the fight (cowed): it keeps away from a hero it can see.",
+    "break_share": 0.25,
+    "courage_share": 0.5,
+    "flee_turns": 8,
+    "bolt_turns": [
+      8,
+      12
+    ],
+    "rally_reach": 12,
+    "rally_rouse": 3,
+    "flee_search": 6,
+    "at_bay_turns": 3,
+    "at_bay_hit": 2,
+    "withdraw_strikes": 0.5,
+    "futile_blows": 5,
+    "kin_sight": 8,
+    "penalty": {
+      "wound": 0,
+      "kin": 0,
+      "futile": 2
+    },
+    "default": {
+      "style": "withdraw",
+      "morale": 10
+    },
+    "never_tags": [
+      "construct",
+      "plant",
+      "ooze",
+      "mindless"
+    ],
+    "families": {
+      "restless_dead": {
+        "style": "never"
+      },
+      "constructs": {
+        "style": "never"
+      },
+      "oozes": {
+        "style": "never"
+      },
+      "plants": {
+        "style": "never"
+      },
+      "elementals": {
+        "style": "never"
+      },
+      "ghosts": {
+        "style": "never"
+      },
+      "vermin": {
+        "style": "bolt",
+        "morale": 6
+      },
+      "birds": {
+        "style": "bolt",
+        "morale": 7
+      },
+      "great_beasts": {
+        "style": "bolt",
+        "morale": 8
+      },
+      "serpents": {
+        "style": "bolt",
+        "morale": 8
+      },
+      "shapeshifters": {
+        "style": "bolt",
+        "morale": 9
+      },
+      "goblinkin": {
+        "style": "regroup",
+        "morale": 7
+      },
+      "mortals": {
+        "style": "regroup",
+        "morale": 9
+      },
+      "fair_folk": {
+        "style": "withdraw",
+        "morale": 9
+      },
+      "aberrations": {
+        "style": "withdraw",
+        "morale": 11
+      },
+      "giants": {
+        "style": "withdraw",
+        "morale": 12
+      },
+      "gorgons": {
+        "style": "withdraw",
+        "morale": 12
+      },
+      "legend": {
+        "style": "withdraw",
+        "morale": 13
+      },
+      "vampires_liches": {
+        "style": "withdraw",
+        "morale": 13
+      },
+      "demons": {
+        "style": "withdraw",
+        "morale": 14
+      },
+      "dragons": {
+        "style": "withdraw",
+        "morale": 16
+      },
+      "celestials": {
+        "style": "withdraw",
+        "morale": 16
+      }
+    },
+    "lines": {
+      "bolt": "{The} breaks and bolts!",
+      "regroup": "{The} breaks and runs for {his} friends!",
+      "withdraw": "{The} falls back, fighting as {he} goes.",
+      "rally": "{The} brings {his} friends back into the fight!",
+      "at_bay": "{The} turns at bay, cornered!",
+      "yield": "{The} throws down {his} weapon and {his} purse and begs for {his} life!"
+    },
+    "unseen": {
+      "bolt": "Something scrambles away from you.",
+      "regroup": "Running feet, and a shout for help."
+    },
+    "never_lines": {
+      "restless_dead": "{The} does not care that {he} is falling apart.",
+      "constructs": "{The} grinds on, cracked and shedding dust.",
+      "elementals": "{The} gutters but does not give way.",
+      "ghosts": "{The} wavers, but the dead do not run."
+    }
+  },
+  "life_drain": {
+    "_doc": "src/life_drain.py. A landed drain blow (type 'drain', or an attack with drains_life) whose CON save fails lowers the hero's max HP by drain_share of the blow (the kind's own drain_share wins), at most blow_cap of his whole health from one blow and total_cap in all, never below a new hero's health (Player.starting_max_hp). Half comes back at the next new floor down (stairs_line), all from the physician's Restore and the Mercy prayer at chain 4 (restore_line). drain_con kinds (the liches, the death lord) also cost a CON point once a floor, as before; named foes keep only that old rule.",
+    "drain_share": 0.5,
+    "blow_cap": 0.1,
+    "total_cap": 0.25,
+    "line": "{The} drains your life away! (Max HP -{n})",
+    "stairs_line": "Sleep gives back some of what the dead took. (Max HP +{n})",
+    "restore_line": "What the dead took from you comes back. (Max HP +{n})"
+  },
+  "grave_rot": {
+    "_doc": "src/grave_rot.py. A disease a monster gives lasts its own effect_duration, times its kind's disease_linger (default_linger 1 unless its lore makes it linger), at most cap (never past status_effects.MAX_EFFECT_DURATION, 60). While the hero is diseased, rest does not mend him and every heal does half. On a monster it costs a share of its health a turn (poison's rate) and stops its regeneration.",
+    "default_linger": 1,
+    "cap": 60
+  },
+  "light_shy": {
+    "_doc": "src/light_shy.py. A light_shy creature within the reach of the hero's light (its sight) needs per_glare more to hit him for each point of glare, at most cap: a carried light `carried` (or its own in glare_by_light), the Light spell `spell`, a torch held as a weapon `weapon`. A regenerating one cannot close its wounds in the light; a turns_to_stone_in_light one in the Light spell's glare for stiffen_turns turns is slowed slowed_turns. snuffs_light on an attack douses the hero's held light (not an everlasting one or one with a power), soaked for wet_turns; 'dark' ends the Light spell too.",
+    "per_glare": 2,
+    "cap": 4,
+    "carried": 1,
+    "spell": 2,
+    "weapon": 1,
+    "glare_by_light": {
+      "everburning_lamp": 2,
+      "heros_lamp": 2,
+      "hecates_torch": 2
+    },
+    "stiffen_turns": 3,
+    "slowed_turns": 3,
+    "wet_turns": {
+      "water": 3,
+      "wind": 1,
+      "dark": 2
+    },
+    "lines": {
+      "flinch": "{The} flinches from your light.",
+      "unmended": "{The}'s wounds stop closing in your light.",
+      "stiffen": "{The}'s hide stiffens in the light, like stone!",
+      "snuff_water": "The water drowns your {light}!",
+      "snuff_wind": "The gust blows your {light} out!",
+      "snuff_dark": "Darkness smothers your {light}!",
+      "spell_dark": "Your magical light goes out.",
+      "everlasting": "Your {light} burns on, untouched.",
+      "soaked": "The wick is soaked. It will not light yet."
+    }
+  },
+  "gone_again": {
+    "_doc": "src/gone_again.py. A hit-and-run creature that cannot walk through walls retreats to the nearest tile out of the hero's sight (a search of at most search_tiles tiles) and hides there; the hero coming within spot_reach or seeing it ends the hiding (it runs again if it has blows left, else it hunts); a blow ends it at once. A hides_in_dark one is unseen while it hides and the hero carries no lit light.",
+    "search_tiles": 12,
+    "spot_reach": 2,
+    "lines": {
+      "vanish": "{The} darts away to hide.",
+      "dark": "{The} melts into the dark."
+    }
+  },
+  "alarm": {
+    "_doc": "src/alarm.py. A creature with `alarm` that first sees the hero shouts once a floor: every creature of its side (same kind, band, pack, family, or a tag in alarm.tags) the sound reaches within alarm.radius is roused to him; a sleeper wakes as to any loud noise (the Hand of Glory keeps sleepers asleep). It rouses only creatures already on the floor.",
+    "default_radius": 10
+  },
+  "death_throes": {
+    "_doc": "src/death_throes.py. A creature with `death_throes` that dies (not banished, not ashed) bursts: every creature and the hero within its radius (and in its sight) takes floor_curve.wound(share) of its own health in its type, and its effect with a save. Its warn_line is said once when it falls under warn_share of its health. A creature killed by another's throes bursts after it, never inside it (one at a time).",
+    "warn_share": 0.25
+  },
+  "relurk": {
+    "_doc": "src/relurk.py. A sprung ambusher with relurks, under hurt_share of its health, with no sight of the hero for lost_turns turns and not hunting him, goes back into hiding (an ambusher again, unaware) once a life; its next spring has no surprise blow.",
+    "hurt_share": 0.6,
+    "lost_turns": 3,
+    "line_unseen": "Something scuttles away into the dark.",
+    "heard_reach": 8
+  },
+  "shove": {
+    "_doc": "src/shove.py. A landed attack with shove {chance, aim} may throw the hero one tile straight back (a STR save stops it). Never into a wall, water, lava, a pit, a creature or off the map; with aim the shover picks, of the three tiles away from it, one with a hazard the hero would step on.",
+    "save_dc": 13,
+    "line": "{The}'s blow throws you back!",
+    "aimed_line": "{The}'s blow throws you back, right where it hurts!",
+    "held_line": "You keep your feet against {the}'s blow."
+  }
+}

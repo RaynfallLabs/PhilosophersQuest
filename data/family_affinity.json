@@ -1161,6 +1161,317 @@
         "confused",
         "blinded"
       ]
+    },
+    "mandrake": {
+      "lore": "A root has no mind to frighten or charm, and it never sleeps; its sap is a soporific, not a poison to it.",
+      "source": "Theophrastus, Historia Plantarum 9.8; Dioscorides on the root boiled in wine.",
+      "status_immune": [
+        "sleeping",
+        "confused",
+        "charmed",
+        "feared",
+        "blinded"
+      ]
+    },
+    "kappa": {
+      "lore": "Knock a kappa senseless and the water spills from its dish: a stun is its undoing.",
+      "source": "Yanagita Kunio, Tono Monogatari (1910), tales 55-59.",
+      "status_weak": [
+        "stunned"
+      ]
+    },
+    "eloko": {
+      "lore": "The biloko are spirits of the forest: no sleep for them.",
+      "source": "Mongo-Nkundo tales (Gustaaf Hulstaert).",
+      "status_immune": [
+        "sleeping"
+      ]
+    },
+    "asanbosam": {
+      "lore": "A thing of the high branches with iron teeth; no charm turns it.",
+      "source": "Akan folklore; Edward Long, The History of Jamaica (1774).",
+      "status_immune": [
+        "charmed"
+      ]
+    },
+    "ahuizotl": {
+      "lore": "A lake beast with a child's cry and a hand on its tail: flesh and blood, and nothing stranger.",
+      "source": "Sahagun, Florentine Codex, Book 11.",
+      "status_immune": []
+    },
+    "khalkotauros": {
+      "lore": "Bronze made by Hephaestus breathes fire and cannot burn; a blade glances off the plates, but a hammer dents them.",
+      "source": "Apollonius of Rhodes, Argonautica 3.1278-1407.",
+      "status_immune": [
+        "burning",
+        "poisoned",
+        "sleeping",
+        "charmed",
+        "feared",
+        "confused"
+      ]
+    },
+    "cu_sith": {
+      "lore": "The fairy hound never sleeps on the hunt and no charm turns it.",
+      "source": "J. G. Campbell, Superstitions of the Highlands and Islands of Scotland (1900).",
+      "status_immune": [
+        "sleeping",
+        "charmed"
+      ]
+    },
+    "bulgasari": {
+      "lore": "A beast grown from rice and iron: a blade sinks into the metal of its hide and is eaten; a hammer still bruises it.",
+      "source": "Jo Jae-sam, Songnam Japji; the Encyclopedia of Korean Culture.",
+      "status_immune": [
+        "poisoned",
+        "sleeping",
+        "charmed",
+        "feared",
+        "confused"
+      ]
+    },
+    "vetala": {
+      "lore": "A spirit in a dead body feels no fear, no sleep and no poison.",
+      "source": "Somadeva, Kathasaritsagara (the Vetala Panchavimshati).",
+      "status_immune": [
+        "sleeping",
+        "poisoned",
+        "charmed",
+        "feared"
+      ]
+    },
+    "nahual": {
+      "lore": "A man under the skin: what frightens a man frightens him.",
+      "source": "Sahagun, Florentine Codex, Book 10.",
+      "status_immune": []
+    },
+    "likho": {
+      "lore": "Likho has one eye: put it out, as the smith did, and she is helpless.",
+      "source": "Afanasyev, Narodnye russkie skazki, 'Likho One-Eyed'.",
+      "status_immune": [
+        "sleeping"
+      ],
+      "status_weak": [
+        "blinded"
+      ]
+    },
+    "centaur": {
+      "lore": "Wild horse-men, fearless in battle, and wine sends them reeling: the Lapith wedding began when they drank it.",
+      "source": "Ovid, Metamorphoses 12.210-535.",
+      "status_immune": [
+        "feared"
+      ],
+      "status_weak": [
+        "confused"
+      ]
+    },
+    "blue_men_of_the_minch": {
+      "lore": "Sea-men of the fair folk who raise the gales: no sleep takes them.",
+      "source": "J. G. Campbell (1900).",
+      "status_immune": [
+        "sleeping"
+      ]
+    },
+    "vila": {
+      "lore": "A fairy of the clouds: no sleep, no charm.",
+      "source": "Vuk Karadzic, Srpske narodne pjesme (1841-62).",
+      "status_immune": [
+        "sleeping",
+        "charmed"
+      ]
+    },
+    "myrmekes": {
+      "lore": "Desert ants that dig all day: a cold night slows them, a hammer cracks their shells.",
+      "source": "Herodotus, Histories 3.102-105.",
+      "form": {
+        "blunt": "weak"
+      },
+      "status_immune": [
+        "sleeping"
+      ]
+    },
+    "ponaturi": {
+      "lore": "A people of the dark under the sea: the light that killed them in Tawhaki's tale dazzles them.",
+      "source": "Sir George Grey, Polynesian Mythology (1855).",
+      "status_immune": [],
+      "status_weak": [
+        "blinded"
+      ]
+    },
+    "taniwha": {
+      "lore": "A water-dragon whose scaled hide turns a thrust; no sleep for a guardian.",
+      "source": "Te Ara, the Encyclopedia of New Zealand: 'Taniwha'.",
+      "form": {
+        "pierce": "resist"
+      },
+      "status_immune": [
+        "sleeping"
+      ]
+    },
+    "impundulu": {
+      "lore": "Spears and guns do not harm the lightning bird, and it cannot be poisoned; fire destroys it.",
+      "source": "Axel-Ivar Berglund, Zulu Thought-Patterns and Symbolism (1975).",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist",
+        "blunt": "resist"
+      },
+      "status_immune": [
+        "poisoned"
+      ]
+    },
+    "mapinguari": {
+      "lore": "Its hide turns arrows and knives everywhere but at the navel; its own stench does not trouble it.",
+      "source": "David Oren, Ciencia Hoje (1993).",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist",
+        "blunt": "resist"
+      },
+      "status_immune": [
+        "poisoned",
+        "confused"
+      ]
+    },
+    "preta": {
+      "lore": "A hungry ghost has no sleep and no blood for poison, and nothing charms it but food.",
+      "source": "The Petavatthu; the Ullambana Sutra.",
+      "status_immune": [
+        "sleeping",
+        "poisoned",
+        "charmed"
+      ]
+    },
+    "upas_tree": {
+      "lore": "A tree that poisons the air is proof against poison, and a tree does not fear or sleep.",
+      "source": "Erasmus Darwin, The Loves of the Plants (1789).",
+      "form": {
+        "slash": "weak",
+        "pierce": "resist"
+      },
+      "status_immune": [
+        "sleeping",
+        "poisoned",
+        "confused",
+        "charmed",
+        "feared",
+        "blinded"
+      ]
+    },
+    "nuckelavee": {
+      "lore": "The demon of the Orkney shore fears nothing but fresh water.",
+      "source": "Walter Traill Dennison, The Scottish Antiquary (1891).",
+      "status_immune": [
+        "sleeping",
+        "feared"
+      ]
+    },
+    "star_jelly": {
+      "lore": "A trembling jelly with no eyes, no mind and no blood.",
+      "source": "John of Gaddesden, Rosa Anglica (c. 1314).",
+      "status_immune": [
+        "blinded",
+        "sleeping",
+        "confused",
+        "feared",
+        "charmed",
+        "poisoned"
+      ]
+    },
+    "psoglav": {
+      "lore": "Its one eye sees poorly in any case: blinding it does nothing.",
+      "source": "Tihomir Djordjevic (1953); Srpski mitoloski recnik (1970).",
+      "status_immune": [
+        "blinded"
+      ]
+    },
+    "waq_waq_tree": {
+      "lore": "A tree of heads that cry: it does not sleep, fear or see as we do.",
+      "source": "The Arabic and Persian wonder-books; al-Qazwini, 'Aja'ib al-makhluqat.",
+      "form": {
+        "slash": "weak",
+        "pierce": "resist"
+      },
+      "status_immune": [
+        "sleeping",
+        "poisoned",
+        "charmed",
+        "feared",
+        "blinded"
+      ]
+    },
+    "yuki_onna": {
+      "lore": "The snow woman cannot be frozen, and her blizzard never sleeps; a blade passes through her like snow.",
+      "source": "Lafcadio Hearn, Kwaidan (1904).",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist"
+      },
+      "status_immune": [
+        "frozen",
+        "sleeping",
+        "charmed"
+      ]
+    },
+    "yacumama": {
+      "lore": "The mother of the waters never sleeps in her pool.",
+      "source": "The Nuttall Encyclopaedia (1907): 'Yacu-mama'.",
+      "status_immune": [
+        "sleeping"
+      ]
+    },
+    "tsuchigumo": {
+      "lore": "A swollen hairy body that shrugs off a club; a sword cut it down.",
+      "source": "The Heike Monogatari, Tsurugi no maki.",
+      "form": {
+        "blunt": "resist",
+        "slash": "weak"
+      },
+      "status_immune": [
+        "sleeping"
+      ]
+    },
+    "bhuta_vahana_yanta": {
+      "lore": "Machines of bronze and wood driven by spirits: no mind, no blood, no sleep, no eyes to blind.",
+      "source": "The Pali Lokapannatti (c. 11th-12th century).",
+      "status_immune": [
+        "sleeping",
+        "poisoned",
+        "charmed",
+        "feared",
+        "confused",
+        "paralyzed",
+        "stunned",
+        "blinded"
+      ]
+    },
+    "reem": {
+      "lore": "A wild ox as big as a hill fears nothing that walks.",
+      "source": "Job 39:9-12; the King James 'unicorn'.",
+      "status_immune": [
+        "feared"
+      ]
+    },
+    "eitr": {
+      "lore": "The first poison of the world: it cannot be poisoned or frozen.",
+      "source": "Snorri Sturluson, Prose Edda, Gylfaginning 5.",
+      "status_immune": [
+        "frozen",
+        "poisoned",
+        "sleeping",
+        "blinded",
+        "confused",
+        "charmed",
+        "feared"
+      ]
+    },
+    "bakunawa": {
+      "lore": "A serpent that swallows moons is not blinded by any light.",
+      "source": "Alonso de Mentrida (1637); Fernando Buyser (1913).",
+      "status_immune": [
+        "sleeping",
+        "blinded"
+      ]
     }
   }
 }

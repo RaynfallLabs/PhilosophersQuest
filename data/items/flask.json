@@ -150,5 +150,39 @@
     "throw": {"damage_type": "acid", "damage": 1012, "sized_at": 85, "status": {"effect": "armor_crack", "turns": 5}},
     "floorSpawnWeight": {"61-80": 3, "81-100": 7},
     "lore": "Paracelsus dreamed of the alkahest, the universal solvent that would dissolve anything at all. His critics asked what flask could hold it. This one is cut from a single piece of rock crystal, and the liquid inside clings to the walls as if it wants out. Broken on anything, it eats it."
+  },
+  "seed_handful": {
+    "name": "Handful of Seed",
+    "symbol": "!",
+    "color": [205, 180, 110],
+    "weight": 0.2,
+    "min_level": 20,
+    "tier": 2,
+    "can_be_cursed": false,
+    "throw": {"damage_type": "blunt", "damage": 0, "sized_at": 25, "counting": {"kinds": ["vampire", "vampire_spawn", "strigoi", "vrykolakas", "nosferatu"], "turns": 3}},
+    "floorSpawnWeight": {"21-40": 5, "41-60": 2},
+    "lore": "A cloth twist of millet and poppy seed. In the Balkans and across the Slavic lands mourners scattered seed on a new grave and along the road home, for a vampire that rises must stop and count every grain before it can go on, and dawn comes first. Thrown at one of the blood-drinking dead, it holds the creature a few turns while it counts. Each creature counts it once; after that it knows the trick."
+  },
+  "upas_latex": {
+    "name": "Upas Latex",
+    "symbol": "!",
+    "color": [235, 230, 205],
+    "weight": 0.2,
+    "min_level": 44,
+    "tier": 3,
+    "coat": {"substance": "poison", "blows": 12, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 5}},
+    "floorSpawnWeight": {"41-60": 6, "61-80": 3, "81-100": 1},
+    "lore": "A stoppered gourd of the milky sap of the upas tree of Java, the ipoh poison that island hunters smeared on their blowgun darts. The London Magazine once claimed the tree killed every living thing for fifteen miles; the truth is smaller and still deadly. Worked into an edge, it turns each cut into a poisoned one. It does nothing to what has no blood."
+  },
+  "eitr_venom": {
+    "name": "Vial of Eitr",
+    "symbol": "!",
+    "color": [60, 120, 90],
+    "weight": 0.2,
+    "min_level": 80,
+    "tier": 5,
+    "coat": {"substance": "poison", "blows": 16, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 8}},
+    "floorSpawnWeight": {"81-100": 4},
+    "lore": "A thick black-green venom in a vial of rime-crusted glass, so cold it smokes. Snorri says the eitr flowed out of Niflheim in the poisonous rivers of the beginning and hardened like slag; a little never hardened. Painted along a blade it is the worst poison there is, and nothing with blood in it shrugs it off for long."
   }
 }

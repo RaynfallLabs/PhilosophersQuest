@@ -510,6 +510,11 @@ class InputMixin:
                 # pack, ready (lowercase h harvests; game_horns._qa_horns).
                 self._qa_horns()
                 return True
+            if uni == 'Y' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: the next of the MONSTERS AND MAGIC kinds
+                # (2026-11-19) set down beside the hero (game_lore_powers).
+                self._qa_mm_kinds()
+                return True
             if uni == 'B' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: every MONSTERS AND MAGIC spell learned,
                 # two of each new scroll, potion and oil, the two wands and
@@ -853,7 +858,7 @@ class InputMixin:
                 self._open_drop_menu()
             elif tile in (FOUNTAIN, GRAVE, THRONE):
                 self._interact_tile()
-            elif tile != ALTAR and self._lore_fixture_offer():
+            elif tile != ALTAR and (self._parley_offer() or self._lore_fixture_offer()):
                 # Beside a lore fixture (a copyist's desk, a brazen head):
                 # its one question (game_lore_fixtures.py).
                 pass

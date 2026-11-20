@@ -91,6 +91,8 @@ class ArsenalMixin:
             return 'Coat Weapon'
         if counters.is_applied(item):
             return 'Take Out' if counters.ears_stopped(self.player) else 'Put In'
+        if counters.crows(item):
+            return 'Let It Crow'                 # the caged cockerel (game_lore_powers)
         return ''
 
     def _apply_block(self, item) -> str:
@@ -133,6 +135,8 @@ class ArsenalMixin:
             self.add_message(counters.toggle_ears(self.player), 'info')
             self._advance_turn()
             return True
+        if counters.crows(item):
+            return self._cock_crow(item)         # (game_lore_powers.py)
         return False
 
     # ------------------------------------------------------------------

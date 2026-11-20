@@ -77,6 +77,28 @@
     },
     "blind": {
       "no_sight": true
+    },
+    "breath": {
+      "range": 6,
+      "through_walls": false,
+      "sees_invisible": true,
+      "fails_at_rest": true,
+      "lines": {
+        "known": "{The} turns {his} head, sniffing. {He} has found your breath; stand still and hold it, and {he} loses you.",
+        "seen": "{The} turns {his} head, sniffing, and hops toward you.",
+        "unseen": "Somewhere close, something takes a long, slow sniff."
+      }
+    },
+    "blood_scent": {
+      "range": 24,
+      "through_walls": true,
+      "sees_invisible": true,
+      "needs_bleeding": true,
+      "lines": {
+        "known": "{The} lifts {his} head, tasting the air. {He} smells your blood, and will follow it anywhere until it stops.",
+        "seen": "{The} lifts {his} head, tasting the air, and turns toward you.",
+        "unseen": "Somewhere a long tongue flickers, tasting the air."
+      }
     }
   },
   "families": {
@@ -407,7 +429,8 @@
       "scent"
     ],
     "jiangshi": [
-      "lifesense"
+      "blind",
+      "breath"
     ],
     "cave_troll": [
       "scent"
@@ -564,6 +587,18 @@
     ],
     "cave_hyena": [
       "scent"
+    ],
+    "cu_sith": [
+      "scent"
+    ],
+    "myrmekes": [
+      "scent"
+    ],
+    "psoglav": [
+      "scent"
+    ],
+    "komodo_brute": [
+      "blood_scent"
     ]
   },
   "monster_ranges": {
@@ -587,6 +622,12 @@
     },
     "thorn_slinger": {
       "tremor": 6
+    },
+    "myrmekes": {
+      "scent": 12
+    },
+    "psoglav": {
+      "scent": 12
     }
   },
   "noise": {
@@ -753,7 +794,9 @@
     "master": "knowing every stone of {his} own house",
     "keen_sight": "very sharp eyes",
     "truesight": "eyes no magic can fool",
-    "blind": "touch alone"
+    "blind": "touch alone",
+    "breath": "Breath",
+    "blood_scent": "Blood Scent"
   },
   "scavengers": {
     "_doc": "C3: the things that eat the dead. An idle scavenger (not hunting, not searching, awake) that smells a corpse within 'reach' tiles goes to it and eats it in 'eat_turns' turns, healing 'heal_share' of its health; the corpse is gone, so a harvest is a race. Ghouls ate the dead in the old stories; vermin and oozes eat anything.",

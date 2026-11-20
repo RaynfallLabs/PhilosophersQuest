@@ -70,14 +70,36 @@ src/
   war_bands.py        - War-bands: groups with a leader and roles, morale when he falls
   packs.py            - Packs: kin that hunt together (surround in the open, hold a corridor's mouth or go round) and each family's trick (rats swarm, wolves hamstring, goblins sling...)
   tells.py            - Tells: what a dangerous creature shows it can do, and what to do about it
+<<<<<<< HEAD
+  # Monster behaviour, first wave (AI-1, 2026-11-19): small pure modules, numbers and lines in data/monster_ai.json
+  kind_data.py        - A kind's own fields where the Monster keeps no copy; data/monster_ai.json; the behaviours' tells
+  ai_lines.py         - What a behaviour leaves for the Game to say (seen / unseen)
+  faction.py          - Whose side a monster is on (band, pack, family); the healer's choice and its rest
+  summoning.py        - Summoners chant (a blow breaks it), then call while few of theirs stand
+  breath.py           - Draws Breath: a breath must be drawn again; tooth and claw meanwhile
+  morale.py           - Morale by Nature: who breaks (never, bolt, regroup, withdraw, yield), when, and the run
+  ai_blow.py          - What the behaviours add to one monster blow (to-hit shift; after the blow)
+  life_drain.py       - Life Drained: a drain blow lowers max HP; half back on the stairs, all from prayer or physician
+  grave_rot.py        - Grave Rot: disease lingers, stops rest mending, halves heals; ticks on a monster
+  light_shy.py        - Light-Shy (flinch, a troll's wounds, stiffening) and Snuff the Light (a soaked wick)
+  gone_again.py       - Gone Again: a hit-and-run creature hides out of sight (in the dark, unseen)
+  alarm.py            - Raise the Alarm: a lookout's shout rouses its side, once a floor
+  death_throes.py     - Death Throes: it swells, then bursts as it dies
+  relurk.py           - Back to the Web: a hurt ambusher out of sight hides again
+  shove.py            - Shove: a giant's blow throws the hero back, never into deadly ground
+  game_behaviour.py   - BehaviourMixin: the Game's side of the behaviours (lines, the map, the kill)
+=======
   wards.py            - Wards (data/wards.json): a family kept off (melee, riders, sight, damage), missiles stayed, mist, sanctuary, the Styx; what a strike breaks
   attack_gates.py     - What a monster cannot use now: silenced (no voice, cast, summon, heal), unstrung (no missile, breath, gaze), babbled (no pack ways)
+>>>>>>> main
   decor.py            - The five domains (themes) and the fixture layer: what stands in a floor
   hazards.py          - Domain hazards (data), trap lean, kin weights and the floor's resident clan
   game_hazards.py     - HazardsMixin: hazards at work on the hero and the monsters; fire vents breathe
   game_lore_fixtures.py - LoreFixturesMixin: Worth a Closer Look, one question at a lore fixture (D)
   false_stairs.py     - Hellmouth mimics that pose as the down stair
   splitting.py        - Creatures that split when struck the wrong way
+  lore_powers.py      - The 2026-11-19 kinds' own powers (pure): the Cu-Sith's three barks, the Bulgasari eats iron, the Mapinguari's soft spot, the Lindworm's skins, the Kappa's dish, the Roc's carry-off, what hangs overhead
+  game_lore_powers.py - LorePowersMixin: their game side (a gift of food, gold for the ants, the Blue Men's verse on D, the Vetala's corpse hop, the Jiangshi's talisman, the QA key Shift+Y)
   sleepers.py         - Zoo, graveyard and barracks sleepers stir at footsteps and gold taken
   theft.py            - Thieves that really steal, and give it back on death
   black_knight.py     - The Black Knight bridge easter egg (floors 15-19)
@@ -215,6 +237,7 @@ data/
   lights.json       - Carried lights and the Light spell: status sight, spell turns, the oil, lines, card and HUD words
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
   packs.json        - Packs: the hunt's numbers, the lore packs and their tricks, the herds that do not hunt as one
+  monster_ai.json   - Monster behaviour (AI-1): healers, summoners, breath, morale, drain, rot, light, alarm, throes... numbers and lines
   traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)
   old_nickel.json   - Old Nickel's lines by phase and moment (the friend's offers and asides, the reveal, then taunts, iron, the cloak, darting in, striking, hurt, dying), their pacing and Journal lines

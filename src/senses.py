@@ -213,6 +213,10 @@ def lore_sense(m, player, dungeon):
             continue
         if spec.get('needs_motion') and not TURN.moved:
             continue
+        if spec.get('fails_at_rest') and TURN.rested and _cheb(m.x, m.y, player.x, player.y) > 1:
+            continue                      # he holds his breath (the jiangshi)
+        if spec.get('needs_bleeding') and not player.has_effect('bleeding'):
+            continue                      # no blood to follow (the Komodo)
         if s == 'tremor' and player.has_effect('levitating'):
             continue
         if s == 'guilt' and not TURN.guilty:
@@ -612,6 +616,9 @@ def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:
                 import packs
                 if packs.pack_of(m) is not None:
                     packs.alarm(m, all_monsters, player.x, player.y, dungeon)
+            # A lookout shouts (src/alarm.py, AI-1): its side is roused.
+            import alarm
+            alarm.shout(m, all_monsters, player, dungeon)
         m._aware = True
         m._tracking = True
         m._sensed_by = how

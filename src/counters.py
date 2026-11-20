@@ -195,7 +195,25 @@ def card_lines(item) -> list:
 
 def is_applied(item) -> bool:
     """A counter put in or taken out with the Kit's Apply (the earplugs)."""
-    return any(technique(t).get('apply') for t in item_counters(item))
+    return any(technique(t).get('apply') == 'stop_ears' for t in item_counters(item))
+
+
+def crows(item) -> bool:
+    """A counter let loose with the Kit's Apply (the caged cockerel's crow:
+    game_lore_powers.py)."""
+    return any(technique(t).get('apply') == 'crow' for t in item_counters(item))
+
+
+def shuns(player, source):
+    """(piece, technique id) when a carried counter keeps this kind of
+    creature from striking at all (the whitethorn and the strix), else None."""
+    kind = str(getattr(source, 'kind', '') or '')
+    if not kind or not any(kind in (d.get('kinds') or ()) for d in (rules().get('techniques') or {}).values()):
+        return None
+    for it, t in active(player):
+        if kind and kind in (technique(t).get('kinds') or ()):
+            return it, t
+    return None
 
 
 def toggle_ears(player) -> str:

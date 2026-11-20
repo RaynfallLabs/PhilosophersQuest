@@ -57,6 +57,19 @@ FAMILY_IDS = (
 # 1. Lore-settled picks: (family, runner-up, reason). Final, not provisional.
 # ---------------------------------------------------------------------------
 FINAL = {
+    # --- the MONSTERS AND MAGIC kinds (2026-11-19, slice M) -------------------
+    'asanbosam': ('vampires_liches', 'mortals', "The Akan forest's iron-toothed blood-drinker in the trees."),
+    'ahuizotl': ('serpents', 'great_beasts', "An Aztec water beast of the lakes, kin to the water serpents."),
+    'cu_sith': ('fair_folk', 'great_beasts', "The fairy hound of the Highlands: a hound of the Fair Folk."),
+    'nahual': ('shapeshifters', 'mortals', "The Nahua sorcerer who puts on the shape of a jaguar."),
+    'centaur': ('legend', 'great_beasts', "The horse-men of Greek legend."),
+    'myrmekes': ('vermin', 'great_beasts', "Herodotus' gold-digging ants: insects, however large."),
+    'ponaturi': ('goblinkin', 'mortals', "The goblin-like sea raiders of Maori legend."),
+    'impundulu': ('birds', 'great_beasts', "The lightning bird of Zulu and Xhosa belief."),
+    'preta': ('ghosts', 'restless_dead', "The hungry ghost of Buddhist and Hindu belief."),
+    'psoglav': ('goblinkin', 'mortals', "The dog-headed cave raiders of South Slavic lore."),
+    'tsuchigumo': ('vermin', 'great_beasts', "The earth spider of Japan: a spider, however large."),
+    'eitr': ('oozes', 'elementals', "The first venom of Norse myth, a crawling poison."),
     # --- the draft's word-match slips ---------------------------------------
     'battle_mage': ('mortals', '-', "A tattooed human war-wizard; the draft matched 'bat' inside his id."),
     'locust_cultist': ('mortals', 'vermin', "Soldiers of the Cult of the Locust: men who serve the swarm, not insects."),

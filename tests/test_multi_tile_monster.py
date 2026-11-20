@@ -57,6 +57,7 @@ def test_known_multi_tile_monsters_are_in_allowlist():
         "ymir_last_spawn",    # f82 frost giant primordial
         "hrungnirs_ghost",    # f80 stone giant ghost
         "gashadokuro",        # f78 starving giant skeleton (2026-10 late-game pass)
+        "reem",               # f85 the wild ox as big as a hill (MONSTERS AND MAGIC, 2026-11-19)
     }
     multi_set = set(multi)
     unexpected = multi_set - EXPECTED

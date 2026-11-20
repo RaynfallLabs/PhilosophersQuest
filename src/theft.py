@@ -120,7 +120,23 @@ def steal(game, m, kind: str, rng=random) -> str:
         pass
     purse = int(getattr(game, 'player_gold', 0) or 0)
     items = stealable(player)
-    snatch = kind == 'food'
+    snatch = kind in ('food', 'offering')
+    eats = kind == 'offering'
+    if eats:
+        # A preta's hunger (data/monsters.json steal 'offering'): plain food
+        # only, never a dish cooked to carry, and it eats it there and then.
+        import lore_powers
+        items = [it for it in items if lore_powers.is_plain_food(it)]
+        if not items:
+            return ''
+        it = _pick_item(rng, items)
+        if player.drop_stack(it, 1) is None:
+            return ''
+        try:
+            name = game._display_name(it)
+        except Exception:
+            name = getattr(it, 'name', 'food')
+        return f"{the_name(m)} snatches your {name} and crams it down its needle-thin throat. It is gone."
     if snatch:
         # A harpy's snatch (data/packs.json): food from the pack, nothing
         # else, as the harpies seized Phineus's dinner.

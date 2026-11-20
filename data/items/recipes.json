@@ -7591,6 +7591,492 @@
   "art": "dish_stew_t5_stat",
   "cross_depth": true
  },
+ "cook_mandrake": {
+  "name": "Mandrake Root Wine",
+  "ingredients": [
+   "mandrake_prime"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "The sleep-root boiled in wine, the old way: now nothing knocks you senseless.",
+  "art": "dish_drink_t1_special"
+ },
+ "dish_mm_mandrake_a": {
+  "name": "Physician's Root Broth",
+  "ingredients": [
+   "mandrake_prime",
+   "healing_herb"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "Bitter and calming; your head stays clear when a blow lands.",
+  "art": "dish_soup_t1_special"
+ },
+ "dish_mm_mandrake_b": {
+  "name": "Mandrake and Apple Pickle",
+  "ingredients": [
+   "mandrake_prime",
+   "apple"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "Sour and sharp; you will not be stunned or put to sleep easily.",
+  "art": "dish_pickle_t1_special"
+ },
+ "cook_kappa": {
+  "name": "Kappa Shell Soup",
+  "ingredients": [
+   "kappa_prime"
+  ],
+  "benefit": "CON",
+  "flavor": "Turtle soup from the river; you stand like a wrestler.",
+  "art": "dish_soup_t1_stat"
+ },
+ "dish_mm_kappa_a": {
+  "name": "River-Imp Hotpot",
+  "ingredients": [
+   "kappa_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "CON",
+  "flavor": "Earthy and thick; you feel planted to the ground.",
+  "art": "dish_stew_t1_stat"
+ },
+ "dish_mm_kappa_b": {
+  "name": "Pond Shell Steak",
+  "ingredients": [
+   "kappa_prime",
+   "swamp_moss"
+  ],
+  "benefit": "CON",
+  "flavor": "Green-edged and chewy; nothing throws you easily.",
+  "art": "dish_steak_t1_stat"
+ },
+ "cook_eloko": {
+  "name": "Bell-Ringer Bone Broth",
+  "ingredients": [
+   "eloko_prime"
+  ],
+  "benefit": "PER",
+  "flavor": "Thin and grassy; afterwards every small sound is clear.",
+  "art": "dish_soup_t1_stat"
+ },
+ "dish_mm_eloko_a": {
+  "name": "Hollow-Tree Stew",
+  "ingredients": [
+   "eloko_prime",
+   "cave_mushroom"
+  ],
+  "benefit": "PER",
+  "flavor": "It smells of the forest floor; you notice things.",
+  "art": "dish_stew_t1_stat"
+ },
+ "dish_mm_eloko_b": {
+  "name": "Forest Spirit Platter",
+  "ingredients": [
+   "eloko_prime",
+   "hard_cheese"
+  ],
+  "benefit": "PER",
+  "flavor": "Bone, cheese and leaves; your eyes and ears sharpen.",
+  "art": "dish_platter_t1_stat"
+ },
+ "cook_ahuizotl": {
+  "name": "Roast Lake-Hound Haunch",
+  "ingredients": [
+   "ahuizotl_prime"
+  ],
+  "benefit": "INT",
+  "flavor": "Dark lake meat; you see the trick before it is played.",
+  "art": "dish_leg_t1_stat"
+ },
+ "dish_mm_ahuizotl_a": {
+  "name": "Fisherman's Haunch Stew",
+  "ingredients": [
+   "ahuizotl_prime",
+   "trail_rations"
+  ],
+  "benefit": "INT",
+  "flavor": "A fisherman's supper; your wits are quick.",
+  "art": "dish_stew_t1_stat"
+ },
+ "dish_mm_ahuizotl_b": {
+  "name": "Salt-Crusted Lake-Hound Steak",
+  "ingredients": [
+   "ahuizotl_prime",
+   "river_salt"
+  ],
+  "benefit": "INT",
+  "flavor": "Baked in salt; you think a move ahead.",
+  "art": "dish_steak_t1_stat"
+ },
+ "cook_bulgasari": {
+  "name": "Rice-Heart Cakes",
+  "ingredients": [
+   "bulgasari_prime"
+  ],
+  "benefit": "CON",
+  "flavor": "Chewy as iron and sweet as new rice; you feel hard to break.",
+  "art": "dish_stew_t1_stat"
+ },
+ "dish_mm_bulgasari_a": {
+  "name": "Iron-Rice Porridge",
+  "ingredients": [
+   "bulgasari_prime",
+   "bread_ration"
+  ],
+  "benefit": "CON",
+  "flavor": "Plain and heavy; it sits in you like an anvil.",
+  "art": "dish_porridge_t1_stat"
+ },
+ "dish_mm_bulgasari_b": {
+  "name": "Rice-Heart Fritters",
+  "ingredients": [
+   "bulgasari_prime",
+   "river_salt"
+  ],
+  "benefit": "CON",
+  "flavor": "Crisp outside, iron-hard within; you shrug off a blow.",
+  "art": "dish_fritter_t1_stat"
+ },
+ "cook_myrmekes": {
+  "name": "Gold-Ant Larvae Stew",
+  "ingredients": [
+   "myrmekes_prime"
+  ],
+  "benefit": "sp",
+  "flavor": "Buttery, nutty and rich as the gold they dug; it keeps you going for days.",
+  "art": "dish_stew_t3_sp"
+ },
+ "dish_mm_myrmekes_a": {
+  "name": "Gold-Digger's Trail Stew",
+  "ingredients": [
+   "myrmekes_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "A raider's meal from the Indian desert; you could ride all day.",
+  "art": "dish_stew_t3_sp",
+  "cross_depth": true
+ },
+ "dish_mm_myrmekes_b": {
+  "name": "Ant and Beetle Roast",
+  "ingredients": [
+   "myrmekes_prime",
+   "giant_beetle_prime"
+  ],
+  "benefit": "sp",
+  "flavor": "Crunchy and rich; hunger stays away a long while.",
+  "art": "dish_roast_t3_sp",
+  "cross_depth": true
+ },
+ "cook_vila": {
+  "name": "Mountain Cloud Cordial",
+  "ingredients": [
+   "vila_prime"
+  ],
+  "benefit": "mp",
+  "flavor": "Cold as a mountain cloud; the spells come quicker.",
+  "art": "dish_drink_t3_mp"
+ },
+ "dish_mm_vila_a": {
+  "name": "Vila's Garland Chowder",
+  "ingredients": [
+   "vila_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "It smells of mountain flowers; your magic wells up.",
+  "art": "dish_chowder_t3_mp",
+  "cross_depth": true
+ },
+ "dish_mm_vila_b": {
+  "name": "Cloud and Ember Jelly",
+  "ingredients": [
+   "vila_prime",
+   "imp_prime"
+  ],
+  "benefit": "mp",
+  "flavor": "White and red, cold and hot; the power hums in you.",
+  "art": "dish_jelly_t3_mp",
+  "cross_depth": true
+ },
+ "cook_taniwha": {
+  "name": "Earth-Oven Taniwha Steak",
+  "ingredients": [
+   "taniwha_prime"
+  ],
+  "benefit": "CON",
+  "flavor": "Steamed under hot stones; you feel like a river nobody can dam.",
+  "art": "dish_steak_t3_stat"
+ },
+ "dish_mm_taniwha_a": {
+  "name": "River Guardian Stew",
+  "ingredients": [
+   "taniwha_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "CON",
+  "flavor": "Dark and deep; it sits in you like a riverbed.",
+  "art": "dish_stew_t3_stat",
+  "cross_depth": true
+ },
+ "dish_mm_taniwha_b": {
+  "name": "Taniwha and Lizard Roast",
+  "ingredients": [
+   "taniwha_prime",
+   "lizardfolk_prime"
+  ],
+  "benefit": "CON",
+  "flavor": "Two kinds of scale on one spit; you are hard to hurt.",
+  "art": "dish_roast_t3_stat",
+  "cross_depth": true
+ },
+ "cook_mapinguari": {
+  "name": "Smoked Mapinguari Flank",
+  "ingredients": [
+   "mapinguari_prime"
+  ],
+  "benefit": "STR",
+  "flavor": "Smoked a whole day to kill the reek; the strength stays.",
+  "art": "dish_stew_t3_stat"
+ },
+ "dish_mm_mapinguari_a": {
+  "name": "Rubber-Tapper's Moqueca",
+  "ingredients": [
+   "mapinguari_prime",
+   "river_salt"
+  ],
+  "benefit": "STR",
+  "flavor": "A fish-pot stew of the Amazon with a beast in it; your arms swell.",
+  "art": "dish_stew_t3_stat",
+  "cross_depth": true
+ },
+ "dish_mm_mapinguari_b": {
+  "name": "Two-Beast Roast",
+  "ingredients": [
+   "mapinguari_prime",
+   "owlbear_prime"
+  ],
+  "benefit": "STR",
+  "flavor": "Two great beasts on one spit; you could lift a cart.",
+  "art": "dish_roast_t3_stat",
+  "cross_depth": true
+ },
+ "cook_impundulu": {
+  "name": "Lightning-Fat Flambe",
+  "ingredients": [
+   "impundulu_prime"
+  ],
+  "benefit": "shock_resist",
+  "flavor": "It crackles in the pan; lightning finds nothing to hold.",
+  "art": "dish_flambe_t3_special"
+ },
+ "dish_mm_impundulu_a": {
+  "name": "Lightning Bird Pie",
+  "ingredients": [
+   "impundulu_prime",
+   "bread_ration"
+  ],
+  "benefit": "shock_resist",
+  "flavor": "The crust sparks when you cut it; storms pass you by.",
+  "art": "dish_pie_t3_special",
+  "cross_depth": true
+ },
+ "dish_mm_impundulu_b": {
+  "name": "Two-Bird Storm Roast",
+  "ingredients": [
+   "impundulu_prime",
+   "harpy_prime"
+  ],
+  "benefit": "shock_resist",
+  "flavor": "Thunder on the tongue; lightning does not find you.",
+  "art": "dish_roast_t3_special",
+  "cross_depth": true
+ },
+ "cook_preta": {
+  "name": "Ghost Festival Offering Stew",
+  "ingredients": [
+   "preta_prime"
+  ],
+  "benefit": "sp",
+  "flavor": "The Ghost Festival's meal, freely given; for once the hunger is filled.",
+  "art": "dish_stew_t3_sp"
+ },
+ "dish_mm_preta_a": {
+  "name": "Ember-Roasted Offering Loaf",
+  "ingredients": [
+   "preta_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "Warm bread with a coal at its heart; you will not go hungry for a while.",
+  "art": "dish_roast_t3_sp",
+  "cross_depth": true
+ },
+ "dish_mm_preta_b": {
+  "name": "Grave-Offering Stew",
+  "ingredients": [
+   "preta_prime",
+   "skeleton_prime"
+  ],
+  "benefit": "sp",
+  "flavor": "A meal set out for the dead and eaten by the living; it fills you up.",
+  "art": "dish_stew_t3_sp",
+  "cross_depth": true
+ },
+ "cook_star_jelly": {
+  "name": "Star-Rot Pudding",
+  "ingredients": [
+   "star_jelly_prime"
+  ],
+  "benefit": "INT",
+  "flavor": "It trembles on the spoon and tastes of a cold night; your thoughts come clear.",
+  "art": "dish_pudding_t3_stat"
+ },
+ "dish_mm_star_jelly_a": {
+  "name": "Starfall Apple Pie",
+  "ingredients": [
+   "star_jelly_prime",
+   "apple"
+  ],
+  "benefit": "INT",
+  "flavor": "Sweet apple under a shining glaze; you think more clearly.",
+  "art": "dish_pie_t3_stat",
+  "cross_depth": true
+ },
+ "dish_mm_star_jelly_b": {
+  "name": "Two-Jelly Platter",
+  "ingredients": [
+   "star_jelly_prime",
+   "ochre_jelly_prime"
+  ],
+  "benefit": "INT",
+  "flavor": "Pale and yellow jellies side by side; your mind is sharp.",
+  "art": "dish_platter_t3_stat",
+  "cross_depth": true
+ },
+ "cook_waq_waq_tree": {
+  "name": "Waq-Waq Fruit Platter",
+  "ingredients": [
+   "waq_waq_tree_prime"
+  ],
+  "benefit": "PER",
+  "flavor": "It tastes of nothing you know and listens as you eat it.",
+  "art": "dish_platter_t4_stat"
+ },
+ "dish_mm_waq_waq_tree_a": {
+  "name": "Island Fruit Stew",
+  "ingredients": [
+   "waq_waq_tree_prime",
+   "hard_cheese"
+  ],
+  "benefit": "PER",
+  "flavor": "Strange and sweet; afterwards you hear the smallest step.",
+  "art": "dish_stew_t4_stat",
+  "cross_depth": true
+ },
+ "dish_mm_waq_waq_tree_b": {
+  "name": "Roc and Fruit Roast",
+  "ingredients": [
+   "waq_waq_tree_prime",
+   "roc_chick_prime"
+  ],
+  "benefit": "PER",
+  "flavor": "A roc chick stuffed with fruit from the edge of the world; your eyes miss nothing.",
+  "art": "dish_roast_t4_stat",
+  "cross_depth": true
+ },
+ "cook_yacumama": {
+  "name": "Mother-of-Waters Steak",
+  "ingredients": [
+   "yacumama_prime"
+  ],
+  "benefit": "STR",
+  "flavor": "Dense as a coil; you could crush a canoe.",
+  "art": "dish_steak_t4_stat"
+ },
+ "dish_mm_yacumama_a": {
+  "name": "Salted Anaconda Stew",
+  "ingredients": [
+   "yacumama_prime",
+   "river_salt"
+  ],
+  "benefit": "STR",
+  "flavor": "Salted and slow-cooked; your grip tightens.",
+  "art": "dish_stew_t4_stat",
+  "cross_depth": true
+ },
+ "dish_mm_yacumama_b": {
+  "name": "Great Serpent Stir-Fry",
+  "ingredients": [
+   "yacumama_prime",
+   "giant_lizard_prime"
+  ],
+  "benefit": "STR",
+  "flavor": "Two serpents in one pan; your arms are iron.",
+  "art": "dish_stirfry_t4_stat",
+  "cross_depth": true
+ },
+ "cook_reem": {
+  "name": "Re'em Sirloin Roast",
+  "ingredients": [
+   "reem_prime"
+  ],
+  "benefit": "sp",
+  "flavor": "One slice is a day's meat for a village.",
+  "art": "dish_roast_t5_sp"
+ },
+ "dish_mm_reem_a": {
+  "name": "Wild Ox Pie",
+  "ingredients": [
+   "reem_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "A pie the size of a cartwheel; you will not be hungry for days.",
+  "art": "dish_pie_t5_sp",
+  "cross_depth": true
+ },
+ "dish_mm_reem_b": {
+  "name": "Hill-Beast Stew",
+  "ingredients": [
+   "reem_prime",
+   "cave_bear_prime"
+  ],
+  "benefit": "sp",
+  "flavor": "A stew of the two greatest beasts you know; it fills you for days.",
+  "art": "dish_stew_t5_sp",
+  "cross_depth": true
+ },
+ "cook_bakunawa": {
+  "name": "Moon-Scale Soup",
+  "ingredients": [
+   "bakunawa_prime"
+  ],
+  "benefit": "DEX",
+  "flavor": "It shimmers like the moon on the sea; you move like the tide.",
+  "art": "dish_soup_t5_stat"
+ },
+ "dish_mm_bakunawa_a": {
+  "name": "Eclipse Night Stew",
+  "ingredients": [
+   "bakunawa_prime",
+   "trail_rations"
+  ],
+  "benefit": "DEX",
+  "flavor": "Dark and bright by turns; your feet are quick.",
+  "art": "dish_stew_t5_stat",
+  "cross_depth": true
+ },
+ "dish_mm_bakunawa_b": {
+  "name": "Moon and Fire Stir-Fry",
+  "ingredients": [
+   "bakunawa_prime",
+   "drake_fire_prime"
+  ],
+  "benefit": "DEX",
+  "flavor": "A serpent's scale and a drake's fire in one pan; your hands are swift.",
+  "art": "dish_stirfry_t5_stat",
+  "cross_depth": true
+ },
  "brew_theriac": {
   "name": "Theriac of Andromachus",
   "ingredients": [

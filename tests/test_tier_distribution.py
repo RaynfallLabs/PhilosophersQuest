@@ -53,11 +53,8 @@ KNOWN_GAPS = {
     'Ingredients': 'lopsided',
     'Dishes: SP': 'lopsided',
     'Dishes: MP': 'lopsided',
-    'Dishes: Stat CON': 'lopsided',
     'Dishes: Stat DEX': 'lopsided',
-    'Dishes: Stat INT': 'lopsided',
     'Dishes: Stat PER': 'lopsided',
-    'Dishes: Stat STR': 'lopsided',
     'Flavor encounters': 'lopsided',
 }
 

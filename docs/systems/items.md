@@ -924,6 +924,24 @@ Any item may carry `counters` (a list of technique ids, `src/counters.py`):
 the techniques it blocks outright while worn, or carried where the technique
 says so. See armour.md section 6b.
 
+The counters the MONSTERS AND MAGIC kinds' lore names (2026-11-19,
+`tools/content/add_mm_counters_2026_11.py`):
+- **Handful of Seed** (flask, tier 2, thrown): a `throw.counting` block; a
+  vampire of the kinds listed must stop and count every grain (the Balkan
+  grave custom), held 3 turns, once for each creature (coatings._counting).
+- **Upas Latex** (tier 3) and **Vial of Eitr** (tier 5): poison coatings; the
+  ladder is viper venom (1), upas latex (3), the Hydra's blood (4), eitr (5).
+  The stall counters offer them where poison is what the floors below fear.
+- **Sprig of Whitethorn** (accessory, carried, technique `whitethorn` with
+  `kinds`): no strix strikes the one who carries it (Ovid, Fasti 6;
+  counters.shuns, lore_powers.blow_refused).
+- **Caged Cockerel** (accessory, Kit Apply "Let It Crow", technique
+  `cock_crow` with `apply: crow`): once a floor, every cockatrice and lesser
+  basilisk within 8 tiles loses half its health and flees; a basilisk or a
+  jiangshi is stunned 2 turns (game_lore_powers._cock_crow).
+The seed, the whitethorn and the cockerel are on Mother Wort's shelf now and
+then (traders.json stock) and found as loot by their floor bands.
+
 ### Treasure (`data/items/treasure.json`, class `Treasure`; rules in `src/treasure.py`)
 
 Gems, jewellery, old coin and art objects (17 kinds), with real weights and

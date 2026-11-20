@@ -3,10 +3,11 @@
   "min_chance": 0.1,
   "max_lines": 2,
   "order": ["gaze_paralyze", "paralyzed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
-            "silenced", "stunned", "immobilized", "pack_feast", "pack_swarm", "pack_hamstring", "splits", "revive_once_on_death", "drain_heals_self",
-            "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "summon_kind", "pull_chance", "sp_drain",
-            "can_charge", "pack_harry", "pack_sling", "pack_traps", "pack_bay", "pack_dart", "pack_snatch",
-            "can_phase_blink", "stalker", "bleeding", "burning", "slowed", "hallucinating"],
+            "silenced", "stunned", "immobilized", "pack_feast", "pack_swarm", "pack_hamstring", "splits", "death_throes", "revive_once_on_death", "drain_heals_self", "life_drain",
+            "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "light_shy", "summon_kind", "heals_allies", "pull_chance", "breath_recharge", "sp_drain", "snuffs_light",
+            "can_charge", "shove", "pack_harry", "pack_sling", "pack_traps", "pack_bay", "raises_alarm", "pack_dart", "pack_snatch",
+            "can_phase_blink", "relurks", "hides_in_dark", "stalker", "bleeding", "burning", "slowed", "hallucinating",
+            "countdown_voice", "metal_eater", "corpse_hop", "parley", "appeased_by", "on_stunned", "hidden_overhead", "weak_spot_chain", "sheds_skin", "carry_off", "ranged_pull", "gold_gatherer", "steal_offering", "fumbling", "strangulation", "heal_blocked", "talisman"],
   "kin_lead": "{He} is one of {kin}.",
   "far_counter": "{He} can reach you from across a room, but only where {he} can see you: keep stone between you until you can close in.",
   "status_words": {"feared": "frightened", "charmed": "charmed", "confused": "confused",
@@ -113,8 +114,8 @@
     },
     "summon_kind": {
       "sign": "{The} keeps glancing behind {him}, as if {he} expects company.",
-      "does": "{He} can call others to {him}.",
-      "counter": "Kill {him} before {he} calls."
+      "does": "{He} can call others to {him}, a few at a time.",
+      "counter": "Strike {him} while {he} chants: a blow breaks the call. Kill what {he} calls, and {he} must call again."
     },
     "pull_chance": {
       "sign": "{The} has a long reach with a hook to it.",
@@ -213,6 +214,141 @@
       "sign": "{The} eyes your pack, and the food in it.",
       "does": "Harpies snatch food out of your pack and fly off with it, as the harpies robbed the table of the blind king Phineus.",
       "counter": "Kill the thief and what {he} took falls where {he} dies. Keep the flock off you, or fight where a harpy cannot swoop."
+    },
+    "countdown_voice": {
+      "sign": "{The} stands silent and watches you, its great chest filling.",
+      "does": "{He} barks three times, slowly; whoever is still in {his} sight at the third bark is overtaken by terror.",
+      "counter": "Get out of {his} sight before the third bark: a wall or a corner is shelter, as a house was in the Highlands. Wax in the ears stops the bark too."
+    },
+    "metal_eater": {
+      "sign": "Needles, spoons and spear-heads bristle half-swallowed from {the}'s hide.",
+      "does": "{He} eats iron: a blade of iron or steel that bites {him} may be gnawed blunt, and every mouthful mends {him}.",
+      "counter": "Strike {him} with something {he} cannot eat: fire, a coating of fire oil, a silver, bronze or wooden weapon, or a named blade."
+    },
+    "corpse_hop": {
+      "sign": "{The} grins with a face that does not fit the body {he} wears.",
+      "does": "When the body {he} wears falls, the spirit slips into the nearest corpse and gets up again.",
+      "counter": "Harvest or search the dead lying near the fight before you finish {him}, or bless the ground with holy water and prayer."
+    },
+    "parley": {
+      "sign": "{The} rises from the water and calls out, as if waiting for an answer.",
+      "does": "{He} and {his} kin ask a riddle in verse; a good answer lets you pass, and a poor one brings the storm down on you.",
+      "counter": "Answer well: it is a question of words and the way a sentence is built."
+    },
+    "appeased_by": {
+      "sign": "{The} sniffs at your pack with a starving look.",
+      "does": "Hunger drives {him}, and a gift of food can turn {him} away.",
+      "counter": "Throw {him} a ration or some plain food: {he} eats it and leaves you be."
+    },
+    "on_stunned": {
+      "sign": "Water slops in a dish on the top of {the}'s head.",
+      "does": "{His} strength is in the water on {his} head.",
+      "counter": "Knock {him} senseless and the water spills: {his} arms go weak."
+    },
+    "hidden_overhead": {
+      "sign": "Something hangs among the shadows of the roof above {the}.",
+      "does": "{He} hangs overhead in the dark and drops on whoever passes under.",
+      "counter": "Carry a light: in its glow you see {him} waiting above you."
+    },
+    "weak_spot_chain": {
+      "sign": "{The}'s matted hide is thick as tree bark, except at the belly.",
+      "does": "{His} hide turns weak blows; only the soft place at {his} navel gives.",
+      "counter": "Only a long chain of right answers finds the soft place: fire works too."
+    },
+    "sheds_skin": {
+      "sign": "Old skins hang in tatters from {the}'s coils.",
+      "does": "When {he} is badly hurt {he} sheds a skin and the worst of {his} wounds with it, but {he} has only so many skins.",
+      "counter": "Press on through each shedding: the skins run out."
+    },
+    "carry_off": {
+      "sign": "{The}'s talons are big enough to close round a horse.",
+      "does": "{He} can snatch you up and drop you far away, hurt and alone.",
+      "counter": "A heavy load makes you hard to lift; plate armour or a full pack keeps your feet on the ground."
+    },
+    "ranged_pull": {
+      "sign": "The air moves toward {the} as {he} breathes.",
+      "does": "{He} breathes in, and the pull of {his} breath drags you toward {his} coils from far away.",
+      "counter": "Stay out of {his} sight, or fight {him} where you want to be: the breath only draws you in."
+    },
+    "gold_gatherer": {
+      "sign": "Glittering sand clings to {the}'s legs.",
+      "does": "{He} lives for gold and follows a thief by scent.",
+      "counter": "Drop a little gold and {he} stops to gather it, as the camels of Herodotus' tale were let go to slow the ants."
+    },
+    "steal_offering": {
+      "sign": "{The}'s needle-thin throat works as {he} looks at your pack.",
+      "does": "{He} snatches food out of your pack and crams it down, and it is gone.",
+      "counter": "Keep your rations few when {he} is near, or give {him} one freely: an offering quiets {him}."
+    },
+    "fumbling": {
+      "sign": "Bad luck hangs round {the} like smoke.",
+      "does": "Ill luck clings to whoever {he} touches: for a long while your plans keep going wrong.",
+      "counter": "Put out {his} eye or finish {him} fast; a prayer or an altar lifts the ill luck."
+    },
+    "strangulation": {
+      "sign": "{The} has long, strong fingers that never stop moving.",
+      "does": "{He} grips you by the throat and holds you under.",
+      "counter": "Break free fast and keep out of {his} grip; a free hand is your best friend."
+    },
+    "heal_blocked": {
+      "sign": "A smell of old spices and rot hangs round {the}.",
+      "does": "{His} touch leaves a wound that will not mend for a while, by potion or by prayer.",
+      "counter": "Do not let {him} touch you, or fight {him} with fire: old linen burns."
+    },
+    "talisman": {
+      "sign": "{The} hops stiffly, arms out, a strip of yellow paper fluttering at {his} brow.",
+      "does": "{He} finds a living man by his breath.",
+      "counter": "Read any scroll while {he} can see it: the written page stops {him} like a talisman. Standing still holds your breath from {him}."
+    },
+    "breath_recharge": {
+      "sign": "{The}'s chest heaves like a bellows.",
+      "does": "{He} breathes, then must draw breath again: for a few turns {he} has only tooth and claw.",
+      "counter": "Close in while {he} draws breath, or keep stone between you until {he} has spent it."
+    },
+    "heals_allies": {
+      "sign": "{The} stays close behind the others, eyeing every wound.",
+      "does": "{He} mends a badly hurt friend, then must rest {his} voice a few turns before the next.",
+      "counter": "Kill {him} first, or finish the friend {he} has just mended before {he} can mend again."
+    },
+    "life_drain": {
+      "sign": "The air about {the} is thin and cold, like the air of a tomb.",
+      "does": "{His} touch takes life that rest will not give back: your greatest health falls with every blow {he} lands.",
+      "counter": "Do not let {him} touch you often. What {he} takes comes back half with a night's sleep on the next floor down, and all of it from a physician or a strong prayer."
+    },
+    "light_shy": {
+      "sign": "{The} squints and turns {his} face from every lamp.",
+      "does": "{He} hates a bright light: in its glare {he} strikes worse, and a troll's wounds will not close in it.",
+      "counter": "Carry a lit light or cast Light, and fight {him} inside its glow. The Light spell's glare hurts {him} most."
+    },
+    "snuffs_light": {
+      "sign": "The flames near {the} gutter and bow.",
+      "does": "{His} blows can put out the light in your hand, and a wet wick will not light again at once.",
+      "counter": "Keep a spare light, or carry one that never goes out."
+    },
+    "raises_alarm": {
+      "sign": "{The} keeps looking about, ready to shout.",
+      "does": "When {he} first sees you {he} raises the alarm, and the rest come running.",
+      "counter": "Kill or silence {him} before {he} sees you, or move quietly and keep out of sight."
+    },
+    "death_throes": {
+      "sign": "{The} looks swollen, as if something inside {him} wants out.",
+      "does": "When {he} dies {he} bursts, and everything beside {him} is caught in it.",
+      "counter": "When {he} swells, step back or finish {him} from a distance."
+    },
+    "relurks": {
+      "sign": "Old webbing and husks hang above where {the} waits.",
+      "does": "Hurt and out of your sight, {he} goes back into hiding to drop on you again.",
+      "counter": "Finish {him} before {he} gets away, or carry a light into the dark where {he} hides."
+    },
+    "hides_in_dark": {
+      "sign": "{The} is hard to keep in view, as if the shadows lean toward {him}.",
+      "does": "When {he} breaks off {he} hides in the dark, unseen, until {he} strikes again.",
+      "counter": "A lit light leaves {him} no dark to hide in."
+    },
+    "shove": {
+      "sign": "{The} is built like a battering ram.",
+      "does": "{His} blows can throw you back a step, and a clever one throws you into what hurts.",
+      "counter": "Fight {him} with your back to a wall, and keep clear of fire and pits."
     }
   }
 }

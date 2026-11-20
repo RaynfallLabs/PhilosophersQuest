@@ -1306,6 +1306,9 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
                 if _fedges else {'pierce': False, 'scales': False, 'blessed': False})
     if _edge_pr['blessed']:
         _form_mult, _subst_mult = weapon_type_multiplier(weapon, monster, blessed=True)
+    import lore_powers as _lore_powers
+    if _lore_powers.weak_spot(monster, chain):       # the Mapinguari's navel (slice M)
+        _edge_pr = dict(_edge_pr, pierce=True)
     if not affinity_known and not consume:
         # The preview of a kind he does not know: no weakness, no resistance.
         _form_mult, _subst_mult = 1.0, 1.0
@@ -1952,6 +1955,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             monster.__dict__.pop('_no_split_blow', None)
         # A weapon of fire or acid does what any fire or acid hit does.
         elemental_blow_after(monster, weapon, actual)
+        import lore_powers as _lore_powers
+        _lore_powers.after_struck(player, monster, weapon, chain, actual)   # the Bulgasari eats iron (slice M)
 
         # Chain combat v2 (v2.14.0): dispatch per-class chain specials at
         # rung thresholds 5 / 10 / 15 / 20. Applies target statuses, AoE damage,

@@ -171,7 +171,9 @@
     "greater_hearth_sphere": 5.0,
     "master_hearth_sphere": 7.0,
     "beeswax_earplugs": 0.15,
-    "cold_iron_charm": 0.3
+    "cold_iron_charm": 0.3,
+    "whitethorn_branch": 0.25,
+    "caged_cockerel": 0.2
   },
   "shop_worth_floor": {
     "_doc": "Playtest 2026-10-24: every junk potion cost 5 gp, so price told the hero which unknown potions were safe for free. A trader now marks his unknown potions, scrolls and wands no lower than this worth (the common band, Healing's 1.0). Price still tells the great ones (they cost more) but no longer flags the junk. Only the trader's SALE price; selling to him is unchanged. Bug bash 3.3.1: rings and amulets too; a curse ring was priced at a tenth of any other ring, so the tag named the curse.",

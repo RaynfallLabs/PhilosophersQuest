@@ -11929,8 +11929,11 @@ class RenderMixin:
     # How Quizzes Work (NEXT_STEPS_REVIEW item 6) prints the quiz rules; Gear
     # and Load (round 3, Q15) the Kit and @ keys, dressing, the weapon At Your
     # Back, the Loadouts, the arsenal and the three load tiers.
+    # Monsters and Their Ways (AI-1, 2026-11-19): how creatures break, breathe,
+    # drain, rot, hate the light, hide, shout, burst and shove.
     HELP_PAGES = (('how_quizzes_work', 'How Quizzes Work'),
-                  ('gear_and_load', 'Gear and Load'))
+                  ('gear_and_load', 'Gear and Load'),
+                  ('monster_ways', 'Monsters and Their Ways'))
     _help_pages_cache: dict = {}
 
     def _how_quizzes_page(self) -> dict:

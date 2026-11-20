@@ -51,8 +51,10 @@ def sees_invisible(player) -> bool:
 
 
 def is_invisible(m) -> bool:
-    """The creature itself is invisible by nature (whoever is looking)."""
-    return bool(getattr(m, 'invisible', False))
+    """The creature itself is invisible by nature (whoever is looking), or
+    hides in the dark from a hero with no light (src/gone_again.py)."""
+    return bool(getattr(m, 'invisible', False)
+                or getattr(m, '__dict__', {}).get('_dark_hidden'))
 
 
 def senses(m, player) -> bool:
@@ -76,6 +78,9 @@ def senses(m, player) -> bool:
     except Exception:
         pass
     try:
+        import lore_powers
+        if lore_powers.shown_overhead(m, player):     # the Asanbosam above (slice M)
+            return True
         import family_edges
         return family_edges.senses(player, m)
     except Exception:

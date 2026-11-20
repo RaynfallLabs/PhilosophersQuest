@@ -201,7 +201,11 @@
       {"why": "Cave-dwelling hunters that keep to their own lairs: lizard-folk, frog-folk, hook horrors and clockwork things.",
        "kinds": ["troglodyte", "bullywug", "hook_horror", "clockwork_horror"]},
       {"why": "Lesser shades drift together but each feeds alone.",
-       "kinds": ["shade"]}
+       "kinds": ["shade"]},
+      {"why": "Yoked pairs, herds and nests: the bronze bulls of Colchis come two by two, centaurs ride in a herd, gold-digging ants keep their heaps together, and each of them fights for itself.",
+       "kinds": ["khalkotauros", "centaur", "myrmekes"]},
+      {"why": "Spirits and sea-folk who gather but fight each alone: the bell-ringing biloko, the Blue Men of the Minch, the Ponaturi ashore at night, the dog-headed psoglavci, and the relic guardians set in pairs.",
+       "kinds": ["eloko", "blue_men_of_the_minch", "ponaturi", "psoglav", "bhuta_vahana_yanta"]}
     ]
   }
 }

@@ -132,7 +132,7 @@ PEOPLE_TAGS = {'humanoid', 'goblinoid', 'goblin', 'orc', 'kobold', 'gnoll', 'tro
 # The dead with no body to bury anything with.
 INCORPOREAL = ('ghost', 'spectre', 'specter', 'wraith', 'shade', 'shadow', 'phantom',
                'poltergeist', 'banshee', 'wisp', 'echo', 'presence', 'spirit', 'haunting',
-               'allip', 'soul', 'fetch', 'nightmare')
+               'allip', 'soul', 'fetch', 'nightmare', 'preta')
 THIEF_WORDS = ('bandit', 'brigand', 'thief', 'assassin', 'filcher', 'autolycus', 'kingpin',
                'pirate', 'raider')
 LEADER_WORDS = ('king', 'chief', 'captain', 'warlord', 'warchief', 'lord', 'jarl', 'marshal',

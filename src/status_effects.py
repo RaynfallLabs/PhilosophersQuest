@@ -580,8 +580,9 @@ def note_stat_drain(player, stat: str, amount: int = 1) -> None:
 
 def restore_drained(player) -> int:
     """Give back every stat point a drain, a poison or a disease took
-    (note_stat_drain): the physician's 'restore' service and the Water of
-    Epidaurus both call this. Returns the points restored."""
+    (note_stat_drain), and the life the dead drained (AI-1: left in
+    ``_last_life_restored``): the physician's 'restore' service and the
+    Water of Epidaurus both call this. Returns the stat points restored."""
     n = 0
     s = int(getattr(player, '_str_lost_to_disease', 0) or 0)
     if s:
@@ -593,6 +594,13 @@ def restore_drained(player) -> int:
             player.apply_stat_bonus(stat, int(v))
             n += int(v)
     player.__dict__['drained'] = {}
+    # The life the dead drained (src/life_drain.py, AI-1) comes back with
+    # them, all of it; what came back is left for the caller's line.
+    try:
+        import life_drain
+        player._last_life_restored = life_drain.restore(player)
+    except ImportError:
+        pass
     return n
 
 

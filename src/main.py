@@ -108,6 +108,8 @@ from game_bococho_render import BocochoRenderMixin
 from game_songs import SongsMixin
 from game_manifest import ManifestMixin
 from game_horns import HornsMixin
+from game_lore_powers import LorePowersMixin
+from game_behaviour import BehaviourMixin
 import monster as monster_mod_wards      # its HERO_STRUCK hook (game_wards.py, via MagicMixin)
 from spells import LEARNABLE_SPELLS
 
@@ -277,7 +279,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
            HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin, LightsMixin,
            MoobleMixin, MoobleDanceMixin,
            BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin, SongsMixin,
-           ManifestMixin, HornsMixin):
+           ManifestMixin, HornsMixin, BehaviourMixin,
+           LorePowersMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -2511,6 +2514,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             ascending=not enter_from_top,
             first_visit=not saved,
         )
+        # A night's sleep on a new floor down gives back half the life the
+        # dead drained (src/life_drain.py, AI-1).
+        if enter_from_top and not saved:
+            import life_drain
+            _back = life_drain.stairs_rest(self.player)
+            if _back:
+                self.add_message(life_drain.rules().get('stairs_line', '').format(n=_back), 'success')
 
         # Place player at the stairs they came through
         _snd.play('level_change')
@@ -4916,6 +4926,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._say_affinity_lines()
         # A coating's rider refused or its last blow spent (coatings.py).
         self._say_arsenal_lines()
+        # What the 2026-11-19 kinds' powers did this turn (lore_powers.py).
+        self._lore_powers_say()
         # The torch or lantern in the off hand burns a turn (game_lights.py).
         self._light_tick()
         # A Ring of Invisibility's veil settles after its quiet turns (rings.py).
@@ -5147,6 +5159,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.player.x, self.player.y = _nx, _ny
             except (TypeError, ValueError, AttributeError):
                 pass
+        # A giant's blow threw the hero back (src/shove.py, AI-1).
+        self._ai_resolve_shove()
 
         # Brisingamen (tears_of_freya): a single gold piece drips from the
         # amulet on each tick interval while equipped. Lore: "Freya wore it
@@ -6450,6 +6464,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if room <= 0:
             return                    # rest mends only so far (REST_MENDS_TO)
         if self.player.has_effect('bleeding') or self.player.has_effect('poisoned'):
+            return
+        # A sickness in the wound stops it mending (Grave Rot, AI-1).
+        import grave_rot
+        if grave_rot.blocks_regen(self.player):
             return
         # CON above 12 shaves 1 turn off the interval per point; floor at 10
         interval = max(10, 20 - max(0, self.player.CON - 12))
@@ -8516,6 +8534,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         minion._aware = True
         # Mark as summoned so weaken_summoned (Ring of Solomon) can apply.
         minion._is_summoned = True
+        # Whose it is: a summoner calls only while fewer than its live cap
+        # of its own still stand (src/summoning.py).
+        minion._summoned_by = summoner
         self.monsters.append(minion)
         if (summoner.x, summoner.y) in self.visible or (sx, sy) in self.visible:
             self.add_message(

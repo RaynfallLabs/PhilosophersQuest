@@ -611,6 +611,9 @@ class Player:
         heal_blocked status (Gae Dearg's wound) blocks the restore entirely."""
         if self.has_effect('heal_blocked'):
             return 0
+        # Grave Rot (src/grave_rot.py, AI-1): a sick hero heals half.
+        import grave_rot
+        amount = grave_rot.heal_amount(self, amount)
         before = self.hp
         self.hp = min(self.max_hp, self.hp + amount)
         return self.hp - before

@@ -2796,6 +2796,7 @@ class MagicMixin(MagicWardsMixin):
             if _qs_scroll:
                 _qs_scroll.on_scroll_read(scroll.id, was_identified=_was_identified_before)
             self._mm_acting(self._apply_scroll_effect, scroll)   # (a hostile act ends sanctuary)
+            self._lore_powers_scroll_read()   # the Jiangshi's talisman (slice M)
             # If the scroll effect parked us in a picker state, don't burn
             # a turn here — the picker callback (or ESC) will advance. (A
             # monster family tier popup from Omnisight's corpse study is
