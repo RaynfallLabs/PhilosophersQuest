@@ -1,0 +1,41 @@
+[
+ {
+  "id": "conjured_vine",
+  "family": "hazard",
+  "rank": 1,
+  "p": 1,
+  "layer": "floor",
+  "theme": "base",
+  "scale": 0.95,
+  "key": "magenta",
+  "body": "object",
+  "what": "fresh green grapevine and dark ivy spread flat across the ground: three or four leafy vines each as thick as a thumb, coiling and crossing across the picture, with broad bright green vine leaves, dark green ivy leaves, two small bunches of blue-black grapes, and two curling tendrils lifting a little at the ends.",
+  "colours": "bright leaf green and dark green leaves, brown woody vine stems, blue-black grapes.",
+  "pose": "Seen from high above, looking steeply down, the vines lying across the picture.",
+  "action": "It lies flat on the ground and is seen from high above, looking steeply down on it like a mark on the floor of a map in a classic top-down roleplaying game: low and flat, only two tendrils curl up a little, and it is wider than it is tall. Nobody is near it.",
+  "must_show": [
+   "leafy green vines lying flat",
+   "a few blue-black grapes",
+   "curling tendrils"
+  ],
+  "must_not_show": [
+   "thorns",
+   "flowers",
+   "roses",
+   "mouth",
+   "teeth",
+   "face",
+   "eyes",
+   "snake",
+   "tree",
+   "tentacle",
+   "wine cup",
+   "basket"
+  ],
+  "unkey": [
+   0.0,
+   0.14,
+   0.45
+  ]
+ }
+]

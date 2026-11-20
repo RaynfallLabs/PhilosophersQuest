@@ -1414,6 +1414,7 @@ class _MMMagicSim:
             if pick is not None:
                 kit['scroll'].remove(pick)
                 self.fs['mm_scroll'] = self.fs.get('mm_scroll', 0) + 1
+                self.fs['mmu_' + pick.id] = self.fs.get('mmu_' + pick.id, 0) + 1
                 if self.quiz.one_question(int(getattr(pick, 'tier', 1))):
                     g._apply_scroll_effect(pick)
                 used = True
@@ -1430,6 +1431,7 @@ class _MMMagicSim:
                 if w.charges <= 0:
                     kit['wand'].remove(w)
                 self.fs['mm_wand'] = self.fs.get('mm_wand', 0) + 1
+                self.fs['mmu_' + w.id] = self.fs.get('mmu_' + w.id, 0) + 1
                 if self.quiz.one_question(int(getattr(w, 'tier', 1))):
                     g._wand_override_target = tgt
                     g._apply_wand_effect(w)
@@ -1447,6 +1449,7 @@ class _MMMagicSim:
                         food_system_mod._WARD_POTIONS[pot.effect][1][0]):
                     kit['potion'].remove(pot)
                     self.fs['mm_potion'] = self.fs.get('mm_potion', 0) + 1
+                    self.fs['mmu_' + pot.id] = self.fs.get('mmu_' + pot.id, 0) + 1
                     food_system_mod.drink_potion(p, pot)
                     break
         # 3. A spell (one science question; the MP goes either way).
@@ -1479,6 +1482,7 @@ class _MMMagicSim:
                     continue
                 p.mp -= cost
                 self.fs['mm_spell'] = self.fs.get('mm_spell', 0) + 1
+                self.fs['mmu_' + sid] = self.fs.get('mmu_' + sid, 0) + 1
                 if self.quiz.one_question(int(sp.get('tier', 1))):
                     g._apply_spell_effect(sp, tgt)
                 break
