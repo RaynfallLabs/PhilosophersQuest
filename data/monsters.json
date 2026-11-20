@@ -4652,7 +4652,7 @@
       "charmed"
     ],
     "status_weak": [],
-    "pack": true,
+    "pack": false,
     "pack_size": [
       2,
       3
@@ -13543,7 +13543,7 @@
       "charmed"
     ],
     "status_weak": [],
-    "pack": true,
+    "pack": false,
     "pack_size": [
       2,
       3
@@ -13568,7 +13568,7 @@
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 7.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "Bite",
@@ -33164,7 +33164,7 @@
         "delivery": "ranged",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 6
+        "effect_duration": 3
       },
       {
         "name": "Scavenger Bite",
@@ -33209,7 +33209,7 @@
     "shrugs_off": [],
     "status_immune": [],
     "status_weak": [],
-    "pack": true,
+    "pack": false,
     "pack_size": [
       2,
       3
@@ -42545,8 +42545,8 @@
     ],
     "pack": true,
     "pack_size": [
-      3,
-      4
+      2,
+      3
     ]
   }
 }

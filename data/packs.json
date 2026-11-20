@@ -50,7 +50,7 @@
     },
     "gnolls": {
       "plural": "gnolls",
-      "kinds": ["gnoll", "gnoll_archer"],
+      "kinds": ["gnoll"],
       "corridor": "hold",
       "tricks": ["harry"],
       "why": "Gnolls are hyenas walking as men, and hunt as hyenas do: they trail wounded prey until it falls."
@@ -71,7 +71,7 @@
     },
     "ghouls": {
       "plural": "ghouls",
-      "kinds": ["ghoul", "ghast"],
+      "kinds": ["ghoul"],
       "corridor": "hold",
       "tricks": ["feast"],
       "why": "Ghouls numb their prey with their claws, and the whole pack feeds on one who cannot move."
@@ -85,7 +85,7 @@
     },
     "hounds": {
       "plural": "hounds",
-      "kinds": ["gravehound", "shadow_hound", "blink_dog", "fionn_hound", "hecate_hound", "abyssal_hound"],
+      "kinds": ["gravehound", "blink_dog", "fionn_hound", "hecate_hound", "abyssal_hound"],
       "corridor": "hold",
       "circle": true,
       "tricks": ["bay"],
