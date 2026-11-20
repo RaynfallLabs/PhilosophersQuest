@@ -457,7 +457,7 @@ whether a boss resists:
 
 - `sleep_monster` — `sleeping`, 6t
 - `confuse_monster` — `confused`, 10t
-- `paralyze_monster` — `paralyzed`, 8t (used by both T2 Hold Monster + T4 Paralyze)
+- `paralyze_monster` — `paralyzed`, the spell's own `duration` (8t if none): T1 Elf-Shot 3t, T2 Hold Monster 8t, T4 Paralyze 12t (2026-11-19: the ladder was flat at 8)
 - `slow_monster_spell` — `slowed`, 10t
 - `fear_monster_spell` — `feared`, 10t (the status is the flight: `Monster.take_turn` honours it for every AI pattern; no `ai_pattern` change)
 - `aard_blast` — damage + `stunned`, 3t

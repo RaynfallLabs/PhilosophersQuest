@@ -670,7 +670,9 @@ def _call_to_feast(m, player, all_monsters) -> None:
 # --- Goblins: sling, then charge ------------------------------------------
 
 def _ranged_attacks(m) -> list:
-    return [a for a in getattr(m, 'attacks', ()) or () if a.get('ranged')]
+    import attack_gates                 # an unstrung slinger has no sling (attack_gates.py)
+    return [a for a in getattr(m, 'attacks', ()) or ()
+            if a.get('ranged') and not attack_gates.blocks_attack(m, a)]
 
 
 def _melee_attacks(m) -> list:

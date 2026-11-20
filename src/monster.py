@@ -460,6 +460,7 @@ def _ward_gate(player, m, atk):
         import wards
     except ImportError:
         return atk, None
+    m.__dict__.pop('_ward_half', None)       # a half blow is for the blow that earned it
     new, stop = attack_gates.blow_gate(m, atk, player)
     if stop is not None:
         return atk, stop
@@ -481,6 +482,14 @@ def _loosed(player) -> bool:
         return bool(player.has_effect('free_action'))
     except Exception:
         return False
+
+
+def _loosed_line(m) -> str:
+    try:
+        import wards
+        return wards.line('pull_loosed', m)
+    except Exception:
+        return ''
 
 
 def _gate_blocks(m, atk) -> bool:
@@ -534,8 +543,9 @@ def _edge_drain_block(player, m) -> bool:
 # it was (Game._damage_by).
 DAMAGE_OBSERVER = None
 # Told when one of the hero's own blows lands (a weapon, a spell, a wand, a
-# flask): callable(monster) or None. The game sets it (MagicWardsMixin):
-# the wards it breaks and sanctuary end (src/wards.py).
+# flask): callable(monster) or None; never for a wound ticking (tick_effects).
+# The game sets it (MagicWardsMixin): the wards it breaks and sanctuary end
+# (src/wards.py).
 HERO_STRUCK = None
 
 class Monster:
@@ -1003,6 +1013,9 @@ class Monster:
         if name in _HARD_CONTROL and self._is_named_foe():
             self.add_effect(name, duration)
             return
+        if name in ('silenced', 'unstrung'):
+            self.add_effect(name, duration)  # the gate's rules (attack_gates.inflict)
+            return
         if self.resists_control(name):
             self.__dict__['_refused_effect'] = name
             return
@@ -1385,8 +1398,8 @@ class Monster:
                 DAMAGE_OBSERVER(self, actual, min(actual, hp_before))
             except Exception:
                 pass
-        if actual > 0 and HERO_STRUCK is not None:
-            HERO_STRUCK(self)
+        if actual > 0 and HERO_STRUCK is not None and not self.__dict__.get('_dot_tick'):
+            HERO_STRUCK(self)            # (a bleed, a burn or a poison ticking is not a blow)
         # A creature that splits (src/splitting.py) notes the split this blow
         # earned; the game sets the new body down at the end of the action.
         if (actual > 0 and self.hp > 0 and getattr(self, 'splits', None)
@@ -1463,9 +1476,6 @@ class Monster:
             player._return_to_hand_active = False
             return 0, f"{the_name(self)}'s strike is deflected — a discus spins between you!"
         if not self.attacks:
-            if self.has_effect('unstrung'):
-                import attack_gates
-                return 0, attack_gates.gaze_line(self)
             # Floating eye: gaze-based paralysis (checks sleep_resist or total blindness)
             if player.get_sight_radius() == 0:
                 return 0, f"{the_name(self)} gazes at you, but you cannot see {pronouns(self)[2]} eyes!"
@@ -1488,8 +1498,7 @@ class Monster:
                 return 0, f"{the_name(self)} gazes at you harmlessly."
 
         # --- Gaze attack (Medusa): petrifying gaze before normal attack ---
-        if (self.gaze_paralyze > 0 and self._gaze_cooldown <= 0
-                and not self.has_effect('unstrung')):
+        if self.gaze_paralyze > 0 and self._gaze_cooldown <= 0:
             self._gaze_cooldown = self.gaze_cooldown_max
             self._share_gaze_cooldown()
             # The gaze reaches across a room (see _dancer_turn): she may be
@@ -2107,9 +2116,12 @@ class Monster:
         # 1-2 tiles toward this monster. Storms request via a flag the
         # game loop honors when it can resolve movement.
         _pc = float(getattr(self, 'pull_chance', 0.0) or 0.0)
-        if _pc > 0 and actual > 0 and random.random() < _pc and not _loosed(player):
-            player._pending_pull_toward = (self.x, self.y)
-            msg += f" {the_name(self)} drags you closer!"
+        if _pc > 0 and actual > 0 and random.random() < _pc:
+            if _loosed(player):
+                msg += " " + _loosed_line(self)      # Galdr of Loosing (wards.py)
+            else:
+                player._pending_pull_toward = (self.x, self.y)
+                msg += f" {the_name(self)} drags you closer!"
 
         msg += lore_powers.after_blow(self, player, atk, actual)   # carry-off, pull (slice M)
 
@@ -3558,7 +3570,8 @@ class Monster:
             self._locust_turn_counter += 1
 
         if (engaged and self.locust_interval > 0
-                and self._locust_turn_counter % self.locust_interval == 0):
+                and self._locust_turn_counter % self.locust_interval == 0
+                and not self.has_effect('silenced')):     # silenced, he calls no swarm
             _live = sum(1 for m in all_monsters
                         if m.alive and getattr(m, 'kind', '') == 'abyssal_locust')
             if _live < LOCUST_CAP + int(getattr(self, 'locust_cap_bonus', 0) or 0):

@@ -1,5 +1,5 @@
 {
-  "_doc": "Wards (src/wards.py) and monster gates (src/attack_gates.py), MONSTERS AND MAGIC 2026-11-19. A ward is a hero status: 'family' wards keep one family off (holds: melee = no blow, bite, touch, grapple, sting or trample from it; riders = its blows carry none of the listed riders; sight = it cannot notice the hero; damage = its damage times mult). 'breaks': creature = striking one of the family ends the ward against that one; all = striking any one ends it for all; never. A named foe (boss, mini-boss, seal demon) is too strong for a melee ward: its first blow lands at half and the ward breaks against it; a sight ward does not fool it; a damage ward holds against it too. The other wards are the hero's own: missile_ward (every missile fails), stayed_spear (missiles from foes he can see fail), veiled (no foe farther than veil_reach sees him or shoots him), all_round_ward (a pack round him gains nothing), sanctuary (ordinary foes hold off until he strikes; one he hurt in the last sanctuary_memory turns does not), styx_dipped (no blow, bite or claw wounds him; an unseen one lands at half).",
+  "_doc": "Wards (src/wards.py) and monster gates (src/attack_gates.py), MONSTERS AND MAGIC 2026-11-19. A ward is a hero status: 'family' wards keep one family off (holds: melee = no blow, bite, touch, grapple, sting or trample from it; riders = its blows carry none of the listed riders; sight = it cannot notice the hero; damage = its damage times mult). 'breaks': creature = striking one of the family ends the ward against that one; all = striking any one ends it for all; never. A named foe (boss, mini-boss, seal demon) is too strong for a melee ward: its first blow lands at half and the ward breaks against it; a sight ward does not fool it; a damage ward holds against it too. The other wards are the hero's own: missile_ward (every missile fails: an arrow, a stone, a spear, a thrown thing; never a spell), stayed_spear (missiles from foes he can see fail), veiled (no foe farther than veil_reach sees him or shoots him), all_round_ward (a pack round him gains nothing), sanctuary (ordinary foes hold off until he strikes; one he hurt in the last sanctuary_memory turns does not), styx_dipped (no blow, bite or claw wounds him; an unseen one lands at half).",
   "melee_deliveries": [
     "blow",
     "bite",
@@ -294,7 +294,7 @@
     "pull_loosed": "{The} pulls at you, but nothing can hold you."
   },
   "gates": {
-    "_doc": "Monster gates (src/attack_gates.py): what a monster cannot use now. silenced: no voice attack, no magic cast from range, no summoning, no healing. unstrung: no missile, breath or gaze (its opener too); it has to come to the hero. babbled: its pack or war band forgets how to fight together. A named foe holds silenced or unstrung named_turns at most, and shakes off the next for named_grace turns after.",
+    "_doc": "Monster gates (src/attack_gates.py): what a monster cannot use now. silenced: no spoken or cast attack (a voice, or anything shot from afar that is not a missile: every bolt, ray, curse and prayer, whatever its damage type), no summoning, no healing. unstrung: no missile (a bow, a sling, a thrown thing: wards.is_missile); a gaze or a breath is not strung. A gated monster that has nothing left to use from afar comes to the hero, and never strikes with a melee attack from range. babbled: its pack or war band forgets how to fight together. A named foe holds silenced or unstrung named_turns at most, and shakes off the next for named_grace turns after.",
     "named_turns": 3,
     "named_grace": 3,
     "mouthless_families": [
@@ -323,8 +323,59 @@
     "lines": {
       "silenced": "{The}'s mouth works, and no sound comes out.",
       "silenced_cast": "{The} shapes a spell with {his} lips, and no word comes.",
-      "unstrung": "{The} reaches for {his} {attack}, and it will not answer {him}.",
-      "unstrung_gaze": "{The} turns {his} eyes on you, and there is no power in them."
-    }
-  }
+      "unstrung": "{The} reaches for {his} {attack}, and it will not answer {him}."
+    },
+    "assembly_families": [
+      "mortals",
+      "goblinkin"
+    ]
+  },
+  "missile_words": [
+    "arrow",
+    "bow",
+    "crossbow",
+    "dart",
+    "sling",
+    "stone",
+    "rock",
+    "boulder",
+    "crag",
+    "spear",
+    "javelin",
+    "hurl",
+    "throw",
+    "thrown",
+    "knife",
+    "dagger",
+    "axe",
+    "sword",
+    "quill",
+    "spine",
+    "spike",
+    "needle",
+    "feather",
+    "volley",
+    "shot",
+    "wheel-lock",
+    "whetstone",
+    "debris",
+    "soot",
+    "fastball",
+    "harpoon",
+    "bolas",
+    "pebble"
+  ],
+  "not_cast_words": [
+    "spit",
+    "spray",
+    "miasma",
+    "spore",
+    "dive",
+    "dung",
+    "ink",
+    "web",
+    "silk",
+    "strands",
+    "vortex"
+  ]
 }

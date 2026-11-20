@@ -100,7 +100,9 @@ def held_by_others(m, player) -> bool:
     """What keeps its nerve whatever its nature: a war-band follower while
     his leader lives; a hyena or gnoll that smells a wounded hero."""
     lead = m.__dict__.get('_band_leader')
-    if lead is not None and getattr(lead, 'alive', False):
+    babbled = bool(getattr(m, 'has_effect', None) and m.has_effect('babbled'))
+    if lead is not None and getattr(lead, 'alive', False) and not babbled:
+        # A babbled follower cannot hear his captain (slice G, attack_gates).
         return True
     try:
         import packs

@@ -494,7 +494,7 @@ class MagicMixin(MagicWardsMixin):
                     self.player.remove_from_inventory(wand)
                 self._advance_turn()
                 return
-            self._apply_wand_effect(wand)
+            self._mm_acting(self._apply_wand_effect, wand)     # (a hostile act ends sanctuary)
             if wand.charges <= 0:
                 self.add_message("The wand crumbles to dust -- it is spent.", 'warning')
                 self.player.remove_from_inventory(wand)
@@ -1715,7 +1715,7 @@ class MagicMixin(MagicWardsMixin):
         charged = bool(getattr(self.player, '_anti_being_charged', False))
         before = [(m, m.hp) for m in self.monsters if m.alive] if charged else ()
         self._last_spell_anti_being = False
-        self._cast_spell_effect(spell, target)
+        self._mm_acting(self._cast_spell_effect, spell, target)  # (a hostile act ends sanctuary)
         if (charged and not getattr(self.player, '_anti_being_charged', False)
                 and getattr(self, '_last_spell_anti_being', False)
                 and not any((not m.alive) or m.hp < hp for m, hp in before)):
@@ -2795,7 +2795,7 @@ class MagicMixin(MagicWardsMixin):
             _qs_scroll = getattr(self, 'quirk_system', None)
             if _qs_scroll:
                 _qs_scroll.on_scroll_read(scroll.id, was_identified=_was_identified_before)
-            self._apply_scroll_effect(scroll)
+            self._mm_acting(self._apply_scroll_effect, scroll)   # (a hostile act ends sanctuary)
             self._lore_powers_scroll_read()   # the Jiangshi's talisman (slice M)
             # If the scroll effect parked us in a picker state, don't burn
             # a turn here — the picker callback (or ESC) will advance. (A

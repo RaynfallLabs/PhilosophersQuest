@@ -516,6 +516,7 @@ state; column 4 is the `_draw_<state>` method.
 | `Shift+R` | ride the Bococho, or climb down (`game_riding._toggle_ride`; on the help screen's key map) | `handle_event` |
 | `Shift+V` | the Dreamspun Sketchbook into the pack, every kind it can draw up to `min_level` max(10, floor + 5) studied, Manifest ready (QA only; `game_manifest._qa_manifest`; lowercase `v` is the powers menu) | `handle_event` |
 | `Shift+T` | every coating and flask, the earplugs, the cold-iron charm, a mirror shield and a greatsword into the pack (QA only; `game_arsenal._qa_arsenal_sampler`) | `handle_event` |
+| `Shift+B` | every MONSTERS AND MAGIC spell learned, two of each new scroll, potion and oil, the two wands and the Sceptre of Agamemnon into the pack, MP full (QA only; `game_wards._qa_magic_sampler`) | `handle_event` |
 | `Shift+S` | Press or Guard: the next stance, one turn (`game_arsenal._cycle_stance`) | `handle_event` |
 | `Shift+C` | coat the weapon in your hand from the pack (`game_arsenal._open_coat_menu`) | `handle_event` |
 | `TAB` | cycle zoom `full → medium → close → full` | `_player_input` |

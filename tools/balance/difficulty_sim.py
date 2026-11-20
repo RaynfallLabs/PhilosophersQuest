@@ -1394,6 +1394,9 @@ class _MMMagicSim:
         ranged = [m for m in foes if m.ai_pattern in RANGED_PATTERNS or m.ai_pattern == 'dragon'
                   or any(wards_mod.is_missile(a) for a in m.attacks)]
         big = named or ranged or sum(m.hp for m in foes) > BIG_FIGHT * one
+        # Bows, slings and thrown things (what the arrow-wards and the Wand of
+        # Unstringing answer: wards.is_missile; a spell is not a missile).
+        missilers = [m for m in foes if any(wards_mod.is_missile(a) for a in m.attacks)]
         if not big:
             return
         for i, m in enumerate(foes):
@@ -1419,7 +1422,7 @@ class _MMMagicSim:
                     pick = s
                 elif s.effect == 'protection':
                     also = {st for st, _t in d.get('ward_also') or ()}
-                    if ('missile_ward' in also and ranged) or \
+                    if ('missile_ward' in also and missilers) or \
                             ('petrify_immune' in also and 'gorgons' in hp_by_fam) or \
                             ('fire_shield' in also and 'dragons' in hp_by_fam) or \
                             ('all_round_ward' in also and len(foes) >= 3
@@ -1437,8 +1440,8 @@ class _MMMagicSim:
         if not used and self._mm('mm_wands') and kit['wand']:
             for w in list(kit['wand']):
                 tgt = None
-                if w.effect == 'unstring_monster' and ranged:
-                    tgt = max(ranged, key=lambda m: m.hp)
+                if w.effect == 'unstring_monster' and missilers:
+                    tgt = max(missilers, key=lambda m: m.hp)
                 elif w.effect == 'family_rout' and 'birds' in fams:
                     tgt = foes[0]
                 if tgt is None:
@@ -1482,7 +1485,7 @@ class _MMMagicSim:
                 ('dulled_blades_spell', len(foes) >= 2 or named, None),
                 ('darkness_of_egypt_spell', len(foes) >= 2, None),
                 ('pans_panic_spell', len(foes) >= 3, None),
-                ('stayed_spear_spell', bool(ranged), None),
+                ('stayed_spear_spell', bool(missilers), None),
                 ('tacitas_seal_spell', bool(casters), casters[0] if casters else None),
                 ('cockcrow_spell', bool(undead), None),
                 ('elf_shot_spell', len(foes) == 1 and not named, foes[0]),

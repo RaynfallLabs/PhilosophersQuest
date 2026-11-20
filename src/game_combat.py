@@ -1939,7 +1939,7 @@ class CombatMixin:
             self._ring_veil_slips()
             # Override auto-target with stored target
             self._wand_override_target = self._wand_target_monster
-            self._apply_wand_effect(wand)
+            self._mm_acting(self._apply_wand_effect, wand)
             self._wand_override_target = None
             if wand.charges <= 0:
                 self.add_message("The wand crumbles to dust -- it is spent.", 'warning')

@@ -50,7 +50,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'corroding':          ('Corroding',          (180, 200,  50), 'Acid eats at your gear; defense weakened'),
     'immobilized':        ('Immobilized',        (180, 130,  60), 'Trapped! Cannot move'),
     'in_pit':             ('In Pit',             (140, 100,  60), 'Stuck in a pit; must climb out'),
-    'silenced':           ('Silenced',           (120, 120, 160), 'Cannot cast spells or read scrolls'),
+    'silenced':           ('Silenced',           (120, 120, 160), 'No voice: no spell, no scroll, no song or call'),
     'empowered':          ('Empowered',          (255, 200,  80), 'Next melee attack deals 3x damage'),
     'berserk':            ('Berserk',            (220,  60,  40), 'Battle-fury: your blows land harder while it lasts'),
     'riposte_armed':      ('Riposte Armed',      (220, 220, 160), 'Next melee hit against you triggers a free counter'),
@@ -756,7 +756,7 @@ for _k, _v in _wards.expire_messages().items():
 for _k, _v in _wards.resist_blocks().items():
     _RESIST_BLOCKS.setdefault(_k, set(_v))
 BUFFS = BUFFS | frozenset(_wards.status_registry())
-EFFECT_INFO.setdefault('unstrung', ('Unstrung', (170, 150, 120), 'Cannot shoot, breathe or gaze'))
+EFFECT_INFO.setdefault('unstrung', ('Unstrung', (170, 150, 120), 'No bow, sling or thrown weapon will answer it'))
 EFFECT_INFO.setdefault('babbled', ('Babbling', (190, 150, 210), 'Its pack or band cannot fight together'))
 EFFECT_INFO.setdefault('gate_grace', ('Steadying', (200, 200, 200), 'Shakes off the next silence or unstringing'))
 

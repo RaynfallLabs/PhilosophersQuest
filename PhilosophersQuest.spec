@@ -35,8 +35,8 @@ added_files = [
     ('data/confusion.json',         'data'),   # the confused quiz's scramble + Clear-Headed (quiz_engine.py, status_effects.py)
     ('data/monster_sizes.json',     'data'),
     ('data/monster_families.json',  'data'),   # monster family knowledge (family_lore.py)
-    ('data/senses.json',            'data'),
-    ('data/wards.json',             'data'),   # the wards and the monster gates (wards.py, attack_gates.py)   # how monsters notice the hero (senses.py)
+    ('data/senses.json',            'data'),   # how monsters notice the hero (senses.py)
+    ('data/wards.json',             'data'),   # the wards and the monster gates (wards.py, attack_gates.py)
     ('data/domains.json',           'data'),   # the five domains (decor.py)
     ('data/fixtures.json',          'data'),   # fixtures (decor.py)
     ('data/hazards.json',           'data'),   # domain hazards (hazards.py)
