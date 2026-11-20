@@ -265,19 +265,15 @@ SENSE_NAMES = {'breath': 'Breath', 'blood_scent': 'Blood Scent'}
 SENSES_UPGRADE = {'jiangshi': ['blind', 'breath'], 'komodo_brute': ['blood_scent']}
 
 HINTS = {
-    # Tier 2 has no room after slice G's hints (test_hint_pool keeps each tier
-    # within ten of its old count): the Cu-Sith's door hint waits for a swap.
-    '3': ["A hungry ghost was never fed by force. The meals the living set out for them were given "
-          "freely, and that was the point.",
-          "Herodotus says the gold-diggers of India let a camel go now and then as the ants gained on "
-          "them. Gold slows a greedy pursuer as well as a camel does.",
-          "The Ponaturi never feared a spear. They feared the morning."],
-    '4': ["Fishermen of the Amazon blew a conch before they waded into a deep pool, in case "
-          "something in it was breathing in.",
-          "The Serbian smith who blinded Likho escaped under a sheepskin. Ill luck that cannot see "
+    # The pool is full after slices G and AI-1 (test_hint_pool: each tier
+    # within ten of its old count, 420 in all): the Cu-Sith's door, the
+    # Preta's freely given meal and the Ponaturi's morning wait for a swap.
+    # The Amazon conch and the Visayas drums were cut: they told of noise
+    # against a swallower, which is not built.
+    '3': ["Herodotus says the gold-diggers of India let a camel go now and then as the ants gained on "
+          "them. Gold slows a greedy pursuer as well as a camel does."],
+    '4': ["The Serbian smith who blinded Likho escaped under a sheepskin. Ill luck that cannot see "
           "you cannot follow you."],
-    '5': ["When the moon went dark over the Visayas, everyone ran outside with pots and drums. "
-          "Noise is how you make a swallower give back what it took."],
 }
 
 

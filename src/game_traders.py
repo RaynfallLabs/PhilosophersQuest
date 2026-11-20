@@ -666,6 +666,9 @@ class TraderMixin:
         p = self.player
         n = int(getattr(p, '_str_lost_to_disease', 0) or 0)
         n += sum(int(v or 0) for v in (p.__dict__.get('drained') or {}).values())
+        # Life the dead drained (src/life_drain.py), as points of 3 health.
+        import life_drain
+        n += (life_drain.drained(p) + 2) // 3
         return n
 
     def _open_order(self, kind: str):
@@ -992,10 +995,18 @@ class TraderMixin:
         if sid == 'restore':
             from status_effects import restore_drained
             n = restore_drained(p)
-            if not n:
+            # ...and the life the dead drained (life_drain.py, AI-1), which
+            # restore_drained gives back with the stats.
+            life = int(p.__dict__.pop('_last_life_restored', 0) or 0)
+            if not n and not life:
                 return False
+            got = []
+            if n:
+                got.append(f"{n} stat point{'s' if n != 1 else ''} restored")
+            if life:
+                got.append(f"Max HP +{life}")
             self.add_message(f"{who} works on you for an hour. What the dark took, "
-                             f"you have back. ({n} stat point{'s' if n != 1 else ''} restored.)", 'success')
+                             f"you have back. ({', '.join(got)}.)", 'success')
             return True
         if sid == 'heal':
             if p.hp >= p.max_hp:

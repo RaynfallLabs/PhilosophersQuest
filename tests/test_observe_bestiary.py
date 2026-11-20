@@ -92,7 +92,9 @@ def _observe(g, m):
 
 
 def _plain_kind():
-    for k in ('goblin', 'kobold', 'giant_rat', 'jackal'):
+    # (An orc warrior first: the goblin raises the alarm since AI-1, and a
+    # tell is one more line in its look.)
+    for k in ('orc_warrior', 'goblin', 'kobold', 'giant_rat', 'jackal'):
         if k in MONS:
             return k
     raise AssertionError('no plain monster')

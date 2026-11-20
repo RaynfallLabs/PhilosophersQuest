@@ -148,9 +148,11 @@ def test_every_new_part_has_one_single_dish_and_two_with_partners():
 
 
 def test_the_waiting_fields_carry_the_other_slices_shapes():
-    """The kinds that wait on another slice's engine carry its field (the
-    shapes in _mm_2026_11_19/B/PROPOSALS.json and AI1/FIELDS.md) and are
-    sound monsters on today's attacks."""
+    """The kinds carry the other slices' fields in their shapes
+    (_mm_2026_11_19/B/PROPOSALS.json and AI1/FIELDS.md) and are sound
+    monsters on their plain attacks. AI-1's fields at work:
+    tests/test_mm_kinds_ai1.py; AI-3's (hold, aura, enraged_form, moves)
+    still wait on its engine."""
     assert MONS['ponaturi']['light_shy'] is True and MONS['star_jelly']['light_shy'] is True
     gape = next(a for a in MONS['bakunawa']['attacks'] if a['name'] == 'Moon-Swallowing Jaws')
     assert gape['snuffs_light'] == 'dark'

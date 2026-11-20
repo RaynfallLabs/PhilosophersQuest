@@ -390,7 +390,12 @@ NEW['waq_waq_tree'] = kind(
     [atk('Screaming Chorus', '2d6+10', 'magic', 'voice', 'feared', 0.4, 4),
      atk('Falling Fruit', '3d8+14', 'blunt', 'ranged')],
     family='plants', tags=['plant'], res=['poison'], weak=['fire'], opener=('Screaming Chorus', 6),
-    alarm={'radius': 14,
+    # Everything near comes to hear it (AI-1's alarm rouses only its own side,
+    # the plants, unless `tags` names more): the living that hear, at a
+    # capped reach (A's risk note).
+    alarm={'radius': 10,
+           'tags': ['humanoid', 'beast', 'reptile', 'aberration', 'fey', 'giant', 'demon',
+                    'dragon', 'shapeshifter', 'goblinoid'],
            'line': "Every head on the Waq-Waq Tree cries out at once: 'Waq! Waq!'",
            'line_unseen': "Somewhere ahead, a chorus of voices cries 'Waq! Waq!'"},
     lore=("Arab and Persian wonder-books tell of the island of Waq-waq at the edge of the world, where "

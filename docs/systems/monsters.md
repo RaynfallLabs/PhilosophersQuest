@@ -121,7 +121,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `drain_heals_self` | float | default 0.0 | 1.0 = full heal from damage of drain attacks; 0.5 = half. Two monsters: `vampire` 1.0, `ancient_vampire_lord` 1.0. |
 | `pull_chance` | float | default 0.0 | Grappler family — chance a hit drags the player one tile toward the monster. Charybdis / kraken. |
 | `gaze_paralyze` | int | default 0 | Paralysis duration on gaze. Blocked by blindness (sight_radius 0); reflected by Aegis of Athena (shield turns gaze back on Medusa). `floating_eye` 4, `medusa_gorgon` 3. |
-| `gaze_cooldown` | int | default 4 | Turns between gazes. |
+| `gaze_cooldown` | int | default 4 | Turns between gazes (counted down in `tick_effects` for every gazer, AI-1). |
 | `gaze_group` | str | default "" | Gazers in one group share one gaze: when any of them uses it, every living member waits out the cooldown, so the group never paralyses twice in one turn. `stheno_gorgon` and `euryale_gorgon` ("gorgon_sisters"; Stheno 2 turns, Euryale 1). |
 | `dragon_scales` | float | default 0 | Fraction of damage absorbed in `combat.py`'s melee pipeline. `fafnir_dragon` 0.8. |
 
@@ -357,7 +357,7 @@ Brandon: monsters must "pose a real challenge and players need to pay attention 
 **In play:**
 - **Roused together.** When one of a band notices the hero, `senses.notice` calls `war_bands.alarm`, which rouses the rest to the place.
 - **Healers.** A healer mends any bandmate (`_healer_turn`), whatever its kind.
-- **Nerve.** A follower whose leader lives never flees when hurt.
+- **Nerve.** A follower whose leader lives never breaks (Morale by Nature, below, leaves him to the band).
 - **The leader falls** (`CombatMixin._band_member_died`, called from `_on_monster_killed`):
   - `rout`: every follower is `feared` for 12 turns;
   - `crumble`: the restless dead he raised fall where they stand, and the rest are feared;
@@ -441,7 +441,7 @@ How much is said follows `family_lore.knowledge` (Brandon, 2026-11-12: the notes
 - **The hit lines, the Strike Now preview and the combat strip's weakness tag** follow the same levels: see [combat](combat.md), "Knowledge decides what the line says".
 - **Honest about reach:** `tells.reach` is 'far' when the creature can put the effect on the hero from across a room. That covers a gaze, or an attack a ranged, dragon, healer, summoner or rooted creature uses at range (the same test as `Monster.attack`). A far effect gets `counter_far`, or the shared `far_counter` ("keep stone between you"), and never "fight it from a distance".
 - **Splitting:** the line names the blows that split the creature, from its own `splits.by`.
-- **What counts as a tell:** attack effects with `effect_chance` of at least 0.1, plus these flags: gaze, splits, revives, drain-heals, regeneration, summons, pull, SP drain, charge, phase-blink, and the trick of the creature's pack (`pack_swarm`, `pack_hamstring`...: see Packs). They are ranked by `order`, worst first.
+- **What counts as a tell:** attack effects with `effect_chance` of at least 0.1, plus these flags: gaze, splits, revives, drain-heals, regeneration, summons, pull, SP drain, charge, phase-blink, the trick of the creature's pack (`pack_swarm`, `pack_hamstring`...: see Packs), and its ways from the first wave of monster behaviour (`kind_data.tell_keys`: `breath_recharge`, `heals_allies`, `life_drain`, `light_shy`, `snuffs_light`, `raises_alarm`, `death_throes`, `relurks`, `hides_in_dark`, `shove`). They are ranked by `order`, worst first.
 
 Tests: `tests/test_monster_notes.py`, and the Observe cases in `tests/test_observe_bestiary.py`.
 
@@ -477,6 +477,79 @@ Brandon: "openers for sure". The powers "dont seem to make a lot of difference" 
 - **Once a fight.** The opener is ready again only after the creature has lost the hero for `OPENER_RESET_TURNS` (5) turns.
 - **The simulator** gives an opener one free blow when the monster joins a fight (`difficulty_sim.Run.fight`). That slightly over-counts the drawn-up powers, which the game lets the hero answer.
 - **Tests:** `tests/test_monster_openers.py`.
+
+## Monster behaviour, first wave (AI-1, 2026-11-19)
+
+Brandon's MONSTERS AND MAGIC pass: "add depth to our bad guys". Each behaviour is a small pure module with a one-line hook in `monster.py`, its numbers and lines in `data/monster_ai.json` and its per-kind fields in `monsters.json` (read through `src/kind_data.py`, so an old save reads its kind's new fields with no migration; per-monster state lives in the creature's own `__dict__`, written as a new dict each time, so the simulator's copies and a split body share nothing). Lines go through `src/ai_lines.py`: a behaviour leaves (seen, unseen) and the Game says the seen one if the hero can see the creature, the unseen one (a sound, never a name) if not (`BehaviourMixin._ai_turn_after`, `src/game_behaviour.py`). Named foes, the allied angels, the encounter people, the unicorn, Death and the stalker are left alone unless a behaviour says otherwise. Each has a simulator knob, on by default (`tools/balance/sim_ai1.py`). The field shapes are listed in `_mm_2026_11_19/AI1/FIELDS.md`.
+
+### Three fixes to the AI we had
+
+- **The gaze looks again** (`fix_gaze_cooldown`). `_gaze_cooldown` was counted down only by the dancer AI, so the floating eye (sessile) gazed once in its life. It counts down in `Monster.tick_effects` now, one a turn, for every gazer; the dancer's own tick is gone (it would have ticked twice). The gorgon sisters still share one gaze.
+- **Healers heal what matters** (`fix_healer`, `src/faction.py`). A healer mended any creature that shared any tag with it (an orc priest's 'humanoid' mended a bandit), spent its turn on a one-point scratch, and healed every turn. Now it mends only its own side (`ai_faction`: its war-band, else its pack, else its family, else its kind; the loose tags never make a side; pets, escorts, called allies, angels and encounter people never), only a friend under `heal_below` (0.6) of its health, the one beside the hero first, then the most hurt; then it rests its voice `heal_cooldown` (3) turns (`_heal_cd`). A band healer mends its band only. The line is unchanged ("The Orc Priest chants and heals the Orc Warrior for 30 HP!"). Tell: `heals_allies`.
+- **Summoners call when it counts** (`fix_summoner`, `src/summoning.py`). The timer ran before the summoner had seen the hero, it called whatever the range, sight or need, and its cap counted every minion ever made. Now its timer runs only while it hunts the hero; when it is up it calls only with the hero within `reach` (8) and in its sight, and while fewer than `summon_live_cap` (2) of its own summoned stand (`_summoned_by`, set by `Game._spawn_summoner_minion`); `summon_max` stays the most it ever calls. The call is a one-turn chant ("The Skeleton Necromancer raises his hands and begins to chant."), and a blow that lands on it in that turn breaks it ("Your blow breaks the Skeleton Necromancer's chant!", `summoning.spoil` from `Monster.take_damage`): the call is spent and its timer starts again. The ordinary summoners of other patterns (the ancient lich, the skeleton mage, the lich sovereign) chant the same way; Tiamat and Asmodeus keep their own tuned timers. The `summon_kind` tell's counter says to strike while it chants.
+
+### Draws Breath (`breath_recharge`, `src/breath.py`)
+
+A breath, once breathed, must be drawn again: `recharge` turns on the attack, else 3 for any `delivery: "breath"` attack of an ordinary kind (57 kinds: dragons, drakes, the winter wolf, the chimera, frost giants, a toad's acid spit...). Meanwhile the creature comes in with tooth and claw: the ranged AI (`_ranged_turn`) closes when its only shot is drawing (it used to breathe every turn it had a shot and step back from a hero who closed); a creature with no blow of its own keeps off; a flurry fires the next ready attack of its routine instead of a breath still drawing (`breath.flurry`); `Monster.attack` never uses a breath still drawing (`breath.choose`: another ready blow, never one from afar, else "The X draws a rattling breath."). Every blow spends its attack (`breath.spend` at the top of `_resolve_blow`), the opener too. When it is ready again the hero who can see it is told, by the breath's type ("Smoke curls from the Young Red Dragon's jaws."). Named foes keep their tuned flurries (their breaths recharge only when their data sets `recharge`); Fafnir keeps his own clock (`_breath_cd`, `DRAGON_BREATH_RECHARGE`, the same 3). State: `_recharge` ({attack: turns}). Tell: `breath_recharge` ("Close in while it draws breath"). Hero answers: close in while it draws breath, a dug pit, resistance, the cloak's guard against breath, a corner.
+
+### Morale by Nature (`morale_by_nature`, `src/morale.py`)
+
+The old rule: every aggressive creature that was not a named foe and had no more than 500 health fled under a quarter of its health for 8 turns, and fled again as long as it stayed hurt (the timer re-armed itself). A zombie or a golem ran from its wounds, a goblin on floor 2 broke, about half of every ordinary kind from floor 21 down never did (the 500 rule was depth by the back door), and a fleeing creature beside the hero went on swinging. Now each creature breaks the way its nature says (`data/monster_ai.json` `morale`: the kind's own `morale_style` / `morale` in `monsters.json`, else its family's row, else `withdraw` 10; a `construct`, `plant`, `ooze` or `mindless` tag, `fearless` or a `status_immune` "feared" make it `never`):
+
+| style | who (family default) | when it breaks |
+|---|---|---|
+| `never` | restless dead, constructs, oozes, plants, elementals, ghosts; the cult zealot | It fights to the end ("The Zombie does not care that it is falling apart.", once). |
+| `bolt` | vermin 6, birds 7, great beasts 8, serpents 8, shapeshifters 9 | It runs 8-12 turns, then has given up the fight (`_cowed`): it keeps away from a hero it can see, goes about its business when it cannot, and fights only when cornered. A ranged blow finishes it. |
+| `regroup` | goblinkin 7, mortals 9; lizard-men, frog-men, cave-men | It runs for the nearest of its own side within 12 tiles (no nearer the hero than it is), and reaching them rouses everything of its side within 3 tiles of that one: the hero meets three goblins, not one. With nobody to run to it withdraws. |
+| `withdraw` | fair folk 9, aberrations 11, giants 12, gorgons 12, legend 13, vampires and liches 13, demons 14, dragons 16, celestials 16; the veteran knight 14 | A fighting withdrawal of 8 turns ("The Hill Giant falls back, fighting as he goes."): it backs off a step at a time, and a hero who presses it is struck half the time (`withdraw_strikes`, 0.5); then back into the fight. |
+| `yield` | the bandit thug, the bandit thief, the mercenary veteran 11, the cult initiate 7 | As regroup; caught with no friend to run to and nowhere to go, it throws down its weapon and its purse (its gold falls on its tile, `BehaviourMixin._ai_drop_purse`; what it stole too) and begs. It never strikes again (no blow on the hero or a pet) and keeps out of his way; he may spare it or kill it (no karma either way, Brandon's call to review). |
+
+- **When:** a morale check (2d10 over its morale 0-20 breaks it) the first time it falls under a quarter of its health; again when it is under half and one of its side falls within 8 tiles and its sight (`morale.kin_fell`, from the kill handler); and after five landed blows in a row that did nothing (it cannot hurt the foe, penalty 2: `ai_blow.after_blow`). One check a trigger: it never re-arms itself. Healed above half it steadies and can break again later.
+- **Running:** along the longest free way from the hero (a 6-step search of the ground about it, not the greedy step that walked into dead ends), or to its friends (`senses.step_toward`). Cornered beside the hero (no step away) it turns at bay for 3 turns: it strikes, +2 to hit, no flight ("The Goblin turns at bay, cornered!", once a life).
+- **Kept as they were:** the galla (`fearless`), a war-band follower while his leader lives, a hyena or gnoll that smells a wounded hero (packs `harry`), a thief with a haul, the stalker. Named foes never break; there is no health test at all now.
+- **State:** `_flee_timer`, `_wound_checked`, `_morale_check`, `_rally_to`, `_rallied`, `_bolting`, `_cowed`, `_at_bay`, `_zero_hits`, `_yielded`, all in the creature's own `__dict__` (an old save's monster reads none and has its family's nature).
+- **Hero answers:** kill the runner before it reaches its friends (a sling, a bow, a wand); a cornered creature fights harder, so leave it a way out or finish it; fear works on deep mortals and beasts again; let a bolting beast go.
+- **Simulator** (`ai_morale`): the real checks. A creature that breaks strikes no blow while it runs (the hero lands one at `CHASE_HIT_PROB`), except a withdrawing one, which strikes half its turns; a withdrawal comes back; a bolt leaves the fight when its run is spent and is found again and finished later half the time; a regroup with kin still waiting at the doorway goes back to the queue behind the next of them; a yield leaves, spared. At bay is not modelled (the simulator has no walls).
+
+### Life Drained (`life_drained`, `src/life_drain.py`)
+
+The drain type (67 kinds) cost a point of CON on a failed save, at most once a floor, never below CON 8, and most drainers hit like anyone else; the classic drainers (wight, wraith, barrow-wight, cairn-wight, fetch) struck with plain necrotic and drained nothing. Now a landed drain blow (type `drain`, or `drains_life: true` on the attack: those five) whose save fails (the old CON save, DC 12 + depth/7, with the family ward against draining) lowers the hero's max HP by `drain_share` (0.5) of the blow, at most 10% of his whole health from one blow and 25% in all, never below a new hero's health, kept in `player._life_drained`: "The Wight drains your life away! (Max HP -6)". It comes back: half at the next new floor down ("Sleep gives back some of what the dead took."), all from the physician's Restore (counted as points of 3 health in its price) and from the Mercy prayer at a chain of 4 (an altar counts one). `drain_resist` stops it. The old CON point stays for the greatest (`drain_con: true`: the lich, greater, ancient and arch-lich, the death lord), and named foes keep only the old CON rule. The blood-drinkers feed on it (`drain_heals_self` written by lore: vampire spawn, nosferatu, strigoi, vrykolakas 0.5; vampire lord and elder vampire 0.75; the strix and the ker 0.5). Tell: `life_drain`. Hero answers: kill it fast, the ward, prayer, the physician, the stairs.
+
+### Grave Rot (`grave_rot`, `src/grave_rot.py`)
+
+`diseased` cost a stat point about one bite in three and no health, and was gone in 4-8 turns; on a monster it ticked 0.4% a turn. Now, on the hero, while diseased his wounds do not mend by rest (`main._tick_hp_regen`) and every heal does half (`Player.restore_hp`; the stat sap stays); a monster's disease lasts its rider's own `effect_duration`, times the kind's `disease_linger` where its lore makes the sickness one that lingers (mummy rot 10; Pazuzu's spawn, Hel's handmaid, the plague ooze 8; the plague witch, Nidhogg's brood 6; the aboleth, the otyugh, the demon general, the abyssal dragon 5; the plague zombie, the harrow witch, the ghast-eater 4; the huecuva 3), at most 60 turns (`status_effects.MAX_EFFECT_DURATION`); a rat's bite, a zombie's claw, a wererat's or a death dog's bite keep their own few turns. (A first build lingered every disease x 10, which the lore never asked of a rat's bite; the simulation section of the AI-1 report says what it cost the slowest kid.) On a monster it costs `max_hp / 40` a turn (poison's rate) and stops its regeneration (a sick troll does not mend). Cured by the Potion of Cure Disease, the Mercy prayer at a chain of 4 (before its heal, so the heal is whole), the physician, a fountain's best water; `poison_resist` and `drain_resist` block it. The rubric's line on riders (`docs/design/MONSTER_LORE_PASS_2026_11_19.md`) now says what each one does.
+
+### Light-Shy and Snuff the Light (`light_shy_and_snuff`, `src/light_shy.py`)
+
+- **Light-shy** (`light_shy: true`: the six trolls, the dvergar hoard-wardens, the dark elves and drow, the shadows and shades, the nightwing, the darkmantle, the kobolds, the hidden folk): within the reach of a lit hero's light (its sight) it needs +2 to hit for each point of the light's glare (a carried light 1, the Everburning Lamp, the Hero's Lamp and Hecate's Torch 2, the Light spell 2, a torch held as a weapon 1), at most +4 (`ai_blow.to_hit_shift`). "The Troll flinches from your light." (once a fight).
+- **The troll's wounds** (agent A's troll item; the lore now says it: "a strong light is the next best thing, and a troll hates it"): a regenerating light-shy creature standing in the light cannot close its wounds (`_regen_blocked`, a turn at a time, `BehaviourMixin._ai_turn_after`): "The Troll's wounds stop closing in your light."
+- **Stone** (`turns_to_stone_in_light`: the trolls, the dvergar): three turns in the Light spell's glare and it is slowed 3 turns ("The Troll's hide stiffens in the light, like stone!"). Never petrified; named foes never.
+- **Snuffers** (an attack's `snuffs_light`: the water elemental's Wave Crash, the air elemental's Vortex, the whirlwind jinni's Dust-Devil Blow, the darkmantle's Engulf Head, the shadow master's Shadow Claw half the time, the drow priestess's Divine Curse): a landed blow douses the light in the hero's hand, soaked for 3 turns (water), 1 (wind) or 2 (dark); `_toggle_light` refuses meanwhile ("The wick is soaked."). Dark also ends the Light spell. An everlasting light or one with a power is never snuffed.
+- **Tells:** `light_shy`, `snuffs_light`. The price of a light stays: a lit hero is seen from farther.
+
+### Gone Again (`hit_and_run_vanishes`, `src/gone_again.py`)
+
+18 of 21 hit-and-run kinds cannot walk through walls, and after their blows they stood three tiles off in plain sight for 4-6 turns. Now one breaks off ("The Imp darts away to hide.") to the nearest tile out of the hero's sight within 12 tiles (round a corner, behind a pillar) and hides there; the hero coming within 2 tiles or seeing it, or any blow on it, ends the hiding and it fights. With no cover in reach it backs off as before. `hides_in_dark` (the shade, the shadow demon, the quasit, the imp, the boggart): while it hides it is unseen (`unseen.is_invisible`, `_dark_hidden`) if the hero carries no lit light and cannot see the invisible. Asterion and the phasing vampires are as they were.
+
+### Raise the Alarm (`raise_the_alarm`, `src/alarm.py`)
+
+`alarm` ({radius, tags?, line, line_unseen}) on a kind: the first time it sees the hero (`senses.notice`), once a floor, it shouts, and every creature of its side the sound reaches (`senses.sound_map`) within the radius is roused to him (its kind, band, pack, family, or a listed tag); sleepers wake as to a loud noise, never under the Hand of Glory; a sleeping, frightened or silenced lookout does not shout. It rouses only what is already on the floor. Kinds: the kobold, the kobold trapsetter and pack leader, the goblin and goblin sniper, the gnoll (a whooping laugh), the orc scout, the hobgoblin, the bandit thug, the cult initiate, Hugin, the Stymphalian bird, the harpy, the poltergeist (it knocks). Tell: `raises_alarm`.
+
+### Death Throes (`death_throes`, `src/death_throes.py`)
+
+`death_throes` ({type, share, radius, effect?, effect_duration?, line, warn_line, delivery?}): when it dies (not banished, not ashed, not a named foe) everything within its radius and its sight, the hero and the other creatures alike, takes `floor_curve.wound(share)` of its own health in that type and the rider through the usual save (`BehaviourMixin._ai_burst`; a `delivery: "voice"` rider is stopped by wax). It swells the turn it falls under a quarter of its health (`warn_line`, once). A creature the blast kills bursts after it, one at a time (a queue); the hero gets the kills. Kinds: the fire beetle (5%), the burning skeleton, the magma and lava elementals, the myconids (spores: hallucination, confusion), the gas spore, the plague zombie and zombie hulk and plague ooze (disease), the toxic jelly (poison), the crystal ooze (shards: bleeding), Pazuzu's spawn. Tell: `death_throes`.
+
+### Back to the Web (`relurk`, `src/relurk.py`)
+
+A sprung ambusher with `relurks` (the spiders, the piercer, the darkmantle, the lurker above, the trapper, the cloaker, the ettercap, the jorogumo, the crypt thing), under 60% of its health, out of the hero's sight 3 turns and not hunting him, goes back into hiding once a life: an ambusher again, unaware and unseen until it springs; no second surprise blow. A hero within 8 tiles hears it go ("Something scuttles away into the dark."). Tell: `relurks`.
+
+### Shove (`shove_into_danger`, `src/shove.py`)
+
+An attack's `shove` ({chance, aim}): a landed blow may throw the hero one tile straight back (a STR save, DC 13, keeps his feet); never into a wall, water, lava, a pit or a creature, never while he is held. The giants (hill, stone, frost: `aim`) throw him onto a hazard among the three tiles away from them, and the hazard's own rule fires (`BehaviourMixin._ai_resolve_shove`, after the monsters' turn, beside the pull). Kinds: the hill, stone and frost giants, the cyclops brute, the ettin, the ogres, the minotaurs, the troll brute and war troll, the cave bear, the iron and stone golems. Tell: `shove`.
+
+### The simulator's knobs
+
+`tools/balance/sim_ai1.py` (merged into `difficulty_sim.KNOB_DEFAULTS`): `ai_heal`, `ai_summon`, `ai_breath`, `ai_morale`, `ai_drain`, `ai_rot`, `ai_light`, `ai_vanish`, `ai_alarm`, `ai_throes`, `ai_relurk`, `ai_shove`, each 1 (the game's rule) by default; 0 is its ablation. Its docstring says what each models and what it cannot.
 
 ## The MONSTERS AND MAGIC kinds and their lore powers (2026-11-19)
 
@@ -529,17 +602,23 @@ family assignment, harvest and the kitchen, packs.json herds, tells, hints, purs
   - Two new senses (`data/senses.json`): `breath` (the jiangshi: a hero who rests holds
     his breath and is lost beyond arm's reach) and `blood_scent` (the Komodo brute: a
     bleeding hero is found through walls from 24 tiles).
-- **Fields that wait on another slice's engine** (written with its shapes): `light_shy`
-  (ponaturi, star_jelly), attack `snuffs_light` (bakunawa), `death_throes` (mandrake),
-  `alarm` (waq_waq_tree), `relurks` (asanbosam, ahuizotl, tsuchigumo): slice AI-1;
-  attack `hold` (taniwha), `aura` (mapinguari, upas_tree, ghast), `enraged_form`
-  (nahual), `moves` (nuckelavee): slice AI-3. Until then each is a sound monster on
-  its plain attacks. `trail_hazard` (eitr) is written and not yet built.
+- **AI-1's behaviours on these kinds** (shapes in `_mm_2026_11_19/AI1/FIELDS.md`;
+  `tests/test_mm_kinds_ai1.py` shows each at work): `light_shy` (ponaturi, star_jelly),
+  attack `snuffs_light: "dark"` with `snuff_chance` 0.5 (bakunawa), `death_throes`
+  (mandrake: a voice, so wax stops its stun), `alarm` (waq_waq_tree: radius 10, `tags`
+  naming the living that hear it, since an alarm rouses only its own side, here the
+  plants, unless tags say more), `relurks` (asanbosam, ahuizotl, tsuchigumo), attack
+  `recharge` 4 (catoblepas's gaze); the breath attacks take the default recharge, the
+  drain blows take lasting health, and each kind keeps its family's nerve.
+- **Fields that wait on slice AI-3's engine:** attack `hold` (taniwha), `aura`
+  (mapinguari, upas_tree, ghast), `enraged_form` (nahual), `moves` (nuckelavee). Until
+  then each is a sound monster on its plain attacks. `trail_hazard` (eitr) is written
+  and not yet built.
 - **QA key:** Shift+Y (Titivillus only) sets the next new kind down beside the hero.
 - **Simulator:** knob `mm_powers` (default 1; 0 is the ablation): the powers run in
   the real code the simulator calls, the Cu-Sith's barks in its world turn, and the
   Blue Men's verse is answered before the fight.
-- **Tests:** `tests/test_mm_kinds.py`.
+- **Tests:** `tests/test_mm_kinds.py`, `tests/test_mm_kinds_ai1.py`.
 
 ## Wanderers: the floor's clock (3.5.1)
 
@@ -563,7 +642,7 @@ Tests: `tests/test_war_bands.py`.
 
 ## AI dispatch (16 patterns)
 
-`take_turn` dispatches on `self.ai_pattern` after the common pre-flight (immobilised, slowed, enrage swap, pack-dependent re-evaluation, flee-when-hurt flag). Dispatch is `if/elif` on string match — the matching chain is in `monster.py` lines ~826-867. **Count by pattern** across 527 monsters (counted 2026-05; there are 574 now):
+`take_turn` dispatches on `self.ai_pattern` after the common pre-flight (immobilised, slowed, enrage swap, pack-dependent re-evaluation, morale: `src/morale.py`, the broken creature's run). Dispatch is `if/elif` on string match — the matching chain is in `monster.py` lines ~826-867. **Count by pattern** across 527 monsters (counted 2026-05; there are 574 now):
 
 | pattern | count | dispatch | one-line behaviour |
 |---|---|---|---|
@@ -572,8 +651,8 @@ Tests: `tests/test_war_bands.py`.
 | `sessile` | 29 | strikes what is adjacent (or in range, if it has a ranged attack) | Rooted: never walks, even alerted or aggravated (G8, 2026-11-12). Fungal / coral / mimic-adjacent. |
 | `ambush` | 23 | lurks; springs within 5 tiles on a hero it can see or touch | Invisible until sprung, then `aggressive`. |
 | `hit_and_run` | 17 | `_hit_and_run_turn` (`hunting` → `retreating` → `hiding`) | Asterion-style. Attacks 1-2 times, retreats through phasing walls for 3 turns, then hides 4-6 turns before hunting again. |
-| `summoner` | 8 | `_summoner_turn` | Once it has spotted the hero (`_spots_player`, the same detection check as every hunter), spawns a minion every `summon_cooldown` turns up to `summon_max`, otherwise behaves ranged. Sets `_wants_summon` for `main.py::_spawn_summoner_minion` to resolve. |
-| `healer` | 6 | `_healer_turn` | Heals the most-damaged adjacent same-kind/tag ally by `heal_amount_pct × max_hp` (needs no sight of the hero). Falls back to ranged / aggressive when nothing to heal, once it has spotted the hero (`_spots_player`). 6 monsters: `orc_priest`, `goblin_warpriest`, `cult_priest`, `viper_priestess`, `plague_witch`, `deep_one_priest`. |
+| `summoner` | 8 | `_summoner_turn` | Once it has spotted the hero (`_spots_player`), its timer runs (`summon_cooldown`); then, with the hero in reach and sight and fewer than `summon_live_cap` of its summoned standing, it chants a turn (a blow breaks it) and calls (`src/summoning.py`, AI-1), up to `summon_max`; otherwise behaves ranged. Sets `_wants_summon` for `main.py::_spawn_summoner_minion` to resolve. |
+| `healer` | 7 | `_healer_turn` | Heals a badly hurt friend of its own side beside it (`src/faction.py`, AI-1: under `heal_below` of its health, the one fighting the hero first) by `heal_amount_pct × max_hp`, then rests `heal_cooldown` turns (needs no sight of the hero). Falls back to ranged / aggressive when nothing to heal, once it has spotted the hero (`_spots_player`). 7 monsters: `orc_priest`, `goblin_warpriest`, `cult_priest`, `viper_priestess`, `plague_witch`, `deep_one_priest`, `hels_handmaid`. |
 | `cowardly` | 3 | `_standard_move` with inverted direction | Runs from the player; also the fallback for `pack_dependent` when alone. |
 | `dancer` | 2 | `_dancer_turn` | Medusa & Lamia. Approach normally when far; when adjacent, pick a *different* adjacent-to-player tile each turn before striking. Hard to pin without chokepoints. |
 | `mimic` | 2 | `_mimic_turn` | Inert until the player steps adjacent; then `_mimic_surprise = True`, pattern flips to `aggressive`, first attack lands at `×1.75` damage. |
@@ -596,7 +675,7 @@ Tests: `tests/test_war_bands.py`.
 7. Mitigations: confused 30% miss, blinded 40% miss, displacement 30% miss, Monkey King dodge, Hermes votive sandals, Aegis Gorgoneion petrify-on-hit, Nemean Lion unskinnable floor-at-1, Mirror of Souls, Resonant Frequency shock, Spartan Stand counter.
 8. Damage: rage stacks → `+rage_damage_bonus` roll each; charge bonus (`charge_bonus_mult × dmg`); mimic surprise `×1.75`; weakened `//2`; sundered `×0.70`; summoned `//2` under Ring of Solomon; back-attack multiplier when player faces away.
 9. Shield reflect (fire/cold), spell-reflect chain-passive, Mirror of Souls, Gorgoneion petrify — all post-damage.
-10. Drain: CON -1 if not `drain_resist`; `drain_heals_self` returns a fraction as HP.
+10. Drain (`ai_blow.after_blow` -> `life_drain.after_blow`, AI-1): a failed save lowers max HP by half the blow (`_life_drained`); CON -1 once a floor only for `drain_con` kinds and named foes; nothing under `drain_resist`. `drain_heals_self` returns a fraction as HP.
 11. Chain-disrupt: sets `_chain_disrupt_pending` (currently dead-wired per audit — no reader).
 12. Pull-on-hit: sets `_pending_pull_toward` for the game loop.
 13. Status-effect application: `effect_chance` roll → `apply_debuff_with_save` with `effect_save_dc`, reflecting bounces 50% back to attacker.

@@ -1227,6 +1227,8 @@ class CombatMixin:
         # once he has fallen: "With the hobgoblin down, the scouts scatter!"
         # came before "The Hobgoblin is slain!" (bug bash 3.5.1 E).
         self._band_member_died(monster)
+        # Its own side saw it fall (AI-1: game_behaviour.py).
+        self._ai_on_kill(monster)
         if not _banished:
             self._drop_treasure(monster)
         # A thief gives back everything it stole (src/theft.py).
@@ -3461,6 +3463,8 @@ class CombatMixin:
             # where the hero could see it is shown.
             self._pack_turn_after(m)
             self._lore_powers_after(m)         # the Roc's carry-off, the lore powers' lines (slice M)
+            # What its behaviour left to be seen or heard (game_behaviour.py).
+            self._ai_turn_after(m)
             if did_attack:
                 # A blow on the hero carries (src/senses.py).
                 self._make_noise('struck')
@@ -4473,6 +4477,8 @@ class CombatMixin:
                     or getattr(m, '_npc_encounter_tag', None)
                     or getattr(m, '_flavor_encounter_tag', None)
                     or getattr(m, '_is_unicorn', False)
+                    # one that yielded strikes no one again (src/morale.py)
+                    or m.__dict__.get('_yielded')
                     # the stalking coward (Old Nickel) strikes no pet until
                     # he has been in a fight
                     or (getattr(m, 'ai_pattern', '') == 'stalker_coward'

@@ -85,6 +85,13 @@ def abilities(m) -> list:
         have.update(lore_powers.tell_keys(m))
     except (ImportError, OSError, ValueError):
         pass
+    # What its behaviour shows (AI-1, src/kind_data.py): a breath drawn up
+    # again, a healer's rest, a light it hates, a cry it raises...
+    try:
+        import kind_data
+        have.update(kind_data.tell_keys(m))
+    except (ImportError, OSError, ValueError):
+        pass
     return [k for k in d['order'] if k in have and k in d['effects']]
 
 
