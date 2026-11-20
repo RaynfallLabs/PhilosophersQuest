@@ -1,0 +1,915 @@
+[
+ {
+  "id": "mandrake",
+  "family": "mm_small",
+  "rank": 1,
+  "key": "blue",
+  "what": "a mandrake: a pale, gnarled, forked root shaped like a little man, about knee-high, standing on two root legs. Its body is wrinkled pale tan root with thin hair-roots trailing from it; its head is the knobbly top of the root with a crown of broad dark green leaves sprouting from it like hair. Its face is two small dark eye-holes and a wide round screaming mouth, pitch-black inside. Its arms are thin forked roots.",
+  "colours": "pale tan and cream root skin with brown wrinkles, broad dark green leaves on the head, a black mouth and black eye-holes. No pink skin, no red.",
+  "wears": "It wears nothing: it is a root.",
+  "holds": "It holds exactly nothing: its root arms are thrown out to both sides.",
+  "pose": "Seen from the front, standing on its two forked root legs, arms flung wide, its mouth gaping open in a scream, leaves standing up on its head.",
+  "must_show": [
+   "a forked root shaped like a little man",
+   "a crown of broad dark green leaves on its head",
+   "a wide open screaming mouth",
+   "pale tan wrinkled root skin"
+  ],
+  "must_not_show": [
+   "human child",
+   "baby",
+   "flower pot",
+   "soil",
+   "dirt clods",
+   "ground",
+   "carrot",
+   "orange",
+   "ginseng label",
+   "clothes",
+   "eyes with pupils",
+   "cartoon",
+   "cute"
+  ]
+ },
+ {
+  "id": "kappa",
+  "family": "mm_small",
+  "rank": 2,
+  "key": "blue",
+  "what": "a kappa, the Japanese river imp: a child-sized green creature that stands on two legs like a small wrestler, with a turtle's shell on its back, a hard yellow beak for a mouth, webbed hands and feet, scaly green skin, and a bald head with a shallow round dish in the top of it holding water. Lank black hair rings the dish.",
+  "colours": "scaly olive-green skin, a dark brown turtle shell, a yellow beak, black hair round a pale grey dish with clear water in it, yellow eyes. No red.",
+  "wears": "It wears nothing but a short white loincloth like a sumo wrestler's.",
+  "holds": "It holds exactly nothing: both webbed hands are open in front of it, ready to grapple.",
+  "pose": "Seen from the front, crouching low in a sumo wrestler's stance: knees bent and wide, both webbed hands out in front, the beak open, the water-dish on its head plainly seen from slightly above.",
+  "must_show": [
+   "a turtle shell on its back",
+   "a yellow beak",
+   "a shallow dish of water on top of its bald head",
+   "a wrestler's crouch",
+   "green scaly skin"
+  ],
+  "must_not_show": [
+   "ninja",
+   "teenage mutant ninja turtle",
+   "mask",
+   "weapons",
+   "headband",
+   "frog",
+   "duck",
+   "rock",
+   "ground",
+   "water pool",
+   "cartoon",
+   "cute"
+  ]
+ },
+ {
+  "id": "eloko",
+  "family": "mm_small",
+  "rank": 3,
+  "key": "magenta",
+  "what": "an eloko, a small forest spirit of the Congo that is not a human being: a little creature about knee-high, its whole body thickly covered in long blades of green grass and broad leaves like a walking tuft of jungle grass, with no skin showing except its face; its face is dark green-brown and rough like tree bark, with two small glowing yellow eyes and an enormous wide mouth full of sharp white teeth.",
+  "colours": "bright and dark green grass and leaves all over its body, a dark green-brown bark face, glowing yellow eyes, white teeth, one small shining brass bell.",
+  "wears": "A skirt of big green leaves round its waist, nothing else.",
+  "holds": "It holds exactly one small brass bell held up in its right hand, as big as its fist; its left hand is a twig-like claw, empty.",
+  "pose": "Seen from the front, standing on two thin legs, leaning forward, ringing the bell held up high in its right hand, its huge grinning mouth wide open.",
+  "must_show": [
+   "a small creature covered all over in long green grass and leaves",
+   "a small brass bell held up in one hand",
+   "a bark-like face with an enormous mouth of sharp white teeth"
+  ],
+  "must_not_show": [
+   "human man",
+   "human skin",
+   "white hair",
+   "grey hair",
+   "beard",
+   "skirt",
+   "mask",
+   "tribal spear",
+   "shield",
+   "drum",
+   "tree trunk",
+   "ground",
+   "cartoon",
+   "cute"
+  ]
+ },
+ {
+  "id": "asanbosam",
+  "family": "mm_small",
+  "rank": 4,
+  "key": "blue",
+  "what": "an asanbosam, the forest horror of the Akan: a gaunt, long-limbed creature with grey-brown skin stretched over its bones, very long thin legs, long matted black hair and a mouth of iron teeth that shine dull grey; its feet turn both ways, forward and back.",
+  "colours": "grey-brown skin, long matted black hair hanging down, dull iron-grey teeth, red eyes. No green.",
+  "wears": "A ragged strip of bark cloth round its hips.",
+  "holds": "It holds exactly nothing: its long clawed hands reach down toward the viewer, empty.",
+  "pose": "Caught in mid-air as it drops head first, upside down, its long legs bent up above it, its long arms reaching down toward the viewer, its iron-toothed mouth open, its matted hair hanging down below its head. Nothing above it and nothing below it.",
+  "must_show": [
+   "hanging upside down",
+   "very long thin limbs",
+   "a mouth of iron teeth",
+   "long matted black hair hanging down"
+  ],
+  "must_not_show": [
+   "tree",
+   "branch",
+   "bough",
+   "leaves",
+   "rope",
+   "ceiling",
+   "ground",
+   "bat wings",
+   "cape",
+   "vampire in a suit",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "ahuizotl",
+  "family": "mm_small",
+  "rank": 5,
+  "key": "magenta",
+  "what": "an ahuizotl, the water beast of the Aztec lakes: a real-looking sleek animal on four legs, the size of a small dog, with short wet black fur, small pointed ears, a long otter-like body, and a long thin black tail; the very tip of the tail is a small grey human hand with five long fingers spread wide open, as big as the animal's own head, held up high over its back.",
+  "colours": "glossy wet black fur, a pale grey hand with five fingers at the tail tip, small yellow eyes, white teeth.",
+  "wears": "It is an animal and wears nothing.",
+  "holds": "It holds nothing; the hand at the end of its tail is open and reaching.",
+  "pose": "Seen from the side, facing left, crouched low on four legs, its tail curled up high over its back with the open hand at the end of it reaching forward over its head.",
+  "must_show": [
+   "a sleek black animal on four legs seen from the side",
+   "a grey five-fingered hand at the very tip of its tail, held high",
+   "the hand is large and clear"
+  ],
+  "must_not_show": [
+   "feather",
+   "plume",
+   "second animal",
+   "dog collar",
+   "monkey face",
+   "water",
+   "reeds",
+   "ground",
+   "cat",
+   "rat",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "khalkotauros",
+  "family": "mm_brutes",
+  "rank": 1,
+  "key": "blue",
+  "what": "a khalkotauros, a bull made of bronze by Hephaestus: a massive bull on four legs built of burnished bronze plates riveted together, with seams that glow orange from the fire inside it, bronze hooves, and long curved bronze horns. Its mouth is open and a short jet of orange flame shoots from it.",
+  "colours": "burnished golden-brown bronze with dark rivets, glowing orange seams, an orange and yellow flame. No green verdigris.",
+  "wears": "It is a bronze machine-beast and wears nothing: no yoke, no harness.",
+  "holds": "It is a beast on four legs and holds nothing.",
+  "pose": "Seen from the side, facing left, all four bronze hooves planted, head lowered to charge with horns forward, one short jet of flame shooting straight out of its mouth no longer than its own head.",
+  "must_show": [
+   "a bull made of bronze plates and rivets",
+   "orange glowing seams",
+   "a short jet of fire from its mouth",
+   "on four legs, seen from the side"
+  ],
+  "must_not_show": [
+   "minotaur",
+   "standing upright",
+   "real flesh",
+   "fur",
+   "rider",
+   "yoke",
+   "plough",
+   "ground",
+   "smoke cloud",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "cu_sith",
+  "family": "mm_brutes",
+  "rank": 2,
+  "key": "magenta",
+  "what": "a cu-sith, the fairy hound of the Scottish Highlands: a huge shaggy hound on four legs as big as a young bullock, with a dark green shaggy coat, a long tail coiled up flat on its back, huge paws and pale glowing green eyes. It is a real animal of enormous size, heavy and broad.",
+  "colours": "dark moss-green shaggy fur, a darker green back, pale glowing green eyes, black claws, white teeth. No blue, no grey wolf colouring, no brown.",
+  "wears": "It is an animal and wears nothing: no collar.",
+  "holds": "It is an animal on four legs and holds nothing.",
+  "pose": "Seen from the side, facing left, standing on four legs, its head raised and its mouth open in a deep bark, its long tail curled up flat over its back.",
+  "must_show": [
+   "a huge shaggy dark green hound on four legs",
+   "a tail coiled up on its back",
+   "mouth open barking",
+   "pale green eyes"
+  ],
+  "must_not_show": [
+   "wolf",
+   "grey fur",
+   "brown fur",
+   "standing on two legs",
+   "collar",
+   "rock",
+   "ground",
+   "mist",
+   "second dog",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "bulgasari",
+  "family": "mm_brutes",
+  "rank": 3,
+  "key": "blue",
+  "what": "a bulgasari, the Korean iron-eating beast: a heavy beast on four legs shaped like a bear, with no fur at all: its whole hide is dark iron-grey metal, overlapping hammered iron plates like a suit of scale armour grown on its body, with silver needles, spoons, nails and dark spear-heads sticking out of the plates all over its back. It has a short thick hanging trunk on its face, small red eyes and broad clawed paws.",
+  "colours": "dark iron-grey metal hide of overlapping plates with rust-brown edges, bright silver needles and spoons, dark spear-heads, small red eyes. No fur, no brown bear colouring.",
+  "wears": "It wears nothing.",
+  "holds": "It holds nothing; an iron spoon dangles from its trunk.",
+  "pose": "Seen from the side, facing left, striding forward on four legs, its short trunk raised, its jaws open.",
+  "must_show": [
+   "a heavy beast on four legs with a hide of iron plates, no fur",
+   "a short trunk on its face",
+   "needles, spoons and spear-heads sticking out of its back"
+  ],
+  "must_not_show": [
+   "fur",
+   "brown bear",
+   "porcupine",
+   "tusks",
+   "elephant",
+   "robot",
+   "machine gears",
+   "standing upright",
+   "ground",
+   "cartoon",
+   "cute"
+  ]
+ },
+ {
+  "id": "vetala",
+  "family": "mm_spirits",
+  "rank": 1,
+  "key": "blue",
+  "what": "a vetala, a spirit that lives in dead bodies: a grey, emaciated human corpse, dead flesh, corpse-grey, never living pink, with blank white eyes and wild grey hair; out of its ribs pushes a second, ghostly face, pale grey-white and see-through like smoke, grinning with an open mouth, the same size as the corpse's own head.",
+  "colours": "corpse-grey skin, blank white eyes, wild grey hair, a smoky pale grey-white ghost face on its chest, a dirty white loincloth, a withered orange marigold garland.",
+  "wears": "A torn dirty white cloth round its hips and a withered marigold garland round its neck.",
+  "holds": "It holds exactly nothing: both clawed hands reach forward, empty.",
+  "pose": "Seen from the front, lurching forward with knees bent, arms reaching, jaw open, the spirit face grinning out of its chest.",
+  "must_show": [
+   "a grey emaciated corpse",
+   "a second, ghostly grinning face pushing out of its ribs",
+   "a marigold garland"
+  ],
+  "must_not_show": [
+   "yellow",
+   "smiley face",
+   "t-shirt print",
+   "zombie shirt",
+   "skeleton",
+   "bat",
+   "tree",
+   "ground",
+   "fire",
+   "pink skin",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "likho",
+  "family": "mm_spirits",
+  "rank": 2,
+  "key": "blue",
+  "what": "Likho One-Eyed, the Russian hag of ill luck, a cyclops hag: a gaunt crooked old woman with grey-brown wrinkled skin, realistic adult proportions, long thin limbs, a hooked nose, long tangled grey hair and long bony fingers with black nails; she has one single huge eye in the middle of her forehead, above the bridge of her nose.",
+  "colours": "grey-brown wrinkled skin, a single yellow eye with a black pupil, tangled grey hair, black rags. No green skin.",
+  "wears": "Ragged black clothes hanging in strips.",
+  "holds": "It holds exactly nothing: both long-fingered hands reach forward, clutching at the air.",
+  "pose": "Seen exactly from the side in full profile, like a figure on a coin, facing left: her one huge eye in the middle of her forehead shows in profile at the front of her brow, her hooked nose below it, her hands reaching out to the left.",
+  "must_show": [
+   "a crooked old woman seen in profile",
+   "one huge eye at the front of her forehead",
+   "long clutching fingers",
+   "black rags"
+  ],
+  "must_not_show": [
+   "two eyes",
+   "pair of eyes",
+   "third eye",
+   "eyebrows over two eyes",
+   "broomstick",
+   "cauldron",
+   "hut",
+   "green skin",
+   "witch hat",
+   "ground",
+   "cartoon"
+  ],
+  "action": "She stalks forward, bent double, both clawed hands reaching out in front of her."
+ },
+ {
+  "id": "nahual",
+  "family": "mm_spirits",
+  "rank": 3,
+  "key": "blue",
+  "what": "a nahual, a Nahua (Aztec) sorcerer half-changed into a jaguar: a lean man with realistic adult proportions, bronze-brown skin, black hair, his arms and shoulders covered in spotted jaguar fur spreading up from his hands, his hands turning into clawed paws, yellow jaguar eyes. A cloak of green and red feathers hangs from his shoulders.",
+  "colours": "bronze-brown skin, golden-yellow jaguar fur with black rosettes on his arms and shoulders, a cloak of green and scarlet feathers, a black glassy obsidian knife, yellow eyes.",
+  "wears": "A white cotton loincloth and a short cloak of green and scarlet feathers; a jade bead necklace.",
+  "holds": "It holds exactly one short black obsidian knife no longer than his hand in his right hand; his left hand is a clawed paw, open.",
+  "pose": "Seen from the front, crouching forward low as if about to spring, the obsidian knife held out in his right hand, his left paw raised with claws out, snarling.",
+  "must_show": [
+   "a man whose arms are becoming spotted jaguar fur",
+   "a feathered cloak",
+   "a short black obsidian knife",
+   "yellow cat's eyes"
+  ],
+  "must_not_show": [
+   "full jaguar head",
+   "headdress mask",
+   "spear",
+   "shield",
+   "pyramid",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "centaur",
+  "family": "mm_riders",
+  "rank": 1,
+  "key": "blue",
+  "what": "a centaur of Greek legend: ONE creature, the body of a chestnut horse with four legs, but the horse has no horse's head and no horse's neck at all; where the horse's neck would be, the bare upper body of a bearded man rises straight out of the front of the horse's shoulders, joined at the man's waist, so the man's torso is the front of the horse. He has long dark hair, a dark beard and a lion-skin knotted over one shoulder.",
+  "colours": "weather-beaten light tan skin, dark brown hair and beard, a tawny lion-skin, a chestnut-brown horse body, a dark brown horn bow.",
+  "wears": "A tawny lion-skin knotted over one shoulder; no armour, no helmet.",
+  "holds": "It holds exactly one short curved bow made of horn in his left hand held out in front, his right hand drawing an arrow back to his cheek.",
+  "action": "He stands steady on all four horse legs and draws his bow at full draw, aiming to the left.",
+  "pose": "Seen in full profile like a figure on a coin, facing left, the bow a single D shape at the left of the picture entirely in front of him, all four horse legs on the ground.",
+  "must_show": [
+   "one creature: a man's torso growing out of a horse's body where its neck would be",
+   "no horse head",
+   "drawing a bow",
+   "a beard"
+  ],
+  "must_not_show": [
+   "horse head",
+   "horse neck",
+   "rider sitting on a horse",
+   "saddle",
+   "reins",
+   "two separate figures",
+   "two bows",
+   "armour",
+   "helmet",
+   "wings",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "blue_men_of_the_minch",
+  "family": "mm_riders",
+  "rank": 2,
+  "key": "green",
+  "what": "a Blue Man of the Minch, a sea spirit of the Scottish Hebrides: a man shown from the waist up rising out of a small swirl of sea foam, with skin of deep slate-blue, a long grey face, long floating white hair and beard, and webbed hands; below his waist is only a small round swirl of white foam and dark water, which ends well inside the picture.",
+  "colours": "deep slate-blue skin, white hair and beard, dark grey-blue water and white foam, pale grey eyes.",
+  "wears": "Nothing but strands of brown seaweed over one shoulder.",
+  "holds": "It holds exactly nothing: both hands are empty, his right raised high as he calls out, his left reaching forward with fingers spread.",
+  "body": "shapeless",
+  "pose": "Rising waist-high from a churning swirl of foam, caught mid-movement, leaning forward, one hand raised high, his mouth open calling out.",
+  "must_show": [
+   "blue-skinned man from the waist up",
+   "a small swirl of sea foam at his waist",
+   "long white hair",
+   "both hands empty, one raised"
+  ],
+  "must_not_show": [
+   "staff",
+   "stick",
+   "spear",
+   "club",
+   "trident",
+   "fish tail",
+   "mermaid",
+   "boat",
+   "crown",
+   "legs",
+   "big wave",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "vila",
+  "family": "mm_riders",
+  "rank": 3,
+  "key": "magenta",
+  "what": "a vila, a Serbian mountain fairy: a tall slender woman with realistic adult proportions, pale skin, very long unbound golden hair streaming in the wind, in a flowing white robe, inside a swirl of wind with leaves caught in it.",
+  "colours": "pale skin, long golden hair, a white robe, a light grey whirl of wind with a few green leaves, a pale wooden bow, grey-blue eyes.",
+  "wears": "A long flowing white robe and a white girdle.",
+  "holds": "It holds exactly one long pale wooden bow in her left hand held out in front, her right hand drawing an arrow back.",
+  "action": "She stands steady and draws her bow at full draw, aiming to the left.",
+  "pose": "Seen in full profile like a figure on a coin, facing left, the bow a single D shape at the left of the picture entirely in front of her, her hair and robe streaming in the wind behind her.",
+  "must_show": [
+   "a tall woman in a white robe",
+   "very long golden hair streaming",
+   "drawing a bow",
+   "a swirl of wind round her"
+  ],
+  "must_not_show": [
+   "wings",
+   "two bows",
+   "crown",
+   "armour",
+   "elf ears",
+   "ground",
+   "cloud floor",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "myrmekes",
+  "family": "mm_deep_beasts",
+  "rank": 1,
+  "key": "blue",
+  "what": "a gold-digging ant of Herodotus: a real ant, an insect, drawn large, golden-brown and shiny, with six legs, huge curved mandibles, bent antennae, and a fringe of coarse hair on its legs. Glittering gold sand clings to its legs and jaws.",
+  "colours": "shiny golden-brown and amber body, dark brown joints, glittering gold sand, black eyes. No green, no red.",
+  "wears": "It is an insect and wears nothing.",
+  "holds": "It holds nothing; a few grains of gold sand fall from its mandibles.",
+  "pose": "Seen from the side, facing left, standing on its six legs, its head raised and its huge mandibles wide open.",
+  "must_show": [
+   "an ant with six legs seen from the side",
+   "huge open mandibles",
+   "golden-brown shiny body",
+   "gold sand on its legs"
+  ],
+  "must_not_show": [
+   "dog",
+   "fox",
+   "marmot",
+   "fur body",
+   "wings",
+   "pile of gold under it",
+   "ground",
+   "cartoon",
+   "cute"
+  ]
+ },
+ {
+  "id": "ponaturi",
+  "family": "mm_deep_beasts",
+  "rank": 2,
+  "key": "magenta",
+  "what": "a ponaturi, a goblin-like sea raider of Maori legend: a lean man-shaped creature of a small adult's height, realistic proportions, with pale sea-wet grey-green skin, webbed fingers, long dripping black seaweed-like hair, and a wide mouth of small sharp teeth. He flinches away from a light, one arm thrown up over his eyes.",
+  "colours": "pale grey-green wet skin, black hair like seaweed, a bone-white club studded with shark teeth, dark eyes. No blue.",
+  "wears": "A short skirt of woven dark flax.",
+  "holds": "It holds exactly one short bone-white club studded with shark teeth in his right hand; his left arm is raised in front of his eyes.",
+  "pose": "Seen from the front, recoiling and flinching back, his left arm thrown up over his eyes as if from a bright light, his club held low in his right hand.",
+  "must_show": [
+   "pale grey-green wet skin",
+   "webbed fingers",
+   "a shark-tooth club",
+   "flinching from a light"
+  ],
+  "must_not_show": [
+   "torch",
+   "fire",
+   "fish tail",
+   "fins",
+   "armour",
+   "orc",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "taniwha",
+  "family": "mm_deep_beasts",
+  "rank": 3,
+  "key": "blue",
+  "what": "a taniwha of Maori legend: a vast scaled water-dragon that walks on all four legs like a huge lizard, with a broad reptilian head, a ridged back, a long thick tail and dark green-black scales; its jaws gape open showing many teeth. Its body is horizontal.",
+  "colours": "dark green-black scales, a pale grey-green belly, yellow eyes, white teeth, a pink-red mouth.",
+  "wears": "It is a beast and wears nothing.",
+  "holds": "It is a beast on four legs and holds nothing.",
+  "pose": "Seen from the side, facing left, all four of its feet planted on the ground and its body horizontal, its huge jaws gaping wide.",
+  "must_show": [
+   "a scaled water-dragon on four legs",
+   "huge gaping jaws",
+   "a ridged back",
+   "body horizontal like a lizard"
+  ],
+  "must_not_show": [
+   "wings",
+   "standing upright",
+   "two heads",
+   "fire",
+   "water pool",
+   "ground",
+   "carved wood",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "impundulu",
+  "family": "mm_deep_beasts",
+  "rank": 4,
+  "key": "blue",
+  "what": "an impundulu, the lightning bird of Zulu belief: a man-sized bird of prey with black-and-white plumage, a fiery red tail and red legs, a hooked black beak, and bright yellow zigzag lightning crackling along its wings.",
+  "colours": "glossy black and white feathers, a fiery red tail, red legs, a black hooked beak, bright yellow zigzag lightning, yellow eyes. No green.",
+  "wears": "It is a bird and wears nothing.",
+  "holds": "It holds nothing; its red talons are open.",
+  "pose": "Seen from the side, facing left, stooping down in a dive with its wings raised high above its back, talons forward, beak open.",
+  "must_show": [
+   "a black-and-white bird of prey",
+   "a red tail",
+   "yellow lightning on its wings",
+   "diving with talons forward"
+  ],
+  "must_not_show": [
+   "human face",
+   "two heads",
+   "storm cloud",
+   "rain",
+   "white lightning",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "mapinguari",
+  "family": "mm_deep_beasts",
+  "rank": 5,
+  "key": "blue",
+  "what": "a mapinguari of the Amazon: a towering shaggy beast standing upright on two short thick legs like a giant ground sloth, covered in long coarse red-brown hair, with no ordinary eyes, smooth fur there; one eyeball as wide as half its face in the middle of its forehead, a second mouth full of teeth gaping in its belly, and long hooked claws on its long arms. Its feet point backward.",
+  "colours": "long coarse red-brown and dark brown hair, a single yellow eye, a pink-red belly mouth with white teeth, black claws. No orange.",
+  "wears": "It wears nothing.",
+  "holds": "It holds exactly nothing: its long arms hang forward with the hooked claws spread.",
+  "pose": "Seen from the front, standing upright and hunched, leaning forward, its long clawed arms raised to strike, the mouth in its belly open.",
+  "must_show": [
+   "a shaggy red-brown upright beast like a giant sloth",
+   "one eye in the middle of its face",
+   "a toothed mouth in its belly",
+   "long hooked claws"
+  ],
+  "must_not_show": [
+   "two eyes",
+   "bear",
+   "gorilla",
+   "ape face",
+   "bodybuilder",
+   "trees",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "preta",
+  "family": "mm_deep_spirits",
+  "rank": 1,
+  "key": "blue",
+  "what": "a preta, a hungry ghost of Buddhist belief: a tall emaciated ghost, not a bare skeleton: ash-grey skin stretched tight over its bones covers it all over; its belly is enormously swollen and round like a drum, part of its own body and covered in the same ash-grey skin; its neck is as thin as a needle, its head small with a tiny round mouth with small orange flames at its lips, sunken black eyes and long thin fingers.",
+  "colours": "ash-grey skin all over, the swollen belly the same ash-grey skin, small orange flames at the lips, black sunken eyes, wisps of grey hair, a torn grey rag.",
+  "wears": "A torn grey rag round its hips.",
+  "holds": "It holds exactly nothing: its long-fingered hands reach forward, grasping.",
+  "pose": "Seen from the front, standing hunched on thin legs, leaning forward with both long arms reaching out, its huge belly hanging.",
+  "must_show": [
+   "an emaciated grey ghost covered in grey skin",
+   "a huge round swollen belly of the same grey skin",
+   "a needle-thin neck",
+   "tiny flames at its small mouth"
+  ],
+  "must_not_show": [
+   "bare skeleton",
+   "skull face",
+   "green ball",
+   "orb",
+   "held ball",
+   "fat person",
+   "buddha",
+   "smiling",
+   "food",
+   "bowl",
+   "fire around it",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "upas_tree",
+  "family": "mm_deep_spirits",
+  "rank": 2,
+  "key": "magenta",
+  "body": "shapeless",
+  "what": "an upas tree of Java: a tall pale-barked tropical tree with a straight trunk and spreading branches with dark green leaves, milky white sap weeping from cuts in its trunk, a few bones caught among its roots, and a faint yellow-green haze round its lower trunk.",
+  "colours": "pale grey bark, dark green leaves, milky white sap, bone-white bones, a faint yellow-green haze. No blue.",
+  "holds": "It is a tree and holds nothing.",
+  "pose": "The whole tree shown from the top of its crown down to its roots, its roots spread at the bottom with nothing beneath them, sap dripping from its trunk.",
+  "must_show": [
+   "a pale-barked tree",
+   "milky white sap weeping from the trunk",
+   "bones among its roots"
+  ],
+  "must_not_show": [
+   "face",
+   "eyes",
+   "mouth",
+   "arms",
+   "legs",
+   "ground",
+   "grass",
+   "skull pile",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "nuckelavee",
+  "family": "mm_deep_spirits",
+  "rank": 3,
+  "key": "blue",
+  "what": "the nuckelavee of Orkney: ONE monstrous creature, a horse with no skin, its whole body dark red raw muscle and sinew with black veins over it and no hair, and out of its back, where a rider would sit, grows the upper body of a huge man made of the same skinless dark red muscle, joined to the horse with no saddle and no legs of his own; the man's head is too big and lolls forward, his arms are so long they reach to the ground; the horse's head has one single burning orange eye.",
+  "colours": "dark red sinew with black veins, a pale bone-white spine ridge, one burning orange-red eye, black hooves. No green, no bright pink.",
+  "wears": "It wears nothing.",
+  "holds": "It holds exactly nothing: the rider's long arms hang down to the ground, empty.",
+  "pose": "Seen from the side, facing left, the horse body on four legs walking forward, the rider's torso slumped forward on top of it, long arms trailing.",
+  "must_show": [
+   "one creature: a skinless horse with a skinless man's body growing from its back",
+   "dark red sinew, no skin, no hair",
+   "very long arms reaching to the ground",
+   "one burning eye in the horse's head"
+  ],
+  "must_not_show": [
+   "horse hair",
+   "mane",
+   "brown horse coat",
+   "rider sitting on a horse",
+   "saddle",
+   "reins",
+   "skin",
+   "armour",
+   "gore",
+   "dripping blood",
+   "intestines",
+   "skeleton",
+   "two separate creatures",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "star_jelly",
+  "family": "mm_deep_spirits",
+  "rank": 4,
+  "key": "magenta",
+  "body": "shapeless",
+  "what": "star jelly, pwdre ser: a glistening pale translucent mass of trembling jelly with faint glowing motes of starlight floating inside it, falling in mid-air with long thick dripping strands hanging from it.",
+  "colours": "pale milky translucent white-blue jelly, small bright white and pale yellow motes of light inside, darker grey shadows in its folds. No green.",
+  "holds": "It is a jelly and holds nothing.",
+  "pose": "Caught in mid-air as it falls, its mass bulging at the bottom and long thick strands of jelly dripping from its top.",
+  "must_show": [
+   "a translucent pale jelly mass",
+   "small glowing motes inside it",
+   "dripping strands"
+  ],
+  "must_not_show": [
+   "face",
+   "eyes",
+   "mouth",
+   "arms",
+   "legs",
+   "ceiling",
+   "ground",
+   "puddle",
+   "stars in a sky",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "psoglav",
+  "family": "mm_far_deep",
+  "rank": 1,
+  "key": "blue",
+  "what": "a psoglav of South Slavic lore: a hulking cave-dweller standing on two legs, with the head of a hound: a long dog muzzle, a black dog nose, two floppy dog ears, and one single eye in the centre of its brow and no other eyes; a mouth of dull iron teeth; a man's hairy torso and arms; and the hind legs of a horse, bending backward at the hock, ending in black hooves. Coarse dark brown hair covers it.",
+  "colours": "coarse dark brown hair, a single yellow eye, dull iron-grey teeth, black hooves, a glowing green-white gem.",
+  "wears": "A belt of rough leather with a pouch.",
+  "holds": "It holds exactly one glowing gem the size of a fist held up in its left hand; its right hand is a clawed fist.",
+  "pose": "Seen from the front, standing upright on its two horse legs, leaning forward and snarling with its iron teeth bared, the gem held up.",
+  "must_show": [
+   "a hound head with a long dog muzzle and floppy ears",
+   "one single eye in the middle of the brow",
+   "horse hind legs ending in hooves",
+   "a glowing gem held up in one hand"
+  ],
+  "must_not_show": [
+   "two eyes",
+   "bull head",
+   "boar head",
+   "horns",
+   "minotaur",
+   "werewolf",
+   "wolf head",
+   "weapon",
+   "armour",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "waq_waq_tree",
+  "family": "mm_far_deep",
+  "rank": 2,
+  "key": "magenta",
+  "body": "shapeless",
+  "what": "the waq-waq tree of the Arabic wonder-books: a strange tree with a twisted dark trunk whose branches end in fruit shaped like human heads and animal heads, about seven of them, each one big, each mouth open crying out.",
+  "colours": "a dark brown twisted trunk, green leaves, the heads pale tan and brown like ripe fruit with dark open mouths. No blue.",
+  "holds": "It is a tree and holds nothing.",
+  "pose": "The whole tree shown from its crown down to its roots, its branches spread wide, every head on the branches crying out, nothing beneath its roots.",
+  "must_show": [
+   "a tree whose branches end in heads",
+   "the heads crying out with open mouths",
+   "a twisted trunk"
+  ],
+  "must_not_show": [
+   "arms",
+   "legs",
+   "a face on the trunk",
+   "ground",
+   "island",
+   "sea",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "yuki_onna",
+  "family": "mm_far_deep",
+  "rank": 3,
+  "key": "magenta",
+  "what": "the yuki-onna, the snow woman of Japan: a tall pale woman with realistic adult proportions, skin as white as snow, very long straight black hair streaming in a blizzard, in a plain white kimono, breathing out one short stream of icy white breath.",
+  "colours": "snow-white skin, long straight black hair, a white kimono with a pale grey sash, pale icy blue breath, dark eyes, pale lips.",
+  "wears": "A plain white kimono with a pale grey sash; bare feet.",
+  "holds": "It holds exactly nothing: her right hand is reaching forward, her left at her side.",
+  "pose": "Seen from the front, floating forward with her feet off the ground, her hair and sleeves streaming in the wind behind her, one short jet of icy breath from her lips no longer than her head.",
+  "must_show": [
+   "a pale woman in a white kimono",
+   "very long black hair streaming",
+   "icy breath from her lips"
+  ],
+  "must_not_show": [
+   "fan",
+   "sword",
+   "umbrella",
+   "flowers",
+   "geisha makeup",
+   "snow on the ground",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "yacumama",
+  "family": "mm_far_deep",
+  "rank": 4,
+  "key": "blue",
+  "body": "shapeless",
+  "what": "the yacumama, the mother of the waters: an immense dark green anaconda, a real snake with one head, its thick coiled body piled in loops, its head raised high, glowing yellow eyes, jaws wide open, a swirl of mist and leaves being drawn into its mouth.",
+  "colours": "dark olive-green scales with black oval blotches, a pale yellow belly, glowing yellow eyes, a pink mouth, grey mist, green leaves.",
+  "holds": "It is a snake and holds nothing.",
+  "pose": "Its coils piled in loops with nothing beneath them, its head reared up high, jaws wide open, mist and leaves swirling into its mouth.",
+  "must_show": [
+   "an immense coiled anaconda",
+   "head reared up, jaws open",
+   "mist and leaves drawn into its mouth"
+  ],
+  "must_not_show": [
+   "legs",
+   "arms",
+   "two heads",
+   "water",
+   "pool",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "tsuchigumo",
+  "family": "mm_far_deep",
+  "rank": 5,
+  "key": "blue",
+  "what": "a tsuchigumo, the earth spider of Japan: a giant hairy spider, a real spider drawn large, with eight thick tiger-striped legs in yellow and black, a round hairy brown body, and a fierce demon-like face on its head with fangs, as in an old Japanese scroll painting.",
+  "colours": "hairy brown body, yellow and black tiger-striped legs, a dark red demon face with white fangs, yellow eyes, white silk. No green.",
+  "wears": "It wears nothing.",
+  "holds": "It holds nothing; a thick strand of white web streams from its jaws.",
+  "pose": "Seen from the front and a little above, its eight legs spread wide, its body raised, fangs bared.",
+  "must_show": [
+   "a giant spider with eight striped legs",
+   "a fierce demon face",
+   "hairy brown body"
+  ],
+  "must_not_show": [
+   "human body",
+   "woman",
+   "kimono",
+   "web filling the picture",
+   "ground",
+   "burrow",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "bhuta_vahana_yanta",
+  "family": "mm_lords",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a relic guardian of ancient India: a tall statue of a warrior made of bronze and dark teak wood, carved with Indian temple ornament, with four arms, each hand holding a curved sword, standing on a short round carved plinth. Its face is a calm carved bronze mask.",
+  "colours": "burnished bronze and dark brown teak, gold trim, four steel-grey curved swords, a dark grey stone plinth. No green, no blue.",
+  "wears": "A carved bronze crown and bronze armour carved like jewellery.",
+  "holds": "It holds exactly four curved swords, one in each of its four hands, held out at different angles.",
+  "pose": "Seen from the front, standing on its short round plinth, its four arms spread out with the swords as if spinning, one blade high, one low on each side.",
+  "must_show": [
+   "a bronze and wood statue warrior with four arms",
+   "a curved sword in each hand",
+   "a carved round plinth under its feet"
+  ],
+  "must_not_show": [
+   "six arms",
+   "flesh",
+   "blue skin",
+   "goddess",
+   "temple building",
+   "ground",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "reem",
+  "family": "mm_lords",
+  "rank": 2,
+  "key": "blue",
+  "what": "a re'em of the Hebrew Bible: a colossal wild aurochs, a real wild ox on four legs, black-brown with a pale stripe down its back, massive shoulders as high as a hill, and huge forward-sweeping pale horns. A small human figure, a boy, clings to one of its horns for scale.",
+  "colours": "black-brown coat, a pale grey-tan stripe along its spine, pale cream horns with dark tips, dark eyes. No orange.",
+  "wears": "It is a beast and wears nothing.",
+  "holds": "It is a beast on four legs and holds nothing; a tiny boy in a brown tunic clings to its horn.",
+  "pose": "Seen from the side, facing left, all four legs planted, head lowered with the great horns forward, about to charge.",
+  "must_show": [
+   "a colossal wild ox on four legs",
+   "huge forward-sweeping horns",
+   "a tiny boy clinging to a horn for scale"
+  ],
+  "must_not_show": [
+   "unicorn",
+   "single horn",
+   "hill under it",
+   "ground",
+   "rider",
+   "bull ring",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "eitr",
+  "family": "mm_lords",
+  "rank": 3,
+  "key": "magenta",
+  "body": "shapeless",
+  "what": "eitr, the first poison of Norse myth: a low, wide, spreading mound of thick black-green venom that flows over itself like tar, crusted with white frost and lumps of grey slag-like ice, with a few thick tendrils of venom reaching out to the left and pale cold steam rising from it; it is a puddle-like mass with no body shape at all.",
+  "colours": "glossy black-green venom, white frost, pale grey ice slag, a faint pale green steam. No blue.",
+  "holds": "It is a liquid mass and holds nothing.",
+  "pose": "Caught surging forward to the left, low and wide, much wider than it is tall, tendrils reaching out, nothing beneath it.",
+  "must_show": [
+   "a low wide mound of black-green venom",
+   "white frost crust",
+   "slag-like lumps of ice"
+  ],
+  "must_not_show": [
+   "face",
+   "eyes",
+   "mouth",
+   "head",
+   "arms",
+   "legs",
+   "standing figure",
+   "humanoid",
+   "ground",
+   "puddle under it",
+   "snowman",
+   "cartoon"
+  ]
+ },
+ {
+  "id": "bakunawa",
+  "family": "mm_lords",
+  "rank": 4,
+  "key": "green",
+  "body": "shapeless",
+  "what": "the bakunawa of Visayan myth: a colossal dark sea serpent with a single horn on its head, gills and long whiskers, its body coiling up in great loops, its huge red mouth wide open, reaching up toward a pale moon held in its jaws.",
+  "colours": "dark purple-black scales, a lighter grey belly, a red mouth, a white horn, a pale cream moon, red eyes.",
+  "holds": "It is a serpent and holds nothing; a pale round moon sits in its open jaws.",
+  "pose": "Its coils rising in great loops with nothing beneath them, its head reared high, its jaws closing round a pale moon.",
+  "must_show": [
+   "a colossal coiled sea serpent",
+   "one horn on its head",
+   "a pale moon in its open red jaws"
+  ],
+  "must_not_show": [
+   "legs",
+   "arms",
+   "wings",
+   "two heads",
+   "sea waves",
+   "ground",
+   "stars",
+   "cartoon"
+  ]
+ }
+]
