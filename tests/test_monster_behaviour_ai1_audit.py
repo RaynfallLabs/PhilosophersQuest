@@ -304,3 +304,27 @@ def test_slice_m_kinds_carry_their_lore_on_this_engine():
     assert any(a.get('shove') for a in MONS['khalkotauros']['attacks'])
     assert morale.style(make('myrmekes')) == 'never'
     assert morale.style(make('taniwha')) == 'never'
+
+
+# ---------------------------------------------------------------- with AI-2
+def test_a_broken_archer_runs_and_never_stops_for_a_lane_or_a_plan(monkeypatch):
+    """AI-2's lanes (inside _ranged_turn) and its Tactical Mind come after
+    the broken creature's run in Monster.take_turn: a fleeing archer runs."""
+    import lanes
+    import tactical_mind
+
+    def _never(*a, **k):
+        raise AssertionError('a fleeing archer looked for a lane or a plan')
+    monkeypatch.setattr(lanes, 'blocked_turn', _never)
+    monkeypatch.setattr(lanes, 'back_off', _never)
+    monkeypatch.setattr(tactical_mind, 'turn', _never)
+    a = hurt(make('bandit_archer', 10, 10), 0.2)
+    a._aware = True
+    friend = make('bandit_thug', 9, 10)             # stands in the archer's line
+    hero = Hero(7, 10)
+    morale.turn(a, hero, [a, friend], rng=Dice(10))
+    assert a._flee_timer > 0
+    d0 = max(abs(a.x - hero.x), abs(a.y - hero.y))
+    for _ in range(3):
+        assert a.take_turn(hero, open_room(), [a, friend]) is False
+    assert max(abs(a.x - hero.x), abs(a.y - hero.y)) > d0
