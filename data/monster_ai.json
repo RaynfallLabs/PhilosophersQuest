@@ -6,12 +6,17 @@
     "heal_below": 0.6
   },
   "summoner": {
-    "_doc": "src/summoning.py: the timer runs only while it hunts the hero; it calls only with the hero within reach and in sight and fewer than live_cap of its summoned standing; the call is a one-turn chant that a landed blow breaks.",
+    "_doc": "src/summoning.py: the timer runs only while it hunts the hero; it calls only with the hero within reach and in sight and fewer than live_cap of its summoned standing; the call is a one-turn chant that a landed blow breaks. A chant is broken by any real blow (never a bleed, burn or poison ticking); spoil_lines name who broke it: the hero, his pet ({pet}), a death throes' blast, or something else (a hazard, another creature).",
     "live_cap": 2,
     "reach": 8,
     "chant_line": "{The} raises {his} hands and begins to chant.",
     "chant_unseen": "Somewhere near, a voice begins a low chant.",
-    "spoil_line": "Your blow breaks {the}'s chant!"
+    "spoil_lines": {
+      "hero": "Your blow breaks {the}'s chant!",
+      "pet": "Your {pet} breaks {the}'s chant!",
+      "throes": "The blast breaks {the}'s chant!",
+      "other": "{The} is struck, and {his} chant breaks off."
+    }
   },
   "breath": {
     "_doc": "src/breath.py: a delivery 'breath' attack of an ordinary kind needs 3 turns before it can come again (an attack's own `recharge` wins); named foes only when their data says. ready_lines by the breath's damage type, said when it is ready again and the hero can see it.",
@@ -28,7 +33,7 @@
     }
   },
   "morale": {
-    "_doc": "src/morale.py. A creature's style and nerve: its kind's own morale_style / morale in monsters.json, else its family's row, else default; a tag in never_tags, `fearless` or a status_immune 'feared' make it never. A check (2d10 over morale, less the trigger's penalty, breaks it) the first time it falls under break_share of its health, when one of its side falls within kin_sight while it is under courage_share, and after futile_blows landed blows in a row that did nothing. Healed above courage_share it steadies. A flight lasts flee_turns (a bolt bolt_turns); regroup runs to its side within rally_reach and rouses those within rally_rouse of the one it reached; a withdrawing creature strikes a hero who presses it withdraw_strikes of the time (a fighting withdrawal); cornered beside the hero it is at bay at_bay_turns turns, at_bay_hit better to hit. A bolted creature has given up the fight (cowed): it keeps away from a hero it can see.",
+    "_doc": "src/morale.py. A creature's style and nerve: its kind's own morale_style / morale in monsters.json, else its family's row, else default; a tag in never_tags, `fearless` or a status_immune 'feared' make it never. A check (2d10 over morale, less the trigger's penalty, breaks it) the first time it falls under break_share of its health, when one of its side falls within kin_sight while it is under courage_share, and after futile_blows landed blows in a row that did nothing. Healed above courage_share it steadies. A flight lasts flee_turns (a bolt bolt_turns); regroup runs to its side within rally_reach and rouses those within rally_rouse of the one it reached; a withdrawing creature strikes a hero who presses it withdraw_strikes of the time (a fighting withdrawal); cornered beside the hero it is at bay at_bay_turns turns, at_bay_hit better to hit. A bolted creature has given up the fight (cowed): it keeps away from a hero it can see. Every ordinary hunter keeps a nerve (morale.RULED_PATTERNS: aggressive, cowardly, ranged, hit_and_run, summoner, healer, dragon, dancer); the rooted, a mimic or ambusher still in wait, the stalker and the named never break. One that has yielded never strikes again, held or not.",
     "break_share": 0.25,
     "courage_share": 0.5,
     "flee_turns": 8,
@@ -221,7 +226,7 @@
     "default_radius": 10
   },
   "death_throes": {
-    "_doc": "src/death_throes.py. A creature with `death_throes` that dies (not banished, not ashed) bursts: every creature and the hero within its radius (and in its sight) takes floor_curve.wound(share) of its own health in its type, and its effect with a save. Its warn_line is said once when it falls under warn_share of its health. A creature killed by another's throes bursts after it, never inside it (one at a time).",
+    "_doc": "src/death_throes.py. A creature with `death_throes` that dies (not banished, not ashed) bursts: every creature and the hero within its radius (and in its sight) takes floor_curve.wound(share) of its own health in its type, and its effect with a save. Its warn_line is said once when it falls under warn_share of its health. A creature killed by another's throes bursts after it, never inside it (one at a time). An `alarm_radius` on a death throes is a cry that goes through stone (the mandrake's shriek): every creature that hears within it is roused to the hero (alarm.cry).",
     "warn_share": 0.25
   },
   "relurk": {

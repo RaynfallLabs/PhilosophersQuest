@@ -275,6 +275,20 @@ _SHOVES = {
 for _key, _sp in _SHOVES.items():
     ATTACK_FIELDS.setdefault(_key, {})['shove'] = _sp
 
+# --- Slice M's kinds on this engine (after the AI-1 audit, 2026-11-20).
+# The ponaturi of the Maori story died when Rata's people kept them talking
+# until dawn and daylight came into the house: the sun takes them as it takes
+# a troll. The re'em (the wild ox of the Hebrew Bible, whose strength no rope
+# holds) and the khalkotauros (the bronze bulls of Colchis Jason yoked) throw
+# a man back. The myrmekes (Herodotus' gold-digging ants, who ran down the
+# thieves that stole their gold) and the taniwha (the guardian of its waters)
+# never give up a fight.
+KIND_FIELDS.setdefault('ponaturi', {})['turns_to_stone_in_light'] = True
+KIND_FIELDS.setdefault('myrmekes', {})['morale_style'] = 'never'
+KIND_FIELDS.setdefault('taniwha', {})['morale_style'] = 'never'
+ATTACK_FIELDS.setdefault(('reem', "Horns of the Re'em"), {})['shove'] = {'chance': 0.3}
+ATTACK_FIELDS.setdefault(('khalkotauros', 'Bronze Gore'), {})['shove'] = {'chance': 0.3}
+
 TELLS_NEW.update({
     'light_shy': ('regeneration', {
         'sign': "{The} squints and turns {his} face from every lamp.",

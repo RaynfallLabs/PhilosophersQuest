@@ -377,4 +377,5 @@ def holds_nerve(m) -> bool:
     Tongues)."""
     lead = getattr(m, '_band_leader', None)
     return (lead is not None and getattr(lead, 'alive', False)
+            and not getattr(lead, '__dict__', {}).get('_yielded')     # he begs (morale.py)
             and not (getattr(m, 'status_effects', None) or {}).get('babbled', 0) > 0)

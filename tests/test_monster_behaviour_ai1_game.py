@@ -165,3 +165,78 @@ def test_the_monster_ways_help_page_draws():
     assert g._help_page_title(3) == 'Monsters and Their Ways'
     g._help_page = 3
     g._draw_help_screen()
+
+
+# ===========================================================================
+# After the audit (_mm_2026_11_19/AI1/AUDIT.md): the Game's side
+# ===========================================================================
+
+def test_d1_a_yielded_thug_in_a_pit_strikes_nobody():
+    g = _scene(('bandit_thug', 1, 0))
+    b = g.monsters[0]
+    import morale
+    morale.give_up(b)
+    g._ai_turn_after(b)
+    b.status_effects['stuck_in_pit'] = 5
+    hp0 = g.player.hp
+    for _ in range(4):
+        g._do_monster_turns()
+    assert g.player.hp == hp0
+    assert not any('hits you' in t for t in _messages(g))
+
+
+def test_d5_a_band_routs_when_its_captain_yields():
+    g = _scene(('mercenary_veteran', 2, 0), ('bandit_thug', 2, 1))
+    lead, f = g.monsters
+    lead._band = 'b1'
+    lead._band_role = 'leader'
+    lead._band_id = 'bandit_crew'
+    f._band = 'b1'
+    f._band_role = 'guard'
+    f._band_leader = lead
+    import morale
+    morale.give_up(lead)
+    g._ai_turn_after(lead)
+    assert f.__dict__.get('_band_leader') is None
+    assert f.has_effect('feared') or f.quarrelsome
+
+
+def test_d7_a_pet_leaves_a_begging_foe_alone():
+    from pet_system import Pet, random_species
+    g = _scene(('bandit_thug', 1, 0))
+    b = g.monsters[0]
+    pet = Pet(random_species(), b.x, b.y + 1)
+    import morale
+    morale.give_up(b)
+    act = pet.take_turn(g.player, g.dungeon, g.monsters, [pet])
+    assert not (act and act[0] == 'attack' and act[1] is b)
+
+
+def test_d8_filling_a_soaked_lantern_does_not_light_it():
+    import items
+    g = _scene()
+    lantern = items.make_item_by_id('light', 'horn_lantern')
+    lantern.lit = False
+    lantern.fuel = 10
+    lantern._wet = 3
+    g.player.shield = lantern
+    flask = next((i for i in items.load_items('flask') if 'oil' in str(getattr(i, 'id', ''))), None)
+    if flask is None:
+        return
+    g.player.inventory.append(flask)
+    g._fill_light(lantern)
+    assert not lantern.lit
+    assert any('soaked' in t for t in _messages(g))
+
+
+def test_the_mandrakes_death_cry_rouses_the_floor_near_it():
+    g = _scene(('mandrake', 2, 0), ('goblin', 2, 3))
+    mand, gob = g.monsters
+    gob._aware = False
+    gob._tracking = False
+    mand._aware = True
+    mand.hp = 0
+    mand.alive = False
+    g._on_monster_killed(mand)
+    assert gob._aware
+    assert any('shrieks as it dies' in t for t in _messages(g))
