@@ -46,6 +46,7 @@ added_files = [
     ('data/packs.json',             'data'),   # packs: the hunt and the family tricks (packs.py)
     ('data/tells.json',             'data'),   # tells (tells.py)
     ('data/monster_ai.json',        'data'),   # monster behaviour, first wave (kind_data.py)
+    ('data/minds.json',             'data'),   # the Tactical Mind (tactics.py, tactical_mind.py)
     ('data/kit_sense.json',         'data'),   # Kit Sense lines (kit_sense.py)
     ('data/enemy_lore.json',        'data'),   # Recall Lore on monsters, probing, quests (enemy_lore.py)
     ('data/boss_floors.json',       'data'),   # the five finales (decor.py)

@@ -99,6 +99,13 @@ def abilities(m) -> list:
         have.update(kind_data.tell_keys(m))
     except (ImportError, OSError, ValueError):
         pass
+    # How it thinks (AI-2, src/tactical_mind.py): its mind, the dark edge,
+    # its snares, a band leader's orders.
+    try:
+        import tactical_mind
+        have.update(tactical_mind.tell_keys(m))
+    except (ImportError, OSError, ValueError):
+        pass
     return [k for k in d['order'] if k in have and k in d['effects']]
 
 

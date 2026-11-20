@@ -32,6 +32,11 @@ def to_hit_shift(m, player, atk) -> int:
         shift += light_shy.flinch(m, player)
     except ImportError:
         pass
+    try:
+        import tactical_mind
+        shift += tactical_mind.hit_shift(m)      # a feint's waiting blow (AI-2)
+    except ImportError:
+        pass
     return shift
 
 

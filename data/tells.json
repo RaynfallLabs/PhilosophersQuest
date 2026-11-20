@@ -7,7 +7,8 @@
             "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "light_shy", "aura_heat", "aura_cold", "aura_stench", "second_shape", "casts_ward", "casts_dispel", "casts_darkness", "casts_escape", "carries_fire", "carries_potion", "territorial", "bargains", "skittish", "summon_kind", "heals_allies", "pull_chance", "breath_recharge", "sp_drain", "snuffs_light",
             "can_charge", "shove", "pack_harry", "pack_sling", "pack_traps", "pack_bay", "raises_alarm", "pack_dart", "pack_snatch",
             "can_phase_blink", "relurks", "hides_in_dark", "stalker", "bleeding", "burning", "slowed", "hallucinating",
-            "countdown_voice", "metal_eater", "corpse_hop", "parley", "appeased_by", "on_stunned", "hidden_overhead", "weak_spot_chain", "sheds_skin", "carry_off", "ranged_pull", "gold_gatherer", "steal_offering", "fumbling", "strangulation", "heal_blocked", "talisman"],
+            "countdown_voice", "metal_eater", "corpse_hop", "parley", "appeased_by", "on_stunned", "hidden_overhead", "weak_spot_chain", "sheds_skin", "carry_off", "ranged_pull", "gold_gatherer", "steal_offering", "fumbling", "strangulation", "heal_blocked", "talisman",
+            "mind_cunning", "mind_soldier", "mind_trickster", "mind_caster", "dark_edge", "knows_traps", "band_orders"],
   "kin_lead": "{He} is one of {kin}.",
   "far_counter": "{He} can reach you from across a room, but only where {he} can see you: keep stone between you until you can close in.",
   "status_words": {"feared": "frightened", "charmed": "charmed", "confused": "confused",
@@ -439,6 +440,41 @@
       "sign": "{The} is built like a battering ram.",
       "does": "{His} blows can throw you back a step, and a clever one throws you into what hurts.",
       "counter": "Fight {him} with your back to a wall, and keep clear of fire and pits."
+    },
+    "mind_cunning": {
+      "sign": "{The} watches you, and keeps glancing at {his} friends.",
+      "does": "{He} waits for {his} friends, will not follow you into a corridor, and goes for whoever is bleeding, your pet too.",
+      "counter": "Kill {him} before the rest come up, call a badly hurt pet back to its Soul Sphere, and do not wait in a corridor for {him} to come to you."
+    },
+    "mind_soldier": {
+      "sign": "{The} keeps {his} place in the line like a drilled soldier.",
+      "does": "{He} holds a line with {his} fellows, changes places when the front man tires, and may feign flight to draw you out of a narrow way.",
+      "counter": "Finish a hurt one before he can step back, and do not follow a foe who runs too neatly. Study the kind and you will see through the feint."
+    },
+    "mind_trickster": {
+      "sign": "{The} never comes straight at you.",
+      "does": "{He} slips round to your side and will not be drawn into a narrow way.",
+      "counter": "Fight with a wall at your back, or draw {him} out with a ranged attack."
+    },
+    "mind_caster": {
+      "sign": "{The} hangs back behind the others, muttering.",
+      "does": "{He} keeps {his} distance and casts at you over {his} friends.",
+      "counter": "Silence {him}, or reach {him} past the others with a ranged attack or a spell."
+    },
+    "dark_edge": {
+      "sign": "{The} keeps to the shadows at the very edge of your light.",
+      "does": "{He} steps out of your light and strikes first when you come close; an archer of {his} kind shoots from the dark, where you cannot see to shoot back.",
+      "counter": "Carry a brighter light or cast Light: the farther you see, the less dark there is for {him} to hide in."
+    },
+    "knows_traps": {
+      "sign": "{The} picks {his} way across the floor as if {he} knew every stone.",
+      "does": "{He} never steps on the snares and hazards of {his} own ground, and waits where your straight way to {him} runs over one.",
+      "counter": "Look before you charge, find the traps first, or come at {him} another way."
+    },
+    "band_orders": {
+      "sign": "{The} shouts orders, and the others obey.",
+      "does": "While {he} lives and can shout, {his} band keeps a guard in front of {him}, charges when you are hurt, and falls back round {him} when half of them are down.",
+      "counter": "Kill or silence the leader first. Wax in your ears keeps out the words, not the orders."
     }
   }
 }

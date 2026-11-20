@@ -68,6 +68,8 @@ from geom import monster_at_tile, is_at_tile
 import unseen
 import theft
 import holds            # Held Fast (AI-3)
+import habits          # They Learn Your Tricks (AI-2)
+import tactical_mind    # the Tactical Mind (AI-2)
 from items import Artifact, Weapon
 from pet_system import Pet, pet_damage_type, random_species as random_pet_species
 
@@ -2531,6 +2533,7 @@ class CombatMixin:
     def _fire_ranged(self, monster):
         """Consume one ammo and launch the math chain quiz for a ranged shot."""
         self._make_noise('shot')
+        habits.hero_shot(self, monster)      # They Learn Your Tricks (src/habits.py)
         # Health as the shot is loosed, for the traits that count kills made
         # while badly hurt. Only a melee attack recorded it, so an archer's
         # kills were judged on their health at their last sword swing.
@@ -2756,6 +2759,8 @@ class CombatMixin:
         _senses.begin_turn(moved=moved, guilty=self._senses_guilty(),
                            floor=self.dungeon_level,
                            rested=_senses.rested_on(self.player, self.turn_count))
+        # The Tactical Mind's turn, and the pets it may look at (AI-2).
+        tactical_mind.begin_turn(self)
         woken = _senses.resolve_noises(self.dungeon, self.monsters, self.player)
         seen = [m for m in woken if self._sees_monster(m)]
         if len(seen) == 1:
@@ -3030,6 +3035,7 @@ class CombatMixin:
     def _start_combat(self, monster):
         # A blow struck carries a long way (src/senses.py).
         self._make_noise('melee')
+        habits.hero_melee(self, monster)     # They Learn Your Tricks (src/habits.py)
         # Charmed: 40% chance to hesitate instead of attacking
         if self.player.has_effect('charmed') and random.random() < 0.40:
             self.add_message("You hesitate, unable to bring yourself to attack.", 'warning')
@@ -4496,7 +4502,10 @@ class CombatMixin:
                     or any(m.has_effect(e) for e in ('sleeping', 'paralyzed', 'stunned', 'frozen',
                                                      'feared', 'charmed'))):
                 continue
-            for pet in targets:
+            # A creature that chose a hurt pet (the Tactical Mind's focus)
+            # strikes that one first, with its whole blow.
+            _focus = tactical_mind.focus_of(m) if not escorts else None
+            for pet in sorted(targets, key=lambda p: id(p) != _focus):
                 if not pet.alive:
                     continue
                 # Unicorn pet design contract: enemies do not target her in melee
@@ -4522,7 +4531,7 @@ class CombatMixin:
                     from dice import roll as _dice_roll
                     _aggro = getattr(m, '_pet_aggro', None)
                     full = (not escorts and (
-                        not m._adjacent_to(self.player)
+                        not m._adjacent_to(self.player) or _focus == id(pet)
                         or (_aggro and _aggro[0] == id(pet) and _turn - _aggro[1] <= 2)))
                     if full:
                         _atk = random.choice(m.attacks)

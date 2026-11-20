@@ -349,6 +349,25 @@ def test_a_lich_tries_its_fear_then_blasts_a_hero_who_will_not_fear():
     assert caster_ai.pick_attack(m, hero, cands)['name'] == 'Cold Bolt'
 
 
+def test_a_thinking_caster_casts_by_the_book_as_a_plain_one_does():
+    """A kind with the Tactical Mind's caster mind (data/minds.json) picks
+    its spell in tactical_mind.choose_cast by the Caster's Book's rules."""
+    import tactical_mind
+    assert tactical_mind.mind_of(make('battle_mage')) == 'caster'
+    d = open_room()
+    hero = Hero(9, 5)
+    hero.status_effects = {'fire_resist': 20}
+    m = make('battle_mage', 5, 5)
+    for _ in range(10):                                        # never by chance
+        assert tactical_mind.choose_cast(m, hero, d, [m])['name'] == 'Frost Bolt'
+    plain = caster_ai.pick_attack(m, hero, m._distance_attacks())
+    assert plain['name'] == 'Frost Bolt'
+    hero.status_effects = {'slowed': 3}
+    assert tactical_mind.choose_cast(m, hero, d, [m])['name'] == 'Fire Bolt'
+    m.add_effect('silenced', 5)                                # a seal: no cast at all
+    assert tactical_mind.choose_cast(m, hero, d, [m]) is None
+
+
 def test_a_blinded_caster_wards_but_aims_nothing():
     d = open_room()
     hero = Hero(9, 5)
@@ -489,6 +508,41 @@ def test_the_hold_ends_when_the_holder_dies_flees_sleeps_or_is_parted(monkeypatc
             m.status_effects['feared'] = 3
         holds.validate(hero, [m])
         assert not holds.is_held(hero), why
+
+
+def test_a_holder_takes_no_lane_step_and_squeezes_instead(monkeypatch):
+    """The naga guardian is a ranged kind (src/lanes.py would step it back
+    from a hero beside it); while it holds him it squeezes, and no lane
+    rule moves it."""
+    import lanes
+    d = open_room()
+    hero = Hero(6, 5)
+    m = make('naga_guardian', 5, 5)
+    m._aware = True
+    m._tracking = True
+    assert lanes.applies(m)
+    fail_saves(monkeypatch)
+    holds.after_blow(m, hero, next(a for a in m.attacks if holds.spec_of(a)), 5, '')
+    monkeypatch.undo()
+    assert not lanes.applies(m)
+    assert not lanes.back_off(m, hero, d, [m], set())
+    for _ in range(3):
+        assert m.take_turn(hero, d, [m]) is True and (m.x, m.y) == (5, 5)
+        m.attack(hero)
+    holds.release(hero, m, 'dead')
+    assert lanes.applies(m)
+
+
+def test_a_drinking_or_throwing_creature_spends_its_turn_before_any_lane():
+    d = open_room()
+    hero = Hero(8, 5)
+    m = make('bandit_kingpin', 5, 5)
+    m._aware = True
+    m._tracking = True
+    m._kit = ('potion_of_extra_healing',)
+    hurt(m, 0.2)
+    pos = (m.x, m.y)
+    assert m.take_turn(hero, d, [m]) is False and (m.x, m.y) == pos    # it drank, it did not move
 
 
 def test_a_silenced_holder_keeps_its_grip(monkeypatch):
