@@ -23,7 +23,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'paralyzed':          ('Paralyzed',         (220,  50,  50), 'Cannot move or act'),
     'sleeping':           ('Sleeping',           (100, 100, 210), 'Asleep; woken by damage'),
     'stunned':            ('Stunned',            (225, 155,  50), 'May stumble; quiz timer -25%'),
-    'confused':           ('Confused',           (185, 100, 230), 'Random movement; choices shuffled'),
+    'confused':           ('Confused',           (185, 100, 230), 'Random movement; quiz words swim, then settle'),
     'blinded':            ('Blinded',            ( 80,  80,  80), 'Sight radius 1; quiz timer -30%'),
     'hallucinating':      ('Hallucinating',      (210,  85, 230), 'Reality distorted; quiz timer -20%'),
     'poisoned':           ('Poisoned',           ( 80, 210,  60), 'Losing 2% of max HP per turn'),
@@ -269,6 +269,61 @@ CONTROL_CAP: dict = {
 }
 
 GRACE_TURNS = 3  # turns of immunity to re-disable after a hard-control effect ends
+
+
+def _load_soft_grace() -> dict:
+    """Soft control with a recovery of its own, the shape of the hard-control
+    grace: effect -> (grace status, turns). Confusion (Brandon 2026-11-19:
+    the quiz scramble must never be an auto-kill): a running bout is never
+    refreshed, and when it ends, or is cured, the hero is Clear-Headed
+    (``confuse_immune``) for a few turns. data/confusion.json 'recovery'."""
+    rec = {}
+    try:
+        import json
+        from paths import data_path
+        with open(data_path('data', 'confusion.json'), encoding='utf-8') as f:
+            rec = json.load(f).get('recovery') or {}
+    except (OSError, ValueError):
+        rec = {}
+    return {'confused': (str(rec.get('status', 'confuse_immune')),
+                         max(1, int(rec.get('turns', 3))))}
+
+
+SOFT_GRACE: dict = _load_soft_grace()
+CLEAR_HEADED_TURNS: int = SOFT_GRACE['confused'][1]
+
+
+def _soft_bouts(player) -> set:
+    """The soft-control bouts (SOFT_GRACE) running on the hero, so a bout
+    ended outside the tick (a cure: a potion, a prayer, a trader) still
+    earns its recovery. Kept on the hero; an older save has none yet."""
+    bouts = player.__dict__.get('_soft_bouts')
+    if not isinstance(bouts, set):
+        bouts = set()
+        player.__dict__['_soft_bouts'] = bouts
+    return bouts
+
+
+def _grant_recovery(player, effect: str) -> None:
+    """``effect``'s bout is over: its grace status for its turns (a
+    permanent one, a trophy's Clear-Headed, is left as it is)."""
+    _soft_bouts(player).discard(effect)
+    status, turns = SOFT_GRACE[effect]
+    cur = player.status_effects.get(status, 0)
+    if cur == -1:
+        return
+    player.status_effects[status] = max(int(cur or 0), turns)
+
+
+def _recover_cured(player) -> None:
+    """A bout that is marked running but is gone was cured: the recovery
+    now, once."""
+    bouts = player.__dict__.get('_soft_bouts')
+    if not bouts:
+        return
+    for effect in list(bouts):
+        if effect in SOFT_GRACE and player.status_effects.get(effect, 0) == 0:
+            _grant_recovery(player, effect)
 
 # Resistance effects that block specific debuffs from being applied
 _RESIST_BLOCKS: dict[str, set] = {
@@ -566,7 +621,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'paralyzed':      ('You can move again.',                    'info'),
     'sleeping':       ('You wake up!',                           'info'),
     'stunned':        ('Your head clears -- no longer stunned.',  'info'),
-    'confused':       ('Your mind sharpens. Confusion gone.',    'info'),
+    'confused':       ('Your mind sharpens. Confusion gone, and you are Clear-Headed for a moment.', 'info'),
     'blinded':        ('Your vision returns!',                   'success'),
     'hallucinating':  ('Reality snaps back into focus.',         'info'),
     'poisoned':       ('The poison leaves your body.',           'success'),
@@ -681,6 +736,10 @@ def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> 
     cooked meal's power lasts as long as its rules say (cooking_rules.json),
     not the 60 turns that stop a potion or a wand stacking forever.
     """
+    if effect in SOFT_GRACE and duration != 0:
+        # A bout cured since the last tick earns its Clear-Headed turns
+        # before anything can lay a new one on (confusion's recovery).
+        _recover_cured(player)
     for resist, blocked in _RESIST_BLOCKS.items():
         if effect in blocked and player.has_effect(resist):
             return False
@@ -718,6 +777,17 @@ def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> 
             if current > 0 or player.status_effects.get('control_immune', 0) > 0:
                 return False
             player.status_effects[effect] = min(duration, MAX_EFFECT_DURATION)
+        elif effect in SOFT_GRACE:
+            # Confusion (the quiz scramble) is a bout, like hard control: it
+            # is not refreshed while it runs, and its recovery (Clear-Headed,
+            # which blocks it above) follows it, so a confusing monster cannot
+            # keep the hero scrambled back to back.
+            if current > 0:
+                return False
+            if duration <= 0:
+                return False
+            player.status_effects[effect] = min(duration, MAX_EFFECT_DURATION)
+            _soft_bouts(player).add(effect)
         else:
             # Soft control (you still act): refresh to the larger value, never stack.
             player.status_effects[effect] = min(max(current, duration), MAX_EFFECT_DURATION)
@@ -886,6 +956,11 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
     import random
     messages: list[tuple[str, str]] = []
     to_expire: list[str] = []
+    # A confusion running on the hero is a bout whose recovery is owed
+    # however it ends (an older save's confusion is marked here).
+    for _sg in SOFT_GRACE:
+        if int(player.status_effects.get(_sg, 0) or 0) > 0:
+            _soft_bouts(player).add(_sg)
 
     # Coif of Beowulf (grendel_grip): the wearer cannot be held. Clears any
     # paralyzed/strangulation/sleeping status at the START of the tick. The
@@ -1017,6 +1092,9 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
         # to being re-disabled so the player ALWAYS gets free turns to act/flee.
         if effect in HARD_CONTROL:
             player.status_effects['control_immune'] = GRACE_TURNS
+        # Confusion's own recovery: Clear-Headed for a few turns (SOFT_GRACE).
+        if effect in SOFT_GRACE:
+            _grant_recovery(player, effect)
         # When a cooked/power "ward" expires, drop its magnitude companion.
         if effect.startswith('save_guard_'):
             _g = getattr(player, '_save_guard', None)
@@ -1042,4 +1120,7 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
         if msg_pair:
             messages.append(msg_pair)
 
+    # A confusion cured this turn (outside the tick) is followed by its
+    # Clear-Headed turns all the same.
+    _recover_cured(player)
     return messages

@@ -32,6 +32,7 @@ added_files = [
     # Game data — top-level JSONs
     ('data/monsters.json',          'data'),
     ('data/horns.json',             'data'),   # the four horns of legend (horns.py)
+    ('data/confusion.json',         'data'),   # the confused quiz's scramble + Clear-Headed (quiz_engine.py, status_effects.py)
     ('data/monster_sizes.json',     'data'),
     ('data/monster_families.json',  'data'),   # monster family knowledge (family_lore.py)
     ('data/senses.json',            'data'),   # how monsters notice the hero (senses.py)

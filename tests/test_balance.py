@@ -36,8 +36,9 @@ def test_stone_level_is_100():
 def test_timer_floor_prevents_unsolvable_quizzes():
     from player import Player
     p = Player()
-    # Worst-case stacking: confused + stunned + blinded
-    p.status_effects['confused'] = 10
+    # Worst-case stacking: stunned + blinded + hallucinating (confusion cuts
+    # no clock since 2026-11-19: its words swim, then settle)
+    p.status_effects['hallucinating'] = 10
     p.status_effects['stunned'] = 10
     p.status_effects['blinded'] = 10
     mod = p.get_quiz_timer_modifier()

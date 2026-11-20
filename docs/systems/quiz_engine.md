@@ -23,6 +23,8 @@ Two load-bearing rules shape everything else. **Zero-tolerance** (2026-05-29): o
 
 **Craft forgiveness** (3.3.2): a worn minor-armour piece of the craft lane (the Locksmith, the Cook, the Reader...) forgives the first wrong answer of every Nth quiz on its subject, counted, never rolled. `start_quiz` asks `quiz_engine.craft_hook` (`Game._craft_forgives` -> `enchantments.craft_ready`) before reading the reroll flag: a threshold quiz gets a reroll, a chain a forgiveness. See [armour.md](armour.md) §4.
 
+**Confusion scrambles the words** (Brandon 2026-11-19; the pure functions are the confusion section of `src/quiz_engine.py`: `settle_seconds`, `settle_for`, `swims`, `scramble_token`, `scramble_runs`, `scramble_lines`, `scramble`; the numbers `data/confusion.json`): while the hero is confused, the question and its answer cards are DRAWN scrambled. Inside each word of 4+ letters the inner letters are shuffled (first and last kept); each number of 2+ digits has its digits shuffled (minus sign, decimal point and commas in place); punctuation, maths signs and short words stay. Each word or number settles back to its true spelling one at a time, in a random order spread evenly over the settle time from the moment the question goes up: 1.6 s on the timed maths clock (the wait comes out of it), 2.5 s on every other quiz, 0.05 s less per point of WIS over 10, never under 0.8 s. Every question scrambles afresh. It is display only: the question data, `answer()`, the result marking, the lesson line and the teaching card never change, and the result is always drawn true. It replaced confusion's ×0.55 clock cut. Wiring: `_next_question` calls `_stamp_scramble()`, which asks `scramble_hook(timed)` (`Game`: `quiz_engine.settle_for(player, timed)`, 0.0 when not confused) and stamps `scramble_settle`, `scramble_seed` (crc32 of session, asked count and stem) and `_scramble_q`; `update()` adds `dt` to `q_elapsed` while ASKING and the card has not stopped the clock; `scramble_view()` gives `(seed, share settled)` or None, `confused_quiz()` whether the hero was confused when the question went up (the quiz's Confused chip). The render: [ui §12b.1](ui.md). The Necronomicon's own three questions are never stamped, so never scrambled.
+
 **The daimonion** (3.3.2, the Philosopher's Ring of Mastery): `answer()` asks `daimonion_hook` (`Game._daimonion_stops`) on a wrong choice before counting it. While the ring has a stop left this floor, the choice goes into `struck_choices` (drawn red), nothing is counted and the question stays open; a struck choice picked again does nothing. It never reveals the answer.
 
 ## Data model / schema
@@ -147,8 +149,9 @@ Submit the player's choice. No-op outside `ASKING`. Does case-exact `strip()`-co
 ### `update(dt: float)`
 Called each frame with delta time in seconds. Handles:
 1. Celebration timer (`MAX CHAIN!` banner for 1.5s before `_end`).
-2. ASKING + timed: counts down `time_remaining`; on expiry, logs a wrong answer **without zeroing the chain** (chain-v2) and transitions to RESULT.
-3. RESULT: counts down `result_timer`; on expiry, calls `_advance()`.
+2. ASKING: adds `dt` to `q_elapsed` (the question's own seconds, for the confusion scramble) unless the context card has the clock stopped.
+3. ASKING + timed: counts down `time_remaining`; on expiry, logs a wrong answer **without zeroing the chain** (chain-v2) and transitions to RESULT.
+4. RESULT: counts down `result_timer`; on expiry, calls `_advance()`.
 
 ### `cancel_and_strike() -> bool`
 Chain-combat-v2 SPACE handler. Freezes the current chain into `score` and ends the quiz immediately as success. Valid only in chain modes while `ASKING`. Downstream combat callback treats `score >= 1` as a landed strike at that chain, `score == 0` as a miss.
@@ -171,7 +174,7 @@ Public reads for UI (bestiary, character sheet, Journal).
 4. If every candidate is retired → mark `_mastered` and auto-pass.
 5. Record the chosen question in `_seen` and the cycle (`_note_shown`), and hold back its same-fact twins (`_twin_block`). The draw loop skips retired questions and held-back twins, falling back to a twin only when nothing else is left.
 6. Persist `_deck_idx` + `_last_q` immediately (so `_end` doesn't need to duplicate).
-7. Shuffle `confused_order` (choice display order).
+7. Shuffle `confused_order` (the choices' display order, every question; the name is from when only confusion shuffled them) and stamp the scramble (`_stamp_scramble`: settle time, seed, `q_elapsed = 0`).
 8. Transition to `ASKING`.
 
 ### `_advance()`
@@ -246,8 +249,9 @@ pass.
 - `blinded`: ×0.70
 - `stunned`: ×0.75
 - `hallucinating`: ×0.80
-- `confused`: ×0.55 (also shuffles choices)
 - `blessed`: ×1.25
+
+`confused` has no clock modifier since 2026-11-19 (it was ×0.55): its words swim until they settle, and on a fight's sums that wait is its cost on the clock (see Design intent, "Confusion scrambles the words").
 
 ### `extra_seconds` adds
 - `get_int_quiz_bonus()` — would grant +(INT-10)/2 seconds for magic
@@ -286,11 +290,12 @@ In chain modes, consuming the reroll also restores `chain = max(chain, 1)` so th
 - **`timed` auto-detects to math-only.** New quiz-gated actions must NOT inherit `timed=True` unless explicitly chosen; the renderer and tick loop both read `self.timed`.
 - **Empty-pool guard must stay in both `start_quiz` and `_next_question`:** a missing/malformed JSON OR an escalator-fallback that lands in an empty tier must call `_end(success=False)` rather than index `_pool[0]`.
 - **Choice order is always shuffled** via `confused_order`. The engine never reveals the correct-answer position.
+- **The confusion scramble is display only.** `scramble_view()` feeds the renderer; nothing reads it to judge an answer. The layout is measured on the true text, and the result state is drawn true.
 
 ## Interactions
 
 - **[combat](combat.md)** — every attack calls `start_quiz(mode='chain', subject='math', tier=weapon.quiz_tier, max_chain=..., callback=...)` from `combat.py:1994`. Chain length drives the polynomial damage multiplier `mult = chain ** chain_exponent` (default 1.15, uniques override). Chain 0 = miss, chain >= 1 = landed strike at that chain. SPACE (`cancel_and_strike`) locks in the current chain mid-question.
-- **[status_effects](status_effects.md)** — threshold-quiz failure (wrong answer) in identify fires `apply_effect(player, 'stunned', 10)` via `game_menus.py` → `main.py`. The `_timer_modifier` is read from `Player.get_quiz_timer_modifier()`, which inspects `has_effect('blinded' / 'stunned' / 'confused' / 'hallucinating' / 'blessed')`.
+- **[status_effects](status_effects.md)** — threshold-quiz failure (wrong answer) in identify fires `apply_effect(player, 'stunned', 10)` via `game_menus.py` → `main.py`. The `_timer_modifier` is read from `Player.get_quiz_timer_modifier()`, which inspects `has_effect('blinded' / 'stunned' / 'hallucinating' / 'blessed')`. Confusion reaches the quiz through `scramble_hook` instead (the scramble), and its Clear-Headed recovery is in [status_effects](status_effects.md).
 - **[save_bonus](save_bonus.md)** — no direct quiz-engine integration, but the Tablet reroll and status-effect timer are the engine's two defensive buffers (save bonuses are a third defense against monster-inflicted debuffs — see save_bonus.md).
 - **[identify_v3](identify_v3.md)** — identify v3 (2026-08-06) uses ONE threshold-1 philosophy quiz at the item's `id_tier`. Right = full ID, wrong = `Stunned 10t`. No masteries, no chains.
 - **[food_system](food_system.md)** — cook v2 uses one threshold-1 cooking quiz at `outcome.tier`. Right = full meal, wrong = ruined ingredients. Harvest uses one threshold-1 animal quiz at `corpse.harvest_tier`. (All one-Q, binary outcome per the "flow > gradient" rule.)
@@ -317,6 +322,7 @@ In chain modes, consuming the reroll also restores `chain = max(chain, 1)` so th
 
 - **2026-10-24** — Playtest: "I see the same questions almost every game." The shuffle was random (no module-level seed anywhere; simulated). The memory was the fault: it kept the last 30 questions per tier, and philosophy tier 1 has 147, so a game of identifying forgot the one before and the pool came round every few games (simulated: games 2-5 repeated 5, 15, 23 and 31 of 40). Now the memory is a full cycle per tier by stem id (repeats: 0, 0, 0 until the 147 are used up), and `data/question_twins.json` holds back same-fact twins (972 questions in 443 groups) for the rest of a run.
 - **2026-11-13** — Maths grade curve (winning-build slice 9). Each maths question has a school-grade score (`tools/balance/math_difficulty.py`). Each tier is a grade band in `tools/balance/math_grade_curve.json`: T1 grades 1-2, T2 3-4, T3 4-5, T4 6-7, T5 7-8. Every topic names the tiers it may appear at. The 3.4.0 bank had 841 questions out of band and 53 stems in two tiers, and its tier 5 median was barely above tier 4's. `py -m tools.balance.math_grade_curve` moved 382 questions, replaced 463 in place, and added 155 grade 7-8 questions to tier 5. The `math_grade_band` gate now runs in `py -m tools.quizgen validate`. Tier sizes are 527 / 604 / 455 / 534 / 450. Tier mastery counts whatever the bank holds. See [`docs/quiz/math_grade_curve.md`](../quiz/math_grade_curve.md).
+- **2026-11-19** — Confusion scrambles the quiz's words (Brandon: "scramble letters and numbers... careful it's not an auto kill"). The ×0.55 clock cut is gone; the scramble settles over 1.6 s (timed) or 2.5 s (untimed), less with WIS; a confusion bout is not refreshed and is followed by 3 turns Clear-Headed. `src/quiz_engine.py` (its confusion section), `data/confusion.json`, `tests/test_quiz_scramble.py`.
 - **2026-10-24** — Philosophy tier mastery. A run that answers every philosophy question of a tier right earns that tier's trait (+1 WIS; items of that tier identify themselves). `tier_progress(subject, tier) -> (done, total)` is the public count (only questions still in the bank count, and mastery now uses it, so a save from before a bank update cannot master a tier early). See [identify_v3 §8](identify_v3.md).
 ## Testing
 - `tests/test_philosophy_mastery.py` — the five tier traits: data, `tier_progress`, the award on the last question (+1 WIS with no allowance left), pickup and per-turn naming, the Ring of Pythia's lowered tier, a wrong answer not counting.
@@ -335,6 +341,7 @@ In chain modes, consuming the reroll also restores `chain = max(chain, 1)` so th
   - the shipped bank being its own curve.
 
   It also pins the scorer's anchors, the curve tool (move, replace, deterministic, idempotent) and the pipeline gate.
+- `tests/test_quiz_scramble.py` — the confusion scramble: the pure module (first and last kept, letters and digits permuted, punctuation and maths signs untouched, deterministic, settled at the settle time), the engine stamp and `q_elapsed`, the quiz screen drawing scrambled then true text and the Confused chip, the clock cut gone, the Clear-Headed recovery, the simulator's settle wait.
 - `tests/test_death_from_status_tick.py` — pins Stunned-10t-on-identify-fail still ticks + expires cleanly (quiz engine fires `add_effect` through main.py).
 
 ## Known rough edges

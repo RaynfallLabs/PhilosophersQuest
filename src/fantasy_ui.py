@@ -294,6 +294,38 @@ def readable(color, bg, ratio: float = 4.5) -> tuple:
     return c
 
 
+def confused_color() -> tuple:
+    """The Confused status's own colour (status_effects.EFFECT_INFO)."""
+    try:
+        from status_effects import EFFECT_INFO
+        return tuple(EFFECT_INFO['confused'][1])
+    except Exception:
+        return (185, 100, 230)
+
+
+def swim_color(text_color, bg) -> tuple:
+    """A word still swimming on the confused quiz (quiz_engine.scramble_runs): the
+    text's own colour leaning to the confusion purple, kept readable on
+    ``bg``. Readability first: it is a tint, never a hiding colour."""
+    purple = confused_color()
+    mix = tuple(int(a + (b - a) * 0.55) for a, b in zip(text_color[:3], purple))
+    return readable(mix, bg)
+
+
+def blit_runs(surf, font, runs, pos, color, swim) -> int:
+    """Draw one line given as ``(text, swimming)`` runs (quiz_engine.
+    scramble_runs) left to right from ``pos``: the swimming runs in
+    ``swim``, the rest in ``color``. Returns the width drawn."""
+    x, y = pos
+    for text, swimming in runs:
+        if not text:
+            continue
+        s = font.render(text, True, swim if swimming else color)
+        surf.blit(s, (x, y))
+        x += s.get_width()
+    return x - pos[0]
+
+
 _KEEP_UPPER = frozenset({'AI', 'HP', 'MP', 'SP', 'XP', 'AC', 'BUC', 'QA', 'II', 'III',
                          'IV', 'VI', 'VII', 'VIII', 'IX', 'XI', 'XII', 'STR', 'CON',
                          'DEX', 'INT', 'WIS', 'PER', 'NPC', 'DR'})
@@ -1130,13 +1162,17 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
                        text_font: pygame.font.Font,
                        selected: bool = False,
                        correct: bool | None = None,
-                       incorrect: bool | None = None) -> None:
+                       incorrect: bool | None = None,
+                       swim: list | None = None) -> None:
     """
     # FANTASY: Ornate answer-choice button for the quiz modal.
     rect = (x, y, w, h)
     text: single string or pre-wrapped list[str] of lines (multi-line is
           vertically centered as a block). Wrap it to the card width minus
           ``choice_text_insets()``.
+    swim: a confused hero's card (quiz_engine.scramble_runs): per line,
+          its ``(text, swimming)`` runs; the words still swimming are
+          tinted. The lines in ``text`` are those runs joined.
     """
     x, y, w, h = rect
 
@@ -1181,9 +1217,14 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     block_h = len(lines) * line_h
     ty = y + (h - block_h) // 2
     tx = x + choice_text_insets()[0]
-    for line in lines:
-        t_surf = text_font.render(line, True, t_color)
-        surf.blit(t_surf, (tx, ty))
+    runs = swim if (isinstance(swim, list) and len(swim) == len(lines)) else None
+    s_color = swim_color(t_color, KT.RAISED if art else FP.MIDNIGHT) if runs else None
+    for i, line in enumerate(lines):
+        if runs is not None:
+            blit_runs(surf, text_font, runs[i], (tx, ty), t_color, s_color)
+        else:
+            t_surf = text_font.render(line, True, t_color)
+            surf.blit(t_surf, (tx, ty))
         ty += line_h
 
 

@@ -779,6 +779,24 @@ the engine; input handlers mutate the same attribute.
 `header_h/timer_h/status_h/combat_h/section_gap`, `is_combat`,
 `font_tier`.
 
+**Confused (2026-11-19, the confusion section of `src/quiz_engine.py`).** The layout is always
+measured on the TRUE text. While `qe.scramble_view()` gives a seed and
+the share settled, `_draw_quiz` passes `q_lines` and each card's
+`c_wrapped` lines through `quiz_engine.scramble_runs` and draws the
+result: the same letters and digits moved about inside each word, so
+the wrapped lines keep their words and nothing jumps as the words
+settle. Words still swimming are tinted toward the confusion purple
+(`fantasy_ui.swim_color`, kept readable; `blit_runs` draws the runs,
+`draw_choice_button(swim=...)` on the cards). The cards still answer
+with the bank's own strings (`choice_answers`), and the result state is
+drawn true. While `qe.confused_quiz()`, a **Confused chip**
+(`_draw_quiz_confused_chip`, the line from `data/confusion.json`
+`quiz_chip`) sits in the timer row after the tier pips; a timed bar
+starts after it, and where the whole line would leave the bar less than
+half the row, the chip says only "Confused". It takes no row of its own,
+so the shrink-then-scroll ladder is the same, confused or not. Study
+Mode and the topic cards never scramble.
+
 ### 12b.2 Combat-strip helpers (v2.23.0)
 
 These replace the v2.22.0 `_combat_hud_row_rects` helper, which

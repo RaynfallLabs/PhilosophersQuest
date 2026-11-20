@@ -1326,7 +1326,7 @@ class Player:
         WIS 10 -> 10s, WIS 20 -> 20s. Floor of 5s prevents an
         unwinnable combat under drain-WIS curses; ``QuizEngine.start_quiz``
         applies the same 5 s floor again AFTER the status multiplier
-        (``get_quiz_timer_modifier``), so confusion or blindness can never
+        (``get_quiz_timer_modifier``), so blindness or a stun can never
         take the clock below it.
 
         Callers for non-math subjects still request this and pass the
@@ -1522,8 +1522,9 @@ class Player:
         unsolvable, and the engine never lets the result fall below 5 s
         (``quiz_engine.MIN_TIMED_SECONDS``, applied after this multiplier)."""
         mod = 1.0
-        if self.has_effect('confused'):
-            mod *= 0.55
+        # (Confusion no longer cuts the clock. Brandon, 2026-11-19: its
+        # words swim, then settle, and that wait is its cost on the clock:
+        # quiz_engine.settle_for.)
         if self.has_effect('stunned'):
             mod *= 0.75
         if self.has_effect('blinded'):
