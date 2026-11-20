@@ -19,6 +19,7 @@ sys.path.insert(0, os.path.join(ROOT, 'src'))
 
 import attack_gates  # noqa: E402
 import monster as monster_mod  # noqa: E402
+import morale  # noqa: E402
 import wards  # noqa: E402
 from game_magic import MagicMixin  # noqa: E402
 from monster import Monster  # noqa: E402
@@ -360,7 +361,15 @@ def test_a_babbling_follower_runs_when_hurt_in_his_own_turn(struck_hook):
     a.take_turn(g.player, g.dungeon, [leader, a])
     assert a._flee_timer == 0                            # his leader's hold keeps him
     attack_gates.inflict(a, 'babbled', 12)
-    a.take_turn(g.player, g.dungeon, [leader, a])
+    # Morale by Nature (AI-1): babbled, he cannot hear his captain, so his
+    # own nerve decides. Its 2d10 roll is forced to go his worst way here.
+    assert not morale.held_by_others(a, g.player)
+
+    class _Worst:
+        def randint(self, lo, hi):
+            return hi
+
+    morale.turn(a, g.player, [leader, a], rng=_Worst())
     assert a._flee_timer > 0
 
 
