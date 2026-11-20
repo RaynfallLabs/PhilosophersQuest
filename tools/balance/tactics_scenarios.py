@@ -52,7 +52,7 @@ from dungeon import Dungeon, Room, WALL, FLOOR  # noqa: E402
 from monster import Monster  # noqa: E402
 
 MONS = json.load(open(os.path.join(REPO, 'data', 'monsters.json'), encoding='utf-8'))
-MAX_TURNS = 80
+MAX_TURNS = 150          # a fight not over by then is left out of the counts
 
 
 class Hero:
@@ -179,7 +179,7 @@ def run_scene(kinds, scene: str, policy: str, seed: int, band=False, sight=5) ->
         hero = Hero(19, 7, sight)
         mons = []
         for i, kind in enumerate(kinds):
-            mons.append(make(kind, 15 - 5 * i, 6 + (i % 3)))
+            mons.append(make(kind, 16 - 4 * i, 6 + (i % 3)))
         if band and len(mons) >= 3:
             _band(mons, d)
     else:
@@ -269,6 +269,9 @@ def measure(runs: int = 20) -> dict:
                     for band in (False, True):
                         for s in range(runs):
                             got = run_scene(kinds, scene, policy, 1000 * gi + s, band)
+                            if got['slain'] < len(kinds):
+                                row['unfinished'] = row.get('unfinished', 0) + 1
+                                continue
                             for k in tot:
                                 tot[k] += got[k]
                                 st[k] += got[k]
@@ -280,7 +283,8 @@ def measure(runs: int = 20) -> dict:
         tm.ENABLED = True
         on, off = row['on'], row['off']
         # What a kid does: the three scenes alike.
-        ratios = [v['on'] / max(0.01, v['off']) for v in row['scenes'].values()]
+        ratios = [v['on'] / v['off'] for v in row['scenes'].values()
+                  if v.get('on') and v.get('off')] or [1.0]
         row['ratio'] = sum(ratios) / len(ratios)
         row['blows_per_kill_on'] = on['blows'] / max(1, on['slain'])
         row['blows_per_kill_off'] = off['blows'] / max(1, off['slain'])
@@ -298,6 +302,8 @@ def measure(runs: int = 20) -> dict:
             for s in range(runs):
                 for kinds in GROUPS['trickster']:
                     got = run_scene(kinds, 'open', 'advancer', 500 + s, False, sight)
+                    if got['slain'] < len(kinds):
+                        continue
                     for k in tot:
                         tot[k] += got[k]
             dark[f'{sight}_{label}'] = tot['blows'] / max(1, tot['slain'])
@@ -312,6 +318,8 @@ def measure(runs: int = 20) -> dict:
             for scene in ('open', 'corridor'):
                 for s in range(runs):
                     got = run_scene(kinds, scene, 'advancer', 2000 + 100 * gi + s)
+                    if got['slain'] < len(kinds):
+                        continue
                     for k in tot:
                         tot[k] += got[k]
         ln[label] = tot
@@ -358,7 +366,8 @@ def main(argv) -> int:
         print('           ' + '  '.join(f"{k}: {v['on']:.2f}/{v['off']:.2f}"
                                        for k, v in r['scenes'].items()))
         print(f"           strung out: two or more on him {r['together_on']:.0%} of the "
-              f"fighting turns with the mind, {r['together_off']:.0%} without")
+              f"fighting turns with the mind, {r['together_off']:.0%} without; "
+              f"{r.get('unfinished', 0)} fights not over in {MAX_TURNS} turns left out")
     dk = res['dark']
     print(f"dark edge, blows per kill: unlit on {dk['5_on']:.2f} off {dk['5_off']:.2f}; "
           f"lit on {dk['9_on']:.2f} off {dk['9_off']:.2f}")

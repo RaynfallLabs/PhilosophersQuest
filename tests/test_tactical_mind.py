@@ -158,6 +158,16 @@ def setup_function(_):
 _CLOCK = [100]
 
 
+def teardown_function(_):
+    """Leave the modules as they were found: later files share them."""
+    tm.TURN.__init__()
+    tm.ENABLED = True
+    tm.OFF.clear()
+    lanes.ENABLED = True
+    senses.QUEUE = True
+    senses.begin_turn(moved=True, guilty=False, floor=0)
+
+
 def turns(mons, hero, d, n, pets=()):
     """n rounds of every monster's turn, as the game runs them."""
     got = []
@@ -388,7 +398,7 @@ def test_a_bandit_waits_for_the_friend_coming_up_behind_him():
     d = open_room()
     hero = Hero(14, 6)
     front = make('bandit_thug', 11, 6)
-    back = make('bandit_thug', 4, 6)
+    back = make('bandit_thug', 8, 6)                     # a few steps behind
     front.take_turn(hero, d, [front, back])
     assert front.__dict__.get('_tm_last') == 'wait_allies'
     assert max(abs(front.x - hero.x), abs(front.y - hero.y)) >= 3
@@ -463,13 +473,16 @@ def test_a_hunter_waits_its_turn_behind_a_friend_and_takes_no_long_detour():
 
 def test_without_the_queue_the_same_hunter_walks_the_long_way_round():
     senses.QUEUE = False
-    d = grid(LONG_CORRIDOR)
-    hero = Hero(9, 1)
-    front = stub(x=8, y=1, family='mortals')
-    second = stub(x=7, y=1, family='mortals')
-    for _ in range(3):
-        second.take_turn(hero, d, [front, second])
-    assert (second.x, second.y) != (7, 1)
+    try:
+        d = grid(LONG_CORRIDOR)
+        hero = Hero(9, 1)
+        front = stub(x=8, y=1, family='mortals')
+        second = stub(x=7, y=1, family='mortals')
+        for _ in range(3):
+            second.take_turn(hero, d, [front, second])
+        assert (second.x, second.y) != (7, 1)
+    finally:
+        senses.QUEUE = True
 
 
 def test_a_hurt_soldier_changes_places_with_a_fresh_one():
@@ -756,14 +769,22 @@ def test_a_hobgoblin_or_a_blind_drow_does_not_seek_the_dark():
     assert not tm.thinks(drow, hero)
 
 
-def test_a_hurt_soldier_backs_into_a_doorway():
+def test_a_hurt_soldier_backs_into_a_doorway_against_a_hero_and_his_pet():
     d = grid(ROOM_AND_CORRIDOR)
     hero = Hero(3, 4)
+    pet = Pet(2, 5, hp=90)
     m = make('hobgoblin', 6, 4)
     m.hp = int(m.max_hp * 0.4)
-    m.take_turn(hero, d, [m])
+    tm.begin_turn(_Game([pet]))
+    m.take_turn(hero, d, [m], extra_occupied={(pet.x, pet.y)})
     assert m.__dict__.get('_tm_last') == 'hold_door' and (m.x, m.y) == (7, 4)
     assert tm.narrow(d, m.x, m.y)
+    # Alone, the hero gives it no reason to: a doorway is for a hero with company.
+    m2 = make('hobgoblin', 6, 4)
+    m2.hp = int(m2.max_hp * 0.4)
+    tm.begin_turn(_Game([]))
+    m2.take_turn(hero, d, [m2])
+    assert m2.__dict__.get('_tm_last') != 'hold_door'
 
 
 def test_a_door_is_held_ten_turns_at_most():
@@ -934,7 +955,9 @@ def test_the_games_hooks_note_the_heros_habits():
 # G's gates and AI-1's morale
 # ===========================================================================
 
-def test_a_silenced_or_unstrung_caster_casts_nothing():
+def test_the_cast_is_shut_by_the_gates_themselves():
+    """Slice G's gates decide (attack_gates.blocks_attack, wards.is_cast):
+    Silence stops a spell; Unstringing stops a missile, not a spell."""
     d = open_room()
     hero = Hero(12, 6)
     m = make('kobold_sorcerer', 7, 6)
@@ -942,7 +965,24 @@ def test_a_silenced_or_unstrung_caster_casts_nothing():
     m.status_effects['silenced'] = 4
     assert tm.castable(m, hero, d, [m]) == []
     m.status_effects = {'unstrung': 4}
-    assert tm.castable(m, hero, d, [m]) == []
+    assert tm.castable(m, hero, d, [m])                   # a Fire Bolt is no bowstring
+    drow = make('drow_warrior', 7, 6)
+    assert not tm.castable(drow, hero, d, [drow])         # a crossbow is no spell
+    drow.status_effects['unstrung'] = 4
+    assert lanes.usable(drow) == []
+
+
+def test_a_babbled_captain_gives_no_order_and_a_babbled_follower_takes_none():
+    d = open_room()
+    hero = Hero(9, 4)
+    mem = _band(d, hero)
+    mem[1].status_effects['babbled'] = 4
+    assert not tm.thinks(mem[1], hero)                    # he cannot hear his captain
+    assert tm.band_order(mem[2], hero, d, mem) == 'screen'
+    d = open_room()
+    mem = _band(d, hero)
+    mem[0].status_effects['babbled'] = 4
+    assert tm.band_order(mem[1], hero, d, mem) == ''
 
 
 def test_a_caster_mind_casts_through_choose_cast():
@@ -1121,3 +1161,265 @@ def test_the_help_page_tells_how_the_clever_ones_fight():
 def test_minds_json_is_packaged():
     spec = open(os.path.join(ROOT, 'PhilosophersQuest.spec'), encoding='utf-8').read()
     assert 'data/minds.json' in spec
+
+
+# ===========================================================================
+# The audit's fixes: lines judged by what he saw, orders that do not flap,
+# wax, the archer's Bestiary line, the simulator's knobs
+# ===========================================================================
+
+def test_a_line_stands_when_the_move_takes_the_creature_out_of_his_sight():
+    d, hero, mons = _corridor_scene(n=1)
+    hero.sight = 8
+    m = mons[0]
+    turns(mons, hero, d, 1)
+    lines = ai_lines.take(m)
+    hold = [(s, u) for s, u, _c in lines if 'narrow way' in s]
+    assert hold and hold[0][1] == hold[0][0]        # he saw it decide: said even out of sight
+    # A creature he never saw says nothing he could hear.
+    d, hero, mons = _corridor_scene(n=1)
+    hero.sight = 2
+    turns(mons, hero, d, 1)
+    assert all(not u for s, u, _c in ai_lines.take(mons[0]) if 'narrow way' in s)
+
+
+def test_the_charge_holds_until_the_hero_is_well_again():
+    d = open_room()
+    hero = Hero(9, 4)
+    mem = _band(d, hero, guards=3)
+    hero.hp = int(hero.max_hp * 0.35)
+    tm.TURN.n = 10
+    assert tm.band_order(mem[1], hero, d, mem) == 'charge'
+    hero.hp = int(hero.max_hp * 0.5)                  # healed a little: still the charge
+    tm.TURN.n = 11
+    assert tm.band_order(mem[1], hero, d, mem) == 'charge'
+    hero.hp = int(hero.max_hp * 0.8)
+    tm.TURN.n = 12
+    assert tm.band_order(mem[1], hero, d, mem) == 'screen'
+    shouts = [s for s in said(mem[0])]
+    assert len(shouts) == 2                           # the charge once, the screen once
+
+
+def test_wax_in_the_ears_keeps_out_the_words_not_the_orders():
+    class Wax:
+        counters = ['stop_ears']
+    import counters
+    d = open_room()
+    hero = Hero(9, 4)
+    hero.ears_stopped = True
+    real = counters.ears_stopped
+    counters.ears_stopped = lambda p: bool(getattr(p, 'ears_stopped', False))
+    try:
+        mem = _band(d, hero)
+        assert tm.band_order(mem[1], hero, d, mem) == 'screen'
+    finally:
+        counters.ears_stopped = real
+    lines = ai_lines.take(mem[0])
+    assert lines and 'wax' in lines[0][0] and not lines[0][1]
+    del Wax
+
+
+def test_every_archer_s_bestiary_says_it_finds_a_lane():
+    line = MINDS['flags']['archer']
+    assert line in tm.bestiary_lines('bandit_archer')
+    assert line in tm.bestiary_lines('skeleton_archer')   # no mind: the lanes are every archer's
+    assert line not in tm.bestiary_lines('kobold_sorcerer')  # a caster, not an archer
+    assert line not in tm.bestiary_lines('hobgoblin')
+
+
+def test_the_simulator_s_knobs_default_on_and_model_the_measure():
+    sys.path.insert(0, os.path.join(ROOT, 'tools', 'balance'))
+    import sim_ai2
+
+    class Run:
+        def __init__(self, knobs):
+            self.knobs = knobs
+            self.fs = {}
+
+            class P:
+                hp = 10
+            self.p = P()
+    assert sim_ai2.KNOBS == {'tac_mind': 1, 'tac_lanes': 1}
+    group = [make('hobgoblin', 1, 1), make('orc_warrior', 1, 2), make('wolf', 1, 3)]
+    run = Run({'tac_mind': 1, 'tac_lanes': 1})
+    sim_ai2.fight_start(run, group)
+    assert [g.__dict__.get('_sim_mind') for g in group] == ['soldier', 'soldier', None]
+    random.seed(1)
+    extra = sum(sim_ai2.extra_blow(run, group[0]) for _ in range(4000))
+    assert abs(extra / 4000 - (sim_ai2.MIND_BLOWS['soldier'] - 1)) < 0.02
+    assert not any(sim_ai2.extra_blow(run, group[2]) for _ in range(200))
+    sim_ai2.fight_start(Run({'tac_mind': 0}), group)
+    assert all(g.__dict__.get('_sim_mind') is None for g in group)
+    alone = [make('hobgoblin', 1, 1)]
+    sim_ai2.fight_start(run, alone)
+    assert alone[0].__dict__.get('_sim_mind') is None   # a fight of one: no band to think with
+    archer = make('bandit_archer', 1, 1)
+    assert sim_ai2.kite_prob(run, archer, 0.3) == pytest_approx(0.3 * sim_ai2.LANE_CLOSING)
+    assert sim_ai2.kite_prob(Run({'tac_lanes': 0}), archer, 0.3) == 0.3
+    assert sim_ai2.kite_prob(run, make('orc_priest', 1, 1), 0.3) == 0.3
+
+
+def pytest_approx(x):
+    import pytest
+    return pytest.approx(x)
+
+
+def test_the_harness_measures_with_the_real_turn():
+    sys.path.insert(0, os.path.join(ROOT, 'tools', 'balance'))
+    import tactics_scenarios as ts
+    got = ts.run_scene(('hobgoblin', 'hobgoblin', 'orc_archer'), 'corridor', 'camper', 1)
+    assert got['turns'] > 0 and got['mind_turns'] > 0
+    tm.ENABLED = False
+    try:
+        off = ts.run_scene(('hobgoblin', 'hobgoblin', 'orc_archer'), 'corridor', 'camper', 1)
+    finally:
+        tm.ENABLED = True
+    assert off['mind_turns'] == 0
+
+
+def test_a_queued_hunter_looks_again_when_the_hero_moves_on():
+    d = grid(LONG_CORRIDOR)
+    hero = Hero(9, 1)
+    front = stub(x=8, y=1, family='mortals')
+    second = stub(x=7, y=1, family='mortals')
+    second.take_turn(hero, d, [front, second])
+    assert second.__dict__.get('_queue_wait') and second.__dict__['_queue_goal'] == (9, 1)
+    hero.x, hero.y = 18, 4                                # round the loop, far from the queue
+    senses.step_toward(second, d, (hero.x, hero.y), [front, second], set(), hero)
+    assert second.__dict__['_queue_goal'] == (18, 4)      # it looked for its way again
+
+
+def test_a_pet_in_the_corridor_is_no_friend_to_wait_behind():
+    d = grid(LONG_CORRIDOR)
+    hero = Hero(9, 1)
+    hunter = stub(x=7, y=1, family='mortals')
+    hunter.take_turn(hero, d, [hunter], extra_occupied={(8, 1)})
+    assert not hunter.__dict__.get('_queue_wait')         # it goes round a pet as before
+
+
+# ===========================================================================
+# Every tactic: the scene where it fires, and three where it must not (the
+# creature has no mind; it cannot act; it cannot see the hero)
+# ===========================================================================
+
+def _scene_wait():
+    d = open_room()
+    hero = Hero(14, 6)
+    m = make('bandit_thug', 11, 6)
+    return m, hero, d, [m, make('bandit_thug', 8, 6)], []
+
+
+def _scene_flank():
+    d = open_room()
+    hero = Hero(10, 6)
+    m = make('huldufolk_raider', 7, 6)
+    return m, hero, d, [make('huldufolk_raider', 9, 6), m], []
+
+
+def _scene_dark():
+    d = open_room(24, 14)
+    hero = Hero(6, 6, sight=5)
+    m = make('drow_warrior', 10, 6)
+    return m, hero, d, [m], []
+
+
+def _scene_door():
+    d = grid(ROOM_AND_CORRIDOR)
+    hero = Hero(3, 4)
+    m = make('hobgoblin', 6, 4)
+    m.hp = int(m.max_hp * 0.4)
+    return m, hero, d, [m], [Pet(2, 5, hp=90)]
+
+
+def _scene_rotate():
+    d = grid(ROOM_AND_CORRIDOR)
+    hero = Hero(10, 4)
+    m = make('orc_warrior', 9, 4)
+    m.hp = int(m.max_hp * 0.3)
+    return m, hero, d, [m, make('orc_warrior', 8, 4)], []
+
+
+def _scene_focus():
+    d = open_room()
+    hero = Hero(10, 6)
+    m = make('gnoll_pack_lord', 7, 6)
+    return m, hero, d, [m], [Pet(8, 6, hp=25)]
+
+
+def _scene_bait():
+    d = open_room()
+    d.traps = {(6, 6): {'name': 'Snare', 'revealed': True}}
+    hero = Hero(4, 6)
+    m = make('kobold_pack_leader', 9, 6)
+    return m, hero, d, [m], []
+
+
+def _scene_hold():
+    d = grid(ROOM_AND_CORRIDOR)
+    hero = Hero(10, 4)
+    m = make('hobgoblin', 4, 4)
+    return m, hero, d, [m, make('hobgoblin', 4, 3)], []
+
+
+def _scene_cast():
+    d = open_room()
+    hero = Hero(12, 6)
+    m = make('kobold_sorcerer', 7, 6)
+    return m, hero, d, [m], []
+
+
+def _scene_screen():
+    d = open_room()
+    hero = Hero(9, 4)
+    mem = _band(d, hero)
+    return mem[1], hero, d, mem, []
+
+
+def _scene_feint():
+    d, hero, mem, front = _feint_scene()
+    return front, hero, d, mem, []
+
+
+TACTIC_SCENES = {
+    'wait_allies': _scene_wait, 'flank': _scene_flank, 'leave_light': _scene_dark,
+    'hold_door': _scene_door, 'rotate': _scene_rotate, 'focus_pet': _scene_focus,
+    'bait': _scene_bait, 'hold_choke': _scene_hold, 'cast': _scene_cast,
+    'screen': _scene_screen, 'feint': _scene_feint,
+}
+
+
+def _run(scene, spoil=None):
+    m, hero, d, mons, pets = scene()
+    if spoil:
+        spoil(m, hero)
+    tm.TURN.n = 400
+    tm.begin_turn(_Game(pets, turn=400))
+    m.take_turn(hero, d, mons, extra_occupied={(p.x, p.y) for p in pets})
+    return m.__dict__.get('_tm_last')
+
+
+def _no_mind(m, hero):
+    m.__dict__['mind'] = 'none'
+
+
+def _paralysed(m, hero):
+    m.status_effects['paralyzed'] = 5
+
+
+def _unseen(m, hero):
+    # Invisible, and out of reach: beside it he would be felt (senses.sees).
+    hero.status_effects['invisible'] = 50
+    m._tracking = False
+    if m._adjacent_to(hero):
+        hero.x += 7
+
+
+def test_every_tactic_fires_in_its_scene():
+    for tactic, scene in TACTIC_SCENES.items():
+        assert _run(scene) == tactic, tactic
+
+
+def test_no_tactic_fires_without_a_mind_while_held_or_unseen():
+    for tactic, scene in TACTIC_SCENES.items():
+        for spoil in (_no_mind, _paralysed, _unseen):
+            assert _run(scene, spoil) != tactic, (tactic, spoil.__name__)

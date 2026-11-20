@@ -241,6 +241,7 @@ data/
   lights.json       - Carried lights and the Light spell: status sight, spell turns, the oil, lines, card and HUD words
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
   packs.json        - Packs: the hunt's numbers, the lore packs and their tricks, the herds that do not hunt as one
+  minds.json        - The Tactical Mind: which kinds think and how (cunning, soldier, trickster, caster), lines, Bestiary sentences, the captains' orders, each missile's reach and the archers' lanes
   monster_ai.json   - Monster behaviour (AI-1): healers, summoners, breath, morale, drain, rot, light, alarm, throes... numbers and lines
   traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)

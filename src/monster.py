@@ -3293,8 +3293,10 @@ class Monster:
         return self._adjacent_to(player)
 
     def _ranged_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
-        """Ranged AI: shoot when player is in LOS within range.
-        If too close, try to back away. If too far or no LOS, approach."""
+        """Ranged AI: shoot when player is in LOS within its missile's reach
+        (src/lanes.py). A shot blocked by a friend: step to a lane, or hold.
+        If too close, try to back away. If too far or no LOS, approach, but
+        with no shot and no lane no nearer than two tiles."""
         self._piercing_collateral = []  # reset each turn
         # Draws Breath (src/breath.py): its only shot is a breath still being
         # drawn up, so it comes in with tooth and claw (it used to breathe
@@ -3332,8 +3334,9 @@ class Monster:
             has_los = False  # fall through to approach/reposition
 
         # Adjacent: an archer keeps its distance when it can (G5: this used
-        # to be unreachable, so archers stood and clubbed you). Half the time
-        # it steps back to a tile two away that still sees you, and shoots
+        # to be unreachable, so archers stood and clubbed you). It steps back
+        # to a tile two away that still has a shot at you (src/lanes.py: every
+        # time it has one, at most twice running; it was half the time), and shoots
         # on its next turn; cornered, it fights in melee.
         if self._adjacent_to(player):
             if lanes.applies(self):

@@ -340,9 +340,10 @@ def snapshot(m, player, dungeon, all_monsters, extra_occupied):
     ctx.allies = allies
     live = [o for o in allies if not broken(o)]
     engaged = sum(1 for o in live if o._adjacent_to(player))
+    # A friend about to come up: hunting him, coming on, a little behind it.
     coming = sum(1 for o in live
                  if o.__dict__.get('_tracking') and _comes_on(o) and not o._adjacent_to(player)
-                 and _cheb(o.x, o.y, *hero) > dist and _cheb(o.x, o.y, m.x, m.y) <= 8)
+                 and _cheb(o.x, o.y, *hero) > dist and _cheb(o.x, o.y, m.x, m.y) <= 4)
     engage_r = int(tactics.data().get('engage_radius', 6))
     choke = False
     if dist <= engage_r and (w.get('hold_choke') or w.get('flank') or w.get('feint')):
@@ -377,7 +378,10 @@ def snapshot(m, player, dungeon, all_monsters, extra_occupied):
         view.update(in_his_sight=ctx.in_sight, hero_sight=hs, dark_tile=ctx.dark is not None,
                     dark_struck=bool(d.get('_tm_dark_strike')),
                     edge_retreats=int(d.get('_tm_edge', 0) or 0))
-    if w.get('hold_door') and not adjacent and hp_share < float(tactics.data().get('door_below', 0.5)):
+    company = any(_cheb(p.x, p.y, *hero) <= 2 for p in TURN.pets)
+    view['hero_has_company'] = company
+    if (w.get('hold_door') and company and not adjacent
+            and hp_share < float(tactics.data().get('door_below', 0.5))):
         ctx.door = _door_path(m, player, dungeon, occ)
         view['door_tile'] = ctx.door is not None
         view['door_turns'] = int(d.get('_tm_door', 0) or 0)
@@ -699,39 +703,19 @@ def _screen(m, player, dungeon, all_monsters, occ, role):
 # The cast (AI-3's caster_ai.choose() is meant to decide in choose_cast)
 # ---------------------------------------------------------------------------
 
-# A spell, as the cast option means it: a distance attack of a magical kind,
-# not a missile from a weapon or a body (a poisoned dart, a venom spit) and
-# not a breath, a gaze or a cry (each has its own rule: breath.py, the gaze,
-# attack_gates' voice).
-MAGIC_TYPES = ('magic', 'fire', 'cold', 'necrotic', 'shadow', 'lightning', 'psionic', 'drain',
-               'holy', 'radiant', 'arcane', 'sonic')
-_NOT_CAST = ('bow', 'sling', 'dart', 'javelin', 'throw', 'hurl', 'spit', 'arrow', 'volley',
-             'spike', 'spray', 'shard', 'feather', 'boulder', 'rock', 'web', 'quill')
-
-
 def is_spell(atk) -> bool:
-    if not isinstance(atk, dict):
-        return False
-    if str(atk.get('type', 'physical') or 'physical') not in MAGIC_TYPES:
-        return False
-    try:
-        import guards
-        if guards.delivery(atk) in ('breath', 'gaze', 'voice', 'bite', 'sting', 'touch'):
-            return False
-    except (ImportError, KeyError):
-        pass
-    name = str(atk.get('name', '')).lower()
-    return not any(w in name for w in _NOT_CAST)
+    """A spell shot from afar, as the gates mean it (wards.is_cast: what
+    Silence stops), not a missile, a breath, a gaze or a cry."""
+    import wards
+    return isinstance(atk, dict) and wards.is_cast(atk)
 
 
 def castable(m, player, dungeon, all_monsters, occ=None) -> list:
-    """The spells it may cast at the hero now: its distance attacks of a
-    magical kind, in reach, with a clear shot; none while it is silenced or
-    unstrung (src/attack_gates.py), and never a breath still drawing."""
-    import attack_gates
+    """The spells it may cast at the hero now: in reach, with a clear shot,
+    and open to it by the gates (lanes.usable asks attack_gates.blocks_attack:
+    none while it is silenced; no shot at all while it is unstrung), never a
+    breath still drawing."""
     import lanes
-    if attack_gates.has(m, 'silenced') or attack_gates.has(m, 'unstrung'):
-        return []
     dist = _cheb(m.x, m.y, player.x, player.y)
     if dist < 2:
         return []
@@ -786,7 +770,10 @@ def band_order(m, player, dungeon, all_monsters) -> str:
         total = 1 + sum(int(v or 0) for v in (band.get('counts') or {}).values())
         alive = sum(1 for x in war_bands.members_of(all_monsters, uid) if x.alive)
         until = int(band.get('fall_back_until', -1) or -1)
-        if sees and (hero_share < float(o.get('charge_below', 0.4)) or packs.held(player)):
+        # Once called, the charge holds until the hero is well again (no
+        # shouting back and forth as his health crosses the line).
+        charging = band.get('order') == 'charge' and hero_share < float(o.get('charge_until', 0.6))
+        if sees and (charging or hero_share < float(o.get('charge_below', 0.4)) or packs.held(player)):
             order = 'charge'
         elif band.get('fell_back') and TURN.n and TURN.n < until:
             order = 'fall_back'
@@ -847,9 +834,29 @@ def say(m, key: str, dungeon, colour: str = 'warning', **kw) -> bool:
     store[k] = TURN.n
     if dungeon is not None:
         dungeon.__dict__['_tm_said'] = store
+    seen = ai_lines.fill(m, text, **kw)
     unseen = (tactics.data().get('unseen') or {}).get(key, '')
-    ai_lines.say(m, ai_lines.fill(m, text, **kw), unseen, colour)
+    if m.__dict__.get('_tm_witnessed'):
+        # He saw it decide (it was in his sight when its turn began): the line
+        # stands though its move took it out of his sight (the hold, the
+        # dark edge, the feint).
+        unseen = seen
+    ai_lines.say(m, seen, unseen, colour)
     return True
+
+
+def hero_sees(m, player, dungeon) -> bool:
+    """Can the hero see this creature where it stands (his light's reach, a
+    clear view, not invisible to him)?"""
+    if getattr(m, '_unseen', False) is True:
+        return False
+    try:
+        hs = int(player.get_sight_radius())
+    except Exception:
+        hs = 5
+    if _cheb(m.x, m.y, player.x, player.y) > hs:
+        return False
+    return _clear(player.x, player.y, m.x, m.y, dungeon)
 
 
 # ---------------------------------------------------------------------------
@@ -865,6 +872,7 @@ def turn(m, player, dungeon, all_monsters, extra_occupied=None, pattern: str = '
         d.pop('_pack_blow', None)            # a cast never thrown (the turn went elsewhere)
     d.pop('_focus', None)
     d.pop('_tm_surprise', None)
+    d.pop('_tm_witnessed', None)
     if pattern not in ('aggressive', 'ranged') or not thinks(m, player):
         if d.get('_tm_plan') is not None:
             m._tm_plan = None
@@ -886,6 +894,7 @@ def turn(m, player, dungeon, all_monsters, extra_occupied=None, pattern: str = '
     if opt in OFF:
         opt = 'attack'
     m._tm_hp = m.hp
+    m._tm_witnessed = hero_sees(m, player, dungeon)
     if opt == 'attack':
         m._tm_plan = None
         m._tm_last = 'attack'
@@ -1220,6 +1229,13 @@ def bestiary_lines(kind) -> list:
     for name in ('dark_edge', 'knows_traps'):
         if mind and flag(k, name) and flags.get(name):
             out.append(flags[name])
+    # Every archer finds a lane (src/lanes.py), mind or none.
+    import kind_data
+    kd = kind_data.kind_def(k)
+    if kd.get('ai_pattern') == 'ranged' and flags.get('archer'):
+        import wards
+        if any(wards.is_missile(a) for a in kd.get('attacks') or () if isinstance(a, dict)):
+            out.append(flags['archer'])
     return out
 
 

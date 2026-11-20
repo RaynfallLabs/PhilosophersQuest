@@ -108,7 +108,8 @@
   },
   "flags": {
     "dark_edge": "It fights from the edge of your light, and steps back into the dark after it strikes.",
-    "knows_traps": "It fights from behind its own snares and the floor's hazards, and never steps on them."
+    "knows_traps": "It fights from behind its own snares and the floor's hazards, and never steps on them.",
+    "archer": "An archer: it steps aside for a clear shot past its friends and keeps its distance."
   },
   "kinds": {
     "goblin": {"mind": "cunning", "knows_traps": true},
@@ -209,6 +210,7 @@
   "orders": {
     "_doc": "The Captain's Orders: a band's leader, while he lives, sees the hero and can shout, gives the band an order: screen (guards stand between the hero and him, shooters loose from behind them, casters hang back), charge (the hero is under charge_below of his health or held: everyone presses in), fall_back (half the band is down, once: the rest gather round him for fall_back_turns turns). Silenced, held, frightened, charmed, confused, babbled or asleep, he gives none. A hero with wax in his ears sees him shout but hears no words; the band still obeys.",
     "charge_below": 0.4,
+    "charge_until": 0.6,
     "fall_back_turns": 6,
     "screen_reach": 7,
     "unseen": "Somewhere ahead, a voice barks orders.",

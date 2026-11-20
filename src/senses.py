@@ -590,6 +590,8 @@ def step_toward(m, dungeon, goal, all_monsters, extra_occupied, player) -> bool:
     occ = _occupied(m, all_monsters, extra_occupied, player)
     d = m.__dict__
     hunting = QUEUE and player is not None and goal == (player.x, player.y)
+    if hunting and d.get('_queue_goal') is not None and _cheb(*goal, *d['_queue_goal']) > 1:
+        m._queue_wait = 0                # he has moved on: it looks for its way again
     if hunting and int(d.get('_queue_wait', 0) or 0) > 0:
         m._queue_wait = int(d['_queue_wait']) - 1
         nxt = d.get('_queue_step')
@@ -657,6 +659,7 @@ def _hunting_path(m, dungeon, goal, near, occ, all_monsters, avoid):
         return way
     if _friend_at(m, all_monsters, way[0]):
         m._queue_wait = int(q.get('wait', 3))
+        m._queue_goal = tuple(goal)
         m._queue_step = tuple(way[0])
         m._queue_rest = [tuple(t) for t in way[1:]]
         m._queued = True

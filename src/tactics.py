@@ -103,6 +103,7 @@ class View:
     edge_retreats: int = 0
     door_tile: bool = False
     door_turns: int = 0
+    hero_has_company: bool = False  # a pet or a called ally fights beside him
     rotate_ok: bool = False
     feint_ok: bool = False
     pet_target: bool = False        # a badly hurt pet it may go for
@@ -158,17 +159,26 @@ def activation(opt: str, v: View, sp: dict) -> float:
         return 1.2 if (v.can_cast and not v.adjacent) else 0.0
     if v.adjacent:
         return 0.0
+    # An archer or a caster with a clear shot takes it: no option of place
+    # is worth a shot not loosed (the dark edge's step out of sight is: it
+    # shoots from the dark next).
+    if v.has_lane and opt in ('screen', 'fall_back', 'wait_allies', 'flank', 'bait',
+                              'hold_door'):
+        return 0.0
     if opt == 'screen':
         # Before the fight is joined: once one of them is on the hero, the
         # guards close too (a screen that stood by would be a gift).
-        # The leader hangs back behind his guards a while longer.
-        if v.order != 'screen' or not v.screen_tile or press:
+        # The leader hangs back while his guards come up before him; once
+        # the fight is joined he is in it too.
+        if v.order != 'screen' or not v.screen_tile or press or v.engaged:
             return 0.0
         if v.role == 'leader':
-            return 1.0 if (v.dist >= 2 and v.waited < 2 * patience) else 0.0
-        return 1.0 if (v.role == 'guard' and not v.engaged and v.dist >= 3) else 0.0
+            return 1.0 if (v.dist >= 2 and v.waited < patience) else 0.0
+        return 1.0 if (v.role == 'guard' and v.dist >= 3) else 0.0
     if opt == 'fall_back':
-        return 1.2 if (v.order == 'fall_back' and v.rally_tile) else 0.0
+        # Those well clear of the fight gather round the captain; the ones
+        # in it fight on.
+        return 1.2 if (v.order == 'fall_back' and v.rally_tile and v.dist >= 4) else 0.0
     if opt == 'hold_choke':
         if (not v.choke or press or kiter or v.hurt_lately or v.waited >= patience
                 or v.has_lane or v.dist > _r('engage_radius', 6)):
@@ -198,8 +208,10 @@ def activation(opt: str, v: View, sp: dict) -> float:
             return 1.0
         return 0.0
     if opt == 'hold_door':
-        if (v.choke or press or not v.door_tile or v.hp_share >= _r('door_below', 0.5)
-                or v.door_turns >= _r('door_turns', 10)):
+        # A doorway is worth backing into only against a hero with a
+        # companion who could come round it (a pet, a called ally).
+        if (v.choke or press or not v.door_tile or not v.hero_has_company
+                or v.hp_share >= _r('door_below', 0.5) or v.door_turns >= _r('door_turns', 10)):
             return 0.0
         return 1.0
     if opt == 'bait':

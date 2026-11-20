@@ -50,9 +50,11 @@ def _cheb(ax, ay, bx, by) -> int:
     return max(abs(ax - bx), abs(ay - by))
 
 
-def is_missile(atk) -> bool:
-    """An attack that reaches from a distance: flagged `ranged`, or named
-    with a ranged word (monster._RANGED_WORDS, as Monster._distance_attacks)."""
+def is_distance(atk) -> bool:
+    """An attack that reaches from a distance (a missile or a spell):
+    flagged `ranged`, or named with a ranged word (monster._RANGED_WORDS, as
+    Monster._distance_attacks). What it may use now is the gates' to say
+    (usable)."""
     if not isinstance(atk, dict):
         return False
     if atk.get('ranged'):
@@ -81,7 +83,7 @@ def attack_range(atk) -> int:
 def usable(m) -> list:
     """Its distance attacks it may use now: not shut by a gate (silenced,
     unstrung) and not a breath still being drawn."""
-    atks = [a for a in (getattr(m, 'attacks', None) or ()) if is_missile(a)]
+    atks = [a for a in (getattr(m, 'attacks', None) or ()) if is_distance(a)]
     if not atks:
         return []
     try:
