@@ -34,12 +34,14 @@ def applies(m) -> bool:
     """The lanes are the ranged AI's (the archers, slingers and bolt-casters);
     a healer or a summoner that borrows its turn keeps beside its friends.
     An archer that is not its own master (confused, blinded, babbled, held,
-    frightened, charmed) or that its morale has broken takes no lane: the
-    same gate as the Tactical Mind's (tactical_mind.CANNOT, broken)."""
+    frightened, charmed), that its morale has broken, or that is busy
+    holding the hero (Held Fast, src/holds.py: a naga's coil holds him where
+    it is) takes no lane: the same gate as the Tactical Mind's
+    (tactical_mind.CANNOT, broken, busy)."""
     if not ENABLED or getattr(m, 'ai_pattern', '') != 'ranged':
         return False
     import tactical_mind
-    if tactical_mind.broken(m):
+    if tactical_mind.broken(m) or tactical_mind.busy(m):
         return False
     st = getattr(m, 'status_effects', None) or {}
     return not any(int(st.get(e, 0) or 0) > 0 for e in tactical_mind.CANNOT)

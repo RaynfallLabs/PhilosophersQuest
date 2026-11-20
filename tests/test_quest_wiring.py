@@ -993,7 +993,9 @@ def test_deaths_bonus_step_is_never_a_second_attack():
 def test_time_does_not_stop_for_death_or_named_foes():
     src = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
     i = src.index('def _do_monster_turns')
-    block = src[i:i + 4500]
+    # (5000 since AI-3, 2026-11-20: the world turn's holds and auras come
+    # before the loop; the checks are still the loop's own first lines.)
+    block = src[i:i + 5000]
     assert 'if _time_stopped and not (self.death_pursues' in block
     assert 'if _time_stopped and not m._is_named_foe():' in block
 

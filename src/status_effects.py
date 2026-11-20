@@ -898,6 +898,22 @@ _EFFECT_NOUN: dict = {
     'silenced': 'silence', 'teleportitis': 'slipping',
 }
 
+# Held Fast (AI-3, src/holds.py): a coil, a gullet or a drowning grip. HARD
+# control, so a DEX save slips it, it lasts at most CONTROL_CAP turns and the
+# grace follows it; not a DEBUFF (it is a grip, not a curse a cure lifts: the
+# holder's death, the hero's blow or his struggle ends it).
+EFFECT_INFO.setdefault('held', ('Held', (190, 120, 80),
+                                'In its grip: you cannot walk away. Strike the holder hard, or struggle free'))
+_EXPIRE_MSGS.setdefault('held', ('The grip slackens, and you tear yourself free.', 'success'))
+_EFFECT_NOUN.setdefault('held', 'grip')
+HARD_CONTROL = HARD_CONTROL | frozenset({'held'})
+CONTROL = HARD_CONTROL | SOFT_CONTROL
+CONTROL_CAP.setdefault('held', 4)
+SAVE_STAT.setdefault('held', 'DEX')
+# The Caster's Book (AI-3, src/caster_ai.py): a ward raised about a caster.
+EFFECT_INFO.setdefault('spell_ward', ('Warded', (170, 170, 230),
+                                      'A ward turns weapons aside: blows land weak; spells pass it'))
+
 
 def _family_ward(player, source, effect: str, gaze: bool) -> tuple[int, float]:
     """(save bonus, duration share) the hero's monster-family knowledge

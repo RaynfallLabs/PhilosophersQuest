@@ -1714,3 +1714,23 @@ def test_audit_d11_a_doorway_is_held_only_against_a_pet_it_can_see():
 def test_audit_d12_the_docs_say_the_archer_rule_of_today():
     text = open(os.path.join(ROOT, 'docs', 'systems', 'monsters.md'), encoding='utf-8').read()
     assert 'steps back half the time to a tile 2 away' not in text
+
+
+def test_a_creature_holding_the_hero_is_busy_no_lane_no_orders_no_plan():
+    """AI-3's Held Fast (src/holds.py): one holding or swallowing the hero
+    takes no lane step, gives no order, heeds none and plans nothing."""
+    d = open_room()
+    hero = Hero(14, 6)
+    sword = make('orc_warrior', 13, 6)
+    archer = make('bandit_archer', 10, 6)
+    archer._holding = True
+    assert not lanes.applies(archer)
+    assert lanes.blocked_turn(archer, hero, d, [sword, archer], set()) is None
+    d = open_room()
+    hero = Hero(9, 4)
+    mem = _band(d, hero)
+    mem[0]._holding = True                                 # the captain has the hero in his grip
+    assert tm.band_order(mem[1], hero, d, mem) == ''
+    mem[0].__dict__.pop('_holding')
+    mem[1]._holding = True                                 # a guard holding him heeds no order
+    assert not tm.thinks(mem[1], hero)

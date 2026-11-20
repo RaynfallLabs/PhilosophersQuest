@@ -230,7 +230,7 @@ NEW['blue_men_of_the_minch'] = kind(
      atk('Undertow Grab', '1d10+3', 'blunt', 'grapple', 'immobilized', 0.3, 2)],
     family='fair_folk', tags=['fey'], res=['cold', 'lightning'], weak=['fire'], pronoun='he',
     pack=(2, 3), item=0.15,
-    parley={'subject': 'grammar',
+    parley={'subject': 'grammar', 'storm': 'Squall Spray',
             'call': "The Blue Men rise to the waist and their chief calls out two lines of verse. "
                     "Answer him well and they let you pass.",
             'right': "The chief of the Blue Men laughs at your answer, and they sink back into the "
@@ -626,8 +626,13 @@ SENSE_RANGES = {'myrmekes': {'scent': 12}, 'psoglav': {'scent': 12}}
 # Harvest: a distinctive creature gets its own part; close kin share one by
 # lore; a person is searched (harvest_map.json "people").
 HARVEST_SHARE = {
-    'cu_sith': 'fionn_hound_prime', 'khalkotauros': 'talos_prime', 'likho': 'night_hag_prime',
-    'asanbosam': 'vampire_prime', 'nuckelavee': 'hezrou_prime', 'upas_tree': 'corrupted_treant_prime',
+    # (Tier 1 kinds take a tier 1 part: Hecate's hounds of the underworld for
+    # the fairy hound, the banshee's omen of doom for ill luck itself, the
+    # nosferatu's blood-marrow for the tree-vampire. No tier 3 tree, tier 4
+    # spider or tier 5 construct part exists: the upas, the tsuchigumo and
+    # the relic guardians keep their kin's.)
+    'cu_sith': 'hecate_hound_prime', 'khalkotauros': 'talos_prime', 'likho': 'banshee_prime',
+    'asanbosam': 'nosferatu_prime', 'nuckelavee': 'hezrou_prime', 'upas_tree': 'corrupted_treant_prime',
     'tsuchigumo': 'giant_spider_prime', 'bhuta_vahana_yanta': 'iron_sentinel_prime',
     'eitr': 'plague_ooze_prime',
 }

@@ -125,6 +125,13 @@ CANNOT = ('sleeping', 'paralyzed', 'stunned', 'frozen', 'feared', 'charmed',
           'confused', 'blinded', 'babbled', 'immobilized', 'impaled', 'stuck_in_pit')
 
 
+def busy(m) -> bool:
+    """It holds the hero fast (AI-3's Held Fast, src/holds.py: a coil, a
+    swallow, a drag under): its turn is the hold's, so it plans nothing,
+    takes no lane step, gives no order and heeds none."""
+    return bool(getattr(m, '__dict__', {}).get('_holding'))
+
+
 def broken(m) -> bool:
     """Its morale has it (src/morale.py): running, at bay, cowed, yielded,
     bolting or making for its friends."""
@@ -165,7 +172,7 @@ def thinks(m, player) -> bool:
         return False
     if any(_has(m, e) for e in CANNOT):
         return False
-    if broken(m) or d.get('stolen_gold') or d.get('stolen_items'):
+    if broken(m) or busy(m) or d.get('stolen_gold') or d.get('stolen_items'):
         return False
     try:
         import packs
@@ -749,13 +756,21 @@ def castable(m, player, dungeon, all_monsters, occ=None) -> list:
 
 
 def choose_cast(m, player, dungeon, all_monsters, rng=random):
-    """The spell it casts now, or None. Today: one of its castable spells at
-    random, as Monster.attack picks a blow from range. AI-3's
-    caster_ai.choose(monster, ...) is meant to decide here."""
+    """The spell it casts now, or None: of its castable spells, the one the
+    Caster's Book picks (AI-3, caster_ai.pick_attack: its book's weight for
+    it, a curse that would take, its weight of blow, never a type the hero
+    wards off), the same choice a caster that does not think makes from
+    range (Monster.attack). The book's other spells (a ward, a curse, a
+    mending, a blink) come before the Tactical Mind's turn (src/ai_turn.py).
+    At random only for a creature the book does not rule (a named foe)."""
     spells = castable(m, player, dungeon, all_monsters)
     if not spells:
         return None
-    return spells[0] if len(spells) == 1 else rng.choice(spells)
+    if len(spells) == 1:
+        return spells[0]
+    import caster_ai
+    best = caster_ai.pick_attack(m, player, spells)
+    return best if best is not None else rng.choice(spells)
 
 
 # ---------------------------------------------------------------------------
@@ -769,7 +784,7 @@ def can_shout(m) -> bool:
         return False
     if any(_has(m, e) for e in CANNOT + ('silenced',)):
         return False
-    return not broken(m)
+    return not broken(m) and not busy(m)
 
 
 def band_order(m, player, dungeon, all_monsters) -> str:

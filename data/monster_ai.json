@@ -1,5 +1,5 @@
 {
-  "_doc": "Monster behaviour, first wave (AI-1, 2026-11-19): the numbers and lines of each behaviour, one section each. The per-kind fields (light_shy, alarm, death_throes, relurks, hides_in_dark, drain_share, drain_con, morale, morale_style, heal_cooldown, heal_below, summon_live_cap; on an attack recharge, drains_life, snuffs_light, snuff_chance, shove) are in data/monsters.json and read through src/kind_data.py. Lines are filled by monster.fill: {The} {the} {A} {a} and the pronoun slots {he} {He} {him} {his} {His} {himself}. A line with 'unseen' in its key is said when the hero cannot see the creature: it never names it. docs/systems/monsters.md, 'Monster behaviour, first wave', says what each one does.",
+  "_doc": "Monster behaviour, first wave (AI-1, 2026-11-19): the numbers and lines of each behaviour, one section each. The per-kind fields (light_shy, alarm, death_throes, relurks, hides_in_dark, drain_share, drain_con, morale, morale_style, heal_cooldown, heal_below, summon_live_cap; on an attack recharge, drains_life, snuffs_light, snuff_chance, shove) are in data/monsters.json and read through src/kind_data.py. Lines are filled by monster.fill: {The} {the} {A} {a} and the pronoun slots {he} {He} {him} {his} {His} {himself}. A line with 'unseen' in its key is said when the hero cannot see the creature: it never names it. docs/systems/monsters.md, 'Monster behaviour, first wave', says what each one does. The third wave (AI-3, 2026-11-20): casters, holds, auras, home_ground, kit, skittish and surprise; the per-kind fields spells, aura, territorial, lair_radius, lair_line, kit, bargain and, on an attack, hold ('Monster behaviour, third wave').",
   "healer": {
     "_doc": "src/faction.py: a healer mends only its own side (war-band, else pack, else family, else kind), only a friend under heal_below of its health, the one fighting the hero first, then the most hurt; then it rests its voice heal_cooldown turns.",
     "heal_cooldown": 3,
@@ -242,5 +242,122 @@
     "line": "{The}'s blow throws you back!",
     "aimed_line": "{The}'s blow throws you back, right where it hurts!",
     "held_line": "You keep your feet against {the}'s blow."
+  },
+  "casters": {
+    "_doc": "src/caster_ai.py (The Caster's Book). A kind's 'spells' (monsters.json) are cast by need: the ready spell whose 'when' holds with the highest 'weight' (ties: the first written). Kinds: ward (Monster.damage_ward 'share' for 'turns'), control (an 'effect' for 'duration' through the rider's road), heal (src/faction.py), escape (a blink four paces off), dispel (one of buff_words' statuses), darkness (light_shy.snuff 'dark'), hurt (pick_attack's weight for one of its own attacks). 'wind_up' spells are chanted a turn first; a blow breaks the chant. 'reach' is how far a spell is aimed; 'cooldown' the default turns before a spell is ready again. Lines: a spell's own 'wind_up' / 'cast' line, else lines.<key>_<kind>, else lines.<key>; {spell} is its name, {buff} the dispelled status.",
+    "reach": 6,
+    "cooldown": 6,
+    "lines": {
+      "wind_up": "{The} begins a chant, hands raised.",
+      "wind_up_control": "{The} begins a low chant, {his} eyes on you.",
+      "cast": "{The}'s chant ends.",
+      "cast_ward": "{The}'s chant ends: a ward of bone and smoke rises about {him}.",
+      "cast_control": "{The}'s chant ends in a curse.",
+      "cast_dispel": "{The} speaks a word of unmaking: your {buff} is torn away!",
+      "cast_darkness": "{The} closes {his} fist, and the dark comes down.",
+      "cast_escape": "{The} steps into nothing and is four paces off.",
+      "spoil": "The blow breaks {the}'s chant!",
+      "ward_fades": "The ward about {the} fades away.",
+      "gaze_blind": "You cannot meet a gaze you cannot see.",
+      "resisted": "The curse finds no hold on you.",
+      "turned": "Your spell turning throws the curse back on {the}!"
+    },
+    "unseen": {
+      "wind_up": "Somewhere near, a voice begins to chant.",
+      "darkness": "Somewhere near, a voice speaks, and your light goes out.",
+      "curse": "Somewhere near, a voice speaks a curse.",
+      "dispel": "Somewhere near, a voice speaks a word of unmaking: your {buff} is torn away!"
+    },
+    "buff_words": {
+      "hasted": "haste",
+      "shielded": "shield",
+      "displacement": "displacement",
+      "fire_shield": "fire shield",
+      "cold_shield": "cold shield",
+      "reflecting": "reflection",
+      "magic_resist": "magic resistance",
+      "invisible": "invisibility",
+      "regenerating": "regeneration"
+    }
+  },
+  "holds": {
+    "_doc": "src/holds.py (Held Fast). An attack's 'hold' {kind: constrict|swallow|drag, type, break_share, max_turns<=4, save: STR|DEX} that lands takes the hero (a DEX save slips it: the 'held' status). Each holder turn it squeezes for that attack's own dice (no roll to hit), typed; a drag first hauls him a tile toward water within drag_reach and at the water's edge pulls him under (drown_mult). A blow or blows on the holder of break_share of its health between two of its turns frees him; so does a STR or DEX struggle (his step) against the hold's DC plus struggle_dc_add, the holder dying, sleeping, held, afraid or broken, Loosed, the Coif of Beowulf, or the status running out. Then he is Recovering (no hold at once again). Lines: <key>_<kind> before <key>; {damage}.",
+    "break_share": 0.1,
+    "drag_reach": 10,
+    "drown_mult": 1.5,
+    "struggle_dc_add": 0,
+    "lines": {
+      "start_constrict": "{The}'s coils close round you!",
+      "start_swallow": "{The} swallows you whole! It is dark, and {his} gut closes round you.",
+      "start_drag": "{The} seizes you and starts to drag you toward the water!",
+      "loosed_loosed": "{The}'s grip slides off you: nothing can hold you.",
+      "loosed_grendel": "Grendel-grip: {the} cannot get a hold on you.",
+      "squeeze_constrict": "{The}'s coils squeeze you for {damage} damage!",
+      "squeeze_swallow": "{The}'s gut burns you for {damage} damage!",
+      "squeeze": "{The} holds you fast and crushes you for {damage} damage!",
+      "drag": "{The} drags you a step toward the water! ({damage} damage)",
+      "under": "{The} pulls you under the black water! You choke for {damage} damage!",
+      "struggle_fail_constrict": "You strain against {the}'s coils, but they hold.",
+      "struggle_fail": "You fight {the}'s grip, but it holds you fast.",
+      "free_struggle_constrict": "You twist out of {the}'s coils!",
+      "free_struggle": "You wrench yourself free of {the}!",
+      "free_cut_constrict": "Your blow breaks {the}'s coils! You are free.",
+      "free_cut_swallow": "You hack your way out of {the}!",
+      "free_cut": "You tear free of {the}'s grip!",
+      "free_dead_swallow": "You climb out of {the}'s body.",
+      "free_dead": "{The}'s grip goes slack. You are free.",
+      "free_held": "{The}'s grip goes slack. You are free.",
+      "free_scared": "{The} lets go of you!",
+      "free_apart": "You are out of {the}'s reach, and free.",
+      "free_loosed": "Nothing can hold you: you slip out of {the}'s grip!",
+      "free_grendel": "Grendel-grip: you wrench free of {the}!"
+    }
+  },
+  "auras": {
+    "_doc": "src/auras.py (Auras). A kind's 'aura' {kind: fear|stench|heat|cold, radius 1-3, ...} works on the hero each world turn he is within its radius: fear once a fight when he sees it (a WIS save; 'turns'), stench each turn until he once masters his stomach (a CON check; 'effect' for 'turns' at 'chance'), heat and cold a 'share' of his own health a turn (at most twice the strongest at once). A kind's own 'line' / 'steady_line' before these; {damage}.",
+    "lines": {
+      "fear": "Dread rolls off {the} like a cold wind, and you turn to run!",
+      "fear_steady": "Dread rolls off {the}, but you stand your ground. It will not shake you again.",
+      "stench": "The reek of {the} turns your stomach.",
+      "stench_steady": "You master your stomach against the reek of {the}.",
+      "heat": "The heat of {the} scorches you for {damage} damage.",
+      "cold": "The cold of {the} bites into you for {damage} damage."
+    }
+  },
+  "home_ground": {
+    "_doc": "src/home_ground.py (Home Ground). A 'territorial' kind lets the hero go once he is more than lair_radius + slack tiles from its home and walks back; it knows him again within lair_radius; on its own ground it never breaks. A kind's 'lair_line' before 'line'.",
+    "lair_radius": 8,
+    "slack": 2,
+    "line": "{The} stops at the edge of {his} ground and watches you go.",
+    "line_unseen": ""
+  },
+  "kit": {
+    "_doc": "src/monster_kit.py (Uses What It Carries). A kind's 'kit' [{item, chance}] is rolled once. Under drink_below of its health a healing potion it carries (or stole) is drunk with its turn; a flask of fire oil is thrown at a hero throw_range tiles off with a clear throw. What is left falls where it dies. {potion} {potion_bare} {flask} {amount}.",
+    "drink_below": 0.35,
+    "throw_range": [
+      2,
+      4
+    ],
+    "drink": "{The} gulps down {potion}, and {his} wounds close!",
+    "drink_stolen": "{The} gulps down your own {potion_bare}, and {his} wounds close!",
+    "drink_wasted": "{The} gulps down {potion}, but {his} wound will not close.",
+    "drink_unseen": "Somewhere near, glass clinks and something drinks.",
+    "throw": "{The} hurls {flask} at you!",
+    "throw_unseen": "Something sails out of the dark at you!"
+  },
+  "skittish": {
+    "_doc": "src/skittish.py (Skittish, Not Suicidal). A cowardly kind keeps keep_near to keep_far tiles off and darts in when the hero's last step took him away from it. Cornered, a kind with a 'bargain' offers its purse once (its treasure roll times gold_mult); the hero is asked (ask_line).",
+    "keep_near": 3,
+    "keep_far": 5,
+    "gold_mult": 1.5,
+    "dart_line": "{The} darts in behind you!",
+    "offer_line": "{The}, cornered, offers you gold to let {him} go.",
+    "accept_line": "{The} drops {his} purse and is gone.",
+    "refuse_line": "{The} squares up to you.",
+    "ask_line": "He holds up a fat purse: his gold for his freedom. Take it and let him go?"
+  },
+  "surprise": {
+    "_doc": "src/surprise.py (Lurkers Keep Their Promise). An ambusher springs when the hero is within spring_reach tiles with nothing between them; unseen till then, its first blow that lands is a surprise (x1.75, as a mimic's). Spotted first, or a mimic of a kind he knows, it surprises no one.",
+    "spring_reach": 2
   }
 }

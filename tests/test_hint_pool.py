@@ -56,8 +56,9 @@ def test_each_tier_keeps_about_its_old_count():
     for tier, n in OLD_COUNTS.items():
         assert abs(len(POOL[tier]) - n) <= 10, (tier, len(POOL[tier]), n)
     # (400 until 2026-11-19: the carried lights and the packs each added
-    # their hints.)
-    assert 360 <= len(ALL) <= 420
+    # their hints; 420 until 2026-11-20, when the third wave of monster
+    # behaviour added six at tiers 4 and 5, inside their tiers' allowance.)
+    assert 360 <= len(ALL) <= 426
 
 
 def test_no_hint_is_longer_than_the_old_longest():
@@ -174,6 +175,13 @@ TAUGHT = {
     # Brandon, 2026-11-17: a kind identified and harvested once is harvested
     # again with no question (Zhuangzi's Cook Ding, who understood the ox).
     'a kind known and butchered once asks no question': r'cook ding',
+    # The third wave of monster behaviour (AI-3, 2026-11-20).
+    'a swallowed hero cuts his way out': r'cut open from within',
+    'what a monster carries, it uses': r'something for a bad day',
+    "the leprechaun's bargain": r'leprechaun pays',
+    "a caster's chant broken by a blow": r'blow struck in that breath',
+    'home ground': r'the barrow lets you go',
+    'heat and cold auras': r'salamander',
 }
 
 

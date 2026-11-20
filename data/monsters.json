@@ -426,10 +426,14 @@
         "name": "Engulf",
         "damage": "1d6",
         "type": "blunt",
-        "effect": "paralyzed",
-        "effect_chance": 0.3,
-        "effect_duration": 3,
-        "delivery": "touch"
+        "delivery": "touch",
+        "hold": {
+          "kind": "swallow",
+          "type": "acid",
+          "break_share": 0.15,
+          "max_turns": 4,
+          "save": "DEX"
+        }
       },
       {
         "name": "Dissolve",
@@ -818,7 +822,13 @@
     "thac0_lore": 20,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "bargain": {
+      "gold_mult": 1.5,
+      "line": "{The}, cornered, holds up a fat purse: 'Let me go and it's yours!'",
+      "accept_line": "{The} tosses the purse at your feet and is gone in a flash of green.",
+      "refuse_line": "'Then you'll get nothing!' {The} squares up to you."
+    }
   },
   "kobold": {
     "name": "kobold",
@@ -1499,7 +1509,10 @@
     ],
     "multi_attack_count": 2,
     "light_shy": true,
-    "turns_to_stone_in_light": true
+    "turns_to_stone_in_light": true,
+    "territorial": true,
+    "lair_radius": 7,
+    "lair_line": "{The} stops at the edge of {his} lair and watches you go."
   },
   "orc_warrior": {
     "name": "orc warrior",
@@ -1988,7 +2001,10 @@
       "charmed"
     ],
     "status_weak": [],
-    "disease_linger": 10
+    "disease_linger": 10,
+    "territorial": true,
+    "lair_radius": 8,
+    "lair_line": "{The} stops at the edge of {his} tomb and watches you go."
   },
   "giant_spider": {
     "name": "giant spider",
@@ -2743,7 +2759,12 @@
       "sleeping",
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "aura": {
+      "kind": "heat",
+      "radius": 1,
+      "share": 0.03
+    }
   },
   "earth_elemental": {
     "name": "earth elemental",
@@ -2946,7 +2967,22 @@
     "opener": {
       "attack": "Curse Bolt",
       "range": 5
-    }
+    },
+    "spells": [
+      {
+        "id": "bone_ward",
+        "kind": "ward",
+        "name": "Bone Ward",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.5
+        }
+      }
+    ]
   },
   "mind_flayer": {
     "name": "mind flayer",
@@ -3167,7 +3203,12 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "aura": {
+      "kind": "fear",
+      "radius": 2,
+      "turns": 3
+    }
   },
   "bone_golem": {
     "name": "bone golem",
@@ -3378,7 +3419,10 @@
     "status_immune": [],
     "status_weak": [
       "sleeping"
-    ]
+    ],
+    "territorial": true,
+    "lair_radius": 9,
+    "lair_line": "{The} stops at the edge of {his} hoard and watches you go."
   },
   "beholder": {
     "name": "beholder",
@@ -3630,7 +3674,52 @@
       "charmed"
     ],
     "status_weak": [],
-    "drain_con": true
+    "drain_con": true,
+    "spells": [
+      {
+        "id": "lich_ward",
+        "kind": "ward",
+        "name": "Ward of the Dead",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.6
+        }
+      },
+      {
+        "id": "unmaking",
+        "kind": "dispel",
+        "name": "Word of Unmaking",
+        "cooldown": 8,
+        "weight": 5,
+        "when": {
+          "hero_buffed": true
+        }
+      },
+      {
+        "id": "lich_hold",
+        "kind": "control",
+        "name": "Grave-Hold",
+        "effect": "paralyzed",
+        "duration": 2,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.4
+        },
+        "cast": "{The} speaks one cold word, and your limbs lock."
+      }
+    ],
+    "aura": {
+      "kind": "fear",
+      "radius": 2,
+      "turns": 3
+    }
   },
   "adult_dragon": {
     "name": "adult dragon",
@@ -3708,7 +3797,10 @@
     "opener": {
       "attack": "Fire Breath",
       "range": 5
-    }
+    },
+    "territorial": true,
+    "lair_radius": 10,
+    "lair_line": "{The} stops at the edge of {his} hoard and watches you go."
   },
   "iron_golem": {
     "name": "iron golem",
@@ -3860,7 +3952,47 @@
       "attack": "Death Bolt",
       "range": 5
     },
-    "drain_con": true
+    "drain_con": true,
+    "spells": [
+      {
+        "id": "lich_ward",
+        "kind": "ward",
+        "name": "Ward of the Dead",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.6
+        }
+      },
+      {
+        "id": "unmaking",
+        "kind": "dispel",
+        "name": "Word of Unmaking",
+        "cooldown": 8,
+        "weight": 5,
+        "when": {
+          "hero_buffed": true
+        }
+      },
+      {
+        "id": "lich_hold",
+        "kind": "control",
+        "name": "Grave-Hold",
+        "effect": "paralyzed",
+        "duration": 2,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.4
+        },
+        "cast": "{The} speaks one cold word, and your limbs lock."
+      }
+    ]
   },
   "arch_demon": {
     "name": "arch demon",
@@ -4022,6 +4154,12 @@
     "opener": {
       "attack": "Frost Breath",
       "range": 5
+    },
+    "aura": {
+      "kind": "fear",
+      "radius": 3,
+      "turns": 3,
+      "line": "The dread of {the} falls on you like a shadow. You turn to run!"
     }
   },
   "ancient_lich": {
@@ -4389,7 +4527,37 @@
     "opener": {
       "attack": "Hex Bolt",
       "range": 5
-    }
+    },
+    "spells": [
+      {
+        "id": "bone_ward",
+        "kind": "ward",
+        "name": "Bone Ward",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.5
+        }
+      },
+      {
+        "id": "blood_dread",
+        "kind": "control",
+        "name": "Blood Dread",
+        "effect": "feared",
+        "duration": 2,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.5
+        },
+        "cast": "{The} howls the name of {his} god at you."
+      }
+    ]
   },
   "giant_centipede": {
     "name": "giant centipede",
@@ -4934,7 +5102,23 @@
     "opener": {
       "attack": "Death Bolt",
       "range": 5
-    }
+    },
+    "spells": [
+      {
+        "id": "grave_ward",
+        "kind": "ward",
+        "name": "Grave Ward",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.5
+        },
+        "cast": "{The}'s chant ends: grave-dust rises about {him} and hangs in the air."
+      }
+    ]
   },
   "stymphalian_bird": {
     "name": "Stymphalian Bird",
@@ -5433,7 +5617,10 @@
     "opener": {
       "attack": "Boulder Hurl",
       "range": 5
-    }
+    },
+    "territorial": true,
+    "lair_radius": 8,
+    "lair_line": "{The} stops at the edge of {his} cave and watches you go."
   },
   "sphinx": {
     "name": "Sphinx",
@@ -6038,6 +6225,11 @@
     "opener": {
       "attack": "Frost Breath",
       "range": 3
+    },
+    "aura": {
+      "kind": "cold",
+      "radius": 1,
+      "share": 0.02
     }
   },
   "fire_giant": {
@@ -6110,6 +6302,11 @@
     "opener": {
       "attack": "Magma Hurl",
       "range": 5
+    },
+    "aura": {
+      "kind": "heat",
+      "radius": 1,
+      "share": 0.02
     }
   },
   "valkyrie_shade": {
@@ -6266,10 +6463,14 @@
         "name": "Constrict",
         "damage": "3d10+18",
         "type": "blunt",
-        "effect": "paralyzed",
-        "effect_chance": 0.35,
-        "effect_duration": 3,
-        "delivery": "grapple"
+        "delivery": "grapple",
+        "hold": {
+          "kind": "constrict",
+          "type": "blunt",
+          "break_share": 0.1,
+          "max_turns": 4,
+          "save": "STR"
+        }
       },
       {
         "name": "World-Venom Bite",
@@ -6380,7 +6581,16 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "aura": {
+      "kind": "fear",
+      "radius": 2,
+      "turns": 3,
+      "line": "{The}'s eyes catch the light, and you cannot bear to look. You turn to run!"
+    },
+    "territorial": true,
+    "lair_radius": 8,
+    "lair_line": "{The} stops at the edge of {his} mound and watches you go."
   },
   "einherjar_ghost": {
     "name": "Einherjar Ghost",
@@ -6670,7 +6880,10 @@
       ],
       "heal_share": 0.08,
       "line": "The Lindworm sheds a skin, and its wounds come away with it!"
-    }
+    },
+    "territorial": true,
+    "lair_radius": 8,
+    "lair_line": "{The} stops at the edge of {his} lair and watches you go."
   },
   "berserker_spirit": {
     "name": "Berserker Spirit",
@@ -6832,10 +7045,14 @@
         "name": "Coil Crush",
         "damage": "5d10+26",
         "type": "cold",
-        "effect": "paralyzed",
-        "effect_chance": 0.35,
-        "effect_duration": 3,
-        "delivery": "grapple"
+        "delivery": "grapple",
+        "hold": {
+          "kind": "constrict",
+          "type": "cold",
+          "break_share": 0.1,
+          "max_turns": 4,
+          "save": "STR"
+        }
       },
       {
         "name": "Frost Bite",
@@ -6950,7 +7167,10 @@
       "sleeping",
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "territorial": true,
+    "lair_radius": 7,
+    "lair_line": "{The} stops at the edge of {his} tomb and watches you go."
   },
   "ra_serpent": {
     "name": "Ra's Serpent",
@@ -7153,7 +7373,10 @@
     "opener": {
       "attack": "Solar Roar",
       "range": 4
-    }
+    },
+    "territorial": true,
+    "lair_radius": 6,
+    "lair_line": "{The} stops at the edge of {his} road and watches you go."
   },
   "ammit_spawn": {
     "name": "Ammit Spawn",
@@ -7250,10 +7473,14 @@
         "name": "Death Roll",
         "damage": "3d8+16",
         "type": "slash",
-        "effect": "paralyzed",
-        "effect_chance": 0.35,
-        "effect_duration": 3,
-        "delivery": "blow"
+        "delivery": "blow",
+        "hold": {
+          "kind": "drag",
+          "type": "slash",
+          "break_share": 0.1,
+          "max_turns": 4,
+          "save": "STR"
+        }
       }
     ],
     "resistances": [
@@ -7860,10 +8087,14 @@
         "name": "Drown Drag",
         "damage": "2d6+5",
         "type": "cold",
-        "effect": "immobilized",
-        "effect_chance": 0.4,
-        "effect_duration": 3,
-        "delivery": "blow"
+        "delivery": "blow",
+        "hold": {
+          "kind": "drag",
+          "type": "cold",
+          "break_share": 0.1,
+          "max_turns": 4,
+          "save": "STR"
+        }
       }
     ],
     "resistances": [
@@ -8161,6 +8392,12 @@
     "opener": {
       "attack": "Spine Whip",
       "range": 1
+    },
+    "aura": {
+      "kind": "fear",
+      "radius": 3,
+      "turns": 3,
+      "line": "To look on {the} is to see your own death coming. You turn to run!"
     }
   },
   "sluagh": {
@@ -12297,7 +12534,20 @@
     "opener": {
       "attack": "Fire Bolt",
       "range": 4
-    }
+    },
+    "spells": [
+      {
+        "id": "darkness",
+        "kind": "darkness",
+        "name": "Darkness",
+        "cooldown": 12,
+        "weight": 3,
+        "when": {
+          "hero_lit": true
+        },
+        "cast": "{The} spits a word, and your light gutters out."
+      }
+    ]
   },
   "bullywug": {
     "name": "Bullywug",
@@ -12658,7 +12908,14 @@
         "name": "Constrict",
         "damage": "1d4+1",
         "type": "blunt",
-        "delivery": "grapple"
+        "delivery": "grapple",
+        "hold": {
+          "kind": "constrict",
+          "type": "blunt",
+          "break_share": 0.15,
+          "max_turns": 4,
+          "save": "STR"
+        }
       }
     ],
     "resistances": [],
@@ -15051,7 +15308,23 @@
     "opener": {
       "attack": "Necrotic Bolt",
       "range": 5
-    }
+    },
+    "spells": [
+      {
+        "id": "grave_ward",
+        "kind": "ward",
+        "name": "Grave Ward",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.5
+        },
+        "cast": "{The}'s chant ends: grave-dust rises about {him} and hangs in the air."
+      }
+    ]
   },
   "bone_witch": {
     "name": "Bone Witch",
@@ -15450,7 +15723,10 @@
     "opener": {
       "attack": "Entangle",
       "range": 1
-    }
+    },
+    "territorial": true,
+    "lair_radius": 6,
+    "lair_line": "{The} stops at the edge of {his} barrow and watches you go."
   },
   "cairn_wight": {
     "name": "Cairn Wight",
@@ -15515,7 +15791,10 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "territorial": true,
+    "lair_radius": 6,
+    "lair_line": "{The} stops at the edge of {his} cairn and watches you go."
   },
   "crypt_thing": {
     "name": "Crypt Thing",
@@ -15665,7 +15944,10 @@
     "opener": {
       "attack": "Smash",
       "range": 1
-    }
+    },
+    "territorial": true,
+    "lair_radius": 6,
+    "lair_line": "{The} stops at the edge of {his} grave and watches you go."
   },
   "tomb_guardian": {
     "name": "Tomb Guardian",
@@ -15741,7 +16023,10 @@
     "opener": {
       "attack": "Cleave",
       "range": 1
-    }
+    },
+    "territorial": true,
+    "lair_radius": 7,
+    "lair_line": "{The} stops at the edge of {his} tomb and watches you go."
   },
   "ossuary_horror": {
     "name": "Ossuary Horror",
@@ -16481,7 +16766,12 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "aura": {
+      "kind": "fear",
+      "radius": 2,
+      "turns": 2
+    }
   },
   "bone_archer": {
     "name": "Bone Archer",
@@ -18254,10 +18544,14 @@
         "name": "Constrict",
         "damage": "2d6",
         "type": "blunt",
-        "effect": "slowed",
-        "effect_chance": 0.5,
-        "effect_duration": 6,
-        "delivery": "grapple"
+        "delivery": "grapple",
+        "hold": {
+          "kind": "constrict",
+          "type": "blunt",
+          "break_share": 0.1,
+          "max_turns": 4,
+          "save": "STR"
+        }
       },
       {
         "name": "Bite",
@@ -19506,7 +19800,9 @@
             15
           ],
           "share": 0.05,
-          "line": "The Roc's talons close on you and it lifts you into the dark! It drops you far away."
+          "line": "The Roc's talons close on you and it lifts you into the dark!",
+          "landed": "It drops you far away.",
+          "nowhere": "It finds nowhere to set you down, and you fall where you were."
         }
       },
       {
@@ -20005,7 +20301,36 @@
       "sleeping"
     ],
     "status_weak": [],
-    "pull_chance": 0.25
+    "pull_chance": 0.25,
+    "spells": [
+      {
+        "id": "evil_eye",
+        "kind": "control",
+        "name": "Evil Eye",
+        "effect": "slowed",
+        "duration": 3,
+        "delivery": "gaze",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.5
+        },
+        "cast": "{The} fixes you with the evil eye."
+      },
+      {
+        "id": "hag_vanish",
+        "kind": "escape",
+        "name": "Vanish",
+        "cooldown": 10,
+        "weight": 7,
+        "when": {
+          "adjacent": true,
+          "self_hp_below": 0.6
+        },
+        "cast": "{The} cackles and is gone, four paces off."
+      }
+    ]
   },
   "sea_hag": {
     "name": "sea hag",
@@ -20073,7 +20398,21 @@
     "opener": {
       "attack": "Horrific Gaze",
       "range": 3
-    }
+    },
+    "spells": [
+      {
+        "id": "hag_vanish",
+        "kind": "escape",
+        "name": "Vanish",
+        "cooldown": 10,
+        "weight": 7,
+        "when": {
+          "adjacent": true,
+          "self_hp_below": 0.6
+        },
+        "cast": "{The} cackles and is gone in a smell of brine."
+      }
+    ]
   },
   "annis_hag": {
     "name": "annis hag",
@@ -20150,7 +20489,36 @@
     "opener": {
       "attack": "Crushing Claw",
       "range": 1
-    }
+    },
+    "spells": [
+      {
+        "id": "evil_eye",
+        "kind": "control",
+        "name": "Evil Eye",
+        "effect": "feared",
+        "duration": 2,
+        "delivery": "gaze",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.5
+        },
+        "cast": "{The} fixes you with the evil eye."
+      },
+      {
+        "id": "hag_vanish",
+        "kind": "escape",
+        "name": "Vanish",
+        "cooldown": 10,
+        "weight": 7,
+        "when": {
+          "adjacent": true,
+          "self_hp_below": 0.6
+        },
+        "cast": "{The} cackles and is gone, four paces off."
+      }
+    ]
   },
   "night_hag": {
     "name": "night hag",
@@ -20218,7 +20586,36 @@
     "status_immune": [
       "sleeping"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "spells": [
+      {
+        "id": "nightmare",
+        "kind": "control",
+        "name": "Nightmare",
+        "effect": "sleeping",
+        "duration": 2,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.6
+        },
+        "cast": "{The} croons a lullaby of bad dreams."
+      },
+      {
+        "id": "hag_vanish",
+        "kind": "escape",
+        "name": "Vanish",
+        "cooldown": 10,
+        "weight": 7,
+        "when": {
+          "adjacent": true,
+          "self_hp_below": 0.6
+        },
+        "cast": "{The} cackles and is gone, four paces off."
+      }
+    ]
   },
   "satyr_trickster": {
     "name": "satyr trickster",
@@ -20420,7 +20817,13 @@
     "thac0_lore": 20,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "bargain": {
+      "gold_mult": 1.5,
+      "line": "{The}, cornered, holds up a fat purse: 'Let me go and it's yours!'",
+      "accept_line": "{The} tosses the purse at your feet and is gone in a flash of green.",
+      "refuse_line": "'Then you'll get nothing!' {The} squares up to you."
+    }
   },
   "spriggan": {
     "name": "spriggan",
@@ -20762,6 +21165,11 @@
     "opener": {
       "attack": "Ice Shard",
       "range": 5
+    },
+    "aura": {
+      "kind": "cold",
+      "radius": 1,
+      "share": 0.02
     }
   },
   "magma_elemental": {
@@ -20842,6 +21250,11 @@
       "effect_duration": 3,
       "line": "{The} bursts in a spray of molten rock!",
       "warn_line": "{The}'s crust cracks and glows white."
+    },
+    "aura": {
+      "kind": "heat",
+      "radius": 1,
+      "share": 0.03
     }
   },
   "void_elemental": {
@@ -21010,10 +21423,14 @@
         "name": "Constrict",
         "damage": "1d8",
         "type": "blunt",
-        "effect": "slowed",
-        "effect_chance": 0.5,
-        "effect_duration": 6,
-        "delivery": "grapple"
+        "delivery": "grapple",
+        "hold": {
+          "kind": "constrict",
+          "type": "blunt",
+          "break_share": 0.15,
+          "max_turns": 4,
+          "save": "STR"
+        }
       },
       {
         "name": "Vine Whip",
@@ -21715,7 +22132,10 @@
     "opener": {
       "attack": "Riddle Curse",
       "range": 3
-    }
+    },
+    "territorial": true,
+    "lair_radius": 6,
+    "lair_line": "{The} stops at the edge of {his} road and watches you go."
   },
   "nue": {
     "name": "nue",
@@ -22050,7 +22470,38 @@
     "opener": {
       "attack": "Hex Bolt",
       "range": 4
-    }
+    },
+    "spells": [
+      {
+        "id": "smoke_ward",
+        "kind": "ward",
+        "name": "Smoke Ward",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.5
+        },
+        "cast": "{The}'s chant ends: greasy smoke wraps about {him}, and blows slide off it."
+      },
+      {
+        "id": "smoke_eyes",
+        "kind": "control",
+        "name": "Smoke in the Eyes",
+        "effect": "blinded",
+        "duration": 2,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.5
+        },
+        "cast": "{The} flings a pinch of smoke at your face."
+      }
+    ]
   },
   "goblin_king": {
     "name": "goblin king",
@@ -22113,7 +22564,13 @@
     "opener": {
       "attack": "Command Shriek",
       "range": 4
-    }
+    },
+    "kit": [
+      {
+        "item": "potion_of_healing",
+        "chance": 0.25
+      }
+    ]
   },
   "hobgoblin_captain": {
     "name": "hobgoblin captain",
@@ -22171,7 +22628,13 @@
     "thac0_lore": 12,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "kit": [
+      {
+        "item": "potion_of_healing",
+        "chance": 0.25
+      }
+    ]
   },
   "hobgoblin_warlord": {
     "name": "hobgoblin warlord",
@@ -22347,7 +22810,13 @@
     "opener": {
       "attack": "Terrifying Roar",
       "range": 3
-    }
+    },
+    "kit": [
+      {
+        "item": "potion_of_healing",
+        "chance": 0.25
+      }
+    ]
   },
   "orc_berserker": {
     "name": "orc berserker",
@@ -22458,7 +22927,17 @@
     "thac0_lore": 4,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "kit": [
+      {
+        "item": "flask_of_fire_oil",
+        "chance": 0.35
+      },
+      {
+        "item": "potion_of_healing",
+        "chance": 0.25
+      }
+    ]
   },
   "bandit_captain": {
     "name": "bandit captain",
@@ -22524,7 +23003,13 @@
       "attack": "Dagger Throw",
       "range": 4
     },
-    "morale": 11
+    "morale": 11,
+    "kit": [
+      {
+        "item": "potion_of_healing",
+        "chance": 0.3
+      }
+    ]
   },
   "dark_cultist": {
     "name": "dark cultist",
@@ -22590,7 +23075,24 @@
     "opener": {
       "attack": "Dark Prayer",
       "range": 4
-    }
+    },
+    "spells": [
+      {
+        "id": "whispered_dread",
+        "kind": "control",
+        "name": "Whispered Dread",
+        "effect": "feared",
+        "duration": 2,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.5
+        },
+        "cast": "{The} whispers what waits for you below."
+      }
+    ]
   },
   "mercenary_veteran": {
     "name": "mercenary veteran",
@@ -22649,7 +23151,13 @@
     "status_immune": [],
     "status_weak": [],
     "morale_style": "yield",
-    "morale": 11
+    "morale": 11,
+    "kit": [
+      {
+        "item": "potion_of_healing",
+        "chance": 0.3
+      }
+    ]
   },
   "battle_mage": {
     "name": "battle mage",
@@ -22718,7 +23226,40 @@
     "opener": {
       "attack": "Fire Bolt",
       "range": 5
-    }
+    },
+    "spells": [
+      {
+        "id": "arcane_shield",
+        "kind": "ward",
+        "name": "Arcane Shield",
+        "share": 0.5,
+        "turns": 3,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.5
+        },
+        "cast": "{The}'s chant ends: a shimmer of force wraps about {him}."
+      },
+      {
+        "id": "blink",
+        "kind": "escape",
+        "name": "Blink",
+        "cooldown": 10,
+        "weight": 7,
+        "when": {
+          "adjacent": true,
+          "self_hp_below": 0.6
+        }
+      }
+    ],
+    "kit": [
+      {
+        "item": "potion_of_healing",
+        "chance": 0.2
+      }
+    ]
   },
   "hill_giant": {
     "name": "hill giant",
@@ -23178,7 +23719,12 @@
     ],
     "multi_attack_count": 2,
     "light_shy": true,
-    "turns_to_stone_in_light": true
+    "turns_to_stone_in_light": true,
+    "aura": {
+      "kind": "cold",
+      "radius": 1,
+      "share": 0.02
+    }
   },
   "drow_warrior": {
     "name": "drow warrior",
@@ -23252,7 +23798,13 @@
       "attack": "Hand Crossbow",
       "range": 5
     },
-    "light_shy": true
+    "light_shy": true,
+    "kit": [
+      {
+        "item": "potion_of_healing",
+        "chance": 0.2
+      }
+    ]
   },
   "drow_mage": {
     "name": "drow mage",
@@ -23325,7 +23877,31 @@
       "attack": "Shadow Bolt",
       "range": 5
     },
-    "light_shy": true
+    "light_shy": true,
+    "spells": [
+      {
+        "id": "darkness",
+        "kind": "darkness",
+        "name": "Darkness",
+        "cooldown": 12,
+        "weight": 3,
+        "when": {
+          "hero_lit": true
+        }
+      },
+      {
+        "id": "shadow_step",
+        "kind": "escape",
+        "name": "Shadow Step",
+        "cooldown": 10,
+        "weight": 7,
+        "when": {
+          "adjacent": true,
+          "self_hp_below": 0.6
+        },
+        "cast": "{The} steps into a shadow and out of another, four paces off."
+      }
+    ]
   },
   "drow_priestess": {
     "name": "drow priestess",
@@ -23393,7 +23969,43 @@
       "sleeping"
     ],
     "status_weak": [],
-    "light_shy": true
+    "light_shy": true,
+    "spells": [
+      {
+        "id": "darkness",
+        "kind": "darkness",
+        "name": "Darkness",
+        "cooldown": 12,
+        "weight": 3,
+        "when": {
+          "hero_lit": true
+        }
+      },
+      {
+        "id": "mend",
+        "kind": "heal",
+        "cooldown": 0,
+        "weight": 5,
+        "when": {
+          "ally_hp_below": 0.5
+        }
+      },
+      {
+        "id": "spider_hold",
+        "kind": "control",
+        "name": "Spider's Hold",
+        "effect": "immobilized",
+        "duration": 2,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.5
+        },
+        "cast": "{The}'s prayer ends, and threads you cannot see bind your legs."
+      }
+    ]
   },
   "minotaur_warrior": {
     "name": "minotaur warrior",
@@ -23544,7 +24156,10 @@
     "opener": {
       "attack": "Acid Breath",
       "range": 4
-    }
+    },
+    "territorial": true,
+    "lair_radius": 9,
+    "lair_line": "{The} stops at the edge of {his} hoard and watches you go."
   },
   "young_red_dragon": {
     "name": "young red dragon",
@@ -23634,7 +24249,10 @@
     "opener": {
       "attack": "Fire Breath",
       "range": 4
-    }
+    },
+    "territorial": true,
+    "lair_radius": 9,
+    "lair_line": "{The} stops at the edge of {his} hoard and watches you go."
   },
   "adult_blue_dragon": {
     "name": "adult blue dragon",
@@ -24134,10 +24752,14 @@
         "name": "Constrict",
         "damage": "2d8+6",
         "type": "blunt",
-        "effect": "immobilized",
-        "effect_chance": 0.3,
-        "effect_duration": 3,
-        "delivery": "grapple"
+        "delivery": "grapple",
+        "hold": {
+          "kind": "constrict",
+          "type": "blunt",
+          "break_share": 0.1,
+          "max_turns": 4,
+          "save": "STR"
+        }
       },
       {
         "name": "Poison Spit",
@@ -24993,10 +25615,14 @@
         "name": "Crushing Coil",
         "damage": "4d8+18",
         "type": "blunt",
-        "effect": "paralyzed",
-        "effect_chance": 0.35,
-        "effect_duration": 3,
-        "delivery": "grapple"
+        "delivery": "grapple",
+        "hold": {
+          "kind": "constrict",
+          "type": "blunt",
+          "break_share": 0.1,
+          "max_turns": 4,
+          "save": "STR"
+        }
       }
     ],
     "resistances": [
@@ -25386,6 +26012,12 @@
     "opener": {
       "attack": "Elder Breath",
       "range": 5
+    },
+    "aura": {
+      "kind": "fear",
+      "radius": 3,
+      "turns": 3,
+      "line": "The dread of {the} falls on you like a shadow. You turn to run!"
     }
   },
   "lich_sovereign": {
@@ -28817,7 +29449,13 @@
     "status_immune": [],
     "status_weak": [],
     "morale_style": "withdraw",
-    "morale": 14
+    "morale": 14,
+    "kit": [
+      {
+        "item": "potion_of_extra_healing",
+        "chance": 0.3
+      }
+    ]
   },
   "greater_fire_elemental": {
     "name": "greater fire elemental",
@@ -28878,7 +29516,12 @@
       "sleeping",
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "aura": {
+      "kind": "heat",
+      "radius": 1,
+      "share": 0.03
+    }
   },
   "chimera_alpha": {
     "name": "chimera alpha",
@@ -29111,10 +29754,14 @@
         "name": "Engulf",
         "damage": "4d6+12",
         "type": "acid",
-        "effect": "paralyzed",
-        "effect_chance": 0.4,
-        "effect_duration": 3,
-        "delivery": "touch"
+        "delivery": "touch",
+        "hold": {
+          "kind": "swallow",
+          "type": "acid",
+          "break_share": 0.15,
+          "max_turns": 4,
+          "save": "DEX"
+        }
       }
     ],
     "resistances": [
@@ -29414,7 +30061,12 @@
     "status_immune": [],
     "status_weak": [
       "confused"
-    ]
+    ],
+    "aura": {
+      "kind": "cold",
+      "radius": 2,
+      "share": 0.03
+    }
   },
   "fire_giant_king": {
     "name": "fire giant king",
@@ -29485,6 +30137,11 @@
     "opener": {
       "attack": "Flame Breath",
       "range": 4
+    },
+    "aura": {
+      "kind": "heat",
+      "radius": 2,
+      "share": 0.03
     }
   },
   "elder_vampire": {
@@ -29909,7 +30566,32 @@
     "opener": {
       "attack": "Death Bolt",
       "range": 5
-    }
+    },
+    "spells": [
+      {
+        "id": "lich_ward",
+        "kind": "ward",
+        "name": "Ward of the Dead",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.6
+        }
+      },
+      {
+        "id": "unmaking",
+        "kind": "dispel",
+        "name": "Word of Unmaking",
+        "cooldown": 8,
+        "weight": 5,
+        "when": {
+          "hero_buffed": true
+        }
+      }
+    ]
   },
   "corrupted_treant": {
     "name": "corrupted treant",
@@ -30464,7 +31146,12 @@
       "sleeping",
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "aura": {
+      "kind": "heat",
+      "radius": 2,
+      "share": 0.04
+    }
   },
   "primordial_ice_elemental": {
     "name": "primordial ice elemental",
@@ -30525,7 +31212,12 @@
       "sleeping",
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "aura": {
+      "kind": "cold",
+      "radius": 2,
+      "share": 0.04
+    }
   },
   "demon_general": {
     "name": "demon general",
@@ -31268,7 +31960,47 @@
       "attack": "Annihilation Ray",
       "range": 5
     },
-    "drain_con": true
+    "drain_con": true,
+    "spells": [
+      {
+        "id": "lich_ward",
+        "kind": "ward",
+        "name": "Ward of the Dead",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.6
+        }
+      },
+      {
+        "id": "unmaking",
+        "kind": "dispel",
+        "name": "Word of Unmaking",
+        "cooldown": 8,
+        "weight": 5,
+        "when": {
+          "hero_buffed": true
+        }
+      },
+      {
+        "id": "lich_hold",
+        "kind": "control",
+        "name": "Grave-Hold",
+        "effect": "paralyzed",
+        "duration": 2,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.4
+        },
+        "cast": "{The} speaks one cold word, and your limbs lock."
+      }
+    ]
   },
   "elder_dracolich": {
     "name": "elder dracolich",
@@ -32505,7 +33237,23 @@
     "thac0_lore": 8,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "spells": [
+      {
+        "id": "blood_ward",
+        "kind": "ward",
+        "name": "Blood Ward",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.5
+        },
+        "cast": "{The}'s prayer ends: {he} daubs {himself} with blood, and blows turn on it."
+      }
+    ]
   },
   "orc_marauder": {
     "name": "orc marauder",
@@ -32566,7 +33314,13 @@
     "opener": {
       "attack": "Boarding Axe",
       "range": 1
-    }
+    },
+    "kit": [
+      {
+        "item": "flask_of_fire_oil",
+        "chance": 0.3
+      }
+    ]
   },
   "orc_warbringer": {
     "name": "orc warbringer",
@@ -32822,7 +33576,23 @@
     "thac0_lore": 12,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "spells": [
+      {
+        "id": "smoke_ward",
+        "kind": "ward",
+        "name": "Smoke Ward",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.5
+        },
+        "cast": "{The}'s chant ends: greasy smoke wraps about {him}, and blows slide off it."
+      }
+    ]
   },
   "hobgoblin_marshal": {
     "name": "hobgoblin marshal",
@@ -32882,7 +33652,13 @@
     "thac0_lore": 6,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "kit": [
+      {
+        "item": "potion_of_extra_healing",
+        "chance": 0.3
+      }
+    ]
   },
   "goblin_kingslayer": {
     "name": "goblin kingslayer",
@@ -33758,7 +34534,13 @@
       "radius": 10,
       "line": "{The} whistles for his mates!",
       "line_unseen": "A sharp whistle, not far off."
-    }
+    },
+    "kit": [
+      {
+        "item": "flask_of_fire_oil",
+        "chance": 0.15
+      }
+    ]
   },
   "bandit_archer": {
     "name": "bandit archer",
@@ -33975,7 +34757,17 @@
     "opener": {
       "attack": "Thrown Wheel-Lock",
       "range": 5
-    }
+    },
+    "kit": [
+      {
+        "item": "potion_of_extra_healing",
+        "chance": 0.4
+      },
+      {
+        "item": "flask_of_fire_oil",
+        "chance": 0.3
+      }
+    ]
   },
   "cult_initiate": {
     "name": "cult initiate",
@@ -34109,7 +34901,33 @@
     "opener": {
       "attack": "Litany of Pain",
       "range": 5
-    }
+    },
+    "spells": [
+      {
+        "id": "mend",
+        "kind": "heal",
+        "cooldown": 0,
+        "weight": 5,
+        "when": {
+          "ally_hp_below": 0.5
+        }
+      },
+      {
+        "id": "binding_litany",
+        "kind": "control",
+        "name": "Binding Litany",
+        "effect": "immobilized",
+        "duration": 2,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.5
+        },
+        "cast": "{The}'s litany ends, and your feet will not move."
+      }
+    ]
   },
   "cult_zealot": {
     "name": "cult zealot",
@@ -34245,7 +35063,33 @@
     "thac0_lore": -2,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "spells": [
+      {
+        "id": "unmaking",
+        "kind": "dispel",
+        "name": "Word of Unmaking",
+        "cooldown": 8,
+        "weight": 5,
+        "when": {
+          "hero_buffed": true
+        }
+      },
+      {
+        "id": "void_dread",
+        "kind": "control",
+        "name": "Dread of the Void",
+        "effect": "feared",
+        "duration": 3,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.6
+        }
+      }
+    ]
   },
   "ghast_eater": {
     "name": "ghast eater",
@@ -34391,7 +35235,10 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "territorial": true,
+    "lair_radius": 8,
+    "lair_line": "{The} stops at the edge of {his} mound and watches you go."
   },
   "grave_knight": {
     "name": "grave knight",
@@ -34882,7 +35729,10 @@
       "confused"
     ],
     "light_shy": true,
-    "turns_to_stone_in_light": true
+    "turns_to_stone_in_light": true,
+    "territorial": true,
+    "lair_radius": 7,
+    "lair_line": "{The} stops at the edge of {his} cave and watches you go."
   },
   "harrow_witch": {
     "name": "Harrow Witch",
@@ -34953,7 +35803,30 @@
       "attack": "Hex Bolt",
       "range": 5
     },
-    "disease_linger": 4
+    "disease_linger": 4,
+    "spells": [
+      {
+        "id": "harrow_eye",
+        "kind": "control",
+        "name": "Harrowing Eye",
+        "effect": "slowed",
+        "duration": 3,
+        "delivery": "gaze",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.5
+        },
+        "cast": "{The} fixes you with the evil eye."
+      }
+    ],
+    "kit": [
+      {
+        "item": "potion_of_healing",
+        "chance": 0.25
+      }
+    ]
   },
   "moss_sentinel": {
     "name": "Moss Sentinel",
@@ -35403,7 +36276,32 @@
       "attack": "Miasma",
       "range": 5
     },
-    "disease_linger": 6
+    "disease_linger": 6,
+    "spells": [
+      {
+        "id": "mend",
+        "kind": "heal",
+        "cooldown": 0,
+        "weight": 5,
+        "when": {
+          "ally_hp_below": 0.5
+        }
+      },
+      {
+        "id": "rag_ward",
+        "kind": "ward",
+        "name": "Ward of Plague Rags",
+        "share": 0.4,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.5
+        },
+        "cast": "{The}'s chant ends: buzzing flies swarm about {him}, thick as a cloak."
+      }
+    ]
   },
   "vine_horror": {
     "name": "Vine Horror",
@@ -35930,7 +36828,23 @@
     "thac0_lore": -4,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "spells": [
+      {
+        "id": "tide_ward",
+        "kind": "ward",
+        "name": "Tide Ward",
+        "share": 0.5,
+        "turns": 4,
+        "cooldown": 12,
+        "weight": 6,
+        "wind_up": true,
+        "when": {
+          "self_hp_below": 0.5
+        },
+        "cast": "{The}'s chant ends: cold sea-water swirls about {him} and will not fall."
+      }
+    ]
   },
   "gilded_mimic": {
     "name": "Gilded Mimic",
@@ -36306,7 +37220,39 @@
     "thac0_lore": -8,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "spells": [
+      {
+        "id": "seal_of_silence",
+        "kind": "control",
+        "name": "Seal of Silence",
+        "effect": "silenced",
+        "duration": 3,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 4,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.4
+        },
+        "cast": "{The} seals your lips with a word: no spell, no scroll."
+      },
+      {
+        "id": "binding_litany",
+        "kind": "control",
+        "name": "Binding Litany",
+        "effect": "immobilized",
+        "duration": 2,
+        "delivery": "voice",
+        "cooldown": 10,
+        "weight": 3,
+        "wind_up": true,
+        "when": {
+          "hero_hp_above": 0.6
+        },
+        "cast": "{The}'s litany ends, and your feet will not move."
+      }
+    ]
   },
   "lava_elemental": {
     "name": "Lava Elemental",
@@ -36387,6 +37333,11 @@
       "effect_duration": 3,
       "line": "{The} bursts, flinging lava all about!",
       "warn_line": "{The} swells and glows, about to burst."
+    },
+    "aura": {
+      "kind": "heat",
+      "radius": 1,
+      "share": 0.04
     }
   },
   "blood_archon": {
@@ -37762,7 +38713,10 @@
       "range": 1
     },
     "light_shy": true,
-    "turns_to_stone_in_light": true
+    "turns_to_stone_in_light": true,
+    "territorial": true,
+    "lair_radius": 8,
+    "lair_line": "{The} stops at the edge of {his} hoard and watches you go."
   },
   "ker": {
     "name": "Ker",
@@ -37937,10 +38891,14 @@
         "name": "Drag to the Mere",
         "damage": "4d10+26",
         "type": "blunt",
-        "effect": "immobilized",
-        "effect_chance": 0.4,
-        "effect_duration": 3,
-        "delivery": "blow"
+        "delivery": "blow",
+        "hold": {
+          "kind": "drag",
+          "type": "blunt",
+          "break_share": 0.08,
+          "max_turns": 4,
+          "save": "STR"
+        }
       },
       {
         "name": "Broad Seax",
@@ -37988,7 +38946,10 @@
     "opener": {
       "attack": "Drag to the Mere",
       "range": 1
-    }
+    },
+    "territorial": true,
+    "lair_radius": 9,
+    "lair_line": "{The} stops at the edge of {his} mere and watches you go."
   },
   "endor_medium": {
     "name": "Medium of Endor",
@@ -38974,7 +39935,21 @@
     "opener": {
       "attack": "Serpent Noose",
       "range": 5
-    }
+    },
+    "spells": [
+      {
+        "id": "maya_step",
+        "kind": "escape",
+        "name": "Maya",
+        "cooldown": 10,
+        "weight": 7,
+        "when": {
+          "adjacent": true,
+          "self_hp_below": 0.6
+        },
+        "cast": "{The} is not where you struck: {he} stands four paces off."
+      }
+    ]
   },
   "ushabti_overseer": {
     "name": "Ushabti Overseer",
@@ -42139,6 +43114,11 @@
     "opener": {
       "attack": "Breath of Elivagar",
       "range": 4
+    },
+    "aura": {
+      "kind": "cold",
+      "radius": 1,
+      "share": 0.03
     }
   },
   "kallikantzaros": {
@@ -43940,6 +44920,7 @@
     ],
     "parley": {
       "subject": "grammar",
+      "storm": "Squall Spray",
       "call": "The Blue Men rise to the waist and their chief calls out two lines of verse. Answer him well and they let you pass.",
       "right": "The chief of the Blue Men laughs at your answer, and they sink back into the dark water. They will let you be.",
       "wrong": "Your answer stumbles. The Blue Men howl, and the squall comes down on you!",
@@ -44199,10 +45180,8 @@
         "delivery": "bite",
         "hold": {
           "kind": "swallow",
-          "share": 0.04,
           "type": "acid",
           "break_share": 0.15,
-          "break_chain": 8,
           "max_turns": 4,
           "save": "STR"
         }

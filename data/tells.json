@@ -3,8 +3,8 @@
   "min_chance": 0.1,
   "max_lines": 2,
   "order": ["gaze_paralyze", "paralyzed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
-            "silenced", "stunned", "immobilized", "pack_feast", "pack_swarm", "pack_hamstring", "splits", "death_throes", "revive_once_on_death", "drain_heals_self", "life_drain",
-            "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "light_shy", "summon_kind", "heals_allies", "pull_chance", "breath_recharge", "sp_drain", "snuffs_light",
+            "silenced", "stunned", "immobilized", "hold_swallow", "hold_constrict", "hold_drag", "aura_fear", "casts_curse", "pack_feast", "pack_swarm", "pack_hamstring", "splits", "death_throes", "revive_once_on_death", "drain_heals_self", "life_drain",
+            "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "light_shy", "aura_heat", "aura_cold", "aura_stench", "second_shape", "casts_ward", "casts_dispel", "casts_darkness", "casts_escape", "carries_fire", "carries_potion", "territorial", "bargains", "skittish", "summon_kind", "heals_allies", "pull_chance", "breath_recharge", "sp_drain", "snuffs_light",
             "can_charge", "shove", "pack_harry", "pack_sling", "pack_traps", "pack_bay", "raises_alarm", "pack_dart", "pack_snatch",
             "can_phase_blink", "relurks", "hides_in_dark", "stalker", "bleeding", "burning", "slowed", "hallucinating",
             "countdown_voice", "metal_eater", "corpse_hop", "parley", "appeased_by", "on_stunned", "hidden_overhead", "weak_spot_chain", "sheds_skin", "carry_off", "ranged_pull", "gold_gatherer", "steal_offering", "fumbling", "strangulation", "heal_blocked", "talisman",
@@ -229,7 +229,7 @@
     "corpse_hop": {
       "sign": "{The} grins with a face that does not fit the body {he} wears.",
       "does": "When the body {he} wears falls, the spirit slips into the nearest corpse and gets up again.",
-      "counter": "Harvest or search the dead lying near the fight before you finish {him}, or bless the ground with holy water and prayer."
+      "counter": "Harvest or search the dead lying near the fight before you finish {him}, or cast Banishment on {him}: a spirit sent away finds no body."
     },
     "parley": {
       "sign": "{The} rises from the water and calls out, as if waiting for an answer.",
@@ -239,7 +239,7 @@
     "appeased_by": {
       "sign": "{The} sniffs at your pack with a starving look.",
       "does": "Hunger drives {him}, and a gift of food can turn {him} away.",
-      "counter": "Throw {him} a ration or some plain food: {he} eats it and leaves you be."
+      "counter": "Set down a ration or some plain food near {him}: {he} eats it and leaves you be."
     },
     "on_stunned": {
       "sign": "Water slops in a dish on the top of {the}'s head.",
@@ -279,7 +279,7 @@
     "steal_offering": {
       "sign": "{The}'s needle-thin throat works as {he} looks at your pack.",
       "does": "{He} snatches food out of your pack and crams it down, and it is gone.",
-      "counter": "Keep your rations few when {he} is near, or give {him} one freely: an offering quiets {him}."
+      "counter": "Keep your rations few when {he} is near, or set one down for {him} freely: an offering quiets {him}."
     },
     "fumbling": {
       "sign": "Bad luck hangs round {the} like smoke.",
@@ -299,7 +299,7 @@
     "talisman": {
       "sign": "{The} hops stiffly, arms out, a strip of yellow paper fluttering at {his} brow.",
       "does": "{He} finds a living man by his breath.",
-      "counter": "Read any scroll while {he} can see it: the written page stops {him} like a talisman. Standing still holds your breath from {him}."
+      "counter": "Read any scroll with {him} in your sight: the written page stops {him} like a talisman. Standing still holds your breath from {him}."
     },
     "breath_recharge": {
       "sign": "{The}'s chest heaves like a bellows.",
@@ -320,6 +320,96 @@
       "sign": "{The} squints and turns {his} face from every lamp.",
       "does": "{He} hates a bright light: in its glare {he} strikes worse, and a troll's wounds will not close in it.",
       "counter": "Carry a lit light or cast Light, and fight {him} inside its glow. The Light spell's glare hurts {him} most."
+    },
+    "hold_swallow": {
+      "sign": "{The} is wide enough to take a man whole.",
+      "does": "{He} takes you inside {him}, and {his} gut eats at you every turn, though nothing else can reach you there.",
+      "counter": "Cut your way out: one hard blow from inside frees you. The Galdr of Loosing keeps {him} from taking you."
+    },
+    "hold_constrict": {
+      "sign": "{The} moves in long, slow loops and is never quite still.",
+      "does": "{He} wraps round you and squeezes every turn, and while {he} has you, you cannot walk away.",
+      "counter": "One hard blow on {him} breaks the coils, or struggle free. The Galdr of Loosing keeps any coil off you."
+    },
+    "hold_drag": {
+      "sign": "{The} keeps glancing toward the water.",
+      "does": "{He} seizes you and drags you toward the water, and at its edge pulls you under.",
+      "counter": "Strike {him} hard to tear free, and keep away from the water's edge. The Galdr of Loosing keeps {his} grip off you."
+    },
+    "aura_fear": {
+      "sign": "The air goes cold and still wherever {the} turns.",
+      "does": "Dread rolls off {him}: the first time you see {him} close, your will must hold or you flee.",
+      "counter": "A strong will or a ward against fear keeps you steady, and once you have stood it, {he} cannot frighten you again this fight."
+    },
+    "casts_curse": {
+      "sign": "{The} mutters under {his} breath and will not meet your eye.",
+      "does": "{He} draws a curse up for a turn, then lays it on you: a binding, a dread, a darkness of the eyes.",
+      "counter": "Strike {him} while {he} chants and the curse breaks; wax in your ears stops a spoken one, and a mirror an evil eye."
+    },
+    "aura_heat": {
+      "sign": "The air shimmers with heat round {the}.",
+      "does": "Standing beside {him} scorches you every turn.",
+      "counter": "A fire ward or a draught against fire turns the heat or halves it; a sling, a bow or a wand keeps you out of it."
+    },
+    "aura_cold": {
+      "sign": "Frost creeps over the stones where {the} stands.",
+      "does": "Standing beside {him} numbs you with cold every turn.",
+      "counter": "A ward or a draught against cold keeps it off; a sling, a bow or a wand keeps you out of it."
+    },
+    "aura_stench": {
+      "sign": "A heavy reek hangs in the air round {the}.",
+      "does": "Standing in {his} reek can turn your stomach, until you get used to it.",
+      "counter": "Stand it once and it no longer touches you this fight; or fight {him} from beyond {his} reek."
+    },
+    "second_shape": {
+      "sign": "Something animal moves behind {the}'s eyes.",
+      "does": "Badly hurt, {he} changes shape into a beast, with new and harder blows.",
+      "counter": "Finish {him} before half {his} health is gone, and bring what the beast fears."
+    },
+    "casts_ward": {
+      "sign": "Old charms and fetishes hang about {the}.",
+      "does": "Hurt, {he} chants a ward up about {himself}, and your blows land weak until it fades.",
+      "counter": "Strike {him} while {he} chants and the ward never rises; a spell, a wand or a thrown flask goes through it."
+    },
+    "casts_dispel": {
+      "sign": "{The}'s fingers trace signs that unravel in the air.",
+      "does": "{He} can tear one of your spells off you: a haste, a shield, a ward of fire.",
+      "counter": "Silence {him} first, or cast your strongest spell when {he} is spent."
+    },
+    "casts_darkness": {
+      "sign": "Shadows gather in {the}'s cupped hands.",
+      "does": "{He} puts out the light you carry and ends your Light spell.",
+      "counter": "Carry a light that never goes out, or a spare torch; silence {him} and the dark stays away."
+    },
+    "casts_escape": {
+      "sign": "{The} never stands with {his} back to a wall.",
+      "does": "Hurt and caught beside you, {he} steps into nothing and is four paces off.",
+      "counter": "Hold {him} still before you close in, or reach {him} with a sling, a bow or a wand."
+    },
+    "carries_fire": {
+      "sign": "{The} carries a clay pot stopped with a rag.",
+      "does": "From a few paces off {he} throws it: oil that bursts into flame on you.",
+      "counter": "Close in before {he} throws, or keep stone between you; a fire ward halves the flames."
+    },
+    "carries_potion": {
+      "sign": "A stoppered flask hangs at {the}'s belt.",
+      "does": "Badly hurt, {he} drinks it and {his} wounds close.",
+      "counter": "Strike hard before {he} can drink, and the potion is yours when {he} falls."
+    },
+    "territorial": {
+      "sign": "{The} keeps close to one place, as if guarding it.",
+      "does": "{He} will not follow you far from {his} ground, and on it {he} never runs.",
+      "counter": "Hurt, leave {his} ground and {he} lets you go; rest, and come back."
+    },
+    "bargains": {
+      "sign": "{The} jingles a heavy purse and grins.",
+      "does": "{He} keeps out of reach and darts in when you turn your back; caught, {he} offers {his} gold for {his} freedom.",
+      "counter": "Back {him} into a corner: take the purse, or refuse and fight for all {he} carries."
+    },
+    "skittish": {
+      "sign": "{The} flits about at the edge of sight.",
+      "does": "{He} keeps a few paces off and darts in when you turn your back.",
+      "counter": "Back {him} into a corner, or reach {him} with a sling, a bow or a wand."
     },
     "snuffs_light": {
       "sign": "The flames near {the} gutter and bow.",

@@ -211,6 +211,7 @@ import treasure as treasure_mod                  # noqa: E402
 import packs as packs_mod                        # noqa: E402
 import lore_powers as lore_powers_mod            # noqa: E402  (slice M)
 import sim_ai1                                   # noqa: E402  (AI-1: monster behaviour)
+import sim_ai3                                   # noqa: E402  (AI-3: monster behaviour, third wave)
 import sim_ai2                                   # noqa: E402  (AI-2: the Tactical Mind)
 from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
@@ -414,6 +415,10 @@ KNOB_DEFAULTS.update(sim_ai1.KNOBS)
 # tac_mind, tac_lanes, both 1 (the game's rule); 0 is the ablation.
 KNOB_DEFAULTS.update(sim_ai2.KNOBS)
 # ---- end AI-2 ----
+# ---- AI-3: monster behaviour, third wave (2026-11-20; tools/balance/sim_ai3.py) ----
+# 0 = its ablation. Each is described in sim_ai3.py.
+KNOB_DEFAULTS.update(sim_ai3.KNOBS)
+# ---- end AI-3 ----
 
 DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_quick',
                  'heavy_quick', 'medium_drag',
@@ -3527,6 +3532,7 @@ class Run(_MMMagicSim):
             m._enraged = True
             m.ai_pattern = m.enraged_pattern
             m._sim_away = 0
+            sim_ai3.enraged(m)                   # AI-3: a changer takes its second shape
         # ---- AI-1 (sim_ai1.py): Morale by Nature; ai_morale=0 is the old
         # rule just below (which the knob being on skips) ----
         if self.knobs['ai_morale']:
@@ -3556,6 +3562,11 @@ class Run(_MMMagicSim):
         if _ai1 is not None:
             return _ai1
         # ---- end AI-1 ----
+        # ---- AI-3 (sim_ai3.py): a hold, a potion, a bargain, a caster's book ----
+        _ai3 = sim_ai3.monster_turn(self, m)
+        if _ai3 is not None:
+            return _ai3
+        # ---- end AI-3 ----
         pat = m.ai_pattern
         if pat == 'cowardly':
             return random.random() < 0.3
@@ -3588,6 +3599,8 @@ class Run(_MMMagicSim):
         """main._do_move / game_input._player_input turn-loss rules."""
         p = self.p
         if sim_ai1.lost_action(self):        # AI-1: a light raised, a shove
+            return False
+        if sim_ai3.lost_action(self):        # AI-3: closing on a caster that blinked off
             return False
         if p.has_effect('sleeping') or p.has_effect('paralyzed'):
             return False
@@ -3685,6 +3698,7 @@ class Run(_MMMagicSim):
                 m._sim_hr_left = random.randint(1, 2)
                 if m.can_charge and random.random() < ASTERION_CHARGE_PROB:
                     m._charge_ready = True
+            free = sim_ai3.enter(self, m, free)      # AI-3: lurkers, a fire pot thrown, home ground
             for _ in range(free):
                 if p.hp <= 0 or not m.alive:
                     break
@@ -3744,6 +3758,7 @@ class Run(_MMMagicSim):
                         slow = all(m.speed < FAST_SPEED
                                    and m.ai_pattern not in RANGED_PATTERNS
                                    and m.rage_stacks < 3 for m in active)
+                        slow = slow or sim_ai3.lets_go(active)   # AI-3: they keep to their ground
                         if random.random() < (FLEE_OK_SLOW if slow else FLEE_OK_FAST):
                             if not mandatory:
                                 self.fs['fled'] += 1
@@ -3795,6 +3810,7 @@ class Run(_MMMagicSim):
                     # focus the named foe if there is one, else the weakest
                     named = [m for m in reachable if is_named(m)]
                     target = named[0] if named else min(reachable, key=lambda m: m.hp)
+                    target = sim_ai3.target(self, reachable, target)   # AI-3: the holder, a chant
                     if target._flee_timer > 0 and random.random() > CHASE_HIT_PROB:
                         action = 'chase'
                     elif (target.ai_pattern in RANGED_PATTERNS
@@ -3946,6 +3962,7 @@ class Run(_MMMagicSim):
             if m.alive:
                 self._tick_monster(m)
         sim_ai1.world_tick(self, active)     # AI-1: a troll in the light, a shove
+        sim_ai3.world_tick(self, active)     # AI-3: a hold that ended, the auras
         p._incoming_scale = self.kv('mon_dmg')
         msgs = p.tick_effects()
         p._incoming_scale = 1.0
@@ -3964,7 +3981,8 @@ class Run(_MMMagicSim):
             # --- end slice M ---
             if self.monster_acts(m, ctx):
                 self._monster_attack(m)
-                if sim_ai2.extra_blow(self, m):      # AI-2: the Tactical Mind
+                if (sim_ai2.extra_blow(self, m)      # AI-2: the Tactical Mind
+                        and not m.__dict__.get('_holding')):   # AI-3: a holder only squeezes
                     self._monster_attack(m)
 
     def pass_time_in_fight(self):
@@ -4005,6 +4023,7 @@ class Run(_MMMagicSim):
     def _record_monster(self, m):
         fs = self.fs
         fs['monsters'] += 1
+        sim_ai3.kit_loot(self, m)            # AI-3: what it did not use is the hero's
         if not m.alive:
             fs['kills'] += 1
             n = max(1, m._sim_attacks)
@@ -4485,6 +4504,7 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
     packs_mod.ENABLED = bool(knobs.get('packs', 1))
     lore_powers_mod.ENABLED = bool(knobs.get('mm_powers', 1))     # slice M
     sim_ai1.apply_flags(knobs)                    # AI-1: the behaviours' switches
+    sim_ai3.apply_flags(knobs)                    # AI-3: the behaviours' switches
     sim_ai2.apply_flags(knobs)                    # AI-2: the Tactical Mind's switches
     random.seed(seed)
     cache = FloorCache(variants)

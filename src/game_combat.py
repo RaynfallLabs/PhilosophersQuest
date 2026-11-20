@@ -67,6 +67,7 @@ from game_states import (
 from geom import monster_at_tile, is_at_tile
 import unseen
 import theft
+import holds            # Held Fast (AI-3)
 import habits          # They Learn Your Tricks (AI-2)
 import tactical_mind    # the Tactical Mind (AI-2)
 from items import Artifact, Weapon
@@ -1231,6 +1232,8 @@ class CombatMixin:
         self._band_member_died(monster)
         # Its own side saw it fall (AI-1: game_behaviour.py).
         self._ai_on_kill(monster)
+        # A holder's death frees the hero; its unused kit falls (AI-3).
+        self._ways_on_kill(monster, banished=_banished)
         if not _banished:
             self._drop_treasure(monster)
         # A thief gives back everything it stole (src/theft.py).
@@ -3360,6 +3363,8 @@ class CombatMixin:
             _hz()
             if self.state == STATE_DEAD:
                 return
+        if self._ways_world_turn():        # a hold lets go; the auras (AI-3)
+            return
 
         # Death acts first -- not part of self.monsters to avoid save/load issues
         if self.death_pursues and self.death_monster is not None:
@@ -3458,6 +3463,8 @@ class CombatMixin:
             self._lore_powers_before(m)        # gifts, gold, the Blue Men's verse (slice M)
             did_attack = m.take_turn(self.player, self.dungeon, self.monsters,
                                      extra_occupied=_pet_occ)
+            if did_attack and self._ways_shield(m):
+                did_attack = False             # he is inside another: out of its reach (AI-3)
             self._scavenge_after(m)
             # It drew its opener up this turn (monster.OPENER_WIND_UP): the
             # tell the hero can answer before it lands.
@@ -3471,6 +3478,7 @@ class CombatMixin:
             self._lore_powers_after(m)         # the Roc's carry-off, the lore powers' lines (slice M)
             # What its behaviour left to be seen or heard (game_behaviour.py).
             self._ai_turn_after(m)
+            self._ways_turn_after(m)           # a potion seen drunk, a bargain offered (AI-3)
             if did_attack:
                 # A blow on the hero carries (src/senses.py).
                 self._make_noise('struck')
@@ -3581,7 +3589,7 @@ class CombatMixin:
                 import enchantments as _enchantments
                 _disp = max(DISPLACEMENT_MISS if self.player.has_effect('displacement') else 0.0,
                             _enchantments.displacement(self.player))
-                if _disp > 0 and random.random() < _disp:
+                if _disp > 0 and not holds.is_holder(m, self.player) and random.random() < _disp:
                     self.add_message(f"{the_name(m)}'s attack passes through your displaced image!", 'info')
                     continue
 
@@ -3610,6 +3618,9 @@ class CombatMixin:
                             f"{self._compass_word(m.x - self.player.x, m.y - self.player.y)}.")
                 if msg:                              # (a ward said its line once: wards.py)
                     self.add_message(msg, 'danger')
+                # The Roc's carry-off, set by this blow: he is set down now,
+                # in the same turn (game_lore_powers.py, slice M).
+                self._lore_powers_lift(m)
                 if getattr(m, 'ai_pattern', '') == 'stalker_coward':
                     self._old_nickel_blow(m, dmg)        # his line after his blow
                 if self.player.hp <= 0:
@@ -4485,6 +4496,8 @@ class CombatMixin:
                     or getattr(m, '_is_unicorn', False)
                     # one that yielded strikes no one again (src/morale.py)
                     or m.__dict__.get('_yielded')
+                    # one wrapped round the hero has no blow to spare (holds.py)
+                    or m.__dict__.get('_holding')
                     # the stalking coward (Old Nickel) strikes no pet until
                     # he has been in a fight
                     or (getattr(m, 'ai_pattern', '') == 'stalker_coward'

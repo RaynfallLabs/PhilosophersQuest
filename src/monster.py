@@ -14,6 +14,14 @@ import grave_rot
 import morale
 import relurk
 import summoning
+# Monster behaviour, third wave (AI-3, 2026-11-20): each in its own module.
+import ai_turn
+import caster_ai
+import dancer
+import holds
+import home_ground
+import second_shape
+import surprise
 import lanes            # Archers Find a Lane (AI-2)
 import tactical_mind    # the Tactical Mind (AI-2)
 
@@ -1024,6 +1032,8 @@ class Monster:
             duration = _aff.status_weak_duration(duration)
         cur = int(self.status_effects.get(name, 0) or 0)
         self.status_effects[name] = max(cur, int(duration))
+        if self.status_effects[name] > 0:
+            lore_powers.on_effect(self, name)      # the Kappa's dish spills (slice M)
 
     def can_bleed(self) -> bool:
         """It has blood to lose (data/monster_blood.json: a skeleton, a
@@ -1142,6 +1152,10 @@ class Monster:
             self.status_effects.pop('bleeding', None)
         if self.status_effects.get('burning') and self.resists_control('burning'):
             self.status_effects.pop('burning', None)
+        # A stun or a hold written straight into the statuses (an armour's
+        # stagger, a hero's special, a ring's pacifying) spills the Kappa's
+        # dish too (slice M; add_effect and hold say it at once).
+        lore_powers.on_tick(self)
         for name in list(self.status_effects):
             val = self.status_effects[name]
             if val > 0:
@@ -1219,6 +1233,7 @@ class Monster:
         if self._gaze_cooldown > 0:
             self._gaze_cooldown -= 1
         faction.tick(self)
+        caster_ai.tick(self)                # its spells come ready again (AI-3)
         breath.tick(self)
 
         # Regeneration: heal HP each turn (trolls, hydras).
@@ -1372,12 +1387,14 @@ class Monster:
         if amount > 0:
             self._unhurt_turns = 0           # see _recover_when_left
             # A bleed, a burn or a poison ticking is not a blow: it springs no
-            # lurker, ends no hiding (Gone Again) and breaks no chant.
+            # lurker, ends no hiding (Gone Again) and breaks no chant or spell.
             if not self.__dict__.get('_dot_tick'):
                 self._struck = True          # a calmed locust remembers (Locust Charm)
                 self.spring()                # a struck lurker gives itself away
                 if self.__dict__.get('_chanting'):
                     summoning.spoil(self)    # a blow breaks a chant (src/summoning.py)
+                if self.__dict__.get('_casting'):
+                    caster_ai.spoil(self)    # and a spell drawn up (src/caster_ai.py, AI-3)
             if self.__dict__.pop('_bribed', False):
                 # A bribed monster struck: the deal is off (Gilgamesh's Bribe).
                 self.status_effects.pop('charmed', None)
@@ -1403,6 +1420,7 @@ class Monster:
                 pass
         if actual > 0 and HERO_STRUCK is not None and not self.__dict__.get('_dot_tick'):
             HERO_STRUCK(self)            # (a bleed, a burn or a poison ticking is not a blow)
+        holds.note_hurt(self, 0 if self.__dict__.get('_dot_tick') else actual)   # a way out (AI-3)
         # A creature that splits (src/splitting.py) notes the split this blow
         # earned; the game sets the new body down at the end of the action.
         if (actual > 0 and self.hp > 0 and getattr(self, 'splits', None)
@@ -1478,6 +1496,9 @@ class Monster:
         if getattr(player, '_return_to_hand_active', False):
             player._return_to_hand_active = False
             return 0, f"{the_name(self)}'s strike is deflected — a discus spins between you!"
+        _a3 = ai_turn.blow(self, player)     # a squeeze, a spell, a thrown pot (src/ai_turn.py, AI-3)
+        if _a3 is not None:
+            return _a3
         if not self.attacks:
             # Floating eye: gaze-based paralysis (checks sleep_resist or total blindness)
             if player.get_sight_radius() == 0:
@@ -1686,6 +1707,10 @@ class Monster:
             atk = self.attacks[0]
         else:
             atk = random.choice(self.attacks)
+        # The Caster's Book (src/caster_ai.py, AI-3): a caster's bolt from afar, chosen with sense.
+        if not self._adjacent_to(player) and not atk.get('piercing'):
+            atk = ai_turn.pick_attack(self, player, atk,
+                                      lanes.within_reach(self, player, self._distance_attacks()))
         # Draws Breath (src/breath.py): a breath still drawing is never used;
         # another blow ready is (never one from afar), else the turn is spent.
         atk = breath.choose(self, atk, player)
@@ -2024,7 +2049,7 @@ class Monster:
         if charged:
             msg = f"{the_name(self)} CHARGES! " + msg
         if mimic_strike:
-            msg = f"{the_name(self)} ERUPTS from {pronouns(self)[2]} disguise! " + msg
+            msg = surprise.strike_line(self) + msg   # a mimic erupts, an ambusher drops (AI-3)
 
         # Fire/cold shield: if attack was blocked (actual=0), reflect damage back
         # Typed (round 3): its own fire turned back burns as fire, so a
@@ -2305,6 +2330,8 @@ class Monster:
             self._enrage_message = (
                 getattr(self, 'enrage_message', '')
                 or f"{the_name(self)} fights like a thing with nothing left to lose.")
+            # Second Shape (src/second_shape.py, AI-3): a changer takes its other form.
+            self._enrage_message = ' '.join(t for t in (self._enrage_message, second_shape.apply(self)) if t)
 
         # --- Pack-dependent: aggressive with allies nearby, cowardly alone ---
         # Re-evaluates each turn so the pattern tracks the immediate situation.
@@ -2358,6 +2385,12 @@ class Monster:
         # --- The stalking coward (data 'stalker': Old Nickel) ---------------
         if self.ai_pattern == 'stalker_coward':
             return self._stalker_turn(player, dungeon, all_monsters, extra_occupied)
+
+        # The third wave (src/ai_turn.py, AI-3): a hold, a potion or a fire
+        # pot, a coward's distance and its bargain, a caster's book.
+        _a3 = ai_turn.turn(self, player, dungeon, all_monsters, extra_occupied)
+        if _a3 is not None:
+            return _a3
 
         # --- A thief with a haul runs (src/theft.py); cornered, it fights ---
         if self.__dict__.get('stolen_gold') or self.__dict__.get('stolen_items'):
@@ -2461,23 +2494,17 @@ class Monster:
                 return _tm
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
 
-        # --- Ambush AI: stay still until player is within 5 tiles ---
+        # --- Ambush AI: it lies in wait until the hero comes within its drop,
+        # then springs with a surprise blow; one he spotted first (his keen
+        # senses: _aware) comes on with none (src/surprise.py, AI-3).
         if self.ai_pattern == 'ambush':
-            if getattr(self, '_aware', False):
-                # Already detected by PER check — switch to aggressive
-                self.ai_pattern = 'aggressive'
-            else:
-                dist = abs(self.x - player.x) + abs(self.y - player.y)
-                if dist > 5:
-                    return False  # lurk silently, invisible
-                # It springs on what it can see (or touch), not through stone.
-                import senses as _senses
-                if (not self._adjacent_to(player)
-                        and not _senses.clear_view(self.x, self.y, player.x, player.y, dungeon)):
-                    return False
-                # Sprung! Switch to aggressive and become visible
-                self.ai_pattern = 'aggressive'
-                self._aware = True
+            _amb = surprise.ambush_step(self, player, dungeon)
+            if _amb == 'lurk':
+                return False  # lurk silently, invisible
+            if _amb == 'spring':
+                self._mimic_surprise = surprise.surprises(self, player)
+            self.ai_pattern = 'aggressive'
+            self._aware = True
 
         # --- Detection range: per-monster perception_range (default 8) ---
         if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
@@ -2598,6 +2625,7 @@ class Monster:
         search when the trail goes cold (src/senses.py)."""
         import senses as _senses
         seen = _senses.notice(self, player, dungeon, all_monsters, extra_occupied)
+        seen = home_ground.leash(self, player, dungeon, all_monsters, extra_occupied, seen)  # AI-3
         # A fight ends when it has lost the hero a while: its opener is
         # ready again (OPENER_RESET_TURNS).
         if seen:
@@ -3742,8 +3770,9 @@ class Monster:
         On reveal, switch ai_pattern to aggressive permanently and flag a
         surprise crit for the first attack."""
         if self._adjacent_to(player):
-            # Spring! Flag surprise so the next attack lands with a crit bonus.
-            self._mimic_surprise = True
+            # Spring! Its first blow is a surprise, unless the hero knows the
+            # kind for what it is (src/surprise.py, AI-3).
+            self._mimic_surprise = surprise.surprises(self, player)
             self._aware = True
             self.ai_pattern = 'aggressive'
             return True  # attack now
@@ -3833,19 +3862,11 @@ class Monster:
             occupied |= extra_occupied
         occupied.add((px, py))
 
-        candidates = []
-        for ddx in [-1, 0, 1]:
-            for ddy in [-1, 0, 1]:
-                if ddx == 0 and ddy == 0:
-                    continue
-                nx, ny = px + ddx, py + ddy
-                if (nx, ny) == (self.x, self.y):
-                    continue
-                if (nx, ny) not in occupied and dungeon.is_walkable(nx, ny):
-                    candidates.append((nx, ny))
-
-        if candidates:
-            self.x, self.y = random.choice(candidates)
+        # The dance uses the room (src/dancer.py, AI-3): never a pit, a trap or
+        # a vent; a gazer keeps her eyes on him; open ground before a corner.
+        step = dancer.sidestep(self, player, dungeon, occupied)
+        if step is not None:
+            self.x, self.y = step
 
         return True  # signal attack
 

@@ -923,6 +923,7 @@ class Player:
         loss). It is re-set on the next combat, so dropping it on save is safe."""
         state = self.__dict__.copy()
         state.pop('_combat_game_ref', None)
+        state.pop('_lp_carry_off', None)     # a Roc's lift resolves in its own turn (slice M)
         state.pop('_warding', None)
         state.pop('_no_ward', None)
         # Transient bound-method hook set by Game (one-cosmetic-per-item): stamps

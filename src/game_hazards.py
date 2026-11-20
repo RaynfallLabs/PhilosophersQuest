@@ -110,7 +110,14 @@ class HazardsMixin:
         if dmg_str:
             raw = _wound(min(HAZARD_CAP, _dice_roll(dmg_str) / HAZARD_BAR),
                          m.max_hp, m._is_named_foe())
-            m.take_damage(raw, h.get('type', 'physical'))
+            # The floor's blow, not the hero's (whatever turn it falls in):
+            # no ward breaks and no peace ends for it (`_damage_by`).
+            _by = getattr(self, '_damage_by', 'hero')
+            self._damage_by = 'hazard'
+            try:
+                m.take_damage(raw, h.get('type', 'physical'))
+            finally:
+                self._damage_by = _by
         st = h.get('status')
         if st:
             m.add_effect(st[0], random.randint(int(st[1]), int(st[2])))
