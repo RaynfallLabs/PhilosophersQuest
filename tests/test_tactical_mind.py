@@ -516,14 +516,18 @@ def test_no_rotation_for_a_cunning_bandit_or_with_a_held_friend():
 # Archers Find a Lane
 # ===========================================================================
 
+def _atk(kind, name):
+    return next(a for a in MONS[kind]['attacks'] if a['name'] == name)
+
+
 def test_each_missile_reaches_as_its_weapon_does():
-    assert lanes.attack_range({'name': 'Yew Longbow'}) == 8
-    assert lanes.attack_range({'name': 'Sling Stone'}) == 5
-    assert lanes.attack_range({'name': 'Dagger Throw'}) == 4
-    assert lanes.attack_range({'name': 'Shortbow'}) == 6
-    assert lanes.attack_range({'name': 'Hand Crossbow'}) == 5
-    assert lanes.attack_range({'name': 'Fire Bolt'}) == 6
-    assert lanes.attack_range({'name': 'Sling Stone', 'range': 3}) == 3
+    assert lanes.attack_range(_atk('gnoll_archer', 'Yew Longbow')) == 8
+    assert lanes.attack_range(_atk('goblin', 'Sling Stone')) == 5
+    assert lanes.attack_range(_atk('orc_archer', 'Shortbow')) == 6
+    assert lanes.attack_range(_atk('drow_warrior', 'Hand Crossbow')) == 5
+    assert lanes.attack_range(_atk('dark_elf', 'Poisoned Dart')) == 5
+    assert lanes.attack_range(_atk('kobold_sorcerer', 'Fire Bolt')) == 6
+    assert lanes.attack_range({**_atk('goblin', 'Sling Stone'), 'range': 3}) == 3
 
 
 def test_a_slinger_does_not_fire_beyond_its_reach():
@@ -729,7 +733,7 @@ def test_the_swipe_pass_gives_the_chosen_pet_a_whole_blow():
     pet = Pet(9, 7, hp=20, max_hp=100)
     pet.take_damage = lambda n: setattr(pet, 'hp', pet.hp - n)
     m = make('gnoll_pack_lord', 9, 6, attacks=[{'name': 'Glaive', 'damage': '1d2+9', 'type': 'slash'}])
-    m._focus = id(pet)
+    m._focus = (id(pet), tm.TURN.n)
     g = G([m], hero)
     CombatMixin._monster_swipes(g, [pet])
     assert pet.hp <= 10                                   # its whole blow (10-11), not half
@@ -939,16 +943,28 @@ def test_the_games_hooks_note_the_heros_habits():
     kob = make('kobold_pack_leader', 6, 4)
     g = G(d, hero, [kob])
     assert habits.hero_melee(g, kob)                      # from the corridor
+    # A shot from afar, then a step back: the kiter's way, over two actions.
     far = make('kobold_pack_leader', 3, 4)
     g.turn_count = 100
-    assert habits.hero_shot(g, far)
+    habits.hero_shot(g, far)
+    assert habits.close_action(g) == []                   # the shot alone is not the trick
+    habits.world_over(g)
+    hero.x = 10                                           # his next action: a step back
+    assert habits.close_action(g)
+    habits.world_over(g)
+    # Two struck by one action of his: a blast.
     a, b = make('kobold', 6, 3), make('kobold', 6, 5)
     g.turn_count = 200
-    assert habits.hero_struck(g, a) == []
-    assert habits.hero_struck(g, b)                       # two in one turn: a blast
-    a._dot_tick = True
+    habits.hero_struck(g, a)
+    habits.hero_struck(g, b)
+    assert habits.close_action(g)
+    habits.world_over(g)
+    # A damage-over-time tick is never a blow.
+    a._dot_tick = b._dot_tick = True
     g.turn_count = 300
-    assert habits.hero_struck(g, a) == [] and habits.hero_struck(g, a) == []
+    habits.hero_struck(g, a)
+    habits.hero_struck(g, b)
+    assert habits.close_action(g) == []
 
 
 # ===========================================================================
@@ -1286,7 +1302,10 @@ def test_a_queued_hunter_looks_again_when_the_hero_moves_on():
     assert second.__dict__.get('_queue_wait') and second.__dict__['_queue_goal'] == (9, 1)
     hero.x, hero.y = 18, 4                                # round the loop, far from the queue
     senses.step_toward(second, d, (hero.x, hero.y), [front, second], set(), hero)
-    assert second.__dict__['_queue_goal'] == (18, 4)      # it looked for its way again
+    # It looked for its way again (to where he is now), and waits no more:
+    # one wait a hunt, then it goes round (the audit's bounded queue).
+    assert not second.__dict__.get('_queue_wait')
+    assert second.__dict__['_path_goal'] == (18, 4)
 
 
 def test_a_pet_in_the_corridor_is_no_friend_to_wait_behind():
@@ -1423,3 +1442,295 @@ def test_no_tactic_fires_without_a_mind_while_held_or_unseen():
     for tactic, scene in TACTIC_SCENES.items():
         for spoil in (_no_mind, _paralysed, _unseen):
             assert _run(scene, spoil) != tactic, (tactic, spoil.__name__)
+
+
+# ===========================================================================
+# Fixes after the audit (_mm_2026_11_19/AI2/AUDIT.md): each test failed on
+# the code the audit read, and passes now
+# ===========================================================================
+
+def test_audit_d1_a_broken_captain_leads_no_one():
+    """A captain who has yielded, is fleeing or is at bay gives no order,
+    and his band answers as if he had fallen (no screen, no feint)."""
+    for k, v in (('_yielded', True), ('_flee_timer', 5), ('_at_bay', 3), ('_cowed', True)):
+        d = open_room()
+        hero = Hero(9, 4)
+        mem = _band(d, hero)
+        setattr(mem[0], k, v)
+        assert tm.band_order(mem[1], hero, d, mem) == '', k
+        assert tm.leader_of(mem[1]) is None, k
+        assert not any('Shields' in s for s in said(mem[0])), k
+    # Nor does his band feign flight for him.
+    d, hero, mem, front = _feint_scene()
+    mem[0]._yielded = True
+    tm.TURN.n = 210
+    front.take_turn(hero, d, mem)
+    assert front.__dict__.get('_tm_last') != 'feint' and not d.band.get('feinted')
+
+
+def test_audit_d2_a_far_sleeping_kin_learns_nothing_and_a_lesson_dies_with_its_witness():
+    d = grid(ROOM_AND_CORRIDOR)
+    witness = make('kobold_pack_leader', 5, 4)
+    far = make('kobold_pack_leader', 2, 7)                # same family, no band: never saw it
+    far.status_effects['sleeping'] = 50
+    mons = [witness, far]
+    habits.note(d, 'choke_fighter', [witness], 10)
+    habits.note(d, 'choke_fighter', [witness], 60)
+    assert habits.count(d, witness, 'choke_fighter', 60) == 2
+    assert habits.count(d, far, 'choke_fighter', 60) == 0  # the audit's leak: it read 2
+    assert habits.count(d, far, 'choke_fighter', 60, monsters=mons) == 0
+    far.status_effects = {}
+    assert habits.count(d, far, 'choke_fighter', 60, monsters=mons) == 0   # no band, no word
+    # A bandmate in shout reach was told; when the witness dies, the word dies too.
+    mate = make('kobold_pack_leader', 4, 3)
+    witness._band = mate._band = 'b@1'
+    mons = [witness, mate]
+    assert habits.count(d, mate, 'choke_fighter', 60, monsters=mons) == 2
+    witness.alive = False
+    assert habits.count(d, mate, 'choke_fighter', 60, monsters=mons) == 0
+
+
+BENT = [
+    "############################",
+    "#..........................#",
+    "#.########################.#",
+    "#.########################.#",
+    "#..........................#",
+    "############################",
+]
+
+
+def _queue_scene(friend_kind='hobgoblin', hunter_kind='hobgoblin'):
+    d = grid(BENT)
+    hero = Hero(10, 1)
+    hero.status_effects['aggravated'] = 999               # it keeps his track the whole way
+    friend = make(friend_kind, 9, 1)
+    hunter = make(hunter_kind, 8, 1)
+    return d, hero, friend, hunter
+
+
+def _arrives(d, hero, mons, hunter, turns_=90):
+    for t in range(turns_):
+        tm.begin_turn(_Game(turn=500 + t))
+        hunter.take_turn(hero, d, mons)
+        if hunter._adjacent_to(hero):
+            return t + 1
+    return None
+
+
+def test_audit_d3_no_queue_behind_a_friend_that_will_not_move():
+    d, hero, friend, hunter = _queue_scene()
+    friend.status_effects['sleeping'] = 999
+    friend._tracking = False
+    t = _arrives(d, hero, [friend, hunter], hunter)
+    assert t is not None, 'deadlocked behind a sleeper'
+    # A creature with no mind gets there too.
+    d, hero, friend, hunter = _queue_scene(hunter_kind='cave_bear')
+    friend.status_effects['paralyzed'] = 999
+    assert _arrives(d, hero, [friend, hunter], hunter) is not None
+
+
+def test_audit_d3_a_queued_wait_is_bounded_and_searches_little():
+    d, hero, friend, hunter = _queue_scene()
+    # The friend is awake and hunting, but cannot get past the hero's tile.
+    friend.status_effects = {}
+    calls = {'n': 0}
+    real = senses.find_path
+
+    def counting(*a, **k):
+        calls['n'] += 1
+        return real(*a, **k)
+    senses.find_path = counting
+    try:
+        t = _arrives(d, hero, [friend, hunter], hunter)
+    finally:
+        senses.find_path = real
+    assert t is not None and t <= 70
+    assert calls['n'] <= 12                              # it waited, then went round: no search every turn
+
+
+def test_audit_d4_the_captain_knows_the_hero_only_by_his_senses():
+    d = open_room(40, 10)
+    hero = Hero(35, 4)
+    mem = _band(d, hero)
+    hero.hp = int(hero.max_hp * 0.3)
+    hero.status_effects['invisible'] = 50                 # far, and unseen
+    tm.TURN.n = 30
+    assert tm.band_order(mem[1], hero, d, mem) != 'charge'
+    # Seen hurt once, he keeps that picture while the hero is out of sight.
+    d = open_room()
+    hero = Hero(9, 4)
+    mem = _band(d, hero)
+    hero.hp = int(hero.max_hp * 0.3)
+    tm.TURN.n = 31
+    assert tm.band_order(mem[1], hero, d, mem) == 'charge'
+    hero.status_effects['invisible'] = 50
+    hero.hp = hero.max_hp                                 # healed out of his sight
+    tm.TURN.n = 32
+    assert tm.band_order(mem[1], hero, d, mem) == 'charge'   # he does not know
+
+
+def test_audit_d5_an_archer_not_its_own_master_takes_no_lane():
+    for eff in ('confused', 'blinded', 'babbled', 'feared', 'paralyzed', 'charmed'):
+        d = open_room()
+        hero = Hero(14, 6)
+        sword = make('orc_warrior', 13, 6)
+        archer = make('bandit_archer', 10, 6)
+        archer.status_effects[eff] = 5
+        assert not lanes.applies(archer), eff
+        assert lanes.blocked_turn(archer, hero, d, [sword, archer], set()) is None, eff
+        assert (archer.x, archer.y) == (10, 6), eff
+    archer = make('bandit_archer', 10, 6)
+    archer._flee_timer = 4
+    assert not lanes.applies(archer)
+
+
+def test_audit_d6_a_choice_of_pet_holds_for_its_own_turn_only():
+    d = open_room()
+    hero = Hero(10, 6)
+    pet = Pet(8, 6, hp=25)
+    m = make('gnoll_pack_lord', 7, 6)
+    tm.begin_turn(_Game([pet], turn=700))
+    m.take_turn(hero, d, [m], extra_occupied={(pet.x, pet.y)})
+    assert tm.focus_of(m) == id(pet)
+    tm.begin_turn(_Game([pet], turn=701))                 # a turn it never reached its mind
+    assert tm.focus_of(m) is None
+    tm.begin_turn(_Game([pet], turn=700))
+    m.status_effects['stuck_in_pit'] = 3                  # fell in the same turn
+    assert tm.focus_of(m) is None
+    m.status_effects = {}
+    m._flee_timer = 5
+    assert tm.focus_of(m) is None
+
+
+def test_audit_d7_a_watcher_answers_the_shot_that_hits_it():
+    d, hero, mons = _corridor_scene(n=1)
+    m = mons[0]
+    turns(mons, hero, d, 1)
+    assert m.__dict__.get('_tm_watch')
+    # Out of its sight, an unseen hero shoots it.
+    hero.status_effects['invisible'] = 50
+    m._tracking = False
+    m.x, m.y = 5, 3
+    m.hp -= 5
+    senses.notice(m, hero, d, mons, set())
+    assert not m.__dict__.get('_tm_watch')                # the watch is over: it goes to look
+
+
+def test_audit_d8_every_line_in_minds_json_can_be_said():
+    import re
+    src = open(os.path.join(ROOT, 'src', 'tactical_mind.py'), encoding='utf-8').read()
+    src += open(os.path.join(ROOT, 'src', 'lanes.py'), encoding='utf-8').read()
+    for key in MINDS['lines']:
+        assert re.search(r"'%s'" % re.escape(key), src), key
+    # The press is said when the hero's wounds pull them out of a hold.
+    d, hero, mons = _corridor_scene('kobold_pack_leader', n=1)
+    hero.hp = int(hero.max_hp * 0.2)
+    turns(mons, hero, d, 1)
+    assert any('can see you are hurt' in s for s in said(mons[0]))
+
+
+def test_audit_d8_the_kiter_habit_is_told_when_it_changes_their_play():
+    d, hero, mons = _corridor_scene('kobold_pack_leader', n=1)
+    habits.note(d, 'kiter', mons, 10)
+    habits.note(d, 'kiter', mons, 60)
+    tm.TURN.n = 70
+    mons[0].take_turn(hero, d, mons)
+    assert any('shoot and step back' in s for s in said(mons[0]))
+
+
+def test_audit_d9_reach_goes_by_delivery_and_lore():
+    import wards
+    for kind, m in MONS.items():
+        if not isinstance(m, dict):
+            continue
+        for a in m.get('attacks') or ():
+            if not lanes.is_distance(a) or a.get('range'):
+                continue
+            r = lanes.attack_range(a)
+            if not wards.is_missile(a):
+                assert r == 6, (kind, a['name'], r)       # breath, gaze, voice, spit, spell: as before
+            else:
+                assert 5 <= r <= 8, (kind, a['name'], r)
+    assert lanes.attack_range(_atk('drake_fire', 'Fire Spit')) == 6
+    assert lanes.attack_range(_atk('hydra', 'Venom Spit')) == 6
+    assert lanes.attack_range(_atk('young_red_dragon', 'Fire Breath')) == 6
+    sling = lanes.attack_range(_atk('goblin', 'Sling Stone'))
+    for kind, name in (('cyclops', 'Boulder Hurl'), ('stone_giant', 'Rock Hurl'),
+                       ('fire_giant', 'Magma Hurl'), ('polyphemus', 'Hurled Crag')):
+        assert lanes.attack_range(_atk(kind, name)) > sling, (kind, name)
+    assert lanes.attack_range(_atk('polyphemus', 'Hurled Crag')) == 8
+
+
+def test_audit_d10_the_boots_arc_in_the_worlds_turn_is_no_blast():
+    class G:
+        def __init__(self, d, hero, mons):
+            self.dungeon, self.player, self.monsters = d, hero, mons
+            self.turn_count = 40
+            self._damage_by = 'hero'
+    d = grid(ROOM_AND_CORRIDOR)
+    hero = Hero(9, 4)
+    kob = make('kobold_pack_leader', 6, 4)
+    a, b = make('kobold', 6, 3), make('kobold', 6, 5)
+    g = G(d, hero, [kob, a, b])
+    habits.close_action(g)                                # his action is over: the world's turn
+    habits.hero_struck(g, a)                              # the Boots of Thor arc into a
+    habits.world_over(g)
+    habits.hero_struck(g, b)                              # his next action strikes b alone
+    assert habits.close_action(g) == []
+    assert not (kob.__dict__.get('_tm_habits') or {}).get('opens_with_area')
+
+
+def test_audit_d10_a_shot_with_no_step_back_is_no_kiting():
+    class G:
+        def __init__(self, d, hero, mons):
+            self.dungeon, self.player, self.monsters = d, hero, mons
+            self.turn_count = 40
+            self._damage_by = 'hero'
+    d = grid(ROOM_AND_CORRIDOR)
+    hero = Hero(9, 4)
+    kob = make('kobold_pack_leader', 6, 4)
+    g = G(d, hero, [kob])
+    habits.hero_shot(g, make('kobold_pack_leader', 3, 4))
+    habits.close_action(g)
+    habits.world_over(g)
+    habits.close_action(g)                                # he stood his ground
+    assert not (kob.__dict__.get('_tm_habits') or {}).get('kiter')
+
+
+def test_audit_d11_a_doorway_is_held_only_against_a_pet_it_can_see():
+    d = grid(ROOM_AND_CORRIDOR)
+    hero = Hero(3, 4)
+    pet = Pet(2, 2, hp=90)
+    m = make('hobgoblin', 6, 4)
+    m.hp = int(m.max_hp * 0.4)
+    d.tiles[3][3] = d.tiles[3][2] = d.tiles[3][4] = d.tiles[2][3] = WALL   # the pet behind stone
+    d.tiles[3][5] = WALL
+    tm.begin_turn(_Game([pet]))
+    m.take_turn(hero, d, [m], extra_occupied={(pet.x, pet.y)})
+    assert m.__dict__.get('_tm_last') != 'hold_door'
+
+
+def test_audit_d12_the_docs_say_the_archer_rule_of_today():
+    text = open(os.path.join(ROOT, 'docs', 'systems', 'monsters.md'), encoding='utf-8').read()
+    assert 'steps back half the time to a tile 2 away' not in text
+
+
+def test_a_creature_holding_the_hero_is_busy_no_lane_no_orders_no_plan():
+    """AI-3's Held Fast (src/holds.py): one holding or swallowing the hero
+    takes no lane step, gives no order, heeds none and plans nothing."""
+    d = open_room()
+    hero = Hero(14, 6)
+    sword = make('orc_warrior', 13, 6)
+    archer = make('bandit_archer', 10, 6)
+    archer._holding = True
+    assert not lanes.applies(archer)
+    assert lanes.blocked_turn(archer, hero, d, [sword, archer], set()) is None
+    d = open_room()
+    hero = Hero(9, 4)
+    mem = _band(d, hero)
+    mem[0]._holding = True                                 # the captain has the hero in his grip
+    assert tm.band_order(mem[1], hero, d, mem) == ''
+    mem[0].__dict__.pop('_holding')
+    mem[1]._holding = True                                 # a guard holding him heeds no order
+    assert not tm.thinks(mem[1], hero)

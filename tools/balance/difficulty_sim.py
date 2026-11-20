@@ -410,11 +410,11 @@ KNOB_DEFAULTS = {
 # ai_heal, ai_summon, ai_breath ...: 1 = the behaviour runs (the game's rule),
 # 0 = its ablation. Each is described in sim_ai1.py.
 KNOB_DEFAULTS.update(sim_ai1.KNOBS)
+# ---- end AI-1 ----
 # ---- AI-2: the Tactical Mind (2026-11-20; tools/balance/sim_ai2.py) ----
 # tac_mind, tac_lanes, both 1 (the game's rule); 0 is the ablation.
 KNOB_DEFAULTS.update(sim_ai2.KNOBS)
 # ---- end AI-2 ----
-# ---- end AI-1 ----
 # ---- AI-3: monster behaviour, third wave (2026-11-20; tools/balance/sim_ai3.py) ----
 # 0 = its ablation. Each is described in sim_ai3.py.
 KNOB_DEFAULTS.update(sim_ai3.KNOBS)

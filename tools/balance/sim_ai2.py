@@ -34,12 +34,16 @@ KNOBS = {
     'tac_mind': 1,
     'tac_lanes': 1,
 }
-# tools/balance/tactics_scenarios.py, 20 seeds a scene (2026-11-20): blows on
-# the hero per creature slain, mind on / off, the mean over its scenes.
-MIND_BLOWS = {'cunning': 1.04, 'soldier': 1.06, 'trickster': 1.09, 'caster': 1.00}
+# tools/balance/tactics_scenarios.py, 20 seeds a scene (2026-11-20, after the
+# audit's fixes, on main with AI-3): blows on the hero per creature slain, mind on / off, the
+# mean over its scenes. (The fixes made the creatures with no mind fight
+# straighter, a hunter that sees the hero no longer stepping in and out of a
+# blocked line, so the gap the mind makes grew: most in the strung-out
+# scene, where a band's shooter pelts a hero while the rest come up.)
+MIND_BLOWS = {'cunning': 1.33, 'soldier': 1.18, 'trickster': 1.07, 'caster': 1.00}
 # The same harness: hero turns spent closing on an archer, lanes on / off
-# (7.74 / 5.09).
-LANE_CLOSING = 1.52
+# (7.74 / 5.11).
+LANE_CLOSING = 1.51
 
 
 def apply_flags(knobs: dict) -> None:

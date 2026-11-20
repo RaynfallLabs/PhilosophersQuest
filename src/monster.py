@@ -2683,7 +2683,8 @@ class Monster:
         if (effective_pattern != 'cowardly'
                 and not self.has_effect('confused') and not self.has_effect('blinded')):
             import senses as _senses
-            if not _senses.clear_view(self.x, self.y, player.x, player.y, dungeon):
+            if (not _senses.clear_view(self.x, self.y, player.x, player.y, dungeon)
+                    or _senses.keeps_way_round(self, player, all_monsters)):   # Wait Your Turn (AI-2)
                 for _step in range(move_steps):
                     if not _senses.step_toward(self, dungeon, (player.x, player.y),
                                                all_monsters, extra_occupied, player):

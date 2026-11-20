@@ -33,10 +33,18 @@ ENABLED = True              # the scenario harness's ablation
 def applies(m) -> bool:
     """The lanes are the ranged AI's (the archers, slingers and bolt-casters);
     a healer or a summoner that borrows its turn keeps beside its friends.
-    One wrapped round the hero (Held Fast, src/holds.py: a naga's coil)
-    takes no lane step: it holds him where it is."""
-    return (ENABLED and getattr(m, 'ai_pattern', '') == 'ranged'
-            and not getattr(m, '__dict__', {}).get('_holding'))
+    An archer that is not its own master (confused, blinded, babbled, held,
+    frightened, charmed), that its morale has broken, or that is busy
+    holding the hero (Held Fast, src/holds.py: a naga's coil holds him where
+    it is) takes no lane: the same gate as the Tactical Mind's
+    (tactical_mind.CANNOT, broken, busy)."""
+    if not ENABLED or getattr(m, 'ai_pattern', '') != 'ranged':
+        return False
+    import tactical_mind
+    if tactical_mind.broken(m) or tactical_mind.busy(m):
+        return False
+    st = getattr(m, 'status_effects', None) or {}
+    return not any(int(st.get(e, 0) or 0) > 0 for e in tactical_mind.CANNOT)
 
 
 def rules() -> dict:
@@ -68,7 +76,11 @@ def is_distance(atk) -> bool:
 
 
 def attack_range(atk) -> int:
-    """How far this attack reaches."""
+    """How far this attack reaches: its own `range`; else, for a missile
+    (wards.is_missile: a thing shot or thrown), its weapon's reach by the
+    first word of `ranges.missiles` its name holds (a longbow 8, a giant's
+    hurled boulder 7, a sling 5); else `default` (6), as every distance
+    attack reached before: a breath, a gaze, a voice, a spit, a spell."""
     own = (atk or {}).get('range') if isinstance(atk, dict) else None
     if own:
         try:
@@ -76,10 +88,16 @@ def attack_range(atk) -> int:
         except (TypeError, ValueError):
             pass
     r = _ranges()
-    name = str((atk or {}).get('name', '')).lower()
-    for word, reach_ in r.get('words') or ():
-        if word in name:
-            return int(reach_)
+    try:
+        import wards
+        missile = wards.is_missile(atk or {})
+    except Exception:
+        missile = False
+    if missile:
+        name = str((atk or {}).get('name', '')).lower()
+        for word, reach_ in r.get('missiles') or ():
+            if word in name:
+                return int(reach_)
     return int(r.get('default', 6))
 
 
