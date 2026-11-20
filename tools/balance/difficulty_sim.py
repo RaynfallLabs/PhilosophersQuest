@@ -3650,7 +3650,9 @@ class Run:
             if p.hp <= 0:
                 break
             # --- slice M: the Cu-Sith barks; the third is its turn (lore_powers) ---
-            if self.knobs['mm_powers'] and m.alive and lore_powers_mod.sim_turn(m, p):
+            if (self.knobs['mm_powers'] and m.alive
+                    and not any(m.has_effect(e) for e in ('sleeping', 'paralyzed', 'stunned', 'frozen'))
+                    and lore_powers_mod.sim_turn(m, p)):
                 self._monster_attack(m)
                 continue
             # --- end slice M ---

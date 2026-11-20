@@ -107,7 +107,12 @@ class LorePowersMixin:
         d = m.__dict__
         state = d.get('_lp_parley')
         if state is None:
-            if not (getattr(m, '_aware', False) or self._sees_monster(m)) or not self._sees_monster(m):
+            # It calls out as soon as it has the hero in its sight (a voice:
+            # heard whether or not he can see it yet).
+            noticed = getattr(m, '_aware', False) or m.__dict__.get('_tracking')
+            if not (noticed or self._sees_monster(m)):
+                return
+            if not lore_powers._in_sight(m, self.player, self.dungeon):
                 return
             group = self._parley_group(m)
             for o in group:
@@ -140,8 +145,8 @@ class LorePowersMixin:
         it was asked."""
         waiting = [m for m in self.monsters
                    if m.alive and m.__dict__.get('_lp_parley') == 'waiting'
-                   and self._sees_monster(m)
-                   and max(abs(m.x - self.player.x), abs(m.y - self.player.y)) <= PARLEY_REACH]
+                   and max(abs(m.x - self.player.x), abs(m.y - self.player.y)) <= PARLEY_REACH
+                   and lore_powers._in_sight(m, self.player, self.dungeon)]
         if not waiting:
             return False
         lead = waiting[0]
@@ -255,6 +260,42 @@ class LorePowersMixin:
                 continue
             if m.add_effect('paralyzed', int(tal.get('turns', 2) or 2)):
                 self.add_message(tal.get('line', ''), 'success')
+
+    # ------------------------------------------------------ the cockerel
+    def _cock_crow(self, item) -> bool:
+        """The caged cockerel crows (Kit Apply), once a floor: every
+        cockatrice in earshot is struck down (half its health) and flees; a
+        basilisk or a jiangshi is stunned. One turn."""
+        import counters
+        tech = counters.technique('cock_crow')
+        if self.player.__dict__.get('_crowed_floor') == self.dungeon_level:
+            self.add_message(tech.get('tired', ''), 'info')
+            return False
+        self.player.__dict__['_crowed_floor'] = self.dungeon_level
+        self.add_message(tech.get('crow', ''), 'info')
+        reach = int(tech.get('reach', 8) or 8)
+        hit = 0
+        for m in list(self.monsters):
+            if not m.alive or max(abs(m.x - self.player.x), abs(m.y - self.player.y)) > reach:
+                continue
+            if m.kind in (tech.get('kills') or ()):
+                m.take_damage(max(1, int(m.max_hp * float(tech.get('share', 0.5) or 0.5))))
+                if m.alive:
+                    m.add_effect('feared', int(tech.get('flee_turns', 5) or 5))
+                if self._sees_monster(m):
+                    self.add_message(lore_powers._fill(m, tech.get('kill_line', '')), 'success')
+                hit += 1
+                if not m.alive:
+                    self._on_monster_killed(m)
+            elif m.kind in (tech.get('drives') or ()):
+                m.add_effect('stunned', int(tech.get('stun_turns', 2) or 2))
+                if self._sees_monster(m):
+                    self.add_message(lore_powers._fill(m, tech.get('drive_line', '')), 'success')
+                hit += 1
+        if not hit:
+            self.add_message(tech.get('nothing', ''), 'info')
+        self._advance_turn()
+        return True
 
     # ---------------------------------------------------------- QA key
     def _qa_mm_kinds(self) -> None:

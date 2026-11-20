@@ -188,6 +188,13 @@ def blow_refused(m, player, atk: dict):
     Likho blinded cannot cast her baleful eye."""
     if not ENABLED:
         return None
+    try:
+        import counters
+        shun = counters.shuns(player, m)          # the whitethorn and the strix
+    except Exception:
+        shun = None
+    if shun is not None:
+        return counters.line(player, shun[0], shun[1], m)
     lost = spec(m, 'blinded_loses') or ()
     if atk.get('name') in lost and m.has_effect('blinded'):
         return _fill(m, "{The} turns {his} blinded eye on you, and it finds nothing.")

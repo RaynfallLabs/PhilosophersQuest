@@ -56,7 +56,9 @@
                 "card": "Put in (Apply), no voice can work on you: no wail's fear, no song's sleep, no scream's confusion. But you hear nothing while they are in."},
       "fey_glamour": {"name": "fey glamour", "ward": "fey_glamour", "carried": true,
                       "line": "The cold iron you carry bites, and the glamour of {the} falls away.",
-                      "card": "Carried, the Fair Folk's glamour slides off you: no fairy charm, confusion, sleep or visions."}
+                      "card": "Carried, the Fair Folk's glamour slides off you: no fairy charm, confusion, sleep or visions."},
+      "whitethorn": {"name": "whitethorn", "carried": true, "kinds": ["strix"], "line": "{The} shies from the whitethorn you carry and will not strike you.", "card": "Carried, no strix will strike you: the whitethorn at the window kept them from the cradle."},
+      "cock_crow": {"name": "a cock's crow", "apply": "crow", "kills": ["cockatrice", "basilisk_lesser"], "drives": ["basilisk", "jiangshi"], "share": 0.5, "flee_turns": 5, "stun_turns": 2, "reach": 8, "crow": "The cockerel throws back its head and crows!", "kill_line": "{The} shrieks at the crow and reels away, smoking!", "drive_line": "{The} staggers at the crow, stunned.", "nothing": "Nothing here fears a cock's crow.", "tired": "The cockerel is hoarse; it will crow again on the next floor.", "card": "Apply to let it crow, once a floor: it strikes down a cockatrice and stuns a basilisk or a jiangshi nearby."}
     },
     "stop_ears": {
       "in": "You knead the wax soft and press it into your ears. The world goes quiet, as it did for Odysseus's crew.",

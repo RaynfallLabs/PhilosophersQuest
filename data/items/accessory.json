@@ -3413,5 +3413,61 @@
     "tier": 1,
     "special": "Hera never let her eyes close: whoever wears them cannot be put to sleep or held still.",
     "lore": "Lamia was a queen of Libya whom Zeus loved, and Hera killed her children for it. Grief made her a monster, and Hera made sure she could never close her eyes on what she had lost. Zeus, in pity, gave her the power to take her eyes out and set them aside so that she could rest. Plutarch says she kept them in a jar at home and put them back in when she went out hunting. These are the eyes, in the jar. They have not blinked since."
+  },
+  "whitethorn_branch": {
+    "name": "Sprig of Whitethorn",
+    "symbol": "&",
+    "color": [
+      230,
+      235,
+      225
+    ],
+    "weight": 0.2,
+    "min_level": 22,
+    "slot": "none",
+    "equip_threshold": 1,
+    "quiz_tier": 2,
+    "effects": {},
+    "identified": true,
+    "id_level": 5,
+    "can_be_cursed": false,
+    "counters": [
+      "whitethorn"
+    ],
+    "unidentified_name": "a sprig of white blossom on a thorny twig",
+    "lore": "A sprig of hawthorn in white flower, the whitethorn of the hedgerows. Ovid tells how the striges came by night to the cradle of the child Proca, and the nymph Cranae touched the doorposts three times with arbutus and set a branch of whitethorn at the window, and they never came again. Carried, no strix will come at you.",
+    "floorSpawnWeight": {
+      "21-40": 2,
+      "41-60": 1
+    },
+    "is_unique": false
+  },
+  "caged_cockerel": {
+    "name": "Caged Cockerel",
+    "symbol": "&",
+    "color": [
+      200,
+      80,
+      50
+    ],
+    "weight": 4.0,
+    "min_level": 4,
+    "slot": "none",
+    "equip_threshold": 1,
+    "quiz_tier": 1,
+    "effects": {},
+    "identified": true,
+    "id_level": 5,
+    "can_be_cursed": false,
+    "counters": [
+      "cock_crow"
+    ],
+    "unidentified_name": "a red cockerel in a wicker cage",
+    "lore": "A red cockerel in a little wicker cage, ill-tempered and loud. The bestiaries say the crow of a cock is death to the cockatrice and the basilisk, as the weasel is, and in China a rooster's crow sends the hopping dead back to their coffins at dawn. Let it crow (Apply) and every cockatrice in earshot is struck down, and a basilisk or a jiangshi reels. It crows once a floor; after that it sulks.",
+    "floorSpawnWeight": {
+      "1-20": 2,
+      "21-40": 1
+    },
+    "is_unique": false
   }
 }

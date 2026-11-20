@@ -90,7 +90,7 @@
       "fire":   {"probe": {"element": "fire"}, "take": "fire", "offers": [{"class": "wand", "effects": ["fire_bolt"]}, {"class": "spellbook", "spells": ["fire_spark_spell", "fire_bolt_spell", "fireball_spell", "cataclysm_spell"]}, {"class": "flask", "ids": ["flask_of_fire_oil", "greek_fire", "medeas_fire"]}]},
       "cold":   {"probe": {"element": "cold"}, "take": "frost", "offers": [{"class": "wand", "effects": ["cold_bolt"]}, {"class": "spellbook", "spells": ["frost_touch_spell", "cold_bolt_spell", "ice_storm_spell", "cone_of_cold_spell"]}, {"class": "flask", "ids": ["frost_salts"]}]},
       "acid":   {"probe": {"element": "acid"}, "take": "acid", "offers": [{"class": "flask", "ids": ["flask_of_acid", "aqua_regia", "alkahest"]}]},
-      "poison": {"probe": {"element": "poison"}, "take": "venom", "offers": [{"class": "flask", "ids": ["viper_venom", "hydras_blood"]}]},
+      "poison": {"probe": {"element": "poison"}, "take": "venom", "offers": [{"class": "flask", "ids": ["viper_venom", "upas_latex", "hydras_blood", "eitr_venom"]}]},
       "lightning": {"probe": {"element": "lightning"}, "take": "lightning", "offers": [{"class": "wand", "effects": ["lightning_bolt"]}, {"class": "spellbook", "spells": ["spark_spell", "lightning_bolt_spell", "chain_lightning_spell"]}]},
       "pierce": {"probe": {"forms": ["pierce"]}, "take": "a point", "offers": [{"gear": "weapon", "form": "pierce"}]},
       "slash":  {"probe": {"forms": ["slash"]}, "take": "an edge", "offers": [{"gear": "weapon", "form": "slash"}]}
@@ -230,7 +230,9 @@
         {"class": "potion", "picks": 3},
         {"class": "food", "picks": 2},
         {"class": "flask", "picks": 2},
-        {"id": "beeswax_earplugs", "cat": "accessory", "chance": 0.4}
+        {"id": "beeswax_earplugs", "cat": "accessory", "chance": 0.4},
+        {"id": "whitethorn_branch", "cat": "accessory", "chance": 0.2},
+        {"id": "caged_cockerel", "cat": "accessory", "chance": 0.2}
       ],
       "_doc_flasks": "Coatings and flasks (slice 5): one is always on her shelf (the spread). Beeswax for the ears now and then, and always when wailing things are below ('counter_classes': a counter, domain_counters).",
       "counter_classes": ["accessory"],

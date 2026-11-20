@@ -351,6 +351,9 @@ def throw_at(item, monster, turns_mult: int = 1) -> list:
     from monster import the_name
     t = throw_cfg()
     name = _name(item)
+    cnt = (throw_spec(item) or {}).get('counting')
+    if isinstance(cnt, dict):
+        return _counting(item, monster, cnt)        # a handful of seed (slice M)
     dmg, dtype = thrown_damage(item, monster)
     if dmg <= 0:
         from monster import pronouns
@@ -374,6 +377,24 @@ def throw_at(item, monster, turns_mult: int = 1) -> list:
                 out.append((str(t.get('status_line', '')).format(
                     The=the_name(monster), effect=_effect_words(eff)), 'success'))
     return out
+
+
+def _counting(item, monster, cnt: dict) -> list:
+    """A Handful of Seed thrown at one of the blood-drinking dead: it must
+    stop and count every grain (the Balkan grave custom), held a few turns;
+    each creature counts it once. Anything else is only showered with seed."""
+    from monster import the_name
+    import random as _r
+    if (str(getattr(monster, 'kind', '')) not in (cnt.get('kinds') or ())
+            or monster.__dict__.get('_counted_seed')):
+        return [(f"The seed scatters over {the_name(monster, lower=True)}, who pays it no mind.", 'info')]
+    monster.__dict__['_counted_seed'] = True
+    monster.hold('paralyzed', int(cnt.get('turns', 3) or 3))
+    grains = _r.randint(400, 900)
+    if not monster.has_effect('paralyzed'):
+        return [(f"{the_name(monster)} glances at the seed and comes on.", 'warning')]
+    return [(f"{the_name(monster)} drops to its knees and counts the grains: one, two, three... "
+             f"{grains:,} of them.", 'success')]
 
 
 def _effect_words(eff: str) -> str:
