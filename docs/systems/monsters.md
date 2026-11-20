@@ -357,7 +357,7 @@ Brandon: monsters must "pose a real challenge and players need to pay attention 
 **In play:**
 - **Roused together.** When one of a band notices the hero, `senses.notice` calls `war_bands.alarm`, which rouses the rest to the place.
 - **Healers.** A healer mends any bandmate (`_healer_turn`), whatever its kind.
-- **Nerve.** A follower whose leader lives never flees when hurt.
+- **Nerve.** A follower whose leader lives never breaks (Morale by Nature, below, leaves him to the band).
 - **The leader falls** (`CombatMixin._band_member_died`, called from `_on_monster_killed`):
   - `rout`: every follower is `feared` for 12 turns;
   - `crumble`: the restless dead he raised fall where they stand, and the rest are feared;
@@ -492,6 +492,25 @@ Brandon's MONSTERS AND MAGIC pass: "add depth to our bad guys". Each behaviour i
 
 A breath, once breathed, must be drawn again: `recharge` turns on the attack, else 3 for any `delivery: "breath"` attack of an ordinary kind (57 kinds: dragons, drakes, the winter wolf, the chimera, frost giants, a toad's acid spit...). Meanwhile the creature comes in with tooth and claw: the ranged AI (`_ranged_turn`) closes when its only shot is drawing (it used to breathe every turn it had a shot and step back from a hero who closed); a creature with no blow of its own keeps off; a flurry fires the next ready attack of its routine instead of a breath still drawing (`breath.flurry`); `Monster.attack` never uses a breath still drawing (`breath.choose`: another ready blow, never one from afar, else "The X draws a rattling breath."). Every blow spends its attack (`breath.spend` at the top of `_resolve_blow`), the opener too. When it is ready again the hero who can see it is told, by the breath's type ("Smoke curls from the Young Red Dragon's jaws."). Named foes keep their tuned flurries (their breaths recharge only when their data sets `recharge`); Fafnir keeps his own clock (`_breath_cd`, `DRAGON_BREATH_RECHARGE`, the same 3). State: `_recharge` ({attack: turns}). Tell: `breath_recharge` ("Close in while it draws breath"). Hero answers: close in while it draws breath, a dug pit, resistance, the cloak's guard against breath, a corner.
 
+### Morale by Nature (`morale_by_nature`, `src/morale.py`)
+
+The old rule: every aggressive creature that was not a named foe and had no more than 500 health fled under a quarter of its health for 8 turns, and fled again as long as it stayed hurt (the timer re-armed itself). A zombie or a golem ran from its wounds, a goblin on floor 2 broke, about half of every ordinary kind from floor 21 down never did (the 500 rule was depth by the back door), and a fleeing creature beside the hero went on swinging. Now each creature breaks the way its nature says (`data/monster_ai.json` `morale`: the kind's own `morale_style` / `morale` in `monsters.json`, else its family's row, else `withdraw` 10; a `construct`, `plant`, `ooze` or `mindless` tag, `fearless` or a `status_immune` "feared" make it `never`):
+
+| style | who (family default) | when it breaks |
+|---|---|---|
+| `never` | restless dead, constructs, oozes, plants, elementals, ghosts; the cult zealot | It fights to the end ("The Zombie does not care that it is falling apart.", once). |
+| `bolt` | vermin 6, birds 7, great beasts 8, serpents 8, shapeshifters 9 | It runs 8-12 turns, then has given up the fight (`_cowed`): it keeps away from a hero it can see, goes about its business when it cannot, and fights only when cornered. A ranged blow finishes it. |
+| `regroup` | goblinkin 7, mortals 9; lizard-men, frog-men, cave-men | It runs for the nearest of its own side within 12 tiles (no nearer the hero than it is), and reaching them rouses everything of its side within 3 tiles of that one: the hero meets three goblins, not one. With nobody to run to it withdraws. |
+| `withdraw` | fair folk 9, aberrations 11, giants 12, gorgons 12, legend 13, vampires and liches 13, demons 14, dragons 16, celestials 16; the veteran knight 14 | A fighting withdrawal of 8 turns, then back into the fight. |
+| `yield` | the bandit thug, the bandit thief, the mercenary veteran 11, the cult initiate 7 | As regroup; caught with no friend to run to and nowhere to go, it throws down its weapon and its purse (its gold falls on its tile, `BehaviourMixin._ai_drop_purse`; what it stole too) and begs. It never strikes again (no blow on the hero or a pet) and keeps out of his way; he may spare it or kill it (no karma either way, Brandon's call to review). |
+
+- **When:** a morale check (2d10 over its morale 0-20 breaks it) the first time it falls under a quarter of its health; again when it is under half and one of its side falls within 8 tiles and its sight (`morale.kin_fell`, from the kill handler); and after five landed blows in a row that did nothing (it cannot hurt the foe, penalty 2: `ai_blow.after_blow`). One check a trigger: it never re-arms itself. Healed above half it steadies and can break again later.
+- **Running:** along the longest free way from the hero (a 6-step search of the ground about it, not the greedy step that walked into dead ends), or to its friends (`senses.step_toward`). Cornered beside the hero (no step away) it turns at bay for 3 turns: it strikes, +2 to hit, no flight ("The Goblin turns at bay, cornered!", once a life).
+- **Kept as they were:** the galla (`fearless`), a war-band follower while his leader lives, a hyena or gnoll that smells a wounded hero (packs `harry`), a thief with a haul, the stalker. Named foes never break; there is no health test at all now.
+- **State:** `_flee_timer`, `_wound_checked`, `_morale_check`, `_rally_to`, `_rallied`, `_bolting`, `_cowed`, `_at_bay`, `_zero_hits`, `_yielded`, all in the creature's own `__dict__` (an old save's monster reads none and has its family's nature).
+- **Hero answers:** kill the runner before it reaches its friends (a sling, a bow, a wand); a cornered creature fights harder, so leave it a way out or finish it; fear works on deep mortals and beasts again; let a bolting beast go.
+- **Simulator** (`ai_morale`): the real checks. A creature that breaks strikes no blow while it runs (the hero lands one at `CHASE_HIT_PROB`); a withdrawal comes back; a bolt leaves the fight when its run is spent and is found again and finished later half the time; a regroup with kin still waiting at the doorway goes back to the queue behind the next of them; a yield leaves, spared. At bay is not modelled (the simulator has no walls).
+
 ## Wanderers: the floor's clock (3.5.1)
 
 Brandon, play-testing floor 1: "I just don't think we need a constant stream of monsters... I'd rather have a larger population at first, with complex encounters set up, then a trickle if you hang around TOO LONG, but give the player some time to explore... walking back and forth becomes a massive chore."
@@ -514,7 +533,7 @@ Tests: `tests/test_war_bands.py`.
 
 ## AI dispatch (16 patterns)
 
-`take_turn` dispatches on `self.ai_pattern` after the common pre-flight (immobilised, slowed, enrage swap, pack-dependent re-evaluation, flee-when-hurt flag). Dispatch is `if/elif` on string match — the matching chain is in `monster.py` lines ~826-867. **Count by pattern** across 527 monsters (counted 2026-05; there are 574 now):
+`take_turn` dispatches on `self.ai_pattern` after the common pre-flight (immobilised, slowed, enrage swap, pack-dependent re-evaluation, morale: `src/morale.py`, the broken creature's run). Dispatch is `if/elif` on string match — the matching chain is in `monster.py` lines ~826-867. **Count by pattern** across 527 monsters (counted 2026-05; there are 574 now):
 
 | pattern | count | dispatch | one-line behaviour |
 |---|---|---|---|

@@ -1540,6 +1540,17 @@ class DivineMixin:
             p.sp = max(0, p.sp - drain)
             msgs.append((f"Your prayer is answered coldly — strength drains from you. (-{drain} SP)", 'warning'))
 
+        # ---- chain >= 4 (an altar counts one), first so the heal below is
+        # whole: what the dead drained comes back, and a sickness is lifted
+        # (AI-1: life_drain.py, grave_rot.py) ----
+        if effective >= 4:
+            import life_drain
+            _life = life_drain.restore(p)
+            if _life:
+                msgs.append((life_drain.rules().get('restore_line', '').format(n=_life), 'success'))
+            if p.status_effects.pop('diseased', None):
+                msgs.append(("The sickness in your wounds is lifted.", 'success'))
+
         # ---- chain >= 2: HP restore ----
         if chain >= 2:
             hp_amt = max(15, p.max_hp // 4) + karma_bonus_hp

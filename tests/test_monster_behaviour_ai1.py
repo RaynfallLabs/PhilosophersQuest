@@ -384,3 +384,283 @@ def test_the_simulator_has_a_knob_for_each_behaviour():
     import sim_ai1
     for k, v in sim_ai1.KNOBS.items():
         assert k.startswith('ai_') and v == 1
+
+
+# ===========================================================================
+# morale_by_nature: Morale by Nature
+# ===========================================================================
+
+import morale  # noqa: E402
+
+
+class Dice:
+    """An rng whose every d10 shows ``face``."""
+    def __init__(self, face):
+        self.face = face
+
+    def randint(self, a, b):
+        return max(a, min(b, self.face))
+
+    def random(self):
+        return 0.0
+
+
+def _hurt(m, share):
+    m.hp = max(1, int(m.max_hp * share))
+    return m
+
+
+def test_the_mindless_dead_never_break():
+    z = _hurt(make('zombie'), 0.1)
+    morale.turn(z, Hero(6, 5), [z], rng=Dice(10))
+    assert z._flee_timer == 0
+    assert any('falling apart' in t for t, _u, _c in ai_lines.take(z))
+
+
+def test_a_beast_bolts_then_gives_up_the_fight():
+    wolf = _hurt(make('wolf'), 0.2)
+    hero = Hero(6, 5)
+    morale.turn(wolf, hero, [wolf], rng=Dice(10))
+    assert wolf._flee_timer >= 8 and wolf.__dict__.get('_bolting')
+    for _ in range(wolf._flee_timer):
+        morale.turn(wolf, hero, [wolf], rng=Dice(10))
+    assert wolf._flee_timer == 0 and wolf.__dict__.get('_cowed')
+    # cowed, it keeps away from a hero it can see; it never closes in
+    dun = open_room()
+    hero = Hero(10, 10)
+    wolf.x, wolf.y = 13, 10
+    for _ in range(4):
+        wolf.take_turn(hero, dun, [wolf])
+    assert max(abs(wolf.x - hero.x), abs(wolf.y - hero.y)) >= 3
+
+
+def test_the_old_flight_never_re_arms_itself():
+    hob = _hurt(make('hobgoblin'), 0.2)
+    hero = Hero(6, 5)
+    morale.turn(hob, hero, [hob], rng=Dice(10))
+    assert hob._flee_timer > 0
+    for _ in range(40):
+        morale.turn(hob, hero, [hob], rng=Dice(10))
+    assert hob._flee_timer == 0                    # one break for one wound
+
+
+def test_a_goblin_runs_for_its_friends_and_brings_them():
+    dun = open_room()
+    hero = Hero(4, 10)
+    gob = _hurt(make('goblin', 6, 10), 0.2)
+    friend = make('goblin', 13, 10)
+    friend._tracking = False
+    friend._aware = False
+    morale.turn(gob, hero, [gob, friend], rng=Dice(10))
+    assert gob.__dict__.get('_rally_to') is friend
+    assert any('friends' in t for t, _u, _c in ai_lines.take(gob))
+    for _ in range(8):
+        if gob.__dict__.get('_rally_to') is None:
+            break
+        morale.run(gob, hero, dun, [gob, friend], set())
+    assert gob._flee_timer == 0 and gob.__dict__.get('_rallied')
+    assert friend._aware and friend._alerted       # roused to the hero
+
+
+def test_a_cornered_goblin_turns_at_bay():
+    tiles = [[WALL] * 8 for _ in range(5)]
+    for x in range(1, 7):
+        tiles[2][x] = FLOOR                       # a dead-end passage
+    dun = Dungeon(tiles, [Room(0, 0, 8, 5)], 8, 5, 3)
+    gob = _hurt(make('goblin', 1, 2), 0.2)
+    hero = Hero(2, 2)
+    morale.turn(gob, hero, [gob], rng=Dice(10))
+    assert gob._flee_timer > 0
+    assert morale.run(gob, hero, dun, [gob], set()) is True
+    assert gob._at_bay > 0 and morale.at_bay_hit(gob) < 0
+
+
+def test_a_big_ordinary_kind_can_break_now_and_a_named_foe_cannot():
+    big = next(k for k, v in MONS.items() if isinstance(v, dict)
+               and v.get('ai_pattern') == 'aggressive' and v.get('family') == 'giants'
+               and not (v.get('is_boss') or v.get('is_mini_boss') or v.get('is_seal_demon'))
+               and make(k).max_hp > 500)
+    g = _hurt(make(big), 0.2)
+    assert g.max_hp > 500                          # the old rule kept it standing
+    morale.turn(g, Hero(6, 5), [g], rng=Dice(10))
+    assert g._flee_timer > 0
+    boss = next(k for k, v in MONS.items() if isinstance(v, dict) and v.get('is_mini_boss')
+                and v.get('ai_pattern') == 'aggressive')
+    b = _hurt(make(boss), 0.1)
+    morale.turn(b, Hero(6, 5), [b], rng=Dice(10))
+    assert b._flee_timer == 0
+
+
+def test_steady_nerve_holds_on_a_low_roll():
+    dragon_kin = _hurt(make('hobgoblin'), 0.2)
+    morale.turn(dragon_kin, Hero(6, 5), [dragon_kin], rng=Dice(1))   # 2 on 2d10
+    assert dragon_kin._flee_timer == 0
+
+
+def test_five_blows_that_do_nothing_break_its_nerve():
+    hob = make('hobgoblin')
+    for _ in range(5):
+        morale.futile_blow(hob, 0)
+    assert hob.__dict__.get('_morale_check') == 'futile'
+    morale.turn(hob, Hero(6, 5), [hob], rng=Dice(10))
+    assert hob._flee_timer > 0
+
+
+def test_a_kin_falling_in_sight_shakes_the_hurt():
+    dun = open_room()
+    a = _hurt(make('goblin', 5, 5), 0.4)
+    fresh = make('goblin', 6, 6)
+    dead = make('goblin', 7, 5)
+    dead.alive = False
+    assert morale.kin_fell([a, fresh, dead], dead, dun) == 1
+    assert a.__dict__.get('_morale_check') == 'kin'
+    assert not fresh.__dict__.get('_morale_check')
+
+
+def test_a_cornered_bandit_with_no_friends_yields():
+    tiles = [[WALL] * 8 for _ in range(5)]
+    for x in range(1, 7):
+        tiles[2][x] = FLOOR
+    dun = Dungeon(tiles, [Room(0, 0, 8, 5)], 8, 5, 3)
+    b = _hurt(make('bandit_thug', 1, 2), 0.1)
+    hero = Hero(2, 2)
+    morale.turn(b, hero, [b], rng=Dice(10))
+    assert morale.run(b, hero, dun, [b], set()) is False
+    assert b.__dict__.get('_yielded') and b.__dict__.get('_wants_purse_dropped')
+    for _ in range(5):
+        assert b.take_turn(hero, dun, [b]) is False    # it never strikes again
+
+
+def test_war_band_follower_and_harry_hold_their_nerve():
+    lead = make('hobgoblin')
+    f = _hurt(make('goblin'), 0.1)
+    f._band_leader = lead
+    morale.turn(f, Hero(6, 5), [f, lead], rng=Dice(10))
+    assert f._flee_timer == 0
+
+
+def test_every_family_has_a_nature_and_the_mindless_never_run():
+    import family_lore
+    fams = set(family_lore.families()) if hasattr(family_lore, 'families') else set()
+    rows = kind_data.rules('morale')['families']
+    for fam in fams:
+        assert fam in rows, fam
+    for fam in ('restless_dead', 'constructs', 'oozes', 'plants'):
+        assert rows[fam]['style'] == 'never'
+    for kind in ('gelatinous_cube', 'iron_golem', 'skeleton', 'cult_zealot'):
+        assert morale.style(make(kind)) == 'never', kind
+    assert morale.style(make('wolf')) == 'bolt'
+    assert morale.style(make('goblin')) == 'regroup'
+    assert morale.style(make('bandit_thug')) == 'yield'
+
+
+def test_morale_state_survives_a_save():
+    hob = _hurt(make('hobgoblin'), 0.2)
+    morale.turn(hob, Hero(6, 5), [hob], rng=Dice(10))
+    h2 = pickle.loads(pickle.dumps(hob))
+    assert h2._flee_timer == hob._flee_timer and h2.__dict__.get('_wound_checked')
+
+
+def test_the_simulator_runs_the_real_morale():
+    import sim_ai1
+
+    class Run:
+        p = Hero(5, 5)
+        fs = {}
+        knobs = dict(sim_ai1.KNOBS)
+        _ai1_queue = []
+    wolf = _hurt(make('wolf', 6, 5), 0.2)
+    wolf._cached_all_monsters = [wolf]
+    random.seed(1)
+    results = [sim_ai1.morale_turn(Run, wolf) for _ in range(30)]
+    assert results[0] is False or wolf._flee_timer == 0
+    if wolf.__dict__.get('_cowed'):
+        assert wolf.__dict__.get('_sim_left') == 'bolt'
+        keep, _q = sim_ai1.leavers(Run, [wolf], [])
+        assert keep == []
+
+
+# ===========================================================================
+# life_drained: Life Drained
+# ===========================================================================
+
+import life_drain  # noqa: E402
+from player import Player  # noqa: E402
+
+
+class AlwaysFails:
+    def randint(self, a, b):
+        return a
+
+
+def _real_hero():
+    p = Player()
+    p.max_hp = p.hp = 200
+    return p
+
+
+def test_a_drain_blow_lowers_greatest_health_and_caps_hold(monkeypatch):
+    p = _real_hero()
+    w = make('wight')
+    atk = w.attacks[0]
+    assert life_drain.drains_life(atk)              # 'Draining Touch' drains now
+    monkeypatch.setattr(life_drain, 'save_holds', lambda m, pl, rng=None: False)
+    msg = life_drain.after_blow(w, p, atk, 12, 'hit.')
+    assert p.max_hp == 194 and life_drain.drained(p) == 6
+    assert 'Max HP -6' in msg
+    life_drain.after_blow(w, p, atk, 400, '')       # one blow: at most a tenth
+    assert life_drain.drained(p) == 6 + 20
+    for _ in range(10):
+        life_drain.after_blow(w, p, atk, 400, '')
+    assert life_drain.drained(p) == 50              # a quarter in all
+    assert p.max_hp == 150
+
+
+def test_drained_life_comes_back_half_on_the_stairs_and_all_from_a_physician():
+    p = _real_hero()
+    life_drain.take_life(p, 20)
+    assert p.max_hp == 180
+    assert life_drain.stairs_rest(p) == 10 and p.max_hp == 190
+    assert life_drain.restore(p) == 10 and p.max_hp == 200 and life_drain.drained(p) == 0
+
+
+def test_drain_resist_and_a_held_save_stop_it(monkeypatch):
+    p = _real_hero()
+    w = make('wight')
+    p.status_effects['drain_resist'] = 5
+    life_drain.after_blow(w, p, w.attacks[0], 12, '')
+    assert life_drain.drained(p) == 0
+    p.status_effects.clear()
+    monkeypatch.setattr(life_drain, 'save_holds', lambda m, pl, rng=None: True)
+    life_drain.after_blow(w, p, w.attacks[0], 12, '')
+    assert life_drain.drained(p) == 0
+
+
+def test_only_the_greatest_still_take_con(monkeypatch):
+    p = _real_hero()
+    p.CON = 14
+    lich = make('lich')
+    monkeypatch.setattr(life_drain, 'save_holds', lambda m, pl, rng=None: False)
+    monkeypatch.setattr(Monster, '_drain_takes_hold', lambda self, pl: True)
+    life_drain.after_blow(lich, p, lich.attacks[0], 10, '')
+    assert p.CON == 13
+    shadow = make('shadow')
+    p.CON = 14
+    life_drain.after_blow(shadow, p, shadow.attacks[0], 10, '')
+    assert p.CON == 14 and life_drain.drained(p) > 0
+
+
+def test_drained_hero_round_trips_and_old_saves_have_none():
+    p = _real_hero()
+    life_drain.take_life(p, 10)
+    p2 = pickle.loads(pickle.dumps(p))
+    assert life_drain.drained(p2) == 10
+    p2.__dict__.pop('_life_drained')
+    assert life_drain.drained(p2) == 0
+
+
+def test_the_drain_tell_and_the_feeders():
+    assert 'life_drain' in tells.abilities(make('wraith'))
+    assert make('nosferatu').drain_heals_self == 0.5
+
+

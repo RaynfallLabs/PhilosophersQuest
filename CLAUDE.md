@@ -75,6 +75,9 @@ src/
   faction.py          - Whose side a monster is on (band, pack, family); the healer's choice and its rest
   summoning.py        - Summoners chant (a blow breaks it), then call while few of theirs stand
   breath.py           - Draws Breath: a breath must be drawn again; tooth and claw meanwhile
+  morale.py           - Morale by Nature: who breaks (never, bolt, regroup, withdraw, yield), when, and the run
+  ai_blow.py          - What the behaviours add to one monster blow (to-hit shift; after the blow)
+  life_drain.py       - Life Drained: a drain blow lowers max HP; half back on the stairs, all from prayer or physician
   game_behaviour.py   - BehaviourMixin: the Game's side of the behaviours (lines, the map, the kill)
   decor.py            - The five domains (themes) and the fixture layer: what stands in a floor
   hazards.py          - Domain hazards (data), trap lean, kin weights and the floor's resident clan

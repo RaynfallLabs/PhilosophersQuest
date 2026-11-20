@@ -640,7 +640,9 @@ def test_a_drain_potion_and_a_monster_drain_are_remembered_for_the_physician():
     pot.buc = 'uncursed'
     drink_potion(p, pot)
     assert p.CON == con - 1 and p.__dict__['drained'] == {'CON': 1}
-    src = open(os.path.join(ROOT, 'src', 'monster.py'), encoding='utf-8').read()
+    # A monster's CON drain lives in src/life_drain.py since AI-1 (it was
+    # Monster._resolve_blow's own block): it still notes the point.
+    src = open(os.path.join(ROOT, 'src', 'life_drain.py'), encoding='utf-8').read()
     assert "note_stat_drain(player, 'CON'" in src
 
 

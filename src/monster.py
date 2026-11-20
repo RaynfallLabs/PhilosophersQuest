@@ -5,8 +5,10 @@ from status_effects import MAX_EFFECT_DURATION
 from naming import ProperNameAttr
 import packs
 # Monster behaviour, first wave (AI-1, 2026-11-19): each in its own module.
+import ai_blow
 import breath
 import faction
+import morale
 import summoning
 
 
@@ -1699,6 +1701,9 @@ class Monster:
         if getattr(self, '_aoo_disengage_pending', False):
             to_hit += 2
             self._aoo_disengage_pending = False
+        # AI-1 (src/ai_blow.py): at bay it strikes truer; a light-shy creature
+        # flinches from a bright light.
+        to_hit += ai_blow.to_hit_shift(self, player, atk)
 
         # Minimum hit chance (MIN_HIT_ORDINARY / MIN_HIT_NAMED)
         min_hit = self._min_hit()
@@ -1982,17 +1987,11 @@ class Monster:
                 self.take_damage(cstrike)
                 msg += f" (Counter-strike: {cstrike} dmg!)"
 
-        # Drain attack: reduce CON if not drain_resist
-        if (atk_type == 'drain' and not player.has_effect('drain_resist')
-                and self._drain_takes_hold(player)):
-            old_con = player.CON
-            player.apply_stat_bonus('CON', -1)
-            player._con_drained_this_floor = int(
-                getattr(player, '_con_drained_this_floor', 0)) + 1
-            if player.CON < old_con:
-                from status_effects import note_stat_drain
-                note_stat_drain(player, 'CON', old_con - player.CON)   # a physician can restore it
-                msg = f"{the_name(self)} drains your life force! ({actual} dmg, CON -1)"
+        # AI-1 (src/ai_blow.py): what follows a landed blow (a nerve broken
+        # by blows that do nothing, a light put out, a shove), and a drain
+        # blow's life taken (src/life_drain.py: lasting max HP; the old CON
+        # point for the liches and the death lord, and for named foes).
+        msg = ai_blow.after_blow(self, player, atk, actual, msg)
 
         # Drain heals self (vampire lord, life-drainer family): when a
         # drain attack lands, regain a fraction of the damage dealt.
@@ -2200,32 +2199,15 @@ class Monster:
             )
             self.ai_pattern = 'aggressive' if allies_near >= self.pack_min_allies else 'cowardly'
 
-        # --- Flee when hurt (non-boss aggressive monsters) ---
-        # Named bosses, mini-bosses and seal demons stand their ground. This
-        # used to be `max_hp > 500`, which let five seal demons turn tail.
-        is_boss = self._is_named_foe() or self.max_hp > 500
-        if self.fearless:
-            # The galla never give up the chase, and nothing frightens them.
-            self._flee_timer = 0
-            self.status_effects.pop('feared', None)
-        elif not is_boss and self.ai_pattern == 'aggressive' and self.__dict__.get('_band_leader') is not None \
-                and getattr(self._band_leader, 'alive', False):
-            # A war-band follower holds its nerve while its leader lives
-            # (src/war_bands.py).
-            self._flee_timer = 0
-        elif (not is_boss and self.ai_pattern == 'aggressive' and packs.has_trick(self, 'harry')
-              and packs.wounded(player)):
-            # Hyenas and gnolls smell blood: they never run from a wounded
-            # hero (src/packs.py 'harry').
-            self._flee_timer = 0
-        elif not is_boss and self.ai_pattern == 'aggressive':
-            if self._flee_timer > 0:
-                self._flee_timer -= 1
-                # Regain courage if healed above 50%
-                if self.hp > self.max_hp * 0.5:
-                    self._flee_timer = 0
-            elif self.hp < self.max_hp * 0.25 and self.hp > 0:
-                self._flee_timer = 8
+        # --- Morale by Nature (src/morale.py, AI-1) ---
+        # Each creature breaks the way its nature says: the mindless never, a
+        # beast bolts, a goblin runs for its friends, a giant falls back. One
+        # check a trigger, never re-armed; named foes never break (this was
+        # `max_hp > 500` as well, which kept half of every ordinary kind from
+        # floor 21 down from ever breaking). The galla are fearless; a
+        # war-band follower holds while his leader lives; a hyena that smells
+        # a wounded hero never runs (all in morale.turn).
+        morale.turn(self, player, all_monsters)
 
         # --- Mind-affecting statuses: apply to EVERY AI pattern ---
         # These used to sit below the pattern dispatch, so ranged, healer,
@@ -2267,6 +2249,13 @@ class Monster:
             if (self.x, self.y) == before and self._adjacent_to(player):
                 return True
             return False
+
+        # --- A broken creature runs (src/morale.py): to its friends or away
+        # along a real path; cornered beside the hero it turns at bay. A beast
+        # that bolted keeps away for good; one that yielded never strikes.
+        _run = morale.run(self, player, dungeon, all_monsters, extra_occupied)
+        if _run is not None:
+            return _run
 
         # --- Phase-blink for the patterns that never reached it (G7): an
         # archer or a summoner that can blink steps out to a clear shot four
@@ -2391,7 +2380,7 @@ class Monster:
         if self._alerted and effective_pattern == 'cowardly':
             effective_pattern = 'aggressive'
 
-        # Flee when hurt overrides to cowardly
+        # A broken creature (morale) that run() did not move flees as a coward
         if self._flee_timer > 0 and effective_pattern == 'aggressive':
             effective_pattern = 'cowardly'
 

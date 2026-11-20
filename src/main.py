@@ -2509,6 +2509,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             ascending=not enter_from_top,
             first_visit=not saved,
         )
+        # A night's sleep on a new floor down gives back half the life the
+        # dead drained (src/life_drain.py, AI-1).
+        if enter_from_top and not saved:
+            import life_drain
+            _back = life_drain.stairs_rest(self.player)
+            if _back:
+                self.add_message(life_drain.rules().get('stairs_line', '').format(n=_back), 'success')
 
         # Place player at the stairs they came through
         _snd.play('level_change')

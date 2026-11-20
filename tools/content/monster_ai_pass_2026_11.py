@@ -30,15 +30,69 @@ TELLS = ROOT / 'data' / 'tells.json'
 # ---------------------------------------------------------------------------
 # Kind fields: {kind: {field: value}} (a value None removes the field)
 # ---------------------------------------------------------------------------
-KIND_FIELDS: dict = {}
+KIND_FIELDS: dict = {
+    # --- Morale by Nature (src/morale.py): the kinds whose nerve is not
+    # their family's. A fanatic never runs; bandits, a hired sword and a
+    # cult's new recruit run for their friends and, caught with none, throw
+    # down their weapons and beg (2e: surrender where mercy is expected);
+    # the lizard-men, frog-men and cave-men hunt in tribes and run back to
+    # them (their family, the serpents, would bolt); a knight holds his
+    # ground longer than a brigand.
+    'cult_zealot': {'morale_style': 'never'},
+    'bandit_thug': {'morale_style': 'yield'},
+    'bandit_thief': {'morale_style': 'yield'},
+    'mercenary_veteran': {'morale_style': 'yield', 'morale': 11},
+    'cult_initiate': {'morale_style': 'yield', 'morale': 7},
+    'lizardfolk': {'morale_style': 'regroup', 'morale': 8},
+    'bullywug': {'morale_style': 'regroup', 'morale': 6},
+    'troglodyte': {'morale_style': 'regroup', 'morale': 8},
+    'veteran_knight': {'morale_style': 'withdraw', 'morale': 14},
+    'bandit_captain': {'morale': 11},
+    # --- Life Drained (src/life_drain.py). The undead that FEED on what they
+    # drain (drain_heals_self; the vampire and the vampire lord already did):
+    # the Slavic and Greek blood-drinkers, the nosferatu, the strix (the
+    # blood-drinking night bird of Rome) and the keres (Hesiod's death
+    # spirits who drank the blood of the fallen). Half of what they drain.
+    'vampire_spawn': {'drain_heals_self': 0.5},
+    'nosferatu': {'drain_heals_self': 0.5},
+    'strigoi': {'drain_heals_self': 0.5},
+    'vrykolakas': {'drain_heals_self': 0.5},
+    'vampire_lord': {'drain_heals_self': 0.75},
+    'elder_vampire': {'drain_heals_self': 0.75},
+    'strix': {'drain_heals_self': 0.5},
+    'ker': {'drain_heals_self': 0.5},
+    # The greatest of the dead still take a point of the hero's very
+    # constitution (the old CON rule, once a floor) as well as his life.
+    'lich': {'drain_con': True},
+    'greater_lich': {'drain_con': True},
+    'ancient_lich': {'drain_con': True},
+    'arch_lich': {'drain_con': True},
+    'death_lord': {'drain_con': True},
+}
 
 # Attack fields: {(kind, attack name): {field: value}}
-ATTACK_FIELDS: dict = {}
+ATTACK_FIELDS: dict = {
+    # --- Life Drained: the classic drainers drained nothing. The barrow-
+    # wight of the mound (Old English wiht, the Norse haugbui), the wraith,
+    # the cairn-wight and the fetch (a man's own double, come for his life)
+    # struck with plain necrotic. Their touch takes life now (their own
+    # riders stay).
+    ('wight', 'Draining Touch'): {'drains_life': True},
+    ('wraith', 'Draining Touch'): {'drains_life': True},
+    ('barrow_wight', 'Drain'): {'drains_life': True},
+    ('cairn_wight', 'Drain'): {'drains_life': True},
+    ('fetch', 'Life Drain'): {'drains_life': True},
+}
 
 # ---------------------------------------------------------------------------
 # Tells (data/tells.json): key -> (after which key in 'order', entry)
 # ---------------------------------------------------------------------------
 TELLS_NEW = {
+    'life_drain': ('drain_heals_self', {
+        'sign': "The air about {the} is thin and cold, like the air of a tomb.",
+        'does': "{His} touch takes life that rest will not give back: your greatest health falls with every blow {he} lands.",
+        'counter': "Do not let {him} touch you often. What {he} takes comes back half with a night's sleep on the next floor down, and all of it from a physician or a strong prayer.",
+    }),
     'breath_recharge': ('pull_chance', {
         'sign': "{The}'s chest heaves like a bellows.",
         'does': "{He} breathes, then must draw breath again: for a few turns {he} has only tooth and claw.",

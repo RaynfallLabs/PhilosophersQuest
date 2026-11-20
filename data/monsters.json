@@ -496,7 +496,8 @@
         "effect": "slowed",
         "effect_chance": 0.35,
         "effect_duration": 6,
-        "delivery": "touch"
+        "delivery": "touch",
+        "drains_life": true
       },
       {
         "name": "Chilling Wail",
@@ -1597,7 +1598,8 @@
         "effect": "slowed",
         "effect_chance": 0.4,
         "effect_duration": 6,
-        "delivery": "touch"
+        "delivery": "touch",
+        "drains_life": true
       }
     ],
     "resistances": [
@@ -2625,7 +2627,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "drain_heals_self": 0.5
   },
   "fire_elemental": {
     "name": "fire elemental",
@@ -3493,7 +3496,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "drain_heals_self": 0.75
   },
   "lich": {
     "name": "lich",
@@ -3571,7 +3575,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "drain_con": true
   },
   "adult_dragon": {
     "name": "adult dragon",
@@ -3797,7 +3802,8 @@
     "opener": {
       "attack": "Death Bolt",
       "range": 5
-    }
+    },
+    "drain_con": true
   },
   "arch_demon": {
     "name": "arch demon",
@@ -4046,7 +4052,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "drain_con": true
   },
   "death_lord": {
     "name": "death lord",
@@ -4129,7 +4136,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "drain_con": true
   },
   "chaos_spawn": {
     "name": "chaos spawn",
@@ -11979,7 +11987,9 @@
     "thac0_lore": 17,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale_style": "regroup",
+    "morale": 8
   },
   "lizardfolk_shaman": {
     "name": "Lizardfolk Shaman",
@@ -12115,7 +12125,9 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "morale_style": "regroup",
+    "morale": 8
   },
   "kobold_sorcerer": {
     "name": "Kobold Sorcerer",
@@ -12247,7 +12259,9 @@
     "opener": {
       "attack": "Spear",
       "range": 1
-    }
+    },
+    "morale_style": "regroup",
+    "morale": 6
   },
   "kuo_toa": {
     "name": "Kuo-Toa",
@@ -13950,7 +13964,8 @@
         "effect": "weakened",
         "effect_chance": 0.35,
         "effect_duration": 8,
-        "delivery": "touch"
+        "delivery": "touch",
+        "drains_life": true
       }
     ],
     "resistances": [
@@ -14414,7 +14429,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "drain_heals_self": 0.5
   },
   "strigoi": {
     "name": "Strigoi",
@@ -14486,7 +14502,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "drain_heals_self": 0.5
   },
   "jiangshi": {
     "name": "Jiangshi",
@@ -14637,7 +14654,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "drain_heals_self": 0.5
   },
   "demi_lich": {
     "name": "Demi-Lich",
@@ -15217,7 +15235,8 @@
         "effect": "weakened",
         "effect_chance": 0.35,
         "effect_duration": 8,
-        "delivery": "touch"
+        "delivery": "touch",
+        "drains_life": true
       },
       {
         "name": "Entangle",
@@ -15294,7 +15313,8 @@
         "effect": "weakened",
         "effect_chance": 0.35,
         "effect_duration": 8,
-        "delivery": "touch"
+        "delivery": "touch",
+        "drains_life": true
       }
     ],
     "resistances": [
@@ -22266,7 +22286,8 @@
     "opener": {
       "attack": "Dagger Throw",
       "range": 4
-    }
+    },
+    "morale": 11
   },
   "dark_cultist": {
     "name": "dark cultist",
@@ -22389,7 +22410,9 @@
     "thac0_lore": 13,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale_style": "yield",
+    "morale": 11
   },
   "battle_mage": {
     "name": "battle mage",
@@ -28522,7 +28545,9 @@
     "thac0_lore": 1,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale_style": "withdraw",
+    "morale": 14
   },
   "greater_fire_elemental": {
     "name": "greater fire elemental",
@@ -29253,7 +29278,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "drain_heals_self": 0.75
   },
   "death_knight_lord": {
     "name": "death knight lord",
@@ -30955,7 +30981,8 @@
     "opener": {
       "attack": "Annihilation Ray",
       "range": 5
-    }
+    },
+    "drain_con": true
   },
   "elder_dracolich": {
     "name": "elder dracolich",
@@ -33422,7 +33449,8 @@
     "pack_size": [
       2,
       2
-    ]
+    ],
+    "morale_style": "yield"
   },
   "bandit_archer": {
     "name": "bandit archer",
@@ -33568,7 +33596,8 @@
     "opener": {
       "attack": "Backstab",
       "range": 1
-    }
+    },
+    "morale_style": "yield"
   },
   "bandit_kingpin": {
     "name": "bandit kingpin",
@@ -33698,7 +33727,9 @@
     "thac0_lore": 18,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale_style": "yield",
+    "morale": 7
   },
   "cult_priest": {
     "name": "cult priest",
@@ -33828,7 +33859,8 @@
     "thac0_lore": 10,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale_style": "never"
   },
   "cult_hierophant": {
     "name": "cult hierophant",
@@ -37469,7 +37501,8 @@
     "status_immune": [
       "immobilized"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "drain_heals_self": 0.5
   },
   "hellmouth": {
     "name": "Hellmouth",
@@ -38294,7 +38327,8 @@
     "opener": {
       "attack": "Night Song",
       "range": 3
-    }
+    },
+    "drain_heals_self": 0.5
   },
   "bronze_sentinel": {
     "name": "Bronze Sentinel",

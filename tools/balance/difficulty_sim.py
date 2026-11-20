@@ -2479,6 +2479,7 @@ class Run:
             self._healed('prayer', p.heal(max(15, p.max_hp // 4)))
         if chain >= 3:
             p.restore_mp(max(5, p.max_mp // 4))
+        sim_ai1.prayed(self, chain)          # AI-1: drained life back, sickness lifted
         if chain >= 5:
             p.status_effects['shielded'] = max(p.status_effects.get('shielded', 0), 20)
         return True
@@ -3242,7 +3243,14 @@ class Run:
             m._enraged = True
             m.ai_pattern = m.enraged_pattern
             m._sim_away = 0
-        named = m._is_named_foe() or m.max_hp > 500
+        # ---- AI-1 (sim_ai1.py): Morale by Nature; ai_morale=0 is the old
+        # rule just below (which the knob being on skips) ----
+        if self.knobs['ai_morale']:
+            _mor = sim_ai1.morale_turn(self, m)
+            if _mor is not None:
+                return _mor
+        named = m._is_named_foe() or m.max_hp > 500 or bool(self.knobs['ai_morale'])
+        # ---- end AI-1 ----
         if not named and m.ai_pattern == 'aggressive':
             if m._flee_timer > 0:
                 m._flee_timer -= 1
@@ -3393,6 +3401,10 @@ class Run:
                     self._monster_attack(m)
 
         while True:
+            # ---- AI-1 (sim_ai1.py): who left the fight (morale) ----
+            if self.knobs['ai_morale']:
+                active, queue = sim_ai1.leavers(self, active, queue)
+            # ---- end AI-1 ----
             active = [m for m in active if m.alive]
             queue = [m for m in queue if m.alive]       # an area spell can kill those waiting
             while len(active) < k and queue:
@@ -3851,6 +3863,7 @@ class Run:
         p.reset_floor_cook_caps()
         p._death_save_used_this_floor = False
         p.on_level_change(ascending=False, first_visit=True)   # +15 SP, +MP, 0 HP
+        sim_ai1.floor_start(self)            # AI-1: the drained life, half back
         fs = self.fs = self.stats.setdefault(floor, new_floor_stats())
         fs['visits'] += 1
         fs['max_hp'] += p.max_hp

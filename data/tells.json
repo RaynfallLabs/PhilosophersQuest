@@ -3,7 +3,7 @@
   "min_chance": 0.1,
   "max_lines": 2,
   "order": ["gaze_paralyze", "paralyzed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
-            "silenced", "stunned", "immobilized", "pack_feast", "pack_swarm", "pack_hamstring", "splits", "revive_once_on_death", "drain_heals_self",
+            "silenced", "stunned", "immobilized", "pack_feast", "pack_swarm", "pack_hamstring", "splits", "revive_once_on_death", "drain_heals_self", "life_drain",
             "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "summon_kind", "heals_allies", "pull_chance", "breath_recharge", "sp_drain",
             "can_charge", "pack_harry", "pack_sling", "pack_traps", "pack_bay", "pack_dart", "pack_snatch",
             "can_phase_blink", "stalker", "bleeding", "burning", "slowed", "hallucinating"],
@@ -223,6 +223,11 @@
       "sign": "{The} stays close behind the others, eyeing every wound.",
       "does": "{He} mends a badly hurt friend, then must rest {his} voice a few turns before the next.",
       "counter": "Kill {him} first, or finish the friend {he} has just mended before {he} can mend again."
+    },
+    "life_drain": {
+      "sign": "The air about {the} is thin and cold, like the air of a tomb.",
+      "does": "{His} touch takes life that rest will not give back: your greatest health falls with every blow {he} lands.",
+      "counter": "Do not let {him} touch you often. What {he} takes comes back half with a night's sleep on the next floor down, and all of it from a physician or a strong prayer."
     }
   }
 }
