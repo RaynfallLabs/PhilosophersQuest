@@ -115,7 +115,12 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "alarm": {
+      "radius": 10,
+      "line": "{The} yells to the others!",
+      "line_unseen": "Somewhere near, a thin voice yells."
+    }
   },
   "grid_bug": {
     "name": "grid bug",
@@ -867,7 +872,13 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "light_shy": true,
+    "alarm": {
+      "radius": 10,
+      "line": "{The} yaps a warning!",
+      "line_unseen": "Somewhere ahead, a shrill yapping."
+    }
   },
   "cave_spider": {
     "name": "cave spider",
@@ -921,7 +932,8 @@
     "thac0_lore": 21,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "relurks": true
   },
   "skeleton": {
     "name": "skeleton",
@@ -1043,7 +1055,16 @@
     "thac0_lore": 21,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "death_throes": {
+      "type": "fire",
+      "share": 0.05,
+      "radius": 1,
+      "effect": "burning",
+      "effect_duration": 2,
+      "line": "{The}'s glands burst in a spray of fire!",
+      "warn_line": "{The}'s glands glow white-hot!"
+    }
   },
   "orc_scout": {
     "name": "orc scout",
@@ -1092,7 +1113,12 @@
     "thac0_lore": 21,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "alarm": {
+      "radius": 12,
+      "line": "{The} bellows a warning!",
+      "line_unseen": "A bellow of warning, not far off."
+    }
   },
   "gnoll": {
     "name": "gnoll",
@@ -1152,7 +1178,12 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "alarm": {
+      "radius": 12,
+      "line": "{The} lets out a whooping laugh!",
+      "line_unseen": "A whooping laugh echoes from somewhere near."
+    }
   },
   "hobgoblin": {
     "name": "hobgoblin",
@@ -1201,7 +1232,12 @@
     "thac0_lore": 20,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "alarm": {
+      "radius": 10,
+      "line": "{The} shouts an order!",
+      "line_unseen": "Somewhere near, a harsh order is shouted."
+    }
   },
   "ghoul": {
     "name": "ghoul",
@@ -1451,7 +1487,7 @@
       "item_tier": 2,
       "purse": "purse"
     },
-    "lore": "In the tales of Norway a troll caught by sunrise turns to stone, which is why the hills there are full of troll-shaped rocks. Underground no sunrise comes. A troll's wounds close as fast as a blade can open them, and a severed arm will crawl back to its owner. Fire and acid are the only arguments it remembers.",
+    "lore": "In the tales of Norway a troll caught by sunrise turns to stone, which is why the hills there are full of troll-shaped rocks. Underground no sunrise comes, but a strong light is the next best thing, and a troll hates it. A troll's wounds close as fast as a blade can open them, and a severed arm will crawl back to its owner. Fire and acid are the only arguments it remembers.",
     "frequency": 4,
     "regeneration": 11,
     "thac0_lore": 8,
@@ -1461,7 +1497,9 @@
       "fear_of_fire",
       "confused"
     ],
-    "multi_attack_count": 2
+    "multi_attack_count": 2,
+    "light_shy": true,
+    "turns_to_stone_in_light": true
   },
   "orc_warrior": {
     "name": "orc warrior",
@@ -1572,7 +1610,8 @@
     "opener": {
       "attack": "Poisoned Dart",
       "range": 5
-    }
+    },
+    "light_shy": true
   },
   "wight": {
     "name": "wight",
@@ -1711,7 +1750,10 @@
         "name": "Claw",
         "damage": "1d8+2",
         "type": "slash",
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.2
+        }
       },
       {
         "name": "Bite",
@@ -1772,7 +1814,10 @@
         "name": "Club Smash",
         "damage": "2d8+4",
         "type": "blunt",
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.25
+        }
       }
     ],
     "resistances": [],
@@ -1869,7 +1914,8 @@
     "opener": {
       "attack": "Shadow Touch",
       "range": 1
-    }
+    },
+    "light_shy": true
   },
   "mummy": {
     "name": "mummy",
@@ -2007,7 +2053,8 @@
     "opener": {
       "attack": "Web Spray",
       "range": 3
-    }
+    },
+    "relurks": true
   },
   "ettin": {
     "name": "ettin",
@@ -2030,7 +2077,10 @@
         "name": "Left Club",
         "damage": "2d6+5",
         "type": "blunt",
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.25
+        }
       },
       {
         "name": "Right Club",
@@ -2378,7 +2428,10 @@
         "effect": "bleeding",
         "effect_chance": 0.45,
         "effect_duration": 5,
-        "delivery": "trample"
+        "delivery": "trample",
+        "shove": {
+          "chance": 0.35
+        }
       },
       {
         "name": "Slam",
@@ -3677,7 +3730,10 @@
         "name": "Slam",
         "damage": "5d10+30",
         "type": "blunt",
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.25
+        }
       },
       {
         "damage": "3d8+16",
@@ -4810,6 +4866,11 @@
     "opener": {
       "attack": "Charm Song",
       "range": 4
+    },
+    "alarm": {
+      "radius": 12,
+      "line": "{The} shrieks!",
+      "line_unseen": "A shriek, somewhere near."
     }
   },
   "necromancer_apprentice": {
@@ -4943,6 +5004,11 @@
     "opener": {
       "attack": "Bronze Feather Volley",
       "range": 5
+    },
+    "alarm": {
+      "radius": 12,
+      "line": "{The} screeches, and the flock answers!",
+      "line_unseen": "A metallic screech rings out."
     }
   },
   "satyr_warrior": {
@@ -5921,7 +5987,11 @@
         "effect": "frozen",
         "effect_chance": 0.25,
         "effect_duration": 2,
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.3,
+          "aim": true
+        }
       },
       {
         "name": "Frost Breath",
@@ -6514,7 +6584,12 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "alarm": {
+      "radius": 14,
+      "line": "{The} croaks and wheels away to tell!",
+      "line_unseen": "A raven croaks somewhere overhead."
+    }
   },
   "lindworm": {
     "name": "Lindworm",
@@ -8223,7 +8298,16 @@
     "status_immune": [
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "death_throes": {
+      "type": "poison",
+      "share": 0.06,
+      "radius": 2,
+      "effect": "diseased",
+      "effect_duration": 8,
+      "line": "{The} bursts in a hot wind of plague!",
+      "warn_line": "A sick wind gathers about {the}."
+    }
   },
   "lahamu": {
     "name": "Lahamu",
@@ -9010,7 +9094,8 @@
     "opener": {
       "attack": "Envelop",
       "range": 1
-    }
+    },
+    "relurks": true
   },
   "star_spawn": {
     "name": "Star Spawn",
@@ -9577,7 +9662,8 @@
     "status_immune": [
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "hides_in_dark": true
   },
   "dretch": {
     "name": "Dretch",
@@ -9713,7 +9799,8 @@
     "status_immune": [
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "hides_in_dark": true
   },
   "incubus": {
     "name": "Incubus",
@@ -10420,7 +10507,8 @@
     "status_immune": [
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "hides_in_dark": true
   },
   "lemure": {
     "name": "Lemure",
@@ -11431,7 +11519,8 @@
     "opener": {
       "attack": "Plunge",
       "range": 1
-    }
+    },
+    "relurks": true
   },
   "lurker_above": {
     "name": "Lurker Above",
@@ -11488,7 +11577,8 @@
     "opener": {
       "attack": "Smother",
       "range": 1
-    }
+    },
+    "relurks": true
   },
   "trapper": {
     "name": "Trapper",
@@ -11546,7 +11636,8 @@
     "opener": {
       "attack": "Envelop",
       "range": 1
-    }
+    },
+    "relurks": true
   },
   "roper": {
     "name": "Roper",
@@ -12544,7 +12635,8 @@
         "effect": "blinded",
         "effect_chance": 0.45,
         "effect_duration": 8,
-        "delivery": "touch"
+        "delivery": "touch",
+        "snuffs_light": "dark"
       },
       {
         "name": "Constrict",
@@ -12581,7 +12673,9 @@
     "opener": {
       "attack": "Engulf Head",
       "range": 1
-    }
+    },
+    "light_shy": true,
+    "relurks": true
   },
   "ettercap": {
     "name": "Ettercap",
@@ -12651,7 +12745,8 @@
     "thac0_lore": 13,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "relurks": true
   },
   "grick": {
     "name": "Grick",
@@ -13210,7 +13305,16 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "death_throes": {
+      "type": "fire",
+      "share": 0.06,
+      "radius": 1,
+      "effect": "burning",
+      "effect_duration": 2,
+      "line": "{The} bursts in a gout of flame!",
+      "warn_line": "Flames roar up through {the}'s ribs!"
+    }
   },
   "frost_skeleton": {
     "name": "Frost Skeleton",
@@ -13349,7 +13453,16 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "death_throes": {
+      "type": "poison",
+      "share": 0.05,
+      "radius": 1,
+      "effect": "diseased",
+      "effect_duration": 6,
+      "line": "{The} bursts, spattering everything with rot!",
+      "warn_line": "{The}'s bloated hide splits and seeps."
+    }
   },
   "plague_zombie": {
     "name": "Plague Zombie",
@@ -13421,7 +13534,16 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "death_throes": {
+      "type": "poison",
+      "share": 0.04,
+      "radius": 1,
+      "effect": "diseased",
+      "effect_duration": 4,
+      "line": "{The} bursts, spattering you with rot!",
+      "warn_line": "{The}'s belly swells, tight and green."
+    }
   },
   "rotting_zombie": {
     "name": "Rotting Zombie",
@@ -13716,6 +13838,11 @@
     "opener": {
       "attack": "Hurl Debris",
       "range": 4
+    },
+    "alarm": {
+      "radius": 10,
+      "line": "Something knocks loudly on the walls.",
+      "line_unseen": "Something knocks loudly on the walls."
     }
   },
   "revenant": {
@@ -14077,7 +14204,9 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "light_shy": true,
+    "hides_in_dark": true
   },
   "will_o_wisp": {
     "name": "Will-o-Wisp",
@@ -14219,7 +14348,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "light_shy": true
   },
   "death_echo": {
     "name": "Death Echo",
@@ -15424,7 +15554,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "relurks": true
   },
   "grave_guardian": {
     "name": "Grave Guardian",
@@ -15936,7 +16067,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "light_shy": true
   },
   "nightshade_spawn": {
     "name": "Nightshade Spawn",
@@ -16012,7 +16144,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "light_shy": true
   },
   "forsaken_shell": {
     "name": "Forsaken Shell",
@@ -17037,7 +17170,8 @@
     "opener": {
       "attack": "Deathscream",
       "range": 4
-    }
+    },
+    "light_shy": true
   },
   "crystal_ooze": {
     "name": "crystal ooze",
@@ -17100,7 +17234,16 @@
       "blinded",
       "sleeping"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "death_throes": {
+      "type": "pierce",
+      "share": 0.05,
+      "radius": 1,
+      "effect": "bleeding",
+      "effect_duration": 3,
+      "line": "{The} shatters into flying shards!",
+      "warn_line": "{The} cracks and rings like glass."
+    }
   },
   "green_slime": {
     "name": "green slime",
@@ -17432,7 +17575,16 @@
       "blinded",
       "sleeping"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "death_throes": {
+      "type": "poison",
+      "share": 0.05,
+      "radius": 1,
+      "effect": "poisoned",
+      "effect_duration": 3,
+      "line": "{The} bursts in a spray of venom!",
+      "warn_line": "{The} quivers and turns a sickly green."
+    }
   },
   "giant_scorpion": {
     "name": "giant scorpion",
@@ -17737,7 +17889,8 @@
     "opener": {
       "attack": "Web Spray",
       "range": 3
-    }
+    },
+    "relurks": true
   },
   "phase_spider_lesser": {
     "name": "Lesser Phase Spider",
@@ -17858,7 +18011,8 @@
     "thac0_lore": 21,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "relurks": true
   },
   "death_beetle": {
     "name": "death beetle",
@@ -20343,7 +20497,8 @@
     "thac0_lore": 21,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "hides_in_dark": true
   },
   "water_elemental": {
     "name": "water elemental",
@@ -20370,7 +20525,8 @@
         "effect_chance": 0.4,
         "effect_duration": 4,
         "piercing": true,
-        "delivery": "blow"
+        "delivery": "blow",
+        "snuffs_light": "water"
       },
       {
         "name": "Drown Pull",
@@ -20450,7 +20606,8 @@
         "effect": "confused",
         "effect_chance": 0.5,
         "effect_duration": 4,
-        "delivery": "blow"
+        "delivery": "blow",
+        "snuffs_light": "wind"
       }
     ],
     "resistances": [
@@ -20632,7 +20789,16 @@
       "sleeping",
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "death_throes": {
+      "type": "fire",
+      "share": 0.08,
+      "radius": 1,
+      "effect": "burning",
+      "effect_duration": 3,
+      "line": "{The} bursts in a spray of molten rock!",
+      "warn_line": "{The}'s crust cracks and glows white."
+    }
   },
   "void_elemental": {
     "name": "void elemental",
@@ -20983,7 +21149,16 @@
     ],
     "status_weak": [
       "burning"
-    ]
+    ],
+    "death_throes": {
+      "type": "poison",
+      "share": 0.0,
+      "radius": 1,
+      "effect": "hallucinating",
+      "effect_duration": 3,
+      "line": "{The} bursts in a cloud of spores!",
+      "warn_line": "{The}'s cap swells and puffs."
+    }
   },
   "myconid_sovereign": {
     "name": "myconid sovereign",
@@ -21068,6 +21243,15 @@
     "opener": {
       "attack": "Mind Spore",
       "range": 3
+    },
+    "death_throes": {
+      "type": "poison",
+      "share": 0.04,
+      "radius": 2,
+      "effect": "confused",
+      "effect_duration": 2,
+      "line": "{The} bursts in a great cloud of spores!",
+      "warn_line": "{The}'s gills swell with spores."
     }
   },
   "yellow_musk_creeper": {
@@ -21206,7 +21390,16 @@
     ],
     "status_weak": [
       "burning"
-    ]
+    ],
+    "death_throes": {
+      "type": "poison",
+      "share": 0.1,
+      "radius": 1,
+      "effect": "poisoned",
+      "effect_duration": 3,
+      "line": "{The} bursts in a cloud of choking gas!",
+      "warn_line": "{The} swells tight as a drum."
+    }
   },
   "violet_fungus": {
     "name": "violet fungus",
@@ -22504,7 +22697,11 @@
         "name": "Greatclub",
         "damage": "3d10+8",
         "type": "blunt",
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.3,
+          "aim": true
+        }
       },
       {
         "name": "Boulder Throw",
@@ -22568,7 +22765,11 @@
         "effect": "stunned",
         "effect_chance": 0.25,
         "effect_duration": 2,
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.3,
+          "aim": true
+        }
       },
       {
         "name": "Rock Hurl",
@@ -22763,7 +22964,10 @@
         "name": "Fist Smash",
         "damage": "3d8+8",
         "type": "blunt",
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.3
+        }
       },
       {
         "name": "Boulder",
@@ -22828,7 +23032,10 @@
         "name": "Right Club",
         "damage": "2d6+2",
         "type": "blunt",
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.25
+        }
       }
     ],
     "resistances": [],
@@ -22925,7 +23132,9 @@
       "fear_of_fire",
       "confused"
     ],
-    "multi_attack_count": 2
+    "multi_attack_count": 2,
+    "light_shy": true,
+    "turns_to_stone_in_light": true
   },
   "drow_warrior": {
     "name": "drow warrior",
@@ -22998,7 +23207,8 @@
     "opener": {
       "attack": "Hand Crossbow",
       "range": 5
-    }
+    },
+    "light_shy": true
   },
   "drow_mage": {
     "name": "drow mage",
@@ -23070,7 +23280,8 @@
     "opener": {
       "attack": "Shadow Bolt",
       "range": 5
-    }
+    },
+    "light_shy": true
   },
   "drow_priestess": {
     "name": "drow priestess",
@@ -23105,7 +23316,8 @@
         "effect": "blinded",
         "effect_chance": 0.4,
         "effect_duration": 12,
-        "delivery": "voice"
+        "delivery": "voice",
+        "snuffs_light": "dark"
       }
     ],
     "resistances": [
@@ -23136,7 +23348,8 @@
     "status_immune": [
       "sleeping"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "light_shy": true
   },
   "minotaur_warrior": {
     "name": "minotaur warrior",
@@ -23168,7 +23381,10 @@
         "effect": "slowed",
         "effect_chance": 0.35,
         "effect_duration": 4,
-        "delivery": "trample"
+        "delivery": "trample",
+        "shove": {
+          "chance": 0.3
+        }
       }
     ],
     "resistances": [],
@@ -23947,7 +24163,9 @@
         "delivery": "blow",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12
+        "effect_duration": 12,
+        "snuffs_light": "dark",
+        "snuff_chance": 0.5
       },
       {
         "name": "Cold Bolt",
@@ -23996,7 +24214,8 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "light_shy": true
   },
   "void_crawler": {
     "name": "void crawler",
@@ -24550,7 +24769,9 @@
       "fear_of_fire",
       "confused"
     ],
-    "multi_attack_count": 2
+    "multi_attack_count": 2,
+    "light_shy": true,
+    "turns_to_stone_in_light": true
   },
   "wyrm": {
     "name": "wyrm",
@@ -28145,7 +28366,10 @@
         "name": "Smash",
         "damage": "3d10+8",
         "type": "blunt",
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.25
+        }
       },
       {
         "name": "Bite",
@@ -28184,7 +28408,9 @@
     "status_weak": [
       "fear_of_fire",
       "confused"
-    ]
+    ],
+    "light_shy": true,
+    "turns_to_stone_in_light": true
   },
   "elder_basilisk": {
     "name": "elder basilisk",
@@ -29036,7 +29262,10 @@
         "effect": "bleeding",
         "effect_chance": 0.4,
         "effect_duration": 4,
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.25
+        }
       },
       {
         "name": "Rend",
@@ -29075,7 +29304,9 @@
     "status_weak": [
       "fear_of_fire",
       "confused"
-    ]
+    ],
+    "light_shy": true,
+    "turns_to_stone_in_light": true
   },
   "frost_giant_jarl": {
     "name": "frost giant jarl",
@@ -30823,7 +31054,16 @@
       "blinded",
       "sleeping"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "death_throes": {
+      "type": "poison",
+      "share": 0.06,
+      "radius": 1,
+      "effect": "diseased",
+      "effect_duration": 8,
+      "line": "{The} bursts in a spray of plague!",
+      "warn_line": "{The} bubbles and heaves."
+    }
   },
   "abyssal_behemoth": {
     "name": "abyssal behemoth",
@@ -32469,6 +32709,11 @@
     "opener": {
       "attack": "Crossbow Bolt",
       "range": 6
+    },
+    "alarm": {
+      "radius": 10,
+      "line": "{The} whistles shrilly!",
+      "line_unseen": "A shrill whistle, close by."
     }
   },
   "goblin_warpriest": {
@@ -33046,6 +33291,12 @@
     "opener": {
       "attack": "Barbed Dart",
       "range": 5
+    },
+    "light_shy": true,
+    "alarm": {
+      "radius": 10,
+      "line": "{The} shrieks a warning!",
+      "line_unseen": "Somewhere near, a shrill shriek."
     }
   },
   "kobold_dragonshield": {
@@ -33169,7 +33420,12 @@
     "thac0_lore": 11,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "alarm": {
+      "radius": 12,
+      "line": "{The} barks an order, and the warren stirs!",
+      "line_unseen": "A barked order echoes, and something stirs."
+    }
   },
   "gnoll_archer": {
     "name": "gnoll archer",
@@ -33450,7 +33706,12 @@
       2,
       2
     ],
-    "morale_style": "yield"
+    "morale_style": "yield",
+    "alarm": {
+      "radius": 10,
+      "line": "{The} whistles for his mates!",
+      "line_unseen": "A sharp whistle, not far off."
+    }
   },
   "bandit_archer": {
     "name": "bandit archer",
@@ -33729,7 +33990,12 @@
     "status_immune": [],
     "status_weak": [],
     "morale_style": "yield",
-    "morale": 7
+    "morale": 7,
+    "alarm": {
+      "radius": 10,
+      "line": "{The} cries out: \"An intruder!\"",
+      "line_unseen": "A voice cries out: \"An intruder!\""
+    }
   },
   "cult_priest": {
     "name": "cult priest",
@@ -34566,7 +34832,9 @@
     "status_weak": [
       "fear_of_fire",
       "confused"
-    ]
+    ],
+    "light_shy": true,
+    "turns_to_stone_in_light": true
   },
   "harrow_witch": {
     "name": "Harrow Witch",
@@ -34964,7 +35232,10 @@
         "name": "Earth Slam",
         "damage": "2d6+14",
         "type": "blunt",
-        "delivery": "blow"
+        "delivery": "blow",
+        "shove": {
+          "chance": 0.3
+        }
       }
     ],
     "resistances": [
@@ -36057,7 +36328,16 @@
       "sleeping",
       "poisoned"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "death_throes": {
+      "type": "fire",
+      "share": 0.1,
+      "radius": 2,
+      "effect": "burning",
+      "effect_duration": 3,
+      "line": "{The} bursts, flinging lava all about!",
+      "warn_line": "{The} swells and glows, about to burst."
+    }
   },
   "blood_archon": {
     "name": "Blood Archon",
@@ -37208,7 +37488,8 @@
     "opener": {
       "attack": "Led Astray",
       "range": 4
-    }
+    },
+    "light_shy": true
   },
   "darkhelm_shade": {
     "name": "Darkhelm Shade",
@@ -37320,7 +37601,8 @@
         "effect": "confused",
         "effect_chance": 0.4,
         "effect_duration": 4,
-        "delivery": "blow"
+        "delivery": "blow",
+        "snuffs_light": "wind"
       }
     ],
     "resistances": [
@@ -37428,7 +37710,9 @@
     "opener": {
       "attack": "War Pick",
       "range": 1
-    }
+    },
+    "light_shy": true,
+    "turns_to_stone_in_light": true
   },
   "ker": {
     "name": "Ker",
@@ -39662,7 +39946,8 @@
     "opener": {
       "attack": "Silk Line",
       "range": 4
-    }
+    },
+    "relurks": true
   },
   "neferkaptah_risen": {
     "name": "Neferkaptah",

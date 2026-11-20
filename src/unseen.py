@@ -51,8 +51,10 @@ def sees_invisible(player) -> bool:
 
 
 def is_invisible(m) -> bool:
-    """The creature itself is invisible by nature (whoever is looking)."""
-    return bool(getattr(m, 'invisible', False))
+    """The creature itself is invisible by nature (whoever is looking), or
+    hides in the dark from a hero with no light (src/gone_again.py)."""
+    return bool(getattr(m, 'invisible', False)
+                or getattr(m, '__dict__', {}).get('_dark_hidden'))
 
 
 def senses(m, player) -> bool:

@@ -8,7 +8,10 @@ import packs
 import ai_blow
 import breath
 import faction
+import gone_again
+import grave_rot
 import morale
+import relurk
 import summoning
 
 
@@ -1120,8 +1123,10 @@ class Monster:
                 self.take_damage(doom_dmg, 'fire')
             if rupture_dmg > 0:
                 self.take_damage(rupture_dmg)
-            if disease_tick and random.random() < 0.08:
-                self.take_damage(max(1, self.max_hp // 20))
+            if disease_tick:
+                # Grave Rot (src/grave_rot.py, AI-1): a share of its health
+                # every turn, poison's rate (it was 8% a turn of a twentieth).
+                grave_rot.monster_tick(self, POISON_DIVISOR)
         finally:
             self._dot_tick = False
 
@@ -1145,7 +1150,9 @@ class Monster:
         if regen and self.alive and self.hp < self.max_hp:
             # Don't regenerate while burning (fire stops troll regen), or
             # while a heal-blocking wound (deep_wound / ruptured) is active.
-            if not self.has_effect('burning') and self.can_heal() and _blocked <= 0:
+            # A sick creature does not mend either (Grave Rot).
+            if (not self.has_effect('burning') and self.can_heal() and _blocked <= 0
+                    and not grave_rot.blocks_monster_regen(self)):
                 self.hp = min(self.max_hp, self.hp + regen)
         self._unhurt_turns = int(getattr(self, '_unhurt_turns', 0)) + 1
         self._tick_fury()
@@ -2048,6 +2055,8 @@ class Monster:
             return ''
         chance   = atk.get('effect_chance', 0.30)
         duration = roll_duration(atk.get('effect_duration', 5))
+        if effect_id == 'diseased':
+            duration = grave_rot.linger(duration)    # it lingers (Grave Rot, AI-1)
         # The minor slots' guards shrug off a matching rider (guards.py):
         # the helm a stare's paralysis, the boots a slowing, the shirt a
         # poisoning... The roll that would have landed and did not is told.
@@ -2350,6 +2359,9 @@ class Monster:
 
         # --- Detection range: per-monster perception_range (default 8) ---
         if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
+            # Back to the Web (src/relurk.py): a hurt ambusher out of his
+            # sight goes back into hiding.
+            relurk.consider(self, player)
             return False
         dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
         # Its opener from a distance (a gaze, a song, a first arrow), before
@@ -3269,6 +3281,21 @@ class Monster:
           hiding    - wait hidden in the walls (4-6 turns), then hunt again
         """
         self._hit_run_timer -= 1
+
+        # Gone Again (src/gone_again.py, AI-1): one that cannot walk through
+        # walls breaks off to cover, out of the hero's sight, and hides there
+        # until he finds it or strikes it (it used to stand in plain sight).
+        if self._hit_run_state == 'retreating' and gone_again.applies(self):
+            if gone_again.retreat(self, player, dungeon, all_monsters, extra_occupied):
+                return False
+        if self._hit_run_state == 'hiding' and gone_again.applies(self):
+            if gone_again.hiding_turn(self, player, dungeon):
+                return self._adjacent_to(player)        # found: it fights
+            if self._hit_run_timer <= 0:
+                self._hit_run_state = 'hunting'
+                self._hit_run_attacks = 0
+                gone_again.end_dark(self)
+            return False
 
         if self._hit_run_state == 'retreating':
             if self._hit_run_timer <= 0:

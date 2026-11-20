@@ -84,6 +84,8 @@ class LightsMixin:
         lt = lights.held(p)
         if lt is None:
             return
+        import light_shy
+        light_shy.dry_tick(lt)                # a soaked wick dries (AI-1)
         if lights.shows_way(p):
             self._show_way_down(lt)
         what = lights.burn_turn(lt)
@@ -161,6 +163,11 @@ class LightsMixin:
                 self._fill_light(lt)
                 return
             self.add_message(lights.line('dry', light=name), 'warning')
+            return
+        import light_shy
+        if light_shy.wet(lt):
+            # Doused by a wave or a gust (AI-1, src/light_shy.py).
+            self.add_message(light_shy.rules().get('lines', {}).get('soaked', ''), 'warning')
             return
         lt.lit = True
         self.add_message(lights.line('relit', light=name), 'info')

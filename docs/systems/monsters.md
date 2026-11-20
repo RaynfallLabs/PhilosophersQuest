@@ -441,7 +441,7 @@ How much is said follows `family_lore.knowledge` (Brandon, 2026-11-12: the notes
 - **The hit lines, the Strike Now preview and the combat strip's weakness tag** follow the same levels: see [combat](combat.md), "Knowledge decides what the line says".
 - **Honest about reach:** `tells.reach` is 'far' when the creature can put the effect on the hero from across a room. That covers a gaze, or an attack a ranged, dragon, healer, summoner or rooted creature uses at range (the same test as `Monster.attack`). A far effect gets `counter_far`, or the shared `far_counter` ("keep stone between you"), and never "fight it from a distance".
 - **Splitting:** the line names the blows that split the creature, from its own `splits.by`.
-- **What counts as a tell:** attack effects with `effect_chance` of at least 0.1, plus these flags: gaze, splits, revives, drain-heals, regeneration, summons, pull, SP drain, charge, phase-blink, and the trick of the creature's pack (`pack_swarm`, `pack_hamstring`...: see Packs). They are ranked by `order`, worst first.
+- **What counts as a tell:** attack effects with `effect_chance` of at least 0.1, plus these flags: gaze, splits, revives, drain-heals, regeneration, summons, pull, SP drain, charge, phase-blink, the trick of the creature's pack (`pack_swarm`, `pack_hamstring`...: see Packs), and its ways from the first wave of monster behaviour (`kind_data.tell_keys`: `breath_recharge`, `heals_allies`, `life_drain`, `light_shy`, `snuffs_light`, `raises_alarm`, `death_throes`, `relurks`, `hides_in_dark`, `shove`). They are ranked by `order`, worst first.
 
 Tests: `tests/test_monster_notes.py`, and the Observe cases in `tests/test_observe_bestiary.py`.
 
@@ -511,6 +511,46 @@ The old rule: every aggressive creature that was not a named foe and had no more
 - **Hero answers:** kill the runner before it reaches its friends (a sling, a bow, a wand); a cornered creature fights harder, so leave it a way out or finish it; fear works on deep mortals and beasts again; let a bolting beast go.
 - **Simulator** (`ai_morale`): the real checks. A creature that breaks strikes no blow while it runs (the hero lands one at `CHASE_HIT_PROB`); a withdrawal comes back; a bolt leaves the fight when its run is spent and is found again and finished later half the time; a regroup with kin still waiting at the doorway goes back to the queue behind the next of them; a yield leaves, spared. At bay is not modelled (the simulator has no walls).
 
+### Life Drained (`life_drained`, `src/life_drain.py`)
+
+The drain type (67 kinds) cost a point of CON on a failed save, at most once a floor, never below CON 8, and most drainers hit like anyone else; the classic drainers (wight, wraith, barrow-wight, cairn-wight, fetch) struck with plain necrotic and drained nothing. Now a landed drain blow (type `drain`, or `drains_life: true` on the attack: those five) whose save fails (the old CON save, DC 12 + depth/7, with the family ward against draining) lowers the hero's max HP by `drain_share` (0.5) of the blow, at most 10% of his whole health from one blow and 25% in all, never below a new hero's health, kept in `player._life_drained`: "The Wight drains your life away! (Max HP -6)". It comes back: half at the next new floor down ("Sleep gives back some of what the dead took."), all from the physician's Restore (counted as points of 3 health in its price) and from the Mercy prayer at a chain of 4 (an altar counts one). `drain_resist` stops it. The old CON point stays for the greatest (`drain_con: true`: the lich, greater, ancient and arch-lich, the death lord), and named foes keep only the old CON rule. The blood-drinkers feed on it (`drain_heals_self` written by lore: vampire spawn, nosferatu, strigoi, vrykolakas 0.5; vampire lord and elder vampire 0.75; the strix and the ker 0.5). Tell: `life_drain`. Hero answers: kill it fast, the ward, prayer, the physician, the stairs.
+
+### Grave Rot (`grave_rot`, `src/grave_rot.py`)
+
+`diseased` cost a stat point about one bite in three and no health, and was gone in 4-8 turns; on a monster it ticked 0.4% a turn. Now, on the hero, while diseased his wounds do not mend by rest (`main._tick_hp_regen`) and every heal does half (`Player.restore_hp`; the stat sap stays); a monster's disease lingers its kind's own `effect_duration` x 10, at most 60 turns (`status_effects.MAX_EFFECT_DURATION`), so a rat's bite is short and a mummy's long. On a monster it costs `max_hp / 40` a turn (poison's rate) and stops its regeneration (a sick troll does not mend). Cured by the Potion of Cure Disease, the Mercy prayer at a chain of 4 (before its heal, so the heal is whole), the physician, a fountain's best water; `poison_resist` and `drain_resist` block it. The rubric's line on riders (`docs/design/MONSTER_LORE_PASS_2026_11_19.md`) now says what each one does.
+
+### Light-Shy and Snuff the Light (`light_shy_and_snuff`, `src/light_shy.py`)
+
+- **Light-shy** (`light_shy: true`: the six trolls, the dvergar hoard-wardens, the dark elves and drow, the shadows and shades, the nightwing, the darkmantle, the kobolds, the hidden folk): within the reach of a lit hero's light (its sight) it needs +2 to hit for each point of the light's glare (a carried light 1, the Everburning Lamp, the Hero's Lamp and Hecate's Torch 2, the Light spell 2, a torch held as a weapon 1), at most +4 (`ai_blow.to_hit_shift`). "The Troll flinches from your light." (once a fight).
+- **The troll's wounds** (agent A's troll item; the lore now says it: "a strong light is the next best thing, and a troll hates it"): a regenerating light-shy creature standing in the light cannot close its wounds (`_regen_blocked`, a turn at a time, `BehaviourMixin._ai_turn_after`): "The Troll's wounds stop closing in your light."
+- **Stone** (`turns_to_stone_in_light`: the trolls, the dvergar): three turns in the Light spell's glare and it is slowed 3 turns ("The Troll's hide stiffens in the light, like stone!"). Never petrified; named foes never.
+- **Snuffers** (an attack's `snuffs_light`: the water elemental's Wave Crash, the air elemental's Vortex, the whirlwind jinni's Dust-Devil Blow, the darkmantle's Engulf Head, the shadow master's Shadow Claw half the time, the drow priestess's Divine Curse): a landed blow douses the light in the hero's hand, soaked for 3 turns (water), 1 (wind) or 2 (dark); `_toggle_light` refuses meanwhile ("The wick is soaked."). Dark also ends the Light spell. An everlasting light or one with a power is never snuffed.
+- **Tells:** `light_shy`, `snuffs_light`. The price of a light stays: a lit hero is seen from farther.
+
+### Gone Again (`hit_and_run_vanishes`, `src/gone_again.py`)
+
+18 of 21 hit-and-run kinds cannot walk through walls, and after their blows they stood three tiles off in plain sight for 4-6 turns. Now one breaks off ("The Imp darts away to hide.") to the nearest tile out of the hero's sight within 12 tiles (round a corner, behind a pillar) and hides there; the hero coming within 2 tiles or seeing it, or any blow on it, ends the hiding and it fights. With no cover in reach it backs off as before. `hides_in_dark` (the shade, the shadow demon, the quasit, the imp, the boggart): while it hides it is unseen (`unseen.is_invisible`, `_dark_hidden`) if the hero carries no lit light and cannot see the invisible. Asterion and the phasing vampires are as they were.
+
+### Raise the Alarm (`raise_the_alarm`, `src/alarm.py`)
+
+`alarm` ({radius, tags?, line, line_unseen}) on a kind: the first time it sees the hero (`senses.notice`), once a floor, it shouts, and every creature of its side the sound reaches (`senses.sound_map`) within the radius is roused to him (its kind, band, pack, family, or a listed tag); sleepers wake as to a loud noise, never under the Hand of Glory; a sleeping, frightened or silenced lookout does not shout. It rouses only what is already on the floor. Kinds: the kobold, the kobold trapsetter and pack leader, the goblin and goblin sniper, the gnoll (a whooping laugh), the orc scout, the hobgoblin, the bandit thug, the cult initiate, Hugin, the Stymphalian bird, the harpy, the poltergeist (it knocks). Tell: `raises_alarm`.
+
+### Death Throes (`death_throes`, `src/death_throes.py`)
+
+`death_throes` ({type, share, radius, effect?, effect_duration?, line, warn_line, delivery?}): when it dies (not banished, not ashed, not a named foe) everything within its radius and its sight, the hero and the other creatures alike, takes `floor_curve.wound(share)` of its own health in that type and the rider through the usual save (`BehaviourMixin._ai_burst`; a `delivery: "voice"` rider is stopped by wax). It swells the turn it falls under a quarter of its health (`warn_line`, once). A creature the blast kills bursts after it, one at a time (a queue); the hero gets the kills. Kinds: the fire beetle (5%), the burning skeleton, the magma and lava elementals, the myconids (spores: hallucination, confusion), the gas spore, the plague zombie and zombie hulk and plague ooze (disease), the toxic jelly (poison), the crystal ooze (shards: bleeding), Pazuzu's spawn. Tell: `death_throes`.
+
+### Back to the Web (`relurk`, `src/relurk.py`)
+
+A sprung ambusher with `relurks` (the spiders, the piercer, the darkmantle, the lurker above, the trapper, the cloaker, the ettercap, the jorogumo, the crypt thing), under 60% of its health, out of the hero's sight 3 turns and not hunting him, goes back into hiding once a life: an ambusher again, unaware and unseen until it springs; no second surprise blow. A hero within 8 tiles hears it go ("Something scuttles away into the dark."). Tell: `relurks`.
+
+### Shove (`shove_into_danger`, `src/shove.py`)
+
+An attack's `shove` ({chance, aim}): a landed blow may throw the hero one tile straight back (a STR save, DC 13, keeps his feet); never into a wall, water, lava, a pit or a creature, never while he is held. The giants (hill, stone, frost: `aim`) throw him onto a hazard among the three tiles away from them, and the hazard's own rule fires (`BehaviourMixin._ai_resolve_shove`, after the monsters' turn, beside the pull). Kinds: the hill, stone and frost giants, the cyclops brute, the ettin, the ogres, the minotaurs, the troll brute and war troll, the cave bear, the iron and stone golems. Tell: `shove`.
+
+### The simulator's knobs
+
+`tools/balance/sim_ai1.py` (merged into `difficulty_sim.KNOB_DEFAULTS`): `ai_heal`, `ai_summon`, `ai_breath`, `ai_morale`, `ai_drain`, `ai_rot`, `ai_light`, `ai_vanish`, `ai_alarm`, `ai_throes`, `ai_relurk`, `ai_shove`, each 1 (the game's rule) by default; 0 is its ablation. Its docstring says what each models and what it cannot.
+
 ## Wanderers: the floor's clock (3.5.1)
 
 Brandon, play-testing floor 1: "I just don't think we need a constant stream of monsters... I'd rather have a larger population at first, with complex encounters set up, then a trickle if you hang around TOO LONG, but give the player some time to explore... walking back and forth becomes a massive chore."
@@ -566,7 +606,7 @@ Tests: `tests/test_war_bands.py`.
 7. Mitigations: confused 30% miss, blinded 40% miss, displacement 30% miss, Monkey King dodge, Hermes votive sandals, Aegis Gorgoneion petrify-on-hit, Nemean Lion unskinnable floor-at-1, Mirror of Souls, Resonant Frequency shock, Spartan Stand counter.
 8. Damage: rage stacks → `+rage_damage_bonus` roll each; charge bonus (`charge_bonus_mult × dmg`); mimic surprise `×1.75`; weakened `//2`; sundered `×0.70`; summoned `//2` under Ring of Solomon; back-attack multiplier when player faces away.
 9. Shield reflect (fire/cold), spell-reflect chain-passive, Mirror of Souls, Gorgoneion petrify — all post-damage.
-10. Drain: CON -1 if not `drain_resist`; `drain_heals_self` returns a fraction as HP.
+10. Drain (`ai_blow.after_blow` -> `life_drain.after_blow`, AI-1): a failed save lowers max HP by half the blow (`_life_drained`); CON -1 once a floor only for `drain_con` kinds and named foes; nothing under `drain_resist`. `drain_heals_self` returns a fraction as HP.
 11. Chain-disrupt: sets `_chain_disrupt_pending` (currently dead-wired per audit — no reader).
 12. Pull-on-hit: sets `_pending_pull_toward` for the game loop.
 13. Status-effect application: `effect_chance` roll → `apply_debuff_with_save` with `effect_save_dc`, reflecting bounces 50% back to attacker.

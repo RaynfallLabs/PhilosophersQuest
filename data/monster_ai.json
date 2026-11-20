@@ -211,7 +211,7 @@
     "search_tiles": 12,
     "spot_reach": 2,
     "lines": {
-      "vanish": "{The} slips out of sight.",
+      "vanish": "{The} darts away to hide.",
       "dark": "{The} melts into the dark."
     }
   },
@@ -227,7 +227,8 @@
     "_doc": "src/relurk.py. A sprung ambusher with relurks, under hurt_share of its health, with no sight of the hero for lost_turns turns and not hunting him, goes back into hiding (an ambusher again, unaware) once a life; its next spring has no surprise blow.",
     "hurt_share": 0.6,
     "lost_turns": 3,
-    "line_unseen": "Something scuttles away into the dark."
+    "line_unseen": "Something scuttles away into the dark.",
+    "heard_reach": 8
   },
   "shove": {
     "_doc": "src/shove.py. A landed attack with shove {chance, aim} may throw the hero one tile straight back (a STR save stops it). Never into a wall, water, lava, a pit, a creature or off the map; with aim the shover picks, of the three tiles away from it, one with a hazard the hero would step on.",

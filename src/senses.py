@@ -606,6 +606,9 @@ def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:
                 import packs
                 if packs.pack_of(m) is not None:
                     packs.alarm(m, all_monsters, player.x, player.y, dungeon)
+            # A lookout shouts (src/alarm.py, AI-1): its side is roused.
+            import alarm
+            alarm.shout(m, all_monsters, player, dungeon)
         m._aware = True
         m._tracking = True
         m._sensed_by = how

@@ -11,11 +11,15 @@ things that touch the map, the kill handler or the hero's turn.
                       its lines, said as the hero sees or hears them; the
                       purse a yielding bandit throws down (morale).
   _ai_on_kill(m)      from the kill handler (CombatMixin._on_monster_killed):
-                      its side sees it fall (morale).
+                      its side sees it fall (morale); it bursts (death
+                      throes), one at a time.
+  _ai_resolve_shove() after the monsters' turn (main._advance_turn, beside
+                      the pull): a giant's blow threw the hero back.
 """
 from __future__ import annotations
 
 import ai_lines
+import kind_data
 import morale
 
 
@@ -27,6 +31,11 @@ class BehaviourMixin:
         unseen line never names the creature)."""
         if m.__dict__.pop('_wants_purse_dropped', False):
             self._ai_drop_purse(m)
+        if m.alive:
+            import death_throes
+            import light_shy
+            light_shy.light_turn(m, self.player)      # a troll in the light
+            death_throes.warn(m)                      # it swells before it bursts
         lines = ai_lines.take(m)
         if not lines:
             return
@@ -54,9 +63,110 @@ class BehaviourMixin:
             self.add_message(text, 'loot')
 
     def _ai_on_kill(self, m) -> None:
-        """One of a side fell: its hurt kin that saw it may break (morale)."""
+        """One of a side fell: its hurt kin that saw it may break (morale),
+        and it may burst (death throes)."""
         try:
             morale.kin_fell(self.monsters, m, getattr(self, 'dungeon', None))
         except Exception as exc:          # never let a nerve check stop a kill
             from game_log import log_error
             log_error(f"morale.kin_fell: {exc!r}")
+        self._ai_throes(m)
+
+    # ------------------------------------------------------------------
+    # Death Throes (src/death_throes.py)
+    # ------------------------------------------------------------------
+
+    def _ai_throes(self, m) -> None:
+        """It bursts as it dies. A creature the blast kills bursts after it,
+        one at a time (a queue: never one burst inside another)."""
+        import death_throes
+        if not death_throes.should_burst(m):
+            return
+        m._throes_done = True
+        queue = self.__dict__.setdefault('_throes_queue', [])
+        queue.append(m)
+        if self.__dict__.get('_throes_running'):
+            return
+        self._throes_running = True
+        try:
+            while queue:
+                self._ai_burst(queue.pop(0))
+        finally:
+            self._throes_running = False
+            self._throes_queue = []
+
+    def _ai_burst(self, m) -> None:
+        import death_throes
+        from status_effects import apply_debuff_with_save
+        t = death_throes.spec(m) or {}
+        kind = str(t.get('type', 'fire') or 'fire')
+        eff = t.get('effect')
+        dur = int(t.get('effect_duration', 3) or 3)
+        if (m.x, m.y) in getattr(self, 'visible', ()) and t.get('line'):
+            self.add_message(ai_lines.fill(m, t['line']), 'danger')
+        p = self.player
+        if death_throes.in_blast(m, p.x, p.y, self.dungeon):
+            dmg = death_throes.blast(m, p.max_hp)
+            if dmg > 0:
+                got = p.take_damage(dmg, kind)
+                if got:
+                    self.add_message(f"The blast catches you for {got} damage!", 'danger')
+            if eff and p.hp > 0:
+                import counters
+                fake = {'name': 'Death Throes', 'delivery': str(t.get('delivery', '') or '')}
+                blocked = counters.blocks_rider(p, m, fake, eff)
+                if blocked is not None:
+                    self.add_message(counters.line(p, blocked[0], blocked[1], m), 'info')
+                else:
+                    dc = min(18, 12 + int(getattr(m, 'min_level', 1) or 1) // 7)
+                    _ok, text = apply_debuff_with_save(p, eff, dur, dc, source=m)
+                    if text:
+                        self.add_message(text, 'danger')
+            if p.hp <= 0:
+                self._answer_a_killing_blow()
+                if p.is_dead():
+                    from game_states import STATE_DEAD
+                    if self.state != STATE_DEAD:
+                        self.defeat_reason = 'died'
+                        self._killed_by = getattr(m, 'kind', None)
+                        self._on_game_over()
+                        self.state = STATE_DEAD
+                        self.add_message("You have died! Press Esc to return to the title.", 'danger')
+                    return
+        for o in list(self.monsters):
+            if o is m or not o.alive or kind_data.outside_rules(o):
+                continue
+            if not death_throes.in_blast(m, o.x, o.y, self.dungeon):
+                continue
+            dmg = death_throes.blast(m, o.max_hp, o._is_named_foe())
+            if dmg > 0:
+                o.take_damage(dmg, kind)
+            if eff and o.alive:
+                o.add_effect(eff, dur)
+            if not o.alive:
+                self._on_monster_killed(o)
+
+    # ------------------------------------------------------------------
+    # Shove (src/shove.py)
+    # ------------------------------------------------------------------
+
+    def _ai_resolve_shove(self) -> None:
+        """A blow this turn threw the hero back: one tile, never into
+        danger the shover did not mean (water, lava, a pit, a wall)."""
+        p = self.player
+        sv = p.__dict__.pop('_pending_shove', None)
+        if not sv or p.hp <= 0:
+            return
+        import shove
+        from geom import all_occupied_tiles
+        occ = set(all_occupied_tiles(self.monsters)) | set(self._occupants(hero=False))
+        got = shove.landing(self.dungeon, (p.x, p.y), tuple(sv['from']), bool(sv.get('aim')), occ)
+        if got is None:
+            return
+        (nx, ny), aimed = got
+        p.x, p.y = nx, ny
+        self.add_message(sv['aimed'] if aimed else sv['line'], 'danger')
+        _hz = getattr(self, '_hazard_step_hero', None)
+        if _hz is not None:
+            _hz(nx, ny)
+        self._refresh_fov()

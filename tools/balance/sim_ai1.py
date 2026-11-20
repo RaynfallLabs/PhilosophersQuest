@@ -27,6 +27,35 @@ a knob that defaults on (KNOBS, merged into difficulty_sim.KNOB_DEFAULTS), so
              (floor_start), all of it from a Mercy prayer at chain 4
              (prayed). Off: the old CON -1 once a floor. The physician's
              Restore is not modelled (the stall's services are its own).
+  ai_rot     Grave Rot (src/grave_rot.py): a disease lingers (x10, at most
+             60 turns), no regen in a fight while it lasts (regen_ok), heals
+             halved (the real Player.restore_hp); Mercy at chain 4 cures it.
+             Between fights the simulator lets debuffs run out for free (its
+             own rule), so the lost rest is under-counted.
+  ai_light   Light-Shy (src/light_shy.py): the mastery hero (tactics=1)
+             facing a light-shy kind spends his first action raising a
+             light (the Light spell's glare: fight_start); in its glare a
+             light-shy creature needs +4 to hit (real _resolve_blow) and a
+             troll cannot regenerate (world_tick). A snuffer's blow puts it
+             out. The shield the light would cost is not modelled.
+  ai_vanish  Gone Again (src/gone_again.py): the simulator's hit-and-run
+             model (gone for 9-12 turns) is now right for every kind. Off:
+             the old game, where a non-phasing hider stood in plain sight
+             and took the hero's blows (visible_away).
+  ai_alarm   Raise the Alarm (src/alarm.py): a room group with a lookout
+             brings the next room's group in ALARM_JOIN of the time (the
+             mastery hero kills or slips past the lookout first half the
+             time) instead of NEIGHBOUR_JOIN_PROB (join_prob).
+  ai_throes  Death Throes (src/death_throes.py): a bursting kind that dies
+             blasts the hero beside it (the mastery hero reads the swell
+             and steps back THROES_READ of the time; the lost step is not
+             counted) and the creatures beside it (leavers).
+  ai_relurk  Back to the Web (src/relurk.py): a relurking kind that bolted
+             comes back later in the floor as an ambusher (one more free
+             blow) instead of being found and finished.
+  ai_shove   Shove (src/shove.py): a shove costs the hero his next action
+             (stepping back in: lost_action). Hazards it might throw him
+             into are not modelled.
 
 What the simulator cannot see is said where it matters (the report).
 """
@@ -34,11 +63,18 @@ from __future__ import annotations
 
 import random
 
+import alarm
 import breath
+import death_throes
 import faction
+import gone_again
+import grave_rot
 import kind_data
 import life_drain
+import light_shy
 import morale
+import relurk
+import shove
 import summoning
 
 KNOBS = {
@@ -47,7 +83,16 @@ KNOBS = {
     'ai_breath': 1,
     'ai_morale': 1,
     'ai_drain': 1,
+    'ai_rot': 1,
+    'ai_light': 1,
+    'ai_vanish': 1,
+    'ai_alarm': 1,
+    'ai_throes': 1,
+    'ai_relurk': 1,
+    'ai_shove': 1,
 }
+ALARM_JOIN = 0.6          # the next room's group comes when a lookout shouts
+THROES_READ = 0.6         # the mastery hero steps back from a swelling creature
 # A beast that bolted (cowed) is met again later on the floor, hurt and
 # alone, and finished with one blow this often; else it is never found.
 BOLT_FOUND_AGAIN = 0.5
@@ -62,6 +107,98 @@ def apply_flags(knobs: dict) -> None:
     summoning.ENABLED = bool(knobs.get('ai_summon', 1))
     morale.ENABLED = bool(knobs.get('ai_morale', 1))
     life_drain.ENABLED = bool(knobs.get('ai_drain', 1))
+    grave_rot.ENABLED = bool(knobs.get('ai_rot', 1))
+    light_shy.ENABLED = bool(knobs.get('ai_light', 1))
+    gone_again.ENABLED = bool(knobs.get('ai_vanish', 1))
+    alarm.ENABLED = bool(knobs.get('ai_alarm', 1))
+    death_throes.ENABLED = bool(knobs.get('ai_throes', 1))
+    relurk.ENABLED = bool(knobs.get('ai_relurk', 1))
+    shove.ENABLED = bool(knobs.get('ai_shove', 1))
+
+
+def fight_start(run, group) -> None:
+    """Before the first blow: the mastery hero raises a light against a
+    light-shy foe (one action)."""
+    k = run.knobs
+    if not (k.get('ai_light', 1) and k.get('tactics')):
+        return
+    if any(light_shy.shy(m) for m in group):
+        p = run.p
+        p.status_effects['light'] = max(int(p.status_effects.get('light', 0) or 0), 60)
+        run._ai1_skip = int(getattr(run, '_ai1_skip', 0) or 0) + 1
+        run.fs['ai_lit'] = run.fs.get('ai_lit', 0) + 1
+
+
+def lost_action(run) -> bool:
+    """The hero's action this turn is spent (raising a light, stepping back
+    in after a shove)."""
+    n = int(getattr(run, '_ai1_skip', 0) or 0)
+    if n > 0:
+        run._ai1_skip = n - 1
+        return True
+    return False
+
+
+def world_tick(run, active) -> None:
+    """After the statuses tick: a troll in the light cannot mend; a shove
+    this turn costs the hero his next action."""
+    p = run.p
+    for m in active:
+        if m.alive:
+            light_shy.light_turn(m, p)
+            m.__dict__.pop('_ai_lines', None)
+    if p.__dict__.pop('_pending_shove', None) is not None:
+        run._ai1_skip = int(getattr(run, '_ai1_skip', 0) or 0) + 1
+        run.fs['ai_shoves'] = run.fs.get('ai_shoves', 0) + 1
+
+
+def regen_ok(run) -> bool:
+    return not grave_rot.blocks_regen(run.p)
+
+
+def visible_away(run, m) -> bool:
+    """ai_vanish=0: a non-phasing hit-and-run creature 'hides' in plain
+    sight, where the hero can still strike it (the old game)."""
+    return bool(not run.knobs.get('ai_vanish', 1) and m.ai_pattern == 'hit_and_run'
+                and not getattr(m, 'can_phase_walls', False))
+
+
+def join_prob(run, group, base: float) -> float:
+    if not run.knobs.get('ai_alarm', 1) or not any(alarm.spec(m) for m in group):
+        return base
+    p = ALARM_JOIN
+    if run.knobs.get('tactics'):
+        p = 0.5 * ALARM_JOIN + 0.5 * base
+    run.fs['ai_alarm_groups'] = run.fs.get('ai_alarm_groups', 0) + 1
+    return max(base, p)
+
+
+def _throes(run, active) -> None:
+    """Those that died this turn and burst."""
+    from floor_curve import wound
+    from status_effects import apply_debuff_with_save
+    p = run.p
+    while True:
+        bursting = [m for m in active if not m.alive and death_throes.should_burst(m)]
+        if not bursting:
+            return
+        for m in bursting:
+            m._throes_done = True
+            t = death_throes.spec(m) or {}
+            share = float(t.get('share', 0) or 0)
+            kind = str(t.get('type', 'fire') or 'fire')
+            run.fs['ai_throes'] = run.fs.get('ai_throes', 0) + 1
+            if not (run.knobs.get('tactics') and random.random() < THROES_READ):
+                if share > 0:
+                    p.take_damage(wound(share, p.max_hp), kind)
+                if t.get('effect') and p.hp > 0:
+                    dc = min(18, 12 + int(getattr(m, 'min_level', 1) or 1) // 7)
+                    apply_debuff_with_save(p, t['effect'], int(t.get('effect_duration', 3) or 3),
+                                           dc, source=m)
+            for o in active:
+                if o is m or not o.alive:
+                    continue
+                o.take_damage(wound(share, o.max_hp, o._is_named_foe()), kind)
 
 
 def floor_start(run) -> None:
@@ -147,6 +284,8 @@ def leavers(run, active, queue) -> tuple:
     regrouper goes back to the queue behind the next of its side; one that
     yielded is spared."""
     run._ai1_queue = queue
+    if run.knobs.get('ai_throes', 1):
+        _throes(run, active)
     if not any(m.__dict__.get('_sim_left') for m in active):
         return active, queue
     keep = []
@@ -157,7 +296,14 @@ def leavers(run, active, queue) -> tuple:
             continue
         run.fs['ai_left_' + why] = run.fs.get('ai_left_' + why, 0) + 1
         if why == 'bolt':
-            if random.random() < BOLT_FOUND_AGAIN:
+            if run.knobs.get('ai_relurk', 1) and kind_data.field(m, 'relurks', False):
+                # Back to the web: it drops on him again later (one free blow).
+                m.__dict__.pop('_cowed', None)
+                m._flee_timer = 0
+                m.ai_pattern = 'ambush'
+                queue = queue + [m]
+                run.fs['ai_relurks'] = run.fs.get('ai_relurks', 0) + 1
+            elif random.random() < BOLT_FOUND_AGAIN:
                 m.hp = 0
                 m.alive = False                  # finished when found again
         elif why == 'regroup':

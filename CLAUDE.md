@@ -78,6 +78,13 @@ src/
   morale.py           - Morale by Nature: who breaks (never, bolt, regroup, withdraw, yield), when, and the run
   ai_blow.py          - What the behaviours add to one monster blow (to-hit shift; after the blow)
   life_drain.py       - Life Drained: a drain blow lowers max HP; half back on the stairs, all from prayer or physician
+  grave_rot.py        - Grave Rot: disease lingers, stops rest mending, halves heals; ticks on a monster
+  light_shy.py        - Light-Shy (flinch, a troll's wounds, stiffening) and Snuff the Light (a soaked wick)
+  gone_again.py       - Gone Again: a hit-and-run creature hides out of sight (in the dark, unseen)
+  alarm.py            - Raise the Alarm: a lookout's shout rouses its side, once a floor
+  death_throes.py     - Death Throes: it swells, then bursts as it dies
+  relurk.py           - Back to the Web: a hurt ambusher out of sight hides again
+  shove.py            - Shove: a giant's blow throws the hero back, never into deadly ground
   game_behaviour.py   - BehaviourMixin: the Game's side of the behaviours (lines, the map, the kill)
   decor.py            - The five domains (themes) and the fixture layer: what stands in a floor
   hazards.py          - Domain hazards (data), trap lean, kin weights and the floor's resident clan

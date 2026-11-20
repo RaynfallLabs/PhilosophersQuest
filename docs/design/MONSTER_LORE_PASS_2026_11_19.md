@@ -44,7 +44,9 @@ A slow kid (half to 0.7x Brandon's answer speed) meets the same monsters with ab
 - A rider (`effect`, `effect_chance`, `effect_duration`) is the creature's power:
   - Hard control (paralyzed, sleeping, stunned, frozen, immobilized, petrifying, feared) is negated by a save. Its duration is clamped by status_effects.CONTROL_CAP (paralysis 4, sleep 5, stun 3).
   - Soft control (confused, charmed, slowed) is halved by a save.
-  - Damage-over-time riders (poisoned, burning, bleeding, diseased, draining) tick 2% of the hero's max HP every turn. Keep them 3-8 turns, and up to 12 only for a legendary venom.
+  - Damage-over-time riders (poisoned, burning, bleeding) tick 2% of the hero's max HP every turn (`status_effects.dot_tick`). Keep them 3-8 turns, and up to 12 only for a legendary venom.
+  - `diseased` costs no health a turn (AI-1, Grave Rot, `src/grave_rot.py`): while it lasts the hero's rest does not mend him and every heal does half, and now and then it saps a point of STR or CON. A monster's disease lingers: its written `effect_duration` x 10, at most 60 turns (the engine's cap), so write it 4-8 like any rider (a rat's 4 is 40 turns, a mummy's 8 is 60).
+  - `draining` is a ring's curse (1% of max HP on about a sixth of turns), not a monster's rider: give a draining creature a `type: "drain"` attack (or `drains_life: true` on a necrotic touch), which lowers the hero's max HP by half of a landed blow (Life Drained, `src/life_drain.py`).
   - Non-damaging debuffs (weakened, slowed, blinded, hallucinating, silenced) can last 8-30 turns. Brandon's ask is that a landed power lasts into the next fight.
 - The hero's head armour, family wards and counters (wax, mirror shield, cold iron) shrug off a share of riders. Powers can be strong.
 - `hp`: dice. The hero's weapons are calibrated so that a balance child kills a monster of floor_curve.target_hp(floor) HP in about 1.4 maths chains.

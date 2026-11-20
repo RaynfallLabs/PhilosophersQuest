@@ -340,7 +340,9 @@ def test_the_pages_turn_with_real_keys_and_every_line_fits(kit_game, monkeypatch
     assert g._help_page == 2
     drawn.clear()
     g.render()
-    assert footers[-1].startswith('Tab: Commands')
+    # (AI-1, 2026-11-19: a third prose page, Monsters and Their Ways, comes
+    # after Gear and Load; its lines are held to their pane at the end.)
+    assert footers[-1].startswith('Tab: Monsters and Their Ways')
     assert 'The Kit and the character sheet' in drawn
     g.handle_event(_key(pygame.K_END))
     drawn.clear()
@@ -353,6 +355,14 @@ def test_the_pages_turn_with_real_keys_and_every_line_fits(kit_game, monkeypatch
     g.handle_event(_key(pygame.K_LEFT))
     assert g._help_page == 1
     g.handle_event(_key(pygame.K_RIGHT))
+    g.handle_event(_key(pygame.K_TAB))
+    assert g._help_page == 3
+    drawn.clear()
+    g.render()
+    assert footers[-1].startswith('Tab: Commands')
+    assert 'When they break' in drawn
+    g.handle_event(_key(pygame.K_END))
+    g.render()
     g.handle_event(_key(pygame.K_TAB))
     assert g._help_page == 0                     # the last page turns round to the first
     g.handle_event(_key(pygame.K_ESCAPE))

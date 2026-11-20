@@ -664,3 +664,332 @@ def test_the_drain_tell_and_the_feeders():
     assert make('nosferatu').drain_heals_self == 0.5
 
 
+
+
+# ===========================================================================
+# grave_rot: Grave Rot
+# ===========================================================================
+
+import grave_rot  # noqa: E402
+
+
+def test_a_sick_hero_heals_half_and_rest_stops():
+    p = _real_hero()
+    p.hp = 100
+    p.status_effects['diseased'] = 30
+    assert p.restore_hp(40) == 20
+    assert grave_rot.blocks_regen(p)
+    p.status_effects.clear()
+    assert p.restore_hp(40) == 40
+
+
+def test_a_monster_disease_lingers_to_the_engine_cap():
+    assert grave_rot.linger(4) == 40
+    assert grave_rot.linger(8) == 60
+    grave_rot.ENABLED = False
+    try:
+        assert grave_rot.linger(6) == 6
+    finally:
+        grave_rot.ENABLED = True
+
+
+def test_a_sick_troll_does_not_mend():
+    t = make('troll')
+    t.hp = t.max_hp // 2
+    t.status_effects['diseased'] = 5
+    before = t.hp
+    t.tick_effects()
+    assert t.hp == before - max(1, t.max_hp // 40)
+
+
+# ===========================================================================
+# light_shy_and_snuff
+# ===========================================================================
+
+import light_shy  # noqa: E402
+
+
+class Torch:
+    item_class = 'light'
+
+    def __init__(self, burn=400, power=''):
+        self.id = 'torch'
+        self.lit = True
+        self.burn = burn
+        self.fuel = burn
+        self.sight = 2
+        self.noun = 'torch'
+        self.power = power
+
+
+def test_a_troll_flinches_from_a_light_and_cannot_mend_in_it():
+    troll = make('troll', 5, 5)
+    hero = Hero(6, 5)
+    assert light_shy.flinch(troll, hero) == 0
+    hero.shield = Torch()
+    assert light_shy.flinch(troll, hero) == 2
+    hero.status_effects['light'] = 10
+    assert light_shy.flinch(troll, hero) == 4         # the Light spell, capped
+    troll.hp = troll.max_hp // 2
+    light_shy.light_turn(troll, hero)
+    before = troll.hp
+    troll.tick_effects()
+    assert troll.hp == before                         # no mending in the light
+    assert any('wounds' in t for t, _u, _c in ai_lines.take(troll))
+
+
+def test_a_troll_stiffens_in_the_light_spell_but_a_named_one_does_not():
+    troll = make('troll', 5, 5)
+    hero = Hero(6, 5)
+    hero.status_effects['light'] = 10
+    for _ in range(3):
+        light_shy.light_turn(troll, hero)
+    assert troll.has_effect('slowed')
+
+
+def test_a_wave_drowns_a_torch_but_not_hecates():
+    hero = Hero(6, 5)
+    hero.shield = Torch()
+    line = light_shy.snuff(hero, 'water')
+    assert not hero.shield.lit and light_shy.wet(hero.shield) == 3 and 'torch' in line
+    hero.shield = Torch(burn=0, power='unmasks')
+    light_shy.snuff(hero, 'water')
+    assert hero.shield.lit
+    hero.shield = Torch()
+    hero.status_effects['light'] = 5
+    light_shy.snuff(hero, 'dark')
+    assert 'light' not in hero.status_effects
+
+
+def test_the_snuffers_carry_it():
+    assert any(a.get('snuffs_light') == 'water' for a in make('water_elemental').attacks)
+    assert 'light_shy' in tells.abilities(make('troll'))
+
+
+# ===========================================================================
+# hit_and_run_vanishes: Gone Again
+# ===========================================================================
+
+import gone_again  # noqa: E402
+
+
+def _pillar_room():
+    d = open_room(20, 20)
+    for y in range(4, 16):
+        d.tiles[y][10] = WALL                 # a long wall to hide behind
+    return d
+
+
+def test_an_imp_breaks_off_to_cover_and_waits_there():
+    dun = _pillar_room()
+    imp = make('imp', 8, 10)
+    hero = Hero(7, 10)
+    imp._hit_run_state = 'retreating'
+    for _ in range(12):
+        imp.take_turn(hero, dun, [imp])
+        if imp._hit_run_state == 'hiding':
+            break
+    assert imp._hit_run_state == 'hiding'
+    assert not senses.clear_view(imp.x, imp.y, hero.x, hero.y, dun)
+
+
+def test_a_blow_or_a_close_hero_ends_the_hiding():
+    dun = _pillar_room()
+    imp = make('imp', 12, 10)
+    hero = Hero(7, 10)
+    imp._hit_run_state = 'hiding'
+    imp._hit_run_timer = 5
+    imp._struck = False
+    assert gone_again.hiding_turn(imp, hero, dun) is False
+    imp.take_damage(1)
+    assert gone_again.hiding_turn(imp, hero, dun) is True
+    assert imp._hit_run_state == 'hunting'
+
+
+def test_a_shade_hides_in_the_dark_but_not_from_a_torch():
+    import unseen
+    shade = make('shade', 12, 10)
+    hero = Hero(7, 10)
+    gone_again.begin_hiding(shade, hero)
+    assert unseen.unseen(shade, hero)
+    hero.shield = Torch()
+    gone_again.dark_hide(shade, hero)
+    assert not unseen.unseen(shade, hero)
+
+
+# ===========================================================================
+# raise_the_alarm
+# ===========================================================================
+
+import alarm  # noqa: E402
+
+
+def test_a_kobold_shouts_once_and_rouses_its_own_side_only():
+    dun = open_room(30, 10)
+    k = make('kobold', 5, 5)
+    friend = make('kobold', 15, 5)
+    other = make('wolf', 14, 5)
+    for o in (friend, other):
+        o._tracking = False
+        o._aware = False
+    hero = Hero(3, 5)
+    assert alarm.shout(k, [k, friend, other], hero, dun) == 1
+    assert friend._aware and not other._aware
+    assert alarm.shout(k, [k, friend, other], hero, dun) == 0     # once a floor
+    assert any('yaps' in t for t, _u, _c in ai_lines.take(k))
+
+
+def test_the_hand_of_glory_keeps_sleepers_asleep(monkeypatch):
+    import sleepers
+    dun = open_room(30, 10)
+    k = make('kobold', 5, 5)
+    sleeper = make('kobold', 8, 5)
+    sleeper.status_effects['sleeping'] = 50
+    monkeypatch.setattr(sleepers, 'factor', lambda p, what: 0.0)
+    alarm.shout(k, [k, sleeper], Hero(3, 5), dun)
+    assert sleeper.has_effect('sleeping')
+
+
+def test_a_wall_stops_the_shout():
+    w, h = 21, 10
+    tiles = [[WALL] * w for _ in range(h)]
+    for y in range(1, 9):
+        for x in range(1, 9):
+            tiles[y][x] = FLOOR
+        for x in range(12, 20):
+            tiles[y][x] = FLOOR
+    dun = Dungeon(tiles, [Room(0, 0, 10, 10), Room(11, 0, 10, 10)], w, h, 3)
+    k = make('kobold', 5, 5)
+    far = make('kobold', 14, 5)
+    far._aware = False
+    alarm.shout(k, [k, far], Hero(3, 5), dun)
+    assert not far._aware
+
+
+# ===========================================================================
+# death_throes
+# ===========================================================================
+
+import death_throes  # noqa: E402
+
+
+def test_a_fire_beetle_swells_then_is_ready_to_burst():
+    b = make('fire_beetle')
+    b.hp = 1
+    death_throes.warn(b)
+    assert any('glow' in t for t, _u, _c in ai_lines.take(b))
+    assert death_throes.should_burst(b)
+    b._banished = True
+    assert not death_throes.should_burst(b)
+
+
+def test_a_blast_is_a_share_of_each_victims_own_health():
+    b = make('fire_beetle', 5, 5)
+    assert death_throes.blast(b, 200) == 10
+    assert death_throes.in_blast(b, 6, 6, open_room())
+    assert not death_throes.in_blast(b, 8, 5, open_room())
+
+
+# ===========================================================================
+# relurk: Back to the Web
+# ===========================================================================
+
+import relurk  # noqa: E402
+
+
+def test_a_hurt_spider_out_of_sight_goes_back_into_hiding_once():
+    s = make('giant_spider')
+    s.ai_pattern = 'aggressive'
+    s._aware = True
+    s.hp = int(s.max_hp * 0.5)
+    s._lost_turns = 3
+    assert relurk.consider(s, Hero(8, 5))
+    assert s.ai_pattern == 'ambush' and not s._aware and not s._mimic_surprise
+    s.ai_pattern = 'aggressive'
+    s._aware = True
+    assert not relurk.consider(s)                    # once a life
+
+
+def test_a_fresh_spider_stays_out():
+    s = make('giant_spider')
+    s.ai_pattern = 'aggressive'
+    s._aware = True
+    s._lost_turns = 5
+    assert not relurk.consider(s)
+
+
+# ===========================================================================
+# shove_into_danger
+# ===========================================================================
+
+import shove  # noqa: E402
+
+
+def test_a_shove_throws_the_hero_back_never_into_water_or_a_wall():
+    from dungeon import WATER, LAVA
+    dun = open_room(12, 12)
+    assert shove.landing(dun, (5, 5), (4, 5), False, set()) == ((6, 5), False)
+    dun.tiles[5][6] = WATER
+    assert shove.landing(dun, (5, 5), (4, 5), False, set()) is None
+    dun.tiles[5][6] = LAVA
+    assert shove.landing(dun, (5, 5), (4, 5), False, set()) is None
+    dun.tiles[5][6] = WALL
+    assert shove.landing(dun, (5, 5), (4, 5), False, set()) is None
+    dun.tiles[5][6] = FLOOR
+    assert shove.landing(dun, (5, 5), (4, 5), False, {(6, 5)}) is None
+
+
+def test_a_shove_leaves_its_move_for_the_game(monkeypatch):
+    g = make('hill_giant', 4, 5)
+    club = next(a for a in g.attacks if a.get('shove'))
+    hero = Hero(5, 5)
+    monkeypatch.setattr(shove, '_str_save', lambda p, rng=None: False)
+    monkeypatch.setattr(random, 'random', lambda: 0.0)
+    shove.after_blow(g, hero, club, 10, '')
+    assert hero.__dict__.get('_pending_shove', {}).get('from') == (4, 5)
+
+
+# ===========================================================================
+# Every new field reads with a default from an old save
+# ===========================================================================
+
+def test_an_old_monster_pickle_takes_its_kinds_new_fields():
+    w = make('wight')
+    for k in list(w.__dict__):
+        if k.startswith('_') and k not in ('_aware',):
+            pass
+    old = pickle.loads(pickle.dumps(w))
+    assert life_drain.drains(old)
+    assert kind_data.field(old, 'relurks', False) is False
+    assert morale.style(make('kobold')) == 'regroup'
+
+
+# ===========================================================================
+# Help, hints and tells say it
+# ===========================================================================
+
+def test_the_help_screen_has_a_page_for_monsters_and_their_ways():
+    src = open(os.path.join(ROOT, 'src', 'game_render.py'), encoding='utf-8').read()
+    assert "('monster_ways', 'Monsters and Their Ways')" in src
+    page = json.load(open(os.path.join(ROOT, 'data', 'ui', 'monster_ways.json'), encoding='utf-8'))
+    text = json.dumps(page).lower()
+    for word in ('breath', 'bolts', 'friends', 'greatest health', 'diseased', 'troll',
+                 'snuffed', 'hide', 'alarm', 'chant', 'burst', 'throw you back'):
+        assert word in text, word
+
+
+def test_every_new_tell_is_reachable_from_real_data():
+    keys = set()
+    for kind, v in MONS.items():
+        if isinstance(v, dict):
+            keys.update(tells.abilities(make(kind)))
+    for k in ('breath_recharge', 'heals_allies', 'life_drain', 'light_shy', 'snuffs_light',
+              'raises_alarm', 'death_throes', 'relurks', 'hides_in_dark', 'shove'):
+        assert k in keys, k
+
+
+def test_the_hints_tell_of_the_new_ways():
+    hints = json.load(open(os.path.join(ROOT, 'data', 'hints.json'), encoding='utf-8'))
+    text = ' '.join(h for lst in hints.values() for h in lst).lower()
+    for word in ('draw breath', 'runner', 'lookout', 'chant', 'burst'):
+        assert word in text, word

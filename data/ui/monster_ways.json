@@ -1,0 +1,45 @@
+{
+  "_note": "The 'Monsters and Their Ways' page of the help screen (? then Tab three times). Same shape as how_quizzes_work.json. Keep it true to the code and data: src/breath.py, src/morale.py, src/life_drain.py, src/grave_rot.py, src/light_shy.py, src/gone_again.py, src/alarm.py, src/death_throes.py, src/relurk.py, src/shove.py, src/faction.py and src/summoning.py, their numbers in data/monster_ai.json (monster behaviour, first wave, AI-1). Observe (O) shows a creature's own ways as its tells.",
+  "title": "Monsters and Their Ways",
+  "sections": [
+    {
+      "heading": "Every creature fights its own way",
+      "paragraphs": [
+        "Look at a creature (O) to see what it shows of its ways. The more you know of its kind, the more you are told: what it can do, and what to do about it."
+      ]
+    },
+    {
+      "heading": "When they break",
+      "paragraphs": [
+        "Badly hurt, a creature may break, the way its nature says. The mindless dead, constructs, oozes and plants never do. A beast bolts and gives up the fight. A goblin or a bandit runs for its friends and comes back with them: kill the runner first. A giant or a demon falls back for a while. Caught with no friend and nowhere to go, a bandit may throw down his weapon and his purse and beg; you may spare him or not. Cornered, any of them turns at bay and fights harder."
+      ]
+    },
+    {
+      "heading": "Breath, drain and rot",
+      "rows": [
+        ["Breath", "A dragon, a drake or a winter wolf that has breathed must draw breath again for a few turns. Close in then."],
+        ["Life drained", "A wight's or a vampire's touch lowers your greatest health. Half comes back with a night's sleep on the next floor down; a physician or a prayer at a chain of four gives back the rest."],
+        ["Disease", "A plague bite or a mummy's touch lingers: while you are diseased, rest does not mend you and every heal does half. Cure it with a potion, a prayer or a physician."]
+      ]
+    },
+    {
+      "heading": "Light and dark",
+      "rows": [
+        ["Light-shy", "Trolls, dark elves, shadows and kobolds hate a bright light: in its glow they strike worse, and a troll's wounds will not close. The Light spell's glare is the brightest."],
+        ["Snuffed", "A wave, a gust or a shadow's touch can put out the light in your hand; a soaked wick will not light again at once. A light that never burns out is never snuffed."],
+        ["Hiders", "An imp or a boggart strikes, then hides out of sight until you find it. Some hide in the dark, unseen, unless you carry a light."],
+        ["Lurkers", "A hurt spider that gets out of your sight goes back into hiding to drop on you again. Finish it, or bring a light."]
+      ]
+    },
+    {
+      "heading": "Shouts, chants and bursts",
+      "rows": [
+        ["Lookouts", "A goblin, a kobold or a raven that sees you raises the alarm, and its kind come running. Kill it first, or never be seen."],
+        ["Healers", "A priest mends a badly hurt friend, then must rest his voice. Kill him first."],
+        ["Summoners", "A necromancer chants for a turn before his dead come. Strike him while he chants and the chant breaks."],
+        ["Bursting", "A fire beetle or a plague zombie that swells or glows is about to burst. Step back, or finish it from afar."],
+        ["Shoves", "A giant's or an ogre's blow can throw you back a step, and a clever giant throws you into what hurts. Keep your back to a wall."]
+      ]
+    }
+  ]
+}

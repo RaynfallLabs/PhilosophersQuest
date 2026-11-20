@@ -5152,6 +5152,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.player.x, self.player.y = _nx, _ny
             except (TypeError, ValueError, AttributeError):
                 pass
+        # A giant's blow threw the hero back (src/shove.py, AI-1).
+        self._ai_resolve_shove()
 
         # Brisingamen (tears_of_freya): a single gold piece drips from the
         # amulet on each tick interval while equipped. Lore: "Freya wore it
@@ -6455,6 +6457,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if room <= 0:
             return                    # rest mends only so far (REST_MENDS_TO)
         if self.player.has_effect('bleeding') or self.player.has_effect('poisoned'):
+            return
+        # A sickness in the wound stops it mending (Grave Rot, AI-1).
+        import grave_rot
+        if grave_rot.blocks_regen(self.player):
             return
         # CON above 12 shaves 1 turn off the interval per point; floor at 10
         interval = max(10, 20 - max(0, self.player.CON - 12))

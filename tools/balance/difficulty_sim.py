@@ -3303,6 +3303,8 @@ class Run:
     def player_can_act(self) -> bool:
         """main._do_move / game_input._player_input turn-loss rules."""
         p = self.p
+        if sim_ai1.lost_action(self):        # AI-1: a light raised, a shove
+            return False
         if p.has_effect('sleeping') or p.has_effect('paralyzed'):
             return False
         if p.has_effect('frozen'):
@@ -3363,6 +3365,7 @@ class Run:
         self._tactical_pick(_first, free=True)
         self._coat_for(_first)
         self._set_stance(group)
+        sim_ai1.fight_start(self, group)     # AI-1: a light against the light-shy
 
         def enter(m, opening: bool):
             """A monster joins the melee; resolve who strikes first."""
@@ -3401,9 +3404,9 @@ class Run:
                     self._monster_attack(m)
 
         while True:
-            # ---- AI-1 (sim_ai1.py): who left the fight (morale) ----
-            if self.knobs['ai_morale']:
-                active, queue = sim_ai1.leavers(self, active, queue)
+            # ---- AI-1 (sim_ai1.py): who burst as they died, who left the
+            # fight (morale) ----
+            active, queue = sim_ai1.leavers(self, active, queue)
             # ---- end AI-1 ----
             active = [m for m in active if m.alive]
             queue = [m for m in queue if m.alive]       # an area spell can kill those waiting
@@ -3427,7 +3430,9 @@ class Run:
             if self.player_can_act():
                 hpf = p.hp / max(1, p.max_hp)
                 prof = self.prof
-                reachable = [m for m in active if m._sim_away <= 0]
+                # (AI-1: ai_vanish=0, the old game's hider in plain sight)
+                reachable = [m for m in active
+                             if m._sim_away <= 0 or sim_ai1.visible_away(self, m)]
                 if hpf < prof['potion_at'] and self.potions:
                     self.drink()
                     action = 'heal'
@@ -3633,6 +3638,7 @@ class Run:
             m._cached_all_monsters = active      # as take_turn does: a shared gaze sees its group
             if m.alive:
                 self._tick_monster(m)
+        sim_ai1.world_tick(self, active)     # AI-1: a troll in the light, a shove
         p._incoming_scale = self.kv('mon_dmg')
         msgs = p.tick_effects()
         p._incoming_scale = 1.0
@@ -3651,7 +3657,8 @@ class Run:
         if p.prayer_cooldown > 0:
             p.prayer_cooldown -= 1
         if (self.turn % self._regen_interval() == 0 and p.hp < p.max_hp
-                and not p.has_effect('bleeding') and not p.has_effect('poisoned')):
+                and not p.has_effect('bleeding') and not p.has_effect('poisoned')
+                and sim_ai1.regen_ok(self)):         # AI-1: Grave Rot
             got = p.heal(min(max(1, p.max_hp // 50) * self.knobs['regen'],
                              floor_curve_mod.rest_room(p.hp, p.max_hp)))
             self._healed('regen', got)
@@ -3980,7 +3987,7 @@ class Run:
                 self._boss_side_fights(g)
             # sometimes the next room's occupants arrive mid-fight
             if (not named_group and i + 1 < len(groups)
-                    and random.random() < NEIGHBOUR_JOIN_PROB
+                    and random.random() < sim_ai1.join_prob(self, g, NEIGHBOUR_JOIN_PROB)
                     and not any(is_named(m) for m in groups[i + 1])):
                 g = g + groups[i + 1]
                 groups[i + 1] = []
