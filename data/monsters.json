@@ -1899,9 +1899,9 @@
         "name": "Rotting Touch",
         "damage": "2d8+8",
         "type": "necrotic",
-        "effect": "weakened",
-        "effect_chance": 0.45,
-        "effect_duration": 12,
+        "effect": "heal_blocked",
+        "effect_chance": 0.4,
+        "effect_duration": 10,
         "delivery": "touch"
       }
     ],
@@ -6516,7 +6516,7 @@
       140,
       60
     ],
-    "hp": "32d10+124",
+    "hp": "29d10+110",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -6577,7 +6577,15 @@
     "status_immune": [],
     "status_weak": [
       "sleeping"
-    ]
+    ],
+    "sheds_skin": {
+      "at": [
+        0.66,
+        0.33
+      ],
+      "heal_share": 0.08,
+      "line": "The Lindworm sheds a skin, and its wounds come away with it!"
+    }
   },
   "berserker_spirit": {
     "name": "Berserker Spirit",
@@ -7767,9 +7775,9 @@
         "name": "Drown Drag",
         "damage": "2d6+5",
         "type": "cold",
-        "effect": "paralyzed",
-        "effect_chance": 0.35,
-        "effect_duration": 4,
+        "effect": "immobilized",
+        "effect_chance": 0.4,
+        "effect_duration": 3,
         "delivery": "blow"
       }
     ],
@@ -7801,7 +7809,8 @@
     "thac0_lore": 4,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "pull_chance": 0.3
   },
   "cath_palug": {
     "name": "Cath Palug",
@@ -12407,7 +12416,8 @@
         "effect": "paralyzed",
         "effect_chance": 0.4,
         "effect_duration": 3,
-        "delivery": "gaze"
+        "delivery": "gaze",
+        "recharge": 4
       },
       {
         "name": "Tail Smash",
@@ -12443,7 +12453,8 @@
     "status_weak": [],
     "opener": {
       "attack": "Death Gaze",
-      "range": 3
+      "range": 3,
+      "wind_up": "{name} heaves {his} heavy head up off the ground."
     }
   },
   "cockatrice": {
@@ -13551,6 +13562,15 @@
     "opener": {
       "attack": "Claw",
       "range": 1
+    },
+    "aura": {
+      "kind": "stench",
+      "radius": 1,
+      "effect": "weakened",
+      "chance": 0.25,
+      "turns": 3,
+      "save": "CON",
+      "line": "The reek of the opened grave rolls off the Ghast, and you retch."
     }
   },
   "gravehound": {
@@ -14405,7 +14425,7 @@
       "purse": "noble_dead",
       "treasure_chance": 0.025
     },
-    "lore": "Emily Gerard, a Scottish writer living in Transylvania, set the word down in 1885 as the local name for a vampire, and Bram Stoker carried it into Dracula. Nothing courtly survives in this breed. It is bald, rat-toothed and long-fingered, a thing of plague cellars that hunts alone. It hates the dawn above all, and the dungeon has no dawn.",
+    "lore": "Emily Gerard, a Scottish writer living in Transylvania, set the word down in 1885 as the local name for a vampire, and Bram Stoker carried it into Dracula. Nothing courtly survives in this breed. It is bald, rat-toothed and long-fingered, a thing of plague cellars, and the rats come when it calls, as they came off its ship at Wisborg. It hates the dawn above all, and the dungeon has no dawn.",
     "frequency": 3,
     "thac0_lore": 14,
     "shrugs_off": [],
@@ -14414,7 +14434,10 @@
       "poisoned",
       "charmed"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "summon_kind": "giant_rat",
+    "summon_max": 3,
+    "summon_cooldown": 12
   },
   "strigoi": {
     "name": "Strigoi",
@@ -14565,6 +14588,10 @@
     "opener": {
       "attack": "Strike",
       "range": 1
+    },
+    "talisman": {
+      "turns": 2,
+      "line": "You hold up the written page, and the Jiangshi stops dead, as if a talisman had been pressed to its forehead."
     }
   },
   "vrykolakas": {
@@ -18118,7 +18145,7 @@
         "name": "Venomous Bite",
         "damage": "1d8+1",
         "type": "poison",
-        "effect": "poisoned",
+        "effect": "bleeding",
         "effect_chance": 0.5,
         "effect_duration": 8,
         "delivery": "bite"
@@ -19290,7 +19317,16 @@
         "effect": "slowed",
         "effect_chance": 0.5,
         "effect_duration": 5,
-        "delivery": "grapple"
+        "delivery": "grapple",
+        "carry_off": {
+          "chance": 0.2,
+          "tiles": [
+            8,
+            15
+          ],
+          "share": 0.05,
+          "line": "The Roc's talons close on you and it lifts you into the dark! It drops you far away."
+        }
       },
       {
         "name": "Beak Cleave",
@@ -19787,7 +19823,8 @@
     "status_immune": [
       "sleeping"
     ],
-    "status_weak": []
+    "status_weak": [],
+    "pull_chance": 0.25
   },
   "sea_hag": {
     "name": "sea hag",
@@ -42548,5 +42585,2522 @@
       2,
       3
     ]
+  },
+  "mandrake": {
+    "name": "Mandrake",
+    "symbol": "m",
+    "color": [
+      150,
+      120,
+      80
+    ],
+    "hp": "6d10+26",
+    "speed": 6,
+    "ai_pattern": "ambush",
+    "thac0": 15,
+    "peak_floor": 12,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 10,
+    "attacks": [
+      {
+        "name": "Root Lash",
+        "damage": "1d6+1",
+        "type": "blunt",
+        "delivery": "blow"
+      },
+      {
+        "name": "Sleep-Sap Spit",
+        "damage": "1d3",
+        "type": "poison",
+        "delivery": "breath",
+        "effect": "sleeping",
+        "effect_chance": 0.3,
+        "effect_duration": 3,
+        "ranged": true
+      }
+    ],
+    "resistances": [
+      "poison",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire",
+      "slash"
+    ],
+    "tags": [
+      "plant"
+    ],
+    "family": "plants",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "none"
+    },
+    "lore": "Theophrastus says the root-cutters drew circles round a mandrake with a sword before they dug it, and later herbals add the scream: pull one from the earth and its cry kills whoever hears it, so the wise tied a hungry dog to the root and walked away holding meat. Physicians boiled the forked root in wine to put a patient to sleep before the knife. Down here the roots have pulled themselves up on legs of their own, and they still scream when they die.",
+    "frequency": 3,
+    "thac0_lore": 16,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping",
+      "confused",
+      "charmed",
+      "feared",
+      "blinded"
+    ],
+    "status_weak": [
+      "burning"
+    ],
+    "death_throes": {
+      "type": "magic",
+      "share": 0.05,
+      "radius": 2,
+      "delivery": "voice",
+      "effect": "stunned",
+      "effect_duration": 2,
+      "alarm_radius": 12,
+      "line": "The Mandrake shrieks as it dies, a cry that goes through stone!",
+      "warn_line": "A thin keening rises from the Mandrake's split root."
+    }
+  },
+  "kappa": {
+    "name": "Kappa",
+    "symbol": "k",
+    "color": [
+      90,
+      150,
+      80
+    ],
+    "hp": "7d10+23",
+    "speed": 12,
+    "ai_pattern": "aggressive",
+    "thac0": 13,
+    "peak_floor": 11,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 9,
+    "attacks": [
+      {
+        "name": "Beak Bite",
+        "damage": "1d6+2",
+        "type": "pierce",
+        "delivery": "bite"
+      },
+      {
+        "name": "Sumo Grapple",
+        "damage": "1d6+1",
+        "type": "blunt",
+        "delivery": "grapple",
+        "effect": "immobilized",
+        "effect_chance": 0.35,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "cold"
+    ],
+    "weaknesses": [
+      "fire",
+      "iron"
+    ],
+    "tags": [
+      "reptile"
+    ],
+    "family": "serpents",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "none"
+    },
+    "lore": "Japanese villagers kept children away from deep pools because of the kappa: a beaked, shelled little water-imp with a dish of water set into the top of its head. It drags swimmers and horses under and challenges travellers to wrestle. But it is very polite. Bow to a kappa and it must bow back; the water spills from its dish and its strength drains away with it. Farmers floated cucumbers downriver to keep it friendly, and a kappa given a gift of food will leave the giver alone.",
+    "frequency": 3,
+    "thac0_lore": 14,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": [
+      "stunned"
+    ],
+    "opener": {
+      "attack": "Sumo Grapple",
+      "range": 1
+    },
+    "on_stunned": {
+      "effect": "weakened",
+      "turns": 12,
+      "line": "The water spills from the Kappa's dish, and its arms go slack."
+    },
+    "appeased_by": {
+      "food": "plain",
+      "line": "The Kappa takes your offering, bows low, and goes back to its pool."
+    }
+  },
+  "eloko": {
+    "name": "Eloko",
+    "symbol": "e",
+    "color": [
+      110,
+      150,
+      60
+    ],
+    "hp": "7d10+27",
+    "speed": 12,
+    "ai_pattern": "hit_and_run",
+    "thac0": 13,
+    "peak_floor": 13,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 11,
+    "attacks": [
+      {
+        "name": "Bell Charm",
+        "damage": "1d3",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "paralyzed",
+        "effect_chance": 0.35,
+        "effect_duration": 2
+      },
+      {
+        "name": "Wide Jaws",
+        "damage": "1d8+2",
+        "type": "pierce",
+        "delivery": "bite"
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [
+      "fire",
+      "iron"
+    ],
+    "tags": [
+      "fey"
+    ],
+    "family": "fair_folk",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        13,
+        40
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "trinkets"
+    },
+    "lore": "The Mongo people of the Congo forest tell of the biloko, small hungry spirits who live in hollow trees. Grass grows on them in place of hair, they dress in leaves, and their mouths open wide enough to swallow a man's head. Each one carries a little bell. Its chime is so sweet that a hunter forgets where he is going and walks toward it, and then he cannot move at all. Hunters wore charms to hide from them; down here a hunter stops his ears.",
+    "frequency": 3,
+    "thac0_lore": 14,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping"
+    ],
+    "status_weak": [],
+    "pack": true,
+    "pack_size": [
+      2,
+      3
+    ],
+    "opener": {
+      "attack": "Bell Charm",
+      "range": 4
+    }
+  },
+  "asanbosam": {
+    "name": "Asanbosam",
+    "symbol": "V",
+    "color": [
+      120,
+      90,
+      70
+    ],
+    "hp": "13d10+44",
+    "speed": 12,
+    "ai_pattern": "ambush",
+    "thac0": 11,
+    "peak_floor": 14,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 11,
+    "attacks": [
+      {
+        "name": "Dangling-Leg Grab",
+        "damage": "1d8+2",
+        "type": "blunt",
+        "delivery": "grapple",
+        "effect": "immobilized",
+        "effect_chance": 0.5,
+        "effect_duration": 2
+      },
+      {
+        "name": "Iron-Toothed Bite",
+        "damage": "1d10+3",
+        "type": "drain",
+        "delivery": "bite"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy",
+      "pierce"
+    ],
+    "tags": [
+      "undead"
+    ],
+    "family": "vampires_liches",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        16,
+        47
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "grave_goods"
+    },
+    "lore": "Akan hunters of the Ghanaian forest feared the sasabonsam: a long-legged thing with iron teeth and long matted hair that lives high in the trees, its feet pointing both ways. Its favourite trick is to sit on a high branch and dangle its legs, to snare a hunter walking beneath and haul him up into the leaves. Enslaved Akan people carried the tale across the sea, and Edward Long wrote it down in Jamaica in 1774. Down here it hangs from the roof beams and the roots of the old halls, where only a light shows it.",
+    "frequency": 3,
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [
+      "charmed",
+      "sleeping",
+      "poisoned"
+    ],
+    "status_weak": [],
+    "opener": {
+      "attack": "Dangling-Leg Grab",
+      "range": 1
+    },
+    "drain_heals_self": 0.5,
+    "hidden_overhead": true,
+    "relurks": true
+  },
+  "ahuizotl": {
+    "name": "Ahuizotl",
+    "symbol": "a",
+    "color": [
+      40,
+      50,
+      60
+    ],
+    "hp": "11d10+45",
+    "speed": 14,
+    "ai_pattern": "ambush",
+    "thac0": 10,
+    "peak_floor": 16,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 13,
+    "attacks": [
+      {
+        "name": "Child's Wail",
+        "damage": "1d3",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "Hidden Hand Grab",
+        "damage": "1d6+2",
+        "type": "blunt",
+        "delivery": "grapple",
+        "effect": "immobilized",
+        "effect_chance": 0.45,
+        "effect_duration": 2
+      },
+      {
+        "name": "Drowning Squeeze",
+        "damage": "1d8+3",
+        "type": "blunt",
+        "delivery": "grapple",
+        "effect": "strangulation",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "cold"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "beast"
+    ],
+    "family": "serpents",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "none"
+    },
+    "lore": "Sahagun's Aztec informants described the ahuizotl of the lakes: a sleek little dog-like water beast with hands like a monkey's and one more hand at the very end of its tail. When it has not fed it cries like a child on the shore, or makes the fish leap to bring fishermen close. Then the tail-hand seizes them and drags them under. The drowned were found days later, and only a priest dared touch them.",
+    "frequency": 3,
+    "thac0_lore": 11,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": [],
+    "opener": {
+      "attack": "Child's Wail",
+      "range": 5
+    },
+    "pull_chance": 0.3,
+    "relurks": true
+  },
+  "khalkotauros": {
+    "name": "Khalkotauros",
+    "symbol": "q",
+    "color": [
+      190,
+      140,
+      70
+    ],
+    "hp": "22d10+80",
+    "speed": 12,
+    "ai_pattern": "aggressive",
+    "thac0": 11,
+    "peak_floor": 17,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 15,
+    "attacks": [
+      {
+        "name": "Bronze Gore",
+        "damage": "2d8+4",
+        "type": "pierce",
+        "delivery": "trample"
+      },
+      {
+        "name": "Furnace Breath",
+        "damage": "2d6",
+        "type": "fire",
+        "delivery": "breath",
+        "effect": "burning",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "cold",
+      "blunt"
+    ],
+    "tags": [
+      "construct"
+    ],
+    "family": "constructs",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "none"
+    },
+    "lore": "Hephaestus forged two bulls of bronze for King Aeetes of Colchis, with brazen hooves and mouths that breathed fire. Aeetes set Jason to yoke them and plough the field of Ares in a single day. Medea gave him an ointment that kept fire and bronze from his skin for that one day, and he forced them to their knees. The pairs that stamp through these halls have never felt a yoke.",
+    "frequency": 3,
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [
+      "burning",
+      "poisoned",
+      "sleeping",
+      "charmed",
+      "feared",
+      "confused"
+    ],
+    "status_weak": [],
+    "pack": true,
+    "pack_size": [
+      2,
+      2
+    ],
+    "opener": {
+      "attack": "Furnace Breath",
+      "range": 3
+    },
+    "can_charge": true,
+    "charge_bonus_mult": 1.3
+  },
+  "cu_sith": {
+    "name": "Cu-Sith",
+    "symbol": "d",
+    "color": [
+      60,
+      110,
+      70
+    ],
+    "hp": "20d10+74",
+    "speed": 16,
+    "ai_pattern": "aggressive",
+    "thac0": 10,
+    "peak_floor": 17,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 14,
+    "attacks": [
+      {
+        "name": "Silent Bite",
+        "damage": "2d6+3",
+        "type": "pierce",
+        "delivery": "bite"
+      }
+    ],
+    "resistances": [
+      "cold"
+    ],
+    "weaknesses": [
+      "iron"
+    ],
+    "tags": [
+      "beast"
+    ],
+    "family": "fair_folk",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "none"
+    },
+    "lore": "Highlanders said the cu-sith, the fairy hound, was as big as a yearling bullock, dark green and shaggy, with a long tail plaited flat on its back and paws as broad as a man's hand. It hunted in silence. When it chose to, it barked three times with long pauses between, and anyone who heard the first bark ran for a house and barred the door, for whoever was still out in the open at the third was overtaken by terror. Down here there are no houses, but a wall is a wall, and stone between you and it is shelter enough.",
+    "frequency": 3,
+    "thac0_lore": 11,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping",
+      "charmed"
+    ],
+    "status_weak": [],
+    "countdown_voice": {
+      "every": 3,
+      "count": 3,
+      "attack": {
+        "name": "Third Bark",
+        "damage": "1d4",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "feared",
+        "effect_chance": 0.6,
+        "effect_duration": 4
+      },
+      "lines": [
+        "The Cu-Sith barks once. The sound rolls through the halls.",
+        "The Cu-Sith barks a second time. Get out of its sight!",
+        "The Cu-Sith barks the third time!"
+      ],
+      "unseen": [
+        "Somewhere out of sight a great hound barks once, slow and deep.",
+        "The hound barks a second time, nearer.",
+        "The third bark!"
+      ],
+      "safe_line": "Stone stands between you and the Cu-Sith: it falls silent."
+    }
+  },
+  "bulgasari": {
+    "name": "Bulgasari",
+    "symbol": "B",
+    "color": [
+      110,
+      110,
+      120
+    ],
+    "hp": "26d10+99",
+    "speed": 9,
+    "ai_pattern": "aggressive",
+    "thac0": 11,
+    "peak_floor": 18,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 15,
+    "attacks": [
+      {
+        "name": "Iron-Eating Bite",
+        "damage": "2d6+4",
+        "type": "pierce",
+        "delivery": "bite",
+        "effect": "rust",
+        "effect_chance": 0.2,
+        "effect_duration": 1
+      },
+      {
+        "name": "Trunk Slam",
+        "damage": "2d8+2",
+        "type": "blunt",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire",
+      "blunt"
+    ],
+    "tags": [
+      "construct"
+    ],
+    "family": "constructs",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "none"
+    },
+    "lore": "Korean storytellers of the last Goryeo days told of a prisoner monk who shaped a little beast out of grains of rice and gave it life. It ate the needle he fed it, then every needle, spoon, ploughshare and spear in the land, and grew with every meal until no iron blade could wound it. Its name was read as 'the one that cannot be killed', though the tellers say fire was its end. The ones down here are still growing.",
+    "frequency": 3,
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [
+      "poisoned",
+      "sleeping",
+      "charmed",
+      "feared",
+      "confused"
+    ],
+    "status_weak": [],
+    "metal_eater": {
+      "wear_chance": 0.2,
+      "heal_share": 0.04,
+      "grow_cap": 0.12,
+      "line": "The Bulgasari's hide closes on your {weapon} and gnaws it."
+    }
+  },
+  "vetala": {
+    "name": "Vetala",
+    "symbol": "V",
+    "color": [
+      170,
+      160,
+      140
+    ],
+    "hp": "16d10+61",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 11,
+    "peak_floor": 18,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 15,
+    "attacks": [
+      {
+        "name": "Corpse Claws",
+        "damage": "1d10+3",
+        "type": "slash",
+        "delivery": "blow"
+      },
+      {
+        "name": "Riddling Whisper",
+        "damage": "1d4",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "confused",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "poison",
+      "drain",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "demon"
+    ],
+    "family": "demons",
+    "pronoun": "it",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "none"
+    },
+    "lore": "In the Twenty-Five Tales of the Vetala, King Vikramaditya must carry a corpse down from a tree in a cremation ground. A vetala, a spirit that lives in dead bodies, rides inside it, and on the walk it tells a story that ends in a riddle. Each time the king answers, the vetala laughs and flies back to its tree. Down here it needs no tree: when one body falls, it slips into the nearest dead one and gets up again.",
+    "frequency": 3,
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping",
+      "poisoned",
+      "charmed",
+      "feared"
+    ],
+    "status_weak": [],
+    "corpse_hop": {
+      "radius": 6,
+      "max_hops": 2,
+      "hp_share": 0.4,
+      "line": "The Vetala laughs as its body falls, and the corpse nearby sits up.",
+      "unseen": "Somewhere close a high laugh, and a dead thing stirs."
+    }
+  },
+  "nahual": {
+    "name": "Nahual",
+    "symbol": "h",
+    "color": [
+      170,
+      130,
+      60
+    ],
+    "hp": "25d10+92",
+    "speed": 12,
+    "ai_pattern": "ranged",
+    "thac0": 10,
+    "peak_floor": 21,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 17,
+    "attacks": [
+      {
+        "name": "Sickness Hex",
+        "damage": "1d6+2",
+        "type": "magic",
+        "delivery": "ranged",
+        "effect": "diseased",
+        "effect_chance": 0.4,
+        "effect_duration": 6,
+        "ranged": true
+      },
+      {
+        "name": "Obsidian Knife",
+        "damage": "1d6+3",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "silver"
+    ],
+    "tags": [
+      "humanoid",
+      "shapeshifter",
+      "caster"
+    ],
+    "family": "shapeshifters",
+    "pronoun": "he",
+    "harvest_tier": 2,
+    "treasure": {
+      "gold": [
+        35,
+        104
+      ],
+      "item_chance": 0.2,
+      "item_tier": 1,
+      "purse": "scholar"
+    },
+    "lore": "The Nahua spoke of the nahualli, a sorcerer who could put on the shape of a beast. Sahagun's informants said such a man went out by night as a jaguar, a dog or a turkey to bring sickness and ill luck on his neighbours, and came home a man before dawn. Hernando Ruiz de Alarcon heard the spells they used to call on Tezcatlipoca for the change. Wound the sorcerer badly enough and the jaguar comes out.",
+    "frequency": 3,
+    "thac0_lore": 11,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": [],
+    "enrage_at_hp_pct": 0.5,
+    "enraged_pattern": "aggressive",
+    "enrage_message": "The Nahual's eyes go yellow, and he drops into a hunter's crouch.",
+    "enraged_form": {
+      "attacks": [
+        {
+          "name": "Jaguar Claws",
+          "damage": "1d8+3",
+          "type": "slash",
+          "delivery": "blow",
+          "effect": "bleeding",
+          "effect_chance": 0.3,
+          "effect_duration": 4
+        },
+        {
+          "name": "Skull-Piercing Bite",
+          "damage": "2d6+3",
+          "type": "pierce",
+          "delivery": "bite"
+        }
+      ],
+      "speed": 16,
+      "multi_attack_count": 2,
+      "line": "Spots spread over the sorcerer's skin, and a jaguar drops to all fours!"
+    }
+  },
+  "likho": {
+    "name": "Likho",
+    "symbol": "L",
+    "color": [
+      90,
+      80,
+      90
+    ],
+    "hp": "25d10+93",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 11,
+    "peak_floor": 20,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 17,
+    "attacks": [
+      {
+        "name": "Baleful Gaze",
+        "damage": "1d4",
+        "type": "magic",
+        "delivery": "gaze",
+        "effect": "fumbling",
+        "effect_chance": 0.35,
+        "effect_duration": 16
+      },
+      {
+        "name": "Leaping Grab",
+        "damage": "1d6+2",
+        "type": "blunt",
+        "delivery": "grapple",
+        "effect": "fumbling",
+        "effect_chance": 0.5,
+        "effect_duration": 12
+      },
+      {
+        "name": "Gnarled Hands",
+        "damage": "2d6+3",
+        "type": "slash",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire",
+      "iron"
+    ],
+    "tags": [
+      "fey"
+    ],
+    "family": "fair_folk",
+    "pronoun": "she",
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        11,
+        34
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1,
+      "purse": "trinkets"
+    },
+    "lore": "Russian peasants were careful never to wake Likho, the one-eyed hag of ill luck. In the tale Afanasyev wrote down, a blacksmith and a tailor go looking for her out of curiosity. She eats the tailor, and the smith only escapes by burning out her single eye with a hot awl and crawling out under a sheepskin among her sheep. When Likho leaps onto a man's neck, every plan he makes goes wrong.",
+    "frequency": 3,
+    "thac0_lore": 12,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping"
+    ],
+    "status_weak": [
+      "blinded"
+    ],
+    "opener": {
+      "attack": "Baleful Gaze",
+      "range": 3
+    },
+    "blinded_loses": [
+      "Baleful Gaze"
+    ]
+  },
+  "centaur": {
+    "name": "Centaur",
+    "symbol": "C",
+    "color": [
+      150,
+      100,
+      60
+    ],
+    "hp": "30d10+115",
+    "speed": 15,
+    "ai_pattern": "ranged",
+    "thac0": 9,
+    "peak_floor": 21,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 18,
+    "attacks": [
+      {
+        "name": "Horn Bow",
+        "damage": "1d10+3",
+        "type": "pierce",
+        "delivery": "ranged",
+        "ranged": true
+      },
+      {
+        "name": "Hoof Trample",
+        "damage": "2d6+4",
+        "type": "blunt",
+        "delivery": "trample"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid",
+      "beast"
+    ],
+    "family": "legend",
+    "pronoun": "he",
+    "harvest_tier": 2,
+    "treasure": {
+      "gold": [
+        19,
+        58
+      ],
+      "item_chance": 0.15,
+      "item_tier": 2,
+      "purse": "purse"
+    },
+    "lore": "Homer calls the centaurs the beast-men of the mountains: man to the waist and horse below. At the wedding of the Lapith king Pirithous they drank the wine, tried to carry off the bride, and began the battle Ovid tells blow by blow, fought with tables, antlers and torches. In Dante's Hell they gallop the banks of the river of boiling blood with their bows drawn, and the archer of the zodiac is one of them. They shoot from the gallop and ride down whatever they cannot hit.",
+    "frequency": 3,
+    "thac0_lore": 10,
+    "shrugs_off": [],
+    "status_immune": [
+      "feared"
+    ],
+    "status_weak": [
+      "confused"
+    ],
+    "pack": true,
+    "pack_size": [
+      2,
+      3
+    ],
+    "opener": {
+      "attack": "Horn Bow",
+      "range": 6
+    },
+    "can_charge": true,
+    "charge_bonus_mult": 1.3
+  },
+  "blue_men_of_the_minch": {
+    "name": "Blue Man of the Minch",
+    "symbol": "b",
+    "color": [
+      90,
+      120,
+      190
+    ],
+    "hp": "28d10+105",
+    "speed": 13,
+    "ai_pattern": "ranged",
+    "thac0": 10,
+    "peak_floor": 22,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 18,
+    "attacks": [
+      {
+        "name": "Squall Spray",
+        "damage": "1d8+3",
+        "type": "cold",
+        "delivery": "breath",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 6,
+        "ranged": true
+      },
+      {
+        "name": "Undertow Grab",
+        "damage": "1d10+3",
+        "type": "blunt",
+        "delivery": "grapple",
+        "effect": "immobilized",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "cold",
+      "lightning"
+    ],
+    "weaknesses": [
+      "fire",
+      "iron"
+    ],
+    "tags": [
+      "fey"
+    ],
+    "family": "fair_folk",
+    "pronoun": "he",
+    "harvest_tier": 2,
+    "treasure": {
+      "gold": [
+        10,
+        30
+      ],
+      "item_chance": 0.15,
+      "item_tier": 2,
+      "purse": "trinkets"
+    },
+    "lore": "Between the Isle of Lewis and the Shiant Isles runs the Stream of the Blue Men, where blue-skinned, grey-faced men swim beside the boats and raise sudden gales. Their chief calls out two lines of verse to the captain. A captain who answers in rhyme, quick and well, may sail on; one who stumbles is sunk. In these drowned halls they ask the same of anyone who passes.",
+    "frequency": 3,
+    "thac0_lore": 11,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping"
+    ],
+    "status_weak": [],
+    "pack": true,
+    "pack_size": [
+      2,
+      3
+    ],
+    "parley": {
+      "subject": "grammar",
+      "call": "The Blue Men rise to the waist and their chief calls out two lines of verse. Answer him well and they let you pass.",
+      "right": "The chief of the Blue Men laughs at your answer, and they sink back into the dark water. They will let you be.",
+      "wrong": "Your answer stumbles. The Blue Men howl, and the squall comes down on you!",
+      "unasked": "The Blue Men watch you from the water, waiting for an answer."
+    }
+  },
+  "vila": {
+    "name": "Vila",
+    "symbol": "F",
+    "color": [
+      230,
+      230,
+      200
+    ],
+    "hp": "105d10+382",
+    "speed": 15,
+    "ai_pattern": "ranged",
+    "thac0": 3,
+    "peak_floor": 45,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 42,
+    "attacks": [
+      {
+        "name": "Throat Arrow",
+        "damage": "2d8+10",
+        "type": "pierce",
+        "delivery": "ranged",
+        "effect": "silenced",
+        "effect_chance": 0.35,
+        "effect_duration": 10,
+        "ranged": true
+      },
+      {
+        "name": "Whirlwind",
+        "damage": "2d6+8",
+        "type": "blunt",
+        "delivery": "ranged",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 6,
+        "ranged": true
+      }
+    ],
+    "resistances": [
+      "magic",
+      "cold"
+    ],
+    "weaknesses": [
+      "iron"
+    ],
+    "tags": [
+      "fey"
+    ],
+    "family": "fair_folk",
+    "pronoun": "she",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        8,
+        23
+      ],
+      "item_chance": 0.2,
+      "item_tier": 3,
+      "purse": "trinkets"
+    },
+    "lore": "In the Serbian epic songs the vila is a fairy of the mountains and the clouds, long-haired and robed in white, who shoots arrows and raises whirlwinds. The vila Ravijojla shot the hero Milos because his singing on her mountain angered her, and healed him again only when Prince Marko rode her down. Steal a vila's hair or her girdle and she must serve you. Down here nobody has stolen anything from them yet.",
+    "frequency": 2,
+    "thac0_lore": 4,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping",
+      "charmed"
+    ],
+    "status_weak": [],
+    "opener": {
+      "attack": "Throat Arrow",
+      "range": 6
+    },
+    "can_phase_blink": true,
+    "phase_blink_chance": 0.15
+  },
+  "myrmekes": {
+    "name": "Gold-Digging Ant",
+    "symbol": "a",
+    "color": [
+      200,
+      160,
+      60
+    ],
+    "hp": "65d10+236",
+    "speed": 17,
+    "ai_pattern": "aggressive",
+    "thac0": 5,
+    "peak_floor": 44,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 41,
+    "attacks": [
+      {
+        "name": "Mandible Bite",
+        "damage": "2d6+6",
+        "type": "slash",
+        "delivery": "bite"
+      },
+      {
+        "name": "Formic Spray",
+        "damage": "1d8+4",
+        "type": "acid",
+        "delivery": "breath",
+        "effect": "corroding",
+        "effect_chance": 0.3,
+        "effect_duration": 6,
+        "ranged": true
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison"
+    ],
+    "weaknesses": [
+      "cold",
+      "blunt"
+    ],
+    "tags": [
+      "beast"
+    ],
+    "family": "vermin",
+    "pronoun": "it",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 3,
+      "purse": "none"
+    },
+    "lore": "Herodotus heard from the Persians of ants in the deserts of north India, smaller than dogs but bigger than foxes, that throw up gold-bearing sand as they dig. The Indians came for the gold at midday, when the heat drove the ants underground, filled their sacks and rode off at once, for the ants follow a thief by scent and run faster than any beast. Scholars today think the tale began with the marmots of the Himalaya. These are not marmots.",
+    "frequency": 2,
+    "thac0_lore": 6,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping"
+    ],
+    "status_weak": [],
+    "pack": true,
+    "pack_size": [
+      3,
+      4
+    ],
+    "opener": {
+      "attack": "Mandible Bite",
+      "range": 1
+    },
+    "gold_gatherer": {
+      "radius": 2,
+      "turns": 3,
+      "line": "The Gold-Digging Ant stops to gather up the gold."
+    }
+  },
+  "ponaturi": {
+    "name": "Ponaturi",
+    "symbol": "g",
+    "color": [
+      170,
+      200,
+      190
+    ],
+    "hp": "116d10+425",
+    "speed": 13,
+    "ai_pattern": "aggressive",
+    "thac0": 4,
+    "peak_floor": 46,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 42,
+    "attacks": [
+      {
+        "name": "Bone Club",
+        "damage": "2d10+12",
+        "type": "blunt",
+        "delivery": "blow"
+      },
+      {
+        "name": "Sea-Spear",
+        "damage": "2d8+10",
+        "type": "pierce",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "goblinkin",
+    "pronoun": "he",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        14,
+        41
+      ],
+      "item_chance": 0.05,
+      "item_tier": 3,
+      "purse": "purse"
+    },
+    "lore": "The Maori tell of the Ponaturi, a hostile people who live in a land under the sea and come ashore at night to sleep in their great house, Manawa-tane. The Ponaturi killed Tawhaki's father and kept his mother to watch the door. Tawhaki and his mother stopped every chink of the house, so the Ponaturi slept on into the morning, then threw the door open. The sunlight killed them where they lay.",
+    "frequency": 2,
+    "thac0_lore": 5,
+    "shrugs_off": [],
+    "status_immune": [],
+    "status_weak": [
+      "blinded"
+    ],
+    "pack": true,
+    "pack_size": [
+      2,
+      4
+    ],
+    "opener": {
+      "attack": "Sea-Spear",
+      "range": 1
+    },
+    "light_shy": true
+  },
+  "taniwha": {
+    "name": "Taniwha",
+    "symbol": "S",
+    "color": [
+      60,
+      100,
+      90
+    ],
+    "hp": "242d10+892",
+    "speed": 11,
+    "ai_pattern": "aggressive",
+    "thac0": 4,
+    "peak_floor": 47,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 43,
+    "attacks": [
+      {
+        "name": "Gulping Jaws",
+        "damage": "3d10+15",
+        "type": "pierce",
+        "delivery": "bite",
+        "hold": {
+          "kind": "swallow",
+          "share": 0.04,
+          "type": "acid",
+          "break_share": 0.15,
+          "break_chain": 8,
+          "max_turns": 4,
+          "save": "STR"
+        }
+      },
+      {
+        "name": "Tail Lash",
+        "damage": "3d8+12",
+        "type": "blunt",
+        "delivery": "sting",
+        "effect": "stunned",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "cold",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "beast",
+      "reptile"
+    ],
+    "family": "serpents",
+    "pronoun": "it",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 3,
+      "purse": "none"
+    },
+    "lore": "Many taniwha of the Maori are guardians of a river or a tribe, but some ate people. Tutaeporoporo of the Whanganui River swallowed travellers and whole canoes, until the warrior Ao-kehu hid in a hollow log, let the taniwha swallow it, and cut his way out from inside. Another, Ngarara Huarau, was lured from its cave and burned. The taniwha that lie in these flooded deeps guard nothing but themselves.",
+    "frequency": 2,
+    "thac0_lore": 5,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping"
+    ],
+    "status_weak": [],
+    "opener": {
+      "attack": "Gulping Jaws",
+      "range": 1
+    }
+  },
+  "impundulu": {
+    "name": "Impundulu",
+    "symbol": "B",
+    "color": [
+      40,
+      40,
+      40
+    ],
+    "hp": "141d10+516",
+    "speed": 16,
+    "ai_pattern": "hit_and_run",
+    "thac0": 3,
+    "peak_floor": 48,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 44,
+    "attacks": [
+      {
+        "name": "Lightning Stoop",
+        "damage": "3d8+12",
+        "type": "lightning",
+        "delivery": "blow",
+        "effect": "stunned",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      },
+      {
+        "name": "Blood-Drinking Bite",
+        "damage": "2d8+10",
+        "type": "drain",
+        "delivery": "bite"
+      }
+    ],
+    "resistances": [
+      "lightning",
+      "poison",
+      "slash",
+      "pierce",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "beast"
+    ],
+    "family": "birds",
+    "pronoun": "it",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 3,
+      "purse": "none"
+    },
+    "lore": "In Zulu and Xhosa belief the impundulu, the lightning bird, is a black-and-white bird as tall as a man that strikes the earth as lightning. It is a witch's servant, handed down from mother to daughter, and it hungers for blood. Spears and guns do not harm it, and it cannot be drowned or poisoned, but fire destroys it. Its fat, dug from the place where lightning struck, is a powerful medicine.",
+    "frequency": 2,
+    "thac0_lore": 4,
+    "shrugs_off": [],
+    "status_immune": [
+      "poisoned"
+    ],
+    "status_weak": [],
+    "opener": {
+      "attack": "Lightning Stoop",
+      "range": 1
+    },
+    "drain_heals_self": 0.5
+  },
+  "mapinguari": {
+    "name": "Mapinguari",
+    "symbol": "Y",
+    "color": [
+      150,
+      80,
+      50
+    ],
+    "hp": "236d10+862",
+    "speed": 9,
+    "ai_pattern": "aggressive",
+    "thac0": 4,
+    "peak_floor": 49,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 45,
+    "attacks": [
+      {
+        "name": "Hooked Claws",
+        "damage": "3d8+12",
+        "type": "slash",
+        "delivery": "blow"
+      },
+      {
+        "name": "Belly Maw",
+        "damage": "3d10+10",
+        "type": "pierce",
+        "delivery": "bite",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "slash",
+      "pierce",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "beast"
+    ],
+    "family": "great_beasts",
+    "pronoun": "it",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 3,
+      "purse": "none"
+    },
+    "lore": "Rubber-tappers and the peoples of the Amazon speak of the mapinguari: a tall, shaggy beast with one eye, feet turned backward, and a mouth in its belly. A stench like rot and dung rolls ahead of it and leaves hunters dizzy and sick. Its hide turns arrows and knives everywhere except at the navel. The biologist David Oren wondered whether the tales remember the giant ground sloths that lived here at the end of the Ice Age.",
+    "frequency": 2,
+    "thac0_lore": 5,
+    "shrugs_off": [],
+    "status_immune": [
+      "poisoned",
+      "confused"
+    ],
+    "status_weak": [
+      "fear_of_fire"
+    ],
+    "multi_attack_count": 2,
+    "aura": {
+      "kind": "stench",
+      "radius": 1,
+      "effect": "weakened",
+      "chance": 0.35,
+      "turns": 4,
+      "save": "CON",
+      "line": "The reek of the Mapinguari turns your stomach."
+    },
+    "weak_spot_chain": 10,
+    "weak_spot_line": "Your blow finds the soft place at the Mapinguari's navel!"
+  },
+  "preta": {
+    "name": "Preta",
+    "symbol": "G",
+    "color": [
+      160,
+      150,
+      140
+    ],
+    "hp": "131d10+480",
+    "speed": 12,
+    "ai_pattern": "aggressive",
+    "thac0": 4,
+    "peak_floor": 50,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 46,
+    "attacks": [
+      {
+        "name": "Hungry Touch",
+        "damage": "2d8+10",
+        "type": "drain",
+        "delivery": "touch",
+        "steal": "offering",
+        "steal_chance": 0.3
+      },
+      {
+        "name": "Needle-Throat Wail",
+        "damage": "1d8+4",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "weakened",
+        "effect_chance": 0.4,
+        "effect_duration": 12
+      }
+    ],
+    "resistances": [
+      "cold",
+      "drain",
+      "slash",
+      "pierce",
+      "blunt"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead"
+    ],
+    "family": "ghosts",
+    "pronoun": "it",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 3,
+      "purse": "none"
+    },
+    "lore": "Buddhists and Hindus tell of the preta, the hungry ghost: a spirit of greed with a belly like a drum and a throat as thin as a needle, so that nothing it eats can fill it, and food turns to fire in its mouth. In the Ullambana story the monk Maudgalyayana found his own mother among them. Offerings of food, freely given, are the old way to ease a preta, and every year the Ghost Festival sets out a meal for them.",
+    "frequency": 2,
+    "thac0_lore": 5,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping",
+      "poisoned",
+      "charmed"
+    ],
+    "status_weak": [],
+    "sp_drain": 15,
+    "appeased_by": {
+      "food": "plain",
+      "line": "The Preta falls on your offering, and for a while its hunger is quiet."
+    }
+  },
+  "upas_tree": {
+    "name": "Upas Tree",
+    "symbol": "T",
+    "color": [
+      200,
+      200,
+      170
+    ],
+    "hp": "254d10+927",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "thac0": 6,
+    "peak_floor": 52,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 48,
+    "attacks": [
+      {
+        "name": "Ipoh Sap",
+        "damage": "2d8+8",
+        "type": "poison",
+        "delivery": "ranged",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 8,
+        "ranged": true
+      },
+      {
+        "name": "Root Wrap",
+        "damage": "3d8+10",
+        "type": "blunt",
+        "delivery": "grapple",
+        "effect": "immobilized",
+        "effect_chance": 0.35,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "poison",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire",
+      "slash"
+    ],
+    "tags": [
+      "plant"
+    ],
+    "family": "plants",
+    "pronoun": "it",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.25,
+      "item_tier": 3,
+      "purse": "none"
+    },
+    "lore": "In 1783 the London Magazine printed a Dutch surgeon's tale of the upas tree of Java, whose poison killed every living thing for fifteen miles, so that condemned criminals were sent to fetch its sap and few came back. The story was a tall one, but the tree is real: its milky latex is the ipoh poison that island hunters put on their blowgun darts. The upas trees of the deep need no tall tale.",
+    "frequency": 2,
+    "thac0_lore": 7,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping",
+      "poisoned",
+      "confused",
+      "charmed",
+      "feared",
+      "blinded"
+    ],
+    "status_weak": [
+      "burning"
+    ],
+    "opener": {
+      "attack": "Ipoh Sap",
+      "range": 5
+    },
+    "aura": {
+      "kind": "stench",
+      "radius": 2,
+      "effect": "poisoned",
+      "chance": 0.4,
+      "turns": 4,
+      "save": "CON",
+      "line": "The air round the Upas Tree burns in your throat."
+    }
+  },
+  "nuckelavee": {
+    "name": "Nuckelavee",
+    "symbol": "N",
+    "color": [
+      150,
+      50,
+      50
+    ],
+    "hp": "248d10+908",
+    "speed": 15,
+    "ai_pattern": "aggressive",
+    "thac0": 3,
+    "peak_floor": 53,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 48,
+    "attacks": [
+      {
+        "name": "Mortasheen Breath",
+        "damage": "2d8+10",
+        "type": "poison",
+        "delivery": "breath",
+        "effect": "diseased",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      },
+      {
+        "name": "Long Arms",
+        "damage": "3d8+14",
+        "type": "slash",
+        "delivery": "blow"
+      },
+      {
+        "name": "Hoof Trample",
+        "damage": "3d10+14",
+        "type": "blunt",
+        "delivery": "trample"
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon"
+    ],
+    "family": "demons",
+    "pronoun": "it",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 3,
+      "purse": "none"
+    },
+    "lore": "Orkney islanders would not say its name. The nuckelavee came out of the sea as a horse and rider grown into one body, with no skin, so that black blood could be seen running in its veins. Its breath withered crops and brought the mortasheen plague on the cattle. Walter Traill Dennison heard from an old man, Tammas, how it chased him along the shore one night, and how he escaped by leaping a burn of fresh water, which it cannot cross.",
+    "frequency": 2,
+    "thac0_lore": 4,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping",
+      "feared",
+      "poisoned"
+    ],
+    "status_weak": [],
+    "opener": {
+      "attack": "Mortasheen Breath",
+      "range": 3
+    },
+    "can_charge": true,
+    "charge_bonus_mult": 1.3,
+    "moves": []
+  },
+  "star_jelly": {
+    "name": "Star Jelly",
+    "symbol": "J",
+    "color": [
+      220,
+      220,
+      240
+    ],
+    "hp": "253d10+924",
+    "speed": 6,
+    "ai_pattern": "ambush",
+    "thac0": 6,
+    "peak_floor": 55,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 50,
+    "attacks": [
+      {
+        "name": "Starfall Drop",
+        "damage": "3d10+12",
+        "type": "blunt",
+        "delivery": "blow",
+        "effect": "corroding",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      },
+      {
+        "name": "Starlight Touch",
+        "damage": "2d6+8",
+        "type": "cold",
+        "delivery": "touch",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "acid",
+      "cold",
+      "pierce",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "aberration"
+    ],
+    "family": "oozes",
+    "pronoun": "it",
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 3,
+      "purse": "none"
+    },
+    "lore": "Welsh shepherds called it pwdre ser, the rot of the stars: a pale, trembling jelly found on the grass after a night of falling stars, which melts away within days. Medieval physicians spread it on sores. Naturalists today blame frog spawn or a swollen soil alga. The jelly that drops from the roofs down here comes from nothing so ordinary, and it shrinks from any light.",
+    "frequency": 2,
+    "thac0_lore": 7,
+    "shrugs_off": [],
+    "status_immune": [
+      "blinded",
+      "sleeping",
+      "confused",
+      "feared",
+      "charmed",
+      "poisoned"
+    ],
+    "status_weak": [],
+    "opener": {
+      "attack": "Starfall Drop",
+      "range": 1
+    },
+    "light_shy": true,
+    "hidden_overhead": true
+  },
+  "psoglav": {
+    "name": "Psoglav",
+    "symbol": "P",
+    "color": [
+      110,
+      90,
+      70
+    ],
+    "hp": "266d10+973",
+    "speed": 13,
+    "ai_pattern": "aggressive",
+    "thac0": 2,
+    "peak_floor": 62,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 58,
+    "attacks": [
+      {
+        "name": "Iron-Toothed Bite",
+        "damage": "3d8+16",
+        "type": "pierce",
+        "delivery": "bite",
+        "effect": "bleeding",
+        "effect_chance": 0.35,
+        "effect_duration": 5
+      },
+      {
+        "name": "Horse-Leg Kick",
+        "damage": "3d6+14",
+        "type": "blunt",
+        "delivery": "blow",
+        "effect": "stunned",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "cold"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "humanoid"
+    ],
+    "family": "goblinkin",
+    "pronoun": "he",
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        16,
+        47
+      ],
+      "item_chance": 0.2,
+      "item_tier": 4,
+      "purse": "purse"
+    },
+    "lore": "In the villages of Bosnia, Montenegro and Serbia they told of the psoglavci, the dog-heads: men with horse's legs, a dog's head, iron teeth and a single eye in the middle of the forehead. They live in caves in a land without sun, where precious stones light the dark. Their one eye sees poorly but their noses miss nothing, and they dig the dead out of their graves to eat them.",
+    "frequency": 2,
+    "thac0_lore": 3,
+    "shrugs_off": [],
+    "status_immune": [
+      "blinded"
+    ],
+    "status_weak": [],
+    "pack": true,
+    "pack_size": [
+      2,
+      3
+    ],
+    "opener": {
+      "attack": "Iron-Toothed Bite",
+      "range": 1
+    },
+    "perception_range": 5
+  },
+  "waq_waq_tree": {
+    "name": "Waq-Waq Tree",
+    "symbol": "T",
+    "color": [
+      120,
+      150,
+      90
+    ],
+    "hp": "360d10+1318",
+    "speed": 0,
+    "ai_pattern": "sessile",
+    "thac0": 3,
+    "peak_floor": 63,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 58,
+    "attacks": [
+      {
+        "name": "Screaming Chorus",
+        "damage": "2d6+10",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "feared",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "Falling Fruit",
+        "damage": "3d8+14",
+        "type": "blunt",
+        "delivery": "ranged",
+        "ranged": true
+      }
+    ],
+    "resistances": [
+      "poison",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire",
+      "slash"
+    ],
+    "tags": [
+      "plant"
+    ],
+    "family": "plants",
+    "pronoun": "it",
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 4,
+      "purse": "none"
+    },
+    "lore": "Arab and Persian wonder-books tell of the island of Waq-waq at the edge of the world, where a tree bears fruit in the shape of people. When the fruit ripens it falls, crying 'waq, waq!'. Later painters gave the tree branches that end in the heads of men and beasts, all calling at once. A waq-waq tree in the dark cries out at anything that moves, and everything nearby comes to hear it.",
+    "frequency": 2,
+    "thac0_lore": 4,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping",
+      "poisoned",
+      "charmed",
+      "feared",
+      "blinded",
+      "confused"
+    ],
+    "status_weak": [
+      "burning"
+    ],
+    "opener": {
+      "attack": "Screaming Chorus",
+      "range": 6
+    },
+    "alarm": {
+      "radius": 14,
+      "line": "Every head on the Waq-Waq Tree cries out at once: 'Waq! Waq!'",
+      "line_unseen": "Somewhere ahead, a chorus of voices cries 'Waq! Waq!'"
+    }
+  },
+  "yuki_onna": {
+    "name": "Yuki-Onna",
+    "symbol": "F",
+    "color": [
+      230,
+      240,
+      255
+    ],
+    "hp": "281d10+1034",
+    "speed": 13,
+    "ai_pattern": "ranged",
+    "thac0": 1,
+    "peak_floor": 66,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 62,
+    "attacks": [
+      {
+        "name": "Freezing Breath",
+        "damage": "2d10+16",
+        "type": "cold",
+        "delivery": "breath",
+        "effect": "frozen",
+        "effect_chance": 0.45,
+        "effect_duration": 3,
+        "ranged": true
+      },
+      {
+        "name": "Pale Touch",
+        "damage": "3d8+14",
+        "type": "drain",
+        "delivery": "touch"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "fire",
+      "iron"
+    ],
+    "tags": [
+      "fey"
+    ],
+    "family": "fair_folk",
+    "pronoun": "she",
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        9,
+        28
+      ],
+      "item_chance": 0.15,
+      "item_tier": 4,
+      "purse": "trinkets"
+    },
+    "lore": "Lafcadio Hearn wrote down the tale of the snow woman: two woodcutters sheltering in a hut through a blizzard, and a woman in white who breathes on the old man until he freezes. She spares the young one, Minokichi, and makes him promise never to tell. Years later he tells his wife the story, and his wife is the snow woman. For their children's sake she does not kill him; she melts away into the mist instead.",
+    "frequency": 2,
+    "thac0_lore": 2,
+    "shrugs_off": [],
+    "status_immune": [
+      "frozen",
+      "sleeping",
+      "charmed"
+    ],
+    "status_weak": [],
+    "opener": {
+      "attack": "Freezing Breath",
+      "range": 4
+    },
+    "can_phase_blink": true,
+    "phase_blink_chance": 0.2
+  },
+  "yacumama": {
+    "name": "Yacumama",
+    "symbol": "S",
+    "color": [
+      50,
+      80,
+      50
+    ],
+    "hp": "699d10+2562",
+    "speed": 9,
+    "ai_pattern": "ambush",
+    "thac0": 1,
+    "peak_floor": 70,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 65,
+    "attacks": [
+      {
+        "name": "Drawing Breath",
+        "damage": "1d6+6",
+        "type": "magic",
+        "delivery": "breath",
+        "effect": "slowed",
+        "effect_chance": 0.4,
+        "effect_duration": 6,
+        "ranged": true,
+        "pulls": 2,
+        "pull_line": "The Yacumama breathes in, and the air drags you toward its coils!"
+      },
+      {
+        "name": "Crushing Coils",
+        "damage": "4d10+20",
+        "type": "blunt",
+        "delivery": "grapple",
+        "effect": "strangulation",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      },
+      {
+        "name": "Gaping Jaws",
+        "damage": "4d8+20",
+        "type": "pierce",
+        "delivery": "bite"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "beast",
+      "reptile"
+    ],
+    "family": "serpents",
+    "pronoun": "it",
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 4,
+      "purse": "none"
+    },
+    "lore": "The peoples of the Peruvian Amazon speak of the yacumama, the mother of the waters: an anaconda fifty yards long that lies in the deep pools at a river's head. The Nuttall Encyclopaedia of 1907 says it draws in any creature that comes within a hundred yards, as if the river itself were breathing in. Fishermen blew a conch before they waded in, so that the yacumama would show itself if it was there.",
+    "frequency": 2,
+    "thac0_lore": 2,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping"
+    ],
+    "status_weak": [],
+    "opener": {
+      "attack": "Drawing Breath",
+      "range": 5
+    }
+  },
+  "tsuchigumo": {
+    "name": "Tsuchigumo",
+    "symbol": "X",
+    "color": [
+      120,
+      100,
+      60
+    ],
+    "hp": "714d10+2621",
+    "speed": 11,
+    "ai_pattern": "ambush",
+    "thac0": 0,
+    "peak_floor": 72,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 67,
+    "attacks": [
+      {
+        "name": "Fever Curse",
+        "damage": "2d8+14",
+        "type": "magic",
+        "delivery": "voice",
+        "effect": "weakened",
+        "effect_chance": 0.5,
+        "effect_duration": 20
+      },
+      {
+        "name": "Web Cast",
+        "damage": "2d6+12",
+        "type": "magic",
+        "delivery": "ranged",
+        "effect": "immobilized",
+        "effect_chance": 0.45,
+        "effect_duration": 2,
+        "ranged": true
+      },
+      {
+        "name": "Earth Spider Fangs",
+        "damage": "4d10+22",
+        "type": "poison",
+        "delivery": "bite",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 8
+      }
+    ],
+    "resistances": [
+      "poison",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire",
+      "slash"
+    ],
+    "tags": [
+      "beast"
+    ],
+    "family": "vermin",
+    "pronoun": "it",
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.25,
+      "item_tier": 4,
+      "purse": "none"
+    },
+    "lore": "The Heike tells how the warrior Minamoto no Raiko lay sick with a fever no medicine could break, and how a strange monk, taller than any man, came to his bedside at night and tried to bind him with rope. Raiko slashed at him with his sword, and the next day his men followed a trail of blood to a mound behind the Kitano Shrine, where a great earth spider lay. In the picture scroll of the Tsuchigumo, when another was cut open, one thousand nine hundred and ninety skulls rolled out of its belly.",
+    "frequency": 2,
+    "thac0_lore": 1,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping"
+    ],
+    "status_weak": [],
+    "opener": {
+      "attack": "Web Cast",
+      "range": 4
+    },
+    "relurks": true
+  },
+  "bhuta_vahana_yanta": {
+    "name": "Relic Guardian",
+    "symbol": "G",
+    "color": [
+      190,
+      150,
+      90
+    ],
+    "hp": "863d10+3168",
+    "speed": 8,
+    "ai_pattern": "sessile",
+    "thac0": -2,
+    "peak_floor": 83,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 78,
+    "attacks": [
+      {
+        "name": "Whirling Swords",
+        "damage": "3d8+18",
+        "type": "slash",
+        "delivery": "blow"
+      },
+      {
+        "name": "Whirling Swords Backstroke",
+        "damage": "3d8+18",
+        "type": "slash",
+        "delivery": "blow"
+      },
+      {
+        "name": "Whirling Swords Low Cut",
+        "damage": "3d8+18",
+        "type": "slash",
+        "delivery": "blow",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold",
+      "fire",
+      "slash",
+      "pierce"
+    ],
+    "weaknesses": [
+      "lightning",
+      "blunt"
+    ],
+    "tags": [
+      "construct"
+    ],
+    "family": "constructs",
+    "pronoun": "it",
+    "harvest_tier": 5,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.3,
+      "item_tier": 5,
+      "purse": "none"
+    },
+    "lore": "The Pali Lokapannatti tells how King Ajatashatru laid the Buddha's relics in a deep chamber and set spirit-driven machines to guard them, the bhuta vahana yanta, built from plans brought out of the land of the Romans. No one could pass them until the emperor Ashoka, long after, learned their secret and stilled them. The machines down here still keep their watch, and their swords never stop turning.",
+    "frequency": 2,
+    "thac0_lore": -1,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping",
+      "poisoned",
+      "charmed",
+      "feared",
+      "confused",
+      "paralyzed",
+      "stunned",
+      "blinded"
+    ],
+    "status_weak": [],
+    "pack": true,
+    "pack_size": [
+      2,
+      2
+    ],
+    "multi_attack_count": 3
+  },
+  "reem": {
+    "name": "Re'em",
+    "symbol": "Q",
+    "color": [
+      80,
+      60,
+      40
+    ],
+    "hp": "1205d10+4417",
+    "speed": 13,
+    "ai_pattern": "aggressive",
+    "thac0": -2,
+    "peak_floor": 85,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 80,
+    "attacks": [
+      {
+        "name": "Horns of the Re'em",
+        "damage": "5d10+40",
+        "type": "pierce",
+        "delivery": "blow",
+        "effect": "stunned",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      },
+      {
+        "name": "Hill-Shaking Trample",
+        "damage": "5d8+36",
+        "type": "blunt",
+        "delivery": "trample"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "beast"
+    ],
+    "family": "great_beasts",
+    "pronoun": "it",
+    "harvest_tier": 5,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 5,
+      "purse": "none"
+    },
+    "lore": "The Hebrew Bible's re'em is a wild ox of terrible strength; Job is asked whether it will ever serve him or harrow his valleys, and the King James translators called it the unicorn. The rabbis said it was too big for Noah's ark, and puzzled over how it was saved. A midrash tells how young David took a sleeping re'em for a hill, climbed it, and was carried up toward the sky on its horns when it woke. The re'em of the deep halls are awake.",
+    "frequency": 2,
+    "thac0_lore": -1,
+    "shrugs_off": [],
+    "status_immune": [
+      "feared"
+    ],
+    "status_weak": [
+      "fear_of_fire"
+    ],
+    "opener": {
+      "attack": "Horns of the Re'em",
+      "range": 1
+    },
+    "can_charge": true,
+    "charge_bonus_mult": 1.5,
+    "footprint": [
+      2,
+      2
+    ]
+  },
+  "eitr": {
+    "name": "Eitr",
+    "symbol": "P",
+    "color": [
+      40,
+      90,
+      70
+    ],
+    "hp": "863d10+3163",
+    "speed": 7,
+    "ai_pattern": "aggressive",
+    "thac0": 0,
+    "peak_floor": 86,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 81,
+    "attacks": [
+      {
+        "name": "Venom-Rime Touch",
+        "damage": "4d10+30",
+        "type": "poison",
+        "delivery": "touch",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 8
+      },
+      {
+        "name": "Freezing Slag",
+        "damage": "3d10+26",
+        "type": "cold",
+        "delivery": "blow",
+        "effect": "frozen",
+        "effect_chance": 0.35,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold",
+      "acid",
+      "pierce",
+      "blunt"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "aberration"
+    ],
+    "family": "oozes",
+    "pronoun": "it",
+    "harvest_tier": 5,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 5,
+      "purse": "none"
+    },
+    "lore": "Snorri tells that in the beginning poisonous rivers, the Elivagar, flowed out of the wellspring in Niflheim. Their venom, the eitr, hardened like slag from a furnace and spread through the void as rime, and where that rime met the heat of Muspell the first giant, Ymir, was born. Some of the eitr never hardened. It still crawls in the deepest cold, and what it touches freezes and sickens at once.",
+    "frequency": 2,
+    "thac0_lore": 1,
+    "shrugs_off": [],
+    "status_immune": [
+      "frozen",
+      "poisoned",
+      "sleeping",
+      "blinded",
+      "confused",
+      "charmed",
+      "feared"
+    ],
+    "status_weak": [],
+    "trail_hazard": {
+      "hazard": "venom_pool",
+      "turns": 20
+    }
+  },
+  "bakunawa": {
+    "name": "Bakunawa",
+    "symbol": "S",
+    "color": [
+      60,
+      40,
+      80
+    ],
+    "hp": "1290d10+4730",
+    "speed": 12,
+    "ai_pattern": "aggressive",
+    "thac0": -3,
+    "peak_floor": 88,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 84,
+    "attacks": [
+      {
+        "name": "Moon-Swallowing Jaws",
+        "damage": "4d10+30",
+        "type": "magic",
+        "delivery": "bite",
+        "effect": "blinded",
+        "effect_chance": 0.4,
+        "effect_duration": 8,
+        "snuffs_light": "dark"
+      },
+      {
+        "name": "Coiling Crush",
+        "damage": "5d10+36",
+        "type": "blunt",
+        "delivery": "grapple",
+        "effect": "immobilized",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      },
+      {
+        "name": "Horned Strike",
+        "damage": "4d8+34",
+        "type": "pierce",
+        "delivery": "blow"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "lightning"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "beast",
+      "reptile"
+    ],
+    "family": "serpents",
+    "pronoun": "it",
+    "harvest_tier": 5,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.05,
+      "item_tier": 5,
+      "purse": "none"
+    },
+    "lore": "The Visayan peoples of the Philippines say the god Bathala hung seven moons in the sky, and the sea serpent Bakunawa rose and swallowed six of them. When it rises for the last moon, Bulan, the people run outside and beat pots, gongs and drums until the noise makes it spit the moon back out. That is what an eclipse is. The bakunawa coiled in these deeps swallows any light it sees.",
+    "frequency": 2,
+    "thac0_lore": -2,
+    "shrugs_off": [],
+    "status_immune": [
+      "sleeping",
+      "blinded"
+    ],
+    "status_weak": []
   }
 }
