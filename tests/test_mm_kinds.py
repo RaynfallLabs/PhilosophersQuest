@@ -176,7 +176,9 @@ def test_the_waiting_fields_carry_the_other_slices_shapes():
 
 def test_the_upgrades_are_written_by_lore():
     drag = next(a for a in MONS['each_uisce']['attacks'] if a['name'] == 'Drown Drag')
-    assert drag['effect'] == 'immobilized' and MONS['each_uisce']['pull_chance'] == 0.3
+    # (AI-3, 2026-11-20: the immobilizing rider that stood in for the drowning
+    # grip is now the real thing, a 'drag' hold: src/holds.py.)
+    assert drag['hold']['kind'] == 'drag' and MONS['each_uisce']['pull_chance'] == 0.3
     assert MONS['green_hag']['pull_chance'] == 0.25
     touch = next(a for a in MONS['mummy']['attacks'] if a['name'] == 'Rotting Touch')
     assert touch['effect'] == 'heal_blocked'

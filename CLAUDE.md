@@ -70,7 +70,6 @@ src/
   war_bands.py        - War-bands: groups with a leader and roles, morale when he falls
   packs.py            - Packs: kin that hunt together (surround in the open, hold a corridor's mouth or go round) and each family's trick (rats swarm, wolves hamstring, goblins sling...)
   tells.py            - Tells: what a dangerous creature shows it can do, and what to do about it
-<<<<<<< HEAD
   # Monster behaviour, first wave (AI-1, 2026-11-19): small pure modules, numbers and lines in data/monster_ai.json
   kind_data.py        - A kind's own fields where the Monster keeps no copy; data/monster_ai.json; the behaviours' tells
   ai_lines.py         - What a behaviour leaves for the Game to say (seen / unseen)
@@ -88,10 +87,21 @@ src/
   relurk.py           - Back to the Web: a hurt ambusher out of sight hides again
   shove.py            - Shove: a giant's blow throws the hero back, never into deadly ground
   game_behaviour.py   - BehaviourMixin: the Game's side of the behaviours (lines, the map, the kill)
-=======
+  # Monster behaviour, third wave (AI-3, 2026-11-20): pure modules, numbers and lines in data/monster_ai.json
+  ai_turn.py          - What the third wave adds to one monster turn (a hold, a kit, a coward, a book) and to its blow
+  caster_ai.py        - The Caster's Book: a caster wards, curses, mends, blinks, dispels or darkens by need; its bolt by sense
+  holds.py            - Held Fast: constrict, swallow, drag under; the squeeze, the struggle, the ways out
+  auras.py            - Auras: dread once a fight, a stench until mastered, the heat and the cold beside it
+  home_ground.py      - Home Ground: a territorial kind lets the hero go at the edge of its ground, never runs on it
+  monster_kit.py      - Uses What It Carries: a hurt one drinks its potion (or one it stole), a fire pot thrown; the rest drops
+  skittish.py         - Skittish, Not Suicidal: the cowardly keep their distance, dart in, a cornered leprechaun bargains
+  dancer.py           - The dancer's sidestep with purpose: never a pit, a trap or a vent; a gazer keeps her eyes on him
+  surprise.py         - Lurkers Keep Their Promise: an unseen ambusher's drop is a surprise; a spotted one or a known mimic is not
+  second_shape.py     - Second Shape: a changer takes its other form when its enrage fires (the nahual's jaguar)
+  ways_tells.py       - The third wave's tells for src/tells.py, from each behaviour's own module
+  game_monster_ways.py - MonsterWaysMixin: the Game's side (a held hero's step, the auras, the kit's drop, the bargain)
   wards.py            - Wards (data/wards.json): a family kept off (melee, riders, sight, damage), missiles stayed, mist, sanctuary, the Styx; what a strike breaks
   attack_gates.py     - What a monster cannot use now: silenced (no voice, cast, summon, heal), unstrung (no missile, breath, gaze), babbled (no pack ways)
->>>>>>> main
   decor.py            - The five domains (themes) and the fixture layer: what stands in a floor
   hazards.py          - Domain hazards (data), trap lean, kin weights and the floor's resident clan
   game_hazards.py     - HazardsMixin: hazards at work on the hero and the monsters; fire vents breathe
@@ -237,7 +247,7 @@ data/
   lights.json       - Carried lights and the Light spell: status sight, spell turns, the oil, lines, card and HUD words
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
   packs.json        - Packs: the hunt's numbers, the lore packs and their tricks, the herds that do not hunt as one
-  monster_ai.json   - Monster behaviour (AI-1): healers, summoners, breath, morale, drain, rot, light, alarm, throes... numbers and lines
+  monster_ai.json   - Monster behaviour (AI-1, AI-3): healers, summoners, breath, morale... casters, holds, auras, home ground, kits, the coward, the lurker: numbers and lines
   traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)
   old_nickel.json   - Old Nickel's lines by phase and moment (the friend's offers and asides, the reveal, then taunts, iron, the cloak, darting in, striking, hurt, dying), their pacing and Journal lines

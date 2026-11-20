@@ -110,6 +110,7 @@ from game_manifest import ManifestMixin
 from game_horns import HornsMixin
 from game_lore_powers import LorePowersMixin
 from game_behaviour import BehaviourMixin
+from game_monster_ways import MonsterWaysMixin    # monster behaviour, third wave (AI-3)
 import monster as monster_mod_wards      # its HERO_STRUCK hook (game_wards.py, via MagicMixin)
 from spells import LEARNABLE_SPELLS
 
@@ -280,7 +281,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
            MoobleMixin, MoobleDanceMixin,
            BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin, SongsMixin,
            ManifestMixin, HornsMixin, BehaviourMixin,
-           LorePowersMixin):
+           LorePowersMixin, MonsterWaysMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -1951,6 +1952,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 and _from_level < new_level < 900):
             self._seeker_event('rode_down', floor=int(new_level))
         self._riding_level_change(via)
+        self._ways_level_change()          # a hold ends with the floor (AI-3)
         self._bococho_left(_from_level, new_level)
         # Notify quirk system before level change (fast-exit check)
         # New depth: a floor deeper than any reached. A side floor (the Cow
@@ -3563,6 +3565,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._advance_turn()
             return
 
+        # Held (a coil, a gullet, a drowning grip: src/holds.py, AI-3): a step
+        # is a struggle; a step into the holder is a blow on it.
+        if self._ways_held_move(dx, dy):
+            return
+
         # Slowed: skip every other turn
         if self.player.has_effect('slowed'):
             self._slow_skip = not self._slow_skip
@@ -4124,6 +4131,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self.dungeon.tiles[py][px] != STAIRS_DOWN:
             self.add_message("There are no stairs leading down here.", 'info')
             return
+        if self._ways_held_at_stairs():      # in a coil or a gullet: no stair (AI-3)
+            return
         # A side floor's portal (the farm's, the stage door): back to the dungeon
         if is_side_floor(self.dungeon_level):
             self._leave_side_floor()
@@ -4156,6 +4165,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         px, py = self.player.x, self.player.y
         if self.dungeon.tiles[py][px] != STAIRS_UP:
             self.add_message("There are no stairs leading up here.", 'info')
+            return
+        if self._ways_held_at_stairs():      # in a coil or a gullet: no stair (AI-3)
             return
         if self.dungeon_level == 1:
             has_stone = any(

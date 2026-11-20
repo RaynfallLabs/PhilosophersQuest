@@ -74,6 +74,12 @@ def nature(m) -> tuple:
     if getattr(m, 'fearless', False) or 'feared' in (getattr(m, 'status_immune', None) or ()):
         row['style'] = 'never'
     style = kind_data.field(m, 'morale_style', row.get('style', 'withdraw'))
+    try:
+        import home_ground                   # on its own ground it never runs (AI-3)
+        if home_ground.on_home(m):
+            style = 'never'
+    except ImportError:
+        pass
     score = int(kind_data.field(m, 'morale', row.get('morale', 10)) or 0)
     if style not in STYLES:
         style = 'withdraw'

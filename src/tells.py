@@ -85,6 +85,13 @@ def abilities(m) -> list:
         have.update(lore_powers.tell_keys(m))
     except (ImportError, OSError, ValueError):
         pass
+    # Its third-wave ways (AI-3): a hold, an aura, a caster's book, home
+    # ground, what it carries, a coward's distance, a second shape.
+    try:
+        import ways_tells
+        have.update(ways_tells.tell_keys(m))
+    except (ImportError, OSError, ValueError):
+        pass
     # What its behaviour shows (AI-1, src/kind_data.py): a breath drawn up
     # again, a healer's rest, a light it hates, a cry it raises...
     try:
