@@ -3311,6 +3311,14 @@ class Run:
                     free = 0
             elif m.speed >= FAST_SPEED or pat in ('ambush', 'mimic'):
                 free = 1
+            # Its opener (monster.OPENER_WIND_UP, 2026-11-19): the first
+            # blow is its signature attack, before the hero strikes. (A gaze,
+            # voice or breath is drawn up for a turn in the game; the sim
+            # gives the hero no answer to it, so it slightly over-counts.)
+            if getattr(m, '_opener_attack', None) is not None and not getattr(m, '_opened', False):
+                m._opened = True
+                m._opener_now = m._opener_attack
+                free = max(free, 1)
             if pat == 'hit_and_run':
                 m._sim_hr_left = random.randint(1, 2)
                 if m.can_charge and random.random() < ASTERION_CHARGE_PROB:

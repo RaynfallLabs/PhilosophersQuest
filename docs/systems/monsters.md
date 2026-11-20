@@ -399,6 +399,23 @@ Tests: `tests/test_monster_notes.py`, and the Observe cases in `tests/test_obser
 
 **Patrols (C5).** A wandering monster now arrives beside a stair the hero can't see, as if coming down or up it, instead of out of nowhere. It goes to a fight or alarm it can hear from there, or roams.
 
+## Openers: a creature's power before the hero strikes (2026-11-19)
+
+Brandon: "openers for sure". The powers "dont seem to make a lot of difference" because a monster died to the first maths chain before it used one.
+
+- **Data:** `"opener": {"attack": "<one of its attacks>", "range": N}` in `monsters.json`, written per creature from its lore.
+  - Pounces, lunges and charges are range 1.
+  - A first volley, a gaze, a song or a breath is range 2-7.
+  - An optional `wind_up` overrides the tell line.
+- **Range 1 (a pounce):** on the turn the creature closes to the hero, it strikes with that attack in the same turn (`Monster._pounce_now`). Without an opener, closing ends its turn and the hero strikes first.
+- **Range 2 or more:** when it has noticed the hero and he is within range and in its line of sight, it opens with that attack (`Monster._opener_from_range`).
+  - A missile flies at once.
+  - A gaze, voice or breath is first drawn up for one turn (`monster.OPENER_WIND_UP`): "The basilisk fixes its eyes on you." That is the tell. The hero can answer it by closing, breaking line of sight, putting in wax or raising a mirror.
+- **The blow** is an ordinary blow. To-hit, saves, the head guard, family wards and counters all apply.
+- **Once a fight.** The opener is ready again only after the creature has lost the hero for `OPENER_RESET_TURNS` (5) turns.
+- **The simulator** gives an opener one free blow when the monster joins a fight (`difficulty_sim.Run.fight`). That slightly over-counts the drawn-up powers, which the game lets the hero answer.
+- **Tests:** `tests/test_monster_openers.py`.
+
 ## Wanderers: the floor's clock (3.5.1)
 
 Brandon, play-testing floor 1: "I just don't think we need a constant stream of monsters... I'd rather have a larger population at first, with complex encounters set up, then a trickle if you hang around TOO LONG, but give the player some time to explore... walking back and forth becomes a massive chore."

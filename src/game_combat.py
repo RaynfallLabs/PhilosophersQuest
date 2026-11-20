@@ -3424,6 +3424,11 @@ class CombatMixin:
             did_attack = m.take_turn(self.player, self.dungeon, self.monsters,
                                      extra_occupied=_pet_occ)
             self._scavenge_after(m)
+            # It drew its opener up this turn (monster.OPENER_WIND_UP): the
+            # tell the hero can answer before it lands.
+            _wu = m.__dict__.pop('_wind_up_message', '')
+            if _wu and self._sees_monster(m):
+                self.add_message(_wu, 'warning')
             if did_attack:
                 # A blow on the hero carries (src/senses.py).
                 self._make_noise('struck')
