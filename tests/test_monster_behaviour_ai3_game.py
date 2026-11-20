@@ -217,6 +217,7 @@ def test_the_leprechauns_bargain_taken():
     m.treasure = {'gold': [40, 40], 'item_chance': 0.6, 'item_tier': 2}
     m._wants_bargain = True
     g._ways_turn_after(m)
+    g._ways_after_world()                                 # asked once the world's turn is over
     assert g.state == STATE_ASK
 
     def gold_here():
@@ -234,6 +235,7 @@ def test_the_leprechauns_bargain_refused():
     m = g.monsters[0]
     m._wants_bargain = True
     g._ways_turn_after(m)
+    g._ways_after_world()                                 # asked once the world's turn is over
     g._ask_data['options'][1][3]()                        # No
     assert m in g.monsters and m._bargain_refused
 
@@ -245,7 +247,9 @@ def test_no_bargain_in_a_quiz():
     m._wants_bargain = True
     g.state = STATE_QUIZ
     g._ways_turn_after(m)
+    g._ways_after_world()
     assert g.state == STATE_QUIZ and m._wants_bargain     # asked once play is calm
+    assert g._bargain_pending is m
 
 
 def test_a_casters_lines_are_said_and_the_ward_shows_on_the_look_screen():
