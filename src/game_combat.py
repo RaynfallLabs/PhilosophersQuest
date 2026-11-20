@@ -2039,7 +2039,7 @@ class CombatMixin:
                 hits = 0
                 kills = 0
                 for m in list(self.monsters):
-                    if m.alive and (m.x, m.y) in cone and (m.x, m.y) in self.visible:
+                    if m.alive and (m.x, m.y) in cone and self._in_hero_reach(m):
                         m.take_damage(floor_curve.wound(_share, m.max_hp, m._is_named_foe()))
                         hits += 1
                         if not m.alive:

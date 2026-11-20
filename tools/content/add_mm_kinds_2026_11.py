@@ -213,8 +213,8 @@ TELLS = {
     'carry_off': {
         'sign': "{The}'s talons are big enough to close round a horse.",
         'does': "{He} can snatch you up and drop you far away, hurt and alone.",
-        'counter': "A heavy load makes you hard to lift; plate armour or a full pack keeps your feet "
-                   "on the ground."},
+        'counter': "A heavy load makes you harder to lift: weighed down by your gear, you are "
+                   "snatched half as often."},
     'ranged_pull': {
         'sign': "The air moves toward {the} as {he} breathes.",
         'does': "{He} breathes in, and the pull of {his} breath drags you toward {his} coils from far "

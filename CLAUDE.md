@@ -82,7 +82,7 @@ src/
   breath.py           - Draws Breath: a breath must be drawn again; tooth and claw meanwhile
   morale.py           - Morale by Nature: who breaks (never, bolt, regroup, withdraw, yield), when, and the run
   ai_blow.py          - What the behaviours add to one monster blow (to-hit shift; after the blow)
-  life_drain.py       - Life Drained: a drain blow lowers max HP; half back on the stairs, all from prayer or physician
+  life_drain.py       - Life Drained: a drain blow lowers max HP; half back on the stairs, all from prayer, a physician or the Water of Epidaurus
   grave_rot.py        - Grave Rot: disease lingers, stops rest mending, halves heals; ticks on a monster
   light_shy.py        - Light-Shy (flinch, a troll's wounds, stiffening) and Snuff the Light (a soaked wick)
   gone_again.py       - Gone Again: a hit-and-run creature hides out of sight (in the dark, unseen)

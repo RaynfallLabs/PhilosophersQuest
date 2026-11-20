@@ -28,7 +28,7 @@ TELLS = {
         'sign': "{The} keeps {his} place in the line like a drilled soldier.",
         'does': "{He} holds a line with {his} fellows, changes places when the front man "
                 "tires, and may feign flight to draw you out of a narrow way.",
-        'counter': "Finish a hurt one before he can step back, and do not follow a foe who "
+        'counter': "Finish a hurt one before {he} can step back, and do not follow a foe who "
                    "runs too neatly. Study the kind and you will see through the feint.",
     },
     'mind_trickster': {

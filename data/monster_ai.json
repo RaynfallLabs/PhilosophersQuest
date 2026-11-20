@@ -282,7 +282,7 @@
     }
   },
   "holds": {
-    "_doc": "src/holds.py (Held Fast). An attack's 'hold' {kind: constrict|swallow|drag, type, break_share, max_turns<=4, save: STR|DEX} that lands takes the hero (a DEX save slips it: the 'held' status). Each holder turn it squeezes for that attack's own dice (no roll to hit), typed; a drag first hauls him a tile toward water within drag_reach and at the water's edge pulls him under (drown_mult). A blow or blows on the holder of break_share of its health between two of its turns frees him; so does a STR or DEX struggle (his step) against the hold's DC plus struggle_dc_add, the holder dying, sleeping, held, afraid or broken, Loosed, the Coif of Beowulf, or the status running out. Then he is Recovering (no hold at once again). Lines: <key>_<kind> before <key>; {damage}.",
+    "_doc": "src/holds.py (Held Fast). An attack's 'hold' {kind: constrict|swallow|drag, type, break_share, max_turns<=4, save: STR|DEX} that lands takes the hero (a DEX save slips it: the 'held' status). Each holder turn it squeezes for that attack's own dice (no roll to hit), typed; a drag first hauls him a tile toward water within drag_reach and at the water's edge pulls him under (drown_mult). A blow or blows on the holder of break_share of its health between two of its turns frees him; so does a STR or DEX struggle (his step) against the hold's DC plus struggle_dc_add, the holder dying, sleeping, held, afraid or broken, Loosed, the Coif of Beowulf, a family ward against its holds (the Psylli's: data/wards.json riders 'held'), or the status running out. Then he is Recovering (no hold at once again). Lines: <key>_<kind> before <key>; {damage}.",
     "break_share": 0.1,
     "drag_reach": 10,
     "drown_mult": 1.5,
@@ -311,7 +311,8 @@
       "free_scared": "{The} lets go of you!",
       "free_apart": "You are out of {the}'s reach, and free.",
       "free_loosed": "Nothing can hold you: you slip out of {the}'s grip!",
-      "free_grendel": "Grendel-grip: you wrench free of {the}!"
+      "free_grendel": "Grendel-grip: you wrench free of {the}!",
+      "free_warded": "Your ward slips you out of {the}'s grip!"
     }
   },
   "auras": {

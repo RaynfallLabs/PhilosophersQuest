@@ -5068,7 +5068,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if m.alive:
                 m.tick_effects()
                 if not m.alive:
-                    self._on_monster_killed(m)
+                    # A wound's last tick: what its death sets off is no
+                    # blow of the hero's (`_damage_by`; a burst, src/game_behaviour.py).
+                    _by = getattr(self, '_damage_by', 'hero')
+                    self._damage_by = 'status'
+                    try:
+                        self._on_monster_killed(m)
+                    finally:
+                        self._damage_by = _by
                     from monster import pronouns as _prn
                     self.add_message(f"{the_name(m)} succumbs to {_prn(m)[2]} wounds!", 'combat')
 

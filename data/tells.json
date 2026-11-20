@@ -264,7 +264,7 @@
     "carry_off": {
       "sign": "{The}'s talons are big enough to close round a horse.",
       "does": "{He} can snatch you up and drop you far away, hurt and alone.",
-      "counter": "A heavy load makes you hard to lift; plate armour or a full pack keeps your feet on the ground."
+      "counter": "A heavy load makes you harder to lift: weighed down by your gear, you are snatched half as often."
     },
     "ranged_pull": {
       "sign": "The air moves toward {the} as {he} breathes.",
@@ -449,7 +449,7 @@
     "mind_soldier": {
       "sign": "{The} keeps {his} place in the line like a drilled soldier.",
       "does": "{He} holds a line with {his} fellows, changes places when the front man tires, and may feign flight to draw you out of a narrow way.",
-      "counter": "Finish a hurt one before he can step back, and do not follow a foe who runs too neatly. Study the kind and you will see through the feint."
+      "counter": "Finish a hurt one before {he} can step back, and do not follow a foe who runs too neatly. Study the kind and you will see through the feint."
     },
     "mind_trickster": {
       "sign": "{The} never comes straight at you.",

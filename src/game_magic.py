@@ -435,7 +435,7 @@ class MagicMixin(MagicWardsMixin):
             px, py = self.player.x, self.player.y
             candidates = [
                 m for m in self.monsters
-                if m.alive and (m.x, m.y) in self.visible
+                if m.alive and self._in_hero_reach(m)
             ]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             self._target_candidates = candidates
@@ -924,7 +924,7 @@ class MagicMixin(MagicWardsMixin):
                 line = get_line_tiles(px, py, target.x, target.y)
                 line_set = set(line)
                 line_hits = [m for m in self.monsters
-                             if m.alive and (m.x, m.y) in line_set and (m.x, m.y) in self.visible]
+                             if m.alive and (m.x, m.y) in line_set and self._in_hero_reach(m)]
                 seen_hits = [m for m in line_hits if _hero_sees(self, m)]
                 for lm in line_hits:
                     actual = lm.take_damage(dmg, 'lightning')
@@ -1042,7 +1042,7 @@ class MagicMixin(MagicWardsMixin):
                 if _is_panic_wave:
                     hit = 0
                     for m in self.monsters:
-                        if not m.alive or (m.x, m.y) not in self.visible:
+                        if not m.alive or not self._in_hero_reach(m):
                             continue
                         if (_is_big_foe(m) or getattr(m, 'fearless', False)
                                 or m.resists_control('feared')):
@@ -1287,7 +1287,7 @@ class MagicMixin(MagicWardsMixin):
                 self.add_message("You wield no weapon to enchant.", 'warning')
 
         elif effect == 'earthquake':
-            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            visible_monsters = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             n_seen = sum(1 for m in visible_monsters if _hero_sees(self, m))
             total_dmg = 0
             for m in visible_monsters:
@@ -1300,7 +1300,7 @@ class MagicMixin(MagicWardsMixin):
 
         elif effect == 'explosion':
             from dice import roll
-            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            visible_monsters = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             n_seen = sum(1 for m in visible_monsters if _hero_sees(self, m))
             for m in visible_monsters:
                 dmg = self._wand_tier_damage(roll(wand.power) if wand.power else _rng.randint(8, 24), wand.quiz_tier)
@@ -1311,7 +1311,7 @@ class MagicMixin(MagicWardsMixin):
 
         elif effect == 'mass_confuse':
             dur = self._wand_tier_duration(12, wand.quiz_tier)
-            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            visible_monsters = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             # Counted as they take hold: the mindless are not muddled (status_immune).
             n_seen = sum(1 for m in visible_monsters
                          if m.add_effect('confused', dur) and _hero_sees(self, m))
@@ -1319,7 +1319,7 @@ class MagicMixin(MagicWardsMixin):
 
         elif effect == 'mass_sleep':
             dur = self._wand_tier_duration(10, wand.quiz_tier)
-            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            visible_monsters = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             # Counted as they take hold: the dead and the made do not sleep.
             n_seen = sum(1 for m in visible_monsters
                          if m.add_effect('sleeping', dur) and _hero_sees(self, m))
@@ -1327,7 +1327,7 @@ class MagicMixin(MagicWardsMixin):
 
         elif effect == 'mass_slow':
             dur = self._wand_tier_duration(10, wand.quiz_tier)
-            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            visible_monsters = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             n_seen = sum(1 for m in visible_monsters
                          if m.add_effect('slowed', dur) and _hero_sees(self, m))
             self.add_message(f"{quantity(n_seen, 'creature')} {'is' if n_seen == 1 else 'are'} slowed! ({quantity(dur, 'turn')})", 'success')
@@ -1352,14 +1352,14 @@ class MagicMixin(MagicWardsMixin):
                 ('confusion',  lambda: (self.player.add_effect('confused', 8),
                                         self.add_message("The mortar's chaos clouds your mind!", 'danger'))),
                 ('mass_sleep', lambda: (
-                    [m.add_effect('sleeping', 12) for m in self.monsters if m.alive and (m.x, m.y) in self.visible],
+                    [m.add_effect('sleeping', 12) for m in self.monsters if m.alive and self._in_hero_reach(m)],
                     self.add_message("The mortar grinds out a sleep-fog over the room!", 'success'))),
                 ('regen',      lambda: (self.player.add_effect('regenerating', 20),
                                         self.add_message("Ground-up hero bones restore your vitality!", 'success'))),
                 ('blast',      lambda: [
                     (m.take_damage(_wound(MORTAR_BLAST_SHARE, m.max_hp, _is_big_foe(m))),
                      self._on_monster_killed(m) if not m.alive else None)
-                    for m in list(self.monsters) if m.alive and (m.x, m.y) in self.visible
+                    for m in list(self.monsters) if m.alive and self._in_hero_reach(m)
                 ] and self.add_message("Chaotic energy blasts all visible enemies!", 'success')),
             ])
             _chaos[1]()
@@ -1447,7 +1447,7 @@ class MagicMixin(MagicWardsMixin):
         elif effect == 'turn_undead':
             from dice import roll as _roll_tu
             base_dmg = self._wand_tier_damage(_roll_tu(wand.power) if wand.power else 8, wand.quiz_tier)
-            undead = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible
+            undead = [m for m in self.monsters if m.alive and self._in_hero_reach(m)
                       and _is_undead(m)]
             if undead:
                 fled = 0
@@ -1473,11 +1473,11 @@ class MagicMixin(MagicWardsMixin):
                     self.add_message("The wand makes you supernaturally fast!", 'success'))),
                 ('confuse', lambda: (
                     [m.add_effect('confused', 8) for m in self.monsters
-                     if m.alive and (m.x, m.y) in self.visible],
+                     if m.alive and self._in_hero_reach(m)],
                     self.add_message("A wave of confusion erupts!", 'success'))),
                 ('fireball', lambda: (
                     [m.take_damage(self._wand_tier_damage(_rng.randint(8, 20), wand.quiz_tier), 'fire')
-                     for m in self.monsters if m.alive and (m.x, m.y) in self.visible],
+                     for m in self.monsters if m.alive and self._in_hero_reach(m)],
                     self.add_message("A burst of flame erupts from the wand!", 'success'))),
                 ('teleport', lambda: (self._teleport_player(),
                     self.add_message("The wand teleports you randomly!", 'warning'))),
@@ -1485,7 +1485,7 @@ class MagicMixin(MagicWardsMixin):
                     self.add_message("A protective barrier appears!", 'success'))),
                 ('sleep', lambda: (
                     [m.add_effect('sleeping', 8) for m in self.monsters
-                     if m.alive and (m.x, m.y) in self.visible],
+                     if m.alive and self._in_hero_reach(m)],
                     self.add_message("A wave of slumber washes out!", 'success'))),
                 ('invisible', lambda: (self.player.add_effect('invisible', 10),
                     self.add_message("You vanish from sight!", 'success'))),
@@ -1525,6 +1525,16 @@ class MagicMixin(MagicWardsMixin):
             return f"{name} needs a foe beside you: you must lay hands on it."
         return f"Nothing is close enough for {name}: it reaches {quantity(reach, 'tile')}."
 
+    def _in_hero_reach(self, m) -> bool:
+        """A creature a wand, a scroll or a spell's wave can catch: on a tile
+        the hero sees. Swallowed, only the creature round him: nothing
+        outside its gut is in his reach, as nothing outside reaches him
+        (holds.shields, AI-3)."""
+        if (m.x, m.y) not in self.visible:
+            return False
+        import holds
+        return not holds.shields(self.player, m)
+
     def _in_spell_sight(self, m) -> bool:
         """An area spell's victim: alive, on a tile the hero sees, and in a
         clear line from him (any tile of a big one). Sight alone was not
@@ -1532,6 +1542,9 @@ class MagicMixin(MagicWardsMixin):
         tiles through walls, and every area spell struck through them."""
         if not m.alive:
             return False
+        import holds
+        if holds.shields(self.player, m):
+            return False             # swallowed, he reaches only the gut round him (AI-3)
         from combat import _line_of_sight
         from geom import occupied_tiles
         px, py = self.player.x, self.player.y
@@ -2414,7 +2427,7 @@ class MagicMixin(MagicWardsMixin):
                 line = get_line_tiles(px, py, target.x, target.y)
                 line_set = set(line)
                 line_hits = [m for m in self.monsters
-                             if m.alive and (m.x, m.y) in line_set and (m.x, m.y) in self.visible]
+                             if m.alive and (m.x, m.y) in line_set and self._in_hero_reach(m)]
                 seen_hits = [m for m in line_hits if _hero_sees(self, m)]
                 stun_dur = max(1, int(3 * chain_scale))
                 for lm in line_hits:
@@ -3083,7 +3096,7 @@ class MagicMixin(MagicWardsMixin):
             count = 0
             seen = 0
             for m in self.monsters:
-                if m.alive and (m.x, m.y) in self.visible:
+                if m.alive and self._in_hero_reach(m):
                     seen += 1
                     # Counted as they take hold: the mindless are not muddled
                     # (status_immune, Monster.add_effect).
@@ -3103,7 +3116,7 @@ class MagicMixin(MagicWardsMixin):
         elif effect == 'sleep_monsters':
             # Chain ladder (Path A): chain raises duration sharply.
             duration = [3, 6, 10, 16, 25][_tstep]
-            targets = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            targets = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             # Counted as they fall asleep: the dead and the made never sleep
             # (status_immune, Monster.add_effect).
             slept = sum(1 for m in targets if m.add_effect('sleeping', duration))
@@ -3357,14 +3370,14 @@ class MagicMixin(MagicWardsMixin):
             #   T4 (annihilation): half of eligible.
             #   T5 (extinction): every eligible visible non-boss.
             visible = [m for m in self.monsters
-                       if m.alive and (m.x, m.y) in self.visible
+                       if m.alive and self._in_hero_reach(m)
                        and not getattr(m, 'is_boss', False)
                        and not getattr(m, 'is_seal_demon', False)
                        and not _is_big_foe(m)]
             # Immune bosses/huge monsters get an explicit flavor message so
             # the player understands why the scroll didn't kill them.
             immune_present = any(
-                m.alive and (m.x, m.y) in self.visible
+                m.alive and self._in_hero_reach(m)
                 and (getattr(m, 'is_boss', False)
                      or getattr(m, 'is_seal_demon', False)
                      or _is_big_foe(m))
@@ -3435,7 +3448,7 @@ class MagicMixin(MagicWardsMixin):
             # The earth takes a share of each creature's own health, by the
             # scroll's tier (EARTH_SHARE), a little more for a sharp mind.
             _earth_share = EARTH_SHARE[_tstep] * self._int_share_factor()
-            victims = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            victims = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             for m in victims:
                 m.take_damage(_wound(_earth_share, m.max_hp, _is_big_foe(m)))
                 if not m.alive:
@@ -3529,7 +3542,7 @@ class MagicMixin(MagicWardsMixin):
             # T1: 25% of most-common kind. T2: 50%. T3: 100% of one kind
             # (old behavior). T4: 100% of top 2 kinds. T5: 100% of all
             # eligible kinds.
-            visible = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            visible = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             if not visible:
                 self.add_message("No creatures are visible to target.", 'info')
             else:

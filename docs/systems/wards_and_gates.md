@@ -29,7 +29,9 @@ monster families (`family_lore.family_of`) off. `holds`:
   memory is per rite, so a ward read again is a new one). A named foe (boss,
   mini-boss, seal demon) is too strong: its first blow lands at half and the ward
   breaks against it.
-* `riders`: the family's blows carry none of the listed riders (the Psylli).
+* `riders`: the family's blows carry none of the listed riders (the Psylli). The
+  rider `held` is the family's holds (`src/holds.py`): no coil, gut or drag
+  takes the hero, and a ward read while held lets him go (`holds.ward_line`).
 * `sight`: the family cannot notice the hero (`senses._hidden`); striking any one
   ends it for all (`breaks: all`: Hoichi's ears). A named foe is not fooled.
 * `damage`: the family's damage times `mult`, named foes too (Saint Martha).
@@ -52,7 +54,13 @@ A blessed scroll holds half again as long, a cursed one half.
 |---|---|---|
 | `missile_ward` (Arrow-Ward) | Scroll of greater protection (Psalm 91, 30 turns) | every missile fails, seen or unseen |
 | `stayed_spear` | Galdr of the Stayed Spear (T2 spell) | missiles from a foe the hero can see fail |
-| `veiled` (Mist-Veiled) | Mist of Manannan (T4 spell) | no foe farther than 2 tiles sees him (`senses.sees`), shoots him, casts at him or meets his eyes |
+| `veiled` (Mist-Veiled) | Mist of Manannan (T4 spell) | no foe farther than 2 tiles sees him (`senses.sees`), shoots him, casts at him or meets his eyes (a Caster's Book curse, dispel or darkness too: `caster_ai.warded` asks `wards.blow_gate`) |
+| `all_round_ward` | Scroll of protection (the Breastplate, 20 turns) | a pack round him gains nothing: no swarm bonus, no hamstring (`packs.py`) |
+| `sanctuary` | Sanctuary (T1 spell) | ordinary foes will not strike or cast at him (`caster_ai.warded`); ends when the hero strikes, zaps or casts at a foe, or does anything to a creature with an area spell, a scroll or a wand (`_mm_acting`: hurt it, laid a status on it); a foe he hurt in the last 20 turns is not held back |
+| `styx_dipped` | Water of the Styx (T5 potion, 6 turns) | no blow, bite or claw wounds him; an unseen blow lands at half (the heel) |
+| `free_action` (Loosed) | Galdr of Loosing (T1 spell) | immobilized, impaled and strangling cannot take hold; no hold takes him (`holds.loosed_line`); a monster's pull fails |
+| `wakeful` | Goatherd's Coffee (T1 potion) | sleep cannot take hold (paralysis still can) |
+| `clear_sight` | Moly (T3 potion, with `confuse_immune`) | hallucination and charm cannot take hold |
 
 A **missile** (`wards.is_missile`) is a physical thing shot or thrown: an arrow,
 a stone, a spear, a dart, a hurled boulder (delivery `ranged`, and a physical
@@ -60,12 +68,6 @@ damage type or a name in `missile_words`). A bolt of fire, a death ray or a
 curse is a **cast** (`wards.is_cast`: any other `ranged` attack except a spit,
 a spray or a swoop, `not_cast_words`), whatever its damage type: the arrow-wards
 do not stop it, Silence does.
-| `all_round_ward` | Scroll of protection (the Breastplate, 20 turns) | a pack round him gains nothing: no swarm bonus, no hamstring (`packs.py`) |
-| `sanctuary` | Sanctuary (T1 spell) | ordinary foes will not strike; ends when the hero strikes, zaps or casts at a foe, or does anything to a creature with an area spell, a scroll or a wand (`_mm_acting`: hurt it, laid a status on it); a foe he hurt in the last 20 turns is not held back |
-| `styx_dipped` | Water of the Styx (T5 potion, 6 turns) | no blow, bite or claw wounds him; an unseen blow lands at half (the heel) |
-| `free_action` (Loosed) | Galdr of Loosing (T1 spell) | immobilized, impaled and strangling cannot take hold; a monster's pull fails |
-| `wakeful` | Goatherd's Coffee (T1 potion) | sleep cannot take hold (paralysis still can) |
-| `clear_sight` | Moly (T3 potion, with `confuse_immune`) | hallucination and charm cannot take hold |
 
 The four warding rites keep their Shielded and add what their own story names
 (`ward_also` in `data/items/scroll.json`; a cursed scroll gives the Shielded only):

@@ -1728,7 +1728,7 @@ class MenuMixin:
             from floor_curve import power_share as _power_share, wound as _wound
             # The scream takes a share of each creature's own health.
             _share = _power_share(_es_roll('4d8')) * self._int_share_factor()
-            visible = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            visible = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             kills = 0
             for m in visible:
                 m.take_damage(_wound(_share, m.max_hp, m._is_named_foe()))

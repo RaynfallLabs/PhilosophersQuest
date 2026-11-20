@@ -283,8 +283,9 @@ def on_effect(m, name: str) -> None:
 
 
 # Whose blow it is, told by the game (LorePowersMixin: the Game's
-# `_damage_by`): 'hero', 'pet', 'escort', 'monster' or 'hazard'. None (the
-# simulator, a test) is the hero's.
+# `_damage_by`): 'hero', 'pet', 'escort', 'monster', 'hazard', 'throes' (a
+# death-throes blast) or 'status' (what a wound's last tick sets off). None
+# (the simulator, a test) is the hero's.
 BLAME = None
 
 

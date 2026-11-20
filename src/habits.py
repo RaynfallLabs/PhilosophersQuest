@@ -95,9 +95,18 @@ def note(dungeon, habit: str, seen_by, turn: int) -> list:
 
 def _shares_with(m, o) -> bool:
     """``o`` has told ``m`` what it saw: the same war-band or pack, both
-    alive and awake, within shout reach."""
+    alive and awake, within shout reach, and ``o`` with a voice to tell it
+    in. A silenced witness has none; a babbled one speaks a tongue its own
+    no longer understand, and a babbled listener understands no one
+    (attack_gates.py: Tacita's Seal, the Confusion of Tongues)."""
     if o is m or not getattr(o, 'alive', False) or not _awake(o) or not _awake(m):
         return False
+    try:
+        import attack_gates
+        if attack_gates.has(o, 'silenced') or attack_gates.babbled(o) or attack_gates.babbled(m):
+            return False
+    except ImportError:
+        pass
     dm, do = m.__dict__, o.__dict__
     same = ((dm.get('_band') and dm.get('_band') == do.get('_band'))
             or (dm.get('_pack') and dm.get('_pack') == do.get('_pack')))

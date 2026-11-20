@@ -115,12 +115,18 @@ class BehaviourMixin:
         if self.__dict__.get('_throes_running'):
             return
         self._throes_running = True
+        # A blast is no one's blow (`_damage_by`): not the hero's, whoever
+        # struck the one that burst, so no ward or sanctuary ends for it, no
+        # peace breaks, no habit is taught and no damage badge counts it.
+        by = getattr(self, '_damage_by', 'hero')
+        self._damage_by = 'throes'
         try:
             while queue:
                 self._ai_burst(queue.pop(0))
         finally:
             self._throes_running = False
             self._throes_queue = []
+            self._damage_by = by
 
     def _ai_burst(self, m) -> None:
         import death_throes

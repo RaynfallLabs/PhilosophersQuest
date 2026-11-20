@@ -312,7 +312,10 @@ def rider_line(player, m, effect: str):
             noun = _EFFECT_NOUN.get(effect, effect.replace('_', ' '))
         except Exception:
             noun = effect.replace('_', ' ')
-        return _fill(m, w.get('rider', ''), noun=noun)
+        # A rider with a line of its own (the Psylli's for a hold: 'held',
+        # src/holds.py), else the ward's one rider line.
+        text = (w.get('rider_lines') or {}).get(effect) or w.get('rider', '')
+        return _fill(m, text, noun=noun)
     return None
 
 

@@ -24,7 +24,9 @@ hold of him:
   flask, a pet's bite) that takes ``break_share`` of the holder's health
   between two of its turns breaks the coil or cuts him out; the struggle;
   the holder dying, sleeping, held, frightened or broken; Loosed
-  (free_action: the Galdr of Loosing) and the Coif of Beowulf; and at the
+  (free_action: the Galdr of Loosing), the Coif of Beowulf and a family
+  ward against its holds (the Psylli's charm against a serpent: no hold
+  takes him, and one read while held lets him go); and at the
   last the ``held`` status running out (max_turns, at most 4). After any of
   them he is Recovering (control_immune, GRACE_TURNS): no hold at once again.
 * A floor change, a teleport, a shove or a pull that parts them ends it.
@@ -144,6 +146,19 @@ def loosed_line(player) -> str:
     return ''
 
 
+def ward_line(player, m) -> str:
+    """A family ward that keeps ``m``'s holds off the hero (the Psylli's
+    against a serpent: wards.rider_line for the rider 'held'), its line;
+    else ''."""
+    if m is None:
+        return ''
+    try:
+        import wards
+        return wards.rider_line(player, m, STATUS) or ''
+    except Exception:
+        return ''
+
+
 # ---------------------------------------------------------------------------
 # Taking hold (ai_blow.after_blow: after the blow landed)
 # ---------------------------------------------------------------------------
@@ -166,6 +181,9 @@ def start(m, player, atk, spec, rng=random) -> str:
     why = loosed_line(player)
     if why:
         return _line('loosed_' + why, m, hk)
+    warded = ward_line(player, m)
+    if warded:
+        return warded                      # a family ward keeps its holds off (the Psylli)
     if int(getattr(player, 'status_effects', {}).get('control_immune', 0) or 0) > 0:
         return ''                          # steadying after a hold: it finds no grip
     from status_effects import apply_debuff_with_save
@@ -261,6 +279,8 @@ def validate(player, monsters) -> str:
     why = loosed_line(player)
     if why:
         return release(player, m, why)
+    if ward_line(player, m):
+        return release(player, m, 'warded')    # a ward read while held (the Psylli)
     why = broken_reason(m, player)
     if why:
         return release(player, m, why)

@@ -42,6 +42,11 @@ at a hero who had just drunk a potion against it. Now:
   every spell, as for every attack); a confused one forgets its book; a
   blinded one can still ward and mend itself but aims nothing; out of sight
   it casts nothing at the hero.
+* What it casts at the hero (a curse, a dispel, darkness) meets his wards
+  as a ranged attack does (wards.blow_gate, asked by warded()): no ordinary
+  foe casts at a hero in Sanctuary, and none farther than the Mist of
+  Manannan reaches casts at a veiled one. A chant drawn up before the ward
+  rose is let go when it would fire.
 
 Named foes keep their own fights (their bosses' code is untouched); the
 allied, the encounter people, the unicorn, Death and the stalker never cast
@@ -293,6 +298,8 @@ def usable(m, s: dict, ctx: Context) -> bool:
         return False                    # it cannot aim at what it cannot see
     if not can_target(m, p, ctx.dungeon, _reach(s)):
         return False
+    if kind in ('control', 'dispel', 'darkness') and warded(m, p, s):
+        return False                    # his wards keep it off him (wards.blow_gate)
     if kind == 'control':
         eff = str(s.get('effect') or '')
         if not eff:
@@ -308,6 +315,27 @@ def usable(m, s: dict, ctx: Context) -> bool:
     if kind == 'hurt':
         return own_attack(m, s.get('attack')) is not None
     return False
+
+
+def warded(m, player, s: dict) -> bool:
+    """The hero's wards keep this spell off him: asked of wards.blow_gate
+    exactly as a ranged attack is (Sanctuary, the Mist past its reach, the
+    family wards...). A spoken spell cast at him is a spell sent from afar
+    (delivery 'ranged'); a gaze is a gaze. Only a question: the line the
+    gate would say waits for the blow that meets it."""
+    import wards
+    atk = dict(spell_attack(m, s))
+    if atk.get('delivery') not in ('gaze', 'ranged'):
+        atk['delivery'], atk['ranged'] = 'ranged', True
+    d = m.__dict__
+    had, said = '_sanct_said' in d, d.get('_sanct_said')
+    try:
+        return wards.blow_gate(player, m, atk) is not None
+    finally:
+        if had:
+            d['_sanct_said'] = said
+        else:
+            d.pop('_sanct_said', None)
 
 
 def choose(m, ctx: Context):

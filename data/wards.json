@@ -1,5 +1,5 @@
 {
-  "_doc": "Wards (src/wards.py) and monster gates (src/attack_gates.py), MONSTERS AND MAGIC 2026-11-19. A ward is a hero status: 'family' wards keep one family off (holds: melee = no blow, bite, touch, grapple, sting or trample from it; riders = its blows carry none of the listed riders; sight = it cannot notice the hero; damage = its damage times mult). 'breaks': creature = striking one of the family ends the ward against that one; all = striking any one ends it for all; never. A named foe (boss, mini-boss, seal demon) is too strong for a melee ward: its first blow lands at half and the ward breaks against it; a sight ward does not fool it; a damage ward holds against it too. The other wards are the hero's own: missile_ward (every missile fails: an arrow, a stone, a spear, a thrown thing; never a spell), stayed_spear (missiles from foes he can see fail), veiled (no foe farther than veil_reach sees him or shoots him), all_round_ward (a pack round him gains nothing), sanctuary (ordinary foes hold off until he strikes; one he hurt in the last sanctuary_memory turns does not), styx_dipped (no blow, bite or claw wounds him; an unseen one lands at half).",
+  "_doc": "Wards (src/wards.py) and monster gates (src/attack_gates.py), MONSTERS AND MAGIC 2026-11-19. A ward is a hero status: 'family' wards keep one family off (holds: melee = no blow, bite, touch, grapple, sting or trample from it; riders = its blows carry none of the listed riders, 'held' its holds too (src/holds.py; a rider's own line in rider_lines); sight = it cannot notice the hero; damage = its damage times mult). 'breaks': creature = striking one of the family ends the ward against that one; all = striking any one ends it for all; never. A named foe (boss, mini-boss, seal demon) is too strong for a melee ward: its first blow lands at half and the ward breaks against it; a sight ward does not fool it; a damage ward holds against it too. The other wards are the hero's own: missile_ward (every missile fails: an arrow, a stone, a spear, a thrown thing; never a spell), stayed_spear (missiles from foes he can see fail), veiled (no foe farther than veil_reach sees him or shoots him), all_round_ward (a pack round him gains nothing), sanctuary (ordinary foes hold off until he strikes; one he hurt in the last sanctuary_memory turns does not), styx_dipped (no blow, bite or claw wounds him; an unseen one lands at half).",
   "melee_deliveries": [
     "blow",
     "bite",
@@ -71,7 +71,7 @@
         190,
         90
       ],
-      "desc": "A serpent's bite cannot poison you, and its coils cannot hold you",
+      "desc": "A serpent's bite cannot poison you, and no serpent can hold you",
       "families": [
         "serpents"
       ],
@@ -81,10 +81,14 @@
       "riders": [
         "poisoned",
         "immobilized",
-        "paralyzed"
+        "paralyzed",
+        "held"
       ],
       "breaks": "never",
       "rider": "{The}'s bite is only a bite to you: the Psylli's charm keeps its {noun} out.",
+      "rider_lines": {
+        "held": "{The} cannot get a hold on you: the Psylli's charm slips you free."
+      },
       "expire": "The Psylli's charm fades. A serpent's bite is a serpent's bite again."
     },
     "ward_hoichi": {
