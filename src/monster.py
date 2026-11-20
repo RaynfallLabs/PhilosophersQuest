@@ -1032,6 +1032,8 @@ class Monster:
             duration = _aff.status_weak_duration(duration)
         cur = int(self.status_effects.get(name, 0) or 0)
         self.status_effects[name] = max(cur, int(duration))
+        if self.status_effects[name] > 0:
+            lore_powers.on_effect(self, name)      # the Kappa's dish spills (slice M)
 
     def can_bleed(self) -> bool:
         """It has blood to lose (data/monster_blood.json: a skeleton, a
@@ -1150,6 +1152,10 @@ class Monster:
             self.status_effects.pop('bleeding', None)
         if self.status_effects.get('burning') and self.resists_control('burning'):
             self.status_effects.pop('burning', None)
+        # A stun or a hold written straight into the statuses (an armour's
+        # stagger, a hero's special, a ring's pacifying) spills the Kappa's
+        # dish too (slice M; add_effect and hold say it at once).
+        lore_powers.on_tick(self)
         for name in list(self.status_effects):
             val = self.status_effects[name]
             if val > 0:
@@ -1380,12 +1386,15 @@ class Monster:
             return 0
         if amount > 0:
             self._unhurt_turns = 0           # see _recover_when_left
-            self._struck = True              # a calmed locust remembers (Locust Charm)
-            self.spring()                    # a struck lurker gives itself away
-            if self.__dict__.get('_chanting') and not self.__dict__.get('_dot_tick'):
-                summoning.spoil(self)        # a blow breaks a chant (src/summoning.py)
-            if self.__dict__.get('_casting') and not self.__dict__.get('_dot_tick'):
-                caster_ai.spoil(self)        # and a spell drawn up (src/caster_ai.py, AI-3)
+            # A bleed, a burn or a poison ticking is not a blow: it springs no
+            # lurker, ends no hiding (Gone Again) and breaks no chant or spell.
+            if not self.__dict__.get('_dot_tick'):
+                self._struck = True          # a calmed locust remembers (Locust Charm)
+                self.spring()                # a struck lurker gives itself away
+                if self.__dict__.get('_chanting'):
+                    summoning.spoil(self)    # a blow breaks a chant (src/summoning.py)
+                if self.__dict__.get('_casting'):
+                    caster_ai.spoil(self)    # and a spell drawn up (src/caster_ai.py, AI-3)
             if self.__dict__.pop('_bribed', False):
                 # A bribed monster struck: the deal is off (Gilgamesh's Bribe).
                 self.status_effects.pop('charmed', None)
@@ -2241,6 +2250,10 @@ class Monster:
 
         if not self.alive:
             return False
+        # One that has yielded (src/morale.py) never strikes again, whatever
+        # holds it (a pit, a spear, a web): it keeps out of the way.
+        if self.__dict__.get('_yielded'):
+            return morale.yielded_turn(self, player, dungeon, all_monsters, extra_occupied)
         if tuple(self.footprint) != (1, 1):
             from geom import all_occupied_tiles
             self._turn_occupied = (all_occupied_tiles(all_monsters, exclude=self)

@@ -39,6 +39,30 @@ def _side(m, o, tags) -> bool:
     return bool(tags and set(tags) & set(getattr(o, 'tags', None) or ()))
 
 
+def cry(m, monsters, player, radius: int, rng=random) -> int:
+    """A cry that goes through stone (a death throes' `alarm_radius`: the
+    mandrake's shriek): every creature that can hear within ``radius``
+    tiles is roused to the hero; sleepers wake as to a loud noise (never
+    under the Hand of Glory). Returns how many."""
+    import senses
+    import sleepers
+    n = 0
+    for o in monsters or ():
+        if o is m or not senses._listens(o) or kind_data.named(o):
+            continue
+        d = max(abs(o.x - m.x), abs(o.y - m.y))
+        if d > int(radius) or o.__dict__.get('_tracking'):
+            continue
+        if o.has_effect('sleeping'):
+            if sleepers.factor(player, 'take') <= 0:
+                continue
+            if rng.random() >= senses._wake_p(o, 'alarm', d, int(radius), player):
+                continue
+        senses.rouse(o, player.x, player.y)
+        n += 1
+    return n
+
+
 def shout(m, monsters, player, dungeon, rng=random) -> int:
     """It has just seen the hero for the first time: the alarm, once a
     floor. Returns how many it roused."""

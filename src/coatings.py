@@ -393,8 +393,9 @@ def _counting(item, monster, cnt: dict) -> list:
     grains = _r.randint(400, 900)
     if not monster.has_effect('paralyzed'):
         return [(f"{the_name(monster)} glances at the seed and comes on.", 'warning')]
-    return [(f"{the_name(monster)} drops to its knees and counts the grains: one, two, three... "
-             f"{grains:,} of them.", 'success')]
+    from monster import fill
+    return [(fill(monster, "{The} drops to {his} knees and counts the grains: one, two, three... ")
+             + f"{grains:,} of them.", 'success')]
 
 
 def _effect_words(eff: str) -> str:

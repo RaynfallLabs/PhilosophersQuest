@@ -88,13 +88,45 @@ def step(m, player, monsters, dungeon=None) -> str:
     return 'chant'
 
 
+# Who struck the blow that broke a chant (the line names him): a blast the
+# game sets around (CONTEXT = 'throes'), else the Game's own reader
+# (BehaviourMixin._ai_blow_source: the hero, his pet by name, or another
+# creature or a hazard), else the hero.
+CONTEXT = None
+_READER = None
+
+
+def set_source_reader(fn) -> None:
+    """The Game's (kind, name) reader of whose blow this is (a weak method,
+    so no Game is kept alive by this module)."""
+    global _READER
+    _READER = fn
+
+
+def blow_source(m) -> tuple:
+    if CONTEXT:
+        return CONTEXT, ''
+    fn = _READER() if _READER is not None else None
+    if fn is not None:
+        try:
+            return fn(m)
+        except Exception:
+            pass
+    return 'hero', ''
+
+
 def spoil(m) -> bool:
     """A blow landed on it while it chants: the chant breaks. True if it
-    did. The call is spent, so its timer starts again."""
+    did. The call is spent, so its timer starts again. The line names who
+    broke it: the hero, his pet, a blast, or something else that struck."""
     if not m.__dict__.get('_chanting'):
         return False
     m._chanting = False
     m._summon_turn_counter = 0
     m._wants_summon = False
-    ai_lines.say(m, ai_lines.fill(m, rules().get('spoil_line', '')), '', 'success')
+    who, name = blow_source(m)
+    lines = rules().get('spoil_lines') or {}
+    text = lines.get(who) or lines.get('other', '')
+    colour = 'success' if who in ('hero', 'pet') else 'info'
+    ai_lines.say(m, ai_lines.fill(m, text, pet=name or 'companion'), '', colour)
     return True

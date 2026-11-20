@@ -29,7 +29,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'blinded':            ('Blinded',            ( 80,  80,  80), 'Sight radius 1; quiz timer -30%'),
     'hallucinating':      ('Hallucinating',      (210,  85, 230), 'Reality distorted; quiz timer -20%'),
     'poisoned':           ('Poisoned',           ( 80, 210,  60), 'Losing 2% of max HP per turn'),
-    'diseased':           ('Diseased',           (135, 205,  60), 'Slowly drains STR/CON'),
+    'diseased':           ('Diseased',           (135, 205,  60), 'No rest healing; most heals halved; saps STR/CON'),
     'petrifying':         ('Petrifying',         (205, 205, 130), 'Turning to stone -- find a cure!'),
     'strangulation':      ('Strangled',          (200,  80,  80), 'Losing 4% of max HP per turn'),
     'fumbling':           ('Fumbling',           (220, 170,  80), '20% chance actions fail'),

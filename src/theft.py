@@ -136,7 +136,9 @@ def steal(game, m, kind: str, rng=random) -> str:
             name = game._display_name(it)
         except Exception:
             name = getattr(it, 'name', 'food')
-        return f"{the_name(m)} snatches your {name} and crams it down its needle-thin throat. It is gone."
+        from monster import fill
+        return (fill(m, "{The} snatches your {item} and crams it down {his} needle-thin throat. "
+                        "It is gone.", item=name))
     if snatch:
         # A harpy's snatch (data/packs.json): food from the pack, nothing
         # else, as the harpies seized Phineus's dinner.

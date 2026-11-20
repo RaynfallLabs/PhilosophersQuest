@@ -19800,7 +19800,9 @@
             15
           ],
           "share": 0.05,
-          "line": "The Roc's talons close on you and it lifts you into the dark! It drops you far away."
+          "line": "The Roc's talons close on you and it lifts you into the dark!",
+          "landed": "It drops you far away.",
+          "nowhere": "It finds nowhere to set you down, and you fall where you were."
         }
       },
       {
@@ -44305,7 +44307,10 @@
         "name": "Bronze Gore",
         "damage": "2d8+4",
         "type": "pierce",
-        "delivery": "trample"
+        "delivery": "trample",
+        "shove": {
+          "chance": 0.3
+        }
       },
       {
         "name": "Furnace Breath",
@@ -44915,6 +44920,7 @@
     ],
     "parley": {
       "subject": "grammar",
+      "storm": "Squall Spray",
       "call": "The Blue Men rise to the waist and their chief calls out two lines of verse. Answer him well and they let you pass.",
       "right": "The chief of the Blue Men laughs at your answer, and they sink back into the dark water. They will let you be.",
       "wrong": "Your answer stumbles. The Blue Men howl, and the squall comes down on you!",
@@ -45075,7 +45081,8 @@
       "radius": 2,
       "turns": 3,
       "line": "The Gold-Digging Ant stops to gather up the gold."
-    }
+    },
+    "morale_style": "never"
   },
   "ponaturi": {
     "name": "Ponaturi",
@@ -45146,7 +45153,8 @@
       "attack": "Sea-Spear",
       "range": 1
     },
-    "light_shy": true
+    "light_shy": true,
+    "turns_to_stone_in_light": true
   },
   "taniwha": {
     "name": "Taniwha",
@@ -45222,7 +45230,8 @@
     "opener": {
       "attack": "Gulping Jaws",
       "range": 1
-    }
+    },
+    "morale_style": "never"
   },
   "impundulu": {
     "name": "Impundulu",
@@ -46221,7 +46230,10 @@
         "delivery": "blow",
         "effect": "stunned",
         "effect_chance": 0.3,
-        "effect_duration": 2
+        "effect_duration": 2,
+        "shove": {
+          "chance": 0.3
+        }
       },
       {
         "name": "Hill-Shaking Trample",

@@ -795,8 +795,8 @@
     "keen_sight": "very sharp eyes",
     "truesight": "eyes no magic can fool",
     "blind": "touch alone",
-    "breath": "Breath",
-    "blood_scent": "Blood Scent"
+    "breath": "the breath of the living",
+    "blood_scent": "the smell of blood"
   },
   "scavengers": {
     "_doc": "C3: the things that eat the dead. An idle scavenger (not hunting, not searching, awake) that smells a corpse within 'reach' tiles goes to it and eats it in 'eat_turns' turns, healing 'heal_share' of its health; the corpse is gone, so a harvest is a race. Ghouls ate the dead in the old stories; vermin and oozes eat anything.",

@@ -39,7 +39,7 @@ sys.path.insert(0, str(HERE))
 
 import affinity_pass  # noqa: E402
 from mm_kinds_data import AFFINITY, HARVEST_SHARE, NEW, PEOPLE, SENSE_RANGES, SENSES, SIZES  # noqa: E402
-from mm_kitchen_data import INGREDIENTS, KIN_LINES, RECIPES  # noqa: E402
+from mm_kitchen_data import INGREDIENTS, KIN_LINES, RECIPES, RETIRED_KIN_LINES  # noqa: E402
 
 D = ROOT / 'data'
 ITEMS = D / 'items'
@@ -117,8 +117,9 @@ def upgrade(mons: dict, changed: list) -> None:
     # The roc lifts an elephant and drops it on the rocks (Marco Polo).
     put_atk('roc_adult', 'Talon Crush',
             carry_off={'chance': 0.2, 'tiles': [8, 15], 'share': 0.05,
-                       'line': "The Roc's talons close on you and it lifts you into the dark! "
-                               "It drops you far away."})
+                       'line': "The Roc's talons close on you and it lifts you into the dark!",
+                       'landed': "It drops you far away.",
+                       'nowhere': "It finds nowhere to set you down, and you fall where you were."})
     # The lindworm sheds a skin for each of the ten shifts (Kong Lindorm):
     # twice in a fight it throws off its wounds; its HP is a tenth less to pay
     # for the skins.
@@ -181,7 +182,7 @@ TELLS = {
         'does': "When the body {he} wears falls, the spirit slips into the nearest corpse and gets up "
                 "again.",
         'counter': "Harvest or search the dead lying near the fight before you finish {him}, or "
-                   "bless the ground with holy water and prayer."},
+                   "cast Banishment on {him}: a spirit sent away finds no body."},
     'parley': {
         'sign': "{The} rises from the water and calls out, as if waiting for an answer.",
         'does': "{He} and {his} kin ask a riddle in verse; a good answer lets you pass, and a poor one "
@@ -190,7 +191,8 @@ TELLS = {
     'appeased_by': {
         'sign': "{The} sniffs at your pack with a starving look.",
         'does': "Hunger drives {him}, and a gift of food can turn {him} away.",
-        'counter': "Throw {him} a ration or some plain food: {he} eats it and leaves you be."},
+        'counter': "Set down a ration or some plain food near {him}: {he} eats it and leaves "
+                   "you be."},
     'on_stunned': {
         'sign': "Water slops in a dish on the top of {the}'s head.",
         'does': "{His} strength is in the water on {his} head.",
@@ -227,8 +229,8 @@ TELLS = {
     'steal_offering': {
         'sign': "{The}'s needle-thin throat works as {he} looks at your pack.",
         'does': "{He} snatches food out of your pack and crams it down, and it is gone.",
-        'counter': "Keep your rations few when {he} is near, or give {him} one freely: an offering "
-                   "quiets {him}."},
+        'counter': "Keep your rations few when {he} is near, or set one down for {him} freely: "
+                   "an offering quiets {him}."},
     'fumbling': {
         'sign': "Bad luck hangs round {the} like smoke.",
         'does': "Ill luck clings to whoever {he} touches: for a long while your plans keep going "
@@ -245,8 +247,8 @@ TELLS = {
     'talisman': {
         'sign': "{The} hops stiffly, arms out, a strip of yellow paper fluttering at {his} brow.",
         'does': "{He} finds a living man by his breath.",
-        'counter': "Read any scroll while {he} can see it: the written page stops {him} like a "
-                   "talisman. Standing still holds your breath from {him}."},
+        'counter': "Read any scroll with {him} in your sight: the written page stops {him} like "
+                   "a talisman. Standing still holds your breath from {him}."},
 }
 
 NEW_SENSES = {
@@ -261,7 +263,9 @@ NEW_SENSES = {
                               'seen': "{The} lifts {his} head, tasting the air, and turns toward you.",
                               'unseen': "Somewhere a long tongue flickers, tasting the air."}},
 }
-SENSE_NAMES = {'breath': 'Breath', 'blood_scent': 'Blood Scent'}
+# Phrases, as the others are ("He finds his prey by touch alone and the
+# breath of the living."): never a capital mid-sentence.
+SENSE_NAMES = {'breath': 'the breath of the living', 'blood_scent': 'the smell of blood'}
 SENSES_UPGRADE = {'jiangshi': ['blind', 'breath'], 'komodo_brute': ['blood_scent']}
 
 HINTS = {
@@ -278,6 +282,19 @@ HINTS = {
 
 
 def add_tells(text: str, changed: list) -> str:
+    d = json.loads(text)
+    # A tell already written whose words changed: each string in place (the
+    # file's layout kept).
+    for k, e in TELLS.items():
+        old = d['effects'].get(k)
+        if not old:
+            continue
+        for field in ('sign', 'does', 'counter'):
+            if old.get(field) != e[field]:
+                was = json.dumps(old[field], ensure_ascii=False)
+                assert text.count(was) == 1, ('tells.json', k, field)
+                text = text.replace(was, json.dumps(e[field], ensure_ascii=False))
+                changed.append(f'tell {k}.{field}')
     d = json.loads(text)
     new = [k for k in TELLS if k not in d['effects']]
     if not new:
@@ -355,6 +372,7 @@ def main(argv) -> int:
             changed.append(f'sense {s}')
         if senses['sense_names'].get(s) != SENSE_NAMES[s]:
             senses['sense_names'][s] = SENSE_NAMES[s]
+            changed.append(f'sense name {s}')
     for kid, ss in {**SENSES, **SENSES_UPGRADE}.items():
         if senses['monsters'].get(kid) != ss:
             senses['monsters'][kid] = ss
@@ -389,6 +407,11 @@ def main(argv) -> int:
         if ings.get(item['id']) != item['def']:
             ings[item['id']] = item['def']
             changed.append(f'ingredient {item["id"]}')
+    for iid, line in RETIRED_KIN_LINES.items():
+        desc = ings[iid]['description']
+        if line in desc:
+            ings[iid]['description'] = desc.replace(' ' + line, '').replace(line, '').rstrip()
+            changed.append(f'kin line off {iid}')
     for iid, line in KIN_LINES.items():
         desc = ings[iid]['description']
         if line not in desc:

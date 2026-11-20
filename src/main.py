@@ -109,6 +109,7 @@ from game_songs import SongsMixin
 from game_manifest import ManifestMixin
 from game_horns import HornsMixin
 from game_lore_powers import LorePowersMixin
+import lore_powers as lore_powers_mod     # its BLAME hook (game_lore_powers.py)
 from game_behaviour import BehaviourMixin
 from game_monster_ways import MonsterWaysMixin    # monster behaviour, third wave (AI-3)
 import monster as monster_mod_wards      # its HERO_STRUCK hook (game_wards.py, via MagicMixin)
@@ -755,6 +756,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # turn: a trap on the first step used to find no game to report to.
         self.player._combat_game_ref = self
         monster_mod_wards.HERO_STRUCK = self._ward_hero_struck   # the wards a blow breaks (game_wards.py)
+        lore_powers_mod.BLAME = self._lore_powers_blame          # whose blow breaks a peace (slice M)
         # One-cosmetic-per-item: give the player the appearance-stamp hook so
         # accessories entering the pack from any source adopt this run's looks.
         self.player._appearance_stamp = self.apply_appearance
@@ -913,6 +915,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player        = state['player']
         self.player._combat_game_ref = self     # dropped on save (Player.__getstate__)
         monster_mod_wards.HERO_STRUCK = self._ward_hero_struck   # the wards a blow breaks (game_wards.py)
+        lore_powers_mod.BLAME = self._lore_powers_blame          # whose blow breaks a peace (slice M)
+        self.player.__dict__.pop('_lp_carry_off', None)          # (an old save's Roc lift: never fired late)
         # One-cosmetic-per-item: re-attach the appearance-stamp hook (dropped on
         # pickle). _migrate_buc_all (below) handles deleted-id remap + stamping
         # of already-owned/ground items.
@@ -1928,6 +1932,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # A hit noted on the floor being left is not said on the next one.
         import affinity as _affinity
         _affinity.drain()
+        # Nor is a Roc's lift ever carried down a stair (slice M: it is set
+        # down in the turn of the blow; this is the floor's own guard).
+        self.player.__dict__.pop('_lp_carry_off', None)
         # Death comes for the Stone the moment it leaves floor 100, by any
         # route: the stair, a potion of gain level, the Elixir, Hermes'
         # psychopomp step. Only the stair used to set him loose, so a potion
@@ -9455,6 +9462,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         item = dropped   # operate on the detached / ground object below
         item.x, item.y = self.player.x, self.player.y
+        if isinstance(item, Food):
+            item._offered = True     # set down by the hero: a gift a Kappa or a Preta takes (slice M)
         self.ground_items.append(item)
         _dc = getattr(item, 'count', 1)
         if _dc > 1:

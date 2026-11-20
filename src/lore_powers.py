@@ -146,6 +146,13 @@ def countdown_turn(m, player, dungeon):
         return None
     d = m.__dict__
     n = int(d.get('_lp_barks', 0) or 0)
+    # It barks only at a hero it has noticed (src/senses.py: its sight, its
+    # nose; the simulator's fight is always engaged). Silenced, it has no
+    # voice to bark with: the count holds where it was, and it hunts.
+    if dungeon is not None and not d.get('_tracking'):
+        return None
+    if m.has_effect('silenced'):
+        return None
     if not _in_sight(m, player, dungeon):
         d.pop('_lp_barked', None)            # out of sight: the next sight barks again
         if n:
@@ -241,10 +248,14 @@ def after_blow(m, player, atk: dict, actual: int) -> str:
             pass
         if random.random() < chance:
             lo, hi = (co.get('tiles') or (8, 15))[:2]
-            player.__dict__['_lp_carry_off'] = (int(lo), int(hi))
+            # The game sets him down at once, right after this blow's line
+            # (LorePowersMixin._lore_powers_lift): never left for a later turn.
+            player.__dict__['_lp_carry_off'] = {'tiles': (int(lo), int(hi)),
+                                                'landed': co.get('landed', ''),
+                                                'nowhere': co.get('nowhere', '')}
             hurt = max(1, int(round(player.max_hp * float(co.get('share', 0.05) or 0.05))))
             player.take_damage(hurt, 'blunt')
-            out += ' ' + _fill(m, co.get('line') or "{The} lifts you and drops you far away!")
+            out += ' ' + _fill(m, co.get('line') or "{The} seizes you and lifts you into the air!")
     if (atk.get('pulls') and max(abs(m.x - player.x), abs(m.y - player.y)) > 1
             and not _loosed(player)):
         player._pending_pull_toward = (m.x, m.y)
@@ -271,16 +282,50 @@ def on_effect(m, name: str) -> None:
             say(_fill(m, os_.get('line') or "{The} is weakened!"), 'success', m=m)
 
 
+# Whose blow it is, told by the game (LorePowersMixin: the Game's
+# `_damage_by`): 'hero', 'pet', 'escort', 'monster' or 'hazard'. None (the
+# simulator, a test) is the hero's.
+BLAME = None
+
+
+def _striker() -> str:
+    try:
+        return str(BLAME()) if BLAME is not None else 'hero'
+    except Exception:
+        return 'hero'
+
+
+def on_tick(m) -> None:
+    """Each of its turns (Monster.tick_effects): a stun or a hold on it now,
+    however it was laid, spills the Kappa's dish (add_effect and hold say so
+    at once; this catches one written straight into its statuses)."""
+    if not ENABLED or not spec(m, 'on_stunned'):
+        return
+    st = getattr(m, 'status_effects', None) or {}
+    for name in ('stunned', 'paralyzed'):
+        if int(st.get(name, 0) or 0) > 0:
+            on_effect(m, name)
+            return
+
+
 def after_damage(m, actual: int) -> None:
     """The creature took a blow: a calm one is calm no more, and a Lindworm
-    sheds a skin at its marks."""
+    sheds a skin at its marks.
+
+    Only the hero's own blow breaks a peace or a parley, or his pet's (and
+    then the line says so). A bleed, a burn or a poison ticking is no blow
+    (``_dot_tick``, set by Monster.tick_effects), nor is a fire vent, a
+    monster's blow or an escort's."""
     if actual <= 0 or not ENABLED:
         return
     d = m.__dict__
-    if d.pop('_lp_calm', None):
-        say(_fill(m, "{The} turns on you: the peace is broken."), 'warning', m=m)
-    if d.get('_lp_parley') == 'waiting':
-        d['_lp_parley'] = 'angry'
+    by = None if d.get('_dot_tick') else _striker()
+    if by in ('hero', 'pet'):
+        if d.pop('_lp_calm', None):
+            say(_fill(m, "{The} turns on you: the peace is broken." if by == 'hero'
+                      else "{The} turns on your companion: the peace is broken."), 'warning', m=m)
+        if d.get('_lp_parley') in ('waiting', 'calm'):
+            d['_lp_parley'] = 'angry'
     ss = spec(m, 'sheds_skin')
     if not ss or m.hp <= 0 or not getattr(m, 'alive', True):
         return
@@ -333,6 +378,8 @@ def after_struck(player, m, weapon, chain: int, actual: int) -> None:
         lost = wear_down(weapon)
     except Exception:
         lost = False
+    if not lost:
+        return                      # worn as far as it goes: nothing left to eat
     d = m.__dict__
     base = int(d.get('_lp_base_hp', 0) or m.max_hp)
     d['_lp_base_hp'] = base
@@ -347,7 +394,7 @@ def after_struck(player, m, weapon, chain: int, actual: int) -> None:
     except Exception:
         wname = str(getattr(weapon, 'name', 'blade'))
     line = str(me.get('line') or "{The} gnaws your {weapon}.").replace('{weapon}', wname)
-    say(_fill(m, line), 'warning', m=m, unseen=line.split(':')[0] if lost else None)
+    say(_fill(m, line), 'warning', m=m, unseen=line.split(':')[0])
 
 
 # ---------------------------------------------------------------------------

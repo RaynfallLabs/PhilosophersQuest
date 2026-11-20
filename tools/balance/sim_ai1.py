@@ -238,7 +238,8 @@ def prayed(run, chain: int) -> None:
     if chain >= 4:
         if run.knobs.get('ai_drain', 1):
             life_drain.restore(run.p)
-        run.p.status_effects.pop('diseased', None)
+        if run.knobs.get('ai_rot', 1):             # (off: the old prayer, the clean ablation)
+            run.p.status_effects.pop('diseased', None)
 
 
 def _named(m) -> bool:

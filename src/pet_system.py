@@ -1061,6 +1061,10 @@ class Pet:
             # (bug bash 5 PET-04).
             if not getattr(m, '_aware', False) and getattr(m, 'ai_pattern', '') in ('ambush', 'mimic'):
                 continue
+            # Nor one that has thrown down its weapon and begs (morale.py):
+            # the hero spares it or strikes it himself.
+            if getattr(m, '__dict__', {}).get('_yielded'):
+                continue
             # to the nearest tile it covers: a pet south or east of a
             # two-by-two monster measured to its far corner and never attacked
             from geom import chebyshev_distance
