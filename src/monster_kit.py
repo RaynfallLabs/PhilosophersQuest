@@ -20,6 +20,8 @@ onto a floor is covered, and a summoned or split one carries nothing).
   the guards), the flask's own fire, and its burning.
 * What it used is gone; what it did not use falls where it dies (a real
   item, unidentified as any find is). A creature banished takes it home.
+  What it carried is its find: one that carried a kit makes no random
+  item roll when it dies (kit_is_its_loot).
 
 Never drinks: a stolen artifact or quest piece (theft never takes those),
 an unknown or harmful potion of the hero's. Named foes and the stalker
@@ -109,7 +111,16 @@ def kit(m, rng=random) -> tuple:
                 if rng.random() < float(e.get('chance', 1.0) or 0.0):
                     got.append(str(e['item']))
     m._kit = tuple(got)
+    m._kit_had = bool(got)
     return m._kit
+
+
+def kit_is_its_loot(m) -> None:
+    """It died: if it carried a kit, what it carried was its find (its
+    random item roll is spent on it, so a kit adds no loot it did not
+    carry). The treasure dict is a new one: copies share none."""
+    if m.__dict__.get('_kit_had'):
+        m.treasure = dict(getattr(m, 'treasure', None) or {}, item_chance=0.0)
 
 
 def _spend(m, item_id: str) -> None:

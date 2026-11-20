@@ -335,6 +335,20 @@ def test_a_battle_mage_does_not_cast_fire_at_a_hero_who_wards_off_fire():
     assert caster_ai.pick_attack(m, hero, m._distance_attacks())['name'] == 'Fire Bolt'
 
 
+def test_a_lich_tries_its_fear_then_blasts_a_hero_who_will_not_fear():
+    hero = Hero(9, 5)
+    m = make('lich', 5, 5)
+    cands = m._distance_attacks()
+    assert caster_ai.pick_attack(m, hero, cands)['name'] == 'Fear Gaze'
+    hero.status_effects = {'control_immune': 3}               # he stood it: steadying
+    assert caster_ai.pick_attack(m, hero, cands)['name'] == 'Cold Bolt'
+    hero.status_effects = {'magic_resist': 20}                # a resistance keeps the dread off
+    assert caster_ai.pick_attack(m, hero, cands)['name'] == 'Cold Bolt'
+    hero.status_effects = {}
+    hero.hp = 60                                              # badly hurt: finish him
+    assert caster_ai.pick_attack(m, hero, cands)['name'] == 'Cold Bolt'
+
+
 def test_a_blinded_caster_wards_but_aims_nothing():
     d = open_room()
     hero = Hero(9, 5)
@@ -580,6 +594,25 @@ def test_a_hold_survives_a_save_and_lets_go_when_the_holder_is_gone(monkeypatch)
     h3, _ms = pickle.loads(pickle.dumps((hero, [m])))
     holds.validate(h3, [])                                    # a new floor's monsters
     assert not holds.is_held(h3)
+
+
+def test_the_same_seed_gives_the_same_holds_and_squeezes():
+    def run():
+        random.seed(21)
+        d = open_room()
+        hero = Hero(6, 5, hp=5000)
+        m = _python()
+        out = []
+        for _ in range(30):
+            holds.validate(hero, [m])
+            if m.take_turn(hero, d, [m]):
+                dmg, line = m.attack(hero)
+                out.append((dmg, line[:30], holds.is_held(hero)))
+            hero.status_effects = {k: v - 1 for k, v in hero.status_effects.items() if v - 1 > 0}
+            m.tick_effects()
+        return out
+    a = run()
+    assert a == run() and any(held for _d, _l, held in a)
 
 
 def test_an_old_save_has_no_hold_and_needs_none():

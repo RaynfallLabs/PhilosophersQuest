@@ -116,6 +116,8 @@ def test_a_swallowed_hero_cannot_be_struck_by_the_others():
     cube, gob = g.monsters
     _hold(g, cube)
     assert g._ways_shield(gob) and not g._ways_shield(cube)
+    g._target_candidates = [cube, gob]
+    assert g._target_candidates == [cube]                 # from inside, only its gut to aim at
 
 
 def test_the_holders_death_frees_the_hero():
@@ -168,11 +170,17 @@ def test_a_dying_captain_drops_the_potion_he_never_drank():
     g = _scene(('bandit_captain', 1, 0))
     m = g.monsters[0]
     m._kit = ('potion_of_healing',)
-    m.treasure = {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1}
+    m._kit_had = True
+    m.treasure = {'gold': [0, 0], 'item_chance': 1.0, 'item_tier': 1}
+    before = len(g.ground_items)
     m.hp = 0
     m.alive = False
     g._on_monster_killed(m)
-    assert any(getattr(i, 'id', '') == 'potion_of_healing' for i in g.ground_items)
+    new = g.ground_items[before:]
+    assert any(getattr(i, 'id', '') == 'potion_of_healing' for i in new)
+    # Its kit was its find: no random item besides (and no corpse counted here).
+    assert [i for i in new if getattr(i, 'id', '') not in ('potion_of_healing',)
+            and type(i).__name__ not in ('Corpse', 'GoldPile')] == []
 
 
 def test_a_banished_captain_takes_his_potion_home():

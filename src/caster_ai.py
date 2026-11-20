@@ -325,20 +325,50 @@ def _resisted(player, dtype: str) -> bool:
     return any(has(s) for s in _RESISTED_BY.get(str(dtype or ''), ()))
 
 
-def attack_score(m, player, atk: dict) -> float:
-    """How well ``atk`` serves now: its book's weight for it, its rider
-    when the hero is free of it, nothing much for a type he wards off."""
+def rider_wasted(player, eff: str) -> bool:
+    """The curse a bolt carries would not take now: it is on him already,
+    he is steadying after a hold, Clear-Headed after a confusion, or a
+    resistance of his keeps it off (status_effects._RESIST_BLOCKS)."""
+    se = getattr(player, 'status_effects', None) or {}
+    if int(se.get(eff, 0) or 0) != 0:
+        return True
+    if eff in _HARD and int(se.get('control_immune', 0) or 0) != 0:
+        return True
+    try:
+        import status_effects
+        for resist, blocked in status_effects._RESIST_BLOCKS.items():
+            if eff in blocked and int(se.get(resist, 0) or 0) != 0:
+                return True
+    except (ImportError, AttributeError):
+        pass
+    return False
+
+
+def _avg(atk) -> float:
+    try:
+        import re
+        mt = re.fullmatch(r'(\d*)d(\d+)([+-]\d+)?', str(atk.get('damage', '1d4')).replace(' ', ''))
+        n, s, k = int(mt.group(1) or 1), int(mt.group(2)), int(mt.group(3) or 0)
+        return n * (s + 1) / 2 + k
+    except (AttributeError, ValueError, TypeError):
+        return 1.0
+
+
+def attack_score(m, player, atk: dict, strongest: float = 0.0) -> float:
+    """How well ``atk`` serves now: its book's weight for it; its curse
+    when that would take (+0.5); its weight of blow (the strongest +0.5,
+    twice that on a hero already badly hurt: finish him); nothing for a
+    type he wards off (-3)."""
     sc = 1.0
     for s in book(m):
         if s.get('kind') == 'hurt' and s.get('attack') == atk.get('name'):
             sc = float(s.get('weight', 1) or 1)
     eff = atk.get('effect')
-    if eff:
-        se = getattr(player, 'status_effects', None) or {}
-        if int(se.get(eff, 0) or 0) == 0:
-            sc += 1.0                    # the curse is not on him yet
-        else:
-            sc -= 0.5                    # it is: the bolt's rider is wasted
+    if eff and not rider_wasted(player, str(eff)):
+        sc += 0.5
+    if strongest > 0:
+        hurt = getattr(player, 'hp', 1) < 0.5 * max(1, getattr(player, 'max_hp', 1))
+        sc += (1.0 if hurt else 0.5) * _avg(atk) / strongest
     if _resisted(player, atk.get('type', '')):
         sc -= 3.0
     return sc
@@ -352,9 +382,10 @@ def pick_attack(m, player, candidates):
         return None
     if len(cands) == 1:
         return cands[0]
+    strongest = max(_avg(a) for a in cands) or 1.0
     best = None
     for i, a in enumerate(cands):
-        key = (attack_score(m, player, a), -i)
+        key = (attack_score(m, player, a, strongest), -i)
         if best is None or key > best[0]:
             best = (key, a)
     return best[1]
@@ -480,7 +511,8 @@ def _fire(m, s: dict, ctx: Context, extra_occupied=None) -> bool:
             except (ImportError, AttributeError):
                 pass
             words = (rules().get('buff_words') or {}).get(buff, buff.replace('_', ' '))
-            _say(m, _line('cast', m, s, buff=words), '', 'danger')
+            unseen = str((rules().get('unseen') or {}).get('dispel', '')).replace('{buff}', words)
+            ai_lines.say(m, _line('cast', m, s, buff=words), unseen, 'danger')
         return False
     if kind == 'darkness':
         import light_shy
@@ -490,7 +522,8 @@ def _fire(m, s: dict, ctx: Context, extra_occupied=None) -> bool:
     if kind == 'control':
         atk = spell_attack(m, s)
         text = _control(m, p, atk)
-        _say(m, (_line('cast', m, s) + ' ' + text).strip(), 'cast', 'danger')
+        unseen = (str((rules().get('unseen') or {}).get('curse', '')) + ' ' + text).strip()
+        ai_lines.say(m, (_line('cast', m, s) + ' ' + text).strip(), unseen, 'danger')
         return False
     return False
 

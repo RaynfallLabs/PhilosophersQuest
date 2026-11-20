@@ -126,6 +126,8 @@ Zero / near-zero player actions. Save NEGATES; cannot be re-applied while active
 
 **v2.18.0 note:** `petrifying` was moved into HARD_CONTROL. Its `val==1` tick fires the `_petrify_death` signal, so a half-duration save-halve could still kill. HARD_CONTROL semantics make a successful CON save negate it outright.
 
+**AI-3 note (2026-11-20):** `held` (Held Fast, `src/holds.py`: a coil, a gullet, a drowning grip) joins HARD_CONTROL at the end of the module (with `feared`, added in 2026-10): a DEX save slips it, `CONTROL_CAP['held']` is 4, the grace follows it. It refuses walking only (a step is a struggle; a blow on the holder is the way out), so `main._do_move` handles it after `immobilized`. It is not in DEBUFFS: no cure lifts a grip (the holder's death, a hard blow, the struggle, Loosed, the Coif of Beowulf or its running out do). The caster's ward on a monster shows as `spell_ward` ("Warded").
+
 **v2.18.0 note:** `stunned`'s *gameplay* is soft (player still acts, with a -25% quiz timer + stumble), but it's deliberately kept in HARD_CONTROL so a successful save fully negates it and cannot be re-applied in the grace window. Removing it would allow fast monsters to stunlock the player to death. The SYSTEMS_AUDIT.md §9 P2 flagging on `stunned` is a known-but-chosen tradeoff.
 
 ### `SOFT_CONTROL` (frozenset)

@@ -231,6 +231,7 @@ def kit_loot(run, m) -> None:
     """A foe that died: what it did not use of its kit is the hero's."""
     if not run.knobs.get('ai3_kit', 1) or m.alive:
         return
+    monster_kit.kit_is_its_loot(m)           # before _drop_loot: no second roll
     for it in monster_kit.leftovers(m):
         _fs(run, 'ai3_kit_looted')
         run.consider(it)

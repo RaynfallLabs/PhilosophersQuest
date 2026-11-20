@@ -3175,8 +3175,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     @_target_candidates.setter
     def _target_candidates(self, value):
         player = getattr(self, 'player', None)
+        import holds as _holds              # inside a creature, it is all he can reach (AI-3)
         self.__dict__['_target_candidates_list'] = [
-            m for m in (value or []) if not unseen.concealed(m, player)]
+            m for m in (value or []) if not unseen.concealed(m, player)
+            and not (player is not None and _holds.shields(player, m))]
 
     def _feel_something_there(self, m) -> bool:
         """Walking into an invisible creature the hero cannot see: he feels

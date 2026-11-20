@@ -128,10 +128,11 @@ class MonsterWaysMixin:
             line = holds.release(self.player, m, 'dead')
             if line:
                 self.add_message(line, 'success')
+        import monster_kit
+        monster_kit.kit_is_its_loot(m)          # its kit was its find (no second roll)
         if banished:
             m._kit = ()
             return
-        import monster_kit
         from monster import the_name
         for it in monster_kit.leftovers(m):
             it.x, it.y = m.x, m.y
