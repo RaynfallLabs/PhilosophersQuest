@@ -43327,7 +43327,10 @@
         "name": "Bronze Gore",
         "damage": "2d8+4",
         "type": "pierce",
-        "delivery": "trample"
+        "delivery": "trample",
+        "shove": {
+          "chance": 0.3
+        }
       },
       {
         "name": "Furnace Breath",
@@ -44097,7 +44100,8 @@
       "radius": 2,
       "turns": 3,
       "line": "The Gold-Digging Ant stops to gather up the gold."
-    }
+    },
+    "morale_style": "never"
   },
   "ponaturi": {
     "name": "Ponaturi",
@@ -44168,7 +44172,8 @@
       "attack": "Sea-Spear",
       "range": 1
     },
-    "light_shy": true
+    "light_shy": true,
+    "turns_to_stone_in_light": true
   },
   "taniwha": {
     "name": "Taniwha",
@@ -44246,7 +44251,8 @@
     "opener": {
       "attack": "Gulping Jaws",
       "range": 1
-    }
+    },
+    "morale_style": "never"
   },
   "impundulu": {
     "name": "Impundulu",
@@ -45245,7 +45251,10 @@
         "delivery": "blow",
         "effect": "stunned",
         "effect_chance": 0.3,
-        "effect_duration": 2
+        "effect_duration": 2,
+        "shove": {
+          "chance": 0.3
+        }
       },
       {
         "name": "Hill-Shaking Trample",

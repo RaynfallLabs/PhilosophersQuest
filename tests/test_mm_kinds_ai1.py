@@ -289,13 +289,14 @@ def test_the_drainers_are_the_blood_drinkers_and_the_life_takers():
 
 # Each kind's nerve from its family (data/monster_ai.json 'morale'); a kind
 # immune to fear never breaks (the centaur, the Vetala, the nuckelavee, the
-# re'em).
+# re'em). The myrmekes and the taniwha are relentless by their own lore
+# (their morale_style, after the AI-1 audit): never.
 NERVE = {
     'mandrake': 'never', 'kappa': 'bolt', 'eloko': 'withdraw', 'asanbosam': 'withdraw',
     'ahuizotl': 'bolt', 'khalkotauros': 'never', 'cu_sith': 'withdraw', 'bulgasari': 'never',
     'vetala': 'never', 'nahual': 'bolt', 'likho': 'withdraw', 'centaur': 'never',
-    'blue_men_of_the_minch': 'withdraw', 'vila': 'withdraw', 'myrmekes': 'bolt',
-    'ponaturi': 'regroup', 'taniwha': 'bolt', 'impundulu': 'bolt', 'mapinguari': 'bolt',
+    'blue_men_of_the_minch': 'withdraw', 'vila': 'withdraw', 'myrmekes': 'never',
+    'ponaturi': 'regroup', 'taniwha': 'never', 'impundulu': 'bolt', 'mapinguari': 'bolt',
     'preta': 'never', 'upas_tree': 'never', 'nuckelavee': 'never', 'star_jelly': 'never',
     'psoglav': 'regroup', 'waq_waq_tree': 'never', 'yuki_onna': 'withdraw', 'yacumama': 'bolt',
     'tsuchigumo': 'bolt', 'bhuta_vahana_yanta': 'never', 'reem': 'never', 'eitr': 'never',
@@ -312,9 +313,10 @@ def test_each_new_kind_keeps_its_family_s_nerve(kind):
     m = make(kind)
     assert morale.style(m) == NERVE[kind]
     if not morale.ruled(m):
-        # Morale is the aggressive hunter's (morale.ruled): an ambusher, an
-        # archer, a hit-and-run kind or a rooted one keeps its own way.
-        assert m.ai_pattern != 'aggressive'
+        # Every ordinary hunter keeps a nerve since the AI-1 audit (archers,
+        # hit-and-run, summoners, healers too: morale.RULED_PATTERNS); an
+        # ambusher still in wait or a rooted one keeps its own way.
+        assert m.ai_pattern not in morale.RULED_PATTERNS
         return
     m.hp = max(1, int(m.max_hp * 0.2))
     morale.turn(m, Hero(6, 5), [m], rng=Dice(10))           # 2d10 = 20: it breaks if it can

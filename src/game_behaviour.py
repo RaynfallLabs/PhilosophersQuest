@@ -29,6 +29,7 @@ class BehaviourMixin:
         """What a monster's behaviour left this turn for the hero to see or
         hear: the line he can see said as it is, a sound when he cannot (an
         unseen line never names the creature)."""
+        self._ai_register_source()
         if m.__dict__.pop('_wants_purse_dropped', False):
             self._ai_drop_purse(m)
         if m.alive:
@@ -61,6 +62,32 @@ class BehaviourMixin:
         m.treasure = tre
         for text in theft.give_back(self, m):
             self.add_message(text, 'loot')
+        # A war-band's captain who begs leads no one: his band answers as if
+        # he had fallen (war_bands.on_death: the rout, the crumble...).
+        if getattr(m, '_band_role', '') == 'leader':
+            self._band_member_died(m)
+
+    def _ai_register_source(self) -> None:
+        """Tell summoning.py whose blows land now (a chant's line names
+        who broke it)."""
+        import summoning
+        import weakref
+        if getattr(summoning, '_READER_OWNER', None) is not self:
+            summoning.set_source_reader(weakref.WeakMethod(self._ai_blow_source))
+            summoning._READER_OWNER = self
+
+    def _ai_blow_source(self, m) -> tuple:
+        """('hero' | 'pet' | 'other', a pet's name): whose blow lands on
+        ``m`` now, by the turn's part (main._advance_turn's _damage_by)."""
+        by = getattr(self, '_damage_by', 'hero')
+        if by == 'hero':
+            return 'hero', ''
+        if by == 'pet':
+            pets = [p for p in (getattr(self, 'pets', None) or ()) if getattr(p, 'alive', False)]
+            near = [p for p in pets if max(abs(p.x - m.x), abs(p.y - m.y)) <= 1] or pets
+            if near:
+                return 'pet', str(getattr(near[0], 'name', '') or 'companion')
+        return 'other', ''
 
     def _ai_on_kill(self, m) -> None:
         """One of a side fell: its hurt kin that saw it may break (morale),
@@ -140,6 +167,7 @@ class BehaviourMixin:
                         self.state = STATE_DEAD
                         self.add_message("You have died! Press Esc to return to the title.", 'danger')
                     return
+        import summoning
         for o in list(self.monsters):
             if o is m or not o.alive or kind_data.outside_rules(o):
                 continue
@@ -147,11 +175,20 @@ class BehaviourMixin:
                 continue
             dmg = death_throes.blast(m, o.max_hp, o._is_named_foe())
             if dmg > 0:
-                o.take_damage(dmg, kind)
+                summoning.CONTEXT = 'throes'      # a chant it breaks says so
+                try:
+                    o.take_damage(dmg, kind)
+                finally:
+                    summoning.CONTEXT = None
             if eff and o.alive:
                 o.add_effect(eff, dur)
             if not o.alive:
                 self._on_monster_killed(o)
+        # A death cry that carries (the mandrake's: `alarm_radius`): all that
+        # hear it within reach are roused, through stone.
+        if t.get('alarm_radius'):
+            import alarm
+            alarm.cry(m, self.monsters, self.player, int(t['alarm_radius']))
 
     # ------------------------------------------------------------------
     # Shove (src/shove.py)

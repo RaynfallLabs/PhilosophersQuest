@@ -1369,10 +1369,13 @@ class Monster:
             return 0
         if amount > 0:
             self._unhurt_turns = 0           # see _recover_when_left
-            self._struck = True              # a calmed locust remembers (Locust Charm)
-            self.spring()                    # a struck lurker gives itself away
-            if self.__dict__.get('_chanting') and not self.__dict__.get('_dot_tick'):
-                summoning.spoil(self)        # a blow breaks a chant (src/summoning.py)
+            # A bleed, a burn or a poison ticking is not a blow: it springs no
+            # lurker, ends no hiding (Gone Again) and breaks no chant.
+            if not self.__dict__.get('_dot_tick'):
+                self._struck = True          # a calmed locust remembers (Locust Charm)
+                self.spring()                # a struck lurker gives itself away
+                if self.__dict__.get('_chanting'):
+                    summoning.spoil(self)    # a blow breaks a chant (src/summoning.py)
             if self.__dict__.pop('_bribed', False):
                 # A bribed monster struck: the deal is off (Gilgamesh's Bribe).
                 self.status_effects.pop('charmed', None)
@@ -2219,6 +2222,10 @@ class Monster:
 
         if not self.alive:
             return False
+        # One that has yielded (src/morale.py) never strikes again, whatever
+        # holds it (a pit, a spear, a web): it keeps out of the way.
+        if self.__dict__.get('_yielded'):
+            return morale.yielded_turn(self, player, dungeon, all_monsters, extra_occupied)
         if tuple(self.footprint) != (1, 1):
             from geom import all_occupied_tiles
             self._turn_occupied = (all_occupied_tiles(all_monsters, exclude=self)

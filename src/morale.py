@@ -84,9 +84,21 @@ def style(m) -> str:
     return nature(m)[0]
 
 
+# The ways of fighting whose creatures keep a nerve to lose: every ordinary
+# hunter (the archers, the hit-and-run, the summoners and healers, the
+# dragons, a pack creature gone cowardly when alone). Not the rooted
+# (sessile), a mimic or an ambusher still lying in wait, the stalker, or
+# the bosses' own patterns.
+RULED_PATTERNS = frozenset({'aggressive', 'cowardly', 'ranged', 'hit_and_run', 'summoner',
+                            'healer', 'dragon', 'dancer'})
+# What holds a creature where it is: one that has yielded does not even try
+# to move away (and never strikes).
+HELD = ('sleeping', 'paralyzed', 'stunned', 'frozen', 'stuck_in_pit', 'impaled', 'immobilized')
+
+
 def ruled(m) -> bool:
-    """Morale is this creature's to keep (an aggressive hunter of no name)."""
-    return (getattr(m, 'ai_pattern', '') == 'aggressive' and not kind_data.named(m)
+    """Morale is this creature's to keep (an ordinary hunter of no name)."""
+    return (getattr(m, 'ai_pattern', '') in RULED_PATTERNS and not kind_data.named(m)
             and not kind_data.outside_rules(m))
 
 
@@ -101,7 +113,8 @@ def held_by_others(m, player) -> bool:
     his leader lives; a hyena or gnoll that smells a wounded hero."""
     lead = m.__dict__.get('_band_leader')
     babbled = bool(getattr(m, 'has_effect', None) and m.has_effect('babbled'))
-    if lead is not None and getattr(lead, 'alive', False) and not babbled:
+    if (lead is not None and getattr(lead, 'alive', False) and not babbled
+            and not lead.__dict__.get('_yielded')):        # a captain who begs leads no one
         # A babbled follower cannot hear his captain (slice G, attack_gates).
         return True
     try:
@@ -364,7 +377,11 @@ def _sees(m, player, dungeon) -> bool:
 
 def yielded_turn(m, player, dungeon, monsters, extra_occupied) -> bool:
     """A creature that yielded keeps out of the hero's way and never
-    strikes (Monster.take_turn: always False)."""
+    strikes (Monster.take_turn, at the top of its turn: always False).
+    Held (a pit, a spear, a web, asleep), it stays where it is."""
+    has = getattr(m, 'has_effect', None)
+    if has is not None and any(has(e) for e in HELD):
+        return False
     if _sees(m, player, dungeon):
         flee_away(m, player, dungeon, monsters, extra_occupied)
     return False

@@ -105,7 +105,8 @@ class LightsMixin:
             flask = lights.oil_in(p.inventory)
             if flask is not None and p.remove_from_inventory(flask):
                 lights.fill(lt)
-                lt.lit = True
+                import light_shy
+                lt.lit = not light_shy.wet(lt)        # a soaked wick will not take (AI-1)
                 self.add_message(lights.line('oil_refill', light=name), 'info')
             else:
                 self.add_message(lights.line('oil_out', light=name), 'warning')
@@ -197,9 +198,13 @@ class LightsMixin:
         if flask is None or not p.remove_from_inventory(flask):
             return False
         lights.fill(item)
-        if item is p.shield:
+        import light_shy
+        if item is p.shield and not light_shy.wet(item):
             item.lit = True
         self.add_message(lights.line('filled', light=self._bare_name(item)), 'success')
+        if item is p.shield and light_shy.wet(item):
+            # Doused by a wave or a gust (AI-1): filled, but the wick is soaked.
+            self.add_message(light_shy.rules().get('lines', {}).get('soaked', ''), 'warning')
         self._refresh_fov()
         self._advance_turn()
         return True
