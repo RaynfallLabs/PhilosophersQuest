@@ -32,6 +32,7 @@ added_files = [
     # Game data — top-level JSONs
     ('data/monsters.json',          'data'),
     ('data/horns.json',             'data'),   # the four horns of legend (horns.py)
+    ('data/confusion.json',         'data'),   # the confused quiz's scramble + Clear-Headed (quiz_engine.py, status_effects.py)
     ('data/monster_sizes.json',     'data'),
     ('data/monster_families.json',  'data'),   # monster family knowledge (family_lore.py)
     ('data/senses.json',            'data'),   # how monsters notice the hero (senses.py)
@@ -77,6 +78,7 @@ added_files = [
     ('data/family_affinity.json',   'data'),   # the groups a family's habit line asks first (affinity.habit)
     ('data/monster_blood.json',     'data'),   # which creatures can bleed (monster.kind_can_bleed)
     ('data/arsenal.json',           'data'),   # coatings, flasks, Press or Guard, named counters (coatings.py)
+    ('data/lights.json',            'data'),   # torches and lanterns in the off hand, the Light spell (lights.py)
     ('data/combat_lines.json',      'data'),   # how a monster's attack is said in a line (monster.attack_line)
     ('data/cooking_rules.json',     'data'),   # every number a cooked dish gives (kitchen.py)
     ('data/manifest.json',          'data'),   # the Dreamspun Sketchbook's Manifest (manifest.py)

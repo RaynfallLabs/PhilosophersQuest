@@ -381,7 +381,7 @@ class InputMixin:
             # gear can be dropped or swapped) are actions too. They skipped
             # the check in _player_input, so a paralysed hero could flee
             # down the stairs. Help (?) only reads, and stays open.
-            if uni in ('>', '<', '@', 'P', 'E', 'S', 'C', 'R') and self._helpless_turn():
+            if uni in ('>', '<', '@', 'P', 'E', 'S', 'C', 'R', 'O') and self._helpless_turn():
                 return True
             # Keys checked by unicode to handle shift-modified chars
             if uni == '>':
@@ -424,6 +424,12 @@ class InputMixin:
                 # Shift+R: ride the Bococho, or climb down (lowercase r reads;
                 # game_riding.py).
                 self._toggle_ride()
+                return True
+            if uni == 'O':
+                # Shift+O: put out the light in the Off hand, or light it
+                # again, at no cost in time (lowercase o observes;
+                # game_lights.py).
+                self._toggle_light()
                 return True
             if uni == 'G' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: Gilt Varro's racing camp set up in this

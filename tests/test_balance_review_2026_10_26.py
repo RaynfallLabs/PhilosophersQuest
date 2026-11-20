@@ -184,7 +184,8 @@ def test_room_gear_and_ring_share_are_the_reviewed_numbers():
 
 def test_monster_drops_pick_their_class_by_the_written_share():
     pool = []
-    for cls in ('accessory', 'wand', 'scroll', 'potion', 'ammo'):
+    # (the classes game_combat._spawn_treasure_item draws from, lights too)
+    for cls in ('accessory', 'wand', 'scroll', 'potion', 'ammo', 'light'):
         pool += [i for i in items.load_items(cls) if not getattr(i, 'is_unique', False)
                  and items.is_random_loot(i) and i.min_level <= 10]
     rng = random.Random(16)

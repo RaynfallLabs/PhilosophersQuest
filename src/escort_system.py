@@ -378,7 +378,9 @@ class EscortMixin:
                     trap['revealed'] = True
 
     def _escort_sight_bonus(self) -> int:
-        """The 'light' perk: +2 sight while the escort is here."""
+        """The 'light' perk: the escort carries a lamp, sight +2 while the escort is
+        here. It is one of the hero's lights: only the brightest counts
+        (lights.light_bonus, Player.get_sight_radius extra_light)."""
         return 2 if any(e.perk == 'light' for e in self._escorts_here()) else 0
 
     # ------------------------------------------------------------------

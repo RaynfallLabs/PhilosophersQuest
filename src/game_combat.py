@@ -1779,7 +1779,7 @@ class CombatMixin:
         else:
             gear = None
             candidates = []
-            for cls_name in ('accessory', 'wand', 'scroll', 'potion', 'ammo'):
+            for cls_name in ('accessory', 'wand', 'scroll', 'potion', 'ammo', 'light'):
                 try:
                     for item in load_items(cls_name):
                         if getattr(item, 'is_unique', False):

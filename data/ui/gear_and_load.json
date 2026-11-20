@@ -1,5 +1,5 @@
 {
- "_note": "The 'Gear and Load' page of the help screen (? then Tab twice). Same shape as how_quizzes_work.json: each section is a heading, its paragraphs and `rows`, a two-column list drawn as 'key: what it does'. Keep it true to the code: item_actions.py (the Kit and @ keys), game_dressing.py and data/gear_rules.json donning (dressing, Keep dressing?, the weapon At Your Back, the Loadouts), known_by_hand.py, game_arsenal.py and data/arsenal.json (coatings, flasks, Press and Guard, the earplugs), data/gear_rules.json defence and load (armour class, dodge and speed: src/defence.py; Light, Heavy, Burdened, Overloaded), data/bococho.json (the Bococho's saddlebags and riding: game_riding.py). tests/test_help_screen_r3.py holds the keys and numbers to the code and data.",
+ "_note": "The 'Gear and Load' page of the help screen (? then Tab twice). Same shape as how_quizzes_work.json: each section is a heading, its paragraphs and `rows`, a two-column list drawn as 'key: what it does'. Keep it true to the code: item_actions.py (the Kit and @ keys), game_dressing.py and data/gear_rules.json donning (dressing, Keep dressing?, the weapon At Your Back, the Loadouts), known_by_hand.py, game_arsenal.py and data/arsenal.json (coatings, flasks, Press and Guard, the earplugs), data/gear_rules.json defence and load (armour class, dodge and speed: src/defence.py; Light, Heavy, Burdened, Overloaded), data/bococho.json (the Bococho's saddlebags and riding: game_riding.py), lights.py and data/lights.json (a light in the off hand, Shift+O, the Light spell). tests/test_help_screen_r3.py holds the keys and numbers to the code and data.",
  "title": "Gear and Load",
  "sections": [
   {
@@ -10,7 +10,7 @@
    "rows": [
     ["E", "Wear or wield it, or take it off"],
     ["R", "Ready a weapon (it hangs at your back), or put it back in your pack"],
-    ["A", "Apply a coating to the weapon in your hand, or put the earplugs in or take them out"],
+    ["A", "Apply a coating to the weapon in your hand, put the earplugs in or take them out, put out or light the torch in your hand, or fill a lantern with oil"],
     ["D", "Drop it"],
     ["I", "Identify it (you need the Philosopher's Shard)"],
     ["X", "Read its lore"]
@@ -52,6 +52,16 @@
     ["Shift+C", "Coat the weapon in your hand with silver dust, holy water, fire oil, frost salts or venom. It lasts for a number of blows that land, and against a creature that cannot bear it (silver on a werewolf) every one of them strikes its weakness"],
     ["T", "Throw: the Flasks tab holds oil, holy water and acid, which burst over the creature they hit"],
     ["Shift+S", "Change your stance, one turn: Press hits 30% harder but leaves you 2 AC worse, Guard hits 30% softer but makes you 2 AC better, and Neutral is in between"]
+   ]
+  },
+  {
+   "heading": "A light in your off hand",
+   "paragraphs": [
+    "A Torch, a lantern or a lamp goes in your off hand, where a shield would, with no question: you cannot hold one with a shield or a two-handed weapon. Lit, it widens your sight, so an archer can no longer shoot at you from the dark. A Torch gives sight +2 and burns 400 turns; when it is spent the next torch in your pack is lit at once. A lantern burns lamp oil: a Flask of Fire Oil fills it.",
+    "Light has a price: everything in the dark sees you from farther too. Lights do not add up: only your brightest light counts, so a lantern and the Light spell together see no farther than the brighter one. The Light spell lasts 100 turns, 5 more for every point of Intelligence over 10, and helps most when your off hand holds a shield."
+   ],
+   "rows": [
+    ["Shift+O", "Put out the light in your hand, or light it again, at no cost in time: in the dark you are harder to see"]
    ]
   },
   {

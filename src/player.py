@@ -1280,8 +1280,16 @@ class Player:
         import rings
         return gear.spell_cost(self, rings.spell_cost(self, base))
 
-    def get_sight_radius(self) -> int:
-        """Sight radius in tiles. Blindfold = 0 (total darkness), blindness = 1."""
+    def get_sight_radius(self, extra_light: int = 0) -> int:
+        """Sight radius in tiles. Blindfold = 0 (total darkness), blindness = 1.
+
+        Lights do not add up (lights.py, 2026-11-19): the brightest of the
+        hero's lights counts, a torch or lantern in the off hand, the
+        ``light`` status (the Light spell, a wand of light, a story's
+        lamp), a torch held as a weapon (``equipped_light_aura``) and
+        ``extra_light``, a lamp carried beside him (an escort's). Dark
+        vision, true sight, the Hand of Glory and the Wild Road are senses,
+        not lights: they add on top."""
         # Blindfold equipped in head slot: total darkness (can't see anything)
         head = self.armor_slots[0] if self.armor_slots else None
         if head and getattr(head, 'id', '') == 'blindfold':
@@ -1293,9 +1301,6 @@ class Player:
             radius += 4
         if self.has_effect('truesight'):
             radius += 2
-        if self.has_effect('light'):
-            from status_effects import LIGHT_SIGHT_BONUS
-            radius += LIGHT_SIGHT_BONUS
         # Hand of Glory (passive_dark_vision): a flat accessory passive that
         # mirrors the dark_vision status. Lore: the corpse-fat candle reveals
         # what hides in deep shadow. +4 radius while worn.
@@ -1304,11 +1309,14 @@ class Player:
                 if getattr(_acc, 'passive_dark_vision', False):
                     radius += 4
                     break
-        # Engine wave 3: equipped_light_aura on a wielded weapon (Prometheus
-        # Torch, etc.) extends sight while held. Stacks weapon + ranged_weapon.
-        for _slot in (self.weapon, getattr(self, 'ranged_weapon', None)):
-            if _slot:
-                radius += int(getattr(_slot, 'equipped_light_aura', 0) or 0)
+        # The lights: the brightest one only (lights.light_bonus). Engine
+        # wave 3's equipped_light_aura on a wielded weapon (the Prometheus
+        # Torch) is one of them: a torch held as a weapon.
+        import lights
+        _aura = max([int(getattr(_slot, 'equipped_light_aura', 0) or 0)
+                     for _slot in (self.weapon, getattr(self, 'ranged_weapon', None))
+                     if _slot is not None] or [0])
+        radius += lights.light_bonus(self, extra=extra_light, aura=_aura)
         # The Wild Road circle of monster lore (Ranger's Instinct).
         try:
             import family_edges
@@ -1326,7 +1334,7 @@ class Player:
         WIS 10 -> 10s, WIS 20 -> 20s. Floor of 5s prevents an
         unwinnable combat under drain-WIS curses; ``QuizEngine.start_quiz``
         applies the same 5 s floor again AFTER the status multiplier
-        (``get_quiz_timer_modifier``), so confusion or blindness can never
+        (``get_quiz_timer_modifier``), so blindness or a stun can never
         take the clock below it.
 
         Callers for non-math subjects still request this and pass the
@@ -1412,6 +1420,11 @@ class Player:
         status for ever (the Blindfold left its wearer blind)."""
         if old is None:
             return
+        import lights
+        if lights.is_light(old):
+            # A torch or a lantern goes out as it leaves the hand: nothing
+            # burns in the pack (lights.py).
+            old.lit = False
         try:
             from chain_equip import is_chain_equip, revert_tier_bonuses
             if is_chain_equip(old) and int(getattr(old, 'achieved_tier', 0) or 0) > 0:
@@ -1522,8 +1535,9 @@ class Player:
         unsolvable, and the engine never lets the result fall below 5 s
         (``quiz_engine.MIN_TIMED_SECONDS``, applied after this multiplier)."""
         mod = 1.0
-        if self.has_effect('confused'):
-            mod *= 0.55
+        # (Confusion no longer cuts the clock. Brandon, 2026-11-19: its
+        # words swim, then settle, and that wait is its cost on the clock:
+        # quiz_engine.settle_for.)
         if self.has_effect('stunned'):
             mod *= 0.75
         if self.has_effect('blinded'):
@@ -1907,7 +1921,7 @@ class Player:
         return is_split_type_known(self, item)
 
     def add_to_inventory(self, item) -> bool:
-        from items import Item, Container
+        from items import Container
         if isinstance(item, Container):
             return False    # chests are opened where they stand (call 9)
         if not self.can_carry(self._item_weight(item)) and not self._carries_past_limit(item):
@@ -1940,12 +1954,15 @@ class Player:
         # new potion that would not join its stack was not the same BUC.
         # Different underlying BUCs never merge either (bug-bash A7-5: the
         # incoming item's BUC effect was lost inside the stack).
-        if isinstance(item, Item._STACKABLE_CLASSES):
+        from items import is_stackable, stacks_with
+        if is_stackable(item):
             for existing in self.inventory:
                 if existing is item:
                     continue  # never merge a stack into itself (guards stray aliasing)
                 if existing.id != item.id:
                     continue
+                if not stacks_with(existing, item):
+                    continue  # a half-burnt torch is its own row (lights.py)
                 if not (_buc_known_to_player(existing, self)
                         and _buc_known_to_player(item, self)):
                     continue  # a blessing not known on both: no merge, no leak
@@ -2319,15 +2336,15 @@ class Player:
         stackable type, blessing or curse known on both and the same. Run when
         a kind becomes known (one identification knows every copy), so two
         "Potion of Healing" rows become one. Returns how many merged."""
-        from items import Item
+        from items import is_stackable, stacks_with
         merged = 0
         kept: list = []
         for it in list(self.inventory):
             target = None
-            if isinstance(it, Item._STACKABLE_CLASSES) and _buc_known_to_player(it, self):
+            if is_stackable(it) and _buc_known_to_player(it, self):
                 for k in kept:
                     if (k is not it and getattr(k, 'id', None) == getattr(it, 'id', None)
-                            and isinstance(k, Item._STACKABLE_CLASSES)
+                            and is_stackable(k) and stacks_with(k, it)
                             and _buc_known_to_player(k, self)
                             and getattr(k, 'buc', 'uncursed') == getattr(it, 'buc', 'uncursed')):
                         target = k
@@ -2613,6 +2630,10 @@ class Player:
                 self.shed_worn_grants(old)
                 self.inventory.append(old)
             self.shield = item
+            import lights
+            if lights.is_light(item):
+                # Taken up and lit, if it has anything left to burn.
+                item.lit = lights.has_fuel(item)
             new_status = getattr(item, 'on_equip_status', '')
             if new_status:
                 self.add_effect(new_status, -1)

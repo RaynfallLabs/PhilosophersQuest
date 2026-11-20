@@ -3283,6 +3283,25 @@ def _(g):
     g.update(g.quiz_engine.timer_seconds * 0.35)
 
 
+@scene('quiz_confused_equip', 'Quiz',
+       'Confused, E, pick armour: the geography quiz with its words still swimming (40% '
+       'settled, quiz_engine.scramble_runs) and the Confused chip in the timer row.',
+       expect='quiz', key=True)
+def _(g):
+    g.player.status_effects['confused'] = 5
+    g._start_armor_quiz(_armor(g))
+    g.update(g.quiz_engine.scramble_settle * 0.4)
+
+
+@scene('quiz_confused_combat', 'Quiz',
+       'Confused, attack a monster: the maths chain with its numbers swimming and the '
+       'Confused chip before the clock.', expect='quiz')
+def _(g):
+    g.player.status_effects['confused'] = 5
+    g._start_combat(g._capture_monster)
+    g.update(0.3)
+
+
 @scene('quiz_chain_x3', 'Quiz', 'Combat chain after three right answers (chain x3, rank badge).',
        expect='quiz')
 def _(g):

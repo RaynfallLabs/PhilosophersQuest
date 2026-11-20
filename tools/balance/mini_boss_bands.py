@@ -132,7 +132,7 @@ FOES: dict[str, dict] = {
     # His warhammer stuns; he grows furious as the fight goes on.
     "iron_patriarch": dict(hp=11.0, blows=0.22),
     # She eats those who cannot answer: rake and bite, and a riddle that
-    # crowds the mind (confusion: the clock on every sum runs short).
+    # crowds the mind (confusion: every sum's numbers swim before they settle).
     "the_sphinx": dict(hp=16.9, blows=0.28),
     # Her hex confuses; she drains.
     "rangda": dict(hp=13.2, blows=0.30),

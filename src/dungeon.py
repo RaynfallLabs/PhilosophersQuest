@@ -1764,7 +1764,8 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # rebuild — chest uniques now carry the bulk of per-run unique drops.
     UNIQUE_DROP_CHANCE_PER_ROOM = 0.0015
     unique_pool: list = []
-    for cls_name in ('weapon', 'armor', 'shield'):
+    # (The named lights of legend, light.json, roll with the gear.)
+    for cls_name in ('weapon', 'armor', 'shield', 'light'):
         try:
             items_in_class = load_items(cls_name)
             unique_pool += [it for it in items_in_class
@@ -1937,6 +1938,22 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         if rng.random() > FLASK_ROOM_CHANCE:
             continue
         _place_one(eligible_flasks, room, dungeon, ground_items, rng)
+
+    # -- Lights: torches, lanterns, lamps (lights.py, data/items/light.json) --
+    # The commons, each kind by its own floor band: lights.room_chance() a
+    # loot room, about one a floor. A torch comes in a bundle (dress_spawn
+    # rolls its count). The named lights roll with the other uniques above.
+    try:
+        import lights as _lights
+        all_lights = [it for it in load_items('light') if not getattr(it, 'is_unique', False)]
+        _light_chance = _lights.room_chance()
+    except FileNotFoundError:
+        all_lights, _light_chance = [], 0.0
+    eligible_lights = _item_eligible_weighted(all_lights, level, rng)
+    for room in loot_rooms:
+        if rng.random() > _light_chance:
+            continue
+        _place_one(eligible_lights, room, dungeon, ground_items, rng)
 
     # -- Soul Spheres -- by floor band, from artifact.json ---------------------
     # Each of the six has its own chance per floor in its band

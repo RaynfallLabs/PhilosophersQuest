@@ -8,7 +8,9 @@ The fix (status_effects.py):
   - HARD control (paralyze/sleep/immobilize/stun/freeze) cannot be re-applied
     while already active or within a post-lock grace window  -> guarantees free
     turns between locks.
-  - SOFT control (confuse/fear/charm/slow) refreshes (max), never stacks.
+  - SOFT control (fear/charm/slow) refreshes (max), never stacks. Confusion
+    (2026-11-19) is a bout like hard control: not refreshed while it runs,
+    and Clear-Headed for 3 turns after it.
   - DOTs and buffs are unchanged (still additive).
   - Monster-applied debuffs roll a D&D-style save: hard control NEGATED on a
     save, soft control HALVED.
@@ -43,11 +45,20 @@ def test_control_single_application_capped():
 
 def test_soft_control_refreshes_not_stacks():
     p = _p()
+    se.apply_effect(p, 'slowed', 3)
+    se.apply_effect(p, 'slowed', 3)
+    assert p.status_effects['slowed'] == 3      # max(3,3), not 6
+    se.apply_effect(p, 'slowed', 5)
+    assert p.status_effects['slowed'] == 5      # refreshed up, capped < 6
+
+
+def test_confusion_is_a_bout_not_refreshed():
+    """Confusion scrambles the quiz (2026-11-19): it is not refreshed while it
+    runs, and Clear-Headed follows it (tests/test_quiz_scramble.py)."""
+    p = _p()
     se.apply_effect(p, 'confused', 3)
-    se.apply_effect(p, 'confused', 3)
-    assert p.status_effects['confused'] == 3    # max(3,3), not 6
-    se.apply_effect(p, 'confused', 5)
-    assert p.status_effects['confused'] == 5    # refreshed up, capped < 6
+    assert se.apply_effect(p, 'confused', 5) is False
+    assert p.status_effects['confused'] == 3
 
 
 def test_dots_and_buffs_still_stack():

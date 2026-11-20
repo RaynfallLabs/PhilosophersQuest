@@ -656,7 +656,7 @@ class MenuMixin:
     _KIT_TABS = [
         ('Weapons',     'weapons'),
         ('Armor',       'armor'),
-        ('Shields',     'shields'),
+        ('Off Hand',    'shields'),          # a shield, a standard or a light
         ('Accessories', 'accessories'),
         ('Consumables', 'consumables'),
         ('Valuables',   'valuables'),

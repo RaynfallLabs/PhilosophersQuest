@@ -45,7 +45,7 @@ from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container
 from level_manager import LevelManager
 from player import Player
 import sound_system as _snd
-from quiz_engine import QuizEngine, QuizState
+from quiz_engine import QuizEngine, QuizState, settle_for as scramble_settle_for
 from effects_runtime import build_default_runtime
 from renderer import Renderer
 from geom import monster_at_tile
@@ -98,6 +98,7 @@ from game_hazards import HazardsMixin
 from game_lore_fixtures import LoreFixturesMixin
 from game_dressing import DressingMixin
 from game_arsenal import ArsenalMixin
+from game_lights import LightsMixin
 from escort_system import EscortMixin
 from bococho_encounter import (BocochoMixin, new_run_state as _bococho_new_run,
                                old_save_state as _bococho_old_save)
@@ -272,7 +273,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BloomleafMixin, BlackKnightMixin, StrayKidsMixin, ItemActionsMixin, RoadMixin, EscortMixin,
            SetneMixin, TraderMixin, PurseMixin, FamilyMixin, SeekerMixin, PopupMixin,
-           HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin,
+           HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin, LightsMixin,
            MoobleMixin, MoobleDanceMixin,
            BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin, SongsMixin,
            ManifestMixin, HornsMixin):
@@ -501,6 +502,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_engine.daimonion_hook = self._daimonion_stops
         # Any quiz starting sets a rider down first (game_riding.py).
         self.quiz_engine.start_hook = self._riding_quiz_starts
+        # A confused hero's quiz words swim, then settle (quiz_engine.settle_for):
+        # read as each question goes up.
+        self.quiz_engine.scramble_hook = (
+            lambda timed: scramble_settle_for(self.player, timed))
         self.quirk_system = QuirkSystem(self)
         self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)
@@ -3174,7 +3179,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _refresh_fov(self):
         _sight = self.player.get_sight_radius()
         if _sight > 1:                        # (never through a blindfold or blindness)
-            _sight += self._escort_sight_bonus()
+            # An escort's lamp is one of the hero's lights: the brightest
+            # counts (lights.light_bonus), so it no longer adds to a torch.
+            _sight = self.player.get_sight_radius(extra_light=self._escort_sight_bonus())
         self.visible = calculate_fov(
             self.dungeon, self.player.x, self.player.y, _sight
         )
@@ -4906,6 +4913,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._say_affinity_lines()
         # A coating's rider refused or its last blow spent (coatings.py).
         self._say_arsenal_lines()
+        # The torch or lantern in the off hand burns a turn (game_lights.py).
+        self._light_tick()
         # A Ring of Invisibility's veil settles after its quiet turns (rings.py).
         import rings as _rings
         _veil = _rings.tick(self.player)
@@ -7719,6 +7728,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _charsheet_loadout_entries(self):
         from items import ARMOR_SLOTS
+        import gear
         p = self.player
         rows = [
             {'label': 'Weapon', 'slot': 'weapon', 'item': p.weapon},
@@ -7728,7 +7738,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             {'label': 'Back', 'slot': 'readied', 'item': p.readied_weapon,
              'away': self._readied_away()},
             {'label': 'Ranged', 'slot': 'ranged_weapon', 'item': p.ranged_weapon},
-            {'label': 'Shield', 'slot': 'shield', 'item': p.shield},
+            # The off hand: its row is named for what is in it (a torch is
+            # a Light, Joan's standard a Standard: gear.off_hand_word).
+            {'label': gear.off_hand_word(p.shield) if p.shield is not None else 'Shield',
+             'slot': 'shield', 'item': p.shield},
         ]
         armor_labels = {
             'head': 'Head', 'body': 'Body', 'arms': 'Arms', 'hands': 'Hands',
@@ -7941,7 +7954,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _EQUIP_TABS = [
         ('Weapons',     lambda i: isinstance(i, Weapon)),
         ('Armor',       lambda i: isinstance(i, Armor)),
-        ('Shields',     lambda i: isinstance(i, Shield)),
+        # The off hand: a shield, a standard, or a torch or lantern (lights.py).
+        ('Off Hand',    lambda i: isinstance(i, Shield)),
         ('Accessories', lambda i: isinstance(i, Accessory)),
         ('Unequip',     None),  # special tab for currently equipped items
     ]
@@ -7962,6 +7976,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 'warning')
 
     def _equip_item(self, item):
+        import lights as _lights
         if isinstance(item, Weapon):
             # Check if switching to 2H while shield is cursed
             if getattr(item, 'two_handed', False) and self.player.shield:
@@ -8001,6 +8016,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if _qs_eq:
                 _qs_eq.on_item_equipped(item.id, 'weapon', 'weapon')
             self._advance_turn()
+        elif isinstance(item, Shield) and _lights.is_light(item):
+            # A torch, a lantern: taken up in the off hand with no question,
+            # as a weapon is (game_lights.py).
+            self._equip_light(item)
         elif isinstance(item, Shield):
             if not self.player.can_equip_shield():
                 self.add_message(
@@ -9308,10 +9327,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     _DROP_TABS = [
         ('All',         None),
-        ('Equipment',   lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') in ('weapon','armor','shield','accessory','ammo')),
+        ('Equipment',   lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') in ('weapon','armor','shield','light','accessory','ammo')),
         ('Consumables', lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') in ('potion','flask','scroll','spellbook','wand','food')),
         ('Ingredients', lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') == 'ingredient'),
-        ('Other',       lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') not in ('weapon','armor','shield','accessory','ammo','potion','flask','scroll','spellbook','wand','food','ingredient')),
+        ('Other',       lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') not in ('weapon','armor','shield','light','accessory','ammo','potion','flask','scroll','spellbook','wand','food','ingredient')),
     ]
 
     def _inside_rock(self) -> bool:
@@ -9375,9 +9394,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if is_equipped and (getattr(item, 'cursed', False) or getattr(item, 'buc', '') == 'cursed'):
             self.add_message(f"The {self._display_name(item)} is cursed and bound to you! Uncurse it first.", 'warning')
             return
-        from items import Item
+        from items import is_stackable
         count = getattr(item, 'count', 1)
-        if count > 1 and isinstance(item, Item._STACKABLE_CLASSES):
+        if count > 1 and is_stackable(item):
             # Stacked item -> ask how many to drop (mirrors the gold prompt).
             self._drop_qty_item = item
             self.drop_qty_input = ''
@@ -9536,6 +9555,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return f"{item.slot}  {enchantments.label(item) or 'plain'}  tier {item.tier}"
         elif isinstance(item, Shield):
             import gear
+            if gear.is_light(item):
+                return f"light  sight +{getattr(item, 'sight', 0)}  no AC  tier {item.tier}"
             if gear.is_standard(item):
                 return f"standard  no AC  tier {item.tier}"
             return f"shield  -{gear.ac_value(item)} AC  tier {item.tier}"

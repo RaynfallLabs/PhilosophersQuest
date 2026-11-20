@@ -1,0 +1,197 @@
+[
+ {
+  "id": "torch",
+  "family": "lights",
+  "rank": 1,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a plain wooden torch: a short rough stick of pine with its top end wrapped in dark rags soaked in black pitch, burning with a smoky orange flame.",
+  "colours": "Raw pale brown pine wood; near-black pitch-soaked rags; orange and yellow flame with a little grey smoke.",
+  "pose": "Lying diagonally by itself, burning end at the top right, seen from a little above.",
+  "must_show": [
+   "one wooden stick",
+   "dark rags wrapped round the top",
+   "an orange flame"
+  ],
+  "must_not_show": [
+   "metal holder",
+   "wall bracket",
+   "candle",
+   "lantern",
+   "hand",
+   "arm",
+   "person",
+   "second object"
+  ]
+ },
+ {
+  "id": "horn_lantern",
+  "family": "lights",
+  "rank": 2,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a small old tin lantern with a ring handle on top and windows of thin scraped cow horn, pale honey-coloured and see-through, glowing warm from the flame inside.",
+  "colours": "Dull grey tin; pale honey-amber horn panes glowing warm yellow from inside.",
+  "pose": "Standing upright by itself, seen from the front and a little from above.",
+  "must_show": [
+   "one tin lantern",
+   "pale amber horn windows",
+   "a warm glow inside"
+  ],
+  "must_not_show": [
+   "clear glass",
+   "gold",
+   "candle stick",
+   "hand",
+   "person",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "dark_lantern",
+  "family": "lights",
+  "rank": 3,
+  "body": "item",
+  "scale": "small",
+  "key": "green",
+  "what": "a blackened iron lantern with a single round window on its front and a sliding iron shutter half closed over the window, a narrow beam of warm light coming out of the open half.",
+  "colours": "Black and dark grey iron; one warm yellow beam of light.",
+  "pose": "Standing upright by itself, seen from the front and a little to one side.",
+  "must_show": [
+   "one iron lantern",
+   "a sliding shutter half over the window",
+   "a narrow beam of light"
+  ],
+  "must_not_show": [
+   "several windows",
+   "gold",
+   "brass",
+   "hand",
+   "person",
+   "table",
+   "second object"
+  ]
+ },
+ {
+  "id": "everburning_lamp",
+  "family": "lights",
+  "rank": 4,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "an old Roman oil lamp of pale silver-grey metal with a small handle and a long spout, a steady pure white flame standing still at the spout, the kind said to burn for centuries in sealed tombs.",
+  "colours": "Pale silver-grey metal with a little tarnish; a pure white flame with a faint blue edge.",
+  "pose": "Lying by itself, spout to the right, seen from the side and a little from above.",
+  "must_show": [
+   "one oil lamp with a spout",
+   "a white flame at the spout"
+  ],
+  "must_not_show": [
+   "genie",
+   "smoke",
+   "gold",
+   "orange flame",
+   "hand",
+   "person",
+   "second object"
+  ]
+ },
+ {
+  "id": "jacks_lantern",
+  "family": "lights",
+  "rank": 5,
+  "body": "item",
+  "scale": "small",
+  "key": "blue",
+  "what": "a hollowed-out turnip, cream-white with a purple top and a short tuft of stalks, carved with a jagged grinning face, a single glowing red-orange coal of hellfire inside lighting the face from within.",
+  "colours": "Cream-white turnip skin turning purple at the top; dark green-brown stalks; red-orange glow inside the carved face.",
+  "pose": "Sitting by itself, carved face toward the viewer, seen from the front.",
+  "must_show": [
+   "one turnip, not a pumpkin",
+   "a carved face",
+   "a red-orange glow inside"
+  ],
+  "must_not_show": [
+   "pumpkin",
+   "orange skin",
+   "candle",
+   "hand",
+   "person",
+   "second object"
+  ]
+ },
+ {
+  "id": "psyches_lamp",
+  "family": "lights",
+  "rank": 6,
+  "body": "item",
+  "scale": "small",
+  "key": "green",
+  "what": "a small ancient Greek oil lamp of red-brown fired clay, round with a short spout and a little ring handle, a small flame burning at the spout and one bright drop of hot oil about to fall from it.",
+  "colours": "Red-brown terracotta clay with a darker blackened spout; a small yellow-orange flame; one golden drop of oil.",
+  "pose": "Lying by itself, spout to the right, seen from the side and a little from above.",
+  "must_show": [
+   "one small clay oil lamp",
+   "a flame at the spout",
+   "a drop of oil"
+  ],
+  "must_not_show": [
+   "metal",
+   "genie",
+   "hand",
+   "person",
+   "second object"
+  ]
+ },
+ {
+  "id": "heros_lamp",
+  "family": "lights",
+  "rank": 7,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a bronze hanging lamp made to burn in a tower window, hung from a short bronze chain, its glass sides glowing with a strong warm beacon light.",
+  "colours": "Warm dark bronze with green patina in the corners; strong warm gold light inside.",
+  "pose": "Hanging straight down from its short chain by itself, seen from the front.",
+  "must_show": [
+   "one bronze lamp",
+   "a short chain at the top",
+   "a strong warm light"
+  ],
+  "must_not_show": [
+   "window frame",
+   "tower",
+   "sea",
+   "hand",
+   "person",
+   "second object"
+  ]
+ },
+ {
+  "id": "hecates_torch",
+  "family": "lights",
+  "rank": 8,
+  "body": "item",
+  "scale": "small",
+  "key": "green",
+  "what": "a tall slender torch of black wood bound with silver bands, burning with a pale silver-white flame that gives no smoke: the torch of the goddess of crossroads and the night.",
+  "colours": "Black wood; bright silver bands; a pale silver-white flame with a faint cold blue edge.",
+  "pose": "Lying diagonally by itself, flame at the top right, seen from a little above.",
+  "must_show": [
+   "one black torch",
+   "silver bands",
+   "a pale white flame"
+  ],
+  "must_not_show": [
+   "orange flame",
+   "smoke",
+   "second torch",
+   "hand",
+   "person",
+   "second object"
+  ]
+ }
+]

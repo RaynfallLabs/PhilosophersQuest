@@ -2,7 +2,7 @@
 
 **Status:** v2.18.0 (shipped 2026-10-02)
 **Code:** `src/status_effects.py` (654 lines); `Player.add_effect` / `has_effect` / `tick_effects` live in `src/player.py`
-**Data:** none directly; chest/trap/food/monster JSON references effect ids
+**Data:** `data/confusion.json` (confusion's Clear-Headed recovery); chest/trap/food/monster JSON references effect ids
 **Related docs:** [save_bonus](save_bonus.md), [combat](combat.md), [quiz_engine](quiz_engine.md), [magic](magic.md), [food_system](food_system.md), [monsters](monsters.md), [items](items.md), [identify_v3](identify_v3.md)
 
 ## Purpose
@@ -17,7 +17,7 @@ NetHack-style "turn count tells the story" statuses are the backbone of roguelik
 - `BUFFS` — stripped by `dispel_magic` / `cancellation` / `drain_magic` targeting the player's own buffs.
 - `DEBUFFS` — stripped by scrolls/prayers that "cleanse" the player.
 - `HARD_CONTROL` — the autokill risk (paralysis, sleep, stun, freeze, immobilize, petrifying). D&D-save NEGATES; cannot be re-applied while active; followed by a 3-turn grace window.
-- `SOFT_CONTROL` — degraded but not frozen (confuse, fear, charm, slow). D&D-save HALVES; refreshes to `max()` instead of stacking.
+- `SOFT_CONTROL` — degraded but not frozen (confuse, fear, charm, slow). D&D-save HALVES; refreshes to `max()` instead of stacking. **Except confusion** (`SOFT_GRACE`, 2026-11-19): a bout is not refreshed while it runs and is followed by 3 turns Clear-Headed (below).
 
 **Gradient defense, never immunity.** Three layers:
 1. **Resist items** (`_RESIST_BLOCKS`) — hard immunity for a specific debuff class, short-circuits before the save math.
@@ -27,6 +27,8 @@ NetHack-style "turn count tells the story" statuses are the backbone of roguelik
 The important design rule: **saves + resists never overlap**. If `poison_resist` is active, the `poisoned` debuff never gets to the save roll at all — it's refused in `apply_effect`'s first branch. If `poison_resist` is absent, the save math fires (and `poisoned` has no `SAVE_STAT` so the CON-based duration-reduction branch applies — see [save_bonus.md](save_bonus.md) §apply_debuff_with_save).
 
 **Hard-control anti-permalock guarantee.** A hard-control effect cannot be refreshed, re-applied while active, OR re-applied within the 3-turn `control_immune` grace window after it expires. This GUARANTEES free turns between every disable bout. Monsters that reliably re-cast paralysis still can't permalock.
+
+**Confusion's recovery** (Brandon 2026-11-19, with the quiz scramble: "careful it's not an auto kill"). Confusion scrambles every quiz's words until they settle (the confusion section of `src/quiz_engine.py`; it no longer cuts the clock), so it must never chain. `SOFT_GRACE = {'confused': ('confuse_immune', 3)}` (`data/confusion.json` `recovery`; `CLEAR_HEADED_TURNS`) gives it the hard-control shape: a running confusion is not refreshed (`apply_effect` returns False), and when it ends, at its expiry in `tick_all` or by a cure anywhere (a potion, a prayer, a trader, a fixture: `_recover_cured`, at the end of every tick and before any new confusion is laid on), the hero is **Clear-Headed** (`confuse_immune`, which `_RESIST_BLOCKS` already lets block `confused`) for 3 turns. A trophy's permanent Clear-Headed is left as it is. The bouts running are kept in `player._soft_bouts` (a set, pickled; an older save's confusion is marked at the next tick). The WIS save, the head guard, magic resist, the family wards and the 6-turn cap all still come first.
 
 **Control cap** per single application: `CONTROL_CAP` clamps individual durations so one failed save is never a death sentence even if the data file says "paralyze 20". `MAX_EFFECT_DURATION = 60` globally caps every effect (prevents infinite stacking on non-CONTROL effects which use `current + duration` additive stacking).
 
@@ -44,6 +46,7 @@ All effect ids (debuff, buff, control, resistance, chain-combat-v2 specials, her
 'petrifying':  ('Petrifying',  (205, 205, 130), 'Turning to stone -- find a cure!'),
 'doom_dot':    ('Doom',        (140,  60, 200), 'Ticking damage as fraction of max HP per turn (Laevateinn)'),
 'control_immune': ('Recovering', (200, 230, 255), 'Shaking it off -- briefly immune to being disabled'),
+'confused':    ('Confused',    (185, 100, 230), 'Random movement; quiz words swim, then settle'),
 'save_guard_CON': ('Body Ward', (150, 230, 170), 'Bonus to resisting paralysis / sleep / stun'),
 ```
 
@@ -129,7 +132,7 @@ Zero / near-zero player actions. Save NEGATES; cannot be re-applied while active
 ```python
 {'confused', 'feared', 'charmed', 'slowed'}
 ```
-Degraded but not frozen. Save HALVES duration; refreshes to `max(current, new)` instead of stacking.
+Degraded but not frozen. Save HALVES duration; refreshes to `max(current, new)` instead of stacking, except `confused`, which is not refreshed while it runs and is followed by its Clear-Headed turns (`SOFT_GRACE`, Design intent).
 
 ### `CONTROL`
 ```python
@@ -219,7 +222,8 @@ Decision order:
 3. **`duration == -1` write**: set permanent.
 4. **`effect in CONTROL`**: clamp duration by `CONTROL_CAP`. Then:
    - **HARD_CONTROL**: refuse re-apply if already active OR if `control_immune` is in the grace window. Otherwise set `min(duration, MAX_EFFECT_DURATION)`.
-   - **SOFT_CONTROL**: refresh to `max(current, duration)`, clamped. Never stacks.
+   - **SOFT_GRACE** (`confused`): refuse while it runs (no refresh); otherwise set it and mark the bout (`_soft_bouts`). Before step 1, a bout cured since the last tick earns its Clear-Headed turns (`_recover_cured`), which then block it.
+   - **SOFT_CONTROL** (the rest): refresh to `max(current, duration)`, clamped. Never stacks.
 5. **Everything else** (DoTs, buffs, resistances): `current + duration`, clamped to `MAX_EFFECT_DURATION`. Additive stacking is the non-CONTROL default.
 
 **Call sites:** every effect-application path in the game routes through here, usually via `Player.add_effect`. Direct call sites include `food_system.py:289` (cooked wards write `save_guard_*` + magnitude), `game_magic.py` self-buff dispatchers (haste/shield/invis via `_SELF_BUFF_DURATIONS`), spell/wand effect handlers, and chain-combat weapon procs.
@@ -265,6 +269,7 @@ Flow:
 3. **Decrement + queue expiry**: `val > 0` decrements by 1; expired keys go to `to_expire`.
 4. **Expiry cleanup**:
    - Any HARD_CONTROL expiry grants `control_immune = GRACE_TURNS` (3 turns).
+   - A `confused` expiry grants Clear-Headed (`confuse_immune = CLEAR_HEADED_TURNS`, 3); so does a confusion cured since the last tick (`_recover_cured`, after the expiry loop).
    - `save_guard_*` expiry pops the magnitude from `player._save_guard[<cat>]`.
    - `heroism` expiry: `apply_stat_bonus('STR', -2)`.
    - `brilliance` expiry: `apply_stat_bonus('INT', -1)` + `apply_stat_bonus('WIS', -1)`.
@@ -297,7 +302,8 @@ Thin wrapper around `tick_all(self)`. Called once per player turn from `main.py:
 - **One-write-path:** all duration writes go through `apply_effect` (or `apply_debuff_with_save` which calls `add_effect` which calls `apply_effect`). The only in-tree exception is `grendel_grip`'s direct zeroing in `tick_all` and expiry stat-reversals.
 - **`_RESIST_BLOCKS` short-circuits before saves:** full immunity never routes through the save math. If you move a check past this branch, you break the "resists + saves don't overlap" rule.
 - **HARD_CONTROL anti-permalock:** cannot be refreshed, re-applied while active, or re-applied within the 3-turn grace. Monsters that reliably cast paralysis must never permalock. Grace window = `GRACE_TURNS = 3`.
-- **SOFT_CONTROL refreshes, never stacks:** `max(current, new)`. Non-CONTROL effects use `current + new` additive stacking — asymmetric, intentional.
+- **Confusion never chains:** a running confusion is not refreshed, and every bout, however it ends, is followed by `CLEAR_HEADED_TURNS` of `confuse_immune`. The quiz scramble's whole safety rests on it.
+- **SOFT_CONTROL refreshes, never stacks:** `max(current, new)` (confusion excepted, above). Non-CONTROL effects use `current + new` additive stacking — asymmetric, intentional.
 - **`MAX_EFFECT_DURATION = 60`:** every write clamps at this. CONTROL further clamps by `CONTROL_CAP`.
 - **Permanent (`-1`) effects are immutable** via `apply_effect` — direct `status_effects[k] = -1` writes exist (intrinsic resistances from gear) and must be explicit.
 - **`save_guard_*` is a BUFF**, not a DEBUFF — register in BUFFS, or cleanses will wipe the player's own wards.
@@ -312,7 +318,7 @@ Thin wrapper around `tick_all(self)`. Called once per player turn from `main.py:
 ## Interactions
 
 - **[save_bonus](save_bonus.md)** — the gradient layer between "no defense" and "immunity." `apply_debuff_with_save` reads `player.save_bonus_for(stat)` as the +N on the d20 roll. Non-SAVE_STAT effects use `save_bonus_for('CON')` for duration reduction.
-- **[quiz_engine](quiz_engine.md)** — identify-v3 failures apply `stunned 10t`. Timer modifier is read from `has_effect('blinded' / 'stunned' / 'confused' / 'hallucinating' / 'blessed')` (see quiz_engine.md "Status-effect timer modifiers").
+- **[quiz_engine](quiz_engine.md)** — identify-v3 failures apply `stunned 10t`. Timer modifier is read from `has_effect('blinded' / 'stunned' / 'hallucinating' / 'blessed')` (see quiz_engine.md "Status-effect timer modifiers"). Confusion has no clock modifier since 2026-11-19: it scrambles the quiz's words until they settle (`quiz_engine.scramble_runs`, quiz_engine.md "Confusion scrambles the words").
 - **[combat](combat.md)** — chain-combat-v2 weapon procs write statuses (`armor_crack`, `sundered`, `deep_wound`, `ruptured`, `impaled`, `blade_flow`, `melee_dmg_reduction`) via `apply_effect`. `take_damage` checks `DAMAGE_IMMUNITY` / `SHIELD_IMMUNITY` short-circuits.
 - **[magic](magic.md)** — self-buffs use `_SELF_BUFF_DURATIONS` (game_magic.py:1848) to scale duration by chain_scale. Chain-5 shield spell → 12 × 5 = 60t (capped at MAX_EFFECT_DURATION). `dispel_magic` / `cancellation` / `drain_magic` strip BUFFS from target; `abjuration` currently strips ALL statuses (SYSTEMS_AUDIT.md §9 P1 flagged — should match the others).
 - **[monsters](monsters.md)** — monster attacks route debuffs through `apply_debuff_with_save` at `monster.py:705`. 17/17 effect ids in monster attacks map to real EFFECT_INFO entries (VERIFIED OK).
@@ -326,6 +332,7 @@ Thin wrapper around `tick_all(self)`. Called once per player turn from `main.py:
 - **2026-05-30** — Chain-combat-v2 statuses added (armor_crack / sundered / deep_wound / ruptured / impaled / blade_flow / melee_dmg_reduction). Grendel-grip tick-clear added for Coif of Beowulf.
 - **2026-06-03** — Save-bonus audit (`docs/design/save_bonus_audit.md`); Option B shipped. `save_guard_*` ward family added; Perseus halve-debuffs branch retired → `{all: +2}` save bonus.
 - **2026-08-06** — Identify v3 ships. Stun-on-fail becomes the ID failure cost (not a mastery hit). `stunned` kept in HARD_CONTROL for anti-stunlock despite soft semantics.
+- **2026-11-19** — Confusion's quiz cost became the scramble (its ×0.55 clock cut removed), and confusion got the hard-control shape: no refresh while it runs, 3 turns Clear-Headed after (`SOFT_GRACE`, `data/confusion.json`).
 - **2026-10-02 (v2.18.0 audit sync wave):**
   - `petrifying` moved into `HARD_CONTROL` (saves now negate instead of halving).
   - `berserk` removed from `DEBUFFS` (was double-classified; now BUFF-only).
@@ -337,6 +344,7 @@ Thin wrapper around `tick_all(self)`. Called once per player turn from `main.py:
   - `_EFFECT_NOUN['stunned']` fixed: 'daze' → 'stun' (save-flavor now matches expire-flavor).
 
 ## Testing
+- `tests/test_quiz_scramble.py` — confusion's recovery: no refresh while it runs, Clear-Headed for 3 turns after expiry and after a cure, a confusing monster every turn never keeps the hero confused back to back, the trophy's permanent Clear-Headed untouched, an old save's confusion.
 - `tests/test_status_lock.py` (308 lines) — pins:
   - HARD_CONTROL cannot be re-applied while active.
   - Single-application CONTROL_CAP enforcement.

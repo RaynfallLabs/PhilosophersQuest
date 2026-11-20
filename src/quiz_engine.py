@@ -70,6 +70,253 @@ _HISTORY_DIR_OVERRIDE = None         # tests point this at a temp dir
 _CONTEXTS_DIR_OVERRIDE = None        # tests point this at a temp dir to override _CONTEXTS_DIR
 
 
+# =============================================================================
+# Confusion: the words swim, then settle (Brandon, 2026-11-19)
+# =============================================================================
+# While the hero is confused, a quiz's question and its answers are DRAWN
+# scrambled. It is display only: the question data, the answer check and the
+# teaching card never change, and Study Mode never scrambles. These functions
+# are pure (no pygame, no game state); the engine stamps each question
+# (QuizEngine._stamp_scramble) and the quiz screen draws scramble_runs.
+#
+#   * Inside each word of four letters or more the inner letters are
+#     shuffled and the first and last kept ("Wisdom" -> "Wsiodm"): readable
+#     with effort, and funny.
+#   * Each number's digits are shuffled ("372" -> "723"). A number of one
+#     digit stays, and its minus sign, decimal point and commas stay put.
+#   * Punctuation, spaces, maths signs and short words stay.
+#
+# It settles. Each scrambled word or number goes back to its true spelling
+# one at a time, in a random order, spread evenly over the settle time from
+# the moment the question goes up (settle_seconds); after that the text is
+# true. A confused hero who waits can read it, at the cost of clock on a
+# fight's sums, of patience anywhere else. Every new question scrambles
+# afresh; its seed is stamped when it goes up, so a redraw never re-shuffles.
+#
+# The scrambled text is the true text's letters and digits moved about inside
+# each word, so it is as long as the true text: the quiz layout is measured on
+# the true text and does not jump as the words settle.
+#
+# The numbers are data/confusion.json ('scramble').
+
+# A number (digits, with a decimal point or commas between digits) or a
+# word (a run of letters; an apostrophe or a hyphen ends it).
+_SCRAMBLE_TOKEN = re.compile(r'[0-9]+(?:[.,][0-9]+)*|[^\W\d_]+')
+
+_SCRAMBLE_DEFAULTS = {
+    'min_word_letters': 4,
+    'min_number_digits': 2,
+    'timed_seconds': 1.6,
+    'untimed_seconds': 2.5,
+    'wis_base': 10,
+    'per_wis_point': 0.05,
+    'floor_seconds': 0.8,
+}
+_CONFUSION_DATA: dict | None = None
+
+
+def _confusion_data() -> dict:
+    """data/confusion.json, read once ({} when it cannot be read)."""
+    global _CONFUSION_DATA
+    if _CONFUSION_DATA is None:
+        try:
+            from paths import data_path
+            with open(data_path('data', 'confusion.json'), encoding='utf-8') as f:
+                _CONFUSION_DATA = json.load(f)
+        except (OSError, ValueError):
+            _CONFUSION_DATA = {}
+    return _CONFUSION_DATA
+
+
+_SCRAMBLE_RULES: dict | None = None
+
+
+def scramble_rules() -> dict:
+    """The scramble's numbers: the file's, over the defaults (read once;
+    the quiz screen asks for every word it draws)."""
+    global _SCRAMBLE_RULES
+    if _SCRAMBLE_RULES is None:
+        out = dict(_SCRAMBLE_DEFAULTS)
+        out.update(_confusion_data().get('scramble') or {})
+        _SCRAMBLE_RULES = out
+    return _SCRAMBLE_RULES
+
+
+def confused_chip_text() -> str:
+    """The line the quiz screen shows while the hero is confused."""
+    return str(_confusion_data().get('quiz_chip') or 'Confused: the words swim, then settle')
+
+
+# ---------------------------------------------------------------------------
+# How long the words swim
+# ---------------------------------------------------------------------------
+
+def settle_seconds(timed: bool, wis: int) -> float:
+    """Seconds a question's words take to settle: the timed maths clock's
+    figure or every other quiz's, a little less for each point of Wisdom
+    over 10 (none added under it), never under the floor."""
+    r = scramble_rules()
+    base = float(r['timed_seconds'] if timed else r['untimed_seconds'])
+    over = max(0, int(wis) - int(r['wis_base']))
+    return round(max(float(r['floor_seconds']), base - over * float(r['per_wis_point'])), 3)
+
+
+def settle_for(player, timed: bool) -> float:
+    """The settle time for this hero's next question: 0.0 when he is not
+    confused (the text reads true). Wisdom as the clock reads it (lent
+    wisdom counts)."""
+    if player is None:
+        return 0.0
+    try:
+        if not player.has_effect('confused'):
+            return 0.0
+    except Exception:
+        return 0.0
+    try:
+        wis = int(player.effective_wis())
+    except Exception:
+        wis = int(getattr(player, 'WIS', 10) or 10)
+    return settle_seconds(timed, wis)
+
+
+def settled_count(n: int, share: float) -> int:
+    """Of ``n`` scrambled words and numbers, how many have settled once
+    ``share`` of the settle time has gone: spread evenly, the k-th at k/n
+    of it, so all are true at the settle time."""
+    if n <= 0:
+        return 0
+    if share >= 1.0:
+        return n
+    if share <= 0.0:
+        return 0
+    return max(0, min(n, int(n * share + 1e-9)))
+
+
+# ---------------------------------------------------------------------------
+# One word or number
+# ---------------------------------------------------------------------------
+
+def _is_number_token(tok: str) -> bool:
+    return tok[:1].isdigit()
+
+
+def swims(tok: str) -> bool:
+    """True when the scramble can move something in ``tok``: a word of
+    four letters or more whose inner letters are not all one letter, a
+    number of two digits or more that are not all one digit."""
+    r = scramble_rules()
+    if _is_number_token(tok):
+        digits = [c for c in tok if c.isdigit()]
+        return len(digits) >= int(r['min_number_digits']) and len(set(digits)) > 1
+    if len(tok) < int(r['min_word_letters']):
+        return False
+    return len(set(tok[1:-1])) > 1
+
+
+def _shuffled_other(seq: list, rng: random.Random) -> list:
+    """``seq`` in another order (never the same one, unless every item is
+    the same): a few shuffles, then a turn by one place."""
+    out = list(seq)
+    for _ in range(8):
+        rng.shuffle(out)
+        if out != seq:
+            return out
+    return seq[1:] + seq[:1]
+
+
+def scramble_token(tok: str, rng: random.Random) -> str:
+    """``tok`` scrambled: a word's inner letters shuffled (the first and last
+    kept), a number's digits shuffled (its point and commas in place)."""
+    if not swims(tok):
+        return tok
+    if _is_number_token(tok):
+        where = [i for i, c in enumerate(tok) if c.isdigit()]
+        digits = _shuffled_other([tok[i] for i in where], rng)
+        chars = list(tok)
+        for i, d in zip(where, digits):
+            chars[i] = d
+        return ''.join(chars)
+    inner = _shuffled_other(list(tok[1:-1]), rng)
+    return tok[0] + ''.join(inner) + tok[-1]
+
+
+# ---------------------------------------------------------------------------
+# A whole question
+# ---------------------------------------------------------------------------
+
+def scramble_runs(blocks: list, seed: int, share: float) -> list:
+    """The question and its answers as drawn while confused.
+
+    ``blocks``: the question's wrapped lines, then each answer's wrapped
+    lines (lists of strings). ``share``: how much of the settle time has
+    gone (0: every scrambled word swims; 1 or more: all read true).
+
+    Returns the same shape, each line a list of ``(text, swimming)`` runs,
+    so the screen can tint what still swims. Joined, a line is as long as
+    the true line. The settle order runs over the question and its answers
+    together, and the same seed always gives the same scramble.
+    """
+    found = []                       # (block, line, start, end), reading order
+    for b, lines in enumerate(blocks):
+        for li, line in enumerate(lines):
+            for m in _SCRAMBLE_TOKEN.finditer(str(line)):
+                if swims(m.group(0)):
+                    found.append((b, li, m.start(), m.end()))
+    n = len(found)
+    done = settled_count(n, share)
+    still = {}                       # (block, line) -> [(start, end, scrambled)]
+    if done < n:
+        order = list(range(n))
+        random.Random(int(seed)).shuffle(order)
+        slot = {tok: k for k, tok in enumerate(order)}      # its turn to settle
+        for i, (b, li, s, e) in enumerate(found):
+            if slot[i] < done:
+                continue                                   # settled: true again
+            tok = str(blocks[b][li])[s:e]
+            rng = random.Random(int(seed) * 1_000_003 + i)
+            still.setdefault((b, li), []).append((s, e, scramble_token(tok, rng)))
+    out = []
+    for b, lines in enumerate(blocks):
+        block_out = []
+        for li, line in enumerate(lines):
+            line = str(line)
+            runs: list = []
+            pos = 0
+            for s, e, text in still.get((b, li), ()):
+                if s > pos:
+                    runs.append((line[pos:s], False))
+                runs.append((text, True))
+                pos = e
+            if pos < len(line) or not runs:
+                runs.append((line[pos:], False))
+            block_out.append(_merge_runs(runs))
+        out.append(block_out)
+    return out
+
+
+def _merge_runs(runs: list) -> list:
+    """Neighbouring runs of the same kind joined."""
+    out: list = []
+    for text, swimming in runs:
+        if out and out[-1][1] == swimming:
+            out[-1] = (out[-1][0] + text, swimming)
+        else:
+            out.append((text, swimming))
+    return out
+
+
+def scramble_lines(blocks: list, seed: int, share: float) -> list:
+    """``scramble_runs`` as plain strings: the lines as drawn."""
+    return [[''.join(t for t, _s in line) for line in block]
+            for block in scramble_runs(blocks, seed, share)]
+
+
+def scramble(text: str, seed: int, share: float = 0.0) -> str:
+    """One text as drawn while confused (its lines kept)."""
+    lines = str(text).split('\n')
+    return '\n'.join(scramble_lines([lines], seed, share)[0])
+
+
 def _answer_times_path() -> str:
     """Path to the answer-time record (same folder as quiz_history.json)."""
     return os.path.join(os.path.dirname(_quiz_history_path()), 'answer_times.json')
@@ -130,6 +377,15 @@ class QuizEngine:
     _result_hold        = False     # waiting for a key after an untimed wrong answer
     _result_hold_until  = 0.0
     _card_counted       = False     # this question's card was opened (telemetry)
+    # Confusion's scramble (settle_for, scramble_runs above): how long this question's words
+    # swim (0: they read true), its seed, the question it was stamped for, and
+    # the seconds it has been in front of the hero (the clock's own time:
+    # nothing while the card has the clock stopped).
+    scramble_hook       = None      # Game: callable(timed) -> settle seconds
+    scramble_settle     = 0.0
+    scramble_seed       = 0
+    _scramble_q         = None
+    q_elapsed           = 0.0
 
     def __init__(self):
         self._cache: dict[str, list] = {}
@@ -203,7 +459,10 @@ class QuizEngine:
         self.correct_count: int = 0
         self.asked_count: int = 0
         self.last_answer: str = ''    # last submitted answer string
-        self.confused_order: list | None = None   # shuffled choice indices when confused
+        # The choices' display order, shuffled for every question. (The name
+        # is from when only confusion shuffled them; confusion now scrambles
+        # the words instead: scramble_view.)
+        self.confused_order: list | None = None
         self._timer_modifier: float = 1.0
         self.on_answer = None   # optional callable(is_correct: bool) fired after each answer
         self.on_complete = None  # optional callable(result, mode, subject, correct, wrong) fired once at quiz end
@@ -273,7 +532,9 @@ class QuizEngine:
           threshold     -- for threshold modes: number of correct answers needed.
                           Total questions asked = ceil(threshold * 1.5).
           max_chain     -- for chain modes: auto-succeed after this chain length (None = unlimited).
-          timer_modifier -- multiplier on the base timer (e.g. 0.55 when confused).
+          timer_modifier -- multiplier on the base timer (e.g. 0.70 when blinded).
+                          Confusion does not cut the clock: it scrambles the
+                          words until they settle (scramble_hook, settle_for).
           base_seconds  -- pre-computed base timer from Player.get_quiz_timer(subject).
                           If provided, replaces the legacy (10 + wisdom) calculation.
           timed         -- True/False forces, None auto-detects from subject
@@ -391,7 +652,8 @@ class QuizEngine:
                 self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
             # The 5 s minimum comes AFTER the status multiplier (call 3, bug
             # bash 4): applied before it, a confused and blinded WIS 6 hero
-            # got 2 s, which no child can answer in.
+            # got 2 s (when confusion still cut the clock), which no child
+            # can answer in.
             self.timer_seconds = max(MIN_TIMED_SECONDS, self.timer_seconds)
             # (Nothing is added for the tier asked. The clock is the
             # player's wisdom and what the player has earned on top of it.)
@@ -532,6 +794,10 @@ class QuizEngine:
             return
 
         if self.state == QuizState.ASKING:
+            if not self._timer_paused:
+                # The question's own seconds: a confused hero's words settle
+                # on them (scramble_view). The card's stop stops them too.
+                self.q_elapsed = float(getattr(self, 'q_elapsed', 0.0) or 0.0) + max(0.0, dt)
             if self.timed and self.time_remaining > 0 and not self._timer_paused:
                 self.time_remaining = max(0.0, self.time_remaining - dt)
                 if self.time_remaining <= 0.0:
@@ -682,6 +948,50 @@ class QuizEngine:
             self.confused_order = order
         else:
             self.confused_order = None
+        self._stamp_scramble()
+
+    # --- Confusion: the words swim, then settle (scramble_runs) -----------
+
+    def _stamp_scramble(self) -> None:
+        """A question just went up: stamp how long its words swim (0.0: they
+        read true) and its seed, so every redraw scrambles it the same way
+        and every new question afresh. The Game's ``scramble_hook`` says
+        whether the hero is confused (settle_for)."""
+        self.q_elapsed = 0.0
+        self._scramble_q = self.current_question
+        settle = 0.0
+        hook = getattr(self, 'scramble_hook', None)
+        if hook is not None:
+            try:
+                settle = float(hook(bool(getattr(self, 'timed', False))) or 0.0)
+            except Exception:
+                from game_log import log_error
+                log_error('quiz_engine._stamp_scramble: scramble hook')
+                settle = 0.0
+        self.scramble_settle = max(0.0, settle)
+        import zlib
+        text = str((self.current_question or {}).get('question', ''))
+        self.scramble_seed = zlib.crc32(
+            f"{self.session_id}|{self.asked_count}|{text}".encode('utf-8'))
+
+    def confused_quiz(self) -> bool:
+        """The hero was confused when the question on screen went up: the
+        quiz shows its Confused line (even once the words have settled)."""
+        return (float(getattr(self, 'scramble_settle', 0.0) or 0.0) > 0.0
+                and self.current_question is not None
+                and getattr(self, '_scramble_q', None) is self.current_question)
+
+    def scramble_view(self):
+        """``(seed, share settled)`` while the question on screen still
+        swims, else None (not confused, settled, or the answer is showing:
+        the result is always drawn true). Display only: nothing here
+        touches the question or the answer check."""
+        if self.state != QuizState.ASKING or not self.confused_quiz():
+            return None
+        share = float(getattr(self, 'q_elapsed', 0.0) or 0.0) / float(self.scramble_settle)
+        if share >= 1.0:
+            return None
+        return int(self.scramble_seed), share
 
 
     def _advance(self):

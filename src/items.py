@@ -1078,6 +1078,71 @@ class Shield(Item):
         return level
 
 
+class Light(Shield):
+    """A light carried in the off hand (data/items/light.json; the rules are
+    lights.py): a torch, a lantern, a lamp, or a named light from legend.
+
+    It sits in the shield slot, so every path that puts the off hand on or
+    takes it off (the Kit, the @ sheet, the equip menu, the Loadouts, a
+    two-hander sending it to the pack) handles it. It is not a shield
+    (gear.is_light): no AC, no plus a scroll can raise or wear can take, no
+    blessing or curse, no shield block. Anyone can see a torch is a torch:
+    a common light needs no identify question; a named one keeps the unique
+    rules. Equipping it asks no question: it is held, as a weapon is.
+
+    ``fuel`` is the turns of burning left (``burn`` when fresh; a light
+    that never burns out has burn 0), ``lit`` whether it burns now. Only
+    fresh, unlit torches stack (lights.stacks_with)."""
+
+    # Class defaults: a light pickled before a field existed reads these.
+    lit = False
+    fuel = None
+    notice = None
+    power = ''
+    noun = 'light'
+    stacks = False
+
+    def __init__(self, defn: dict):
+        defn = {'ac_bonus': 0, 'enchant_bonus': 0, 'material': '', **defn}
+        super().__init__(defn)
+        self.sight: int = max(0, int(defn.get('sight', 0) or 0))
+        self.notice = (None if defn.get('notice') is None
+                       else max(0, int(defn['notice'])))
+        self.burn: int = max(0, int(defn.get('burn', 0) or 0))
+        self.fuel_kind: str = str(defn.get('fuel', 'self') or 'self')
+        self.fuel = self.burn
+        self.lit = False
+        self.stacks: bool = bool(defn.get('stacks', False))
+        self.noun: str = str(defn.get('noun', '') or 'light')
+        self.power: str = str(defn.get('power', '') or '')
+        if self.stacks:
+            # A bundle of torches, rolled like a bundle of arrows
+            # (dungeon.dress_spawn; economy.ammo_bundles prices it so).
+            self.count_min: int = max(1, int(defn.get('count_min', 1) or 1))
+            self.count_max: int = max(self.count_min, int(defn.get('count_max', 1) or 1))
+        self.ac_bonus = 0
+        self.enchant_bonus = 0
+        self.ench_level = 0
+        self.max_enchant_own = 0
+        self.can_be_cursed = False
+        self.buc = 'uncursed'
+        self.buc_known = True
+        if not self.is_unique:
+            self.id_level = 5             # known by sight, like a flask
+        self.equip_threshold = 0          # held, not donned: no question
+
+    @property
+    def cursed(self) -> bool:
+        return False
+
+    @cursed.setter
+    def cursed(self, value: bool):
+        pass                              # a light is never cursed
+
+    def relevel(self, level: int) -> int:
+        return 0                          # no enchantment level to change
+
+
 class Accessory(Item):
     def __copy__(self):
         """A copy owns its own ``effects``. A shallow copy shared the
@@ -1685,8 +1750,9 @@ def wear_down(item) -> bool:
     restore it (traders.py, the repair service), never above what the item
     had. True when a point was lost."""
     import gear
-    if gear.is_standard(item):
-        # A standard carries no plus to lose (Joan of Arc's): it holds.
+    if gear.is_standard(item) or gear.is_light(item):
+        # A standard carries no plus to lose (Joan of Arc's), and nor does a
+        # torch or a lantern in the off hand (lights.py): it holds.
         return False
     if getattr(item, 'item_class', '') == 'armor' and not gear.is_core(item):
         # A minor piece carries no plus: wear takes a level of its
@@ -1739,6 +1805,24 @@ def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int,
 # Stackable item types: identical instances (same id) merge into one stack entry.
 Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll, Ammo, Treasure, Flask)
 
+
+def is_stackable(item) -> bool:
+    """Do copies of this item share one pack row? The stackable classes,
+    and the lights whose data says so (a bundle of torches: lights.py)."""
+    if isinstance(item, Item._STACKABLE_CLASSES):
+        return True
+    return isinstance(item, Light) and bool(getattr(item, 'stacks', False))
+
+
+def stacks_with(a, b) -> bool:
+    """May ``a`` and ``b`` (same id, same blessing) share a row? Two
+    torches only while both are fresh and unlit: a half-burnt torch is its
+    own row (lights.stacks_with)."""
+    if isinstance(a, Light) or isinstance(b, Light):
+        import lights
+        return lights.stacks_with(a, b)
+    return True
+
 # ------------------------------------------------------------------
 # Loading
 # ------------------------------------------------------------------
@@ -1760,6 +1844,7 @@ _CLASS_MAP: dict[str, type] = {
     'lockpick':   Lockpick,
     'container':  Container,
     'treasure':   Treasure,
+    'light':      Light,
 }
 
 
@@ -1784,7 +1869,7 @@ def load_items(item_class: str) -> list:
 # drops. Every random pool now asks is_random_loot().
 
 _SCRIPTED_ONLY_CLASSES = ('weapon', 'armor', 'shield', 'accessory',
-                          'artifact', 'wand', 'scroll', 'spellbook')
+                          'artifact', 'wand', 'scroll', 'spellbook', 'light')
 _scripted_only_cache: frozenset | None = None
 
 

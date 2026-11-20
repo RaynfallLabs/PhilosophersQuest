@@ -22,7 +22,8 @@
       "shield_common": 10,
       "potion": 20,
       "ammo": 10,
-      "scroll": 10
+      "scroll": 10,
+      "light": 5
     },
     "rare_chance_chain3": 0.01,
     "spawn_weight_by_band": {
@@ -222,7 +223,8 @@
       "potion": 15,
       "scroll": 15,
       "wand": 10,
-      "accessory": 20
+      "accessory": 20,
+      "light": 5
     },
     "rare_chance_chain3": 0.03,
     "spawn_weight_by_band": {
@@ -257,7 +259,8 @@
       "scroll": 30,
       "potion": 30,
       "accessory": 20,
-      "weapon_common": 20
+      "weapon_common": 20,
+      "light": 5
     },
     "rare_chance_chain3": 0.05,
     "spawn_weight_by_band": {

@@ -247,7 +247,8 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
 
     # Load all item pools once
     item_pools = {}
-    for cls in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'potion', 'treasure'):
+    for cls in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'potion', 'treasure',
+                'light'):
         try:
             item_pools[cls] = {i.id: i for i in load_items(cls)}
         except Exception:

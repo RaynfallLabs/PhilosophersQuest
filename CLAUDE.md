@@ -115,6 +115,8 @@ src/
   stance.py           - Press or Guard (Shift+S): damage against AC; the two-hander's parry with no shield
   counters.py         - Named counters: the mirror shield turns a gaze, wax stops a voice, cold iron fey glamour
   game_arsenal.py     - ArsenalMixin: coat (Shift+C, Kit Apply), throw a flask, change stance, the earplugs, QA (Shift+T)
+  lights.py           - Lights in the off hand (data/items/light.json), pure: the brightest light counts, a lit hero is seen farther, fuel, the Light spell's turns
+  game_lights.py      - LightsMixin: take a light up, burn it each turn (the next torch, the next oil), Shift+O to douse, Kit Apply to fill, Hero's Lamp's way down
   chain_equip.py      - Chain-equip for lore-rich legendary uniques
   chain_passives.py   - Chain-equip passive flag lookups and wiring
   armor_procs.py      - Flat-armour proc registry and per-floor charges
@@ -207,6 +209,7 @@ data/
   affinity_rules.json, family_affinity.json - The weak / resisted / shrugs-off steps; each family's lore profile
   enemy_lore.json, kit_sense.json - What Recall Lore, probing and the quests teach of a creature; Kit Sense's lines
   arsenal.json      - Coatings, thrown flasks, Press or Guard, the parry, the named counters
+  lights.json       - Carried lights and the Light spell: status sight, spell turns, the oil, lines, card and HUD words
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
   packs.json        - Packs: the hunt's numbers, the lore packs and their tricks, the herds that do not hunt as one
   traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings

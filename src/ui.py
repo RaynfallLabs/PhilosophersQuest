@@ -513,7 +513,10 @@ class Sidebar:
         # future metric wants it.
         metrics = [
             (f"AC {ac}", ac_color),
-            (f"Sight {player.get_sight_radius()}", FP.BODY_TEXT),
+            # Gold while a light widens it (a torch, a lantern, the Light
+            # spell: lights.py), the reminder that it shows the hero too.
+            (f"Sight {player.get_sight_radius()}",
+             FP.GOLD_BRIGHT if self._lit(player) else FP.BODY_TEXT),
             # The clock the next fight will really get. Gold when something
             # is lengthening it (haste, a blessing, the Guiding Hand), red
             # when something is shortening it.
@@ -541,7 +544,35 @@ class Sidebar:
         y = self._nimble(player, y)
         y = self._purse(gold, y)
         y = self._carrying(player, y)
+        y = self._light_marker(player, y)
         return y + self.SECTION_GAP
+
+    @staticmethod
+    def _lit(player) -> bool:
+        try:
+            import lights
+            return lights.light_bonus(player) > 0
+        except Exception:
+            return False
+
+    def _light_marker(self, player, y: int) -> int:
+        """The held light's small marker, only when it matters: 'Torch: 60
+        turns' once it burns low, 'Horn Lantern: dry', 'Torch: out' (put
+        out). Nothing is drawn otherwise (lights.hud_line)."""
+        try:
+            import lights
+            from hud_context import item_bare_name
+            lt = lights.held(player)
+            text = lights.hud_line(player, item_bare_name(player, lt)) if lt is not None else ''
+        except Exception:
+            text = ''
+        if not text:
+            return y
+        cell_x = self.x + self.PAD
+        room = self.x + self.w - self.PAD - cell_x
+        self.screen.blit(self._fsm.render(self._fit(self._fsm, text, room), True,
+                                          FP.WARNING_TEXT), (cell_x, y))
+        return y + S(22)
 
     def _nimble(self, player, y: int) -> int:
         """One full-width line: 'Dodge 12%   Speed 11.2' (the defence

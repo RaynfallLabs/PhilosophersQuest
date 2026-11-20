@@ -379,6 +379,7 @@ def census() -> dict:
     items_file('potion.json', 'Potions')
     items_file('spellbook.json', 'Spellbooks')
     items_file('flask.json', 'Flasks (coatings, thrown)')
+    items_file('light.json', 'Lights (carried, off hand)')
     items_file('ammo.json', 'Ammo')
     items_file('food.json', 'Plain food')
     items_file('treasure.json', 'Treasure')

@@ -1,0 +1,17 @@
+{
+  "_doc": "Confusion on the quiz, and the recovery after it (Brandon 2026-11-19: 'scramble letters and numbers... make it almost impossible to hit, so we need to be careful it's not an auto kill'). 'scramble' is read by src/quiz_engine.py (its confusion section: settle_seconds, scramble_runs), 'recovery' by src/status_effects.py, 'quiz_chip' by the quiz screen (game_render._draw_quiz). While the hero is confused, a quiz's question and its answers are DRAWN scrambled; it is display only (the question data, the answer check and the teaching card never change). Inside each word of 'min_word_letters' letters or more the inner letters are shuffled, the first and last kept; each number of 'min_number_digits' digits or more has its digits shuffled, its minus sign, decimal point and commas staying put; punctuation, spaces, maths signs and short words stay. Each scrambled word or number settles back to its true spelling one at a time, in a random order spread evenly over the settle time from the moment the question goes up: 'timed_seconds' on the timed maths clock (the wait comes out of it), 'untimed_seconds' on any other quiz, 'per_wis_point' seconds less for each point of Wisdom over 'wis_base' (none added under it), never under 'floor_seconds'. Every new question scrambles afresh. This replaced confusion's old cut to the clock (x0.55): the scramble is the cost now. 'recovery': a running confusion is never refreshed, and when it ends (or is cured) the hero is Clear-Headed (the status named in 'status') for 'turns' turns, so a confusing monster cannot keep him scrambled back to back: the shape of the hard-control grace (status_effects.GRACE_TURNS, 'Recovering'). The WIS save, the head guard, magic resist, confuse_immune, the family wards and the 6-turn cap (status_effects.CONTROL_CAP) all still hold before it.",
+  "scramble": {
+    "min_word_letters": 4,
+    "min_number_digits": 2,
+    "timed_seconds": 1.6,
+    "untimed_seconds": 2.5,
+    "wis_base": 10,
+    "per_wis_point": 0.05,
+    "floor_seconds": 0.8
+  },
+  "recovery": {
+    "status": "confuse_immune",
+    "turns": 3
+  },
+  "quiz_chip": "Confused: the words swim, then settle"
+}

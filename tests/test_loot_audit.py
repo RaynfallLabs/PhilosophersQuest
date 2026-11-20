@@ -98,7 +98,7 @@ def test_scripted_rewards_do_not_come_out_of_chests_or_drops():
             bad = [it.id for it in pool if it.id in scripted]
             assert not bad, (tid, floor, bad[:4])
     src = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
-    i = src.index("for cls_name in ('accessory', 'wand', 'scroll', 'potion', 'ammo'):")
+    i = src.index("for cls_name in ('accessory', 'wand', 'scroll', 'potion', 'ammo', 'light'):")
     assert 'is_random_loot(item)' in src[i:i + 500]
 
 

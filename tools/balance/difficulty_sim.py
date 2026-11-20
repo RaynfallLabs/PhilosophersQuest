@@ -30,7 +30,10 @@ MODELLED (simple, explicit, every number a named constant below):
   * the quiz          a math chain is: one shared timer; each answer takes a
                       lognormal time by tier; each is right with probability
                       ACCURACY; the chain ends on a wrong answer or when the
-                      clock runs out (quiz_engine.py:313-379). Tier mastery
+                      clock runs out (quiz_engine.py:313-379). A confused
+                      hero waits on every question for its scrambled words
+                      to settle (quiz_engine.settle_for: 1.6 s at WIS 10)
+                      before his answer time starts. Tier mastery
                       (quiz_engine.py:583-627) is modelled exactly: after all
                       N distinct questions of a tier have been answered right,
                       every later attack at that tier is an instant chain 5.
@@ -181,7 +184,7 @@ from items import (Accessory, Armor, Container, Food, Ingredient, Potion,   # no
                    Scroll, Shield, Spellbook, Weapon)
 from monster import Monster                      # noqa: E402
 from player import Player                        # noqa: E402
-from quiz_engine import QuizResult               # noqa: E402
+from quiz_engine import QuizResult, settle_for as scramble_settle_for   # noqa: E402
 import food_system as food_system_mod            # noqa: E402
 import kitchen as kitchen_mod                    # noqa: E402
 import boons as boons_mod                        # noqa: E402
@@ -297,7 +300,11 @@ KNOB_DEFAULTS = {
     'mp_rest':    0.125, # MP regained per turn of waiting (meditation)
     'potions':    1.0,   # x healing potions found (count, stochastic rounding)
     'ranged_shots': 2,   # free shots a ranged monster gets while you close the
-                         #   distance (GUESSED; ranged AI fires at 2-6 tiles)
+                         #   distance (GUESSED; ranged AI fires at 2-6 tiles).
+                         #   A carried light (lights.py, 2026-11-19) lets the
+                         #   hero SEE the archer but does not shorten the walk
+                         #   in, so these stand; the shots from outside sight
+                         #   it answers were never modelled here.
     'hp_per_floor': 0.0, # + max HP on every new deepest floor (the game's
                          #   Player.HP_PER_LEVEL is 0; CURVE.md section 4 assumes
                          #   a no-cooking base that climbs 30 -> 200 by floor 100)
@@ -889,7 +896,13 @@ class QuizModel:
 
     MODELLED, not real: the question text is never drawn. A chain is a race
     between a geometric run of right answers and one shared timer.
+
+    Confusion (quiz_engine.settle_for, 2026-11-19) no longer cuts the clock: a
+    confused hero's words swim until they settle, so each question answered
+    while confused costs its settle time on top of the answer time (the
+    game's own quiz_engine.settle_for, on ``player``, set by Run).
     """
+    player = None                    # the hero, for his confusion and Wisdom
 
     def __init__(self, accuracy: float, speed: float, policy: str, knobs: dict):
         self.accuracy = accuracy
@@ -920,9 +933,12 @@ class QuizModel:
         return t
 
     # -- pure chain sampler (no side effects) -----------------------------------
-    def sample_chain(self, tier: int, timer: float, max_chain, stop_at=None, forgive=False):
+    def sample_chain(self, tier: int, timer: float, max_chain, stop_at=None, forgive=False,
+                     settle: float = 0.0):
         """Returns (chain, questions_asked, right_answers). `forgive`: one
-        wrong answer does not end the chain (Know the Story)."""
+        wrong answer does not end the chain (Know the Story). `settle`: a
+        confused hero waits this long on every question for its words to
+        settle before he can answer it (quiz_engine.settle_seconds)."""
         acc = acc_at(self.accuracy, tier)
         med = ANSWER_SECONDS[tier] * self.speed
         if self.knobs.get('practice'):
@@ -935,7 +951,7 @@ class QuizModel:
         while True:
             if stop_at and chain >= stop_at:
                 break                                 # SPACE: lock the chain in
-            t = random.lognormvariate(math.log(med), ANSWER_SIGMA)
+            t = random.lognormvariate(math.log(med), ANSWER_SIGMA) + max(0.0, settle)
             if elapsed + t > timer:
                 asked += 1                            # clock ran out mid-question
                 break
@@ -976,7 +992,11 @@ class QuizModel:
             return
         forgive = bool(getattr(self, '_forgive_flag', False))
         self._forgive_flag = False
-        chain, asked, right = self.sample_chain(tier, timer, max_chain, self.stop_at, forgive)
+        # The confused hero's wait for the words to settle, on every question
+        # (the game's QuizEngine._stamp_scramble asks the same function).
+        settle = scramble_settle_for(self.player, True)
+        chain, asked, right = self.sample_chain(tier, timer, max_chain, self.stop_at, forgive,
+                                                settle=settle)
         self.n_questions += asked
         self.answered[tier] = self.answered.get(tier, 0) + asked
         self.retired[tier] += right
@@ -1231,6 +1251,9 @@ class Run:
         self.engagers = max(1, engagers)
         self.quiz = QuizModel(accuracy, speed, policy, knobs)
         self.p = SimPlayer(knobs)
+        # Confusion's scramble reads the hero (as main.py wires the game's).
+        # An attribute, not a closure over the Run: fork() deep-copies both.
+        self.quiz.player = self.p
         self.p.x, self.p.y = 5, 5
         self._build = secret_builds().get(self.prof['build']) if self.prof.get('build') else None
         if self._build:

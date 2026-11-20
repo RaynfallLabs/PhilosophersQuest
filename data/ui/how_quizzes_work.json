@@ -1,5 +1,5 @@
 {
- "_note": "The 'How Quizzes Work' page of the help screen (? then Tab). Each section is a heading and its paragraphs; `rows` is a two-column list. Keep it true to the code: quiz_engine.py (only combat is timed, the chain), game_input.py (C, SPACE), game_magic.py (Recall Lore: a random hint from data/hints.json, never about a creature; the Wand of Probing teaches a kind), player.py (cook caps). The gear rules are on the next page, gear_and_load.json.",
+ "_note": "The 'How Quizzes Work' page of the help screen (? then Tab). Each section is a heading and its paragraphs; `rows` is a two-column list. Keep it true to the code: quiz_engine.py (only combat is timed, the chain), game_input.py (C, SPACE), game_magic.py (Recall Lore: a random hint from data/hints.json, never about a creature; the Wand of Probing teaches a kind), player.py (cook caps), quiz_engine.py and data/confusion.json (confusion's swimming words; status_effects.py its Clear-Headed turns). The gear rules are on the next page, gear_and_load.json.",
  "title": "How Quizzes Work",
  "sections": [
   {
@@ -41,6 +41,12 @@
    "paragraphs": [
     "The combat clock is the only clock in the game. Every other quiz waits for you, so take the time to read it. Wisdom lengthens the combat clock, and the sidebar's Clock shows how long your next fight will give you.",
     "The sidebar's Streak counts the questions you have answered right in a row, and Math the math questions alone. A wrong answer ends a streak; running out of time does not."
+   ]
+  },
+  {
+   "heading": "Confusion makes the words swim",
+   "paragraphs": [
+    "While you are confused, a quiz's words swim: the letters inside them are jumbled, and so are the digits of its numbers. They settle back one at a time, in a moment or two, and sooner the wiser you are. Wait for them if you must; in a fight that wait comes off the clock. When confusion wears off, or is cured, your head stays clear for a few turns, and nothing can confuse you again until it passes."
    ]
   },
   {

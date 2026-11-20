@@ -234,6 +234,67 @@ of Arc's Standard: the off hand, no AC, `gear.is_standard`)
 `rally_damage_mult` (pets and allies in sight hit harder). See
 [progression](progression.md), "Their own legends' pieces".
 
+### Lights in the off hand (`data/items/light.json`, class `Light`; rules in `src/lights.py`, 2026-11-19)
+
+Brandon, 2026-11-19: ranged monsters shot from outside his sight (a PER-10
+hero sees 5 tiles, an archer shoots from 6). A torch, a lantern or a lamp
+goes in the off hand, where a shield would: `Light` is a `Shield` subclass
+with `item_class` 'light', so every off-hand path (equip, unequip, the Kit
+and @, the Loadouts, a two-hander sending it to the pack and back) holds it,
+and like Joan's standard it is not a shield (`gear.is_light`: no AC, no
+plus, no wear, never cursed, no shield block or gaze). It cannot be held
+with a shield or a two-handed weapon (`Player.can_equip_shield`). Taking it
+up asks no question (it is held, as a weapon is) and takes one turn; one
+torch comes off a bundle (`LightsMixin._one_light`).
+
+| Light | Tier | Found | Sight | Burn | Power |
+|---|---|---|---|---|---|
+| Torch | 1 | floors 1-40 (bundles of 1-3) | +2 | 400 turns, then gone; the next torch is lit | - |
+| Horn Lantern | 2 | floors 8-60 | +3 | 1000 turns of oil | - |
+| Dark Lantern | 3 | floors 25-80 | +4 | 1200 turns of oil | seen only 2 tiles farther (its shutter) |
+| Everburning Lamp | 4 | floors 45-100 | +4 | never burns out | - |
+| Jack's Lantern (named) | 2 | peak floor 32 | +3 | never burns out | the Devil's ember |
+| Psyche's Lamp (named) | 3 | peak floor 50 | +3 | 1200 turns of oil | shows the invisible (`unseen.sees_invisible`) |
+| Hero's Lamp (named) | 4 | peak floor 70 | +4 | 1500 turns of oil | shows the down stair on the map |
+| Hecate's Torch (named) | 5 | peak floor 90 | +5 | never burns out | shows ambushers and mimics in its light (`unseen.senses`) |
+
+* **The brightest light counts** (`lights.light_bonus`): lights do not add
+  up. The carried light, the `light` status (the Light spell, a wand of
+  light, a story's lantern), a torch held as a weapon
+  (`equipped_light_aura`, the Prometheus Torch) and an escort's lamp: only
+  the brightest adds to sight. Dark vision, true sight, the Hand of Glory
+  and the Wild Road are senses and still add on top
+  (`Player.get_sight_radius`).
+* **Light has a price** (`lights.shine`, read by `senses.sight_range`): a
+  monster's sight reach against a lit hero grows by the brightest light's
+  `notice` (its sight unless the data says less). Doused (Shift+O, or Apply
+  on the Kit, no time) a light gives nothing and costs nothing.
+* **Fuel** (`LightsMixin._light_tick`, every turn): only a held, lit light
+  burns. "Your Torch burns low." at a fifth of its burn (the sidebar then
+  shows what is left); a spent torch is gone and the next torch in the pack
+  is lit ("Your Torch gutters out. You light another (2 left)."); a lantern
+  that runs dry takes the next Flask of Fire Oil from the pack, or goes
+  dark until filled (the Kit's Apply: Fill, one turn).
+* **Stacking**: only fresh, unlit torches share a pack row
+  (`items.is_stackable`, `items.stacks_with`); a half-burnt torch is its own
+  row. A bundle prices and sells like a bundle of arrows
+  (`economy.ammo_bundles`).
+* **Where they come from**: floor loot (`lights.room_chance` a loot room,
+  commons by their bands; the named ones with the floor's uniques), chests
+  with a `light` entry (wooden chest, merchant strongbox, crypt chest; the
+  named ones by the chest's unique roll), monster drops
+  (`container_system.DROP_MAGIC_SHARE['light']`), Grindle and Old Mags Thorn
+  (a torch always, floors 1-40 for Grindle) and Ortolan, and bones. A
+  common light needs no identify; a named one keeps the unique rules.
+* **Old saves**: a `Light` reads its class defaults for any field it lacks;
+  a wand of light pickled with its old radius `power` reads today's turns
+  by id (`lights.wand_light`).
+* **QA** (Titivillus, Shift+T with the arsenal): every light, three torches
+  and two flasks of fire oil in the pack.
+* **Art**: stand-in sprites made in code from painted ones
+  (`tools/content/genart/lights_art.py`, `LIGHTS_ART_SHEET.png`); the briefs
+  for painting them are `tools/content/genart/briefs/lights_2026_11_19.json`.
+
 ---
 
 ## 5. Accessory (rings + amulets + belts)

@@ -123,13 +123,13 @@ def test_card_says_nothing_about_a_clock_on_untimed_quizzes():
 
 # ---------------------------------------------------------------- call 3
 def test_five_second_minimum_comes_after_status_penalties():
-    """A confused and blinded WIS 6 hero got 2 s: the floor was applied
-    before the multiplier."""
+    """A confused and blinded WIS 6 hero got 2 s (when confusion still cut
+    the clock): the floor was applied before the multiplier."""
     from player import Player
     from quiz_engine import QuizEngine, MIN_TIMED_SECONDS
     p = Player()
     p.WIS = 6
-    mod = 0.40       # confused x blinded hits the multiplier's own 0.40 floor
+    mod = 0.40       # the multiplier's own 0.40 floor (stacked debuffs)
     qe = QuizEngine()
     qe.start_quiz('chain', 'math', 1, lambda r: None, timed=True,
                   base_seconds=p.get_quiz_timer('math'), timer_modifier=mod)

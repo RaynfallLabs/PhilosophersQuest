@@ -285,6 +285,8 @@ _COMMON_CATEGORIES: dict[str, list[str]] = {
     'magic':          ['wand', 'scroll', 'spellbook'],
     # Gems, jewellery and art (treasure.py): a jewel box, a strongbox, a hoard.
     'treasure':       ['treasure'],
+    # A torch, a lantern, a lamp (lights.py): a chest's 'light' entry.
+    'light':          ['light'],
     # Gear bucket: weapon + armor + shield (all common, instantiated below)
     'gear':           ['weapon_common', 'armor_common', 'shield_common'],
 }
@@ -376,6 +378,7 @@ def _build_unique_pool(template: dict, level_cap: int) -> list:
         'ingredient':     ['ingredient'],
         'artifact':       ['artifact', 'accessory'],   # artifacts overlap accessories
         'ammo':           ['ammo'],
+        'light':          ['light'],                   # the named lights (lights.py)
     }
     classes: set[str] = set()
     for raw_cat in template.get('loot_table', {}):
@@ -496,7 +499,9 @@ def _weighted_common_pick(eligible: list, level: int, rng):
 # rings and amulets have the most: 31-39% of those drops. A goblin carries a
 # dagger or a potion more often than a ring of power
 # (BALANCE_REVIEW_LOOT_AND_FOOD_2026_10_26, L6).
-DROP_MAGIC_SHARE = {'potion': 33, 'accessory': 22, 'scroll': 20, 'wand': 20, 'ammo': 5}
+# A torch or a lantern (lights.py): what a goblin with a light drops.
+DROP_MAGIC_SHARE = {'potion': 33, 'accessory': 22, 'scroll': 20, 'wand': 20, 'ammo': 5,
+                    'light': 5}
 
 
 def pick_by_class_share(candidates: list, shares: dict, level: int, rng):
@@ -529,6 +534,7 @@ def _pull_unique_from_category(category: str, unique_pool: list, rng,
         'ingredient':     {'ingredient'},
         'artifact':       {'artifact', 'accessory'},
         'ammo':           {'ammo'},
+        'light':          {'light'},
     }
     classes = cat_classes.get(category, set())
     if not classes:

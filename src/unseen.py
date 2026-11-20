@@ -12,7 +12,8 @@ stand on one of those tiles and still not be seen:
   sees unless he has a way to see the unseen: see invisible (cooked meals of
   the nothic's weird-eye), true sight, telepathy, or
   clairvoyance (the Detect Monsters spell, and the ring and amulet of
-  clairvoyance, which say so in their text: Brandon's ruling on MON-07).
+  clairvoyance, which say so in their text: Brandon's ruling on MON-07),
+  or Psyche's Lamp lit in his hand (lights.py).
 
 An invisible creature that is not seen still moves and fights as usual. Its
 blows are reported as "Something unseen ..." (`Monster._unseen`, kept by
@@ -37,11 +38,16 @@ FELT_SHIMMER = (200, 215, 255)
 
 
 def sees_invisible(player) -> bool:
-    """True when the hero has any way to see invisible creatures."""
+    """True when the hero has any way to see invisible creatures: an effect,
+    or Psyche's Lamp lit in his hand (lights.shows_invisible: by its light
+    she saw the unseen god)."""
     has = getattr(player, 'has_effect', None)
     if has is None:
         return False
-    return any(has(e) for e in REVEAL_EFFECTS)
+    if any(has(e) for e in REVEAL_EFFECTS):
+        return True
+    import lights
+    return lights.shows_invisible(player)
 
 
 def is_invisible(m) -> bool:
@@ -54,9 +60,21 @@ def senses(m, player) -> bool:
     creature (src/family_edges.py sense_hidden): Second Sight for an
     invisible ghost, Tremor-Sense for a lurking spider, Mimic-Sense for a
     disguised mimic, Their True Name for the Fair Folk. Only for that
-    family, only inside the technique's radius."""
+    family, only inside the technique's radius.
+
+    Hecate's Torch, lit in his hand, shows every creature that lies in wait
+    (an ambusher, a mimic) inside its light, the hero's sight
+    (lights.unmasks; whether its tile is in view is the caller's)."""
     if player is None:
         return False
+    try:
+        import lights
+        if (lights.unmasks(player) and getattr(m, 'ai_pattern', '') in ('ambush', 'mimic')
+                and hasattr(player, 'x')
+                and max(abs(m.x - player.x), abs(m.y - player.y)) <= player.get_sight_radius()):
+            return True
+    except Exception:
+        pass
     try:
         import family_edges
         return family_edges.senses(player, m)
