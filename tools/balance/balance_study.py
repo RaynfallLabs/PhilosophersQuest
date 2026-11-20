@@ -99,7 +99,55 @@ LEVERS = [
     ('o_h125d150p2', 'mon_hp=1.25,boss_hp=0.8,mon_dmg=1.5,boss_dmg=0.6667', 2, None),
     ('o_d150p2', 'mon_dmg=1.5,boss_dmg=0.6667', 2, None),
     ('o_h150d200', 'mon_hp=1.5,boss_hp=0.6667,mon_dmg=2,boss_dmg=0.5', 1, None),
+    # The sweet spot (Brandon, 2026-11-18: "maybe 1.75x harder?... find the
+    # sweet spot"); mon_hit has no named-foe twin, so +2 reaches them too.
+    ('o_d175', 'mon_dmg=1.75,boss_dmg=0.5714', 1, None),
+    ('o_d175h2', 'mon_dmg=1.75,boss_dmg=0.5714,mon_hit=2', 1, None),
 ]
+
+# Brandon's kids answer at "about .5-.7x my speed" (2026-11-18): 1.52 s / 0.7
+# to / 0.5 = 2.2-3.0 s a tier-1 sum, 1.2x and 1.7x the sim kid's 1.8 s.
+KID_FAST, KID_SLOW = 1.2, 1.7
+
+
+def ordinary(points):
+    """Knobs for ordinary monsters' blows on a floor@value schedule, with
+    the named foes' twin cancelling it at every point."""
+    dmg = ';'.join(f"{x:g}@{f}" for f, x in points)
+    boss = ';'.join(f"{1.0 / x:.4f}@{f}" for f, x in points)
+    return f"mon_dmg={dmg},boss_dmg={boss}"
+
+
+# Shaped schedules (2026-11-18): flat 1.75x killed new heroes on floor 1
+# (archers and casters shooting a 30-HP hero), while floors 10-19 stayed the
+# easiest band at any flat multiplier (health from meals outgrows the blows
+# there). Gentle at the top, strongest in the teens and twenties.
+SHAPES = {
+    'shA': [(1, 1.25), (3, 1.25), (6, 1.75), (12, 2.0), (28, 2.0), (36, 1.75)],
+    'shB': [(1, 1.25), (3, 1.25), (6, 2.0), (12, 2.5), (28, 2.5), (36, 1.75)],
+    'shC': [(1, 1.25), (3, 1.25), (6, 1.75), (12, 2.25), (28, 2.25), (40, 2.0)],
+    'shD': [(1, 1.25), (3, 1.25), (6, 1.85), (12, 2.25), (28, 2.25), (36, 1.75)],
+}
+
+
+def shape_set():
+    out = []
+    for tag, pts in SHAPES.items():
+        kn = ordinary(pts)
+        out += [cell(f'S_{tag}_adult', 'mastery', 'adult', ADULT_SPEED, kn, (1, 100)),
+                cell(f'S_{tag}_kidA', 'mastery', 'kid', KID_FAST, kn, (1, 100)),
+                cell(f'S_{tag}_kidB', 'mastery', 'kid', KID_SLOW, kn, (1, 100))]
+    return out
+
+
+def sweet_set():
+    out = []
+    for tag, kn, eng, co in [('base', '', 1, None)] + [lv for lv in LEVERS if lv[0] in (
+            'o_d150', 'o_d175', 'o_d200', 'o_d175h2')]:
+        out += [cell(f'S_{tag}_adult', 'mastery', 'adult', ADULT_SPEED, kn, (1, 100), eng, co),
+                cell(f'S_{tag}_kidA', 'mastery', 'kid', KID_FAST, kn, (1, 100), eng, co),
+                cell(f'S_{tag}_kidB', 'mastery', 'kid', KID_SLOW, kn, (1, 100), eng, co)]
+    return out
 
 # Which system makes the early fights free: mastery with one system taken
 # away (monte_carlo's m_no_* profiles), the sim kid, floors 1-30.
@@ -108,6 +156,8 @@ ABLATE = [cell('A_' + n[5:], n) for n in mc.ABLATIONS] + [
 
 SETS = {
     'ablate': ABLATE,
+    'sweet': sweet_set(),
+    'shapes': shape_set(),
     # Where we are: the early game for each player, and the other profiles.
     'base': (players('') + [
         cell('adult_committed', 'committed', 'adult', ADULT_SPEED),

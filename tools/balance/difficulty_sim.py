@@ -164,7 +164,7 @@ from dice import roll                            # noqa: E402
 from floor_curve import dice_for_average, hazard, mend, target_dmg   # noqa: E402
 from game_magic import SPELL_HEAL_SHARE          # noqa: E402
 from items import (Accessory, Armor, Container, Food, Ingredient, Potion,   # noqa: E402
-                   Shield, Spellbook, Weapon)
+                   Scroll, Shield, Spellbook, Weapon)
 from monster import Monster                      # noqa: E402
 from player import Player                        # noqa: E402
 from quiz_engine import QuizResult               # noqa: E402
@@ -400,6 +400,24 @@ SCHEDULED_KNOBS = ('mon_dmg', 'mon_hp', 'mon_hit', 'mon_count', 'heal',
 def kval(knobs: dict, name: str, floor: int):
     """Value of a knob on a floor (resolves lo:hi depth schedules)."""
     v = knobs[name]
+    if isinstance(v, dict):
+        # floor@value points ('1.25@1;2@12;1.75@36'): straight lines between
+        # them, flat beyond the first and the last (the balance study's
+        # shaped schedules, 2026-11-18).
+        pts = sorted(v.items())
+        f = int(floor)
+        if f <= pts[0][0]:
+            v = pts[0][1]
+        elif f >= pts[-1][0]:
+            v = pts[-1][1]
+        else:
+            for (fa, va), (fb, vb) in zip(pts, pts[1:]):
+                if fa <= f <= fb:
+                    v = va + (vb - va) * (f - fa) / (fb - fa)
+                    break
+        if isinstance(KNOB_DEFAULTS[name], int):
+            v = int(round(v))
+        return v
     if isinstance(v, tuple):
         # lo:hi, or any number of points spaced evenly from floor 1 to 100
         pos = (max(1, min(100, floor)) - 1) / 99.0 * (len(v) - 1)
@@ -437,7 +455,11 @@ def parse_knobs(text) -> dict:
                              + ', '.join(sorted(KNOB_DEFAULTS)))
         if isinstance(v, (list, tuple)):
             v = ':'.join(str(x) for x in v)
-        if isinstance(v, str) and ':' in v:
+        if isinstance(v, str) and '@' in v:
+            if k not in SCHEDULED_KNOBS:
+                raise SystemExit(f"--knobs: {k} does not take a floor@value schedule")
+            knobs[k] = {int(f): float(x) for x, f in (pt.split('@') for pt in v.split(';'))}
+        elif isinstance(v, str) and ':' in v:
             if k not in SCHEDULED_KNOBS:
                 raise SystemExit(f"--knobs: {k} does not take a lo:hi schedule "
                                  f"(only {', '.join(SCHEDULED_KNOBS)})")
@@ -449,6 +471,8 @@ def parse_knobs(text) -> dict:
 
 def knobs_label(knobs: dict) -> str:
     def fmt(v):
+        if isinstance(v, dict):
+            return ';'.join(f"{x:g}@{f}" for f, x in sorted(v.items()))
         return ':'.join(f"{x:g}" for x in v) if isinstance(v, tuple) else f"{v:g}"
     diff = [f"{k}={fmt(knobs[k])}" for k in KNOB_DEFAULTS if knobs[k] != KNOB_DEFAULTS[k]]
     return ', '.join(diff) if diff else 'baseline (no knobs)'
@@ -1061,7 +1085,7 @@ def build_snapshot(floor: int) -> FloorSnap:
     snap.floor = floor
     snap.groups = list(by_room.values())
     snap.n_monsters = sum(len(g) for g in snap.groups)
-    keep = (Weapon, Armor, Shield, Potion, Food, Spellbook, Accessory, Container)
+    keep = (Weapon, Armor, Shield, Potion, Food, Spellbook, Accessory, Container, Scroll)
     snap.items = [it for it in floor_items if isinstance(it, keep)]
     tiles = getattr(dungeon, 'tiles', None) or []
     snap.fountains = sum(row.count(dungeon_mod.FOUNTAIN) for row in tiles)
@@ -2044,6 +2068,40 @@ class Run:
         if w is not None and self.knobs['chain_exp'] > 0 and getattr(w, 'chain_exponent', None):
             w.chain_exponent = float(self.knobs['chain_exp'])
 
+    def _read_enchant_scroll(self, item, cursed):
+        """The enchant scrolls (the balance study, 2026-11-18: Brandon's
+        hero wore hide armour at +4 on floor 7, AC 1, where the simulated
+        one, who never read a scroll, stood at AC 8). Bracing and Sharpen
+        from floor 1, the blessings from 8, the enchant scrolls from 20
+        (game_magic: enchant_armor / enchant_weapon). A hero who wears what
+        he finds reads them, one grammar question: +1 uncursed, +2 blessed,
+        -1 cursed (a prepared hero leaves a known-cursed one), on the body
+        armour, then the shield, or the wielded weapon, up to
+        items.ENCHANT_CAP."""
+        eff = getattr(item, 'effect', '')
+        if eff not in ('enchant_armor', 'enchant_weapon'):
+            return
+        prof, p = self.prof, self.p
+        if not prof.get('equips_accessories') or (cursed and prof['avoids_cursed']):
+            return
+        if not self.quiz.one_question(int(getattr(item, 'quiz_tier', 1) or 1)):
+            return
+        buc = getattr(item, 'buc', 'uncursed')
+        delta = -1 if buc == 'cursed' else (2 if buc == 'blessed' else 1)
+        if eff == 'enchant_armor':
+            body = p.armor_slots[items_mod.ARMOR_SLOTS.index('body')]
+            targets = ([(body, 'body')] if body is not None else []) + (
+                [(p.shield, 'shield')] if p.shield is not None else [])
+            for piece, slot in targets:
+                cap = items_mod.ENCHANT_CAP.get(slot, 1)
+                if piece.enchant_bonus < cap or delta < 0:
+                    piece.enchant_bonus = max(-3, min(cap, piece.enchant_bonus + delta))
+                    break
+        elif p.weapon is not None:
+            cap = items_mod.ENCHANT_CAP.get('weapon', 5)
+            p.weapon.enchant_bonus = max(-3, min(cap, p.weapon.enchant_bonus + delta))
+        self.fs['scrolls_read'] = self.fs.get('scrolls_read', 0) + 1
+
     def consider(self, item):
         """Decide what to do with one found item."""
         prof, p = self.prof, self.p
@@ -2091,6 +2149,9 @@ class Run:
                 sp = SPELLS[item.spell_id]
                 self.spells[item.spell_id] = (int(sp['mp_cost']), sp['power'],
                                               int(sp.get('tier', 1)))
+            return
+        if isinstance(item, Scroll):
+            self._read_enchant_scroll(item, cursed)
             return
         if cursed and prof['avoids_cursed']:
             return                      # a prepared player identifies first
