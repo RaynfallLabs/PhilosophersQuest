@@ -469,6 +469,10 @@ class MenuMixin:
             messages.remove('_teleport')
             self._teleport_player()
             self.add_message("The world lurches -- you're somewhere else!", 'warning')
+        # The Fern-Flower Tincture: where the floor's treasure lies (game_wards.py)
+        if '_treasure_sight' in messages:
+            messages.remove('_treasure_sight')
+            self._treasure_sight()
 
         is_good = item.effect in self._BENEFICIAL_EFFECTS
         for msg in messages:
@@ -1412,6 +1416,9 @@ class MenuMixin:
         # The horns of legend: each carried horn not yet sounded (horns.py,
         # game_horns.py), once a run
         powers.extend(self._horn_power_rows())
+        # The Sceptre of Agamemnon in the hand: Call the Assembly, once a floor
+        # (game_wards.py)
+        powers.extend(self._sceptre_power_rows())
 
         # Hero specials (Phase 3B) — actives granted by the secret build,
         # always unlocked from game start. Show alongside quirk powers.
@@ -1518,6 +1525,8 @@ class MenuMixin:
         import horns as _horns
         if _horns.is_horn_power(pid):
             return self._activate_horn(pid)
+        if pid == 'sceptre_assembly':
+            return self._activate_sceptre()
 
         # ----- Engine wave 6: armor-granted + accessory-charge branches -----
         if pid == 'armor_seven_league_step':

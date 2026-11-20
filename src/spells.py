@@ -294,11 +294,13 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'One target is paralyzed for 8 turns.',
     },
     'paralyze_spell': {
-        # v2.15+ audit sync: desc "10 turns" -> matches applied 8 turns.
+        # Held longer than Hold Monster (T2, 8 turns): the deeper hold of
+        # the ladder (MONSTERS AND MAGIC 2026-11-19; both were 8, a flat
+        # ladder). A named foe is still held 2 turns at most.
         'name': 'Paralyze', 'effect': 'paralyze_monster', 'power': '',
         'mp_cost': 15, 'tier': 4, 'quiz_tier': 4, 'needs_target': True,
-        'spell_family': 'paralyze',
-        'desc': 'One target is paralyzed for 8 turns.',
+        'spell_family': 'paralyze', 'duration': 12,
+        'desc': 'One target is paralyzed for 12 turns.',
     },
     'mass_paralyze_spell': {
         'name': 'Mass Paralyze', 'effect': 'mass_sleep', 'power': '',
@@ -695,6 +697,109 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     },
 
     # ==================================================================
+    # MONSTERS AND MAGIC (2026-11-19): spells from myth, each the answer
+    # to a threat in the dungeon (C/PROPOSALS.md; the wards are
+    # src/wards.py, the gates on a monster src/attack_gates.py, the
+    # handlers MagicWardsMixin in src/game_wards.py).
+    # ==================================================================
+    'galdr_of_loosing_spell': {
+        'name': 'Galdr of Loosing', 'effect': 'loosing_self', 'power': '',
+        'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': False,
+        'spell_family': 'galdr', 'duration': 6,
+        'desc': 'Whatever holds you lets go, and for 6 turns nothing can grab, pin or drag you.',
+    },
+    'cockcrow_spell': {
+        'name': 'Cockcrow', 'effect': 'turn_undead', 'power': '1d8',
+        'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': False,
+        'spell_family': 'turn_undead', 'duration': 4,
+        'desc': 'The first crow of the cock: every undead creature you can see takes 1d8 holy damage and flees for 4 turns.',
+    },
+    'sanctuary_spell': {
+        'name': 'Sanctuary', 'effect': 'sanctuary_self', 'power': '',
+        'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': False,
+        'spell_family': 'sanctuary', 'duration': 8,
+        'desc': 'For 8 turns ordinary foes will not strike you. It ends the moment you strike, and a foe you hurt lately is not held back.',
+    },
+    'elf_shot_spell': {
+        'name': 'Elf-Shot', 'effect': 'paralyze_monster', 'power': '',
+        'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
+        'spell_family': 'paralyze', 'duration': 3,
+        'desc': 'An elf-arrow no one sees fly: one foe you can see is frozen stiff for 3 turns.',
+    },
+    'stayed_spear_spell': {
+        'name': 'Galdr of the Stayed Spear', 'effect': 'stayed_spear_self', 'power': '',
+        'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': False,
+        'spell_family': 'galdr', 'duration': 12,
+        'desc': 'For 12 turns arrows, stones and spears from any foe you can see drop short of you. What you cannot see still finds you.',
+    },
+    'tacitas_seal_spell': {
+        'name': "Tacita's Seal", 'effect': 'silence_monster', 'power': '',
+        'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
+        'spell_family': 'silence', 'duration': 10,
+        'desc': 'One foe is Silenced for 10 turns: it cannot wail, sing, call for help, heal or cast.',
+    },
+    'dionysus_vine_spell': {
+        'name': "Dionysus's Vine", 'effect': 'entangle', 'power': '',
+        'mp_cost': 7, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
+        'spell_family': 'entangle', 'duration': 4,
+        'desc': 'Vines burst up round one foe: everything walking there is held fast for 4 turns, and for 12 turns the vines catch whatever steps in, you too.',
+    },
+    'shrink_the_earth_spell': {
+        'name': 'Shrink the Earth', 'effect': 'aimed_step', 'power': '',
+        'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': False,
+        'needs_tile': True, 'spell_family': 'teleport',
+        'desc': 'Pick a spot you can see, up to 6 steps away, and stand there.',
+    },
+    'bough_of_somnus_spell': {
+        'name': 'Bough of Somnus', 'effect': 'sleep_area', 'power': '',
+        'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
+        'spell_family': 'sleep', 'duration': 8,
+        'desc': 'One foe and everything beside it fall asleep for 8 turns. A blow wakes the one it lands on.',
+    },
+    'dulled_blades_spell': {
+        'name': 'Galdr of Dulled Blades', 'effect': 'mass_weaken', 'power': '',
+        'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
+        'spell_family': 'galdr', 'duration': 8,
+        'desc': 'Every foe you can see is Weakened for 8 turns: its blows do half damage.',
+    },
+    'confusion_of_tongues_spell': {
+        'name': 'Confusion of Tongues', 'effect': 'tongues', 'power': '',
+        'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
+        'spell_family': 'confuse', 'duration': 6,
+        'desc': 'Every foe you can see that speaks is Confused for 6 turns, and for 12 its pack or war band forgets how to fight together.',
+    },
+    'darkness_of_egypt_spell': {
+        'name': 'Darkness of Egypt', 'effect': 'mass_blind', 'power': '',
+        'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
+        'spell_family': 'darkness', 'duration': 6,
+        'desc': 'Every foe you can see is Blinded for 6 turns. Your own eyes stay clear.',
+    },
+    'pans_panic_spell': {
+        'name': "Pan's Panic", 'effect': 'pan_panic', 'power': '',
+        'mp_cost': 9, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
+        'spell_family': 'fear', 'duration': 8,
+        'desc': 'Every foe within 4 steps of you runs in terror for 8 turns.',
+    },
+    'settled_strife_spell': {
+        'name': 'Galdr of Settled Strife', 'effect': 'settled_strife', 'power': '',
+        'mp_cost': 15, 'tier': 4, 'quiz_tier': 4, 'needs_target': False,
+        'spell_family': 'galdr', 'duration': 12,
+        'desc': 'Every man, goblin and giant you can see lays down arms for 12 turns. Strike one and it ends for that one.',
+    },
+    'mist_of_manannan_spell': {
+        'name': 'Mist of Manannan', 'effect': 'veil_self', 'power': '',
+        'mp_cost': 14, 'tier': 4, 'quiz_tier': 4, 'needs_target': False,
+        'spell_family': 'veil', 'duration': 20,
+        'desc': 'For 20 turns no foe more than 2 steps away can see you or shoot you: archers have to come close.',
+    },
+    'hush_of_the_feralia_spell': {
+        'name': 'Hush of the Feralia', 'effect': 'mass_silence', 'power': '',
+        'mp_cost': 15, 'tier': 4, 'quiz_tier': 4, 'needs_target': False,
+        'spell_family': 'silence', 'duration': 8,
+        'desc': 'Every foe you can see is Silenced for 8 turns: no wail, no song, no summoning, no healing, no spell.',
+    },
+
+    # ==================================================================
     # CHARACTER-BUILD SIGNATURE SPELLS (out of general pool)
     # Witcher signs -- Geralt build only. Each is a flavor variant of an
     # existing T1 effect, kept for theming.
@@ -791,10 +896,12 @@ SPELL_REACH: dict[str, int] = {
     'acid_splash_spell': REACH_SHORT,
     'smite_spell':       REACH_SHORT,
     'sacred_flame_spell': REACH_SHORT,
+    # Shrink the Earth folds only a little ground: a tile in sight, 6 off.
+    'shrink_the_earth_spell': 6,
 }
 
 for _sid, _spell in LEARNABLE_SPELLS.items():
-    if _spell.get('needs_target'):
+    if _spell.get('needs_target') or _spell.get('needs_tile'):
         _spell['reach'] = SPELL_REACH.get(_sid)
 
 

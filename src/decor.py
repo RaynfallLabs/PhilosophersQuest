@@ -136,6 +136,28 @@ def remove(dungeon, pos) -> None:
     blocks.discard(pos)
     opaque.discard(pos)
     dungeon.__dict__.setdefault('fixture_state', {}).pop(pos, None)
+    (dungeon.__dict__.get('fixture_expiry') or {}).pop(pos, None)
+
+
+def place_for(dungeon, pos, fid: str, until_turn: int) -> bool:
+    """A fixture that lasts until ``until_turn`` (a conjured vine): only on
+    a tile with no fixture already, and gone again when the turn comes
+    (``expire``). Returns True when it was placed."""
+    pos = (int(pos[0]), int(pos[1]))
+    if fixtures_of(dungeon).get(pos):
+        return False
+    place(dungeon, pos, fid)
+    dungeon.__dict__.setdefault('fixture_expiry', {})[pos] = int(until_turn)
+    return True
+
+
+def expire(dungeon, now: int) -> list:
+    """Remove every placed-for fixture whose turn has come; returns where."""
+    exp = dungeon.__dict__.get('fixture_expiry') or {}
+    gone = [p for p, t in exp.items() if int(t) <= int(now)]
+    for p in gone:
+        remove(dungeon, p)
+    return gone
 
 
 def fixture_at(dungeon, x: int, y: int):

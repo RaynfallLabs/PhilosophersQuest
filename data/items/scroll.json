@@ -699,9 +699,16 @@
     "effect": "protection",
     "power": "",
     "unidentified_name": "water-stained scroll",
-    "lore": "The prayer called Saint Patrick's Breastplate binds its speaker to the strength of heaven: Christ before, behind, beneath, above, on the right hand and the left. Tradition says Patrick sang it on the road to Tara and his enemies saw only deer go by. Temple acolytes copy it out. The words close around the reader.",
+    "lore": "The prayer called Saint Patrick's Breastplate binds its speaker to the strength of heaven: Christ before, behind, beneath, above, on the right hand and the left. Tradition says Patrick sang it on the road to Tara and his enemies saw only deer go by. Temple acolytes copy it out. The words close around the reader. Christ before and behind, on the right hand and the left: nothing that circles the reader finds a side unguarded.",
     "weight": 0.1,
-    "peak_weight": 0.25
+    "peak_weight": 0.25,
+    "ward_also": [
+      [
+        "all_round_ward",
+        20
+      ]
+    ],
+    "ward_line": "Christ before and behind, on the right hand and the left: no pack that circles you finds a side unguarded"
   },
   "scroll_of_greater_protection": {
     "name": "scroll of greater protection",
@@ -721,9 +728,20 @@
     "effect": "protection",
     "power": "",
     "unidentified_name": "azure-inked scroll",
-    "lore": "The ninety-first Psalm promises that no terror by night nor arrow by day will come near the one who trusts. For two thousand years people have worn it: on scraps of papyrus, in lockets, sewn into soldiers' coats. This rite is the Psalm written in full by a careful hand, and the guard it raises lasts.",
+    "lore": "The ninety-first Psalm promises that no terror by night nor arrow by day will come near the one who trusts. For two thousand years people have worn it: on scraps of papyrus, in lockets, sewn into soldiers' coats. This rite is the Psalm written in full by a careful hand, and the guard it raises lasts. No arrow that flies by day and no terror by night comes near the reader while the words hold.",
     "weight": 0.1,
-    "peak_weight": 0.25
+    "peak_weight": 0.25,
+    "ward_also": [
+      [
+        "missile_ward",
+        30
+      ],
+      [
+        "fear_immune",
+        30
+      ]
+    ],
+    "ward_line": "No arrow that flies by day and no terror by night comes near you while the words hold"
   },
   "scroll_of_aegis": {
     "name": "scroll of aegis",
@@ -743,9 +761,16 @@
     "effect": "protection",
     "power": "",
     "unidentified_name": "bronze-clasped scroll",
-    "lore": "Hephaestus made the aegis for Zeus: a goatskin fringed with a hundred golden tassels, with the Gorgon's head at its centre. Athena wore it into battle more often than her father did, and not even his thunderbolt could break it. Her temple scribes wrote this rite. Ordinary blades find no purchase on its reader.",
+    "lore": "Hephaestus made the aegis for Zeus: a goatskin fringed with a hundred golden tassels, with the Gorgon's head at its centre. Athena wore it into battle more often than her father did, and not even his thunderbolt could break it. Her temple scribes wrote this rite. Ordinary blades find no purchase on its reader. The Gorgon at its centre looks back at any gaze that seeks the reader.",
     "weight": 0.1,
-    "peak_weight": 0.25
+    "peak_weight": 0.25,
+    "ward_also": [
+      [
+        "petrify_immune",
+        50
+      ]
+    ],
+    "ward_line": "The Gorgon at the shield's heart looks back at any gaze that seeks you"
   },
   "scroll_of_absolute_ward": {
     "name": "scroll of absolute ward",
@@ -765,9 +790,16 @@
     "effect": "protection",
     "power": "",
     "unidentified_name": "horn-capped scroll",
-    "lore": "Nebuchadnezzar heated his furnace seven times hotter than usual and threw in Shadrach, Meshach and Abednego, bound. The king looked and saw four men walking loose in the fire. The three came out with not a hair singed and no smell of smoke on their coats. This is the longest and strongest of the warding rites.",
+    "lore": "Nebuchadnezzar heated his furnace seven times hotter than usual and threw in Shadrach, Meshach and Abednego, bound. The king looked and saw four men walking loose in the fire. The three came out with not a hair singed and no smell of smoke on their coats. This is the longest and strongest of the warding rites. Fire has no claim on the reader while the rite lasts.",
     "weight": 0.1,
-    "peak_weight": 0.25
+    "peak_weight": 0.25,
+    "ward_also": [
+      [
+        "fire_shield",
+        80
+      ]
+    ],
+    "ward_line": "As the three in the furnace walked in the fire unburnt, fire has no claim on you"
   },
   "scroll_of_bewilderment": {
     "name": "scroll of bewilderment",
@@ -2423,5 +2455,182 @@
     "weight": 0.1,
     "peak_weight": 0,
     "single_copy": true
+  },
+  "scroll_of_the_lemuria": {
+    "name": "scroll of the Lemuria",
+    "symbol": "?",
+    "color": [
+      60,
+      50,
+      40
+    ],
+    "weight_lb": 0.1,
+    "min_level": 1,
+    "peak_floor": 10,
+    "spread": 6,
+    "tier": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "family_ward",
+    "power": "",
+    "unidentified_name": "black-threaded scroll",
+    "lore": "Each May the Romans drove the hungry dead out of their houses. At midnight the father of the house walked barefoot, threw nine black beans over his shoulder without looking back and said, with these I redeem me and mine. The shades took the beans and left the living alone, so long as the living did not turn and strike them.",
+    "weight": 0.1,
+    "peak_weight": 0.25,
+    "turns": 15,
+    "read_line": "You throw nine black beans over your shoulder without looking back. The restless dead will not strike you up close until you strike one",
+    "ward": "ward_lemuria"
+  },
+  "scroll_of_the_hamelin_piper": {
+    "name": "scroll of the Hamelin Piper",
+    "symbol": "?",
+    "color": [
+      220,
+      180,
+      60
+    ],
+    "weight_lb": 0.1,
+    "min_level": 1,
+    "peak_floor": 10,
+    "spread": 6,
+    "tier": 1,
+    "quiz_tier": 1,
+    "quiz_threshold": 1,
+    "effect": "family_rout",
+    "power": "",
+    "unidentified_name": "ribbon-striped scroll",
+    "lore": "In 1284, the legend says, a piper in a coat of many colours came to Hamelin and offered to rid it of rats for a price. He played in the streets, every rat in town came out to follow him, and he led them into the river Weser to drown. This is the tune, written down: vermin that hear it have to go where it leads.",
+    "weight": 0.1,
+    "peak_weight": 0.25,
+    "turns": 12,
+    "read_line": "You play the tune written on the scroll, and every vermin in sight must go where it leads.",
+    "family": "vermin",
+    "status": "feared",
+    "none_line": "You play the Piper's tune, and no rat or crawling thing in sight hears it."
+  },
+  "scroll_of_daniel": {
+    "name": "scroll of Daniel",
+    "symbol": "?",
+    "color": [
+      220,
+      190,
+      90
+    ],
+    "weight_lb": 0.1,
+    "min_level": 8,
+    "peak_floor": 26,
+    "spread": 8,
+    "tier": 2,
+    "quiz_tier": 2,
+    "quiz_threshold": 1,
+    "effect": "family_ward",
+    "power": "",
+    "unidentified_name": "brass-ringed vellum",
+    "lore": "King Darius was tricked into throwing his friend Daniel to the lions for praying to his God. At dawn the king ran to the den and Daniel answered him: an angel had shut the lions' mouths, and they had not touched him all night. Read aloud, these words close the jaws and sheathe the claws of every beast that hears them.",
+    "weight": 0.1,
+    "peak_weight": 0.25,
+    "turns": 20,
+    "read_line": "You read how the angel shut the lions' mouths. Great beasts will not bite or claw you until you strike one",
+    "ward": "ward_daniel"
+  },
+  "scroll_of_the_psylli": {
+    "name": "scroll of the Psylli",
+    "symbol": "?",
+    "color": [
+      200,
+      180,
+      120
+    ],
+    "weight_lb": 0.1,
+    "min_level": 8,
+    "peak_floor": 26,
+    "spread": 8,
+    "tier": 2,
+    "quiz_tier": 2,
+    "quiz_threshold": 1,
+    "effect": "family_ward",
+    "power": "",
+    "unidentified_name": "papyrus roll",
+    "lore": "Pliny wrote of the Psylli of Libya, whose bodies carried a poison deadly to snakes; they tested their babies by laying them among serpents. Lucan says Cato's army crossed the desert with Psylli at its side, sucking the venom out of bitten soldiers. The scroll is their old charm, and while it holds a serpent's bite is only a bite.",
+    "weight": 0.1,
+    "peak_weight": 0.25,
+    "turns": 25,
+    "read_line": "You speak the Psylli's old charm. A serpent's bite cannot poison you and its coils cannot hold you",
+    "ward": "ward_psylli"
+  },
+  "scroll_of_the_heart_sutra": {
+    "name": "scroll of the Heart Sutra",
+    "symbol": "?",
+    "color": [
+      235,
+      235,
+      225
+    ],
+    "weight_lb": 0.1,
+    "min_level": 20,
+    "peak_floor": 50,
+    "spread": 10,
+    "tier": 3,
+    "quiz_tier": 3,
+    "quiz_threshold": 1,
+    "effect": "family_ward",
+    "power": "",
+    "unidentified_name": "rice-paper scroll",
+    "lore": "Hoichi was a blind lute-player who sang the Tale of the Heike so well that the drowned Heike ghosts called him to their graves night after night. To save him, his priest wrote the Heart Sutra over every inch of his body, so the ghost-samurai could not see him, but in his haste forgot the ears. Read over yourself, the sutra hides you from every ghost, and like the priest's, it has one weak place.",
+    "weight": 0.1,
+    "peak_weight": 0.25,
+    "turns": 20,
+    "read_line": "You read the sutra over yourself, every inch of skin. The ghosts cannot see you, but strike one and they will all find you",
+    "ward": "ward_hoichi"
+  },
+  "scroll_of_saint_martha": {
+    "name": "scroll of Saint Martha's Hymn",
+    "symbol": "?",
+    "color": [
+      200,
+      220,
+      240
+    ],
+    "weight_lb": 0.1,
+    "min_level": 40,
+    "peak_floor": 70,
+    "spread": 10,
+    "tier": 4,
+    "quiz_tier": 4,
+    "quiz_threshold": 1,
+    "effect": "family_ward",
+    "power": "",
+    "unidentified_name": "blue-corded vellum",
+    "lore": "The Golden Legend tells that a dragon called the Tarasque lived in the Rhone and burned the farms of Tarascon. Martha went to it alone, sprinkled it with holy water and sang to it, and it came out tame as a lamb, so she led it into the town on her girdle. Her hymn takes the heat out of a dragon's breath and the weight out of its blows.",
+    "weight": 0.1,
+    "peak_weight": 0.25,
+    "turns": 25,
+    "read_line": "You sing Saint Martha's hymn. Dragons hurt you half as much, breath and bite alike",
+    "ward": "ward_martha"
+  },
+  "scroll_of_the_udug_hul": {
+    "name": "scroll of the Udug Hul",
+    "symbol": "?",
+    "color": [
+      190,
+      120,
+      80
+    ],
+    "weight_lb": 0.1,
+    "min_level": 60,
+    "peak_floor": 88,
+    "spread": 10,
+    "tier": 5,
+    "quiz_tier": 5,
+    "quiz_threshold": 1,
+    "effect": "family_ward",
+    "power": "",
+    "unidentified_name": "gold-wired scroll",
+    "lore": "The exorcists of Babylon kept a long series of clay tablets, the Udug Hul, against the evil spirits that crept in at doors and under beds. The priest named each demon, bound it by the great gods and ordered it out into the desert. Copied onto vellum, the old words still drive fiends back from the one who reads them.",
+    "weight": 0.1,
+    "peak_weight": 0.25,
+    "turns": 30,
+    "read_line": "You name the evil spirits by the great gods and order them out into the desert. Demons cannot strike you up close, and their curses and terrors do not take hold, until you strike one",
+    "ward": "ward_udug_hul"
   }
 }

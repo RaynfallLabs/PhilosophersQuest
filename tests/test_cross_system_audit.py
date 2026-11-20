@@ -270,6 +270,9 @@ def test_every_spell_effect_implemented():
     fn_start = src.find("def _apply_spell_effect")
     assert fn_start >= 0
     fn_src = src[fn_start:fn_start + 50000]
+    # The MONSTERS AND MAGIC spells (2026-11-19) dispatch in MagicWardsMixin
+    # (src/game_wards.py), called first thing by _cast_spell_effect.
+    fn_src += Path('src/game_wards.py').read_text(encoding='utf-8')
     missing = []
     for sdef in LEARNABLE_SPELLS.values():
         eff = sdef.get('effect', '')

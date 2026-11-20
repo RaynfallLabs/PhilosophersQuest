@@ -7590,5 +7590,17 @@
   "flavor": "Sun Wukong, the Monkey King, ate the peaches of immortality in Heaven's own orchard and no blade could kill him after. A dragon king and Heaven's soldiers could not stop him.",
   "art": "dish_stew_t5_stat",
   "cross_depth": true
+ },
+ "brew_theriac": {
+  "name": "Theriac of Andromachus",
+  "ingredients": [
+   "cobra_prime",
+   "swamp_moss",
+   "cave_mushroom"
+  ],
+  "benefit": "carry",
+  "flavor": "Andromachus's antidote: viper flesh, cave herbs and moss pounded together and bound, as Nero's physician bound his, to drive venom out.",
+  "makes": "potion:theriac",
+  "art": "dish_stew_t1_special"
  }
 }

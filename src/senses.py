@@ -192,6 +192,9 @@ def sees(m, player, dungeon) -> bool:
         return False
     if d <= 1:
         return True
+    import wards
+    if wards.veil_hides(player, m, d):
+        return False                  # the Mist of Manannan: it sees only what is close
     if player.has_effect('invisible') and 'truesight' not in ss:
         return False
     return clear_view(m.x, m.y, player.x, player.y, dungeon)
@@ -221,6 +224,9 @@ def lore_sense(m, player, dungeon):
 
 
 def _hidden(m, player, dungeon) -> bool:
+    import wards
+    if wards.hidden_from(player, m):
+        return True                   # a sight ward (Hoichi's sutra): this family cannot see him
     try:
         from chain_passives import is_player_hidden_from
     except ImportError:

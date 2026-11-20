@@ -510,6 +510,13 @@ class InputMixin:
                 # pack, ready (lowercase h harvests; game_horns._qa_horns).
                 self._qa_horns()
                 return True
+            if uni == 'B' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: every MONSTERS AND MAGIC spell learned,
+                # two of each new scroll, potion and oil, the two wands and
+                # the Sceptre of Agamemnon in the pack, MP full
+                # (game_wards._qa_magic_sampler).
+                self._qa_magic_sampler()
+                return True
             if uni == 'V' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: the Dreamspun Sketchbook in the pack,
                 # every kind it can draw up to max(10, floor + 5) studied and

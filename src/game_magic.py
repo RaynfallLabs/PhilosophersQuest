@@ -87,6 +87,7 @@ from items import Container
 from quiz_engine import QuizMode, QuizState
 from spells import LEARNABLE_SPELLS
 from geom import monster_at_tile
+from game_wards import MagicWardsMixin
 
 if TYPE_CHECKING:
     from items import Scroll, Spellbook, Wand
@@ -294,7 +295,7 @@ def _the_less(name: str) -> str:
     return name
 
 
-class MagicMixin:
+class MagicMixin(MagicWardsMixin):
     """Spell, scroll, spellbook, wand, identification, and recall-lore actions.
 
     Class-level state (``_NECRONOMICON_QUESTIONS``,
@@ -423,6 +424,7 @@ class MagicMixin:
             'polymorph_monster', 'fear_monster', 'charm_monster', 'poison_monster',
             'disease_monster', 'curse_monster', 'teleport_monster', 'drain_life',
             'disintegrate', 'weaken_monster', 'drain_magic', 'dispel_magic',
+            'unstring_monster',
         }
         if wand.effect in _TARGETED_EFFECTS:
             self._pending_wand = wand
@@ -621,6 +623,8 @@ class MagicMixin:
         import random as _rng
         from dice import roll
         effect = wand.effect
+        if self._mm_wand(wand):              # the MONSTERS AND MAGIC wands (game_wards.py)
+            return
 
         # -- CHARACTER EFFECTS ------------------------------------------------
         if effect == 'heal':
@@ -1244,9 +1248,7 @@ class MagicMixin:
             self.add_message("You sense the presence of all nearby creatures!", 'success')
 
         elif effect == 'detect_treasure':
-            for item in self.ground_items:
-                self.dungeon.explored.add((item.x, item.y))
-            self.add_message("A golden shimmer reveals hidden treasures!", 'success')
+            self._treasure_sight("A golden shimmer reveals hidden treasures!")
 
         elif effect == 'mapping':
             for y in range(self.dungeon.height):
@@ -1560,6 +1562,11 @@ class MagicMixin:
             self.state = STATE_PLAYER
             return
 
+        # A spell aimed at a tile (Shrink the Earth: game_wards.py)
+        if spell.get('needs_tile'):
+            self._begin_tile_spell(spell, spell_id, mp_cost, _free_cast)
+            return
+
         # For targeted spells, enter targeting mode
         if spell.get('needs_target'):
             self._pending_spell = spell
@@ -1738,6 +1745,10 @@ class MagicMixin:
         # read the per-tier multiplier. Default 5 keeps callers that go through
         # this handler safe if a legacy spell ever ships without `tier`.
         self._active_spell_tier = int(spell.get('tier', 5) or 5)
+
+        # The MONSTERS AND MAGIC spells (game_wards.py).
+        if self._mm_cast(spell, target, chain_scale):
+            return
 
         # Handle the two spell-specific effects not in wand system
         if effect == 'displacement_self':
@@ -2095,7 +2106,8 @@ class MagicMixin:
                 if self._in_spell_sight(m) and _is_undead(m)
             ]
             if undead:
-                fear_dur = max(3, int(8 * chain_scale))
+                # Its own length (spells.py 'duration': Cockcrow 4).
+                fear_dur = max(3, int(int(spell.get('duration', 8)) * chain_scale))
                 fled = 0
                 for m in undead:
                     m.take_damage(scaled, 'holy')
@@ -2434,7 +2446,9 @@ class MagicMixin:
                                     f"{the_name(target)} is confused for {{dur}} turns!",
                                     f"{the_name(target)} shrugs off the confusion!")
             elif effect == 'paralyze_monster':
-                got, why = self._inflict(target, 'paralyzed', max(2, int(8 * chain_scale)))
+                # Its own length (spells.py 'duration': Elf-Shot 3, Paralyze 12).
+                got, why = self._inflict(target, 'paralyzed',
+                                         max(2, int(int(spell.get('duration', 8)) * chain_scale)))
                 self._say_inflicted(target, got, why,
                                     f"{the_name(target)} is paralyzed for {{dur}} turns!",
                                     f"{the_name(target)} resists the paralysis!")
@@ -2843,6 +2857,9 @@ class MagicMixin:
         # Same ladder indices as the old chain-based _tstep, so all the
         # existing 5-element magnitude tables below still work.
         _tstep = min(max(0, int(getattr(scroll, 'tier', scroll.quiz_tier)) - 1), 4)
+
+        if self._mm_scroll(scroll):         # the MONSTERS AND MAGIC scrolls (game_wards.py)
+            return
 
         if effect == 'heal':
             base = roll(scroll.power) if scroll.power else 10
@@ -3443,6 +3460,7 @@ class MagicMixin:
             # status, which is 2 points of armor whatever the scroll's tier.)
             self.add_message(
                 f"A protective ward envelops you: 2 points of armor for {quantity(dur, 'turn')}.", 'success')
+            self._protection_also(scroll)      # what its own rite also keeps off (game_wards.py)
 
         elif effect == 'enchant_accessory':
             _buc = getattr(scroll, 'buc', 'uncursed')

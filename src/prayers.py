@@ -12,6 +12,7 @@ from __future__ import annotations
 
 MERCY = 'mercy'
 GUIDE_MY_HAND = 'guide_my_hand'
+DELIVER_US = 'deliver_us'
 
 # id, the words on the menu, one line of what it asks for, and the lowest
 # karma at which Heaven will hear it at all (None = always offered).
@@ -30,6 +31,17 @@ PRAYERS: list[dict] = [
                 "the clock runs long.",
         'title': "PRAYER  --  MICHAEL, GUIDE MY HAND",
         'karma_min': None,
+    },
+    {
+        # MONSTERS AND MAGIC 2026-11-19: the first prayer karma opens. A
+        # ring the fiends and the evil dead cannot cross (wards.py
+        # 'ward_deliver_us'), for as long as the chain reaches.
+        'id': DELIVER_US,
+        'name': "Deliver Us From Evil",
+        'asks': "A ring that demons, ghosts, vampires and the walking dead cannot "
+                "cross to strike you, until you strike them.",
+        'title': "PRAYER  --  DELIVER US FROM EVIL",
+        'karma_min': 3,
     },
 ]
 
@@ -69,6 +81,20 @@ GUIDE_TABLE: dict[int, tuple[float, int, int]] = {
 DESPERATE_HP = 0.25
 DESPERATE_SHIELD_TURNS = 3
 DESPERATE_EXTRA_TURNS = 2
+
+
+# Deliver Us From Evil: turns of the ward a link of the chain (effective
+# chain, +1 at an altar), at most DELIVER_CAP; a desperate prayer two more.
+DELIVER_TURNS_PER_LINK = 4
+DELIVER_CAP = 24
+
+
+def deliver_us(effective_chain: int, desperate: bool = False) -> int:
+    """Turns the ring holds for an answered prayer (0 if the chain was empty)."""
+    if effective_chain <= 0:
+        return 0
+    turns = min(DELIVER_CAP, DELIVER_TURNS_PER_LINK * int(effective_chain))
+    return turns + (DESPERATE_EXTRA_TURNS if desperate else 0)
 
 
 def guide_my_hand(wis: int, effective_chain: int, karma: int = 0,

@@ -108,6 +108,7 @@ from game_bococho_render import BocochoRenderMixin
 from game_songs import SongsMixin
 from game_manifest import ManifestMixin
 from game_horns import HornsMixin
+import monster as monster_mod_wards      # its HERO_STRUCK hook (game_wards.py, via MagicMixin)
 from spells import LEARNABLE_SPELLS
 
 
@@ -749,6 +750,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # The player reaches the game (wards, trait counters) from the first
         # turn: a trap on the first step used to find no game to report to.
         self.player._combat_game_ref = self
+        monster_mod_wards.HERO_STRUCK = self._ward_hero_struck   # the wards a blow breaks (game_wards.py)
         # One-cosmetic-per-item: give the player the appearance-stamp hook so
         # accessories entering the pack from any source adopt this run's looks.
         self.player._appearance_stamp = self.apply_appearance
@@ -906,6 +908,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.msg_log.clear()
         self.player        = state['player']
         self.player._combat_game_ref = self     # dropped on save (Player.__getstate__)
+        monster_mod_wards.HERO_STRUCK = self._ward_hero_struck   # the wards a blow breaks (game_wards.py)
         # One-cosmetic-per-item: re-attach the appearance-stamp hook (dropped on
         # pickle). _migrate_buc_all (below) handles deleted-id remap + stamping
         # of already-owned/ground items.
@@ -7324,6 +7327,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         'heroism', 'brilliance', 'levitation', 'see_invisible',
         'restore_str', 'gain_level',
         'fire_resist', 'cold_resist', 'shock_resist',
+        # MONSTERS AND MAGIC 2026-11-19 (food_system._WARD_POTIONS)
+        'wakeful', 'fearless', 'stoneproof', 'clear_mind', 'antidote', 'fireproof',
+        'styx_dipped', 'restoration', 'treasure_sight',
     })
 
     # Shared a-z key map for all item menus (26 items per page)

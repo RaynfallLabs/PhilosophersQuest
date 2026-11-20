@@ -990,17 +990,8 @@ class TraderMixin:
             self.add_message(f"{who} doses you with something foul. You feel much better.", 'success')
             return True
         if sid == 'restore':
-            n = 0
-            s = int(getattr(p, '_str_lost_to_disease', 0) or 0)
-            if s:
-                p.apply_stat_bonus('STR', s)
-                p._str_lost_to_disease = 0
-                n += s
-            for stat, v in list((p.__dict__.get('drained') or {}).items()):
-                if int(v or 0) > 0:
-                    p.apply_stat_bonus(stat, int(v))
-                    n += int(v)
-            p.__dict__['drained'] = {}
+            from status_effects import restore_drained
+            n = restore_drained(p)
             if not n:
                 return False
             self.add_message(f"{who} works on you for an hour. What the dark took, "

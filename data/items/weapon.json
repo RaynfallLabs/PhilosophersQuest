@@ -7701,5 +7701,86 @@
     "design_notes": "Boudicca's own spear (Brandon, 2026-11-17). What it IS, from Cassius Dio 62.2: the spear she grasped 'to aid her in terrifying all beholders'. What belongs to it: terror (effects feared, 25% a hit, 4 turns; the mindless and the fearless are not frightened, Monster.hold). A mortal queen's war spear, the peer of the Dory of Leonidas and the Spear of Romulus: maths tier 2 (its own, fixed), base 30. Never random loot (min_level 9999, no spawn weight).",
     "id_level": 0,
     "chain_exponent": 1.15
+  },
+  "sceptre_of_agamemnon": {
+    "name": "Sceptre of Agamemnon",
+    "class": "mace",
+    "weapon_class": "mace",
+    "variant": "1h",
+    "tier": 3,
+    "material": "bronze",
+    "is_unique": true,
+    "mathTier": 3,
+    "quiz_tier": 3,
+    "baseDamage": 100,
+    "base_damage": 100,
+    "chainMultipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "chain_multipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "maxChainLength": 5,
+    "max_chain_length": 5,
+    "weapon_class_chain": "normal",
+    "damageTypes": [
+      "blunt"
+    ],
+    "damage_types": [
+      "blunt"
+    ],
+    "symbol": ")",
+    "color": [
+      220,
+      180,
+      80
+    ],
+    "weight": 3.0,
+    "twoHanded": false,
+    "two_handed": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": false,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "rare",
+    "container_loot_tier": "rare",
+    "value": 3000,
+    "min_level": 41,
+    "peak_floor": 50,
+    "spread": 8,
+    "peak_weight": 0.5,
+    "max_enchant": 3,
+    "unidentified_name": "a gold-studded rod with an eagle on top",
+    "identified": false,
+    "lore": "Hephaestus forged a sceptre for Zeus, and it passed by Hermes to Pelops, to Atreus, to Thyestes and at last to Agamemnon, king of men. When the Greek army broke for the ships, Odysseus took it from his hand and drove the kings back to the assembly, and he beat the loud-mouthed Thersites with it until he sat down weeping. Centuries later the people of Chaeronea still made sacrifices to it every day.",
+    "template_basis": "mace",
+    "effects": {
+      "status": "silenced",
+      "effect_chance": 1.0,
+      "effect_duration": 2,
+      "families": [
+        "mortals",
+        "goblinkin"
+      ]
+    },
+    "power_note": "V: Call the Assembly, once a floor (game_wards.py): a history escalator chain; every man and goblin in sight is Feared for 2 turns a link (12 at most), and a war band in sight loses its leader's hold.",
+    "chain_exponent": 1.15
   }
 }

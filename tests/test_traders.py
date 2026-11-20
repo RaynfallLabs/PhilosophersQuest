@@ -284,6 +284,11 @@ def test_every_trader_kind_stocks_from_its_own_list():
         # (traders._gem_stock, _rare_stock: the Draught of Mimir's Well).
         extra += sum(1 for i in stock if getattr(i, '_trade_share', None)
                      or getattr(i, 'item_class', '') == 'treasure')
+        # ... and one named thing at its chance (a Soul Sphere: build_stock
+        # puts it on the shelf and the random picks never crowd it out). The
+        # seeded draw met one only once the magic of 2026-11-19 joined the pools.
+        named = {e['id'] for e in d['stock'] if 'id' in e}
+        extra += sum(1 for i in stock if getattr(i, 'id', '') in named)
         assert len(stock) <= max(traders.stock_size(d, lvl), 2) + extra
         classes = {getattr(i, 'item_class', '') for i in stock}
         allowed = {e.get('class') or e.get('gear') or e.get('cat') for e in d['stock']}

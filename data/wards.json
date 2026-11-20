@@ -1,0 +1,330 @@
+{
+  "_doc": "Wards (src/wards.py) and monster gates (src/attack_gates.py), MONSTERS AND MAGIC 2026-11-19. A ward is a hero status: 'family' wards keep one family off (holds: melee = no blow, bite, touch, grapple, sting or trample from it; riders = its blows carry none of the listed riders; sight = it cannot notice the hero; damage = its damage times mult). 'breaks': creature = striking one of the family ends the ward against that one; all = striking any one ends it for all; never. A named foe (boss, mini-boss, seal demon) is too strong for a melee ward: its first blow lands at half and the ward breaks against it; a sight ward does not fool it; a damage ward holds against it too. The other wards are the hero's own: missile_ward (every missile fails), stayed_spear (missiles from foes he can see fail), veiled (no foe farther than veil_reach sees him or shoots him), all_round_ward (a pack round him gains nothing), sanctuary (ordinary foes hold off until he strikes; one he hurt in the last sanctuary_memory turns does not), styx_dipped (no blow, bite or claw wounds him; an unseen one lands at half).",
+  "melee_deliveries": [
+    "blow",
+    "bite",
+    "touch",
+    "grapple",
+    "sting",
+    "trample"
+  ],
+  "styx_deliveries": [
+    "blow",
+    "bite",
+    "sting",
+    "trample",
+    "grapple"
+  ],
+  "physical_types": [
+    "physical",
+    "slash",
+    "pierce",
+    "blunt"
+  ],
+  "veil_reach": 2,
+  "sanctuary_memory": 20,
+  "family_wards": {
+    "ward_lemuria": {
+      "name": "Lemuria Ward",
+      "colour": [
+        150,
+        140,
+        120
+      ],
+      "desc": "The restless dead cannot strike you up close until you strike one",
+      "families": [
+        "restless_dead"
+      ],
+      "holds": [
+        "melee"
+      ],
+      "breaks": "creature",
+      "held": "{The} reaches for you, then turns aside: the shades took the beans.",
+      "broken": "You struck {the}: the beans no longer buy you off {him}.",
+      "named": "{The} is too strong for the old rite: the blow lands half spent, and the beans buy nothing more from {him}.",
+      "expire": "The beans are spent. The dead may come at you again."
+    },
+    "ward_daniel": {
+      "name": "Daniel's Ward",
+      "colour": [
+        215,
+        180,
+        90
+      ],
+      "desc": "Great beasts cannot bite or claw you until you strike one",
+      "families": [
+        "great_beasts"
+      ],
+      "holds": [
+        "melee"
+      ],
+      "breaks": "creature",
+      "held": "{The} snaps at you, and {his} jaws will not close.",
+      "broken": "You struck {the}: {his} jaws are free of the angel's hand.",
+      "named": "{The} is too great for the angel's hand: the blow lands half spent, and {his} jaws are free.",
+      "expire": "The lions' mouths are open again."
+    },
+    "ward_psylli": {
+      "name": "Psylli Ward",
+      "colour": [
+        120,
+        190,
+        90
+      ],
+      "desc": "A serpent's bite cannot poison you, and its coils cannot hold you",
+      "families": [
+        "serpents"
+      ],
+      "holds": [
+        "riders"
+      ],
+      "riders": [
+        "poisoned",
+        "immobilized",
+        "paralyzed"
+      ],
+      "breaks": "never",
+      "rider": "{The}'s bite is only a bite to you: the Psylli's charm keeps its {noun} out.",
+      "expire": "The Psylli's charm fades. A serpent's bite is a serpent's bite again."
+    },
+    "ward_hoichi": {
+      "name": "Heart Sutra",
+      "colour": [
+        235,
+        235,
+        225
+      ],
+      "desc": "Ghosts cannot see you; strike one and they all find you",
+      "families": [
+        "ghosts"
+      ],
+      "holds": [
+        "sight"
+      ],
+      "breaks": "all",
+      "broken_all": "You struck {the}, and every ghost here finds you at once: the sutra missed your ears.",
+      "expire": "The sutra fades from your skin. The ghosts can see you again."
+    },
+    "ward_martha": {
+      "name": "Martha's Hymn",
+      "colour": [
+        200,
+        220,
+        240
+      ],
+      "desc": "Dragons hurt you half as much, breath and bite alike",
+      "families": [
+        "dragons"
+      ],
+      "holds": [
+        "damage"
+      ],
+      "mult": 0.5,
+      "breaks": "never",
+      "named_too": true,
+      "damage": "Saint Martha's hymn takes the heat out of {the}.",
+      "expire": "Saint Martha's hymn is sung out."
+    },
+    "ward_udug_hul": {
+      "name": "Udug Hul",
+      "colour": [
+        190,
+        120,
+        80
+      ],
+      "desc": "Demons cannot strike you up close, and their curses and terrors do not take hold, until you strike one",
+      "families": [
+        "demons"
+      ],
+      "holds": [
+        "melee",
+        "riders"
+      ],
+      "riders": [
+        "feared",
+        "cursed",
+        "confused"
+      ],
+      "breaks": "creature",
+      "held": "{The} cannot lay a hand on you: the old names bind {him}.",
+      "rider": "{The}'s {noun} slides off you: the old names bind {him}.",
+      "broken": "You struck {the}: the old names no longer bind {him}.",
+      "named": "{The} knows older names than these: the blow lands half spent, and the binding breaks for {him}.",
+      "expire": "The words of the tablet fall silent."
+    },
+    "ward_deliver_us": {
+      "name": "Delivered",
+      "colour": [
+        245,
+        235,
+        180
+      ],
+      "desc": "Demons, ghosts, vampires and the walking dead cannot strike you up close until you strike them",
+      "families": [
+        "demons",
+        "restless_dead",
+        "ghosts",
+        "vampires_liches"
+      ],
+      "holds": [
+        "melee"
+      ],
+      "breaks": "creature",
+      "held": "{The} cannot cross the ring of your prayer.",
+      "broken": "You struck {the}: your prayer no longer keeps {him} off.",
+      "named": "{The} is mighty enough to strike through the prayer: the blow lands half spent, and the ring breaks for {him}.",
+      "expire": "The ring of your prayer fades."
+    }
+  },
+  "statuses": {
+    "missile_ward": [
+      "Arrow-Ward",
+      [
+        170,
+        200,
+        240
+      ],
+      "No arrow, stone or spear reaches you",
+      "The arrow-ward fades."
+    ],
+    "stayed_spear": [
+      "Stayed Spear",
+      [
+        150,
+        170,
+        210
+      ],
+      "Missiles from foes you can see drop short",
+      "The galdr dies away. Missiles fly true at you again."
+    ],
+    "veiled": [
+      "Mist-Veiled",
+      [
+        180,
+        200,
+        190
+      ],
+      "Foes more than 2 steps away cannot see you",
+      "The mist thins and lifts."
+    ],
+    "all_round_ward": [
+      "Guarded All Round",
+      [
+        200,
+        210,
+        240
+      ],
+      "A pack round you gains nothing by it",
+      "The breastplate's guard on every side lifts."
+    ],
+    "sanctuary": [
+      "Sanctuary",
+      [
+        230,
+        210,
+        160
+      ],
+      "Ordinary foes will not strike you until you strike",
+      "Sanctuary ends."
+    ],
+    "styx_dipped": [
+      "Styx-Dipped",
+      [
+        120,
+        130,
+        160
+      ],
+      "No blow, bite or claw can wound you; an unseen blow finds the heel",
+      "The Styx dries from your skin. You can be wounded again."
+    ],
+    "free_action": [
+      "Loosed",
+      [
+        200,
+        190,
+        150
+      ],
+      "Nothing can grab, pin or drag you",
+      "The loosing-song fades. A grip could hold you again."
+    ],
+    "wakeful": [
+      "Wakeful",
+      [
+        170,
+        110,
+        70
+      ],
+      "Nothing can put you to sleep",
+      "The coffee wears off. You could sleep again."
+    ],
+    "clear_sight": [
+      "Clear Sight",
+      [
+        235,
+        235,
+        255
+      ],
+      "No vision or false sight can take hold of you",
+      "Your mind is your own, and open again to tricks."
+    ]
+  },
+  "resist_blocks": {
+    "free_action": [
+      "immobilized",
+      "impaled",
+      "strangulation"
+    ],
+    "wakeful": [
+      "sleeping"
+    ],
+    "clear_sight": [
+      "hallucinating",
+      "hallucinating_pot",
+      "charmed"
+    ]
+  },
+  "lines": {
+    "missile_ward": "{The}'s {attack} turns aside before it reaches you.",
+    "stayed_spear": "{The}'s {attack} stops in the air and drops at your feet.",
+    "veiled": "{The} cannot see you in the mist: {his} {attack} goes wide.",
+    "sanctuary": "{The} will not strike you: you are in sanctuary.",
+    "styx": "{The}'s {attack} cannot break your Styx-dipped skin.",
+    "styx_heel": "{The} finds the heel the Styx never touched.",
+    "sanctuary_ends": "You struck: sanctuary is over.",
+    "pull_loosed": "{The} pulls at you, but nothing can hold you."
+  },
+  "gates": {
+    "_doc": "Monster gates (src/attack_gates.py): what a monster cannot use now. silenced: no voice attack, no magic cast from range, no summoning, no healing. unstrung: no missile, breath or gaze (its opener too); it has to come to the hero. babbled: its pack or war band forgets how to fight together. A named foe holds silenced or unstrung named_turns at most, and shakes off the next for named_grace turns after.",
+    "named_turns": 3,
+    "named_grace": 3,
+    "mouthless_families": [
+      "oozes",
+      "plants",
+      "constructs"
+    ],
+    "speaking_families": [
+      "mortals",
+      "goblinkin",
+      "giants",
+      "fair_folk",
+      "demons",
+      "vampires_liches",
+      "shapeshifters",
+      "celestials"
+    ],
+    "speaking_tags": [
+      "humanoid"
+    ],
+    "people_families": [
+      "mortals",
+      "goblinkin",
+      "giants"
+    ],
+    "lines": {
+      "silenced": "{The}'s mouth works, and no sound comes out.",
+      "silenced_cast": "{The} shapes a spell with {his} lips, and no word comes.",
+      "unstrung": "{The} reaches for {his} {attack}, and it will not answer {him}.",
+      "unstrung_gaze": "{The} turns {his} eyes on you, and there is no power in them."
+    }
+  }
+}

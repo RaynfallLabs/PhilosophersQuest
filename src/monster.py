@@ -428,8 +428,66 @@ def _edge_incoming(player, m, dmg: int, atk_type: str) -> int:
         import family_edges
         mult = family_edges.incoming_damage_mult(player, m, atk_type)
     except Exception:
-        return dmg
+        mult = 1.0
+    try:
+        import wards                 # a damage ward (Saint Martha), a half-spent blow
+        mult *= wards.damage_mult(player, m)
+    except Exception:
+        pass
     return max(1, int(round(dmg * mult))) if mult < 1.0 and dmg > 0 else dmg
+
+
+# The hero's wards and a monster's gates (MONSTERS AND MAGIC 2026-11-19:
+# src/wards.py, src/attack_gates.py). Each hook is one call; the rules live there.
+def _ward_gate(player, m, atk):
+    """(atk, None) to go on with the blow (perhaps another attack it may
+    still use), or (atk, (0, line)) when it does not land."""
+    try:
+        import attack_gates
+        import wards
+    except ImportError:
+        return atk, None
+    new, stop = attack_gates.blow_gate(m, atk, player)
+    if stop is not None:
+        return atk, stop
+    got = wards.blow_gate(player, m, new)
+    return new, got
+
+
+def _ward_rider(player, m, effect_id):
+    try:
+        import wards
+        return wards.rider_line(player, m, effect_id)
+    except ImportError:
+        return None
+
+
+def _loosed(player) -> bool:
+    """Galdr of Loosing: nothing can drag the hero."""
+    try:
+        return bool(player.has_effect('free_action'))
+    except Exception:
+        return False
+
+
+def _gate_blocks(m, atk) -> bool:
+    try:
+        import attack_gates
+        return bool(attack_gates.blocks_attack(m, atk))
+    except ImportError:
+        return False
+
+
+def _gated_turn(m, player, dungeon, all_monsters, extra_occupied):
+    """A silenced caster or an unstrung archer comes to the hero (its own
+    way of fighting is shut): True / False for its turn, None to go on."""
+    try:
+        import attack_gates
+    except ImportError:
+        return None
+    if not attack_gates.must_close(m):
+        return None
+    return attack_gates.close_in(m, player, dungeon, all_monsters, extra_occupied)
 
 
 def _edge_gaze_immune(player, m) -> bool:
@@ -462,6 +520,10 @@ def _edge_drain_block(player, m) -> bool:
 # The Seeker's achievements listen (game_seeker.py); the game says whose blow
 # it was (Game._damage_by).
 DAMAGE_OBSERVER = None
+# Told when one of the hero's own blows lands (a weapon, a spell, a wand, a
+# flask): callable(monster) or None. The game sets it (MagicWardsMixin):
+# the wards it breaks and sanctuary end (src/wards.py).
+HERO_STRUCK = None
 
 class Monster:
     # Always title case, however monsters.json (or an old save) spelled it.
@@ -878,6 +940,9 @@ class Monster:
         half again as long (data/affinity_rules.json)."""
         if name == 'bleeding' and not self.can_bleed():
             return 0                        # nothing in it to bleed (kind_can_bleed)
+        if name in ('silenced', 'unstrung'):
+            import attack_gates             # the mouthless, a named foe's cap and grace
+            return attack_gates.inflict(self, name, duration)
         if self.resists_control(name):
             self.__dict__['_refused_effect'] = name
             return 0
@@ -1291,6 +1356,8 @@ class Monster:
                 DAMAGE_OBSERVER(self, actual, min(actual, hp_before))
             except Exception:
                 pass
+        if actual > 0 and HERO_STRUCK is not None:
+            HERO_STRUCK(self)
         # A creature that splits (src/splitting.py) notes the split this blow
         # earned; the game sets the new body down at the end of the action.
         if (actual > 0 and self.hp > 0 and getattr(self, 'splits', None)
@@ -1366,6 +1433,9 @@ class Monster:
             player._return_to_hand_active = False
             return 0, f"{the_name(self)}'s strike is deflected — a discus spins between you!"
         if not self.attacks:
+            if self.has_effect('unstrung'):
+                import attack_gates
+                return 0, attack_gates.gaze_line(self)
             # Floating eye: gaze-based paralysis (checks sleep_resist or total blindness)
             if player.get_sight_radius() == 0:
                 return 0, f"{the_name(self)} gazes at you, but you cannot see {pronouns(self)[2]} eyes!"
@@ -1388,7 +1458,8 @@ class Monster:
                 return 0, f"{the_name(self)} gazes at you harmlessly."
 
         # --- Gaze attack (Medusa): petrifying gaze before normal attack ---
-        if self.gaze_paralyze > 0 and self._gaze_cooldown <= 0:
+        if (self.gaze_paralyze > 0 and self._gaze_cooldown <= 0
+                and not self.has_effect('unstrung')):
             self._gaze_cooldown = self.gaze_cooldown_max
             self._share_gaze_cooldown()
             # The gaze reaches across a room (see _dancer_turn): she may be
@@ -1615,6 +1686,9 @@ class Monster:
         them, skipped the rest: no drain that heals, no Constitution drain,
         no pull, no charge, no rule about breath and a pit, no gaze immunity,
         no reflection, no Nemean hide."""
+        atk, _gate_stop = _ward_gate(player, self, atk)     # wards.py, attack_gates.py
+        if _gate_stop is not None:
+            return _gate_stop
         atk_name = atk.get('name', 'attack').lower()
         atk_type = atk.get('type', 'physical')
 
@@ -1995,7 +2069,7 @@ class Monster:
         # 1-2 tiles toward this monster. Storms request via a flag the
         # game loop honors when it can resolve movement.
         _pc = float(getattr(self, 'pull_chance', 0.0) or 0.0)
-        if _pc > 0 and actual > 0 and random.random() < _pc:
+        if _pc > 0 and actual > 0 and random.random() < _pc and not _loosed(player):
             player._pending_pull_toward = (self.x, self.y)
             msg += f" {the_name(self)} drags you closer!"
 
@@ -2041,6 +2115,9 @@ class Monster:
         _blocked = _counters.blocks_rider(player, self, atk, effect_id)
         if _blocked is not None:
             return " " + _counters.line(player, _blocked[0], _blocked[1], self)
+        _wr = _ward_rider(player, self, effect_id)          # a family ward (wards.py)
+        if _wr:
+            return " " + _wr
         if roll >= chance * keep_r:
             if piece is not None:
                 from hud_context import item_bare_name
@@ -2139,7 +2216,8 @@ class Monster:
         # 'summoner' pattern, so theirs never appeared.
         if (self.summon_kind and self.ai_pattern != 'summoner'
                 and getattr(self, '_aware', False)
-                and self._summons_made < self.summon_max):
+                and self._summons_made < self.summon_max
+                and not self.has_effect('silenced')):
             self._summon_turn_counter += 1
             if self._summon_turn_counter >= self.summon_cooldown:
                 self._wants_summon = True
@@ -2251,6 +2329,10 @@ class Monster:
                     return True
             elif self._blink_to_standoff(player, dungeon, all_monsters, extra_occupied):
                 return False
+
+        _gt = _gated_turn(self, player, dungeon, all_monsters, extra_occupied)
+        if _gt is not None:                  # silenced or unstrung (attack_gates.py)
+            return _gt
 
         # --- Healer AI: heal a damaged adjacent ally; fall back to ranged/aggressive ---
         if self.ai_pattern == 'healer':
@@ -2462,6 +2544,8 @@ class Monster:
         op = self.__dict__.get('opener')
         if not op or self.__dict__.get('_opened') or op['range'] < 2:
             return None
+        if _gate_blocks(self, self._opener_attack):
+            return None                      # unstrung or silenced (attack_gates.py)
         dist = max(abs(self.x - player.x), abs(self.y - player.y))
         if dist > op['range'] or not self._has_los(player.x, player.y, dungeon):
             return None
