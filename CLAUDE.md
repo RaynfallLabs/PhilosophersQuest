@@ -79,7 +79,7 @@ src/
   ai_lines.py         - What a behaviour leaves for the Game to say (seen / unseen)
   faction.py          - Whose side a monster is on (band, pack, family); the healer's choice and its rest
   summoning.py        - Summoners chant (a blow breaks it), then call while few of theirs stand
-  breath.py           - Draws Breath: a breath must be drawn again; tooth and claw meanwhile
+  breath.py           - Draws Breath: a breath must be drawn again; tooth and claw meanwhile (a dragon's full routine, never with the breath)
   morale.py           - Morale by Nature: who breaks (never, bolt, regroup, withdraw, yield), when, and the run
   ai_blow.py          - What the behaviours add to one monster blow (to-hit shift; after the blow)
   life_drain.py       - Life Drained: a drain blow lowers max HP; half back on the stairs, all from prayer, a physician or the Water of Epidaurus

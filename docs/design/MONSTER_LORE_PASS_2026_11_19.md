@@ -40,7 +40,8 @@ A slow kid (half to 0.7x Brandon's answer speed) meets the same monsters with ab
 
 - `attacks`: a list. Each turn an ordinary monster picks ONE at random. A ranged monster at range prefers its ranged attacks, and a dragon keeps its breath for the approach.
   - `multi_attack_count: N` makes it fire its first N attacks every turn: a full routine such as claw, claw, bite.
-  - Use a routine only where the anatomy and lore really make one: big cats, bears, owlbears, trolls, hydras.
+  - Use a routine only where the anatomy and lore really make one: big cats, bears, owlbears, trolls, hydras, dragons and drakes, the chimera's heads.
+  - A breather's routine is its first N close blows that are not its breath, made in reach while the breath is drawn up again; the ready breath is a turn of its own, never with the routine (`src/breath.py` routine(), the breath retune of 2026-11-20). The 25% cap applies to the routine (`monster_bands.turn_damage`).
 - A rider (`effect`, `effect_chance`, `effect_duration`) is the creature's power:
   - Hard control (paralyzed, sleeping, stunned, frozen, immobilized, petrifying, feared) is negated by a save. Its duration is clamped by status_effects.CONTROL_CAP (paralysis 4, sleep 5, stun 3).
   - Soft control (confused, charmed, slowed) is halved by a save.

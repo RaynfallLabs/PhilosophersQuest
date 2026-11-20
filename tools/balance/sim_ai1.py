@@ -11,7 +11,11 @@ a knob that defaults on (KNOBS, merged into difficulty_sim.KNOB_DEFAULTS), so
              calls its dead while fewer than its live cap stand
              (src/summoning.py). Off: no summons, as before.
   ai_breath  a breath must be drawn again (src/breath.py; inside the real
-             Monster.attack). Off: the old rule, a breath every turn.
+             Monster.attack). Meanwhile a breather whose lore gives it a
+             routine makes it in reach (claw and bite; the real
+             Monster.attack, breath.routine), and one drawing breath comes in
+             to fight, so the hero spends no turn closing on it (kite_prob).
+             Off: the old rule, a breath every turn.
   ai_morale  Morale by Nature (src/morale.py): the real checks and styles. A
              creature that breaks runs (no blow; the hero lands one at
              CHASE_HIT_PROB, as for any flight); a withdrawal comes back after
@@ -181,6 +185,16 @@ def visible_away(run, m) -> bool:
     sight, where the hero can still strike it (the old game)."""
     return bool(not run.knobs.get('ai_vanish', 1) and m.ai_pattern == 'hit_and_run'
                 and not getattr(m, 'can_phase_walls', False))
+
+
+def kite_prob(m, p: float) -> float:
+    """The chance the hero's action goes on closing on a ranged creature
+    (after sim_ai2's lanes). A breather drawing breath comes in and fights
+    with tooth and claw (Monster._ranged_turn): there is nothing to close on
+    until its breath is ready again (the breath retune, 2026-11-20)."""
+    if breath.drawing(m) and breath.has_close(m):
+        return 0.0
+    return p
 
 
 def join_prob(run, group, base: float) -> float:

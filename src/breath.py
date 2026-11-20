@@ -10,6 +10,12 @@ once breathed, needs `recharge` turns (an attack's own field, else 3 for a
 creature comes in with tooth and claw. The turn it is ready again the hero
 who can see it is told ("Smoke curls from the Young Red Dragon's jaws.").
 
+A breather whose lore gives it a full routine (`multi_attack_count`: the
+dragons' claw and bite, the chimera's heads, a behir's bite and coils) makes
+it in reach while the breath is drawn up, and never in the same turn as the
+breath: beside the hero, a ready breath is the whole turn (routine(); the
+breath retune of 2026-11-20).
+
 Named foes (gate bosses, mini-bosses, seal demons) keep their tuned
 flurries: their breaths recharge only when their data sets `recharge`.
 Fafnir keeps his own clock (_breath_cd), the same three turns.
@@ -137,6 +143,33 @@ def choose(m, atk, player):
     if not near:
         pool = [a for a in pool if is_distance(a)]
     return random.choice(pool) if pool else None
+
+
+def routine(m, player, count: int):
+    """A breather's turn when its lore gives it a full routine
+    (`multi_attack_count`, read in Monster.attack): never a breath and a
+    routine in one turn.
+
+    None   not a breather with a routine (or the knob is off): the engine's
+           own rule, as before;
+    dict   beside the hero with its breath ready: the breath is the turn;
+    list   its first ``count`` blows that are no breath, ready, close (its
+           claws, bite and tail) while the breath is drawn up again; empty
+           when the hero is not in reach (one attack by the single rule: a
+           breath ready, or a shot)."""
+    if not ENABLED or count <= 0:
+        return None
+    atks = [a for a in getattr(m, 'attacks', None) or () if isinstance(a, dict)]
+    breaths = [a for a in atks if recharge_of(m, a) > 0]
+    if not breaths:
+        return None
+    if not m._adjacent_to(player):
+        return []
+    for a in breaths:
+        if ready(m, a):
+            return a
+    blows = [a for a in atks if recharge_of(m, a) <= 0 and not is_distance(a) and ready(m, a)]
+    return blows[:count]
 
 
 def flurry(m, attacks, limit: int = 0) -> list:

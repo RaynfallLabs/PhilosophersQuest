@@ -1734,3 +1734,54 @@ def test_a_creature_holding_the_hero_is_busy_no_lane_no_orders_no_plan():
     mem[0].__dict__.pop('_holding')
     mem[1]._holding = True                                 # a guard holding him heeds no order
     assert not tm.thinks(mem[1], hero)
+
+
+# ===========================================================================
+# Point-blank (the breath retune, 2026-11-20): only a missile user, or a
+# weak-bodied caster with no blink of its own, steps back from melee
+# ===========================================================================
+
+def test_an_adjacent_dragon_with_its_breath_ready_breathes_that_turn():
+    import breath
+    d = open_room()
+    hero = Hero(10, 6, hp=5000)
+    dragon = make('adult_red_dragon', 9, 6)
+    assert breath.ready(dragon, _atk('adult_red_dragon', 'Inferno Breath'))
+    assert not lanes.steps_back(dragon)
+    got = dragon.take_turn(hero, d, [dragon])
+    assert got is True and (dragon.x, dragon.y) == (9, 6)       # no step back: it strikes
+    dragon.attack(hero)
+    assert not breath.ready(dragon, _atk('adult_red_dragon', 'Inferno Breath'))   # it breathed
+
+
+def test_no_ranged_kind_whose_reach_is_breath_gaze_voice_or_spit_steps_back():
+    import wards
+    for kind, m in MONS.items():
+        if not isinstance(m, dict) or m.get('ai_pattern') != 'ranged':
+            continue
+        mon = make(kind, 5, 5)
+        dist = [a for a in mon.attacks if lanes.is_distance(a)]
+        if dist and all(not wards.is_missile(a) and not tm.is_spell(a) for a in dist):
+            assert not lanes.steps_back(mon), kind
+
+
+def test_an_adjacent_archer_still_steps_back():
+    d = open_room()
+    hero = Hero(10, 6)
+    archer = make('bandit_archer', 9, 6)
+    assert lanes.steps_back(archer)
+    assert archer.take_turn(hero, d, [archer]) is False
+    assert max(abs(archer.x - hero.x), abs(archer.y - hero.y)) >= 2
+
+
+def test_a_caught_weak_caster_steps_back_as_before_and_the_book_s_blink_is_left_to_the_book():
+    d = open_room()
+    hero = Hero(10, 6)
+    sorc = make('kobold_sorcerer', 9, 6)                  # the caster mind, no blink in its book
+    assert lanes.weak_bodied(sorc) and lanes.steps_back(sorc)
+    assert sorc.take_turn(hero, d, [sorc]) is False
+    assert max(abs(sorc.x - hero.x), abs(sorc.y - hero.y)) >= 2
+    mage = make('drow_mage', 9, 6)                        # its book blinks it away when hurt
+    assert not lanes.steps_back(mage)
+    brute = make('rakshasa_illusionist', 9, 6)            # tiger claws: no weak body
+    assert not lanes.weak_bodied(brute)

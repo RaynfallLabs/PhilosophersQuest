@@ -12,8 +12,10 @@ Now (data/minds.json `lanes` and `ranges`):
     beside him, with a clear shot; it likes about four tiles off, a wall or
     a tall fixture at its side (cover), and a tile outside the hero's sight.
     With no lane it holds a few turns for the line to clear, then comes on.
-  * Beside the hero: it steps back when it has somewhere to shoot from (at
-    most twice running: a hero who keeps after it gets it in melee).
+  * Beside the hero: a missile user (and a weak-bodied caster with no blink
+    of its own) steps back when it has somewhere to shoot from (at most
+    twice running: a hero who keeps after it gets it in melee); a breath, a
+    gaze, a voice or a spit is used point-blank (steps_back).
   * With no shot and no lane it comes on, but stops two tiles off.
   * Each missile reaches as its weapon does: an attack's own `range`, else
     the first word of its name in the table (a longbow 8, a sling 5, a
@@ -248,11 +250,53 @@ def blocked_turn(m, player, dungeon, all_monsters, extra_occupied):
     return None
 
 
+def weak_bodied(m) -> bool:
+    """A caster with no body for a brawl: the caster mind (the hedge-casters,
+    data/minds.json), or a creature tagged caster with no blow of its own; a
+    full routine of blows (multi_attack_count 2 or more) is never weak."""
+    if int(getattr(m, 'multi_attack_count', 0) or 0) >= 2:
+        return False
+    import tactical_mind
+    if tactical_mind.mind_of(m) == 'caster':
+        return True
+    if 'caster' not in (getattr(m, 'tags', None) or ()):
+        return False
+    return not any(isinstance(a, dict) and not is_distance(a)
+                   for a in getattr(m, 'attacks', None) or ())
+
+
+def steps_back(m) -> bool:
+    """Who steps back from melee to shoot, by delivery and lore. A missile
+    user does: a bow, a sling, a crossbow, a dart, a thrown thing
+    (wards.is_missile among the attacks it may use now). A breath, a gaze, a
+    voice or a spit is used point-blank: a dragon breathes on what is in
+    front of it. A weak-bodied caster steps back from a blade, unless the
+    Caster's Book gives it a blink away (caster_ai 'escape': the book
+    decides, and the two never double up)."""
+    can = usable(m)
+    if not can:
+        return False
+    import wards
+    if any(wards.is_missile(a) for a in can):
+        return True
+    import tactical_mind
+    if not any(tactical_mind.is_spell(a) for a in can):
+        return False                         # breath, gaze, voice, spit: point-blank
+    try:
+        import caster_ai
+        if any(s.get('kind') == 'escape' for s in caster_ai.book(m)):
+            return False
+    except (ImportError, AttributeError):
+        pass
+    return weak_bodied(m)
+
+
 def back_off(m, player, dungeon, all_monsters, extra_occupied) -> bool:
     """Beside the hero: a step back to a tile two or more from him that
-    still has a shot at him, when it has a missile to use, at most `backs`
-    times running. True if it moved."""
-    if not applies(m) or not usable(m):
+    still has a shot at him, for a creature that steps back (steps_back: a
+    missile user, a weak-bodied caster), at most `backs` times running.
+    True if it moved."""
+    if not applies(m) or not steps_back(m):
         return False
     d = m.__dict__
     n = int(d.get('_lane_backs', 0) or 0)
