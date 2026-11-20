@@ -40,7 +40,7 @@ def test_every_aimed_spell_says_how_far_it_reaches():
         if sp.get('needs_target'):
             assert 'reach' in sp, sid
         # (Aimed at a creature, or at a tile: Shrink the Earth, 2026-11-19.)
-    assert sid not in spells.SPELL_REACH or sp.get('needs_target') or sp.get('needs_tile'), sid
+        assert sid not in spells.SPELL_REACH or sp.get('needs_target') or sp.get('needs_tile'), sid
 
 
 def test_touch_spells_are_touch_and_signs_are_short():

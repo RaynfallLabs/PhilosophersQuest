@@ -110,10 +110,33 @@ def delivery(atk) -> str:
         return str((atk or {}).get('delivery', 'blow'))
 
 
+def _attack_name(atk) -> str:
+    return str((atk or {}).get('name', '') or '').lower()
+
+
 def is_missile(atk) -> bool:
-    """An arrow, a stone, a thrown spear, a bolt of magic shot from afar:
-    the attack's delivery is 'ranged' (a breath, a gaze or a voice is not)."""
-    return delivery(atk) == 'ranged'
+    """A physical missile: an arrow, a stone, a thrown spear or knife, a
+    hurled boulder. Shot from afar (delivery 'ranged') and either of a
+    physical damage type or named as a thing shot or thrown
+    (data/wards.json missile_words: a poisoned dart, a hurled glacier). A
+    bolt of fire, a death ray or a curse is a spell, not a missile; a breath,
+    a gaze or a voice is not shot at all."""
+    if delivery(atk) != 'ranged':
+        return False
+    if str((atk or {}).get('type', 'physical') or 'physical') in set(data()['physical_types']):
+        return True
+    name = _attack_name(atk)
+    return any(w in name for w in data().get('missile_words') or ())
+
+
+def is_cast(atk) -> bool:
+    """A spell shot from afar: a 'ranged' attack that is not a missile and
+    not a spit, a spray or a swoop (data/wards.json not_cast_words), whatever
+    its damage type (fire, cold, necrotic, shadow, magic...)."""
+    if delivery(atk) != 'ranged' or is_missile(atk):
+        return False
+    name = _attack_name(atk)
+    return not any(w in name for w in data().get('not_cast_words') or ())
 
 
 def is_melee(atk) -> bool:
@@ -219,22 +242,30 @@ def blow_gate(player, m, atk):
     word = _attack_word(atk)
     # Sanctuary: the old law of the church door.
     if _active(player, 'sanctuary') and not _named(m) and not _hurt_lately(player, m):
-        return 0, _once(m, '_sanct_said', line('sanctuary', m))
+        return 0, _once(m, '_sanct_said', _gen(player, 'sanctuary'), line('sanctuary', m))
+    # The Mist of Manannan: a foe farther off than the veil reaches cannot
+    # see the hero to aim at him: no shot, no spell, no gaze from there.
+    if (_active(player, 'veiled') and _cheb(m, player) > int(data()['veil_reach'])
+            and (is_missile(atk) or is_cast(atk) or delivery(atk) == 'gaze')):
+        return 0, line('veiled', m, attack=word)
     if is_missile(atk):
         if _active(player, 'missile_ward'):
             return 0, line('missile_ward', m, attack=word)
-        if _active(player, 'veiled') and _cheb(m, player) > int(data()['veil_reach']):
-            return 0, line('veiled', m, attack=word)
         if _active(player, 'stayed_spear') and _seen_by(player, m):
             return 0, line('stayed_spear', m, attack=word)
     if is_melee(atk):
-        for wid, w in wards_on(player, m, 'melee'):
-            if _named(m):
+        held = wards_on(player, m, 'melee')
+        if held and _named(m):
+            # Too strong for every rite against it at once: one blow at half,
+            # and each such ward breaks against it (two wards are not two
+            # half blows).
+            for wid, _w in held:
                 _break_on(m, _key(player, wid))
-                m._ward_half = True
-                _say(player, _fill(m, w.get('named', '')))
-                return None
-            return 0, _fill(m, w.get('held', ''))
+            m._ward_half = True
+            _say(player, _fill(m, held[0][1].get('named', '')))
+            return None
+        if held:
+            return 0, _fill(m, held[0][1].get('held', ''))
         if (_active(player, 'styx_dipped') and delivery(atk) in set(data()['styx_deliveries'])
                 and str(atk.get('type', 'physical')) in set(data()['physical_types'])):
             if _seen_by(player, m):
@@ -244,13 +275,18 @@ def blow_gate(player, m, atk):
     return None
 
 
-def _once(m, key: str, text: str) -> str:
-    """A line said once per creature while the ward holds (a creature that
-    stands beside the hero all through sanctuary is told of once)."""
-    if (getattr(m, '__dict__', {}) or {}).get(key):
+def _gen(player, wid: str) -> int:
+    return int(((getattr(player, '__dict__', {}) or {}).get('_ward_gen') or {}).get(wid, 0))
+
+
+def _once(m, key: str, gen: int, text: str) -> str:
+    """A line said once per creature for one ward (a creature that stands
+    beside the hero all through a sanctuary is told of once; under the next
+    sanctuary, once again)."""
+    if (getattr(m, '__dict__', {}) or {}).get(key) == gen:
         return ''
     try:
-        setattr(m, key, True)
+        setattr(m, key, gen)
     except Exception:
         pass
     return text
@@ -392,7 +428,7 @@ def grant(player, wid: str, turns: int, cap: int | None = None) -> int:
     break is forgotten when the ward is not already up). Returns the turns
     it now has."""
     turns = max(1, int(turns))
-    if wid in family_wards() and not _active(player, wid):
+    if (wid in family_wards() or wid == 'sanctuary') and not _active(player, wid):
         gens = dict((getattr(player, '__dict__', {}) or {}).get('_ward_gen') or {})
         gens[wid] = int(gens.get(wid, 0)) + 1
         player._ward_gen = gens

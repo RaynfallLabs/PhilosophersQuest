@@ -366,10 +366,11 @@ SCEPTRE = {
     'unidentified_name': 'a gold-studded rod with an eagle on top', 'identified': False,
     'lore': LORE['sceptre_of_agamemnon_rod'], 'template_basis': 'mace',
     'effects': {'status': 'silenced', 'effect_chance': 1.0, 'effect_duration': 2,
-                'families': ['mortals', 'goblinkin']},
-    'power_note': ("V: Call the Assembly, once a floor (game_wards.py): a history escalator "
-                   "chain; every man and goblin in sight is Feared for 2 turns a link (12 at "
-                   "most), and a war band in sight loses its leader's hold."),
+                'families': ['mortals', 'goblinkin'], 'target_words': 'a man or a goblin'},
+    # The card's line for its V power (game_render reads it; game_wards does it).
+    'power_line': ("Power (V), once a floor: Call the Assembly. Answer a chain of history "
+                   "questions; every man and goblin in sight runs, 2 turns for each right "
+                   "answer (12 at most), and a war band in sight loses its leader's hold."),
     'chain_exponent': 1.15,
 }
 
@@ -413,11 +414,16 @@ HINTS = {
           "A silenced foe cannot wail, sing, summon or heal. Seal the healer's mouth first."],
     '3': ["A scroll of greater protection turns every arrow aside, seen or unseen.",
           "Confusion of Tongues breaks a war band or a pack into creatures that fight alone."],
-    '4': ["Zap an archer or a dragon with the Wand of Unstringing and it has to come to you.",
+    '4': ["Zap an archer or a slinger with the Wand of Unstringing and it has to come to you.",
           "Water of Epidaurus gives back every stat point a drain or a disease took."],
     '5': ["The Water of the Styx turns every blow, bite and claw, but an unseen blow finds the heel.",
           "Demons cannot strike you up close while the Udug Hul holds, until you strike one."],
 }
+
+
+# Hints this tool once wrote that the audit of 2026-11-20 found untrue
+# (the Wand of Unstringing no longer touches a breath).
+RETIRED_HINTS = [('4', "Zap an archer or a dragon with the Wand of Unstringing and it has to come to you.")]
 
 
 def main():
@@ -437,6 +443,9 @@ def main():
                     lambda d: d.update({'brew_theriac': THERIAC_RECIPE['art']}), indent=1, tail='')
 
     def hints(d):
+        for t, old in RETIRED_HINTS:
+            if old in d[t]:
+                d[t].remove(old)
         for t, lst in HINTS.items():
             for h in lst:
                 if h not in d[t]:

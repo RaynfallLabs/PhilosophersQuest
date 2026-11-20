@@ -367,14 +367,16 @@ def test_a_named_foe_holds_a_gate_three_turns_then_steadies():
     assert attack_gates.inflict(m, 'unstrung', 8) == 3
 
 
-def test_unstrung_stops_missile_breath_and_gaze():
+def test_unstrung_stops_bows_slings_and_throws_only():
+    # (Audit 2026-11-20: a gaze is not strung, nor a breath.)
     m = mon(kind_of('dragons', lambda d: _with_delivery(d, 'breath')))
     breath = next(a for a in m.attacks if wards.delivery(a) == 'breath')
     attack_gates.inflict(m, 'unstrung', 8)
-    assert attack_gates.blocks_attack(m, breath) == 'unstrung'
-    assert attack_gates.blocks_attack(m, {'name': 'Stony Gaze', 'delivery': 'gaze'})
-    if m.ai_pattern in ('ranged', 'dragon'):
-        assert attack_gates.must_close(m)
+    assert attack_gates.blocks_attack(m, breath) == ''
+    assert attack_gates.blocks_attack(m, {'name': 'Stony Gaze', 'delivery': 'gaze'}) == ''
+    assert attack_gates.blocks_attack(m, {'name': 'Longbow', 'delivery': 'ranged',
+                                          'type': 'pierce'}) == 'unstrung'
+    assert not attack_gates.must_close(m)          # its breath still reaches
 
 
 def test_babbling_packs_forget_their_ways():
@@ -680,7 +682,7 @@ def test_the_sceptre_calls_the_assembly_once_a_floor():
     g.player.weapon = make_item_by_id('weapon', 'sceptre_of_agamemnon')
     rows = g._sceptre_power_rows()
     assert rows and rows[0][0] == 'sceptre_assembly' and rows[0][2] == 1
-    g.player._sceptre_floor = g.dungeon_level
+    g.player._sceptre_floors = {g.dungeon_level}
     assert g._sceptre_power_rows()[0][2] == 0
 
 
@@ -751,7 +753,7 @@ def test_in_the_game_the_fern_flower_marks_the_treasure():
     g._quaff_sel = g.quaff_menu_items.index(pot)
     g._quaff_menu_input(pygame.K_RETURN)
     assert pot not in g.player.inventory
-    assert hasattr(g, '_treasure_seen')
+    assert g.dungeon.__dict__.get('treasure_seen') is not None
 
 
 def test_the_qa_sampler_hands_over_the_new_magic():

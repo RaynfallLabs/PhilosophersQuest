@@ -7778,9 +7778,10 @@
       "families": [
         "mortals",
         "goblinkin"
-      ]
+      ],
+      "target_words": "a man or a goblin"
     },
-    "power_note": "V: Call the Assembly, once a floor (game_wards.py): a history escalator chain; every man and goblin in sight is Feared for 2 turns a link (12 at most), and a war band in sight loses its leader's hold.",
+    "power_line": "Power (V), once a floor: Call the Assembly. Answer a chain of history questions; every man and goblin in sight runs, 2 turns for each right answer (12 at most), and a war band in sight loses its leader's hold.",
     "chain_exponent": 1.15
   }
 }

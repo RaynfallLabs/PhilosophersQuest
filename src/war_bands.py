@@ -278,12 +278,12 @@ def leader_of(monsters, uid: str):
 def alarm(m, all_monsters, x: int, y: int) -> int:
     """One of the band has spotted the hero: rouse the rest to the place."""
     uid = getattr(m, '_band', None)
-    if not uid:
-        return 0
+    if not uid or m.has_effect('babbled'):
+        return 0                       # babbling, his call means nothing (the Confusion of Tongues)
     import senses
     n = 0
     for o in members_of(all_monsters, uid):
-        if o is m or not o.alive or o.__dict__.get('_tracking'):
+        if o is m or not o.alive or o.__dict__.get('_tracking') or o.has_effect('babbled'):
             continue
         senses.rouse(o, x, y)
         n += 1
@@ -372,6 +372,9 @@ def _frighten(m, turns: int) -> None:
 
 
 def holds_nerve(m) -> bool:
-    """A follower whose leader still lives does not run when hurt."""
+    """A follower whose leader still lives does not run when hurt (unless
+    he is babbling and cannot understand his leader: the Confusion of
+    Tongues)."""
     lead = getattr(m, '_band_leader', None)
-    return lead is not None and getattr(lead, 'alive', False)
+    return (lead is not None and getattr(lead, 'alive', False)
+            and not (getattr(m, 'status_effects', None) or {}).get('babbled', 0) > 0)

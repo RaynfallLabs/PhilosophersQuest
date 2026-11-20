@@ -1079,8 +1079,10 @@ class DivineMixin:
                            getattr(d, 'judgment_altar_pos', None))
 
     def _altar_choices(self, karma: int) -> list:
-        """The altar menu: the rite, then both prayers for an offering (no
-        cooldown), then both prayers without one when the cooldown allows."""
+        """The altar menu: the rite and the rededication, then every prayer
+        the hero's karma opens (prayers.available: Deliver Us From Evil at 3+)
+        for an offering (no cooldown), then the same prayers without one when
+        the cooldown allows."""
         import economy
         import prayers
         price = economy.altar_offering(self.dungeon_level)

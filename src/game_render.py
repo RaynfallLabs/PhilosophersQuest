@@ -2278,6 +2278,13 @@ class RenderMixin:
         self.renderer.draw_dungeon(self.dungeon, self.visible, cam_x, cam_y)
         for item in self.ground_items:
             self.renderer.draw_item(item, cam_x, cam_y, self.visible)
+        # Treasure the Fern-Flower showed (game_wards._treasure_sight): a dim
+        # picture of it where it lies, out of sight, until it is taken.
+        _ts = self.dungeon.__dict__.get('treasure_seen')
+        if _ts:
+            for item in self.ground_items:
+                if (item.x, item.y) in _ts and (item.x, item.y) not in self.visible:
+                    self.renderer.draw_item_remembered(item, cam_x, cam_y)
         for m in self.monsters:
             if m.alive:
                 # What the hero cannot see is not drawn (src/unseen.py): an
@@ -2727,8 +2734,9 @@ class RenderMixin:
             in_reach = weapon and (max(abs(cx - px), abs(cy - py)) <= weapon.reach)
         valid_shot = has_los and in_reach and target_monster is not None
         if _spell_aim and (getattr(self, '_pending_spell', None) or {}).get('needs_tile'):
-            # A spell aimed at a tile (Shrink the Earth): good where it may land.
-            valid_shot = in_reach and not self._aimed_step_refused(cx, cy)
+            # A spell aimed at a tile (Shrink the Earth): good where it may
+            # land (in reach, in a clear line, over walkable ground).
+            valid_shot = has_los and in_reach and not self._aimed_step_refused(cx, cy)
 
         # Draw trajectory dots from player to cursor (skip player tile)
         traj_surf = pygame.Surface((T, T), pygame.SRCALPHA)
@@ -4534,6 +4542,11 @@ class RenderMixin:
                 _hit = self._weapon_hit_effect(item)
                 if _hit:
                     out.append(f"Each hit has a {_hit[1]:.0f}% chance to {_hit[0]}.")
+                # Its power in the V menu, in a line (the Sceptre of Agamemnon).
+                import wards as _wd
+                _pn = _wd.item_def('weapon', getattr(item, 'id', '')).get('power_line')
+                if _pn:
+                    out.append(str(_pn))
                 try:
                     ls = float(getattr(item, 'lifesteal_percent', 0) or 0)
                 except (TypeError, ValueError):
@@ -4596,7 +4609,8 @@ class RenderMixin:
                          'bleeding': ('make its target bleed', 'Bleed'),
                          'confused': ('confuse its target', 'Confuse'),
                          'stunned': ('stun its target', 'Stun'),
-                         'paralyzed': ('stun its target', 'Stun')}
+                         'paralyzed': ('stun its target', 'Stun'),
+                         'silenced': ('silence its target', 'Silence')}
 
     @staticmethod
     def _weapon_hit_effect(item):
@@ -4613,6 +4627,9 @@ class RenderMixin:
             return None
         _nm = _cap(str(st).replace('_', ' '))
         words, label = RenderMixin._HIT_EFFECT_WORDS.get(str(st), (f"leave its target {_nm}", _nm))
+        if fx.get('target_words'):
+            # Only some take it (the Sceptre: a man or a goblin it strikes).
+            words = words.replace('its target', str(fx['target_words']))
         return words, (ch * 100 if ch <= 1 else ch), label
 
     @staticmethod

@@ -1063,6 +1063,18 @@ class Renderer:
                             (T // 6, T // 10, T - T // 3, T - T // 5), max(1, T // 12))
         self.screen.blit(surf, (sx, sy))
 
+    def draw_item_remembered(self, item, cam_x: int = 0, cam_y: int = 0):
+        """An item the hero knows of but cannot see now (the Fern-Flower's
+        treasure sight): its own picture, dimmed."""
+        item_id = getattr(item, 'id', None)
+        sprite = self._get_item_sprite(item_id) if item_id else None
+        if sprite is None:
+            return
+        sx, sy = self.world_to_screen(item.x, item.y)
+        dim = sprite.copy()
+        dim.set_alpha(140)
+        self.screen.blit(dim, (sx, sy))
+
     def draw_item(self, item, cam_x: int = 0, cam_y: int = 0, visible: set = None):
         """Draw an item sprite (or glyph fallback) only when visible."""
         if visible is not None and (item.x, item.y) not in visible:
