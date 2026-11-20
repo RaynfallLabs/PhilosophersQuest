@@ -55,7 +55,9 @@ def test_the_pool_is_five_tiers_of_sentences():
 def test_each_tier_keeps_about_its_old_count():
     for tier, n in OLD_COUNTS.items():
         assert abs(len(POOL[tier]) - n) <= 10, (tier, len(POOL[tier]), n)
-    assert 360 <= len(ALL) <= 400
+    # (400 until 2026-11-19: the carried lights and the packs each added
+    # their hints.)
+    assert 360 <= len(ALL) <= 420
 
 
 def test_no_hint_is_longer_than_the_old_longest():
