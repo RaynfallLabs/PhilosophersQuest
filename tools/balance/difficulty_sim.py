@@ -209,6 +209,7 @@ import coatings as coatings_mod                  # noqa: E402
 import rings as rings_mod                        # noqa: E402
 import treasure as treasure_mod                  # noqa: E402
 import packs as packs_mod                        # noqa: E402
+import sim_ai1                                   # noqa: E402  (AI-1: monster behaviour)
 from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
@@ -387,6 +388,12 @@ KNOB_DEFAULTS = {
     'burdened_dodge': -1.0,   # share of the dodge a Burdened load leaves
     'burdened_speed': -1.0,   # share of speed a Burdened load costs
 }
+
+# ---- AI-1: monster behaviour, first wave (2026-11-19; tools/balance/sim_ai1.py) ----
+# ai_heal, ai_summon, ai_breath ...: 1 = the behaviour runs (the game's rule),
+# 0 = its ablation. Each is described in sim_ai1.py.
+KNOB_DEFAULTS.update(sim_ai1.KNOBS)
+# ---- end AI-1 ----
 
 DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_quick',
                  'heavy_quick', 'medium_drag',
@@ -3252,6 +3259,11 @@ class Run:
                 return False
             if m._under('blinded') and random.random() < 0.30:
                 return False
+        # ---- AI-1 (sim_ai1.py): a healer's prayer, a summoner's chant ----
+        _ai1 = sim_ai1.monster_turn(self, m, fresh_monster)
+        if _ai1 is not None:
+            return _ai1
+        # ---- end AI-1 ----
         pat = m.ai_pattern
         if pat == 'cowardly':
             return random.random() < 0.3
@@ -3270,9 +3282,8 @@ class Run:
             if m._sim_hr_left <= 0:
                 m._sim_away = random.randint(*ASTERION_AWAY_TURNS)
             return True
-        if pat == 'dancer':
-            if m._gaze_cooldown > 0:
-                m._gaze_cooldown -= 1
+        # (AI-1: a gaze's cooldown is counted down in Monster.tick_effects
+        # now, for every gazer, so the dancer's own tick here is gone.)
         if pat == 'fenrir_rage':
             # monster.py _fenrir_rage_turn
             m._rage_turn_counter += 1
@@ -4136,6 +4147,7 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
     install_caches()
     apply_defence_knobs(knobs)
     packs_mod.ENABLED = bool(knobs.get('packs', 1))
+    sim_ai1.apply_flags(knobs)                    # AI-1: the behaviours' switches
     random.seed(seed)
     cache = FloorCache(variants)
     lo, hi = floors

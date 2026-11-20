@@ -1,0 +1,30 @@
+{
+  "_doc": "Monster behaviour, first wave (AI-1, 2026-11-19): the numbers and lines of each behaviour, one section each. The per-kind fields (light_shy, alarm, death_throes, relurks, hides_in_dark, drain_share, drain_con, morale, morale_style, heal_cooldown, heal_below, summon_live_cap; on an attack recharge, drains_life, snuffs_light, snuff_chance, shove) are in data/monsters.json and read through src/kind_data.py. Lines are filled by monster.fill: {The} {the} {A} {a} and the pronoun slots {he} {He} {him} {his} {His} {himself}. A line with 'unseen' in its key is said when the hero cannot see the creature: it never names it. docs/systems/monsters.md, 'Monster behaviour, first wave', says what each one does.",
+  "healer": {
+    "_doc": "src/faction.py: a healer mends only its own side (war-band, else pack, else family, else kind), only a friend under heal_below of its health, the one fighting the hero first, then the most hurt; then it rests its voice heal_cooldown turns.",
+    "heal_cooldown": 3,
+    "heal_below": 0.6
+  },
+  "summoner": {
+    "_doc": "src/summoning.py: the timer runs only while it hunts the hero; it calls only with the hero within reach and in sight and fewer than live_cap of its summoned standing; the call is a one-turn chant that a landed blow breaks.",
+    "live_cap": 2,
+    "reach": 8,
+    "chant_line": "{The} raises {his} hands and begins to chant.",
+    "chant_unseen": "Somewhere near, a voice begins a low chant.",
+    "spoil_line": "Your blow breaks {the}'s chant!"
+  },
+  "breath": {
+    "_doc": "src/breath.py: a delivery 'breath' attack of an ordinary kind needs 3 turns before it can come again (an attack's own `recharge` wins); named foes only when their data says. ready_lines by the breath's damage type, said when it is ready again and the hero can see it.",
+    "drawing_line": "{The} draws a rattling breath.",
+    "ready_lines": {
+      "fire": "Smoke curls from {the}'s jaws.",
+      "cold": "Frost gathers about {the}'s jaws.",
+      "lightning": "Sparks crackle about {the}'s jaws.",
+      "acid": "Something hisses and drips from {the}'s jaws.",
+      "poison": "A green haze seeps from {the}'s jaws.",
+      "necrotic": "A grave-cold mist gathers in {the}'s throat.",
+      "shadow": "Darkness pools in {the}'s throat.",
+      "default": "{The} draws in a long breath."
+    }
+  }
+}

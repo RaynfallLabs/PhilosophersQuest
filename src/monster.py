@@ -4,6 +4,10 @@ from combat import _line_of_sight
 from status_effects import MAX_EFFECT_DURATION
 from naming import ProperNameAttr
 import packs
+# Monster behaviour, first wave (AI-1, 2026-11-19): each in its own module.
+import breath
+import faction
+import summoning
 
 
 # Ceiling on escalating rage (Fenrir, and the mini-bosses that borrow his
@@ -77,9 +81,10 @@ _HARD_CONTROL = frozenset({'paralyzed', 'sleeping', 'stunned', 'frozen',
                            'immobilized', 'time_stopped'})
 # How far a petrifying gaze reaches, given a clear line of sight.
 GAZE_RANGE = 8
-# Dragon AI: reach of the breath, and turns between breaths.
+# Dragon AI: reach of the breath, and turns between breaths (Fafnir's own
+# clock; every other breather recharges by src/breath.py, the same 3 turns).
 DRAGON_BREATH_RANGE = 7
-DRAGON_BREATH_RECHARGE = 3
+DRAGON_BREATH_RECHARGE = breath.RECHARGE_DEFAULT['breath']
 
 
 def the_name(monster, lower: bool = False) -> str:
@@ -1118,6 +1123,15 @@ class Monster:
         finally:
             self._dot_tick = False
 
+        # The behaviour clocks (AI-1): a gaze is ready again in its own time
+        # for every gazer (it was counted down only by the dancer AI, so the
+        # floating eye looked once in its life), a healer gathers its voice
+        # (src/faction.py), a breath is drawn up again (src/breath.py).
+        if self._gaze_cooldown > 0:
+            self._gaze_cooldown -= 1
+        faction.tick(self)
+        breath.tick(self)
+
         # Regeneration: heal HP each turn (trolls, hydras).
         # Chain combat v2: `deep_wound` and `ruptured` block regen (heal-lock).
         regen = getattr(self, 'regeneration', 0)
@@ -1268,6 +1282,8 @@ class Monster:
             self._unhurt_turns = 0           # see _recover_when_left
             self._struck = True              # a calmed locust remembers (Locust Charm)
             self.spring()                    # a struck lurker gives itself away
+            if self.__dict__.get('_chanting') and not self.__dict__.get('_dot_tick'):
+                summoning.spoil(self)        # a blow breaks a chant (src/summoning.py)
             if self.__dict__.pop('_bribed', False):
                 # A bribed monster struck: the deal is off (Gilgamesh's Bribe).
                 self.status_effects.pop('charmed', None)
@@ -1572,6 +1588,11 @@ class Monster:
             atk = self.attacks[0]
         else:
             atk = random.choice(self.attacks)
+        # Draws Breath (src/breath.py): a breath still drawing is never used;
+        # another blow ready is (never one from afar), else the turn is spent.
+        atk = breath.choose(self, atk, player)
+        if atk is None:
+            return 0, breath.drawing_line(self)
         return self._resolve_blow(atk, player)
 
     def _pack_company(self) -> list:
@@ -1617,6 +1638,7 @@ class Monster:
         no reflection, no Nemean hide."""
         atk_name = atk.get('name', 'attack').lower()
         atk_type = atk.get('type', 'physical')
+        breath.spend(self, atk)              # a breath must be drawn again (src/breath.py)
 
         # Gaze attacks: blocked by blindness (player can't see the gaze)
         is_gaze = 'gaze' in atk_name or 'evil eye' in atk_name
@@ -2140,11 +2162,18 @@ class Monster:
         if (self.summon_kind and self.ai_pattern != 'summoner'
                 and getattr(self, '_aware', False)
                 and self._summons_made < self.summon_max):
-            self._summon_turn_counter += 1
-            if self._summon_turn_counter >= self.summon_cooldown:
-                self._wants_summon = True
-                self._summon_turn_counter = 0
-                self._summons_made += 1
+            if self._is_named_foe():
+                # Tiamat and Asmodeus keep their own tuned timers.
+                self._summon_turn_counter += 1
+                if self._summon_turn_counter >= self.summon_cooldown:
+                    self._wants_summon = True
+                    self._summon_turn_counter = 0
+                    self._summons_made += 1
+            elif (self.__dict__.get('_tracking')
+                  and summoning.step(self, player, all_monsters, dungeon)):
+                # An ordinary lich or skeleton mage calls as a summoner does
+                # (src/summoning.py): it chants, then its dead come.
+                return False
 
         # One-way swap to enraged_pattern when HP drops below threshold.
         if (not self._enraged
@@ -3145,6 +3174,19 @@ class Monster:
         """Ranged AI: shoot when player is in LOS within range.
         If too close, try to back away. If too far or no LOS, approach."""
         self._piercing_collateral = []  # reset each turn
+        # Draws Breath (src/breath.py): its only shot is a breath still being
+        # drawn up, so it comes in with tooth and claw (it used to breathe
+        # every turn it had a shot and back away from a hero who closed); a
+        # creature with no blow of its own keeps its distance.
+        if breath.drawing(self):
+            if breath.has_close(self):
+                if self._adjacent_to(player):
+                    return True
+                return self._standard_move(player, dungeon, all_monsters, extra_occupied,
+                                           'aggressive')
+            if self._adjacent_to(player):
+                self._step_back(player, dungeon, all_monsters, extra_occupied)
+            return False
         dist = max(abs(self.x - player.x), abs(self.y - player.y))  # Chebyshev
         has_los = self._has_los(player.x, player.y, dungeon)
 
@@ -3442,7 +3484,9 @@ class Monster:
         parts = []
         extras: list[str] = []
         self._flurry_effect_done = False
-        atks_to_fire = self.attacks[:attack_limit] if attack_limit > 0 else self.attacks
+        # Only what is ready: a breath still drawing waits, and the next
+        # attack in its routine comes instead (src/breath.py).
+        atks_to_fire = breath.flurry(self, self.attacks, attack_limit)
         for atk in atks_to_fire:
             if not self.alive or player.hp <= 0:
                 break               # a blow turned back killed it, or the player is already down
@@ -3484,35 +3528,15 @@ class Monster:
                 if a.get('ranged') or any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
 
     def _healer_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
-        """Heal a wounded adjacent ally instead of attacking.
-        Ally = same-kind monster OR any monster sharing a tag with this one.
-        Falls back to ranged_turn (if monster has multiple attacks) or
-        standard aggressive movement when no wounded ally is in reach."""
+        """Heal a badly hurt friend beside it instead of attacking: its own
+        side only, the one fighting the hero first, then a rest before the
+        next prayer (src/faction.py). Falls back to ranged_turn (if it has a
+        distance attack) or standard aggressive movement otherwise."""
         self._heal_target = None
         self._heal_amount = 0
-        my_tags = set(getattr(self, 'tags', []))
-        wounded = []
-        for m in all_monsters:
-            if m is self or not m.alive:
-                continue
-            if m.hp >= m.max_hp:
-                continue
-            if hasattr(m, 'can_heal') and not m.can_heal():
-                continue                    # its wound will not close
-            same_band = (self.__dict__.get('_band') is not None
-                         and m.__dict__.get('_band') == self.__dict__.get('_band'))
-            if m.kind != self.kind and not same_band and not (my_tags & set(getattr(m, 'tags', []))):
-                continue
-            if abs(m.x - self.x) <= 1 and abs(m.y - self.y) <= 1:
-                wounded.append(m)
-        if wounded:
-            # Heal the most-damaged ally
-            target = min(wounded, key=lambda a: a.hp / max(1, a.max_hp))
-            heal = max(1, int(target.max_hp * self.heal_amount_pct))
-            actual = min(heal, target.max_hp - target.hp)
-            target.hp += actual
-            self._heal_target = target
-            self._heal_amount = actual
+        target = faction.heal_choice(self, all_monsters, player, reach=1)
+        if target is not None:
+            faction.heal(self, target)
             return False  # no attack — used the turn to heal
 
         # Mending a friend needs no sight of the hero; going after him does.
@@ -3529,26 +3553,20 @@ class Monster:
         return self._standard_move(player, dungeon, all_monsters, extra_occupied, 'aggressive')
 
     def _summoner_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
-        """Spawn a minion every summon_cooldown turns (up to summon_max total).
-        Game loop polls self._wants_summon and calls _spawn_summoner_minion() —
-        the actual JSON lookup + placement happens caller-side, mirroring the
-        existing Abaddon locust-spawn pattern."""
+        """Call its dead when it counts (src/summoning.py): its timer runs only
+        while it hunts the hero; it calls with him in reach and sight and
+        fewer than its live cap standing, after a one-turn chant a blow
+        breaks. Game loop polls self._wants_summon and calls
+        _spawn_summoner_minion() — the actual JSON lookup + placement happens
+        caller-side, mirroring the existing Abaddon locust-spawn pattern."""
         self._wants_summon = False
-        self._summon_turn_counter += 1
         # It summons only once it has spotted the hero (this sets _aware;
         # nothing did for a summoner, so none ever summoned).
         if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
+            self.__dict__.pop('_chanting', None)     # lost him: the chant is let go
             return False
-        eligible_to_summon = (
-            self.summon_kind
-            and self._summons_made < self.summon_max
-            and getattr(self, '_aware', False)
-            and self._summon_turn_counter >= self.summon_cooldown
-        )
-        if eligible_to_summon:
-            self._wants_summon = True
-            self._summon_turn_counter = 0
-            self._summons_made += 1
+        if summoning.step(self, player, all_monsters, dungeon):
+            return False                             # it chants, or its dead come
         # While not summoning, behave as ranged caster (or melee if no ranged)
         if len(self.attacks) > 1 and self._distance_attacks():
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
@@ -3630,11 +3648,8 @@ class Monster:
     def _dancer_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Dancer AI (Medusa): sidestep to a new position adjacent to player, then attack.
         If not adjacent, approach normally. The constant repositioning makes her
-        hard to pin down unless the player uses chokepoints."""
-        # Tick gaze cooldown
-        if self._gaze_cooldown > 0:
-            self._gaze_cooldown -= 1
-
+        hard to pin down unless the player uses chokepoints. (Her gaze's
+        cooldown is counted down in tick_effects, for every gazer.)"""
         px, py = player.x, player.y
         if not self._adjacent_to(player):
             # The gaze works across open floor: within GAZE_RANGE and with a

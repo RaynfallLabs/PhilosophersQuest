@@ -121,8 +121,13 @@ def test_summoner_flags_wants_summon_on_cooldown():
     assert s._wants_summon is False
     s.take_turn(player, StubDungeon(), [s])
     assert s._wants_summon is False
+    # The 3rd turn the timer is up: a one-turn chant first (AI-1,
+    # src/summoning.py: a blow in that turn would break it) ...
     s.take_turn(player, StubDungeon(), [s])
-    assert s._wants_summon is True, "cooldown should fire on 3rd turn"
+    assert s._wants_summon is False and s.__dict__.get('_chanting')
+    # ... and the call on the 4th.
+    s.take_turn(player, StubDungeon(), [s])
+    assert s._wants_summon is True, "the chant done, the summons come"
     assert s._summons_made == 1
 
 

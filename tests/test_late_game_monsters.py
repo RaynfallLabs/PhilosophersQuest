@@ -621,6 +621,11 @@ def _gazes_per_turn(monkeypatch, group=True, turns=40):
         for m in g.monsters:
             m.status_effects.pop('paralyzed', None)
         landed.clear()
+        # A turn ticks every monster's effects first (Game._advance_turn), and
+        # since AI-1 that is where a gaze's cooldown counts down for every
+        # gazer (it was the dancer AI's own tick).
+        for m in g.monsters:
+            m.tick_effects()
         g._do_monster_turns()
         counts.append(landed.count('paralyzed'))
     return counts

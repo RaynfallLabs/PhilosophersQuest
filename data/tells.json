@@ -4,7 +4,7 @@
   "max_lines": 2,
   "order": ["gaze_paralyze", "paralyzed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
             "silenced", "stunned", "immobilized", "pack_feast", "pack_swarm", "pack_hamstring", "splits", "revive_once_on_death", "drain_heals_self",
-            "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "summon_kind", "pull_chance", "sp_drain",
+            "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "summon_kind", "heals_allies", "pull_chance", "breath_recharge", "sp_drain",
             "can_charge", "pack_harry", "pack_sling", "pack_traps", "pack_bay", "pack_dart", "pack_snatch",
             "can_phase_blink", "stalker", "bleeding", "burning", "slowed", "hallucinating"],
   "kin_lead": "{He} is one of {kin}.",
@@ -113,8 +113,8 @@
     },
     "summon_kind": {
       "sign": "{The} keeps glancing behind {him}, as if {he} expects company.",
-      "does": "{He} can call others to {him}.",
-      "counter": "Kill {him} before {he} calls."
+      "does": "{He} can call others to {him}, a few at a time.",
+      "counter": "Strike {him} while {he} chants: a blow breaks the call. Kill what {he} calls, and {he} must call again."
     },
     "pull_chance": {
       "sign": "{The} has a long reach with a hook to it.",
@@ -213,6 +213,16 @@
       "sign": "{The} eyes your pack, and the food in it.",
       "does": "Harpies snatch food out of your pack and fly off with it, as the harpies robbed the table of the blind king Phineus.",
       "counter": "Kill the thief and what {he} took falls where {he} dies. Keep the flock off you, or fight where a harpy cannot swoop."
+    },
+    "breath_recharge": {
+      "sign": "{The}'s chest heaves like a bellows.",
+      "does": "{He} breathes, then must draw breath again: for a few turns {he} has only tooth and claw.",
+      "counter": "Close in while {he} draws breath, or keep stone between you until {he} has spent it."
+    },
+    "heals_allies": {
+      "sign": "{The} stays close behind the others, eyeing every wound.",
+      "does": "{He} mends a badly hurt friend, then must rest {his} voice a few turns before the next.",
+      "counter": "Kill {him} first, or finish the friend {he} has just mended before {he} can mend again."
     }
   }
 }

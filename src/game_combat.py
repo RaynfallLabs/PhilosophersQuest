@@ -3450,6 +3450,8 @@ class CombatMixin:
             # charge; a hound bays (heard even unseen); a kobold's trap laid
             # where the hero could see it is shown.
             self._pack_turn_after(m)
+            # What its behaviour left to be seen or heard (game_behaviour.py).
+            self._ai_turn_after(m)
             if did_attack:
                 # A blow on the hero carries (src/senses.py).
                 self._make_noise('struck')

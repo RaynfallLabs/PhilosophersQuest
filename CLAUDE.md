@@ -69,6 +69,13 @@ src/
   war_bands.py        - War-bands: groups with a leader and roles, morale when he falls
   packs.py            - Packs: kin that hunt together (surround in the open, hold a corridor's mouth or go round) and each family's trick (rats swarm, wolves hamstring, goblins sling...)
   tells.py            - Tells: what a dangerous creature shows it can do, and what to do about it
+  # Monster behaviour, first wave (AI-1, 2026-11-19): small pure modules, numbers and lines in data/monster_ai.json
+  kind_data.py        - A kind's own fields where the Monster keeps no copy; data/monster_ai.json; the behaviours' tells
+  ai_lines.py         - What a behaviour leaves for the Game to say (seen / unseen)
+  faction.py          - Whose side a monster is on (band, pack, family); the healer's choice and its rest
+  summoning.py        - Summoners chant (a blow breaks it), then call while few of theirs stand
+  breath.py           - Draws Breath: a breath must be drawn again; tooth and claw meanwhile
+  game_behaviour.py   - BehaviourMixin: the Game's side of the behaviours (lines, the map, the kill)
   decor.py            - The five domains (themes) and the fixture layer: what stands in a floor
   hazards.py          - Domain hazards (data), trap lean, kin weights and the floor's resident clan
   game_hazards.py     - HazardsMixin: hazards at work on the hero and the monsters; fire vents breathe
@@ -212,6 +219,7 @@ data/
   lights.json       - Carried lights and the Light spell: status sight, spell turns, the oil, lines, card and HUD words
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
   packs.json        - Packs: the hunt's numbers, the lore packs and their tricks, the herds that do not hunt as one
+  monster_ai.json   - Monster behaviour (AI-1): healers, summoners, breath, morale, drain, rot, light, alarm, throes... numbers and lines
   traders.json      - The named traders: stock, services, stall counters, the smiths' inlays and linings
   stray_kids.json, abandoned_emberpup.json - Two of the run's set pieces (the Stray Kids stage; the Emberpup and Old Nickel)
   old_nickel.json   - Old Nickel's lines by phase and moment (the friend's offers and asides, the reveal, then taunts, iron, the cloak, darting in, striking, hurt, dying), their pacing and Journal lines

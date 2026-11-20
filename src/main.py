@@ -108,6 +108,7 @@ from game_bococho_render import BocochoRenderMixin
 from game_songs import SongsMixin
 from game_manifest import ManifestMixin
 from game_horns import HornsMixin
+from game_behaviour import BehaviourMixin
 from spells import LEARNABLE_SPELLS
 
 
@@ -276,7 +277,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
            HazardsMixin, LoreFixturesMixin, DressingMixin, ArsenalMixin, LightsMixin,
            MoobleMixin, MoobleDanceMixin,
            BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin, SongsMixin,
-           ManifestMixin, HornsMixin):
+           ManifestMixin, HornsMixin, BehaviourMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -8510,6 +8511,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         minion._aware = True
         # Mark as summoned so weaken_summoned (Ring of Solomon) can apply.
         minion._is_summoned = True
+        # Whose it is: a summoner calls only while fewer than its live cap
+        # of its own still stand (src/summoning.py).
+        minion._summoned_by = summoner
         self.monsters.append(minion)
         if (summoner.x, summoner.y) in self.visible or (sx, sy) in self.visible:
             self.add_message(
