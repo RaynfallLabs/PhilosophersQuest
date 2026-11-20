@@ -240,3 +240,20 @@ def test_the_mandrakes_death_cry_rouses_the_floor_near_it():
     g._on_monster_killed(mand)
     assert gob._aware
     assert any('shrieks as it dies' in t for t in _messages(g))
+
+
+def test_a_young_dragon_in_reach_rakes_and_bites_while_it_draws_breath():
+    """The breath retune (src/breath.py routine()) through the game's own
+    monster turns: the claw and bite land together, the breath never with them."""
+    import breath
+    g = _scene(('young_dragon', 1, 0))
+    d = g.monsters[0]
+    d._aware = d._tracking = d._opened = True
+    g.player.max_hp = g.player.hp = 100000
+    fire = next(a for a in d.attacks if a['delivery'] == 'breath')
+    breath.spend(d, fire)
+    for _ in range(2):
+        g._do_monster_turns()
+    text = ' '.join(_messages(g, 40))
+    assert 'attacks in a frenzy' in text
+    assert 'fire breath' not in text.lower()

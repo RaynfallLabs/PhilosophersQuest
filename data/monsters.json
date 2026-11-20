@@ -3364,7 +3364,7 @@
       },
       {
         "name": "Fire Breath",
-        "damage": "4d8+10",
+        "damage": "7d8+16",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -3754,7 +3754,7 @@
       },
       {
         "name": "Fire Breath",
-        "damage": "6d10+24",
+        "damage": "8d10+30",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -4094,7 +4094,7 @@
       },
       {
         "name": "Frost Breath",
-        "damage": "9d10+30",
+        "damage": "12d10+40",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.45,
@@ -16965,7 +16965,7 @@
       },
       {
         "name": "Necrotic Breath",
-        "damage": "4d6+6",
+        "damage": "6d8+6",
         "type": "necrotic",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -24104,7 +24104,7 @@
       },
       {
         "name": "Acid Breath",
-        "damage": "5d6+5",
+        "damage": "9d6+6",
         "type": "acid",
         "effect": "poisoned",
         "effect_chance": 0.4,
@@ -24198,7 +24198,7 @@
       },
       {
         "name": "Fire Breath",
-        "damage": "6d6+4",
+        "damage": "8d6+5",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -24289,7 +24289,7 @@
       },
       {
         "name": "Lightning Breath",
-        "damage": "9d6+6",
+        "damage": "11d6+6",
         "type": "lightning",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -24392,7 +24392,7 @@
       },
       {
         "name": "Inferno Breath",
-        "damage": "8d6+8",
+        "damage": "12d6+7",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -25491,7 +25491,7 @@
       },
       {
         "name": "Fire Breath",
-        "damage": "5d8+12",
+        "damage": "8d8+16",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -25820,7 +25820,7 @@
       },
       {
         "name": "Inferno Breath",
-        "damage": "6d8+20",
+        "damage": "10d8+25",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.7,
@@ -25981,7 +25981,7 @@
       },
       {
         "name": "Elder Breath",
-        "damage": "7d10+22",
+        "damage": "9d10+30",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -31439,7 +31439,7 @@
     "attacks": [
       {
         "name": "Death Breath",
-        "damage": "6d10+24",
+        "damage": "8d10+36",
         "type": "necrotic",
         "delivery": "breath",
         "effect": "weakened",
@@ -32075,7 +32075,7 @@
     "attacks": [
       {
         "name": "Void Breath",
-        "damage": "7d10+30",
+        "damage": "10d10+45",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.45,
@@ -32602,7 +32602,7 @@
     "attacks": [
       {
         "name": "Chaos Breath",
-        "damage": "8d10+40",
+        "damage": "12d10+54",
         "type": "fire",
         "delivery": "breath",
         "effect": "burning",

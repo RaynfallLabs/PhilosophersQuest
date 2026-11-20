@@ -269,3 +269,39 @@ def test_the_breathers_that_keep_one_blow():
                  'winter_wolf', 'hydra', 'iron_golem', 'lava_elemental', 'magma_elemental',
                  'sekhmet_lioness', 'nidhogg_brood', 'dahaka_wyrm', 'cave_toad'):
         assert not MONS[kind].get('multi_attack_count'), kind
+
+
+# A true dragon's breath is its deadliest stroke (AD&D and 5e: about 1.3-1.6
+# times its claw and bite), drawn up for three turns: each raised by its lore
+# to near the top of an apex blow (at most 22% of the hero of its peak floor).
+BREATHS = {
+    'young_red_dragon': ('Fire Breath', '8d6+5'), 'young_black_dragon': ('Acid Breath', '9d6+6'),
+    'undead_dragon_lesser': ('Necrotic Breath', '6d8+6'),
+    'adult_blue_dragon': ('Lightning Breath', '11d6+6'),
+    'adult_red_dragon': ('Inferno Breath', '12d6+7'), 'wyrm': ('Fire Breath', '8d8+16'),
+    'young_dragon': ('Fire Breath', '7d8+16'), 'dread_wyrm': ('Inferno Breath', '10d8+25'),
+    'adult_dragon': ('Fire Breath', '8d10+30'), 'elder_dragon': ('Elder Breath', '9d10+30'),
+    'dracolich': ('Death Breath', '8d10+36'), 'ancient_dragon': ('Frost Breath', '12d10+40'),
+    'elder_dracolich': ('Void Breath', '10d10+45'), 'abyssal_dragon': ('Chaos Breath', '12d10+54'),
+}
+
+
+def test_a_true_dragons_breath_is_its_deadliest_stroke_inside_an_apex_blow():
+    for kind, (name, dice) in BREATHS.items():
+        m = MONS[kind]
+        a = next(a for a in m['attacks'] if a['name'] == name)
+        assert a['delivery'] == 'breath' and a['damage'] == dice, kind
+        hero = mb.hero_at(m['peak_floor'])[1]
+        assert mb.dice_mean(dice) <= 0.22 * hero, kind
+        assert mb.dice_mean(dice) <= 0.35 * mb.hero_at(m['min_level'])[1], kind
+
+
+def test_the_lesser_breaths_keep_their_lore():
+    """A drake's spit is 'far short of a true dragon's breath'; the spectral
+    dragon's burns hope, not skin; the lich dragon's get kills with its bite."""
+    keep = {'drake_fire': ('Fire Spit', '2d6+1'), 'drake_cold': ('Frost Breath', '2d6'),
+            'spectral_dragon': ('Ghostfire Breath', '5d8+18'),
+            'lich_dragon_spawn': ('Lich Breath', '4d6+12')}
+    for kind, (name, dice) in keep.items():
+        a = next(a for a in MONS[kind]['attacks'] if a['name'] == name)
+        assert a['damage'] == dice, kind
