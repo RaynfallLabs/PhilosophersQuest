@@ -86,8 +86,13 @@ def test_the_sidebar_clock_is_the_clock_the_fight_will_get():
     p.add_effect('blessed', 5)
     assert p.combat_clock() == 12 or p.combat_clock() == 13        # a blessing x1.25
     q = Player()
-    q.add_effect('confused', 5)
+    q.add_effect('blinded', 5)
     assert q.combat_clock() < 10
+    # Confusion no longer cuts the clock: its words swim, then settle
+    # (quiz_engine.settle_for, 2026-11-19).
+    c = Player()
+    c.add_effect('confused', 5)
+    assert c.combat_clock() == 10
     r = Player()
     r.grant_insight(6, 4)                                          # Michael, Guide My Hand
     assert r.combat_clock() == 16

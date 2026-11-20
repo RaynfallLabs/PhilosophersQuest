@@ -177,7 +177,56 @@ def accessory_threshold(slot: str, level: int, unique: bool = False) -> int:
 
 
 def core_enchant_cap() -> int:
+    """The plus a named body armour or shield can hold, and any piece whose
+    material says nothing (gear_rules enchant_cap.core)."""
     return int(rules()['enchant_cap']['core'])
+
+
+def enchant_cap_for(item) -> int:
+    """The most plus this body armour or shield can hold.
+
+    Brandon, 2026-11-19: "lore caps; this can add a new dimension to armor
+    and materials; some materials hold magic better (even if they're not
+    inherently stronger)". A common piece holds what its MATERIAL holds
+    (`max_enchant` in data/materials/armor, by lore: cold iron turns magic
+    aside, leather holds a little, mithril and elven silk drink it in), so
+    a strong material is not always the one that takes the most magic
+    (adamantine +3, mithril +6). A named piece keeps the core cap, and no
+    piece goes past the ceiling."""
+    if item is None or getattr(item, 'is_unique', False):
+        return core_enchant_cap()
+    return material_enchant_cap(material_of(item))
+
+
+def material_enchant_cap(mat: dict | None) -> int:
+    """What a material holds (its max_enchant), never past the ceiling; the
+    core cap when it says nothing."""
+    r = rules()['enchant_cap']
+    if mat is None or mat.get('max_enchant') is None:
+        return int(r['core'])
+    return max(0, min(int(r.get('ceiling', r['core'])), int(mat['max_enchant'])))
+
+
+def material_of(item) -> dict | None:
+    """A common armour piece's or shield's material entry (armour materials
+    first; a shield can be made of a weapon material), or None."""
+    mid = getattr(item, 'material', None)
+    if not mid:
+        return None
+    try:
+        from items import get_material
+    except ImportError:
+        return None
+    return get_material('armor', str(mid)) or get_material('weapons', str(mid))
+
+
+def enchant_note_for(item) -> str:
+    """The one plain line that says why the piece holds what it holds
+    (its material's `enchant_note`), or ''."""
+    if item is None or getattr(item, 'is_unique', False):
+        return ''
+    mat = material_of(item)
+    return str((mat or {}).get('enchant_note') or '')
 
 
 # ----------------------------------------------------------------- donning

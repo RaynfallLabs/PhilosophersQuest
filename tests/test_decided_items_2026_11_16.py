@@ -349,6 +349,8 @@ def test_the_first_floors_bands_are_a_fair_fight_for_a_new_hero():
     a hobgoblin and at most two followers; a couple of footpads."""
     import dungeon
     import war_bands
+    sys.path.insert(0, os.path.join(ROOT, 'tools', 'balance'))
+    import monster_bands
     for floor in range(1, 7):
         pool = dungeon._floor_pool(floor, None)
         per_band = {}
@@ -362,9 +364,17 @@ def test_the_first_floors_bands_are_a_fair_fight_for_a_new_hero():
             per_band.setdefault(bid, []).append(sum(_turn_damage(k) for k in members))
         assert set(per_band) == {'goblin_scouts', 'footpads'}, (floor, set(per_band))
         for bid, dmg in per_band.items():
-            assert max(dmg) <= 5.5, (floor, bid, max(dmg))
-            if floor <= 2:
-                assert max(dmg) <= 4.5 and sum(dmg) / len(dmg) <= 3.6, (floor, bid)
+            # Measured against the hero of the floor (the simulated hero's
+            # health, tools/balance/monster_bands.HERO: 30 on floor 1, 52 on
+            # 6). (Was 5.5 HP a turn, and 4.5 / 3.6 on floors 1-2, before the
+            # 2026-11-19 lore pass gave the bandits and goblins their weapons'
+            # blows; Brandon 2026-11-18: "the dungeon should NOT feel like a
+            # cake walk". A whole floor-1 band on him at once costs at most
+            # about a fifth of his health a turn; the bands keep their small
+            # size. The simulator checks floor-1 deaths.)
+            hero = monster_bands.hero_at(floor)[1]
+            assert max(dmg) <= 0.19 * hero, (floor, bid, max(dmg), hero)
+            assert sum(dmg) / len(dmg) <= 0.18 * hero, (floor, bid, hero)
     b = war_bands.data()['bands']
     assert b['footpads']['most_followers'] == 1 and b['goblin_scouts']['most_followers'] == 2
     for bid in ('goblin_raiders', 'bandit_crew', 'gnoll_pack'):

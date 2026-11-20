@@ -144,7 +144,8 @@ def _monster(g, attack, thac0=10):
 def test_a_touch_ignores_body_armour_and_shield(game):
     p = game.player
     body = items.instantiate_armor('full_plate', 'damascus_steel', level=10)
-    body.ac_bonus = 25                      # an absurd plate: AC far past any reach
+    body.ac_bonus = 26                      # an absurd plate: AC far past any reach
+    #                                         (damascus holds +4 since 2026-11-19: 25 + 4 was -19)
     p.armor_slots[items.ARMOR_SLOTS.index('body')] = body
     assert p.get_ac() <= -20
     assert guards.touch_ac(p) == p.get_ac() + p.core_ac() > 5

@@ -228,7 +228,8 @@ def test_the_stray_kids_from_the_idol_to_the_last_bow(make_game):  # noqa: F811 
     floor = st['floor']
     assert 8 <= floor <= 12                           # every run, on one floor of 8-12
     import random
-    g._sk_rng = random.Random(3)                      # (where the idol stands: one place)
+    g._sk_rng = random.Random(3)                      # (its shouts: one sequence; the idol's
+    #                                                    place follows the game's seed)
     warp(h, floor)
     g = h.g
     p = g.player

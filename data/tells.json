@@ -4,7 +4,7 @@
   "max_lines": 2,
   "order": ["gaze_paralyze", "paralyzed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
             "silenced", "stunned", "immobilized", "splits", "revive_once_on_death", "drain_heals_self",
-            "weakened", "rust", "diseased", "poisoned", "regeneration", "summon_kind", "pull_chance", "sp_drain",
+            "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "summon_kind", "pull_chance", "sp_drain",
             "can_charge", "can_phase_blink", "stalker", "bleeding", "burning", "slowed", "hallucinating"],
   "kin_lead": "{He} is one of {kin}.",
   "far_counter": "{He} can reach you from across a room, but only where {he} can see you: keep stone between you until you can close in.",
@@ -99,6 +99,7 @@
       "does": "The wounds {he} gives fester long after the fight.",
       "counter": "Kill {him} before {he} lands many."
     },
+    "corroding": {"sign": "Where {the} has passed, the stone is pitted and crumbling.", "does": "What {he} touches rots and crumbles: your armour gives way while it lasts.", "counter": "Kill {him} fast, or from afar."},
     "poisoned": {
       "sign": "Something on {the} glistens wet.",
       "does": "{He} is poisonous, and every wound {he} gives keeps hurting after.",

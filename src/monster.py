@@ -336,6 +336,24 @@ _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
 # (A riddle is the Sphinx's: it either takes hold of your thoughts or it does not.)
 _MIND_WORDS = ('gaze', 'song', 'wail', 'charm', 'psionic', 'hex', 'evil eye', 'riddle')
 
+# Openers (2026-11-19, Brandon: "openers for sure"). A creature with a
+# signature opening move (data `opener`: {"attack": <one of its attacks>,
+# "range": N}) uses it before the hero can strike:
+#   range 1  - a pounce, lunge or charge: on the turn it closes to the hero
+#              it strikes with that attack at once;
+#   range 2+ - from a distance, the hero in its sight: an archer's first
+#              volley at once; a gaze, a voice or a breath is first drawn
+#              up for a turn (OPENER_WIND_UP), a tell the hero can answer.
+# Once a fight: it opens again only after it has lost the hero for
+# OPENER_RESET_TURNS turns. The blow itself is an ordinary one (to-hit,
+# saves, guards, wards and counters all apply).
+OPENER_RESET_TURNS = 5
+OPENER_WIND_UP = {
+    'gaze': "{name} fixes {his} eyes on you.",
+    'voice': "{name} draws a long breath.",
+    'breath': "{name} rears back, and something kindles in {his} throat.",
+}
+
 
 # ---------------------------------------------------------------------------
 # Who can bleed (data/monster_blood.json; Brandon, 3.3.3 play: "The Wraith is
@@ -684,6 +702,20 @@ class Monster:
         # escalation alongside enrage_at_hp_pct.
         self.multi_attack_count: int = int(defn.get('multi_attack_count', 0) or 0)
         self.enraged_multi_attack_count: int = int(defn.get('enraged_multi_attack_count', 0) or 0)
+        # Its opening move (OPENER_WIND_UP above), the attack itself, or None.
+        self.opener = None
+        self._opener_attack = None
+        _op = defn.get('opener')
+        if isinstance(_op, dict) and _op.get('attack'):
+            _oa = next((a for a in (defn.get('attacks') or [])
+                        if isinstance(a, dict) and a.get('name') == _op['attack']), None)
+            if _oa is not None:
+                self.opener = {'attack': str(_op['attack']),
+                               'range': max(1, int(_op.get('range', 1) or 1)),
+                               'wind_up': str(_op.get('wind_up') or '')}
+                self._opener_attack = _oa
+        self._opened = False                # used this fight
+        self._winding = False               # drawn up, to fire on its next turn
         # Chain-disrupt-on-hit: chance the strike disrupts the player's
         # chain meter for the next attack. Stored on player as
         # _chain_disrupt_pending; consumed by next chain-mode quiz start
@@ -1478,6 +1510,11 @@ class Monster:
             return 0, (f"{the_name(self)}'s claws find no purchase on the ice. "
                        f"The lunge goes wide.")
 
+        # Its opening move (take_turn armed it): that attack, alone.
+        _op_atk = self.__dict__.pop('_opener_now', None)
+        if _op_atk is not None:
+            return self._resolve_blow(_op_atk, player)
+
         # Fenrir rage: at 3+ stacks, use ALL attacks instead of random choice
         if self.rage_stacks >= 3 and len(self.attacks) > 1 and not _slipping:
             return self._fenrir_multi_attack(player)
@@ -2233,6 +2270,9 @@ class Monster:
         if self.ai_pattern == 'ranged':
             if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
                 return False
+            _op = self._opener_from_range(player, dungeon)
+            if _op is not None:
+                return _op
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
 
         # --- Ambush AI: stay still until player is within 5 tiles ---
@@ -2257,6 +2297,12 @@ class Monster:
         if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
             return False
         dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
+        # Its opener from a distance (a gaze, a song, a first arrow), before
+        # it closes or the hero can strike.
+        if self.ai_pattern not in ('sessile', 'cowardly') and self._flee_timer <= 0:
+            _op = self._opener_from_range(player, dungeon)
+            if _op is not None:
+                return _op
 
         # --- Phase-blink: chance to teleport adjacent to player when at distance ---
         # Applied AFTER detection/awareness so unaware monsters don't teleport.
@@ -2313,11 +2359,19 @@ class Monster:
                     self._charge_ready = True
 
         if self._adjacent_to(player):
+            if effective_pattern != 'cowardly':
+                self._pounce_now()       # its first blow is its opener
             return True  # caller triggers the attack
 
         # --- Standard movement ---
         if self._standard_move(player, dungeon, all_monsters, extra_occupied, effective_pattern):
+            if effective_pattern != 'cowardly':
+                self._pounce_now()
             return True  # reached player during double-move
+        # A pounce: it closes and strikes in the same turn (its opener).
+        if (effective_pattern != 'cowardly' and self._adjacent_to(player)
+                and self._pounce_now()):
+            return True
 
         return False
 
@@ -2331,7 +2385,51 @@ class Monster:
         is sight, sound and the lore senses of data/senses.json, with a
         search when the trail goes cold (src/senses.py)."""
         import senses as _senses
-        return _senses.notice(self, player, dungeon, all_monsters, extra_occupied)
+        seen = _senses.notice(self, player, dungeon, all_monsters, extra_occupied)
+        # A fight ends when it has lost the hero a while: its opener is
+        # ready again (OPENER_RESET_TURNS).
+        if seen:
+            self._lost_turns = 0
+        else:
+            self._lost_turns = int(self.__dict__.get('_lost_turns', 0) or 0) + 1
+            if self._lost_turns >= OPENER_RESET_TURNS:
+                self._opened = False
+                self._winding = False
+        return seen
+
+    def _opener_from_range(self, player, dungeon):
+        """Its opener from a distance, this turn: None when it has none to
+        use (no opener, already used, out of range or sight, a pounce), else
+        True (it fires now: attack() takes the opener) or False (it spent
+        the turn drawing a gaze, a voice or a breath up; the line is in
+        _wind_up_message for the game to say)."""
+        op = self.__dict__.get('opener')
+        if not op or self.__dict__.get('_opened') or op['range'] < 2:
+            return None
+        dist = max(abs(self.x - player.x), abs(self.y - player.y))
+        if dist > op['range'] or not self._has_los(player.x, player.y, dungeon):
+            return None
+        delivery = str(self._opener_attack.get('delivery', '') or '')
+        if delivery in OPENER_WIND_UP and not self.__dict__.get('_winding'):
+            self._winding = True
+            his = pronouns(self)[2]
+            line = op.get('wind_up') or OPENER_WIND_UP[delivery]
+            self._wind_up_message = line.format(name=the_name(self), his=his)
+            return False
+        self._winding = False
+        self._opened = True
+        self._opener_now = self._opener_attack
+        return True
+
+    def _pounce_now(self) -> bool:
+        """It has just closed to the hero (or stands beside him) with a
+        pounce unused: arm it, so its blow this turn is the opener."""
+        op = self.__dict__.get('opener')
+        if not op or self.__dict__.get('_opened') or op['range'] != 1:
+            return False
+        self._opened = True
+        self._opener_now = self._opener_attack
+        return True
 
     def _standard_move(self, player, dungeon, all_monsters, extra_occupied, effective_pattern):
         """Standard movement logic used by aggressive/cowardly AI."""

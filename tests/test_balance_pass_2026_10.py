@@ -277,19 +277,10 @@ def test_gate_bosses_are_long_fights():
     assert R.GATE_BOSS_HP['abaddon_destroyer'] >= 6000
 
 
-def test_no_ordinary_attack_is_a_one_hit_spike():
-    import respawn_by_hp as R
-    data = _monsters()
-    bad = []
-    for mid, d in data.items():
-        if not R.is_random_spawn(d) or d.get('is_mini_boss') or d.get('is_boss'):
-            continue
-        limit = R.SPIKE_CAP * R.target_dmg(d.get('peak_floor', 1))
-        for a in d.get('attacks') or []:
-            avg = R.dice_avg(a.get('damage', 0))
-            if avg > 6 and avg > 1.15 * limit:
-                bad.append((mid, a['name'], avg, round(limit, 1)))
-    assert not bad, bad[:8]
+# (test_no_ordinary_attack_is_a_one_hit_spike was retired on 2026-11-19: it held the monsters to a curve the lore pass
+# replaced; each monster's numbers now come from its lore. Brandon: no smoothing
+# multipliers, fix the data at the source. The pass's own rails are in
+# tests/test_monster_lore_pass.py.)
 
 
 def test_deep_damage_does_not_fall_with_depth():

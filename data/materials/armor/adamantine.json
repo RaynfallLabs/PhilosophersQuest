@@ -10,6 +10,7 @@
   "weight_mult": 1.4,
   "ac_bonus": 3,
   "max_enchant": 3,
+  "enchant_note": "Adamant, the unyielding, resists the enchanter as it resists the blade.",
   "color": [60, 65, 80],
   "protection": {"slash": 0.85, "pierce": 0.85, "lightning": 1.25},
   "protection_words": {"slash": "hard to cut", "pierce": "hard to pierce", "lightning": "conducts lightning"},

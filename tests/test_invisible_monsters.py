@@ -325,13 +325,10 @@ def test_each_spawns_from_the_ordinary_pool_on_its_own_floor():
         assert mid not in dungeon._build_spawn_pool(max(1, d['min_level'] - 1)) or d['min_level'] <= 1
 
 
-def test_new_ones_sit_on_the_floor_their_hp_was_built_for():
-    sys.path.insert(0, os.path.join(ROOT, 'tools', 'balance'))
-    from respawn_by_hp import plan
-    placed = plan(MONS)
-    for mid in NEW:
-        d = MONS[mid]
-        assert placed[mid] == (d['peak_floor'], d['spread'], d['min_level']), mid
+# (test_new_ones_sit_on_the_floor_their_hp_was_built_for was retired on 2026-11-19: it held the monsters to a curve the lore pass
+# replaced; each monster's numbers now come from its lore. Brandon: no smoothing
+# multipliers, fix the data at the source. The pass's own rails are in
+# tests/test_monster_lore_pass.py.)
 
 
 def test_each_has_its_64px_painted_sprite_and_lore():

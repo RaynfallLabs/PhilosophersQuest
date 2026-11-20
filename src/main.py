@@ -45,7 +45,7 @@ from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container
 from level_manager import LevelManager
 from player import Player
 import sound_system as _snd
-from quiz_engine import QuizEngine, QuizState
+from quiz_engine import QuizEngine, QuizState, settle_for as scramble_settle_for
 from effects_runtime import build_default_runtime
 from renderer import Renderer
 from geom import monster_at_tile
@@ -502,6 +502,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_engine.daimonion_hook = self._daimonion_stops
         # Any quiz starting sets a rider down first (game_riding.py).
         self.quiz_engine.start_hook = self._riding_quiz_starts
+        # A confused hero's quiz words swim, then settle (quiz_engine.settle_for):
+        # read as each question goes up.
+        self.quiz_engine.scramble_hook = (
+            lambda timed: scramble_settle_for(self.player, timed))
         self.quirk_system = QuirkSystem(self)
         self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)

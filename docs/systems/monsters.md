@@ -399,6 +399,37 @@ Tests: `tests/test_monster_notes.py`, and the Observe cases in `tests/test_obser
 
 **Patrols (C5).** A wandering monster now arrives beside a stair the hero can't see, as if coming down or up it, instead of out of nowhere. It goes to a fight or alarm it can hear from there, or roams.
 
+## The lore pass: each monster's numbers from its own lore (2026-11-19)
+
+Brandon, 2026-11-19: "Your fix SUCKS AGAIN, because you started using smoothing multipliers to hit a target ... NEVER DO THIS ... Fix the data at the source." And: "the more diverse and unique our monsters are, the better."
+
+- **What it replaced.** Earlier passes had seated every ordinary monster on a floor curve. Every floor-1 kind bit for 1d2, and every floor-16 kind (troll, xorn, banshee, specter) hit for 1d8+2. On every floor a landed blow was about 5% of that floor's hero's health and a turn about 3%. On floors 4-22 the median monster had 56-73% of the anchor HP and died to one maths chain.
+- **What it did.** 517 kinds were re-written by size, natural weapons or carried weapon, skill, speed and signature power. Each got its own dice, routines (`multi_attack_count`), HP, to-hit, rider durations, pack size and `opener`, with a one-line lore reason. The rules are in `docs/design/MONSTER_LORE_PASS_2026_11_19.md`: role ranges as a share of the hero who meets the monster, the engine's limits, and what not to touch. `tools/balance/apply_lore_pass.py` checks each proposal and writes it.
+- **Where it stands.** `tools/balance/monster_bands.py` measures each floor against the simulated hero of that floor.
+  - A turn now costs about 4-5.7% of the hero's health on average, and the hardest tenth of kinds costs 2.5-4 times the gentlest tenth.
+  - About half the kinds open with their power.
+  - The median HP sits at 0.85-1.1 of the anchor. Floors 4-11 are about 0.85, because early kinds linger many floors past their peak.
+- **Weapons were not refitted.** The weapon curve sizes against a frozen copy of the 3.5.4 monsters (`tools/balance/weapon_curve_monsters_3_5_4.json`). Today's typical monster is 1.1-1.3 times that, most of all on floors 7-20. Refitting the weapons would hand back the one-blow kills.
+- **The old tools now refuse to write:** `respawn_by_hp`, `scale_monsters`, `apply_difficulty_schedule`, `monster_pass_2026_11_17` and `late_game_monsters_2026_10` (`tools/balance/lore_pass_guard.py`). The tests that held monsters to the HP curve were retired. `tests/test_monster_lore_pass.py` holds the pass's own rails: no turn over a quarter of the peak floor's hero's health, riders within the engine's caps, no twin kinds from floor 4 down, every floor diverse.
+- **Edit a monster one by one, by lore.** Check the result with `apply_lore_pass.py` and `monster_bands.py`.
+
+## Openers: a creature's power before the hero strikes (2026-11-19)
+
+Brandon: "openers for sure". The powers "dont seem to make a lot of difference" because a monster died to the first maths chain before it used one.
+
+- **Data:** `"opener": {"attack": "<one of its attacks>", "range": N}` in `monsters.json`, written per creature from its lore.
+  - Pounces, lunges and charges are range 1.
+  - A first volley, a gaze, a song or a breath is range 2-7.
+  - An optional `wind_up` overrides the tell line.
+- **Range 1 (a pounce):** on the turn the creature closes to the hero, it strikes with that attack in the same turn (`Monster._pounce_now`). Without an opener, closing ends its turn and the hero strikes first.
+- **Range 2 or more:** when it has noticed the hero and he is within range and in its line of sight, it opens with that attack (`Monster._opener_from_range`).
+  - A missile flies at once.
+  - A gaze, voice or breath is first drawn up for one turn (`monster.OPENER_WIND_UP`): "The basilisk fixes its eyes on you." That is the tell. The hero can answer it by closing, breaking line of sight, putting in wax or raising a mirror.
+- **The blow** is an ordinary blow. To-hit, saves, the head guard, family wards and counters all apply.
+- **Once a fight.** The opener is ready again only after the creature has lost the hero for `OPENER_RESET_TURNS` (5) turns.
+- **The simulator** gives an opener one free blow when the monster joins a fight (`difficulty_sim.Run.fight`). That slightly over-counts the drawn-up powers, which the game lets the hero answer.
+- **Tests:** `tests/test_monster_openers.py`.
+
 ## Wanderers: the floor's clock (3.5.1)
 
 Brandon, play-testing floor 1: "I just don't think we need a constant stream of monsters... I'd rather have a larger population at first, with complex encounters set up, then a trickle if you hang around TOO LONG, but give the player some time to explore... walking back and forth becomes a massive chore."
@@ -601,7 +632,7 @@ Brandon: "are our mini-bosses still working and tuned?" They were placed (every 
 
 **The bands** (`BANDS`, checked by `tests/test_mini_boss_bands.py`): band mini-boss hp 7-24 ordinary monsters, blows 5-30% of a bar; legendary 17-24, 18-30%; seal demon 11-19, 14-30%. Where in the band a foe sits was measured foe by foe so the mastery hero needs about six attacks for each (the family is the length of the fight): a foe whose hide, resistances, regeneration or second life turns his usual blows needs less health to last as long (the Green Knight 7.4, Stheno 7.5, Baba Yaga 8.6, Talos 10.6), one he cuts through needs more (Echidna 22.7, the Erlking 20.9). A foe whose technique bites carries fewer dice (the Bonnacon's burning dung, the Wild Hunt Captain's pace, Ravana's paralysing grab). Each `FOES` entry has a line of lore saying why.
 
-**Techniques added** (each also a tell, `data/tells.json` by its effect): Talos's **Red-Hot Hug** (grapple, burning: he heated himself in the fire and hugged his victims) beside his Crush, two blows a turn; Cacus's Fire Breath now burns and his **Breath of Smoke** blinds (Virgil's smoke and darkness; it replaced his Slam); the Sphinx's **Whispered Riddle** (voice, confusion: the clock on every sum runs short; wax in the ears stops it) beside her Rake and Bite, three blows a turn; the Nemean Lion's Claw bleeds (its own claws were the only thing that could cut its hide); the Calydonian Boar charges (`can_charge`, x1.5). The Bonnacon's dung burns a little less often (25%, was 35%): at floor 6 the burn was the whole fight. `combat_lines.json` gives the two new verbs ("Talos hugs you to a red-hot chest", "The Sphinx puts a riddle to you"); a riddle that misses "fails to take hold of you" (`monster._MIND_WORDS`).
+**Techniques added** (each also a tell, `data/tells.json` by its effect): Talos's **Red-Hot Hug** (grapple, burning: he heated himself in the fire and hugged his victims) beside his Crush, two blows a turn; Cacus's Fire Breath now burns and his **Breath of Smoke** blinds (Virgil's smoke and darkness; it replaced his Slam); the Sphinx's **Whispered Riddle** (voice, confusion: every sum's numbers swim before they settle; wax in the ears stops it) beside her Rake and Bite, three blows a turn; the Nemean Lion's Claw bleeds (its own claws were the only thing that could cut its hide); the Calydonian Boar charges (`can_charge`, x1.5). The Bonnacon's dung burns a little less often (25%, was 35%): at floor 6 the burn was the whole fight. `combat_lines.json` gives the two new verbs ("Talos hugs you to a red-hot chest", "The Sphinx puts a riddle to you"); a riddle that misses "fails to take hold of you" (`monster._MIND_WORDS`).
 
 **How it was measured.** `tools/balance/mini_boss_fights.py heroes` runs the kid-model simulator (100 runs a profile, mastery, committed, mastery_dex, mastery_mage) and saves each living hero at the start of each foe's floor; `fight` then fights every foe against those heroes from the current data, the way `difficulty_sim.Run._boss_side_fights` does (full health, debuffs cleared, the foe alone, no quest layer), so a retune is measured in a few minutes. Final numbers, 400 fights a foe a profile (median attacks / median share of health lost / deaths):
 
@@ -615,7 +646,7 @@ Whole runs (100 a profile, kid model, the same seeds before and after): mastery 
 
 "Lost" counts what potions and prayers put back during the fight, so a committed kid's 124% is more than a whole bar spent. The deep foes whose blows are fire, cold, poison or drain (Mammon, Samael, Abyzou, Tiamat, Asmodeus, the Wendigo) cost a prepared mastery hero little (7-14%): his resistances halve them and his toughness takes more. That is preparation paying, and an unprepared kid meets the full blow.
 
-**What the simulator does not model** about these foes: summons (the Crone's dead, Tiamat's young dragons, Asmodeus's bone devils), a charge for anything but Asterion (the Boar, the Blood Archon), Charybdis's pull, Asmodeus's blink, Mammon's hunger (`sp_drain`), Euryale beside Stheno (the side fight is Stheno alone), and the hero's own confusion and blindness beyond the shorter clock (no stumbling, nothing hidden). Heroes wielding the Green Chapel Axe were left out: its returning blow (half of a max-chain blow back on the wielder, uncapped) kills a deep hero outright whatever he fights.
+**What the simulator does not model** about these foes: summons (the Crone's dead, Tiamat's young dragons, Asmodeus's bone devils), a charge for anything but Asterion (the Boar, the Blood Archon), Charybdis's pull, Asmodeus's blink, Mammon's hunger (`sp_drain`), Euryale beside Stheno (the side fight is Stheno alone), and the hero's own confusion and blindness beyond what they cost the clock (blindness its shorter clock, confusion the wait on every sum for its scrambled numbers to settle; no stumbling, nothing hidden). Heroes wielding the Green Chapel Axe were left out: its returning blow (half of a max-chain blow back on the wielder, uncapped) kills a deep hero outright whatever he fights.
 
 **Old saves.** A mini-boss already set down on a saved floor keeps the numbers it was made with (a `Monster` is pickled whole); every one not yet met uses the new data.
 

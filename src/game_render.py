@@ -32,7 +32,7 @@ from fantasy_ui import (FP, KT, get_font, draw_dark_panel,
                          ITEM_COLOR, panel_band, header_rect, readable,
                          draw_key_hints, draw_key_badge, key_hints_height,
                          display_title, kit_on, display_text, fit_text,
-                         divider_reach)
+                         divider_reach, confused_color)
 from items import (Weapon, Armor, Shield, Corpse, Accessory,
                    Wand, Scroll, Spellbook, Ammo, Food, Potion)
 from game_helpers import (
@@ -3217,6 +3217,20 @@ class RenderMixin:
         c_wrapped   = L['c_wrapped']
         display_choices = L['display_choices']
         choice_answers  = L['choice_answers']
+        # Confused: the words swim, then settle (quiz_engine.scramble_runs). Drawn
+        # only: the layout was measured on the true text (a scrambled word
+        # is the same letters moved about, so nothing jumps as it settles),
+        # and every card still answers with the bank's own string.
+        q_runs = c_runs = None
+        _view = getattr(qe, 'scramble_view', None)
+        _swim = _view() if callable(_view) else None
+        if _swim is not None:
+            from quiz_engine import scramble_runs
+            _runs = scramble_runs([list(q_lines)] + [list(w) for w in c_wrapped],
+                                                *_swim)
+            q_runs, c_runs = _runs[0], _runs[1:]
+            q_lines = [''.join(t for t, _s in r) for r in q_runs]
+            c_wrapped = [[''.join(t for t, _s in r) for r in block] for block in c_runs]
 
         # Effects background pass -- the chain aura paints a soft border
         # glow around the panel here. Runs BEFORE the opaque panel so
@@ -3318,6 +3332,18 @@ class RenderMixin:
         bar_x += tier_offset
         bar_w -= tier_offset
 
+        # Confused (a status that changes the quiz shows ON the quiz): a
+        # chip after the tier pips, in the timer row, so nothing below moves;
+        # a timed bar starts after it.
+        chip_rect = None
+        _cq = getattr(qe, 'confused_quiz', None)
+        if callable(_cq) and _cq():
+            chip_rect = self._draw_quiz_confused_chip(
+                bar_x, pip_cy, bar_w, timed=bool(getattr(qe, 'timed', True)), kit=kit)
+            used = chip_rect.w + S(12)
+            bar_x += used
+            bar_w -= used
+
         # Timer bar -- only rendered for timed quizzes (combat math attack).
         # Untimed quizzes (identify / lockpick / equip / prayer / cooking /
         # magic / etc.) drop the bar entirely so the kid feels invited to
@@ -3382,14 +3408,24 @@ class RenderMixin:
         # Combat reserves a fixed-height band and centres the sum in it;
         # every other quiz keeps left-aligned text flush to the top.
         qy = q_top + ((q_height - len(q_lines) * q_line_h) // 2 if is_combat else 0)
-        for line in q_lines:
+        q_color = KT.TEXT_QUIZ if kit else FP.VELLUM
+        for li, line in enumerate(q_lines):
             # Skip lines entirely above the visible slice.
             if scrollable and qy + q_line_h < scroll_rect.y:
                 qy += q_line_h
                 continue
             if scrollable and qy > scroll_rect.bottom:
                 break
-            surf = q_font.render(line, True, KT.TEXT_QUIZ if kit else FP.VELLUM)
+            if q_runs is not None:
+                # Still swimming: the scrambled words a touch purple.
+                line_w = q_font.size(line)[0]
+                line_x = (bx + (bw - line_w) // 2) if is_combat else bx + inset
+                from fantasy_ui import blit_runs, swim_color
+                blit_runs(self.screen, q_font, q_runs[li], (line_x, qy), q_color,
+                          swim_color(q_color, KT.INTERIOR if kit else FP.MIDNIGHT))
+                qy += q_line_h
+                continue
+            surf = q_font.render(line, True, q_color)
             line_x = (bx + (bw - surf.get_width()) // 2) if is_combat else bx + inset
             self.screen.blit(surf, (line_x, qy))
             qy += q_line_h
@@ -3450,6 +3486,7 @@ class RenderMixin:
                 selected=is_selected and not in_result,
                 correct=mark_correct or None,
                 incorrect=mark_incorrect or None,
+                swim=c_runs[i] if c_runs is not None and i < len(c_runs) else None,
             )
 
         if scrollable:
@@ -3545,17 +3582,56 @@ class RenderMixin:
         # protected rects below so none of the substantive text or
         # cards is ever occluded. Last step in _draw_quiz by design.
         if rt is not None:
+            timer_guard = (pygame.Rect(bar_x, ty, bar_w + secs_w, bar_h)
+                           if getattr(qe, 'timed', True) else None)
+            if chip_rect is not None:
+                timer_guard = chip_rect if timer_guard is None else timer_guard.union(chip_rect)
             protected = self._quiz_protected_rects(
                 qe=qe,
                 panel_rect=panel_rect,
                 header_h=HEADER_H,
-                timer_rect=pygame.Rect(bar_x, ty, bar_w + secs_w, bar_h) if getattr(qe, 'timed', True) else None,
+                timer_rect=timer_guard,
                 question_rect=L['question_rect'],
                 choices_rect=choice_rects[0].unionall(choice_rects[1:]),
                 status_rect=status_rect,
                 pad=PAD,
             )
             rt.draw_foreground(self.screen, protected)
+
+    def _quiz_confused_label(self, avail_w: int, timed: bool) -> tuple:
+        """(font, label, chip width) for the confused quiz's chip: the whole
+        line (data/confusion.json 'quiz_chip') where it fits beside the
+        clock, else only its first word ("Confused")."""
+        from quiz_engine import confused_chip_text
+        f = get_font('body', 16, bold=True)
+        full = confused_chip_text()
+        short = full.split(':')[0].strip() or full
+        pad = S(20)
+        w_full = f.size(full)[0] + pad
+        # A timed bar keeps at least half the row.
+        room = avail_w // 2 if timed else avail_w
+        if w_full <= room:
+            return f, full, w_full
+        return f, short, f.size(short)[0] + pad
+
+    def _draw_quiz_confused_chip(self, x: int, cy: int, avail_w: int, *,
+                                 timed: bool, kit: bool) -> 'pygame.Rect':
+        """The Confused chip in the quiz's timer row, its left edge at ``x``,
+        centred on ``cy``. Returns its rect."""
+        f, label, w = self._quiz_confused_label(avail_w, timed)
+        h = f.get_height() + S(4)
+        rect = pygame.Rect(x, cy - h // 2, w, h)
+        purple = confused_color()
+        if kit and ui_theme.draw_piece(self.screen, 'chip', rect):
+            col = readable(purple, KT.RAISED)
+        else:
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, rect, border_radius=S(5))
+            pygame.draw.rect(self.screen, purple, rect, max(1, S(2)), border_radius=S(5))
+            col = readable(purple, FP.MIDNIGHT)
+        ts = f.render(label, True, col)
+        self.screen.blit(ts, (rect.centerx - ts.get_width() // 2,
+                              rect.centery - ts.get_height() // 2))
+        return rect
 
     def _draw_quiz_plaque(self, qe, panel_rect, header_rect, accent, reserve_w):
         """The quiz header in the kit: the plaque (subject accent rule),
@@ -6477,6 +6553,12 @@ class RenderMixin:
         rows = []
         if _gear.is_core(item):
             rows.append(("AC", f"+{_gear.ac_value(item)}"))
+            # How much magic its material holds (gear.enchant_cap_for), once
+            # the material is known: the number would name it otherwise.
+            _mid = getattr(item, 'material', None)
+            if (_mid and not getattr(item, 'is_unique', False)
+                    and _mid in getattr(self.player, 'known_materials', ())):
+                rows.append(("Holds", f"Up to +{_gear.enchant_cap_for(item)}"))
         elif isinstance(item, Armor):
             import guards as _guards
             import enchantments as _ench

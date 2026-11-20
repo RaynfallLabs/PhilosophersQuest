@@ -50,6 +50,8 @@ Boss floors use `BOSS_LEVELS` (uppercase, exported from `boss_levels.py`) at the
 
 `generate_dungeon(width=80, height=50, level)` runs these numbered passes in order. The numbering in code comments is **the contract** — every pass can assume everything before it has run.
 
+**Seeded floors (2026-11-18).** Every floor builder rolls on a generator of its own (`generate_dungeon`, `populate_floor`, `spawn_monsters`, `spawn_themed`, `spawn_items`, the hidden chambers, `war_bands.place_band`, `hazards.pick_clan`, `senses.assign_jobs`, the `decor` dressers and `place_event_stand`, the floor-20 labyrinth). Each one is made by `random_streams.own_stream()`, which takes its seed from one draw on the shared stream. They used to be a bare `random.Random()`, seeded by the operating system, so `random.seed(s)` never reached a layout: every process walked a new floor, a reported floor could not be replayed, and layout-dependent tests flaked (the 3.5.4 release run). Now the same seed gives the same floor in every process and under every `PYTHONHASHSEED`. `tests/test_seeded_floor_is_stable.py` guards it. A stream that only picks lines (the Black Knight's, Old Nickel's, the Stray Kids' shouts) stays OS-seeded, so lines never shift the game's dice. Nothing it decides may place anything on the floor: the idol was set down with the shouts' stream and is not any more.
+
 ### 2.1 BSP partition
 A binary-space-partition tree splits the 80×50 interior into leaves. Tuning:
 
