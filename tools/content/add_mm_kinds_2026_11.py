@@ -265,7 +265,8 @@ SENSE_NAMES = {'breath': 'Breath', 'blood_scent': 'Blood Scent'}
 SENSES_UPGRADE = {'jiangshi': ['blind', 'breath'], 'komodo_brute': ['blood_scent']}
 
 HINTS = {
-    '2': ["In the Highlands a door was the best friend a man had when the green hound barked."],
+    # Tier 2 has no room after slice G's hints (test_hint_pool keeps each tier
+    # within ten of its old count): the Cu-Sith's door hint waits for a swap.
     '3': ["A hungry ghost was never fed by force. The meals the living set out for them were given "
           "freely, and that was the point.",
           "Herodotus says the gold-diggers of India let a camel go now and then as the ants gained on "

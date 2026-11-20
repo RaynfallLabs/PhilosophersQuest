@@ -373,6 +373,11 @@ def test_the_yacumama_breath_draws_the_hero_in():
     hero._pending_pull_toward = None
     assert 'drags you' in lore_powers.after_blow(m, hero, breath, 5)
     assert hero._pending_pull_toward == (10, 5)
+    # The Galdr of Loosing (slice G's free_action): nothing drags him.
+    hero._pending_pull_toward = None
+    hero.add_effect('free_action', 10)
+    assert lore_powers.after_blow(m, hero, breath, 5) == ''
+    assert hero._pending_pull_toward is None
 
 
 def test_a_light_shows_what_hangs_overhead():

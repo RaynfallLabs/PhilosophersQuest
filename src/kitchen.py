@@ -332,6 +332,36 @@ def makes(rec: dict):
     return (rec or {}).get('makes') or None
 
 
+def makes_ref(rec: dict):
+    """(item class, id) of what a carry dish makes: a food id, or a
+    class-qualified one ("potion:theriac": a brew cooked to carry, MONSTERS
+    AND MAGIC 2026-11-19). None for any other dish."""
+    m = makes(rec)
+    if not m:
+        return None
+    if ':' in str(m):
+        cls, iid = str(m).split(':', 1)
+        return cls.strip(), iid.strip()
+    return 'food', str(m)
+
+
+def _made_def(rec: dict) -> dict:
+    """The data entry of what a carry dish makes, whatever its class."""
+    ref = makes_ref(rec)
+    if not ref:
+        return {}
+    cls, iid = ref
+    if cls == 'food':
+        return dict(foods().get(iid) or {})
+    try:
+        import json
+        from paths import data_path
+        with open(data_path('data', 'items', f'{cls}.json'), encoding='utf-8') as f:
+            return dict(json.load(f).get(iid) or {})
+    except (OSError, ValueError):
+        return {}
+
+
 def song_of(rec: dict):
     """The song a dish plays when it is eaten (its ``song``: songs.py), or None."""
     return (rec or {}).get('song') or None
@@ -353,9 +383,9 @@ def song_lines(rec: dict) -> list:
 
 
 def carried_food(rec: dict) -> dict:
-    """The food.json entry a carry dish makes ({} for any other dish)."""
-    fid = makes(rec)
-    return dict(foods().get(fid) or {}) if fid else {}
+    """The food.json entry a carry dish makes ({} for any other dish; the
+    potion.json entry for a brew cooked to carry)."""
+    return _made_def(rec)
 
 
 def band_of(floor: int) -> int:
@@ -730,6 +760,8 @@ def carry_lines(rec: dict) -> list:
         eat.append(f"+{int(f['hp_restore'])} HP")
     if eat:
         lines.append("If eaten: " + ", ".join(eat))
+    if f.get('drink_line'):
+        lines.append("If drunk: " + str(f['drink_line']))
     return lines
 
 
@@ -1121,7 +1153,8 @@ def make_to_carry(player, rec: dict) -> list:
     from items import make_item_by_id
     from naming import proper_name
     name = rec.get('name', 'the dish')
-    item = make_item_by_id('food', makes(rec))
+    cls, iid = makes_ref(rec)
+    item = make_item_by_id(cls, iid)
     if item is None:
         return [f"You prepare {name}, but nothing comes of it."]
     item.count = 1

@@ -143,6 +143,8 @@ class HazardsMixin:
         before; whatever stands on one when it fires is burned."""
         import hazards
         import decor
+        if decor.expire(self.dungeon, self.turn_count) and hasattr(self, '_say_vines_wither'):
+            self._say_vines_wither()          # a conjured vine's turns are up (game_wards.py)
         vents = hazards.cycle_hazards(self.dungeon)
         if not vents:
             return

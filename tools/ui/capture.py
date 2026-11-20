@@ -1937,6 +1937,9 @@ def _(g):
        'with the item worn and the result shown.', expect='kit')
 def _(g):
     from items import Armor
+    # Nothing in reach to strike him while he dresses (a seeded floor once put
+    # a slinger in range, and "Keep dressing?" took the screen).
+    g.monsters = []
     press(g, pygame.K_k)
     g._kit_tab = [t[1] for t in g._KIT_TABS].index('armor')
     rows = g._kit_rows_for_slug('armor')

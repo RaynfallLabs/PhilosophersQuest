@@ -346,6 +346,20 @@ def on_great_blow(monsters, leader, chain: int) -> str:
     return b.get('break_line', '') if shaken else ''
 
 
+def break_hold(monsters, uid: str) -> int:
+    """The band's leader loses his hold on it, as when he falls (the
+    Sceptre of Agamemnon's assembly): its followers no longer hold their
+    nerve for him. Returns how many were held."""
+    n = 0
+    for m in members_of(monsters, uid):
+        if getattr(m, '_band_role', '') == 'leader' or not m.alive:
+            continue
+        if getattr(m, '_band_leader', None) is not None:
+            m._band_leader = None
+            n += 1
+    return n
+
+
 def _frighten(m, turns: int) -> None:
     if getattr(m, 'fearless', False):
         return

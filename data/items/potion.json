@@ -1005,5 +1005,224 @@
     },
     "lore": "The king of Aram sent an army by night to take the prophet Elisha at Dothan, and in the morning his servant saw the city ringed with horses and chariots and cried out. Elisha prayed that the young man's eyes be opened, and he looked again and saw the hills full of horses and chariots of fire. This potion opens the eyes a little way in the same direction: for a while the drinker sees what walks unseen.",
     "peak_weight": 0.5
+  },
+  "goatherds_coffee": {
+    "name": "Goatherd's Coffee",
+    "unidentified_name": "dark bitter-smelling flask",
+    "symbol": "!",
+    "color": [
+      110,
+      70,
+      40
+    ],
+    "weight": 0.4,
+    "min_level": 1,
+    "effect": "wakeful",
+    "power": "",
+    "duration": 60,
+    "floorSpawnWeight": {
+      "1-20": 12,
+      "21-40": 4,
+      "41-60": 1
+    },
+    "tier": 1,
+    "lore": "The story goes that a goatherd saw his goats dancing after they ate the red berries of a certain bush. He took the berries to the monks, who threw them in the fire in disgust, smelled the roasting and made a drink that kept them awake through the night. A flask of it keeps any sleep off you, however it comes.",
+    "drink_line": "nothing can put you to sleep for 60 turns",
+    "peak_weight": 0.5
+  },
+  "nepenthe": {
+    "name": "Nepenthe",
+    "unidentified_name": "blue faience bottle",
+    "symbol": "!",
+    "color": [
+      60,
+      200,
+      200
+    ],
+    "weight": 0.4,
+    "min_level": 12,
+    "effect": "fearless",
+    "power": "",
+    "duration": 50,
+    "floorSpawnWeight": {
+      "1-20": 2,
+      "21-40": 8,
+      "41-60": 3,
+      "61-80": 1
+    },
+    "tier": 2,
+    "lore": "At Menelaus's table, the talk of lost Odysseus made every man weep, so Helen slipped a drug into the wine that she had been given in Egypt by Polydamna, wife of Thon. Homer says that whoever drank it shed no tear that day, though he saw his own brother cut down before him. In the dungeon it does the same for fear.",
+    "drink_line": "fear leaves you, and nothing can frighten you for 50 turns",
+    "peak_weight": 0.5
+  },
+  "oil_of_rue": {
+    "name": "oil of rue",
+    "unidentified_name": "grey-green oily flask",
+    "symbol": "!",
+    "color": [
+      130,
+      150,
+      90
+    ],
+    "weight": 0.4,
+    "min_level": 10,
+    "effect": "stoneproof",
+    "power": "",
+    "duration": 40,
+    "floorSpawnWeight": {
+      "1-20": 2,
+      "21-40": 6,
+      "41-60": 3,
+      "61-80": 1
+    },
+    "tier": 2,
+    "lore": "Aristotle noticed that a weasel going to fight a snake first eats wild rue, and the bestiaries said that is how the little weasel kills the basilisk whose look kills men. Herbalists press the bitter grey leaves into oil for anyone who must go where gorgons live. Rubbed on the eyelids and the skin, it lets nothing turn the wearer to stone for a while.",
+    "drink_line": "stone creeping in stops, and nothing can turn you to stone for 40 turns",
+    "peak_weight": 0.5
+  },
+  "fern_flower_tincture": {
+    "name": "Fern-Flower Tincture",
+    "unidentified_name": "tall green vial with a red spark",
+    "symbol": "!",
+    "color": [
+      60,
+      150,
+      70
+    ],
+    "weight": 0.4,
+    "min_level": 10,
+    "effect": "treasure_sight",
+    "power": "",
+    "duration": 0,
+    "floorSpawnWeight": {
+      "1-20": 3,
+      "21-40": 7,
+      "41-60": 2
+    },
+    "tier": 2,
+    "lore": "On Midsummer night, the Slavs said, a fern blooms once for a single hour, and spirits guard it from anyone unworthy. Whoever plucks the flower can see where treasure lies hidden in the earth. Its petals keep a little of that sight in a drop of spirit.",
+    "drink_line": "every treasure, chest and coin on the floor is marked on your map",
+    "peak_weight": 0.5
+  },
+  "moly": {
+    "name": "Moly",
+    "unidentified_name": "vial with a white-flowered root",
+    "symbol": "!",
+    "color": [
+      235,
+      235,
+      225
+    ],
+    "weight": 0.4,
+    "min_level": 30,
+    "effect": "clear_mind",
+    "power": "",
+    "duration": 60,
+    "floorSpawnWeight": {
+      "21-40": 3,
+      "41-60": 9,
+      "61-80": 4,
+      "81-100": 1
+    },
+    "tier": 3,
+    "lore": "When Odysseus went alone to Circe's hall to save his crew, Hermes met him on the path and pulled up an herb with a black root and a milk-white flower, a plant hard for mortals to dig. Odysseus drank her cup and stayed a man. Steeped and bottled, moly keeps a mind its own: no glamour, no muddle, no false sight can take it.",
+    "drink_line": "confusion, charm and false sight leave you and cannot take hold for 60 turns",
+    "peak_weight": 0.5
+  },
+  "theriac": {
+    "name": "Theriac of Andromachus",
+    "unidentified_name": "squat jar of brown paste",
+    "symbol": "!",
+    "color": [
+      120,
+      80,
+      40
+    ],
+    "weight": 0.4,
+    "min_level": 25,
+    "effect": "antidote",
+    "power": "",
+    "duration": 80,
+    "floorSpawnWeight": {
+      "21-40": 3,
+      "41-60": 9,
+      "61-80": 3
+    },
+    "tier": 3,
+    "lore": "Nero's physician Andromachus took the antidote of Mithridates and added the flesh of vipers, until his paste held some sixty-four things bound in honey. For seventeen centuries it was the great cure for poison; in Venice it was compounded in public, over forty days, with officials watching every jar. A dose drives venom out and keeps it out.",
+    "drink_line": "poison and disease are cured, and no poison can take you for 80 turns",
+    "peak_weight": 0.5
+  },
+  "water_of_epidaurus": {
+    "name": "Water of Epidaurus",
+    "unidentified_name": "serpent-wound stone flask",
+    "symbol": "!",
+    "color": [
+      150,
+      190,
+      220
+    ],
+    "weight": 0.4,
+    "min_level": 45,
+    "effect": "restoration",
+    "power": "",
+    "duration": 0,
+    "floorSpawnWeight": {
+      "41-60": 2,
+      "61-80": 7,
+      "81-100": 4
+    },
+    "tier": 4,
+    "lore": "At Epidaurus the sick bathed in the sacred spring, then lay down to sleep in the long hall of Asclepius and waited for the god to come in a dream. The priests carved the cures in stone: the blind who saw, the lame who walked out. Water drawn from that spring gives back what the dead and the diseased have taken from a body.",
+    "drink_line": "every stat point a drain, a poison or a disease took from you comes back",
+    "peak_weight": 0.5
+  },
+  "charm_of_prometheus": {
+    "name": "Charm of Prometheus",
+    "unidentified_name": "saffron oil flask",
+    "symbol": "!",
+    "color": [
+      240,
+      150,
+      40
+    ],
+    "weight": 0.4,
+    "min_level": 45,
+    "effect": "fireproof",
+    "power": "",
+    "duration": 30,
+    "floorSpawnWeight": {
+      "41-60": 2,
+      "61-80": 6,
+      "81-100": 3
+    },
+    "tier": 4,
+    "lore": "King Aeetes set Jason to yoke two bronze bulls that breathed fire. Medea gave him the charm of Prometheus, an ointment from a flower that grew where the eagle's blood-drops fell from the Titan's torn side. Anointed, Jason walked into the fire unburnt and the bulls' horns turned on him like reeds.",
+    "drink_line": "fire cannot hurt you for 30 turns, and blows land half as hard",
+    "peak_weight": 0.5
+  },
+  "water_of_the_styx": {
+    "name": "Water of the Styx",
+    "unidentified_name": "black glass vial",
+    "symbol": "!",
+    "color": [
+      40,
+      40,
+      60
+    ],
+    "weight": 0.4,
+    "min_level": 70,
+    "effect": "styx_dipped",
+    "power": "",
+    "duration": 6,
+    "floorSpawnWeight": {
+      "81-100": 2
+    },
+    "tier": 5,
+    "lore": "Statius tells that Thetis carried her baby son down to the river Styx and dipped him in it, so that no weapon could pierce him, all except the heel she held him by. Achilles fought ten years at Troy without a wound until an arrow found that heel. A few drops of the river make a body iron for a little while, but never everywhere.",
+    "drink_line": "for 6 turns no blow, bite or claw can wound you, but an unseen blow finds the heel",
+    "peak_weight": 0.5,
+    "rare": true,
+    "containerLootTier": "rare"
   }
 }

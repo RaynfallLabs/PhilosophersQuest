@@ -71,7 +71,7 @@ EFFECT_INFO: dict[str, tuple] = {
     # ---- Hero special buffs (Phase 3B) ----
     'stand_ac':           ('Spartan Stand',      (255, 215, 80),  '+AC and counter-strike chance'),
     'crit_buff':          ('Rallied Strike',     (255, 100, 100), 'Next attack deals +50% damage'),
-    'fear_immune':        ('Battle Rage',        (220, 60, 40),   'Immune to fear effects'),
+    'fear_immune':        ('Fearless',           (220, 60, 40),   'Immune to fear effects'),
     'boomstick_aoe_next': ('Boomstick Loaded',   (200, 90, 30),   'Next shot scatters'),
     'control_immune':     ('Recovering',         (200, 230, 255), 'Shaking it off -- briefly immune to being disabled'),
     # Cooked / power "ward" buffs — a timed bonus to a saving-throw category.
@@ -578,6 +578,24 @@ def note_stat_drain(player, stat: str, amount: int = 1) -> None:
     d[stat] = int(d.get(stat, 0) or 0) + amount
 
 
+def restore_drained(player) -> int:
+    """Give back every stat point a drain, a poison or a disease took
+    (note_stat_drain): the physician's 'restore' service and the Water of
+    Epidaurus both call this. Returns the points restored."""
+    n = 0
+    s = int(getattr(player, '_str_lost_to_disease', 0) or 0)
+    if s:
+        player.apply_stat_bonus('STR', s)
+        player._str_lost_to_disease = 0
+        n += s
+    for stat, v in list((player.__dict__.get('drained') or {}).items()):
+        if int(v or 0) > 0:
+            player.apply_stat_bonus(stat, int(v))
+            n += int(v)
+    player.__dict__['drained'] = {}
+    return n
+
+
 def _corrode_random_gear(player) -> tuple[str, str] | None:
     """Acid eats at one random equipped item. Returns a message or None."""
     import random
@@ -704,7 +722,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'save_guard_WIS':    ('Your Mind Ward fades.',                    'info'),
     'save_guard_DEX':    ('Your Reflex Ward fades.',                  'info'),
     'save_guard_all':    ('Your Warded aura fades.',                  'info'),
-    'fear_immune':       ('The battle-rage cools.',                   'info'),
+    'fear_immune':       ('Fear can find you again.',                 'info'),
     'control_immune':    ('Your footing steadies -- you are fully back in the fight.', 'info'),
     'parry_armed':       ('Your parry stance lowers.',                'info'),
     'riposte_armed':     ('Your riposte instinct settles.',           'info'),
@@ -717,6 +735,22 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'stand_ac':          ('You break your Spartan Stand.',            'info'),
     'melee_dmg_reduction':('Your guarded stance drops.',              'info'),
 }
+
+# The wards (MONSTERS AND MAGIC 2026-11-19: data/wards.json, src/wards.py):
+# each is a buff the HUD shows, the tick runs down and Dispel strips; and
+# what Loosed (free_action), Wakeful and Clear Sight keep off. The monster
+# gates (attack_gates.py) are named here for the Look screen.
+import wards as _wards                                   # noqa: E402
+for _k, _v in _wards.status_registry().items():
+    EFFECT_INFO.setdefault(_k, _v)
+for _k, _v in _wards.expire_messages().items():
+    _EXPIRE_MSGS.setdefault(_k, _v)
+for _k, _v in _wards.resist_blocks().items():
+    _RESIST_BLOCKS.setdefault(_k, set(_v))
+BUFFS = BUFFS | frozenset(_wards.status_registry())
+EFFECT_INFO.setdefault('unstrung', ('Unstrung', (170, 150, 120), 'Cannot shoot, breathe or gaze'))
+EFFECT_INFO.setdefault('babbled', ('Babbling', (190, 150, 210), 'Its pack or band cannot fight together'))
+EFFECT_INFO.setdefault('gate_grace', ('Steadying', (200, 200, 200), 'Shakes off the next silence or unstringing'))
 
 
 # --------------------------------------------------------------------------

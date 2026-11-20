@@ -8076,5 +8076,17 @@
   "flavor": "A serpent's scale and a drake's fire in one pan; your hands are swift.",
   "art": "dish_stirfry_t5_stat",
   "cross_depth": true
+ },
+ "brew_theriac": {
+  "name": "Theriac of Andromachus",
+  "ingredients": [
+   "cobra_prime",
+   "swamp_moss",
+   "cave_mushroom"
+  ],
+  "benefit": "carry",
+  "flavor": "Andromachus's antidote: viper flesh, cave herbs and moss pounded together and bound, as Nero's physician bound his, to drive venom out.",
+  "makes": "potion:theriac",
+  "art": "dish_stew_t1_special"
  }
 }

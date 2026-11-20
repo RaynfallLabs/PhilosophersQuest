@@ -217,6 +217,14 @@ def blow_refused(m, player, atk: dict):
     return None
 
 
+def _loosed(player) -> bool:
+    """The Galdr of Loosing (slice G's free_action): nothing drags the hero."""
+    try:
+        return bool(player.has_effect('free_action'))
+    except Exception:
+        return False
+
+
 def after_blow(m, player, atk: dict, actual: int) -> str:
     """What follows a landed blow: the Roc's carry-off, the Yacumama's pull.
     Returns text for the blow's line ('' for none)."""
@@ -237,7 +245,8 @@ def after_blow(m, player, atk: dict, actual: int) -> str:
             hurt = max(1, int(round(player.max_hp * float(co.get('share', 0.05) or 0.05))))
             player.take_damage(hurt, 'blunt')
             out += ' ' + _fill(m, co.get('line') or "{The} lifts you and drops you far away!")
-    if atk.get('pulls') and max(abs(m.x - player.x), abs(m.y - player.y)) > 1:
+    if (atk.get('pulls') and max(abs(m.x - player.x), abs(m.y - player.y)) > 1
+            and not _loosed(player)):
         player._pending_pull_toward = (m.x, m.y)
         out += ' ' + _fill(m, atk.get('pull_line') or "{The} drags you toward {him}!")
     return out

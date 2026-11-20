@@ -181,7 +181,7 @@ from dice import roll                            # noqa: E402
 from floor_curve import dice_for_average, hazard, mend, target_dmg   # noqa: E402
 from game_magic import SPELL_HEAL_SHARE          # noqa: E402
 from items import (Accessory, Armor, Container, Food, Ingredient, Potion,   # noqa: E402
-                   Scroll, Shield, Spellbook, Weapon)
+                   Scroll, Shield, Spellbook, Weapon, Wand)
 from monster import Monster                      # noqa: E402
 from player import Player                        # noqa: E402
 from quiz_engine import QuizResult, settle_for as scramble_settle_for   # noqa: E402
@@ -395,6 +395,12 @@ KNOB_DEFAULTS = {
     'heavy_speed':    -1.0,   # share of speed a Heavy load costs
     'burdened_dodge': -1.0,   # share of the dodge a Burdened load leaves
     'burdened_speed': -1.0,   # share of speed a Burdened load costs
+    # --- MONSTERS AND MAGIC, slice G (2026-11-19): the new magic used (the
+    # _MMMagicSim block above Run). 0 = not used (the ablation).
+    'mm_wards':   1,
+    'mm_spells':  1,
+    'mm_potions': 1,
+    'mm_wands':   1,
 }
 
 DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_quick',
@@ -1244,7 +1250,266 @@ def new_floor_stats() -> dict:
                 heal_src={})          # raw HP healed by source (Run._healed)
 
 
-class Run:
+
+# =============================================================================
+# MONSTERS AND MAGIC, slice G (2026-11-19): the new magic, used as a kid who
+# knows it would use it. Knobs (all default 1; 0 is the ablation):
+#   mm_wards    the family-ward scrolls, the Piper's tune, the four warding
+#               rites' second ward (ward_also only: the sim never modelled
+#               their old Shielded, so it is left out to keep the delta ours)
+#   mm_spells   the sixteen new spells (a magic profile learns them from the
+#               books it finds; one grammar question to learn, one science
+#               question to cast, MP spent either way)
+#   mm_potions  the seven potions and two oils
+#   mm_wands    the Wand of Unstringing and the Krotala of Athena
+# Each is used through the GAME'S OWN handlers (a stub MagicMixin over the
+# fight's group: game_wards.py, food_system.drink_potion), and the wards and
+# gates then work in the real Monster.attack. At most one item and one spell
+# before a fight that is worth it (a named foe, archers or casters, or a
+# group past BIG_FIGHT one-attacks), as the hero sees the group coming.
+# Utility the sim cannot value: Sanctuary, Shrink the Earth, Dionysus's Vine
+# (immobilised foes still strike beside you here), Bough of Somnus (sleep is
+# left out of SIM_CONTROL), the Fern-Flower Tincture, the Hoichi sutra's
+# hiding (fights are not avoided here), Deliver Us From Evil (no karma here)
+# and the Sceptre's assembly (no war-band morale here).
+# =============================================================================
+MM_KNOBS = ('mm_wards', 'mm_spells', 'mm_potions', 'mm_wands')
+MM_SPELL_EFFECTS = frozenset(('stayed_spear_self', 'silence_monster', 'mass_weaken', 'tongues',
+                              'mass_blind', 'pan_panic', 'settled_strife', 'veil_self',
+                              'mass_silence', 'loosing_self'))
+MM_SPELL_IDS = frozenset(('stayed_spear_spell', 'tacitas_seal_spell', 'dulled_blades_spell',
+                          'confusion_of_tongues_spell', 'darkness_of_egypt_spell',
+                          'pans_panic_spell', 'settled_strife_spell', 'mist_of_manannan_spell',
+                          'hush_of_the_feralia_spell', 'cockcrow_spell', 'elf_shot_spell',
+                          'galdr_of_loosing_spell'))
+MM_POTION_EFFECTS = frozenset(food_system_mod._WARD_POTIONS) | {'restoration'}
+MM_WARD_FAMILY = {'ward_lemuria': 'restless_dead', 'ward_daniel': 'great_beasts',
+                  'ward_psylli': 'serpents', 'ward_hoichi': 'ghosts', 'ward_martha': 'dragons',
+                  'ward_udug_hul': 'demons'}
+
+
+class _MMDungeon:
+    width = height = 14
+    tiles = [[1] * 14 for _ in range(14)]
+    explored = set()
+
+    def in_bounds(self, x, y):
+        return 0 <= x < 14 and 0 <= y < 14
+
+    def is_walkable(self, x, y):
+        return self.in_bounds(x, y)
+
+
+class _MMGame(game_magic_mod.MagicMixin):
+    """The magic's own handlers, over one fight's group."""
+
+    def __init__(self, p, group, floor):
+        self.player, self.monsters, self.pets, self.ground_items = p, list(group), [], []
+        self.dungeon = _MMDungeon()
+        self.visible = {(x, y) for x in range(14) for y in range(14)}
+        self.dungeon_level, self.turn_count = floor, 0
+        self._wand_override_target = None
+        self._last_spell_crit = self._last_spell_anti_being = False
+
+    def add_message(self, *a, **kw):
+        pass
+
+    def _on_monster_killed(self, *a, **kw):
+        pass
+
+    def _refresh_fov(self):
+        pass
+
+    def _occupants(self, hero=True):
+        return set()
+
+    def _make_noise(self, *a, **kw):
+        pass
+
+
+class _MMMagicSim:
+    """Run's side of the new magic (the knobs above)."""
+
+    def _mm(self, knob) -> bool:
+        return bool(self.knobs.get(knob, 1))
+
+    def _mm_kit(self) -> dict:
+        kit = self.__dict__.get('_mm_kit_d')
+        if kit is None:
+            kit = self._mm_kit_d = {'scroll': [], 'potion': [], 'wand': [], 'spells': {}}
+        return kit
+
+    def _mm_consider(self, item) -> bool:
+        """Keep a new magic item for the fight it answers. True when kept."""
+        import wards as wards_mod
+        kit = self._mm_kit()
+        if isinstance(item, Scroll):
+            if not self._mm('mm_wards'):
+                return False
+            fx = getattr(item, 'effect', '')
+            if fx in ('family_ward', 'family_rout') or (
+                    fx == 'protection' and wards_mod.item_def('scroll', item.id).get('ward_also')):
+                if getattr(item, 'buc', 'uncursed') != 'cursed' and len(kit['scroll']) < 10:
+                    kit['scroll'].append(item)
+                return True
+            return False
+        if isinstance(item, Potion):
+            if (self._mm('mm_potions') and getattr(item, 'effect', '') in MM_POTION_EFFECTS
+                    and getattr(item, 'buc', 'uncursed') != 'cursed' and len(kit['potion']) < 8):
+                kit['potion'].append(item)
+                return True
+            return getattr(item, 'effect', '') in MM_POTION_EFFECTS
+        if isinstance(item, Wand):
+            if self._mm('mm_wands') and getattr(item, 'effect', '') in ('unstring_monster', 'family_rout'):
+                kit['wand'].append(item)
+                return True
+            return False
+        if isinstance(item, Spellbook) and self.prof.get('magic') and self._mm('mm_spells'):
+            sid = getattr(item, 'spell_id', '')
+            if sid in MM_SPELL_IDS and sid not in kit['spells'] and self.quiz.one_question(item.quiz_tier):
+                kit['spells'][sid] = SPELLS[sid]
+            return sid in MM_SPELL_IDS
+        return False
+
+    def _mm_open(self, group) -> None:
+        """Before the fight: the one item and the one spell that answer it."""
+        if not any(self._mm(k) for k in MM_KNOBS):
+            monster_mod.HERO_STRUCK = None
+            return
+        import wards as wards_mod
+        p = self.p
+        monster_mod.HERO_STRUCK = (lambda m, _p=p: wards_mod.hero_struck(_p, m))
+        foes = [m for m in group if m.alive]
+        if not foes:
+            return
+        named = any(is_named(m) for m in foes)
+        one = floor_curve_mod.one_attack(self.floor)
+        ranged = [m for m in foes if m.ai_pattern in RANGED_PATTERNS or m.ai_pattern == 'dragon'
+                  or any(wards_mod.is_missile(a) for a in m.attacks)]
+        big = named or ranged or sum(m.hp for m in foes) > BIG_FIGHT * one
+        if not big:
+            return
+        for i, m in enumerate(foes):
+            m.x, m.y = [(6, 5), (5, 6), (6, 6), (4, 5), (5, 4), (4, 4), (6, 4), (4, 6)][i % 8]
+        g = _MMGame(p, foes, self.floor)
+        kit = self._mm_kit()
+        hp_by_fam = {}
+        for m in foes:
+            f = family_lore_mod.family_of(m)
+            hp_by_fam[f] = hp_by_fam.get(f, 0) + m.hp
+        tot = max(1, sum(hp_by_fam.values()))
+        fams = {f for f, h in hp_by_fam.items() if h * 2 >= tot}
+        riders = {a.get('effect') for m in foes for a in m.attacks if a.get('effect')}
+        used = False
+        # 1. A scroll (one grammar question) or a wand (one science question).
+        if self._mm('mm_wards') and kit['scroll']:
+            pick = None
+            for s in kit['scroll']:
+                d = wards_mod.item_def('scroll', s.id)
+                if s.effect == 'family_ward' and MM_WARD_FAMILY.get(d.get('ward')) in fams:
+                    pick = s
+                elif s.effect == 'family_rout' and d.get('family') in fams:
+                    pick = s
+                elif s.effect == 'protection':
+                    also = {st for st, _t in d.get('ward_also') or ()}
+                    if ('missile_ward' in also and ranged) or \
+                            ('petrify_immune' in also and 'gorgons' in hp_by_fam) or \
+                            ('fire_shield' in also and 'dragons' in hp_by_fam) or \
+                            ('all_round_ward' in also and len(foes) >= 3
+                             and any(packs_mod.pack_of(m) for m in foes)):
+                        pick = s
+                if pick is not None:
+                    break
+            if pick is not None:
+                kit['scroll'].remove(pick)
+                self.fs['mm_scroll'] = self.fs.get('mm_scroll', 0) + 1
+                self.fs['mmu_' + pick.id] = self.fs.get('mmu_' + pick.id, 0) + 1
+                if self.quiz.one_question(int(getattr(pick, 'tier', 1))):
+                    g._apply_scroll_effect(pick)
+                used = True
+        if not used and self._mm('mm_wands') and kit['wand']:
+            for w in list(kit['wand']):
+                tgt = None
+                if w.effect == 'unstring_monster' and ranged:
+                    tgt = max(ranged, key=lambda m: m.hp)
+                elif w.effect == 'family_rout' and 'birds' in fams:
+                    tgt = foes[0]
+                if tgt is None:
+                    continue
+                w.charges -= 1
+                if w.charges <= 0:
+                    kit['wand'].remove(w)
+                self.fs['mm_wand'] = self.fs.get('mm_wand', 0) + 1
+                self.fs['mmu_' + w.id] = self.fs.get('mmu_' + w.id, 0) + 1
+                if self.quiz.one_question(int(getattr(w, 'tier', 1))):
+                    g._wand_override_target = tgt
+                    g._apply_wand_effect(w)
+                used = True
+                break
+        # 2. A ward potion or oil (no question).
+        if self._mm('mm_potions') and kit['potion']:
+            want = {'fearless': 'feared' in riders, 'clear_mind': bool(riders & {'confused', 'charmed'}),
+                    'wakeful': 'sleeping' in riders, 'antidote': 'poisoned' in riders and named,
+                    'stoneproof': bool(riders & {'paralyzed', 'petrifying'}) and 'gorgons' in hp_by_fam,
+                    'fireproof': named and any(a.get('type') == 'fire' for m in foes for a in m.attacks),
+                    'styx_dipped': named and not ranged}
+            for pot in list(kit['potion']):
+                if want.get(pot.effect) and not p.has_effect(
+                        food_system_mod._WARD_POTIONS[pot.effect][1][0]):
+                    kit['potion'].remove(pot)
+                    self.fs['mm_potion'] = self.fs.get('mm_potion', 0) + 1
+                    self.fs['mmu_' + pot.id] = self.fs.get('mmu_' + pot.id, 0) + 1
+                    food_system_mod.drink_potion(p, pot)
+                    break
+        # 3. A spell (one science question; the MP goes either way).
+        if self._mm('mm_spells') and kit['spells'] and not p.has_effect('silenced'):
+            import attack_gates as gates_mod
+            casters = [m for m in foes if m.ai_pattern in ('summoner', 'healer')
+                       or any(wards_mod.delivery(a) == 'voice' for a in m.attacks)]
+            undead = [m for m in foes if game_magic_mod._is_undead(m)]
+            order = [
+                ('hush_of_the_feralia_spell', len(casters) >= 2, None),
+                ('mist_of_manannan_spell', bool(ranged), None),
+                ('settled_strife_spell', sum(gates_mod.is_person(m) for m in foes) >= 2, None),
+                ('confusion_of_tongues_spell', sum(gates_mod.speaks(m) for m in foes) >= 2, None),
+                ('dulled_blades_spell', len(foes) >= 2 or named, None),
+                ('darkness_of_egypt_spell', len(foes) >= 2, None),
+                ('pans_panic_spell', len(foes) >= 3, None),
+                ('stayed_spear_spell', bool(ranged), None),
+                ('tacitas_seal_spell', bool(casters), casters[0] if casters else None),
+                ('cockcrow_spell', bool(undead), None),
+                ('elf_shot_spell', len(foes) == 1 and not named, foes[0]),
+            ]
+            for sid, ok, tgt in order:
+                sp = kit['spells'].get(sid)
+                if not ok or sp is None:
+                    continue
+                cost = p.spell_mp_cost(int(sp['mp_cost']))
+                if p.mp < cost:
+                    continue
+                if sp.get('needs_target') and tgt is None:
+                    continue
+                p.mp -= cost
+                self.fs['mm_spell'] = self.fs.get('mm_spell', 0) + 1
+                self.fs['mmu_' + sid] = self.fs.get('mmu_' + sid, 0) + 1
+                if self.quiz.one_question(int(sp.get('tier', 1))):
+                    g._apply_spell_effect(sp, tgt)
+                break
+        # The Water of Epidaurus, when the dark has taken enough.
+        if self._mm('mm_potions'):
+            drained = int(getattr(p, '_str_lost_to_disease', 0) or 0) + sum(
+                int(v or 0) for v in (p.__dict__.get('drained') or {}).values())
+            if drained >= 2:
+                for pot in list(self._mm_kit()['potion']):
+                    if pot.effect == 'restoration':
+                        self._mm_kit()['potion'].remove(pot)
+                        food_system_mod.drink_potion(p, pot)
+                        break
+# ===================== end of the MONSTERS AND MAGIC block ====================
+
+
+
+class Run(_MMMagicSim):
     """One simulated character from floor 1 down."""
 
     def __init__(self, cache: FloorCache, profile: str, accuracy: float,
@@ -2163,6 +2428,8 @@ class Run:
         """Decide what to do with one found item."""
         prof, p = self.prof, self.p
         cursed = getattr(item, 'buc', 'uncursed') == 'cursed'
+        if self._mm_consider(item):          # MONSTERS AND MAGIC (_MMMagicSim)
+            return
         if isinstance(item, Potion):
             if item.effect in ('heal', 'extra_heal', 'full_heal', 'regeneration'):
                 # potions knob: stochastic rounding of the count
@@ -3360,6 +3627,7 @@ class Run:
         self._tactical_pick(_first, free=True)
         self._coat_for(_first)
         self._set_stance(group)
+        self._mm_open(group)                 # MONSTERS AND MAGIC (_MMMagicSim)
 
         def enter(m, opening: bool):
             """A monster joins the melee; resolve who strikes first."""
