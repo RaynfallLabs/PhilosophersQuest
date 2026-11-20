@@ -1024,6 +1024,8 @@ class Monster:
             duration = _aff.status_weak_duration(duration)
         cur = int(self.status_effects.get(name, 0) or 0)
         self.status_effects[name] = max(cur, int(duration))
+        if self.status_effects[name] > 0:
+            lore_powers.on_effect(self, name)      # the Kappa's dish spills (slice M)
 
     def can_bleed(self) -> bool:
         """It has blood to lose (data/monster_blood.json: a skeleton, a
@@ -1142,6 +1144,10 @@ class Monster:
             self.status_effects.pop('bleeding', None)
         if self.status_effects.get('burning') and self.resists_control('burning'):
             self.status_effects.pop('burning', None)
+        # A stun or a hold written straight into the statuses (an armour's
+        # stagger, a hero's special, a ring's pacifying) spills the Kappa's
+        # dish too (slice M; add_effect and hold say it at once).
+        lore_powers.on_tick(self)
         for name in list(self.status_effects):
             val = self.status_effects[name]
             if val > 0:

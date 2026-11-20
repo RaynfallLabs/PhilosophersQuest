@@ -19506,7 +19506,9 @@
             15
           ],
           "share": 0.05,
-          "line": "The Roc's talons close on you and it lifts you into the dark! It drops you far away."
+          "line": "The Roc's talons close on you and it lifts you into the dark!",
+          "landed": "It drops you far away.",
+          "nowhere": "It finds nowhere to set you down, and you fall where you were."
         }
       },
       {
@@ -43937,6 +43939,7 @@
     ],
     "parley": {
       "subject": "grammar",
+      "storm": "Squall Spray",
       "call": "The Blue Men rise to the waist and their chief calls out two lines of verse. Answer him well and they let you pass.",
       "right": "The chief of the Blue Men laughs at your answer, and they sink back into the dark water. They will let you be.",
       "wrong": "Your answer stumbles. The Blue Men howl, and the squall comes down on you!",

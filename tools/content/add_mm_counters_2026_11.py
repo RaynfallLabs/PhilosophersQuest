@@ -97,8 +97,8 @@ ACCESSORIES = {
         'lore': ("A red cockerel in a little wicker cage, ill-tempered and loud. The bestiaries say the "
                  "crow of a cock is death to the cockatrice and the basilisk, as the weasel is, and in "
                  "China a rooster's crow sends the hopping dead back to their coffins at dawn. Let it "
-                 "crow (Apply) and every cockatrice in earshot is struck down, and a basilisk or a "
-                 "jiangshi reels. It crows once a floor; after that it sulks."),
+                 "crow (Apply) and every cockatrice or lesser basilisk in earshot is struck down, and a "
+                 "basilisk or a jiangshi reels. It crows once a floor; after that it sulks."),
         'floorSpawnWeight': {'1-20': 2, '21-40': 1},
         'is_unique': False,
     },
@@ -119,7 +119,7 @@ TECHNIQUES = {
         'drive_line': "{The} staggers at the crow, stunned.",
         'nothing': "Nothing here fears a cock's crow.",
         'tired': "The cockerel is hoarse; it will crow again on the next floor.",
-        'card': "Apply to let it crow, once a floor: it strikes down a cockatrice and stuns a basilisk or a jiangshi nearby.",
+        'card': "Apply to let it crow, once a floor: it strikes down a cockatrice or a lesser basilisk and stuns a basilisk or a jiangshi nearby.",
     },
 }
 
@@ -171,6 +171,14 @@ def main(argv) -> int:
     arpath = D / 'arsenal.json'
     artext = arpath.read_text(encoding='utf-8')
     ar = json.loads(artext)
+    for t, spec in TECHNIQUES.items():
+        was = ar['counters']['techniques'].get(t)
+        if was is not None and was != spec:
+            line = json.dumps(was, ensure_ascii=False)
+            assert artext.count(line) == 1, ('arsenal.json', t)
+            artext = artext.replace(line, json.dumps(spec, ensure_ascii=False))
+            json.loads(artext)
+            changed.append(f'technique {t} words')
     new_t = [t for t in TECHNIQUES if t not in ar['counters']['techniques']]
     if new_t:
         anchor = '\n    },\n    "stop_ears": {'

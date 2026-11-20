@@ -211,12 +211,20 @@ RECIPES = {
                                'dish_stirfry_t5_stat'),
 }
 
-# Kin who share a part now say so in its description (a line on the end).
-KIN_LINES = {
+# Kin lines an earlier build put on a part the kin no longer gives (the
+# audit moved three kin to a part of their own tier): taken off again.
+RETIRED_KIN_LINES = {
     'fionn_hound_prime': "The Cu-Sith, the green fairy hound of the Highlands, gives the same.",
-    'talos_prime': "The bronze bulls of Colchis, Hephaestus's other work, give the same.",
     'night_hag_prime': "Likho the one-eyed, the Russian hag of ill luck, gives the same.",
     'vampire_prime': "The asanbosam of the Akan forest, iron-toothed, gives the same.",
+}
+
+# Kin who share a part now say so in its description (a line on the end).
+KIN_LINES = {
+    'hecate_hound_prime': "The Cu-Sith, the green fairy hound of the Highlands, gives the same.",
+    'talos_prime': "The bronze bulls of Colchis, Hephaestus's other work, give the same.",
+    'banshee_prime': "Likho the one-eyed, the Slavic hag of ill luck, gives the same.",
+    'nosferatu_prime': "The asanbosam of the Akan forest, iron-toothed, gives the same.",
     'hezrou_prime': "The nuckelavee of the Orkney shore gives the same.",
     'corrupted_treant_prime': "The upas tree of Java, whose sap is a dart poison, gives the same.",
     'giant_spider_prime': "The tsuchigumo, the earth spider of Japan, gives the same.",

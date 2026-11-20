@@ -569,36 +569,53 @@ family assignment, harvest and the kitchen, packs.json herds, tells, hints, purs
 - **Lore powers** (`src/lore_powers.py`, pure; the game's side `src/game_lore_powers.py`).
   Each is a field on the kind and says one line when it fires:
   - `countdown_voice`: the Cu-Sith barks every 3 of its turns while the hero is in its
-    sight; the third bark is its attack (a voice: wax stops it). Between barks it stands
-    and watches unless he is beside it, so he has the turns to get away; after the third it
-    hunts like any hound. Out of its sight the count is lost.
+    sight, once it has noticed him (`_tracking`: its sight or its nose, src/senses.py);
+    the third bark is its attack (a voice: wax stops it). Between barks it stands and
+    watches unless he is beside it, so he has the turns to get away; after the third it
+    hunts like any hound. Out of its sight the count is lost. Silenced, it does not bark:
+    the count holds where it was, and it hunts.
   - `metal_eater`: the Bulgasari: a blade that can rust (status_effects._can_rust:
-    iron and steel, never a unique) that lands may lose a point (items.wear_down), and
-    the meal mends it, its body growing up to `grow_cap` past its health.
+    iron and steel, never a unique) that lands may lose a point (items.wear_down); only
+    a point lost is a meal, which mends it, its body growing up to `grow_cap` past its
+    health (a blade worn to -3 feeds it nothing).
   - `weak_spot_chain` (+ `weak_spot_line`): a chain that long ignores the Mapinguari's
     resistances (combat.strike_damage).
   - `sheds_skin`: the Lindworm at each share in `at` throws off its wounds (bleeding,
     poison, cracked armour...; never a hold) and mends `heal_share`.
-  - `on_stunned`: the Kappa stunned or held is weakened (its dish spills).
+  - `on_stunned`: the Kappa stunned or held is weakened (its dish spills), however the
+    hold is laid: add_effect, Monster.hold (the chain specials, pets, techniques, the
+    seed), or a status written straight in (caught by tick_effects, lore_powers.on_tick).
   - `blinded_loses`: Likho blinded cannot use the attacks named.
   - `appeased_by`: plain food (lore_powers.is_plain_food: never a dish cooked to
-    carry) set down within 2 tiles is eaten and the creature keeps to itself for the
-    floor; struck, the peace is broken. The Kappa and the Preta.
+    carry) that the hero set down himself (dropped: `_offered`, main._finish_drop;
+    food that was lying there is no gift of his) within 2 tiles is eaten and the creature
+    keeps to itself for the floor. Struck by the hero or his pet, the peace is broken (the
+    pet's line says so); a bleed or burn ticking, a fire vent or another creature's blow
+    does not break it (lore_powers.BLAME, the Game's `_damage_by`; `_dot_tick`). Asleep,
+    held, stunned or frozen, a creature takes no gift and gathers no gold.
   - attack `steal: "offering"`: the Preta snatches plain food and eats it (theft.py).
-  - `parley`: the Blue Men call a verse on first sight and hold their fire 6 turns;
-    D answers (one question of `subject` at their tier); right, the pack is calm for
-    the floor; wrong, they attack at once. Walk away or strike and they attack.
+  - `parley`: the Blue Men call a verse once one has noticed the hero and has him in
+    sight (never asleep, held or silenced) and hold their fire 6 turns; D answers (one
+    question of `subject` at their tier); right, the pack is calm for the floor; wrong,
+    the squall comes down at once (each one's next blow is its `storm` attack). Walk
+    away or strike and they attack.
   - `gold_gatherer`: gold dropped within 2 tiles of a gold-digging ant is gathered
     up (and gone); the ant spends `turns` doing it.
   - `corpse_hop`: when the Vetala's body falls, the spirit rises in the nearest corpse
     within `radius` at `hp_share` of its health, at most `max_hops` times. Harvest or
     search the dead first.
   - attack `carry_off`: the Roc lifts the hero (`chance`, halved under a Heavy load)
-    and sets him down `tiles` away on an explored, empty tile, held a turn.
+    and sets him down `tiles` away in the same turn, right after the blow's line
+    (game_combat calls `_lore_powers_lift`), held a turn: on plain floor he has explored
+    and could walk to from where he stood (no island, no pit, trap or hazard), empty,
+    with no creature within 2 tiles; never on a gate boss's floor or a side floor. With
+    nowhere safe, he falls where he stood (`nowhere`). The lift never crosses a stair
+    or a save.
   - attack `pulls`: the Yacumama's breath draws the hero a step toward it.
   - `hidden_overhead`: the Asanbosam and the star jelly hang above; a lit light (or
     the Light spell) shows them inside its glow (unseen.senses).
-  - `talisman`: any scroll read while a Jiangshi can see the hero holds it 2 turns.
+  - `talisman`: any scroll read with a Jiangshi in the hero's sight (within 8 tiles)
+    holds it 2 turns.
   - Two new senses (`data/senses.json`): `breath` (the jiangshi: a hero who rests holds
     his breath and is lost beyond arm's reach) and `blood_scent` (the Komodo brute: a
     bleeding hero is found through walls from 24 tiles).

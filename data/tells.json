@@ -229,7 +229,7 @@
     "corpse_hop": {
       "sign": "{The} grins with a face that does not fit the body {he} wears.",
       "does": "When the body {he} wears falls, the spirit slips into the nearest corpse and gets up again.",
-      "counter": "Harvest or search the dead lying near the fight before you finish {him}, or bless the ground with holy water and prayer."
+      "counter": "Harvest or search the dead lying near the fight before you finish {him}, or cast Banishment on {him}: a spirit sent away finds no body."
     },
     "parley": {
       "sign": "{The} rises from the water and calls out, as if waiting for an answer.",
@@ -239,7 +239,7 @@
     "appeased_by": {
       "sign": "{The} sniffs at your pack with a starving look.",
       "does": "Hunger drives {him}, and a gift of food can turn {him} away.",
-      "counter": "Throw {him} a ration or some plain food: {he} eats it and leaves you be."
+      "counter": "Set down a ration or some plain food near {him}: {he} eats it and leaves you be."
     },
     "on_stunned": {
       "sign": "Water slops in a dish on the top of {the}'s head.",
@@ -279,7 +279,7 @@
     "steal_offering": {
       "sign": "{The}'s needle-thin throat works as {he} looks at your pack.",
       "does": "{He} snatches food out of your pack and crams it down, and it is gone.",
-      "counter": "Keep your rations few when {he} is near, or give {him} one freely: an offering quiets {him}."
+      "counter": "Keep your rations few when {he} is near, or set one down for {him} freely: an offering quiets {him}."
     },
     "fumbling": {
       "sign": "Bad luck hangs round {the} like smoke.",
@@ -299,7 +299,7 @@
     "talisman": {
       "sign": "{The} hops stiffly, arms out, a strip of yellow paper fluttering at {his} brow.",
       "does": "{He} finds a living man by his breath.",
-      "counter": "Read any scroll while {he} can see it: the written page stops {him} like a talisman. Standing still holds your breath from {him}."
+      "counter": "Read any scroll with {him} in your sight: the written page stops {him} like a talisman. Standing still holds your breath from {him}."
     },
     "breath_recharge": {
       "sign": "{The}'s chest heaves like a bellows.",

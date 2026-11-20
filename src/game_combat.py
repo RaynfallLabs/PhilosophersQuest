@@ -3610,6 +3610,9 @@ class CombatMixin:
                             f"{self._compass_word(m.x - self.player.x, m.y - self.player.y)}.")
                 if msg:                              # (a ward said its line once: wards.py)
                     self.add_message(msg, 'danger')
+                # The Roc's carry-off, set by this blow: he is set down now,
+                # in the same turn (game_lore_powers.py, slice M).
+                self._lore_powers_lift(m)
                 if getattr(m, 'ai_pattern', '') == 'stalker_coward':
                     self._old_nickel_blow(m, dmg)        # his line after his blow
                 if self.player.hp <= 0:

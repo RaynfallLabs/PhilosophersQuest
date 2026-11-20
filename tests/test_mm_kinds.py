@@ -210,6 +210,7 @@ def test_the_cu_sith_barks_three_times_and_the_third_is_its_attack():
     d = _Map(OPEN)
     hero = _Hero(10, 10)
     m = _m('cu_sith', 14, 10)
+    m._tracking = True                         # it has noticed him (senses.notice)
     got = [lore_powers.countdown_turn(m, hero, d) for _ in range(7)]
     # It holds its ground between the barks (the turns to get away), and
     # the third bark is its attack.
@@ -224,6 +225,7 @@ def test_the_cu_sith_barks_three_times_and_the_third_is_its_attack():
 def test_beside_the_hero_the_hound_bites_between_barks():
     lore_powers.drain()
     m = _m('cu_sith', 11, 10)
+    m._tracking = True
     hero = _Hero(10, 10)
     got = [lore_powers.countdown_turn(m, hero, _Map(OPEN)) for _ in range(7)]
     assert got[:6] == [None] * 6 and got[6] is True
@@ -233,6 +235,7 @@ def test_out_of_its_sight_the_count_is_lost():
     lore_powers.drain()
     d = _Map(WALLED)
     m = _m('cu_sith', 2, 1)
+    m._tracking = True
     hero = _Hero(4, 1)
     for _ in range(4):
         lore_powers.countdown_turn(m, hero, d)
@@ -478,6 +481,7 @@ def test_a_gift_of_food_quiets_the_kappa():
     m = _m('kappa', 6, 5)
     bread = items.make_item_by_id('food', 'bread_ration')
     bread.x, bread.y = 7, 5
+    bread._offered = True                      # the hero set it down (main._finish_drop)
     g = _Game([m], [bread])
     g._lore_powers_before(m)
     assert m.__dict__.get('_lp_calm') and bread not in g.ground_items
@@ -495,6 +499,7 @@ def test_gold_dropped_stops_a_gold_digging_ant():
 
 def test_the_blue_men_wait_for_an_answer_then_attack():
     a, b = _m('blue_men_of_the_minch', 10, 5), _m('blue_men_of_the_minch', 11, 6)
+    a._tracking = True                         # it has noticed him
     g = _Game([a, b])
     g._lore_powers_before(a)
     assert a.__dict__['_lp_parley'] == b.__dict__['_lp_parley'] == 'waiting'
@@ -507,6 +512,7 @@ def test_the_blue_men_wait_for_an_answer_then_attack():
 
 def test_the_blue_men_ask_their_question_on_d():
     a = _m('blue_men_of_the_minch', 8, 5)
+    a._tracking = True
     g = _Game([a])
     g._lore_powers_before(a)
     asked = {}
@@ -554,14 +560,8 @@ def test_a_page_read_holds_a_jiangshi():
     assert any('talisman' in t for t in g.messages)
 
 
-def test_the_roc_sets_the_hero_down_far_away_on_an_empty_explored_tile():
-    roc = _m('roc_adult', 6, 5)
-    g = _Game([roc])
-    random.seed(4)
-    g._lore_powers_carry_off(8, 15)
-    p = g.player
-    assert 8 <= max(abs(p.x - 5), abs(p.y - 5)) <= 15
-    assert g.dungeon.is_walkable(p.x, p.y) and p.status_effects.get('immobilized') == 1
+# The Roc's lift, set down in the turn of its blow on a tile the hero could
+# walk to: on a real Game, tests/test_mm_audit_fixes.py (D1).
 
 
 def test_an_old_save_monster_has_no_lore_state_and_is_none_the_worse():
