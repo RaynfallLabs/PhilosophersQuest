@@ -25,7 +25,7 @@ at a pet, and never at an escort, the unicorn, a ridden Bococho or Dad.
 
 A band's leader gives orders (``band_order``, The Captain's Orders) kept on
 dungeon.band; what the hero was seen to do on this floor is on
-dungeon.habits (src/habits.py). Every option but a plain attack says one
+its witnesses (src/habits.py). Every option but a plain attack says one
 line the first time a fight uses it (``say``, through src/ai_lines.py: the
 Game says the seen line or the unseen one). State is in the creature's own
 __dict__ and written as new values, so the simulator's copies and an old
@@ -358,14 +358,15 @@ def snapshot(m, player, dungeon, all_monsters, extra_occupied):
     order = band_order(m, player, dungeon, all_monsters) if role else ''
     import habits
     learns = bool(sp.get('learns'))
+
+    def _habit(h):
+        return habits.count(dungeon, m, h, monsters=all_monsters) if learns else 0
     view = dict(mind=mind, dist=dist, adjacent=adjacent, sees_hero=sees, hp_share=hp_share,
                 hero_hp_share=hero_share, hero_held=held, choke=choke,
                 engaged=engaged, coming=coming, waited=int(d.get('_tm_wait', 0) or 0),
                 hurt_lately=hurt, has_lane=has_lane, role=role, order=order,
-                habit_choke=habits.count(dungeon, m, 'choke_fighter') if learns else 0,
-                habit_area=habits.count(dungeon, m, 'opens_with_area') if learns else 0,
-                habit_kiter=habits.count(dungeon, m, 'kiter') if learns else 0,
-                habit_rest=habits.count(dungeon, m, 'rester_near_foes') if learns else 0,
+                habit_choke=_habit('choke_fighter'), habit_area=_habit('opens_with_area'),
+                habit_kiter=_habit('kiter'), habit_rest=_habit('rester_near_foes'),
                 hero_resting=bool(getattr(senses.TURN, 'rested', False)) and sees,
                 knows_traps=flag(m, 'knows_traps'), dark_edge=flag(m, 'dark_edge'))
     if w.get('cast') and not adjacent and 'cast' not in OFF:
@@ -378,7 +379,11 @@ def snapshot(m, player, dungeon, all_monsters, extra_occupied):
         view.update(in_his_sight=ctx.in_sight, hero_sight=hs, dark_tile=ctx.dark is not None,
                     dark_struck=bool(d.get('_tm_dark_strike')),
                     edge_retreats=int(d.get('_tm_edge', 0) or 0))
-    company = any(_cheb(p.x, p.y, *hero) <= 2 for p in TURN.pets)
+    # A companion beside him that it can see (a pet it has not seen is not
+    # one it plans against).
+    company = any(_cheb(p.x, p.y, *hero) <= 2
+                  and _cheb(p.x, p.y, m.x, m.y) <= senses.sight_range(m, player)
+                  and _clear(m.x, m.y, p.x, p.y, dungeon) for p in TURN.pets)
     view['hero_has_company'] = company
     if (w.get('hold_door') and company and not adjacent
             and hp_share < float(tactics.data().get('door_below', 0.5))):
@@ -534,11 +539,27 @@ def _fresh_behind(m, player, dungeon, live):
 
 
 def leader_of(m):
-    """Its band's living leader (itself, if it leads), or None."""
+    """Its band's leader if he leads now, or None; itself, if it leads and
+    may. He leads while he lives, is his own master and can shout, and his
+    morale has not broken him (fleeing, at bay, cowed, yielded). Who still
+    answers to him is AI-1's rule (war_bands.holds_nerve: a captain who begs
+    leads no one; a babbled follower cannot hear him); a band whose captain
+    cannot lead answers as if he had fallen."""
     if m.__dict__.get('_band_role') == 'leader':
-        return m if getattr(m, 'alive', False) else None
+        return m if commands(m) else None
     lead = m.__dict__.get('_band_leader')
-    return lead if lead is not None and getattr(lead, 'alive', False) else None
+    if lead is None:
+        return None
+    import war_bands
+    if not war_bands.holds_nerve(m):
+        return None
+    return lead if commands(lead) else None
+
+
+def commands(lead) -> bool:
+    """A leader who can lead now: he can shout (can_shout) and his nerve is
+    his own (not broken by his morale: src/morale.py)."""
+    return can_shout(lead) and not broken(lead)
 
 
 def _feint_plan(m, player, dungeon, all_monsters, occ, slots):
@@ -742,11 +763,13 @@ def choose_cast(m, player, dungeon, all_monsters, rng=random):
 # ---------------------------------------------------------------------------
 
 def can_shout(m) -> bool:
-    """A leader who can give an order: alive, awake, free, his own master
-    and his voice his own."""
+    """A leader who can give an order: alive, awake, free, his own master,
+    his voice his own, and not begging, fleeing or at bay."""
     if m is None or not getattr(m, 'alive', False):
         return False
-    return not any(_has(m, e) for e in CANNOT + ('silenced',))
+    if any(_has(m, e) for e in CANNOT + ('silenced',)):
+        return False
+    return not broken(m)
 
 
 def band_order(m, player, dungeon, all_monsters) -> str:
@@ -761,19 +784,31 @@ def band_order(m, player, dungeon, all_monsters) -> str:
         return str(band.get('order') or '')
     lead = leader_of(m)
     order = ''
-    if lead is not None and can_shout(lead) and lead.__dict__.get('_tracking'):
+    if lead is not None and lead.__dict__.get('_tracking'):
         import packs
+        import senses
         import war_bands
         o = tactics.data().get('orders') or {}
-        sees = _clear(lead.x, lead.y, player.x, player.y, dungeon)
-        hero_share = player.hp / max(1, player.max_hp)
+        # What he knows of the hero is what he sees (senses.sees: his sight,
+        # its reach, invisibility); out of his sight, his last picture of
+        # him, or nothing.
+        if senses.sees(lead, player, dungeon):
+            seen = (player.hp / max(1, player.max_hp), bool(packs.held(player)))
+            band['hero_seen'] = seen
+        else:
+            seen = band.get('hero_seen')
         total = 1 + sum(int(v or 0) for v in (band.get('counts') or {}).values())
         alive = sum(1 for x in war_bands.members_of(all_monsters, uid) if x.alive)
         until = int(band.get('fall_back_until', -1) or -1)
         # Once called, the charge holds until the hero is well again (no
         # shouting back and forth as his health crosses the line).
-        charging = band.get('order') == 'charge' and hero_share < float(o.get('charge_until', 0.6))
-        if sees and (charging or hero_share < float(o.get('charge_below', 0.4)) or packs.held(player)):
+        if seen:
+            share, held = float(seen[0]), bool(seen[1])
+            charging = band.get('order') == 'charge' and share < float(o.get('charge_until', 0.6))
+            charge = charging or share < float(o.get('charge_below', 0.4)) or held
+        else:
+            charge = False
+        if charge:
             order = 'charge'
         elif band.get('fell_back') and TURN.n and TURN.n < until:
             order = 'fall_back'
@@ -893,6 +928,8 @@ def turn(m, player, dungeon, all_monsters, extra_occupied=None, pattern: str = '
     opt, _sc = tactics.decide(view, sp, plan)
     if opt in OFF:
         opt = 'attack'
+    if opt == 'attack':
+        _say_why_it_comes(m, view, sp, dungeon)
     m._tm_hp = m.hp
     m._tm_witnessed = hero_sees(m, player, dungeon)
     if opt == 'attack':
@@ -918,6 +955,22 @@ def turn(m, player, dungeon, all_monsters, extra_occupied=None, pattern: str = '
     count[opt] = int(count.get(opt, 0)) + 1
     m._tm_used = count                       # what its mind did (the scenario harness reads it)
     return got
+
+
+def _say_why_it_comes(m, view, sp, dungeon) -> None:
+    """It would have held the mouth or waited for its friends, and comes on
+    instead: say why, once (a habit seen, or the hero's wounds)."""
+    if view.adjacent:
+        return
+    if not (view.choke or (view.coming and 3 <= view.dist <= 5)):
+        return
+    h = tactics.data().get('habits') or {}
+    if view.hero_resting and view.habit_rest >= int(h.get('rester_near_foes', 2)):
+        say(m, 'habit_rester_near_foes', dungeon)
+    elif view.habit_kiter >= int(h.get('kiter', 2)):
+        say(m, 'habit_kiter', dungeon)
+    elif tactics.pressing(view, sp) and view.order != 'charge':
+        say(m, 'press', dungeon)
 
 
 def _stepped(m, path, ctx, player, dungeon) -> bool:
@@ -1001,7 +1054,7 @@ def execute(opt, m, player, dungeon, all_monsters, extra_occupied, view, ctx):
             if not senses.step_toward(m, dungeon, (p.x, p.y), all_monsters, extra_occupied, player):
                 return None
         if _cheb(m.x, m.y, p.x, p.y) <= 1:
-            m._focus = id(p)
+            m._focus = (id(p), TURN.n)       # this turn's choice only (focus_of)
         TURN.focus[id(p)] = TURN.focus.get(id(p), 0) + 1
         say(m, 'focus_pet', dungeon, pet=getattr(p, 'name', 'your pet'))
         return False
@@ -1202,8 +1255,15 @@ def hit_shift(m) -> int:
 
 def focus_of(m):
     """The id of the pet it chose to strike this turn (the swipe pass gives
-    that pet its whole blow), or None."""
-    return getattr(m, '__dict__', {}).get('_focus')
+    that pet its whole blow), or None: a choice from an earlier turn, or one
+    made before it fell into a pit, was held, broke or ran, is no choice
+    now."""
+    f = getattr(m, '__dict__', {}).get('_focus')
+    if not isinstance(f, tuple) or len(f) != 2 or f[1] != TURN.n:
+        return None
+    if not getattr(m, 'alive', False) or broken(m) or any(_has(m, e) for e in CANNOT):
+        return None
+    return f[0]
 
 
 # ---------------------------------------------------------------------------

@@ -111,6 +111,7 @@ from game_horns import HornsMixin
 from game_lore_powers import LorePowersMixin
 from game_behaviour import BehaviourMixin
 import monster as monster_mod_wards      # its HERO_STRUCK hook (game_wards.py, via MagicMixin)
+import habits as habits_mod              # They Learn Your Tricks: his action's line (AI-2)
 from spells import LEARNABLE_SPELLS
 
 
@@ -4920,6 +4921,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         splitting.spawn_pending(self)
         self._family_drain()               # the hero's family techniques his action used
         self._black_knight_tick()          # what the action did to him: one limb at most
+        habits_mod.close_action(self)      # his action's blows and shots (src/habits.py, AI-2)
         self.turn_count += 1
         # A hit that met a weakness or a resistance this action: one line for
         # each, Pokemon style (affinity.py, data/affinity_lines.json).
@@ -5502,6 +5504,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Hits the world's turn dealt (Boots of Thor, Shep's rescue, a pet's
         # or a trap's typed blow): said now, not after the hero's next action.
         self._say_affinity_lines()
+        habits_mod.world_over(self)              # the world's turn is over (src/habits.py)
 
     # ------------------------------------------------------------------
     # Carrying: Light, Heavy, Burdened, Overloaded (plan: _genart/ui/WEIGHT_PLAN.md;

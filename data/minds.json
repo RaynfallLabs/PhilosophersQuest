@@ -262,7 +262,7 @@
     }
   },
   "habits": {
-    "_doc": "They Learn Your Tricks: what a side SAW the hero do on this floor (a witness is a creature that sees him at the time). A habit counts the times it was seen, each at least `apart` turns after the last, and only the last `memory` turns. At `choke_fighter` 2 a side holds its room harder; at `opens_with_area` 1 it spreads out; at `kiter` 2 it no longer waits to be shot; at `rester_near_foes` 2 it rushes a resting hero.",
+    "_doc": "They Learn Your Tricks: what a creature SAW the hero do on this floor (it saw him at the time), kept on the witness, and told to its war-band or pack while they hear it (a mate awake within 12 tiles); it dies with the witness. A habit counts the times it was seen, each at least `apart` turns after the last, and only the last `memory` turns. At `choke_fighter` 2 it holds its room harder; at `opens_with_area` 1 it spreads out; at `kiter` 2 (a shot from afar, then a step back) it no longer waits to be shot; at `rester_near_foes` 2 it rushes a resting hero.",
     "memory": 300,
     "apart": 30,
     "choke_fighter": 2,
@@ -271,20 +271,24 @@
     "rester_near_foes": 2
   },
   "ranges": {
-    "_doc": "Archers Find a Lane: how far each missile reaches, by the first word of the attack's name that matches (an attack's own `range` comes first); anything else reaches `default`.",
+    "_doc": "Archers Find a Lane: how far each MISSILE reaches (wards.is_missile: a thing shot or thrown), by the first word of `missiles` its name holds (an attack's own `range` comes first). By lore: a longbow outshoots a bow, a bow a sling or a dart; a giant's hurled boulder outreaches a sling, and Polyphemus's crag, hurled out to sea after Odysseus, outreaches them all. Everything else (a breath, a gaze, a voice, a spit, a spell, and any missile not named here) reaches `default`, as every distance attack did before.",
     "default": 6,
-    "words": [
+    "missiles": [
       ["longbow", 8],
+      ["crag", 8],
       ["shortbow", 6],
       ["hand crossbow", 5],
       ["crossbow", 7],
       ["bow", 7],
+      ["boulder", 7],
+      ["glacier", 7],
+      ["whetstone", 7],
+      ["hurled ice", 7],
+      ["rock hurl", 7],
+      ["magma hurl", 7],
+      ["bone hurl", 7],
       ["sling", 5],
-      ["javelin", 5],
-      ["throw", 4],
-      ["hurl", 4],
-      ["spit", 4],
-      ["breath", 7]
+      ["dart", 5]
     ]
   },
   "lanes": {

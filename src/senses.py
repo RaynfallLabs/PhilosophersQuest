@@ -467,13 +467,64 @@ def queue_rules() -> dict:
         return {}
 
 
+# What keeps a friend in the way from moving on: a creature does not wait
+# behind one that will not move (asleep, held, rooted, begging).
+_STUCK = ('sleeping', 'paralyzed', 'stunned', 'frozen', 'immobilized', 'impaled',
+          'stuck_in_pit', 'feared', 'charmed', 'confused')
+
+
 def _friend_at(m, all_monsters, tile) -> bool:
-    """One of its own side stands on ``tile`` (a pet or a stranger is not:
-    a creature does not wait politely behind those)."""
+    """One of its own side stands on ``tile`` and will move on: awake, free,
+    not rooted, not broken by its morale, and itself hunting the hero. (A
+    pet, a stranger or a friend that will not move is gone round, as
+    before: a creature does not wait politely behind those.)"""
     import faction
     for o in all_monsters or ():
         if o is not m and getattr(o, 'alive', False) and (o.x, o.y) == tuple(tile):
-            return faction.same_side(m, o)
+            if not faction.same_side(m, o):
+                return False
+            od = getattr(o, '__dict__', {})
+            if getattr(o, 'ai_pattern', '') in ('sessile', 'mimic') or not od.get('_tracking'):
+                return False
+            if any(int((getattr(o, 'status_effects', None) or {}).get(e, 0) or 0) > 0
+                   for e in _STUCK):
+                return False
+            if (od.get('_yielded') or od.get('_cowed')
+                    or int(od.get('_flee_timer', 0) or 0) > 0):
+                return False
+            return True
+    return False
+
+
+def keeps_way_round(m, player, all_monsters) -> bool:
+    """It sees the hero, but a creature stands on the straight line to him,
+    and it is already on its way round (a path to his tile from an earlier
+    turn): it keeps to that way. It used to step greedily back into the
+    blocked line each turn it saw him, and out again, for ever."""
+    if not QUEUE or player is None:
+        return False
+    d = m.__dict__
+    if not d.get('_path') or d.get('_path_goal') != (player.x, player.y):
+        return False
+    from geom import all_occupied_tiles
+    occ = set(all_occupied_tiles([o for o in all_monsters or () if getattr(o, 'alive', False)],
+                                 exclude=m))
+    x0, y0, x1, y1 = m.x, m.y, player.x, player.y
+    dx, dy = abs(x1 - x0), abs(y1 - y0)
+    sx = 1 if x1 > x0 else -1
+    sy = 1 if y1 > y0 else -1
+    err = dx - dy
+    cx, cy = x0, y0
+    while (cx, cy) != (x1, y1):
+        e2 = 2 * err
+        if e2 > -dy:
+            err -= dy
+            cx += sx
+        if e2 < dx:
+            err += dx
+            cy += sy
+        if (cx, cy) != (x1, y1) and (cx, cy) in occ:
+            return True
     return False
 
 
@@ -598,6 +649,7 @@ def step_toward(m, dungeon, goal, all_monsters, extra_occupied, player) -> bool:
         if not nxt or tuple(nxt) in occ or _cheb(m.x, m.y, *nxt) != 1:
             return False                 # still behind its friend: no new search
         m._queue_wait = 0
+        m.__dict__.pop('_queue_spent', None)
         path = [tuple(nxt)] + [tuple(t) for t in (d.get('_queue_rest') or ())]
         m._path_goal = goal
     else:
@@ -656,8 +708,14 @@ def _hunting_path(m, dungeon, goal, near, occ, all_monsters, avoid):
     if not way:
         return None
     if way[0] not in occ:
+        m.__dict__.pop('_queue_spent', None)
         return way
-    if _friend_at(m, all_monsters, way[0]):
+    # It waits its turn once (`wait` turns); if the friend is still in the
+    # way after that, it goes round (a friend that never moves cannot hold
+    # it for ever), and does not queue again until it has moved.
+    spent = int(m.__dict__.get('_queue_spent', 0) or 0)
+    if _friend_at(m, all_monsters, way[0]) and spent < 1:
+        m._queue_spent = spent + 1
         m._queue_wait = int(q.get('wait', 3))
         m._queue_goal = tuple(goal)
         m._queue_step = tuple(way[0])
@@ -744,11 +802,17 @@ def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:
     if int(m.__dict__.get('_tm_watch', 0) or 0) > 0 and not hidden:
         # It holds its post beyond a narrow way, out of the hero's sight,
         # for him to come out (the Tactical Mind: src/tactical_mind.py); it
-        # does not walk in to look for him until its patience runs out.
-        m._tm_watch = int(m._tm_watch) - 1
-        import tactical_mind
-        tactical_mind.blind_turn(m, player, dungeon, all_monsters, extra_occupied)
-        return False
+        # does not walk in to look for him until its patience runs out. A
+        # wound or a fight's noise ends the watch: it answers the shot.
+        hp_was = m.__dict__.get('_tm_hp')
+        struck = hp_was is not None and m.hp < int(hp_was)
+        if struck or (heard and heard[2] != 'step'):
+            m._tm_watch = 0
+        else:
+            m._tm_watch = int(m._tm_watch) - 1
+            import tactical_mind
+            tactical_mind.blind_turn(m, player, dungeon, all_monsters, extra_occupied)
+            return False
     if heard and not hidden:
         m._goal = (heard[0], heard[1])
         m._searching = False
