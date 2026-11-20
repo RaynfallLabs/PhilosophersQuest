@@ -37,10 +37,13 @@ MODELLED (simple, explicit, every number a named constant below):
                       (quiz_engine.py:583-627) is modelled exactly: after all
                       N distinct questions of a tier have been answered right,
                       every later attack at that tier is an instant chain 5.
-  * positioning       there is no map. Monsters of one room form a group and
-                      come at the player `--engagers` at a time. Who strikes
-                      first, ranged opening shots, hit-and-run and fleeing are
-                      rules of thumb taken from monster.take_turn.
+  * positioning       there is no map of the floor. Monsters of one room form
+                      a group and come at the player `--engagers` at a time
+                      (the front); the rest wait at the back of the room,
+                      where its healers, summoners, casters and archers act
+                      (the group fight below, on a small real map of the
+                      fight). Ranged opening shots, hit-and-run and fleeing
+                      are rules of thumb taken from monster.take_turn.
   * the player's      when to drink, pray, cast, rest, flee, cook and what to
     decisions         wear: the PROFILE tables below.
 
@@ -128,6 +131,52 @@ THE DEFENCE MODEL (2026-11-16, Brandon's approved design; src/defence.py):
   * the Secret Builds the kids play (BUILD_CELLS) start with their own stats
     and the core of their kit.
 
+THE GROUP FIGHT (2026-11-20, tools/balance/sim_groups.py; knobs grp_*, each
+on by default, 0 its ablation; all seven at 0 is the fight before it):
+  * the ground       each fight stands on a small real dungeon.Dungeon round
+                     the hero: a corridor at engagers 1, a room's corner at 2-3,
+                     the open at 4 or more (or when a pack comes on together).
+                     The front stands on the fight's slots, the back rank on
+                     the free tiles two to seven off, in the queue's order.
+  * grp_heal         a healer at the back mends a hurt friend (faction.py
+                     through AI-1's turn), else shoots (Monster._ranged_turn).
+  * grp_summon       a summoner at the back chants and calls (summoning.step):
+                     the hero cannot reach it, so no blow breaks the chant;
+                     its dead join the queue in front of it (live cap 2).
+  * grp_book         a caster at the back casts from its Caster's Book
+                     (caster_ai.turn through AI-3's turn): mends its side,
+                     wards itself, curses or dispels the hero.
+  * grp_backrank     an archer at the back takes the real Monster._ranged_turn
+                     on the ground: a clear shot is loosed (Monster.attack
+                     from its tile), a blocked one steps to a lane or holds
+                     (AI-2's lanes.blocked_turn). Down a corridor (engagers 1)
+                     the front blocks every line; it shoots from engagers 2.
+  * grp_orders       the Captain's Orders (tactical_mind.band_order): his
+                     screen sends his guards at the hero before him (the
+                     floor's order put every band's leader first); half the
+                     band down, its fall-back holds the rest at the back.
+  * grp_morale       kin falling (morale.kin_fell), the band's answer when its
+                     leader falls or yields (war_bands.on_death: rout, crumble,
+                     quarrel; half down), a great blow on the leader
+                     (war_bands.on_great_blow). Each follower now answers to
+                     the leader in this fight: it pointed at the floor's
+                     cached creature, which never died, so no band ever broke.
+  * grp_speed        the world's clock as Game._advance_turn runs it: the
+                     statuses, cooldowns and regeneration tick once a HERO
+                     ACTION (they ticked once a world turn: haste lasted twice
+                     its actions); a Slowed hero loses every other blow
+                     (main._do_move: a move or a blow; a potion, a prayer
+                     or a spell is not slowed); a speed-14 creature strikes as it
+                     arrives about half the time it closes at a fight's start
+                     (every time it stepped in before), always from the queue.
+SPEED, the game's rule, which the simulator follows (tests/test_sim_groups.py
+holds it to the real Game._advance_turn at monster speeds 10-20 and hero
+speeds 9-20): every monster takes one turn per world turn whatever its speed;
+under 8 it loses (8 - speed)/10 of them; 14 or more moves two steps (closing,
+the arrival blow, catching a fleeing hero) and never strikes twice; 8 to 13
+is the same as 10. The hero's speed alone sets how many world turns an action
+is worth (defence.world_turns).
+
 NOT MODELLED (MON-13): the real floors can hold the late-game monsters, but
 the sim fights each one as a plain stat block, so their mechanics are missing:
   * theft             thieves never cut the purse or run off with an item;
@@ -140,6 +189,15 @@ the sim fights each one as a plain stat block, so their mechanics are missing:
 So a "no spike" result on the floors where those monsters live says nothing
 about them. Their behaviour is tested in tests/test_late_game_monsters.py and
 tests/test_invisible_monsters.py.
+NOT MODELLED in the group fight: a back-rank healer's walk to the friend it
+mends (it mends anyone in the fight, the simulator's melee reach); the back
+rank's shots at a hero who flees (only the front decides his escape); the
+Tactical Mind's own moves in the back rank (its measured worth is sim_ai2's
+extra blow, front only); the captain's charge pulling shooters into the
+melee; a routed band leaving the floor (the frightened stay and do not
+strike); a fast creature's arrival from the parity of its distance when the
+hero steps to deny it; anything outside the room's group but the neighbour
+who joins (NEIGHBOUR_JOIN_PROB).
 
 Usage
 -----
@@ -213,6 +271,7 @@ import lore_powers as lore_powers_mod            # noqa: E402  (slice M)
 import sim_ai1                                   # noqa: E402  (AI-1: monster behaviour)
 import sim_ai3                                   # noqa: E402  (AI-3: monster behaviour, third wave)
 import sim_ai2                                   # noqa: E402  (AI-2: the Tactical Mind)
+import sim_groups                                # noqa: E402  (the group fight: the back rank, the clock)
 from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
@@ -419,6 +478,11 @@ KNOB_DEFAULTS.update(sim_ai2.KNOBS)
 # 0 = its ablation. Each is described in sim_ai3.py.
 KNOB_DEFAULTS.update(sim_ai3.KNOBS)
 # ---- end AI-3 ----
+# ---- the group fight (2026-11-20; tools/balance/sim_groups.py) ----
+# grp_heal, grp_summon, grp_book, grp_backrank, grp_orders, grp_morale,
+# grp_speed: 1 = the game's rule, 0 = its ablation. Each is described there.
+KNOB_DEFAULTS.update(sim_groups.KNOBS)
+# ---- end the group fight ----
 
 DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_quick',
                  'heavy_quick', 'medium_drag',
@@ -795,6 +859,29 @@ MOOBLE_MP_EVERY = (5, 4)       # turns per MP before / after his first change (f
 RIDE_WALK_SHARE = 0.6
 for _n in ('mastery', 'mastery_dex'):
     PROFILES[_n] = dict(PROFILES[_n], quest_pet='bococho')
+
+# The walk-through kid (Brandon, 2026-11-20: "a kid who tries to just walk
+# through the dungeon should not succeed; a kid who pays attention to our
+# lore and systems should be able to win"). He fights what he meets in the
+# open (run him at engagers=8), wears most of the armour and the rings he
+# finds, drinks the potions, eats the food he finds and prays when he is
+# hurt; and he uses no system: no study of the monsters (families=0), no
+# coatings, flasks, weapon swaps or Kit Sense (tactics=0), no spells (casts
+# and magic off), no wards, ward potions or wands (the mm_* knobs off), and he
+# never prepares: no harvest, no meals (cooks_per_floor 0), no rest, no
+# traders, altars, quests or pet. `unprepared` is not this kid: it skips two
+# fights in five, wears a third of the armour it finds, no rings, never prays
+# and opens no chest; `casual` cooks a meal a floor and rests.
+PROFILES['walkthrough'] = dict(
+    loot_fraction=0.65, engage_fraction=0.75, pace=0.75,
+    opens_chests=True,
+    equips_armor=True, equips_accessories=True, avoids_cursed=False,
+    armor_equip_chance=0.7,
+    cooks_per_floor=0, eats_for_hp=True,
+    potion_at=0.25, heal_at=0.35, top_up_to=0.5,
+    prays=True, casts=False, flees=True, flee_at=0.15,
+    rest_turns=0, quests=False,
+    knobs=dict(mm_wards=0, mm_spells=0, mm_potions=0, mm_wands=0))
 
 
 # ---- The Secret Builds the kids play (2026-11-16) ------------------------------
@@ -3672,6 +3759,7 @@ class Run(_MMMagicSim):
         sim_ai1.fight_start(self, group)     # AI-1: a light against the light-shy
         sim_ai2.fight_start(self, group)     # AI-2: who in the group thinks
         self._mm_open(group)                 # MONSTERS AND MAGIC (_MMMagicSim)
+        queue = sim_groups.fight_start(self, group, queue)   # the group fight: ground, leader, order
 
         def enter(m, opening: bool):
             """A monster joins the melee; resolve who strikes first."""
@@ -3686,6 +3774,7 @@ class Run(_MMMagicSim):
                     free = 0
             elif m.speed >= FAST_SPEED or pat in ('ambush', 'mimic'):
                 free = 1
+            free = sim_groups.arrival(self, m, free, opening)   # grp_speed: the double step's arrival
             # Its opener (monster.OPENER_WIND_UP, 2026-11-19): the first
             # blow is its signature attack, before the hero strikes. (A gaze,
             # voice or breath is drawn up for a turn in the game; the sim
@@ -3713,12 +3802,15 @@ class Run(_MMMagicSim):
         while True:
             # ---- AI-1 (sim_ai1.py): who burst as they died, who left the
             # fight (morale) ----
+            sim_groups.deaths(self, active, queue)   # grp_morale: kin fell, the band answers
             active, queue = sim_ai1.leavers(self, active, queue)
             # ---- end AI-1 ----
             active = [m for m in active if m.alive]
             queue = [m for m in queue if m.alive]       # an area spell can kill those waiting
             while len(active) < k and queue:
-                m0 = queue.pop(0)
+                m0 = sim_groups.next_up(self, queue, active)   # grp_orders: a band falling back
+                if m0 is None:
+                    break
                 enter(m0, opening=(turn == 0))
                 # A pack comes on together and spreads round him (src/packs.py).
                 for o in self._packmates_join(m0, queue, len(slots) - len(active)):
@@ -3849,9 +3941,14 @@ class Run(_MMMagicSim):
             # main.py _advance_turn does): over 10 it sometimes waits, under
             # 10 it sometimes takes two (the defence model, 2026-11-16).
             n_world, world_clock = defence_mod.world_turns(world_clock, float(p.get_speed()))
+            if sim_groups.tick_alone(self, n_world):            # grp_speed: the world waits out
+                self._world_tick(active, ctx, acts=False)       # this action; the statuses tick
+                queue = sim_groups.back_rank(self, active, queue, ctx, True, act=False)
             for _w in range(n_world):
                 wturn += 1
-                self._world_tick(active, ctx)
+                _tk = sim_groups.ticks_now(self, _w)            # grp_speed: once an action
+                self._world_tick(active, ctx, ticks=_tk)
+                queue = sim_groups.back_rank(self, active, queue, ctx, _tk)   # the back rank's turn
                 if strip_turns > 0:
                     strip_turns -= 1
                     if strip_turns == 0:
@@ -3951,25 +4048,33 @@ class Run(_MMMagicSim):
             p.status_effects.pop('life_save', None)
             p.hp = 1
 
-    def _world_tick(self, active, ctx):
+    def _world_tick(self, active, ctx, ticks=True, acts=True):
         """One world turn: statuses tick, then every engaged monster acts
-        (main._advance_turn -> game_combat._do_monster_turns)."""
+        (main._advance_turn -> game_combat._do_monster_turns). The group
+        fight's clock (sim_groups, grp_speed): `ticks` is False on an
+        action's later world turns (the game ticks the statuses, the
+        cooldowns and regeneration once a hero action), `acts` False on an
+        action the world waits out (a quick hero)."""
         p = self.p
-        if self.knobs['families']:
+        if acts and self.knobs['families']:
             family_edges_mod.on_sight_turns(p, active, None)   # Your Name Is Known
             family_edges_mod.drain(p)
         for m in active:
             m._cached_all_monsters = active      # as take_turn does: a shared gaze sees its group
-            if m.alive:
+            if m.alive and ticks:
                 self._tick_monster(m)
-        sim_ai1.world_tick(self, active)     # AI-1: a troll in the light, a shove
-        sim_ai3.world_tick(self, active)     # AI-3: a hold that ended, the auras
-        p._incoming_scale = self.kv('mon_dmg')
-        msgs = p.tick_effects()
-        p._incoming_scale = 1.0
-        if any(t == '_petrify_death' for t, _ in (msgs or [])):
-            p.hp = 0
-        self.pass_time_in_fight()
+        if acts:
+            sim_ai1.world_tick(self, active)     # AI-1: a troll in the light, a shove
+            sim_ai3.world_tick(self, active)     # AI-3: a hold that ended, the auras
+        if ticks:
+            p._incoming_scale = self.kv('mon_dmg')
+            msgs = p.tick_effects()
+            p._incoming_scale = 1.0
+            if any(t == '_petrify_death' for t, _ in (msgs or [])):
+                p.hp = 0
+            self.pass_time_in_fight()
+        if not acts:
+            return
         for m in active:
             if p.hp <= 0:
                 break
@@ -4004,6 +4109,8 @@ class Run(_MMMagicSim):
     def _player_attack(self, target, active):
         """One melee attack through the REAL combat.player_attack."""
         p = self.p
+        if sim_groups.hero_slowed(self):     # grp_speed: Slowed, every other blow is lost (_do_move)
+            return
         if p.has_effect('charmed') and random.random() < 0.40:
             return                              # game_combat.py:1738
         p._combat_monsters_ref = active

@@ -177,6 +177,25 @@ SETS = {
                 for c in players(f'L_{tag}_', kn, (1, 30), eng, co)],
 }
 
+# The group fight (2026-11-20, tools/balance/sim_groups.py): a room's group
+# met two at a time (a careful kid in doorways and corridors) and eight (in
+# the open), with the group mechanics on and all off; and the walk-through
+# kid (difficulty_sim's `walkthrough` profile) in the open.
+GROUP_OFF = ','.join(f'{k}=0' for k in ds.sim_groups.KNOBS)
+
+
+def groupfight_set():
+    out = []
+    for e in (2, 8):
+        for who, sp in (('kidA', KID_FAST), ('kidB', KID_SLOW)):
+            out += [cell(f'G{e}_{who}_on', 'mastery', 'kid', sp, '', (1, 100), e),
+                    cell(f'G{e}_{who}_off', 'mastery', 'kid', sp, GROUP_OFF, (1, 100), e)]
+    out.append(cell('W8_walk_kidA', 'walkthrough', 'kid', KID_FAST, '', (1, 100), 8))
+    return out
+
+
+SETS['groupfight'] = groupfight_set()
+
 
 def full_lever_set(tags):
     """The whole game under the chosen levers (set name full:<tag>+<tag>)."""
