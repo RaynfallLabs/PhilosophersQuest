@@ -283,6 +283,7 @@ import sim_ai3                                   # noqa: E402  (AI-3: monster be
 import sim_ai2                                   # noqa: E402  (AI-2: the Tactical Mind)
 import sim_groups                                # noqa: E402  (the group fight: the back rank, the clock)
 import sim_late                                  # noqa: E402  (the late game's instruments)
+import sim_magic                                 # noqa: E402  (magic written for the real hero)
 import paths as paths_mod                        # noqa: E402  (sim_late's overlay reaches the locusts)
 from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
@@ -501,6 +502,11 @@ KNOB_DEFAULTS.update(sim_groups.KNOBS)
 # overlay and hp_table are paths (string knobs).
 KNOB_DEFAULTS.update(sim_late.KNOBS)
 # ---- end the late game ----
+# ---- magic written for the real hero (2026-11-21; tools/balance/sim_magic.py) ----
+# mg_int_per, mg_int_cap, mg_anchor, mg_holy, mg_mp_int, mg_escape, mg_hold,
+# mg_bigfoe: every default is the game as it is (described there).
+KNOB_DEFAULTS.update(sim_magic.KNOBS)
+# ---- end magic ----
 
 DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_quick',
                  'heavy_quick', 'medium_drag',
@@ -2500,13 +2506,15 @@ class Run(_MMMagicSim):
             c = p.spell_mp_cost(cost)
             if p.mp - c < reserve:
                 continue
-            base = (dice_mean(power) * game_magic_mod.MAGIC_TIER_MULT.get(tier, 1.0)
-                    * game_magic_mod.int_damage_factor(p.INT))
+            base = (dice_mean(power) * sim_magic.tier_mult(self, tier)     # M2 (sim_magic)
+                    * sim_magic.int_factor(self))                          # M1
             if fx == 'magic_missile':
                 base *= MISSILE_COUNT.get(tier, 1)
-            v = base * self._spell_mult(target, el)
+            el = sim_magic.element(self, fx, el)                           # M3: holy
+            floor_1 = 1.0 if sim_magic.ignores_resistance(self, fx) else 0.0
+            v = base * max(floor_1, self._spell_mult(target, el))
             for m, share, chance in self._area_catch(fx, target, others):
-                v += chance * min(float(m.hp), base * share * self._spell_mult(m, el))
+                v += chance * min(float(m.hp), base * share * max(floor_1, self._spell_mult(m, el)))
             v *= self.quiz.untimed_acc(tier)
             if best is None or v > best[0]:
                 best = (v, c, tier, el, base, fx)
@@ -2519,13 +2527,15 @@ class Run(_MMMagicSim):
         p.mp -= c
         self.fs['attack_casts'] = self.fs.get('attack_casts', 0) + 1
         if self.quiz.one_question(tier):                # one science question
-            target.take_damage(int(round(base)), el or 'physical')
+            target.take_damage(int(round(base)), el or 'physical',
+                               ignore_resistance=sim_magic.ignores_resistance(self, fx))
             if el:
                 self._felt[(kind, ('spell', el))] = combat._damage_multiplier([el], target)
             caught = 0
             for m, share, chance in self._area_catch(fx, target, others):
                 if random.random() < chance:
-                    m.take_damage(max(1, int(round(base * share))), el or 'physical')
+                    m.take_damage(max(1, int(round(base * share))), el or 'physical',
+                                  ignore_resistance=sim_magic.ignores_resistance(self, fx))
                     caught += 1
             if caught:
                 self.fs['area_hits'] = self.fs.get('area_hits', 0) + caught
@@ -2607,6 +2617,8 @@ class Run(_MMMagicSim):
             if prof['eats_for_hp']:
                 self.fs['heal_supply'] += item.hp_restore * self.kv('heal')
             self._sync_pack()
+            return
+        if isinstance(item, Spellbook) and sim_magic.learn(self, item):   # M5: escape, hold
             return
         if isinstance(item, Spellbook) and prof.get('magic'):
             sp = SPELLS.get(item.spell_id) or {}
@@ -2919,7 +2931,7 @@ class Run(_MMMagicSim):
         for sid, (cost, power, tier) in self.spells.items():
             if cost > self.p.mp:
                 continue
-            heal = max(dice_mean(power) * MAGIC_TIER_MULT[tier] * game_magic_mod.int_damage_factor(self.p.INT),
+            heal = max(dice_mean(power) * MAGIC_TIER_MULT[tier] * sim_magic.int_factor(self),
                        SPELL_HEAL_SHARE.get(tier, 0.45) * self.p.max_hp)   # floor_curve.mend
             score = min(heal, missing) / cost
             if best is None or score > best[0]:
@@ -2975,7 +2987,7 @@ class Run(_MMMagicSim):
             return False
         p.mp -= cost                                    # spent even on a fizzle
         if self.quiz.one_question(tier):                # one science question
-            amt = mend(int(roll(power) * MAGIC_TIER_MULT[tier] * game_magic_mod.int_damage_factor(p.INT)),
+            amt = mend(int(roll(power) * MAGIC_TIER_MULT[tier] * sim_magic.int_factor(self)),
                        p.max_hp, SPELL_HEAL_SHARE.get(tier, 0.45))
             self._healed('spell', p.heal(amt * self.knobs['spell_heal']))
         return True
@@ -3902,7 +3914,9 @@ class Run(_MMMagicSim):
                                    and m.ai_pattern not in RANGED_PATTERNS
                                    and m.rage_stacks < 3 for m in active)
                         slow = slow or sim_ai3.lets_go(active)   # AI-3: they keep to their ground
-                        if random.random() < (FLEE_OK_SLOW if slow else FLEE_OK_FAST):
+                        _esc = sim_magic.escape(self, slow)        # M5: Blink, Phase Door
+                        if (_esc if _esc is not None
+                                else random.random() < (FLEE_OK_SLOW if slow else FLEE_OK_FAST)):
                             if not mandatory:
                                 self.fs['fled'] += 1
                                 return 'fled'
@@ -3954,12 +3968,15 @@ class Run(_MMMagicSim):
                     named = [m for m in reachable if is_named(m)]
                     target = named[0] if named else min(reachable, key=lambda m: m.hp)
                     target = sim_ai3.target(self, reachable, target)   # AI-3: the holder, a chant
+                    target = sim_magic.pick_target(self, reachable, target)   # M5: the awake first
                     if target._flee_timer > 0 and random.random() > CHASE_HIT_PROB:
                         action = 'chase'
                     elif (target.ai_pattern in RANGED_PATTERNS                     # AI-1: a breather drawing
                           and random.random() < sim_ai1.kite_prob(target, sim_ai2.kite_prob(   # breath comes in
                               self, target, RANGED_KITE_PROB))):
                         action = 'closing'
+                    elif prof.get('magic') and sim_magic.hold(self, target, active, queue):
+                        action = 'cast'                         # M5: sleep, hold
                     elif prof.get('magic') and self.cast_control(target):
                         action = 'cast'
                     elif prof.get('magic') and self.cast_attack(
@@ -3982,7 +3999,8 @@ class Run(_MMMagicSim):
                 if bitten:
                     foe = min(bitten, key=lambda m: m.hp)
                     qp = self._quest_pet()
-                    foe.take_damage(int(pet_system_mod.growth('bite', self.floor) * min(
+                    foe.take_damage(int(pet_system_mod.growth('bite', self.floor)
+                                        * sim_magic.pet_bite_mult(self) * min(
                         1.0, (0.5 + 0.7 * acc_at(self.quiz.accuracy, 1)) / 1.165)
                         * QUEST_PET_BITE.get(qp, 1.0)))
 
@@ -4350,6 +4368,7 @@ class Run(_MMMagicSim):
     def play_floor(self, floor: int, fights: bool = True):
         p = self.p
         self.floor = floor
+        sim_magic.sync_mp(self)                  # M4: max MP from INT
         self.quiz.floor = floor
         if self._quest_pet() == 'bococho':
             p.saddlebag_lb = 20                  # her saddlebags (player.get_carry_limit)
@@ -4669,6 +4688,8 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
         set(knobs) != set(KNOB_DEFAULTS) else knobs
     install_caches()
     sim_late.install(knobs)                       # the overlay and the HP stand-in, before any floor
+    sim_magic.install_bigfoe(knobs)               # M5: the big-foe test before the stand-in
+    sim_magic.install_flasks(knobs)               # flasks written against the careful blow
     sim_late.cell_begin()
     apply_defence_knobs(knobs)
     packs_mod.ENABLED = bool(knobs.get('packs', 1))
