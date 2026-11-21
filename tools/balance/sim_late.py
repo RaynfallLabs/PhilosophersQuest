@@ -207,10 +207,16 @@ KNOBS = {
     'hp_plain': 2.0,
     'hp_from': 21,
     'hp_minis': 0,
+    'hp_lo': 0.0,        # > 0: a ramp: the answered target at hp_from, rising to hp_target at hp_ramp_to
+    'hp_plain_lo': 0.0,  #   and the plain one from this to hp_plain
+    'hp_ramp_to': 61,
+    'hp_raise_only': 0,  # 1: never lower a kind's health
     'hp_table': '',
     'supply': 0.0,
     'supply_ahead': 5,
     'sig': 0.0,
+    'sig_from': 1,       # sig only for kinds peaking at or past this floor (an aura: the floor)
+    'supply_from': 1,    # supply, its stall and prep only from this floor on
     'prep': 1,
     'recoat': 0,
     'campaign': 1,
@@ -409,7 +415,9 @@ def _key(knobs: dict):
     if hp > 0:
         tbl = str(knobs.get('hp_table') or '')
         parts.append(('hp', hp, float(knobs.get('hp_plain', 2.0)), int(knobs.get('hp_from', 21)),
-                      int(knobs.get('hp_minis', 0)), os.path.abspath(tbl) if tbl else '',
+                      int(knobs.get('hp_minis', 0)), float(knobs.get('hp_lo', 0) or 0),
+                      float(knobs.get('hp_plain_lo', 0) or 0), int(knobs.get('hp_ramp_to', 61) or 61),
+                      int(knobs.get('hp_raise_only', 0) or 0), os.path.abspath(tbl) if tbl else '',
                       os.stat(tbl).st_mtime_ns if tbl else 0))
     return tuple(parts)
 
@@ -704,12 +712,21 @@ def hp_standin(defs: dict, knobs: dict) -> tuple:
         if not spawns(d) and not (minis and d.get('is_mini_boss')):
             continue
         ans, plain = steps(d, reach)
+        t_a, t_p = target, plain_b
+        if float(knobs.get('hp_lo', 0) or 0) > 0:
+            top = max(lo + 1, int(knobs.get('hp_ramp_to', 61) or 61))
+            f = min(1.0, max(0.0, (pk - lo) / float(top - lo)))
+            t_a = float(knobs['hp_lo']) + f * (target - float(knobs['hp_lo']))
+            pl0 = float(knobs.get('hp_plain_lo', 0) or 0) or plain_b
+            t_p = pl0 + f * (plain_b - pl0)
         if ans is not None:
-            b, step, how = target, ans, 'answered'
+            b, step, how = t_a, ans, 'answered'
         else:
-            b, step, how = plain_b, plain, 'plain'
+            b, step, how = t_p, plain, 'plain'
         x = x_for_blows(b, pk, table)
         new = max(1, int(round(x * careful_blow(pk, table) * step)))
+        if int(knobs.get('hp_raise_only', 0) or 0):
+            new = max(new, int(round(dice_mean(d['hp']))))
         nd = dict(d)
         nd['hp'] = new
         out[kind] = nd
@@ -1069,7 +1086,7 @@ def floor_start(run, floor: int) -> None:
     """D: this floor's carriers and counters for the residents ahead (Run.play_floor,
     before the floor's stall)."""
     sup = float(run.kv('supply') or 0.0)
-    if sup <= 0:
+    if sup <= 0 or floor < int(run.knobs.get('supply_from', 1) or 1):
         return
     ahead = int(run.knobs.get('supply_ahead', 5) or 0)
     w = window(floor, ahead)
@@ -1157,7 +1174,7 @@ def shop(run, floor: int, defn: dict, svc: set, inc: float, reserve: float) -> N
     stall, bought by a kid with tactics; then the smith's inlay."""
     late = run.late
     stock, late['stall'] = late['stall'], []
-    if float(run.kv('supply') or 0.0) <= 0:
+    if float(run.kv('supply') or 0.0) <= 0 or run.floor < int(run.knobs.get('supply_from', 1) or 1):
         return
     fs = run.fs
     if not run.knobs.get('tactics'):
@@ -1441,6 +1458,8 @@ def _sig_blow(run, orig, m, atk, p, in_flurry):
         return orig(m, atk, p, in_flurry)
     ctr = has_counter(p, m, atk, kind)
     sig = float(run.knobs.get('sig', 0.0) or 0.0)
+    if int(getattr(m, 'peak_floor', 0) or 0) < int(run.knobs.get('sig_from', 1) or 1):
+        sig = 0.0
     hp0 = p.hp
     if ctr or sig <= 0:
         r = orig(m, atk, p, in_flurry)
@@ -1481,6 +1500,8 @@ def aura_amount(p, amount, damage_type):
     if fs is not None:
         _fsd(fs, 'sig_ctr' if ctr else 'sig_bare', 'aura')
     sig = float(run.knobs.get('sig', 0.0) or 0.0)
+    if run.floor < int(run.knobs.get('sig_from', 1) or 1):
+        sig = 0.0
     if ctr or sig <= 0:
         return amount
     return max(1, int(round(amount * sig)))
@@ -1502,6 +1523,8 @@ def prep(run, group) -> None:
     k = run.knobs
     if not (int(k.get('prep', 1) or 0) and k.get('tactics')
             and (float(run.kv('sig') or 0) > 0 or float(run.kv('supply') or 0) > 0)):
+        return
+    if run.floor < min(int(k.get('sig_from', 1) or 1), int(k.get('supply_from', 1) or 1)):
         return
     p, late, fs = run.p, run.late, run.fs
     need = {}

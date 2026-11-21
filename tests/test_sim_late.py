@@ -485,3 +485,31 @@ def test_the_counters_weigh_and_the_spare_ones_are_left_over_his_line():
     assert mirror in kept and len(kept) < 301
     assert run.p.get_current_weight() <= run._pack_line() + 1.0
     assert run.fs.get('sup_shed_ctr', 0) == 301 - len(kept)
+
+
+def test_the_hp_ramp_rises_with_the_peak_and_raise_only_never_lowers(late):
+    """The lead's ramp (2026-11-20 night): the answered target runs from hp_lo
+    at hp_from to hp_target at hp_ramp_to, by the kind's peak; raise_only keeps
+    a kind's own health when the target would lower it."""
+    import difficulty_sim as ds
+    import kind_data
+    knobs = ds.parse_knobs('hp_target=2.0,hp_plain=2.3,hp_from=41,hp_lo=1.5,hp_plain_lo=1.8,'
+                           'hp_ramp_to=81,hp_raise_only=1')
+    late.install(knobs)
+    rows = {r[0]: r for r in late._STATE['hp_rows']}
+    assert rows and all(pk >= 41 for (_k, pk, *_r) in rows.values())
+    for kind, (k, pk, how, step, old, new) in rows.items():
+        f = min(1.0, max(0.0, (pk - 41) / 40.0))
+        ans, plain = late.steps(MONS[kind])
+        b = (1.5 + f * 0.5) if ans is not None else (1.8 + f * 0.5)
+        st = ans if ans is not None else plain
+        want = max(1, int(round(late.x_for_blows(b, pk) * late.careful_blow(pk) * st)))
+        assert new == max(want, int(round(old)))
+        assert kind_data.defs()[kind]['hp'] == new >= int(round(old))
+
+
+def test_sig_from_and_supply_from_are_off_by_default_and_gate_by_depth():
+    import sim_late as sl
+    assert sl.KNOBS['sig_from'] == 1 and sl.KNOBS['supply_from'] == 1
+    src = open(sl.__file__, encoding='utf-8').read()
+    assert "getattr(m, 'peak_floor', 0)" in src and "supply_from" in src
