@@ -169,6 +169,16 @@ on by default, 0 its ablation; all seven at 0 is the fight before it):
                      or a spell is not slowed); a speed-14 creature strikes as it
                      arrives about half the time it closes at a fight's start
                      (every time it stepped in before), always from the queue.
+THE LATE GAME'S INSTRUMENTS (2026-11-20, tools/balance/sim_late.py; every
+knob defaults off and a default cell is the simulator as it was, its hooks
+only counting): overlay (per-kind monster data merged in before any floor is
+made, in every worker), hp_target / hp_plain / hp_from (a measurement
+stand-in for deep health written per kind from its affinity: LORE, NOT FLOOR,
+never a game rule), supply / supply_ahead (supply follows residence: carriers
+and counters for what lives ahead, in loot, chests, stalls and the smith's
+inlay), sig / prep (signature attacks need their counter), campaign (N runs a
+seed line, the dead kid remembering what killed him), the `cookonly`
+profile, and the late reports (sim_late.summary).
 SPEED, the game's rule, which the simulator follows (tests/test_sim_groups.py
 holds it to the real Game._advance_turn at monster speeds 10-20 and hero
 speeds 9-20): every monster takes one turn per world turn whatever its speed;
@@ -272,6 +282,8 @@ import sim_ai1                                   # noqa: E402  (AI-1: monster be
 import sim_ai3                                   # noqa: E402  (AI-3: monster behaviour, third wave)
 import sim_ai2                                   # noqa: E402  (AI-2: the Tactical Mind)
 import sim_groups                                # noqa: E402  (the group fight: the back rank, the clock)
+import sim_late                                  # noqa: E402  (the late game's instruments)
+import paths as paths_mod                        # noqa: E402  (sim_late's overlay reaches the locusts)
 from items import Flask                          # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
@@ -483,6 +495,12 @@ KNOB_DEFAULTS.update(sim_ai3.KNOBS)
 # grp_speed: 1 = the game's rule, 0 = its ablation. Each is described there.
 KNOB_DEFAULTS.update(sim_groups.KNOBS)
 # ---- end the group fight ----
+# ---- the late game's instruments (2026-11-20; tools/balance/sim_late.py) ----
+# overlay, hp_target, hp_plain, hp_from, hp_minis, hp_table, supply,
+# supply_ahead, sig, prep, recoat, campaign: every default off (described there).
+# overlay and hp_table are paths (string knobs).
+KNOB_DEFAULTS.update(sim_late.KNOBS)
+# ---- end the late game ----
 
 DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_quick',
                  'heavy_quick', 'medium_drag',
@@ -574,6 +592,9 @@ def parse_knobs(text) -> dict:
         if k not in KNOB_DEFAULTS:
             raise SystemExit(f"--knobs: unknown knob {k!r}. Valid: "
                              + ', '.join(sorted(KNOB_DEFAULTS)))
+        if isinstance(KNOB_DEFAULTS[k], str):          # sim_late: a path, kept as written
+            knobs[k] = str(v).strip()
+            continue
         if isinstance(v, (list, tuple)):
             v = ':'.join(str(x) for x in v)
         if isinstance(v, str) and '@' in v:
@@ -592,6 +613,8 @@ def parse_knobs(text) -> dict:
 
 def knobs_label(knobs: dict) -> str:
     def fmt(v):
+        if isinstance(v, str):
+            return os.path.basename(v) or "''"
         if isinstance(v, dict):
             return ';'.join(f"{x:g}@{f}" for f, x in sorted(v.items()))
         return ':'.join(f"{x:g}" for x in v) if isinstance(v, tuple) else f"{v:g}"
@@ -883,6 +906,16 @@ PROFILES['walkthrough'] = dict(
     rest_turns=0, quests=False,
     knobs=dict(mm_wards=0, mm_spells=0, mm_potions=0, mm_wands=0))
 
+# The cook-only kid (2026-11-20, tools/balance/sim_late.py: "is cooking plus
+# the best weapon enough?"). He cooks, eats and levels exactly as mastery (the
+# kitchen and the saver, gear, rest, prayer, the pet, quests, altars, magic,
+# practice, the traders' heal, potions and sharpening) and uses no tactics: no
+# study or probe (families 0), no coating, flask, arsenal swap, stance, stall
+# counter or smith inlay (tactics 0), and he buys no answers (sim_late's
+# supply sells only to tactics).
+PROFILES['cookonly'] = dict(PROFILES['mastery'], knobs=dict(
+    PROFILES['mastery']['knobs'], families=0, tactics=0))
+
 
 # ---- The Secret Builds the kids play (2026-11-16) ------------------------------
 # A build starts with its own stats (src/welcome_screen.py SECRET_BUILDS) and
@@ -1167,6 +1200,11 @@ class SimPlayer(Player):
     def take_damage(self, amount, damage_type='physical'):
         if self._incoming_scale != 1.0 and amount > 0:
             amount = max(1, round(amount * self._incoming_scale))
+        _sm = self.__dict__.get('_sig_mult', 1.0)        # sim_late: a signature attack, no counter
+        if _sm != 1.0 and amount > 0:
+            amount = max(1, round(amount * _sm))
+        if self.__dict__.get('_sim_aura'):                # sim_late: an aura's heat or cold
+            amount = sim_late.aura_amount(self, amount, damage_type)
         before = self.hp
         actual = super().take_damage(amount, damage_type)
         self._dmg_taken += max(0, before - self.hp)
@@ -1287,14 +1325,15 @@ def fresh_monster(proto: Monster, knobs: dict, floor: int = 1) -> Monster:
     if hit:
         m.thac0 = proto.thac0 - int(hit)
     if knobs['dmg_cap'] > 0 and not is_named(proto):
-        key = ('cap', proto.kind, knobs['dmg_cap'])
+        key = ('cap', proto.kind, knobs['dmg_cap'], bool(knobs.get('sig')))
         atks = _POOL_CACHE.get(key)
         if atks is None:
             limit = knobs['dmg_cap'] * target_dmg(getattr(proto, 'peak_floor', 1) or 1)
             atks = []
             for a in proto.attacks:
                 if dice_mean(a.get('damage')) > limit:
-                    a = dict(a, damage=dice_for_average(limit))
+                    a = dict(a, damage=dice_for_average(limit),
+                             **({'_sim_full_damage': a.get('damage')} if knobs.get('sig') else {}))
                 atks.append(a)
             _POOL_CACHE[key] = atks
         m.attacks = atks
@@ -1678,6 +1717,7 @@ class Run(_MMMagicSim):
         self._probe_charges = 0    # Wand of Probing charges carried (tactics=1)
         self.flasks = []           # coatings and thrown flasks carried (slice 5)
         self._give_starting_kit()
+        sim_late.attach(self)      # the late game's state (supply, counters, memory)
 
     def _healed(self, source: str, got) -> None:
         """Count HP actually healed, by where it came from."""
@@ -1842,6 +1882,8 @@ class Run(_MMMagicSim):
             return 1.0
 
     def _knows(self, kind) -> bool:
+        if kind in self.__dict__.get('late_memory', ()):    # sim_late: a past run's death screen
+            return True
         # The quest teaches the boss (slice 3: each gate boss's quest step
         # opens his page, and the quest-giver names his weakness).
         if self.prof.get('quests') and kind in QUEST_TAUGHT:
@@ -1978,7 +2020,9 @@ class Run(_MMMagicSim):
             if m > best_m:
                 best, best_m = it, m
         if best is not None:
+            sim_late.on_coat(self, w, best)
             coatings_mod.apply(p, best)
+            sim_late.after_coat(self, w, best)
             self.flasks.remove(best)
             self.fs['coatings'] = self.fs.get('coatings', 0) + 1
             self._sync_pack()
@@ -2000,6 +2044,7 @@ class Run(_MMMagicSim):
                 best, best_v = it, v
         if best is None:
             return False
+        sim_late.on_throw(self, best, target)
         coatings_mod.throw_at(best, target)
         self.flasks.remove(best)
         self.fs['flasks_thrown'] = self.fs.get('flasks_thrown', 0) + 1
@@ -2116,6 +2161,7 @@ class Run(_MMMagicSim):
         self._visit = {'goods': 0.0, 'service': 0.0}
         try:
             self._shop_at(floor, inc, defn, svc, share, reserve)
+            sim_late.shop(self, floor, defn, svc, inc, reserve)    # supply's stall and smith
         finally:
             self._sell_outgrown(floor, defn)
             self._visit = None
@@ -2222,10 +2268,12 @@ class Run(_MMMagicSim):
         what he has outgrown: with tradein >= 1 the gear let go of here waits
         for the next stall (_sell_outgrown)."""
         p = self.p
+        _before = list(self.flasks)
         self._fit_pack()
+        sim_late.on_shed(self, _before)
         new = (list(self.arsenal) + list(self.scraps)
                + list(self.potions) + list(self.food) + list(self.flasks)
-               + list(self.pantry))
+               + list(self.pantry) + sim_late.kit(self))
         if self.knobs.get('traders') and int(self.kv('tradein') or 0) > 0:
             keep = {id(x) for x in new} | {id(x) for x in p.worn_items()}
             pile = getattr(self, '_to_sell', None)
@@ -2322,7 +2370,8 @@ class Run(_MMMagicSim):
         worn = sum(self._wt(it) for it in p.worn_items())
         carried = (sum(self._wt(x) for x in self.arsenal) + sum(self._wt(x) for x in self.scraps)
                    + sum(self._wt(x) for x in self.potions) + sum(self._wt(x) for x in self.food)
-                   + sum(self._wt(x) for x in self.flasks) + sum(self._wt(x) for x in self.pantry))
+                   + sum(self._wt(x) for x in self.flasks) + sum(self._wt(x) for x in self.pantry)
+                   + sum(self._wt(x) for x in sim_late.kit(self)))     # sim_late's counters
         total_lb = worn + carried + p.purse_weight()
         # The profile's line (Light for the Dexterity build) is for what he
         # can spare: food past a belly, coin, spare weapons, flasks. What he
@@ -2376,6 +2425,8 @@ class Run(_MMMagicSim):
             shed(self.arsenal, self._weapon_score)
         if over > 0:
             shed(self.flasks, lambda it: 0)
+        if over > 0:
+            over = sim_late.shed_kit(self, over, fs)     # 4b. sim_late's counters (none by default)
         # What he needs only past the Heavy line.
         over -= max(0.0, need_line - spare_line)
         # (5. The pantry weighs nothing since 2026-11-16: weightless_part.)
@@ -3914,6 +3965,8 @@ class Run(_MMMagicSim):
                     elif prof.get('magic') and self.cast_attack(
                             target, [m for m in active + queue if m.alive]):
                         action = 'cast'
+                    elif sim_late.recoat(self, target):     # recoat=1: a coating, his action
+                        action = 'coat'
                     elif self._tactical_pick(target, free=False):
                         action = 'swap'
                     elif self._throw_flask(target):
@@ -4025,7 +4078,7 @@ class Run(_MMMagicSim):
     def _locust(self):
         defs = self._drop_pool.get('locust')
         if defs is None:
-            with open(os.path.join(_REPO, 'data', 'monsters.json'), encoding='utf-8') as f:
+            with open(paths_mod.data_path('data', 'monsters.json'), encoding='utf-8') as f:
                 defs = json.load(f).get('abyssal_locust')
             self._drop_pool['locust'] = defs
         if not defs:
@@ -4125,7 +4178,9 @@ class Run(_MMMagicSim):
             self.quiz.stop_at = stop
         else:
             self.quiz.stop_at = None
+        _late = sim_late.blow_pre(self, target)
         combat.player_attack(p, target, self.quiz, lambda *a, **kw: None)
+        sim_late.blow_post(self, target, _late)
 
     # ------------------------------------------------------------- floor by floor
     def _record_monster(self, m):
@@ -4140,6 +4195,7 @@ class Run(_MMMagicSim):
             if n == 1:
                 fs['one_shots'] += 1
         fs['dmg_per_mon'] += m._sim_dmg / max(1, self.p.max_hp)
+        sim_late.on_record(self, m)
 
     def _drop_loot(self, m):
         """game_combat._drop_treasure / _spawn_treasure_item, and a named
@@ -4197,9 +4253,12 @@ class Run(_MMMagicSim):
         """Run a fight, book the results. Returns False if the run should stop
         this floor (death)."""
         p = self.p
+        sim_late.prep(self, group)             # sim_late: his counters for what he knows
         dmg0, t0 = p._dmg_taken, self.turn
         p._fight_low = p.hp / max(1, p.max_hp)
         result = self.fight(group, mandatory=mandatory, boss_ctx=boss_ctx)
+        sim_late.unprep(self)
+        sim_late.on_fight(self, group)
         self._book_fight(group, result, (p._dmg_taken - dmg0) / max(1, p.max_hp), t0)
         kills = 0
         for m in group:
@@ -4338,6 +4397,7 @@ class Run(_MMMagicSim):
         self._forage()
 
         self.find_secrets(floor)
+        sim_late.floor_start(self, floor)    # supply follows residence (sim_late)
         self.shop(floor)
         self.rededicate(floor)
         self._sync_pack()
@@ -4608,6 +4668,8 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
     knobs = parse_knobs(knobs) if not isinstance(knobs, dict) or \
         set(knobs) != set(KNOB_DEFAULTS) else knobs
     install_caches()
+    sim_late.install(knobs)                       # the overlay and the HP stand-in, before any floor
+    sim_late.cell_begin()
     apply_defence_knobs(knobs)
     packs_mod.ENABLED = bool(knobs.get('packs', 1))
     lore_powers_mod.ENABLED = bool(knobs.get('mm_powers', 1))     # slice M
@@ -4619,8 +4681,14 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
     lo, hi = floors
     total = {}
     boss_rows = []
+    late = {}
+    camp_n = max(1, int(knobs.get('campaign', 1) or 1))
     t0 = time.time()
     for t in range(trials):
+        if camp_n > 1:                            # sim_late: N runs a seed line, remembering
+            sim_late.campaign_line(sys.modules[__name__], cache, profile, accuracy, speed, policy,
+                                   engagers, knobs, lo, hi, total, boss_rows, late)
+            continue
         run = Run(cache, profile, accuracy, speed, policy, engagers, knobs)
         for f in range(1, lo):                    # gear up without fighting
             run.play_floor(f, fights=False)
@@ -4629,15 +4697,16 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
             run.p.hp = run.p.max_hp
         for f in range(lo, hi + 1):
             run.play_floor(f)
+        sim_late.run_end(run)
         merge_stats(total, run.stats)
         boss_rows += run.boss_rows
         if not quiet and (t + 1) % 10 == 0:
             print(f"  .. {profile} acc={accuracy} trial {t + 1}/{trials} "
                   f"({time.time() - t0:.0f}s)", file=sys.stderr)
-    return dict(profile=profile, accuracy=accuracy, trials=trials, floors=floors,
+    return dict(profile=profile, accuracy=accuracy, trials=trials * camp_n, floors=floors,
                 knobs=knobs, speed=speed, policy=policy, engagers=engagers,
                 stats=total, boss_rows=boss_rows, seconds=time.time() - t0,
-                gen_failures=list(GEN_FAILURES))
+                gen_failures=list(GEN_FAILURES), late=dict(sim_late.cell_late(knobs), **late))
 
 
 def _run_cell_star(kw):

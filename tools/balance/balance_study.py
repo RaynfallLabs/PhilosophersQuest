@@ -20,7 +20,9 @@ The players:
 Usage:
     py tools/balance/balance_study.py <out_dir> <runs> <set> [set ...]
     py tools/balance/balance_study.py --report <out_dir> [lo-hi]
-Sets: see SETS below. MC_WORKERS (default 10) sets the pool.
+Sets: see SETS below; late[:<overlay.json>] and late_more[:<overlay.json>] are the
+late game's instruments (late_set). MC_WORKERS (default 10) sets the pool.
+A cell's late-game table: py tools/balance/sim_late.py --summary <out_dir>/<cell>.pkl
 """
 import os
 import pickle
@@ -197,6 +199,27 @@ def groupfight_set():
 SETS['groupfight'] = groupfight_set()
 
 
+# The late game's instruments (2026-11-20, tools/balance/sim_late.py): the
+# careful kid (mastery, KID_FAST, two at once, the whole game) with each knob
+# alone, and with them together; set name `late` (no overlay cell) or
+# `late:<overlay.json>` (tools/balance/bane_synth.py writes one). `late_more`
+# adds the cook-only and walk-through kids, bare and with every knob.
+def late_set(overlay='', more=False):
+    ov = f'overlay={overlay}' if overlay else ''
+    rows = [('base', ''), ('hp17', 'hp_target=1.7'), ('sup1', 'supply=1'), ('sig15', 'sig=1.5'),
+            ('camp4', 'campaign=4')]
+    if ov:
+        rows.insert(1, ('synth', ov))
+        rows.append(('all', ov + ',hp_target=1.7,supply=1,sig=1.5,recoat=1'))
+    out = [cell(f'LT_{tag}', 'mastery', 'kid', KID_FAST, kn, (1, 100), 2) for tag, kn in rows]
+    if more:
+        every = ','.join(x for x in (ov, 'hp_target=1.7,supply=1,sig=1.5,recoat=1') if x)
+        for prof in ('cookonly', 'walkthrough'):
+            out += [cell(f'LT_{prof}_base', prof, 'kid', KID_FAST, '', (1, 100), 2),
+                    cell(f'LT_{prof}_all', prof, 'kid', KID_FAST, every, (1, 100), 2)]
+    return out
+
+
 def full_lever_set(tags):
     """The whole game under the chosen levers (set name full:<tag>+<tag>)."""
     out = []
@@ -246,6 +269,7 @@ def merge(a, b):
     a['boss_rows'] += b['boss_rows']
     a['trials'] += b['trials']
     a['wall'] += b['wall']
+    ds.sim_late.merge_late(a, b)          # the late game's parts (campaign, the blow meter)
     return a
 
 
@@ -255,6 +279,8 @@ def main(argv):
     for s in argv[2:]:
         if s.startswith('full:'):
             cells += full_lever_set(set(s[5:].split('+')))
+        elif s.split(':', 1)[0] in ('late', 'late_more'):
+            cells += late_set(s.split(':', 1)[1] if ':' in s else '', s.startswith('late_more'))
         elif s in SETS:
             cells += SETS[s]
         else:

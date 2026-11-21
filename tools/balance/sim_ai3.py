@@ -160,7 +160,12 @@ def world_tick(run, active: list) -> None:
     if p.__dict__.get('_held') is not None:
         holds.validate(p, active)
     if run.knobs.get('ai3_aura', 1):
-        auras.pulse(active, p, None)
+        import sim_late                  # an aura's heat or cold is a signature attack (sim_late)
+        sim_late.aura_begin(run)
+        try:
+            auras.pulse(active, p, None)
+        finally:
+            sim_late.aura_end(run)
     for m in active:
         m.__dict__.pop('_ai_lines', None)
 
