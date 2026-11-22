@@ -3459,6 +3459,12 @@ class Run(_MMMagicSim):
         out = [r for r in kitchen_mod.ready_dishes(inv) if not kitchen_mod.song_of(r)]
         if tab:
             out = [r for r in out if kitchen_mod.dish_tab(r) == tab]
+        if not spend_held and self.p.hp >= 0.3 * self.p.max_hp:
+            # The menu lists a meal that would spend the floor's stat lesson
+            # last and says so (kitchen.lesson_spent): he keeps the part,
+            # unless he is near death.
+            held_now = kitchen_mod.held_counts(inv)
+            out = [r for r in out if not kitchen_mod.lesson_spent(self.p, r, held_now)]
         if not spend_held:
             hold = self._feast_hold()
             if hold:
@@ -3475,7 +3481,8 @@ class Run(_MMMagicSim):
             return False
         ready = self._ready(tab)
         if not ready and tab == 'hp':
-            ready = self._ready()                  # every dish heals a little
+            # every dish heals a little, but plain fare off the HP tab
+            ready = [r for r in self._ready() if not kitchen_mod.is_plain_fare(r)]
         if not ready and tab == 'hp' and self.p.hp < 0.3 * self.p.max_hp:
             ready = self._ready(spend_held=True)   # near death: anything
         if not ready:

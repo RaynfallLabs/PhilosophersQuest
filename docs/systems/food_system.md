@@ -331,6 +331,11 @@ their stat.
 - **Both** give at least `rungs.cooked_over_raw` (1.25) of the SP and HP their ingredients give
   eaten as they are.
 
+A step whose part is the hero's only one, and would teach him this floor cooked alone, is listed
+last among the ready dishes and says "Cooked alone, Cobra Tail Steak teaches DEX +1"
+(`kitchen.lesson_spent`, `lesson_line`): without it the simulated committed build lost the
+lesson on about one floor in fifteen.
+
 So the ladder is: two staples (worth 0.72), the part alone (1.0), three staples (1.2), part and
 staple (1.8, as four staples), two parts (2.4), and the big dishes above them.
 
@@ -517,7 +522,8 @@ and what its dish gives. Enter or Esc keeps it; Y goes ahead. The cow and the Em
 - `menu_rows(player, inventory, tab)` returns rows (dicts: `id`, `recipe`, `name`, `group`,
   `ready`, `legendary`, `trophy`, `tier`, `have` / `missing` lists of `{id, name, have, need}`,
   `progress` "2 of 4", `value`, `effects`, `hunted`) in three groups:
-  1. **ready** — cookable now, the most giving first (`dish_value`);
+  1. **ready** — cookable now, the most giving first (`dish_value`: plain fare after every dish
+     with a part), and last any that would spend the floor's stat lesson (`lesson`, §4.5);
   2. **building** — the hero holds at least one HARVESTED part of it (a monster part or trophy)
      or a special food of it (§4.4; `is_keystone`; a ration or a foraged find alone does not
      count, or bread would list a hundred dishes) but not all, or the hero has learned of it

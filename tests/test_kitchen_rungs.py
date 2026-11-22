@@ -378,3 +378,45 @@ def test_reflex_ward_dish_raises_the_save_against_slowing():
     kitchen.apply_dish(p, rec)
     assert p.status_effects.get('save_guard_DEX', 0) > 0
     assert p.save_bonus_for('DEX') > before
+
+
+# ---------------------------------------------------------------------------
+# A step never takes the floor's stat lesson unsaid (the 2026-11-22 measure:
+# the committed build lost it on about one floor in fifteen)
+# ---------------------------------------------------------------------------
+
+def _stat_step():
+    return next(r for r in _rung('step') if kitchen.dish_tier(r) == 1
+                and kitchen.ingredients()[kitchen.parts(r)[0]]['nature'] == 'stat')
+
+
+def test_a_step_that_would_spend_the_lesson_says_so_and_is_listed_last():
+    from player import Player
+    rec = _stat_step()
+    part, staple = kitchen.parts(rec)
+    stat = kitchen.dish_stat(kitchen.single_dish_for(part))
+    p = Player()
+    one = Counter({part: 1, staple: 1})
+    assert kitchen.lesson_spent(p, rec, one) == stat
+    assert kitchen.lesson_line(p, rec, one) == \
+        f"Cooked alone, {kitchen.part_name(part)} teaches {stat} +1"
+    assert kitchen.lesson_spent(p, rec, Counter({part: 2, staple: 1})) is None      # a spare
+    assert p.feed_cut_stat(stat, 1) > 0
+    assert kitchen.lesson_spent(p, rec, one) is None                  # the lesson is used
+
+
+def test_keys_the_cook_menu_lists_it_last_and_says_why():
+    rec = _stat_step()
+    part, staple = kitchen.parts(rec)
+    g = _game()
+    other = next(s for s in ('bread_ration', 'hard_cheese', 'dried_meat', 'apple', 'trail_rations')
+                 if s != staple)
+    _pack(g, part, staple, other, 'cave_bear_prime', 'imp_prime', 'fire_beetle_prime', 'goblin_prime')
+    _press(g, pygame.K_c, 'c')
+    rows = [r for r in g._cook_tab_rows(kitchen.dish_tab(rec)) if r['ready']]
+    assert rows[-1]['id'] == rec['id'], [r['id'] for r in rows]
+    assert rows[-1]['lesson'] == kitchen.lesson_line(g.player, rec, g._cook_counts)
+    while g._cook_tab_slug() != kitchen.dish_tab(rec):
+        _press(g, pygame.K_RIGHT)
+    g._cook_sel = len(rows) - 1
+    g.render()

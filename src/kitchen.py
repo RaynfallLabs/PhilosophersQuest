@@ -960,6 +960,27 @@ def item_hunted(item, parts) -> bool:
     return bool(parts) and resolve(getattr(item, 'id', '') or '') in parts
 
 
+def lesson_spent(player, rec: dict, counts):
+    """The stat whose lesson this step would spend, or None: its part, the
+    only one held, would teach the hero that stat this floor cooked on its
+    own. The menu lists such a dish last and says so (``lesson_line``): a
+    hurt hero took the biggest meal and lost the floor's lesson with it
+    (the measure of 2026-11-22)."""
+    if rung_of(rec) != 'step':
+        return None
+    part = parts(rec)[0]
+    if counts.get(part, 0) != 1:
+        return None
+    single = single_dish_for(part)
+    return dish_stat(single) if single and _would_teach(player, single) else None
+
+
+def lesson_line(player, rec: dict, counts) -> str:
+    """"Cooked alone, Cobra Tail Steak teaches DEX +1", or ''."""
+    stat = lesson_spent(player, rec, counts)
+    return f"Cooked alone, {part_name(parts(rec)[0])} teaches {stat} +1" if stat else ''
+
+
 def _row(player, rec: dict, counts: Counter) -> dict:
     need = needs(rec)
     have, missing = [], []
@@ -979,13 +1000,15 @@ def _row(player, rec: dict, counts: Counter) -> dict:
         'progress': f"{len(have)} of {len(need)}",
         'value': dish_value(player, rec), 'effects': dish_effects(player, rec),
         'hunted': (not ready) and is_hunted(player, rec['id']),
+        'lesson': lesson_line(player, rec, counts),
     }
 
 
 def menu_rows(player, inventory, tab: str) -> list:
     """The cook menu's rows for one tab, in three groups (``row['group']``):
 
-    1. ``ready``: dishes the pack can cook now, the most giving first;
+    1. ``ready``: dishes the pack can cook now, the most giving first, and
+       last any that would spend the floor's stat lesson (``lesson_spent``);
     2. ``building``: dishes the hero holds at least one HARVESTED part of
        (a monster part or a trophy) or a special food of (the Magic
        Dungeon Carrot: ``is_keystone``; a ration or a foraged find alone
@@ -1018,7 +1041,7 @@ def menu_rows(player, inventory, tab: str) -> list:
     def key(row):
         closeness = row['have_count'] / max(1, row['need_count'])
         if row['group'] == 'ready':
-            return (order['ready'], 0, -row['value'], row['name'])
+            return (order['ready'], 1 if row['lesson'] else 0, -row['value'], row['name'])
         if row['group'] == 'building':
             return (order['building'], 0, -closeness, len(row['missing']), -row['value'], row['name'])
         return (order['legendary'], 0 if row['ready'] else 1, -closeness, -row['value'], row['name'])
