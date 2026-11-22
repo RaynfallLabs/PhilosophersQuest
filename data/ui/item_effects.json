@@ -1,0 +1,821 @@
+{
+  "_note": "What a scroll, potion, wand or spellbook does, one plain line each (src/item_words.py). Keyed by the item's class, then its `effect` id (a spellbook by class alone); `by_id` holds the few kinds whose own handler differs from their effect's. `line` is the sentence on the Kit card, the read / quaff / zap menu card, the Lore page and the Encyclopedia; `short` is the Kit list's Effect column and the menu rows. Either may be a list of five, one per tier (the scroll's own `tier`, else its quiz tier). `tiers` are the handler's own ladders (index = tier - 1), with a `<name>_blessed` or `<name>_cursed` ladder where the blessing or the curse changes the number (used only when the copy's blessing is known). `blessed` / `cursed` are a note added after the line when the copy's blessing is known; `line_blessed` / `line_cursed` replace the line. Placeholders are filled by item_words from the item and the hero: {power} the item's dice, {turns} its turns as the handler lays them (a potion's cut by the status cap), {least} a heal's share of the hero's health, {damage} a wand's damage range (by its tier and the hero's Intelligence), {int_note} ' (more with Intelligence)' when no hero is given, {share} the earth's share of each creature's health, {ward} a family ward's words (data/wards.json), {also} what a protection rite also keeps off, {family} the family a tune or a clash drives off, {sight} the light status's sight. Keep every line TRUE to its handler: src/game_magic.py (_apply_scroll_effect, _apply_wand_effect), src/game_wards.py (_mm_scroll, _mm_wand, _protection_also), src/food_system.py (drink_potion) and src/game_menus.py (the quiz draughts). tests/test_item_words.py pins the ladders and the numbers to them. Plain player text: no code ids, no 'tier'; he, she or it for one creature.",
+  "fallback": "What it does is not written down.",
+  "charges": "{charges} of {max_charges} charges left.",
+  "charges_found": "Found with {charges_min} to {charges_max} charges.",
+  "charges_fixed": "Found with {charges} charges.",
+  "int_note": " (more with Intelligence)",
+  "least_words": "{pct}% of your health",
+  "least_words_hero": "{pct}% of your health ({n})",
+  "boss_cap": "a boss for 2 at most",
+  "radius_words": "as far as you can see (4 tiles at least)",
+  "radius_hero": "within {n} tiles of you",
+  "family_words": {
+    "vermin": "rat, spider or swarm",
+    "birds": "bird or winged hunter"
+  },
+  "protection_also": {
+    "all_round_ward": "no pack gains anything by surrounding you",
+    "missile_ward": "no arrow, stone or spear reaches you",
+    "fear_immune": "nothing can frighten you",
+    "petrify_immune": "nothing can turn you to stone",
+    "fire_shield": "fire cannot hurt you"
+  },
+  "protection_also_line": " For {n} turns, also: {words}.",
+  "scroll": {
+    "heal": {
+      "line": "Heals {power} health, or {least} if that is more.",
+      "short": "Heals {power} or more",
+      "blessed": "Blessed, it heals twice as much.",
+      "cursed": "Cursed, it heals half as much."
+    },
+    "summon_stray_kids": {
+      "line": "Reading it calls the band to dance round you for {dance_turns} turns; the monsters near them stop to watch.",
+      "short": "The band dances round you"
+    },
+    "boss_reward": {
+      "line": "Reading it shows your reward code for this victory: show it to Dad for a real-life reward. It stays in your pack, to read again.",
+      "short": "Shows a reward code for Dad"
+    },
+    "lake_of_fire": {
+      "line": "Reading it speaks its inscription, and it stays with you. Its power waits for its own place and hour.",
+      "short": "Its power waits for its place"
+    },
+    "mapping": {
+      "tiers": {"radius": [6, 12, 22, 40, 999]},
+      "line": [
+        "Maps the floor within {radius} tiles of you.",
+        "Maps the floor within {radius} tiles of you.",
+        "Maps the floor within {radius} tiles of you.",
+        "Maps the floor within {radius} tiles of you.",
+        "Maps the whole floor."
+      ],
+      "short": [
+        "Maps {radius} tiles around you",
+        "Maps {radius} tiles around you",
+        "Maps {radius} tiles around you",
+        "Maps {radius} tiles around you",
+        "Maps the whole floor"
+      ]
+    },
+    "identify": {
+      "line": [
+        "Identifies one item you choose.",
+        "Identifies the first 2 unknown things you carry or stand on.",
+        "Identifies the first 3 unknown things you carry or stand on.",
+        "Identifies everything you carry and stand on.",
+        "Identifies everything you carry and stand on, and opens the lore of one corpse's kind you carry."
+      ],
+      "short": [
+        "Identifies one item",
+        "Identifies 2 items",
+        "Identifies 3 items",
+        "Identifies everything you carry",
+        "Identifies everything you carry"
+      ],
+      "blessed": "Blessed, it identifies everything you carry and stand on.",
+      "line_cursed": "Cursed, it makes you forget one kind of thing you knew.",
+      "short_cursed": "Makes you forget a kind"
+    },
+    "enchant_weapon": {
+      "tiers": {"delta": [1, 1, 1, 2, 3], "delta_blessed": [2, 2, 2, 3, 4]},
+      "line": [
+        "Adds +{delta} to the weapon in your hand, up to what it can hold.",
+        "Adds +{delta} to the weapon in your hand, up to what it can hold.",
+        "Adds +{delta} to your melee weapon and your bow, up to what each can hold.",
+        "Adds +{delta} to your melee weapon and your bow, up to what each can hold.",
+        "Adds +{delta} to your melee weapon and your bow, up to what each can hold."
+      ],
+      "short": [
+        "+{delta} to your weapon",
+        "+{delta} to your weapon",
+        "+{delta} to your weapons",
+        "+{delta} to your weapons",
+        "+{delta} to your weapons"
+      ],
+      "line_cursed": "Cursed, it takes 1 off your weapon instead.",
+      "short_cursed": "Takes 1 off your weapon"
+    },
+    "enchant_armor": {
+      "tiers": {"delta": [1, 1, 1, 2, 3], "delta_blessed": [2, 2, 2, 3, 4], "pieces": [1, 2, 3, 4, 99]},
+      "line": [
+        "Adds +{delta} to one piece of armour you wear, body armour and shield first. A piece that gives no armour class gains enchantment levels instead.",
+        "Adds +{delta} to {pieces} pieces of armour you wear, body armour and shield first. A piece that gives no armour class gains enchantment levels instead.",
+        "Adds +{delta} to {pieces} pieces of armour you wear, body armour and shield first. A piece that gives no armour class gains enchantment levels instead.",
+        "Adds +{delta} to {pieces} pieces of armour you wear, body armour and shield first. A piece that gives no armour class gains enchantment levels instead.",
+        "Adds +{delta} to every piece of armour you wear. A piece that gives no armour class gains enchantment levels instead."
+      ],
+      "short": [
+        "+{delta} to one piece of armour",
+        "+{delta} to {pieces} pieces of armour",
+        "+{delta} to {pieces} pieces of armour",
+        "+{delta} to {pieces} pieces of armour",
+        "+{delta} to all your armour"
+      ],
+      "line_cursed": "Cursed, it takes 1 off your armour instead.",
+      "short_cursed": "Takes 1 off your armour"
+    },
+    "enchant_item": {
+      "tiers": {"delta": [1, 1, 1, 2, 3], "delta_blessed": [2, 2, 2, 3, 4], "count": [1, 2, 3, 5, 99]},
+      "line": [
+        "Adds +{delta} to the first thing you have equipped (weapons first, then armour, shield and rings).",
+        "Adds +{delta} to the first {count} things you have equipped (weapons first, then armour, shield and rings).",
+        "Adds +{delta} to the first {count} things you have equipped (weapons first, then armour, shield and rings).",
+        "Adds +{delta} to the first {count} things you have equipped (weapons first, then armour, shield and rings).",
+        "Adds +{delta} to everything you have equipped."
+      ],
+      "short": [
+        "+{delta} to one equipped thing",
+        "+{delta} to {count} equipped things",
+        "+{delta} to {count} equipped things",
+        "+{delta} to {count} equipped things",
+        "+{delta} to all you have equipped"
+      ],
+      "line_cursed": "Cursed, it takes 1 off what you have equipped instead.",
+      "short_cursed": "Takes 1 off your gear"
+    },
+    "remove_curse": {
+      "line": [
+        "Lifts the curse from one cursed piece you wear, and any hex on you.",
+        "Lifts the curse from everything you wear, and any hex on you.",
+        "Lifts the curse from everything you wear and any hex on you, and cures your ailments.",
+        "Lifts the curse from everything you wear and carry and any hex on you, and cures your ailments.",
+        "Lifts the curse from everything you wear and carry and any hex on you, cures your ailments, and blesses one piece you wear."
+      ],
+      "short": [
+        "Uncurses one worn piece",
+        "Uncurses all you wear",
+        "Uncurses all you wear, cures ailments",
+        "Uncurses all you own, cures ailments",
+        "Uncurses all you own, blesses a piece"
+      ],
+      "blessed": "Blessed, it reaches everything you wear and carry, and cures your ailments too.",
+      "line_cursed": "Cursed, it does nothing.",
+      "short_cursed": "Does nothing"
+    },
+    "confuse_monsters": {
+      "tiers": {"turns": [3, 6, 10, 16, 25]},
+      "line": "Confuses every monster in sight for {turns} turns ({boss_cap}); the mindless are not muddled.",
+      "short": "Confuses all in sight, {turns} turns"
+    },
+    "sleep_monsters": {
+      "tiers": {"turns": [3, 6, 10, 16, 25]},
+      "line": "Puts every monster in sight to sleep for {turns} turns ({boss_cap}); the undead and the made never sleep.",
+      "short": "Sleeps all in sight, {turns} turns"
+    },
+    "haste_self": {
+      "power_turns": {"default": 15, "mult": [0.4, 0.7, 1.0, 1.6, 2.5], "least": 3},
+      "line": "Hastes you for {turns} turns: monsters act half as often.",
+      "short": "Hastes you for {turns} turns"
+    },
+    "teleport_self": {
+      "line": [
+        "Throws you to a random place on this floor.",
+        "Throws you to a random place on this floor.",
+        "Takes you to a random place on this floor that you have explored.",
+        "Takes you to a random place on this floor that you have explored.",
+        "Takes you straight to the stairs down."
+      ],
+      "short": [
+        "Teleports you at random",
+        "Teleports you at random",
+        "Teleports you somewhere explored",
+        "Teleports you somewhere explored",
+        "Takes you to the stairs down"
+      ]
+    },
+    "charging": {
+      "line": [
+        "Adds 1 charge to your most drained wand.",
+        "Adds 1 charge each to your 2 most drained wands.",
+        "Adds 1 charge to every wand you carry.",
+        "Adds 2 charges to every wand you carry.",
+        "Fills every wand you carry to its full charges."
+      ],
+      "short": [
+        "+1 charge to a wand",
+        "+1 charge to 2 wands",
+        "+1 charge to every wand",
+        "+2 charges to every wand",
+        "Fills every wand"
+      ]
+    },
+    "annihilate": {
+      "line": [
+        "Destroys the 4 weakest creatures in sight. Bosses and the mightiest are untouched.",
+        "Destroys the 4 weakest creatures in sight. Bosses and the mightiest are untouched.",
+        "Destroys the 4 weakest creatures in sight. Bosses and the mightiest are untouched.",
+        "Destroys the weaker half of the creatures in sight. Bosses and the mightiest are untouched.",
+        "Destroys every creature in sight. Bosses and the mightiest are untouched."
+      ],
+      "short": [
+        "Destroys the 4 weakest in sight",
+        "Destroys the 4 weakest in sight",
+        "Destroys the 4 weakest in sight",
+        "Destroys the weaker half in sight",
+        "Destroys all in sight"
+      ]
+    },
+    "time_stop_scroll": {
+      "power_turns": {"default": 10, "mult": [0.3, 0.6, 1.0, 1.5, 2.5], "least": 2},
+      "line": "Stops time for {turns} turns: monsters cannot act.",
+      "short": "Stops time for {turns} turns"
+    },
+    "great_power": {
+      "line": [
+        "Raises your lowest stat by 1 for good. Luck gives only so many stat points in a run.",
+        "Raises your lowest stat by 1 for good. Luck gives only so many stat points in a run.",
+        "Raises your lowest stat by 1 for good. Luck gives only so many stat points in a run.",
+        "Raises your lowest stat by 1 for good. Luck gives only so many stat points in a run.",
+        "Raises your two lowest stats by 1 each for good. Luck gives only so many stat points in a run."
+      ],
+      "short": [
+        "+1 to your lowest stat",
+        "+1 to your lowest stat",
+        "+1 to your lowest stat",
+        "+1 to your lowest stat",
+        "+1 to your two lowest stats"
+      ]
+    },
+    "earth": {
+      "line": "Boulders fall on every creature in sight: each loses {share} of its health{int_note}, the mightiest a tenth of that.",
+      "short": "All in sight lose {share} of health"
+    },
+    "protection": {
+      "tiers": {"turns": [10, 20, 30, 50, 80], "turns_cursed": [10, 20, 30, 50, 60]},
+      "line": "Shields you for {turns} turns: 2 points of armour, and blows do half their harm.{also}",
+      "short": "Shields you for {turns} turns",
+      "cursed": "Cursed, it gives the shield alone."
+    },
+    "enchant_accessory": {
+      "tiers": {"delta": [0, 1, 1, 2, 3], "delta_blessed": [2, 2, 2, 3, 4], "count": [1, 1, 2, 3, 99]},
+      "line": [
+        "Uncursed, it does nothing; blessed, it strengthens a ring or amulet you wear by {delta_blessed}.",
+        "Strengthens one ring or amulet you wear by {delta}, rings first.",
+        "Strengthens {count} of the rings and amulet you wear by {delta} each, rings first.",
+        "Strengthens {count} of the rings and amulet you wear by {delta} each, rings first.",
+        "Strengthens every ring and amulet you wear by {delta}."
+      ],
+      "line_blessed": [
+        "Strengthens one ring or amulet you wear by {delta}, rings first.",
+        "Strengthens one ring or amulet you wear by {delta}, rings first.",
+        "Strengthens {count} of the rings and amulet you wear by {delta} each, rings first.",
+        "Strengthens {count} of the rings and amulet you wear by {delta} each, rings first.",
+        "Strengthens every ring and amulet you wear by {delta}."
+      ],
+      "short": [
+        "Nothing unless blessed",
+        "+{delta} to a ring or amulet",
+        "+{delta} to {count} rings or amulet",
+        "+{delta} to {count} rings or amulet",
+        "+{delta} to all rings and amulet"
+      ],
+      "line_cursed": "Cursed, it weakens the rings and amulet you wear by 1 instead.",
+      "short_cursed": "Weakens your rings"
+    },
+    "genocide": {
+      "line": [
+        "Erases a quarter of the most common kind in sight, wherever they are on this floor. Bosses and the mightiest are spared.",
+        "Erases half of the most common kind in sight, wherever they are on this floor. Bosses and the mightiest are spared.",
+        "Erases every creature of the most common kind in sight from this whole floor. Bosses and the mightiest are spared.",
+        "Erases every creature of the two most common kinds in sight from this whole floor. Bosses and the mightiest are spared.",
+        "Erases every creature of every kind in sight from this whole floor. Bosses and the mightiest are spared."
+      ],
+      "short": [
+        "Erases part of a kind",
+        "Erases half of a kind",
+        "Erases a kind from the floor",
+        "Erases two kinds from the floor",
+        "Erases every kind in sight"
+      ]
+    },
+    "full_light": {
+      "tiers": {"clair": [0, 0, 10, 30, 60], "clair_blessed": [30, 30, 30, 30, 60]},
+      "line": [
+        "Lights up the map of half the floor around you.",
+        "Lights up the map of the whole floor.",
+        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too.",
+        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too.",
+        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too."
+      ],
+      "line_blessed": [
+        "Lights up the map of half the floor around you, and for {clair} turns you see far round you, the invisible too.",
+        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too.",
+        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too.",
+        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too.",
+        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too."
+      ],
+      "short": [
+        "Maps half the floor",
+        "Maps the whole floor",
+        "Maps the floor, far sight {clair} turns",
+        "Maps the floor, far sight {clair} turns",
+        "Maps the floor, far sight {clair} turns"
+      ]
+    },
+    "dead_sea_map": {
+      "line": "Shows you the layout of every floor of the dungeon: this one at once, each other one as you arrive.",
+      "short": "Maps every floor's layout"
+    },
+    "family_rout": {
+      "line": "Every {family} in sight flees in fear for {turns} turns.",
+      "short": "Drives off every {family}"
+    },
+    "family_ward": {
+      "line": "For {turns} turns, {ward}.",
+      "short": "A ward for {turns} turns"
+    }
+  },
+  "potion": {
+    "heal": {
+      "line": "Heals {power} health, or {least} if that is more.",
+      "short": "Heals {power} or more",
+      "blessed": "Blessed, it heals half again as much.",
+      "cursed": "Cursed, it heals half as much."
+    },
+    "extra_heal": {
+      "line": "Heals {power} health, or {least} if that is more.",
+      "short": "Heals {power} or more",
+      "blessed": "Blessed, it heals half again as much.",
+      "cursed": "Cursed, it heals half as much."
+    },
+    "full_heal": {
+      "line": "Heals every wound at once.",
+      "short": "Heals every wound",
+      "blessed": "Blessed, it first clears every ailment too.",
+      "line_cursed": "Cursed, it heals only half the health you are missing.",
+      "short_cursed": "Heals half your wounds"
+    },
+    "restore_sp": {
+      "buc": "heal",
+      "line": "Restores {power} stamina.",
+      "short": "Restores {power} stamina",
+      "blessed": "Blessed, it restores half again as much.",
+      "cursed": "Cursed, it restores half as much."
+    },
+    "restore_mp": {
+      "line": "Restores {power} mana.",
+      "short": "Restores {power} mana"
+    },
+    "brilliance_mp": {
+      "line": "Restores {power} mana.",
+      "short": "Restores {power} mana"
+    },
+    "cure_poison": {
+      "buc": "binary",
+      "line": "Cures poison.",
+      "short": "Cures poison"
+    },
+    "cure_disease": {
+      "buc": "binary",
+      "line": "Cures disease.",
+      "short": "Cures disease"
+    },
+    "cure_all": {
+      "buc": "binary",
+      "line": "Cures every ailment at once: poison, disease, fear, confusion, a hex and the rest.",
+      "short": "Cures every ailment"
+    },
+    "haste": {
+      "buc": "buff",
+      "status": "hasted",
+      "line": "Hastes you for {turns} turns: monsters act half as often.",
+      "short": "Hastes you for {turns} turns"
+    },
+    "invisibility": {
+      "buc": "buff",
+      "status": "invisible",
+      "line": "Makes you invisible for {turns} turns: a foe not beside you cannot see you, and you gain 2 points of armour.",
+      "short": "Invisible for {turns} turns"
+    },
+    "regeneration": {
+      "buc": "buff",
+      "status": "regenerating",
+      "line": "You regenerate for {turns} turns, mending a little health every 3 turns.",
+      "short": "Regenerate for {turns} turns"
+    },
+    "heroism": {
+      "buc": "buff",
+      "status": "heroism",
+      "line": "Makes you Heroic for {turns} turns: STR +2.",
+      "short": "STR +2 for {turns} turns"
+    },
+    "levitation": {
+      "buc": "buff",
+      "status": "levitating",
+      "line": "You float for {turns} turns, above every trap in the floor.",
+      "short": "Float for {turns} turns"
+    },
+    "see_invisible": {
+      "buc": "buff",
+      "status": "see_invisible",
+      "line": "For {turns} turns you see creatures that are invisible.",
+      "short": "See the invisible, {turns} turns"
+    },
+    "fire_resist": {
+      "buc": "buff",
+      "status": "fire_resist",
+      "line": "For {turns} turns fire does you half harm, and you cannot be set alight.",
+      "short": "Resist fire for {turns} turns"
+    },
+    "cold_resist": {
+      "buc": "buff",
+      "status": "cold_resist",
+      "line": "For {turns} turns cold does you half harm, and you cannot be frozen.",
+      "short": "Resist cold for {turns} turns"
+    },
+    "shock_resist": {
+      "buc": "buff",
+      "status": "shock_resist",
+      "line": "For {turns} turns lightning does you half harm.",
+      "short": "Resist lightning for {turns} turns"
+    },
+    "restore_str": {
+      "buc": "binary",
+      "line": "Gives back the Strength that disease or a draining potion took.",
+      "short": "Restores lost STR"
+    },
+    "gain_level": {
+      "buc": "binary",
+      "line": "Lifts you bodily up to the floor above.",
+      "short": "Takes you up a floor"
+    },
+    "teleport": {
+      "buc": "binary",
+      "line": "Throws you to a random place on this floor.",
+      "short": "Teleports you at random"
+    },
+    "restoration": {
+      "buc": "binary",
+      "line": "Gives back every stat point a drain, a poison or a disease took, and the health the life-draining dead took; it cures disease too.",
+      "short": "Restores what drains took"
+    },
+    "treasure_sight": {
+      "buc": "binary",
+      "line": "Marks every treasure, chest and coin pile on this floor on your map.",
+      "short": "Marks the floor's treasure"
+    },
+    "confusion": {
+      "buc": "harm",
+      "status": "confused",
+      "line": "Harmful: confuses you for {turns} turns, so your steps go astray.",
+      "short": "Confuses you, {turns} turns"
+    },
+    "blindness": {
+      "buc": "harm",
+      "status": "blinded",
+      "line": "Harmful: blinds you for {turns} turns, so you see only the tiles beside you.",
+      "short": "Blinds you, {turns} turns"
+    },
+    "poison": {
+      "buc": "harm",
+      "status": "poisoned",
+      "base_turns": 20,
+      "line": "Harmful: poisons you for {turns} turns, and you lose {per_turn} each turn.",
+      "short": "Poisons you, {turns} turns"
+    },
+    "paralysis": {
+      "buc": "harm",
+      "status": "paralyzed",
+      "line": "Harmful: paralyzes you for {turns} turns, unless your Constitution throws it off.",
+      "short": "Paralyzes you, {turns} turns"
+    },
+    "hallucination": {
+      "buc": "harm",
+      "status": "hallucinating",
+      "line": "Harmful: for {turns} turns monsters wear wrong faces, and your quizzes grow a false answer that fades.",
+      "short": "False sights, {turns} turns"
+    },
+    "sleep": {
+      "buc": "harm",
+      "status": "sleeping",
+      "line": "Harmful: puts you to sleep for {turns} turns, unless your Constitution throws it off; a blow wakes you.",
+      "short": "Puts you to sleep, {turns} turns"
+    },
+    "weakness": {
+      "buc": "harm",
+      "status": "weakened",
+      "line": "Harmful: weakens you for {turns} turns, so your blows do half damage.",
+      "short": "Weakens you, {turns} turns"
+    },
+    "slow": {
+      "buc": "harm",
+      "status": "slowed",
+      "line": "Harmful: slows you for {turns} turns, so every action takes two turns.",
+      "short": "Slows you, {turns} turns"
+    },
+    "sickness": {
+      "buc": "harm",
+      "status": "diseased",
+      "line": "Harmful: sickens you for {turns} turns: rest does not heal you, most healing is halved, and it may sap your STR or CON.",
+      "short": "Sickens you, {turns} turns"
+    },
+    "fumbling": {
+      "buc": "harm",
+      "status": "fumbling",
+      "line": "Harmful: for {turns} turns you drop the first thing you handle, unless you stand in Guard.",
+      "short": "You fumble, {turns} turns"
+    },
+    "fear": {
+      "buc": "harm",
+      "status": "feared",
+      "line": "Harmful: frightens you for {turns} turns, unless your Wisdom throws it off; you cannot go nearer to a foe or strike one unless cornered.",
+      "short": "Frightens you, {turns} turns"
+    },
+    "drain_str": {
+      "buc": "drain",
+      "line": "Harmful: takes {amount} of your STR away, until a potion of restore strength, a physician or the Water of Epidaurus gives it back.",
+      "short": "Drains {amount} of STR"
+    },
+    "drain_con": {
+      "buc": "drain",
+      "line": "Harmful: takes {amount} of your CON away, until a physician or the Water of Epidaurus gives it back.",
+      "short": "Drains {amount} of CON"
+    },
+    "drain_wis": {
+      "buc": "drain",
+      "line": "Harmful: takes {amount} of your WIS away, until a physician or the Water of Epidaurus gives it back.",
+      "short": "Drains {amount} of WIS"
+    },
+    "drain_int": {
+      "buc": "drain",
+      "line": "Harmful: takes {amount} of your INT away, until a physician or the Water of Epidaurus gives it back.",
+      "short": "Drains {amount} of INT"
+    },
+    "antidote": {
+      "buc": "ward",
+      "line": "Cures poison and disease, and no poison or disease can take you for {turns} turns.",
+      "short": "Cures poison, guards {turns} turns"
+    },
+    "clear_mind": {
+      "buc": "ward",
+      "line": "Clears confusion, charm and false sights, and none of them can take hold of you for {turns} turns.",
+      "short": "Clears your mind, guards {turns} turns"
+    },
+    "fearless": {
+      "buc": "ward",
+      "line": "Clears fear, and nothing can frighten you for {turns} turns.",
+      "short": "No fear for {turns} turns"
+    },
+    "fireproof": {
+      "buc": "ward",
+      "line": "For {turns} turns fire cannot hurt you, and you are Shielded: 2 points of armour, and blows do half their harm.",
+      "short": "Fireproof, shielded {turns} turns"
+    },
+    "stoneproof": {
+      "buc": "ward",
+      "line": "Stops stone creeping into you, and nothing can turn you to stone for {turns} turns.",
+      "short": "Stoneproof for {turns} turns"
+    },
+    "styx_dipped": {
+      "buc": "ward",
+      "line": "For {turns} turns physical blows, bites and claws cannot wound you; fire, venom, magic and an unseen blow at your heel still can.",
+      "short": "Unwoundable by blows, {turns} turns"
+    },
+    "wakeful": {
+      "buc": "ward",
+      "line": "Wakes you, and nothing can put you to sleep for {turns} turns.",
+      "short": "No sleep for {turns} turns"
+    },
+    "fafnirs_blood": {
+      "line": "Drinking it asks a run of animal questions: the more you answer, the more the birds tell you, from closing every wound to gifts that last. Answer none, and it only scalds you.",
+      "short": "The birds' speech, by animal questions"
+    },
+    "mimir_wisdom": {
+      "line": "Drinking it asks one {quiz_subjects} question: right, {quiz_stat} +{quiz_amount} for good; wrong, it is wasted.",
+      "short": "{quiz_stat} +{quiz_amount} for one right answer"
+    }
+  },
+  "wand": {
+    "acid_spray": {
+      "tier_turns": {"dis_turns": 6},
+      "line": "Acid burns one foe for {damage} damage{int_note}, and leaves it Diseased for {dis_turns} turns.",
+      "short": "Acid, {damage} damage"
+    },
+    "blind_monster": {
+      "base_turns": 8,
+      "line": "Blinds one foe for {turns} turns.",
+      "short": "Blinds a foe, {turns} turns"
+    },
+    "cancellation": {
+      "line": "Strips one foe of every magic that helps it, such as haste or a shield.",
+      "short": "Strips a foe's magic"
+    },
+    "dispel_magic": {
+      "line": "Strips one foe of every magic that helps it, such as haste or a shield.",
+      "short": "Strips a foe's magic"
+    },
+    "drain_magic": {
+      "line": "Strips one foe of every magic that helps it, such as haste or a shield.",
+      "short": "Strips a foe's magic"
+    },
+    "charm_monster": {
+      "base_turns": 20,
+      "line": "Charms one foe for {turns} turns: it will not strike you, and it wanders. Bosses, the mightiest, the undead and the mindless cannot be charmed.",
+      "short": "Charms a foe, {turns} turns"
+    },
+    "cold_bolt": {
+      "tier_turns": {"slow_turns": 4},
+      "line": "A bolt of cold strikes one foe for {damage} damage{int_note} and slows it for {slow_turns} turns.",
+      "short": "Cold, {damage} damage"
+    },
+    "confuse_monster": {
+      "base_turns": 10,
+      "line": "Confuses one foe for {turns} turns ({boss_cap}).",
+      "short": "Confuses a foe, {turns} turns"
+    },
+    "curse_monster": {
+      "base_turns": 20,
+      "tier_turns": {"slow_turns": 8},
+      "line": "Curses one foe for {turns} turns, so it misses more, and slows it for {slow_turns} turns.",
+      "short": "Curses and slows a foe"
+    },
+    "death_ray": {
+      "line": "Slays one foe outright 85 times in 100; otherwise it takes half its health. Bosses and the mightiest are never slain outright, and take less.",
+      "short": "Slays a foe, 85 in 100"
+    },
+    "digging": {
+      "line": "Blasts away every wall and door on the 8 tiles around you.",
+      "short": "Digs out the walls around you"
+    },
+    "disease_monster": {
+      "base_turns": 15,
+      "line": "Diseases one foe for {turns} turns, and takes a fifth of its health at once.",
+      "short": "Diseases a foe, {turns} turns"
+    },
+    "disintegrate": {
+      "line": "Destroys one foe outright 70 times in 100; otherwise it takes a third of its health. Bosses and the mightiest are never destroyed outright, and take less.",
+      "short": "Destroys a foe, 70 in 100"
+    },
+    "drain_life": {
+      "line": "Drains {damage} health from one foe{int_note}, and heals you by what it takes; the undead have less to give.",
+      "short": "Drains {damage} health"
+    },
+    "family_rout": {
+      "base_turns": 10,
+      "line": "Every {family} in sight flees in fear for {turns} turns. The din is loud: sleepers hear it.",
+      "short": "Drives off every {family}"
+    },
+    "fear_monster": {
+      "base_turns": 8,
+      "line": "Frightens one foe for {turns} turns: it turns and flees. Bosses and the mightiest stand their ground.",
+      "short": "Frightens a foe, {turns} turns"
+    },
+    "fire_bolt": {
+      "line": "A bolt of fire strikes one foe for {damage} damage{int_note}.",
+      "short": "Fire, {damage} damage"
+    },
+    "heal": {
+      "line": "Heals you {power}, or {least} if that is more.",
+      "short": "Heals {power} or more"
+    },
+    "iron_mortar": {
+      "line": "Never the same twice: it may heal you, haste you, mend you over time, put every foe in sight to sleep, blast every foe in sight, teleport you, or confuse you.",
+      "short": "A wild magic, never the same"
+    },
+    "light": {
+      "line": "Lights you up for {turns} turns: sight +{sight}, and you are seen from farther.",
+      "short": "Light for {turns} turns"
+    },
+    "lightning_bolt": {
+      "line": "Lightning strikes every creature in a line to one foe for {damage} damage{int_note}, and stuns each one it hurts for 3 turns.",
+      "short": "Lightning, {damage} damage"
+    },
+    "magic_missile": {
+      "line": "A missile that never misses strikes one foe for {damage} damage{int_note}.",
+      "short": "Force, {damage} damage"
+    },
+    "opening": {
+      "line": "Opens every door and unlocks every locked chest in sight.",
+      "short": "Opens doors and chests in sight"
+    },
+    "paralyze_monster": {
+      "base_turns": 6,
+      "line": "Paralyzes one foe for {turns} turns ({boss_cap}).",
+      "short": "Paralyzes a foe, {turns} turns"
+    },
+    "poison_monster": {
+      "base_turns": 12,
+      "line": "Poisons one foe for {turns} turns.",
+      "short": "Poisons a foe, {turns} turns"
+    },
+    "polymorph_monster": {
+      "line": "Turns one foe into a random creature that could live on this floor. Bosses and the mightiest resist.",
+      "short": "Turns a foe into another"
+    },
+    "probing": {
+      "line": "Reads the nearest foe's health, weaknesses and resistances, and teaches you its kind as studying its corpse would.",
+      "short": "Reads a foe's weaknesses"
+    },
+    "secret_door_detection": {
+      "line": "Reveals every secret door {radius}, through walls too.",
+      "short": "Reveals secret doors"
+    },
+    "sleep_monster": {
+      "base_turns": 8,
+      "line": "Puts one foe to sleep for {turns} turns ({boss_cap}).",
+      "short": "Sleeps a foe, {turns} turns"
+    },
+    "slow_monster": {
+      "base_turns": 8,
+      "line": "Slows one foe for {turns} turns.",
+      "short": "Slows a foe, {turns} turns"
+    },
+    "striking": {
+      "line": "A blow of force strikes one foe for {damage} damage{int_note}.",
+      "short": "Force, {damage} damage"
+    },
+    "sunlight": {
+      "tier_turns": {"see_turns": 20},
+      "line": "Floods the whole floor with light: maps it, shows every creature on it and strips its invisibility, and you see the invisible for {see_turns} turns.",
+      "short": "Maps the floor, shows all"
+    },
+    "teleport_monster": {
+      "line": "Sends one foe to a random place on this floor.",
+      "short": "Teleports a foe away"
+    },
+    "turn_undead": {
+      "tier_turns": {"fear_turns": 8},
+      "line": "Holy light strikes every undead in sight for {damage} damage{int_note}, and sends each fleeing for {fear_turns} turns.",
+      "short": "Holy, {damage} to the undead"
+    },
+    "unstring_monster": {
+      "base_turns": 8,
+      "line": "For {turns} turns one foe's bows, slings and thrown weapons will not answer it.",
+      "short": "Unstrings a foe, {turns} turns"
+    },
+    "weaken_monster": {
+      "base_turns": 15,
+      "line": "Weakens one foe for {turns} turns, so its blows do half damage.",
+      "short": "Weakens a foe, {turns} turns"
+    },
+    "wonder": {
+      "line": "Each zap is one of ten random magics: it may heal you, haste you, shield you, hide you, mend you over time or teleport you; or burn, confuse or put to sleep the foes in sight, or shock the nearest.",
+      "short": "A random magic each zap"
+    },
+    "time_stop": {
+      "base_turns": 5,
+      "tier_only": true,
+      "line": "Stops time for {turns} turns: monsters cannot act.",
+      "short": "Stops time for {turns} turns"
+    },
+    "philosophers_wrench": {
+      "line": "A tool, not magic: it asks no question. It joins two pieces that were meant to become one.",
+      "short": "Joins what belongs together"
+    }
+  },
+  "wand_notes": {
+    "cursed": "Cursed, 3 zaps in 100 misfire and waste the charge."
+  },
+  "thrown": {
+    "_note": "A potion thrown at a foe (CombatMixin._apply_thrown_potion): the throw menu's row.",
+    "debuff": "Thrown, it leaves a foe {status} for {turns} turns",
+    "buff_used": {"levitating": "Thrown, it makes a foe float"},
+    "heal": "Thrown, it heals a foe",
+    "teleport": "Thrown, it sends a foe elsewhere on the floor",
+    "drain": "Thrown, it takes a twentieth of a foe's health",
+    "none": "Thrown, it does nothing to a foe"
+  },
+  "potion_notes": {
+    "harm_blessed": "Blessed, it does you no harm.",
+    "drain_blessed": "Blessed, it does you no harm.",
+    "binary_blessed": "Blessed, one time in 4 a dose is left over.",
+    "binary_cursed": "Cursed, one time in 4 it does nothing.",
+    "buff_buc": ""
+  },
+  "spellbook": {
+    "line": "Teaches {spell}: {desc}",
+    "short": "Teaches {spell} ({mp} MP)",
+    "cost": "Each cast costs {mp} MP.",
+    "cost_taxed": "Each cast costs {base_mp} MP ({mp} in your metal armour).",
+    "reach": {
+      "touch": "Aimed: you must touch the foe.",
+      "tiles": "Aimed: it reaches {reach}.",
+      "sight": "Aimed: it reaches as far as you can see."
+    },
+    "known": "You know this spell already."
+  },
+  "by_id": {
+    "wand": {
+      "wand_of_panic_wave": {
+        "base_turns": 8,
+        "line": "Frightens every creature in sight for {turns} turns: each turns and flees. Bosses, the mightiest and the fearless stand their ground.",
+        "short": "Frightens all in sight, {turns} turns"
+      },
+      "lantern_of_diogenes": {
+        "line": "Lights you up for {turns} turns: sight +{sight}, and you are seen from farther; for as long, you see the invisible.",
+        "short": "Light and true sight, {turns} turns"
+      },
+      "flux_capacitor": {
+        "line": "Stops time for {turns} turns: monsters cannot act. It asks no question.",
+        "short": "Stops time for {turns} turns"
+      }
+    },
+    "spellbook": {
+      "book_of_thoth": {
+        "line": "Read once: everything you carry, wear and stand on is identified, every creature you have met opens its page in the Bestiary, and every wand you carry is filled. Misread, it hurts you, makes you forget three kinds of thing, and stuns you for 20 turns.",
+        "short": "Reveals all you carry, once"
+      }
+    }
+  }
+}

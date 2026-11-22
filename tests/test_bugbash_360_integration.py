@@ -88,4 +88,6 @@ def test_the_quaff_menu_shows_the_turns_a_drink_lays(g, pid, monkeypatch):
     g.player.status_effects.clear()
     food_system.drink_potion(g.player, pot)
     laid = max(v for v in g.player.status_effects.values())
-    assert f'({laid} turns)' in shown['entries'][0]['detail']
+    # The row is the drink's plain phrase now ("Resist fire for 60 turns",
+    # item_words.py), its turns those the drink lays.
+    assert f'{laid} turns' in shown['entries'][0]['detail']

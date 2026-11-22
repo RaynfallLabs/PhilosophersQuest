@@ -40,7 +40,6 @@ from game_helpers import (
     wrap_text as _gh_wrap_text,
 )
 from naming import proper_name
-from food_system import potion_turns
 from quiz_engine import QuizMode, QuizState
 from spells import LEARNABLE_SPELLS
 from game_states import STATE_MOOBLE, STATE_MOOBLE_DANCE
@@ -4667,6 +4666,14 @@ class RenderMixin:
         import enchantments as _en
         if item is None or self._kit_visible_level(item) < 3:
             return []
+        import item_words as _iw
+        if _iw.covers(item):
+            # A scroll, potion, wand or spellbook: what it does, its numbers
+            # filled for this hero (src/item_words.py, data/ui/item_effects.json;
+            # Brandon 2026-11-22: "for scrolls and spells, I can't tell what
+            # they actually do"). It printed "Nothing beyond its stats."
+            return _iw.what_it_does(item, getattr(self, 'player', None),
+                                    buc_known=self._copy_buc_known(item))
         known = self._lore_enchant_text(item) != '?'
         out = []
         if isinstance(item, Weapon):
@@ -6956,21 +6963,12 @@ class RenderMixin:
             if _ts:
                 bits.append(f"throw: {_ts.get('damage', 0)} {_ts.get('damage_type', '')}")
             return ', '.join(bits)
-        eff = getattr(c, 'effect', None)
-        if eff:
-            pw = getattr(c, 'power', '')
-            dur = getattr(c, 'duration', 0)
-            tail = []
-            if pw:
-                tail.append(str(pw))
-            if dur:
-                tail.append(f"{dur}t")
-            return f"{eff}" + (f" ({', '.join(tail)})" if tail else '')
-        # Spellbook
-        sp_id = getattr(c, 'spell_id', None)
-        if sp_id:
-            sd = LEARNABLE_SPELLS.get(sp_id, {})
-            return f"teaches {sd.get('name', sp_id)} ({sd.get('mp_cost','?')} MP)"
+        # A scroll, potion, wand or spellbook: what it does, short (it showed
+        # the code name and its dice, "heal (2d4)"; item_words.py).
+        import item_words as _iw_k
+        if _iw_k.covers(c):
+            return _iw_k.short_line(c, getattr(self, 'player', None),
+                                    buc_known=self._copy_buc_known(c)) or '-'
         # An ingredient: what it is rich in, so which cook-menu tab its
         # dishes sit in, and how many dishes call for it.
         if getattr(c, 'item_class', '') == 'ingredient':
@@ -7235,7 +7233,11 @@ class RenderMixin:
             )
             charge_text = f"Charges: {item.charges}/{item.max_charges}"
             if self._item_is_known(item):
-                charge_text += f" | Effect: {item.effect.replace('_', ' ').title()}"
+                # What it does, in a phrase (item_words.py): it was the code
+                # name ("Effect: Fire Bolt").
+                import item_words as _iw_w
+                charge_text += " | " + _iw_w.short_line(item, self.player,
+                                                         buc_known=self._copy_buc_known(item))
             entries.append({
                 'name': self._display_name(item),
                 'detail': charge_text,
@@ -7631,17 +7633,21 @@ class RenderMixin:
         entries = []
         for i, item in enumerate(tab_items):
             is_book = isinstance(item, Spellbook)
+            # What it does, in a phrase (item_words.py): it was the code name
+            # ("Effect: Heal"), or "teaches: Fire Spark  3 MP".
+            import item_words as _iw_r
             if is_book:
                 known = item.spell_id in self.player.known_spells
                 if known:
                     detail_text = f"[KNOWN] {item.spell_name}"
                 elif self._item_is_known(item):
-                    detail_text = f"teaches: {item.spell_name}  {item.mp_cost} MP"
+                    detail_text = _iw_r.short_line(item, self.player)
                 else:
                     detail_text = "spellbook"
             else:
                 if self._item_is_known(item):
-                    detail_text = f"Effect: {item.effect.replace('_', ' ').title()}"
+                    detail_text = _iw_r.short_line(item, self.player,
+                                                   buc_known=self._copy_buc_known(item))
                 else:
                     detail_text = "unknown effect"
             entries.append({
@@ -8366,11 +8372,12 @@ class RenderMixin:
         for i, item in enumerate(items):
             known = self._item_is_known(item)
             if known:
-                eff = item.effect.replace('_', ' ').title()
-                turns = potion_turns(item)
-                dur = f" ({turns} turns)" if turns else ""
+                # What it does, in a phrase with its turns (item_words.py; it
+                # showed the code name, "Heal", "Drain Con").
+                import item_words as _iw_q
                 is_good = item.effect in self._BENEFICIAL_EFFECTS
-                detail_text = f"{eff}{dur}"
+                detail_text = _iw_q.short_line(item, self.player,
+                                               buc_known=self._copy_buc_known(item))
                 detail_col = FP.SUCCESS_TEXT if is_good else FP.DANGER_TEXT_LIGHT
                 badge = 'BOON' if is_good else 'RISK'
                 badge_col = FP.SUCCESS_TEXT if is_good else FP.DANGER_TEXT_LIGHT
@@ -8412,10 +8419,14 @@ class RenderMixin:
             elif isinstance(item, Potion):
                 known = self._item_is_known(item)
                 if known:
-                    eff = item.effect.replace('_', ' ').title()
-                    turns = potion_turns(item)
-                    dur = f" ({turns} turns)" if turns else ""
-                    detail_text = f"{eff}{dur}"
+                    # What it does to the foe it splashes (CombatMixin's own
+                    # maps; item_words.thrown_line). It showed the drinker's
+                    # code name, "Heal", which is not what a throw does.
+                    import item_words as _iw_t
+                    detail_text = _iw_t.thrown_line(
+                        item, getattr(self, '_THROW_DEBUFF_MAP', {}),
+                        getattr(self, '_THROW_BUFF_MAP', {}),
+                        getattr(self, '_THROW_BUFFS_MONSTERS_USE', ()))
                 else:
                     detail_text = "Effect hidden until identified"
                 badge = 'POTION'
@@ -10272,53 +10283,21 @@ class RenderMixin:
                 lines.append(("Effect: " + ', '.join(parts), FP.CYAN_ACCENT, self.font_sm))
             lines.append((self._lore_equip_line(item), FP.BODY_TEXT, self.font_sm))
 
-        elif isinstance(item, Wand):
-            lines += [
-                ("Wand", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Effect: {getattr(item, 'effect', '?').replace('_', ' ').title()}   Power: {getattr(item, 'power', '?')}",
-                 FP.BODY_TEXT, self.font_sm),
-                (f"Charges: {item.charges}/{item.max_charges}",
-                 FP.CYAN_ACCENT, self.font_sm),
-                (_threshold_line("Science", getattr(item, 'quiz_threshold', '?')),
-                 FP.BODY_TEXT, self.font_sm),
-            ]
-
-        elif isinstance(item, Scroll):
-            lines += [
-                ("Scroll", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Effect: {getattr(item, 'effect', '?').replace('_', ' ').title()}   Power: {getattr(item, 'power', '?')}",
-                 FP.BODY_TEXT, self.font_sm),
-                (_threshold_line("Grammar", getattr(item, 'quiz_threshold', '?')),
-                 FP.BODY_TEXT, self.font_sm),
-            ]
-
-        elif isinstance(item, Spellbook):
-            spell_name = getattr(item, 'spell_name', getattr(item, 'name', 'spell'))
-            lines += [
-                ("Spellbook", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Teaches: {spell_name}   MP cost: {getattr(item, 'mp_cost', '?')}",
-                 FP.BODY_TEXT, self.font_sm),
-                (_threshold_line("Grammar", getattr(item, 'quiz_threshold', '?')),
-                 FP.BODY_TEXT, self.font_sm),
-            ]
-
-        elif isinstance(item, Potion):
-            effect = getattr(item, 'effect', '') or 'unknown'
-            lines += [
-                ("Potion", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Effect: {effect.replace('_', ' ').title()}", FP.BODY_TEXT, self.font_sm),
-            ]
-            if getattr(item, 'power', ''):
-                lines.append((f"Power: {item.power}", FP.BODY_TEXT, self.font_sm))
-            duration = potion_turns(item)
-            lines.append((f"Duration: {duration} turns" if duration else "Duration: instant",
-                          FP.BODY_TEXT, self.font_sm))
-            quiz = getattr(item, 'quiz', None)
-            if quiz:
-                subj = ' or '.join(_cap(s) for s in (quiz.get('subjects') or ['philosophy']))
-                lines.append((f"Drinking asks a {subj} question (tier {quiz.get('tier', 4)}). "
-                              f"Right: +{quiz.get('amount', 1)} {quiz.get('stat', 'WIS')} for good. "
-                              f"Wrong: the draught is wasted.", FP.CYAN_ACCENT, self.font_sm))
+        elif isinstance(item, (Wand, Scroll, Spellbook, Potion)):
+            # What it does in plain words, its numbers for this hero, and a
+            # wand's charges (item_words.py, data/ui/item_effects.json). It
+            # said "Effect: Heal   Power: 2d4", a code name and its dice.
+            import item_words as _iw_l
+            head = next(w for c, w in ((Wand, "Wand"), (Scroll, "Scroll"),
+                                        (Spellbook, "Spellbook"), (Potion, "Potion"))
+                        if isinstance(item, c))
+            lines.append((head, FP.GOLD_BRIGHT, self.font_sm))
+            for _t in _iw_l.what_it_does(item, self.player, buc_known=self._copy_buc_known(item)):
+                lines.append((_t, FP.CYAN_ACCENT, self.font_sm))
+            if not isinstance(item, Potion):
+                lines.append((_threshold_line("Science" if isinstance(item, Wand) else "Grammar",
+                                              getattr(item, 'quiz_threshold', '?')),
+                              FP.BODY_TEXT, self.font_sm))
 
         elif getattr(item, 'item_class', '') == 'treasure':
             import treasure as _tr
@@ -11029,10 +11008,12 @@ class RenderMixin:
             if worn_statuses(effects):
                 return f"Grants {' and '.join(_cap(s) for s in worn_statuses(effects))}"
             return 'accessory'
-        if category in ('wand', 'scroll'):
-            return f"Effect: {entry.get('effect', '?')}"
-        if category == 'spellbook':
-            return f"teaches: {entry.get('spell_name', '?')}"
+        if category in ('wand', 'scroll', 'spellbook'):
+            # What it does, in a phrase (item_words.py): it showed the code
+            # name ("Effect: heal").
+            import item_words
+            return item_words.short_line(entry, self.player, buc_known=False,
+                                         item_class=category)
         if category == 'recipes':
             return entry.get('lore', '')
         if category == 'treasure':
@@ -11194,17 +11175,15 @@ class RenderMixin:
                 if worn_statuses(effects):
                     bits.append(f"Grants {' and '.join(_cap(s) for s in worn_statuses(effects))}")
                 lines.append(("Effect: " + ', '.join(bits), FP.BODY_TEXT, self.font_sm))
-        elif category == 'wand':
-            lines += [
-                (f"Effect: {entry.get('effect', '?')}", FP.BODY_TEXT, self.font_sm),
-                (f"Charges: {entry.get('charges', '?')}/{entry.get('max_charges', '?')}",
-                 FP.BODY_TEXT, self.font_sm),
-            ]
-        elif category == 'scroll':
-            lines.append((f"Effect: {entry.get('effect', '?')}", FP.BODY_TEXT, self.font_sm))
-        elif category == 'spellbook':
-            lines.append((f"Teaches: {entry.get('spell_name', '?')}   MP cost: {entry.get('mp_cost', '?')}",
-                          FP.BODY_TEXT, self.font_sm))
+        elif category in ('wand', 'scroll', 'spellbook'):
+            # What the kind does, in plain words: a wand's charges as it is
+            # found, a book's spell, cost and reach (item_words.py). The page
+            # showed the code name ("Effect: heal") and "Charges: ?/6".
+            import item_words
+            lines.append(("What It Does", FP.GOLD_BRIGHT, self.font_sm))
+            for _t in item_words.what_it_does(entry, self.player, buc_known=False,
+                                              item_class=category):
+                lines.append((_t, FP.BODY_TEXT, self.font_sm))
         elif category == 'wonders':
             lines += self._encyclopedia_wonder_lines(entry)
         elif category == 'treasure':

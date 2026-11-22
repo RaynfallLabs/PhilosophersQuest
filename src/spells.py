@@ -235,7 +235,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Resurrection', 'effect': 'resurrection_self', 'power': '',
         'mp_cost': 22, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'healing',
-        'desc': 'Ward yourself with life_save -- the next killing blow is refused.',
+        'desc': 'Ward yourself against death -- the next killing blow is refused.',
     },
 
     # ==================================================================

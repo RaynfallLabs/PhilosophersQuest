@@ -9726,12 +9726,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Last resort: a generic class label instead of the
             # broken '? +0'.
             return item.item_class.replace('_', ' ').title()
-        elif isinstance(item, Wand):
-            return f"Effect: {item.effect.replace('_', ' ').title()}  Charges: {item.charges}/{item.max_charges}"
-        elif isinstance(item, Scroll):
-            return f"Effect: {item.effect.replace('_', ' ').title()}  tier {item.quiz_tier}"
-        elif isinstance(item, Spellbook):
-            return f"teaches: {item.spell_name}  {item.mp_cost} MP"
+        elif isinstance(item, (Wand, Scroll, Spellbook)):
+            # What it does in a phrase (item_words.py, data/ui/item_effects.json):
+            # it said "Effect: Heal  tier 1", a code name and no amount. A
+            # wand keeps its charges; a book's phrase carries its MP.
+            import item_words
+            short = item_words.short_line(item, getattr(self, 'player', None)) or \
+                item.item_class.replace('_', ' ').title()
+            if isinstance(item, Wand):
+                return f"{short}  Charges: {item.charges}/{item.max_charges}"
+            return short
         elif isinstance(item, Food):
             return f"+{item.sp_restore} SP  +{item.hp_restore} HP"
         elif isinstance(item, Ingredient):
@@ -9747,6 +9751,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             q = item.quiz
             return (f"Asks a question when drunk: +{q.get('amount', 1)} {q.get('stat', 'WIS')} "
                     f"for good, or wasted")
+        elif getattr(item, 'item_class', '') == 'potion':
+            # (It said only "Potion".)
+            import item_words
+            return item_words.short_line(item, getattr(self, 'player', None)) or 'Potion'
         elif isinstance(item, Lockpick):
             return "lockpick"
         return item.item_class.replace('_', ' ').title()
