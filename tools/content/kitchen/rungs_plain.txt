@@ -1,0 +1,61 @@
+# Plain fare (Brandon, 2026-11-22: "bread and cheese? bread cheese and dried meat?"):
+# dishes of staples alone. Any two different staples make a dish; then the threes and fours.
+# No stat and no max HP (data/cooking_rules.json "rungs"): a creature's part builds a hero.
+# staples joined by + | benefit | name | flavour line
+# The name's last dish word picks the picture, and it must be one drawn at that tier and tab
+# (build_kitchen.py --rungs refuses any other).
+
+# ---- two staples: every pair of the nine ----
+bread_ration+hard_cheese|sp|Bread and Cheese Sandwich|Shepherds have walked from dawn to dusk on no more than this, and wished for nothing better.
+bread_ration+dried_meat|sp|Salt-Meat Sandwich|The bread softens the meat, and the meat forgives the bread.
+bread_ration+apple|hp|Apple Bread Bake|Stale bread and sliced apple, baked until the crust is brown and small hurts are forgotten.
+bread_ration+trail_rations|sp|Drover's Dumplings|Crumbs and rendered fat rolled in the palm, as drovers made them on the long roads.
+bread_ration+wild_mushroom|dark_vision|Glow-Cap Toast|The pale gills still shine upon the bread, and afterwards a little in your eyes.
+bread_ration+healing_herb|hp|Yarrow Bread Soup|Bread soaked soft with the soldier's herb, such as was fed to the wounded.
+bread_ration+elvish_bread|mp|Two Loaves Pudding|The loaf of Men and the loaf of Elves, steeped in one bowl until neither is proud.
+bread_ration+hearty_stew|sp|Stew in a Trencher|The old halls served stew upon bread, so that a hungry guest might eat the plate.
+dried_meat+hard_cheese|save_guard_CON|Herdsman's Board|Salt and rind are hard fare, and they make a stomach hard to turn.
+dried_meat+apple|hp|Smoked Meat and Apple Skillet|The fruit softens in the fat and sweetens all that the smoke made bitter.
+dried_meat+trail_rations|sp|Pemmican Slices|Meat, fruit and fat pounded into one, as northern hunters made it for the winter trail.
+dried_meat+wild_mushroom|hp|Forager's Hash|Whatever the satchel held and whatever the cave wall grew, chopped small and fried.
+dried_meat+healing_herb|hp|Herb-Rubbed Chops|Bitter leaves are beaten into the meat until both are fit to eat.
+dried_meat+elvish_bread|fear_immune|Wayfarer's Roll|Those who sup on the bread of the Fair Folk walk the dark road with a lighter heart.
+dried_meat+hearty_stew|hp|Twice-Cooked Pottage|A pot that was good at noon is better at night with meat shredded into it.
+hard_cheese+apple|hp|Apple and Cheese Bake|An old country saying holds that the one without the other is like a kiss without a squeeze.
+hard_cheese+trail_rations|cold_resist|Mountain Fondue|Crackers dipped in melted cheese, as herdsmen eat it when snow has shut the pass.
+hard_cheese+wild_mushroom|hp|Cave-Wheel Skillet|The rind crisps, the caps drink the fat, and the pan is wiped clean with a finger.
+hard_cheese+healing_herb|save_guard_WIS|Cloister Cheese Board|Monks pressed leaves into their cheeses and rose clear-headed for the prayers of the night.
+hard_cheese+elvish_bread|mp|Fair Folk's Cheese Toast|An offering often left on the doorstep, and seldom eaten by the one who made it.
+hard_cheese+hearty_stew|hp|Cheese-Crust Hotpot|The lid is lifted, the cheese is laid on, and the lid is left off until it bubbles.
+apple+trail_rations|searching|Pathfinder's Apple Brittle|Scouts suck on it slowly and miss very little along the way.
+apple+wild_mushroom|poison_resist|Forager's Relish|A sharp relish of the kind old foragers trusted to settle a doubtful mushroom.
+apple+healing_herb|hp|Physic-Orchard Broth|The apple is for the patient's tongue and the leaf is for the wound.
+apple+elvish_bread|mp|Elf-Road Apple Pudding|It tastes of an orchard that is on no map.
+apple+hearty_stew|hp|Esau's Apple Pot|Esau would have asked no birthright back for a bowl like this one.
+trail_rations+wild_mushroom|warning|Watchman's Fritters|They are eaten one at a time through the long watch, and no watch has slept on them.
+trail_rations+healing_herb|sp|Long-March Porridge|Grey, thick and bitter, and it will carry you a league past where you meant to stop.
+trail_rations+elvish_bread|searching|Far-Rider's Oatcakes|The outriders of old carried such cakes, and it was the outriders who found the hidden fords.
+trail_rations+hearty_stew|cold_resist|Winter-March Hotpot|The fat rises to the top and stands between a traveller and the frost.
+wild_mushroom+healing_herb|mp|Hedge-Witch Tea|Every village had a woman who brewed it, and every village came to her after dark.
+wild_mushroom+elvish_bread|mp|Fairy-Ring Broth|Where the caps grow in a circle the Fair Folk have danced, and something of it is left in the pot.
+wild_mushroom+hearty_stew|dark_vision|Deep-Cellar Stew|It was made by miners who had long ago given up asking for the sun.
+healing_herb+elvish_bread|mp|Elf-Leaf Tisane|The wafer melts into the leaves and the cup smells of rain on a green hill.
+healing_herb+hearty_stew|poison_resist|Apothecary's Crock|The apothecary kept one pot for his supper and his antidotes, and lived to a great age.
+elvish_bread+hearty_stew|mp|Waybread Stew|One crumb of the pale loaf, and a common stew remembers older songs.
+
+# ---- three staples ----
+bread_ration+hard_cheese+dried_meat|hp|Ploughman's Breakfast|Bread, cheese and salt meat fried together, the meal on which the fields of the world were turned.
+bread_ration+hard_cheese+apple|mp|Scholar's Luncheon Plate|It can be eaten with one hand while the other turns the pages.
+bread_ration+dried_meat+apple|save_guard_CON|Campaigner's Sandwich|Old soldiers ate such things through ten years of sieges and were seldom sick.
+hard_cheese+wild_mushroom+healing_herb|hp|Hermit's Skillet|All that the hermit owned went into the pan, and he shared it with whoever knocked.
+dried_meat+trail_rations+wild_mushroom|searching|Huntsman's Skewers|They are turned over the coals while the eye goes on reading the ground for tracks.
+apple+healing_herb+elvish_bread|mp|Enchanter's Cordial|Pressed, steeped and strained through a sleeve, and then the old words come easily.
+dried_meat+trail_rations+hearty_stew|hp|Quartermaster's Stew|A careful quartermaster wastes nothing, and his company is slow to fall.
+wild_mushroom+elvish_bread+hearty_stew|mp|Deep-Road Ragout|The wanderers of the deep roads made it where no other fire burned for miles.
+
+# ---- four staples (a big dish: one tier richer) ----
+bread_ration+hard_cheese+dried_meat+apple|hp|Harvest-Home Supper|The whole larder on one board, as it was set out when the last sheaf came in.
+bread_ration+dried_meat+trail_rations+hearty_stew|sp|Muster Hotpot|When the banners were called in, every man threw what he carried into the one pot.
+wild_mushroom+healing_herb+elvish_bread+hearty_stew|mp|Elven Hearth Soup|They say the hearths beneath the hill have had this soup upon them for a thousand years.
+trail_rations+dried_meat+wild_mushroom+healing_herb|poison_resist|Field-Surgeon's Pie|A crust of crushed crackers over all that a field surgeon dared to prescribe.
+dried_meat+healing_herb+elvish_bread+hearty_stew|hp|Wounded Company's Supper|It was ladled first to those who lay on the straw and last to those who still stood.

@@ -65,7 +65,7 @@ class MenuMixin:
         rows = {t: kitchen.menu_rows(self.player, inv, t) for t in kitchen.MENU_TABS}
         if not any(rows.values()):
             self.add_message(
-                "You have nothing to cook yet. Harvest a corpse (H) and keep its meat.",
+                "You have nothing to cook yet. Harvest a corpse (H) and keep its meat, or carry two kinds of plain food.",
                 'info')
             return
         tab, why = kitchen.opening_choice(self.player, inv)

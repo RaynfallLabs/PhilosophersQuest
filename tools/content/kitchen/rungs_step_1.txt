@@ -1,0 +1,114 @@
+# One step up (Brandon, 2026-11-22: "monster recipes that are just ONE step above a single
+# monster ingredient, like monster ingredient and cheese"), part 1: parts of floors 1-20.
+# part key (its id less _prime) | staple | benefit | name | flavour line
+# An HP, MP or Special part keeps its nature. A Stat part (its lesson is its own dish) or an
+# SP part (no use at a full belly) is the meal named here instead, never a stat.
+
+# ---- floors 1-2 ----
+acid_blob|hard_cheese|acid_resist|Sour-Curd Pickle|Cheese is the one thing in the larder that the blob's bile improves.
+assassin_vine|healing_herb|regenerating|Vine and Yarrow Sauté|The strangler grows back wherever it is cut, and lends the knack for an hour.
+bat|trail_rations|searching|Echo-Finder's Kebabs|The bat finds every crack by its cry, and you begin to hear where walls are hollow.
+boggart|bread_ration|hp|Hearth-Spirit's Pottage|Wise households left a bowl of this by the fire, and the boggart broke fewer bones.
+bullywug|apple|hp|Frog-Chief's Apple Confit|The marsh chiefs eat fruit only at feasts, and stolen fruit by preference.
+burning_skeleton|bread_ration|fire_resist|Cinder-Marrow Toast|The marrow toasts the bread without any help from your fire.
+cobra|healing_herb|poison_resist|Charmer's Skewers|The snake-charmers of the bazaar chew bitter leaf before they lift the lid of the basket.
+death_dog|trail_rations|hp|Two-Headed Dog's Breakfast|One head had the meat and the other the crackers, and now you have both.
+dretch|bread_ration|poison_resist|Slop-Bucket Bake|Whoever has kept down a dretch's leavings has little to fear from worse poisons.
+fire_beetle|wild_mushroom|dark_vision|Lantern-Leg Skewers|Glowing leg and glowing cap by turns along the stick, like lamps along a street.
+frost_skeleton|apple|cold_resist|Frosted Apple Jelly|The rime sets it as hard and clear as a pond in January.
+gelatinous_cube|apple|acid_resist|Cube-Set Apple Jelly|Whatever is dropped into the cube hangs there, so you dropped in an apple.
+giant_beetle|hard_cheese|hp|Shell-Backed Cheese Bake|The shell serves for the dish, and the cheese for the lid.
+giant_frog|wild_mushroom|mp|Toadstool Frog Soup|Witches have always known that frogs and toadstools belong to one pot.
+giant_lizard|dried_meat|hp|Lizard and Salt-Meat Hash|The fresh tail and the old strips are chopped until you cannot tell them apart.
+giant_mantis|apple|hp|Mantis Apple Glaze|It holds its arms as if at prayer, and it is lacquered sweet upon the coals.
+giant_rat|hard_cheese|hp|Rat and Cheese Hash|The rat spent its whole life looking for the cheese, and here at last they meet.
+gravehound|dried_meat|searching|Churchyard Hound Bake|The hound found every bone that was ever buried, and for an hour so will you.
+grid_bug|wild_mushroom|mp|Spark-Cap Tea|The cup crackles softly as it cools.
+hollow_one|bread_ration|hp|Hollow Marrow Bread Soup|There was little inside the creature, so the bread must fill the bowl.
+hugin_raven|trail_rations|mp|Thought and Memory Plate|Odin sent out Thought each morning, and feared for Memory more.
+jiangshi|healing_herb|mp|Talisman-Paper Tisane|The priest's paper is steeped along with the leaves, until the ink runs into the cup.
+lizardfolk|trail_rations|hp|Marsh-Hunter's Ribs|Crackers are pounded to a crust on the ribs, after the custom of the marsh villages.
+myconid_worker|hard_cheese|hp|Mushroom-Folk Skillet|The myconids keep no cows and would be greatly troubled by the smell of this.
+pixie_swarm|apple|mp|Pixie-Dusted Apple Pudding|Each spoonful lifts a finger's breadth from the bowl before you catch it.
+poltergeist|bread_ration|mp|Table-Rapping Toast|It leaps twice on the plate, and is delicious.
+rot_grub_swarm|healing_herb|hp|Barber-Surgeon's Grub Broth|Army surgeons set grubs to clean a wound, and the thrifty ones made broth after.
+sea_snake|wild_mushroom|hp|Tide-Cave Snake Soup|The caps of the sea-caves are salt already, and the snake needs no other seasoning.
+stirge_swarm|healing_herb|hp|Blood-Debt Broth|They drew it from you by the cupful, and you are taking it back.
+yellow_mold|hard_cheese|poison_resist|Veined-Cheese Toast|Cheesemakers learned long ago that some molds are friends, and how to befriend the others.
+zombie|hard_cheese|hp|Cheese-Stuffed Marrowbones|Split lengthwise, filled to the brim and browned until the cheese runs down the sides.
+blink_dog|dried_meat|hp|Here-and-There Chops|They must be turned often, for they are not always in the pan.
+bone_witch|wild_mushroom|mp|Wand-Bone Cauldron|Three times stirred against the sun, and the caps rise to the top in a ring.
+changeling|bread_ration|displacement|Cradle-Swap Bread|It was left in the cradle in place of something else, and is still not quite where it seems.
+crystal_ooze|apple|mp|Crystal-Press Cider|The ooze strains the juice as clear as glass and leaves a shimmer at the bottom.
+darkmantle|wild_mushroom|dark_vision|Cave-Roof Steak|Both grew on the ceiling in utter dark, and saw well enough there.
+gas_spore|bread_ration|poison_resist|Spore-Risen Bake|The loaf swells to twice its size and must on no account be pricked near a flame.
+giant_centipede|trail_rations|poison_resist|Hundred-Boot Hash|A hundred legs and the venom of two jaws, and the marching fare masters both.
+gibbering_mouther|hard_cheese|mp|Babbler's Cheese Pudding|It mutters while it bakes, and some of the words are spells.
+goblin_king|apple|hp|Goblin-Court Bangers|His Majesty had apples at every banquet, for he had robbed every orchard within a day's ride.
+homunculus|trail_rations|mp|Flask-Born Syllabub|The alchemist fed his little man on crumbs and fat, and wondered that he grew so clever.
+kobold|bread_ration|searching|Trap-Finder's Butty|Whoever eats as the trapsetters eat begins to see where they would have set the wire.
+leprechaun|wild_mushroom|mp|Cobbler's Posset|The fairy cobbler drinks it at his last, seated on the largest cap.
+ochre_jelly|apple|hp|Ochre Apple Glaze|It divides neatly into two helpings under the knife.
+puca|apple|displacement|Samhain Compote|After Samhain the puca spoils whatever fruit is left on the bough, unless it is cooked first.
+rust_monster|hearty_stew|acid_resist|Iron-Pot Stew of Rust|The pot will not survive it, and your stomach will.
+shade|wild_mushroom|dark_vision|Gloom-and-Glow Jelly|A little light is shut up in a great deal of shadow, and both tremble on the spoon.
+skeleton|dried_meat|fear_immune|Rattling Bones Broth|A skeleton has nothing left to be afraid for, and the meat does not change its mind.
+violet_fungus|wild_mushroom|mp|Violet Dream Sauté|The cousins are fried side by side, and your thoughts turn faintly purple.
+will_o_wisp|wild_mushroom|mp|Marsh-Light Soup|It glimmers at you from the bowl as though it would have you follow.
+wood_golem|healing_herb|hp|Sap and Leaf Broth|Oak-sap closes the bark of the tree, and will serve as well for skin.
+
+# ---- floors 3-8 ----
+ba_spirit|bread_ration|mp|Soul-Bird Offering Dumplings|The Egyptians set bread at the tomb door so that the soul-bird would not go hungry.
+carbuncle|hard_cheese|mp|Jewel-Brow Platter|The red stone lights the table, and the cheese sweats a little beneath its stare.
+fetch|trail_rations|warning|Double-Walker's Crackers|To meet your own double is a warning, and to eat with it a clearer one.
+ethereal_filcher|hard_cheese|searching|Pickpocket's Cheese Board|Count the slices before you begin and again when you are done.
+crypt_thing|dried_meat|mp|Crypt-Cellar Roast|The crypt keeps meat very well, and whatever sits in the crypt has kept it company.
+goblin|hard_cheese|hp|Goblin Cheese Grill|Goblins steal cheese from every farm they pass, and gristle wants something that melts.
+grave_guardian|healing_herb|save_guard_WIS|Grave-Watch Posset|The watchers of tombs drink it at midnight and are not moved by any voice.
+hecate_hound|bread_ration|mp|Crossroads Supper|At each new moon a supper was left for Hecate where three roads meet.
+giant_wasp|apple|hasted|Windfall Wasp Jam|Wasps come angry and drunken out of fallen apples, and go very fast.
+kuo_toa|healing_herb|hp|Brine-and-Leaf Shanks|The leaves draw out the salt, and the salt draws out the ache.
+mud_crawler|apple|hp|Washed-Leg Country Skillet|Scrubbed three times and fried with fruit, it passes for farmhouse fare.
+piercer|hard_cheese|warning|Look-Up Fritters|They drip from the spoon just as the piercer drops, and you will glance at every ceiling.
+bugbear|apple|hp|Apple-Fried Bangers|The bugbear would never have eaten the fruit, which is one more reason to.
+carrion_crawler|trail_rations|save_guard_CON|Iron-Belly Skewers|A stomach that can keep this down will keep down nearly anything.
+huecuva|bread_ration|save_guard_WIS|Penitent's Bread Soup|Bread and water was the penance, and the false monk never finished his.
+satyr_warrior|apple|mp|Revel Cider|The satyrs tread it with their hooves and sing over the vat until it answers.
+troglodyte|healing_herb|poison_resist|Musk-Breaker's Relish|So much bitter leaf will master the stench, and most lesser venoms with it.
+gnoll|dried_meat|hp|Laughing-Pack Barbecue|The pack falls to all at once, and you had better do the same.
+grick|hearty_stew|mp|Rock-Crevice Ragout|The tentacles feel their way around the pot long after the lid is on.
+harpy|hard_cheese|hp|Phineus's Supper|The harpies snatched every meal of blind King Phineus, and this one is taken back for him.
+mimic|hard_cheese|searching|Looks-Like-Cheese Board|One of the slices is not cheese, and you will learn to look closely.
+rock_python|hearty_stew|hp|Coiled Python Hotpot|The joint lies curled around the pot as it once lay around the goats.
+shield_guardian|bread_ration|shielded|Warding Loaf|The core is baked at the heart of the loaf, and the crust is very hard to break.
+wererat|hard_cheese|hp|Rat-Catcher's Rashers|The bait and the catch are fried together, for a rat-catcher wastes nothing.
+wolf_pack_leader|trail_rations|hp|Pack-Trail Grill|The leader eats first, and today that is you.
+
+# ---- floors 9-20 ----
+arachne|bread_ration|mp|Arachne's Knotted Dumplings|She challenged Athena at the loom, and even her dumplings are tied without a fault.
+cave_bear|apple|hp|Bear and Orchard Roast|A bear grown fat on autumn fruit needs little but more of the same.
+imp|hard_cheese|mp|Brimstone Cheese Toast|It bubbles, blackens and whispers the name of something in a pentagram.
+nothic|wild_mushroom|see_invisible|Secret-Seer's Fritters|The eye that saw hidden things still winks from the middle of one.
+cockatrice|healing_herb|save_guard_CON|Weasel's Rue Skillet|The weasel chews rue before it fights the cockatrice, and it does not turn to stone.
+beholder|wild_mushroom|mp|Many-Eyed Soup|The caps float, the eyes float, and all of them turn slowly toward the spoon.
+giant_spider|healing_herb|poison_resist|Silk-Bound Kebabs|They are tied to the stick with the spider's own thread.
+hobgoblin|trail_rations|fear_immune|Mess-Tin Beans|Hobgoblin regiments march on it, and it is said that none has ever broken before supper.
+roc_chick|trail_rations|hp|Sindbad's Roc Roast|Sindbad's shipmates roasted a roc's chick on the beach, and he begged them not to.
+asterion_minotaur|apple|hp|Atalanta's Boar Roast|Atalanta drew first blood from the boar of Calydon, and she was ever one for apples.
+ghoul|hearty_stew|save_guard_CON|Sexton's Stew|Sextons who worked among ghouls ate heartily and caught nothing from the churchyard.
+nosferatu|healing_herb|hp|Night-Count's Gravy|The old count would have had it without the leaves, and without the gravy.
+drake_fire|hard_cheese|fire_resist|Drake-Fire Fondue|The scale keeps the cheese boiling long after the coals are out.
+ice_elemental|apple|cold_resist|Blizzard Apple Preserve|Shut up in the jar with the storm, the fruit will keep until the thaw of the world.
+grell|wild_mushroom|shock_resist|Crackling-Bladder Tempura|The batter spits blue, and your tongue grows used to it.
+lamia|apple|mp|Lamia's Apple Sausages|The serpent-queen knew very well what fruit to offer.
+owlbear|wild_mushroom|hp|Deep-Wood Fry-Up|Everything in the pan came out of the same wood, and most of it was hunting the rest.
+wraith|bread_ration|mp|Cold-Breath Bread Pudding|It steams backwards, drawing the warmth out of the room and into the bowl.
+banshee|elvish_bread|fear_immune|Keener's Wake Punch|Those who have sat up at a wake with this in hand can hear the banshee and not rise.
+ogre|hearty_stew|hp|Ogre's Kitchen Cauldron|Ogres add whatever wanders by, so be thankful that you are the cook.
+pegasus|apple|hp|Bellerophon's Drumsticks|Bellerophon won the winged horse with a golden bridle, though an apple might have served.
+specter|elvish_bread|mp|Pale Guest's Tea|A cup is poured for the guest that cannot drink, and you drink it after.
+xorn|hard_cheese|searching|Stone-Eater's Soufflé|A xorn looks through rock as through a window, for whatever is good to eat behind it.
+minotaur|trail_rations|searching|Ariadne's Thread Sandwich|It is tied with string, as a courtesy to all who must find the way through a labyrinth.
+nemean_lion|dried_meat|shielded|Lion-Hide Shank|No blade would pierce that hide, so the meat is torn with the fingers.
+lindworm|elvish_bread|hp|Lindworm Bride's Supper|The wise bride bade the worm shed skin after skin, and afterwards there was supper.
+talos|healing_herb|hp|Bronze Giant's Braise|One vein ran from his neck to his heel, and Medea found the nail that stopped it.

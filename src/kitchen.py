@@ -40,6 +40,13 @@ mythic fruits) goes into a dish of its own; cooking it uses it up. Held, it
 puts that dish under Building Toward, as a harvested part does
 (``is_keystone``).
 
+TWO LOW RUNGS (Brandon, 2026-11-22: "there should be more recipes that use
+these ONLY... as well as monster recipes that are just ONE step above a
+single monster ingredient"). A dish may name a ``rung``: 'plain' (staples
+alone: any two of them make a dish, no stat and no max HP) or 'step' (one
+creature's part and one staple). Their numbers are cooking_rules.json
+``rungs``; their dishes are tools/content/kitchen/rungs_*.txt.
+
 A DISH THAT PLAYS A SONG (3.5.2, songs.py): a dish may name ``song``, an id
 in data/songs.json (its benefit is 'song', so it sits on the Special tab).
 Eaten, it gives what every dish gives, and its power is the song's: it lasts
@@ -47,6 +54,7 @@ exactly as long as the song plays, in real seconds. Caviar and Tater Tots is
 the first, Brandon's own song as A Man Before a King.
 """
 import json
+import math
 from collections import Counter
 
 from naming import quantity
@@ -449,6 +457,26 @@ def size_mult(n: int) -> float:
     return float(table.get(str(n), 1.0))
 
 
+def rung_of(rec: dict):
+    """'plain' (staples alone), 'step' (one part and one staple) or None for
+    every other dish (cooking_rules.json ``rungs``)."""
+    return (rec or {}).get('rung') or None
+
+
+def is_plain_fare(rec: dict) -> bool:
+    return rung_of(rec) == 'plain'
+
+
+def raw_gives(rec: dict) -> tuple:
+    """(SP, HP) the dish's ingredients give eaten as they are."""
+    sp = hp = 0
+    for p in rec.get('ingredients', []) or []:
+        d = ingredients().get(p) or foods().get(p) or {}
+        sp += int(d.get('sp_restore', d.get('raw_sp', 0)) or 0)
+        hp += int(d.get('hp_restore', 0) or 0)
+    return sp, hp
+
+
 def is_legendary(rec: dict) -> bool:
     return bool(rec.get('legendary'))
 
@@ -485,7 +513,10 @@ def dish_outcome(rec: dict) -> dict:
     t = dish_tier(rec)
     side = dish_worth(rec) * size_mult(dish_size(rec))
     grand = is_legendary(rec) or is_trophy(rec)
+    low = (r.get('rungs') or {}).get(rung_of(rec)) if rung_of(rec) else None
     main = side * (float(r['legendary']['mult']) if grand else 1.0)
+    if low:
+        main *= float(low.get('main', 1.0))
     every = r['every_dish']
     out = {
         'tab': tab, 'tier': t, 'worth': dish_worth(rec), 'factor': main,
@@ -534,6 +565,15 @@ def dish_outcome(rec: dict) -> dict:
             out['permanent'] = ('stat', int(leg.get('stat_points', 1)))
         elif tab == 'special':
             out['permanent'] = ('resist', _feast_resist(rec))
+    if low:
+        for key in ('heal_written', 'max_hp'):
+            if key in low:
+                out[key] = int(low[key])
+        # Cooked never gives less than eaten as it is, and a little more.
+        more = float(r['rungs'].get('cooked_over_raw', 1.0))
+        raw_sp, raw_hp = raw_gives(rec)
+        out['sp'] = max(out['sp'], math.ceil(raw_sp * more))
+        out['heal_least'] = math.ceil(raw_hp * more)
     return out
 
 
@@ -598,8 +638,10 @@ def heal_amount(player, out: dict) -> int:
     from floor_curve import mend
     from food_system import meal_mend_share
     written = out['heal_written']
-    share = max(meal_mend_share(written), out['heal_share'])
-    return mend(written, int(getattr(player, 'max_hp', 1) or 1), share)
+    # (plain fare has no written heal, and so no snack's share of the bar)
+    share = max(meal_mend_share(written) if written > 0 else 0.0, out['heal_share'])
+    return max(mend(written, int(getattr(player, 'max_hp', 1) or 1), share),
+               int(out.get('heal_least', 0)))
 
 
 def mp_amount(player, out: dict) -> int:
@@ -678,7 +720,9 @@ def dish_effects(player, rec: dict) -> list:
         # heal, if any.
         lines.append("Heals you fully")
     room = max_hp_room(player)
-    if tab == 'hp' or room > 0:
+    if is_plain_fare(rec) and out['max_hp'] <= 0:
+        lines.append(PLAIN_NO_MAX_HP)
+    elif tab == 'hp' or room > 0:
         gain = min(out['max_hp'], room)
         if gain > 0:
             lines.append(f"+{gain} Max HP")
@@ -691,6 +735,11 @@ def dish_effects(player, rec: dict) -> list:
 
 
 MAX_HP_FULL_FLOOR = "Max HP full this floor"
+# Plain fare's value for sorting: under the least dish with a part in it (a
+# foraged find alone, 0.6).
+PLAIN_SORT_SHARE = 0.25
+PLAIN_NO_MAX_HP = "Plain fare: no Max HP"
+PLAIN_NO_MAX_HP_MSG = "Plain fare adds no max HP. A creature's part does."
 
 
 def _lasting_lines(player, out: dict, rec=None) -> list:
@@ -808,9 +857,12 @@ def _stat_cap_line(player, out: dict) -> str:
 
 def dish_value(player, rec: dict) -> float:
     """How much a dish gives, for sorting rows of one tab: deeper and richer
-    dishes first."""
+    dishes first, and plain fare, which builds nothing, after every dish
+    with a part in it."""
     out = dish_outcome(rec)
     v = out['factor'] * (1.0 + 0.3 * (out['tier'] - 1))
+    if is_plain_fare(rec):
+        v *= PLAIN_SORT_SHARE
     if out['permanent'] or out['trophy_powers']:
         v += 10.0
     return round(v, 4)
@@ -1097,6 +1149,8 @@ def apply_dish(player, rec: dict) -> list:
     if applied > 0:
         msgs.append(f"{'The meal fortifies you' if tab == 'hp' else 'Good food builds you up'}. "
                     f"(+{applied} max HP)")
+    elif tab == 'hp' and out['max_hp'] <= 0:
+        msgs.append(PLAIN_NO_MAX_HP_MSG)
     elif tab == 'hp':
         msgs.append("You feel sated, but your body is already full of nourishment this floor.")
     # The main benefit.

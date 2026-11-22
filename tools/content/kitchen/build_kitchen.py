@@ -29,6 +29,17 @@ The kitchen rebuild (COOKING_REBUILD_PLAN_2026_11_14, slice K1). Three steps:
    The numbers a dish gives live in data/cooking_rules.json (hand-written),
    never here.
 
+THE TWO LOW RUNGS (Brandon, 2026-11-22, on rations, bread and cheese piling
+up). ``rungs_plain.txt`` holds the dishes of staples alone and
+``rungs_step_*.txt`` each part's dish with one staple, named by hand.
+
+    py tools/content/kitchen/build_kitchen.py --rungs
+
+writes those dishes, and only those, into recipes.json and dish_art.json and
+is idempotent; a full build includes them too. (On 2026-11-22 a full build
+refuses to run: the pack kinds and the MONSTERS AND MAGIC kinds were written
+straight into the data and are not in kin_groups.txt. Use --rungs.)
+
 Inputs: data/monsters.json, data/items/food.json, the OLD ingredient.json
 (colours; read from git's copy in ``old_ingredients.json`` once the data has
 been rebuilt), kin_groups.txt, people.txt, ingredients_*.txt.
@@ -131,8 +142,19 @@ SPECIAL_FOOD = {
     'ambrosia': ('dish_343',),
     'peach_of_immortality': ('dish_344',),
 }
-# Food that is never an ingredient: a stew is a meal already.
+# Food that goes into no dish but the two low rungs (STAPLES): a stew is a meal already.
 FORBIDDEN_FOOD = ('hearty_stew',)
+# The staples of the two low rungs (rungs_*.txt), with their short ids. The
+# stew, a meal already, goes into those two rungs and no other dish; tea, deep
+# fungi and the void ration are left to be eaten for their stat.
+STAPLES = {
+    'bread_ration': 'bread', 'dried_meat': 'meat', 'hard_cheese': 'cheese', 'apple': 'apple',
+    'trail_rations': 'trail', 'wild_mushroom': 'mushroom', 'healing_herb': 'herb',
+    'elvish_bread': 'waybread', 'hearty_stew': 'stew',
+}
+DEEP_STAPLES = ('elvish_bread', 'wild_mushroom', 'hearty_stew', 'healing_herb', 'dried_meat',
+                'trail_rations')
+MAX_NAME = 34                   # the longest name the cook menu's row was laid out for
 # Food that goes into ONE dish only, the one that plays its song (songs.py,
 # 3.5.2): caviar and tater tots make Caviar and Tater Tots and nothing else.
 # Its structure row names ``song``; its picture is the song's (dish_art).
@@ -594,6 +616,127 @@ def _dish_names():
     return out
 
 
+def _rung_lines(fname, fields):
+    with open(os.path.join(HERE, fname), encoding='utf-8') as f:
+        for n, line in enumerate(f, 1):
+            if not line.strip() or line.startswith('#'):
+                continue
+            row = [p.strip() for p in line.rstrip('\n').split('|')]
+            if len(row) != fields or not all(row):
+                raise SystemExit(f'{fname}:{n}: expected {fields} fields')
+            yield row
+
+
+def rung_recipes() -> dict:
+    """The two low rungs' dishes (rungs_*.txt), checked against the shipped
+    ingredient, food and rule data: id -> recipe, in the files' order."""
+    ings = _load(os.path.join(ITEMS, 'ingredient.json'))
+    food = _load(os.path.join(ITEMS, 'food.json'))
+    rules = _load(os.path.join(DATA, 'cooking_rules.json'))
+    book = {rid: r for rid, r in _load(os.path.join(ITEMS, 'recipes.json')).items()
+            if not r.get('rung')}
+    big, powers = rules['big_dish'], rules['special']['powers']
+    have_art = dish_art.drawn(ART_DIR)
+    out, problems = {}, []
+    sets = {frozenset(r['ingredients']): rid for rid, r in book.items()}
+    names = {r['name'].lower(): rid for rid, r in book.items()}
+    names.update({r['name'].lower(): iid for iid, r in ings.items()})
+
+    def add(rid, rung, parts, benefit, name, flavor):
+        floors = [int((ings.get(p) or food.get(p) or {}).get('min_level', 1) or 1) for p in parts]
+        tier = band_of(max(floors))
+        if len(set(parts)) >= int(big['parts']):
+            tier = min(5, tier + int(big['tier_bonus']))        # kitchen.dish_tier
+        art = dish_art.art_id(dish_art.dish_kind(name), tier, dish_art.tab_of(benefit))
+        if benefit not in ('hp', 'sp', 'mp') and benefit not in powers:
+            problems.append(f'{rid}: benefit {benefit} (never a stat on these rungs)')
+        if art not in have_art:
+            problems.append(f'{rid}: {name!r} has no picture of its kind ({art})')
+        if rid in book or rid in out:
+            problems.append(f'{rid}: id used twice')
+        key = frozenset(parts)
+        if len(key) != len(parts) or key in sets:
+            problems.append(f'{rid}: the same ingredients as {sets.get(key)}')
+        sets[key] = rid
+        if name.lower() in names:
+            problems.append(f'{rid}: name {name!r} is used by {names[name.lower()]}')
+        names[name.lower()] = rid
+        if len(name) > MAX_NAME:
+            problems.append(f'{rid}: name {name!r} is over {MAX_NAME} letters')
+        for w in BANNED_WORDS:
+            if w.lower() in name.lower():
+                problems.append(f'{rid}: banned word {w!r} in {name!r}')
+        out[rid] = {'name': name, 'ingredients': list(parts), 'benefit': benefit,
+                    'flavor': flavor, 'rung': rung, 'art': art}
+
+    pairs = set()
+    for joined, benefit, name, flavor in _rung_lines('rungs_plain.txt', 4):
+        parts = joined.split('+')
+        unknown = [p for p in parts if p not in STAPLES]
+        if unknown or not 2 <= len(parts) <= 4:
+            problems.append(f'plain fare {joined}: two to four staples only')
+            continue
+        if len(parts) == 2:
+            pairs.add(frozenset(parts))
+        add('fare_' + '_'.join(STAPLES[p] for p in parts), 'plain', parts, benefit, name, flavor)
+    for a in STAPLES:
+        for b in STAPLES:
+            if a < b and frozenset((a, b)) not in pairs:
+                problems.append(f'plain fare: {a} and {b} make no dish')
+
+    stepped = set()
+    for n in (1, 2, 3):
+        for key, staple, benefit, name, flavor in _rung_lines(f'rungs_step_{n}.txt', 5):
+            part, rid = f'{key}_prime', f'step_{key}'
+            rec = ings.get(part)
+            if not rec or rec.get('tier_role') != 'prime' or staple not in STAPLES:
+                problems.append(f'{rid}: not a part and a staple ({part}, {staple})')
+                continue
+            band = band_of(int(rec['min_level']))
+            if band >= 4 and staple not in DEEP_STAPLES:
+                problems.append(f'{rid}: {staple} is not found that deep')
+            if band_of(int(food[staple].get('min_level', 1) or 1)) > band:
+                problems.append(f'{rid}: {staple} is found deeper than the part')
+            if rec['nature'] not in ('stat', 'sp'):
+                want = rec['temp_power'] if rec['nature'] == 'special' else rec['nature']
+                if benefit != want:
+                    problems.append(f'{rid}: {benefit}, but the part is {want}')
+            stepped.add(part)
+            add(rid, 'step', [part, staple], benefit, name, flavor)
+    for r in book.values():
+        ps = set(r['ingredients'])
+        if len(ps) == 2 and len(ps & set(STAPLES)) == 1:
+            stepped |= ps                       # (a few were in the book already)
+    short = sorted(i for i, r in ings.items() if r.get('tier_role') == 'prime' and i not in stepped)
+    if short:
+        problems.append(f'{len(short)} parts with no dish of one staple: {short}')
+    if problems:
+        print('\n'.join(problems[:80]))
+        raise SystemExit(f'{len(problems)} problems')
+    return out
+
+
+def write_rungs():
+    """Write the two low rungs into the shipped book; nothing else changes."""
+    rungs = rung_recipes()
+    path = os.path.join(ITEMS, 'recipes.json')
+    recipes = {rid: r for rid, r in _load(path).items() if not r.get('rung')}
+    recipes.update(rungs)
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(recipes, f, ensure_ascii=False, indent=1)
+        f.write('\n')
+    art_path = os.path.join(HERE, 'dish_art.json')
+    record = _load(art_path)
+    doc = record.pop('_doc')
+    record = {rid: a for rid, a in record.items() if rid in recipes}
+    record.update({rid: r['art'] for rid, r in rungs.items()})
+    with open(art_path, 'w', encoding='utf-8') as f:
+        json.dump({'_doc': doc, **dict(sorted(record.items()))}, f, ensure_ascii=False, indent=1)
+        f.write('\n')
+    n = {k: sum(1 for r in rungs.values() if r['rung'] == k) for k in ('plain', 'step')}
+    print(f"{len(recipes)} dishes: {n['plain']} plain fare, {n['step']} one step up")
+
+
 def build():
     ings, harvest, aliases = build_ingredients()
     structure = _load(os.path.join(HERE, 'structure.json'))
@@ -647,6 +790,7 @@ def build():
         if d['cross_depth']:
             rec['cross_depth'] = True
         recipes[did] = rec
+    recipes.update(rung_recipes())
     extra = sorted(set(names) - set(structure))
     if extra:
         raise SystemExit(f'dishes.txt names unknown dishes: {extra[:10]}')
@@ -734,9 +878,9 @@ def check(ings, recipes):
                 if p not in food or not food[p].get('special'):
                     problems.append(f'{rid}: {p} must be in food.json with "special": true')
                 continue
-            if p not in ings and p not in FOOD:
+            if p not in ings and p not in FOOD and not (r.get('rung') and p in STAPLES):
                 problems.append(f'{rid}: unknown ingredient {p}')
-            if p in FORBIDDEN_FOOD:
+            if p in FORBIDDEN_FOOD and not r.get('rung'):
                 problems.append(f'{rid}: forbidden food {p}')
         if len(parts) == 1:
             singles.setdefault(parts[0], []).append(rid)
@@ -808,7 +952,7 @@ def check(ings, recipes):
 def part_rules_for(ings, food):
     import part_rules
     freq = part_rules.load_freq()
-    kitchen_food = list(FOOD) + list(SPECIAL_FOOD)
+    kitchen_food = list(dict.fromkeys([*FOOD, *SPECIAL_FOOD, *STAPLES]))
     rare = part_rules.rare_foods({k: food[k] for k in kitchen_food}, freq['rules']['rare_food_weight'])
 
     def role_of(p):
@@ -828,7 +972,7 @@ def report(ings, recipes):
             return 1                      # caviar and tater tots: found from floor 1
         if p in SPECIAL_FOOD:
             return int(food_json[p].get('min_level', 1) or 1)
-        return ings[p]['floor'] if p in ings else FOOD[p][1]
+        return ings[p]['floor'] if p in ings else int(food_json[p].get('min_level', 1) or 1)
     tab_band = Counter()
     for r in recipes.values():
         tab, _ = _nature_split(r['benefit'])
@@ -855,7 +999,9 @@ def report(ings, recipes):
 
 
 if __name__ == '__main__':
-    if '--structure' in sys.argv:
+    if '--rungs' in sys.argv:
+        write_rungs()
+    elif '--structure' in sys.argv:
         ings, _h, _a = build_ingredients()
         write_structure(ings)
     else:

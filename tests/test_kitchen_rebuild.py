@@ -45,7 +45,8 @@ RULES = _json('cooking_rules.json')
 ART = os.path.join(ROOT, 'assets', 'tiles', 'items')
 
 BANNED = ('Prime Cut', 'Choice Cut', 'Pristine', 'Pure', 'Concentrated', 'Engorged', 'Glittering')
-# A stew is a meal already: it never goes into a dish.
+# A stew is a meal already: it goes into the two low rungs (plain fare, one
+# part and one staple: Brandon, 2026-11-22) and no other dish.
 FORBIDDEN_FOOD = ('hearty_stew',)
 # Special food (food.json "special": the carrot, the tart, the mythic fruits)
 # goes into a dish of its own (Brandon, 2026-11-16) and no other.
@@ -179,7 +180,7 @@ def test_every_recipe_ingredient_exists_and_is_never_secret_food():
     for r in _book():
         for p in r['ingredients']:
             assert p in INGS or p in FOOD, (r['id'], p)
-            assert p not in FORBIDDEN_FOOD, (r['id'], p)
+            assert p not in FORBIDDEN_FOOD or r.get('rung'), (r['id'], p)
             if p in SPECIAL_FOOD:
                 special_dishes.setdefault(p, []).append(r['id'])
     # Each special food is in exactly one dish, never the one that makes it.
@@ -233,7 +234,7 @@ def test_the_fourteen_trophy_dishes_keep_their_permanent_powers():
 
 
 def test_cross_depth_dishes_really_span_and_are_about_a_third():
-    multis = [r for r in _book() if len(_parts(r)) > 1]
+    multis = [r for r in _book() if len(_parts(r)) > 1 and not r.get('rung')]
     cross = [r for r in multis if r.get('cross_depth')]
     for r in cross:
         floors = [kitchen.part_floor(p) for p in r['ingredients']]

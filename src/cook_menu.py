@@ -25,7 +25,7 @@ SECTION_TITLES = {'ready': 'Ready to Cook', 'building': 'Building Toward',
 
 # What each tab's dishes are for (the empty tab's detail pane says it).
 TAB_BLURBS = {
-    'hp': "HP dishes heal you now and add to your maximum HP.",
+    'hp': "HP dishes heal you now, and all but plain fare add to your maximum HP.",
     'sp': "SP dishes fill the belly far past a ration, and slow your hunger for a long while.",
     'mp': "MP dishes give back mana: a caster's meal before a hard fight.",
     'stat': "Stat dishes teach a stat one point, one lesson a floor. Deeper creatures teach a stat further.",

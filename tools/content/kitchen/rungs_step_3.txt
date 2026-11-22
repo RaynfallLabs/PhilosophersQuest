@@ -1,0 +1,102 @@
+# One step up, part 3: parts of floors 41-100. Below floor 40 bread, cheese and apples nearly
+# stop, so these take what the deep floors drop: elvish bread, mushroom, stew, herb, dried
+# meat and trail rations.
+# part key (its id less _prime) | staple | benefit | name | flavour line
+# An HP, MP or Special part keeps its nature; a Stat or SP part is the meal named here.
+
+# ---- floors 41-60 ----
+fire_giant|dried_meat|fire_resist|Giant-Smith's Grill|The smiths of the fire giants lay their supper straight upon the anvil.
+wyrm|dried_meat|sp|Coiled Wyrm Roast|There is enough in one coil for a village, and you are very hungry.
+lurking_horror|wild_mushroom|warning|Hackle-Raiser Fritters|The hair stands upon your neck at the first bite and stays standing.
+dracolich|hearty_stew|drain_resist|Dragon's-Tomb Pottage|The dragon would not stay dead, and something of that stubbornness is in the bowl.
+magma_elemental|hard_cheese|fire_resist|Volcano Fondue|The mountain melts the cheese and asks no thanks.
+sphinx|elvish_bread|mp|Riddle-Asker's Tisane|She sips it between the question and the answer.
+the_sphinx|wild_mushroom|mp|Oedipus's Answer Soup|The answer was Man, who eats it on four legs, on two and at last on three.
+scarab_swarm|wild_mushroom|hp|Khepri's Dawn Bake|The scarab rolls the sun up out of the dark each morning, round and golden as this.
+werebear|elvish_bread|hp|Skin-Changer's Breakfast|He went out as a bear by night and came home very hungry as a man.
+catoblepas|healing_herb|hp|Heavy-Headed Grill|The catoblepas grazed on bitter herbs all its life, for it could never lift its head higher.
+unicorn_corrupted|healing_herb|poison_resist|Bitter-Horn Haunch|The horn once cleansed whole springs of venom, and a little of that is left in the meat.
+cacus|hard_cheese|sp|Cattle-Thief's Roast|Cacus dragged the cattle backwards into his cave to hide the tracks, and was found by their lowing.
+cloud_giant|elvish_bread|mp|Beanstalk Broth|It tastes of thin air and of something stolen by a boy named Jack.
+demonic_trickster|healing_herb|mp|False Hermit's Tea|Ravana came begging in a hermit's robe, and the rakshasas have served tea so ever since.
+dire_lion|hearty_stew|hp|Lion's-Share Hotpot|All of it is yours, as the lion would have said.
+anubis_guardian|elvish_bread|mp|Funeral-Bread Broth|The jackal-headed ones allow bread to the dead, and broth to those who carry them.
+death_knight|hearty_stew|sp|Fallen Order's Pot|The order broke its vows long ago but still sits down to supper by rank.
+werewolf|dried_meat|sp|Silver-Moon Roast|It is eaten very rare on three nights of the month.
+deep_one_priest|hearty_stew|mp|Drowned Choir Chowder|The choir beneath the waves sings a grace of its own over this pot.
+mapinguari|trail_rations|sp|Rainforest-Camp Barbecue|The rubber-tappers would not name the beast, but they knew how to smoke it.
+sobek_warrior|hearty_stew|sp|Nile-Flood Stew|When Sobek sends the flood the whole land is fed.
+abyssal_hound|dried_meat|sp|Hell-Kennel Roast|The kennels of the Abyss are fed on less and make more noise about it.
+fire_elemental|trail_rations|fire_resist|Wildfire Pilaf|It has finished cooking before the lid is on.
+rangda|healing_herb|hp|Barong's Dance Ragout|The Barong dances against Rangda until dawn, and the dancers are fed when it is done.
+soul_eater|wild_mushroom|mp|Hollow-Hymn Soup|The bone still hums the last song that was taken into it.
+void_leviathan|wild_mushroom|sp|Whaler's Hotpot|The whalers of the lightless sea waste no part of the blubber.
+mummy|hearty_stew|drain_resist|Linen-Wrapped Pasty|It was wrapped with care, that it might last for three thousand years.
+arcane_golem|elvish_bread|mp|Mana-Spring Cordial|It runs from the core as clear as a spring from a hillside.
+frost_giant|hearty_stew|cold_resist|Winter-Hall Stew|The halls of the frost giants keep one pot that has never been allowed to freeze.
+nightwing|wild_mushroom|dark_vision|Starless Risotto|It is as black as the nightwing's span, and you can see every grain.
+ra_serpent|elvish_bread|hp|Sun-Barque Roast|The crew of the sun's own boat eat it each night in the twelfth hour before dawn.
+storm_giant|dried_meat|shock_resist|Thunder-Hammer Steak|It is beaten flat between one clap of thunder and the next.
+ammit_spawn|healing_herb|hp|Heart-Weigher's Haunch|Ammit ate only the hearts that outweighed the feather, and grew stout upon them.
+lich|wild_mushroom|mp|Phylactery Jelly|Something small and cold is set in the middle, and it is best left on the plate.
+pit_fiend_spawn|dried_meat|hp|Infernal-Legion Sausages|They are issued one to each devil, and counted.
+sets_jackal|trail_rations|sp|Desert-Edge Barbecue|Set's jackals wait where the green land ends for travellers with full packs.
+spectral_dragon|elvish_bread|mp|Ghost-Wing Bisque|A great shadow passes over the bowl while you drink.
+ruinous_djinn|trail_rations|hasted|Whirlwind Curry|It goes around the pot and around again, and then around you.
+thoth_construct|healing_herb|mp|Moon-Scribe's Infusion|Thoth set down the virtue of every leaf, and this is the one he underlined.
+baba_yaga|hearty_stew|hp|Hut-Hearth Goulash|Baba Yaga feeds her guests well before she decides about them.
+gilded_mimic|hard_cheese|warning|Fool's-Gold Toffee|It shines on the spoon, and that should always put you on your guard.
+iron_golem|dried_meat|shielded|Iron-Rind Crackling|A smith would need tongs to eat it.
+young_dragon|elvish_bread|hp|Sigurd's Thumb Roast|Sigurd burned his thumb upon the dragon's heart and was the wiser for licking it.
+
+# ---- floors 61-80 ----
+plague_ooze|healing_herb|poison_resist|Plague-Doctor's Chutney|The doctors packed the beaks of their masks with such stuff and walked among the sick.
+draugr|hearty_stew|hp|Mound-Dweller's Hotpot|The draugr guarded its hoard and its supper with one temper.
+frost_crawler|wild_mushroom|mp|Blue-Ice Broth|The ice has a colour at its heart, and the broth takes it.
+ice_troll|hearty_stew|hp|Frozen Troll Pot|The ham is put in frozen, and by morning the pot has won.
+sea_serpent_norse|elvish_bread|hp|Oarsman's Loin|Every bench of the longship had a slice, and the helmsman two.
+winter_wolf|hearty_stew|cold_resist|Long-Winter Pottage|In the winter of the wolves it was eaten from the same pot for five months.
+corrupted_treant|wild_mushroom|hp|Fallen-Forest Stew|When a great tree falls the mushrooms are the first to the table.
+jormungandr_juvenile|dried_meat|hp|Young Serpent Grill|One day it would have circled the world, and today it circles the grate.
+valkyrie_shade|elvish_bread|mp|Slain-Chooser's Broth|The choosers of the slain bear bowls through Valhalla when the riding is over.
+nidhogg_brood|wild_mushroom|mp|Root-Gnawer's Soup|The brood gnaws at the root of the world, and the caps grow where it has gnawed.
+wendigo|healing_herb|mp|Famine-Winter Soup|Those who told of the wendigo told also what may honestly be boiled when the meat is gone.
+fenrir_pup|trail_rations|hp|Bound-Wolf Breakfast|The gods fed the wolf kindly until the day they brought the cord.
+yacumama|wild_mushroom|mp|Blackwater Soup|The mother of waters lies beneath the river, and its darkness is in the bowl.
+abyssal_behemoth|hearty_stew|hp|River-Drinker's Cauldron|Behemoth drinks up a river and does not hurry, and neither should you.
+charybdis_spawn|wild_mushroom|mp|Maelstrom Ramen|The noodles wind down into the middle and do not all come back.
+jormungandr_spawn|elvish_bread|mp|World-Girdling Stew|It is stirred in one direction only, with the tail in the mouth.
+astral_horror|wild_mushroom|mp|Far-Dream Soup|You will remember drinking it in several places.
+locust_swarmlord|healing_herb|mp|Wilderness Locust Broth|A prophet lived in the wilderness on locusts and wild honey, and saw very far.
+scylla|elvish_bread|mp|Six-Necked Noodles|Six heads reached down for the sailors, and six long noodles hang from the spoon.
+abyssal_mimic|trail_rations|warning|Open-Jawed Ragout|Having eaten what waits with its mouth open, you will know it when you see it again.
+world_serpent|dried_meat|poison_resist|Thor's Fishing Steak|Thor baited a hook with the head of an ox and drew the serpent dripping venom from the sea.
+wild_hunt_captain|elvish_bread|hasted|Hunting-Horn Ribs|The horn has sounded, and there is no dawdling over supper.
+charybdis|trail_rations|mp|Thrice-Swallowed Stew|Three times a day Charybdis drinks down the sea and three times gives it back.
+
+# ---- floors 81-100 ----
+arch_demon|elvish_bread|sp|Pandemonium Pie|In the capital of Hell even the pies are built by architects.
+flesh_colossus|hearty_stew|hp|Walking-Furnace Hotpot|The marrow keeps its own coals and the stew has only to lie upon them.
+pazuzu_spawn|trail_rations|sp|Southwest-Wind Pie|Pazuzu's wind brings famine, so the pie is made large.
+ravanas_arm|dried_meat|sp|Ten-Crowned King's Roast|A king with ten heads did not order small roasts.
+titan|elvish_bread|hp|Golden-Age Roast|When the Titans ruled, men ate without toil and did not grow old.
+cerberus|elvish_bread|fear_immune|Sibyl's Sop Stew|The Sibyl threw a sweetened cake to Cerberus and walked past all three heads.
+entropy_elemental|healing_herb|magic_resist|Unwoven Broth|Everything put into it comes apart, spells among the rest.
+seal_demon_wrath|dried_meat|sp|Amon's Furnace Pottage|Amon breathes flame into every dish that is set before him.
+void_wyrm|wild_mushroom|mp|Starless Wyrm Broth|The wyrm swallowed the lights of the sky, and they are somewhere in the pot.
+ugallu_demon|hearty_stew|sp|Great-Storm Stew|The lion-headed storm of Babylon stood guard at doors, and it was fed there.
+seal_demon_pestilence|healing_herb|poison_resist|Buer's Herbal Draught|Buer teaches the virtue of every herb, and he must have meant some of it truly.
+apocalypse_herald|healing_herb|hp|Trumpet-Call Bake|It is drawn from the oven at the last trumpet and no earlier.
+death_lord|healing_herb|mp|Pale King's Tea|The lord of the dead takes it unsweetened and looks at you over the cup.
+void_seraph|elvish_bread|mp|Ashen-Choir Tisane|A flake of burnt light floats upon it, and once it was singing.
+seal_demon_famine|elvish_bread|sp|Seven Lean Years Soup|Joseph laid up bread against seven years of famine, and it was enough.
+wormwood_blight|healing_herb|sp|Bitter-Star Stew|A star named Wormwood fell upon the waters, and the bitter leaves hide the taste.
+seal_demon_war|trail_rations|sp|Siege-Camp Stew|Sixty-six legions follow Bael, and they are fed from kettles.
+kusarikku|wild_mushroom|sp|Gatekeeper's Pie|The bull-men of Babylon have kept the gates of the sun since the beginning, with short breaks for pie.
+seal_demon_death|hearty_stew|drain_resist|Death-Defier's Pottage|It is eaten slowly and to the last spoonful, in front of Samael.
+anansi|wild_mushroom|sp|Anansi's Wisdom Pot|Anansi gathered all the world's wisdom into one pot, and then could not get it up the tree.
+lahamu|wild_mushroom|mp|First-Waters Stew|There was sweet water and salt, and out of their mingling the silt and the first gods.
+seal_demon_earthquake|hearty_stew|hp|Earth-Shaker's Bake|The crust cracks from side to side as it rises.
+abyssal_dragon|dried_meat|hp|Chaos-Dragon Braise|The blood of the first chaos is thick, and salt meat does not mind it.
+corrupted_angel|wild_mushroom|hp|Fallen-Halo Bake|The halo browns the top evenly all the way round.
+seal_demon_silence|trail_rations|mp|Half-Hour's Silence Soup|When the seventh seal was opened there was silence in heaven for about half an hour.

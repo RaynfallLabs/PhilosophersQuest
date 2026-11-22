@@ -164,7 +164,7 @@ meat (the elves' acorn as elvish bread), the same count, where it lay.
 
 ## 4. The recipe book (`recipes.json`)
 
-**703 dishes:** 306 single dishes (one per ingredient: the everyday choice) and 397
+**1,095 dishes**, 332 of them on the two low rungs (§4.5). The rebuilt book of 2026-11-16 had 703: 306 single dishes (one per ingredient: the everyday choice) and 397
 multi-ingredient dishes of 2 to 5 different ingredients. Every ingredient is in exactly one single
 dish and at least two multi-dishes. 36 multi-dishes are legendary feasts; 142 are cross-depth. No
 dish is named just like an ingredient (the build checks).
@@ -176,6 +176,7 @@ dish is named just like an ingredient (the build checks).
 | `benefit` | The main benefit, which is the menu tab: `hp`, `sp`, `mp`, a stat, or a power id. |
 | `legendary` | A five-ingredient feast with a permanent bonus (§5.3). |
 | `trophy`, `permanent` | A boss trophy's own dish and its lasting power (§6). |
+| `rung` | `plain` or `step`: one of the two low rungs (§4.5). No other dish has it. |
 | `cross_depth` | Joins an early part (floors 1-20) with a deep one (40+). |
 | `art` | The dish's picture (§4.2): `dish_<kind>_t<tier>_<tab>` for an ordinary dish, `feast_<name>` for a legendary feast, the boss's own `recipe_<id>` for a trophy dish. |
 
@@ -185,7 +186,7 @@ dish is named just like an ingredient (the build checks).
   healing herb, elvish bread, and the forage. Rare food (philosopher's tea; deep fungi and the
   void ration are in no dish now) counts as an uncommon part (§4.1). A special food (the dungeon
   carrot, the Starnut Tart, Tantalus' plum, the golden apple, ambrosia, the peach) goes only into
-  its own dish (§4.4); the hearty stew, a meal already, into none. The cook takes the ration from
+  its own dish (§4.4); the hearty stew, a meal already, only into the two low rungs (§4.5). The cook takes the ration from
   the pack.
 - **Cross-depth:** about a third of the multi-dishes join an early part with a deep one: Goblin
   Gristle from floor 3 goes into the Gristle-and-Locust Harvest Pie with a floor-74 locust.
@@ -206,7 +207,7 @@ food or forage. The build fails on any dish that breaks these rules
    hunting him.
 2. **An ordinary multi-dish holds at most one uncommon part**, so finding a rare part means its
    dishes can be cooked.
-3. About a third of the multi-dishes span depths, nine in ten of them joining an early common
+3. About a third of the multi-dishes (the two low rungs aside) span depths, nine in ten of them joining an early common
    part (a saved part, a ration, cheese) with a deep one.
 
 Before this (K1's book): 8 of 36 feasts and 109 of 257 multi-dishes were cookable in half of
@@ -304,6 +305,36 @@ name is used on the next build. Each legendary feast has its own `feast_<name>.p
 their boss's `recipe_<id>.png`. The briefs are `tools/content/genart/briefs/items_dishes.json`
 and `items_feasts.json`.
 
+### 4.5 The two low rungs (2026-11-22)
+
+Brandon: "I have to lug around all these ingredients with no way to use them (rations, bread,
+cheese)... there should be more recipes that use these ONLY... as well as monster recipes that
+are just ONE step above a single monster ingredient... so there is a strong mix and progression".
+
+The nine staples are bread, dried meat, hard cheese, apple, trail rations, wild mushroom, healing
+herb, elvish bread and hearty stew. Tea, deep fungi and the void ration are left to be eaten for
+their stat.
+
+- **Plain fare** (`rung: plain`, `fare_*`, 49 dishes): any two different staples make a dish, and
+  there are eight threes and five fours. HP, SP, MP or a small power, never a stat. Its main
+  benefit is `rungs.plain.main` (0.6) of a dish's, it adds no max HP ("you are what you eat": a
+  creature's part builds the hero), and it has no snack's heal.
+- **One step up** (`rung: step`, `step_*`, 283 dishes; 15 older pairs already served): every part
+  of a creature has a dish of that part and one staple, the staple chosen by lore and by what
+  drops at that depth. An HP, MP or Special part keeps its nature. A Stat or SP part's dish is a
+  meal or a small power instead: the lesson is the part's own dish, and SP is useless on a full
+  belly.
+- **Both** give at least `rungs.cooked_over_raw` (1.25) of the SP and HP their ingredients give
+  eaten as they are.
+
+So the ladder is: two staples (worth 0.72), the part alone (1.0), three staples (1.2), part and
+staple (1.8, as four staples), two parts (2.4), and the big dishes above them.
+
+The content is `tools/content/kitchen/rungs_plain.txt` and `rungs_step_*.txt`.
+`py tools/content/kitchen/build_kitchen.py --rungs` writes those dishes only and is idempotent.
+(The full build refuses to run since the kinds of 2026-11-19 were written straight into the data.)
+`tests/test_kitchen_rungs.py` pins the rules.
+
 ---
 
 ## 5. What a dish gives (`data/cooking_rules.json`, `kitchen.dish_outcome`)
@@ -337,6 +368,7 @@ wrong. A legendary feast or a trophy's dish multiplies its main benefit by 1.5 o
   (`cooking_hp_gained`) is kept and stops nothing.
 
 These keep a single dish of a tier near the old tier bands, so the simulator's baseline holds.
+Plain fare is the exception to the heal and the max HP, and both low rungs to the least SP (§4.5).
 
 ### 5.2 The five main benefits (one per dish: its tab)
 
@@ -588,7 +620,8 @@ letters "ruin", since a dish may be named for a Ruinous Djinn). Untimed.
 - **Siegfried** — eats parts of creatures with five different attack effects (the part's
   `source_monster`).
 - **The Widow's Jar** (2026-11-14) — ten dishes of two or more parts, cooked right, with a ration
-  or a foraged find among them (`parts`, `kitchen.part_kind` `food` or `forage`): from then on
+  or a foraged find among them (`parts`, `kitchen.part_kind` `food` or `forage`), the two low
+  rungs not counted (§4.5; `rung`): from then on
   plain food eaten as it is gives half again its SP (`eat_food`).
 - **The Fatted Calf** (2026-11-14) — a boss trophy carried down to twelve new floors
   (`QuirkSystem.on_stair_use`): from then on a legendary feast also heals fully
@@ -670,4 +703,5 @@ old saves; every special food in a decent dish of its tier, shown when held, use
 | BD | 2026-11-16 | **Big dishes +1 tier** (§5): a dish of four or more different ingredients is a tier above its deepest part's band, at most 5 (`cooking_rules.json` `big_dish`; `kitchen.dish_tier`, `base_tier`, `big_dish_bonus`, `big_dish_line`); the question, the numbers, the stat cap, the picture's vessel and the menu (with "Five ingredients: one tier richer.") all read it. 129 dishes rose a tier (T1 389 to 315, T2 115 to 161, T3 76 to 87, T4 45 to 52, T5 78 to 88). Two new pictures (a tier-2 Stat pie and platter) keep most dishes showing their own kind. |
 | HC | 2026-11-16 | **No cap across floors on max HP from meals** (Brandon: "there should be a per floor limit to hp gained, but not a max across several floors... that encourages cooking"). The lifetime cap (`Player.cooking_softcap`: 4 a floor reached, at least 20; `kitchen.lifetime_hp_room`; "Max HP: all cooking can give at this depth"; the sidebar's "Meals: go deeper for HP") is gone; the floor's cap (+5 a floor) stays, and a feast's lasting max HP always lands. |
 | PS | 2026-11-16 | **Brandon's three rulings.** People are searched, never harvested (§3.5, §8.1): 58 kinds in `people.txt`, twelve parts and their single dishes gone, 52 dishes re-sourced, old saves' parts become food. Every stat at every tier (§4.3): 15 stat dishes. Every special food in a dish of its own (§4.4): 6 dishes. Ingredients weigh nothing (a carried dish that does not fit is set down). 703 dishes, 306 ingredients. `part_rules.rare_foods` reads `floorSpawnWeight` too (the mythic fruits were counted common). |
+| LR | 2026-11-22 | **The two low rungs** (§4.5): plain fare (any two staples) and one part with one staple for every part. 332 dishes, 1,095 in all; the older 763 unchanged. The SP and MP tabs' tier gaps closed. The Widow's Jar doesn't count the rungs. |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |
