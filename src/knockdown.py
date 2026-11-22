@@ -26,6 +26,16 @@ def stands(player, atk) -> bool:
     return keep < 1.0 and random.random() >= keep
 
 
+def floors(atk) -> bool:
+    """A trample that can take him off his feet. A gore, a tusk or an antler
+    is a thrust: written ``"floors": false`` (data/monsters.json, by lore,
+    tools/content/effects_pass_2026_11_22.py), it is still a trample for the
+    boots' guard (guards.py) but floors no one."""
+    return (isinstance(atk, dict)
+            and atk.get('delivery') == effect_rules.data()['knockdown']['delivery']
+            and atk.get('floors', True) is not False)
+
+
 def from_shove(player, atk) -> str:
     """The shove has already beaten his Strength save: down he goes."""
     if stands(player, atk) or not player.add_effect('knocked_down', 1):
@@ -34,9 +44,7 @@ def from_shove(player, atk) -> str:
 
 
 def from_trample(monster, player, atk, actual: int) -> str:
-    if actual <= 0 or not isinstance(atk, dict):
-        return ''
-    if atk.get('delivery') != effect_rules.data()['knockdown']['delivery']:
+    if actual <= 0 or not floors(atk):
         return ''
     if stands(player, atk):
         return ''

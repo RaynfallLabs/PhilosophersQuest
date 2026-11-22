@@ -2387,7 +2387,8 @@
         "effect": "stunned",
         "effect_chance": 0.2,
         "effect_duration": 2,
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       }
     ],
     "resistances": [
@@ -2450,7 +2451,8 @@
         "delivery": "trample",
         "shove": {
           "chance": 0.35
-        }
+        },
+        "floors": false
       },
       {
         "name": "Slam",
@@ -8800,7 +8802,8 @@
         "name": "Bull Gore",
         "damage": "6d10+36",
         "type": "pierce",
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       },
       {
         "name": "Chaos Stomp",
@@ -22082,7 +22085,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 6,
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       },
       {
         "name": "Trample",
@@ -22296,7 +22300,8 @@
         "name": "Antler Gore",
         "damage": "2d8+6",
         "type": "pierce",
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       },
       {
         "name": "Shadow Dive",
@@ -24111,7 +24116,8 @@
         "delivery": "trample",
         "shove": {
           "chance": 0.3
-        }
+        },
+        "floors": false
       }
     ],
     "resistances": [],
@@ -26470,7 +26476,8 @@
         "effect": "bleeding",
         "effect_chance": 0.3,
         "effect_duration": 4,
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       },
       {
         "name": "Trample",
@@ -28904,7 +28911,8 @@
         "name": "Gore",
         "damage": "1d6+6",
         "type": "pierce",
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       }
     ],
     "resistances": [
@@ -29665,7 +29673,8 @@
         "name": "Goat Gore",
         "damage": "2d10+12",
         "type": "blunt",
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       }
     ],
     "resistances": [
@@ -38242,7 +38251,8 @@
         "effect": "bleeding",
         "effect_chance": 0.3,
         "effect_duration": 4,
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       },
       {
         "name": "Trampling Charge",
@@ -44447,7 +44457,8 @@
         "delivery": "trample",
         "shove": {
           "chance": 0.3
-        }
+        },
+        "floors": false
       },
       {
         "name": "Furnace Breath",

@@ -111,6 +111,57 @@ def stop_stone(run) -> bool:
     return True
 
 
+def wants_guard(run, group) -> bool:
+    """The careful kid (tactics=1) fights in Guard a creature whose tell he
+    knows says it floors or stuns him (the help and the tell: "Meet him in
+    Guard"). Guard costs a third of his blows' weight (stance.py)."""
+    if not run.knobs.get('tactics'):
+        return False
+    import tells
+    for m in group:
+        if not run._knows(getattr(m, 'kind', '')):
+            continue
+        have = set(tells.abilities(m))
+        if have & {'knocked_down', 'stunned'}:
+            run.fs['fx_guard_up'] = run.fs.get('fx_guard_up', 0) + 1
+            return True
+    return False
+
+
+def note_stone(run, group) -> None:
+    """He has met a creature whose stone kills (its tell, once seen)."""
+    import tells
+    if any('petrify_lethal' in tells.abilities(m) for m in group):
+        run.__dict__['_stone_seen'] = True
+
+
+RUE_CARRY = 2
+
+
+def buy_rue(run, floor: int, defn: dict, reserve: float) -> None:
+    """Once he has met a stone that kills, a kid who keeps potions buys Oil
+    of Rue where a stall keeps it (data/traders.json always_stocked), up to
+    RUE_CARRY in his pack."""
+    if not run.__dict__.get('_stone_seen') or not run._mm('mm_potions'):
+        return
+    import traders
+    import economy
+    from items import make_item_by_id
+    if not any(x.get('id') == 'oil_of_rue'
+               and int(x.get('floors', (1, 100))[0]) <= floor <= int(x.get('floors', (1, 100))[1])
+               for x in traders.data().get('always_stocked') or ()):
+        return
+    kit = run._mm_kit()['potion']
+    oil = make_item_by_id('potion', 'oil_of_rue')
+    if oil is None:
+        return
+    price = economy.stock_price(oil, floor, float(defn.get('markup', 1.0) or 1.0))
+    while (sum(1 for x in kit if getattr(x, 'effect', '') == 'stoneproof') < RUE_CARRY
+           and len(kit) < 8 and run._pay(price, reserve)):
+        kit.append(oil)
+        run.fs['rue_bought'] = run.fs.get('rue_bought', 0) + 1
+
+
 def after_world(run, active: list) -> None:
     """A hold ends with the creature that laid it; a memory eaten is noted."""
     p = run.p

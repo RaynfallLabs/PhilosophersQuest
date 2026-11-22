@@ -62,6 +62,11 @@ def _floor() -> float:
     return float(data().get('min_chance', 0.1))
 
 
+def _floors(atk) -> bool:
+    import knockdown
+    return knockdown.floors(atk)
+
+
 def abilities(m) -> list:
     """The tell keys of a creature, worst first."""
     d = data()
@@ -71,8 +76,8 @@ def abilities(m) -> list:
         if eff and float(atk.get('effect_chance', 1.0) or 0) >= _floor():
             # Stone that kills and stone that only holds are two tells.
             have.add('petrify_lethal' if eff == 'petrifying' and atk.get('lethal') else eff)
-        if isinstance(atk, dict) and (atk.get('shove') or atk.get('delivery') == 'trample'):
-            have.add('knocked_down')     # knockdown.py
+        if isinstance(atk, dict) and (atk.get('shove') or _floors(atk)):
+            have.add('knocked_down')     # knockdown.py (a gore is a thrust: no fall)
     for flag in _FLAGS:
         if getattr(m, flag, None):
             have.add(flag)

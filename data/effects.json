@@ -61,7 +61,7 @@
     "lesser": {"slow_at": 2, "rigid_at": 1, "end_paralyzed": 1}
   },
   "knockdown": {
-    "_doc": "A shove that beat the hero's STR save also floors him; a landed trample asks a DEX save when no other effect of that blow took hold. A standing hero has his footing for statuses.footing_turns.",
+    "_doc": "A shove that beat the hero's STR save also floors him; a landed trample asks a DEX save when no other effect of that blow took hold. A gore, a tusk or an antler is a thrust, not a trample: its attack says \"floors\": false (it stays a trample for the boots' guard). A standing hero has his footing for statuses.footing_turns.",
     "delivery": "trample"
   },
   "quiz": {
