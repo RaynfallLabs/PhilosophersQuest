@@ -906,6 +906,17 @@ _WARD_POTIONS = {
 }
 
 
+def potion_turns(potion) -> int:
+    """The turns one potion lays, for the menus and its card: the status
+    cap cuts all but the ward potions, which carry a cap of their own
+    (_ward_potion)."""
+    turns = int(getattr(potion, 'duration', 0) or 0)
+    if getattr(potion, 'effect', '') in _WARD_POTIONS:
+        return turns
+    from status_effects import MAX_EFFECT_DURATION
+    return min(turns, MAX_EFFECT_DURATION)
+
+
 def _ward_potion(player, effect: str, duration: int, buff_mult: float) -> list:
     clears, lays, said = _WARD_POTIONS[effect]
     cleared = [s for s in clears if player.status_effects.pop(s, None) is not None]

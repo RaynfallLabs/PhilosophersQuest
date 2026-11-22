@@ -220,7 +220,10 @@ class LightsMixin:
     def _ready_light(self, item) -> None:
         """The Kit's R on a light: the kind Shift+L takes up first (no turn)."""
         self.player._light_kind = str(getattr(item, 'id', '') or '')
-        self.add_message(lights.line('readied', light=self._bare_name(item)), 'info')
+        import copy
+        one = copy.copy(item)
+        one.count = 1                           # a kind is readied, not the bundle
+        self.add_message(lights.line('readied', light=self._bare_name(one)), 'info')
 
     def _unready_light(self, item) -> None:
         self.player._light_kind = ''

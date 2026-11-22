@@ -39,6 +39,7 @@ from game_helpers import (
     wrap_text as _gh_wrap_text,
 )
 from naming import proper_name
+from food_system import potion_turns
 from quiz_engine import QuizMode, QuizState
 from spells import LEARNABLE_SPELLS
 from game_states import STATE_MOOBLE, STATE_MOOBLE_DANCE
@@ -8159,7 +8160,8 @@ class RenderMixin:
             known = self._item_is_known(item)
             if known:
                 eff = item.effect.replace('_', ' ').title()
-                dur = f" ({item.duration} turns)" if item.duration else ""
+                turns = potion_turns(item)
+                dur = f" ({turns} turns)" if turns else ""
                 is_good = item.effect in self._BENEFICIAL_EFFECTS
                 detail_text = f"{eff}{dur}"
                 detail_col = FP.SUCCESS_TEXT if is_good else FP.DANGER_TEXT_LIGHT
@@ -8204,7 +8206,8 @@ class RenderMixin:
                 known = self._item_is_known(item)
                 if known:
                     eff = item.effect.replace('_', ' ').title()
-                    dur = f" ({item.duration} turns)" if item.duration else ""
+                    turns = potion_turns(item)
+                    dur = f" ({turns} turns)" if turns else ""
                     detail_text = f"{eff}{dur}"
                 else:
                     detail_text = "Effect hidden until identified"
@@ -9976,7 +9979,7 @@ class RenderMixin:
             ]
             if getattr(item, 'power', ''):
                 lines.append((f"Power: {item.power}", FP.BODY_TEXT, self.font_sm))
-            duration = getattr(item, 'duration', 0)
+            duration = potion_turns(item)
             lines.append((f"Duration: {duration} turns" if duration else "Duration: instant",
                           FP.BODY_TEXT, self.font_sm))
             quiz = getattr(item, 'quiz', None)

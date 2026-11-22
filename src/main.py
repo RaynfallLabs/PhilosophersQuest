@@ -9521,11 +9521,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             item._offered = True     # set down by the hero: a gift a Kappa or a Preta takes (slice M)
         self.ground_items.append(item)
         _dc = getattr(item, 'count', 1)
-        if _dc > 1:
+        if _dc > 1 and isinstance(item, Ammo):     # (arrows and bolts take a plain s)
             self.add_message(
-                f"You drop {_dc} {re.sub(r' x[0-9]+$', '', self._display_name(item))}"
-                f"{'s' if _dc != 1 else ''}.", 'info')
+                f"You drop {_dc} {re.sub(r' x[0-9]+$', '', self._display_name(item))}s.", 'info')
         else:
+            # Any other stack as the pack names it ("Torch x4"): an s on the
+            # end made Torchs and Potion of Healings.
             self.add_message(f"You drop the {self._bare_name(item)}.", 'info')
 
         # Track shard drop for Diogenes' Lantern quirk

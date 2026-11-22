@@ -427,19 +427,19 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Detect Magic', 'effect': 'identify_item', 'power': '',
         'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': False,
         'spell_family': 'detect_magic',
-        'desc': 'Reveal the BUC of every magical item in sight.',
+        'desc': 'Shows blessed or cursed: wands, scrolls and books in sight.',
     },
     'identify_spell': {
         'name': 'Identify', 'effect': 'identify_item', 'power': '',
         'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
         'spell_family': 'detect_magic',
-        'desc': 'Reveal the BUC of every magical item in sight AND in your pack.',
+        'desc': 'Shows blessed or cursed: wands, scrolls and books in sight or carried.',
     },
     'omnisight_spell': {
         'name': 'Omnisight', 'effect': 'identify_item', 'power': '',
         'mp_cost': 20, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'detect_magic',
-        'desc': 'Blessing or curse of all worn but a belt, and of wands, scrolls, books in sight or pack.',
+        'desc': 'Shows blessed or cursed: worn gear but the belt; wands, scrolls and books seen or carried.',
     },
 
     # ==================================================================
