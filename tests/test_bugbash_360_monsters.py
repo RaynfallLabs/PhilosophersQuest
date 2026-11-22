@@ -344,6 +344,10 @@ def _opens(g, kind, first_blow=False) -> bool:
         if lurker:
             d = 1 if MONS[kind]['ai_pattern'] == 'mimic' else min(d, 2)
         m = _mk(kind, x + d, y, aware=not lurker)
+        if senses.rooted(m) and 'blind' in senses.senses_of(m):
+            # It cannot walk, nor see him coming (the bug walked it up to him,
+            # 2026-11-22): he has come as near as it feels his step.
+            m.x = x + min(d, senses.sense_range(m, 'tremor'))
         if not lurker:
             m._alerted = True
         m.speed = max(10, m.speed)

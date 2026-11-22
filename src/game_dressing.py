@@ -86,9 +86,11 @@ class DressingMixin:
     def _busy_watch(self, m) -> bool:
         """A creature whose coming into view stops the dressing: a hostile
         the hero can see. A friend (an encounter's person, the unicorn, an
-        allied angel, the Emberpup) is no reason to stop (bug bash WB-A03)."""
+        allied angel, the Emberpup, Old Nickel while the act holds) is no
+        reason to stop (bug bash WB-A03)."""
         from game_combat import _is_bystander
-        return not _is_bystander(m) and self._sees_monster(m)
+        from old_nickel import is_friend
+        return not _is_bystander(m) and not is_friend(m) and self._sees_monster(m)
 
     def _busy_seen(self) -> set:
         return {id(m) for m in (getattr(self, 'monsters', None) or ()) if self._busy_watch(m)}
