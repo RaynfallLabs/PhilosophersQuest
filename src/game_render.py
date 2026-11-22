@@ -2107,15 +2107,13 @@ class RenderMixin:
             pic = lore_art.plate('monster', enc.get('sprite_id') or 'npc_traveler', S(144))
         pic_w = (pic.get_width() + S(24)) if pic is not None else 0
         text_w -= pic_w
-        if phase == 'text':
-            content_h = len(self._wrap_text(display_text(scene), font, text_w)) * line_h
-        elif phase == 'options':
+        story = display_text(scene if phase == 'text' else (self._npc_outcome_text or ''))
+        if phase == 'options':
             content_h = S(32) + len(visible) * (row_h + S(10))
         elif phase == 'select_item':
             content_h = S(54) + min(9, len(self._npc_item_list)) * (S(36) + S(6))
         else:
-            content_h = len(self._wrap_text(display_text(self._npc_outcome_text or ''),
-                                            font, text_w)) * line_h
+            content_h = len(self._ui_text_lines(story, font, text_w)) * line_h
         if pic is not None:
             content_h = max(content_h, pic.get_height() + S(8))
         head_h = S(48)
@@ -2162,11 +2160,13 @@ class RenderMixin:
             pygame.draw.rect(self.screen, border, well, 1)
             body_rect = pygame.Rect(body_rect.x + pic_w, body_rect.y,
                                     body_rect.w - pic_w, body_rect.h)
-        if phase == 'text':
-            self._ui_wrap_text(display_text(scene), font, FP.PARCHMENT_LIGHT,
-                               body_rect, line_gap=4)
-            self._ui_footer(panel, "Enter / Space: continue" if _held
-                            else "Enter / Space: continue   |   Esc: walk away")
+        if phase in ('text', 'outcome'):
+            keys = ("Enter / Space / Esc: continue" if phase == 'outcome'
+                    else "Enter / Space: continue" if _held
+                    else "Enter / Space: continue   |   Esc: walk away")
+            if self._npc_draw_story(story, body_rect):
+                keys = f"Up/Down: scroll   |   {keys}"
+            self._ui_footer(panel, keys)
             return
 
         if phase == 'options':
@@ -2211,11 +2211,28 @@ class RenderMixin:
             self._ui_footer(panel, "a-i: select item   |   Up/Down: scroll   |   Esc: back")
             return
 
-        if phase == 'outcome':
-            self._ui_wrap_text(display_text(self._npc_outcome_text), font,
-                               FP.PARCHMENT_LIGHT, body_rect, line_gap=4)
-            self._ui_footer(panel, "Enter / Space / Esc: continue")
-            return
+    # The sizes an encounter's story steps down through before it scrolls.
+    _NPC_STORY_SIZES = (20, 18, 16)
+
+    def _npc_draw_story(self, text, rect) -> bool:
+        """An encounter's scene or result, whole: shrink, then scroll (as
+        the quiz does). True when it scrolls, so the footer can say how.
+
+        _ui_wrap_text stops at the foot of its rect and says nothing: the
+        Gate's six fates lost the closing line at 960x540 (bug bash 3.6.0)."""
+        for size in self._NPC_STORY_SIZES:
+            font = get_font('body', size)
+            step = font.get_height() + S(4)
+            lines = self._ui_text_lines(text, font, rect.w)
+            if (len(lines) - 1) * step + font.get_height() <= rect.h:
+                self._ui_wrap_text(text, font, FP.PARCHMENT_LIGHT, rect, line_gap=4)
+                self._npc_text_scroll = 0
+                return False
+        lines = self._ui_text_lines(text, font, rect.w - S(14))     # room for the bar
+        self._npc_text_scroll = self._ui_draw_scroll_lines(
+            lines, font, FP.PARCHMENT_LIGHT, rect, getattr(self, '_npc_text_scroll', 0),
+            line_gap=4)
+        return True
 
     def _draw_judgment(self):
         """Draw the Altar of the Last Judgment result overlay."""

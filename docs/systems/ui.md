@@ -472,7 +472,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_XYZZY_INPUT` / `_CONFIRM` | backquote | `_xyzzy_input` / `_xyzzy_confirm_input` | `_draw_xyzzy_input` / `_draw_xyzzy_confirm` |
 | `STATE_QUIRKS` | `W` | `_quirks_input` | `_draw_quirks_screen` |
 | `STATE_CHARACTER_SHEET` | `@` | `_character_sheet_input` | `_draw_character_sheet` → `_draw_character_pack_sheet` |
-| `STATE_NPC_ENCOUNTER` | NPC trigger | `_npc_encounter_input` | `_draw_npc_encounter` (the figure's map art beside the scene and result pages, `lore_art.plate`; choices keep the full width) |
+| `STATE_NPC_ENCOUNTER` | NPC trigger | `_npc_encounter_input` | `_draw_npc_encounter` (the figure's map art beside the scene and result pages, `lore_art.plate`; choices keep the full width; the scene and result shrink, then scroll on Up/Down, `_npc_draw_story`) |
 | `STATE_COW_ENCOUNTER` | cow spawn | `_cow_encounter_input` | `_draw_cow_encounter` |
 | `STATE_MOOBLE` | bump the Mooble (`mooble_encounter.py`) | `_mooble_input` | `_draw_mooble_encounter` (on `MoobleMixin`) |
 | `STATE_MOOBLE_DANCE` | his Practise / Dance-off; his Dance of the Dark (Shift+P, S); the Stray Kids' dance-off (its card, practice, the eight rounds: owner `stray_kids`) | `_mooble_dance_key` (arrows, numpad; Space starts; Esc stops a practice only); the Stray Kids' keys `_sk_dance_key` (D: the dance-off; Esc: Not Yet) | `_draw_mooble_dance` (on `MoobleDanceMixin`; ticked each frame by `Game.update`) |

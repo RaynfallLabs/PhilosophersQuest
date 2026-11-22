@@ -988,7 +988,9 @@ src/chronicle.py             -- structured journal entries (Game._chron
                                 writes them; _log_chronicle is a shim),
                                 the voice lint, the Journal views and
                                 "Your Story" (Roads Not Taken, this run
-                                only); legacy migrate
+                                only: roads that were on the options page,
+                                or secret (hidden: true), and no variant
+                                of the choice he made); legacy migrate
 src/encounter_schema.py      -- normalise, visible_options, text
                                 variants, quiz_passed
 tools/encounters/validate.py -- the encounter validator CLI

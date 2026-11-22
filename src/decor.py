@@ -168,11 +168,13 @@ def look_line(dungeon, x: int, y: int) -> str:
     fid = fixture_at(dungeon, x, y)
     if not fid:
         return ''
-    line = fixture_def(fid).get('look', '')
+    defn = fixture_def(fid)
+    line = defn.get('look', '')
     if (dungeon.__dict__.get('fixture_state') or {}).get((x, y)) == 'spent':
-        spent = fixture_def(fid).get('spent_look', '')
-        if spent:
-            line = spent
+        # Spent is pass or fail alike: a vent the prayer did shut is in
+        # sealed_vents (game_lore_fixtures), and says so.
+        sealed = (x, y) in (dungeon.__dict__.get('sealed_vents') or ())
+        line = (sealed and defn.get('sealed_look')) or defn.get('spent_look') or line
     return line
 
 

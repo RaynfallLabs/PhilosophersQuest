@@ -88,10 +88,11 @@ class LoreFixturesMixin:
                 self._make_noise('alarm', pos[0], pos[1])
             elif d.get('reward') == 'pot':
                 import economy
-                stake = min(int(getattr(self.player, 'gold', 0) or 0),
+                # The purse is the Game's (player_gold); the Player has none.
+                stake = min(int(self.player_gold or 0),
                             economy.roll_share(random, self.dungeon_level, economy.GRAVE_SMALL_SHARE))
                 if stake > 0:
-                    self.player.gold -= stake
+                    self.player_gold -= stake
                     self.add_message(f"You lose {stake:,} gold.", 'warning')
             return
         self.add_message(d.get('pass', 'It was worth a closer look.'), 'success')

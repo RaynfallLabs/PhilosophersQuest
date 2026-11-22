@@ -955,6 +955,7 @@ class EncountersMixin:
         self._npc_encounter_active = enc
         self._npc_encounter_monster = monster
         self._npc_encounter_phase = 'text'
+        self._npc_text_scroll = 0
         self._npc_selected_option = None
         self._npc_selected_index = None
         self._npc_outcome_text = ''
@@ -1126,10 +1127,13 @@ class EncountersMixin:
         the quiz ends (an exit mid-quiz settles it as a fail)."""
         from encounter_schema import is_quiz
         enc = getattr(self, '_npc_encounter_active', None) or {}
+        # What was on the page, read before the cost changes what would be.
+        offered = [i for i, _o in self._npc_visible_options()]
         self._npc_pay_cost(opt.get('cost'), selected_item, chosen=True)
         self._npc_mark_spent()
         import chronicle
-        chronicle.record_choice(self._deeds_reg(), enc, getattr(self, '_npc_selected_index', None))
+        chronicle.record_choice(self._deeds_reg(), enc, getattr(self, '_npc_selected_index', None),
+                                offered)
         if opt.get('naive'):
             # Blind help (decision 9): never negative karma, but it is what
             # 'discerning' looks for (ENG-09).
@@ -1344,6 +1348,7 @@ class EncountersMixin:
                                     and not th.get('closed_line') else None)
         self._npc_after = o.get('then', 'close')
         self._npc_encounter_phase = 'outcome'
+        self._npc_text_scroll = 0
         if self._npc_after == 'options' and enc.get('tag'):
             # A step of a 'then: options' encounter (ENG-03, SAV-03): the
             # option is used up now (a reload never offers it twice), and

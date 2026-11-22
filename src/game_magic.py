@@ -3485,7 +3485,12 @@ class MagicMixin(MagicWardsMixin):
                 bonus = -1
             else:
                 bonus = [0, 1, 1, 2, 3][_tstep]
+            # Every ring and amulet worn, as the scrolls promise: the rings
+            # first, so the lesser scrolls keep their targets. A belt is neither.
             accs = [s for s in getattr(self.player, 'accessory_slots', []) if s is not None]
+            _amulet = getattr(self.player, 'amulet_slot', None)
+            if _amulet is not None:
+                accs.append(_amulet)
             count_by_step = [1, 1, 2, 3, 99]
             n = count_by_step[_tstep]
             if accs:
