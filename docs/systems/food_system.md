@@ -164,7 +164,7 @@ meat (the elves' acorn as elvish bread), the same count, where it lay.
 
 ## 4. The recipe book (`recipes.json`)
 
-**1,095 dishes**, 332 of them on the two low rungs (§4.5). The rebuilt book of 2026-11-16 had 703: 306 single dishes (one per ingredient: the everyday choice) and 397
+**1,097 dishes**, 334 of them on the two low rungs (§4.5). The rebuilt book of 2026-11-16 had 703: 306 single dishes (one per ingredient: the everyday choice) and 397
 multi-ingredient dishes of 2 to 5 different ingredients. Every ingredient is in exactly one single
 dish and at least two multi-dishes. 36 multi-dishes are legendary feasts; 142 are cross-depth. No
 dish is named just like an ingredient (the build checks).
@@ -319,11 +319,15 @@ their stat.
   there are eight threes and five fours. HP, SP, MP or a small power, never a stat. Its main
   benefit is `rungs.plain.main` (0.6) of a dish's, it adds no max HP ("you are what you eat": a
   creature's part builds the hero), and it has no snack's heal.
-- **One step up** (`rung: step`, `step_*`, 283 dishes; 15 older pairs already served): every part
+- **One step up** (`rung: step`, `step_*`, 285 dishes, two of them a part's second; 15 older pairs already served): every part
   of a creature has a dish of that part and one staple, the staple chosen by lore and by what
   drops at that depth. An HP, MP or Special part keeps its nature. A Stat or SP part's dish is a
   meal or a small power instead: the lesson is the part's own dish, and SP is useless on a full
   belly.
+- **Reflex Ward** (`save_guard_DEX`: the DEX save against Slowed and Immobilized) is on these
+  rungs in every tier: the pemmican of staples alone from floor 1, then kobold, blink dog, Cath
+  Palug, marilith, wyrm, and a second step for the locust swarmlord and Pazuzu's spawn (Brandon's
+  approval of the monster-effects proposal, 2026-11-22). The census holds it to every tier.
 - **Both** give at least `rungs.cooked_over_raw` (1.25) of the SP and HP their ingredients give
   eaten as they are.
 
@@ -703,5 +707,5 @@ old saves; every special food in a decent dish of its tier, shown when held, use
 | BD | 2026-11-16 | **Big dishes +1 tier** (§5): a dish of four or more different ingredients is a tier above its deepest part's band, at most 5 (`cooking_rules.json` `big_dish`; `kitchen.dish_tier`, `base_tier`, `big_dish_bonus`, `big_dish_line`); the question, the numbers, the stat cap, the picture's vessel and the menu (with "Five ingredients: one tier richer.") all read it. 129 dishes rose a tier (T1 389 to 315, T2 115 to 161, T3 76 to 87, T4 45 to 52, T5 78 to 88). Two new pictures (a tier-2 Stat pie and platter) keep most dishes showing their own kind. |
 | HC | 2026-11-16 | **No cap across floors on max HP from meals** (Brandon: "there should be a per floor limit to hp gained, but not a max across several floors... that encourages cooking"). The lifetime cap (`Player.cooking_softcap`: 4 a floor reached, at least 20; `kitchen.lifetime_hp_room`; "Max HP: all cooking can give at this depth"; the sidebar's "Meals: go deeper for HP") is gone; the floor's cap (+5 a floor) stays, and a feast's lasting max HP always lands. |
 | PS | 2026-11-16 | **Brandon's three rulings.** People are searched, never harvested (§3.5, §8.1): 58 kinds in `people.txt`, twelve parts and their single dishes gone, 52 dishes re-sourced, old saves' parts become food. Every stat at every tier (§4.3): 15 stat dishes. Every special food in a dish of its own (§4.4): 6 dishes. Ingredients weigh nothing (a carried dish that does not fit is set down). 703 dishes, 306 ingredients. `part_rules.rare_foods` reads `floorSpawnWeight` too (the mythic fruits were counted common). |
-| LR | 2026-11-22 | **The two low rungs** (§4.5): plain fare (any two staples) and one part with one staple for every part. 332 dishes, 1,095 in all; the older 763 unchanged. The SP and MP tabs' tier gaps closed. The Widow's Jar doesn't count the rungs. |
+| LR | 2026-11-22 | **The two low rungs** (§4.5): plain fare (any two staples) and one part with one staple for every part. 334 dishes, 1,097 in all; a Reflex Ward dish in every tier; the older 763 unchanged. The SP and MP tabs' tier gaps closed. The Widow's Jar doesn't count the rungs. |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |

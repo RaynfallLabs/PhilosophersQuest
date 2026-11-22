@@ -327,3 +327,54 @@ def test_keys_a_part_and_a_staple_one_step_up():
     _cook(g, rec)
     assert p.hp > hp and p.max_hp > max_hp
     assert not any(kitchen.held_counts(p.inventory)[k] for k in kitchen.parts(rec))
+
+
+# ---------------------------------------------------------------------------
+# Reflex Ward (the monster-effects proposal Brandon approved 2026-11-22: "All
+# as recommended"; Slowed's answers are boots, DEX and a Reflex Ward dish)
+# ---------------------------------------------------------------------------
+
+def _reflex():
+    return [r for r in kitchen.book() if kitchen.dish_power(r) == 'save_guard_DEX']
+
+
+@pytest.mark.parametrize('tier', range(1, 6))
+def test_a_reflex_ward_dish_in_every_tier_that_a_run_can_cook(tier):
+    import json
+    with open(os.path.join(ROOT, 'tools', 'content', 'kitchen', 'part_freq.json'),
+              encoding='utf-8') as f:
+        freq = json.load(f)
+    common = freq['rules']['common_share']
+    assert any(all(p in STAPLES or freq['parts'][p]['share_of_runs'] >= common
+                   for p in kitchen.parts(r))
+               for r in _reflex() if kitchen.dish_tier(r) == tier), tier
+
+
+def test_reflex_ward_can_be_cooked_by_floor_three():
+    """Slowing starts on floor 1: staples alone, all found by floor 3."""
+    assert any(all(p in STAPLES and kitchen.part_floor(p) <= 3 for p in kitchen.parts(r))
+               for r in _reflex())
+
+
+def test_every_power_in_the_rules_has_a_dish():
+    have = {kitchen.dish_power(r) for r in kitchen.book()}
+    assert not set(kitchen.rules()['special']['powers']) - have
+
+
+def test_the_census_holds_reflex_ward_to_every_tier():
+    sys.path.insert(0, os.path.join(ROOT, 'tools', 'balance'))
+    import tier_census
+    row = {r['category']: r for r in tier_census.census()['rows']}['Dishes: Reflex Ward']
+    assert row['verdict'] == 'ok' and min(row['counts']) >= 1, row
+
+
+def test_reflex_ward_dish_raises_the_save_against_slowing():
+    from player import Player
+    import status_effects
+    rec = next(r for r in _reflex() if r.get('rung') == 'plain')
+    assert status_effects.EFFECT_INFO['save_guard_DEX'][0] == 'Reflex Ward'
+    p = Player()
+    before = p.save_bonus_for('DEX')
+    kitchen.apply_dish(p, rec)
+    assert p.status_effects.get('save_guard_DEX', 0) > 0
+    assert p.save_bonus_for('DEX') > before

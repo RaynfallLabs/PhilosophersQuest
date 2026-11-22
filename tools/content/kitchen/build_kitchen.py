@@ -688,6 +688,8 @@ def rung_recipes() -> dict:
     for n in (1, 2, 3):
         for key, staple, benefit, name, flavor in _rung_lines(f'rungs_step_{n}.txt', 5):
             part, rid = f'{key}_prime', f'step_{key}'
+            if rid in out:              # a part's second step, with another staple
+                rid += f"_{STAPLES.get(staple, staple)}"
             rec = ings.get(part)
             if not rec or rec.get('tier_role') != 'prime' or staple not in STAPLES:
                 problems.append(f'{rid}: not a part and a staple ({part}, {staple})')

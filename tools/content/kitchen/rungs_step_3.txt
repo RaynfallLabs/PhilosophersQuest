@@ -6,7 +6,7 @@
 
 # ---- floors 41-60 ----
 fire_giant|dried_meat|fire_resist|Giant-Smith's Grill|The smiths of the fire giants lay their supper straight upon the anvil.
-wyrm|dried_meat|sp|Coiled Wyrm Roast|There is enough in one coil for a village, and you are very hungry.
+wyrm|dried_meat|save_guard_DEX|Coiled Wyrm Roast|The coil that could not be held lends something of its slipping to whoever eats it.
 lurking_horror|wild_mushroom|warning|Hackle-Raiser Fritters|The hair stands upon your neck at the first bite and stays standing.
 dracolich|hearty_stew|drain_resist|Dragon's-Tomb Pottage|The dragon would not stay dead, and something of that stubbornness is in the bowl.
 magma_elemental|hard_cheese|fire_resist|Volcano Fondue|The mountain melts the cheese and asks no thanks.
@@ -73,6 +73,11 @@ abyssal_mimic|trail_rations|warning|Open-Jawed Ragout|Having eaten what waits wi
 world_serpent|dried_meat|poison_resist|Thor's Fishing Steak|Thor baited a hook with the head of an ox and drew the serpent dripping venom from the sea.
 wild_hunt_captain|elvish_bread|hasted|Hunting-Horn Ribs|The horn has sounded, and there is no dawdling over supper.
 charybdis|trail_rations|mp|Thrice-Swallowed Stew|Three times a day Charybdis drinks down the sea and three times gives it back.
+
+# A second step for a common part, so that Reflex Ward is in every tier (Slowed's
+# answer: the monster-effects proposal, approved 2026-11-22).
+locust_swarmlord|trail_rations|save_guard_DEX|Locust-Leap Legs|A swarm is never where the hand comes down upon it.
+pazuzu_spawn|elvish_bread|save_guard_DEX|Wind-Runner's Draught|Pazuzu is king of the winds, and no one has yet set a snare for the wind.
 
 # ---- floors 81-100 ----
 arch_demon|elvish_bread|sp|Pandemonium Pie|In the capital of Hell even the pies are built by architects.

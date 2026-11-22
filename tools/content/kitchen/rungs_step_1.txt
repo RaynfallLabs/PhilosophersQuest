@@ -36,7 +36,7 @@ sea_snake|wild_mushroom|hp|Tide-Cave Snake Soup|The caps of the sea-caves are sa
 stirge_swarm|healing_herb|hp|Blood-Debt Broth|They drew it from you by the cupful, and you are taking it back.
 yellow_mold|hard_cheese|poison_resist|Veined-Cheese Toast|Cheesemakers learned long ago that some molds are friends, and how to befriend the others.
 zombie|hard_cheese|hp|Cheese-Stuffed Marrowbones|Split lengthwise, filled to the brim and browned until the cheese runs down the sides.
-blink_dog|dried_meat|hp|Here-and-There Chops|They must be turned often, for they are not always in the pan.
+blink_dog|dried_meat|save_guard_DEX|Here-and-There Chops|They are never quite where the fork comes down, and nor will you be.
 bone_witch|wild_mushroom|mp|Wand-Bone Cauldron|Three times stirred against the sun, and the caps rise to the top in a ring.
 changeling|bread_ration|displacement|Cradle-Swap Bread|It was left in the cradle in place of something else, and is still not quite where it seems.
 crystal_ooze|apple|mp|Crystal-Press Cider|The ooze strains the juice as clear as glass and leaves a shimmer at the bottom.
@@ -46,7 +46,7 @@ giant_centipede|trail_rations|poison_resist|Hundred-Boot Hash|A hundred legs and
 gibbering_mouther|hard_cheese|mp|Babbler's Cheese Pudding|It mutters while it bakes, and some of the words are spells.
 goblin_king|apple|hp|Goblin-Court Bangers|His Majesty had apples at every banquet, for he had robbed every orchard within a day's ride.
 homunculus|trail_rations|mp|Flask-Born Syllabub|The alchemist fed his little man on crumbs and fat, and wondered that he grew so clever.
-kobold|bread_ration|searching|Trap-Finder's Butty|Whoever eats as the trapsetters eat begins to see where they would have set the wire.
+kobold|bread_ration|save_guard_DEX|Trapsetter's Butty|Those who set snares for a living learn to snatch a foot back before the wire closes.
 leprechaun|wild_mushroom|mp|Cobbler's Posset|The fairy cobbler drinks it at his last, seated on the largest cap.
 ochre_jelly|apple|hp|Ochre Apple Glaze|It divides neatly into two helpings under the knife.
 puca|apple|displacement|Samhain Compote|After Samhain the puca spoils whatever fruit is left on the bough, unless it is cooked first.

@@ -8205,10 +8205,10 @@
    "dried_meat",
    "trail_rations"
   ],
-  "benefit": "sp",
-  "flavor": "Meat, fruit and fat pounded into one, as northern hunters made it for the winter trail.",
+  "benefit": "save_guard_DEX",
+  "flavor": "Runners of the northern trails carried meat, fruit and fat pounded into one, and were never slow of foot.",
   "rung": "plain",
-  "art": "dish_platter_t1_sp"
+  "art": "dish_platter_t1_special"
  },
  "fare_meat_mushroom": {
   "name": "Forager's Hash",
@@ -8993,10 +8993,10 @@
    "blink_dog_prime",
    "dried_meat"
   ],
-  "benefit": "hp",
-  "flavor": "They must be turned often, for they are not always in the pan.",
+  "benefit": "save_guard_DEX",
+  "flavor": "They are never quite where the fork comes down, and nor will you be.",
   "rung": "step",
-  "art": "dish_steak_t1_hp"
+  "art": "dish_steak_t1_special"
  },
  "step_bone_witch": {
   "name": "Wand-Bone Cauldron",
@@ -9098,13 +9098,13 @@
   "art": "dish_pudding_t1_mp"
  },
  "step_kobold": {
-  "name": "Trap-Finder's Butty",
+  "name": "Trapsetter's Butty",
   "ingredients": [
    "kobold_prime",
    "bread_ration"
   ],
-  "benefit": "searching",
-  "flavor": "Whoever eats as the trapsetters eat begins to see where they would have set the wire.",
+  "benefit": "save_guard_DEX",
+  "flavor": "Those who set snares for a living learn to snatch a foot back before the wire closes.",
   "rung": "step",
   "art": "dish_bread_t1_special"
  },
@@ -10335,10 +10335,10 @@
    "cath_palug_prime",
    "hard_cheese"
   ],
-  "benefit": "sp",
-  "flavor": "The cat that slew nine score warriors of Anglesey was fond of the dairy.",
+  "benefit": "save_guard_DEX",
+  "flavor": "The cat that slew nine score warriors of Anglesey was never once caught by the tail.",
   "rung": "step",
-  "art": "dish_bread_t2_sp"
+  "art": "dish_bread_t2_special"
  },
  "step_griffin": {
   "name": "Griffin-Rider's Roast",
@@ -10478,10 +10478,10 @@
    "marilith_spawn_prime",
    "bread_ration"
   ],
-  "benefit": "sp",
-  "flavor": "It was made to be held by more hands than you have.",
+  "benefit": "save_guard_DEX",
+  "flavor": "Six blades never tangle, and for an hour your own two hands will not.",
   "rung": "step",
-  "art": "dish_bread_t2_sp"
+  "art": "dish_bread_t2_special"
  },
  "step_medusa": {
   "name": "Perseus's Mirror Grill",
@@ -10775,10 +10775,10 @@
    "wyrm_prime",
    "dried_meat"
   ],
-  "benefit": "sp",
-  "flavor": "There is enough in one coil for a village, and you are very hungry.",
+  "benefit": "save_guard_DEX",
+  "flavor": "The coil that could not be held lends something of its slipping to whoever eats it.",
   "rung": "step",
-  "art": "dish_roast_t3_sp"
+  "art": "dish_roast_t3_special"
  },
  "step_lurking_horror": {
   "name": "Hackle-Raiser Fritters",
@@ -11484,6 +11484,28 @@
   "rung": "step",
   "art": "dish_stew_t4_mp"
  },
+ "step_locust_swarmlord_trail": {
+  "name": "Locust-Leap Legs",
+  "ingredients": [
+   "locust_swarmlord_prime",
+   "trail_rations"
+  ],
+  "benefit": "save_guard_DEX",
+  "flavor": "A swarm is never where the hand comes down upon it.",
+  "rung": "step",
+  "art": "dish_leg_t4_special"
+ },
+ "step_pazuzu_spawn": {
+  "name": "Wind-Runner's Draught",
+  "ingredients": [
+   "pazuzu_spawn_prime",
+   "elvish_bread"
+  ],
+  "benefit": "save_guard_DEX",
+  "flavor": "Pazuzu is king of the winds, and no one has yet set a snare for the wind.",
+  "rung": "step",
+  "art": "dish_drink_t5_special"
+ },
  "step_arch_demon": {
   "name": "Pandemonium Pie",
   "ingredients": [
@@ -11506,7 +11528,7 @@
   "rung": "step",
   "art": "dish_stew_t5_hp"
  },
- "step_pazuzu_spawn": {
+ "step_pazuzu_spawn_trail": {
   "name": "Southwest-Wind Pie",
   "ingredients": [
    "pazuzu_spawn_prime",

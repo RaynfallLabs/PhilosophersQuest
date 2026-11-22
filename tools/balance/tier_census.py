@@ -26,7 +26,8 @@ dungeon where an item is found").
     bosses apart, and every family on its own);
   * dishes: their own tier (kitchen.dish_tier: the band of the deepest
     ingredient, a tier more for a dish of four parts or more), by tab
-    and, for stat dishes, by stat;
+    and, for stat dishes, by stat; and the Reflex Ward dishes on their own
+    (Slowed's answer must be cookable in every tier, 2026-11-22);
   * spells: their own tier (spells.LEARNABLE_SPELLS);
   * encounters: min_level, or the middle of an NPC's 10-floor block.
 
@@ -427,6 +428,8 @@ def census() -> dict:
         add(f'Dishes: {label}', by_tab[tab])
     for st in sorted(by_stat):
         add(f'Dishes: Stat {st}', by_stat[st], group='stat')
+    add('Dishes: Reflex Ward', [K.dish_tier(r) for r in K.book()
+                                if K.dish_power(r) == 'save_guard_DEX'], group='special')
 
     # Encounters.
     for fname, cat in (('npc_encounters.json', 'NPC encounters'),
