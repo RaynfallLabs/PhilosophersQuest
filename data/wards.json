@@ -82,7 +82,8 @@
         "poisoned",
         "immobilized",
         "paralyzed",
-        "held"
+        "held",
+        "petrifying"
       ],
       "breaks": "never",
       "rider": "{The}'s bite is only a bite to you: the Psylli's charm keeps its {noun} out.",
@@ -147,7 +148,9 @@
       "riders": [
         "feared",
         "cursed",
-        "confused"
+        "confused",
+        "charmed",
+        "hexed"
       ],
       "breaks": "creature",
       "held": "{The} cannot lay a hand on you: the old names bind {him}.",

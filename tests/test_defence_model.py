@@ -236,24 +236,24 @@ def test_the_game_gives_the_world_two_turns_when_he_is_slow():
     g.monsters = []
     turns = []
     g._do_monster_turns = lambda: turns.append(1)
-    g.player.get_speed = lambda: 9.0
+    g.player.get_speed = lambda slow=None: 9.0
     for _ in range(9):
         g._advance_turn()
     assert len(turns) == 10
     turns.clear()
-    g.player.get_speed = lambda: 10.0
+    g.player.get_speed = lambda slow=None: 10.0
     for _ in range(9):
         g._advance_turn()
     assert len(turns) == 9
     turns.clear()
-    g.player.get_speed = lambda: 11.0
+    g.player.get_speed = lambda slow=None: 11.0
     for _ in range(11):
         g._advance_turn()
     assert len(turns) == 10
     # No second turn of the world once the first has opened a popup.
     turns.clear()
     g._world_clock = 0.0
-    g.player.get_speed = lambda: 5.0
+    g.player.get_speed = lambda slow=None: 5.0
     g._do_monster_turns = lambda: (turns.append(1), setattr(g, 'state', 'popup'))
     g._advance_turn()
     assert len(turns) == 1

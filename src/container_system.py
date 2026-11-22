@@ -231,8 +231,14 @@ def _trigger_trap(player, trap: dict, messages: list):
     effect_dur = roll_duration(trap.get('effect_duration', 5))
 
     if effect:
+        had = player.status_effects.get(effect, 0)
         applied = player.add_effect(effect, effect_dur)
-        if applied:
+        if applied and effect == 'petrifying':
+            import effect_rules
+            if trap.get('lethal') and not had:
+                effect_rules.laid_by(player, effect, lethal=True)
+            messages.append((effect_rules.line('stone_trap'), 'danger'))
+        elif applied:
             messages.append((f"You are {effect.replace('_', ' ')}!", 'danger'))
         else:
             messages.append((f"You resist the {effect.replace('_', ' ')} effect!", 'info'))

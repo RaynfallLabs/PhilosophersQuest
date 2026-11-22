@@ -54,11 +54,13 @@ def test_the_pool_is_five_tiers_of_sentences():
 
 def test_each_tier_keeps_about_its_old_count():
     for tier, n in OLD_COUNTS.items():
-        assert abs(len(POOL[tier]) - n) <= 10, (tier, len(POOL[tier]), n)
+        # (10 until 2026-11-22: tiers 1-3 stood at it when the monster
+        # effects each needed a hint at the depth they begin.)
+        assert abs(len(POOL[tier]) - n) <= 11, (tier, len(POOL[tier]), n)
     # (400 until 2026-11-19: the carried lights and the packs each added
     # their hints; 420 until 2026-11-20, when the third wave of monster
     # behaviour added six at tiers 4 and 5, inside their tiers' allowance.)
-    assert 360 <= len(ALL) <= 426
+    assert 360 <= len(ALL) <= 429
 
 
 def test_no_hint_is_longer_than_the_old_longest():
@@ -182,6 +184,10 @@ TAUGHT = {
     "a caster's chant broken by a blow": r'blow struck in that breath',
     'home ground': r'the barrow lets you go',
     'heat and cold auras': r'salamander',
+    # The monster effects (Brandon, 2026-11-22).
+    'stunned: stand or guard': r'dazed man',
+    'the oil against stone': r'proof against the basilisk',
+    'kill what ate the memory': r'thief still lives',
 }
 
 

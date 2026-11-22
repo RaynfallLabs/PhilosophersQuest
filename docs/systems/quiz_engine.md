@@ -246,10 +246,9 @@ at `quiz_engine.py:193`. Non-math subjects whose callers still ask
 pass.
 
 ### Status-effect timer modifiers (via `Player.get_quiz_timer_modifier()`)
-- `blinded`: ×0.70
-- `stunned`: ×0.75
-- `hallucinating`: ×0.80
 - `blessed`: ×1.25
+
+No debuff has a modifier since 2026-11-22: `stunned`, `blinded` and `hallucinating` show on the quiz (`quiz_sight.py`, through `sight_hook`; display only), sharing confusion's settle time, except the dark, which has no wait.
 
 `confused` has no clock modifier since 2026-11-19 (it was ×0.55): its words swim until they settle, and on a fight's sums that wait is its cost on the clock (see Design intent, "Confusion scrambles the words").
 

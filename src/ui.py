@@ -700,7 +700,9 @@ class Sidebar:
             if not info:
                 continue
             display_name, rgb, _ = info
-            rows.append((self._effect_label(display_name, val), rgb, eid))
+            from status_effects import UNTIL_ACTED
+            rows.append((display_name if eid in UNTIL_ACTED
+                         else self._effect_label(display_name, val), rgb, eid))
         if not rows:
             self.screen.blit(self._fsm.render("(none)", True, FP.SLOT_EMPTY),
                              (self.x + self.PAD, y))

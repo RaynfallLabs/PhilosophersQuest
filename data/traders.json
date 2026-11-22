@@ -15,6 +15,10 @@
     "reaction": "I have heard what is told of your dealings, and my prices go by it."
   },
 
+  "always_stocked": [
+    {"cat": "potion", "id": "oil_of_rue", "floors": [19, 80], "for": "basilisks and gorgons turn flesh to stone", "why": "The lethal petrifiers (basilisks, gorgons) begin on floor 25, and every gate camp stands on 19, 39, 59 and 79: the cure is always for sale before stone can kill (Brandon, 2026-11-22: counters always obtainable)."}
+  ],
+
   "plan": {
     "_doc": "Which floors get a trader, rolled once a run from the Road's seed (road.rng_for), never from the shared random stream. Gate camps stand on the floor before each gate boss, always. Specialists take 'count' floors inside their range; then each floor left takes the generalist who keeps to it (the 'generalists' list, each with its own floors) with 'generalist_chance'. A trader avoids the Emberpup's and the Black Knight's floors and prefers floors with no anchor, medium or high Road slot; he never stands on a boss floor, floor 1, 99 or 100, or the Cow Level. Depth-true (Brandon, 2026-11-12): every range keeps inside the reach of the being who trades there (the 'reach' table below; tests/test_depth_true.py). 'generalist' and 'generalist_floors' are the pre-list keys: traders.generalists still reads them when 'generalists' is absent.",
     "never": [1, 20, 40, 60, 80, 99, 100, 999],

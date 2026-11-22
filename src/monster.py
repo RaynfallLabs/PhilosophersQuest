@@ -1763,7 +1763,7 @@ class Monster:
         # Any paralysing gaze (the ordinary medusas' "Stony Gaze" as well as a
         # boss's): proof against petrification stops it, and so does a
         # mirror-bright shield held between you.
-        if is_gaze and atk.get('effect') == 'paralyzed':
+        if is_gaze and atk.get('effect') in ('paralyzed', 'petrifying'):
             if player.has_effect('petrify_immune'):
                 return 0, f"{the_name(self)}'s gaze finds nothing in you to turn to stone."
             if _edge_gaze_immune(player, self):
@@ -2143,15 +2143,29 @@ class Monster:
 
         msg += lore_powers.after_blow(self, player, atk, actual)   # carry-off, pull (slice M)
 
+        # A wound from the one that charmed him breaks the charm, before
+        # this blow's own rider rolls (effect_rules.py, 2026-11-22).
+        if actual > 0 and player.has_effect('charmed'):
+            import effect_rules
+            if effect_rules.is_source(self, effect_rules.bout(player, 'charmed').get('by')):
+                from status_effects import end_bout
+                end_bout(player, 'charmed')
+                msg += ' ' + effect_rules.line('charm_broken', the=the_name(self, lower=True))
+
         # Apply status effect from attack (gated by a D&D-style saving throw).
         # In a flurry at most one lands, so a five-attack boss cannot stack a
         # stun, a freeze and a slow in one turn.
         if not (in_flurry and getattr(self, '_flurry_effect_done', False)):
             _eff = ''
+            _had = dict(player.status_effects) if atk.get('delivery') == 'trample' else None
             if actual > 0 or not in_flurry:
                 # (gaze only when it is one: the ward against a killing gaze)
                 _eff = (self._apply_attack_effect(atk, player, gaze=True) if is_gaze
                         else self._apply_attack_effect(atk, player))
+            if _had is not None and _had == player.status_effects:
+                # A trample that laid nothing else may floor him (knockdown.py).
+                import knockdown
+                _eff += knockdown.from_trample(self, player, atk, actual)
             if in_flurry and _eff:
                 self._flurry_effect_done = True
             msg += _eff
@@ -2213,16 +2227,27 @@ class Monster:
             return (" " + got[0]) if got else ''
         # Reflecting: 50% chance to bounce effect back at attacker
         if player.has_effect('reflecting') and random.random() < 0.50:
-            self.add_effect(effect_id, duration)
+            from status_effects import reflected
+            _back, _turns = reflected(effect_id, duration)
+            self.add_effect(_back, _turns)
             player._reflected_back = True          # read by game_combat for Perseus's trait
-            return f" The effect reflects back -- {the_name(self, lower=True)} is {effect_id.replace('_', ' ')}!"
+            return f" The effect reflects back -- {the_name(self, lower=True)} is {_back.replace('_', ' ')}!"
         from status_effects import apply_debuff_with_save
         # DC scales gently with monster depth; data may override.
         dc = min(18, int(atk.get('effect_save_dc', 12 + self.min_level // 7)))
         # source=self: the hero's ward against this family (family_edges)
-        # adds to the save, or shortens an effect that has none.
+        # adds to the save, or shortens an effect that has none. It also
+        # owns the bout (effect_rules.laid_by): whom he fears, whom he
+        # cannot strike, whose kill gives a memory back.
+        _was_on = player.has_effect(effect_id)
         _applied, _emsg = apply_debuff_with_save(player, effect_id, duration, dc,
-                                                 source=self, gaze=gaze)
+                                                 source=self, gaze=gaze,
+                                                 lethal=bool(atk.get('lethal')))
+        if _applied and not _was_on and effect_id == 'forgetting':
+            # Forget (mind_theft.py): the pack and the pages are the Game's,
+            # which takes its one memory right after the world's turn.
+            import effect_rules
+            player.__dict__.setdefault('_pending_forget', []).append(effect_rules.token(self))
         return (" " + _emsg) if _emsg else ''
 
     # --- AI ---

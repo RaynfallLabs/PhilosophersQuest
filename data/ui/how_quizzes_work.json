@@ -1,5 +1,5 @@
 {
- "_note": "The 'How Quizzes Work' page of the help screen (? then Tab). Each section is a heading and its paragraphs; `rows` is a two-column list. Keep it true to the code: quiz_engine.py (only combat is timed, the chain), game_input.py (C, SPACE), game_magic.py (Recall Lore: a random hint from data/hints.json, never about a creature; the Wand of Probing teaches a kind), player.py (cook caps), quiz_engine.py and data/confusion.json (confusion's swimming words; status_effects.py its Clear-Headed turns). The gear rules are on the next page, gear_and_load.json.",
+ "_note": "The 'How Quizzes Work' page of the help screen (? then Tab). Each section is a heading and its paragraphs; `rows` is a two-column list. Keep it true to the code: quiz_engine.py (only combat is timed, the chain), game_input.py (C, SPACE), game_magic.py (Recall Lore: a random hint from data/hints.json, never about a creature; the Wand of Probing teaches a kind), player.py (cook caps), quiz_engine.py and data/confusion.json (confusion's swimming words; status_effects.py its Clear-Headed turns), quiz_sight.py and data/effects.json (Stunned, Blinded and Hallucinating on a quiz). The gear rules are on the next page, gear_and_load.json.",
  "title": "How Quizzes Work",
  "sections": [
   {
@@ -50,6 +50,13 @@
    ]
   },
   {
+   "heading": "Stunned, blinded and seeing things",
+   "paragraphs": [
+    "Stunned, you see a quiz double until the two pictures slide together. Hallucinating, you see one answer too many, and it fades: it is never the right one, and reaching for it costs nothing but time. Confused, stunned and hallucinating all clear in the same moment or two, however many are on you. In a fight that moment comes off the clock.",
+    "Blinded, you see the question but only one answer at a time: the arrows move your light over them and Enter takes the one it is on. The number keys still answer."
+   ]
+  },
+  {
    "heading": "Dances are not quizzes",
    "paragraphs": [
     "A dance is the one kind of thing in the dungeon that is not a quiz: watch the steps, then echo them on the arrow keys in time with the beat. Each arrow lights up as its step comes, so you can dance with the sound off. Before any dance-off you can practise as often as you like, for free, and stop any time.",
@@ -82,7 +89,7 @@
   {
    "heading": "One wrong answer ends the rest",
    "paragraphs": [
-    "Wearing armour, identifying, harvesting and cooking stop at the first wrong answer. Armour asks a few questions and you need every one. A wrong identify stuns you for ten turns. A failed harvest or cook uses up what you were working on.",
+    "Wearing armour, identifying, harvesting and cooking stop at the first wrong answer. Armour asks a few questions and you need every one. A wrong identify stuns you for ten turns, but a stun of your own making only makes you see double. A failed harvest or cook uses up what you were working on.",
     "Armour and rings ask only the first time you wear their kind. After that the kind is known by hand: every iron breastplate goes on with no quiz, whatever its plus or blessing, though a mithril one asks its own, and a stronger ring than any of its kind you have worn asks once more. Heavy armour takes turns to put on, so dress between fights: a failed quiz loses those turns too.",
     "Harvesting is the same. Once you have studied a creature yourself (a corpse study, or the Wand of Probing) and harvested one of its kind, every other corpse of that kind is harvested with no question."
    ]

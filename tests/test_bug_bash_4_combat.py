@@ -369,7 +369,7 @@ def test_a_slow_heros_second_world_turn_is_not_spent_on_a_new_floor_or_under_a_p
     floor or a popup either (Game._advance_turn)."""
     from game_states import STATE_PLAYER, STATE_STORY_POPUP
     from player import Player
-    monkeypatch.setattr(Player, 'get_speed', lambda self: 5.0)   # two world turns an action
+    monkeypatch.setattr(Player, 'get_speed', lambda self, slow=None: 5.0)   # two world turns an action
     g = _game(seed=31)
     g._change_level(2, enter_from_top=True)
     g.state = STATE_PLAYER

@@ -97,10 +97,9 @@ him on the room's side, in the queue's order, nearest first.
                     ACTION, before the world's turns (the game's order), not
                     once a world turn: a hasted hero's haste lasted twice its
                     actions, and a slowed foe stayed slowed twice as long;
-                  * a Slowed hero loses every other blow (main._do_move, the
-                    world still turns; only a move or a blow is slowed there,
-                    never a potion, a prayer or a spell); the simulator never
-                    slowed him;
+                  * a Slowed hero is on the same clock (2026-11-22): every
+                    action of his takes two turns, whatever it is
+                    (Player.get_speed halves);
                   * a creature of speed 14 or more closes two tiles a turn
                     (Monster._standard_move) and so strikes as it arrives
                     when its last step starts two tiles off: always when it
@@ -508,22 +507,6 @@ def deaths(run, active: list, queue: list) -> None:
             if war_bands.on_great_blow(everyone, m, chain):
                 _fs(run, 'grp_great_blows')
         st.lead_hp[id(m)] = m.hp
-
-
-def hero_slowed(run) -> bool:
-    """Slowed, the hero loses every other blow (main._do_move, a move or a
-    bump; the world still turns; a potion, a prayer or a spell is not
-    slowed there). True when this one is lost (Run._player_attack)."""
-    if not on(run, 'grp_speed'):
-        return False
-    p = run.p
-    if not p.has_effect('slowed'):
-        return False
-    run._grp_slow_skip = not run.__dict__.get('_grp_slow_skip', False)
-    if run._grp_slow_skip:
-        _fs(run, 'grp_slowed_lost')
-        return True
-    return False
 
 
 def arrival(run, m, free: int, opening: bool) -> int:

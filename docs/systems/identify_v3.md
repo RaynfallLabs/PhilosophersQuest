@@ -144,7 +144,7 @@ Right answer → `_full_identify(item)`:
    "no clinging aura" (uncursed)}`.
 
 Wrong answer:
-- `player.add_effect('stunned', 10)` — flat 10-turn stun
+- `apply_penalty(player, 'stunned', 10 + 1)` — flat 10-turn stun, self-inflicted: double vision only, never a fall or a drop
 - Message: `"The Shard turns cold in your palm. Backlash floods your
   mind — you are Stunned (10 turns)."`
 - Turn advances.
@@ -396,9 +396,9 @@ quiz-gated actions (see memory
 `feedback_resource_loss_is_the_penalty.md`); because identify is
 non-consumptive, the cost lives in a flat 10-turn stun instead.
 
-Standard status rules apply — `stunned` reduces the quiz-timer
-multiplier (`get_quiz_timer_modifier` × 0.75) and movement speed per
-`status_effects.py`.
+A stun of the hero's own making is double vision on quizzes and nothing
+else: no fall, no drop, no cut to the clock (Brandon, 2026-11-22;
+`effect_rules.self_inflicted`).
 
 ---
 

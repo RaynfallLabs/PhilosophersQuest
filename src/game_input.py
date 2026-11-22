@@ -382,7 +382,8 @@ class InputMixin:
             # gear can be dropped or swapped) are actions too. They skipped
             # the check in _player_input, so a paralysed hero could flee
             # down the stairs. Help (?) only reads, and stays open.
-            if uni in ('>', '<', '@', 'P', 'E', 'S', 'C', 'R', 'O', 'L') and self._helpless_turn():
+            if (uni in ('>', '<', '@', 'P', 'E', 'S', 'C', 'R', 'O', 'L')
+                    and self._helpless_turn(reading=uni == '@')):
                 return True
             # Keys checked by unicode to handle shift-modified chars
             if uni == '>':
@@ -700,23 +701,27 @@ class InputMixin:
         pygame.K_KP6:   (1,  0),
     }
 
-    def _helpless_turn(self) -> bool:
-        """Sleep / paralysis: no action possible. The turn passes and the
-        status ticks down; True when that happened. Damage still wakes from
-        sleep via Player.take_damage."""
-        if self.player.has_effect('sleeping'):
-            self.add_message("You are fast asleep -- you cannot act.", 'warning')
-            self._advance_turn()
-            return True
-        if self.player.has_effect('paralyzed'):
-            self.add_message("You are paralyzed -- you cannot act.", 'danger')
-            self._advance_turn()
-            return True
+    # Keys that only show something: off his feet, he may still read them.
+    _READING_KEYS = frozenset((
+        pygame.K_SLASH, pygame.K_QUESTION, pygame.K_x, pygame.K_b, pygame.K_o, pygame.K_k,
+        pygame.K_j, pygame.K_SEMICOLON, pygame.K_l, pygame.K_w, pygame.K_TAB,
+    ))
+
+    def _helpless_turn(self, reading: bool = False) -> bool:
+        """Asleep or paralysed, no key does anything and the turn passes
+        (damage still wakes a sleeper: Player.take_damage); knocked down,
+        any key but a reading one stands him up. True when that happened.
+        Every other effect is asked where its action is committed
+        (game_effects.EffectsMixin._gate)."""
+        p = self.player
+        if (p.has_effect('sleeping') or p.has_effect('paralyzed')
+                or (p.has_effect('knocked_down') and not reading)):
+            return not self._gate('wait')
         return False
 
     def _player_input(self, key: int):
 
-        if self._helpless_turn():
+        if self._helpless_turn(reading=key in self._READING_KEYS):
             return
 
         if key == pygame.K_PERIOD:
@@ -1775,9 +1780,36 @@ class InputMixin:
             pygame.K_3: 2, pygame.K_KP3: 2,
             pygame.K_4: 3, pygame.K_KP4: 3,
         }
+        qe = self.quiz_engine
+        import quiz_sight
+        ph = qe.phantom_slot()
+        if ph is not None:
+            key_map.update({pygame.K_5: len(choices), pygame.K_KP5: len(choices)})
         idx = key_map.get(key)
+        lit = qe.dark_view()
+        if lit is not None:
+            # Blinded: the arrows move the pool of light, Enter takes the
+            # card in it. The number keys answer as ever.
+            _arrows = {pygame.K_LEFT: (-1, 0), pygame.K_RIGHT: (1, 0),
+                       pygame.K_UP: (0, -1), pygame.K_DOWN: (0, 1)}
+            if key in _arrows:
+                skip = int(ph['slot']) if ph is not None and not qe.phantom_shows() else None
+                qe.dark_at = quiz_sight.move_light(
+                    lit, *_arrows[key], len(choices) + (1 if ph is not None else 0), skip)
+                self._quiz_show_lit()
+                return
+            if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
+                idx = lit
+        if idx is not None and ph is not None:
+            shown = idx
+            idx = quiz_sight.real_index(shown, ph)
+            if idx is None:
+                # The false answer: no answer at all (nothing is checked).
+                if qe.phantom_shows():
+                    ph['touched'] = True
+                    self.add_message(quiz_sight.rules()['nothing_there'], 'warning')
+                return
         if idx is not None and idx < len(choices):
-            qe = self.quiz_engine
             # Map displayed position back to actual choice via confused_order
             if qe.confused_order and len(qe.confused_order) == len(choices):
                 actual_idx = qe.confused_order[idx]
@@ -2046,6 +2078,10 @@ class InputMixin:
         if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
             amount = int(self.drop_gold_input) if self.drop_gold_input.isdigit() else 0
             amount = max(0, min(amount, getattr(self, 'player_gold', 0)))
+            if amount > 0 and not self._gate('drop'):
+                if self.state != STATE_DEAD:
+                    self.state = STATE_PLAYER
+                return
             if amount > 0 and self._inside_rock():
                 self.add_message(self._ROCK_DROP_MSG, 'warning')
             elif amount > 0:

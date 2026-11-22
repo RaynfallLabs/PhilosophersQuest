@@ -781,6 +781,8 @@ class StrayKidsMixin:
     def _stray_kids_star_step_past(self, star) -> None:
         """Walking into a dancer swaps places with him: the show never
         blocks the hero in."""
+        if not self._gate('step'):
+            return
         ox, oy = self.player.x, self.player.y
         self.player.x, self.player.y = star.x, star.y
         star.x, star.y = ox, oy

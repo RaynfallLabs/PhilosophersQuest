@@ -606,6 +606,8 @@ class BlackKnightMixin:
 
     def _black_knight_step_past(self, k) -> None:
         """Walking into the torso swaps places with it: he never blocks."""
+        if not self._gate('step'):
+            return
         ox, oy = self.player.x, self.player.y
         self.player.x, self.player.y = k.x, k.y
         k.place(ox, oy)

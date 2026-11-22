@@ -306,7 +306,7 @@ def test_scenario_13_apply_status_already_active_extends():
     p.add_effect('poisoned', 5)
     assert p.status_effects.get('poisoned') == 5
     p.add_effect('poisoned', 10)
-    assert p.status_effects.get('poisoned') == 15
+    assert p.status_effects.get('poisoned') == 10      # the longer dose, never the sum (2026-11-22)
     # Stack past the cap
     p.add_effect('poisoned', 999)
     assert p.status_effects.get('poisoned') == MAX_EFFECT_DURATION

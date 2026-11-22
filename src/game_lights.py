@@ -234,6 +234,13 @@ class LightsMixin:
         """Shift+L: the light and what it takes the place of change places,
         in one turn however much moves. True when they did."""
         if lights.held(self.player) is not None:
+            if not self._gate('doff', worn=True):
+                return False
+        else:
+            _light = lights.pick(self.player)
+            if _light is not None and not self._gate('swap', item=_light, worn=self.player.shield is not None):
+                return False
+        if lights.held(self.player) is not None:
             done = self._stow_light()
         else:
             done = self._draw_light()
@@ -370,6 +377,8 @@ class LightsMixin:
         why = self._fill_block(item)
         if why:
             self.add_message(f"{why}.", 'warning')
+            return False
+        if not self._gate('apply'):
             return False
         flask = lights.oil_in(p.inventory)
         if flask is None or not p.remove_from_inventory(flask):

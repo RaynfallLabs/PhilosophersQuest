@@ -234,7 +234,7 @@ def test_stowing_a_soaked_light_does_not_dry_it(g):
 
 def test_a_helpless_hero_cannot_swap(g):
     _light(g)
-    g._helpless_turn = lambda: True
+    g._helpless_turn = lambda reading=False: True
     _press(g)
     assert g.player.shield is None
 

@@ -81,6 +81,8 @@ class RidingMixin:
     def _toggle_ride(self, pet=None) -> bool:
         """Mount (or dismount) the Bococho: one turn. True when it happened."""
         p = self.player
+        if not self._gate('ride'):
+            return False
         if getattr(p, 'riding', False):
             mount = self._mount()
             self._riding_set_down('dismount' if mount is not None else 'gone')

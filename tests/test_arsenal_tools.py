@@ -448,8 +448,8 @@ def test_the_tells_name_the_counters():
     assert 'Aegis' not in t['gaze_paralyze']['counter']
     assert 'Wax' in t['confused']['counter'] and 'cold iron' in t['confused']['counter']
     assert 'wax' in t['feared']['counter']
-    assert counters.names_for(_mon('medusa'), 'paralyzed') == ['gaze']
-    assert counters.names_for(_mon('banshee'), 'paralyzed') == ['voice']
+    assert counters.names_for(_mon('medusa'), 'petrify_lethal') == ['gaze']    # stone, 2026-11-22
+    assert counters.names_for(_mon('banshee'), 'feared') == ['voice']    # her wail is dread, 2026-11-22
     assert 'fey_glamour' in counters.names_for(_mon('changeling'), 'confused')
 
 

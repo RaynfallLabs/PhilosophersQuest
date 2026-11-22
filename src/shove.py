@@ -6,7 +6,9 @@ one knee; the Minotaur's horns, Polyphemus' boulders. A landed attack with
 `shove` ({chance, aim}) may throw the hero one tile straight back from the
 creature (a STR save keeps his feet). Never into a wall, water, lava, a
 pit or a creature, never off the map; held fast (immobilized, stuck), he is
-not moved. A clever shover (`aim`) picks, of the three tiles away from it,
+not moved. A shove that beats the save also knocks him down, on the same
+roll (knockdown.py, 2026-11-22). A clever shover (`aim`) picks, of the
+three tiles away from it,
 one where a hazard lies, and the hazard's own rule fires as he lands. The
 blow leaves the shove for the Game (`_pending_shove`), which moves the
 hero after the monsters' turn, as it does a pull. Pure module.
@@ -44,7 +46,8 @@ def after_blow(m, player, atk, actual: int, msg: str) -> str:
     player._pending_shove = {'from': (m.x, m.y), 'aim': bool(sp.get('aim')),
                              'line': ai_lines.fill(m, rules().get('line', '')),
                              'aimed': ai_lines.fill(m, rules().get('aimed_line', ''))}
-    return msg
+    import knockdown
+    return msg + knockdown.from_shove(player, atk)
 
 
 def _safe(dungeon, x: int, y: int, occupied) -> bool:

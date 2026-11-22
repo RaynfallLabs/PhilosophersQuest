@@ -450,9 +450,10 @@ def test_confusion_no_longer_cuts_the_clock():
     assert p.get_quiz_timer_modifier() == 1.0
     src = inspect.getsource(Player.get_quiz_timer_modifier)
     assert '0.55' not in src and "has_effect('confused')" not in src
-    # The other statuses keep their cuts.
-    p.status_effects['blinded'] = 5
-    assert p.get_quiz_timer_modifier() == 0.70
+    # Since 2026-11-22 no debuff cuts it: theirs show on the quiz (quiz_sight.py).
+    for e in ('blinded', 'stunned', 'hallucinating'):
+        p.status_effects[e] = 5
+    assert (p.get_quiz_timer_modifier(), p.combat_clock()) == plain
 
 
 # ---------------------------------------------------------------------------

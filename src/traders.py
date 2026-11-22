@@ -406,7 +406,31 @@ def build_stock(defn: dict, level: int, rng, seen=()) -> list:
     _rack_counters(final, rng)
     final += _gem_stock(defn, level, rng, taken)
     final += _rare_stock(defn, level, rng, taken)
+    final += _always_stocked(level, final)
     return final
+
+
+def _always_stocked(level: int, shelf: list) -> list:
+    """What every stall of a band has (data/traders.json ``always_stocked``:
+    Oil of Rue before and wherever stone kills). It crowds no ware out, it
+    draws no dice, and its card says what it is for, as a marked counter's
+    does: a guaranteed cure nobody can recognise is no guarantee."""
+    from items import make_item_by_id
+    out = []
+    for entry in data().get('always_stocked') or ():
+        lo, hi = entry.get('floors', (1, 100))
+        if not int(lo) <= int(level) <= int(hi):
+            continue
+        ware = next((w for w in shelf if getattr(w, 'id', None) == entry['id']), None)
+        if ware is None:
+            made = make_item_by_id(entry['cat'], entry['id'])
+            if made is None:
+                continue
+            ware = copy.copy(made)
+            out.append(ware)
+        if entry.get('for'):
+            ware._counter = entry['for']
+    return out
 
 
 def _rack_counters(final: list, rng) -> None:

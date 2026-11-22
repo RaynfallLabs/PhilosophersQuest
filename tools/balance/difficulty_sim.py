@@ -252,7 +252,8 @@ from items import (Accessory, Armor, Container, Food, Ingredient, Potion,   # no
                    Scroll, Shield, Spellbook, Weapon, Wand)
 from monster import Monster                      # noqa: E402
 from player import Player                        # noqa: E402
-from quiz_engine import QuizResult, settle_for as scramble_settle_for   # noqa: E402
+from quiz_engine import QuizResult                                      # noqa: E402
+import sim_effects                                                      # noqa: E402
 import food_system as food_system_mod            # noqa: E402
 import kitchen as kitchen_mod                    # noqa: E402
 import boons as boons_mod                        # noqa: E402
@@ -1085,10 +1086,10 @@ class QuizModel:
     MODELLED, not real: the question text is never drawn. A chain is a race
     between a geometric run of right answers and one shared timer.
 
-    Confusion (quiz_engine.settle_for, 2026-11-19) no longer cuts the clock: a
-    confused hero's words swim until they settle, so each question answered
-    while confused costs its settle time on top of the answer time (the
-    game's own quiz_engine.settle_for, on ``player``, set by Run).
+    No debuff cuts the clock: a confused, stunned or hallucinating hero's
+    question takes one settle time to come clear, so each question answered
+    meanwhile costs it on top of the answer time, and a blind hero's costs
+    the moving of his light (sim_effects.quiz_wait, on ``player``, set by Run).
     """
     player = None                    # the hero, for his confusion and Wisdom
 
@@ -1180,9 +1181,10 @@ class QuizModel:
             return
         forgive = bool(getattr(self, '_forgive_flag', False))
         self._forgive_flag = False
-        # The confused hero's wait for the words to settle, on every question
-        # (the game's QuizEngine._stamp_scramble asks the same function).
-        settle = scramble_settle_for(self.player, True)
+        # The wait for a question to come clear (confused, stunned or
+        # hallucinating: one settle time, quiz_sight.wait_for) and a blind
+        # hero's moving of the light (sim_effects.quiz_wait), every question.
+        settle = sim_effects.quiz_wait(self.player)
         chain, asked, right = self.sample_chain(tier, timer, max_chain, self.stop_at, forgive,
                                                 settle=settle)
         self.n_questions += asked
@@ -3032,14 +3034,18 @@ class Run(_MMMagicSim):
         if n <= 0:
             return []
         p = self.p
+        sim_effects.fight_over(p)            # nobody lies down between fights
+        sim_effects.stop_stone(self)         # and a count to stone is stopped first
         # let short debuffs run out first (poison, bleed tick for real)
         guard = 0
         while guard < 60 and any(v > 0 and e in DEBUFFS
                                  for e, v in p.status_effects.items()):
             p._incoming_scale = self.kv('mon_dmg')
-            p.tick_effects()
+            msgs = p.tick_effects()
             p._incoming_scale = 1.0
             guard += 1
+            if any(t == '_petrify_death' for t, _ in (msgs or [])):
+                p.hp = 0
             if p.hp <= 0:
                 return []
         start, end = self.turn, self.turn + n
@@ -3784,13 +3790,11 @@ class Run(_MMMagicSim):
             return False
         if p.has_effect('sleeping') or p.has_effect('paralyzed'):
             return False
-        if p.has_effect('frozen'):
-            self._frozen_skip = not getattr(self, '_frozen_skip', False)
-            if self._frozen_skip:
-                return False
-        if p.has_effect('fumbling') and random.random() < 0.20:
+        # (The gate, 2026-11-22: no random loss is left. Off his feet, his
+        # action is standing up; a count to stone is stopped first.)
+        if sim_effects.stand(self):
             return False
-        if p.has_effect('stunned') and random.random() < 0.25:
+        if sim_effects.stop_stone(self):
             return False
         return True
 
@@ -3926,17 +3930,23 @@ class Run(_MMMagicSim):
                 reachable = [m for m in active
                              if m._sim_away <= 0 or sim_ai1.visible_away(self, m)]
                 if hpf < prof['potion_at'] and self.potions:
-                    self.drink()
-                    action = 'heal'
-                elif hpf < prof['heal_at']:
+                    if not sim_effects.barred(self, 'drink'):
+                        self.drink()
+                        action = 'heal'
+                    elif not p.has_effect('frozen'):
+                        action = 'fumble'       # the bottle at his feet
+                if action is None and hpf < prof['heal_at']:
                     if prof['prays'] and p.prayer_cooldown <= 0 and not altars_left:
                         self.pray()
                         action = 'heal'
                     elif prof['casts'] and self.cast_heal():
                         action = 'heal'
                     elif self.potions and hpf < prof['heal_at'] * 0.75:
-                        self.drink()
-                        action = 'heal'
+                        if not sim_effects.barred(self, 'drink'):
+                            self.drink()
+                            action = 'heal'
+                        elif not p.has_effect('frozen'):
+                            action = 'fumble'
                 if action is None and prof['flees'] and hpf < prof['flee_at'] \
                         and not self.potions:
                     if not mandatory or retreats < MAX_RETREATS_FROM_MANDATORY:
@@ -3945,7 +3955,9 @@ class Run(_MMMagicSim):
                                    and m.rage_stacks < 3 for m in active)
                         slow = slow or sim_ai3.lets_go(active)   # AI-3: they keep to their ground
                         _esc = sim_magic.escape(self, slow)        # M5: Blink, Phase Door
-                        if (_esc if _esc is not None
+                        if _esc is None and sim_effects.barred(self, 'step'):
+                            action = 'no_step'                     # fallen, or feet held
+                        elif (_esc if _esc is not None
                                 else random.random() < (FLEE_OK_SLOW if slow else FLEE_OK_FAST)):
                             if not mandatory:
                                 self.fs['fled'] += 1
@@ -3955,7 +3967,8 @@ class Run(_MMMagicSim):
                             self.fs['fled'] += 1
                             self._between_rounds(active)
                             continue
-                        action = 'flee_failed'
+                        if action is None:
+                            action = 'flee_failed'
                 if action is None and not reachable:
                     # foe out of reach (hit-and-run): use the lull to heal
                     if hpf < prof['top_up_to']:
@@ -3994,6 +4007,11 @@ class Run(_MMMagicSim):
                         p._gleipnir_binds = binds + 1
                         action = 'bind'
                 if action is None:
+                    # His charmer and what frightens him he leaves be.
+                    reachable = sim_effects.strikeable(self, reachable)
+                    if not reachable:
+                        action = 'wait'
+                if action is None:
                     # focus the named foe if there is one, else the weakest
                     named = [m for m in reachable if is_named(m)]
                     target = named[0] if named else min(reachable, key=lambda m: m.hp)
@@ -4014,9 +4032,10 @@ class Run(_MMMagicSim):
                         action = 'cast'
                     elif sim_late.recoat(self, target):     # recoat=1: a coating, his action
                         action = 'coat'
-                    elif self._tactical_pick(target, free=False):
-                        action = 'swap'
-                    elif self._throw_flask(target):
+                    elif (not any(p.has_effect(x) for x in ('stunned', 'fumbling', 'frozen', 'hexed'))
+                          and self._tactical_pick(target, free=False)):
+                        action = 'swap'         # (dazed or numb, a kid who knows does not fiddle)
+                    elif not p.has_effect('frozen') and self._throw_flask(target):
                         action = 'throw'
                     else:
                         self._player_attack(target, active)
@@ -4191,6 +4210,7 @@ class Run(_MMMagicSim):
                 if (sim_ai2.extra_blow(self, m)      # AI-2: the Tactical Mind
                         and not m.__dict__.get('_holding')):   # AI-3: a holder only squeezes
                     self._monster_attack(m)
+        sim_effects.after_world(self, active)
 
     def pass_time_in_fight(self):
         p = self.p
@@ -4210,10 +4230,8 @@ class Run(_MMMagicSim):
     def _player_attack(self, target, active):
         """One melee attack through the REAL combat.player_attack."""
         p = self.p
-        if sim_groups.hero_slowed(self):     # grp_speed: Slowed, every other blow is lost (_do_move)
-            return
-        if p.has_effect('charmed') and random.random() < 0.40:
-            return                              # game_combat.py:1738
+        # (Slowed is the world's clock: Player.get_speed halves. Whom a
+        # charmed or frightened hero may strike: sim_effects.strikeable.)
         p._combat_monsters_ref = active
         target._sim_attacks += 1
         if self.quiz.policy == 'kill':

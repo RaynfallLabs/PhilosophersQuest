@@ -87,7 +87,7 @@ def test_the_sidebar_clock_is_the_clock_the_fight_will_get():
     assert p.combat_clock() == 12 or p.combat_clock() == 13        # a blessing x1.25
     q = Player()
     q.add_effect('blinded', 5)
-    assert q.combat_clock() < 10
+    assert q.combat_clock() == 10        # no debuff cuts it (2026-11-22): quiz_sight.py
     # Confusion no longer cuts the clock: its words swim, then settle
     # (quiz_engine.settle_for, 2026-11-19).
     c = Player()

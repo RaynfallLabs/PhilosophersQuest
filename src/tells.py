@@ -69,7 +69,10 @@ def abilities(m) -> list:
     for atk in getattr(m, 'attacks', None) or ():
         eff = atk.get('effect') if isinstance(atk, dict) else None
         if eff and float(atk.get('effect_chance', 1.0) or 0) >= _floor():
-            have.add(eff)
+            # Stone that kills and stone that only holds are two tells.
+            have.add('petrify_lethal' if eff == 'petrifying' and atk.get('lethal') else eff)
+        if isinstance(atk, dict) and (atk.get('shove') or atk.get('delivery') == 'trample'):
+            have.add('knocked_down')     # knockdown.py
     for flag in _FLAGS:
         if getattr(m, flag, None):
             have.add(flag)
@@ -128,6 +131,8 @@ def reach(m, key: str) -> str:
     (a gaze, or an attack it uses at range), else 'close'."""
     if key == 'gaze_paralyze':
         return 'far'
+    if key == 'petrify_lethal':
+        key = 'petrifying'
     for atk in getattr(m, 'attacks', None) or ():
         if (isinstance(atk, dict) and atk.get('effect') == key
                 and float(atk.get('effect_chance', 1.0) or 0) >= _floor()

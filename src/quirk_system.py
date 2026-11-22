@@ -18,6 +18,7 @@ if TYPE_CHECKING:
 _DEBUFF_EFFECTS = frozenset({
     'paralyzed','sleeping','stunned','confused','blinded','hallucinating',
     'poisoned','diseased','petrifying','strangulation','fumbling','slowed',
+    'hexed','knocked_down','forgetting',
     'aggravated','teleportitis','feared','charmed','cursed','weakened','bleeding',
 })
 

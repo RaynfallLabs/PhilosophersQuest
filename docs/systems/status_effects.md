@@ -2,7 +2,7 @@
 
 **Status:** v2.18.0 (shipped 2026-10-02)
 **Code:** `src/status_effects.py` (654 lines); `Player.add_effect` / `has_effect` / `tick_effects` live in `src/player.py`
-**Data:** `data/confusion.json` (confusion's Clear-Headed recovery); chest/trap/food/monster JSON references effect ids
+**Data:** `data/effects.json` (the gate, refresh and caps, stone, the quiz effects, their lines); `data/confusion.json` (confusion's Clear-Headed recovery); chest/trap/food/monster JSON references effect ids
 **Related docs:** [save_bonus](save_bonus.md), [combat](combat.md), [quiz_engine](quiz_engine.md), [magic](magic.md), [food_system](food_system.md), [monsters](monsters.md), [items](items.md), [identify_v3](identify_v3.md)
 
 ## Purpose
@@ -16,8 +16,8 @@ NetHack-style "turn count tells the story" statuses are the backbone of roguelik
 **Four categories gate behavior**, and effects can be in several of them:
 - `BUFFS` — stripped by `dispel_magic` / `cancellation` / `drain_magic` targeting the player's own buffs.
 - `DEBUFFS` — stripped by scrolls/prayers that "cleanse" the player.
-- `HARD_CONTROL` — the autokill risk (paralysis, sleep, stun, freeze, immobilize, petrifying). D&D-save NEGATES; cannot be re-applied while active; followed by a 3-turn grace window.
-- `SOFT_CONTROL` — degraded but not frozen (confuse, fear, charm, slow). D&D-save HALVES; refreshes to `max()` instead of stacking. **Except confusion** (`SOFT_GRACE`, 2026-11-19): a bout is not refreshed while it runs and is followed by 3 turns Clear-Headed (below).
+- `HARD_CONTROL` — the autokill risk (paralysis, sleep, stun, freeze, immobilize, petrifying, fear, held). D&D-save NEGATES; cannot be re-applied while active; followed by a 3-turn grace window.
+- `SOFT_CONTROL` — degraded but not frozen (confuse, charm, slow, weaken, forget). A save HALVES (Forget: negates). Weakened refreshes to `max()`; the others are bouts (`SOFT_GRACE`): never refreshed while they run, followed by 3 turns Clear-Headed, Clear Sight (charm) or Footing (slow).
 
 **Gradient defense, never immunity.** Three layers:
 1. **Resist items** (`_RESIST_BLOCKS`) — hard immunity for a specific debuff class, short-circuits before the save math.
@@ -34,6 +34,36 @@ The important design rule: **saves + resists never overlap**. If `poison_resist`
 
 **Resource loss IS the penalty.** DoTs (poison/bleed/burning/doom_dot/draining) still land even on a successful save — the save only applies a flat CON-based duration reduction, min 1 turn (§apply_debuff_with_save non-SAVE_STAT branch). This preserves "the quiz-gated action cost IS the penalty" rule without making tanks poison-immune.
 
+## The monster effects (Brandon, 2026-11-22: "All as recommended")
+
+**One gate.** Every action names its door (`data/effects.json` `doors`) where it is committed and asks `Game._gate`; a step asks `Game._gate_step`. `action_gate.verdict` is pure and answers open, lose (the turn is spent), refuse (no turn), stand, thaw, fall, drop or fizzle. A key that only opens a menu asks nothing: the choice does, so a menu opened before the effect landed is no way round it. `tests/test_action_doors.py` tries every effect at every door and fails when something spends a turn behind the gate's back.
+
+| Effect | What it stops | The answer |
+|---|---|---|
+| Paralyzed, Sleeping | everything | saves, resists, a blow wakes a sleeper |
+| Knocked Down | everything: the next action is standing up, with no dodge until then | Guard, boots, levitation, Footing |
+| Frozen | step and stairs (turn lost); swap, take off, drink, zap, shoot, throw, apply, ride (refused) | a lit light thaws in a turn; cold resistance |
+| Immobilized | feet only | strike, shoot, use the hands |
+| Slowed | nothing: `get_speed` halves, so every action is two of the world's turns | boots, DEX, Footing after it |
+| Silenced | cast, read aloud | wax, magic resistance |
+| Hexed | taking off or swapping what is worn | Cleanse, altar, any remove-curse |
+| Feared | going nearer or striking its source | step away, shoot, cast; cornered, he may fight |
+| Charmed | attacking the charmer, taking a stair while it is in sight; feet walk to it | its first wound or its death ends it |
+| Stunned | the first step falls, the first fumble drops, the first spell fizzles, once a bout | Guard; a self-inflicted stun does none of it |
+| Fumbling | the first thing handled drops, once a bout | Guard |
+
+**Bouts** (`effect_rules`, `player._bouts`, saved): who laid it, self-inflicted, lethal, which once-a-bout price is paid, gear worn (one piece a bout of burning or corroding). A hold ends with its owner and with the floor. A bout with no end (cursed gear) starts again on each floor.
+
+**On the quiz** (`quiz_sight`, display only): Stunned is double vision, Hallucinating a false answer in a slot of its own, Blinded a pool of light the arrows move. Confused, Stunned and Hallucinating share one settle time; the dark has none; no debuff cuts the clock. The question data, the answer check and the teaching card are never touched.
+
+**Petrifying** (`petrify`): stiff, slow, rigid. A lethal bout (a basilisk, a gorgon, the gorgon chest) ends in stone; any other in one turn of paralysis. Oil of Rue is always stocked on floors 19-80 (`traders.json` `always_stocked`).
+
+**Forget** (`mind_theft`): one identified kind or one Bestiary page a bout. A kill on that floor gives it back, leaving makes it permanent. Never spells, stats, family tiers, the Shard or what a mastered tier names by itself.
+
+**Cures:** `AILMENTS` is every debuff but the crank and the pit. `ailments_on` lists those that run out, most urgent first; what gear holds on the hero (-1) goes with the gear. The fountain, Cleanse and XYZZY read it.
+
+**On a monster:** Cursed is -2 to hit (`ai_blow`). An effect thrown back goes through `reflected`, so stone can never kill by reflection.
+
 ## Data model / schema
 
 ### `EFFECT_INFO: dict[str, (display_name, rgb, description)]`
@@ -43,10 +73,10 @@ All effect ids (debuff, buff, control, resistance, chain-combat-v2 specials, her
 'poisoned':    ('Poisoned',    ( 80, 210,  60), 'Losing 1 HP per turn'),
 'hasted':      ('Hasted',      (245, 245,  60), 'Monsters act half as often'),
 'blessed':     ('Blessed',     (200, 240, 160), 'All quiz timers +25%; divine clarity'),
-'petrifying':  ('Petrifying',  (205, 205, 130), 'Turning to stone -- find a cure!'),
+'petrifying':  ('Petrifying',  (205, 205, 130), 'Turning to stone: stiff, then slow, then stone. Oil of Rue cures it'),
 'doom_dot':    ('Doom',        (140,  60, 200), 'Ticking damage as fraction of max HP per turn (Laevateinn)'),
 'control_immune': ('Recovering', (200, 230, 255), 'Shaking it off -- briefly immune to being disabled'),
-'confused':    ('Confused',    (185, 100, 230), 'Random movement; quiz words swim, then settle'),
+'confused':    ('Confused',    (185, 100, 230), 'Steps go astray, but blows land where aimed; quiz words swim, then settle'),
 'save_guard_CON': ('Body Ward', (150, 230, 170), 'Bonus to resisting paralysis / sleep / stun'),
 ```
 
@@ -85,6 +115,8 @@ GRACE_TURNS         = 3     # Post-hard-control immunity window
   'blade_flow', 'melee_dmg_reduction',
   # Post-lock grace buff (set when a hard-control effect expires)
   'control_immune',
+  # After a slowing or a knock-down
+  'footing',
   # Cooked / power "ward" buffs — timed saving-throw bonuses
   'save_guard_CON', 'save_guard_WIS', 'save_guard_DEX', 'save_guard_all',
 }
@@ -106,6 +138,8 @@ GRACE_TURNS         = 3     # Post-hard-control immunity window
   'immobilized', 'in_pit', 'silenced',
   # Alternate potion label (same semantics as hallucinating)
   'hallucinating_pot',
+  # The monster effects (2026-11-22)
+  'hexed', 'knocked_down', 'forgetting',
   # Engine wave 3 (2026-05-30): Gae Dearg's wound-lingers
   'heal_blocked',
   # v2.18.0 audit sync: Laevateinn's doom_dot was in EFFECT_INFO but missing here
@@ -120,7 +154,7 @@ GRACE_TURNS         = 3     # Post-hard-control immunity window
 
 ### `HARD_CONTROL` (frozenset)
 ```python
-{'paralyzed', 'sleeping', 'immobilized', 'stunned', 'frozen', 'petrifying'}
+{'paralyzed', 'sleeping', 'immobilized', 'stunned', 'frozen', 'petrifying', 'feared', 'held'}
 ```
 Zero / near-zero player actions. Save NEGATES; cannot be re-applied while active or during the 3-turn grace.
 
@@ -128,13 +162,13 @@ Zero / near-zero player actions. Save NEGATES; cannot be re-applied while active
 
 **AI-3 note (2026-11-20):** `held` (Held Fast, `src/holds.py`: a coil, a gullet, a drowning grip) joins HARD_CONTROL at the end of the module (with `feared`, added in 2026-10): a DEX save slips it, `CONTROL_CAP['held']` is 4, the grace follows it. It refuses walking only (a step is a struggle; a blow on the holder is the way out), so `main._do_move` handles it after `immobilized`. It is not in DEBUFFS: no cure lifts a grip (the holder's death, a hard blow, the struggle, Loosed, the Coif of Beowulf or its running out do). The caster's ward on a monster shows as `spell_ward` ("Warded").
 
-**v2.18.0 note:** `stunned`'s *gameplay* is soft (player still acts, with a -25% quiz timer + stumble), but it's deliberately kept in HARD_CONTROL so a successful save fully negates it and cannot be re-applied in the grace window. Removing it would allow fast monsters to stunlock the player to death. The SYSTEMS_AUDIT.md §9 P2 flagging on `stunned` is a known-but-chosen tradeoff.
+**v2.18.0 note:** `stunned`'s *gameplay* is soft (he still acts: see the gate), but it's deliberately kept in HARD_CONTROL so a successful save fully negates it and cannot be re-applied in the grace window. Removing it would allow a fast monster to stun-lock.
 
 ### `SOFT_CONTROL` (frozenset)
 ```python
-{'confused', 'feared', 'charmed', 'slowed'}
+{'confused', 'charmed', 'slowed', 'weakened', 'forgetting'}
 ```
-Degraded but not frozen. Save HALVES duration; refreshes to `max(current, new)` instead of stacking, except `confused`, which is not refreshed while it runs and is followed by its Clear-Headed turns (`SOFT_GRACE`, Design intent).
+Degraded but not frozen. A save HALVES the duration (Forget: negates, `NEGATED_BY_SAVE`, as does a knock-down). `weakened` refreshes to `max(current, new)`; the others are bouts (`SOFT_GRACE`, Design intent).
 
 ### `CONTROL`
 ```python
@@ -148,7 +182,8 @@ D&D-style saving throw category per effect:
   'paralyzed': 'CON', 'sleeping': 'CON', 'stunned': 'CON', 'frozen': 'CON',
   'petrifying': 'CON',
   'confused':  'WIS', 'feared':   'WIS', 'charmed':  'WIS',
-  'slowed':    'DEX', 'immobilized': 'DEX',
+  'slowed':    'DEX', 'immobilized': 'DEX', 'knocked_down': 'DEX',
+  'weakened':  'CON', 'forgetting': 'WIS',
 }
 ```
 - CON (body) — physical disables.
@@ -161,7 +196,9 @@ Hard cap on a SINGLE application's duration. Clamps egregious data values so one
 ```python
 {
   'paralyzed': 4, 'sleeping': 5, 'stunned': 3, 'frozen': 4, 'immobilized': 4,
-  'confused':  6, 'feared':   6, 'charmed':  6, 'slowed':    6,
+  'confused':  6, 'feared':   6, 'charmed':  6,
+  # from data/effects.json statuses.caps
+  'slowed':    4, 'weakened': 8, 'petrifying': 10, 'forgetting': 6,
 }
 ```
 
@@ -177,7 +214,10 @@ Hard immunity table. If the resist effect is active, the listed debuffs are refu
   'fire_shield':   {'burning'},       # and laying a full shield ends it
   'cold_shield':   {'frozen'},        # (_QUENCHES)
   'magic_resist':  {'confused', 'charmed', 'silenced', 'feared',
-                    'hallucinating', 'hallucinating_pot'},
+                    'hallucinating', 'hallucinating_pot', 'forgetting'},
+  'petrify_immune': {'petrifying'},
+  'confuse_immune': {'confused', 'forgetting'},
+  'footing':       {'slowed', 'knocked_down'},
 }
 ```
 **v2.18.0 note:** `drain_resist` now blocks `draining` (the ring-of-strength-drain HP tick) — the display name "Drain Resist" now matches behavior. `diseased` is retained for symmetry with poison_resist.
@@ -226,9 +266,9 @@ Decision order:
 3. **`duration == -1` write**: set permanent.
 4. **`effect in CONTROL`**: clamp duration by `CONTROL_CAP`. Then:
    - **HARD_CONTROL**: refuse re-apply if already active OR if `control_immune` is in the grace window. Otherwise set `min(duration, MAX_EFFECT_DURATION)`.
-   - **SOFT_GRACE** (`confused`): refuse while it runs (no refresh); otherwise set it and mark the bout (`_soft_bouts`). Before step 1, a bout cured since the last tick earns its Clear-Headed turns (`_recover_cured`), which then block it.
+   - **SOFT_GRACE** (`confused`, `forgetting`, `slowed`, `charmed`): refuse while it runs (no refresh); otherwise set it and mark the bout (`_soft_bouts`). Before step 1, a bout cured since the last tick earns its recovery turns (`_recover_cured`), which then block it.
    - **SOFT_CONTROL** (the rest): refresh to `max(current, duration)`, clamped. Never stacks.
-5. **Everything else** (DoTs, buffs, resistances): `current + duration`, clamped to `MAX_EFFECT_DURATION`. Additive stacking is the non-CONTROL default.
+5. **Everything else**: what `statuses.refresh` names runs to the longer dose, never the sum; the rest (buffs, resistances, draining) adds, clamped to `MAX_EFFECT_DURATION`. A dose is capped by `statuses.caps` unless its caller gives a `cap` (a price the game announces).
 
 **Call sites:** every effect-application path in the game routes through here, usually via `Player.add_effect`. Direct call sites include `food_system.py:289` (cooked wards write `save_guard_*` + magnitude), `game_magic.py` self-buff dispatchers (haste/shield/invis via `_SELF_BUFF_DURATIONS`), spell/wand effect handlers, and chain-combat weapon procs.
 
@@ -262,7 +302,7 @@ Flow:
    - `diseased` + not `poison_resist` AND not `drain_resist` → 8% / turn STR or CON -1 (dispatches `_disease_drain:<stat>:1` for Paracelsus quirk; UI line "The disease saps your strength! <stat> -1."). Since AI-1 (Grave Rot, `src/grave_rot.py`) it also stops natural regeneration (`main._tick_hp_regen`) and halves every heal that goes through `Player.restore_hp` (potions, spells, prayers, meals; not a drain wand's draw, a kill's heal or a worn piece's regeneration, which do not use it) while it lasts, and a monster's disease lasts its `effect_duration` times its kind's `disease_linger` (1 unless its lore makes it linger: mummy rot 10, the plague-bringers 4-8; at most `MAX_EFFECT_DURATION`, 60). The Mercy prayer at a chain of 4 cures it (`game_divine._resolve_simple_prayer`).
    - `strangulation` → 2 physical damage; "You are being strangled!"
    - `regenerating` → +1 HP if below max
-   - `petrifying` → threshold messages at val≤10, val≤6, val≤3; **`val==1`** emits the `_petrify_death` signal (death)
+   - `petrifying` → the count's line each turn by `effect_rules.stone_stage`; a LETHAL bout emits `_petrify_death` at **`val==1`**, any other expires into 1 turn of paralysis
    - `bleeding` → 1 physical damage; "You are bleeding!"
    - `doomed` → 12% / turn -1 HP; "The doom curse gnaws at your life force!"
    - `draining` → 17% / turn -1 HP (now gated by `drain_resist` via `_RESIST_BLOCKS`); "The ring drains your life force!"
@@ -270,7 +310,7 @@ Flow:
    - `corroding` → `_corrode_random_gear` (25% chance of -1 enchant on a non-rustproof equipped item, floor -3)
    - `teleportitis` → 4% / turn emits `_teleport` signal
    - `weakened` / `frozen` — passive flags read at combat sites, no per-turn work here
-3. **Decrement + queue expiry**: `val > 0` decrements by 1; expired keys go to `to_expire`.
+3. **Decrement + queue expiry**: `val > 0` decrements by `TICK_STEPS` (1; Slowed 2); Knocked Down waits for the hero (`UNTIL_ACTED`); expired keys go to `to_expire`.
 4. **Expiry cleanup**:
    - Any HARD_CONTROL expiry grants `control_immune = GRACE_TURNS` (3 turns).
    - A `confused` expiry grants Clear-Headed (`confuse_immune = CLEAR_HEADED_TURNS`, 3); so does a confusion cured since the last tick (`_recover_cured`, after the expiry loop).
@@ -307,7 +347,7 @@ Thin wrapper around `tick_all(self)`. Called once per player turn from `main.py:
 - **`_RESIST_BLOCKS` short-circuits before saves:** full immunity never routes through the save math. If you move a check past this branch, you break the "resists + saves don't overlap" rule.
 - **HARD_CONTROL anti-permalock:** cannot be refreshed, re-applied while active, or re-applied within the 3-turn grace. Monsters that reliably cast paralysis must never permalock. Grace window = `GRACE_TURNS = 3`.
 - **Confusion never chains:** a running confusion is not refreshed, and every bout, however it ends, is followed by `CLEAR_HEADED_TURNS` of `confuse_immune`. The quiz scramble's whole safety rests on it.
-- **SOFT_CONTROL refreshes, never stacks:** `max(current, new)` (confusion excepted, above). Non-CONTROL effects use `current + new` additive stacking — asymmetric, intentional.
+- **Nothing a monster lays stacks:** a bout is not refreshed (control, confusion, slow, charm, Forget), or runs to the longer dose (`statuses.refresh`, Weakened). Only buffs and the few debuffs not named there add.
 - **`MAX_EFFECT_DURATION = 60`:** every write clamps at this. CONTROL further clamps by `CONTROL_CAP`.
 - **Permanent (`-1`) effects are immutable** via `apply_effect` — direct `status_effects[k] = -1` writes exist (intrinsic resistances from gear) and must be explicit.
 - **`save_guard_*` is a BUFF**, not a DEBUFF — register in BUFFS, or cleanses will wipe the player's own wards.
@@ -382,7 +422,7 @@ Thin wrapper around `tick_all(self)`. Called once per player turn from `main.py:
 From SYSTEMS_AUDIT.md §9:
 - **P1** — `game_magic.py::abjuration` (line 1065-1086) calls `target.status_effects.clear()` on the monster, stripping player-applied DoTs (poisoned/burning/petrifying/bleeding). Inconsistent with `cancellation` / `dispel_magic` / `drain_magic` which strip BUFFS only. Pre-v2-audit dispatch rot.
 - **P1** — `game_magic.py::magic_missile` handler (line 1876) bypasses `_spell_damage` and `MAGIC_TIER_MULT`. Force-family spells under-scale relative to all other damage families.
-- **P2** — `status_effects.py::stunned` cap=3 but semantic is soft (may stumble, quiz timer -25%). HARD_CONTROL's "no refresh, no reapply, +3 grace" is an over-strong anti-stunlock. Known tradeoff — kept because removing it reopens the fast-monster-stunlock death-spiral.
+- **P2 (closed 2026-11-22)** — `stunned` is a felt effect behind the gate (double vision, one fall, one drop); it stays in HARD_CONTROL against stun-locks.
 - **P2** — `spells.py::elder_scream` — `mp_cost: 10` at `tier: 2`. Outside T2 5-8 MP band.
 - **P3** — `MAX_EFFECT_DURATION=60` with additive stacking on non-CONTROL effects is asymmetric with CONTROL's refresh-max. Non-CONTROL stacking stays additive by design (regen + regen = longer regen), but worth noting.
 - **P3** — Alternate potion label `hallucinating_pot` has identical semantics to `hallucinating`; two ids exist so UI can tell them apart in flavor text. Verify both are in all the right sets if you touch either.

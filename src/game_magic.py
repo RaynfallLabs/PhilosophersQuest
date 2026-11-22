@@ -322,6 +322,8 @@ class MagicMixin(MagicWardsMixin):
                 f"({quantity(self.player.recall_lore_cooldown, 'turn')} remain)", 'warning'
             )
             return
+        if not self._gate('work'):
+            return
         self.add_message("You close your eyes and search your memory...", 'info')
         self.quiz_title = "RECALL LORE  --  TRIVIA"
         self.state = STATE_QUIZ
@@ -394,6 +396,8 @@ class MagicMixin(MagicWardsMixin):
 
     def _invoke_wand(self, wand: 'Wand'):
         # Philosopher's Wrench: no quiz -- it's a tool, not magic
+        if not self._gate('wand', item=wand):
+            return
         if wand.id == 'philosophers_wrench':
             wand.identified = True
             self.player.known_item_ids.add(wand.id)
@@ -1603,6 +1607,8 @@ class MagicMixin(MagicWardsMixin):
             self.add_message(lights.line('spell_held'), 'info')
             self.state = STATE_PLAYER
             return
+        if not self._gate('cast'):
+            return
         mp_cost = self.player.spell_mp_cost(spell['mp_cost'])
         from chain_passives import consume_passive_charge, find_passive_item, refund_passive_charge
         _free_cast = consume_passive_charge(self.player, 'free_cast_once_per_floor')
@@ -1929,12 +1935,13 @@ class MagicMixin(MagicWardsMixin):
 
         # Cleanse: remove one negative status effect
         if effect == 'cleanse_self':
-            from status_effects import DEBUFFS
-            active = [e for e in self.player.status_effects if e in DEBUFFS]
+            from status_effects import EFFECT_INFO, ailments_on
+            active = ailments_on(self.player)
             if active:
                 removed = active[0]
                 self.player.status_effects.pop(removed, None)
-                self.add_message(f"Cleansed! {removed.title()} removed.", 'success')
+                _label = EFFECT_INFO.get(removed, (removed.replace('_', ' ').title(),))[0]
+                self.add_message(f"Cleansed! {_label} removed.", 'success')
             else:
                 self.add_message("You have no ailments to cleanse.", 'info')
             return
@@ -2808,6 +2815,8 @@ class MagicMixin(MagicWardsMixin):
         outcome, tier-scaled magnitude), consistent with the identify /
         harvest / cook philosophy.
         """
+        if not self._gate('read', item=scroll):
+            return
         display = self._bare_name(scroll)
         self.quiz_title = f"READING {display.upper()}  --  GRAMMAR"
         self.state = STATE_QUIZ
@@ -3082,6 +3091,9 @@ class MagicMixin(MagicWardsMixin):
                 #   T4: ALL equipped + status debuffs + uncurse inventory items
                 #   T5: T4 + bless one equipped item (uncursed → blessed) for free
                 _scope = _tstep  # 0..4
+                # A hex is a curse on what he wears: every uncursing lifts it.
+                if self.player.status_effects.pop('hexed', None):
+                    self.add_message("The hex lifts from what you wear.", 'success')
                 # Status debuffs cleared at T3+ (was unconditional)
                 removed = []
                 if _scope >= 2 or _scroll_buc == 'blessed':
@@ -3775,6 +3787,8 @@ class MagicMixin(MagicWardsMixin):
         paid service, game_traders.py). The question is the same; a wrong
         answer costs only the fee, no stun.
         """
+        if not self._gate('work'):
+            return
         display = self._bare_name(item)
         # Chain-equip passive: identify_one_per_floor_free (Cloak of Odin
         # T2+). Skip the quiz entirely and grant a full identify, 1/floor.
@@ -4161,6 +4175,9 @@ class MagicMixin(MagicWardsMixin):
         contract. Spellbooks are one-read even on success (you internalize the
         spell, the physical text is consumed).
         """
+        if (getattr(book, 'is_consumable_artifact', False)
+                or book.spell_id not in self.player.known_spells) and not self._gate('read', item=book):
+            return
         # v2.10.0: artifact spellbooks (Book of Thoth) fire an EFFECT on
         # read, not learn-a-spell (and the Book of Thoth is not consumed:
         # see _read_book_of_thoth). Route through the dedicated
@@ -4779,6 +4796,21 @@ class MagicMixin(MagicWardsMixin):
             getattr(p, 'known_class_ids', set()).discard(cls)
         if fid:
             getattr(p, 'known_forms', set()).discard(fid)
+        pool = self._kind_copies(iid, cls)
+        if not any(it is item for it in pool):
+            pool.append(item)
+        for it in pool:
+            if str(getattr(it, 'item_class', '')) == 'treasure':
+                continue
+            it.id_level = 0
+            if hasattr(it, 'buc_known'):
+                it.buc_known = False
+
+    def _kind_copies(self, iid: str, cls) -> list:
+        """Every copy of one kind the game can reach (``_forget_kind``; a
+        mind-eater's meal given back: mind_theft.py)."""
+        from items import type_class
+        p = self.player
 
         def same_kind(it) -> bool:
             if getattr(it, 'id', None) == iid:
@@ -4806,13 +4838,12 @@ class MagicMixin(MagicWardsMixin):
         for herd in herds:
             for m in herd:
                 pool.extend(getattr(m, '__dict__', {}).get('stolen_items') or [])
+        out, seen = [], set()
         for it in pool:
-            if it is item or same_kind(it):
-                if str(getattr(it, 'item_class', '')) == 'treasure':
-                    continue
-                it.id_level = 0
-                if hasattr(it, 'buc_known'):
-                    it.buc_known = False
+            if id(it) not in seen and same_kind(it):
+                seen.add(id(it))
+                out.append(it)
+        return out
 
     def _auto_identify_all(self):
         """Identify every item in inventory and on the ground (Philosopher's Stone).

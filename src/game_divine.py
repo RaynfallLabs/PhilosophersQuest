@@ -216,6 +216,8 @@ class DivineMixin:
 
     def _start_mystery(self, altar):
         """Begin a mystery encounter -- show description and ask the player to accept."""
+        if not self._gate('work'):
+            return
         from mystery_system import MYSTERIES, can_activate
         m = MYSTERIES[altar.mystery_id]
         # Show description always
@@ -432,6 +434,8 @@ class DivineMixin:
             self.add_message("The fountain has given you what it had. The water lies still.",
                              'info')
             return
+        if not self._gate('drink'):
+            return
         self.add_message("You cup your hands and drink from the fountain...", 'info')
         self.quiz_title = "FOUNTAIN  --  AI"
         self.state = STATE_QUIZ
@@ -488,9 +492,10 @@ class DivineMixin:
             # Chain 5 is chain 4 and a stat: it used to give the stat and
             # full health only, less than chain 4 (no stamina, no cure).
             # Cured first, so the heal is whole (as the prayer's: grave_rot.py).
-            for eff in list(self.player.status_effects.keys()):
-                if eff in ('poisoned', 'diseased', 'bleeding', 'burning', 'confused', 'blinded', 'corroding'):
-                    del self.player.status_effects[eff]
+            # "All ailments are cured!": all of them, the newer ones too.
+            from status_effects import ailments_on
+            for eff in ailments_on(self.player):
+                del self.player.status_effects[eff]
             self.player.restore_hp(self.player.max_hp)
             self.player.restore_sp(self.player.max_sp)
             if chain == 4:
@@ -745,6 +750,8 @@ class DivineMixin:
 
     def _dig_grave(self):
         """Dig up a grave -- geography quiz determines outcome."""
+        if not self._gate('work'):
+            return
         self.add_message("You begin disturbing the grave...", 'info')
         self.quiz_title = "GRAVE  --  GEOGRAPHY"
         self.state = STATE_QUIZ
@@ -844,6 +851,8 @@ class DivineMixin:
 
     def _sit_throne(self):
         """Sit upon the throne -- history quiz determines outcome."""
+        if not self._gate('work'):
+            return
         self.add_message("You settle onto the ancient throne...", 'info')
         self.quiz_title = "THRONE  --  HISTORY"
         self.state = STATE_QUIZ
@@ -883,7 +892,7 @@ class DivineMixin:
                 self.player.take_damage(dmg, 'lightning')
                 self.add_message(f"The throne shocks you for {dmg} damage!", 'danger')
             elif outcome == 'curse':
-                self.player.add_effect('weakened', 20)
+                self.player.add_effect('weakened', 20, cap=20)
                 self.add_message("A curse settles over you! You feel weakened.", 'danger')
             else:
                 self.add_message("The throne does not care for pretenders. Two shapes step out of the dark to say so!", 'danger')
@@ -984,6 +993,8 @@ class DivineMixin:
         """The prayer key. Cooldown-gated; the L99 judgment altar is handled
         directly; otherwise the player chooses which prayer to make
         (prayers.PRAYERS), then answers the theology chain for it."""
+        if not self._gate('pray'):
+            return
         # Altar of the Last Judgment on L99: special one-time judgment
         if self.dungeon_level == 99:
             jpos = getattr(self.dungeon, 'judgment_altar_pos', None)
@@ -1197,6 +1208,8 @@ class DivineMixin:
     def _rededication_start(self, give: str, take: str):
         """Lay the offering down (the altar's use is spent with it) and
         answer the theology chain."""
+        if not self._gate('pray'):
+            return
         import rededication as R
         if int(getattr(self, 'karma', 0) or 0) <= ALTAR_REFUSES_AT or self._rededicated_here():
             self.add_message("You offer a gift, but God turns away from it.", 'warning')
@@ -1276,6 +1289,8 @@ class DivineMixin:
         """The altar rite: one theology escalator chain (max 5). Curses are
         lifted first, then blessings given (altar.rite). The offering is
         the altar's whatever the chain; the prayer cooldown is untouched."""
+        if not self._gate('pray'):
+            return
         if int(getattr(self, 'karma', 0) or 0) <= ALTAR_REFUSES_AT:
             self.state = STATE_PLAYER
             self.add_message("You offer a gift, but God turns away from it.", 'warning')
@@ -1316,6 +1331,9 @@ class DivineMixin:
             self.add_message("The altar keeps your offering. The heavens are silent.",
                              'info')
             return
+        if p.status_effects.pop('hexed', None):
+            # A hex on what he wears is the first curse an altar lifts.
+            self.add_message("The hex lifts from what you wear.", 'success')
         actions = altar.rite(chain, list(_iter_equipped(p)), p.inventory, p)
         # Named as the hero knew them, before the altar changes them ("the
         # Blessed Thick Red Syrup" read twice over).
@@ -1341,6 +1359,8 @@ class DivineMixin:
         """Kneel and answer the theology chain for the chosen prayer. With
         ``offering`` (an altar's), the prayer costs the offering and leaves
         the prayer cooldown as it was."""
+        if not self._gate('pray'):
+            return
         import prayers
         prayer = prayers.by_id(kind)
         if offering and not self._make_altar_offering():
@@ -1551,6 +1571,12 @@ class DivineMixin:
                 msgs.append((life_drain.rules().get('restore_line', '').format(n=_life), 'success'))
             if p.status_effects.pop('diseased', None):
                 msgs.append(("The sickness in your wounds is lifted.", 'success'))
+            for _eff, _said in (('petrifying', "The stone lets go of your flesh."),
+                                ('hexed', "The hex lifts from what you wear."),
+                                ('charmed', "The charm on you is broken."),
+                                ('forgetting', "The thing is driven out of your mind.")):
+                if p.status_effects.pop(_eff, None):
+                    msgs.append((_said, 'success'))
 
         # ---- chain >= 2: HP restore ----
         if chain >= 2:
@@ -1723,6 +1749,8 @@ class DivineMixin:
             self.add_message("You step back from the altar's edge.", 'info')
             return
         # Belt-and-braces: recheck the once-per-run gate.
+        if not self._gate('pray'):
+            return
         if getattr(self.player, 'divine_intercession_used', False):
             self.state = STATE_PLAYER
             self.add_message(
@@ -1851,7 +1879,7 @@ class DivineMixin:
                     and getattr(it, 'can_be_cursed', True)):
                 it.buc = 'cursed'
                 it.buc_known = True
-        p.add_effect('blinded', 100)
+        p.add_effect('blinded', 100, cap=60)
         self.add_message(
             "THE HEAVENS DARKEN. God strikes you for your arrogance — "
             "your gear reeks of curse and your eyes go dark.",
