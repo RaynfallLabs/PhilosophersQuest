@@ -730,7 +730,7 @@ def test_gate_lines_table_reads_people_and_deeds():
     assert any(ln.startswith('Marta Venn walked out') for ln in lines)
     assert any(ln.startswith('Silas Mordaunt') for ln in lines)
     assert any(ln.startswith('Ostrander kept his lamp') for ln in lines)
-    assert any(ln.startswith('Ahwere asked me') for ln in lines)
+    assert any(ln.startswith('Ahwere left word') for ln in lines)
     # Fates first, most recent first: Silas (floor 75) before Marta.
     assert lines.index(next(ln for ln in lines if ln.startswith('Silas'))) < \
         lines.index(next(ln for ln in lines if ln.startswith('Marta')))

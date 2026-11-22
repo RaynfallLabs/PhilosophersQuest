@@ -123,7 +123,7 @@ MATS = {
     'rawhide': dict(p={'fire': 1.25}, w=_FIRE,
                     note="Untanned hide dried hard: what you can get on the first floors.", price=_SCORCH),
     'cured_leather_armor': dict(p={'fire': 1.25}, w=_FIRE,
-                                note="Smoke-cured leather, lighter than plain.", price=_SCORCH),
+                                note="Cured leather, lighter than plain.", price=_SCORCH),
     'boiled_leather_armor': dict(p={'slash': 0.9, 'fire': 1.25},
                                  w={'slash': 'boiled hard against an edge', **_FIRE},
                                  note="Cuir bouilli: leather boiled in wax and shaped hard, so an edge skids on it.",
@@ -249,6 +249,7 @@ MATS = {
 for _wid in ('ash', 'oak', 'yew', 'dragonwood', 'ironwood', 'petrified_wood', 'silverbark',
              'leviathan_rib_armor', 'treant_heart_armor', 'worldtree'):
     MATS[_wid] = dict(p={}, w={}, metal=False, note=None, price=None)
+MATS['leviathan_rib_armor']['price'] = "It is heavy to bear."     # bone, not wood
 # Their old `resistances` lists were read only by the wear rule: a wood that
 # would not burn keeps that as a special property (status_effects reads
 # `fire_resistant`), so no shield scorches that did not before. Ironwood and

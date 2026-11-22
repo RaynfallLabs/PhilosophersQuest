@@ -5,8 +5,8 @@
     "splits": {"by": ["slash", "pierce"], "into": "khrafstra_swarm", "max": 6}
 
 * by "weak_blow": a blow that does less than `share` of the creature's
-  original health (Blood of Tiamat: a small cut makes two of it; one great
-  blow, a long answer chain, ends it outright).
+  original health (Blood of Tiamat: a small cut makes two of it; a great
+  blow, a long answer chain, leaves it no strength to divide).
 * by a list of damage forms: a blow made ONLY of those forms. A weapon that
   can wound another way is used that way (a sword that can thrust does not
   cut a black pudding in two; an axe does). Spells count by their element.

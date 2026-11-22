@@ -1585,7 +1585,7 @@ class EncountersMixin:
         list spawned.
 
         ``spec`` is a monster id, ``{monster_id, count}``, or a list of
-        those (two ogres; Neferkaptah and six mummies). Each lands on the
+        those (two trolls; Neferkaptah and six mummies). Each lands on the
         nearest free tile the hero can walk to by four-way steps (the
         reachability rule every encounter spawn follows, DEEDS 6.4), never
         on the hero, a monster, a pet or an escort."""

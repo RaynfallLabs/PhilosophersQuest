@@ -1856,7 +1856,7 @@
               "id": "constructs_erase_the_letter",
               "name": "Erase the Letter",
               "text": "At chain 18 or more, a lesser construct below 15% health falls lifeless: emet, truth, becomes met, dead. A named foe takes a blow 25% harder instead.",
-              "trigger_msg": "Erase the Letter! You rub out one letter on {the}'s brow: emet, truth, becomes met, death. {He} crashes to the ground.",
+              "trigger_msg": "Erase the Letter! You rub out one letter on {the}'s brow: emet, truth, becomes met, dead. {He} crashes to the ground.",
               "effect": "execute",
               "params": {
                 "chain_min": 18,
@@ -1965,7 +1965,7 @@
               "id": "elementals_solomons_seal",
               "name": "Solomon's Seal",
               "text": "Their burning and freezing wear off twice as fast, and their elemental damage hurts you 10% less.",
-              "trigger_msg": "Solomon's Seal: you trace the seal of Solomon in the air, and your hold on the elemental lasts longer.",
+              "trigger_msg": "Solomon's Seal: you trace the seal of Solomon in the air, and the elemental's hold on you grows weaker.",
               "effect": "duration_mult",
               "params": {
                 "effects": [
@@ -2045,7 +2045,7 @@
               "id": "oozes_clean_blade",
               "name": "Clean Blade",
               "text": "You get +1 on saving throws against their paralysis and weakness, and their weakness lasts a tenth less time.",
-              "trigger_msg": "Clean Blade: {The}'s acid slime splashes your gear, but you wipe it away before it can eat in.",
+              "trigger_msg": "Clean Blade: {The}'s slime splashes you, but you wipe it away before it can numb your limbs.",
               "effect": "save_bonus",
               "params": {
                 "effects": [

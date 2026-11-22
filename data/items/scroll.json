@@ -347,7 +347,7 @@
     "effect": "enchant_weapon",
     "power": "",
     "unidentified_name": "tallow-spotted scroll",
-    "lore": "As Odin went in disguise through the world he showed nine farmhands a whetstone that put a finer edge on their scythes than any other, and when all nine desired it he tossed it in the air, so that they cut one another down in reaching for it. A smith's first scroll has less virtue than that stone, and will take upon a blade only when the parchment itself has been blessed.",
+    "lore": "As Odin went in disguise through the world he showed nine farmhands a whetstone that put a finer edge on their scythes than any other, and when all nine desired it he tossed it in the air, so that they cut one another down in reaching for it. A smith's first scroll has less virtue than that stone, but it will take upon any blade, and more deeply when the parchment itself has been blessed.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -413,7 +413,7 @@
     "effect": "enchant_weapon",
     "power": "",
     "unidentified_name": "gilt-edged scroll",
-    "lore": "King Nidud cut the hamstrings of Wayland the Smith and held him upon an island to forge for the crown, and there Wayland made him marvellous things, until he had taken his revenge and flew away on wings of his own making. The mail shirt of Beowulf was called Wayland's work, and so is this rite, for it betters every weapon carried, and betters it twice.",
+    "lore": "King Nidud cut the hamstrings of Wayland the Smith and held him upon an island to forge for the crown, and there Wayland made him marvellous things, until he had taken his revenge and flew away on wings of his own making. The mail shirt of Beowulf was called Wayland's work, and so is this rite, for it betters both the blade in hand and the bow made ready, and betters each twice.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -457,7 +457,7 @@
     "effect": "enchant_armor",
     "power": "",
     "unidentified_name": "linen-wrapped scroll",
-    "lore": "When the boy David would go out to fight, Saul dressed him in the royal bronze helmet and coat of mail, but after a few steps David said that he could not go in armour he had not proved, and he put it all off again. By the armourers' bracing-rite a piece of kit is fitted to its wearer, but it holds only when the parchment has been blessed.",
+    "lore": "When the boy David would go out to fight, Saul dressed him in the royal bronze helmet and coat of mail, but after a few steps David said that he could not go in armour he had not proved, and he put it all off again. By the armourers' bracing-rite a piece of kit is fitted to its wearer, and it holds the better when the parchment has been blessed.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -633,7 +633,7 @@
     "effect": "remove_curse",
     "power": "",
     "unidentified_name": "myrrh-scented scroll",
-    "lore": "The folk of Egypt buried their dead with a papyrus named the Book of Coming Forth by Day, whose longest spell is a list of forty-two denials, one for each judge in the hall where the heart is weighed against a feather. This liturgy pleads as thoroughly for its reader, until every cursed thing carried, whether worn or stowed, is unbound.",
+    "lore": "The folk of Egypt buried their dead with a papyrus named the Book of Coming Forth by Day, whose most famous spell holds a list of forty-two denials, one for each judge in the hall where the heart is weighed against a feather. This liturgy pleads as thoroughly for its reader, until every cursed thing carried, whether worn or stowed, is unbound.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -761,7 +761,7 @@
     "effect": "protection",
     "power": "",
     "unidentified_name": "bronze-clasped scroll",
-    "lore": "Hephaestus made the aegis for Zeus, a goatskin fringed with a hundred golden tassels and bearing the head of the Gorgon at its centre. Athena wore it into battle more often than her father did, and not even his thunderbolt could break it. The scribes of her temple wrote this rite in its likeness, so that ordinary blades find no purchase on the reader, and the Gorgon at its centre looks back at any gaze that seeks the reader.",
+    "lore": "Hephaestus made the aegis for Zeus, a goatskin fringed with a hundred golden tassels and bearing the head of the Gorgon at its centre. Athena wore it into battle more often than her father did, and not even his thunderbolt could break it. The scribes of her temple wrote this rite in its likeness, so that blades find little purchase on the reader, and the Gorgon at its centre looks back at any gaze that seeks the reader.",
     "weight": 0.1,
     "peak_weight": 0.25,
     "ward_also": [
@@ -2526,7 +2526,7 @@
     "effect": "family_ward",
     "power": "",
     "unidentified_name": "brass-ringed vellum",
-    "lore": "King Darius was tricked into casting his friend Daniel to the lions because he prayed to his God, and at dawn the king came running to the den. From within it Daniel answered that an angel had shut the lions' mouths, and that they had not touched him all night. Those words, read aloud, close the jaws and sheathe the claws of every beast that hears them.",
+    "lore": "King Darius was tricked into casting his friend Daniel to the lions because he prayed to his God, and at dawn the king came running to the den. From within it Daniel answered that an angel had shut the lions' mouths, and that they had not touched him all night. Those words, read aloud, close the jaws and sheathe the claws of the great beasts, until you lift your hand against them.",
     "weight": 0.1,
     "peak_weight": 0.25,
     "turns": 20,

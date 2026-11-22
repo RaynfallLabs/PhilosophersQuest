@@ -3141,7 +3141,7 @@ def make_scroll_lake_of_fire(x: int, y: int) -> Scroll:
         'unidentified_name': 'worn scroll',
         'identified': False,
         'single_copy': True,
-        'lore': "The words of this terrible scroll were drawn from the final chapter of Revelation, and its ink smells of ash and brimstone. The last line is underlined twice: 'This is the second death, the lake of fire.'",
+        'lore': "The words of this terrible scroll were drawn from the judgment at the end of Revelation, and its ink smells of ash and brimstone. The last line is underlined twice: 'This is the second death, the lake of fire.'",
     })
     item.x = x
     item.y = y

@@ -2346,11 +2346,11 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # -- Gleipnir component rooms (Fenrir quest) --------------------------------
     _GLEIPNIR_COMPONENTS = {
         62: ('cats_footstep', "Sound of a Cat's Footstep", [180, 160, 200]),
-        65: ('womans_beard', "Roots of a Woman's Beard", [200, 170, 140]),
+        65: ('womans_beard', "Beard of a Woman", [200, 170, 140]),
         68: ('mountain_root', "Root of a Mountain", [140, 130, 120]),
         71: ('fish_breath', "Breath of a Fish", [140, 200, 220]),
         74: ('bird_spittle', "Spittle of a Bird", [220, 220, 180]),
-        77: ('bear_sinew', "Sinew of a Bear's Sensitivity", [180, 140, 100]),
+        77: ('bear_sinew', "Sinews of a Bear", [180, 140, 100]),
     }
     if level in _GLEIPNIR_COMPONENTS:
         comp_id, comp_name, comp_color = _GLEIPNIR_COMPONENTS[level]

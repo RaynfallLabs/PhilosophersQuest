@@ -984,7 +984,7 @@ class MagicMixin(MagicWardsMixin):
                     self._on_monster_killed(target)
 
             elif effect == 'death_ray':
-                # 70% chance instant kill; remaining HP otherwise. Bosses immune to instant kill.
+                # 85% chance instant kill; a half bite otherwise. Bosses immune to instant kill.
                 is_boss = _is_big_foe(target)
                 if not is_boss and _rng.random() < 0.85:      # the death ray is the surer of the two
                     target.hp = 0
@@ -3471,9 +3471,11 @@ class MagicMixin(MagicWardsMixin):
             dur = [10, 20, 30, 50, 80][_tstep]
             self.player.add_effect('shielded', dur)
             # (It printed "+{bonus} AC", up to +10; the ward is the Shielded
-            # status, which is 2 points of armor whatever the scroll's tier.)
+            # status, whatever the scroll's tier: 2 points of armor, and
+            # blows halved, as Player.take_damage does.)
             self.add_message(
-                f"A protective ward envelops you: 2 points of armor for {quantity(dur, 'turn')}.", 'success')
+                f"A protective ward envelops you: 2 points of armor, and blows do half their harm, "
+                f"for {quantity(dur, 'turn')}.", 'success')
             self._protection_also(scroll)      # what its own rite also keeps off (game_wards.py)
 
         elif effect == 'enchant_accessory':
