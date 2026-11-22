@@ -959,8 +959,10 @@ class CombatMixin:
         These lived inside the monster-attack loop, so they answered a
         monster's blow and nothing else: poison, a trap or a chest's needle
         killed straight through the Amulet of Life Saving, the Jade Cicada and
-        Joan's breastplate, each of which says it stops a killing blow."""
-        if self.player.hp > 0:
+        Joan's breastplate, each of which says it stops a killing blow.
+
+        None answers for a run that has ended (_on_game_over)."""
+        if self.player.hp > 0 or self.__dict__.get('_run_over'):
             return
         # Jade Cicada: death save (once per floor).
         # death_save_bonus (chain-equip) adds to the d20 roll determining
@@ -3371,6 +3373,12 @@ class CombatMixin:
     # Monster turns
     # ------------------------------------------------------------------
 
+    def _hero_fell(self) -> bool:
+        """The run has ended in this turn (a blast, a blow, a vent): no one
+        else acts on it."""
+        return bool(self.state == STATE_DEAD
+                    or (self.__dict__.get('_run_over') and self.player.hp <= 0))
+
     def _do_monster_turns(self):
         # Time stop: monsters are frozen this turn. Death is not: he is not
         # in time. (The return used to come first, so a scroll of time stop
@@ -3451,6 +3459,8 @@ class CombatMixin:
                         m.ai_pattern = 'aggressive'  # can't hide anymore
 
         for m in self.monsters:
+            if self._hero_fell():
+                return                     # a death this turn set off killed him (a burst)
             if self.dungeon_level != _floor_at_start:
                 break
             if not m.alive:
@@ -3616,6 +3626,8 @@ class CombatMixin:
                 if not m.alive:
                     self._on_monster_killed(m)
                 continue  # can't attack this turn — just fell
+            if self._hero_fell():
+                return                     # its own turn set the death off: it has no blow
             if did_attack:
                 # Displacement: a share of the blows land where you are not:
                 # the spell's DISPLACEMENT_MISS while its status lasts, or the
@@ -3683,6 +3695,8 @@ class CombatMixin:
                 # attack(); that death used to go unprocessed.
                 if not m.alive and not getattr(m, '_kill_handled', False):
                     self._on_monster_killed(m)
+                    if self._hero_fell():
+                        return             # its burst killed him: nothing mends the dead
 
                 # Anansi web cloak (story_thread): the first crit per floor that
                 # would deal >25% of max-HP is reduced to 1 damage. Threshold is
@@ -3839,6 +3853,8 @@ class CombatMixin:
                         if not m.alive:
                             self._on_monster_killed(m)
 
+                if self._hero_fell():
+                    return                 # a burst his flames, his riposte or its shot set off
                 # Tarnhelm: auto-invisibility when HP drops below 30%
                 if dmg > 0 and not getattr(self, '_tarnhelm_used', False):
                     if self.player.hp > 0 and self.player.hp / max(1, self.player.max_hp) < 0.30:
@@ -3900,6 +3916,8 @@ class CombatMixin:
                         except ImportError:
                             pass
 
+                if self._hero_fell():
+                    return
                 # Every ward against death (see _answer_a_killing_blow).
                 self._answer_a_killing_blow()
 
@@ -4403,6 +4421,8 @@ class CombatMixin:
         rescuer = self._shep_rescue()
 
         for pet in self.pets:
+            if self._hero_fell():
+                return
             if not pet.alive:
                 continue
 
@@ -4497,6 +4517,8 @@ class CombatMixin:
                 if pet.tick_duration():
                     self._horn_ally_leaves(pet)
 
+        if self._hero_fell():
+            return
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
         self._monster_swipes(self.pets)
 

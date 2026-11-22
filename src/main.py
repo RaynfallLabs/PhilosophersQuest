@@ -4471,7 +4471,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         A character who DIED leaves a bones file so a ghost can haunt a
         future run; one who fled, won, or fell on a side floor (the Cow
         Level, the Zombie Stage) does not.
-        The high score is written here too, once, the moment the run ends."""
+        The high score is written here too, once, the moment the run ends.
+        A run ends once: a second call does nothing."""
+        if getattr(self, '_run_over', False):
+            return
         from save_system import delete_save
         from bones import save_bones
         from boss_levels import is_side_floor
@@ -4919,10 +4922,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                               f"{getattr(m, 'id', m)!r} failed")
                     m._kill_handled = True
 
+    def _fov_follows(self, was: tuple) -> tuple:
+        """The view goes with a hero this turn moved, whatever moved him (a
+        drag, a pull, a lift): his tile was ``was``. Returns his tile now."""
+        at = (self.player.x, self.player.y)
+        if at != was:
+            self._refresh_fov()
+        return at
+
     def _advance_turn(self):
         self.player._combat_game_ref = self      # so a death check anywhere can reach the wards
         self._say_springs()                # lurkers the action's blows gave away
         self._reap_unnoticed_kills()
+        if self.__dict__.get('_run_over') and self.player.hp <= 0:
+            self.state = STATE_DEAD          # the action itself ended the run (a burst): no turn follows
+            return
+        _hero_at = (self.player.x, self.player.y)
         self._say_veil_slip()              # a wand, a spell or a throw slipped the ring's veil
         # A foe a blow made yield that no attack's on_complete has told yet.
         for _m in list(self.monsters or ()):
@@ -5493,18 +5508,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # not once the first has killed the hero, opened a popup or
                 # a menu, or moved him to another floor (the turn would be a
                 # free one for monsters he never walked among).
-                if (self.player.is_dead() or self.state != _state0
-                        or self.dungeon_level != _floor0):
+                if (self.state != _state0 or self.dungeon_level != _floor0
+                        or self.player.is_dead()):
                     break
+            _hero_at = self._fov_follows(_hero_at)   # (a pull, a shove, the world's last turn)
             self._family_turn()            # families that flee on sight; hidden things shown
             # Whose blows these are, for the Seeker's damage achievements
             # (game_seeker.py): everything outside this block is the hero's.
             self._damage_by = 'monster'
             try:
                 self._do_monster_turns()
+                if self._hero_fell():
+                    break                  # the run is over: no one else acts
                 if not self.player.is_dead():
                     self._damage_by = 'pet'
                     self._do_pet_turns()
+                    if self._hero_fell():
+                        break
                     # Escorts move and are attacked in their own pass, pet or no pet.
                     self._damage_by = 'escort'
                     self._do_escort_turns()
@@ -5514,7 +5534,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._maybe_wander_spawn()
             finally:
                 self._damage_by = 'hero'
+        self._fov_follows(_hero_at)        # dragged, lifted, rescued: he sees from where he is
         self._say_springs()                # lurkers the pets' and escorts' blows gave away
+        if self._hero_fell():
+            return                         # nothing mends or moves the dead
         self._death_proximity_warning()
         self._tick_hp_regen()
         self._riding_tick()                # the saddlebags; a blow, a foe, a status sets a rider down

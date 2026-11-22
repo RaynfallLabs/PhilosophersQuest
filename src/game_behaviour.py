@@ -143,7 +143,8 @@ class BehaviourMixin:
         p = self.player
         import holds
         # (Swallowed, the hero is inside another: no burst outside it reaches him. AI-3)
-        if death_throes.in_blast(m, p.x, p.y, self.dungeon) and not holds.shields(p, m):
+        if (not self.__dict__.get('_run_over')     # (he dies once: the next blast finds no one)
+                and death_throes.in_blast(m, p.x, p.y, self.dungeon) and not holds.shields(p, m)):
             import wards
             dmg = death_throes.blast(m, p.max_hp)
             if dmg > 0:
