@@ -47,6 +47,7 @@ from typing import TYPE_CHECKING
 
 import pygame
 
+import grave_rot
 import sound_system as _snd
 from floor_curve import mend as _mend, wound as _wound
 
@@ -439,6 +440,7 @@ class MagicMixin(MagicWardsMixin):
             ]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             self._target_candidates = candidates
+            candidates = self._target_candidates     # what the list really offers: the cursor opens there
             self._target_idx = 0
             if candidates:
                 self.target_cursor_x = candidates[0].x
@@ -630,14 +632,16 @@ class MagicMixin(MagicWardsMixin):
         if effect == 'heal':
             amount = _mend(roll(wand.power) if wand.power else 8,
                            self.player.max_hp, WAND_HEAL_SHARE)
-            self.player.restore_hp(amount)
-            self.add_message(f"The wand heals you for {amount} HP!", 'success')
+            got = self.player.restore_hp(amount)
+            self.add_message(grave_rot.told(self.player, got, "The wand heals you for {n} HP!"),
+                             'success')
 
         elif effect == 'extra_heal':
             amount = _mend((roll(wand.power) if wand.power else 20) + 10,
                            self.player.max_hp, WAND_EXTRA_HEAL_SHARE)
-            self.player.restore_hp(amount)
-            self.add_message(f"Intense healing washes over you -- {amount} HP restored!", 'success')
+            got = self.player.restore_hp(amount)
+            self.add_message(grave_rot.told(
+                self.player, got, "Intense healing washes over you -- {n} HP restored!"), 'success')
 
         elif effect == 'restore_body':
             self.player.hp = self.player.max_hp
@@ -1147,8 +1151,7 @@ class MagicMixin(MagicWardsMixin):
                 # Drain") gives less (3.5.1 audit: it was untyped, so the
                 # Bestiary's line was never true).
                 actual = target.take_damage(dmg, 'drain')
-                heal = min(actual, self.player.max_hp - self.player.hp)
-                self.player.hp += heal
+                heal = self.player.restore_hp(actual)      # through the rot, as every heal
                 self.add_message(
                     f"You drain {actual} life from {the_name(target, lower=True)}! (+{heal} HP)", 'success'
                 )
@@ -1343,8 +1346,9 @@ class MagicMixin(MagicWardsMixin):
         elif effect == 'iron_mortar':
             # Baba Yaga's Iron Mortar: the effect is never the same twice
             _chaos = _rng.choice([
-                ('heal',       lambda: (self.player.restore_hp(25),
-                                        self.add_message("Chaotic healing washes over you! (+25 HP)", 'success'))),
+                ('heal',       lambda: self.add_message(grave_rot.told(
+                    self.player, self.player.restore_hp(25),
+                    "Chaotic healing washes over you! (+{n} HP)"), 'success')),
                 ('teleport',   lambda: (self._teleport_player(),
                                         self.add_message("The mortar warps you across the level!", 'warning'))),
                 ('haste',      lambda: (self.player.add_effect('hasted', 10),
@@ -1391,10 +1395,10 @@ class MagicMixin(MagicWardsMixin):
             else:
                 drain = max(1, target.hp // 2)
                 actual = target.take_damage(drain)
-                self.player.restore_hp(actual)
+                got = self.player.restore_hp(actual)
                 self.add_message(
                     f"Life force drains from {the_name(target, lower=True)}! "
-                    f"({actual} drained, +{actual} HP to you)", 'success'
+                    f"({actual} drained, +{got} HP to you)", 'success'
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
@@ -1467,8 +1471,9 @@ class MagicMixin(MagicWardsMixin):
 
         elif effect == 'wonder':
             _WONDER_EFFECTS = [
-                ('heal', lambda: (self.player.restore_hp(15),
-                    self.add_message("The wand heals you for 15 HP!", 'success'))),
+                ('heal', lambda: self.add_message(grave_rot.told(
+                    self.player, self.player.restore_hp(15),
+                    "The wand heals you for {n} HP!"), 'success')),
                 ('haste', lambda: (self.player.add_effect('hasted', 8),
                     self.add_message("The wand makes you supernaturally fast!", 'success'))),
                 ('confuse', lambda: (
@@ -1588,7 +1593,9 @@ class MagicMixin(MagicWardsMixin):
             # Only what the hero can see (never an invisible or disguised
             # thing: its tile would show where it stands) and only what the
             # spell reaches (spells.SPELL_REACH: a touch, a short sign).
-            seen = [m for m in self.monsters if m.alive and self._sees_monster(m)]
+            import holds                  # swallowed, he can aim only at the gut round him
+            seen = [m for m in holds.strikable(self.player, self.monsters)
+                    if m.alive and self._sees_monster(m)]
             candidates = [m for m in seen if self._spell_in_reach(spell, m)]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             if not candidates:
@@ -1867,8 +1874,8 @@ class MagicMixin(MagicWardsMixin):
             _tier = int(getattr(self, '_active_spell_tier', 1) or 1)
             healed = _mend(self._spell_damage(base, chain, healing=True),
                            self.player.max_hp, SPELL_HEAL_SHARE.get(_tier, 0.45))
-            self.player.restore_hp(healed)
-            self.add_message(f"You are healed for {healed} HP!", 'success')
+            got = self.player.restore_hp(healed)
+            self.add_message(grave_rot.told(self.player, got, "You are healed for {n} HP!"), 'success')
             return
 
         # Army of Darkness: summon undead pet horde
@@ -1946,7 +1953,8 @@ class MagicMixin(MagicWardsMixin):
             dur = max(3, int(5 * chain_scale))
             count = 0
             _named = 0
-            for m in self.monsters:
+            import holds                  # the whole floor, but never past a gut round him
+            for m in holds.strikable(self.player, self.monsters):
                 # Counted as they are held: a swarm cannot be held still
                 # (status_immune), and a named foe still steadying shakes it off.
                 if m.alive and m.add_effect('paralyzed', dur):
@@ -2621,7 +2629,8 @@ class MagicMixin(MagicWardsMixin):
                 if not target.alive:
                     self._on_monster_killed(target)
                 _max_arcs = 3
-                remaining = [m for m in self.monsters
+                import holds
+                remaining = [m for m in holds.strikable(self.player, self.monsters)
                              if m.alive and m not in hit_targets
                              and any(abs(m.x - h.x) + abs(m.y - h.y) <= 3
                                      for h in hit_targets)]
@@ -2883,9 +2892,9 @@ class MagicMixin(MagicWardsMixin):
                 amount = amount * 2
             elif _scroll_buc == 'cursed':
                 amount = max(1, amount // 2)
-            self.player.restore_hp(amount)
-            self.add_message(
-                f"Healing light washes over you -- {amount} HP restored!", 'success')
+            got = self.player.restore_hp(amount)
+            self.add_message(grave_rot.told(
+                self.player, got, "Healing light washes over you -- {n} HP restored!"), 'success')
 
         elif effect == 'summon_stray_kids':
             # The Autographed Stray Kids Photo, spent: the band, alive, puts
@@ -3565,8 +3574,9 @@ class MagicMixin(MagicWardsMixin):
                     fraction = [0.25, 0.5, 1.0, 1.0, 1.0][_tstep]
                     killed = 0
                     killed_names = []
+                    import holds          # the whole floor, but never past a gut round him
                     for kind in target_kinds:
-                        kind_members = [m for m in self.monsters
+                        kind_members = [m for m in holds.strikable(self.player, self.monsters)
                                         if m.alive and m.kind == kind
                                         and not getattr(m, 'is_boss', False)
                                         and not _is_big_foe(m)

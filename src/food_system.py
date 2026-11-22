@@ -1,6 +1,7 @@
 from naming import quantity
 import json
 import random
+import grave_rot
 from paths import data_path
 
 _INGREDIENT_PATH = data_path('data', 'items', 'ingredient.json')
@@ -348,7 +349,7 @@ def _apply_recipe_outcome(player, recipe: dict, ruined: bool = False) -> list[st
             and (getattr(player, 'quirk_progress', None) or {}).get('fatted_calf_active')
             and player.hp < player.max_hp):
         player.restore_hp(player.max_hp - player.hp)
-        msgs = list(msgs) + ["You rise from the feast whole: every wound has closed."]
+        msgs = list(msgs) + [grave_rot.whole(player, "You rise from the feast whole: every wound has closed.")]
     return msgs
 
 
@@ -848,7 +849,8 @@ def apply_fafnirs_blood(player, chain: int) -> list:
     earned = {name for need, name in FAFNIR_BLOOD_STEPS if chain >= need}
     if 'heal' in earned:
         player.restore_hp(player.max_hp - player.hp)
-        msgs.append("The blood scalds all the way down, and then the pain is gone and every wound with it.")
+        msgs.append(grave_rot.whole(
+            player, "The blood scalds all the way down, and then the pain is gone and every wound with it."))
     if 'hint' in earned:
         msgs.append("Two birds are talking overhead, and you plainly hear them tell of a broken sword, a one-eyed god's stone and a throw.")
     else:
@@ -990,7 +992,7 @@ def drink_potion(player, potion) -> list[str]:
         else:
             amt = player.max_hp - player.hp
         player.restore_hp(amt)
-        messages.append("Every wound closes. You feel completely whole.")
+        messages.append(grave_rot.whole(player, "Every wound closes. You feel completely whole."))
         if cleared:
             messages.append(f"The draught also burns away: {', '.join(cleared)}.")
 

@@ -42,6 +42,7 @@ import copy
 import random
 
 import altar
+import grave_rot
 import sound_system as _snd
 from dungeon import FLOOR, DOOR, ALTAR
 from game_states import (
@@ -190,6 +191,7 @@ class DivineMixin:
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
         self._target_candidates = candidates
+        candidates = self._target_candidates     # what the list really offers: the cursor opens there
         self._target_idx = 0
         self._observe_targeting = True
         self._melee_targeting = False
@@ -473,20 +475,23 @@ class DivineMixin:
             self.add_message("The cool water refreshes you slightly.", 'info')
             self.player.restore_hp(max(5, self.player.max_hp // 20))
         elif chain == 2:
-            self.add_message("The blessed water restores your health!", 'success')
-            self.player.restore_hp(max(15, self.player.max_hp // 8))
+            got = self.player.restore_hp(max(15, self.player.max_hp // 8))
+            self.add_message(grave_rot.told(
+                self.player, got, "The blessed water restores your health! (+{n} HP)"), 'success')
         elif chain == 3:
-            self.add_message("The magical water restores you fully!", 'success')
             self.player.restore_hp(self.player.max_hp)
             self.player.restore_sp(50)
+            self.add_message(grave_rot.whole(self.player, "The magical water restores you fully!"),
+                             'success')
         elif chain >= 4:
             # Chain 5 is chain 4 and a stat: it used to give the stat and
             # full health only, less than chain 4 (no stamina, no cure).
-            self.player.restore_hp(self.player.max_hp)
-            self.player.restore_sp(self.player.max_sp)
+            # Cured first, so the heal is whole (as the prayer's: grave_rot.py).
             for eff in list(self.player.status_effects.keys()):
                 if eff in ('poisoned', 'diseased', 'bleeding', 'burning', 'confused', 'blinded', 'corroding'):
                     del self.player.status_effects[eff]
+            self.player.restore_hp(self.player.max_hp)
+            self.player.restore_sp(self.player.max_sp)
             if chain == 4:
                 self.add_message("Divine water purifies you! All ailments are cured!", 'success')
             else:
@@ -901,8 +906,9 @@ class DivineMixin:
                     self.add_message(f"A stone comes loose from the armrest: {self._display_name(gem)}.",
                                      'loot')
         if chain >= 2:
-            self.player.restore_hp(max(20, self.player.max_hp // 5))
-            self.add_message("The throne's enchantment heals your wounds!", 'success')
+            got = self.player.restore_hp(max(20, self.player.max_hp // 5))
+            self.add_message(grave_rot.told(
+                self.player, got, "The throne's enchantment heals your wounds! (+{n} HP)"), 'success')
         if chain >= 3:
             count = 0
             for item in list(self.player.inventory):

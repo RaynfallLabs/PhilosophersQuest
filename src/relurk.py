@@ -7,8 +7,9 @@ hurt (under 60% of its health), has had no sight of the hero for three
 turns and is not hunting him goes back into hiding: an ambusher again,
 unaware, unseen until it springs (Monster.take_turn's ambush branch).
 Once a life, and its second spring carries no surprise blow (a mimic's
-first-blow crit is never set by an ambusher). A light, Hecate's Torch and
-a family's Tremor-Sense find it as they find any lurker (unseen.py).
+first-blow crit is never set by an ambusher). Hecate's Torch and the
+vermin's Tremor-Sense find it as they find any lurker (unseen.py), and
+his keen senses may spot it; an ordinary light shows him nothing.
 Pure module.
 """
 from __future__ import annotations

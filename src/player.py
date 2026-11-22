@@ -523,6 +523,9 @@ class Player:
     def is_dead(self) -> bool:
         if self.immortal and self.hp <= 0:
             self.hp = self.max_hp   # snap back to full health instantly
+        if self.hp <= 0 and getattr(getattr(self, '_combat_game_ref', None),
+                                    '__dict__', {}).get('_run_over'):
+            return True             # the run has ended: no save of any kind answers now
         # The game's wards (life save, the Jade Cicada, Joan's breastplate, the
         # Ankh, the Tyet and the rest) answer a killing blow from any outside
         # source. Hunger is not a blow: the starvation check sets _no_ward.

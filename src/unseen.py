@@ -50,11 +50,15 @@ def sees_invisible(player) -> bool:
     return lights.shows_invisible(player)
 
 
-def is_invisible(m) -> bool:
+def is_invisible(m, player=None) -> bool:
     """The creature itself is invisible by nature (whoever is looking), or
-    hides in the dark from a hero with no light (src/gone_again.py)."""
-    return bool(getattr(m, 'invisible', False)
-                or getattr(m, '__dict__', {}).get('_dark_hidden'))
+    hides in the dark from a hero with no light (gone_again.in_dark)."""
+    if getattr(m, 'invisible', False):
+        return True
+    if not getattr(m, '__dict__', {}).get('_dark_hidden'):
+        return False
+    import gone_again
+    return gone_again.in_dark(m, player)
 
 
 def senses(m, player) -> bool:
@@ -89,7 +93,7 @@ def senses(m, player) -> bool:
 
 def unseen(m, player) -> bool:
     """An invisible creature the hero has no way to see."""
-    return is_invisible(m) and not sees_invisible(player) and not senses(m, player)
+    return is_invisible(m, player) and not sees_invisible(player) and not senses(m, player)
 
 
 def lurking(m, player=None) -> bool:

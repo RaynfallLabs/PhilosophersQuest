@@ -21,6 +21,7 @@ from monster import the_name
 import pygame
 
 from geom import monster_at_tile
+import grave_rot
 
 from food_system import eat_food, eat_raw
 from items import (Weapon, Armor, Shield, Corpse, Ingredient, Artifact,
@@ -1683,8 +1684,9 @@ class MenuMixin:
 
         elif pid == 'life_drain':
             restored = max(1, pl.max_hp // 4)
-            pl.restore_hp(restored)
-            self.add_message(f"{label}: Vital energy flows back -- +{restored} HP!", 'success')
+            got = pl.restore_hp(restored)
+            self.add_message(f"{label}: " + grave_rot.told(
+                pl, got, "Vital energy flows back -- +{n} HP!"), 'success')
 
         elif pid == 'reality_anchor':
             cleared = [e for e in list(pl.status_effects.keys()) if e in DEBUFFS]
@@ -1755,6 +1757,7 @@ class MenuMixin:
             ]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             self._target_candidates = candidates
+            candidates = self._target_candidates     # what the list really offers: the cursor opens there
             self._target_idx = 0
             self._power_targeting = True
             self._pending_power = 'stuffie_fire_breath'
@@ -1781,8 +1784,9 @@ class MenuMixin:
             # (There was no check at all: he could be bound from anywhere on
             # the floor, through walls.)
             from combat import _line_of_sight
+            import holds
             _dist = max(abs(fenrir.x - pl.x), abs(fenrir.y - pl.y))
-            if _dist > self.GLEIPNIR_RANGE or not _line_of_sight(
+            if holds.shields(pl, fenrir) or _dist > self.GLEIPNIR_RANGE or not _line_of_sight(
                     pl.x, pl.y, fenrir.x, fenrir.y, self.dungeon):
                 self.add_message(
                     "The ribbon will not reach him from here. You need him in "
@@ -1955,7 +1959,8 @@ class MenuMixin:
             return False
         # Find closest visible, non-boss, INT-5+ monster
         candidates = []
-        for m in self.monsters:
+        import holds
+        for m in holds.strikable(self.player, self.monsters):
             if not getattr(m, 'alive', False):
                 continue
             if getattr(m, 'is_boss', False):
@@ -2025,7 +2030,8 @@ class MenuMixin:
             self.add_message("That charge is gone.", 'warning')
             return False
         # Pick a visible target
-        targets = [m for m in self.monsters if self._sees_monster(m)]
+        import holds
+        targets = [m for m in holds.strikable(self.player, self.monsters) if self._sees_monster(m)]
         if not targets:
             self.add_message(
                 "Nothing in sight to use the charge on.", 'warning')

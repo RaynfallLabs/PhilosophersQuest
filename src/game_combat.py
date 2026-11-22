@@ -68,6 +68,7 @@ from geom import monster_at_tile, is_at_tile
 import unseen
 import theft
 import holds            # Held Fast (AI-3)
+import lore_powers      # who is at peace (slice M)
 import habits          # They Learn Your Tricks (AI-2)
 import tactical_mind    # the Tactical Mind (AI-2)
 from items import Artifact, Weapon
@@ -206,6 +207,7 @@ class CombatMixin:
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
         self._target_candidates = candidates
+        candidates = self._target_candidates     # what the list really offers: the cursor opens there
         self._target_idx = 0
         self._melee_targeting = True
         self._melee_reach = reach
@@ -318,6 +320,7 @@ class CombatMixin:
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
         self._target_candidates = candidates
+        candidates = self._target_candidates     # what the list really offers: the cursor opens there
         self._target_idx = 0
 
         if candidates:
@@ -349,6 +352,13 @@ class CombatMixin:
 
         from pet_system import is_soul_sphere
         import coatings as _coatings
+        # (A Soul Sphere is no blow: a companion comes out of it.)
+        if not (isinstance(item, Artifact)
+                and (item.id == 'unusual_soul_sphere' or is_soul_sphere(item))):
+            why = holds.aim_refused(self.player, hit_monster, self.monsters)
+            if why:                          # swallowed: nothing spent, no turn
+                self.add_message(why, 'warning')
+                return
         if isinstance(item, Artifact) and item.id == 'unusual_soul_sphere':
             self._throw_unusual_sphere(item, hit_monster, tx, ty)
         elif isinstance(item, Artifact) and is_soul_sphere(item):
@@ -924,11 +934,12 @@ class CombatMixin:
         return name
 
     def _nearest_visible_monster(self):
-        """Return the closest alive monster the hero can see, or None (an
-        invisible or hidden one is not offered: src/unseen.py)."""
+        """Return the closest alive monster the hero can see and strike, or
+        None (an invisible or hidden one is not offered: src/unseen.py; nor,
+        to a swallowed hero, one outside the gut: holds.strikable)."""
         px, py = self.player.x, self.player.y
         best, best_dist = None, float('inf')
-        for m in self.monsters:
+        for m in holds.strikable(self.player, self.monsters):
             if self._sees_monster(m):
                 d = abs(m.x - px) + abs(m.y - py)
                 if d < best_dist:
@@ -948,8 +959,10 @@ class CombatMixin:
         These lived inside the monster-attack loop, so they answered a
         monster's blow and nothing else: poison, a trap or a chest's needle
         killed straight through the Amulet of Life Saving, the Jade Cicada and
-        Joan's breastplate, each of which says it stops a killing blow."""
-        if self.player.hp > 0:
+        Joan's breastplate, each of which says it stops a killing blow.
+
+        None answers for a run that has ended (_on_game_over)."""
+        if self.player.hp > 0 or self.__dict__.get('_run_over'):
             return
         # Jade Cicada: death save (once per floor).
         # death_save_bonus (chain-equip) adds to the d20 roll determining
@@ -1031,7 +1044,7 @@ class CombatMixin:
                     from floor_curve import wound
                     px, py = self.player.x, self.player.y
                     _hits = _kills = 0
-                    for mm in list(self.monsters):
+                    for mm in list(holds.strikable(self.player, self.monsters)):
                         if not mm.alive or abs(mm.x - px) + abs(mm.y - py) > 6:
                             continue
                         _named = bool(getattr(mm, 'is_boss', False)
@@ -1846,6 +1859,7 @@ class CombatMixin:
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
         self._target_candidates = candidates
+        candidates = self._target_candidates     # what the list really offers: the cursor opens there
         self._target_idx = 0
         self._melee_targeting = False
 
@@ -1887,6 +1901,12 @@ class CombatMixin:
         # Line of sight check
         if not _line_of_sight(self.player.x, self.player.y, cx, cy, self.dungeon):
             self.add_message("No clear line of sight!", 'warning')
+            self.state = STATE_PLAYER
+            return
+
+        why = holds.aim_refused(self.player, target, self.monsters)
+        if why:                              # swallowed: no charge spent, no turn
+            self.add_message(why, 'warning')
             self.state = STATE_PLAYER
             return
 
@@ -1979,6 +1999,12 @@ class CombatMixin:
             return
         if not _line_of_sight(self.player.x, self.player.y, cx, cy, self.dungeon):
             self.add_message("No clear line of sight!", 'warning')
+            self._refund_pending_spell()
+            self.state = STATE_PLAYER
+            return
+        why = holds.aim_refused(self.player, target, self.monsters)
+        if why:
+            self.add_message(why, 'warning')
             self._refund_pending_spell()
             self.state = STATE_PLAYER
             return
@@ -2387,6 +2413,9 @@ class CombatMixin:
                 return
             self._start_combat(target)
             return
+        if holds.swallowed(self.player):     # nor a chest, an altar or the floor, from in there
+            self.add_message(holds.inside_line(self.player, self.monsters), 'warning')
+            return
 
         # 2. Mystery altar at cursor
         from mystery_system import MysteryAltar
@@ -2526,6 +2555,10 @@ class CombatMixin:
 
     def _fire_ranged(self, monster):
         """Consume one ammo and launch the math chain quiz for a ranged shot."""
+        why = holds.aim_refused(self.player, monster, self.monsters)
+        if why:                              # swallowed: nothing spent, no turn
+            self.add_message(why, 'warning')
+            return
         self._make_noise('shot')
         habits.hero_shot(self, monster)      # They Learn Your Tricks (src/habits.py)
         # Health as the shot is loosed, for the traits that count kills made
@@ -2626,7 +2659,7 @@ class CombatMixin:
         # Engine wave 3: side-channel refs for combat-side mechanics. Ranged
         # path mirrors the melee path so flags like Kusanagi surrounded and
         # Oathkeeper adjacent-pet work on bow shots too.
-        self.player._combat_monsters_ref = self.monsters
+        self.player._combat_monsters_ref = holds.strikable(self.player, self.monsters)
         self.player._combat_pets_ref = self.pets
         self.player._combat_game_ref = self
         _alive_before = {id(m) for m in self.monsters if m.alive}
@@ -3027,6 +3060,13 @@ class CombatMixin:
             self.add_message(_senses._fill(m, lost), 'info')
 
     def _start_combat(self, monster):
+        why = holds.aim_refused(self.player, monster, self.monsters)
+        if why:                              # swallowed: nothing spent, no turn
+            self.add_message(why, 'warning')
+            return
+        # Whom this blow can reach, as it is begun: only the gut, for a
+        # swallowed hero, even if the blow then cuts him out of it.
+        _within = holds.strikable(self.player, self.monsters)
         # A blow struck carries a long way (src/senses.py).
         self._make_noise('melee')
         habits.hero_melee(self, monster)     # They Learn Your Tricks (src/habits.py)
@@ -3067,7 +3107,7 @@ class CombatMixin:
         if _dz_ch > 0 and random.random() < _dz_ch:
             _px, _py = self.player.x, self.player.y
             _dazzled = 0
-            for _m in self.monsters:
+            for _m in _within:
                 if (_m.alive and abs(_m.x - _px) <= 3 and abs(_m.y - _py) <= 3
                         and not (_m.x == _px and _m.y == _py)
                         and not _is_bystander(_m)
@@ -3216,7 +3256,7 @@ class CombatMixin:
                         _w = self.player.weapon
                         _bleed = _w and getattr(_w, 'class_mechanic', '') == 'cleave_at_max_plus_bleed'
                         _cleaved = 0
-                        for _m in self.monsters:
+                        for _m in _within:
                             if _m.alive and _m is not monster \
                                     and abs(_m.x - monster.x) <= 1 \
                                     and abs(_m.y - monster.y) <= 1 \
@@ -3233,7 +3273,7 @@ class CombatMixin:
                     # Sling free_stones ricochet: bounce hit to an adjacent monster
                     ricochet_dmg = kwargs.get('ricochet_dmg', 0)
                     if ricochet_dmg:
-                        for _m in self.monsters:
+                        for _m in _within:
                             if _m.alive and _m is not monster \
                                     and abs(_m.x - monster.x) <= 1 \
                                     and abs(_m.y - monster.y) <= 1 \
@@ -3247,7 +3287,7 @@ class CombatMixin:
                     # Amenonuhoko: slow adjacent monsters on kill
                     w = self.player.weapon
                     if w and getattr(w, 'aoe_slow_on_kill', False):
-                        for m in self.monsters:
+                        for m in _within:
                             if m.alive and abs(m.x - monster.x) <= 1 and abs(m.y - monster.y) <= 1:
                                 m.add_effect('slowed', 3)
                         self.add_message("A wave of primordial stillness ripples outward.", 'info')
@@ -3269,7 +3309,7 @@ class CombatMixin:
         # that need access to game state (Kusanagi surrounded check,
         # Oathkeeper adjacent-pet check, Penitent kill-tally karma adjust).
         # Set fresh per attack so they reflect current game state.
-        self.player._combat_monsters_ref = self.monsters
+        self.player._combat_monsters_ref = _within
         self.player._combat_pets_ref = self.pets
         self.player._combat_game_ref = self
         _alive_before = {id(m) for m in self.monsters if m.alive}
@@ -3332,6 +3372,12 @@ class CombatMixin:
     # ------------------------------------------------------------------
     # Monster turns
     # ------------------------------------------------------------------
+
+    def _hero_fell(self) -> bool:
+        """The run has ended in this turn (a blast, a blow, a vent): no one
+        else acts on it."""
+        return bool(self.state == STATE_DEAD
+                    or (self.__dict__.get('_run_over') and self.player.hp <= 0))
 
     def _do_monster_turns(self):
         # Time stop: monsters are frozen this turn. Death is not: he is not
@@ -3413,6 +3459,8 @@ class CombatMixin:
                         m.ai_pattern = 'aggressive'  # can't hide anymore
 
         for m in self.monsters:
+            if self._hero_fell():
+                return                     # a death this turn set off killed him (a burst)
             if self.dungeon_level != _floor_at_start:
                 break
             if not m.alive:
@@ -3443,7 +3491,7 @@ class CombatMixin:
                 # A dangerous creature shows what it can do (src/tells.py).
                 self._maybe_tell(m)
             # "Something unseen" in its messages while the hero cannot see it.
-            if getattr(m, 'invisible', False):
+            if getattr(m, 'invisible', False) or m.__dict__.get('_dark_hidden'):
                 m._unseen = unseen.unseen(m, self.player)
             # The Locust cult's charm: the swarms take the wearer for one of
             # their own and leave them alone until struck.
@@ -3481,6 +3529,8 @@ class CombatMixin:
                 if (m.kind == 'fafnir_dragon' and not m._adjacent_to(self.player)):
                     self._scorch_line(m.x, m.y, self.player.x, self.player.y)
             self._say_sense_lines(m)
+            if m.__dict__.pop('_lp_call', False):
+                self._lore_powers_parley_tick(m)     # noticing him was calling to him
             # Old Nickel's lines for what the hero did and what his own turn
             # did (old_nickel.py, data/old_nickel.json).
             if getattr(m, 'ai_pattern', '') == 'stalker_coward':
@@ -3576,6 +3626,8 @@ class CombatMixin:
                 if not m.alive:
                     self._on_monster_killed(m)
                 continue  # can't attack this turn — just fell
+            if self._hero_fell():
+                return                     # its own turn set the death off: it has no blow
             if did_attack:
                 # Displacement: a share of the blows land where you are not:
                 # the spell's DISPLACEMENT_MISS while its status lasts, or the
@@ -3643,6 +3695,8 @@ class CombatMixin:
                 # attack(); that death used to go unprocessed.
                 if not m.alive and not getattr(m, '_kill_handled', False):
                     self._on_monster_killed(m)
+                    if self._hero_fell():
+                        return             # its burst killed him: nothing mends the dead
 
                 # Anansi web cloak (story_thread): the first crit per floor that
                 # would deal >25% of max-HP is reduced to 1 damage. Threshold is
@@ -3799,6 +3853,8 @@ class CombatMixin:
                         if not m.alive:
                             self._on_monster_killed(m)
 
+                if self._hero_fell():
+                    return                 # a burst his flames, his riposte or its shot set off
                 # Tarnhelm: auto-invisibility when HP drops below 30%
                 if dmg > 0 and not getattr(self, '_tarnhelm_used', False):
                     if self.player.hp > 0 and self.player.hp / max(1, self.player.max_hp) < 0.30:
@@ -3813,8 +3869,11 @@ class CombatMixin:
                 _wpn = self.player.weapon
                 if _wpn and getattr(_wpn, 'on_hit_regen', 0) > 0 and dmg > 0:
                     _regen_amt = _wpn.on_hit_regen
+                    _before_mend = self.player.hp
                     self.player.hp = min(self.player.max_hp, self.player.hp + _regen_amt)
-                    self.add_message(f"The green axe mends your wounds. (+{_regen_amt} HP)", 'info')
+                    if self.player.hp > _before_mend:
+                        self.add_message("The green axe mends your wounds. "
+                                         f"(+{self.player.hp - _before_mend} HP)", 'info')
 
                 # Svalinn: reflect fire damage back at attacker
                 _shld = self.player.shield
@@ -3860,6 +3919,8 @@ class CombatMixin:
                         except ImportError:
                             pass
 
+                if self._hero_fell():
+                    return
                 # Every ward against death (see _answer_a_killing_blow).
                 self._answer_a_killing_blow()
 
@@ -4266,7 +4327,8 @@ class CombatMixin:
         the unicorn and the people of the encounters are not foes. With
         `threats_only`, a foe that cannot swing at him this turn (asleep,
         held, frozen, feared, charmed: the ones that do not swipe at pets
-        either) is not counted (PET-07: Shep's rescue is for a fight)."""
+        either) is not counted (PET-07: Shep's rescue is for a fight), nor
+        one at peace: a rescue unbidden breaks none."""
         from geom import chebyshev_distance
         px, py = self.player.x, self.player.y
         foes = [m for m in self.monsters
@@ -4275,7 +4337,8 @@ class CombatMixin:
                 and not getattr(m, '_flavor_encounter_tag', None)
                 and not getattr(m, '_is_unicorn', False)
                 and chebyshev_distance(px, py, m) <= 1
-                and not (threats_only and any(m.has_effect(e) for e in _HELD_FOE_EFFECTS))]
+                and not (threats_only and (lore_powers.at_peace(m)
+                                           or any(m.has_effect(e) for e in _HELD_FOE_EFFECTS)))]
         foes.sort(key=lambda m: -m.hp)
         return foes
 
@@ -4361,6 +4424,8 @@ class CombatMixin:
         rescuer = self._shep_rescue()
 
         for pet in self.pets:
+            if self._hero_fell():
+                return
             if not pet.alive:
                 continue
 
@@ -4455,6 +4520,8 @@ class CombatMixin:
                 if pet.tick_duration():
                     self._horn_ally_leaves(pet)
 
+        if self._hero_fell():
+            return
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
         self._monster_swipes(self.pets)
 
@@ -4489,6 +4556,9 @@ class CombatMixin:
                     or getattr(m, '_is_unicorn', False)
                     # one that yielded strikes no one again (src/morale.py)
                     or m.__dict__.get('_yielded')
+                    # nor one fed, answered or waiting for an answer, nor one
+                    # stopped for gold (src/lore_powers.py)
+                    or lore_powers.holds_fire(m) or lore_powers.gathering(m)
                     # one wrapped round the hero has no blow to spare (holds.py)
                     or m.__dict__.get('_holding')
                     # the stalking coward (Old Nickel) strikes no pet until

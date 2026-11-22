@@ -79,9 +79,19 @@ def shy(m) -> bool:
     return bool(ENABLED and kind_data.field(m, 'light_shy', False) and not kind_data.named(m))
 
 
-def in_light(m, player) -> bool:
+def in_light(m, player, dungeon=None) -> bool:
+    """Within the reach of the hero's light and, given the floor, with
+    nothing between: light goes through no wall and no shut door."""
     g = glare(player)
-    return g > 0 and _cheb(m.x, m.y, player.x, player.y) <= reach(player)
+    if g <= 0 or _cheb(m.x, m.y, player.x, player.y) > reach(player):
+        return False
+    if dungeon is None:
+        return True                       # (the simulator's fight; a blow, which has its line)
+    import senses
+    from geom import occupied_tiles
+    return any(_cheb(x, y, player.x, player.y) <= 1
+               or senses.clear_view(x, y, player.x, player.y, dungeon)
+               for x, y in occupied_tiles(m))
 
 
 def flinch(m, player) -> int:
@@ -94,11 +104,11 @@ def flinch(m, player) -> int:
     return shift
 
 
-def light_turn(m, player) -> None:
+def light_turn(m, player, dungeon=None) -> None:
     """A light-shy creature's turn in the hero's light (BehaviourMixin, and
     the simulator's world tick): a troll's wounds stop closing; a troll in
     the Light spell's glare stiffens."""
-    if not shy(m) or not getattr(m, 'alive', False) or not in_light(m, player):
+    if not shy(m) or not getattr(m, 'alive', False) or not in_light(m, player, dungeon):
         m.__dict__.pop('_stiff', None)
         return
     lines = rules().get('lines') or {}

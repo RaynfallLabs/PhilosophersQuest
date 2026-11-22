@@ -91,7 +91,8 @@ these statuses):
 
 * `silenced`: no voice attack and no cast (`wards.is_cast`: every bolt, ray, curse
   or prayer shot from afar, whatever its damage type), no summoning (a boss's
-  summons and Abaddon's locusts too), no healing. A silenced summoner or healer
+  summons and Abaddon's locusts too; a chant begun breaks), no healing, no call for
+  help (a lookout's shout, a pack's cry, a band's alarm). A silenced summoner or healer
   comes and fights, and so does a caster with nothing left to use from afar
   (`attack_gates.must_close` / `close_in`, from `Monster.take_turn`). The
   mouthless (oozes, plants, constructs, or a kind's own `status_immune`) cannot be

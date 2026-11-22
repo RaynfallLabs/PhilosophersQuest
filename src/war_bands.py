@@ -278,8 +278,9 @@ def leader_of(monsters, uid: str):
 def alarm(m, all_monsters, x: int, y: int) -> int:
     """One of the band has spotted the hero: rouse the rest to the place."""
     uid = getattr(m, '_band', None)
-    if not uid or m.has_effect('babbled'):
-        return 0                       # babbling, his call means nothing (the Confusion of Tongues)
+    if not uid or m.has_effect('babbled') or m.has_effect('silenced'):
+        return 0                       # babbling, his call means nothing (the Confusion of Tongues);
+                                       # silenced, he has none
     import senses
     n = 0
     for o in members_of(all_monsters, uid):

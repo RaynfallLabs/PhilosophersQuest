@@ -186,6 +186,28 @@ def beside_hero(m, player, all_monsters) -> list:
 
 
 # ---------------------------------------------------------------------------
+# Who can act: a pack waits on no mate that cannot
+# ---------------------------------------------------------------------------
+_CANNOT_ACT = ('sleeping', 'paralyzed', 'stunned', 'frozen', 'feared', 'charmed')
+_CANNOT_MOVE = ('stuck_in_pit', 'impaled', 'immobilized')
+
+
+def can_fight(o) -> bool:
+    """Awake, its own master, not broken and at no peace."""
+    import caster_ai
+    import lore_powers
+    st = getattr(o, 'status_effects', None) or {}
+    return not (any(int(st.get(e, 0) or 0) != 0 for e in _CANNOT_ACT)
+                or caster_ai.broken(o) or lore_powers.at_peace(o))
+
+
+def can_come(o) -> bool:
+    """It can fight and can walk to where the fight is."""
+    st = getattr(o, 'status_effects', None) or {}
+    return can_fight(o) and not any(int(st.get(e, 0) or 0) != 0 for e in _CANNOT_MOVE)
+
+
+# ---------------------------------------------------------------------------
 # Rats swarm (pure numbers first)
 # ---------------------------------------------------------------------------
 
@@ -536,7 +558,8 @@ def _surround(m, player, dungeon, all_monsters, occ, steps):
 def _at_choke(m, player, dungeon, all_monsters, occ, slot_tiles, steps, bold, near):
     """Where only one of them could reach him: go round, or hold beyond the
     mouth out of his sight; a rat pack (corridor 'press') or a bold one comes
-    on; and after ``patience`` turns one of them tries its luck."""
+    on; and after ``patience`` turns with no one fighting him, one of those
+    that can come tries its luck."""
     t = tactics()
     hero = (player.x, player.y)
     mode = spec(pack_of(m)).get('corridor', 'hold')
@@ -552,7 +575,8 @@ def _at_choke(m, player, dungeon, all_monsters, occ, slot_tiles, steps, bold, ne
             return got
     if mode == 'press' or bold:
         return None
-    engaged = [o for o in near if _beside(player, o)]
+    # Only one that can act is fighting him (a wolf asleep at his feet is not).
+    engaged = [o for o in near if _beside(player, o) and can_fight(o)]
     # Hurt while it waited (an arrow, a thrown flask): it comes for him.
     hp_was = m.__dict__.get('_pack_hp')
     m._pack_hp = m.hp
@@ -563,7 +587,8 @@ def _at_choke(m, player, dungeon, all_monsters, occ, slot_tiles, steps, bold, ne
     m._pack_wait = wait
     if wait > int(t.get('patience', 12)) and not engaged:
         # The nearest of them loses patience and tries his luck.
-        nearest = min([m] + list(near), key=lambda o: (_cheb(o.x, o.y, *hero), id(o)))
+        able = [o for o in near if can_come(o) and not _beside(player, o)]
+        nearest = min([m] + able, key=lambda o: (_cheb(o.x, o.y, *hero), id(o)))
         if nearest is m:
             for o in [m] + list(near):
                 o._pack_wait = 0
@@ -682,9 +707,10 @@ def _melee_attacks(m) -> list:
 def _sling(m, player, dungeon, all_monsters, near, extra_occupied=None):
     """A goblin at range with the hero in sight: a stone ('attack') while the
     pack gathers; once charge_at of them (or all that live) are up within
-    gather_radius and each has thrown at least once, they all rush him
-    (None: it closes). Into a choke they never rush: they keep pelting him
-    from the mouth."""
+    gather_radius and each still gathering has thrown at least once, they all
+    rush him (None: it closes). One already on him counts toward the number
+    and owes no stone, as does one that cannot come or has nothing to throw.
+    Into a choke they never rush: they keep pelting him from the mouth."""
     s = trick('sling')
     shots = _ranged_attacks(m)
     if not shots:
@@ -705,7 +731,9 @@ def _sling(m, player, dungeon, all_monsters, near, extra_occupied=None):
         gathered = [o for o in [m] + list(near) if _cheb(o.x, o.y, *hero) <= radius]
         need = min(int(s.get('charge_at', 3)), 1 + len(near))
         if (need >= 2 and len(gathered) >= need
-                and all(int(o.__dict__.get('_stones', 0) or 0) >= 1 for o in gathered if o is not m)
+                and all(int(o.__dict__.get('_stones', 0) or 0) >= 1 for o in gathered
+                        if o is not m and not _beside(player, o) and can_come(o)
+                        and _ranged_attacks(o))
                 and int(m.__dict__.get('_stones', 0) or 0) >= 1
                 and not choke(slots(m, player, dungeon, all_monsters, extra_occupied))):
             for o in [m] + list(near):
@@ -725,7 +753,7 @@ def _dart_in(m, player, dungeon, all_monsters, occ):
     if fewer than max_in of the pack are on him; otherwise it waits."""
     d = trick('dart')
     hero = (player.x, player.y)
-    on_him = beside_hero(m, player, all_monsters)
+    on_him = [o for o in beside_hero(m, player, all_monsters) if can_fight(o)]
     if len(on_him) >= int(d.get('max_in', 2)):
         return 'held'
     # Each keeps its own beat (one in, the next out): the first time it can
@@ -920,8 +948,9 @@ def on_spawned(members, dungeon, rng, pool=None, monsters=None) -> list:
 def alarm(m, all_monsters, x: int, y: int, dungeon=None) -> int:
     """``m`` has just found the hero at (x, y): its pack is roused to him, as
     far as its cry carries (rouse_radius; a hound's bay, much farther). A
-    hound's pack keeps his scent a while. Returns how many were roused."""
-    if not in_pack(m):
+    hound's pack keeps his scent a while. Silenced, it has no voice to cry
+    with. Returns how many were roused."""
+    if not in_pack(m) or int((getattr(m, 'status_effects', None) or {}).get('silenced', 0) or 0):
         return 0
     import senses
     tricks = tricks_of(m)

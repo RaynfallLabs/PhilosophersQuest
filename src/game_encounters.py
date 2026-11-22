@@ -25,6 +25,7 @@ from __future__ import annotations
 from naming import quantity
 import random
 
+import grave_rot
 from game_states import (
     STATE_PLAYER, STATE_QUIZ,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT,
@@ -1978,8 +1979,8 @@ class EncountersMixin:
             self.add_message(f"{eff_name} for {quantity(dur, 'turn')}!", 'success')
 
         elif rtype == 'hp_restore':
-            self.player.restore_hp(reward['amount'])
-            self.add_message(f"+{reward['amount']} HP!", 'success')
+            got = self.player.restore_hp(reward['amount'])
+            self.add_message(grave_rot.told(self.player, got, "+{n} HP!"), 'success')
 
         elif rtype == 'sp_restore':
             self.player.sp = min(self.player.max_sp, self.player.sp + reward['amount'])
@@ -1992,8 +1993,8 @@ class EncountersMixin:
         # A share of the player's own maximum (LORE NOT FLOOR).
         elif rtype == 'hp_restore_pct':
             amt = max(1, int(self.player.max_hp * reward['amount'] / 100))
-            self.player.restore_hp(amt)
-            self.add_message(f"+{amt} HP!", 'success')
+            got = self.player.restore_hp(amt)
+            self.add_message(grave_rot.told(self.player, got, "+{n} HP!"), 'success')
 
         elif rtype == 'sp_restore_pct':
             amt = max(1, int(self.player.max_sp * reward['amount'] / 100))

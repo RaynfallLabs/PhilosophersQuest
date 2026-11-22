@@ -1256,8 +1256,9 @@ def salvage_dish(player, rec: dict) -> list:
         player.restore_sp(sp)
         bits.append(f"+{sp} SP")
     if heal > 0:
-        player.restore_hp(heal)
-        bits.append(f"+{heal} HP")
+        got = int(player.restore_hp(heal) or 0)
+        if got > 0:
+            bits.append(f"+{got} HP")
     if mp > 0:
         player.restore_mp(mp)
         bits.append(f"+{mp} MP")

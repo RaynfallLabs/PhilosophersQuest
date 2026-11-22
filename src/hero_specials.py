@@ -43,6 +43,13 @@ def is_boss_or_huge(monster) -> bool:
     return getattr(monster, 'max_hp', 0) > max(500, 2.0 * _target_hp(floor))
 
 
+def _in_reach(game):
+    """The creatures a hero power can act on: all, or, swallowed, only what
+    holds him (holds.strikable)."""
+    import holds
+    return holds.strikable(game.player, game.monsters)
+
+
 def _is_foe(monster) -> bool:
     """Something a hero power should be spent on: not the cow, an encounter
     NPC, the unicorn, or a creature already charmed to the player's side."""
@@ -546,7 +553,7 @@ def _eff_confuse_visible(game, special, tier, chain):
     if cnt == 0:
         game.add_message("Your question rings hollow.", 'warning')
         return
-    targets = [m for m in game.monsters if game._sees_monster(m)
+    targets = [m for m in _in_reach(game) if game._sees_monster(m)
                and 'humanoid' in getattr(m, 'tags', [])
                and not is_boss_or_huge(m)]
     if not targets:
@@ -571,10 +578,13 @@ def _eff_self_heal(game, special, tier, chain):
         return
     from floor_curve import mend
     heal = mend(roll(dice), game.player.max_hp, HERO_HEAL_SHARE * max(1, int(chain)))
+    before = game.player.hp
     game.player.restore_hp(heal) if hasattr(game.player, 'restore_hp') else None
     if not hasattr(game.player, 'restore_hp'):
         game.player.hp = min(game.player.max_hp, game.player.hp + heal)
-    game.add_message(f"Harmony — you recover {heal} HP.", 'success')
+    import grave_rot
+    game.add_message(grave_rot.told(game.player, game.player.hp - before,
+                                    "Harmony — you recover {n} HP."), 'success')
     if cleanse_n > 0:
         from status_effects import DEBUFFS
         debuffs = [e for e in list(game.player.status_effects) if e in DEBUFFS]
@@ -601,7 +611,7 @@ def _eff_self_aoe_fire(game, special, tier, chain):
     burn = int(tier.get('burn_turns', 0))
     px, py = game.player.x, game.player.y
     hits = 0
-    for m in list(game.monsters):
+    for m in list(_in_reach(game)):
         if not m.alive or not _is_foe(m):
             continue          # (encounter NPCs, the unicorn and allies are not caught)
         if max(abs(m.x - px), abs(m.y - py)) <= radius:
@@ -652,7 +662,7 @@ def _eff_fear_visible(game, special, tier, chain):
     if cnt == 0:
         game.add_message("No one cowers.", 'warning')
         return
-    targets = [m for m in game.monsters if game._sees_monster(m)
+    targets = [m for m in _in_reach(game) if game._sees_monster(m)
                and not is_boss_or_huge(m)]
     if not targets:
         game.add_message("No one in sight to cower.", 'info')
@@ -758,7 +768,7 @@ def _eff_charm_visible(game, special, tier, chain):
     if cnt == 0:
         game.add_message("None are persuaded.", 'warning')
         return
-    targets = [m for m in game.monsters if game._sees_monster(m)
+    targets = [m for m in _in_reach(game) if game._sees_monster(m)
                and not is_boss_or_huge(m)]
     if not targets:
         game.add_message("No one in sight to persuade.", 'info')
@@ -779,7 +789,7 @@ def _eff_damage_single(game, special, tier, chain):
     # Damage the cursor-target monster if any (player targets via cursor),
     # otherwise nearest visible enemy. For simplicity in v1, pick nearest visible.
     reach = int(tier.get('range', 0) or 0)
-    targets = [m for m in game.monsters
+    targets = [m for m in _in_reach(game)
                if game._sees_monster(m) and _is_foe(m)
                and (not reach or max(abs(m.x - game.player.x), abs(m.y - game.player.y)) <= reach)]
     if not targets:
@@ -804,7 +814,7 @@ def _eff_drain_attractive(game, special, tier, chain):
         game.add_message("She isn't having it.", 'warning')
         return
     px, py = game.player.x, game.player.y
-    adj = [m for m in game.monsters if game._sees_monster(m)
+    adj = [m for m in _in_reach(game) if game._sees_monster(m)
            and max(abs(m.x - px), abs(m.y - py)) <= 1
            and 'female_attractive' in getattr(m, 'tags', [])]
     if not adj:
@@ -908,7 +918,7 @@ def _eff_paralyze_target(game, special, tier, chain):
     if par == 0:
         game.add_message("The calculation diverges.", 'warning')
         return
-    targets = [m for m in game.monsters if game._sees_monster(m)
+    targets = [m for m in _in_reach(game) if game._sees_monster(m)
                and not is_boss_or_huge(m)]
     if not targets:
         game.add_message("No tractable target.", 'warning')
@@ -964,12 +974,14 @@ def _eff_heal_and_crit_buff(game, special, tier, chain):
     if heal == 0 and crit_turns == 0:
         game.add_message("The Voices are silent.", 'warning')
         return
+    before = game.player.hp
     game.player.hp = min(game.player.max_hp, game.player.hp + heal)
+    got = game.player.hp - before
     if crit_turns:
         cur = game.player.status_effects.get('crit_buff', 0)
         game.player.status_effects['crit_buff'] = max(cur, crit_turns)
     game.add_message(
-        f"The Maid's Standard! +{heal} HP; your next strike deals +50% damage (within {quantity(crit_turns, 'turn')}).",
+        f"The Maid's Standard! +{got} HP; your next strike deals +50% damage (within {quantity(crit_turns, 'turn')}).",
         'success')
 
 
@@ -1009,8 +1021,9 @@ def _eff_aoe_heal_self(game, special, tier, chain):
         game.add_message("The green light does not bloom.", 'warning')
         return
     if heal:
+        before = game.player.hp
         game.player.hp = min(game.player.max_hp, game.player.hp + heal)
-        game.add_message(f"Viriditas — green life. +{heal} HP.", 'success')
+        game.add_message(f"Viriditas — green life. +{game.player.hp - before} HP.", 'success')
     if cleanse_n > 0:
         from status_effects import DEBUFFS
         debs = [e for e in list(game.player.status_effects) if e in DEBUFFS]
