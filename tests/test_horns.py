@@ -399,7 +399,7 @@ def test_keeping_the_watch_with_heimdall_earns_gjallarhorn():
     assert 'einherjar' in g._npc_outcome_text
     _continue(g)
     _pick(g, 'Keep the watch with him', quiz=PASS)
-    assert 'Not against the wolf himself' in g._npc_outcome_text and _has(g, 'gjallarhorn')
+    assert 'cannot ride against the wolf himself' in g._npc_outcome_text and _has(g, 'gjallarhorn')
     _continue(g)
 
 

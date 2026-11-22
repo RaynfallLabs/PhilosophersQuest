@@ -289,13 +289,11 @@ def _level_20_labyrinth(rng=None):
     # The stair is barred while he lives (main._descend_stairs).
     dungeon.stairs_guardian = 'asterion_minotaur'
     dungeon.stairs_guardian_line = (
-        "A bronze grate is shut across the stair. Whatever keeps this maze "
-        "still keeps the key.")
+        "A bronze grate is shut across the stair, and whatever keeps this maze still has the key.")
     dungeon.stairs_guardian_open_line = (
         "Somewhere beyond the hall, a bronze grate swings open.")
     dungeon.atmosphere_messages = [
-        "These passages were built to lose people. Something heavy is walking "
-        "on the other side of the wall.",
+        "These passages were built that men might be lost in them, and something heavy walks on the other side of the wall.",
     ]
 
     # --- what earlier visitors left in the dead ends -------------------------
@@ -477,13 +475,11 @@ def _level_40_temple():
     # The way down lies past the sanctum and is shut while she lives.
     dungeon.stairs_guardian = 'medusa_gorgon'
     dungeon.stairs_guardian_line = (
-        "The stair is choked with statues, shoulder to shoulder, every one "
-        "caught in the act of leaving. They will not move while she still "
-        "looks this way.")
+        "The stair is choked with statues shoulder to shoulder, each one caught in the act of flight, and they will not move while she still looks this way.")
     dungeon.stairs_guardian_open_line = (
-        "Beyond the sanctum, stone figures topple and break. The stair is clear.")
+        "Beyond the sanctum the stone figures topple and break, and the stair is clear.")
     dungeon.atmosphere_messages = [
-        "Statues line the portico. Every one is looking back over its shoulder.",
+        "Statues line the portico, and every one is looking back over its shoulder.",
     ]
 
     # The side chapels hold what her earlier visitors carried, and one of
@@ -607,8 +603,7 @@ def _level_60_lair():
     # The way down is past the lair and shut while he lives.
     dungeon.stairs_guardian = 'fafnir_dragon'
     dungeon.stairs_guardian_line = (
-        "A curtain of fire hangs across the stair and does not burn down. "
-        "It is his fire.")
+        "A curtain of fire hangs across the stair and will not burn down, for it is his fire.")
     dungeon.stairs_guardian_open_line = (
         "Beyond the lair, the fire across the stair gutters and goes out.")
     dungeon.atmosphere_messages = [
@@ -720,13 +715,11 @@ def _level_80_hall():
     # The way down is past the throne room and shut while the wolf lives.
     dungeon.stairs_guardian = 'fenrir_wolf'
     dungeon.stairs_guardian_line = (
-        "The stair is drifted shut with snow that does not melt. It will lie "
-        "there as long as the wolf draws breath.")
+        "The stair is drifted shut with snow that does not melt, and it will lie there as long as the wolf draws breath.")
     dungeon.stairs_guardian_open_line = (
         "Beyond the throne room, the drift across the stair slumps and runs to water.")
     dungeon.atmosphere_messages = [
-        "Frost has run down the walls of this hall and frozen in mid-drip. Far "
-        "off, something very large is breathing in its sleep.",
+        "Frost has run down the walls of this hall and frozen as it dripped, and far off something very large is breathing in its sleep.",
     ]
 
     # What the ruined hall still holds (boss floors returned no items).

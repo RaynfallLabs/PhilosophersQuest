@@ -2769,7 +2769,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'weight': 0.1,
             'item_class': 'shard',
             'min_level': 1,
-            'lore': "A tiny fragment of the Philosopher's Stone, warm to the touch and faintly luminous. It resonates with philosophical understanding, allowing its bearer to perceive the true nature of unknown items through rigorous examination. Ancient texts warn that those who abandon it walk blind through the dungeon — but some say that blindness teaches its own kind of wisdom.",
+            'lore': "This tiny fragment of the Philosopher's Stone is warm to the touch and faintly luminous. It answers to the understanding of philosophy, so that whoever bears it may perceive the true nature of unknown items by close examination. The ancient books warn that those who abandon it walk blind through the dungeon, though some say that such blindness teaches a wisdom of its own.",
         })
         _mark_starting_item_known(shard)
         # Plato refuses the Shard (his passive, `plato_no_shard`): he is not handed one.
@@ -3977,17 +3977,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _d = self.dungeon
             _quest_line = None
             if (x, y) == getattr(_d, 'dwarven_forge_pos', None):
-                _quest_line = ("A cold anvil. Six shallow cups are cut into its "
-                               "face, each a different shape.")
+                _quest_line = ("Six shallow cups, each of a different shape, are cut into the face of this cold anvil.")
             elif (x, y) == getattr(_d, 'vidar_altar_pos', None):
-                _quest_line = ("A cobbler's last stands on this altar, far too "
-                               "large for any man's foot.")
+                _quest_line = ("Upon this altar stands a cobbler's last, far too large for the foot of any man.")
             elif (x, y) == getattr(_d, 'odin_altar_pos', None):
-                _quest_line = ("Cut into the altar's rim: a spear in flight "
-                               "above a row of helmets.")
+                _quest_line = ("Upon the altar's rim is cut a spear in flight above a row of helmets.")
             elif (x, y) == getattr(_d, 'judgment_altar_pos', None):
-                _quest_line = ("A pair of bronze scales hangs over this altar. "
-                               "One pan is lower than it should be.")
+                _quest_line = ("A pair of bronze scales hangs over this altar, and one pan is lower than it should be.")
             elif (x, y) == getattr(_d, 'athena_altar_pos', None) \
                     and getattr(_d, 'athena_shrine_door', None):
                 _quest_line = ("The altar's face shows three old women passing "
@@ -3999,8 +3995,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if (x, y) == getattr(self.dungeon, 'ariadne_fountain_pos', None) \
                     and getattr(self.dungeon, 'ariadne_shrine_door', None):
                 self.add_message(
-                    "A bull's head is carved on the basin's rim. The horns have "
-                    "been rubbed bright.", 'info')
+                    "A bull's head is carved on the rim of the basin, and its horns have been rubbed bright.", 'info')
             self.add_message("A shimmering fountain bubbles here. Press 'D' to drink.", 'info')
         elif tile == GRAVE:
             self.add_message("A weathered gravestone stands here. Press 'D' to dig.", 'info')
@@ -4021,21 +4016,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(_hint, 'info')
         # Special room notification (once per room per floor)
         _SPECIAL_ROOM_MSGS = {
-            'treasury':    ("Strongboxes line the walls of this chamber. Somebody meant to come back for these.", 'success'),
-            'library':     ("Shelves of scroll-cases climb the walls, dry and undisturbed. A library, this far down.", 'info'),
-            'shrine':      ("A small shrine, swept clean, with an altar that has seen recent use. It is easier to breathe in here.", 'info'),
-            'monster_den': ("The floor here is trampled flat and littered with gnawed bone. This is where they sleep!", 'danger'),
+            'treasury':    ("Strongboxes line the walls of this chamber, laid up by someone who meant to return for them.", 'success'),
+            'library':     ("A library lies even this deep, its shelves of scroll-cases climbing the walls, dry and undisturbed.", 'info'),
+            'shrine':      ("A small shrine has been swept clean here and its altar lately used, and you breathe more easily within its walls.", 'info'),
+            'monster_den': ("The floor is trampled flat and littered with gnawed bone, for this is where the monsters sleep!", 'danger'),
             # The three rooms of deep sleepers (sleepers.py) warn that
             # their creatures are asleep, and what wakes them.
-            'zoo':         ("Gold is heaped along the walls of this chamber, and things are asleep on top of it. "
-                            "Walk softly: every coin you take may wake them.", 'danger'),
-            'graveyard':   ("Rows of graves fill this chamber, each with its marker. Not all of the markers are standing "
-                            "straight. Whatever lies here is sleeping: walk softly, or it will wake.", 'danger'),
-            'beehive':     ("Wax and old honey coat the walls of this chamber. The larder is full. Listen for the owners.", 'danger'),
-            'barracks':    ("Bunks, weapon racks and a cold cook-pot. A garrison slept here, and some of it still does. "
-                            "Walk softly, or they will wake.", 'danger'),
+            'zoo':         ("Gold is heaped along the walls of this chamber, and creatures lie asleep on top of it. Walk softly, for every coin you take may wake them.", 'danger'),
+            'graveyard':   ("Rows of graves fill this chamber, each with its marker, though not all of the markers stand straight. Whatever lies here is sleeping, so walk softly, or it will wake.", 'danger'),
+            'beehive':     ("Wax and old honey coat the walls of this chamber and its larder is full, so listen for the owners.", 'danger'),
+            'barracks':    ("Among bunks, weapon racks and a cold cook-pot a garrison slept, and some of it sleeps still. Walk softly, or they will wake.", 'danger'),
             'swamp':       ("Murky water and marsh gas fill this chamber.", 'warning'),
-            'throne_room': ("An aura of ancient authority radiates from a throne.", 'info'),
+            'throne_room': ("An ancient authority still hangs about the throne in this chamber.", 'info'),
         }
         for (rcx, rcy), rtype in self.dungeon.special_rooms.items():
             if (rcx, rcy) not in self._notified_rooms:
@@ -4445,15 +4437,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'effect': 'time_stop',
             'power': '10',
             'unidentified_name': 'Flux Capacitor',
-            'lore': "A device of impossible origin. Its single charge can freeze "
-                    "time itself for 10 turns. Use it wisely -- there are no second chances.",
+            'lore': "This device is of impossible origin, and its single charge can freeze time itself for 10 turns. Use it wisely, for there are no second chances.",
         })
         from items import grant_identified
         grant_identified(self, flux)
         flux.x = self.player.x
         flux.y = self.player.y
         self.ground_items.append(flux)
-        self.add_message("Something materializes at your feet...", 'loot')
+        self.add_message("Something takes shape upon the ground at your feet.", 'loot')
 
     def _do_exit(self):
         has_stone = any(
@@ -9418,8 +9409,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if self.dungeon.is_altar(px, py):
                 self.player.remove_from_inventory(item)
                 self.add_message(
-                    "You lay the stone on the altar. It cracks along its length "
-                    "and is only a stone. Somewhere a knight sleeps easier.", 'success')
+                    "You lay the stone on the altar, and it cracks along its length and is no more than a stone, so that somewhere a knight sleeps easier.", 'success')
                 self._chron(
                     'oath', "Carried Sir Aldric's stone to an altar. It broke there.")
                 # The oath sworn when the stone was taken is kept here: deed
@@ -9431,8 +9421,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._advance_turn()
             else:
                 self.add_message(
-                    "You try to set the stone down. Your hand will not open. "
-                    "This is a thing to be laid before God, not left in a corridor.",
+                    "Your hand will not open when you try to set the stone down, for this is a thing to be laid before God and not left in a corridor.",
                     'warning')
             return
         # The Book of Thoth, laid on an altar while its return is owed:
@@ -9487,7 +9476,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.quirk_progress['shard_drop_level'] = self.dungeon_level
             self.player.quirk_progress.setdefault('levels_without_shard', 0)
             self.add_message(
-                "You abandon the Shard. The dungeon's secrets grow darker without it...", 'warning'
+                "You abandon the Shard, and the dungeon's secrets grow darker without it.", 'warning'
             )
 
         # Check if Complete Tablet was dropped on the Abyssal Shimmer
@@ -9500,7 +9489,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if shimmer and not shimmer.activated:
                 shimmer.activated = True
                 self.add_message(
-                    "The Shimmer writhes and twists with violent magical energy!", 'success'
+                    "The Shimmer writhes and twists with a great and violent magic!", 'success'
                 )
                 self.add_message(
                     "The Complete Tablet resonates with the Abyssal Shimmer.", 'info'
@@ -9516,8 +9505,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 else:
                     # Right kind of place, wrong one: say so, keep the Bull.
                     self.add_message(
-                        "The bull sits in the shallows and nothing answers. "
-                        "This is not the water it wants.", 'info')
+                        "The bull sits in the shallows and nothing answers, for this is not the water that it seeks.", 'info')
 
         # --- Athena quest: drop Eye of the Graeae at an altar ---
         if getattr(item, 'id', '') == 'eye_of_graeae':
@@ -9527,8 +9515,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._activate_athena_shrine(item)
                 else:
                     self.add_message(
-                        "The eye lies on the altar and looks at nothing. "
-                        "Whoever it was promised to is not listening here.", 'info')
+                        "The eye lies upon the altar and sees nothing, for whoever it was promised to is not listening here.", 'info')
 
         # --- Odin quest: drop Broken Gram on Odin's Altar ---
         odin_pos = getattr(self.dungeon, 'odin_altar_pos', None)

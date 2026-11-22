@@ -34,7 +34,7 @@
     "bow_capable",
     "graveyard_yew"
   ],
-  "lore_descriptor": "tight-grained, red-hearted; smells faintly of churchyards",
+  "lore_descriptor": "tight-grained and red at the heart, and smells faintly of churchyards",
   "unidentified_descriptor": "a dark reddish wood",
   "first_pickup_chronicle": "Yew, the longbow and graveyard wood. The fey hate it.",
   "design_notes": "Chain combat v2 tuning: damage_mult 0.95, weight_mult 0.85, effective_against fey (T2 specialty wood). Yew was planted as a fairy-ward in old churchyards. bow_capable: ideal for shortbow/longbow. Wood gives slightly under metal but the fey-bonus carries it."

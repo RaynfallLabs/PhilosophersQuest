@@ -46,12 +46,7 @@ NEW_KINDS: dict[str, dict] = {
         ],
         'tags': ['beast'], 'family': 'birds', 'pronoun': 'it', 'size': 'huge',
         'treasure': {'gold': [0, 0], 'item_chance': 0.3, 'item_tier': 4, 'purse': 'none'},
-        'lore': ("Vafthrudnir told Odin of him in their contest of wisdom: Hraesvelgr, the "
-                 "Corpse-Swallower, a giant in an eagle's shape who sits at heaven's end, and "
-                 "from his wings comes every wind that blows over men. Snorri set him at the "
-                 "northern edge of the sky. The great eagles of the rime halls are his brood. "
-                 "Their stoop is a gale with talons in it, and the wind of their wings is the "
-                 "cold of the world's end."),
+        'lore': ("Vafthrudnir told Odin, in their contest of wisdom, of the giant Hraesvelgr, the Corpse-Swallower, who sits in an eagle's shape at the end of heaven, and from whose wings comes every wind that blows over men. Snorri set him at the northern edge of the sky, and the great eagles of the rime halls are his brood. When they stoop it is as though a gale had grown talons, and upon the wind of their wings is borne the cold of the world's end."),
     },
     'rime_thurs': {
         'peak': 70, 'aim': -1, 'seat': 1.0,
@@ -64,13 +59,7 @@ NEW_KINDS: dict[str, dict] = {
         ],
         'tags': ['giant', 'humanoid'], 'family': 'giants', 'pronoun': 'he', 'size': 'huge',
         'treasure': {'gold': [0, 0], 'item_chance': 0.35, 'item_tier': 4, 'purse': 'sack'},
-        'lore': ("Snorri says the first giant, Ymir, grew where the rime of the venomous rivers "
-                 "Elivagar met the warm air out of Muspell, and the rime-thurses are his line. "
-                 "When Odin and his brothers killed Ymir, his blood drowned them all but "
-                 "Bergelmir, who got away in a boat with his wife, and the old giant race came "
-                 "again from him. A rime-thurs is of that oldest blood, older than the frost "
-                 "giants of the jarls' halls, and at Ragnarok, the Voluspa says, Hrym will lead "
-                 "them out of the east."),
+        'lore': ("Where the rime of the venomous rivers Elivagar met the warm air out of Muspell there grew, as Snorri tells, the first giant Ymir, and from him the rime-thurses are descended. When Odin and his brothers slew him his blood drowned all that race save Bergelmir, who escaped in a boat with his wife and fathered the old giants anew. A rime-thurs is of that oldest blood, elder than the frost giants of the jarls' halls, and it is foretold in the Voluspa that at Ragnarok Hrym shall lead them out of the east."),
     },
     'kallikantzaros': {
         'peak': 68, 'aim': 0, 'seat': 2.5,
@@ -84,14 +73,7 @@ NEW_KINDS: dict[str, dict] = {
         ],
         'tags': ['goblinoid'], 'family': 'goblinkin', 'pronoun': 'he', 'size': 'small',
         'treasure': {'gold': [0, 0], 'item_chance': 0.2, 'item_tier': 4, 'purse': 'purse'},
-        'lore': ("Greek villages keep the hearth burning through the twelve days of Christmas, "
-                 "because that is when the kallikantzaroi come up. The rest of the year they live "
-                 "under the earth, sawing at the World Tree that holds it up. Every winter they "
-                 "are nearly through, and every winter they leave the work to come up and make "
-                 "mischief, and the tree heals while they are gone. They are small, shaggy and "
-                 "black with soot, with red eyes and long nails. They fear fire, and holy water "
-                 "at Epiphany drives them all back down. In the rime halls the winter never ends, "
-                 "and neither does their holiday."),
+        'lore': ("Through the twelve days of Christmas the villages of Greece keep the hearth burning, for those are the days when the kallikantzaroi come up. All the rest of the year they labour beneath the earth, sawing at the World Tree that upholds it. Each winter they have all but cut it through when they leave the work to climb up and make mischief, and while they are gone the tree heals. They are small and shaggy and black with soot, with red eyes and long nails. They have a great fear of fire, and holy water at Epiphany drives them all below again, but the winter of the rime halls has no end, and so their season of mischief has none."),
     },
     'oni': {
         'peak': 84, 'aim': 0, 'seat': 2.0,
@@ -105,13 +87,7 @@ NEW_KINDS: dict[str, dict] = {
         ],
         'tags': ['goblinoid', 'demon'], 'family': 'goblinkin', 'pronoun': 'he', 'size': 'large',
         'treasure': {'gold': [0, 0], 'item_chance': 0.3, 'item_tier': 5, 'purse': 'purse'},
-        'lore': ("In the Buddhist hells of Japan the oni are the jailers: horned and fanged, red "
-                 "or blue of skin, in loincloths of tiger skin, carrying the iron club called the "
-                 "kanabo. They punish the dead as King Enma sentences them. Some came up into the "
-                 "world. Shuten-doji's band of Mount Oe raided the capital until Minamoto no "
-                 "Raiko and his four retainers came disguised as mountain monks, gave them drugged "
-                 "sake, and took the chief's head while he slept. On Setsubun every house still "
-                 "throws roasted beans out of the door, shouting, 'Oni out, luck in!'"),
+        'lore': ("Horned and fanged, red or blue of skin, the oni are the jailers in the Buddhist hells of Japan, who go clad in loincloths of tiger skin and bear the iron club called the kanabo, and they punish the dead as King Enma sentences them. Some of them came up into the world, and the band of Shuten-doji on Mount Oe raided the capital until Minamoto no Raiko and his four retainers came among them in the guise of mountain monks, gave them drugged sake, and took the chief's head while he slept. On Setsubun every house still casts roasted beans out at the door to keep such creatures away, crying, 'Oni out, luck in!'"),
     },
     'mushmahhu': {
         'peak': 88, 'aim': 0, 'seat': 1.0,
@@ -125,12 +101,7 @@ NEW_KINDS: dict[str, dict] = {
         ],
         'tags': ['beast', 'reptile'], 'family': 'serpents', 'pronoun': 'it', 'size': 'huge',
         'treasure': {'gold': [0, 0], 'item_chance': 0.4, 'item_tier': 5, 'purse': 'none'},
-        'lore': ("The Enuma Elish names the eleven monsters Tiamat made to fight the younger "
-                 "gods, filled with venom for blood, and the Exalted Serpent, the mushmahhu, is "
-                 "third among them. Older Sumerian hymns praise the god Ninurta for capturing a "
-                 "serpent with seven heads and hanging it on his chariot as a trophy. Its seven "
-                 "heads strike from seven sides, and a blade that bites deep comes back smoking "
-                 "with its blood."),
+        'lore': ("For her war upon the younger gods Tiamat made eleven monsters with venom for blood, and third among them, as the Enuma Elish numbers them, was the Exalted Serpent, the mushmahhu. In older hymns of the Sumerians the god Ninurta is praised for capturing a serpent with seven heads and hanging it upon his chariot as a trophy. Its seven heads strike from seven sides, and a blade that bites deep is drawn back smoking with its blood."),
     },
     'kyubi_kitsune': {
         'peak': 86, 'aim': -1, 'seat': 1.0,
@@ -146,14 +117,7 @@ NEW_KINDS: dict[str, dict] = {
         'tags': ['beast', 'shapeshifter'], 'family': 'shapeshifters', 'pronoun': 'she',
         'size': 'medium',
         'treasure': {'gold': [0, 0], 'item_chance': 0.4, 'item_tier': 5, 'purse': 'none'},
-        'lore': ("A fox that lives a thousand years grows nine tails and can take any shape it "
-                 "likes. The Japanese tale says one became Tamamo-no-Mae, the loveliest and "
-                 "cleverest lady at the court of Emperor Toba, until the emperor fell sick and the "
-                 "court diviner Abe no Yasunari named what she was. She fled, an army hunted her "
-                 "down on the plain of Nasu, and her spirit went into a boulder, the Killing "
-                 "Stone, that poisoned whatever touched it. Later tellers gave her earlier lives, "
-                 "as Daji, who ruined the last king of the Shang. The Killing Stone split in two "
-                 "in 2022."),
+        'lore': ("A thousand years a fox must live before it has nine tails and may take any shape it likes. Such a one, in the Japanese tale, became Tamamo-no-Mae, the loveliest and cleverest lady at the court of Emperor Toba, until the emperor fell sick and the court diviner Abe no Yasunari declared what she was. She fled, and an army hunted her down upon the plain of Nasu, where her spirit passed into a boulder that poisoned whatever touched it and was named the Killing Stone. Later tellers gave her earlier lives, as that of Daji, who ruined the last king of the Shang, and since the Killing Stone split in two in 2022 it is said that she is free again."),
     },
     'geryon': {
         'peak': 89, 'aim': 0, 'seat': 1.0,
@@ -166,13 +130,7 @@ NEW_KINDS: dict[str, dict] = {
         ],
         'tags': ['beast', 'demon'], 'family': 'legend', 'pronoun': 'he', 'size': 'huge',
         'treasure': {'gold': [0, 0], 'item_chance': 0.45, 'item_tier': 5, 'purse': 'none'},
-        'lore': ("Virgil called it up out of the pit at the edge of the seventh circle, and "
-                 "Dante watched it come: the face of a just man, kind and open, on the body of a "
-                 "serpent painted all over with knots and wheels, two hairy paws, and a forked "
-                 "sting at the tip of its tail. Dante calls it the filthy image of fraud. It "
-                 "carried the two poets down through the dark to the ditches where the cheats "
-                 "are punished. The Greeks had a Geryon too, a three-bodied giant whose red "
-                 "cattle Heracles took; Dante kept the name and gave it the face of a lie."),
+        'lore': ("Virgil summoned Geryon out of the pit at the edge of the seventh circle, and Dante watched him come, with the face of a just man, kind and open, upon the body of a serpent painted all over with knots and wheels, two hairy paws, and a forked sting at the tip of his tail. Dante named him the filthy image of fraud, and he bore the two poets down through the dark to the ditches where cheats are punished. The Greeks had told of a Geryon also, a giant of three bodies whose red cattle Heracles took, and the poet kept his name but gave him a face so honest that it was itself a lie."),
     },
     'viy': {
         'peak': 90, 'aim': -1, 'seat': 1.0,
@@ -185,14 +143,7 @@ NEW_KINDS: dict[str, dict] = {
         ],
         'tags': ['demon'], 'family': 'gorgons', 'pronoun': 'he', 'size': 'large',
         'treasure': {'gold': [0, 0], 'item_chance': 0.45, 'item_tier': 5, 'purse': 'none'},
-        'lore': ("Gogol wrote that Viy is a colossal creation of the common people's "
-                 "imagination: the chief of the gnomes, whose eyelids hang down to the ground. "
-                 "In his tale the dead witch calls him into the church on the third night, a "
-                 "squat thing caked in black earth, with an iron face and arms and legs like "
-                 "roots. 'Lift my eyelids,' he says, and his servants lift them. The student "
-                 "Khoma Brut had been told not to look. He looked, and died of fright. The lids "
-                 "are heavy and slow to lift, so there is a moment before Viy sees you. A mirror "
-                 "or a blindfold is the answer; never meet his eyes."),
+        'lore': ("Gogol wrote that the imagination of the common people had created a colossal being named Viy, the chief of the gnomes, whose eyelids hang down to the ground. His tale tells how the dead witch called him into the church on the third night, a squat thing caked in black earth, with a face of iron and arms and legs like roots. 'Lift my eyelids,' he said, and his servants lifted them. The student Khoma Brut had been warned not to look, but he looked, and he died of fright. Those lids are heavy and slow to lift, so that there is a moment before Viy sees you, and a mirror or a blindfold is the answer to him, for you must never meet his eyes."),
     },
     'image_of_the_beast': {
         'peak': 91, 'aim': 0, 'seat': 1.0,
@@ -205,13 +156,7 @@ NEW_KINDS: dict[str, dict] = {
         ],
         'tags': ['construct'], 'family': 'constructs', 'pronoun': 'it', 'size': 'huge',
         'treasure': {'gold': [0, 0], 'item_chance': 0.5, 'item_tier': 5, 'purse': 'none'},
-        'lore': ("John saw a second beast come up out of the earth, and it told the people to "
-                 "make an image of the first beast, and gave the image breath, so that the image "
-                 "should both speak and cause all who would not worship it to be killed "
-                 "(Revelation 13). The images stand in the lowest halls still, golden and "
-                 "speaking. Its voice commands, and a hero who will not bow is struck down by the "
-                 "word. Wax in the ears keeps the command out, and it is a made thing: a hammer "
-                 "unmakes it."),
+        'lore': ("It is written in Revelation 13 that John saw a second beast come up out of the earth and bid the people make an image of the first beast, and give breath to that image, so that the image should both speak and cause all who would not worship it to be killed. Such images stand yet in the lowest halls, golden and speaking, and their voice is a command, so that a hero who will not bow is struck down by the word. Wax in the ears will keep the command out, and since the image is but a made thing, a hammer will unmake it."),
     },
 }
 

@@ -45,22 +45,13 @@ KINDS = [
         'weight': 0.1, 'slot': 'ring', 'min_level': 1, 'weight_by_floor': 12,
         'effects': {},
         'unidentified_name': 'a ring',
-        'lore': ("Saint Dunstan was a blacksmith before he was Archbishop of Canterbury. "
-                 "The story goes that the Devil came to have a hoof shod, and Dunstan nailed "
-                 "the shoe on so painfully that the Devil swore never to enter a door with iron "
-                 "over it. Rings like this one trade on that promise: what is aimed at the "
-                 "wearer's body may land, but the venom, the spell or the fear it carries often "
-                 "does not.")}),
+        'lore': ("Before he was Archbishop of Canterbury Saint Dunstan was a blacksmith, and they say that when the Devil came to have a hoof shod he nailed on the shoe so painfully that the Devil swore never to enter at any door with iron over it. Rings like this one trade upon that promise: what is aimed at the body of the wearer may land, but the venom, the spell or the fear that it carries will often be turned back at the threshold.")}),
     ('ring_of_spell_turning', 'spell_turning', 'amulet_spell_turning', {
         'name': 'ring of spell turning', 'symbol': '=', 'color': [180, 160, 255],
         'weight': 0.1, 'slot': 'ring', 'min_level': 1, 'weight_by_floor': 8,
         'effects': {},
         'unidentified_name': 'a ring',
-        'lore': ("King Balak of Moab hired the seer Balaam to curse Israel and took him up "
-                 "three mountains to do it. Three times Balaam opened his mouth and a blessing "
-                 "came out, and the curse fell back on the man who paid for it. The spiral cut "
-                 "in this ring turns ill words the same way: magic, shadow and the mind's "
-                 "blows glance off.")}),
+        'lore': ("King Balak of Moab hired the seer Balaam to curse Israel and brought him up three mountains for that purpose, yet three times Balaam opened his mouth and uttered a blessing, while the curse fell back upon the man who had paid for it. By the spiral cut in this ring ill words are turned aside in the same manner, so that the blows of magic, of shadow and of the mind glance off.")}),
     ('ring_of_regeneration', 'regeneration', 'ring_of_regeneration', {
         'name': 'ring of regeneration', 'min_level': 1, 'weight_by_floor': 8,
         'effects': {'status': 'regenerating', 'duration': -1}}),
@@ -75,11 +66,7 @@ KINDS = [
         'weight': 0.1, 'slot': 'ring', 'min_level': 1, 'weight_by_floor': 8,
         'effects': {},
         'unidentified_name': 'a ring',
-        'lore': ("The Greek Magical Papyri, found in a single cache at Thebes, are working "
-                 "books: recipes for summoning, binding and foretelling, with notes in the "
-                 "margins where a spell went wrong. Their writers wanted what every working "
-                 "magician wants, a spell that costs less than the last one. This ring was cut "
-                 "to that wish.")}),
+        'lore': ("A single hoard at Thebes yielded the books that are called the Greek Magical Papyri, and they are working books, with recipes for summoning, binding and foretelling, and notes in the margins where a spell went amiss. Those who wrote them desired what every worker of magic desires, a spell that costs less than the last, and to that wish this ring was cut.")}),
     ('amulet_life_saving', 'life_saving', 'amulet_life_saving', {
         'name': 'amulet of life saving', 'min_level': 35, 'weight_by_floor': 4,
         'effects': {'status': 'life_save', 'duration': -1}}),

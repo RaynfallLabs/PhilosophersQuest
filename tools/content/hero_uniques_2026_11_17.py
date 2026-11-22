@@ -80,14 +80,7 @@ SHIELDS = {
         'identified': False,
         'id_level': 0,
         'unidentified_name': 'a great round shield worked with tiny figures, a river running round its rim',
-        'lore': ("When Patroclus died wearing Achilles' armour, Achilles' mother, the sea-goddess "
-                 "Thetis, went up to Olympus and asked Hephaestus for new arms, and the smith-god "
-                 "made this shield overnight. On it he worked the earth, the sea and the sky with "
-                 "the sun, the moon and the stars; two cities, one at a wedding and one under siege; "
-                 "men ploughing a field and reaping a harvest; and round the rim the river Ocean. "
-                 "Under the pictures lie five layers, two of bronze, two of tin and one of gold. "
-                 "Aeneas' spear drove through two of them and stuck in the gold, and Hector's spear "
-                 "leapt back from its face."),
+        'lore': ("When Patroclus had fallen in the armour of Achilles, the sea-goddess Thetis went up to Olympus for her son's sake, and at her asking Hephaestus the smith made this shield in a single night. He wrought upon it earth, sea and sky, with the sun, the moon and the stars, two cities, one at a wedding and one under siege, men at the plough and at the reaping, and about the rim the river Ocean. Beneath these he laid five layers, two of bronze, two of tin and one of gold, and in the battles that followed the spear of Aeneas passed through two of them and was stayed by the gold, and the spear of Hector leapt back from its face."),
         'floorSpawnWeight': dict(_NEVER_ROLLED),
         'is_unique': True,
         'template_basis': 'heavy_wooden',
@@ -118,14 +111,7 @@ SHIELDS = {
         'identified': False,
         'id_level': 0,
         'unidentified_name': 'an ancient round bronze shield, worn smooth and green with age',
-        'lore': ("On his way into Asia, Alexander went up to Troy and sacrificed to Athena of Ilion. "
-                 "He left his own armour in her temple as an offering and took down in exchange some "
-                 "of the sacred arms kept there since the Trojan War, and from then on his "
-                 "shield-bearers carried this shield before him into battle. In India he leapt down "
-                 "inside the wall of a town of the Malli with only three men beside him, and an arrow "
-                 "went through his breastplate into his chest. He fell, and Peucestas stood over him "
-                 "holding the sacred shield from Troy until the Macedonians broke in. The historian "
-                 "Arrian tells both stories."),
+        'lore': ("Alexander, when first he came into Asia, went up to Troy and sacrificed to Athena of Ilion, and he hung his own armour in her temple and took in its stead some of the sacred arms that had lain there since the Trojan War. From that day his shield-bearers carried this shield before him into battle. Long afterward in India he leapt down within the wall of a town of the Malli with but three men beside him, and an arrow passed through his breastplate into his chest. He fell, and Peucestas stood over him with the sacred shield of Troy until the Macedonians broke in, and so the king lived, as the historian Arrian has set down."),
         'floorSpawnWeight': dict(_NEVER_ROLLED),
         'is_unique': True,
         'template_basis': 'heavy_wooden',
@@ -156,13 +142,7 @@ SHIELDS = {
         'identified': False,
         'id_level': 0,
         'unidentified_name': 'a long white banner on a pole, sown with gold lilies',
-        'lore': ("Joan of Arc had this standard made at Tours in 1429, because her Voices told her "
-                 "to carry one: a field of white sown with gold lilies, the Lord holding the world "
-                 "with an angel on each side, and the names Jhesus Maria. At her trial her judges "
-                 "asked which she loved more, her standard or her sword. She answered that she loved "
-                 "her standard forty times more, and that she carried it herself in the charge so "
-                 "that she would kill no one. At Orléans she told her soldiers to watch it, and when "
-                 "its tail touched the wall of the English fort they went over and took it."),
+        'lore': ("At the bidding of her Voices, Joan of Arc had this standard made at Tours in 1429, of white sown with gold lilies, showing the Lord with the world in His hand and an angel on either side, and bearing the names Jhesus Maria. At Orléans she bade her soldiers watch it, and when its tail touched the wall of the English fort they went over and took the place. Afterward, when her judges asked whether she loved better her standard or her sword, she answered that she loved the standard forty times more, and that she bore it herself in the charge so that she might kill no one."),
         'floorSpawnWeight': dict(_NEVER_ROLLED),
         'is_unique': True,
         'peak_floor': 0,
@@ -202,13 +182,7 @@ WEAPONS = {
         'min_level': 9999,
         'identified': False,
         'unidentified_name': 'a long iron-headed spear with a bronze collar of curling swirls',
-        'lore': ("Boudicca was queen of the Iceni in eastern Britain. When her husband died, Roman "
-                 "officials seized his kingdom, had her flogged and abused her daughters, and she "
-                 "raised the tribes against Rome. The Roman historian Cassius Dio describes her "
-                 "before her army: very tall, with a fierce glare and a harsh voice, tawny hair "
-                 "falling to her hips and a great gold torc at her throat. Then, he writes, she "
-                 "took up a spear to strike terror into everyone who saw her, and spoke. Her army "
-                 "burned Camulodunum, Londinium and Verulamium before the legions stopped it."),
+        'lore': ("When the husband of Boudicca, queen of the Iceni in eastern Britain, was dead, the officers of Rome seized his kingdom, had her flogged and abused her daughters, and she raised the tribes against them. The Roman historian Cassius Dio has described how she stood before her army, very tall, fierce of glance and harsh of voice, with tawny hair falling to her hips and a great torc of gold at her throat, and how she took up a spear to strike terror into all who beheld her, and then spoke to them. Afterward her army burned Camulodunum, Londinium and Verulamium before the legions could put an end to the rising."),
         'quiz_tier': 2,
         'damage_types': ['pierce'],
         'template_basis': 'spear',

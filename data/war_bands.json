@@ -77,8 +77,8 @@
           "bone_pile"
         ]
       },
-      "line": "Somewhere on this floor, drums, and a lot of feet.",
-      "known_line": "Drums, and goblin war-cries: a war-band has made camp on this floor. {roster}. Kill the chief, and the rest lose their nerve.",
+      "line": "Somewhere on this floor you hear drums and the tread of many feet.",
+      "known_line": "Drums and goblin war-cries tell of a war-band camped on this floor. {roster}. Kill the chief, and the rest will lose their nerve.",
       "rout_line": "With their chief down, the goblins lose their nerve and scatter!",
       "break_line": "The goblins see their chief take that blow, and waver."
     },
@@ -127,8 +127,8 @@
           "bone_pile"
         ]
       },
-      "line": "Somewhere on this floor, thin voices squabbling over a cookfire, hushed by a sharp bark.",
-      "known_line": "A goblin scouting party has stopped on this floor, ahead of the war-bands below. {roster}. The hobgoblin keeps them in line; drop him and they run.",
+      "line": "Somewhere on this floor thin voices squabble over a cookfire until a sharp bark hushes them.",
+      "known_line": "A goblin scouting party has halted on this floor, ahead of the war-bands below. {roster}. The hobgoblin keeps them in line, and if you drop him they will run.",
       "rout_line": "With the hobgoblin down, the scouts forget their orders and scatter!",
       "break_line": "The goblin scouts see their hobgoblin stagger, and start edging away."
     },
@@ -172,8 +172,8 @@
           "straw"
         ]
       },
-      "line": "High, cackling laughter echoes off the stone. Something hunts here in a pack.",
-      "known_line": "That cackling is gnolls, hunting as a pack. {roster}. Their courage is their pack lord's.",
+      "line": "High, cackling laughter echoes off the stone, for something hunts here in a pack.",
+      "known_line": "That cackling is gnolls, hunting as a pack. {roster}. All their courage comes from their pack lord.",
       "rout_line": "The pack lord falls, and the gnolls yelp and bolt!",
       "break_line": "The gnolls flinch as their pack lord staggers."
     },
@@ -221,9 +221,9 @@
           "bedroll"
         ]
       },
-      "line": "Woodsmoke, and laughter that stops when you stop walking. Somebody has a camp down here.",
-      "known_line": "Bandits have made camp on this floor. {roster}. They fight for their captain's coin, and run when he can't pay.",
-      "rout_line": "With their captain down, the crew decides this was never worth it!",
+      "line": "You smell woodsmoke and hear laughter that stops when you stop walking, for someone is camped here.",
+      "known_line": "Bandits have made camp on this floor. {roster}. They fight for their captain's coin, and will run when he can no longer pay.",
+      "rout_line": "With their captain down, the crew reckons the pay is not worth dying for!",
       "break_line": "The bandits glance at each other as their captain reels."
     },
     "footpads": {
@@ -265,10 +265,10 @@
           "bedroll"
         ]
       },
-      "line": "Somebody has been cooking down here, and not long ago. Somewhere ahead, a low whistle, and an answer.",
-      "known_line": "Footpads are waiting on this floor for whoever comes down the stair. {roster}. They are in it for the captain's share, and run when he falls.",
+      "line": "Someone has been cooking here not long ago, and somewhere ahead a low whistle is answered by another.",
+      "known_line": "Footpads lie in wait on this floor for whoever comes down the stair. {roster}. They serve for a share of the captain's takings, and will run when he falls.",
       "rout_line": "With their captain down, the footpads take to their heels!",
-      "break_line": "The footpads look to their captain as he reels, and their nerve goes."
+      "break_line": "The footpads look to their captain as he reels, and their courage fails."
     },
     "cult_circle": {
       "name": "a cult circle",
@@ -321,9 +321,9 @@
           "bedroll"
         ]
       },
-      "line": "Chanting, low and far off, the same five words over and over.",
-      "known_line": "A cult is chanting somewhere on this floor. {roster}. Their faith is in their priest; take him and see how long it lasts.",
-      "rout_line": "Their priest falls, and the faithful remember they have somewhere else to be!",
+      "line": "Far off you hear low chanting, the same five words over and over.",
+      "known_line": "A cult is chanting somewhere on this floor. {roster}. All their faith is in their priest, and if he falls it will not last long.",
+      "rout_line": "Their priest falls, and the faithful lose all their faith and flee!",
       "break_line": "The chanting falters as their priest staggers."
     },
     "necro_procession": {
@@ -387,8 +387,8 @@
           "candles"
         ]
       },
-      "line": "Bones click somewhere, all together, like soldiers marching.",
-      "known_line": "A necromancer walks this floor with his dead. {roster}. The dead he raised are bound to him: end him, and they fall.",
+      "line": "Somewhere bones click all together, like the tread of marching soldiers.",
+      "known_line": "A necromancer walks this floor with his dead. {roster}. The dead he raised are bound to him, and if you end him they will fall.",
       "rout_line": "Their master falls, and the dead he raised fall with him!",
       "break_line": "The bound dead stagger as their master reels."
     },
@@ -438,9 +438,9 @@
           "bone_pile"
         ]
       },
-      "line": "Baying, and under it something huge, sniffing the air.",
-      "known_line": "A giant hunts this floor with his hounds. {roster}. The hounds follow him; without him they lose interest.",
-      "rout_line": "Their master falls, and the hounds lose interest in you!",
+      "line": "You hear baying, and beneath it something huge that sniffs the air.",
+      "known_line": "A giant hunts this floor with his hounds. {roster}. The hounds follow him, and without him they will not care to hunt.",
+      "rout_line": "Their master falls, and the hounds care no longer to hunt you!",
       "break_line": "The hounds whine as their master staggers."
     },
     "fae_hunt": {
@@ -494,8 +494,8 @@
           "bedroll"
         ]
       },
-      "line": "A horn sounds, very far away, and it is the loneliest sound you have ever heard.",
-      "known_line": "The Fair Folk are riding a hunt on this floor. {roster}. They follow their leader for the sport of it; take that away and they will find other sport.",
+      "line": "Very far away a horn sounds, and it is the loneliest sound that you have ever heard.",
+      "known_line": "The Fair Folk are riding a hunt on this floor. {roster}. They follow their leader for the sport of it, and once that leader falls they will seek other sport.",
       "rout_line": "Their leader falls, and the Fair Folk melt back into the shadows!",
       "break_line": "The hunt hesitates as its leader reels."
     },
@@ -556,8 +556,8 @@
           "bone_pile"
         ]
       },
-      "line": "Iron rings on iron somewhere, and a voice giving orders in no language you know.",
-      "known_line": "Devils march on this floor under a captain. {roster}. They obey him out of fear; without him, they turn on each other.",
+      "line": "Somewhere iron rings on iron, and a voice gives orders in a tongue unknown to you.",
+      "known_line": "Devils march on this floor under a captain. {roster}. They obey him out of fear, and without him they will turn on each other.",
       "rout_line": "Their captain falls, and the devils turn on one another!",
       "break_line": "The devils snarl at one another as their captain reels."
     }

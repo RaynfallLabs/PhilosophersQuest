@@ -7,27 +7,27 @@
   },
   "quest_teach": {
     "asterion_minotaur": {
-      "lines": ["Ariadne's voice comes again, softer: \"Not the club, nor the hammer. He was born of a bull: a point between the ribs.\""],
+      "lines": ["Ariadne's voice comes again, more softly: \"Take neither club nor hammer to him, for he was born of a bull, and it is a point between the ribs that will serve you.\""],
       "page": "You know Asterion now: his page is open in your Bestiary.",
       "claims": {"weaknesses": ["pierce"], "resistances": ["blunt"]}
     },
     "medusa_gorgon": {
-      "lines": ["Athena speaks once more: \"Perseus took her head with one stroke of a curved sword: an edge is what ends her. Her blood is venom, so poison will not.\""],
+      "lines": ["Athena speaks once more: \"Perseus took her head with one stroke of a curved sword, for it is an edge that ends her. Poison will not serve, since her own blood is venom.\""],
       "page": "You know Medusa now: her page is open in your Bestiary.",
       "claims": {"weaknesses": ["slash"], "resistances": ["poison"]}
     },
     "fafnir_dragon": {
-      "lines": ["The old voice again: \"Dig where he crawls down to drink, as Sigurd did, and strike up with a point. His scales turn edge and hammer, fire and venom. And a worm lying on his gold is quick to fall asleep.\""],
+      "lines": ["The old voice speaks again: \"Dig where he crawls down to drink, as Sigurd did, and strike upward with a point, for his scales turn both edge and hammer, both fire and venom. And remember that a worm lying on his gold is quick to fall asleep.\""],
       "page": "You know Fafnir now: his page is open in your Bestiary.",
       "claims": {"weaknesses": ["pierce"], "resistances": ["slash", "blunt", "fire", "poison"], "status_weak": ["sleeping"]}
     },
     "fenrir_wolf": {
-      "lines": ["A gruff voice from the dark behind the anvil: \"Bound is not beaten. He was whelped in the cold, and an edge slides off that coat. But he is a wolf, and fire bites every wolf.\""],
+      "lines": ["A gruff voice speaks from the dark behind the anvil: \"Though he is bound, he is not beaten. He was whelped in the cold, and an edge slides off that coat, but he is a wolf, and fire bites every wolf.\""],
       "page": "You know Fenrir now: his page is open in your Bestiary.",
       "claims": {"weaknesses": ["fire"], "resistances": ["cold", "slash"]}
     },
     "abaddon_destroyer": {
-      "lines": ["The voice that weighed you speaks once more: \"Fire, frost and venom are his own, and steel that cuts or crushes slides off him. What is holy wounds the Destroyer most.\""],
+      "lines": ["The voice that weighed you speaks once more: \"Fire, frost and venom are his own, and steel that cuts or crushes slides from him. What is holy wounds the Destroyer most of all.\""],
       "page": "You know Abaddon now: his page is open in your Bestiary.",
       "claims": {"weaknesses": ["holy"], "resistances": ["fire", "cold", "poison", "slash", "blunt"]}
     }

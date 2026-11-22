@@ -61,11 +61,7 @@ NEW['mandrake'] = kind(
                   'effect': 'stunned', 'effect_duration': 2, 'alarm_radius': 12,
                   'line': "The Mandrake shrieks as it dies, a cry that goes through stone!",
                   'warn_line': "A thin keening rises from the Mandrake's split root."},
-    lore=("Theophrastus says the root-cutters drew circles round a mandrake with a sword before they "
-          "dug it, and later herbals add the scream: pull one from the earth and its cry kills whoever "
-          "hears it, so the wise tied a hungry dog to the root and walked away holding meat. Physicians "
-          "boiled the forked root in wine to put a patient to sleep before the knife. Down here the "
-          "roots have pulled themselves up on legs of their own, and they still scream when they die."))
+    lore=("Theophrastus tells that the cutters of roots drew circles about a mandrake with a sword before they dug, and the herbals of later days add that it screams when it is torn from the earth, and that its cry kills all who hear. The wise would therefore tie a hungry dog to the root and walk away holding meat. Physicians boiled the forked root in wine, that a patient might sleep before the knife. Down here the roots have drawn themselves up on legs of their own, and they scream still when they die."))
 
 NEW['kappa'] = kind(
     'Kappa', 'k', (90, 150, 80), '8d10+28', 12, 'aggressive', 13, 11, 9, 5, 3.0,
@@ -76,23 +72,14 @@ NEW['kappa'] = kind(
                 'line': "The water spills from the Kappa's dish, and its arms go slack."},
     appeased_by={'food': 'plain',
                  'line': "The Kappa takes your offering, bows low, and goes back to its pool."},
-    lore=("Japanese villagers kept children away from deep pools because of the kappa: a beaked, "
-          "shelled little water-imp with a dish of water set into the top of its head. It drags "
-          "swimmers and horses under and challenges travellers to wrestle. But it is very polite. Bow "
-          "to a kappa and it must bow back; the water spills from its dish and its strength drains "
-          "away with it. Farmers floated cucumbers downriver to keep it friendly, and a kappa given a "
-          "gift of food will leave the giver alone."))
+    lore=("Children in the villages of Japan were kept from deep pools for fear of the kappa, a little water-imp with a beak and a shell and a dish of water set into the crown of its head. It drags swimmers and horses under and challenges travellers to wrestle, but it is exceedingly courteous. If you bow to a kappa it must bow in return, and as the water spills from its dish its strength drains away with it. Farmers floated cucumbers down the rivers to keep it friendly, and a kappa that is given a gift of food will leave the giver alone."))
 
 NEW['eloko'] = kind(
     'Eloko', 'e', (110, 150, 60), '7d10+27', 12, 'hit_and_run', 13, 13, 11, 5, 3.0,
     [atk('Bell Charm', '1d3', 'magic', 'voice', 'paralyzed', 0.35, 2),
      atk('Wide Jaws', '1d8+2', 'pierce', 'bite')],
     family='fair_folk', tags=['fey'], res=['poison'], weak=['fire'], pack=(2, 3), opener=('Bell Charm', 4),
-    lore=("The Mongo people of the Congo forest tell of the biloko, small hungry spirits who live in "
-          "hollow trees. Grass grows on them in place of hair, they dress in leaves, and their mouths "
-          "open wide enough to swallow a man's head. Each one carries a little bell. Its chime is so "
-          "sweet that a hunter forgets where he is going and walks toward it, and then he cannot move "
-          "at all. Hunters wore charms to hide from them; down here a hunter stops his ears."))
+    lore=("The Mongo people of the Congo forest tell of the biloko, small and hungry spirits that dwell in hollow trees, having grass for hair and leaves for raiment, and mouths that open wide enough to swallow a man's head. Each carries a little bell, and so sweet is its chime that a hunter forgets whither he was going and walks toward it, until he cannot move at all. Hunters in that forest wore charms to hide themselves, but a hunter in these depths must stop his ears against the bell."))
 
 NEW['asanbosam'] = kind(
     'Asanbosam', 'V', (120, 90, 70), '13d10+44', 12, 'ambush', 11, 14, 11, 5, 3.0,
@@ -100,12 +87,7 @@ NEW['asanbosam'] = kind(
      atk('Iron-Toothed Bite', '1d10+3', 'drain', 'bite')],
     family='vampires_liches', tags=['undead'], res=['cold', 'poison'], weak=['fire', 'holy'],
     opener=('Dangling-Leg Grab', 1), drain_heals_self=0.5, hidden_overhead=True, relurks=True,
-    lore=("Akan hunters of the Ghanaian forest feared the sasabonsam: a long-legged thing with iron "
-          "teeth and long matted hair that lives high in the trees, its feet pointing both ways. Its "
-          "favourite trick is to sit on a high branch and dangle its legs, to snare a hunter walking "
-          "beneath and haul him up into the leaves. Enslaved Akan people carried the tale across the "
-          "sea, and Edward Long wrote it down in Jamaica in 1774. Down here it hangs from the roof "
-          "beams and the roots of the old halls, where only a light shows it."))
+    lore=("High in the trees of the Ghanaian forest lived the sasabonsam that Akan hunters feared, long of leg, with teeth of iron, long matted hair, and feet that point both ways. It loved best to sit upon a high branch dangling its legs, that it might snare a hunter who walked beneath and haul him up among the leaves. Enslaved Akan people carried the tale across the sea, and in 1774 Edward Long set it down in Jamaica. Down here it hangs from the roof beams and the roots of the old halls, and nothing but a light will show it to you."))
 
 NEW['ahuizotl'] = kind(
     'Ahuizotl', 'a', (40, 50, 60), '11d10+45', 14, 'ambush', 10, 16, 13, 5, 3.0,
@@ -114,11 +96,7 @@ NEW['ahuizotl'] = kind(
      atk('Drowning Squeeze', '1d8+3', 'blunt', 'grapple', 'strangulation', 0.3, 3)],
     family='serpents', tags=['beast'], res=['cold'], weak=['fire'], opener=("Child's Wail", 5),
     pull_chance=0.3, relurks=True,
-    lore=("Sahagun's Aztec informants described the ahuizotl of the lakes: a sleek little dog-like "
-          "water beast with hands like a monkey's and one more hand at the very end of its tail. When "
-          "it has not fed it cries like a child on the shore, or makes the fish leap to bring "
-          "fishermen close. Then the tail-hand seizes them and drags them under. The drowned were "
-          "found days later, and only a priest dared touch them."))
+    lore=("Sahagun learned from his Aztec informants of the ahuizotl of the lakes, a sleek little water beast like a dog, which had the hands of a monkey and one hand more at the very end of its tail. When it had not fed it would cry like a child upon the shore, or make the fish leap to draw the fishermen close, and then the hand on its tail seized them and dragged them under. Days afterward the drowned were found, and none but a priest dared touch them."))
 
 NEW['khalkotauros'] = kind(
     'Khalkotauros', 'q', (190, 140, 70), '22d10+80', 12, 'aggressive', 11, 17, 15, 5, 3.0,
@@ -126,11 +104,7 @@ NEW['khalkotauros'] = kind(
      atk('Furnace Breath', '2d6', 'fire', 'breath', 'burning', 0.4, 4)],
     family='constructs', tags=['construct'], res=['fire', 'poison'], weak=['cold'], pack=(2, 2),
     opener=('Furnace Breath', 3), can_charge=True, charge_bonus_mult=1.3,
-    lore=("Hephaestus forged two bulls of bronze for King Aeetes of Colchis, with brazen hooves and "
-          "mouths that breathed fire. Aeetes set Jason to yoke them and plough the field of Ares in a "
-          "single day. Medea gave him an ointment that kept fire and bronze from his skin for that one "
-          "day, and he forced them to their knees. The pairs that stamp through these halls have never "
-          "felt a yoke."))
+    lore=("For Aeetes, the king of Colchis, Hephaestus forged two bulls of bronze with brazen hooves and mouths that breathed fire, and the king set Jason to yoke them and plough the field of Ares in a single day. Medea gave the hero an ointment that kept fire and bronze from his skin for that one day, and so he forced them to their knees. But the pairs that stamp through these halls have never in all their days submitted to a yoke."))
 
 NEW['cu_sith'] = kind(
     'Cu-Sith', 'd', (60, 110, 70), '20d10+74', 16, 'aggressive', 10, 17, 14, 5, 3.0,
@@ -139,20 +113,15 @@ NEW['cu_sith'] = kind(
     countdown_voice={
         'every': 3, 'count': 3,
         'attack': atk('Third Bark', '1d4', 'magic', 'voice', 'feared', 0.6, 4),
-        'lines': ["The Cu-Sith barks once. The sound rolls through the halls.",
+        'lines': ["The Cu-Sith barks once, and the sound rolls through the halls.",
                   "The Cu-Sith barks a second time. Get out of its sight!",
                   "The Cu-Sith barks the third time!"],
         'unseen': ["Somewhere out of sight a great hound barks once, slow and deep.",
                    "The hound barks a second time, nearer.",
                    "The third bark!"],
-        'safe_line': "Stone stands between you and the Cu-Sith: it falls silent.",
+        'safe_line': "Stone stands between you and the Cu-Sith, and it falls silent.",
     },
-    lore=("Highlanders said the cu-sith, the fairy hound, was as big as a yearling bullock, dark "
-          "green and shaggy, with a long tail plaited flat on its back and paws as broad as a man's "
-          "hand. It hunted in silence. When it chose to, it barked three times with long pauses "
-          "between, and anyone who heard the first bark ran for a house and barred the door, for "
-          "whoever was still out in the open at the third was overtaken by terror. Down here there are "
-          "no houses, but a wall is a wall, and stone between you and it is shelter enough."))
+    lore=("As big as a yearling bullock was the cu-sith, the hound of the fairies, so the Highlanders said, dark green and shaggy, with paws as broad as a man's hand and a long tail plaited flat upon its back. It hunted in silence, but when it chose it would bark three times with long pauses between. Whoever heard the first bark ran for a house and barred the door, for terror overtook all who were still in the open at the third. There are no houses in these depths, yet any wall will serve as well, and stone between you and the hound is shelter enough."))
 
 NEW['bulgasari'] = kind(
     'Bulgasari', 'B', (110, 110, 120), '26d10+99', 9, 'aggressive', 11, 18, 15, 5, 3.0,
@@ -161,11 +130,7 @@ NEW['bulgasari'] = kind(
     family='constructs', tags=['construct'], res=['cold', 'poison'], weak=['fire'],
     metal_eater={'wear_chance': 0.2, 'heal_share': 0.04, 'grow_cap': 0.12,
                  'line': "The Bulgasari's hide closes on your {weapon} and gnaws it."},
-    lore=("Korean storytellers of the last Goryeo days told of a prisoner monk who shaped a little "
-          "beast out of grains of rice and gave it life. It ate the needle he fed it, then every "
-          "needle, spoon, ploughshare and spear in the land, and grew with every meal until no iron "
-          "blade could wound it. Its name was read as 'the one that cannot be killed', though the "
-          "tellers say fire was its end. The ones down here are still growing."))
+    lore=("A monk who lay in prison in the last days of Goryeo, so the storytellers of Korea relate, shaped a little beast out of grains of rice and gave it life. It ate the needle that he fed to it, and thereafter every needle, spoon, ploughshare and spear in the land, growing with each meal until no iron blade could wound it. Its name was read as 'the one that cannot be killed', yet the tellers say that fire was its end. Those that dwell here below are growing still upon whatever iron they find."))
 
 NEW['vetala'] = kind(
     'Vetala', 'V', (170, 160, 140), '16d10+61', 10, 'aggressive', 11, 18, 15, 5, 3.0,
@@ -174,12 +139,8 @@ NEW['vetala'] = kind(
     family='demons', tags=['demon'], res=['poison', 'drain', 'cold'], weak=['holy', 'fire'],
     corpse_hop={'radius': 6, 'max_hops': 2, 'hp_share': 0.4,
                 'line': "The Vetala laughs as its body falls, and the corpse nearby sits up.",
-                'unseen': "Somewhere close a high laugh, and a dead thing stirs."},
-    lore=("In the Twenty-Five Tales of the Vetala, King Vikramaditya must carry a corpse down from a "
-          "tree in a cremation ground. A vetala, a spirit that lives in dead bodies, rides inside it, "
-          "and on the walk it tells a story that ends in a riddle. Each time the king answers, the "
-          "vetala laughs and flies back to its tree. Down here it needs no tree: when one body falls, "
-          "it slips into the nearest dead one and gets up again."))
+                'unseen': "Somewhere close a high voice laughs, and a dead thing stirs."},
+    lore=("It was laid upon King Vikramaditya, in the Twenty-Five Tales of the Vetala, to bear a corpse down from a tree in a cremation ground, and within it rode a vetala, which is a spirit that lives in the bodies of the dead. Upon the road it would tell a story that ended in a riddle, and each time the king answered, it laughed and flew back to its tree. Down here it has no need of a tree, for when one body falls it slips into the nearest dead one and rises up again."))
 
 NEW['nahual'] = kind(
     'Nahual', 'h', (170, 130, 60), '25d10+92', 12, 'ranged', 10, 21, 17, 5, 3.0,
@@ -192,11 +153,7 @@ NEW['nahual'] = kind(
                               atk('Skull-Piercing Bite', '2d6+3', 'pierce', 'bite')],
                   'speed': 16, 'multi_attack_count': 2,
                   'line': "Spots spread over the sorcerer's skin, and a jaguar drops to all fours!"},
-    lore=("The Nahua spoke of the nahualli, a sorcerer who could put on the shape of a beast. "
-          "Sahagun's informants said such a man went out by night as a jaguar, a dog or a turkey to "
-          "bring sickness and ill luck on his neighbours, and came home a man before dawn. Hernando "
-          "Ruiz de Alarcon heard the spells they used to call on Tezcatlipoca for the change. Wound "
-          "the sorcerer badly enough and the jaguar comes out."))
+    lore=("Among the Nahua a sorcerer who could put on the shape of a beast was called nahualli. The informants of Sahagun said that such a man went abroad by night as a jaguar, a dog or a turkey to bring sickness and ill luck upon his neighbours, and came home a man before the dawn, and Hernando Ruiz de Alarcon heard the spells by which they called upon Tezcatlipoca for the change. If the sorcerer is wounded sorely enough, the jaguar will come forth out of him."))
 
 NEW['likho'] = kind(
     'Likho', 'L', (90, 80, 90), '25d10+93', 10, 'aggressive', 11, 20, 17, 5, 3.0,
@@ -205,11 +162,7 @@ NEW['likho'] = kind(
      atk('Gnarled Hands', '2d6+3', 'slash', 'blow')],
     family='fair_folk', tags=['fey'], res=['cold', 'poison'], weak=['fire'], pronoun='she',
     opener=('Baleful Gaze', 3), blinded_loses=['Baleful Gaze'],
-    lore=("Russian peasants were careful never to wake Likho, the one-eyed hag of ill luck. In the "
-          "tale Afanasyev wrote down, a blacksmith and a tailor go looking for her out of curiosity. "
-          "She eats the tailor, and the smith only escapes by burning out her single eye with a hot "
-          "awl and crawling out under a sheepskin among her sheep. When Likho leaps onto a man's "
-          "neck, every plan he makes goes wrong."))
+    lore=("Russian peasants took great care never to waken Likho, the one-eyed hag of ill luck. Yet a blacksmith and a tailor went in search of her out of curiosity, in the tale that Afanasyev wrote down, and she devoured the tailor. The smith escaped only by burning out her single eye with a hot awl and creeping forth among her sheep beneath a sheepskin. When Likho leaps upon a man's neck, every plan that he makes thereafter goes wrong."))
 
 NEW['centaur'] = kind(
     'Centaur', 'C', (150, 100, 60), '30d10+115', 15, 'ranged', 9, 21, 18, 5, 3.0,
@@ -217,12 +170,7 @@ NEW['centaur'] = kind(
      atk('Hoof Trample', '2d6+4', 'blunt', 'trample')],
     family='legend', tags=['humanoid', 'beast'], pronoun='he', pack=(2, 3), opener=('Horn Bow', 6),
     can_charge=True, charge_bonus_mult=1.3, item=0.15,
-    lore=("Homer calls the centaurs the beast-men of the mountains: man to the waist and horse below. "
-          "At the wedding of the Lapith king Pirithous they drank the wine, tried to carry off the "
-          "bride, and began the battle Ovid tells blow by blow, fought with tables, antlers and "
-          "torches. In Dante's Hell they gallop the banks of the river of boiling blood with their "
-          "bows drawn, and the archer of the zodiac is one of them. They shoot from the gallop and "
-          "ride down whatever they cannot hit."))
+    lore=("Men to the waist and horses below, the centaurs are named by Homer the beast-men of the mountains. At the wedding of the Lapith king Pirithous they drank the wine and would have carried off the bride, and so began the battle of which Ovid tells every blow, fought with tables, antlers and torches. In Dante's Hell they gallop with bent bows along the river of boiling blood, and one of that people is the archer of the zodiac. They shoot at the gallop, and whatever their arrows cannot hit they ride down beneath their hooves."))
 
 NEW['blue_men_of_the_minch'] = kind(
     'Blue Man of the Minch', 'b', (90, 120, 190), '28d10+105', 13, 'ranged', 10, 22, 18, 5, 3.0,
@@ -233,15 +181,10 @@ NEW['blue_men_of_the_minch'] = kind(
     parley={'subject': 'grammar', 'storm': 'Squall Spray',
             'call': "The Blue Men rise to the waist and their chief calls out two lines of verse. "
                     "Answer him well and they let you pass.",
-            'right': "The chief of the Blue Men laughs at your answer, and they sink back into the "
-                     "dark water. They will let you be.",
-            'wrong': "Your answer stumbles. The Blue Men howl, and the squall comes down on you!",
+            'right': "The chief of the Blue Men laughs at your answer, and they sink back into the dark water, content to let you be.",
+            'wrong': "At your stumbling answer the Blue Men howl, and the squall comes down on you!",
             'unasked': "The Blue Men watch you from the water, waiting for an answer."},
-    lore=("Between the Isle of Lewis and the Shiant Isles runs the Stream of the Blue Men, where "
-          "blue-skinned, grey-faced men swim beside the boats and raise sudden gales. Their chief "
-          "calls out two lines of verse to the captain. A captain who answers in rhyme, quick and "
-          "well, may sail on; one who stumbles is sunk. In these drowned halls they ask the same of "
-          "anyone who passes."))
+    lore=("Between the Isle of Lewis and the Shiant Isles runs the Stream of the Blue Men, where men blue of skin and grey of face swim beside the boats and raise sudden gales. Their chief calls out two lines of verse to the captain, and if he answers in rhyme, quick and well, he may sail on, but if he stumbles he is sunk. In these drowned halls they ask the same of every traveller who would pass them by."))
 
 NEW['vila'] = kind(
     'Vila', 'F', (230, 230, 200), '105d10+382', 15, 'ranged', 3, 45, 42, 9, 2.0,
@@ -249,11 +192,7 @@ NEW['vila'] = kind(
      atk('Whirlwind', '2d6+8', 'blunt', 'ranged', 'slowed', 0.4, 6)],
     family='fair_folk', tags=['fey'], res=['magic', 'cold'], weak=[], pronoun='she',
     opener=('Throat Arrow', 6), can_phase_blink=True, phase_blink_chance=0.15, item=0.2,
-    lore=("In the Serbian epic songs the vila is a fairy of the mountains and the clouds, long-haired "
-          "and robed in white, who shoots arrows and raises whirlwinds. The vila Ravijojla shot the "
-          "hero Milos because his singing on her mountain angered her, and healed him again only when "
-          "Prince Marko rode her down. Steal a vila's hair or her girdle and she must serve you. Down "
-          "here nobody has stolen anything from them yet."))
+    lore=("The vila of the Serbian epic songs is a fairy of the mountains and the clouds, robed in white and long of hair, who shoots with arrows and raises whirlwinds. Once the hero Milos sang upon the mountain of the vila Ravijojla, and his singing so angered her that she shot him, nor would she heal him until Prince Marko rode her down. Whoever steals a vila's hair or her girdle may command her service, but none has yet stolen anything from those who dwell down here."))
 
 NEW['myrmekes'] = kind(
     'Gold-Digging Ant', 'a', (200, 160, 60), '65d10+236', 17, 'aggressive', 5, 44, 41, 9, 2.0,
@@ -263,11 +202,7 @@ NEW['myrmekes'] = kind(
     opener=('Mandible Bite', 1),
     gold_gatherer={'radius': 2, 'turns': 3,
                    'line': "The Gold-Digging Ant stops to gather up the gold."},
-    lore=("Herodotus heard from the Persians of ants in the deserts of north India, smaller than dogs "
-          "but bigger than foxes, that throw up gold-bearing sand as they dig. The Indians came for "
-          "the gold at midday, when the heat drove the ants underground, filled their sacks and rode "
-          "off at once, for the ants follow a thief by scent and run faster than any beast. Scholars "
-          "today think the tale began with the marmots of the Himalaya. These are not marmots."))
+    lore=("Herodotus learned from the Persians that in the deserts of northern India there were ants, smaller than dogs but bigger than foxes, which cast up sand full of gold as they dug. The Indians came for the gold at midday, when the heat had driven the ants below, and they filled their sacks and rode away at once, for the ants follow a thief by scent and run faster than any beast. Scholars of our own day believe that the tale began with the marmots of the Himalaya, but those that dig in these depths are no marmots."))
 
 NEW['ponaturi'] = kind(
     'Ponaturi', 'g', (170, 200, 190), '116d10+425', 13, 'aggressive', 4, 46, 42, 9, 2.0,
@@ -275,11 +210,7 @@ NEW['ponaturi'] = kind(
      atk('Sea-Spear', '2d8+10', 'pierce', 'blow')],
     family='goblinkin', tags=['humanoid'], res=['cold', 'poison'], weak=['fire'], pronoun='he',
     pack=(2, 4), opener=('Sea-Spear', 1), light_shy=True,
-    lore=("The Maori tell of the Ponaturi, a hostile people who live in a land under the sea and "
-          "come ashore at night to sleep in their great house, Manawa-tane. The Ponaturi killed "
-          "Tawhaki's father and kept his mother to watch the door. Tawhaki and his mother stopped "
-          "every chink of the house, so the Ponaturi slept on into the morning, then threw the door "
-          "open. The sunlight killed them where they lay."))
+    lore=("Beneath the sea lies the country of the Ponaturi, a hostile people of whom the Maori tell, who came ashore by night to sleep in their great house, Manawa-tane. They killed the father of Tawhaki and kept his mother to watch the door, and so Tawhaki and his mother stopped every chink of that house, that the Ponaturi might sleep on into the morning. Then mother and son threw wide the door, and the sunlight slew the sleepers where they lay."))
 
 NEW['taniwha'] = kind(
     'Taniwha', 'S', (60, 100, 90), '242d10+892', 11, 'aggressive', 4, 47, 43, 9, 2.0,
@@ -289,11 +220,7 @@ NEW['taniwha'] = kind(
      atk('Tail Lash', '3d8+12', 'blunt', 'sting', 'stunned', 0.25, 2)],
     family='serpents', tags=['beast', 'reptile'], res=['cold'], weak=['fire'],
     opener=('Gulping Jaws', 1),
-    lore=("Many taniwha of the Maori are guardians of a river or a tribe, but some ate people. "
-          "Tutaeporoporo of the Whanganui River swallowed travellers and whole canoes, until the "
-          "warrior Ao-kehu hid in a hollow log, let the taniwha swallow it, and cut his way out from "
-          "inside. Another, Ngarara Huarau, was lured from its cave and burned. The taniwha that lie "
-          "in these flooded deeps guard nothing but themselves."))
+    lore=("Many of the taniwha of the Maori are guardians of a river or a tribe, yet some there were that ate people. Such was Tutaeporoporo of the Whanganui River, who swallowed travellers and whole canoes, until the warrior Ao-kehu hid in a hollow log and let himself be swallowed in it, and cut his way out from within. Such also was Ngarara Huarau, which was lured from its cave and burned. Those that lie in these flooded deeps are guardians of nothing but themselves."))
 
 NEW['impundulu'] = kind(
     'Impundulu', 'B', (40, 40, 40), '141d10+516', 16, 'hit_and_run', 3, 48, 44, 9, 2.0,
@@ -301,11 +228,7 @@ NEW['impundulu'] = kind(
      atk('Blood-Drinking Bite', '2d8+10', 'drain', 'bite')],
     family='birds', tags=['beast'], res=['lightning', 'poison'], weak=['fire'],
     opener=('Lightning Stoop', 1), drain_heals_self=0.5,
-    lore=("In Zulu and Xhosa belief the impundulu, the lightning bird, is a black-and-white bird as "
-          "tall as a man that strikes the earth as lightning. It is a witch's servant, handed down from "
-          "mother to daughter, and it hungers for blood. Spears and guns do not harm it, and it cannot "
-          "be drowned or poisoned, but fire destroys it. Its fat, dug from the place where lightning "
-          "struck, is a powerful medicine."))
+    lore=("The Zulu and the Xhosa hold that the impundulu, the lightning bird, strikes the earth as lightning. It is black and white and as tall as a man, a witch's servant that is handed down from mother to daughter, and it hungers for blood. Neither spears nor guns can harm it, nor can it be drowned or poisoned, yet fire will destroy it, and its fat, if it is dug from the place where the lightning struck, makes a powerful medicine."))
 
 NEW['mapinguari'] = kind(
     'Mapinguari', 'Y', (150, 80, 50), '236d10+862', 9, 'aggressive', 4, 49, 45, 9, 2.0,
@@ -316,11 +239,7 @@ NEW['mapinguari'] = kind(
           'save': 'CON', 'line': "The reek of the Mapinguari turns your stomach."},
     weak_spot_chain=10,
     weak_spot_line="Your blow finds the soft place at the Mapinguari's navel!",
-    lore=("Rubber-tappers and the peoples of the Amazon speak of the mapinguari: a tall, shaggy beast "
-          "with one eye, feet turned backward, and a mouth in its belly. A stench like rot and dung "
-          "rolls ahead of it and leaves hunters dizzy and sick. Its hide turns arrows and knives "
-          "everywhere except at the navel. The biologist David Oren wondered whether the tales "
-          "remember the giant ground sloths that lived here at the end of the Ice Age."))
+    lore=("Tall and shaggy is the mapinguari of which the rubber-tappers and the peoples of the Amazon speak, a beast with one eye, with feet turned backward and with a mouth in its belly. Before it rolls a stench like rot and dung that leaves hunters dizzy and sick, and its hide will turn arrows and knives everywhere except at the navel. The biologist David Oren has wondered whether the tales preserve a memory of the giant ground sloths that lived in that land at the end of the Ice Age."))
 
 NEW['preta'] = kind(
     'Preta', 'G', (160, 150, 140), '131d10+480', 12, 'aggressive', 4, 50, 46, 9, 2.0,
@@ -329,11 +248,7 @@ NEW['preta'] = kind(
     family='ghosts', tags=['undead'], res=['cold', 'drain'], weak=['holy', 'fire'], sp_drain=15,
     appeased_by={'food': 'plain',
                  'line': "The Preta falls on your offering, and for a while its hunger is quiet."},
-    lore=("Buddhists and Hindus tell of the preta, the hungry ghost: a spirit of greed with a belly "
-          "like a drum and a throat as thin as a needle, so that nothing it eats can fill it, and "
-          "food turns to fire in its mouth. In the Ullambana story the monk Maudgalyayana found his "
-          "own mother among them. Offerings of food, freely given, are the old way to ease a preta, "
-          "and every year the Ghost Festival sets out a meal for them."))
+    lore=("A belly like a drum and a throat as thin as a needle are the lot of the preta, the hungry ghost of which Buddhists and Hindus tell. It is a spirit of greed that nothing it eats can fill, and in its mouth all food turns to fire. The monk Maudgalyayana, in the Ullambana story, found his own mother among these spirits. From of old a preta has been eased by offerings of food freely given, and so every year at the Ghost Festival a meal is set out for them."))
 
 NEW['upas_tree'] = kind(
     'Upas Tree', 'T', (200, 200, 170), '254d10+927', 0, 'sessile', 6, 52, 48, 9, 2.0,
@@ -342,11 +257,7 @@ NEW['upas_tree'] = kind(
     family='plants', tags=['plant'], res=['poison'], weak=['fire'], opener=('Ipoh Sap', 5), item=0.25,
     aura={'kind': 'stench', 'radius': 2, 'effect': 'poisoned', 'chance': 0.4, 'turns': 4,
           'save': 'CON', 'line': "The air round the Upas Tree burns in your throat."},
-    lore=("In 1783 the London Magazine printed a Dutch surgeon's tale of the upas tree of Java, whose "
-          "poison killed every living thing for fifteen miles, so that condemned criminals were sent "
-          "to fetch its sap and few came back. The story was a tall one, but the tree is real: its "
-          "milky latex is the ipoh poison that island hunters put on their blowgun darts. The upas "
-          "trees of the deep need no tall tale."))
+    lore=("The London Magazine printed in 1783 a Dutch surgeon's tale of the upas tree of Java, whose poison killed every living thing for fifteen miles about, so that condemned criminals were sent to fetch its sap and few came back. The tale was a tall one, but the tree is real, and its milky latex is the ipoh poison with which island hunters tipped their blowgun darts. The upas trees of the deep need no tall tale to make them deadly."))
 
 NEW['nuckelavee'] = kind(
     'Nuckelavee', 'N', (150, 50, 50), '248d10+908', 15, 'aggressive', 3, 53, 48, 9, 2.0,
@@ -355,11 +266,7 @@ NEW['nuckelavee'] = kind(
      atk('Hoof Trample', '3d10+14', 'blunt', 'trample')],
     family='demons', tags=['demon'], res=['poison', 'cold'], weak=['holy'],
     opener=('Mortasheen Breath', 3), can_charge=True, charge_bonus_mult=1.3, moves=[],
-    lore=("Orkney islanders would not say its name. The nuckelavee came out of the sea as a horse and "
-          "rider grown into one body, with no skin, so that black blood could be seen running in its "
-          "veins. Its breath withered crops and brought the mortasheen plague on the cattle. Walter "
-          "Traill Dennison heard from an old man, Tammas, how it chased him along the shore one "
-          "night, and how he escaped by leaping a burn of fresh water, which it cannot cross."))
+    lore=("Orkney islanders would not speak the name of the nuckelavee, which came out of the sea like a horse and rider grown into one body, and had no skin, so that the black blood could be seen running in its veins. Its breath withered the crops and brought upon the cattle the plague called mortasheen. An old man named Tammas told Walter Traill Dennison how it pursued him along the shore one night, and how he saved himself by leaping a burn of fresh water, which it has no power to cross."))
 
 NEW['star_jelly'] = kind(
     'Star Jelly', 'J', (220, 220, 240), '253d10+924', 6, 'ambush', 6, 55, 50, 9, 2.0,
@@ -367,11 +274,7 @@ NEW['star_jelly'] = kind(
      atk('Starlight Touch', '2d6+8', 'cold', 'touch', 'slowed', 0.4, 6)],
     family='oozes', tags=['aberration'], res=['acid', 'cold'], weak=['fire'], opener=('Starfall Drop', 1),
     light_shy=True, hidden_overhead=True,
-    lore=("Welsh shepherds called it pwdre ser, the rot of the stars: a pale, trembling jelly found "
-          "on the grass after a night of falling stars, which melts away within days. Medieval "
-          "physicians spread it on sores. Naturalists today blame frog spawn or a swollen soil alga. "
-          "The jelly that drops from the roofs down here comes from nothing so ordinary, and it "
-          "shrinks from any light."))
+    lore=("After a night of falling stars the shepherds of Wales would find upon the grass a pale and trembling jelly that melted away within days, and they called it pwdre ser, the rot of the stars. Medieval physicians spread it upon sores, and naturalists today lay the blame on frog spawn or a swollen alga of the soil. The jelly that drops from the roofs in these depths has no such homely birth, and it shrinks away from any light."))
 
 NEW['psoglav'] = kind(
     'Psoglav', 'P', (110, 90, 70), '266d10+973', 13, 'aggressive', 2, 62, 58, 9, 2.0,
@@ -379,11 +282,7 @@ NEW['psoglav'] = kind(
      atk('Horse-Leg Kick', '3d6+14', 'blunt', 'blow', 'stunned', 0.25, 2)],
     family='goblinkin', tags=['humanoid'], res=['cold'], weak=['fire'], pronoun='he', pack=(2, 3),
     opener=('Iron-Toothed Bite', 1), perception_range=5, item=0.2,
-    lore=("In the villages of Bosnia, Montenegro and Serbia they told of the psoglavci, the dog-heads: "
-          "men with horse's legs, a dog's head, iron teeth and a single eye in the middle of the "
-          "forehead. They live in caves in a land without sun, where precious stones light the dark. "
-          "Their one eye sees poorly but their noses miss nothing, and they dig the dead out of their "
-          "graves to eat them."))
+    lore=("Villagers of Bosnia, Montenegro and Serbia told of the psoglavci, the dog-heads, who are men with the legs of horses and the heads of dogs, with teeth of iron and a single eye in the middle of the forehead. They live in caves in a land without sun, where precious stones give light in the darkness. With their one eye they see but poorly, yet their noses miss nothing, and they dig the dead out of their graves to eat them."))
 
 NEW['waq_waq_tree'] = kind(
     'Waq-Waq Tree', 'T', (120, 150, 90), '360d10+1318', 0, 'sessile', 3, 63, 58, 9, 2.0,
@@ -398,11 +297,7 @@ NEW['waq_waq_tree'] = kind(
                     'dragon', 'shapeshifter', 'goblinoid'],
            'line': "Every head on the Waq-Waq Tree cries out at once: 'Waq! Waq!'",
            'line_unseen': "Somewhere ahead, a chorus of voices cries 'Waq! Waq!'"},
-    lore=("Arab and Persian wonder-books tell of the island of Waq-waq at the edge of the world, where "
-          "a tree bears fruit in the shape of people. When the fruit ripens it falls, crying 'waq, "
-          "waq!'. Later painters gave the tree branches that end in the heads of men and beasts, all "
-          "calling at once. A waq-waq tree in the dark cries out at anything that moves, and "
-          "everything nearby comes to hear it."))
+    lore=("On the island of Waq-waq at the edge of the world, as the wonder-books of Arabs and Persians relate, there grows a tree whose fruit has the shape of people, and when it is ripe it falls, crying 'waq, waq!'. In later paintings its branches end in the heads of men and beasts, all calling at once. Such a tree, standing in the dark, cries out at anything that moves, and then everything near at hand comes to the sound of its crying."))
 
 NEW['yuki_onna'] = kind(
     'Yuki-Onna', 'F', (230, 240, 255), '281d10+1034', 13, 'ranged', 1, 66, 62, 9, 2.0,
@@ -410,11 +305,7 @@ NEW['yuki_onna'] = kind(
      atk('Pale Touch', '3d8+14', 'drain', 'touch')],
     family='fair_folk', tags=['fey'], res=['cold'], weak=['fire'], pronoun='she',
     opener=('Freezing Breath', 4), can_phase_blink=True, phase_blink_chance=0.2, item=0.15,
-    lore=("Lafcadio Hearn wrote down the tale of the snow woman: two woodcutters sheltering in a hut "
-          "through a blizzard, and a woman in white who breathes on the old man until he freezes. She "
-          "spares the young one, Minokichi, and makes him promise never to tell. Years later he tells "
-          "his wife the story, and his wife is the snow woman. For their children's sake she does not "
-          "kill him; she melts away into the mist instead."))
+    lore=("Two woodcutters took shelter in a hut from a blizzard, in the tale that Lafcadio Hearn wrote down, and there a woman in white breathed upon the old man until he froze. The snow woman spared the young one, whose name was Minokichi, and had his promise never to tell of it. Years afterward he told the story to his wife, and his wife was the snow woman herself, yet for their children's sake she did not kill him, but melted away into the mist and was gone."))
 
 NEW['yacumama'] = kind(
     'Yacumama', 'S', (50, 80, 50), '699d10+2562', 9, 'ambush', 1, 70, 65, 9, 2.0,
@@ -424,11 +315,7 @@ NEW['yacumama'] = kind(
      atk('Gaping Jaws', '4d8+20', 'pierce', 'bite')],
     family='serpents', tags=['beast', 'reptile'], res=['cold', 'poison'], weak=['fire'],
     opener=('Drawing Breath', 5),
-    lore=("The peoples of the Peruvian Amazon speak of the yacumama, the mother of the waters: an "
-          "anaconda fifty yards long that lies in the deep pools at a river's head. The Nuttall "
-          "Encyclopaedia of 1907 says it draws in any creature that comes within a hundred yards, as "
-          "if the river itself were breathing in. Fishermen blew a conch before they waded in, so "
-          "that the yacumama would show itself if it was there."))
+    lore=("Mother of the waters is the meaning of yacumama, and by that name the peoples of the Peruvian Amazon speak of an anaconda fifty yards long that lies in the deep pools where a river rises. The Nuttall Encyclopaedia of 1907 says that it draws in any creature within a hundred yards, as if the river itself were breathing in. Therefore the fishermen blew upon a conch before they waded, that the yacumama might show itself if it lay there."))
 
 NEW['tsuchigumo'] = kind(
     'Tsuchigumo', 'X', (120, 100, 60), '714d10+2621', 11, 'ambush', 0, 72, 67, 9, 2.0,
@@ -437,12 +324,7 @@ NEW['tsuchigumo'] = kind(
      atk('Earth Spider Fangs', '4d10+22', 'poison', 'bite', 'poisoned', 0.4, 8)],
     family='vermin', tags=['beast'], res=['poison'], weak=['fire'], opener=('Web Cast', 4), item=0.25,
     relurks=True,
-    lore=("The Heike tells how the warrior Minamoto no Raiko lay sick with a fever no medicine could "
-          "break, and how a strange monk, taller than any man, came to his bedside at night and tried "
-          "to bind him with rope. Raiko slashed at him with his sword, and the next day his men "
-          "followed a trail of blood to a mound behind the Kitano Shrine, where a great earth spider "
-          "lay. In the picture scroll of the Tsuchigumo, when another was cut open, one thousand nine "
-          "hundred and ninety skulls rolled out of its belly."))
+    lore=("While the warrior Minamoto no Raiko lay sick of a fever that no medicine could break, as the Heike tells, there came by night to his bedside a strange monk, taller than any man, who sought to bind him with rope. Raiko slashed at him with his sword, and the next day his men followed a trail of blood to a mound behind the Kitano Shrine and found a great earth spider lying there. In the picture scroll of the Tsuchigumo another was cut open, and one thousand nine hundred and ninety skulls rolled out of its belly."))
 
 NEW['bhuta_vahana_yanta'] = kind(
     'Relic Guardian', 'G', (190, 150, 90), '863d10+3168', 8, 'sessile', -2, 83, 78, 12, 2.0,
@@ -451,11 +333,7 @@ NEW['bhuta_vahana_yanta'] = kind(
      atk('Whirling Swords Low Cut', '3d8+18', 'slash', 'blow', 'bleeding', 0.3, 5)],
     family='constructs', tags=['construct'], res=['poison', 'cold', 'fire'], weak=['lightning'],
     pack=(2, 2), multi_attack_count=3, item=0.3,
-    lore=("The Pali Lokapannatti tells how King Ajatashatru laid the Buddha's relics in a deep "
-          "chamber and set spirit-driven machines to guard them, the bhuta vahana yanta, built from "
-          "plans brought out of the land of the Romans. No one could pass them until the emperor "
-          "Ashoka, long after, learned their secret and stilled them. The machines down here still "
-          "keep their watch, and their swords never stop turning."))
+    lore=("King Ajatashatru laid the relics of the Buddha in a deep chamber, as the Pali Lokapannatti tells, and set over them machines driven by spirits, the bhuta vahana yanta, that were built from plans brought out of the land of the Romans. None could pass those guardians until, long afterward, the emperor Ashoka learned their secret and stilled them. The machines of these depths still keep their watch, and there is never an hour when their swords cease from turning."))
 
 NEW['reem'] = kind(
     "Re'em", 'Q', (80, 60, 40), '1205d10+4417', 13, 'aggressive', -2, 85, 80, 12, 2.0,
@@ -463,12 +341,7 @@ NEW['reem'] = kind(
      atk('Hill-Shaking Trample', '5d8+36', 'blunt', 'trample')],
     family='great_beasts', tags=['beast'], opener=("Horns of the Re'em", 1), can_charge=True,
     charge_bonus_mult=1.5, footprint=[2, 2],
-    lore=("The Hebrew Bible's re'em is a wild ox of terrible strength; Job is asked whether it will "
-          "ever serve him or harrow his valleys, and the King James translators called it the "
-          "unicorn. The rabbis said it was too big for Noah's ark, and puzzled over how it was saved. "
-          "A midrash tells how young David took a sleeping re'em for a hill, climbed it, and was "
-          "carried up toward the sky on its horns when it woke. The re'em of the deep halls are "
-          "awake."))
+    lore=("The re'em of the Hebrew Bible is a wild ox of terrible strength, which the translators of King James called the unicorn, and Job was asked whether it would ever serve him or harrow his valleys. The rabbis held it too great for Noah's ark and puzzled over the manner of its saving. A midrash tells how David in his youth climbed a sleeping re'em, thinking it a hill, and was borne up toward the sky upon its horns when it woke, but the re'em of the deep halls are awake already."))
 
 NEW['eitr'] = kind(
     'Eitr', 'P', (40, 90, 70), '863d10+3163', 7, 'aggressive', 0, 86, 81, 12, 2.0,
@@ -476,11 +349,7 @@ NEW['eitr'] = kind(
      atk('Freezing Slag', '3d10+26', 'cold', 'blow', 'frozen', 0.35, 2)],
     family='oozes', tags=['aberration'], res=['poison', 'cold', 'acid'], weak=['fire'],
     trail_hazard={'hazard': 'venom_pool', 'turns': 20},
-    lore=("Snorri tells that in the beginning poisonous rivers, the Elivagar, flowed out of the "
-          "wellspring in Niflheim. Their venom, the eitr, hardened like slag from a furnace and spread "
-          "through the void as rime, and where that rime met the heat of Muspell the first giant, "
-          "Ymir, was born. Some of the eitr never hardened. It still crawls in the deepest cold, and "
-          "what it touches freezes and sickens at once."))
+    lore=("Poisonous rivers, the Elivagar, flowed in the beginning from the wellspring in Niflheim, as Snorri tells, and their venom, which is named eitr, hardened like slag from a furnace and spread as rime through the void. Where that rime met the heat of Muspell the first giant, Ymir, was born, but some part of the eitr never hardened. It crawls yet in the deepest cold, and whatever it touches is frozen and sickened at the same moment."))
 
 NEW['bakunawa'] = kind(
     'Bakunawa', 'S', (60, 40, 80), '1290d10+4730', 12, 'aggressive', -3, 88, 84, 12, 2.0,
@@ -489,119 +358,100 @@ NEW['bakunawa'] = kind(
      atk('Coiling Crush', '5d10+36', 'blunt', 'grapple', 'immobilized', 0.3, 2),
      atk('Horned Strike', '4d8+34', 'pierce', 'blow')],
     family='serpents', tags=['beast', 'reptile'], res=['cold', 'lightning'], weak=['fire'],
-    lore=("The Visayan peoples of the Philippines say the god Bathala hung seven moons in the sky, and "
-          "the sea serpent Bakunawa rose and swallowed six of them. When it rises for the last moon, "
-          "Bulan, the people run outside and beat pots, gongs and drums until the noise makes it spit "
-          "the moon back out. That is what an eclipse is. The bakunawa coiled in these deeps swallows "
-          "any light it sees."))
+    lore=("Seven moons were hung in the sky by the god Bathala, so the Visayan peoples of the Philippines say, until the sea serpent Bakunawa rose up and swallowed six. An eclipse comes whenever it rises for Bulan, the last moon, and then the people run out of doors and beat upon pots and gongs and drums until the noise drives it to spit the moon out again. The bakunawa coiled in these deeps will swallow any light that it sees."))
 
 # Their family_affinity.json `kinds` entries (the affinity pass writes each
 # kind's five lists from these: tools/content/affinity_pass.py). `form`
 # only where the creature differs from its family; status from its lore.
 AFFINITY = {
-    'mandrake': {'lore': "A root has no mind to frighten or charm, and it never sleeps; its sap is a "
-                         "soporific, not a poison to it.",
+    'mandrake': {'lore': "A root has no mind to be frightened or charmed and it never sleeps, and its sap, which brings slumber to others, is no poison to itself.",
                  'source': "Theophrastus, Historia Plantarum 9.8; Dioscorides on the root boiled in wine.",
                  'status_immune': ['sleeping', 'confused', 'charmed', 'feared', 'blinded']},
-    'kappa': {'lore': "Knock a kappa senseless and the water spills from its dish: a stun is its "
-                      "undoing.", 'source': "Yanagita Kunio, Tono Monogatari (1910), tales 55-59.",
+    'kappa': {'lore': "When a kappa is knocked senseless the water spills from its dish, and so a stun is its undoing.", 'source': "Yanagita Kunio, Tono Monogatari (1910), tales 55-59.",
               'status_weak': ['stunned']},
-    'eloko': {'lore': "The biloko are spirits of the forest: no sleep for them.",
+    'eloko': {'lore': "The biloko are spirits of the forest, and no sleep comes to them.",
               'source': "Mongo-Nkundo tales (Gustaaf Hulstaert).", 'status_immune': ['sleeping']},
-    'asanbosam': {'lore': "A thing of the high branches with iron teeth; no charm turns it.",
+    'asanbosam': {'lore': "It dwells in the high branches and has teeth of iron, and no charm can turn it.",
                   'source': "Akan folklore; Edward Long, The History of Jamaica (1774).",
                   'status_immune': ['charmed']},
-    'ahuizotl': {'lore': "A lake beast with a child's cry and a hand on its tail: flesh and blood, "
-                         "and nothing stranger.", 'source': "Sahagun, Florentine Codex, Book 11.",
+    'ahuizotl': {'lore': "The beast of the lake cries like a child and has a hand upon its tail, yet it is flesh and blood and nothing stranger.", 'source': "Sahagun, Florentine Codex, Book 11.",
                  'status_immune': []},
-    'khalkotauros': {'lore': "Bronze made by Hephaestus breathes fire and cannot burn; a blade "
-                             "glances off the plates, but a hammer dents them.",
+    'khalkotauros': {'lore': "The bronze bulls of Hephaestus breathe fire and cannot burn, and a blade glances from their plates, but a hammer dents them.",
                      'source': "Apollonius of Rhodes, Argonautica 3.1278-1407.",
                      'status_immune': ['burning', 'poisoned', 'sleeping', 'charmed', 'feared', 'confused']},
-    'cu_sith': {'lore': "The fairy hound never sleeps on the hunt and no charm turns it.",
+    'cu_sith': {'lore': "The hound of the fairies never sleeps upon the hunt, and no charm can turn it aside.",
                 'source': "J. G. Campbell, Superstitions of the Highlands and Islands of Scotland (1900).",
                 'status_immune': ['sleeping', 'charmed']},
-    'bulgasari': {'lore': "A beast grown from rice and iron: a blade sinks into the metal of its hide "
-                          "and is eaten; a hammer still bruises it.",
+    'bulgasari': {'lore': "This beast was grown from rice and iron, and a blade that sinks into the metal of its hide is eaten, but a hammer bruises it still.",
                   'source': "Jo Jae-sam, Songnam Japji; the Encyclopedia of Korean Culture.",
                   'status_immune': ['poisoned', 'sleeping', 'charmed', 'feared', 'confused']},
-    'vetala': {'lore': "A spirit in a dead body feels no fear, no sleep and no poison.",
+    'vetala': {'lore': "A spirit that wears a dead body knows neither fear nor sleep nor poison.",
                'source': "Somadeva, Kathasaritsagara (the Vetala Panchavimshati).",
                'status_immune': ['sleeping', 'poisoned', 'charmed', 'feared']},
-    'nahual': {'lore': "A man under the skin: what frightens a man frightens him.",
+    'nahual': {'lore': "Beneath the skin he is a man, and whatever frightens men frightens him.",
                'source': "Sahagun, Florentine Codex, Book 10.", 'status_immune': []},
-    'likho': {'lore': "Likho has one eye: put it out, as the smith did, and she is helpless.",
+    'likho': {'lore': "Likho has but one eye, and if you put it out, as the smith did, she is helpless.",
               'source': "Afanasyev, Narodnye russkie skazki, 'Likho One-Eyed'.",
               'status_immune': ['sleeping'], 'status_weak': ['blinded']},
-    'centaur': {'lore': "Wild horse-men, fearless in battle, and wine sends them reeling: the "
-                        "Lapith wedding began when they drank it.",
+    'centaur': {'lore': "The horse-men are wild and fearless in battle, but wine sends them reeling, and when they drank it at the wedding of the Lapiths the fight began.",
                 'source': "Ovid, Metamorphoses 12.210-535.",
                 'status_immune': ['feared'], 'status_weak': ['confused']},
-    'blue_men_of_the_minch': {'lore': "Sea-men of the fair folk who raise the gales: no sleep takes "
-                                      "them.", 'source': "J. G. Campbell (1900).",
+    'blue_men_of_the_minch': {'lore': "The sea-men of the fair folk raise up the gales, and sleep never takes them.", 'source': "J. G. Campbell (1900).",
                               'status_immune': ['sleeping']},
-    'vila': {'lore': "A fairy of the clouds: no sleep, no charm.",
+    'vila': {'lore': "A fairy of the clouds can be neither lulled to sleep nor charmed.",
              'source': "Vuk Karadzic, Srpske narodne pjesme (1841-62).",
              'status_immune': ['sleeping', 'charmed']},
-    'myrmekes': {'lore': "Desert ants that dig all day: a cold night slows them, a hammer cracks "
-                         "their shells.", 'source': "Herodotus, Histories 3.102-105.",
+    'myrmekes': {'lore': "These ants of the desert dig all day, but a cold night slows them and a hammer cracks their shells.", 'source': "Herodotus, Histories 3.102-105.",
                  'form': {'blunt': 'weak'}, 'status_immune': ['sleeping']},
-    'ponaturi': {'lore': "A people of the dark under the sea: the light that killed them in Tawhaki's "
-                         "tale dazzles them.", 'source': "Sir George Grey, Polynesian Mythology (1855).",
+    'ponaturi': {'lore': "They are a people of the dark beneath the sea, and they are dazzled by the light that slew them in the tale of Tawhaki.", 'source': "Sir George Grey, Polynesian Mythology (1855).",
                  'status_immune': [], 'status_weak': ['blinded']},
-    'taniwha': {'lore': "A water-dragon whose scaled hide turns a thrust; no sleep for a guardian.",
+    'taniwha': {'lore': "The water-dragon has scales that turn a thrust, and no sleep comes to such a guardian.",
                 'source': "Te Ara, the Encyclopedia of New Zealand: 'Taniwha'.",
                 'form': {'pierce': 'resist'}, 'status_immune': ['sleeping']},
-    'impundulu': {'lore': "Spears and guns do not harm the lightning bird, and it cannot be poisoned; "
-                          "fire destroys it.",
+    'impundulu': {'lore': "Neither spear nor gun can harm the lightning bird, nor can it be poisoned, but fire destroys it.",
                   'source': "Axel-Ivar Berglund, Zulu Thought-Patterns and Symbolism (1975).",
                   'form': {'slash': 'resist', 'pierce': 'resist', 'blunt': 'resist'},
                   'status_immune': ['poisoned']},
-    'mapinguari': {'lore': "Its hide turns arrows and knives everywhere but at the navel; its own "
-                           "stench does not trouble it.", 'source': "David Oren, Ciencia Hoje (1993).",
+    'mapinguari': {'lore': "Arrows and knives are turned by its hide everywhere save at the navel, and its own stench troubles it not at all.", 'source': "David Oren, Ciencia Hoje (1993).",
                    'form': {'slash': 'resist', 'pierce': 'resist', 'blunt': 'resist'},
                    'status_immune': ['poisoned', 'confused']},
-    'preta': {'lore': "A hungry ghost has no sleep and no blood for poison, and nothing charms it "
-                      "but food.", 'source': "The Petavatthu; the Ullambana Sutra.",
+    'preta': {'lore': "The hungry ghost has no sleep and no blood for poison, and nothing but food will charm it.", 'source': "The Petavatthu; the Ullambana Sutra.",
               'status_immune': ['sleeping', 'poisoned', 'charmed']},
-    'upas_tree': {'lore': "A tree that poisons the air is proof against poison, and a tree does "
-                          "not fear or sleep.", 'source': "Erasmus Darwin, The Loves of the Plants (1789).",
+    'upas_tree': {'lore': "A tree that poisons the very air is proof against poison, and being a tree it neither fears nor sleeps.", 'source': "Erasmus Darwin, The Loves of the Plants (1789).",
                   'form': {'slash': 'weak', 'pierce': 'resist'},
                   'status_immune': ['sleeping', 'poisoned', 'confused', 'charmed', 'feared', 'blinded']},
-    'nuckelavee': {'lore': "The demon of the Orkney shore fears nothing but fresh water.",
+    'nuckelavee': {'lore': "The demon of the Orkney shore fears nothing in the world but fresh water.",
                    'source': "Walter Traill Dennison, The Scottish Antiquary (1891).",
                    'status_immune': ['sleeping', 'feared']},
-    'star_jelly': {'lore': "A trembling jelly with no eyes, no mind and no blood.",
+    'star_jelly': {'lore': "The trembling jelly has no eyes and no mind, nor any blood.",
                    'source': "John of Gaddesden, Rosa Anglica (c. 1314).",
                    'status_immune': ['blinded', 'sleeping', 'confused', 'feared', 'charmed', 'poisoned']},
-    'psoglav': {'lore': "Its one eye sees poorly in any case: blinding it does nothing.",
+    'psoglav': {'lore': "Its single eye sees so poorly that to blind it avails nothing.",
                 'source': "Tihomir Djordjevic (1953); Srpski mitoloski recnik (1970).",
                 'status_immune': ['blinded']},
-    'waq_waq_tree': {'lore': "A tree of heads that cry: it does not sleep, fear or see as we do.",
+    'waq_waq_tree': {'lore': "This tree bears heads that cry, yet it does not sleep or fear or see as we do.",
                      'source': "The Arabic and Persian wonder-books; al-Qazwini, 'Aja'ib al-makhluqat.",
                      'form': {'slash': 'weak', 'pierce': 'resist'},
                      'status_immune': ['sleeping', 'poisoned', 'charmed', 'feared', 'blinded']},
-    'yuki_onna': {'lore': "The snow woman cannot be frozen, and her blizzard never sleeps; a "
-                          "blade passes through her like snow.", 'source': "Lafcadio Hearn, Kwaidan (1904).",
+    'yuki_onna': {'lore': "The snow woman cannot be frozen and her blizzard never sleeps, and a blade passes through her as through snow.", 'source': "Lafcadio Hearn, Kwaidan (1904).",
                   'form': {'slash': 'resist', 'pierce': 'resist'},
                   'status_immune': ['frozen', 'sleeping', 'charmed']},
-    'yacumama': {'lore': "The mother of the waters never sleeps in her pool.",
+    'yacumama': {'lore': "The mother of the waters lies in her pool and never sleeps.",
                  'source': "The Nuttall Encyclopaedia (1907): 'Yacu-mama'.",
                  'status_immune': ['sleeping']},
-    'tsuchigumo': {'lore': "A swollen hairy body that shrugs off a club; a sword cut it down.",
+    'tsuchigumo': {'lore': "Its swollen and hairy body cares nothing for a club, and it was a sword that cut it down.",
                    'source': "The Heike Monogatari, Tsurugi no maki.",
                    'form': {'blunt': 'resist', 'slash': 'weak'}, 'status_immune': ['sleeping']},
-    'bhuta_vahana_yanta': {'lore': "Machines of bronze and wood driven by spirits: no mind, no "
-                                   "blood, no sleep, no eyes to blind.",
+    'bhuta_vahana_yanta': {'lore': "Spirits drive these engines of bronze and wood, which have no mind, no blood, no sleep and no eyes to blind.",
                            'source': "The Pali Lokapannatti (c. 11th-12th century).",
                            'status_immune': ['sleeping', 'poisoned', 'charmed', 'feared', 'confused',
                                              'paralyzed', 'stunned', 'blinded']},
-    'reem': {'lore': "A wild ox as big as a hill fears nothing that walks.",
+    'reem': {'lore': "The wild ox as big as a hill has no fear of anything that walks.",
              'source': "Job 39:9-12; the King James 'unicorn'.", 'status_immune': ['feared']},
-    'eitr': {'lore': "The first poison of the world: it cannot be poisoned or frozen.",
+    'eitr': {'lore': "The first poison of the world can be neither poisoned nor frozen.",
              'source': "Snorri Sturluson, Prose Edda, Gylfaginning 5.",
              'status_immune': ['frozen', 'poisoned', 'sleeping', 'blinded', 'confused', 'charmed', 'feared']},
-    'bakunawa': {'lore': "A serpent that swallows moons is not blinded by any light.",
+    'bakunawa': {'lore': "The serpent that swallows moons cannot be blinded by any light.",
                  'source': "Alonso de Mentrida (1637); Fernando Buyser (1913).",
                  'status_immune': ['sleeping', 'blinded']},
 }

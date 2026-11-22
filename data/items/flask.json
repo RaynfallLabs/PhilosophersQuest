@@ -8,7 +8,7 @@
     "tier": 2,
     "coat": {"substance": "silver", "blows": 12},
     "floorSpawnWeight": {"1-20": 6, "21-40": 9, "41-60": 5, "61-80": 2, "81-100": 1},
-    "lore": "Filings of pure silver ground fine as flour and folded into a twist of oiled paper. Rubbed into a blade with a thumb of tallow, it makes plain iron bite the way a silver weapon does, until the blows wear it off. The story goes that the man who killed the Beast of Gevaudan had his bullets cast from silver; a hunter who cannot afford a silver blade makes do with this, and the dead and the shapechangers cannot tell the difference."
+    "lore": "The man who slew the Beast of Gevaudan had his bullets cast of silver, or so the tale goes, and a hunter who cannot buy a silver blade makes do with this dust. It is pure silver filed as fine as flour and folded in a twist of oiled paper. Rub it on a blade with a thumb of tallow and plain iron will bite as a silver weapon does until the blows wear it away, for the dead and the shapechangers cannot tell the one from the other."
   },
   "frost_salts": {
     "name": "Frost Salts",
@@ -19,7 +19,7 @@
     "tier": 2,
     "coat": {"substance": "cold", "blows": 12, "rider": {"effect": "slowed", "chance": 0.25, "turns": 3}},
     "floorSpawnWeight": {"1-20": 3, "21-40": 6, "41-60": 12, "61-80": 4, "81-100": 4},
-    "lore": "Pale blue crystals that frost the inside of their jar. The alchemists learned that saltpetre stirred into water steals its heat, and these do the same to anything they touch. Rubbed on a blade, they leave it furred with rime that bites like a winter wind, and a wound they touch goes stiff and slow. The fire-born of the deep cannot bear them."
+    "lore": "Alchemists long ago learned that saltpetre stirred into water steals away its heat, and these pale blue crystals, which frost the inside of their jar, do the same to whatever they touch. Rubbed upon a blade they fur it with rime that bites like the winter wind and makes a wound grow stiff and slow, and the fire-born of the deep cannot endure them."
   },
   "viper_venom": {
     "name": "Viper Venom",
@@ -30,7 +30,7 @@
     "tier": 1,
     "coat": {"substance": "poison", "blows": 10, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 4}},
     "floorSpawnWeight": {"1-20": 8, "21-40": 8, "41-60": 4, "61-80": 2, "81-100": 1},
-    "lore": "A stoppered vial of yellow-green venom milked from the fangs of an adder. Heracles dipped his arrows in the Hydra's blood and every scratch they gave was death. This is a humbler poison, but painted along an edge it turns each cut into a wound that keeps hurting. It does nothing at all to what has no blood to poison: the dead, the stone and the things that live on venom themselves."
+    "lore": "Heracles once dipped his arrows in the blood of the Hydra, so that every scratch from them was death. The yellow-green venom in this stoppered vial was milked from an adder's fangs. It is a humbler poison, yet when it is painted along an edge each cut becomes a wound that goes on hurting. It does nothing at all to what has no blood to poison, such as the dead, the stone, and things that live upon venom themselves."
   },
   "flask_of_holy_water": {
     "name": "Flask of Holy Water",
@@ -43,7 +43,7 @@
     "coat": {"substance": "holy", "blows": 12},
     "throw": {"damage_type": "holy", "damage": 22, "sized_at": 12, "only_weak": true},
     "floorSpawnWeight": {"1-20": 8, "21-40": 8, "41-60": 3, "61-80": 1},
-    "lore": "Water blessed at a wayside shrine and stoppered in a thick clay flask made to break. Sprinkled on a blade it makes every blow a blessed one, and dashed against the dead or the damned it burns them like lamp oil. To a wolf or a man it is only water. Pilgrims carried it down into the dark for exactly that reason."
+    "lore": "At some wayside shrine this water was blessed and stoppered in a thick flask of clay that is made to break. Sprinkled on a blade it makes every blow a blessed one, and dashed against the dead or the damned it burns them like lamp oil. To a wolf or a man it is only water, and for that very reason pilgrims carried it down into the dark."
   },
   "water_of_siloam": {
     "name": "Water of Siloam",
@@ -56,7 +56,7 @@
     "coat": {"substance": "holy", "blows": 16},
     "throw": {"damage_type": "holy", "damage": 238, "sized_at": 45, "only_weak": true},
     "floorSpawnWeight": {"21-40": 3, "41-60": 8, "61-80": 5, "81-100": 2},
-    "lore": "Water drawn from the Pool of Siloam below Jerusalem, where a man born blind washed the mud from his eyes and saw. The flask is sealed with wax and a little cross of lead. It hits the unholy far harder than shrine water does, and its blessing lasts longer on a blade. To anything that is not cursed or damned it does nothing at all."
+    "lore": "A man who was born blind once washed the mud from his eyes in the Pool of Siloam below Jerusalem, and he saw. Water from that pool fills this flask, beneath a seal of wax and a little cross of lead. It strikes the unholy far harder than the water of any shrine and its blessing abides longer upon a blade, though to whatever is neither cursed nor damned it does nothing at all."
   },
   "water_of_life": {
     "name": "Water of Life",
@@ -69,7 +69,7 @@
     "coat": {"substance": "holy", "blows": 20},
     "throw": {"damage_type": "holy", "damage": 836, "sized_at": 80, "only_weak": true},
     "floorSpawnWeight": {"61-80": 4, "81-100": 8},
-    "lore": "John saw a river of the water of life, clear as crystal, flowing from the throne of God. This crystal flask holds a mouthful of something very like it, and it glows faintly in the dark. The demons of the Abyss scream at the sight of it. A blade wet with it stays blessed through twenty blows, and a flask of it broken on a fiend is a terrible thing to see."
+    "lore": "John beheld a river of the water of life, clear as crystal, flowing from the throne of God. A mouthful of something very like it lies in this crystal flask and glows faintly in the dark, and the demons of the Abyss scream at the sight of it. Any blade that is wetted with it stays blessed through twenty blows, and when a flask of it is broken upon a fiend it is a terrible thing to behold."
   },
   "flask_of_fire_oil": {
     "name": "Flask of Fire Oil",
@@ -81,7 +81,7 @@
     "coat": {"substance": "fire", "blows": 12, "rider": {"effect": "burning", "chance": 0.25, "turns": 3}},
     "throw": {"damage_type": "fire", "damage": 16, "sized_at": 8, "status": {"effect": "burning", "turns": 3}},
     "floorSpawnWeight": {"1-20": 12, "21-40": 3, "41-60": 1},
-    "lore": "A clay flask of thick lamp oil with a rag stuffed in its neck. Light the rag and throw it, and the flask bursts into clinging flame; smear the oil along a blade and light it, and the blade burns for a dozen blows. Beasts and trolls are afraid of fire, and a troll cannot close a burn the way it closes a cut."
+    "lore": "Beasts and trolls have ever feared fire, and the troll has the more cause, since it cannot close a burn as it closes a cut. This flask of clay holds thick lamp oil and has a rag stuffed in its neck. Light the rag and throw it, and the flask will burst into clinging flame, or else smear the oil along a blade and set it alight, and the blade will burn for a dozen blows."
   },
   "greek_fire": {
     "name": "Greek Fire",
@@ -93,7 +93,7 @@
     "coat": {"substance": "fire", "blows": 16, "rider": {"effect": "burning", "chance": 0.25, "turns": 4}},
     "throw": {"damage_type": "fire", "damage": 142, "sized_at": 35, "status": {"effect": "burning", "turns": 4}},
     "floorSpawnWeight": {"21-40": 10, "41-60": 4, "61-80": 1},
-    "lore": "The fire the Byzantines poured on the Arab fleets before Constantinople in the 670s. Water would not put it out, and the recipe was so secret that it was lost with the empire. This flask holds something close to it: dark, sticky and smelling of pitch and quicklime. It burns on wet stone, and it keeps burning."
+    "lore": "Before the walls of Constantinople in the 670s the Byzantines poured fire upon the fleets of the Arabs, and water would not quench it. So close was the secret of its making that it perished with the empire, but something near to it is in this flask, dark and sticky and smelling of pitch and quicklime, which burns on wet stone and goes on burning."
   },
   "medeas_fire": {
     "name": "Medea's Fire",
@@ -105,7 +105,7 @@
     "coat": {"substance": "fire", "blows": 20, "rider": {"effect": "burning", "chance": 0.25, "turns": 5}},
     "throw": {"damage_type": "fire", "damage": 579, "sized_at": 70, "status": {"effect": "burning", "turns": 5}},
     "floorSpawnWeight": {"41-60": 1, "61-80": 7, "81-100": 5},
-    "lore": "When Jason left her, the witch Medea sent his new bride a golden robe as a wedding gift. When the bride put it on, it burst into a fire that nothing could put out. This is the poison she steeped it in, sealed in a flask of black glass. It catches as soon as the air touches it."
+    "lore": "When Jason forsook the witch Medea, she sent to his new bride a golden robe for a wedding gift, and as the bride put it on it burst into a fire that none could quench. The poison in which that robe was steeped is sealed in this flask of black glass, and it will catch as soon as the air touches it."
   },
   "hydras_blood": {
     "name": "Hydra's Blood",
@@ -116,7 +116,7 @@
     "tier": 4,
     "coat": {"substance": "poison", "blows": 16, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 6}},
     "floorSpawnWeight": {"41-60": 1, "61-80": 7, "81-100": 4},
-    "lore": "When Heracles had burned the last of the Lernaean Hydra's heads, he cut the body open and dipped his arrows in its gall. Nothing it touched ever healed. One of those arrows fell on the foot of Chiron, the wise centaur who could not die, and the pain was so great that he gave his immortality away to be rid of it. Years later the centaur Nessus died of another, and his poisoned blood killed Heracles himself. This vial is dark green and oily, sealed with lead. Painted along an edge, it turns every cut into a wound that will not close. Like any venom, it does nothing to what has no blood."
+    "lore": "Heracles burned the last of the heads of the Hydra of Lerna and then cut open the body and dipped his arrows in its gall, and nothing that they touched was ever healed. One fell upon the foot of Chiron, the wise centaur who could not die, and so great was the pain that he gave away his immortality to be rid of it. Years afterward the centaur Nessus died by another, and his poisoned blood was the death of Heracles himself. The vial is dark green and oily and sealed with lead. Painted along an edge it turns every cut into a wound that will not close, but like any venom it can do nothing to what has no blood."
   },
   "flask_of_acid": {
     "name": "Flask of Acid",
@@ -127,7 +127,7 @@
     "tier": 1,
     "throw": {"damage_type": "acid", "damage": 27, "sized_at": 15, "status": {"effect": "armor_crack", "turns": 3}},
     "floorSpawnWeight": {"1-20": 8, "21-40": 2, "41-60": 1},
-    "lore": "Oil of vitriol, the alchemists called it: a clear, heavy liquid in a stoppered glass flask that smokes when the stopper comes out. It eats cloth, leather and skin, and it pits a hide or a carapace so the next blows go deeper. It would eat a blade too, so nobody sensible puts it on one. Trolls hate it as they hate fire: their flesh cannot close an acid burn."
+    "lore": "Oil of vitriol was the alchemists' name for this clear and heavy liquor, which smokes when the stopper is drawn from its flask of glass. It eats cloth, leather and skin, and it so pits a hide or carapace that the blows which follow go deeper, but since it would eat a blade as well no prudent person puts it on one. Trolls hate it as they hate fire, for their flesh cannot close a burn of acid."
   },
   "aqua_regia": {
     "name": "Aqua Regia",
@@ -138,7 +138,7 @@
     "tier": 3,
     "throw": {"damage_type": "acid", "damage": 294, "sized_at": 50, "status": {"effect": "armor_crack", "turns": 4}},
     "floorSpawnWeight": {"21-40": 2, "41-60": 7, "61-80": 5},
-    "lore": "Royal water: nitric and salt acids mixed, the only thing the alchemists knew that would dissolve gold, the king of metals. In 1940 a chemist in Copenhagen dissolved two Nobel medals in it so the Nazis could not take them, and after the war the gold was drawn back out of the acid and the medals were struck again. It does the same to scales and plate."
+    "lore": "Royal water is the meaning of its name, for this mingling of nitric and salt acids was all that the alchemists knew to dissolve gold, the king of metals. In 1940 a chemist of Copenhagen hid two Nobel medals from the Nazis by dissolving them in it, and after the war the gold was drawn out and the medals struck anew. It does as much to scales and plate."
   },
   "alkahest": {
     "name": "Alkahest",
@@ -149,7 +149,7 @@
     "tier": 5,
     "throw": {"damage_type": "acid", "damage": 1012, "sized_at": 85, "status": {"effect": "armor_crack", "turns": 5}},
     "floorSpawnWeight": {"61-80": 3, "81-100": 7},
-    "lore": "Paracelsus dreamed of the alkahest, the universal solvent that would dissolve anything at all. His critics asked what flask could hold it. This one is cut from a single piece of rock crystal, and the liquid inside clings to the walls as if it wants out. Broken on anything, it eats it."
+    "lore": "Paracelsus dreamed of an alkahest, a solvent that would dissolve all things in the world, and those who doubted him asked what flask could hold it. This one is hewn from a single rock crystal, and the liquor clings to its walls as though it longed to be out. If the flask is broken upon anything, the alkahest will devour it."
   },
   "seed_handful": {
     "name": "Handful of Seed",
@@ -161,7 +161,7 @@
     "can_be_cursed": false,
     "throw": {"damage_type": "blunt", "damage": 0, "sized_at": 25, "counting": {"kinds": ["vampire", "vampire_spawn", "strigoi", "vrykolakas", "nosferatu"], "turns": 3}},
     "floorSpawnWeight": {"21-40": 5, "41-60": 2},
-    "lore": "A cloth twist of millet and poppy seed. In the Balkans and across the Slavic lands mourners scattered seed on a new grave and along the road home, for a vampire that rises must stop and count every grain before it can go on, and dawn comes first. Thrown at one of the blood-drinking dead, it holds the creature a few turns while it counts. Each creature counts it once; after that it knows the trick."
+    "lore": "Mourners in the Balkans and through the Slavic lands would scatter seed on a new grave and along the road home, since a vampire that rises must halt and count every grain before it goes on, and dawn comes first. A cloth twist of millet and poppy seed, thrown at one of the blood-drinking dead, will hold the creature a few turns at its counting. Yet each creature will count it only once, for afterward it knows the trick."
   },
   "upas_latex": {
     "name": "Upas Latex",
@@ -172,7 +172,7 @@
     "tier": 3,
     "coat": {"substance": "poison", "blows": 12, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 5}},
     "floorSpawnWeight": {"41-60": 6, "61-80": 3, "81-100": 1},
-    "lore": "A stoppered gourd of the milky sap of the upas tree of Java, the ipoh poison that island hunters smeared on their blowgun darts. The London Magazine once claimed the tree killed every living thing for fifteen miles; the truth is smaller and still deadly. Worked into an edge, it turns each cut into a poisoned one. It does nothing to what has no blood."
+    "lore": "Island hunters smeared their blowgun darts with ipoh, the milky sap of the upas tree of Java, and a stoppered gourd of it is here. The London Magazine once claimed that the tree slew every living thing for fifteen miles about, and the truth, though smaller, is deadly enough. Worked into an edge the sap turns each cut into a poisoned one, though it does nothing to what has no blood."
   },
   "eitr_venom": {
     "name": "Vial of Eitr",
@@ -183,6 +183,6 @@
     "tier": 5,
     "coat": {"substance": "poison", "blows": 16, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 8}},
     "floorSpawnWeight": {"81-100": 4},
-    "lore": "A thick black-green venom in a vial of rime-crusted glass, so cold it smokes. Snorri says the eitr flowed out of Niflheim in the poisonous rivers of the beginning and hardened like slag; a little never hardened. Painted along a blade it is the worst poison there is, and nothing with blood in it shrugs it off for long."
+    "lore": "In the beginning, as Snorri tells, eitr flowed from Niflheim in poisonous rivers and hardened like slag, save a little that never hardened. It lies black-green and thick in this vial of rime-crusted glass, so cold that it smokes. Painted along a blade it is the worst poison there is, and nothing that has blood in it can long shrug it off."
   }
 }

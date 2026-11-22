@@ -478,8 +478,7 @@ class LevelManager:
             if not hasattr(dungeon, 'omen_messages'):
                 dungeon.omen_messages = []
             dungeon.omen_messages.append(
-                "A wax-red mark is pressed into the stair. Its keeper is "
-                "somewhere on this floor.")
+                "A mark of red wax is pressed into the stair, and its keeper is somewhere on this floor.")
         if demon_id in self._placed_mini_bosses:
             return  # already placed on a prior visit
 
@@ -521,8 +520,7 @@ class LevelManager:
                     # the floor-99 gate, a dozen floors of climbing later.
                     dungeon.stairs_guardian = demon_id
                     dungeon.stairs_guardian_line = (
-                        "A seal of red wax as wide as a shield is set across "
-                        "the stair. Its keeper is still on this floor.")
+                        "A seal of red wax as wide as a shield is set across the stair, and its keeper is still on this floor.")
                     dungeon.stairs_guardian_open_line = (
                         "The seal across the stair cracks from edge to edge "
                         "and falls away.")

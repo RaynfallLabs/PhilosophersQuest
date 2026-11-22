@@ -26,7 +26,7 @@
     "rare_wood",
     "exotic_organic"
   ],
-  "lore_template": "A {material_name} composite bow, horn on the belly and sinew on the back, glued and left a year to cure. Scythian and Mongol riders shot bows like it from the saddle at full gallop.",
+  "lore_template": "Scythian and Mongol riders shot at full gallop from bows like this one of {material_name}, which has horn upon its belly and sinew upon its back, and was glued and left a year to cure.",
   "design_notes": "v2 chain rebalance: normal class, 5 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 5 = 2.00×. Class mechanic: Range 7 tiles. +STR modifier added to damage (composite limb power). (see weapon_class_chain + class_mechanic fields). damage_modifier 1.15 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
   "class_mechanic": "str_bonus_range_7",

@@ -241,7 +241,7 @@ class LoreFixturesMixin:
             self.add_message("\"There is a vault,\" it says, and tells you where.", 'success')
             return
         self._lore_reward_map(pos, fid)
-        self.add_message("\"Then have it all,\" it says, and names every room on the floor.", 'success')
+        self.add_message("\"Then you shall have it all,\" it says, and names every room on the floor.", 'success')
 
     def _lore_reward_light_brazier(self, pos, fid) -> None:
         """Fenrir's hall: a lit brazier melts the ice round it. Fenrir slips

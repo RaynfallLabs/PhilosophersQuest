@@ -13,24 +13,24 @@
         "library"
       ],
       "verb": "finish the copyist's page",
-      "pass": "You find the copyist's slip and set it right. The ink takes, and the page is a scroll now.",
-      "fail": "Your correction blots across the line. The page is spoiled."
+      "pass": "You find the copyist's slip and set it right, and as the ink takes, the page becomes a scroll.",
+      "fail": "Your correction blots across the line, and the page is spoiled."
     },
     "alchemist_bench": {
       "subject": "science",
       "reward": "potion",
       "rooms": [],
       "verb": "work out what happened in the retort",
-      "pass": "You see what the alchemist got wrong, and finish the work properly. A potion clears in the flask.",
-      "fail": "The residue fizzes, turns brown and sets solid. Whatever it was going to be, it isn't now."
+      "pass": "You see what the alchemist got wrong and finish the work properly, and a potion clears in the flask.",
+      "fail": "The residue fizzes, turns brown and sets hard, and it will never be what it was meant to be."
     },
     "surveyor_table": {
       "subject": "geography",
       "reward": "map",
       "rooms": [],
       "verb": "finish the surveyor's map",
-      "pass": "You read the surveyor's marks and finish what he started. The whole floor lies on the table, and now it lies in your head.",
-      "fail": "You guess at the marks and smudge the ink. The map is no good to anyone now."
+      "pass": "You read the surveyor's marks and finish what he began, until the whole floor lies drawn upon the table and you have it by heart.",
+      "fail": "You guess at the marks and smudge the ink, and the map is of no use to anyone now."
     },
     "memorial_stone": {
       "subject": "history",
@@ -39,8 +39,8 @@
         "graveyard"
       ],
       "verb": "read the names on the stone",
-      "pass": "You know these names, or the war they died in. The last line is not a name at all: it says where they hid their stores.",
-      "fail": "The names mean nothing to you. They stay strangers."
+      "pass": "You know these names, or the war in which they died. The last line is no name at all, but tells where they hid their stores.",
+      "fail": "The names mean nothing to you, and their bearers remain strangers."
     },
     "wayside_icon": {
       "subject": "theology",
@@ -49,8 +49,8 @@
         "shrine"
       ],
       "verb": "pray at the little shrine",
-      "pass": "You know whose icon this is, and what to say to it. Something eases in you.",
-      "fail": "The words will not come. The candle gutters and goes out."
+      "pass": "You know whose icon this is and what to say to it, and your heart is eased.",
+      "fail": "The words will not come, and the candle gutters and goes out."
     },
     "ledger_desk": {
       "subject": "economics",
@@ -59,8 +59,8 @@
         "treasury"
       ],
       "verb": "balance the clerk's books",
-      "pass": "The books do not balance, and you see why: somebody skimmed. The missing coin is in a false bottom of the drawer.",
-      "fail": "The figures swim. Whoever cooked these books cooked them well."
+      "pass": "The books do not balance, for someone has been skimming, and you find the missing coin under a false bottom in the drawer.",
+      "fail": "The figures swim, for whoever cooked these books was skilled at the work."
     },
     "trophy_board": {
       "subject": "animal",
@@ -69,8 +69,8 @@
         "zoo"
       ],
       "verb": "name the hunter's trophies",
-      "pass": "You name every trophy on the board, and the hunter's notes beside them tell you more about what hunts this floor.",
-      "fail": "Antlers, tusks, a skull. You could not say whose."
+      "pass": "You name every trophy on the board, and the hunter's notes beside them teach you more of what hunts this floor.",
+      "fail": "You cannot say what beasts bore these antlers, tusks and skull."
     },
     "field_kitchen": {
       "subject": "cooking",
@@ -79,8 +79,8 @@
         "barracks"
       ],
       "verb": "finish the stew",
-      "pass": "You know what this stew wants, and give it. It is the best thing you have eaten in a long time.",
-      "fail": "You stir in the wrong thing at the wrong time. The pot burns black."
+      "pass": "You know what this stew lacks and you supply it, and it is the best thing that you have eaten in a long while.",
+      "fail": "You stir in the wrong thing at the wrong time, and the pot burns black."
     },
     "brazen_head": {
       "subject": "ai",
@@ -89,16 +89,16 @@
         "throne_room"
       ],
       "verb": "question the brazen head",
-      "pass": "It tells you three things about this floor, and you catch the one it made up. Then, sulking, it tells you something true.",
-      "fail": "You believe every word. The head laughs, loud enough to wake the floor."
+      "pass": "It tells you three things about this floor, and you catch the one it made up, whereupon it sulks and tells you something true.",
+      "fail": "You believe every word, and the head laughs, loud enough to wake the floor."
     },
     "gamblers_table": {
       "subject": "trivia",
       "reward": "pot",
       "rooms": [],
       "verb": "sit in on the goblins' game",
-      "pass": "You know the answer to the question on the last card. The pot is yours.",
-      "fail": "Wrong card. You leave your stake on the table."
+      "pass": "You know the answer to the question on the last card, and the pot is yours.",
+      "fail": "It is the wrong card, and you leave your stake on the table."
     },
     "riddle_lintel": {
       "subject": "philosophy",
@@ -106,24 +106,24 @@
       "rooms": [],
       "verb": "answer the lintel",
       "placement": "secret_door",
-      "pass": "You see what the carved question is really asking. Stone grinds on stone, and a door opens beneath the owl.",
-      "fail": "Your answer is clever and wrong. The owl goes on watching."
+      "pass": "You see what the carved question truly asks, and with a grinding of stone a door opens beneath the owl.",
+      "fail": "Your answer is clever but it is wrong, and the owl goes on watching."
     },
     "brazier_cold": {
       "subject": "science",
       "reward": "light_brazier",
       "placement": "boss",
       "verb": "light the brazier",
-      "pass": "You build the coals the way a fire wants to be built, and the brazier roars up. The ice round it begins to run.",
-      "fail": "The coals smoke, sulk and die. The kindling is spent."
+      "pass": "You build the coals as a fire would have them built, and the brazier roars up until the ice round it begins to run.",
+      "fail": "The coals smoke sullenly and die, and the kindling is spent."
     },
     "smoke_vent": {
       "subject": "theology",
       "reward": "seal_vent",
       "placement": "boss",
       "verb": "seal the vent with a prayer",
-      "pass": "You speak the words over the vent, and the smoke stops as if a door had shut. Nothing more will climb out of that one.",
-      "fail": "Your words go up with the smoke, and the smoke goes on."
+      "pass": "You speak the words over the vent and the smoke stops as though a door had shut, so that nothing more will climb out of that one.",
+      "fail": "Your words go up with the smoke, and the smoke does not cease."
     }
   }
 }

@@ -28,15 +28,15 @@
   },
   "title": "A LONELY EMBERPUP",
   "story": [
-    "On a rock in the middle of the room sits a small orange fire lizard, all alone. A little grey cloud hangs under the ceiling above him, and the rain falls on the rock and on nothing else. His scales are soaked, and the flame on the tip of his tail has shrunk to a guttering flicker. The rain is putting his fire out.",
-    "You take a step closer and he flinches back against the stone, small and shaking. There is an old scar across his snout, and a frayed cord is knotted round the rock, as if something was once tied there and left. Whoever owned him was hard on him. Someone bigger than him has hurt him before, and you are bigger than him.",
-    "He was left here on purpose, and nobody is coming back for him. He is still here anyway, keeping his little fire alive in the rain, and it is nearly out. He watches your hands and your boots, and everything about him says run."
+    "In the middle of the room a small orange fire lizard sits all alone upon a rock. A little grey cloud hangs beneath the ceiling, and from it the rain falls upon him and his rock and upon nothing else, so that his scales are soaked and the flame at the tip of his tail has dwindled to a guttering flicker. You can see that little by little the rain is putting out his fire.",
+    "When you take a step nearer he shrinks back trembling against the stone. An old scar runs across his snout, and a frayed cord is knotted round the rock, as though something had once been tied there and left. It is plain that whoever owned him was hard on him and that someone bigger than himself has hurt him before, and he can see that you are bigger than he is.",
+    "He was left here on purpose, and no one is coming back for him. Yet here he stays, keeping his little fire alive in the rain though it is nearly out, and as he watches your hands and your boots you can tell that he longs to run from you."
   ],
   "waiting": [
-    "The Emberpup huddles on his rock in the rain. When you come near he flinches and makes himself small, the way a thing does when something bigger has hurt it before.",
-    "The Emberpup watches you from his rock. He still flinches when you move, but his eyes follow your hands now, not your boots.",
-    "The Emberpup lifts his head when you come in. He does not flinch this time, and his tail flame flickers a little brighter.",
-    "The Emberpup creeps to the edge of his rock as you come near, as close as the rain will let him. He is not afraid of you any more."
+    "The Emberpup huddles on his rock in the rain. When you draw near he flinches and makes himself small, as a creature will that has been hurt before by something bigger.",
+    "The Emberpup watches you from his rock. He flinches still when you move, yet his eyes have left your boots and follow your hands now.",
+    "The Emberpup lifts his head as you come in. This time he does not flinch, and the flame upon his tail flickers a little brighter.",
+    "As you come near, the Emberpup creeps to the edge of his rock, as close as the rain will allow, and you see that he is afraid of you no longer."
   ],
   "waiting_sheltered": "Your leaf cloak is spread over his rock, and the rain runs off it in beads.",
   "options": {
@@ -47,34 +47,34 @@
     "shelter": "Leave him something against the rain"
   },
   "pick_food": "What will you leave him?",
-  "no_food": "You search your pack, but you have nothing he could eat. The Emberpup watches you warily from his rock.",
+  "no_food": "You search your pack, but you have nothing he could eat, and the Emberpup watches you warily from his rock.",
   "fed": [
-    "You set the {food} down at the foot of his rock and step back. The Emberpup darts down, snatches it and scurries to the far side of the stone. He eats with his back to the wall, watching you carefully the whole time. He is still wary, and still hurt.",
+    "You set the {food} down at the foot of his rock and step back. The Emberpup darts down to snatch it and carries it to the far side of the stone, where he eats with his back to the wall, watching you carefully all the while, for he is still wary, and still hurt.",
     "You set down the {food} and step back again. He takes the food and scampers away, but this time he lingers for a moment before he eats, and he seems to relax.",
-    "This time he does not run. He eats the {food} right in front of you, and when it is gone he edges closer and sniffs your hand, very carefully, the way a hurt thing does when it is deciding to trust. His tail flame burns steady and bright."
+    "This time he does not run. He eats the {food} before your eyes, and when he has finished he edges closer and sniffs very gently at your hand, as a hurt creature does that is learning to trust, and all the while the flame of his tail burns steady and bright."
   ],
-  "fed_again": "He eats the {food} from your hand. His flame steadies, and he looks up at you. He is listening now.",
+  "fed_again": "He eats the {food} from your hand, and his flame grows steady. When he looks up at you, you can see that he is ready to listen.",
   "_too_soon_note": "Come back before feed_gap_turns have passed: one line per feed so far (Brandon 2026-11-14, the first line his own), the last for any later feed.",
   "too_soon": [
     "The Emberpup, still eating the treat you provided, growls and backs away as you approach.",
-    "The Emberpup is still eating the treat you left him. He hunches over it and gives a small growl as you come near, but this time he does not run."
+    "The Emberpup is still eating the treat you left him. He hunches over it and growls softly as you come near, though this time he does not run."
   ],
-  "already_fed": "He has eaten, and his flame is steady. He watches you, waiting to see what you will do.",
-  "refused": "You hold out your hand and say it. The Emberpup cringes back against the stone as if you had raised a fist. He does not trust you. He does not trust anyone bigger than he is.",
-  "refused_trust": "He looks at your hand, then at your face, and shrinks back. Someone bigger than him spoke kindly once, and then hurt him. He needs more time to be sure of you.",
-  "refused_hungry": "He is cold and hungry again, and he will not come down. Leave him something to eat first.",
-  "refused_cold": "He wants to come. But the rain is still on him and his flame is half drowned, and he will not leave his rock like that. A cloak of leaves would turn this rain.",
-  "no_shelter": "You have nothing that would keep this rain off him. Cloth soaks through and iron runs wet. A cloak of leaves would turn this rain.",
+  "already_fed": "He has eaten and his flame is steady, and now he watches you to see what you will do.",
+  "refused": "You hold out your hand and say it, but the Emberpup cringes against the stone as though you had raised a fist. He does not yet trust you, nor anyone else who is bigger than he is.",
+  "refused_trust": "He looks from your hand to your face and shrinks away, for once someone bigger than he is spoke kindly to him and afterward hurt him. He needs more time before he can be sure of you.",
+  "refused_hungry": "He is cold and hungry again, and he will not come down until you have left him something to eat.",
+  "refused_cold": "He wants to come. But the rain is still on him and his flame is half drowned, so that he will not leave his rock as matters stand. A cloak of leaves would turn this rain.",
+  "no_shelter": "You have nothing that would keep this rain off him, for cloth soaks through and iron runs wet. A cloak of leaves would turn this rain.",
   "not_leaves": "You hold your {item} over his rock, but the rain soaks through and drips on him all the same. A cloak of leaves would turn this rain.",
   "take_off": "The leaf cloak is on your own back. Take it off first, and then you can leave it over his rock.",
-  "already_sheltered": "Your leaf cloak is still over his rock. Out of the rain, his flame burns straight.",
-  "sheltered": "You spread the {item} over the Emberpup's rock. The rain hits the broad leaves and runs off them in beads, and for the first time in a long while no water falls on him. His tail flame steadies and stands up straight. A lizard cannot make his own warmth; he has to take it from the world, and the rain has been taking it away. The leaves are his now.",
-  "ignore": "You leave the Emberpup on his rock. He watches you go.",
-  "attack": "You raise your weapon. The Emberpup gives one small, frightened cry, as if he had known all along it would come to this, scrambles off the rock and flees into the dark, the little rain cloud chasing after him. You never see him again.",
+  "already_sheltered": "Your leaf cloak is still over his rock, and now that he is out of the rain his flame burns straight.",
+  "sheltered": "You spread the {item} over the Emberpup's rock. The rain falls upon the broad leaves and runs off them in beads, so that for the first time in a long while no water touches him, and the flame of his tail grows steady and stands upright. A lizard cannot make his own warmth but must take it from the world, and all this while the rain has been taking it away from him. From this hour the leaves are his.",
+  "ignore": "You leave the Emberpup on his rock, and he watches you as you go.",
+  "attack": "As you raise your weapon the Emberpup gives one small cry of fear, as if he had known all along that it would come to this. He scrambles from the rock and flees into the dark with the little rain cloud following after him, and you never see him again.",
   "attack_chronicle": "Hurt the fire lizard left in the rain. He fled into the dark.",
   "quiz_title": "\"I CHOOSE YOU!\"  --  ANIMAL",
-  "pass": "The Emberpup looks at you for a long moment. You are big, and you could have hurt him, and you never did. Then he climbs down off the rock with the leaf cloak still round his shoulders, walks out from under the rain, and presses his warm side against your leg. Behind him the little cloud thins and is gone. The flame on his tail blazes up bright and strong.",
-  "fail": "You try, but the words do not come out right, and your voice comes out too loud. The Emberpup flinches and creeps back to the middle of his rock. He is still there. Warm and fed again, he might listen.",
+  "pass": "The Emberpup looks at you for a long moment. You are big and might have hurt him, and in all this time you never did. And so he climbs down from the rock with the leaf cloak still round his shoulders and walks out from under the rain to press his warm side against your leg, while behind him the little cloud thins away to nothing and the flame on his tail blazes up bright and strong.",
+  "fail": "You try, but the words come out wrong and your voice is too loud, so that the Emberpup flinches and creeps back to the middle of his rock. Yet he has not fled, and when he is warm and fed again he may listen.",
   "name_title": "HE CHOSE YOU TOO",
   "name_prompt": "Will you give your Emberpup a name?",
   "named_message": "{name} the Emberpup will not be left behind again.",

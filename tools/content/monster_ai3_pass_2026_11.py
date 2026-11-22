@@ -35,13 +35,13 @@ HINTS = ROOT / 'data' / 'hints.json'
 # has room.
 HINTS_NEW: dict = {
     '4': [
-        "Jonah came out of the great fish alive. Whatever takes a man whole can be cut open from within.",
-        "A bandit captain carries something for a bad day. Make his a short one, and whatever he saved is yours.",
-        "Ask any Irishman: a leprechaun pays only when there is nowhere left for him to run.",
+        "Jonah came alive out of the great fish, and whatever takes a man whole can be cut open from within.",
+        "A bandit captain carries something for a bad day. Make that day a short one, and whatever he saved will be yours.",
+        "As any Irishman will tell you, a leprechaun pays only when there is nowhere left for him to run.",
     ],
     '5': [
-        "A spell takes a breath to say. A blow struck in that breath is worth two struck after it.",
-        "The dead in their mounds guard what is theirs and no more. Leave the barrow, and the barrow lets you go.",
+        "A spell takes a breath to say, and a blow struck in that breath is worth two that are struck after it.",
+        "The dead in their mounds guard only what is their own, so if you leave the barrow, the barrow lets you go.",
         "Stand beside a fire elemental or a frost giant and you burn or freeze, though neither has struck you.",
     ],
 }
@@ -729,7 +729,7 @@ def apply_tells(raw: str) -> tuple:
 # brigand carries no kit.
 HINTS_REPLACED = {
     "A brigand carries something for a bad day. Make his a short one, and whatever he saved is yours.":
-        "A bandit captain carries something for a bad day. Make his a short one, and whatever he saved is yours.",
+        "A bandit captain carries something for a bad day. Make that day a short one, and whatever he saved will be yours.",
     "The salamander's heat and the frost giant's cold reach a pace beyond their hands.":
         "Stand beside a fire elemental or a frost giant and you burn or freeze, though neither has struck you.",
 }

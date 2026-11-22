@@ -56,61 +56,61 @@ Every tier also unlocks one **Field Note** on the family page, so the page fills
 Notation: "+4 saves vs X" applies when a member of this family inflicts X. "Chain N+" means the blow lands at chain N or more. "Lesser" means not a named foe.
 
 ### The Restless Dead (Large)
-- **T2:** "The smell of the grave hangs on the stair: the restless dead walk this floor."
+- **T2:** "The smell of the grave hangs upon the stair, for the restless dead walk this floor."
 - **T3 Grave-Salt:** +4 saves vs their paralysis, disease and draining. Disease wears off twice as fast.
 - **T4 Bonebreaker:** your blows hit 25% harder when they strike what the dead fear (their listed weaknesses: holy, fire, blunt).
 - **T5 Turn the Dead:** a chain-8+ blow against one sends every lesser undead in sight fleeing for 6 turns.
 
 ### Ghosts and Shades (Large)
-- **T2:** "The candle-flames lean the wrong way: ghosts drift on this floor."
+- **T2:** "The candle-flames lean the wrong way, for ghosts drift on this floor."
 - **T3 Iron and Salt:** +4 saves vs their fear and draining, and their draining no longer heals them.
 - **T4 Second Sight:** invisible ghosts within 3 tiles show to you as a faint shimmer you can strike.
 - **T5 Lay the Ghost:** at chain 5+, your blows ignore their resistances, as if your weapon were blessed.
 
 ### Vampires and Liches (Large)
-- **T2:** "The stair smells of iron and old roses: a vampire or a lich keeps court here."
+- **T2:** "The stair smells of iron and old roses, for a vampire or a lich keeps court here."
 - **T3 Garlic and Ash:** +4 saves vs their drain and paralysis, and their bite no longer heals them.
 - **T4 Hunter's Patience:** +3 seconds on the maths chain against them.
 - **T5 Stake Through the Heart:** at chain 10+, a lesser vampire or lich below 30% health dies outright: no mist, no rising.
 
 ### Demons and Devils (Large)
-- **T2:** "Brimstone on the stair: something from the Pit has climbed this far."
+- **T2:** "Brimstone taints the stair, for something from the Pit has climbed this far."
 - **T3 Circle of Salt:** +4 saves vs their burning and confusion. Burning wears off twice as fast.
 - **T4 True Names:** +15% weapon damage against them.
 - **T5 Banishment:** at chain 10+, a lesser demon below 35% health is cast back into the Pit.
 
 ### Dragons and Wyrms (Large)
-- **T2:** "Gold-smell and scorch-marks on the stair: a wyrm lairs on this floor."
+- **T2:** "The stair is scorched and smells of gold, for a wyrm lairs on this floor."
 - **T3 Dragon-Ward:** 20% less fire, cold and poison damage from their attacks, and +4 saves vs burning, freezing and poison.
 - **T4 The Soft Belly:** +15% weapon damage against them (Sigurd struck Fafnir from below).
 - **T5 The Missing Scale:** at chain 10+, your blow ignores a dragon's scales and resistances, Fafnir's included.
 
 ### Giants and Trolls (Large)
-- **T2:** "The stair shakes underfoot: giants walk this floor."
+- **T2:** "Giants walk this floor, and the stair shakes under their tread."
 - **T3 Steady Hand:** +3 seconds on the maths chain against them.
 - **T4 Fire and Dawn:** your blows stop a troll's or a giant's regeneration for 5 turns.
 - **T5 The Bigger They Are:** at chain 5+, +20% damage against them, and +30% against giants that fill more than one tile.
 
 ### Goblins and Orcs (Large)
-- **T2:** "Crude marks scratched on the stair: a goblin warband holds this floor."
+- **T2:** "Crude marks are scored upon the stair, for a goblin warband holds this floor."
 - **T3 Break Their Nerve:** when you kill one, every lesser goblin or orc that saw it may lose its nerve and flee for 4 turns.
 - **T4 Trap-Wise:** +4 saves vs their fear and bleeding, and their ambushers never catch you unawares.
 - **T5 Your Name Is Known:** lesser goblins and orcs flee from you on sight. By the time you earn this they are no threat, so it removes the tedium.
 
 ### Mortal Foes (Large)
-- **T2:** "Bootprints and a cold campfire on the stair: armed men and women walk this floor."
+- **T2:** "Bootprints and a cold campfire mark the stair: armed men and women walk this floor."
 - **T3 Read Their Hands:** the thieves among them can never steal from you.
 - **T4 Steady Hand:** +3 seconds on the maths chain against them.
 - **T5 Yield!:** at chain 8+, a lesser foe below half health surrenders, throws down his purse and runs.
 
 ### The Fair Folk (Medium)
-- **T2:** "A ring of mushrooms on the stair: the Fair Folk are abroad on this floor."
+- **T2:** "Mushrooms grow in a ring upon the stair: the Fair Folk are abroad on this floor."
 - **T3 Coat Turned Inside Out:** +4 saves vs their confusion, sleep and charm.
 - **T4 Cold Iron:** +15% weapon damage against them, doubled with an iron or cold-iron weapon.
 - **T5 Their True Name:** invisible or disguised fey within 4 tiles show to you, and their charm can never take you.
 
 ### Great Beasts (Medium)
-- **T2:** "Fresh tracks and torn bark on the stair: great beasts hunt this floor."
+- **T2:** "Fresh tracks and torn bark mark the stair: great beasts hunt this floor."
 - **T3 Hunter's Harvest:** harvesting their corpses gives one extra portion.
 - **T4 Steady Hand:** +3 seconds on the maths chain against them.
 - **T5 Beast-Friend:** half of all lesser beasts arrive calm and leave you be unless you strike first.
@@ -128,67 +128,67 @@ Notation: "+4 saves vs X" applies when a member of this family inflicts X. "Chai
 - **T5 Arachne's Bane:** +20% damage against spiders, and their venom can no longer poison you.
 
 ### Serpents and Swamp-Kin (Medium)
-- **T2:** "A shed skin on the stair: serpents coil on this floor."
+- **T2:** "A shed skin lies on the stair: serpents coil on this floor."
 - **T3 Antivenom:** +4 saves vs their poison and paralysis, and poison wears off twice as fast.
 - **T4 Mongoose:** your first blow in a fight against a serpent starts at chain 2.
 - **T5 Snake-Charmer:** at chain 8+, a lesser serpent you strike is charmed calm for 8 turns.
 
 ### Birds and Winged Hunters (Small)
-- **T2:** "Feathers drift down the stair: winged hunters nest on this floor."
+- **T2:** "Feathers drift down the stair from winged hunters that nest on this floor."
 - **T3 Hooded:** +4 saves vs their blinding and confusion (the falconer's hood).
 - **T4 Falconer's Eye:** +20% damage with bows and thrown weapons against them.
 - **T5 Heracles' Rattle:** at chain 8+, the din sends every lesser bird in sight scattering for 6 turns.
 
 ### Gorgons and Basilisks (Small)
-- **T2:** "Stone figures stand on the stair, their faces frozen in fear: a gorgon's gaze haunts this floor."
+- **T2:** "Stone figures stand on the stair with faces frozen in fear, for a gorgon's gaze haunts this floor."
 - **T3 Averted Eyes:** +4 saves vs the killing gaze and their poison.
 - **T4 Perseus' Shield:** while you carry a shield, their gaze cannot take you at all.
 - **T5 Harpe:** +20% damage against them, and at chain 10+ a lesser one meets its own stare and turns to stone.
 
 ### Monsters of Legend (Large)
-- **T2:** "The stair is carved with an old story: a monster of legend waits on this floor."
+- **T2:** "An old tale is carved upon the stair, for a monster of legend waits on this floor."
 - **T3 Steady Hand:** +3 seconds on the maths chain against them.
 - **T4 Iolaus' Torch:** your blows stop their regeneration for 5 turns, so the hydra's heads stay down.
 - **T5 Know the Story:** once per fight, your first wrong answer against one does not end your chain. You know how the story ends.
 
 ### Werebeasts and Shapeshifters (Small)
-- **T2:** "Claw-marks and a torn cloak on the stair: a shapeshifter hunts this floor."
+- **T2:** "Claw-marks and a torn cloak lie on the stair: a shapeshifter hunts this floor."
 - **T3 Wolfsbane:** +4 saves vs their bleeding and disease, and bleeding wears off twice as fast.
 - **T4 Silvered:** +10% damage against them, and +30% with a silver weapon.
 - **T5 Forced Shape:** at chain 8+, a lesser shapeshifter is stunned for 3 turns as its shape tears.
 
 ### Golems and Constructs (Large)
-- **T2:** "Grinding stone and ticking brass on the stair: something made, not born, guards this floor."
+- **T2:** "Stone grinds and brass ticks on the stair, for something made, not born, guards this floor."
 - **T3 Steady Hand:** +3 seconds on the maths chain against them.
 - **T4 Find the Seam:** at chain 5+, your blows ignore their resistances (Medea pulled the nail from Talos's ankle).
 - **T5 Erase the Letter:** at chain 10+, a lesser construct below 35% health falls lifeless (*emet*, truth, becomes *met*, dead).
 
 ### Elementals and Djinn (Large)
-- **T2:** "The air on the stair tastes of lightning and ash: elementals stir on this floor."
+- **T2:** "The air of the stair tastes of lightning and ash, for elementals stir on this floor."
 - **T3 Ward of the Elements:** 20% less fire, cold, lightning and acid damage from them.
 - **T4 Opposing Element:** your blows hit 25% harder when they strike what the elemental is weak to.
 - **T5 Solomon's Seal:** their burning and freezing can never take you, and their elemental damage is halved.
 
 ### Oozes and Slimes (Small)
-- **T2:** "The stair is slick and smells of acid: oozes creep on this floor."
+- **T2:** "The stair is slick and smells of acid, for oozes creep on this floor."
 - **T3 Clean Blade:** +4 saves vs their paralysis and weakness, and weakness wears off twice as fast.
 - **T4 Strike True:** your blows never split them, and +15% weapon damage against them.
 - **T5 Fire and Frost:** your blows hit 40% harder when they strike what an ooze is weak to.
 
 ### Aberrations (Large)
-- **T2:** "The stair feels wrong, as if it bends: aberrations lurk on this floor."
+- **T2:** "The stair feels wrong and seems to bend, for aberrations lurk on this floor."
 - **T3 Steel Mind:** +4 saves vs their confusion and paralysis, and hallucination wears off twice as fast.
 - **T4 Mimic-Sense:** a disguised mimic within 2 tiles gives itself away to you.
 - **T5 The Unblinking:** +20% damage against them, and their ambushers never catch you unawares.
 
 ### Plants and Fungi (Small)
-- **T2:** "Spores drift on the stair like dust: something green and hungry grows on this floor."
+- **T2:** "Spores drift like dust on the stair, for something green and hungry grows on this floor."
 - **T3 Herbalist's Mask:** +4 saves vs their poison, sleep and hallucination, and poison wears off twice as fast.
 - **T4 Herbalist:** harvesting them gives one extra portion.
 - **T5 Woodsman's Axe:** +20% damage against them, and their ambushers never catch you unawares.
 
 ### Celestials (Small)
-- **T2:** "A clean light falls on the stair: a celestial creature walks this floor."
+- **T2:** "A clean light falls on the stair, for a celestial creature walks this floor."
 - **T3 Shaded Eyes:** +4 saves vs their blinding and confusion.
 - **T4 Angel's Due:** their holy damage hurts you 25% less.
 - **T5 Entertaining Angels:** lesser celestials arrive calm and leave you be unless you strike first.

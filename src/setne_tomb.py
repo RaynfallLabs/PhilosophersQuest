@@ -242,7 +242,7 @@ class SetneMixin:
             return False
         al = data().get('altar') or {}
         if not getattr(book, 'spent', False):
-            self.add_message(al.get('unread_message', "Not yet. You swore to read it first."),
+            self.add_message(al.get('unread_message', "It is too soon to lay it here, for you swore that you would read it first."),
                              'warning')
             return True
         floor, deepest, block, turn = self._deed_where()

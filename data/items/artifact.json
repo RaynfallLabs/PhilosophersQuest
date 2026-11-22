@@ -10,7 +10,7 @@
     ],
     "weight": 1.0,
     "min_level": 0,
-    "lore": "The alchemists called their goal the Great Work and wrote that it passes through three colors: the blackening, the whitening, and at last the reddening, when the Stone appears. Zosimos of Panopolis sought it in Roman Egypt. Copyists claimed that Nicolas Flamel made it in Paris. The Emerald Tablet, ascribed to Hermes Trismegistus, puts the method in one line: that which is above is like that which is below. None of them held this. It is red, heavier than gold, and warm as a living hand. What it is carried past, it shows truly. Abaddon kept it in the Pit because its last change needs sunlight.",
+    "lore": "The alchemists named their quest the Great Work and wrote that it passes through three colours, the blackening, the whitening and at last the reddening, in which the Stone appears. Zosimos of Panopolis sought it in Roman Egypt, copyists declared that Nicolas Flamel had made it in Paris, and the Emerald Tablet, ascribed to Hermes Trismegistus, gives all the method in one line: that which is above is like that which is below. Yet none of them ever held this. It is red, heavier than gold and warm as a living hand, and it shows truly whatever it is carried past. Abaddon kept it in the Pit because its last change needs sunlight.",
     "special_properties": {
       "plot_role": "abaddon_drop_endgame_anchor",
       "effects": [
@@ -39,7 +39,7 @@
     ],
     "weight": 0.5,
     "min_level": 0,
-    "lore": "Minos prayed to Poseidon for a sign that Crete was his to rule, and the god sent a white bull walking out of the surf, to be given back in sacrifice. Minos thought it too fine to kill and offered a lesser animal. Poseidon's punishment fell on the king's house: the Minotaur, Asterion, was born of it, and the Labyrinth was built to hide him. This small bronze bull has been worn smooth by centuries of hands. It still smells faintly of sea-foam, and it still wants to be given back at sacred water.",
+    "lore": "King Minos prayed to Poseidon for a sign that Crete was his to rule, and the god sent a white bull walking out of the surf, which was to be given back to him in sacrifice. But Minos thought it too fair to kill and offered a lesser beast, and for this Poseidon punished the king's house with the birth of the Minotaur Asterion, whom the Labyrinth was built to hide. This little bull of bronze, worn smooth by centuries of hands, smells faintly yet of sea-foam, and it still wants to be given back at sacred water.",
     "special_properties": {
       "plot_role": "asterion_quest_layer1",
       "effects": [
@@ -66,7 +66,7 @@
     ],
     "weight": 0.2,
     "min_level": 25,
-    "lore": "A single milky eye, cold as a sea-stone. The three Grey Sisters, Deino, Enyo and Pemphredo, were born old, and they had one eye and one tooth among them, passed from hand to hand. Perseus waited until the eye was between two sisters and all three were blind, and took it. He would not give it back until they told him the road to Medusa. It goes on watching from inside a pack. The gods rewarded that piece of cunning at a place sacred to Athena, and they might again.",
+    "lore": "Deino, Enyo and Pemphredo, the three Grey Sisters, were born old and had but one eye and one tooth among them, which went from hand to hand. Perseus waited until the eye was passing between two, when all three were blind, and seized it, and would not restore it until they told him the road to Medusa. It is milky and cold as a sea-stone, and it watches still from within a pack. The gods rewarded that cunning deed at a place sacred to Athena, and it may be that they would do so again.",
     "spread": 13,
     "peak_weight": 0.4,
     "special_properties": {
@@ -94,7 +94,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "A glass vial that makes no sound when shaken. The gods had twice bound the wolf Fenrir with iron, and twice he had burst the chain. So Odin sent to the dwarves, who asked for six things. This was the first: the noise a cat makes when it walks. Snorri adds, quite seriously, that this is why a cat's step has made no sound from that day on. The dwarves used all there was.",
+    "lore": "Twice the wolf Fenrir burst the iron chains of the gods, and then Odin sent to the dwarves, who asked for six things, of which the first was the noise that a cat makes in walking. They used all that there was of it, and that, as Snorri gravely records, is why the step of a cat has been silent ever since. It is held in this vial of glass, which makes no sound when it is shaken.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -122,7 +122,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "A twist of fine filaments, like hair, that the eye keeps sliding off. It is the second of the six things the dwarves of Svartalfheim worked into the fetter Gleipnir: the beard of a woman. The old storyteller who wrote the recipe down told his listener to check it against the world. Women have no beards, he pointed out, because the dwarves took them all.",
+    "lore": "The beard of a woman was the second of the six things that the dwarves of Svartalfheim wrought into the fetter Gleipnir, and the old storyteller who set down the recipe bade his hearer prove it by looking about the world, where women have no beards because the dwarves took them all. This twist of fine threads is like hair, and the eye slips from it continually.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -150,7 +150,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "A gnarled tendril of grey stone, cool and very slightly flexible. A mountain looks as though it ought to be rooted like a tree, but dig beneath one and there is only more stone. The Norse account explains why: the dwarves pulled up every root there was for the binding of the wolf Fenrir. This piece was left on the workshop floor.",
+    "lore": "One would think that a mountain must be rooted as a tree is, yet those who dig beneath one find only more stone. The reason, as the Norsemen tell, is that the dwarves pulled up every root there was to bind the wolf Fenrir. This gnarled tendril, grey and cool and a very little pliant, was left lying upon the workshop floor.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -178,7 +178,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "A sealed bubble that smells of deep water and cold currents. Fish do not breathe air, and no one has ever seen the breath of one hang in a winter morning. According to the Norse reckoning there used to be such a thing, until the dwarves gathered all of it for the cord that holds the wolf. The bubble turns slowly, as if still looking for the surface.",
+    "lore": "Fishes draw no air, and no one has seen the breath of a fish hang upon a winter morning. Yet in the reckoning of the Norse there was once such a thing, until the dwarves gathered every whit of it for the cord that holds the wolf. This sealed bubble smells of deep water and cold currents, and it turns slowly, as though it sought the surface still.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -206,7 +206,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "One bright drop that keeps its shape and glistens without any light to help it. It is the last ingredient of Gleipnir: the spittle of a bird. Fenrir himself now drools enough to fill a river, which the Norse call Van, where he lies bound with a sword propping his jaws. The birds gave up theirs so that he could be put there.",
+    "lore": "Last of all that went to the making of Gleipnir was the spittle of a bird, and here is one bright drop that keeps its shape and glistens without any light. The birds gave up theirs that Fenrir might be bound, and where he lies with a sword propping his jaws he drools now so greatly as to fill a river, which the Norse call Van.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -234,7 +234,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "A pale thread, something between nerve and tendon, that twitches now and then as if it had felt something move. The dwarves asked for the sinews of a bear, the cords that carry feeling through that enormous body, and wove them into the wolf's fetter with five other things that no longer exist. It senses what its bearer cannot.",
+    "lore": "The dwarves asked for the sinews of a bear, the cords that carry feeling through all that mighty body, and wove them into the wolf's fetter with five other things that are no longer in the world. This pale thread is of a kind between nerve and tendon, and it twitches now and again as if it felt some movement, for it senses what its bearer cannot.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -262,7 +262,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "The first chain the gods made for Fenrir was called Leyding, and the second, twice as strong, Dromi. He snapped both. The third is this: a ribbon as smooth and soft as silk, made by the dwarves from six things that are not in the world any more. The wolf smelled a trick and would not be bound unless a god laid a hand between his jaws as a pledge. Only Tyr stepped forward. The ribbon tightened the more the wolf struggled, and all the gods laughed except Tyr, who lost his hand. It has never been broken.",
+    "lore": "Leyding was the name of the first chain that the gods made for Fenrir, and Dromi, twice as strong, of the second, and he snapped them both. The third is this ribbon, as smooth and soft as silk, which the dwarves made from six things that are in the world no longer. The wolf suspected a trick and would not be bound unless a god laid a hand between his jaws for a pledge, and Tyr alone came forward. It tightened the more as the wolf strove, and all the gods laughed save Tyr, who lost his hand. From that day to this the ribbon has never been broken.",
     "special_properties": {
       "identified": true,
       "plot_role": "fenrir_quest_layer1_assembled",
@@ -291,7 +291,7 @@
     "_weight_note": "Five pounds a scrap, fifty for all ten: half a STR-10 hero's load, carried from floor 5 to floor 79 (winning-build plan 2026-11-13 section 3.7). The lore says nothing of what they are for; only Recall Lore does (data/hints.json).",
     "min_level": 1,
     "identified": false,
-    "lore": "An offcut of shoe leather, the stiff corner a cobbler trims away at the toe or heel when he cuts a sole. It is thick and heavy, hard as a board, too stiff to patch armor and too tough to sew. It is no use to anyone.",
+    "lore": "When a cobbler cuts a sole he trims away the stiff corner at toe or heel, and this is such a piece of shoe leather. It is thick and heavy, as hard as a board, too rigid to patch armour and too tough to sew, so that it is of no use to anyone.",
     "spread": 8,
     "peak_weight": 0.4,
     "special_properties": {
@@ -319,7 +319,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A blood-red disc, hot as a coin left in the fire, with the smell of brimstone on it. John of Patmos saw a scroll in heaven sealed with seven seals, and woe followed the breaking of each. The Pit has seven of its own, and this was kept by the first of its guardians. It came away from the demon's body only when the demon was dead.",
+    "lore": "John of Patmos beheld in heaven a scroll that was sealed with seven seals, and woe followed at the breaking of each. The Pit likewise has seven, and this blood-red disc, hot as a coin left in the fire and reeking of brimstone, was in the keeping of the first of its guardians, from whose body it could not be taken until the demon was dead.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -346,7 +346,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A sickly green disc that weeps something foul and makes the air around it hum like a cloud of flies. Tradition gives the rider on the white horse a crown, a bow and the name of Pestilence, and sends him out conquering. The demon that carried this seal did the same work in the dark below. It holds the Pit shut a little less well for every hand it passes through.",
+    "lore": "Tradition gives to the rider on the white horse a crown, a bow and the name of Pestilence, and sends him forth conquering, and the demon who bore this seal did the like work in the darkness below. It is a disc of sickly green that weeps some foulness and makes the air hum as with a cloud of flies, and with every hand through which it passes it holds the Pit shut a little less surely.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -373,7 +373,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A withered disc the color of dead grain. The third rider of the Apocalypse sits a black horse and holds a pair of scales, and a voice names his prices: a day's wage for a measure of wheat. Whoever holds this seal feels that arithmetic in the stomach, as though days had passed since the last meal. It is one of the seven locks on the Abyss.",
+    "lore": "Upon a black horse sits the third rider of the Apocalypse with a pair of scales in his hand, while a voice names his prices: a day's wage for a measure of wheat. This withered disc, coloured like dead grain, is one of the seven locks upon the Abyss, and whoever holds it feels that reckoning in the belly, as though days had passed since the last meal.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -400,7 +400,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A rust-red disc etched with crossed blades. To the rider on the red horse was given a great sword, and power to take peace from the earth so that men should kill one another. The seal trembles with the memory of it: the shouting, the standards, the ground afterward. A demon wore it as a badge of office, and the Pit was the office.",
+    "lore": "To the rider of the red horse was given a great sword, and power to take peace from the earth so that men should kill one another. This disc of rusty red, graven with crossed blades, trembles at the memory of the shouting and the standards and the field when all was over, and a demon wore it as the badge of his office, which was the warding of the Pit.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -427,7 +427,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A pale disc, cold as a headstone in January. John wrote: behold a pale horse, and his name that sat on him was Death, and Hell followed with him. The shadow of whoever holds this seal grows darker and a little longer than it should be. The demon that carried it is dead. The seal does not seem to have noticed.",
+    "lore": "Of the fourth rider John wrote: behold a pale horse, and his name that sat on him was Death, and Hell followed with him. This pale disc is cold as a headstone in January, and the shadow of any who holds it grows darker and a little longer than it ought. The demon who carried it is dead, yet the seal is no less baleful than while he lived.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -454,7 +454,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A cracked grey disc that shivers in the hand. When the sixth seal was opened, John saw a great earthquake: the sun turned black as sackcloth, the moon became as blood, and every mountain and island was moved out of its place. The stone underfoot groans when this is carried over it, as if it remembered the order and expected it again.",
+    "lore": "At the opening of the sixth seal John saw a great earthquake, when the sun turned black as sackcloth, the moon became as blood, and every mountain and island was moved out of its place. This cracked grey disc shivers in the hand, and wherever it is borne the stone underfoot groans, as if it remembered that command and looked to hear it given again.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -481,7 +481,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A disc of pale silver that swallows sound; near it even breathing is muffled. When the Lamb opened the seventh seal there was silence in heaven for about half an hour, and then the seven trumpets were handed out. This is the last lock on the Pit and the worst, because of what the quiet is waiting for.",
+    "lore": "When the Lamb opened the seventh seal there was silence in heaven for about half an hour, and then the seven trumpets were given out. This pale disc of silver swallows sound so that even breath is muffled near it, and it is the last and worst lock of the Pit, for in its quiet those trumpets wait to be blown.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -509,7 +509,7 @@
     "weight": 1.0,
     "min_level": 0,
     "identified": false,
-    "lore": "Michael's name is a question, 'Who is like God?', and it was his battle cry when he threw the Dragon out of heaven. Painters show him with a sword in one hand and a pair of scales in the other, weighing souls at the Judgment while a devil tries to tip the pan. These are the scales. In the Book of Revelation the king of the locusts of the Abyss is named Abaddon, the Destroyer. When he opens the Pit, the Host answers these scales: for every locust that rises, an angel comes down.",
+    "lore": "With the cry 'Who is like God?', which is the meaning of his name, Michael cast the Dragon out of heaven. The painters show him with a sword in one hand and in the other a pair of scales, in which he weighs the souls at Judgment while a devil seeks to tip the pan, and these are those scales. The Book of Revelation names Abaddon, the Destroyer, as king of the locusts of the Abyss, and when he opens the Pit the Host will answer these scales, so that for every locust that rises an angel comes down.",
     "special_properties": {
       "identified": true,
       "plot_role": "abaddon_quest_layer4_heavenly_host",
@@ -537,7 +537,7 @@
     "min_level": 0,
     "identified": false,
     "cursed": true,
-    "lore": "Thales of Miletus said the lodestone must have a soul, because it moves iron without touching it. This one has a will as well. It is a massive black stone that drinks the light around it, and it weighs as much as a small anvil. A dying knight begged a stranger to carry it for the sake of his wife, and the curse binds it to anyone who takes it up freely. It cannot be set down. Only an altar will break the bond, and the promise would still be owed.",
+    "lore": "Thales of Miletus held that the lodestone must have a soul, since it moves iron without touching it, but this one has a will besides. It is a great black stone that drinks the light about it, as heavy as a small anvil. A knight who lay dying begged a stranger to carry it for his wife's sake, and by its curse it is bound to anyone who takes it up freely and cannot be set down. Only an altar will break that bond, and even then the promise would still be owed.",
     "special_properties": {
       "cursed": true,
       "identified": true,
@@ -565,7 +565,7 @@
     "weight": 2.0,
     "min_level": 0,
     "identified": false,
-    "lore": "An iron-bound scroll case closed with the wax seal of the City Watch. Inside are the positions of the companies defending a city under siege, and thousands of lives ride on its reaching the surface. The courier who carried it this far could go no farther and asked with his last breath that someone else finish the run. It is heavy and of no use underground. It is a promise, which is a different kind of weight.",
+    "lore": "A courier bore this iron-bound case of scrolls as far as he was able, and with his last breath he begged that another would finish the journey. It is closed with the wax seal of the City Watch and holds the stations of the companies that defend a city under siege, so that thousands of lives hang upon its reaching the surface. It is heavy and of no use underground, and to its own weight is added the weight of a promise.",
     "special_properties": {
       "identified": true,
       "plot_role": "courier_promise",
@@ -593,7 +593,7 @@
     "min_level": 38,
     "identified": false,
     "stair_reveal": true,
-    "lore": "A wooden image of armed Athena, small enough to carry under one arm. The Trojans said it fell from heaven at the feet of their founder Ilus, and a prophecy held that Troy could not fall while it stayed inside the walls. So Odysseus and Diomedes crept in by night and stole it, and only then was the Horse worth building. The goddess of sound strategy still favors whoever carries her likeness: the way down shows itself to the bearer through stone and darkness alike.",
+    "lore": "The Trojans held that this wooden image of armed Athena, small enough to be carried beneath one arm, fell from heaven at the feet of Ilus their founder, and it was prophesied that Troy could not fall while it stayed within the walls. Therefore Odysseus and Diomedes crept in by night and stole it, and only then was it worth their while to build the Horse. The goddess of sound counsel in war favours still whoever bears her likeness, and shows to the bearer the way down through stone and darkness alike.",
     "spread": 10,
     "peak_weight": 0.3,
     "special_properties": {
@@ -622,7 +622,7 @@
     "min_level": 70,
     "identified": false,
     "quiz_reroll": true,
-    "lore": "The Tablet of Destinies made its holder master of what must be. Enlil, chief of the gods of Sumer, wore it at his breast and set it aside only to bathe. The lion-headed storm-bird Anzu, who guarded his door, watched for that moment, seized the Tablet and flew to the mountains, and every decree of heaven fell silent. Ninurta hunted him down with arrows and brought it back. It lets its bearer refuse one verdict in each place: a wrong answer is unsaid, the clay cracks a little further, and a different question is asked.",
+    "lore": "He who held the Tablet of Destinies was master of what must be, and Enlil, chief of the gods of Sumer, wore it on his breast and laid it by only when he bathed. Anzu, the lion-headed bird of storm who guarded his door, watched for that hour and flew off with it to the mountains, and every decree of heaven fell silent until Ninurta hunted him down with arrows and brought it home. In each place it lets its bearer refuse one verdict: a wrong answer is unsaid, the clay cracks a little further, and a different question is asked.",
     "spread": 27,
     "peak_weight": 0.2,
     "special_properties": {
@@ -659,7 +659,7 @@
     "peak_weight": 0.0,
     "can_be_cursed": false,
     "max_enchant": 0,
-    "lore": "Vidar, the silent son of Odin, owns a shoe that has been in the making since the world began. It is pieced together from the scraps cobblers trim from the toes and heels of every shoe, which is why the Norse say a man who wants to help the gods should throw those scraps away. At Ragnarok the wolf Fenrir will swallow Odin. Then Vidar will plant this shoe on the wolf's lower jaw, take the upper jaw in his hand, and tear him apart.",
+    "lore": "Vidar, the silent son of Odin, has a shoe that has been in the making since the world began. It is pieced from the scraps that cobblers trim from the toes and heels of every shoe, and for that reason the Norsemen say that one who would help the gods should cast those scraps away. At Ragnarok, when the wolf Fenrir has swallowed Odin, Vidar will set this shoe upon the lower jaw of the wolf, take the upper jaw in his hand and rend him asunder.",
     "special_properties": {
       "identified": true,
       "plot_role": "fenrir_quest_layer2_instant_kill",
@@ -865,7 +865,7 @@
       "score_bonus_on_use": 5000,
       "plot_role": "wonder_relic"
     },
-    "lore": "Hesiod, who told the story first, calls it a pithos: a clay storage jar as tall as a man. More than two thousand years later the scholar Erasmus mistranslated the word, and it has been a box ever since. Zeus sent Pandora and her jar to Epimetheus, whose brother Prometheus had warned him to accept no gifts from Olympus. She lifted the lid. Sickness, toil and every sorrow flew out over the earth, and she clapped it shut with only Hope left inside, caught under the rim. This one is small, sealed with wax and cord, and painted with fleeing figures.",
+    "lore": "It was Pandora whom Zeus sent, bearing a jar, to Epimetheus, though his brother Prometheus had warned him to take no gift from Olympus. Hesiod, who first told the tale, calls it a pithos, which is a jar of clay as tall as a man, but more than two thousand years afterward the scholar Erasmus rendered the word amiss and it has been a box ever since. She lifted the lid, and sickness, toil and every sorrow flew out over the earth before she could clap it shut with Hope alone left caught beneath the rim. This one is small, sealed with wax and cord and painted with fleeing figures.",
     "_disabled_reason": "chaos_table dispatcher pending — vision audit 2026-05-30"
   },
   "aladdins_lamp": {
@@ -982,7 +982,7 @@
       "score_bonus_on_use": 7500,
       "plot_role": "wonder_relic"
     },
-    "lore": "A brass oil lamp, dented and tarnished, worth nothing at market. The tale of Aladdin was not in the old Arabic manuscripts of the Thousand and One Nights. A Syrian storyteller named Hanna Diyab told it to the Frenchman Antoine Galland in Paris in 1709, and Galland wrote it in. A sorcerer from the far west sends a tailor's idle son into a cave for a lamp he calls worthless. The jinni bound in this one is patient and exact. It grants a single wish to a worthy hand, and half of one to an unworthy hand.",
+    "lore": "The tale of Aladdin is in none of the old Arabic books of the Thousand and One Nights, but Hanna Diyab, a storyteller of Syria, told it in Paris in 1709 to the Frenchman Antoine Galland, who wrote it among the others. In it a sorcerer out of the far west sent a tailor's idle son into a cave for a lamp that he called worthless, and this dented lamp of tarnished brass would indeed fetch nothing at market. Yet a jinni is bound within it, patient and exact, who grants a single wish to a worthy hand, and half of one to an unworthy hand.",
     "_disabled_reason": "wish_categories dispatcher pending — vision audit 2026-05-30"
   },
   "soul_sphere": {
@@ -1004,7 +1004,7 @@
     "buc_known": true,
     "floor_spawn_chance": {"1-33": 0.08, "34-66": 0.03, "67-100": 0.01},
     "_doc_sphere": "The six Soul Spheres (pet_system.sphere_spec). 'sphere': what hatches: tier 1/2/3 hatches at hatch_level 1, 25 or 55 (a newborn, its first evolution, its final form); 'family' guarantees one of the family's own companions. The SPHERE decides, never the floor. 'floor_spawn_chance': its chance per floor, by floor band (dungeon.spawn_items rolls ONE number for all six). Trader stock and prices: data/traders.json, data/item_worth.json share_by_id. A sphere is never cursed (can_be_cursed false, buc_known true); its KIND is learned by identifying it or by throwing one (as a thrown potion teaches), and it looks the same either way (its art is the item; the unidentified name describes that look).",
-    "lore": "A globe of smoky glass in a cage of dark iron, with a pale wisp of soul-light curled up asleep inside. Throw it, and the sleeper wakes at your side as a newborn companion: most often a creature of one of the four elements, and once in a long while someone you know from home."
+    "lore": "Within a globe of smoky glass, caged about with dark iron, a pale wisp of soul-light lies curled in sleep. If you throw it the sleeper will wake at your side as a newborn companion, which is most often a creature of one of the four elements, and once in a long while is someone you know from home."
   },
   "greater_soul_sphere": {
     "name": "Greater Soul Sphere",
@@ -1024,7 +1024,7 @@
     "can_be_cursed": false,
     "buc_known": true,
     "floor_spawn_chance": {"34-66": 0.04, "67-100": 0.015},
-    "lore": "A globe of smoky glass caged in bright silver, its soul-light burning like a small blue star. The spirit asleep in this one has already grown into its first true form: thrown, it wakes ready to fight, with its first special skill already learned. Most often it is a creature of the elements; once in a long while it is someone you know from home."
+    "lore": "Bright silver cages this globe of smoky glass, and the soul-light in it burns like a little blue star, for the spirit that sleeps here has grown already into its first true form. When it is thrown it wakes ready for battle, having learned the first of its special skills, and most often it is a creature of the elements, though once in a long while it is someone you know from home."
   },
   "master_sphere": {
     "name": "Master Sphere",
@@ -1044,7 +1044,7 @@
     "can_be_cursed": false,
     "buc_known": true,
     "floor_spawn_chance": {"67-100": 0.025},
-    "lore": "Crystal caged in four silver hoops under a little crown, so full of soul-light that it is hard to look at. The spirit inside is fully grown, in its final form, with every skill its kind can learn. The masters of the old binding art made only a handful of these, and most of them are still down here somewhere."
+    "lore": "Only a handful of these spheres were made by the masters of the old art of binding, and most lie here still in the deep places. Each is of crystal, caged in four hoops of silver beneath a little crown, and so full of soul-light that the eye can scarcely bear it, for the spirit within is full grown, in its final form, with every skill that its kind can learn."
   },
   "hearth_sphere": {
     "name": "Hearth Sphere",
@@ -1064,7 +1064,7 @@
     "can_be_cursed": false,
     "buc_known": true,
     "floor_spawn_chance": {"1-33": 0.008, "34-66": 0.003, "67-100": 0.001},
-    "lore": "Smoky glass in an iron cage trimmed with gold, warm to the touch like a stone from beside the fire at home. The wisp inside is no stranger: it is always one of the family's own companions, come down into the dark to find you. If every one of them is already at your side, a newborn creature of the elements answers instead."
+    "lore": "Warm as a stone from beside the hearth at home is this sphere of smoky glass in its cage of iron trimmed with gold. The wisp within is no stranger, for it is always one of the family's own companions, come down into the dark to find you. But if every one of them is at your side already, it is a newborn creature of the elements that answers."
   },
   "greater_hearth_sphere": {
     "name": "Greater Hearth Sphere",
@@ -1084,7 +1084,7 @@
     "can_be_cursed": false,
     "buc_known": true,
     "floor_spawn_chance": {"34-66": 0.004, "67-100": 0.0015},
-    "lore": "Smoky glass caged in silver trimmed with gold, and the warm light inside burns steady and bright, like a lamp left in the window for someone coming home late. One of the family's own companions sleeps here, already grown into its first true form. If every one of them is already at your side, a grown creature of the elements answers instead."
+    "lore": "A light burns warm and steady within this smoky glass and its cage of gold-trimmed silver, like a lamp set in the window for one who is coming home late. Here sleeps one of the family's own companions, grown already into its first true form, and if every one of them is at your side already, a grown creature of the elements will answer instead."
   },
   "master_hearth_sphere": {
     "name": "Master Hearth Sphere",
@@ -1104,7 +1104,7 @@
     "can_be_cursed": false,
     "buc_known": true,
     "floor_spawn_chance": {"67-100": 0.0025},
-    "lore": "Crystal in four gold-trimmed silver hoops under a little golden crown, blazing with warm light. One of the family's own companions waits inside at the height of its strength, in its final form, and it has come a very long way to stand beside you. If every one of them is already there, a creature of the elements in its final form answers instead."
+    "lore": "One of the family's own companions has come a very long way to stand beside you, and waits at the height of its strength, in its final form. The crystal that holds it, with four gold-trimmed hoops of silver and a little golden crown, blazes with warm light. If every one of them is beside you already, a creature of the elements in its final form will answer instead."
   },
   "unusual_soul_sphere": {
     "name": "Unusual Soul Sphere",
@@ -1133,7 +1133,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A black thorn as long as a finger, drawn from the paw of a lion who took it better than expected. Aulus Gellius tells of a runaway slave named Androcles who did a lion the same service in an African cave. Years later the two met again on the sand of the Circus, in front of all Rome, and the lion remembered. A lion's memory is long, and this still smells of him.",
+    "lore": "Androcles, a runaway slave, once drew such a thorn from a lion's paw in a cave of Africa, as Aulus Gellius tells, and when the two met again years later upon the sand of the Circus, before all Rome, the lion remembered him. This black thorn, as long as a finger, came from the paw of a lion who suffered it to be drawn out more patiently than anyone would expect. The memory of lions is long, and the thorn smells of him still.",
     "special_properties": {
       "identified": true,
       "plot_role": "lion_chain_token",
@@ -1160,7 +1160,7 @@
     "weight": 0.5,
     "min_level": 0,
     "identified": false,
-    "lore": "A Gospel of John small enough for a pocket, bound in red leather worked with a vine. It lay in the coffin of Cuthbert of Lindisfarne, the shepherd who became a bishop and would rather have stayed a hermit. When the longships came, the monks lifted coffin and book together and carried them from place to place for seven years. The last bearer sent it down to a chapel where his brothers wait. It is worth a great deal of money to the wrong people, and it was handed over on a promise.",
+    "lore": "In the coffin of Cuthbert of Lindisfarne, the shepherd who was made a bishop and would gladly have remained a hermit, there lay this Gospel of John, small enough for a pocket and bound in red leather worked with a vine. When the longships came the monks lifted coffin and book together and bore them from place to place for seven years, and the last bearer has sent the book down to a chapel where his brothers wait. Though it is worth much money to the wrong people, it was given into your hand upon a promise.",
     "special_properties": {
       "identified": true,
       "plot_role": "bearer_promise",
@@ -1190,7 +1190,7 @@
     "id_level": 0,
     "is_unique": true,
     "unidentified_name": "a dented flask of lamp oil",
-    "lore": "A dented tin flask of lamp oil, warm from an old man's lap. For sixty years Wat Rowe has lit the seven lamps on the Long Stair so that pilgrims can see their feet. His knees will do six. The seventh lamp is at the bottom, and last winter two pilgrims fell in the dark beneath it. Nobody remembers who lit a lamp. Everybody remembers falling.",
+    "lore": "For sixty years Wat Rowe has lit the seven lamps upon the Long Stair, that pilgrims might see their feet, but his old knees will carry him now to six and no farther. The seventh stands at the bottom, and last winter two pilgrims fell in the darkness beneath it. He had this dented tin flask of oil warm in his lap, and it is his saying that nobody remembers who lit a lamp, but everybody remembers falling.",
     "special_properties": {
       "identified": true,
       "plot_role": "lamplighter_promise",
@@ -1217,7 +1217,7 @@
     "id_level": 0,
     "is_unique": true,
     "unidentified_name": "a great ivory horn bound in gold",
-    "lore": "Roland's horn, carved from one elephant's tusk and bound in gold. At Roncevaux, with the Saracens coming over the hills in their thousands, his friend Oliver begged him three times to blow it while Charlemagne was still near enough to turn back. Three times Roland was too proud. He blew it only when the rear guard was dying, so hard that his temples burst, and Charlemagne heard it thirty leagues off and came back at the gallop to find them all dead. Help called from far away comes late: blow it before the fight, then give ground and hold on until it comes. There is a crack along the mouthpiece. Roland asked for it to be blown at the last gate, so the rear guard is remembered.",
+    "lore": "Roland bore this horn, carved from a single elephant's tusk and bound with gold. At Roncevaux, when the Saracens came over the hills in their thousands, his friend Oliver begged him three times to sound it while Charlemagne was near enough to turn back, and three times Roland was too proud. Only when the rear guard was dying did he blow, so hard that his temples burst, and Charlemagne heard it thirty leagues off and came galloping back to find them all dead. Since help that is called from far away comes late, you should blow it before the fight, and then give ground and hold on until it comes. The mouthpiece is cracked along its length, and Roland asked that it be blown at the last gate, so that the rear guard should be remembered.",
     "special_properties": {
       "identified": true,
       "plot_role": "roland_promise",
@@ -1246,7 +1246,7 @@
     "id_level": 0,
     "is_unique": true,
     "unidentified_name": "a hunting horn on a green baldric",
-    "lore": "Robin Hood's own hunting horn, on a baldric of Lincoln green. In the ballads he blows it and his yeomen come out of the greenwood: when Little John knocked him off a narrow bridge into the brook, when the curtal friar threw him in the river, and last of all at Kirklees, three weak blasts, when Little John came too late to save him. He hung it round your neck on the bridge, for a fair bout. Blow it once, in need, and his Merry Men will come.",
+    "lore": "Robin Hood wore this hunting horn upon a baldric of Lincoln green, and in the ballads his yeomen came out of the greenwood at the sound of it. He blew it when Little John tumbled him from a narrow bridge into the brook, and when the curtal friar threw him in the river, and last of all at Kirklees in three weak blasts, when Little John came too late to save him. For a fair bout upon the bridge he hung it round your neck, and if you blow it once, in need, his Merry Men will come.",
     "special_properties": {
       "identified": true,
       "plot_role": "robin_hood_horn",
@@ -1274,7 +1274,7 @@
     "id_level": 0,
     "is_unique": true,
     "unidentified_name": "an old bugle-horn on a baldric",
-    "lore": "The bugle-horn from the table under the hill. At Sewingshields, by the Roman Wall, they tell of a farmer who followed his ball of thread into the hall where Arthur sleeps with his queen, his knights and his hounds. He drew the sword and they woke; he cut the garter; then he lost his nerve and sheathed the sword, and they slept again, and Arthur cursed the day of the man who never blew the bugle-horn. You blew it. Arthur gave it back to you for your hour of greatest need: blow it once more, and the sleepers will come.",
+    "lore": "At Sewingshields by the Roman Wall the folk tell of a farmer who followed his ball of thread into the hall beneath the hill, where Arthur sleeps with his queen, his knights and his hounds, and where this bugle lay upon a table. He drew the sword and they woke, and he cut the garter, but then his courage failed and he sheathed the sword, so that they slept once more, while Arthur cursed the day of the man who never blew the bugle-horn. You blew it, and Arthur gave it back to you against your hour of greatest need. Blow it once more, and the sleepers will come.",
     "special_properties": {
       "identified": true,
       "plot_role": "sleeping_king_bugle",
@@ -1302,7 +1302,7 @@
     "id_level": 0,
     "is_unique": true,
     "unidentified_name": "a great curved horn banded in gold",
-    "lore": "Gjallarhorn, the Yelling Horn of Heimdall, the white god with the gold teeth, who keeps watch at the bridge Bifrost, needs less sleep than a bird and hears the grass grow. Its blast is heard in every world. At Ragnarok he blows it to wake the gods, and out of Valhalla the einherjar, Odin's chosen dead, ride to the last battle. He cannot leave his bridge, so he put it in your hands. Blow it once and they will ride beside you. The wolf himself is not theirs to kill, nor to bind.",
+    "lore": "Heimdall, the white god with the teeth of gold, keeps watch at the bridge Bifrost, and he needs less sleep than a bird and can hear the grass grow. This is his Gjallarhorn, the Yelling Horn, whose blast is heard in every world. At Ragnarok it shall wake the gods and bring the einherjar, Odin's chosen dead, riding out of Valhalla to the last battle. As he cannot leave his bridge he has put it in your hands, and if you blow it once they will ride beside you, though the wolf himself is not theirs to kill, nor to bind.",
     "special_properties": {
       "identified": true,
       "plot_role": "heimdall_horn",
@@ -1331,7 +1331,7 @@
     "is_unique": true,
     "cures_blindness_once": true,
     "unidentified_name": "a fish's gall wrapped in a leaf",
-    "lore": "In the Book of Tobit, the archangel Raphael walked with young Tobias to Media and back under the name Azarias, and taught him what to do with the fish that jumped at him from the Tigris. Its heart and liver, burned, drove off a demon. Its gall, put on old Tobit's eyes, gave him back his sight. This is the gall, still in its leaf. The first time your eyes go dark, it is used up, and they do not.",
+    "lore": "Under the name of Azarias the archangel Raphael walked with young Tobias to Media and home again, as the Book of Tobit tells, and taught him the uses of the fish that leapt at him from the Tigris. Its heart and liver drove away a demon when they were burned, and its gall restored the sight of old Tobit. This is that gall, still in its leaf. The first time that darkness would fall upon your eyes the gall will be spent, and your sight will not fail you.",
     "special_properties": {
       "identified": true,
       "plot_role": "tobit_gift",

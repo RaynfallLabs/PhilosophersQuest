@@ -4208,7 +4208,7 @@ class MagicMixin(MagicWardsMixin):
         if getattr(book, 'spent', False):
             from setne_tomb import data as _setne_data
             self.add_message(_setne_data().get(
-                'read_spent_message', "The words are still there. They will not do it twice."),
+                'read_spent_message', "The words remain upon the page, but they will not work their wonder a second time."),
                 'info')
             return
         display = self._bare_name(book)
