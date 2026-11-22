@@ -238,7 +238,7 @@ class LorePowersMixin:
             self.add_message(f"{wants}, and you have not enough in coin or treasure.", 'warning')
             return False                      # nothing to ask, so D is Drop as ever
 
-        def settle(paid: bool) -> None:
+        def _settle_toll(paid: bool) -> None:
             for o in group:
                 o.__dict__['_lp_parley'] = 'calm' if paid else 'angry'
                 if paid:
@@ -251,11 +251,11 @@ class LorePowersMixin:
 
         def pay() -> None:
             if self._pay_gold(cost) is not None:
-                settle(True)
+                _settle_toll(True)
 
         self._ask(f"{wants}", ["Pay, and it will let you be unless you strike it."],
                   [('P', 'Pay', f"{self._payment_words(plan)}.", pay),
-                   ('R', 'Refuse', "It will fight you.", lambda: settle(False))],
+                   ('R', 'Refuse', "It will fight you.", lambda: _settle_toll(False))],
                   esc='not yet')
         return True
 

@@ -342,6 +342,8 @@ FOLLOWS = {
     '_search_corpse': 'work, _harvest',
     '_finish_drop': 'drop, _do_drop_item',
     '_thoth_on_altar': 'drop, _do_drop_item',
+    '_parley_toll': 'work, _parley_offer (the Xorn asked at D)',
+    '_settle_toll': 'work, _parley_offer (paid or refused)',
 }
 _ASKS = {'_gate', '_gate_step', '_helpless_turn'}
 

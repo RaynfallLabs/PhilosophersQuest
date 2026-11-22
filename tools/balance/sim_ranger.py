@@ -444,15 +444,14 @@ def will_shoot(run, target) -> bool:
 def shoot(run, target, active, crank: bool = True) -> bool:
     """One shot through the game's combat.player_attack. True when loosed."""
     import combat
-    import sim_groups
     import sim_late
     p = run.p
     bow = p.ranged_weapon
     got = next_ammo(run, bow)
-    if got is None or sim_groups.hero_slowed(run):
+    if got is None:
         return False
-    if p.has_effect('charmed') and random.random() < 0.40:
-        return False
+    # (Slowed is the world's clock: Player.get_speed halves, as for a blow.
+    # Whom a charmed or frightened hero may shoot: sim_effects.strikeable.)
     aid, ammo = got
     s = _state(run)
     if aid is not None:

@@ -297,7 +297,7 @@
         "weak:iron": ["The jinn are driven off by iron."]
       },
       "jellies": {
-        "resisted:slash": ["Some jellies flow round an edge too."],
+        "resisted:pierce,blunt": ["You cannot pierce or crush a jelly."],
         "weak:fire,cold": ["Only fire and cold really harm a jelly."]
       },
       "beetles": {
