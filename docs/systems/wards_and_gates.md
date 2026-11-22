@@ -58,7 +58,7 @@ A blessed scroll holds half again as long, a cursed one half.
 | `veiled` (Mist-Veiled) | Mist of Manannan (T4 spell) | no foe farther than 2 tiles sees him (`senses.sees`), shoots him, casts at him or meets his eyes (a Caster's Book curse, dispel or darkness too: `caster_ai.warded` asks `wards.blow_gate`) |
 | `all_round_ward` | Scroll of protection (the Breastplate, 20 turns) | a pack round him gains nothing: no swarm bonus, no hamstring (`packs.py`) |
 | `sanctuary` | Sanctuary (T1 spell) | ordinary foes will not strike or cast at him (`caster_ai.warded`); ends when the hero strikes, zaps or casts at a foe, or does anything to a creature with an area spell, a scroll or a wand (`_mm_acting`: hurt it, laid a status on it; a creature that only appears is no act), or sends an area spell, the tune, the clash or the assembly at a room with a foe in sight (`_mm_area_act`; an empty room is no blow); a foe he hurt in the last 20 turns is not held back |
-| `styx_dipped` | Water of the Styx (T5 potion, 6 turns) | no blow, bite or claw wounds him; an unseen blow lands at half (the heel) |
+| `styx_dipped` | Water of the Styx (T5 potion, 6 turns) | no physical blow, bite or claw wounds him (fire, venom and magic in one still do); an unseen blow lands at half (the heel) |
 | `free_action` (Loosed) | Galdr of Loosing (T1 spell) | immobilized, impaled and strangling cannot take hold; no hold takes him (`holds.loosed_line`); a monster's pull fails, and the Roc cannot carry him off |
 | `wakeful` | Goatherd's Coffee (T1 potion) | sleep cannot take hold (paralysis still can) |
 | `clear_sight` | Moly (T3 potion, with `confuse_immune`) | hallucination and charm cannot take hold |

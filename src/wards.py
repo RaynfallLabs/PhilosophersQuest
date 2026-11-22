@@ -21,7 +21,7 @@ dispelled and saved like any other.
   ``stayed_spear`` (missiles from a foe he can see fail), ``veiled`` (no foe
   farther than ``veil_reach`` sees him or shoots him), ``all_round_ward`` (a pack
   round him gains nothing: packs.py), ``sanctuary`` (ordinary foes hold off until
-  he strikes), ``styx_dipped`` (no blow, bite or claw wounds him; an unseen one
+  he strikes), ``styx_dipped`` (no physical blow, bite or claw wounds him; an unseen one
   finds the heel at half).
 
 Hooks (one line each): Monster._resolve_blow asks ``blow_gate``;

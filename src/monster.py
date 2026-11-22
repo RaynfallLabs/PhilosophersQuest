@@ -2240,6 +2240,11 @@ class Monster:
 
         if not self.alive:
             return False
+        # An opener it armed whose blow never came (a displaced image, a gut
+        # round the hero) is not struck later from wherever it then stands.
+        # (A blow armed from outside its turn, the Blue Men's squall, waits.)
+        if self._opener_attack is not None and self.__dict__.get('_opener_now') is self._opener_attack:
+            del self.__dict__['_opener_now']
         # One that has yielded (src/morale.py) never strikes again, whatever
         # holds it (a pit, a spear, a web): it keeps out of the way.
         if self.__dict__.get('_yielded'):
@@ -2273,6 +2278,8 @@ class Monster:
             if not self._under('feared'):    # (frightened, it runs)
                 return lore_powers.turn(self, player, dungeon, all_monsters, extra_occupied)
         if pinned:
+            if self._under('charmed'):
+                return False                 # charmed, bribed, sung to peace: pinned as rooted
             return self._pinned_turn(player, dungeon, all_monsters, extra_occupied)
 
         # --- Variable speed: slow monsters skip turns ---

@@ -3344,13 +3344,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         except ImportError:
             pass
 
+        # What he wears works on what his blows reach: all of them, or,
+        # swallowed, only what holds him (holds.strikable).
+        import holds
+        _reached = holds.strikable(self.player, self.monsters)
         # Helm of Achilles (ringing_intimidation): each monster, the first time
         # it comes into sight, has a RING_FEAR_CHANCE of fleeing.
         try:
             from armor_procs import player_has_armor_proc as _pap_ring
             if _pap_ring(self.player, 'ringing_intimidation'):
                 _rung = 0
-                for _mm in self.monsters:
+                for _mm in _reached:
                     if (getattr(_mm, 'alive', False) and (_mm.x, _mm.y) in self.visible
                             and not getattr(_mm, '_heard_the_ring', False)):
                         _mm._heard_the_ring = True
@@ -3362,7 +3366,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if _rung:
                     self.add_message(
                         f"Achilles' helm rings out: {_rung} "
-                        f"{'foe flinches' if _rung == 1 else 'foes flinch'} and runs!", 'info')
+                        f"{'foe flinches and runs' if _rung == 1 else 'foes flinch and run'}!", 'info')
         except ImportError:
             pass
 
@@ -3371,7 +3375,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if getattr(self.player, '_paths_armed', False):
             try:
                 from chain_passives import consume_run_passive as _crp, player_has_passive as _php
-                _cands = [m for m in self.monsters
+                _cands = [m for m in _reached
                           if self._sees_monster(m)
                           and not getattr(m, 'is_boss', False)]
                 if not _php(self.player, 'paths_of_the_dead'):
@@ -3389,7 +3393,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Chain-equip passive: fear auras (aura_of_awe, fafnirs_glare, no_man_dares).
         try:
             from chain_passives import apply_fear_auras
-            _n_feared = apply_fear_auras(self.player, self.monsters, self.visible)
+            _n_feared = apply_fear_auras(self.player, _reached, self.visible)
             if _n_feared:
                 self.add_message(
                     f"The aura of dread breaks {_n_feared} foe(s)!", 'success')
@@ -3416,7 +3420,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     continue
                 # Find an unclaimed target in FOV with the tag.
                 _target = None
-                for m in self.monsters:
+                for m in _reached:
                     if not m.alive:
                         continue
                     if (m.x, m.y) not in self.visible:
@@ -3471,7 +3475,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _pac_chance = get_pacify_demon_chance(self.player)
             if _pac_chance > 0:
                 import random as _rng
-                for m in self.monsters:
+                for m in _reached:
                     if not m.alive or getattr(m, '_solomon_rolled', False):
                         continue
                     if (m.x, m.y) not in self.visible:
@@ -5266,7 +5270,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Seal of Solomon: pacify nearby monsters
         for _acc in self.player.equipped_accessories:
             if getattr(_acc, 'pacify_chance', 0) > 0:
-                for m in self.monsters:
+                import holds
+                for m in holds.strikable(self.player, self.monsters):
                     if m.alive and abs(m.x - self.player.x) <= 2 and abs(m.y - self.player.y) <= 2:
                         # Two turns (one was ticked off before the monster
                         # ever lost an action, so the ring did nothing), and

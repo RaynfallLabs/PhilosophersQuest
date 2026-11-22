@@ -311,7 +311,7 @@ POTIONS = {
     'water_of_the_styx': dict(name='Water of the Styx', unid='black glass vial', color=[40, 40, 60],
         tier=5, min_level=70, effect='styx_dipped', duration=6, bands={'81-100': 2},
         lore='water_of_the_styx_potion', rare=True,
-        drink_line='for 6 turns no blow, bite or claw can wound you, but an unseen blow finds the heel'),
+        drink_line='for 6 turns physical blows, bites and claws cannot wound you; fire, venom and magic still can, and an unseen blow finds the heel'),
 }
 
 
@@ -413,7 +413,7 @@ HINTS = {
           "Confusion of Tongues breaks a war band or a pack into creatures that fight alone."],
     '4': ["Zap an archer or a slinger with the Wand of Unstringing and it has to come to you.",
           "Water of Epidaurus gives back every stat point a drain or a disease took."],
-    '5': ["The Water of the Styx turns every blow, bite and claw, but an unseen blow finds the heel.",
+    '5': ["The Water of the Styx turns blows, bites and claws but not fire, venom or magic, and an unseen blow finds the heel.",
           "Demons cannot strike you up close while the Udug Hul holds, until you strike one."],
 }
 

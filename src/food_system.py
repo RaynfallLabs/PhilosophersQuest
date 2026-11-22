@@ -902,7 +902,7 @@ _WARD_POTIONS = {
     'fireproof':  ((), ('fire_shield', 'shielded'),
                    "You rub on the charm of Prometheus. Fire cannot burn you, and blows land half as hard"),
     'styx_dipped': ((), ('styx_dipped',),
-                    "Black water from the Styx closes over your skin like iron. No blow, bite or claw can wound you, but mind your heel"),
+                    "Black water from the Styx closes over your skin like iron. Physical blows, bites and claws cannot wound you, though fire, venom and magic can, and mind your heel"),
 }
 
 
