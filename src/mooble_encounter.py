@@ -442,6 +442,8 @@ class MoobleMixin:
         if m is None:
             self.state = STATE_PLAYER
             return
+        if phase in ('story', 'outcome') and self._story_scroll_key(key):
+            return
         if phase == 'story':
             if key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
                 self._mooble_phase = 'options'
@@ -883,13 +885,17 @@ class MoobleMixin:
         tx = body_rect.x + pic_w
         col = pygame.Rect(tx, body_rect.y, body_rect.right - tx, body_rect.h)
         y = col.y
-        for i, p in enumerate(paras):
-            if i:
-                y += S(10)
-            y = self._ui_wrap_text(display_text(p), font, FP.PARCHMENT_LIGHT,
-                                   pygame.Rect(col.x, y, col.w, col.bottom - y), line_gap=4)
+        more = ""
+        if phase != 'options':          # his story, or a result: shrink, then scroll
+            more = self._ui_set_piece_page(paras, col)
+        else:
+            for i, p in enumerate(paras):
+                if i:
+                    y += S(10)
+                y = self._ui_wrap_text(display_text(p), font, FP.PARCHMENT_LIGHT,
+                                       pygame.Rect(col.x, y, col.w, col.bottom - y), line_gap=4)
         if phase == 'story':
-            self._ui_footer(panel, "Enter / Space: continue   |   Esc: walk away")
+            self._ui_footer(panel, f"{more}Enter / Space: continue   |   Esc: walk away")
         elif phase == 'options':
             y += S(14)
             for key, which in keys:
@@ -898,4 +904,4 @@ class MoobleMixin:
                 y += row_h + S(8)
             self._ui_footer(panel, "1-5: choose   |   Esc: leave him be")
         else:
-            self._ui_footer(panel, "Enter / Space / Esc: continue")
+            self._ui_footer(panel, f"{more}Enter / Space / Esc: continue")

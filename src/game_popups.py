@@ -122,6 +122,7 @@ class PopupMixin:
         already reading popups); once none is left, play goes back to where
         it was, and the calm starts over."""
         self.__dict__.pop('_popup_showing_key', None)
+        self.__dict__.pop('_story_page', None)     # the next one opens at its top
         back = self.popup_next_state
         if self._open_next_popup(back):
             return

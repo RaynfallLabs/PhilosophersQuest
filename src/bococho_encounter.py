@@ -453,6 +453,8 @@ class BocochoMixin:
         if getattr(self, '_bc_npc', None) is None and phase != 'outcome':
             self.state = STATE_PLAYER
             return
+        if phase in ('story', 'outcome') and self._story_scroll_key(key):
+            return
         if phase == 'story':
             if key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
                 self._bc_phase = 'options'

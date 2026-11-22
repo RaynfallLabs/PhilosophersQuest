@@ -335,6 +335,8 @@ class EmberpupMixin:
         if pup is None:
             self.state = STATE_PLAYER
             return
+        if phase in ('story', 'outcome') and self._story_scroll_key(key):
+            return
         if phase == 'story':
             if key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
                 self._emberpup_phase = 'options'
