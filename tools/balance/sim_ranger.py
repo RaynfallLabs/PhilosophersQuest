@@ -22,6 +22,9 @@ revisited, so a bow can carry a whole run). Measurement only: with `ar_bow` 0
   ar_stall    arrows he buys up to at a stall (R5, supply follows the lean; 0 = none).
   ar_draw     with ar_per: 1 = a composite bow's draw (5% a point of STR)
               multiplies PER's step, as the game multiplies it onto its bonus.
+              2 = PER alone on every bow: the draw is gone (the ruling as it is
+              written; with the better-of, a Strength fighter's composite bow
+              is as strong as an archer's).
   ar_heads    1 = a coating can go on arrowheads: the bow carries it (the game
               refuses to coat a bow).
 
@@ -150,8 +153,11 @@ def per_step(run, bow, per: float) -> float:
     """R1's step on a shot."""
     p = run.p
     composite = getattr(bow, 'class_mechanic', '') == 'str_bonus_range_7'
-    if composite and k(run, 'ar_draw'):
+    draw = int(k(run, 'ar_draw'))
+    if composite and draw == 1:
         return (1.0 + per * max(0, p.PER - 10)) * (1.0 + max(0, p.STR - 10) * 0.05)
+    if draw == 2:
+        return 1.0 + per * max(0, p.PER - 10)
     return 1.0 + per * max(0, shot_stat(p, bow) - 10)
 
 

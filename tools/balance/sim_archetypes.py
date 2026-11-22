@@ -41,6 +41,8 @@ bow's knobs are sim_ranger.py's, the pet's sim_pets.py's; here are the rest:
               stat this profile leans on (DEX, INT, WIS or PER), so every
               lean pays its blows as STR pays the fighter's. A stand-in for a
               weapon of each calling that reads its stat, never a stack.
+              2 = only the two that need it: DEX (light blades, the rogue's)
+              and WIS (holy and blunt weapons, the cleric's).
   dx_finesse  a finding's dial: 1 = a Finesse weapon reads DEX for STR, as its
               own card says (combat.py declares finesse_dex and never reads it).
 
@@ -75,7 +77,7 @@ KNOBS = {
 KNOBS.update(sim_ranger.KNOBS)
 KNOBS.update(sim_pets.KNOBS)
 
-BLOW_LEANS = ('DEX', 'INT', 'WIS', 'PER')
+BLOW_LEANS = {1: ('DEX', 'INT', 'WIS', 'PER'), 2: ('DEX', 'WIS')}
 BERSERK = 1.3                   # combat.strike_damage's berserk step
 WARD_TURNS = {'shield_self': 12, 'magic_shield_self': 20, 'stoneskin_self': 25}
 WARD_FIGHT = 2.0                # x his blow: a group that will take more is worth a ward
@@ -249,9 +251,10 @@ def blow_stat(run, weapon) -> int:
     stat = p.STR
     if k(run, 'dx_finesse') and getattr(weapon, 'class_mechanic', '') == 'finesse_dex':
         stat = p.DEX
-    if k(run, 'st_lean'):
+    leans = BLOW_LEANS.get(int(k(run, 'st_lean')))
+    if leans:
         focus = tuple(run.prof.get('stat_focus') or ())
-        if focus and focus[0] in BLOW_LEANS:
+        if focus and focus[0] in leans:
             stat = max(stat, getattr(p, focus[0]))
     return stat
 

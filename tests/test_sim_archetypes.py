@@ -197,6 +197,28 @@ def test_r1_without_the_ruling_a_shot_is_the_games():
     assert _shot(run, bow) == game
 
 
+def test_per_alone_on_every_bow_by_its_dial():
+    import sim_archetypes as sa
+    sa.install(ALL_ON)
+    run = _run('arch_ranger', 'ar_per=0.03,ar_draw=2')
+    composite = _bow('str_bonus_range_7')
+    run.p.PER, run.p.STR = 10, 10
+    plain = _shot(run, composite)
+    run.p.PER, run.p.STR = 20, 40
+    assert abs(_shot(run, composite) - plain * 1.3) <= 1
+
+
+def test_the_leans_blow_can_be_kept_to_dexterity_and_wisdom():
+    import sim_archetypes as sa
+    blade = types.SimpleNamespace(class_mechanic='')
+    for profile, stat, want in (('arch_rogue', 'DEX', 30), ('arch_cleric', 'WIS', 30),
+                                ('arch_ranger', 'PER', 20), ('arch_mage', 'INT', 20)):
+        run = _run(profile, 'st_lean=2')
+        run.p.STR = 20
+        setattr(run.p, stat, 30)
+        assert sa.blow_stat(run, blade) == want
+
+
 def test_r1_arrowheads_carry_a_coating_into_the_shot_and_spend_it():
     import combat
     import items
