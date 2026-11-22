@@ -32,7 +32,18 @@ The important design rule: **saves + resists never overlap**. If `poison_resist`
 
 **Control cap** per single application: `CONTROL_CAP` clamps individual durations so one failed save is never a death sentence even if the data file says "paralyze 20". `MAX_EFFECT_DURATION = 60` globally caps every effect (prevents infinite stacking on non-CONTROL effects which use `current + duration` additive stacking).
 
-**Resource loss IS the penalty.** DoTs (poison/bleed/burning/doom_dot/draining) still land even on a successful save — the save only applies a flat CON-based duration reduction, min 1 turn (§apply_debuff_with_save non-SAVE_STAT branch). This preserves "the quiz-gated action cost IS the penalty" rule without making tanks poison-immune.
+**Resource loss IS the penalty.** DoTs (bleed/burning/doom_dot/draining) still land even on a successful save — the save only applies a flat CON-based duration reduction, min 1 turn (§apply_debuff_with_save non-SAVE_STAT branch). This preserves "the quiz-gated action cost IS the penalty" rule without making tanks poison-immune.
+
+## Poison (Brandon, 2026-11-22: "two damage? why have these cure poison potions"; src/venom.py)
+
+- **Each venom has its own strength.** A monster's poison attack does its `venom` (data/monsters.json) a turn, written kind by kind from its lore in `tools/content/poison_pass_2026_11_22.py`: a mild venom costs about 12% of a typical hero's HP over one bite where the kind is most met, an ordinary one about 20%, a deadly one by lore about 30%. A kind of floors 1-5 keeps 1 a turn, and no venom is weaker than the old 2% tick where it lives. Nothing scales by the floor; Player.take_damage's toughness and the rest still apply. A poison with no venom (the potion of poison, a trap, foul water) keeps `DOT_SHARE` of max HP.
+- **Doses add, a little.** A bite on a poisoned hero adds half its turns (`effects.json` `poison.add_share`), never past one and a half of the bout's longest dose (`most_doses`). The strongest venom on him sets the tick. Ten bites cost no more than two.
+- **A CON save halves the dose** (d20 + CON mod + save bonus against the attack's dc). It never cancels the bite.
+- **Venom Ward** (`venom_ward`, a plain meal against venom): half the venom and half the turns. Poison Resist still keeps poison off whole.
+- **It shows.** `venom.to_come` (a turn's toll after the body's share, times the turns left) is drawn as the striped end of the HP bar (ui.draw_venom_due, on the sidebar and the combat strip), said on the chip ("Poisoned: 14 to come", "... Cure it!" when it would kill) and on each bite's line. The Bestiary gives each poison attack's venom and turns.
+- **Cures:** the potion of cure poison (every stall of floors 2-20 keeps one, `traders.json` `always_stocked`, and the apothecary always has one), cure all, Theriac, Cleanse, a mercy prayer at a chain of four, the fountain, the apothecary's and sutler's cure, Poison Resist from meals, rings and armour.
+- Six attacks were not venom by lore and lay something else now: the rotting zombie's claw nothing, the plague zombie's claw and the rot grubs disease, the green slime's, gray ooze's and ochre jelly's acid Corroding.
+- An older save's monster takes its kind's venom on load (`effect_rules.refresh_monster`, `EFFECTS_PASS` 2).
 
 ## The monster effects (Brandon, 2026-11-22: "All as recommended")
 
@@ -80,7 +91,7 @@ The important design rule: **saves + resists never overlap**. If `poison_resist`
 All effect ids (debuff, buff, control, resistance, chain-combat-v2 specials, hero-special buffs) live here. The HUD color and short description are read directly for sidebar chips and expire-log entries. Example rows:
 ```python
 'paralyzed':   ('Paralyzed',   (220,  50,  50), 'Cannot move or act'),
-'poisoned':    ('Poisoned',    ( 80, 210,  60), 'Losing 1 HP per turn'),
+'poisoned':    ('Poisoned',    ( 80, 210,  60), 'Venom hurts every turn; the striped end of your health bar is what it will still take'),
 'hasted':      ('Hasted',      (245, 245,  60), 'Monsters act half as often'),
 'blessed':     ('Blessed',     (200, 240, 160), 'All quiz timers +25%; divine clarity'),
 'petrifying':  ('Petrifying',  (205, 205, 130), 'Turning to stone: stiff, then slow, then stone. Oil of Rue cures it'),
@@ -199,7 +210,8 @@ D&D-style saving throw category per effect:
 - CON (body) — physical disables.
 - WIS (will) — mind-affecting.
 - DEX (reflex) — movement locks.
-- Effects **not in this map** (poison, bleed, burning, doom_dot, …) bypass the stat-save roll but still receive a CON-based duration reduction via `save_bonus_for('CON')` (v2.18.0 fix — see [save_bonus.md](save_bonus.md)).
+- Poison rolls its own CON save, which halves the dose (see Poison above).
+- Effects **not in this map** (bleed, burning, doom_dot, …) bypass the stat-save roll but still receive a CON-based duration reduction via `save_bonus_for('CON')` (v2.18.0 fix — see [save_bonus.md](save_bonus.md)).
 
 ### `CONTROL_CAP: dict[effect_id -> max_turns]`
 Hard cap on a SINGLE application's duration. Clamps egregious data values so one failed save can't exceed design headroom:
@@ -293,7 +305,7 @@ roll  = randint(1, 20) + mod + bonus
 ```
 
 Branches:
-- **No SAVE_STAT entry** (poison, bleed, burning, disease, doom_dot, …): the save roll is skipped, but `save_bonus_for('CON')` reduces the applied duration by a flat amount (floor 1). `applied = player.add_effect(effect, max(1, duration - sb))`. Message: `"You are <effect>!"` on success, `""` on refuse. (v2.18.0 fix — previously bypassed `save_bonus_for` entirely, so Torque of Lugh's `{all: 3}` didn't help against DoTs despite the text.)
+- **Poison:** `venom.lands`: a CON save halves the dose; the bite's venom is noted. **No SAVE_STAT entry** (bleed, burning, disease, doom_dot, …): the save roll is skipped, but `save_bonus_for('CON')` reduces the applied duration by a flat amount (floor 1). `applied = player.add_effect(effect, max(1, duration - sb))`. Message: `"You are <effect>!"` on success, `""` on refuse. (v2.18.0 fix — previously bypassed `save_bonus_for` entirely, so Torque of Lugh's `{all: 3}` didn't help against DoTs despite the text.)
 - **`roll >= dc` + HARD_CONTROL**: full negate. Returns `(False, "<flavor> throws off the <noun>!")`. Flavor by stat: CON → "Your hardy constitution"; WIS → "Your strong will"; DEX → "Your quick footwork".
 - **`roll >= dc` + SOFT_CONTROL**: half duration (floor 1). `applied = player.add_effect(effect, max(1, duration // 2))`. Message: `"<flavor> blunts the <noun> — it barely takes hold."`.
 - **`roll < dc`** (failed save): full duration. `applied = player.add_effect(effect, duration)`. Message: `"The <noun> takes hold!"`.
@@ -308,7 +320,7 @@ Advance one turn for every effect in `player.status_effects`. Returns a batched 
 Flow:
 1. **Grendel-grip pre-tick** (Coif of Beowulf armor proc): clears `paralyzed` / `strangulation` / `sleeping` immediately. The grip that strangled Grendel keeps you free.
 2. **Per-effect dispatch** (ordered as they appear in `player.status_effects`):
-   - `poisoned` + not `poison_resist` → 1 physical-type-poison damage; "The poison burns through you!"
+   - `poisoned` + not `poison_resist` → `venom.strength` (the venom, or `DOT_SHARE` of max HP for a poison with none; halved by Venom Ward) as poison damage; "The poison burns through you!"
    - `diseased` + not `poison_resist` AND not `drain_resist` → 8% / turn STR or CON -1 (dispatches `_disease_drain:<stat>:1` for Paracelsus quirk; UI line "The disease saps your strength! <stat> -1."). Since AI-1 (Grave Rot, `src/grave_rot.py`) it also stops natural regeneration (`main._tick_hp_regen`) and halves every heal that goes through `Player.restore_hp` (potions, spells, prayers, meals; not a drain wand's draw, a kill's heal or a worn piece's regeneration, which do not use it) while it lasts, and a monster's disease lasts its `effect_duration` times its kind's `disease_linger` (1 unless its lore makes it linger: mummy rot 10, the plague-bringers 4-8; at most `MAX_EFFECT_DURATION`, 60). The Mercy prayer at a chain of 4 cures it (`game_divine._resolve_simple_prayer`).
    - `strangulation` → 2 physical damage; "You are being strangled!"
    - `regenerating` → +1 HP if below max
@@ -366,7 +378,7 @@ Thin wrapper around `tick_all(self)`. Called once per player turn from `main.py:
 - **`drain_resist` blocks `draining` + `diseased`.** (v2.18.0 — "Drain Resist" display name now matches behavior.)
 - **`petrifying` is in HARD_CONTROL** (v2.18.0 fix). Save NEGATES; a halved duration could still kill via the val==1 death tick.
 - **`stunned` stays in HARD_CONTROL** despite being semantically soft — removing it reopens the fast-monster stunlock death-spiral.
-- **DoTs still land on saves** (poison/bleed/burning/doom_dot): save only reduces duration by `save_bonus_for('CON')`, min 1 turn. "Resource loss IS the penalty."
+- **DoTs still land on saves** (poison: a save halves the dose; bleed/burning/doom_dot): save only reduces duration by `save_bonus_for('CON')`, min 1 turn. "Resource loss IS the penalty."
 - **`control_immune` is a BUFF.** It's set BY tick_all when hard-control expires, and consumed BY apply_effect's HARD_CONTROL guard. Never set it from gameplay code directly.
 
 ## Interactions

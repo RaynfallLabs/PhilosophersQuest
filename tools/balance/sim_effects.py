@@ -25,6 +25,12 @@ import quiz_sight
 
 DARK_SECONDS = 0.8             # a timed question: two presses of the arrows
 CURES = ('stoneproof', 'cure_all')
+# Poison (src/venom.py, 2026-11-22): a careful kid drinks his cure when the
+# venom would still take this share of the HP he has, or would kill him.
+VENOM_CURES = ('cure_poison', 'cure_all')
+VENOM_AT = 0.25
+# He keeps this many cures in his pack, bought where every stall sells one.
+VENOM_CARRY = 2
 
 
 def quiz_wait(player) -> float:
@@ -109,6 +115,55 @@ def stop_stone(run) -> bool:
         p.add_effect('petrify_immune', 30)
     run.fs['fx_stone_cured'] = run.fs.get('fx_stone_cured', 0) + 1
     return True
+
+
+def stop_venom(run) -> bool:
+    """A venom worth curing is cured with what he carries (the kit's cure
+    poison or cure all). True when that was his action."""
+    p = run.p
+    if not p.has_effect('poisoned'):
+        return False
+    import venom
+    n = venom.to_come(p)
+    if n <= 0 or (n < VENOM_AT * max(1, p.hp) and not venom.deadly(p)):
+        return False
+    kit = run._mm_kit()['potion']
+    pot = next((x for x in kit if getattr(x, 'effect', '') in VENOM_CURES), None)
+    if pot is None:
+        return False
+    if barred(run, 'drink'):
+        return True
+    kit.remove(pot)
+    import food_system
+    food_system.drink_potion(p, pot)
+    run.fs['fx_venom_cured'] = run.fs.get('fx_venom_cured', 0) + 1
+    return True
+
+
+def buy_venom_cure(run, floor: int, defn: dict, reserve: float) -> None:
+    """At a stall that keeps the cure (data/traders.json always_stocked, or
+    the apothecary's sure line), a kid who keeps potions buys up to
+    VENOM_CARRY."""
+    if not run._mm('mm_potions'):
+        return
+    import traders
+    import economy
+    from items import make_item_by_id
+    sure = any(x.get('id') == 'potion_of_cure_poison'
+               and int(x.get('floors', (1, 100))[0]) <= floor <= int(x.get('floors', (1, 100))[1])
+               for x in traders.data().get('always_stocked') or ())
+    sure = sure or any(x.get('id') == 'potion_of_cure_poison' for x in defn.get('stock') or ())
+    if not sure:
+        return
+    kit = run._mm_kit()['potion']
+    pot = make_item_by_id('potion', 'potion_of_cure_poison')
+    if pot is None:
+        return
+    price = economy.stock_price(pot, floor, float(defn.get('markup', 1.0) or 1.0))
+    while (sum(1 for x in kit if getattr(x, 'effect', '') == 'cure_poison') < VENOM_CARRY
+           and len(kit) < 8 and run._pay(price, reserve)):
+        kit.append(pot)
+        run.fs['venom_cures_bought'] = run.fs.get('venom_cures_bought', 0) + 1
 
 
 def after_world(run, active: list) -> None:

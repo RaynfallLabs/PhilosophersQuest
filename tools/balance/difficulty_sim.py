@@ -1482,7 +1482,7 @@ MM_SPELL_IDS = frozenset(('stayed_spear_spell', 'tacitas_seal_spell', 'dulled_bl
                           'pans_panic_spell', 'settled_strife_spell', 'mist_of_manannan_spell',
                           'hush_of_the_feralia_spell', 'cockcrow_spell', 'elf_shot_spell',
                           'galdr_of_loosing_spell'))
-MM_POTION_EFFECTS = frozenset(food_system_mod._WARD_POTIONS) | {'restoration'}
+MM_POTION_EFFECTS = frozenset(food_system_mod._WARD_POTIONS) | {'restoration', 'cure_poison'}
 MM_WARD_FAMILY = {'ward_lemuria': 'restless_dead', 'ward_daniel': 'great_beasts',
                   'ward_psylli': 'serpents', 'ward_hoichi': 'ghosts', 'ward_martha': 'dragons',
                   'ward_udug_hul': 'demons'}
@@ -2288,6 +2288,7 @@ class Run(_MMMagicSim):
                     break
                 self.potions.append(pot)
                 self.fs['potions_bought'] = self.fs.get('potions_bought', 0) + 1
+        sim_effects.buy_venom_cure(self, floor, defn, reserve)
 
     def rededicate(self, floor: int) -> None:
         """altars=1: on an altar floor (every 15th from floor 1; shrine rooms
@@ -3079,6 +3080,7 @@ class Run(_MMMagicSim):
         p = self.p
         sim_effects.fight_over(p)            # nobody lies down between fights
         sim_effects.stop_stone(self)         # and a count to stone is stopped first
+        sim_effects.stop_venom(self)         # and a venom worth curing is cured
         # let short debuffs run out first (poison, bleed tick for real)
         guard = 0
         while guard < 60 and any(v > 0 and e in DEBUFFS
@@ -3848,6 +3850,8 @@ class Run(_MMMagicSim):
         if sim_effects.stand(self):
             return False
         if sim_effects.stop_stone(self):
+            return False
+        if sim_effects.stop_venom(self):
             return False
         return True
 

@@ -4333,6 +4333,12 @@ class RenderMixin:
                      FP.WARNING_TEXT if p_ratio > 0.25 else FP.DANGER_TEXT)
             put("You", t['you_label'], KT.TEXT_DIM, sizes=(20, 17, 16))
             hp_bar(t['you_bar'], p_ratio, p_col)
+            import venom as _venom
+            _due = _venom.to_come(self.player)
+            if _due:
+                from ui import draw_venom_due
+                _vb = t['you_bar'].inflate(-S(4), -S(4))
+                draw_venom_due(self.screen, _vb.x, _vb.y, _vb.w, _vb.h, p_ratio, _due / max(1, p_max))
             put(f"{p_hp}/{p_max} HP", t['you_text'], _words(p_col), align='right')
 
         # Status effects: all of them when they fit; otherwise as many as
@@ -4797,6 +4803,9 @@ class RenderMixin:
         from status_effects import EFFECT_INFO
         eff = str(atk.get('effect') or '')
         name = EFFECT_INFO[eff][0] if eff in EFFECT_INFO else eff.replace('_', ' ').title()
+        if eff == 'poisoned' and atk.get('venom'):
+            import venom as _venom
+            return f"{name} ({_venom.attack_note(atk)})"     # "2 a turn for 6 turns"
         return f"{name} (Deadly)" if atk.get('lethal') else name
 
     @staticmethod

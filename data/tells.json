@@ -139,8 +139,8 @@
     "corroding": {"sign": "Where {the} has passed, the stone is pitted and crumbling.", "does": "What {he} touches rots and crumbles: your armour gives way while it lasts.", "counter": "Kill {him} fast, or from afar."},
     "poisoned": {
       "sign": "Something on {the} glistens wet.",
-      "does": "{He} is poisonous, and every wound {he} gives keeps hurting after.",
-      "counter": "Do not let {him} land many."
+      "does": "{He} is poisonous, and every wound {he} gives keeps hurting after: the striped end of your health bar is what the venom will still take.",
+      "counter": "Carry a cure: a potion of cure poison, Cleanse, a meal against venom, or a prayer for mercy at a chain of four. A second bite adds half again; a hardy body throws off half."
     },
     "regeneration": {
       "sign": "The old scars of {the} have closed without a mark.",

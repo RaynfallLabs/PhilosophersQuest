@@ -9,6 +9,28 @@ from hud_context import (active_power_rows, cooking_hp_line, cooking_lesson_line
                          visible_context_rows)
 
 
+def draw_venom_due(screen, x: int, y: int, w: int, h: int, ratio: float, due_ratio: float) -> None:
+    """The end of a health bar the venom will still take (venom.to_come):
+    the last ``due_ratio`` of the ``ratio`` already filled, dark with the
+    poison's green stripes, so it reads on a red, amber or green bar alike.
+    Steady: nothing flashes."""
+    if due_ratio <= 0 or ratio <= 0:
+        return
+    end = x + max(2, int(w * ratio))
+    seg = max(2, int(w * min(ratio, due_ratio)))
+    left = max(x, end - seg)
+    rect = pygame.Rect(left, y, end - left, h)
+    from status_effects import EFFECT_INFO
+    green = tuple(EFFECT_INFO['poisoned'][1])
+    pygame.draw.rect(screen, (24, 40, 18), rect)
+    step = max(3, S(5))
+    clip = screen.get_clip()
+    screen.set_clip(rect.clip(clip) if clip else rect)
+    for sx in range(rect.x - rect.h, rect.right + rect.h, step):
+        pygame.draw.line(screen, green, (sx, rect.bottom), (sx + rect.h, rect.y), max(1, S(2)))
+    screen.set_clip(clip)
+
+
 def floor_label(level: int) -> str:
     """How the run's place is named on screen. A side floor is numbered
     inside the game (the Cow Level 999, the Zombie Stage 997); the player
@@ -374,7 +396,7 @@ class Sidebar:
         return x
 
     def _bar(self, y: int, label: str, val: int, max_val: int,
-             bar_color: tuple) -> int:
+             bar_color: tuple, due: int = 0) -> int:
         lx = self._icon(self._STAT_ICONS.get(label, ''), self.x + self.PAD, y,
                         self._fsm.get_height())
         # FANTASY: Faded text label
@@ -395,6 +417,8 @@ class Sidebar:
             if ratio > 0:
                 self.screen.fill(bar_color, (inner.x, inner.y,
                                              max(2, int(inner.w * ratio)), inner.h))
+                draw_venom_due(self.screen, inner.x, inner.y, inner.w, inner.h, ratio,
+                               max(0, due) / max(1, max_val))
             ui_theme.draw_piece(self.screen, 'bar_frame', track, body=False)
         else:
             # FANTASY: Dark bar background
@@ -404,6 +428,7 @@ class Sidebar:
                 pygame.draw.rect(self.screen, bar_color,
                                  (bx, by, max(2, int(bw * ratio)), bh),
                                  border_radius=3)
+                draw_venom_due(self.screen, bx, by, bw, bh, ratio, max(0, due) / max(1, max_val))
 
         # FANTASY: Readout right-aligned inside reserved space
         rsurf = self._fsm.render(f"{val}/{max_val}", True, FP.BODY_TEXT)
@@ -444,7 +469,8 @@ class Sidebar:
             FP.SP_AMBER if sp_r > 0.25 else
             FP.SP_RED
         )
-        y = self._bar(y, "HP", player.hp, player.max_hp, FP.HP_RED)
+        import venom as _venom
+        y = self._bar(y, "HP", player.hp, player.max_hp, FP.HP_RED, due=_venom.to_come(player))
         y = self._bar(y, "MP", player.mp, player.max_mp, FP.MP_BLUE)
         y = self._bar(y, "SP", player.sp, player.max_sp, sp_col)
         # Max HP grows only by cooking: say how much this floor has given,
@@ -701,6 +727,12 @@ class Sidebar:
                 continue
             display_name, rgb, _ = info
             from status_effects import UNTIL_ACTED
+            if eid == 'poisoned':
+                # What the venom will still take, not its turns (venom.py).
+                import venom as _venom
+                rows.append((_venom.chip(player),
+                             FP.DANGER_TEXT_LIGHT if _venom.deadly(player) else rgb, eid))
+                continue
             rows.append((display_name if eid in UNTIL_ACTED
                          else self._effect_label(display_name, val), rgb, eid))
         if not rows:

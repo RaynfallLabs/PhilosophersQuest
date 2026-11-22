@@ -1571,6 +1571,10 @@ class DivineMixin:
                 msgs.append((life_drain.rules().get('restore_line', '').format(n=_life), 'success'))
             if p.status_effects.pop('diseased', None):
                 msgs.append(("The sickness in your wounds is lifted.", 'success'))
+            # As a sickness, so a venom (2026-11-22: a cure worth carrying,
+            # and a prayer that answers what the venom would still take).
+            if p.status_effects.pop('poisoned', None):
+                msgs.append(("The venom leaves your blood.", 'success'))
             for _eff, _said in (('petrifying', "The stone lets go of your flesh."),
                                 ('hexed', "The hex lifts from what you wear."),
                                 ('charmed', "The charm on you is broken."),

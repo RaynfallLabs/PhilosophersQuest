@@ -2280,7 +2280,8 @@ class Monster:
         _was_on = player.has_effect(effect_id)
         _applied, _emsg = apply_debuff_with_save(player, effect_id, duration, dc,
                                                  source=self, gaze=gaze,
-                                                 lethal=bool(atk.get('lethal')))
+                                                 lethal=bool(atk.get('lethal')),
+                                                 venom=atk.get('venom') if effect_id == 'poisoned' else None)
         if _applied and not _was_on and effect_id == 'forgetting':
             # Forget (mind_theft.py): the pack and the pages are the Game's,
             # which takes its one memory right after the world's turn.
