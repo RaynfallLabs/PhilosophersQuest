@@ -159,33 +159,64 @@ def same_answer(a, b) -> bool:
     return bool(wa & wb)
 
 
-def phantom_for(question: dict, pool: list, seed: int):
-    """``{'text', 'slot'}``: a false answer for ``question``, borrowed from
-    the wrong answers of another question of the pool, on another topic,
-    and reading as none of this question's answers (the right one above
-    all). None when nothing fits. Its own dice: the game's never move."""
+def _dream(rng, choices: list) -> str:
+    """Words that mean nothing, about as many as an answer here has: false
+    to any question there is."""
+    d = rules()['phantom']['dream']
+    sizes = sorted(len(str(c).split()) for c in choices)
+    words = [rng.choice(d['starts']) + rng.choice(d['ends'])
+             for _ in range(max(1, min(5, sizes[len(sizes) // 2])))]
+    words[0] = words[0].capitalize()
+    return ' '.join(words)
+
+
+def _shown_false(text: str, divides) -> bool:
+    """A borrowed number is false for this sum: a bare amount (an expression
+    might work out to the answer), and for "which divides N" no divisor."""
+    got = _amounts(text)
+    if got is None:
+        return False
+    if divides is None:
+        return True
+    return all(v.denominator == 1 and (v == 0 or divides % int(v) != 0) for v in got)
+
+
+def phantom_for(question: dict, pool: list, seed: int, subject: str = ''):
+    """``{'text', 'slot'}``: a false answer for ``question``, and one that
+    can be shown false (data quiz.phantom). A sum with one value takes a
+    number from another sum's wrong answers, differing from every answer
+    here however read; any other question takes dream words, for another
+    question's wrong answer may be true of this one. Its own dice: the
+    game's never move."""
     choices = list((question or {}).get('choices') or ())
     if not choices or not pool:
         return None
     real = choices + [question.get('answer', '')]
     rng = random.Random(int(seed) ^ 0x5A17)
-    topic = question.get('topic')
-    longest = max(len(str(c)) for c in choices)
-    for _ in range(int(rules()['phantom']['tries'])):
-        other = pool[rng.randrange(len(pool))]
-        if other is question or (topic and other.get('topic') == topic):
-            continue
-        wrong = [c for c in other.get('choices') or () if str(c) != str(other.get('answer', ''))]
-        if not wrong:
-            continue
-        text = str(wrong[rng.randrange(len(wrong))])
-        # (No longer than twice the longest real one: it may not shrink the page.)
-        if not text.strip() or len(text) > max(12, 2 * longest):
-            continue
-        if _CATCH_ALL.search(_plain(text)) or any(same_answer(text, c) for c in real):
-            continue
-        return {'text': text, 'slot': rng.randrange(len(choices) + 1), 'touched': False}
-    return None
+    cfg = rules()['phantom']
+    stem = str(question.get('question', '') or '').strip()
+    text = ''
+    which = re.search(cfg['divisor_stem'], stem)
+    if subject == 'math' and (which or any(re.search(p, stem) for p in cfg['closed_stems'])):
+        divides = int(which.group(1)) if which else None
+        longest = max(len(str(c)) for c in choices)
+        for _ in range(int(cfg['tries'])):
+            other = pool[rng.randrange(len(pool))]
+            if other is question:
+                continue
+            wrong = [c for c in other.get('choices') or () if str(c) != str(other.get('answer', ''))]
+            if not wrong:
+                continue
+            got = str(wrong[rng.randrange(len(wrong))])
+            if len(got) > max(12, 2 * longest) or not _shown_false(got, divides):
+                continue
+            if any(same_answer(got, c) for c in real):
+                continue
+            text = got
+            break
+    if not text:
+        text = _dream(rng, choices)
+    return {'text': text, 'slot': rng.randrange(len(choices) + 1), 'touched': False}
 
 
 def with_phantom(items: list, phantom, what) -> list:
@@ -244,6 +275,9 @@ def _face_kinds() -> list:
                 continue
             if any(d.get(f) for f in ('is_boss', 'is_mini_boss', 'quest_only', 'proper_noun', 'is_allied',
                                       'footprint')):
+                continue
+            # Only what the floors roll: a false face may not give a secret away.
+            if float(d.get('peak_weight', 0) or 0) <= 0 or d.get('frequency', 3) == 0:
                 continue
             out.append(k)
         _FACES = out

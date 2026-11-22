@@ -92,6 +92,8 @@ def test_gorgon_ward_counts_surviving_petrification():
     system, pl = _system()
     for _ in range(3):
         pl.status_effects['petrifying'] = 4
+        import effect_rules
+        effect_rules.bout(pl, 'petrifying')['lethal'] = True    # only the stone that kills (2026-11-22)
         system.on_turn()
         pl.status_effects.pop('petrifying')
         system.on_turn()

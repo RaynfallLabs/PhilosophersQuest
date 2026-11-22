@@ -406,31 +406,33 @@ def build_stock(defn: dict, level: int, rng, seen=()) -> list:
     _rack_counters(final, rng)
     final += _gem_stock(defn, level, rng, taken)
     final += _rare_stock(defn, level, rng, taken)
-    final += _always_stocked(level, final)
+    _rack_always(final, level, rng)
     return final
 
 
-def _always_stocked(level: int, shelf: list) -> list:
+def _rack_always(final: list, level: int, rng) -> None:
     """What every stall of a band has (data/traders.json ``always_stocked``:
-    Oil of Rue before and wherever stone kills). It crowds no ware out, it
-    draws no dice, and its card says what it is for, as a marked counter's
-    does: a guaranteed cure nobody can recognise is no guarantee."""
+    Oil of Rue before and wherever stone kills), on top of the shelf, so it
+    crowds no ware out. It is never marked and stands in no telling place
+    (marking an unknown potion names it: bug bash WB-C09): the tell and the
+    hint teach its look, which is the same every run. Its place is drawn
+    from a copy of the trader's generator, as _rack_counters' are."""
     from items import make_item_by_id
-    out = []
     for entry in data().get('always_stocked') or ():
         lo, hi = entry.get('floors', (1, 100))
         if not int(lo) <= int(level) <= int(hi):
             continue
-        ware = next((w for w in shelf if getattr(w, 'id', None) == entry['id']), None)
-        if ware is None:
-            made = make_item_by_id(entry['cat'], entry['id'])
-            if made is None:
-                continue
-            ware = copy.copy(made)
-            out.append(ware)
-        if entry.get('for'):
-            ware._counter = entry['for']
-    return out
+        if any(getattr(w, 'id', None) == entry['id'] for w in final):
+            continue
+        made = make_item_by_id(entry['cat'], entry['id'])
+        if made is None:
+            continue
+        shelf = random.Random()
+        try:
+            shelf.setstate(rng.getstate())
+        except AttributeError:
+            shelf.seed(len(final))
+        final.insert(shelf.randint(0, len(final)), copy.copy(made))
 
 
 def _rack_counters(final: list, rng) -> None:

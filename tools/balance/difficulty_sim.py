@@ -2943,6 +2943,7 @@ class Run(_MMMagicSim):
         if p.prayer_cooldown > 0:
             return False
         chain = self.quiz.escalator_chain(5)
+        self._prayed_chain = chain           # (sim_effects.stop_stone: the same prayer)
         p.prayer_cooldown = max(100, 100 + 25 * chain)
         if chain >= 1:
             p.restore_sp(max(15, p.max_sp // 4))

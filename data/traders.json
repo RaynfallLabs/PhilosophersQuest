@@ -16,7 +16,7 @@
   },
 
   "always_stocked": [
-    {"cat": "potion", "id": "oil_of_rue", "floors": [19, 80], "for": "basilisks and gorgons turn flesh to stone", "why": "The lethal petrifiers (basilisks, gorgons) begin on floor 25, and every gate camp stands on 19, 39, 59 and 79: the cure is always for sale before stone can kill (Brandon, 2026-11-22: counters always obtainable)."}
+    {"cat": "potion", "id": "oil_of_rue", "floors": [19, 99], "why": "The lethal petrifiers (basilisks, gorgons) begin on floor 25, and every gate camp stands on 19, 39, 59 and 79: the cure is always for sale before stone can kill (Brandon, 2026-11-22: counters always obtainable)."}
   ],
 
   "plan": {
@@ -81,7 +81,7 @@
     "sharpen":   {"name": "Sharpen Your Weapon", "desc": "+1 to the weapon in your hand. A smith will do this twice for any one blade, no more."},
     "reinforce": {"name": "Reinforce Your Armour", "desc": "+1 to the armour on your body. Twice per piece, no more."},
     "cut_curse": {"name": "Cut Off a Cursed Thing", "desc": "Cuts away one cursed piece you cannot take off. The piece is destroyed; you keep the slot and your skin."},
-    "cure":      {"name": "Cure What Ails You", "desc": "Poison, disease, sickness, blindness, confusion and the shakes: treated and gone."},
+    "cure":      {"name": "Cure What Ails You", "desc": "Poison, disease, blindness, confusion, stone, a hex, a charm, fear and the shakes: treated and gone."},
     "restore":   {"name": "Restore Drained Strength", "desc": "Every stat point a drain, a poison or a disease took off you, put back."},
     "heal":      {"name": "Bind Your Wounds", "desc": "Your wounds cleaned and bound: back to full health."},
     "id_retry":  {"name": "Study an Item Together", "desc": "Identify one item with a scribe at your elbow. You still answer the question; a wrong answer costs you nothing but the fee."},

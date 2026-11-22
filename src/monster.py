@@ -630,6 +630,8 @@ class Monster:
         # A monster saved before the lore pass has no mark and takes its
         # kind's lists on load (Game._migrate_monster_affinities).
         self._affinity_pass: int = AFFINITY_PASS
+        import effect_rules
+        self._effects_pass: int = effect_rules.EFFECTS_PASS   # (effect_rules.refresh_monster)
         # Tags for systemic material interactions (undead, demon, fey, etc.)
         self.tags: list[str] = defn.get('tags', [])
         # Its ONE monster family (monsters.json `family`, src/family_lore.py):

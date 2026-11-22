@@ -3,6 +3,7 @@
   "doors": {
     "step": "walk a tile",
     "stairs": "take a stair",
+    "climb": "climb out of a pit",
     "ride": "get into or out of the saddle",
     "strike": "a melee blow, bumped or aimed with A",
     "shoot": "a bow, crossbow or sling shot",
@@ -30,11 +31,11 @@
     "paralyzed": {"lose": ["*"]},
     "knocked_down": {"stand": ["*"]},
     "frozen": {
-      "lose": ["step", "stairs"],
+      "lose": ["step", "stairs", "climb"],
       "refuse": ["ride", "swap", "doff", "drink", "wand", "shoot", "throw", "apply"],
       "thaw": true
     },
-    "immobilized": {"lose": ["step", "stairs"], "refuse": ["ride"]},
+    "immobilized": {"lose": ["step", "stairs", "climb"], "refuse": ["ride"]},
     "silenced": {"refuse": ["cast", "read"]},
     "hexed": {"refuse_worn": ["swap", "doff", "drop"]},
     "feared": {"aimed": ["strike"], "no_approach": true, "cornered_may_fight": true},
@@ -48,7 +49,7 @@
   },
   "statuses": {
     "_doc": "refresh: a second dose runs to the longer of the two, never their sum. caps: the most one dose can last (a price the game announces may pass its own cap). steps: the turns an action spends of the status (Slowed counts the world's turns, and each slowed action gives the world two).",
-    "refresh": ["poisoned", "bleeding", "burning", "diseased", "blinded", "silenced", "corroding", "fumbling", "hallucinating", "hallucinating_pot", "hexed"],
+    "refresh": ["poisoned", "bleeding", "burning", "diseased", "blinded", "silenced", "corroding", "fumbling", "hallucinating", "hallucinating_pot", "hexed", "strangulation", "teleportitis"],
     "caps": {"blinded": 8, "silenced": 6, "fumbling": 6, "slowed": 4, "weakened": 8, "petrifying": 10, "forgetting": 6},
     "steps": {"slowed": 2},
     "footing_turns": 3,
@@ -68,7 +69,22 @@
     "settling": ["confused", "stunned", "hallucinating", "hallucinating_pot"],
     "double": {"statuses": ["stunned"], "offset_x": 13, "offset_y": 9},
     "dark": {"statuses": ["blinded"]},
-    "phantom": {"statuses": ["hallucinating", "hallucinating_pot"], "tries": 40},
+    "phantom": {
+      "_doc": "A false answer is only ever one that can be shown false. A sum with one value (closed_stems) borrows another sum's wrong number; a which-divides sum one that does not divide. Any other question, whose borrowed answer might well be true, gets dream words that mean nothing (dream).",
+      "statuses": ["hallucinating", "hallucinating_pot"],
+      "tries": 60,
+      "closed_stems": [
+        "^[^A-Za-z]+$",
+        "^[^A-Za-z]+( of [^A-Za-z]+)+$",
+        "^(Solve|Round|Double|Half of|Count by|Pyth\\. triple|Cube root of|What % of|Decrease|Increase|From)\\b",
+        "^[^A-Za-z]+ ?(squared|cubed|simplified|as a percent|as a decimal|as percent|as decimal)\\b"
+      ],
+      "divisor_stem": "^Which (?:is a factor of|number divides) (\\d+)",
+      "dream": {
+        "starts": ["quorv", "zemb", "thrix", "ulvy", "yevn", "skorv", "vashq", "ombrz"],
+        "ends": ["ath", "umel", "izh", "oqu", "ezz", "axim"]
+      }
+    },
     "chips": {
       "double": "Stunned: two of everything, sliding together",
       "dark": "Blinded: arrows move your light",
@@ -104,7 +120,8 @@
     "stiff_slow": "Your skin is hardening to stone: every action takes two turns.",
     "rigid_lethal": "Your limbs are rigid -- death is moments away!",
     "rigid_lesser": "Your limbs are nearly rigid!",
-    "stone_trap": "You are turning to stone! Oil of Rue, Cleanse, a cure-all or a prayer stops it.",
+    "stone_trap": "You are turning to stone! Oil of Rue, Cleanse, a cure-all or a prayer for mercy (a chain of four) stops it.",
+    "stone_saved": "The stone closes over you, and cracks: what wards you from death has broken it.",
     "lesser_end": "The stone closes over your joints, and for a moment you cannot move at all.",
     "forgot_item": "{The} feeds on your mind. You no longer know what the {item} is! Kill {him} on this floor to win it back.",
     "forgot_page": "{The} feeds on your mind. All you had learned of the {kind} is gone! Kill {him} on this floor to win it back.",

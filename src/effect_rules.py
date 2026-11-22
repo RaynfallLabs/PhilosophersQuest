@@ -9,7 +9,7 @@ the turn it ends. It remembers what the rules need and the count of turns
 does not say:
 
     by       the token of the creature that laid it (``token``)
-    by_name  its name then, for the lines
+    by_name  its name then, and by_the, as a line names it
     self     the hero brought it on himself (a failed identification)
     lethal   a petrifying that ends in stone
     fell, dropped, fizzled
@@ -83,6 +83,39 @@ def source_in(monsters, tok):
 
 
 # ---------------------------------------------------------------------------
+# A monster saved before the pass
+# ---------------------------------------------------------------------------
+
+EFFECTS_PASS = 1
+_ATTACK_FIELDS = ('effect', 'effect_chance', 'effect_duration', 'lethal')
+
+
+def refresh_monster(monster) -> bool:
+    """A monster from a save older than the effects pass (no
+    ``_effects_pass``: Monster.__init__ sets one) lays what its kind's
+    attacks lay now, by the attack's name. True when it was refreshed."""
+    d = getattr(monster, '__dict__', None)
+    if d is None or d.get('_effects_pass'):
+        return False
+    d['_effects_pass'] = EFFECTS_PASS
+    atks = d.get('attacks')
+    import kind_data
+    defn = kind_data.defs().get(str(d.get('kind', '') or ''))
+    if not isinstance(defn, dict) or not isinstance(atks, list):
+        return False
+    now = {a.get('name'): a for a in defn.get('attacks') or () if isinstance(a, dict)}
+    out = []
+    for atk in atks:
+        new = now.get(atk.get('name')) if isinstance(atk, dict) else None
+        if new is not None:
+            atk = {k: v for k, v in atk.items() if k not in _ATTACK_FIELDS}
+            atk.update({k: new[k] for k in _ATTACK_FIELDS if k in new})
+        out.append(atk)
+    d['attacks'] = out
+    return True
+
+
+# ---------------------------------------------------------------------------
 # Bouts
 # ---------------------------------------------------------------------------
 
@@ -126,6 +159,8 @@ def laid_by(player, effect: str, monster=None, *, lethal: bool = False) -> None:
     if monster is not None:
         b['by'] = token(monster)
         b['by_name'] = str(getattr(monster, 'name', '') or '')
+        from monster import the_name
+        b['by_the'] = the_name(monster, lower=True)
     if effect == 'petrifying' and lethal:
         b['lethal'] = True
 
@@ -133,6 +168,16 @@ def laid_by(player, effect: str, monster=None, *, lethal: bool = False) -> None:
 def self_inflicted(player, effect: str) -> None:
     if effect in BOUTED and running(player, effect):
         bout(player, effect)['self'] = True
+
+
+def spares(player, monster, melee: bool = False) -> bool:
+    """He will not harm it, aimed or not: his charmer, by any means; with
+    ``melee`` also what frightens him. Every list of whom an action catches
+    asks this (holds.strikable, the two reach checks of game_magic)."""
+    for effect in ('charmed', 'feared') if melee else ('charmed',):
+        if running(player, effect) and is_source(monster, bout(player, effect).get('by')):
+            return True
+    return False
 
 
 # ---------------------------------------------------------------------------

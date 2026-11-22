@@ -120,7 +120,9 @@ class ArsenalMixin:
         if _label in ('Put Out', 'Light'):
             self._toggle_light()
             return True
-        if not self._gate('apply', item=item):
+        if not self._gate('apply', item=item, possible=lambda: (
+                not coatings.refusal(self.player, item) if coatings.coat_spec(item) is not None
+                else bool(counters.is_applied(item) or counters.crows(item)))):
             return False
         if coatings.coat_spec(item) is not None:
             why = coatings.refusal(self.player, item)

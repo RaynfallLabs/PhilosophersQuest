@@ -187,7 +187,7 @@ def test_oil_of_rue_is_at_every_stall_before_stone_can_kill():
                 and any(a.get('lethal') for a in d.get('attacks') or () if isinstance(a, dict)))
     assert first > 19
     for tid, defn in traders.data()['traders'].items():
-        for floor in (19, 25, 39, 59, 79):
+        for floor in (19, 25, 39, 59, 79, 85, 93):
             stock = traders.build_stock(defn, floor, random.Random(7))
             assert any(getattr(i, 'id', '') == 'oil_of_rue' for i in stock), (tid, floor)
 
@@ -366,6 +366,43 @@ def _number(text):
         return None
 
 
+def _dream_words() -> set:
+    d = Q.rules()['phantom']['dream']
+    return {s + x for s in d['starts'] for x in d['ends']}
+
+
+def _maths():
+    with open(os.path.join(ROOT, 'data', 'questions', 'math.json'), encoding='utf-8') as f:
+        return json.load(f)
+
+
+def test_a_false_factor_never_divides():
+    bank = _maths()
+    seen = 0
+    for q in bank:
+        if not q['question'].startswith('Which'):
+            continue
+        n = int(''.join(c for c in q['question'] if c.isdigit()))
+        pool = [o for o in bank if o['tier'] == q['tier']]
+        for seed in range(25):
+            text = Q.phantom_for(q, pool, seed, 'math')['text']
+            v = _number(text)
+            if v is not None:
+                seen += 1
+                assert not (v != 0 and v.denominator == 1 and n % int(v) == 0), (q['question'], text)
+    assert seen > 500
+
+
+def test_a_sum_still_gets_a_number_to_doubt():
+    bank = _maths()
+    dreams = 0
+    sample = bank[::3]
+    for n, q in enumerate(sample):
+        pool = [o for o in bank if o['tier'] == q['tier']]
+        dreams += set(Q.phantom_for(q, pool, n, 'math')['text'].lower().split()) <= _dream_words()
+    assert dreams <= len(sample) * 0.05, (dreams, len(sample))
+
+
 @pytest.mark.parametrize('subject', SUBJECTS)
 def test_a_false_answer_is_never_a_real_one(subject):
     with open(os.path.join(ROOT, 'data', 'questions', f'{subject}.json'), encoding='utf-8') as f:
@@ -376,14 +413,17 @@ def test_a_false_answer_is_never_a_real_one(subject):
         for n, q in enumerate(pool[::7]):
             asked += 1
             before = copy.deepcopy(q)
-            ph = Q.phantom_for(q, pool, n)
+            ph = Q.phantom_for(q, pool, n, subject)
             assert q == before, 'the question was touched'
             if ph is None:
                 continue
             offered += 1
             text = ph['text'].strip().lower()
             assert text not in [str(c).strip().lower() for c in q['choices']], (q['question'], text)
-            if _number(text) is not None:
+            if subject != 'math':
+                # (Another question's wrong answer might be true of this one.)
+                assert set(text.split()) <= _dream_words(), (q['question'], text)
+            elif _number(text) is not None:
                 assert _number(text) != _number(q['answer']), (q['question'], text)
     assert offered >= asked * 0.75, (subject, offered, asked)
 
@@ -500,8 +540,232 @@ def test_a_defence_can_be_had_before_each_that_lays_it(effect):
     assert seen and not bare, bare
 
 
-def test_the_stall_says_what_the_oil_is_for():
+def test_the_oil_is_known_by_its_look_never_by_a_mark():
     import traders
+    from items import make_item_by_id
     defn = next(iter(traders.data()['traders'].values()))
-    ware = next(i for i in traders.build_stock(defn, 19, random.Random(3)) if i.id == 'oil_of_rue')
-    assert 'stone' in ware._counter
+    places = set()
+    for seed in range(12):
+        stock = traders.build_stock(defn, 19, random.Random(seed))
+        at = next(n for n, i in enumerate(stock) if getattr(i, 'id', '') == 'oil_of_rue')
+        assert not getattr(stock[at], '_counter', None)
+        places.add(len(stock) - 1 - at)
+    assert len(places) > 1, 'always in one place is a mark'
+    look = make_item_by_id('potion', 'oil_of_rue').unidentified_name
+    with open(os.path.join(ROOT, 'data', 'tells.json'), encoding='utf-8') as f:
+        assert look.lower() in json.load(f)['effects']['petrify_lethal']['counter'].lower()
+
+
+# ---------------------------------------------------------------------------
+# The independent audit of 2026-11-22: one test a finding
+# ---------------------------------------------------------------------------
+
+def test_no_wave_of_his_takes_his_charmer():
+    import holds
+    g = _scene(('harpy', 2, 0), ('troll', -2, 0))
+    p, (harpy, troll) = g.player, g.monsters
+    for m in (harpy, troll):
+        g.visible.add((m.x, m.y))
+    assert g._in_hero_reach(harpy)
+    p.add_effect('charmed', 3)
+    effect_rules.laid_by(p, 'charmed', harpy)
+    assert not g._in_hero_reach(harpy) and not g._in_spell_sight(harpy)
+    assert g._in_hero_reach(troll)
+    assert holds.strikable(p, g.monsters) == [troll]
+    assert holds.strikable(p, g.monsters, spare=False) == [harpy, troll]
+    assert g._nearest_visible_monster() is not harpy
+
+
+def test_fear_spares_by_a_blow_only():
+    g = _scene(('troll', 1, 0))
+    p, m = g.player, g.monsters[0]
+    p.add_effect('feared', 3)
+    effect_rules.laid_by(p, 'feared', m)
+    assert effect_rules.spares(p, m, melee=True) and not effect_rules.spares(p, m)
+
+
+@pytest.mark.parametrize('warded', (True, False))
+def test_a_ward_against_death_answers_stone(warded):
+    from game_states import STATE_DEAD
+    g = _scene(hp=500)
+    p = g.player
+    p.immortal = warded
+    p.status_effects['petrifying'] = 1
+    effect_rules.laid_by(p, 'petrifying', lethal=True)
+    g._advance_turn()
+    assert (g.state != STATE_DEAD) is warded
+    if warded:
+        assert p.hp > 0 and not p.has_effect('petrifying')
+
+
+def test_a_bosses_page_is_never_eaten():
+    p = Player()
+    p.studied_monster_ids = {'asterion_minotaur', 'troll'}
+    p.lore_known_monster_ids = set()
+    got = mind_theft.page_candidates(p)
+    assert 'asterion_minotaur' not in got
+    assert mind_theft.relearnable('troll') and not mind_theft.relearnable('asterion_minotaur')
+
+
+def test_a_page_eaten_can_be_studied_again():
+    from items import Corpse, corpse_is_known
+    g = _scene(('intellect_devourer', 1, 0))
+    p = g.player
+    corpse = Corpse.__new__(Corpse)
+    corpse.__dict__.update(monster_id='troll', id_level=5, id='troll_corpse', x=p.x, y=p.y)
+    g.ground_items[:] = [corpse]
+    p.studied_monster_ids = {'troll'}
+    p.lore_known_monster_ids = set()
+    rec = mind_theft.eat_page(p, 'troll', 'tok', 'Troll')
+    g._forget_corpses('troll')
+    assert not corpse_is_known(p, corpse)
+    mind_theft.give_back(p, rec)
+    assert corpse_is_known(p, corpse)
+
+
+def test_polymorph_keeps_who_ate_it():
+    import game_magic
+    g = _scene(('intellect_devourer', 2, 0))
+    old = g.monsters[0]
+    tok = effect_rules.token(old)
+    new = _mon('troll', old.x, old.y)
+    game_magic._polymorph_swap(g, old, new)
+    assert effect_rules.is_source(new, tok) and not effect_rules.is_source(old, tok)
+
+
+def test_a_story_keeps_its_price():
+    assert S.price_cap('weakened', 200) == 60 and S.price_cap('silenced', 15) == 15
+    assert S.price_cap('paralyzed', 30) is None and S.price_cap('slowed', 30) is None
+    assert S.landed_as('cursed') == 'hexed'
+    p = Player()
+    p.add_effect('silenced', 15, cap=S.price_cap('silenced', 15))
+    assert p.status_effects['silenced'] == 15
+
+
+def test_no_price_for_what_could_not_be_done(monkeypatch):
+    from spells import LEARNABLE_SPELLS
+    g = _scene()
+    p = g.player
+    spell = next(k for k, s in LEARNABLE_SPELLS.items() if s.get('mp_cost') and not s.get('needs_target')
+                 and not s.get('needs_tile') and s.get('effect') != 'light')
+    p.known_spells = {spell: 1}
+    p.mp = 0
+    p.add_effect('stunned', 3)
+    turns = []
+    monkeypatch.setattr(g, '_advance_turn', lambda *a, **k: turns.append(1))
+    g._invoke_spell(spell)
+    assert turns == [] and not effect_rules.bout(p, 'stunned').get('fizzled')
+
+
+def test_an_empty_wand_is_not_fumbled(monkeypatch):
+    from items import load_items
+    g = _scene()
+    p = g.player
+    wand = copy.copy(next(w for w in load_items('wand')
+                          if w.id not in ('philosophers_wrench', 'flux_capacitor')))
+    wand.charges = 0
+    p.inventory[:] = [wand]
+    p.add_effect('stunned', 3)
+    monkeypatch.setattr(g, '_advance_turn', lambda *a, **k: None)
+    g._invoke_wand(wand)
+    assert not effect_rules.bout(p, 'stunned').get('dropped') and wand not in g.ground_items
+
+
+@pytest.mark.parametrize('lethal', (False, True))
+def test_gorgon_ward_wants_the_stone_that_kills(monkeypatch, lethal):
+    g = _scene()
+    p, qs = g.player, g.quirk_system
+    p.add_effect('petrifying', 4)
+    effect_rules.laid_by(p, 'petrifying', lethal=lethal)
+    counted = []
+    real = qs._inc
+    monkeypatch.setattr(qs, '_inc', lambda key, *a: (counted.append(key), real(key, *a))[1])
+    qs.on_turn()
+    p.status_effects.pop('petrifying')
+    qs.on_turn()
+    assert ('gorgon_ward_petrify' in counted) is lethal
+
+
+def test_an_older_saves_monster_lays_what_its_kind_lays_now():
+    m = _mon('basilisk')
+    m.__dict__.pop('_effects_pass')
+    m.attacks = [dict({k: v for k, v in a.items() if k != 'lethal'}, effect='paralyzed')
+                 if a.get('effect') == 'petrifying' else a for a in m.attacks]
+    assert effect_rules.refresh_monster(m)
+    stone = next(a for a in m.attacks if a.get('effect') == 'petrifying')
+    assert stone['lethal'] and not effect_rules.refresh_monster(m)
+
+
+def test_an_aura_rolls_one_save(monkeypatch):
+    monkeypatch.setattr(random, 'randint', lambda a, b: b)      # the best of rolls
+    p = Player()
+    applied, _said = S.apply_debuff_with_save(p, 'weakened', 4, S.SAVE_FAILED)
+    assert applied and p.status_effects['weakened'] == 4
+
+
+def test_lengthening_a_stun_himself_makes_it_his_own():
+    p = Player()
+    p.add_effect('stunned', 3)
+    S.apply_penalty(p, 'stunned', 11)
+    assert G.verdict(p, 'step').open
+
+
+def test_immobilized_in_a_pit_he_may_still_bump(monkeypatch):
+    from game_states import STATE_QUIZ
+    g = _scene(('troll', 1, 0))
+    g.player.status_effects.update(in_pit=-1, immobilized=3)
+    monkeypatch.setattr(g, '_sees_monster', lambda mon: True)
+    g._do_move(1, 0)
+    assert g.state == STATE_QUIZ
+
+
+def test_levitating_he_has_no_floor_to_fall_on():
+    p = Player()
+    p.add_effect('stunned', 3)
+    p.status_effects['levitating'] = 5
+    assert G.verdict(p, 'step').open
+
+
+def test_standing_gives_three_turns_of_footing():
+    g = _scene()
+    g.player.status_effects['knocked_down'] = 1
+    g._stand_up()
+    assert g.player.status_effects['footing'] == 3
+
+
+def test_a_false_face_gives_no_secret_away():
+    kinds = Q._face_kinds()
+    assert len(kinds) > 100
+    assert 'black_knight' not in kinds and 'hell_bovine' not in kinds
+
+
+def test_the_line_names_who_held_him():
+    p = Player()
+    p.add_effect('charmed', 3)
+    effect_rules.laid_by(p, 'charmed', _mon('harpy'))
+    assert effect_rules.bout(p, 'charmed')['by_the'].lower() == 'the harpy'
+
+
+def test_a_potions_card_says_what_it_lays():
+    import types
+    import food_system
+    for eff, status in (('weakness', 'weakened'), ('slow', 'slowed'), ('fumbling', 'fumbling'),
+                        ('blindness', 'blinded')):
+        card = food_system.potion_turns(types.SimpleNamespace(effect=eff, duration=40))
+        assert card == S.STATUS_CAP[status], eff
+
+
+def test_a_lifted_curse_lifts_a_hex():
+    p = Player()
+    p.add_effect('hexed', 20)
+    assert S.lift_hex(p) and not p.has_effect('hexed') and not S.lift_hex(p)
+
+
+def test_the_slowers_of_the_first_twenty_floors_ask_two_or_three():
+    for kind, d in MONS.items():
+        if not isinstance(d, dict) or int(d.get('min_level', 1)) > 19 or d.get('is_boss'):
+            continue
+        if kind in ('wight', 'green_hag', 'spriggan') or kind.startswith('blue_m'):
+            for a in d.get('attacks') or ():
+                if a.get('effect') == 'slowed' and str(a.get('effect_duration')).isdigit():
+                    assert int(a['effect_duration']) <= 3, (kind, a['name'])

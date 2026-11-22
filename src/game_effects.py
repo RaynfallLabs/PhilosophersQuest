@@ -35,9 +35,12 @@ class EffectsMixin:
     # ------------------------------------------------------------------
 
     def _gate(self, door: str, *, target=None, item=None, worn: bool = False,
-              toward: bool = False) -> bool:
+              toward: bool = False, possible=None) -> bool:
         """The one check every action passes. True: go on. False: the gate
-        has said why and spent whatever the try costs; the caller returns."""
+        has said why and spent whatever the try costs; the caller returns.
+        ``possible`` (a callable) says whether it could otherwise be done: a
+        price (a fall, a drop, a fizzle, the thaw's turn) is never charged
+        for what could not, which goes on to its own free refusal."""
         p = self.player
         if not getattr(p, 'status_effects', None):
             return True
@@ -47,6 +50,9 @@ class EffectsMixin:
             source_here=self._effect_source('charmed') is not None,
             flame=self._flame_in_hand())
         if v.open:
+            return True
+        if (possible is not None and not possible()
+                and v.what in (action_gate.FALL, action_gate.DROP, action_gate.FIZZLE, action_gate.THAW)):
             return True
         self._gate_closed(v, target=target, item=item)
         return False
@@ -75,7 +81,7 @@ class EffectsMixin:
         elif v.what == action_gate.THAW:
             from status_effects import GRACE_TURNS
             p.status_effects.pop('frozen', None)
-            p.status_effects['control_immune'] = GRACE_TURNS
+            p.status_effects['control_immune'] = GRACE_TURNS + 1
             self.add_message(effect_rules.line('thaw'), 'success')
         elif v.what == action_gate.FALL:
             action_gate.paid(p, v)
@@ -92,7 +98,8 @@ class EffectsMixin:
     def _stand_up(self, advance: bool = True) -> None:
         from status_effects import FOOTING_TURNS
         self.player.status_effects.pop('knocked_down', None)
-        self.player.status_effects['footing'] = FOOTING_TURNS
+        # (One more: the turn he stands in ticks it, as it does the thaw's.)
+        self.player.status_effects['footing'] = FOOTING_TURNS + 1
         self.add_message(effect_rules.line('stand'), 'info')
         if advance:
             self._advance_turn()
@@ -279,12 +286,11 @@ class EffectsMixin:
 
     def _bout_over(self, effect: str) -> None:
         p = self.player
-        name = effect_rules.bout(p, effect).get('by_name') or ''
+        b = effect_rules.bout(p, effect)
+        the = b.get('by_the') or b.get('by_name') or 'it'
         from status_effects import end_bout
         end_bout(p, effect)
-        self.add_message(effect_rules.line('bout_source_gone',
-                                           the=f"the {name}" if name and not name[:1].isupper()
-                                           else (name or 'it')), 'success')
+        self.add_message(effect_rules.line('bout_source_gone', the=the), 'success')
 
     def _effects_killed(self, monster) -> None:
         """A creature died: what it ate of his mind comes back, and its hold
@@ -332,6 +338,17 @@ class EffectsMixin:
         if gone:
             self.add_message(effect_rules.line('lost_for_good', what=', '.join(r['name'] for r in gone)), 'danger')
 
+    def _forget_corpses(self, kind: str) -> None:
+        """A page gone, its kind's corpses ask again: studying one teaches
+        it back. (Given back, the kind knows them all: items.corpse_is_known.)"""
+        from items import Corpse
+        from main import _all_items_in_save
+        state = {'ground_items': list(getattr(self, 'ground_items', []) or []),
+                 'level_mgr': getattr(self, 'level_mgr', None)}
+        for it in _all_items_in_save(self.player, state):
+            if isinstance(it, Corpse) and getattr(it, 'monster_id', None) == kind:
+                it.id_level = 0
+
     def _mind_eaten_by(self, monster) -> None:
         """It eats one identified kind from the pack, or one earned page."""
         from monster import pronouns, the_name
@@ -360,4 +377,5 @@ class EffectsMixin:
         import kind_data
         kind_name = proper_name((kind_data.defs().get(thing) or {}).get('name') or thing.replace('_', ' '))
         mind_theft.eat_page(p, thing, tok, kind_name)
+        self._forget_corpses(thing)
         self.add_message(effect_rules.line('forgot_page', kind=kind_name, **words), 'danger')

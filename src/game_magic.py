@@ -186,6 +186,10 @@ def _polymorph_swap(game, target, new_m) -> str:
     new_m.stolen_items = list(target.__dict__.get('stolen_items') or ())
     target.stolen_gold = 0
     target.__dict__['stolen_items'] = []
+    # And who it is: what it ate of his mind is still in it (mind_theft.py).
+    _tok = target.__dict__.pop('_effect_token', None)
+    if _tok:
+        new_m.__dict__['_effect_token'] = _tok
     idx = game.monsters.index(target)
     game.monsters[idx] = new_m
     if _hidden(new_m, game.player):
@@ -395,9 +399,15 @@ class MagicMixin(MagicWardsMixin):
     # ------------------------------------------------------------------
 
     def _invoke_wand(self, wand: 'Wand'):
-        # Philosopher's Wrench: no quiz -- it's a tool, not magic
-        if not self._gate('wand', item=wand):
+        # An empty wand only crumbles, and a lamp that already burns keeps
+        # its charge: neither is a zap to fumble.
+        _tool = wand.id in ('philosophers_wrench', 'flux_capacitor')
+        _held = bool(wand.effect == 'light' and self.player.status_effects.get('light', 0) == -1
+                     and (getattr(wand, 'identified', False) or wand.id in self.player.known_item_ids))
+        if not self._gate('wand' if _tool or wand.charges > 0 else 'work', item=wand,
+                          possible=lambda: _tool or not _held):
             return
+        # Philosopher's Wrench: no quiz -- it's a tool, not magic
         if wand.id == 'philosophers_wrench':
             wand.identified = True
             self.player.known_item_ids.add(wand.id)
@@ -448,9 +458,10 @@ class MagicMixin(MagicWardsMixin):
             self._throw_targeting = False
             self._observe_targeting = False
             px, py = self.player.x, self.player.y
+            import holds                  # (aim at anything: the gate says why not)
             candidates = [
-                m for m in self.monsters
-                if m.alive and self._in_hero_reach(m)
+                m for m in holds.strikable(self.player, self.monsters, spare=False)
+                if m.alive and (m.x, m.y) in self.visible
             ]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             self._target_candidates = candidates
@@ -1408,7 +1419,9 @@ class MagicMixin(MagicWardsMixin):
         # -- Tier 5 wand effects -------------------------------------------
         elif effect == 'nova':
             from dice import roll as _roll
-            all_monsters = [m for m in self.monsters if m.alive]
+            import effect_rules
+            all_monsters = [m for m in self.monsters
+                            if m.alive and not effect_rules.spares(self.player, m)]
             if not all_monsters:
                 self.add_message("The wand fires but no creatures are present!", 'info')
             else:
@@ -1566,6 +1579,19 @@ class MagicMixin(MagicWardsMixin):
             return f"{name} needs a foe beside you: you must lay hands on it."
         return f"Nothing is close enough for {name}: it reaches {quantity(reach, 'tile')}."
 
+    def _can_cast(self, spell: dict) -> bool:
+        """The MP (or the floor's free cast) and, aimed, someone to aim at."""
+        from chain_passives import is_charge_available
+        p = self.player
+        if (p.mp < p.spell_mp_cost(spell['mp_cost'])
+                and not is_charge_available(p, 'free_cast_once_per_floor')):
+            return False
+        if spell.get('needs_target') and not spell.get('needs_tile'):
+            import holds
+            return any(m.alive and self._sees_monster(m) and self._spell_in_reach(spell, m)
+                       for m in holds.strikable(p, self.monsters, spare=False))
+        return True
+
     def _in_hero_reach(self, m) -> bool:
         """A creature a wand, a scroll or a spell's wave can catch: on a tile
         the hero sees. Swallowed, only the creature round him: nothing
@@ -1573,8 +1599,9 @@ class MagicMixin(MagicWardsMixin):
         (holds.shields, AI-3)."""
         if (m.x, m.y) not in self.visible:
             return False
+        import effect_rules
         import holds
-        return not holds.shields(self.player, m)
+        return not holds.shields(self.player, m) and not effect_rules.spares(self.player, m)
 
     def _in_spell_sight(self, m) -> bool:
         """An area spell's victim: alive, on a tile the hero sees, and in a
@@ -1586,6 +1613,9 @@ class MagicMixin(MagicWardsMixin):
         import holds
         if holds.shields(self.player, m):
             return False             # swallowed, he reaches only the gut round him (AI-3)
+        import effect_rules
+        if effect_rules.spares(self.player, m):
+            return False             # his charmer: no wave of his takes it
         from combat import _line_of_sight
         from geom import occupied_tiles
         px, py = self.player.x, self.player.y
@@ -1607,7 +1637,7 @@ class MagicMixin(MagicWardsMixin):
             self.add_message(lights.line('spell_held'), 'info')
             self.state = STATE_PLAYER
             return
-        if not self._gate('cast'):
+        if not self._gate('cast', possible=lambda: self._can_cast(spell)):
             return
         mp_cost = self.player.spell_mp_cost(spell['mp_cost'])
         from chain_passives import consume_passive_charge, find_passive_item, refund_passive_charge
@@ -1638,7 +1668,7 @@ class MagicMixin(MagicWardsMixin):
             # thing: its tile would show where it stands) and only what the
             # spell reaches (spells.SPELL_REACH: a touch, a short sign).
             import holds                  # swallowed, he can aim only at the gut round him
-            seen = [m for m in holds.strikable(self.player, self.monsters)
+            seen = [m for m in holds.strikable(self.player, self.monsters, spare=False)
                     if m.alive and self._sees_monster(m)]
             candidates = [m for m in seen if self._spell_in_reach(spell, m)]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))

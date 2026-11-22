@@ -86,13 +86,18 @@ SLOW_THREE = {
     'mimic': 'Adhesive Slam', 'duat_shade': 'Shadow Touch', 'arachne': 'Web',
     'giant_spider': 'Web Spray', 'desert_wraith': 'Dehydration', 'ettercap': 'Web',
     'ice_elemental': 'Freezing Touch', 'wraith': 'Draining Touch', 'specter': 'Draining Touch',
+    # ...and the four that begin on floors 18-19 (grave-cold, a hag's mire,
+    # the spriggan's weight, the Minch's water).
+    'wight': 'Draining Touch',
+    'green_hag': 'Weakening Curse',
+    'spriggan': 'Wither Curse',
+    'blue_men_of_the_minch': 'Squall Spray',
 }
 
 
 # Slowed is four turns at most now (audit section 4: it takes every action,
 # by any key). These named more; each says the four it lays.
 SLOWED_FOUR = [
-    ('wight', 'Draining Touch'),
     ('frost_crawler', 'Chill Aura'),
     ('vampire_spawn', 'Bite'),
     ('vampire', 'Bite'),
@@ -121,9 +126,7 @@ SLOWED_FOUR = [
     ('spider_queen', 'Web Spray'),
     ('death_beetle', 'Death Rattle'),
     ('roc_adult', 'Talon Crush'),
-    ('green_hag', 'Weakening Curse'),
     ('annis_hag', 'Crushing Claw'),
-    ('spriggan', 'Wither Curse'),
     ('shambling_mound', 'Slam'),
     ('shambling_mound', 'Engulf'),
     ('sea_dragon_spawn', 'Tail Slam'),
@@ -136,7 +139,6 @@ SLOWED_FOUR = [
     ('dread_knight_legion', 'Death Aura'),
     ('frostfang_giant', 'Frost Breath'),
     ('hels_handmaid', "Slow-Walker's Touch"),
-    ('blue_men_of_the_minch', 'Squall Spray'),
     ('vila', 'Whirlwind'),
     ('star_jelly', 'Starlight Touch'),
     ('yacumama', 'Drawing Breath'),

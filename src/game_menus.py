@@ -1605,7 +1605,8 @@ class MenuMixin:
 
         elif pid == 'mind_fortress':
             cleared = []
-            mental = {'confused', 'blinded', 'hallucinating', 'hallucinating_pot', 'stunned', 'feared'}
+            mental = {'confused', 'blinded', 'hallucinating', 'hallucinating_pot', 'stunned', 'feared',
+                      'charmed', 'forgetting'}
             for eff in mental:
                 if pl.has_effect(eff):
                     pl.status_effects.pop(eff, None)
@@ -1797,7 +1798,8 @@ class MenuMixin:
             from combat import _line_of_sight
             import holds
             _dist = max(abs(fenrir.x - pl.x), abs(fenrir.y - pl.y))
-            if holds.shields(pl, fenrir) or _dist > self.GLEIPNIR_RANGE or not _line_of_sight(
+            import effect_rules
+            if holds.shields(pl, fenrir) or effect_rules.spares(pl, fenrir) or _dist > self.GLEIPNIR_RANGE or not _line_of_sight(
                     pl.x, pl.y, fenrir.x, fenrir.y, self.dungeon):
                 self.add_message(
                     "The ribbon will not reach him from here. You need him in "
@@ -1923,7 +1925,12 @@ class MenuMixin:
         if getattr(pl, '_seven_league_used_this_floor', False):
             self.add_message("Seven-League Step is spent for this floor.", 'warning')
             return True  # bug-bash fix afdf: don't burn a turn on a warning
-        if not self._gate('step'):
+        _tx = pl.x + int(getattr(pl, '_facing_dx', 0) or 0)
+        _ty = pl.y + int(getattr(pl, '_facing_dy', 0) or 0)
+        if not self._gate('step', possible=lambda: (
+                (_tx, _ty) != (pl.x, pl.y) and self.dungeon.in_bounds(_tx, _ty)
+                and self.dungeon.is_walkable(_tx, _ty)
+                and monster_at_tile(self.monsters, _tx, _ty) is None)):
             return True
         dx = int(getattr(pl, '_facing_dx', 0) or 0)
         dy = int(getattr(pl, '_facing_dy', 0) or 0)

@@ -38,7 +38,7 @@ class _Hero:
         return self.status_effects.get(e, 0) != 0
 
 
-DOORS = ('step', 'stairs', 'ride', 'strike', 'shoot', 'throw', 'swap', 'doff', 'drink', 'eat',
+DOORS = ('step', 'stairs', 'climb', 'ride', 'strike', 'shoot', 'throw', 'swap', 'doff', 'drink', 'eat',
          'wand', 'cast', 'read', 'apply', 'power', 'pray', 'pickup', 'drop', 'stance', 'work',
          'pet', 'wait')
 
@@ -48,9 +48,9 @@ EXPECT = {
     'sleeping': {d: G.LOSE for d in EVERY},
     'paralyzed': {d: G.LOSE for d in EVERY},
     'knocked_down': {d: G.STAND for d in EVERY},
-    'frozen': {'step': G.LOSE, 'stairs': G.LOSE,
+    'frozen': {'step': G.LOSE, 'stairs': G.LOSE, 'climb': G.LOSE,
                **{d: G.REFUSE for d in ('ride', 'swap', 'doff', 'drink', 'wand', 'shoot', 'throw', 'apply')}},
-    'immobilized': {'step': G.LOSE, 'stairs': G.LOSE, 'ride': G.REFUSE},
+    'immobilized': {'step': G.LOSE, 'stairs': G.LOSE, 'climb': G.LOSE, 'ride': G.REFUSE},
     'silenced': {'cast': G.REFUSE, 'read': G.REFUSE},
     'hexed': {d: G.REFUSE for d in ('swap', 'doff', 'drop')},
     'feared': {'step': G.REFUSE, 'strike': G.REFUSE},

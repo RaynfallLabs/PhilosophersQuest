@@ -10,8 +10,9 @@ fight has no geometry or menu for:
   the others, or waits; pinned, he is cornered and fights;
 * blinded, each question costs DARK_SECONDS of moving the light;
 * stone that kills is stopped as a kid who listens would: the Oil of Rue
-  every stall of floors 19-80 sells (one a band for a kid who uses his
-  potions and prays), a cure in his kit, or a prayer.
+  every stall of floors 19-99 sells (one a band for a kid who uses his
+  potions and prays; its price is not charged, which flatters him a
+  little), a cure in his kit, or a prayer.
 
 What Forget takes (a known kind, a page) has no price in the simulator's
 fights, and is not priced.
@@ -41,7 +42,7 @@ def stand(run) -> bool:
         return False
     from status_effects import FOOTING_TURNS
     p.status_effects.pop('knocked_down', None)
-    p.status_effects['footing'] = FOOTING_TURNS
+    p.status_effects['footing'] = FOOTING_TURNS + 1
     run.fs['fx_stood'] = run.fs.get('fx_stood', 0) + 1
     return True
 
@@ -98,7 +99,7 @@ def stop_stone(run) -> bool:
             run.pray()
             run.fs['fx_stone_prayed'] = run.fs.get('fx_stone_prayed', 0) + 1
             # The mercy lifts stone from a fourth link (game_divine).
-            if run.quiz.escalator_chain(5) >= 4:
+            if getattr(run, '_prayed_chain', 0) >= 4:
                 p.status_effects.pop('petrifying', None)
             return True
         else:

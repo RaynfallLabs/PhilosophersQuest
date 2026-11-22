@@ -246,9 +246,10 @@ def _stench(m, a, player, rng, seen: bool = True) -> list:
         m._aura_hits = counts
         steady = _said(m, a, 'stench_steady', seen)
         return [(steady, 'info')] if steady else []
-    from status_effects import apply_debuff_with_save
+    from status_effects import SAVE_FAILED, apply_debuff_with_save
+    # (The save was the one above: no second one halves what got through.)
     applied, text = apply_debuff_with_save(player, eff, max(1, int(a.get('turns', 3) or 3)),
-                                           _dc(m, a), source=m)
+                                           SAVE_FAILED, source=m)
     if not applied:
         return [(text, 'info')] if text else []
     counts['stench'] = counts.get('stench', 0) + 1

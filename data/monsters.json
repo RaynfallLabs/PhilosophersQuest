@@ -1649,7 +1649,7 @@
         "type": "necrotic",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 4,
+        "effect_duration": 3,
         "delivery": "touch",
         "drains_life": true
       }
@@ -20284,7 +20284,7 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 4,
+        "effect_duration": 3,
         "delivery": "voice"
       }
     ],
@@ -20871,7 +20871,7 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 4,
+        "effect_duration": 3,
         "delivery": "voice"
       }
     ],
@@ -44944,7 +44944,7 @@
         "delivery": "breath",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 4,
+        "effect_duration": 3,
         "ranged": true
       },
       {

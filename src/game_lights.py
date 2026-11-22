@@ -233,12 +233,15 @@ class LightsMixin:
     def _swap_light(self) -> bool:
         """Shift+L: the light and what it takes the place of change places,
         in one turn however much moves. True when they did."""
+        p = self.player
+        _arm_free = lambda: p.shield is None or p.try_unequip_slot(p.shield)[0]   # noqa: E731
         if lights.held(self.player) is not None:
-            if not self._gate('doff', worn=True):
+            if not self._gate('doff', worn=True, possible=_arm_free):
                 return False
         else:
             _light = lights.pick(self.player)
-            if _light is not None and not self._gate('swap', item=_light, worn=self.player.shield is not None):
+            if _light is not None and not self._gate('swap', item=_light, worn=self.player.shield is not None,
+                                                     possible=_arm_free):
                 return False
         if lights.held(self.player) is not None:
             done = self._stow_light()

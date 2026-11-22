@@ -2014,9 +2014,6 @@ class CombatMixin:
             self.state = STATE_PLAYER
             return
 
-        if not self._gate('cast' if str(pid or '').startswith('spell_') else 'power', target=target):
-            self._refund_pending_spell()
-            return
         if pid and pid.startswith('spell_'):
             # A spell with a reach (spells.SPELL_REACH) lands only that far:
             # a touch on a foe beside you, a sign close by.
@@ -2026,6 +2023,10 @@ class CombatMixin:
                 self._refund_pending_spell()
                 self.state = STATE_PLAYER
                 return
+        if not self._gate('cast' if str(pid or '').startswith('spell_') else 'power', target=target):
+            self._refund_pending_spell()
+            return
+        if pid and pid.startswith('spell_'):
             # Targeted spell: start the quiz with this target
             spell = getattr(self, '_pending_spell', None)
             spell_id = getattr(self, '_pending_spell_id', None)
@@ -3081,6 +3082,11 @@ class CombatMixin:
         # Whom this blow can reach, as it is begun: only the gut, for a
         # swallowed hero, even if the blow then cuts him out of it.
         _within = holds.strikable(self.player, self.monsters)
+        if self.player.has_effect('feared') and not self._fear_cornered(monster):
+            # (Nor does a sweep's edge find what he dares not strike.)
+            import effect_rules
+            _within = [m for m in _within
+                       if m is monster or not effect_rules.spares(self.player, m, melee=True)]
         # A blow struck carries a long way (src/senses.py).
         self._make_noise('melee')
         habits.hero_melee(self, monster)     # They Learn Your Tricks (src/habits.py)

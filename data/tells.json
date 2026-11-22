@@ -20,8 +20,8 @@
     "petrify_lethal": {
       "sign": "Around {the} the stone has shapes in it: a hand, a shoulder, an open mouth.",
       "does": "{He} can start you turning to stone: in ten turns you would be dead.",
-      "counter": "Carry Oil of Rue: the stalls from floor 19 always sell it. Cleanse, a cure-all or a prayer stops the count too, and a mirror shield turns a gaze.",
-      "counter_far": "Carry Oil of Rue: the stalls from floor 19 always sell it. Cleanse, a cure-all or a prayer stops the count too. {He} can reach you from across a room: keep stone between you, or watch a gaze in a mirror shield."
+      "counter": "Carry Oil of Rue, the grey-green oily flask at every stall from floor 19. Cleanse, a cure-all or a prayer for mercy (a chain of four) stops the count too, and a mirror shield turns a gaze.",
+      "counter_far": "Carry Oil of Rue, the grey-green oily flask at every stall from floor 19. Cleanse, a cure-all or a prayer for mercy (a chain of four) stops the count too. {He} can reach you from across a room: keep stone between you, or watch a gaze in a mirror shield."
     },
     "petrifying": {
       "sign": "Small things lie stiff where {the} has been.",
@@ -38,8 +38,8 @@
     "charmed": {
       "sign": "You find that you would like to stand nearer {the}.",
       "does": "{He} can charm you: you cannot strike {him}, and your feet take you to {him}.",
-      "counter": "Wax stops a song, a mirror shield a gaze, cold iron a fairy's glamour. Fight the others: the first wound {he} gives you breaks it.",
-      "counter_far": "{He} can do it from across a room. Wax stops a song, a mirror shield a gaze, cold iron a fairy's glamour, and the first wound {he} gives you breaks it."
+      "counter": "Moly, magic resistance and a helm help against any charm, wax against a song, a mirror against a gaze. The first wound {he} gives you breaks it.",
+      "counter_far": "{He} can do it from across a room. Moly, magic resistance and a helm help against any charm, wax against a song, a mirror against a gaze. The first wound {he} gives you breaks it."
     },
     "knocked_down": {
       "sign": "{The} means to go through you, not round you.",

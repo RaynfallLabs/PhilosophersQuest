@@ -458,12 +458,17 @@ def shields(player, m) -> bool:
     return swallowed(player) and not is_holder(m, player)
 
 
-def strikable(player, monsters):
+def strikable(player, monsters, spare: bool = True):
     """Those of ``monsters`` the hero's blows can land on: all of them (the
-    list itself), or, swallowed, only what holds him."""
-    if not swallowed(player):
-        return monsters
-    return [m for m in monsters or () if is_holder(m, player)]
+    list itself), or, swallowed, only what holds him; and never his charmer
+    (effect_rules.spares; ``spare`` False: the list to aim from, whose gate
+    says why not)."""
+    out = [m for m in monsters or () if is_holder(m, player)] if swallowed(player) else monsters
+    if spare:
+        import effect_rules
+        if effect_rules.running(player, 'charmed'):
+            out = [m for m in out or () if not effect_rules.spares(player, m)]
+    return out
 
 
 def aim_refused(player, m, monsters) -> str:

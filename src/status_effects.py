@@ -58,7 +58,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'corroding':          ('Corroding',          (180, 200,  50), 'Acid eats at your gear: one piece at most'),
     'immobilized':        ('Immobilized',        (180, 130,  60), 'Feet held fast: you can still fight and use your hands'),
     'in_pit':             ('In Pit',             (140, 100,  60), 'Stuck in a pit; must climb out'),
-    'silenced':           ('Silenced',           (120, 120, 160), 'No voice: no spell, no scroll, no song or call'),
+    'silenced':           ('Silenced',           (120, 120, 160), 'No voice: no spell or scroll, and for a monster no call'),
     'empowered':          ('Empowered',          (255, 200,  80), 'Next melee attack deals 3x damage'),
     'berserk':            ('Berserk',            (220,  60,  40), 'Battle-fury: your blows land harder while it lasts'),
     'riposte_armed':      ('Riposte Armed',      (220, 220, 160), 'Next melee hit against you triggers a free counter'),
@@ -297,6 +297,7 @@ TICK_STEPS: dict = {k: int(v) for k, v in effect_rules.statuses()['steps'].items
 UNTIL_ACTED: frozenset = frozenset({'knocked_down'})
 FOOTING_TURNS: int = int(effect_rules.statuses()['footing_turns'])
 
+SAVE_FAILED = 10 ** 6         # the dc of a save already rolled and failed (auras.py)
 GRACE_TURNS = 3  # turns of immunity to re-disable after a hard-control effect ends
 
 
@@ -953,6 +954,28 @@ def reflected(effect: str, turns: int) -> tuple:
     return to, (fixed if fixed is not None else turns)
 
 
+def landed_as(effect: str) -> str:
+    """The status the hero gets when ``effect`` is named."""
+    return 'hexed' if effect == 'cursed' else effect
+
+
+def price_cap(effect: str, turns: int):
+    """The ``cap`` of a price the game announces (a story's): the caps that
+    are for a creature's dose don't shorten it. None: the ordinary cap
+    (control and Slowed keep theirs: a price may not be a lock)."""
+    if effect in ('blinded', 'silenced', 'fumbling', 'weakened') and int(turns) > 0:
+        return min(int(turns), MAX_EFFECT_DURATION)
+    return None
+
+
+def lift_hex(player) -> str:
+    """A curse is lifted, and a hex with it. Its line, or ''."""
+    if player.status_effects.pop('hexed', None):
+        effect_rules.ended(player, 'hexed')
+        return 'The hex lifts from what you wear.'
+    return ''
+
+
 def end_bout(player, effect: str) -> None:
     """``effect`` is over early for a reason of the world's (its owner died,
     his wound broke its charm, the hero thawed): gone, with the recovery
@@ -988,9 +1011,10 @@ def apply_penalty(player, effect: str, turns: int) -> None:
     player.status_effects[effect] = max(int(turns), had)
     if not had:
         effect_rules.opened(player, effect)
-        # His own doing: the double vision only, never a fall or a drop
-        # (Brandon, 2026-11-22: a failed identification is not a chore).
-        effect_rules.self_inflicted(player, effect)
+    # His own doing, also when it lengthens a creature's stun: the double
+    # vision only, never a fall or a drop (Brandon, 2026-11-22: a failed
+    # identification is not a chore).
+    effect_rules.self_inflicted(player, effect)
 
 
 # Save-feedback flavor: the player should FEEL which stat saved them (body /

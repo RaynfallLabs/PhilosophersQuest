@@ -81,9 +81,9 @@ class RidingMixin:
     def _toggle_ride(self, pet=None) -> bool:
         """Mount (or dismount) the Bococho: one turn. True when it happened."""
         p = self.player
-        if not self._gate('ride'):
-            return False
         if getattr(p, 'riding', False):
+            if not self._gate('ride'):
+                return False
             mount = self._mount()
             self._riding_set_down('dismount' if mount is not None else 'gone')
             self.state = STATE_PLAYER
@@ -99,6 +99,8 @@ class RidingMixin:
             self.add_message(riding.refusal_line(
                 reason, getattr(pet, 'name', 'she') if pet is not None else 'she',
                 the_name(foe, lower=True) if foe is not None else 'it'), 'warning')
+            return False
+        if not self._gate('ride'):
             return False
         p.riding = True
         pet.ridden = True

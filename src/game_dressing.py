@@ -767,7 +767,10 @@ class DressingMixin:
             self.add_message("Nothing is at your back. Ready a weapon from the Kit "
                              "(K, then R).", 'info')
             return False
-        if not self._gate('swap', item=back, worn=hand is not None):
+        if not self._gate('swap', item=back, worn=hand is not None, possible=lambda: (
+                (hand is None or p.try_unequip_slot(hand)[0])
+                and (not getattr(back, 'two_handed', False) or p.shield is None
+                     or p.try_unequip_slot(p.shield)[0]))):
             return False
         if hand is not None:
             ok, msg = p.try_unequip_slot(hand)

@@ -98,7 +98,7 @@ def _one(player, effect, rule, door, target, worn, toward, cornered, source_here
             return Verdict(THAW, effect, 'thaw')
         key = effect
         if effect == 'frozen':
-            key = 'frozen_feet' if door in ('step', 'stairs', 'ride') else 'frozen_hands'
+            key = 'frozen_feet' if door in ('step', 'stairs', 'climb', 'ride') else 'frozen_hands'
         return Verdict(LOSE if lose else REFUSE, effect, key)
     if worn and _in(rule, 'refuse_worn', door):
         return Verdict(REFUSE, effect, effect)
@@ -124,6 +124,8 @@ def _one(player, effect, rule, door, target, worn, toward, cornered, source_here
         b = effect_rules.bout(player, effect)
         if b.get('self') or b.get(flag) or steady(player):
             return GO
+        if what == FALL and player.has_effect('levitating'):
+            return GO                        # off the ground, as against a trample (knockdown.py)
         return Verdict(what, effect, what)
     return GO
 

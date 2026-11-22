@@ -1437,8 +1437,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _migrate_monster_affinities(self, state: dict) -> int:
         """Every monster on this floor and every stored one that was saved
         before the lore pass (winning build, slice 2) takes its kind's
-        lists from data/monsters.json: affinity.refresh_from_data."""
+        lists from data/monsters.json: affinity.refresh_from_data. One saved
+        before the effects pass lays what its kind lays now:
+        effect_rules.refresh_monster."""
         import affinity as _affinity
+        import effect_rules as _effect_rules
         pools = [getattr(self, 'monsters', None) or []]
         lm = state.get('level_mgr') if isinstance(state, dict) else None
         if lm:
@@ -1447,6 +1450,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         for pool in pools:
             for m in pool:
                 n += 1 if _affinity.refresh_from_data(m) else 0
+                _effect_rules.refresh_monster(m)
         return n
 
     def _migrate_ranged_weapons(self):
@@ -3582,8 +3586,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
 
         # In a pit: movement = climb out (stay in place, costs a turn)
-        if p.has_effect('in_pit'):
-            if not self._gate('stairs'):
+        # (Feet held, a key at a foe beside the pit is the blow it would be
+        # out of one: Immobilized stops the feet only.)
+        if p.has_effect('in_pit') and not (
+                (p.has_effect('immobilized') or p.has_effect('frozen'))
+                and monster_at_tile(self.monsters, p.x + dx, p.y + dy) is not None):
+            if not self._gate('climb'):
                 return                      # feet held: no climbing either
             del p.status_effects['in_pit']
             self.add_message("You climb out of the pit.", 'info')
@@ -4124,10 +4132,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         if self._ways_held_at_stairs():      # in a coil or a gullet: no stair (AI-3)
             return
-        if not self._gate('stairs'):
-            return
         # A side floor's portal (the farm's, the stage door): back to the dungeon
         if is_side_floor(self.dungeon_level):
+            if not self._gate('stairs'):
+                return
             self._leave_side_floor()
             return
         # A floor may bar its stair while its guardian lives (the Labyrinth).
@@ -4145,6 +4153,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"hold{'s' if remaining == 1 else ''}, and "
                 f"{'its keeper' if remaining == 1 else 'their keepers'} still "
                 f"live{'s' if remaining == 1 else ''} on the floors above.", 'warning')
+            return
+        if not self._gate('stairs'):         # (a barred stair costs nothing to find barred)
             return
         try:
             self._change_level(self.dungeon_level + 1, enter_from_top=True, via='stairs')
@@ -5091,6 +5101,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if text == '_teleport':
                 self._teleport_player()
             elif text == '_petrify_death':
+                # A killing blow like any other: the wards against death
+                # answer it (Player.is_dead).
+                self.player.hp = 0
+                if not self.player.is_dead():
+                    import effect_rules
+                    self.add_message(effect_rules.line('stone_saved'), 'success')
+                    continue
                 self.defeat_reason = 'died'
                 self._on_game_over()
                 self.state = STATE_DEAD
@@ -8063,8 +8080,34 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"It feels wrong... the {self._bare_name(item)} will not come off.",
                 'warning')
 
+    def _can_put_on(self, item) -> bool:
+        """Nothing of its own refuses ``item`` (_equip_item's checks)."""
+        p = self.player
+
+        def off(worn) -> bool:
+            return worn is None or worn is item or p.try_unequip_slot(worn)[0]
+
+        if isinstance(item, Weapon):
+            if getattr(item, 'two_handed', False) and not off(p.shield):
+                return False
+            return off(p.ranged_weapon if getattr(item, 'requires_ammo', None) is not None else p.weapon)
+        if isinstance(item, Shield):
+            return bool(p.can_equip_shield()) and off(p.shield)
+        if isinstance(item, Armor):
+            from items import ARMOR_SLOTS
+            return item.slot not in ARMOR_SLOTS or off(p.armor_slots[ARMOR_SLOTS.index(item.slot)])
+        if isinstance(item, Accessory):
+            slot = getattr(item, 'slot', '')
+            if slot == 'amulet':
+                return p.amulet_slot is None
+            if slot == 'belt':
+                return off(getattr(p, 'belt_slot', None))
+            return slot != 'none' and any(s is None for s in p.accessory_slots)
+        return True
+
     def _equip_item(self, item):
-        if not self._gate('swap', item=item, worn=self._takes_off_to_wear(item)):
+        if not self._gate('swap', item=item, worn=self._takes_off_to_wear(item),
+                          possible=lambda: self._can_put_on(item)):
             return
         import lights as _lights
         if isinstance(item, Weapon):
@@ -8153,7 +8196,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Take a worn item off into the pack. Body armour takes half its
         donning time to come off; everything else one turn (game_dressing,
         _dress_start_off and _take_off_now)."""
-        if not self._gate('doff', worn=True):
+        if not self._gate('doff', worn=True, possible=lambda: self.player.try_unequip_slot(item)[0]):
             return
         ok, msg = self.player.try_unequip_slot(item)
         if not ok:

@@ -29,13 +29,23 @@ def records(player) -> list:
     return d
 
 
+def relearnable(kind: str) -> bool:
+    """Others of the kind still walk the floors: a boss dies once, and a
+    page of its could never be learned again."""
+    import kind_data
+    d = kind_data.defs().get(kind)
+    return (isinstance(d, dict)
+            and not any(d.get(f) for f in ('is_boss', 'is_mini_boss', 'is_seal_demon', 'quest_only'))
+            and float(d.get('peak_weight', 0) or 0) > 0 and d.get('frequency', 3) != 0)
+
+
 def page_candidates(player) -> list:
     """Kinds whose page he would lose: studied or opened, and not known all
     the same through the family's Lore tier (that is mastery's)."""
     import family_lore as FL
     earned = set(FL.studied(player)) | set(getattr(player, 'lore_known_monster_ids', None) or ())
     return sorted(k for k in earned
-                  if FL.tier(player, FL.family_of(k)) < FL.full_lore_tier())
+                  if relearnable(k) and FL.tier(player, FL.family_of(k)) < FL.full_lore_tier())
 
 
 def item_candidates(player, forgettable) -> list:

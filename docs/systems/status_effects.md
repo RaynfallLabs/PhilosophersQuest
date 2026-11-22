@@ -42,8 +42,8 @@ The important design rule: **saves + resists never overlap**. If `poison_resist`
 |---|---|---|
 | Paralyzed, Sleeping | everything | saves, resists, a blow wakes a sleeper |
 | Knocked Down | everything: the next action is standing up, with no dodge until then | Guard, boots, levitation, Footing |
-| Frozen | step and stairs (turn lost); swap, take off, drink, zap, shoot, throw, apply, ride (refused) | a lit light thaws in a turn; cold resistance |
-| Immobilized | feet only | strike, shoot, use the hands |
+| Frozen | step, stairs and climbing out of a pit (turn lost); swap, take off, drink, zap, shoot, throw, apply, ride (refused) | a lit light thaws in a turn; cold resistance |
+| Immobilized | feet only (step, stairs, climbing out of a pit) | strike, shoot, use the hands |
 | Slowed | nothing: `get_speed` halves, so every action is two of the world's turns | boots, DEX, Footing after it |
 | Silenced | cast, read aloud | wax, magic resistance |
 | Hexed | taking off or swapping what is worn | Cleanse, altar, any remove-curse |
@@ -56,9 +56,19 @@ The important design rule: **saves + resists never overlap**. If `poison_resist`
 
 **On the quiz** (`quiz_sight`, display only): Stunned is double vision, Hallucinating a false answer in a slot of its own, Blinded a pool of light the arrows move. Confused, Stunned and Hallucinating share one settle time; the dark has none; no debuff cuts the clock. The question data, the answer check and the teaching card are never touched.
 
-**Petrifying** (`petrify`): stiff, slow, rigid. A lethal bout (a basilisk, a gorgon, the gorgon chest) ends in stone; any other in one turn of paralysis. Oil of Rue is always stocked on floors 19-80 (`traders.json` `always_stocked`).
+**Petrifying** (`petrify`): stiff, slow, rigid. A lethal bout (a basilisk, a gorgon, the gorgon chest) ends in stone; any other in one turn of paralysis. Oil of Rue is always stocked on floors 19-99 (`traders.json` `always_stocked`), never marked: the tell and the hint teach its look.
 
 **Forget** (`mind_theft`): one identified kind or one Bestiary page a bout. A kill on that floor gives it back, leaving makes it permanent. Never spells, stats, family tiers, the Shard or what a mastered tier names by itself.
+
+**Whom he spares** (`effect_rules.spares`): his charmer, by any means, aimed or not, and by a blow what frightens him. `holds.strikable` and the two reach checks of `game_magic` ask it, so every wave, sweep and nearest-foe power does.
+
+**A price is for what could be done:** `Game._gate(..., possible=)`. A fall, a drop, a fizzle or a thaw is never charged for an action that would have refused by itself.
+
+**A false answer is provably false:** a sum with one value borrows a number that differs however read, a which-divides sum one that does not divide, and any other question gets dream words (`effects.json` `quiz.phantom`).
+
+**Older saves:** a monster saved before the pass takes its kind's effect fields by attack name on load (`effect_rules.refresh_monster`). A curse on the hero becomes a hex.
+
+**A story's price** keeps its length through `price_cap`; control and Slowed keep their caps.
 
 **Cures:** `AILMENTS` is every debuff but the crank and the pit. `ailments_on` lists those that run out, most urgent first; what gear holds on the hero (-1) goes with the gear. The fountain, Cleanse and XYZZY read it.
 
@@ -347,7 +357,7 @@ Thin wrapper around `tick_all(self)`. Called once per player turn from `main.py:
 - **`_RESIST_BLOCKS` short-circuits before saves:** full immunity never routes through the save math. If you move a check past this branch, you break the "resists + saves don't overlap" rule.
 - **HARD_CONTROL anti-permalock:** cannot be refreshed, re-applied while active, or re-applied within the 3-turn grace. Monsters that reliably cast paralysis must never permalock. Grace window = `GRACE_TURNS = 3`.
 - **Confusion never chains:** a running confusion is not refreshed, and every bout, however it ends, is followed by `CLEAR_HEADED_TURNS` of `confuse_immune`. The quiz scramble's whole safety rests on it.
-- **Nothing a monster lays stacks:** a bout is not refreshed (control, confusion, slow, charm, Forget), or runs to the longer dose (`statuses.refresh`, Weakened). Only buffs and the few debuffs not named there add.
+- **Nothing a monster lays to last stacks:** a bout is not refreshed (control, confusion, slow, charm, Forget), or runs to the longer dose (`statuses.refresh`, Weakened). Only buffs and the few debuffs not named there add.
 - **`MAX_EFFECT_DURATION = 60`:** every write clamps at this. CONTROL further clamps by `CONTROL_CAP`.
 - **Permanent (`-1`) effects are immutable** via `apply_effect` — direct `status_effects[k] = -1` writes exist (intrinsic resistances from gear) and must be explicit.
 - **`save_guard_*` is a BUFF**, not a DEBUFF — register in BUFFS, or cleanses will wipe the player's own wards.

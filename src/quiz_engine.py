@@ -1004,7 +1004,8 @@ class QuizEngine:
             if seen.get('phantom') and self.sight_settle > 0:
                 import quiz_sight
                 pool = self._decks.get((self.subject, self.tier)) or []
-                self.phantom = quiz_sight.phantom_for(self.current_question, pool, self.scramble_seed)
+                self.phantom = quiz_sight.phantom_for(self.current_question, pool, self.scramble_seed,
+                                                      self.subject)
         except Exception:
             from game_log import log_error
             log_error('quiz_engine._stamp_sight: sight hook')
