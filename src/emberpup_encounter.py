@@ -1023,7 +1023,7 @@ class BloomleafMixin:
         if line and self._sees_monster(m):
             self._old_nickel_say(m, line, 'danger')
 
-    # ---- QA (Titivillus, Shift+L) -----------------------------------------
+    # ---- QA (Titivillus, Shift+Q) -----------------------------------------
 
     def _qa_bloomleaf(self):
         """Titivillus QA build only: Old Nickel set down in this room, a few
@@ -1061,4 +1061,4 @@ class BloomleafMixin:
         st = self._emberpup_state()
         self.add_message(f"[QA] Old Nickel set down {max(abs(spot[0] - self.player.x), abs(spot[1] - self.player.y))} "
                          f"steps off. His floor this run: {self._cloak_floor()}; the pup's: {st.get('floor')}. "
-                         "Shift+L again: the cloak into your pack.", 'info')
+                         "Shift+Q again: the cloak into your pack.", 'info')

@@ -18,7 +18,14 @@
     "taken_up_dry": "You take up the {light}. It is dry: fill it with a flask of fire oil.",
     "doused": "You put out the {light}. The dark closes in, and you are harder to see.",
     "relit": "You light the {light} again.",
-    "no_light": "You hold no light. Take a torch or a lantern in your off hand (E).",
+    "no_light": "You hold no light. Shift+L takes one up from your pack.",
+    "none_to_take": "You carry no light that will burn.",
+    "taken_up_wet": "You take up the {light}. Its wick is too wet to light yet.",
+    "two_hander_swap": "Your weapon takes both hands. Ready a one-handed weapon (K, then R), and Shift+L will swap to it with the {light}.",
+    "sidearm": "You sling the {two_hander} at your back and draw the {weapon}, to free a hand.",
+    "sidearm_back": "You take the {two_hander} in both hands again.",
+    "readied": "Shift+L will take up the {light} first.",
+    "unreadied": "The {light} is no longer readied: Shift+L will take up your brightest.",
     "dry": "The {light} is dry: fill it with a flask of fire oil (the Kit, Apply).",
     "low": "Your {light} burns low.",
     "next_torch": "Your {light} gutters out. You light another ({left} left).",
@@ -45,6 +52,7 @@
     "burn_oil": "Burns lamp oil: {left} of {burn} turns left. A flask of fire oil fills it.",
     "everlasting": "It never burns out.",
     "unlit": "Not lit now.",
+    "swap": "Shift+L takes it up or puts it away in one turn, and your shield comes back by itself.",
     "douse": "Shift+O puts it out or lights it again, at no cost in time."
   },
   "powers": {

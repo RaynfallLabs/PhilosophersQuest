@@ -1390,7 +1390,7 @@ class RenderMixin:
             parts = [_cap(_kind), f"Wt {getattr(item, 'weight', 0):g}"]
             # Known by Hand (no quiz to put it on) or the weapon At Your
             # Back: second, so a narrow pack still shows it.
-            _mark = ('Readied' if item is getattr(p, 'readied_weapon', None)
+            _mark = ('Readied' if self._readied_mark(item)
                      else self._known_by_hand_mark(item))
             if _mark:
                 parts.insert(1, _mark)
@@ -1765,7 +1765,7 @@ class RenderMixin:
             except Exception:
                 id_text = "Unknown"
             _kind = str(getattr(item, 'slot', None) or getattr(item, 'item_class', 'item'))
-            _mark = ('Readied' if item is getattr(p, 'readied_weapon', None)
+            _mark = ('Readied' if self._readied_mark(item)
                      else self._known_by_hand_mark(item))
             meta = (f"{_kind.replace('_', ' ').title()}   " + (f"{_mark}   " if _mark else '')
                     + f"Wt {getattr(item, 'weight', 0):g}   {id_text}")
@@ -5682,6 +5682,8 @@ class RenderMixin:
                     badge, badge_col = 'BY HAND', FP.SUCCESS_TEXT
                 elif item is self.player.readied_weapon:
                     badge, badge_col = 'AT BACK', FP.GOLD_PALE
+                elif self._readied_mark(item):
+                    badge, badge_col = 'SHIFT+L', FP.GOLD_PALE
                 elif getattr(item, 'equip_chain_mode', ''):
                     badge, badge_col = 'CHAIN', FP.ARCANE_BRIGHT
                 else:
@@ -5815,7 +5817,9 @@ class RenderMixin:
             extra = ''
         return stats, (extra_label, extra)
 
-    def _kit_source_label(self, src: str) -> str:
+    def _kit_source_label(self, src: str, item=None) -> str:
+        if src == 'pack' and item is not None and self._readied_mark(item):
+            return 'Readied'            # a light of the kind Shift+L draws
         return {'equip': 'Equipped', 'back': 'Readied', 'pack': 'In Pack',
                 'floor': 'On the Floor', 'away': 'Readied'}.get(src, src)
 
@@ -5880,6 +5884,8 @@ class RenderMixin:
         'Source: On Your Back' when you could have 'Readied', or 'Equipped'
         or 'In Pack'?"), and what that means for it: (text, colour)."""
         two = bool(getattr(item, 'two_handed', False))
+        if src == 'pack' and item is not None and self._readied_mark(item):
+            return ("Readied: press Shift+L to take it up (one turn).", FP.CYAN_ACCENT)
         return {
             'equip': ("Equipped", FP.SUCCESS_TEXT),
             'back': ("Readied: press S to swap it into your hand (one turn)"
@@ -6189,7 +6195,7 @@ class RenderMixin:
             else:
                 src, item = row
                 name = self._kit_row_name(src, item)
-                tag = self._kit_source_label(src)
+                tag = self._kit_source_label(src, item)
                 stats, extra = self._kit_row_labelled(slug, src, item)
                 tag_col = self._KIT_SRC_COLOR.get(src, FP.BODY_TEXT)
                 name_col = tag_col
@@ -11771,7 +11777,6 @@ class RenderMixin:
         groups = [
             ("Movement", [
                 ("Arrows", "Move / attack", FP.BODY_TEXT),
-                (".", "Wait / meditate", FP.BODY_TEXT),
                 ("< >", "Go up / down stairs", FP.BODY_TEXT),
                 ("Tab", "Cycle zoom", FP.BODY_TEXT),
                 ("Shift+R", "Ride your Bococho", FP.BODY_TEXT),
@@ -11781,6 +11786,7 @@ class RenderMixin:
                 # (The arsenal's keys, here for the same reason: slice 5.)
                 ("Shift+S", "Press / Guard", FP.BODY_TEXT),
                 ("Shift+C", "Coat weapon", FP.BODY_TEXT),
+                ("Shift+L", "Light in / out", FP.BODY_TEXT),
                 ("Shift+O", "Light / douse", FP.BODY_TEXT),
             ]),
             ("Combat", [
@@ -11790,6 +11796,9 @@ class RenderMixin:
                 ("M / Z", "Cast spell / zap wand", FP.BODY_TEXT),
                 ("V", "Powers menu", FP.BODY_TEXT),
                 ("S", "Swap readied weapon", FP.BODY_TEXT),
+                # (Here: Movement is full, and a short key keeps Combat's
+                # badges narrow, so "Cast spell / zap wand" is not cut.)
+                (".", "Wait / meditate", FP.BODY_TEXT),
             ]),
             ("Items", [
                 ("E", "Equip menu", FP.BODY_TEXT),

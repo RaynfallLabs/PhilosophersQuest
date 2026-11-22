@@ -381,7 +381,7 @@ class InputMixin:
             # gear can be dropped or swapped) are actions too. They skipped
             # the check in _player_input, so a paralysed hero could flee
             # down the stairs. Help (?) only reads, and stays open.
-            if uni in ('>', '<', '@', 'P', 'E', 'S', 'C', 'R', 'O') and self._helpless_turn():
+            if uni in ('>', '<', '@', 'P', 'E', 'S', 'C', 'R', 'O', 'L') and self._helpless_turn():
                 return True
             # Keys checked by unicode to handle shift-modified chars
             if uni == '>':
@@ -431,6 +431,12 @@ class InputMixin:
                 # game_lights.py).
                 self._toggle_light()
                 return True
+            if uni == 'L':
+                # Shift+L: a light into the off hand, or away and the shield
+                # back on, one turn (lowercase l is the message log;
+                # game_lights._swap_light).
+                self._swap_light()
+                return True
             if uni == 'G' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: Gilt Varro's racing camp set up in this
                 # room, with two Sunroots; again, two more Sunroots
@@ -470,7 +476,7 @@ class InputMixin:
                 # shown); a second press sets a war-band down if it has none.
                 self._qa_alive_sampler()
                 return True
-            if uni == 'L' and getattr(self.player, 'qa_tools', False):
+            if uni == 'Q' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: Old Nickel, who wears the Bloomleaf
                 # Cloak, set down near the hero; again, the cloak into the
                 # pack (emberpup_encounter.BloomleafMixin).

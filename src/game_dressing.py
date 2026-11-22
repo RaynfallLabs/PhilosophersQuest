@@ -697,6 +697,15 @@ class DressingMixin:
             self.add_message(f"You sling the {self._bare_name(item)} at your back. "
                              f"S swaps it into your hand.", 'info')
 
+    def _readied_mark(self, item) -> bool:
+        """Is this what a swap key draws: the weapon At Your Back (S), or a
+        light of the readied kind (Shift+L, game_lights.py)?"""
+        p = getattr(self, 'player', None)
+        if p is None or item is None:
+            return False
+        import lights
+        return item is getattr(p, 'readied_weapon', None) or lights.is_readied(p, item)
+
     def _unready_weapon(self) -> None:
         p = self.player
         item = p.readied_weapon

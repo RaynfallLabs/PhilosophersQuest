@@ -77,6 +77,12 @@ class Player:
         # one-handed weapon again puts it back on the arm (game_dressing,
         # Brandon's play-test 2026-11-16). None when there is none to return.
         self._shield_slung = None
+        # The light swap (Shift+L, game_lights._swap_light): the kind of
+        # light it takes up first, the shield it set aside, and the
+        # two-hander it changed for the readied one-hander to free a hand.
+        self._light_kind = ''
+        self._light_aside = None
+        self._light_sidearm = None
         # Press or Guard (stance.py): 'neutral', 'press' or 'guard'. And the
         # earplugs (counters.py): True while the wax is in his ears.
         self.stance: str = 'neutral'
@@ -1019,6 +1025,9 @@ class Player:
         # has put it on), nothing is readied, the three kits are empty.
         self.__dict__.setdefault('_readied_weapon', None)
         self.__dict__.setdefault('_shield_slung', None)       # 2026-11-16
+        self.__dict__.setdefault('_light_kind', '')           # the light swap, 2026-11-22
+        self.__dict__.setdefault('_light_aside', None)
+        self.__dict__.setdefault('_light_sidearm', None)
         self.__dict__.setdefault('by_hand_tiers', {})
         # Saves from before the arsenal's tools (slice 5, 2026-11-13): no
         # stance taken, no wax in his ears.
@@ -2636,8 +2645,11 @@ class Player:
             self.shield = item
             import lights
             if lights.is_light(item):
-                # Taken up and lit, if it has anything left to burn.
-                item.lit = lights.has_fuel(item)
+                # Taken up and lit, if it has anything left to burn and its
+                # wick is not soaked (light_shy: stowing a doused light and
+                # drawing it again does not dry it).
+                import light_shy
+                item.lit = lights.has_fuel(item) and not light_shy.wet(item)
             new_status = getattr(item, 'on_equip_status', '')
             if new_status:
                 self.add_effect(new_status, -1)

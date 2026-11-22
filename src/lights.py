@@ -20,6 +20,9 @@ perception." A PER-10 hero sees five tiles and an archer shoots from six.
   brightest light's ``notice`` (its sight, unless its data says less: the
   dark lantern's shutter). ``shine`` is read by senses.sight_range.
   Doused (Shift+O, no time), a light gives nothing and costs nothing.
+* **In and out** (Shift+L, one turn, LightsMixin._swap_light): what the key
+  draws is ``pick``, and the kind it draws first is ``readied_kind``. A kind
+  and not one object, as the readied weapon is: a torch burns away.
 * **Fuel**: a torch burns itself away (``fuel`` 'self'); a lantern or a
   lamp burns oil ('oil', a Flask of Fire Oil fills it); some never burn out
   ('none'). A light burns only while held and lit (LightsMixin._light_tick).
@@ -332,6 +335,34 @@ def next_torch(inventory, light):
     return None
 
 
+def readied_kind(player) -> str:
+    """The kind of light Shift+L takes up first: the one readied from the
+    Kit, else the one last put away with the key. '' for none yet."""
+    d = getattr(player, '__dict__', None) or {}
+    return str(d.get('_light_kind', '') or '')
+
+
+def is_readied(player, item) -> bool:
+    """Does Shift+L take up this kind of light first?"""
+    kind = readied_kind(player)
+    return bool(kind) and is_light(item) and str(getattr(item, 'id', '') or '') == kind
+
+
+def pick(player):
+    """The light Shift+L takes up from the pack, or None. One that can burn
+    (a dry lantern only with oil to fill it, and only if nothing else
+    burns); the readied kind before any other; then the brightest, one with
+    a power, one already part burnt (so every torch is not started)."""
+    inv = getattr(player, 'inventory', None) or []
+    oil = oil_in(inv) is not None
+    can = [it for it in inv if is_light(it)
+           and (has_fuel(it) or (oil and fuel_kind(it) == 'oil'))]
+    if not can:
+        return None
+    return max(can, key=lambda it: (has_fuel(it), is_readied(player, it), sight_of(it),
+                                    bool(power_of(it)), everlasting(it), -fuel_left(it)))
+
+
 def take_one(inventory: list, stack):
     """One light off a pack row: the row itself when it is the last, else a
     copy of one (the row keeps the rest). The one taken is NOT in the pack."""
@@ -390,6 +421,7 @@ def card_lines(item) -> list:
         out.append(c['notice'].format(notice=notice_of(item)))
     out.append(c['brightest'])
     out.append(c['hand'])
+    out.append(c['swap'])
     out.append(c['douse'])
     return [s for s in out if s]
 

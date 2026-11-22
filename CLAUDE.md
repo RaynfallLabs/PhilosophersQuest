@@ -155,7 +155,7 @@ src/
   counters.py         - Named counters: the mirror shield turns a gaze, wax stops a voice, cold iron fey glamour
   game_arsenal.py     - ArsenalMixin: coat (Shift+C, Kit Apply), throw a flask, change stance, the earplugs, QA (Shift+T)
   lights.py           - Lights in the off hand (data/items/light.json), pure: the brightest light counts, a lit hero is seen farther, fuel, the Light spell's turns
-  game_lights.py      - LightsMixin: take a light up, burn it each turn (the next torch, the next oil), Shift+O to douse, Kit Apply to fill, Hero's Lamp's way down
+  game_lights.py      - LightsMixin: take a light up, burn it each turn (the next torch, the next oil), Shift+L in / out in one turn (the shield back by itself, R readies a kind), Shift+O to douse, Kit Apply to fill, Hero's Lamp's way down
   chain_equip.py      - Chain-equip for lore-rich legendary uniques
   chain_passives.py   - Chain-equip passive flag lookups and wiring
   armor_procs.py      - Flat-armour proc registry and per-floor charges

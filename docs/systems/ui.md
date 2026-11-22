@@ -510,7 +510,8 @@ state; column 4 is the `_draw_<state>` method.
 | `Shift+U` | an Unusual Soul Sphere in the pack, to throw for Dad and his song (QA only; `game_songs._qa_unusual_sphere`) | `handle_event` |
 | `Shift+N` | the math streak one right answer short of Math is Cool; once earned, its cooldown ready again (QA only; `game_songs._qa_math_is_cool`) | `handle_event` |
 | `Shift+K` | the Stray Kids idol beside the hero; again: the photo in the pack; on the Zombie Stage with the band standing: the dance-off at once (QA only) | `handle_event` |
-| `Shift+L` | Old Nickel (the Bloomleaf Cloak's wearer) set down near the hero; again, the cloak into the pack (QA only) | `handle_event` |
+| `Shift+L` | A light into the off hand, or away and the shield back on, one turn (`game_lights._swap_light`) | `handle_event` |
+| `Shift+Q` | Old Nickel (the Bloomleaf Cloak's wearer) set down near the hero; again, the cloak into the pack (QA only) | `handle_event` |
 | `Shift+D` | the Mooble in a cave beside this room and the hero beside him, a Starnut and a Starnut Tart in the pack; again, another tart and no wait before the next dance (QA only; `mooble_encounter._qa_mooble`) | `handle_event` |
 | `Shift+G` | Gilt Varro's racing camp set up in the hero's room (this floor becomes the camp's), with two Sunroots; again, her trust and two more Sunroots; once more, she joins at once, the race skipped, to try riding (QA only; `bococho_encounter._qa_bococho`) | `handle_event` |
 | `Shift+R` | ride the Bococho, or climb down (`game_riding._toggle_ride`; on the help screen's key map) | `handle_event` |

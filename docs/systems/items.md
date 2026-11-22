@@ -269,6 +269,11 @@ torch comes off a bundle (`LightsMixin._one_light`).
   monster's sight reach against a lit hero grows by the brightest light's
   `notice` (its sight unless the data says less). Doused (Shift+O, or Apply
   on the Kit, no time) a light gives nothing and costs nothing.
+* **In and out** (Shift+L, `LightsMixin._swap_light`, one turn, as S is for
+  the readied weapon): `lights.pick` draws the readied kind (Kit R, or the
+  last one put away), else the brightest. The shield goes to the pack and
+  comes back with the next press; a two-hander gives way to a readied
+  one-hander and comes back the same way.
 * **Fuel** (`LightsMixin._light_tick`, every turn): only a held, lit light
   burns. "Your Torch burns low." at a fifth of its burn (the sidebar then
   shows what is left); a spent torch is gone and the next torch in the pack
