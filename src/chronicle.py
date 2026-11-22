@@ -398,7 +398,7 @@ def oath_summary(reg: dict) -> str:
     and let one go." (No numbers on screen.)"""
     oaths = list((reg or {}).get('oaths', {}).values())
     if not oaths:
-        return "I made no promises down here, which kept things simple."
+        return "I made no promises down here."
     n = {s: sum(1 for o in oaths if o.get('status') == s)
          for s in ('open', 'kept', 'broken', 'lapsed', 'released')}
     parts = []

@@ -93,7 +93,7 @@ SCOPED_DYNAMIC = {
 }
 
 # Data keys that hold a Journal line without "chronicle" in their name.
-JOURNAL_KEYS = {'on_fail_trapdoor', 'closed_line', 'late_thread_line', 'last_line', 'lost_line'}
+JOURNAL_KEYS = {'journal', 'on_fail_trapdoor', 'closed_line', 'late_thread_line', 'last_line', 'lost_line'}
 
 
 def _src_files():

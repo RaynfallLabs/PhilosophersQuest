@@ -11366,8 +11366,7 @@ class RenderMixin:
                 for hint in sec['unfinished']:
                     line(hint, font=f['hint'], color=FP.FADED_TEXT)
             if not rows:
-                line("I have not sworn anything to anyone yet. Down here that "
-                     "counts as being careful.", color=FP.FADED_TEXT)
+                line("No promises sworn yet.", color=FP.FADED_TEXT)
         elif tab == 'deeds':
             threads = reg.get('threads', {})
             for e, depth in chronicle.deed_rows(entries):
@@ -11379,7 +11378,7 @@ class RenderMixin:
                     line(t['hint'], font=f['hint'], color=FP.FADED_TEXT,
                          indent=S(30) * (depth + 1), gap=S(2))
             if not rows:
-                line("Nothing I did down here has caught up with me yet.",
+                line("No deeds to record yet.",
                      color=FP.FADED_TEXT)
         elif tab == 'people':
             for p in chronicle.people_rows(reg, floor_label):
@@ -11391,7 +11390,7 @@ class RenderMixin:
                 if p['last']:
                     line(p['last'], font=f['hint'], color=FP.BODY_TEXT, indent=S(16), gap=S(2))
             if not rows:
-                line("I have not met anyone worth writing down. Give it time.",
+                line("No one met yet.",
                      color=FP.FADED_TEXT)
         else:
             for label, group in chronicle.timeline_groups(entries, floor_label):
@@ -11507,7 +11506,7 @@ class RenderMixin:
                              'side': floor_label(e['floor']) if e.get('floor') is not None else '',
                              'side_color': FP.FADED_TEXT})
         else:
-            rows.append({'text': "Not much worth writing down. That may be a mercy.",
+            rows.append({'text': "Little to write down.",
                          'font': f['body'], 'color': FP.FADED_TEXT, 'gap': S(4)})
         # What the hero learned of the monsters (src/family_lore.py), in his
         # own words and without numbers.
@@ -11522,8 +11521,7 @@ class RenderMixin:
                 rows.append({'text': hint, 'font': f['hint'], 'color': FP.PARCHMENT_LIGHT,
                              'gap': S(6)})
         else:
-            rows.append({'text': ("I met nobody whose road I could have taken. Next time, "
-                                  "perhaps, I will look harder."),
+            rows.append({'text': "Met no one whose road I could have taken.",
                          'font': f['hint'], 'color': FP.FADED_TEXT, 'gap': S(4)})
         return rows
 
