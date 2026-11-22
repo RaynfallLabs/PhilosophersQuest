@@ -7,7 +7,7 @@
     "tier_bonus": 1
   },
   "worth": {
-    "_doc": "What one ingredient adds to a dish's worth: a monster part or trophy 1, a foraged find 0.6, a ration 0.5.",
+    "_doc": "What one ingredient adds to a dish's worth: a monster part or trophy its own richness (ingredient.json, 0.75-1.35 by its creature's lore, about 1.0 a tier: kitchen variety 2026-11-22; 1 where none is written), a foraged find 0.6, a ration 0.5.",
     "monster": 1.0,
     "trophy": 1.0,
     "forage": 0.6,
@@ -27,9 +27,26 @@
     "plain": {"main": 0.6, "heal_written": 0, "max_hp": 0},
     "step": {"main": 1.0}
   },
+  "sides": {
+    "_doc": "Kitchen variety (Brandon, 2026-11-22: 'many do EXACTLY the same thing'): every ingredient brings a small side gift by its lore (ingredient.json side; a staple's is staples below), on top of the dish's main benefit. A power lasts turns by the dish's tier (at most its max_turns), a heal adds heal_share of max HP, mana adds mp. A side that is the dish's own power is not given twice, and two ingredients with one side give it once. No side is poison resistance or the body's save: the effects branch tunes those.",
+    "turns": [60, 75, 90, 105, 120],
+    "heal_share": [0.04, 0.05, 0.06, 0.07, 0.08],
+    "mp": [2, 3, 4, 5, 6],
+    "staples": {
+      "bread_ration": "fear_immune",
+      "dried_meat": "warning",
+      "hard_cheese": "cold_resist",
+      "apple": "save_guard_WIS",
+      "trail_rations": "searching",
+      "wild_mushroom": "dark_vision",
+      "healing_herb": "regenerating",
+      "elvish_bread": "mp",
+      "hearty_stew": "heal"
+    }
+  },
   "every_dish": {
-    "_doc": "What any dish cooked right gives, whatever its tab: SP (scaled by worth), a small heal (food_system.meal_mend_share of heal_written), and max_hp toward the floor's cap (Player.PER_FLOOR_HP_CAP). These keep a single dish near the old tier bands. Plain fare has its own heal and max HP (rungs).",
-    "sp": [60, 80, 105, 125, 150],
+    "_doc": "What any dish cooked right gives, whatever its tab: SP (scaled by worth; halved on 2026-11-22 so that the SP tab and rations matter: Brandon, 'SP seems like an afterthought'), a small heal (food_system.meal_mend_share of heal_written), and max_hp toward the floor's cap (Player.PER_FLOOR_HP_CAP). These keep a single dish near the old tier bands. Plain fare has its own heal and max HP (rungs).",
+    "sp": [24, 32, 42, 50, 60],
     "heal_written": [3, 6, 9, 14, 20],
     "max_hp": 2
   },
@@ -39,9 +56,10 @@
     "max_hp_bonus": [1, 1, 2, 2, 3]
   },
   "sp": {
-    "_doc": "The SP tab: restores sp (times worth) in place of every dish's SP, and the hero is Sustained (hunger at half pace) for sustained_turns (times worth), at most sustained_cap.",
+    "_doc": "The SP tab: restores sp (times worth) in place of every dish's SP. A big one (sustained_min_parts different ingredients or more) or a legendary feast also leaves the hero Sustained (hunger at half pace) for sustained_turns by tier, flat, at most sustained_cap (2026-11-22: it was on for 52-76% of a careful player's turns).",
     "sp": [100, 125, 150, 175, 200],
-    "sustained_turns": [100, 125, 150, 175, 200],
+    "sustained_turns": [60, 75, 90, 105, 120],
+    "sustained_min_parts": 3,
     "sustained_cap": 800
   },
   "mp": {
@@ -77,6 +95,7 @@
       "cold_resist": {"max_turns": 600},
       "shock_resist": {"max_turns": 600},
       "poison_resist": {"max_turns": 600},
+      "venom_ward": {"max_turns": 600},
       "acid_resist": {"max_turns": 600},
       "magic_resist": {"max_turns": 300},
       "drain_resist": {"max_turns": 600},

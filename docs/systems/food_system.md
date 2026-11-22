@@ -346,6 +346,46 @@ The content is `tools/content/kitchen/rungs_plain.txt` and `rungs_step_*.txt`.
 
 ---
 
+### 4.6 Variety: each part's strength and side gift (2026-11-22)
+
+Brandon, on 3.6.1: "Recipes are not variable enough... many do EXACTLY the same thing, with
+different art and ingredients". On 3.6.1, 1,097 dishes gave 523 different results: a dish's
+numbers came only from its tab, its tier and a count of kinds of ingredient, so a rat gave what a
+cave bear gave.
+
+- **Strength** (`ingredient.json` `richness`, 0.75-1.35): a part's worth in a dish. It comes from
+  its creature's hit points against its tier's typical creature, squashed smoothly so no creature
+  ties with a smaller one, a little more for a named one, then reviewed by hand. Each tier
+  averages about 1.0, so cooking's curve of max HP and stats holds.
+- **Side gift** (`ingredient.json` `side`; the staples' in `cooking_rules.json` `sides.staples`):
+  a small extra by lore. A power lasts 60 / 75 / 90 / 105 / 120 turns by the dish's tier, a heal
+  adds 4-8% of max HP, mana 2-6 points. It is drawn from the element the creature strikes with,
+  else an arcane part's mana, else its family's gift (a troll regenerates, a ghost lends sight of
+  the unseen, a goblin dark vision), else a little healing. Every dish carries the sides of all its
+  ingredients, once each and never its own power twice, and the menu shows them under "Also".
+  The nine staples each give a different one: bread Fearless, dried meat Warning, cheese Cold
+  Resist, apple Mind Ward, trail rations Searching, mushroom Dark Vision, herb Regenerating,
+  elvish bread mana, stew a heal.
+- **No side is poison resistance or the body's save,** agreed with the effects branch, which
+  tunes poison. Nor is one of the strong defences (haste, shield, displacement).
+- **Stat dishes** still teach one point, and carry their sides.
+- **Every stat early** (Brandon: "I see a lot of some, but very few for other stats... players should
+  be able to have enough choices early on"). On 3.6.1 a kid on floors 1-5 met DEX parts in 6.5% of
+  what spawns and WIS parts in 0.1%. Five common early parts teach a stat by their creature's lore
+  (`part_natures.txt`): kobolds INT (cunning trap-makers), the giant frog and cave toad WIS (the
+  jewelled toad of the tales), myconids WIS (one mind through their spores), giant beetles CON
+  (the shell), zombies CON (the dead never tire). Only the part's own single dish changes. Now each
+  stat has 4-6 kinds on floors 1-10, and the largest share is under twice the smallest
+  (`tests/test_kitchen_variety.py`).
+- **Poison, agreed with the effects branch:** a poison dish of staples alone gives Venom Ward (a
+  bite at half strength, for half its turns: `src/venom.py` on that branch), and only a creature's
+  part, the venom's own antidote, gives Poison Resist. No side gift is either.
+
+The content is `tools/content/kitchen/ingredient_lore.txt`, drafted by `draft_lore.py` (with the
+review's corrections in its `HAND`), and written by
+`py tools/content/kitchen/build_kitchen.py --lore`. `tests/test_kitchen_variety.py` holds every
+tier and tab to 95% different results.
+
 ## 5. What a dish gives (`data/cooking_rules.json`, `kitchen.dish_outcome`)
 
 **Tier** = the band of the deepest ingredient (floors 1-20 tier 1 ... 81-100 tier 5), and **a big
@@ -358,15 +398,17 @@ the menu's "Question: Tier N", with one line under it saying why ("Five ingredie
 richer.": `kitchen.big_dish_line`), the census and the simulator. The size bonus is apart and
 unchanged.
 
-**Worth** = what the ingredients add (a monster part or trophy 1, a foraged find 0.6, a ration
-0.5) times the **size bonus** for the number of different ingredients (1.0, 1.2, 1.35, 1.5, 1.6
+**Worth** = what the ingredients add (a monster part its own `richness`, a trophy 1, a foraged
+find 0.6, a ration 0.5; §4.6) times the **size bonus** for the number of different ingredients (1.0, 1.2, 1.35, 1.5, 1.6
 for one to five). So a dish of N parts gives about 1.2x (two) to 1.6x (five) what the same parts
 give cooked one at a time: saving and hunting for a dish pays, and eating as you go is never
 wrong. A legendary feast or a trophy's dish multiplies its main benefit by 1.5 on top.
 
 ### 5.1 Every dish (food is food)
 
-- **SP:** 60 / 80 / 105 / 125 / 150 by tier, times worth (shown capped at the bar).
+- **SP:** 24 / 32 / 42 / 50 / 60 by tier, times worth (shown capped at the bar). It was 60-150
+  until 2026-11-22, when every meal fed half a belly and SP stopped mattering; halved, then
+  tuned down a step more against the hunger targets in the simulator.
 - **A heal:** `food_system.meal_mend_share` of 3 / 6 / 9 / 14 / 20 written (6% + written/80 of
   max HP: about 10% at tier 1, a third at tier 5).
 - **Max HP:** +2 toward the floor's cap (5 a floor; `try_apply_cook_hp_gain`). That is the only
@@ -384,7 +426,7 @@ Plain fare is the exception to the heal and the max HP, and both low rungs to th
 | Tab | What it does (single dish, by tier 1..5; times worth) | The choice it makes |
 |-----|------|------|
 | **HP** | Heals 18 / 22 / 26 / 30 / 34% of max HP (at most all of it), and +1 / 1 / 2 / 2 / 3 max HP on top of the 2 (inside the floor's cap). | Hurt, or building a tank. |
-| **SP** | 100 / 125 / 150 / 175 / 200 SP in place of the usual, and Sustained (hunger at half pace) for the same number of turns, at most 800. | Long floors, saving rations. |
+| **SP** | 100 / 125 / 150 / 175 / 200 SP in place of the usual. A dish of three ingredients or more, or a feast, also leaves you Sustained (hunger at half pace) for 60 / 75 / 90 / 105 / 120 turns, flat (until 2026-11-22: every SP dish, 100-800 turns, on for most of a careful player's turns). | Long floors, saving rations. |
 | **MP** | Restores 25 / 27 / 30 / 32 / 35% of max MP, or 4 / 6 / 8 / 10 / 12 MP if that is more (max MP is small while INT is low). | Casters, before a boss. |
 | **Stat** | The floor's stat lesson (`feed_cut_stat`): one whole point. How far a dish can raise its stat is set by its tier (`cooking_rules.json` 'stat' `cap_by_tier` 8 / 13 / 18 / 23 / 28 points over the start, Wisdom `wis_cap_by_tier` 4 / 6 / 9 / 11 / 14), and the altar's points count against it (`food_taught`). | The build. |
 | **Special** | A timed power for 100 / 130 / 160 / 200 / 240 turns, at most the power's `max_turns` (Dark Vision 800, resistances 600, Haste 40, Shielded 60...). A ward (`save_guard_*`) is +1, +2 from worth 2, +3 from worth 3.5. | The fight ahead. |
@@ -714,4 +756,5 @@ old saves; every special food in a decent dish of its tier, shown when held, use
 | HC | 2026-11-16 | **No cap across floors on max HP from meals** (Brandon: "there should be a per floor limit to hp gained, but not a max across several floors... that encourages cooking"). The lifetime cap (`Player.cooking_softcap`: 4 a floor reached, at least 20; `kitchen.lifetime_hp_room`; "Max HP: all cooking can give at this depth"; the sidebar's "Meals: go deeper for HP") is gone; the floor's cap (+5 a floor) stays, and a feast's lasting max HP always lands. |
 | PS | 2026-11-16 | **Brandon's three rulings.** People are searched, never harvested (§3.5, §8.1): 58 kinds in `people.txt`, twelve parts and their single dishes gone, 52 dishes re-sourced, old saves' parts become food. Every stat at every tier (§4.3): 15 stat dishes. Every special food in a dish of its own (§4.4): 6 dishes. Ingredients weigh nothing (a carried dish that does not fit is set down). 703 dishes, 306 ingredients. `part_rules.rare_foods` reads `floorSpawnWeight` too (the mythic fruits were counted common). |
 | LR | 2026-11-22 | **The two low rungs** (§4.5): plain fare (any two staples) and one part with one staple for every part. 334 dishes, 1,097 in all; a Reflex Ward dish in every tier; the older 763 unchanged. The SP and MP tabs' tier gaps closed. The Widow's Jar doesn't count the rungs. |
+| KV | 2026-11-22 | **Variety and hunger** (§4.6): each part's lore strength and side gift (1,097 dishes from 523 different results to nearly all different); hunger every 3 steps; Sustained only from SP dishes of three or more and feasts, 60-120 turns flat; dishes off the SP tab feed half as much; Hungry, Weak and Starving statuses (`src/hunger.py`). |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |

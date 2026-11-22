@@ -1,0 +1,313 @@
+# Each part's strength and side gift (kitchen variety, 2026-11-22). Drafted from its
+# creature's own data by draft_lore.py (hit points against its tier's typical creature,
+# squashed into 0.75-1.35; its element, else an arcane part's mana, else its family's
+# gift), then reviewed by hand (draft_lore.HAND).
+# key | richness | side | why
+aboleth_lesser_prime|1.134|mp|Lesser Aboleth, 867 HP against a typical 541 in tier 2; an arcane part
+abyssal_behemoth_prime|1.054|fire_resist|abyssal behemoth, 7639 HP against a typical 6365 in tier 4; strikes with fire
+abyssal_dragon_prime|0.906|fire_resist|abyssal dragon, 12426 HP against a typical 17287 in tier 5; strikes with fire
+abyssal_hound_prime|0.819|fire_resist|abyssal hound, 918 HP against a typical 1970 in tier 3; strikes with fire
+abyssal_mimic_prime|0.833|drain_resist|Abyssal Mimic, 3240 HP against a typical 6365 in tier 4; strikes with necrotic
+acid_blob_prime|0.790|heal|acid blob, 22 HP against a typical 60 in tier 1; strikes with acid (its own power is its dish)
+adult_blue_dragon_prime|1.229|heal|adult blue dragon, 1346 HP against a typical 541 in tier 2; strikes with lightning (its own power is its dish)
+ammit_spawn_prime|1.043|drain_resist|Ammit Spawn, 2272 HP against a typical 1970 in tier 3; strikes with drain
+anansi_prime|1.350|searching|Anansi, 95530 HP against a typical 17287 in tier 5; vermin
+anubis_guardian_prime|0.964|mp|Anubis Guardian, 1743 HP against a typical 1970 in tier 3; an arcane part
+apocalypse_herald_prime|0.778|fire_resist|apocalypse herald, 5367 HP against a typical 17287 in tier 5; demons
+arachne_prime|1.350|searching|Arachne, 1001 HP against a typical 60 in tier 1; vermin
+arcane_golem_prime|1.018|mp|arcane golem, 2092 HP against a typical 1970 in tier 3; an arcane part
+arch_demon_prime|0.850|fire_resist|arch demon, 9716 HP against a typical 17287 in tier 5; strikes with fire; by hand: a lord of the Pit
+assassin_vine_prime|1.131|heal|assassin vine, 94 HP against a typical 60 in tier 1; plants (its own power is its dish)
+asterion_minotaur_prime|1.350|heal|Calydonian Boar, 1518 HP against a typical 60 in tier 1; great_beasts
+astral_horror_prime|0.882|drain_resist|Astral Horror, 4156 HP against a typical 6365 in tier 4; strikes with drain
+ba_spirit_prime|0.784|drain_resist|Ba Spirit, 20 HP against a typical 60 in tier 1; strikes with necrotic
+baba_yaga_prime|1.350|sleep_resist|Baba Yaga, 17604 HP against a typical 1970 in tier 3; fair_folk
+balor_lesser_prime|1.240|heal|Lesser Balor, 1444 HP against a typical 541 in tier 2; strikes with fire (its own power is its dish)
+banshee_prime|1.229|sleep_resist|Banshee, 149 HP against a typical 60 in tier 1; fair_folk
+basilisk_prime|0.896|save_guard_DEX|basilisk, 374 HP against a typical 541 in tier 2; gorgons
+bat_prime|0.757|searching|bat, 10 HP against a typical 60 in tier 1; vermin
+behir_lesser_prime|0.905|heal|Lesser Behir, 388 HP against a typical 541 in tier 2; strikes with lightning (its own power is its dish)
+beholder_prime|1.346|mp|beholder, 1188 HP against a typical 60 in tier 1; an arcane part
+black_pudding_prime|0.902|acid_resist|Black Pudding, 383 HP against a typical 541 in tier 2; strikes with acid
+blink_dog_prime|0.817|heal|blink dog, 28 HP against a typical 60 in tier 1; great_beasts
+boggart_prime|0.772|sleep_resist|boggart, 16 HP against a typical 60 in tier 1; fair_folk
+bone_colossus_prime|1.240|fear_immune|bone colossus, 1444 HP against a typical 541 in tier 2; restless_dead
+bone_devil_prime|0.993|fire_resist|Bone Devil, 529 HP against a typical 541 in tier 2; demons
+bone_golem_prime|1.101|save_guard_DEX|bone golem, 764 HP against a typical 541 in tier 2; constructs
+bone_witch_prime|0.862|drain_resist|Bone Witch, 36 HP against a typical 60 in tier 1; strikes with necrotic
+bugbear_prime|1.103|dark_vision|bugbear, 85 HP against a typical 60 in tier 1; goblinkin
+bullywug_prime|0.807|warning|Bullywug, 26 HP against a typical 60 in tier 1; serpents
+burning_skeleton_prime|0.897|heal|Burning Skeleton, 42 HP against a typical 60 in tier 1; strikes with fire (its own power is its dish)
+cacus_prime|1.350|fire_resist|Cacus, 15434 HP against a typical 1970 in tier 3; strikes with fire
+camazotz_prime|1.350|drain_resist|Camazotz, 7920 HP against a typical 541 in tier 2; strikes with drain
+carbuncle_prime|0.780|dark_vision|carbuncle, 19 HP against a typical 60 in tier 1; an arcane part; by hand: the jewel on its brow shines in the dark
+carrion_crawler_prime|1.131|searching|Carrion Crawler, 94 HP against a typical 60 in tier 1; vermin
+cath_palug_prime|0.993|heal|Cath Palug, 529 HP against a typical 541 in tier 2; great_beasts
+catoblepas_prime|0.884|save_guard_DEX|Catoblepas, 1298 HP against a typical 1970 in tier 3; gorgons
+cave_bear_prime|1.196|heal|cave bear, 125 HP against a typical 60 in tier 1; great_beasts
+cerberus_prime|1.100|heal|Cerberus, 9498 HP against a typical 17287 in tier 5; legend; by hand: the hound of the underworld
+changeling_prime|0.803|sleep_resist|Changeling, 24 HP against a typical 60 in tier 1; fair_folk
+chaos_troll_prime|1.217|regenerating|chaos troll, 1264 HP against a typical 541 in tier 2; giants; by hand: a troll regrows what is cut from it
+charybdis_prime|1.350|heal|Charybdis, 63328 HP against a typical 6365 in tier 4; legend
+charybdis_spawn_prime|0.894|cold_resist|Charybdis Spawn, 4365 HP against a typical 6365 in tier 4; strikes with cold
+chimera_prime|1.025|heal|chimera, 589 HP against a typical 541 in tier 2; strikes with fire (its own power is its dish)
+clay_golem_prime|1.150|save_guard_DEX|Clay Golem, 923 HP against a typical 541 in tier 2; constructs
+clockwork_horror_prime|0.987|shock_resist|Clockwork Horror, 519 HP against a typical 541 in tier 2; strikes with lightning
+cloud_giant_prime|1.019|shock_resist|cloud giant, 2100 HP against a typical 1970 in tier 3; strikes with lightning
+cobra_prime|0.775|warning|cobra, 18 HP against a typical 60 in tier 1; serpents
+cockatrice_prime|1.047|save_guard_DEX|Cockatrice, 70 HP against a typical 60 in tier 1; gorgons
+corrupted_angel_prime|0.950|drain_resist|corrupted angel, 3372 HP against a typical 17287 in tier 5; strikes with necrotic; by hand: one of the host, fallen
+corrupted_treant_prime|0.969|regenerating|corrupted treant, 5732 HP against a typical 6365 in tier 4; plants
+cow_king_prime|1.350|heal|Cow King, 3293 HP against a typical 541 in tier 2; great_beasts
+crypt_thing_prime|0.984|mp|Crypt Thing, 56 HP against a typical 60 in tier 1; an arcane part
+crystal_ooze_prime|1.004|mp|crystal ooze, 60 HP against a typical 60 in tier 1; an arcane part
+cyclops_prime|1.103|heal|Cyclops, 770 HP against a typical 541 in tier 2; giants
+darkmantle_prime|0.812|save_guard_WIS|Darkmantle, 26 HP against a typical 60 in tier 1; aberrations
+death_dog_prime|0.948|heal|death dog, 50 HP against a typical 60 in tier 1; great_beasts
+death_knight_prime|0.803|drain_resist|death knight, 807 HP against a typical 1970 in tier 3; strikes with necrotic
+death_lord_prime|0.790|drain_resist|death lord, 6214 HP against a typical 17287 in tier 5; strikes with drain
+death_mage_prime|0.826|drain_resist|Death Mage, 264 HP against a typical 541 in tier 2; strikes with necrotic
+deep_one_priest_prime|0.846|cold_resist|Deep-One Priest, 1080 HP against a typical 1970 in tier 3; strikes with cold
+demon_knight_prime|1.187|fire_resist|demon knight, 1084 HP against a typical 541 in tier 2; strikes with fire
+demonic_trickster_prime|0.811|fire_resist|Demonic Trickster, 864 HP against a typical 1970 in tier 3; strikes with fire
+dire_lion_prime|0.895|heal|dire lion, 1358 HP against a typical 1970 in tier 3; great_beasts
+displacer_beast_prime|0.845|heal|Displacer Beast, 295 HP against a typical 541 in tier 2; great_beasts
+dracolich_prime|1.261|heal|dracolich, 6070 HP against a typical 1970 in tier 3; strikes with necrotic (its own power is its dish)
+drake_fire_prime|1.277|heal|fire drake, 208 HP against a typical 60 in tier 1; strikes with fire (its own power is its dish)
+draugr_prime|0.842|fear_immune|Draugr, 3425 HP against a typical 6365 in tier 4; restless_dead
+dretch_prime|0.778|fire_resist|Dretch, 18 HP against a typical 60 in tier 1; demons
+dryad_guardian_prime|1.000|sleep_resist|dryad guardian, 541 HP against a typical 541 in tier 2; fair_folk
+dullahan_spawn_prime|0.943|sleep_resist|Dullahan Spawn, 446 HP against a typical 541 in tier 2; fair_folk
+each_uisce_prime|0.891|cold_resist|Each Uisce, 367 HP against a typical 541 in tier 2; strikes with cold
+earth_elemental_prime|1.165|shock_resist|earth elemental, 984 HP against a typical 541 in tier 2; elementals; by hand: the earth grounds the lightning
+echidna_prime|1.350|heal|Echidna, 16969 HP against a typical 541 in tier 2; legend
+entropy_elemental_prime|0.766|drain_resist|entropy elemental, 4222 HP against a typical 17287 in tier 5; strikes with drain
+erinyes_lesser_prime|0.973|fire_resist|Lesser Erinys, 494 HP against a typical 541 in tier 2; demons
+erlking_prime|1.350|mp|Erlking, 9342 HP against a typical 541 in tier 2; an arcane part
+ethereal_filcher_prime|0.856|see_invisible|Ethereal Filcher, 34 HP against a typical 60 in tier 1; ghosts
+fenrir_pup_prime|1.150|heal|Fenrir's Pup, 4384 HP against a typical 6365 in tier 4; great_beasts; by hand: the wolf that will swallow the sun, young
+fetch_prime|0.817|drain_resist|Fetch, 28 HP against a typical 60 in tier 1; strikes with necrotic
+fionn_hound_prime|0.815|heal|Fionn's Hound, 245 HP against a typical 541 in tier 2; great_beasts
+fire_beetle_prime|0.758|fire_resist|fire beetle, 11 HP against a typical 60 in tier 1; strikes with fire
+fire_elemental_prime|0.779|heal|fire elemental, 619 HP against a typical 1970 in tier 3; strikes with fire (its own power is its dish)
+fire_giant_prime|0.935|heal|Fire Giant, 1580 HP against a typical 1970 in tier 3; strikes with fire (its own power is its dish)
+flesh_colossus_prime|0.852|drain_resist|flesh colossus, 9799 HP against a typical 17287 in tier 5; strikes with drain
+flesh_golem_prime|0.999|save_guard_DEX|flesh golem, 540 HP against a typical 541 in tier 2; constructs
+fomorian_prime|1.167|heal|Fomorian, 990 HP against a typical 541 in tier 2; giants
+frost_crawler_prime|0.823|cold_resist|frost crawler, 3044 HP against a typical 6365 in tier 4; strikes with cold
+frost_giant_prime|0.880|heal|Frost Giant, 1274 HP against a typical 1970 in tier 3; strikes with cold (its own power is its dish)
+frost_skeleton_prime|0.873|heal|Frost Skeleton, 38 HP against a typical 60 in tier 1; strikes with cold (its own power is its dish)
+gas_spore_prime|0.763|regenerating|gas spore, 13 HP against a typical 60 in tier 1; plants
+gelatinous_cube_prime|1.131|acid_resist|gelatinous cube, 94 HP against a typical 60 in tier 1; strikes with acid
+ghoul_prime|0.936|drain_resist|ghoul, 48 HP against a typical 60 in tier 1; strikes with necrotic
+giant_beetle_prime|0.876|searching|giant beetle, 38 HP against a typical 60 in tier 1; vermin
+giant_centipede_prime|0.796|searching|giant centipede, 23 HP against a typical 60 in tier 1; vermin
+giant_frog_prime|0.800|warning|giant frog, 24 HP against a typical 60 in tier 1; serpents
+giant_lizard_prime|0.847|warning|giant lizard, 33 HP against a typical 60 in tier 1; serpents
+giant_mantis_prime|0.847|searching|giant mantis, 33 HP against a typical 60 in tier 1; vermin
+giant_rat_prime|0.757|searching|giant rat, 10 HP against a typical 60 in tier 1; vermin
+giant_scorpion_prime|0.847|searching|giant scorpion, 299 HP against a typical 541 in tier 2; vermin
+giant_spider_prime|1.205|searching|giant spider, 130 HP against a typical 60 in tier 1; vermin
+giant_wasp_prime|0.915|searching|giant wasp, 44 HP against a typical 60 in tier 1; vermin
+gibbering_mouther_prime|1.217|save_guard_WIS|Gibbering Mouther, 139 HP against a typical 60 in tier 1; aberrations
+gilded_mimic_prime|1.065|save_guard_WIS|Gilded Mimic, 2456 HP against a typical 1970 in tier 3; aberrations
+glabrezu_prime|1.069|mp|Glabrezu, 684 HP against a typical 541 in tier 2; an arcane part
+gnoll_prime|0.950|dark_vision|gnoll, 50 HP against a typical 60 in tier 1; goblinkin
+goblin_king_prime|0.885|dark_vision|goblin king, 40 HP against a typical 60 in tier 1; goblinkin
+goblin_prime|0.766|dark_vision|goblin, 14 HP against a typical 60 in tier 1; goblinkin
+gorgon_warrior_prime|1.021|save_guard_DEX|Gorgon Warrior, 581 HP against a typical 541 in tier 2; constructs
+grave_guardian_prime|1.028|fear_immune|Grave Guardian, 66 HP against a typical 60 in tier 1; restless_dead
+gravehound_prime|0.812|fear_immune|Gravehound, 26 HP against a typical 60 in tier 1; restless_dead
+green_slime_prime|0.792|acid_resist|green slime, 22 HP against a typical 60 in tier 1; strikes with acid
+grell_prime|1.246|save_guard_WIS|Grell, 165 HP against a typical 60 in tier 1; aberrations
+grick_prime|1.123|searching|Grick, 92 HP against a typical 60 in tier 1; vermin
+grid_bug_prime|0.757|shock_resist|grid bug, 10 HP against a typical 60 in tier 1; strikes with lightning
+griffin_prime|0.993|warning|Griffin, 529 HP against a typical 541 in tier 2; birds
+harpy_prime|1.032|warning|harpy, 66 HP against a typical 60 in tier 1; birds
+hecate_hound_prime|1.328|see_invisible|Hecate's Hound, 437 HP against a typical 60 in tier 1; ghosts
+hell_bovine_prime|0.915|heal|Hell Bovine, 403 HP against a typical 541 in tier 2; great_beasts
+hezrou_prime|0.975|fire_resist|Hezrou, 498 HP against a typical 541 in tier 2; demons
+hill_giant_prime|1.030|heal|hill giant, 598 HP against a typical 541 in tier 2; giants
+hobgoblin_prime|0.859|dark_vision|hobgoblin, 35 HP against a typical 60 in tier 1; goblinkin
+hollow_one_prime|0.833|see_invisible|Hollow One, 30 HP against a typical 60 in tier 1; ghosts
+homunculus_prime|0.769|mp|Homunculus, 16 HP against a typical 60 in tier 1; an arcane part
+hook_horror_prime|0.868|heal|Hook Horror, 331 HP against a typical 541 in tier 2; great_beasts
+huecuva_prime|1.047|fear_immune|Huecuva, 70 HP against a typical 60 in tier 1; restless_dead
+hugin_raven_prime|0.757|warning|Huginn Raven, 10 HP against a typical 60 in tier 1; birds
+hydra_prime|0.987|heal|Lernaean Hydra, 518 HP against a typical 541 in tier 2; legend
+ice_elemental_prime|1.177|heal|ice elemental, 114 HP against a typical 60 in tier 1; strikes with cold (its own power is its dish)
+ice_troll_prime|0.836|regenerating|ice troll, 3298 HP against a typical 6365 in tier 4; strikes with cold; by hand: a troll regrows what is cut from it
+imp_prime|0.775|fire_resist|Imp, 18 HP against a typical 60 in tier 1; an arcane part; by hand: an imp of the brimstone pits
+incubus_prime|0.878|drain_resist|Incubus, 347 HP against a typical 541 in tier 2; strikes with drain
+iron_golem_prime|1.213|save_guard_DEX|iron golem, 4492 HP against a typical 1970 in tier 3; constructs
+iron_sentinel_prime|1.302|save_guard_DEX|iron sentinel, 2478 HP against a typical 541 in tier 2; constructs
+jiangshi_prime|0.933|drain_resist|Jiangshi, 48 HP against a typical 60 in tier 1; strikes with necrotic
+jormungandr_juvenile_prime|1.350|warning|Jörmungandr (Juvenile), 32961 HP against a typical 6365 in tier 4; serpents
+jormungandr_spawn_prime|0.914|warning|Jörmungandr Spawn, 4729 HP against a typical 6365 in tier 4; serpents
+kobold_prime|0.764|dark_vision|kobold, 14 HP against a typical 60 in tier 1; goblinkin
+kuo_toa_prime|0.999|warning|Kuo-Toa, 60 HP against a typical 60 in tier 1; serpents
+kusarikku_prime|0.808|heal|Kusarikku, 7426 HP against a typical 17287 in tier 5; legend
+lahamu_prime|0.846|mp|Lahamu, 9490 HP against a typical 17287 in tier 5; an arcane part
+lamia_prime|1.350|see_invisible|Lamia, 1743 HP against a typical 60 in tier 1; an arcane part; by hand: the lamia could take out her eyes and still see
+leprechaun_prime|0.784|sleep_resist|leprechaun, 20 HP against a typical 60 in tier 1; fair_folk
+lesser_death_prime|0.919|heal|Lesser Death, 409 HP against a typical 541 in tier 2; strikes with drain (its own power is its dish)
+lich_prime|0.827|drain_resist|lich, 972 HP against a typical 1970 in tier 3; strikes with drain
+lindworm_prime|1.301|fire_resist|Lindworm, 270 HP against a typical 60 in tier 1; dragons
+lizardfolk_prime|0.950|warning|Lizardfolk, 50 HP against a typical 60 in tier 1; serpents
+locust_swarmlord_prime|0.869|fire_resist|locust swarmlord, 3925 HP against a typical 6365 in tier 4; demons
+lurker_above_prime|0.922|save_guard_WIS|Lurker Above, 413 HP against a typical 541 in tier 2; aberrations
+lurking_horror_prime|0.864|acid_resist|Lurking Horror, 1188 HP against a typical 1970 in tier 3; strikes with acid
+magma_elemental_prime|0.904|heal|magma elemental, 1404 HP against a typical 1970 in tier 3; strikes with fire (its own power is its dish)
+manticore_prime|0.985|heal|manticore, 514 HP against a typical 541 in tier 2; legend
+marilith_spawn_prime|1.002|fire_resist|Marilith Spawn, 544 HP against a typical 541 in tier 2; demons
+medusa_prime|1.002|save_guard_DEX|medusa, 544 HP against a typical 541 in tier 2; gorgons
+mimic_prime|0.879|save_guard_WIS|mimic, 38 HP against a typical 60 in tier 1; aberrations
+mind_flayer_prime|0.952|drain_resist|mind flayer, 460 HP against a typical 541 in tier 2; strikes with drain
+minotaur_prime|1.340|heal|minotaur, 710 HP against a typical 60 in tier 1; legend
+mohrg_prime|1.068|fear_immune|Mohrg, 681 HP against a typical 541 in tier 2; restless_dead
+moss_sentinel_prime|0.956|regenerating|Moss Sentinel, 467 HP against a typical 541 in tier 2; plants
+mud_crawler_prime|1.103|warning|mud crawler, 85 HP against a typical 60 in tier 1; serpents
+mummy_prime|0.981|heal|mummy, 1848 HP against a typical 1970 in tier 3; strikes with necrotic (its own power is its dish)
+myconid_worker_prime|0.784|save_guard_WIS|myconid worker, 20 HP against a typical 60 in tier 1; plants; by hand: the myconids share one mind through their spores
+naga_guardian_prime|0.930|warning|naga guardian, 425 HP against a typical 541 in tier 2; serpents
+nalfeshnee_lesser_prime|1.021|fire_resist|Lesser Nalfeshnee, 581 HP against a typical 541 in tier 2; demons
+nemean_lion_prime|1.350|heal|Nemean Lion, 1674 HP against a typical 60 in tier 1; great_beasts
+nidhogg_brood_prime|0.850|fire_resist|Níðhöggr Brood, 3576 HP against a typical 6365 in tier 4; dragons
+night_hag_prime|0.968|mp|night hag, 486 HP against a typical 541 in tier 2; an arcane part
+nightwing_prime|1.088|see_invisible|Nightwing, 2660 HP against a typical 1970 in tier 3; ghosts
+nosferatu_prime|1.217|drain_resist|Nosferatu, 139 HP against a typical 60 in tier 1; strikes with drain
+nothic_prime|1.134|drain_resist|Nothic, 96 HP against a typical 60 in tier 1; strikes with necrotic
+nue_prime|0.993|mp|nue, 529 HP against a typical 541 in tier 2; an arcane part
+ochre_jelly_prime|1.217|acid_resist|Ochre Jelly, 139 HP against a typical 60 in tier 1; strikes with acid
+ogre_prime|1.265|heal|ogre, 189 HP against a typical 60 in tier 1; giants
+orc_warrior_prime|0.752|dark_vision|orc warrior, 50 HP against a typical 541 in tier 2; goblinkin
+ossuary_horror_prime|0.967|drain_resist|Ossuary Horror, 485 HP against a typical 541 in tier 2; strikes with drain
+otyugh_prime|0.950|save_guard_WIS|Otyugh, 457 HP against a typical 541 in tier 2; aberrations
+owlbear_prime|1.285|heal|Owlbear, 225 HP against a typical 60 in tier 1; great_beasts
+pazuzu_spawn_prime|0.770|fire_resist|Pazuzu Spawn, 4642 HP against a typical 17287 in tier 5; demons
+pegasus_prime|1.341|shock_resist|Maddened Pegasus, 772 HP against a typical 60 in tier 1; strikes with lightning
+peryton_prime|0.882|warning|peryton, 353 HP against a typical 541 in tier 2; birds
+phase_spider_prime|0.845|searching|Phase Spider, 295 HP against a typical 541 in tier 2; vermin
+piercer_prime|0.950|searching|Piercer, 50 HP against a typical 60 in tier 1; vermin
+pit_fiend_spawn_prime|1.043|fire_resist|Pit Fiend Spawn, 2272 HP against a typical 1970 in tier 3; strikes with fire
+pixie_swarm_prime|0.764|mp|pixie swarm, 14 HP against a typical 60 in tier 1; an arcane part
+plague_ooze_prime|0.835|acid_resist|plague ooze, 3288 HP against a typical 6365 in tier 4; oozes
+poltergeist_prime|0.769|see_invisible|Poltergeist, 16 HP against a typical 60 in tier 1; an arcane part; by hand: the unseen hand that throws the crockery
+puca_prime|0.853|see_invisible|Púca, 34 HP against a typical 60 in tier 1; shapeshifters
+ra_serpent_prime|0.970|fire_resist|Ra's Serpent, 1782 HP against a typical 1970 in tier 3; strikes with fire
+rangda_prime|1.350|drain_resist|Rangda, 18638 HP against a typical 1970 in tier 3; strikes with drain
+ravanas_arm_prime|1.346|mp|Ravana's Arm, 83038 HP against a typical 17287 in tier 5; demons; by hand: Ravana, the ten-headed scholar-king, master of the Vedas
+redcap_prime|0.798|sleep_resist|redcap, 212 HP against a typical 541 in tier 2; fair_folk
+revenant_prime|0.958|fear_immune|Revenant, 469 HP against a typical 541 in tier 2; restless_dead
+roc_chick_prime|1.213|warning|roc chick, 136 HP against a typical 60 in tier 1; birds
+rock_python_prime|1.157|warning|rock python, 105 HP against a typical 60 in tier 1; serpents
+roper_prime|0.956|save_guard_WIS|Roper, 467 HP against a typical 541 in tier 2; aberrations
+rot_grub_swarm_prime|0.758|regenerating|Rot Grub Swarm, 11 HP against a typical 60 in tier 1; vermin; by hand: surgeons set maggots to clean a wound
+ruinous_djinn_prime|1.011|fire_resist|ruinous djinn, 2040 HP against a typical 1970 in tier 3; strikes with fire
+rust_monster_prime|0.950|heal|rust monster, 50 HP against a typical 60 in tier 1; strikes with acid (its own power is its dish)
+sable_serpent_prime|0.798|warning|Sable Serpent, 212 HP against a typical 541 in tier 2; serpents
+satyr_warrior_prime|1.056|sleep_resist|Satyr Warrior, 72 HP against a typical 60 in tier 1; fair_folk
+scarab_swarm_prime|0.769|searching|Scarab Swarm, 508 HP against a typical 1970 in tier 3; vermin
+scylla_prime|1.031|heal|Scylla, 7064 HP against a typical 6365 in tier 4; legend
+sea_dragon_spawn_prime|0.874|cold_resist|sea dragon spawn, 341 HP against a typical 541 in tier 2; strikes with cold
+sea_serpent_norse_prime|0.945|cold_resist|Norse Sea Serpent, 5285 HP against a typical 6365 in tier 4; strikes with cold
+sea_snake_prime|0.784|warning|sea snake, 20 HP against a typical 60 in tier 1; serpents
+seal_demon_death_prime|1.350|heal|Samael, Demon of Death, 106366 HP against a typical 17287 in tier 5; strikes with drain (its own power is its dish)
+seal_demon_earthquake_prime|1.350|fire_resist|Beleth, Demon of the Earthquake, 95953 HP against a typical 17287 in tier 5; demons
+seal_demon_famine_prime|1.349|drain_resist|Mammon, Demon of Famine, 87270 HP against a typical 17287 in tier 5; strikes with drain
+seal_demon_pestilence_prime|1.350|fire_resist|Buer, Demon of Pestilence, 88355 HP against a typical 17287 in tier 5; demons
+seal_demon_silence_prime|1.350|mp|Abyzou, Demon of Silence, 116342 HP against a typical 17287 in tier 5; an arcane part
+seal_demon_war_prime|1.334|fire_resist|Bael, Demon of War, 71980 HP against a typical 17287 in tier 5; demons
+seal_demon_wrath_prime|1.350|fire_resist|Amon, Demon of Wrath, 93392 HP against a typical 17287 in tier 5; strikes with fire
+sets_jackal_prime|1.350|drain_resist|Set's Jackal, 19800 HP against a typical 1970 in tier 3; strikes with drain
+shade_prime|0.775|see_invisible|Shade, 18 HP against a typical 60 in tier 1; ghosts
+shadow_demon_prime|0.785|fire_resist|Shadow Demon, 183 HP against a typical 541 in tier 2; demons
+shadow_prime|0.782|dark_vision|shadow, 176 HP against a typical 541 in tier 2; strikes with drain; by hand: a shadow is at home in the dark
+shambling_mound_prime|0.987|regenerating|shambling mound, 519 HP against a typical 541 in tier 2; plants
+shield_guardian_prime|1.342|save_guard_DEX|Shield Guardian, 814 HP against a typical 60 in tier 1; constructs
+skeleton_prime|0.803|fear_immune|skeleton, 24 HP against a typical 60 in tier 1; restless_dead
+sluagh_prime|0.789|drain_resist|Sluagh, 193 HP against a typical 541 in tier 2; strikes with drain
+sobek_warrior_prime|0.882|warning|Sobek Warrior, 1282 HP against a typical 1970 in tier 3; serpents
+soul_eater_prime|1.245|drain_resist|soul eater, 5421 HP against a typical 1970 in tier 3; strikes with drain
+specter_prime|1.239|drain_resist|specter, 158 HP against a typical 60 in tier 1; strikes with drain
+spectral_dragon_prime|0.997|drain_resist|spectral dragon, 1948 HP against a typical 1970 in tier 3; strikes with necrotic
+sphinx_prime|0.810|heal|Sphinx, 857 HP against a typical 1970 in tier 3; legend
+spriggan_prime|0.812|sleep_resist|spriggan, 240 HP against a typical 541 in tier 2; fair_folk
+star_spawn_prime|0.858|mp|Star Spawn, 317 HP against a typical 541 in tier 2; an arcane part
+stirge_swarm_prime|0.758|drain_resist|stirge swarm, 11 HP against a typical 60 in tier 1; strikes with necrotic
+stone_giant_prime|1.181|heal|stone giant, 1053 HP against a typical 541 in tier 2; giants
+stone_golem_prime|1.219|save_guard_DEX|Stone Golem, 1272 HP against a typical 541 in tier 2; constructs
+storm_elemental_prime|1.002|heal|storm elemental, 544 HP against a typical 541 in tier 2; strikes with lightning (its own power is its dish)
+storm_giant_prime|1.185|heal|storm giant, 3908 HP against a typical 1970 in tier 3; strikes with lightning (its own power is its dish)
+strigoi_prime|0.880|drain_resist|Strigoi, 350 HP against a typical 541 in tier 2; strikes with drain
+stymphalian_bird_prime|0.816|warning|Stymphalian Bird, 246 HP against a typical 541 in tier 2; birds
+talos_prime|1.350|fire_resist|Talos, 1976 HP against a typical 60 in tier 1; strikes with fire
+tengu_warrior_prime|0.823|shock_resist|tengu warrior, 259 HP against a typical 541 in tier 2; strikes with lightning
+the_sphinx_prime|1.350|heal|The Sphinx, 18248 HP against a typical 1970 in tier 3; legend
+thoth_construct_prime|1.056|mp|Thoth Construct, 2380 HP against a typical 1970 in tier 3; an arcane part
+thunderbird_lesser_prime|1.049|heal|lesser thunderbird, 638 HP against a typical 541 in tier 2; strikes with lightning (its own power is its dish)
+titan_prime|1.200|heal|titan, 10734 HP against a typical 17287 in tier 5; giants; by hand: the elder gods of the Golden Age
+troglodyte_prime|1.056|warning|Troglodyte, 72 HP against a typical 60 in tier 1; serpents
+troll_prime|1.100|regenerating|troll, 232 HP against a typical 541 in tier 2; giants; by hand: a troll regrows what is cut from it
+ugallu_demon_prime|0.789|fire_resist|Ugallu Demon, 6208 HP against a typical 17287 in tier 5; demons
+unicorn_corrupted_prime|0.863|save_guard_WIS|corrupted unicorn, 1180 HP against a typical 1970 in tier 3; celestials
+valkyrie_shade_prime|0.822|drain_resist|Valkyrie Shade, 3035 HP against a typical 6365 in tier 4; strikes with drain
+vampire_prime|1.068|drain_resist|vampire, 681 HP against a typical 541 in tier 2; strikes with drain
+violet_fungus_prime|0.803|regenerating|violet fungus, 24 HP against a typical 60 in tier 1; plants
+void_crawler_prime|0.987|drain_resist|void crawler, 518 HP against a typical 541 in tier 2; strikes with drain
+void_elemental_prime|0.856|heal|void elemental, 313 HP against a typical 541 in tier 2; elementals
+void_leviathan_prime|1.075|drain_resist|void leviathan, 2542 HP against a typical 1970 in tier 3; strikes with drain
+void_seraph_prime|0.778|mp|void seraph, 5366 HP against a typical 17287 in tier 5; an arcane part
+void_wyrm_prime|0.846|drain_resist|void wyrm, 9498 HP against a typical 17287 in tier 5; strikes with drain
+vrock_prime|0.874|fire_resist|Vrock, 341 HP against a typical 541 in tier 2; demons
+vrykolakas_prime|0.886|drain_resist|Vrykolakas, 359 HP against a typical 541 in tier 2; strikes with drain
+water_elemental_prime|1.110|heal|water elemental, 791 HP against a typical 541 in tier 2; elementals
+wendigo_prime|1.350|cold_resist|Wendigo, 44357 HP against a typical 6365 in tier 4; strikes with cold
+werebear_prime|0.915|see_invisible|werebear, 1468 HP against a typical 1970 in tier 3; shapeshifters
+wererat_prime|1.068|see_invisible|wererat, 75 HP against a typical 60 in tier 1; shapeshifters
+weretiger_prime|0.886|see_invisible|weretiger, 358 HP against a typical 541 in tier 2; shapeshifters
+werewolf_prime|0.753|see_invisible|werewolf, 238 HP against a typical 1970 in tier 3; shapeshifters
+wight_prime|0.844|drain_resist|wight, 294 HP against a typical 541 in tier 2; strikes with necrotic
+wild_hunt_captain_prime|1.350|sleep_resist|Wild Hunt Captain, 54196 HP against a typical 6365 in tier 4; fair_folk
+will_o_wisp_prime|1.196|shock_resist|Will-o-Wisp, 125 HP against a typical 60 in tier 1; strikes with lightning
+winter_wolf_prime|0.788|heal|winter wolf, 2246 HP against a typical 6365 in tier 4; strikes with cold (its own power is its dish)
+wolf_pack_leader_prime|1.081|heal|wolf pack leader, 78 HP against a typical 60 in tier 1; great_beasts
+wood_golem_prime|1.009|save_guard_DEX|Wood Golem, 62 HP against a typical 60 in tier 1; constructs
+world_serpent_prime|1.087|warning|world serpent, 8560 HP against a typical 6365 in tier 4; serpents
+wormwood_blight_prime|0.800|regenerating|wormwood blight, 6936 HP against a typical 17287 in tier 5; plants
+wraith_prime|1.230|drain_resist|wraith, 150 HP against a typical 60 in tier 1; strikes with necrotic
+wyrm_prime|0.969|fire_resist|wyrm, 1778 HP against a typical 1970 in tier 3; strikes with fire
+wyvern_prime|1.025|fire_resist|Wyvern, 589 HP against a typical 541 in tier 2; dragons
+xorn_prime|1.284|heal|Xorn, 223 HP against a typical 60 in tier 1; elementals
+yellow_mold_prime|0.775|regenerating|yellow mold, 18 HP against a typical 60 in tier 1; plants
+young_black_dragon_prime|1.097|heal|young black dragon, 756 HP against a typical 541 in tier 2; strikes with acid (its own power is its dish)
+young_dragon_prime|0.874|fire_resist|young dragon, 1242 HP against a typical 1970 in tier 3; strikes with fire
+young_red_dragon_prime|0.978|heal|young red dragon, 503 HP against a typical 541 in tier 2; strikes with fire (its own power is its dish)
+yuan_ti_pureblood_prime|1.095|mp|yuan-ti pureblood, 748 HP against a typical 541 in tier 2; an arcane part
+zombie_prime|0.833|fear_immune|zombie, 30 HP against a typical 60 in tier 1; restless_dead
+abyssal_kelp|1.000|heal|foraged find
+altar_incense|1.000|save_guard_WIS|foraged find
+cave_mushroom|1.000|dark_vision|foraged find
+crystal_shard|1.000|mp|foraged find
+deep_iron|1.000|fire_resist|foraged find
+holy_water|1.000|drain_resist|foraged find
+river_salt|1.000|fear_immune|foraged find
+starnut|1.000|mp|foraged find
+sunroot|1.000|heal|foraged find
+swamp_moss|1.000|regenerating|foraged find
+mandrake_prime|0.996|regenerating|Mandrake, 59 HP against a typical 60 in tier 1; plants
+kappa_prime|1.056|warning|Kappa, 72 HP against a typical 60 in tier 1; serpents
+eloko_prime|1.028|sleep_resist|Eloko, 66 HP against a typical 60 in tier 1; fair_folk
+ahuizotl_prime|1.158|warning|Ahuizotl, 106 HP against a typical 60 in tier 1; serpents
+bulgasari_prime|1.292|save_guard_DEX|Bulgasari, 242 HP against a typical 60 in tier 1; constructs
+myrmekes_prime|0.777|acid_resist|Gold-Digging Ant, 594 HP against a typical 1970 in tier 3; strikes with acid
+vila_prime|0.826|mp|Vila, 960 HP against a typical 1970 in tier 3; an arcane part
+taniwha_prime|1.036|warning|Taniwha, 2223 HP against a typical 1970 in tier 3; serpents
+impundulu_prime|0.883|heal|Impundulu, 1292 HP against a typical 1970 in tier 3; strikes with lightning (its own power is its dish)
+mapinguari_prime|1.028|heal|Mapinguari, 2160 HP against a typical 1970 in tier 3; great_beasts
+preta_prime|0.867|drain_resist|Preta, 1200 HP against a typical 1970 in tier 3; strikes with drain
+star_jelly_prime|1.048|cold_resist|Star Jelly, 2316 HP against a typical 1970 in tier 3; strikes with cold
+waq_waq_tree_prime|0.836|regenerating|Waq-Waq Tree, 3298 HP against a typical 6365 in tier 4; plants
+yacumama_prime|1.002|warning|Yacumama, 6406 HP against a typical 6365 in tier 4; serpents
+reem_prime|0.877|heal|Re'em, 11044 HP against a typical 17287 in tier 5; great_beasts
+bakunawa_prime|0.893|warning|Bakunawa, 11825 HP against a typical 17287 in tier 5; serpents

@@ -252,14 +252,18 @@ def test_cooked_ward_amount_is_clamped_to_3():
             assert 1 <= kitchen.dish_outcome(r)['ward'] <= 3, r['id']
     p = _p()
     fs._apply_recipe_outcome(p, _dish('dish_136'))  # Limber-Limb Stew: four parts
-    assert p._save_guard.get('CON') == 3
-    assert p.save_bonus_for('CON') == 3
+    want = kitchen.dish_outcome(_dish('dish_136'))['ward']    # by its parts' strength
+    assert want >= 2
+    assert p._save_guard.get('CON') == want
+    assert p.save_bonus_for('CON') == want
 
 
 def test_a_richer_ward_dish_wards_harder():
     p = _p()
-    fs._apply_recipe_outcome(p, _dish('dish_142'))  # Guardian's Mushroom Broth: worth 2.1
-    assert p._save_guard.get('WIS') == 2
+    fs._apply_recipe_outcome(p, _dish('dish_142'))  # Guardian's Mushroom Broth
+    import kitchen
+    assert kitchen.dish_outcome(_dish('dish_142'))['ward'] >= 2
+    assert p._save_guard.get('WIS') == kitchen.dish_outcome(_dish('dish_142'))['ward']
 
 
 def test_control_resist_remap_targets_are_wards():

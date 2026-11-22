@@ -17,7 +17,9 @@
     "source_monster": "aboleth_lesser",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.13,
+    "side": "mp"
   },
   "abyssal_behemoth_prime": {
     "name": "Abyssal Behemoth Blood",
@@ -37,7 +39,9 @@
     "source_monster": "abyssal_behemoth",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.05,
+    "side": "fire_resist"
   },
   "abyssal_dragon_prime": {
     "name": "Abyssal Dragon Blood",
@@ -57,7 +61,9 @@
     "source_monster": "abyssal_dragon",
     "family": "dragons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.91,
+    "side": "fire_resist"
   },
   "abyssal_hound_prime": {
     "name": "Abyssal Hound Scent Ichor",
@@ -78,7 +84,9 @@
     "family": "demons",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.82,
+    "side": "fire_resist"
   },
   "abyssal_mimic_prime": {
     "name": "Abyssal Mimic Bile",
@@ -99,7 +107,9 @@
     "family": "demons",
     "temp_power": "warning",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.83,
+    "side": "drain_resist"
   },
   "acid_blob_prime": {
     "name": "Acid Blob Bladder",
@@ -120,7 +130,9 @@
     "family": "oozes",
     "temp_power": "acid_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.79,
+    "side": "heal"
   },
   "adult_blue_dragon_prime": {
     "name": "Blue Dragon Storm-Scale",
@@ -141,7 +153,9 @@
     "family": "dragons",
     "temp_power": "shock_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.23,
+    "side": "heal"
   },
   "ammit_spawn_prime": {
     "name": "Ammit Leg",
@@ -161,7 +175,9 @@
     "source_monster": "ammit_spawn",
     "family": "legend",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.04,
+    "side": "drain_resist"
   },
   "anansi_prime": {
     "name": "Anansi's Story-Bacon",
@@ -182,7 +198,9 @@
     "family": "vermin",
     "stat_grant": "WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "searching"
   },
   "anubis_guardian_prime": {
     "name": "Anubis Guardian Weighing Core",
@@ -202,7 +220,9 @@
     "source_monster": "anubis_guardian",
     "family": "constructs",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.96,
+    "side": "mp"
   },
   "apocalypse_herald_prime": {
     "name": "Apocalypse Herald Ichor",
@@ -222,7 +242,9 @@
     "source_monster": "apocalypse_herald",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "fire_resist"
   },
   "arachne_prime": {
     "name": "Arachne's Weaver Steak",
@@ -243,7 +265,9 @@
     "family": "vermin",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "searching"
   },
   "arcane_golem_prime": {
     "name": "Arcane Golem Mana Core",
@@ -263,7 +287,9 @@
     "source_monster": "arcane_golem",
     "family": "constructs",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.02,
+    "side": "mp"
   },
   "arch_demon_prime": {
     "name": "Arch-Demon Hellblood",
@@ -284,7 +310,9 @@
     "family": "demons",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.85,
+    "side": "fire_resist"
   },
   "assassin_vine_prime": {
     "name": "Assassin Vine Stalk",
@@ -305,7 +333,9 @@
     "family": "plants",
     "temp_power": "regenerating",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.13,
+    "side": "heal"
   },
   "asterion_minotaur_prime": {
     "name": "Calydonian Boar Ham",
@@ -325,7 +355,9 @@
     "source_monster": "calydonian_boar",
     "family": "great_beasts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "heal"
   },
   "astral_horror_prime": {
     "name": "Astral Horror Dream Sac",
@@ -345,7 +377,9 @@
     "source_monster": "astral_horror",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "drain_resist"
   },
   "ba_spirit_prime": {
     "name": "Ba Spirit Shank",
@@ -365,7 +399,9 @@
     "source_monster": "ba_spirit",
     "family": "ghosts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "drain_resist"
   },
   "baba_yaga_prime": {
     "name": "Baba Yaga Oven-Spark",
@@ -385,7 +421,9 @@
     "source_monster": "baba_yaga",
     "family": "fair_folk",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "sleep_resist"
   },
   "balor_lesser_prime": {
     "name": "Balor Flame Ichor",
@@ -406,7 +444,9 @@
     "family": "demons",
     "temp_power": "fire_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.24,
+    "side": "heal"
   },
   "banshee_prime": {
     "name": "Banshee Keening Shank",
@@ -427,7 +467,9 @@
     "family": "fair_folk",
     "stat_grant": "WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.23,
+    "side": "sleep_resist"
   },
   "basilisk_prime": {
     "name": "Basilisk Tail Steak",
@@ -448,7 +490,9 @@
     "family": "gorgons",
     "temp_power": "save_guard_CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.9,
+    "side": "save_guard_DEX"
   },
   "bat_prime": {
     "name": "Giant Bat Drumette",
@@ -469,7 +513,9 @@
     "family": "vermin",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.76,
+    "side": "searching"
   },
   "behir_lesser_prime": {
     "name": "Behir Lightning Roll",
@@ -490,7 +536,9 @@
     "family": "serpents",
     "temp_power": "shock_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.91,
+    "side": "heal"
   },
   "beholder_prime": {
     "name": "Beholder Eyestalk Bulb",
@@ -510,7 +558,9 @@
     "source_monster": "beholder",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "mp"
   },
   "black_pudding_prime": {
     "name": "Black Pudding Sac",
@@ -530,7 +580,9 @@
     "source_monster": "black_pudding",
     "family": "oozes",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.9,
+    "side": "acid_resist"
   },
   "blink_dog_prime": {
     "name": "Blink Dog Loin",
@@ -551,7 +603,9 @@
     "family": "great_beasts",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.82,
+    "side": "heal"
   },
   "boggart_prime": {
     "name": "Boggart Hearth-Ember",
@@ -571,7 +625,9 @@
     "source_monster": "boggart",
     "family": "fair_folk",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.77,
+    "side": "sleep_resist"
   },
   "bone_colossus_prime": {
     "name": "Bone Colossus Femur",
@@ -592,7 +648,9 @@
     "family": "restless_dead",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.24,
+    "side": "fear_immune"
   },
   "bone_devil_prime": {
     "name": "Devil's Bone-Brine",
@@ -613,7 +671,9 @@
     "family": "demons",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.99,
+    "side": "fire_resist"
   },
   "bone_golem_prime": {
     "name": "Bone Golem Rune-Cube",
@@ -634,7 +694,9 @@
     "family": "constructs",
     "temp_power": "save_guard_CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.1,
+    "side": "save_guard_DEX"
   },
   "bone_witch_prime": {
     "name": "Bone Witch Wand-Bone",
@@ -654,7 +716,9 @@
     "source_monster": "bone_witch",
     "family": "vampires_liches",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.86,
+    "side": "drain_resist"
   },
   "bugbear_prime": {
     "name": "Bugbear Bangers",
@@ -674,7 +738,9 @@
     "source_monster": "bugbear",
     "family": "goblinkin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.1,
+    "side": "dark_vision"
   },
   "bullywug_prime": {
     "name": "Bullywug Frog-Leg Sausage",
@@ -694,7 +760,9 @@
     "source_monster": "bullywug",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.81,
+    "side": "warning"
   },
   "burning_skeleton_prime": {
     "name": "Burning Skeleton Ember Marrow",
@@ -715,7 +783,9 @@
     "family": "restless_dead",
     "temp_power": "fire_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.9,
+    "side": "heal"
   },
   "cacus_prime": {
     "name": "Cacus Stolen-Cattle Links",
@@ -736,7 +806,9 @@
     "family": "giants",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "fire_resist"
   },
   "camazotz_prime": {
     "name": "Camazotz Bat-God Ichor",
@@ -757,7 +829,9 @@
     "family": "demons",
     "temp_power": "dark_vision",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "drain_resist"
   },
   "carbuncle_prime": {
     "name": "Carbuncle Jewel Steak",
@@ -777,7 +851,9 @@
     "source_monster": "carbuncle",
     "family": "legend",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "dark_vision"
   },
   "carrion_crawler_prime": {
     "name": "Carrion Crawler Steak",
@@ -797,7 +873,9 @@
     "source_monster": "carrion_crawler",
     "family": "vermin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.13,
+    "side": "searching"
   },
   "cath_palug_prime": {
     "name": "Cath Palug Steak",
@@ -818,7 +896,9 @@
     "family": "great_beasts",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.99,
+    "side": "heal"
   },
   "catoblepas_prime": {
     "name": "Catoblepas Rump Steak",
@@ -838,7 +918,9 @@
     "source_monster": "catoblepas",
     "family": "gorgons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "save_guard_DEX"
   },
   "cave_bear_prime": {
     "name": "Cave Bear Steak",
@@ -858,7 +940,9 @@
     "source_monster": "cave_bear",
     "family": "great_beasts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.2,
+    "side": "heal"
   },
   "cerberus_prime": {
     "name": "Cerberus Steak",
@@ -879,7 +963,9 @@
     "family": "legend",
     "temp_power": "fear_immune",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.1,
+    "side": "heal"
   },
   "changeling_prime": {
     "name": "Changeling Glamour Acorn",
@@ -900,7 +986,9 @@
     "family": "fair_folk",
     "temp_power": "displacement",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.8,
+    "side": "sleep_resist"
   },
   "chaos_troll_prime": {
     "name": "Chaos Troll Mutant Sausage",
@@ -920,7 +1008,9 @@
     "source_monster": "chaos_troll",
     "family": "giants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.22,
+    "side": "regenerating"
   },
   "charybdis_prime": {
     "name": "Charybdis Gulping Shank",
@@ -940,7 +1030,9 @@
     "source_monster": "charybdis",
     "family": "legend",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "heal"
   },
   "charybdis_spawn_prime": {
     "name": "Charybdis Spawn Shank",
@@ -960,7 +1052,9 @@
     "source_monster": "charybdis_spawn",
     "family": "legend",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.89,
+    "side": "cold_resist"
   },
   "chimera_prime": {
     "name": "Chimera Triple Steak",
@@ -981,7 +1075,9 @@
     "family": "legend",
     "temp_power": "fire_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.02,
+    "side": "heal"
   },
   "clay_golem_prime": {
     "name": "Clay Golem Amber Heart",
@@ -1001,7 +1097,9 @@
     "source_monster": "clay_golem",
     "family": "constructs",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.15,
+    "side": "save_guard_DEX"
   },
   "clockwork_horror_prime": {
     "name": "Clockwork Horror Cog Crystal",
@@ -1022,7 +1120,9 @@
     "family": "constructs",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.99,
+    "side": "shock_resist"
   },
   "cloud_giant_prime": {
     "name": "Cloud Giant Sky Ham",
@@ -1043,7 +1143,9 @@
     "family": "giants",
     "stat_grant": "WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.02,
+    "side": "shock_resist"
   },
   "cobra_prime": {
     "name": "Cobra Tail Steak",
@@ -1064,7 +1166,9 @@
     "family": "serpents",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "warning"
   },
   "cockatrice_prime": {
     "name": "Cockatrice Drumstick",
@@ -1085,7 +1189,9 @@
     "family": "gorgons",
     "temp_power": "save_guard_CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.05,
+    "side": "save_guard_DEX"
   },
   "corrupted_angel_prime": {
     "name": "Fallen Angel Halo Mote",
@@ -1105,7 +1211,9 @@
     "source_monster": "corrupted_angel",
     "family": "celestials",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.95,
+    "side": "drain_resist"
   },
   "corrupted_treant_prime": {
     "name": "Treant Rot-Acorn",
@@ -1125,7 +1233,9 @@
     "source_monster": "corrupted_treant",
     "family": "plants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.97,
+    "side": "regenerating"
   },
   "cow_king_prime": {
     "name": "Cow King's Royal Bacon",
@@ -1147,7 +1257,9 @@
     "stat_grant": "STR",
     "edible_safe": true,
     "raw_sp": 10,
-    "secret": true
+    "secret": true,
+    "richness": 1.35,
+    "side": "heal"
   },
   "crypt_thing_prime": {
     "name": "Crypt Thing Shank",
@@ -1167,7 +1279,9 @@
     "source_monster": "crypt_thing",
     "family": "restless_dead",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.98,
+    "side": "mp"
   },
   "crystal_ooze_prime": {
     "name": "Crystal Ooze Glitter Sac",
@@ -1187,7 +1301,9 @@
     "source_monster": "crystal_ooze",
     "family": "oozes",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.0,
+    "side": "mp"
   },
   "cyclops_prime": {
     "name": "Cyclops Mutton Links",
@@ -1207,7 +1323,9 @@
     "source_monster": "cyclops",
     "family": "giants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.1,
+    "side": "heal"
   },
   "darkmantle_prime": {
     "name": "Darkmantle Mantle Steak",
@@ -1227,7 +1345,9 @@
     "source_monster": "darkmantle",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.81,
+    "side": "save_guard_WIS"
   },
   "death_dog_prime": {
     "name": "Death Dog Smoked Loin",
@@ -1247,7 +1367,9 @@
     "source_monster": "death_dog",
     "family": "great_beasts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.95,
+    "side": "heal"
   },
   "death_knight_prime": {
     "name": "Death Knight Shinbone",
@@ -1268,7 +1390,9 @@
     "family": "restless_dead",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.8,
+    "side": "drain_resist"
   },
   "death_lord_prime": {
     "name": "Death Lord Scepter-Bone",
@@ -1288,7 +1412,9 @@
     "source_monster": "death_lord",
     "family": "restless_dead",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.79,
+    "side": "drain_resist"
   },
   "death_mage_prime": {
     "name": "Necromancer's Knucklebone",
@@ -1309,7 +1435,9 @@
     "family": "vampires_liches",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.83,
+    "side": "drain_resist"
   },
   "deep_one_priest_prime": {
     "name": "Deep-One Brine Sac",
@@ -1329,7 +1457,9 @@
     "source_monster": "deep_one_priest",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.85,
+    "side": "cold_resist"
   },
   "demon_knight_prime": {
     "name": "Demon Knight War Ichor",
@@ -1350,7 +1480,9 @@
     "family": "demons",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.19,
+    "side": "fire_resist"
   },
   "demonic_trickster_prime": {
     "name": "Rakshasa Trick Ichor",
@@ -1370,7 +1502,9 @@
     "source_monster": "demonic_trickster",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.81,
+    "side": "fire_resist"
   },
   "dire_lion_prime": {
     "name": "Dire Lion Leg",
@@ -1390,7 +1524,9 @@
     "source_monster": "dire_lion",
     "family": "great_beasts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.9,
+    "side": "heal"
   },
   "displacer_beast_prime": {
     "name": "Displacer Beast Steak",
@@ -1411,7 +1547,9 @@
     "family": "great_beasts",
     "temp_power": "displacement",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.84,
+    "side": "heal"
   },
   "dracolich_prime": {
     "name": "Dracolich Knucklebone",
@@ -1432,7 +1570,9 @@
     "family": "dragons",
     "temp_power": "drain_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.26,
+    "side": "heal"
   },
   "drake_fire_prime": {
     "name": "Drake Ember-Scale",
@@ -1453,7 +1593,9 @@
     "family": "dragons",
     "temp_power": "fire_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.28,
+    "side": "heal"
   },
   "draugr_prime": {
     "name": "Draugr Grave-Bone",
@@ -1474,7 +1616,9 @@
     "family": "restless_dead",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.84,
+    "side": "fear_immune"
   },
   "dretch_prime": {
     "name": "Dretch Swill Bile",
@@ -1494,7 +1638,9 @@
     "source_monster": "dretch",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "fire_resist"
   },
   "dryad_guardian_prime": {
     "name": "Dryad Heart-Acorn",
@@ -1515,7 +1661,9 @@
     "family": "fair_folk",
     "temp_power": "regenerating",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.0,
+    "side": "sleep_resist"
   },
   "dullahan_spawn_prime": {
     "name": "Dullahan Black Knucklebone",
@@ -1536,7 +1684,9 @@
     "family": "fair_folk",
     "temp_power": "fear_immune",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.94,
+    "side": "sleep_resist"
   },
   "each_uisce_prime": {
     "name": "Each Uisce Tide-Mote",
@@ -1556,7 +1706,9 @@
     "source_monster": "each_uisce",
     "family": "shapeshifters",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.89,
+    "side": "cold_resist"
   },
   "earth_elemental_prime": {
     "name": "Earth Elemental Bedrock Jar",
@@ -1577,7 +1729,9 @@
     "family": "elementals",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.17,
+    "side": "shock_resist"
   },
   "echidna_prime": {
     "name": "Echidna Serpent Steak",
@@ -1597,7 +1751,9 @@
     "source_monster": "echidna",
     "family": "legend",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "heal"
   },
   "entropy_elemental_prime": {
     "name": "Entropy Elemental Unmaking Jar",
@@ -1618,7 +1774,9 @@
     "family": "elementals",
     "temp_power": "magic_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.77,
+    "side": "drain_resist"
   },
   "erinyes_lesser_prime": {
     "name": "Erinyes Fury Ichor",
@@ -1639,7 +1797,9 @@
     "family": "demons",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.97,
+    "side": "fire_resist"
   },
   "erlking_prime": {
     "name": "Erlking's Mist-Acorn",
@@ -1659,7 +1819,9 @@
     "source_monster": "erlking",
     "family": "fair_folk",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "mp"
   },
   "ethereal_filcher_prime": {
     "name": "Ethereal Filcher Ectoplasm",
@@ -1680,7 +1842,9 @@
     "family": "ghosts",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.86,
+    "side": "see_invisible"
   },
   "fenrir_pup_prime": {
     "name": "Fenrir's Pup Shank",
@@ -1701,7 +1865,9 @@
     "family": "great_beasts",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.15,
+    "side": "heal"
   },
   "fetch_prime": {
     "name": "Fetch Femur",
@@ -1722,7 +1888,9 @@
     "family": "ghosts",
     "temp_power": "warning",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.82,
+    "side": "drain_resist"
   },
   "fionn_hound_prime": {
     "name": "Fionn's Hound Leg",
@@ -1743,7 +1911,9 @@
     "family": "great_beasts",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.81,
+    "side": "heal"
   },
   "fire_beetle_prime": {
     "name": "Fire Beetle Glow-Leg",
@@ -1764,7 +1934,9 @@
     "family": "vermin",
     "temp_power": "dark_vision",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.76,
+    "side": "fire_resist"
   },
   "fire_elemental_prime": {
     "name": "Bottled Wildfire",
@@ -1785,7 +1957,9 @@
     "family": "elementals",
     "temp_power": "fire_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "heal"
   },
   "fire_giant_prime": {
     "name": "Fire Giant Smoked Links",
@@ -1806,7 +1980,9 @@
     "family": "giants",
     "temp_power": "fire_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.94,
+    "side": "heal"
   },
   "flesh_colossus_prime": {
     "name": "Flesh Colossus Ember-Marrow",
@@ -1826,7 +2002,9 @@
     "source_monster": "flesh_colossus",
     "family": "restless_dead",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.85,
+    "side": "drain_resist"
   },
   "flesh_golem_prime": {
     "name": "Flesh Golem Spark Heart",
@@ -1846,7 +2024,9 @@
     "source_monster": "flesh_golem",
     "family": "constructs",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.0,
+    "side": "save_guard_DEX"
   },
   "fomorian_prime": {
     "name": "Fomorian Sea-Giant Sausage",
@@ -1866,7 +2046,9 @@
     "source_monster": "fomorian",
     "family": "giants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.17,
+    "side": "heal"
   },
   "frost_crawler_prime": {
     "name": "Frost Crawler Loin",
@@ -1886,7 +2068,9 @@
     "source_monster": "frost_crawler",
     "family": "vermin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.82,
+    "side": "cold_resist"
   },
   "frost_giant_prime": {
     "name": "Frost Giant Rime Ham",
@@ -1907,7 +2091,9 @@
     "family": "giants",
     "temp_power": "cold_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "heal"
   },
   "frost_skeleton_prime": {
     "name": "Frost Skeleton Rime-Jelly",
@@ -1928,7 +2114,9 @@
     "family": "restless_dead",
     "temp_power": "cold_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.87,
+    "side": "heal"
   },
   "gas_spore_prime": {
     "name": "Gas Spore Bladder",
@@ -1948,7 +2136,9 @@
     "source_monster": "gas_spore",
     "family": "plants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.76,
+    "side": "regenerating"
   },
   "gelatinous_cube_prime": {
     "name": "Gelatinous Cube Aspic Sac",
@@ -1968,7 +2158,9 @@
     "source_monster": "gelatinous_cube",
     "family": "oozes",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.13,
+    "side": "acid_resist"
   },
   "ghoul_prime": {
     "name": "Ghoul Gnawed Bone",
@@ -1989,7 +2181,9 @@
     "family": "restless_dead",
     "temp_power": "save_guard_CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.94,
+    "side": "drain_resist"
   },
   "giant_beetle_prime": {
     "name": "Giant Beetle Shell-Loin",
@@ -2002,14 +2196,17 @@
     "weight": 0.25,
     "min_level": 1,
     "tier_role": "prime",
-    "nature": "hp",
+    "nature": "stat",
     "part": "cut",
     "description": "A blue shell-loin from a giant or death beetle. Under the armour is soft, mending meat.",
     "identified": true,
     "source_monster": "giant_beetle",
     "family": "vermin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "searching",
+    "stat_grant": "CON"
   },
   "giant_centipede_prime": {
     "name": "Giant Centipede Steak",
@@ -2029,7 +2226,9 @@
     "source_monster": "giant_centipede",
     "family": "vermin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.8,
+    "side": "searching"
   },
   "giant_frog_prime": {
     "name": "Giant Frog Leg Roll",
@@ -2042,14 +2241,17 @@
     "weight": 0.25,
     "min_level": 1,
     "tier_role": "prime",
-    "nature": "sp",
+    "nature": "stat",
     "part": "cut",
     "description": "A green-skinned roll of giant frog leg, the classic adventurer's supper.",
     "identified": true,
     "source_monster": "giant_frog",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.8,
+    "side": "warning",
+    "stat_grant": "WIS"
   },
   "giant_lizard_prime": {
     "name": "Giant Lizard Tail Medallion",
@@ -2069,7 +2271,9 @@
     "source_monster": "giant_lizard",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.85,
+    "side": "warning"
   },
   "giant_mantis_prime": {
     "name": "Mantis Steak",
@@ -2090,7 +2294,9 @@
     "family": "vermin",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.85,
+    "side": "searching"
   },
   "giant_rat_prime": {
     "name": "Giant Rat Rump",
@@ -2110,7 +2316,9 @@
     "source_monster": "giant_rat",
     "family": "vermin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.76,
+    "side": "searching"
   },
   "giant_scorpion_prime": {
     "name": "Scorpion Claw-Leg",
@@ -2131,7 +2339,9 @@
     "family": "vermin",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.85,
+    "side": "searching"
   },
   "giant_spider_prime": {
     "name": "Giant Spider Leg",
@@ -2152,7 +2362,9 @@
     "family": "vermin",
     "temp_power": "poison_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.21,
+    "side": "searching"
   },
   "giant_wasp_prime": {
     "name": "Giant Wasp Leg",
@@ -2173,7 +2385,9 @@
     "family": "vermin",
     "temp_power": "hasted",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.92,
+    "side": "searching"
   },
   "gibbering_mouther_prime": {
     "name": "Gibbering Mouther Gut Sac",
@@ -2193,7 +2407,9 @@
     "source_monster": "gibbering_mouther",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.22,
+    "side": "save_guard_WIS"
   },
   "gilded_mimic_prime": {
     "name": "Gilded Mimic Gold Heart",
@@ -2214,7 +2430,9 @@
     "family": "aberrations",
     "temp_power": "warning",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.06,
+    "side": "save_guard_WIS"
   },
   "glabrezu_prime": {
     "name": "Glabrezu Wish Ichor",
@@ -2234,7 +2452,9 @@
     "source_monster": "glabrezu",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.07,
+    "side": "mp"
   },
   "gnoll_prime": {
     "name": "Gnoll Hyena Links",
@@ -2254,7 +2474,9 @@
     "source_monster": "gnoll",
     "family": "goblinkin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.95,
+    "side": "dark_vision"
   },
   "goblin_king_prime": {
     "name": "Goblin King's Royal Sausage",
@@ -2275,7 +2497,9 @@
     "family": "goblinkin",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.89,
+    "side": "dark_vision"
   },
   "goblin_prime": {
     "name": "Goblin Gristle",
@@ -2295,7 +2519,9 @@
     "source_monster": "goblin",
     "family": "goblinkin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.77,
+    "side": "dark_vision"
   },
   "gorgon_warrior_prime": {
     "name": "Gorgon Bull Rune-Block",
@@ -2316,7 +2542,9 @@
     "family": "constructs",
     "temp_power": "save_guard_CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.02,
+    "side": "save_guard_DEX"
   },
   "grave_guardian_prime": {
     "name": "Tomb Guardian Marrow Plug",
@@ -2337,7 +2565,9 @@
     "family": "restless_dead",
     "temp_power": "save_guard_WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.03,
+    "side": "fear_immune"
   },
   "gravehound_prime": {
     "name": "Gravehound Marrow Coin",
@@ -2358,7 +2588,9 @@
     "family": "restless_dead",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.81,
+    "side": "fear_immune"
   },
   "green_slime_prime": {
     "name": "Green Slime Sac",
@@ -2378,7 +2610,9 @@
     "source_monster": "green_slime",
     "family": "oozes",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.79,
+    "side": "acid_resist"
   },
   "grell_prime": {
     "name": "Grell Lightning Bladder",
@@ -2399,7 +2633,9 @@
     "family": "aberrations",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.25,
+    "side": "save_guard_WIS"
   },
   "grick_prime": {
     "name": "Grick Tentacle Roll",
@@ -2420,7 +2656,9 @@
     "family": "vermin",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.12,
+    "side": "searching"
   },
   "grid_bug_prime": {
     "name": "Grid Bug Spark Sac",
@@ -2441,7 +2679,9 @@
     "family": "vermin",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.76,
+    "side": "shock_resist"
   },
   "griffin_prime": {
     "name": "Griffin Drumstick",
@@ -2461,7 +2701,9 @@
     "source_monster": "griffin",
     "family": "birds",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.99,
+    "side": "warning"
   },
   "harpy_prime": {
     "name": "Harpy Wing Ham",
@@ -2481,7 +2723,9 @@
     "source_monster": "harpy",
     "family": "birds",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.03,
+    "side": "warning"
   },
   "hecate_hound_prime": {
     "name": "Hecate's Hound Steak",
@@ -2501,7 +2745,9 @@
     "source_monster": "hecate_hound",
     "family": "ghosts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.33,
+    "side": "see_invisible"
   },
   "hell_bovine_prime": {
     "name": "Hell Bovine Sirloin",
@@ -2522,7 +2768,9 @@
     "family": "great_beasts",
     "edible_safe": true,
     "raw_sp": 10,
-    "secret": true
+    "secret": true,
+    "richness": 0.92,
+    "side": "heal"
   },
   "hezrou_prime": {
     "name": "Hezrou Toad Venom",
@@ -2543,7 +2791,9 @@
     "family": "demons",
     "temp_power": "poison_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.97,
+    "side": "fire_resist"
   },
   "hill_giant_prime": {
     "name": "Hill Giant Ham Hock",
@@ -2563,7 +2813,9 @@
     "source_monster": "hill_giant",
     "family": "giants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.03,
+    "side": "heal"
   },
   "hobgoblin_prime": {
     "name": "Hobgoblin Ration Sausage",
@@ -2583,7 +2835,9 @@
     "source_monster": "hobgoblin",
     "family": "goblinkin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.86,
+    "side": "dark_vision"
   },
   "hollow_one_prime": {
     "name": "Hollow One Marrow Disc",
@@ -2603,7 +2857,9 @@
     "source_monster": "hollow_one",
     "family": "ghosts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.83,
+    "side": "see_invisible"
   },
   "homunculus_prime": {
     "name": "Homunculus Spark Core",
@@ -2623,7 +2879,9 @@
     "source_monster": "homunculus",
     "family": "constructs",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.77,
+    "side": "mp"
   },
   "hook_horror_prime": {
     "name": "Hook Horror Steak",
@@ -2644,7 +2902,9 @@
     "family": "great_beasts",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.87,
+    "side": "heal"
   },
   "huecuva_prime": {
     "name": "Huecuva Marrow Wheel",
@@ -2665,7 +2925,9 @@
     "family": "restless_dead",
     "stat_grant": "WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.05,
+    "side": "fear_immune"
   },
   "hugin_raven_prime": {
     "name": "Huginn Raven Breast Roll",
@@ -2686,7 +2948,9 @@
     "family": "birds",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.76,
+    "side": "warning"
   },
   "hydra_prime": {
     "name": "Hydra Neck Roll",
@@ -2707,7 +2971,9 @@
     "family": "legend",
     "temp_power": "regenerating",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.99,
+    "side": "heal"
   },
   "ice_elemental_prime": {
     "name": "Bottled Blizzard",
@@ -2728,7 +2994,9 @@
     "family": "elementals",
     "temp_power": "cold_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.18,
+    "side": "heal"
   },
   "ice_troll_prime": {
     "name": "Ice Troll Frost Ham",
@@ -2748,7 +3016,9 @@
     "source_monster": "ice_troll",
     "family": "giants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.84,
+    "side": "regenerating"
   },
   "imp_prime": {
     "name": "Imp Brimstone Ichor",
@@ -2768,7 +3038,9 @@
     "source_monster": "imp",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "fire_resist"
   },
   "incubus_prime": {
     "name": "Dream-Thief Ichor",
@@ -2789,7 +3061,9 @@
     "family": "demons",
     "stat_grant": "WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "drain_resist"
   },
   "iron_golem_prime": {
     "name": "Iron Golem Rune-Heart",
@@ -2810,7 +3084,9 @@
     "family": "constructs",
     "temp_power": "shielded",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.21,
+    "side": "save_guard_DEX"
   },
   "iron_sentinel_prime": {
     "name": "Sentinel Watch-Cube",
@@ -2831,7 +3107,9 @@
     "family": "constructs",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.3,
+    "side": "save_guard_DEX"
   },
   "jiangshi_prime": {
     "name": "Jiangshi Hopping Shank",
@@ -2851,7 +3129,9 @@
     "source_monster": "jiangshi",
     "family": "vampires_liches",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.93,
+    "side": "drain_resist"
   },
   "jormungandr_juvenile_prime": {
     "name": "Jormungandr Juvenile Steak",
@@ -2872,7 +3152,9 @@
     "family": "serpents",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "warning"
   },
   "jormungandr_spawn_prime": {
     "name": "Jormungandr Spawn Steak",
@@ -2893,7 +3175,9 @@
     "family": "serpents",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.91,
+    "side": "warning"
   },
   "kobold_prime": {
     "name": "Kobold Tail Sausage",
@@ -2912,9 +3196,11 @@
     "identified": true,
     "source_monster": "kobold",
     "family": "goblinkin",
-    "stat_grant": "DEX",
+    "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.76,
+    "side": "dark_vision"
   },
   "kuo_toa_prime": {
     "name": "Kuo-Toa Brined Ham",
@@ -2934,7 +3220,9 @@
     "source_monster": "kuo_toa",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.0,
+    "side": "warning"
   },
   "kusarikku_prime": {
     "name": "Kusarikku Bull-Man Links",
@@ -2955,7 +3243,9 @@
     "family": "legend",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.81,
+    "side": "heal"
   },
   "lahamu_prime": {
     "name": "Lahamu Silt Sac",
@@ -2975,7 +3265,9 @@
     "source_monster": "lahamu",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.85,
+    "side": "mp"
   },
   "lamia_prime": {
     "name": "Lamia Serpent Sausage",
@@ -2995,7 +3287,9 @@
     "source_monster": "lamia",
     "family": "legend",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "see_invisible"
   },
   "leprechaun_prime": {
     "name": "Leprechaun Luck-Acorn",
@@ -3015,7 +3309,9 @@
     "source_monster": "leprechaun",
     "family": "fair_folk",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "sleep_resist"
   },
   "lesser_death_prime": {
     "name": "Lesser Death's Scythe-Bone",
@@ -3036,7 +3332,9 @@
     "family": "ghosts",
     "temp_power": "drain_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.92,
+    "side": "heal"
   },
   "lich_prime": {
     "name": "Lich Frost-Bone",
@@ -3056,7 +3354,9 @@
     "source_monster": "lich",
     "family": "vampires_liches",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.83,
+    "side": "drain_resist"
   },
   "lindworm_prime": {
     "name": "Lindworm Coil-Scale",
@@ -3077,7 +3377,9 @@
     "family": "dragons",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.3,
+    "side": "fire_resist"
   },
   "lizardfolk_prime": {
     "name": "Lizardfolk Smoked Haunch",
@@ -3097,7 +3399,9 @@
     "source_monster": "lizardfolk",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.95,
+    "side": "warning"
   },
   "locust_swarmlord_prime": {
     "name": "Locust Swarmlord Drumstick",
@@ -3117,7 +3421,9 @@
     "source_monster": "locust_swarmlord",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.87,
+    "side": "fire_resist"
   },
   "lurker_above_prime": {
     "name": "Lurker Ambush Sac",
@@ -3137,7 +3443,9 @@
     "source_monster": "lurker_above",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.92,
+    "side": "save_guard_WIS"
   },
   "lurking_horror_prime": {
     "name": "Lurking Horror Dread Gland",
@@ -3158,7 +3466,9 @@
     "family": "aberrations",
     "temp_power": "warning",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.86,
+    "side": "acid_resist"
   },
   "magma_elemental_prime": {
     "name": "Jarred Magma",
@@ -3179,7 +3489,9 @@
     "family": "elementals",
     "temp_power": "fire_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.9,
+    "side": "heal"
   },
   "manticore_prime": {
     "name": "Manticore Leg",
@@ -3200,7 +3512,9 @@
     "family": "legend",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.98,
+    "side": "heal"
   },
   "marilith_spawn_prime": {
     "name": "Marilith Serpent Ichor",
@@ -3221,7 +3535,9 @@
     "family": "demons",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.0,
+    "side": "fire_resist"
   },
   "medusa_prime": {
     "name": "Medusa Snake-Hair Links",
@@ -3242,7 +3558,9 @@
     "family": "gorgons",
     "stat_grant": "WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.0,
+    "side": "save_guard_DEX"
   },
   "mimic_prime": {
     "name": "Mimic Glue Gland",
@@ -3262,7 +3580,9 @@
     "source_monster": "mimic",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "save_guard_WIS"
   },
   "mind_flayer_prime": {
     "name": "Mind Flayer Brain Pouch",
@@ -3283,7 +3603,9 @@
     "family": "aberrations",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.95,
+    "side": "drain_resist"
   },
   "minotaur_prime": {
     "name": "Minotaur Bull Ham",
@@ -3304,7 +3626,9 @@
     "family": "legend",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.34,
+    "side": "heal"
   },
   "mohrg_prime": {
     "name": "Mohrg Ribbone",
@@ -3325,7 +3649,9 @@
     "family": "restless_dead",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.07,
+    "side": "fear_immune"
   },
   "moss_sentinel_prime": {
     "name": "Moss Sentinel Mossy Core",
@@ -3346,7 +3672,9 @@
     "family": "plants",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.96,
+    "side": "regenerating"
   },
   "mud_crawler_prime": {
     "name": "Mud Crawler Leg",
@@ -3366,7 +3694,9 @@
     "source_monster": "mud_crawler",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.1,
+    "side": "warning"
   },
   "mummy_prime": {
     "name": "Mummy Linen-Shank",
@@ -3387,7 +3717,9 @@
     "family": "restless_dead",
     "temp_power": "drain_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.98,
+    "side": "heal"
   },
   "myconid_worker_prime": {
     "name": "Myconid Stalk",
@@ -3400,14 +3732,17 @@
     "weight": 0.25,
     "min_level": 1,
     "tier_role": "prime",
-    "nature": "sp",
+    "nature": "stat",
     "part": "wood",
     "description": "A purple-hearted stalk from the mushroom folk, workers and sovereigns. A whole colony grows from it.",
     "identified": true,
     "source_monster": "myconid_worker",
     "family": "plants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "save_guard_WIS",
+    "stat_grant": "WIS"
   },
   "naga_guardian_prime": {
     "name": "Naga Tail Roll",
@@ -3428,7 +3763,9 @@
     "family": "serpents",
     "stat_grant": "WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.93,
+    "side": "warning"
   },
   "nalfeshnee_lesser_prime": {
     "name": "Nalfeshnee Judgement Ichor",
@@ -3449,7 +3786,9 @@
     "family": "demons",
     "stat_grant": "WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.02,
+    "side": "fire_resist"
   },
   "nemean_lion_prime": {
     "name": "Nemean Lion Leg",
@@ -3470,7 +3809,9 @@
     "family": "great_beasts",
     "temp_power": "shielded",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "heal"
   },
   "nidhogg_brood_prime": {
     "name": "Nidhoggr Brood Root-Scale",
@@ -3491,7 +3832,9 @@
     "family": "dragons",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.85,
+    "side": "fire_resist"
   },
   "night_hag_prime": {
     "name": "Night Hag Nightmare Mote",
@@ -3511,7 +3854,9 @@
     "source_monster": "night_hag",
     "family": "fair_folk",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.97,
+    "side": "mp"
   },
   "nightwing_prime": {
     "name": "Nightwing Void-Marrow",
@@ -3532,7 +3877,9 @@
     "family": "ghosts",
     "temp_power": "dark_vision",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.09,
+    "side": "see_invisible"
   },
   "nosferatu_prime": {
     "name": "Nosferatu Blood-Marrow",
@@ -3552,7 +3899,9 @@
     "source_monster": "nosferatu",
     "family": "vampires_liches",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.22,
+    "side": "drain_resist"
   },
   "nothic_prime": {
     "name": "Nothic Weird-Eye",
@@ -3573,7 +3922,9 @@
     "family": "aberrations",
     "temp_power": "see_invisible",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.13,
+    "side": "drain_resist"
   },
   "nue_prime": {
     "name": "Nue Drumstick",
@@ -3593,7 +3944,9 @@
     "source_monster": "nue",
     "family": "legend",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.99,
+    "side": "mp"
   },
   "ochre_jelly_prime": {
     "name": "Ochre Jelly Sac",
@@ -3613,7 +3966,9 @@
     "source_monster": "ochre_jelly",
     "family": "oozes",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.22,
+    "side": "acid_resist"
   },
   "ogre_prime": {
     "name": "Ogre Bangers",
@@ -3633,7 +3988,9 @@
     "source_monster": "ogre",
     "family": "giants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.26,
+    "side": "heal"
   },
   "orc_warrior_prime": {
     "name": "Orc Salted Haunch",
@@ -3653,7 +4010,9 @@
     "source_monster": "orc_warrior",
     "family": "goblinkin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.75,
+    "side": "dark_vision"
   },
   "ossuary_horror_prime": {
     "name": "Ossuary Marrow",
@@ -3674,7 +4033,9 @@
     "family": "restless_dead",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.97,
+    "side": "drain_resist"
   },
   "otyugh_prime": {
     "name": "Otyugh Iron Stomach",
@@ -3695,7 +4056,9 @@
     "family": "aberrations",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.95,
+    "side": "save_guard_WIS"
   },
   "owlbear_prime": {
     "name": "Owlbear Steak",
@@ -3715,7 +4078,9 @@
     "source_monster": "owlbear",
     "family": "great_beasts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.28,
+    "side": "heal"
   },
   "pazuzu_spawn_prime": {
     "name": "Pazuzu Wind Ichor",
@@ -3736,7 +4101,9 @@
     "family": "demons",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.77,
+    "side": "fire_resist"
   },
   "pegasus_prime": {
     "name": "Pegasus Drumstick",
@@ -3756,7 +4123,9 @@
     "source_monster": "pegasus",
     "family": "celestials",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.34,
+    "side": "shock_resist"
   },
   "peryton_prime": {
     "name": "Peryton Stag-Bird Loin",
@@ -3776,7 +4145,9 @@
     "source_monster": "peryton",
     "family": "birds",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "warning"
   },
   "phase_spider_prime": {
     "name": "Phase Spider Leg",
@@ -3797,7 +4168,9 @@
     "family": "vermin",
     "temp_power": "displacement",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.84,
+    "side": "searching"
   },
   "piercer_prime": {
     "name": "Piercer Drip Gland",
@@ -3818,7 +4191,9 @@
     "family": "vermin",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.95,
+    "side": "searching"
   },
   "pit_fiend_spawn_prime": {
     "name": "Pit Fiend Ichor",
@@ -3838,7 +4213,9 @@
     "source_monster": "pit_fiend_spawn",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.04,
+    "side": "fire_resist"
   },
   "pixie_swarm_prime": {
     "name": "Pixie Dust Mote",
@@ -3858,7 +4235,9 @@
     "source_monster": "pixie_swarm",
     "family": "fair_folk",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.76,
+    "side": "mp"
   },
   "plague_ooze_prime": {
     "name": "Plague Ooze Bladder",
@@ -3879,7 +4258,9 @@
     "family": "oozes",
     "temp_power": "poison_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.83,
+    "side": "acid_resist"
   },
   "poltergeist_prime": {
     "name": "Poltergeist Marrow Round",
@@ -3899,7 +4280,9 @@
     "source_monster": "poltergeist",
     "family": "ghosts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.77,
+    "side": "see_invisible"
   },
   "puca_prime": {
     "name": "Puca Shapeshift Mote",
@@ -3920,7 +4303,9 @@
     "family": "shapeshifters",
     "temp_power": "displacement",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.85,
+    "side": "see_invisible"
   },
   "ra_serpent_prime": {
     "name": "Ra's Serpent Sun-Joint",
@@ -3940,7 +4325,9 @@
     "source_monster": "ra_serpent",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.97,
+    "side": "fire_resist"
   },
   "rangda_prime": {
     "name": "Rangda's Witch-Queen Ichor",
@@ -3961,7 +4348,9 @@
     "family": "demons",
     "stat_grant": "WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "drain_resist"
   },
   "ravanas_arm_prime": {
     "name": "Ravana's Arm Ichor",
@@ -3982,7 +4371,9 @@
     "family": "demons",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "mp"
   },
   "redcap_prime": {
     "name": "Redcap Ember-Acorn",
@@ -4003,7 +4394,9 @@
     "family": "fair_folk",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.8,
+    "side": "sleep_resist"
   },
   "revenant_prime": {
     "name": "Revenant Thighbone",
@@ -4024,7 +4417,9 @@
     "family": "restless_dead",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.96,
+    "side": "fear_immune"
   },
   "roc_chick_prime": {
     "name": "Roc Drumstick",
@@ -4044,7 +4439,9 @@
     "source_monster": "roc_chick",
     "family": "birds",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.21,
+    "side": "warning"
   },
   "rock_python_prime": {
     "name": "Rock Python Tail Joint",
@@ -4064,7 +4461,9 @@
     "source_monster": "rock_python",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.16,
+    "side": "warning"
   },
   "roper_prime": {
     "name": "Roper Lure Bladder",
@@ -4085,7 +4484,9 @@
     "family": "aberrations",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.96,
+    "side": "save_guard_WIS"
   },
   "rot_grub_swarm_prime": {
     "name": "Rot Grub Drumstick",
@@ -4105,7 +4506,9 @@
     "source_monster": "rot_grub_swarm",
     "family": "vermin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.76,
+    "side": "regenerating"
   },
   "ruinous_djinn_prime": {
     "name": "Djinn Sandstorm Jar",
@@ -4126,7 +4529,9 @@
     "family": "elementals",
     "temp_power": "hasted",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.01,
+    "side": "fire_resist"
   },
   "rust_monster_prime": {
     "name": "Rust Monster Rust Gland",
@@ -4147,7 +4552,9 @@
     "family": "aberrations",
     "temp_power": "acid_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.95,
+    "side": "heal"
   },
   "sable_serpent_prime": {
     "name": "Sable Serpent Smoked Roll",
@@ -4168,7 +4575,9 @@
     "family": "serpents",
     "temp_power": "dark_vision",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.8,
+    "side": "warning"
   },
   "satyr_warrior_prime": {
     "name": "Satyr Wine-Acorn",
@@ -4188,7 +4597,9 @@
     "source_monster": "satyr_warrior",
     "family": "fair_folk",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.06,
+    "side": "sleep_resist"
   },
   "scarab_swarm_prime": {
     "name": "Scarab Steak",
@@ -4208,7 +4619,9 @@
     "source_monster": "scarab_swarm",
     "family": "vermin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.77,
+    "side": "searching"
   },
   "scylla_prime": {
     "name": "Scylla Tentacle Roll",
@@ -4228,7 +4641,9 @@
     "source_monster": "scylla",
     "family": "legend",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.03,
+    "side": "heal"
   },
   "sea_dragon_spawn_prime": {
     "name": "Sea Dragon Tide-Scale",
@@ -4248,7 +4663,9 @@
     "source_monster": "sea_dragon_spawn",
     "family": "dragons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.87,
+    "side": "cold_resist"
   },
   "sea_serpent_norse_prime": {
     "name": "Sea Serpent Loin Roll",
@@ -4268,7 +4685,9 @@
     "source_monster": "sea_serpent_norse",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.94,
+    "side": "cold_resist"
   },
   "sea_snake_prime": {
     "name": "Sea Snake Fillet Roll",
@@ -4288,7 +4707,9 @@
     "source_monster": "sea_snake",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "warning"
   },
   "seal_demon_death_prime": {
     "name": "Samael's Death Ichor",
@@ -4309,7 +4730,9 @@
     "family": "demons",
     "temp_power": "drain_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "heal"
   },
   "seal_demon_earthquake_prime": {
     "name": "Beleth's Quake Ichor",
@@ -4330,7 +4753,9 @@
     "family": "demons",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "fire_resist"
   },
   "seal_demon_famine_prime": {
     "name": "Mammon's Famine Ichor",
@@ -4350,7 +4775,9 @@
     "source_monster": "seal_demon_famine",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "drain_resist"
   },
   "seal_demon_pestilence_prime": {
     "name": "Buer's Plague Ichor",
@@ -4371,7 +4798,9 @@
     "family": "demons",
     "temp_power": "poison_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "fire_resist"
   },
   "seal_demon_silence_prime": {
     "name": "Abyzou's Silence Ichor",
@@ -4391,7 +4820,9 @@
     "source_monster": "seal_demon_silence",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "mp"
   },
   "seal_demon_war_prime": {
     "name": "Bael's War Ichor",
@@ -4412,7 +4843,9 @@
     "family": "demons",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.33,
+    "side": "fire_resist"
   },
   "seal_demon_wrath_prime": {
     "name": "Amon's Wrath Ichor",
@@ -4433,7 +4866,9 @@
     "family": "demons",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "fire_resist"
   },
   "sets_jackal_prime": {
     "name": "Set's Jackal Steak",
@@ -4454,7 +4889,9 @@
     "family": "great_beasts",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "drain_resist"
   },
   "shade_prime": {
     "name": "Shade Gloom-Jelly",
@@ -4475,7 +4912,9 @@
     "family": "ghosts",
     "temp_power": "dark_vision",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "see_invisible"
   },
   "shadow_demon_prime": {
     "name": "Shadow Demon Smoke Ichor",
@@ -4496,7 +4935,9 @@
     "family": "demons",
     "temp_power": "dark_vision",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.79,
+    "side": "fire_resist"
   },
   "shadow_prime": {
     "name": "Shadow Gloom-Ectoplasm",
@@ -4517,7 +4958,9 @@
     "family": "ghosts",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "dark_vision"
   },
   "shambling_mound_prime": {
     "name": "Shambling Mound Compost Jar",
@@ -4537,7 +4980,9 @@
     "source_monster": "shambling_mound",
     "family": "plants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.99,
+    "side": "regenerating"
   },
   "shield_guardian_prime": {
     "name": "Shield Guardian Ward Core",
@@ -4558,7 +5003,9 @@
     "family": "constructs",
     "temp_power": "shielded",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.34,
+    "side": "save_guard_DEX"
   },
   "skeleton_prime": {
     "name": "Skeleton Marrow Slice",
@@ -4578,7 +5025,9 @@
     "source_monster": "skeleton",
     "family": "restless_dead",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.8,
+    "side": "fear_immune"
   },
   "sluagh_prime": {
     "name": "Sluagh Wing-Bone",
@@ -4598,7 +5047,9 @@
     "source_monster": "sluagh",
     "family": "ghosts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.79,
+    "side": "drain_resist"
   },
   "sobek_warrior_prime": {
     "name": "Sobek Crocodile Sausage",
@@ -4619,7 +5070,9 @@
     "family": "serpents",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "warning"
   },
   "soul_eater_prime": {
     "name": "Soul Eater Hollow Bone",
@@ -4639,7 +5092,9 @@
     "source_monster": "soul_eater",
     "family": "ghosts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.25,
+    "side": "drain_resist"
   },
   "specter_prime": {
     "name": "Specter Ectoplasm",
@@ -4659,7 +5114,9 @@
     "source_monster": "specter",
     "family": "ghosts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.24,
+    "side": "drain_resist"
   },
   "spectral_dragon_prime": {
     "name": "Spectral Dragon Ectoplasm",
@@ -4679,7 +5136,9 @@
     "source_monster": "spectral_dragon",
     "family": "dragons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.0,
+    "side": "drain_resist"
   },
   "sphinx_prime": {
     "name": "Sphinx Lion Steak",
@@ -4700,7 +5159,9 @@
     "family": "legend",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.81,
+    "side": "heal"
   },
   "spriggan_prime": {
     "name": "Spriggan Root-Acorn",
@@ -4721,7 +5182,9 @@
     "family": "fair_folk",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.81,
+    "side": "sleep_resist"
   },
   "star_spawn_prime": {
     "name": "Star Spawn Ink Sac",
@@ -4741,7 +5204,9 @@
     "source_monster": "star_spawn",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.86,
+    "side": "mp"
   },
   "stirge_swarm_prime": {
     "name": "Stirge Drumstick",
@@ -4761,7 +5226,9 @@
     "source_monster": "stirge_swarm",
     "family": "vermin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.76,
+    "side": "drain_resist"
   },
   "stone_giant_prime": {
     "name": "Stone Giant Rock-Salt Links",
@@ -4782,7 +5249,9 @@
     "family": "giants",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.18,
+    "side": "heal"
   },
   "stone_golem_prime": {
     "name": "Stone Golem Rune-Heart",
@@ -4803,7 +5272,9 @@
     "family": "constructs",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.22,
+    "side": "save_guard_DEX"
   },
   "storm_elemental_prime": {
     "name": "Bottled Thunderhead",
@@ -4824,7 +5295,9 @@
     "family": "elementals",
     "temp_power": "shock_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.0,
+    "side": "heal"
   },
   "storm_giant_prime": {
     "name": "Storm Giant Thunder Sausage",
@@ -4845,7 +5318,9 @@
     "family": "giants",
     "temp_power": "shock_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.19,
+    "side": "heal"
   },
   "strigoi_prime": {
     "name": "Strigoi Blood-Bone",
@@ -4866,7 +5341,9 @@
     "family": "vampires_liches",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "drain_resist"
   },
   "stymphalian_bird_prime": {
     "name": "Stymphalian Bronze-Feather Drumstick",
@@ -4886,7 +5363,9 @@
     "source_monster": "stymphalian_bird",
     "family": "birds",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.82,
+    "side": "warning"
   },
   "talos_prime": {
     "name": "Talos Bronze Heart",
@@ -4907,7 +5386,9 @@
     "family": "constructs",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "fire_resist"
   },
   "tengu_warrior_prime": {
     "name": "Tengu Warrior Wing Ham",
@@ -4928,7 +5409,9 @@
     "family": "birds",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.82,
+    "side": "shock_resist"
   },
   "the_sphinx_prime": {
     "name": "The Sphinx's Riddle Steak",
@@ -4949,7 +5432,9 @@
     "family": "legend",
     "stat_grant": "WIS",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "heal"
   },
   "thoth_construct_prime": {
     "name": "Thoth Construct Ink Core",
@@ -4969,7 +5454,9 @@
     "source_monster": "thoth_construct",
     "family": "constructs",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.06,
+    "side": "mp"
   },
   "thunderbird_lesser_prime": {
     "name": "Thunderbird Storm Loin",
@@ -4990,7 +5477,9 @@
     "family": "birds",
     "temp_power": "shock_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.05,
+    "side": "heal"
   },
   "titan_prime": {
     "name": "Titan Haunch",
@@ -5010,7 +5499,9 @@
     "source_monster": "titan",
     "family": "giants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.2,
+    "side": "heal"
   },
   "troglodyte_prime": {
     "name": "Troglodyte Musk Haunch",
@@ -5030,7 +5521,9 @@
     "source_monster": "troglodyte",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.06,
+    "side": "warning"
   },
   "troll_prime": {
     "name": "Troll Gut Sausage",
@@ -5050,7 +5543,9 @@
     "source_monster": "troll",
     "family": "giants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.1,
+    "side": "regenerating"
   },
   "ugallu_demon_prime": {
     "name": "Ugallu Lion-Demon Ichor",
@@ -5071,7 +5566,9 @@
     "family": "demons",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.79,
+    "side": "fire_resist"
   },
   "unicorn_corrupted_prime": {
     "name": "Corrupted Unicorn Drumstick",
@@ -5092,7 +5589,9 @@
     "family": "celestials",
     "temp_power": "poison_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.86,
+    "side": "save_guard_WIS"
   },
   "valkyrie_shade_prime": {
     "name": "Valkyrie Spear-Bone",
@@ -5113,7 +5612,9 @@
     "family": "ghosts",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.82,
+    "side": "drain_resist"
   },
   "vampire_prime": {
     "name": "Vampire Knucklebone",
@@ -5133,7 +5634,9 @@
     "source_monster": "vampire",
     "family": "vampires_liches",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.07,
+    "side": "drain_resist"
   },
   "violet_fungus_prime": {
     "name": "Violet Fungus Stalk",
@@ -5154,7 +5657,9 @@
     "family": "plants",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.8,
+    "side": "regenerating"
   },
   "void_crawler_prime": {
     "name": "Void Crawler Ink Bladder",
@@ -5175,7 +5680,9 @@
     "family": "aberrations",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.99,
+    "side": "drain_resist"
   },
   "void_elemental_prime": {
     "name": "Void Elemental Nothing-Jar",
@@ -5196,7 +5703,9 @@
     "family": "elementals",
     "temp_power": "magic_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.86,
+    "side": "heal"
   },
   "void_leviathan_prime": {
     "name": "Void Leviathan Blubber Sac",
@@ -5216,7 +5725,9 @@
     "source_monster": "void_leviathan",
     "family": "aberrations",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.07,
+    "side": "drain_resist"
   },
   "void_seraph_prime": {
     "name": "Void Seraph Ash-Light Ichor",
@@ -5236,7 +5747,9 @@
     "source_monster": "void_seraph",
     "family": "demons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "mp"
   },
   "void_wyrm_prime": {
     "name": "Void Wyrm Night-Scale",
@@ -5256,7 +5769,9 @@
     "source_monster": "void_wyrm",
     "family": "dragons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.85,
+    "side": "drain_resist"
   },
   "vrock_prime": {
     "name": "Vrock Vulture Bile",
@@ -5277,7 +5792,9 @@
     "family": "demons",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.87,
+    "side": "fire_resist"
   },
   "vrykolakas_prime": {
     "name": "Vrykolakas Warm Bone",
@@ -5297,7 +5814,9 @@
     "source_monster": "vrykolakas",
     "family": "vampires_liches",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.89,
+    "side": "drain_resist"
   },
   "water_elemental_prime": {
     "name": "Water Elemental Tide Jar",
@@ -5317,7 +5836,9 @@
     "source_monster": "water_elemental",
     "family": "elementals",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.11,
+    "side": "heal"
   },
   "wendigo_prime": {
     "name": "Wendigo Hunger-Bone",
@@ -5337,7 +5858,9 @@
     "source_monster": "wendigo",
     "family": "shapeshifters",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "cold_resist"
   },
   "werebear_prime": {
     "name": "Werebear Leg",
@@ -5357,7 +5880,9 @@
     "source_monster": "werebear",
     "family": "shapeshifters",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.92,
+    "side": "see_invisible"
   },
   "wererat_prime": {
     "name": "Wererat Streaky Bacon",
@@ -5377,7 +5902,9 @@
     "source_monster": "wererat",
     "family": "shapeshifters",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.07,
+    "side": "see_invisible"
   },
   "weretiger_prime": {
     "name": "Weretiger Leg",
@@ -5398,7 +5925,9 @@
     "family": "shapeshifters",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.89,
+    "side": "see_invisible"
   },
   "werewolf_prime": {
     "name": "Werewolf Moon-Steak",
@@ -5419,7 +5948,9 @@
     "family": "shapeshifters",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.75,
+    "side": "see_invisible"
   },
   "wight_prime": {
     "name": "Wight Barrow-Femur",
@@ -5440,7 +5971,9 @@
     "family": "restless_dead",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.84,
+    "side": "drain_resist"
   },
   "wild_hunt_captain_prime": {
     "name": "Wild Hunt Horn-Spark",
@@ -5461,7 +5994,9 @@
     "family": "fair_folk",
     "temp_power": "hasted",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.35,
+    "side": "sleep_resist"
   },
   "will_o_wisp_prime": {
     "name": "Wisp-Lit Shinbone",
@@ -5481,7 +6016,9 @@
     "source_monster": "will_o_wisp",
     "family": "ghosts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.2,
+    "side": "shock_resist"
   },
   "winter_wolf_prime": {
     "name": "Winter Wolf Shank",
@@ -5502,7 +6039,9 @@
     "family": "great_beasts",
     "temp_power": "cold_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.79,
+    "side": "heal"
   },
   "wolf_pack_leader_prime": {
     "name": "Dire Wolf Steak",
@@ -5523,7 +6062,9 @@
     "family": "great_beasts",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.08,
+    "side": "heal"
   },
   "wood_golem_prime": {
     "name": "Wood Golem Sap Crystal",
@@ -5544,7 +6085,9 @@
     "family": "constructs",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.01,
+    "side": "save_guard_DEX"
   },
   "world_serpent_prime": {
     "name": "World Serpent Scale",
@@ -5565,7 +6108,9 @@
     "family": "serpents",
     "temp_power": "poison_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.09,
+    "side": "warning"
   },
   "wormwood_blight_prime": {
     "name": "Wormwood Bitter Ichor",
@@ -5586,7 +6131,9 @@
     "family": "plants",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.8,
+    "side": "regenerating"
   },
   "wraith_prime": {
     "name": "Wraith Ectoplasm",
@@ -5606,7 +6153,9 @@
     "source_monster": "wraith",
     "family": "ghosts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.23,
+    "side": "drain_resist"
   },
   "wyrm_prime": {
     "name": "Wyrm Coil-Scale",
@@ -5627,7 +6176,9 @@
     "family": "dragons",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.97,
+    "side": "fire_resist"
   },
   "wyvern_prime": {
     "name": "Wyvern Tail-Scale",
@@ -5648,7 +6199,9 @@
     "family": "dragons",
     "temp_power": "poison_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.02,
+    "side": "fire_resist"
   },
   "xorn_prime": {
     "name": "Xorn Gravel Jar",
@@ -5669,7 +6222,9 @@
     "family": "elementals",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.28,
+    "side": "heal"
   },
   "yellow_mold_prime": {
     "name": "Yellow Mold Log",
@@ -5689,7 +6244,9 @@
     "source_monster": "yellow_mold",
     "family": "plants",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "regenerating"
   },
   "young_black_dragon_prime": {
     "name": "Black Dragon Bog-Scale",
@@ -5710,7 +6267,9 @@
     "family": "dragons",
     "temp_power": "acid_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.1,
+    "side": "heal"
   },
   "young_dragon_prime": {
     "name": "Dragon Heart-Scale",
@@ -5730,7 +6289,9 @@
     "source_monster": "young_dragon",
     "family": "dragons",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.87,
+    "side": "fire_resist"
   },
   "young_red_dragon_prime": {
     "name": "Red Dragon Fire-Scale",
@@ -5751,7 +6312,9 @@
     "family": "dragons",
     "temp_power": "fire_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.98,
+    "side": "heal"
   },
   "yuan_ti_pureblood_prime": {
     "name": "Yuan-Ti Smoked Haunch",
@@ -5771,7 +6334,9 @@
     "source_monster": "yuan_ti_pureblood",
     "family": "serpents",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.09,
+    "side": "mp"
   },
   "zombie_prime": {
     "name": "Zombie Shinbone",
@@ -5784,14 +6349,17 @@
     "weight": 0.25,
     "min_level": 1,
     "tier_role": "prime",
-    "nature": "hp",
+    "nature": "stat",
     "part": "bone",
     "description": "A green-tinged shinbone from the walking dead, plague-ridden or fresh. Boiled long and hard, the marrow is surprisingly mending.",
     "identified": true,
     "source_monster": "zombie",
     "family": "restless_dead",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.83,
+    "side": "fear_immune",
+    "stat_grant": "CON"
   },
   "abaddon_destroyer_trophy": {
     "name": "Abaddon's Locust Heart",
@@ -5828,7 +6396,8 @@
     "part": "forage",
     "description": "Dark kelp from the deep water, thick with minerals. Sailors eat it to heal on long voyages.",
     "identified": true,
-    "terrain": "water_deep"
+    "terrain": "water_deep",
+    "side": "heal"
   },
   "altar_incense": {
     "name": "Altar Incense",
@@ -5846,7 +6415,8 @@
     "description": "Sweet incense scraped from an old altar. Burned under a pot, it gives food a calming smoke.",
     "identified": true,
     "stat_grant": "WIS",
-    "terrain": "altar"
+    "terrain": "altar",
+    "side": "save_guard_WIS"
   },
   "asmodeus_trophy": {
     "name": "Asmodeus's Pact-Blood",
@@ -5922,7 +6492,8 @@
     "part": "forage",
     "description": "A fat pale mushroom from damp cave floors, good in nearly everything.",
     "identified": true,
-    "terrain": "cave"
+    "terrain": "cave",
+    "side": "dark_vision"
   },
   "crystal_shard": {
     "name": "Crystal Shard",
@@ -5939,7 +6510,8 @@
     "part": "forage",
     "description": "A clear shard from the crystal caves, humming faintly. Wizards grind it into their tea.",
     "identified": true,
-    "terrain": "crystal"
+    "terrain": "crystal",
+    "side": "mp"
   },
   "deep_iron": {
     "name": "Deep-Iron Shaving",
@@ -5957,7 +6529,8 @@
     "description": "A shaving of the dark iron that grows in the deepest rock. Old smiths swore a pinch in the stew made a man strong.",
     "identified": true,
     "stat_grant": "STR",
-    "terrain": "deep"
+    "terrain": "deep",
+    "side": "fire_resist"
   },
   "fafnir_dragon_trophy": {
     "name": "Fafnir's Heart",
@@ -6033,7 +6606,8 @@
     "description": "Water from an altar spring, blessed long ago. A splash in the pot makes any dish holy.",
     "identified": true,
     "temp_power": "blessed",
-    "terrain": "altar"
+    "terrain": "altar",
+    "side": "drain_resist"
   },
   "hrungnirs_ghost_trophy": {
     "name": "Hrungnir's Stone-Heart",
@@ -6110,7 +6684,8 @@
     "description": "Salt from underground rivers. A ring of salt keeps evil out, and so does a pinch on your food.",
     "identified": true,
     "temp_power": "save_guard_WIS",
-    "terrain": "water"
+    "terrain": "water",
+    "side": "fear_immune"
   },
   "starnut": {
     "name": "Starnut",
@@ -6127,7 +6702,8 @@
     "part": "forage",
     "description": "A hard round nut with star-shaped ridges that glitters in lamplight. It grows only in the deep mines, where the old miners baked it into tarts, and the little cave folk still love it.",
     "identified": true,
-    "terrain": "cave"
+    "terrain": "cave",
+    "side": "mp"
   },
   "sunroot": {
     "name": "Sunroot",
@@ -6144,7 +6720,8 @@
     "part": "forage",
     "description": "A bright orange-gold root with feathery green tops, sweet as honey. The great running birds of the Underway will cross a cavern for one.",
     "identified": true,
-    "terrain": "cave"
+    "terrain": "cave",
+    "side": "heal"
   },
   "surtur_trophy": {
     "name": "Surtur's Ember",
@@ -6181,7 +6758,8 @@
     "part": "forage",
     "description": "A clump of green swamp moss, used for centuries to bind wounds. Cooked, it mends from the inside.",
     "identified": true,
-    "terrain": "swamp"
+    "terrain": "swamp",
+    "side": "regenerating"
   },
   "tiamat_trophy": {
     "name": "Tiamat's Chromatic Tear",
@@ -6262,7 +6840,9 @@
     "family": "plants",
     "temp_power": "save_guard_CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.0,
+    "side": "regenerating"
   },
   "kappa_prime": {
     "name": "Kappa Shell Steak",
@@ -6283,7 +6863,9 @@
     "family": "serpents",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.06,
+    "side": "warning"
   },
   "eloko_prime": {
     "name": "Eloko Shinbone",
@@ -6304,7 +6886,9 @@
     "family": "fair_folk",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.03,
+    "side": "sleep_resist"
   },
   "ahuizotl_prime": {
     "name": "Ahuizotl Haunch",
@@ -6325,7 +6909,9 @@
     "family": "serpents",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.16,
+    "side": "warning"
   },
   "bulgasari_prime": {
     "name": "Bulgasari Rice-Heart",
@@ -6346,7 +6932,9 @@
     "family": "constructs",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.29,
+    "side": "save_guard_DEX"
   },
   "myrmekes_prime": {
     "name": "Jar of Gold-Ant Larvae",
@@ -6366,7 +6954,9 @@
     "source_monster": "myrmekes",
     "family": "vermin",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.78,
+    "side": "acid_resist"
   },
   "vila_prime": {
     "name": "Vila Cloud-Mote",
@@ -6386,7 +6976,9 @@
     "source_monster": "vila",
     "family": "fair_folk",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.83,
+    "side": "mp"
   },
   "taniwha_prime": {
     "name": "Taniwha Steak",
@@ -6407,7 +6999,9 @@
     "family": "serpents",
     "stat_grant": "CON",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.04,
+    "side": "warning"
   },
   "impundulu_prime": {
     "name": "Jarred Impundulu Fat",
@@ -6428,7 +7022,9 @@
     "family": "birds",
     "temp_power": "shock_resist",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "heal"
   },
   "mapinguari_prime": {
     "name": "Mapinguari Flank Steak",
@@ -6449,7 +7045,9 @@
     "family": "great_beasts",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.03,
+    "side": "heal"
   },
   "preta_prime": {
     "name": "Preta Hunger-Ember",
@@ -6469,7 +7067,9 @@
     "source_monster": "preta",
     "family": "ghosts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.87,
+    "side": "drain_resist"
   },
   "star_jelly_prime": {
     "name": "Star Jelly",
@@ -6490,7 +7090,9 @@
     "family": "oozes",
     "stat_grant": "INT",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.05,
+    "side": "cold_resist"
   },
   "waq_waq_tree_prime": {
     "name": "Waq-Waq Fruit",
@@ -6511,7 +7113,9 @@
     "family": "plants",
     "stat_grant": "PER",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.84,
+    "side": "regenerating"
   },
   "yacumama_prime": {
     "name": "Yacumama Steak",
@@ -6532,7 +7136,9 @@
     "family": "serpents",
     "stat_grant": "STR",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 1.0,
+    "side": "warning"
   },
   "reem_prime": {
     "name": "Re'em Sirloin",
@@ -6552,7 +7158,9 @@
     "source_monster": "reem",
     "family": "great_beasts",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.88,
+    "side": "heal"
   },
   "bakunawa_prime": {
     "name": "Bakunawa Moon-Scale",
@@ -6573,6 +7181,8 @@
     "family": "serpents",
     "stat_grant": "DEX",
     "edible_safe": true,
-    "raw_sp": 10
+    "raw_sp": 10,
+    "richness": 0.89,
+    "side": "warning"
   }
 }

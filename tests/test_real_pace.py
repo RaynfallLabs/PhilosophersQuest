@@ -71,4 +71,5 @@ def test_hunger_runs_on_the_one_dial():
     assert rings.hunger_interval(p, floor_curve.HUNGER_EVERY) == floor_curve.HUNGER_EVERY
     # A new hero with nothing to eat starves after max_sp x HUNGER_EVERY
     # steps: past floor 1's whole time to explore on its median map.
-    assert p.max_sp * floor_curve.HUNGER_EVERY >= floor_curve.kid_pace(196)
+    # (2026-11-22: with his starting bread ration; hunger every 3 steps)
+    assert (p.max_sp + 45) * floor_curve.HUNGER_EVERY >= floor_curve.kid_pace(196)

@@ -185,20 +185,24 @@ def test_cooking_never_gives_less_than_eating_it_raw():
 
 
 def test_the_rungs_climb():
-    """Two staples < the part alone < the part and a staple < two parts."""
+    """Two staples < any part alone; and for each part: alone < with a
+    staple < with another part. (Since 2026-11-22 a part's worth is its own
+    strength by lore, so the ladder is each part's own.)"""
     def factor(r):
         return kitchen.dish_outcome(r)['factor']
     two = [r for r in _rung('plain') if kitchen.dish_size(r) == 2
            and all(p in STAPLES for p in kitchen.parts(r))]
-    single = kitchen.single_dish_for('cave_bear_prime')
-    step = [r for r in _rung('step')]
-    pairs = [r for r in kitchen.book() if not r.get('rung') and kitchen.dish_size(r) == 2
-             and all(kitchen.part_kind(p) == 'monster' for p in kitchen.parts(r))]
-    assert max(map(factor, two)) < factor(single) < min(map(factor, step))
-    assert max(map(factor, step)) < min(map(factor, pairs))
-    threes = [r for r in _rung('plain') if kitchen.dish_size(r) == 3]
-    assert max(map(factor, two)) < max(map(factor, threes)) < min(map(factor, step))
-    assert max(map(factor, _rung('plain'))) <= min(map(factor, step))
+    singles = [r for r in kitchen.book() if kitchen.dish_size(r) == 1
+               and kitchen.part_kind(kitchen.parts(r)[0]) == 'monster']
+    assert max(map(factor, two)) < min(map(factor, singles))
+    for step in _rung('step'):
+        part = kitchen.parts(step)[0]
+        alone = kitchen.single_dish_for(part)
+        assert factor(alone) < factor(step), step['id']
+        for r in kitchen.dishes_with(part):
+            if (not r.get('rung') and kitchen.dish_size(r) == 2
+                    and all(kitchen.part_kind(p) == 'monster' for p in kitchen.parts(r))):
+                assert factor(step) < factor(r), (step['id'], r['id'])
 
 
 def test_plain_fare_is_no_free_health():
@@ -213,7 +217,8 @@ def test_plain_fare_is_no_free_health():
         else:
             raw_hp = kitchen.raw_gives(r)[1]
             more = kitchen.rules()['rungs']['cooked_over_raw']
-            assert kitchen.heal_amount(_Hero(), out) <= raw_hp * more + 1, r['id']
+            side = round(out['side_heal'] * _Hero.max_hp)     # the stew's own gift
+            assert kitchen.heal_amount(_Hero(), out) - side <= raw_hp * more + 1, r['id']
 
 
 def test_plain_fare_is_listed_after_every_dish_that_builds():
