@@ -21,6 +21,7 @@ from monster import the_name
 import pygame
 
 from geom import monster_at_tile
+import grave_rot
 
 from food_system import eat_food, eat_raw
 from items import (Weapon, Armor, Shield, Corpse, Ingredient, Artifact,
@@ -1683,8 +1684,9 @@ class MenuMixin:
 
         elif pid == 'life_drain':
             restored = max(1, pl.max_hp // 4)
-            pl.restore_hp(restored)
-            self.add_message(f"{label}: Vital energy flows back -- +{restored} HP!", 'success')
+            got = pl.restore_hp(restored)
+            self.add_message(f"{label}: " + grave_rot.told(
+                pl, got, "Vital energy flows back -- +{n} HP!"), 'success')
 
         elif pid == 'reality_anchor':
             cleared = [e for e in list(pl.status_effects.keys()) if e in DEBUFFS]

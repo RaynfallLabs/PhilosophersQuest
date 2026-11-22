@@ -1639,8 +1639,9 @@ class UnicornPet(Pet):
             self._heal_timer = 0
             if player.hp < player.max_hp:
                 heal = random.randint(3, 5)
+                before = player.hp
                 player.hp = min(player.max_hp, player.hp + heal)
-                messages.append(('heal', heal))
+                messages.append(('heal', player.hp - before))
 
         # Cleanse one negative status every 8 turns
         self._cleanse_timer += 1

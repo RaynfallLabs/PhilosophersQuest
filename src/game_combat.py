@@ -3869,8 +3869,11 @@ class CombatMixin:
                 _wpn = self.player.weapon
                 if _wpn and getattr(_wpn, 'on_hit_regen', 0) > 0 and dmg > 0:
                     _regen_amt = _wpn.on_hit_regen
+                    _before_mend = self.player.hp
                     self.player.hp = min(self.player.max_hp, self.player.hp + _regen_amt)
-                    self.add_message(f"The green axe mends your wounds. (+{_regen_amt} HP)", 'info')
+                    if self.player.hp > _before_mend:
+                        self.add_message("The green axe mends your wounds. "
+                                         f"(+{self.player.hp - _before_mend} HP)", 'info')
 
                 # Svalinn: reflect fire damage back at attacker
                 _shld = self.player.shield

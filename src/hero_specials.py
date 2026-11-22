@@ -578,10 +578,13 @@ def _eff_self_heal(game, special, tier, chain):
         return
     from floor_curve import mend
     heal = mend(roll(dice), game.player.max_hp, HERO_HEAL_SHARE * max(1, int(chain)))
+    before = game.player.hp
     game.player.restore_hp(heal) if hasattr(game.player, 'restore_hp') else None
     if not hasattr(game.player, 'restore_hp'):
         game.player.hp = min(game.player.max_hp, game.player.hp + heal)
-    game.add_message(f"Harmony — you recover {heal} HP.", 'success')
+    import grave_rot
+    game.add_message(grave_rot.told(game.player, game.player.hp - before,
+                                    "Harmony — you recover {n} HP."), 'success')
     if cleanse_n > 0:
         from status_effects import DEBUFFS
         debuffs = [e for e in list(game.player.status_effects) if e in DEBUFFS]
@@ -971,12 +974,14 @@ def _eff_heal_and_crit_buff(game, special, tier, chain):
     if heal == 0 and crit_turns == 0:
         game.add_message("The Voices are silent.", 'warning')
         return
+    before = game.player.hp
     game.player.hp = min(game.player.max_hp, game.player.hp + heal)
+    got = game.player.hp - before
     if crit_turns:
         cur = game.player.status_effects.get('crit_buff', 0)
         game.player.status_effects['crit_buff'] = max(cur, crit_turns)
     game.add_message(
-        f"The Maid's Standard! +{heal} HP; your next strike deals +50% damage (within {quantity(crit_turns, 'turn')}).",
+        f"The Maid's Standard! +{got} HP; your next strike deals +50% damage (within {quantity(crit_turns, 'turn')}).",
         'success')
 
 
@@ -1016,8 +1021,9 @@ def _eff_aoe_heal_self(game, special, tier, chain):
         game.add_message("The green light does not bloom.", 'warning')
         return
     if heal:
+        before = game.player.hp
         game.player.hp = min(game.player.max_hp, game.player.hp + heal)
-        game.add_message(f"Viriditas — green life. +{heal} HP.", 'success')
+        game.add_message(f"Viriditas — green life. +{game.player.hp - before} HP.", 'success')
     if cleanse_n > 0:
         from status_effects import DEBUFFS
         debs = [e for e in list(game.player.status_effects) if e in DEBUFFS]

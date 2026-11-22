@@ -47,6 +47,7 @@ from typing import TYPE_CHECKING
 
 import pygame
 
+import grave_rot
 import sound_system as _snd
 from floor_curve import mend as _mend, wound as _wound
 
@@ -631,14 +632,16 @@ class MagicMixin(MagicWardsMixin):
         if effect == 'heal':
             amount = _mend(roll(wand.power) if wand.power else 8,
                            self.player.max_hp, WAND_HEAL_SHARE)
-            self.player.restore_hp(amount)
-            self.add_message(f"The wand heals you for {amount} HP!", 'success')
+            got = self.player.restore_hp(amount)
+            self.add_message(grave_rot.told(self.player, got, "The wand heals you for {n} HP!"),
+                             'success')
 
         elif effect == 'extra_heal':
             amount = _mend((roll(wand.power) if wand.power else 20) + 10,
                            self.player.max_hp, WAND_EXTRA_HEAL_SHARE)
-            self.player.restore_hp(amount)
-            self.add_message(f"Intense healing washes over you -- {amount} HP restored!", 'success')
+            got = self.player.restore_hp(amount)
+            self.add_message(grave_rot.told(
+                self.player, got, "Intense healing washes over you -- {n} HP restored!"), 'success')
 
         elif effect == 'restore_body':
             self.player.hp = self.player.max_hp
@@ -1148,8 +1151,7 @@ class MagicMixin(MagicWardsMixin):
                 # Drain") gives less (3.5.1 audit: it was untyped, so the
                 # Bestiary's line was never true).
                 actual = target.take_damage(dmg, 'drain')
-                heal = min(actual, self.player.max_hp - self.player.hp)
-                self.player.hp += heal
+                heal = self.player.restore_hp(actual)      # through the rot, as every heal
                 self.add_message(
                     f"You drain {actual} life from {the_name(target, lower=True)}! (+{heal} HP)", 'success'
                 )
@@ -1344,8 +1346,9 @@ class MagicMixin(MagicWardsMixin):
         elif effect == 'iron_mortar':
             # Baba Yaga's Iron Mortar: the effect is never the same twice
             _chaos = _rng.choice([
-                ('heal',       lambda: (self.player.restore_hp(25),
-                                        self.add_message("Chaotic healing washes over you! (+25 HP)", 'success'))),
+                ('heal',       lambda: self.add_message(grave_rot.told(
+                    self.player, self.player.restore_hp(25),
+                    "Chaotic healing washes over you! (+{n} HP)"), 'success')),
                 ('teleport',   lambda: (self._teleport_player(),
                                         self.add_message("The mortar warps you across the level!", 'warning'))),
                 ('haste',      lambda: (self.player.add_effect('hasted', 10),
@@ -1392,10 +1395,10 @@ class MagicMixin(MagicWardsMixin):
             else:
                 drain = max(1, target.hp // 2)
                 actual = target.take_damage(drain)
-                self.player.restore_hp(actual)
+                got = self.player.restore_hp(actual)
                 self.add_message(
                     f"Life force drains from {the_name(target, lower=True)}! "
-                    f"({actual} drained, +{actual} HP to you)", 'success'
+                    f"({actual} drained, +{got} HP to you)", 'success'
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
@@ -1468,8 +1471,9 @@ class MagicMixin(MagicWardsMixin):
 
         elif effect == 'wonder':
             _WONDER_EFFECTS = [
-                ('heal', lambda: (self.player.restore_hp(15),
-                    self.add_message("The wand heals you for 15 HP!", 'success'))),
+                ('heal', lambda: self.add_message(grave_rot.told(
+                    self.player, self.player.restore_hp(15),
+                    "The wand heals you for {n} HP!"), 'success')),
                 ('haste', lambda: (self.player.add_effect('hasted', 8),
                     self.add_message("The wand makes you supernaturally fast!", 'success'))),
                 ('confuse', lambda: (
@@ -1870,8 +1874,8 @@ class MagicMixin(MagicWardsMixin):
             _tier = int(getattr(self, '_active_spell_tier', 1) or 1)
             healed = _mend(self._spell_damage(base, chain, healing=True),
                            self.player.max_hp, SPELL_HEAL_SHARE.get(_tier, 0.45))
-            self.player.restore_hp(healed)
-            self.add_message(f"You are healed for {healed} HP!", 'success')
+            got = self.player.restore_hp(healed)
+            self.add_message(grave_rot.told(self.player, got, "You are healed for {n} HP!"), 'success')
             return
 
         # Army of Darkness: summon undead pet horde
@@ -2888,9 +2892,9 @@ class MagicMixin(MagicWardsMixin):
                 amount = amount * 2
             elif _scroll_buc == 'cursed':
                 amount = max(1, amount // 2)
-            self.player.restore_hp(amount)
-            self.add_message(
-                f"Healing light washes over you -- {amount} HP restored!", 'success')
+            got = self.player.restore_hp(amount)
+            self.add_message(grave_rot.told(
+                self.player, got, "Healing light washes over you -- {n} HP restored!"), 'success')
 
         elif effect == 'summon_stray_kids':
             # The Autographed Stray Kids Photo, spent: the band, alive, puts
