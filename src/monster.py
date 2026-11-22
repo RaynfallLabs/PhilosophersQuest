@@ -2243,7 +2243,8 @@ class Monster:
         # An opener it armed whose blow never came (a displaced image, a gut
         # round the hero) is not struck later from wherever it then stands.
         # (A blow armed from outside its turn, the Blue Men's squall, waits.)
-        if self._opener_attack is not None and self.__dict__.get('_opener_now') is self._opener_attack:
+        _own = self.__dict__.get('_opener_attack')    # (none on a monster saved before openers)
+        if _own is not None and self.__dict__.get('_opener_now') is _own:
             del self.__dict__['_opener_now']
         # One that has yielded (src/morale.py) never strikes again, whatever
         # holds it (a pit, a spear, a web): it keeps out of the way.
