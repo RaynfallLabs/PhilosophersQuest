@@ -33,6 +33,10 @@ bow's knobs are sim_ranger.py's, the pet's sim_pets.py's; here are the rest:
               kitchen's stat dishes evenly; the game's book makes STR the
               easiest lesson in every band from 25 down (one-part dishes on 8
               to 14% of the spawns; DEX 1 to 6%, WIS 0 to 7%).
+  kt_lean     a finding's dial, the kinder one: on a floor whose stat lesson
+              has no dish of his first stat_focus, whatever stat dish is ready
+              teaches that stat (nothing else's dishes are lost). The most an
+              evenly written kitchen could give a lean.
   st_lean     a finding's dial: a melee blow reads the better of STR and the
               stat this profile leans on (DEX, INT, WIS or PER), so every
               lean pays its blows as STR pays the fighter's. A stand-in for a
@@ -66,6 +70,7 @@ KNOBS = {
     'dx_finesse': 0,
     'st_lean': 0,
     'kt_even': 0,
+    'kt_lean': 0,
 }
 KNOBS.update(sim_ranger.KNOBS)
 KNOBS.update(sim_pets.KNOBS)
@@ -184,6 +189,22 @@ def install_kitchen(knobs: dict, prof: dict) -> None:
     for rec in kitchen.raw_recipes().values():
         if isinstance(rec, dict) and rec.get('benefit') in trade:
             rec['benefit'] = trade[rec['benefit']]
+
+
+def lean_dish(run, ready: list) -> list:
+    """kt_lean: the floor's lesson is always one he can spend on his lean."""
+    if not k(run, 'kt_lean') or not ready:
+        return ready
+    focus = tuple(run.prof.get('stat_focus') or ())
+    if not focus:
+        return ready
+    import kitchen
+    if kitchen.dish_stat(ready[0]) == focus[0]:
+        return ready
+    as_lean = dict(ready[0], benefit=focus[0])
+    if not kitchen._would_teach(run.p, as_lean):
+        return ready
+    return [as_lean] + list(ready)
 
 
 def _strike(run, real, p, monster, chain, a, kw) -> int:

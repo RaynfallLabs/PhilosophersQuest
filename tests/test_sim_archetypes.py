@@ -86,7 +86,7 @@ def test_every_knob_is_in_the_simulator_and_is_the_game():
         assert ds.KNOB_DEFAULTS[k] == v
     for k in ('cl_wis', 'cl_wis_cap', 'cl_wards', 'cl_mp_wis', 'fu_on', 'fu_tough', 'dx_finesse',
               'ar_bow', 'ar_per', 'ar_recover', 'ar_fletch', 'ar_stall', 'ar_heads',
-              'pt_hp', 'pt_feed', 'pt_lv', 'pt_per', 'pt_full', 'st_lean', 'kt_even', 'ar_draw'):
+              'pt_hp', 'pt_feed', 'pt_lv', 'pt_per', 'pt_full', 'st_lean', 'kt_even', 'kt_lean', 'ar_draw'):
         assert not sa.KNOBS[k], k
     assert sa.KNOBS['la_wt'] == 1.0
     assert sa.BERSERK == sa.KNOBS['fu_dmg'] == 1.3
@@ -129,7 +129,7 @@ def test_the_default_cell_is_the_one_before_the_archetype_hooks(monkeypatch):
     none = lambda *x, **y: None         # noqa: E731
     no = lambda *x, **y: False          # noqa: E731
     old = {
-        sa: dict(install=none, install_kitchen=none, learn=no, ward=no, fight_start=none, fight_end=none, call_fury=none,
+        sa: dict(install=none, install_kitchen=none, lean_dish=lambda run, ready: ready, learn=no, ward=no, fight_start=none, fight_end=none, call_fury=none,
                  floor_start=none, floor_end=none, sync_mp=none, light_answers=none,
                  heal_factor=sim_magic.int_factor, wis_step=lambda run: 1.0,
                  incoming=lambda p, amount: amount, stat_for_cap=lambda p, stat: stat,
@@ -457,6 +457,16 @@ def test_the_even_kitchen_trades_the_leans_dishes_with_strs_and_puts_them_back()
         sa.install_kitchen({}, {})
     assert dishes() == was
     assert sa.lean_swap({'kt_even': 1}, {'stat_focus': ('STR', 'CON')}) is None
+
+
+def test_the_lean_is_always_cookable_only_by_its_dial():
+    import kitchen
+    import sim_archetypes as sa
+    dish = next(r for r in kitchen.book() if r.get('benefit') == 'STR' and kitchen.dish_size(r) == 1)
+    assert sa.lean_dish(_run('arch_cleric'), [dish]) == [dish]
+    run = _run('arch_cleric', 'kt_lean=1')
+    got = sa.lean_dish(run, [dish])
+    assert got[0]['benefit'] == 'WIS' and got[1] is dish and dish['benefit'] == 'STR'
 
 
 def test_the_strike_hook_is_put_back_when_no_knob_needs_it():

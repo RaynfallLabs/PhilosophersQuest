@@ -1901,7 +1901,8 @@ class Run(_MMMagicSim):
                 dist = [self.quiz.sample_chain(tier, timer, max_chain)[0]
                         for _ in range(150)]
             self._score_cache[key] = dist
-        return sum(self._est_damage(w, c) for c in dist) / len(dist)
+        est = {c: self._est_damage(w, c) for c in set(dist)}    # a chain's blow once, not 150 times
+        return sum(est[c] for c in dist) / len(dist)            # summed in dist's order, to the same float
 
     # ---------------------------------------------------------------- tactics
     @staticmethod
@@ -3604,6 +3605,7 @@ class Run(_MMMagicSim):
         if stat_ready and self.dishes_left > 0:
             stat_ready.sort(key=lambda r: (kitchen_mod.dish_stat(r) not in focus,
                                            -kitchen_mod.dish_value(p, r)))
+            stat_ready = sim_archetypes.lean_dish(self, stat_ready)     # kt_lean
             if not sim_pets.feed(self, stat_ready):      # R4: or the pet's dish
                 self._cook_dish(stat_ready[0])
         for _ in range(6):
