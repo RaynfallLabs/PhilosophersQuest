@@ -39,7 +39,8 @@ pointing the same direction as the other helpers.  Class-level constant
 directly.
 """
 from __future__ import annotations
-from naming import quantity
+from naming import quantity, turns_span
+from status_effects import turns_now
 from monster import the_name, pronouns, kind_of_corpse
 
 import random
@@ -417,6 +418,15 @@ class MagicMixin(MagicWardsMixin):
             self._advance_turn()
             return
 
+        if (wand.effect == 'light' and self.player.status_effects.get('light', 0) == -1
+                and (getattr(wand, 'identified', False) or wand.id in self.player.known_item_ids)):
+            # A story's lamp burns: a known wand of light keeps its charge.
+            # (One not known is zapped all the same: that is how it is learnt.)
+            import lights
+            self.add_message(lights.line('spell_held'), 'info')
+            self.state = STATE_PLAYER
+            return
+
         # Combat wands: open targeting cursor first (like ranged weapons)
         _TARGETED_EFFECTS = {
             'sleep_monster', 'slow_monster', 'confuse_monster', 'paralyze_monster',
@@ -652,16 +662,19 @@ class MagicMixin(MagicWardsMixin):
         elif effect == 'haste_self':
             dur = self._wand_tier_duration(12, wand.quiz_tier)
             self.player.add_effect('hasted', dur)
+            dur = turns_now(self.player, 'hasted', dur)
             self.add_message(f"You feel supernaturally swift! ({quantity(dur, 'turn')})", 'success')
 
         elif effect == 'invisibility_self':
             dur = self._wand_tier_duration(15, wand.quiz_tier)
             self.player.add_effect('invisible', dur)
+            dur = turns_now(self.player, 'invisible', dur)
             self.add_message(f"You fade from sight! ({quantity(dur, 'turn')})", 'success')
 
         elif effect == 'levitation_self':
             dur = self._wand_tier_duration(12, wand.quiz_tier)
             self.player.add_effect('levitating', dur)
+            dur = turns_now(self.player, 'levitating', dur)
             self.add_message(f"You rise gently off the ground! ({quantity(dur, 'turn')})", 'success')
 
         elif effect == 'teleport_self':
@@ -886,8 +899,11 @@ class MagicMixin(MagicWardsMixin):
                     self.add_message(f"{the_name(target)} is far too powerful to petrify!", 'warning')
                 else:
                     dur = self._wand_tier_duration(5, wand.quiz_tier)
-                    target.add_effect('petrifying', dur)
-                    self.add_message(f"{the_name(target)} begins to turn to stone! ({quantity(dur, 'turn')})", 'success')
+                    got, why = self._inflict(target, 'petrifying', dur, roll=False)
+                    if got:
+                        self.add_message(f"{the_name(target)} begins to turn to stone! ({quantity(got, 'turn')})", 'success')
+                    else:
+                        self.add_message(why or f"{the_name(target)} does not turn to stone.", 'warning')
 
             elif effect == 'cancellation':
                 # Strip BUFFS only — don't save the monster from player-applied
@@ -1045,16 +1061,19 @@ class MagicMixin(MagicWardsMixin):
                 # which never wore off: the creature fled for good.
                 if _is_panic_wave:
                     hit = 0
+                    laid = []
                     for m in self.monsters:
                         if not m.alive or not self._in_hero_reach(m):
                             continue
                         if (_is_big_foe(m) or getattr(m, 'fearless', False)
                                 or m.resists_control('feared')):
                             continue
-                        if self._inflict(m, 'feared', dur, roll=False)[0]:
-                            hit += 1 if _hero_sees(self, m) else 0
+                        got = self._inflict(m, 'feared', dur, roll=False)[0]
+                        if got and _hero_sees(self, m):
+                            hit += 1
+                            laid.append(got)
                     self.add_message(
-                        f"A wave of panic sweeps the floor! ({quantity(hit, 'creature')} {'flees' if hit == 1 else 'flee'} for {quantity(dur, 'turn')})",
+                        f"A wave of panic sweeps the floor! ({quantity(hit, 'creature')} {'flees' if hit == 1 else 'flee'} for {turns_span(laid, dur)})",
                         'success')
                 elif is_boss:
                     self.add_message(f"{the_name(target)} resists the fear!", 'warning')
@@ -1217,31 +1236,37 @@ class MagicMixin(MagicWardsMixin):
         elif effect == 'shield_self':
             dur = self._wand_tier_duration(15, wand.quiz_tier)
             self.player.add_effect('shielded', dur)
+            dur = turns_now(self.player, 'shielded', dur)
             self.add_message(f"A shimmering barrier surrounds you! ({quantity(dur, 'turn')})", 'success')
 
         elif effect == 'fire_shield':
             dur = self._wand_tier_duration(15, wand.quiz_tier)
             self.player.add_effect('fire_shield', dur)
+            dur = turns_now(self.player, 'fire_shield', dur)
             self.add_message(f"Flames swirl around you! Fire protection for {quantity(dur, 'turn')}.", 'success')
 
         elif effect == 'cold_shield':
             dur = self._wand_tier_duration(15, wand.quiz_tier)
             self.player.add_effect('cold_shield', dur)
+            dur = turns_now(self.player, 'cold_shield', dur)
             self.add_message(f"Frost encases you! Cold protection for {quantity(dur, 'turn')}.", 'success')
 
         elif effect == 'regeneration_self':
             dur = self._wand_tier_duration(30, wand.quiz_tier)
             self.player.add_effect('regenerating', dur)
+            dur = turns_now(self.player, 'regenerating', dur)
             self.add_message(f"You feel your wounds slowly closing. ({quantity(dur, 'turn')})", 'success')
 
         elif effect == 'reflect_self':
             dur = self._wand_tier_duration(20, wand.quiz_tier)
             self.player.add_effect('reflecting', dur)
+            dur = turns_now(self.player, 'reflecting', dur)
             self.add_message(f"A reflective aura surrounds you! ({quantity(dur, 'turn')})", 'success')
 
         elif effect == 'phase_self':
             dur = self._wand_tier_duration(15, wand.quiz_tier)
             self.player.add_effect('phasing', dur)
+            dur = turns_now(self.player, 'phasing', dur)
             self.add_message(f"You feel briefly incorporeal -- walls seem thin. ({quantity(dur, 'turn')})", 'success')
 
         elif effect == 'detect_monsters':
@@ -1316,28 +1341,32 @@ class MagicMixin(MagicWardsMixin):
             dur = self._wand_tier_duration(12, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             # Counted as they take hold: the mindless are not muddled (status_immune).
-            n_seen = sum(1 for m in visible_monsters
-                         if m.add_effect('confused', dur) and _hero_sees(self, m))
-            self.add_message(f"A wave of confusion washes over {quantity(n_seen, 'creature')}! ({quantity(dur, 'turn')})", 'success')
+            laid = [got for m in visible_monsters
+                    if (got := m.add_effect('confused', dur)) and _hero_sees(self, m)]
+            n_seen = len(laid)
+            self.add_message(f"A wave of confusion washes over {quantity(n_seen, 'creature')}! ({turns_span(laid, dur)})", 'success')
 
         elif effect == 'mass_sleep':
             dur = self._wand_tier_duration(10, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             # Counted as they take hold: the dead and the made do not sleep.
-            n_seen = sum(1 for m in visible_monsters
-                         if m.add_effect('sleeping', dur) and _hero_sees(self, m))
-            self.add_message(f"All visible creatures slump into slumber! ({n_seen} affected, {quantity(dur, 'turn')})", 'success')
+            laid = [got for m in visible_monsters
+                    if (got := m.add_effect('sleeping', dur)) and _hero_sees(self, m)]
+            n_seen = len(laid)
+            self.add_message(f"All visible creatures slump into slumber! ({n_seen} affected, {turns_span(laid, dur)})", 'success')
 
         elif effect == 'mass_slow':
             dur = self._wand_tier_duration(10, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
-            n_seen = sum(1 for m in visible_monsters
-                         if m.add_effect('slowed', dur) and _hero_sees(self, m))
-            self.add_message(f"{quantity(n_seen, 'creature')} {'is' if n_seen == 1 else 'are'} slowed! ({quantity(dur, 'turn')})", 'success')
+            laid = [got for m in visible_monsters
+                    if (got := m.add_effect('slowed', dur)) and _hero_sees(self, m)]
+            n_seen = len(laid)
+            self.add_message(f"{quantity(n_seen, 'creature')} {'is' if n_seen == 1 else 'are'} slowed! ({turns_span(laid, dur)})", 'success')
 
         elif effect == 'time_stop':
             dur = self._wand_tier_duration(5, wand.quiz_tier)
             self.player.add_effect('time_stopped', dur)
+            dur = turns_now(self.player, 'time_stopped', dur)
             self.add_message(f"Time freezes! You have {quantity(dur, 'turn')} of free movement.", 'success')
 
         elif effect == 'wish':
@@ -1565,6 +1594,12 @@ class MagicMixin(MagicWardsMixin):
         # armour taxes it (x1.5 medium, x2 heavy; mithril and the like cast
         # freely: gear.casting_mult, winning-build plan 3.3). The spell menu
         # shows the same number.
+        if spell.get('effect') == 'light' and self.player.status_effects.get('light', 0) == -1:
+            # A story's lamp burns: the spell could add nothing, so it costs nothing.
+            import lights
+            self.add_message(lights.line('spell_held'), 'info')
+            self.state = STATE_PLAYER
+            return
         mp_cost = self.player.spell_mp_cost(spell['mp_cost'])
         from chain_passives import consume_passive_charge, find_passive_item, refund_passive_charge
         _free_cast = consume_passive_charge(self.player, 'free_cast_once_per_floor')
@@ -1774,6 +1809,7 @@ class MagicMixin(MagicWardsMixin):
         if effect == 'displacement_self':
             dur = max(5, int(20 * chain_scale))
             self.player.add_effect('displacement', dur)
+            dur = turns_now(self.player, 'displacement', dur)
             self.add_message(f"Your image displaces! ({quantity(dur, 'turn')})", 'success')
             return
 
@@ -1832,6 +1868,7 @@ class MagicMixin(MagicWardsMixin):
         if effect == 'detect_monsters_spell':
             dur = max(5, int(20 * chain_scale))
             self.player.add_effect('clairvoyant', dur)
+            dur = turns_now(self.player, 'clairvoyant', dur)
             count = sum(1 for m in self.monsters if m.alive)
             self.add_message(
                 f"Your senses expand -- {quantity(count, 'creature')} revealed for {quantity(dur, 'turn')}!", 'success')
@@ -1953,15 +1990,17 @@ class MagicMixin(MagicWardsMixin):
             dur = max(3, int(5 * chain_scale))
             count = 0
             _named = 0
+            laid = []
             import holds                  # the whole floor, but never past a gut round him
             for m in holds.strikable(self.player, self.monsters):
                 # Counted as they are held: a swarm cannot be held still
                 # (status_immune), and a named foe still steadying shakes it off.
-                if m.alive and m.add_effect('paralyzed', dur):
+                if m.alive and (got := m.add_effect('paralyzed', dur)):
                     count += 1
+                    laid.append(got)
                     _named += 1 if m._is_named_foe() else 0
             self.add_message(
-                f"TIME FREEZES! {quantity(count, 'creature')} locked in place for {quantity(dur, 'turn')}!", 'success')
+                f"TIME FREEZES! {quantity(count, 'creature')} locked in place for {turns_span(laid, dur)}!", 'success')
             if _named:
                 from monster import NAMED_FOE_CONTROL_CAP as _cap
                 self.add_message(
@@ -2204,13 +2243,15 @@ class MagicMixin(MagicWardsMixin):
                 if self._in_spell_sight(m)
             ]
             affected = 0
+            laid = []
             for m in visible_monsters:
-                if not self._inflict(m, status_name, dur)[0]:
-                    continue
-                affected += 1 if _hero_sees(self, m) else 0
+                got = self._inflict(m, status_name, dur)[0]
+                if got and _hero_sees(self, m):
+                    affected += 1
+                    laid.append(got)
             self.add_message(
                 f"{spell['name']}! {affected}/{sum(1 for m in visible_monsters if _hero_sees(self, m))} creatures "
-                f"{status_name} for {quantity(dur, 'turn')}!", 'success')
+                f"{status_name} for {turns_span(laid, dur)}!", 'success')
             return
 
         # --- Mass Slow / Mass Fear / Mass Confuse: AOE status spells ---
@@ -2231,13 +2272,15 @@ class MagicMixin(MagicWardsMixin):
                 if self._in_spell_sight(m)
             ]
             affected = 0
+            laid = []
             for m in visible_monsters:
-                if not self._inflict(m, status_name, base_dur)[0]:
-                    continue
-                affected += 1 if _hero_sees(self, m) else 0
+                got = self._inflict(m, status_name, base_dur)[0]
+                if got and _hero_sees(self, m):
+                    affected += 1
+                    laid.append(got)
             self.add_message(
                 f"{spell['name']}! {affected}/{sum(1 for m in visible_monsters if _hero_sees(self, m))} creatures "
-                f"{status_name} for {quantity(base_dur, 'turn')}!", 'success')
+                f"{status_name} for {turns_span(laid, base_dur)}!", 'success')
             return
 
         # --- Detect Magic / Identify / Omnisight: reveal magical item BUC ---
@@ -2332,6 +2375,7 @@ class MagicMixin(MagicWardsMixin):
                     ('reflecting',   25, 'Reflecting'),
                 ])
                 self.player.add_effect(buff, dur)
+                dur = turns_now(self.player, buff, dur)
                 self.add_message(
                     f"WISH GRANTED! {label} for {quantity(dur, 'turn')}!", 'success')
             return
@@ -2361,8 +2405,9 @@ class MagicMixin(MagicWardsMixin):
         if effect in _SELF_BUFF_DURATIONS:
             eff_name, base_dur = _SELF_BUFF_DURATIONS[effect]
             from status_effects import MAX_EFFECT_DURATION as _MAXD
-            dur = min(_MAXD, max(2, int(base_dur * chain_scale)))     # what is applied is what is said
+            dur = min(_MAXD, max(2, int(base_dur * chain_scale)))
             self.player.add_effect(eff_name, dur)
+            dur = turns_now(self.player, eff_name, dur)     # what is applied is what is said
             # MK-10: the status's display name, not its raw id ("magic_resist")
             from status_effects import EFFECT_INFO as _EI
             _shown = (_EI.get(eff_name) or (eff_name.replace('_', ' ').title(),))[0]
@@ -3080,8 +3125,10 @@ class MagicMixin(MagicWardsMixin):
                         cursed_items.append(self._bare_name(eq))
                 # T5: also bless one uncursed equipped item
                 if _scope >= 4 and equipped:
+                    import altar as _altar
                     candidate = next((eq for eq in equipped
-                                      if getattr(eq, 'buc', 'uncursed') == 'uncursed'), None)
+                                      if getattr(eq, 'buc', 'uncursed') == 'uncursed'
+                                      and _altar.blessing_helps(eq, self.player)), None)
                     if candidate:
                         candidate.buc = 'blessed'
                         candidate.buc_known = True
@@ -3104,17 +3151,19 @@ class MagicMixin(MagicWardsMixin):
             duration = [3, 6, 10, 16, 25][_tstep]
             count = 0
             seen = 0
+            laid = []
             for m in self.monsters:
                 if m.alive and self._in_hero_reach(m):
                     seen += 1
                     # Counted as they take hold: the mindless are not muddled
                     # (status_immune, Monster.add_effect).
-                    if m.add_effect('confused', duration):
+                    if (got := m.add_effect('confused', duration)):
                         count += 1
+                        laid.append(got)
             if count:
                 self.add_message(
                     f"{quantity(count, 'monster')} {'reels' if count == 1 else 'reel'} in confusion for "
-                    f"{quantity(duration, 'turn')}!", 'success')
+                    f"{turns_span(laid, duration)}!", 'success')
             elif seen:
                 self.add_message("A wave of confusion washes out, but nothing in sight is muddled.",
                                  'warning')
@@ -3128,11 +3177,12 @@ class MagicMixin(MagicWardsMixin):
             targets = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             # Counted as they fall asleep: the dead and the made never sleep
             # (status_immune, Monster.add_effect).
-            slept = sum(1 for m in targets if m.add_effect('sleeping', duration))
+            laid = [got for m in targets if (got := m.add_effect('sleeping', duration))]
+            slept = len(laid)
             if slept:
                 self.add_message(
                     f"A wave of slumber washes out -- {quantity(slept, 'creature')} "
-                    f"{'falls' if slept == 1 else 'fall'} asleep for {quantity(duration, 'turn')}!",
+                    f"{'falls' if slept == 1 else 'fall'} asleep for {turns_span(laid, duration)}!",
                     'success')
             elif targets:
                 self.add_message("A wave of slumber washes out, but nothing in sight falls asleep.",
@@ -3146,6 +3196,7 @@ class MagicMixin(MagicWardsMixin):
             duration = int(base_dur * [0.4, 0.7, 1.0, 1.6, 2.5][_tstep])
             duration = max(3, duration)
             self.player.add_effect('hasted', duration)
+            duration = turns_now(self.player, 'hasted', duration)
             self.add_message(f"Energy surges through you -- hasted for {quantity(duration, 'turn')}!", 'success')
 
         elif effect == 'enchant_armor':
@@ -3287,6 +3338,7 @@ class MagicMixin(MagicWardsMixin):
                             abs(t[0] - _sx) + abs(t[1] - _sy), t)) if _free else None
                 if target:
                     self.player.x, self.player.y = target
+                    self._hero_left_tile()
                     self._refresh_fov()
                     self.add_message("Space folds — you step directly to the stairs down!", 'success')
                     _qs_tp = getattr(self, 'quirk_system', None)
@@ -3315,6 +3367,7 @@ class MagicMixin(MagicWardsMixin):
                 ]
                 if floors:
                     self.player.x, self.player.y = _rng.choice(floors)
+                    self._hero_left_tile()
                     self._refresh_fov()
                     self.add_message("You step through a remembered place.", 'success')
                     _qs_tp = getattr(self, 'quirk_system', None)
@@ -3424,6 +3477,7 @@ class MagicMixin(MagicWardsMixin):
             base_dur = int(scroll.power) if scroll.power else 10
             duration = max(2, int(base_dur * [0.3, 0.6, 1.0, 1.5, 2.5][_tstep]))
             self.player.add_effect('time_stopped', duration)
+            duration = turns_now(self.player, 'time_stopped', duration)
             self.add_message(f"Time itself halts -- {quantity(duration, 'turn')} of absolute stillness!", 'success')
 
         elif effect == 'great_power':
@@ -3479,6 +3533,7 @@ class MagicMixin(MagicWardsMixin):
                 bonus = [1, 2, 3, 5, 8][_tstep] + (2 if _buc == 'blessed' else 0)
             dur = [10, 20, 30, 50, 80][_tstep]
             self.player.add_effect('shielded', dur)
+            dur = turns_now(self.player, 'shielded', dur)       # the status cap, and what was left
             # (It printed "+{bonus} AC", up to +10; the ward is the Shielded
             # status, whatever the scroll's tier: 2 points of armor, and
             # blows halved, as Player.take_damage does.)
@@ -3640,6 +3695,7 @@ class MagicMixin(MagicWardsMixin):
                 clair_dur = max(clair_dur, 30)
             if clair_dur:
                 self.player.add_effect('clairvoyant', clair_dur)
+                clair_dur = turns_now(self.player, 'clairvoyant', clair_dur)
                 self.add_message(
                     f"Your vision extends to sense all creatures for {quantity(clair_dur, 'turn')}!", 'success')
             # (A second status, `detect_monsters`, was applied here and read by

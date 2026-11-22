@@ -120,7 +120,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `revive_hp_pct` | float | default 0.5 | HP fraction after revive. |
 | `drain_heals_self` | float | default 0.0 | 1.0 = full heal from damage of drain attacks; 0.5 = half. Two monsters: `vampire` 1.0, `ancient_vampire_lord` 1.0. |
 | `pull_chance` | float | default 0.0 | Grappler family — chance a hit drags the player one tile toward the monster. Charybdis / kraken. |
-| `gaze_paralyze` | int | default 0 | Paralysis duration on gaze. Blocked by blindness (sight_radius 0); reflected by Aegis of Athena (shield turns gaze back on Medusa). `floating_eye` 4, `medusa_gorgon` 3. |
+| `gaze_paralyze` | int | default 0 | Paralysis duration on gaze. The wards are asked first (Sanctuary, the Mist past its reach: `wards.blow_gate`). Blocked by blindness (sight_radius 0); reflected by Aegis of Athena (shield turns gaze back on Medusa). `floating_eye` 4, `medusa_gorgon` 3. |
 | `gaze_cooldown` | int | default 4 | Turns between gazes (counted down in `tick_effects` for every gazer, AI-1). |
 | `gaze_group` | str | default "" | Gazers in one group share one gaze: when any of them uses it, every living member waits out the cooldown, so the group never paralyses twice in one turn. `stheno_gorgon` and `euryale_gorgon` ("gorgon_sisters"; Stheno 2 turns, Euryale 1). |
 | `dragon_scales` | float | default 0 | Fraction of damage absorbed in `combat.py`'s melee pipeline. `fafnir_dragon` 0.8. |
@@ -526,7 +526,7 @@ The drain type (67 kinds) cost a point of CON on a failed save, at most once a f
 - **Light-shy** (`light_shy: true`: the six trolls, the dvergar hoard-wardens, the dark elves and drow, the shadows and shades, the nightwing, the darkmantle, the kobolds, the hidden folk): within the reach of a lit hero's light (its sight) it needs +2 to hit for each point of the light's glare (a carried light 1, the Everburning Lamp, the Hero's Lamp and Hecate's Torch 2, the Light spell 2, a torch held as a weapon 1), at most +4 (`ai_blow.to_hit_shift`). "The Troll flinches from your light." (once a fight).
 - **The troll's wounds** (agent A's troll item; the lore now says it: "a strong light is the next best thing, and a troll hates it"): a regenerating light-shy creature standing in the light (no wall or shut door between: `light_shy.in_light`) cannot close its wounds (`_regen_blocked`, a turn at a time, `BehaviourMixin._ai_turn_after`): "The Troll's wounds stop closing in your light."
 - **Stone** (`turns_to_stone_in_light`: the trolls, the dvergar): three turns in the Light spell's glare and it is slowed 3 turns ("The Troll's hide stiffens in the light, like stone!"). Never petrified; named foes never.
-- **Snuffers** (an attack's `snuffs_light`: the water elemental's Wave Crash, the air elemental's Vortex, the whirlwind jinni's Dust-Devil Blow, the darkmantle's Engulf Head, the shadow master's Shadow Claw half the time, the drow priestess's Divine Curse): a landed blow douses the light in the hero's hand, soaked for 3 turns (water), 1 (wind) or 2 (dark); `_toggle_light` refuses meanwhile ("The wick is soaked."). Dark also ends the Light spell. An everlasting light or one with a power is never snuffed.
+- **Snuffers** (an attack's `snuffs_light`: the water elemental's Wave Crash, the air elemental's Vortex, the whirlwind jinni's Dust-Devil Blow, the darkmantle's Engulf Head, the shadow master's Shadow Claw half the time, the drow priestess's Divine Curse): a landed blow douses the light in the hero's hand, soaked for 3 turns (water), 1 (wind) or 2 (dark); `_toggle_light` refuses meanwhile ("The wick is soaked."). Dark also ends the Light spell, never a story's lamp held for floors. An everlasting light or one with a power is never snuffed.
 - **Tells:** `light_shy`, `snuffs_light`. The price of a light stays: a lit hero is seen from farther.
 
 ### Gone Again (`hit_and_run_vanishes`, `src/gone_again.py`)
@@ -769,7 +769,7 @@ Tests: `tests/test_war_bands.py`.
 ### Attack-time flow (abridged)
 
 1. `return_to_hand_ward` consumed → auto-miss.
-2. `gaze_paralyze` cooldown fires its own branch (blind player / Aegis reflect / save-vs-DC) with full mitigation sweep for the fall-through swing.
+2. `gaze_paralyze` cooldown fires its own branch (the wards first, then blind player / Aegis reflect / save-vs-DC); the fall-through swing is an ordinary blow (`_resolve_blow`).
 3. **Fenrir rage ≥ 3** → `_fenrir_multi_attack(player)` (all attacks).
 4. `multi_attack_count` → first N attacks via `_fenrir_multi_attack(player, attack_limit=N)`. `enraged_multi_attack_count` swaps N on enrage. `multi_attack_always` or `multi_attack_count ≥ len(attacks)` fires all.
 5. Ranged routing picks a ranged-worded attack when `ai_pattern=='ranged'` and non-adjacent.

@@ -749,6 +749,9 @@ def _eff_teleport_self(game, special, tier, chain):
     if candidates:
         x, y = random.choice(candidates)
         game.player.x, game.player.y = x, y
+        left = getattr(game, '_hero_left_tile', None)
+        if left is not None:
+            left()
         game._refresh_fov()
         game.add_message("Hermes' step — the dungeon blinks past.", 'success')
         if haste:

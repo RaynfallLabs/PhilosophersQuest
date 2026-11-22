@@ -413,6 +413,7 @@ def _drag_step(m, player, dungeon, monsters, extra_occupied) -> bool:
         m.x, m.y = ox, oy
         return False
     player.x, player.y = ox, oy
+    player.status_effects.pop('in_pit', None)      # hauled off that tile, and so out of its pit
     m._dragged = True
     return True
 

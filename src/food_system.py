@@ -1,4 +1,5 @@
 from naming import quantity
+from status_effects import turns_now
 import json
 import random
 import grave_rot
@@ -911,6 +912,8 @@ def _ward_potion(player, effect: str, duration: int, buff_mult: float) -> list:
     dur = max(1, int(int(duration or 1) * buff_mult))
     for st in lays:
         player.add_effect(st, dur, cap=max(dur, 60))
+    if lays:
+        dur = turns_now(player, lays[0], dur)
     line = f"{said} ({quantity(dur, 'turn')})."
     if cleared:
         from status_effects import EFFECT_INFO
@@ -1032,22 +1035,26 @@ def drink_potion(player, potion) -> list[str]:
     elif effect == 'haste':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('hasted', dur)
+        dur = turns_now(player, 'hasted', dur)
         messages.append(f"The world slows around you. You are Hasted ({quantity(dur, 'turn')}).")
 
     elif effect == 'invisibility':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('invisible', dur)
+        dur = turns_now(player, 'invisible', dur)
         messages.append(f"You fade from sight. Invisible ({quantity(dur, 'turn')}).")
 
     elif effect == 'regeneration':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('regenerating', dur)
+        dur = turns_now(player, 'regenerating', dur)
         messages.append(f"You feel an uncanny resilience -- Regenerating ({quantity(dur, 'turn')}).")
 
     elif effect == 'heroism':
         dur = max(1, int(duration * _buff_mult))
         already_active = player.has_effect('heroism')
         player.add_effect('heroism', dur)
+        dur = turns_now(player, 'heroism', dur)
         if not already_active:
             messages.append(f"Surging strength fills your limbs! STR +2, Heroic ({quantity(dur, 'turn')}).")
         else:
@@ -1057,6 +1064,7 @@ def drink_potion(player, potion) -> list[str]:
         dur = max(1, int(duration * _buff_mult))
         already_active = player.has_effect('brilliance')
         player.add_effect('brilliance', dur)
+        dur = turns_now(player, 'brilliance', dur)
         if not already_active:
             messages.append(f"Your mind blazes with clarity! INT +1, WIS +1, Brilliant ({quantity(dur, 'turn')}).")
         else:
@@ -1065,11 +1073,13 @@ def drink_potion(player, potion) -> list[str]:
     elif effect == 'levitation':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('levitating', dur)
+        dur = turns_now(player, 'levitating', dur)
         messages.append(f"Your feet leave the ground. Levitating ({quantity(dur, 'turn')}).")
 
     elif effect == 'see_invisible':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('see_invisible', dur)
+        dur = turns_now(player, 'see_invisible', dur)
         messages.append(f"Your eyes are opened: you see what walks unseen. See Invisible ({quantity(dur, 'turn')}).")
 
     elif effect == 'restore_str':
@@ -1245,16 +1255,19 @@ def drink_potion(player, potion) -> list[str]:
     elif effect == 'fire_resist':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('fire_resist', dur)
+        dur = turns_now(player, 'fire_resist', dur)
         messages.append(f"Heat rolls off you harmlessly. Fire Resist ({quantity(dur, 'turn')}).")
 
     elif effect == 'cold_resist':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('cold_resist', dur)
+        dur = turns_now(player, 'cold_resist', dur)
         messages.append(f"The cold cannot touch you. Cold Resist ({quantity(dur, 'turn')}).")
 
     elif effect == 'shock_resist':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('shock_resist', dur)
+        dur = turns_now(player, 'shock_resist', dur)
         messages.append(f"Electricity crackles and disperses. Shock Resist ({quantity(dur, 'turn')}).")
 
     elif effect == 'restore_mp':

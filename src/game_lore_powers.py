@@ -235,6 +235,7 @@ class LorePowersMixin:
             return
         p = self.player
         p.x, p.y = spot
+        self._hero_left_tile()
         p.add_effect('immobilized', 1)
         self._refresh_fov()
         self.add_message(lore_powers._fill(m, landed or "It drops you far away."), 'danger')

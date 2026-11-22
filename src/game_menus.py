@@ -1939,6 +1939,7 @@ class MenuMixin:
                              'warning')
             return False
         pl.x, pl.y = last_x, last_y
+        self._hero_left_tile()
         pl._seven_league_used_this_floor = True
         self._refresh_fov()
         self.add_message(

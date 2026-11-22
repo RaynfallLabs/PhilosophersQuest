@@ -296,7 +296,14 @@ class ItemActionsMixin:
             # Pick THIS item up through the normal pickup (turn, weight,
             # pickup side effects), then equip it as from the pack.
             self._pickup(target=item)
-            if self.state != self._item_screen_state() or self._item_where(item) != 'pack':
+            if self.state != self._item_screen_state():
+                return
+            import lights
+            if lights.is_light(item) and not self._item_where(item):
+                # A torch that joined its bundle: one off that row.
+                item = next((r for r in self.player.inventory
+                             if r.id == item.id and lights.is_fresh(r)), None)
+            if self._item_where(item) != 'pack':
                 return
         self._equip_item(item)
 

@@ -480,6 +480,11 @@ def _ward_gate(player, m, atk):
     return new, got
 
 
+# What the wards and gates are asked of a gazer's stare when it has no
+# attack of its own to ask with (Monster.attack's two gaze branches).
+GAZE_BLOW = {'name': 'gaze', 'delivery': 'gaze', 'type': 'magic'}
+
+
 def _ward_rider(player, m, effect_id):
     try:
         import wards
@@ -1508,6 +1513,9 @@ class Monster:
             return _a3
         if not self.attacks:
             # Floating eye: gaze-based paralysis (checks sleep_resist or total blindness)
+            _, _stop = _ward_gate(player, self, GAZE_BLOW)
+            if _stop is not None:
+                return _stop              # sanctuary, the Mist past its reach (wards.py)
             if player.get_sight_radius() == 0:
                 return 0, f"{the_name(self)} gazes at you, but you cannot see {pronouns(self)[2]} eyes!"
             if _edge_gaze_immune(player, self):
@@ -1534,6 +1542,11 @@ class Monster:
             self._share_gaze_cooldown()
             if (self.__dict__.get('_opener_now') or {}).get('delivery') == 'gaze':
                 self.__dict__.pop('_opener_now', None)   # this is the gaze it drew up: one
+            # The wards are asked of a gaze as of any blow. A gaze they stop
+            # is spent all the same: next turn she has to come closer.
+            _, _stop = _ward_gate(player, self, GAZE_BLOW)
+            if _stop is not None:
+                return _stop
             # The gaze reaches across a room (see _dancer_turn): she may be
             # several tiles away. At range the gaze is her whole turn; next
             # to the player a gaze that fails still leaves her fangs.
@@ -1594,55 +1607,15 @@ class Monster:
             # Gaze was blocked or reflected — continue to normal attack
             # (but append the gaze message below)
             atk = random.choice(self.attacks)
-            # Behind a mirror shield a second gaze is no blow either (a
-            # floating eye has nothing but its stare): nothing lands.
-            if _mirror is not None and ('gaze' in str(atk.get('name', '')).lower()
-                                        or atk.get('delivery') == 'gaze'):
+            # What turned the gaze turns a second one (a floating eye has
+            # nothing but its stare): nothing lands.
+            if 'gaze' in str(atk.get('name', '')).lower() or atk.get('delivery') == 'gaze':
                 return 0, gaze_msg
-            # Fall through to normal damage with gaze_msg prepended.
-            # Bug-bash fix aac-#2: this inline path was bypassing all
-            # damage-mitigation procs (unskinnable, weakened, summon-weaken,
-            # back_attack_weakness). Re-route through the same mitigations.
-            d20 = random.randint(1, 20)
-            player_ac = player.get_ac()
-            to_hit = self.thac0 - player_ac
-            min_hit = self._min_hit()
-            if d20 == 1:
-                return 0, gaze_msg + " " + self._miss_text(atk)
-            if d20 != 20 and d20 < to_hit:
-                if random.random() >= min_hit:
-                    return 0, gaze_msg + " " + self._miss_text(atk)
-            if self._slipped(player, atk):
-                return 0, gaze_msg + f" You slip {the_name(self, lower=True)}'s blow."
-            dmg = roll(atk['damage'])
-            # What was swung and how hard, before any armor: read by the
-            # armor that answers a blow (Hydra carapace, Svalinn).
-            self._last_attack_type = atk.get('type', 'physical')
-            self._last_attack_roll = dmg
-            atk_type = atk.get('type', 'physical')
-            if self.has_effect('weakened'):
-                dmg = max(1, dmg // 2)
-            if self.has_effect('sundered'):
-                # Chain combat v2: sundered halves outgoing monster damage.
-                dmg = max(1, int(dmg * 0.70))
-            # Hide of the Nemean Lion (unskinnable): physical/slash/pierce/blunt
-            # attackers do half damage. Same condition as the main path.
-            try:
-                from armor_procs import player_has_armor_proc
-                if player_has_armor_proc(player, 'unskinnable') and \
-                        atk_type in ('physical', 'pierce', 'slash', 'blunt') and \
-                        not getattr(self, 'magical', False) and \
-                        'magic' not in (getattr(self, 'tags', []) or []) and \
-                        'divine' not in (getattr(self, 'tags', []) or []):
-                    if dmg > 1:
-                        dmg = max(1, dmg // 2)
-            except ImportError:
-                pass
-            dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
-            dmg = _edge_incoming(player, self, dmg, atk_type)
-            actual = player.take_damage(dmg, atk_type)
-            return actual, (gaze_msg + " " + attack_line(self, atk, actual)
-                            + (f" {_vuln_note}" if _vuln_note and actual > 0 else ''))
+            # The fang that follows is a blow like any other (_resolve_blow):
+            # the wards, the gates, the guards, what it carries. Its own copy
+            # of the blow lived here and knew none of them.
+            actual, msg = self._resolve_blow(atk, player)
+            return actual, f"{gaze_msg} {msg}".strip()
 
         # Attacking from ice: half the lunges go wide, and there is no
         # flurry. (The game loop sets _on_ice before calling attack. The ice

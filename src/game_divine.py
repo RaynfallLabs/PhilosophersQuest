@@ -38,6 +38,7 @@ through MRO.
 from __future__ import annotations
 
 from naming import quantity
+from status_effects import turns_now
 import copy
 import random
 
@@ -1644,6 +1645,7 @@ class DivineMixin:
         if chain >= 5:
             duration = max(1, 20 + karma_bonus_buff)
             p.add_effect('shielded', duration)
+            duration = turns_now(p, 'shielded', duration)
             msgs.append(
                 (f"A translucent barrier settles around you. (shielded {duration}t)",
                  'success'))

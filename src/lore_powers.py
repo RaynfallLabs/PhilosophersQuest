@@ -291,6 +291,11 @@ def _loosed(player) -> bool:
         return False
 
 
+def _loosed_line(m) -> str:
+    import wards
+    return wards.line('pull_loosed', m)
+
+
 def after_blow(m, player, atk: dict, actual: int) -> str:
     """What follows a landed blow: the Roc's carry-off, the Yacumama's pull.
     Returns text for the blow's line ('' for none)."""
@@ -305,7 +310,10 @@ def after_blow(m, player, atk: dict, actual: int) -> str:
                 chance *= 0.5             # a heavy man is hard to lift
         except Exception:
             pass
-        if random.random() < chance:
+        seized = random.random() < chance
+        if seized and _loosed(player):
+            out += ' ' + _loosed_line(m)        # nothing can grab him or lift him
+        elif seized:
             lo, hi = (co.get('tiles') or (8, 15))[:2]
             # The game sets him down at once, right after this blow's line
             # (LorePowersMixin._lore_powers_lift): never left for a later turn.

@@ -1265,6 +1265,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Monsters saved before the lore pass take their kind's weaknesses,
         # resistances, shrugs_off and status lists (affinity.py).
         self._migrate_monster_affinities(state)
+        # A wand of light's power became its turns (2026-11-19): an old
+        # save's still held its radius, and its card showed that as turns.
+        self._migrate_light_wands(state)
         # A save on the Zombie Stage from before the dance-off had the band
         # fighting: they go back to their places as performers.
         self._stray_kids_after_load()
@@ -1405,6 +1408,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         }
         self.popup_next_state = STATE_PLAYER
         self.state = STATE_STORY_POPUP
+
+    def _migrate_light_wands(self, state: dict) -> int:
+        """Every wand of light a save holds reads today's data (lights.
+        refresh_wand): carried, lying, in a chest, on a trader's shelf or in
+        a thief's hands, on this floor and the stored ones."""
+        import lights
+        pools = [getattr(self, 'monsters', None) or []]
+        lm = state.get('level_mgr') if isinstance(state, dict) else None
+        if lm:
+            pools += [lvl.get('monsters') or [] for lvl in _stored_floors(lm)]
+        found = list(_all_items_in_save(self.player, state))
+        for m in (m for pool in pools for m in pool):
+            found += getattr(m, 'stolen_items', None) or []
+        n = 0
+        while found:
+            it = found.pop()
+            found += getattr(it, 'stock', None) or []
+            if getattr(it, 'effect', '') == 'light':
+                n += int(lights.refresh_wand(it))
+        return n
 
     def _migrate_monster_affinities(self, state: dict) -> int:
         """Every monster on this floor and every stored one that was saved
@@ -5150,6 +5173,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if _spots:
                 self.player.x, self.player.y = min(
                     _spots, key=lambda t: max(abs(t[0] - _px), abs(t[1] - _py)))
+                self._hero_left_tile()
                 self.add_message(
                     "You feel solid again — the wall pushes you back into open space.",
                     'info')
@@ -5193,6 +5217,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         not any(m.alive and m.x == _nx and m.y == _ny
                                 for m in self.monsters):
                     self.player.x, self.player.y = _nx, _ny
+                    self._hero_left_tile()
             except (TypeError, ValueError, AttributeError):
                 pass
         # A giant's blow threw the hero back (src/shove.py, AI-1).
@@ -5534,6 +5559,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._maybe_wander_spawn()
             finally:
                 self._damage_by = 'hero'
+        if _n_world:
+            self.player._kindled_glow = 0  # the world has seen this turn's light (lights.kindled)
         self._fov_follows(_hero_at)        # dragged, lifted, rescued: he sees from where he is
         self._say_springs()                # lurkers the pets' and escorts' blows gave away
         if self._hero_fell():
@@ -5924,6 +5951,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             floors = [t for t in floors if t in _reach] or floors
         if floors:
             self.player.x, self.player.y = _rng.choice(floors)
+            self._hero_left_tile()
             self._refresh_fov()
             self.add_message("You feel disoriented as space warps around you!", 'warning')
             _qs_tp = getattr(self, 'quirk_system', None)

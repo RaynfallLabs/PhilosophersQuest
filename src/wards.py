@@ -427,11 +427,11 @@ def hostile_act(player) -> str:
 
 
 def grant(player, wid: str, turns: int, cap: int | None = None) -> int:
-    """Put ward ``wid`` up for ``turns`` (a fresh rite: every creature's old
-    break is forgotten when the ward is not already up). Returns the turns
-    it now has."""
+    """Put ward ``wid`` up for ``turns`` (each time a fresh rite, whether or
+    not the last still stands: every creature's old break is forgotten).
+    Returns the turns it now has."""
     turns = max(1, int(turns))
-    if (wid in family_wards() or wid == 'sanctuary') and not _active(player, wid):
+    if wid in family_wards() or wid == 'sanctuary':
         gens = dict((getattr(player, '__dict__', {}) or {}).get('_ward_gen') or {})
         gens[wid] = int(gens.get(wid, 0)) + 1
         player._ward_gen = gens
