@@ -1170,7 +1170,10 @@ class MagicMixin(MagicWardsMixin):
                 # Drain") gives less (3.5.1 audit: it was untyped, so the
                 # Bestiary's line was never true).
                 actual = target.take_damage(dmg, 'drain')
-                heal = self.player.restore_hp(actual)      # through the rot, as every heal
+                # Not through restore_hp, by design: a drain wand's draw is
+                # one of Grave Rot's exceptions (docs/systems/monsters.md).
+                heal = min(actual, self.player.max_hp - self.player.hp)
+                self.player.hp += heal
                 self.add_message(
                     f"You drain {actual} life from {the_name(target, lower=True)}! (+{heal} HP)", 'success'
                 )

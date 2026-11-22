@@ -690,7 +690,9 @@ def test_h1_06_a_power_says_what_it_gave():
     assert any(f'{g.player.hp - 20} HP' in t for t in _msgs(g, 4))
 
 
-def test_h1_06_a_drain_is_halved_by_the_rot():
+def test_h1_06_a_drain_wand_keeps_its_draw_under_the_rot():
+    # The exception is design (6a57464c, docs/systems: Grave Rot); halving it
+    # is the author's ruling to make.
     g = _sick()
     g.monsters = [_mk('orc_warrior', g.player.x + 1, g.player.y)]
     m = g.monsters[0]
@@ -698,7 +700,7 @@ def test_h1_06_a_drain_is_halved_by_the_rot():
     g._wand_override_target = m
     g._apply_wand_effect(_wand('drain_life'))
     got, drained = g.player.hp - 20, 999 - m.hp
-    assert got == max(1, drained // 2)
+    assert got == min(drained, g.player.max_hp - 20)
     assert any(f'+{got} HP' in t for t in _msgs(g, 2))
 
 
