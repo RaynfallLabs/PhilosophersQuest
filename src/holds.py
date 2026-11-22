@@ -19,7 +19,9 @@ hold of him:
   wrapped round him already). A drag pulls him a tile toward the nearest
   water and, at the water's edge, under it.
 * Swallowed, he is out of every other creature's reach (they cannot strike
-  what is inside another), and every way he turns is its gut.
+  what is inside another) and they are out of his (shields, strikable: no
+  blow, shot, throw, spell, wand, scroll or power of his lands outside; a
+  pet's does, it is outside), and every way he turns is its gut.
 * The way out is the hero's own: a blow (a maths chain, a spell, a wand, a
   flask, a pet's bite) that takes ``break_share`` of the holder's health
   between two of its turns breaks the coil or cuts him out; the struggle;
@@ -450,8 +452,35 @@ def blow(m, player):
 
 
 def shields(player, m) -> bool:
-    """A swallowed hero cannot be struck by anything but what holds him."""
+    """A swallowed hero cannot be struck by anything but what holds him,
+    nor strike anything else."""
     return swallowed(player) and not is_holder(m, player)
+
+
+def strikable(player, monsters):
+    """Those of ``monsters`` the hero's blows can land on: all of them (the
+    list itself), or, swallowed, only what holds him."""
+    if not swallowed(player):
+        return monsters
+    return [m for m in monsters or () if is_holder(m, player)]
+
+
+def aim_refused(player, m, monsters) -> str:
+    """'' when the hero may strike ``m``; else the line that says why not."""
+    if m is None or not shields(player, m):
+        return ''
+    return inside_line(player, monsters)
+
+
+def inside_line(player, monsters) -> str:
+    """What a swallowed hero is told of a blow aimed past the gut."""
+    if not swallowed(player):
+        return ''
+    h = holder(player, monsters)
+    if h is not None:
+        return _line('swallowed_aim', h)
+    text = (rules().get('lines') or {}).get('swallowed_aim', '')
+    return text.replace('{the}', str(state(player).get('name') or 'it')).replace('{him}', 'it')
 
 
 def tell_keys(m) -> list:

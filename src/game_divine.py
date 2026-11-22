@@ -190,6 +190,7 @@ class DivineMixin:
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
         self._target_candidates = candidates
+        candidates = self._target_candidates     # what the list really offers: the cursor opens there
         self._target_idx = 0
         self._observe_targeting = True
         self._melee_targeting = False

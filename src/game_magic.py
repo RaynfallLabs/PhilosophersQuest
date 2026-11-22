@@ -439,6 +439,7 @@ class MagicMixin(MagicWardsMixin):
             ]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             self._target_candidates = candidates
+            candidates = self._target_candidates     # what the list really offers: the cursor opens there
             self._target_idx = 0
             if candidates:
                 self.target_cursor_x = candidates[0].x
@@ -1588,7 +1589,9 @@ class MagicMixin(MagicWardsMixin):
             # Only what the hero can see (never an invisible or disguised
             # thing: its tile would show where it stands) and only what the
             # spell reaches (spells.SPELL_REACH: a touch, a short sign).
-            seen = [m for m in self.monsters if m.alive and self._sees_monster(m)]
+            import holds                  # swallowed, he can aim only at the gut round him
+            seen = [m for m in holds.strikable(self.player, self.monsters)
+                    if m.alive and self._sees_monster(m)]
             candidates = [m for m in seen if self._spell_in_reach(spell, m)]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             if not candidates:
@@ -1946,7 +1949,8 @@ class MagicMixin(MagicWardsMixin):
             dur = max(3, int(5 * chain_scale))
             count = 0
             _named = 0
-            for m in self.monsters:
+            import holds                  # the whole floor, but never past a gut round him
+            for m in holds.strikable(self.player, self.monsters):
                 # Counted as they are held: a swarm cannot be held still
                 # (status_immune), and a named foe still steadying shakes it off.
                 if m.alive and m.add_effect('paralyzed', dur):
@@ -2621,7 +2625,8 @@ class MagicMixin(MagicWardsMixin):
                 if not target.alive:
                     self._on_monster_killed(target)
                 _max_arcs = 3
-                remaining = [m for m in self.monsters
+                import holds
+                remaining = [m for m in holds.strikable(self.player, self.monsters)
                              if m.alive and m not in hit_targets
                              and any(abs(m.x - h.x) + abs(m.y - h.y) <= 3
                                      for h in hit_targets)]
@@ -3565,8 +3570,9 @@ class MagicMixin(MagicWardsMixin):
                     fraction = [0.25, 0.5, 1.0, 1.0, 1.0][_tstep]
                     killed = 0
                     killed_names = []
+                    import holds          # the whole floor, but never past a gut round him
                     for kind in target_kinds:
-                        kind_members = [m for m in self.monsters
+                        kind_members = [m for m in holds.strikable(self.player, self.monsters)
                                         if m.alive and m.kind == kind
                                         and not getattr(m, 'is_boss', False)
                                         and not _is_big_foe(m)

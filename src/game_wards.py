@@ -268,7 +268,9 @@ class MagicWardsMixin:
             if target is None:
                 return False
             from geom import chebyshev_distance
-            near = [m for m in self.monsters if m.alive and not getattr(m, 'is_allied', False)
+            import holds
+            near = [m for m in holds.strikable(self.player, self.monsters)
+                    if m.alive and not getattr(m, 'is_allied', False)
                     and (m is target or chebyshev_distance(target.x, target.y, m) <= 1)]
             took = sum(1 for m in near if self._inflict(m, 'sleeping', dur)[0])
             if took:
@@ -356,7 +358,8 @@ class MagicWardsMixin:
         tx, ty = target.x, target.y
         tiles = [(tx + dx, ty + dy) for dy in (-1, 0, 1) for dx in (-1, 0, 1)]
         caught = 0
-        for m in list(self.monsters):
+        import holds
+        for m in list(holds.strikable(self.player, self.monsters)):
             if not m.alive or getattr(m, 'is_allied', False):
                 continue
             from geom import occupied_tiles

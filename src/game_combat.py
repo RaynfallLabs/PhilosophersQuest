@@ -207,6 +207,7 @@ class CombatMixin:
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
         self._target_candidates = candidates
+        candidates = self._target_candidates     # what the list really offers: the cursor opens there
         self._target_idx = 0
         self._melee_targeting = True
         self._melee_reach = reach
@@ -319,6 +320,7 @@ class CombatMixin:
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
         self._target_candidates = candidates
+        candidates = self._target_candidates     # what the list really offers: the cursor opens there
         self._target_idx = 0
 
         if candidates:
@@ -350,6 +352,13 @@ class CombatMixin:
 
         from pet_system import is_soul_sphere
         import coatings as _coatings
+        # (A Soul Sphere is no blow: a companion comes out of it.)
+        if not (isinstance(item, Artifact)
+                and (item.id == 'unusual_soul_sphere' or is_soul_sphere(item))):
+            why = holds.aim_refused(self.player, hit_monster, self.monsters)
+            if why:                          # swallowed: nothing spent, no turn
+                self.add_message(why, 'warning')
+                return
         if isinstance(item, Artifact) and item.id == 'unusual_soul_sphere':
             self._throw_unusual_sphere(item, hit_monster, tx, ty)
         elif isinstance(item, Artifact) and is_soul_sphere(item):
@@ -925,11 +934,12 @@ class CombatMixin:
         return name
 
     def _nearest_visible_monster(self):
-        """Return the closest alive monster the hero can see, or None (an
-        invisible or hidden one is not offered: src/unseen.py)."""
+        """Return the closest alive monster the hero can see and strike, or
+        None (an invisible or hidden one is not offered: src/unseen.py; nor,
+        to a swallowed hero, one outside the gut: holds.strikable)."""
         px, py = self.player.x, self.player.y
         best, best_dist = None, float('inf')
-        for m in self.monsters:
+        for m in holds.strikable(self.player, self.monsters):
             if self._sees_monster(m):
                 d = abs(m.x - px) + abs(m.y - py)
                 if d < best_dist:
@@ -1032,7 +1042,7 @@ class CombatMixin:
                     from floor_curve import wound
                     px, py = self.player.x, self.player.y
                     _hits = _kills = 0
-                    for mm in list(self.monsters):
+                    for mm in list(holds.strikable(self.player, self.monsters)):
                         if not mm.alive or abs(mm.x - px) + abs(mm.y - py) > 6:
                             continue
                         _named = bool(getattr(mm, 'is_boss', False)
@@ -1847,6 +1857,7 @@ class CombatMixin:
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
         self._target_candidates = candidates
+        candidates = self._target_candidates     # what the list really offers: the cursor opens there
         self._target_idx = 0
         self._melee_targeting = False
 
@@ -1888,6 +1899,12 @@ class CombatMixin:
         # Line of sight check
         if not _line_of_sight(self.player.x, self.player.y, cx, cy, self.dungeon):
             self.add_message("No clear line of sight!", 'warning')
+            self.state = STATE_PLAYER
+            return
+
+        why = holds.aim_refused(self.player, target, self.monsters)
+        if why:                              # swallowed: no charge spent, no turn
+            self.add_message(why, 'warning')
             self.state = STATE_PLAYER
             return
 
@@ -1980,6 +1997,12 @@ class CombatMixin:
             return
         if not _line_of_sight(self.player.x, self.player.y, cx, cy, self.dungeon):
             self.add_message("No clear line of sight!", 'warning')
+            self._refund_pending_spell()
+            self.state = STATE_PLAYER
+            return
+        why = holds.aim_refused(self.player, target, self.monsters)
+        if why:
+            self.add_message(why, 'warning')
             self._refund_pending_spell()
             self.state = STATE_PLAYER
             return
@@ -2388,6 +2411,9 @@ class CombatMixin:
                 return
             self._start_combat(target)
             return
+        if holds.swallowed(self.player):     # nor a chest, an altar or the floor, from in there
+            self.add_message(holds.inside_line(self.player, self.monsters), 'warning')
+            return
 
         # 2. Mystery altar at cursor
         from mystery_system import MysteryAltar
@@ -2527,6 +2553,10 @@ class CombatMixin:
 
     def _fire_ranged(self, monster):
         """Consume one ammo and launch the math chain quiz for a ranged shot."""
+        why = holds.aim_refused(self.player, monster, self.monsters)
+        if why:                              # swallowed: nothing spent, no turn
+            self.add_message(why, 'warning')
+            return
         self._make_noise('shot')
         habits.hero_shot(self, monster)      # They Learn Your Tricks (src/habits.py)
         # Health as the shot is loosed, for the traits that count kills made
@@ -2627,7 +2657,7 @@ class CombatMixin:
         # Engine wave 3: side-channel refs for combat-side mechanics. Ranged
         # path mirrors the melee path so flags like Kusanagi surrounded and
         # Oathkeeper adjacent-pet work on bow shots too.
-        self.player._combat_monsters_ref = self.monsters
+        self.player._combat_monsters_ref = holds.strikable(self.player, self.monsters)
         self.player._combat_pets_ref = self.pets
         self.player._combat_game_ref = self
         _alive_before = {id(m) for m in self.monsters if m.alive}
@@ -3028,6 +3058,13 @@ class CombatMixin:
             self.add_message(_senses._fill(m, lost), 'info')
 
     def _start_combat(self, monster):
+        why = holds.aim_refused(self.player, monster, self.monsters)
+        if why:                              # swallowed: nothing spent, no turn
+            self.add_message(why, 'warning')
+            return
+        # Whom this blow can reach, as it is begun: only the gut, for a
+        # swallowed hero, even if the blow then cuts him out of it.
+        _within = holds.strikable(self.player, self.monsters)
         # A blow struck carries a long way (src/senses.py).
         self._make_noise('melee')
         habits.hero_melee(self, monster)     # They Learn Your Tricks (src/habits.py)
@@ -3068,7 +3105,7 @@ class CombatMixin:
         if _dz_ch > 0 and random.random() < _dz_ch:
             _px, _py = self.player.x, self.player.y
             _dazzled = 0
-            for _m in self.monsters:
+            for _m in _within:
                 if (_m.alive and abs(_m.x - _px) <= 3 and abs(_m.y - _py) <= 3
                         and not (_m.x == _px and _m.y == _py)
                         and not _is_bystander(_m)
@@ -3217,7 +3254,7 @@ class CombatMixin:
                         _w = self.player.weapon
                         _bleed = _w and getattr(_w, 'class_mechanic', '') == 'cleave_at_max_plus_bleed'
                         _cleaved = 0
-                        for _m in self.monsters:
+                        for _m in _within:
                             if _m.alive and _m is not monster \
                                     and abs(_m.x - monster.x) <= 1 \
                                     and abs(_m.y - monster.y) <= 1 \
@@ -3234,7 +3271,7 @@ class CombatMixin:
                     # Sling free_stones ricochet: bounce hit to an adjacent monster
                     ricochet_dmg = kwargs.get('ricochet_dmg', 0)
                     if ricochet_dmg:
-                        for _m in self.monsters:
+                        for _m in _within:
                             if _m.alive and _m is not monster \
                                     and abs(_m.x - monster.x) <= 1 \
                                     and abs(_m.y - monster.y) <= 1 \
@@ -3248,7 +3285,7 @@ class CombatMixin:
                     # Amenonuhoko: slow adjacent monsters on kill
                     w = self.player.weapon
                     if w and getattr(w, 'aoe_slow_on_kill', False):
-                        for m in self.monsters:
+                        for m in _within:
                             if m.alive and abs(m.x - monster.x) <= 1 and abs(m.y - monster.y) <= 1:
                                 m.add_effect('slowed', 3)
                         self.add_message("A wave of primordial stillness ripples outward.", 'info')
@@ -3270,7 +3307,7 @@ class CombatMixin:
         # that need access to game state (Kusanagi surrounded check,
         # Oathkeeper adjacent-pet check, Penitent kill-tally karma adjust).
         # Set fresh per attack so they reflect current game state.
-        self.player._combat_monsters_ref = self.monsters
+        self.player._combat_monsters_ref = _within
         self.player._combat_pets_ref = self.pets
         self.player._combat_game_ref = self
         _alive_before = {id(m) for m in self.monsters if m.alive}

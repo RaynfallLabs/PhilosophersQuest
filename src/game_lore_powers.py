@@ -319,7 +319,8 @@ class LorePowersMixin:
         talisman pressed to its forehead."""
         if not lore_powers.ENABLED:
             return
-        for m in self.monsters:
+        import holds
+        for m in holds.strikable(self.player, self.monsters):
             tal = lore_powers.spec(m, 'talisman') if m.alive else None
             if not tal or not self._sees_monster(m):
                 continue
@@ -342,7 +343,8 @@ class LorePowersMixin:
         self.add_message(tech.get('crow', ''), 'info')
         reach = int(tech.get('reach', 8) or 8)
         hit = 0
-        for m in list(self.monsters):
+        import holds
+        for m in list(holds.strikable(self.player, self.monsters)):
             if not m.alive or max(abs(m.x - self.player.x), abs(m.y - self.player.y)) > reach:
                 continue
             if m.kind in (tech.get('kills') or ()):

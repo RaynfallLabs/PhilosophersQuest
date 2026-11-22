@@ -5326,9 +5326,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _chance = float(proc_value(self.player, 'thors_step') or 0.0)
                 if _chance > 0 and random.random() < _chance:
                     from game_combat import _is_bystander
-                    _adj_targets = [_mm for _mm in self.monsters
+                    import holds
+                    import lore_powers
+                    _adj_targets = [_mm for _mm in holds.strikable(self.player, self.monsters)
                                     if getattr(_mm, 'alive', False)
                                     and not _is_bystander(_mm)
+                                    and not lore_powers.at_peace(_mm)   # (it goes off by itself)
                                     and abs(_mm.x - self.player.x) <= 1
                                     and abs(_mm.y - self.player.y) <= 1
                                     and not (_mm.x == self.player.x and _mm.y == self.player.y)]
