@@ -343,6 +343,16 @@ def install_flasks(knobs: dict) -> None:
 _BIG = {}
 
 
+def uninstall() -> None:
+    """The game's own flask and big-foe rules again."""
+    if 'orig' in _FLASK:
+        import coatings
+        coatings.thrown_damage = _FLASK.pop('orig')
+    if 'orig' in _BIG:
+        import game_magic
+        game_magic._is_big_foe = _BIG.pop('orig')
+
+
 def install_bigfoe(knobs: dict) -> None:
     """With mg_hold and mg_bigfoe, game_magic._is_big_foe reads a kind's
     health before the HP stand-in raised it; otherwise the game's own test."""

@@ -294,6 +294,7 @@ from status_effects import DEBUFFS               # noqa: E402
 # for this process (the simulator copies anything it goes on to equip).
 _ITEM_CACHE = {}
 _real_load_items = items_mod.load_items
+_real_spawn_bones = level_manager_mod.LevelManager.__dict__['_maybe_spawn_bones']
 _CACHES_ON = False
 
 
@@ -323,6 +324,35 @@ def install_caches() -> None:
         if getattr(_mod, 'load_items', None) is _real_load_items:
             setattr(_mod, 'load_items', _cached_load_items)
     _CACHES_ON = True
+
+
+def uninstall() -> None:
+    """Everything a run puts on the game, out again: the cache and the bones
+    stub, the cell's switches and rules, and what sim_ai1, sim_late and
+    sim_magic hook. The suite calls it after every test (tests/conftest.py):
+    import was made clean for 3.5.3, but two tests that ran cells brought
+    the doubled stacks back before 3.6.0. A hook added here is undone here."""
+    global _CACHES_ON
+    if _CACHES_ON:
+        level_manager_mod.LevelManager._maybe_spawn_bones = _real_spawn_bones
+        for _mod in (items_mod, container_system, dungeon_mod, level_manager_mod):
+            if getattr(_mod, 'load_items', None) is _cached_load_items:
+                setattr(_mod, 'load_items', _real_load_items)
+        _ITEM_CACHE.clear()
+        _CACHES_ON = False
+        defaults = dict(KNOB_DEFAULTS)
+        apply_defence_knobs(defaults)
+        packs_mod.ENABLED = lore_powers_mod.ENABLED = True
+        sim_ai1.apply_flags(defaults)
+        sim_ai2.apply_flags(defaults)
+        sim_ai3.apply_flags(defaults)
+        sim_late.uninstall()
+    sim_ai1.uninstall()
+    sim_late.uninstall_runtime()
+    sim_magic.uninstall()
+    if getattr(monster_mod.HERO_STRUCK, '__module__', '') == __name__:
+        monster_mod.HERO_STRUCK = None
+
 
 _POOL_CACHE = {}
 

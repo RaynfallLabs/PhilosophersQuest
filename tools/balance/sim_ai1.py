@@ -139,6 +139,12 @@ def _sim_glare(player) -> int:
 _sim_glare._sim = True
 
 
+def uninstall() -> None:
+    """The game's own glare again."""
+    if light_shy.glare is _sim_glare:
+        light_shy.glare = _real_glare
+
+
 def fight_start(run, group) -> None:
     """Before the first blow: the mastery hero raises a light against a
     light-shy foe (one action)."""

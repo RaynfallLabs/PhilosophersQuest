@@ -37,3 +37,17 @@ def test_two_loads_never_share_an_item():
     assert a[0] is not b[0]
     a[0].count += 5
     assert b[0].count != a[0].count
+
+
+def test_a_test_that_ran_the_simulator_leaves_the_loader_as_it_found_it(tmp_path):
+    """Importing is clean; running was not: tests/test_sim_late.py and
+    test_sim_magic.py ran cells in the suite's own process, the cache stayed,
+    and the doubling came back (the slow run before 3.6.0: a pack of
+    "554877956666477824 / 100"). conftest takes it out after every test."""
+    out = subprocess.run(
+        [sys.executable, '-m', 'pytest', '-q', '-p', 'no:cacheprovider',
+         '--basetemp', str(tmp_path / 'inner'),
+         'tests/test_sim_magic.py::test_the_default_cell_is_the_one_before_the_magic_hooks',
+         'tests/test_sim_import_is_clean.py::test_two_loads_never_share_an_item'],
+        cwd=ROOT, capture_output=True, text=True, timeout=300)
+    assert out.returncode == 0 and '2 passed' in out.stdout, out.stdout[-2000:]
