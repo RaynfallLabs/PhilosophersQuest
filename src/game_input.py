@@ -143,7 +143,8 @@ class InputMixin:
             # The wheel scrolls the Kit's Selected Comparison pane (Brandon
             # 2026-11-16: "there's no way to scroll on the comparison panel").
             self._kit_detail_scroll = max(
-                0, int(getattr(self, '_kit_detail_scroll', 0) or 0) - 3 * int(event.y or 0))
+                0, int(getattr(self, '_kit_detail_scroll', 0) or 0)
+                - int(getattr(self, '_kit_detail_step', 3)) * int(event.y or 0))
             return True
         if event.type != pygame.KEYDOWN:
             return True
@@ -381,7 +382,7 @@ class InputMixin:
             # gear can be dropped or swapped) are actions too. They skipped
             # the check in _player_input, so a paralysed hero could flee
             # down the stairs. Help (?) only reads, and stays open.
-            if uni in ('>', '<', '@', 'P', 'E', 'S', 'C', 'R', 'O') and self._helpless_turn():
+            if uni in ('>', '<', '@', 'P', 'E', 'S', 'C', 'R', 'O', 'L') and self._helpless_turn():
                 return True
             # Keys checked by unicode to handle shift-modified chars
             if uni == '>':
@@ -391,7 +392,7 @@ class InputMixin:
                 self._ascend_stairs()
                 return True
             if uni == '?':
-                self._help_page = 0
+                self._help_page = self._help_scroll = 0
                 self.state = STATE_HELP
                 return True
             if uni == '@':
@@ -430,6 +431,12 @@ class InputMixin:
                 # again, at no cost in time (lowercase o observes;
                 # game_lights.py).
                 self._toggle_light()
+                return True
+            if uni == 'L':
+                # Shift+L: a light into the off hand, or away and the shield
+                # back on, one turn (lowercase l is the message log;
+                # game_lights._swap_light).
+                self._swap_light()
                 return True
             if uni == 'G' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: Gilt Varro's racing camp set up in this
@@ -470,7 +477,7 @@ class InputMixin:
                 # shown); a second press sets a war-band down if it has none.
                 self._qa_alive_sampler()
                 return True
-            if uni == 'L' and getattr(self.player, 'qa_tools', False):
+            if uni == 'Q' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: Old Nickel, who wears the Bloomleaf
                 # Cloak, set down near the hero; again, the cloak into the
                 # pack (emberpup_encounter.BloomleafMixin).
@@ -625,7 +632,8 @@ class InputMixin:
         elif self.state == STATE_DROP_QTY_INPUT:
             self._drop_qty_input(key, event.unicode)
         elif self.state == STATE_STORY_POPUP:
-            self._close_story_popup()            # any key advances (the next queued popup)
+            if not self._story_scroll_key(key):  # Up / Down, where there is more to read
+                self._close_story_popup()        # any other key advances (the next queued popup)
         elif self.state == STATE_CONFIRM_EXIT:
             self._confirm_exit_input(key)
         elif self.state == STATE_EXIT_QUEST:
@@ -827,7 +835,7 @@ class InputMixin:
             self._start_recall_lore()
             return
         if key == pygame.K_SLASH or key == pygame.K_QUESTION:
-            self._help_page = 0
+            self._help_page = self._help_scroll = 0
             self.state = STATE_HELP
             return
         if key == pygame.K_x:
@@ -1393,6 +1401,20 @@ class InputMixin:
     # NPC encounter (multi-phase)
     # ------------------------------------------------------------------
 
+    def _story_scroll_key(self, key: int) -> bool:
+        """Up / Down on a story popup or set-piece page too long to fit
+        (game_render._ui_story_page notes one as it draws it): True when the
+        key scrolled it. Where all of it fits they do what they always did."""
+        held = self.__dict__.get('_story_page')
+        if not held:
+            return False
+        if key in (pygame.K_UP, pygame.K_DOWN):
+            held['at'] = max(0, held['at'] + (1 if key == pygame.K_DOWN else -1))
+            return True
+        if key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE, pygame.K_ESCAPE):
+            self._story_page = None             # it turns: the next starts at its top
+        return False
+
     def _npc_encounter_input(self, key: int):
         """Handle input during NPC encounter — multi-phase flow."""
         enc = self._npc_encounter_active
@@ -1401,6 +1423,12 @@ class InputMixin:
             return
 
         phase = self._npc_encounter_phase
+        if phase in ('text', 'outcome') and key in (pygame.K_UP, pygame.K_DOWN):
+            # A page too long to fit scrolls (game_render._npc_draw_story
+            # holds it inside the page).
+            step = 1 if key == pygame.K_DOWN else -1
+            self._npc_text_scroll = max(0, getattr(self, '_npc_text_scroll', 0) + step)
+            return
 
         # ── Phase: TEXT (encounter description) ───────────────────
         if phase == 'text':
@@ -1632,7 +1660,10 @@ class InputMixin:
                 px, py = self.player.x, self.player.y
                 if max(abs(nx - px), abs(ny - py)) > _sreach:
                     return
-                if nx == px and ny == py:
+                # (a creature spell never aims at the hero's own tile; a tile
+                # spell's cursor opens on it and crosses it: Enter refuses it)
+                if (nx == px and ny == py and not
+                        (getattr(self, '_pending_spell', None) or {}).get('needs_tile')):
                     return
             self.target_cursor_x = nx
             self.target_cursor_y = ny
@@ -1914,7 +1945,10 @@ class InputMixin:
             return
         moves = {pygame.K_UP: -1, pygame.K_DOWN: 1, pygame.K_PAGEUP: -8, pygame.K_PAGEDOWN: 8,
                  pygame.K_HOME: -10 ** 6, pygame.K_END: 10 ** 6}
-        if key in moves and getattr(self, '_help_page', 0) >= 1:
+        # The prose pages scroll, and the command map where it is a list
+        # (a window too small for the map: game_render._draw_help_screen).
+        if key in moves and (getattr(self, '_help_page', 0) >= 1
+                             or getattr(self, '_help_list', False)):
             self._help_scroll = max(0, getattr(self, '_help_scroll', 0) + moves[key])
 
     def _lore_input(self, key: int):

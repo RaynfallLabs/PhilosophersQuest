@@ -340,6 +340,10 @@ _RESIST_BLOCKS: dict[str, set] = {
     'drain_resist':  {'diseased', 'draining'},
     'fire_resist':   {'burning'},
     'cold_resist':   {'frozen'},
+    # The full shields keep off all the resists do, and laying one ends what
+    # is there (_QUENCHES): a fire with no claim on him sets nothing alight.
+    'fire_shield':   {'burning'},
+    'cold_shield':   {'frozen'},
     # 2026: magic_resist now actively blocks mind-affecting / magical debuffs
     # so counterspell + Magic Resist amulets become meaningful.
     'magic_resist':  {'confused', 'charmed', 'silenced', 'feared',
@@ -350,6 +354,8 @@ _RESIST_BLOCKS: dict[str, set] = {
     'confuse_immune': {'confused'},
     'acid_resist':    {'corroding'},
 }
+
+_QUENCHES = ('fire_shield', 'cold_shield')
 
 # What wear (rust, acid, fire) can touch is read from the item's MATERIAL
 # FILE where it has one (data/materials/armor and weapons): its
@@ -859,7 +865,18 @@ def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> 
         limit = max(MAX_EFFECT_DURATION, int(cap)) if cap else MAX_EFFECT_DURATION
         player.status_effects[effect] = min(current + duration, limit)
         sync_timed_grants(player)
+    if effect in _QUENCHES and player.status_effects.get(effect, 0):
+        for put_out in _RESIST_BLOCKS[effect]:
+            player.status_effects.pop(put_out, None)
     return True
+
+
+def turns_now(player, effect: str, asked: int) -> int:
+    """The turns of ``effect`` the hero has now, for the line that lays it:
+    the cap, what was left already and a doubled haste all show, so what is
+    said is what he has (``asked`` when it has no count: it is for good)."""
+    now = int((getattr(player, 'status_effects', None) or {}).get(effect, 0) or 0)
+    return now if now > 0 else asked
 
 
 def apply_penalty(player, effect: str, turns: int) -> None:

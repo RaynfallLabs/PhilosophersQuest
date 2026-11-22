@@ -15,7 +15,7 @@
   "damage_mult": 1.2,
   "weight_mult": 0.85,
   "max_enchant": 5,
-  "enchant_note": "Clear as crystal, and crystal holds a spell.",
+  "enchant_note": "Glassteel is clear as crystal, and crystal holds a spell.",
   "color": [
     210,
     220,
@@ -47,6 +47,6 @@
   ],
   "lore_descriptor": "clear as crystal and harder than the steel it is named for",
   "unidentified_descriptor": "clear glassy",
-  "first_pickup_chronicle": "Put on glassteel, forged in a fire that burned no fuel. Lightning and frost seem to lose interest in me now. Ordinary swords sadly do not.",
+  "first_pickup_chronicle": "Glassteel armor. Good against lightning and frost, not plain swords.",
   "design_notes": "Fills pf 70 gap. Anti-elemental — three resistances. Magical-friendly (max_enchant 5)."
 }

@@ -1404,6 +1404,16 @@ def install_runtime() -> None:
     Monster._resolve_blow = _resolve_blow
 
 
+def uninstall_runtime() -> None:
+    """The game's own blow, and its own careful-blow meter, again."""
+    if 'resolve' in _ORIG:
+        from monster import Monster
+        Monster._resolve_blow = _ORIG.pop('resolve')
+    if 'measure' in _ORIG:
+        import combat
+        combat.strike_damage = _ORIG.pop('measure')
+
+
 def resists(p, el: str) -> bool:
     """A resistance to `el`: a status (a potion or a dish), gear, a lining or
     a chain resistance."""
@@ -1697,6 +1707,7 @@ def _measure_install() -> None:
         _MEASURE['last'] = v
         return v
     strike_damage._sim_late_measure = True
+    _ORIG['measure'] = real
     combat.strike_damage = strike_damage
 
 

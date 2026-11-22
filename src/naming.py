@@ -101,6 +101,17 @@ def quantity(n, word: str, many: str | None = None) -> str:
     return f"{n} {word if k == 1 else (many or word + 's')}"
 
 
+def turns_span(got, asked) -> str:
+    """The turns an effect really laid on several creatures: "8 turns" when
+    all got the same, "2 to 8 turns" when a great foe got fewer or a weak
+    one more. ``asked`` when none took it."""
+    laid = [int(n) for n in got if n]
+    if not laid:
+        return quantity(asked, 'turn')
+    lo, hi = min(laid), max(laid)
+    return quantity(hi, 'turn') if lo == hi else f"{lo} to {quantity(hi, 'turn')}"
+
+
 _NAME_PARTICLES = ('di', 'da', 'de', 'von', 'van', 'der')
 
 

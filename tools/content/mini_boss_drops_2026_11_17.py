@@ -126,13 +126,7 @@ NEW = {
         'floorSpawnWeight': {}, 'value': 900, 'max_enchant': 2, 'spread': 0, 'peak_weight': 0.0,
         'template_basis': 'hide', 'is_unique': True, 'plot_locked': True, 'metal': False,
         'special': "Its bristles stand like spear shafts: a blade's cut glances off it.",
-        'lore': ("King Oeneus of Calydon forgot Artemis at the harvest offerings, and she sent a "
-                 "boar bigger than a bull, with bristles like spear shafts and tusks like an "
-                 "elephant's. Half the heroes of Greece hunted it. Atalanta drew first blood with "
-                 "an arrow and Meleager killed it with his spear, then gave her the hide and the "
-                 "tusked head as the prize. His uncles took them from her, and he killed them for "
-                 "it. Pausanias saw the hide rotting in Athena's temple at Tegea. This is it, before "
-                 "the moths."),
+        'lore': ("When King Oeneus of Calydon forgot Artemis in the offerings of harvest, she sent upon him a boar bigger than a bull, with bristles like spear shafts and tusks like an elephant's, and half the heroes of Greece went out to hunt it. Atalanta drew first blood with an arrow and Meleager slew it with his spear and awarded her the hide and tusked head. His uncles took them from her, and for that he killed them. Pausanias beheld the hide rotting in Athena's temple at Tegea, and this is the same, as it was before the moths came."),
     }),
     'eyes_of_lamia': ('accessory', 1, {
         'name': 'The Eyes of Lamia', 'symbol': '"', 'color': [210, 180, 60], 'weight': 0.2,
@@ -142,50 +136,27 @@ NEW = {
         'floorSpawnWeight': {}, 'peak_floor': 0, 'spread': 10, 'peak_weight': 0.0,
         'plot_locked': True, 'is_unique': True, 'identified': False, 'id_level': 0, 'tier': 1,
         'special': "Hera never let her eyes close: whoever wears them cannot be put to sleep or held still.",
-        'lore': ("Lamia was a queen of Libya whom Zeus loved, and Hera killed her children for it. "
-                 "Grief made her a monster, and Hera made sure she could never close her eyes on "
-                 "what she had lost. Zeus, in pity, gave her the power to take her eyes out and set "
-                 "them aside so that she could rest. Plutarch says she kept them in a jar at home "
-                 "and put them back in when she went out hunting. These are the eyes, in the jar. "
-                 "They have not blinked since."),
+        'lore': ("Lamia was a queen of Libya whom Zeus loved, and on that account Hera slew her children. Grief made a monster of her, and Hera ordained that she should never close her eyes upon what she had lost, until Zeus in his pity gave her the power to take them out and lay them aside, that she might rest. Plutarch says that she kept them in a jar at home and put them back when she went out hunting. These are the eyes, lying in their jar, and in all the years since her day they have not closed or so much as blinked."),
     }),
     'club_of_polyphemus': ('weapon', 2, _weapon(
         "Club of Polyphemus", 'club', 'maul', True, _HEAVY, 'heavy', ['blunt'], (120, 105, 80), 9.0,
         'a huge log of grey olive wood, cut off square at one end',
-        ("Odysseus found it lying beside the sheep-pens in the Cyclops' cave: a staff of green "
-         "olive wood that Polyphemus had cut to carry when it dried, as long as the mast of a "
-         "black ship of twenty oars. Odysseus cut a fathom off the end, sharpened it, hardened "
-         "the point in the fire and drove it into the giant's one eye while he slept off the "
-         "wine. The rest of the club is still a club. It is heavy enough that a blow from it "
-         "leaves the one it lands on reeling."),
+        ("Polyphemus the Cyclops had cut a staff of green olive wood, as long as the mast of a black ship of twenty oars, and left it beside the sheep-pens in his cave until it should be dry enough to carry. Odysseus found it there and cut a fathom from the end, which he sharpened and hardened in the fire, and while the giant slept off the wine Odysseus drove that point into the monster's one eye. What remained is club enough, and so heavy that whoever takes a blow from it is left reeling."),
         stun_chance=0.25, stunChance=0.25, knockback=True, value=420, weapon_class='blunt')),
     'patriarchs_gavel': ('weapon', 3, _weapon(
         "The Patriarch's Gavel", 'warhammer', 'warhammer', False, _NORMAL, 'normal', ['blunt'],
         (60, 55, 60), 6.0, 'a black iron hammer with a head like a judge\'s gavel',
-        ("The Iron Patriarch outlived every son, grandson and usurper of his line and sat on in "
-         "his coronation plate until the kingdom gave out beneath him. He still granted every "
-         "visitor a hearing. It was short, and this ended it: a black iron hammer with a head "
-         "like a judge's gavel, banded in gold, with a little iron crown for a pommel. Whatever "
-         "it lands on is in no state to answer back."),
+        ("The Iron Patriarch outlived every son, grandson and usurper of his line and sat on in his coronation plate until the kingdom gave way beneath him. He still granted a hearing to every visitor, though it was short, and he ended it with this hammer of black iron, which has a head like a judge's gavel, banded in gold, and a little iron crown for a pommel. Whoever it falls upon is in no state afterward to answer him back."),
         stun_chance=0.25, stunChance=0.25, value=760, weapon_class='blunt')),
     'rangdas_keris': ('weapon', 3, _weapon(
         "Rangda's Keris", 'dagger', 'dagger', False, _FINESSE, 'finesse', ['pierce'],
         (110, 110, 120), 1.0, 'a wavy-bladed dagger with a carved demon hilt',
-        ("On Bali, Rangda is the widow-witch, queen of the leyaks, who fights the Barong forever "
-         "and never quite loses. In the temple dance her spell falls on the Barong's warriors and "
-         "they turn their own keris daggers against their chests, and only the Barong's magic "
-         "keeps the blades from going in. This is her own keris: a blade that waves like a "
-         "snake, with a little demon crouched on the hilt. A wound from it leaves the wounded "
-         "unsure which side he is on."),
+        ("Rangda, the widow-witch of Bali and queen of the leyaks, fights the Barong for ever and is never wholly overcome. In the dance of the temple her spell falls upon his warriors, and they turn their own keris daggers against their chests, and only the magic of the Barong keeps the blades from entering. This is her own keris, with a blade as wavy as a snake and a little demon crouched upon the hilt, and whoever is wounded by it grows unsure on which side he fights."),
         confuse_chance=0.2, confuseChance=0.2, value=740)),
     'exsanguinating_blade': ('weapon', 5, _weapon(
         "The Exsanguinating Blade", 'sword', 'longsword', False, _NORMAL, 'normal', ['slash'],
         (130, 30, 35), 3.5, 'a longsword with a blade the colour of dried blood',
-        ("The Blood Archon kept his accounts in blood, and this was his pen. He fought the way he "
-         "traded: he opened a vein, stood back and waited for the debt to come due. The blade is "
-         "the colour of dried blood and the groove down its middle never quite dries. What it "
-         "lets out of the one it cuts, it pays back in part to the hand that holds it. The "
-         "interest is what it has always been."),
+        ("All the accounts of the Blood Archon were written in blood, and this was his pen. He did battle as he did trade, for he would open a vein and stand back to wait until the debt fell due. The blade has the colour of dried blood, though the groove down its middle never quite dries, and of all that it lets out of the one it cuts it repays a part to the hand that holds it, at the same interest that he always asked."),
         bleed_chance=0.3, bleedChance=0.3, lifesteal_percent=0.12, lifestealPercent=0.12,
         value=9000)),
     'brazen_hands_of_stheno': ('armor', 3, {
@@ -196,11 +167,7 @@ NEW = {
         'floorSpawnWeight': {}, 'value': 3200, 'max_enchant': 2, 'spread': 0, 'peak_weight': 0.0,
         'template_basis': 'plate_gauntlets', 'is_unique': True, 'plot_locked': True, 'ench_id': 'ogre_power',
         'special': "A gorgon's grip of bronze: they add to your Strength while you wear them.",
-        'lore': ("Apollodorus describes the three Gorgons: heads twined with the scales of serpents, "
-                 "tusks like a boar's, wings of gold, and hands of bronze. Medusa was the only "
-                 "mortal one. Her sisters Stheno and Euryale cannot die, and Stheno's name means "
-                 "strength. These are her hands, or what she left in them when she went down: "
-                 "scaled bronze, clawed at every finger. Whoever wears them has a gorgon's grip."),
+        'lore': ("Three Gorgons there were, as Apollodorus describes them, with the scales of serpents twined about their heads, tusks like a boar's, wings of gold and hands of bronze. Medusa alone was mortal, for Stheno and Euryale cannot die, and the name of Stheno signifies strength. These are her hands, or such as she left behind when she was struck down, scaled in bronze and clawed at every finger, and they give to whoever wears them a gorgon's grip."),
     }),
     'crones_burial_veil': ('armor', 4, {
         'name': "The Crone's Burial Veil", 'symbol': '[', 'color': [200, 195, 175], 'weight': 0.3,
@@ -210,12 +177,7 @@ NEW = {
         'floorSpawnWeight': {}, 'value': 5200, 'max_enchant': 2, 'spread': 0, 'peak_weight': 0.0,
         'template_basis': 'leather_cap', 'is_unique': True, 'plot_locked': True, 'ench_id': 'iron_will',
         'special': "She heard her own death foretold every night in the grave: no gaze and no terror takes hold of whoever wears it.",
-        'lore': ("The market town buried the fortune-teller alive in this veil for telling fortunes "
-                 "too plainly: which child would not see spring, which husband would not come home. "
-                 "In the dark she went on whispering, and in time the dead whispered back. Every one "
-                 "of them heard his own death foretold in her voice, the day and the hour. She heard "
-                 "her own every night for years and stopped being afraid of anything. The veil "
-                 "remembers how."),
+        'lore': ("A fortune-teller once told the folk of a market town too plainly which child would not see the spring and which husband would not come home, and they buried her alive in this veil. She whispered on in the darkness until the dead whispered back, and every one of them heard his own death foretold in her voice, with the day and the hour. Her own she heard every night for years, until she had no fear left of anything, and that fearlessness the veil remembers."),
     }),
 }
 

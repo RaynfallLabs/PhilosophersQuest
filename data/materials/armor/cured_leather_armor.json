@@ -13,7 +13,7 @@
   "damage_mult": 0.9,
   "weight_mult": 0.85,
   "max_enchant": 2,
-  "enchant_note": "Smoke-cured leather holds a little magic, no more.",
+  "enchant_note": "Cured leather holds a little magic, no more.",
   "color": [
     120,
     80,
@@ -27,15 +27,15 @@
     "fire": "catches fire"
   },
   "metal": false,
-  "protection_note": "Smoke-cured leather, lighter than plain.",
+  "protection_note": "Cured leather, lighter than plain.",
   "protection_price": "Catches fire, and fire scorches it.",
   "vulnerabilities": [],
   "effective_against": [],
   "special_properties": [
     "cured"
   ],
-  "lore_descriptor": "sun-cured brown and supple in the hand",
+  "lore_descriptor": "cured brown and supple in the hand",
   "unidentified_descriptor": "supple dark",
-  "first_pickup_chronicle": "Put on cured leather. Cattle, oak bark and a year in a barn. Nothing fancy, nothing to complain about, which down here counts as luxury.",
+  "first_pickup_chronicle": "Put on cured leather armor, plain oak-bark tanning. Serviceable.",
   "design_notes": "Standard leather Band B. Parallels weapon-side cured_leather."
 }

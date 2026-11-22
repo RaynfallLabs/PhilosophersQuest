@@ -40,8 +40,9 @@ class MonsterWaysMixin:
         line = holds.validate(p, self.monsters)
         if line:
             self.add_message(line, 'success')
+        killers: list = []
         for text, colour in auras.pulse(self.monsters, p, self._sees_monster,
-                                        dungeon=getattr(self, 'dungeon', None)):
+                                        dungeon=getattr(self, 'dungeon', None), killers=killers):
             if text:
                 self.add_message(text, colour)
         if p.hp <= 0:
@@ -49,8 +50,7 @@ class MonsterWaysMixin:
             if p.is_dead():
                 if self.state != STATE_DEAD:
                     self.defeat_reason = 'died'
-                    near = [m for m in self.monsters if m.alive and auras.in_reach(m, p)]
-                    self._killed_by = getattr(near[0], 'kind', None) if near else None
+                    self._killed_by = getattr(killers[0], 'kind', None) if killers else None
                     self._on_game_over()
                     self.state = STATE_DEAD
                     self.add_message("You have died! Press Esc to return to the title.", 'danger')

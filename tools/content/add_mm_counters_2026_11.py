@@ -47,32 +47,21 @@ FLASKS = {
         'throw': {'damage_type': 'blunt', 'damage': 0, 'sized_at': 25,
                   'counting': {'kinds': VAMPIRES, 'turns': 3}},
         'floorSpawnWeight': {'21-40': 5, '41-60': 2},
-        'lore': ("A cloth twist of millet and poppy seed. In the Balkans and across the Slavic lands "
-                 "mourners scattered seed on a new grave and along the road home, for a vampire that "
-                 "rises must stop and count every grain before it can go on, and dawn comes first. "
-                 "Thrown at one of the blood-drinking dead, it holds the creature a few turns while it "
-                 "counts. Each creature counts it once; after that it knows the trick."),
+        'lore': ("Mourners in the Balkans and through the Slavic lands would scatter seed on a new grave and along the road home, since a vampire that rises must halt and count every grain before it goes on, and dawn comes first. A cloth twist of millet and poppy seed, thrown at one of the blood-drinking dead, will hold the creature a few turns at its counting. Yet each creature will count it only once, for afterward it knows the trick."),
     },
     'upas_latex': {
         'name': 'Upas Latex', 'symbol': '!', 'color': [235, 230, 205], 'weight': 0.2,
         'min_level': 44, 'tier': 3,
         'coat': {'substance': 'poison', 'blows': 12, 'rider': {'effect': 'poisoned', 'chance': 1.0, 'turns': 5}},
         'floorSpawnWeight': {'41-60': 6, '61-80': 3, '81-100': 1},
-        'lore': ("A stoppered gourd of the milky sap of the upas tree of Java, the ipoh poison that "
-                 "island hunters smeared on their blowgun darts. The London Magazine once claimed the "
-                 "tree killed every living thing for fifteen miles; the truth is smaller and still "
-                 "deadly. Worked into an edge, it turns each cut into a poisoned one. It does nothing to "
-                 "what has no blood."),
+        'lore': ("Island hunters smeared their blowgun darts with ipoh, the milky sap of the upas tree of Java, and a stoppered gourd of it is here. The London Magazine once claimed that the tree slew every living thing for fifteen miles about, and the truth, though smaller, is deadly enough. Worked into an edge the sap turns each cut into a poisoned one, though it does nothing to what poison cannot harm."),
     },
     'eitr_venom': {
         'name': 'Vial of Eitr', 'symbol': '!', 'color': [60, 120, 90], 'weight': 0.2,
         'min_level': 80, 'tier': 5,
         'coat': {'substance': 'poison', 'blows': 16, 'rider': {'effect': 'poisoned', 'chance': 1.0, 'turns': 8}},
         'floorSpawnWeight': {'81-100': 4},
-        'lore': ("A thick black-green venom in a vial of rime-crusted glass, so cold it smokes. Snorri "
-                 "says the eitr flowed out of Niflheim in the poisonous rivers of the beginning and "
-                 "hardened like slag; a little never hardened. Painted along a blade it is the worst "
-                 "poison there is, and nothing with blood in it shrugs it off for long."),
+        'lore': ("In the beginning, as Snorri tells, eitr flowed from Niflheim in poisonous rivers and hardened like slag, save a little that never hardened. It lies black-green and thick in this vial of rime-crusted glass, so cold that it smokes. Painted along a blade it is the worst poison there is, and nothing that poison can harm will long shrug it off."),
     },
 }
 
@@ -82,10 +71,7 @@ ACCESSORIES = {
         'min_level': 22, 'slot': 'none', 'equip_threshold': 1, 'quiz_tier': 2, 'effects': {},
         'identified': True, 'id_level': 5, 'can_be_cursed': False, 'counters': ['whitethorn'],
         'unidentified_name': 'a sprig of white blossom on a thorny twig',
-        'lore': ("A sprig of hawthorn in white flower, the whitethorn of the hedgerows. Ovid tells how "
-                 "the striges came by night to the cradle of the child Proca, and the nymph Cranae "
-                 "touched the doorposts three times with arbutus and set a branch of whitethorn at the "
-                 "window, and they never came again. Carried, no strix will come at you."),
+        'lore': ("When the striges came by night to the cradle of the child Proca, as Ovid tells, the nymph Cranae touched the doorposts three times with arbutus and set a branch of whitethorn in the window, and they never came again. This is a sprig of that same hawthorn of the hedgerows, in white flower, and while it is carried no strix will come at you."),
         'floorSpawnWeight': {'21-40': 2, '41-60': 1},
         'is_unique': False,
     },
@@ -94,11 +80,7 @@ ACCESSORIES = {
         'min_level': 4, 'slot': 'none', 'equip_threshold': 1, 'quiz_tier': 1, 'effects': {},
         'identified': True, 'id_level': 5, 'can_be_cursed': False, 'counters': ['cock_crow'],
         'unidentified_name': 'a red cockerel in a wicker cage',
-        'lore': ("A red cockerel in a little wicker cage, ill-tempered and loud. The bestiaries say the "
-                 "crow of a cock is death to the cockatrice and the basilisk, as the weasel is, and in "
-                 "China a rooster's crow sends the hopping dead back to their coffins at dawn. Let it "
-                 "crow (Apply) and every cockatrice or lesser basilisk in earshot is struck down, and a "
-                 "basilisk or a jiangshi reels. It crows once a floor; after that it sulks."),
+        'lore': ("A red cockerel sits in this little wicker cage, loud and evil of temper. The old bestiaries teach that the crowing of a cock is death to cockatrice and basilisk, as the weasel is, and in China a rooster's cry sends the hopping dead back to their coffins at dawn. If you let it crow (Apply), every cockatrice or lesser basilisk in earshot will be struck down, and a basilisk or a jiangshi will reel. It will crow but once a floor, and afterward it sulks upon its perch."),
         'floorSpawnWeight': {'1-20': 2, '21-40': 1},
         'is_unique': False,
     },

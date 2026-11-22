@@ -35,8 +35,7 @@ INGREDIENTS = [
         "The forked root of a mandrake, the old sleeping-draught of the physicians. Boiled right, "
         "it keeps you from being knocked senseless.", 'moss_sentinel_prime', power='save_guard_CON'),
     ing('kappa', 'Kappa Shell Steak', 'cut', 'stat', 11, (90, 150, 80),
-        "Meat from under a kappa's shell, the river-imp that wrestles travellers. Turtle soup for a "
-        "wrestler's strength of body.", 'giant_lizard_prime', grant='CON'),
+        "Meat from under a kappa's shell, the river-imp that wrestles travellers. As turtle soup it lends a wrestler's strength of body.", 'giant_lizard_prime', grant='CON'),
     ing('eloko', 'Eloko Shinbone', 'bone', 'stat', 13, (110, 150, 60),
         "A shinbone from one of the biloko, the bell-ringing spirits of the Congo forest. They hear "
         "a hunter long before he hears them.", 'banshee_prime', grant='PER'),
@@ -44,24 +43,21 @@ INGREDIENTS = [
         "Dark lake meat from the ahuizotl, the water beast that cries like a child to bait its trap. "
         "It sharpens the wits.", 'wolf_pack_leader_prime', grant='INT'),
     ing('bulgasari', 'Bulgasari Rice-Heart', 'core', 'stat', 18, (200, 200, 180),
-        "The heart of a bulgasari, still the grains of rice a monk shaped it from, gone hard as iron. "
-        "Boiled soft, it makes you hard to break.", 'clay_golem_prime', grant='CON'),
+        "The heart of a bulgasari, made of the rice grains a monk shaped it from and now hard as iron. When boiled soft it makes you hard to break.", 'clay_golem_prime', grant='CON'),
     ing('myrmekes', 'Jar of Gold-Ant Larvae', 'jar', 'sp', 44, (230, 210, 150),
-        "Pale larvae from a gold-digging ant's nest, packed in a jar; the Aztecs ate ant larvae as a "
-        "delicacy. Rich, buttery, and filling for days.", 'giant_spider_prime'),
+        "Pale larvae from a gold-digging ant's nest, packed in a jar, rich and buttery and filling for days. The Aztecs ate ant larvae as a delicacy.", 'giant_spider_prime'),
     ing('vila', 'Vila Cloud-Mote', 'mote', 'mp', 45, (230, 230, 210),
         "A bright mote from a vila, the fairy of the mountain clouds who shoots arrows and heals "
         "heroes. It is the stuff of magic.", 'will_o_wisp_prime'),
     ing('taniwha', 'Taniwha Steak', 'cut', 'stat', 47, (60, 100, 90),
-        "A steak from a taniwha, the water-dragon of the Maori rivers. Nothing breaks a river.",
+        "A steak from a taniwha, the water-dragon of the Maori rivers, as hard to break as a river.",
         'sea_serpent_norse_prime', grant='CON'),
     ing('impundulu', 'Jarred Impundulu Fat', 'jar', 'special', 48, (60, 60, 60),
         "The fat of the lightning bird, dug from where lightning struck: a famous medicine. "
         "Lightning finds nothing to hold in one who eats it.", 'thunderbird_lesser_prime',
         power='shock_resist'),
     ing('mapinguari', 'Mapinguari Flank Steak', 'cut', 'stat', 49, (150, 80, 50),
-        "A flank of the mapinguari, the one-eyed stinking beast of the Amazon. Smoke it long; the "
-        "strength stays.", 'dire_lion_prime', grant='STR'),
+        "A flank of the mapinguari, the one-eyed stinking beast of the Amazon. Long smoking kills the reek but not the strength.", 'dire_lion_prime', grant='STR'),
     ing('preta', 'Preta Hunger-Ember', 'mote', 'sp', 50, (200, 120, 60),
         "An ember from a preta's needle-thin throat, where food turns to fire. Offered back as a "
         "meal, it fills the belly as nothing else.", 'soul_eater_prime'),
@@ -69,8 +65,7 @@ INGREDIENTS = [
         "A trembling lump of pwdre ser, the rot of the stars, that melts in the light. Physicians "
         "once spread it on sores; eaten, it clears the head.", 'shade_prime', grant='INT'),
     ing('waq_waq_tree', 'Waq-Waq Fruit', 'forage', 'stat', 63, (150, 170, 90),
-        "A fruit from the waq-waq tree at the edge of the world, shaped like a little sleeping face. "
-        "It hears everything.", 'starnut', grant='PER'),
+        "A fruit from the waq-waq tree at the edge of the world, shaped like a little sleeping face that hears everything.", 'starnut', grant='PER'),
     ing('yacumama', 'Yacumama Steak', 'cut', 'stat', 70, (50, 80, 50),
         "A steak from the yacumama, the anaconda mother of the waters. One coil of it would crush a "
         "canoe.", 'world_serpent_prime', grant='STR'),
@@ -78,8 +73,7 @@ INGREDIENTS = [
         "A sirloin from the re'em, the wild ox as big as a hill. One slice is a day's meat for a "
         "village.", 'hell_bovine_prime'),
     ing('bakunawa', 'Bakunawa Moon-Scale', 'scale', 'stat', 88, (90, 70, 120),
-        "A scale from the bakunawa, the serpent that swallows moons, still faintly bright. It moves "
-        "like the sea.", 'lindworm_prime', grant='DEX'),
+        "A scale, still faintly bright, from the bakunawa, the serpent that swallows moons and moves like the sea.", 'lindworm_prime', grant='DEX'),
 ]
 
 

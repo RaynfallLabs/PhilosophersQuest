@@ -22,6 +22,9 @@
     have it in its place again when it is picked up (one line says so); a
     piece sold, destroyed or used up is let go (_sets_prune, _sets_let_go).
 
+A light goes on as one (never a stack), and what it took the place of is
+remembered by one rule (lights.off_hand_takes, lights.two_hands).
+
 Every piece goes on and comes off through one pair of helpers
 (_put_on_now / _take_off_now), so the messages, curses, chain tiers,
 grants and quirk counters are the same whichever way it happens.
@@ -310,7 +313,10 @@ class DressingMixin:
             self.add_message(f"You remove the {self._bare_name(item)}.", 'info')
         _qs_uneq = getattr(self, 'quirk_system', None)
         if _qs_uneq:
+            # A light is taken up and put away, never worn: no armour changed
+            # (Penelope's count), as the equip side says nothing of one.
             itype = 'weapon' if slot_name in ('weapon', 'ranged_weapon') else \
+                    'light' if gear.is_light(item) else \
                     'shield' if slot_name == 'shield' else \
                     'armor' if slot_name not in ('amulet', 'belt') and not slot_name.startswith('accessory_') else \
                     'accessory'
@@ -363,6 +369,9 @@ class DressingMixin:
             return None
         if not p.can_equip_shield():
             return None                 # a two-hander is still in the hand
+        if gear.is_light(sh):
+            import lights
+            lights.leave_rest(p.inventory, sh)  # it may have taken in a bundle: one goes back
         return sh
 
     def _shield_back_on(self, sh) -> None:
@@ -455,7 +464,14 @@ class DressingMixin:
 
     def _busy_do(self, step: Step) -> None:
         if step.kind == 'off':
-            self._take_off_now(step.slot, step.item)
+            act = getattr(self, '_busy', None)
+            # A shield coming off for a light (E, the Kit, a saved kit) is
+            # what that light takes the place of (lights.set_aside).
+            for_light = (step.slot == 'shield' and not gear.is_light(step.item) and act is not None
+                         and any(s.kind == 'on' and gear.is_light(s.item) for s in act.steps))
+            tier = int(getattr(step.item, 'achieved_tier', 0) or 0)
+            if self._take_off_now(step.slot, step.item) and for_light:
+                self._light_takes_place(step.item, tier)
         elif step.kind == 'on':
             if any(i is step.item for i in self.player.inventory):
                 self._put_on_now(step.item, tier=step.tier, done_line=step.turns > 1)
@@ -697,6 +713,15 @@ class DressingMixin:
             self.add_message(f"You sling the {self._bare_name(item)} at your back. "
                              f"S swaps it into your hand.", 'info')
 
+    def _readied_mark(self, item) -> bool:
+        """Is this what a swap key draws: the weapon At Your Back (S), or a
+        light of the readied kind (Shift+L, game_lights.py)?"""
+        p = getattr(self, 'player', None)
+        if p is None or item is None:
+            return False
+        import lights
+        return item is getattr(p, 'readied_weapon', None) or lights.is_readied(p, item)
+
     def _unready_weapon(self) -> None:
         p = self.player
         item = p.readied_weapon
@@ -754,6 +779,10 @@ class DressingMixin:
                              'success')
         if sh is not None:
             self._shield_back_on(sh)
+            if _free:
+                import lights
+                if lights.is_lit(p.shield):
+                    lights.kindled(p, p.shield)     # lit in no time: this turn pays for it
         _qs = getattr(self, 'quirk_system', None)
         if _qs is not None:
             try:

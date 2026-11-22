@@ -242,10 +242,10 @@ def _crossing_line(game, old: int, new: int) -> None:
     try:
         import chronicle
         if new >= CLEAN_AT > old:
-            chronicle.chron(game, 'soul', "I feel clean, as if everything I have done down here has counted. The dungeon feels lighter.",
+            chronicle.chron(game, 'soul', "I feel clean. What I have done down here has counted.",
                             once='soul:clean')
         elif new == KARMA_MIN < old:
-            chronicle.chron(game, 'soul', "Something inside me has gone cold. The dungeon doesn't frighten me anymore. That frightens me.",
+            chronicle.chron(game, 'soul', "My soul has gone cold. The dungeon no longer frightens me.",
                             once='soul:cold')
     except Exception:
         pass

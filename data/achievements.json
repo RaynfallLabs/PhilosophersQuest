@@ -385,7 +385,7 @@
    "category": "scholar",
    "rarity": "common",
    "hint": "A hundred questions answered in the dungeon. Right or wrong, each one counts.",
-   "unlocked_text": "A hundred questions faced. The dungeon is only getting started.",
+   "unlocked_text": "A hundred questions you have faced, and the quest is but begun.",
    "code_word": "HUNDRED",
    "art": "questions_100",
    "trigger": {
@@ -401,7 +401,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "A thousand questions answered in the dungeon.",
-   "unlocked_text": "A thousand questions faced across your journeys.",
+   "unlocked_text": "Over all your journeys you have faced a thousand questions.",
    "code_word": "THOUSAND",
    "art": "questions_1000",
    "trigger": {
@@ -417,7 +417,7 @@
    "category": "scholar",
    "rarity": "epic",
    "hint": "Ten thousand questions answered in the dungeon.",
-   "unlocked_text": "Ten thousand questions. Scholars in Alexandria would nod.",
+   "unlocked_text": "Ten thousand questions would win the praise of Alexandria's scholars.",
    "code_word": "MYRIAD",
    "art": "questions_10000",
    "trigger": {
@@ -433,7 +433,7 @@
    "category": "scholar",
    "rarity": "legendary",
    "hint": "A hundred thousand questions. Yes, really.",
-   "unlocked_text": "A hundred thousand questions. There may be no one alive who has faced more.",
+   "unlocked_text": "You have faced a hundred thousand questions, and perhaps no living soul has faced more.",
    "code_word": "ENDLESS",
    "art": "questions_100000",
    "trigger": {
@@ -449,7 +449,7 @@
    "category": "scholar",
    "rarity": "common",
    "hint": "Twenty-five right in a row, from one quiz to the next.",
-   "unlocked_text": "Twenty-five right answers without a single slip.",
+   "unlocked_text": "You gave twenty-five right answers without a single slip.",
    "code_word": "ROLL",
    "art": "streak_25",
    "trigger": {
@@ -465,7 +465,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "A hundred right in a row.",
-   "unlocked_text": "A hundred right answers in a row. Not one wrong.",
+   "unlocked_text": "You answered a hundred in a row and were never wrong.",
    "code_word": "UNBROKEN",
    "art": "streak_100",
    "trigger": {
@@ -481,7 +481,7 @@
    "category": "scholar",
    "rarity": "epic",
    "hint": "Two hundred and fifty right in a row.",
-   "unlocked_text": "Two hundred and fifty in a row. Flawless.",
+   "unlocked_text": "Two hundred and fifty in a row, and all without flaw.",
    "code_word": "FLAWLESS",
    "art": "streak_250",
    "trigger": {
@@ -497,7 +497,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Five hundred math questions answered right.",
-   "unlocked_text": "Five hundred math questions, answered right.",
+   "unlocked_text": "You answered five hundred math questions rightly.",
    "code_word": "NUMBERS",
    "art": "subject_math",
    "trigger": {
@@ -511,7 +511,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Five hundred geography questions answered right.",
-   "unlocked_text": "Five hundred geography questions, answered right.",
+   "unlocked_text": "In geography you have given five hundred right answers.",
    "code_word": "WORLD",
    "art": "subject_geography",
    "trigger": {
@@ -525,7 +525,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Five hundred history questions answered right.",
-   "unlocked_text": "Five hundred history questions, answered right.",
+   "unlocked_text": "Five hundred times you answered truly upon history.",
    "code_word": "AGES",
    "art": "subject_history",
    "trigger": {
@@ -539,7 +539,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Five hundred animal questions answered right.",
-   "unlocked_text": "Five hundred animal questions, answered right.",
+   "unlocked_text": "Five hundred questions on animals were rightly answered.",
    "code_word": "NATURE",
    "art": "subject_animal",
    "trigger": {
@@ -553,7 +553,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Five hundred cooking questions answered right.",
-   "unlocked_text": "Five hundred cooking questions, answered right.",
+   "unlocked_text": "Your right answers in cooking number five hundred.",
    "code_word": "HEARTH",
    "art": "subject_cooking",
    "trigger": {
@@ -567,7 +567,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Five hundred science questions answered right.",
-   "unlocked_text": "Five hundred science questions, answered right.",
+   "unlocked_text": "Science asked, and five hundred times you answered right.",
    "code_word": "SCIENCE",
    "art": "subject_science",
    "trigger": {
@@ -581,7 +581,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Five hundred philosophy questions answered right.",
-   "unlocked_text": "Five hundred philosophy questions, answered right.",
+   "unlocked_text": "Philosophy has had five hundred right answers of you.",
    "code_word": "WISDOM",
    "art": "subject_philosophy",
    "trigger": {
@@ -595,7 +595,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Five hundred grammar questions answered right.",
-   "unlocked_text": "Five hundred grammar questions, answered right.",
+   "unlocked_text": "You rightly answered five hundred questions of grammar.",
    "code_word": "WORDSMITH",
    "art": "subject_grammar",
    "trigger": {
@@ -609,7 +609,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Five hundred economics questions answered right.",
-   "unlocked_text": "Five hundred economics questions, answered right.",
+   "unlocked_text": "In economics your right answers number five hundred.",
    "code_word": "COSTS",
    "art": "subject_economics",
    "trigger": {
@@ -623,7 +623,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Five hundred theology questions answered right.",
-   "unlocked_text": "Five hundred theology questions, answered right.",
+   "unlocked_text": "To theology you have given five hundred right answers.",
    "code_word": "DIVINE",
    "art": "subject_theology",
    "trigger": {
@@ -637,7 +637,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "A hundred trivia questions answered right.",
-   "unlocked_text": "A hundred trivia questions, answered right.",
+   "unlocked_text": "A hundred trivia questions were rightly answered.",
    "code_word": "CURIOUS",
    "art": "subject_trivia",
    "trigger": {
@@ -651,7 +651,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "A hundred AI questions answered right.",
-   "unlocked_text": "A hundred AI questions, answered right.",
+   "unlocked_text": "You answered a hundred AI questions rightly.",
    "code_word": "MACHINES",
    "art": "subject_ai",
    "trigger": {
@@ -665,7 +665,7 @@
    "category": "scholar",
    "rarity": "epic",
    "hint": "Every subject, a hundred right answers each.",
-   "unlocked_text": "A true polymath: right answers in every subject the dungeon asks.",
+   "unlocked_text": "In every subject that the dungeon asks you have answered as a true polymath.",
    "code_word": "POLYMATH",
    "art": "polymath",
    "trigger": {
@@ -727,7 +727,7 @@
    "category": "scholar",
    "rarity": "rare",
    "hint": "Every question of one tier of one subject, in one journey.",
-   "unlocked_text": "Every question of a tier, answered in one journey.",
+   "unlocked_text": "In one journey you answered every question of a tier.",
    "code_word": "CLEARED",
    "art": "tier_cleared",
    "trigger": {
@@ -740,7 +740,7 @@
    "category": "scholar",
    "rarity": "epic",
    "hint": "Socrates said the unexamined life is not worth living. Master a tier of philosophy in one journey.",
-   "unlocked_text": "Every philosophy question of a tier, answered in one journey.",
+   "unlocked_text": "In a single journey you answered a whole tier of philosophy questions.",
    "code_word": "EXAMINED",
    "art": "examined_life",
    "trigger": {
@@ -753,7 +753,7 @@
    "category": "scholar",
    "rarity": "common",
    "hint": "When a question puzzles you, read its card. A hundred times.",
-   "unlocked_text": "A hundred cards read. Curiosity is the start of wisdom.",
+   "unlocked_text": "You read a hundred cards, for in curiosity wisdom begins.",
    "code_word": "CARDS",
    "art": "curious_mind",
    "trigger": {
@@ -767,7 +767,7 @@
    "category": "scholar",
    "rarity": "common",
    "hint": "A hundred questions answered in Study Mode.",
-   "unlocked_text": "A hundred questions studied by lamplight, far from any dungeon.",
+   "unlocked_text": "By lamplight, far from any dungeon, you studied a hundred questions.",
    "code_word": "LAMPLIT",
    "art": "lamp_lit",
    "trigger": {
@@ -797,7 +797,7 @@
    "category": "warrior",
    "rarity": "rare",
    "hint": "A thousand foes defeated.",
-   "unlocked_text": "A thousand foes. The dungeon has started to talk about you.",
+   "unlocked_text": "A thousand foes have fallen, and the dungeon speaks of you now.",
    "code_word": "LEGION",
    "art": "kills_1000",
    "trigger": {
@@ -813,7 +813,7 @@
    "category": "warrior",
    "rarity": "epic",
    "hint": "Ten thousand foes defeated.",
-   "unlocked_text": "Ten thousand foes. Monsters tell their young about you.",
+   "unlocked_text": "Monsters tell their young how ten thousand foes fell to you.",
    "code_word": "HORDE",
    "art": "kills_10000",
    "trigger": {
@@ -829,7 +829,7 @@
    "category": "warrior",
    "rarity": "common",
    "hint": "Ten thousand points of damage dealt.",
-   "unlocked_text": "Ten thousand points of damage, dealt by your own hand.",
+   "unlocked_text": "With your own hand you have dealt ten thousand points of damage.",
    "code_word": "HEAVY",
    "art": "damage_10k",
    "trigger": {
@@ -845,7 +845,7 @@
    "category": "warrior",
    "rarity": "rare",
    "hint": "A hundred thousand points of damage dealt.",
-   "unlocked_text": "A hundred thousand points of damage. Walls have fallen to less.",
+   "unlocked_text": "You dealt a hundred thousand damage, and walls have fallen to less.",
    "code_word": "SIEGE",
    "art": "damage_100k",
    "trigger": {
@@ -861,7 +861,7 @@
    "category": "warrior",
    "rarity": "epic",
    "hint": "A million points of damage dealt.",
-   "unlocked_text": "A million points of damage. The ground remembers you.",
+   "unlocked_text": "The ground remembers the million points of damage you dealt.",
    "code_word": "QUAKE",
    "art": "damage_1m",
    "trigger": {
@@ -877,7 +877,7 @@
    "category": "warrior",
    "rarity": "legendary",
    "hint": "Ten million points of damage dealt.",
-   "unlocked_text": "Ten million points of damage. Even giants step aside.",
+   "unlocked_text": "Even giants step aside from ten million points of damage.",
    "code_word": "WORLDBREAK",
    "art": "damage_10m",
    "trigger": {
@@ -893,7 +893,7 @@
    "category": "warrior",
    "rarity": "common",
    "hint": "A hundred damage in a single blow.",
-   "unlocked_text": "A hundred damage in one blow.",
+   "unlocked_text": "One blow of yours dealt a hundred damage.",
    "code_word": "MIGHTY",
    "art": "blow_100",
    "trigger": {
@@ -909,7 +909,7 @@
    "category": "warrior",
    "rarity": "rare",
    "hint": "A thousand damage in a single blow.",
-   "unlocked_text": "A thousand damage in one blow. Thor would approve.",
+   "unlocked_text": "Thor would praise your blow of a thousand damage.",
    "code_word": "THUNDER",
    "art": "blow_1000",
    "trigger": {
@@ -925,7 +925,7 @@
    "category": "warrior",
    "rarity": "epic",
    "hint": "Five thousand damage in a single blow.",
-   "unlocked_text": "Five thousand damage in one blow. The bards are already writing.",
+   "unlocked_text": "The bards already sing your single blow of five thousand damage.",
    "code_word": "BALLAD",
    "art": "blow_5000",
    "trigger": {
@@ -941,7 +941,7 @@
    "category": "warrior",
    "rarity": "rare",
    "hint": "Ten right answers in a single attack.",
-   "unlocked_text": "Ten right answers in one attack: a chain of ten.",
+   "unlocked_text": "You gave ten right answers in one attack: a chain of ten.",
    "code_word": "LINKS",
    "art": "chain_10",
    "trigger": {
@@ -957,7 +957,7 @@
    "category": "warrior",
    "rarity": "epic",
    "hint": "A hundred attacks with a chain of ten or more.",
-   "unlocked_text": "A hundred chains of ten. Your sums are a weapon.",
+   "unlocked_text": "A hundred chains of ten have made a weapon of your sums.",
    "code_word": "CHAINS",
    "art": "chain_master",
    "trigger": {
@@ -973,7 +973,7 @@
    "category": "warrior",
    "rarity": "common",
    "hint": "Win a fight with empty hands.",
-   "unlocked_text": "A foe defeated with nothing in your hands.",
+   "unlocked_text": "You overcame a foe with nothing in your hands.",
    "code_word": "KNUCKLES",
    "art": "bare_knuckles",
    "trigger": {
@@ -989,7 +989,7 @@
    "category": "warrior",
    "rarity": "rare",
    "hint": "A hundred foes, defeated from afar.",
-   "unlocked_text": "A hundred foes defeated from a distance.",
+   "unlocked_text": "You felled a hundred foes from a distance.",
    "code_word": "AIM",
    "art": "steady_aim",
    "trigger": {
@@ -1003,7 +1003,7 @@
    "category": "warrior",
    "rarity": "rare",
    "hint": "A hundred foes in a single journey.",
-   "unlocked_text": "A hundred foes in one journey.",
+   "unlocked_text": "In one journey you felled a hundred foes.",
    "code_word": "RAMPAGE",
    "art": "busy_journey",
    "trigger": {
@@ -1017,7 +1017,7 @@
    "category": "warrior",
    "rarity": "rare",
    "hint": "In the old wolf-man films, only one metal ever worked.",
-   "unlocked_text": "A shapeshifter cut down with silver worked into your blade.",
+   "unlocked_text": "You cut down a shapeshifter with silver worked into your blade.",
    "code_word": "SILVER",
    "art": "silver_edge",
    "trigger": {
@@ -1040,7 +1040,7 @@
    "category": "warrior",
    "rarity": "rare",
    "hint": "Every vampire hunter in the old stories carried a little blessed water.",
-   "unlocked_text": "One of the unholy, finished by a flask of holy water.",
+   "unlocked_text": "With a flask of holy water you made an end of one of the unholy.",
    "code_word": "BLESSED",
    "art": "holy_water",
    "trigger": {
@@ -1065,7 +1065,7 @@
    "category": "depths",
    "rarity": "common",
    "hint": "Ten floors down.",
-   "unlocked_text": "Ten floors down. The cellar is far above you now.",
+   "unlocked_text": "You are ten floors down, and the cellar lies far above you.",
    "code_word": "CELLAR",
    "art": "floor_10",
    "trigger": {
@@ -1081,7 +1081,7 @@
    "category": "depths",
    "rarity": "common",
    "hint": "Twenty-five floors down.",
-   "unlocked_text": "Twenty-five floors down the deep roads.",
+   "unlocked_text": "You walked the deep roads twenty-five floors down.",
    "code_word": "DEEPROAD",
    "art": "floor_25",
    "trigger": {
@@ -1097,7 +1097,7 @@
    "category": "depths",
    "rarity": "rare",
    "hint": "Halfway down.",
-   "unlocked_text": "Halfway to the Stone.",
+   "unlocked_text": "You are halfway to the Stone.",
    "code_word": "HALFWAY",
    "art": "floor_50",
    "trigger": {
@@ -1113,7 +1113,7 @@
    "category": "depths",
    "rarity": "epic",
    "hint": "Seventy-five floors down.",
-   "unlocked_text": "Seventy-five floors down, where light forgets.",
+   "unlocked_text": "Seventy-five floors down, you came where light forgets.",
    "code_word": "LIGHTLESS",
    "art": "floor_75",
    "trigger": {
@@ -1129,7 +1129,7 @@
    "category": "depths",
    "rarity": "legendary",
    "hint": "All the way down.",
-   "unlocked_text": "The bottom of the world. Few have stood here.",
+   "unlocked_text": "You stand at the world's bottom, as few have stood.",
    "code_word": "BOTTOM",
    "art": "floor_100",
    "trigger": {
@@ -1145,7 +1145,7 @@
    "category": "depths",
    "rarity": "rare",
    "hint": "Ten floors, every corner seen.",
-   "unlocked_text": "Ten floors mapped to the last corner.",
+   "unlocked_text": "You mapped ten floors to the last corner.",
    "code_word": "MAPPER",
    "art": "cartographer",
    "trigger": {
@@ -1159,7 +1159,7 @@
    "category": "depths",
    "rarity": "common",
    "hint": "Fifty traps, found the hard way.",
-   "unlocked_text": "Fifty traps found, every one of them with your feet.",
+   "unlocked_text": "You found fifty traps, and every one with your own feet.",
    "code_word": "TRAPFOOT",
    "art": "trapfoot",
    "trigger": {
@@ -1173,7 +1173,7 @@
    "category": "depths",
    "rarity": "rare",
    "hint": "Mimics are famous for chests. Not only chests.",
-   "unlocked_text": "A staircase with teeth. You will never trust stairs again.",
+   "unlocked_text": "You found teeth in a staircase, and will never trust stairs again.",
    "code_word": "HELLMOUTH",
    "art": "not_a_stair",
    "trigger": {
@@ -1186,7 +1186,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "The bull-headed prisoner of Crete's labyrinth.",
-   "unlocked_text": "Asterion is defeated. The labyrinth is quiet.",
+   "unlocked_text": "Asterion has fallen, and the labyrinth is still.",
    "code_word": "LABYRINTH",
    "art": "boss_asterion",
    "trigger": {
@@ -1202,7 +1202,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "One look from her turned heroes to stone.",
-   "unlocked_text": "Medusa is defeated, and you are not a statue.",
+   "unlocked_text": "Medusa has fallen, and you were not turned to stone.",
    "code_word": "GORGON",
    "art": "boss_medusa",
    "trigger": {
@@ -1218,7 +1218,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "A dwarf who became a dragon to guard his gold.",
-   "unlocked_text": "Fafnir is defeated. The hoard is yours.",
+   "unlocked_text": "Fafnir has fallen, and his hoard is yours.",
    "code_word": "DRAGONHOARD",
    "art": "boss_fafnir",
    "trigger": {
@@ -1234,7 +1234,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "The wolf the gods could not hold.",
-   "unlocked_text": "Fenrir is defeated. Ragnarok can wait.",
+   "unlocked_text": "Fenrir has fallen, and Ragnarok must wait.",
    "code_word": "RAGNAROK",
    "art": "boss_fenrir",
    "trigger": {
@@ -1250,7 +1250,7 @@
    "category": "bosses",
    "rarity": "legendary",
    "hint": "The angel of the bottomless pit.",
-   "unlocked_text": "Abaddon is defeated. The pit is closed.",
+   "unlocked_text": "Abaddon has fallen, and the pit is closed.",
    "code_word": "ABYSS",
    "art": "boss_abaddon",
    "trigger": {
@@ -1266,7 +1266,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Seven seals, from the last book of the Bible.",
-   "unlocked_text": "All seven seals broken in one journey.",
+   "unlocked_text": "In one journey you broke all seven seals.",
    "code_word": "SEALS",
    "art": "seven_seals",
    "trigger": {
@@ -1282,7 +1282,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Win the way the heroes of the old stories won.",
-   "unlocked_text": "A great foe beaten the way the old story says it was beaten.",
+   "unlocked_text": "You overcame a great foe in the manner that the old tale tells.",
    "code_word": "STORYWAY",
    "art": "story_way",
    "trigger": {
@@ -1295,7 +1295,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Some great foes roam wherever they please.",
-   "unlocked_text": "A legendary wanderer, defeated.",
+   "unlocked_text": "A legendary wanderer has fallen to you.",
    "code_word": "WANDERER",
    "art": "wanderer",
    "trigger": {
@@ -1311,7 +1311,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the weaver who challenged a goddess.",
-   "unlocked_text": "Arachne is defeated.",
+   "unlocked_text": "Arachne has fallen before you.",
    "code_word": "WEAVER",
    "art": "quest_arachne",
    "trigger": {
@@ -1327,7 +1327,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the queen who became a serpent.",
-   "unlocked_text": "Lamia is defeated.",
+   "unlocked_text": "Lamia lies vanquished.",
    "code_word": "SERPENT",
    "art": "quest_lamia",
    "trigger": {
@@ -1343,7 +1343,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the bronze giant who guarded Crete.",
-   "unlocked_text": "Talos is defeated.",
+   "unlocked_text": "Talos of bronze has fallen.",
    "code_word": "BRONZE",
    "art": "quest_talos",
    "trigger": {
@@ -1359,7 +1359,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the mother of monsters.",
-   "unlocked_text": "Echidna is defeated.",
+   "unlocked_text": "Echidna has fallen before you.",
    "code_word": "MOTHER",
    "art": "quest_echidna",
    "trigger": {
@@ -1375,7 +1375,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the king who rides through the forest at night.",
-   "unlocked_text": "The Erlking is defeated.",
+   "unlocked_text": "The Erlking is overthrown.",
    "code_word": "FOREST",
    "art": "quest_erlking",
    "trigger": {
@@ -1391,7 +1391,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the death bat of the Maya.",
-   "unlocked_text": "Camazotz is defeated.",
+   "unlocked_text": "Camazotz has fallen before you.",
    "code_word": "NIGHT",
    "art": "quest_camazotz",
    "trigger": {
@@ -1407,7 +1407,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the fire-breathing thief who stole from Hercules.",
-   "unlocked_text": "Cacus is defeated.",
+   "unlocked_text": "Cacus is overthrown.",
    "code_word": "FLAME",
    "art": "quest_cacus",
    "trigger": {
@@ -1423,7 +1423,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the shepherd who asked a hero his name and was told Nobody.",
-   "unlocked_text": "Polyphemus is defeated.",
+   "unlocked_text": "Polyphemus has fallen before you.",
    "code_word": "NOBODY",
    "art": "quest_polyphemus",
    "trigger": {
@@ -1439,7 +1439,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the one who asks riddles at the gate.",
-   "unlocked_text": "The Sphinx is defeated.",
+   "unlocked_text": "You have overcome the Sphinx.",
    "code_word": "RIDDLE",
    "art": "quest_sphinx",
    "trigger": {
@@ -1455,7 +1455,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the witch-queen of Bali.",
-   "unlocked_text": "Rangda is defeated.",
+   "unlocked_text": "Rangda is overthrown.",
    "code_word": "WITCH",
    "art": "quest_rangda",
    "trigger": {
@@ -1471,7 +1471,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the lion no blade could cut.",
-   "unlocked_text": "The Nemean Lion is defeated.",
+   "unlocked_text": "The Nemean Lion lies vanquished.",
    "code_word": "LION",
    "art": "quest_nemean_lion",
    "trigger": {
@@ -1487,7 +1487,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the witch whose hut walks on chicken legs.",
-   "unlocked_text": "Baba Yaga is defeated.",
+   "unlocked_text": "Baba Yaga is overcome.",
    "code_word": "CRONE",
    "art": "quest_baba_yaga",
    "trigger": {
@@ -1503,7 +1503,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the serpent who will one day circle the world.",
-   "unlocked_text": "Jormungandr is defeated.",
+   "unlocked_text": "Jormungandr is overthrown.",
    "code_word": "WYRM",
    "art": "quest_jormungandr",
    "trigger": {
@@ -1519,7 +1519,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the jackal of the god of chaos.",
-   "unlocked_text": "Set's Jackal is defeated.",
+   "unlocked_text": "Set's Jackal has fallen before you.",
    "code_word": "CHAOS",
    "art": "quest_set",
    "trigger": {
@@ -1535,7 +1535,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the knight who can lose his head and pick it up again.",
-   "unlocked_text": "The Green Knight is defeated.",
+   "unlocked_text": "The Green Knight has been overcome.",
    "code_word": "GREEN",
    "art": "quest_green_knight",
    "trigger": {
@@ -1551,7 +1551,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the whirlpool that swallowed ships.",
-   "unlocked_text": "Charybdis is defeated.",
+   "unlocked_text": "Charybdis is overthrown.",
    "code_word": "MAELSTROM",
    "art": "quest_charybdis",
    "trigger": {
@@ -1567,7 +1567,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat what is left of the ten-headed king of Lanka.",
-   "unlocked_text": "Ravana's Arm is defeated.",
+   "unlocked_text": "Ravana's Arm has fallen before you.",
    "code_word": "DEMON",
    "art": "quest_ravana",
    "trigger": {
@@ -1583,7 +1583,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the hunger that walks in winter.",
-   "unlocked_text": "The Wendigo is defeated.",
+   "unlocked_text": "You have overcome the Wendigo.",
    "code_word": "HUNGER",
    "art": "quest_wendigo",
    "trigger": {
@@ -1599,7 +1599,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the captain of the riders in the storm.",
-   "unlocked_text": "The Wild Hunt is defeated.",
+   "unlocked_text": "The Wild Hunt is overthrown.",
    "code_word": "HUNT",
    "art": "quest_wild_hunt",
    "trigger": {
@@ -1615,7 +1615,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the spider who owns all the stories.",
-   "unlocked_text": "Anansi is defeated.",
+   "unlocked_text": "Anansi is overcome.",
    "code_word": "SPIDER",
    "art": "quest_anansi",
    "trigger": {
@@ -1631,7 +1631,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the dragon that gnaws the roots of the World Tree.",
-   "unlocked_text": "Nidhoggr is defeated.",
+   "unlocked_text": "Nidhoggr lies vanquished.",
    "code_word": "ROOT",
    "art": "quest_nidhoggr",
    "trigger": {
@@ -1647,7 +1647,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "In the first of his twelve labours, the hero found that his arrows only bounced off.",
-   "unlocked_text": "The Nemean Lion, beaten with your bare hands, as Hercules beat it.",
+   "unlocked_text": "With bare hands you overcame the Nemean Lion, as Hercules did.",
    "code_word": "LABOUR",
    "art": "first_labour",
    "trigger": {
@@ -1673,7 +1673,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "In one telling, an archer's arrow found the one vein of the bronze giant.",
-   "unlocked_text": "Talos, brought down from a distance. The ichor ran out of his heel.",
+   "unlocked_text": "You felled Talos from a distance, and the ichor ran out of his heel.",
    "code_word": "ICHOR",
    "art": "bronze_heel",
    "trigger": {
@@ -1696,7 +1696,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "One hero beat her without ever once meeting her eyes.",
-   "unlocked_text": "Medusa is defeated, and you saw her only in the bright face of your shield.",
+   "unlocked_text": "Medusa has fallen, and you saw her only in the bright face of your shield.",
    "code_word": "PERSEUS",
    "art": "polished_shield",
    "trigger": {
@@ -1726,7 +1726,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Odysseus's sailors stopped their ears against a voice that drew men to their ruin.",
-   "unlocked_text": "The Sphinx is defeated. She whispered her riddle, and you never heard a word of it.",
+   "unlocked_text": "The Sphinx has fallen, and of the riddle that she whispered you heard no word.",
    "code_word": "DEAF",
    "art": "deaf_to_riddles",
    "trigger": {
@@ -1755,7 +1755,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the bull of the old bestiaries whose only weapon is what it leaves behind.",
-   "unlocked_text": "The Bonnacon is defeated. Mind where you step.",
+   "unlocked_text": "The Bonnacon has fallen, but have a care where you step.",
    "code_word": "PAEONIA",
    "art": "quest_bonnacon",
    "trigger": {
@@ -1771,7 +1771,7 @@
    "category": "bosses",
    "rarity": "rare",
    "hint": "Defeat the boar a forgotten goddess sent to ravage a kingdom.",
-   "unlocked_text": "The Calydonian Boar is defeated. Calydon's vines can grow again.",
+   "unlocked_text": "The Calydonian Boar has fallen, and Calydon's vines may grow again.",
    "code_word": "CALYDON",
    "art": "quest_calydonian_boar",
    "trigger": {
@@ -1787,7 +1787,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Medusa had two sisters, and the myths swore that neither of them could die.",
-   "unlocked_text": "Stheno and Euryale, both defeated in one journey. The myths were wrong about one thing.",
+   "unlocked_text": "Stheno and Euryale fell in one journey, though the myths said that neither could die.",
    "code_word": "SISTERS",
    "art": "gorgon_sisters",
    "trigger": {
@@ -1801,7 +1801,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the old king who outlived every one of his heirs.",
-   "unlocked_text": "The Iron Patriarch is defeated. His audience is over.",
+   "unlocked_text": "The Iron Patriarch has fallen, and his audience is at an end.",
    "code_word": "PATRIARCH",
    "art": "quest_iron_patriarch",
    "trigger": {
@@ -1817,7 +1817,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the fortune-teller who was buried for telling the truth too plainly.",
-   "unlocked_text": "The Whispering Crone is defeated. The graves are quiet again.",
+   "unlocked_text": "The Whispering Crone has fallen, and the graves are quiet again.",
    "code_word": "WHISPER",
    "art": "quest_whispering_crone",
    "trigger": {
@@ -1833,7 +1833,7 @@
    "category": "bosses",
    "rarity": "epic",
    "hint": "Defeat the fiend who keeps his ledger in blood.",
-   "unlocked_text": "The Blood Archon is defeated. Every debt in his ledger is cancelled.",
+   "unlocked_text": "The Blood Archon has fallen, and every debt in his ledger is cancelled.",
    "code_word": "LEDGER",
    "art": "quest_blood_archon",
    "trigger": {
@@ -1849,7 +1849,7 @@
    "category": "endings",
    "rarity": "legendary",
    "hint": "Your village is waiting for the Stone.",
-   "unlocked_text": "The Philosopher's Stone is home. Amber will see another spring.",
+   "unlocked_text": "The Philosopher's Stone is home, and Amber shall see another spring.",
    "code_word": "STONE",
    "art": "stone_home",
    "trigger": {
@@ -1878,7 +1878,7 @@
    "category": "endings",
    "rarity": "epic",
    "hint": "A knight once played chess with Death to win more time.",
-   "unlocked_text": "You played chess with Death, and won.",
+   "unlocked_text": "You played at chess with Death, and you won.",
    "code_word": "CHECKMATE",
    "art": "checkmate",
    "trigger": {
@@ -1907,7 +1907,7 @@
    "category": "endings",
    "rarity": "epic",
    "hint": "Mene, mene, tekel: be weighed, and not found wanting.",
-   "unlocked_text": "Weighed on Michael's scales, and found worthy.",
+   "unlocked_text": "You were weighed on Michael's scales and found worthy.",
    "code_word": "WORTHY",
    "art": "found_worthy",
    "trigger": {
@@ -1923,7 +1923,7 @@
    "category": "endings",
    "rarity": "common",
    "hint": "Everyone falls once.",
-   "unlocked_text": "You fell. Then you came back. That is the whole secret.",
+   "unlocked_text": "You fell and came back again, and therein lies the whole secret.",
    "code_word": "FALL",
    "art": "fall_1",
    "trigger": {
@@ -1939,7 +1939,7 @@
    "category": "endings",
    "rarity": "common",
    "hint": "Ten falls, ten returns.",
-   "unlocked_text": "Ten falls, and ten returns.",
+   "unlocked_text": "Ten times you fell and returned.",
    "code_word": "AGAIN",
    "art": "fall_10",
    "trigger": {
@@ -1955,7 +1955,7 @@
    "category": "endings",
    "rarity": "rare",
    "hint": "Fifty falls, and still you come back.",
-   "unlocked_text": "Fifty falls. Still unbowed.",
+   "unlocked_text": "You fell fifty times, yet are unbowed.",
    "code_word": "UNBOWED",
    "art": "fall_50",
    "trigger": {
@@ -1971,7 +1971,7 @@
    "category": "endings",
    "rarity": "epic",
    "hint": "A hundred falls. By now you know the dungeon better than it knows you.",
-   "unlocked_text": "A hundred falls. Death has taught you well.",
+   "unlocked_text": "By a hundred falls Death has taught you well.",
    "code_word": "TEACHER",
    "art": "fall_100",
    "trigger": {
@@ -1987,7 +1987,7 @@
    "category": "endings",
    "rarity": "common",
    "hint": "Heroes need breakfast too.",
-   "unlocked_text": "Starved. Next time, pack a sandwich.",
+   "unlocked_text": "You starved, so pack a sandwich next time.",
    "code_word": "HUNGRY",
    "art": "forgot_to_eat",
    "trigger": {
@@ -2003,7 +2003,7 @@
    "category": "endings",
    "rarity": "common",
    "hint": "Not every legend is a long one.",
-   "unlocked_text": "A legend that ended on the first floor.",
+   "unlocked_text": "Your legend ended upon the first floor.",
    "code_word": "SHORT",
    "art": "short_story",
    "trigger": {
@@ -2020,7 +2020,7 @@
    "category": "endings",
    "rarity": "rare",
    "hint": "Lose to something that does not exist.",
-   "unlocked_text": "Defeated on a farm that does not exist.",
+   "unlocked_text": "You met defeat on a farm that does not exist.",
    "code_word": "UDDER",
    "art": "udderly",
    "trigger": {
@@ -2037,7 +2037,7 @@
    "category": "endings",
    "rarity": "rare",
    "hint": "The pale rider never tires.",
-   "unlocked_text": "Caught by Death himself.",
+   "unlocked_text": "Death himself laid hold of you.",
    "code_word": "SCYTHE",
    "art": "the_scythe",
    "trigger": {
@@ -2054,7 +2054,7 @@
    "category": "lore",
    "rarity": "common",
    "hint": "Study one family of monsters closely.",
-   "unlocked_text": "Your field notes on one family run deep.",
+   "unlocked_text": "You keep deep field notes upon one family.",
    "code_word": "NOTES",
    "art": "field_notes",
    "trigger": {
@@ -2070,7 +2070,7 @@
    "category": "lore",
    "rarity": "rare",
    "hint": "Know one family of monsters better than it knows itself.",
-   "unlocked_text": "You are the bane of a whole family of monsters.",
+   "unlocked_text": "You have become the bane of a whole family of monsters.",
    "code_word": "BANE",
    "art": "bane",
    "trigger": {
@@ -2086,7 +2086,7 @@
    "category": "lore",
    "rarity": "legendary",
    "hint": "Five families, mastered.",
-   "unlocked_text": "Loremaster: the bane of five families of monsters.",
+   "unlocked_text": "As a loremaster, you are the bane of five families of monsters.",
    "code_word": "LOREMASTER",
    "art": "loremaster",
    "trigger": {
@@ -2099,7 +2099,7 @@
    "category": "lore",
    "rarity": "epic",
    "hint": "Monster lore runs in circles. Close one.",
-   "unlocked_text": "A circle of monster lore, closed.",
+   "unlocked_text": "You closed a circle of monster lore.",
    "code_word": "CIRCLE",
    "art": "circle_closed",
    "trigger": {
@@ -2112,7 +2112,7 @@
    "category": "lore",
    "rarity": "epic",
    "hint": "A polished shield, a little beeswax, a scrap of cold iron: the old stories knew what to bring.",
-   "unlocked_text": "A gaze turned, a voice unheard and a glamour broken: every old remedy, used.",
+   "unlocked_text": "You turned a gaze, shut out a voice and broke a glamour, and so used every old remedy.",
    "code_word": "REMEDIES",
    "art": "old_remedies",
    "trigger": {
@@ -2126,7 +2126,7 @@
    "category": "lore",
    "rarity": "common",
    "hint": "Fifty kinds of monster, named and known.",
-   "unlocked_text": "Fifty kinds of monster in your bestiary.",
+   "unlocked_text": "Your bestiary holds fifty kinds of monster.",
    "code_word": "BESTIARY",
    "art": "bestiary_50",
    "trigger": {
@@ -2142,7 +2142,7 @@
    "category": "lore",
    "rarity": "rare",
    "hint": "Two hundred and fifty kinds, named and known.",
-   "unlocked_text": "Two hundred and fifty kinds of monster, known by name.",
+   "unlocked_text": "You know two hundred and fifty kinds of monster by name.",
    "code_word": "GREATBEAST",
    "art": "bestiary_250",
    "trigger": {
@@ -2158,7 +2158,7 @@
    "category": "lore",
    "rarity": "common",
    "hint": "A hundred topics, read in the Lore Codex.",
-   "unlocked_text": "A hundred topics read.",
+   "unlocked_text": "You read a hundred topics.",
    "code_word": "WELLREAD",
    "art": "well_read",
    "trigger": {
@@ -2172,7 +2172,7 @@
    "category": "lore",
    "rarity": "common",
    "hint": "Odd habits make odd talents. Ten of them.",
-   "unlocked_text": "Ten strange talents earned.",
+   "unlocked_text": "You earned ten strange talents.",
    "code_word": "TALENTS",
    "art": "traits_10",
    "trigger": {
@@ -2188,7 +2188,7 @@
    "category": "lore",
    "rarity": "rare",
    "hint": "Forty odd talents.",
-   "unlocked_text": "Forty strange talents. Your friends are worried.",
+   "unlocked_text": "With forty strange talents you have your friends worried.",
    "code_word": "STRANGER",
    "art": "traits_40",
    "trigger": {
@@ -2204,7 +2204,7 @@
    "category": "lore",
    "rarity": "legendary",
    "hint": "A hundred odd talents. Who even are you?",
-   "unlocked_text": "A hundred strange talents. Nobody else is quite like you.",
+   "unlocked_text": "With a hundred strange talents, you are like no other.",
    "code_word": "STRANGEST",
    "art": "traits_100",
    "trigger": {
@@ -2220,7 +2220,7 @@
    "category": "lore",
    "rarity": "common",
    "hint": "A hundred things, known for what they are.",
-   "unlocked_text": "A hundred things identified.",
+   "unlocked_text": "You identified a hundred things.",
    "code_word": "APPRAISER",
    "art": "identify_100",
    "trigger": {
@@ -2236,7 +2236,7 @@
    "category": "lore",
    "rarity": "rare",
    "hint": "A thousand things, known for what they are.",
-   "unlocked_text": "A thousand things identified. Nothing fools you now.",
+   "unlocked_text": "With a thousand things identified, nothing can fool you now.",
    "code_word": "SAGE",
    "art": "identify_1000",
    "trigger": {
@@ -2252,7 +2252,7 @@
    "category": "craft",
    "rarity": "common",
    "hint": "A hundred fallen foes, harvested for the pot.",
-   "unlocked_text": "A hundred harvests. Nothing goes to waste.",
+   "unlocked_text": "In a hundred harvests you let nothing go to waste.",
    "code_word": "HARVEST",
    "art": "nothing_wasted",
    "trigger": {
@@ -2266,7 +2266,7 @@
    "category": "craft",
    "rarity": "common",
    "hint": "A hundred meals cooked.",
-   "unlocked_text": "A hundred meals cooked over dungeon fires.",
+   "unlocked_text": "You cooked a hundred meals over dungeon fires.",
    "code_word": "COOK",
    "art": "camp_cook",
    "trigger": {
@@ -2280,7 +2280,7 @@
    "category": "craft",
    "rarity": "rare",
    "hint": "Fifty different recipes, cooked at least once.",
-   "unlocked_text": "Fifty recipes in your cookbook.",
+   "unlocked_text": "Your cookbook holds fifty recipes.",
    "code_word": "COOKBOOK",
    "art": "cookbook",
    "trigger": {
@@ -2296,7 +2296,7 @@
    "ladder": "feasts",
    "tier": 1,
    "hint": "In the old sagas, a great deed ended at a long table.",
-   "unlocked_text": "A legendary feast, cooked and eaten. The hall goes quiet as you sit down.",
+   "unlocked_text": "The hall grows quiet as you sit to eat a legendary feast of your own cooking.",
    "code_word": "FEAST",
    "art": "feast_first",
    "trigger": {
@@ -2312,7 +2312,7 @@
    "ladder": "feasts",
    "tier": 2,
    "hint": "Twelve different legendary feasts, each cooked at least once.",
-   "unlocked_text": "Twelve legendary feasts. Valhalla's cooks would ask for your recipes.",
+   "unlocked_text": "Valhalla's cooks would beg the recipes of your twelve legendary feasts.",
    "code_word": "TABLE",
    "art": "feast_12",
    "trigger": {
@@ -2326,7 +2326,7 @@
    "category": "craft",
    "rarity": "common",
    "hint": "Something hearty, something filling, something arcane, something that teaches and something strange, in one journey.",
-   "unlocked_text": "A dish from every part of the kitchen in one journey. A balanced diet, dungeon style.",
+   "unlocked_text": "In one journey you made a dish from every part of the kitchen, a most wholesome fare.",
    "code_word": "COURSES",
    "art": "five_courses",
    "trigger": {
@@ -2340,7 +2340,7 @@
    "category": "craft",
    "rarity": "common",
    "hint": "In the old folk tale, a soup began with a stone and ended with everyone's share.",
-   "unlocked_text": "A dish of five ingredients. Nobody even had to bring a stone.",
+   "unlocked_text": "You made a dish of five ingredients and had no need of a stone.",
    "code_word": "STONESOUP",
    "art": "stone_soup",
    "trigger": {
@@ -2358,7 +2358,7 @@
    "category": "craft",
    "rarity": "rare",
    "hint": "Some things are best saved for later. Much later.",
-   "unlocked_text": "A dish made with a part you carried thirty floors down. It was worth the wait.",
+   "unlocked_text": "A part you carried thirty floors down made a dish well worth the waiting.",
    "code_word": "PATIENCE",
    "art": "worth_the_wait",
    "trigger": {
@@ -2382,7 +2382,7 @@
    "category": "craft",
    "rarity": "common",
    "hint": "Tell a smith what you need, and come back for it.",
-   "unlocked_text": "A smith's special order, made to your measure and collected.",
+   "unlocked_text": "A smith made your special order to measure, and you collected it.",
    "code_word": "ORDER",
    "art": "made_to_order",
    "trigger": {
@@ -2398,7 +2398,7 @@
    "category": "craft",
    "rarity": "rare",
    "hint": "A hundred locks, picked.",
-   "unlocked_text": "A hundred locks picked.",
+   "unlocked_text": "A hundred locks yielded to you.",
    "code_word": "LOCKSMITH",
    "art": "locksmith",
    "trigger": {
@@ -2412,7 +2412,7 @@
    "category": "craft",
    "rarity": "common",
    "hint": "A hundred scrolls, read.",
-   "unlocked_text": "A hundred scrolls read aloud.",
+   "unlocked_text": "You read a hundred scrolls aloud.",
    "code_word": "SCROLLS",
    "art": "scroll_reader",
    "trigger": {
@@ -2426,7 +2426,7 @@
    "category": "craft",
    "rarity": "common",
    "hint": "A hundred wands, zapped.",
-   "unlocked_text": "A hundred wands zapped.",
+   "unlocked_text": "You zapped a hundred wands.",
    "code_word": "WANDS",
    "art": "wand_waver",
    "trigger": {
@@ -2440,7 +2440,7 @@
    "category": "craft",
    "rarity": "rare",
    "hint": "Twenty spells, learned.",
-   "unlocked_text": "Twenty spells learned by heart.",
+   "unlocked_text": "Twenty spells you have by heart.",
    "code_word": "SPELLBOUND",
    "art": "spellbound",
    "trigger": {
@@ -2454,7 +2454,7 @@
    "category": "craft",
    "rarity": "epic",
    "hint": "Five hundred spells, cast.",
-   "unlocked_text": "Five hundred spells cast.",
+   "unlocked_text": "You cast five hundred spells.",
    "code_word": "ARCHMAGE",
    "art": "archmage",
    "trigger": {
@@ -2468,7 +2468,7 @@
    "category": "craft",
    "rarity": "rare",
    "hint": "Twenty-five prayers, answered.",
-   "unlocked_text": "Twenty-five prayers answered.",
+   "unlocked_text": "Twenty-five of your prayers were answered.",
    "code_word": "FAITHFUL",
    "art": "faithful",
    "trigger": {
@@ -2482,7 +2482,7 @@
    "category": "craft",
    "rarity": "epic",
    "hint": "Ask for help from on high in your darkest hour.",
-   "unlocked_text": "You called from the darkest hour, and you were answered.",
+   "unlocked_text": "You called out of the darkest hour, and you were answered.",
    "code_word": "HEARD",
    "art": "heard_on_high",
    "trigger": {
@@ -2495,7 +2495,7 @@
    "category": "craft",
    "rarity": "common",
    "hint": "Ten thousand gold, earned.",
-   "unlocked_text": "Ten thousand gold earned.",
+   "unlocked_text": "Ten thousand gold came to your hand.",
    "code_word": "PURSE",
    "art": "gold_10k",
    "trigger": {
@@ -2511,7 +2511,7 @@
    "category": "craft",
    "rarity": "rare",
    "hint": "A hundred thousand gold, earned.",
-   "unlocked_text": "A hundred thousand gold. Merchants bow.",
+   "unlocked_text": "Merchants bow to your hundred thousand gold.",
    "code_word": "MERCHANT",
    "art": "gold_100k",
    "trigger": {
@@ -2527,7 +2527,7 @@
    "category": "craft",
    "rarity": "epic",
    "hint": "A million gold, earned.",
-   "unlocked_text": "A million gold: a king's ransom.",
+   "unlocked_text": "You won a king's ransom: a million gold.",
    "code_word": "RANSOM",
    "art": "gold_1m",
    "trigger": {
@@ -2543,7 +2543,7 @@
    "category": "craft",
    "rarity": "common",
    "hint": "Five traders, each paid at least once.",
-   "unlocked_text": "Five traders know your face.",
+   "unlocked_text": "Five traders now know your face.",
    "code_word": "MARKET",
    "art": "every_market",
    "trigger": {
@@ -2557,7 +2557,7 @@
    "category": "craft",
    "rarity": "common",
    "hint": "Strange altars hide old stories. Solve one.",
-   "unlocked_text": "A strange altar, solved.",
+   "unlocked_text": "A strange altar yielded to you.",
    "code_word": "MYSTERY",
    "art": "mystery_1",
    "trigger": {
@@ -2573,7 +2573,7 @@
    "category": "craft",
    "rarity": "epic",
    "hint": "Ten strange altars, solved.",
-   "unlocked_text": "Ten strange altars solved.",
+   "unlocked_text": "You solved ten strange altars.",
    "code_word": "MYSTERIES",
    "art": "mystery_10",
    "trigger": {
@@ -2589,7 +2589,7 @@
    "category": "companions",
    "rarity": "common",
    "hint": "Every Soul Sphere holds a friend.",
-   "unlocked_text": "A friend, hatched from a Soul Sphere.",
+   "unlocked_text": "From a Soul Sphere you hatched a friend.",
    "code_word": "FRIEND",
    "art": "friend_in_dark",
    "trigger": {
@@ -2635,7 +2635,7 @@
    "category": "companions",
    "rarity": "legendary",
    "hint": "A companion at level 100.",
-   "unlocked_text": "A companion at level 100. Best friends.",
+   "unlocked_text": "At level 100 your companion is your best friend.",
    "code_word": "BESTFRIEND",
    "art": "best_friend",
    "trigger": {
@@ -2649,7 +2649,7 @@
    "category": "companions",
    "rarity": "legendary",
    "hint": "Lightning, water, plant and fire, each at its final form.",
-   "unlocked_text": "Lightning, water, plant and fire: all four grown.",
+   "unlocked_text": "All four are grown: lightning, water, plant and fire.",
    "code_word": "ELEMENTS",
    "art": "four_elements",
    "trigger": {
@@ -2765,7 +2765,7 @@
    "category": "companions",
    "rarity": "epic",
    "hint": "In the old games, a small winged creature with a bobbing red pompom never turned down a dance.",
-   "unlocked_text": "The last dancer of the old mines danced the dark back with you, and asked to come along.",
+   "unlocked_text": "The last dancer of the old mines danced the dark back with you, and asked if he might come along.",
    "code_word": "POM",
    "art": "dance_partner",
    "spoiler_words": [
@@ -2787,7 +2787,7 @@
    "category": "companions",
    "rarity": "epic",
    "hint": "Every step, on every beat.",
-   "unlocked_text": "A dance-off danced without a single missed step. Even the bobble kept time.",
+   "unlocked_text": "You danced a dance-off with no step missed, and even the bobble kept time.",
    "code_word": "BOBBLE",
    "art": "not_a_step_missed",
    "trigger": {
@@ -2804,7 +2804,7 @@
    "category": "companions",
    "rarity": "epic",
    "hint": "In the old games, a golden bird could outrun anything on the track.",
-   "unlocked_text": "You beat Gilt Varro's best bird on the Underway Run, and he stormed off without his winnings.",
+   "unlocked_text": "You beat Gilt Varro's best bird on the Underway Run, and he stormed away without his winnings.",
    "code_word": "VARRO",
    "art": "first_past_post",
    "spoiler_words": [
@@ -2825,7 +2825,7 @@
    "category": "companions",
    "rarity": "epic",
    "hint": "In the old games, the golden birds would follow anyone who brought them the right greens.",
-   "unlocked_text": "The young Bococho chose you. No rope, no fee, no Varro: just the two of you.",
+   "unlocked_text": "The young Bococho chose you, and goes with you free of rope and fee and Varro.",
    "code_word": "TETHER",
    "art": "free_of_the_tether",
    "spoiler_words": [
@@ -2846,7 +2846,7 @@
    "category": "companions",
    "rarity": "rare",
    "hint": "The tortoise never hurried, and still he won.",
-   "unlocked_text": "You won the Underway Run without a single sprint.",
+   "unlocked_text": "Without a single sprint you won the Underway Run.",
    "code_word": "TORTOISE",
    "art": "slow_steady",
    "spoiler_words": [
@@ -2868,7 +2868,7 @@
    "category": "companions",
    "rarity": "rare",
    "hint": "A good bird carries her rider anywhere, even down.",
-   "unlocked_text": "Down the stairs in the saddle. The Bococho did not even slow down.",
+   "unlocked_text": "You rode down the stairs, and the Bococho did not so much as slow.",
    "code_word": "SADDLE",
    "art": "riding_deep",
    "spoiler_words": [
@@ -2886,7 +2886,7 @@
    "category": "companions",
    "rarity": "legendary",
    "hint": "In the old tapestries, only the gentle could tame a unicorn.",
-   "unlocked_text": "The unicorn trusts you.",
+   "unlocked_text": "The unicorn has come to trust you.",
    "code_word": "UNICORN",
    "art": "gentle_hands",
    "trigger": {
@@ -2899,7 +2899,7 @@
    "category": "companions",
    "rarity": "common",
    "hint": "Walk someone safely to where he or she is going.",
-   "unlocked_text": "Someone is home safe, because of you.",
+   "unlocked_text": "One in your care is safely home because of you.",
    "code_word": "PASSAGE",
    "art": "escort_1",
    "trigger": {
@@ -2915,7 +2915,7 @@
    "category": "companions",
    "rarity": "rare",
    "hint": "Ten people, walked safely home.",
-   "unlocked_text": "Ten people walked safely home.",
+   "unlocked_text": "You saw ten people safely home.",
    "code_word": "GUARDIAN",
    "art": "escort_10",
    "trigger": {
@@ -2947,7 +2947,7 @@
    "category": "heroes",
    "rarity": "rare",
    "hint": "Five names of power.",
-   "unlocked_text": "Five names of power, found.",
+   "unlocked_text": "Five names of power are known to you.",
    "code_word": "FIVENAMES",
    "art": "names_5",
    "trigger": {
@@ -2963,7 +2963,7 @@
    "category": "heroes",
    "rarity": "epic",
    "hint": "Ten names of power.",
-   "unlocked_text": "Ten names of power, found.",
+   "unlocked_text": "You found ten names of power.",
    "code_word": "TENNAMES",
    "art": "names_10",
    "trigger": {
@@ -2979,7 +2979,7 @@
    "category": "heroes",
    "rarity": "legendary",
    "hint": "Twenty names of power.",
-   "unlocked_text": "Twenty names of power. You know nearly every door.",
+   "unlocked_text": "With twenty names of power you know nearly every door.",
    "code_word": "TWENTYNAMES",
    "art": "names_20",
    "trigger": {
@@ -2995,7 +2995,7 @@
    "category": "heroes",
    "rarity": "legendary",
    "hint": "The Stone, carried home by a lover of wisdom from long ago.",
-   "unlocked_text": "A philosopher brought the Stone home, as the title always promised.",
+   "unlocked_text": "A philosopher brought the Stone home, as the title had always promised.",
    "code_word": "THINKER",
    "art": "philosophers_quest",
    "trigger": {
@@ -3019,7 +3019,7 @@
    "category": "heroes",
    "rarity": "rare",
    "hint": "Some names are above every hero.",
-   "unlocked_text": "You aimed very high. Somebody corrected you.",
+   "unlocked_text": "You aimed very high, and someone corrected you.",
    "code_word": "HIGHEST",
    "art": "aim_high",
    "trigger": {
@@ -3032,7 +3032,7 @@
    "category": "character",
    "rarity": "common",
    "hint": "Make a promise in the dungeon. Keep it.",
-   "unlocked_text": "A promise kept.",
+   "unlocked_text": "You kept a promise.",
    "code_word": "WORD",
    "art": "oath_1",
    "trigger": {
@@ -3048,7 +3048,7 @@
    "category": "character",
    "rarity": "rare",
    "hint": "Ten promises kept.",
-   "unlocked_text": "Ten promises kept. People believe you now.",
+   "unlocked_text": "You kept ten promises, and folk believe you now.",
    "code_word": "TRUSTED",
    "art": "oath_10",
    "trigger": {
@@ -3064,7 +3064,7 @@
    "category": "character",
    "rarity": "epic",
    "hint": "Twenty-five promises kept.",
-   "unlocked_text": "Twenty-five promises kept. Oathkeeper.",
+   "unlocked_text": "You are an oathkeeper of twenty-five promises.",
    "code_word": "OATHKEEPER",
    "art": "oath_25",
    "trigger": {
@@ -3096,7 +3096,7 @@
    "category": "character",
    "rarity": "rare",
    "hint": "Five times, leave what you could have taken.",
-   "unlocked_text": "Five times, you left what you could have taken.",
+   "unlocked_text": "Five times you left what you might have taken.",
    "code_word": "OPENHANDS",
    "art": "open_hands",
    "trigger": {
@@ -3110,7 +3110,7 @@
    "category": "character",
    "rarity": "rare",
    "hint": "Ten people saved who could not save themselves.",
-   "unlocked_text": "Ten people saved.",
+   "unlocked_text": "You saved ten people.",
    "code_word": "RESCUER",
    "art": "rescuer",
    "trigger": {
@@ -3124,7 +3124,7 @@
    "category": "journeys",
    "rarity": "common",
    "hint": "Ten journeys begun.",
-   "unlocked_text": "Ten journeys begun.",
+   "unlocked_text": "You began ten journeys.",
    "code_word": "TENTRIPS",
    "art": "journeys_10",
    "trigger": {
@@ -3140,7 +3140,7 @@
    "category": "journeys",
    "rarity": "rare",
    "hint": "Fifty journeys begun.",
-   "unlocked_text": "Fifty journeys begun.",
+   "unlocked_text": "You began fifty journeys.",
    "code_word": "FIFTYTRIPS",
    "art": "journeys_50",
    "trigger": {
@@ -3156,7 +3156,7 @@
    "category": "journeys",
    "rarity": "epic",
    "hint": "A hundred journeys begun.",
-   "unlocked_text": "A hundred journeys. The road knows your name.",
+   "unlocked_text": "A hundred journeys have taught the road your name.",
    "code_word": "HUNDREDTRIPS",
    "art": "journeys_100",
    "trigger": {
@@ -3172,7 +3172,7 @@
    "category": "journeys",
    "rarity": "legendary",
    "hint": "The highest grade there is.",
-   "unlocked_text": "The highest grade there is.",
+   "unlocked_text": "There is no higher grade than yours.",
    "code_word": "TOPMARKS",
    "art": "top_marks",
    "trigger": {
@@ -3242,7 +3242,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "In a colossal cave, long ago, adventurers learned a magic word.",
-   "unlocked_text": "You spoke the First Word, and reality listened.",
+   "unlocked_text": "You spoke the First Word, and reality hearkened.",
    "code_word": "XYZZY",
    "art": "hack_reality",
    "trigger": {
@@ -3265,7 +3265,7 @@
    "category": "secrets",
    "rarity": "common",
    "hint": "Even reality crashes sometimes.",
-   "unlocked_text": "Reality rejected your invocation.",
+   "unlocked_text": "Reality would not accept your invocation.",
    "code_word": "SEGFAULT",
    "art": "segfault",
    "trigger": {
@@ -3281,7 +3281,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "Three layers down, reality starts to listen.",
-   "unlocked_text": "Three layers of reality, rewritten.",
+   "unlocked_text": "You rewrote three layers of reality.",
    "code_word": "CONVERGE",
    "art": "convergence",
    "trigger": {
@@ -3299,7 +3299,7 @@
    "category": "secrets",
    "rarity": "legendary",
    "hint": "Past the last layer of reality, a wolf lies chained.",
-   "unlocked_text": "Singularity. The wolf at the end of the world now follows you.",
+   "unlocked_text": "You reached the Singularity, and the wolf at the end of the world follows you.",
    "code_word": "SINGULAR",
    "art": "singularity",
    "trigger": {
@@ -3315,7 +3315,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "The oldest rumour in dungeon-crawling. Surely it isn't true.",
-   "unlocked_text": "There is no cow level. You have been there.",
+   "unlocked_text": "There is no cow level, and yet you have been there.",
    "code_word": "COWLEVEL",
    "art": "cow_level",
    "trigger": {
@@ -3331,7 +3331,7 @@
    "category": "secrets",
    "rarity": "legendary",
    "hint": "Every farm has a king, even a farm that does not exist.",
-   "unlocked_text": "The Cow King is defeated.",
+   "unlocked_text": "The Cow King is overthrown.",
    "code_word": "MOO",
    "art": "cow_king",
    "trigger": {
@@ -3379,7 +3379,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "In an Egyptian tale, a prince played a ghost for a magic book.",
-   "unlocked_text": "You won the Book of Thoth at senet.",
+   "unlocked_text": "You won the Book of Thoth at the game of senet.",
    "code_word": "SENET",
    "art": "senet",
    "trigger": {
@@ -3395,7 +3395,7 @@
    "category": "secrets",
    "rarity": "legendary",
    "hint": "In the old tale, the prince who took the book learned to give it back.",
-   "unlocked_text": "You gave the Book of Thoth back, and on time.",
+   "unlocked_text": "You gave the Book of Thoth back on time.",
    "code_word": "RETURNED",
    "art": "thoth_returned",
    "trigger": {
@@ -3414,7 +3414,7 @@
    "category": "secrets",
    "rarity": "rare",
    "hint": "Ahwere lost everything to that book. Listen to her.",
-   "unlocked_text": "You left the book where it lay, because she asked.",
+   "unlocked_text": "Because she asked it, you left the book where it lay.",
    "code_word": "AHWERE",
    "art": "thoth_left",
    "trigger": {
@@ -3451,7 +3451,7 @@
    "category": "secrets",
    "rarity": "rare",
    "hint": "He said the words. Mostly.",
-   "unlocked_text": "Hey, you said the words! The dead disagreed.",
+   "unlocked_text": "Hey, you said the words! The dead were not persuaded.",
    "code_word": "NECKTIE",
    "art": "close_enough",
    "trigger": {
@@ -3467,7 +3467,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "Odin broke the sword of Sigmund. Sigmund's son had it made whole.",
-   "unlocked_text": "Gram is whole again.",
+   "unlocked_text": "Gram has been made whole again.",
    "code_word": "GRAM",
    "art": "sword_reforged",
    "trigger": {
@@ -3483,7 +3483,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "At Ragnarok, the silent god steps on the wolf's jaw. He will need a good shoe.",
-   "unlocked_text": "Vidar's Sandal, made from every scrap.",
+   "unlocked_text": "Every scrap went into Vidar's Sandal.",
    "code_word": "VIDAR",
    "art": "thickest_shoe",
    "trigger": {
@@ -3499,7 +3499,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "The dwarves bound Fenrir with things that do not exist.",
-   "unlocked_text": "Gleipnir, made of six things that do not exist.",
+   "unlocked_text": "Gleipnir was made of six things that do not exist.",
    "code_word": "GLEIPNIR",
    "art": "gleipnir",
    "trigger": {
@@ -3515,7 +3515,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "A fly once bit a dwarf at the forge, and the hammer came out short.",
-   "unlocked_text": "Mjolnir, short handle and all.",
+   "unlocked_text": "Mjolnir is yours, short handle and all.",
    "code_word": "MJOLNIR",
    "art": "short_handle",
    "trigger": {
@@ -3576,7 +3576,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "In the old poem, the dragon woke for a single cup.",
-   "unlocked_text": "A whole hoard taken, and not one of its keepers stirred.",
+   "unlocked_text": "You took a whole hoard, and not one of its keepers stirred.",
    "code_word": "BURGLAR",
    "art": "burglar",
    "trigger": {
@@ -3595,7 +3595,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "Some bands are worth staying for.",
-   "unlocked_text": "You out-danced a whole band of the undead, round by round, and won.",
+   "unlocked_text": "Round by round you out-danced a whole band of the undead, and won.",
    "code_word": "STAGE",
    "art": "stage_fright",
    "trigger": {
@@ -3620,7 +3620,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "A true fan always asks for one more song.",
-   "unlocked_text": "You read eight names aloud, and the band came back to play one more song.",
+   "unlocked_text": "When you read eight names aloud, the band returned to play one more song.",
    "code_word": "ENCORE",
    "art": "encore",
    "trigger": {
@@ -3656,7 +3656,7 @@
    "category": "secrets",
    "rarity": "legendary",
    "hint": "???",
-   "unlocked_text": "Your hero was not dead yet. Not quite.",
+   "unlocked_text": "Your hero was not dead yet, or at least not quite.",
    "code_word": "NOTDEAD",
    "art": "not_dead_yet",
    "trigger": {
@@ -3672,7 +3672,7 @@
    "category": "secrets",
    "rarity": "rare",
    "hint": "He slept for twenty years under the mountain and woke to a world that had moved on.",
-   "unlocked_text": "Your hero went to sleep in one age of the world and woke up in the next, as if nothing had happened.",
+   "unlocked_text": "Your hero fell asleep in one age of the world and awoke in the next, as though nothing had befallen.",
    "code_word": "WINKLE",
    "art": "rip_van_winkle",
    "trigger": {
@@ -3692,7 +3692,7 @@
    "category": "secrets",
    "rarity": "rare",
    "hint": "Up, up, down, down...",
-   "unlocked_text": "Up, up, down, down, left, right, left, right, B, A. Old games remember.",
+   "unlocked_text": "Up, up, down, down, left, right, left, right, B, A, as old games remember.",
    "code_word": "KONAMI",
    "art": "thirty_lives",
    "trigger": {
@@ -3785,7 +3785,7 @@
    "category": "secrets",
    "rarity": "rare",
    "hint": "In the old ballad, two strangers with quarterstaffs met in the middle of a narrow bridge.",
-   "unlocked_text": "You knocked Robin Hood off the bridge into the stream, as Little John once did, and he gave you his horn.",
+   "unlocked_text": "You knocked Robin Hood from the bridge into the stream, as Little John did of old, and he gave you his horn.",
    "code_word": "SHERWOOD",
    "art": "neither_would_give_way",
    "trigger": {
@@ -3811,7 +3811,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "By the Roman Wall they tell of a farmer who followed his ball of thread under the hill, and found a king asleep.",
-   "unlocked_text": "You drew the sword, cut the garter and blew the bugle-horn, and the king under the hill woke for you.",
+   "unlocked_text": "You drew the sword, cut the garter and blew the bugle-horn, and the king beneath the hill awoke for you.",
    "code_word": "BUGLEHORN",
    "art": "not_yet_the_hour",
    "trigger": {
@@ -3837,7 +3837,7 @@
    "category": "secrets",
    "rarity": "epic",
    "hint": "In the Eddas, the watchman of the gods needs less sleep than a bird and can hear the grass grow.",
-   "unlocked_text": "You sat the watch with Heimdall at the foot of the bridge, and heard what he heard. He put Gjallarhorn in your hands.",
+   "unlocked_text": "You kept watch with Heimdall at the foot of the bridge and heard what he heard, and he put Gjallarhorn into your hands.",
    "code_word": "BIFROST",
    "art": "one_who_listens",
    "trigger": {

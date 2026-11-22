@@ -149,7 +149,9 @@ def read(path: str) -> tuple[dict | None, str]:
         return None, 'corrupt'
     if not _shape_ok(doc):
         return None, 'corrupt'
-    if not seeker_codes.seal_ok(canonical(doc), doc.get('seal_key'), doc.get('seal')):
+    seal = doc.get('seal')
+    if (not (isinstance(seal, str) and seal.isascii())     # (compare_digest raises on any other)
+            or not seeker_codes.seal_ok(canonical(doc), doc.get('seal_key'), seal)):
         return None, 'edited'
     if doc['schema'] > SCHEMA:
         return doc, 'newer'

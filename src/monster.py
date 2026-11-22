@@ -366,6 +366,10 @@ _MIND_WORDS = ('gaze', 'song', 'wail', 'charm', 'psionic', 'hex', 'evil eye', 'r
 #   range 2+ - from a distance, the hero in its sight: an archer's first
 #              volley at once; a gaze, a voice or a breath is first drawn
 #              up for a turn (OPENER_WIND_UP), a tell the hero can answer.
+# Every pattern asks (a healer, a summoner, a hit-and-run hunter, a rooted
+# thing from where it stands): tests/test_bugbash_360_monsters.py runs each
+# opener in the data. A mimic's is its springing blow. A wind-up is let go
+# out of range or sight, or by what breaks a chant (caster_ai.chant_stopped).
 # Once a fight: it opens again only after it has lost the hero for
 # OPENER_RESET_TURNS turns. The blow itself is an ordinary one (to-hit,
 # saves, guards, wards and counters all apply).
@@ -474,6 +478,11 @@ def _ward_gate(player, m, atk):
         return atk, stop
     got = wards.blow_gate(player, m, new)
     return new, got
+
+
+# What the wards and gates are asked of a gazer's stare when it has no
+# attack of its own to ask with (Monster.attack's two gaze branches).
+GAZE_BLOW = {'name': 'gaze', 'delivery': 'gaze', 'type': 'magic'}
 
 
 def _ward_rider(player, m, effect_id):
@@ -1234,6 +1243,9 @@ class Monster:
             self._gaze_cooldown -= 1
         faction.tick(self)
         caster_ai.tick(self)                # its spells come ready again (AI-3)
+        summoning.tick(self)                # a chant it cannot keep up
+        if self.__dict__.get('_winding') and caster_ai.chant_stopped(self):
+            self._winding = False           # and its opener's wind-up
         breath.tick(self)
 
         # Regeneration: heal HP each turn (trolls, hydras).
@@ -1501,6 +1513,9 @@ class Monster:
             return _a3
         if not self.attacks:
             # Floating eye: gaze-based paralysis (checks sleep_resist or total blindness)
+            _, _stop = _ward_gate(player, self, GAZE_BLOW)
+            if _stop is not None:
+                return _stop              # sanctuary, the Mist past its reach (wards.py)
             if player.get_sight_radius() == 0:
                 return 0, f"{the_name(self)} gazes at you, but you cannot see {pronouns(self)[2]} eyes!"
             if _edge_gaze_immune(player, self):
@@ -1525,6 +1540,13 @@ class Monster:
         if self.gaze_paralyze > 0 and self._gaze_cooldown <= 0:
             self._gaze_cooldown = self.gaze_cooldown_max
             self._share_gaze_cooldown()
+            if (self.__dict__.get('_opener_now') or {}).get('delivery') == 'gaze':
+                self.__dict__.pop('_opener_now', None)   # this is the gaze it drew up: one
+            # The wards are asked of a gaze as of any blow. A gaze they stop
+            # is spent all the same: next turn she has to come closer.
+            _, _stop = _ward_gate(player, self, GAZE_BLOW)
+            if _stop is not None:
+                return _stop
             # The gaze reaches across a room (see _dancer_turn): she may be
             # several tiles away. At range the gaze is her whole turn; next
             # to the player a gaze that fails still leaves her fangs.
@@ -1585,55 +1607,15 @@ class Monster:
             # Gaze was blocked or reflected — continue to normal attack
             # (but append the gaze message below)
             atk = random.choice(self.attacks)
-            # Behind a mirror shield a second gaze is no blow either (a
-            # floating eye has nothing but its stare): nothing lands.
-            if _mirror is not None and ('gaze' in str(atk.get('name', '')).lower()
-                                        or atk.get('delivery') == 'gaze'):
+            # What turned the gaze turns a second one (a floating eye has
+            # nothing but its stare): nothing lands.
+            if 'gaze' in str(atk.get('name', '')).lower() or atk.get('delivery') == 'gaze':
                 return 0, gaze_msg
-            # Fall through to normal damage with gaze_msg prepended.
-            # Bug-bash fix aac-#2: this inline path was bypassing all
-            # damage-mitigation procs (unskinnable, weakened, summon-weaken,
-            # back_attack_weakness). Re-route through the same mitigations.
-            d20 = random.randint(1, 20)
-            player_ac = player.get_ac()
-            to_hit = self.thac0 - player_ac
-            min_hit = self._min_hit()
-            if d20 == 1:
-                return 0, gaze_msg + " " + self._miss_text(atk)
-            if d20 != 20 and d20 < to_hit:
-                if random.random() >= min_hit:
-                    return 0, gaze_msg + " " + self._miss_text(atk)
-            if self._slipped(player, atk):
-                return 0, gaze_msg + f" You slip {the_name(self, lower=True)}'s blow."
-            dmg = roll(atk['damage'])
-            # What was swung and how hard, before any armor: read by the
-            # armor that answers a blow (Hydra carapace, Svalinn).
-            self._last_attack_type = atk.get('type', 'physical')
-            self._last_attack_roll = dmg
-            atk_type = atk.get('type', 'physical')
-            if self.has_effect('weakened'):
-                dmg = max(1, dmg // 2)
-            if self.has_effect('sundered'):
-                # Chain combat v2: sundered halves outgoing monster damage.
-                dmg = max(1, int(dmg * 0.70))
-            # Hide of the Nemean Lion (unskinnable): physical/slash/pierce/blunt
-            # attackers do half damage. Same condition as the main path.
-            try:
-                from armor_procs import player_has_armor_proc
-                if player_has_armor_proc(player, 'unskinnable') and \
-                        atk_type in ('physical', 'pierce', 'slash', 'blunt') and \
-                        not getattr(self, 'magical', False) and \
-                        'magic' not in (getattr(self, 'tags', []) or []) and \
-                        'divine' not in (getattr(self, 'tags', []) or []):
-                    if dmg > 1:
-                        dmg = max(1, dmg // 2)
-            except ImportError:
-                pass
-            dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
-            dmg = _edge_incoming(player, self, dmg, atk_type)
-            actual = player.take_damage(dmg, atk_type)
-            return actual, (gaze_msg + " " + attack_line(self, atk, actual)
-                            + (f" {_vuln_note}" if _vuln_note and actual > 0 else ''))
+            # The fang that follows is a blow like any other (_resolve_blow):
+            # the wards, the gates, the guards, what it carries. Its own copy
+            # of the blow lived here and knew none of them.
+            actual, msg = self._resolve_blow(atk, player)
+            return actual, f"{gaze_msg} {msg}".strip()
 
         # Attacking from ice: half the lunges go wide, and there is no
         # flurry. (The game loop sets _on_ice before calling attack. The ice
@@ -2258,6 +2240,12 @@ class Monster:
 
         if not self.alive:
             return False
+        # An opener it armed whose blow never came (a displaced image, a gut
+        # round the hero) is not struck later from wherever it then stands.
+        # (A blow armed from outside its turn, the Blue Men's squall, waits.)
+        _own = self.__dict__.get('_opener_attack')    # (none on a monster saved before openers)
+        if _own is not None and self.__dict__.get('_opener_now') is _own:
+            del self.__dict__['_opener_now']
         # One that has yielded (src/morale.py) never strikes again, whatever
         # holds it (a pit, a spear, a web): it keeps out of the way.
         if self.__dict__.get('_yielded'):
@@ -2278,19 +2266,22 @@ class Monster:
         if self.__dict__.get('_scent_left'):
             packs.keep_scent(self, player)
 
-        # Stuck in a pit: can attack if adjacent, but cannot move
-        if self.has_effect('stuck_in_pit'):
-            if self._adjacent_to(player):
-                return True  # attack from the pit
-            return False  # can't move, can't reach
-
-        # Chain combat v2 (v2.14.0): impaled by a spear. Same shape as
-        # stuck_in_pit — can still attack the adjacent player, but the pinning
-        # weapon holds the monster in place for the duration.
-        if self.has_effect('impaled') or self._under('immobilized'):
-            if self._adjacent_to(player):
-                return True
-            return False
+        # Stuck in a pit, or (chain combat v2, v2.14.0) impaled by a spear, or
+        # held fast where it stands: it can still attack the adjacent player,
+        # but it cannot move (_pinned_turn).
+        pinned = (self.has_effect('stuck_in_pit') or self.has_effect('impaled')
+                  or self._under('immobilized'))
+        # At peace (fed, answered, waiting for an answer: lore_powers) it
+        # strikes no one, pinned, at bay or cornered: like one that yielded.
+        if lore_powers.holds_fire(self):
+            if pinned:
+                return False
+            if not self._under('feared'):    # (frightened, it runs)
+                return lore_powers.turn(self, player, dungeon, all_monsters, extra_occupied)
+        if pinned:
+            if self._under('charmed'):
+                return False                 # charmed, bribed, sung to peace: pinned as rooted
+            return self._pinned_turn(player, dungeon, all_monsters, extra_occupied)
 
         # --- Variable speed: slow monsters skip turns ---
         if self.speed < 8 and self.speed > 0:
@@ -2307,23 +2298,18 @@ class Monster:
         # --- HP-threshold phase change (boss "second phase" mechanic) ---
         # A foe with summon data but another AI pattern (Tiamat, Asmodeus)
         # still calls its minions: the timer used to run only inside the
-        # 'summoner' pattern, so theirs never appeared.
-        if (self.summon_kind and self.ai_pattern != 'summoner'
-                and getattr(self, '_aware', False)
-                and self._summons_made < self.summon_max
-                and not self.has_effect('silenced')):
-            if self._is_named_foe():
-                # Tiamat and Asmodeus keep their own tuned timers.
-                self._summon_turn_counter += 1
-                if self._summon_turn_counter >= self.summon_cooldown:
-                    self._wants_summon = True
-                    self._summon_turn_counter = 0
-                    self._summons_made += 1
-            elif (self.__dict__.get('_tracking')
-                  and summoning.step(self, player, all_monsters, dungeon)):
-                # An ordinary lich or skeleton mage calls as a summoner does
-                # (src/summoning.py): it chants, then its dead come.
-                return False
+        # 'summoner' pattern, so theirs never appeared. (An ordinary lich
+        # calls below the mind gates.)
+        calls_too = bool(self.summon_kind and self.ai_pattern != 'summoner'
+                         and getattr(self, '_aware', False)
+                         and self._summons_made < self.summon_max)
+        if calls_too and self._is_named_foe() and not self.has_effect('silenced'):
+            # Tiamat and Asmodeus keep their own tuned timers.
+            self._summon_turn_counter += 1
+            if self._summon_turn_counter >= self.summon_cooldown:
+                self._wants_summon = True
+                self._summon_turn_counter = 0
+                self._summons_made += 1
 
         # One-way swap to enraged_pattern when HP drops below threshold.
         if (not self._enraged
@@ -2361,6 +2347,8 @@ class Monster:
         # war-band follower holds while his leader lives; a hyena that smells
         # a wounded hero never runs (all in morale.turn).
         morale.turn(self, player, all_monsters)
+        if caster_ai.chant_stopped(self):
+            self._let_go()                   # broken or frightened: nothing stays drawn up
 
         # --- Mind-affecting statuses: apply to EVERY AI pattern ---
         # These used to sit below the pattern dispatch, so ranged, healer,
@@ -2379,16 +2367,29 @@ class Monster:
             if self.quarrelsome and self._under('confused'):
                 # The Sown Men: confused, each blames the man beside him.
                 if self._strike_a_brother(all_monsters):
+                    self._let_go()
                     return False
             if self._under('confused') and random.random() < 0.40:
                 self._stumble_random(dungeon, all_monsters, extra_occupied, player)
+                self._let_go()
                 return False
             if self._under('blinded') and random.random() < 0.30:
                 self._stumble_random(dungeon, all_monsters, extra_occupied, player)
+                self._let_go()
                 return False
         elif self._under('charmed'):
             # Rooted, so it cannot wander off; charmed, it still holds its blow.
             return False
+
+        # An ordinary lich or skeleton mage calls as a summoner does
+        # (src/summoning.py): it chants, then its dead come. Only with its
+        # wits about it: never frightened, charmed, broken or with the hero
+        # in its coils.
+        if calls_too and not self._is_named_foe():
+            if not self.__dict__.get('_tracking'):
+                self.__dict__.pop('_chanting', None)     # lost him: the chant is let go
+            elif summoning.step(self, player, all_monsters, dungeon):
+                return False
 
         # --- The stalking coward (data 'stalker': Old Nickel) ---------------
         if self.ai_pattern == 'stalker_coward':
@@ -2422,6 +2423,13 @@ class Monster:
         if _lp is not None:
             return _lp
 
+        # Its pattern's turn; a blow of it beside the hero is its first
+        # blow's pounce, whatever the pattern (_first_blow).
+        return self._first_blow(
+            player, self._pattern_turn(player, dungeon, all_monsters, extra_occupied))
+
+    def _pattern_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """Its own way of fighting (take_turn, after every gate)."""
         # --- Phase-blink for the patterns that never reached it (G7): an
         # archer or a summoner that can blink steps out to a clear shot four
         # tiles off; a hit-and-run one (Lyssa) blinks in beside the hero.
@@ -2460,6 +2468,9 @@ class Monster:
             if (self.ai_pattern != 'hit_and_run' or self._hit_run_state == 'hunting'):
                 if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
                     return False
+                _op = self._opener_from_range(player, dungeon)
+                if _op is not None:
+                    return _op
 
         # --- Hit-and-run AI (Asterion): attack then vanish through walls ---
         if self.ai_pattern == 'hit_and_run':
@@ -2488,6 +2499,9 @@ class Monster:
             # coiled where it is.
             if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
                 return False
+            _op = self._opener_from_range(player, dungeon)
+            if _op is not None:
+                return _op
             return self._dragon_turn(player, dungeon, all_monsters, extra_occupied)
 
         # --- Ranged AI: shoot from distance, maintain range ---
@@ -2522,8 +2536,9 @@ class Monster:
             return False
         dist_to_player = abs(self.x - player.x) + abs(self.y - player.y)
         # Its opener from a distance (a gaze, a song, a first arrow), before
-        # it closes or the hero can strike.
-        if self.ai_pattern not in ('sessile', 'cowardly') and self._flee_timer <= 0:
+        # it closes or the hero can strike. A rooted thing's is from where
+        # it stands.
+        if self.ai_pattern != 'cowardly' and self._flee_timer <= 0:
             _op = self._opener_from_range(player, dungeon)
             if _op is not None:
                 return _op
@@ -2622,6 +2637,59 @@ class Monster:
 
         return False
 
+    def _let_go(self) -> None:
+        """It cannot keep up what it had drawn up: a summoner's chant, a spell
+        of its book, its opener's wind-up."""
+        d = self.__dict__
+        if d.get('_chanting'):
+            summoning.break_off(self)
+        if d.get('_casting'):
+            caster_ai.spoil(self, 'held')
+        if d.get('_winding'):
+            self._winding = False
+
+    def _pinned_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """Its turn in a pit, on a spear or held fast where it stands. One
+        stopped for gold goes on gathering; one wrapped round the hero
+        squeezes and does nothing else (holds.py; it drags him nowhere); one
+        that had begun a chant finishes it (pinned it can still speak), but
+        blinks nowhere; else it strikes what is beside it."""
+        if lore_powers.gathering(self):
+            return bool(lore_powers.turn(self, player, dungeon, all_monsters, extra_occupied))
+        d = self.__dict__
+        d.pop('_chosen_blow', None)          # a blow chosen and never struck is stale
+        d.pop('_squeeze_now', None)
+        got = holds.holder_turn(self, player, None, all_monsters, extra_occupied)
+        if got is not None:
+            return got
+        if caster_ai.chant_stopped(self):
+            self._let_go()
+        if d.get('_chanting') and summoning.step(self, player, all_monsters, dungeon):
+            return False
+        if d.get('_casting'):
+            spell = caster_ai.spell_by_id(self, d['_casting'])
+            if spell and spell.get('kind') == 'escape':
+                caster_ai.spoil(self, 'held')
+            else:
+                got = caster_ai.turn(self, player, dungeon, all_monsters, extra_occupied)
+                if got is not None:
+                    return got
+        return bool(self._adjacent_to(player))
+
+    def _first_blow(self, player, struck):
+        """"Its first blow is its opener": a pounce unused is armed for any
+        pattern's blow beside the hero (a mimic's as it springs, a rooted
+        thing's, an archer's hooves, a hit-and-run creature's), but not over
+        a blow its pack or its mind chose, nor for a coward or a runner."""
+        d = self.__dict__
+        op = d.get('opener')
+        if (not struck or not op or op['range'] != 1 or d.get('_opened') or d.get('_pack_blow')
+                or self.ai_pattern == 'cowardly' or self._flee_timer > 0
+                or not self._adjacent_to(player) or _gate_blocks(self, self._opener_attack)):
+            return struck
+        self._pounce_now()
+        return struck
+
     def _spots_player(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """The one detection check for a monster that hunts the hero: True
         when it knows where he is and goes after him this turn, False when it
@@ -2630,7 +2698,9 @@ class Monster:
         It used to be distance alone, 8 tiles through solid stone, and a
         monster that had noticed him once knew where he was for ever. Now it
         is sight, sound and the lore senses of data/senses.json, with a
-        search when the trail goes cold (src/senses.py)."""
+        search when the trail goes cold (src/senses.py). For the Blue Men,
+        noticing him is calling to him: the turn goes on the call
+        (lore_powers.calls)."""
         import senses as _senses
         seen = _senses.notice(self, player, dungeon, all_monsters, extra_occupied)
         seen = home_ground.leash(self, player, dungeon, all_monsters, extra_occupied, seen)  # AI-3
@@ -2638,11 +2708,14 @@ class Monster:
         # ready again (OPENER_RESET_TURNS).
         if seen:
             self._lost_turns = 0
+            if lore_powers.calls(self, player, dungeon, all_monsters):
+                self._lp_call = True         # the game says the verse
+                return False
         else:
             self._lost_turns = int(self.__dict__.get('_lost_turns', 0) or 0) + 1
+            self._winding = False            # lost him: to be drawn up again, with its tell
             if self._lost_turns >= OPENER_RESET_TURNS:
                 self._opened = False
-                self._winding = False
         return seen
 
     def _opener_from_range(self, player, dungeon):
@@ -2654,10 +2727,12 @@ class Monster:
         op = self.__dict__.get('opener')
         if not op or self.__dict__.get('_opened') or op['range'] < 2:
             return None
-        if _gate_blocks(self, self._opener_attack):
-            return None                      # unstrung or silenced (attack_gates.py)
+        if _gate_blocks(self, self._opener_attack) or caster_ai.chant_stopped(self):
+            self._winding = False
+            return None                      # unstrung or silenced (attack_gates.py), or its wits gone
         dist = max(abs(self.x - player.x), abs(self.y - player.y))
         if dist > op['range'] or not self._has_los(player.x, player.y, dungeon):
+            self._winding = False            # out of it: the hero's answer to the tell
             return None
         delivery = str(self._opener_attack.get('delivery', '') or '')
         if delivery in OPENER_WIND_UP and not self.__dict__.get('_winding'):
@@ -2773,7 +2848,9 @@ class Monster:
     def alert_nearby(self, all_monsters):
         """Wake up nearby allies. Default: same-kind within 5 tiles.
         alert_radius and alert_all_tag fields let warlord/horn-blower types alert
-        all same-tag allies in a wider radius."""
+        all same-tag allies in a wider radius. Silenced, it has no voice to call with."""
+        if self.has_effect('silenced'):
+            return
         radius = getattr(self, 'alert_radius', 5)
         use_tags = getattr(self, 'alert_all_tag', False)
         my_tags = set(getattr(self, 'tags', []))
@@ -3744,6 +3821,9 @@ class Monster:
         # Mending a friend needs no sight of the hero; going after him does.
         if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
             return False
+        _op = self._opener_from_range(player, dungeon)
+        if _op is not None:
+            return _op
 
         # No wounded ally to heal — behave as ranged if possible, else aggressive.
         # C09: "possible" means it HAS a distance attack; a healer whose two
@@ -3767,8 +3847,14 @@ class Monster:
         if not self._spots_player(player, dungeon, all_monsters, extra_occupied):
             self.__dict__.pop('_chanting', None)     # lost him: the chant is let go
             return False
-        if summoning.step(self, player, all_monsters, dungeon):
+        # Its timer runs as before; a turn it neither chants nor calls is free
+        # for its opener, and an opener drawn up is not broken off for a call.
+        if (not self.__dict__.get('_winding')
+                and summoning.step(self, player, all_monsters, dungeon)):
             return False                             # it chants, or its dead come
+        _op = self._opener_from_range(player, dungeon)
+        if _op is not None:
+            return _op
         # While not summoning, behave as ranged caster (or melee if no ranged)
         if len(self.attacks) > 1 and self._distance_attacks():
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)

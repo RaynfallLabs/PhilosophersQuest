@@ -457,7 +457,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_EAT_MENU` | `U` | `_eat_menu_input` | `_draw_eat_menu` |
 | `STATE_QUAFF_MENU` | `Q` | `_quaff_menu_input` | `_draw_quaff_menu` |
 | `STATE_THROW_MENU` | `T` | `_throw_menu_input` | `_draw_throw_menu` |
-| `STATE_SPELL_MENU` | `M` | `_spell_menu_input` | `_draw_spell_menu` |
+| `STATE_SPELL_MENU` | `M` | `_spell_menu_input` | `_draw_spell_menu` (a detail its row cuts is said whole in the note above the rows when selected) |
 | `STATE_POWER_MENU` | `V` | `_power_menu_input` | `_draw_power_menu` |
 | `STATE_MANIFEST_MENU` | `V`, Manifest (the Dreamspun Sketchbook) | `_manifest_input` | `_draw_manifest_menu` (both on `ManifestMixin`, `src/game_manifest.py`; §13b) |
 | `STATE_DROP_MENU` | `D` | `_drop_menu_input` | `_draw_drop_menu` |
@@ -472,9 +472,9 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_XYZZY_INPUT` / `_CONFIRM` | backquote | `_xyzzy_input` / `_xyzzy_confirm_input` | `_draw_xyzzy_input` / `_draw_xyzzy_confirm` |
 | `STATE_QUIRKS` | `W` | `_quirks_input` | `_draw_quirks_screen` |
 | `STATE_CHARACTER_SHEET` | `@` | `_character_sheet_input` | `_draw_character_sheet` → `_draw_character_pack_sheet` |
-| `STATE_NPC_ENCOUNTER` | NPC trigger | `_npc_encounter_input` | `_draw_npc_encounter` (the figure's map art beside the scene and result pages, `lore_art.plate`; choices keep the full width) |
+| `STATE_NPC_ENCOUNTER` | NPC trigger | `_npc_encounter_input` | `_draw_npc_encounter` (the figure's map art beside the scene and result pages, `lore_art.plate`; choices keep the full width; the scene and result shrink, then scroll on Up/Down, `_npc_draw_story`) |
 | `STATE_COW_ENCOUNTER` | cow spawn | `_cow_encounter_input` | `_draw_cow_encounter` |
-| `STATE_MOOBLE` | bump the Mooble (`mooble_encounter.py`) | `_mooble_input` | `_draw_mooble_encounter` (on `MoobleMixin`) |
+| `STATE_MOOBLE` | bump the Mooble (`mooble_encounter.py`) | `_mooble_input` | `_draw_mooble_encounter` (on `MoobleMixin`; his story and results shrink, then scroll on Up/Down, `_ui_set_piece_page`, as the Emberpup's and the Bococho's do) |
 | `STATE_MOOBLE_DANCE` | his Practise / Dance-off; his Dance of the Dark (Shift+P, S); the Stray Kids' dance-off (its card, practice, the eight rounds: owner `stray_kids`) | `_mooble_dance_key` (arrows, numpad; Space starts; Esc stops a practice only); the Stray Kids' keys `_sk_dance_key` (D: the dance-off; Esc: Not Yet) | `_draw_mooble_dance` (on `MoobleDanceMixin`; ticked each frame by `Game.update`) |
 | `STATE_JUDGMENT` | L99 altar | `_judgment_input` | `_draw_judgment` |
 | `STATE_STUDY` | `;` | `_study_input` | `_draw_study_journal` |
@@ -488,7 +488,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_PET_NAME_INPUT` | hatch | `_pet_name_input` | `_draw_pet_name_popup` |
 | `STATE_TARGET` | `A`/`F`/`O`/throw/wand/spell | `_target_input` | `_draw_targeting` / `_melee_targeting` / `_throw_targeting` / `_ranged_targeting` |
 | `STATE_QA_WARP_INPUT` | Titivillus `W` | `_qa_warp_input_handler` | `_draw_qa_warp_popup` |
-| `STATE_STORY_POPUP` | narrative | any-key | `_draw_story_popup` |
+| `STATE_STORY_POPUP` | narrative | any-key, but Up / Down scroll a page too long to fit (`_story_scroll_key`) | `_draw_story_popup` (shrink, then scroll: `_ui_story_page`) |
 | `STATE_CONFIRM_EXIT` | ESC on player | `_confirm_exit_input` | `_draw_confirm_exit` |
 | `STATE_EXIT_QUEST` | has Stone + stairs<1 | `_exit_quest_input` | `_draw_exit_quest` |
 | `STATE_ABANDON_QUEST` | no Stone + stairs<1 | `_abandon_quest_input` | `_draw_abandon_quest` |
@@ -510,7 +510,8 @@ state; column 4 is the `_draw_<state>` method.
 | `Shift+U` | an Unusual Soul Sphere in the pack, to throw for Dad and his song (QA only; `game_songs._qa_unusual_sphere`) | `handle_event` |
 | `Shift+N` | the math streak one right answer short of Math is Cool; once earned, its cooldown ready again (QA only; `game_songs._qa_math_is_cool`) | `handle_event` |
 | `Shift+K` | the Stray Kids idol beside the hero; again: the photo in the pack; on the Zombie Stage with the band standing: the dance-off at once (QA only) | `handle_event` |
-| `Shift+L` | Old Nickel (the Bloomleaf Cloak's wearer) set down near the hero; again, the cloak into the pack (QA only) | `handle_event` |
+| `Shift+L` | A light into the off hand, or away and the shield back on, one turn (`game_lights._swap_light`) | `handle_event` |
+| `Shift+Q` | Old Nickel (the Bloomleaf Cloak's wearer) set down near the hero; again, the cloak into the pack (QA only) | `handle_event` |
 | `Shift+D` | the Mooble in a cave beside this room and the hero beside him, a Starnut and a Starnut Tart in the pack; again, another tart and no wait before the next dance (QA only; `mooble_encounter._qa_mooble`) | `handle_event` |
 | `Shift+G` | Gilt Varro's racing camp set up in the hero's room (this floor becomes the camp's), with two Sunroots; again, her trust and two more Sunroots; once more, she joins at once, the race skipped, to try riding (QA only; `bococho_encounter._qa_bococho`) | `handle_event` |
 | `Shift+R` | ride the Bococho, or climb down (`game_riding._toggle_ride`; on the help screen's key map) | `handle_event` |
@@ -1137,7 +1138,9 @@ Three pages, Tab (or Right) to the next, Left back:
    listing must map to a real dispatch in `game_input.py`;
    `tests/test_help_screen_r3.py` derives the map's keys from
    `_player_input` and `handle_event` and fails when one is missing (the
-   secret terminal on `` ` `` and the QA keys stay off it).
+   secret terminal on `` ` `` and the QA keys stay off it). No row is
+   dropped: a small window closes the rows up, and one too small for the
+   map lists them to scroll (`_draw_help_command_list`).
 2. **How Quizzes Work** — `data/ui/how_quizzes_work.json`: every action's
    subject, the chain, the clock, the card, missed questions, Recall Lore
    (a random hint, never about a creature; studying a corpse or the Wand

@@ -274,10 +274,8 @@ HINTS = {
     # Preta's freely given meal and the Ponaturi's morning wait for a swap.
     # The Amazon conch and the Visayas drums were cut: they told of noise
     # against a swallower, which is not built.
-    '3': ["Herodotus says the gold-diggers of India let a camel go now and then as the ants gained on "
-          "them. Gold slows a greedy pursuer as well as a camel does."],
-    '4': ["The Serbian smith who blinded Likho escaped under a sheepskin. Ill luck that cannot see "
-          "you cannot follow you."],
+    '3': ["Herodotus says that the gold-diggers of India let a camel go now and then as the ants gained on them, and gold will slow a greedy pursuer as well as a camel does."],
+    '4': ["The Serbian smith who blinded Likho escaped beneath a sheepskin, for ill luck that cannot see you cannot follow you."],
 }
 
 

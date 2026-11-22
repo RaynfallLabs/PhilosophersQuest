@@ -25,6 +25,7 @@ from __future__ import annotations
 from naming import quantity
 import random
 
+import grave_rot
 from game_states import (
     STATE_PLAYER, STATE_QUIZ,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT,
@@ -111,14 +112,11 @@ class EncountersMixin:
                 dungeon._disturbed_rooms = set()
             dungeon._disturbed_rooms.add(tuple(room.center))
             if rtype == 'zoo':
-                self._chron('notice', "Something asleep on the gold opened its eyes while I was "
-                            "helping myself. I should have taken less.", once='stirred:zoo')
+                self._chron('notice', "Helped myself to gold and woke what slept on it. Take less.", once='stirred:zoo')
             elif rtype == 'graveyard':
-                self._chron('notice', "Walked too loudly between the graves. Something in them "
-                            "stopped sleeping.", once='stirred:graveyard')
+                self._chron('notice', "Walked too loudly among the graves and woke what lay there.", once='stirred:graveyard')
             else:
-                self._chron('notice', "One of the sleeping soldiers woke while I crept past "
-                            "the bunks.", once='stirred:barracks')
+                self._chron('notice', "Woke a sleeping soldier while creeping past the bunks.", once='stirred:barracks')
         elif kind == 'take' and rtype == 'zoo':
             self._burglar_check(room)
 
@@ -238,7 +236,7 @@ class EncountersMixin:
         )
         self.add_message("MOO MOO MOO MOO MOO!", 'danger')
         self._seeker_event('cow_level')
-        self._chron('milestone', "I poked a cow one time too many and the floor opened. Now I am in some kind of cow dimension. None of my books covered this.",
+        self._chron('milestone', "Poked a cow once too often. Fell into some kind of cow dimension.",
                     once='cow_level')
         self._cow_return_level = self.dungeon_level
         # Remove the cow from the current level
@@ -282,7 +280,7 @@ class EncountersMixin:
     def _exit_cow_level(self):
         """Return from Moo Moo Farm to the level where the cow was."""
         self._cow_level_done = True
-        self.add_message("You step through the portal. The pasture fades behind you.", 'info')
+        self.add_message("You step through the portal, and the pasture fades behind you.", 'info')
         self.add_message("The cow is gone. The portal closes. Moo.", 'info')
         try:
             self._change_level(self._cow_return_level, enter_from_top=False, via='cow')
@@ -474,7 +472,7 @@ class EncountersMixin:
         if line:
             self.add_message(line, 'info')
         try:
-            self._chron('discovery', f"Came down into {dom['name']}.")
+            self._chron('discovery', f"Down into {dom['name']}.")
         except Exception:
             pass
 
@@ -550,10 +548,10 @@ class EncountersMixin:
     _UNICORN_LINES = {
         'first_seen': "A beautiful white unicorn stands nearby. She watches you warily.",
         'seen_again': "The unicorn has seen you again. She watches you warily.",
-        'watching': "The unicorn has not run. She is watching you, ears forward.",
+        'watching': "The unicorn has not fled, but stands watching you with her ears forward.",
         'lost': "The unicorn loses sight of you, and her wariness comes back.",
-        'relaxing': "The unicorn seems to relax slightly. She sniffs the air...",
-        'eating': "The unicorn's ears perk up! She approaches the Magic Dungeon Carrot and begins to eat.",
+        'relaxing': "The unicorn seems to lose a little of her fear, and she sniffs the air.",
+        'eating': "The unicorn pricks up her ears, draws near the Magic Dungeon Carrot and begins to eat.",
         'trusting': "The unicorn finishes the carrot and looks at you with gentle eyes. You may approach her now.",
         'too_soon_wary': "The unicorn startles and leaps away from you! Too soon: she does not know you yet.",
         'too_soon_relaxing': ("The unicorn shies from your hand and watches you nervously, wary again. "
@@ -593,16 +591,14 @@ class EncountersMixin:
             karma = getattr(self, 'karma', 0)
             if karma < 0:
                 self.add_message(
-                    "The unicorn gazes into your eyes... and recoils. She senses "
-                    "darkness in your heart and gallops away!", 'danger')
+                    "The unicorn gazes into your eyes and recoils. She gallops away, for she senses darkness in your heart!", 'danger')
                 unicorn._unicorn_state = 'fled'
                 unicorn.alive = False
                 return True
 
             # Start the AI escalator quiz
             self.add_message(
-                "The unicorn lowers her head and nuzzles your hand. "
-                "A warm light envelops you both...", 'success')
+                "The unicorn lowers her head and nuzzles your hand, and a warm light enfolds you both.", 'success')
             self._start_unicorn_quiz(unicorn)
             return True
 
@@ -748,7 +744,7 @@ class EncountersMixin:
 
         # Chain 1+: Regenerating status
         self.player.add_effect('regenerating', 30)
-        self.add_message("The unicorn's horn glows — warm healing energy fills you! (Regenerating, 30 turns)", 'success')
+        self.add_message("The unicorn's horn glows, and a warm healing fills you! (Regenerating, 30 turns)", 'success')
 
         if chain >= 2:
             # Full HP/SP/MP restore
@@ -774,7 +770,7 @@ class EncountersMixin:
             if uncursed:
                 self.add_message(f"Holy light purifies your belongings — {uncursed} item{'s' if uncursed != 1 else ''} uncursed!", 'success')
             else:
-                self.add_message("Holy light sweeps through your belongings — all is pure.", 'success')
+                self.add_message("Holy light sweeps through your belongings and finds all of them pure.", 'success')
 
         if chain >= 4:
             # Permanent bonus: magic resistance
@@ -792,19 +788,18 @@ class EncountersMixin:
             self._seeker_event('unicorn_joined')
             unicorn.alive = False  # remove the NPC monster
             self.add_message(
-                "The unicorn bows her head to you. A bond forms between your souls — "
-                "the Ethereal Unicorn joins you as a companion!", 'success')
+                "The unicorn bows her head to you, a bond is forged between your souls, and the Ethereal Unicorn joins you as a companion!", 'success')
             self.add_message(
                 "She will heal you, cleanse afflictions, and sense hidden traps.",
                 'info')
-            self._chron('notice', "She stayed. The unicorn bowed her head and something passed between us. I can feel her at the edge of my thoughts now.")
+            self._chron('notice', "She stayed. I can feel the unicorn in my thoughts now.")
             return
 
         # If chain < 5, unicorn departs after granting boons
         unicorn.alive = False
         unicorn._unicorn_state = 'fled'
         self.add_message("The unicorn dips her head in farewell and vanishes in a shimmer of light.", 'info')
-        self._chron('notice', "The unicorn touched her horn to my hand and warmth flooded through me. Then she was gone like morning fog. I feel different.")
+        self._chron('notice', "The unicorn touched my hand with her horn and left. I am changed.")
 
     # ------------------------------------------------------------------
     # NPC encounter open / resolve / close
@@ -961,6 +956,7 @@ class EncountersMixin:
         self._npc_encounter_active = enc
         self._npc_encounter_monster = monster
         self._npc_encounter_phase = 'text'
+        self._npc_text_scroll = 0
         self._npc_selected_option = None
         self._npc_selected_index = None
         self._npc_outcome_text = ''
@@ -1132,10 +1128,13 @@ class EncountersMixin:
         the quiz ends (an exit mid-quiz settles it as a fail)."""
         from encounter_schema import is_quiz
         enc = getattr(self, '_npc_encounter_active', None) or {}
+        # What was on the page, read before the cost changes what would be.
+        offered = [i for i, _o in self._npc_visible_options()]
         self._npc_pay_cost(opt.get('cost'), selected_item, chosen=True)
         self._npc_mark_spent()
         import chronicle
-        chronicle.record_choice(self._deeds_reg(), enc, getattr(self, '_npc_selected_index', None))
+        chronicle.record_choice(self._deeds_reg(), enc, getattr(self, '_npc_selected_index', None),
+                                offered)
         if opt.get('naive'):
             # Blind help (decision 9): never negative karma, but it is what
             # 'discerning' looks for (ENG-09).
@@ -1350,6 +1349,7 @@ class EncountersMixin:
                                     and not th.get('closed_line') else None)
         self._npc_after = o.get('then', 'close')
         self._npc_encounter_phase = 'outcome'
+        self._npc_text_scroll = 0
         if self._npc_after == 'options' and enc.get('tag'):
             # A step of a 'then: options' encounter (ENG-03, SAV-03): the
             # option is used up now (a reload never offers it twice), and
@@ -1586,7 +1586,7 @@ class EncountersMixin:
         list spawned.
 
         ``spec`` is a monster id, ``{monster_id, count}``, or a list of
-        those (two ogres; Neferkaptah and six mummies). Each lands on the
+        those (two trolls; Neferkaptah and six mummies). Each lands on the
         nearest free tile the hero can walk to by four-way steps (the
         reachability rule every encounter spawn follows, DEEDS 6.4), never
         on the hero, a monster, a pet or an escort."""
@@ -1984,8 +1984,8 @@ class EncountersMixin:
             self.add_message(f"{eff_name} for {quantity(dur, 'turn')}!", 'success')
 
         elif rtype == 'hp_restore':
-            self.player.restore_hp(reward['amount'])
-            self.add_message(f"+{reward['amount']} HP!", 'success')
+            got = self.player.restore_hp(reward['amount'])
+            self.add_message(grave_rot.told(self.player, got, "+{n} HP!"), 'success')
 
         elif rtype == 'sp_restore':
             self.player.sp = min(self.player.max_sp, self.player.sp + reward['amount'])
@@ -1998,8 +1998,8 @@ class EncountersMixin:
         # A share of the player's own maximum (LORE NOT FLOOR).
         elif rtype == 'hp_restore_pct':
             amt = max(1, int(self.player.max_hp * reward['amount'] / 100))
-            self.player.restore_hp(amt)
-            self.add_message(f"+{amt} HP!", 'success')
+            got = self.player.restore_hp(amt)
+            self.add_message(grave_rot.told(self.player, got, "+{n} HP!"), 'success')
 
         elif rtype == 'sp_restore_pct':
             amt = max(1, int(self.player.max_sp * reward['amount'] / 100))
@@ -2417,7 +2417,7 @@ class EncountersMixin:
                     from items import grant_identified
                     grant_identified(self, sw)
                     self._give_item(sw)
-                    self.add_message("The Sword of Michael materializes in your hands!", 'success')
+                    self.add_message("The Sword of Michael takes shape in your hands!", 'success')
             except Exception:
                 from game_log import log_error
                 log_error('game_encounters._resolve_judgment: recovered from an error')
@@ -2433,7 +2433,7 @@ class EncountersMixin:
             except Exception:
                 from game_log import log_error
                 log_error('game_encounters._resolve_judgment: recovered from an error')
-            self._chron('soul', "Stood before the altar of judgment. The scales weighed my soul. I was found worthy. A sword of white fire and the scales themselves were given to me. I've never felt so terrified.")
+            self._chron('soul', "Judged worthy. Given the sword of white fire and the Scales.")
 
         elif outcome == 'scales_granted':
             from items import load_items, copy_at
@@ -2450,20 +2450,20 @@ class EncountersMixin:
             except Exception:
                 from game_log import log_error
                 log_error('game_encounters._resolve_judgment: recovered from an error')
-            self._chron('soul', "The altar weighed my deeds. Not perfect, but enough. The Scales of Michael settled into my hands. They hum with a quiet judgment.")
+            self._chron('soul', "Judged imperfect, but enough. Given the Scales of Michael.")
 
         elif outcome == 'abaddon_empowered':
             # Abaddon gets 50% more HP and extra attack
             self.add_message("A dark power surges into the depths below...", 'danger')
             # Store flag for when L100 is generated
             self._abaddon_empowered = True
-            self._chron('soul', "The altar judged me. I was found wanting. Something below grew stronger. I can feel it.")
+            self._chron('soul', "Judged and found wanting. Something below has grown stronger.")
 
         elif outcome == 'locusts_strengthened':
             # Larger locust swarms
             self.add_message("The buzzing of locusts grows louder in the deep...", 'danger')
             self._locusts_strengthened = True
-            self._chron('soul', "The judgment went poorly. The buzzing from below is louder now. I made things worse.")
+            self._chron('soul', "Judged poorly. The buzzing from below is louder for it.")
 
         # Whatever the verdict, the Judgment names how the Destroyer is
         # wounded and opens his page (winning-build plan 3.1).

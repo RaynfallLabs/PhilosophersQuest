@@ -41,7 +41,7 @@
       "monster": "Fire roars up out of the vent under {the}!",
       "seen": "Fire roars up out of a vent.",
       "warn": "A vent glows white-hot.",
-      "arrival": "Somewhere a vent breathes fire, slow and regular, like a sleeper."
+      "arrival": "Somewhere a vent breathes fire, as slow and regular as a sleeper's breath."
     },
     "thin_ice": {
       "trigger": "step",
@@ -58,7 +58,7 @@
       "after": "",
       "hero": "The ice cracks under you and you go through into black water! You haul yourself out, frozen.",
       "monster": "The ice breaks under {the}!",
-      "arrival": "Ice creaks underfoot. Not all of it is thick."
+      "arrival": "Ice creaks underfoot, and not all of it is thick."
     },
     "icicle_shadow": {
       "trigger": "step",

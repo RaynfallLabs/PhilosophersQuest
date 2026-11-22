@@ -15,7 +15,7 @@
   "damage_mult": 1.4,
   "weight_mult": 1.6,
   "max_enchant": 1,
-  "enchant_note": "So dense and dead that magic cannot get into it.",
+  "enchant_note": "Tungsten is so dense and dead that magic cannot get into it.",
   "color": [
     110,
     110,
@@ -43,6 +43,6 @@
   ],
   "lore_descriptor": "gray and so heavy that it drags at the limb that bears it",
   "unidentified_descriptor": "an unreasonably heavy weapon",
-  "first_pickup_chronicle": "Tungsten armor. So dense it fought me until I gave up. Spells slide off it like rain. So does my dignity, every time I try to stand.",
+  "first_pickup_chronicle": "Tungsten armor, very dense. Spells slide off. Can barely stand in it.",
   "design_notes": "Fills pf 48 gap. Heavy-family bonus (damage_mult 1.4, weight 1.6×). Magic-resistant (max_enchant 1) — warrior favorite, anti-mage."
 }

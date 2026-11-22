@@ -45,7 +45,7 @@ LORE = json.loads(r'''{
  "confusion_of_tongues_spell": "Genesis says the whole earth once had one language, and the builders of Babel meant to raise a tower to heaven. God came down and confused their speech, so that no one understood his neighbour, and the work stopped and the builders scattered. Spoken over a band of foes, it does the same: each one hears his fellows babble and fights alone.",
  "darkness_of_egypt_spell": "Exodus says that Moses stretched his hand toward the sky and a darkness fell on Egypt so thick it could be felt. For three days no one saw another or rose from his place, yet in the houses of Israel there was light. The spell lets that darkness fall on every foe in sight and leaves the caster's own eyes clear.",
  "deliver_us_from_evil_prayer": "The prayer Jesus taught his disciples ends with a plea: lead us not into temptation, but deliver us from evil. Monks and soldiers said it at every hour, and in the old stories the damned and the walking dead could not abide it. Heaven answers the faithful with a ring the evil dead and the fiends cannot cross to lay hands on them.",
- "family_ward_daniel_scroll": "King Darius was tricked into throwing his friend Daniel to the lions for praying to his God. At dawn the king ran to the den and Daniel answered him: an angel had shut the lions' mouths, and they had not touched him all night. Read aloud, these words close the jaws and sheathe the claws of every beast that hears them.",
+ "family_ward_daniel_scroll": "King Darius was tricked into throwing his friend Daniel to the lions for praying to his God. At dawn the king ran to the den and Daniel answered him: an angel had shut the lions' mouths, and they had not touched him all night. Read aloud, these words close the jaws and sheathe the claws of the great beasts, until you lift your hand against them.",
  "family_ward_psylli_scroll": "Pliny wrote of the Psylli of Libya, whose bodies carried a poison deadly to snakes; they tested their babies by laying them among serpents. Lucan says Cato's army crossed the desert with Psylli at its side, sucking the venom out of bitten soldiers. The scroll is their old charm, and while it holds a serpent's bite is only a bite.",
  "family_ward_hoichi_scroll": "Hoichi was a blind lute-player who sang the Tale of the Heike so well that the drowned Heike ghosts called him to their graves night after night. To save him, his priest wrote the Heart Sutra over every inch of his body, so the ghost-samurai could not see him, but in his haste forgot the ears. Read over yourself, the sutra hides you from every ghost, and like the priest's, it has one weak place.",
  "nepenthe_potion": "At Menelaus's table, the talk of lost Odysseus made every man weep, so Helen slipped a drug into the wine that she had been given in Egypt by Polydamna, wife of Thon. Homer says that whoever drank it shed no tear that day, though he saw his own brother cut down before him. In the dungeon it does the same for fear.",
@@ -219,8 +219,7 @@ SCROLLS = {
     'scroll_of_the_heart_sutra': dict(
         name='scroll of the Heart Sutra', tier=3, unid='rice-paper scroll', color=[235, 235, 225],
         lore='family_ward_hoichi_scroll', effect='family_ward', ward='ward_hoichi', turns=20,
-        read_line=("You read the sutra over yourself, every inch of skin. The ghosts cannot see "
-                   "you, but strike one and they will all find you")),
+        read_line=("You read the sutra over every inch of your skin. The ghosts cannot see you, but strike one and they will all find you")),
     'scroll_of_saint_martha': dict(
         name="scroll of Saint Martha's Hymn", tier=4, unid='blue-corded vellum', color=[200, 220, 240],
         lore='family_ward_martha_scroll', effect='family_ward', ward='ward_martha', turns=25,
@@ -312,7 +311,7 @@ POTIONS = {
     'water_of_the_styx': dict(name='Water of the Styx', unid='black glass vial', color=[40, 40, 60],
         tier=5, min_level=70, effect='styx_dipped', duration=6, bands={'81-100': 2},
         lore='water_of_the_styx_potion', rare=True,
-        drink_line='for 6 turns no blow, bite or claw can wound you, but an unseen blow finds the heel'),
+        drink_line='for 6 turns physical blows, bites and claws cannot wound you; fire, venom and magic still can, and an unseen blow finds the heel'),
 }
 
 
@@ -399,24 +398,22 @@ VINE_HAZARD = {
 }
 VINE_FIXTURE = {
     'name': 'grapevine and ivy', 'layer': 'floor',
-    'look': ("Grapevine and ivy, grown up out of the stone in a moment and still moving. "
-             "Whatever walks through them is held. They will not last."),
+    'look': ("Grapevine and ivy have grown up out of the stone in a moment and are moving still. Whatever walks through them is held, but they will not last."),
 }
 THERIAC_RECIPE = {
     'name': 'Theriac of Andromachus', 'ingredients': ['cobra_prime', 'swamp_moss', 'cave_mushroom'],
     'benefit': 'carry',
-    'flavor': ("Andromachus's antidote: viper flesh, cave herbs and moss pounded together and "
-               "bound, as Nero's physician bound his, to drive venom out."),
+    'flavor': ("Andromachus's antidote, made as Nero's physician made it: viper flesh, cave herbs and moss pounded and bound together to drive venom out."),
     'makes': 'potion:theriac', 'art': 'dish_stew_t1_special',
 }
 HINTS = {
     '2': ["An archer you can see cannot hurt you while the Galdr of the Stayed Spear holds.",
-          "A silenced foe cannot wail, sing, summon or heal. Seal the healer's mouth first."],
+          "Seal the healer's mouth first, for a silenced foe cannot wail, sing, summon or heal."],
     '3': ["A scroll of greater protection turns every arrow aside, seen or unseen.",
           "Confusion of Tongues breaks a war band or a pack into creatures that fight alone."],
     '4': ["Zap an archer or a slinger with the Wand of Unstringing and it has to come to you.",
           "Water of Epidaurus gives back every stat point a drain or a disease took."],
-    '5': ["The Water of the Styx turns every blow, bite and claw, but an unseen blow finds the heel.",
+    '5': ["The Water of the Styx turns blows, bites and claws but not fire, venom or magic, and an unseen blow finds the heel.",
           "Demons cannot strike you up close while the Udug Hul holds, until you strike one."],
 }
 

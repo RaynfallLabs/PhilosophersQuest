@@ -315,8 +315,7 @@ class EscortMixin:
             # says it was the floor's fault.
             deeds.note(self, f'flag.escort_trapdoor.{slug}', source=esc.source)
             default = (esc.spec or {}).get('on_fail_trapdoor') or (
-                f"The floor gave way and dropped me a level, and {esc.name} was left "
-                "above. That was the floor's doing, not mine. It does not feel that way.")
+                f"Lost {esc.name} when the floor gave way. The floor's doing, not mine.")
         elif why == 'left_behind':
             self.add_message(f"You have left {esc.name} behind.", 'danger')
         else:

@@ -3114,13 +3114,13 @@ def make_tablet_of_second_death(x: int, y: int) -> Item:
         'weight': 3.0,
         'item_class': 'artifact',
         'min_level': 80,
-        'lore': "An ancient stone tablet, cold to the touch. A circular slot in its center is shaped to hold something luminous. Along the bottom edge, faint words are carved in a dead language. You can make out: 'The key to the Abyss. Place upon the threshold where the veil is thin.'",
+        'lore': "This ancient stone tablet is cold to the touch, and in its center is cut a round slot shaped to hold some luminous thing. Along the lower edge faint words in a dead tongue can still be read: 'The key to the Abyss. Place upon the threshold where the veil is thin.'",
     })
     item.x = x
     item.y = y
     item.unidentified_name = 'plain tablet'
     item.identified = False
-    item.examine_text = "A plain tablet with a slot that looks like a small stone will fit."
+    item.examine_text = "A plain tablet, with a slot that looks as if a small stone would fit it."
     return item
 
 
@@ -3141,7 +3141,7 @@ def make_scroll_lake_of_fire(x: int, y: int) -> Scroll:
         'unidentified_name': 'worn scroll',
         'identified': False,
         'single_copy': True,
-        'lore': "A scroll of terrible power, its words drawn from the final chapter of Revelation. The ink smells of ash and brimstone. The last line is underlined twice: 'This is the second death, the lake of fire.'",
+        'lore': "The words of this terrible scroll were drawn from the judgment at the end of Revelation, and its ink smells of ash and brimstone. The last line is underlined twice: 'This is the second death, the lake of fire.'",
     })
     item.x = x
     item.y = y
@@ -3168,7 +3168,7 @@ def make_philosophers_wrench(x: int, y: int) -> Wand:
         'power': '',
         'unidentified_name': 'odd tool',
         'identified': False,
-        'lore': "A tool of impossible craftsmanship. It does not tighten or loosen — it joins. Place it between two objects that were meant to become one, and the Wrench will fuse them. The alchemists who forged it understood that the greatest creation is not building something new, but completing something unfinished.",
+        'lore': "The alchemists forged this tool with impossible craft, for they held it a greater work to complete what was left unfinished than to build anew. It neither tightens nor loosens, but joins, and when it is laid between two objects that were meant to become one, the Wrench will fuse them together.",
     })
     item.x = x
     item.y = y
@@ -3185,13 +3185,13 @@ def make_complete_tablet(x: int, y: int) -> Item:
         'weight': 4.0,
         'item_class': 'artifact',
         'min_level': 1,
-        'lore': "The Philosopher's Stone sits perfectly in the tablet's slot. The cold stone is warm now, pulsing with deep golden light. The inscription along the bottom burns bright: 'The key to the Abyss.' It wants to be placed upon a threshold.",
+        'lore': "The Philosopher's Stone rests perfectly in the tablet's slot, and the cold stone has grown warm and beats with a deep golden light. The inscription along the lower edge burns bright: 'The key to the Abyss.' The tablet longs to be laid upon a threshold.",
     })
     item.x = x
     item.y = y
     make_fully_known(item)
     item.examine_text = (
-        "The Philosopher's Stone sits perfectly in the slot, glowing with deep energy."
+        "The Philosopher's Stone sits perfectly in the slot and glows with a deep light."
     )
     return item
 

@@ -45,9 +45,9 @@ def turn(m, player, dungeon, monsters, extra_occupied=None):
     got = skittish.turn(m, player, dungeon, monsters, extra_occupied)
     if got is not None:
         return got
-    if int(getattr(m, '_flee_timer', 0) or 0) > 0:
-        return None                       # a broken creature follows its morale
     import caster_ai
+    if caster_ai.broken(m):
+        return None                       # a broken creature follows its morale
     return caster_ai.turn(m, player, dungeon, monsters, extra_occupied)
 
 

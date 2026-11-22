@@ -123,8 +123,11 @@ class TraderMixin:
                 continue
             plan['orders'].remove(o)
             paid = int(o.get('paid', 0) or 0)
-            line = (traders.kind_def(o.get('kind', '')).get('lines') or {}).get(
-                'order_refund', "No stall of mine below. Have your coin back.")
+            host = traders.kind_def(o.get('kind', ''))
+            fr = host.get('friend') or {}
+            said = (traders.friend_lines(fr) if fr and o.get('person') == fr.get('name')
+                    else host.get('lines') or {})
+            line = said.get('order_refund', "No stall of mine below. Have your coin back.")
             self.add_message(f'{o.get("person", "The smith")}: "{line}" ({paid:,} gold back.)', 'info')
             if paid:
                 self._gain_gold(paid, paid=True, who=o.get('person'))
@@ -849,8 +852,7 @@ class TraderMixin:
         except (KeyError, IndexError, ValueError):
             pass
         self.add_message(f'{m.person}: "{line}" ({price:,} gold, paid.)', 'success')
-        self._chron('deed', f"Ordered a piece of smith's work from {m.person}, to be "
-                            f"collected at {m.pronouns()[2]} next stall, further down.")
+        self._chron('deed', f"Ordered smith's work from {m.person}. Collect at {m.pronouns()[2]} next stall below.")
 
     @staticmethod
     def _order_due(o: dict, level: int) -> bool:

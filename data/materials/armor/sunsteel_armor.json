@@ -31,7 +31,7 @@
     "lightning": "conducts lightning"
   },
   "metal": true,
-  "protection_note": "Steel that keeps the sun's warmth (the plan's volcanic iron): fire is at home in it, frost is not.",
+  "protection_note": "Sunsteel keeps the sun's warmth, so that fire is at home in it and frost is not.",
   "protection_price": "It turns brittle in the cold, and it conducts lightning.",
   "vulnerabilities": [],
   "effective_against": [
@@ -45,6 +45,6 @@
   ],
   "lore_descriptor": "golden and gives off a low, steady warmth",
   "unidentified_descriptor": "warm golden",
-  "first_pickup_chronicle": "Sunsteel, forged at high noon under a cloudless sky. The dead recoiled when I walked past. First time in my life I have been the scary one.",
+  "first_pickup_chronicle": "Found sunsteel armor, forged at noon. The dead recoil from me in it.",
   "design_notes": "Holy-aspect magical_metal. Anti-undead."
 }

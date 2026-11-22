@@ -247,7 +247,10 @@ conditions in `data/traders.json`. No karma: it is the market, not God.
   saved at the granary) as the armourer, Helena Marsh as the bookseller,
   Frida (reconciled with her brother at the dead smith's chest) as the dwarf
   smith, and the Sibyl of Cumae (paid her price) as the deep bookseller:
-  their own art, their own line, a friend's price (-20%). Once a run each,
+  their own art, lore and lines, a friend's price (-20%). What a friend has
+  no line of his own for is said in the plain `friend_lines` of the data,
+  never in his host's words (`traders.friend_lines`; a save from before
+  3.6.0 picks them up as it loads). Once a run each,
   and only on the friend's own `floors` (Quill and Marta 2-20, Pell 10-40,
   Helena 15-40, Frida 41-75, the Sibyl 41-90), so nobody comes back deeper
   than he could go. The gate camps, Vesper and Ortolan have no friend.

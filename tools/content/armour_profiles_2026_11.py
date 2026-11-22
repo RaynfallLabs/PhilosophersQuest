@@ -123,7 +123,7 @@ MATS = {
     'rawhide': dict(p={'fire': 1.25}, w=_FIRE,
                     note="Untanned hide dried hard: what you can get on the first floors.", price=_SCORCH),
     'cured_leather_armor': dict(p={'fire': 1.25}, w=_FIRE,
-                                note="Smoke-cured leather, lighter than plain.", price=_SCORCH),
+                                note="Cured leather, lighter than plain.", price=_SCORCH),
     'boiled_leather_armor': dict(p={'slash': 0.9, 'fire': 1.25},
                                  w={'slash': 'boiled hard against an edge', **_FIRE},
                                  note="Cuir bouilli: leather boiled in wax and shaped hard, so an edge skids on it.",
@@ -159,7 +159,7 @@ MATS = {
                            price="It conducts lightning, and it rusts."),
     'cobalt_steel': dict(p={'cold': 0.75, 'fire': 1.15, 'lightning': 1.25},
                          w={'cold': 'keeps out the cold', 'fire': 'softens in fire', **_SPARK}, metal=True,
-                         note="Frost-blue steel forged cold and staying cold: frost cannot bite through it (the plan's frost iron).",
+                         note="This frost-blue steel was forged cold and stays cold, so that frost cannot bite through it.",
                          price="It softens in fire, conducts lightning, and rusts."),
     'hematite': dict(p={'drain': 0.8, 'necrotic': 0.85, 'blunt': 1.1},
                      w={'drain': 'holds the life in', 'necrotic': 'holds the life in',
@@ -207,7 +207,7 @@ MATS = {
                              price="Holy light burns through it, it conducts lightning, and it can never be blessed."),
     'soulsteel': dict(p={'drain': 0.75, 'necrotic': 0.75, 'lightning': 1.25},
                       w={'drain': 'holds the soul in', 'necrotic': 'holds the soul in', **_SPARK}, metal=True,
-                      note="Spirit-forged steel, the plan's silver mail: what would drink your life finds a soul already bound in the metal.",
+                      note="Soulsteel is forged with a spirit in it, and what would drink your life finds a soul already bound in the metal.",
                       price="It conducts lightning."),
     'starmetal_armor': dict(p={'magic': 0.85, 'shadow': 0.85, 'lightning': 1.25},
                             w={'magic': 'turns a spell', 'shadow': 'glows against the dark', **_SPARK},
@@ -217,7 +217,7 @@ MATS = {
     'sunsteel_armor': dict(p={'fire': 0.75, 'cold': 1.15, 'lightning': 1.25},
                            w={'fire': 'sheds flame', 'cold': 'turns brittle in the cold', **_SPARK},
                            metal=True,
-                           note="Steel that keeps the sun's warmth (the plan's volcanic iron): fire is at home in it, frost is not.",
+                           note="Sunsteel keeps the sun's warmth, so that fire is at home in it and frost is not.",
                            price="It turns brittle in the cold, and it conducts lightning."),
     'titanforged_armor': dict(p={'blunt': 0.8, 'lightning': 1.25},
                               w={'blunt': "takes a giant's blow", **_SPARK}, metal=True,
@@ -231,7 +231,7 @@ MATS = {
                                    w={'magic': 'older than magic', 'slash': 'stone turns an edge',
                                       'pierce': 'stone turns a point'},
                                    metal=False,
-                                   note="Stone from before the world was made: magic is younger than it.",
+                                   note="Stone from before the world was made is older than magic, and heeds it little.",
                                    price="It weighs twice as much as steel."),
     # --- dragon
     'dragonscale': dict(p={'fire': 0.5, 'cold': 1.15},
@@ -249,6 +249,7 @@ MATS = {
 for _wid in ('ash', 'oak', 'yew', 'dragonwood', 'ironwood', 'petrified_wood', 'silverbark',
              'leviathan_rib_armor', 'treant_heart_armor', 'worldtree'):
     MATS[_wid] = dict(p={}, w={}, metal=False, note=None, price=None)
+MATS['leviathan_rib_armor']['price'] = "It is heavy to bear."     # bone, not wood
 # Their old `resistances` lists were read only by the wear rule: a wood that
 # would not burn keeps that as a special property (status_effects reads
 # `fire_resistant`), so no shield scorches that did not before. Ironwood and

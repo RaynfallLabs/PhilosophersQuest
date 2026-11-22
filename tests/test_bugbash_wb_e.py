@@ -1045,7 +1045,7 @@ def test_journey_06_the_altar(make_game):
 
 
 def test_journey_07_the_emberpup(make_game):
-    """Old Nickel (QA Shift+L) watched, warned, fought, his cloak taken;
+    """Old Nickel (QA Shift+Q) watched, warned, fought, his cloak taken;
     the pup fed, too soon, fed twice more, another cloak tried, the
     Bloomleaf Cloak given, "I choose you!", named, evolved; saved and
     loaded on the way."""
@@ -1063,7 +1063,7 @@ def test_journey_07_the_emberpup(make_game):
     _oak.id_level, _oak.buc_known = 5, True
     p.known_item_ids.add(_oak.id)
     p.inventory.append(_oak)
-    h.shift('L')
+    h.shift('Q')
     nickel = next(m for m in g.monsters if E.is_wearer(m))
     # Rests: the false friend creeps up still smiling, and drops the act as
     # he reaches the hero (2026-11-17). (A hasted hero's turn is half a round.)

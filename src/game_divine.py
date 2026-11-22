@@ -38,10 +38,12 @@ through MRO.
 from __future__ import annotations
 
 from naming import quantity
+from status_effects import turns_now
 import copy
 import random
 
 import altar
+import grave_rot
 import sound_system as _snd
 from dungeon import FLOOR, DOOR, ALTAR
 from game_states import (
@@ -190,6 +192,7 @@ class DivineMixin:
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
         self._target_candidates = candidates
+        candidates = self._target_candidates     # what the list really offers: the cursor opens there
         self._target_idx = 0
         self._observe_targeting = True
         self._melee_targeting = False
@@ -236,7 +239,7 @@ class DivineMixin:
         if not getattr(self, '_chronicle_first_mystery', False):
             self._chronicle_first_mystery = True
             from chronicle import in_sentence
-            self._chron('discovery', f"Came upon {in_sentence(m['name'])}. Not every altar down here is for praying at.",
+            self._chron('discovery', f"Found {in_sentence(m['name'])}. Not every altar here is for prayer.",
                         once='first_mystery')
         self.state = STATE_MYSTERY_APPROACH
 
@@ -254,7 +257,7 @@ class DivineMixin:
         if m.get('stat_cost'):
             for stat, amt in m['stat_cost'].items():
                 self.player.apply_stat_bonus(stat, amt)
-            self.add_message("The well takes its price before it gives anything. The edges of the world grow a little dimmer.", 'warning')
+            self.add_message("The well takes its price before it gives anything, and the edges of the world grow a little dimmer.", 'warning')
 
         if m.get('gold_cost', 0) > 0:
             import economy
@@ -290,7 +293,7 @@ class DivineMixin:
         if ch['mode'] == 'physical':
             self.player.quirk_progress['sisyphus_boulder_active'] = True
             self.player.quirk_progress['sisyphus_boulder_tiles'] = 0
-            self.add_message("You set your shoulder to the boulder. The slope is waiting.", 'info')
+            self.add_message("You set your shoulder to the boulder, and the slope waits before you.", 'info')
             self.state = STATE_PLAYER
             self._active_mystery_altar = None
             return
@@ -455,7 +458,7 @@ class DivineMixin:
         """Apply fountain effects based on chain score."""
         if not getattr(self, '_chronicle_first_fountain', False):
             self._chronicle_first_fountain = True
-            self._chron('discovery', once='first_fountain', text="Drank from a fountain a long way from any spring. It tasted of copper and cold. It seemed to be weighing me up.")
+            self._chron('discovery', once='first_fountain', text="Drank from a cold, coppery fountain. It seemed to weigh me up.")
         import random as _rng
         px, py = self.player.x, self.player.y
 
@@ -473,20 +476,23 @@ class DivineMixin:
             self.add_message("The cool water refreshes you slightly.", 'info')
             self.player.restore_hp(max(5, self.player.max_hp // 20))
         elif chain == 2:
-            self.add_message("The blessed water restores your health!", 'success')
-            self.player.restore_hp(max(15, self.player.max_hp // 8))
+            got = self.player.restore_hp(max(15, self.player.max_hp // 8))
+            self.add_message(grave_rot.told(
+                self.player, got, "The blessed water restores your health! (+{n} HP)"), 'success')
         elif chain == 3:
-            self.add_message("The magical water restores you fully!", 'success')
             self.player.restore_hp(self.player.max_hp)
             self.player.restore_sp(50)
+            self.add_message(grave_rot.whole(self.player, "The magical water restores you fully!"),
+                             'success')
         elif chain >= 4:
             # Chain 5 is chain 4 and a stat: it used to give the stat and
             # full health only, less than chain 4 (no stamina, no cure).
-            self.player.restore_hp(self.player.max_hp)
-            self.player.restore_sp(self.player.max_sp)
+            # Cured first, so the heal is whole (as the prayer's: grave_rot.py).
             for eff in list(self.player.status_effects.keys()):
                 if eff in ('poisoned', 'diseased', 'bleeding', 'burning', 'confused', 'blinded', 'corroding'):
                     del self.player.status_effects[eff]
+            self.player.restore_hp(self.player.max_hp)
+            self.player.restore_sp(self.player.max_sp)
             if chain == 4:
                 self.add_message("Divine water purifies you! All ailments are cured!", 'success')
             else:
@@ -531,13 +537,11 @@ class DivineMixin:
             self.ground_items.remove(bull_item)
 
         self.add_message(
-            "The bronze bull sinks into the fountain waters...", 'info')
+            "The bronze bull sinks into the waters of the fountain.", 'info')
         self.add_message(
-            "The water turns the colour of old gold. A girl's voice, far off:", 'info')
+            "The water turns to the colour of old gold, and a girl's voice speaks from afar:", 'info')
         self.add_message(
-            '"I gave a ball of thread to a man who sailed away without me. '
-            'Take this one. My brother knows his walls, but nothing hides '
-            'from a thread tied at the door."', 'success')
+            '"I gave a ball of thread to a man who sailed away without me, and now you shall take this one. My brother knows his walls, but nothing can hide from a thread that is tied at the door."', 'success')
         # The quest teaches the boss: she names how he dies (winning-build
         # plan 3.1, data/enemy_lore.json quest_teach).
         self._quest_teaches('asterion_minotaur')
@@ -545,8 +549,8 @@ class DivineMixin:
         dx, dy = shrine_door
         self.dungeon.tiles[dy][dx] = DOOR
         self.add_message(
-            "Stone grinds close by. A stretch of wall has become a door.", 'success')
-        self._chron('discovery', "Dropped the bronze bull into a fountain. The water turned gold. A woman's voice spoke to me about thread and a beast. A passage opened in the wall.")
+            "Stone grinds close at hand, and a stretch of wall has become a door.", 'success')
+        self._chron('discovery', "Gave a fountain the bronze bull. A voice spoke of thread and a beast. A door opened.")
 
     def _activate_athena_shrine(self, eye_item):
         """Player dropped the Eye of the Graeae at an altar -- activate Athena's shrine."""
@@ -559,19 +563,18 @@ class DivineMixin:
             self.ground_items.remove(eye_item)
 
         self.add_message(
-            "You set the milky eye on the altar. It clouds over and is gone.", 'info')
+            "You set the milky eye upon the altar, where it clouds over and is gone.", 'info')
         self.add_message(
-            "A woman's voice, level and unhurried:", 'info')
+            "A woman speaks in a level and unhurried voice:", 'info')
         self.add_message(
-            '"Perseus paid the same toll. The shield is behind the wall. '
-            'Keep the bronze between you and her, and look nowhere else."', 'success')
+            '"Perseus paid the same toll. The shield lies behind the wall, so keep its bronze between you and her, and look nowhere else."', 'success')
         self._quest_teaches('medusa_gorgon')
 
         dx, dy = shrine_door
         self.dungeon.tiles[dy][dx] = DOOR
         self.add_message(
-            "Stone grinds close by. A stretch of wall has become a door.", 'success')
-        self._chron('discovery', "Placed the eye on an altar and it dissolved into light. Athena herself spoke and told me to take her shield. A passage opened.")
+            "Stone grinds close at hand, and a stretch of wall has become a door.", 'success')
+        self._chron('discovery', "Laid the eye on an altar. Athena bade me take her shield. A way opened.")
 
     def _activate_odin_shrine(self, gram_item, reforge: bool = False):
         """Player offered the Broken Blade of Gram at Odin's Altar."""
@@ -589,16 +592,11 @@ class DivineMixin:
             self.add_message(
                 "You hurl the broken blade over the altar...", 'info')
             self.add_message(
-                "CRACK! A bolt of lightning strikes the altar! "
-                "Thunder shakes the dungeon to its foundations!", 'danger')
+                "With a great crack lightning strikes the altar, and its thunder shakes the dungeon to its foundations!", 'danger')
             self.add_message(
-                "A dry old voice: \"Someone still knows how a thing is given to "
-                "me. I cast my spear over a host once, and the host was mine. "
-                "This blade was mine before it was Sigmund's. Take it back "
-                "whole.\"", 'success')
+                "A dry old voice speaks: \"Someone still knows how a thing is given to me. I cast my spear over a host once, and so the host was mine. This blade was mine before it was Sigmund's, and now you shall take it back whole.\"", 'success')
             self.add_message(
-                "The shattered fragments of Gram fuse together in white-hot light. "
-                "A reforged blade rests upon the altar, whole and gleaming.", 'success')
+                "The shattered fragments of Gram run together in a white-hot light, and the blade lies reforged upon the altar, whole and gleaming.", 'success')
             self._seeker_event('forged', item='gram')
             # Spawn reforged Gram on the altar
             from items import load_items, copy_at
@@ -615,9 +613,7 @@ class DivineMixin:
             self.add_message(
                 "The shards sink into the altar like iron into water.", 'info')
             self.add_message(
-                "A dry old voice: \"Set down like a beggar's coin. So be it. "
-                "Sigurd had a second tool. A dragon wears his armour on his "
-                "back.\"", 'success')
+                "A dry old voice says: \"So be it, though you set it down like a beggar's coin. Sigurd had a second tool, for a dragon wears his armour on his back.\"", 'success')
         # Either way Odin tells how Fafnir dies (winning-build plan 3.1).
         self._quest_teaches('fafnir_dragon')
 
@@ -626,11 +622,11 @@ class DivineMixin:
             dx, dy = shrine_door
             self.dungeon.tiles[dy][dx] = DOOR
             self.add_message(
-                "Stone grinds close by. A stretch of wall has become a door.", 'success')
+                "Stone grinds close at hand, and a stretch of wall has become a door.", 'success')
         if reforge:
-            self._chron('discovery', "I threw the broken blade over the altar like a madman. Lightning struck. When the light cleared, Gram lay whole on the stone, reforged. Odin called me worthy.")
+            self._chron('discovery', "Threw the broken blade over the altar. Odin found me worthy. Gram is whole.")
         else:
-            self._chron('discovery', "Laid the broken blade on the altar and it sank into the stone. An old voice spoke of Sigurd's second tool, and of where a dragon wears no armour. A door opened nearby.")
+            self._chron('discovery', "Laid the blade down. Heard of Sigurd's second tool and a dragon's bare spot. Door opened.")
 
     # ------------------------------------------------------------------
     # Fenrir quest: Gleipnir forging, binding, and Vidar's Altar
@@ -671,8 +667,7 @@ class DivineMixin:
             # until all six were down.)
             _n = len(found_ids)
             self.add_message(
-                f"The anvil has six cups cut into its face. "
-                f"{_n} {'is' if _n == 1 else 'are'} filled. The forge stays cold.", 'info')
+                f"Of the six cups cut into the face of the anvil, {_n} {'is' if _n == 1 else 'are'} filled, and the forge stays cold.", 'info')
             return
         if found_ids == self._GLEIPNIR_COMPONENT_IDS:
             # All 6 present — forge Gleipnir!
@@ -695,11 +690,10 @@ class DivineMixin:
             self.add_message(
                 "The six things that do not exist go into the fire, and the fire takes them.", 'info')
             self.add_message(
-                "What lies on the anvil is a ribbon, soft as silk. Gleipnir. "
-                "Nothing has ever broken it.", 'success')
+                "Upon the anvil lies Gleipnir, a ribbon as soft as silk, which nothing has ever broken.", 'success')
             self._quest_teaches('fenrir_wolf')
             _snd.play('equip')
-            self._chron('discovery', "Fed six impossible things to the Dwarven Forge. The flames consumed them all. What came out was a ribbon, thin as silk. Gleipnir. I can't break it. Nothing can.")
+            self._chron('discovery', "Forged Gleipnir from six impossible things. Nothing can break it.")
 
     def _check_vidar_altar(self, vx, vy):
         """Check if 10 leather scraps are at Vidar's Altar."""
@@ -721,7 +715,7 @@ class DivineMixin:
                     "You empty your pack of every scrap you have carried down.", 'info')
         if 0 < len(on_altar) < 10:
             self.add_message(
-                "The leather lies on the stone. It is not enough for a shoe.", 'info')
+                "The leather lies upon the stone, but it is not enough for a shoe.", 'info')
             return
         if len(on_altar) >= 10:
             from items import load_items, copy_at
@@ -741,10 +735,9 @@ class DivineMixin:
                 self.add_message(
                     "The scraps draw together on the altar and close into one thick shoe.", 'info')
                 self.add_message(
-                    "Vidar's Sandal. He has been making it, a trimming at a "
-                    "time, since the world began.", 'success')
+                    "This is Vidar's Sandal, which he has been making, a trimming at a time, since the world began.", 'success')
                 _snd.play('equip')
-                self._chron('discovery', "Piled leather scraps on an ancient altar. They melted together into a massive sandal. Vidar's Sandal. The Silent God's secret weapon.")
+                self._chron('discovery', "Leather scraps on an altar became Vidar's Sandal, a secret weapon.")
 
     # ------------------------------------------------------------------
     # Grave
@@ -778,7 +771,7 @@ class DivineMixin:
         """Apply grave-digging effects based on chain score."""
         if not getattr(self, '_chronicle_first_grave', False):
             self._chronicle_first_grave = True
-            self._chron('discovery', once='first_grave', text="Dug up a grave. I am not proud of it. I said a prayer over what was left, which is more than the last visitor did.")
+            self._chron('discovery', once='first_grave', text="Dug up a grave and prayed over what was left.")
         import random as _rng
         px, py = self.player.x, self.player.y
 
@@ -877,7 +870,7 @@ class DivineMixin:
         """Apply throne effects based on chain score."""
         if not getattr(self, '_chronicle_first_throne', False):
             self._chronicle_first_throne = True
-            self._chron('discovery', "Sat on a throne in the dark. It fit perfectly. That worries me.",
+            self._chron('discovery', "Sat on a throne in the dark. It fit me too well.",
                         once='first_throne')
         import random as _rng
         px, py = self.player.x, self.player.y
@@ -914,8 +907,9 @@ class DivineMixin:
                     self.add_message(f"A stone comes loose from the armrest: {self._display_name(gem)}.",
                                      'loot')
         if chain >= 2:
-            self.player.restore_hp(max(20, self.player.max_hp // 5))
-            self.add_message("The throne's enchantment heals your wounds!", 'success')
+            got = self.player.restore_hp(max(20, self.player.max_hp // 5))
+            self.add_message(grave_rot.told(
+                self.player, got, "The throne's enchantment heals your wounds! (+{n} HP)"), 'success')
         if chain >= 3:
             count = 0
             for item in list(self.player.inventory):
@@ -1259,7 +1253,7 @@ class DivineMixin:
                          f"in another shape.", 'success')
         if n < earned:
             self.add_message(f"(Your chain earned {earned}; only {n} could move.)", 'info')
-        self._chron('soul', "Laid one gift on an altar and took another in its place.",
+        self._chron('soul', "Gave up one gift on an altar and took another for it.",
                     once='rededication')
 
     def _make_altar_offering(self) -> bool:
@@ -1418,8 +1412,7 @@ class DivineMixin:
                 "A shield stands over you.", 'success')
         if chain >= 5:
             self._chron(
-                'soul', "I asked Michael to guide my hand, and for a little while "
-                "every sum was simple.", once='guide_my_hand')
+                'soul', "Asked Michael to guide my hand. Sums came easy for a while.", once='guide_my_hand')
 
     def _resolve_simple_prayer(self, chain: int, at_altar: bool = False,
                                kind: str = 'mercy', hp_pct: float = 1.0):
@@ -1435,7 +1428,7 @@ class DivineMixin:
         """
         if at_altar and not getattr(self, '_chronicle_first_prayer', False):
             self._chronicle_first_prayer = True
-            self._chron('soul', "Knelt at an altar and something on the other side leaned in.",
+            self._chron('soul', "Knelt at an altar. Something beyond it leaned in to listen.",
                         once='first_altar_prayer')
 
         p = self.player
@@ -1652,6 +1645,7 @@ class DivineMixin:
         if chain >= 5:
             duration = max(1, 20 + karma_bonus_buff)
             p.add_effect('shielded', duration)
+            duration = turns_now(p, 'shielded', duration)
             msgs.append(
                 (f"A translucent barrier settles around you. (shielded {duration}t)",
                  'success'))
@@ -1832,8 +1826,7 @@ class DivineMixin:
                 'loot')
             self._chron(
                 'soul',
-                f"Begged for intercession and was answered. Every wound closed, and "
-                f"God set {a_or_an(art_name)} at my feet."
+                f"Begged intercession and was healed. God gave me {a_or_an(art_name)}."
             )
         else:
             # No artifact could be found even from unique pool — should be
@@ -1844,8 +1837,7 @@ class DivineMixin:
                 'loot')
             self._chron(
                 'soul',
-                "Begged for intercession and was answered. Every wound closed. "
-                "No relic came. The Most High set peace at my feet instead."
+                "Begged intercession and was healed. No relic, but given peace."
             )
 
     def _resolve_intercession_failure(self):
@@ -1866,8 +1858,7 @@ class DivineMixin:
             'danger')
         self._chron(
             'soul',
-            "Begged for intercession I had not earned. God answered anyway, just not kindly. "
-            "Everything I wore went sour, and I was blind for a long while."
+            "Begged intercession unearned. My gear was cursed and I was long blind."
         )
 
     def _spawn_intercession_artifact(self, px: int, py: int) -> str:

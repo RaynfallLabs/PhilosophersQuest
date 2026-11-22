@@ -72,12 +72,7 @@ NEW = {
         ],
         'resistances': ['cold', 'poison', 'drain'], 'weaknesses': ['holy'],
         'tags': ['outsider'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD, item_chance=0.3),
-        'lore': ("Hesiod painted the Keres on the shield of Heracles: dark death-spirits with white "
-                 "gnashing teeth, fighting each other over the men who fell, each wanting to drink "
-                 "the dark blood first. Homer put one on the shield of Achilles, dragging a dead man "
-                 "through the battle by his feet. They never come alone. Each one is weak as death "
-                 "goes down here, but there are always more of them than there are of you, and a "
-                 "wounded man draws the whole flock. Kill them fast, and many at a time."),
+        'lore': ("Hesiod painted the Keres on the shield of Heracles as dark spirits of death with white and gnashing teeth, fighting one another over the fallen, each greedy to drink the dark blood first. Homer set one upon the shield of Achilles, dragging a dead man through the battle by his feet. They never come alone. Any one of them is weak, as death is reckoned in these deeps, but there are always more of them than there are of you, and a wounded man draws the whole flock. Kill them swiftly, therefore, and many at a time."),
         'frequency': 3, 'pack': True, 'pack_size': [3, 5],
     },
     # --- 3. Hellmouth: the map lies to you --------------------------------------
@@ -91,13 +86,7 @@ NEW = {
         ],
         'resistances': ['fire', 'acid', 'poison'], 'weaknesses': ['holy', 'cold'],
         'tags': ['demon', 'aberration'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("Medieval painters drew Hell as a mouth: the gaping jaws of Leviathan, the beast of "
-                 "Job, out of whose mouth go burning lamps. On the Doom paintings over church arches "
-                 "and on the mystery-play stages the damned were herded into it, and the stagehands "
-                 "worked its jaws with ropes and blew smoke out of its throat. One of them lies flat "
-                 "in the floor down here with its gullet open, and its gullet looks exactly like a "
-                 "stair going down. A floor has one way down. When you find two, one of them is "
-                 "hungry."),
+        'lore': ("Medieval painters showed Hell as a mouth, the gaping jaws of Leviathan, the beast of Job, out of whose mouth go burning lamps. On the Doom paintings over church arches and upon the stages of the mystery plays the damned were herded into it, while men worked the jaws with ropes and blew smoke from the throat. One such mouth lies flat in the floor of the deeps, and its open gullet looks exactly like a stair going down. Every floor has but one way down, so if ever you find two, be sure that one of them is such a mouth, and hungry."),
         'frequency': 1, 'disguise': {'tile': 'stairs_down', 'name': 'staircase leading down'},
     },
     # --- 4. Grendel's Mother: the mere-wife ---------------------------------------
@@ -111,13 +100,7 @@ NEW = {
         ],
         'resistances': ['slash', 'pierce', 'cold'], 'weaknesses': ['holy'],
         'tags': ['giant', 'humanoid'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("The Beowulf poet never names Grendel's mother. He gives her a kind instead: "
-                 "merewif, the mere-wife, the she-wolf of the deep. She came up out of the dark water "
-                 "to avenge her son, and when Beowulf followed her down she dragged him to her hall "
-                 "under the mere. His borrowed sword Hrunting, which had never failed in battle, "
-                 "would not bite her hide, and he had to wrestle her until he found a giant's blade "
-                 "on her wall. Her kind still wait under black water. A blade turns on that hide; "
-                 "something heavier does not."),
+        'lore': ("The Beowulf poet gave no name to Grendel's mother, but only a kind, merewif, the mere-wife, she-wolf of the deep. She rose out of the dark water to avenge her son, and when Beowulf followed her down she dragged him to her hall beneath the mere. There his borrowed sword Hrunting, which had never failed in battle, would not bite upon her hide, and he was forced to wrestle with her until he found a giant's blade on her wall. Her kind lie in wait beneath black water still, and a blade will glance off that hide, but a heavier weapon will not."),
         'frequency': 2, 'pull_chance': 0.35,
     },
     # --- 5. The Witch of Endor's line: kill the caster first ---------------------
@@ -131,12 +114,7 @@ NEW = {
         ],
         'resistances': ['drain', 'cold', 'necrotic'], 'weaknesses': ['holy', 'fire'],
         'tags': ['humanoid', 'caster'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("King Saul had driven every medium out of Israel, and then, the night before his "
-                 "last battle, he put on a disguise and went to the one left at Endor. At his word "
-                 "she called up the prophet Samuel, an old man wrapped in a mantle, who told Saul "
-                 "that by tomorrow he and his sons would be with him among the dead. Her line kept "
-                 "the craft. They call, and whatever is listening in the dark comes up, and much of "
-                 "what comes up cannot be seen. Kill the one calling before the room fills."),
+        'lore': ("King Saul had driven every medium out of Israel, yet on the night before his last battle he put on a disguise and sought out the one who remained at Endor. At his word she called up the prophet Samuel, an old man wrapped in a mantle, who told Saul that on the morrow he and his sons would be with him among the dead. The craft has descended through all her line. When they call, whatever is listening in the dark comes up, and much of it cannot be seen, so kill the one who is calling before the room fills."),
         'frequency': 2, 'summon_kind': ['darkhelm_shade', 'dread_wraith'],
         'summon_cooldown': 6, 'summon_max': 3, 'perception_range': 10,
     },
@@ -151,13 +129,7 @@ NEW = {
         ],
         'resistances': ['fire', 'cold', 'poison'], 'weaknesses': [],
         'tags': ['outsider'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("Alecto the unceasing, Megaera the grudging, Tisiphone the avenger of murder. In "
-                 "Aeschylus they hunted Orestes from Argos to Delphi to Athens for his mother's "
-                 "blood, snakes in their hair and blood weeping from their eyes, and they slept only "
-                 "when Apollo made them. Athena talked them down at last with a new home under "
-                 "the city and a new name, the Kindly Ones. Nobody down here has offered them one. "
-                 "They come as three, strike, scatter and come again, and the look of them puts men "
-                 "to flight."),
+        'lore': ("Three were the Erinyes: Alecto the unceasing, Megaera the grudging and Tisiphone the avenger of murder. In Aeschylus they hunted Orestes for his mother's blood from Argos to Delphi and on to Athens, with snakes in their hair and blood weeping from their eyes, and they slept only when Apollo compelled them. At the last Athena appeased them with a new home beneath the city and a new name, the Kindly Ones, but none in these depths has made them any such offer. They come as three, strike and scatter and come again, and men take flight at the very look of them."),
         'frequency': 2, 'pack': True, 'pack_size': [3, 3],
     },
     # --- 7. Blood of Tiamat: splits under a weak blow ----------------------------
@@ -172,12 +144,7 @@ NEW = {
         'resistances': ['poison', 'cold', 'acid'], 'weaknesses': ['fire'],
         'tags': ['aberration', 'outsider'], 'harvest_tier': 4,
         'treasure': {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 5},
-        'lore': ("In the Babylonian creation poem Marduk caught Tiamat, the salt sea, in his net, "
-                 "drove the winds into her mouth and split her in two like a fish for drying: half "
-                 "became the sky and half the earth. Then he cut the channels of her blood and the "
-                 "north wind carried it away to secret places. This is one of them. Her blood still "
-                 "crawls, salt and venomous, and it remembers being divided: a small cut only makes "
-                 "two of it. One great blow, the kind a long answer chain gives, ends it outright."),
+        'lore': ("When Marduk had caught Tiamat the salt sea in his net, as the Babylonian poem of creation tells, he drove the winds into her mouth and split her like a fish for drying, and of the halves he made sky and earth. Then he cut the channels of her blood, and the north wind bore it away to secret places, of which this is one. That blood still crawls, salt and venomous, and it remembers being divided, so that a small cut does no more than make two of it. A great blow, such as a long answer chain gives, leaves it no strength to divide."),
         'frequency': 2, 'splits': {'by': 'weak_blow', 'share': 0.10, 'max': 8},
     },
     # --- 8. Ganglot, Hel's handmaid: heal the dead -------------------------------
@@ -192,12 +159,7 @@ NEW = {
         ],
         'resistances': ['cold', 'drain', 'poison'], 'weaknesses': ['fire', 'holy'],
         'tags': ['undead', 'caster'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("Snorri Sturluson furnished Hel's hall for us: her plate is called Hunger, her knife "
-                 "Famine, her bed Sickbed, and her servants are Ganglati and Ganglot, both names "
-                 "meaning the slow-walker. Hel keeps many maids now, and all of them are slow. They "
-                 "walk among her dead mending what the living break, and their touch puts the same "
-                 "slowness into a warm body. Wherever the dead keep getting up again, look for the "
-                 "maid behind them and put her down first."),
+        'lore': ("Snorri Sturluson told how the hall of Hel is furnished: her plate is called Hunger, her knife Famine and her bed Sickbed, and her servants are Ganglati and Ganglot, whose names both mean the slow-walker. Many maids serve Hel now, and all of them are slow. They walk among her dead mending what the living break, and by their touch the same slowness enters into a warm body. Wherever the dead keep getting up again, look for the maid behind them and put her down first."),
         'frequency': 2,
     },
     # --- 9. Stheno and Euryale: a named pair (mini-bosses, once per run) ---------
@@ -212,15 +174,10 @@ NEW = {
         'resistances': ['poison'], 'weaknesses': [],
         'tags': ['humanoid'], 'harvest_tier': 4,
         'treasure': {'gold': [1900, 3600], 'item_chance': 1.0, 'item_tier': 5},
-        'lore': ("Medusa was the only mortal one of three. Her sisters Stheno, the mighty, and "
-                 "Euryale, the far-roaming, cannot die. Hesiod gives them brazen hands and golden "
-                 "wings, and when Perseus fled with their sister's head they rose from their beds "
-                 "and chased him over the sea until the helm of Hades hid him. They have been "
-                 "looking for him ever since. Their gaze turns the living rigid as stone, and a "
-                 "killing blow only puts them down for a moment."),
+        'lore': ("Of three sisters Medusa alone was mortal, and death has no power over the others, Stheno the mighty and Euryale the far-roaming. Apollodorus gives them brazen hands and golden wings. When Perseus fled with their sister's head they rose from their beds and chased him over the sea until the helm of Hades hid him, and they have sought him ever since. The living turn rigid as stone beneath their gaze, and a killing blow lays either of them low for no more than a moment."),
         'frequency': 0, 'gaze_paralyze': 2, 'gaze_cooldown': 6, 'gaze_group': 'gorgon_sisters',
         'revive_once_on_death': True, 'revive_hp_pct': 0.3,
-        'revive_message': "Stheno rises again. An immortal does not stay dead.",
+        'revive_message': "Stheno rises again, for death cannot hold an immortal.",
         'is_mini_boss': True, 'spawn_chance': 0.4, 'escort': ['euryale_gorgon'],
         'omen': "Somewhere on this floor two women are hissing at each other, and then both fall silent.",
         # Each sister has her own line; the pair's line waits for the second (MON-10).
@@ -240,17 +197,12 @@ NEW = {
         'resistances': ['poison'], 'weaknesses': [],
         'tags': ['humanoid'], 'harvest_tier': 4,
         'treasure': {'gold': [1900, 3600], 'item_chance': 1.0, 'item_tier': 5},
-        'lore': ("Pindar says Athena invented the music of the pipes to copy one sound: the shrill "
-                 "wailing Euryale raised over her beheaded sister, with the snakes in her hair "
-                 "keening along. Euryale has not stopped grieving and she has not stopped hunting. "
-                 "She goes nowhere without Stheno. Her wail drives men back, her gaze holds them "
-                 "where they stand, and like her sister she is immortal: she can be put down, but "
-                 "not for long. A polished shield or a blindfold is worth more here than a sword."),
+        'lore': ("Pindar tells that Athena devised the music of the pipes to copy one sound, the shrill wailing that Euryale raised over her beheaded sister while the snakes in her hair keened along with her. Euryale has made no end of grieving or of hunting, and she goes nowhere without Stheno. Her wail drives men back and her gaze holds them where they stand, and like her sister she is immortal, so that she may be put down, but not for long. Against her a polished shield or a blindfold is worth more than any sword."),
         'frequency': 0, 'gaze_paralyze': 1, 'gaze_cooldown': 6, 'gaze_group': 'gorgon_sisters',
         # One shared gaze between the sisters (gaze_group), and Euryale's holds
         # a turn: her weapon is the wail. Stheno's still holds two.
         'revive_once_on_death': True, 'revive_hp_pct': 0.3,
-        'revive_message': "Euryale rises again, wailing. An immortal does not stay dead.",
+        'revive_message': "Euryale rises again, wailing, for death cannot hold an immortal.",
         'is_mini_boss': True, 'spawn_chance': 0.0,
         'kill_chronicle': ("Put Euryale down twice. She was wailing for Medusa when she fell, and "
                            "wailing when she rose, and the second time she went quiet."),
@@ -268,13 +220,7 @@ NEW = {
         ],
         'resistances': ['pierce', 'cold', 'poison', 'drain'], 'weaknesses': ['blunt', 'holy', 'fire'],
         'tags': ['undead', 'giant'], 'harvest_tier': 4, 'treasure': dict(MID_GOLD),
-        'lore': ("Japanese tales of the last century tell of the gashadokuro, the starving skeleton: "
-                 "fifteen times the height of a man, built from the bones of everyone who died of "
-                 "hunger or in battle and was never buried. It walks at night without a sound, and "
-                 "the only warning is a ringing in the ears, gasha gasha, a moment before it bites "
-                 "off a traveller's head. This one has folded itself into a corner of the dungeon "
-                 "and lies there like a heap of old bones. It is not a heap of old bones. A spear "
-                 "goes between the ribs; a hammer does not."),
+        'lore': ("Japanese storytellers of the last century spoke of the gashadokuro, the starving skeleton, fifteen times the height of a man and built from the bones of all who died of hunger or in battle and lay unburied. It walks at night without a sound, and no warning is given but a ringing in the ears, gasha gasha, a moment before it bites off a traveller's head. This one has folded itself into a corner of the dungeon, where it may be taken for a heap of old bones until it stirs. A spear passes between such ribs, but a hammer will find bone there to break."),
         'frequency': 2, 'footprint': [2, 2],
     },
     # --- 11. Autolycus' heir: a deep thief ----------------------------------------
@@ -288,13 +234,7 @@ NEW = {
         ],
         'resistances': [], 'weaknesses': [],
         'tags': ['humanoid'], 'harvest_tier': 3, 'treasure': dict(MID_GOLD, item_chance=0.6),
-        'lore': ("Odysseus's grandfather Autolycus outdid all men in thieving and in oaths that "
-                 "meant nothing, and Hermes himself gave him the gift. He stole a famous boar-tusk "
-                 "helmet out of a locked house and the cattle of Sisyphus out of a guarded field, "
-                 "and he changed their colour so the owner could not know them. Sisyphus beat him "
-                 "only by carving his name under the hooves. His heirs keep the family trade: a "
-                 "brush against you, a purse or a pack lighter, and they are gone. Run them down and "
-                 "it is yours again."),
+        'lore': ("Autolycus, the grandfather of Odysseus, outdid all men in thieving and in oaths that meant nothing, and had that gift from Hermes himself. He took a famous boar-tusk helmet out of a locked house and the cattle of Sisyphus out of a guarded field, and he changed their colour lest their owner know them, so that Sisyphus outwitted him only by carving his own name beneath their hooves. His heirs carry on the family trade. They brush against you and are gone, leaving purse or pack the lighter, but run them down and what they took is yours again."),
         'frequency': 2, 'after_theft': 'flee',
     },
     # --- 12. Strix: the floor 21-30 swarm -----------------------------------------
@@ -309,12 +249,7 @@ NEW = {
         'resistances': [], 'weaknesses': ['fire'],
         'tags': ['beast'], 'harvest_tier': 2,
         'treasure': {'gold': [10, 40], 'item_chance': 0.1, 'item_tier': 2},
-        'lore': ("Ovid describes the strix in the Fasti: a big-headed night bird with staring eyes, "
-                 "a beak made for snatching, grey feathers and hooked claws, that flies by night "
-                 "and drinks blood. Whether striges are born birds or are old women changed by a "
-                 "spell, he says, nobody knows. They came for the infant Proca in his cradle, and "
-                 "the nymph Cranae kept them out with a branch of whitethorn at the window. Down "
-                 "here they hunt in threes: one sings you to sleep and the others drink."),
+        'lore': ("Ovid in the Fasti describes the strix as a bird of the night, big of head and staring of eye, with a beak made for snatching, grey feathers and hooked claws, that flies in darkness and drinks blood. Whether striges are born birds or are old women changed by a spell, he says that nobody knows. They came for the infant Proca in his cradle, but the nymph Cranae barred them out with a branch of whitethorn at the window. In these halls they hunt in threes, and while one sings you to sleep the others drink."),
         'frequency': 4, 'pack': True, 'pack_size': [3, 3],
     },
 }
@@ -328,12 +263,7 @@ RETUNE = {
             atk('Bitter Spore', '4d8+17', 'poison', 'poisoned', 0.5, 8),
             atk('Falling Star-Ash', '5d10+18', 'poison', 'blinded', 0.35, 3),
         ],
-        'lore': ("At the third trumpet a great star fell burning on the rivers and springs. John "
-                 "gives its name as Wormwood, and writes that a third of the waters turned bitter "
-                 "and many died of drinking them. This is what grew where the star's ash settled: a "
-                 "pale, spreading thing that drinks light and breathes out bile. Its spores poison "
-                 "whatever they touch, and the ash of the star still sheds from it and stings the "
-                 "eyes blind."),
+        'lore': ("At the sound of the third trumpet a great star fell burning upon the rivers and springs, and John gives its name as Wormwood and writes that a third of the waters were turned bitter, and many died of drinking them. Where the ash of that star settled there grew this pale and spreading thing, which drinks the light and breathes out bile. Its spores poison whatever they touch, and the star's ash sheds from it even now and stings the eyes until they are blind."),
     },
     'void_seraph': {
         'attacks': [
@@ -341,21 +271,11 @@ RETUNE = {
             atk('Hush of a Dying Star', '4d8+14', 'magic', 'silenced', 0.35, 4, ranged=True),
             atk('Unmaking Gaze', '4d8+14', 'magic', 'teleportitis', 0.3, 8),
         ],
-        'lore': ("Isaiah saw the seraphim above the throne, each with six wings: two to cover the "
-                 "face, two to cover the feet, and two to fly. This one fell and kept the wings. When "
-                 "it lowers the upper pair there is nothing behind them, only a hollow where a face "
-                 "and a name used to be. Its voice is the hush of a star going out, and in that hush "
-                 "no spell can be spoken. Its gaze unmakes a thing's place in the world, and whoever "
-                 "it falls on keeps slipping out of where he stands."),
+        'lore': ("Isaiah beheld the seraphim above the throne, and each had six wings, two to cover the face, two to cover the feet and two with which to fly. This one fell and kept its wings, and when it lowers the upper pair there is but a hollow behind them where a face and a name used to be. Its voice is the hush of a star going out, and within that hush no spell can be spoken. Its gaze unmakes the place that a thing has in the world, so that whoever it falls upon is forever slipping out of the spot where he stands."),
     },
     'iron_horseman': {
         'can_charge': True, 'charge_bonus_mult': 1.3,
-        'lore': ("John saw four riders: one on a white horse, one on red, one on black, and Death on "
-                 "a pale horse with Hades following after. This is none of the four. It is the kind "
-                 "of thing that rides in their dust, armor welded shut, rider and mount grown into "
-                 "one iron shape. Given a straight run it lowers the lance and charges, and it does "
-                 "not turn aside. Its hooves leave men senseless on the ground. Do not stand at the "
-                 "end of a long corridor."),
+        'lore': ("Four riders appeared to John, one upon a white horse, one upon red, one upon black, and Death upon a pale horse with Hades following after. The iron horseman is none of the four, but of the kind that rides in their dust, with armour welded shut and man and steed grown into one shape of iron. Given a straight run it lowers the lance and charges and will turn aside for nothing, and its hooves leave men senseless on the ground. Do not stand, therefore, at the end of a long corridor when it is near."),
     },
     'apocalypse_herald': {
         'attacks': [
@@ -372,11 +292,7 @@ RETUNE = {
             atk('Cut Purse', '1d4+1', 'slash', steal='gold', steal_chance=0.7),
         ],
         'after_theft': 'flee',
-        'lore': ("Thieves drift in and out of bandit work as the seasons demand: winter in a warm "
-                 "gang, spring picking pockets in a market town. They prefer a quiet boot and a "
-                 "turned back to a duel, and a purse cut in passing to either. They have a saying: "
-                 "the man who shows his sword has already decided he would rather not use it. One "
-                 "who has your gold runs. Catch him and it is yours again."),
+        'lore': ("With the turning of the seasons thieves drift in and out of the bandit's trade, wintering in a warm gang and picking pockets in a market town in spring. They love a quiet boot and a turned back better than a duel, and a purse cut in passing better than either, and they have this saying among them: \"the man who shows his sword has already decided he would rather not use it.\" When one of them has your gold he runs, and if you can catch him it is yours again."),
     },
     'leprechaun': {
         'attacks': [
@@ -385,11 +301,7 @@ RETUNE = {
             atk('Light Fingers', '1d2', 'physical', steal='gold', steal_chance=0.8),
         ],
         'after_theft': 'teleport',
-        'lore': ("Irish tales make the leprechaun a solitary cobbler, heard tapping at a single shoe "
-                 "under a hedge. A captor who keeps both eyes on him can demand his crock of gold. "
-                 "One glance away and he is gone. The ones down here have learned the trick in "
-                 "reverse: a touch, a wink, your purse is lighter, and he is standing somewhere else "
-                 "on the floor entirely. He has not left it. Find him and the gold comes back."),
+        'lore': ("The leprechaun of the Irish tales is a solitary cobbler, who is heard tapping at a single shoe beneath a hedge, and whoever catches him may demand his crock of gold, if only he keeps both eyes upon him, for at one glance aside the little man is gone. Those who dwell below have learned that craft backward, and with a touch and a wink your purse grows lighter and he is standing elsewhere upon the floor. He has not left that floor, and if you find him the gold will come back to you."),
     },
     'leprechaun_hostile': {
         'attacks': [
@@ -406,30 +318,16 @@ RETUNE = {
              'effect_chance': 0.2, 'effect_duration': 2, 'steal': 'item', 'steal_chance': 0.7},
         ],
         'after_theft': 'flee',
-        'lore': ("An incorporeal undead that slips between this world and the next to steal from "
-                 "the living. Filchers are drawn to bright and magical things and carry them off to "
-                 "hidden ethereal lairs. They are rarely aggressive unless cornered. A filcher's "
-                 "fingers pass through a closed pack as easily as through air, and once it has "
-                 "something it flees rather than fight. Whatever it took falls out of it when it "
-                 "dies."),
+        'lore': ("Between this world and the next the ethereal filcher slips to and fro, an undead thing without a body, and steals from the living. Bright and magical things draw it, and it carries them away to its hidden lairs in the ether, for its fingers pass through a closed pack as easily as through air. It is seldom fierce unless it is cornered, and once it has its prize it will flee sooner than fight, but if it is slain, whatever it took will fall out of it again."),
     },
     # --- 13. two more invisible creatures by lore
     'air_elemental': {
         'invisible': True,
-        'lore': ("The wind has always had names. The Greeks kept four of them, Boreas, Notus, Eurus "
-                 "and Zephyrus, and said King Aeolus held the rest shut in a cave. Paracelsus called "
-                 "the spirits of the air sylphs. An air elemental is a whirlwind with a will: "
-                 "invisible as the wind it is made of, quick as a thrown knife, and full of grit and "
-                 "splinters that flay whatever it wraps around. You see the dust it carries, and "
-                 "only once it has hit you."),
+        'lore': ("Since men first felt the wind they have given it names. The Greeks had four, Boreas, Notus, Eurus and Zephyrus, and said that King Aeolus held the rest shut within a cave, and Paracelsus called the spirits of the air sylphs. An air elemental is a whirlwind with a will of its own, quick as a thrown knife and invisible as the wind of which it is made. It is full of grit and splinters that flay whatever it wraps around. You see nothing of it until it has struck you, and even then you see only the dust that it carries."),
     },
     'poltergeist': {
         'invisible': True,
-        'lore': ("The word is German for 'noisy ghost'. A poltergeist has no shape to show, only a "
-                 "temper: doors slam, crockery flies, a chair skates across the room and breaks "
-                 "against the wall. It is the spirit of someone who died bewildered and has stayed "
-                 "that way. Nobody has ever seen one; you see what it throws, and where it came "
-                 "from. It does not hunt the living. It rages at them for being able to leave."),
+        'lore': ("Poltergeist is a German word that means 'noisy ghost', and it is given to the spirit of one who died bewildered and has remained so. It has no shape to show but only a temper, by which doors slam and crockery flies and a chair will skate across the room to break against the wall. No eye has ever seen one, though anyone may see what it throws, and from what quarter it was thrown. It has no wish to hunt the living, but rages at them because they are free to leave."),
     },
     # --- 7. the black pudding gets the classic split its lore already describes
     'black_pudding': {
@@ -454,13 +352,7 @@ NEW.update({
         'resistances': ['slash', 'blunt', 'fire', 'cold', 'lightning', 'poison'],
         'weaknesses': ['pierce', 'magic'],
         'tags': ['construct'], 'harvest_tier': 3, 'treasure': dict(MID_GOLD),
-        'lore': ("Hephaestus made Talos of bronze to guard Crete. He walked round the island three "
-                 "times a day, threw boulders at any ship that came near, and when men landed he "
-                 "heated himself red-hot in a fire and hugged them. He had one vein, running from "
-                 "his neck to his ankle, stopped with a single bronze nail. Medea bewitched him with "
-                 "her eyes and the nail came out, and the ichor ran out of him like molten lead. "
-                 "His copies guard the deep halls. Swords and hammers ring off them. Find the nail, "
-                 "with a point or with a spell."),
+        'lore': ("Talos, the man of bronze, was made by Hephaestus to guard Crete, and three times a day he walked about the island, throwing boulders at any ship that came near. When men landed, he heated himself red-hot in a fire and embraced them. He had a single vein running from neck to ankle and stopped with one bronze nail, but Medea bewitched him with her eyes, the nail came out, and the ichor ran from him like molten lead. His copies guard the deep halls. Swords and hammers ring off them, so seek out the nail with a point or with a spell."),
         'frequency': 2,
     },
     'sown_warrior': {
@@ -474,13 +366,7 @@ NEW.update({
         'resistances': ['slash'], 'weaknesses': ['holy'],
         'tags': ['humanoid'], 'harvest_tier': 3,
         'treasure': {'gold': [40, 120], 'item_chance': 0.25, 'item_tier': 4},
-        'lore': ("Cadmus killed the dragon of Ares and, on Athena's advice, sowed its teeth in a "
-                 "ploughed field. Armed men came up out of the furrows, already in bronze, already "
-                 "angry. Cadmus threw a stone into the middle of them; each blamed the man beside "
-                 "him, and they fought until only five were left. Jason met the same harvest at "
-                 "Colchis and beat it the same way. They still come up in companies and fight as "
-                 "one. Confuse them, or throw something into the middle, and they turn on each "
-                 "other."),
+        'lore': ("Cadmus slew the dragon of Ares, and by Athena's counsel he sowed its teeth in a ploughed field, whereupon armed men rose out of the furrows, already clad in bronze and already wrathful. He threw a stone into their midst, and each blamed the man beside him, and they fought until only five were left. Jason reaped the same harvest at Colchis and overcame it by the same device. The sown men still rise in companies and fight as one, but if you confuse them, or throw something into the middle of them, they will turn on each other."),
         'frequency': 3, 'pack': True, 'pack_size': [4, 5],
         'quarrelsome': True, 'quarrels_when_struck_by_thrown': 4,
     },
@@ -495,12 +381,7 @@ NEW.update({
         ],
         'resistances': ['poison'], 'weaknesses': ['cold'],
         'tags': ['beast', 'reptile'], 'harvest_tier': 4, 'treasure': dict(MID_GOLD),
-        'lore': ("The Mahabharata tells how King Parikshit was cursed to die of a snakebite on the "
-                 "seventh day. He shut himself in a tower on a single pillar and let no one in but "
-                 "holy men. The serpent king Takshaka sent his nagas dressed as holy men, carrying "
-                 "fruit, and hid himself inside one fruit as a tiny copper-coloured worm. When the "
-                 "king picked it up, Takshaka took his true shape and bit. His brood still hides in "
-                 "fruit. Be wary of a perfect apple lying on a dungeon floor."),
+        'lore': ("Parikshit the king, of whom the Mahabharata tells, was cursed to die of a serpent's bite on the seventh day, and he shut himself in a tower upon a single pillar and admitted none but holy men. But Takshaka the serpent king sent his nagas in the guise of holy men bearing fruit, and hid himself within one fruit as a tiny worm the colour of copper. When the king took it up, Takshaka put on his true shape and bit. His brood still hide in fruit, so beware of any perfect apple that you find lying on a dungeon floor."),
         'frequency': 2, 'disguise': {'item': 'apple', 'name': 'ripe apple'},
     },
     'rakshasa_illusionist': {
@@ -514,13 +395,7 @@ NEW.update({
         ],
         'resistances': ['magic', 'fire'], 'weaknesses': ['holy'],
         'tags': ['demon', 'caster'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("Ravana's son Indrajit, the conqueror of Indra, fought Rama's army from inside the "
-                 "clouds where no arrow could find him. He bound Rama and Lakshmana with the "
-                 "serpent noose, living snakes that held them helpless on the field, until Garuda, "
-                 "enemy of every serpent, came down and the snakes fled at his shadow. His maya "
-                 "showed the monkey army things that were not there. The rakshasa illusionists who "
-                 "learned from him keep their distance, tie you where you stand and fill your eyes "
-                 "with lies. Close the distance, or kill them from where you are."),
+        'lore': ("Indrajit, the conqueror of Indra, was the son of Ravana, and he made war on Rama's army from within the clouds, where no arrow could find him. With the serpent noose, which was of living snakes, he bound Rama and Lakshmana helpless on the field, until Garuda, the enemy of every serpent, descended and the snakes fled from his shadow. By his maya the army of monkeys saw things that were not there. The rakshasa illusionists who learned from him keep their distance, tie you where you stand and fill your eyes with lies, so you must close the distance, or else kill them from where you are."),
         'frequency': 2, 'can_phase_blink': True, 'phase_blink_chance': 0.2,
         'perception_range': 10,
     },
@@ -535,13 +410,7 @@ NEW.update({
         ],
         'resistances': ['poison', 'drain', 'cold'], 'weaknesses': ['blunt'],
         'tags': ['construct'], 'harvest_tier': 3, 'treasure': dict(MID_GOLD, item_chance=0.6),
-        'lore': ("An Egyptian of means was buried with ushabtis: little blue faience workers, one for "
-                 "every day of the year, written with the sixth spell of the Book of the Dead. 'O "
-                 "ushabti, if I am called to work in the land of the dead, you shall answer: Here I "
-                 "am.' For every ten workers there was an overseer with a whip, to keep them at it. "
-                 "The overseers down here have outlived their masters and still read out the spell, "
-                 "and the workers still answer. Break the one with the whip and the rest fall "
-                 "quiet."),
+        'lore': ("An Egyptian of means took ushabtis with him to the tomb, little workers of blue faience, one for every day of the year, and on them was written the sixth spell of the Book of the Dead: 'O ushabti, if I am called to work in the land of the dead, you shall answer: Here I am.' Over every ten was set an overseer with a whip, to hold them to their labour. The overseers of these depths have outlived their masters, and still they read out the spell and still the workers answer. Break the one who has the whip, and no more will answer to the spell."),
         'frequency': 2, 'summon_kind': 'ushabti_worker', 'summon_cooldown': 4, 'summon_max': 5,
     },
     'ushabti_worker': {
@@ -555,11 +424,7 @@ NEW.update({
         'resistances': ['poison', 'drain', 'cold'], 'weaknesses': ['blunt'],
         'tags': ['construct'], 'harvest_tier': 1,
         'treasure': {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1},
-        'lore': ("A little worker of blue faience the size of a man's hand in the tomb, and the size "
-                 "of a man down here. It carries a hoe and a basket of sand, because those are the "
-                 "tools painted on it, and it does what the sixth spell says: it answers 'Here I am' "
-                 "and it works. It has no malice and no will. It throws the sand in your eyes because "
-                 "the overseer told it to."),
+        'lore': ("In the tomb it was a little figure of blue faience no bigger than a man's hand, but here below it has the stature of a man. It carries the hoe and the basket of sand that were painted upon it, and it obeys the sixth spell, answering 'Here I am' and going to its work. There is neither malice nor will in it, and if it throws the sand in your eyes, that is only because the overseer has bidden it."),
         'frequency': 0,
     },
     'sekhmet_lioness': {
@@ -572,14 +437,9 @@ NEW.update({
         ],
         'resistances': ['fire'], 'weaknesses': ['cold'],
         'tags': ['beast', 'outsider'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("When mankind plotted against Ra, he sent his Eye against them as Sekhmet, the "
-                 "lioness, and she slaughtered until she waded in blood and would not stop. To save "
-                 "the rest Ra had seven thousand jars of beer dyed red with ochre and poured over the "
-                 "fields. She drank it for blood, fell drunk, and forgot. Her lionesses were never "
-                 "given the beer. Their hot breath is the desert wind, and every blow makes the next "
-                 "one fiercer: end the fight quickly, or walk away and let them cool."),
+        'lore': ("Mankind once plotted against Ra, and he sent forth his Eye against them as Sekhmet the lioness, who slaughtered until she waded in blood and would not stop. To save the rest, Ra had seven thousand jars of beer dyed red with ochre and poured over the fields, and she drank it for blood, fell drunk and forgot her wrath. Her lionesses were never given the beer. Their hot breath is the desert wind and each blow they strike makes the next one fiercer, so end the fight quickly, or walk away and let them cool."),
         'frequency': 2, 'fury_per_attack': 0.08, 'fury_cap': 0.8,
-        'fury_message': "The Lioness of Sekhmet's eyes go red. She is wading in it now.",
+        'fury_message': "The eyes of the Lioness of Sekhmet go red, and she is wading in blood now.",
     },
     'ammit_devourer': {
         'name': 'Devourer of Hearts', 'symbol': 'A', 'color': [150, 120, 70],
@@ -591,12 +451,7 @@ NEW.update({
         ],
         'resistances': ['fire'], 'weaknesses': [],
         'tags': ['beast', 'outsider'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("In the Hall of the Two Truths Anubis set the dead man's heart on a scale against "
-                 "the feather of Ma'at, and Thoth wrote down the result. Beside the scale crouched "
-                 "Ammit, the Devourer: the head of a crocodile, the forequarters of a lion, the "
-                 "hindquarters of a hippopotamus. A heart heavier than the feather was hers to eat, "
-                 "and its owner was gone for good. Her get still weigh every heart they meet. They "
-                 "bite gently into a clean conscience and savagely into a heavy one."),
+        'lore': ("Anubis set the heart of each dead man upon a scale against the feather of Ma'at in the Hall of the Two Truths, and Thoth wrote down the judgment. Beside them crouched Ammit the Devourer, who had a crocodile's head, the forequarters of a lion and the hindquarters of a hippopotamus, and any heart heavier than the feather was hers to eat, so that its owner perished for ever. Her get still weigh every heart they meet, and their bite is gentle upon a clean conscience and savage upon a heavy one."),
         'frequency': 2, 'weighs_heart': True,
     },
     # --- Persian ---------------------------------------------------------------
@@ -611,13 +466,7 @@ NEW.update({
         ],
         'resistances': ['cold', 'magic'], 'weaknesses': ['holy'],
         'tags': ['demon', 'caster'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("In the Shahnameh, King Kay Kavus marched into Mazandaran to conquer it, and the "
-                 "White Div answered with sorcery: a darkness came down on the Persian army, a hail "
-                 "of stones fell out of it, and when it lifted the king and his men were blind. "
-                 "Rostam went alone through seven trials, killed the White Div in his cave, and "
-                 "cured the king's eyes with drops of the div's blood. The divs of Mazandaran still "
-                 "fight from a distance and still put out a man's sight. Bring something for the "
-                 "eyes, or close in fast."),
+        'lore': ("The Shahnameh tells how King Kay Kavus marched to conquer Mazandaran, and how the White Div answered him with sorcery. Darkness descended on the Persian host and a hail of stones fell out of it, and when it lifted the king and his men were blind. Then Rostam went alone through seven trials, slew the White Div in his cave, and with drops of the div's blood restored the sight of his king. The divs of Mazandaran still fight from a distance and put out the sight of men, so bring some remedy for the eyes, or else close in swiftly."),
         'frequency': 2, 'perception_range': 10,
     },
     'dahaka_wyrm': {
@@ -630,12 +479,7 @@ NEW.update({
         ],
         'resistances': ['fire', 'poison'], 'weaknesses': ['blunt', 'holy'],
         'tags': ['dragon', 'reptile', 'demon'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("Azhi Dahaka was the three-headed, six-eyed dragon of the Avesta, made by the evil "
-                 "spirit to empty the world of good things. When the hero Thraetaona struck it with "
-                 "his blade, snakes, scorpions, toads and lizards poured out of the wound, and he "
-                 "saw that if he cut it to pieces the world would be filled with vermin. So he "
-                 "chained it under Mount Damavand instead. Its brood carries the same curse. Every "
-                 "cut or stab lets out a swarm. Club it, burn it, or blast it."),
+        'lore': ("Azhi Dahaka, the dragon of the Avesta with three heads and six eyes, was made by the evil spirit to empty the world of good things. When the hero Thraetaona smote it with his blade, snakes, scorpions, toads and lizards poured from the wound, and he saw that if he cut it to pieces the world would be filled with vermin, and so he chained it beneath Mount Damavand instead. Its brood carries the same curse, and every cut or stab lets loose a swarm, so the wise will club it, or strike it with what is holy."),
         'frequency': 2, 'splits': {'by': ['slash', 'pierce'], 'into': 'khrafstra_swarm', 'max': 6},
     },
     'khrafstra_swarm': {
@@ -648,11 +492,7 @@ NEW.update({
         'resistances': ['poison'], 'weaknesses': ['fire', 'cold'],
         'tags': ['beast'], 'harvest_tier': 1,
         'treasure': {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1},
-        'lore': ("The Zoroastrian books call them khrafstra: the noxious creatures, snakes, "
-                 "scorpions, toads, lizards and stinging flies, which the evil spirit made to spoil "
-                 "the good creation. Killing them was a good deed, and priests kept a special stick "
-                 "for it. This seething knot of them spilled out of a Dahaka's wound and has not "
-                 "stopped biting since."),
+        'lore': ("Zoroastrian books give the name khrafstra to the noxious creatures, snakes, scorpions, toads, lizards and stinging flies, that the evil spirit made to mar the good creation. It was accounted a good deed to kill them, and the priests kept a special stick for the purpose. This seething knot spilled out of the wound of a Dahaka, and from that hour it has not ceased to bite."),
         'frequency': 0,
     },
     # --- Mesopotamian ----------------------------------------------------------
@@ -667,13 +507,7 @@ NEW.update({
         'resistances': ['drain', 'poison'], 'weaknesses': ['holy'],
         'tags': ['demon', 'outsider'], 'harvest_tier': 3,
         'treasure': {'gold': [40, 120], 'item_chance': 0.2, 'item_tier': 4},
-        'lore': ("When Inanna came back up from the underworld, the galla came with her to collect "
-                 "someone to take her place. The Sumerian poem says what they are: they eat no food, "
-                 "drink no water, take no gift, and pull the wife from the husband's arms and the "
-                 "child from the father's knee. They chased her husband Dumuzi across the steppe, "
-                 "and three times the sun god turned him into a gazelle to escape, and three times "
-                 "they found him. They come in gangs and they never give up the chase. They grab, "
-                 "they hold, and they drag."),
+        'lore': ("When Inanna returned from the underworld, the galla came with her to seize one who should take her place. They eat no food, says the Sumerian poem, they drink no water and accept no gift, and they pull the wife from the husband's arms and the child from the father's knee. They pursued her husband Dumuzi across the steppe, and though the sun god turned him three times into a gazelle that he might escape, three times they found him. In gangs they come to grab and hold and drag away, and they will never give up the chase."),
         'frequency': 3, 'pack': True, 'pack_size': [4, 6], 'fearless': True, 'pull_chance': 0.25,
     },
     'girtablilu': {
@@ -686,12 +520,7 @@ NEW.update({
         ],
         'resistances': ['slash', 'pierce', 'fire'], 'weaknesses': ['blunt', 'cold'],
         'tags': ['outsider'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("At the twin peaks of Mount Mashu, where the sun goes in and out, Gilgamesh found the "
-                 "gate guarded by a scorpion-man and his wife: men to the waist, scorpions below, "
-                 "whose terror was overwhelming and whose glance was death. Babylonian boundary stones "
-                 "show them drawing bows. Gilgamesh got past by telling them the truth about his "
-                 "grief. Down here they will not ask. They hunt in pairs, their shells turn a blade "
-                 "or an arrow, and the sting stops a man where he stands. A hammer cracks them."),
+        'lore': ("Gilgamesh came to the twin peaks of Mount Mashu, where the sun goes in and out, and found the gate kept by a scorpion-man and his wife, human to the waist and scorpion below, whose terror was overwhelming and whose glance was death. He told them truly of his grief and they let him pass, but in these depths they will ask no questions. They hunt in pairs, drawing bows as the Babylonian boundary stones show them. Their shells turn both blade and arrow and their sting stops a man where he stands, but a hammer will crack them."),
         'frequency': 2, 'pack': True, 'pack_size': [2, 2],
     },
     'asag_stone_warrior': {
@@ -705,13 +534,7 @@ NEW.update({
         'resistances': ['slash', 'pierce', 'fire', 'cold', 'lightning', 'poison', 'drain'],
         'weaknesses': ['blunt'],
         'tags': ['elemental', 'construct'], 'harvest_tier': 3, 'treasure': dict(DEEP_GOLD),
-        'lore': ("The Sumerian poem Lugal-e tells of Asag, the demon of the mountains, so terrible "
-                 "that fish boiled alive in the rivers where he walked. He fathered an army on the "
-                 "mountains, and the army was stones. The god Ninurta beat them with his talking mace "
-                 "Sharur, and afterwards judged each kind of stone in turn, blessing some and cursing "
-                 "others, which is why stones are as they are. Some of the army was never judged. "
-                 "Blades, fire, frost and lightning do almost nothing to them. Do what Ninurta did, "
-                 "and bring a mace."),
+        'lore': ("Asag was the demon of the mountains, so terrible that fish boiled alive in the rivers where he walked, and upon the mountains he fathered an army, and every soldier in it was a stone. So says the Sumerian poem Lugal-e, and it tells how the god Ninurta beat them with Sharur, his talking mace, and afterward judged each kind of stone, blessing some and cursing others, which is why stones are as they are. But some of that army was never judged, and blades, fire, frost and lightning do almost nothing to them, so do as Ninurta did, and bring a mace."),
         'frequency': 2,
     },
     # --- Medieval --------------------------------------------------------------
@@ -726,13 +549,7 @@ NEW.update({
         'resistances': ['cold', 'poison', 'drain', 'pierce'], 'weaknesses': ['blunt', 'holy'],
         'tags': ['undead'], 'harvest_tier': 2,
         'treasure': {'gold': [30, 100], 'item_chance': 0.2, 'item_tier': 4},
-        'lore': ("After the Black Death, painters covered church walls with the Dance of Death: a "
-                 "long chain of skeletons, each leading a living partner by the hand, the pope and "
-                 "the emperor and the peasant and the child, and none of them ready. Bernt Notke "
-                 "painted thirty yards of it for Lubeck, and a piece survives in Tallinn. These "
-                 "dancers have come off the wall. They circle and step and never stand where you "
-                 "struck, they take your hands, and your feet start to follow the steps. Fight them "
-                 "with your back to a wall."),
+        'lore': ("After the Black Death the walls of churches were painted with the Dance of Death, a long chain of skeletons that led each a living partner by the hand, pope and emperor, peasant and child, and none of them ready. Bernt Notke painted thirty yards of it for Lubeck, and a piece survives in Tallinn. These dancers have stepped down from the wall. They circle and step and are never standing where you struck, and they take you by the hands until your feet begin to follow the steps. Whoever must fight them should set his back to a wall."),
         'frequency': 3, 'pack': True, 'pack_size': [3, 4],
     },
     # --- Greek, the very deep ---------------------------------------------------
@@ -746,12 +563,7 @@ NEW.update({
         ],
         'resistances': ['magic', 'poison'], 'weaknesses': ['holy'],
         'tags': ['outsider'], 'harvest_tier': 3, 'treasure': dict(DEEP_GOLD),
-        'lore': ("Lyssa was the daughter of Night and the spirit of mad rage; her name is also the "
-                 "Greek word for rabies. In Euripides, Hera sends her to drive Heracles out of his "
-                 "mind, and Lyssa herself protests that it is unjust, and then obeys. Heracles came "
-                 "to himself among the bodies of his own family. Her madnesses wander the lowest "
-                 "halls: they dart in, bite, turn the mind inside out, and are gone before it turns "
-                 "back. A clear head is the only armour against them."),
+        'lore': ("Night was the mother of Lyssa, the spirit of raging madness, whose name is also the Greek word for rabies. Euripides tells that Hera sent her to drive Heracles out of his wits, and that Lyssa herself protested the injustice and yet obeyed, and when he came to himself it was among the bodies of his own family. Her madnesses wander the lowest halls, where they dart in, bite, turn the mind inside out and are gone before it turns back again. Against them a clear head is the only armour."),
         'frequency': 2, 'can_phase_blink': True, 'phase_blink_chance': 0.25,
     },
     # --- Japanese, the very deep ----------------------------------------------
@@ -765,12 +577,7 @@ NEW.update({
         ],
         'resistances': ['poison', 'cold'], 'weaknesses': ['fire'],
         'tags': ['beast', 'shapeshifter'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("Edo-period storytellers told of the jorogumo, a spider that lives for four hundred "
-                 "years and learns to take a woman's shape. At the Joren Falls in Izu a woodcutter "
-                 "resting on the bank felt threads winding round his ankle; he tied them to a tree "
-                 "stump, and the stump was torn out of the ground and dragged under the water. In "
-                 "the dungeon she waits in the dark corners of rooms. The first warning is the silk "
-                 "around your feet. Fire is what she fears."),
+        'lore': ("Edo storytellers gave the name of jorogumo to a spider that has lived four hundred years and has learned to take the shape of a woman. A woodcutter who rested by the Joren Falls in Izu felt threads winding about his ankle, and he tied them to a stump, which was torn from the ground and dragged beneath the water. In the dungeon she waits in the dark corners of rooms, and the first warning of her is silk about your feet, but she herself has a great fear of fire."),
         'frequency': 2,
     },
     # --- Norse ------------------------------------------------------------------
@@ -784,12 +591,7 @@ NEW.update({
         ],
         'resistances': ['cold', 'drain', 'magic'], 'weaknesses': ['iron', 'holy'],
         'tags': ['outsider', 'fey'], 'harvest_tier': 3, 'treasure': dict(DEEP_GOLD),
-        'lore': ("The Ynglinga saga tells how King Vanlandi broke his word to his Finnish wife, and "
-                 "she paid a witch to send a mara after him. As soon as he slept it trod on him. His "
-                 "men held his head and it trampled his legs; they held his legs and it pressed on "
-                 "his head until he died. Our word nightmare is her name. A mara lays its weight on "
-                 "you until you sleep where you stand, and then it tramples, harder on a sleeper. "
-                 "Old households hung a knife of steel over the bed."),
+        'lore': ("Vanlandi the king broke faith with his Finnish wife, as the Ynglinga saga tells, and she paid a witch to send a mara against him. The mara trod on him as soon as he slept, and when his men held his head she trampled his legs, and when they held his legs she pressed upon his head until he died. From her name comes our word nightmare. A mara lays her weight on you until you sleep where you stand, and then she tramples, the harder upon a sleeper, and for this cause old households hung a knife of steel over the bed."),
         'frequency': 2,
     },
 })
@@ -821,11 +623,7 @@ POTION = {
     'power': '',
     'duration': 150,
     'floorSpawnWeight': {'1-20': 0, '21-40': 15, '41-60': 30, '61-80': 40, '81-100': 45},
-    'lore': ("The king of Aram sent an army by night to take the prophet Elisha at Dothan, and "
-             "in the morning his servant saw the city ringed with horses and chariots and cried "
-             "out. Elisha prayed that the young man's eyes be opened, and he looked again and saw "
-             "the hills full of horses and chariots of fire. This potion opens the eyes a little "
-             "way in the same direction: for a while the drinker sees what walks unseen."),
+    'lore': ("The king of Aram sent an army by night to seize the prophet Elisha at Dothan, and when morning came the prophet's servant saw the city ringed with horses and chariots and cried out. Then Elisha prayed that the young man's eyes be opened, and he looked again and beheld the hills full of horses and chariots of fire. This potion opens the eyes a little way toward such sight, so that for a while the drinker sees what walks unseen."),
     'peak_weight': 0.5,
 }
 

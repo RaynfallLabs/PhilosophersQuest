@@ -10,7 +10,7 @@ healing until it is cured; the ghoul's grave-filth; the plague). Now:
 
   * on the hero: while diseased his wounds do not mend by rest (natural
     regeneration stops, main._tick_hp_regen) and every heal that goes through
-    Player.restore_hp (potions, spells, prayers, meals) does half
+    Player.restore_hp (potions, healing wands, spells, prayers, meals) does half
     (Player.restore_hp); the stat sap stays. How long a monster's disease
     lasts is the kind's own: its rider's `effect_duration`, times its
     `disease_linger` where its lore makes the sickness one that lingers
@@ -64,6 +64,35 @@ def heal_amount(player, amount: int) -> int:
     if amount > 0 and sick(player):
         return max(1, int(amount) // 2)
     return amount
+
+
+# ---------------------------------------------------------------------------
+# A heal's line says what was healed: restore_hp gives less than it was
+# asked for to a sick hero, to one whose wounds will not close and to one
+# who had few to close.
+# ---------------------------------------------------------------------------
+
+def _blocked(player) -> bool:
+    has = getattr(player, 'has_effect', None)
+    return bool(has is not None and has('heal_blocked'))
+
+
+def told(player, got: int, line: str) -> str:
+    """A heal's ``line``, its {n} the health really gained."""
+    if got > 0:
+        return line.replace('{n}', str(got))
+    return "Your wounds refuse to close." if _blocked(player) else "You have no wounds to close."
+
+
+def whole(player, line: str) -> str:
+    """A ``line`` that calls the hero whole, said only when he is."""
+    if player.hp >= player.max_hp:
+        return line
+    if _blocked(player):
+        return "Your wounds refuse to close."
+    if sick(player):
+        return "Your wounds close only part of the way: you are Diseased."
+    return "Your wounds close only part of the way."
 
 
 def monster_tick(m, poison_divisor: int, rng=None) -> None:

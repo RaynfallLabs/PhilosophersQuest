@@ -13,7 +13,7 @@
   "damage_mult": 1.75,
   "weight_mult": 2.0,
   "max_enchant": 1,
-  "enchant_note": "Stone from before the world was made: magic is younger than it.",
+  "enchant_note": "Stone from before the world was made is older than magic, and heeds it little.",
   "color": [
     80,
     70,
@@ -31,7 +31,7 @@
     "pierce": "stone turns a point"
   },
   "metal": false,
-  "protection_note": "Stone from before the world was made: magic is younger than it.",
+  "protection_note": "Stone from before the world was made is older than magic, and heeds it little.",
   "protection_price": "It weighs twice as much as steel.",
   "vulnerabilities": [],
   "effective_against": [],
@@ -43,6 +43,6 @@
   ],
   "lore_descriptor": "deep gray veined with red, cut from rock older than the hills above it",
   "unidentified_descriptor": "dark craggy",
-  "first_pickup_chronicle": "Put on primordial stone, from before the world had names. Magic slides right off. So does any chance of me running anywhere.",
+  "first_pickup_chronicle": "Put on primordial stone armor. Magic slides off. No running in this.",
   "design_notes": "Heaviest endgame mineral armor. Mult 1.75, weight 2.0, AC +4, spell-resistant."
 }

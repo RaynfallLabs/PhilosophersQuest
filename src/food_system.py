@@ -1,6 +1,8 @@
 from naming import quantity
+from status_effects import turns_now
 import json
 import random
+import grave_rot
 from paths import data_path
 
 _INGREDIENT_PATH = data_path('data', 'items', 'ingredient.json')
@@ -348,7 +350,7 @@ def _apply_recipe_outcome(player, recipe: dict, ruined: bool = False) -> list[st
             and (getattr(player, 'quirk_progress', None) or {}).get('fatted_calf_active')
             and player.hp < player.max_hp):
         player.restore_hp(player.max_hp - player.hp)
-        msgs = list(msgs) + ["You rise from the feast whole: every wound has closed."]
+        msgs = list(msgs) + [grave_rot.whole(player, "You rise from the feast whole: every wound has closed.")]
     return msgs
 
 
@@ -842,29 +844,27 @@ def apply_fafnirs_blood(player, chain: int) -> list:
     if chain == 0:
         burn = max(1, player.max_hp // 5)
         player.hp = max(1, player.hp - burn)
-        msgs.append("The blood scalds your mouth and throat, and that is all it does.")
-        msgs.append("Birds are making a noise somewhere overhead. It is only noise.")
+        msgs.append("The blood scalds your mouth and throat, and it does nothing more.")
+        msgs.append("Birds are crying somewhere overhead, but to you it is only noise.")
         return msgs
     earned = {name for need, name in FAFNIR_BLOOD_STEPS if chain >= need}
     if 'heal' in earned:
         player.restore_hp(player.max_hp - player.hp)
-        msgs.append("The blood scalds all the way down. Then the pain is gone, "
-                    "and every wound with it.")
+        msgs.append(grave_rot.whole(
+            player, "The blood scalds all the way down, and then the pain is gone and every wound with it."))
     if 'hint' in earned:
-        msgs.append("Two birds are talking overhead, and the words are plain: "
-                    "a broken sword, a one-eyed god's stone, a throw.")
+        msgs.append("Two birds are talking overhead, and you plainly hear them tell of a broken sword, a one-eyed god's stone and a throw.")
     else:
-        msgs.append("Two birds are talking overhead. You almost follow them.")
+        msgs.append("Two birds are talking overhead, and you almost follow their words.")
     if 'fire_resist' in earned:
         player.add_effect('fire_resist', -1)
         msgs.append("Fire will never bite you as deep again.")
     if 'warning' in earned:
         player.add_effect('warning', -1)
-        msgs.append("The birds go on talking, and now they are talking to you. "
-                    "Nothing will come up on you unannounced again.")
+        msgs.append("The birds talk on, and now they speak to you, so that nothing shall ever again come upon you unannounced.")
     if 'wisdom' in earned:
         player.apply_stat_bonus('WIS', 1)
-        msgs.append("You find you understand rather more than birds.")
+        msgs.append("You find that you understand far more than the speech of birds.")
     return msgs
 
 
@@ -902,8 +902,19 @@ _WARD_POTIONS = {
     'fireproof':  ((), ('fire_shield', 'shielded'),
                    "You rub on the charm of Prometheus. Fire cannot burn you, and blows land half as hard"),
     'styx_dipped': ((), ('styx_dipped',),
-                    "Black water from the Styx closes over your skin like iron. No blow, bite or claw can wound you, but mind your heel"),
+                    "Black water from the Styx closes over your skin like iron. Physical blows, bites and claws cannot wound you, though fire, venom and magic can, and mind your heel"),
 }
+
+
+def potion_turns(potion) -> int:
+    """The turns one potion lays, for the menus and its card: the status
+    cap cuts all but the ward potions, which carry a cap of their own
+    (_ward_potion)."""
+    turns = int(getattr(potion, 'duration', 0) or 0)
+    if getattr(potion, 'effect', '') in _WARD_POTIONS:
+        return turns
+    from status_effects import MAX_EFFECT_DURATION
+    return min(turns, MAX_EFFECT_DURATION)
 
 
 def _ward_potion(player, effect: str, duration: int, buff_mult: float) -> list:
@@ -912,6 +923,8 @@ def _ward_potion(player, effect: str, duration: int, buff_mult: float) -> list:
     dur = max(1, int(int(duration or 1) * buff_mult))
     for st in lays:
         player.add_effect(st, dur, cap=max(dur, 60))
+    if lays:
+        dur = turns_now(player, lays[0], dur)
     line = f"{said} ({quantity(dur, 'turn')})."
     if cleared:
         from status_effects import EFFECT_INFO
@@ -993,7 +1006,7 @@ def drink_potion(player, potion) -> list[str]:
         else:
             amt = player.max_hp - player.hp
         player.restore_hp(amt)
-        messages.append("Every wound closes. You feel completely whole.")
+        messages.append(grave_rot.whole(player, "Every wound closes. You feel completely whole."))
         if cleared:
             messages.append(f"The draught also burns away: {', '.join(cleared)}.")
 
@@ -1033,22 +1046,26 @@ def drink_potion(player, potion) -> list[str]:
     elif effect == 'haste':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('hasted', dur)
+        dur = turns_now(player, 'hasted', dur)
         messages.append(f"The world slows around you. You are Hasted ({quantity(dur, 'turn')}).")
 
     elif effect == 'invisibility':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('invisible', dur)
+        dur = turns_now(player, 'invisible', dur)
         messages.append(f"You fade from sight. Invisible ({quantity(dur, 'turn')}).")
 
     elif effect == 'regeneration':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('regenerating', dur)
+        dur = turns_now(player, 'regenerating', dur)
         messages.append(f"You feel an uncanny resilience -- Regenerating ({quantity(dur, 'turn')}).")
 
     elif effect == 'heroism':
         dur = max(1, int(duration * _buff_mult))
         already_active = player.has_effect('heroism')
         player.add_effect('heroism', dur)
+        dur = turns_now(player, 'heroism', dur)
         if not already_active:
             messages.append(f"Surging strength fills your limbs! STR +2, Heroic ({quantity(dur, 'turn')}).")
         else:
@@ -1058,6 +1075,7 @@ def drink_potion(player, potion) -> list[str]:
         dur = max(1, int(duration * _buff_mult))
         already_active = player.has_effect('brilliance')
         player.add_effect('brilliance', dur)
+        dur = turns_now(player, 'brilliance', dur)
         if not already_active:
             messages.append(f"Your mind blazes with clarity! INT +1, WIS +1, Brilliant ({quantity(dur, 'turn')}).")
         else:
@@ -1066,11 +1084,13 @@ def drink_potion(player, potion) -> list[str]:
     elif effect == 'levitation':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('levitating', dur)
+        dur = turns_now(player, 'levitating', dur)
         messages.append(f"Your feet leave the ground. Levitating ({quantity(dur, 'turn')}).")
 
     elif effect == 'see_invisible':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('see_invisible', dur)
+        dur = turns_now(player, 'see_invisible', dur)
         messages.append(f"Your eyes are opened: you see what walks unseen. See Invisible ({quantity(dur, 'turn')}).")
 
     elif effect == 'restore_str':
@@ -1246,16 +1266,19 @@ def drink_potion(player, potion) -> list[str]:
     elif effect == 'fire_resist':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('fire_resist', dur)
+        dur = turns_now(player, 'fire_resist', dur)
         messages.append(f"Heat rolls off you harmlessly. Fire Resist ({quantity(dur, 'turn')}).")
 
     elif effect == 'cold_resist':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('cold_resist', dur)
+        dur = turns_now(player, 'cold_resist', dur)
         messages.append(f"The cold cannot touch you. Cold Resist ({quantity(dur, 'turn')}).")
 
     elif effect == 'shock_resist':
         dur = max(1, int(duration * _buff_mult))
         player.add_effect('shock_resist', dur)
+        dur = turns_now(player, 'shock_resist', dur)
         messages.append(f"Electricity crackles and disperses. Shock Resist ({quantity(dur, 'turn')}).")
 
     elif effect == 'restore_mp':

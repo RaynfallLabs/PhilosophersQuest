@@ -1,45 +1,45 @@
 {
-  "_doc": "Fixtures: things that stand in or on a tile without changing what the tile is (src/decor.py; Dungeon Alive 2026-11-12). The picture is assets/tiles/env/fixtures/<id>.png, drawn over the tile; without one, a blocking fixture is drawn as a plain block in 'color' and a decal is not drawn. 'layer': floor (a flat decal on a walkable tile), stand (an object on a floor tile), wall (hung on or cut into a wall tile). 'blocks': nothing can walk through it. 'opaque': it blocks sight like a pillar. 'look': what Observe (O) says. 'name': what a bump says stands in the way. 'spent_look': what Observe says once a lore fixture is spent, when it differs. 'flat': a mark lying flat on the floor (a scorch, a crack, ash, snow, leaves): it may lie anywhere, out in a room or in a corridor. Every other loose floor piece is an object, and objects lie against a wall, in a small group (src/decor.py _place_cluster; Brandon's play-test 2026-11-12: \"big empty rooms with random stuff on the floor\").",
+  "_doc": "Fixtures: things that stand in or on a tile without changing what the tile is (src/decor.py; Dungeon Alive 2026-11-12). The picture is assets/tiles/env/fixtures/<id>.png, drawn over the tile; without one, a blocking fixture is drawn as a plain block in 'color' and a decal is not drawn. 'layer': floor (a flat decal on a walkable tile), stand (an object on a floor tile), wall (hung on or cut into a wall tile). 'blocks': nothing can walk through it. 'opaque': it blocks sight like a pillar. 'look': what Observe (O) says. 'name': what a bump says stands in the way. 'spent_look': what Observe says once a lore fixture is spent, when it differs. 'sealed_look': the same, for a vent that the prayer did shut. 'flat': a mark lying flat on the floor (a scorch, a crack, ash, snow, leaves): it may lie anywhere, out in a room or in a corridor. Every other loose floor piece is an object, and objects lie against a wall, in a small group (src/decor.py _place_cluster; Brandon's play-test 2026-11-12: \"big empty rooms with random stuff on the floor\").",
   "fixtures": {
     "labrys_mark": {
       "name": "a double-axe carving",
       "layer": "wall",
-      "look": "A double axe cut into the stone and filled with old red paint. The Minoans of Crete carved this sign again and again; some scholars think it gave the labyrinth its name."
+      "look": "A double axe is cut into the stone and filled with old red paint. The Minoans of Crete carved this sign again and again, and some scholars think that it gave the labyrinth its name."
     },
     "bull_fresco": {
       "name": "a bull fresco",
       "layer": "wall",
-      "look": "A faded painting of a red bull, and a youth leaping over its horns. The Minoans painted bull-leapers on their palace walls."
+      "look": "A faded painting shows a red bull and a youth leaping over its horns, for the Minoans painted bull-leapers upon their palace walls."
     },
     "horns_consecration": {
       "name": "stone horns",
       "layer": "stand",
-      "look": "Two stone horns on a base: the Minoans' horns of consecration, set up where something sacred once stood."
+      "look": "Two stone horns stand on a base, the horns of consecration that the Minoans set up where something sacred once stood."
     },
     "bone_pile": {
       "name": "old bones",
       "layer": "floor",
-      "look": "Old bones. Whoever they were, they came this far."
+      "look": "Here lie old bones of folk who came thus far and no farther."
     },
     "rubble": {
       "name": "rubble",
       "layer": "floor",
-      "look": "Stones fallen from the ceiling. Not recently, you hope."
+      "look": "Stones have fallen from the ceiling, though not lately, you hope."
     },
     "wall_torch": {
       "name": "a torch",
       "layer": "wall",
-      "look": "A torch in an iron sconce, still burning. Somebody keeps these lit."
+      "look": "A torch burns in an iron sconce still, for someone keeps these lit."
     },
     "cobweb": {
       "name": "a cobweb",
       "layer": "wall",
-      "look": "A curtain of old web. Whatever spun it was either very large or very patient."
+      "look": "A curtain of old web hangs here, spun by something very large or very patient."
     },
     "broken_pot": {
       "name": "a broken jar",
       "layer": "floor",
-      "look": "A smashed storage jar. Grain once, by the husks."
+      "look": "A storage jar lies smashed, and by the husks it held grain."
     },
     "statue_shield": {
       "name": "a statue",
@@ -51,7 +51,7 @@
         128,
         118
       ],
-      "look": "A warrior in stone, his shield raised before his face. He saw it coming. It did not help."
+      "look": "A stone warrior holds his shield before his face. He saw it coming, but the shield did not save him."
     },
     "statue_stride": {
       "name": "a statue",
@@ -63,7 +63,7 @@
         128,
         118
       ],
-      "look": "A man in stone, caught mid-stride, looking back over his shoulder."
+      "look": "A man in stone is caught in mid-stride, looking back over his shoulder."
     },
     "statue_kneel": {
       "name": "a statue",
@@ -75,7 +75,7 @@
         128,
         118
       ],
-      "look": "A kneeling man in stone with one arm thrown across his eyes. Too late."
+      "look": "A man of stone kneels, having thrown an arm across his eyes too late."
     },
     "statue_reach": {
       "name": "a statue",
@@ -87,7 +87,7 @@
         128,
         118
       ],
-      "look": "A woman in stone, one hand reaching out, her mouth open on a word nobody heard."
+      "look": "A woman in stone reaches out one hand, her mouth open on a word that nobody heard."
     },
     "statue_spear": {
       "name": "a statue",
@@ -99,7 +99,7 @@
         128,
         118
       ],
-      "look": "A spearman in stone. Moss has grown up over his greaves."
+      "look": "A spearman stands in stone, and moss has grown up over his greaves."
     },
     "column_drum": {
       "name": "a fallen column",
@@ -110,27 +110,27 @@
         150,
         140
       ],
-      "look": "A fallen drum from a fluted marble column. The roof it held up is somewhere else now."
+      "look": "Here lies the drum of a fluted marble column, fallen from beneath a roof that is long gone."
     },
     "ivy": {
       "name": "ivy",
       "layer": "wall",
-      "look": "Ivy, thick and dark, where no sun has ever reached."
+      "look": "Thick dark ivy grows where no sun has ever reached."
     },
     "roots": {
       "name": "roots",
       "layer": "floor",
-      "look": "Pale roots pushing up between the slabs, from something growing far above."
+      "look": "Pale roots of something that grows far above push up between the slabs."
     },
     "snake_skin": {
       "name": "a snake skin",
       "layer": "floor",
-      "look": "A shed snake skin, longer than you are tall."
+      "look": "Here lies a shed snake skin, longer than you are tall."
     },
     "olive_leaves": {
       "name": "olive leaves",
       "layer": "floor",
-      "look": "Dry olive leaves, blown in from nowhere. The olive was Athena's tree.",
+      "look": "Dry olive leaves have blown in from nowhere, and the olive was Athena's tree.",
       "flat": true
     },
     "offering_basin": {
@@ -142,12 +142,12 @@
         160,
         150
       ],
-      "look": "A marble basin for offerings, long dry."
+      "look": "A marble basin for offerings stands here, long dry."
     },
     "statue_rubble": {
       "name": "broken statues",
       "layer": "floor",
-      "look": "A stone hand, a stone head, broken off something that was once a person."
+      "look": "Here are a stone hand and a stone head, broken from what was once a person."
     },
     "stalagmite": {
       "name": "a stalagmite",
@@ -159,29 +159,29 @@
         58,
         50
       ],
-      "look": "A stalagmite, black with old soot."
+      "look": "A stalagmite rises here, black with old soot."
     },
     "slayer_bones": {
       "name": "a burned skeleton",
       "layer": "floor",
-      "look": "A skeleton with a split shield and a snapped sword, burned where it fell."
+      "look": "A skeleton lies burned where it fell, with a split shield and a snapped sword."
     },
     "scorch_mark": {
       "name": "a scorch mark",
       "layer": "floor",
-      "look": "A black scorch on the stone, splashed outward. Something breathed here.",
+      "look": "The stone is scorched black in a great splash, for something breathed fire here.",
       "flat": true
     },
     "ember_crack": {
       "name": "a glowing crack",
       "layer": "floor",
-      "look": "A crack in the rock, glowing with heat from somewhere far below.",
+      "look": "A crack in the rock glows with heat from somewhere far below.",
       "flat": true
     },
     "ash_drift": {
       "name": "ash",
       "layer": "floor",
-      "look": "Grey ash, drifted against the stone like snow.",
+      "look": "Grey ash has drifted against the stone like snow.",
       "flat": true
     },
     "crystal_cluster": {
@@ -193,7 +193,7 @@
         50,
         50
       ],
-      "look": "Dull red crystals growing out of the rock, warm to the touch."
+      "look": "Dull red crystals grow out of the rock, and they are warm to the touch."
     },
     "pick_and_cart": {
       "name": "a mining cart",
@@ -204,7 +204,7 @@
         80,
         60
       ],
-      "look": "A dwarf-made mining cart with a pick leaning on it. Whoever dug here left in a hurry."
+      "look": "A pick leans on a mining cart of dwarf make, left by one who dug here and departed in haste."
     },
     "frozen_warrior": {
       "name": "a frozen warrior",
@@ -216,7 +216,7 @@
         200,
         225
       ],
-      "look": "A warrior frozen inside a pillar of ice, his axe still raised."
+      "look": "A warrior stands frozen in a pillar of ice, his axe still raised."
     },
     "rune_stone": {
       "name": "a runestone",
@@ -228,18 +228,18 @@
         125,
         130
       ],
-      "look": "A runestone. The runes run along the body of a carved serpent, as on the old stones of the north."
+      "look": "This is a runestone, and its runes run along a carved serpent's body, as on the old stones of the north."
     },
     "snow_drift": {
       "name": "snow",
       "layer": "floor",
-      "look": "Snow, drifted in from nowhere.",
+      "look": "Snow has drifted in here from nowhere.",
       "flat": true
     },
     "icicles": {
       "name": "icicles",
       "layer": "wall",
-      "look": "Icicles as long as spears."
+      "look": "The icicles are as long as spears."
     },
     "mead_bench": {
       "name": "a bench",
@@ -250,22 +250,22 @@
         70,
         50
       ],
-      "look": "A long mead-hall bench with a drinking horn on it, frozen to the wood."
+      "look": "A drinking horn is frozen fast to the wood of a long mead-hall bench."
     },
     "shield_wall": {
       "name": "shields",
       "layer": "wall",
-      "look": "Round shields hung along the wall, as in a hall of the north."
+      "look": "Round shields hang along the wall, as in a hall of the north."
     },
     "broken_fetter": {
       "name": "a broken fetter",
       "layer": "floor",
-      "look": "A shackle as wide as a cartwheel, and a few links of broken chain."
+      "look": "A shackle as wide as a cartwheel lies here, with a few links of broken chain."
     },
     "frozen_bones": {
       "name": "frozen bones",
       "layer": "floor",
-      "look": "Bones, half buried in frost."
+      "look": "Bones lie half buried in the frost."
     },
     "brazier_cold": {
       "name": "a brazier",
@@ -276,7 +276,7 @@
         80,
         85
       ],
-      "look": "An iron brazier full of dead coals. Lit, it would melt the ice round it."
+      "look": "An iron brazier is full of dead coals. If it were lit, it would melt the ice round it."
     },
     "brazier_lit": {
       "name": "a brazier",
@@ -287,19 +287,20 @@
         140,
         60
       ],
-      "look": "An iron brazier, burning."
+      "look": "An iron brazier is burning here."
     },
     "smoke_vent": {
       "name": "a smoking crack",
       "layer": "floor",
-      "look": "A crack in the glass, with smoke rising out of it. On the floor of the Pit, the locusts climb out of these.",
-      "spent_look": "Smoke still rises from the crack. Whatever you said over it was not enough.",
+      "look": "Smoke rises from a crack in the glass. On the floor of the Pit, the locusts climb out of such cracks as these.",
+      "spent_look": "Smoke still rises from the crack, for the words you spoke over it were not enough.",
+      "sealed_look": "The crack is stopped, and no smoke rises where your prayer has shut it.",
       "flat": true
     },
     "hanging_chains": {
       "name": "chains",
       "layer": "wall",
-      "look": "Chains hang down the wall, with hooks on the ends."
+      "look": "Chains hang down the wall with hooks upon their ends."
     },
     "bone_spire": {
       "name": "a bone spire",
@@ -311,17 +312,17 @@
         50,
         50
       ],
-      "look": "A spire of black bones, fused together by heat."
+      "look": "Black bones rise in a spire, fused together by the heat."
     },
     "brimstone": {
       "name": "brimstone",
       "layer": "floor",
-      "look": "Bubbling yellow sulphur. It would burn straight through your boots."
+      "look": "Yellow sulphur bubbles here, hot enough to burn straight through your boots."
     },
     "glow_fissure": {
       "name": "a glowing fissure",
       "layer": "floor",
-      "look": "A wide crack glowing deep red.",
+      "look": "A wide crack glows deep red.",
       "flat": true
     },
     "seal_stone": {
@@ -333,7 +334,7 @@
         40,
         45
       ],
-      "look": "A black standing stone stamped with a red seal."
+      "look": "A black standing stone bears the stamp of a red seal."
     },
     "ruined_throne": {
       "name": "a broken throne",
@@ -344,7 +345,7 @@
         40,
         45
       ],
-      "look": "A black stone throne, split down the back."
+      "look": "A throne of black stone is split down the back."
     },
     "fallen_star": {
       "name": "a fallen star",
@@ -355,52 +356,52 @@
         200,
         220
       ],
-      "look": "A lump of black and silver rock, still white-hot in its cracks. A star fell here."
+      "look": "A star fell here, and its black and silver rock is still white-hot within the cracks."
     },
     "bronze_grate": {
       "name": "a bronze grate",
       "layer": "stand",
-      "look": "A bronze grate, its bars thick as a man's wrist."
+      "look": "The bars of this bronze grate are as thick as a man's wrist."
     },
     "bronze_grate_open": {
       "name": "a raised grate",
       "layer": "stand",
-      "look": "The bronze grate, raised."
+      "look": "The bronze grate has been raised."
     },
     "statue_crowd": {
       "name": "a crowd of statues",
       "layer": "stand",
-      "look": "Statues packed shoulder to shoulder, every one of them looking back."
+      "look": "Statues stand packed shoulder to shoulder, and every one of them looks back."
     },
     "fire_curtain": {
       "name": "a curtain of fire",
       "layer": "stand",
-      "look": "A sheet of fire that burns on nothing at all."
+      "look": "A sheet of fire burns here upon nothing at all."
     },
     "fire_out": {
       "name": "dead embers",
       "layer": "floor",
-      "look": "A line of dying embers where the fire stood."
+      "look": "A line of embers is dying where the fire stood."
     },
     "snow_barrier": {
       "name": "a wall of snow",
       "layer": "stand",
-      "look": "Snow packed hard, colder than snow should be. It does not melt."
+      "look": "The snow is packed hard and colder than snow should be, and it does not melt."
     },
     "snow_slush": {
       "name": "slush",
       "layer": "floor",
-      "look": "Grey slush, all that is left of the drift."
+      "look": "Grey slush is all that is left of the drift."
     },
     "wax_seal": {
       "name": "a great seal",
       "layer": "stand",
-      "look": "A seal of red wax as wide as a door, stamped with a horned sign."
+      "look": "A seal of red wax as wide as a door bears the stamp of a horned sign."
     },
     "wax_seal_broken": {
       "name": "a broken seal",
       "layer": "floor",
-      "look": "The great seal, broken in three."
+      "look": "The great seal lies broken in three."
     },
     "bunk": {
       "name": "a bunk",
@@ -411,7 +412,7 @@
         80,
         60
       ],
-      "look": "A rough bunk with a grey blanket."
+      "look": "A grey blanket lies on a rough bunk."
     },
     "weapon_rack": {
       "name": "a weapon rack",
@@ -422,7 +423,7 @@
         80,
         60
       ],
-      "look": "A rack of old spears and a sword, rusted to the wood."
+      "look": "A rack holds old spears and a sword, rusted fast to the wood."
     },
     "cook_pot": {
       "name": "a cook-pot",
@@ -433,12 +434,12 @@
         50,
         55
       ],
-      "look": "A cold cook-pot hanging over dead ashes."
+      "look": "A cold cook-pot hangs over dead ashes."
     },
     "bookshelf": {
       "name": "a bookshelf",
       "layer": "wall",
-      "look": "Shelves crammed with scroll-cases and old books."
+      "look": "The shelves are crammed with scroll-cases and old books."
     },
     "reading_desk": {
       "name": "a lectern",
@@ -449,7 +450,7 @@
         85,
         60
       ],
-      "look": "A lectern with a great book open on it."
+      "look": "A great book lies open upon a lectern."
     },
     "strongbox_empty": {
       "name": "an empty strongbox",
@@ -460,7 +461,7 @@
         80,
         70
       ],
-      "look": "A strongbox, broken open and empty."
+      "look": "A strongbox has been broken open and emptied."
     },
     "ledger_desk": {
       "name": "a clerk's desk",
@@ -471,22 +472,22 @@
         85,
         60
       ],
-      "look": "A clerk's desk: a ledger, an inkpot, a little set of coin scales."
+      "look": "A clerk's desk holds a ledger, an inkpot and a little set of coin scales."
     },
     "candles": {
       "name": "candles",
       "layer": "floor",
-      "look": "Candles, still burning. Somebody lit them."
+      "look": "Somebody lit these candles, and they are burning still."
     },
     "icon": {
       "name": "an icon",
       "layer": "wall",
-      "look": "A painted icon in gold and red: a robed figure with a halo."
+      "look": "A painted icon in gold and red shows a robed figure with a halo."
     },
     "straw": {
       "name": "straw",
       "layer": "floor",
-      "look": "Trampled straw, and the smell of things that sleep on it.",
+      "look": "The straw is trampled and smells of the things that sleep on it.",
       "flat": true
     },
     "cage": {
@@ -498,7 +499,7 @@
         80,
         60
       ],
-      "look": "An iron cage, its door hanging open."
+      "look": "An iron cage stands with its door hanging open."
     },
     "feed_trough": {
       "name": "a trough",
@@ -509,17 +510,17 @@
         80,
         60
       ],
-      "look": "A feed trough with a little old grain in it."
+      "look": "There is a little old grain in the feed trough."
     },
     "honeycomb": {
       "name": "honeycomb",
       "layer": "wall",
-      "look": "Wax comb, heavy with honey."
+      "look": "The wax comb is heavy with honey."
     },
     "honey_drip": {
       "name": "honey",
       "layer": "floor",
-      "look": "A puddle of honey.",
+      "look": "Honey lies here in a puddle.",
       "flat": true
     },
     "grave_marker": {
@@ -531,28 +532,28 @@
         120,
         115
       ],
-      "look": "A grave marker, leaning. The name has worn away."
+      "look": "A grave marker leans here, its name worn away."
     },
     "reeds": {
       "name": "reeds",
       "layer": "floor",
-      "look": "Reeds and bulrushes.",
+      "look": "Reeds and bulrushes grow here.",
       "flat": true
     },
     "lily_pads": {
       "name": "lily pads",
       "layer": "floor",
-      "look": "Lily pads on still water."
+      "look": "Lily pads float on still water."
     },
     "carpet": {
       "name": "a carpet",
       "layer": "floor",
-      "look": "A worn red carpet runner."
+      "look": "A worn runner of red carpet lies here."
     },
     "banner": {
       "name": "a banner",
       "layer": "wall",
-      "look": "A red banner with a faded gold crown."
+      "look": "A red banner bears a crown of faded gold."
     },
     "copyist_desk": {
       "name": "a copyist's desk",
@@ -563,7 +564,7 @@
         85,
         60
       ],
-      "look": "A scribe's desk with a half-copied page."
+      "look": "A half-copied page lies on a scribe's desk."
     },
     "alchemist_bench": {
       "name": "an alchemist's bench",
@@ -574,7 +575,7 @@
         85,
         60
       ],
-      "look": "An alchemist's bench: a glass retort, flasks, a burner gone cold."
+      "look": "An alchemist's bench holds a glass retort, flasks and a burner gone cold."
     },
     "surveyor_table": {
       "name": "a surveyor's table",
@@ -585,7 +586,7 @@
         85,
         60
       ],
-      "look": "A table with a half-drawn map pinned flat."
+      "look": "A half-drawn map is pinned flat upon a table."
     },
     "memorial_stone": {
       "name": "a memorial stone",
@@ -596,7 +597,7 @@
         120,
         115
       ],
-      "look": "A stone cut with rows of names."
+      "look": "Rows of names are cut into this stone."
     },
     "wayside_icon": {
       "name": "a wayside shrine",
@@ -607,12 +608,12 @@
         90,
         60
       ],
-      "look": "A little roofed shrine on a post, with a painted icon and a candle."
+      "look": "A little roofed shrine on a post holds a painted icon and a candle."
     },
     "trophy_board": {
       "name": "a trophy board",
       "layer": "wall",
-      "look": "A hunter's board: antlers, tusks, a small skull."
+      "look": "A hunter's board bears antlers, tusks and a small skull."
     },
     "brazen_head": {
       "name": "a brazen head",
@@ -623,12 +624,12 @@
         130,
         60
       ],
-      "look": "A bronze head on a stone plinth, with eyes of glass."
+      "look": "A bronze head with eyes of glass rests on a stone plinth."
     },
     "riddle_lintel": {
       "name": "a carved lintel",
       "layer": "wall",
-      "look": "A lintel carved with an owl and a line of writing."
+      "look": "An owl and a line of writing are carved upon the lintel."
     },
     "gamblers_table": {
       "name": "a gaming table",
@@ -639,7 +640,7 @@
         85,
         60
       ],
-      "look": "A rough table with cards, dice and a little heap of copper."
+      "look": "Cards, dice and a little heap of copper lie on a rough table."
     },
     "field_kitchen": {
       "name": "a cooking fire",
@@ -650,47 +651,47 @@
         110,
         50
       ],
-      "look": "A camp fire with a pot on a tripod, a ladle and a sack of vegetables."
+      "look": "A pot on a tripod hangs over a camp fire, with a ladle and a sack of vegetables."
     },
     "fire_vent": {
       "name": "a vent",
       "layer": "floor",
-      "look": "An iron-ringed vent in the floor, glowing deep inside. It breathes fire on a beat, and it glows white the turn before. Watch it once and you will know when to cross."
+      "look": "An iron-ringed vent in the floor glows deep inside. It breathes fire on a beat and glows white the turn before, so watch it once and you will know when to cross."
     },
     "fire_vent_active": {
       "name": "a jet of fire",
       "layer": "stand",
-      "look": "Fire roars up out of the vent. Wait for it."
+      "look": "Fire roars up out of the vent, so wait for it to die down."
     },
     "thin_ice": {
       "name": "thin ice",
       "layer": "floor",
-      "look": "Thin, cracked ice over black water. It might hold you. It would not hold you and a heavy pack."
+      "look": "Thin, cracked ice lies over black water. It might hold you, but it would not hold you and a heavy pack."
     },
     "crumbling_floor": {
       "name": "cracked flagstones",
       "layer": "floor",
-      "look": "Cracked flagstones, sagging, with darkness in the gaps. They will not take much weight."
+      "look": "The flagstones are cracked and sagging, with darkness in the gaps, and they will not take much weight."
     },
     "strangler_vine": {
       "name": "thorny vines",
       "layer": "floor",
-      "look": "Thick thorny vines across the floor. Some of them are moving. Whatever walks through them gets held."
+      "look": "Thick thorny vines lie across the floor, and some of them are moving. Whatever walks through them is held fast."
     },
     "soul_sigil": {
       "name": "a burned sigil",
       "layer": "floor",
-      "look": "A ring of sigils burned into the glass. It drinks the magic of whoever stands on it."
+      "look": "A ring of sigils is burned into the glass, and it drinks the magic of whoever stands on it."
     },
     "icicle_shadow": {
       "name": "broken ice",
       "layer": "floor",
-      "look": "Shards of broken ice under a ceiling bristling with icicles. Something fell here, and more are hanging."
+      "look": "Shards of broken ice lie below a ceiling that bristles with icicles, for something fell here and more are hanging."
     },
     "bedroll": {
       "name": "a bedroll",
       "layer": "floor",
-      "look": "A bedroll and a pack."
+      "look": "A bedroll and a pack lie here."
     },
     "campfire": {
       "name": "a campfire",
@@ -701,7 +702,7 @@
         120,
         50
       ],
-      "look": "A campfire in a ring of stones, still burning."
+      "look": "A campfire still burns in a ring of stones."
     },
     "banner_goblin": {
       "name": "a goblin banner",
@@ -712,7 +713,7 @@
         70,
         50
       ],
-      "look": "A ragged hide on a pole, a red hand painted on it, bones hanging off it."
+      "look": "A ragged hide painted with a red hand hangs on a pole, with bones dangling from it."
     },
     "banner_bandit": {
       "name": "a bandit standard",
@@ -723,7 +724,7 @@
         40,
         40
       ],
-      "look": "A torn black cloth with a white skull, on a spear."
+      "look": "A torn black cloth with a white skull flies upon a spear."
     },
     "banner_cult": {
       "name": "a cult standard",
@@ -734,7 +735,7 @@
         20,
         20
       ],
-      "look": "A black cloth with a red horned sign, on a pole topped by a skull."
+      "look": "A black cloth with a red horned sign hangs on a pole topped by a skull."
     },
     "banner_giant": {
       "name": "a giant's standard",
@@ -745,7 +746,7 @@
         70,
         50
       ],
-      "look": "A whole tree for a pole, with a bear pelt and antlers lashed to it."
+      "look": "A whole tree serves for a pole, with a bear pelt and antlers lashed to it."
     },
     "banner_fae": {
       "name": "a fair-folk pennant",
@@ -756,7 +757,7 @@
         190,
         170
       ],
-      "look": "Silver-green silk on a slender white pole, with thorns twined round it."
+      "look": "Silk of silver-green flies from a slender white pole that is twined with thorns."
     },
     "banner_dead": {
       "name": "a necromancer's standard",
@@ -767,7 +768,7 @@
         90,
         90
       ],
-      "look": "A rotted grey cloth with a black hand, on a pole of bone."
+      "look": "A rotted grey cloth with a black hand hangs from a pole of bone."
     },
     "sk_idol": {
       "name": "a Stray Kids shrine",
@@ -778,8 +779,8 @@
         190,
         60
       ],
-      "look": "A gaudy gold idol of a pop star frozen mid-dance, glitter on everything, eight little gold dancers circling its feet. Lightsticks stand round it like candles, and SKZ and STAY are scratched into the gold, over and over, inside hearts. A bass beat thumps inside it. It wants to be touched. You are sure of it.",
-      "spent_look": "A gold statue of a pop idol, gone dull, the glitter fallen off it. The encore is over."
+      "look": "A gaudy gold idol of a pop star stands frozen mid-dance, with glitter on everything and eight little gold dancers circling its feet. Lightsticks stand round it like candles, and SKZ and STAY are scratched into the gold, over and over, inside hearts. A bass beat thumps inside it, and you are sure that it wants to be touched.",
+      "spent_look": "The gold statue of a pop idol has grown dull and lost its glitter, for the encore is over."
     },
     "sk_speaker": {
       "name": "a speaker stack",
@@ -790,7 +791,7 @@
         40,
         44
       ],
-      "look": "Two big black concert speakers, one stacked on the other. The bass coming out of them goes straight through your ribs."
+      "look": "Two big black concert speakers stand one upon the other, and the bass that comes out of them goes straight through your ribs."
     },
     "race_tether_post": {
       "name": "a tether post",
@@ -801,7 +802,7 @@
         90,
         55
       ],
-      "look": "A stout wooden post driven into the cavern floor, its top worn smooth by ropes. Short tethers hang from an iron ring, frayed where birds have fought them."
+      "look": "A stout wooden post is driven into the cavern floor, its top worn smooth by ropes, and from an iron ring hang short tethers, frayed where birds have fought them."
     },
     "race_betting_board": {
       "name": "a betting board",
@@ -812,7 +813,7 @@
         70,
         60
       ],
-      "look": "A chalk board on an easel, the day's odds scrawled on it in a loud, crooked hand. Brassbeak is at the top, at the shortest odds, underlined three times."
+      "look": "A chalk board on an easel gives the day's odds in a loud, crooked hand. Brassbeak is at the top with the shortest odds, underlined three times."
     },
     "race_finish_banner": {
       "name": "a finish banner",
@@ -822,12 +823,12 @@
         60,
         60
       ],
-      "look": "A long red banner strung between two poles over the finish line. FINISH is painted on it in big gold letters, and the paint is flaking."
+      "look": "A long red banner is strung between two poles over the finish line, with FINISH painted on it in big gold letters that are flaking now."
     },
     "conjured_vine": {
       "name": "grapevine and ivy",
       "layer": "floor",
-      "look": "Grapevine and ivy, grown up out of the stone in a moment and still moving. Whatever walks through them is held. They will not last."
+      "look": "Grapevine and ivy have grown up out of the stone in a moment and are moving still. Whatever walks through them is held, but they will not last."
     }
   }
 }

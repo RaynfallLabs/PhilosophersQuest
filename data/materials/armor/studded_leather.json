@@ -10,7 +10,7 @@
   "weight_mult": 1.1,
   "ac_bonus": 0,
   "max_enchant": 2,
-  "enchant_note": "Leather and a few iron rivets: a little magic, no more.",
+  "enchant_note": "Leather with a few iron rivets holds a little magic, no more.",
   "color": [120, 80, 50],
   "protection": {"fire": 1.25},
   "protection_words": {"fire": "catches fire"},
@@ -21,5 +21,5 @@
   "special_properties": [],
   "lore_descriptor": "set with iron rivets in offset rows",
   "unidentified_descriptor": "rivet-studded leather",
-  "first_pickup_chronicle": "Studded leather. The rivets catch the edges a clean cut would slip past. Real armor, by any honest measure, and it jingles less than mail."
+  "first_pickup_chronicle": "Studded leather. Rivets catch a cut, and it jingles less than mail."
 }

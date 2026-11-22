@@ -7,8 +7,9 @@
   his pet, the peace is broken (lore_powers.after_damage).
 * Gold dropped near a gold-digging ant: it stops to gather it (Herodotus'
   camels let go to slow the pursuit), and the gold is gone.
-* The Blue Men of the Minch call out a verse once one has noticed the hero
-  (never asleep, held or silenced) and hold their fire for a few turns: D
+* The Blue Men of the Minch call out a verse the turn one notices the hero,
+  in place of a blow (never asleep, held or silenced; not one whose fellows
+  are angry already) and hold their fire for a few turns: D
   answers them, one grammar question at their tier; right, they sink away
   for the floor, wrong, the squall comes down at once. Walk away or strike
   and they attack.
@@ -126,9 +127,13 @@ class LorePowersMixin:
             if not lore_powers._in_sight(m, self.player, self.dungeon):
                 return
             group = self._parley_group(m)
+            if any(o.__dict__.get('_lp_parley') == 'angry' for o in group):
+                d['_lp_parley'] = 'angry'     # his fellows are angry: so is he
+                return
             for o in group:
-                o.__dict__['_lp_parley'] = 'waiting'
-                o.__dict__['_lp_wait'] = PARLEY_WAIT
+                if o.__dict__.get('_lp_parley') is None:
+                    o.__dict__['_lp_parley'] = 'waiting'
+                    o.__dict__['_lp_wait'] = PARLEY_WAIT
             spec = lore_powers.spec(m, 'parley') or {}
             self.add_message(spec.get('call', ''), 'warning')
             self.add_message("Press D to answer them, or keep away.", 'info')
@@ -147,9 +152,7 @@ class LorePowersMixin:
                 self.add_message(spec.get('unasked', '') or f"{the_name(m)} tires of waiting.", 'warning')
 
     def _parley_group(self, m) -> list:
-        return [o for o in self.monsters
-                if o.alive and o.kind == m.kind
-                and max(abs(o.x - m.x), abs(o.y - m.y)) <= 10]
+        return lore_powers.parley_group(m, self.monsters)
 
     def _parley_offer(self) -> bool:
         """D with the Blue Men waiting in sight: their one question. True if
@@ -164,7 +167,9 @@ class LorePowersMixin:
         spec = lore_powers.spec(lead, 'parley') or {}
         subject = str(spec.get('subject', 'grammar'))
         tier = max(1, min(5, int(getattr(lead, 'harvest_tier', 1) or 1)))
-        group = self._parley_group(lead)
+        # (those answered before, or angered, are not asked again)
+        group = [o for o in self._parley_group(lead)
+                 if o.__dict__.get('_lp_parley') in (None, 'waiting')]
         from game_states import STATE_PLAYER, STATE_QUIZ
         self.quiz_title = f"{the_name(lead).upper()}  --  {subject.upper()}"
         self.state = STATE_QUIZ
@@ -230,6 +235,7 @@ class LorePowersMixin:
             return
         p = self.player
         p.x, p.y = spot
+        self._hero_left_tile()
         p.add_effect('immobilized', 1)
         self._refresh_fov()
         self.add_message(lore_powers._fill(m, landed or "It drops you far away."), 'danger')
@@ -314,7 +320,8 @@ class LorePowersMixin:
         talisman pressed to its forehead."""
         if not lore_powers.ENABLED:
             return
-        for m in self.monsters:
+        import holds
+        for m in holds.strikable(self.player, self.monsters):
             tal = lore_powers.spec(m, 'talisman') if m.alive else None
             if not tal or not self._sees_monster(m):
                 continue
@@ -337,7 +344,8 @@ class LorePowersMixin:
         self.add_message(tech.get('crow', ''), 'info')
         reach = int(tech.get('reach', 8) or 8)
         hit = 0
-        for m in list(self.monsters):
+        import holds
+        for m in list(holds.strikable(self.player, self.monsters)):
             if not m.alive or max(abs(m.x - self.player.x), abs(m.y - self.player.y)) > reach:
                 continue
             if m.kind in (tech.get('kills') or ()):

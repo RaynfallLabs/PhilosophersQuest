@@ -36,11 +36,11 @@
     "You have learned where {kin} break."
   ],
   "tier_chronicle": [
-    "I took enough of {kin} apart that I knew the rest of them on sight.",
-    "I learned the signs {kin} leave on a stair, and after that I smelled them coming.",
-    "I learned how ordinary people kept {kin} away, the old folk ways, and they worked.",
-    "I learned how a hunter takes {kin}, and I started hunting them.",
-    "I took apart so many of {kin} that I learned where every one of them breaks."
+    "Took apart enough of {kin} to know the rest of them on sight.",
+    "Know the signs {kin} leave on a stair. Can smell them coming.",
+    "Learned the old folk ways of keeping {kin} off. They work.",
+    "Learned how a hunter takes {kin}. Hunting them now.",
+    "Took apart so many of {kin}, I know where each one breaks."
   ],
   "families": {
     "restless_dead": {
@@ -55,11 +55,11 @@
         24
       ],
       "keystones": [],
-      "blurb": "Bodies that would not stay in the ground: bone and dried flesh moved by a will that is not their own. They feel no pain and give no ground, and the grave's sicknesses walk in with them.",
+      "blurb": "The restless dead would not lie quiet in the earth, and they walk as bone and dried flesh at the bidding of a will that is not their own. They feel no pain and yield no ground, and they bring with them all the sicknesses of the grave.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "The walking dead are ancient. In the Epic of Gilgamesh, the goddess Ishtar threatens to smash the gates of the underworld and bring up the dead to devour the living.",
+          "field_note": "Tales of the walking dead are very ancient, for already in the Epic of Gilgamesh the goddess Ishtar threatened to smash the gates of the underworld and bring up the dead to devour the living.",
           "abilities": [
             {
               "id": "restless_dead_recognise",
@@ -73,7 +73,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "Eyrbyggja saga says that after Thorolf Lame-Foot died, any bird that landed on his grave fell down dead, and the sheep in the valley died. His neighbours knew he walked.",
+          "field_note": "When Thorolf Lame-Foot had died, as Eyrbyggja saga tells, every bird that lighted upon his grave fell dead, and the sheep perished in the valley, so that his neighbours knew that he walked.",
           "abilities": [
             {
               "id": "restless_dead_forewarned",
@@ -82,20 +82,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "The smell of the grave hangs on the stair: the restless dead walk this floor."
+                "line": "The smell of the grave hangs upon the stair, for the restless dead walk this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Scottish mourners once laid a wooden platter of salt and earth on a corpse's breast. The antiquary John Brand recorded that the salt stood for the undying spirit, and kept the Devil away.",
+          "field_note": "Mourners in Scotland used to lay a wooden platter of salt and earth upon the breast of the dead. The antiquary John Brand recorded that the salt stood for the undying spirit, and that it kept the Devil from the body.",
           "abilities": [
             {
               "id": "restless_dead_grave_salt",
               "name": "Grave-Salt",
               "text": "You get +1 on saving throws against their paralysis, disease and life drain, and their disease lasts a tenth less time.",
-              "trigger_msg": "Grave-Salt: {The} reaches for you with cold, dead fingers, but the salt in your pocket crackles, and {his} grip slides right off.",
+              "trigger_msg": "Grave-Salt: {The} reaches for you with cold, dead fingers, but the salt in your pocket crackles, and {his} grip slides harmlessly away.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -121,13 +121,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Grettis saga tells how Grettir the Strong wrestled the draugr Glámr and cut off his head. Then he and the farmer burned the body to cold coals and buried the ashes far from any path.",
+          "field_note": "Grettir the Strong, as his saga relates, wrestled with the draugr Glámr and cut off his head. Afterward he and the farmer burned the body to cold coals, and they buried the ashes far from any path of men.",
           "abilities": [
             {
               "id": "restless_dead_bonebreaker",
               "name": "Bonebreaker",
               "text": "Your blows hit 6% harder when they strike what the dead fear: the weaknesses on their page.",
-              "trigger_msg": "Bonebreaker! You know where the dead are brittle, and your blow lands right there. {The} cracks and splinters!",
+              "trigger_msg": "Bonebreaker! You know where the dead are brittle, and there your blow falls. {The} cracks and splinters beneath it!",
               "effect": "weakness_amp",
               "params": {
                 "mult": 1.06
@@ -137,7 +137,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "In Eyrbyggja saga, the drowned men of Fróðá came dripping to sit by the fire each night, until Kjartan held a court at the door and charged the dead with trespass. Then they left.",
+          "field_note": "The drowned men of Fróðá, says Eyrbyggja saga, came dripping each night to sit beside the fire, until Kjartan held a court at the door and charged the dead with trespass, and they heard the judgment and departed.",
           "abilities": [
             {
               "id": "restless_dead_turn_the_dead",
@@ -167,11 +167,11 @@
         15
       ],
       "keystones": [],
-      "blurb": "What is left when the body is gone and something refuses to leave. Steel passes through most of them, and their touch takes warmth and courage before it takes life.",
+      "blurb": "When the body is gone, something may remain that will not depart from the world. Steel passes through most of these ghosts, and their touch steals away warmth and courage before it steals life.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "One of the oldest ghost stories is Pliny the Younger's: a chained phantom haunted an Athens house until the philosopher Athenodorus dug where it vanished, found bones in chains, and gave them a proper burial.",
+          "field_note": "Pliny the Younger told one of the oldest of ghost stories, of a phantom in chains that haunted a house in Athens until the philosopher Athenodorus dug where it had vanished, found bones in chains, and gave them a proper burial.",
           "abilities": [
             {
               "id": "ghosts_recognise",
@@ -185,7 +185,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "Welsh lore told of the corpse candle, a light gliding between the churchyard and a dying person's home. In Shakespeare's England, folk said a blue candle flame meant a spirit was near.",
+          "field_note": "The folk of Wales told of the corpse candle, a light that glided between the churchyard and the house of the dying. In the England of Shakespeare it was said that whenever a candle burned blue, a spirit was near.",
           "abilities": [
             {
               "id": "ghosts_forewarned",
@@ -194,20 +194,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "The candle-flames lean the wrong way: ghosts drift on this floor."
+                "line": "The candle-flames lean the wrong way, for ghosts drift on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "In Japan, mourners get a little bag of salt to purify themselves before going home from a funeral. Folk belief in Europe said an iron fence round a graveyard held the dead in place.",
+          "field_note": "Mourners in Japan are given a little bag of salt, to cleanse themselves before they go home from a funeral, and in Europe the old folk believed that an iron fence about a graveyard held the dead within it.",
           "abilities": [
             {
               "id": "ghosts_iron_and_salt",
               "name": "Iron and Salt",
               "text": "You get +1 on saving throws against their fear and life drain, and their draining no longer heals them.",
-              "trigger_msg": "Iron and Salt: {The}'s icy hold settles over you, then breaks against the cold iron at your belt. You shake free!",
+              "trigger_msg": "Iron and Salt: {The}'s icy hold settles over you, until it breaks against the cold iron at your belt and you shake yourself free!",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -227,13 +227,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Gaels call second sight an dà shealladh, the two sights. Martin Martin wrote in 1703 that a seer who saw a shroud around someone knew death was coming, and the higher it rose, the sooner.",
+          "field_note": "Among the Gaels the second sight was named an dà shealladh, the two sights. Martin Martin wrote in 1703 that when a seer beheld a shroud about any person death was coming, and the higher it had risen, the sooner it would come.",
           "abilities": [
             {
               "id": "ghosts_second_sight",
               "name": "Second Sight",
               "text": "Invisible ghosts within 3 tiles show to you as a faint shimmer you can strike.",
-              "trigger_msg": "Second Sight: the air {where} turns suddenly cold, and your skin prickles. You see what the living cannot: {true_a}, drifting toward you!",
+              "trigger_msg": "Second Sight: the air {where} grows suddenly cold and your skin prickles, for you see what the living cannot: {true_a}, drifting toward you!",
               "effect": "sense_hidden",
               "params": {
                 "kinds": [
@@ -246,7 +246,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "Cornish legend says the ghost of Jan Tregeagle, a harsh steward, was laid by setting him to empty Dozmary Pool with a limpet shell, a task to keep him busy until Judgment Day.",
+          "field_note": "Jan Tregeagle was a harsh steward in life, and the legend of Cornwall says that his ghost was laid at last by setting him to empty Dozmary Pool with a limpet shell, so that he should be busy until Judgment Day.",
           "abilities": [
             {
               "id": "ghosts_lay_the_ghost",
@@ -275,11 +275,11 @@
         13
       ],
       "keystones": [],
-      "blurb": "The dead who kept their minds and their hunger. Each one cheated the grave on purpose, by blood or by sorcery, and each one keeps its death hidden somewhere.",
+      "blurb": "These are the dead who have kept their minds and their hunger. Each of them cheated the grave by its own choice, through blood or through sorcery, and keeps its death hidden away in some secret place.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Europe's vampire craze grew from Austrian army reports. In 1732 surgeon Johann Flückinger recorded how Serbian villagers staked the dead soldier Arnold Paole, swearing the corpse groaned and bled.",
+          "field_note": "The dread of vampires spread through Europe from the reports of the Austrian army. In 1732 the surgeon Johann Flückinger recorded that villagers of Serbia had staked the dead soldier Arnold Paole, and swore that the corpse groaned and bled.",
           "abilities": [
             {
               "id": "vampires_liches_recognise",
@@ -293,7 +293,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "To find a vampire's grave, villagers led a black stallion through the graveyard, a white one in Albania, and watched where it balked. Holes in the grave's earth were another sign.",
+          "field_note": "Villagers who sought the grave of a vampire would lead a black stallion through the churchyard, or a white one in Albania, and mark where it balked. They took holes in the earth of a grave for another sign.",
           "abilities": [
             {
               "id": "vampires_liches_forewarned",
@@ -302,20 +302,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "The stair smells of iron and old roses: a vampire or a lich keeps court here."
+                "line": "The stair smells of iron and old roses, for a vampire or a lich keeps court here."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "On St. Andrew's Eve, when Romanians believed the strigoi were most active, families smeared garlic on doors and windows, and young people sat up all night guarding heads of garlic.",
+          "field_note": "Upon St. Andrew's Eve, when the folk of Romania held that the strigoi were most abroad, each household smeared garlic on its doors and windows, and the young people sat up all night to guard the heads of garlic.",
           "abilities": [
             {
               "id": "vampires_liches_garlic_and_ash",
               "name": "Garlic and Ash",
               "text": "You get +1 on saving throws against their life drain and paralysis, and their bite no longer heals them.",
-              "trigger_msg": "Garlic and Ash: {The} fixes you with {his} stare, but the garlic at your throat makes {him} flinch, and {his} hold on you breaks.",
+              "trigger_msg": "Garlic and Ash: {The} fixes you with {his} stare, but the garlic at your throat makes {him} flinch, and {his} hold on you is broken.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -336,13 +336,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Eastern European folk scattered poppy seed, millet or sand on a suspected vampire's grave, believing it had to count every grain and would spend the whole night at it.",
+          "field_note": "Country folk of eastern Europe would scatter poppy seed, millet or sand upon the grave of a suspected vampire, for they believed that it must count every grain and would be all the night at the task.",
           "abilities": [
             {
               "id": "vampires_liches_hunters_patience",
               "name": "Hunter's Patience",
               "text": "You get 1 more second on the maths clock when you attack them.",
-              "trigger_msg": "Hunter's Patience: you have hunted this kind before. You breathe slowly and take your time: you have longer to answer in this fight.",
+              "trigger_msg": "Hunter's Patience: you have hunted this kind before, and so you breathe slowly and take your time. You have longer to answer in this fight.",
               "effect": "extra_seconds",
               "params": {
                 "seconds": 1
@@ -352,7 +352,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "Vampire hunters chose the stake's wood with care: ash in Russia and the Baltic, hawthorn in Serbia. In 2012 archaeologists at Sozopol, Bulgaria, found two medieval skeletons pinned through the chest with iron rods.",
+          "field_note": "The hunters of vampires chose with care the wood of the stake, which was ash in Russia and the Baltic lands and hawthorn in Serbia. At Sozopol in Bulgaria, in 2012, archaeologists found two medieval skeletons pinned through the chest with rods of iron.",
           "abilities": [
             {
               "id": "vampires_liches_stake",
@@ -383,11 +383,11 @@
         35
       ],
       "keystones": [],
-      "blurb": "Creatures of the Pit, from the smallest tormentor to the princes of Hell. They burn, they lie and they cloud the mind, and every people that met them wrote down a way to send them back.",
+      "blurb": "Out of the Pit come creatures of every degree, from the least tormentor to the princes of Hell, and all of them burn and lie and cloud the mind. Yet every people that met them has written down some way to send them back.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "The word demon comes from the Greek daimon, a spirit that could help or harm. Socrates said a daimonion, an inner voice, held him back whenever he was about to go wrong.",
+          "field_note": "Our word demon descends from the Greek daimon, which was a spirit that might help or harm. Socrates declared that a daimonion, an inward voice, held him back whenever he was about to go astray.",
           "abilities": [
             {
               "id": "demons_recognise",
@@ -401,7 +401,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "On a February night in 1855, hoof-like prints appeared in fresh snow across Devon, even on rooftops and high walls, running for many miles. Some people said Satan himself had walked there.",
+          "field_note": "Prints like those of hooves appeared in the fresh snow of Devon on a February night in 1855, running for many miles over the fields and even over rooftops and high walls, and some said that Satan himself had walked there.",
           "abilities": [
             {
               "id": "demons_forewarned",
@@ -410,20 +410,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Brimstone on the stair: something from the Pit has climbed this far."
+                "line": "Brimstone taints the stair, for something from the Pit has climbed this far."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "The Lesser Key of Solomon, a 17th-century grimoire, has the conjurer stand in a nine-foot circle written with holy names, and makes the spirit he calls appear in a triangle outside it.",
+          "field_note": "The Lesser Key of Solomon, a grimoire of the 17th century, bids the conjurer stand within a nine-foot circle written about with holy names, and compel the spirit that he calls to appear in a triangle outside it.",
           "abilities": [
             {
               "id": "demons_circle_of_salt",
               "name": "Circle of Salt",
               "text": "You get +1 on saving throws against their burning and confusion, and their burning lasts a tenth less time.",
-              "trigger_msg": "Circle of Salt: {The}'s dark power washes toward you, but you scatter a ring of salt at your feet, and it cannot cross the line.",
+              "trigger_msg": "Circle of Salt: {The}'s dark power washes toward you, but you scatter a ring of salt about your feet, and it cannot cross the line.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -448,13 +448,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "In the Gospel of Mark, Jesus asks a possessing spirit its name. It answers 'Legion, for we are many,' and he sends the spirits into a herd of pigs that rush into the sea.",
+          "field_note": "The Gospel of Mark relates that Jesus asked the name of a spirit that possessed a man. It answered 'Legion, for we are many,' and he sent the spirits into a herd of swine, which rushed down into the sea.",
           "abilities": [
             {
               "id": "demons_true_names",
               "name": "True Names",
               "text": "Your weapon hits them 5% harder.",
-              "trigger_msg": "True Names: you call {the} by {his} true name. {He} flinches as if struck, and your blow lands harder.",
+              "trigger_msg": "True Names: you call {the} by {his} true name. {He} flinches as if struck, and your blow lands the harder.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05
@@ -464,7 +464,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "In the Book of Revelation, an angel comes down with the key to the bottomless pit and a great chain. He binds Satan, the dragon, casts him in and seals it for a thousand years.",
+          "field_note": "It is written in the Book of Revelation that an angel came down with the key of the bottomless pit and a great chain, and bound Satan, the dragon, and cast him in and sealed it for a thousand years.",
           "abilities": [
             {
               "id": "demons_banishment",
@@ -495,11 +495,11 @@
         17
       ],
       "keystones": [],
-      "blurb": "Great scaled serpents with wings or without, old beyond counting and greedy beyond reason. Their breath is weather and their scales are armour, and every one of them has a weak spot somewhere.",
+      "blurb": "Dragons are great serpents, winged or wingless, whose age is past all counting and whose greed is past all reason. Their breath is as a storm and their scales are as armour, yet every one of them has a weak place somewhere.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "People in Klagenfurt, Austria, took a huge skull dug from a quarry in 1335 for a dragon's. It came from a woolly rhinoceros, and became the model for their dragon statue's head.",
+          "field_note": "A huge skull was dug from a quarry near Klagenfurt in Austria in 1335, and the people took it for a dragon's and made it the model for the head of their dragon statue, though it was in truth that of a woolly rhinoceros.",
           "abilities": [
             {
               "id": "dragons_recognise",
@@ -513,7 +513,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "In Beowulf, the dragon's rage begins with a theft: a runaway slave steals a golden cup from its hoard. That night the wyrm wakes and burns the Geats' halls, Beowulf's own among them.",
+          "field_note": "The wrath of the dragon in Beowulf was kindled by a theft, for a runaway slave stole a golden cup from its hoard. That same night the wyrm awoke and burned the halls of the Geats, and Beowulf's own among them.",
           "abilities": [
             {
               "id": "dragons_forewarned",
@@ -522,20 +522,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Gold-smell and scorch-marks on the stair: a wyrm lairs on this floor."
+                "line": "The stair is scorched and smells of gold, for a wyrm lairs on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Knowing that a shield of linden wood would burn, old King Beowulf had one forged all of iron before he went out to fight the dragon.",
+          "field_note": "Old King Beowulf knew that a shield of linden wood would burn, and so he bade a shield be forged all of iron before he went out to fight the dragon.",
           "abilities": [
             {
               "id": "dragons_dragon_ward",
               "name": "Dragon-Ward",
               "text": "Their fire, cold and poison hurt you 5% less, and you get +1 on saving throws against their burning, freezing and poison.",
-              "trigger_msg": "Dragon-Ward: {The} breathes, and you turn your shoulder into the blast the way the old songs teach. It still burns, but far less.",
+              "trigger_msg": "Dragon-Ward: {The} breathes, and you turn your shoulder into the blast as the old songs teach. It still burns, but far less.",
               "effect": "resist_damage",
               "params": {
                 "types": [
@@ -563,13 +563,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "In the Völsunga saga, Sigurd hides in a pit and drives his sword under Fafnir's left shoulder to the hilt. A bearded stranger, Odin in disguise, told him to dig more pits for the blood.",
+          "field_note": "Sigurd lay hidden in a pit, as the Völsunga saga tells, and drove his sword to the hilt beneath Fafnir's left shoulder. It was a bearded stranger, Odin in disguise, who had counselled him to dig other pits for the blood.",
           "abilities": [
             {
               "id": "dragons_soft_belly",
               "name": "The Soft Belly",
               "text": "Your weapon hits them 5% harder: Sigurd struck Fafnir from below.",
-              "trigger_msg": "The Soft Belly! You duck low and strike up into the soft scales of {the}'s belly.",
+              "trigger_msg": "The Soft Belly! You stoop low and strike up into the soft scales of {the}'s belly.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05
@@ -579,13 +579,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "In Tolkien's The Hobbit, Bilbo spots a bare patch in the hollow of Smaug's left breast. A thrush carries the news to Bard, whose last arrow strikes home.",
+          "field_note": "Bilbo, as Tolkien tells in The Hobbit, spied a bare patch in the hollow of Smaug's left breast, and a thrush bore the news to Bard, who sent his last arrow home to that very place.",
           "abilities": [
             {
               "id": "dragons_missing_scale",
               "name": "The Missing Scale",
               "text": "At chain 12 or more, your blow ignores a dragon's scales and resistances, even Fafnir's.",
-              "trigger_msg": "The Missing Scale! You spot the one bare patch in {the}'s armour, and your blow drives straight into it.",
+              "trigger_msg": "The Missing Scale! You spy the one bare patch in {the}'s armour, and your blow drives straight into it.",
               "effect": "pierce_resist",
               "params": {
                 "chain_min": 12,
@@ -608,11 +608,11 @@
         16
       ],
       "keystones": [],
-      "blurb": "The old enemies of gods and men: huge, strong and hard to kill. Their danger is their size, and the stories agree that the bigger they are, the harder they fall.",
+      "blurb": "Giants have been the enemies of gods and men since the world was young, huge, strong and hard to kill. Their danger is in their size, yet the tales agree that the bigger they are, the harder they fall.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Greeks believed only the one-eyed Cyclopes could have built the walls of Mycenae and Tiryns, where Pausanias said two mules could not shift the smallest stone. Archaeologists still call such walls Cyclopean.",
+          "field_note": "The Greeks believed that none but the one-eyed Cyclopes could have raised the walls of Mycenae and Tiryns, whose smallest stone, said Pausanias, two mules could not shift, and such walls are still called Cyclopean by archaeologists.",
           "abilities": [
             {
               "id": "giants_recognise",
@@ -626,7 +626,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "Danish farmers said huge lone boulders were thrown by giants and trolls who hated church bells. A giantess on Langeland hurled Denmark's biggest, Damestenen, at Svindinge church, and it fell short.",
+          "field_note": "Giants and trolls hated the sound of church bells, said the farmers of Denmark, and great lone boulders were the stones they had thrown. A giantess of Langeland hurled the greatest of all, Damestenen, at Svindinge church, but her cast fell short.",
           "abilities": [
             {
               "id": "giants_forewarned",
@@ -635,20 +635,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "The stair shakes underfoot: giants walk this floor."
+                "line": "Giants walk this floor, and the stair shakes under their tread."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "In the Book of Samuel, the shepherd boy David turns down King Saul's armour, picks five smooth stones from a brook, and drops the giant Goliath with a single stone from his sling.",
+          "field_note": "David was but a shepherd boy, as the Book of Samuel tells, when he put off the armour of King Saul and chose five smooth stones from the brook, and with a single stone from his sling he felled the giant Goliath.",
           "abilities": [
             {
               "id": "giants_steady_hand",
               "name": "Steady Hand",
               "text": "You get 1 more second on the maths clock when you attack them.",
-              "trigger_msg": "Steady Hand: a giant is big, but slow. You keep your nerve and take your time: you have longer to answer in this fight.",
+              "trigger_msg": "Steady Hand: a giant is big but slow, and so you keep your nerve and take your time. You have longer to answer in this fight.",
               "effect": "extra_seconds",
               "params": {
                 "seconds": 1
@@ -658,13 +658,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Norwegian legend says a troll wedding party celebrated all night in Romsdal until sunrise caught them and turned them all to stone. Peaks of Trolltindene are still called the Bride and the Groom.",
+          "field_note": "A wedding party of trolls, by the legend of Norway, made merry all night in Romsdal until the sunrise came upon them and turned them all to stone. Two peaks of Trolltindene are called the Bride and the Groom even now.",
           "abilities": [
             {
               "id": "giants_fire_and_dawn",
               "name": "Fire and Dawn",
               "text": "Your blows stop their regeneration for 3 turns.",
-              "trigger_msg": "Fire and Dawn: you sear {the}'s wound with fire, and it stops closing.",
+              "trigger_msg": "Fire and Dawn: you sear {the}'s wound with fire, so that it stops closing.",
               "effect": "block_regen",
               "params": {
                 "turns": 3
@@ -674,13 +674,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "An English tale set in Cornwall says Jack dug a deep pit, lured the giant Cormoran into it with a blast on his horn, and killed him, earning the name Jack the Giant Killer.",
+          "field_note": "Jack the Giant Killer won his name in Cornwall, as the English tale has it, for he dug a deep pit and drew the giant Cormoran into it with a blast upon his horn, and there he slew him.",
           "abilities": [
             {
               "id": "giants_bigger_they_are",
               "name": "The Bigger They Are",
               "text": "At chain 5 or more, your weapon hits them 5% harder, and 8% harder against a giant that fills more than one tile.",
-              "trigger_msg": "The Bigger They Are! You strike at {the}'s knee, and the whole giant staggers.",
+              "trigger_msg": "The Bigger They Are! You smite {the} upon the knee, and the whole giant staggers.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05,
@@ -704,11 +704,11 @@
         13
       ],
       "keystones": [],
-      "blurb": "The warband peoples of the tunnels, who live by raiding and by numbers. They are brave in a crowd and cowardly alone, and they lay traps for anyone who walks without looking.",
+      "blurb": "The warbands of the tunnels are a people who live by raiding and by the greatness of their numbers. They are bold in company and cowardly when alone, and they lay traps for all who walk without looking.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Tolkien took the word orc from Old English. Beowulf lists orcneas, perhaps meaning 'demon-corpses', among the monsters descended from Cain, beside giants and elves.",
+          "field_note": "Tolkien drew the word orc out of Old English, for the Beowulf poet numbered the orcneas, which may mean 'demon-corpses', among the monstrous brood of Cain, beside the giants and the elves.",
           "abilities": [
             {
               "id": "goblinkin_recognise",
@@ -722,7 +722,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "Cornish tin miners heard knockers, small spirits of the mine, tapping in the rock. Some said the knocking led to rich ore, others that it warned of a cave-in.",
+          "field_note": "The tin miners of Cornwall used to hear the knockers, little spirits of the mine, tapping within the rock. Some said that the knocking led to rich ore, and others that it gave warning of a cave-in.",
           "abilities": [
             {
               "id": "goblinkin_forewarned",
@@ -731,14 +731,14 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Crude marks scratched on the stair: a goblin warband holds this floor."
+                "line": "Crude marks are scored upon the stair, for a goblin warband holds this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "In George MacDonald's The Princess and the Goblin, the miner's boy Curdie drives goblins back by singing rhymes, which they hate, and stamping on their soft feet, a goblin's one weak spot.",
+          "field_note": "Curdie the miner's boy, in George MacDonald's The Princess and the Goblin, drove back the goblins by singing rhymes, which they hated, and by stamping upon their soft feet, for that is a goblin's one weak spot.",
           "abilities": [
             {
               "id": "goblinkin_break_their_nerve",
@@ -756,13 +756,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "In Christina Rossetti's poem Goblin Market, Lizzie stands firm while the goblin men squash their enchanted fruit against her face. She never opens her mouth, and carries the juice home to save her sister Laura.",
+          "field_note": "Lizzie, in Christina Rossetti's poem Goblin Market, stood fast while the goblin men crushed their enchanted fruit against her face, and never opened her lips, so that she might bear the juice home and save her sister Laura.",
           "abilities": [
             {
               "id": "goblinkin_trap_wise",
               "name": "Trap-Wise",
               "text": "You get +1 on saving throws against their fear and bleeding, and their ambushers never catch you unawares.",
-              "trigger_msg": "Trap-Wise: you spot the goblins' trick a moment before it springs, and step clear just in time.",
+              "trigger_msg": "Trap-Wise: you perceive the goblins' trick a moment before it springs, and step clear in good time.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -782,13 +782,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "In Tolkien's The Hobbit, the Great Goblin howls with rage at Orcrist, which goblins call Biter. When Gandalf's Glamdring, which they call Beater, cuts him down, his soldiers flee shrieking.",
+          "field_note": "The Great Goblin howled with rage, in Tolkien's The Hobbit, at the sight of Orcrist, which goblins call Biter, and when Gandalf cut him down with Glamdring, which they call Beater, his soldiers fled shrieking.",
           "abilities": [
             {
               "id": "goblinkin_name_is_known",
               "name": "Your Name Is Known",
               "text": "Lesser goblins and orcs flee from you on sight.",
-              "trigger_msg": "Your Name Is Known: the goblins see who you are. They shriek, and scatter in every direction!",
+              "trigger_msg": "Your Name Is Known: the goblins see who you are, and they shriek and scatter in every direction!",
               "effect": "turn",
               "params": {
                 "trigger": "on_sight",
@@ -811,11 +811,11 @@
         13
       ],
       "keystones": [],
-      "blurb": "Men and women who came down here by choice, to rob, to worship or to kill for pay. They bleed like you and think like you, which makes them the least predictable thing in the dark.",
+      "blurb": "Men and women have come down into the dark of their own will, to rob, to worship or to kill for pay. They bleed as you do and they think as you do, and for that reason no other foe is so hard to foretell.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "The word assassin comes from the Nizari Ismailis of Alamut castle in Persia, whom their enemies called hashishin. Marco Polo spread tales of their leader, the Old Man of the Mountain.",
+          "field_note": "Our word assassin comes down from the Nizari Ismailis of the castle of Alamut in Persia, whom their enemies named hashishin. It was Marco Polo who spread abroad the tales of their master, the Old Man of the Mountain.",
           "abilities": [
             {
               "id": "mortals_recognise",
@@ -829,7 +829,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "In Ali Baba and the Forty Thieves, a robber chalks Ali Baba's door so the gang can find it at night. The clever slave girl Morgiana chalks the same mark on the neighbours' doors.",
+          "field_note": "A robber once set a chalk mark on the door of Ali Baba, that the Forty Thieves might find it by night. But the clever slave girl Morgiana saw it, and she chalked the same mark upon the doors of all the neighbours.",
           "abilities": [
             {
               "id": "mortals_forewarned",
@@ -838,20 +838,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Bootprints and a cold campfire on the stair: armed men and women walk this floor."
+                "line": "Bootprints and a cold campfire mark the stair: armed men and women walk this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Greek myth's master thief Autolycus could change the look of the cattle he stole. So Sisyphus set lead letters in his cattle's hooves, and the hoofprints accused Autolycus by name.",
+          "field_note": "Autolycus, master of thieves in the myths of Greece, could alter the look of the cattle that he stole, until Sisyphus set letters of lead in the hooves of his herd, and the hoofprints accused Autolycus by name.",
           "abilities": [
             {
               "id": "mortals_read_their_hands",
               "name": "Read Their Hands",
               "text": "The thieves among them can never steal from you.",
-              "trigger_msg": "Read Their Hands: {The}'s hand creeps toward your purse, but you saw it coming. You catch the wrist and twist it away.",
+              "trigger_msg": "Read Their Hands: {The}'s hand creeps toward your purse, but you have seen it coming, and you catch the wrist and twist it away.",
               "effect": "theft_immune",
               "params": {}
             }
@@ -859,13 +859,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Swiss legend says the bailiff Gessler made William Tell shoot an apple off his son's head. Tell struck it with one arrow, then admitted the second arrow in his quiver had been meant for Gessler.",
+          "field_note": "The bailiff Gessler, as the Swiss tell, made William Tell shoot an apple from the head of his own son. Tell pierced it with one arrow, and then confessed that the second in his quiver had been meant for Gessler.",
           "abilities": [
             {
               "id": "mortals_steady_hand",
               "name": "Steady Hand",
               "text": "You get 1 more second on the maths clock when you attack them.",
-              "trigger_msg": "Steady Hand: you have fought this kind of foe before, and you know the tricks. You have longer to answer in this fight.",
+              "trigger_msg": "Steady Hand: you have fought such foes before, and you know their tricks of old. You have longer to answer in this fight.",
               "effect": "extra_seconds",
               "params": {
                 "seconds": 1
@@ -875,7 +875,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "In Malory's Le Morte d'Arthur, Lancelot beats three knights who had set upon Sir Kay, and spares them on one condition: each must go to King Arthur's court and yield himself to Queen Guinevere.",
+          "field_note": "Lancelot overcame three knights who had set upon Sir Kay, as Malory tells in Le Morte d'Arthur, and he spared them upon this condition, that each should go to the court of King Arthur and yield himself to Queen Guinevere.",
           "abilities": [
             {
               "id": "mortals_yield",
@@ -905,11 +905,11 @@
         8
       ],
       "keystones": [],
-      "blurb": "The hidden people of the mounds and the deep woods, beautiful and dangerous and never quite honest. They bargain and bewitch, and they keep every promise exactly as it was worded.",
+      "blurb": "The Fair Folk are the hidden people of the mounds and the deep woods, very beautiful and very perilous, and never wholly honest. They bargain and they bewitch, and they keep every promise exactly as it was worded.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Irish and Scots called them the Good Neighbours or the Fair Folk rather than fairies, because speaking of them plainly might draw their attention, and their anger.",
+          "field_note": "The Irish and the Scots spoke of the Good Neighbours or the Fair Folk and would not say fairies, lest by naming them openly they should draw upon themselves the notice of that people, and its anger.",
           "abilities": [
             {
               "id": "fair_folk_recognise",
@@ -923,7 +923,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "A ring of mushrooms marked where the Fair Folk danced, people said. A Welsh tale says Rhys danced in one for months, yet swore when his friend pulled him out that it was five minutes.",
+          "field_note": "Wherever mushrooms grew in a ring, men said, the Fair Folk had danced. A tale of Wales tells that Rhys danced in such a ring for months, and when his friend pulled him out he swore it had been but five minutes.",
           "abilities": [
             {
               "id": "fair_folk_forewarned",
@@ -932,20 +932,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "A ring of mushrooms on the stair: the Fair Folk are abroad on this floor."
+                "line": "Mushrooms grow in a ring upon the stair: the Fair Folk are abroad on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "In Devon and Cornwall, a traveller who was pixy-led, wandering lost in a field he knew well, turned his coat inside out to break the spell and find his way home.",
+          "field_note": "Whenever a traveller of Devon or Cornwall was pixy-led, and went wandering astray in a field that he knew well, he would turn his coat inside out, for thus the spell was broken and he might find his way home.",
           "abilities": [
             {
               "id": "fair_folk_coat_inside_out",
               "name": "Coat Turned Inside Out",
               "text": "You get +1 on saving throws against their confusion, sleep and charm.",
-              "trigger_msg": "Coat Turned Inside Out: {The}'s glamour shimmers over you, but your coat is on inside out, the way the old wives say, and the magic slides right off.",
+              "trigger_msg": "Coat Turned Inside Out: {The}'s glamour shimmers over you, but your coat is on inside out as the old wives counsel, and the magic slides away from you.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -960,13 +960,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "In a Highland tale, a smith rescues his son from inside a fairy hill by driving his dirk into the threshold. The cold iron keeps the hill from closing behind him.",
+          "field_note": "A smith of the Highlands went into a fairy hill, so the tale runs, to win back his son, and he drove his dirk into the threshold, that the cold iron might keep the hill from closing behind him.",
           "abilities": [
             {
               "id": "fair_folk_cold_iron",
               "name": "Cold Iron",
               "text": "Your weapon hits them 5% harder, and 10% harder if it is iron or cold iron.",
-              "trigger_msg": "Cold Iron! {The} shrieks as the iron bites. The Fair Folk cannot bear its touch.",
+              "trigger_msg": "Cold Iron! {The} shrieks as the iron bites, for the Fair Folk cannot bear its touch.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05,
@@ -980,13 +980,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "In the Grimms' tale, the queen keeps her child by guessing the little man's name, Rumpelstiltskin. In a rage he stamps his foot deep into the ground, then tears himself in two.",
+          "field_note": "The queen kept her child by guessing the name of the little man, which was Rumpelstiltskin. At this, say the brothers Grimm, he stamped his foot deep into the ground in his rage and tore himself in two.",
           "abilities": [
             {
               "id": "fair_folk_true_name",
               "name": "Their True Name",
               "text": "Invisible or disguised Fair Folk within 4 tiles show to you, and their charm can never take you.",
-              "trigger_msg": "Their True Name: you whisper the old name, and the air {where} ripples like a curtain pulled aside. {True_A} stands revealed!",
+              "trigger_msg": "Their True Name: you whisper the old name, and the air {where} ripples as a curtain does when it is drawn aside. {True_A} stands revealed!",
               "effect": "sense_hidden",
               "params": {
                 "kinds": [
@@ -1023,11 +1023,11 @@
         8
       ],
       "keystones": [],
-      "blurb": "Animals grown huge and savage, and the legendary quarry of the old hunting tales. They have no magic but muscle, tooth and claw, and that is usually enough.",
+      "blurb": "The great beasts are animals grown huge and savage, and among them is the quarry of all the old hunting tales. They have no magic but muscle, tooth and claw, and seldom do they need any other.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Northern peoples feared the bear so much they avoided its name. English 'bear' probably began as 'the brown one', and the Slavic medved means 'honey-eater'.",
+          "field_note": "The peoples of the North so feared the bear that they would not speak his name. Thus the English 'bear' began, it may be, as 'the brown one', and the Slavic medved has the meaning 'honey-eater'.",
           "abilities": [
             {
               "id": "great_beasts_recognise",
@@ -1041,7 +1041,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "Old English poets had a sure sign that blood would soon be spilled: the wolf, the raven and the eagle gathering before the fighting, the beasts of battle waiting for the feast.",
+          "field_note": "Three creatures were the sign among the poets of Old English that blood would soon be shed, for the wolf, the raven and the eagle, the beasts of battle, gathered before the fighting and waited for their feast.",
           "abilities": [
             {
               "id": "great_beasts_forewarned",
@@ -1050,20 +1050,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Fresh tracks and torn bark on the stair: great beasts hunt this floor."
+                "line": "Fresh tracks and torn bark mark the stair: great beasts hunt this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Norse myth says the cook Andhrímnir boils the boar Sæhrímnir every day to feed Odin's warriors in Valhalla, and every evening the boar is whole again.",
+          "field_note": "Each day, as the Norse myths tell, the cook Andhrímnir boiled the boar Sæhrímnir to feed the warriors of Odin in Valhalla, and each evening the boar was made whole again.",
           "abilities": [
             {
               "id": "great_beasts_hunters_harvest",
               "name": "Hunter's Harvest",
               "text": "Harvesting their corpses gives one extra portion.",
-              "trigger_msg": "Hunter's Harvest: you know just where the best cuts are, and take more than an ordinary butcher would.",
+              "trigger_msg": "Hunter's Harvest: you know well where the best cuts lie, and take more than a common butcher would.",
               "effect": "harvest_bonus",
               "params": {
                 "portions": 1
@@ -1073,13 +1073,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Heracles chased the Erymanthian Boar into deep snow until it floundered, then caught it and carried it alive to King Eurystheus, who was so frightened he hid in a bronze jar.",
+          "field_note": "Heracles drove the Erymanthian Boar into deep snow until it floundered, and then he took it and bore it living to King Eurystheus, who was so greatly afraid that he hid himself in a jar of bronze.",
           "abilities": [
             {
               "id": "great_beasts_steady_hand",
               "name": "Steady Hand",
               "text": "You get 1 more second on the maths clock when you attack them.",
-              "trigger_msg": "Steady Hand: you watch the beast's shoulders and read its next move before it makes it. You have longer to answer in this fight.",
+              "trigger_msg": "Steady Hand: you watch the beast's shoulders and read its next move before it is made. You have longer to answer in this fight.",
               "effect": "extra_seconds",
               "params": {
                 "seconds": 1
@@ -1089,13 +1089,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "Aulus Gellius tells of Androcles, a runaway slave who pulled a huge splinter from a lion's paw. Thrown to the beasts in Rome's Great Circus, he met the same lion, and it fawned on him.",
+          "field_note": "Androcles, as Aulus Gellius tells, was a runaway slave who drew a great splinter from the paw of a lion. When afterward he was thrown to the beasts in the Great Circus of Rome, he met that same lion, and it fawned upon him.",
           "abilities": [
             {
               "id": "great_beasts_beast_friend",
               "name": "Beast-Friend",
               "text": "One lesser beast in ten arrives calm and leaves you be unless you strike first.",
-              "trigger_msg": "Beast-Friend: the beasts here lift their heads and watch you. They know you mean no harm, and let you pass.",
+              "trigger_msg": "Beast-Friend: the beasts here lift their heads to watch you, and knowing that you mean no harm they let you pass.",
               "effect": "calm_on_arrival",
               "params": {
                 "chance": 0.1
@@ -1119,11 +1119,11 @@
       "keystones": [
         "spider_queen"
       ],
-      "blurb": "The small biters of the dark: things that crawl, gnaw, spin and sting, often by the hundred. Alone they are a nuisance; together they carry poison and plague, and the patient ones wait in silk.",
+      "blurb": "In every crack of the dark dwell the small things that crawl and gnaw, spin and sting, often by the hundred. Alone they are but a nuisance, yet together they carry poison and plague, and the patient among them wait in silk.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Ovid tells of Arachne, a weaver whose flawless tapestry of the gods' misdeeds enraged Athena, who turned her into a spider. Her name is the Greek word for spider, and spiders are still arachnids.",
+          "field_note": "Arachne the weaver, as Ovid tells, wove a flawless tapestry of the misdeeds of the gods, and Athena in her anger turned her into a spider. Her name is the Greek word for that creature, and spiders are called arachnids after it.",
           "abilities": [
             {
               "id": "vermin_recognise",
@@ -1137,7 +1137,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "A rat king is a knot of rats tangled by their tails, and folk took one as an omen of plague. A museum in Altenburg, Germany, keeps a mummified knot of 32 rats.",
+          "field_note": "When rats were found knotted by their tails, the folk named the knot a rat king and took it for an omen of plague, and one of 32 rats is kept mummified in a museum at Altenburg in Germany.",
           "abilities": [
             {
               "id": "vermin_forewarned",
@@ -1146,20 +1146,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Webs and gnawed bones on the stair: vermin and spiders creep on this floor."
+                "line": "Webs and gnawed bones strew the stair, for vermin and spiders creep on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "In Apulia, people believed a tarantula's bite had to be danced out in frenzied tarantellas, sometimes for days. Legend says four thieves of Toulouse robbed plague victims unharmed, protected by vinegar steeped in herbs.",
+          "field_note": "The people of Apulia held that the bite of the tarantula must be danced out in wild tarantellas, sometimes for days together. Four thieves of Toulouse, says legend, robbed the victims of plague unharmed, being guarded by vinegar steeped in herbs.",
           "abilities": [
             {
               "id": "vermin_web_and_plague",
               "name": "Web and Plague",
               "text": "You get +1 on saving throws against their poison, disease, slowing and holding, and their poison and disease last a tenth less time.",
-              "trigger_msg": "Web and Plague: {The}'s bite stings, but you clean it at once, and the sickness does not take hold.",
+              "trigger_msg": "Web and Plague: {The}'s bite stings, but you cleanse it at once, and the sickness takes no hold.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -1187,13 +1187,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "At Jōren Falls in Japan, legend says a man resting by the water felt silk threads winding round his leg. He slipped them onto a tree stump, which the jorōgumo spider dragged into the falls.",
+          "field_note": "A man who rested beside the water at Jōren Falls in Japan felt threads of silk winding about his leg, the legend says, and he slipped them onto the stump of a tree, which the jorōgumo spider straightway dragged into the falls.",
           "abilities": [
             {
               "id": "vermin_tremor_sense",
               "name": "Tremor-Sense",
               "text": "Vermin and spiders waiting in ambush within 4 tiles are revealed to you.",
-              "trigger_msg": "Tremor-Sense: you feel the faintest tremor through the soles of your boots. Something is shifting in the rock {where}: {true_a}, lying in wait!",
+              "trigger_msg": "Tremor-Sense: you feel the faintest tremor through the soles of your boots, for something is shifting in the rock {where}: {true_a}, lying in wait!",
               "effect": "sense_hidden",
               "params": {
                 "kinds": [
@@ -1223,13 +1223,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "In 1284, legend says, a piper in coloured clothes led Hamelin's rats into the River Weser with his tune. Cheated of his fee, he came back and led away 130 children.",
+          "field_note": "A piper in a coat of many colours came to Hamelin in 1284, says the legend, and led its rats into the River Weser with his tune. When the town cheated him of his fee he returned, and led away 130 of its children.",
           "abilities": [
             {
               "id": "vermin_pipers_tune",
               "name": "The Piper's Tune",
               "text": "A blow at chain 8 or more sends every lesser vermin and spider in sight fleeing for 5 turns.",
-              "trigger_msg": "The Piper's Tune! You whistle the old piper's tune, and the swarm turns tail and scurries off.",
+              "trigger_msg": "The Piper's Tune! You whistle the tune of the piper of old, and the swarm turns and scurries away.",
               "effect": "turn",
               "params": {
                 "trigger": "on_hit",
@@ -1253,11 +1253,11 @@
         9
       ],
       "keystones": [],
-      "blurb": "Snakes great and small, and the scaled and slimy folk of the flooded halls. They strike fast, their venom works slowly, and they coil where you least expect them.",
+      "blurb": "In the flooded halls dwell snakes both great and small, and with them the folk of scale and slime. They strike swiftly and their venom works slowly, and they lie coiled where you would least look for them.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Buddhist tradition says that when a great storm broke over the meditating Buddha, the naga king Mucalinda wrapped him in seven coils and spread his hood over his head for seven days.",
+          "field_note": "Mucalinda the naga king, as Buddhist tradition tells, saw a great storm break over the Buddha in his meditation, and he wrapped him in seven coils and spread his hood above him for seven days.",
           "abilities": [
             {
               "id": "serpents_recognise",
@@ -1271,7 +1271,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "In the Epic of Gilgamesh, a snake steals the plant of rejuvenation while Gilgamesh bathes in a pool, and sheds its skin as it slips away. Ever since, the story suggests, snakes have renewed themselves.",
+          "field_note": "While Gilgamesh bathed in a pool, as his Epic tells, a snake stole from him the plant of rejuvenation, and as it glided away it cast its skin. From that hour, so the story seems to say, all serpents have renewed themselves.",
           "abilities": [
             {
               "id": "serpents_forewarned",
@@ -1280,20 +1280,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "A shed skin on the stair: serpents coil on this floor."
+                "line": "A shed skin lies on the stair: serpents coil on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "When Cleopatra died, said to be by an asp's bite, Octavian sent for the Psylli, a Libyan people believed immune to snakebite, to draw out the venom. It was too late.",
+          "field_note": "When Cleopatra died, by the bite of an asp as it was said, Octavian sent for the Psylli, a people of Libya thought to be proof against snakes, that they might draw out the venom, but they came too late.",
           "abilities": [
             {
               "id": "serpents_antivenom",
               "name": "Antivenom",
               "text": "You get +1 on saving throws against their poison and paralysis, and their poison lasts a tenth less time.",
-              "trigger_msg": "Antivenom: {The}'s fangs sink in, but you chew the right herb at once, and the poison does not take.",
+              "trigger_msg": "Antivenom: {The}'s fangs sink in, but you chew the right herb at once, and the poison takes no hold.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -1318,13 +1318,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Pliny the Elder wrote that the ichneumon, the Egyptian mongoose, rolled in mud again and again, baking each coat hard in the sun as armour before it fought the asp.",
+          "field_note": "The ichneumon, which is the mongoose of Egypt, would roll again and again in the mud, so Pliny the Elder wrote, and let each coat bake hard in the sun, that it might go armoured to battle with the asp.",
           "abilities": [
             {
               "id": "serpents_mongoose",
               "name": "Mongoose",
               "text": "Your first blow in a fight against one starts at chain 2.",
-              "trigger_msg": "Mongoose! You are quicker than {the}, and strike before {he} can.",
+              "trigger_msg": "Mongoose! You are swifter than {the}, and strike before {he} can.",
               "effect": "opening_chain",
               "params": {
                 "chain": 2
@@ -1334,13 +1334,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "Pliny wrote that the Marsi of central Italy, said to descend from Circe's son, could send snakes to sleep. Every May 1 in Cocullo, their old land, snake-catchers drape Saint Dominic's statue with live snakes.",
+          "field_note": "The Marsi of central Italy were said to descend from the son of Circe, and Pliny wrote that they could send snakes to sleep. At Cocullo, in their old land, the snake-catchers still drape the statue of Saint Dominic with living snakes every May 1.",
           "abilities": [
             {
               "id": "serpents_snake_charmer",
               "name": "Snake-Charmer",
               "text": "At chain 8 or more, a lesser serpent you strike is charmed calm for 8 turns.",
-              "trigger_msg": "Snake-Charmer: you sway with {the}, slow and steady, and {he} sways back, calm for a moment.",
+              "trigger_msg": "Snake-Charmer: you sway with {the}, slow and steady, and {he} sways with you, calm for a little while.",
               "effect": "charm_on_hit",
               "params": {
                 "chain_min": 8,
@@ -1363,11 +1363,11 @@
         6
       ],
       "keystones": [],
-      "blurb": "Hunters of the air, some of them birds and some only partly. They dive at the eyes and are gone again before you can swing.",
+      "blurb": "The hunters of the air are some of them birds and some only birds in part. They dive at the eyes, and are away again before you can strike.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "In Ferdowsi's Shahnameh, the great bird Simurgh raised the abandoned baby Zal in her nest. When he left, she gave him one of her feathers: burn it, and she would come.",
+          "field_note": "The great bird Simurgh found the babe Zal abandoned and reared him in her nest, as Ferdowsi sings in the Shahnameh. When he left her she gave him one of her feathers, that he might burn it and she would come.",
           "abilities": [
             {
               "id": "birds_recognise",
@@ -1381,7 +1381,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "Rome's founding turned on birds: Remus saw six vultures, then Romulus saw twelve, and each brother claimed the gods had chosen him.",
+          "field_note": "Rome was founded by the omen of birds, for Remus saw six vultures and afterward Romulus saw twelve, and each brother claimed that the gods had chosen him.",
           "abilities": [
             {
               "id": "birds_forewarned",
@@ -1390,14 +1390,14 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Feathers drift down the stair: winged hunters nest on this floor."
+                "line": "Feathers drift down the stair from winged hunters that nest on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Emperor Frederick II wrote in the 1240s that Arab falconers were the first to hood their hawks, and he adopted the hood for its great usefulness. A hooded bird sits calm in the dark.",
+          "field_note": "It was the falconers of Arabia who first hooded their hawks, as the Emperor Frederick II wrote in the 1240s, and he took up the hood himself for its great usefulness, since a bird that is hooded will sit calm in the dark.",
           "abilities": [
             {
               "id": "birds_hooded",
@@ -1417,13 +1417,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "In the Mahabharata, Drona sets a target bird in a tree and asks his pupils what they see. Arjuna alone answers that he sees only its head, and his arrow strikes the head off.",
+          "field_note": "Drona set a bird in a tree for a target, as the Mahabharata relates, and asked his pupils what they saw. Arjuna alone answered that he saw nothing but its head, and his arrow struck the head away.",
           "abilities": [
             {
               "id": "birds_falconers_eye",
               "name": "Falconer's Eye",
               "text": "Your bow and your thrown weapons hit them 5% harder.",
-              "trigger_msg": "Falconer's Eye! You read {the}'s flight like a falconer, lead your aim, and hit {him} hard.",
+              "trigger_msg": "Falconer's Eye! You read {the}'s flight as a falconer would, lead your aim, and strike {him} hard.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05,
@@ -1437,13 +1437,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "For his sixth labour, Heracles could not reach the Stymphalian Birds in their marsh, so Athena gave him bronze krotala, rattles made by Hephaestus. Their clatter scared the birds aloft, where he shot them.",
+          "field_note": "Heracles could not come at the Stymphalian Birds in their marsh when he undertook his sixth labour, until Athena gave him rattles of bronze, the krotala that Hephaestus made, and at their clashing the birds rose in fear and he shot them.",
           "abilities": [
             {
               "id": "birds_heracles_rattle",
               "name": "Heracles' Rattle",
               "text": "At chain 12 or more, the din of your blow sends every lesser winged hunter in sight scattering for 6 turns.",
-              "trigger_msg": "Heracles' Rattle! You clatter your gear like the bronze rattle of Heracles, and the flock scatters in panic.",
+              "trigger_msg": "Heracles' Rattle! You clash your gear like the bronze rattle of Heracles, and the flock scatters in panic.",
               "effect": "turn",
               "params": {
                 "trigger": "on_hit",
@@ -1467,11 +1467,11 @@
         6
       ],
       "keystones": [],
-      "blurb": "Creatures whose look alone can stop a heart or turn flesh to stone. The ancients survived them by never meeting their eyes.",
+      "blurb": "There are creatures whose mere look can stop the heart or turn living flesh to stone. The ancients lived through such meetings by never looking into their eyes.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Greeks painted a Gorgon's glaring face, the gorgoneion, on shields, temple roofs and the bottoms of cups, believing it scared off evil. Athena wore Medusa's head on her aegis.",
+          "field_note": "The glaring face of the Gorgon, which is called the gorgoneion, was painted by the Greeks on shields and temple roofs and in the bottoms of their cups to frighten evil away, and Athena bore Medusa's head upon her aegis.",
           "abilities": [
             {
               "id": "gorgons_recognise",
@@ -1485,7 +1485,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "Pliny wrote that the basilisk's hiss sent every other snake fleeing, and that it scorched the grass and burst the stones wherever it passed.",
+          "field_note": "All other serpents fled from the hiss of the basilisk, as Pliny wrote, and wherever it passed the grass was scorched and the stones were burst asunder.",
           "abilities": [
             {
               "id": "gorgons_forewarned",
@@ -1494,20 +1494,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Stone figures stand on the stair, their faces frozen in fear: a gorgon's gaze haunts this floor."
+                "line": "Stone figures stand on the stair with faces frozen in fear, for a gorgon's gaze haunts this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Medieval lore said never to meet a basilisk's eyes. Pliny named the weasel as its killer, and in Cantabria, Spain, travellers into basilisk country carried a rooster, whose crow was believed fatal to it.",
+          "field_note": "Let no man meet the eyes of the basilisk, said the lore of the Middle Ages. Pliny named the weasel as its slayer, and in Cantabria in Spain those who travelled through its country carried a rooster, for the crowing was thought to be its death.",
           "abilities": [
             {
               "id": "gorgons_averted_eyes",
               "name": "Averted Eyes",
               "text": "You get +1 on saving throws against their killing gaze and their poison.",
-              "trigger_msg": "Averted Eyes: you keep your gaze on {the}'s feet, never {his} face, and {his} stare cannot catch you.",
+              "trigger_msg": "Averted Eyes: you keep your gaze on {the}'s feet and never on {his} face, and {his} stare cannot take you.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -1521,7 +1521,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Perseus never looked at Medusa. Apollodorus says he watched her in a polished bronze shield while Athena guided his hand, and cut off her head as she slept.",
+          "field_note": "Perseus never looked upon Medusa, but watched her, as Apollodorus tells, in a shield of polished bronze while Athena guided his hand, and so he cut off her head as she slept.",
           "abilities": [
             {
               "id": "gorgons_perseus_shield",
@@ -1537,13 +1537,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "Hermes gave Perseus the harpe, a sickle-sword of adamant, for Medusa's neck. Medieval lore added that a basilisk forced to see itself in a mirror would be slain by its own stare.",
+          "field_note": "Hermes gave to Perseus the harpe, a sickle-sword of adamant, for the neck of Medusa. The lore of the Middle Ages added that a basilisk made to behold itself in a mirror would perish by its own stare.",
           "abilities": [
             {
               "id": "gorgons_harpe",
               "name": "Harpe",
               "text": "Your weapon hits them 5% harder, and at chain 18 or more a lesser one below half health meets its own stare and turns to stone. A named foe takes a blow 25% harder instead.",
-              "trigger_msg": "Harpe! Your curved blade bites deep into {the}'s neck, as Perseus' did.",
+              "trigger_msg": "Harpe! Your curved blade bites deep into {the}'s neck, as Perseus' blade once did.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05
@@ -1576,11 +1576,11 @@
         12
       ],
       "keystones": [],
-      "blurb": "The beasts that heroes became famous for killing, each one the answer to an old story. Most of them were beaten once, by someone who knew the trick.",
+      "blurb": "By the slaying of these beasts the heroes won their fame, and each is the answer to an old tale. Most of them were overcome once before, by one who had learned the secret.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "In Lycia, in today's Turkey, natural gas flames have burned from the rocks of Yanartaş for at least 2,500 years. The site is also called the Chimaera, after the fire-breathing monster.",
+          "field_note": "Flames of natural gas have burned from the rocks of Yanartaş, in Lycia in the land now called Turkey, for at least 2,500 years, and the place is also named the Chimaera, after the monster that breathed fire.",
           "abilities": [
             {
               "id": "legend_recognise",
@@ -1594,7 +1594,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "Plutarch says Athens sent seven youths and seven maidens to the Minotaur every nine years, on a ship with a black sail, because everyone believed they were sailing to their deaths.",
+          "field_note": "Every nine years, as Plutarch relates, Athens sent seven youths and seven maidens to the Minotaur, and their ship went out under a black sail, for all believed that they were voyaging to their deaths.",
           "abilities": [
             {
               "id": "legend_forewarned",
@@ -1603,20 +1603,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "The stair is carved with an old story: a monster of legend waits on this floor."
+                "line": "An old tale is carved upon the stair, for a monster of legend waits on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Circe told Odysseus to row past Scylla's cliff at top speed, not fight: better to lose six men than his whole ship to Charybdis. He held his course, and lost six.",
+          "field_note": "Circe counselled Odysseus to row swiftly past the cliff of Scylla and offer no battle, since it were better to lose six men than all his ship to Charybdis. He held his course, and six of his men were taken.",
           "abilities": [
             {
               "id": "legend_steady_hand",
               "name": "Steady Hand",
               "text": "You get 1 more second on the maths clock when you attack them.",
-              "trigger_msg": "Steady Hand: you know this story, and how it ends. You have longer to answer in this fight.",
+              "trigger_msg": "Steady Hand: you know this tale and how it must end. You have longer to answer in this fight.",
               "effect": "extra_seconds",
               "params": {
                 "seconds": 1
@@ -1626,13 +1626,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Each time Heracles cut off one of the Hydra's heads, two grew back. His nephew Iolaus seared each stump with a burning brand, and the heads stopped returning.",
+          "field_note": "As often as Heracles cut off a head of the Hydra two grew in its place, until his nephew Iolaus seared each stump with a burning brand, and thereafter the heads returned no more.",
           "abilities": [
             {
               "id": "legend_iolaus_torch",
               "name": "Iolaus' Torch",
               "text": "Your blows stop their regeneration for 3 turns, so a hydra's heads stay down.",
-              "trigger_msg": "Iolaus' Torch: you sear {the}'s wound with fire, as Iolaus did for Heracles, and nothing grows back.",
+              "trigger_msg": "Iolaus' Torch: you sear {the}'s wound with fire, as Iolaus did for Heracles, and nothing grows again.",
               "effect": "block_regen",
               "params": {
                 "turns": 3
@@ -1642,13 +1642,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "Ariadne gave Theseus a ball of thread to unwind as he walked into the Labyrinth. After killing the Minotaur, he followed it back out of the maze Daedalus built to hold the beast.",
+          "field_note": "Ariadne gave Theseus a ball of thread to unwind as he went into the Labyrinth, and when he had killed the Minotaur he followed it back out of the maze that Daedalus had built to hold the beast.",
           "abilities": [
             {
               "id": "legend_know_the_story",
               "name": "Know the Story",
               "text": "Once per fight, your first wrong answer against one does not end your chain. You know how the story ends.",
-              "trigger_msg": "Know the Story: you stumble on that answer, but you know how this tale goes and keep going. Your chain holds this time!",
+              "trigger_msg": "Know the Story: you stumble on that answer, but you know how this tale goes and press on. Your chain holds this time!",
               "effect": "chain_forgive",
               "params": {
                 "uses": 1
@@ -1670,11 +1670,11 @@
         6
       ],
       "keystones": [],
-      "blurb": "People who are not always people, and animals who are not always animals. They hide in plain sight until the moon, the hunger or the moment turns them.",
+      "blurb": "Some folk are not always folk, and there are animals that are not always animals. They hide in plain sight until the moon, or their hunger, or the chosen moment works the change upon them.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Herodotus heard that every one of the Neuri, a people beyond the Scythians, turned into a wolf for a few days once a year. He added that the tale did not convince him.",
+          "field_note": "Herodotus had heard that among the Neuri, who dwelt beyond the Scythians, every one became a wolf for a few days in each year, but he confessed that the tale did not convince him.",
           "abilities": [
             {
               "id": "shapeshifters_recognise",
@@ -1688,7 +1688,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "In Petronius's Satyricon, a wolf raiding a farm's flock is speared in the neck. Next day the soldier who turned into a wolf the night before lies in bed while a doctor tends his neck.",
+          "field_note": "A wolf that raided a farmer's flock was speared in the neck, as Petronius tells in the Satyricon. On the morrow the soldier who had become a wolf the night before was found lying abed while a doctor tended his neck.",
           "abilities": [
             {
               "id": "shapeshifters_forewarned",
@@ -1697,20 +1697,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Claw-marks and a torn cloak on the stair: a shapeshifter hunts this floor."
+                "line": "Claw-marks and a torn cloak lie on the stair: a shapeshifter hunts this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Hunters poisoned wolves with wolfsbane, or aconite. Greek myth said it grew from Cerberus's drool when Heracles dragged him from the underworld, and medieval doctors even tried it as a cure for werewolves.",
+          "field_note": "The wolfsbane or aconite with which hunters poisoned wolves grew first, said the Greeks, from the drool of Cerberus when Heracles dragged him up from the underworld, and physicians of the Middle Ages even tried it as a cure for werewolves.",
           "abilities": [
             {
               "id": "shapeshifters_wolfsbane",
               "name": "Wolfsbane",
               "text": "You get +1 on saving throws against their bleeding and disease, and their bleeding lasts a tenth less time.",
-              "trigger_msg": "Wolfsbane: {The}'s bite tears your skin, but the wolfsbane you carry keeps the curse from taking hold.",
+              "trigger_msg": "Wolfsbane: {The}'s bite tears your skin, but the wolfsbane that you carry keeps the curse from taking hold.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -1735,13 +1735,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Legend says Jean Chastel killed the Beast of Gévaudan in 1767 with a silver bullet. Historians trace the silver to novelists from 1935, though 19th-century German folklore already made silver a werewolf's bane.",
+          "field_note": "Jean Chastel slew the Beast of Gévaudan in 1767, and legend says that his bullet was silver. Historians trace that silver to novelists from 1935 onward, though German folk of the 19th century already held silver to be the werewolf's bane.",
           "abilities": [
             {
               "id": "shapeshifters_silvered",
               "name": "Silvered",
               "text": "Your weapon hits them 3% harder, and 10% harder if it is silver.",
-              "trigger_msg": "Silvered! {The} howls as the silver burns. The shape {he} wears cannot stand it.",
+              "trigger_msg": "Silvered! {The} howls as the silver burns, for the shape {he} wears cannot endure it.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.03,
@@ -1755,13 +1755,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "In the Odyssey, Menelaus holds the sea god Proteus fast while he becomes a lion, a serpent, a leopard, a boar, running water and a tree. Worn out, Proteus answers his questions.",
+          "field_note": "Menelaus held fast to Proteus the sea god, as the Odyssey tells, though he became a lion, a serpent, a leopard, a boar, running water and a tree, until Proteus was wearied and answered all that was asked of him.",
           "abilities": [
             {
               "id": "shapeshifters_forced_shape",
               "name": "Forced Shape",
               "text": "At chain 8 or more, a lesser shapeshifter is stunned for 3 turns as its shape tears.",
-              "trigger_msg": "Forced Shape! Your blow tears at {the}'s borrowed shape, and {he} staggers, caught halfway between forms.",
+              "trigger_msg": "Forced Shape! Your blow tears at {the}'s borrowed shape, and {he} staggers, caught halfway between two forms.",
               "effect": "stun_on_hit",
               "params": {
                 "chain_min": 8,
@@ -1784,11 +1784,11 @@
         12
       ],
       "keystones": [],
-      "blurb": "Things made, not born: stone, clay, bronze and clockwork given motion by craft or magic. They feel no pain and no fear, and they obey their last order forever.",
+      "blurb": "Golems and their kind were never born, but made of stone, clay, bronze or clockwork and set walking by craft or magic. They feel neither pain nor fear, and they will obey their last command forever.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Homer's Iliad tells of golden handmaidens made by the smith god Hephaestus. They looked like living girls, had minds, voices and strength, and helped their lame master walk.",
+          "field_note": "Hephaestus the smith of the gods made for himself handmaidens of gold, as Homer sings in the Iliad. They had the likeness of living girls, with minds and voices and strength, and they helped their lame master to walk.",
           "abilities": [
             {
               "id": "constructs_recognise",
@@ -1802,7 +1802,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "In the old English tale of Friar Bacon, his brass head finally spoke while his servant Miles kept watch: 'Time is.' 'Time was.' 'Time is past.' Miles never woke Bacon, and the head broke apart.",
+          "field_note": "The brass head of Friar Bacon, in the old English tale, spoke at last while his servant Miles kept watch, saying 'Time is.' and 'Time was.' and 'Time is past.', but Miles never woke his master Bacon, and the head broke in pieces.",
           "abilities": [
             {
               "id": "constructs_forewarned",
@@ -1811,14 +1811,14 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Grinding stone and ticking brass on the stair: something made, not born, guards this floor."
+                "line": "Stone grinds and brass ticks on the stair, for something made, not born, guards this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "In the Prague legend, Rabbi Loew pulled the shem, God's name on a slip, from his golem's mouth every Friday so it rested on the Sabbath. Once he forgot, and it ran wild.",
+          "field_note": "Rabbi Loew of Prague, the legend says, drew the shem, a slip that bore God's name, from the mouth of his golem each Friday, that it might rest on the Sabbath. But once he forgot, and it ran wild.",
           "abilities": [
             {
               "id": "constructs_steady_hand",
@@ -1834,13 +1834,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Apollodorus says Medea promised the bronze giant Talos immortality, then drew out the bronze nail that sealed his one vein at the ankle. All his ichor gushed out, and he died.",
+          "field_note": "Talos the giant of bronze was promised immortality by Medea, as Apollodorus tells, and then she drew out the bronze nail that stopped his single vein at the ankle, so that all his ichor gushed forth and he died.",
           "abilities": [
             {
               "id": "constructs_find_the_seam",
               "name": "Find the Seam",
               "text": "At chain 8 or more, your blows ignore their resistances, as Medea pulled the nail from Talos's ankle.",
-              "trigger_msg": "Find the Seam! You find the seam where {the}'s plates meet, and drive your blow right into it.",
+              "trigger_msg": "Find the Seam! You find the seam where {the}'s plates meet, and drive your blow home within it.",
               "effect": "pierce_resist",
               "params": {
                 "chain_min": 8
@@ -1850,13 +1850,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "Golem tales from Poland, and later Prague, put emet, 'truth', on the brow: rub out the first letter, leaving met, 'dead', and it falls. Elijah of Chełm's golem scarred his face as he unmade it.",
+          "field_note": "The golem tales of Poland, and later of Prague, set emet, 'truth', upon the brow: rub away the first letter, leaving met, 'dead', and the golem falls. When Elijah of Chełm unmade his golem, it scarred him on the face.",
           "abilities": [
             {
               "id": "constructs_erase_the_letter",
               "name": "Erase the Letter",
               "text": "At chain 18 or more, a lesser construct below 15% health falls lifeless: emet, truth, becomes met, dead. A named foe takes a blow 25% harder instead.",
-              "trigger_msg": "Erase the Letter! You rub out one letter on {the}'s brow: emet, truth, becomes met, death. {He} crashes to the ground.",
+              "trigger_msg": "Erase the Letter! You rub out one letter on {the}'s brow: emet, truth, becomes met, dead. {He} crashes to the ground.",
               "effect": "execute",
               "params": {
                 "chain_min": 18,
@@ -1881,11 +1881,11 @@
         10
       ],
       "keystones": [],
-      "blurb": "Living fire, stone, wind and water, and the spirits of smokeless flame. They are the world's raw stuff with a temper.",
+      "blurb": "The elementals are living fire, stone, wind and water, and spirits of smokeless flame. They are the raw stuff of the world, and quick to wrath.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "The Greek thinker Empedocles taught that all things are made of four roots: earth, water, air and fire. Legend says he leapt into Mount Etna, which threw back one of his bronze sandals.",
+          "field_note": "All things are made of four roots, earth and water and air and fire: so taught Empedocles the Greek. Legend says that he leapt at last into Mount Etna, and that the mountain cast back one of his sandals of bronze.",
           "abilities": [
             {
               "id": "elementals_recognise",
@@ -1899,7 +1899,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "Sailors called the blue flames that danced on their mastheads in storms St. Elmo's fire. Ancient Greek sailors saw the twins Castor and Pollux in a pair of such lights, a sign of safe passage.",
+          "field_note": "The blue flames that danced upon the mastheads in storms were named St. Elmo's fire by the seamen, and the sailors of ancient Greece beheld in a pair of such lights the twins Castor and Pollux, a sign that they should pass in safety.",
           "abilities": [
             {
               "id": "elementals_forewarned",
@@ -1908,20 +1908,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "The air on the stair tastes of lightning and ash: elementals stir on this floor."
+                "line": "The air of the stair tastes of lightning and ash, for elementals stir on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Pliny claimed the salamander was so cold it put out fire on contact. Fireproof asbestos was later taken for salamander's hair, and the legendary Prester John was said to own a robe of it.",
+          "field_note": "So cold was the salamander, as Pliny claimed, that it quenched fire by its touch. In later days asbestos, which will not burn, was taken for salamander's hair, and the fabled Prester John was said to own a robe of it.",
           "abilities": [
             {
               "id": "elementals_ward_of_elements",
               "name": "Ward of the Elements",
               "text": "Their fire, cold, lightning and acid hurt you 5% less.",
-              "trigger_msg": "Ward of the Elements: {The} lashes out with raw elemental force, but you meet it the way you were taught, and it hurts you less.",
+              "trigger_msg": "Ward of the Elements: {The} lashes out with raw elemental force, but you meet it as you were taught, and it hurts you less.",
               "effect": "resist_damage",
               "params": {
                 "types": [
@@ -1937,13 +1937,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Aristotle taught that each element had two qualities: fire hot and dry, water cold and wet, air hot and wet, earth cold and dry. Fire and water share none at all.",
+          "field_note": "To each element, as Aristotle taught, belong two qualities: fire is hot and dry, water cold and wet, air hot and wet, and earth cold and dry, so that fire and water have none in common.",
           "abilities": [
             {
               "id": "elementals_opposing_element",
               "name": "Opposing Element",
               "text": "Your blows hit 6% harder when they strike what the elemental is weak to.",
-              "trigger_msg": "Opposing Element! You answer {the} with the one element {he} cannot bear, and {he} reels.",
+              "trigger_msg": "Opposing Element! You answer {the} with the one element that {he} cannot bear, and {he} reels.",
               "effect": "weakness_amp",
               "params": {
                 "mult": 1.06,
@@ -1959,13 +1959,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "In The Fisherman and the Jinni, a fisherman nets a copper jar sealed with Solomon's seal. Out pours a furious jinni, and the fisherman tricks it back inside by asking how it could ever fit.",
+          "field_note": "A fisherman once drew up in his net a copper jar shut with the seal of Solomon, as it is told in The Fisherman and the Jinni, and out of it poured a furious jinni, whom he tricked back within by asking how it could ever have fitted there.",
           "abilities": [
             {
               "id": "elementals_solomons_seal",
               "name": "Solomon's Seal",
               "text": "Their burning and freezing wear off twice as fast, and their elemental damage hurts you 10% less.",
-              "trigger_msg": "Solomon's Seal: you trace the seal of Solomon in the air, and your hold on the elemental lasts longer.",
+              "trigger_msg": "Solomon's Seal: you trace the seal of Solomon in the air, and the elemental's hold on you grows weaker.",
               "effect": "duration_mult",
               "params": {
                 "effects": [
@@ -2005,11 +2005,11 @@
         6
       ],
       "keystones": [],
-      "blurb": "Mindless, shapeless eaters that clean the dungeon of everything soft. They dissolve what they touch, and cutting the wrong one only makes more of it.",
+      "blurb": "Without mind or shape, these eaters creep through the dungeon and strip it of all that is soft. Whatever they touch is dissolved, and to cut the wrong one only makes more of it.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Since at least the 1300s, people in Britain have found blobs of jelly on the grass and blamed shooting stars. Welsh shepherds called it pwdre ser, 'rot of the stars'.",
+          "field_note": "Lumps of jelly have been found upon the grass of Britain since at least the 1300s and blamed upon shooting stars, and the shepherds of Wales named the stuff pwdre ser, 'rot of the stars'.",
           "abilities": [
             {
               "id": "oozes_recognise",
@@ -2023,7 +2023,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "Japanese lore tells of the nuppeppō, a wandering lump of flab with a face in its folds, that reeks of rotting flesh and shuffles through deserted streets at night.",
+          "field_note": "The nuppeppō of Japanese lore is a wandering lump of flesh with a face among its folds, and it shuffles by night through the empty streets with the reek of rotting meat about it.",
           "abilities": [
             {
               "id": "oozes_forewarned",
@@ -2032,20 +2032,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "The stair is slick and smells of acid: oozes creep on this floor."
+                "line": "The stair is slick and smells of acid, for oozes creep on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Germanic and Scandinavian folk believed a yellow jelly on the gate, witches' butter, meant a witch had cursed the house. Stabbing it with metal pins was said to break the spell.",
+          "field_note": "A yellow jelly upon the gate, which was called witches' butter, warned the folk of Germany and Scandinavia that a witch had cursed the house, and they believed that to prick it with pins of metal broke the spell.",
           "abilities": [
             {
               "id": "oozes_clean_blade",
               "name": "Clean Blade",
               "text": "You get +1 on saving throws against their paralysis and weakness, and their weakness lasts a tenth less time.",
-              "trigger_msg": "Clean Blade: {The}'s acid slime splashes your gear, but you wipe it off before it can eat in.",
+              "trigger_msg": "Clean Blade: {The}'s slime splashes you, but you wipe it away before it can numb your limbs.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -2070,13 +2070,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "In the Devi Mahatmya, every drop of the demon Raktabija's blood that touched the ground sprang up as another Raktabija. So the goddess Kali drank the blood as it flowed, before a drop could fall.",
+          "field_note": "Every drop of the demon Raktabija's blood that touched the earth rose up as another Raktabija, as the Devi Mahatmya tells, and therefore the goddess Kali drank the blood as it flowed, before ever a drop could fall.",
           "abilities": [
             {
               "id": "oozes_strike_true",
               "name": "Strike True",
               "text": "Your blows never split them, and your weapon hits them 5% harder.",
-              "trigger_msg": "Strike True! One clean blow, and {the} cannot split in two.",
+              "trigger_msg": "Strike True! You strike so cleanly that {the} cannot split in two.",
               "effect": "prevent_split",
               "params": {},
               "also": [
@@ -2092,13 +2092,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "In the 1958 film The Blob, Steve, played by Steve McQueen, realises the creature cannot stand cold. The town freezes it with fire extinguishers, and the Air Force flies it to the Arctic.",
+          "field_note": "Steve, whom Steve McQueen played in the 1958 film The Blob, discovered that the creature could not endure the cold. The townsfolk froze it with fire extinguishers, and the Air Force bore it away through the sky to the Arctic.",
           "abilities": [
             {
               "id": "oozes_fire_and_frost",
               "name": "Fire and Frost",
               "text": "Your blows hit 10% harder when they strike what an ooze is weak to.",
-              "trigger_msg": "Fire and Frost! {The} shrivels and hisses as the blow lands.",
+              "trigger_msg": "Fire and Frost! {The} shrivels and hisses beneath the blow.",
               "effect": "weakness_amp",
               "params": {
                 "mult": 1.1,
@@ -2124,11 +2124,11 @@
         14
       ],
       "keystones": [],
-      "blurb": "Things that should not exist: minds from beyond the stars, eyes that float, mouths that wait. They attack the mind as much as the body, and many of them are not what they seem.",
+      "blurb": "There are things that ought never to have been: minds from beyond the stars, eyes that float and mouths that wait. They war upon the mind as much as upon the body, and many of them are other than they seem.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "In 1752 Bishop Erik Pontoppidan wrote that the Norwegian kraken was so vast its back was mistaken for islands. The giant squid, first photographed alive in 2004, may lie behind the tale.",
+          "field_note": "So vast was the kraken of Norway, wrote Bishop Erik Pontoppidan in 1752, that its back was mistaken for islands. It may be that the giant squid, which was first photographed alive in 2004, lies behind the tale.",
           "abilities": [
             {
               "id": "aberrations_recognise",
@@ -2142,7 +2142,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "In H. P. Lovecraft's The Call of Cthulhu, sailors on the risen city of R'lyeh find its angles wrong. One man is swallowed by an angle that is acute but behaves as if obtuse.",
+          "field_note": "Sailors who landed on the risen city of R'lyeh, in H. P. Lovecraft's The Call of Cthulhu, found all its angles wrong, and one man was swallowed by an angle that was acute and yet behaved as though it were obtuse.",
           "abilities": [
             {
               "id": "aberrations_forewarned",
@@ -2151,20 +2151,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "The stair feels wrong, as if it bends: aberrations lurk on this floor."
+                "line": "The stair feels wrong and seems to bend, for aberrations lurk on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "In the Odyssey, Odysseus plugs his crew's ears with beeswax and has them tie him to the mast to hear the Sirens. When he begs to be freed, they bind him tighter.",
+          "field_note": "Odysseus, in the Odyssey, stopped the ears of his crew with beeswax and bade them bind him to the mast, that he might hear the Sirens, and when he begged to be loosed they bound him the tighter.",
           "abilities": [
             {
               "id": "aberrations_steel_mind",
               "name": "Steel Mind",
               "text": "You get +1 on saving throws against their confusion and paralysis, and their hallucinations last a tenth less time.",
-              "trigger_msg": "Steel Mind: {The} claws at your thoughts, but you hold onto what is real, and the attack on your mind fails.",
+              "trigger_msg": "Steel Mind: {The} claws at your thoughts, but you hold fast to what is real, and the attack on your mind fails.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -2189,13 +2189,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Japanese lore says a tool that reaches its hundredth year can come alive as a tsukumogami. A medieval scroll tells of old tools thrown out before that birthday, which came alive anyway, full of spite.",
+          "field_note": "When a tool has lasted a hundred years, the Japanese tales say, it may awaken as a living tsukumogami. A medieval scroll tells of old tools cast out before that day was come, which awoke none the less, and were full of spite.",
           "abilities": [
             {
               "id": "aberrations_mimic_sense",
               "name": "Mimic-Sense",
               "text": "A disguised mimic within 2 tiles gives itself away to you.",
-              "trigger_msg": "Mimic-Sense: a shadow {where} does not move the way shadows should. You look closer: {true_a} is lying in wait!",
+              "trigger_msg": "Mimic-Sense: a shadow {where} does not move as shadows should. You look more closely: {true_a} is lying in wait!",
               "effect": "sense_hidden",
               "params": {
                 "kinds": [
@@ -2224,13 +2224,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "The giant Argus had a hundred eyes and never closed them all at once, so nothing slipped past him. After Hermes charmed him asleep and slew him, Hera set his eyes in the peacock's tail.",
+          "field_note": "Argus the giant had a hundred eyes and never closed them all at once, so that nothing could steal past him, until Hermes charmed him to sleep and slew him, and Hera set his eyes in the tail of the peacock.",
           "abilities": [
             {
               "id": "aberrations_the_unblinking",
               "name": "The Unblinking",
               "text": "Your weapon hits them 5% harder, and their ambushers never catch you unawares.",
-              "trigger_msg": "The Unblinking! You never look away from {the}, and your blow lands harder for it.",
+              "trigger_msg": "The Unblinking! You never look away from {the}, and your blow lands the harder for it.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05
@@ -2258,11 +2258,11 @@
         6
       ],
       "keystones": [],
-      "blurb": "Green and grey things that grow where nothing should: mould, vine and walking rot. They cannot chase you far, so they make you come to them, or put you to sleep where you stand.",
+      "blurb": "The growths of the dungeon spring up green and grey where nothing should grow, as mould and vine and walking rot. They cannot pursue you far, and so they draw you to them, or lay you asleep where you stand.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "In 1874 the New York World printed a German botanist's account of a man-eating tree in Madagascar. Reporter Edmund Spencer had made it all up, yet explorers went hunting for the tree for decades.",
+          "field_note": "The New York World printed in 1874 the account of a German botanist who had seen a man-eating tree in Madagascar. It was all the invention of the reporter Edmund Spencer, yet explorers went seeking that tree for many years afterward.",
           "abilities": [
             {
               "id": "plants_recognise",
@@ -2276,7 +2276,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "In Shakespeare's Macbeth, a vision the witches raise promises Macbeth he is safe until Birnam Wood comes to Dunsinane. Then a messenger sees the forest moving: soldiers carrying cut boughs.",
+          "field_note": "Macbeth was promised by a vision of the witches, in Shakespeare's play, that he was safe until Birnam Wood should come to Dunsinane, and then a messenger beheld the forest moving, for soldiers bore its cut boughs before them.",
           "abilities": [
             {
               "id": "plants_forewarned",
@@ -2285,20 +2285,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "Spores drift on the stair like dust: something green and hungry grows on this floor."
+                "line": "Spores drift like dust on the stair, for something green and hungry grows on this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Plague doctors of the 1600s wore beaked masks stuffed with lavender, peppermint, cloves and myrrh, believing the sweet scents would ward off the bad air thought to carry disease.",
+          "field_note": "The plague doctors of the 1600s went about in beaked masks stuffed with lavender, peppermint, cloves and myrrh, for they believed that sweet scents would ward off the evil air by which sickness was thought to travel.",
           "abilities": [
             {
               "id": "plants_herbalists_mask",
               "name": "Herbalist's Mask",
               "text": "You get +1 on saving throws against their poison, sleep and hallucinations, and their poison lasts a tenth less time.",
-              "trigger_msg": "Herbalist's Mask: {The} puffs a cloud of spores at you, but you breathe through your mask, and they do not take.",
+              "trigger_msg": "Herbalist's Mask: {The} puffs a cloud of spores at you, but you breathe through your mask, and they take no hold.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -2324,13 +2324,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "Medieval lore said a pulled mandrake shrieked and killed all who heard it. So gatherers tied it to a dog, which dragged it free, a trick Josephus described in the first century.",
+          "field_note": "The mandrake, said the lore of the Middle Ages, shrieked when it was pulled and killed all who heard. Therefore the gatherers tied it to a dog to be dragged free, a craft that Josephus described in the first century.",
           "abilities": [
             {
               "id": "plants_herbalist",
               "name": "Herbalist",
               "text": "Harvesting them gives one extra portion.",
-              "trigger_msg": "Herbalist: you know which parts of a plant are worth keeping, and gather more than most would.",
+              "trigger_msg": "Herbalist: you know which parts of a plant are worth the keeping, and gather more than most would.",
               "effect": "harvest_bonus",
               "params": {
                 "portions": 1
@@ -2340,13 +2340,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "Around 723, Boniface took an axe to Donar's Oak, a tree sacred to Thor at Geismar. His biographer says a blast from above helped topple it, and Boniface built a chapel from its timber.",
+          "field_note": "Boniface laid his axe about the year 723 to Donar's Oak at Geismar, a tree holy to Thor. A blast from above helped to overthrow it, as his biographer tells, and Boniface built a chapel of its timber.",
           "abilities": [
             {
               "id": "plants_woodsmans_axe",
               "name": "Woodsman's Axe",
               "text": "Your weapon hits them 5% harder, and their ambushers never catch you unawares.",
-              "trigger_msg": "Woodsman's Axe! You cut {the} low, right where {he} grows from the ground.",
+              "trigger_msg": "Woodsman's Axe! You hew {the} low, just where {he} grows from the ground.",
               "effect": "damage_mult",
               "params": {
                 "mult": 1.05
@@ -2374,11 +2374,11 @@
         6
       ],
       "keystones": [],
-      "blurb": "Creatures of heaven and of the gods' service, some still pure and some gone wrong. Their light blinds, their purpose is fixed, and they rarely start a fight.",
+      "blurb": "The celestials are servants of heaven and of the gods, some pure still and some fallen into evil. Their light is blinding and their purpose is fixed, and they seldom begin a quarrel.",
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "Europeans once believed unicorn horn could detect poison, and kings treasured it. Most such horns were narwhal tusks, and Denmark's coronation throne, built in the 1660s, is made of them.",
+          "field_note": "The horn of the unicorn was once believed in Europe to discover poison, and kings held it very precious. Most such horns were the tusks of narwhals, of which the throne of Denmark's coronations was built in the 1660s.",
           "abilities": [
             {
               "id": "celestials_recognise",
@@ -2392,7 +2392,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "In the Gospel of Luke, shepherds watching their flock by night are terrified when an angel appears and the glory of the Lord shines round them. The angel's first words are 'Fear not.'",
+          "field_note": "Shepherds were watching their flock by night, as the Gospel of Luke relates, when an angel appeared and the glory of the Lord shone round them, and they were sore afraid. The first words that the angel spoke were 'Fear not.'",
           "abilities": [
             {
               "id": "celestials_forewarned",
@@ -2401,20 +2401,20 @@
               "trigger_msg": "",
               "effect": "forewarned",
               "params": {
-                "line": "A clean light falls on the stair: a celestial creature walks this floor."
+                "line": "A clean light falls on the stair, for a celestial creature walks this floor."
               }
             }
           ]
         },
         {
           "name": "Lore",
-          "field_note": "Exodus says Moses's face shone so after Sinai that the Israelites feared to come near, so he veiled it. In Greek myth, Semele saw Zeus in his full glory, and it killed her.",
+          "field_note": "The face of Moses so shone after Sinai, says Exodus, that the Israelites feared to come near him, and he covered it with a veil. Among the Greeks it was told that Semele beheld Zeus in his full glory and died.",
           "abilities": [
             {
               "id": "celestials_shaded_eyes",
               "name": "Shaded Eyes",
               "text": "You get +1 on saving throws against their blinding and confusion.",
-              "trigger_msg": "Shaded Eyes: {The}'s blinding light flares, but you look past it, not into it, and keep your sight.",
+              "trigger_msg": "Shaded Eyes: {The}'s blinding light flares, but you look past it rather than into it, and keep your sight.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
@@ -2428,13 +2428,13 @@
         },
         {
           "name": "Hunter",
-          "field_note": "In Exodus, the Israelites daub lamb's blood on their doorposts, and when the destroyer comes for Egypt's firstborn, the Lord passes over every marked door.",
+          "field_note": "The Israelites marked their doorposts with the blood of a lamb, as Exodus tells, and when the destroyer came for the firstborn of Egypt the Lord passed over every door so marked.",
           "abilities": [
             {
               "id": "celestials_angels_due",
               "name": "Angel's Due",
               "text": "Their holy damage hurts you 5% less.",
-              "trigger_msg": "Angel's Due: {The}'s holy fire pours down, but you bow your head in respect, and it passes over you.",
+              "trigger_msg": "Angel's Due: {The}'s holy fire pours down, but you bow your head in reverence, and it passes over you.",
               "effect": "resist_damage",
               "params": {
                 "types": [
@@ -2448,13 +2448,13 @@
         },
         {
           "name": "Bane",
-          "field_note": "Genesis tells how Abraham fed three strangers at Mamre who proved to be heavenly visitors, and Ovid how old Baucis and Philemon fed Jupiter and Mercury in disguise. Both hosts were richly rewarded.",
+          "field_note": "Abraham set food before three strangers at Mamre, as Genesis tells, and they proved to be visitors from heaven. Ovid tells how old Baucis and Philemon fed Jupiter and Mercury in disguise, and richly were those hosts rewarded.",
           "abilities": [
             {
               "id": "celestials_entertaining_angels",
               "name": "Entertaining Angels",
               "text": "One lesser celestial in five arrives calm and leaves you be unless you strike first.",
-              "trigger_msg": "Entertaining Angels: the beings of light here look upon you, and let you be.",
+              "trigger_msg": "Entertaining Angels: the beings of light look upon you here and let you be.",
               "effect": "calm_on_arrival",
               "params": {
                 "chance": 0.2
@@ -2490,7 +2490,7 @@
           "scope": "any"
         }
       },
-      "chronicle": "I learned enough of every kind of the dead to keep watch over a grave all night."
+      "chronicle": "Know every kind of the dead. Can keep watch on a grave all night."
     },
     "wild_road": {
       "name": "The Wild Road",
@@ -2513,7 +2513,7 @@
           "amount": 1
         }
       },
-      "chronicle": "I learned the wild things of the dark well enough to walk their roads like a ranger."
+      "chronicle": "Know the wild things of the dark. Can walk their roads like a ranger."
     },
     "hellward_gate": {
       "name": "The Hellward Gate",
@@ -2540,7 +2540,7 @@
           "scope": "any"
         }
       },
-      "chronicle": "I learned the tricks of everything that gets into a mind, and mine stopped bending."
+      "chronicle": "Learned the tricks of all that creep into a mind. Mine bends no more."
     },
     "heroes_road": {
       "name": "The Hero's Road",
@@ -2564,7 +2564,7 @@
           "boss_only": true
         }
       },
-      "chronicle": "I learned the old stories well enough to walk the road the heroes walked."
+      "chronicle": "Know the old stories. Can walk the road the heroes walked."
     }
   },
   "circle_title": "CIRCLE COMPLETE",
@@ -2572,6 +2572,6 @@
     "title": "Loremaster",
     "families_at_tier": 5,
     "tier": 5,
-    "chronicle": "I came to know five families of monster down to the last weakness. Somebody should call me a loremaster."
+    "chronicle": "Know five families of monster to the last weakness. A loremaster now."
   }
 }

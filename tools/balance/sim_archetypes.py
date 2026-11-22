@@ -209,6 +209,17 @@ def lean_dish(run, ready: list) -> list:
     return [as_lean] + list(ready)
 
 
+def uninstall() -> None:
+    """The game's own blow and recipe book again (difficulty_sim.uninstall)."""
+    import combat
+    if getattr(combat.strike_damage, '_sim_archetypes', False):
+        combat.strike_damage = combat.strike_damage.__wrapped__
+    if _KITCHEN['swapped'] is not None:
+        import kitchen
+        kitchen._cache.clear()
+        _KITCHEN['swapped'] = None
+
+
 def _strike(run, real, p, monster, chain, a, kw) -> int:
     import combat
     ranged = bool(kw.get('ranged', False))

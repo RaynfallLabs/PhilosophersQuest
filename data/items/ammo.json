@@ -23,7 +23,7 @@
     },
     "value": 1,
     "unidentified_name": "arrows",
-    "lore": "Simple shafts of ash-wood tipped with hammered iron heads. Cheap to produce and reliable enough for hunting, these arrows have brought down game and men alike across countless battlefields."
+    "lore": "Many a battlefield has been strewn with these simple shafts of ash-wood and their heads of hammered iron. They are cheaply made and can be trusted well enough in the hunt, and in their time they have brought down game and men beyond counting."
   },
   "steel_arrow": {
     "name": "steel arrow",
@@ -49,7 +49,7 @@
     },
     "value": 3,
     "unidentified_name": "arrows",
-    "lore": "Fletcher-grade steel points affixed to straight-grained cedar shafts with silk thread. The tempered tips hold their edge through stone and bone alike, punching through light armor with ease."
+    "lore": "Fletchers bind these points of tempered steel to straight-grained shafts of cedar with silken thread. The points hold their edge through stone and bone alike, and they pass with ease through light armour."
   },
   "hardened_gold_arrow": {
     "name": "hardened gold arrow",
@@ -75,7 +75,7 @@
     },
     "value": 8,
     "unidentified_name": "arrows",
-    "lore": "Alchemically hardened gold conducts magical energy more efficiently than common metals, making these arrows ideal against creatures with spell resistance. The gleaming heads catch light like tiny suns in flight."
+    "lore": "By the art of the alchemists gold may be hardened to serve for an arrowhead, and it strikes more heavily than iron or steel. Archers prize such arrows, and in their flight they shine like tiny suns."
   },
   "diamond_arrow": {
     "name": "diamond arrow",
@@ -101,7 +101,7 @@
     },
     "value": 20,
     "unidentified_name": "arrows",
-    "lore": "Diamond points ground finer than any steel edge. They pass through enchanted armour as though it were wet paper. Only the wealthiest archers can afford to loose these and not go looking for them afterward."
+    "lore": "Ground finer than any edge of steel, these points of diamond strike more heavily than gold. None but the wealthiest archers can afford to loose such arrows and afterward to leave them lying where they fell."
   },
   "dragonbone_arrow": {
     "name": "dragonbone arrow",
@@ -127,7 +127,7 @@
     },
     "value": 50,
     "unidentified_name": "arrows",
-    "lore": "Shafts carved from the hollow bones of ancient dragons retain a whisper of draconic essence. They strike with the weight of legend, and even the wound they leave behind smolders faintly for hours."
+    "lore": "In the hollow bones of ancient dragons there lingers a whisper of the dragon's nature, and from such bones these shafts are carved. They strike with the weight of legend, and few wounds go deeper than theirs."
   },
   "iron_bolt": {
     "name": "iron bolt",
@@ -153,7 +153,7 @@
     },
     "value": 1,
     "unidentified_name": "bolts",
-    "lore": "Short, stout iron bolts designed for crossbow use. Their stubby profile sacrifices range for punching power, making them favored by dungeon fighters who need to stop a charging enemy fast."
+    "lore": "Short and stout are these bolts of iron that are made for the crossbow, and what they lose in range they gain in force. Those who fight in dungeons favour them, since a charging foe must often be halted there with little time to spare."
   },
   "steel_bolt": {
     "name": "steel bolt",
@@ -179,7 +179,7 @@
     },
     "value": 3,
     "unidentified_name": "bolts",
-    "lore": "Precision-ground steel bolts with quarrel-cut fletching for stable flight in close quarters. The hardened heads deform on impact to maximize wound channel, making them brutally effective against unarmored foes."
+    "lore": "These bolts of steel, ground with great care and fletched as quarrels are, fly steadily in close quarters. Their hardened heads flatten when they strike and so tear a wide wound, for which reason they are cruellest against a foe who goes without armour."
   },
   "hardened_gold_bolt": {
     "name": "hardened gold bolt",
@@ -205,7 +205,7 @@
     },
     "value": 8,
     "unidentified_name": "bolts",
-    "lore": "These gleaming bolts carry a faint anti-magical charge locked into the gold during the hardening process. Spellcasters struck by them find their concentration disrupted, making these prized by monster hunters."
+    "lore": "The gold of these gleaming bolts was hardened by the art of the alchemists. They strike more heavily than steel, and for this the hunters of monsters prize them greatly."
   },
   "diamond_bolt": {
     "name": "diamond bolt",
@@ -231,7 +231,7 @@
     },
     "value": 20,
     "unidentified_name": "bolts",
-    "lore": "Diamond-tipped bolts that shear through the thickest plate. The crystal tips shatter on impact and stay in the wound, an ugly design that has ended a great many arguments with armoured things."
+    "lore": "These bolts are tipped with diamond and strike more heavily than gold. The crystal shatters as it strikes and stays in the wound, and by this ugly device a great many quarrels with armoured things have been ended."
   },
   "adamantine_bolt": {
     "name": "adamantine bolt",
@@ -257,7 +257,7 @@
     },
     "value": 50,
     "unidentified_name": "bolts",
-    "lore": "Forged from the rarest metal in the known world, these bolts are virtually indestructible and can be recovered after almost every shot. Dragon hide, golem plating, and enchanted barriers alike offer no meaningful protection against them."
+    "lore": "Out of adamantine, the rarest metal in the known world, the smiths forge bolts that will neither bend nor blunt. Few archers have ever found one again, yet few bolts of mortal making strike so heavily upon the hide of dragons or the plating of golems."
   },
   "arrows_of_eros": {
     "name": "Arrows of Eros",
@@ -270,7 +270,7 @@
     "min_level": 20,
     "identified": false,
     "unidentified_name": "golden-tipped arrows that feel warm",
-    "lore": "Eros, whom the Romans called Cupid, carried two kinds of arrow: gold-tipped to kindle love, lead-tipped to drive it away. Ovid tells how he shot Apollo with gold and the nymph Daphne with lead, and Apollo chased her until she became a laurel tree. These are the golden kind.",
+    "lore": "Eros, whom the Romans called Cupid, bore arrows of two kinds, those tipped with gold to kindle love and those tipped with lead to drive it away. Ovid tells how he shot Apollo with gold and the nymph Daphne with lead, so that the god pursued her until she was changed into a laurel tree. These arrows are of the golden kind.",
     "floorSpawnWeight": {
       "1-19": 0,
       "20-40": 2,
@@ -297,7 +297,7 @@
     "min_level": 70,
     "identified": false,
     "unidentified_name": "silver arrows fletched with white feathers",
-    "lore": "As a small girl Artemis went to the Cyclopes on the island of Lipara and asked them for a bow and arrows. She never missed. Homer says that when a woman died suddenly and without pain, the Greeks called her slain by the gentle shafts of Artemis.",
+    "lore": "While Artemis was yet a little girl she went to the Cyclopes upon the isle of Lipara and asked of them a bow and arrows, and with these she never missed. When a woman died suddenly and without pain, the Greeks would say, as Homer has it, that she was slain by the gentle shafts of Artemis.",
     "floorSpawnWeight": {
       "1-69": 0,
       "70-80": 1,
@@ -323,7 +323,7 @@
     "min_level": 70,
     "identified": false,
     "unidentified_name": "crackling bolts of compressed energy",
-    "lore": "The Cyclopes Brontes, Steropes and Arges forged the thunderbolt for Zeus in thanks for their freedom. With it he overthrew the Titans and set the order of Olympus. Later poets put the forge under Mount Etna. There are never many of these, and each one shakes the earth.",
+    "lore": "In thanks for their freedom the Cyclopes Brontes, Steropes and Arges forged the thunderbolt for Zeus, and with it he overthrew the Titans and established the order of Olympus. Later poets placed their forge beneath Mount Etna. Such bolts are never found in any great number, and the earth shakes at the fall of each one.",
     "floorSpawnWeight": {
       "1-69": 0,
       "70-80": 1,
@@ -355,6 +355,6 @@
     "count_max": 20,
     "value": 5,
     "unidentified_name": "red shotgun shells",
-    "lore": "Twelve-gauge buckshot shells. Each one contains nine lead pellets that spread into a devastating pattern at close range. The red plastic hull and brass base are unmistakable. S-Mart brand."
+    "lore": "These are twelve-gauge shells of buckshot, and in each lie nine pellets of lead that spread at close range to most dreadful effect. None could mistake their red plastic hulls and bases of brass, and upon them is the brand of S-Mart."
   }
 }

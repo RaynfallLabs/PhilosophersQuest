@@ -44,20 +44,20 @@
   },
   "constancy": [
     {"id": "temperance", "tag": "virtue:forgo", "min": 3, "min_blocks": 2,
-     "chronicle": "Three times now I could have taken the easy thing. I am getting used to not taking it."},
+     "chronicle": "Passed up the easy gain three times now."},
     {"id": "faithful", "tag": "virtue:kept", "min": 2, "min_blocks": 2, "none_tags": ["vice:betray", "vice:lapsed"],
-     "chronicle": "Two promises carried all the way down. My word is starting to mean something, even to me."},
+     "chronicle": "Kept two promises all the way down."},
     {"id": "discerning", "tag": "virtue:judged", "min": 4, "min_blocks": 3, "none_tags": ["vice:reckless"],
-     "chronicle": "I have stopped helping first and asking later. It feels less kind and works better."},
+     "chronicle": "Now ask first and help after. It works better."},
     {"id": "steadfast", "tag": "virtue:steadfast", "min": 3, "min_blocks": 2,
-     "chronicle": "Another hard test, and I did not fold. I used to think nerve was something you were born with."},
+     "chronicle": "Faced another hard test and did not fold."},
     {"id": "honest", "tag": "virtue:owned", "min": 2, "min_blocks": 2,
-     "chronicle": "Twice now I have looked someone in the face and told them what I did to them. It does not get easier. I think that is the point."}
+     "chronicle": "Twice now looked someone in the face and owned what I had done."}
   ],
   "patterns_neg": [
     {"id": "turncoat", "tag": "vice:betray", "min": 2, "karma": -1,
-     "chronicle": "Twice now I have sold a promise. I should stop making them."},
+     "chronicle": "Twice now sold a promise. Must make no more."},
     {"id": "callous", "tag": "vice:cruelty", "min": 3, "karma": -1,
-     "chronicle": "I notice I no longer flinch."}
+     "chronicle": "No longer flinch at cruelty."}
   ]
 }

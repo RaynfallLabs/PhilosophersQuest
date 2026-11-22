@@ -19,7 +19,7 @@
       "1-20": 10,
       "21-40": 3
     },
-    "lore": "A stick of pine with one end wrapped in rags soaked in pitch: the light that soldiers, miners and grave-robbers carried for thousands of years. It burns smoky and orange for an hour or so, and then it is ash. It shows you the room, and it shows you to everything in the room."
+    "lore": "For thousands of years soldiers, miners and grave-robbers carried such a light as this, a stick of pine with rags soaked in pitch wound about one end. It burns smoky and orange for an hour or so before it falls to ash, and while it shows you the room it shows you also to everything that is in the room."
   },
   "horn_lantern": {
     "name": "Horn Lantern",
@@ -39,7 +39,7 @@
       "21-40": 6,
       "41-60": 2
     },
-    "lore": "A tin frame with windows of cow horn, scraped so thin that the light shines through. The English called it a lanthorn, and the old spelling remembers the horn. It burns lamp oil, the horn keeps the wind off the flame, and it throws a steadier light than any torch."
+    "lore": "The English used to name such a lantern a lanthorn, remembering in that spelling the cow horn of its windows, which is scraped so thin that the light shines through. Its frame is of tin and it burns lamp oil, and since the horn keeps the wind from the flame it throws a steadier light than any torch."
   },
   "dark_lantern": {
     "name": "Dark Lantern",
@@ -60,7 +60,7 @@
       "41-60": 6,
       "61-80": 2
     },
-    "lore": "A lantern with a single window and a sliding iron shutter, made for watchmen and for thieves. Its light goes forward in a beam, where you point it, and little of it spills back toward whoever is watching. On the night of 4 November 1605 Guy Fawkes was arrested in a cellar under the House of Lords with a dark lantern in his hand. It is still kept in the Ashmolean Museum at Oxford."
+    "lore": "Watchmen and thieves alike have use for this lantern of one window and a sliding iron shutter, since its light goes forward in a beam where you point it and little of it spills back toward whoever is watching. Just such a dark lantern was in the hand of Guy Fawkes on the night of 4 November 1605, when he was arrested in a cellar under the House of Lords, and it is kept still in the Ashmolean Museum at Oxford."
   },
   "everburning_lamp": {
     "name": "Everburning Lamp",
@@ -80,7 +80,7 @@
       "61-80": 5,
       "81-100": 3
     },
-    "lore": "Old writers tell of lamps found still burning in sealed tombs. Saint Augustine wrote of a lamp in a temple of Venus that no wind or rain could put out. In 1485 workmen on the Appian Way opened a Roman tomb said to hold Tullia, the daughter of Cicero, and the story grew that a lamp was burning beside her after fifteen hundred years. The alchemists spent centuries trying to make one. This one needs no oil."
+    "lore": "The old writers tell of lamps found still burning in sealed tombs, and Saint Augustine wrote of one in a temple of Venus that no wind or rain could put out. When workmen on the Appian Way opened in 1485 a Roman tomb said to hold Tullia, the daughter of Cicero, the story grew that a lamp had burned beside her for fifteen hundred years. For centuries afterward the alchemists strove to make such a lamp, and here is one that has no need of oil."
   },
   "jacks_lantern": {
     "name": "Jack's Lantern",
@@ -101,7 +101,7 @@
     "spread": 9,
     "peak_weight": 0.3,
     "floorSpawnWeight": {},
-    "lore": "The Irish tell of Stingy Jack, a drunkard who tricked the Devil twice and made him promise never to take his soul. When Jack died, Heaven would not have him, and the Devil kept his word and would not let him into Hell either. He threw Jack one ember of hellfire to see his way by, and Jack carried it in a hollowed turnip, and he walks the dark roads with it still. Irish children carved turnip lanterns on All Hallows' Eve to keep him away; in America they used pumpkins. A coal from Hell does not go out."
+    "lore": "The Irish tell of Stingy Jack, a drunkard who twice tricked the Devil and made him promise never to take his soul. So when Jack died and Heaven would not have him, the Devil kept his word and would not let him into Hell either, but threw him one ember of hellfire to see his way by. Jack set it in a hollowed turnip and walks the dark roads with it still, and the children of Ireland carved turnip lanterns on All Hallows' Eve to keep him away, as in America they carved pumpkins. Since it was a coal from Hell that he was given, the light within this lantern does not go out."
   },
   "psyches_lamp": {
     "name": "Psyche's Lamp",
@@ -123,7 +123,7 @@
     "spread": 9,
     "peak_weight": 0.3,
     "floorSpawnWeight": {},
-    "lore": "In the story Apuleius tells, Psyche married a husband who came to her only in the dark and forbade her ever to see his face. Her sisters told her he was a monster. One night she filled a lamp, lit it and held it over him as he slept, and saw that he was the god Cupid himself. A drop of hot oil fell from the lamp onto his shoulder, and he woke and fled from her. By its light, what hides from sight is seen."
+    "lore": "Psyche, as Apuleius tells, was wedded to a husband who came to her only in the dark and forbade her ever to see his face, and her sisters persuaded her that he was a monster. So one night she filled a lamp and lit it and held it over him as he slept, and she saw that he was the god Cupid himself. A drop of hot oil fell upon his shoulder, and he woke and fled from her, but her lamp has this virtue still, that by its light whatever hides from sight is seen."
   },
   "heros_lamp": {
     "name": "Hero's Lamp",
@@ -145,7 +145,7 @@
     "spread": 9,
     "peak_weight": 0.3,
     "floorSpawnWeight": {},
-    "lore": "Hero was a priestess of Aphrodite at Sestos, and Leander loved her from Abydos, across the strait of the Hellespont. Every night she lit a lamp in the window of her tower, and he swam the strait toward it, and before dawn he swam home again. One winter night a storm blew the lamp out, Leander lost his way in the dark water and drowned, and Hero threw herself from her tower. The poet Musaeus told the story. In 1810 Lord Byron swam the Hellespont to prove that it could be done."
+    "lore": "Hero was a priestess of Aphrodite at Sestos, and Leander loved her from Abydos, across the strait of the Hellespont. Each night she set a lighted lamp in the window of her tower, and he swam toward it through the dark and swam home again before the dawn. But one winter night a storm put out the lamp, so that Leander lost his way in the water and was drowned, and Hero in her grief threw herself from the tower. The poet Musaeus told their story, and long afterward, in 1810, Lord Byron swam the Hellespont to prove that such a thing could be done."
   },
   "hecates_torch": {
     "name": "Hecate's Torch",
@@ -167,6 +167,6 @@
     "spread": 8,
     "peak_weight": 0.3,
     "floorSpawnWeight": {},
-    "lore": "Hecate is the goddess of crossroads, of doorways and of the night, and the Greeks showed her with a torch in each hand. When Hades carried Persephone down to the Underworld, Hecate heard her cry. The Homeric Hymn to Demeter tells how she met the grieving mother with a light in her hands and went with her to learn what had happened. Afterwards she stayed beside Persephone in the Underworld. Nothing waits in the dark that her torch does not show."
+    "lore": "Hecate is the goddess of the crossroads, of doorways and of the night, and the Greeks showed her with a torch in either hand. When Hades carried Persephone down to the Underworld she heard the maiden cry out, and the Homeric Hymn to Demeter tells how she met the grieving mother with a light in her hands and went with her to learn what had befallen. She abode ever afterward beside Persephone in the Underworld, and there is nothing waiting in the dark that her torch will not show."
   }
 }

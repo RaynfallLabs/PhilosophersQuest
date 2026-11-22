@@ -674,7 +674,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _chron(self, kind: str, text: str, **kw):
         """Write a line in the hero's journal (DEEDS_KARMA_DESIGN 7.2-7.3):
-        first person, past tense, no game terms, no numbers. ``kind`` sorts
+        a brief note the adventurer leaves for himself (docs/STORY_VOICE.md),
+        no game terms, no numbers. ``kind`` sorts
         it into the Journal's tabs; ``once=key`` writes it only the first
         time this run. ``tests/test_chronicle_voice.py`` lints every line."""
         import chronicle
@@ -707,34 +708,34 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             p.apply_stat_bonus('INT', 1)
             p.mp = min(p.mp + 1, p.max_mp)
             self.add_message("First Insight! Your study sharpens your mind. (+1 INT)", 'success')
-            self._chron('milestone', "Twenty-five things named so far. My head feels roomier.")
+            self._chron('milestone', "Twenty-five things named. My head is roomier for it.")
         if n >= 75 and 75 not in claimed:
             claimed.add(75)
             self.add_message(
                 "Pattern Recognition! You now grasp lesser items at a glance.", 'success'
             )
-            self._chron('milestone', "I have named so many ordinary things that the common stuff just tells me what it is now.")
+            self._chron('milestone', "Named so much that common things now tell me what they are.")
         if n >= 125 and 125 not in claimed:
             claimed.add(125)
             p.PER += 1
             self.add_message(
                 "Sharper Eye! The world's small details no longer escape you. (+1 PER)", 'success'
             )
-            self._chron('milestone', "Named enough of the world that I notice the small things now. Glints, scuffs, a hinge that should not be there.")
+            self._chron('milestone', "Named enough to notice small things: glints, scuffs, odd hinges.")
         if n >= 200 and 200 not in claimed:
             claimed.add(200)
             p.WIS += 1
             self.add_message(
                 "Sage's Eye! Your patient study deepens your wisdom. (+1 WIS)", 'success'
             )
-            self._chron('milestone', "Two hundred things named. I am starting to understand why the old philosophers were insufferable.")
+            self._chron('milestone', "Two hundred things named. I understand the old philosophers now.")
         if n >= 300 and 300 not in claimed:
             claimed.add(300)
             p.philosophers_mantle = True
             self.add_message(
                 "The Philosopher's Mantle settles upon you. Every aura is plain to your eye.", 'success'
             )
-            self._chron('milestone', "Put on the Philosopher's Mantle. Everything I pick up whispers a little about itself now.")
+            self._chron('milestone', "Wearing the Philosopher's Mantle. All I pick up hints at what it is.")
 
     # ------------------------------------------------------------------
     # Level setup
@@ -792,7 +793,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Journal: secret build
         if self.secret_build:
             bname = self.secret_build.get('_name', self.player_name)
-            self._chron('milestone', f"My name is {bname}. I know things others don't. This changes everything.")
+            self._chron('milestone', f"My name is {bname}. I know things others do not.")
 
         self.player.x, self.player.y = dungeon.rooms[0].center
         self.renderer                = Renderer(self.screen, layout.VIEWPORT_W, layout.VIEWPORT_H)
@@ -849,7 +850,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(f"Welcome, {self.player_name}!", 'success')
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
         # Journal: entering the dungeon
-        self._chron('milestone', "Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
+        self._chron('milestone', "Entered the dungeon. Must find the Stone below and get back out.")
         # Floor 1's war-band and atmosphere (its den's snoring, a vault's
         # coins) are said at the start, as every later floor's are on
         # arrival. Only _change_level said them, so floor 1's were first
@@ -889,8 +890,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _s and _sc.normalise_name(_who) in _s.profile.members('heroes')))
         self._chron(
             'notice',
-            f"{_who} came this far before me. What is left of {_who} is "
-            f"still here, and it is not glad to see me.")
+            f"{_who} came this far before me. What is left of {_who} will fight me.")
         # Announce once: this used to repeat (and re-chronicle) on every
         # return to the floor, even after the ghost was laid to rest.
         dungeon.bones_ghost_name = None
@@ -1265,6 +1265,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Monsters saved before the lore pass take their kind's weaknesses,
         # resistances, shrugs_off and status lists (affinity.py).
         self._migrate_monster_affinities(state)
+        # A wand of light's power became its turns (2026-11-19): an old
+        # save's still held its radius, and its card showed that as turns.
+        self._migrate_light_wands(state)
         # A save on the Zombie Stage from before the dance-off had the band
         # fighting: they go back to their places as performers.
         self._stray_kids_after_load()
@@ -1405,6 +1408,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         }
         self.popup_next_state = STATE_PLAYER
         self.state = STATE_STORY_POPUP
+
+    def _migrate_light_wands(self, state: dict) -> int:
+        """Every wand of light a save holds reads today's data (lights.
+        refresh_wand): carried, lying, in a chest, on a trader's shelf or in
+        a thief's hands, on this floor and the stored ones."""
+        import lights
+        pools = [getattr(self, 'monsters', None) or []]
+        lm = state.get('level_mgr') if isinstance(state, dict) else None
+        if lm:
+            pools += [lvl.get('monsters') or [] for lvl in _stored_floors(lm)]
+        found = list(_all_items_in_save(self.player, state))
+        for m in (m for pool in pools for m in pool):
+            found += getattr(m, 'stolen_items', None) or []
+        n = 0
+        while found:
+            it = found.pop()
+            found += getattr(it, 'stock', None) or []
+            if getattr(it, 'effect', '') == 'light':
+                n += int(lights.refresh_wand(it))
+        return n
 
     def _migrate_monster_affinities(self, state: dict) -> int:
         """Every monster on this floor and every stored one that was saved
@@ -2097,16 +2120,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._notified_rooms = set()   # reset per-floor special room notifications
         # Journal: level milestones and maze entries
         _MILESTONE_FLAVOR = {
-            10: "The tunnels twisted into a maze here. Somebody built this to confuse, and was good at it.",
-            20: "The air got heavier on the way down. I could hear something large breathing.",
-            30: "Another maze. The walls felt like they were watching me, so I watched them back.",
-            40: "The statues here were too lifelike, and not one of them was smiling.",
-            50: "A third maze. I have stopped believing these are natural.",
-            60: "The stone was warm this deep. Something ancient lives down here.",
-            70: "Maze again. The walls were carved with warnings in dead languages, which is the worst kind.",
-            80: "Claw marks on the walls, higher than I could reach. Something down here has been straining at a leash.",
-            90: "One last maze. The floor trembled under me. I am close to the end, one way or another.",
-            100: "The deepest place in the world. Whatever waits here, I am ready. I have to be.",
+            10: "The tunnels turned to a maze here, built to confuse.",
+            20: "Heavier air. Heard something large breathing below.",
+            30: "Another maze. The walls seem to watch me.",
+            40: "Statues here are too lifelike, and none smiling.",
+            50: "A third maze. These cannot be natural.",
+            60: "Warm stone this deep. Something ancient lives here.",
+            70: "A maze again, carved with warnings in dead languages.",
+            80: "Claw marks above my reach. Something here strains at a leash.",
+            90: "One last maze, and the ground trembles. Near the end now.",
+            100: "The deepest place in the world. Must be ready for what waits.",
         }
         if new_level in _MILESTONE_FLAVOR:
             self._chron('milestone', _MILESTONE_FLAVOR[new_level], once=f'depth:{new_level}')
@@ -2587,7 +2610,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         f"The {getattr(_item, 'name', 'blade')} laughs and vanishes — it returns to Shiva.",
                         'warning')
                     self._chron(
-                        'loss', "Chandrahasa is gone. The Laughing Moon does not stay with the wicked.")
+                        'loss', "Chandrahasa is gone. The Laughing Moon will not stay with the wicked.")
                     break  # one disappearance per floor change is enough
 
         # Place deep-lore items on their designated levels (once per run)
@@ -2727,8 +2750,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         "ahead of you into the dark, as if it knew the way.", 'success')
                     self._chron(
                         'discovery',
-                        "Tied Ariadne's Thread at the door of the Labyrinth. "
-                        "It ran on ahead of me. I only had to follow.")
+                        "Tied Ariadne's Thread at the Labyrinth door. Follow where it runs.")
         # Omens (a named foe is somewhere on this floor): shown once.
         _omens = getattr(self.dungeon, 'omen_messages', None)
         if _omens:
@@ -2770,7 +2792,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'weight': 0.1,
             'item_class': 'shard',
             'min_level': 1,
-            'lore': "A tiny fragment of the Philosopher's Stone, warm to the touch and faintly luminous. It resonates with philosophical understanding, allowing its bearer to perceive the true nature of unknown items through rigorous examination. Ancient texts warn that those who abandon it walk blind through the dungeon — but some say that blindness teaches its own kind of wisdom.",
+            'lore': "This tiny fragment of the Philosopher's Stone is warm to the touch and faintly luminous. It answers to the understanding of philosophy, so that whoever bears it may perceive the true nature of unknown items by close examination. The ancient books warn that those who abandon it walk blind through the dungeon, though some say that such blindness teaches a wisdom of its own.",
         })
         _mark_starting_item_known(shard)
         # Plato refuses the Shard (his passive, `plato_no_shard`): he is not handed one.
@@ -3130,12 +3152,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _sync_unseen(self):
-        """Mark every invisible creature the hero cannot see, so its name in
-        any message is "something unseen". Runs with every field-of-view
-        refresh and before each monster's turn (the hero's senses change)."""
+        """Mark every invisible creature the hero cannot see (one hidden in
+        the dark too: src/unseen.py), so its name in any message is
+        "something unseen". Runs with every field-of-view refresh and before
+        each monster's turn (the hero's senses change)."""
         player = getattr(self, 'player', None)
         for m in getattr(self, 'monsters', None) or ():
-            if getattr(m, 'invisible', False):
+            if getattr(m, 'invisible', False) or m.__dict__.get('_dark_hidden'):
                 m._unseen = unseen.unseen(m, player)
             elif getattr(m, '_unseen', False):
                 m._unseen = False
@@ -3321,13 +3344,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         except ImportError:
             pass
 
+        # What he wears works on what his blows reach: all of them, or,
+        # swallowed, only what holds him (holds.strikable).
+        import holds
+        _reached = holds.strikable(self.player, self.monsters)
         # Helm of Achilles (ringing_intimidation): each monster, the first time
         # it comes into sight, has a RING_FEAR_CHANCE of fleeing.
         try:
             from armor_procs import player_has_armor_proc as _pap_ring
             if _pap_ring(self.player, 'ringing_intimidation'):
                 _rung = 0
-                for _mm in self.monsters:
+                for _mm in _reached:
                     if (getattr(_mm, 'alive', False) and (_mm.x, _mm.y) in self.visible
                             and not getattr(_mm, '_heard_the_ring', False)):
                         _mm._heard_the_ring = True
@@ -3339,7 +3366,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if _rung:
                     self.add_message(
                         f"Achilles' helm rings out: {_rung} "
-                        f"{'foe flinches' if _rung == 1 else 'foes flinch'} and runs!", 'info')
+                        f"{'foe flinches and runs' if _rung == 1 else 'foes flinch and run'}!", 'info')
         except ImportError:
             pass
 
@@ -3348,7 +3375,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if getattr(self.player, '_paths_armed', False):
             try:
                 from chain_passives import consume_run_passive as _crp, player_has_passive as _php
-                _cands = [m for m in self.monsters
+                _cands = [m for m in _reached
                           if self._sees_monster(m)
                           and not getattr(m, 'is_boss', False)]
                 if not _php(self.player, 'paths_of_the_dead'):
@@ -3366,7 +3393,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Chain-equip passive: fear auras (aura_of_awe, fafnirs_glare, no_man_dares).
         try:
             from chain_passives import apply_fear_auras
-            _n_feared = apply_fear_auras(self.player, self.monsters, self.visible)
+            _n_feared = apply_fear_auras(self.player, _reached, self.visible)
             if _n_feared:
                 self.add_message(
                     f"The aura of dread breaks {_n_feared} foe(s)!", 'success')
@@ -3393,7 +3420,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     continue
                 # Find an unclaimed target in FOV with the tag.
                 _target = None
-                for m in self.monsters:
+                for m in _reached:
                     if not m.alive:
                         continue
                     if (m.x, m.y) not in self.visible:
@@ -3448,7 +3475,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _pac_chance = get_pacify_demon_chance(self.player)
             if _pac_chance > 0:
                 import random as _rng
-                for m in self.monsters:
+                for m in _reached:
                     if not m.alive or getattr(m, '_solomon_rolled', False):
                         continue
                     if (m.x, m.y) not in self.visible:
@@ -3978,17 +4005,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _d = self.dungeon
             _quest_line = None
             if (x, y) == getattr(_d, 'dwarven_forge_pos', None):
-                _quest_line = ("A cold anvil. Six shallow cups are cut into its "
-                               "face, each a different shape.")
+                _quest_line = ("Six shallow cups, each of a different shape, are cut into the face of this cold anvil.")
             elif (x, y) == getattr(_d, 'vidar_altar_pos', None):
-                _quest_line = ("A cobbler's last stands on this altar, far too "
-                               "large for any man's foot.")
+                _quest_line = ("Upon this altar stands a cobbler's last, far too large for the foot of any man.")
             elif (x, y) == getattr(_d, 'odin_altar_pos', None):
-                _quest_line = ("Cut into the altar's rim: a spear in flight "
-                               "above a row of helmets.")
+                _quest_line = ("Upon the altar's rim is cut a spear in flight above a row of helmets.")
             elif (x, y) == getattr(_d, 'judgment_altar_pos', None):
-                _quest_line = ("A pair of bronze scales hangs over this altar. "
-                               "One pan is lower than it should be.")
+                _quest_line = ("A pair of bronze scales hangs over this altar, and one pan is lower than it should be.")
             elif (x, y) == getattr(_d, 'athena_altar_pos', None) \
                     and getattr(_d, 'athena_shrine_door', None):
                 _quest_line = ("The altar's face shows three old women passing "
@@ -4000,8 +4023,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if (x, y) == getattr(self.dungeon, 'ariadne_fountain_pos', None) \
                     and getattr(self.dungeon, 'ariadne_shrine_door', None):
                 self.add_message(
-                    "A bull's head is carved on the basin's rim. The horns have "
-                    "been rubbed bright.", 'info')
+                    "A bull's head is carved on the rim of the basin, and its horns have been rubbed bright.", 'info')
             self.add_message("A shimmering fountain bubbles here. Press 'D' to drink.", 'info')
         elif tile == GRAVE:
             self.add_message("A weathered gravestone stands here. Press 'D' to dig.", 'info')
@@ -4022,21 +4044,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(_hint, 'info')
         # Special room notification (once per room per floor)
         _SPECIAL_ROOM_MSGS = {
-            'treasury':    ("Strongboxes line the walls of this chamber. Somebody meant to come back for these.", 'success'),
-            'library':     ("Shelves of scroll-cases climb the walls, dry and undisturbed. A library, this far down.", 'info'),
-            'shrine':      ("A small shrine, swept clean, with an altar that has seen recent use. It is easier to breathe in here.", 'info'),
-            'monster_den': ("The floor here is trampled flat and littered with gnawed bone. This is where they sleep!", 'danger'),
+            'treasury':    ("Strongboxes line the walls of this chamber, laid up by someone who meant to return for them.", 'success'),
+            'library':     ("A library lies even this deep, its shelves of scroll-cases climbing the walls, dry and undisturbed.", 'info'),
+            'shrine':      ("A small shrine has been swept clean here and its altar lately used, and you breathe more easily within its walls.", 'info'),
+            'monster_den': ("The floor is trampled flat and littered with gnawed bone, for this is where the monsters sleep!", 'danger'),
             # The three rooms of deep sleepers (sleepers.py) warn that
             # their creatures are asleep, and what wakes them.
-            'zoo':         ("Gold is heaped along the walls of this chamber, and things are asleep on top of it. "
-                            "Walk softly: every coin you take may wake them.", 'danger'),
-            'graveyard':   ("Rows of graves fill this chamber, each with its marker. Not all of the markers are standing "
-                            "straight. Whatever lies here is sleeping: walk softly, or it will wake.", 'danger'),
-            'beehive':     ("Wax and old honey coat the walls of this chamber. The larder is full. Listen for the owners.", 'danger'),
-            'barracks':    ("Bunks, weapon racks and a cold cook-pot. A garrison slept here, and some of it still does. "
-                            "Walk softly, or they will wake.", 'danger'),
+            'zoo':         ("Gold is heaped along the walls of this chamber, and creatures lie asleep on top of it. Walk softly, for every coin you take may wake them.", 'danger'),
+            'graveyard':   ("Rows of graves fill this chamber, each with its marker, though not all of the markers stand straight. Whatever lies here is sleeping, so walk softly, or it will wake.", 'danger'),
+            'beehive':     ("Wax and old honey coat the walls of this chamber and its larder is full, so listen for the owners.", 'danger'),
+            'barracks':    ("Among bunks, weapon racks and a cold cook-pot a garrison slept, and some of it sleeps still. Walk softly, or they will wake.", 'danger'),
             'swamp':       ("Murky water and marsh gas fill this chamber.", 'warning'),
-            'throne_room': ("An aura of ancient authority radiates from a throne.", 'info'),
+            'throne_room': ("An ancient authority still hangs about the throne in this chamber.", 'info'),
         }
         for (rcx, rcy), rtype in self.dungeon.special_rooms.items():
             if (rcx, rcy) not in self._notified_rooms:
@@ -4053,9 +4072,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             msg, style = _SPECIAL_ROOM_MSGS.get(rtype, ("You enter a special room.", 'info'))
                             self.add_message(msg, style)
                             _ROOM_CHRONICLE = {
-                                'treasury': "Found a strongroom. Whoever filled it never came back to count it.",
-                                'library': "Found an old library with the scrolls still whole. Somebody down here cared about reading, once.",
-                                'graveyard': "Walked into a graveyard under the earth. The dead were restless, and so was I.",
+                                'treasury': "Found a strongroom, never reclaimed by whoever filled it.",
+                                'library': "Found an old library with the scrolls still whole.",
+                                'graveyard': "Found a graveyard under the earth. Its dead are restless.",
                             }
                             if rtype in _ROOM_CHRONICLE and not getattr(self, f'_chronicle_room_{rtype}', False):
                                 setattr(self, f'_chronicle_room_{rtype}', True)
@@ -4214,7 +4233,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message(
             "Death has come for the Stone. He does not hurry, and he does not stop.", 'danger'
         )
-        self._chron('boss', "Something is following me. I felt it before I saw it. Death itself. I need to run.")
+        self._chron('boss', "Death himself is following me. Must run.")
 
     def _place_death_on_level(self, dungeon):
         """Death follows up the stair the player has just climbed, a few
@@ -4289,9 +4308,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 125: ("Death is faster than you now. The scythe is close enough to hear it cut the air.", 'danger'),
             }
             _SPEED_CHRONICLE = {
-                75: "Death is moving faster. The scrape of the scythe comes closer between each step.",
-                100: "Death keeps pace with me now. No more outrunning it. I have to be smarter.",
-                125: "It is faster than me now. I can hear it gaining with every step. Time to pray.",
+                75: "Death is moving faster. The scythe scrapes closer each step.",
+                100: "Death keeps pace now. Cannot outrun him. Must be cleverer.",
+                125: "Death is faster than I am, and gaining. Must pray.",
             }
             msg = _SPEED_MSGS.get(dm._speed_pct)
             if msg:
@@ -4321,7 +4340,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(
                 "You hold the Complete Tablet of Second Death.", 'loot'
             )
-            self._chron('discovery', "Used the Wrench. The Stone and the Tablet fused into one, and the Complete Tablet glows with purpose. I think I know what it's for.")
+            self._chron('discovery', "The Wrench joined Stone and Tablet into one. I think I know its use.")
             self._seeker_event('tablet_complete')
         else:
             self.add_message(
@@ -4372,16 +4391,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             '"Then Death and Hades were thrown into the lake of fire."', 'danger'
         )
         self.add_message(
-            "The Shimmer tears open -- a vast Abyss of black fire yawns beneath Death's feet.", 'danger'
+            "The Shimmer is torn asunder, and an Abyss of black fire opens beneath the feet of Death.", 'danger'
         )
         self.add_message(
-            "Death writhes, claws at the stone -- and is consumed.", 'danger'
+            "Death claws at the stone and finds no hold there, and the fire consumes it utterly.", 'danger'
         )
         self.add_message(
-            "What no soul before you has ever achieved:  DEATH IS DEAD.", 'success'
+            "You have done what no soul has done since the world began, for Death itself is dead.", 'success'
         )
         self.add_message(
-            "Take this code to your father proudly -- you have shown true Wisdom and Courage.", 'success'
+            "Carry this code proudly to your father, for you have shown true wisdom and courage.", 'success'
         )
         self.add_message(">> A scroll materializes from the void. <<", 'loot')
 
@@ -4397,13 +4416,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.ground_items.remove(_tab)
             self.player.inventory.append(_tab)
             self.add_message(
-                "The Tablet lies at the lip of the Abyss, unmarked. You take it "
-                "up again. It is cold now.", 'loot')
+                "The Tablet lies unharmed at the lip of the Abyss, cold as a "
+                "winter well, and you take it up again.", 'loot')
         # Mark this run as the SECRET-victory path so the victory screen
         # renders the Abyss-distinct variant (arcane purple, "DEATH IS DEAD"
         # headline) instead of the standard gold "VICTORY!" screen.
         self._secret_victory = True
-        self._chron('boss', "I killed Death. The lake of fire opened beneath it and swallowed it whole. The silence afterwards was the loudest thing I've ever heard.")
+        self._chron('boss', "Death destroyed in the lake of fire. Must carry the Tablet out.")
 
         # Drop the sixth boss reward scroll
         reward = make_death_bane_scroll(dx, dy)
@@ -4446,15 +4465,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'effect': 'time_stop',
             'power': '10',
             'unidentified_name': 'Flux Capacitor',
-            'lore': "A device of impossible origin. Its single charge can freeze "
-                    "time itself for 10 turns. Use it wisely -- there are no second chances.",
+            'lore': "This device is of impossible origin, and its single charge can freeze time itself for 10 turns. Use it wisely, for there are no second chances.",
         })
         from items import grant_identified
         grant_identified(self, flux)
         flux.x = self.player.x
         flux.y = self.player.y
         self.ground_items.append(flux)
-        self.add_message("Something materializes at your feet...", 'loot')
+        self.add_message("Something takes shape upon the ground at your feet.", 'loot')
 
     def _do_exit(self):
         has_stone = any(
@@ -4469,7 +4487,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # floor-1 bones file with the hero's whole kit for the next run.)
         self._on_game_over(leave_bones=False, victory=has_stone)
         if has_stone:
-            self._chron('milestone', "I made it. I climbed back out with the Stone. The sunlight hurt my eyes. I'd forgotten what it looked like.")
+            self._chron('milestone', "Out, with the Stone. On to Amber.")
             self._show_story_popup('exit_with_stone', STATE_VICTORY)
         else:
             self.defeat_reason = 'fled'
@@ -4480,7 +4498,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         A character who DIED leaves a bones file so a ghost can haunt a
         future run; one who fled, won, or fell on a side floor (the Cow
         Level, the Zombie Stage) does not.
-        The high score is written here too, once, the moment the run ends."""
+        The high score is written here too, once, the moment the run ends.
+        A run ends once: a second call does nothing."""
+        if getattr(self, '_run_over', False):
+            return
         from save_system import delete_save
         from bones import save_bones
         from boss_levels import is_side_floor
@@ -4928,10 +4949,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                               f"{getattr(m, 'id', m)!r} failed")
                     m._kill_handled = True
 
+    def _fov_follows(self, was: tuple) -> tuple:
+        """The view goes with a hero this turn moved, whatever moved him (a
+        drag, a pull, a lift): his tile was ``was``. Returns his tile now."""
+        at = (self.player.x, self.player.y)
+        if at != was:
+            self._refresh_fov()
+        return at
+
     def _advance_turn(self):
         self.player._combat_game_ref = self      # so a death check anywhere can reach the wards
         self._say_springs()                # lurkers the action's blows gave away
         self._reap_unnoticed_kills()
+        if self.__dict__.get('_run_over') and self.player.hp <= 0:
+            self.state = STATE_DEAD          # the action itself ended the run (a burst): no turn follows
+            return
+        _hero_at = (self.player.x, self.player.y)
         self._say_veil_slip()              # a wand, a spell or a throw slipped the ring's veil
         # A foe a blow made yield that no attack's on_complete has told yet.
         for _m in list(self.monsters or ()):
@@ -5003,7 +5036,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(
                 "You should have died -- but a distant power pulls you back. "
                 "You stagger to your feet, barely alive.", 'success')
-            self._chron('loss', "Death took me. Then it let me go. Something out there watches, and today it chose to spend a favor.")
+            self._chron('loss', "Died, and an unknown power sent me back. Its favour is spent.")
 
         # Rand's Heart: show dramatic message if death was just prevented
         if getattr(self.player, '_rands_heart_triggered', False):
@@ -5015,7 +5048,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 "Your wounds close, your mind clears, your strength returns!", 'success')
             self.add_message(
                 "The silver locket crumbles to dust, its promise fulfilled.", 'info')
-            self._chron('loss', "I died. I felt it — the cold, the nothing. Then warmth. Rand's Heart pulled me back. The locket is dust now. I don't get a second chance.")
+            self._chron('loss', "Died, and Rand's Heart pulled me back. The locket is dust. No second chance.")
 
         qs = getattr(self, 'quirk_system', None)
         if qs and self.player:
@@ -5144,6 +5177,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if _spots:
                 self.player.x, self.player.y = min(
                     _spots, key=lambda t: max(abs(t[0] - _px), abs(t[1] - _py)))
+                self._hero_left_tile()
                 self.add_message(
                     "You feel solid again — the wall pushes you back into open space.",
                     'info')
@@ -5187,6 +5221,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         not any(m.alive and m.x == _nx and m.y == _ny
                                 for m in self.monsters):
                     self.player.x, self.player.y = _nx, _ny
+                    self._hero_left_tile()
             except (TypeError, ValueError, AttributeError):
                 pass
         # A giant's blow threw the hero back (src/shove.py, AI-1).
@@ -5235,7 +5270,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Seal of Solomon: pacify nearby monsters
         for _acc in self.player.equipped_accessories:
             if getattr(_acc, 'pacify_chance', 0) > 0:
-                for m in self.monsters:
+                import holds
+                for m in holds.strikable(self.player, self.monsters):
                     if m.alive and abs(m.x - self.player.x) <= 2 and abs(m.y - self.player.y) <= 2:
                         # Two turns (one was ticked off before the monster
                         # ever lost an action, so the ring did nothing), and
@@ -5335,9 +5371,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _chance = float(proc_value(self.player, 'thors_step') or 0.0)
                 if _chance > 0 and random.random() < _chance:
                     from game_combat import _is_bystander
-                    _adj_targets = [_mm for _mm in self.monsters
+                    import holds
+                    import lore_powers
+                    _adj_targets = [_mm for _mm in holds.strikable(self.player, self.monsters)
                                     if getattr(_mm, 'alive', False)
                                     and not _is_bystander(_mm)
+                                    and not lore_powers.at_peace(_mm)   # (it goes off by itself)
                                     and abs(_mm.x - self.player.x) <= 1
                                     and abs(_mm.y - self.player.y) <= 1
                                     and not (_mm.x == self.player.x and _mm.y == self.player.y)]
@@ -5499,18 +5538,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # not once the first has killed the hero, opened a popup or
                 # a menu, or moved him to another floor (the turn would be a
                 # free one for monsters he never walked among).
-                if (self.player.is_dead() or self.state != _state0
-                        or self.dungeon_level != _floor0):
+                if (self.state != _state0 or self.dungeon_level != _floor0
+                        or self.player.is_dead()):
                     break
+            _hero_at = self._fov_follows(_hero_at)   # (a pull, a shove, the world's last turn)
             self._family_turn()            # families that flee on sight; hidden things shown
             # Whose blows these are, for the Seeker's damage achievements
             # (game_seeker.py): everything outside this block is the hero's.
             self._damage_by = 'monster'
             try:
                 self._do_monster_turns()
+                if self._hero_fell():
+                    break                  # the run is over: no one else acts
                 if not self.player.is_dead():
                     self._damage_by = 'pet'
                     self._do_pet_turns()
+                    if self._hero_fell():
+                        break
                     # Escorts move and are attacked in their own pass, pet or no pet.
                     self._damage_by = 'escort'
                     self._do_escort_turns()
@@ -5520,7 +5564,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._maybe_wander_spawn()
             finally:
                 self._damage_by = 'hero'
+        if _n_world:
+            self.player._kindled_glow = 0  # the world has seen this turn's light (lights.kindled)
+        self._fov_follows(_hero_at)        # dragged, lifted, rescued: he sees from where he is
         self._say_springs()                # lurkers the pets' and escorts' blows gave away
+        if self._hero_fell():
+            return                         # nothing mends or moves the dead
         self._death_proximity_warning()
         self._tick_hp_regen()
         self._riding_tick()                # the saddlebags; a blow, a foe, a status sets a rider down
@@ -5876,8 +5925,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not getattr(self, '_chronicle_first_trap', False):
             self._chronicle_first_trap = True
             self._chron('milestone',
-                        f"Stepped on {self._a_or_an(_trap_noun(trap_type))} trap. The floor "
-                        "clicked first, which was all the warning I got. I watch the floor now.",
+                        f"Stepped on {self._a_or_an(_trap_noun(trap_type))} trap. It clicked first. Watch the floor.",
                         once='first_trap')
         if self.player.is_dead():
             self.add_message("You have died!", 'danger')
@@ -5908,6 +5956,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             floors = [t for t in floors if t in _reach] or floors
         if floors:
             self.player.x, self.player.y = _rng.choice(floors)
+            self._hero_left_tile()
             self._refresh_fov()
             self.add_message("You feel disoriented as space warps around you!", 'warning')
             _qs_tp = getattr(self, 'quirk_system', None)
@@ -5968,7 +6017,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         f"A figure from the House of Atreus stalks you: {m.name}.",
                         'warning')
                     self._chron(
-                        'notice', f"Pelops's curse caught up with me. {m.name} hunts me now.")
+                        'notice', f"Pelops's curse has found me. {m.name} hunts me now.")
                     return
 
     def _do_warning(self):
@@ -6234,7 +6283,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if not getattr(self, '_chronicle_first_disarm', False):
                 self._chronicle_first_disarm = True
                 self._chron(
-                    'milestone', "Disarmed my first trap. My hands were shaking the whole time.",
+                    'milestone', "Disarmed my first trap.",
                     once='first_disarm')
             self._advance_turn()
             return
@@ -6269,8 +6318,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._chronicle_first_rewire = True
             self._chron(
                 'milestone',
-                f"Rewired {self._a_or_an(tname)} trap to fire on monsters instead. The dungeon's "
-                "own teeth, turned against it.", once='first_rewire')
+                f"Rewired {self._a_or_an(tname)} trap to fire on monsters instead.", once='first_rewire')
 
         # Chain 5 bonus: pull a random hint from the lore pool.
         if chain >= 5:
@@ -6603,8 +6651,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"A crack in the world's floor widens.", 'danger')
             self._chron(
                 'boss',
-                f"Picked up the {_seal_display}. It shattered before I could close my fist. "
-                f"Whatever those seven seals were holding shut is now one crack closer to open."
+                f"The {_seal_display} broke in my hand. The seven seals are a crack nearer open."
             )
             _snd.play('gold')
             self._advance_turn()
@@ -6685,26 +6732,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             }
             if getattr(item, 'id', '') in _CHRONICLE_ITEMS:
                 _CHRONICLE_FLAVOR = {
-                    'philosophers_stone': "Found the Philosopher's Stone. My hands are shaking. Time to get out of here.",
-                    'ariadnes_thread': "Picked up a strange golden thread. It feels warm, almost alive.",
-                    'bronze_bull': "Found a bronze idol shaped like a bull. Heavy. Old. Feels important.",
-                    'eye_of_graeae': "A milky white eye, still wet. I don't want to think about where it came from.",
-                    'broken_gram': "Half a legendary sword. Even broken, the edge could shave a thought.",
-                    'gleipnir': "Gleipnir. Thin as a ribbon but I can't break it. Nothing can.",
-                    'vidars_sandal': "A sandal made for a god. It's enormous. And somehow, it fits.",
-                    'scales_of_michael': "The Scales hover in my hands. I feel the weight of every choice I've made.",
-                    'sword_of_michael': "A blade of white fire. It knows my name.",
-                    'magic_dungeon_carrot': "A glowing carrot, of all things. Something tells me I shouldn't eat this one.",
-                    'cats_footstep': "The sound of a cat's footstep, bottled. How is that even possible?",
-                    'womans_beard': "The roots of a woman's beard. The dwarves are mad, but maybe that's the point.",
-                    'mountain_root': "A root of a mountain. It weighs almost nothing. That feels wrong.",
-                    'fish_breath': "The breath of a fish, sealed in a vial. The stopper must never come off, I think.",
-                    'bird_spittle': "The spittle of a bird. I didn't know birds could spit. I still don't.",
-                    'bear_sinew': "The sinew of a bear's sensitivity. I have no idea what that means, but here it is.",
-                    'tablet_of_second_death': "Found a stone tablet with a slot in it. The inscription mentions Revelation and a 'second death.' Ominous.",
-                    'philosophers_wrench': "An odd tool. Not a weapon, not a key. It feels like it wants to join things together.",
-                    'complete_tablet_of_second_death': "The Stone fit the Tablet perfectly. It's glowing now. The inscription burns with golden light.",
-                    'scroll_lake_of_fire': "A worn scroll. The ink is red-brown. It smells like ash. I can't read it yet, but I feel its weight.",
+                    'philosophers_stone': "Found the Philosopher's Stone. Must get out now.",
+                    'ariadnes_thread': "Found a strange golden thread, warm as if alive.",
+                    'bronze_bull': "Found an old bronze bull idol, heavy. It seems important.",
+                    'eye_of_graeae': "Found a milky white eye, still wet.",
+                    'broken_gram': "Found half a legendary sword, broken but still keen.",
+                    'gleipnir': "Have Gleipnir, thin as a ribbon. Nothing can break it.",
+                    'vidars_sandal': "Have a god's enormous sandal, and it fits me.",
+                    'scales_of_michael': "Have the Scales. They bear the weight of my every choice.",
+                    'sword_of_michael': "Have a blade of white fire. It knows my name.",
+                    'magic_dungeon_carrot': "Found a glowing carrot. Best not eat this one.",
+                    'cats_footstep': "Found the sound of a cat's footstep, bottled.",
+                    'womans_beard': "Found the beard of a woman. Some mad dwarven purpose in it.",
+                    'mountain_root': "Found a root of a mountain, weighing almost nothing.",
+                    'fish_breath': "Found a fish's breath in a vial. Keep the stopper in.",
+                    'bird_spittle': "Found the spittle of a bird.",
+                    'bear_sinew': "Found the sinews of a bear. The dwarves had a use for these too.",
+                    'tablet_of_second_death': "Found a slotted stone tablet. It tells of Revelation and a 'second death'.",
+                    'philosophers_wrench': "Found an odd tool, not weapon or key. It seems meant to join things.",
+                    'complete_tablet_of_second_death': "The Stone fits the Tablet. Its inscription glows gold.",
+                    'scroll_lake_of_fire': "Found a worn scroll in red-brown ink, smelling of ash. Cannot read it yet.",
                 }
                 # (The old "Picked up something interesting" fallback is cut:
                 # every quest piece has its own line.)
@@ -6838,7 +6885,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             "(You should know better than to pick up a duck in a dungeon.)",
             'warning')
         self._chron(
-            'person', "I picked up a duck. It's on my head now. It won't come off.")
+            'person', "Picked up a duck. It is on my head and will not come off.")
         # Start the quirk timer fresh.
         if not hasattr(self.player, 'quirk_progress') or self.player.quirk_progress is None:
             self.player.quirk_progress = {}
@@ -6890,8 +6937,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             f"Waddlekind has hatched! ({pet.name})",
             'success')
         self._chron(
-            'person', "The duck on my head hatched. I have a tiny celestial duckling now. "
-            "It can read minds. I have made a friend.")
+            'person', "The duck on my head hatched: a celestial duckling that reads minds.")
         # Award the registered quirk so the unlock ceremony fires and the
         # Quirks menu shows this run's achievement as unlocked. The
         # mechanical "reward" (the pet) has already been spawned above,
@@ -7327,7 +7373,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.ground_items.append(_food)
             if not getattr(self, '_chronicle_first_compound', False):
                 self._chronicle_first_compound = True
-                self._chron('milestone', f"Cooked my first proper recipe: {recipe['name']}. The dungeon smelled like a kitchen for once.",
+                self._chron('milestone', f"Cooked my first proper recipe: {recipe['name']}.",
                             once='first_compound')
             # Track discovered recipes: those cooked, not ruined (the list's
             # own word, "successfully cooked", and the Seeker's count;
@@ -7605,7 +7651,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         p.hack_reality_cooldown = 150 + chain * 30   # 180 .. 300 turns
         if not getattr(self, '_chronicle_first_xyzzy', False):
             self._chronicle_first_xyzzy = True
-            self._chron('notice', "Spoke an old word of power. XYZZY. Reality flickered. Something changed. I don't think I was supposed to know that word.")
+            self._chron('notice', "Spoke XYZZY, an old word of power. Reality flickered and changed.")
 
         msgs = []
         result_lines = []
@@ -8415,7 +8461,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 grant_identified(self, pot)
                 self.ground_items.append(pot)
                 self.add_message("The dragon's blood runs out across the stone, still smoking.", 'loot')
-                self._chron('discovery', "Fafnir's blood ran out at my feet, hot as forge-fire. Sigurd tasted it and understood the birds. It is said to depend on who is listening.")
+                self._chron('discovery', "Fafnir's blood at my feet. Sigurd tasted it and knew the birds. Depends who listens.")
         except Exception:
             pass
 
@@ -8520,7 +8566,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         Reads summoner.summon_kind (str id, or list of ids → random pick) and
         places one instance on a walkable tile within 3 tiles. Silent on
         failure (no walkable tile, missing kind, etc.) so the summoner just
-        loses the cooldown beat — flavor only."""
+        loses the cooldown beat — flavor only. A call with no room is not
+        one of the calls it has in it (summoning.unspent)."""
         import json as _json
         import random as _rng
         from monster import Monster as _Mon
@@ -8559,6 +8606,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     continue
                 candidates.append((nx, ny))
         if not candidates:
+            import summoning
+            summoning.unspent(summoner)
             return
         sx, sy = _rng.choice(candidates)
         minion_def = dict(defn)
@@ -8994,26 +9043,28 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'THE PHILOSOPHER\'S QUEST',
             'accent': (80, 120, 200),
             'lines': [
-                "Your village of Amber is dying.",
+                "Long ago, in an age whose kings are all forgotten, a great city stood upon",
+                "the hill above the village of Amber. Nothing is left of it now but broken",
+                "walls and a stair that winds beneath them into the dark, and for many",
+                "generations the folk of Amber tilled their fields in its shadow and gave",
+                "little thought to what might lie below.",
                 "",
-                "A magical plague -- born of corruption and forgotten wisdom -- has spread",
-                "through every home, every hearth, every life you have ever known.",
-                "Children grow pale. Elders speak in whispers of an ancient remedy.",
+                "Then there came upon them a plague of sorcery, born of corruption and",
+                "forgotten wisdom. It passed from hearth to hearth until there was scarcely a",
+                "house without a child lying pale beside the fire, and when every herb and",
+                "prayer had failed, the elders called to mind an ancient tale of the",
+                "Philosopher's Stone, which rests at the root of the dungeon and holds wisdom",
+                "enough to lift any curse.",
                 "",
-                "The Philosopher's Stone.",
+                "Many have gone down to seek it, and none has returned. Yet the need of Amber",
+                "is great, and so you have taken up such arms as the village could spare and",
+                "have come to the head of the stair, while those who love you keep watch",
+                "behind you. Go down with a stout heart and a ready mind, win the Stone, and",
+                "bear it home while there is yet time.",
                 "",
-                "Forged at the very bottom of the dungeon beneath the ancient ruins,",
-                "it holds the wisdom needed to break the plague's hold forever.",
-                "No one who has sought it has returned.",
-                "",
-                "But you are not no one.",
-                "",
-                "Descend. Claim the Stone. Return it to the light.",
-                "The people who love you are counting on you.",
-                "",
-                "As you delve deeper, you may uncover lost codes -- ancient secrets",
-                "known only to those who venture far enough to find them.",
-                "Present them to your father for rewards.",
+                "It is said besides that secret codes lie hidden in the deep places, known",
+                "only to those who venture far. Should you discover any, carry them to your",
+                "father, and he will reward you.",
             ],
             'code': None,
         },
@@ -9021,16 +9072,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'ASTERION THE MINOTAUR FALLS',
             'accent': (180, 50, 50),
             'lines': [
-                "Asterion was born of Pasiphae and a divine white bull sent by Poseidon --",
-                "a creature of two worlds, neither fully beast nor fully man.",
-                "King Minos imprisoned him in the labyrinth built by Daedalus,",
-                "where he was fed on tribute of youths until Theseus came.",
+                "So fell Asterion, the son of Queen Pasiphae and of the white bull that",
+                "Poseidon sent out of the sea, who was neither wholly beast nor wholly man.",
+                "In the elder days King Minos shut him within the Labyrinth that Daedalus",
+                "built and gave him youths and maidens of Athens for tribute, until Theseus",
+                "came among them.",
                 "",
-                "The hero navigated the maze with Ariadne's thread and slew the Minotaur",
-                "not with overwhelming strength, but with preparation and cleverness.",
-                "",
-                "Today, that thread was your knowledge.",
-                "The first guardian falls. The dungeon opens deeper.",
+                "Ariadne had given that hero a thread, and by it he found his way through the",
+                "winding dark to the monster and home again. You have followed the thread of",
+                "your own learning to the same end. The first of the great guardians lies",
+                "dead, and beyond his hall the road descends into the deeper places of the",
+                "earth.",
             ],
             'code': None,
         },
@@ -9038,15 +9090,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'MEDUSA THE GORGON FALLS',
             'accent': (50, 160, 80),
             'lines': [
-                "Once a beautiful mortal priestess, Medusa was transformed by Athena's curse",
-                "into a creature whose gaze turned living flesh to stone.",
-                "Her hair became serpents. Her beauty became terror.",
+                "So perished Medusa, who in her youth was a priestess and fairer than any",
+                "other mortal woman, until the curse of Athena turned her shining hair to",
+                "serpents. From that day whoever looked upon her face was changed to stone,",
+                "and she dwelt through long years among the likenesses of all who had come to",
+                "slay her.",
                 "",
-                "Perseus slew her by meeting her eyes only in a mirrored shield --",
-                "trusting reflection over direct sight, wisdom over recklessness.",
-                "From her blood sprang Pegasus and Chrysaor.",
-                "",
-                "Her gaze is stilled. The passage deepens.",
+                "At last Perseus drew near with his eyes upon the bronze of his shield, and",
+                "struck her as he watched her image there, and from her blood sprang winged",
+                "Pegasus and his brother Chrysaor. Now those dreadful eyes are closed again,",
+                "and the stair that she guarded stands open before you.",
             ],
             'code': None,
         },
@@ -9054,16 +9107,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'FAFNIR THE DRAGON FALLS',
             'accent': (200, 100, 30),
             'lines': [
-                "Fafnir was not always a dragon.",
-                "He was a dwarf -- son of the sorcerer Hreidmar -- who murdered his own father",
-                "for cursed Andvari's gold, then transformed over years into a great serpent,",
-                "hoarding his stolen wealth in the Gnita Heath.",
+                "So fell Fafnir, who was born the son of the sorcerer Hreidmar, of the race",
+                "of the dwarves. When his father came into the gold of Andvari, upon which a",
+                "curse had been laid, Fafnir slew him for the sake of it and bore the hoard",
+                "away to Gnita Heath, and there he brooded over it until greed had wrought",
+                "him into a dragon.",
                 "",
-                "The hero Sigurd slew him not by charging, but by patience:",
-                "hiding in a pit along Fafnir's path, striking from below as the dragon passed.",
-                "Cunning over power. Patience over courage alone.",
-                "",
-                "His fire is extinguished. The way below grows darker still.",
+                "In the songs of the North it is told how Sigurd dug a pit in the dragon's",
+                "path and lay hidden in it until the great belly passed above him, and then",
+                "thrust upward with the sword Gram, for patience and craft may win what",
+                "strength alone cannot. The fire of Fafnir is quenched, and the road goes",
+                "down into a colder darkness.",
             ],
             'code': None,
         },
@@ -9071,16 +9125,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'FENRIR THE WOLF FALLS',
             'accent': (80, 140, 200),
             'lines': [
-                "Fenrir is the monstrous wolf of Norse prophecy -- son of Loki,",
-                "so terrible that the gods themselves feared to approach him.",
-                "They bound him with Gleipnir, a magical ribbon forged from impossible things:",
-                "a cat's footstep, a mountain's roots, a woman's beard, a bear's sinew,",
-                "a fish's breath, and a bird's spittle.",
+                "So fell Fenrir the wolf, the son of Loki, whom the gods of Asgard reared",
+                "among them until they grew afraid of his strength. They bound him with",
+                "Gleipnir, a ribbon soft as silk which the dwarves had made from six",
+                "impossible things: the footfall of a cat, the beard of a woman, the roots of",
+                "a mountain, the sinews of a bear, the breath of a fish and the spittle of a",
+                "bird.",
                 "",
-                "At Ragnarok, he was prophesied to swallow Odin himself.",
-                "",
-                "That prophecy is broken. You have done what even the Allfather could not.",
-                "The deepest chamber lies ahead.",
+                "It was foretold that at Ragnarok he would burst that bond and swallow Odin,",
+                "the father of the gods, but the prophecy shall never now be fulfilled, for",
+                "you have accomplished what the Allfather himself could not. The last and",
+                "deepest chamber lies below you, and in it the end of your long road.",
             ],
             'code': None,
         },
@@ -9088,16 +9143,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'ABADDON THE DESTROYER FALLS',
             'accent': (130, 60, 200),
             'lines': [
-                "Abaddon is named in Revelation as the angel of the bottomless pit --",
-                "the Destroyer, king of the locust army that rises at the fifth trumpet.",
-                "His name means 'destruction' in Hebrew. He is ruin given form.",
+                "So fell Abaddon, whom the Book of Revelation calls the angel of the",
+                "bottomless pit. His name in the Hebrew tongue signifies destruction, and it",
+                "was written that at the sound of the fifth trumpet he should reign as king",
+                "over the locusts that come swarming out of the smoke of the Abyss.",
                 "",
-                "That you have defeated him is more than a feat of arms.",
-                "It is a statement about the nature of wisdom itself:",
-                "that knowledge, courage, and preparation can overcome even destruction.",
-                "",
-                "The Philosopher's Stone lies before you.",
-                "Take it. The village is waiting.",
+                "Now his host is scattered and his throne is empty, for knowledge and courage",
+                "have stood against ruin itself and have prevailed. Beyond that throne waits",
+                "the Philosopher's Stone, as it has waited through all the ages of the world.",
+                "Take it up, and turn your steps toward the long stair and the village that",
+                "watches for your coming.",
             ],
             'code': None,
         },
@@ -9105,22 +9160,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'THE QUEST IS COMPLETE',
             'accent': (220, 180, 40),
             'lines': [
-                "You have done what many believed impossible.",
+                "So it came to pass, when hope had all but failed in Amber, that the watchers",
+                "on the hill saw you climb out of the ruins, weary and stained with many",
+                "battles, and bearing in your hands the Philosopher's Stone.",
                 "",
-                "You descended into the darkness, faced and defeated five legendary adversaries,",
-                "claimed the Philosopher's Stone, and returned to the light.",
+                "Word ran before you from door to door, and by nightfall the Stone had been",
+                "carried to every sickbed in the village. The plague withdrew before it as",
+                "mist withdraws before the morning. Children who had long lain silent sat up",
+                "and asked for bread, and the elders who had blessed you at your going wept",
+                "openly for joy.",
                 "",
-                "Your village of Amber will be saved.",
-                "The plague will lift. The children will recover.",
-                "The elders will weep with relief.",
-                "The people who counted on you -- who believed in you --",
-                "will see the sun rise again because of what you did today.",
-                "",
-                "You are a Philosopher in the truest sense:",
-                "one who loves wisdom enough to seek it at the cost of everything,",
-                "and wise enough to bring it home.",
-                "",
-                "Well done.",
+                "For many years afterward the tale was told beside the fires of Amber: how",
+                "you went down among monsters and fallen powers for love of your people, and",
+                "overcame them by learning as much as by the sword. They gave you the name of",
+                "Philosopher, which is to say a lover of wisdom, and it was held in honour",
+                "there as long as the village endured.",
             ],
             'code': None,
             'achievement': 'stone_home',     # its code is the Seeker's (_show_story_popup)
@@ -9129,22 +9183,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'THE DESERTER',
             'accent': (100, 100, 100),
             'lines': [
-                "You ran.",
+                "So you came again to the head of the stair with empty hands, and behind you",
+                "the Philosopher's Stone lay in the darkness where it had always lain.",
                 "",
-                "Not from monsters. Not from darkness. Not even from death.",
-                "You ran from the people who needed you most.",
+                "The watchers on the hill ran gladly to meet you, until they drew near enough",
+                "to see that you carried nothing. The elders who had pressed their last bread",
+                "upon you at your going asked you no questions, but went back slowly to their",
+                "houses and to those who lay sick within them.",
                 "",
-                "From the children who grow weaker with each passing day.",
-                "From the elders who pressed your hands and told you they believed in you.",
-                "From the village that gave everything it had left to send you here.",
-                "",
-                "The Philosopher's Stone remains at the bottom of the dungeon.",
-                "Unreached. Unclaimed. Its wisdom wasted on the dark.",
-                "",
-                "The village of Amber will not see another spring.",
-                "",
-                "You were not overcome by the dungeon.",
-                "You overcame yourself -- and chose retreat.",
+                "The plague did not abate that winter. One after another the hearths of Amber",
+                "grew cold, and when spring returned to the valley there were none to plough",
+                "the fields. The tale of that village is seldom told now, but wherever it is",
+                "remembered, you are named in it the Deserter.",
             ],
             'code': None,
         },
@@ -9303,8 +9353,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 from monster import the_name as _the, a_name as _a, kind_of_corpse as _kind
                 self._chron(
                     'milestone',
-                    f"Took {_a(_kind(corpse))} apart to see how it worked. "
-                    "You learn a lot about a thing by how it comes apart.",
+                    f"Took {_a(_kind(corpse))} apart to learn how it worked.",
                     once='first_corpse_study')
                 self._lore_subject = corpse
                 self.state = STATE_LORE
@@ -9423,11 +9472,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if self.dungeon.is_altar(px, py):
                 self.player.remove_from_inventory(item)
                 self.add_message(
-                    "You lay the stone on the altar. It cracks along its length "
-                    "and is only a stone. Somewhere a knight sleeps easier.", 'success')
+                    "You lay the stone on the altar, and it cracks along its length and is no more than a stone, so that somewhere a knight sleeps easier.", 'success')
                 self._chron(
-                    'oath', "Carried Sir Aldric's stone to an altar. It broke there. "
-                    "I had almost stopped noticing the weight.")
+                    'oath', "Carried Sir Aldric's stone to an altar. It broke there.")
                 # The oath sworn when the stone was taken is kept here: deed
                 # kept.aldric_lodestone and the 'oath' point (taking the
                 # stone is a promise and pays nothing; keeping it pays).
@@ -9437,8 +9484,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._advance_turn()
             else:
                 self.add_message(
-                    "You try to set the stone down. Your hand will not open. "
-                    "This is a thing to be laid before God, not left in a corridor.",
+                    "Your hand will not open when you try to set the stone down, for this is a thing to be laid before God and not left in a corridor.",
                     'warning')
             return
         # The Book of Thoth, laid on an altar while its return is owed:
@@ -9480,11 +9526,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             item._offered = True     # set down by the hero: a gift a Kappa or a Preta takes (slice M)
         self.ground_items.append(item)
         _dc = getattr(item, 'count', 1)
-        if _dc > 1:
+        if _dc > 1 and isinstance(item, Ammo):     # (arrows and bolts take a plain s)
             self.add_message(
-                f"You drop {_dc} {re.sub(r' x[0-9]+$', '', self._display_name(item))}"
-                f"{'s' if _dc != 1 else ''}.", 'info')
+                f"You drop {_dc} {re.sub(r' x[0-9]+$', '', self._display_name(item))}s.", 'info')
         else:
+            # Any other stack as the pack names it ("Torch x4"): an s on the
+            # end made Torchs and Potion of Healings.
             self.add_message(f"You drop the {self._bare_name(item)}.", 'info')
 
         # Track shard drop for Diogenes' Lantern quirk
@@ -9493,7 +9540,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.quirk_progress['shard_drop_level'] = self.dungeon_level
             self.player.quirk_progress.setdefault('levels_without_shard', 0)
             self.add_message(
-                "You abandon the Shard. The dungeon's secrets grow darker without it...", 'warning'
+                "You abandon the Shard, and the dungeon's secrets grow darker without it.", 'warning'
             )
 
         # Check if Complete Tablet was dropped on the Abyssal Shimmer
@@ -9506,12 +9553,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if shimmer and not shimmer.activated:
                 shimmer.activated = True
                 self.add_message(
-                    "The Shimmer writhes and twists with violent magical energy!", 'success'
+                    "The Shimmer writhes and twists with a great and violent magic!", 'success'
                 )
                 self.add_message(
                     "The Complete Tablet resonates with the Abyssal Shimmer.", 'info'
                 )
-                self._chron('boss', "Dropped the Complete Tablet on the Shimmer. The ground split open. Something terrible and ancient stirred beneath. I think I've opened a door that was never meant to be opened.")
+                self._chron('boss', "Dropped the Complete Tablet on the Shimmer. Ground split. Something ancient stirs below.")
 
         # --- Ariadne quest: drop Bronze Bull at a fountain ---
         if getattr(item, 'id', '') == 'bronze_bull':
@@ -9522,8 +9569,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 else:
                     # Right kind of place, wrong one: say so, keep the Bull.
                     self.add_message(
-                        "The bull sits in the shallows and nothing answers. "
-                        "This is not the water it wants.", 'info')
+                        "The bull sits in the shallows and nothing answers, for this is not the water that it seeks.", 'info')
 
         # --- Athena quest: drop Eye of the Graeae at an altar ---
         if getattr(item, 'id', '') == 'eye_of_graeae':
@@ -9533,8 +9579,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._activate_athena_shrine(item)
                 else:
                     self.add_message(
-                        "The eye lies on the altar and looks at nothing. "
-                        "Whoever it was promised to is not listening here.", 'info')
+                        "The eye lies upon the altar and sees nothing, for whoever it was promised to is not listening here.", 'info')
 
         # --- Odin quest: drop Broken Gram on Odin's Altar ---
         odin_pos = getattr(self.dungeon, 'odin_altar_pos', None)

@@ -2346,11 +2346,11 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # -- Gleipnir component rooms (Fenrir quest) --------------------------------
     _GLEIPNIR_COMPONENTS = {
         62: ('cats_footstep', "Sound of a Cat's Footstep", [180, 160, 200]),
-        65: ('womans_beard', "Roots of a Woman's Beard", [200, 170, 140]),
+        65: ('womans_beard', "Beard of a Woman", [200, 170, 140]),
         68: ('mountain_root', "Root of a Mountain", [140, 130, 120]),
         71: ('fish_breath', "Breath of a Fish", [140, 200, 220]),
         74: ('bird_spittle', "Spittle of a Bird", [220, 220, 180]),
-        77: ('bear_sinew', "Sinew of a Bear's Sensitivity", [180, 140, 100]),
+        77: ('bear_sinew', "Sinews of a Bear", [180, 140, 100]),
     }
     if level in _GLEIPNIR_COMPONENTS:
         comp_id, comp_name, comp_color = _GLEIPNIR_COMPONENTS[level]
@@ -2567,11 +2567,7 @@ def _make_ariadnes_thread():
         'item_class': 'artifact',
         'weight': 0.1,
         'min_level': 15,
-        'lore': ("A ball of plain linen thread, wound by a princess of Crete "
-                 "for a stranger she meant to save. Theseus tied one end to "
-                 "the door of the Labyrinth and paid it out behind him. "
-                 "Whatever walks those passages has never been able to step "
-                 "across it, or to hide from whoever holds the other end."),
+        'lore': ("A princess of Crete wound this ball of plain linen thread for a stranger whom she meant to save. Theseus tied one end to the door of the Labyrinth and paid it out behind him, and whatever walks those passages has never been able to step across it, or to hide from whoever holds the other end."),
     })
     from items import make_fully_known
     make_fully_known(thread)
@@ -2976,17 +2972,14 @@ def _structure_anchor(dungeon, room):
 
 # What the player notices on arriving at each Gleipnir ingredient's floor.
 _GLEIPNIR_FLOOR_LINES = {
-    'cats_footstep': "Something small crosses the passage ahead of you on four "
-                     "feet and makes no sound at all.",
-    'womans_beard':  "Somewhere behind these walls a woman is laughing, low, "
-                     "as if at a private joke.",
+    'cats_footstep': "Something small goes across the passage before you on four feet, and makes no sound at all.",
+    'womans_beard':  "Somewhere behind these walls a woman laughs low, as though at some jest known to her alone.",
     'mountain_root': "The floor hums, very low, as if something enormous were "
                      "growing underneath it.",
     'fish_breath':   "The air is damp here and smells faintly of a tide.",
     'bird_spittle':  "A single feather turns in the air above the stair and "
                      "does not come down.",
-    'bear_sinew':    "Something has been dragged through here. The marks are "
-                     "a bear's, and far too deep.",
+    'bear_sinew':    "Something has been dragged through here, and the marks are a bear's and far too deep.",
 }
 
 

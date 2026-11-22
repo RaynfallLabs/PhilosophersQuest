@@ -30,6 +30,6 @@
   ],
   "lore_descriptor": "dark gray iron that fell from the sky, the same metal as the dagger buried with Tutankhamun",
   "unidentified_descriptor": "a strangely heavy metal weapon",
-  "first_pickup_chronicle": "Meteoric iron. It fell out of the sky. Hittite kings had blades of this before anyone knew how to smelt iron, and it cut everything else they owned.",
+  "first_pickup_chronicle": "Meteoric iron, as Hittite kings bore. It cut all else they owned.",
   "design_notes": "Band C heavy rare_metal. Mult 1.45, weight 1.6, enchant 2. 'ignores_shield_partial' is the unique mechanic — splits shield AC by 25% on hit, just by virtue of how dense the meteoric metal is. Heavy-archetype for the F31-45 gap."
 }

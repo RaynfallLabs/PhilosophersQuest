@@ -140,11 +140,12 @@ def _said(m, a, key: str, seen: bool, **kw) -> str:
     return ai_lines.fill(None, (rules().get('unseen') or {}).get(key, ''), **kw)
 
 
-def pulse(monsters, player, sees=None, rng=random, dungeon=None) -> list:
+def pulse(monsters, player, sees=None, rng=random, dungeon=None, killers=None) -> list:
     """One world turn of every aura on the hero. ``sees(m)`` says whether he
     can see the creature (the Game's own test; None: he sees all, the
     simulator's melee); ``dungeon`` the floor (None in the simulator: no
-    walls). Applies what lands; returns [(line, colour)].
+    walls). Applies what lands; returns [(line, colour)]. ``killers`` (a
+    list, if given) gets the creature whose heat or cold took his last health.
 
     Reach by lore: dread needs sight and a waking creature; heat and cold
     open air (a clear line, never through a wall); a stench smell (round a
@@ -196,8 +197,11 @@ def pulse(monsters, player, sees=None, rng=random, dungeon=None) -> list:
     for dtype, hits in burn.items():
         cap = 2 * max(h[0] for h in hits)
         total = min(cap, sum(h[0] for h in hits))
+        stood = getattr(player, 'hp', 0) > 0
         got = player.take_damage(total, dtype)
         _d, m, a, seen = max(hits, key=lambda h: h[0])
+        if killers is not None and stood and getattr(player, 'hp', 0) <= 0:
+            killers.append(m)
         counts = dict(m.__dict__.get('_aura_hits') or {})
         counts[a['kind']] = counts.get(a['kind'], 0) + 1
         m._aura_hits = counts

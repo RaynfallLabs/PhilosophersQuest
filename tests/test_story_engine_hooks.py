@@ -462,7 +462,7 @@ def test_reading_spends_the_book_but_keeps_it(story_pool):
     n = len(g.msg_log.entries)
     g._read_book_of_thoth(book)                           # a second read does nothing
     assert g.state == STATE_PLAYER
-    assert 'They will not do it twice' in str(g.msg_log.entries[-1][0]) and len(g.msg_log.entries) == n + 1
+    assert 'will not work their wonder a second time' in str(g.msg_log.entries[-1][0]) and len(g.msg_log.entries) == n + 1
 
 
 def test_a_failed_read_curses_spends_and_still_owes(story_pool):
@@ -727,10 +727,10 @@ def test_gate_lines_table_reads_people_and_deeds():
     deeds.record(reg, 'forgo.book_of_thoth', floor=50, block=5)
     deeds.set_person(reg, 'ahwere', name='Ahwere', status='lost', floor=50)
     lines = people_lines(table, ctx)
-    assert any(ln.startswith('Marta Venn. Walked out') for ln in lines)
+    assert any(ln.startswith('Marta Venn walked out') for ln in lines)
     assert any(ln.startswith('Silas Mordaunt') for ln in lines)
-    assert any(ln.startswith('Ostrander. Kept his lamp') for ln in lines)
-    assert any(ln.startswith('Ahwere asked me') for ln in lines)
+    assert any(ln.startswith('Ostrander kept his lamp') for ln in lines)
+    assert any(ln.startswith('Ahwere left word') for ln in lines)
     # Fates first, most recent first: Silas (floor 75) before Marta.
     assert lines.index(next(ln for ln in lines if ln.startswith('Silas'))) < \
         lines.index(next(ln for ln in lines if ln.startswith('Marta')))
@@ -740,7 +740,7 @@ def test_gate_lines_table_reads_people_and_deeds():
     deeds.record(reg2, 'wrong.robbed_marta', floor=4, block=1)
     told = people_lines(table, dict(ctx, reg=reg2))
     assert told == [next(r['line'] for r in table['lines']
-                         if r['line'].startswith('Marta Venn. Got home without'))]
+                         if r['line'].startswith('Marta Venn got home without'))]
     assert len(people_lines(table, ctx, 2)) == 2
     assert reg['karma']['ledger'] == []                   # reading changes nothing
 
@@ -760,7 +760,7 @@ def test_the_gate_tells_the_lines_and_never_touches_karma(story_pool):
     _key(g, pygame.K_1)
     text = g._npc_outcome_text
     assert text.startswith('He opens the ledger.')
-    assert 'Tansy. Flies again.' in text
+    assert 'Tansy flies again' in text
     assert text.rstrip().endswith("'The rest is between them and me.'")
     assert g.karma == k0 and getattr(g, '_judgment_text', '') == j0
 

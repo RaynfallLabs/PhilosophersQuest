@@ -35,8 +35,11 @@ class BehaviourMixin:
         if m.alive:
             import death_throes
             import light_shy
-            light_shy.light_turn(m, self.player)      # a troll in the light
+            light_shy.light_turn(m, self.player, getattr(self, 'dungeon', None))  # a troll in the light
             death_throes.warn(m)                      # it swells before it bursts
+            if m.__dict__.get('_dark_hidden'):        # it may have run out of the dark
+                import unseen
+                m._unseen = unseen.unseen(m, self.player)
         lines = ai_lines.take(m)
         if not lines:
             return
@@ -140,7 +143,8 @@ class BehaviourMixin:
         p = self.player
         import holds
         # (Swallowed, the hero is inside another: no burst outside it reaches him. AI-3)
-        if death_throes.in_blast(m, p.x, p.y, self.dungeon) and not holds.shields(p, m):
+        if (not self.__dict__.get('_run_over')     # (he dies once: the next blast finds no one)
+                and death_throes.in_blast(m, p.x, p.y, self.dungeon) and not holds.shields(p, m)):
             import wards
             dmg = death_throes.blast(m, p.max_hp)
             if dmg > 0:
@@ -218,6 +222,7 @@ class BehaviourMixin:
         (nx, ny), aimed = got
         p.x, p.y = nx, ny
         self.add_message(sv['aimed'] if aimed else sv['line'], 'danger')
+        self._hero_left_tile()
         _hz = getattr(self, '_hazard_step_hero', None)
         if _hz is not None:
             _hz(nx, ny)

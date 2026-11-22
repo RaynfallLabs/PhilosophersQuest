@@ -21,6 +21,7 @@ from monster import the_name
 import pygame
 
 from geom import monster_at_tile
+import grave_rot
 
 from food_system import eat_food, eat_raw
 from items import (Weapon, Armor, Shield, Corpse, Ingredient, Artifact,
@@ -314,19 +315,16 @@ class MenuMixin:
                 self.add_message(msg, 'success' if chain else 'danger')
             if chain >= 5:
                 self._chron(
-                    'discovery', "Drank the dragon's blood and understood every word the birds "
-                    "said. I wish I had not understood all of it.")
+                    'discovery', "Drank dragon's blood. Understood every word the birds said.")
             elif chain >= 2:
                 self._chron(
-                    'discovery', "Drank the dragon's blood. The birds spoke of a broken sword, "
-                    "a one-eyed god's stone, and a throw. I wrote it down.")
+                    'discovery', "Drank dragon's blood. Birds spoke of a broken sword, a one-eyed god's stone, a throw.")
             elif chain == 1:
                 self._chron(
-                    'discovery', "Drank the dragon's blood. It mended me. The birds said "
-                    "something I could not quite follow.")
+                    'discovery', "Drank dragon's blood and it mended me. Could not follow the birds.")
             else:
                 self._chron(
-                    'discovery', "Drank the dragon's blood and burned my mouth for nothing.")
+                    'discovery', "Drank dragon's blood and burned my mouth for nothing.")
             self.state = STATE_PLAYER
             self._advance_turn()
 
@@ -375,14 +373,12 @@ class MenuMixin:
                 self.add_message(
                     f"The water stays. Something in you deepens, for good. "
                     f"(+{amount} {stat})", 'success')
-                self._chron('discovery', "Drank from Mimir's well, and understood. "
-                                         "Odin paid an eye for that. I paid a fortune and a hard question.")
+                self._chron('discovery', "Drank from Mimir's well and understood. It cost a fortune.")
             else:
                 self.add_message(
                     "The water runs straight through you and is gone. "
                     "The draught is wasted.", 'danger')
-                self._chron('discovery', "Drank from Mimir's well and could not hold the water. "
-                                         "A fortune, gone in a mouthful.")
+                self._chron('discovery', "Paid a fortune at Mimir's well and could not hold the water.")
             self.state = STATE_PLAYER
             self._advance_turn()
 
@@ -870,7 +866,9 @@ class MenuMixin:
         except pygame.error:
             _shift = False
         if _shift and key in (pygame.K_UP, pygame.K_DOWN):
-            step = -3 if key == pygame.K_UP else 3
+            step = int(getattr(self, '_kit_detail_step', 3))      # three, or what the pane holds
+            if key == pygame.K_UP:
+                step = -step
             self._kit_detail_scroll = max(0, int(getattr(self, '_kit_detail_scroll', 0) or 0) + step)
             return
         if key in (pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN, pygame.K_PAGEUP,
@@ -1465,10 +1463,13 @@ class MenuMixin:
                 _aid = getattr(_acc, 'id', '')
                 if _aid == 'lyre_of_orpheus':
                     _label = 'Play the Lyre'
-                    _desc = 'Charm one visible enemy for 10 turns. Consumes 1 charge.'
+                    _desc = ('Hold one visible enemy spellbound for 10 turns (a named foe for less). '
+                             'Consumes 1 charge.')
                 elif _aid == 'hand_of_glory':
                     _label = 'Light the Hand of Glory'
-                    _desc = 'Paralyze one visible enemy for 4 turns. Consumes 1 charge.'
+                    _turns = int(getattr(_acc, 'paralyze_duration', 4) or 4)     # as _activate_accessory_charge
+                    _desc = (f'Paralyze one visible enemy for {_turns} turns (a named foe for less). '
+                             'Consumes 1 charge.')
                 else:
                     _label = getattr(_acc, 'name', _aid) or _aid
                     _desc = f'Use a charge ({_acc.charges}/{_acc.max_charges} left).'
@@ -1688,8 +1689,9 @@ class MenuMixin:
 
         elif pid == 'life_drain':
             restored = max(1, pl.max_hp // 4)
-            pl.restore_hp(restored)
-            self.add_message(f"{label}: Vital energy flows back -- +{restored} HP!", 'success')
+            got = pl.restore_hp(restored)
+            self.add_message(f"{label}: " + grave_rot.told(
+                pl, got, "Vital energy flows back -- +{n} HP!"), 'success')
 
         elif pid == 'reality_anchor':
             cleared = [e for e in list(pl.status_effects.keys()) if e in DEBUFFS]
@@ -1760,6 +1762,7 @@ class MenuMixin:
             ]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             self._target_candidates = candidates
+            candidates = self._target_candidates     # what the list really offers: the cursor opens there
             self._target_idx = 0
             self._power_targeting = True
             self._pending_power = 'stuffie_fire_breath'
@@ -1786,8 +1789,9 @@ class MenuMixin:
             # (There was no check at all: he could be bound from anywhere on
             # the floor, through walls.)
             from combat import _line_of_sight
+            import holds
             _dist = max(abs(fenrir.x - pl.x), abs(fenrir.y - pl.y))
-            if _dist > self.GLEIPNIR_RANGE or not _line_of_sight(
+            if holds.shields(pl, fenrir) or _dist > self.GLEIPNIR_RANGE or not _line_of_sight(
                     pl.x, pl.y, fenrir.x, fenrir.y, self.dungeon):
                 self.add_message(
                     "The ribbon will not reach him from here. You need him in "
@@ -1937,6 +1941,7 @@ class MenuMixin:
                              'warning')
             return False
         pl.x, pl.y = last_x, last_y
+        self._hero_left_tile()
         pl._seven_league_used_this_floor = True
         self._refresh_fov()
         self.add_message(
@@ -1960,7 +1965,8 @@ class MenuMixin:
             return False
         # Find closest visible, non-boss, INT-5+ monster
         candidates = []
-        for m in self.monsters:
+        import holds
+        for m in holds.strikable(self.player, self.monsters):
             if not getattr(m, 'alive', False):
                 continue
             if getattr(m, 'is_boss', False):
@@ -2030,7 +2036,8 @@ class MenuMixin:
             self.add_message("That charge is gone.", 'warning')
             return False
         # Pick a visible target
-        targets = [m for m in self.monsters if self._sees_monster(m)]
+        import holds
+        targets = [m for m in holds.strikable(self.player, self.monsters) if self._sees_monster(m)]
         if not targets:
             self.add_message(
                 "Nothing in sight to use the charge on.", 'warning')
@@ -2070,9 +2077,9 @@ class MenuMixin:
                    (why or f"{the_name(target)} does not sleep.")),
                 'info' if got else 'warning')
         acc.charges -= 1
-        # Hand of Glory (expended_curse): when all five candle-fingers are
-        # burnt out, the wax-soaked hand fuses to its wearer. Per lore:
-        # "When all five have burned, the hand will not let go." The item
+        # Hand of Glory (expended_curse): when the three candle-fingers left
+        # are burnt out, the wax-soaked hand fuses to its wearer. Per lore:
+        # when the last has gone out the hand will not let go. The item
         # becomes permanently cursed and welded into the slot.
         if int(acc.charges) <= 0 and getattr(acc, 'expended_curse', False) and \
                 not getattr(acc, 'cursed', False):

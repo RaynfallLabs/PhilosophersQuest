@@ -68,7 +68,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_socrates",
         "_start_accessory": "amulet_of_wisdom",
         "_start_spells": ["cleanse_spell"],
-        "_greeting": "Socrates asks the dungeon a question. It does not answer.",
+        "_greeting": "Socrates puts a question to the dungeon, which returns him no answer.",
     },
     "plato of athens": {
         "INT": 17, "WIS": 17, "PER": 12, "STR": 7, "CON": 9, "DEX": 9,
@@ -76,7 +76,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_wand": "wand_of_candle_light",
         "_start_book": "spellbook_light",
         "_no_shard": True,       # he identifies by the Forms, and is handed no Shard
-        "_greeting": "Plato descends into the cave and finds it uncomfortably on-the-nose.",
+        "_greeting": "Plato goes down into the cave and finds it all too like his own allegory.",
     },
     "friedrich nietzsche": {
         "INT": 16, "WIS": 8, "PER": 14, "STR": 14, "CON": 12, "DEX": 10,
@@ -89,20 +89,20 @@ SECRET_BUILDS: dict[str, dict] = {
         "INT": 18, "WIS": 14, "PER": 10, "STR": 7, "CON": 8, "DEX": 9,
         "_sprite": "player_pythagoras",
         "_start_accessory": "aesops_quill",
-        "_greeting": "Pythagoras calculates the optimal descent angle.",
+        "_greeting": "Pythagoras reckons the perfect angle for his descent.",
     },
     "prometheus the firebearer": {
         "INT": 15, "WIS": 15, "CON": 15, "STR": 10, "DEX": 10, "PER": 10,
         "_sprite": "player_prometheus",
         "_start_weapon": "prometheus_torch",
-        "_greeting": "Prometheus brings fire into the dungeon. The monsters are unimpressed.",
+        "_greeting": "Prometheus bears fire into the dungeon, and the monsters are little impressed.",
     },
     "diogenes of sinope": {
         "WIS": 18, "PER": 16, "STR": 5, "CON": 5, "DEX": 5, "INT": 5,
         "_sprite": "player_diogenes",
         "_no_dagger": True,
         "_start_wand": "lantern_of_diogenes",
-        "_greeting": "Diogenes enters the dungeon. He needs nothing. He wants nothing. He is still going to die.",
+        "_greeting": "Diogenes enters the dungeon needing nothing and wanting nothing, though he is still going to die.",
     },
     # -- Warriors -- brawn over brain -----------------------------------------
     "achilles son of peleus": {
@@ -114,7 +114,7 @@ SECRET_BUILDS: dict[str, dict] = {
         # Hephaestus made on his arm (data/items/shield.json; Brandon
         # 2026-11-17: "ok to give uniques that are lore accurate").
         "_start_shield": "shield_of_achilles",
-        "_greeting": "Achilles charges in. His heel tingles ominously.",
+        "_greeting": "Achilles charges in, though his heel tingles with foreboding.",
     },
     "leonidas of sparta": {
         "STR": 17, "CON": 18, "DEX": 12, "INT": 9, "WIS": 10, "PER": 8,
@@ -122,7 +122,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": "leonidas_dory",
         # The hoplite's aspis: "come back with this, or on it" (Plutarch).
         "_start_shield": "shield_of_the_spartans",
-        "_greeting": "Leonidas has 299 fewer soldiers than he would like.",
+        "_greeting": "Leonidas descends with 299 fewer soldiers than he would wish for.",
     },
     "alexander the great": {
         "STR": 16, "DEX": 14, "CON": 14, "INT": 14, "WIS": 10, "PER": 12,
@@ -133,7 +133,7 @@ SECRET_BUILDS: dict[str, dict] = {
         # held it over him when he fell. A bronze aspis: the Shield of Ilion.
         "_start_shield": "shield_of_ilion",
         "_start_accessory": "tablet_of_hammurabi",
-        "_greeting": "Alexander the Great descends. He intends to conquer this too.",
+        "_greeting": "Alexander the Great descends, meaning to conquer this realm as well.",
     },
     "theseus of athens": {
         "STR": 14, "DEX": 14, "CON": 14, "INT": 12, "WIS": 12, "PER": 12,
@@ -142,7 +142,7 @@ SECRET_BUILDS: dict[str, dict] = {
         # (the club of Periphetes, bare hands for the Minotaur).
         "_start_weapon": ("shortsword", "iron"),
         "_start_accessory": "lyre_of_orpheus",
-        "_greeting": "Theseus enters the dungeon. He has done this before.",
+        "_greeting": "Theseus enters the dungeon as one who has walked such ways before.",
         "_start_family_lore": {"legend": 1},   # unlabelled: he walked the Labyrinth
     },
     # -- Rogues -- speed and perception ---------------------------------------
@@ -153,7 +153,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": ("rapier", "iron"),
         "_start_armor": "hermes_sandals_early",
         "_equip_armor": True,
-        "_greeting": "Hermes was here, delivered something, and left. He returned because he forgot to sign.",
+        "_greeting": "Hermes came, made his delivery and departed, and has come back because he forgot to sign.",
     },
     "odysseus of ithaca": {
         "DEX": 14, "INT": 16, "PER": 16, "WIS": 14, "STR": 10, "CON": 10,
@@ -162,7 +162,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": ("longbow", "yew"),
         "_start_ammo": "iron_arrow",
         "_start_armor": "cloth_of_penelope",
-        "_greeting": "Odysseus descends. He expects this to take ten years.",
+        "_greeting": "Odysseus descends, fully expecting this to take him ten years.",
         "_start_family_lore": {"legend": 1},   # unlabelled: he sailed past Scylla
     },
     # -- Mages -- pure arcane power --------------------------------------------
@@ -287,7 +287,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_no_dagger": True,
         "_start_weapon": "zireael",
         "_elder_blood": True,
-        "_greeting": "Ciri steps through a portal. The Elder Blood sings in her veins.",
+        "_greeting": "Ciri steps through a portal with the Elder Blood singing in her veins.",
     },
     "ash ketchum": {
         "PER": 18, "INT": 16, "WIS": 12, "DEX": 10, "CON": 8, "STR": 6,
@@ -307,7 +307,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": ("rapier", "iron"),
         "_start_accessory": "amulet_of_intellect",
         "_start_book": "spellbook_magic_dart",
-        "_greeting": "Ada Lovelace traces the dungeon's algorithm in the air. It is computable.",
+        "_greeting": "Ada Lovelace traces the dungeon's algorithm in the air and finds it computable.",
         "_start_family_lore": {"constructs": 1},   # unlabelled: she wrote for the Engine
     },
     "leonardo di ser piero da vinci": {
@@ -343,7 +343,7 @@ SECRET_BUILDS: dict[str, dict] = {
         # A Soul Sphere, so her standard has someone to rally from the start
         # (Brandon, 2026-11-17: "she needs a soul sphere, yes").
         "_start_soul_spheres": 1,
-        "_greeting": "Joan listens to the Voices. They say: 'Go forward, child.'",
+        "_greeting": "Joan hears her Voices, and they say to her, 'Go forward, child.'",
     },
     "sir arthur conan doyle's sherlock holmes": {
         "INT": 18, "PER": 18, "WIS": 14, "DEX": 12, "STR": 9, "CON": 9,
@@ -369,7 +369,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": ("quarterstaff", "oak"),
         "_start_accessory": "amulet_of_wisdom",
         "_start_book": "spellbook_light",
-        "_greeting": "Hildegard prays. The world greens around her in answer.",
+        "_greeting": "Hildegard prays, and the world grows green about her in answer.",
         "_start_family_lore": {"plants": 1},   # unlabelled: she wrote the Physica
     },
     "nikola tesla": {
@@ -378,7 +378,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": ("dagger", "iron"),
         "_start_wand": "wand_of_force_dart",
         "_start_accessory": "amulet_of_intellect",
-        "_greeting": "Tesla touches the doorframe. It hums. The dungeon has been wired.",
+        "_greeting": "Tesla touches the doorframe and it hums, for the dungeon has been wired.",
         "_start_family_lore": {"constructs": 1},   # unlabelled: he built the automaton boat
     },
 

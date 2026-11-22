@@ -512,3 +512,18 @@ def test_the_strike_hook_is_put_back_when_no_knob_needs_it():
     assert combat.strike_damage.__wrapped__ is real
     sa.install({})
     assert combat.strike_damage is real
+
+
+def test_the_simulators_uninstall_takes_these_hooks_out_too():
+    import combat
+    import difficulty_sim as ds
+    import kitchen
+    import sim_archetypes as sa
+    ds.uninstall()
+    real = combat.strike_damage
+    was = [r.get('benefit') for r in kitchen.book()]
+    sa.install(ALL_ON)
+    sa.install_kitchen({'kt_even': 1}, {'stat_focus': ('PER', 'DEX')})
+    ds.uninstall()
+    assert combat.strike_damage is real
+    assert [r.get('benefit') for r in kitchen.book()] == was

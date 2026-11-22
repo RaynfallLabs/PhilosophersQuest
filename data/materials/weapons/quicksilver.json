@@ -32,6 +32,6 @@
   ],
   "lore_descriptor": "flowing silver that hardens only when wielded",
   "unidentified_descriptor": "rippling silvery",
-  "first_pickup_chronicle": "Quicksilver. It flowed in my hand, then snapped rigid the moment I meant to swing. It rewards care. Clumsy hands, I suspect, get nothing.",
+  "first_pickup_chronicle": "Quicksilver, flows until swung. Rewards care, not clumsy hands.",
   "design_notes": "Fills pf 52 gap. Finesse-friendly: lower damage_mult (0.95) but very light + magical (max_enchant 6). Slightly weaker raw, but huge enchant ceiling."
 }

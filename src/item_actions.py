@@ -193,6 +193,10 @@ class ItemActionsMixin:
             add('equip', 'Take & Equip', why)
         # R -- Ready a melee weapon At Your Back, or put it back in the pack
         melee = isinstance(item, Weapon) and getattr(item, 'requires_ammo', None) is None
+        # (A light too: the kind Shift+L takes up, game_lights.py.)
+        import lights as _lights_r
+        if where == 'pack' and _lights_r.is_light(item):
+            add('ready', 'Unready' if _lights_r.is_readied(self.player, item) else 'Ready')
         if melee and where == 'back':
             add('ready', 'Unready')
         elif melee and where == 'pack':
@@ -261,7 +265,13 @@ class ItemActionsMixin:
         if action_id == 'equip':
             self._item_do_equip_toggle(item, 'pack' if where == 'back' else where)
         elif action_id == 'ready':
-            if where == 'back':
+            import lights as _lights_r
+            if _lights_r.is_light(item):
+                if _lights_r.is_readied(self.player, item):
+                    self._unready_light(item)
+                else:
+                    self._ready_light(item)
+            elif where == 'back':
                 self._unready_weapon()
             else:
                 self._ready_weapon(item)
@@ -286,7 +296,14 @@ class ItemActionsMixin:
             # Pick THIS item up through the normal pickup (turn, weight,
             # pickup side effects), then equip it as from the pack.
             self._pickup(target=item)
-            if self.state != self._item_screen_state() or self._item_where(item) != 'pack':
+            if self.state != self._item_screen_state():
+                return
+            import lights
+            if lights.is_light(item) and not self._item_where(item):
+                # A torch that joined its bundle: one off that row.
+                item = next((r for r in self.player.inventory
+                             if r.id == item.id and lights.is_fresh(r)), None)
+            if self._item_where(item) != 'pack':
                 return
         self._equip_item(item)
 

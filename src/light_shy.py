@@ -22,7 +22,8 @@ And some put the light out (an attack's `snuffs_light`): a water
 elemental's wave drowns a torch, a whirlwind's gust blows it out, a
 darkmantle or a shadow smothers it. A landed blow douses the light in the
 hero's hand, and it will not light again for a few turns (the wick is
-soaked: water 3, wind 1, dark 2); 'dark' also ends the Light spell. A light
+soaked: water 3, wind 1, dark 2); 'dark' also ends the Light spell (never
+a story's lamp, held for floors: Player.add_floor_effect). A light
 that never burns out or has a power of its own (the Everburning Lamp,
 Jack's Lantern, Hecate's Torch, Psyche's Lamp, the Hero's Lamp) is divine
 or fey fire and is never snuffed. The price of a light stays: a lit hero is
@@ -79,9 +80,19 @@ def shy(m) -> bool:
     return bool(ENABLED and kind_data.field(m, 'light_shy', False) and not kind_data.named(m))
 
 
-def in_light(m, player) -> bool:
+def in_light(m, player, dungeon=None) -> bool:
+    """Within the reach of the hero's light and, given the floor, with
+    nothing between: light goes through no wall and no shut door."""
     g = glare(player)
-    return g > 0 and _cheb(m.x, m.y, player.x, player.y) <= reach(player)
+    if g <= 0 or _cheb(m.x, m.y, player.x, player.y) > reach(player):
+        return False
+    if dungeon is None:
+        return True                       # (the simulator's fight; a blow, which has its line)
+    import senses
+    from geom import occupied_tiles
+    return any(_cheb(x, y, player.x, player.y) <= 1
+               or senses.clear_view(x, y, player.x, player.y, dungeon)
+               for x, y in occupied_tiles(m))
 
 
 def flinch(m, player) -> int:
@@ -94,11 +105,11 @@ def flinch(m, player) -> int:
     return shift
 
 
-def light_turn(m, player) -> None:
+def light_turn(m, player, dungeon=None) -> None:
     """A light-shy creature's turn in the hero's light (BehaviourMixin, and
     the simulator's world tick): a troll's wounds stop closing; a troll in
     the Light spell's glare stiffens."""
-    if not shy(m) or not getattr(m, 'alive', False) or not in_light(m, player):
+    if not shy(m) or not getattr(m, 'alive', False) or not in_light(m, player, dungeon):
         m.__dict__.pop('_stiff', None)
         return
     lines = rules().get('lines') or {}
@@ -152,8 +163,14 @@ def snuff(player, how: str) -> str:
                        .replace('{light}', lights.noun(lt)))
         else:
             out.append(lines.get('everlasting', '').replace('{light}', lights.noun(lt)))
-    if how == 'dark' and player.status_effects.pop('light', None):
-        out.append(lines.get('spell_dark', ''))
+    if how == 'dark':
+        left = int((getattr(player, 'status_effects', None) or {}).get('light', 0) or 0)
+        # A story's lamp, held for floors (Player.add_floor_effect: -1), is
+        # not the spell's light: no darkness takes it.
+        storied = left == -1 and 'light' in (getattr(player, 'floor_effects', None) or {})
+        if left and not storied:
+            player.status_effects.pop('light', None)
+            out.append(lines.get('spell_dark', ''))
     return ' '.join(t for t in out if t)
 
 

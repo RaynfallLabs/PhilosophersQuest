@@ -57,17 +57,6 @@ def pytest_collection_modifyitems(config, items):
         items[:] = keep
 
 
-@pytest.fixture(autouse=True)
-def _the_simulator_cleans_up():
-    """A test that played a simulator cell (difficulty_sim.run_cell) patched
-    the game for this process: shared item objects, no bones. Whatever test
-    it was, the next one gets the game's own (2026-11-21)."""
-    yield
-    sim = sys.modules.get('difficulty_sim')
-    if sim is not None and hasattr(sim, 'uninstall_caches'):
-        sim.uninstall_caches()
-
-
 @pytest.fixture(autouse=True, scope='session')
 def _isolate_dev_save_dir():
     try:
@@ -173,6 +162,18 @@ def _no_bones_left_behind():
                 os.remove(os.path.join(d, name))
             except OSError:
                 pass
+
+
+@pytest.fixture(autouse=True)
+def _simulator_taken_out():
+    """A test that runs the balance simulator in this process leaves its
+    item cache and its hooks in the game, and every later test played on
+    them (the UI gates read a pack of 554877956666477824 / 100 before 3.6.0).
+    They come out after every test (difficulty_sim.uninstall)."""
+    yield
+    sim = sys.modules.get('difficulty_sim')
+    if sim is not None:
+        sim.uninstall()
 
 
 @pytest.fixture(autouse=True)

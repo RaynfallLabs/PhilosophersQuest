@@ -24,7 +24,9 @@ says one plain line when it fires:
   the floor (the game sets ``_lp_calm``: game_lore_powers.py); struck, the
   deal is off.
 * ``parley`` -- the Blue Men wait for an answer (game_lore_powers.py asks
-  it); while they wait they hold their fire.
+  it); calling it is their first turn of noticing him (calls), and while
+  they wait they hold their fire (at_peace: no blow on the hero, a pet or
+  an escort, pinned or free, and no pet goes for them unbidden).
 * ``gold_gatherer`` -- a gold-digging ant stops to gather gold dropped near
   it (``_lp_busy`` turns: game_lore_powers.py).
 * attack ``carry_off`` -- the Roc lifts the hero and drops him far away
@@ -112,6 +114,63 @@ def _in_sight(m, player, dungeon) -> bool:
         return True
     import senses
     return senses.clear_view(m.x, m.y, player.x, player.y, dungeon)
+
+
+# ---------------------------------------------------------------------------
+# Peace: what every blow a creature strikes, and every blow that goes at it
+# unbidden, asks first.
+# ---------------------------------------------------------------------------
+def holds_fire(m) -> bool:
+    """Fed or answered, or waiting for an answer: it strikes no one."""
+    d = getattr(m, '__dict__', {})
+    return bool(ENABLED and (d.get('_lp_calm') or d.get('_lp_parley') == 'waiting'))
+
+
+def gathering(m) -> bool:
+    """Stopped for gold: it has no blow to spare (not a peace)."""
+    return bool(ENABLED and int(getattr(m, '__dict__', {}).get('_lp_busy', 0) or 0) > 0)
+
+
+def at_peace(m) -> bool:
+    """No one left to himself (a pet, a horn's ally, boots that throw
+    lightning) breaks this peace: one that holds its fire, has yielded
+    (src/morale.py), or was bought or sung to a peace a blow breaks (the
+    Bribe, a family's calm, the Song of Settled Strife). The hero's own
+    blow, or a special he orders, still may."""
+    d = getattr(m, '__dict__', {})
+    if d.get('_yielded') or holds_fire(m):
+        return True
+    return bool((d.get('_bribed') or d.get('_strife_peace'))
+                and int((getattr(m, 'status_effects', None) or {}).get('charmed', 0) or 0) > 0)
+
+
+# ---------------------------------------------------------------------------
+# The parley's call
+# ---------------------------------------------------------------------------
+PARLEY_GROUP = 10        # those this near call, wait and answer as one
+
+
+def parley_group(m, monsters) -> list:
+    return [o for o in monsters or ()
+            if getattr(o, 'alive', False) and o.kind == m.kind
+            and max(abs(o.x - m.x), abs(o.y - m.y)) <= PARLEY_GROUP]
+
+
+def calls(m, player, dungeon, monsters) -> bool:
+    """It has just noticed the hero (Monster._spots_player): one of a parley
+    kind that has him in sight and has never called spends this turn calling
+    (the game says the verse). Not one with no voice, nor one whose fellows
+    are angry already."""
+    d = m.__dict__
+    if (not ENABLED or dungeon is None or d.get('_lp_parley') is not None or d.get('_lp_call')
+            or not spec(m, 'parley')):
+        return False                      # (a call the game has yet to say is one turn, not more)
+    if m.has_effect('silenced') or not _in_sight(m, player, dungeon):
+        return False
+    if any(o.__dict__.get('_lp_parley') == 'angry' for o in parley_group(m, monsters)):
+        d['_lp_parley'] = 'angry'
+        return False
+    return True
 
 
 # ---------------------------------------------------------------------------
@@ -232,6 +291,11 @@ def _loosed(player) -> bool:
         return False
 
 
+def _loosed_line(m) -> str:
+    import wards
+    return wards.line('pull_loosed', m)
+
+
 def after_blow(m, player, atk: dict, actual: int) -> str:
     """What follows a landed blow: the Roc's carry-off, the Yacumama's pull.
     Returns text for the blow's line ('' for none)."""
@@ -246,7 +310,10 @@ def after_blow(m, player, atk: dict, actual: int) -> str:
                 chance *= 0.5             # a heavy man is hard to lift
         except Exception:
             pass
-        if random.random() < chance:
+        seized = random.random() < chance
+        if seized and _loosed(player):
+            out += ' ' + _loosed_line(m)        # nothing can grab him or lift him
+        elif seized:
             lo, hi = (co.get('tiles') or (8, 15))[:2]
             # The game sets him down at once, right after this blow's line
             # (LorePowersMixin._lore_powers_lift): never left for a later turn.

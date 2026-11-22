@@ -733,6 +733,13 @@ class Renderer:
         ty1 = min(h, -(-(clip.bottom - oy) // T))
         return tx0, ty0, max(tx0, tx1), max(ty0, ty1)
 
+    def _draw_fog(self, tx0: int, tx1: int, ty: int) -> None:
+        """Never-seen tiles tx0 to tx1 (end exclusive) of one row, as one
+        rect: a rect a tile was over a third of a frame at 2560 (3.6.0)."""
+        T = self.map_tile_size
+        sx, sy = self.world_to_screen(tx0, ty)
+        pygame.draw.rect(self.screen, _UNEXPLORED, (sx, sy, (tx1 - tx0) * T, T))
+
     # cam_x / cam_y kept for signature compat but ignored (always 0,0)
     def draw_dungeon(self, dungeon, visible: set, cam_x: int = 0, cam_y: int = 0):
         T   = self.map_tile_size
@@ -745,12 +752,22 @@ class Renderer:
         # Only the tiles that land on the screen are drawn: at a close zoom
         # most of the 4,000 are off it (UI-19).
         tx0, ty0, tx1, ty1 = self._onscreen_tile_range(w, h)
+        explored = dungeon.explored
         for ty in range(ty0, ty1):
+            fog_from = None     # where the run of never-seen tiles began
             for tx in range(tx0, tx1):
+                seen = (tx, ty) in visible
+                if not seen and (tx, ty) not in explored:
+                    if fog_from is None:
+                        fog_from = tx
+                    continue
+                if fog_from is not None:
+                    self._draw_fog(fog_from, tx, ty)
+                    fog_from = None
                 sx, sy = self.world_to_screen(tx, ty)
                 tile   = dungeon.tiles[ty][tx]
 
-                if (tx, ty) in visible:
+                if seen:
                     sprite_name = _tile_sprite_name(dungeon, tx, ty, tile)
                     sprite = self._get_env_sprite(sprite_name) if sprite_name else None
                     if sprite:
@@ -776,7 +793,7 @@ class Renderer:
                             shimmer_surf.fill((color[0], color[1], shimmer_b, 60))
                             self.screen.blit(shimmer_surf, (sx, sy))
 
-                elif (tx, ty) in dungeon.explored:
+                else:
                     sprite_name = _tile_sprite_name(dungeon, tx, ty, tile)
                     sprite = self._get_env_sprite(sprite_name) if sprite_name else None
                     if sprite:
@@ -786,8 +803,8 @@ class Renderer:
                         color = _EXPLORED.get(tile, _EXPLORED[FLOOR])
                         pygame.draw.rect(self.screen, color, (sx, sy, T, T))
 
-                else:
-                    pygame.draw.rect(self.screen, _UNEXPLORED, (sx, sy, T, T))
+            if fog_from is not None:
+                self._draw_fog(fog_from, tx1, ty)
 
         # Stone bridges over water (the Black Knight's): floor tiles drawn
         # as a bridge deck, along the way the corridor runs.

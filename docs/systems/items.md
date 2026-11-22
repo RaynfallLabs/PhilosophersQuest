@@ -245,7 +245,10 @@ and like Joan's standard it is not a shield (`gear.is_light`: no AC, no
 plus, no wear, never cursed, no shield block or gaze). It cannot be held
 with a shield or a two-handed weapon (`Player.can_equip_shield`). Taking it
 up asks no question (it is held, as a weapon is) and takes one turn; one
-torch comes off a bundle (`LightsMixin._one_light`).
+torch comes off a bundle (`LightsMixin._one_light`), and whatever road a
+light takes into the hand it goes as one, the rest left in the pack
+(`lights.leave_rest`, from `Player._apply_equip`): nothing is held and
+packed at once.
 
 | Light | Tier | Found | Sight | Burn | Power |
 |---|---|---|---|---|---|
@@ -268,7 +271,19 @@ torch comes off a bundle (`LightsMixin._one_light`).
 * **Light has a price** (`lights.shine`, read by `senses.sight_range`): a
   monster's sight reach against a lit hero grows by the brightest light's
   `notice` (its sight unless the data says less). Doused (Shift+O, or Apply
-  on the Kit, no time) a light gives nothing and costs nothing.
+  on the Kit, no time) a light gives nothing and costs nothing. Lighting it
+  takes no time either, and the turn in which it was lit counts as burning
+  and seen, once, though it was put straight out again (`lights.kindled`:
+  a look by a torch's light is paid for in fuel and in notice).
+* **In and out** (Shift+L, `LightsMixin._swap_light`, one turn, as S is for
+  the readied weapon): `lights.pick` draws the readied kind (Kit R), else
+  the kind last put away, else the brightest. The shield goes to the pack
+  and comes back with the next press; a two-hander gives way to a readied
+  one-hander and comes back the same way, also when the last light has
+  burnt out. One rule keeps the memory (`lights.off_hand_takes`,
+  `lights.two_hands`): what comes back is what the light took the place of,
+  whether it was taken up with Shift+L, E, the Kit or a saved kit; a shield
+  put on over the light, or two hands given back, ends it.
 * **Fuel** (`LightsMixin._light_tick`, every turn): only a held, lit light
   burns. "Your Torch burns low." at a fifth of its burn (the sidebar then
   shows what is left); a spent torch is gone and the next torch in the pack
@@ -288,7 +303,9 @@ torch comes off a bundle (`LightsMixin._one_light`).
   common light needs no identify; a named one keeps the unique rules.
 * **Old saves**: a `Light` reads its class defaults for any field it lacks;
   a wand of light pickled with its old radius `power` reads today's turns
-  by id (`lights.wand_light`).
+  by id when zapped (`lights.wand_light`), and takes them on load, so its
+  card and its Kit row say the same (`Game._migrate_light_wands`,
+  `lights.refresh_wand`).
 * **QA** (Titivillus, Shift+T with the arsenal): every light, three torches
   and two flasks of fire oil in the pack.
 * **Art**: stand-in sprites made in code from painted ones

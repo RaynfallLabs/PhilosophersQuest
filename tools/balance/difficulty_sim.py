@@ -328,20 +328,33 @@ def install_caches() -> None:
     _CACHES_ON = True
 
 
-def uninstall_caches() -> None:
-    """install_caches undone: the game's own loader and bones again. The test
-    suite calls it after every test (tests/conftest.py): a test that played a
-    cell left the shared items to every test after it in a serial run
-    (found 2026-11-21, test_sim_import_is_clean after test_sim_magic)."""
+def uninstall() -> None:
+    """Everything a run puts on the game, out again: the cache and the bones
+    stub, the cell's switches and rules, and what sim_ai1, sim_late, sim_magic
+    and sim_archetypes hook. The suite calls it after every test (tests/conftest.py):
+    import was made clean for 3.5.3, but two tests that ran cells brought
+    the doubled stacks back before 3.6.0. A hook added here is undone here."""
     global _CACHES_ON
-    if not _CACHES_ON:
-        return
-    level_manager_mod.LevelManager._maybe_spawn_bones = _real_spawn_bones
-    for _mod in (items_mod, container_system, dungeon_mod, level_manager_mod):
-        if getattr(_mod, 'load_items', None) is _cached_load_items:
-            setattr(_mod, 'load_items', _real_load_items)
-    _ITEM_CACHE.clear()
-    _CACHES_ON = False
+    if _CACHES_ON:
+        level_manager_mod.LevelManager._maybe_spawn_bones = _real_spawn_bones
+        for _mod in (items_mod, container_system, dungeon_mod, level_manager_mod):
+            if getattr(_mod, 'load_items', None) is _cached_load_items:
+                setattr(_mod, 'load_items', _real_load_items)
+        _ITEM_CACHE.clear()
+        _CACHES_ON = False
+        defaults = dict(KNOB_DEFAULTS)
+        apply_defence_knobs(defaults)
+        packs_mod.ENABLED = lore_powers_mod.ENABLED = True
+        sim_ai1.apply_flags(defaults)
+        sim_ai2.apply_flags(defaults)
+        sim_ai3.apply_flags(defaults)
+        sim_late.uninstall()
+    sim_archetypes.uninstall()
+    sim_ai1.uninstall()
+    sim_late.uninstall_runtime()
+    sim_magic.uninstall()
+    if getattr(monster_mod.HERO_STRUCK, '__module__', '') == __name__:
+        monster_mod.HERO_STRUCK = None
 
 
 _POOL_CACHE = {}

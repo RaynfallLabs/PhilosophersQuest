@@ -33,8 +33,9 @@ at a hero who had just drunk a potion against it. Now:
 * A big spell (``wind_up``) is drawn up for a turn first, with a line the
   hero can read ("The Orc Shaman begins a chant, hands raised."); a blow
   that lands on the caster in that turn breaks it (spoil(), from
-  Monster.take_damage; a wound bleeding is not a blow). The spell is spent
-  either way: its cooldown runs.
+  Monster.take_damage; a wound bleeding is not a blow), and so does what
+  stops it (chant_stopped: sleep, a hold, fright, charm, its nerve gone).
+  The spell is spent either way: its cooldown runs.
 * Every kind with a distance attack and the ``caster`` tag, book or not,
   now chooses its bolt with sense (pick_attack): not a fire bolt at a hero
   who wards off fire, not a blinding hex at a hero already blind.
@@ -618,8 +619,9 @@ def take_spell(m):
 
 def spoil(m, why: str = 'blow') -> bool:
     """A blow landed while it chants (Monster.take_damage, never a wound's
-    tick), or it was put to sleep, held, stunned, frightened or charmed
-    (tick): the spell breaks. It is spent (its cooldown runs). True if so."""
+    tick), or it was put to sleep, held, stunned, frightened or charmed, or
+    it broke (chant_stopped): the spell breaks. It is spent (its cooldown
+    runs). True if so."""
     sid = m.__dict__.get('_casting')
     if not sid:
         return False
@@ -634,15 +636,25 @@ def spoil(m, why: str = 'blow') -> bool:
     return True
 
 
-# A caster in one of these cannot keep a chant going (the conditions that
-# stop its turn: Monster.take_turn's held gate and its mind gate). Pinned
-# (immobilized) it can still speak.
+# A creature in one of these cannot keep a chant going (the conditions that
+# stop its turn: Monster.take_turn's held gate and its mind gate, a nerve
+# that has gone, a hero held fast). Pinned (immobilized) it can still speak
+# (Monster._pinned_turn).
 _STOPS_CHANT = ('sleeping', 'paralyzed', 'stunned', 'frozen', 'petrifying')
 
 
-def _chant_stopped(m) -> bool:
-    return (any(m.has_effect(e) for e in _STOPS_CHANT)
-            or m._under('feared') or m._under('charmed'))
+def broken(m) -> bool:
+    """Its nerve has gone (src/morale.py): it runs, is cowed or has yielded."""
+    d = getattr(m, '__dict__', {})
+    return bool(int(getattr(m, '_flee_timer', 0) or 0) > 0 or d.get('_cowed') or d.get('_yielded'))
+
+
+def chant_stopped(m) -> bool:
+    """It cannot keep up what it had drawn up: a spell, a summoner's chant
+    (src/summoning.py), an opener's wind-up."""
+    return bool(any(m.has_effect(e) for e in _STOPS_CHANT)
+                or m._under('feared') or m._under('charmed')
+                or broken(m) or getattr(m, '__dict__', {}).get('_holding'))
 
 
 def tick(m) -> None:
@@ -651,7 +663,7 @@ def tick(m) -> None:
     cd = m.__dict__.get('_spell_cd')
     if cd:
         m._spell_cd = {k: v - 1 for k, v in cd.items() if v - 1 > 0}
-    if m.__dict__.get('_casting') and _chant_stopped(m):
+    if m.__dict__.get('_casting') and chant_stopped(m):
         spoil(m, 'held')                  # asleep, held, frightened...: the chant is lost
     if m.__dict__.get('_ward_base_kept') and not m.has_effect('spell_ward'):
         m.damage_ward = float(m.__dict__.pop('_ward_base', 0.0) or 0.0)

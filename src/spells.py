@@ -99,7 +99,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Cone of Cold', 'effect': 'cone_of_cold', 'power': '8d8',
         'mp_cost': 22, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'cold',
-        'desc': 'A widening cone of glacial cold -- 8d8 damage plus frozen status.',
+        'desc': 'Glacial cold all round you, 5 tiles out -- 8d8 damage plus frozen status.',
     },
 
     # ==================================================================
@@ -149,19 +149,19 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Magic Missile', 'effect': 'magic_missile', 'power': '2d4',
         'mp_cost': 5, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'force',
-        'desc': 'Three darts of unerring force -- 2d4 damage each, always hits.',
+        'desc': 'Three darts of unerring force -- 2d4 damage in all, always hits.',
     },
     'force_barrage_spell': {
         'name': 'Force Barrage', 'effect': 'magic_missile', 'power': '3d4',
         'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': True,
         'spell_family': 'force',
-        'desc': 'Five darts of shrieking force -- 3d4 damage each, never misses.',
+        'desc': 'Five darts of shrieking force -- 3d4 damage in all, never misses.',
     },
     'force_storm_spell': {
         'name': 'Force Storm', 'effect': 'magic_missile', 'power': '4d6',
         'mp_cost': 15, 'tier': 4, 'quiz_tier': 4, 'needs_target': True,
         'spell_family': 'force',
-        'desc': 'Seven force darts, each 4d6 damage, no defence available.',
+        'desc': 'Seven force darts, 4d6 damage in all, no defence available.',
     },
     'annihilation_spell': {
         'name': 'Annihilation', 'effect': 'annihilate', 'power': '10d10',
@@ -280,7 +280,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Time Freeze', 'effect': 'time_freeze', 'power': '',
         'mp_cost': 22, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'slow',
-        'desc': 'Freeze every visible foe for 5 turns -- the ultimate emergency.',
+        'desc': 'Freeze every creature on the floor for 5 turns (a named foe for 2).',
     },
 
     # ==================================================================
@@ -427,19 +427,19 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Detect Magic', 'effect': 'identify_item', 'power': '',
         'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': False,
         'spell_family': 'detect_magic',
-        'desc': 'Reveal the BUC of every magical item in sight.',
+        'desc': 'Shows blessed or cursed: wands, scrolls and books in sight.',
     },
     'identify_spell': {
         'name': 'Identify', 'effect': 'identify_item', 'power': '',
         'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
         'spell_family': 'detect_magic',
-        'desc': 'Reveal the BUC of every magical item in sight AND in your pack.',
+        'desc': 'Shows blessed or cursed: wands, scrolls and books in sight or carried.',
     },
     'omnisight_spell': {
         'name': 'Omnisight', 'effect': 'identify_item', 'power': '',
         'mp_cost': 20, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'detect_magic',
-        'desc': 'Reveal every magical item everywhere -- floor, pack, equipped.',
+        'desc': 'Shows blessed or cursed: worn gear but the belt; wands, scrolls and books seen or carried.',
     },
 
     # ==================================================================
@@ -742,7 +742,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': "Dionysus's Vine", 'effect': 'entangle', 'power': '',
         'mp_cost': 7, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'entangle', 'duration': 4,
-        'desc': 'Vines burst up round one foe: everything walking there is held fast for 4 turns, and for 12 turns the vines catch whatever steps in, you too.',
+        'desc': 'Vines burst up round one foe: everything walking there is held fast for 4 turns, and for 12 turns the vines may catch whatever steps in, you too.',
     },
     'shrink_the_earth_spell': {
         'name': 'Shrink the Earth', 'effect': 'aimed_step', 'power': '',

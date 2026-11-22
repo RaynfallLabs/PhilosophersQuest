@@ -710,7 +710,7 @@ def test_tier_news_messages_popups_and_journal():
     assert any(line.startswith('Web and Plague: ') for line in g.popup_data['lines'])
     assert g.popup_next_state == STATE_PLAYER
     lines = [e.get('text') for e in chronicle.entries_of(g)]
-    assert any('the vermin and spiders apart' in (t or '') for t in lines)
+    assert any('apart enough of the vermin and spiders' in (t or '') for t in lines)
     keys = [e.get('once') for e in chronicle.entries_of(g)]
     assert 'family:vermin:1' in keys and 'family:vermin:3' in keys
 
