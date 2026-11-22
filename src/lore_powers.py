@@ -27,8 +27,8 @@ says one plain line when it fires:
   it); calling it is their first turn of noticing him (calls), and while
   they wait they hold their fire (at_peace: no blow on the hero, a pet or
   an escort, pinned or free, and no pet goes for them unbidden).
-* ``gold_gatherer`` -- a gold-digging ant stops to gather gold dropped near
-  it (``_lp_busy`` turns: game_lore_powers.py).
+* ``gold_gatherer`` -- a gold-digging ant stops to gather gold the hero
+  drops near it, no other (``_lp_busy`` turns: game_lore_powers.py).
 * attack ``carry_off`` -- the Roc lifts the hero and drops him far away
   (the game moves him: game_lore_powers.py); a Heavy or Burdened load halves
   the chance, as a heavy man is hard to lift.

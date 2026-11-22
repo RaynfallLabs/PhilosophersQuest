@@ -390,8 +390,8 @@ class MagicWardsMixin:
 
     def _cast_entangle(self, target, dur: int) -> None:
         """Dionysus's Vine: everything on the target's tile and the eight
-        round it is held fast; the vines stay and may catch whoever steps in
-        (the fixture's chance and save: data/hazards.json)."""
+        round it is held fast; the vines stay and catch whoever steps in,
+        unless the saving throw slips them (data/hazards.json)."""
         import decor
         import hazards
         from dungeon import FLOOR
@@ -431,9 +431,9 @@ class MagicWardsMixin:
         if caught:
             self.add_message(f"Vines burst up out of the stones and wind round "
                              f"{quantity(caught, 'creature')}: held fast ({turns_span(laid, dur)}). "
-                             f"The vines stay a while, and may catch whatever steps in.", 'success')
+                             f"The vines stay a while, and catch whatever steps in.", 'success')
         elif grown:
-            self.add_message("Vines burst up out of the stones. They stay a while, and may catch "
+            self.add_message("Vines burst up out of the stones. They stay a while, and catch "
                              "whatever steps in.", 'success')
         else:
             self.add_message("Vines stir under the stones, but nothing here will hold them.", 'warning')

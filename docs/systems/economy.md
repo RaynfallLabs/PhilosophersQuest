@@ -143,7 +143,8 @@ restock: a trader's goods are a one-time chance.
 `game_render._draw_shop` through `_draw_decision_menu` (the Midnight Codex
 kit: the tab strip keeps the active tab in view via `tab_strip_window`; the
 footer key hints replaced the removed `footer_regions` helper). Keys:
-Left/Right/Tab change tab, Up/Down move, Enter buys / sells one / pays, H
+Left/Right/Tab change tab, Up/Down move, Enter buys / sells one (a stack
+priced by the bundle, arrows or torches, sells whole) / pays, H
 haggles (Buy tab), Esc closes (or backs out of choosing a target).
 
 - **Buy**: price x the deeds multiplier (section 7). Haggling (economics
@@ -161,7 +162,8 @@ haggles (Buy tab), Esc closes (or backs out of choosing a target).
   Starnut Tart and the Scroll of Death's Bane, scripted-only ids, plot-locked
   things, every artifact but the six Soul Spheres, and a sphere that holds a
   bound companion), tools and keys, things outside
-  a specialist's line, and a curse the hero knows of (except to Vesper). A
+  a specialist's line (lights sell to whoever buys everything, a stack priced
+  by the bundle whole), and a curse the hero knows of (except to Vesper). A
   sold thing is gone: it never reappears in his stock (that would price-
   identify it).
 - **Trade-in** (winning build 3.5, 2026-11-13; every trader): on a visit

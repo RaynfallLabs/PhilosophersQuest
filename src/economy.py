@@ -239,8 +239,8 @@ def sell_offer(item, level: int, *, known: bool, identified: bool,
     trade_in: the trade-in rate (TRADE_IN_RATE) instead of a fifth to a
     quarter; the resale cap and the purse hold all the same.
 
-    Ammo sells as a whole stack, so its offer goes with the arrows in it
-    (ammo_bundles), rounded down: one flat price for any count made twenty
+    What is priced by the bundle (ammo, torches) sells as a whole stack, so
+    its offer goes with what is in it (ammo_bundles), rounded down: one flat price for any count made twenty
     single arrows worth twenty stacks, five times what the stack cost. Its
     _bought_for is the price of one bundle (_trader_mark_bought).
     """

@@ -1496,6 +1496,84 @@ class Monster:
             return dmg, ''
         return max(1, int(round(dmg * mult))), note
 
+    # ---- What turns a blow's harm aside. One road for an ordinary blow
+    # (_resolve_blow) and a hold's squeeze (holds.blow), which has no roll to
+    # hit and no dodge but meets all of this.
+
+    def _through_hide(self, player, dmg: int, atk_type: str) -> int:
+        """Hide of the Nemean Lion (unskinnable): non-magical blows do HALF
+        damage. (They used to do 1: from floor 53 that zeroed four or five
+        of every ten attacks in the game.) "Only divine arms scratch it":
+        Heracles used the lion's own claws. Magic, holy and the elements pass
+        it, since they are no blade on a hide; only physical, slash, pierce
+        and blunt are halved."""
+        try:
+            from armor_procs import player_has_armor_proc
+            if player_has_armor_proc(player, 'unskinnable') and \
+                    atk_type in ('physical', 'pierce', 'slash', 'blunt') and \
+                    not getattr(self, 'magical', False) and \
+                    'magic' not in (getattr(self, 'tags', []) or []) and \
+                    'divine' not in (getattr(self, 'tags', []) or []):
+                if dmg > 1:
+                    dmg = max(1, dmg // 2)
+        except ImportError:
+            pass
+        return dmg
+
+    def _turn_aside(self, player, dmg: int, atk: dict, atk_type: str) -> tuple[int, str]:
+        """(damage, the material's note): the weakness of what he wields,
+        the family knowledge that turns this family's fire, cold or holy
+        light aside (Dragon-Ward, Ward of the Elements, Angel's Due), and the
+        minor slots' guards (guards.py: the helm against voice and gaze, the
+        gloves against touch, the cloak against breath and the elements)."""
+        import guards as _guards
+        dmg, note = self._through_material_weakness(player, dmg, atk_type)
+        dmg = _edge_incoming(player, self, dmg, atk_type)
+        keep, _rider, _piece = _guards.guard_keep(player, atk)
+        if keep < 1.0 and dmg > 0:
+            dmg = max(1, int(round(dmg * keep)))
+        return dmg, note
+
+    def _sent_back(self, player, dmg: int, actual: int, atk_type: str, msg: str) -> str:
+        """What sends a blow back at its striker; the blow's line with that
+        told."""
+        # Fire/cold shield: if attack was blocked (actual=0), reflect damage back
+        # Typed (round 3): its own fire turned back burns as fire, so a
+        # creature that resists fire takes less of it.
+        if actual == 0 and atk_type == 'fire' and player.has_effect('fire_shield'):
+            refl = self.take_damage(max(1, dmg // 2), 'fire')
+            msg = f"{the_name(self)}'s fire reflects back! ({refl} dmg)"
+        elif actual == 0 and atk_type == 'cold' and player.has_effect('cold_shield'):
+            refl = self.take_damage(max(1, dmg // 2), 'cold')
+            msg = f"{the_name(self)}'s cold reflects back! ({refl} dmg)"
+
+        # Chain-equip passive: reflect_spell / spell_reflect (Aegis of Athena,
+        # Smoking Mirror). Magical/elemental damage rolls % chance to reflect
+        # full damage back at the attacker.
+        if atk_type in ('fire', 'cold', 'lightning', 'magic', 'acid', 'poison',
+                        'force', 'necrotic', 'radiant', 'psychic') and actual > 0:
+            try:
+                from chain_passives import get_reflect_spell_chance
+                chance = get_reflect_spell_chance(player)
+                if chance > 0 and random.random() < chance:
+                    refl = self.take_damage(max(1, dmg), atk_type)   # typed (round 3)
+                    msg += f" The {atk_type} damage reflects back! ({refl} dmg)"
+            except ImportError:
+                pass
+
+        # Chain-equip passive: mirror_of_souls (Smoking Mirror of Tezcatlipoca).
+        # 20% chance an incoming melee attacker takes the same damage they dealt.
+        if atk_type in ('physical', 'pierce', 'slash', 'blunt') and actual > 0:
+            try:
+                from chain_passives import roll_mirror_of_souls
+                refl = roll_mirror_of_souls(player, self, actual)
+                if refl:
+                    self.take_damage(refl)
+                    msg += f" The Mirror of Souls turns the blow against you! ({refl} dmg)"
+            except ImportError:
+                pass
+        return msg
+
     def attack(self, player) -> tuple[int, str]:
         """Monster attacks player using THAC0 vs player AC. Returns (damage_dealt, message)."""
         # A monster that is swinging has not been left alone: it neither
@@ -1941,23 +2019,7 @@ class Monster:
             except ImportError:
                 pass
 
-        # Hide of the Nemean Lion (unskinnable): non-magical blows do HALF
-        # damage. (They used to do 1: from floor 53 that zeroed four or five
-        # of every ten attacks in the game.) "Only divine arms scratch it" —
-        # Heracles used the lion's own claws. Magic/holy/fire/cold/lightning/acid/poison/radiant all bypass
-        # since they are not "blade hits hide." Pure physical/slash/pierce/blunt
-        # gets clamped.
-        try:
-            from armor_procs import player_has_armor_proc
-            if player_has_armor_proc(player, 'unskinnable') and \
-                    atk_type in ('physical', 'pierce', 'slash', 'blunt') and \
-                    not getattr(self, 'magical', False) and \
-                    'magic' not in (getattr(self, 'tags', []) or []) and \
-                    'divine' not in (getattr(self, 'tags', []) or []):
-                if dmg > 1:
-                    dmg = max(1, dmg // 2)
-        except ImportError:
-            pass
+        dmg = self._through_hide(player, dmg, atk_type)
 
         # Chain-equip passive: back_attack_weakness (dragon_mail_of_sigurd).
         # Multiplier on incoming damage when monster is in the player's "rear arc"
@@ -2002,16 +2064,7 @@ class Monster:
             if _pm != 1.0:
                 dmg = max(1, int(dmg * _pm + 0.5))
 
-        dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
-        # Family knowledge that turns this family's fire, cold or holy
-        # light aside (Dragon-Ward, Ward of the Elements, Angel's Due).
-        dmg = _edge_incoming(player, self, dmg, atk_type)
-        # The minor slots' guards (guards.py): the helm against voice and
-        # gaze, the gloves against touch, the cloak against breath and the
-        # elements... turn aside a share of a matching attack's damage.
-        _keep_d, _keep_r, _guard_piece = _guards.guard_keep(player, atk)
-        if _keep_d < 1.0 and dmg > 0:
-            dmg = max(1, int(round(dmg * _keep_d)))
+        dmg, _vuln_note = self._turn_aside(player, dmg, atk, atk_type)
         if _sneak:
             dmg = self.sneak_blow(dmg, player)
             _held_note = " A friend's blow: you never saw it coming!"
@@ -2041,41 +2094,7 @@ class Monster:
         if mimic_strike:
             msg = surprise.strike_line(self) + msg   # a mimic erupts, an ambusher drops (AI-3)
 
-        # Fire/cold shield: if attack was blocked (actual=0), reflect damage back
-        # Typed (round 3): its own fire turned back burns as fire, so a
-        # creature that resists fire takes less of it.
-        if actual == 0 and atk_type == 'fire' and player.has_effect('fire_shield'):
-            refl = self.take_damage(max(1, dmg // 2), 'fire')
-            msg = f"{the_name(self)}'s fire reflects back! ({refl} dmg)"
-        elif actual == 0 and atk_type == 'cold' and player.has_effect('cold_shield'):
-            refl = self.take_damage(max(1, dmg // 2), 'cold')
-            msg = f"{the_name(self)}'s cold reflects back! ({refl} dmg)"
-
-        # Chain-equip passive: reflect_spell / spell_reflect (Aegis of Athena,
-        # Smoking Mirror). Magical/elemental damage rolls % chance to reflect
-        # full damage back at the attacker.
-        if atk_type in ('fire', 'cold', 'lightning', 'magic', 'acid', 'poison',
-                        'force', 'necrotic', 'radiant', 'psychic') and actual > 0:
-            try:
-                from chain_passives import get_reflect_spell_chance
-                chance = get_reflect_spell_chance(player)
-                if chance > 0 and random.random() < chance:
-                    refl = self.take_damage(max(1, dmg), atk_type)   # typed (round 3)
-                    msg += f" The {atk_type} damage reflects back! ({refl} dmg)"
-            except ImportError:
-                pass
-
-        # Chain-equip passive: mirror_of_souls (Smoking Mirror of Tezcatlipoca).
-        # 20% chance an incoming melee attacker takes the same damage they dealt.
-        if atk_type in ('physical', 'pierce', 'slash', 'blunt') and actual > 0:
-            try:
-                from chain_passives import roll_mirror_of_souls
-                refl = roll_mirror_of_souls(player, self, actual)
-                if refl:
-                    self.take_damage(refl)
-                    msg += f" The Mirror of Souls turns the blow against you! ({refl} dmg)"
-            except ImportError:
-                pass
+        msg = self._sent_back(player, dmg, actual, atk_type, msg)
 
         # Chain-equip passive: gorgoneion_petrify_on_hit (Greater Aegis of Athena).
         # First melee striker each floor saves vs petrification (paralyzed proxy).

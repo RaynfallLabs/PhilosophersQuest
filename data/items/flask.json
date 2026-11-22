@@ -30,7 +30,7 @@
     "tier": 1,
     "coat": {"substance": "poison", "blows": 10, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 4}},
     "floorSpawnWeight": {"1-20": 8, "21-40": 8, "41-60": 4, "61-80": 2, "81-100": 1},
-    "lore": "Heracles once dipped his arrows in the blood of the Hydra, so that every scratch from them was death. The yellow-green venom in this stoppered vial was milked from an adder's fangs. It is a humbler poison, yet when it is painted along an edge each cut becomes a wound that goes on hurting. It does nothing at all to what poison cannot harm, such as the dead, the stone, and things that live upon venom themselves."
+    "lore": "Heracles once dipped his arrows in the blood of the Hydra, so that every scratch from them was death. The yellow-green venom in this stoppered vial was milked from an adder's fangs. It is a humbler poison, yet when it is painted along an edge each cut becomes a wound that goes on hurting. It does nothing at all to what has no blood to poison, such as the dead, the stone, and things that live upon venom themselves."
   },
   "flask_of_holy_water": {
     "name": "Flask of Holy Water",
@@ -116,7 +116,7 @@
     "tier": 4,
     "coat": {"substance": "poison", "blows": 16, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 6}},
     "floorSpawnWeight": {"41-60": 1, "61-80": 7, "81-100": 4},
-    "lore": "Heracles burned the last of the heads of the Hydra of Lerna and then cut open the body and dipped his arrows in its gall, and nothing that they touched was ever healed. One fell upon the foot of Chiron, the wise centaur who could not die, and so great was the pain that he gave away his immortality to be rid of it. Years afterward the centaur Nessus died by another, and his poisoned blood was the death of Heracles himself. The vial is dark green and oily and sealed with lead. Painted along an edge it turns every cut into a wound that festers for a while, but like any venom it can do nothing to what poison cannot harm."
+    "lore": "Heracles burned the last of the heads of the Hydra of Lerna and then cut open the body and dipped his arrows in its gall, and nothing that they touched was ever healed. One fell upon the foot of Chiron, the wise centaur who could not die, and so great was the pain that he gave away his immortality to be rid of it. Years afterward the centaur Nessus died by another, and his poisoned blood was the death of Heracles himself. The vial is dark green and oily and sealed with lead. Painted along an edge it turns every cut into a wound that festers for a while, but like any venom it can do nothing to what has no blood."
   },
   "flask_of_acid": {
     "name": "Flask of Acid",
@@ -172,7 +172,7 @@
     "tier": 3,
     "coat": {"substance": "poison", "blows": 12, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 5}},
     "floorSpawnWeight": {"41-60": 6, "61-80": 3, "81-100": 1},
-    "lore": "Island hunters smeared their blowgun darts with ipoh, the milky sap of the upas tree of Java, and a stoppered gourd of it is here. The London Magazine once claimed that the tree slew every living thing for fifteen miles about, and the truth, though smaller, is deadly enough. Worked into an edge the sap turns each cut into a poisoned one, though it does nothing to what poison cannot harm."
+    "lore": "Island hunters smeared their blowgun darts with ipoh, the milky sap of the upas tree of Java, and a stoppered gourd of it is here. The London Magazine once claimed that the tree slew every living thing for fifteen miles about, and the truth, though smaller, is deadly enough. Worked into an edge the sap turns each cut into a poisoned one, though it does nothing to what has no blood."
   },
   "eitr_venom": {
     "name": "Vial of Eitr",
@@ -183,6 +183,6 @@
     "tier": 5,
     "coat": {"substance": "poison", "blows": 16, "rider": {"effect": "poisoned", "chance": 1.0, "turns": 8}},
     "floorSpawnWeight": {"81-100": 4},
-    "lore": "In the beginning, as Snorri tells, eitr flowed from Niflheim in poisonous rivers and hardened like slag, save a little that never hardened. It lies black-green and thick in this vial of rime-crusted glass, so cold that it smokes. Painted along a blade it is the worst poison there is, and nothing that poison can harm will long shrug it off."
+    "lore": "In the beginning, as Snorri tells, eitr flowed from Niflheim in poisonous rivers and hardened like slag, save a little that never hardened. It lies black-green and thick in this vial of rime-crusted glass, so cold that it smokes. Painted along a blade it is the worst poison there is, and nothing that has blood in it can long shrug it off."
   }
 }

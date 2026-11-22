@@ -1217,10 +1217,10 @@ def test_the_vines_card_agrees_with_the_fixture(g):
     with open(os.path.join(ROOT, 'data', 'hazards.json'), encoding='utf-8') as f:
         text = f.read()
     spec = text[text.index('"conjured_vine"'):]
-    assert '"chance": 0.6' in spec and '"save": true' in spec
-    assert 'may catch whatever steps in' in LEARNABLE_SPELLS['dionysus_vine_spell']['desc']
+    assert '"chance": 1.0' in spec and '"save": true' in spec    # ruling A6: the save is the way out
+    assert 'vines catch whatever steps in' in LEARNABLE_SPELLS['dionysus_vine_spell']['desc']
     said = _cast(g, 'dionysus_vine_spell', _mon(g, 'kobold', 3))
-    assert 'may catch whatever steps in' in said
+    assert 'catch whatever steps in' in said and 'may catch' not in said
 
 
 # ---------------------------------------------------- h2-16: Sanctification

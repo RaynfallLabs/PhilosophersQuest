@@ -94,7 +94,7 @@
     },
     "conjured_vine": {
       "trigger": "step",
-      "chance": 0.6,
+      "chance": 1.0,
       "status": [
         "immobilized",
         2,

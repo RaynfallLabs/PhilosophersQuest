@@ -3535,7 +3535,9 @@ class MagicMixin(MagicWardsMixin):
             else:
                 bonus = [1, 2, 3, 5, 8][_tstep] + (2 if _buc == 'blessed' else 0)
             dur = [10, 20, 30, 50, 80][_tstep]
-            self.player.add_effect('shielded', dur)
+            # The turns written, past the 60 that stop a potion stacking
+            # (Absolute Ward's 80). A cursed rite keeps that limit.
+            self.player.add_effect('shielded', dur, cap=None if _buc == 'cursed' else dur)
             dur = turns_now(self.player, 'shielded', dur)       # the status cap, and what was left
             # (It printed "+{bonus} AC", up to +10; the ward is the Shielded
             # status, whatever the scroll's tier: 2 points of armor, and

@@ -5,8 +5,9 @@
 * A gift of plain food the hero set down near a Kappa or a Preta: it eats
   and keeps to itself for the floor (``appeased_by``). Struck by the hero or
   his pet, the peace is broken (lore_powers.after_damage).
-* Gold dropped near a gold-digging ant: it stops to gather it (Herodotus'
-  camels let go to slow the pursuit), and the gold is gone.
+* Gold the hero drops near a gold-digging ant: it stops to gather it
+  (Herodotus' camels let go to slow the pursuit), and the gold is gone. Gold
+  he never set down is left where it lies.
 * The Blue Men of the Minch call out a verse the turn one notices the hero,
   in place of a blow (never asleep, held or silenced; not one whose fellows
   are angry already) and hold their fire for a few turns: D
@@ -105,7 +106,11 @@ class LorePowersMixin:
 
     def _lore_powers_gold(self, m) -> None:
         from items import GoldPile
-        pile = self._near_ground(m, GOLD_REACH, lambda it: isinstance(it, GoldPile))
+        # Only what the hero set down to slow it (game_purse._drop_gold marks
+        # it `_set_down`), as with an offering: a hoard, a kill's purse or a
+        # pile he has never seen stays where it lies.
+        pile = self._near_ground(
+            m, GOLD_REACH, lambda it: isinstance(it, GoldPile) and getattr(it, '_set_down', False))
         if pile is None:
             return
         self.ground_items.remove(pile)

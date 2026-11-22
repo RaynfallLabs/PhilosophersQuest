@@ -558,15 +558,18 @@ class TraderMixin:
         v['given'] = int(v['given']) + extra
         v['pending'] = int(v['pending']) + max(0, gap - extra)
         offer += extra
-        from items import Ammo
-        if isinstance(item, Ammo):
+        # What is priced by the bundle (economy.ammo_bundles: arrows, torches)
+        # goes whole: the offer is for all of it. One torch at a time, every
+        # press was paid for all that were left.
+        whole = economy.ammo_bundles(item) is not None
+        if whole:
             name = self._display_name(item)
         elif int(getattr(item, 'count', 1) or 1) <= 1:
             name = f"the {self._bare_name(item)}"        # "You sell the Gold Idol to Grindle"
         else:
             from paths import a_or_an
             name = a_or_an(self._bare_name_one(item))
-        if isinstance(item, Ammo) or int(getattr(item, 'count', 1) or 1) <= 1:
+        if whole or int(getattr(item, 'count', 1) or 1) <= 1:
             self.player.inventory.remove(item)
             try:
                 self.player.refresh_carry_bonuses()
