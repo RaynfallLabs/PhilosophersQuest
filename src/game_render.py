@@ -3518,10 +3518,19 @@ class RenderMixin:
             if scrollable and qy > scroll_rect.bottom:
                 break
             if ghost is not None:
-                # Seen double: two whole lines, sliding together.
-                line_x = (bx + (bw - q_font.size(line)[0]) // 2) if is_combat else bx + inset
-                for _gs in (-1, 1):
-                    _at = (line_x + _gs * ghost[0], qy + _gs * ghost[1])
+                # Seen double: two whole lines, sliding together, inside the
+                # question's own band (under no chip, over no card).
+                line_w = q_font.size(line)[0]
+                line_x = (bx + (bw - line_w) // 2) if is_combat else bx + inset
+                _spare = (q_height - len(q_lines) * q_line_h) // 2 if is_combat else 0
+                _l, _r, _up = bx + S(8), bx + bw - S(8), _spare + S(2)
+                if scrollable:
+                    # (A long question scrolls inside a clip, which cuts too.)
+                    _l, _r = max(_l, scroll_rect.x), min(_r, scroll_rect.right)
+                    _up = min(_up, max(0, q_top - scroll_rect.y))
+                _room = (line_x - _l, _up, _r - (line_x + line_w), _spare + SECTION_GAP - S(2))
+                for _dx, _dy in quiz_sight.ghost_places(ghost, _room):
+                    _at = (line_x + _dx, qy + _dy)
                     if q_runs is not None:
                         from fantasy_ui import blit_runs, swim_color
                         blit_runs(self.screen, q_font, q_runs[li], _at, q_color,
@@ -3651,7 +3660,8 @@ class RenderMixin:
         elif is_combat:
             # Four fixed key-hint slots across the row, so the hints never
             # move and never run into each other.
-            keys = [f"{k}  {v}" for k, v, *_ in self._quiz_footer_pairs(qe, True, False)
+            keys = [f"{k}  {'Light' if k == 'Arrows' else v}"
+                    for k, v, *_ in self._quiz_footer_pairs(qe, True, False)
                     if k in ("1-4", "1-5", "Arrows")]
             hints = [
                 *((k, FP.HINT_TEXT) for k in keys),
@@ -3662,6 +3672,8 @@ class RenderMixin:
                  FP.GOLD if new_reader else FP.FADED_TEXT),
                 ("ESC  Abort", FP.FADED_TEXT),
             ]
+            if len(keys) > 1:
+                hints = [h for h in hints if h[0]]     # the light's key needs an empty slot's room
             slot_w = status_rect.w // len(hints)
             for i, (h_text, h_color) in enumerate(hints):
                 if not h_text:
@@ -3681,8 +3693,17 @@ class RenderMixin:
             if qe.state == QuizState.ASKING:
                 _txt = "   ".join(f"{k}  {v}" for k, v, *_ in
                                   self._quiz_footer_pairs(qe, False, False))
-                hint = self.font_sm.render(_txt, True, FP.HINT_TEXT)
-                self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, status_y + S(10)))
+                _right = bx + bw - PAD
+                if has_blurb:
+                    _right -= S(12) + self.font_sm.size(
+                        "C  Read About This" if new_reader else "C  Context")[0]
+                _left = bx + PAD
+                hint_font = self.font_sm
+                if hint_font.size(_txt)[0] > _right - _left:
+                    hint_font, _txt = self._fit_line(_txt, _right - _left, (18, 16, 14, 12))
+                hint = hint_font.render(_txt, True, FP.HINT_TEXT)
+                hx = min(bx + (bw - hint.get_width()) // 2, _right - hint.get_width())
+                self.screen.blit(hint, (max(_left, hx), status_y + S(10)))
             # Context-blurb discoverability hint: only shown when the current
             # (subject, topic) HAS a blurb — hidden otherwise so a bank
             # without authored blurbs doesn't tease the key for nothing.

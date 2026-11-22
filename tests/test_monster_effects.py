@@ -440,6 +440,17 @@ def test_blind_the_arrows_move_the_light_and_the_numbers_still_answer(monkeypatc
     assert given == ['4', '5']
 
 
+def test_double_vision_never_leaves_its_room():
+    """A glyph cut at a card's edge is another glyph ("60" read "50")."""
+    for offset in ((0, 0), (5, 3), (13, 9), (34, 24)):
+        for room in ((0, 0, 0, 0), (6, 1, 40, 8), (90, 30, 90, 30), (6, 9, 2, 0)):
+            left, up, right, down = room
+            (ax, ay), (bx, by) = Q.ghost_places(offset, room)
+            assert -left <= ax <= 0 <= bx <= right and -up <= ay <= 0 <= by <= down, (offset, room)
+    assert Q.ghost_places((13, 9), (90, 90, 90, 90)) == [(-13, -9), (13, 9)]
+    assert Q.ghost_places((13, 9), (6, 90, 90, 90)) == [(-6, -9), (20, 9)]
+
+
 def test_a_false_face_is_never_the_creatures_own():
     m = _mon('troll')
     for turn in range(0, 80, 4):

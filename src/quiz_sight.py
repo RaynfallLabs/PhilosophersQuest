@@ -74,6 +74,16 @@ def double_offset(share: float) -> tuple:
     return float(r['offset_x']) * left, float(r['offset_y']) * left
 
 
+def ghost_places(offset: tuple, room: tuple) -> list:
+    """Where the two images stand from the text's true place, no further
+    than ``room`` (left, up, right, down) lets a whole glyph go. A cut digit
+    is another digit, so what one side cannot take the other does."""
+    gx, gy = (max(0, int(v)) for v in offset)
+    left, up, right, down = (max(0, int(v)) for v in room)
+    lx, uy = min(gx, left), min(gy, up)
+    return [(-lx, -uy), (min(2 * gx - lx, right), min(2 * gy - uy, down))]
+
+
 # ---------------------------------------------------------------------------
 # The false answer
 # ---------------------------------------------------------------------------

@@ -1232,12 +1232,13 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     runs = swim if (isinstance(swim, list) and len(swim) == len(lines)) else None
     s_color = swim_color(t_color, KT.RAISED if art else FP.MIDNIGHT) if runs else None
     places = [(0, 0)]
-    clip = None
     if ghost and any(ghost):
-        gx, gy = ghost
-        places = [(-gx, -gy), (gx, gy)]
-        clip = surf.get_clip()
-        surf.set_clip(pygame.Rect(x + badge_w, y, max(1, w - badge_w), h).clip(clip))
+        import quiz_sight
+        pad = ui_scale.px(2)
+        wide = max(text_font.size(line)[0] for line in lines)
+        places = quiz_sight.ghost_places(
+            ghost, (tx - (x + badge_w) - pad, ty - y - pad,
+                    x + w - pad - (tx + wide), y + h - pad - (ty + block_h)))
     for i, line in enumerate(lines):
         for ox, oy in places:
             if runs is not None:
@@ -1246,8 +1247,6 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
                 t_surf = text_font.render(line, True, t_color)
                 surf.blit(t_surf, (tx + ox, ty + oy))
         ty += line_h
-    if clip is not None:
-        surf.set_clip(clip)
 
 
 def _choice_button_art(surf, rect, badge_w, correct, incorrect, selected) -> bool:
