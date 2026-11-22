@@ -5,7 +5,6 @@ not a trample; the careful kid meets a floorer or a stunner in Guard and
 buys his Oil once a stone that kills has been met."""
 import json
 import os
-import random
 import sys
 import types
 
