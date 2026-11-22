@@ -10,8 +10,9 @@ healing until it is cured; the ghoul's grave-filth; the plague). Now:
 
   * on the hero: while diseased his wounds do not mend by rest (natural
     regeneration stops, main._tick_hp_regen) and every heal that goes through
-    Player.restore_hp (potions, healing wands, spells, prayers, meals) does half
-    (Player.restore_hp); the stat sap stays. How long a monster's disease
+    Player.restore_hp (potions, healing wands, spells, prayers, meals, the
+    hero specials, the Wish and Restore Body; not lifesteal or a paid
+    physician) does half; the stat sap stays. How long a monster's disease
     lasts is the kind's own: its rider's `effect_duration`, times its
     `disease_linger` where its lore makes the sickness one that lingers
     (mummy rot 10, the plague-bringers 4-8; a rat's bite or a zombie's claw

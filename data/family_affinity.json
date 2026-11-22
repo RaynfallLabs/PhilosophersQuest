@@ -31,7 +31,10 @@
       "gnoll_alpha_of_yeenoghu": "It ate the demon-tainted flesh of the alpha before it.",
       "mere_wife": "The Beowulf poet names Grendel's kin the race of Cain, whom the Creator outlawed and condemned.",
       "kallikantzaros": "The kallikantzaroi flee the blessing of the waters at Epiphany: holy water drives them back under the earth.",
-      "image_of_the_beast": "Made to be worshipped in the Beast's place (Revelation 13): an idol, and a cursed thing."
+      "image_of_the_beast": "Made to be worshipped in the Beast's place (Revelation 13): an idol, and a cursed thing.",
+      "redcap": "Border folk drove him off with words of Scripture or the sight of a cross (the folklore of the Scottish Border).",
+      "shadow_assassin": "He bartered away his own shadow for the right to walk in shadows, and holy light finds him out.",
+      "shadow_archer": "He learned his craft from the darkness and fletches his arrows with it, so holy light burns him."
     }
   },
   "tag_rules": {
@@ -492,10 +495,10 @@
       ]
     },
     "jellies": {
-      "lore": "There are jellies that flow even round an edge, and only fire and cold truly harm them.",
+      "lore": "A blow that can only cut divides a jelly of this kind, and only fire and cold truly harm it.",
       "source": "Dungeons & Dragons, Monster Manual (1977): the ochre jelly.",
       "form": {
-        "slash": "resist"
+        "slash": "neutral"
       },
       "kinds": [
         "ochre_jelly"
@@ -1472,6 +1475,14 @@
         "sleeping",
         "blinded"
       ]
+    },
+    "grick": {
+      "lore": "The grick's rubbery hide gives under blade and point like wet leather, though magic will search it through.",
+      "source": "Dungeons & Dragons, Monster Manual (2014): the grick resists ordinary weapons. Of those, the club is left to the hero (ruling B3).",
+      "form": {
+        "slash": "resist",
+        "pierce": "resist"
+      }
     }
   }
 }

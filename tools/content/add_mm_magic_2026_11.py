@@ -391,7 +391,7 @@ WORTH = {
 }
 
 VINE_HAZARD = {
-    'trigger': 'step', 'chance': 0.6, 'status': ['immobilized', 2, 4], 'save': True,
+    'trigger': 'step', 'chance': 1.0, 'status': ['immobilized', 2, 4], 'save': True, 'resist': True,
     'hero': "The god's vines wind round your legs and hold you fast!",
     'monster': "The vines wind round {the} and hold {him} fast!",
     'arrival': "Vines and ivy have grown up out of the stone here.",

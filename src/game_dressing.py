@@ -221,10 +221,13 @@ class DressingMixin:
     def _say_accessory_on(self, item, name: str) -> None:
         p = self.player
         fx = item.effects
-        if 'status' in fx:
+        from items import worn_statuses
+        lent = worn_statuses(fx)
+        if lent:
             # the status by its name, not its id ("You feel fire_resist!")
             from status_effects import EFFECT_INFO as _EI
-            _label = (_EI.get(fx['status']) or (str(fx['status']).replace('_', ' ').title(),))[0]
+            _label = ' and '.join((_EI.get(st) or (str(st).replace('_', ' ').title(),))[0]
+                                  for st in lent)
             self.add_message(f"You slip on the {name}. You feel {_label}!", 'success')
         elif fx.get('stat') and fx.get('amount'):
             _st, _amt = fx['stat'], int(fx['amount'])
@@ -312,8 +315,9 @@ class DressingMixin:
                 # weaker ring of the same stat takes over).
                 p.accessory_off(item)
                 fx = item.effects
-                if 'status' in fx:
-                    self._remove_status_if_no_other_grants(fx['status'])
+                from items import worn_statuses
+                for _st in worn_statuses(fx):
+                    self._remove_status_if_no_other_grants(_st)
         else:
             return False
         p.inventory.append(item)

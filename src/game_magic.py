@@ -192,6 +192,9 @@ def _polymorph_swap(game, target, new_m) -> str:
         new_m.__dict__['_effect_token'] = _tok
     idx = game.monsters.index(target)
     game.monsters[idx] = new_m
+    falls = getattr(game, '_ai_summons_fall', None)
+    if callable(falls):
+        falls(target)           # an Overseer no more: its workers fall still
     if _hidden(new_m, game.player):
         new_m._unseen = True
         return f"{old} warps and vanishes from sight!"
@@ -591,6 +594,8 @@ class MagicMixin(MagicWardsMixin):
         got = target.add_effect(effect, duration)
         if not got:
             return 0, ''
+        import lore_powers as _lp_wound
+        _lp_wound.wronged(target, effect)       # a wound laid ends a peace, as a blow does
         return got, (_aff.status_line('weak', effect, target) if weak else '')
 
     def _say_inflicted(self, target, got: int, why: str, landed: str, shrugged: str) -> None:
@@ -669,10 +674,15 @@ class MagicMixin(MagicWardsMixin):
                 self.player, got, "Intense healing washes over you -- {n} HP restored!"), 'success')
 
         elif effect == 'restore_body':
-            self.player.hp = self.player.max_hp
+            # Through disease like any heal (ruling D5, 2026-11-22).
+            self.player.restore_hp(self.player.max_hp - self.player.hp)
             self.player.sp = self.player.max_sp
             self.player.mp = self.player.max_mp
-            self.add_message("Your body is fully restored!", 'success')
+            whole = "Your body is fully restored!"
+            said = grave_rot.whole(self.player, whole)
+            if said != whole:
+                said = f"SP and MP restored. {said}"
+            self.add_message(said, 'success')
 
         elif effect == 'haste_self':
             dur = self._wand_tier_duration(12, wand.quiz_tier)
@@ -2325,22 +2335,29 @@ class MagicMixin(MagicWardsMixin):
 
         # --- Detect Magic / Identify / Omnisight: reveal magical item BUC ---
         # v2.12.0: three-tier family. T1 detect_magic reveals FLOOR items in
-        # sight. T3 identify_spell also reveals PACK items. T5 omnisight also
-        # reveals EQUIPPED items (all slots).
+        # sight. T3 identify_spell also reveals PACK items. T5 omnisight
+        # reveals everything (ruling C15, 2026-11-22): every item on the whole
+        # floor, in the pack and worn (all slots, the belt too).
         if effect == 'identify_item':
-            from items import Wand, Scroll, Spellbook
+            from items import Wand, Scroll, Spellbook, Corpse, buc_known_to
             _stier = int(spell.get('tier', spell.get('quiz_tier', 1)))
+            _all = _stier >= 5
             revealed = 0
             for it in self.ground_items:
-                if (it.x, it.y) in self.visible and isinstance(it, (Wand, Scroll, Spellbook)):
+                if _all:
+                    if (not isinstance(it, Corpse) and hasattr(it, 'buc_known')
+                            and not buc_known_to(it, self.player)):
+                        it.buc_known = True
+                        revealed += 1
+                elif (it.x, it.y) in self.visible and isinstance(it, (Wand, Scroll, Spellbook)):
                     if hasattr(it, 'buc_known'):
                         it.buc_known = True
                     revealed += 1
             inv_reveals = 0
-            from items import buc_known_to
             if _stier >= 3:
                 for it in self.player.inventory:
-                    if (isinstance(it, (Wand, Scroll, Spellbook))
+                    if ((isinstance(it, (Wand, Scroll, Spellbook))
+                         or (_all and not isinstance(it, Corpse)))
                             and hasattr(it, 'buc_known')
                             and not buc_known_to(it, self.player)):
                         it.buc_known = True
@@ -2359,6 +2376,9 @@ class MagicMixin(MagicWardsMixin):
                 am = getattr(self.player, 'amulet_slot', None)
                 if am:
                     equipped.append(am)
+                belt = getattr(self.player, 'belt_slot', None)
+                if belt:
+                    equipped.append(belt)
                 for it in equipped:
                     if hasattr(it, 'buc_known') and not buc_known_to(it, self.player):
                         it.buc_known = True
@@ -2392,13 +2412,16 @@ class MagicMixin(MagicWardsMixin):
             if kind == 'stat_bonus' and self.player.fortune_stat_room() <= 0:
                 kind = 'strong_buff'      # the run's allowance of lucky points is spent
             if kind == 'full_restore':
-                self.player.hp = self.player.max_hp
+                # Through disease like any heal (ruling D5, 2026-11-22).
+                self.player.restore_hp(self.player.max_hp - self.player.hp)
                 self.player.sp = self.player.max_sp
                 self.player.mp = self.player.max_mp
-                self.add_message(
-                    "WISH GRANTED! You feel utterly whole -- "
-                    "HP, SP, and MP restored!",
-                    'success')
+                whole = ("WISH GRANTED! You feel utterly whole -- "
+                         "HP, SP, and MP restored!")
+                said = grave_rot.whole(self.player, whole)
+                if said != whole:
+                    said = f"WISH GRANTED! SP and MP restored. {said}"
+                self.add_message(said, 'success')
             elif kind == 'stat_bonus':
                 stat = random.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
                 old = getattr(self.player, stat)
@@ -3577,7 +3600,9 @@ class MagicMixin(MagicWardsMixin):
             else:
                 bonus = [1, 2, 3, 5, 8][_tstep] + (2 if _buc == 'blessed' else 0)
             dur = [10, 20, 30, 50, 80][_tstep]
-            self.player.add_effect('shielded', dur)
+            # The turns written, past the 60 that stop a potion stacking
+            # (Absolute Ward's 80). A cursed rite keeps that limit.
+            self.player.add_effect('shielded', dur, cap=None if _buc == 'cursed' else dur)
             dur = turns_now(self.player, 'shielded', dur)       # the status cap, and what was left
             # (It printed "+{bonus} AC", up to +10; the ward is the Shielded
             # status, whatever the scroll's tier: 2 points of armor, and

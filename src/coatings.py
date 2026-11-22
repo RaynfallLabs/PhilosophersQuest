@@ -259,6 +259,13 @@ def _resists(monster, sub: str) -> bool:
         set(getattr(monster, 'shrugs_off', None) or ())
 
 
+def _no_blood(monster, effect: str) -> bool:
+    """A venom rides the blood: it does nothing to what has none (an ooze, a
+    plant: Monster.can_bleed, data/monster_blood.json)."""
+    bleeds = getattr(monster, 'can_bleed', None)
+    return effect == 'poisoned' and callable(bleeds) and not bleeds()
+
+
 def after_blow(player, monster, weapon, actual: int) -> list:
     """A coated weapon's blow that landed on ``monster`` (``actual`` damage):
     its rider, fire's fright and burn-stop, and one blow spent. Returns the
@@ -286,8 +293,8 @@ def after_blow(player, monster, weapon, actual: int) -> list:
     rider = c.get('rider') if isinstance(c.get('rider'), dict) else None
     if alive and rider and actual > 0:
         eff = str(rider.get('effect', ''))
-        if _resists(monster, sub) or (
-                callable(getattr(monster, 'resists_control', None)) and monster.resists_control(eff)):
+        if (_resists(monster, sub) or _no_blood(monster, eff) or (
+                callable(getattr(monster, 'resists_control', None)) and monster.resists_control(eff))):
             # Said once a fight per creature, not every blow.
             if monster.__dict__.get('_coat_refused') != c.get('id'):
                 monster.__dict__['_coat_refused'] = c.get('id')

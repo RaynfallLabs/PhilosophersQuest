@@ -43,8 +43,11 @@ def _granted(item) -> set:
     if st:
         out.add(st)
     fx = getattr(item, 'effects', None) or {}
-    if isinstance(fx, dict) and fx.get('status') and 'effect_chance' not in fx:
-        out.add(fx['status'])
+    if isinstance(fx, dict) and 'effect_chance' not in fx:
+        from items import Weapon, worn_statuses
+        # (On a weapon `effects.status` is what its blow does to a foe.)
+        if not isinstance(item, Weapon):
+            out.update(worn_statuses(fx))
     return out
 
 
@@ -108,11 +111,27 @@ _ACC_FIELDS = ('effects', 'save_bonus', 'tier', 'quiz_tier', 'equip_threshold', 
                'special', 'daimonion')
 
 
+def _refresh_weapon(item) -> bool:
+    """A named weapon takes only a status it has since been given to lend in
+    the hand (the Shamshir-e Zomorrodnegar's magic resistance): its damage
+    is the copy's own."""
+    d = _named('weapon').get(getattr(item, 'id', '') or '')
+    if not d:
+        return False
+    lends = d.get('on_equip_status', '') or ''
+    if lends and not getattr(item, 'on_equip_status', ''):
+        item.on_equip_status = lends
+    return True
+
+
 def refresh_named(item) -> bool:
     """Take a named piece's mechanical fields from today's data. True if it
     is a named armour piece, shield or accessory (whether or not anything
     moved)."""
     from items import Accessory, Armor, Shield, make_item_by_id
+    from items import Weapon
+    if isinstance(item, Weapon):
+        return _refresh_weapon(item)
     if isinstance(item, Armor):
         cat = 'armor'
     elif isinstance(item, Shield):
@@ -195,7 +214,7 @@ def migrate(player, all_items) -> None:
         for st in before[id(w)] - after[id(w)]:
             player.drop_worn_status(st)
         for st in after[id(w)] - before[id(w)]:
-            if st not in player.status_effects:
+            if player.status_effects.get(st) != -1:      # a timed one running too
                 player.add_effect(st, -1)
     # The worn stats move only if what a worn piece lends moved (a save's
     # ledger is otherwise left exactly as it was).
@@ -208,7 +227,7 @@ def migrate(player, all_items) -> None:
 
 
 def _worn(player):
-    for slot in ('shield', 'amulet_slot', 'belt_slot'):
+    for slot in ('weapon', 'ranged_weapon', 'shield', 'amulet_slot', 'belt_slot'):
         it = getattr(player, slot, None)
         if it is not None:
             yield it

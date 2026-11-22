@@ -419,7 +419,9 @@ def _drag_step(m, player, dungeon, monsters, extra_occupied) -> bool:
 
 
 def blow(m, player):
-    """The squeeze, the gut or the drowning, for the hold attack's own
+    """The squeeze, the gut or the drowning (no roll to hit and no dodge; it
+    meets what turns any blow aside: Monster._through_hide, _turn_aside,
+    _sent_back), for the hold attack's own
     dice (Monster.attack, when take_turn chose it): (damage, line), or None."""
     if not m.__dict__.pop('_squeeze_now', False):
         return None
@@ -444,12 +446,16 @@ def blow(m, player):
         dmg = max(1, int(round(dmg * float(rules().get('drown_mult', 1.5) or 1.5))))
     if m.has_effect('weakened'):
         dmg = max(1, dmg // 2)
-    dmg = _mon._edge_incoming(player, m, dmg, dtype)
+    dmg = m._through_hide(player, dmg, dtype)
+    dmg, note = m._turn_aside(player, dmg, dict(atk, type=dtype), dtype)
     actual = player.take_damage(dmg, dtype)
     st['turns'] = int(st.get('turns', 0) or 0) + 1
     m.__dict__['_hold_hurt'] = 0           # a fresh turn: cut again to get out
     key = 'under' if under else ('drag' if dragged else 'squeeze')
-    return actual, _line(key, m, hk, damage=actual)
+    line = _line(key, m, hk, damage=actual)
+    if note and actual > 0:
+        line += f" {note}"
+    return actual, m._sent_back(player, dmg, actual, dtype, line)
 
 
 def shields(player, m) -> bool:

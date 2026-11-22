@@ -93,14 +93,26 @@ class BehaviourMixin:
         return 'other', ''
 
     def _ai_on_kill(self, m) -> None:
-        """One of a side fell: its hurt kin that saw it may break (morale),
-        and it may burst (death throes)."""
+        """One of a side fell: what it called may fall still with it
+        (summoning), its hurt kin that saw it may break (morale), and it may
+        burst (death throes)."""
+        self._ai_summons_fall(m)
         try:
             morale.kin_fell(self.monsters, m, getattr(self, 'dungeon', None))
         except Exception as exc:          # never let a nerve check stop a kill
             from game_log import log_error
             log_error(f"morale.kin_fell: {exc!r}")
         self._ai_throes(m)
+
+    def _ai_summons_fall(self, m) -> None:
+        """The Ushabti Overseer's workers fall still with it."""
+        import summoning
+        fallen = summoning.fall_still(m, self.monsters)
+        if fallen and any(self._sees_monster(o) or (o.x, o.y) in self.visible for o in fallen):
+            from monster import fill
+            line = (kind_data.field(m, 'summons_fall') or {}).get('line', '')
+            if line:
+                self.add_message(fill(m, line), 'success')
 
     # ------------------------------------------------------------------
     # Death Throes (src/death_throes.py)

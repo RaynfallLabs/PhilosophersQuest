@@ -169,11 +169,12 @@ def test_h3_05_pinned_and_uncharmed_it_still_strikes():
 # ------------------------------------------------- the cards, until he rules
 
 @pytest.mark.parametrize('fid', ['viper_venom', 'hydras_blood', 'eitr_venom', 'ipoh_venom'])
-def test_h3_07_a_venoms_card_promises_nothing_by_blood(fid):
+def test_h3_07_a_venoms_card_says_what_it_spares(fid):
+    """Brandon's ruling A2 (2026-11-22): blood is the rule, so the card says blood."""
     flasks = _data('items', 'flask.json')
     lore = next(v['lore'] for k, v in flasks.items()
                 if k == fid or (fid == 'ipoh_venom' and 'ipoh' in str(v.get('lore', ''))))
-    assert 'no blood' not in lore and 'has blood in it' not in lore
+    assert 'no blood' in lore or 'has blood in it' in lore
 
 
 def test_h2_05_the_styx_promises_only_what_it_turns():

@@ -54,14 +54,14 @@ FLASKS = {
         'min_level': 44, 'tier': 3,
         'coat': {'substance': 'poison', 'blows': 12, 'rider': {'effect': 'poisoned', 'chance': 1.0, 'turns': 5}},
         'floorSpawnWeight': {'41-60': 6, '61-80': 3, '81-100': 1},
-        'lore': ("Island hunters smeared their blowgun darts with ipoh, the milky sap of the upas tree of Java, and a stoppered gourd of it is here. The London Magazine once claimed that the tree slew every living thing for fifteen miles about, and the truth, though smaller, is deadly enough. Worked into an edge the sap turns each cut into a poisoned one, though it does nothing to what poison cannot harm."),
+        'lore': ("Island hunters smeared their blowgun darts with ipoh, the milky sap of the upas tree of Java, and a stoppered gourd of it is here. The London Magazine once claimed that the tree slew every living thing for fifteen miles about, and the truth, though smaller, is deadly enough. Worked into an edge the sap turns each cut into a poisoned one, though it does nothing to what has no blood or is proof against poison."),
     },
     'eitr_venom': {
         'name': 'Vial of Eitr', 'symbol': '!', 'color': [60, 120, 90], 'weight': 0.2,
         'min_level': 80, 'tier': 5,
         'coat': {'substance': 'poison', 'blows': 16, 'rider': {'effect': 'poisoned', 'chance': 1.0, 'turns': 8}},
         'floorSpawnWeight': {'81-100': 4},
-        'lore': ("In the beginning, as Snorri tells, eitr flowed from Niflheim in poisonous rivers and hardened like slag, save a little that never hardened. It lies black-green and thick in this vial of rime-crusted glass, so cold that it smokes. Painted along a blade it is the worst poison there is, and nothing that poison can harm will long shrug it off."),
+        'lore': ("In the beginning, as Snorri tells, eitr flowed from Niflheim in poisonous rivers and hardened like slag, save a little that never hardened. It lies black-green and thick in this vial of rime-crusted glass, so cold that it smokes. Painted along a blade it is the worst poison there is, though even eitr does nothing to what has no blood or is proof against poison."),
     },
 }
 

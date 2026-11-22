@@ -496,6 +496,7 @@ def test_gold_dropped_stops_a_gold_digging_ant():
     from items import GoldPile
     m = _m('myrmekes', 6, 5)
     g = _Game([m], [GoldPile(30, 7, 6)])
+    g.ground_items[0]._set_down = True         # the hero dropped it (ruling A4)
     g._lore_powers_before(m)
     assert not g.ground_items and m.__dict__['_lp_busy'] == 3
     assert lore_powers.turn(m, g.player, g.dungeon, g.monsters, set()) is False

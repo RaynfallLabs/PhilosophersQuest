@@ -977,15 +977,17 @@ def _eff_heal_and_crit_buff(game, special, tier, chain):
     if heal == 0 and crit_turns == 0:
         game.add_message("The Voices are silent.", 'warning')
         return
-    before = game.player.hp
-    game.player.hp = min(game.player.max_hp, game.player.hp + heal)
-    got = game.player.hp - before
+    got = game.player.restore_hp(heal)        # through disease (ruling D5)
     if crit_turns:
         cur = game.player.status_effects.get('crit_buff', 0)
         game.player.status_effects['crit_buff'] = max(cur, crit_turns)
-    game.add_message(
-        f"The Maid's Standard! +{got} HP; your next strike deals +50% damage (within {quantity(crit_turns, 'turn')}).",
-        'success')
+    strike = f"our next strike deals +50% damage (within {quantity(crit_turns, 'turn')})."
+    if got > 0:
+        said = f"The Maid's Standard! +{got} HP; y{strike}"
+    else:
+        import grave_rot
+        said = f"The Maid's Standard! {grave_rot.told(game.player, got, '')} Y{strike}"
+    game.add_message(said, 'success')
 
 
 def _eff_reveal_radius(game, special, tier, chain):
@@ -1024,9 +1026,10 @@ def _eff_aoe_heal_self(game, special, tier, chain):
         game.add_message("The green light does not bloom.", 'warning')
         return
     if heal:
-        before = game.player.hp
-        game.player.hp = min(game.player.max_hp, game.player.hp + heal)
-        game.add_message(f"Viriditas — green life. +{game.player.hp - before} HP.", 'success')
+        import grave_rot
+        got = game.player.restore_hp(heal)    # through disease (ruling D5)
+        game.add_message(grave_rot.told(game.player, got, "Viriditas — green life. +{n} HP."),
+                         'success')
     if cleanse_n > 0:
         from status_effects import DEBUFFS
         debs = [e for e in list(game.player.status_effects) if e in DEBUFFS]

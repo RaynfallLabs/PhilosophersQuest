@@ -49,6 +49,8 @@ class HazardsMixin:
             elif h.get('save'):
                 from status_effects import apply_debuff_with_save
                 _ok, _msg = apply_debuff_with_save(self.player, name, random.randint(lo, hi), 14)
+                if _ok and h.get('hero'):
+                    self.add_message(h['hero'], 'danger')   # held: only now is it said
                 if _msg:
                     self.add_message(_msg, 'danger' if _ok else 'success')
             else:
@@ -91,7 +93,8 @@ class HazardsMixin:
                                   levitating=self.player.has_effect('levitating'),
                                   rng=random):
             return
-        if h.get('hero'):
+        # A snare he may save against says it holds him once it does.
+        if h.get('hero') and not (h.get('save') and h.get('status')):
             self.add_message(h['hero'], 'danger')
         self._hazard_hit_hero(h)
         hazards.spend(self.dungeon, (x, y), h)
@@ -101,10 +104,16 @@ class HazardsMixin:
         from dice import roll as _dice_roll
         from floor_curve import HAZARD_BAR, HAZARD_CAP, wound as _wound
         seen = self._sees_monster(m)
+        st = h.get('status')
+        taken = True
+        if st and h.get('resist'):
+            # The hero's own vine takes hold as its cast does (ruling A6):
+            # always, but a great foe has its roll to break free (_inflict).
+            taken = bool(self._inflict(m, st[0], random.randint(int(st[1]), int(st[2])))[0])
         line = h.get(line_key, '')
-        if line and seen:
-            from monster import the_name
-            text = line.replace('{The}', the_name(m)).replace('{the}', the_name(m, lower=True))
+        if line and seen and taken:
+            from monster import fill
+            text = fill(m, line)
             self.add_message(text[:1].upper() + text[1:], 'info')
         dmg_str = h.get('damage')
         if dmg_str:
@@ -118,8 +127,7 @@ class HazardsMixin:
                 m.take_damage(raw, h.get('type', 'physical'))
             finally:
                 self._damage_by = _by
-        st = h.get('status')
-        if st:
+        if st and not h.get('resist'):
             m.add_effect(st[0], random.randint(int(st[1]), int(st[2])))
         if h.get('pit'):
             m.status_effects['stuck_in_pit'] = max(m.status_effects.get('stuck_in_pit', 0), 3)

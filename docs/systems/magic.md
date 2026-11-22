@@ -523,7 +523,8 @@ are documented in [status_effects](status_effects.md).
 - **`cleanse_self`** — pop one debuff.
 - **`identify_item`** (Detect Magic / Identify / Omnisight family) — a
   three-tier BUC reveal: T1 reveals magic items in sight, T3 adds
-  inventory, T5 adds equipped.
+  inventory, T5 reveals every item on the whole floor, in the pack and
+  worn (every slot, the belt too; ruling C15, 2026-11-22).
 
 ### 6.6 Kill-threshold / lethal spells
 

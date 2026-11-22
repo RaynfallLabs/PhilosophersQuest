@@ -313,5 +313,7 @@ class PurseMixin:
             return 0
         from items import add_gold_to_tile
         self.player_gold = int(self.player_gold) - amount
-        add_gold_to_tile(self.ground_items, amount, self.player.x, self.player.y, found=False)
+        # By his own hand (`set_down`): a gold-digging ant stops for this pile.
+        add_gold_to_tile(self.ground_items, amount, self.player.x, self.player.y,
+                         found=False, set_down=True)
         return amount

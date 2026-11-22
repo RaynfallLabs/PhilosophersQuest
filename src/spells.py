@@ -439,7 +439,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Omnisight', 'effect': 'identify_item', 'power': '',
         'mp_cost': 20, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'detect_magic',
-        'desc': 'Shows blessed or cursed: worn gear but the belt; wands, scrolls and books seen or carried.',
+        'desc': 'Shows blessed or cursed: every item on the floor, in your pack and worn.',
     },
 
     # ==================================================================
@@ -742,7 +742,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': "Dionysus's Vine", 'effect': 'entangle', 'power': '',
         'mp_cost': 7, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'entangle', 'duration': 4,
-        'desc': 'Vines burst up round one foe: everything walking there is held fast for 4 turns, and for 12 turns the vines may catch whatever steps in, you too.',
+        'desc': 'Vines burst up round one foe: everything walking there is held fast for 4 turns, and for 12 turns the vines catch whatever steps in. You may save; the greatest foes may break free.',
     },
     'shrink_the_earth_spell': {
         'name': 'Shrink the Earth', 'effect': 'aimed_step', 'power': '',

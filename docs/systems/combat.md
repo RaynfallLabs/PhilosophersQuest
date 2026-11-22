@@ -12,7 +12,7 @@ The chain quiz is the only mechanic the player will interact with hundreds of ti
 
 ## Design intent
 
-- **Chain IS the crit.** v2.14.0 retired `crit_multiplier` entirely. The polynomial `chain**exponent` ladder delivers all the "big number" reward. No flat crit chance, no crit-dice, no "next hit auto-crits" state. Harpe's petrify, Kusanagi's surround-bonus, and Soul Reaver's innocent-kill trigger were all rewired away from crit.
+- **Chain IS the crit.** v2.14.0 retired `crit_multiplier` entirely. The polynomial `chain**exponent` ladder delivers all the "big number" reward. No flat crit chance, no crit-dice, no "next hit auto-crits" state. Harpe's petrify and Kusanagi's surround-bonus were rewired away from crit (Soul Reaver's innocent-kill trigger was too, and was removed on 2026-11-22: ruling C7).
 - **Math skill = combat skill.** WIS = quiz-timer seconds. Simple math drops the floor; stacking long chains lifts the ceiling. See `docs/design/chain_combat_v2.md` for the authoritative Timer section — `SUBJECT_TIMER['math'] = (0, 1.0)` makes WIS the sole timer source.
 - **Chain 20 is reachable on floor 1.** A fast player can chain 20 on their first swing. Chain-20 effects are rewarding but not instant-kill — any instant-kill at chain 20 would be oppressive against bosses. See [`docs/design/weapon_specials_v2_14.md`](../design/weapon_specials_v2_14.md) §Core principles #5.
 - **One rung fires, not all of them.** `_chain_special_tier()` returns the HIGHEST qualifying threshold; chain 20 does NOT additionally fire chain 15 / 10 / 5 effects. The chain-20 package is designed as a complete payoff for that rung.
@@ -111,7 +111,7 @@ _start_combat(monster)                              # game_combat.py
           hero passives: will_to_power +30% @ <30%HP, witcher_mutations +20%, niten_ichi_ryu +15%
           buffs: crit_buff +50% (legacy, consumed one charge), berserk +30%
           BUC: +1 blessed / -1 cursed
-          Chandrahasa low_hp_mult up to 2× at 0% HP
+          low_hp_damage_bonus up to 2× at 0% HP (an old save's Chandrahasa: retired 2026-11-22)
           str_factor = 1 + max(0, STR-10)*0.03   (MELEE ONLY — ranged keeps 1.0 to avoid STR+PER double-dip)
           if (blade_flow or _chain_bypass_dr) and dtype_mult < 1.0: dtype_mult = 1.0
           damage = max(1, round((base + enchant + ammo_bonus + buc) * mult * dtype_mult * str_factor * low_hp_mult))
@@ -137,7 +137,7 @@ _start_combat(monster)                              # game_combat.py
           Curtana spare_kill, Mjolnir chain-lightning, Zulfiqar every-hit secondary,
           Gandiva multi-arrow, Rod of Moses plagues table, Laevateinn boss doom_dot,
           Spear of Longinus weep-heal, Sudarshana return-to-hand ward,
-          Soul Reaver innocent-kill → blade_flow +1, Ring of Gyges invis-attack karma,
+          Ring of Gyges invis-attack karma (a blow landed on monster.is_innocent),
           Echidna random status, Cadmus / Vel / Shamshir summon ally pet,
           lifesteal_percent, kill_heal_amount, growing_power +1 base per N kills,
           Khopesh of Anubis +max_hp per kill
@@ -311,7 +311,7 @@ Melee swings resolve entirely inside `player_attack._callback`. Monster-to-playe
 'halberd':   set()          # halberd C20 keeps sunder, does NOT bypass DR
 ```
 
-`blade_flow` is a stack-consumed player buff (max 10 stacks). Each attack consumes 1 stack. Granted by 1h sword C15 (+3), 1h sword C20 (+4), 2h sword C20 (+3), and Soul Reaver's `growth_on_innocent_kill` (+1).
+`blade_flow` is a stack-consumed player buff (max 10 stacks). Each attack consumes 1 stack. Granted by 1h sword C15 (+3), 1h sword C20 (+4), and 2h sword C20 (+3).
 
 ### Weakness / resistance / shrugs off (the lore pass, 2026-11-13)
 
@@ -415,7 +415,7 @@ Combat consumers of `is_boss` / `'boss' in tags`:
 crit = False
 ```
 
-`Weapon.crit_multiplier` is still LOADED from JSON (`items.py:325`) for backward compat but is never consumed. Harpe's old `petrify_on_crit` was rewired to fire at chain ≥ 15 (`combat.py:1456`); Kusanagi's old force-crit became a flat ×1.25 damage when 3+ enemies are adjacent (`combat.py:1118`); Soul Reaver's "next-hit auto-crit" became `+1 blade_flow` stack (`combat.py:1779-1782`).
+`Weapon.crit_multiplier` is still LOADED from JSON (`items.py:325`) for backward compat but is never consumed. Harpe's old `petrify_on_crit` was rewired to fire at chain ≥ 15 (`combat.py:1456`); Kusanagi's old force-crit became a flat ×1.25 damage when 3+ enemies are adjacent (`combat.py:1118`). (Soul Reaver's "next-hit auto-crit" became a `blade_flow` stack that could never fire; it was removed on 2026-11-22, ruling C7.)
 
 The `crit_buff` status (Joan of Arc / Ash's She-Bitch hero passive) still provides a +50% damage multiplier (`combat.py:1226`) and consumes one duration charge per attack. It's the only legacy crit mechanic left live.
 
@@ -434,7 +434,7 @@ The pre-damage hook (`combat._apply_chain_class_pre_damage`) sets `player._chain
 | `armor_crack` | Monster | +25% damage received for N turns | Mace C10+, 2h warhammer C15+ |
 | `sundered` | Monster | -30% outgoing damage for N turns | Fist C10, Rapier C10+, 1h axe C10+, 2h axe C10+, halberd C10+ |
 | `deep_wound` | Monster | +25% damage received AND cannot regenerate for N turns | Fist C15+, Dagger C10 |
-| `blade_flow` | **Player** | Next N attacks bypass DR (stack-consumed, cap 10) | 1h sword C15 (+3) / C20 (+4), 2h sword C20 (+3), Soul Reaver innocent-kill (+1) |
+| `blade_flow` | **Player** | Next N attacks bypass DR (stack-consumed, cap 10) | 1h sword C15 (+3) / C20 (+4), 2h sword C20 (+3) |
 | `ruptured` | Monster | 10% max HP / turn DoT; cannot be healed | Dagger C20 |
 | `impaled` | Monster | Cannot move for N turns (can still attack in place) | Spear C20 |
 
@@ -461,7 +461,8 @@ the coating's substance, so it meets a weakness through the one bane rule
 dust on a steel mace hits a werewolf as silver. `player_attack`'s callback
 calls `coatings.after_blow` on every blow that lands: the rider (venom
 poisons, frost slows, fire may set burning) takes hold only on a creature
-that neither resists nor shrugs off the substance and whose nature allows
+that neither resists nor shrugs off the substance, for a venom has blood
+to carry it (`Monster.can_bleed`; ruling A2, 2026-11-22), and whose nature allows
 the effect (`Monster.hold`: status_immune, named-foe caps); fire or acid on a
 blade also stops a troll's mending and frightens what fears fire
 (`Monster._after_typed_hit`); one blow is spent. A refused rider ("The Viper

@@ -254,8 +254,10 @@ def test_armor_procs_consume_run_charge_once_per_run():
 
 def test_monster_attack_wires_unskinnable():
     from monster import Monster
-    src = inspect.getsource(Monster.attack) + inspect.getsource(Monster._resolve_blow)
-    assert 'unskinnable' in src
+    # (The hide is a step of its own since ruling A5, 2026-11-22: a squeeze
+    # meets it too.)
+    assert 'self._through_hide(' in inspect.getsource(Monster._resolve_blow)
+    assert 'unskinnable' in inspect.getsource(Monster._through_hide)
 
 
 def test_monster_attack_wires_dodge_first_arrow():

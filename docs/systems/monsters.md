@@ -111,7 +111,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `pack_min_allies` | int | default 1 | Threshold used by `pack_dependent`. |
 | `prefers_flank` | bool | default False | Rotates approach direction 90° when an ally is already pressuring the player on the same vector. 3 monsters. |
 | `can_phase_walls` | bool | default False | Movement can pass through `dungeon.phasing_walls`. Three monsters: `asterion_minotaur` (hit-and-run), `elder_vampire`, `ancient_vampire_lord`. |
-| `can_phase_blink` | bool | default False | Chance to teleport adjacent when `>= 3` tiles from the player. 7 monsters. |
+| `can_phase_blink` | bool | default False | Chance to teleport adjacent when `>= 3` tiles from the player. 14 monsters, the blink dog among them (ruling B6, 2026-11-22), which alone must see the hero to blink (`blink_needs_sight`: never through a wall). |
 | `phase_blink_chance` | float | default 0.30 | Per-turn chance when eligible. |
 | `can_charge` | bool | default False | Arms a damage multiplier when approaching the player on a cardinal or diagonal axis at distance 2-5. 7 monsters. |
 | `charge_bonus_mult` | float | default 1.5 | Damage multiplier when a charged attack lands. |
@@ -163,6 +163,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `summon_kind` | str or [str] | Monster id(s) to summon. Empty = no summoner. Monsters that carry a value include `ancient_lich`, `skeleton_mage`, `skeleton_necromancer`, `skeleton_lich`, `banshee_lich`, `lich_sovereign` (its court of dead knights, 2026-11-17), `cult_hierophant`, `imp_lord`, `snake_charmer`, `whispering_crone`, `crypt_summoner`, `endor_medium`, `ushabti_overseer`, `tiamat`, `asmodeus`. |
 | `summon_cooldown` | int | default 5 | Turns between summons. |
 | `summon_max` | int | default 4 | Hard cap on summoned minions this encounter. |
+| `summons_fall` | `{line, tell}` | default none | When it dies or is polymorphed, what it called (`_summoned_by`) falls still with it: gone, with no loot, body or kill (`summoning.fall_still`). The Ushabti Overseer (ruling B12, 2026-11-22). |
 | `locust_interval` | int | default 0 | Abaddon-specific: turns between locust-swarm bursts. |
 | `locust_count` | [min, max] | default [0, 0] | Range of locusts per burst. |
 | `base_resistances` | [str] | | Abaddon's base resistance set (surfaced during the locust-ring quest mechanic). |
@@ -519,7 +520,7 @@ The drain type (67 kinds) cost a point of CON on a failed save, at most once a f
 
 ### Grave Rot (`grave_rot`, `src/grave_rot.py`)
 
-`diseased` cost a stat point about one bite in three and no health, and was gone in 4-8 turns; on a monster it ticked 0.4% a turn. Now, on the hero, while diseased his wounds do not mend by rest (`main._tick_hp_regen`) and every heal that goes through `Player.restore_hp` does half (potions, healing wands, spells, prayers, meals; a drain wand's draw, a kill's heal, a life-stealing blow, a few hero specials and the full restores written straight to his health do not go through it; a heal's line prints what was healed, and one that calls him whole is said only when he is: `grave_rot.told`, `grave_rot.whole`; the stat sap stays); a monster's disease lasts its rider's own `effect_duration`, times the kind's `disease_linger` where its lore makes the sickness one that lingers (mummy rot 10; Pazuzu's spawn, Hel's handmaid, the plague ooze 8; the plague witch, Nidhogg's brood 6; the aboleth, the otyugh, the demon general, the abyssal dragon 5; the plague zombie, the harrow witch, the ghast-eater 4; the huecuva 3), at most 60 turns (`status_effects.MAX_EFFECT_DURATION`); a rat's bite, a zombie's claw, a wererat's or a death dog's bite keep their own few turns. (A first build lingered every disease x 10, which the lore never asked of a rat's bite; the simulation section of the AI-1 report says what it cost the slowest kid.) On a monster it costs `max_hp / 40` a turn (poison's rate) and stops its regeneration (a sick troll does not mend). Cured by the Potion of Cure Disease, the Mercy prayer at a chain of 4 (before its heal, so the heal is whole), the physician, a fountain's best water; `poison_resist` and `drain_resist` block it. The rubric's line on riders (`docs/design/MONSTER_LORE_PASS_2026_11_19.md`) now says what each one does.
+`diseased` cost a stat point about one bite in three and no health, and was gone in 4-8 turns; on a monster it ticked 0.4% a turn. Now, on the hero, while diseased his wounds do not mend by rest (`main._tick_hp_regen`) and every heal that goes through `Player.restore_hp` does half (potions, healing wands, spells, prayers, meals, the hero specials, the Wish and Restore Body; a drain wand's draw, a kill's heal, a life-stealing blow or special, a paid physician, the Phoenix Rising power and the full restores of the unicorn and the lore fixtures do not go through it: ruling D5, 2026-11-22, names the specials, the Wish and Restore Body; a heal's line prints what was healed, and one that calls him whole is said only when he is: `grave_rot.told`, `grave_rot.whole`; the stat sap stays); a monster's disease lasts its rider's own `effect_duration`, times the kind's `disease_linger` where its lore makes the sickness one that lingers (mummy rot 10; Pazuzu's spawn, Hel's handmaid, the plague ooze 8; the plague witch, Nidhogg's brood 6; the aboleth, the otyugh, the demon general, the abyssal dragon 5; the plague zombie, the harrow witch, the ghast-eater 4; the huecuva 3), at most 60 turns (`status_effects.MAX_EFFECT_DURATION`); a rat's bite, a zombie's claw, a wererat's or a death dog's bite keep their own few turns. (A first build lingered every disease x 10, which the lore never asked of a rat's bite; the simulation section of the AI-1 report says what it cost the slowest kid.) On a monster it costs `max_hp / 40` a turn (poison's rate) and stops its regeneration (a sick troll does not mend). Cured by the Potion of Cure Disease, the Mercy prayer at a chain of 4 (before its heal, so the heal is whole), the physician, a fountain's best water; `poison_resist` and `drain_resist` block it. The rubric's line on riders (`docs/design/MONSTER_LORE_PASS_2026_11_19.md`) now says what each one does.
 
 ### Light-Shy and Snuff the Light (`light_shy_and_snuff`, `src/light_shy.py`)
 
@@ -565,7 +566,7 @@ A kind's `spells` (2-4): `{id, kind, name, weight, cooldown, wind_up?, when: {..
 
 ### Held Fast (`held_fast`, `src/holds.py`)
 
-An attack's `hold`: `{kind: constrict | swallow | drag, type, break_share, max_turns <= 4, save: STR | DEX}`. A landed blow the hero fails to slip (a DEX save: the hero status `held`, HARD control, so its cap of 4 turns and the grace) takes him. He cannot walk away: a step is a struggle (STR or DEX against the hold's DC), a step into the holder a blow on it; swallowed, every step is a blow on it. The holder's turn, pinned or free (pinned it drags him nowhere), is its squeeze, its gut or its drag, for the hold attack's own dice, typed, no roll to hit; a drag first hauls him a tile toward water within 10 tiles (never onto a pit, a trap or a hazard) and at the water's edge pulls him under (x1.5). Swallowed, nothing outside the holder reaches him (`holds.shields`): no blow (`MonsterWaysMixin._ways_shield`), no curse, dispel or darkness (`caster_ai.can_target`), no aura, no thrown pot, no burst; and none of his reaches anything outside: an area spell, a scroll or a wand catches only the holder (`_in_spell_sight`, `_in_hero_reach`), as does what takes the whole floor (Time Freeze, genocide), a chain special's, a hero power's or a splash's other targets (`holds.strikable`); every aim's cursor opens on what the list offers, and a blow, shot, throw, wand or spell aimed outside by hand is refused with nothing spent (`holds.aim_refused`; a Soul Sphere is no blow, and a pet's special is the pet's, outside); and no binding shuts his blow on the holder from inside (`_ways_held_move` comes before the bear-trap check). The ways out: a blow or blows of `break_share` of the holder's health between two of its turns (any blow, the hero's, a pet's, a spell's; never a wound ticking); the struggle; the holder dead, asleep, held, afraid, charmed or broken; the hero Loosed (`free_action`) or in the Coif of Beowulf; a family ward against its holds (the Psylli's against a serpent: rider `held` in `data/wards.json`, `holds.ward_line`; no hold takes him, and one read while held lets him go); the pair parted (a teleport, a shove, a pull); the status running out; a floor change. Then he is Recovering (`control_immune`). A silenced holder keeps its grip. The holder is kept by its uid (`_uid`, on the hero `_held`), so a save in a hold loads and a holder gone on load lets go. Not a debuff (no cure lifts a grip). Kinds: constrict (the rock python, the naga guardian, the assassin vine, the darkmantle, the Norse sea serpent, Jormungandr's spawn, the void leviathan), swallow (the gelatinous cube and titan, the taniwha), drag (the each-uisce, the mere-wife, the Sobek warrior's death roll); the old stand-in rider on each attack is gone. Tells: `hold_constrict`, `hold_swallow`, `hold_drag`.
+An attack's `hold`: `{kind: constrict | swallow | drag, type, break_share, max_turns <= 4, save: STR | DEX}`. A landed blow the hero fails to slip (a DEX save: the hero status `held`, HARD control, so its cap of 4 turns and the grace) takes him. He cannot walk away: a step is a struggle (STR or DEX against the hold's DC), a step into the holder a blow on it; swallowed, every step is a blow on it. The holder's turn, pinned or free (pinned it drags him nowhere), is its squeeze, its gut or its drag, for the hold attack's own dice, typed, no roll to hit and no dodge, but through whatever turns an ordinary blow aside (the Lion's hide, the material, the guards, family knowledge) or sends it back (`Monster._through_hide`, `_turn_aside`, `_sent_back`); a drag first hauls him a tile toward water within 10 tiles (never onto a pit, a trap or a hazard) and at the water's edge pulls him under (x1.5). Swallowed, nothing outside the holder reaches him (`holds.shields`): no blow (`MonsterWaysMixin._ways_shield`), no curse, dispel or darkness (`caster_ai.can_target`), no aura, no thrown pot, no burst; and none of his reaches anything outside: an area spell, a scroll or a wand catches only the holder (`_in_spell_sight`, `_in_hero_reach`), as does what takes the whole floor (Time Freeze, genocide), a chain special's, a hero power's or a splash's other targets (`holds.strikable`); every aim's cursor opens on what the list offers, and a blow, shot, throw, wand or spell aimed outside by hand is refused with nothing spent (`holds.aim_refused`; a Soul Sphere is no blow, and a pet's special is the pet's, outside); and no binding shuts his blow on the holder from inside (`_ways_held_move` comes before the bear-trap check). The ways out: a blow or blows of `break_share` of the holder's health between two of its turns (any blow, the hero's, a pet's, a spell's; never a wound ticking); the struggle; the holder dead, asleep, held, afraid, charmed or broken; the hero Loosed (`free_action`) or in the Coif of Beowulf; a family ward against its holds (the Psylli's against a serpent: rider `held` in `data/wards.json`, `holds.ward_line`; no hold takes him, and one read while held lets him go); the pair parted (a teleport, a shove, a pull); the status running out; a floor change. Then he is Recovering (`control_immune`). A silenced holder keeps its grip. The holder is kept by its uid (`_uid`, on the hero `_held`), so a save in a hold loads and a holder gone on load lets go. Not a debuff (no cure lifts a grip). Kinds: constrict (the rock python, the naga guardian, the assassin vine, the darkmantle, the Norse sea serpent, Jormungandr's spawn, the void leviathan), swallow (the gelatinous cube and titan, the taniwha), drag (the each-uisce, the mere-wife, the Sobek warrior's death roll); the old stand-in rider on each attack is gone. Tells: `hold_constrict`, `hold_swallow`, `hold_drag`.
 
 ### Auras (`auras`, `src/auras.py`)
 
@@ -636,17 +637,25 @@ family assignment, harvest and the kitchen, packs.json herds, tells, hints, purs
     does not break it (lore_powers.BLAME, the Game's `_damage_by`; `_dot_tick`). Asleep,
     held, stunned or frozen, a creature takes no gift and gathers no gold.
   - attack `steal: "offering"`: the Preta snatches plain food and eats it (theft.py).
-  - `parley`: the Blue Men call a verse the turn one notices the hero and has him in
-    sight, in place of a blow (`lore_powers.calls`; never asleep, held or silenced; one
+  - `parley`: the Blue Men (a verse: grammar), the two Sphinxes (a riddle: philosophy,
+    at the parley's own `tier`, 2 and 3) and the Xorn (`toll`: gold, then treasure, a
+    share of the floor's income set once, `economy.BRIBE_SHARE`; refused, it fights; a
+    hero short of it is told so and pays nothing) call the turn one notices the hero and has him in
+    sight, in place of a blow (a hidden Sphinx as he comes near, and then it is no
+    surprise) (`lore_powers.calls`; never asleep, held or silenced; one
     whose fellows are angry already is angry too, and only those who never called wait)
     and hold their fire 6 turns; D answers (one
-    question of `subject` at their tier); right, the pack is calm for the floor; wrong,
-    the squall comes down at once (each one's next blow is its `storm` attack). Walk
+    question of `subject` at their tier; struck before it calls, or found already fighting,
+    it never offers one, and a poison or other lasting wound he lays breaks the peace as
+    a blow does: `lore_powers.too_late`, `wronged`); right, the pack is calm for the floor; wrong,
+    the squall comes down at once (each one's next blow is its `storm` attack). A kind's
+    own tell is the parley's `tell`. Walk
     away or strike and they attack. Waiting, fed or answered (`lore_powers.holds_fire`)
     a creature strikes no hero, pet or escort, pinned, at bay or free, and no pet, horn's
     ally or rescue goes for it unbidden (`lore_powers.at_peace`).
-  - `gold_gatherer`: gold dropped within 2 tiles of a gold-digging ant is gathered
-    up (and gone); the ant spends `turns` doing it.
+  - `gold_gatherer`: gold the hero himself drops within 2 tiles of a gold-digging
+    ant (`_set_down`: never found gold, an overflow or a thief's return) is
+    gathered up (and gone); the ant spends `turns` doing it.
   - `corpse_hop`: when the Vetala's body falls, the spirit rises in the nearest corpse
     within `radius` at `hp_share` of its health, at most `max_hops` times. Harvest or
     search the dead first.
@@ -680,7 +689,8 @@ family assignment, harvest and the kitchen, packs.json herds, tells, hints, purs
 - **QA key:** Shift+Y (Titivillus only) sets the next new kind down beside the hero.
 - **Simulator:** knob `mm_powers` (default 1; 0 is the ablation): the powers run in
   the real code the simulator calls, the Cu-Sith's barks in its world turn, and the
-  Blue Men's verse is answered before the fight.
+  Blue Men's verse and the Sphinxes' riddle are answered before the fight. A toll
+  (the Xorn's) is not: the simulator's hero keeps his gold and fights it.
 - **Tests:** `tests/test_mm_kinds.py`, `tests/test_mm_kinds_ai1.py`.
 
 ## The Tactical Mind (AI-2, 2026-11-20)
@@ -877,7 +887,7 @@ Brandon's ruling 13 (2026-11-16): "mini-bosses with cool unique drops are suppos
 | 4 | 69 | Wendigo | The winter hunger of the northern forests, whose heart is ice: the frost is its country (it was floor 85). | Wendigo's Fang (`wendigo_fang`) | 4 | floor 85 -> 69; drop tier 5 -> 4 |
 | 4 | 74 | The Green Knight | Morgan le Fay's enchanted knight, who keeps his chapel at the turn of the year, in the snow. | The Green Girdle (`green_girdle`) | 4 | drop tier 5 -> 4 |
 | 4 | 76 | Wild Hunt Captain | The riders of the winter storm, Wotan's or Herne's: the frost is theirs (he was floor 90). | Hunt Captain's Sword (`hunt_captains_sword`) | 4 | floor 90 -> 76; drop tier 5 -> 4 |
-| 4 | 77 | Charybdis | The whirlpool that swallows the sea three times a day, opposite Scylla (74). | Sailor's Amulet (`sailors_amulet`) | 4 | floor 78 -> 77; drop tier 2 -> 4 |
+| 4 | 77 | Charybdis | The whirlpool that swallows the sea three times a day, opposite Scylla (74). | Sailor's Amulet (`sailors_amulet`: cold resistance, and warning as `effects.status2`) | 4 | floor 78 -> 77; drop tier 2 -> 4 |
 | 4 | 78 | Ymir's Last Spawn | A frost giant of the first morning, before the flood of Ymir's blood: the mightiest of the frost, met at Fenrir's door (it was floor 85). | Vambraces of the First Winter (`vambraces_of_the_first_winter`) | 4 | floor 85 -> 78; drop tier 5 -> 4 |
 | 5 | 82 | Ravana's Arm | One arm of Ravana, king of the rakshasas, that did not die with him: a demon's remnant, the least of the abyss. | Ring of Iron Grip (`ring_of_iron_grip`) | 5 | floor 80 -> 82; drop tier 2 -> 5 |
 | 5 | 84 | Blood Archon | An older grade of fiend who keeps his ledger in blood. | The Exsanguinating Blade (`exsanguinating_blade`) | 5 | floor 82 -> 84; new drop |

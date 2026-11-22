@@ -783,6 +783,16 @@ def food_sp(player, food_item) -> int:
     return sp
 
 
+def food_stops(food_item) -> list:
+    """The ills a food ends when eaten (food.json `stops`: the healing herb
+    stops bleeding). One from an old save reads today's data."""
+    own = getattr(food_item, 'stops', None)
+    if own is None:
+        import wards
+        own = wards.item_def('food', getattr(food_item, 'id', '')).get('stops')
+    return list(own or ())
+
+
 def eat_food(player, food_item) -> list[str]:
     """
     Directly consume a Food item. Returns list of messages.
@@ -804,6 +814,9 @@ def eat_food(player, food_item) -> list[str]:
         _hp_got = player.restore_hp(hp)
         if _hp_got > 0:
             messages.append(f"The food soothes your wounds. (+{_hp_got} HP)")
+    for effect in food_stops(food_item):
+        if player.status_effects.pop(effect, None):
+            messages.append(f"It staunches the {effect.replace('_', ' ')}.")
     # Its own line, if it has one (an older pickle has none).
     _line = getattr(food_item, 'eat_line', '') or ''
     if _line:

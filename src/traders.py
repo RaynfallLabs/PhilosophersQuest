@@ -583,7 +583,7 @@ def credits_owed(reg: dict, used: int) -> int:
 # chest, the master lockpick) is never bought.
 SELLABLE_CLASSES = frozenset({'weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll',
                               'spellbook', 'potion', 'flask', 'food', 'ammo', 'ingredient',
-                              'artifact', 'treasure'})
+                              'artifact', 'treasure', 'light'})
 # The one kind of artifact a trader deals in: the six Soul Spheres
 # (data/items/artifact.json 'sphere'; never the Unusual Soul Sphere).
 SELLABLE_ARTIFACTS = frozenset({'soul_sphere', 'greater_soul_sphere', 'master_sphere',

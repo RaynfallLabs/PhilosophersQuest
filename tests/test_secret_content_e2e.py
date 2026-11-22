@@ -1134,13 +1134,13 @@ def test_the_sword_of_pelops_calls_the_house_of_atreus_on_a_descent(monkeypatch)
 
 
 def test_chandrahas_leaves_a_wicked_hand(monkeypatch):
-    """Shiva's gift. Two uniques carry the name: 'chandrahas' (the T4
-    scimitar) holds the karma-vanish proc; 'chandrahasa' (the T5 sword) holds
-    the low-HP damage bonus."""
+    """Shiva's gift: 'chandrahas' (the T4 scimitar) holds the karma-vanish
+    proc. 'chandrahasa' (the T5 sword) was retired for it (ruling C10,
+    2026-11-22): its id gives this one, and old copies keep their picture."""
     from items import make_item_by_id
     g = _game('__test_chandrahasa__')
     sword = make_item_by_id('weapon', 'chandrahasa')
-    assert sword is not None and getattr(sword, 'low_hp_damage_bonus', False)
+    assert sword is not None and sword.id == 'chandrahas'
     blade = make_item_by_id('weapon', 'chandrahas')
     assert blade is not None and getattr(blade, 'karma_disappear_proc', 0) > 0
     assert _own_item_art('chandrahas') and _own_item_art('chandrahasa')

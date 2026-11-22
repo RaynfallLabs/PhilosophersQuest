@@ -78,7 +78,9 @@ Aegis `petrify_immune`, the furnace `fire_shield`.
 Hooks: `Monster._resolve_blow` asks `wards.blow_gate` (through `monster._ward_gate`)
 first thing, and so do `Monster.attack`'s two gaze branches (`GAZE_BLOW`; a
 gaze a ward stops is spent, and the blow that follows a turned gaze goes
-through `_resolve_blow`) and a hold's squeeze (`holds.blow`);
+through `_resolve_blow`) and a hold's squeeze (`holds.blow`, which then
+shares the blow's own hide, material, guard and reflection steps:
+`Monster._through_hide`, `_turn_aside`, `_sent_back`);
 `Monster._apply_attack_effect` asks `wards.rider_line`;
 `monster._edge_incoming` multiplies `wards.damage_mult`; `senses._hidden` asks
 `wards.hidden_from` and `senses.sees` `wards.veil_hides`; `Monster.take_damage`
@@ -128,7 +130,7 @@ it may still use; at range it loses the turn, with a line.
 | Elf-Shot | 1 | paralyses one foe 3 turns (the paralyse ladder's first rung) |
 | Galdr of the Stayed Spear | 2 | Stayed Spear 12 turns |
 | Tacita's Seal | 2 | one foe Silenced 10 turns |
-| Dionysus's Vine | 2 | the target's 3x3 held 4 turns; conjured vines there 12 turns, which may catch whatever steps in (the hazard's chance and save) |
+| Dionysus's Vine | 2 | the target's 3x3 held 4 turns; conjured vines there 12 turns, which catch whatever steps in (always; the hero's save is his way out, and a great foe's resist roll, the cast's own, is its way out) |
 | Shrink the Earth | 2 | an aimed step to a seen, empty tile within 6, over a clear line of walkable ground (never through a wall the Crown of Brahma shows; a tile spell: `needs_tile`) |
 | Bough of Somnus | 2 | the target and all beside it asleep 8 turns |
 | Galdr of Dulled Blades | 3 | everything in sight Weakened 8 turns |

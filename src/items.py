@@ -483,6 +483,15 @@ def is_fully_known(item, player) -> bool:
     return kind_is_known(player, item)
 
 
+def worn_statuses(fx) -> list:
+    """The statuses a ring, amulet or belt lends while worn, from its
+    `effects`: `status`, and a second in `status2` (as `stat2` is a second
+    stat): the Sailor's Amulet's cold resistance and its warning."""
+    if not isinstance(fx, dict):
+        return []
+    return [fx[k] for k in ('status', 'status2') if fx.get(k)]
+
+
 def buc_known_to(item, player=None) -> bool:
     """Is this copy's blessing or curse known? Flagged known (an altar, a
     curse that showed itself when worn), the copy identified, or its kind
@@ -815,10 +824,6 @@ class Weapon(Item):
         # 0.5}. At chain 5 ranged hit, hit up to N other visible monsters.
         self.multi_arrow_at_chain_5: dict = defn.get(
             'multi_arrow_at_chain_5', {}) or {}
-        # Soul Reaver: growth_on_innocent_kill = True. Killing a
-        # non-hostile NPC marks the next hit for auto-crit.
-        self.growth_on_innocent_kill: bool = bool(
-            defn.get('growth_on_innocent_kill', False))
         # Chandrahasa: karma_disappear_proc = 0.05 (chance per floor
         # change when karma is negative). Vanishes back to Shiva.
         self.karma_disappear_proc: float = float(
@@ -1608,6 +1613,8 @@ class Food(Item):
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', defn.get('floorSpawnWeight', {}))
         # A line of its own when it is eaten (caviar, tater tots: songs.py).
         self.eat_line: str = defn.get('eat_line', '') or ''
+        # The ills it ends (food_system.food_stops).
+        self.stops: list = list(defn.get('stops') or ())
         # Food is recognizable by appearance -- identified by default
         self.identified: bool       = True
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
@@ -1778,7 +1785,7 @@ def is_found_gold(pile) -> bool:
 
 
 def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int,
-                     found: bool = True) -> 'GoldPile':
+                     found: bool = True, set_down: bool = False) -> 'GoldPile':
     """Pool gold on a single tile instead of creating overlapping piles.
     If a GoldPile of the same kind (found, or the hero's own) already exists
     at (x, y), add to it; otherwise create new. Returns the resulting pile.
@@ -1786,18 +1793,23 @@ def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int,
     The two kinds never merge: found gold poured onto a pile the hero
     dropped lost its "found" mark, and the hero's own gold returned by a
     thief onto a found pile gained one (a gold ring doubled it,
-    ECONOMY_REFACTOR_PROPOSAL S2)."""
+    ECONOMY_REFACTOR_PROPOSAL S2). Nor does what he set down himself
+    (``set_down``) merge with the rest of his own, an overflow or a thief's
+    return: a gold-digging ant takes that pile only (ruling A4)."""
     if amount <= 0:
         return None
     for it in ground_items:
         if (isinstance(it, GoldPile) and it.x == x and it.y == y
-                and is_found_gold(it) == bool(found)):
+                and is_found_gold(it) == bool(found)
+                and bool(getattr(it, '_set_down', False)) == bool(set_down)):
             it.amount += amount
             it._refresh_name()
             return it
     pile = GoldPile(amount, x, y)
     if not found:
         pile._dropped_by_player = True
+    if set_down:
+        pile._set_down = True
     ground_items.append(pile)
     return pile
 
@@ -1933,7 +1945,7 @@ def scripted_only_ids() -> frozenset:
                 role = (defn.get('special_properties') or {}).get('plot_role')
                 if role and role != 'wonder_relic':
                     locked.add(item_id)
-                elif int(defn.get('min_level') or 0) >= 9999:
+                elif int(defn.get('min_level') or 0) >= 9999 or defn.get('parked'):
                     locked.add(item_id)
                 elif not _has_spawn_weight(defn):
                     locked.add(item_id)
@@ -3065,6 +3077,26 @@ def copy_at(item: Item, x: int, y: int) -> Item:
     return inst
 
 
+# Items taken out of the game, by the old id: what answers to it now (ruling
+# C10, 2026-11-22: Shiva gave Ravana one sword, and the game had two). A
+# copy in an old save keeps its own powers; a new one is the one that stayed.
+RETIRED_IDS = {('weapon', 'chandrahasa'): 'chandrahas'}
+
+
+def current_id(item_class: str, item_id: str) -> str:
+    """The id that answers to ``item_id`` today."""
+    return RETIRED_IDS.get((item_class, item_id), item_id)
+
+
+def is_parked(item_class: str, item_id: str) -> bool:
+    """A parked entry (`parked` in its data: powers no code reads) is kept
+    and never granted (ruling C11: Pandora's Box, Aladdin's Lamp)."""
+    if item_class != 'artifact':
+        return False
+    import wards
+    return bool(wards.item_def(item_class, item_id).get('parked'))
+
+
 def make_item_by_id(item_class: str, item_id: str) -> Item | None:
     """Return a fresh shallow-copy instance of a data-driven item by id.
 
@@ -3077,6 +3109,9 @@ def make_item_by_id(item_class: str, item_id: str) -> Item | None:
     `color`, or `lore` on the returned instance for dynamic cases
     (e.g. Bound Soul Sphere carries a pet name in its display name).
     """
+    item_id = current_id(item_class, item_id)
+    if is_parked(item_class, item_id):
+        return None
     for base in load_items(item_class):
         if getattr(base, 'id', None) == item_id:
             return copy.copy(base)

@@ -5,8 +5,12 @@
 * A gift of plain food the hero set down near a Kappa or a Preta: it eats
   and keeps to itself for the floor (``appeased_by``). Struck by the hero or
   his pet, the peace is broken (lore_powers.after_damage).
-* Gold dropped near a gold-digging ant: it stops to gather it (Herodotus'
-  camels let go to slow the pursuit), and the gold is gone.
+* Gold the hero drops near a gold-digging ant: it stops to gather it
+  (Herodotus' camels let go to slow the pursuit), and the gold is gone. Gold
+  he never set down is left where it lies.
+* A parley (``parley`` in monsters.json): the Sphinxes ask a philosophy
+  riddle, and the Xorn wants gold or gems (``toll``). They call and wait as
+  the Blue Men do (below).
 * The Blue Men of the Minch call out a verse the turn one notices the hero,
   in place of a blow (never asleep, held or silenced; not one whose fellows
   are angry already) and hold their fire for a few turns: D
@@ -60,7 +64,8 @@ class LorePowersMixin:
     # --------------------------------------------------- before its turn
     def _lore_powers_before(self, m) -> None:
         """Before a creature's turn: a gift it sees, gold dropped near it,
-        the Blue Men's verse."""
+        a parley's call (the Blue Men's verse, a Sphinx's riddle, a Xorn's
+        price)."""
         if not lore_powers.ENABLED or not getattr(m, 'alive', False):
             return
         # Asleep, held, stunned or frozen, it neither eats, gathers nor calls.
@@ -105,7 +110,11 @@ class LorePowersMixin:
 
     def _lore_powers_gold(self, m) -> None:
         from items import GoldPile
-        pile = self._near_ground(m, GOLD_REACH, lambda it: isinstance(it, GoldPile))
+        # Only what the hero set down to slow it (game_purse._drop_gold marks
+        # it `_set_down`), as with an offering: a hoard, a kill's purse or a
+        # pile he has never seen stays where it lies.
+        pile = self._near_ground(
+            m, GOLD_REACH, lambda it: isinstance(it, GoldPile) and getattr(it, '_set_down', False))
         if pile is None:
             return
         self.ground_items.remove(pile)
@@ -119,6 +128,9 @@ class LorePowersMixin:
         d = m.__dict__
         state = d.get('_lp_parley')
         if state is None:
+            if lore_powers.too_late(m):
+                d['_lp_parley'] = 'angry'     # the fight came first
+                return
             # It calls out once it has noticed the hero (src/senses.py) and
             # has him in its sight: a voice, heard whether or not he can see
             # it yet. Silenced, it has no voice to call with.
@@ -136,7 +148,7 @@ class LorePowersMixin:
                     o.__dict__['_lp_wait'] = PARLEY_WAIT
             spec = lore_powers.spec(m, 'parley') or {}
             self.add_message(spec.get('call', ''), 'warning')
-            self.add_message("Press D to answer them, or keep away.", 'info')
+            self.add_message(spec.get('prompt') or "Press D to answer, or keep away.", 'info')
             return
         if state != 'waiting':
             return
@@ -155,8 +167,8 @@ class LorePowersMixin:
         return lore_powers.parley_group(m, self.monsters)
 
     def _parley_offer(self) -> bool:
-        """D with the Blue Men waiting in sight: their one question. True if
-        it was asked."""
+        """D with a parley waiting in sight: its one question, or its price
+        (a ``toll``). True if it was put to the hero."""
         waiting = [m for m in self.monsters
                    if m.alive and m.__dict__.get('_lp_parley') == 'waiting'
                    and max(abs(m.x - self.player.x), abs(m.y - self.player.y)) <= PARLEY_REACH
@@ -168,10 +180,12 @@ class LorePowersMixin:
         lead = waiting[0]
         spec = lore_powers.spec(lead, 'parley') or {}
         subject = str(spec.get('subject', 'grammar'))
-        tier = max(1, min(5, int(getattr(lead, 'harvest_tier', 1) or 1)))
+        tier = lore_powers.parley_tier(lead, spec)
         # (those answered before, or angered, are not asked again)
         group = [o for o in self._parley_group(lead)
                  if o.__dict__.get('_lp_parley') in (None, 'waiting')]
+        if spec.get('toll'):
+            return self._parley_toll(lead, group, spec)
         from game_states import STATE_PLAYER, STATE_QUIZ
         self.quiz_title = f"{the_name(lead).upper()}  --  {subject.upper()}"
         self.state = STATE_QUIZ
@@ -205,6 +219,44 @@ class LorePowersMixin:
             extra_seconds=self.player.get_quiz_extra_seconds(subject),
             base_seconds=self.player.get_quiz_timer(subject),
         )
+        return True
+
+    def _parley_toll(self, lead, group: list, spec: dict) -> bool:
+        """The Xorn's bargain: a share of the floor's income, coin first and
+        then treasure (game_purse), and it keeps to itself for the floor. A
+        blow breaks the bargain as it breaks any answered parley. Its price
+        is set once, as the Bribe's is."""
+        import economy
+        cost = lead.__dict__.get('_lp_toll')
+        if not cost:
+            cost = max(1, economy.roll_share(random, self.dungeon_level, economy.BRIBE_SHARE))
+            for o in group:
+                o.__dict__['_lp_toll'] = cost
+        wants = f"{the_name(lead)} wants {cost:,} gold"
+        plan = self._payment_plan(cost)
+        if plan is None:
+            self.add_message(f"{wants}, and you have not enough in coin or treasure.", 'warning')
+            return False                      # nothing to ask, so D is Drop as ever
+
+        def settle(paid: bool) -> None:
+            for o in group:
+                o.__dict__['_lp_parley'] = 'calm' if paid else 'angry'
+                if paid:
+                    o.__dict__['_lp_calm'] = True
+                else:
+                    o._aware = True
+            self.add_message(spec.get('right' if paid else 'wrong', ''),
+                             'success' if paid else 'danger')
+            self._advance_turn()
+
+        def pay() -> None:
+            if self._pay_gold(cost) is not None:
+                settle(True)
+
+        self._ask(f"{wants}", ["Pay, and it will let you be unless you strike it."],
+                  [('P', 'Pay', f"{self._payment_words(plan)}.", pay),
+                   ('R', 'Refuse', "It will fight you.", lambda: settle(False))],
+                  esc='not yet')
         return True
 
     # ---------------------------------------------------- after its turn

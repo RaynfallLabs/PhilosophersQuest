@@ -31,8 +31,11 @@ def test_khopesh_of_anubis_kill_max_hp_grant():
     assert w.kill_heal_amount == 3
 
 
-def test_chandrahasa_low_hp_damage_bonus_flag():
-    w = _find(load_items('weapon'), 'chandrahasa')
+def test_an_old_chandrahasas_low_hp_damage_bonus_still_loads():
+    """Retired (ruling C10, 2026-11-22): old copies keep the power."""
+    from items import Weapon
+    w = Weapon(dict(_find(load_items('weapon'), 'chandrahas').__dict__,
+                    id='chandrahasa', low_hp_damage_bonus=True))
     assert w.low_hp_damage_bonus is True
 
 

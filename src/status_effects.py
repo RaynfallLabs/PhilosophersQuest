@@ -914,7 +914,9 @@ def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> 
         if effect in REFRESHES:
             player.status_effects[effect] = max(current, min(duration, limit))
         else:
-            player.status_effects[effect] = min(current + duration, limit)
+            # (A limit stops stacking past it; it never cuts what already runs
+            # longer: Absolute Ward's 80 fell to 60 as any other Shielded came.)
+            player.status_effects[effect] = min(current + duration, max(limit, current))
         sync_timed_grants(player)
     if not current and player.status_effects.get(effect, 0):
         effect_rules.opened(player, effect)

@@ -69,7 +69,6 @@
     "max_enchant": 5,
     "weapon_class_chain": "finesse",
     "design_notes": "Signature chain: finesse opener; the blade hesitates on the first cut (0.2x) and only commits once it tastes blood. Lifesteal makes the long ramp viable.",
-    "growth_on_innocent_kill": true,
     "chain_exponent": 1.15
   },
   "dawnbreaker": {
@@ -2859,7 +2858,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a blade that seems to move before you do",
-    "lore": "The Slavs tell of the Self-Swinger, which in their tales fights of itself and is found in kingdoms beneath the earth with Koschei or a serpent to guard it. The heroes who find it never wholly understand it, but it leaps so readily to the hand, and stuns so many of those it strikes, that they count it very useful.",
+    "lore": "The Slavs tell of the Self-Swinger, which fights of itself and is found in kingdoms beneath the earth with Koschei or a serpent to guard it. The heroes who find it never wholly understand it, but since the sword does the fighting and they live through it, they take no fright at its having a will of its own, and count it very useful.",
     "damage_types": [
       "slash",
       "magic"
@@ -2883,7 +2882,7 @@
     "_curve_note": "Redistributed: peak=58, base=17 (= curve.weapon_base_damage(58) x 1.7), min_level=46, quiz_tier=3.",
     "design_notes": "Wild/chaotic archetype: the self-swinger has its own ideas, erratic until it finds the killing stroke.",
     "chain_exponent": 1.15,
-    "_note": "design_intent: counterAttackChance=0.25 — Slavic legend \"the Sword That Fights Itself\" should retaliate on incoming melee. No engine consumer as of 2026-09-27; wire it up when the passive-defense hook lands."
+    "counter_attack_chance": 0.25
   },
   "shamshir_e_zomorrodnegar": {
     "name": "Shamshir-e Zomorrodnegar",
@@ -2933,7 +2932,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "an emerald-studded curved blade engraved with tiny names",
-    "lore": "Persian storytellers say that King Solomon, commander of the djinn, wore this sword of emeralds at his hip. In the romance of Amir Arsalan it is in the keeping of Fulad-zereh, a horned demon whom his mother's spells had made proof against every weapon save this one. It is the bane of demons still, and out of one that it slays a servant will sometimes spring forth, bound to its bearer for a little while as the djinn were bound to Solomon.",
+    "lore": "Persian storytellers say that King Solomon, commander of the djinn, wore this sword of emeralds at his hip. In the romance of Amir Arsalan it is in the keeping of Fulad-zereh, a horned demon whom his mother's spells had made proof against every weapon save this one. Whoever bears it in the hand is guarded from sorcery. It is the bane of demons still, and out of one that it slays a servant will sometimes spring forth, bound to its bearer for a little while as the djinn were bound to Solomon.",
     "damage_types": [
       "slash",
       "magic",
@@ -2965,7 +2964,8 @@
       "max_hp_pct": 0.4,
       "chance": 0.5
     },
-    "chain_exponent": 1.15
+    "chain_exponent": 1.15,
+    "on_equip_status": "magic_resist"
   },
   "chrysaor": {
     "name": "Chrysaor",
@@ -5423,79 +5423,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
     "design_notes": "Cursed-blade archetype: the embalmer's reckoning, quiet at first then the heart is found too heavy.",
-    "chain_exponent": 1.15
-  },
-  "chandrahasa": {
-    "name": "Chandrahasa",
-    "class": "sword",
-    "variant": "1h",
-    "tier": 5,
-    "material": "legendary",
-    "mathTier": 5,
-    "baseDamage": 722,
-    "chainMultipliers": [
-      0.5,
-      0.85,
-      1.0,
-      1.45,
-      2.0
-    ],
-    "maxChainLength": 5,
-    "damageTypes": [
-      "slash",
-      "magic"
-    ],
-    "symbol": ")",
-    "color": [
-      200,
-      200,
-      240
-    ],
-    "weight": 2.5,
-    "twoHanded": false,
-    "reach": 1,
-    "stunChance": 0.0,
-    "bleedChance": 0.1,
-    "knockback": false,
-    "ignoreShield": false,
-    "requiresAmmo": null,
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 0,
-      "61-80": 0,
-      "81-100": 2
-    },
-    "containerLootTier": "legendary",
-    "value": 8500,
-    "min_level": 75,
-    "quiz_tier": 5,
-    "identified": false,
-    "unidentified_name": "a crescent-shaped blade that glows faintly",
-    "low_hp_damage_bonus": true,
-    "lore": "Shiva gave Chandrahasa, the Laughing Moon, to Ravana the demon king of Lanka and warned him never to draw it unjustly. Yet he drew it on Jatayu, the old king of the vultures, who sought to hinder him from carrying Sita away, and he cut the wings from the bird's body. The blade laughs as it cuts, high and cold as cracking ice, and it bites most deeply when its bearer is nearest to death.",
-    "damage_types": [
-      "slash",
-      "magic"
-    ],
-    "template_basis": "longsword",
-    "spread": 12,
-    "peak_floor": 87,
-    "chain_multipliers": [
-      0.5,
-      0.85,
-      1.0,
-      1.45,
-      2.0
-    ],
-    "peak_weight": 0.5,
-    "base_damage": 722,
-    "max_chain_length": 5,
-    "is_unique": true,
-    "max_enchant": 5,
-    "weapon_class_chain": "normal",
-    "_curve_note": "Pass 3 trim: peak=87, base=34 (= curve.weapon_base_damage(87) x 1.65).",
-    "design_notes": "Cursed-blade archetype: the Laughing Moon ripens on desperation, patient until the wielder's strength fades.",
     "chain_exponent": 1.15
   },
   "green_chapel_axe": {

@@ -239,7 +239,9 @@ def blow_mult(m, player, atk, all_monsters) -> tuple:
     import wards
     if 'swarm' in tricks and not wards.all_round(player):
         s = trick('swarm')
-        on_him = beside_hero(m, player, all_monsters)
+        # Only those that can act are at him (ruling D4, 2026-11-22): a mate
+        # asleep or held lends nothing to the heap.
+        on_him = [o for o in beside_hero(m, player, all_monsters) if can_fight(o)]
         n = len(on_him)
         b = swarm_bonus(n, s.get('per_other', 0.5), s.get('cap', 1.5))
         if b > 0:

@@ -268,6 +268,8 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
 
         # Try to find the item in our pools
         pool = item_pools.get(item_class, {})
+        from items import current_id
+        item_id = current_id(item_class, item_id)     # a retired id: the one that stayed
         template = pool.get(item_id)
         if template is None:
             # Ordinary gear is composed ("iron_longsword" = material +

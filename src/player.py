@@ -604,8 +604,9 @@ class Player:
                 old_fx = amulet.effects
                 self.amulet_slot = None
                 self.accessory_off(amulet)
-                if 'status' in old_fx:
-                    self.drop_worn_status(old_fx['status'], amulet)
+                from items import worn_statuses
+                for _st in worn_statuses(old_fx):
+                    self.drop_worn_status(_st, amulet)
                 # Do NOT add back to inventory — it is consumed
                 self._rands_heart_triggered = True  # flag for message in main.py
                 return False
@@ -1415,7 +1416,8 @@ class Player:
             # is what its blow does to a foe (Wendigo's Fang slows on 35% of
             # hits): counted, it kept a lifted Ring of Slowing's slow for good.
             _fx = getattr(it, 'effects', None) or {}
-            if _fx.get('status') == status and 'effect_chance' not in _fx                     and it is not getattr(self, 'weapon', None)                     and it is not getattr(self, 'ranged_weapon', None):
+            from items import worn_statuses
+            if status in worn_statuses(_fx) and 'effect_chance' not in _fx                     and it is not getattr(self, 'weapon', None)                     and it is not getattr(self, 'ranged_weapon', None):
                 return True
         return status in ((getattr(self, 'quirk_progress', None) or {}).get('quirk_statuses') or ())
 
@@ -2707,8 +2709,9 @@ class Player:
                     # Reverse old amulet's effects (its stats leave with the
                     # sync below, once the new one is in the slot)
                     old_fx = old.effects
-                    if 'status' in old_fx:
-                        self.drop_worn_status(old_fx['status'], old)
+                    from items import worn_statuses
+                    for _st in worn_statuses(old_fx):
+                        self.drop_worn_status(_st, old)
                 self.amulet_slot = item
             elif getattr(item, 'slot', 'ring') == 'belt':
                 # Belt slot — single-item, mirrors amulet handling.
@@ -2726,8 +2729,9 @@ class Player:
                     self.belt_slot = None
                     # only if nothing else worn still grants it: swapping one
                     # belt for another took Haste away from a ring's wearer
-                    if 'status' in old_fx:
-                        self.drop_worn_status(old_fx['status'], old)
+                    from items import worn_statuses
+                    for _st in worn_statuses(old_fx):
+                        self.drop_worn_status(_st, old)
                 self.belt_slot = item
             else:
                 # Find first empty ring slot. If none free, bail out — the
@@ -2743,8 +2747,9 @@ class Player:
             # Apply the accessory's effect while worn: a status, and the six
             # stats by the strongest-counts rule (sync_worn_stats). No AC.
             fx = item.effects
-            if 'status' in fx:
-                self.add_effect(fx['status'], fx.get('duration', -1))
+            from items import worn_statuses
+            for _st in worn_statuses(fx):
+                self.add_effect(_st, fx.get('duration', -1))
             self.sync_worn_stats()
         # Re-sort inventory after any equipment swap that returned items
         self.sort_pack()

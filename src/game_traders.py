@@ -559,15 +559,18 @@ class TraderMixin:
         v['given'] = int(v['given']) + extra
         v['pending'] = int(v['pending']) + max(0, gap - extra)
         offer += extra
-        from items import Ammo
-        if isinstance(item, Ammo):
+        # What is priced by the bundle (economy.ammo_bundles: arrows, torches)
+        # goes whole: the offer is for all of it. One torch at a time, every
+        # press was paid for all that were left.
+        whole = economy.ammo_bundles(item) is not None
+        if whole:
             name = self._display_name(item)
         elif int(getattr(item, 'count', 1) or 1) <= 1:
             name = f"the {self._bare_name(item)}"        # "You sell the Gold Idol to Grindle"
         else:
             from paths import a_or_an
             name = a_or_an(self._bare_name_one(item))
-        if isinstance(item, Ammo) or int(getattr(item, 'count', 1) or 1) <= 1:
+        if whole or int(getattr(item, 'count', 1) or 1) <= 1:
             self.player.inventory.remove(item)
             try:
                 self.player.refresh_carry_bonuses()
@@ -1108,7 +1111,6 @@ class TraderMixin:
                                 'details': details})
             hint = "Left/Right: tab   Up/Down: inspect   Enter: buy   H: haggle   ESC: close"
         elif tab == TAB_SELL:
-            from items import Ammo
             for item in self.player.inventory:
                 offer, why = self._trader_offer(item)
                 # The trade-in: half his price on a visit when the hero has
@@ -1118,7 +1120,8 @@ class TraderMixin:
                        if not why and getattr(item, 'item_class', '') != 'treasure' else 0)
                 offer += extra
                 n = int(getattr(item, 'count', 1) or 1)
-                each = '' if (n <= 1 or isinstance(item, Ammo)) else ' each'
+                # (What is priced by the bundle is offered for, and sold, whole.)
+                each = '' if (n <= 1 or economy.ammo_bundles(item) is not None) else ' each'
                 detail = f"Offers {offer:,} gold{each}" if not why else why
                 item_lines = self._menu_item_detail_lines(item, "Press Enter to sell.")
                 details = item_lines[:1] + [
@@ -1162,6 +1165,11 @@ class TraderMixin:
         counts = [len(m.stock), len(self.player.inventory),
                   len(getattr(m, 'services', ()))][:len(tabs)]
         selected = self._menu_clamp_selection('_shop_selection', len(entries))
+        if not pick and tab == TAB_SELL and 0 <= selected < len(self.player.inventory):
+            row = self.player.inventory[selected]
+            n = int(getattr(row, 'count', 1) or 1)
+            if n > 1 and economy.ammo_bundles(row) is not None:
+                hint = hint.replace("sell one", f"sell all {n}")
         import treasure
         from treasure import weight_text
         tre = sum(treasure.known_unit_value(self.player, t) * max(1, int(getattr(t, 'count', 1) or 1))

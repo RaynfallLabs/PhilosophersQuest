@@ -1417,8 +1417,7 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     # The `crit` boolean is kept for on_complete kwargs so callers that
     # branch on it still compile; it now stays False everywhere. Harpe's
     # petrify moved to the class-chain-special dispatch below (petrifies
-    # at chain 15 via a per-weapon flag). Soul Reaver's next-hit-auto-crit
-    # rewired to a `blade_flow` player stack down at growth_on_innocent_kill.
+    # at chain 15 via a per-weapon flag).
     # (player_attack's callback keeps crit = False for on_complete.)
 
     # Pre-damage class-mechanic multipliers. Apply to mult before damage
@@ -1596,8 +1595,7 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
 
     # Chain combat v2: `blade_flow` player buff — the next N attacks bypass
     # damage reduction (dragon_scales, shielded, resistances). Consumes one
-    # stack per attack. Set by 1h Sword C15/C20, 2h Sword C20, and Soul
-    # Reaver's growth_on_innocent_kill.
+    # stack per attack. Set by 1h Sword C15/C20 and 2h Sword C20.
     _bf_stacks = int(player.status_effects.get('blade_flow', 0) or 0)
     _blade_flow_bypass = _bf_stacks > 0
     if _blade_flow_bypass and consume:
@@ -2327,29 +2325,15 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             if chain >= _maxc_rh:
                 player._return_to_hand_active = True
 
-        # Soul Reaver (engine wave 4): growth_on_innocent_kill. Killing a
-        # non-hostile NPC (hostile=False / friendly tag / npc tag) grants the
-        # player a `blade_flow` stack — the next attack bypasses damage
-        # reduction. Chain combat v2 (v2.14.0): rewired from "next hit
-        # auto-crit" since crit is retired.
-        _mon_tags_inn = set(getattr(monster, 'tags', []))
-        _is_innocent = (
-            not getattr(monster, 'hostile', True)
-            or 'npc' in _mon_tags_inn
-            or 'friendly' in _mon_tags_inn
-            or 'civilian' in _mon_tags_inn
-        )
-        if (weapon and getattr(weapon, 'growth_on_innocent_kill', False)
-                and monster.is_dead() and _is_innocent):
-            _cur_bf = int(player.status_effects.get('blade_flow', 0) or 0)
-            player.status_effects['blade_flow'] = _cur_bf + 1
-
         # Ring of Gyges (gyges_invisible_attack_karma): attacking an NPC
         # while invisible costs -1 karma (no single loss is bigger than one:
         # Brandon, 2026-10-18). The just-man-when-unseen test.
-        # Bug-bash fix aac: only fire on an actual hit (actual > 0) — a
-        # whiffed swing doesn't reveal moral character.
-        if actual > 0 and _is_innocent and getattr(player, 'has_effect', None) and player.has_effect('invisible'):
+        # Bug-bash fix aac: only fire on a blow that lands — a whiffed swing
+        # doesn't reveal moral character. `damage`, not `actual`: no blow can
+        # hurt an innocent (Monster.take_damage), and striking is the wrong
+        # (ruling C8, 2026-11-22).
+        from monster import is_innocent as _innocent
+        if damage > 0 and _innocent(monster) and getattr(player, 'has_effect', None) and player.has_effect('invisible'):
             for _acc in getattr(player, 'equipped_accessories', ()) or ():
                 if getattr(_acc, 'gyges_invisible_attack_karma', False):
                     _g = getattr(player, '_combat_game_ref', None)
