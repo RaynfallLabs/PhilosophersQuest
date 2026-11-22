@@ -111,7 +111,7 @@
     "unidentified_name": "silvery whisper in a bottle"
   },
   "womans_beard": {
-    "name": "Roots of a Woman's Beard",
+    "name": "Beard of a Woman",
     "story_floor": 65,
     "symbol": "~",
     "color": [
@@ -223,7 +223,7 @@
     "unidentified_name": "tiny sealed vial"
   },
   "bear_sinew": {
-    "name": "Sinew of a Bear's Sensitivity",
+    "name": "Sinews of a Bear",
     "story_floor": 77,
     "symbol": "~",
     "color": [
@@ -346,7 +346,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "Tradition gives to the rider on the white horse a crown, a bow and the name of Pestilence, and sends him forth conquering, and the demon who bore this seal did the like work in the darkness below. It is a disc of sickly green that weeps some foulness and makes the air hum as with a cloud of flies, and with every hand through which it passes it holds the Pit shut a little less surely.",
+    "lore": "Tradition gives to the rider on the white horse a crown, a bow and the name of Pestilence, and sends him forth conquering, and the demon who bore this seal did the like work in the darkness below. It is a disc of sickly green that weeps some foulness and makes the air hum as with a cloud of flies, and it is so rotten that it will break in the first hand that lifts it.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -373,7 +373,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "Upon a black horse sits the third rider of the Apocalypse with a pair of scales in his hand, while a voice names his prices: a day's wage for a measure of wheat. This withered disc, coloured like dead grain, is one of the seven locks upon the Abyss, and whoever holds it feels that reckoning in the belly, as though days had passed since the last meal.",
+    "lore": "Upon a black horse sits the third rider of the Apocalypse with a pair of scales in his hand, while a voice names his prices: a day's wage for a measure of wheat. This withered disc, coloured like dead grain, is one of the seven locks upon the Abyss, and it is so withered that it will break in the first hand that lifts it.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -427,7 +427,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "Of the fourth rider John wrote: behold a pale horse, and his name that sat on him was Death, and Hell followed with him. This pale disc is cold as a headstone in January, and the shadow of any who holds it grows darker and a little longer than it ought. The demon who carried it is dead, yet the seal is no less baleful than while he lived.",
+    "lore": "Of the fourth rider John wrote: behold a pale horse, and his name that sat on him was Death, and Hell followed with him. This pale disc is cold as a headstone in January, and it will break in the first hand that lifts it. The demon who carried it is dead, yet the seal is no less baleful than while he lived.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -454,7 +454,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "At the opening of the sixth seal John saw a great earthquake, when the sun turned black as sackcloth, the moon became as blood, and every mountain and island was moved out of its place. This cracked grey disc shivers in the hand, and wherever it is borne the stone underfoot groans, as if it remembered that command and looked to hear it given again.",
+    "lore": "At the opening of the sixth seal John saw a great earthquake, when the sun turned black as sackcloth, the moon became as blood, and every mountain and island was moved out of its place. This cracked grey disc shivers where it lies and the stone about it groans, as if it remembered that command and waited only for a hand to break it.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -565,7 +565,7 @@
     "weight": 2.0,
     "min_level": 0,
     "identified": false,
-    "lore": "A courier bore this iron-bound case of scrolls as far as he was able, and with his last breath he begged that another would finish the journey. It is closed with the wax seal of the City Watch and holds the stations of the companies that defend a city under siege, so that thousands of lives hang upon its reaching the surface. It is heavy and of no use underground, and to its own weight is added the weight of a promise.",
+    "lore": "A courier bore this iron-bound case of scrolls as far as he was able, and with his last breath he begged that another would finish the journey. It is closed with the wax seal of the City Watch and holds the stations of the companies that defend a city under siege, so that thousands of lives hang upon its reaching the sergeant at the post below. It is heavy, and to its own weight is added the weight of a promise.",
     "special_properties": {
       "identified": true,
       "plot_role": "courier_promise",

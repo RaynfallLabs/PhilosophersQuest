@@ -339,11 +339,14 @@ def timeline_groups(entries, label_fn=None) -> list:
 
 # ---------------------------------------------------------------- roads
 
-def record_choice(reg: dict, enc: dict, index) -> None:
+def record_choice(reg: dict, enc: dict, index, visible=None) -> None:
     """At an encounter's commit point: remember which option was taken and
     the road hint of every option it offered, so the end screen can show
     the roads NOT taken this run (Brandon's decision 4: nothing is kept
-    across runs). Hidden options count too: the encounter has been met."""
+    across runs). ``visible``: the indices on the options page at this step
+    (None: all of them); a 'then: options' encounter adds to them step by
+    step. A secret option (``hidden: true``) counts unseen: the encounter
+    has been met. A variant written for another hero does not (3.6.0)."""
     tag = str((enc or {}).get('tag') or '')
     if not tag:
         return
@@ -351,21 +354,35 @@ def record_choice(reg: dict, enc: dict, index) -> None:
     picked = chosen.setdefault(tag, [])
     if index is not None and index not in picked:
         picked.append(index)
+    opts = list((enc or {}).get('options') or ())
     roads = reg.setdefault('roads', {})
     if tag not in roads:
         seen = []
-        for i, opt in enumerate((enc or {}).get('options') or ()):
+        for i, opt in enumerate(opts):
             road = opt.get('road') if isinstance(opt, dict) else None
             if isinstance(road, dict) and road.get('hint'):
                 seen.append({'index': i, 'id': str(road.get('id') or f'{tag}.{i}'),
-                             'hint': str(road['hint'])})
-        roads[tag] = {'order': len(roads), 'options': seen}
+                             'hint': str(road['hint']), 'secret': bool(opt.get('hidden')),
+                             'group': opt.get('hidden_group')})
+        roads[tag] = {'order': len(roads), 'options': seen, 'shown': [], 'closed': []}
+    info = roads[tag]
+    if 'shown' not in info:
+        return                      # a save from before 3.6.0: it never knew what was shown
+    for i in (range(len(opts)) if visible is None else visible):
+        if i not in info['shown']:
+            info['shown'].append(i)
+    took = opts[index] if isinstance(index, int) and 0 <= index < len(opts) else {}
+    # The variants of a closing choice are that choice by another door. A
+    # step's are not: the next act may wear the same hidden_group.
+    if took.get('hidden_group') and took.get('then') != 'options':
+        info['closed'].append(took['hidden_group'])
 
 
 def roads_not_taken(reg: dict, limit: int = 4) -> list:
     """Up to ``limit`` hints from the options the hero did not take in the
     encounters met this run: the latest encounters first, one road from each
-    before a second from any, never a road whose id the hero took."""
+    before a second from any, never a road whose id the hero took, one he
+    was never offered (a secret excepted) or a variant of his own choice."""
     reg = reg or {}
     chosen = reg.get('chosen') or {}
     roads = reg.get('roads') or {}
@@ -376,8 +393,11 @@ def roads_not_taken(reg: dict, limit: int = 4) -> list:
                 taken_ids.add(r['id'])
     per_enc = []
     for tag, info in sorted(roads.items(), key=lambda kv: -int(kv[1].get('order') or 0)):
+        shown, closed = info.get('shown'), info.get('closed') or ()
         left = [r for r in info.get('options', ())
-                if r['index'] not in chosen.get(tag, ()) and r['id'] not in taken_ids]
+                if r['index'] not in chosen.get(tag, ()) and r['id'] not in taken_ids
+                and (shown is None or r.get('secret') or r['index'] in shown)
+                and (not r.get('group') or r['group'] not in closed)]
         if left:
             per_enc.append(left)
     out, seen = [], set()

@@ -43,11 +43,11 @@ SILAS = {
     'block': 8, 'role': 'anchor', 'stakes': 'medium', 'band': [71, 79],
     'person': {'id': 'silas', 'name': 'Silas Mordaunt'},
     'text': "A white-haired man in an ancient cell. The wall is covered in scratches. "
-            "They're too long, and some have a little cross after them.",
+            "They're too long, and each has a little cross after it.",
     'options': [
         {'label': 'Feed your gold into the lock', 'naive': True,
          'forbids': {'deeds_any': ['noticed.silas_poisoner']},
-         'warning': "They're too long, and some have a little cross after them.",
+         'warning': "They're too long, and each has a little cross after it.",
          'cost': {'type': 'gold_pct', 'amount': 15},
          'deeds': ['aid.silas', {'id': 'spared.silas', 'payload': {'deserving': False}}],
          'person_status': {'status': 'spared', 'deserving': False},

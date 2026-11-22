@@ -1461,10 +1461,13 @@ class MenuMixin:
                 _aid = getattr(_acc, 'id', '')
                 if _aid == 'lyre_of_orpheus':
                     _label = 'Play the Lyre'
-                    _desc = 'Charm one visible enemy for 10 turns. Consumes 1 charge.'
+                    _desc = ('Hold one visible enemy spellbound for 10 turns (a named foe for less). '
+                             'Consumes 1 charge.')
                 elif _aid == 'hand_of_glory':
                     _label = 'Light the Hand of Glory'
-                    _desc = 'Paralyze one visible enemy for 4 turns. Consumes 1 charge.'
+                    _turns = int(getattr(_acc, 'paralyze_duration', 4) or 4)     # as _activate_accessory_charge
+                    _desc = (f'Paralyze one visible enemy for {_turns} turns (a named foe for less). '
+                             'Consumes 1 charge.')
                 else:
                     _label = getattr(_acc, 'name', _aid) or _aid
                     _desc = f'Use a charge ({_acc.charges}/{_acc.max_charges} left).'
@@ -2071,9 +2074,9 @@ class MenuMixin:
                    (why or f"{the_name(target)} does not sleep.")),
                 'info' if got else 'warning')
         acc.charges -= 1
-        # Hand of Glory (expended_curse): when all five candle-fingers are
-        # burnt out, the wax-soaked hand fuses to its wearer. Per lore:
-        # "When all five have burned, the hand will not let go." The item
+        # Hand of Glory (expended_curse): when the three candle-fingers left
+        # are burnt out, the wax-soaked hand fuses to its wearer. Per lore:
+        # when the last has gone out the hand will not let go. The item
         # becomes permanently cursed and welded into the slot.
         if int(acc.charges) <= 0 and getattr(acc, 'expended_curse', False) and \
                 not getattr(acc, 'cursed', False):

@@ -44,7 +44,7 @@
     "value": 5000,
     "min_level": 82,
     "unidentified_name": "a dark whispering curved blade",
-    "lore": "Few who have held the Soul Reaver remember that they took it up willingly, for the blade chooses its own bearers, and by what rule it chooses none has learned. This much is known, that the wounds it deals will not heal without magic, that it whispers between one death and the next, and that it grows heavier if it is turned against the innocent. Some say that a dying god made it, some a betrayed archmage, and others a plague with a great thirst for vengeance.",
+    "lore": "Few who have held the Soul Reaver remember that they took it up willingly, for the blade chooses its own bearers, and by what rule it chooses none has learned. This much is known, that the wounds it deals will not heal without magic, that it whispers between one death and the next, and that it drinks from every wound it deals. Some say that a dying god made it, some a betrayed archmage, and others a plague with a great thirst for vengeance.",
     "quiz_tier": 5,
     "identified": false,
     "lifestealPercent": 0.3,
@@ -2517,7 +2517,7 @@
     "chain_exponent": 1.15
   },
   "rod_of_moses": {
-    "name": "Rod of Aaron",
+    "name": "Rod of Moses",
     "class": "staff",
     "variant": "2h",
     "tier": 5,
@@ -2859,7 +2859,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a blade that seems to move before you do",
-    "lore": "The Slavs tell of the Self-Swinger, which fights of itself and is found in kingdoms beneath the earth with Koschei or a serpent to guard it. The heroes who find it never wholly understand it, but since the sword does the fighting and they live through it, they take no fright at its having a will of its own, and count it very useful.",
+    "lore": "The Slavs tell of the Self-Swinger, which in their tales fights of itself and is found in kingdoms beneath the earth with Koschei or a serpent to guard it. The heroes who find it never wholly understand it, but it leaps so readily to the hand, and stuns so many of those it strikes, that they count it very useful.",
     "damage_types": [
       "slash",
       "magic"
@@ -2933,7 +2933,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "an emerald-studded curved blade engraved with tiny names",
-    "lore": "Persian storytellers say that King Solomon, commander of the djinn, wore this sword of emeralds at his hip. In the romance of Amir Arsalan it is in the keeping of Fulad-zereh, a horned demon whom his mother's spells had made proof against every weapon save this one. Whoever wears it is safe from sorcery, and a wound it gives is mended only by a potion that must be brewed of the demon's own brains.",
+    "lore": "Persian storytellers say that King Solomon, commander of the djinn, wore this sword of emeralds at his hip. In the romance of Amir Arsalan it is in the keeping of Fulad-zereh, a horned demon whom his mother's spells had made proof against every weapon save this one. It is the bane of demons still, and out of one that it slays a servant will sometimes spring forth, bound to its bearer for a little while as the djinn were bound to Solomon.",
     "damage_types": [
       "slash",
       "magic",
@@ -3158,7 +3158,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a blade that runs warm to the touch",
-    "lore": "No saga records the smith who named this sword, yet he named it well, for brisingr is fire in the speech of the old Norse poets. The same root is in the name of the Brisingamen, the glowing necklace that four dwarves forged for the goddess Freyja and that Loki once stole in the shape of a seal. Upon the coldest floor the steel stays warm in its scabbard, and whatever it cuts is apt to catch fire.",
+    "lore": "No saga records the smith who named this sword, yet he named it well, for brisingr is fire in the speech of the old Norse poets. It may be that the same root is in the name of the Brisingamen, the glowing necklace that four dwarves forged for the goddess Freyja and that Loki stole, until Heimdall fought him for it, both in the shapes of seals. Upon the coldest floor the steel stays warm in its scabbard, and whatever it cuts is apt to catch fire.",
     "burnChance": 0.35,
     "damage_types": [
       "slash",
@@ -4501,7 +4501,7 @@
     "min_level": 30,
     "quiz_tier": 2,
     "unidentified_name": "a well-kept longsword with a name on the crossguard",
-    "lore": "A young man carried this longsword into the dungeon to prove himself, and he did not come back. It is of excellent make, with the name VALE graven upon the crossguard, and it is sharp still, for someone oiled and honed it lovingly for years. It strikes most truly when its bearer has a companion fighting at his side.",
+    "lore": "A young man carried this longsword into the dungeon to prove himself, and he did not come back. It is of excellent make, with the name CORIN graven upon the crossguard, and it is sharp still, for someone oiled and honed it lovingly for years. It strikes most truly when its bearer has a companion fighting at his side.",
     "damage_types": [
       "slash"
     ],
@@ -5240,7 +5240,7 @@
     "min_level": 9999,
     "identified": false,
     "unidentified_name": "an impossibly light sword with a swallow engraved on the blade",
-    "lore": "For a girl in whose veins ran the blood of the Elder Folk, the gnome swordsmith Esterhazy of Mahakam made Zireael, which is Swallow in the Elder Speech, lighter than any sword of human forging and harder than dwarven steel. The bird graven upon the blade is both an ornament and a promise that she will come back. In the right hand it is so swift that one kill flows straightway into the next stroke.",
+    "lore": "To a girl in whose veins ran the blood of the Elder Folk, Esterhazy the sword-seller of Fano gave the gnome-forged Zireael, which is Swallow in the Elder Speech, lighter than any sword of human forging and harder than dwarven steel. The bird graven upon the blade is both an ornament and a promise that she will come back. In the right hand it is so swift that one kill flows straightway into the next stroke.",
     "quiz_tier": 3,
     "damage_types": [
       "slash"
@@ -5785,7 +5785,7 @@
     "identified": false,
     "undead_bonus": 2.5,
     "ignore_resistances": true,
-    "lore": "The smiths of Imladris forged Anduril, the Flame of the West, from the shards of Narsil, the blade that cut the Ring from Sauron's hand. Broken when Isildur fell, it slept for an Age in Rivendell until the Heir of Elendil came to claim it, and when he bore it down the Paths the Dead of Dunharrow followed after it, and a city held the line against its foes.",
+    "lore": "The smiths of Imladris forged Anduril, the Flame of the West, from the shards of Narsil, the blade whose shard cut the Ring from Sauron's hand. Broken when Elendil fell, it slept for an Age in Rivendell until the Heir of Elendil came to claim it, and when he bore it down the Paths the Dead of Dunharrow followed after it, and a city held the line against its foes.",
     "_curve_note": "base_damage = curve.weapon_base_damage(84) x 1.6 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F80-89 Fenrir-era band fill; signature LOTR Northern-fantasy entry.",
     "stunChance": 0.0,
     "bleedChance": 0.0,
@@ -6180,7 +6180,7 @@
     "unidentified_name": "a bronze-headed javelin with a gold ring at the socket",
     "identified": false,
     "bleed_chance": 0.25,
-    "lore": "Hector, breaker of horses and last shield of Troy, bore this bronze-headed javelin. One like it he threw at Ajax in their duel before the ships, and it struck the boss of the shield and bent, but the next throw of its kind felled Patroclus as he went clad in Achilles's armor.",
+    "lore": "Hector, breaker of horses and last shield of Troy, bore this bronze-headed javelin. One like it he threw at Ajax in their duel, and it stayed in the seventh hide of the shield, but with a thrust of such a spear he felled Patroclus as he went clad in Achilles's armor.",
     "_curve_note": "base_damage = curve.weapon_base_damage(22) x 1.4 unique-mult, rounded for heavy spear feel. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F20-29 Asterion-era band fill.",
     "stunChance": 0.0,
     "bleedChance": 0.25,
@@ -6561,7 +6561,7 @@
     "on_equip_status": "berserk",
     "ignore_resistances": true,
     "betrays_at_low_hp": true,
-    "lore": "The Lords of Chaos forged this black runesword at the dawn of the Young Kingdoms to drink souls and feed them to its bearer. Elric of Melnibone leaned upon it for his strength and lost all whom he loved to its hunger, and at the end of the world the blade laughed and named itself a god. It will turn in the hand that holds it if the chance is right.",
+    "lore": "The Lords of Chaos forged this black runesword at the dawn of the Young Kingdoms to drink souls and feed them to its bearer. Elric of Melnibone leaned upon it for his strength and lost all whom he loved to its hunger, and at the end of the world the blade slew him too, and laughed, and named itself more evil than he. It will turn in the hand that holds it if the chance is right.",
     "_curve_note": "base_damage = curve.weapon_base_damage(88) x 1.8 unique-mult, boss-tier signature. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F80-89 Fenrir-era band fill; Elric / Moorcock canon.",
     "stunChance": 0.0,
     "bleedChance": 0.0,
@@ -6866,7 +6866,7 @@
     "max_enchant": 3,
     "unidentified_name": "a slender ceremonial mace topped with a jackal",
     "identified": false,
-    "lore": "Older than Anubis, and at first another god than he, was Wepwawet the jackal of Upper Egypt, the Opener of the Ways, whose standard went before the procession of the king and before the army. He is pictured with a mace and a bow, and the pear-shaped mace was Egypt's first royal weapon, which the king lifts over a kneeling foe upon the Narmer Palette. True to the name of its god, this one will open a way through walls as well.",
+    "lore": "Older than Anubis, and at first another god than he, was Wepwawet the jackal of Upper Egypt, the Opener of the Ways, whose standard went before the procession of the king and before the army. He is pictured with a mace and a bow, and the pear-shaped mace was Egypt's first royal weapon, which the king lifts over a kneeling foe upon the Narmer Palette. True to the name of its god, this one will open the very floor, and dig a pit for a foe.",
     "template_basis": "mace",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "can_dig": true,
@@ -7054,7 +7054,7 @@
     "value": 250,
     "min_level": 9999,
     "unidentified_name": "a long ash spear with a bronze butt-spike",
-    "lore": "The dory was the first weapon of every Spartan, eight feet of ash with an iron head and at the butt a bronze spike, called the lizard-killer, to finish whatever the line had walked over. At Thermopylae the spears were broken by the second day and the three hundred fought on with swords and then with hands and teeth, but this one spear was never broken.",
+    "lore": "The dory was the first weapon of every Spartan, eight feet of ash with an iron head and at the butt a bronze spike, called the lizard-killer, to finish whatever the line had walked over. At Thermopylae the spears were broken on the third and last day and the three hundred fought on with swords and then with hands and teeth, but this one spear was never broken.",
     "quiz_tier": 2,
     "damage_types": [
       "pierce"

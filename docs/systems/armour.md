@@ -515,7 +515,8 @@ level on the same bells, so a ring found deep is a stronger ring:
 Two rings of one kind do not add: the stronger counts (as for the stats).
 The cursed kinds (teleportitis, aggravation, fumbling, slowing, drain,
 doom) are traps found at every depth. Every level of a kind is one learned
-type (`items.type_class`). An Enchant Ring scroll moves a kind's level.
+type (`items.type_class`). An Enchant Ring or Trinketry scroll moves a kind's level: the rings first,
+then the amulet; never the belt.
 
 The 79 named rings and amulets keep their stories; a power that moved to
 armour stays only where the item's lore makes it its own

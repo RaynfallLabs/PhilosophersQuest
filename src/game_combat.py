@@ -2499,7 +2499,7 @@ class CombatMixin:
         _snd.play('trap')
         if not getattr(self, '_chronicle_first_pit', False):
             self._chronicle_first_pit = True
-            self._chron('milestone', "Dug a pit with the shovel, for whatever walks over it.",
+            self._chron('milestone', "Dug a pit in the floor, for whatever walks over it.",
                         once='first_pit')
         # Costs 3 turns (advancing turn 3 times — monsters get 3 actions)
         for _ in range(3):

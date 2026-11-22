@@ -104,11 +104,11 @@ Trigger code: `main.py:6709-6716` (drop path), `game_combat.py:293-315`
 | Beat | Floor | What happens |
 |------|-------|--------------|
 | 1 | L62 | `cats_footstep` ("Sound of a Cat's Footstep") spawns in a themed room ringed by silent-alarm traps. |
-| 2 | L65 | `womans_beard` ("Roots of a Woman's Beard") spawns in a hidden alcove behind a SECRET_DOOR. |
+| 2 | L65 | `womans_beard` ("Beard of a Woman") spawns in a hidden alcove behind a SECRET_DOOR. |
 | 3 | L68 | `mountain_root` ("Root of a Mountain") spawns surrounded by LAVA tiles. |
 | 4 | L71 | `fish_breath` ("Breath of a Fish") spawns surrounded by WATER tiles. |
 | 5 | L74 | `bird_spittle` ("Spittle of a Bird") spawns on an ALTAR tile. |
-| 6 | L77 | `bear_sinew` ("Sinew of a Bear's Sensitivity") spawns next to a bear-trap ring. |
+| 6 | L77 | `bear_sinew` ("Sinews of a Bear") spawns next to a bear-trap ring. |
 | 7 | L76 | `_create_dwarven_forge` places `dwarven_forge_pos` (visually an ALTAR tile) in a far room. |
 | 8 | L76 | Player drops **all 6 components on the forge tile** → `_check_gleipnir_forge` fires on every drop; when all 6 ids are present, it consumes them and spawns `gleipnir` (artifact). |
 
@@ -718,11 +718,11 @@ Representative additions:
 | `bronze_bull` | Bronze Bull Idol | "bronze figurine" |
 | `eye_of_graeae` | Eye of the Graeae | "cloudy glass eye" |
 | `cats_footstep` | Sound of a Cat's Footstep | "silvery whisper in a bottle" |
-| `womans_beard` | Roots of a Woman's Beard | "wisps of fine hair" |
+| `womans_beard` | Beard of a Woman | "wisps of fine hair" |
 | `mountain_root` | Root of a Mountain | "chunk of dark stone" |
 | `fish_breath` | Breath of a Fish | "sealed vial of mist" |
 | `bird_spittle` | Spittle of a Bird | "tiny sealed vial" |
-| `bear_sinew` | Sinew of a Bear's Sensitivity | "coiled thread" |
+| `bear_sinew` | Sinews of a Bear | "coiled thread" |
 | `gleipnir` | Gleipnir | "impossibly thin ribbon" |
 | `leather_scrap` | leather scrap | "leather scrap" (identified on spawn — no spoiler risk) |
 | `seal_of_wrath` ... `seal_of_silence` | Seal of X | "sealed metal disc (red/green/black/rust/pale/grey/silver)" (7 seals, one per color) |

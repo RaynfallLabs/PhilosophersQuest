@@ -1195,7 +1195,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "\"Because it stops singing first,\" you say, \"before a man can know that the air has gone bad.\" She beams at you. \"It's carbon monoxide, and you can't smell it. Mr Hollins says a canary feels it long before a man does, and when it falls off the perch you run.\" She is so pleased that she draws every path upon the floor for you with the end of her apple core.",
+          "outcome": "\"Because it stops singing first,\" you say, \"before a man can know that the air has gone bad.\" She beams at you. \"It's carbon monoxide, and you can't smell it. My dad says a canary feels it long before a man does, and when it falls off the perch you run.\" She is so pleased that she draws every path upon the floor for you with the end of her apple core.",
           "reward": {
             "type": "service",
             "service": "map"
@@ -1523,7 +1523,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You know what you are looking upon, for these are cousins of foxfire. True fungi can glow, and honey fungus in rotting wood the brightest, by the same art as the firefly, in which a luciferin burns slowly with oxygen and gives out light instead of heat. Aristotle saw it and called it cold light. You take the smallest piece from the edge, and it leaves your mind as clean as a window after rain.",
+          "outcome": "You know what you are looking upon, for these are cousins of foxfire. True fungi can glow, as the threads of honey fungus do in rotting wood, by the same art as the firefly, in which a luciferin burns slowly with oxygen and gives out light instead of heat. Aristotle wrote of such a light, and said that it was cold to the touch. You take the smallest piece from the edge, and it leaves your mind as clean as a window after rain.",
           "reward": {
             "type": "mp_restore_pct",
             "amount": 50
@@ -1621,7 +1621,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "There are no tracks in the soot, her hands are clean, and the boots have gone in and have not come out. So you go round by the other passage and come up behind three men who crouch in the dark with clubs, awaiting the girl's next customer, and they are not ready for you. Afterward Wren sits upon a rock and stares at you. \"They took me off a caravan,\" she says. \"They said they'd sell me if I didn't cry good.\" When you point her to the stair she sets out for it, but she turns back for the wreckers' purse before she goes away at last.",
+          "outcome": "There are no tracks in the soot, her hands are clean, and the boots have gone in and have not come out. So you go round by the other passage and come up behind three men who crouch in the dark with clubs, awaiting the girl's next customer, and they are not ready for you. Their purse is in your hand before they can turn, and behind you Wren has climbed upon a rock to stare at you. \"They took me off a caravan,\" she says. \"They said they'd sell me if I didn't cry good.\" You point her to the stair, and she sets out for it as the men come at you.",
           "karma": 1,
           "karma_kind": "judgment",
           "fight": {
@@ -1810,7 +1810,7 @@
           "category": "scroll"
         },
         "outcome": "His face crumples with relief. \"Take this, for I cannot use it. My hands shake so that I cannot read it as I should.\" He presses a scroll upon you and is away down the corridor without another word.",
-        "chronicle": "Sold food to Corran Vey, a desperate treasure-hunter, at a fair price.",
+        "chronicle": "Fed Corran Vey, a desperate treasure-hunter. He gave me a scroll.",
         "road": {
           "id": "flv_treasure_hunter_desperate.food",
           "hint": "A starving man may pay for bread with what he cannot use himself."
@@ -1911,13 +1911,13 @@
           "timed": false
         },
         "pass": {
-          "outcome": "\"You know the old books,\" he says, well pleased. \"Pliny swears that a weasel fed on rue will slay a basilisk, and the bestiaries say that it dies of its own reflection. I had neither the one nor the other. Take my buckle, which is of polished brass, and watch the beast in that and never in its eye.\" At his words you feel a little more stubborn, and a little less like stone.",
+          "outcome": "\"You know the old books,\" he says, well pleased. \"Pliny swears that the stench of a weasel will slay a basilisk, and the bestiaries say that it dies of its own reflection. I had neither the one nor the other. Take my buckle, which is of polished brass, and watch the beast in that and never in its eye.\" At his words you feel a little more stubborn, and a little less like stone.",
           "reward": {
             "type": "effect",
             "effect": "petrify_immune",
             "floors": 1
           },
-          "chronicle": "Have Hamund's buckle to watch a basilisk in. Never meet its eye."
+          "chronicle": "Hamund's buckle wards me from stone on this floor. Never meet its eye."
         },
         "fail": {
           "outcome": "\"Was it courage?\" you guess, and the bones laugh, which is a terrible noise to hear. \"I had courage. A weasel would have served me better, or else a mirror, for the old books say that a basilisk dies of its own reflection. Never meet its eye.\"",
@@ -4022,7 +4022,7 @@
     },
     "stance": "3.9",
     "stance_note": "Steel-man: Pike is sincere and selfless, and Basil the Great's sermon is the strongest Christian case for his claim, quoted accurately. The pass answers it (§3.9: a duty on the giver, not a right in the receiver) by showing the harm of the principle to a third party, not by mocking the man.",
-    "text": "A gaunt man in a patched apron steps into your path with a basket, and behind him a thin girl stands silent, watching your pack. \"I am Gerrold Pike,\" he says. \"You carry rations and she has none. Saint Basil said it, and he meant it: the bread you hold back belongs to the hungry. It is not yours to give, for it is hers, and I have come to collect it.\" There is no asking in his voice, but only the calm of a man who has never in his life kept back a crumb for himself.",
+    "text": "A gaunt man in a patched apron steps into your path with a basket, and behind him a thin girl stands silent, watching your pack. On the stair sits an old pilgrim from whom he has had bread already, and she has but one heel of it left. \"I am Gerrold Pike,\" he says. \"You carry rations and she has none. Saint Basil said it, and he meant it: the bread you hold back belongs to the hungry. It is not yours to give, for it is hers, and I have come to collect it.\" There is no asking in his voice, but only the calm of a man who has never in his life kept back a crumb for himself.",
     "options": [
       {
         "label": "Put a ration in his basket",
@@ -4030,7 +4030,7 @@
           "type": "food"
         },
         "side": "wrong",
-        "outcome": "He hands it whole to the girl, whose name is Nell, and does not taste it himself. Then he turns to an old pilgrim who is coming down the stair behind you with one heel of bread, and gently, as of right, he holds out the basket to her as well, and she gives up her bread to him, believing that she must.",
+        "outcome": "He hands it whole to the girl, whose name is Nell, and does not taste it himself. Then he turns again to the old pilgrim with her one heel of bread, and gently, as of right, he holds out the basket to her as well, and she gives up her bread to him, believing that she must.",
         "deeds": [
           "aid.nell",
           "told.paid_pike"
@@ -5361,7 +5361,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "She turns it to the light, and you talk of metal together: how the famous blades of Damascus were forged from wootz, a steel made in crucibles in India, and how the watered pattern upon them was the steel's own grain, folded into the blade. \"You know your steel,\" she says approvingly, and she shows you the sweet spot of your blade, where a hit lands best. \"You are the latest chapter in its tale, so try to be a good one.\"",
+          "outcome": "She turns it to the light, and you talk of metal together: how the famous blades of Damascus were forged from wootz, a steel made in crucibles in India, and how the watered pattern upon them was the steel's own grain, banded in the crucible and drawn out beneath the hammer. \"You know your steel,\" she says approvingly, and she shows you the sweet spot of your blade, where a hit lands best. \"You are the latest chapter in its tale, so try to be a good one.\"",
           "reward": {
             "type": "effect",
             "effect": "crit_buff",
@@ -5747,7 +5747,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "He prods and pokes, and as he works you talk of his craft. His beak is stuffed with herbs, for his teachers believed that plague rode upon bad air, which is called miasma, and that a sweet smell would keep it off. \"That was wrong, of course,\" he says cheerfully. \"A London doctor named Snow mapped the cholera dead in Soho, found that nearly every one had drunk from one pump, and had its handle taken off. It was germs in the water, and no bad air at all.\" And being pleased with you, he treats you for nothing.",
+          "outcome": "He prods and pokes, and as he works you talk of his craft. His beak is stuffed with herbs, for his teachers believed that plague rode upon bad air, which is called miasma, and that a sweet smell would keep it off. \"My teachers were wrong, for plague rides upon the flea,\" he says cheerfully. \"Bad air was blamed for cholera too, until a London doctor named Snow mapped the cholera dead in Soho, found that nearly every one had drunk from one pump, and had its handle taken off. It was the water, and no bad air at all.\" And being pleased with you, he treats you for nothing.",
           "reward": {
             "type": "multi",
             "rewards": [
@@ -5764,7 +5764,7 @@
           "chronicle": "Talked shop as Doctor Finch treated me. His herbs stop no plague."
         },
         "fail": {
-          "outcome": "You tell him that it must be the herbs in his beak that keep him well. \"Miasma,\" he sighs, \"which is to say bad air. That is what my teachers believed, and my teachers were wrong, for a doctor named Snow traced the cholera to a single water pump.\" He writes a note upon his board. \"My fee stands, if you wish to be treated.\"",
+          "outcome": "You tell him that it must be the herbs in his beak that keep him well. \"Miasma,\" he sighs, \"which is to say bad air. That is what my teachers believed, and my teachers were wrong. Plague rides upon the flea, and as for cholera, a doctor named Snow traced that to a single water pump.\" He writes a note upon his board. \"My fee stands, if you wish to be treated.\"",
           "then": "options",
           "chronicle": "Wrongly praised Doctor Finch's herbs. Plague is germs, not bad air."
         },
@@ -5859,7 +5859,7 @@
             "count": 2
           }
         ],
-        "outcome": "All three come at you upon the stair, and Morrow fights to the last in that stolen cassock, as one who feels no shame in the wearing of it.",
+        "outcome": "All three come at you upon the stair, and Morrow comes foremost in that stolen cassock, as one who feels no shame in the wearing of it.",
         "deeds": [
           "slew.morrow"
         ],
@@ -7179,7 +7179,7 @@
           "monster_id": "villager_mob",
           "count": 4
         },
-        "outcome": "You cut her free and are three steps up the bank before the crowd closes upon you. You come out of it bloody, with Alys over your shoulder, and now the whole village is sure of two witches in place of one. At the stair she slides down and runs. \"I know the back ways,\" she calls to you, \"and you would only slow me.\"",
+        "outcome": "You cut her free through blows that leave you bloody, and are three steps up the bank before the crowd closes upon you. Now the whole village is sure of two witches in place of one, and Alys slips from your shoulder and runs for the stair. \"I know the back ways,\" she calls to you, \"and you would only slow me.\"",
         "deeds": [
           "saved.alys",
           "told.named_witch"
@@ -7952,7 +7952,7 @@
     "text": "The passage opens into a great hollow, and there a giant sits with his knees drawn up to his chest, weeping from his one great eye into his huge hands. His tears lie pooled upon the floor, and little silver fish of the sea swim in them, though no such fish should live in this place. \"She said she would come back,\" says the giant, and he does not lift his head. \"The sea-girl, Galatea. I sang to her, and I would have given her my sheep.\"",
     "options": [
       {
-        "label": "Sit with it in silence (spend SP)",
+        "label": "Sit with him in silence (spend SP)",
         "cost": {
           "type": "sp_pct",
           "amount": 10
@@ -7969,7 +7969,7 @@
         }
       },
       {
-        "label": "Give it something from your pack (food)",
+        "label": "Give him something from your pack (food)",
         "cost": {
           "type": "food"
         },
@@ -8470,7 +8470,7 @@
           "type": "message"
         },
         "outcome": "As gently as you may, you tell him that King Edric the Fourth has been two hundred years dead, that his kingdom goes now by another name, and that the war against which he stood guard was over long before his grandchildren were born. He is silent for a great while. \"Then I have kept my post well,\" he says at last, and with a most noble dignity he salutes you and walks away into the dark.",
-        "chronicle": "Told a soldier long out of date the war is over. He thanked me, still on guard.",
+        "chronicle": "Told a soldier long out of date his war is over. He left his post.",
         "road": {
           "id": "flv_time_lost_soldier.truth",
           "hint": "A soldier who was never told to stand down may not know that his war is over."
@@ -8739,7 +8739,7 @@
           "category": "wand"
         },
         "outcome": "No sooner has the bottle left the merchant's hands than it draws its own cork. Light pours from it and gathers into a solid thing, a wand of starlight that throbs to a measure known in no school of magic, while the merchant watches it go with what may be relief.",
-        "chronicle": "Bought an unknown constellation in a bottle. Still unopened.",
+        "chronicle": "Bought an unknown constellation in a bottle. It turned into a wand.",
         "road": {
           "id": "flv_bottled_constellation.buy",
           "hint": "Even the unknown stars might have served you."
@@ -9043,7 +9043,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You know it for such a wish as Dionysus granted to King Midas, that all he touched should turn to gold, until his bread and his wine were gold in his mouth. Midas was bidden to wash in the river Pactolus, and the gold went out of him into the stream, whose sands have glittered ever since. You tip the lantern's water over the little figure, and the gold runs from it in a shining flood, so that it rises up like warm light and goes laughing away. In the bottom of the glass a few flakes of gold remain behind.",
+          "outcome": "You know it for such a wish as Dionysus granted to King Midas, that all he touched should turn to gold, until his bread and his wine were gold in his mouth. Midas was bidden to wash in the river Pactolus, and the gold went out of him into the stream, whose sands have glittered ever since. You pour water from your own waterskin over the little figure, and the gold runs from it in a shining flood, so that it rises up like warm light and goes laughing away. In the bottom of the glass a few flakes of gold remain behind.",
           "reward": {
             "type": "multi",
             "rewards": [
@@ -9318,7 +9318,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "Two of the columns add up truly and the third does not, for a third of every coin \"returned\" has gone to ME. You lay your finger upon it, and Snerk turns a deeper green. \"Handling fees,\" he says, but you gaze at him until he strikes out the column, coin by coin, and the whole of it goes to the villages.",
+          "outcome": "Two of the columns add up truly and the third does not, for a third of every coin \"returned\" has gone to ME. You lay your finger upon it, and Snerk turns a deeper green. \"Handling fees,\" he says, but you gaze at him until he strikes out the column, coin by coin, and the whole of it goes to the villages. Then out of his own pocket, very sourly, he pays you an auditor's fee.",
           "karma": 1,
           "karma_kind": "judgment",
           "reward": {
@@ -9753,7 +9753,7 @@
       "id": "pardoner",
       "name": "The Pardoner"
     },
-    "text": "Outside a camp of pilgrims a man with long yellow hair and a voice like a goat's sits upon his pack of relics, and he has a glass of pig's bones, a pillowcase which he swears is Our Lady's veil, and a sheaf of pardons sealed hot from Rome. He winks at you. \"My text is always the same, friend: The love of money is the root of all evil. It never fails.\" Then he nods toward the pilgrims. \"Only tell them that you saw a miracle by my bones, and I'll split the takings with you.\"",
+    "text": "Outside a camp of pilgrims a man with long yellow hair and a voice like a goat's sits upon his pack of relics, and he has a glass of pig's bones, a pillowcase which he swears is Our Lady's veil, and a sheaf of pardons sealed hot from Rome. Two thick-necked minders stand behind him. He winks at you. \"My text is always the same, friend: The love of money is the root of all evil. It never fails.\" Then he nods toward the pilgrims. \"Only tell them that you saw a miracle by my bones, and I'll split the takings with you.\"",
     "options": [
       {
         "label": "Tell the pilgrims you saw a miracle",
@@ -9802,7 +9802,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "Every pardon declares itself \"given at Rome\" and is dated in the reign of a Pope who had lain a hundred years dead when the seal was cut. You read aloud the date and the name, and the years of that Pope's reign, until an old pilgrim who once walked to Rome begins to laugh, and soon they are all laughing. The Pardoner packs up his pig's bones with great dignity and takes his departure.",
+          "outcome": "Every pardon declares itself \"given at Rome\" and is dated in the reign of a Pope who had lain a hundred years dead when the seal was cut. Though his minders cuff you for it, you read aloud the date and the name, and the years of that Pope's reign, until an old pilgrim who once walked to Rome begins to laugh, and soon they are all laughing. The Pardoner packs up his pig's bones with great dignity and takes his departure.",
           "karma": 1,
           "karma_kind": "forgo",
           "deeds": [
@@ -9812,7 +9812,7 @@
           "chronicle": "Got the Pardoner run out for false pardons, but his minders hit me."
         },
         "fail": {
-          "outcome": "You mistake the Pope, and he corrects you beautifully before them all, so that the pilgrims buy twice as much as before.",
+          "outcome": "You mistake the Pope, and while his minders beat you he corrects you beautifully before them all, so that the pilgrims buy twice as much as before.",
           "karma": 1,
           "karma_kind": "forgo",
           "deeds": [
@@ -9866,7 +9866,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You find the right prayer, which is Simeon's, that the old man said in the Temple when he held the child whom he had waited all his life to see: now let your servant go in peace. The prayer is long in the saying, and her weariness lies upon you like a stone, for it is the weariness of twelve years of walking. When you have finished, her tears fall more slowly. \"I can feel it,\" she breathes. \"It's peace, after so long.\" And she passes smiling into a warm light, and the locket goes with her.",
+          "outcome": "You find the right prayer, which is Simeon's, that the old man said in the Temple when he held the child whom he had waited all his life to see: now let your servant go in peace. The prayer is short, but it is slow in the saying, for her weariness lies upon you like a stone, and it is the weariness of twelve years of walking. When you have finished, her tears fall more slowly. \"I can feel it,\" she breathes. \"It's peace, after so long.\" And she passes smiling into a warm light, and the locket goes with her.",
           "deeds": [
             "aid.maud"
           ],
@@ -11053,7 +11053,7 @@
           "type": "hp_restore_pct",
           "amount": 15
         },
-        "outcome": "He receives the food with the dignity of one who has forgotten what it is to be given anything, and he eats it slowly. \"It is the first meal that I have shared in...\" He begins to count, and gives it up. \"I thank you,\" he says, and he fills some empty place in your pack with rations that you did not know you lacked. \"You will need them more than I.\""
+        "outcome": "He receives the food with the dignity of one who has forgotten what it is to be given anything, and he eats it slowly. \"It is the first meal that I have shared in...\" He begins to count, and gives it up. \"I thank you,\" he says, and he shares with you his cut of the boar that is whole again by morning, so that your hurts ache the less. \"You have more need of it than I.\""
       },
       {
         "label": "\"What are you waiting for?\"",
@@ -11756,7 +11756,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "The giant's face turns grey, for no man has ever asked him that and none living knows the answer, and he perceives now who it was that taught you to ask. \"You have been talking with a one-eyed man,\" he says, and he rises from the high seat and yields it to you, as to one who has overcome him.",
+          "outcome": "The giant's face turns grey, for he has been asked it only once before, and none living knows the answer, and he perceives now who it was that taught you to ask. \"You have been talking with a one-eyed man,\" he says, and he rises from the high seat and yields it to you, as to one who has overcome him.",
           "reward": {
             "type": "stat",
             "stat": "WIS",
@@ -11773,7 +11773,7 @@
                   "noticed.odin"
                 ]
               },
-              "outcome": "The giant's face turns grey, for no man has ever asked him that and none living knows the answer, and he perceives now where it was that you learned to ask. \"You have been drinking at Mimir's well,\" he says, and he rises from the high seat and yields it to you, as to one who has overcome him.",
+              "outcome": "The giant's face turns grey, for he has been asked it only once before, and none living knows the answer, and he perceives now where it was that you learned to ask. \"You have been drinking at Mimir's well,\" he says, and he rises from the high seat and yields it to you, as to one who has overcome him.",
               "chronicle": "Stumped Vafthrudnir with a question from Mimir's well. Have his seat."
             }
           ]
@@ -12963,7 +12963,7 @@
           "effect": "blessed",
           "duration": 40
         },
-        "outcome": "Neither of you speaks, and your silence is the fellowship of those who know the price of this place. When at last he lies still you feel something settle softly over you, the final wish of a dying man that another should live, and you know yourself blessed.",
+        "outcome": "For a long while neither of you speaks, and your silence is the fellowship of those who know the price of this place. Once only he whispers, \"Beware the thing with a thousand mouths.\" When at last he lies still you feel something settle softly over you, the final wish of a dying man that another should live, and you know yourself blessed.",
         "chronicle": "Sat with a dying hero once near the bottom. He told what found him.",
         "road": {
           "id": "flv_dying_hero_berengar.sit",
@@ -13120,7 +13120,7 @@
         "label": "Salute and move on",
         "cost": null,
         "reward": null,
-        "outcome": "He returns your salute with strict and unbroken discipline. \"At ease, soldier,\" he says. You pass by his army of chalk and his enemy of chalk and his single chalk mark, and you do not look back, so that he may keep his long vigil unwatched and with honour."
+        "outcome": "He returns your salute with strict and unbroken discipline. \"At ease, soldier,\" he says. You pass by his army of chalk and his enemy of chalk and his three chalk marks, and you do not look back, so that he may keep his long vigil unwatched and with honour."
       }
     ],
     "sprite_id": "npc_warrior",

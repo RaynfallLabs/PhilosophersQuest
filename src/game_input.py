@@ -1407,6 +1407,12 @@ class InputMixin:
             return
 
         phase = self._npc_encounter_phase
+        if phase in ('text', 'outcome') and key in (pygame.K_UP, pygame.K_DOWN):
+            # A page too long to fit scrolls (game_render._npc_draw_story
+            # holds it inside the page).
+            step = 1 if key == pygame.K_DOWN else -1
+            self._npc_text_scroll = max(0, getattr(self, '_npc_text_scroll', 0) + step)
+            return
 
         # ── Phase: TEXT (encounter description) ───────────────────
         if phase == 'text':

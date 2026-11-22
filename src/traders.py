@@ -506,10 +506,25 @@ def friend_for(kind: str, ctx, used=()) -> dict | None:
     return fr if _check(fr.get('when'), ctx) else None
 
 
+def friend_lines(fr: dict) -> dict:
+    """All that a friend says at his host's stall: the plain lines anyone
+    could say (``friend_lines``), under his own."""
+    fr = fr or {}
+    out = {k: v for k, v in (data().get('friend_lines') or {}).items()
+           if not k.startswith('_')}
+    out.update(fr.get('lines') or {})
+    if fr.get('line'):
+        out['greet'] = [fr['line']]
+    if fr.get('counter'):
+        out['counter'] = fr['counter']          # what's below, in his own voice
+    return out
+
+
 def price_mult(kind: str, ctx, *, friend: bool = False) -> tuple:
     """(multiplier, [(key, line)]) for this trader's prices from the hero's
     deeds: a wronged merchant (+25%, every trader), this trader's own
-    reactions to rumours (charity, a con), a friend's price (-20%)."""
+    reactions to rumours (charity, a con), a friend's price (-20%). A friend
+    moves his price as his host would, and says so in plain words."""
     g = data().get('guild') or {}
     mult, lines = 1.0, []
     if _check(g.get('wronged'), ctx):
@@ -518,7 +533,11 @@ def price_mult(kind: str, ctx, *, friend: bool = False) -> tuple:
     for r in kind_def(kind).get('reactions') or ():
         if _check(r.get('when'), ctx):
             mult *= float(r.get('mult', 1.0))
-            lines.append((f"{kind}:{r.get('when')}", r.get('line', '')))
+            said = r.get('line', '')
+            if friend:
+                said = friend_lines(kind_def(kind).get('friend')).get('reaction', '')
+            if not any(said == line for _key, line in lines):
+                lines.append((f"{kind}:{r.get('when')}", said))
     if friend:
         mult *= 1.0 - float(g.get('friend_discount', 0.2))
     return mult, lines

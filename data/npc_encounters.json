@@ -2261,7 +2261,7 @@
         ],
         "thread": {
           "id": "columba_chapel",
-          "hint": "Somewhere below, a reading desk is waiting for a saint."
+          "hint": "Somewhere below, an empty niche above an altar is waiting for a saint."
         },
         "chronicle": "Must take Saint Columba's finger to a chapel for Sister Marguerite. Warm if worn.",
         "road": {
@@ -2421,7 +2421,7 @@
         "fight": {
           "monster_id": "bandit_kingpin"
         },
-        "outcome": "Rusk reaches for the axe at his belt, and when the fight is over you break the coffle chains link by link, with Theodoros to help you. The two sisters run off without a word, as well they may. The goatherd boy takes Rusk's hat, and Theodoros takes the boy's hand. \"I can read the signs upon the stair,\" he says, \"and we shall go up together.\"",
+        "outcome": "Rusk reaches for the axe at his belt, and while he is drawing it you strike through the coffle chain, with Theodoros to help you. The two sisters run off without a word, as well they may. The goatherd boy takes Rusk's hat, and Theodoros takes the boy's hand. \"I can read the signs upon the stair,\" he says, \"and we shall go up together, but look to yourself now, for Rusk is upon you.\"",
         "deeds": [
           "saved.theodoros",
           "saved.rusk_captives",
@@ -3241,7 +3241,7 @@
           "chronicle": "Found the nine a safe way up by the draught. The deacon blessed me."
         },
         "fail": {
-          "outcome": "The draught that you follow is the breath of something lying in the dark, and it wakes. By the time the fight is over the nine have climbed some other passage, and Lawrence has gone with them.",
+          "outcome": "The draught that you follow is the breath of something lying in the dark, and it wakes. As it rises the nine flee up some other passage, and Lawrence goes with them, leaving you to face it.",
           "fight": {
             "monster_id": "war_troll"
           },
@@ -3442,7 +3442,7 @@
             "wrong.sold_sariel"
           ]
         },
-        "text": "A tiny winged woman is shut in a jar of thick glass with wax and iron wire, and the dust of her broken wings coats the inside like frost. She presses both hands to the glass. \"I have been here eight months,\" she says, \"and the dust is my wings. If I had it back, I could mend them.\" A neat man in grey is already reaching for the jar. \"Ambrose Vell, acquisitions,\" he says. \"I will buy her, or, if you are squeamish, you may let her go and sell me the dust. It is only on the glass, and she has shed it.\" It is plain that he means both offers, and that his purse is heavy. Then Vell sees who you are, and he beams upon you. \"My associate,\" he says, \"you will be wanting the usual rate.\""
+        "text": "A tiny winged woman is shut in a jar of thick glass with wax and iron wire, and the dust of her broken wings coats the inside like frost. She presses both hands to the glass. \"I have been here eight months,\" she says, \"and the dust is my wings. If I had it back, I could mend them.\" A neat man in grey is already reaching for the jar. The cave is so cold that your breath shows, yet his does not show at all. \"Ambrose Vell, acquisitions,\" he says. \"I will buy her, or, if you are squeamish, you may let her go and sell me the dust. It is only on the glass, and she has shed it.\" It is plain that he means both offers, and that his purse is heavy. Then Vell sees who you are, and he beams upon you. \"My associate,\" he says, \"you will be wanting the usual rate.\""
       },
       {
         "when": {
@@ -3450,7 +3450,7 @@
             "noticed.vell_forgery"
           ]
         },
-        "text": "A tiny winged woman is shut in a jar of thick glass with wax and iron wire, and the dust of her broken wings coats the inside like frost. She presses both hands to the glass. \"I have been here eight months,\" she says, \"and the dust is my wings. If I had it back, I could mend them.\" A neat man in grey is already reaching for the jar. \"Ambrose Vell, acquisitions,\" he says. \"I will buy her, or, if you are squeamish, you may let her go and sell me the dust. It is only on the glass, and she has shed it.\" It is plain that he means both offers, and that his purse is heavy. Then Vell sees who you are and turns the colour of old cheese. \"It is you,\" he says. \"Name your price, and please let it be a price.\""
+        "text": "A tiny winged woman is shut in a jar of thick glass with wax and iron wire, and the dust of her broken wings coats the inside like frost. She presses both hands to the glass. \"I have been here eight months,\" she says, \"and the dust is my wings. If I had it back, I could mend them.\" A neat man in grey is already reaching for the jar. The cave is so cold that your breath shows, yet his does not show at all. \"Ambrose Vell, acquisitions,\" he says. \"I will buy her, or, if you are squeamish, you may let her go and sell me the dust. It is only on the glass, and she has shed it.\" It is plain that he means both offers, and that his purse is heavy. Then Vell sees who you are and turns the colour of old cheese. \"It is you,\" he says. \"Name your price, and please let it be a price.\""
       },
       {
         "when": {
@@ -3461,7 +3461,7 @@
             "noticed.vell_forgery"
           ]
         },
-        "text": "A tiny winged woman is shut in a jar of thick glass with wax and iron wire, and the dust of her broken wings coats the inside like frost. She presses both hands to the glass. \"I have been here eight months,\" she says, \"and the dust is my wings. If I had it back, I could mend them.\" A neat man in grey is already reaching for the jar. \"Ambrose Vell, acquisitions,\" he says. \"I will buy her, or, if you are squeamish, you may let her go and sell me the dust. It is only on the glass, and she has shed it.\" It is plain that he means both offers, and that his purse is heavy. Then Vell sees who you are, and his smile grows thin. \"It is you,\" he says, \"and you owe me an angel and two ogres' wages.\""
+        "text": "A tiny winged woman is shut in a jar of thick glass with wax and iron wire, and the dust of her broken wings coats the inside like frost. She presses both hands to the glass. \"I have been here eight months,\" she says, \"and the dust is my wings. If I had it back, I could mend them.\" A neat man in grey is already reaching for the jar. The cave is so cold that your breath shows, yet his does not show at all. \"Ambrose Vell, acquisitions,\" he says. \"I will buy her, or, if you are squeamish, you may let her go and sell me the dust. It is only on the glass, and she has shed it.\" It is plain that he means both offers, and that his purse is heavy. Then Vell sees who you are, and his smile grows thin. \"It is you,\" he says, \"and you owe me an angel and two trolls' wages.\""
       }
     ],
     "options": [
@@ -3687,7 +3687,7 @@
       "name": "Silas Mordaunt",
       "reach": "captive"
     },
-    "text": "The cell is ancient, its bars are more rust than iron, and within it sits a white-haired man as pleasant as a grandfather. \"Forty-three years I have been here, and for a debt, if you can believe it,\" he says. He talks of chains, and of how iron is the weaker sort, since the one that holds the great wolf is as soft as a ribbon. \"The lock is of dwarven make, and gold in the works will trip it.\" The wall behind him is covered in scratches, but these were not made to tally the days. They're too long, and some have a little cross after them. Beneath his cot, within reach of the bars, one flagstone stands a little proud of the rest.",
+    "text": "The cell is ancient, its bars are more rust than iron, and within it sits a white-haired man as pleasant as a grandfather. \"Forty-three years I have been here, and for a debt, if you can believe it,\" he says. He talks of chains, and of how iron is the weaker sort, since the one that holds the great wolf is as soft as a ribbon. \"The lock is of dwarven make, and gold in the works will trip it.\" The wall behind him is covered in scratches, but these were not made to tally the days. They're too long, and each has a little cross after it. Beneath his cot, within reach of the bars, one flagstone stands a little proud of the rest.",
     "options": [
       {
         "label": "Feed your gold into the lock",
@@ -3698,7 +3698,7 @@
           ]
         },
         "hidden_group": "free_him",
-        "warning": "They're too long, and some have a little cross after them.",
+        "warning": "They're too long, and each has a little cross after it.",
         "cost": {
           "type": "gold_pct",
           "amount": 15
@@ -3920,7 +3920,7 @@
         "fight": {
           "monster_id": "frostfang_giant"
         },
-        "outcome": "The giant wakes with his fist closed about the feathers, and you must win them from him the hard way. When it is over you hold out the shirt to her, and she draws it on and is a swan, and then a woman again, laughing. \"It was freely given,\" she says, \"and I will remember that on the day of choosing.\"",
+        "outcome": "The giant wakes with his fist closed about the feathers, but you are the quicker, and you drag them free and cast the shirt to her. She draws it on and is a swan, and then a woman again, laughing, as the giant heaves himself up against you. \"It was freely given,\" she says, \"and I will remember that on the day of choosing.\"",
         "deeds": [
           "forgo.swan_shirt",
           "saved.hrist"
@@ -3954,7 +3954,7 @@
           "chronicle": "Won Hrist's swan-shirt back at riddles. She is a chooser of the slain."
         },
         "fail": {
-          "outcome": "Your first riddle has an answer that he knows, and his has one that you do not, so that he roars and comes upon you. While you fight, Hrist herself plucks the shirt out of his fist, and she is away over the lake before you can turn.",
+          "outcome": "Your first riddle has an answer that he knows, and his has one that you do not, so that he roars and comes upon you. Even then Hrist herself plucks the shirt out of his fist, and she is away over the lake before you can turn.",
           "fight": {
             "monster_id": "frostfang_giant"
           },
@@ -4436,13 +4436,13 @@
         "reward": {
           "type": "random_armor"
         },
-        "outcome": "\"No,\" you answer, and you haul Yosip the cobbler out of the ash and put a fallen spear in his hands. He fights as a cobbler would, badly and with all his heart. When it is over he sits down, wipes his face and considers your boots. \"Those are a disgrace,\" he says. \"Take mine, for I made them myself.\"",
+        "outcome": "\"No,\" you answer, and you haul Yosip the cobbler out of the ash and put a fallen spear in his hands. He holds it as a cobbler would, badly and with all his heart, and as the black shields close he considers your boots. \"Those are a disgrace,\" he says. \"Take mine, for I made them myself.\"",
         "deeds": [
           "saved.yosip",
           "told.refused_the_words"
         ],
         "person_status": "saved",
-        "chronicle": "Refused the Locust's words, fought beside Yosip the cobbler. Have his boots.",
+        "chronicle": "Refused the Locust's words, got Yosip the cobbler up. Have his boots.",
         "road": {
           "id": "live_not_by_lies.refuse_together",
           "hint": "One who refuses is beaten, but two together may begin something greater."

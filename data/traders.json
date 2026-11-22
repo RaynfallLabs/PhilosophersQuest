@@ -1,6 +1,20 @@
 {
   "_doc": "The traders (economy refactor 2026-10-17, ECONOMY_REFACTOR_PROPOSAL D3-D7). Read by src/traders.py (pure: the plan, the stock, the offers, the deeds prices) and src/game_traders.py (the Game side: placing them, the shop's Buy / Sell / Services tabs). Each trader is a person with a name, a reason to be down here and a few short lines; none of them is a vending machine. Their goods are a one-time chance: no restock. Stock stays unidentified and is priced by what it is WORTH (data/item_worth.json), so a sharp eye can price-identify. They BUY at 20-25% of their own price (half of it, on a visit when the hero buys from them, up to what he spends: the trade-in), up to what is in their purse, never quest pieces, never anything worn, and a thing bought from any trader never sells back for more than half of what was paid (no buy/sell loop). Services sell a second chance, never the answer. Since the winning build (3.5, 2026-11-13) they also help a build: part of every shelf counters what walks the floors below (counters), smiths reforge, silver and inlay, armourers line a cloak or shirt and take special orders, and an altar rededicates (src/rededication.py).",
 
+  "friend_lines": {
+    "_doc": "What a friend says at his host's stall (traders.friend_lines): plain enough for any of the six. His own entry gives his lore, greeting ('line') and counter, and may give 'lines' of his own over these. He never says his host's. 'reaction' stands in for the host's line when a rumour moves his price.",
+    "bought": "My thanks, and may it serve you well.",
+    "sold": "It's a bargain, and I'll find someone who has need of it.",
+    "broke": "I'm sorry, but I can't let it go for less.",
+    "refuse": "I don't deal in that kind of thing.",
+    "purse_empty": "My purse is empty, so I can buy no more.",
+    "sold_out": "That is all that I have to sell.",
+    "order_placed": "Your {item} will be ready for you at the stall on floor {floor}.",
+    "order_ready": "Here is your {item}, made as you ordered.",
+    "order_refund": "There's no stall of mine below this one, so have your coin back.",
+    "reaction": "I have heard what is told of your dealings, and my prices go by it."
+  },
+
   "plan": {
     "_doc": "Which floors get a trader, rolled once a run from the Road's seed (road.rng_for), never from the shared random stream. Gate camps stand on the floor before each gate boss, always. Specialists take 'count' floors inside their range; then each floor left takes the generalist who keeps to it (the 'generalists' list, each with its own floors) with 'generalist_chance'. A trader avoids the Emberpup's and the Black Knight's floors and prefers floors with no anchor, medium or high Road slot; he never stands on a boss floor, floor 1, 99 or 100, or the Cow Level. Depth-true (Brandon, 2026-11-12): every range keeps inside the reach of the being who trades there (the 'reach' table below; tests/test_depth_true.py). 'generalist' and 'generalist_floors' are the pre-list keys: traders.generalists still reads them when 'generalists' is absent.",
     "never": [1, 20, 40, 60, 80, 99, 100, 999],
@@ -215,6 +229,7 @@
                  "reach": "ordinary", "floors": [2, 20],
                  "counter": "The word is that below here {foes}, so I have brought {take}, for you especially.",
                  "name": "Pomfrey Quill", "title": "Alderman and Trader", "sprite": "npc_lost_merchant",
+                 "lore": "Pomfrey Quill, alderman and collector, followed the adventurers down from the town because he thought there would be profit in it, and he sat in terror upon his trunk until you walked him to the stair. Now he has come down again to trade, in a coat as absurdly fine as ever, and he has not forgotten who brought him out alive.",
                  "line": "Pomfrey Quill, alderman, trader, and ALIVE, thanks to you! You shall have a friend's price on everything, and this time I mean it."}
     },
 
@@ -261,6 +276,7 @@
                  "reach": "ordinary", "floors": [2, 20],
                  "counter": "Down there {foes}. I'd take {take} if I were you, and I was very nearly you.",
                  "name": "Marta Venn", "title": "Rat-Catcher and Apothecary", "sprite": "npc_rat_catcher",
+                 "lore": "Marta Venn is a rat-catcher who carries fever cure in jars of green bile to the children of Saint Agatha's. She had set her own broken leg and was bleeding beside those jars when you found her, and since you staunched the wound she keeps an apothecary's stall as well.",
                  "line": "My leg's mended, and forty kids at Saint Agatha's got their fever cure. You get a friend's price, and don't argue."}
     },
 
@@ -305,6 +321,7 @@
                  "reach": "hardy", "floors": [10, 40],
                  "counter": "Scouts say {foes} past here, so take {take}, as the Legion would.",
                  "name": "Jory Pell", "title": "Armourer", "sprite": "npc_deserter",
+                 "lore": "Jory Pell was a young soldier of the Legion who fled when his company was broken, and who went back at last for those that were left alive in the old granary. He is done with trembling and with soldiering, and he sells what arms his company has no more need of.",
                  "line": "I'm Pell, late of the Legion. I sell what my company doesn't need now, at a friend's price to the one who sent me back."}
     },
 
@@ -340,6 +357,7 @@
                  "reach": "hardy", "floors": [15, 40],
                  "counter": "I've mapped what lies below, where {foes}, and I'd carry {take}.",
                  "name": "Helena Marsh", "title": "Cartographer and Bookseller", "sprite": "npc_injured_scholar",
+                 "lore": "Helena Marsh had made maps for twelve years and never drawn a bad line until her arm was hurt in the dark. Since you gave her back the use of her pen she has gone on mapping these halls, and she sells books and scrolls beside her maps.",
                  "line": "Twelve years and never a bad line, and it's thanks to you that I can still hold the pen. You get a friend's price."}
     },
 
@@ -543,6 +561,7 @@
                  "reach": "deep_folk", "floors": [41, 75],
                  "counter": "Father always said to know what's below. Down there {foes}, so take {take}.",
                  "name": "Frida", "title": "Smith's Daughter", "sprite": "npc_dwarf",
+                 "lore": "Frida is a dwarf and a smith's daughter, and for days she kept her hand upon the chest of her dead father, for she would not share it with her brother Hepti. When you had told her what Hreidmar's gold did to his children she lifted her hand, and now she trades with her share of her father's tools.",
                  "line": "Hepti filled his trench in and I took my hand off the lid, and we split Father's tools as well. You'll have a friend's price, since it was you who told us about Otr."}
     },
 
@@ -578,6 +597,7 @@
                  "reach": "immortal", "floors": [41, 90],
                  "counter": "I have seen what lies below, dear, where {foes}, and you will want {take}.",
                  "name": "The Sibyl of Cumae", "title": "Seller of Books", "sprite": "npc_blind_seer",
+                 "lore": "The Sibyl of Cumae was granted as many years as there are grains in a handful of dust, but she forgot to ask for youth, and she withered until a bottle could hold her. Sooner than lower her price she burned six of her nine books of all that is to come, and she has not forgotten that you paid it for the last three.",
                  "line": "It is the same price as before, dear. No, for you a little less, since you paid the first time, as nobody ever does."}
     },
 

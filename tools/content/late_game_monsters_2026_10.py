@@ -144,7 +144,7 @@ NEW = {
         'resistances': ['poison', 'cold', 'acid'], 'weaknesses': ['fire'],
         'tags': ['aberration', 'outsider'], 'harvest_tier': 4,
         'treasure': {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 5},
-        'lore': ("When Marduk had caught Tiamat the salt sea in his net, as the Babylonian poem of creation tells, he drove the winds into her mouth and split her like a fish for drying, and of the halves he made sky and earth. Then he cut the channels of her blood, and the north wind bore it away to secret places, of which this is one. That blood still crawls, salt and venomous, and it remembers being divided, so that a small cut does no more than make two of it. One great blow, such as a long answer chain gives, will end it outright."),
+        'lore': ("When Marduk had caught Tiamat the salt sea in his net, as the Babylonian poem of creation tells, he drove the winds into her mouth and split her like a fish for drying, and of the halves he made sky and earth. Then he cut the channels of her blood, and the north wind bore it away to secret places, of which this is one. That blood still crawls, salt and venomous, and it remembers being divided, so that a small cut does no more than make two of it. A great blow, such as a long answer chain gives, leaves it no strength to divide."),
         'frequency': 2, 'splits': {'by': 'weak_blow', 'share': 0.10, 'max': 8},
     },
     # --- 8. Ganglot, Hel's handmaid: heal the dead -------------------------------
@@ -174,7 +174,7 @@ NEW = {
         'resistances': ['poison'], 'weaknesses': [],
         'tags': ['humanoid'], 'harvest_tier': 4,
         'treasure': {'gold': [1900, 3600], 'item_chance': 1.0, 'item_tier': 5},
-        'lore': ("Of three sisters Medusa alone was mortal, and death has no power over the others, Stheno the mighty and Euryale the far-roaming. Hesiod gives them brazen hands and golden wings. When Perseus fled with their sister's head they rose from their beds and chased him over the sea until the helm of Hades hid him, and they have sought him ever since. The living turn rigid as stone beneath their gaze, and a killing blow lays either of them low for no more than a moment."),
+        'lore': ("Of three sisters Medusa alone was mortal, and death has no power over the others, Stheno the mighty and Euryale the far-roaming. Apollodorus gives them brazen hands and golden wings. When Perseus fled with their sister's head they rose from their beds and chased him over the sea until the helm of Hades hid him, and they have sought him ever since. The living turn rigid as stone beneath their gaze, and a killing blow lays either of them low for no more than a moment."),
         'frequency': 0, 'gaze_paralyze': 2, 'gaze_cooldown': 6, 'gaze_group': 'gorgon_sisters',
         'revive_once_on_death': True, 'revive_hp_pct': 0.3,
         'revive_message': "Stheno rises again, for death cannot hold an immortal.",
@@ -410,7 +410,7 @@ NEW.update({
         ],
         'resistances': ['poison', 'drain', 'cold'], 'weaknesses': ['blunt'],
         'tags': ['construct'], 'harvest_tier': 3, 'treasure': dict(MID_GOLD, item_chance=0.6),
-        'lore': ("An Egyptian of means took ushabtis with him to the tomb, little workers of blue faience, one for every day of the year, and on them was written the sixth spell of the Book of the Dead: 'O ushabti, if I am called to work in the land of the dead, you shall answer: Here I am.' Over every ten was set an overseer with a whip, to hold them to their labour. The overseers of these depths have outlived their masters, and still they read out the spell and still the workers answer. Break the one who has the whip, and all the rest will fall quiet."),
+        'lore': ("An Egyptian of means took ushabtis with him to the tomb, little workers of blue faience, one for every day of the year, and on them was written the sixth spell of the Book of the Dead: 'O ushabti, if I am called to work in the land of the dead, you shall answer: Here I am.' Over every ten was set an overseer with a whip, to hold them to their labour. The overseers of these depths have outlived their masters, and still they read out the spell and still the workers answer. Break the one who has the whip, and no more will answer to the spell."),
         'frequency': 2, 'summon_kind': 'ushabti_worker', 'summon_cooldown': 4, 'summon_max': 5,
     },
     'ushabti_worker': {
@@ -479,7 +479,7 @@ NEW.update({
         ],
         'resistances': ['fire', 'poison'], 'weaknesses': ['blunt', 'holy'],
         'tags': ['dragon', 'reptile', 'demon'], 'harvest_tier': 4, 'treasure': dict(DEEP_GOLD),
-        'lore': ("Azhi Dahaka, the dragon of the Avesta with three heads and six eyes, was made by the evil spirit to empty the world of good things. When the hero Thraetaona smote it with his blade, snakes, scorpions, toads and lizards poured from the wound, and he saw that if he cut it to pieces the world would be filled with vermin, and so he chained it beneath Mount Damavand instead. Its brood carries the same curse, and every cut or stab lets loose a swarm, so the wise will club it, burn it or blast it."),
+        'lore': ("Azhi Dahaka, the dragon of the Avesta with three heads and six eyes, was made by the evil spirit to empty the world of good things. When the hero Thraetaona smote it with his blade, snakes, scorpions, toads and lizards poured from the wound, and he saw that if he cut it to pieces the world would be filled with vermin, and so he chained it beneath Mount Damavand instead. Its brood carries the same curse, and every cut or stab lets loose a swarm, so the wise will club it, or strike it with what is holy."),
         'frequency': 2, 'splits': {'by': ['slash', 'pierce'], 'into': 'khrafstra_swarm', 'max': 6},
     },
     'khrafstra_swarm': {

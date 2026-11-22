@@ -680,19 +680,32 @@ class MerchantNPC:
         self.name = self.person          # short: the In Sight rail lists him by name
         self.sprite_id = (friend or d).get('sprite', 'merchant_npc')
         self.sprite_fallback = d.get('sprite_fallback', 'merchant_npc')
-        self.lore = d.get('lore', "Grindle is a small grey trader with a pack twice his size and a lantern that he never seems to need. He will not say where his stock comes from, save that the previous owners are past caring.")
+        self.lore = (friend or d).get('lore', "Grindle is a small grey trader with a pack twice his size and a lantern that he never seems to need. He will not say where his stock comes from, save that the previous owners are past caring.")
         self.markup = float(d.get('markup', 1.0))
         self.purse = economy.share(self.level, float(d.get('purse', economy.TRADER_PURSE_SHARE)))
         self.buys = d.get('buys', 'all')
         self.buys_cursed = bool(d.get('buys_cursed', False))
         self.services = tuple(d.get('services') or ())
-        self.lines = dict(d.get('lines') or {})
         self.friend = friend.get('person') if friend else None
         self.pronoun = (friend or d).get('pronoun', d.get('pronoun', 'he'))
-        if friend and friend.get('line'):
-            self.lines['greet'] = [friend['line']]
-        if friend and friend.get('counter'):
-            self.lines['counter'] = friend['counter']   # what's below, in his own voice
+        if friend:
+            # A friend says nothing of his host's (bug bash 3.6.0).
+            import traders
+            self.lines = traders.friend_lines(friend)
+        else:
+            self.lines = dict(d.get('lines') or {})
+
+    def __setstate__(self, state):
+        """A friend saved before 3.6.0 held his host's lore and lines: he
+        takes his own from his kind's entry."""
+        self.__dict__.update(state)
+        if not self.friend:
+            return
+        import traders
+        fr = (traders.kind_def(self.kind) or {}).get('friend') or {}
+        if fr.get('person') == self.friend:
+            self.lore = fr.get('lore', '')
+            self.lines = traders.friend_lines(fr)
 
     def pronouns(self) -> tuple:
         """(he, him, his), (she, her, her) or (it, it, its) for this trader.
