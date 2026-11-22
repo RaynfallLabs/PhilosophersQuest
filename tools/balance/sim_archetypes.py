@@ -106,7 +106,7 @@ def register(profiles: dict) -> None:
     add('arch_mage', mage)
     add('arch_rogue', rogue)
     ranger = add('arch_ranger', rogue, stat_focus=('PER', 'DEX'), knobs=dict(ar_bow=1))
-    cleric = add('arch_cleric', fighter, stat_focus=('WIS', 'CON'), armour_class='medium',
+    cleric = add('arch_cleric', fighter, stat_focus=('WIS', 'CON'), armour_class=('light', 'medium'),
                  cleric=True, caster=True, quest_pet='mooble', knobs=dict(cl_wards=1))
     barbarian = add('arch_barbarian', fighter, armour_class='light', fury=True)
     beast = add('arch_beast', fighter, stat_focus=('CON', 'STR'), beast=True)

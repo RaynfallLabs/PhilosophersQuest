@@ -2743,8 +2743,9 @@ class Run(_MMMagicSim):
             if item.slot == 'body':
                 # A build's own weight class (the Dexterity build wears light
                 # armour: his dodge and quickness are what keep him alive).
-                want = self.prof.get('armour_class')
-                if want and gear_mod.piece_weight_class(item) != want:
+                want = self.prof.get('armour_class')        # one class, or those he will wear
+                if want and gear_mod.piece_weight_class(item) not in (
+                        want if isinstance(want, tuple) else (want,)):
                     return
                 new_v = self._body_value(item)
                 old_v = self._body_value(cur)

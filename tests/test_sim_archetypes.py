@@ -163,7 +163,7 @@ def test_the_profiles_lean_on_what_they_are_named_for():
         assert P['arch_fighter'][k] == v
     assert P['arch_ranger']['stat_focus'] == ('PER', 'DEX') and P['arch_ranger']['knobs']['ar_bow']
     assert not P['arch_ranger_nolean']['knobs']['ar_bow']
-    assert P['arch_cleric']['stat_focus'][0] == 'WIS' and P['arch_cleric']['armour_class'] == 'medium'
+    assert P['arch_cleric']['stat_focus'][0] == 'WIS' and P['arch_cleric']['armour_class'] == ('light', 'medium')
     assert P['arch_barbarian']['fury'] and not P['arch_barbarian_nolean']['fury']
     assert P['arch_beast']['beast'] and not P['arch_beast_nolean']['beast']
     assert 'ar_bow' not in P['mastery']['knobs'] and 'cl_wards' not in P['mastery']['knobs']
