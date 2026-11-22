@@ -266,7 +266,7 @@ NEW['nuckelavee'] = kind(
      atk('Hoof Trample', '3d10+14', 'blunt', 'trample')],
     family='demons', tags=['demon'], res=['poison', 'cold'], weak=['holy'],
     opener=('Mortasheen Breath', 3), can_charge=True, charge_bonus_mult=1.3, moves=[],
-    lore=("Orkney islanders would not speak the name of the nuckelavee, which came out of the sea like a horse and rider grown into one body, and had no skin, so that the black blood could be seen running in its veins. Its breath withered the crops and brought upon the cattle the plague called mortasheen. An old man named Tammas told Walter Traill Dennison how it pursued him along the shore one night, and how he saved himself by leaping a burn of fresh water, which it has no power to cross."))
+    lore=("Orkney islanders would not speak the name of the nuckelavee, which came out of the sea like a horse and rider grown into one body, and had no skin, so that the black blood could be seen running in its veins. Its breath withered the crops and brought upon the cattle the plague called mortasheen. An old man named Tammas told Walter Traill Dennison how it pursued him along the shore one night, and how he saved himself by leaping a burn of fresh water, where on that night it would not follow him."))
 
 NEW['star_jelly'] = kind(
     'Star Jelly', 'J', (220, 220, 240), '253d10+924', 6, 'ambush', 6, 55, 50, 9, 2.0,

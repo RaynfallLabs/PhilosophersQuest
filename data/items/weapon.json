@@ -44,7 +44,7 @@
     "value": 5000,
     "min_level": 82,
     "unidentified_name": "a dark whispering curved blade",
-    "lore": "Few who have held the Soul Reaver remember that they took it up willingly, for the blade chooses its own bearers, and by what rule it chooses none has learned. This much is known, that the wounds it deals will not heal without magic, that it whispers between one death and the next, and that it grows heavier if it is turned against the innocent. Some say that a dying god made it, some a betrayed archmage, and others a plague with a great thirst for vengeance.",
+    "lore": "Few who have held the Soul Reaver remember that they took it up willingly, for the blade chooses its own bearers, and by what rule it chooses none has learned. This much is known, that the wounds it deals will not heal without magic, that it whispers between one death and the next, and that it drinks from every wound it deals. Some say that a dying god made it, some a betrayed archmage, and others a plague with a great thirst for vengeance.",
     "quiz_tier": 5,
     "identified": false,
     "lifestealPercent": 0.3,
@@ -2517,7 +2517,7 @@
     "chain_exponent": 1.15
   },
   "rod_of_moses": {
-    "name": "Rod of Aaron",
+    "name": "Rod of Moses",
     "class": "staff",
     "variant": "2h",
     "tier": 5,
@@ -2859,7 +2859,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a blade that seems to move before you do",
-    "lore": "The Slavs tell of the Self-Swinger, which fights of itself and is found in kingdoms beneath the earth with Koschei or a serpent to guard it. The heroes who find it never wholly understand it, but since the sword does the fighting and they live through it, they take no fright at its having a will of its own, and count it very useful.",
+    "lore": "The Slavs tell of the Self-Swinger, which in their tales fights of itself and is found in kingdoms beneath the earth with Koschei or a serpent to guard it. The heroes who find it never wholly understand it, but it leaps so readily to the hand, and stuns so many of those it strikes, that they count it very useful.",
     "damage_types": [
       "slash",
       "magic"
@@ -2933,7 +2933,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "an emerald-studded curved blade engraved with tiny names",
-    "lore": "Persian storytellers say that King Solomon, commander of the djinn, wore this sword of emeralds at his hip. In the romance of Amir Arsalan it is in the keeping of Fulad-zereh, a horned demon whom his mother's spells had made proof against every weapon save this one. Whoever wears it is safe from sorcery, and a wound it gives is mended only by a potion that must be brewed of the demon's own brains.",
+    "lore": "Persian storytellers say that King Solomon, commander of the djinn, wore this sword of emeralds at his hip. In the romance of Amir Arsalan it is in the keeping of Fulad-zereh, a horned demon whom his mother's spells had made proof against every weapon save this one. It is the bane of demons still, and out of one that it slays a servant will sometimes spring forth, bound to its bearer for a little while as the djinn were bound to Solomon.",
     "damage_types": [
       "slash",
       "magic",
@@ -6866,7 +6866,7 @@
     "max_enchant": 3,
     "unidentified_name": "a slender ceremonial mace topped with a jackal",
     "identified": false,
-    "lore": "Older than Anubis, and at first another god than he, was Wepwawet the jackal of Upper Egypt, the Opener of the Ways, whose standard went before the procession of the king and before the army. He is pictured with a mace and a bow, and the pear-shaped mace was Egypt's first royal weapon, which the king lifts over a kneeling foe upon the Narmer Palette. True to the name of its god, this one will open a way through walls as well.",
+    "lore": "Older than Anubis, and at first another god than he, was Wepwawet the jackal of Upper Egypt, the Opener of the Ways, whose standard went before the procession of the king and before the army. He is pictured with a mace and a bow, and the pear-shaped mace was Egypt's first royal weapon, which the king lifts over a kneeling foe upon the Narmer Palette. True to the name of its god, this one will open the very floor, and dig a pit for a foe.",
     "template_basis": "mace",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "can_dig": true,

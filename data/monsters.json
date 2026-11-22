@@ -2260,7 +2260,7 @@
       "item_tier": 3,
       "purse": "none"
     },
-    "lore": "All that a specter was in life has burned away long since, and nothing is left of it but hunger. It has neither face nor name nor any grudge to remember, and it passes through walls of stone as through a fog. A great cold goes before it, so that the breath of the living turns to mist, and that chill is all the warning they are given before its touch drains the life from whatever it passes through.",
+    "lore": "All that a specter was in life has burned away long since, and nothing is left of it but hunger. It has neither face nor name nor any grudge to remember, and it drifts through the halls of stone as silent as a fog. A great cold goes before it, so that the breath of the living turns to mist, and that chill is all the warning they are given before its touch drains the life from whatever it passes through.",
     "frequency": 2,
     "thac0_lore": 10,
     "shrugs_off": [
@@ -2818,7 +2818,7 @@
       "item_tier": 3,
       "purse": "none"
     },
-    "lore": "The spirits of earth, as Paracelsus wrote, pass through solid rock as fishes pass through water. An earth elemental will rise out of a floor and leave no hole behind it, and sink again by the same road. It is as though the stone of a whole hill had resolved to stand upright and walk, and any edge will chip upon it, yet acid will eat it away as the rain eats limestone.",
+    "lore": "The spirits of earth, as Paracelsus wrote, are as much at home in rock as fishes are in water. When an earth elemental rises to its feet, it is as though the stone of a whole hill had resolved to stand upright and walk, and any edge will chip upon it, yet acid will eat it away as the rain eats limestone.",
     "frequency": 2,
     "thac0_lore": 2,
     "shrugs_off": [],
@@ -4236,7 +4236,7 @@
       "item_tier": 5,
       "purse": "kept"
     },
-    "lore": "No one now living remembers the name of this wizard, and he has himself forgotten it. Through thousands of years of study he has won the answers to questions that no one else would know how to ask, and long ago he solved the riddles of fire and frost and steel. Only what is holy can trouble him still, since holiness was never a thing to be mastered by knowledge.",
+    "lore": "No one now living remembers the name of this wizard, and he has himself forgotten it. Through thousands of years of study he has won the answers to questions that no one else would know how to ask, and long ago he solved the riddles of frost and of edge and point. Fire and the hammer may hurt him yet, but what is holy troubles him most, since holiness was never a thing to be mastered by knowledge.",
     "frequency": 0,
     "summon_kind": [
       "skeleton_warrior",
@@ -5679,7 +5679,7 @@
       "item_tier": 5,
       "purse": "none"
     },
-    "lore": "Before the gates of Thebes the Sphinx lay crouched, and she devoured all who could not answer her riddle: what walks on four legs at dawn, two at noon, three at dusk? Oedipus alone answered rightly, and she threw herself down from her rock. In the dungeon she sits at the crossroads to guard the passage, and she will fall upon any who come near without first attempting her puzzle.",
+    "lore": "Before the gates of Thebes the Sphinx lay crouched, and she devoured all who could not answer her riddle: what walks on four legs at dawn, two at noon, three at dusk? Oedipus alone answered rightly, and she threw herself down from her rock. In the dungeon she sits at the crossroads to guard the passage, and she waits no longer for answers, but hurls her riddle to confound the mind and then falls upon whoever comes near.",
     "frequency": 1,
     "thac0_lore": -2,
     "shrugs_off": [],
@@ -9407,7 +9407,7 @@
       "item_tier": 5,
       "purse": "none"
     },
-    "lore": "Whether it fell or was sent, the star spawn came down from between the stars, a hill of grey flesh that folds and unfolds in no pattern, and minds near it fill with thoughts that are not their own. The sages who studied one judged it to be no more than a footprint, and after that they would not ask what had made the print. Cold is nothing to it, but fire and prayer will do it harm.",
+    "lore": "Whether it fell or was sent, the star spawn came down from between the stars, a hill of grey flesh that folds and unfolds in no pattern, and minds near it fill with thoughts that are not their own. The sages who studied one judged it to be no more than a footprint, and after that they would not ask what had made the print. Cold does it small harm, but fire will hurt it sorely.",
     "frequency": 2,
     "thac0_lore": 8,
     "shrugs_off": [],
@@ -10199,7 +10199,7 @@
       "item_tier": 3,
       "purse": "tempter"
     },
-    "lore": "Old books of demons tell of the succubus, who preys on sleepers and feeds upon their strength. This one has worn so thin that lamplight passes through her, and the eye slides away when it would hold fast her outline. She steps through walls to stand beside the bed, and those whom she has visited awaken weak and muddled, and are sure of one thing only, that something is missing.",
+    "lore": "Old books of demons tell of the succubus, who preys on sleepers and feeds upon their strength. This one has worn so thin that lamplight passes through her, and the eye slides away when it would hold fast her outline. She comes without a sound to stand beside the bed, and those whom she has visited awaken weak and muddled, and are sure of one thing only, that something is missing.",
     "frequency": 3,
     "thac0_lore": 6,
     "shrugs_off": [],
@@ -11711,7 +11711,7 @@
       "item_tier": 2,
       "purse": "none"
     },
-    "lore": "Under a door, or through a crack no wider than a finger, the ochre jelly will squeeze its mustard-yellow body, and then it pours down the corridor faster than a man can trot. It has no power to eat metal or stone, but flesh and leather it devours to the last scrap. Whoever smites it with a sword or a bolt of lightning only divides it, and has then two hungry jellies to face.",
+    "lore": "Under a door, or through a crack no wider than a finger, the ochre jelly will squeeze its mustard-yellow body, and then it pours down the corridor faster than a man can trot. It has no power to eat metal or stone, but flesh and leather it devours to the last scrap. Delvers once told how a sword or lightning would divide it in two, but either does it only half harm, and its bane is fire and frost.",
     "frequency": 6,
     "thac0_lore": 13,
     "shrugs_off": [],
@@ -12214,7 +12214,7 @@
       "item_tier": 3,
       "purse": "none"
     },
-    "lore": "A stranger from the Elemental Plane of Earth, with three arms and three legs, the xorn passes through solid rock at will. It has a keen nose for metals and gems, which are its food, and for gold or gems it will gladly parley, fighting only when it is cornered or when its prize is denied it.",
+    "lore": "A stranger from the Elemental Plane of Earth, with three arms and three legs, the xorn is at home in the solid rock of its own country. It has a keen nose for metals and gems, which are its food, and though old tales speak of bargains struck with one for gold, down here it will fight whoever carries them.",
     "frequency": 4,
     "thac0_lore": 11,
     "shrugs_off": [],
@@ -13076,7 +13076,7 @@
       "item_tier": 2,
       "purse": "none"
     },
-    "lore": "Wedged in a crack of the rock, whose very colour it wears, the grick lies ready to strike at whatever passes. It is a rubbery worm as thick as a man's thigh, with four barbed tentacles about a snapping beak, and its hide gives like wet leather under an ordinary blade and takes little hurt. Once it has fed it sleeps for days in its hole, but while it is hungry it will follow a company of travellers for miles.",
+    "lore": "Wedged in a crack of the rock, whose very colour it wears, the grick lies ready to strike at whatever passes. It is a rubbery worm as thick as a man's thigh, with four barbed tentacles about a snapping beak, and its hide gives like wet leather, and magic will hurt it worse than any blade. Once it has fed it sleeps for days in its hole, but while it is hungry it will follow a company of travellers for miles.",
     "frequency": 6,
     "thac0_lore": 18,
     "shrugs_off": [],
@@ -15863,7 +15863,7 @@
       "item_tier": 3,
       "purse": "grave_goods"
     },
-    "lore": "To certain tombs was given a warden of the undead, made expressly to guard them and yet bring no harm upon the dead who rest within. The crypt thing, as he is named, does not assail intruders openly, but casts them by magic to whatever places of the dungeon chance may choose, so that companions are parted and each is left lost and alone. There is no reasoning with such a guardian, nor will any bribe move him.",
+    "lore": "To certain tombs was given a warden of the undead, made expressly to guard them and yet bring no harm upon the dead who rest within. The crypt thing, as he is named, does not assail intruders openly, but bewilders them by magic as though they had been snatched away and set down elsewhere, so that they forget which way they came and stumble lost and alone. There is no reasoning with such a guardian, nor will any bribe move him.",
     "frequency": 4,
     "thac0_lore": 19,
     "shrugs_off": [],
@@ -19569,7 +19569,7 @@
       "item_tier": 2,
       "purse": "none"
     },
-    "lore": "Travellers count it a good omen to meet with blink dogs, which live in packs and have wits of their own, and can leap a short way in an instant without crossing the ground between. They appear beside a foe, bite and are gone again, so that it is very hard to bring one to bay. Yet for all their wild manner of fighting they are deeply loyal, and they may be won as friends.",
+    "lore": "Travellers count it a good omen to meet with blink dogs, which live in packs and have wits of their own, and are so swift that they seem not to cross the ground between. They appear beside a foe, bite and are gone again, so that it is very hard to bring one to bay. Yet for all their wild manner of fighting they are deeply loyal, and they may be won as friends.",
     "frequency": 6,
     "thac0_lore": 20,
     "shrugs_off": [],
@@ -20168,7 +20168,7 @@
       "item_tier": 3,
       "purse": "trinkets"
     },
-    "lore": "Along the Scottish Border, in ruined peel towers where blood was shed for centuries, dwells the goblin called the redcap. He is like a short old man, with long teeth, iron-shod boots and a pikestaff, and he keeps his cap red by steeping it in the blood of travellers. No human strength can stop him, but if he hears words of Scripture or has sight of a cross he shrieks and flees away, leaving a tooth behind him.",
+    "lore": "Along the Scottish Border, in ruined peel towers where blood was shed for centuries, dwells the goblin called the redcap. He is like a short old man, with long teeth, iron-shod boots and a pikestaff, and he keeps his cap red by steeping it in the blood of travellers. Border folk said that no human strength could stop him, but that Scripture or a cross would send him shrieking away. Down here he has grown bolder, and it is better to bring iron.",
     "frequency": 4,
     "thac0_lore": 7,
     "shrugs_off": [],
@@ -22131,7 +22131,7 @@
       "item_tier": 5,
       "purse": "none"
     },
-    "lore": "An avenue of stone sphinxes, hundreds in number, once joined the temples of Karnak and Luxor at Thebes in Egypt, crouched in two facing rows for more than a mile as guardians of the road. The lesser sphinx is a guardian still, with the body of a lion, a sharp tongue and little patience. She will ask her riddle only once, and if the answer is wrong, or is slow in coming, she quickly wearies of the one who gave it.",
+    "lore": "An avenue of stone sphinxes, hundreds in number, once joined the temples of Karnak and Luxor at Thebes in Egypt, crouched in two facing rows for more than a mile as guardians of the road. The lesser sphinx is a guardian still, with the body of a lion, a sharp tongue and little patience. She will not wait to hear her riddle answered, but uses it to confound the mind, and she quickly wearies of her prey.",
     "frequency": 3,
     "thac0_lore": -2,
     "shrugs_off": [],
@@ -23074,7 +23074,7 @@
       "item_tier": 2,
       "purse": "scholar"
     },
-    "lore": "For the service of a thing that whispers from below, the dark cultist gave up name, family and trade. The little ritual that he has learned is enough to make a prayer bite like a blade, and upon his knife is a curse that clouds the eyes. He hunts for relics on his master's behalf and counts his own life a small price, though he knows full well that holy things will burn him.",
+    "lore": "For the service of a thing that whispers from below, the dark cultist gave up name, family and trade. The little ritual that he has learned is enough to make a prayer bite like a blade, and upon his knife is a curse that clouds the eyes. He hunts for relics on his master's behalf and counts his own life a small price, though he knows full well that heaven is closed to him.",
     "frequency": 4,
     "thac0_lore": 21,
     "shrugs_off": [],
@@ -31766,7 +31766,7 @@
         "coins"
       ]
     },
-    "lore": "From Alamut the Old Man of the Mountain sent out his killers with a dagger apiece, and for two centuries princes slept uneasily. This order learned the same trade and went further, for its brethren bartered away their own shadows for the right to walk within them. Nothing is seen of such a killer until the blade arrives, but bright flame and holy light leave him nowhere to stand.",
+    "lore": "From Alamut the Old Man of the Mountain sent out his killers with a dagger apiece, and for two centuries princes slept uneasily. This order learned the same trade and went further, for its brethren bartered away their own shadows for the right to walk within them. Nothing is seen of such a killer until the blade arrives, but bright flame leaves him nowhere to stand.",
     "frequency": 4,
     "pack": true,
     "thac0_lore": -8,
@@ -32272,7 +32272,7 @@
       "purse": "hoard",
       "treasure_chance": 0.06
     },
-    "lore": "Too far into the dark between the stars this dragon flew, and it brought some of that darkness back with it. Its scales have no colour, but only an absence from which the eye slides away, and instead of fire it breathes a rending wrongness that makes men see what is not there. Its bite steals strength rather than flesh, yet it is solid still to lightning and holy light.",
+    "lore": "Too far into the dark between the stars this dragon flew, and it brought some of that darkness back with it. Its scales have no colour, but only an absence from which the eye slides away, and instead of fire it breathes a rending wrongness that makes men see what is not there. Its bite steals strength rather than flesh, yet it is solid still to lightning and to a spear-point.",
     "frequency": 2,
     "thac0_lore": -16,
     "shrugs_off": [],
@@ -36328,7 +36328,7 @@
       "item_tier": 4,
       "purse": "scholar"
     },
-    "lore": "In the years of the Black Death frightened towns laid the sickness upon witches and well-poisoners, and this woman in the green hood would have deserved the blame. She gathers the dying at the gate and brings them down with her, where they serve her and her craft keeps them upon their feet. When she falls, all whom she was holding up will fall along with her.",
+    "lore": "In the years of the Black Death frightened towns laid the sickness upon witches and well-poisoners, and this woman in the green hood would have deserved the blame. She gathers the dying at the gate and brings them down with her, where they serve her and her craft keeps them upon their feet. When she falls, there will be none left to mend them.",
     "perception_range": 9,
     "thac0_lore": 3,
     "shrugs_off": [],
@@ -37203,7 +37203,7 @@
       },
       "purse": "purse"
     },
-    "lore": "The shadow archers are trained in towers drawn on no map. Their first lesson is the bow and their second is to be gone from where the arrow came from, but the third their masters keep to themselves. Their arrows are fletched with darkness and leave the eyes dim, but firelight and holy light will give such archers no place in which to hide.",
+    "lore": "The shadow archers are trained in towers drawn on no map. Their first lesson is the bow and their second is to be gone from where the arrow came from, but the third their masters keep to themselves. Their arrows are fletched with darkness and leave the eyes dim, but firelight will give such archers no place in which to hide.",
     "can_phase_blink": true,
     "phase_blink_chance": 0.35,
     "perception_range": 11,
@@ -40075,7 +40075,7 @@
       "item_tier": 4,
       "purse": "none"
     },
-    "lore": "An Egyptian of means took ushabtis with him to the tomb, little workers of blue faience, one for every day of the year, and on them was written the sixth spell of the Book of the Dead: 'O ushabti, if I am called to work in the land of the dead, you shall answer: Here I am.' Over every ten was set an overseer with a whip, to hold them to their labour. The overseers of these depths have outlived their masters, and still they read out the spell and still the workers answer. Break the one who has the whip, and all the rest will fall quiet.",
+    "lore": "An Egyptian of means took ushabtis with him to the tomb, little workers of blue faience, one for every day of the year, and on them was written the sixth spell of the Book of the Dead: 'O ushabti, if I am called to work in the land of the dead, you shall answer: Here I am.' Over every ten was set an overseer with a whip, to hold them to their labour. The overseers of these depths have outlived their masters, and still they read out the spell and still the workers answer. Break the one who has the whip, and no more will answer to the spell.",
     "frequency": 2,
     "summon_kind": "ushabti_worker",
     "summon_cooldown": 4,
@@ -45674,7 +45674,7 @@
       "item_tier": 3,
       "purse": "none"
     },
-    "lore": "Orkney islanders would not speak the name of the nuckelavee, which came out of the sea like a horse and rider grown into one body, and had no skin, so that the black blood could be seen running in its veins. Its breath withered the crops and brought upon the cattle the plague called mortasheen. An old man named Tammas told Walter Traill Dennison how it pursued him along the shore one night, and how he saved himself by leaping a burn of fresh water, which it has no power to cross.",
+    "lore": "Orkney islanders would not speak the name of the nuckelavee, which came out of the sea like a horse and rider grown into one body, and had no skin, so that the black blood could be seen running in its veins. Its breath withered the crops and brought upon the cattle the plague called mortasheen. An old man named Tammas told Walter Traill Dennison how it pursued him along the shore one night, and how he saved himself by leaping a burn of fresh water, where on that night it would not follow him.",
     "frequency": 2,
     "thac0_lore": 4,
     "shrugs_off": [],

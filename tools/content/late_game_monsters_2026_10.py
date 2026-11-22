@@ -410,7 +410,7 @@ NEW.update({
         ],
         'resistances': ['poison', 'drain', 'cold'], 'weaknesses': ['blunt'],
         'tags': ['construct'], 'harvest_tier': 3, 'treasure': dict(MID_GOLD, item_chance=0.6),
-        'lore': ("An Egyptian of means took ushabtis with him to the tomb, little workers of blue faience, one for every day of the year, and on them was written the sixth spell of the Book of the Dead: 'O ushabti, if I am called to work in the land of the dead, you shall answer: Here I am.' Over every ten was set an overseer with a whip, to hold them to their labour. The overseers of these depths have outlived their masters, and still they read out the spell and still the workers answer. Break the one who has the whip, and all the rest will fall quiet."),
+        'lore': ("An Egyptian of means took ushabtis with him to the tomb, little workers of blue faience, one for every day of the year, and on them was written the sixth spell of the Book of the Dead: 'O ushabti, if I am called to work in the land of the dead, you shall answer: Here I am.' Over every ten was set an overseer with a whip, to hold them to their labour. The overseers of these depths have outlived their masters, and still they read out the spell and still the workers answer. Break the one who has the whip, and no more will answer to the spell."),
         'frequency': 2, 'summon_kind': 'ushabti_worker', 'summon_cooldown': 4, 'summon_max': 5,
     },
     'ushabti_worker': {
