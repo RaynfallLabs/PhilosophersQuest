@@ -31,7 +31,7 @@ def _as_the_game():
     combat.strike_damage = real
 
 
-ALL_ON = {'ar_per': 0.03, 'fu_on': 1, 'dx_finesse': 1}
+ALL_ON = {'ar_per': 0.03, 'fu_on': 1, 'dx_finesse': 1, 'st_lean': 1}
 
 
 def _run(profile='mastery', knobs=''):
@@ -86,7 +86,7 @@ def test_every_knob_is_in_the_simulator_and_is_the_game():
         assert ds.KNOB_DEFAULTS[k] == v
     for k in ('cl_wis', 'cl_wis_cap', 'cl_wards', 'cl_mp_wis', 'fu_on', 'fu_tough', 'dx_finesse',
               'ar_bow', 'ar_per', 'ar_recover', 'ar_fletch', 'ar_stall', 'ar_heads',
-              'pt_hp', 'pt_feed', 'pt_lv', 'pt_per', 'pt_full'):
+              'pt_hp', 'pt_feed', 'pt_lv', 'pt_per', 'pt_full', 'st_lean', 'kt_even', 'ar_draw'):
         assert not sa.KNOBS[k], k
     assert sa.KNOBS['la_wt'] == 1.0
     assert sa.BERSERK == sa.KNOBS['fu_dmg'] == 1.3
@@ -195,6 +195,41 @@ def test_r1_without_the_ruling_a_shot_is_the_games():
     game = real(run.p, _foe(), 2, ranged=True, weapon=bow)
     sa.install(ALL_ON)
     assert _shot(run, bow) == game
+
+
+def test_r1_arrowheads_carry_a_coating_into_the_shot_and_spend_it():
+    import combat
+    import items
+    import sim_ranger
+    run = _run('arch_ranger', 'ar_heads=1')
+    bow = _bow()
+    run.p.ranged_weapon = bow
+    sim_ranger.add_ammo(run, 'iron_arrow', 5)
+    foe = _foe('zombie', weaknesses=['holy'], tags=[])
+    plain = combat.strike_damage(run.p, foe, 2, ranged=True, weapon=bow)
+    water = items.make_item_by_id('flask', 'flask_of_holy_water')
+    run.flasks = [copy.copy(water)]
+    run._knows = lambda kind: True
+    run.p.weapon = None
+    run._coat_for(foe)
+    assert bow.coating['substance'] == 'holy' and not run.flasks and run.p.weapon is None
+    assert combat.strike_damage(run.p, foe, 2, ranged=True, weapon=bow) > plain * 1.5
+    blows = bow.coating['blows']
+    run.quiz.start_quiz = lambda **kw: kw['callback'](types.SimpleNamespace(score=2, struck_early=False))
+    sim_ranger.shoot(run, foe, [foe])
+    assert bow.coating['blows'] < blows
+
+
+def test_a_lean_pays_a_blow_only_by_the_dial_and_never_stacks():
+    import sim_archetypes as sa
+    blade = types.SimpleNamespace(class_mechanic='')
+    for knobs, stat in (('', 20), ('st_lean=1', 30)):
+        run = _run('arch_rogue', knobs)
+        run.p.STR, run.p.DEX = 20, 30
+        assert sa.blow_stat(run, blade) == stat
+    fighter = _run('arch_fighter', 'st_lean=1')
+    fighter.p.STR, fighter.p.CON = 20, 40
+    assert sa.blow_stat(fighter, blade) == 20
 
 
 def test_r1_the_weakest_arrow_goes_first_and_a_shot_spends_one():
@@ -373,6 +408,16 @@ def test_r4_a_careful_owner_recalls_a_hurt_pet_and_feeds_it_between_fights():
     run.p.hp = run.p.max_hp
     sim_pets.fight_end(run)
     assert len(run.pantry) == 16 and s['hurt'] < 0.4 * top
+
+
+def test_r4_the_mooble_sits_the_fight_out():
+    import sim_pets
+    run = _run('arch_mage', 'pt_hp=1')
+    run.floor = 50
+    sim_pets.fight_start(run)
+    assert not sim_pets.here(run) and run._quest_pet() == 'mooble'     # his mana still his
+    sim_pets.fight_end(run)
+    assert sim_pets.here(run)
 
 
 def test_r4_a_pet_never_dies_without_the_knob():

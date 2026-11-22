@@ -14,7 +14,9 @@ simulator as it was (a pet of the floor's level that never dies).
             at a fight's start); between fights it is out to mend, and fed
             what he would leave behind (parts past the pantry's room, food
             past a belly that heals him nothing: a quarter of its health and
-            20 to 80 experience each), and only when he is well himself.
+            20 to 80 experience each), and only when he is well himself. The
+            Mooble is a support companion whose gift is mana on the walk: he
+            sits every fight out in his sphere.
   pt_recall the share of its health at or under which he recalls it.
   pt_back   floors until he has another, at level 1, which then levels by the
             game's own experience (a point every third turn, its kills).
@@ -185,7 +187,7 @@ def badly_hurt(run) -> bool:
 
 def fight_start(run) -> None:
     catch_up(run)
-    if cared(run) and alive(run) and badly_hurt(run):
+    if cared(run) and alive(run) and (badly_hurt(run) or run._quest_pet() == 'mooble'):
         state(run)['stowed'] = True             # sent in before the fight joins
         _count(run, 'pt_kept_in')
 
@@ -276,6 +278,8 @@ def _die(run) -> None:
     s = state(run)
     if run._quest_pet() == 'bococho':
         run.p.saddlebag_lb = 0                  # her bags went with her
+    if s['first']:
+        _count(run, 'pt_first_lost')            # the pet he had raised, not a newborn after it
     s.update(gone=run.floor, fed=0, aggro=None, hurt=0.0, stowed=False)
     _count(run, 'pt_deaths')
 

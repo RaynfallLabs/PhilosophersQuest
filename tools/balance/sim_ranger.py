@@ -12,8 +12,7 @@ revisited, so a bow can carry a whole run). Measurement only: with `ar_bow` 0
               a composite bow's draw, 5% a point of STR, on top).
               R1: 0.03, PER alone, as STR pays a sword. A composite bow reads
               the better of PER and STR at that same rate, never the two
-              multiplied (kept apart, its draw made a shot 1.5 to 2.5 sword
-              blows deep: the "ranged hits way too hard" double dip again).
+              multiplied (no stacked multipliers; ar_draw measures the other).
   ar_open     x the tiles a foe has still to walk when he is first seen.
   ar_kite     x the share of his actions a quicker archer spends stepping back
               (at most half); each step costs the foes behind him a blow.
@@ -21,6 +20,8 @@ revisited, so a bow can carry a whole run). Measurement only: with `ar_bow` 0
               holds the field of (the game: none).
   ar_fletch   arrows made from a harvest, of the creature's own tier (the game: none).
   ar_stall    arrows he buys up to at a stall (R5, supply follows the lean; 0 = none).
+  ar_draw     with ar_per: 1 = a composite bow's draw (5% a point of STR)
+              multiplies PER's step, as the game multiplies it onto its bonus.
   ar_heads    1 = a coating can go on arrowheads: the bow carries it (the game
               refuses to coat a bow).
 
@@ -47,11 +48,13 @@ KNOBS = {
     'ar_fletch': 0.0,
     'ar_stall': 0,
     'ar_heads': 0,
+    'ar_draw': 0,
 }
 MEET_TILES = (2, 3, 3, 4, 4, 5, 5, 6, 7, 9)     # the measured distances' ten deciles
 DOORWAY_TILES = (1, 2, 3)                        # those waiting beyond the first
 MAX_VOLLEY = 8
-AMMO_CARRY = 120                                 # of one type (6 lb of arrows)
+AMMO_CARRY = 60                                  # of a type he has a bow for (3 lb)
+AMMO_AHEAD = 20                                  # of a type he has none for yet
 _MADE = {}
 _LADDER = {}
 
@@ -107,7 +110,9 @@ def add_ammo(run, aid: str, n: int) -> int:
     s = _state(run)
     kind = _template(aid).ammo_type
     have = sum(c for a, c in s['ammo'].items() if _template(a).ammo_type == kind)
-    n = min(int(n), AMMO_CARRY - have)
+    held = [b for b in [run.p.ranged_weapon] + s['spares'] if b is not None]
+    room = AMMO_CARRY if any(b.requires_ammo == kind for b in held) else AMMO_AHEAD
+    n = min(int(n), room - have)
     if n <= 0:
         return 0
     s['ammo'][aid] = s['ammo'].get(aid, 0) + n
@@ -141,6 +146,15 @@ def shot_stat(p, bow) -> int:
     return p.PER
 
 
+def per_step(run, bow, per: float) -> float:
+    """R1's step on a shot."""
+    p = run.p
+    composite = getattr(bow, 'class_mechanic', '') == 'str_bonus_range_7'
+    if composite and k(run, 'ar_draw'):
+        return (1.0 + per * max(0, p.PER - 10)) * (1.0 + max(0, p.STR - 10) * 0.05)
+    return 1.0 + per * max(0, shot_stat(p, bow) - 10)
+
+
 def stat_factor(run, bow, base: float) -> float:
     """What PER (and, in the game, STR) does to a shot's base."""
     import combat
@@ -148,7 +162,7 @@ def stat_factor(run, bow, base: float) -> float:
     per = float(k(run, 'ar_per') or 0)
     crossbow = getattr(bow, 'weapon_class', '') == 'crossbow'
     if per > 0:
-        return 1.0 + per * max(0, shot_stat(p, bow) - 10)
+        return per_step(run, bow, per)
     else:
         more = 0
         for step in (max(0, (p.PER - 10) // 4),) + (() if crossbow else (max(0, (p.STR - 10) // 4),)):
@@ -272,9 +286,14 @@ def choose(run) -> None:
     if not s['spares']:
         return
     melee = run._weapon_score(p.weapon) if p.weapon is not None else 1.0
-    best, best_v = p.ranged_weapon, 0.0
+    best, best_v = p.ranged_weapon, (0.0, 0.0)
     for b in ([p.ranged_weapon] if p.ranged_weapon else []) + s['spares']:
-        v = per_action(run, b, melee)
+        shot = shot_value(run, b)
+        if shot <= 0:
+            continue
+        # what an action is worth with it, then (both under his blade) the
+        # better first shots
+        v = (max(melee, per_action(run, b, melee)), shot)
         if v > best_v:
             best, best_v = b, v
     if best is None or best is p.ranged_weapon:
@@ -408,6 +427,11 @@ def will_shoot(run, target) -> bool:
     if bow is None or next_ammo(run, bow) is None or p.status_effects.get('reloading', 0) > 0:
         return False
     melee = run._value_vs(p.weapon, target) if p.weapon is not None else 1.0
+    if run.knobs.get('tactics') and run.arsenal:
+        import difficulty_sim as ds
+        other = run._tactical_best(target)      # or a blade from the pack, his action
+        if other is not None and other is not p.weapon:
+            melee = max(melee, run._value_vs(other, target) / ds.TACTIC_SWAP_GAIN)
     return shot_value(run, bow, target) >= melee
 
 

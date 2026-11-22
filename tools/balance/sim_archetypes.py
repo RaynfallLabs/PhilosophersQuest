@@ -33,6 +33,10 @@ bow's knobs are sim_ranger.py's, the pet's sim_pets.py's; here are the rest:
               kitchen's stat dishes evenly; the game's book makes STR the
               easiest lesson in every band from 25 down (one-part dishes on 8
               to 14% of the spawns; DEX 1 to 6%, WIS 0 to 7%).
+  st_lean     a finding's dial: a melee blow reads the better of STR and the
+              stat this profile leans on (DEX, INT, WIS or PER), so every
+              lean pays its blows as STR pays the fighter's. A stand-in for a
+              weapon of each calling that reads its stat, never a stack.
   dx_finesse  a finding's dial: 1 = a Finesse weapon reads DEX for STR, as its
               own card says (combat.py declares finesse_dex and never reads it).
 
@@ -60,15 +64,17 @@ KNOBS = {
     'fu_cd': 30,
     'la_wt': 1.0,
     'dx_finesse': 0,
+    'st_lean': 0,
     'kt_even': 0,
 }
 KNOBS.update(sim_ranger.KNOBS)
 KNOBS.update(sim_pets.KNOBS)
 
+BLOW_LEANS = ('DEX', 'INT', 'WIS', 'PER')
 BERSERK = 1.3                   # combat.strike_damage's berserk step
 WARD_TURNS = {'shield_self': 12, 'magic_shield_self': 20, 'stoneskin_self': 25}
 WARD_FIGHT = 2.0                # x his blow: a group that will take more is worth a ward
-STRIKE_KNOBS = ('ar_per', 'fu_on', 'dx_finesse')   # those that change combat.strike_damage
+STRIKE_KNOBS = ('ar_per', 'fu_on', 'dx_finesse', 'st_lean')   # those that change combat.strike_damage
 
 
 def k(run, name):
@@ -196,11 +202,12 @@ def _strike(run, real, p, monster, chain, a, kw) -> int:
             out = real(p, monster, chain, *a, **kw)
         finally:
             p.PER, p.STR = was
-        mult = 1.0 + per * max(0, sim_ranger.shot_stat(p, weapon) - 10)
+        mult = sim_ranger.per_step(run, weapon, per)
         return max(1, int(round(out * mult))) if out > 0 else out
-    if k(run, 'dx_finesse') and getattr(weapon, 'class_mechanic', '') == 'finesse_dex':
+    stat = blow_stat(run, weapon)
+    if stat != p.STR:
         was = p.STR
-        p.STR = p.DEX
+        p.STR = stat
         try:
             out = real(p, monster, chain, *a, **kw)
         finally:
@@ -215,13 +222,22 @@ def _strike(run, real, p, monster, chain, a, kw) -> int:
     return out
 
 
-def str_factor(run, weapon) -> float:
-    """Run._est_damage's Strength step."""
+def blow_stat(run, weapon) -> int:
+    """What a melee blow reads for Strength."""
     p = run.p
     stat = p.STR
     if k(run, 'dx_finesse') and getattr(weapon, 'class_mechanic', '') == 'finesse_dex':
         stat = p.DEX
-    return 1.0 + max(0, stat - 10) * 0.03
+    if k(run, 'st_lean'):
+        focus = tuple(run.prof.get('stat_focus') or ())
+        if focus and focus[0] in BLOW_LEANS:
+            stat = max(stat, getattr(p, focus[0]))
+    return stat
+
+
+def str_factor(run, weapon) -> float:
+    """Run._est_damage's Strength step."""
+    return 1.0 + max(0, blow_stat(run, weapon) - 10) * 0.03
 
 
 # --------------------------------------------------------------- R2, the cleric
