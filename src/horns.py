@@ -361,15 +361,16 @@ class CalledAlly(Pet):
     def take_turn(self, player, dungeon, monsters, pets, ground_items=None):
         """Strike the nearest foe beside him, go for one within four tiles, or
         keep near the hero. A gate's guardian is never his to fight; a friend,
-        or a lurker nobody has seen spring, is not a foe."""
+        or a lurker nobody has seen spring, is not a foe; nor is one at peace."""
         if not self.alive:
             return None
+        import lore_powers
         from geom import chebyshev_distance
         nearest, best = None, 999
         for m in monsters:
             if not getattr(m, 'alive', False) or getattr(m, 'is_allied', False):
                 continue
-            if not strikes(m):
+            if not strikes(m) or lore_powers.at_peace(m):
                 continue
             if not getattr(m, '_aware', False) and getattr(m, 'ai_pattern', '') in ('ambush', 'mimic'):
                 continue

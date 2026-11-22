@@ -68,6 +68,7 @@ from geom import monster_at_tile, is_at_tile
 import unseen
 import theft
 import holds            # Held Fast (AI-3)
+import lore_powers      # who is at peace (slice M)
 import habits          # They Learn Your Tricks (AI-2)
 import tactical_mind    # the Tactical Mind (AI-2)
 from items import Artifact, Weapon
@@ -3443,7 +3444,7 @@ class CombatMixin:
                 # A dangerous creature shows what it can do (src/tells.py).
                 self._maybe_tell(m)
             # "Something unseen" in its messages while the hero cannot see it.
-            if getattr(m, 'invisible', False):
+            if getattr(m, 'invisible', False) or m.__dict__.get('_dark_hidden'):
                 m._unseen = unseen.unseen(m, self.player)
             # The Locust cult's charm: the swarms take the wearer for one of
             # their own and leave them alone until struck.
@@ -3481,6 +3482,8 @@ class CombatMixin:
                 if (m.kind == 'fafnir_dragon' and not m._adjacent_to(self.player)):
                     self._scorch_line(m.x, m.y, self.player.x, self.player.y)
             self._say_sense_lines(m)
+            if m.__dict__.pop('_lp_call', False):
+                self._lore_powers_parley_tick(m)     # noticing him was calling to him
             # Old Nickel's lines for what the hero did and what his own turn
             # did (old_nickel.py, data/old_nickel.json).
             if getattr(m, 'ai_pattern', '') == 'stalker_coward':
@@ -4266,7 +4269,8 @@ class CombatMixin:
         the unicorn and the people of the encounters are not foes. With
         `threats_only`, a foe that cannot swing at him this turn (asleep,
         held, frozen, feared, charmed: the ones that do not swipe at pets
-        either) is not counted (PET-07: Shep's rescue is for a fight)."""
+        either) is not counted (PET-07: Shep's rescue is for a fight), nor
+        one at peace: a rescue unbidden breaks none."""
         from geom import chebyshev_distance
         px, py = self.player.x, self.player.y
         foes = [m for m in self.monsters
@@ -4275,7 +4279,8 @@ class CombatMixin:
                 and not getattr(m, '_flavor_encounter_tag', None)
                 and not getattr(m, '_is_unicorn', False)
                 and chebyshev_distance(px, py, m) <= 1
-                and not (threats_only and any(m.has_effect(e) for e in _HELD_FOE_EFFECTS))]
+                and not (threats_only and (lore_powers.at_peace(m)
+                                           or any(m.has_effect(e) for e in _HELD_FOE_EFFECTS)))]
         foes.sort(key=lambda m: -m.hp)
         return foes
 
@@ -4489,6 +4494,9 @@ class CombatMixin:
                     or getattr(m, '_is_unicorn', False)
                     # one that yielded strikes no one again (src/morale.py)
                     or m.__dict__.get('_yielded')
+                    # nor one fed, answered or waiting for an answer, nor one
+                    # stopped for gold (src/lore_powers.py)
+                    or lore_powers.holds_fire(m) or lore_powers.gathering(m)
                     # one wrapped round the hero has no blow to spare (holds.py)
                     or m.__dict__.get('_holding')
                     # the stalking coward (Old Nickel) strikes no pet until

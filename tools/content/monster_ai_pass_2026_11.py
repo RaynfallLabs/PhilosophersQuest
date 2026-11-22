@@ -313,7 +313,7 @@ TELLS_NEW.update({
     'relurks': ('can_phase_blink', {
         'sign': "Old webbing and husks hang above where {the} waits.",
         'does': "Hurt and out of your sight, {he} goes back into hiding to drop on you again.",
-        'counter': "Finish {him} before {he} gets away, or carry a light into the dark where {he} hides.",
+        'counter': "Finish {him} before {he} gets away. Once {he} hides, look for {him} with Hecate's Torch or, for vermin, Tremor-Sense.",
     }),
     'hides_in_dark': ('relurks', {
         'sign': "{The} is hard to keep in view, as if the shadows lean toward {him}.",

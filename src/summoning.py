@@ -13,7 +13,11 @@ Now (one step a turn, step()):
   * the call is a chant drawn up for one turn first ("The Skeleton
     Necromancer raises his staff and begins to chant."), and a blow that
     lands on it in that turn breaks the chant (spoil(), from
-    Monster.take_damage): the call is spent and its timer starts again;
+    Monster.take_damage), as does whatever stops a caster's
+    (caster_ai.chant_stopped: sleep, a hold, fright, charm, its nerve gone)
+    and silence (break_off(), from Monster.tick_effects and its turn): the
+    call is spent and its timer starts again. Out of his sight when the
+    chant is done, nothing comes;
   * the chant done, the game sets the summons down (_wants_summon,
     Game._spawn_summoner_minion, which marks each one _summoned_by).
 
@@ -69,9 +73,13 @@ def step(m, player, monsters, dungeon=None) -> str:
             return ''
     except ImportError:
         pass
+    import caster_ai
+    if caster_ai.chant_stopped(m):                # frightened, broken, its hands full
+        break_off(m)
+        return ''
     if m.__dict__.get('_chanting'):
         m._chanting = False
-        if not can_call(m, player, monsters, None):
+        if not can_call(m, player, monsters, dungeon):
             return ''
         m._wants_summon = True
         m._summons_made = int(getattr(m, '_summons_made', 0) or 0) + 1
@@ -86,6 +94,34 @@ def step(m, player, monsters, dungeon=None) -> str:
     r = rules()
     ai_lines.say(m, ai_lines.fill(m, r.get('chant_line', '')), r.get('chant_unseen', ''))
     return 'chant'
+
+
+def break_off(m) -> bool:
+    """It cannot go on with its chant (no blow: spoil() is the blow's). The
+    call is spent, so its timer starts again. True if it was chanting."""
+    if not m.__dict__.get('_chanting'):
+        return False
+    m._chanting = False
+    m._summon_turn_counter = 0
+    m._wants_summon = False
+    text = (rules().get('spoil_lines') or {}).get('held', '')
+    ai_lines.say(m, ai_lines.fill(m, text), '', 'success')
+    return True
+
+
+def tick(m) -> None:
+    """Each turn (Monster.tick_effects): a chant it cannot keep up is broken."""
+    if not m.__dict__.get('_chanting'):
+        return
+    import caster_ai
+    if caster_ai.chant_stopped(m) or m.has_effect('silenced'):
+        break_off(m)
+
+
+def unspent(m) -> None:
+    """The call found no room (Game._spawn_summoner_minion): the beat is
+    lost, not one of the calls it has in it (summon_max)."""
+    m._summons_made = max(0, int(getattr(m, '_summons_made', 0) or 0) - 1)
 
 
 # Who struck the blow that broke a chant (the line names him): a blast the

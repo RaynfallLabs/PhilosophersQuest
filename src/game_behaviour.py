@@ -35,8 +35,11 @@ class BehaviourMixin:
         if m.alive:
             import death_throes
             import light_shy
-            light_shy.light_turn(m, self.player)      # a troll in the light
+            light_shy.light_turn(m, self.player, getattr(self, 'dungeon', None))  # a troll in the light
             death_throes.warn(m)                      # it swells before it bursts
+            if m.__dict__.get('_dark_hidden'):        # it may have run out of the dark
+                import unseen
+                m._unseen = unseen.unseen(m, self.player)
         lines = ai_lines.take(m)
         if not lines:
             return

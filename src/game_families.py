@@ -269,7 +269,7 @@ class FamilyMixin:
             # Whether or not it is in sight, ask what it would look like:
             # an invisible creature, an un-sprung ambusher and a disguised
             # mimic (the Hellmouth's false stair) are never counted.
-            return (unseen.is_invisible(m) and not unseen.sees_invisible(player)) or (
+            return (unseen.is_invisible(m, player) and not unseen.sees_invisible(player)) or (
                 getattr(m, 'ai_pattern', '') in ('ambush', 'mimic') and not getattr(m, '_aware', False))
 
         # The floor's clan shows itself by its clue (data/domains.json

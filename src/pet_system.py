@@ -3,6 +3,7 @@ Pet companion system — Soul Sphere creatures that follow and fight alongside t
 """
 import random
 from geom import monster_at_tile
+import lore_powers
 
 # ---------------------------------------------------------------------------
 # Species data: each line has 3 evolution stages (four elemental lines, the
@@ -1061,9 +1062,10 @@ class Pet:
             # (bug bash 5 PET-04).
             if not getattr(m, '_aware', False) and getattr(m, 'ai_pattern', '') in ('ambush', 'mimic'):
                 continue
-            # Nor one that has thrown down its weapon and begs (morale.py):
-            # the hero spares it or strikes it himself.
-            if getattr(m, '__dict__', {}).get('_yielded'):
+            # Nor one at peace (lore_powers.at_peace): begging (morale.py),
+            # fed, answered, waiting for an answer, bought. The hero spares
+            # it or strikes it himself.
+            if lore_powers.at_peace(m):
                 continue
             # to the nearest tile it covers: a pet south or east of a
             # two-by-two monster measured to its far corner and never attacked

@@ -6,7 +6,7 @@
     "heal_below": 0.6
   },
   "summoner": {
-    "_doc": "src/summoning.py: the timer runs only while it hunts the hero; it calls only with the hero within reach and in sight and fewer than live_cap of its summoned standing; the call is a one-turn chant that a landed blow breaks. A chant is broken by any real blow (never a bleed, burn or poison ticking); spoil_lines name who broke it: the hero, his pet ({pet}), a death throes' blast, or something else (a hazard, another creature).",
+    "_doc": "src/summoning.py: the timer runs only while it hunts the hero; it calls only with the hero within reach and in sight and fewer than live_cap of its summoned standing; the call is a one-turn chant that a landed blow breaks. A chant is broken by any real blow (never a bleed, burn or poison ticking); spoil_lines name who broke it: the hero, his pet ({pet}), a death throes' blast, or something else (a hazard, another creature). 'held' is for a chant broken by no blow: sleep, a hold, a stun, fright, charm, silence, its nerve gone.",
     "live_cap": 2,
     "reach": 8,
     "chant_line": "{The} raises {his} hands and begins to chant.",
@@ -15,7 +15,8 @@
       "hero": "Your blow breaks {the}'s chant!",
       "pet": "Your {pet} breaks {the}'s chant!",
       "throes": "The blast breaks {the}'s chant!",
-      "other": "{The} is struck, and {his} chant breaks off."
+      "other": "{The} is struck, and {his} chant breaks off.",
+      "held": "{The}'s chant falls silent, broken."
     }
   },
   "breath": {

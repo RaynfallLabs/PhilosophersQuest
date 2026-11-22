@@ -16,7 +16,8 @@ it there, the hiding is over and it fights; a blow on it ends it at once.
 One that hides in the dark (`hides_in_dark`: the shade, the shadow demon,
 the quasit, the imp, the boggart) is unseen while it hides if the hero
 carries no light and cannot see the invisible (a lit light leaves it no
-dark to hide in). No spot to hide: it backs off as before. Pure module.
+dark to hide in, and one that runs, is frightened or turns at bay hides in
+none: in_dark). No spot to hide: it backs off as before. Pure module.
 """
 from __future__ import annotations
 
@@ -131,6 +132,32 @@ def dark_hide(m, player) -> None:
         end_dark(m)
 
 
+def in_dark(m, player=None) -> bool:
+    """Hidden in the dark now (unseen.is_invisible). Asked each time, for
+    the latch (``_dark_hidden``) is set only on its own hiding turns: it
+    must still be hiding, at no other business (a flight, a fright, a pin,
+    at bay, off with what it stole), and the hero with no light on him."""
+    d = getattr(m, '__dict__', {})
+    if not d.get('_dark_hidden') or getattr(m, 'ai_pattern', '') != 'hit_and_run':
+        return False
+    if getattr(m, '_hit_run_state', '') != 'hiding':
+        return False
+    import caster_ai
+    if caster_ai.broken(m) or int(d.get('_at_bay', 0) or 0) > 0:
+        return False
+    if d.get('stolen_gold') or d.get('stolen_items'):
+        return False
+    if any(m._under(e) for e in ('feared', 'charmed', 'immobilized')):
+        return False
+    if m.has_effect('stuck_in_pit') or m.has_effect('impaled'):
+        return False
+    if player is not None:
+        import light_shy
+        if light_shy.glare(player) > 0:
+            return False
+    return True
+
+
 def end_dark(m) -> None:
     if m.__dict__.pop('_dark_hidden', None):
         if not getattr(m, 'invisible', False):
@@ -142,7 +169,7 @@ def hiding_turn(m, player, dungeon) -> bool:
     hero = (player.x, player.y)
     near = max(abs(m.x - hero[0]), abs(m.y - hero[1])) <= int(rules().get('spot_reach', 2))
     if m.__dict__.get('_struck') or near or (
-            not m.__dict__.get('_dark_hidden') and _view(dungeon, (m.x, m.y), hero)):
+            not in_dark(m, player) and _view(dungeon, (m.x, m.y), hero)):
         m._hit_run_state = 'hunting'
         m._hit_run_attacks = 0
         end_dark(m)

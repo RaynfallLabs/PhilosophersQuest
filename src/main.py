@@ -3129,12 +3129,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _sync_unseen(self):
-        """Mark every invisible creature the hero cannot see, so its name in
-        any message is "something unseen". Runs with every field-of-view
-        refresh and before each monster's turn (the hero's senses change)."""
+        """Mark every invisible creature the hero cannot see (one hidden in
+        the dark too: src/unseen.py), so its name in any message is
+        "something unseen". Runs with every field-of-view refresh and before
+        each monster's turn (the hero's senses change)."""
         player = getattr(self, 'player', None)
         for m in getattr(self, 'monsters', None) or ():
-            if getattr(m, 'invisible', False):
+            if getattr(m, 'invisible', False) or m.__dict__.get('_dark_hidden'):
                 m._unseen = unseen.unseen(m, player)
             elif getattr(m, '_unseen', False):
                 m._unseen = False
@@ -8506,7 +8507,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         Reads summoner.summon_kind (str id, or list of ids → random pick) and
         places one instance on a walkable tile within 3 tiles. Silent on
         failure (no walkable tile, missing kind, etc.) so the summoner just
-        loses the cooldown beat — flavor only."""
+        loses the cooldown beat — flavor only. A call with no room is not
+        one of the calls it has in it (summoning.unspent)."""
         import json as _json
         import random as _rng
         from monster import Monster as _Mon
@@ -8545,6 +8547,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     continue
                 candidates.append((nx, ny))
         if not candidates:
+            import summoning
+            summoning.unspent(summoner)
             return
         sx, sy = _rng.choice(candidates)
         minion_def = dict(defn)

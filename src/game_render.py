@@ -2316,7 +2316,7 @@ class RenderMixin:
                     footprint=getattr(m, 'footprint', (1, 1)),
                     symbol=getattr(m, 'symbol', ''),
                     # seen through see invisible: its art, cold and see-through
-                    tint=unseen.SEE_INVISIBLE_TINT if unseen.is_invisible(m) else None)
+                    tint=unseen.SEE_INVISIBLE_TINT if unseen.is_invisible(m, self.player) else None)
                 # A sleeper shows its "z" (src/senses.py): sneak past, or
                 # strike first.
                 if m.has_effect('sleeping') and any_tile_in_set(m, self.visible):
