@@ -12,8 +12,9 @@ simulator as it was (a pet of the floor's level that never dies).
             (game_menus: Recall, Feed): hurt to pt_recall of its health, it is
             recalled to its sphere for the rest of the fight (his action; none
             at a fight's start); between fights it is out to mend, and fed
-            what he can spare (a kitchen part, or food past a belly: a quarter
-            of its health and 20 to 80 experience each).
+            what he would leave behind (parts past the pantry's room, food
+            past a belly that heals him nothing: a quarter of its health and
+            20 to 80 experience each), and only when he is well himself.
   pt_recall the share of its health at or under which he recalls it.
   pt_back   floors until he has another, at level 1, which then levels by the
             game's own experience (a point every third turn, its kills).
@@ -212,10 +213,14 @@ def fight_end(run) -> None:
     top = max_health(run)
     if s['hurt'] < 0.25 * top:
         return                                  # the walk mends that much
-    spare = [(run.pantry, it) for it in run._spares()]
+    if run.p.hp < run.prof['top_up_to'] * run.p.max_hp:
+        return                                  # his own meals come first
+    import difficulty_sim as ds
+    over = max(0, len(run.pantry) - ds.PANTRY_MAX)
+    spare = [(run.pantry, it) for it in run._spares()[:over]]
     belly, got = max(1, int(getattr(run.p, 'max_sp', 200) or 200)), 0
     for f in sorted(run.food, key=lambda f: -int(getattr(f, 'sp_restore', 0) or 0)):
-        if got >= belly:
+        if got >= belly and int(getattr(f, 'hp_restore', 0) or 0) <= 0:
             spare.append((run.food, f))
         got += int(getattr(f, 'sp_restore', 0) or 0)
     for held, meal in spare:

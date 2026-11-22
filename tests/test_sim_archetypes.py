@@ -364,11 +364,15 @@ def test_r4_a_careful_owner_recalls_a_hurt_pet_and_feeds_it_between_fights():
     assert sim_pets.recall(run) and not sim_pets.here(run) and sim_pets.alive(run)
     sim_pets.swipes(run, [_foe(attacks=[{'damage': '900d2', 'type': 'slash'}])])
     assert sim_pets.alive(run)                      # safe in its sphere
-    part = types.SimpleNamespace(sp_restore=60)
-    run.pantry, run.food = [part], []
-    run._spares = lambda: [part]
+    parts = [types.SimpleNamespace(sp_restore=60) for _ in range(17)]
+    run.pantry, run.food = list(parts), []
+    run._spares = lambda: [parts[-1]]
+    run.p.hp = 1                                    # hurt himself: his meals come first
     sim_pets.fight_end(run)
-    assert sim_pets.here(run) and not run.pantry and s['hurt'] < 0.4 * top
+    assert sim_pets.here(run) and len(run.pantry) == 17
+    run.p.hp = run.p.max_hp
+    sim_pets.fight_end(run)
+    assert len(run.pantry) == 16 and s['hurt'] < 0.4 * top
 
 
 def test_r4_a_pet_never_dies_without_the_knob():
