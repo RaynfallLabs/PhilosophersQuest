@@ -38,7 +38,7 @@
  },
  "line_chance_on_hit": 0.7,
  "greet": "None shall pass.",
- "greet_chronicle": "Met a knight on a little stone bridge. He said none shall pass. There was a perfectly good way round.",
+ "greet_chronicle": "Met a knight on a bridge. None shall pass, he says. There's a way round.",
  "stage_lines": {
   "1": "'Tis but a scratch.",
   "2": "It's just a flesh wound.",
@@ -57,9 +57,9 @@
   "I've still got one good leg, which is all I need!"
  ],
  "sword_drop": "The Black Knight's sword clatters onto the bridge beside him.",
- "draw_chronicle": "Fought the Black Knight to what he insists was a draw. He has opinions.",
- "draw_by_pet_chronicle": "{pet} took the Black Knight apart one limb at a time while I watched. He insists it was a draw.",
- "sword_chronicle": "I have the Black Knight's sword. He has opinions about that.",
+ "draw_chronicle": "Beat the Black Knight. He insists it was a draw.",
+ "draw_by_pet_chronicle": "{pet} took the Black Knight apart limb by limb. He calls it a draw.",
+ "sword_chronicle": "Took the Black Knight's sword.",
  "hit_lines": {
   "0": [
    "Is that all you've got?",

@@ -1,6 +1,7 @@
 """The journal's voice, as a lint (DEEDS_KARMA_DESIGN 7.2 and 7.7).
 
-Every line the hero writes in the Journal is first person, past tense, terse:
+Every line in the Journal is a brief note the adventurer leaves for himself
+(docs/STORY_VOICE.md: 25 to 70 characters, at most 100 bar the approved family lines):
 no floor numbers, no digits, no exclamation marks outside quoted speech, no
 "+1", no stat names, no game terms (karma, quiz, tier, HP, "per turn"), no
 ellipses or ASCII double dashes, and at most 220 characters

@@ -1115,7 +1115,7 @@ class CombatMixin:
                     self.add_message(
                         "The Ankh of Isis shatters! Isis breathes life back into you!",
                         'success')
-                    self._chron('loss', "I died. Then light. Isis pulled me back. The ankh is dust now.")
+                    self._chron('loss', "Died, and Isis pulled me back. The ankh is dust.")
                     _snd.play('player_healed')
                     break
 
@@ -1346,11 +1346,11 @@ class CombatMixin:
             # Queued: it opens once the kill has been seen (game_popups.PopupMixin).
             self._show_story_popup(story_key, STATE_PLAYER, queued=True)
             _BOSS_CHRONICLE = {
-                'asterion_minotaur': "Killed the Minotaur. His name was Asterion, and he was bigger than I expected. The Labyrinth is quiet now.",
-                'medusa_gorgon': "Medusa is dead. I never once looked straight at her. Even the snakes were afraid at the end.",
-                'fafnir_dragon': "Fafnir fell. His scales were like iron and I still smell the smoke on my clothes.",
-                'fenrir_wolf': "Fenrir is bound, or dead. I am not sure which. The wolf was vast, and the ground still shakes.",
-                'abaddon_destroyer': "Abaddon is destroyed. The Pit is sealed. I can barely hold the pen.",
+                'asterion_minotaur': "Killed the Minotaur, Asterion. The Labyrinth is quiet.",
+                'medusa_gorgon': "Killed Medusa without once looking straight at her.",
+                'fafnir_dragon': "Killed Fafnir the dragon. His scales were like iron.",
+                'fenrir_wolf': "Fenrir is down, bound or dead. Not sure which.",
+                'abaddon_destroyer': "Destroyed Abaddon. The Pit is sealed.",
             }
             self._chron('boss', _BOSS_CHRONICLE.get(monster.kind, f"Killed {monster.name}. It is done."),
                         once=f'boss:{monster.kind}')
@@ -1368,7 +1368,7 @@ class CombatMixin:
             self._chron(
                 'boss',
                 getattr(monster, 'kill_chronicle', '')
-                or f"{the_name(monster)} is dead. I had not expected to be the one left standing.",
+                or f"{the_name(monster)} is dead, and I am left standing.",
                 once=f'boss:{monster.kind}')
             # A named pair (Stheno and Euryale, MON-10): each has her own line
             # above, and the pair's line is written only when the second falls.
@@ -1415,13 +1415,12 @@ class CombatMixin:
             self.add_message(
                 f"{_short} falls. The {_ORD[min(count, 7) - 1]} of seven seals is broken.",
                 'success')
-            self._chron('boss', f"Broke a seal. {monster.name} is gone. That makes "
-                                f"{_SEAL_WORDS[min(count, 7) - 1]} of the seven. The air feels heavier.",
+            self._chron('boss', f"Killed {monster.name}. Seals broken: {_SEAL_WORDS[min(count, 7) - 1]} of the seven.",
                         once=f'seal:{seal_id}')
             if count == 7:
                 self.add_message(
                     "ALL SEVEN SEALS ARE BROKEN. The way to the Pit stands open.", 'danger')
-                self._chron('boss', "All seven seals are broken. The ground split open. Whatever is down there, it's free now. And I have to face it.")
+                self._chron('boss', "All seven seals broken. What lay below is free. Must face it.")
         # A creature that by lore leaves no body (a vampire staked to ash, a
         # golem whose letter is erased: family_edges.after_blow) leaves no
         # corpse; its loot dropped above (Brandon, 3.3.3).
@@ -1517,8 +1516,7 @@ class CombatMixin:
         # once=: the Journal remembers it was written, across a reload.
         self._chron(
             'deed',
-            "The Green Knight's axe should have taken my head. The green girdle turned it. "
-            "He laughed and called it a little disloyalty. I think he was being kind.",
+            "The green girdle turned the Green Knight's axe from my neck.",
             once='green_girdle')
         return True
 
@@ -1586,8 +1584,7 @@ class CombatMixin:
             'warning')
         self._chron(
             'deed',
-            "Death swung, and missed on purpose. He had promised me one breath back at the "
-            "chessboard. He is very exact about promises.")
+            "Death missed on purpose: the one breath promised me at the chessboard.")
         return True
 
     def _announce_revive(self, monster):
@@ -1601,8 +1598,7 @@ class CombatMixin:
             f"{the_name(monster)} should be dead, and is getting up.")
         self.add_message(line, 'danger')
         self._chron('notice',
-                    f"I struck {the_name(monster, lower=True)} down and {pronouns(monster)[0]} "
-                    f"stood back up.",
+                    f"Struck {the_name(monster, lower=True)} down and {pronouns(monster)[0]} rose again.",
                     once=f'revive:{monster.kind}')
 
     def _drop_philosophers_stone(self, x: int, y: int):
@@ -1652,7 +1648,7 @@ class CombatMixin:
             f"You take {gift['name']}: {boons.STAT_NAMES.get(gift['stat'], gift['stat'])} "
             f"+{amount}, for good.", 'success')
         from chronicle import in_sentence
-        self._chron('discovery', f"I took {in_sentence(gift['name'])} and left the other two where they lay.")
+        self._chron('discovery', f"Took {in_sentence(gift['name'])}. Left the other two gifts.")
 
     def _drop_treasure(self, monster):
         """Drop gold and possibly an item when a monster dies."""
@@ -2474,8 +2470,7 @@ class CombatMixin:
         _snd.play('trap')
         if not getattr(self, '_chronicle_first_pit', False):
             self._chronicle_first_pit = True
-            self._chron('milestone', "Dug a pit with the shovel. It took everything I had. "
-                                     "Something is going to walk over it, and I want to watch.",
+            self._chron('milestone', "Dug a pit with the shovel, for whatever walks over it.",
                         once='first_pit')
         # Costs 3 turns (advancing turn 3 times — monsters get 3 actions)
         for _ in range(3):
@@ -3051,7 +3046,7 @@ class CombatMixin:
         self._combat_ammo = None
         if monster.kind == 'abaddon_destroyer' and not getattr(self, '_chronicle_abaddon_start', False):
             self._chronicle_abaddon_start = True
-            self._chron('boss', "Abaddon. The Destroyer. He's real. He's here. This is it.")
+            self._chron('boss', "Abaddon the Destroyer is here. Must fight him now.")
         qs = getattr(self, 'quirk_system', None)
         if qs:
             qs.on_combat_started()
@@ -4348,8 +4343,7 @@ class CombatMixin:
             _snd.play('player_healed')
             self._chron(
                 'loss',
-                f"I was down and they were all around me, and then {pet.name} was there. "
-                "He always comes.", once='rescue')
+                f"Down and surrounded, until {pet.name} came to my rescue.", once='rescue')
             return pet
         return None
 

@@ -52,7 +52,7 @@
           "id": "marta_daughter",
           "hint": "Somewhere above, a girl is listening for her mother's limp on the stairs."
         },
-        "chronicle": "Stopped a rat-catcher named Marta bleeding out. She asked my name twice, to be sure of it.",
+        "chronicle": "Stopped Marta the rat-catcher bleeding out. She made sure of my name.",
         "road": {
           "id": "marta_ratchatcher.potion",
           "hint": "A potion spent above can come back down on a girl's shoulder."
@@ -98,7 +98,7 @@
             "id": "marta_daughter",
             "hint": "Somewhere above, a girl is listening for her mother's limp on the stairs."
           },
-          "chronicle": "Packed a rat-catcher's leg with her own bandages. Marta swore at me the whole time, gratefully."
+          "chronicle": "Packed and bound Marta the rat-catcher's leg. She was grateful."
         },
         "fail": {
           "outcome": "The cloth soaks through as fast as you pack it. Marta watches your hands and goes quiet. \"Go on,\" she says. \"Tell Lena her mam got the bile.\"",
@@ -106,7 +106,7 @@
             "met.marta",
             "flag.marta_uncertain"
           ],
-          "chronicle": "Tried to tie off a rat-catcher's wound and botched it. She sent me on. I never found out if the leg held."
+          "chronicle": "Botched Marta the rat-catcher's wound. Never learned if her leg held."
         },
         "road": {
           "id": "marta_ratchatcher.splint",
@@ -120,7 +120,7 @@
           "met.marta",
           "flag.marta_uncertain"
         ],
-        "chronicle": "Left a rat-catcher holding her own leg together. My reasons sounded better before I said them out loud.",
+        "chronicle": "Left a rat-catcher holding her own wound shut.",
         "road": {
           "id": "marta_ratchatcher.pressure",
           "hint": "Pressure stops bleeding. It does not stop a stair from being long."
@@ -161,7 +161,7 @@
             }
           }
         ],
-        "chronicle": "Took a rat-catcher's satchel. It turned out to be children's medicine. It clinks when I walk.",
+        "chronicle": "Robbed a rat-catcher's satchel. It was children's medicine.",
         "road": {
           "id": "marta_ratchatcher.rob",
           "hint": "A satchel weighs more on the way down than on the way in."
@@ -213,7 +213,7 @@
             ]
           }
         ],
-        "chronicle": "Gave a little girl her mother's pendant back and would not take her ring for it. She looked at me as if I were simple.",
+        "chronicle": "Gave a little girl her mother's pendant. Refused her ring for it.",
         "road": {
           "id": "elara_amulet.keep_ring",
           "hint": "A frightened child will pay anything. That is the reason not to let her."
@@ -243,7 +243,7 @@
             ]
           }
         ],
-        "chronicle": "Traded a girl her mother's pendant for her silver ring. She called it fair. She is seven.",
+        "chronicle": "Traded a girl of seven her mother's pendant for her silver ring.",
         "road": {
           "id": "elara_amulet.take_ring",
           "hint": "Fair is a word frightened children learn too early."
@@ -275,7 +275,7 @@
             ]
           }
         ],
-        "chronicle": "Kept a pendant a little girl said was her mother's. It is a very good pendant. That is the whole defence.",
+        "chronicle": "Kept a pendant a little girl said was her mother's.",
         "road": {
           "id": "elara_amulet.keep_pendant",
           "hint": "What you keep from a child, her mother may recognise."
@@ -326,7 +326,7 @@
             ]
           }
         ],
-        "chronicle": "Paid a sleeping troll's toll. He woke just enough to tell me I was the ninth that day.",
+        "chronicle": "Paid a sleeping troll's toll. The ninth that day, he says.",
         "road": {
           "id": "grumwald_toll.pay",
           "hint": "Who you are when nobody is looking is still who you are."
@@ -347,7 +347,7 @@
             ]
           }
         ],
-        "chronicle": "Crossed a troll's bridge without paying while he slept. It held fine. Bridges don't check.",
+        "chronicle": "Crossed a sleeping troll's bridge without paying.",
         "road": {
           "id": "grumwald_toll.cross",
           "hint": "A bridge holds whether you paid or not. That was never the question."
@@ -375,7 +375,7 @@
             ]
           }
         ],
-        "chronicle": "Emptied a sleeping troll's honesty box. Forty years of other people's coppers. Nobody saw, which was rather the test.",
+        "chronicle": "Emptied a sleeping troll's honesty box, forty years' tolls. Unseen.",
         "road": {
           "id": "grumwald_toll.rob",
           "hint": "The box was never about the coins."
@@ -431,7 +431,7 @@
             "saved.quill"
           ],
           "person_status": "saved",
-          "chronicle": "Walked an alderman to the stair and took my pick of his trunk. I did not ask where his bell came from. I already knew."
+          "chronicle": "Saw Alderman Quill out, had my pick. Kept quiet on whose bell it is."
         },
         "on_fail": {
           "outcome": "",
@@ -439,7 +439,7 @@
             "lost.quill"
           ],
           "person_status": "lost",
-          "chronicle": "Lost a fat alderman on the stairs. His trunk lost him first, I think. He would not leave it behind."
+          "chronicle": "Lost Alderman Quill on the stairs. He would not leave his trunk."
         }
       }
     },
@@ -476,14 +476,14 @@
             "forgo.quill_pick",
             "saved.brigid_bell"
           ],
-          "chronicle": "Told an alderman whose bell he had taken, and turned down my pick of his trunk for the telling. It rang on its own when he untied it. I did not imagine that."
+          "chronicle": "Told Quill whose bell he had, took no reward. It rang when untied."
         },
         "fail": {
           "outcome": "You guess at a saint and get the wrong one. Quill sniffs. \"Provenance, my dear, is whatever the buyer believes.\" The bell's tongue stays tied.",
           "deeds": [
             "met.quill"
           ],
-          "chronicle": "Tried to tell an alderman whose bell he had, and named the wrong saint. He kept it. Its tongue is still tied."
+          "chronicle": "Named the wrong saint for Quill's bell. He kept it, tongue still tied."
         },
         "road": {
           "id": "last_merchant.bell",
@@ -499,7 +499,7 @@
         "deeds": [
           "aid.quill"
         ],
-        "chronicle": "Fed a frightened alderman and pointed him upstairs. He paid me in gossip about a collector nobody outbids.",
+        "chronicle": "Fed and sent up Alderman Quill. He spoke of a collector nobody outbids.",
         "road": {
           "id": "last_merchant.feed",
           "hint": "Even a fence knows who the last collector is."
@@ -531,7 +531,7 @@
           "wrong.robbed_quill"
         ],
         "person_status": "wronged",
-        "chronicle": "Robbed an alderman of a trunk full of things he had mostly robbed off someone else. I am not sure whose turn it is now.",
+        "chronicle": "Robbed an alderman's trunk, mostly stolen goods already.",
         "road": {
           "id": "last_merchant.rob",
           "hint": "Stolen goods only ever change hands. They never become clean."
@@ -592,7 +592,7 @@
           "id": "aldric_candle",
           "hint": "Somewhere above, a woman is lighting a candle for a knight."
         },
-        "chronicle": "Took Sir Aldric's lodestone so he could climb home to his wife. It weighs more than a stone should.",
+        "chronicle": "Took Sir Aldric's lodestone so he could climb home to his wife. Heavy.",
         "road": {
           "id": "sir_aldric.take_stone",
           "hint": "A carried burden can be set down in more than one way."
@@ -612,7 +612,7 @@
         "deeds": [
           "met.aldric"
         ],
-        "chronicle": "Left a knight kneeling under a stone. He said he understood. He did not look like he understood.",
+        "chronicle": "Left a knight kneeling under his stone.",
         "road": {
           "id": "sir_aldric.refuse",
           "hint": "Some loads are only heavy until someone else lifts them."
@@ -650,7 +650,7 @@
             ]
           }
         ],
-        "chronicle": "Drank a dying woman's cordial in front of her husband. It tasted of honey and something else.",
+        "chronicle": "Drank a dying woman's cordial before her husband's eyes.",
         "road": {
           "id": "sir_aldric.cordial",
           "hint": "A cure drunk by the wrong mouth still cures someone."
@@ -685,7 +685,7 @@
           "met.tam",
           "told.tam_returned"
         ],
-        "chronicle": "Made a boy named Tam give back a baker's till. She gave him bread anyway. I came out of it looking like the hard one.",
+        "chronicle": "Made Tam give back a baker's till. She gave him bread anyway.",
         "road": {
           "id": "tam_thief.return",
           "hint": "Stolen is stolen, but a hungry boy can work."
@@ -698,7 +698,7 @@
           "met.tam",
           "spared.tam"
         ],
-        "chronicle": "Let a boy keep a baker's rent so his sister could eat. Now three alleys will be hungry instead of one.",
+        "chronicle": "Let a boy keep a baker's rent for his sister. Three alleys go hungry.",
         "road": {
           "id": "tam_thief.let_keep",
           "hint": "A widow's oven feeds three alleys."
@@ -717,7 +717,7 @@
           "aid.hanne",
           "flag.tam_learned_nothing"
         ],
-        "chronicle": "Paid off a thief's debt with my own gold, and the thief helped himself to a little extra while I counted. Everyone went home happy except my purse.",
+        "chronicle": "Paid a young thief's debt. He robbed my purse while I counted.",
         "road": {
           "id": "tam_thief.pay",
           "hint": "Gold settles a debt. It teaches nobody anything."
@@ -756,17 +756,17 @@
                 "count": 2
               },
               "text": "A cloth bundle waits on a ledge, still warm. Someone has drawn a loaf on it in flour.",
-              "chronicle": "Hanne's bread found me a few floors down. Tam must still be hauling flour."
+              "chronicle": "Hanne's bread found me further down. Tam must still be hauling flour."
             }
           ],
-          "chronicle": "Talked a baker into hiring the boy who robbed her. Nobody was pleased, which I think means it was fair."
+          "chronicle": "Talked a baker into hiring the boy who robbed her."
         },
         "fail": {
           "outcome": "Hanne will not have a thief at her oven, and you can't find the words to change her mind. Tam bolts past you both. You never see the coins again.",
           "deeds": [
             "met.tam"
           ],
-          "chronicle": "Tried to broker peace between a baker and a thief. The thief broke it first."
+          "chronicle": "Failed to make peace between Hanne and Tam. He ran with the coins."
         },
         "road": {
           "id": "tam_thief.work",
@@ -817,10 +817,10 @@
               "duration": 120
             },
             "text": "A rolled map waits on the stair, tied with green ribbon. In the corner, in a very steady hand: A good person stood here.",
-            "chronicle": "Helena's map found me. She drew this floor before I reached it and put my name in the corner."
+            "chronicle": "Found Helena's map of this floor, with my name in the corner."
           }
         ],
-        "chronicle": "Gave a mapmaker named Helena my potion so she could hold her pen. She promised to put me on a map. I believe her.",
+        "chronicle": "Gave Helena the mapmaker my potion. She will put me on a map.",
         "road": {
           "id": "helena_cartographer.potion",
           "hint": "A map drawn for you arrives later than you think, and truer."
@@ -854,17 +854,17 @@
                 "duration": 120
               },
               "text": "A rolled map waits on the stair, tied with green ribbon. In the corner, in a very steady hand: A good person stood here.",
-              "chronicle": "Helena's map found me. She drew this floor before I reached it and put my name in the corner."
+              "chronicle": "Found Helena's map of this floor, with my name in the corner."
             }
           ],
-          "chronicle": "Set a cartographer's arm with a ruler for a splint. She called me a barbarian and drew me a map."
+          "chronicle": "Splinted Helena the mapmaker's arm with a ruler. She drew me a map."
         },
         "fail": {
           "outcome": "You pull at the wrong angle. Something grates. Helena goes white and passes out across her maps. When she comes round she waves you off with the good hand. \"Go. I'll learn to draw with the wrong hand.\"",
           "deeds": [
             "met.helena"
           ],
-          "chronicle": "Tried to set a mapmaker's arm and made it worse. She is learning to draw with the wrong hand out of spite."
+          "chronicle": "Botched setting Helena's arm. She must learn to draw wrong-handed."
         },
         "road": {
           "id": "helena_cartographer.set_bone",
@@ -877,7 +877,7 @@
         "deeds": [
           "met.helena"
         ],
-        "chronicle": "Left a mapmaker drawing with the wrong hand. Her lines wobbled. Her face did not.",
+        "chronicle": "Left Helena the mapmaker hurt, drawing with the wrong hand.",
         "road": {
           "id": "helena_cartographer.refuse",
           "hint": "Every map down here was drawn by someone who stayed."
@@ -905,7 +905,7 @@
           "wrong.robbed_helena"
         ],
         "person_status": "wronged",
-        "chronicle": "Took a cartographer's maps. Twelve years of work. They sold well, which is a sentence I would rather not have written.",
+        "chronicle": "Robbed Helena of twelve years of maps. They sold well.",
         "road": {
           "id": "helena_cartographer.rob",
           "hint": "Twelve years of lines can be rolled up in a moment."
@@ -947,7 +947,7 @@
           "lost.konstantin",
           "lost.glimmerdeep_farmers"
         ],
-        "chronicle": "Gave an old guard my spare blade to hold a corridor. His arm was already dead. So, I think, are most of the farmers.",
+        "chronicle": "Gave Konstantin my spare blade to hold a corridor. Fear most farmers died.",
         "road": {
           "id": "old_konstantin.weapon",
           "hint": "A blade is only as good as the arm. Look at the arm."
@@ -971,7 +971,7 @@
             "saved.glimmerdeep_farmers",
             "lost.konstantin"
           ],
-          "chronicle": "Did the sums with Konstantin and they came out badly for him. He held the door and I took his farmers out the back. He insisted."
+          "chronicle": "Konstantin held the door. Took his farmers out the back."
         },
         "fail": {
           "outcome": "You count wrong. There are more of them than you thought, and they come early. In the scramble you get four farmers out. Konstantin does not come.",
@@ -979,7 +979,7 @@
             "lost.konstantin",
             "lost.glimmerdeep_farmers"
           ],
-          "chronicle": "Counted the monsters wrong. Got four farmers out of eleven. Konstantin got none of himself out."
+          "chronicle": "Miscounted the foe. Four of eleven farmers got out. Konstantin died."
         },
         "road": {
           "id": "old_konstantin.count",
@@ -998,7 +998,7 @@
           "saved.glimmerdeep_farmers",
           "lost.konstantin"
         ],
-        "chronicle": "Held a corridor beside an old man named Konstantin till the torches burned down. The farmers lived. He sat down at the end and stayed sat.",
+        "chronicle": "Held a corridor with Konstantin. The farmers live. He died after.",
         "road": {
           "id": "old_konstantin.fight",
           "hint": "Some men cannot be saved, only kept company."
@@ -1011,7 +1011,7 @@
           "met.konstantin",
           "lost.konstantin"
         ],
-        "chronicle": "Left an old guard holding a corridor with half a sword. He quoted a saga at me. I hope it was a true one.",
+        "chronicle": "Left Konstantin with half a sword. His saga: one reforged slew a dragon.",
         "road": {
           "id": "old_konstantin.walk",
           "hint": "Half a sword is a story. A whole one is a plan."
@@ -1070,7 +1070,7 @@
               "count": 3
             },
             "text": "A sack has been left at the foot of the stair, tied with village string. Inside: barley bread, onions, and a child's drawing of you.",
-            "chronicle": "Thwaite left me food a few floors down. Someone drew me badly. I kept the drawing.",
+            "chronicle": "Thwaite left me food and a drawing of me. Kept the drawing.",
             "requires": {
               "deeds_none": [
                 "wrong.grain_reported"
@@ -1078,7 +1078,7 @@
             }
           }
         ],
-        "chronicle": "Hid a village's seed sack from the Grain Committee. A farm boy in uniform found it and let it go. I will not forget his face.",
+        "chronicle": "Hid Thwaite's seed sack from the Committee. A farm-boy soldier let it go.",
         "road": {
           "id": "grain_committee.hide",
           "hint": "A seed sack is next year's bread. Whoever takes it decides who eats."
@@ -1098,7 +1098,7 @@
         "deeds": [
           "wrong.grain_reported"
         ],
-        "chronicle": "Informed on a village's last seed sack for a bounty. The commissar wrote my name in a list. I would like to know which list.",
+        "chronicle": "Sold out a village's last seed sack. The commissar wrote my name down.",
         "road": {
           "id": "grain_committee.inform",
           "hint": "Every list has a second list behind it."
@@ -1138,7 +1138,7 @@
                 "count": 3
               },
               "text": "A sack has been left at the foot of the stair, tied with village string. Inside: barley bread, onions, and a child's drawing of you.",
-              "chronicle": "Thwaite left me food a few floors down. Someone drew me badly. I kept the drawing.",
+              "chronicle": "Thwaite left me food and a drawing of me. Kept the drawing.",
               "requires": {
                 "deeds_none": [
                   "wrong.grain_reported"
@@ -1146,7 +1146,7 @@
               }
             }
           ],
-          "chronicle": "Asked a commissar how he knew what a village needed. He had a number for everything except the next spring. His own soldiers noticed."
+          "chronicle": "Asked the commissar about next spring. No answer. His soldiers took note."
         },
         "fail": {
           "outcome": "He has an answer for every question, because he has a list, and you cannot find the hole in it out loud. The cart leaves full.",
@@ -1154,7 +1154,7 @@
             "met.varsk",
             "lost.thwaite_seed"
           ],
-          "chronicle": "Argued with a commissar and lost. He was very calm about it. The cart was very full."
+          "chronicle": "Lost the argument with the commissar. The grain cart left full."
         },
         "road": {
           "id": "grain_committee.ask",
@@ -1167,7 +1167,7 @@
         "deeds": [
           "met.varsk"
         ],
-        "chronicle": "Walked past a requisition in a village under a sun-stone. It was not my quarrel, and I left it to the people whose quarrel it was.",
+        "chronicle": "Walked past a village's grain being seized. Not my quarrel.",
         "road": {
           "id": "grain_committee.walk",
           "hint": "A cart of seed goes up the stair, and the spring comes after it."
@@ -1210,7 +1210,7 @@
           "aid.marcus",
           "forgo.corins_sword"
         ],
-        "chronicle": "Gave Marcus Hale his son's sword. It was the best blade I had. I am going to keep telling myself that was the point.",
+        "chronicle": "Gave Marcus Hale his son's sword, the best blade I had.",
         "road": {
           "id": "marcus_sword.give",
           "hint": "The best blade you own may already belong to someone."
@@ -1231,7 +1231,7 @@
           "owe.marcus",
           "told.marcus_honest_keep"
         ],
-        "chronicle": "Told Corin Hale's father I needed his son's sword to get down alive, and would bring it home if I lived. He gave me directions to his house twice.",
+        "chronicle": "Owe Marcus Hale his son's sword, if I live. Have the way to his house.",
         "road": {
           "id": "marcus_sword.honest_keep",
           "hint": "Honesty about what you need is not the same as giving it up."
@@ -1246,7 +1246,7 @@
           "wrong.kept_corins_sword"
         ],
         "person_status": "wronged",
-        "chronicle": "Told an old soldier I had never seen his son's sword. The name is on the crossguard. I try not to look at it.",
+        "chronicle": "Lied to Marcus Hale about his son's sword. The name is on the crossguard.",
         "road": {
           "id": "marcus_sword.lie",
           "hint": "A name on a crossguard does not wear off."
@@ -1286,7 +1286,7 @@
           "saved.dafydd",
           "lost.ilse"
         ],
-        "chronicle": "Gave my potion to Dafydd because Ilse ordered me to. She was right, and she died anyway.",
+        "chronicle": "Gave Dafydd my potion on Sergeant Ilse's order. She died.",
         "road": {
           "id": "last_potion.heal_dafydd",
           "hint": "An order from a dying sergeant is still an order."
@@ -1302,7 +1302,7 @@
           "saved.ilse",
           "lost.dafydd"
         ],
-        "chronicle": "Healed the sergeant against her orders. The boy did not wait to see whether I was right.",
+        "chronicle": "Healed Sergeant Ilse against her orders. Dafydd died.",
         "road": {
           "id": "last_potion.heal_ilse",
           "hint": "Sometimes the one who argues hardest has already decided."
@@ -1327,7 +1327,7 @@
             "saved.dafydd",
             "saved.ilse"
           ],
-          "chronicle": "Split one potion between two soldiers and both of them got up. I am fairly sure that was not supposed to work."
+          "chronicle": "Split one potion between Ilse and Dafydd. Both live."
         },
         "fail": {
           "outcome": "You split it, and it is two half measures for two whole wounds. You sit with them while it doesn't work.",
@@ -1335,7 +1335,7 @@
             "lost.dafydd",
             "lost.ilse"
           ],
-          "chronicle": "Tried to save both soldiers. Saved neither. I knew the dose and got it wrong."
+          "chronicle": "Split the dose wrong. Ilse and Dafydd both died."
         },
         "road": {
           "id": "last_potion.split",
@@ -1349,7 +1349,7 @@
           "lost.dafydd",
           "lost.ilse"
         ],
-        "chronicle": "Sat with two dying soldiers and kept what I carried. Ilse's husband makes terrible cheese. Somebody ought to know that.",
+        "chronicle": "Kept my potion and sat with Ilse and Dafydd as they died.",
         "road": {
           "id": "last_potion.keep",
           "hint": "A potion kept is a potion for later. Later is a long word."
@@ -1396,7 +1396,7 @@
             "saved.father_anselm"
           ],
           "person_status": "saved",
-          "chronicle": "Two prisoners, one robe, two stories. One of them knew the Our Father all the way through. I freed that one."
+          "chronicle": "Two men claimed one priest's robe. Freed the one who knew the Our Father."
         },
         "fail": {
           "outcome": "Both of them pray like men who have prayed all their lives. You cannot tell. You leave them chained. There is no one to fetch.",
@@ -1404,7 +1404,7 @@
             "met.chained_priests",
             "lost.father_anselm"
           ],
-          "chronicle": "Could not tell the priest from the cultist, so I freed neither. I still do not know which was which."
+          "chronicle": "Could not tell priest from cultist. Left both in chains."
         },
         "road": {
           "id": "chained_priest.pater_noster",
@@ -1435,7 +1435,7 @@
             ]
           }
         ],
-        "chronicle": "Freed the prisoner who begged loudest. He whistled on his way out. The other one prayed for me, which I did not enjoy.",
+        "chronicle": "Freed the louder prisoner. He left whistling. The other prayed for me.",
         "road": {
           "id": "chained_priest.begging",
           "hint": "A robe is the easiest thing in the world to borrow."
@@ -1466,7 +1466,7 @@
             ]
           }
         ],
-        "chronicle": "Freed both prisoners rather than choose. The priest thanked me. The cultist ran. The priest says I will see him again.",
+        "chronicle": "Freed both. Morrow the cultist ran. Father Anselm says I will meet him again.",
         "road": {
           "id": "chained_priest.scroll",
           "hint": "Freeing everyone is also a choice, with a bill attached."
@@ -1478,7 +1478,7 @@
         "deeds": [
           "met.chained_priests"
         ],
-        "chronicle": "Walked away from two chained men. One cursed me and one prayed for me. I have not decided which to remember.",
+        "chronicle": "Left two men in chains, one cursing me and one praying.",
         "road": {
           "id": "chained_priest.leave",
           "hint": "Two men in one robe. The robe was not the clue."
@@ -1516,7 +1516,7 @@
         "deeds": [
           "aid.brennan"
         ],
-        "chronicle": "Gave a dying knight my potion for the pain. He spent the time it bought looking at his daughter's drawing of a dragon.",
+        "chronicle": "Gave dying Ser Brennan my potion for the pain.",
         "then": "options",
         "road": {
           "id": "ser_brennan.potion",
@@ -1554,7 +1554,7 @@
           "id": "tobyn_waits",
           "hint": "A squire below is still waiting for his knight to catch up."
         },
-        "chronicle": "Swore to Ser Brennan I would give his sword to his squire and tell the boy he was not left behind. It is a better sword than mine.",
+        "chronicle": "Owe squire Tobyn Ser Brennan's sword. Tell him he was not left behind.",
         "road": {
           "id": "ser_brennan.swear",
           "hint": "A good blade carried for someone else is the heaviest kind."
@@ -1567,7 +1567,7 @@
           "lost.brennan"
         ],
         "person_status": "lost",
-        "chronicle": "Sat with Ser Brennan while he died. He talked about a dragon his daughter drew. It was a horse.",
+        "chronicle": "Sat with Ser Brennan until he died.",
         "road": {
           "id": "ser_brennan.sit",
           "hint": "Some kindnesses cost nothing and are still hard to pay."
@@ -1596,7 +1596,7 @@
           "lost.brennan"
         ],
         "person_status": "wronged",
-        "chronicle": "Took a dying knight's sword and shield. He said the sword was meant for his squire. It cuts very well.",
+        "chronicle": "Took dying Ser Brennan's sword and shield. The sword was meant for Tobyn.",
         "road": {
           "id": "ser_brennan.rob",
           "hint": "A dead man's sword remembers who it was promised to."
@@ -1643,7 +1643,7 @@
             "saved.celeste"
           ],
           "person_status": "saved",
-          "chronicle": "Walked a floor beside Celeste. She carried the torch and did not talk about Maren once, which is how I knew."
+          "chronicle": "Saw Celeste safe to the stair. She would not speak of Maren."
         },
         "on_fail": {
           "outcome": "",
@@ -1651,7 +1651,7 @@
             "lost.celeste"
           ],
           "person_status": "lost",
-          "chronicle": "Woke Celeste out of stone and lost her a floor later. Maren had the better excuse."
+          "chronicle": "Woke Celeste from stone, and lost her a floor later."
         }
       }
     },
@@ -1677,14 +1677,14 @@
             "flag.celeste_went_for_maren"
           ],
           "person_status": "saved",
-          "chronicle": "Woke a woman named Celeste out of stone. Her friend promised to come back for her and nearly did. Celeste went to find her bones."
+          "chronicle": "Woke Celeste from stone. She went to find her friend Maren's bones."
         },
         "fail": {
           "outcome": "You read too fast and the words tangle. A line of the scroll burns off the page with every slip, and then the page is blank. The stone stays stone, and the heartbeat goes on.",
           "deeds": [
             "met.celeste"
           ],
-          "chronicle": "Read a scroll over a woman turned to stone and got the words wrong. The scroll burned itself blank. She is still stone."
+          "chronicle": "Misread the scroll over a stone woman. It burned blank. She is still stone."
         },
         "road": {
           "id": "petrified_adventurer.restore",
@@ -1718,7 +1718,7 @@
           "deeds": [
             "met.celeste"
           ],
-          "chronicle": "Read a scroll over a woman turned to stone and got the words wrong. The scroll burned itself blank. She is still stone."
+          "chronicle": "Misread the scroll over a stone woman. It burned blank. She is still stone."
         },
         "road": {
           "id": "petrified_adventurer.walk_together",
@@ -1731,7 +1731,7 @@
         "deeds": [
           "met.celeste"
         ],
-        "chronicle": "Left a woman in stone with a heartbeat. Her friend's bones were three rooms back. Nobody else is coming now.",
+        "chronicle": "Left a woman alive in stone. Her friend's bones lie three rooms back.",
         "road": {
           "id": "petrified_adventurer.leave",
           "hint": "Stone keeps a heartbeat a long time. Not forever."
@@ -1757,7 +1757,7 @@
           "wrong.broke_celeste"
         ],
         "person_status": "wronged",
-        "chronicle": "Broke a statue for the armour inside it. There was a heartbeat in it a moment before. There isn't now.",
+        "chronicle": "Broke a living statue for its armour. The heartbeat stopped.",
         "road": {
           "id": "petrified_adventurer.break",
           "hint": "Some statues are only resting."
@@ -1811,7 +1811,7 @@
           "status": "spared",
           "deserving": false
         },
-        "chronicle": "Healed a murderer who said he had stopped running. He started again before the dead man's son could stop him. That makes four times someone let him.",
+        "chronicle": "Healed Lucan the murderer. He fled. Four times now someone has let him go.",
         "road": {
           "id": "penitent.heal_free",
           "hint": "Pity without judgment is how a guilty man keeps running."
@@ -1844,7 +1844,7 @@
             "told.lucan_to_assize"
           ],
           "person_status": "saved",
-          "chronicle": "Healed a murderer and handed him to his victim's son for the assize. Mercy, then justice. Neither of them thanked me, which seems right."
+          "chronicle": "Healed Lucan and handed him to his victim's son for the assize."
         },
         "fail": {
           "outcome": "You talk in circles about forgiveness until Aurel can't stand it and leaves. When you turn round, Lucan has slipped away into the dark, and left the board behind.",
@@ -1860,7 +1860,7 @@
             "status": "spared",
             "deserving": false
           },
-          "chronicle": "Lectured a murderer and his victim's son about forgiveness. The son left in disgust. The murderer left too, the other way."
+          "chronicle": "Failed to teach Lucan and Aurel mercy. They left by separate ways."
         },
         "road": {
           "id": "penitent.weigh",
@@ -1876,7 +1876,7 @@
           "lost.lucan"
         ],
         "person_status": "lost",
-        "chronicle": "Let a murdered man's son decide. He decided not to bother. I suppose that is a kind of sentence.",
+        "chronicle": "Let Aurel decide on his father's killer. He left Lucan to the dark.",
         "road": {
           "id": "penitent.you_decide",
           "hint": "Revenge declined is not the same as justice done."
@@ -1907,7 +1907,7 @@
           "wrong.robbed_lucan"
         ],
         "person_status": "wronged",
-        "chronicle": "Took a murderer's purse and the knife he used. He said it suited me. I have not decided whether to be offended.",
+        "chronicle": "Took the murderer Lucan's purse and the knife he used.",
         "road": {
           "id": "penitent.rob",
           "hint": "A murderer's knife sits easy in the hand and heavy everywhere else."
@@ -1949,7 +1949,7 @@
           "aid.roderic",
           "told.roderic_truth"
         ],
-        "chronicle": "Told Roderic where his father's shield was lying, pointing away from the nest. He decided it meant his father ran to warn the camp. I hope he is right.",
+        "chronicle": "Told Roderic the shield pointed from the nest. His father may have run for the camp.",
         "road": {
           "id": "roderic_shield.truth",
           "hint": "The truth is sometimes kinder than you feared, and sometimes only stranger."
@@ -1965,7 +1965,7 @@
           "aid.roderic",
           "told.roderic_lie"
         ],
-        "chronicle": "Told a young knight his father died facing the basilisk. I do not know that. He will tell his children.",
+        "chronicle": "Told Roderic his father died facing the basilisk. I do not know that.",
         "road": {
           "id": "roderic_shield.kind_lie",
           "hint": "A kind lie travels further than the person who told it."
@@ -1980,7 +1980,7 @@
         "deeds": [
           "aid.roderic"
         ],
-        "chronicle": "Gave Roderic his father's shield and said nothing about where it lay. He did not ask twice. I think he knew not to.",
+        "chronicle": "Gave Roderic his father's shield. Said nothing of where it lay.",
         "road": {
           "id": "roderic_shield.silence",
           "hint": "Silence is an answer too, and he will read it however he must."
@@ -1993,7 +1993,7 @@
           "owe.roderic",
           "told.roderic_honest_keep"
         ],
-        "chronicle": "Told Roderic I needed his father's shield to get down alive. He told me to carry it well, and gave me his mother's name.",
+        "chronicle": "Owe Ser Marten's shield to Roderic's mother in the Iron Vale, if I live.",
         "road": {
           "id": "roderic_shield.honest_keep",
           "hint": "Some things are only borrowed from the dead, and the living can agree to the loan."
@@ -2060,7 +2060,7 @@
           "id": "holt_waits",
           "hint": "A Watch sergeant is still waiting for her orders."
         },
-        "chronicle": "Swore to a dying courier named Edric that I would carry his dispatch down. I am to tell them he made it almost all the way.",
+        "chronicle": "Swore to dying Edric to carry his dispatch down. Say he almost made it.",
         "road": {
           "id": "dying_messenger.swear",
           "hint": "A promise to the dying has nobody left who can release you from it."
@@ -2073,7 +2073,7 @@
               ]
             },
             "outcome": "You take the case from beside him and swear it to him anyway. He made it almost all the way; someone should say so.",
-            "chronicle": "Swore over a dead courier named Edric that I would carry his dispatch down. Someone should tell them he made it almost all the way."
+            "chronicle": "Swore over a dead courier, Edric, to carry his dispatch down. Say he almost made it."
           }
         ]
       },
@@ -2113,17 +2113,17 @@
                 ]
               },
               "text": "A Watch purse hangs from a nail on the stair, with a chalk mark: E.F., ALL THE WAY.",
-              "chronicle": "Edric's purse found me. The chalk said he made it all the way this time."
+              "chronicle": "Found Edric's purse on the stair. He made it all the way."
             }
           ],
-          "chronicle": "Found a dying courier lying on his own healing draught. He lived, and ran his dispatch down himself, swearing."
+          "chronicle": "Found Edric's own draught under him. He lived, and took his dispatch on."
         },
         "fail": {
           "outcome": "You turn him and the bolt shifts. He gasps once and goes still. The scroll case is still there on the stone.",
           "deeds": [
             "lost.edric"
           ],
-          "chronicle": "Tried to look at a courier's wound and moved the bolt. He died. His dispatch is still waiting for someone.",
+          "chronicle": "Botched a look at the courier's wound. He died. His dispatch still waits.",
           "then": "options"
         },
         "road": {
@@ -2138,7 +2138,7 @@
           "met.edric",
           "lost.edric"
         ],
-        "chronicle": "Told a dying courier I could not carry his dispatch. I stepped around it on the way out.",
+        "chronicle": "Would not promise to carry a dying courier's dispatch. Left it.",
         "road": {
           "id": "dying_messenger.refuse",
           "hint": "A case left on the floor stays on the floor."
@@ -2174,7 +2174,7 @@
           "wrong.robbed_edric",
           "lost.edric"
         ],
-        "chronicle": "Took a dying courier's pay and the draught he was lying on. Left his dispatch. He watched me do the sums.",
+        "chronicle": "Took a dying courier's pay and draught as he watched. Left his dispatch.",
         "road": {
           "id": "dying_messenger.rob",
           "hint": "Some purses cost more than they hold."
@@ -2187,7 +2187,7 @@
               ]
             },
             "outcome": "His healing draught was pinned under his hip all along. His hand does not move when you take the draught, or his hazard pay. You step over the scroll case.",
-            "chronicle": "Took a dead courier's pay and the draught he had been lying on. Left his dispatch on the stone. Nobody watched me do the sums."
+            "chronicle": "Took a dead courier's pay and draught, unseen. Left his dispatch."
           }
         ]
       },
@@ -2203,7 +2203,7 @@
         "deeds": [
           "met.edric"
         ],
-        "chronicle": "Moved a courier named Edric the wrong way and he died. I left his dispatch on the stone beside him and stepped around it.",
+        "chronicle": "Moved Edric wrongly and he died. Left his dispatch beside him.",
         "road": {
           "id": "dying_messenger.leave_dead",
           "hint": "A case left beside the dead stays where it fell."
@@ -2263,7 +2263,7 @@
           "id": "columba_chapel",
           "hint": "Somewhere below, a reading desk is waiting for a saint."
         },
-        "chronicle": "Swore to Sister Marguerite I would carry Saint Columba's finger down to a chapel. She warned me it is warm when you wear it.",
+        "chronicle": "Must take Saint Columba's finger to a chapel for Sister Marguerite. Warm if worn.",
         "road": {
           "id": "reliquary.swear",
           "hint": "A relic worn on the road is not the same as a relic kept."
@@ -2279,7 +2279,7 @@
           "aid.marguerite",
           "lost.cormac"
         ],
-        "chronicle": "Fed a starving nun and a dying monk. She fed him first, which did not help him and did not stop her.",
+        "chronicle": "Fed Sister Marguerite and a dying monk.",
         "road": {
           "id": "reliquary.food",
           "hint": "Bread for the living, and a long road for the relic."
@@ -2299,7 +2299,7 @@
           "wrong.took_columba",
           "lost.cormac"
         ],
-        "chronicle": "Took a saint's finger off a dying monk's neck because it was warm. It is still warm. The monk is not.",
+        "chronicle": "Took a saint's finger off a dying monk. It is warm to the touch.",
         "road": {
           "id": "reliquary.take",
           "hint": "A saint's bone in a thief's pocket is still a saint's bone."
@@ -2312,7 +2312,7 @@
           "met.marguerite",
           "lost.cormac"
         ],
-        "chronicle": "Left a nun saying the Office for the Dead over her brother monk. I did not stay for the end of it.",
+        "chronicle": "Left Sister Marguerite saying the Office over her brother monk.",
         "road": {
           "id": "reliquary.leave",
           "hint": "A prayer said alone still carries."
@@ -2382,7 +2382,7 @@
               "text": "A scroll case waits on the stair, with a note in six languages that all say the same thing."
             }
           ],
-          "chronicle": "Bought a man named Theodoros and freed him on the spot. He read the receipt aloud in six languages. They all said thank you."
+          "chronicle": "Haggled well, bought Theodoros from the slaver and freed him."
         },
         "fail": {
           "outcome": "Rusk knows his trade better than you know yours, and you pay his full price. You strike the chains anyway. Theodoros rubs his wrists. \"Overpaid,\" he says. \"Thank you.\"",
@@ -2406,7 +2406,7 @@
               "text": "A scroll case waits on the stair, with a note in six languages that all say the same thing."
             }
           ],
-          "chronicle": "Paid a slaver his full price to free a scholar. Theodoros said I overpaid. He is right, and I do not care."
+          "chronicle": "Paid the slaver full price to free Theodoros the scholar."
         },
         "road": {
           "id": "slavers_wagon.buy_free",
@@ -2428,7 +2428,7 @@
           "slew.rusk"
         ],
         "person_status": "saved",
-        "chronicle": "Fought a slaver for his coffle and freed everyone on it. The goatherd boy kept the slaver's hat. It suits him.",
+        "chronicle": "Fought the slaver Rusk and freed his whole coffle.",
         "road": {
           "id": "slavers_wagon.attack",
           "hint": "The hat changed heads that day."
@@ -2454,7 +2454,7 @@
           "wrong.bought_theodoros"
         ],
         "person_status": "wronged",
-        "chronicle": "Bought a man to carry my pack. He read the bill of sale out loud while I signed, every word.",
+        "chronicle": "Bought Theodoros from a slaver to carry my pack.",
         "road": {
           "id": "slavers_wagon.porter",
           "hint": "A porter who reads six languages takes notes in all of them."
@@ -2469,7 +2469,7 @@
               "type": "weapon"
             },
             "text": "For five floors Theodoros has carried everything and said nothing at all. At a change of the watch he is gone, and so is your second-best knife.",
-            "chronicle": "The man I bought carried my pack and never said a word. At a change of the watch he was gone, and so was my second-best knife."
+            "chronicle": "Theodoros, the man I bought, fled with my second-best knife."
           }
         ]
       },
@@ -2479,7 +2479,7 @@
         "deeds": [
           "met.rusk"
         ],
-        "chronicle": "Walked past a slaver's coffle. One of the men in it was reading. I never found out what.",
+        "chronicle": "Walked past a slaver's coffle. One man in it was reading.",
         "road": {
           "id": "slavers_wagon.walk",
           "hint": "The coffle went on up the stair."
@@ -2528,7 +2528,7 @@
           "aid.hal"
         ],
         "person_status": "saved",
-        "chronicle": "Kept a vigil at a sellsword's cairn so his partner's ghost could rest. It cost me something I will not get back.",
+        "chronicle": "Kept vigil at Edwin's cairn. Hal's ghost rests. It took something for good.",
         "road": {
           "id": "ghost_grave.vigil",
           "hint": "The dead cannot bless the dead. The living can, at a price."
@@ -2548,7 +2548,7 @@
         "deeds": [
           "met.hal"
         ],
-        "chronicle": "Told a ghost I could not keep his vigil. He said he did not mind standing. He has been standing a long while.",
+        "chronicle": "Would not keep Hal's vigil. His ghost still guards the cairn.",
         "road": {
           "id": "ghost_grave.leave",
           "hint": "Some guards have no relief coming."
@@ -2576,7 +2576,7 @@
         "deeds": [
           "wrong.robbed_cairn"
         ],
-        "chronicle": "Robbed a grave while its ghost watched. He tried to put the stones back. His hands went through them.",
+        "chronicle": "Robbed Edwin's cairn while Hal's ghost watched.",
         "road": {
           "id": "ghost_grave.rob",
           "hint": "Every cairn is guarded by somebody, even if only by the dead."
@@ -2625,7 +2625,7 @@
             ]
           }
         ],
-        "chronicle": "Fed a deserter named Pell and sent him up. I think I just sent away the only runner his company had.",
+        "chronicle": "Fed Pell, a deserter. His company is trapped in the granary below.",
         "road": {
           "id": "deserter.food",
           "hint": "One who flees may have left comrades in need of him."
@@ -2658,7 +2658,7 @@
               ]
             }
           ],
-          "chronicle": "Told a deserter named Pell about a Spartan who came back. He went back. I hope his story ends better than the Spartan's did."
+          "chronicle": "Told Pell of the Spartan who came back. He went back to his company."
         },
         "fail": {
           "outcome": "You begin the tale, but in your telling it becomes a sermon upon duty, and he finds no comfort in it. Pell hears you courteously to the end, and then, taking nothing from you, he turns and climbs the stair as swiftly as he is able.",
@@ -2675,7 +2675,7 @@
               ]
             }
           ],
-          "chronicle": "Tried to give a deserter a story and gave him a sermon. He ran faster."
+          "chronicle": "Preached at Pell, a deserter. He ran on uphill."
         },
         "road": {
           "id": "deserter.aristodemus",
@@ -2698,7 +2698,7 @@
             ]
           }
         ],
-        "chronicle": "Pointed a deserter upstairs. He went. Somewhere below me is a granary with a barred door.",
+        "chronicle": "Sent Pell upstairs unfed. A barred granary waits somewhere below.",
         "road": {
           "id": "deserter.point",
           "hint": "A frightened man will take whatever road he is shown."
@@ -2717,7 +2717,7 @@
         "deeds": [
           "wrong.took_signet"
         ],
-        "chronicle": "Took a dead captain's signet off a deserter. He gave it up easily. I think he wanted rid of it.",
+        "chronicle": "Took dead Captain Dorn's signet from Pell.",
         "road": {
           "id": "deserter.signet",
           "hint": "A captain's ring may still carry his orders after his death."
@@ -2755,7 +2755,7 @@
           "lost.frida"
         ],
         "person_status": "lost",
-        "chronicle": "Split a dead smith's gold between his son and daughter, fair to the coin. I did not look at the floor. The son did.",
+        "chronicle": "Split a smith's gold between Frida and Hepti. Missed the pit he dug for her.",
         "road": {
           "id": "dwarf_siblings.split",
           "hint": "An even split means nothing to a man who has already dug the hole."
@@ -2781,14 +2781,14 @@
             "told.otters_wergild"
           ],
           "person_status": "saved",
-          "chronicle": "Told two quarrelling dwarves what became of Hreidmar's sons. The brother filled in the pit he had dug for his sister. They split the gold, and nobody turned into a dragon."
+          "chronicle": "Told Frida and Hepti of Hreidmar's sons. The pit is filled, and they share."
         },
         "fail": {
           "outcome": "You get the story tangled: the otter, the ring, which brother did what. Frida laughs at you. Hepti doesn't. You leave them with their hands on the lid.",
           "deeds": [
             "met.frida"
           ],
-          "chronicle": "Tried to tell two dwarves an old story about gold and brothers, and got it wrong. They were still holding the lid when I left."
+          "chronicle": "Botched the tale of Hreidmar's gold. Frida and Hepti still quarrel."
         },
         "road": {
           "id": "dwarf_siblings.story",
@@ -2811,7 +2811,7 @@
           "lost.frida"
         ],
         "person_status": "lost",
-        "chronicle": "Held the lamp while a dwarf walked into the pit her brother had dug for her. He paid me a third. It was correct to the coin.",
+        "chronicle": "Held the lamp as Frida walked into Hepti's pit. Got a third of the gold.",
         "road": {
           "id": "dwarf_siblings.side",
           "hint": "Gold paid for holding a lamp is still blood money."
@@ -2823,7 +2823,7 @@
         "deeds": [
           "met.frida"
         ],
-        "chronicle": "Left a dwarf and her brother with their hands on a dead man's chest. There was a trench in the floor. I hope she watched her step.",
+        "chronicle": "Left Frida and Hepti at the chest. There was a trench in the floor.",
         "road": {
           "id": "dwarf_siblings.leave",
           "hint": "A trench across a path is a question somebody has already answered."
@@ -2877,7 +2877,7 @@
           "met.sibyl",
           "aid.sibyl"
         ],
-        "chronicle": "Bought the last three prophecy books from a woman in a bottle. A king once paid the same for three and wept about the six.",
+        "chronicle": "Bought the bottled Sibyl's last three books of prophecy.",
         "road": {
           "id": "blind_seer.pay",
           "hint": "Some sellers will burn the goods before they lower the price."
@@ -2917,7 +2917,7 @@
             "met.sibyl",
             "aid.sibyl"
           ],
-          "chronicle": "Paid a sibyl's price without arguing, because I had seen the ash. She gave me a page she kept back from a king."
+          "chronicle": "Paid the Sibyl unargued. Got the page she kept back from a king."
         },
         "fail": {
           "outcome": "You haggle. She looks at one of the books, and it begins to smoulder on the floor. \"Same price.\"",
@@ -2937,7 +2937,7 @@
           "deeds": [
             "met.sibyl"
           ],
-          "chronicle": "Haggled with a sibyl. She burned a book in front of me and kept the price. I would like my dignity back."
+          "chronicle": "Haggled with the Sibyl. She burned a book and kept the price."
         },
         "road": {
           "id": "blind_seer.haggle",
@@ -2951,7 +2951,7 @@
           "met.sibyl"
         ],
         "person_status": "lost",
-        "chronicle": "Asked a woman in a bottle what she wanted. She has wanted the same thing for a thousand years. I had nothing that would help.",
+        "chronicle": "The Sibyl has wished to die for a thousand years. I could not help.",
         "then": "options",
         "road": {
           "id": "blind_seer.ask",
@@ -2964,7 +2964,7 @@
         "deeds": [
           "met.sibyl"
         ],
-        "chronicle": "Left a sibyl hanging on her hook. She predicted it.",
+        "chronicle": "Left the Sibyl on her hook, as she foretold.",
         "road": {
           "id": "blind_seer.leave",
           "hint": "Prophecy is easy when it is about leaving."
@@ -3010,7 +3010,7 @@
           "monster_id": "war_troll",
           "count": 2
         },
-        "chronicle": "Broke an angel out of a cage in front of her keeper's trolls. The angel left. The trolls stayed for a long and personal conversation.",
+        "chronicle": "Broke Sariel the angel from her cage. Had to fight the trolls.",
         "road": {
           "id": "trapped_seraph.break",
           "hint": "See who is leaning on the wall before you break the lock."
@@ -3050,7 +3050,7 @@
               "text": "A white feather lies across the stair, and it is warm."
             }
           ],
-          "chronicle": "Read a collector's deed of sale for an angel. The grammar was forged, and so was the seller. The angel went free and Vell went quiet."
+          "chronicle": "Found Vell's deed of sale forged. The angel went free."
         },
         "fail": {
           "outcome": "It reads like a real deed to you. Vell smiles and folds it away. \"Good day.\" The angel closes her eyes.",
@@ -3059,7 +3059,7 @@
             "lost.sariel"
           ],
           "person_status": "lost",
-          "chronicle": "Read a deed of sale for an angel and could not fault it. Vell thanked me. I did not enjoy being thanked by him."
+          "chronicle": "Found no fault in Vell's deed. The angel stays caged."
         },
         "road": {
           "id": "trapped_seraph.deed",
@@ -3082,7 +3082,7 @@
           "met.vell"
         ],
         "person_status": "wronged",
-        "chronicle": "Took a collector's money to forget an angel in a cage. He has written me down as an associate.",
+        "chronicle": "Took Vell's money to forget a caged angel. He lists me as an associate.",
         "road": {
           "id": "trapped_seraph.fee",
           "hint": "Every ledger has a column for associates."
@@ -3096,7 +3096,7 @@
           "lost.sariel"
         ],
         "person_status": "lost",
-        "chronicle": "Walked past an angel in a cage. Her keeper called me wise. I have been called better things by worse people.",
+        "chronicle": "Walked past an angel in Vell's cage.",
         "road": {
           "id": "trapped_seraph.walk",
           "hint": "A buyer's cart is always on its way."
@@ -3140,7 +3140,7 @@
             "saved.agnes"
           ],
           "person_status": "saved",
-          "chronicle": "Walked nine people off a dwarf chain-gang to the up-stair and took the gold the deacon offered for it. They would rather be alive than rich. So, it turns out, would I.",
+          "chronicle": "Saw nine chain-gang runaways to the up-stair. Took the gold offered.",
           "reward": {
             "type": "gold",
             "min": 200,
@@ -3154,7 +3154,7 @@
             "lost.agnes"
           ],
           "person_status": "lost",
-          "chronicle": "Lost the nine I was walking out of the chain-gang country. Something had followed the smell of them, and I was not enough."
+          "chronicle": "Lost the nine chain-gang runaways. Something tracked them by smell."
         }
       },
       "escort_agnes_free": {
@@ -3173,7 +3173,7 @@
             "saved.agnes"
           ],
           "person_status": "saved",
-          "chronicle": "Walked nine people off a dwarf chain-gang to the up-stair and left them the gold for their road home. The deacon said they were the treasure. He was right."
+          "chronicle": "Saw nine chain-gang runaways to the up-stair. Left them the gold for home."
         },
         "on_fail": {
           "outcome": "",
@@ -3181,7 +3181,7 @@
             "lost.agnes"
           ],
           "person_status": "lost",
-          "chronicle": "Lost the nine I was walking out of the chain-gang country. Something had followed the smell of them, and I was not enough."
+          "chronicle": "Lost the nine chain-gang runaways. Something tracked them by smell."
         }
       }
     },
@@ -3238,7 +3238,7 @@
             "aid.lawrence",
             "saved.agnes"
           ],
-          "chronicle": "Followed the draught along a cave floor and found nine escaped slaves a way up that nothing was watching. The deacon on the gridiron blessed me for it."
+          "chronicle": "Found the nine a safe way up by the draught. The deacon blessed me."
         },
         "fail": {
           "outcome": "The draught you follow is the breath of something lying in the dark, and it wakes. When the fight is over, the nine have gone up some other passage, and Lawrence with them.",
@@ -3248,7 +3248,7 @@
           "deeds": [
             "met.lawrence"
           ],
-          "chronicle": "Followed a draught through the dark and found a troll's breath at the end of it. The nine I meant to lead out found their own way."
+          "chronicle": "The draught led to a troll. The nine found their own way out."
         },
         "road": {
           "id": "lawrence_gridiron.draught",
@@ -3261,7 +3261,7 @@
         "deeds": [
           "met.lawrence"
         ],
-        "chronicle": "Met a deacon sitting on a gridiron over hot coals, and nine people he called the Church's treasure. I left them to him.",
+        "chronicle": "Left nine souls, the Church's treasure, to the deacon on the gridiron.",
         "road": {
           "id": "lawrence_gridiron.go",
           "hint": "Some treasures are carried out on their own feet."
@@ -3316,7 +3316,7 @@
             "saved.ewan"
           ],
           "person_status": "saved",
-          "chronicle": "Read a cursed book's binding backwards until it let a schoolmaster go. He remembered his wife's eyes first. Brown."
+          "chronicle": "Read the binding backwards and freed Ewan the schoolmaster."
         },
         "fail": {
           "outcome": "Halfway through you lose the thread, and the book finds it. Black light runs up your wrists. It takes a bite of you and keeps him. The whispering starts again, and for a while some of it is in your own head.",
@@ -3329,7 +3329,7 @@
             "lost.ewan"
           ],
           "person_status": "lost",
-          "chronicle": "Tried to read a curse off a schoolmaster and lost my place. The book kept him and took a bite of me as a fee."
+          "chronicle": "Failed to read Ewan free. The book kept him and wounded me."
         },
         "road": {
           "id": "cursed_scholar.read_backwards",
@@ -3360,7 +3360,7 @@
           }
         ],
         "person_status": "saved",
-        "chronicle": "Tore a cursed book out of a scholar's hands. It came away with the skin of his palms. He lives. He will not write again.",
+        "chronicle": "Tore the cursed book from Ewan. He lives, but will never write again.",
         "road": {
           "id": "cursed_scholar.rip",
           "hint": "The fastest cure is not always the one that leaves the patient whole."
@@ -3390,7 +3390,7 @@
           "lost.ewan"
         ],
         "person_status": "wronged",
-        "chronicle": "Read a book that had eaten a schoolmaster. It was very educational. He is still breathing, if that counts.",
+        "chronicle": "Read the book that ate Ewan. He breathes, and that is all.",
         "road": {
           "id": "cursed_scholar.read_it",
           "hint": "Some knowledge is paid for by whoever was holding it last."
@@ -3408,7 +3408,7 @@
           "lost.ewan"
         ],
         "person_status": "lost",
-        "chronicle": "Backed away from a cursed scholar. His wife was called Clara. He has forgotten. I have not.",
+        "chronicle": "Left Ewan to the cursed book. He has forgotten his wife, Clara.",
         "road": {
           "id": "cursed_scholar.back_away",
           "hint": "A man who asks you to kill the book is asking you to stay a while."
@@ -3480,7 +3480,7 @@
           "wrong.sold_tansy"
         ],
         "person_status": "wronged",
-        "chronicle": "Sold a fairy in a jar to Ambrose Vell. Good price. She watched me count it, the whole time.",
+        "chronicle": "Sold Tansy, a fairy in a jar, to Ambrose Vell.",
         "road": {
           "id": "fairy_jar.sell",
           "hint": "Some prices are paid by whoever is inside the jar."
@@ -3500,7 +3500,7 @@
           "told.sold_tansys_dust"
         ],
         "person_status": "saved",
-        "chronicle": "Freed a fairy and sold her shed dust to Vell. She was free. She said it was her flying. She walked away on foot.",
+        "chronicle": "Freed Tansy but sold Vell her dust. She cannot fly now.",
         "road": {
           "id": "fairy_jar.sell_dust",
           "hint": "What was shed can still belong to the one who shed it."
@@ -3529,7 +3529,7 @@
             "text": "A ring of tiny mushrooms has sprung up on the stair. In the middle sits a thimble of something golden."
           }
         ],
-        "chronicle": "Turned down Vell's money for a fairy's shed dust and gave it back to her. It went back into her wings. She flew off over my head.",
+        "chronicle": "Freed Tansy and refused Vell's gold for her dust. She flies again.",
         "road": {
           "id": "fairy_jar.give_dust",
           "hint": "A gift left in a ring of mushrooms comes from someone small with a long memory."
@@ -3543,7 +3543,7 @@
           "lost.tansy"
         ],
         "person_status": "lost",
-        "chronicle": "Left a fairy's jar to Ambrose Vell and the people whose business it was.",
+        "chronicle": "Left Tansy's jar to Ambrose Vell.",
         "road": {
           "id": "fairy_jar.walk",
           "hint": "A collector's cart always has room for one more jar."
@@ -3591,7 +3591,7 @@
           "deeds": [
             "told.sigyn_story"
           ],
-          "chronicle": "Sigyn told me why Loki lies under the serpent, and why she stays. When the ice breaks, he breaks loose. She gave me something against his venom.",
+          "chronicle": "Loki breaks loose when the ice breaks. Have Sigyn's aid against his venom.",
           "then": "options"
         },
         "fail": {
@@ -3599,7 +3599,7 @@
           "deeds": [
             "met.sigyn"
           ],
-          "chronicle": "Asked Sigyn why she stays. She did not answer. I think I asked it wrong."
+          "chronicle": "Asked Sigyn why she stays by Loki. She would not answer."
         },
         "road": {
           "id": "sigyn_bowl.ask",
@@ -3624,7 +3624,7 @@
           "aid.sigyn",
           "forgo.lokis_gift"
         ],
-        "chronicle": "Held Sigyn's bowl under the serpent while she slept. Loki offered me anything for one cut cord. My hands still sting. His offer does not.",
+        "chronicle": "Held Sigyn's bowl while she slept. Refused Loki's bargain.",
         "road": {
           "id": "sigyn_bowl.hold",
           "hint": "The one who holds the bowl never gets to put it down. Someone could, a while."
@@ -3649,7 +3649,7 @@
         "deeds": [
           "wrong.cut_lokis_cord"
         ],
-        "chronicle": "Cut one of Loki's cords for a gift. He laughed, the whole floor shook, and Sigyn would not look at me. The gift is very good. I wish it were not.",
+        "chronicle": "Cut one of Loki's cords for a gift. He laughed and the floor shook.",
         "road": {
           "id": "sigyn_bowl.cut",
           "hint": "He invented the net. Think who it was meant to catch."
@@ -3661,7 +3661,7 @@
         "deeds": [
           "met.sigyn"
         ],
-        "chronicle": "Walked past Loki under the serpent and Sigyn with her bowl. The floor shook twice before I reached the stair.",
+        "chronicle": "Left Loki and Sigyn under the serpent. The floor shook twice after.",
         "road": {
           "id": "sigyn_bowl.leave",
           "hint": "The ground shakes whenever her bowl is full."
@@ -3735,7 +3735,7 @@
             "text": "A cistern on the stair has a dead rat floating in it. Someone has scratched a little cross on the rim."
           }
         ],
-        "chronicle": "Paid gold to free a sweet old prisoner. He gave me a flask for the road. I have not drunk it. I keep looking at it.",
+        "chronicle": "Paid to free an old prisoner. He gave me a flask. Have not drunk it.",
         "road": {
           "id": "forgotten_prisoner.feed_lock",
           "hint": "Read a man's wall before you open his door."
@@ -3756,7 +3756,7 @@
           "deeds": [
             "noticed.silas_poisoner"
           ],
-          "chronicle": "Read the scratches on a prisoner's wall. Eleven names, eleven little crosses. He called it a debt.",
+          "chronicle": "Prisoner's wall bears eleven names, eleven crosses. He called it a debt.",
           "then": "options"
         },
         "fail": {
@@ -3782,7 +3782,7 @@
         "karma": 1,
         "karma_kind": "judgment",
         "outcome": "He shrugs. \"Forty-three years. What's forty more.\" He goes back to his wall, and begins, very neatly, to scratch your name.",
-        "chronicle": "Read the names on a prisoner's wall and left him in his cell. He started scratching my name next to theirs. I did not wait to see if he added a cross.",
+        "chronicle": "Left the killer of eleven in his cell. He is adding my name to his wall.",
         "road": {
           "id": "forgotten_prisoner.leave_sentence",
           "hint": "A sentence served is not the same as a debt paid."
@@ -3813,7 +3813,7 @@
           "status": "spared",
           "deserving": false
         },
-        "chronicle": "Freed a poisoner after forty-three years, knowing exactly what he was. He did not offer me anything to drink. I think he could tell.",
+        "chronicle": "Freed the poisoner after forty-three years, knowing what he was.",
         "road": {
           "id": "forgotten_prisoner.free_knowing",
           "hint": "Mercy with open eyes is still mercy, and still a risk."
@@ -3831,7 +3831,7 @@
         "deeds": [
           "met.silas"
         ],
-        "chronicle": "Told an old prisoner I could not afford his lock. He said nobody could. Nobody has asked him why he is there.",
+        "chronicle": "Could not pay the old prisoner's lock. Never learned why he is held.",
         "road": {
           "id": "forgotten_prisoner.cannot_afford",
           "hint": "Some locks are cheaper to leave shut."
@@ -3864,7 +3864,7 @@
         "deeds": [
           "wrong.robbed_silas"
         ],
-        "chronicle": "Robbed an old prisoner's cache. My fingers itched afterwards. I am beginning to think the coins were the point.",
+        "chronicle": "Robbed the old prisoner's cache. Beware those coins, my fingers itch.",
         "road": {
           "id": "forgotten_prisoner.rob_cache",
           "hint": "An old poisoner keeps his savings the way he kept his wine."
@@ -3907,7 +3907,7 @@
           "wrong.kept_swan_shirt"
         ],
         "person_status": "wronged",
-        "chronicle": "Took a valkyrie's swan-shirt and kept her at my side. She fought for me because she had to. One morning she was gone, and so was the shirt.",
+        "chronicle": "Kept Hrist's swan-shirt to bind her. She fought for me, then took it.",
         "road": {
           "id": "swan_shirt.keep",
           "hint": "A chooser of the slain remembers who chose for her."
@@ -3926,7 +3926,7 @@
           "saved.hrist"
         ],
         "person_status": "saved",
-        "chronicle": "Fought a frost giant for a valkyrie's swan-shirt and handed it back to her. She said she would remember it on the day of choosing. I would rather she forgot me for a while yet.",
+        "chronicle": "Fought for Hrist's swan-shirt and returned it. She will recall it at the choosing.",
         "road": {
           "id": "swan_shirt.return",
           "hint": "What holds a person is not yours to hold."
@@ -3951,7 +3951,7 @@
             "saved.hrist"
           ],
           "person_status": "saved",
-          "chronicle": "Won a valkyrie's swan-shirt off a frost giant in a riddle game, and gave it back to her. She told me what her name means. I am trying not to think about it."
+          "chronicle": "Won Hrist's swan-shirt back at riddles. She is a chooser of the slain."
         },
         "fail": {
           "outcome": "Your first riddle has an answer he knows, and his has one you don't. He roars and comes for you. In the fight Hrist takes the shirt out of his fist herself, and is gone over the lake before you can turn.",
@@ -3961,7 +3961,7 @@
           "deeds": [
             "met.hrist"
           ],
-          "chronicle": "Lost a riddle game to a frost giant and had to fight him for it. The valkyrie took her own shirt back in the scuffle."
+          "chronicle": "Lost at riddles and fought the giant. Hrist took back her own shirt."
         },
         "road": {
           "id": "swan_shirt.riddle",
@@ -3974,7 +3974,7 @@
         "deeds": [
           "met.hrist"
         ],
-        "chronicle": "Left a valkyrie watching a sleeping giant hold her swan-shirt. She did not ask me for anything. That was the worst of it.",
+        "chronicle": "Left Hrist by the lake. A sleeping giant still has her swan-shirt.",
         "road": {
           "id": "swan_shirt.leave",
           "hint": "A sleeping giant keeps what he holds until he wakes."
@@ -4025,7 +4025,7 @@
         "deeds": [
           "wrong.told_thrym"
         ],
-        "chronicle": "Told a frost giant his bride was a man in a veil. He paid me well for it, and kept the hammer he had stolen. The bridesmaid looked back at me once.",
+        "chronicle": "Told Thrym his bride was a man. He paid me, and kept the stolen hammer.",
         "road": {
           "id": "thrym_wedding.tell",
           "hint": "A true word that helps a thief keep what he stole is still a betrayal."
@@ -4058,14 +4058,14 @@
             },
             "aid.thor"
           ],
-          "chronicle": "Sat at a frost giant's wedding and helped the bridesmaid explain why the bride ate an ox. The bride was Thor. The giant found out when the hammer came in."
+          "chronicle": "Covered for Thrym's bride till the hammer came. The bride was Thor."
         },
         "fail": {
           "outcome": "You say the bride is shy. Thrym frowns at you, then at her, and has you thrown out into the snow before the hammer is ever brought in. Behind the door the feast goes on.",
           "deeds": [
             "met.thrym"
           ],
-          "chronicle": "Said the wrong thing at a frost giant's wedding and was thrown out into the snow. I have a feeling the bride was nobody's bride."
+          "chronicle": "Spoke amiss at Thrym's wedding. Thrown out. Doubt that was a bride."
         },
         "road": {
           "id": "thrym_wedding.answer",
@@ -4078,7 +4078,7 @@
         "deeds": [
           "met.thrym"
         ],
-        "chronicle": "Ate at a frost giant's wedding and slipped out early. Some time later the whole hall shook. I suspect the bride.",
+        "chronicle": "Left Thrym's wedding early. The hall shook after. Suspect the bride.",
         "road": {
           "id": "thrym_wedding.slip",
           "hint": "When a giant calls for his hammer, the wise guest is elsewhere."
@@ -4139,7 +4139,7 @@
               ]
             }
           ],
-          "chronicle": "Told Sir Oswin to go back up and face the families of Thale, and why. He said Ranulf would answer for his share too. He walked like a man who had been waiting to be told."
+          "chronicle": "Showed Sir Oswin why to face Thale. Bishop Ranulf will answer too."
         },
         "fail": {
           "outcome": "\"Go back? To face them?\" Yes, you say, but when he asks what good it does Thale now, you have no answer for him. He goes anyway, slowly, the cracked holy symbol in his fist. \"Ranulf too,\" he says at the stair, mostly to himself. \"All of it.\" He walks like a man going to his own trial, which he is.",
@@ -4155,7 +4155,7 @@
               ]
             }
           ],
-          "chronicle": "Told Sir Oswin to go back up and face the families of Thale. I could not tell him why it mattered. He went anyway, like a man who had been waiting to be told."
+          "chronicle": "Sent Sir Oswin to face Thale, though I could not say why. He went."
         },
         "road": {
           "id": "fallen_paladin.go_back",
@@ -4179,7 +4179,7 @@
             ]
           }
         ],
-        "chronicle": "Told Sir Oswin to spend his guilt on the things below. He agreed far too quickly.",
+        "chronicle": "Told Sir Oswin to spend his guilt fighting below. He agreed.",
         "road": {
           "id": "fallen_paladin.fight_on",
           "hint": "Atonement by the sword is still atonement, if the sword points the right way."
@@ -4200,7 +4200,7 @@
           "deeds": [
             "told.superior_orders"
           ],
-          "chronicle": "Told Sir Oswin that a bishop's order is no defence for burning a village. He said he knew, and had wanted someone else to say it.",
+          "chronicle": "Told Sir Oswin a bishop's order does not excuse Thale. He knew.",
           "then": "options"
         },
         "fail": {
@@ -4236,7 +4236,7 @@
           "wrong.robbed_oswin"
         ],
         "person_status": "wronged",
-        "chronicle": "Took a broken paladin's armour and his purse. He did not resist. The armour was heavier than it looked.",
+        "chronicle": "Robbed broken Sir Oswin of his armour and purse. He let me.",
         "road": {
           "id": "fallen_paladin.rob",
           "hint": "Blessed steel worn by a thief is just steel."
@@ -4286,7 +4286,7 @@
           "deeds": [
             "forgo.azarael_bargain"
           ],
-          "chronicle": "Named a demon's chains back into place one sigil at a time. He offered me strength the whole way through. I said no every time."
+          "chronicle": "Refused the demon's offer of strength and renewed his chains."
         },
         "fail": {
           "outcome": "You miss a name. The chains know it before you do. Azarael rises out of them, smiling with far too many teeth.",
@@ -4298,7 +4298,7 @@
           "deeds": [
             "forgo.azarael_bargain"
           ],
-          "chronicle": "Refused a demon's bargain and botched his chains. He got up. We discussed it at length, mostly with weapons."
+          "chronicle": "Refused the demon but botched his chains. He got loose and we fought."
         },
         "road": {
           "id": "azarael_demon.reinforce",
@@ -4311,7 +4311,7 @@
         "deeds": [
           "met.azarael"
         ],
-        "chronicle": "Walked away from a chained demon without a word. He said I would be back. I would rather not be.",
+        "chronicle": "Left the chained demon unanswered. He says I will be back.",
         "road": {
           "id": "azarael_demon.walk_away",
           "hint": "Saying nothing to a devil is not the same as saying no."
@@ -4348,7 +4348,7 @@
         "deeds": [
           "wrong.freed_azarael"
         ],
-        "chronicle": "Let a demon out in exchange for strength. I have the strength. I also have a brand on my wrist that stays warm.",
+        "chronicle": "Loosed the demon for strength. A brand on my wrist stays warm.",
         "road": {
           "id": "azarael_demon.bargain",
           "hint": "A bargain with the chained is a chain you wear instead."
@@ -4397,7 +4397,7 @@
         "deeds": [
           "wrong.said_the_words"
         ],
-        "chronicle": "Said the words at the Locust checkpoint. It was only a sentence. The cobbler in the ash heard me say it.",
+        "chronicle": "Said the Locust's words at the checkpoint. The cobbler heard.",
         "road": {
           "id": "live_not_by_lies.say",
           "hint": "A lie everyone repeats holds up the wall everyone hates."
@@ -4418,7 +4418,7 @@
           "met.mirela",
           "told.refused_the_words"
         ],
-        "chronicle": "Would not say the Locust's words at their checkpoint. It turns out a sentence is worth a fight. I had not known that about myself.",
+        "chronicle": "Refused the Locust's words at the checkpoint. Had to fight.",
         "road": {
           "id": "live_not_by_lies.refuse",
           "hint": "The cheapest sentence in the world can be the dearest to refuse."
@@ -4442,7 +4442,7 @@
           "told.refused_the_words"
         ],
         "person_status": "saved",
-        "chronicle": "Refused the Locust's words and fought beside a cobbler who had refused them first. He gave me his boots. He said mine were a disgrace.",
+        "chronicle": "Refused the Locust's words, fought beside Yosip the cobbler. Have his boots.",
         "road": {
           "id": "live_not_by_lies.refuse_together",
           "hint": "One person refusing is a beating. Two is the start of something."
@@ -4457,7 +4457,7 @@
           "told.said_then_freed"
         ],
         "person_status": "saved",
-        "chronicle": "Said the Locust's words to get a cobbler out from under their boots. He lived. He was not grateful about how.",
+        "chronicle": "Said the Locust's words to free Yosip. He lives, but holds it against me.",
         "road": {
           "id": "live_not_by_lies.say_then_free",
           "hint": "A clever lie can save a man and still cost you something you will miss."
@@ -4508,7 +4508,7 @@
             ]
           }
         ],
-        "chronicle": "Gave a dying prophet one more hour to carve his last warning. I did not stay to read it. It was for his daughter.",
+        "chronicle": "Gave a dying prophet an hour to carve a warning for his daughter.",
         "road": {
           "id": "dying_prophet.heal",
           "hint": "Some warnings are carved for strangers who have not been born yet."
@@ -4534,7 +4534,7 @@
             ]
           }
         ],
-        "chronicle": "Asked a dying prophet to tell me his last warning rather than carve it. He did. His daughter will find the stone blank.",
+        "chronicle": "Heard the prophet's last warning. His daughter will find the stone blank.",
         "road": {
           "id": "dying_prophet.tell_me",
           "hint": "A warning told to one is a warning kept from all the rest."
@@ -4557,7 +4557,7 @@
             ]
           }
         ],
-        "chronicle": "Kept my potion and left a prophet to die beside a blank tablet. He told me to go quickly. I did.",
+        "chronicle": "Kept my potion. Left the prophet to die by a blank tablet.",
         "road": {
           "id": "dying_prophet.keep",
           "hint": "The last stone is always the hardest one to carve."
@@ -4587,7 +4587,7 @@
             ]
           }
         ],
-        "chronicle": "Took a dying prophet's amulet. Everything he saw is in it. None of it was meant for me.",
+        "chronicle": "Took a dying prophet's amulet. All that he saw is in it.",
         "road": {
           "id": "dying_prophet.rob",
           "hint": "A vision stolen is only a picture."
@@ -4626,7 +4626,7 @@
         "deeds": [
           "aid.dives"
         ],
-        "chronicle": "Poured a potion across the great gulf to the rich man. It boiled away before it crossed. Abraham said it would: nothing passes from here to there.",
+        "chronicle": "Poured a potion toward the rich man. Nothing can cross the gulf to him.",
         "road": {
           "id": "rich_man_gulf.pour",
           "hint": "Some gulfs are fixed. Pity cannot carry water over them."
@@ -4646,7 +4646,7 @@
         "deeds": [
           "wrong.fleeced_dives"
         ],
-        "chronicle": "Took a damned man's purse for a promise I could not keep. He knew it too, and gave it to me anyway. That is his punishment, I suppose, and now some of it is mine.",
+        "chronicle": "Took the rich man's purse to warn his brothers. A vow I cannot keep.",
         "road": {
           "id": "rich_man_gulf.take",
           "hint": "A promise made for gold that cannot be kept is only a theft."
@@ -4661,7 +4661,7 @@
           "forgo.dives_purse",
           "met.dives"
         ],
-        "chronicle": "The rich man at the gulf offered me his purse to warn his brothers. I could not promise it, so I did not take it. He kept hold of the purse. He always will.",
+        "chronicle": "Refused the rich man's purse. Could not promise to warn his brothers.",
         "road": {
           "id": "rich_man_gulf.refuse",
           "hint": "Do not sell a promise you will never be able to keep."
@@ -4687,14 +4687,14 @@
           "deeds": [
             "told.dives_answer"
           ],
-          "chronicle": "Answered the rich man at the gulf with Abraham's words. In return he told me who the locusts may not touch. He did not thank me, and I did not expect it."
+          "chronicle": "Answered as Abraham did. Locusts may not touch those with God's seal."
         },
         "fail": {
           "outcome": "You stumble over the words. He laughs, which is worse than weeping. \"You don't know either.\"",
           "deeds": [
             "met.dives"
           ],
-          "chronicle": "Tried to answer the rich man at the gulf and could not find the words. He laughed at me. I deserved it."
+          "chronicle": "Could not answer the rich man at the gulf. He laughed at me."
         },
         "road": {
           "id": "rich_man_gulf.answer",
@@ -4737,7 +4737,7 @@
           "flag.loosed_the_four",
           "lost.the_four"
         ],
-        "chronicle": "Struck the chains off four bound angels because they asked nicely. They did not thank me. They flew up toward the world, and I have been cold since.",
+        "chronicle": "Freed four bound angels as asked. They flew up to the world. Cold ever since.",
         "road": {
           "id": "euphrates_four.strike",
           "hint": "Count the links before you strike them."
@@ -4760,14 +4760,14 @@
           "deeds": [
             "noticed.the_four"
           ],
-          "chronicle": "Asked four bound angels what they were bound for. Revelation says: to slay a third of mankind, at an hour that is not mine to set. I left the chains alone."
+          "chronicle": "Left four angels bound. They are to slay a third of mankind at their hour."
         },
         "fail": {
           "outcome": "They tell you a long, sad story about a war they did not start, and you cannot find the hole in it. You leave unsure, which is better than the alternative.",
           "deeds": [
             "met.the_four"
           ],
-          "chronicle": "Four bound angels told me a sad story about a war they never started. I could not find the hole in it, and I left them bound anyway."
+          "chronicle": "Could not fault four bound angels' sad tale. Left them bound anyway."
         },
         "road": {
           "id": "euphrates_four.ask",
@@ -4789,7 +4789,7 @@
           "wrong.loosed_the_four",
           "lost.the_four"
         ],
-        "chronicle": "Loosed four bound angels for the strength they promised. They paid in full. Then they flew up toward the world, and I read the links again.",
+        "chronicle": "Loosed four bound angels for strength. They paid, and flew up to the world.",
         "road": {
           "id": "euphrates_four.bargain",
           "hint": "Strength bought from the bound is paid for by someone else."
@@ -4801,7 +4801,7 @@
         "deeds": [
           "met.the_four"
         ],
-        "chronicle": "Left four bound angels standing in a black river. They said they would wait. I believe them.",
+        "chronicle": "Left four bound angels in the black river. They say they will wait.",
         "road": {
           "id": "euphrates_four.leave",
           "hint": "What is bound until an hour is set can wait for that hour."

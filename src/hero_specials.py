@@ -411,72 +411,41 @@ HERO_PASSIVES: dict[str, list[str]] = {
 
 HERO_JOURNAL: dict[str, str] = {
     "aristotle of stagira":
-        "I am Aristotle, student of Plato and tutor of kings. The world is a "
-        "catalogue waiting to be sorted; the dungeon is no different. With my "
-        "amethyst ring and the Lantern of Diogenes, I will sort it all.",
+        "Aristotle, pupil of Plato. Have my amethyst ring and the Lantern of Diogenes.",
     "socrates of athens":
-        "Socrates of Athens — corrupter of youth, asker of questions. They poisoned "
-        "me for impiety, but the dungeon does not know my name. I will question "
-        "every guard until each one confuses himself to death.",
+        "Socrates of Athens, poisoned for impiety. Question each guard until he is confused.",
     "plato of athens":
-        "Plato of Athens, philosopher-king-in-waiting. The forms are real; this "
-        "dungeon is merely their shadow. I need no Shard to see the truth of "
-        "an item — I see its idea.",
+        "Plato of Athens. Need no Shard to know an item. I see its idea.",
     "friedrich nietzsche":
-        "I am Friedrich Nietzsche. God is dead, and the abyss before me is just "
-        "a hole in the floor. When my blood runs low, my will runs higher.",
+        "Friedrich Nietzsche. When my blood runs low, my will runs higher.",
     "pythagoras of samos":
-        "Pythagoras of Samos: number is the measure of all things. The world is "
-        "tuned, and I can ring it. With the Quill of Aesop in my pocket, I'll "
-        "find harmony even in this discord.",
+        "Pythagoras of Samos. All is number. Have the Quill of Aesop.",
     "prometheus the firebearer":
-        "Prometheus, who stole the fire of the gods. The dungeon thinks itself "
-        "dark; it has not yet met me. The torch in my hand is a promise, and the "
-        "burning my own liver feels is the cost of every miracle.",
+        "Prometheus, thief of fire. Carry the torch. Each miracle costs my liver.",
     "diogenes of sinope":
-        "Diogenes the Cynic. I sleep in barrels, I bark at fools, and I need "
-        "nothing. A cursed ring is still a ring; let the dungeon waste its "
-        "curses on someone who cares.",
+        "Diogenes the Cynic. Need nothing. A cursed ring is still a ring.",
     "achilles son of peleus":
-        "Achilles, son of Peleus, dipped in the river by my mother. My hide "
-        "turns steel aside — except, perhaps, at the heel. My spear leads.",
+        "Achilles, son of Peleus. My hide turns steel, save perhaps at the heel. Lead with spear.",
     "leonidas of sparta":
-        "Leonidas of Sparta. I lack the other two hundred and ninety-nine; this hallway will have to "
-        "narrow itself. Shield up, spear forward, stand.",
+        "Leonidas of Sparta, alone. Keep to narrow halls, shield up, spear forward.",
     "alexander the great":
-        "I am Alexander, son of Philip, student of Aristotle. I have conquered "
-        "from Macedon to the Indus. This dungeon is merely a Persia I have not "
-        "yet seen — and its monsters have not yet learned to flee.",
+        "Alexander, conqueror to the Indus. This dungeon is one more Persia to take.",
     "theseus of athens":
-        "Theseus of Athens, slayer of the Minotaur. I have done a labyrinth "
-        "before. Ariadne is not here, but my Lyre is, and I remember the way "
-        "a maze wants to be walked.",
+        "Theseus of Athens. Have my Lyre, and know how a maze is walked.",
     "hermes trismegistus":
-        "Hermes Trismegistus — thrice-great, messenger, thief. I do not walk "
-        "through a dungeon; I step around it. My sandals know shortcuts the "
-        "stone has forgotten.",
+        "Hermes Trismegistus. My sandals know the stone's forgotten shortcuts.",
     "odysseus of ithaca":
-        "I am Odysseus, sacker of cities. The bow my Penelope wove cloth for "
-        "is in my hand. The trick is never the strongest sword — it is the "
-        "right word at the right moment, and a horse with a hollow belly.",
+        "Odysseus of Ithaca. Have my bow. Trust guile above the strongest sword.",
     "merlin ambrosius":
-        "Merlin Ambrosius — half-incubus, fully magician. I trained Arthur "
-        "before he was a king. The stars listen when I call them, and my staff "
-        "holds a chip of the stones I once moved. The dungeon should worry.",
+        "Merlin, Arthur's teacher. The stars heed me. My staff holds a chip of the stones I moved.",
     "geralt of rivia":
-        "Geralt of Rivia, witcher of the Wolf School. Mutated, augmented, "
-        "preternaturally calm. Toss a coin to me; I'll do the rest.",
+        "Geralt of Rivia, witcher of the Wolf School. Toss a coin to me.",
     "ciri riannon":
-        "Cirilla Fiona Elen Riannon — Princess of Cintra, last of the Elder "
-        "Blood. When the world closes around me I step sideways and arrive "
-        "elsewhere, alive.",
+        "Cirilla of Cintra, of the Elder Blood. When cornered, step sideways out.",
     "ash williams":
-        "Ash. S-Mart, housewares. Hail to the king, baby. Necronomicon's a "
-        "real page-turner once you stop reading the words wrong.",
+        "Ash, S-Mart housewares. Read the Necronomicon right. Hail to the king, baby.",
     "ash ketchum":
-        "Ash Ketchum from Pallet Town. Going to be the very best, like no one "
-        "ever was. The Trainer's Cap helps the pets mend faster, and I never "
-        "run out of friends.",
+        "Ash Ketchum of Pallet Town, to be the very best. Trainer's Cap helps pets mend.",
     "corwin":
         "Corwin the Ranger. The shortbow was a gift from Dad on my eleventh "
         "birthday. Charmander has been with me since the beginning. "  
@@ -497,38 +466,24 @@ HERO_JOURNAL: dict[str, str] = {
     "dad":
         "Dad has arrived. Everything will be fine.",
     "titivillus":
-        "[QA] Titivillus the Scribe of Errors. Press Shift+I to toggle immortality, "
-        "Shift+W to warp to any floor. Document well.",
+        "[QA] Titivillus the Scribe. Shift+I toggles immortality, Shift+W warps to any floor.",
     # New builds
     "ada augusta byron lovelace":
-        "Ada Lovelace, Countess of Lovelace. The first programmer the world "
-        "would name. Every monster's behaviour is a program; I can read it, "
-        "and I can pause it.",
+        "Ada Lovelace. Every monster runs a program. I can read it and pause it.",
     "leonardo di ser piero da vinci":
-        "Leonardo da Vinci, of the village of Vinci. Painter, anatomist, engineer. "
-        "My codex is full of helpers I have not yet built. The dungeon will see "
-        "a few of them.",
+        "Leonardo da Vinci. My codex holds helpers still to be built.",
     "boudicca queen of the iceni":
-        "Boudicca, Queen of the Iceni, scourged and crowned by Rome. When the "
-        "blade falls on me I rise sharper. The dungeon has hurt the wrong woman.",
+        "Boudicca of the Iceni, wronged by Rome. When the blade falls I rise sharper.",
     "saint joan of arc maid of orleans":
-        "Joan, of the village of Domrémy. The Voices told me to save France; "
-        "I do not see why the dungeon should be exempt. My banner is white, and "
-        "my faith is steel.",
+        "Joan of Domrémy. The Voices sent me. Carry the white banner in faith.",
     "sir arthur conan doyle's sherlock holmes":
-        "Sherlock Holmes, of 221B Baker Street. The dungeon is a problem in "
-        "want of attention. Every trap a fingerprint, every monster a chemical "
-        "trace. Watson, the game is afoot.",
+        "Sherlock Holmes, of 221B Baker Street. Every trap and monster leaves traces.",
     "miyamoto musashi the sword saint":
-        "Miyamoto Musashi, author of the Book of Five Rings. Two swords are "
-        "better than one. Better still: see the duel before it begins.",
+        "Miyamoto Musashi. Carry two swords. See the duel before it begins.",
     "saint hildegard von bingen":
-        "Hildegard of Bingen, abbess and visionary. Viriditas — the greening "
-        "power of God — flows through everything that lives. I bring it down "
-        "even here.",
+        "Hildegard of Bingen. Bring viriditas, God's greening power, down here.",
     "nikola tesla":
-        "Nikola Tesla. I tuned the resonance of the earth; I split light at "
-        "Colorado Springs. Whatever touches me, I touch back — with current.",
+        "Nikola Tesla. Whatever touches me is touched back with current.",
 }
 
 

@@ -455,11 +455,11 @@ def test_a_draw_won_by_pets_alone_says_so_and_the_sword_is_his_only_once_taken()
         g._black_knight_tick(end=True)
     assert k.defeated
     log = _chron(g)
-    assert 'Shep the Legend took the Black Knight apart one limb at a time' in log
+    assert 'Shep the Legend took the Black Knight apart limb by limb' in log
     assert 'I have his sword' not in log and "Black Knight's sword" not in log
     sword = next(i for i in g.ground_items if getattr(i, 'id', '') == bk.data()['sword_id'])
     g._black_knight_sword_taken(sword)
-    assert "I have the Black Knight's sword" in _chron(g)
+    assert "Took the Black Knight's sword." in _chron(g)
 
 
 def test_a_draw_the_hero_fought_is_his_own_line():
@@ -469,8 +469,8 @@ def test_a_draw_the_hero_fought_is_his_own_line():
     for _ in range(5):
         tbk._hit(g, k)
     log = _chron(g)
-    assert 'Fought the Black Knight to what he insists was a draw.' in log
-    assert 'apart one limb at a time' not in log
+    assert 'Beat the Black Knight. He insists it was a draw.' in log
+    assert 'apart limb by limb' not in log
     assert 'I have his sword' not in log
 
 

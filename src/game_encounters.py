@@ -111,14 +111,11 @@ class EncountersMixin:
                 dungeon._disturbed_rooms = set()
             dungeon._disturbed_rooms.add(tuple(room.center))
             if rtype == 'zoo':
-                self._chron('notice', "Something asleep on the gold opened its eyes while I was "
-                            "helping myself. I should have taken less.", once='stirred:zoo')
+                self._chron('notice', "Helped myself to gold and woke what slept on it. Take less.", once='stirred:zoo')
             elif rtype == 'graveyard':
-                self._chron('notice', "Walked too loudly between the graves. Something in them "
-                            "stopped sleeping.", once='stirred:graveyard')
+                self._chron('notice', "Walked too loudly among the graves and woke what lay there.", once='stirred:graveyard')
             else:
-                self._chron('notice', "One of the sleeping soldiers woke while I crept past "
-                            "the bunks.", once='stirred:barracks')
+                self._chron('notice', "Woke a sleeping soldier while creeping past the bunks.", once='stirred:barracks')
         elif kind == 'take' and rtype == 'zoo':
             self._burglar_check(room)
 
@@ -238,7 +235,7 @@ class EncountersMixin:
         )
         self.add_message("MOO MOO MOO MOO MOO!", 'danger')
         self._seeker_event('cow_level')
-        self._chron('milestone', "I poked a cow one time too many and the floor opened. Now I am in some kind of cow dimension. None of my books covered this.",
+        self._chron('milestone', "Poked a cow once too often. Fell into some kind of cow dimension.",
                     once='cow_level')
         self._cow_return_level = self.dungeon_level
         # Remove the cow from the current level
@@ -474,7 +471,7 @@ class EncountersMixin:
         if line:
             self.add_message(line, 'info')
         try:
-            self._chron('discovery', f"Came down into {dom['name']}.")
+            self._chron('discovery', f"Down into {dom['name']}.")
         except Exception:
             pass
 
@@ -797,14 +794,14 @@ class EncountersMixin:
             self.add_message(
                 "She will heal you, cleanse afflictions, and sense hidden traps.",
                 'info')
-            self._chron('notice', "She stayed. The unicorn bowed her head and something passed between us. I can feel her at the edge of my thoughts now.")
+            self._chron('notice', "She stayed. I can feel the unicorn in my thoughts now.")
             return
 
         # If chain < 5, unicorn departs after granting boons
         unicorn.alive = False
         unicorn._unicorn_state = 'fled'
         self.add_message("The unicorn dips her head in farewell and vanishes in a shimmer of light.", 'info')
-        self._chron('notice', "The unicorn touched her horn to my hand and warmth flooded through me. Then she was gone like morning fog. I feel different.")
+        self._chron('notice', "The unicorn touched my hand with her horn and left. I am changed.")
 
     # ------------------------------------------------------------------
     # NPC encounter open / resolve / close
@@ -2433,7 +2430,7 @@ class EncountersMixin:
             except Exception:
                 from game_log import log_error
                 log_error('game_encounters._resolve_judgment: recovered from an error')
-            self._chron('soul', "Stood before the altar of judgment. The scales weighed my soul. I was found worthy. A sword of white fire and the scales themselves were given to me. I've never felt so terrified.")
+            self._chron('soul', "Judged worthy. Given the sword of white fire and the Scales.")
 
         elif outcome == 'scales_granted':
             from items import load_items, copy_at
@@ -2450,20 +2447,20 @@ class EncountersMixin:
             except Exception:
                 from game_log import log_error
                 log_error('game_encounters._resolve_judgment: recovered from an error')
-            self._chron('soul', "The altar weighed my deeds. Not perfect, but enough. The Scales of Michael settled into my hands. They hum with a quiet judgment.")
+            self._chron('soul', "Judged imperfect, but enough. Given the Scales of Michael.")
 
         elif outcome == 'abaddon_empowered':
             # Abaddon gets 50% more HP and extra attack
             self.add_message("A dark power surges into the depths below...", 'danger')
             # Store flag for when L100 is generated
             self._abaddon_empowered = True
-            self._chron('soul', "The altar judged me. I was found wanting. Something below grew stronger. I can feel it.")
+            self._chron('soul', "Judged and found wanting. Something below has grown stronger.")
 
         elif outcome == 'locusts_strengthened':
             # Larger locust swarms
             self.add_message("The buzzing of locusts grows louder in the deep...", 'danger')
             self._locusts_strengthened = True
-            self._chron('soul', "The judgment went poorly. The buzzing from below is louder now. I made things worse.")
+            self._chron('soul', "Judged poorly. The buzzing from below is louder for it.")
 
         # Whatever the verdict, the Judgment names how the Destroyer is
         # wounded and opens his page (winning-build plan 3.1).

@@ -3889,8 +3889,7 @@ class MagicMixin(MagicWardsMixin):
             # truly old thing is a story beat (section 7.7, once).
             if getattr(item, 'is_unique', False):
                 self._chron('milestone',
-                            f"Named my first truly old thing today: the {_the_less(item.name)}. "
-                            "It named me back, a bit.", once='first_unique_identified')
+                            f"Named my first truly old thing, the {_the_less(item.name)}.", once='first_unique_identified')
 
     def _on_full_identify(self, item) -> None:
         """Hook called once per item when it crosses into full-ID state.
@@ -4157,7 +4156,7 @@ class MagicMixin(MagicWardsMixin):
             import chronicle as _chr
             if _chr.once_count(self, 'spell:') < 3:
                 self._chron('milestone',
-                            f"Learned {book.spell_name}. The words burned themselves in on the way down.",
+                            f"Learned the words of {book.spell_name} by heart.",
                             once=f'spell:{spell_id}')
             self._advance_turn()
 
@@ -4327,7 +4326,7 @@ class MagicMixin(MagicWardsMixin):
                 "The book's revelation finds nothing left to reveal.",
                 'info')
         self._chron(
-            'discovery', "I read the Book of Thoth and the world named itself back to me.")
+            'discovery', "Read the Book of Thoth, and the world named itself back to me.")
 
     def _book_of_thoth_curse(self):
         """Failure payload: 3d6 psychic damage, three kinds known from things
@@ -4369,7 +4368,7 @@ class MagicMixin(MagicWardsMixin):
             "You are Stunned (20 turns).",
             'danger')
         self._chron(
-            'loss', "I read the Book of Thoth wrong. The dead were displeased.")
+            'loss', "Misread the Book of Thoth. The dead were displeased.")
 
     def _necronomicon_quiz(self, book: 'Spellbook'):
         """The Necronomicon: recite The Words (Klaatu Barada Nikto).

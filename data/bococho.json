@@ -66,7 +66,7 @@
     ],
     "_stats_note": "A race-runner, not a warrior, but a big man of the deep Underway: about a fighting mortal of his depth (the veteran knight, the cult hierophant). He fights only when struck (his screen's third choice).",
     "lore": "Gilt Varro runs races in the deep Underway, where the great running birds live wild, and nobody there has ever seen him lose a bet he set up himself. He buys birds cheap, keeps them on short ropes, feeds them little and works them hard, and the gold he wins goes into his coat. He is loud, greedy and mean, and he has never once fought anything that could fight back.",
-    "kill_chronicle": "Killed Gilt Varro, the race-runner who starved his birds. The young one tore her rope and bolted when the fighting started. When he fell, his birds ran too."
+    "kill_chronicle": "Killed Gilt Varro, who starved his birds. The young Bococho and the rest fled."
   },
   "title_young": "A YOUNG BOCOCHO",
   "title_varro": "GILT VARRO, RACE-RUNNER",
@@ -110,8 +110,8 @@
   "name_prompt": "Will you give your Bococho a name?",
   "named_message": "{name} the Bococho runs for you now, and for nobody else.",
   "unnamed_message": "Your Bococho runs for you now, and for nobody else.",
-  "named_chronicle": "Beat Gilt Varro's best bird on the Underway Run, and the young Bococho he meant for the knacker chose me. I named her {name}. She is the fastest thing in the Underway, and she runs for nobody but me.",
-  "unnamed_chronicle": "Beat Gilt Varro's best bird on the Underway Run, and the young Bococho he meant for the knacker chose me. She is the fastest thing in the Underway, and she runs for nobody but me.",
+  "named_chronicle": "Beat Varro's bird. The young Bococho he'd have killed chose me. Named her {name}.",
+  "unnamed_chronicle": "Beat Gilt Varro's bird. The young Bococho he'd have killed chose me.",
   "varro_story": [
     "\"Gilt Varro, race-runner, at your service,\" says the man in the gold coat, though he does not bow. His hat has a plume as long as your arm, and betting slips stick out of his belt like feathers. \"Every bird in this camp is mine, and every one of them runs when I say. Except her.\" He jabs the crop at the young Bococho.",
     "\"Unless,\" he says, and his grin gets wider, \"you think you can make her run. Put up a fee, and race her against my best bird on the Underway Run. Beat Brassbeak, and the scrawny thing is yours. Lose, and I keep the fee.\" He laughs, as if nobody has ever beaten Brassbeak."
@@ -133,7 +133,7 @@
   "leave_varro": "You leave Varro to his slips. He is already chalking new odds on the board.",
   "strike": "You raise your weapon. Varro's grin falls off his face. \"You'd strike a man over a BIRD?\" he shrieks, and he comes at you with the crop.",
   "strike_bolts": "The young Bococho screams and rears against her rope. The frayed rope snaps, and she is gone into the dark of the tunnels in three long strides. She has seen enough men with sticks. She will not trust a hero who fights in front of her.",
-  "strike_chronicle": "I struck Gilt Varro in his own camp, and the young Bococho tore her rope and bolted into the dark. She will not trust a hero who fights in front of her. There will be no race now.",
+  "strike_chronicle": "Struck Gilt Varro in his camp. The young Bococho bolted. No race now.",
   "varro_dies_birds": "With Varro gone, his birds pull at their ropes until the old knots give. One by one they slip free and run off into the dark, light-footed, and not one of them looks back.",
   "won_back": [
     "Varro throws his hat in the dirt and stamps on it. \"Cheat! Witch! That bird was MINE!\" Nobody is listening. He storms off down the tunnel, still shouting, and leaves his birds behind.",
@@ -228,8 +228,8 @@
     "lost": "Varro whoops and throws his hat in the air. The young Bococho comes back to you with her head down, but she comes back to you.",
     "forfeit": "You step away from the rail. Varro grins and calls the race for Brassbeak, and pockets your fee.",
     "forfeit_ask": "Leave the race? Varro keeps your fee, and Brassbeak wins.",
-    "won_chronicle": "Raced Gilt Varro's best bird, Brassbeak, on the Underway Run, and the young Bococho beat him. Varro's face was worth the fee.",
-    "lost_chronicle": "Raced Gilt Varro's bird on the Underway Run and lost. Varro took my fee and laughed. Next time.",
+    "won_chronicle": "Won on the Underway Run. The young Bococho beat Varro's Brassbeak.",
+    "lost_chronicle": "Lost on the Underway Run, and my fee to Varro. Must race him again.",
     "back": "Enter: back to the camp",
     "lengths_one": "a length",
     "lengths_many": "{n} lengths"

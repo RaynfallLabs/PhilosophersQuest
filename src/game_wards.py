@@ -555,8 +555,7 @@ class MagicWardsMixin:
                          f"cannot cross to lay hands on you ({quantity(got, 'turn')}). "
                          f"Strike one, and it is open to that one.", 'success')
         if chain >= 5:
-            self._chron('soul', "I prayed to be delivered from evil, and the dead stood off "
-                                "from me as if from fire.", once='deliver_us')
+            self._chron('soul', "Prayed to be delivered from evil. The dead stood off as if from fire.", once='deliver_us')
 
     # ------------------------------------------------------------------
     # QA (Titivillus build, Shift+B)

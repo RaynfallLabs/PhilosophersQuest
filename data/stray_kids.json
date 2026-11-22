@@ -32,7 +32,7 @@
       "A spotlight swallows you, and the dungeon falls away."
     ],
     "spent_bump": "The gold has gone dull and the glitter has fallen off. The encore is over.",
-    "touch_chronicle": "I touched a gold statue of a K-pop band, twice, on purpose. A spotlight took me somewhere with a stage. I have nobody to blame but myself.",
+    "touch_chronicle": "Touched a gold K-pop idol twice. A spotlight took me to a stage.",
     "call": "Something gold glitters across the room, and a faint bass beat thumps from it. It seems to be calling you over."
   },
   "stage": {
@@ -49,8 +49,8 @@
     "door_line": "The stage door is the way out (> on it).",
     "leave_cleared": "You slip out through the stage door. Behind you, the lights go down. The show is over.",
     "leave_unfinished": "You slip out through the stage door. Behind you, the music cuts off mid-chorus, and the door will not open again.",
-    "leave_chronicle": "I walked out on a zombie concert halfway through. I regret nothing.",
-    "cleared_chronicle": "I sat through an entire zombie Stray Kids concert, danced against all eight of them, and won. I am going to hear that bass line in my sleep.",
+    "leave_chronicle": "Walked out of the zombie concert halfway through.",
+    "cleared_chronicle": "Outdanced all eight zombie Stray Kids and won the dance-off.",
     "tell": "This is a dance-off, not a fight: no blade or spell will touch them. Each round, one of them dances a phrase; copy it on the arrow keys, in time with the beat.",
     "pose": "The band snaps into a pose, Bang Chan at its point, and points at you as one.",
     "challenge_again": "The band strikes its pose again and beckons you up. \"Rematch? Rematch! Five, six, seven, EIGHT!\"",
@@ -291,7 +291,7 @@
     ],
     "bow": "The Stray Kids take a bow, wave, and vanish in a burst of confetti.",
     "_bow_doc": "The show ends one way: its turns run out, or the hero leaves the floor (the stars came for him, and do not stay behind; game_stray_kids._stray_kids_leaving). Either way the bow is said, and a revisit finds no show.",
-    "chronicle": "I read the names on a signed photo and the whole of Stray Kids came out of it and put on a show. Every monster in the room stopped to watch. So did I, a little.",
+    "chronicle": "Read the names on a signed photo. Stray Kids played, and monsters watched.",
     "symbol": "@",
     "color": [
       255,
@@ -452,7 +452,7 @@
     "laugh": "Three strikes! The band doubles over laughing, and bits of them fall off. They shuffle back to their places, still giggling, and you stagger to the edge of the stage.",
     "lost_log": "The band laughs you off the stage. Walk into any of them for a rematch.",
     "won_log": "The band is no more. You won the dance-off!",
-    "lost_chronicle": "Lost a dance-off to a zombie boy band. They laughed until bits of them fell off. I will be back.",
+    "lost_chronicle": "Lost a dance-off to the zombie boy band. Must go back.",
     "screen": {
       "title_practice": "PRACTISE WITH THE BAND",
       "title_dance": "THE DANCE-OFF: ROUND {round} OF {rounds}",

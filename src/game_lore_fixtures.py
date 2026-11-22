@@ -97,7 +97,7 @@ class LoreFixturesMixin:
         self.add_message(d.get('pass', 'It was worth a closer look.'), 'success')
         getattr(self, f"_lore_reward_{d.get('reward', 'none')}", lambda p, f: None)(pos, fid)
         try:
-            self._chron('discovery', f"Took a closer look at {self._fixture_name(fid)}, and it paid.",
+            self._chron('discovery', f"Looked closer at {self._fixture_name(fid)}, and it paid.",
                         once=f'lore_fixture:{fid}')
         except Exception:
             pass

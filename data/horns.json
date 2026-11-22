@@ -27,8 +27,8 @@
         "fail": "The note cracks and dies in the dark, and nobody comes. The horn will not sound for you again.",
         "arrive": "Men in Lincoln green come out of the dark as if out of the trees of Sherwood: {who}.",
         "leave": "{name} raises a hand to you and goes back into the greenwood.",
-        "chronicle": "Blew Robin Hood's horn, and his men came out of the dark to fight beside me: {who}.",
-        "chronicle_fail": "Blew Robin Hood's horn badly, and nobody came."
+        "chronicle": "Blew Robin Hood's horn. His men came: {who}.",
+        "chronicle_fail": "Blew Robin Hood's horn badly. Nobody came."
       }
     },
     "arthurs_bugle": {
@@ -48,8 +48,8 @@
         "fail": "Your breath catches in the old horn and the note is gone before it is out of it. Far off, something turns over in its sleep and is still.",
         "arrive": "The air rings like a struck bell, and the sleepers come out of it awake and armed: {who}.",
         "leave": "{name} bows his head to you and is gone, back to sleep under the hill.",
-        "chronicle": "Blew Arthur's bugle in my hour of need, and the sleepers under the hill came to me: {who}.",
-        "chronicle_fail": "Blew Arthur's bugle too weakly. The sleepers under the hill slept on."
+        "chronicle": "Blew Arthur's bugle in need. The sleepers came: {who}.",
+        "chronicle_fail": "Blew Arthur's bugle too weakly. The sleepers slept on."
       }
     },
     "gjallarhorn": {
@@ -69,8 +69,8 @@
         "fail": "The great horn only groans, and far above you nobody wakes. It will not sound for you again.",
         "arrive": "The note goes up through every floor above you and into Valhalla, and its doors open. Down out of the light ride {who}, Odin's chosen dead.",
         "leave": "{name} turns back toward the light. He will fight again tomorrow, and stand up whole at evening.",
-        "chronicle": "Blew Gjallarhorn, and the einherjar rode down out of Valhalla to fight beside me: {who}.",
-        "chronicle_fail": "Blew Gjallarhorn and it only groaned. Nobody in Valhalla heard it."
+        "chronicle": "Blew Gjallarhorn. The einherjar came from Valhalla: {who}.",
+        "chronicle_fail": "Blew Gjallarhorn, but it groaned. Nobody in Valhalla heard it."
       }
     },
     "olifant": {
@@ -92,8 +92,8 @@
         "on_road": "Hooves behind you, a great many of them, and coming hard.",
         "arrive": "Charlemagne's host comes up out of the dark at the gallop, too late for Roland and not too late for you: {who}.",
         "leave": "{name} turns his horse for France.",
-        "chronicle": "Blew the Olifant before I needed it, as Oliver would have, and Charlemagne's host rode back for me: {who}.",
-        "chronicle_fail": "Blew the Olifant, and the crack in it took the note. Nobody far off heard."
+        "chronicle": "Blew the Olifant in time. Charlemagne's host came: {who}.",
+        "chronicle_fail": "Blew the Olifant, but its crack took the note. Nobody far off heard."
       }
     }
   },

@@ -979,7 +979,7 @@ def test_the_couriers_dispatch_is_delivered_at_the_watch_post():
     _choose(g, post, pygame.K_1)
     assert not _has(g, 'sealed_dispatch')
     assert g.player_gold > gold and g.karma == karma + 1
-    assert "Delivered Edric's dispatch to Sergeant Holt" in _chron(g)
+    assert "Gave Edric's dispatch to Sergeant Holt" in _chron(g)
 
 
 def test_the_watch_post_only_stands_while_a_dispatch_is_owed():

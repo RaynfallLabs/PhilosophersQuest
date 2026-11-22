@@ -233,8 +233,7 @@ class QuirkSystem:
         self.game.add_message(f"TRAIT UNLOCKED: {name}", 'loot')
         self.game.add_message(f"  Reward: {effect}", 'success')
         if hasattr(self.game, '_chron'):
-            self.game._chron('milestone', journal or f"Something in me changed today. "
-                             f"I think the word for it is {name}.", once=f'quirk:{qid}')
+            self.game._chron('milestone', journal or f"Something in me changed today. The word for it is {name}.", once=f'quirk:{qid}')
         # Ceremonial unlock popup — pauses the game until dismissed so the
         # moment lands rather than scrolling past in combat.
         if hasattr(self.game, '_show_quirk_unlock_popup'):

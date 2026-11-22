@@ -314,19 +314,16 @@ class MenuMixin:
                 self.add_message(msg, 'success' if chain else 'danger')
             if chain >= 5:
                 self._chron(
-                    'discovery', "Drank the dragon's blood and understood every word the birds "
-                    "said. I wish I had not understood all of it.")
+                    'discovery', "Drank dragon's blood. Understood every word the birds said.")
             elif chain >= 2:
                 self._chron(
-                    'discovery', "Drank the dragon's blood. The birds spoke of a broken sword, "
-                    "a one-eyed god's stone, and a throw. I wrote it down.")
+                    'discovery', "Drank dragon's blood. Birds spoke of a broken sword, a one-eyed god's stone, a throw.")
             elif chain == 1:
                 self._chron(
-                    'discovery', "Drank the dragon's blood. It mended me. The birds said "
-                    "something I could not quite follow.")
+                    'discovery', "Drank dragon's blood and it mended me. Could not follow the birds.")
             else:
                 self._chron(
-                    'discovery', "Drank the dragon's blood and burned my mouth for nothing.")
+                    'discovery', "Drank dragon's blood and burned my mouth for nothing.")
             self.state = STATE_PLAYER
             self._advance_turn()
 
@@ -375,14 +372,12 @@ class MenuMixin:
                 self.add_message(
                     f"The water stays. Something in you deepens, for good. "
                     f"(+{amount} {stat})", 'success')
-                self._chron('discovery', "Drank from Mimir's well, and understood. "
-                                         "Odin paid an eye for that. I paid a fortune and a hard question.")
+                self._chron('discovery', "Drank from Mimir's well and understood. It cost a fortune.")
             else:
                 self.add_message(
                     "The water runs straight through you and is gone. "
                     "The draught is wasted.", 'danger')
-                self._chron('discovery', "Drank from Mimir's well and could not hold the water. "
-                                         "A fortune, gone in a mouthful.")
+                self._chron('discovery', "Paid a fortune at Mimir's well and could not hold the water.")
             self.state = STATE_PLAYER
             self._advance_turn()
 

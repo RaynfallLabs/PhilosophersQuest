@@ -98,10 +98,10 @@ encounter choice triggers it (the Emberpup, Gyges and the Penitent's
 Blade never do). Constancy and negative-pattern rules write their own
 `soul` lines (`karma._soul_line`, text in `data/karma_rules.json`).
 
-- Crossing to 8+: "I feel clean, as if everything I have done down
-  here has counted. The dungeon feels lighter."
-- Reaching -10: "Something inside me has gone cold. The
-  dungeon doesn't frighten me anymore. That frightens me."
+- Crossing to 8+: "I feel clean. What I have done down here
+  has counted."
+- Reaching -10: "My soul has gone cold. The dungeon
+  no longer frightens me."
 
 ### 1.3a Where the number is shown
 
@@ -806,7 +806,7 @@ The "big ask." One attempt per run. Gated by
   "not duplicating a running unique" invariant via `_in_play`.
   Spawned artifact is `buc = 'blessed'` and fully identified
   (`items.grant_identified`: id level 5, blessing known, type known).
-- Journal (`soul`): "Begged for intercession and was answered. Every wound closed, and God set a {name} at my feet."
+- Journal (`soul`): "Begged intercession and was healed. God gave me a {name}."
 
 ### 6.3 Failure
 
@@ -816,7 +816,7 @@ The "big ask." One attempt per run. Gated by
   accessory slots, amulet, belt) with a `buc` field is set to
   `'cursed'` and `buc_known = True`.
 - `blinded 100t` effect added.
-- Journal (`soul`): "Begged for intercession I had not earned. God answered anyway, just not kindly." 
+- Journal (`soul`): "Begged intercession unearned. My gear was cursed and I was long blind."
 
 The intent is "intercession is strictly higher-stakes than prayer":
 success is a run-defining windfall; failure is near-run-ending.

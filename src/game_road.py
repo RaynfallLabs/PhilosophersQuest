@@ -362,7 +362,7 @@ class RoadMixin:
                 who = ((enc or {}).get('person') or {}).get('name') or (enc or {}).get('name')
                 if who:
                     from naming import proper_name
-                    line = f"I never did find out what became of {proper_name(who)}."
+                    line = f"Lost track of {proper_name(who)}, and never did find out more."
             if line:
                 chronicle.chron(self, 'consequence', line, thread=tid)
         self._lapse_orphan_oaths()
@@ -428,7 +428,7 @@ class RoadMixin:
         line = o.get('lapse_chronicle')
         if not line and o.get('to'):
             from naming import proper_name
-            line = f"I let my promise to {proper_name(o['to'])} run out. Nobody came to collect it."
+            line = f"Let my promise to {proper_name(o['to'])} run out, unclaimed."
         if line:
             chronicle.chron(self, 'oath', line, deed=f"lapsed.{o['id']}",
                             thread=o.get('thread'))
@@ -495,7 +495,7 @@ class RoadMixin:
                 line = o.get('lapse_chronicle')
                 if not line and o.get('to'):
                     from naming import proper_name
-                    line = f"I let my promise to {proper_name(o['to'])} run out. Nobody came to collect it."
+                    line = f"Let my promise to {proper_name(o['to'])} run out, unclaimed."
                 if line:
                     chronicle.chron(self, 'oath', line, deed=f"lapsed.{o['id']}",
                                     thread=o.get('thread'))

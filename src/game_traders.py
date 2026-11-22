@@ -849,8 +849,7 @@ class TraderMixin:
         except (KeyError, IndexError, ValueError):
             pass
         self.add_message(f'{m.person}: "{line}" ({price:,} gold, paid.)', 'success')
-        self._chron('deed', f"Ordered a piece of smith's work from {m.person}, to be "
-                            f"collected at {m.pronouns()[2]} next stall, further down.")
+        self._chron('deed', f"Ordered smith's work from {m.person}. Collect at {m.pronouns()[2]} next stall below.")
 
     @staticmethod
     def _order_due(o: dict, level: int) -> bool:

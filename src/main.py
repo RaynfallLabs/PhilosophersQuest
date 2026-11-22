@@ -674,7 +674,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _chron(self, kind: str, text: str, **kw):
         """Write a line in the hero's journal (DEEDS_KARMA_DESIGN 7.2-7.3):
-        first person, past tense, no game terms, no numbers. ``kind`` sorts
+        a brief note the adventurer leaves for himself (docs/STORY_VOICE.md),
+        no game terms, no numbers. ``kind`` sorts
         it into the Journal's tabs; ``once=key`` writes it only the first
         time this run. ``tests/test_chronicle_voice.py`` lints every line."""
         import chronicle
@@ -707,34 +708,34 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             p.apply_stat_bonus('INT', 1)
             p.mp = min(p.mp + 1, p.max_mp)
             self.add_message("First Insight! Your study sharpens your mind. (+1 INT)", 'success')
-            self._chron('milestone', "Twenty-five things named so far. My head feels roomier.")
+            self._chron('milestone', "Twenty-five things named. My head is roomier for it.")
         if n >= 75 and 75 not in claimed:
             claimed.add(75)
             self.add_message(
                 "Pattern Recognition! You now grasp lesser items at a glance.", 'success'
             )
-            self._chron('milestone', "I have named so many ordinary things that the common stuff just tells me what it is now.")
+            self._chron('milestone', "Named so much that common things now tell me what they are.")
         if n >= 125 and 125 not in claimed:
             claimed.add(125)
             p.PER += 1
             self.add_message(
                 "Sharper Eye! The world's small details no longer escape you. (+1 PER)", 'success'
             )
-            self._chron('milestone', "Named enough of the world that I notice the small things now. Glints, scuffs, a hinge that should not be there.")
+            self._chron('milestone', "Named enough to notice small things: glints, scuffs, odd hinges.")
         if n >= 200 and 200 not in claimed:
             claimed.add(200)
             p.WIS += 1
             self.add_message(
                 "Sage's Eye! Your patient study deepens your wisdom. (+1 WIS)", 'success'
             )
-            self._chron('milestone', "Two hundred things named. I am starting to understand why the old philosophers were insufferable.")
+            self._chron('milestone', "Two hundred things named. I understand the old philosophers now.")
         if n >= 300 and 300 not in claimed:
             claimed.add(300)
             p.philosophers_mantle = True
             self.add_message(
                 "The Philosopher's Mantle settles upon you. Every aura is plain to your eye.", 'success'
             )
-            self._chron('milestone', "Put on the Philosopher's Mantle. Everything I pick up whispers a little about itself now.")
+            self._chron('milestone', "Wearing the Philosopher's Mantle. All I pick up hints at what it is.")
 
     # ------------------------------------------------------------------
     # Level setup
@@ -792,7 +793,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Journal: secret build
         if self.secret_build:
             bname = self.secret_build.get('_name', self.player_name)
-            self._chron('milestone', f"My name is {bname}. I know things others don't. This changes everything.")
+            self._chron('milestone', f"My name is {bname}. I know things others do not.")
 
         self.player.x, self.player.y = dungeon.rooms[0].center
         self.renderer                = Renderer(self.screen, layout.VIEWPORT_W, layout.VIEWPORT_H)
@@ -849,7 +850,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(f"Welcome, {self.player_name}!", 'success')
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
         # Journal: entering the dungeon
-        self._chron('milestone', "Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
+        self._chron('milestone', "Entered the dungeon. Must find the Stone below and get back out.")
         # Floor 1's war-band and atmosphere (its den's snoring, a vault's
         # coins) are said at the start, as every later floor's are on
         # arrival. Only _change_level said them, so floor 1's were first
@@ -889,8 +890,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _s and _sc.normalise_name(_who) in _s.profile.members('heroes')))
         self._chron(
             'notice',
-            f"{_who} came this far before me. What is left of {_who} is "
-            f"still here, and it is not glad to see me.")
+            f"{_who} came this far before me. What is left of {_who} will fight me.")
         # Announce once: this used to repeat (and re-chronicle) on every
         # return to the floor, even after the ghost was laid to rest.
         dungeon.bones_ghost_name = None
@@ -2097,16 +2097,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._notified_rooms = set()   # reset per-floor special room notifications
         # Journal: level milestones and maze entries
         _MILESTONE_FLAVOR = {
-            10: "The tunnels twisted into a maze here. Somebody built this to confuse, and was good at it.",
-            20: "The air got heavier on the way down. I could hear something large breathing.",
-            30: "Another maze. The walls felt like they were watching me, so I watched them back.",
-            40: "The statues here were too lifelike, and not one of them was smiling.",
-            50: "A third maze. I have stopped believing these are natural.",
-            60: "The stone was warm this deep. Something ancient lives down here.",
-            70: "Maze again. The walls were carved with warnings in dead languages, which is the worst kind.",
-            80: "Claw marks on the walls, higher than I could reach. Something down here has been straining at a leash.",
-            90: "One last maze. The floor trembled under me. I am close to the end, one way or another.",
-            100: "The deepest place in the world. Whatever waits here, I am ready. I have to be.",
+            10: "The tunnels turned to a maze here, built to confuse.",
+            20: "Heavier air. Heard something large breathing below.",
+            30: "Another maze. The walls seem to watch me.",
+            40: "Statues here are too lifelike, and none smiling.",
+            50: "A third maze. These cannot be natural.",
+            60: "Warm stone this deep. Something ancient lives here.",
+            70: "A maze again, carved with warnings in dead languages.",
+            80: "Claw marks above my reach. Something here strains at a leash.",
+            90: "One last maze, and the ground trembles. Near the end now.",
+            100: "The deepest place in the world. Must be ready for what waits.",
         }
         if new_level in _MILESTONE_FLAVOR:
             self._chron('milestone', _MILESTONE_FLAVOR[new_level], once=f'depth:{new_level}')
@@ -2587,7 +2587,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         f"The {getattr(_item, 'name', 'blade')} laughs and vanishes — it returns to Shiva.",
                         'warning')
                     self._chron(
-                        'loss', "Chandrahasa is gone. The Laughing Moon does not stay with the wicked.")
+                        'loss', "Chandrahasa is gone. The Laughing Moon will not stay with the wicked.")
                     break  # one disappearance per floor change is enough
 
         # Place deep-lore items on their designated levels (once per run)
@@ -2727,8 +2727,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         "ahead of you into the dark, as if it knew the way.", 'success')
                     self._chron(
                         'discovery',
-                        "Tied Ariadne's Thread at the door of the Labyrinth. "
-                        "It ran on ahead of me. I only had to follow.")
+                        "Tied Ariadne's Thread at the Labyrinth door. Follow where it runs.")
         # Omens (a named foe is somewhere on this floor): shown once.
         _omens = getattr(self.dungeon, 'omen_messages', None)
         if _omens:
@@ -4053,9 +4052,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             msg, style = _SPECIAL_ROOM_MSGS.get(rtype, ("You enter a special room.", 'info'))
                             self.add_message(msg, style)
                             _ROOM_CHRONICLE = {
-                                'treasury': "Found a strongroom. Whoever filled it never came back to count it.",
-                                'library': "Found an old library with the scrolls still whole. Somebody down here cared about reading, once.",
-                                'graveyard': "Walked into a graveyard under the earth. The dead were restless, and so was I.",
+                                'treasury': "Found a strongroom, never reclaimed by whoever filled it.",
+                                'library': "Found an old library with the scrolls still whole.",
+                                'graveyard': "Found a graveyard under the earth. Its dead are restless.",
                             }
                             if rtype in _ROOM_CHRONICLE and not getattr(self, f'_chronicle_room_{rtype}', False):
                                 setattr(self, f'_chronicle_room_{rtype}', True)
@@ -4214,7 +4213,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message(
             "Death has come for the Stone. He does not hurry, and he does not stop.", 'danger'
         )
-        self._chron('boss', "Something is following me. I felt it before I saw it. Death itself. I need to run.")
+        self._chron('boss', "Death himself is following me. Must run.")
 
     def _place_death_on_level(self, dungeon):
         """Death follows up the stair the player has just climbed, a few
@@ -4289,9 +4288,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 125: ("Death is faster than you now. The scythe is close enough to hear it cut the air.", 'danger'),
             }
             _SPEED_CHRONICLE = {
-                75: "Death is moving faster. The scrape of the scythe comes closer between each step.",
-                100: "Death keeps pace with me now. No more outrunning it. I have to be smarter.",
-                125: "It is faster than me now. I can hear it gaining with every step. Time to pray.",
+                75: "Death is moving faster. The scythe scrapes closer each step.",
+                100: "Death keeps pace now. Cannot outrun him. Must be cleverer.",
+                125: "Death is faster than I am, and gaining. Must pray.",
             }
             msg = _SPEED_MSGS.get(dm._speed_pct)
             if msg:
@@ -4321,7 +4320,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(
                 "You hold the Complete Tablet of Second Death.", 'loot'
             )
-            self._chron('discovery', "Used the Wrench. The Stone and the Tablet fused into one, and the Complete Tablet glows with purpose. I think I know what it's for.")
+            self._chron('discovery', "The Wrench joined Stone and Tablet into one. I think I know its use.")
             self._seeker_event('tablet_complete')
         else:
             self.add_message(
@@ -5003,7 +5002,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(
                 "You should have died -- but a distant power pulls you back. "
                 "You stagger to your feet, barely alive.", 'success')
-            self._chron('loss', "Death took me. Then it let me go. Something out there watches, and today it chose to spend a favor.")
+            self._chron('loss', "Died, and an unknown power sent me back. Its favour is spent.")
 
         # Rand's Heart: show dramatic message if death was just prevented
         if getattr(self.player, '_rands_heart_triggered', False):
@@ -5015,7 +5014,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 "Your wounds close, your mind clears, your strength returns!", 'success')
             self.add_message(
                 "The silver locket crumbles to dust, its promise fulfilled.", 'info')
-            self._chron('loss', "I died. I felt it — the cold, the nothing. Then warmth. Rand's Heart pulled me back. The locket is dust now. I don't get a second chance.")
+            self._chron('loss', "Died, and Rand's Heart pulled me back. The locket is dust. No second chance.")
 
         qs = getattr(self, 'quirk_system', None)
         if qs and self.player:
@@ -5876,8 +5875,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not getattr(self, '_chronicle_first_trap', False):
             self._chronicle_first_trap = True
             self._chron('milestone',
-                        f"Stepped on {self._a_or_an(_trap_noun(trap_type))} trap. The floor "
-                        "clicked first, which was all the warning I got. I watch the floor now.",
+                        f"Stepped on {self._a_or_an(_trap_noun(trap_type))} trap. It clicked first. Watch the floor.",
                         once='first_trap')
         if self.player.is_dead():
             self.add_message("You have died!", 'danger')
@@ -5968,7 +5966,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         f"A figure from the House of Atreus stalks you: {m.name}.",
                         'warning')
                     self._chron(
-                        'notice', f"Pelops's curse caught up with me. {m.name} hunts me now.")
+                        'notice', f"Pelops's curse has found me. {m.name} hunts me now.")
                     return
 
     def _do_warning(self):
@@ -6234,7 +6232,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if not getattr(self, '_chronicle_first_disarm', False):
                 self._chronicle_first_disarm = True
                 self._chron(
-                    'milestone', "Disarmed my first trap. My hands were shaking the whole time.",
+                    'milestone', "Disarmed my first trap.",
                     once='first_disarm')
             self._advance_turn()
             return
@@ -6269,8 +6267,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._chronicle_first_rewire = True
             self._chron(
                 'milestone',
-                f"Rewired {self._a_or_an(tname)} trap to fire on monsters instead. The dungeon's "
-                "own teeth, turned against it.", once='first_rewire')
+                f"Rewired {self._a_or_an(tname)} trap to fire on monsters instead.", once='first_rewire')
 
         # Chain 5 bonus: pull a random hint from the lore pool.
         if chain >= 5:
@@ -6603,8 +6600,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"A crack in the world's floor widens.", 'danger')
             self._chron(
                 'boss',
-                f"Picked up the {_seal_display}. It shattered before I could close my fist. "
-                f"Whatever those seven seals were holding shut is now one crack closer to open."
+                f"The {_seal_display} broke in my hand. The seven seals are a crack nearer open."
             )
             _snd.play('gold')
             self._advance_turn()
@@ -6685,26 +6681,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             }
             if getattr(item, 'id', '') in _CHRONICLE_ITEMS:
                 _CHRONICLE_FLAVOR = {
-                    'philosophers_stone': "Found the Philosopher's Stone. My hands are shaking. Time to get out of here.",
-                    'ariadnes_thread': "Picked up a strange golden thread. It feels warm, almost alive.",
-                    'bronze_bull': "Found a bronze idol shaped like a bull. Heavy. Old. Feels important.",
-                    'eye_of_graeae': "A milky white eye, still wet. I don't want to think about where it came from.",
-                    'broken_gram': "Half a legendary sword. Even broken, the edge could shave a thought.",
-                    'gleipnir': "Gleipnir. Thin as a ribbon but I can't break it. Nothing can.",
-                    'vidars_sandal': "A sandal made for a god. It's enormous. And somehow, it fits.",
-                    'scales_of_michael': "The Scales hover in my hands. I feel the weight of every choice I've made.",
-                    'sword_of_michael': "A blade of white fire. It knows my name.",
-                    'magic_dungeon_carrot': "A glowing carrot, of all things. Something tells me I shouldn't eat this one.",
-                    'cats_footstep': "The sound of a cat's footstep, bottled. How is that even possible?",
-                    'womans_beard': "The roots of a woman's beard. The dwarves are mad, but maybe that's the point.",
-                    'mountain_root': "A root of a mountain. It weighs almost nothing. That feels wrong.",
-                    'fish_breath': "The breath of a fish, sealed in a vial. The stopper must never come off, I think.",
-                    'bird_spittle': "The spittle of a bird. I didn't know birds could spit. I still don't.",
-                    'bear_sinew': "The sinew of a bear's sensitivity. I have no idea what that means, but here it is.",
-                    'tablet_of_second_death': "Found a stone tablet with a slot in it. The inscription mentions Revelation and a 'second death.' Ominous.",
-                    'philosophers_wrench': "An odd tool. Not a weapon, not a key. It feels like it wants to join things together.",
-                    'complete_tablet_of_second_death': "The Stone fit the Tablet perfectly. It's glowing now. The inscription burns with golden light.",
-                    'scroll_lake_of_fire': "A worn scroll. The ink is red-brown. It smells like ash. I can't read it yet, but I feel its weight.",
+                    'philosophers_stone': "Found the Philosopher's Stone. Must get out now.",
+                    'ariadnes_thread': "Found a strange golden thread, warm as if alive.",
+                    'bronze_bull': "Found an old bronze bull idol, heavy. It seems important.",
+                    'eye_of_graeae': "Found a milky white eye, still wet.",
+                    'broken_gram': "Found half a legendary sword, broken but still keen.",
+                    'gleipnir': "Have Gleipnir, thin as a ribbon. Nothing can break it.",
+                    'vidars_sandal': "Have a god's enormous sandal, and it fits me.",
+                    'scales_of_michael': "Have the Scales. They bear the weight of my every choice.",
+                    'sword_of_michael': "Have a blade of white fire. It knows my name.",
+                    'magic_dungeon_carrot': "Found a glowing carrot. Best not eat this one.",
+                    'cats_footstep': "Found the sound of a cat's footstep, bottled.",
+                    'womans_beard': "Found the roots of a woman's beard. Some mad dwarven purpose in it.",
+                    'mountain_root': "Found a root of a mountain, weighing almost nothing.",
+                    'fish_breath': "Found a fish's breath in a vial. Keep the stopper in.",
+                    'bird_spittle': "Found the spittle of a bird.",
+                    'bear_sinew': "Found the sinew of a bear's sensitivity, whatever that means.",
+                    'tablet_of_second_death': "Found a slotted stone tablet. It tells of Revelation and a 'second death'.",
+                    'philosophers_wrench': "Found an odd tool, not weapon or key. It seems meant to join things.",
+                    'complete_tablet_of_second_death': "The Stone fits the Tablet. Its inscription glows gold.",
+                    'scroll_lake_of_fire': "Found a worn scroll in red-brown ink, smelling of ash. Cannot read it yet.",
                 }
                 # (The old "Picked up something interesting" fallback is cut:
                 # every quest piece has its own line.)
@@ -6838,7 +6834,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             "(You should know better than to pick up a duck in a dungeon.)",
             'warning')
         self._chron(
-            'person', "I picked up a duck. It's on my head now. It won't come off.")
+            'person', "Picked up a duck. It is on my head and will not come off.")
         # Start the quirk timer fresh.
         if not hasattr(self.player, 'quirk_progress') or self.player.quirk_progress is None:
             self.player.quirk_progress = {}
@@ -6890,8 +6886,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             f"Waddlekind has hatched! ({pet.name})",
             'success')
         self._chron(
-            'person', "The duck on my head hatched. I have a tiny celestial duckling now. "
-            "It can read minds. I have made a friend.")
+            'person', "The duck on my head hatched: a celestial duckling that reads minds.")
         # Award the registered quirk so the unlock ceremony fires and the
         # Quirks menu shows this run's achievement as unlocked. The
         # mechanical "reward" (the pet) has already been spawned above,
@@ -7327,7 +7322,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.ground_items.append(_food)
             if not getattr(self, '_chronicle_first_compound', False):
                 self._chronicle_first_compound = True
-                self._chron('milestone', f"Cooked my first proper recipe: {recipe['name']}. The dungeon smelled like a kitchen for once.",
+                self._chron('milestone', f"Cooked my first proper recipe: {recipe['name']}.",
                             once='first_compound')
             # Track discovered recipes: those cooked, not ruined (the list's
             # own word, "successfully cooked", and the Seeker's count;
@@ -7605,7 +7600,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         p.hack_reality_cooldown = 150 + chain * 30   # 180 .. 300 turns
         if not getattr(self, '_chronicle_first_xyzzy', False):
             self._chronicle_first_xyzzy = True
-            self._chron('notice', "Spoke an old word of power. XYZZY. Reality flickered. Something changed. I don't think I was supposed to know that word.")
+            self._chron('notice', "Spoke XYZZY, an old word of power. Reality flickered and changed.")
 
         msgs = []
         result_lines = []
@@ -8415,7 +8410,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 grant_identified(self, pot)
                 self.ground_items.append(pot)
                 self.add_message("The dragon's blood runs out across the stone, still smoking.", 'loot')
-                self._chron('discovery', "Fafnir's blood ran out at my feet, hot as forge-fire. Sigurd tasted it and understood the birds. It is said to depend on who is listening.")
+                self._chron('discovery', "Fafnir's blood at my feet. Sigurd tasted it and knew the birds. Depends who listens.")
         except Exception:
             pass
 
@@ -9304,8 +9299,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 from monster import the_name as _the, a_name as _a, kind_of_corpse as _kind
                 self._chron(
                     'milestone',
-                    f"Took {_a(_kind(corpse))} apart to see how it worked. "
-                    "You learn a lot about a thing by how it comes apart.",
+                    f"Took {_a(_kind(corpse))} apart to learn how it worked.",
                     once='first_corpse_study')
                 self._lore_subject = corpse
                 self.state = STATE_LORE
@@ -9427,8 +9421,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     "You lay the stone on the altar. It cracks along its length "
                     "and is only a stone. Somewhere a knight sleeps easier.", 'success')
                 self._chron(
-                    'oath', "Carried Sir Aldric's stone to an altar. It broke there. "
-                    "I had almost stopped noticing the weight.")
+                    'oath', "Carried Sir Aldric's stone to an altar. It broke there.")
                 # The oath sworn when the stone was taken is kept here: deed
                 # kept.aldric_lodestone and the 'oath' point (taking the
                 # stone is a promise and pays nothing; keeping it pays).
@@ -9512,7 +9505,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(
                     "The Complete Tablet resonates with the Abyssal Shimmer.", 'info'
                 )
-                self._chron('boss', "Dropped the Complete Tablet on the Shimmer. The ground split open. Something terrible and ancient stirred beneath. I think I've opened a door that was never meant to be opened.")
+                self._chron('boss', "Dropped the Complete Tablet on the Shimmer. Ground split. Something ancient stirs below.")
 
         # --- Ariadne quest: drop Bronze Bull at a fountain ---
         if getattr(item, 'id', '') == 'bronze_bull':

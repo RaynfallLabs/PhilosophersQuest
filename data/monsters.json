@@ -39388,9 +39388,9 @@
       "euryale_gorgon"
     ],
     "omen": "Somewhere on this floor two women are hissing at each other, and then both fall silent.",
-    "kill_chronicle": "Put Stheno down twice. The old stories call her the mighty one, and the first time she got up as if I had only tripped her.",
+    "kill_chronicle": "Put down Stheno the mighty Gorgon twice. She got up after the first.",
     "kill_pair": "euryale_gorgon",
-    "kill_pair_chronicle": "Put down Medusa's sisters. Twice each. I am not sure it will last.",
+    "kill_pair_chronicle": "Put down both of Medusa's sisters, twice each. May not last.",
     "thac0_lore": -9,
     "shrugs_off": [],
     "status_immune": [],
@@ -39461,9 +39461,9 @@
     "revive_message": "Euryale rises again, wailing. An immortal does not stay dead.",
     "is_mini_boss": true,
     "spawn_chance": 0.0,
-    "kill_chronicle": "Put Euryale down twice. She was wailing for Medusa when she fell, and wailing when she rose, and the second time she went quiet.",
+    "kill_chronicle": "Put down Euryale twice, wailing for Medusa. Quiet after the second.",
     "kill_pair": "stheno_gorgon",
-    "kill_pair_chronicle": "Put down Medusa's sisters. Twice each. I am not sure it will last.",
+    "kill_pair_chronicle": "Put down both of Medusa's sisters, twice each. May not last.",
     "thac0_lore": -9,
     "shrugs_off": [],
     "status_immune": [],
@@ -41552,7 +41552,7 @@
       "lose_after": 12,
       "_doc": "ai_pattern stalker_coward (Monster._stalker_turn; Brandon 2026-11-17). A FALSE FRIEND first: from first sight he comes up to the hero and stays 'friend_keep' tiles off (a step back if the hero comes beside him, never more), and never strikes. A hero in a 'prey_on' state (resting: the wait key this turn, senses.TURN.rested; or under that status) that he sees or is within 'hears_prey' tiles of, he darts in on at 'dash_steps' steps a turn, still smiling; the moment he reaches him the act drops for good (the reveal, _revealed, with a shout) and his blow that same turn (the sneak attack) never misses its roll and lands 'sneak_mult' times as hard; it can kill (Brandon: 'we're not running a charity here'). Struck first, the act drops too, with no sneak attack. As a friend he also helps, where it is safe: a monster at or under 'help_below' of its health, busy with the hero (beside him) or held fast, he darts in on, strikes once, and darts back, at most once in 'help_gap' turns; never one at full health, never one free to hit him back. Revealed, he strikes only a hero beside him, and then only when he cannot back off; a hero who comes at him he backs away from, toward his hoard, keeping 'keep' to keep + 'slack' tiles off; one who walks away he follows at that distance; a hero at rest or helpless he darts in on again. Out of sight 'lose_after' turns, he goes back to his hoard. His lines: data/old_nickel.json."
     },
-    "kill_chronicle": "Killed Old Nickel, the kobold who hoarded iron. Every nail and buckle in his pile came off a miner he crept up on in the dark. He wore leaves torn off a crying Bloomsaur. I took them back.",
+    "kill_chronicle": "Killed Old Nickel, iron-hoarder. Took back the Bloomsaur's leaves.",
     "_design_note": "Winning-build plan 2026-11-13 section 3.8 (Brandon: greedy and mean, so no one feels bad killing him; secondary to the Emberpup's story), made a murderer of sleepers on 2026-11-17 (Brandon: 'he will murder people in their sleep for their things'). Placed every run on one floor from 1 to the Emberpup's (src/emberpup_encounter.py, BloomleafMixin), never in the pup's room; never in a random pool (peak_weight 0, quest_only, no spawn_chance). He does not start a fair fight (ai_pattern stalker_coward, see 'stalker'). He plays the false friend (Brandon: 'he initially approaches the player and tells him he'll protect him and watch his back'): he keeps two tiles off, offers to guard the hero's sleep and urges him to rest (data/old_nickel.json). He helps against a wounded monster busy with the hero, once and safely, to look the friend. When the hero rests, sleeps or is paralysed, confused or stunned, the act drops all at once: a shout, and a sneak attack three times as hard, the same moment (it can kill). After that he stalks at three tiles, backs off, strikes only cornered, and darts in again on a hero at rest; his later blows land half as hard again on a sleeper or a paralysed hero (bonus_vs). He drops the Bloomleaf Cloak, identified, and only that (item_chance 0). He has no cut of his own: a harvest borrows the nearest humanoid's of his depth (food_system._nearest_prime).",
     "thac0_lore": 16,
     "shrugs_off": [],
@@ -41625,7 +41625,7 @@
     "frequency": 0,
     "spawn_chance": 0,
     "proper_noun": true,
-    "kill_chronicle": "Zombie Bang Chan finally lay down. I think it was the first sleep he has had in years.",
+    "kill_chronicle": "Zombie Bang Chan lay down at last, to sleep.",
     "shrugs_off": [],
     "status_immune": [
       "sleeping",
@@ -41700,7 +41700,7 @@
     "frequency": 0,
     "spawn_chance": 0,
     "proper_noun": true,
-    "kill_chronicle": "Zombie Lee Know went down. The cat walked off without a backward look. Like owner, like cat.",
+    "kill_chronicle": "Zombie Lee Know went down. His cat walked off.",
     "shrugs_off": [],
     "status_immune": [
       "sleeping",
@@ -41775,7 +41775,7 @@
     "frequency": 0,
     "spawn_chance": 0,
     "proper_noun": true,
-    "kill_chronicle": "Zombie Changbin dropped his dumbbell, then himself. He made a cute face on the way down. I nearly felt bad.",
+    "kill_chronicle": "Zombie Changbin fell, dumbbell first, making a cute face.",
     "shrugs_off": [],
     "status_immune": [
       "sleeping",
@@ -41853,7 +41853,7 @@
     "frequency": 0,
     "spawn_chance": 0,
     "proper_noun": true,
-    "kill_chronicle": "Zombie Hyunjin collapsed with one last hair flip. Even falling over, he made it look dramatic.",
+    "kill_chronicle": "Zombie Hyunjin fell with one last hair flip.",
     "shrugs_off": [],
     "status_immune": [
       "sleeping",
@@ -41928,7 +41928,7 @@
     "frequency": 0,
     "spawn_chance": 0,
     "proper_noun": true,
-    "kill_chronicle": "Zombie Han finished his verse, all of it, very fast, then fell over. I still don't know what he said.",
+    "kill_chronicle": "Zombie Han finished his very fast verse, then fell.",
     "shrugs_off": [],
     "status_immune": [
       "sleeping",
@@ -42003,7 +42003,7 @@
     "frequency": 0,
     "spawn_chance": 0,
     "proper_noun": true,
-    "kill_chronicle": "Zombie Felix danced every step with a black-belt kick in it. I felt one of them. Then he fell over, still smiling. Lovely boy.",
+    "kill_chronicle": "Zombie Felix fell smiling, after one black-belt kick caught me.",
     "shrugs_off": [],
     "status_immune": [
       "sleeping",
@@ -42079,7 +42079,7 @@
     "frequency": 0,
     "spawn_chance": 0,
     "proper_noun": true,
-    "kill_chronicle": "Zombie Seungmin fell out of his last spin. He said something about my outfit first. It stung more than losing would have.",
+    "kill_chronicle": "Zombie Seungmin fell out of his last spin, faulting my outfit.",
     "shrugs_off": [],
     "status_immune": [
       "sleeping",
@@ -42157,7 +42157,7 @@
     "frequency": 0,
     "spawn_chance": 0,
     "proper_noun": true,
-    "kill_chronicle": "Zombie I.N went down. The others had spent the whole dance-off trying to stand in front of him.",
+    "kill_chronicle": "Zombie I.N went down. The others had tried to shield him as they danced.",
     "shrugs_off": [],
     "status_immune": [
       "sleeping",
@@ -43781,7 +43781,7 @@
     "spawn_chance": 0.4,
     "is_mini_boss": true,
     "omen": "Sheep are bleating somewhere on this floor, and the air smells of wet fleece and new cheese.",
-    "kill_chronicle": "Killed Polyphemus, the Cyclops who ate Odysseus's men two at a time. I stayed out from under his club, and nobody had to get him drunk first.",
+    "kill_chronicle": "Killed Cyclops Polyphemus, no wine needed. Kept clear of his club.",
     "thac0_lore": 6,
     "shrugs_off": [],
     "status_immune": [],

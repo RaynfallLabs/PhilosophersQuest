@@ -44,6 +44,7 @@ A note the adventurer leaves for himself, to be understood a week later.
 - **Who, what, and what is still to do:** "Fed Pell, a deserter. His company is trapped in the granary below."
 - Drop "I" where it can go. Keep every name, place, debt, promise and clue that matters later.
 - A bare "Must", "Owe" or "Beware" note is good. No jokes, no feelings explained, no morals, no scene, no closing quip.
+- Two exceptions keep their own words: a person's spoken last line (the People tab), and the approved family lines (Shep, the cats, the Emberpup, the sphere hatch, the family builds).
 - The lint still holds (`chronicle.lint`): no digits, floor numbers, game terms, stat names, exclamation marks, ellipses or double dashes.
 
 ## What a rewrite never changes

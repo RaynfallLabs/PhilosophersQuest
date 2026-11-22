@@ -89,9 +89,9 @@
   "name_prompt": "Will you give your Mooble a name?",
   "named_message": "{name} the Mooble will never dance alone again.",
   "unnamed_message": "Your Mooble will never dance alone again.",
-  "named_chronicle": "Found the last of the Moobles dancing alone in an old mine. I brought him a Starnut Tart and danced with him three times. I named him {name}. He comes with me now, and he hums when we walk.",
-  "unnamed_chronicle": "Found the last of the Moobles dancing alone in an old mine. I brought him a Starnut Tart and danced with him three times. He comes with me now, and he hums when we walk.",
-  "met_chronicle": "Found a little winged creature dancing alone on a ledge in an old mine. He says a dance needs a partner, and he misses the miners' Starnut Tarts.",
+  "named_chronicle": "Gave the last Mooble a Starnut Tart and three dances. {name} is with me.",
+  "unnamed_chronicle": "Gave the last Mooble a Starnut Tart and three dances. He is with me.",
+  "met_chronicle": "Winged dancer in an old mine wants a partner and a Starnut Tart.",
   "log": {
     "learned_tart": "You will remember the miners' Starnut Tart: a starnut, a bread ration and an apple, baked to carry.",
     "gave_tart": "The Mooble eats your Starnut Tart.",

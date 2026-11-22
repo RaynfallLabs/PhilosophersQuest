@@ -36,11 +36,11 @@
     "You have learned where {kin} break."
   ],
   "tier_chronicle": [
-    "I took enough of {kin} apart that I knew the rest of them on sight.",
-    "I learned the signs {kin} leave on a stair, and after that I smelled them coming.",
-    "I learned how ordinary people kept {kin} away, the old folk ways, and they worked.",
-    "I learned how a hunter takes {kin}, and I started hunting them.",
-    "I took apart so many of {kin} that I learned where every one of them breaks."
+    "Took apart enough of {kin} to know the rest of them on sight.",
+    "Know the signs {kin} leave on a stair. Can smell them coming.",
+    "Learned the old folk ways of keeping {kin} off. They work.",
+    "Learned how a hunter takes {kin}. Hunting them now.",
+    "Took apart so many of {kin}, I know where each one breaks."
   ],
   "families": {
     "restless_dead": {
@@ -2490,7 +2490,7 @@
           "scope": "any"
         }
       },
-      "chronicle": "I learned enough of every kind of the dead to keep watch over a grave all night."
+      "chronicle": "Know every kind of the dead. Can keep watch on a grave all night."
     },
     "wild_road": {
       "name": "The Wild Road",
@@ -2513,7 +2513,7 @@
           "amount": 1
         }
       },
-      "chronicle": "I learned the wild things of the dark well enough to walk their roads like a ranger."
+      "chronicle": "Know the wild things of the dark. Can walk their roads like a ranger."
     },
     "hellward_gate": {
       "name": "The Hellward Gate",
@@ -2540,7 +2540,7 @@
           "scope": "any"
         }
       },
-      "chronicle": "I learned the tricks of everything that gets into a mind, and mine stopped bending."
+      "chronicle": "Learned the tricks of all that creep into a mind. Mine bends no more."
     },
     "heroes_road": {
       "name": "The Hero's Road",
@@ -2564,7 +2564,7 @@
           "boss_only": true
         }
       },
-      "chronicle": "I learned the old stories well enough to walk the road the heroes walked."
+      "chronicle": "Know the old stories. Can walk the road the heroes walked."
     }
   },
   "circle_title": "CIRCLE COMPLETE",
@@ -2572,6 +2572,6 @@
     "title": "Loremaster",
     "families_at_tier": 5,
     "tier": 5,
-    "chronicle": "I came to know five families of monster down to the last weakness. Somebody should call me a loremaster."
+    "chronicle": "Know five families of monster to the last weakness. A loremaster now."
   }
 }
