@@ -620,6 +620,8 @@ class Player:
 
     def restore_sp(self, amount: int):
         self.sp = min(self.max_sp, self.sp + amount)
+        import hunger                        # a meal ends Hungry, Weak, Starving
+        hunger.sync(self)
 
     def restore_hp(self, amount: int) -> int:
         """Restore HP up to max. Returns actual HP gained (callers use the

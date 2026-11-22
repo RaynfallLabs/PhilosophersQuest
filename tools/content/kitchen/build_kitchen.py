@@ -40,6 +40,20 @@ is idempotent; a full build includes them too. (On 2026-11-22 a full build
 refuses to run: the pack kinds and the MONSTERS AND MAGIC kinds were written
 straight into the data and are not in kin_groups.txt. Use --rungs.)
 
+EACH PART'S STRENGTH AND SIDE GIFT (kitchen variety, 2026-11-22: "many do
+EXACTLY the same thing"). ``ingredient_lore.txt`` gives every part its
+``richness`` (0.75-1.35, about 1.0 a tier) and every part and foraged find its
+``side`` gift, drafted from its creature's own data by ``draft_lore.py`` and
+reviewed by hand.
+
+    py tools/content/kitchen/build_kitchen.py --lore
+
+writes those two fields into ingredient.json and changes nothing else; a full
+build includes them. It also applies ``part_natures.txt``: early parts whose
+creature's lore teaches a stat (Brandon: "players should be able to have
+enough choices early on"), each part's nature and its single dish's benefit
+and picture.
+
 Inputs: data/monsters.json, data/items/food.json, the OLD ingredient.json
 (colours; read from git's copy in ``old_ingredients.json`` once the data has
 been rebuilt), kin_groups.txt, people.txt, ingredients_*.txt.
@@ -718,6 +732,103 @@ def rung_recipes() -> dict:
     return out
 
 
+# A side gift is one of these (kitchen.dish_sides): a timed power, a heal or
+# mana. Never poison resistance or the body's save, which the effects branch
+# tunes (agreed 2026-11-22), nor the strong defences.
+SIDE_KINDS = ('heal', 'mp', 'regenerating', 'dark_vision', 'see_invisible', 'warning', 'searching',
+              'fire_resist', 'cold_resist', 'shock_resist', 'acid_resist', 'drain_resist',
+              'sleep_resist', 'fear_immune', 'save_guard_WIS', 'save_guard_DEX')
+RICHNESS = (0.75, 1.35)
+
+
+def lore_rows() -> dict:
+    """ingredient_lore.txt: id -> (richness, side), checked."""
+    out, problems = {}, []
+    for k, rich, side, _why in _rung_lines('ingredient_lore.txt', 4):
+        r = float(rich)
+        if not RICHNESS[0] <= r <= RICHNESS[1]:
+            problems.append(f'{k}: richness {r} outside {RICHNESS}')
+        if side not in SIDE_KINDS:
+            problems.append(f'{k}: side {side} is not one of the side gifts')
+        if k in out:
+            problems.append(f'{k}: listed twice')
+        out[k] = (round(r, 2), side)
+    if problems:
+        print('\n'.join(problems[:40]))
+        raise SystemExit(f'{len(problems)} problems')
+    return out
+
+
+def nature_rows() -> dict:
+    """part_natures.txt: part id -> stat its single dish teaches, checked."""
+    out = {}
+    for k, stat, _why in _rung_lines('part_natures.txt', 3):
+        if stat not in STATS:
+            raise SystemExit(f'part_natures.txt: {k}: {stat} is not a stat')
+        out[k] = stat
+    return out
+
+
+def apply_natures(ing_json: dict, recipes: dict) -> None:
+    """Each listed part's nature becomes its stat, and its single dish
+    (cook_<key>) teaches it, with the picture its new tab shows."""
+    have_art = dish_art.drawn(ART_DIR)
+    for part, stat in nature_rows().items():
+        ing = ing_json.get(part)
+        if not ing or ing.get('tier_role') != 'prime':
+            raise SystemExit(f'part_natures.txt: {part} is not a part')
+        ing['nature'] = 'stat'
+        ing['stat_grant'] = stat
+        ing.pop('temp_power', None)
+        rid = 'cook_' + part[:-len('_prime')]
+        rec = recipes.get(rid)
+        if not rec or rec['ingredients'] != [part]:
+            raise SystemExit(f'part_natures.txt: {part} has no single dish {rid}')
+        rec['benefit'] = stat
+        tier = band_of(int(ing['min_level']))
+        rec['art'] = dish_art.art_for(rec['name'], tier, stat, have_art)
+
+
+def apply_lore(ing_json: dict) -> dict:
+    """Every part's and foraged find's richness and side, in place."""
+    rows = lore_rows()
+    want = {k for k, v in ing_json.items() if v.get('tier_role') in ('prime', 'dungeon')}
+    missing, extra = sorted(want - set(rows)), sorted(set(rows) - want)
+    if missing or extra:
+        raise SystemExit(f'ingredient_lore.txt: missing {missing[:8]}, unknown {extra[:8]}')
+    for k, (rich, side) in rows.items():
+        if ing_json[k]['tier_role'] == 'prime':
+            ing_json[k]['richness'] = rich
+        ing_json[k]['side'] = side
+    return ing_json
+
+
+def write_lore():
+    """Write each part's strength and side, and the early stat parts'
+    natures (part_natures.txt), into the shipped ingredient.json and their
+    single dishes into recipes.json; nothing else changes."""
+    path = os.path.join(ITEMS, 'ingredient.json')
+    rpath = os.path.join(ITEMS, 'recipes.json')
+    ing_json = apply_lore(_load(path))
+    recipes = _load(rpath)
+    apply_natures(ing_json, recipes)
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(ing_json, f, ensure_ascii=False, indent=2)
+        f.write('\n')
+    with open(rpath, 'w', encoding='utf-8') as f:
+        json.dump(recipes, f, ensure_ascii=False, indent=1)
+        f.write('\n')
+    art_path = os.path.join(HERE, 'dish_art.json')
+    record = _load(art_path)
+    doc = record.pop('_doc')
+    record.update({rid: r['art'] for rid, r in recipes.items() if rid in record or r.get('art')})
+    with open(art_path, 'w', encoding='utf-8') as f:
+        json.dump({'_doc': doc, **dict(sorted(record.items()))}, f, ensure_ascii=False, indent=1)
+        f.write('\n')
+    print(f'{len(lore_rows())} ingredients: strength and side written; '
+          f'{len(nature_rows())} early parts teach a stat')
+
+
 def write_rungs():
     """Write the two low rungs into the shipped book; nothing else changes."""
     rungs = rung_recipes()
@@ -823,6 +934,7 @@ def build():
         if r['role'] == 'trophy':
             row['trophy_permanent_power'] = r['permanent_power']
         ing_json[iid] = row
+    apply_lore(ing_json)
     with open(os.path.join(ITEMS, 'ingredient.json'), 'w', encoding='utf-8') as f:
         json.dump(ing_json, f, ensure_ascii=False, indent=2)
         f.write('\n')
@@ -1001,7 +1113,9 @@ def report(ings, recipes):
 
 
 if __name__ == '__main__':
-    if '--rungs' in sys.argv:
+    if '--lore' in sys.argv:
+        write_lore()
+    elif '--rungs' in sys.argv:
         write_rungs()
     elif '--structure' in sys.argv:
         ings, _h, _a = build_ingredients()

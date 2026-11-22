@@ -47,6 +47,12 @@ alone: any two of them make a dish, no stat and no max HP) or 'step' (one
 creature's part and one staple). Their numbers are cooking_rules.json
 ``rungs``; their dishes are tools/content/kitchen/rungs_*.txt.
 
+VARIETY (Brandon, 2026-11-22: "Recipes are not variable enough... many do
+EXACTLY the same thing"). A monster part's worth is its own ``richness``
+(ingredient.json, 0.75-1.35 by its creature's lore, about 1.0 a tier), and
+every ingredient brings a small ``side`` gift by its lore on top of the
+dish's main benefit (``dish_sides``; cooking_rules.json ``sides``).
+
 A DISH THAT PLAYS A SONG (3.5.2, songs.py): a dish may name ``song``, an id
 in data/songs.json (its benefit is 'song', so it sits on the Special tab).
 Eaten, it gives what every dish gives, and its power is the song's: it lasts
@@ -445,10 +451,57 @@ def dish_size(rec: dict) -> int:
     return len(parts(rec))
 
 
+def part_worth(part_id: str) -> float:
+    """What one ingredient adds to a dish: a monster part or trophy its own
+    richness (its creature's lore), a foraged find 0.6, a ration 0.5."""
+    kind = part_kind(part_id) or 'food'
+    if kind in ('monster', 'trophy'):
+        rich = (ingredients().get(part_id) or {}).get('richness')
+        if rich is not None:
+            return float(rich)
+    return float(rules().get('worth', {}).get(kind, 0.5))
+
+
 def dish_worth(rec: dict) -> float:
-    """What the ingredients add: a monster part 1, a foraged find 0.6, a ration 0.5."""
-    w = rules().get('worth', {})
-    return sum(float(w.get(part_kind(p) or 'food', 0.5)) for p in parts(rec))
+    """What the ingredients add (``part_worth`` of each)."""
+    return sum(part_worth(p) for p in parts(rec))
+
+
+# The side gifts that are not a timed power.
+SIDE_AMOUNTS = ('heal', 'mp')
+
+
+def part_side(part_id: str):
+    """An ingredient's side gift by its lore: a power id, 'heal' or 'mp'."""
+    side = (ingredients().get(part_id) or {}).get('side')
+    if side:
+        return side
+    return (rules().get('sides', {}).get('staples') or {}).get(part_id)
+
+
+def dish_sides(rec: dict, tier: int, power=None) -> tuple:
+    """((kind, amount), ...): the side gifts this dish's ingredients bring, in
+    their order. A power lasts the tier's turns (at most its max_turns), a
+    heal is a share of max HP, mana a number of points. The dish's own power
+    is never given twice, nor one side by two ingredients."""
+    if makes(rec) or song_of(rec):
+        return ()
+    spec = rules().get('sides') or {}
+    powers = rules()['special']['powers']
+    out, seen = [], {power}
+    for p in parts(rec):
+        side = part_side(p)
+        if not side or side in seen:
+            continue
+        seen.add(side)
+        if side == 'heal':
+            out.append(('heal', float(_tierv(spec['heal_share'], tier))))
+        elif side == 'mp':
+            out.append(('mp', int(_tierv(spec['mp'], tier))))
+        elif side in powers:
+            cap = int((powers[side] or {}).get('max_turns', 60))
+            out.append((side, min(cap, int(_tierv(spec['turns'], tier)))))
+    return tuple(out)
 
 
 def size_mult(n: int) -> float:
@@ -534,8 +587,11 @@ def dish_outcome(rec: dict) -> dict:
         out['max_hp'] += int(round(_tierv(r['hp']['max_hp_bonus'], t) * main))
     elif tab == 'sp':
         out['sp'] = int(round(_tierv(r['sp']['sp'], t) * main))
-        out['sustained'] = min(int(r['sp'].get('sustained_cap', 800)),
-                               int(round(_tierv(r['sp']['sustained_turns'], t) * main)))
+        # Sustained only from a big SP dish or a feast, for flat turns
+        # (2026-11-22: it was on for most of a careful player's turns).
+        if dish_size(rec) >= int(r['sp'].get('sustained_min_parts', 1)) or is_legendary(rec):
+            out['sustained'] = min(int(r['sp'].get('sustained_cap', 800)),
+                                   int(_tierv(r['sp']['sustained_turns'], t)))
     elif tab == 'mp':
         out['mp_share'] = min(1.0, _tierv(r['mp']['share'], t) * main)
         out['mp_least'] = int(round(_tierv(r['mp']['least'], t) * main))
@@ -574,6 +630,10 @@ def dish_outcome(rec: dict) -> dict:
         raw_sp, raw_hp = raw_gives(rec)
         out['sp'] = max(out['sp'], math.ceil(raw_sp * more))
         out['heal_least'] = math.ceil(raw_hp * more)
+    # Each ingredient's side gift (variety, 2026-11-22).
+    out['sides'] = dish_sides(rec, t, out['power'])
+    out['side_heal'] = sum(a for k, a in out['sides'] if k == 'heal')
+    out['side_mp'] = sum(a for k, a in out['sides'] if k == 'mp')
     return out
 
 
@@ -640,15 +700,35 @@ def heal_amount(player, out: dict) -> int:
     written = out['heal_written']
     # (plain fare has no written heal, and so no snack's share of the bar)
     share = max(meal_mend_share(written) if written > 0 else 0.0, out['heal_share'])
-    return max(mend(written, int(getattr(player, 'max_hp', 1) or 1), share),
-               int(out.get('heal_least', 0)))
+    mx = int(getattr(player, 'max_hp', 1) or 1)
+    side = int(round(float(out.get('side_heal', 0.0) or 0.0) * mx))       # an ingredient's gift
+    return max(mend(written, mx, share), int(out.get('heal_least', 0))) + side
 
 
 def mp_amount(player, out: dict) -> int:
+    side = int(out.get('side_mp', 0) or 0)                 # an ingredient's gift
     if out['tab'] != 'mp':
-        return 0
+        return side
     return max(int(round(out['mp_share'] * int(getattr(player, 'max_mp', 0) or 0))),
-               int(out['mp_least']))
+               int(out['mp_least'])) + side
+
+
+def side_line(player, out: dict) -> str:
+    """The dish's side gifts, for the menu: "Also: Dark Vision, 90 turns;
+    +4 MP" ('' when it has none). A heal or mana side already counted in the
+    dish's own HP or MP line is not said twice; a power held for good is
+    left out."""
+    bits = []
+    for kind, amount in out.get('sides', ()):
+        if kind == 'heal':
+            if out['tab'] != 'hp':
+                bits.append(f"+{int(round(amount * int(getattr(player, 'max_hp', 1) or 1)))} HP")
+        elif kind == 'mp':
+            if out['tab'] != 'mp':
+                bits.append(f"+{int(amount)} MP")
+        elif not held_for_good(player, kind):
+            bits.append(f"{power_label(kind)}, {quantity(int(amount), 'turn')}")
+    return ("Also: " + "; ".join(bits)) if bits else ''
 
 
 def floor_hp_room(player) -> int:
@@ -697,7 +777,8 @@ def dish_effects(player, rec: dict) -> list:
         lines.append(f"+{heal_amount(player, out)} HP")
     elif tab == 'sp':
         lines.append(f"+{sp_shown} SP")
-        lines.append(f"Sustained, {quantity(out['sustained'], 'turn')}")
+        if out['sustained'] > 0:
+            lines.append(f"Sustained, {quantity(out['sustained'], 'turn')}")
     elif tab == 'mp':
         lines.append(f"+{mp_amount(player, out)} MP")
     elif tab == 'stat':
@@ -728,6 +809,9 @@ def dish_effects(player, rec: dict) -> list:
             lines.append(f"+{gain} Max HP")
         elif tab == 'hp':
             lines.append(MAX_HP_FULL_FLOOR)
+    also = side_line(player, out)
+    if also:
+        lines.append(also)
     lines.extend(_lasting_lines(player, out, rec))
     if tab != 'sp':
         lines.append(f"+{sp_shown} SP")
@@ -1203,6 +1287,21 @@ def apply_dish(player, rec: dict) -> list:
                 player._save_guard[cat] = max(int(player._save_guard.get(cat, 0) or 0), out['ward'])
             lingers = f"{power_label(power)} lingers for {quantity(out['turns'], 'turn')}."
             msgs.append(lingers)
+    # Each ingredient's side gift (its heal and mana came with the meal).
+    gifts = []
+    for kind, amount in out.get('sides', ()):
+        if kind in SIDE_AMOUNTS or held_for_good(player, kind):
+            continue
+        cap = int((rules()['special']['powers'].get(kind) or {}).get('max_turns', 60))
+        _add_effect(player, kind, int(amount), cap)
+        if kind.startswith('save_guard_'):
+            if getattr(player, '_save_guard', None) is None:
+                player._save_guard = {}
+            cat = kind[len('save_guard_'):]
+            player._save_guard[cat] = max(int(player._save_guard.get(cat, 0) or 0), 1)
+        gifts.append(f"{power_label(kind)} for {quantity(int(amount), 'turn')}")
+    if gifts:
+        msgs.append("It also gives you " + ", ".join(gifts) + ".")
     # A legendary feast's permanent bonus.
     if out['permanent']:
         msgs.extend(_apply_permanent(player, rec, out))

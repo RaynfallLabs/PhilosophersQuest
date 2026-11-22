@@ -222,14 +222,17 @@ other write.
 ## 9. SP soft-boundary + damage failsafe
 
 **Rule:** SP = 0 still starves the player (damage over time). The
-softness comes from **generous supply** — every cooked dish gives SP
-(60 at T1 → 150 at T5 for a single dish, `cooking_rules.json`; an SP
-dish far more, and Sustained) and food restores (20–115 SP) are tuned so
-that normal play never bottoms the tank. Raw monster parts are a 10 SP
-emergency. Hunger is one SP every `floor_curve.HUNGER_EVERY` (4) steps or
-waits since 2026-11-16 (it was 2): a kid takes 700-1,150 turns a floor
-(`floor_curve.kid_pace`, from Brandon's saves), and the supply was tuned
-for about 200 SP of hunger a floor.
+softness comes from supply: every cooked dish gives SP (24 at T1 to 60 at
+T5 for a single dish off the SP tab, `cooking_rules.json`; an SP dish far
+more, and a big one or a feast Sustained), and food restores 20-115 SP.
+Raw monster parts are a 10 SP emergency. Hunger is one SP every
+`floor_curve.HUNGER_EVERY` (3) steps or waits. It was 2 until 2026-11-16,
+then 4 (a kid takes 700-1,150 turns a floor: `floor_curve.kid_pace`), and 3
+since 2026-11-22 (Brandon on 3.6.1: "SP seems like an afterthought, where it
+used to be a major issue and killer"). Hungry (under a quarter), Weak (under
+a tenth: STR -2, no natural healing) and Starving (0) are statuses the HUD
+shows (`src/hunger.py`, `data/hunger.json`); a careful cook is now and then
+Hungry, and a careless one starves.
 
 - Do NOT remove starvation damage.
 - Cook outcome tier bands:

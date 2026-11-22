@@ -103,6 +103,10 @@ EFFECT_INFO: dict[str, tuple] = {
     # ---- Accessory-granted permanent buffs ----
     'life_save':          ('Life Save',          (255, 215,  80), 'Survive one killing blow; effect is then spent'),
     'sustained':          ('Sustained',          (150, 230, 170), 'SP drains at half rate; need less food'),
+    # ---- Hunger you can see (src/hunger.py, data/hunger.json; 2026-11-22) ----
+    'hungry':             ('Hungry',             (230, 190, 110), 'Under a quarter of your SP: eat soon'),
+    'weak_from_hunger':   ('Weak',               (220, 140,  80), 'Under a tenth of your SP: Strength -2, wounds do not mend'),
+    'starving':           ('Starving',           (230,  80,  60), 'No SP: hunger wounds you until you eat'),
     'truesight':          ('True Sight',         (200, 200, 255), 'See all monsters regardless of invisibility; +2 sight'),
     'dark_vision':        ('Dark Vision',        ( 60,  80, 160), 'Sight radius +4 even in deep darkness'),
     'identify_sight':     ('Identify Sight',     (220, 200, 150), 'Items auto-identified when picked up'),
@@ -226,6 +230,8 @@ REGEN_SHARE = 1 / 300          # of max health, each REGEN_PERIOD turns
 TIMED_STAT_GRANTS: dict = {
     'heroism':    (('STR', 2),),
     'brilliance': (('INT', 1), ('WIS', 1)),
+    # Weak with hunger (src/hunger.py sets and clears it by the belly).
+    'weak_from_hunger': (('STR', -2),),
 }
 
 

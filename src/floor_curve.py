@@ -267,7 +267,10 @@ def kid_pace(tour: int) -> int:
 # lasts 840 turns, the floor's rations and a meal or two keep it full, and
 # a hero who lingers or will not eat still goes hungry (starvation stays:
 # feedback, SP is a soft boundary by supply, never by removing the damage).
-HUNGER_EVERY = 4
+# 2026-11-22: every 3 (Brandon on 3.6.1, "SP seems like an afterthought"):
+# with Sustained cut back and half the SP from meals off the SP tab, a careful
+# cook goes hungry now and then and a careless one starves.
+HUNGER_EVERY = 3
 # The floor stirs (a line, once) at this share of the grace.
 WANDER_WARN_SHARE = 0.85
 # After the grace, a trickle: the first newcomer comes WANDER_TRICKLE_START

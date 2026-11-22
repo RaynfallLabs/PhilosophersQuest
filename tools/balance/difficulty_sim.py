@@ -256,6 +256,7 @@ from quiz_engine import QuizResult                                      # noqa: 
 import sim_effects                                                      # noqa: E402
 import food_system as food_system_mod            # noqa: E402
 import kitchen as kitchen_mod                    # noqa: E402
+import hunger as hunger_mod                      # noqa: E402
 import boons as boons_mod                        # noqa: E402
 import monster as monster_mod                    # noqa: E402
 import game_magic as game_magic_mod              # noqa: E402
@@ -3096,6 +3097,8 @@ class Run(_MMMagicSim):
         ticks = end // iv - start // iv
         gain = (ticks * (max(1, p.max_hp // 50) + max(0, getattr(p, 'regen_bonus', 0)))
                 * self.knobs['regen'])                   # main.natural_regen
+        if hunger_mod.blocks_regen(p):
+            gain = 0                                     # Weak or Starving: no mending
         reg = p.status_effects.get('regenerating', 0)
         if reg:
             dur = n if reg < 0 else min(n, reg)
@@ -3139,6 +3142,7 @@ class Run(_MMMagicSim):
                 if not self._eat_when_hungry(need):
                     break
             p.sp -= need
+            hunger_mod.sync(p)                           # Hungry, Weak, Starving
             if p.sp < 0:
                 # starvation: STARVE_SHARE of max HP a drain tick at SP 0
                 # (main._tick_sp; it said 1 HP a tick here)

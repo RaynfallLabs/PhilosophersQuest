@@ -819,14 +819,14 @@ def test_light_widens_sight_and_sickly_drains_stamina_faster():
     assert g.player.get_sight_radius() == r + LIGHT_SIGHT_BONUS
     assert 'sickly' in DEBUFFS
     g.player.sp = g.player.max_sp = 100
-    for _ in range(8):
+    for _ in range(12):                  # (a whole number of hunger ticks, at 3 or 4)
         g._tick_sp()
     plain = 100 - g.player.sp
     g.player.sp = 100
     g.player.add_effect('sickly', 50)
-    for _ in range(8):
+    for _ in range(12):
         g._tick_sp()
-    assert 100 - g.player.sp == 2 * plain
+    assert plain > 0 and 100 - g.player.sp == 2 * plain
 
 
 def test_raphaels_gall_spares_the_eyes_once():

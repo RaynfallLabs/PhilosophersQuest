@@ -988,9 +988,9 @@
   "ingredients": [
    "giant_beetle_prime"
   ],
-  "benefit": "hp",
+  "benefit": "CON",
   "flavor": "Crack the shell, and your wounds close.",
-  "art": "dish_roast_t1_hp"
+  "art": "dish_roast_t1_stat"
  },
  "cook_giant_centipede": {
   "name": "Hundred-Leg Steak",
@@ -1006,9 +1006,9 @@
   "ingredients": [
    "giant_frog_prime"
   ],
-  "benefit": "sp",
+  "benefit": "WIS",
   "flavor": "Tender, mild and filling.",
-  "art": "dish_bread_t1_sp"
+  "art": "dish_bread_t1_stat"
  },
  "cook_giant_lizard": {
   "name": "Lizard Tail Medallions",
@@ -1415,7 +1415,7 @@
   "ingredients": [
    "kobold_prime"
   ],
-  "benefit": "DEX",
+  "benefit": "INT",
   "flavor": "Small, sharp and spicy, it helps your fingers find the gaps.",
   "art": "dish_sausage_t1_stat"
  },
@@ -1642,9 +1642,9 @@
   "ingredients": [
    "myconid_worker_prime"
   ],
-  "benefit": "sp",
+  "benefit": "WIS",
   "flavor": "Meaty mushroom; filling and calm.",
-  "art": "dish_stirfry_t1_sp"
+  "art": "dish_stirfry_t1_stat"
  },
  "cook_naga_guardian": {
   "name": "Temple Naga Roulade",
@@ -2777,9 +2777,9 @@
   "ingredients": [
    "zombie_prime"
   ],
-  "benefit": "hp",
+  "benefit": "CON",
   "flavor": "Boil it twice, and then it mends you.",
-  "art": "dish_soup_t1_hp"
+  "art": "dish_soup_t1_stat"
  },
  "feast_01": {
   "name": "The Bull-King's Wrath Feast",
@@ -8337,7 +8337,7 @@
    "apple",
    "wild_mushroom"
   ],
-  "benefit": "poison_resist",
+  "benefit": "venom_ward",
   "flavor": "A sharp relish of the kind old foragers trusted to settle a doubtful mushroom.",
   "rung": "plain",
   "art": "dish_pickle_t1_special"
@@ -8469,7 +8469,7 @@
    "healing_herb",
    "hearty_stew"
   ],
-  "benefit": "poison_resist",
+  "benefit": "venom_ward",
   "flavor": "The apothecary kept one pot for his supper and his antidotes, and lived to a great age.",
   "rung": "plain",
   "art": "dish_stew_t1_special"
@@ -8628,7 +8628,7 @@
    "wild_mushroom",
    "healing_herb"
   ],
-  "benefit": "poison_resist",
+  "benefit": "venom_ward",
   "flavor": "A crust of crushed crackers over all that a field surgeon dared to prescribe.",
   "rung": "plain",
   "art": "dish_pie_t2_special"

@@ -6472,9 +6472,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         drain_interval = _hunger_every * (2 if self.player.has_effect('sustained') else 1)
         import rings as _rings
         drain_interval = _rings.hunger_interval(self.player, drain_interval)
-        # Sickly (a fever caught at a plague village's bar): twice as fast.
-        if self.player.has_effect('sickly'):
-            drain_interval = max(1, drain_interval // 2)
+        # Sickly (a fever caught at a plague village's bar): twice as fast,
+        # two points a tick (halving the interval made 3 steps one, three
+        # times as fast).
+        _per_tick = 2 if self.player.has_effect('sickly') else 1
         # The Endless Wanderer quirk: walking drains SP at half the rate.
         # (The quirk set this flag but nothing read it.)
         if self.player.quirk_progress.get('wanderlust_active'):
@@ -6490,11 +6491,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             pass
         if self._sp_drain_tick % drain_interval != 0:
             return
+        import hunger as _hunger
         if self.player.sp > 0:
-            self.player.sp -= 1
-            if self.player.sp == 0:
-                self.add_message("You are hungry! Find food before you starve.", 'warning')
+            self.player.sp = max(0, self.player.sp - _per_tick)
+            # Hungry, Weak, Starving (src/hunger.py): said as he gets hungrier.
+            for _ln in _hunger.sync(self.player):
+                self.add_message(_ln, 'danger' if self.player.sp <= 0 else 'warning')
         else:
+            for _ln in _hunger.sync(self.player):        # (a hero already at 0)
+                self.add_message(_ln, 'danger')
             from floor_curve import of_health as _of_health
             # 2% of max HP a tick (a flat 1 took 860 steps to starve a deep
             # character, against 60 for a new one).
@@ -6537,6 +6542,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if room <= 0:
             return                    # rest mends only so far (REST_MENDS_TO)
         if self.player.has_effect('bleeding') or self.player.has_effect('poisoned'):
+            return
+        # A hero Weak or Starving with hunger does not mend (src/hunger.py).
+        import hunger as _hunger
+        if _hunger.blocks_regen(self.player):
             return
         # A sickness in the wound stops it mending (Grave Rot, AI-1).
         import grave_rot

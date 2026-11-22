@@ -285,26 +285,36 @@ def test_mp_dish_restores_a_share_of_max_mp_or_its_least():
     single = kitchen.recipe('cook_wraith')
     out = kitchen.dish_outcome(single)
     assert out['tab'] == 'mp'
-    assert kitchen.mp_amount(p, out) == max(round(0.25 * 20), 4)
+    # (the share and least times the wraith's own strength, and its side
+    # gift's mana if it has one: kitchen variety, 2026-11-22)
+    assert out['mp_share'] == pytest.approx(0.25 * kitchen.part_worth('wraith_prime'))
+    assert kitchen.mp_amount(p, out) == max(round(out['mp_share'] * 20), out['mp_least']) + out['side_mp']
     msgs = kitchen.apply_dish(p, single)
     assert p.mp == kitchen.mp_amount(p, out)
     assert any('MP' in m for m in msgs)
     # A bigger mana pool: the share grows with it.
     p.max_mp, p.mp = 80, 0
-    assert kitchen.mp_amount(p, out) == 20
+    assert kitchen.mp_amount(p, out) == max(round(out['mp_share'] * 80), out['mp_least']) + out['side_mp']
 
 
 def test_a_multi_dish_is_worth_more_than_its_parts_eaten_alone():
     two = kitchen.recipe('dish_094')          # Goblin Gristle + Charybdis Spawn Shank
     one = kitchen.recipe('cook_goblin')
-    assert kitchen.dish_outcome(two)['factor'] == pytest.approx(2 * 1.2)
-    assert kitchen.dish_outcome(one)['factor'] == pytest.approx(1.0)
+    # Each part adds its own strength by lore (kitchen variety, 2026-11-22).
+    rich = kitchen.part_worth
+    assert kitchen.dish_outcome(two)['factor'] == pytest.approx(
+        (rich('goblin_prime') + rich('charybdis_spawn_prime')) * 1.2)
+    assert kitchen.dish_outcome(one)['factor'] == pytest.approx(rich('goblin_prime'))
     assert kitchen.dish_outcome(two)['sp'] > 2 * kitchen.dish_outcome(one)['sp']
 
 
 def test_food_and_forage_add_less_worth_than_a_monster_part():
     r = kitchen.recipe('dish_221')            # goblin + locust + bread + cheese
-    assert kitchen.dish_worth(r) == pytest.approx(1 + 1 + 0.5 + 0.5)
+    rich = kitchen.part_worth
+    assert rich('bread_ration') == rich('hard_cheese') == 0.5
+    assert kitchen.dish_worth(r) == pytest.approx(
+        rich('goblin_prime') + rich('locust_swarmlord_prime') + 0.5 + 0.5)
+    assert min(rich('goblin_prime'), rich('locust_swarmlord_prime')) > 0.5
 
 
 def test_a_legendary_max_mp_has_a_floor_cap_and_no_cap_across_floors():
@@ -681,4 +691,6 @@ def test_journey_save_the_gristle_for_a_dish_two_floors_down():
     assert not any(kitchen.resolve(i.id) in ('goblin_prime', 'charybdis_spawn_prime')
                    for i in g.player.inventory)
     assert g.player.sp > 10
-    assert g.player.has_effect('sustained')
+    # Two parts: only an SP dish of three ingredients or more, or a feast,
+    # leaves the hero Sustained (2026-11-22).
+    assert not g.player.has_effect('sustained')

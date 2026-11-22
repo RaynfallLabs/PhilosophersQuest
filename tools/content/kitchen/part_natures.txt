@@ -1,0 +1,12 @@
+# Parts whose nature is a stat by their creature's lore (kitchen variety, 2026-11-22).
+# Brandon: "check Stat variance for those dishes by level... I see a lot of some, but very few for
+# other stats... players should be able to have enough choices early on; make sure kitchen change
+# addresses that (by lore)". On 3.6.1 a kid on floors 1-5 met DEX parts in 6.5% of the spawn pool
+# and WIS parts in 0.1%. Each part below is a common early kind whose lore fits its stat.
+# The part's single dish teaches the stat; its other dishes keep their own benefits.
+# part id | stat | why
+kobold_prime|INT|Kobolds are cunning trap-makers, and their sorcerers read the old spells.
+giant_frog_prime|WIS|The old toad with a jewel in its head, the toadstone of the folk tales, is the very picture of wisdom.
+myconid_worker_prime|WIS|The myconids share one slow mind through their spores, and remember everything.
+giant_beetle_prime|CON|The beetle's shell turns a blade, and the scarab endures the desert sun.
+zombie_prime|CON|The dead feel no fatigue and never stop walking.
