@@ -1,0 +1,93 @@
+# One step up, part 2: parts of floors 21-40.
+# part key (its id less _prime) | staple | benefit | name | flavour line
+# An HP, MP or Special part keeps its nature; a Stat or SP part is the meal named here.
+
+giant_scorpion|trail_rations|sp|Caravan Claw Roast|The caravans crack the claws with stones and stretch the meat with whatever is in the packs.
+orc_warrior|bread_ration|sp|Warband Trencher|An orc will eat the trencher first, lest another take it.
+redcap|dried_meat|hp|Border-Keep Stew|In the ruined keeps of the Border it is well to eat before the redcap returns.
+sable_serpent|wild_mushroom|dark_vision|Black Serpent Risotto|The rice of the deep is mushroom chopped fine, and the snake blackens all of it.
+spriggan|bread_ration|sp|Spriggan's Stolen Loaf|Spriggans carry off bread from the sill and swell to giants when they are scolded for it.
+wight|bread_ration|sp|Barrow-Gift Loaf|Loaves were laid in the barrow for the dead lord's journey, and he has no further need of them.
+fionn_hound|trail_rations|sp|Bran and Sceolan's Breakfast|The two great hounds of Fionn ran all day behind the deer on less than this.
+hook_horror|wild_mushroom|sp|Echo-Cave Steak|The caps muffle the clicking while it fries.
+hydra|healing_herb|regenerating|Iolaus's Seared Steak|Iolaus seared each neck as it was cut, and only for that reason does the steak stay one.
+star_spawn|wild_mushroom|mp|Far-Star Bisque|The ink spreads over the surface in constellations that are none of ours.
+tengu_warrior|elvish_bread|sp|Tengu's Mountain Roll|The tengu taught swordsmen on the peaks and fed them lightly and often.
+troll|dried_meat|hp|Troll-Bridge Stew|The toll was meat, and it has been paid into the pot.
+behir_lesser|bread_ration|shock_resist|Lightning-Struck Toast|It is done on both sides at once, with a loud report.
+displacer_beast|dried_meat|displacement|Not-Where-It-Looks Pie|Cut a hand's breadth to the left of the pie.
+night_hag|elvish_bread|mp|Nightmare-Drinker's Posset|What the hag rode through other sleepers' dreams to gather, you have in a single cup.
+phase_spider|hard_cheese|displacement|Blinking Quiche|The slices come and go upon the plate, and it is best to be quick.
+sea_dragon_spawn|hearty_stew|mp|Dragon-King's Chowder|The dragon kings of the four seas are said to take their magic in by the bowl.
+black_pudding|bread_ration|hp|Full Dungeon Breakfast|Fried pudding and fried bread, after which the stairs seem much shorter.
+death_mage|healing_herb|mp|Forbidden-Garden Infusion|Necromancers keep gardens too, and they label nothing.
+shadow_demon|trail_rations|dark_vision|Smoke-Shadow Mash|The smoke will not leave the spoon, nor afterwards your eyes.
+strigoi|healing_herb|hp|Vampire-Hunter's Soup|The villages of the Carpathians put every bitter thing they grew into it.
+cyclops|hard_cheese|hp|Polyphemus's Supper|Mutton and cheese were all the Cyclops kept, until certain Greeks came to dine.
+lurker_above|bread_ration|sp|Ceiling-Drop Flatbread|It falls flat on whatever lies below, which is the whole secret of flatbread.
+moss_sentinel|healing_herb|hp|Long-Vigil Broth|Moss has bound wounds for longer than there have been physicians.
+ossuary_horror|wild_mushroom|mp|Charnel-House Chowder|Many skulls went into it, and each remembered something.
+roper|trail_rations|sp|Rope-Walker's Links|The links hang from the rafters on the roper's own strands until they are wanted.
+vrock|dried_meat|sp|Carrion-Dance Barbecue|The vrocks dance in a ring before they feed, but you may skip the dancing.
+vrykolakas|healing_herb|hp|Saturday Grave Broth|On Saturdays the vrykolakas lies still in its grave, and on that day the broth is made.
+weretiger|dried_meat|sp|Striped Hunter's Chops|The stripes are put on with the bars of the grate.
+young_red_dragon|dried_meat|fire_resist|Red Dragon Pepper Steak|It is seasoned from within and needs no flame beneath it.
+bone_devil|hearty_stew|hp|Devil-Bone Braise|A long braise in a good stew will take the spite out of most bones.
+each_uisce|apple|mp|Water-Horse Cider|Even the horse of the loch will come to the shore for an apple.
+flesh_golem|hearty_stew|hp|Stitched-Together Stew|It is made of parts from several suppers, and it lives.
+hill_giant|hearty_stew|sp|Hill Giant's Cauldron|To the giant your whole pot of stew was a spoonful of sauce.
+incubus|trail_rations|sleep_resist|Wakeful Dreamer's Brew|The thief of dreams finds nothing to take from one who does not sleep.
+naga_guardian|elvish_bread|mp|Temple-Offering Bisque|The nagas guard what is given at the shrine and grow wise on the smell of it.
+sluagh|wild_mushroom|mp|West-Window Broth|The host of the unforgiven comes in by western windows, so drink with your back to the east.
+basilisk|healing_herb|save_guard_CON|Basilisk and Rue Pasty|Pliny wrote that only the weasel could master the basilisk, and the weasel trusts its herbs.
+hezrou|wild_mushroom|poison_resist|Toad-and-Toadstool Fritters|One poison is set to watch the other.
+otyugh|healing_herb|poison_resist|Midden-Proof Curry|Whatever an otyugh's stomach has withstood, with enough seasoning yours can also.
+peryton|apple|hp|Peryton and Orchard Roast|The winged stag casts the shadow of a man, but it roasts like venison.
+shambling_mound|wild_mushroom|hp|Compost-Cap Hash|The mound had grown its own mushrooms, and you have only added more.
+dullahan_spawn|dried_meat|fear_immune|Headless Rider's Pasty|It is eaten without looking up, when hooves go by upon the road.
+erlking|elvish_bread|mp|Alder-King's Cordial|The King of the Alders promises flowers and games to the child who sips it.
+gorgon_warrior|hard_cheese|save_guard_CON|Stone-Bull Bake|It sets nearly as hard as its maker, and nothing that eats it sets harder.
+manticore|dried_meat|sp|Spike-Studded Roast|The tail's own spikes hold the strips of meat against the joint.
+nalfeshnee_lesser|apple|hp|Judge's Apple Bake|The great boar sat in judgement on every soul, and he is weighed now against an apple.
+revenant|bread_ration|sp|Oath-Keeper's Sandwich|The dead man walked a hundred leagues to keep his word and never stopped to eat.
+shadow|wild_mushroom|mp|Moon-Shadow Soup|The bowl looks empty until it is held beneath a light.
+void_elemental|elvish_bread|magic_resist|Nothing-Spread Toast|There is nothing on it, spread very thick, and spells slide from that.
+cath_palug|hard_cheese|save_guard_DEX|Monster Cat's Butty|The cat that slew nine score warriors of Anglesey was never once caught by the tail.
+griffin|dried_meat|hp|Griffin-Rider's Roast|The riders feed their mounts on meat and are careful to be seen doing it.
+lesser_death|healing_herb|drain_resist|Reaper's Harvest Porridge|What the scythe cuts green will serve a while against the scythe.
+nue|healing_herb|mp|Sleepless Emperor's Tonic|The nue troubled the emperor's nights until Yorimasa's arrow found it in the cloud.
+stone_golem|wild_mushroom|hp|Golem-Maker's Supper|The carver ate beside the stone for a year before it stood up.
+chimera|trail_rations|fire_resist|Three-Headed Chili|Lion, goat and serpent each insisted on a pepper of its own.
+mind_flayer|elvish_bread|mp|Stolen-Thought Velouté|It is smooth and pale and tastes of things that happened to others.
+wyvern|healing_herb|poison_resist|Wyvern-Sting Tonic|The sting is boiled with the leaves until it has forgotten its purpose.
+adult_blue_dragon|hearty_stew|shock_resist|Desert-Storm Broth|The stew is thinned with rain from the one cloud the dragon allowed.
+bone_colossus|hearty_stew|hp|Colossal Marrow Hotpot|One bone of the colossus is both the pot and the marrow in it.
+bone_golem|hearty_stew|save_guard_CON|Rune-Bound Pottage|The runes that held dead bones together will do as much for living ones.
+clockwork_horror|hard_cheese|searching|Clockmaker's Pasty|A clockmaker looks at every wall as a case with the works behind it.
+glabrezu|trail_rations|mp|Devil's-Bargain Gumbo|The wish was granted as it was spoken, so be careful what you say over the pot.
+marilith_spawn|bread_ration|save_guard_DEX|Six-Handed Sandwich|Six blades never tangle, and for an hour your own two hands will not.
+medusa|healing_herb|hp|Perseus's Mirror Grill|Perseus cooked as he fought, watching the bronze and never the links.
+storm_elemental|elvish_bread|shock_resist|Uncorked-Storm Flambé|The storm is let out over the wafer all at once, and it needs no match.
+stymphalian_bird|dried_meat|sp|Bronze-Rattle Loin|Heracles drove the birds from the marsh with a rattle, and the meat rattles yet.
+void_crawler|hearty_stew|sp|Between-Worlds Stew|Some of it is always somewhere else, so make plenty.
+erinyes_lesser|healing_herb|hp|Kindly Ones' Broth|The Greeks called the Furies kindly, hoping that they would take the hint.
+thunderbird_lesser|trail_rations|shock_resist|Storm-Wing Pilaf|The crackers swell in the broth as thunderheads do over the plains.
+young_black_dragon|apple|acid_resist|Bog-Dragon Crumble|The bile of the bog stews the fruit to shreds beneath the crust.
+aboleth_lesser|wild_mushroom|mp|Drowned-Memory Velouté|It remembers the sea that covered this stone before ever a cook was born.
+camazotz|wild_mushroom|dark_vision|House-of-Bats Polenta|The Hero Twins passed a night in the House of Bats and saw more than they wished.
+dryad_guardian|elvish_bread|regenerating|Dryad's Waybread Salad|Green things of the grove on the pale bread of the road, and both are loath to wither.
+fomorian|hearty_stew|hp|Dagda's Pit Pottage|The Fomorians filled a pit with food to mock the Dagda, and he scraped it clean.
+hell_bovine|hard_cheese|sp|Brimstone Pasture Burger|The pasture was strange and the herd was stranger, but the burger is excellent.
+mohrg|trail_rations|sp|Gallows-Road Bangers|The hanged man walked the road long after, and he never left it hungry.
+vampire|healing_herb|hp|Stake-and-Garlic Grill|The knuckle is staked to the board before it is seasoned, as a precaution.
+clay_golem|apple|hp|Kiln-Fired Bake|The heart of amber runs like syrup when the clay is fired.
+cow_king|bread_ration|hp|Royal Herd Fry-Up|A king's bacon, and fried bread for all his court.
+water_elemental|wild_mushroom|hp|River-Heart Soup|The tide in the jar rises and falls as it simmers.
+earth_elemental|wild_mushroom|sp|Bedrock Bannock|It is ground from the floor of the world and baked upon it.
+stone_giant|elvish_bread|sp|Boulder-Thrower's Links|The giants toss them to one another across the gorge at supper.
+echidna|elvish_bread|hp|Brood-Mother's Hotpot|The mother of monsters had very many mouths to fill.
+yuan_ti_pureblood|healing_herb|mp|Serpent-Temple Tea|The priests of the snake pass one cup down the line, oldest blood first.
+iron_sentinel|trail_rations|sp|Sentry's Night Crackers|They were kept dry in the sentinel's own helm for the change of the watch.
+balor_lesser|dried_meat|fire_resist|Burning-Crown Crackling|The balor wears fire as kings wear gold, and the strips curl in it at once.
+chaos_troll|dried_meat|hp|Two-Faced Troll Links|No two links are the same length, and one of them is looking at you.
+demon_knight|dried_meat|sp|Black-Banner Roast|The knights of the Pit roast beneath their banners on the eve of every war.

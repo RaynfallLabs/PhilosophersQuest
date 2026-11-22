@@ -7989,7 +7989,10 @@ class RenderMixin:
                     + ([(big, self._cook_ink(FP.FADED_TEXT), f)] if big else [])
                     + [("What It Does Now", self._cook_ink(FP.GOLD_BRIGHT), fb)]
                     + [(keep(e), self._cook_ink(FP.SUCCESS_TEXT if ready else FP.BODY_TEXT), f)
-                       for e in now])
+                       for e in now]
+                    # (a meal that would spend the floor's stat lesson says so)
+                    + ([(keep(row['lesson']), self._cook_ink(FP.WARNING_TEXT), f)]
+                       if row.get('lesson') else []))
             good = ([("For Good", self._cook_ink(KT.GOLD_HI), fb)]
                     + [(keep(e), self._cook_ink(FP.GOLD_PALE), f) for e in lasting]) if lasting else []
             flav = [(flavour, self._cook_ink(FP.LORE_BLUE_BODY), f)] if flavour and with_flav else []

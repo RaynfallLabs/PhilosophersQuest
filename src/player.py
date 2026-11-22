@@ -646,7 +646,8 @@ class Player:
         (Brandon, 2026-11-16: "there should be a per floor limit to hp
         gained, but not a max across several floors... that encourages
         cooking"). There is no quality-tier gate (the retired Q3+ gradient
-        is gone); every successful cook adds max HP until the floor's share
+        is gone); every successful cook but plain fare (cooking_rules.json
+        rungs) adds max HP until the floor's share
         is cooked.
 
         Stair-rest heal scales with max HP; reduced on ascent (Death

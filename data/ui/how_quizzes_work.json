@@ -103,10 +103,11 @@
   {
    "heading": "Cooking is how you grow",
    "paragraphs": [
-    "Your maximum HP grows only from meals you cook yourself: up to 5 more on each floor. The Meals line under your HP bar shows how much of this floor's growth you have cooked. Every new floor gives that much room again, with no limit across floors.",
+    "Your maximum HP grows only from meals you cook yourself, up to 5 more on each floor, and never from plain fare. The Meals line under your HP bar shows how much of this floor's growth you have cooked. Every new floor gives that much room again, with no limit across floors.",
     "Every dish has one main use: HP, SP, MP, a stat, or a special power. The cook menu (C) has a tab for each, Left and Right move between them, and it opens on the one you need most: HP when you are hurt, SP when you are hungry, MP when your mana runs low. Each tab shows what you can cook now and what each dish does for you, then the dishes you are building toward, greyed, with the parts still missing, so you know what to hunt. The legendary feasts are marked in gold.",
     "On a dish you are building toward, H hunts for it, and H again stops. While you hunt, what it still needs shows gold under In Sight: a creature whose harvest gives it, or the part itself lying in view, until you hold it. Hunt as many dishes as you like; a dish you cook leaves the hunt.",
     "People are never harvested. The body of a bandit, a knight, a cultist or an elf is searched instead: H takes a little ordinary food from what the person carried, with no question.",
+    "Plain fare is cooked from staples alone: bread, dried meat, hard cheese, apple, trail rations, wild mushroom, healing herb, elvish bread and hearty stew. Any two kinds make a dish. It feeds you better than eating them as they are, but teaches no stat and adds no max HP. One step up, every creature's part has a dish with one staple.",
     "A dish of several parts gives more than the same parts cooked one at a time, and nothing spoils, so a part saved near the top of the dungeon can go into a feast near the bottom. The Kit (K) says what each part you carry is rich in.",
     "A rare find of the dungeon has a dish of its own, which the cook menu shows once you hold it. Cooked, it is gone for good.",
     "A few dishes are cooked to carry: the meal goes into your pack, wrapped, to eat later or to give to someone who has been missing it.",

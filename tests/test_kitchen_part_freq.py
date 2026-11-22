@@ -123,7 +123,9 @@ def test_a_part_no_run_turns_up_is_secret_or_paired_with_common_partners():
 
 
 def test_rule_3_about_a_third_span_depths_mostly_from_an_early_common_part():
-    multis = _multis()
+    # The saved-part rule is the complex dishes'; the two low rungs (2026-11-22)
+    # are cooked from what is to hand, and span nothing by design.
+    multis = {k: v for k, v in _multis().items() if not v.get('rung')}
     cross = [r for r in multis.values() if r.get('cross_depth')]
     assert 0.28 <= len(cross) / len(multis) <= 0.42, (len(cross), len(multis))
     early_common = [r for r in cross if any(_floor(p) <= 20 and _common(p) for p in _parts(r))]

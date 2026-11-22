@@ -150,7 +150,7 @@ QUIRK_HINT = {
     'janus':         "The god of doorways looks both ways at once. Change weapons while the enemy watches.",
     'marius_mule':   "Rome's legionaries carried their own packs down every road. Go deeper heavily laden.",
     'fatted_calf':   "The father kept the best calf back for the day of the great feast. Bring your trophy a long way.",
-    'widows_jar':    "Elijah's widow baked her last flour and oil into bread, and her jar never emptied. Cook with plain fare.",
+    'widows_jar':    "Elijah's widow baked her last flour and oil into bread, and her jar never emptied. Put plain food into your richer dishes.",
     'proteus':       "The Old Man of the Sea changed shape again and again. Try on a great many kinds of armour and rings.",
     'terpsichore':   "The Muse of dance never needed to rehearse. Step out onto the floor cold, and win.",
     'tortoise':      "The hare ran in bursts and slept by the road. The tortoise never once hurried.",

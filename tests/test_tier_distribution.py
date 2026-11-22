@@ -51,8 +51,6 @@ KNOWN_GAPS = {
     'Monster family: serpents': 'lopsided',
     'Monster family: vermin': 'lopsided',
     'Ingredients': 'lopsided',
-    'Dishes: SP': 'lopsided',
-    'Dishes: MP': 'lopsided',
     'Dishes: Stat DEX': 'lopsided',
     'Dishes: Stat PER': 'lopsided',
     'Flavor encounters': 'lopsided',

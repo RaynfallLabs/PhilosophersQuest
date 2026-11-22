@@ -937,12 +937,15 @@ class QuirkSystem:
                             lambda pl: pl.add_effect('poison_resist', -1))
 
     def on_food_eaten(self, quality: int, source_monster: str, bonus_type: str,
-                      ingredient_id: str, parts=()):
+                      ingredient_id: str, parts=(), rung=None):
         """Called when cooked food is eaten. ``parts``: the dish's different
-        ingredients (kitchen.parts), when the caller knows them."""
+        ingredients (kitchen.parts), when the caller knows them; ``rung``:
+        its low rung (kitchen.rung_of), if it is on one."""
         # The Widow's Jar: a dish of two or more parts with plain food in it
-        # (a ration, bread, cheese) or a foraged find, cooked right.
-        if quality > 0 and len(parts or ()) >= 2:
+        # (a ration, bread, cheese) or a foraged find, cooked right. The two
+        # low rungs (plain fare, one part and one staple) don't count: they
+        # would fill the jar by floor 3.
+        if quality > 0 and not rung and len(parts or ()) >= 2:
             try:
                 import kitchen as _kitchen
                 plain = any(_kitchen.part_kind(p) in ('food', 'forage') for p in parts)
@@ -1853,7 +1856,7 @@ _QUIRK_TRIGGER = {
     'janus':         "You drew the weapon at your back 40 times with a foe in sight.",
     'marius_mule':   "You went down the stairs to 10 different floors with a Heavy load or worse.",
     'fatted_calf':   "You carried a boss trophy down to 12 new floors.",
-    'widows_jar':    "You cooked 10 dishes with a ration or a foraged find in them.",
+    'widows_jar':    "You cooked 10 richer dishes with a ration or a foraged find in them, not counting simple fare.",
     'proteus':       "You put on 25 different kinds of gear in one run.",
     'terpsichore':   "You won 3 dance-offs with the Mooble without practising first.",
     'tortoise':      "You won the Underway Run 1 time without a single Sprint.",

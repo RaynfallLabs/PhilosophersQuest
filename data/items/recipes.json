@@ -8088,5 +8088,3697 @@
   "flavor": "Andromachus's antidote, made as Nero's physician made it: viper flesh, cave herbs and moss pounded and bound together to drive venom out.",
   "makes": "potion:theriac",
   "art": "dish_stew_t1_special"
+ },
+ "fare_bread_cheese": {
+  "name": "Bread and Cheese Sandwich",
+  "ingredients": [
+   "bread_ration",
+   "hard_cheese"
+  ],
+  "benefit": "sp",
+  "flavor": "Shepherds have walked from dawn to dusk on no more than this, and wished for nothing better.",
+  "rung": "plain",
+  "art": "dish_bread_t1_sp"
+ },
+ "fare_bread_meat": {
+  "name": "Salt-Meat Sandwich",
+  "ingredients": [
+   "bread_ration",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "The bread softens the meat, and the meat forgives the bread.",
+  "rung": "plain",
+  "art": "dish_bread_t1_sp"
+ },
+ "fare_bread_apple": {
+  "name": "Apple Bread Bake",
+  "ingredients": [
+   "bread_ration",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "Stale bread and sliced apple, baked until the crust is brown and small hurts are forgotten.",
+  "rung": "plain",
+  "art": "dish_roast_t1_hp"
+ },
+ "fare_bread_trail": {
+  "name": "Drover's Dumplings",
+  "ingredients": [
+   "bread_ration",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "Crumbs and rendered fat rolled in the palm, as drovers made them on the long roads.",
+  "rung": "plain",
+  "art": "dish_dumpling_t1_sp"
+ },
+ "fare_bread_mushroom": {
+  "name": "Glow-Cap Toast",
+  "ingredients": [
+   "bread_ration",
+   "wild_mushroom"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "The pale gills still shine upon the bread, and afterwards a little in your eyes.",
+  "rung": "plain",
+  "art": "dish_bread_t1_special"
+ },
+ "fare_bread_herb": {
+  "name": "Yarrow Bread Soup",
+  "ingredients": [
+   "bread_ration",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "Bread soaked soft with the soldier's herb, such as was fed to the wounded.",
+  "rung": "plain",
+  "art": "dish_soup_t1_hp"
+ },
+ "fare_bread_waybread": {
+  "name": "Two Loaves Pudding",
+  "ingredients": [
+   "bread_ration",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "The loaf of Men and the loaf of Elves, steeped in one bowl until neither is proud.",
+  "rung": "plain",
+  "art": "dish_pudding_t1_mp"
+ },
+ "fare_bread_stew": {
+  "name": "Stew in a Trencher",
+  "ingredients": [
+   "bread_ration",
+   "hearty_stew"
+  ],
+  "benefit": "sp",
+  "flavor": "The old halls served stew upon bread, so that a hungry guest might eat the plate.",
+  "rung": "plain",
+  "art": "dish_bread_t1_sp"
+ },
+ "fare_meat_cheese": {
+  "name": "Herdsman's Board",
+  "ingredients": [
+   "dried_meat",
+   "hard_cheese"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "Salt and rind are hard fare, and they make a stomach hard to turn.",
+  "rung": "plain",
+  "art": "dish_platter_t1_special"
+ },
+ "fare_meat_apple": {
+  "name": "Smoked Meat and Apple Skillet",
+  "ingredients": [
+   "dried_meat",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "The fruit softens in the fat and sweetens all that the smoke made bitter.",
+  "rung": "plain",
+  "art": "dish_stirfry_t1_hp"
+ },
+ "fare_meat_trail": {
+  "name": "Pemmican Slices",
+  "ingredients": [
+   "dried_meat",
+   "trail_rations"
+  ],
+  "benefit": "save_guard_DEX",
+  "flavor": "Runners of the northern trails carried meat, fruit and fat pounded into one, and were never slow of foot.",
+  "rung": "plain",
+  "art": "dish_platter_t1_special"
+ },
+ "fare_meat_mushroom": {
+  "name": "Forager's Hash",
+  "ingredients": [
+   "dried_meat",
+   "wild_mushroom"
+  ],
+  "benefit": "hp",
+  "flavor": "Whatever the satchel held and whatever the cave wall grew, chopped small and fried.",
+  "rung": "plain",
+  "art": "dish_stirfry_t1_hp"
+ },
+ "fare_meat_herb": {
+  "name": "Herb-Rubbed Chops",
+  "ingredients": [
+   "dried_meat",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "Bitter leaves are beaten into the meat until both are fit to eat.",
+  "rung": "plain",
+  "art": "dish_steak_t1_hp"
+ },
+ "fare_meat_waybread": {
+  "name": "Wayfarer's Roll",
+  "ingredients": [
+   "dried_meat",
+   "elvish_bread"
+  ],
+  "benefit": "fear_immune",
+  "flavor": "Those who sup on the bread of the Fair Folk walk the dark road with a lighter heart.",
+  "rung": "plain",
+  "art": "dish_bread_t1_special"
+ },
+ "fare_meat_stew": {
+  "name": "Twice-Cooked Pottage",
+  "ingredients": [
+   "dried_meat",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "A pot that was good at noon is better at night with meat shredded into it.",
+  "rung": "plain",
+  "art": "dish_stew_t1_hp"
+ },
+ "fare_cheese_apple": {
+  "name": "Apple and Cheese Bake",
+  "ingredients": [
+   "hard_cheese",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "An old country saying holds that the one without the other is like a kiss without a squeeze.",
+  "rung": "plain",
+  "art": "dish_roast_t1_hp"
+ },
+ "fare_cheese_trail": {
+  "name": "Mountain Fondue",
+  "ingredients": [
+   "hard_cheese",
+   "trail_rations"
+  ],
+  "benefit": "cold_resist",
+  "flavor": "Crackers dipped in melted cheese, as herdsmen eat it when snow has shut the pass.",
+  "rung": "plain",
+  "art": "dish_flambe_t1_special"
+ },
+ "fare_cheese_mushroom": {
+  "name": "Cave-Wheel Skillet",
+  "ingredients": [
+   "hard_cheese",
+   "wild_mushroom"
+  ],
+  "benefit": "hp",
+  "flavor": "The rind crisps, the caps drink the fat, and the pan is wiped clean with a finger.",
+  "rung": "plain",
+  "art": "dish_stirfry_t1_hp"
+ },
+ "fare_cheese_herb": {
+  "name": "Cloister Cheese Board",
+  "ingredients": [
+   "hard_cheese",
+   "healing_herb"
+  ],
+  "benefit": "save_guard_WIS",
+  "flavor": "Monks pressed leaves into their cheeses and rose clear-headed for the prayers of the night.",
+  "rung": "plain",
+  "art": "dish_platter_t1_special"
+ },
+ "fare_cheese_waybread": {
+  "name": "Fair Folk's Cheese Toast",
+  "ingredients": [
+   "hard_cheese",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "An offering often left on the doorstep, and seldom eaten by the one who made it.",
+  "rung": "plain",
+  "art": "dish_bread_t1_mp"
+ },
+ "fare_cheese_stew": {
+  "name": "Cheese-Crust Hotpot",
+  "ingredients": [
+   "hard_cheese",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "The lid is lifted, the cheese is laid on, and the lid is left off until it bubbles.",
+  "rung": "plain",
+  "art": "dish_stew_t1_hp"
+ },
+ "fare_apple_trail": {
+  "name": "Pathfinder's Apple Brittle",
+  "ingredients": [
+   "apple",
+   "trail_rations"
+  ],
+  "benefit": "searching",
+  "flavor": "Scouts suck on it slowly and miss very little along the way.",
+  "rung": "plain",
+  "art": "dish_fritter_t1_special"
+ },
+ "fare_apple_mushroom": {
+  "name": "Forager's Relish",
+  "ingredients": [
+   "apple",
+   "wild_mushroom"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "A sharp relish of the kind old foragers trusted to settle a doubtful mushroom.",
+  "rung": "plain",
+  "art": "dish_pickle_t1_special"
+ },
+ "fare_apple_herb": {
+  "name": "Physic-Orchard Broth",
+  "ingredients": [
+   "apple",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "The apple is for the patient's tongue and the leaf is for the wound.",
+  "rung": "plain",
+  "art": "dish_soup_t1_hp"
+ },
+ "fare_apple_waybread": {
+  "name": "Elf-Road Apple Pudding",
+  "ingredients": [
+   "apple",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "It tastes of an orchard that is on no map.",
+  "rung": "plain",
+  "art": "dish_pudding_t1_mp"
+ },
+ "fare_apple_stew": {
+  "name": "Esau's Apple Pot",
+  "ingredients": [
+   "apple",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "Esau would have asked no birthright back for a bowl like this one.",
+  "rung": "plain",
+  "art": "dish_stew_t1_hp"
+ },
+ "fare_trail_mushroom": {
+  "name": "Watchman's Fritters",
+  "ingredients": [
+   "trail_rations",
+   "wild_mushroom"
+  ],
+  "benefit": "warning",
+  "flavor": "They are eaten one at a time through the long watch, and no watch has slept on them.",
+  "rung": "plain",
+  "art": "dish_fritter_t1_special"
+ },
+ "fare_trail_herb": {
+  "name": "Long-March Porridge",
+  "ingredients": [
+   "trail_rations",
+   "healing_herb"
+  ],
+  "benefit": "sp",
+  "flavor": "Grey, thick and bitter, and it will carry you a league past where you meant to stop.",
+  "rung": "plain",
+  "art": "dish_porridge_t1_sp"
+ },
+ "fare_trail_waybread": {
+  "name": "Far-Rider's Oatcakes",
+  "ingredients": [
+   "trail_rations",
+   "elvish_bread"
+  ],
+  "benefit": "searching",
+  "flavor": "The outriders of old carried such cakes, and it was the outriders who found the hidden fords.",
+  "rung": "plain",
+  "art": "dish_bread_t1_special"
+ },
+ "fare_trail_stew": {
+  "name": "Winter-March Hotpot",
+  "ingredients": [
+   "trail_rations",
+   "hearty_stew"
+  ],
+  "benefit": "cold_resist",
+  "flavor": "The fat rises to the top and stands between a traveller and the frost.",
+  "rung": "plain",
+  "art": "dish_stew_t1_special"
+ },
+ "fare_mushroom_herb": {
+  "name": "Hedge-Witch Tea",
+  "ingredients": [
+   "wild_mushroom",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "Every village had a woman who brewed it, and every village came to her after dark.",
+  "rung": "plain",
+  "art": "dish_drink_t1_mp"
+ },
+ "fare_mushroom_waybread": {
+  "name": "Fairy-Ring Broth",
+  "ingredients": [
+   "wild_mushroom",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "Where the caps grow in a circle the Fair Folk have danced, and something of it is left in the pot.",
+  "rung": "plain",
+  "art": "dish_soup_t1_mp"
+ },
+ "fare_mushroom_stew": {
+  "name": "Deep-Cellar Stew",
+  "ingredients": [
+   "wild_mushroom",
+   "hearty_stew"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "It was made by miners who had long ago given up asking for the sun.",
+  "rung": "plain",
+  "art": "dish_stew_t1_special"
+ },
+ "fare_herb_waybread": {
+  "name": "Elf-Leaf Tisane",
+  "ingredients": [
+   "healing_herb",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "The wafer melts into the leaves and the cup smells of rain on a green hill.",
+  "rung": "plain",
+  "art": "dish_drink_t1_mp"
+ },
+ "fare_herb_stew": {
+  "name": "Apothecary's Crock",
+  "ingredients": [
+   "healing_herb",
+   "hearty_stew"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "The apothecary kept one pot for his supper and his antidotes, and lived to a great age.",
+  "rung": "plain",
+  "art": "dish_stew_t1_special"
+ },
+ "fare_waybread_stew": {
+  "name": "Waybread Stew",
+  "ingredients": [
+   "elvish_bread",
+   "hearty_stew"
+  ],
+  "benefit": "mp",
+  "flavor": "One crumb of the pale loaf, and a common stew remembers older songs.",
+  "rung": "plain",
+  "art": "dish_stew_t1_mp"
+ },
+ "fare_bread_cheese_meat": {
+  "name": "Ploughman's Breakfast",
+  "ingredients": [
+   "bread_ration",
+   "hard_cheese",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "Bread, cheese and salt meat fried together, the meal on which the fields of the world were turned.",
+  "rung": "plain",
+  "art": "dish_steak_t1_hp"
+ },
+ "fare_bread_cheese_apple": {
+  "name": "Scholar's Luncheon Plate",
+  "ingredients": [
+   "bread_ration",
+   "hard_cheese",
+   "apple"
+  ],
+  "benefit": "mp",
+  "flavor": "It can be eaten with one hand while the other turns the pages.",
+  "rung": "plain",
+  "art": "dish_platter_t1_mp"
+ },
+ "fare_bread_meat_apple": {
+  "name": "Campaigner's Sandwich",
+  "ingredients": [
+   "bread_ration",
+   "dried_meat",
+   "apple"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "Old soldiers ate such things through ten years of sieges and were seldom sick.",
+  "rung": "plain",
+  "art": "dish_bread_t1_special"
+ },
+ "fare_cheese_mushroom_herb": {
+  "name": "Hermit's Skillet",
+  "ingredients": [
+   "hard_cheese",
+   "wild_mushroom",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "All that the hermit owned went into the pan, and he shared it with whoever knocked.",
+  "rung": "plain",
+  "art": "dish_stirfry_t1_hp"
+ },
+ "fare_meat_trail_mushroom": {
+  "name": "Huntsman's Skewers",
+  "ingredients": [
+   "dried_meat",
+   "trail_rations",
+   "wild_mushroom"
+  ],
+  "benefit": "searching",
+  "flavor": "They are turned over the coals while the eye goes on reading the ground for tracks.",
+  "rung": "plain",
+  "art": "dish_skewer_t1_special"
+ },
+ "fare_apple_herb_waybread": {
+  "name": "Enchanter's Cordial",
+  "ingredients": [
+   "apple",
+   "healing_herb",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "Pressed, steeped and strained through a sleeve, and then the old words come easily.",
+  "rung": "plain",
+  "art": "dish_drink_t1_mp"
+ },
+ "fare_meat_trail_stew": {
+  "name": "Quartermaster's Stew",
+  "ingredients": [
+   "dried_meat",
+   "trail_rations",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "A careful quartermaster wastes nothing, and his company is slow to fall.",
+  "rung": "plain",
+  "art": "dish_stew_t1_hp"
+ },
+ "fare_mushroom_waybread_stew": {
+  "name": "Deep-Road Ragout",
+  "ingredients": [
+   "wild_mushroom",
+   "elvish_bread",
+   "hearty_stew"
+  ],
+  "benefit": "mp",
+  "flavor": "The wanderers of the deep roads made it where no other fire burned for miles.",
+  "rung": "plain",
+  "art": "dish_stew_t1_mp"
+ },
+ "fare_bread_cheese_meat_apple": {
+  "name": "Harvest-Home Supper",
+  "ingredients": [
+   "bread_ration",
+   "hard_cheese",
+   "dried_meat",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "The whole larder on one board, as it was set out when the last sheaf came in.",
+  "rung": "plain",
+  "art": "dish_stew_t2_hp"
+ },
+ "fare_bread_meat_trail_stew": {
+  "name": "Muster Hotpot",
+  "ingredients": [
+   "bread_ration",
+   "dried_meat",
+   "trail_rations",
+   "hearty_stew"
+  ],
+  "benefit": "sp",
+  "flavor": "When the banners were called in, every man threw what he carried into the one pot.",
+  "rung": "plain",
+  "art": "dish_stew_t2_sp"
+ },
+ "fare_mushroom_herb_waybread_stew": {
+  "name": "Elven Hearth Soup",
+  "ingredients": [
+   "wild_mushroom",
+   "healing_herb",
+   "elvish_bread",
+   "hearty_stew"
+  ],
+  "benefit": "mp",
+  "flavor": "They say the hearths beneath the hill have had this soup upon them for a thousand years.",
+  "rung": "plain",
+  "art": "dish_soup_t2_mp"
+ },
+ "fare_trail_meat_mushroom_herb": {
+  "name": "Field-Surgeon's Pie",
+  "ingredients": [
+   "trail_rations",
+   "dried_meat",
+   "wild_mushroom",
+   "healing_herb"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "A crust of crushed crackers over all that a field surgeon dared to prescribe.",
+  "rung": "plain",
+  "art": "dish_pie_t2_special"
+ },
+ "fare_meat_herb_waybread_stew": {
+  "name": "Wounded Company's Supper",
+  "ingredients": [
+   "dried_meat",
+   "healing_herb",
+   "elvish_bread",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "It was ladled first to those who lay on the straw and last to those who still stood.",
+  "rung": "plain",
+  "art": "dish_stew_t2_hp"
+ },
+ "step_acid_blob": {
+  "name": "Sour-Curd Pickle",
+  "ingredients": [
+   "acid_blob_prime",
+   "hard_cheese"
+  ],
+  "benefit": "acid_resist",
+  "flavor": "Cheese is the one thing in the larder that the blob's bile improves.",
+  "rung": "step",
+  "art": "dish_pickle_t1_special"
+ },
+ "step_assassin_vine": {
+  "name": "Vine and Yarrow Sauté",
+  "ingredients": [
+   "assassin_vine_prime",
+   "healing_herb"
+  ],
+  "benefit": "regenerating",
+  "flavor": "The strangler grows back wherever it is cut, and lends the knack for an hour.",
+  "rung": "step",
+  "art": "dish_stirfry_t1_special"
+ },
+ "step_bat": {
+  "name": "Echo-Finder's Kebabs",
+  "ingredients": [
+   "bat_prime",
+   "trail_rations"
+  ],
+  "benefit": "searching",
+  "flavor": "The bat finds every crack by its cry, and you begin to hear where walls are hollow.",
+  "rung": "step",
+  "art": "dish_skewer_t1_special"
+ },
+ "step_boggart": {
+  "name": "Hearth-Spirit's Pottage",
+  "ingredients": [
+   "boggart_prime",
+   "bread_ration"
+  ],
+  "benefit": "hp",
+  "flavor": "Wise households left a bowl of this by the fire, and the boggart broke fewer bones.",
+  "rung": "step",
+  "art": "dish_stew_t1_hp"
+ },
+ "step_bullywug": {
+  "name": "Frog-Chief's Apple Confit",
+  "ingredients": [
+   "bullywug_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "The marsh chiefs eat fruit only at feasts, and stolen fruit by preference.",
+  "rung": "step",
+  "art": "dish_leg_t1_hp"
+ },
+ "step_burning_skeleton": {
+  "name": "Cinder-Marrow Toast",
+  "ingredients": [
+   "burning_skeleton_prime",
+   "bread_ration"
+  ],
+  "benefit": "fire_resist",
+  "flavor": "The marrow toasts the bread without any help from your fire.",
+  "rung": "step",
+  "art": "dish_bread_t1_special"
+ },
+ "step_cobra": {
+  "name": "Charmer's Skewers",
+  "ingredients": [
+   "cobra_prime",
+   "healing_herb"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "The snake-charmers of the bazaar chew bitter leaf before they lift the lid of the basket.",
+  "rung": "step",
+  "art": "dish_skewer_t1_special"
+ },
+ "step_death_dog": {
+  "name": "Two-Headed Dog's Breakfast",
+  "ingredients": [
+   "death_dog_prime",
+   "trail_rations"
+  ],
+  "benefit": "hp",
+  "flavor": "One head had the meat and the other the crackers, and now you have both.",
+  "rung": "step",
+  "art": "dish_steak_t1_hp"
+ },
+ "step_dretch": {
+  "name": "Slop-Bucket Bake",
+  "ingredients": [
+   "dretch_prime",
+   "bread_ration"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "Whoever has kept down a dretch's leavings has little to fear from worse poisons.",
+  "rung": "step",
+  "art": "dish_roast_t1_special"
+ },
+ "step_fire_beetle": {
+  "name": "Lantern-Leg Skewers",
+  "ingredients": [
+   "fire_beetle_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "Glowing leg and glowing cap by turns along the stick, like lamps along a street.",
+  "rung": "step",
+  "art": "dish_skewer_t1_special"
+ },
+ "step_frost_skeleton": {
+  "name": "Frosted Apple Jelly",
+  "ingredients": [
+   "frost_skeleton_prime",
+   "apple"
+  ],
+  "benefit": "cold_resist",
+  "flavor": "The rime sets it as hard and clear as a pond in January.",
+  "rung": "step",
+  "art": "dish_jelly_t1_special"
+ },
+ "step_gelatinous_cube": {
+  "name": "Cube-Set Apple Jelly",
+  "ingredients": [
+   "gelatinous_cube_prime",
+   "apple"
+  ],
+  "benefit": "acid_resist",
+  "flavor": "Whatever is dropped into the cube hangs there, so you dropped in an apple.",
+  "rung": "step",
+  "art": "dish_jelly_t1_special"
+ },
+ "step_giant_beetle": {
+  "name": "Shell-Backed Cheese Bake",
+  "ingredients": [
+   "giant_beetle_prime",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "The shell serves for the dish, and the cheese for the lid.",
+  "rung": "step",
+  "art": "dish_roast_t1_hp"
+ },
+ "step_giant_frog": {
+  "name": "Toadstool Frog Soup",
+  "ingredients": [
+   "giant_frog_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "Witches have always known that frogs and toadstools belong to one pot.",
+  "rung": "step",
+  "art": "dish_soup_t1_mp"
+ },
+ "step_giant_lizard": {
+  "name": "Lizard and Salt-Meat Hash",
+  "ingredients": [
+   "giant_lizard_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "The fresh tail and the old strips are chopped until you cannot tell them apart.",
+  "rung": "step",
+  "art": "dish_stirfry_t1_hp"
+ },
+ "step_giant_mantis": {
+  "name": "Mantis Apple Glaze",
+  "ingredients": [
+   "giant_mantis_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "It holds its arms as if at prayer, and it is lacquered sweet upon the coals.",
+  "rung": "step",
+  "art": "dish_stirfry_t1_hp"
+ },
+ "step_giant_rat": {
+  "name": "Rat and Cheese Hash",
+  "ingredients": [
+   "giant_rat_prime",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "The rat spent its whole life looking for the cheese, and here at last they meet.",
+  "rung": "step",
+  "art": "dish_stirfry_t1_hp"
+ },
+ "step_gravehound": {
+  "name": "Churchyard Hound Bake",
+  "ingredients": [
+   "gravehound_prime",
+   "dried_meat"
+  ],
+  "benefit": "searching",
+  "flavor": "The hound found every bone that was ever buried, and for an hour so will you.",
+  "rung": "step",
+  "art": "dish_roast_t1_special"
+ },
+ "step_grid_bug": {
+  "name": "Spark-Cap Tea",
+  "ingredients": [
+   "grid_bug_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The cup crackles softly as it cools.",
+  "rung": "step",
+  "art": "dish_drink_t1_mp"
+ },
+ "step_hollow_one": {
+  "name": "Hollow Marrow Bread Soup",
+  "ingredients": [
+   "hollow_one_prime",
+   "bread_ration"
+  ],
+  "benefit": "hp",
+  "flavor": "There was little inside the creature, so the bread must fill the bowl.",
+  "rung": "step",
+  "art": "dish_soup_t1_hp"
+ },
+ "step_hugin_raven": {
+  "name": "Thought and Memory Plate",
+  "ingredients": [
+   "hugin_raven_prime",
+   "trail_rations"
+  ],
+  "benefit": "mp",
+  "flavor": "Odin sent out Thought each morning, and feared for Memory more.",
+  "rung": "step",
+  "art": "dish_platter_t1_mp"
+ },
+ "step_jiangshi": {
+  "name": "Talisman-Paper Tisane",
+  "ingredients": [
+   "jiangshi_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "The priest's paper is steeped along with the leaves, until the ink runs into the cup.",
+  "rung": "step",
+  "art": "dish_drink_t1_mp"
+ },
+ "step_lizardfolk": {
+  "name": "Marsh-Hunter's Ribs",
+  "ingredients": [
+   "lizardfolk_prime",
+   "trail_rations"
+  ],
+  "benefit": "hp",
+  "flavor": "Crackers are pounded to a crust on the ribs, after the custom of the marsh villages.",
+  "rung": "step",
+  "art": "dish_leg_t1_hp"
+ },
+ "step_myconid_worker": {
+  "name": "Mushroom-Folk Skillet",
+  "ingredients": [
+   "myconid_worker_prime",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "The myconids keep no cows and would be greatly troubled by the smell of this.",
+  "rung": "step",
+  "art": "dish_stirfry_t1_hp"
+ },
+ "step_pixie_swarm": {
+  "name": "Pixie-Dusted Apple Pudding",
+  "ingredients": [
+   "pixie_swarm_prime",
+   "apple"
+  ],
+  "benefit": "mp",
+  "flavor": "Each spoonful lifts a finger's breadth from the bowl before you catch it.",
+  "rung": "step",
+  "art": "dish_pudding_t1_mp"
+ },
+ "step_poltergeist": {
+  "name": "Table-Rapping Toast",
+  "ingredients": [
+   "poltergeist_prime",
+   "bread_ration"
+  ],
+  "benefit": "mp",
+  "flavor": "It leaps twice on the plate, and is delicious.",
+  "rung": "step",
+  "art": "dish_bread_t1_mp"
+ },
+ "step_rot_grub_swarm": {
+  "name": "Barber-Surgeon's Grub Broth",
+  "ingredients": [
+   "rot_grub_swarm_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "Army surgeons set grubs to clean a wound, and the thrifty ones made broth after.",
+  "rung": "step",
+  "art": "dish_soup_t1_hp"
+ },
+ "step_sea_snake": {
+  "name": "Tide-Cave Snake Soup",
+  "ingredients": [
+   "sea_snake_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "hp",
+  "flavor": "The caps of the sea-caves are salt already, and the snake needs no other seasoning.",
+  "rung": "step",
+  "art": "dish_soup_t1_hp"
+ },
+ "step_stirge_swarm": {
+  "name": "Blood-Debt Broth",
+  "ingredients": [
+   "stirge_swarm_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "They drew it from you by the cupful, and you are taking it back.",
+  "rung": "step",
+  "art": "dish_soup_t1_hp"
+ },
+ "step_yellow_mold": {
+  "name": "Veined-Cheese Toast",
+  "ingredients": [
+   "yellow_mold_prime",
+   "hard_cheese"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "Cheesemakers learned long ago that some molds are friends, and how to befriend the others.",
+  "rung": "step",
+  "art": "dish_bread_t1_special"
+ },
+ "step_zombie": {
+  "name": "Cheese-Stuffed Marrowbones",
+  "ingredients": [
+   "zombie_prime",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "Split lengthwise, filled to the brim and browned until the cheese runs down the sides.",
+  "rung": "step",
+  "art": "dish_leg_t1_hp"
+ },
+ "step_blink_dog": {
+  "name": "Here-and-There Chops",
+  "ingredients": [
+   "blink_dog_prime",
+   "dried_meat"
+  ],
+  "benefit": "save_guard_DEX",
+  "flavor": "They are never quite where the fork comes down, and nor will you be.",
+  "rung": "step",
+  "art": "dish_steak_t1_special"
+ },
+ "step_bone_witch": {
+  "name": "Wand-Bone Cauldron",
+  "ingredients": [
+   "bone_witch_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "Three times stirred against the sun, and the caps rise to the top in a ring.",
+  "rung": "step",
+  "art": "dish_stew_t1_mp"
+ },
+ "step_changeling": {
+  "name": "Cradle-Swap Bread",
+  "ingredients": [
+   "changeling_prime",
+   "bread_ration"
+  ],
+  "benefit": "displacement",
+  "flavor": "It was left in the cradle in place of something else, and is still not quite where it seems.",
+  "rung": "step",
+  "art": "dish_bread_t1_special"
+ },
+ "step_crystal_ooze": {
+  "name": "Crystal-Press Cider",
+  "ingredients": [
+   "crystal_ooze_prime",
+   "apple"
+  ],
+  "benefit": "mp",
+  "flavor": "The ooze strains the juice as clear as glass and leaves a shimmer at the bottom.",
+  "rung": "step",
+  "art": "dish_drink_t1_mp"
+ },
+ "step_darkmantle": {
+  "name": "Cave-Roof Steak",
+  "ingredients": [
+   "darkmantle_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "Both grew on the ceiling in utter dark, and saw well enough there.",
+  "rung": "step",
+  "art": "dish_steak_t1_special"
+ },
+ "step_gas_spore": {
+  "name": "Spore-Risen Bake",
+  "ingredients": [
+   "gas_spore_prime",
+   "bread_ration"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "The loaf swells to twice its size and must on no account be pricked near a flame.",
+  "rung": "step",
+  "art": "dish_roast_t1_special"
+ },
+ "step_giant_centipede": {
+  "name": "Hundred-Boot Hash",
+  "ingredients": [
+   "giant_centipede_prime",
+   "trail_rations"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "A hundred legs and the venom of two jaws, and the marching fare masters both.",
+  "rung": "step",
+  "art": "dish_stirfry_t1_special"
+ },
+ "step_gibbering_mouther": {
+  "name": "Babbler's Cheese Pudding",
+  "ingredients": [
+   "gibbering_mouther_prime",
+   "hard_cheese"
+  ],
+  "benefit": "mp",
+  "flavor": "It mutters while it bakes, and some of the words are spells.",
+  "rung": "step",
+  "art": "dish_pudding_t1_mp"
+ },
+ "step_goblin_king": {
+  "name": "Goblin-Court Bangers",
+  "ingredients": [
+   "goblin_king_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "His Majesty had apples at every banquet, for he had robbed every orchard within a day's ride.",
+  "rung": "step",
+  "art": "dish_sausage_t1_hp"
+ },
+ "step_homunculus": {
+  "name": "Flask-Born Syllabub",
+  "ingredients": [
+   "homunculus_prime",
+   "trail_rations"
+  ],
+  "benefit": "mp",
+  "flavor": "The alchemist fed his little man on crumbs and fat, and wondered that he grew so clever.",
+  "rung": "step",
+  "art": "dish_pudding_t1_mp"
+ },
+ "step_kobold": {
+  "name": "Trapsetter's Butty",
+  "ingredients": [
+   "kobold_prime",
+   "bread_ration"
+  ],
+  "benefit": "save_guard_DEX",
+  "flavor": "Those who set snares for a living learn to snatch a foot back before the wire closes.",
+  "rung": "step",
+  "art": "dish_bread_t1_special"
+ },
+ "step_leprechaun": {
+  "name": "Cobbler's Posset",
+  "ingredients": [
+   "leprechaun_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The fairy cobbler drinks it at his last, seated on the largest cap.",
+  "rung": "step",
+  "art": "dish_drink_t1_mp"
+ },
+ "step_ochre_jelly": {
+  "name": "Ochre Apple Glaze",
+  "ingredients": [
+   "ochre_jelly_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "It divides neatly into two helpings under the knife.",
+  "rung": "step",
+  "art": "dish_stirfry_t1_hp"
+ },
+ "step_puca": {
+  "name": "Samhain Compote",
+  "ingredients": [
+   "puca_prime",
+   "apple"
+  ],
+  "benefit": "displacement",
+  "flavor": "After Samhain the puca spoils whatever fruit is left on the bough, unless it is cooked first.",
+  "rung": "step",
+  "art": "dish_pickle_t1_special"
+ },
+ "step_rust_monster": {
+  "name": "Iron-Pot Stew of Rust",
+  "ingredients": [
+   "rust_monster_prime",
+   "hearty_stew"
+  ],
+  "benefit": "acid_resist",
+  "flavor": "The pot will not survive it, and your stomach will.",
+  "rung": "step",
+  "art": "dish_stew_t1_special"
+ },
+ "step_shade": {
+  "name": "Gloom-and-Glow Jelly",
+  "ingredients": [
+   "shade_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "A little light is shut up in a great deal of shadow, and both tremble on the spoon.",
+  "rung": "step",
+  "art": "dish_jelly_t1_special"
+ },
+ "step_skeleton": {
+  "name": "Rattling Bones Broth",
+  "ingredients": [
+   "skeleton_prime",
+   "dried_meat"
+  ],
+  "benefit": "fear_immune",
+  "flavor": "A skeleton has nothing left to be afraid for, and the meat does not change its mind.",
+  "rung": "step",
+  "art": "dish_soup_t1_special"
+ },
+ "step_violet_fungus": {
+  "name": "Violet Dream Sauté",
+  "ingredients": [
+   "violet_fungus_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The cousins are fried side by side, and your thoughts turn faintly purple.",
+  "rung": "step",
+  "art": "dish_stirfry_t1_mp"
+ },
+ "step_will_o_wisp": {
+  "name": "Marsh-Light Soup",
+  "ingredients": [
+   "will_o_wisp_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "It glimmers at you from the bowl as though it would have you follow.",
+  "rung": "step",
+  "art": "dish_soup_t1_mp"
+ },
+ "step_wood_golem": {
+  "name": "Sap and Leaf Broth",
+  "ingredients": [
+   "wood_golem_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "Oak-sap closes the bark of the tree, and will serve as well for skin.",
+  "rung": "step",
+  "art": "dish_soup_t1_hp"
+ },
+ "step_ba_spirit": {
+  "name": "Soul-Bird Offering Dumplings",
+  "ingredients": [
+   "ba_spirit_prime",
+   "bread_ration"
+  ],
+  "benefit": "mp",
+  "flavor": "The Egyptians set bread at the tomb door so that the soul-bird would not go hungry.",
+  "rung": "step",
+  "art": "dish_dumpling_t1_mp"
+ },
+ "step_carbuncle": {
+  "name": "Jewel-Brow Platter",
+  "ingredients": [
+   "carbuncle_prime",
+   "hard_cheese"
+  ],
+  "benefit": "mp",
+  "flavor": "The red stone lights the table, and the cheese sweats a little beneath its stare.",
+  "rung": "step",
+  "art": "dish_platter_t1_mp"
+ },
+ "step_fetch": {
+  "name": "Double-Walker's Crackers",
+  "ingredients": [
+   "fetch_prime",
+   "trail_rations"
+  ],
+  "benefit": "warning",
+  "flavor": "To meet your own double is a warning, and to eat with it a clearer one.",
+  "rung": "step",
+  "art": "dish_bread_t1_special"
+ },
+ "step_ethereal_filcher": {
+  "name": "Pickpocket's Cheese Board",
+  "ingredients": [
+   "ethereal_filcher_prime",
+   "hard_cheese"
+  ],
+  "benefit": "searching",
+  "flavor": "Count the slices before you begin and again when you are done.",
+  "rung": "step",
+  "art": "dish_platter_t1_special"
+ },
+ "step_crypt_thing": {
+  "name": "Crypt-Cellar Roast",
+  "ingredients": [
+   "crypt_thing_prime",
+   "dried_meat"
+  ],
+  "benefit": "mp",
+  "flavor": "The crypt keeps meat very well, and whatever sits in the crypt has kept it company.",
+  "rung": "step",
+  "art": "dish_roast_t1_mp"
+ },
+ "step_goblin": {
+  "name": "Goblin Cheese Grill",
+  "ingredients": [
+   "goblin_prime",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "Goblins steal cheese from every farm they pass, and gristle wants something that melts.",
+  "rung": "step",
+  "art": "dish_steak_t1_hp"
+ },
+ "step_grave_guardian": {
+  "name": "Grave-Watch Posset",
+  "ingredients": [
+   "grave_guardian_prime",
+   "healing_herb"
+  ],
+  "benefit": "save_guard_WIS",
+  "flavor": "The watchers of tombs drink it at midnight and are not moved by any voice.",
+  "rung": "step",
+  "art": "dish_drink_t1_special"
+ },
+ "step_hecate_hound": {
+  "name": "Crossroads Supper",
+  "ingredients": [
+   "hecate_hound_prime",
+   "bread_ration"
+  ],
+  "benefit": "mp",
+  "flavor": "At each new moon a supper was left for Hecate where three roads meet.",
+  "rung": "step",
+  "art": "dish_stew_t1_mp"
+ },
+ "step_giant_wasp": {
+  "name": "Windfall Wasp Jam",
+  "ingredients": [
+   "giant_wasp_prime",
+   "apple"
+  ],
+  "benefit": "hasted",
+  "flavor": "Wasps come angry and drunken out of fallen apples, and go very fast.",
+  "rung": "step",
+  "art": "dish_pickle_t1_special"
+ },
+ "step_kuo_toa": {
+  "name": "Brine-and-Leaf Shanks",
+  "ingredients": [
+   "kuo_toa_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "The leaves draw out the salt, and the salt draws out the ache.",
+  "rung": "step",
+  "art": "dish_leg_t1_hp"
+ },
+ "step_mud_crawler": {
+  "name": "Washed-Leg Country Skillet",
+  "ingredients": [
+   "mud_crawler_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "Scrubbed three times and fried with fruit, it passes for farmhouse fare.",
+  "rung": "step",
+  "art": "dish_stirfry_t1_hp"
+ },
+ "step_piercer": {
+  "name": "Look-Up Fritters",
+  "ingredients": [
+   "piercer_prime",
+   "hard_cheese"
+  ],
+  "benefit": "warning",
+  "flavor": "They drip from the spoon just as the piercer drops, and you will glance at every ceiling.",
+  "rung": "step",
+  "art": "dish_fritter_t1_special"
+ },
+ "step_bugbear": {
+  "name": "Apple-Fried Bangers",
+  "ingredients": [
+   "bugbear_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "The bugbear would never have eaten the fruit, which is one more reason to.",
+  "rung": "step",
+  "art": "dish_sausage_t1_hp"
+ },
+ "step_carrion_crawler": {
+  "name": "Iron-Belly Skewers",
+  "ingredients": [
+   "carrion_crawler_prime",
+   "trail_rations"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "A stomach that can keep this down will keep down nearly anything.",
+  "rung": "step",
+  "art": "dish_skewer_t1_special"
+ },
+ "step_huecuva": {
+  "name": "Penitent's Bread Soup",
+  "ingredients": [
+   "huecuva_prime",
+   "bread_ration"
+  ],
+  "benefit": "save_guard_WIS",
+  "flavor": "Bread and water was the penance, and the false monk never finished his.",
+  "rung": "step",
+  "art": "dish_soup_t1_special"
+ },
+ "step_satyr_warrior": {
+  "name": "Revel Cider",
+  "ingredients": [
+   "satyr_warrior_prime",
+   "apple"
+  ],
+  "benefit": "mp",
+  "flavor": "The satyrs tread it with their hooves and sing over the vat until it answers.",
+  "rung": "step",
+  "art": "dish_drink_t1_mp"
+ },
+ "step_troglodyte": {
+  "name": "Musk-Breaker's Relish",
+  "ingredients": [
+   "troglodyte_prime",
+   "healing_herb"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "So much bitter leaf will master the stench, and most lesser venoms with it.",
+  "rung": "step",
+  "art": "dish_pickle_t1_special"
+ },
+ "step_gnoll": {
+  "name": "Laughing-Pack Barbecue",
+  "ingredients": [
+   "gnoll_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "The pack falls to all at once, and you had better do the same.",
+  "rung": "step",
+  "art": "dish_roast_t1_hp"
+ },
+ "step_grick": {
+  "name": "Rock-Crevice Ragout",
+  "ingredients": [
+   "grick_prime",
+   "hearty_stew"
+  ],
+  "benefit": "mp",
+  "flavor": "The tentacles feel their way around the pot long after the lid is on.",
+  "rung": "step",
+  "art": "dish_stew_t1_mp"
+ },
+ "step_harpy": {
+  "name": "Phineus's Supper",
+  "ingredients": [
+   "harpy_prime",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "The harpies snatched every meal of blind King Phineus, and this one is taken back for him.",
+  "rung": "step",
+  "art": "dish_stew_t1_hp"
+ },
+ "step_mimic": {
+  "name": "Looks-Like-Cheese Board",
+  "ingredients": [
+   "mimic_prime",
+   "hard_cheese"
+  ],
+  "benefit": "searching",
+  "flavor": "One of the slices is not cheese, and you will learn to look closely.",
+  "rung": "step",
+  "art": "dish_platter_t1_special"
+ },
+ "step_rock_python": {
+  "name": "Coiled Python Hotpot",
+  "ingredients": [
+   "rock_python_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "The joint lies curled around the pot as it once lay around the goats.",
+  "rung": "step",
+  "art": "dish_stew_t1_hp"
+ },
+ "step_shield_guardian": {
+  "name": "Warding Loaf",
+  "ingredients": [
+   "shield_guardian_prime",
+   "bread_ration"
+  ],
+  "benefit": "shielded",
+  "flavor": "The core is baked at the heart of the loaf, and the crust is very hard to break.",
+  "rung": "step",
+  "art": "dish_bread_t1_special"
+ },
+ "step_wererat": {
+  "name": "Rat-Catcher's Rashers",
+  "ingredients": [
+   "wererat_prime",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "The bait and the catch are fried together, for a rat-catcher wastes nothing.",
+  "rung": "step",
+  "art": "dish_sausage_t1_hp"
+ },
+ "step_wolf_pack_leader": {
+  "name": "Pack-Trail Grill",
+  "ingredients": [
+   "wolf_pack_leader_prime",
+   "trail_rations"
+  ],
+  "benefit": "hp",
+  "flavor": "The leader eats first, and today that is you.",
+  "rung": "step",
+  "art": "dish_steak_t1_hp"
+ },
+ "step_arachne": {
+  "name": "Arachne's Knotted Dumplings",
+  "ingredients": [
+   "arachne_prime",
+   "bread_ration"
+  ],
+  "benefit": "mp",
+  "flavor": "She challenged Athena at the loom, and even her dumplings are tied without a fault.",
+  "rung": "step",
+  "art": "dish_dumpling_t1_mp"
+ },
+ "step_cave_bear": {
+  "name": "Bear and Orchard Roast",
+  "ingredients": [
+   "cave_bear_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "A bear grown fat on autumn fruit needs little but more of the same.",
+  "rung": "step",
+  "art": "dish_roast_t1_hp"
+ },
+ "step_imp": {
+  "name": "Brimstone Cheese Toast",
+  "ingredients": [
+   "imp_prime",
+   "hard_cheese"
+  ],
+  "benefit": "mp",
+  "flavor": "It bubbles, blackens and whispers the name of something in a pentagram.",
+  "rung": "step",
+  "art": "dish_bread_t1_mp"
+ },
+ "step_nothic": {
+  "name": "Secret-Seer's Fritters",
+  "ingredients": [
+   "nothic_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "see_invisible",
+  "flavor": "The eye that saw hidden things still winks from the middle of one.",
+  "rung": "step",
+  "art": "dish_fritter_t1_special"
+ },
+ "step_cockatrice": {
+  "name": "Weasel's Rue Skillet",
+  "ingredients": [
+   "cockatrice_prime",
+   "healing_herb"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "The weasel chews rue before it fights the cockatrice, and it does not turn to stone.",
+  "rung": "step",
+  "art": "dish_stirfry_t1_special"
+ },
+ "step_beholder": {
+  "name": "Many-Eyed Soup",
+  "ingredients": [
+   "beholder_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The caps float, the eyes float, and all of them turn slowly toward the spoon.",
+  "rung": "step",
+  "art": "dish_soup_t1_mp"
+ },
+ "step_giant_spider": {
+  "name": "Silk-Bound Kebabs",
+  "ingredients": [
+   "giant_spider_prime",
+   "healing_herb"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "They are tied to the stick with the spider's own thread.",
+  "rung": "step",
+  "art": "dish_skewer_t1_special"
+ },
+ "step_hobgoblin": {
+  "name": "Mess-Tin Beans",
+  "ingredients": [
+   "hobgoblin_prime",
+   "trail_rations"
+  ],
+  "benefit": "fear_immune",
+  "flavor": "Hobgoblin regiments march on it, and it is said that none has ever broken before supper.",
+  "rung": "step",
+  "art": "dish_stew_t1_special"
+ },
+ "step_roc_chick": {
+  "name": "Sindbad's Roc Roast",
+  "ingredients": [
+   "roc_chick_prime",
+   "trail_rations"
+  ],
+  "benefit": "hp",
+  "flavor": "Sindbad's shipmates roasted a roc's chick on the beach, and he begged them not to.",
+  "rung": "step",
+  "art": "dish_roast_t1_hp"
+ },
+ "step_asterion_minotaur": {
+  "name": "Atalanta's Boar Roast",
+  "ingredients": [
+   "asterion_minotaur_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "Atalanta drew first blood from the boar of Calydon, and she was ever one for apples.",
+  "rung": "step",
+  "art": "dish_roast_t1_hp"
+ },
+ "step_ghoul": {
+  "name": "Sexton's Stew",
+  "ingredients": [
+   "ghoul_prime",
+   "hearty_stew"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "Sextons who worked among ghouls ate heartily and caught nothing from the churchyard.",
+  "rung": "step",
+  "art": "dish_stew_t1_special"
+ },
+ "step_nosferatu": {
+  "name": "Night-Count's Gravy",
+  "ingredients": [
+   "nosferatu_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "The old count would have had it without the leaves, and without the gravy.",
+  "rung": "step",
+  "art": "dish_soup_t1_hp"
+ },
+ "step_drake_fire": {
+  "name": "Drake-Fire Fondue",
+  "ingredients": [
+   "drake_fire_prime",
+   "hard_cheese"
+  ],
+  "benefit": "fire_resist",
+  "flavor": "The scale keeps the cheese boiling long after the coals are out.",
+  "rung": "step",
+  "art": "dish_flambe_t1_special"
+ },
+ "step_ice_elemental": {
+  "name": "Blizzard Apple Preserve",
+  "ingredients": [
+   "ice_elemental_prime",
+   "apple"
+  ],
+  "benefit": "cold_resist",
+  "flavor": "Shut up in the jar with the storm, the fruit will keep until the thaw of the world.",
+  "rung": "step",
+  "art": "dish_pickle_t1_special"
+ },
+ "step_grell": {
+  "name": "Crackling-Bladder Tempura",
+  "ingredients": [
+   "grell_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "shock_resist",
+  "flavor": "The batter spits blue, and your tongue grows used to it.",
+  "rung": "step",
+  "art": "dish_fritter_t1_special"
+ },
+ "step_lamia": {
+  "name": "Lamia's Apple Sausages",
+  "ingredients": [
+   "lamia_prime",
+   "apple"
+  ],
+  "benefit": "mp",
+  "flavor": "The serpent-queen knew very well what fruit to offer.",
+  "rung": "step",
+  "art": "dish_sausage_t1_mp"
+ },
+ "step_owlbear": {
+  "name": "Deep-Wood Fry-Up",
+  "ingredients": [
+   "owlbear_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "hp",
+  "flavor": "Everything in the pan came out of the same wood, and most of it was hunting the rest.",
+  "rung": "step",
+  "art": "dish_steak_t1_hp"
+ },
+ "step_wraith": {
+  "name": "Cold-Breath Bread Pudding",
+  "ingredients": [
+   "wraith_prime",
+   "bread_ration"
+  ],
+  "benefit": "mp",
+  "flavor": "It steams backwards, drawing the warmth out of the room and into the bowl.",
+  "rung": "step",
+  "art": "dish_pudding_t1_mp"
+ },
+ "step_banshee": {
+  "name": "Keener's Wake Punch",
+  "ingredients": [
+   "banshee_prime",
+   "elvish_bread"
+  ],
+  "benefit": "fear_immune",
+  "flavor": "Those who have sat up at a wake with this in hand can hear the banshee and not rise.",
+  "rung": "step",
+  "art": "dish_drink_t1_special"
+ },
+ "step_ogre": {
+  "name": "Ogre's Kitchen Cauldron",
+  "ingredients": [
+   "ogre_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "Ogres add whatever wanders by, so be thankful that you are the cook.",
+  "rung": "step",
+  "art": "dish_stew_t1_hp"
+ },
+ "step_pegasus": {
+  "name": "Bellerophon's Drumsticks",
+  "ingredients": [
+   "pegasus_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "Bellerophon won the winged horse with a golden bridle, though an apple might have served.",
+  "rung": "step",
+  "art": "dish_leg_t1_hp"
+ },
+ "step_specter": {
+  "name": "Pale Guest's Tea",
+  "ingredients": [
+   "specter_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "A cup is poured for the guest that cannot drink, and you drink it after.",
+  "rung": "step",
+  "art": "dish_drink_t1_mp"
+ },
+ "step_xorn": {
+  "name": "Stone-Eater's Soufflé",
+  "ingredients": [
+   "xorn_prime",
+   "hard_cheese"
+  ],
+  "benefit": "searching",
+  "flavor": "A xorn looks through rock as through a window, for whatever is good to eat behind it.",
+  "rung": "step",
+  "art": "dish_pudding_t1_special"
+ },
+ "step_minotaur": {
+  "name": "Ariadne's Thread Sandwich",
+  "ingredients": [
+   "minotaur_prime",
+   "trail_rations"
+  ],
+  "benefit": "searching",
+  "flavor": "It is tied with string, as a courtesy to all who must find the way through a labyrinth.",
+  "rung": "step",
+  "art": "dish_bread_t1_special"
+ },
+ "step_nemean_lion": {
+  "name": "Lion-Hide Shank",
+  "ingredients": [
+   "nemean_lion_prime",
+   "dried_meat"
+  ],
+  "benefit": "shielded",
+  "flavor": "No blade would pierce that hide, so the meat is torn with the fingers.",
+  "rung": "step",
+  "art": "dish_leg_t1_special"
+ },
+ "step_lindworm": {
+  "name": "Lindworm Bride's Supper",
+  "ingredients": [
+   "lindworm_prime",
+   "elvish_bread"
+  ],
+  "benefit": "hp",
+  "flavor": "The wise bride bade the worm shed skin after skin, and afterwards there was supper.",
+  "rung": "step",
+  "art": "dish_stew_t1_hp"
+ },
+ "step_talos": {
+  "name": "Bronze Giant's Braise",
+  "ingredients": [
+   "talos_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "One vein ran from his neck to his heel, and Medea found the nail that stopped it.",
+  "rung": "step",
+  "art": "dish_stew_t1_hp"
+ },
+ "step_giant_scorpion": {
+  "name": "Caravan Claw Roast",
+  "ingredients": [
+   "giant_scorpion_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "The caravans crack the claws with stones and stretch the meat with whatever is in the packs.",
+  "rung": "step",
+  "art": "dish_roast_t2_sp"
+ },
+ "step_orc_warrior": {
+  "name": "Warband Trencher",
+  "ingredients": [
+   "orc_warrior_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "An orc will eat the trencher first, lest another take it.",
+  "rung": "step",
+  "art": "dish_bread_t2_sp"
+ },
+ "step_redcap": {
+  "name": "Border-Keep Stew",
+  "ingredients": [
+   "redcap_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "In the ruined keeps of the Border it is well to eat before the redcap returns.",
+  "rung": "step",
+  "art": "dish_stew_t2_hp"
+ },
+ "step_sable_serpent": {
+  "name": "Black Serpent Risotto",
+  "ingredients": [
+   "sable_serpent_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "The rice of the deep is mushroom chopped fine, and the snake blackens all of it.",
+  "rung": "step",
+  "art": "dish_porridge_t2_special"
+ },
+ "step_spriggan": {
+  "name": "Spriggan's Stolen Loaf",
+  "ingredients": [
+   "spriggan_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "Spriggans carry off bread from the sill and swell to giants when they are scolded for it.",
+  "rung": "step",
+  "art": "dish_bread_t2_sp"
+ },
+ "step_wight": {
+  "name": "Barrow-Gift Loaf",
+  "ingredients": [
+   "wight_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "Loaves were laid in the barrow for the dead lord's journey, and he has no further need of them.",
+  "rung": "step",
+  "art": "dish_bread_t2_sp"
+ },
+ "step_fionn_hound": {
+  "name": "Bran and Sceolan's Breakfast",
+  "ingredients": [
+   "fionn_hound_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "The two great hounds of Fionn ran all day behind the deer on less than this.",
+  "rung": "step",
+  "art": "dish_steak_t2_sp"
+ },
+ "step_hook_horror": {
+  "name": "Echo-Cave Steak",
+  "ingredients": [
+   "hook_horror_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "The caps muffle the clicking while it fries.",
+  "rung": "step",
+  "art": "dish_steak_t2_sp"
+ },
+ "step_hydra": {
+  "name": "Iolaus's Seared Steak",
+  "ingredients": [
+   "hydra_prime",
+   "healing_herb"
+  ],
+  "benefit": "regenerating",
+  "flavor": "Iolaus seared each neck as it was cut, and only for that reason does the steak stay one.",
+  "rung": "step",
+  "art": "dish_steak_t2_special"
+ },
+ "step_star_spawn": {
+  "name": "Far-Star Bisque",
+  "ingredients": [
+   "star_spawn_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The ink spreads over the surface in constellations that are none of ours.",
+  "rung": "step",
+  "art": "dish_chowder_t2_mp"
+ },
+ "step_tengu_warrior": {
+  "name": "Tengu's Mountain Roll",
+  "ingredients": [
+   "tengu_warrior_prime",
+   "elvish_bread"
+  ],
+  "benefit": "sp",
+  "flavor": "The tengu taught swordsmen on the peaks and fed them lightly and often.",
+  "rung": "step",
+  "art": "dish_bread_t2_sp"
+ },
+ "step_troll": {
+  "name": "Troll-Bridge Stew",
+  "ingredients": [
+   "troll_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "The toll was meat, and it has been paid into the pot.",
+  "rung": "step",
+  "art": "dish_stew_t2_hp"
+ },
+ "step_behir_lesser": {
+  "name": "Lightning-Struck Toast",
+  "ingredients": [
+   "behir_lesser_prime",
+   "bread_ration"
+  ],
+  "benefit": "shock_resist",
+  "flavor": "It is done on both sides at once, with a loud report.",
+  "rung": "step",
+  "art": "dish_bread_t2_special"
+ },
+ "step_displacer_beast": {
+  "name": "Not-Where-It-Looks Pie",
+  "ingredients": [
+   "displacer_beast_prime",
+   "dried_meat"
+  ],
+  "benefit": "displacement",
+  "flavor": "Cut a hand's breadth to the left of the pie.",
+  "rung": "step",
+  "art": "dish_pie_t2_special"
+ },
+ "step_night_hag": {
+  "name": "Nightmare-Drinker's Posset",
+  "ingredients": [
+   "night_hag_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "What the hag rode through other sleepers' dreams to gather, you have in a single cup.",
+  "rung": "step",
+  "art": "dish_drink_t2_mp"
+ },
+ "step_phase_spider": {
+  "name": "Blinking Quiche",
+  "ingredients": [
+   "phase_spider_prime",
+   "hard_cheese"
+  ],
+  "benefit": "displacement",
+  "flavor": "The slices come and go upon the plate, and it is best to be quick.",
+  "rung": "step",
+  "art": "dish_pie_t2_special"
+ },
+ "step_sea_dragon_spawn": {
+  "name": "Dragon-King's Chowder",
+  "ingredients": [
+   "sea_dragon_spawn_prime",
+   "hearty_stew"
+  ],
+  "benefit": "mp",
+  "flavor": "The dragon kings of the four seas are said to take their magic in by the bowl.",
+  "rung": "step",
+  "art": "dish_chowder_t2_mp"
+ },
+ "step_black_pudding": {
+  "name": "Full Dungeon Breakfast",
+  "ingredients": [
+   "black_pudding_prime",
+   "bread_ration"
+  ],
+  "benefit": "hp",
+  "flavor": "Fried pudding and fried bread, after which the stairs seem much shorter.",
+  "rung": "step",
+  "art": "dish_steak_t2_hp"
+ },
+ "step_death_mage": {
+  "name": "Forbidden-Garden Infusion",
+  "ingredients": [
+   "death_mage_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "Necromancers keep gardens too, and they label nothing.",
+  "rung": "step",
+  "art": "dish_drink_t2_mp"
+ },
+ "step_shadow_demon": {
+  "name": "Smoke-Shadow Mash",
+  "ingredients": [
+   "shadow_demon_prime",
+   "trail_rations"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "The smoke will not leave the spoon, nor afterwards your eyes.",
+  "rung": "step",
+  "art": "dish_porridge_t2_special"
+ },
+ "step_strigoi": {
+  "name": "Vampire-Hunter's Soup",
+  "ingredients": [
+   "strigoi_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "The villages of the Carpathians put every bitter thing they grew into it.",
+  "rung": "step",
+  "art": "dish_soup_t2_hp"
+ },
+ "step_cyclops": {
+  "name": "Polyphemus's Supper",
+  "ingredients": [
+   "cyclops_prime",
+   "hard_cheese"
+  ],
+  "benefit": "hp",
+  "flavor": "Mutton and cheese were all the Cyclops kept, until certain Greeks came to dine.",
+  "rung": "step",
+  "art": "dish_stew_t2_hp"
+ },
+ "step_lurker_above": {
+  "name": "Ceiling-Drop Flatbread",
+  "ingredients": [
+   "lurker_above_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "It falls flat on whatever lies below, which is the whole secret of flatbread.",
+  "rung": "step",
+  "art": "dish_bread_t2_sp"
+ },
+ "step_moss_sentinel": {
+  "name": "Long-Vigil Broth",
+  "ingredients": [
+   "moss_sentinel_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "Moss has bound wounds for longer than there have been physicians.",
+  "rung": "step",
+  "art": "dish_soup_t2_hp"
+ },
+ "step_ossuary_horror": {
+  "name": "Charnel-House Chowder",
+  "ingredients": [
+   "ossuary_horror_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "Many skulls went into it, and each remembered something.",
+  "rung": "step",
+  "art": "dish_chowder_t2_mp"
+ },
+ "step_roper": {
+  "name": "Rope-Walker's Links",
+  "ingredients": [
+   "roper_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "The links hang from the rafters on the roper's own strands until they are wanted.",
+  "rung": "step",
+  "art": "dish_sausage_t2_sp"
+ },
+ "step_vrock": {
+  "name": "Carrion-Dance Barbecue",
+  "ingredients": [
+   "vrock_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "The vrocks dance in a ring before they feed, but you may skip the dancing.",
+  "rung": "step",
+  "art": "dish_roast_t2_sp"
+ },
+ "step_vrykolakas": {
+  "name": "Saturday Grave Broth",
+  "ingredients": [
+   "vrykolakas_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "On Saturdays the vrykolakas lies still in its grave, and on that day the broth is made.",
+  "rung": "step",
+  "art": "dish_soup_t2_hp"
+ },
+ "step_weretiger": {
+  "name": "Striped Hunter's Chops",
+  "ingredients": [
+   "weretiger_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "The stripes are put on with the bars of the grate.",
+  "rung": "step",
+  "art": "dish_steak_t2_sp"
+ },
+ "step_young_red_dragon": {
+  "name": "Red Dragon Pepper Steak",
+  "ingredients": [
+   "young_red_dragon_prime",
+   "dried_meat"
+  ],
+  "benefit": "fire_resist",
+  "flavor": "It is seasoned from within and needs no flame beneath it.",
+  "rung": "step",
+  "art": "dish_steak_t2_special"
+ },
+ "step_bone_devil": {
+  "name": "Devil-Bone Braise",
+  "ingredients": [
+   "bone_devil_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "A long braise in a good stew will take the spite out of most bones.",
+  "rung": "step",
+  "art": "dish_stew_t2_hp"
+ },
+ "step_each_uisce": {
+  "name": "Water-Horse Cider",
+  "ingredients": [
+   "each_uisce_prime",
+   "apple"
+  ],
+  "benefit": "mp",
+  "flavor": "Even the horse of the loch will come to the shore for an apple.",
+  "rung": "step",
+  "art": "dish_drink_t2_mp"
+ },
+ "step_flesh_golem": {
+  "name": "Stitched-Together Stew",
+  "ingredients": [
+   "flesh_golem_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "It is made of parts from several suppers, and it lives.",
+  "rung": "step",
+  "art": "dish_stew_t2_hp"
+ },
+ "step_hill_giant": {
+  "name": "Hill Giant's Cauldron",
+  "ingredients": [
+   "hill_giant_prime",
+   "hearty_stew"
+  ],
+  "benefit": "sp",
+  "flavor": "To the giant your whole pot of stew was a spoonful of sauce.",
+  "rung": "step",
+  "art": "dish_stew_t2_sp"
+ },
+ "step_incubus": {
+  "name": "Wakeful Dreamer's Brew",
+  "ingredients": [
+   "incubus_prime",
+   "trail_rations"
+  ],
+  "benefit": "sleep_resist",
+  "flavor": "The thief of dreams finds nothing to take from one who does not sleep.",
+  "rung": "step",
+  "art": "dish_drink_t2_special"
+ },
+ "step_naga_guardian": {
+  "name": "Temple-Offering Bisque",
+  "ingredients": [
+   "naga_guardian_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "The nagas guard what is given at the shrine and grow wise on the smell of it.",
+  "rung": "step",
+  "art": "dish_chowder_t2_mp"
+ },
+ "step_sluagh": {
+  "name": "West-Window Broth",
+  "ingredients": [
+   "sluagh_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The host of the unforgiven comes in by western windows, so drink with your back to the east.",
+  "rung": "step",
+  "art": "dish_soup_t2_mp"
+ },
+ "step_basilisk": {
+  "name": "Basilisk and Rue Pasty",
+  "ingredients": [
+   "basilisk_prime",
+   "healing_herb"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "Pliny wrote that only the weasel could master the basilisk, and the weasel trusts its herbs.",
+  "rung": "step",
+  "art": "dish_pie_t2_special"
+ },
+ "step_hezrou": {
+  "name": "Toad-and-Toadstool Fritters",
+  "ingredients": [
+   "hezrou_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "One poison is set to watch the other.",
+  "rung": "step",
+  "art": "dish_fritter_t2_special"
+ },
+ "step_otyugh": {
+  "name": "Midden-Proof Curry",
+  "ingredients": [
+   "otyugh_prime",
+   "healing_herb"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "Whatever an otyugh's stomach has withstood, with enough seasoning yours can also.",
+  "rung": "step",
+  "art": "dish_porridge_t2_special"
+ },
+ "step_peryton": {
+  "name": "Peryton and Orchard Roast",
+  "ingredients": [
+   "peryton_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "The winged stag casts the shadow of a man, but it roasts like venison.",
+  "rung": "step",
+  "art": "dish_roast_t2_hp"
+ },
+ "step_shambling_mound": {
+  "name": "Compost-Cap Hash",
+  "ingredients": [
+   "shambling_mound_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "hp",
+  "flavor": "The mound had grown its own mushrooms, and you have only added more.",
+  "rung": "step",
+  "art": "dish_stirfry_t2_hp"
+ },
+ "step_dullahan_spawn": {
+  "name": "Headless Rider's Pasty",
+  "ingredients": [
+   "dullahan_spawn_prime",
+   "dried_meat"
+  ],
+  "benefit": "fear_immune",
+  "flavor": "It is eaten without looking up, when hooves go by upon the road.",
+  "rung": "step",
+  "art": "dish_pie_t2_special"
+ },
+ "step_erlking": {
+  "name": "Alder-King's Cordial",
+  "ingredients": [
+   "erlking_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "The King of the Alders promises flowers and games to the child who sips it.",
+  "rung": "step",
+  "art": "dish_drink_t2_mp"
+ },
+ "step_gorgon_warrior": {
+  "name": "Stone-Bull Bake",
+  "ingredients": [
+   "gorgon_warrior_prime",
+   "hard_cheese"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "It sets nearly as hard as its maker, and nothing that eats it sets harder.",
+  "rung": "step",
+  "art": "dish_roast_t2_special"
+ },
+ "step_manticore": {
+  "name": "Spike-Studded Roast",
+  "ingredients": [
+   "manticore_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "The tail's own spikes hold the strips of meat against the joint.",
+  "rung": "step",
+  "art": "dish_roast_t2_sp"
+ },
+ "step_nalfeshnee_lesser": {
+  "name": "Judge's Apple Bake",
+  "ingredients": [
+   "nalfeshnee_lesser_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "The great boar sat in judgement on every soul, and he is weighed now against an apple.",
+  "rung": "step",
+  "art": "dish_roast_t2_hp"
+ },
+ "step_revenant": {
+  "name": "Oath-Keeper's Sandwich",
+  "ingredients": [
+   "revenant_prime",
+   "bread_ration"
+  ],
+  "benefit": "sp",
+  "flavor": "The dead man walked a hundred leagues to keep his word and never stopped to eat.",
+  "rung": "step",
+  "art": "dish_bread_t2_sp"
+ },
+ "step_shadow": {
+  "name": "Moon-Shadow Soup",
+  "ingredients": [
+   "shadow_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The bowl looks empty until it is held beneath a light.",
+  "rung": "step",
+  "art": "dish_soup_t2_mp"
+ },
+ "step_void_elemental": {
+  "name": "Nothing-Spread Toast",
+  "ingredients": [
+   "void_elemental_prime",
+   "elvish_bread"
+  ],
+  "benefit": "magic_resist",
+  "flavor": "There is nothing on it, spread very thick, and spells slide from that.",
+  "rung": "step",
+  "art": "dish_bread_t2_special"
+ },
+ "step_cath_palug": {
+  "name": "Monster Cat's Butty",
+  "ingredients": [
+   "cath_palug_prime",
+   "hard_cheese"
+  ],
+  "benefit": "save_guard_DEX",
+  "flavor": "The cat that slew nine score warriors of Anglesey was never once caught by the tail.",
+  "rung": "step",
+  "art": "dish_bread_t2_special"
+ },
+ "step_griffin": {
+  "name": "Griffin-Rider's Roast",
+  "ingredients": [
+   "griffin_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "The riders feed their mounts on meat and are careful to be seen doing it.",
+  "rung": "step",
+  "art": "dish_roast_t2_hp"
+ },
+ "step_lesser_death": {
+  "name": "Reaper's Harvest Porridge",
+  "ingredients": [
+   "lesser_death_prime",
+   "healing_herb"
+  ],
+  "benefit": "drain_resist",
+  "flavor": "What the scythe cuts green will serve a while against the scythe.",
+  "rung": "step",
+  "art": "dish_porridge_t2_special"
+ },
+ "step_nue": {
+  "name": "Sleepless Emperor's Tonic",
+  "ingredients": [
+   "nue_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "The nue troubled the emperor's nights until Yorimasa's arrow found it in the cloud.",
+  "rung": "step",
+  "art": "dish_drink_t2_mp"
+ },
+ "step_stone_golem": {
+  "name": "Golem-Maker's Supper",
+  "ingredients": [
+   "stone_golem_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "hp",
+  "flavor": "The carver ate beside the stone for a year before it stood up.",
+  "rung": "step",
+  "art": "dish_stew_t2_hp"
+ },
+ "step_chimera": {
+  "name": "Three-Headed Chili",
+  "ingredients": [
+   "chimera_prime",
+   "trail_rations"
+  ],
+  "benefit": "fire_resist",
+  "flavor": "Lion, goat and serpent each insisted on a pepper of its own.",
+  "rung": "step",
+  "art": "dish_stew_t2_special"
+ },
+ "step_mind_flayer": {
+  "name": "Stolen-Thought Velouté",
+  "ingredients": [
+   "mind_flayer_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "It is smooth and pale and tastes of things that happened to others.",
+  "rung": "step",
+  "art": "dish_chowder_t2_mp"
+ },
+ "step_wyvern": {
+  "name": "Wyvern-Sting Tonic",
+  "ingredients": [
+   "wyvern_prime",
+   "healing_herb"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "The sting is boiled with the leaves until it has forgotten its purpose.",
+  "rung": "step",
+  "art": "dish_drink_t2_special"
+ },
+ "step_adult_blue_dragon": {
+  "name": "Desert-Storm Broth",
+  "ingredients": [
+   "adult_blue_dragon_prime",
+   "hearty_stew"
+  ],
+  "benefit": "shock_resist",
+  "flavor": "The stew is thinned with rain from the one cloud the dragon allowed.",
+  "rung": "step",
+  "art": "dish_soup_t2_special"
+ },
+ "step_bone_colossus": {
+  "name": "Colossal Marrow Hotpot",
+  "ingredients": [
+   "bone_colossus_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "One bone of the colossus is both the pot and the marrow in it.",
+  "rung": "step",
+  "art": "dish_stew_t2_hp"
+ },
+ "step_bone_golem": {
+  "name": "Rune-Bound Pottage",
+  "ingredients": [
+   "bone_golem_prime",
+   "hearty_stew"
+  ],
+  "benefit": "save_guard_CON",
+  "flavor": "The runes that held dead bones together will do as much for living ones.",
+  "rung": "step",
+  "art": "dish_stew_t2_special"
+ },
+ "step_clockwork_horror": {
+  "name": "Clockmaker's Pasty",
+  "ingredients": [
+   "clockwork_horror_prime",
+   "hard_cheese"
+  ],
+  "benefit": "searching",
+  "flavor": "A clockmaker looks at every wall as a case with the works behind it.",
+  "rung": "step",
+  "art": "dish_pie_t2_special"
+ },
+ "step_glabrezu": {
+  "name": "Devil's-Bargain Gumbo",
+  "ingredients": [
+   "glabrezu_prime",
+   "trail_rations"
+  ],
+  "benefit": "mp",
+  "flavor": "The wish was granted as it was spoken, so be careful what you say over the pot.",
+  "rung": "step",
+  "art": "dish_chowder_t2_mp"
+ },
+ "step_marilith_spawn": {
+  "name": "Six-Handed Sandwich",
+  "ingredients": [
+   "marilith_spawn_prime",
+   "bread_ration"
+  ],
+  "benefit": "save_guard_DEX",
+  "flavor": "Six blades never tangle, and for an hour your own two hands will not.",
+  "rung": "step",
+  "art": "dish_bread_t2_special"
+ },
+ "step_medusa": {
+  "name": "Perseus's Mirror Grill",
+  "ingredients": [
+   "medusa_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "Perseus cooked as he fought, watching the bronze and never the links.",
+  "rung": "step",
+  "art": "dish_steak_t2_hp"
+ },
+ "step_storm_elemental": {
+  "name": "Uncorked-Storm Flambé",
+  "ingredients": [
+   "storm_elemental_prime",
+   "elvish_bread"
+  ],
+  "benefit": "shock_resist",
+  "flavor": "The storm is let out over the wafer all at once, and it needs no match.",
+  "rung": "step",
+  "art": "dish_flambe_t2_special"
+ },
+ "step_stymphalian_bird": {
+  "name": "Bronze-Rattle Loin",
+  "ingredients": [
+   "stymphalian_bird_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "Heracles drove the birds from the marsh with a rattle, and the meat rattles yet.",
+  "rung": "step",
+  "art": "dish_roast_t2_sp"
+ },
+ "step_void_crawler": {
+  "name": "Between-Worlds Stew",
+  "ingredients": [
+   "void_crawler_prime",
+   "hearty_stew"
+  ],
+  "benefit": "sp",
+  "flavor": "Some of it is always somewhere else, so make plenty.",
+  "rung": "step",
+  "art": "dish_stew_t2_sp"
+ },
+ "step_erinyes_lesser": {
+  "name": "Kindly Ones' Broth",
+  "ingredients": [
+   "erinyes_lesser_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "The Greeks called the Furies kindly, hoping that they would take the hint.",
+  "rung": "step",
+  "art": "dish_soup_t2_hp"
+ },
+ "step_thunderbird_lesser": {
+  "name": "Storm-Wing Pilaf",
+  "ingredients": [
+   "thunderbird_lesser_prime",
+   "trail_rations"
+  ],
+  "benefit": "shock_resist",
+  "flavor": "The crackers swell in the broth as thunderheads do over the plains.",
+  "rung": "step",
+  "art": "dish_porridge_t2_special"
+ },
+ "step_young_black_dragon": {
+  "name": "Bog-Dragon Crumble",
+  "ingredients": [
+   "young_black_dragon_prime",
+   "apple"
+  ],
+  "benefit": "acid_resist",
+  "flavor": "The bile of the bog stews the fruit to shreds beneath the crust.",
+  "rung": "step",
+  "art": "dish_pie_t2_special"
+ },
+ "step_aboleth_lesser": {
+  "name": "Drowned-Memory Velouté",
+  "ingredients": [
+   "aboleth_lesser_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "It remembers the sea that covered this stone before ever a cook was born.",
+  "rung": "step",
+  "art": "dish_chowder_t2_mp"
+ },
+ "step_camazotz": {
+  "name": "House-of-Bats Polenta",
+  "ingredients": [
+   "camazotz_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "The Hero Twins passed a night in the House of Bats and saw more than they wished.",
+  "rung": "step",
+  "art": "dish_porridge_t2_special"
+ },
+ "step_dryad_guardian": {
+  "name": "Dryad's Waybread Salad",
+  "ingredients": [
+   "dryad_guardian_prime",
+   "elvish_bread"
+  ],
+  "benefit": "regenerating",
+  "flavor": "Green things of the grove on the pale bread of the road, and both are loath to wither.",
+  "rung": "step",
+  "art": "dish_platter_t2_special"
+ },
+ "step_fomorian": {
+  "name": "Dagda's Pit Pottage",
+  "ingredients": [
+   "fomorian_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "The Fomorians filled a pit with food to mock the Dagda, and he scraped it clean.",
+  "rung": "step",
+  "art": "dish_stew_t2_hp"
+ },
+ "step_hell_bovine": {
+  "name": "Brimstone Pasture Burger",
+  "ingredients": [
+   "hell_bovine_prime",
+   "hard_cheese"
+  ],
+  "benefit": "sp",
+  "flavor": "The pasture was strange and the herd was stranger, but the burger is excellent.",
+  "rung": "step",
+  "art": "dish_bread_t2_sp"
+ },
+ "step_mohrg": {
+  "name": "Gallows-Road Bangers",
+  "ingredients": [
+   "mohrg_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "The hanged man walked the road long after, and he never left it hungry.",
+  "rung": "step",
+  "art": "dish_sausage_t2_sp"
+ },
+ "step_vampire": {
+  "name": "Stake-and-Garlic Grill",
+  "ingredients": [
+   "vampire_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "The knuckle is staked to the board before it is seasoned, as a precaution.",
+  "rung": "step",
+  "art": "dish_steak_t2_hp"
+ },
+ "step_clay_golem": {
+  "name": "Kiln-Fired Bake",
+  "ingredients": [
+   "clay_golem_prime",
+   "apple"
+  ],
+  "benefit": "hp",
+  "flavor": "The heart of amber runs like syrup when the clay is fired.",
+  "rung": "step",
+  "art": "dish_roast_t2_hp"
+ },
+ "step_cow_king": {
+  "name": "Royal Herd Fry-Up",
+  "ingredients": [
+   "cow_king_prime",
+   "bread_ration"
+  ],
+  "benefit": "hp",
+  "flavor": "A king's bacon, and fried bread for all his court.",
+  "rung": "step",
+  "art": "dish_steak_t2_hp"
+ },
+ "step_water_elemental": {
+  "name": "River-Heart Soup",
+  "ingredients": [
+   "water_elemental_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "hp",
+  "flavor": "The tide in the jar rises and falls as it simmers.",
+  "rung": "step",
+  "art": "dish_soup_t2_hp"
+ },
+ "step_earth_elemental": {
+  "name": "Bedrock Bannock",
+  "ingredients": [
+   "earth_elemental_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "It is ground from the floor of the world and baked upon it.",
+  "rung": "step",
+  "art": "dish_bread_t2_sp"
+ },
+ "step_stone_giant": {
+  "name": "Boulder-Thrower's Links",
+  "ingredients": [
+   "stone_giant_prime",
+   "elvish_bread"
+  ],
+  "benefit": "sp",
+  "flavor": "The giants toss them to one another across the gorge at supper.",
+  "rung": "step",
+  "art": "dish_sausage_t2_sp"
+ },
+ "step_echidna": {
+  "name": "Brood-Mother's Hotpot",
+  "ingredients": [
+   "echidna_prime",
+   "elvish_bread"
+  ],
+  "benefit": "hp",
+  "flavor": "The mother of monsters had very many mouths to fill.",
+  "rung": "step",
+  "art": "dish_stew_t2_hp"
+ },
+ "step_yuan_ti_pureblood": {
+  "name": "Serpent-Temple Tea",
+  "ingredients": [
+   "yuan_ti_pureblood_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "The priests of the snake pass one cup down the line, oldest blood first.",
+  "rung": "step",
+  "art": "dish_drink_t2_mp"
+ },
+ "step_iron_sentinel": {
+  "name": "Sentry's Night Crackers",
+  "ingredients": [
+   "iron_sentinel_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "They were kept dry in the sentinel's own helm for the change of the watch.",
+  "rung": "step",
+  "art": "dish_bread_t2_sp"
+ },
+ "step_balor_lesser": {
+  "name": "Burning-Crown Crackling",
+  "ingredients": [
+   "balor_lesser_prime",
+   "dried_meat"
+  ],
+  "benefit": "fire_resist",
+  "flavor": "The balor wears fire as kings wear gold, and the strips curl in it at once.",
+  "rung": "step",
+  "art": "dish_fritter_t2_special"
+ },
+ "step_chaos_troll": {
+  "name": "Two-Faced Troll Links",
+  "ingredients": [
+   "chaos_troll_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "No two links are the same length, and one of them is looking at you.",
+  "rung": "step",
+  "art": "dish_sausage_t2_hp"
+ },
+ "step_demon_knight": {
+  "name": "Black-Banner Roast",
+  "ingredients": [
+   "demon_knight_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "The knights of the Pit roast beneath their banners on the eve of every war.",
+  "rung": "step",
+  "art": "dish_roast_t2_sp"
+ },
+ "step_fire_giant": {
+  "name": "Giant-Smith's Grill",
+  "ingredients": [
+   "fire_giant_prime",
+   "dried_meat"
+  ],
+  "benefit": "fire_resist",
+  "flavor": "The smiths of the fire giants lay their supper straight upon the anvil.",
+  "rung": "step",
+  "art": "dish_steak_t3_special"
+ },
+ "step_wyrm": {
+  "name": "Coiled Wyrm Roast",
+  "ingredients": [
+   "wyrm_prime",
+   "dried_meat"
+  ],
+  "benefit": "save_guard_DEX",
+  "flavor": "The coil that could not be held lends something of its slipping to whoever eats it.",
+  "rung": "step",
+  "art": "dish_roast_t3_special"
+ },
+ "step_lurking_horror": {
+  "name": "Hackle-Raiser Fritters",
+  "ingredients": [
+   "lurking_horror_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "warning",
+  "flavor": "The hair stands upon your neck at the first bite and stays standing.",
+  "rung": "step",
+  "art": "dish_fritter_t3_special"
+ },
+ "step_dracolich": {
+  "name": "Dragon's-Tomb Pottage",
+  "ingredients": [
+   "dracolich_prime",
+   "hearty_stew"
+  ],
+  "benefit": "drain_resist",
+  "flavor": "The dragon would not stay dead, and something of that stubbornness is in the bowl.",
+  "rung": "step",
+  "art": "dish_stew_t3_special"
+ },
+ "step_magma_elemental": {
+  "name": "Volcano Fondue",
+  "ingredients": [
+   "magma_elemental_prime",
+   "hard_cheese"
+  ],
+  "benefit": "fire_resist",
+  "flavor": "The mountain melts the cheese and asks no thanks.",
+  "rung": "step",
+  "art": "dish_flambe_t3_special"
+ },
+ "step_sphinx": {
+  "name": "Riddle-Asker's Tisane",
+  "ingredients": [
+   "sphinx_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "She sips it between the question and the answer.",
+  "rung": "step",
+  "art": "dish_drink_t3_mp"
+ },
+ "step_the_sphinx": {
+  "name": "Oedipus's Answer Soup",
+  "ingredients": [
+   "the_sphinx_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The answer was Man, who eats it on four legs, on two and at last on three.",
+  "rung": "step",
+  "art": "dish_soup_t3_mp"
+ },
+ "step_scarab_swarm": {
+  "name": "Khepri's Dawn Bake",
+  "ingredients": [
+   "scarab_swarm_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "hp",
+  "flavor": "The scarab rolls the sun up out of the dark each morning, round and golden as this.",
+  "rung": "step",
+  "art": "dish_roast_t3_hp"
+ },
+ "step_werebear": {
+  "name": "Skin-Changer's Breakfast",
+  "ingredients": [
+   "werebear_prime",
+   "elvish_bread"
+  ],
+  "benefit": "hp",
+  "flavor": "He went out as a bear by night and came home very hungry as a man.",
+  "rung": "step",
+  "art": "dish_steak_t3_hp"
+ },
+ "step_catoblepas": {
+  "name": "Heavy-Headed Grill",
+  "ingredients": [
+   "catoblepas_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "The catoblepas grazed on bitter herbs all its life, for it could never lift its head higher.",
+  "rung": "step",
+  "art": "dish_steak_t3_hp"
+ },
+ "step_unicorn_corrupted": {
+  "name": "Bitter-Horn Haunch",
+  "ingredients": [
+   "unicorn_corrupted_prime",
+   "healing_herb"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "The horn once cleansed whole springs of venom, and a little of that is left in the meat.",
+  "rung": "step",
+  "art": "dish_leg_t3_special"
+ },
+ "step_cacus": {
+  "name": "Cattle-Thief's Roast",
+  "ingredients": [
+   "cacus_prime",
+   "hard_cheese"
+  ],
+  "benefit": "sp",
+  "flavor": "Cacus dragged the cattle backwards into his cave to hide the tracks, and was found by their lowing.",
+  "rung": "step",
+  "art": "dish_roast_t3_sp"
+ },
+ "step_cloud_giant": {
+  "name": "Beanstalk Broth",
+  "ingredients": [
+   "cloud_giant_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "It tastes of thin air and of something stolen by a boy named Jack.",
+  "rung": "step",
+  "art": "dish_soup_t3_mp"
+ },
+ "step_demonic_trickster": {
+  "name": "False Hermit's Tea",
+  "ingredients": [
+   "demonic_trickster_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "Ravana came begging in a hermit's robe, and the rakshasas have served tea so ever since.",
+  "rung": "step",
+  "art": "dish_drink_t3_mp"
+ },
+ "step_dire_lion": {
+  "name": "Lion's-Share Hotpot",
+  "ingredients": [
+   "dire_lion_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "All of it is yours, as the lion would have said.",
+  "rung": "step",
+  "art": "dish_stew_t3_hp"
+ },
+ "step_anubis_guardian": {
+  "name": "Funeral-Bread Broth",
+  "ingredients": [
+   "anubis_guardian_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "The jackal-headed ones allow bread to the dead, and broth to those who carry them.",
+  "rung": "step",
+  "art": "dish_soup_t3_mp"
+ },
+ "step_death_knight": {
+  "name": "Fallen Order's Pot",
+  "ingredients": [
+   "death_knight_prime",
+   "hearty_stew"
+  ],
+  "benefit": "sp",
+  "flavor": "The order broke its vows long ago but still sits down to supper by rank.",
+  "rung": "step",
+  "art": "dish_stew_t3_sp"
+ },
+ "step_werewolf": {
+  "name": "Silver-Moon Roast",
+  "ingredients": [
+   "werewolf_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "It is eaten very rare on three nights of the month.",
+  "rung": "step",
+  "art": "dish_roast_t3_sp"
+ },
+ "step_deep_one_priest": {
+  "name": "Drowned Choir Chowder",
+  "ingredients": [
+   "deep_one_priest_prime",
+   "hearty_stew"
+  ],
+  "benefit": "mp",
+  "flavor": "The choir beneath the waves sings a grace of its own over this pot.",
+  "rung": "step",
+  "art": "dish_chowder_t3_mp"
+ },
+ "step_mapinguari": {
+  "name": "Rainforest-Camp Barbecue",
+  "ingredients": [
+   "mapinguari_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "The rubber-tappers would not name the beast, but they knew how to smoke it.",
+  "rung": "step",
+  "art": "dish_roast_t3_sp"
+ },
+ "step_sobek_warrior": {
+  "name": "Nile-Flood Stew",
+  "ingredients": [
+   "sobek_warrior_prime",
+   "hearty_stew"
+  ],
+  "benefit": "sp",
+  "flavor": "When Sobek sends the flood the whole land is fed.",
+  "rung": "step",
+  "art": "dish_stew_t3_sp"
+ },
+ "step_abyssal_hound": {
+  "name": "Hell-Kennel Roast",
+  "ingredients": [
+   "abyssal_hound_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "The kennels of the Abyss are fed on less and make more noise about it.",
+  "rung": "step",
+  "art": "dish_roast_t3_sp"
+ },
+ "step_fire_elemental": {
+  "name": "Wildfire Pilaf",
+  "ingredients": [
+   "fire_elemental_prime",
+   "trail_rations"
+  ],
+  "benefit": "fire_resist",
+  "flavor": "It has finished cooking before the lid is on.",
+  "rung": "step",
+  "art": "dish_porridge_t3_special"
+ },
+ "step_rangda": {
+  "name": "Barong's Dance Ragout",
+  "ingredients": [
+   "rangda_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "The Barong dances against Rangda until dawn, and the dancers are fed when it is done.",
+  "rung": "step",
+  "art": "dish_stew_t3_hp"
+ },
+ "step_soul_eater": {
+  "name": "Hollow-Hymn Soup",
+  "ingredients": [
+   "soul_eater_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The bone still hums the last song that was taken into it.",
+  "rung": "step",
+  "art": "dish_soup_t3_mp"
+ },
+ "step_void_leviathan": {
+  "name": "Whaler's Hotpot",
+  "ingredients": [
+   "void_leviathan_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "The whalers of the lightless sea waste no part of the blubber.",
+  "rung": "step",
+  "art": "dish_stew_t3_sp"
+ },
+ "step_mummy": {
+  "name": "Linen-Wrapped Pasty",
+  "ingredients": [
+   "mummy_prime",
+   "hearty_stew"
+  ],
+  "benefit": "drain_resist",
+  "flavor": "It was wrapped with care, that it might last for three thousand years.",
+  "rung": "step",
+  "art": "dish_pie_t3_special"
+ },
+ "step_arcane_golem": {
+  "name": "Mana-Spring Cordial",
+  "ingredients": [
+   "arcane_golem_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "It runs from the core as clear as a spring from a hillside.",
+  "rung": "step",
+  "art": "dish_drink_t3_mp"
+ },
+ "step_frost_giant": {
+  "name": "Winter-Hall Stew",
+  "ingredients": [
+   "frost_giant_prime",
+   "hearty_stew"
+  ],
+  "benefit": "cold_resist",
+  "flavor": "The halls of the frost giants keep one pot that has never been allowed to freeze.",
+  "rung": "step",
+  "art": "dish_stew_t3_special"
+ },
+ "step_nightwing": {
+  "name": "Starless Risotto",
+  "ingredients": [
+   "nightwing_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "dark_vision",
+  "flavor": "It is as black as the nightwing's span, and you can see every grain.",
+  "rung": "step",
+  "art": "dish_porridge_t3_special"
+ },
+ "step_ra_serpent": {
+  "name": "Sun-Barque Roast",
+  "ingredients": [
+   "ra_serpent_prime",
+   "elvish_bread"
+  ],
+  "benefit": "hp",
+  "flavor": "The crew of the sun's own boat eat it each night in the twelfth hour before dawn.",
+  "rung": "step",
+  "art": "dish_roast_t3_hp"
+ },
+ "step_storm_giant": {
+  "name": "Thunder-Hammer Steak",
+  "ingredients": [
+   "storm_giant_prime",
+   "dried_meat"
+  ],
+  "benefit": "shock_resist",
+  "flavor": "It is beaten flat between one clap of thunder and the next.",
+  "rung": "step",
+  "art": "dish_steak_t3_special"
+ },
+ "step_ammit_spawn": {
+  "name": "Heart-Weigher's Haunch",
+  "ingredients": [
+   "ammit_spawn_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "Ammit ate only the hearts that outweighed the feather, and grew stout upon them.",
+  "rung": "step",
+  "art": "dish_leg_t3_hp"
+ },
+ "step_lich": {
+  "name": "Phylactery Jelly",
+  "ingredients": [
+   "lich_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "Something small and cold is set in the middle, and it is best left on the plate.",
+  "rung": "step",
+  "art": "dish_jelly_t3_mp"
+ },
+ "step_pit_fiend_spawn": {
+  "name": "Infernal-Legion Sausages",
+  "ingredients": [
+   "pit_fiend_spawn_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "They are issued one to each devil, and counted.",
+  "rung": "step",
+  "art": "dish_sausage_t3_hp"
+ },
+ "step_sets_jackal": {
+  "name": "Desert-Edge Barbecue",
+  "ingredients": [
+   "sets_jackal_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "Set's jackals wait where the green land ends for travellers with full packs.",
+  "rung": "step",
+  "art": "dish_roast_t3_sp"
+ },
+ "step_spectral_dragon": {
+  "name": "Ghost-Wing Bisque",
+  "ingredients": [
+   "spectral_dragon_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "A great shadow passes over the bowl while you drink.",
+  "rung": "step",
+  "art": "dish_chowder_t3_mp"
+ },
+ "step_ruinous_djinn": {
+  "name": "Whirlwind Curry",
+  "ingredients": [
+   "ruinous_djinn_prime",
+   "trail_rations"
+  ],
+  "benefit": "hasted",
+  "flavor": "It goes around the pot and around again, and then around you.",
+  "rung": "step",
+  "art": "dish_porridge_t3_special"
+ },
+ "step_thoth_construct": {
+  "name": "Moon-Scribe's Infusion",
+  "ingredients": [
+   "thoth_construct_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "Thoth set down the virtue of every leaf, and this is the one he underlined.",
+  "rung": "step",
+  "art": "dish_drink_t3_mp"
+ },
+ "step_baba_yaga": {
+  "name": "Hut-Hearth Goulash",
+  "ingredients": [
+   "baba_yaga_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "Baba Yaga feeds her guests well before she decides about them.",
+  "rung": "step",
+  "art": "dish_stew_t3_hp"
+ },
+ "step_gilded_mimic": {
+  "name": "Fool's-Gold Toffee",
+  "ingredients": [
+   "gilded_mimic_prime",
+   "hard_cheese"
+  ],
+  "benefit": "warning",
+  "flavor": "It shines on the spoon, and that should always put you on your guard.",
+  "rung": "step",
+  "art": "dish_fritter_t3_special"
+ },
+ "step_iron_golem": {
+  "name": "Iron-Rind Crackling",
+  "ingredients": [
+   "iron_golem_prime",
+   "dried_meat"
+  ],
+  "benefit": "shielded",
+  "flavor": "A smith would need tongs to eat it.",
+  "rung": "step",
+  "art": "dish_fritter_t3_special"
+ },
+ "step_young_dragon": {
+  "name": "Sigurd's Thumb Roast",
+  "ingredients": [
+   "young_dragon_prime",
+   "elvish_bread"
+  ],
+  "benefit": "hp",
+  "flavor": "Sigurd burned his thumb upon the dragon's heart and was the wiser for licking it.",
+  "rung": "step",
+  "art": "dish_roast_t3_hp"
+ },
+ "step_plague_ooze": {
+  "name": "Plague-Doctor's Chutney",
+  "ingredients": [
+   "plague_ooze_prime",
+   "healing_herb"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "The doctors packed the beaks of their masks with such stuff and walked among the sick.",
+  "rung": "step",
+  "art": "dish_pickle_t4_special"
+ },
+ "step_draugr": {
+  "name": "Mound-Dweller's Hotpot",
+  "ingredients": [
+   "draugr_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "The draugr guarded its hoard and its supper with one temper.",
+  "rung": "step",
+  "art": "dish_stew_t4_hp"
+ },
+ "step_frost_crawler": {
+  "name": "Blue-Ice Broth",
+  "ingredients": [
+   "frost_crawler_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The ice has a colour at its heart, and the broth takes it.",
+  "rung": "step",
+  "art": "dish_soup_t4_mp"
+ },
+ "step_ice_troll": {
+  "name": "Frozen Troll Pot",
+  "ingredients": [
+   "ice_troll_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "The ham is put in frozen, and by morning the pot has won.",
+  "rung": "step",
+  "art": "dish_stew_t4_hp"
+ },
+ "step_sea_serpent_norse": {
+  "name": "Oarsman's Loin",
+  "ingredients": [
+   "sea_serpent_norse_prime",
+   "elvish_bread"
+  ],
+  "benefit": "hp",
+  "flavor": "Every bench of the longship had a slice, and the helmsman two.",
+  "rung": "step",
+  "art": "dish_roast_t4_hp"
+ },
+ "step_winter_wolf": {
+  "name": "Long-Winter Pottage",
+  "ingredients": [
+   "winter_wolf_prime",
+   "hearty_stew"
+  ],
+  "benefit": "cold_resist",
+  "flavor": "In the winter of the wolves it was eaten from the same pot for five months.",
+  "rung": "step",
+  "art": "dish_stew_t4_special"
+ },
+ "step_corrupted_treant": {
+  "name": "Fallen-Forest Stew",
+  "ingredients": [
+   "corrupted_treant_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "hp",
+  "flavor": "When a great tree falls the mushrooms are the first to the table.",
+  "rung": "step",
+  "art": "dish_stew_t4_hp"
+ },
+ "step_jormungandr_juvenile": {
+  "name": "Young Serpent Grill",
+  "ingredients": [
+   "jormungandr_juvenile_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "One day it would have circled the world, and today it circles the grate.",
+  "rung": "step",
+  "art": "dish_steak_t4_hp"
+ },
+ "step_valkyrie_shade": {
+  "name": "Slain-Chooser's Broth",
+  "ingredients": [
+   "valkyrie_shade_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "The choosers of the slain bear bowls through Valhalla when the riding is over.",
+  "rung": "step",
+  "art": "dish_soup_t4_mp"
+ },
+ "step_nidhogg_brood": {
+  "name": "Root-Gnawer's Soup",
+  "ingredients": [
+   "nidhogg_brood_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The brood gnaws at the root of the world, and the caps grow where it has gnawed.",
+  "rung": "step",
+  "art": "dish_soup_t4_mp"
+ },
+ "step_wendigo": {
+  "name": "Famine-Winter Soup",
+  "ingredients": [
+   "wendigo_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "Those who told of the wendigo told also what may honestly be boiled when the meat is gone.",
+  "rung": "step",
+  "art": "dish_soup_t4_mp"
+ },
+ "step_fenrir_pup": {
+  "name": "Bound-Wolf Breakfast",
+  "ingredients": [
+   "fenrir_pup_prime",
+   "trail_rations"
+  ],
+  "benefit": "hp",
+  "flavor": "The gods fed the wolf kindly until the day they brought the cord.",
+  "rung": "step",
+  "art": "dish_steak_t4_hp"
+ },
+ "step_yacumama": {
+  "name": "Blackwater Soup",
+  "ingredients": [
+   "yacumama_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The mother of waters lies beneath the river, and its darkness is in the bowl.",
+  "rung": "step",
+  "art": "dish_soup_t4_mp"
+ },
+ "step_abyssal_behemoth": {
+  "name": "River-Drinker's Cauldron",
+  "ingredients": [
+   "abyssal_behemoth_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "Behemoth drinks up a river and does not hurry, and neither should you.",
+  "rung": "step",
+  "art": "dish_stew_t4_hp"
+ },
+ "step_charybdis_spawn": {
+  "name": "Maelstrom Ramen",
+  "ingredients": [
+   "charybdis_spawn_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The noodles wind down into the middle and do not all come back.",
+  "rung": "step",
+  "art": "dish_soup_t4_mp"
+ },
+ "step_jormungandr_spawn": {
+  "name": "World-Girdling Stew",
+  "ingredients": [
+   "jormungandr_spawn_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "It is stirred in one direction only, with the tail in the mouth.",
+  "rung": "step",
+  "art": "dish_stew_t4_mp"
+ },
+ "step_astral_horror": {
+  "name": "Far-Dream Soup",
+  "ingredients": [
+   "astral_horror_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "You will remember drinking it in several places.",
+  "rung": "step",
+  "art": "dish_soup_t4_mp"
+ },
+ "step_locust_swarmlord": {
+  "name": "Wilderness Locust Broth",
+  "ingredients": [
+   "locust_swarmlord_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "A prophet lived in the wilderness on locusts and wild honey, and saw very far.",
+  "rung": "step",
+  "art": "dish_soup_t4_mp"
+ },
+ "step_scylla": {
+  "name": "Six-Necked Noodles",
+  "ingredients": [
+   "scylla_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "Six heads reached down for the sailors, and six long noodles hang from the spoon.",
+  "rung": "step",
+  "art": "dish_soup_t4_mp"
+ },
+ "step_abyssal_mimic": {
+  "name": "Open-Jawed Ragout",
+  "ingredients": [
+   "abyssal_mimic_prime",
+   "trail_rations"
+  ],
+  "benefit": "warning",
+  "flavor": "Having eaten what waits with its mouth open, you will know it when you see it again.",
+  "rung": "step",
+  "art": "dish_stew_t4_special"
+ },
+ "step_world_serpent": {
+  "name": "Thor's Fishing Steak",
+  "ingredients": [
+   "world_serpent_prime",
+   "dried_meat"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "Thor baited a hook with the head of an ox and drew the serpent dripping venom from the sea.",
+  "rung": "step",
+  "art": "dish_steak_t4_special"
+ },
+ "step_wild_hunt_captain": {
+  "name": "Hunting-Horn Ribs",
+  "ingredients": [
+   "wild_hunt_captain_prime",
+   "elvish_bread"
+  ],
+  "benefit": "hasted",
+  "flavor": "The horn has sounded, and there is no dawdling over supper.",
+  "rung": "step",
+  "art": "dish_leg_t4_special"
+ },
+ "step_charybdis": {
+  "name": "Thrice-Swallowed Stew",
+  "ingredients": [
+   "charybdis_prime",
+   "trail_rations"
+  ],
+  "benefit": "mp",
+  "flavor": "Three times a day Charybdis drinks down the sea and three times gives it back.",
+  "rung": "step",
+  "art": "dish_stew_t4_mp"
+ },
+ "step_locust_swarmlord_trail": {
+  "name": "Locust-Leap Legs",
+  "ingredients": [
+   "locust_swarmlord_prime",
+   "trail_rations"
+  ],
+  "benefit": "save_guard_DEX",
+  "flavor": "A swarm is never where the hand comes down upon it.",
+  "rung": "step",
+  "art": "dish_leg_t4_special"
+ },
+ "step_pazuzu_spawn": {
+  "name": "Wind-Runner's Draught",
+  "ingredients": [
+   "pazuzu_spawn_prime",
+   "elvish_bread"
+  ],
+  "benefit": "save_guard_DEX",
+  "flavor": "Pazuzu is king of the winds, and no one has yet set a snare for the wind.",
+  "rung": "step",
+  "art": "dish_drink_t5_special"
+ },
+ "step_arch_demon": {
+  "name": "Pandemonium Pie",
+  "ingredients": [
+   "arch_demon_prime",
+   "elvish_bread"
+  ],
+  "benefit": "sp",
+  "flavor": "In the capital of Hell even the pies are built by architects.",
+  "rung": "step",
+  "art": "dish_pie_t5_sp"
+ },
+ "step_flesh_colossus": {
+  "name": "Walking-Furnace Hotpot",
+  "ingredients": [
+   "flesh_colossus_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "The marrow keeps its own coals and the stew has only to lie upon them.",
+  "rung": "step",
+  "art": "dish_stew_t5_hp"
+ },
+ "step_pazuzu_spawn_trail": {
+  "name": "Southwest-Wind Pie",
+  "ingredients": [
+   "pazuzu_spawn_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "Pazuzu's wind brings famine, so the pie is made large.",
+  "rung": "step",
+  "art": "dish_pie_t5_sp"
+ },
+ "step_ravanas_arm": {
+  "name": "Ten-Crowned King's Roast",
+  "ingredients": [
+   "ravanas_arm_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "A king with ten heads did not order small roasts.",
+  "rung": "step",
+  "art": "dish_roast_t5_sp"
+ },
+ "step_titan": {
+  "name": "Golden-Age Roast",
+  "ingredients": [
+   "titan_prime",
+   "elvish_bread"
+  ],
+  "benefit": "hp",
+  "flavor": "When the Titans ruled, men ate without toil and did not grow old.",
+  "rung": "step",
+  "art": "dish_roast_t5_hp"
+ },
+ "step_cerberus": {
+  "name": "Sibyl's Sop Stew",
+  "ingredients": [
+   "cerberus_prime",
+   "elvish_bread"
+  ],
+  "benefit": "fear_immune",
+  "flavor": "The Sibyl threw a sweetened cake to Cerberus and walked past all three heads.",
+  "rung": "step",
+  "art": "dish_stew_t5_special"
+ },
+ "step_entropy_elemental": {
+  "name": "Unwoven Broth",
+  "ingredients": [
+   "entropy_elemental_prime",
+   "healing_herb"
+  ],
+  "benefit": "magic_resist",
+  "flavor": "Everything put into it comes apart, spells among the rest.",
+  "rung": "step",
+  "art": "dish_soup_t5_special"
+ },
+ "step_seal_demon_wrath": {
+  "name": "Amon's Furnace Pottage",
+  "ingredients": [
+   "seal_demon_wrath_prime",
+   "dried_meat"
+  ],
+  "benefit": "sp",
+  "flavor": "Amon breathes flame into every dish that is set before him.",
+  "rung": "step",
+  "art": "dish_stew_t5_sp"
+ },
+ "step_void_wyrm": {
+  "name": "Starless Wyrm Broth",
+  "ingredients": [
+   "void_wyrm_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "The wyrm swallowed the lights of the sky, and they are somewhere in the pot.",
+  "rung": "step",
+  "art": "dish_soup_t5_mp"
+ },
+ "step_ugallu_demon": {
+  "name": "Great-Storm Stew",
+  "ingredients": [
+   "ugallu_demon_prime",
+   "hearty_stew"
+  ],
+  "benefit": "sp",
+  "flavor": "The lion-headed storm of Babylon stood guard at doors, and it was fed there.",
+  "rung": "step",
+  "art": "dish_stew_t5_sp"
+ },
+ "step_seal_demon_pestilence": {
+  "name": "Buer's Herbal Draught",
+  "ingredients": [
+   "seal_demon_pestilence_prime",
+   "healing_herb"
+  ],
+  "benefit": "poison_resist",
+  "flavor": "Buer teaches the virtue of every herb, and he must have meant some of it truly.",
+  "rung": "step",
+  "art": "dish_drink_t5_special"
+ },
+ "step_apocalypse_herald": {
+  "name": "Trumpet-Call Bake",
+  "ingredients": [
+   "apocalypse_herald_prime",
+   "healing_herb"
+  ],
+  "benefit": "hp",
+  "flavor": "It is drawn from the oven at the last trumpet and no earlier.",
+  "rung": "step",
+  "art": "dish_roast_t5_hp"
+ },
+ "step_death_lord": {
+  "name": "Pale King's Tea",
+  "ingredients": [
+   "death_lord_prime",
+   "healing_herb"
+  ],
+  "benefit": "mp",
+  "flavor": "The lord of the dead takes it unsweetened and looks at you over the cup.",
+  "rung": "step",
+  "art": "dish_drink_t5_mp"
+ },
+ "step_void_seraph": {
+  "name": "Ashen-Choir Tisane",
+  "ingredients": [
+   "void_seraph_prime",
+   "elvish_bread"
+  ],
+  "benefit": "mp",
+  "flavor": "A flake of burnt light floats upon it, and once it was singing.",
+  "rung": "step",
+  "art": "dish_drink_t5_mp"
+ },
+ "step_seal_demon_famine": {
+  "name": "Seven Lean Years Soup",
+  "ingredients": [
+   "seal_demon_famine_prime",
+   "elvish_bread"
+  ],
+  "benefit": "sp",
+  "flavor": "Joseph laid up bread against seven years of famine, and it was enough.",
+  "rung": "step",
+  "art": "dish_soup_t5_sp"
+ },
+ "step_wormwood_blight": {
+  "name": "Bitter-Star Stew",
+  "ingredients": [
+   "wormwood_blight_prime",
+   "healing_herb"
+  ],
+  "benefit": "sp",
+  "flavor": "A star named Wormwood fell upon the waters, and the bitter leaves hide the taste.",
+  "rung": "step",
+  "art": "dish_stew_t5_sp"
+ },
+ "step_seal_demon_war": {
+  "name": "Siege-Camp Stew",
+  "ingredients": [
+   "seal_demon_war_prime",
+   "trail_rations"
+  ],
+  "benefit": "sp",
+  "flavor": "Sixty-six legions follow Bael, and they are fed from kettles.",
+  "rung": "step",
+  "art": "dish_stew_t5_sp"
+ },
+ "step_kusarikku": {
+  "name": "Gatekeeper's Pie",
+  "ingredients": [
+   "kusarikku_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "The bull-men of Babylon have kept the gates of the sun since the beginning, with short breaks for pie.",
+  "rung": "step",
+  "art": "dish_pie_t5_sp"
+ },
+ "step_seal_demon_death": {
+  "name": "Death-Defier's Pottage",
+  "ingredients": [
+   "seal_demon_death_prime",
+   "hearty_stew"
+  ],
+  "benefit": "drain_resist",
+  "flavor": "It is eaten slowly and to the last spoonful, in front of Samael.",
+  "rung": "step",
+  "art": "dish_stew_t5_special"
+ },
+ "step_anansi": {
+  "name": "Anansi's Wisdom Pot",
+  "ingredients": [
+   "anansi_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "sp",
+  "flavor": "Anansi gathered all the world's wisdom into one pot, and then could not get it up the tree.",
+  "rung": "step",
+  "art": "dish_stew_t5_sp"
+ },
+ "step_lahamu": {
+  "name": "First-Waters Stew",
+  "ingredients": [
+   "lahamu_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "mp",
+  "flavor": "There was sweet water and salt, and out of their mingling the silt and the first gods.",
+  "rung": "step",
+  "art": "dish_stew_t5_mp"
+ },
+ "step_seal_demon_earthquake": {
+  "name": "Earth-Shaker's Bake",
+  "ingredients": [
+   "seal_demon_earthquake_prime",
+   "hearty_stew"
+  ],
+  "benefit": "hp",
+  "flavor": "The crust cracks from side to side as it rises.",
+  "rung": "step",
+  "art": "dish_roast_t5_hp"
+ },
+ "step_abyssal_dragon": {
+  "name": "Chaos-Dragon Braise",
+  "ingredients": [
+   "abyssal_dragon_prime",
+   "dried_meat"
+  ],
+  "benefit": "hp",
+  "flavor": "The blood of the first chaos is thick, and salt meat does not mind it.",
+  "rung": "step",
+  "art": "dish_stew_t5_hp"
+ },
+ "step_corrupted_angel": {
+  "name": "Fallen-Halo Bake",
+  "ingredients": [
+   "corrupted_angel_prime",
+   "wild_mushroom"
+  ],
+  "benefit": "hp",
+  "flavor": "The halo browns the top evenly all the way round.",
+  "rung": "step",
+  "art": "dish_roast_t5_hp"
+ },
+ "step_seal_demon_silence": {
+  "name": "Half-Hour's Silence Soup",
+  "ingredients": [
+   "seal_demon_silence_prime",
+   "trail_rations"
+  ],
+  "benefit": "mp",
+  "flavor": "When the seventh seal was opened there was silence in heaven for about half an hour.",
+  "rung": "step",
+  "art": "dish_soup_t5_mp"
  }
 }

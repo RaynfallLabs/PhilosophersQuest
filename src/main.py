@@ -7331,6 +7331,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     bonus_type=_bonus_type,
                     ingredient_id=ingredient.id,
                     parts=tuple(_kitchen_parts(_recipe_for_quirk)),
+                    rung=(_recipe_for_quirk or {}).get('rung'),
                 )
             self._advance_turn()
 
@@ -7401,6 +7402,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     bonus_type=_bonus_type,
                     ingredient_id=_anchor_id,
                     parts=tuple(_kitchen.parts(recipe)),
+                    rung=_kitchen.rung_of(recipe),
                 )
             self._advance_turn()
 

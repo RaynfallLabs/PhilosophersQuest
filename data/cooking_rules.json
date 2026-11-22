@@ -21,14 +21,20 @@
     "4": 1.5,
     "5": 1.6
   },
+  "rungs": {
+    "_doc": "The kitchen's two low rungs (Brandon, 2026-11-22, on rations, bread and cheese piling up: 'more recipes that use these ONLY... as well as monster recipes that are just ONE step above a single monster ingredient'). A recipe names its rung. plain: a dish of staples alone. Its main benefit is main times a dish's, its heal is heal_written (0: only what an HP dish's share or the foods themselves give) and it adds max_hp (0: only a creature's part builds a hero, 'you are what you eat'). step: one creature's part and one staple, an ordinary dish of two. On both, cooked_over_raw is the least a dish gives of the SP and HP its ingredients would give eaten as they are. A dish with no rung is untouched by all of this.",
+    "cooked_over_raw": 1.25,
+    "plain": {"main": 0.6, "heal_written": 0, "max_hp": 0},
+    "step": {"main": 1.0}
+  },
   "every_dish": {
-    "_doc": "What any dish cooked right gives, whatever its tab: SP (scaled by worth), a small heal (food_system.meal_mend_share of heal_written), and max_hp toward the floor's cap (Player.PER_FLOOR_HP_CAP). These keep a single dish near the old tier bands.",
+    "_doc": "What any dish cooked right gives, whatever its tab: SP (scaled by worth), a small heal (food_system.meal_mend_share of heal_written), and max_hp toward the floor's cap (Player.PER_FLOOR_HP_CAP). These keep a single dish near the old tier bands. Plain fare has its own heal and max HP (rungs).",
     "sp": [60, 80, 105, 125, 150],
     "heal_written": [3, 6, 9, 14, 20],
     "max_hp": 2
   },
   "hp": {
-    "_doc": "The HP tab: heals this share of max HP (times worth, at most all of it) and adds max_hp_bonus (times worth) on top of every dish's max HP, inside the floor's cap.",
+    "_doc": "The HP tab: heals this share of max HP (times worth, at most all of it) and adds max_hp_bonus (times worth) on top of every dish's max HP, inside the floor's cap. Plain fare adds none (rungs).",
     "heal_share": [0.18, 0.22, 0.26, 0.30, 0.34],
     "max_hp_bonus": [1, 1, 2, 2, 3]
   },
