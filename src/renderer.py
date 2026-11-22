@@ -901,6 +901,7 @@ class Renderer:
         T = self.map_tile_size
         explored = dungeon.explored
         spent = getattr(dungeon, 'fixture_state', None) or {}
+        sealed = dungeon.__dict__.get('sealed_vents') or ()
         tx0, ty0, tx1, ty1 = self._onscreen_tile_range(dungeon.width, dungeon.height)
         order = sorted(fixtures.items(),
                        key=lambda kv: 0 if decor.fixture_def(kv[1]).get('layer') == 'floor' else 1)
@@ -916,6 +917,9 @@ class Renderer:
             if state == 'fire':
                 # A fire vent on its beat (hazards.py): its jet of fire.
                 sprite = self._get_env_sprite(f'fixtures/{fid}_active')
+            elif (fx, fy) in sealed:
+                # A vent the prayer shut: the crack stopped, and no smoke.
+                sprite = self._get_env_sprite(f'fixtures/{fid}_sealed')
             if sprite is None:
                 sprite = self._get_env_sprite(f'fixtures/{fid}')
             if sprite is None:
@@ -933,7 +937,8 @@ class Renderer:
                 glow = pygame.Surface((T, T), pygame.SRCALPHA)
                 glow.fill((255, 200, 120, 90) if state == 'glow' else (255, 120, 40, 120))
                 self.screen.blit(glow, (sx, sy))
-            if state == 'spent':
+            if state == 'spent' and (fx, fy) not in sealed:
+                # (A shut vent's own picture says so; dimmed, it was a black square.)
                 self.screen.blit(dim, (sx, sy))
             if not seen:
                 self.screen.blit(dim, (sx, sy))

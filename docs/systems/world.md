@@ -271,7 +271,7 @@ Tests: `tests/test_rooms_and_lore.py`.
 | 40 | ivy, olive leaves, shed skins, broken statues |
 | 60 | the hoard bed round Fafnir (`tile_art` `hoard`), dragon-slayers' bones, scorch marks |
 | 80 | shields, icicles, two broken fetters, and 3-4 cold braziers |
-| 100 | chains, seven seal stones round the arena (one for each seal broken), the ruined throne, the fallen star at the entry, 4-6 smoke vents, and an arrival line (it had none) |
+| 100 | chains, seven seal stones round the arena (one for each seal broken), the ruined throne, the fallen star at the entry, 4-6 smoke vents (one the prayer shut is drawn stopped, with no smoke: `smoke_vent_sealed.png`, `tools/content/genart/sealed_vent.py`), and an arrival line (it had none) |
 
 **Fixtures that matter in the fight:**
 - **Asterion:** a phasing wall he walks through stays cracked and dusty for 6 turns (`dungeon.wall_cracks`, drawn by `renderer._draw_marks`), so where he went can be read.

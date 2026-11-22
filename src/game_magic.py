@@ -654,10 +654,15 @@ class MagicMixin(MagicWardsMixin):
                 self.player, got, "Intense healing washes over you -- {n} HP restored!"), 'success')
 
         elif effect == 'restore_body':
-            self.player.hp = self.player.max_hp
+            # Through disease like any heal (ruling D5, 2026-11-22).
+            self.player.restore_hp(self.player.max_hp - self.player.hp)
             self.player.sp = self.player.max_sp
             self.player.mp = self.player.max_mp
-            self.add_message("Your body is fully restored!", 'success')
+            whole = "Your body is fully restored!"
+            said = grave_rot.whole(self.player, whole)
+            if said != whole:
+                said = f"SP and MP restored. {said}"
+            self.add_message(said, 'success')
 
         elif effect == 'haste_self':
             dur = self._wand_tier_duration(12, wand.quiz_tier)
@@ -2365,13 +2370,16 @@ class MagicMixin(MagicWardsMixin):
             if kind == 'stat_bonus' and self.player.fortune_stat_room() <= 0:
                 kind = 'strong_buff'      # the run's allowance of lucky points is spent
             if kind == 'full_restore':
-                self.player.hp = self.player.max_hp
+                # Through disease like any heal (ruling D5, 2026-11-22).
+                self.player.restore_hp(self.player.max_hp - self.player.hp)
                 self.player.sp = self.player.max_sp
                 self.player.mp = self.player.max_mp
-                self.add_message(
-                    "WISH GRANTED! You feel utterly whole -- "
-                    "HP, SP, and MP restored!",
-                    'success')
+                whole = ("WISH GRANTED! You feel utterly whole -- "
+                         "HP, SP, and MP restored!")
+                said = grave_rot.whole(self.player, whole)
+                if said != whole:
+                    said = f"WISH GRANTED! SP and MP restored. {said}"
+                self.add_message(said, 'success')
             elif kind == 'stat_bonus':
                 stat = random.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
                 old = getattr(self.player, stat)

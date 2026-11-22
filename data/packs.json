@@ -95,7 +95,7 @@
   "tricks": {
     "swarm": {
       "bestiary": "Swarms: each rat bites harder for every other rat beside you.",
-      "_doc": "Each rat's bite is worth per_other more for every OTHER rat of its pack beside the hero, at most cap more: one rat is a nuisance, four are deadly. The line is said when line_at or more others are on him and the count has grown since it was last said.",
+      "_doc": "Each rat's bite is worth per_other more for every OTHER rat of its pack beside the hero that can act (packs.can_fight: not asleep, held or cowed), at most cap more: one rat is a nuisance, four are deadly. The line is said when line_at or more others are on him and the count has grown since it was last said.",
       "per_other": 0.5,
       "cap": 1.5,
       "line_at": 2,
