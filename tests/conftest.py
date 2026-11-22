@@ -57,6 +57,17 @@ def pytest_collection_modifyitems(config, items):
         items[:] = keep
 
 
+@pytest.fixture(autouse=True)
+def _the_simulator_cleans_up():
+    """A test that played a simulator cell (difficulty_sim.run_cell) patched
+    the game for this process: shared item objects, no bones. Whatever test
+    it was, the next one gets the game's own (2026-11-21)."""
+    yield
+    sim = sys.modules.get('difficulty_sim')
+    if sim is not None and hasattr(sim, 'uninstall_caches'):
+        sim.uninstall_caches()
+
+
 @pytest.fixture(autouse=True, scope='session')
 def _isolate_dev_save_dir():
     try:
