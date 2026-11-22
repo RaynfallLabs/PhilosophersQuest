@@ -2036,14 +2036,18 @@ class RenderMixin:
         col = pygame.Rect(tx, body_rect.y, body_rect.right - tx, body_rect.h)
 
         y = col.y
-        for i, p in enumerate(paras):
-            if i:
-                y += S(10)
-            y = self._ui_wrap_text(display_text(p), font, FP.PARCHMENT_LIGHT,
-                                   pygame.Rect(col.x, y, col.w, col.bottom - y), line_gap=4)
+        more = ""
+        if phase in ('story', 'outcome'):
+            more = self._ui_set_piece_page(paras, col)
+        else:
+            for i, p in enumerate(paras):
+                if i:
+                    y += S(10)
+                y = self._ui_wrap_text(display_text(p), font, FP.PARCHMENT_LIGHT,
+                                       pygame.Rect(col.x, y, col.w, col.bottom - y), line_gap=4)
 
         if phase == 'story':
-            self._ui_footer(panel, "Enter / Space: continue   |   Esc: walk away")
+            self._ui_footer(panel, f"{more}Enter / Space: continue   |   Esc: walk away")
         elif phase == 'options':
             y += S(14)
             for key, which in (('1', 'feed'), ('2', 'ignore'), ('3', 'attack'), ('4', 'choose'),
@@ -2065,7 +2069,7 @@ class RenderMixin:
             self._ui_scrollbar(list_rect, top, len(food), ep.FOOD_PAGE, color=border)
             self._ui_footer(panel, "a-i: give   |   Up/Down: scroll   |   Esc: back")
         else:
-            self._ui_footer(panel, "Enter / Space / Esc: continue")
+            self._ui_footer(panel, f"{more}Enter / Space / Esc: continue")
 
     def _draw_npc_encounter(self):
         """Draw the NPC moral encounter overlay — multi-phase.
@@ -2081,12 +2085,7 @@ class RenderMixin:
 
         border = tuple(enc['color'])
         phase = self._npc_encounter_phase
-        phase_label = {
-            'text': 'ENCOUNTER',
-            'options': 'CHOICE',
-            'select_item': 'OFFER',
-            'outcome': 'RESULT',
-        }.get(phase, 'ENCOUNTER')
+        phase_label = self._NPC_PHASE_LABELS.get(phase, 'ENCOUNTER')
 
         draw_overlay(self.screen, 190)
         kit = bool(panel_band('panel', pygame.Rect(0, 0, S(860), S(400))))
@@ -2129,11 +2128,15 @@ class RenderMixin:
         if b:
             # Plaque with the encounter's name; the phase chip at its right
             # end, clear of the title (right_reserve).
-            body_top = self._ui_header(panel, enc['name'].upper(), border_color=border,
-                                       h=48, right_reserve=S(160), left_reserve=S(160))
             hr = header_rect(panel, S(48))
-            self._ui_chip(pygame.Rect(hr.right - S(40) - S(110),
-                                      hr.y + (hr.h - S(4) - S(28)) // 2, S(110), S(28)),
+            title = enc['name'].upper()
+            chip_w = self._encounter_chip_w()
+            side = max(S(160), S(40) + chip_w + S(10))      # the chip's end of the plaque
+            title_font, left = self._encounter_title_fit(title, hr.w, side)
+            body_top = self._ui_header(panel, title, border_color=border, font=title_font,
+                                       h=48, right_reserve=side, left_reserve=left)
+            self._ui_chip(pygame.Rect(hr.right - S(40) - chip_w,
+                                      hr.y + (hr.h - S(4) - S(28)) // 2, chip_w, S(28)),
                           display_title(phase_label), active=True, color=border)
             _div, _keys, foot_bottom = self._ui_footer_metrics(panel)
             body_rect = pygame.Rect(bx + b + S(28), body_top + S(4),
@@ -2212,28 +2215,46 @@ class RenderMixin:
             self._ui_footer(panel, "a-i: select item   |   Up/Down: scroll   |   Esc: back")
             return
 
+    _NPC_PHASE_LABELS = {
+        'text': 'ENCOUNTER',
+        'options': 'CHOICE',
+        'select_item': 'OFFER',
+        'outcome': 'RESULT',
+    }
+    # The sizes an encounter's title steps down through before it ellipsizes.
+    _NPC_TITLE_SIZES = (32, 28, 26, 24, 22, 20, 18, 16)
+
+    def _encounter_chip_w(self) -> int:
+        """The phase chip's width: from the longest of its words, so that it
+        holds each and stays put from page to page ("Encou..." at 960x540)."""
+        f = get_font('body', 16, bold=True)
+        kept = self.__dict__.get('_chip_w_kept')
+        if kept is None or kept[0] != (f, S(16)):
+            w = max(f.size(display_title(t))[0] for t in self._NPC_PHASE_LABELS.values())
+            kept = self._chip_w_kept = ((f, S(16)), max(S(110), w + S(16)))
+        return kept[1]
+
+    def _encounter_title_fit(self, title, plaque_w, side):
+        """(font, left reserve) of an encounter's title: centred clear of the
+        chip and stepped down until it fits; at the smallest size it may
+        take the chip's share of the left end too (bug bash 3.6.0 h3-16)."""
+        shown = display_title(display_text(title))
+        for size in self._NPC_TITLE_SIZES:
+            font = get_font('heading', size)
+            if len(self._ui_cached_lines(shown, font, plaque_w - 2 * side)) == 1:
+                return font, side
+        return font, 0
+
     # The sizes an encounter's story steps down through before it scrolls.
     _NPC_STORY_SIZES = (20, 18, 16)
 
     def _npc_draw_story(self, text, rect) -> bool:
-        """An encounter's scene or result, whole: shrink, then scroll (as
-        the quiz does). True when it scrolls, so the footer can say how.
-
-        _ui_wrap_text stops at the foot of its rect and says nothing: the
-        Gate's six fates lost the closing line at 960x540 (bug bash 3.6.0)."""
-        for size in self._NPC_STORY_SIZES:
-            font = get_font('body', size)
-            step = font.get_height() + S(4)
-            lines = self._ui_text_lines(text, font, rect.w)
-            if (len(lines) - 1) * step + font.get_height() <= rect.h:
-                self._ui_wrap_text(text, font, FP.PARCHMENT_LIGHT, rect, line_gap=4)
-                self._npc_text_scroll = 0
-                return False
-        lines = self._ui_text_lines(text, font, rect.w - S(14))     # room for the bar
-        self._npc_text_scroll = self._ui_draw_scroll_lines(
-            lines, font, FP.PARCHMENT_LIGHT, rect, getattr(self, '_npc_text_scroll', 0),
-            line_gap=4)
-        return True
+        """An encounter's scene or result, whole (``_ui_draw_story``). True
+        when it scrolls, so the footer can say how."""
+        at = self._ui_draw_story(((text, FP.PARCHMENT_LIGHT),), rect, self._NPC_STORY_SIZES,
+                                 getattr(self, '_npc_text_scroll', 0))
+        self._npc_text_scroll = at or 0
+        return at is not None
 
     def _draw_judgment(self):
         """Draw the Altar of the Last Judgment result overlay."""
@@ -4960,6 +4981,15 @@ class RenderMixin:
             w -= max(badges) + S(10)
         return w - S(12)
 
+    def _menu_row_own_w(self, row_w, entry):
+        """The text width of this one row, as ``_menu_row_kit`` draws it."""
+        w = row_w - (S(9) + S(30) + S(10) if entry.get('key') else S(10))
+        if entry.get('icon'):
+            w -= self.MENU_ICON_SIZE + S(8) + S(10)
+        if entry.get('badge'):
+            w -= get_font('body', 16, bold=True).size(str(entry['badge']))[0] + S(18) + S(10)
+        return w - S(12)
+
     def _menu_row_kit(self, rect, entry, *, selected, name_font, detail_font,
                       key_font, two_line=True, detail_lines=1, name_sizes=(20, 18, 16),
                       name_lines=1):
@@ -4998,8 +5028,7 @@ class RenderMixin:
             bs = bf.render(label, True, col)
             self.screen.blit(bs, (brect.centerx - bs.get_width() // 2,
                                   brect.centery - bs.get_height() // 2))
-            badge_w += S(10)
-        text_w = rect.right - tx - badge_w - S(12)
+        text_w = self._menu_row_own_w(rect.w, entry)
         name_col = readable(entry.get('name_color', FP.BODY_TEXT), bg)
         # One name size for the whole list (the caller's ``name_sizes``); a
         # name that still does not fit wraps onto ``name_lines`` lines.
@@ -5200,11 +5229,13 @@ class RenderMixin:
         Centred on the window over the same full dim as every other menu
         (VISUAL_REVIEW minor 2: anchored to the bottom over a light dim, a
         half log line peeked under it and the log beside it stayed bright).
-        Each row shows its whole detail line, wrapped onto a second line
-        when it is long (the Fireball row was cut to "5d6 fire damag"). The
-        note above the rows appears only for what the rows do NOT say (an
-        entry's ``full_detail`` beyond its ``detail``); it is plain text, not
-        a boxed card, so it never looks like a choice (VISUAL_REVIEW_2).
+        Each row shows its detail wrapped onto up to three lines (the
+        Fireball row was cut to "5d6 fire damag"). The note above the rows
+        appears only for what the rows do NOT say: an entry's ``full_detail``
+        beyond its ``detail``, or the whole of it for the selected row where
+        the row had to cut it (bug bash 3.6.0 h3-08: Dionysus's Vine ended
+        "...and for 12 tu..."). It is plain text, not a boxed card, so it
+        never looks like a choice (VISUAL_REVIEW_2).
 
         The panel height is laid out top-down from the SAME numbers the draw
         uses (header, the subtitle's own line when it cannot sit beside the
@@ -5231,12 +5262,16 @@ class RenderMixin:
         name_font, detail_font = self.font_sm, get_font('body', 16)
         key_font = get_font('body', 18, bold=True)
         text_w = self._menu_row_text_w(col_w, entries)
+        details = [display_text(str(e.get('detail', '') or '')) for e in entries]
         detail_lines = 1
-        for e in entries:
-            d = display_text(str(e.get('detail', '') or ''))
+        for d in details:
             if d:
                 detail_lines = max(detail_lines,
-                                   min(3, len(self._wrap_text(d, detail_font, text_w))))
+                                   min(3, len(self._ui_cached_lines(d, detail_font, text_w))))
+        # The rows that will cut their detail, at each row's own width.
+        cut = {i for i, (e, d) in enumerate(zip(entries, details))
+               if d and len(self._ui_cached_lines(
+                   d, detail_font, self._menu_row_own_w(col_w, e))) > detail_lines}
         name_sizes, name_lines = self._menu_name_sizes(entries, text_w)
         row_gap = S(6)
         row_h = max(S(54), get_font('body', name_sizes[0]).get_height() * name_lines + S(3)
@@ -5249,14 +5284,23 @@ class RenderMixin:
             if not full or full == det:
                 return ''
             return full[len(det):].strip() if full.startswith(det) else full
-        note_text = _extra(entries[selected]) if entries else ''
+        notes = []
+        for i, e in enumerate(entries):
+            note = _extra(e)
+            if i in cut:
+                # What its row cannot hold is said here, whole.
+                det, full = str(e['detail']), str(e.get('full_detail') or '')
+                note = full if full.startswith(det) else f"{det}   {note}".strip()
+            notes.append(display_text(note))
+        note_text = notes[selected] if entries else ''
         note_font = get_font('body', 16)
         note_w = bw - 2 * side - 2 * S(12)
         note_line_h = note_font.get_height() + S(3)
         note_h = 0
-        if note_text:
-            n_lines = max([min(3, len(self._wrap_text(display_text(_extra(x)), note_font, note_w)))
-                           for x in entries if _extra(x)] or [1])
+        if note_text or cut:
+            # As tall as the longest, so the rows stay put as the selection moves.
+            n_lines = max([len(self._ui_cached_lines(n, note_font, note_w))
+                           for n in notes if n] or [1])
             note_h = max(1, n_lines) * note_line_h
 
         # Header: the title plaque, and the subtitle beside it or on its own line.
@@ -5311,11 +5355,11 @@ class RenderMixin:
         if tabs:
             y = self._draw_action_tabs(tabs, active_tab, tab_counts, bx + side, y,
                                        bw - 2 * side)
-        if note_text:
+        if note_h:
             # Plain dim text on the interior, centred: information, not a choice.
             col = readable(KT.TEXT_DIM, KT.INTERIOR)
             ly = y + S(2)
-            for ln in self._wrap_text(display_text(note_text), note_font, note_w)[:3]:
+            for ln in self._ui_cached_lines(note_text, note_font, note_w) if note_text else ():
                 ls = note_font.render(ln, True, col)
                 self.screen.blit(ls, (panel.centerx - ls.get_width() // 2, ly))
                 ly += note_line_h
@@ -6047,14 +6091,22 @@ class RenderMixin:
         # _kit_input, game_input); the drawn offset is kept, clamped. When the
         # card runs past the panel, its last line says how to scroll (here,
         # not in the footer: the footer is full and would shrink below 16 px).
-        line_h = self.font_sm.get_height() + S(5)
-        if len(render_lines) > max(1, rect.h // line_h):
+        if self._ui_scroll_end(render_lines, self.font_sm, rect.h, S(5)):
             hf = get_font('body', 16)
-            hint_h = hf.get_height() + S(4)
+            # All of the hint's lines, at the width they are wrapped to: the
+            # first alone lost the word "scroll" (bug bash 3.6.0 h3-10).
+            hint = self._ui_cached_lines("Shift+Up/Down or the mouse wheel: scroll", hf,
+                                         self._ui_scroll_text_w(rect.w))
+            hint_h = len(hint) * hf.get_height() + S(4)
             rect = pygame.Rect(rect.x, rect.y, rect.w, max(0, rect.h - hint_h))
-            self._ui_blit_text("Shift+Up/Down or the mouse wheel: scroll", hf,
-                               FP.FADED_TEXT, rect.x, rect.bottom + S(2),
-                               max_width=rect.w - S(12))
+            for i, line in enumerate(hint):
+                self._ui_blit_text(line, hf, FP.FADED_TEXT, rect.x,
+                                   rect.bottom + S(2) + i * hf.get_height())
+        # A press or a notch moves three lines, or as many as the pane holds
+        # when that is fewer: three stepped over lines in a pane of one.
+        line_h = self.font_sm.get_height() + S(5)
+        tallest = max((f.get_height() for _t, _c, f in render_lines), default=0) + S(5)
+        self._kit_detail_step = max(1, min(3, rect.h // line_h, (rect.h + S(5)) // max(1, tallest)))
         self._kit_detail_scroll = self._ui_draw_scroll_lines(
             render_lines, self.font_sm, FP.BODY_TEXT, rect,
             int(getattr(self, '_kit_detail_scroll', 0) or 0), line_gap=5)
@@ -8623,28 +8675,22 @@ class RenderMixin:
         bw = min(S(920), layout.WINDOW_W - S(96))
         bx = (layout.WINDOW_W - bw) // 2
 
-        def build_lines(font, width):
-            paragraphs = []
-            buf = ''
-            for line in raw_lines:
-                if line == '':
-                    if buf:
-                        paragraphs.append((buf, False, buf.startswith('"')))
-                        buf = ''
-                    paragraphs.append(('', True, False))
-                else:
-                    buf = (buf + ' ' + display_text(line)).strip() if buf else display_text(line)
-            if buf:
-                paragraphs.append((buf, False, buf.startswith('"')))
+        # (text, colour) paragraphs, '' a half line between two.
+        paras = []
+        buf = ''
 
-            out = []
-            for text, is_blank, is_quoted in paragraphs:
-                if is_blank:
-                    out.append(('', True, False))
-                    continue
-                for wl in self._wrap_text(text, font, width) or ['']:
-                    out.append((wl, False, is_quoted))
-            return out
+        def add(text):
+            paras.append((text, (200, 195, 160) if text.startswith('"') else FP.PARCHMENT_LIGHT))
+        for line in raw_lines:
+            if line == '':
+                if buf:
+                    add(buf)
+                    buf = ''
+                add('')
+            else:
+                buf = (buf + ' ' + display_text(line)).strip() if buf else display_text(line)
+        if buf:
+            add(buf)
 
         kit = kit_on()
         code_h = S(46) if code else 0
@@ -8660,10 +8706,10 @@ class RenderMixin:
 
         def measure(size):
             f = get_font('body', size)
-            lines = build_lines(f, max_txt)
             r = f.get_height() + S(4)
-            h = sum(r // 2 if blank else r for _t, blank, _q in lines)
-            return f, lines, r, chrome + h + code_h
+            h = sum(len(self._ui_cached_lines(text, f, max_txt)) * r if text else r // 2
+                    for text, _col in paras)
+            return chrome + h + code_h
 
         # An unlock (game_seeker._show_achievement_popup): up to three
         # achievements, each its badge in a rarity frame, name, text and
@@ -8678,7 +8724,7 @@ class RenderMixin:
             return (sum(seeker_screen.block_height(e, max_txt, bp) for e in achs)
                     + ach_gap * (len(achs) - 1) + S(12))
 
-        font_body, wrapped_lines, row, needed_h = measure(19)
+        sizes, needed_h = (19, 16), measure(19)
         if achs:
             for size in (128, 112, 96, 80, 64):
                 ach_bp = S(size)
@@ -8686,7 +8732,7 @@ class RenderMixin:
                 if needed_h + ach_h <= max_h:
                     break
         if needed_h + ach_h > max_h:
-            font_body, wrapped_lines, row, needed_h = measure(16)
+            sizes, needed_h = (16,), measure(16)
         needed_h += ach_h
 
         bh = min(max_h, max(S(250), needed_h))
@@ -8705,25 +8751,45 @@ class RenderMixin:
             y = by + S(74)
             body_bottom = by + bh - S(48) - code_h
             tx = bx + S(36)
+        page = None
+        words_shown = True
         if achs:
             import seeker_screen
-            for e in achs:
+            heights = [seeker_screen.block_height(e, max_txt, ach_bp) for e in achs]
+            room, words_h = body_bottom - y, measure(16) - chrome - code_h - S(4)
+            last = 0
+            while (last < len(achs)
+                   and sum(h + ach_gap for h in heights[last:]) - ach_gap + S(12) + words_h > room):
+                last += 1
+            top = 0
+            if last:
+                # Too many for the window at their smallest: Up / Down step
+                # through them, and the words under them close the last page.
+                ident = ('achievements', tuple(str(e.get('name', '')) for e in achs))
+                held = self.__dict__.get('_story_page') or {}
+                top = min(last, held['at']) if held.get('page') == ident else 0
+                page = {'page': ident, 'at': top}
+                words_shown = top == last
+            drawn = 0
+            for e, h in zip(achs[top:], heights[top:]):
+                if drawn and y + h > body_bottom:
+                    break
                 y += seeker_screen.draw_block(self.screen, tx, y, max_txt, e, ach_bp,
                                               bg=KT.INTERIOR if b else FP.MIDNIGHT) + ach_gap
-            y += S(12) - ach_gap
-        for text, is_blank, is_quoted in wrapped_lines:
-            if is_blank:
-                y += row // 2
-                continue
-            if y + font_body.get_height() > body_bottom:
-                break
-            col = (200, 195, 160) if is_quoted else FP.PARCHMENT_LIGHT
-            if achs:
-                # "Show this code to Dad." sits centred under the codes.
-                self._ui_blit_text(text, font_body, col, bx + bw // 2, y, align='center')
-            else:
-                self._ui_blit_text(text, font_body, col, tx, y)
-            y += row
+                drawn += 1
+            if drawn:
+                y += S(12) - ach_gap
+        # All of it: shrink, then Up / Down scroll (bug bash 3.6.0 h3-11: the
+        # intro stopped at "Should you discover any, carry" at 960x540).
+        # With achievements, "Show this code to Dad." sits centred under the
+        # codes (centred text is drawn about the rect's x).
+        scrolls = False
+        if words_shown:
+            story = pygame.Rect(bx + bw // 2 if achs else tx, y, max_txt, max(0, body_bottom - y))
+            scrolls = self._ui_story_page(paras, story, sizes,
+                                          align='center' if achs else 'left')
+        if page is not None:
+            self._story_page, scrolls = page, True
 
         if code:
             code_y = (body_bottom + S(4)) if b else by + bh - S(84)
@@ -8747,9 +8813,12 @@ class RenderMixin:
 
         if b:
             draw_divider(self.screen, bx + b + S(28), _div, bw - 2 * (b + S(28)))
-            draw_key_hints(self.screen, keys, "Any key: continue")
+            draw_key_hints(self.screen, keys,
+                           "Up/Down: scroll   |   Any other key: continue" if scrolls
+                           else "Any key: continue")
         else:
-            self._ui_blit_text("Press any key to continue", get_font('small', 16),
+            self._ui_blit_text("Up/Down: scroll   |   Any other key: continue" if scrolls
+                               else "Press any key to continue", get_font('small', 16),
                                FP.HINT_TEXT, bx + bw // 2, by + bh - S(30),
                                align='center')
 
@@ -9390,6 +9459,103 @@ class RenderMixin:
             lines.extend(self._wrap_text(chunk, font, width) or [''])
         return lines
 
+    _UI_LINES_KEPT = 4096       # wrapped texts kept between frames
+
+    def _ui_cached_lines(self, text, font, width) -> tuple:
+        """``_ui_text_lines``, kept by text, width and font: for what a
+        screen has to measure before it can lay itself out, on every frame."""
+        kept = self.__dict__.setdefault('_ui_lines_cache', {})
+        key = (str(text), font, width)
+        lines = kept.get(key)
+        if lines is None:
+            if len(kept) >= self._UI_LINES_KEPT:
+                kept.clear()
+            lines = kept[key] = tuple(self._ui_text_lines(text, font, width))
+        return lines
+
+    @staticmethod
+    def _ui_scroll_text_w(w) -> int:
+        """The width ``_ui_draw_scroll_lines`` draws in, of a pane ``w`` wide
+        (the bar's lane left free): wrap to this, or a line's last word is
+        lost ("Ring of / II", bug bash 3.6.0 h3-12)."""
+        return w - S(12)
+
+    @staticmethod
+    def _ui_scroll_end(lines, font, room, gap) -> int:
+        """How far a pane ``room`` px tall scrolls over ``lines`` (0: all of
+        them show). A line taller than the pane's own (a heading) takes more
+        than a line's room: the last line must still be reached."""
+        visible = max(1, room // (font.get_height() + gap))
+        end = max(0, len(lines) - visible)
+        used = -gap
+        for i in range(len(lines) - 1, end - 1, -1):
+            entry = lines[i]
+            own = None
+            if isinstance(entry, tuple):
+                own = entry[4] if entry[0] == '__cells__' else entry[2]
+            used += (own or font).get_height() + gap
+            if used > room:
+                return min(i + 1, len(lines) - 1)
+        return end
+
+    def _ui_draw_story(self, paras, rect, sizes, scroll=0, *, blank=None,
+                       align='left'):
+        """A story, whole: shrink through ``sizes``, then scroll (as the quiz
+        does). ``paras`` are (text, colour); an empty text is a gap of
+        ``blank`` px (half a line). Returns where it is scrolled to, or None
+        when all of it fits.
+
+        _ui_wrap_text stops at the foot of its rect and says nothing: the
+        Gate's six fates lost the closing line at 960x540, and the intro and
+        the set pieces lost their endings (bug bash 3.6.0)."""
+        for size in sizes:
+            font = get_font('body', size)
+            step = font.get_height() + S(4)
+            gap = step // 2 if blank is None else blank
+            rows, y, end = [], 0, 0
+            for text, col in paras:
+                if not text:
+                    y += gap
+                    continue
+                for line in self._ui_cached_lines(text, font, rect.w):
+                    rows.append((y, line, col))
+                    end = y + font.get_height()
+                    y += step
+            if end <= rect.h:
+                for top, line, col in rows:
+                    self._ui_blit_text(line, font, col, rect.x, rect.y + top, align=align)
+                return None
+        w = rect.w - S(14)                                          # room for the bar
+        lines = [(line, col, font) for text, col in paras
+                 for line in (self._ui_cached_lines(text, font, w) if text else ('',))]
+        return self._ui_draw_scroll_lines(lines, font, FP.PARCHMENT_LIGHT, rect, scroll,
+                                          line_gap=4)
+
+    def _ui_story_page(self, paras, rect, sizes, *, blank=None, align='left') -> bool:
+        """The story popup's or a set piece's page, whole. True when it
+        scrolls: ``_story_page`` then holds where to, for Up / Down
+        (game_input._story_scroll_key), and the footer says how."""
+        page = tuple(paras)
+        held = self.__dict__.get('_story_page') or {}
+        at = held['at'] if held.get('page') == page else 0
+        at = self._ui_draw_story(page, rect, sizes, at, blank=blank, align=align)
+        self._story_page = None if at is None else {'page': page, 'at': at}
+        return at is not None
+
+    # The sizes a set piece's story steps down through before it scrolls.
+    _SET_PIECE_SIZES = (18, 16)
+
+    def _ui_set_piece_page(self, paras, rect) -> str:
+        """A set piece's story or result beside its picture (the Emberpup,
+        the Mooble, the Bococho). Returns what the footer must add."""
+        rows = []
+        for i, p in enumerate(paras):
+            if i:
+                rows.append(('', FP.PARCHMENT_LIGHT))
+            rows.append((display_text(p), FP.PARCHMENT_LIGHT))
+        scrolls = self._ui_story_page(rows, rect, self._SET_PIECE_SIZES, blank=S(10))
+        return "Up/Down: scroll   |   " if scrolls else ""
+
     def _ui_action_row(self, rect, key, label, *, color=FP.BODY_TEXT,
                        selected=False, danger=False):
         key = str(key)
@@ -9561,7 +9727,14 @@ class RenderMixin:
         kit = kit_on()
         band = S(16) if kit else 0
         bw = min(S(max_w), _modal_budget_w() - S(48))
-        bh = S(238) + (2 * band + S(30) if kit else 0)
+        # The card is as tall as its prompt wraps to: two fixed lines lost
+        # Drop Gold's last in a small window (bug bash 3.6.0 h3-15).
+        pf = get_font('body', 18)
+        pb = panel_band('panel', pygame.Rect(0, 0, bw, S(238)))
+        prompt_w = bw - 2 * (pb + S(32)) if pb else bw - 2 * S(36)
+        step = pf.get_height() + S(2)
+        prompt_h = max(S(46), len(self._ui_cached_lines(prompt, pf, prompt_w)) * step - S(2))
+        bh = S(238) + (2 * band + S(30) if kit else 0) + prompt_h - S(46)
         bx = _centre_x(bw)
         by = _centre_y(bh)
         panel = pygame.Rect(bx, by, bw, bh)
@@ -9571,15 +9744,15 @@ class RenderMixin:
         b = panel_band('panel', panel)
         if b:
             prompt_rect = pygame.Rect(bx + b + S(32), body_top + S(2),
-                                      bw - 2 * (b + S(32)), S(46))
+                                      bw - 2 * (b + S(32)), prompt_h)
             box = (bx + b + S(56), prompt_rect.bottom + S(10),
                    bw - 2 * (b + S(56)), S(40))
         else:
-            prompt_rect = pygame.Rect(bx + S(36), by + S(76), bw - 2 * S(36), S(46))
-            box = (bx + S(70), by + S(132), bw - 2 * S(70), S(38))
-        self._ui_wrap_text(prompt, get_font('body', 18),
+            prompt_rect = pygame.Rect(bx + S(36), by + S(76), bw - 2 * S(36), prompt_h)
+            box = (bx + S(70), by + S(132) + prompt_h - S(46), bw - 2 * S(70), S(38))
+        self._ui_wrap_text(prompt, pf,
                            KT.TEXT_BODY if b else FP.BODY_TEXT,
-                           prompt_rect, line_gap=2, max_lines=2)
+                           prompt_rect, line_gap=2)
         draw_input_box(self.screen, box, value, self.font_md,
                        border_color=border_color, placeholder=placeholder)
         if b:
@@ -9596,7 +9769,7 @@ class RenderMixin:
         line_gap = S(line_gap)
         line_h = font.get_height() + line_gap
         visible = max(1, rect.h // line_h)
-        max_scroll = max(0, len(lines) - visible)
+        max_scroll = self._ui_scroll_end(lines, font, rect.h, line_gap)
         scroll = max(0, min(int(scroll), max_scroll))
         y = rect.y
         for i, entry in enumerate(lines[scroll:scroll + visible],
@@ -9619,9 +9792,9 @@ class RenderMixin:
             if y + fnt.get_height() > rect.bottom:
                 break
             self._ui_blit_text(text, fnt, col, rect.x + indent, y,
-                               max_width=rect.w - S(12) - indent)
+                               max_width=self._ui_scroll_text_w(rect.w) - indent)
             y += fnt.get_height() + line_gap
-        self._ui_scrollbar(rect, scroll, len(lines), visible)
+        self._ui_scrollbar(rect, scroll, len(lines), len(lines) - max_scroll)
         return scroll
 
     def _ui_draw_cells(self, entry, rect, y, line_gap):
@@ -10320,15 +10493,16 @@ class RenderMixin:
 
         # pane bodies are their rect minus the subpanel chrome (12 px each
         # side, 42 above, 12 below)
-        id_render_lines = wrap(identity_lines, left_w - 2 * S(12) - S(10))
+        id_render_lines = wrap(identity_lines, self._ui_scroll_text_w(left_w - 2 * S(12)))
         # The subject's picture heads the Identity pane: the item itself, or
         # the living creature a corpse was. It scrolls with the pane's text.
         plate, spacers = self._lore_plate_lines(
             lore_art.subject_ref(subject), left_w - 2 * S(12), self.font_sm, 4)
         id_render_lines = spacers + id_render_lines
-        mech_render_lines = wrap(mech_lines, mid_w - 2 * S(12) - S(10))
+        mech_render_lines = wrap(mech_lines, self._ui_scroll_text_w(mid_w - 2 * S(12)))
         lore_lines = [(line, lore_color, lore_font)
-                      for line in self._ui_text_lines(lore_text, lore_font, right_w - 2 * S(12) - S(12))]
+                      for line in self._ui_text_lines(lore_text, lore_font,
+                                                      self._ui_scroll_text_w(right_w - 2 * S(12)))]
 
         def height(lines, gap):
             return sum(f.get_height() + S(gap) for _t, _c, f in lines)
@@ -11102,13 +11276,54 @@ class RenderMixin:
         _ach = category == 'achievements'
         # An achievement row holds its badge and, for a long name, two lines.
         entry_row_h = S(68) if _ach else S(60)
-        visible = max(1, list_body.h // entry_row_h)
-        scroll = getattr(self, '_encyclopedia_scroll', 0)
-        if sel < scroll:
-            scroll = sel
-        if sel >= scroll + visible:
-            scroll = sel - visible + 1
-        scroll = max(0, min(scroll, max(0, len(entries) - visible)))
+        kit = kit_on()
+        nf = get_font('body', 18, bold=True) if kit else get_font('small', 15, bold=True)
+        bf = get_font('body', 16) if kit else get_font('small', 12)
+        row_w = list_body.w - S(10)
+        rows = {}
+
+        def entry_row(i):
+            """(name, its lines, brief lines, height) of row ``i``: a name or
+            a brief that wraps makes its row taller (bug bash 3.6.0 h3-17:
+            "min level" lost its number)."""
+            if i not in rows:
+                name, names, briefs = '', (), ()
+                h = entry_row_h
+                if not _ach:
+                    e = entries[i]
+                    name = e.get('name', e.get('_id', '?'))
+                    # A recalled hint is a sentence: it keeps its own case
+                    # (its first line here, the whole of it in the article).
+                    if category != 'lore_hints':
+                        name = self._fix_name_case(name)
+                    names = self._ui_cached_lines(name, nf, row_w - S(20))
+                    if category == 'lore_hints':
+                        names = names[:1]
+                    brief = self._encyclopedia_entry_brief(category, e)
+                    if brief:
+                        briefs = self._ui_cached_lines(brief, bf, row_w - S(20))
+                        if len(briefs) > 2:     # a recipe's sentence: the article has it all
+                            briefs = (briefs[0],
+                                      fit_text(briefs[1] + ' …', bf, row_w - S(20)))
+                    h += (max(0, len(names) - 1) * nf.get_height()
+                          + max(0, len(briefs) - 1) * bf.get_height())
+                rows[i] = (name, names, briefs, h)
+            return rows[i]
+
+        def first_shown(last):
+            """The highest row that still leaves ``last`` in view."""
+            first, used = last, entry_row(last)[-1]
+            while first > 0 and used + entry_row(first - 1)[-1] <= list_body.h:
+                first -= 1
+                used += entry_row(first)[-1]
+            return first
+
+        scroll = max(0, int(getattr(self, '_encyclopedia_scroll', 0) or 0))
+        if entries:
+            scroll = max(first_shown(sel),
+                         min(scroll, sel, first_shown(len(entries) - 1)))
+        else:
+            scroll = 0
         self._encyclopedia_scroll = scroll
 
         if not entries:
@@ -11121,40 +11336,34 @@ class RenderMixin:
                                self.font_sm, FP.FADED_TEXT, list_body)
         else:
             y = list_body.y
-            for idx, entry in enumerate(entries[scroll:scroll + visible],
-                                        start=scroll):
-                rect = pygame.Rect(list_body.x, y, list_body.w - S(10),
-                                   entry_row_h - S(7))
+            shown = 0
+            for idx in range(scroll, len(entries)):
+                entry = entries[idx]
+                name, names, briefs, h = entry_row(idx)
+                if shown and y + h > list_body.bottom:
+                    break
+                shown += 1
+                rect = pygame.Rect(list_body.x, y, row_w, h - S(7))
                 selected = idx == sel
                 self._ui_row(rect, selected,
                             fill=(35, 43, 82) if selected else FP.MIDNIGHT,
                             border=FP.GOLD if selected else FP.ARCANE_DIM, radius=6)
                 if _ach:
                     self._draw_achievement_row(rect, entry, selected)
-                    y += entry_row_h
+                    y += h
                     continue
-                name = entry.get('name', entry.get('_id', '?'))
-                # A recalled hint is a sentence: it keeps its own case
-                # (its first line here, the whole of it in the article).
-                if category != 'lore_hints':
-                    name = self._fix_name_case(name)
-                kit = kit_on()
-                nf = get_font('body', 18, bold=True) if kit else get_font('small', 15, bold=True)
-                bf = get_font('body', 16) if kit else get_font('small', 12)
                 self._ui_wrap_text(name, nf,
                                    FP.GOLD_BRIGHT if selected else FP.BODY_TEXT,
-                                   pygame.Rect(rect.x + S(10), rect.y + S(5),
-                                               rect.w - S(20), nf.get_height() + S(2)),
-                                   line_gap=0, max_lines=1)
-                brief = self._encyclopedia_entry_brief(category, entry)
-                if brief:
-                    self._ui_blit_text(brief, bf,
-                                       FP.FADED_TEXT, rect.x + S(10),
-                                       rect.bottom - bf.get_height() - S(4),
-                                       max_width=rect.w - S(20))
-                y += entry_row_h
-            if len(entries) > visible:
-                self._ui_scrollbar(list_body, scroll, len(entries), visible)
+                                   pygame.Rect(rect.x + S(10), rect.y + S(5), rect.w - S(20),
+                                               len(names) * nf.get_height() + S(2)),
+                                   line_gap=0, max_lines=len(names))
+                top = rect.bottom - S(4) - len(briefs) * bf.get_height()
+                for i, line in enumerate(briefs):
+                    self._ui_blit_text(line, bf, FP.FADED_TEXT, rect.x + S(10),
+                                       top + i * bf.get_height())
+                y += h
+            if len(entries) > shown:
+                self._ui_scrollbar(list_body, scroll, len(entries), shown)
 
         entry = getattr(self, '_encyclopedia_entry', None)
         if entry is None and entries:
@@ -11883,6 +12092,14 @@ class RenderMixin:
         # columns line up (Items, the longest, was ~26 px against ~30).
         longest = max(len(c) for _t, c in groups)
         kit_row_h = min(S(34), max(S(24), (group_h - S(34)) // max(1, longest)))
+        room = group_h - S(34) + S(2)
+        if kit_row_h * longest > room:
+            # A small window closes the rows up: at 24 the ninth of a list
+            # was dropped without a word (bug bash 3.6.0 h3-09).
+            kit_row_h = room // longest
+        self._help_list = kit_on() and not self._help_map_fits(groups, col_w, kit_row_h)
+        if self._help_list:
+            return self._draw_help_command_list(groups, panel, body)
 
         for idx, (title, commands) in enumerate(groups):
             col = idx % cols
@@ -11913,10 +12130,10 @@ class RenderMixin:
                 kf = get_font('body', 16, bold=True)
                 key_w = max(kf.size(_kl(k))[0] for k, _d, _c in commands) + S(18)
                 row_h = kit_row_h
+                # (closed-up rows shorten their badges: none covers the next)
+                key_h = S(26) if row_h >= S(24) else row_h
                 for key_label, desc, color in commands:
-                    if y + row_h > rect.bottom + S(2):
-                        break
-                    kr = pygame.Rect(rect.x, y + (row_h - S(26)) // 2, key_w, S(26))
+                    kr = pygame.Rect(rect.x, y + (row_h - key_h) // 2, key_w, key_h)
                     draw_key_badge(self.screen, kr, _kl(key_label), kf)
                     tw = rect.right - kr.right - S(12)
                     df, text = self._fit_line(desc, tw, (16,))
@@ -12046,6 +12263,43 @@ class RenderMixin:
                     lines.append((lead + line, FP.BODY_TEXT, text_f) if n == 0
                                  else (line, FP.BODY_TEXT, text_f, ind))
         return lines
+
+    def _help_map_fits(self, groups, col_w, row_h) -> bool:
+        """Whether the kit's command map holds every row whole: its pitch no
+        less than the font's height, every line in its column."""
+        kf = get_font('body', 16, bold=True)
+        df = get_font('body', 16)
+        key = (col_w, row_h, kf, df)
+        kept = self.__dict__.get('_help_map_kept')
+        if kept is not None and kept[0] == key:
+            return kept[1]
+        from fantasy_ui import key_label as _kl
+        ok = row_h >= max(kf.get_height(), df.get_height())
+        for _title, commands in groups:
+            key_w = max(kf.size(_kl(k))[0] for k, _d, _c in commands) + S(18)
+            ok = ok and all(df.size(d)[0] <= col_w - key_w - S(12) for _k, d, _c in commands)
+        self._help_map_kept = (key, ok)
+        return ok
+
+    def _draw_help_command_list(self, groups, panel, body):
+        """The command map in a window too small for it: every row, as a
+        list that scrolls like the prose pages."""
+        text_f = get_font('body', 16)
+        head_f = get_font('body', 16, bold=True)
+        w = body.w - S(14)
+        key = (0, w, text_f, head_f)
+        cached = getattr(self, '_help_lines_cache', None)
+        if cached is not None and cached[0] == key:
+            lines = cached[1]
+        else:
+            from fantasy_ui import key_label as _kl
+            data = {'sections': [{'heading': title, 'rows': [(_kl(k), d) for k, d, _c in rows]}
+                                 for title, rows in groups]}
+            lines = self._help_text_lines(data, text_f, head_f, w)
+            self._help_lines_cache = (key, lines)
+        self._help_scroll = self._ui_draw_scroll_lines(
+            lines, text_f, FP.BODY_TEXT, body, getattr(self, '_help_scroll', 0), line_gap=5)
+        self._ui_footer(panel, "Tab: How Quizzes Work   Up/Down: scroll   ? / ESC: close")
 
 
 # ------------------------------------------------------------------

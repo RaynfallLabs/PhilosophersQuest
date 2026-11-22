@@ -358,7 +358,6 @@ class MoobleDanceMixin:
         (with the dance's own lines and roster under it), the rows of steps
         on the right (his, then yours), the words above them."""
         import pygame
-        import layout
         import lore_art
         from ui_scale import px as S
         from fantasy_ui import (FP, get_font, draw_dark_panel, draw_overlay, panel_band,
@@ -381,9 +380,77 @@ class MoobleDanceMixin:
             (t is not None and t >= tl['response_start'])
             or (md['phase'] == 'ready' and md['mode'] != 'practice'))
 
+        # The words first: the panel is as tall as they wrap to (bug bash
+        # 3.6.0 h3-14: two fixed rects cut the rules and "left. The round
+        # starts again.", and said nothing).
+        big = get_font('heading', 26)
+        font = get_font('body', 17)
+        small = get_font('body', 16)
+        label_font = get_font('body', 16)
+        grade_font = get_font('body', 16)
+        hfont_small = False
+        if md['phase'] == 'ready':
+            head = md.get('ready_head') or sc['how']
+        elif md['phase'] == 'result' and md.get('result_head'):
+            head = md['result_head']
+            hfont_small = True
+        elif md['phase'] == 'result' and special:
+            head = (md.get('band') or {}).get('line', '').replace('{pet}', md['pet'].name)
+            hfont_small = True
+        elif md['phase'] == 'result':
+            head = (sc['dance_pass'] if md['won'] else sc['dance_fail']) if md['mode'] == 'dance' else \
+                (sc['practice_pass'] if md['won'] else sc['practice_fail'])
+        else:
+            beat = int(t // bm) if t >= 0 else 0
+            if beat < tl['lead']:
+                head = sc['count_in'][min(beat, len(sc['count_in']) - 1)]
+            elif t < tl['response_start']:
+                head = sc['watch']
+            else:
+                head = sc['your_turn']
+        head = display_text(head)
+        hfont = font if (md['phase'] == 'ready' or hfont_small) else big
+        # -- under the rows: the pass mark, or the result
+        steps = len(tl['response'])
+        need = rhythm.hits_needed(steps, md['pass_share'])
+        lines = []
+        extra = list(md.get('result_lines') or ()) if md['phase'] == 'result' else []
+        done = md.get('result') if md['phase'] == 'result' else None
+        if done is not None and not md.get('hide_result_line'):
+            one, many = sc.get('miss_words') or ('{n} miss', '{n} misses')
+            misses = (one if done['misses'] == 1 else many).format(n=done['misses'])
+            lines.append(sc['result_line'].format(hits=done['hits'], steps=done['total'],
+                                                  perfects=done['perfects'], misses=misses))
+        lines += extra
+        if special:
+            band = md.get('band')
+            if md['phase'] == 'result' and band:
+                lines.append(mo.special_result_line(band))
+            else:
+                lines.append(sd.get('how', ''))
+        elif not extra:
+            lines.append(sc['pass_mark'].format(need=need, steps=steps, misses=md['max_misses']))
+        if md['mode'] == 'practice':
+            lines.append(sc['practice_note'])
+        lines = [display_text(ln) for ln in lines]
+        info_lines = [display_text(ln) for ln in md.get('info_lines') or [md['info']]]
+        # The band's pictures are bigger than their cells where the window is
+        # small: they start far enough under the lines to cover none of them.
+        roster = md.get('roster') or ()
+        face = S(34)
+        over = 0
+        for art_id, _gone, _lead in roster:
+            img = lore_art.plate('monster', art_id, face - S(4))
+            if img is not None:
+                over = max(over, (img.get_height() - face + 1) // 2)
+        strip_gap = max(S(12), over + S(4))
+        label_step = max(S(24), label_font.get_height() + S(6))     # clear of the row's box
+
         draw_overlay(self.screen, 200)
-        bw = min(S(940), layout.WINDOW_W - S(48))
-        bh = min(S(600), layout.WINDOW_H - S(48))
+        bw, bh = self._mooble_dance_room(
+            head, hfont, font, info_lines, small, lines,
+            rows=2 if tl['call'] else 1, beats=int(tl['phrase_beats']), label_step=label_step,
+            playing=md['phase'] == 'play', strip=(strip_gap + face + over) if roster else 0)
         panel = pygame.Rect(_centre_x(bw), _centre_y(bh), bw, bh)
         draw_dark_panel(self.screen, panel, border_color=border)
         title = md['title']
@@ -443,20 +510,18 @@ class MoobleDanceMixin:
                                    well.y + S(4) + (pic_px - pic.get_height()) // 2 + nudge[1] * S(10)))
             self.screen.set_clip(clip)
         pygame.draw.rect(self.screen, border, well, 1)
-        small = get_font('body', 16)
-        info_lines = md.get('info_lines') or [md['info']]
         iy = well.bottom + S(8)
         for ln in info_lines:
-            iy = self._ui_wrap_text(display_text(ln), small, FP.FADED_TEXT,
-                                    pygame.Rect(body.x, iy, left_w + S(40), S(60)), line_gap=2) + S(2)
+            # (clear of the rows' boxes, which reach S(20) left of their column)
+            iy = self._ui_wrap_text(ln, small, FP.FADED_TEXT,
+                                    pygame.Rect(body.x, iy, left_w + S(16), body.bottom - iy),
+                                    line_gap=2) + S(2)
         # The dance's roster (the band: who has fallen, who leads now).
-        roster = md.get('roster') or ()
         if roster:
-            face = S(34)
             per_row = max(1, (left_w + S(8)) // (face + S(6)))
             rows_n = -(-len(roster) // per_row)
             # At the foot of the column, clear of the lines above it.
-            ry = max(iy + S(12), body.bottom - rows_n * (face + S(6)))
+            ry = max(iy + strip_gap, body.bottom - rows_n * (face + S(6)))
             for i, (art_id, gone, lead) in enumerate(roster):
                 fx = body.x + (i % per_row) * (face + S(6))
                 fy = ry + (i // per_row) * (face + S(6))
@@ -476,32 +541,9 @@ class MoobleDanceMixin:
 
         # -- the words above the rows --------------------------------------
         col = pygame.Rect(body.x + left_w + S(40), body.y, body.right - body.x - left_w - S(40), body.h)
-        big = get_font('heading', 26)
-        font = get_font('body', 17)
-        hfont_small = False
-        if md['phase'] == 'ready':
-            head = md.get('ready_head') or sc['how']
-        elif md['phase'] == 'result' and md.get('result_head'):
-            head = md['result_head']
-            hfont_small = True
-        elif md['phase'] == 'result' and special:
-            head = (md.get('band') or {}).get('line', '').replace('{pet}', md['pet'].name)
-            hfont_small = True
-        elif md['phase'] == 'result':
-            head = (sc['dance_pass'] if md['won'] else sc['dance_fail']) if md['mode'] == 'dance' else \
-                (sc['practice_pass'] if md['won'] else sc['practice_fail'])
-        else:
-            beat = int(t // bm) if t >= 0 else 0
-            if beat < tl['lead']:
-                head = sc['count_in'][min(beat, len(sc['count_in']) - 1)]
-            elif t < tl['response_start']:
-                head = sc['watch']
-            else:
-                head = sc['your_turn']
         y = col.y
-        hfont = font if (md['phase'] == 'ready' or hfont_small) else big
-        y = self._ui_wrap_text(display_text(head), hfont, FP.GOLD_BRIGHT if hfont is big else FP.PARCHMENT_LIGHT,
-                               pygame.Rect(col.x, y, col.w, S(90)), line_gap=4)
+        y = self._ui_wrap_text(head, hfont, FP.GOLD_BRIGHT if hfont is big else FP.PARCHMENT_LIGHT,
+                               pygame.Rect(col.x, y, col.w, col.h), line_gap=4)
         y = max(y, col.y + S(56)) + S(10)
 
         # -- the two rows of beats -----------------------------------------
@@ -511,15 +553,13 @@ class MoobleDanceMixin:
         n = int(tl['phrase_beats'])
         gap = S(6)
         cell = max(S(28), min(S(56), (col.w - (n - 1) * gap) // n))
-        label_font = get_font('body', 16)
-        grade_font = get_font('body', 16)
         rows = (('call', sc['his_row'], tl['call_start']), ('response', sc['your_row'], tl['response_start']))
         if not tl['call']:
             rows = rows[1:]                   # his special: no call, only your steps
         steps_by_row = {'call': tl['call'], 'response': tl['response']}
         for r_i, (which, label, start) in enumerate(rows):
-            self._ui_wrap_text(label, label_font, FP.PARCHMENT, pygame.Rect(col.x, y, col.w, S(22)))
-            y += S(24)
+            self._ui_wrap_text(label, label_font, FP.PARCHMENT, pygame.Rect(col.x, y, col.w, label_step))
+            y += label_step
             row_rect = pygame.Rect(col.x - S(20), y - S(6), n * cell + (n - 1) * gap + S(40), cell + S(56))
             pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, row_rect)
             pygame.draw.rect(self.screen, FP.GOLD_DARK, row_rect, 1)
@@ -585,30 +625,8 @@ class MoobleDanceMixin:
         y += S(36) if md['phase'] == 'play' else S(4)
 
         # -- the pass mark, or the result -----------------------------------
-        steps = len(tl['response'])
-        need = rhythm.hits_needed(steps, md['pass_share'])
-        lines = []
-        extra = list(md.get('result_lines') or ()) if md['phase'] == 'result' else []
-        if md['phase'] == 'result' and res is not None and not md.get('hide_result_line'):
-            one, many = sc.get('miss_words') or ('{n} miss', '{n} misses')
-            misses = (one if res['misses'] == 1 else many).format(n=res['misses'])
-            lines.append(sc['result_line'].format(hits=res['hits'], steps=res['total'],
-                                                  perfects=res['perfects'], misses=misses))
-        lines += extra
-        if special:
-            band = md.get('band')
-            if md['phase'] == 'result' and band:
-                lines.append(mo.special_result_line(band))
-            else:
-                lines.append(sd.get('how', ''))
-        elif not extra:
-            lines.append(sc['pass_mark'].format(need=need, steps=steps, misses=md['max_misses']))
-        if md['mode'] == 'practice':
-            lines.append(sc['practice_note'])
         for ln in lines:
-            if y > col.bottom - S(20):
-                break
-            y = self._ui_wrap_text(display_text(ln), font, FP.PARCHMENT_LIGHT,
+            y = self._ui_wrap_text(ln, font, FP.PARCHMENT_LIGHT,
                                    pygame.Rect(col.x, y, col.w, col.bottom - y), line_gap=3) + S(6)
 
         foot = (md.get('footers') or {}).get(md['phase'])
@@ -623,6 +641,54 @@ class MoobleDanceMixin:
         else:
             foot = sc['footer_practice_done'] if md['mode'] == 'practice' else sc['footer_dance_done']
         self._ui_footer(panel, foot)
+
+    def _mooble_dance_room(self, head, hfont, font, info_lines, small, lines,
+                           *, rows, beats, label_step, playing, strip) -> tuple:
+        """(width, height) of the dance's panel: its usual size, taller where
+        its words wrap to more (measured as ``_draw_mooble_dance`` lays them
+        out), up to the window. In the compact layout it is wider too, by as
+        much as its 17 px text stops shrinking at the 16 px floor."""
+        import pygame
+        import layout
+        import ui_scale
+        import ui_theme
+        from ui_scale import px as S
+        from fantasy_ui import panel_band, header_rect
+        bw = S(940)
+        if ui_scale.is_compact():
+            bw = max(bw, 940 * ui_scale.font_px(17) // 17)
+        bw = min(bw, layout.WINDOW_W - S(48))
+        tallest = layout.WINDOW_H - S(48)
+        bh = min(S(600), tallest)
+        probe = pygame.Rect(0, 0, bw, bh)
+        b = panel_band('panel', probe)
+        if b:
+            top = (header_rect(probe, S(48)).bottom + S(12) if ui_theme.has('header')
+                   else S(48) + S(22))
+            inner_w = bw - 2 * (b + S(24))
+            body_h = self._ui_footer_metrics(probe)[2] - top - S(10)
+        else:
+            inner_w = bw - S(56)
+            body_h = bh - S(130)
+        left_w = S(160) + S(24)
+        col_w = inner_w - left_w - S(40)
+        gap = S(6)
+        cell = max(S(28), min(S(56), (col_w - (beats - 1) * gap) // beats))
+
+        def height(text, f, width, line_gap):
+            return len(self._ui_cached_lines(text, f, width)) * (f.get_height() + S(line_gap))
+
+        left = S(26) + S(36) + S(160) + S(8) + S(8)
+        for ln in info_lines:
+            left += height(ln, small, left_w + S(16), 2) + S(2)
+        left += strip
+        right = max(height(head, hfont, col_w, 4), S(56)) + S(10)
+        right += rows * (label_step + cell + S(60))
+        right += S(36) if playing else S(4)
+        for ln in lines:
+            right += height(ln, font, col_w, 3) + S(6)
+        right -= S(6) + S(3)                    # nothing under the last line
+        return bw, min(tallest, bh + max(0, max(left, right) - body_h))
 
 
 def _mix(a, b, k: float):

@@ -866,7 +866,9 @@ class MenuMixin:
         except pygame.error:
             _shift = False
         if _shift and key in (pygame.K_UP, pygame.K_DOWN):
-            step = -3 if key == pygame.K_UP else 3
+            step = int(getattr(self, '_kit_detail_step', 3))      # three, or what the pane holds
+            if key == pygame.K_UP:
+                step = -step
             self._kit_detail_scroll = max(0, int(getattr(self, '_kit_detail_scroll', 0) or 0) + step)
             return
         if key in (pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN, pygame.K_PAGEUP,
