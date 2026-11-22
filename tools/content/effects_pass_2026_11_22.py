@@ -189,7 +189,23 @@ WEAKENED_EIGHT = [
 ]
 
 
+# A gore, a tusk or an antler is a thrust, not a trample (3.6.1 balance run,
+# 2026-11-22: Asterion's Gore floored the hero as his Trample does, and the
+# floor-20 gate got harder). Still a trample for the boots' guard.
+THRUSTS = [
+    ('asterion_minotaur', 'Gore'), ('minotaur', 'Gore'), ('minotaur_warrior', 'Gore'),
+    ('chimera', 'Goat Gore'), ('chimera_alpha', 'Goat Gore'), ('kusarikku', 'Bull Gore'),
+    ('unicorn_corrupted', 'Dark Horn Gore'), ('peryton', 'Antler Gore'), ('hell_bovine', 'Gore'),
+    ('calydonian_boar', 'Tusk Gore'), ('khalkotauros', 'Bronze Gore'),
+]
+
+
 def monsters_pass(data: dict) -> None:
+    for kind, name in THRUSTS:
+        hits = [a for a in data[kind]['attacks'] if a['name'] == name]
+        if len(hits) != 1 or hits[0].get('delivery') != 'trample':
+            raise SystemExit(f'{kind}: no trample named {name!r}')
+        hits[0]['floors'] = False
     wanted = {k: dict(v) for k, v in RIDERS.items()}
     for turns, table in ((2, SLOW_TWO), (3, SLOW_THREE)):
         for kind, name in table.items():
