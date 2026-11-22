@@ -30,6 +30,7 @@
     "low": "Your {light} burns low.",
     "next_torch": "Your {light} gutters out. You light another ({left} left).",
     "last_torch": "Your {light} gutters out. It was your last one.",
+    "burnt_out": "Your {light} is burnt out.",
     "oil_out": "Your {light} runs dry.",
     "oil_refill": "Your {light} runs dry. You pour in a flask of fire oil and it burns again.",
     "filled": "You fill the {light} from a flask of fire oil.",
@@ -53,7 +54,7 @@
     "everlasting": "It never burns out.",
     "unlit": "Not lit now.",
     "swap": "Shift+L takes it up or puts it away in one turn, and your shield comes back by itself.",
-    "douse": "Shift+O puts it out or lights it again, at no cost in time."
+    "douse": "Shift+O puts it out or lights it again, at no cost in time. Once lit, it burns and shows for that turn."
   },
   "powers": {
     "_doc": "A named light's one power, by its data's 'power', while it is held and lit.",

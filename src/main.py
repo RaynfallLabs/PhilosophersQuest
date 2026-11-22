@@ -5510,6 +5510,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._maybe_wander_spawn()
             finally:
                 self._damage_by = 'hero'
+        if _n_world:
+            self.player._kindled_glow = 0  # the world has seen this turn's light (lights.kindled)
         self._say_springs()                # lurkers the pets' and escorts' blows gave away
         self._death_proximity_warning()
         self._tick_hp_regen()

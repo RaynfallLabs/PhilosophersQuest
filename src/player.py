@@ -78,11 +78,17 @@ class Player:
         # Brandon's play-test 2026-11-16). None when there is none to return.
         self._shield_slung = None
         # The light swap (Shift+L, game_lights._swap_light): the kind of
-        # light it takes up first, the shield it set aside, and the
-        # two-hander it changed for the readied one-hander to free a hand.
+        # light readied, the kind last put away, the shield set aside for a
+        # light, and the two-hander changed for the readied one-hander to
+        # free a hand (the rule: lights.off_hand_takes, lights.two_hands).
         self._light_kind = ''
+        self._light_last = ''
         self._light_aside = None
         self._light_sidearm = None
+        # A light lit at no cost in time this turn (lights.kindled): the
+        # turn of fuel it owes, and how far it shows him till the world looks.
+        self._kindled = None
+        self._kindled_glow = 0
         # Press or Guard (stance.py): 'neutral', 'press' or 'guard'. And the
         # earplugs (counters.py): True while the wax is in his ears.
         self.stance: str = 'neutral'
@@ -1028,6 +1034,9 @@ class Player:
         self.__dict__.setdefault('_light_kind', '')           # the light swap, 2026-11-22
         self.__dict__.setdefault('_light_aside', None)
         self.__dict__.setdefault('_light_sidearm', None)
+        self.__dict__.setdefault('_light_last', '')           # bug bash 3.6.0
+        self.__dict__.setdefault('_kindled', None)
+        self.__dict__.setdefault('_kindled_glow', 0)
         self.__dict__.setdefault('by_hand_tiers', {})
         # Saves from before the arsenal's tools (slice 5, 2026-11-13): no
         # stance taken, no wax in his ears.
@@ -1982,6 +1991,9 @@ class Player:
                 if getattr(existing, 'buc', 'uncursed') != getattr(item, 'buc', 'uncursed'):
                     continue  # different BUC: keep stacks separate
                 existing.count = getattr(existing, 'count', 1) + getattr(item, 'count', 1)
+                # What remembered the one that came (a kit's torch) finds the row.
+                import loadouts
+                loadouts.joined(self, item, existing)
                 # A bought stack's resale cap (economy.RESALE_CAP_OF_PAID)
                 # survives a merge: the lower price paid holds for the lot.
                 # Merging into a found stack dropped it, and the arrows
@@ -2367,11 +2379,14 @@ class Player:
                 continue
             # Keep the copy that was itself identified (the one an identify
             # screen or the lore page is showing), folding the other into it.
+            import loadouts
             if int(getattr(it, 'id_level', 0) or 0) > int(getattr(target, 'id_level', 0) or 0):
                 kept[kept.index(target)] = it
                 it.count = getattr(it, 'count', 1) + getattr(target, 'count', 1)
+                loadouts.joined(self, target, it)
             else:
                 target.count = getattr(target, 'count', 1) + getattr(it, 'count', 1)
+                loadouts.joined(self, it, target)
             merged += 1
         if merged:
             self.inventory[:] = kept
@@ -2577,6 +2592,13 @@ class Player:
                 self._apply_weapon_passives(item)
             else:
                 # --- Melee weapon slot ---
+                # A shield that will not come off refuses a two-hander before
+                # anything moves: the weapon in the hand went to the pack
+                # first, and was then in both.
+                if getattr(item, 'two_handed', False) and self.shield:
+                    ok, msg = self.try_unequip_slot(self.shield)
+                    if not ok:
+                        return
                 if self.weapon:
                     ok, msg = self.try_unequip_slot(self.weapon)
                     if not ok:
@@ -2589,16 +2611,15 @@ class Player:
                 # comes off with it (shed_worn_grants), as when it is taken
                 # off by hand: an attuned shield kept its tier bonuses and
                 # they stacked on every re-attune (Aegis magic resist 2, 4, 6).
-                if getattr(item, 'two_handed', False) and self.shield:
-                    ok, msg = self.try_unequip_slot(self.shield)
-                    if not ok:
-                        return
+                if getattr(item, 'two_handed', False):
                     old_shield, self.shield = self.shield, None
-                    self.shed_worn_grants(old_shield)
-                    self.inventory.append(old_shield)
+                    if old_shield is not None:
+                        self.shed_worn_grants(old_shield)
+                        self.inventory.append(old_shield)
                     # Remembered: a one-hander drawn again puts it back on
-                    # (game_dressing._shield_back_on).
-                    self.__dict__['_shield_slung'] = old_shield
+                    # (game_dressing._shield_back_on; lights.two_hands).
+                    import lights
+                    lights.two_hands(self, old_shield)
                 self.weapon = item
                 new_status = getattr(item, 'on_equip_status', '')
                 if new_status:
@@ -2644,7 +2665,11 @@ class Player:
                 self.inventory.append(old)
             self.shield = item
             import lights
+            lights.off_hand_takes(self, item, old)
             if lights.is_light(item):
+                # One light to a hand, whatever road it took: a stack's rest
+                # stays in the pack as a row of its own.
+                lights.leave_rest(self.inventory, item)
                 # Taken up and lit, if it has anything left to burn and its
                 # wick is not soaked (light_shy: stowing a doused light and
                 # drawing it again does not dry it).

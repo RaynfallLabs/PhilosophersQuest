@@ -131,6 +131,22 @@ def let_go(player, item) -> bool:
     return done
 
 
+def joined(player, gone, row) -> None:
+    """``gone`` was stacked into the pack row ``row`` (a torch into its
+    bundle): the kits and the slung memory that held it hold the row."""
+    if player is None or gone is None or gone is row:
+        return
+    d = player.__dict__
+    if d.get('_shield_slung') is gone:
+        d['_shield_slung'] = row
+    kits = d.get('loadouts')
+    if valid(kits):
+        for k in kits:
+            for slot, held in list(k['pieces'].items()):
+                if held is gone:
+                    k['pieces'][slot] = row
+
+
 def and_list(words) -> str:
     """'Kit One', 'Kit One and Kit Two', 'Kit One, Kit Two and Kit Three'."""
     words = [str(w) for w in words]

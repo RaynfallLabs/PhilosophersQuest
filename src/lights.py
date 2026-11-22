@@ -19,10 +19,18 @@ perception." A PER-10 hero sees five tiles and an archer shoots from six.
 * **Light has a price**: a monster sees a lit hero from farther, by the
   brightest light's ``notice`` (its sight, unless its data says less: the
   dark lantern's shutter). ``shine`` is read by senses.sight_range.
-  Doused (Shift+O, no time), a light gives nothing and costs nothing.
+  Doused (Shift+O, no time), a light gives nothing and costs nothing. A
+  turn in which it was lit at no cost in time (``kindled``) burns and shows
+  him all the same, once, though he put it straight out again.
 * **In and out** (Shift+L, one turn, LightsMixin._swap_light): what the key
-  draws is ``pick``, and the kind it draws first is ``readied_kind``. A kind
-  and not one object, as the readied weapon is: a torch burns away.
+  draws is ``pick``, and the kind it draws first is ``readied_kind``, else
+  the last put away. A kind and not one object, as the readied weapon is:
+  a torch burns away.
+* **The off hand, one rule** (``off_hand_takes``, ``two_hands``): whatever
+  road a thing takes into the off hand (E, the Kit, a saved kit, S, the
+  keys), it is one thing and never a stack (``leave_rest``), and the swap's
+  memory follows it. A shield that gave way to a light is the one set
+  aside; anything else put on the arm forgets what was set aside.
 * **Fuel**: a torch burns itself away (``fuel`` 'self'); a lantern or a
   lamp burns oil ('oil', a Flask of Fire Oil fills it); some never burn out
   ('none'). A light burns only while held and lit (LightsMixin._light_tick).
@@ -219,9 +227,12 @@ def light_bonus(player, extra: int = 0, aura: int | None = None) -> int:
 
 def shine(player) -> int:
     """How much farther a monster sees the hero by the lights he has lit
-    (senses.sight_range): the brightest one's notice. 0 in the dark."""
+    (senses.sight_range): the brightest one's notice, and one lit for a
+    look this turn counts until the world has had its turn (``kindled``).
+    0 in the dark."""
     try:
-        return max([n for _w, _s, n in sources(player)] or [0])
+        looked = int(getattr(player, '_kindled_glow', 0) or 0)
+        return max([looked] + [n for _w, _s, n in sources(player)])
     except Exception:
         return 0
 
@@ -336,10 +347,16 @@ def next_torch(inventory, light):
 
 
 def readied_kind(player) -> str:
-    """The kind of light Shift+L takes up first: the one readied from the
-    Kit, else the one last put away with the key. '' for none yet."""
+    """The kind of light the hero readied from the Kit, which Shift+L takes
+    up first. '' for none: then the last put away (``last_kind``)."""
     d = getattr(player, '__dict__', None) or {}
     return str(d.get('_light_kind', '') or '')
+
+
+def last_kind(player) -> str:
+    """The kind of light last put away with Shift+L. '' for none yet."""
+    d = getattr(player, '__dict__', None) or {}
+    return str(d.get('_light_last', '') or '')
 
 
 def is_readied(player, item) -> bool:
@@ -351,15 +368,18 @@ def is_readied(player, item) -> bool:
 def pick(player):
     """The light Shift+L takes up from the pack, or None. One that can burn
     (a dry lantern only with oil to fill it, and only if nothing else
-    burns); the readied kind before any other; then the brightest, one with
-    a power, one already part burnt (so every torch is not started)."""
+    burns); the readied kind before any other, then the kind last put away;
+    then the brightest, one with a power, one already part burnt (so every
+    torch is not started)."""
     inv = getattr(player, 'inventory', None) or []
     oil = oil_in(inv) is not None
     can = [it for it in inv if is_light(it)
            and (has_fuel(it) or (oil and fuel_kind(it) == 'oil'))]
     if not can:
         return None
-    return max(can, key=lambda it: (has_fuel(it), is_readied(player, it), sight_of(it),
+    last = last_kind(player)
+    return max(can, key=lambda it: (has_fuel(it), is_readied(player, it),
+                                    str(getattr(it, 'id', '') or '') == last, sight_of(it),
                                     bool(power_of(it)), everlasting(it), -fuel_left(it)))
 
 
@@ -379,11 +399,92 @@ def take_one(inventory: list, stack):
     return stack
 
 
-def burn_turn(light) -> str:
-    """One turn of burning for a held, lit light. Returns what happened:
+def leave_rest(inventory: list, piece) -> None:
+    """``piece`` as one light, itself (what remembers it still finds it):
+    whatever was stacked on it stays behind as a pack row of its own."""
+    n = int(getattr(piece, 'count', 1) or 1)
+    if n <= 1:
+        return
+    rest = copy.copy(piece)
+    rest.count = n - 1
+    piece.count = 1
+    at = next((i + 1 for i, it in enumerate(inventory) if it is piece), len(inventory))
+    inventory.insert(at, rest)
+
+
+# ------------------------------------- the off hand, and what is remembered
+
+def _packed(player, item):
+    """``item`` while it is in the pack, else None."""
+    inv = getattr(player, 'inventory', None) or ()
+    return item if item is not None and any(i is item for i in inv) else None
+
+
+def forget(player) -> None:
+    """The light is owed nothing any more."""
+    player._light_aside = None
+    player._light_sidearm = None
+
+
+def set_aside(player, shield) -> None:
+    """``shield`` left the arm to make room for a light: it is what comes
+    back when the light goes."""
+    forget(player)
+    player._light_aside = shield
+    player._shield_slung = None
+
+
+def off_hand_takes(player, piece, old=None) -> None:
+    """``piece`` went into the off hand, by any road (Player._apply_equip),
+    in place of ``old``. A light in place of a shield, or in place of the
+    shield that waited for a free hand, sets that shield aside; a light in
+    place of a light or of nothing changes no memory; a shield on the arm
+    ends the light's."""
+    slung = _packed(player, player.__dict__.get('_shield_slung'))
+    player._shield_slung = None
+    if not is_light(piece):
+        forget(player)
+        return
+    gave = old if old is not None else slung
+    if gave is not None and not is_light(gave):
+        set_aside(player, gave)
+
+
+def two_hands(player, sent=None) -> None:
+    """A two-handed weapon went into the hand and sent ``sent`` from the off
+    hand to the pack. A light sent there is only waiting. With no light in
+    the hand or waiting, the two hands are given back: the shield set aside
+    for a light waits for a free hand instead."""
+    d = player.__dict__
+    if sent is not None:
+        d['_shield_slung'] = sent
+        if not is_light(sent):
+            forget(player)
+        return
+    slung = _packed(player, d.get('_shield_slung'))
+    if is_light(slung):
+        return
+    if slung is None:
+        d['_shield_slung'] = _packed(player, d.get('_light_aside'))
+    forget(player)
+
+
+# ------------------------------------------------------------ burning
+
+def kindled(player, light) -> None:
+    """``light`` was lit at no cost in time (Shift+O, a swap that takes no
+    turn): this turn counts as burning and seen, once, even if it is put
+    out before the turn passes."""
+    player._kindled = light
+    player._kindled_glow = max(int(getattr(player, '_kindled_glow', 0) or 0), notice_of(light))
+
+
+def burn_turn(light, counted: bool = False) -> str:
+    """One turn of burning for a held, lit light, or for one that counts as
+    burning this turn (``counted``: kindled). Returns what happened:
     '' (it burns on), 'low' (it just crossed into burning low) or 'out' (it
     is spent). An everlasting light never changes."""
-    if not is_lit(light) or everlasting(light):
+    if everlasting(light) or not (is_lit(light) or (counted and has_fuel(light))):
         return ''
     was_low = is_low(light)
     light.fuel = fuel_left(light) - 1

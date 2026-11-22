@@ -10,11 +10,14 @@
   flask of fire oil from the pack, or goes dark.
 * **In and out** (Shift+L, ``_swap_light``): one turn, as S is for the
   readied weapon. The light comes out of the pack and the shield goes into
-  it; pressed again, the light is stowed and that shield is back on the arm.
+  it; pressed again, the light is stowed and back comes whatever it took
+  the place of, by whichever road it was taken up (lights.off_hand_takes).
   A two-hander gives way to a readied one-hander in the same turn and comes
-  back with the next press. R in the Kit picks the kind it draws.
+  back with the next press, also when the last light has burnt out. R in
+  the Kit picks the kind it draws.
 * **Doused or lit** (Shift+O, ``_toggle_light``): no time and no question.
-  Doused, it gives no sight and shows the hero to nobody.
+  Doused, it gives no sight and shows the hero to nobody; but the turn in
+  which he lit it burns and shows him, once (lights.kindled).
 * **Filled** (the Kit's Apply on a lantern or lamp, ``_fill_light``): a
   flask of fire oil fills it to the brim, one turn.
 * **Hero's Lamp** shows the down stair on the map while it burns.
@@ -89,17 +92,26 @@ class LightsMixin:
             self._refresh_fov()
         self.__dict__['_light_seen'] = now
         lt = lights.held(p)
-        if lt is None:
+        if lt is not None:
+            import light_shy
+            light_shy.dry_tick(lt)                # a soaked wick dries (AI-1)
+            if lights.shows_way(p):
+                self._show_way_down(lt)
+        # The held light, or the one lit for a look this turn (lights.kindled),
+        # wherever it is now: either way one turn of fuel.
+        owed, p._kindled = getattr(p, '_kindled', None), None
+        burns = owed if owed is not None else lt
+        if burns is None:
             return
-        import light_shy
-        light_shy.dry_tick(lt)                # a soaked wick dries (AI-1)
-        if lights.shows_way(p):
-            self._show_way_down(lt)
-        what = lights.burn_turn(lt)
+        alight = burns is lt and lights.is_lit(lt)
+        what = lights.burn_turn(burns, counted=owed is not None)
         if what == 'low':
-            self.add_message(lights.line('low', light=self._bare_name(lt)), 'warning')
+            self.add_message(lights.line('low', light=self._bare_name(burns)), 'warning')
         elif what == 'out':
-            self._light_spent(lt)
+            if alight:
+                self._light_spent(lt)
+            else:
+                self._light_burnt_out(burns)
             self._refresh_fov()
 
     def _light_spent(self, lt) -> None:
@@ -136,6 +148,23 @@ class LightsMixin:
                    if getattr(i, 'id', None) == getattr(lt, 'id', None))
         self.add_message(lights.line('next_torch', light=name, left=left), 'info')
 
+    def _light_burnt_out(self, lt) -> None:
+        """A light burnt its last in a turn it was lit for a look and put
+        out again: nothing is lit in its place, for the hero chose the dark."""
+        p = self.player
+        name = self._bare_name(lt)
+        if lights.fuel_kind(lt) == 'oil':
+            self.add_message(lights.line('oil_out', light=name), 'warning')
+            return
+        if p.shield is lt:
+            p.shield = None
+            p.shed_worn_grants(lt)
+        else:
+            p.remove_from_inventory(lt)
+        import loadouts
+        loadouts.let_go(p, lt)
+        self.add_message(lights.line('burnt_out', light=name), 'warning')
+
     def _show_way_down(self, lt) -> None:
         """Hero's Lamp: the down stair shows on the map, once a floor."""
         d = getattr(self, 'dungeon', None)
@@ -154,7 +183,9 @@ class LightsMixin:
 
     def _toggle_light(self) -> None:
         """Douse the held light or light it again: no time, no question.
-        A dry lantern is filled from the pack's oil first (one turn)."""
+        Lit, it counts for this turn's fuel and notice whatever follows
+        (lights.kindled). A dry lantern is filled from the pack's oil first
+        (one turn)."""
         p = self.player
         lt = lights.held(p)
         if lt is None:
@@ -178,6 +209,7 @@ class LightsMixin:
             self.add_message(light_shy.rules().get('lines', {}).get('soaked', ''), 'warning')
             return
         lt.lit = True
+        lights.kindled(p, lt)
         self.add_message(lights.line('relit', light=name), 'info')
         self._refresh_fov()
 
@@ -192,6 +224,7 @@ class LightsMixin:
 
     def _unready_light(self, item) -> None:
         self.player._light_kind = ''
+        self.player._light_last = ''            # (the brightest, as the line says)
         self.add_message(lights.line('unreadied', light=self._bare_name(item)), 'info')
 
     def _swap_light(self) -> bool:
@@ -215,16 +248,22 @@ class LightsMixin:
         p.__dict__[name] = None
         return None
 
+    def _light_takes_place(self, shield, tier: int) -> None:
+        """``shield`` came off his arm for a light: it goes back on with no
+        quiz, at the tier it had."""
+        import known_by_hand
+        known_by_hand.learn(self.player, shield, tier)
+        lights.set_aside(self.player, shield)
+
     def _draw_light(self) -> bool:
-        """A light into the off hand. With none left to burn, the shield the
-        swap set aside goes back on instead (the last torch burnt out).
+        """A light into the off hand. With none left to burn, what the last
+        one took the place of comes back instead, as a stow gives it back.
         Nothing moves until all that must move is known to be free."""
         p = self.player
         lt = lights.pick(p)
         if lt is None:
-            back = self._carried_aside('_light_aside')
-            if back is not None and p.shield is None and p.can_equip_shield():
-                return self._aside_back_on(back)
+            if p.shield is None and self._give_back(self._waiting_two_hander()):
+                return True
             self.add_message(lights.line('none_to_take'), 'info')
             return False
         hand, side, shield = p.weapon, None, p.shield
@@ -245,68 +284,69 @@ class LightsMixin:
             if not self._wield_now(side):
                 return False
             p.readied_weapon = hand
-            p._light_sidearm = hand
-            # The shield the two-hander set aside waits for the light to go.
-            slung = p.__dict__.get('_shield_slung')
-            if slung is not None and not lights.is_light(slung):
-                p._light_aside = slung
             self.add_message(lights.line('sidearm', two_hander=self._bare_name(hand),
                                          weapon=self._bare_name(side)), 'info')
-        else:
-            p._light_sidearm = None
         if shield is not None:
-            import known_by_hand
             tier = int(getattr(shield, 'achieved_tier', 0) or 0)
             if not self._take_off_now('shield', shield):
                 return False
-            # It was on his arm: back on with no quiz, at the tier it had.
-            known_by_hand.learn(p, shield, tier)
-            p._light_aside = shield
-        p._shield_slung = None
+            self._light_takes_place(shield, tier)
         if not lights.has_fuel(lt):
             flask = lights.oil_in(p.inventory)
             if flask is not None and p.remove_from_inventory(flask):
                 lights.fill(lt)
                 self.add_message(lights.line('filled', light=self._bare_name(lt)), 'info')
         self._put_on_now(self._one_light(lt))
+        if side is not None:
+            # (after the light is in the hand: lights.off_hand_takes has by
+            # then set aside the shield that waited for the free hand)
+            p._light_sidearm = hand
         return True
 
     def _stow_light(self) -> bool:
         """The light into the pack, and back what it took the place of: the
         two-hander it changed for a one-hander, else the shield."""
         p = self.player
-        lt, hand = p.shield, p.weapon
-        big = self._carried_aside('_light_sidearm')
-        # Only if it still waits at his back: another weapon readied or
-        # drawn since is the hero's own choice, and stands.
-        if big is not None and (big is not p.readied_weapon
-                                or getattr(hand, 'two_handed', False)
-                                or (hand is not None and not p.try_unequip_slot(hand)[0])):
-            big = None
+        lt = p.shield
+        big = self._waiting_two_hander()
         if not self._take_off_now('shield', lt):
             return False
-        p._light_kind = str(getattr(lt, 'id', '') or '')
-        p._light_sidearm = None
+        p._light_last = str(getattr(lt, 'id', '') or '')
         p._shield_slung = None
+        self._give_back(big)
+        lights.forget(p)
+        return True
+
+    def _waiting_two_hander(self):
+        """The two-hander Shift+L changed for a one-hander, if it still
+        waits at his back: another weapon readied or drawn since is the
+        hero's own choice, and stands."""
+        p = self.player
+        big, hand = self._carried_aside('_light_sidearm'), p.weapon
+        if big is None or big is not p.readied_weapon or getattr(hand, 'two_handed', False):
+            return None
+        if hand is not None and not p.try_unequip_slot(hand)[0]:
+            return None
+        return big
+
+    def _give_back(self, big) -> bool:
+        """What the light took the place of, now that it is gone: ``big``
+        into both hands (the shield then waits for a one-hander:
+        lights.two_hands), else the shield onto the arm. True when either."""
+        p = self.player
+        hand = p.weapon
         back = self._carried_aside('_light_aside')
         if big is not None and self._wield_now(big):
             if hand is not None:
                 p.readied_weapon = hand
-            # A one-hander drawn again with S puts this shield back on.
-            p._shield_slung = back
             self.add_message(lights.line('sidearm_back', two_hander=self._bare_name(big)), 'info')
-        elif back is not None and p.can_equip_shield():
-            self._aside_back_on(back)
-        return True
+            return True
+        return back is not None and p.can_equip_shield() and self._aside_back_on(back)
 
     def _aside_back_on(self, shield) -> bool:
         import known_by_hand
         p = self.player
-        if not self._put_on_now(shield, tier=known_by_hand.best_tier(p, shield)):
-            return False
-        p._light_aside = None
-        p._shield_slung = None
-        return True
+        return self._put_on_now(shield, tier=known_by_hand.best_tier(p, shield))
 
     # ------------------------------------------------------------------
     # Filling a lantern (the Kit's Apply)
