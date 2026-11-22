@@ -300,6 +300,21 @@ def _wand_defs() -> dict:
         return {}
 
 
+def refresh_wand(wand) -> bool:
+    """An old save's wand of light takes today's ``power`` (its turns: the
+    power was once a radius) and ``light_reveals``, by id, so its Kit row
+    and its card say what it gives. True when it changed."""
+    d = _wand_defs().get(str(getattr(wand, 'id', '') or '')) or {}
+    if d.get('effect') != 'light' or getattr(wand, 'effect', '') != 'light':
+        return False
+    power, reveals = str(d.get('power', '')), bool(d.get('light_reveals', False))
+    if (str(getattr(wand, 'power', '')) == power
+            and bool(getattr(wand, 'light_reveals', False)) == reveals):
+        return False
+    wand.power, wand.light_reveals = power, reveals
+    return True
+
+
 def wand_light(wand) -> tuple:
     """(turns, reveals) for a wand of light, from TODAY's data by id: a wand
     pickled before 2026-11-19 carries its old ``power``, a radius (4 or 8),

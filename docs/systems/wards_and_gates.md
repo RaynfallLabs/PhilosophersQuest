@@ -57,7 +57,7 @@ A blessed scroll holds half again as long, a cursed one half.
 | `stayed_spear` | Galdr of the Stayed Spear (T2 spell) | missiles from a foe the hero can see fail |
 | `veiled` (Mist-Veiled) | Mist of Manannan (T4 spell) | no foe farther than 2 tiles sees him (`senses.sees`), shoots him, casts at him or meets his eyes (a Caster's Book curse, dispel or darkness too: `caster_ai.warded` asks `wards.blow_gate`) |
 | `all_round_ward` | Scroll of protection (the Breastplate, 20 turns) | a pack round him gains nothing: no swarm bonus, no hamstring (`packs.py`) |
-| `sanctuary` | Sanctuary (T1 spell) | ordinary foes will not strike or cast at him (`caster_ai.warded`); ends when the hero strikes, zaps or casts at a foe, or does anything to a creature with an area spell, a scroll or a wand (`_mm_acting`: hurt it, laid a status on it); a foe he hurt in the last 20 turns is not held back |
+| `sanctuary` | Sanctuary (T1 spell) | ordinary foes will not strike or cast at him (`caster_ai.warded`); ends when the hero strikes, zaps or casts at a foe, or does anything to a creature with an area spell, a scroll or a wand (`_mm_acting`: hurt it, laid a status on it; a creature that only appears is no act), or sends an area spell, the tune, the clash or the assembly at a room with a foe in sight (`_mm_area_act`; an empty room is no blow); a foe he hurt in the last 20 turns is not held back |
 | `styx_dipped` | Water of the Styx (T5 potion, 6 turns) | no blow, bite or claw wounds him; an unseen blow lands at half (the heel) |
 | `free_action` (Loosed) | Galdr of Loosing (T1 spell) | immobilized, impaled and strangling cannot take hold; no hold takes him (`holds.loosed_line`); a monster's pull fails, and the Roc cannot carry him off |
 | `wakeful` | Goatherd's Coffee (T1 potion) | sleep cannot take hold (paralysis still can) |
@@ -127,7 +127,7 @@ it may still use; at range it loses the turn, with a line.
 | Elf-Shot | 1 | paralyses one foe 3 turns (the paralyse ladder's first rung) |
 | Galdr of the Stayed Spear | 2 | Stayed Spear 12 turns |
 | Tacita's Seal | 2 | one foe Silenced 10 turns |
-| Dionysus's Vine | 2 | the target's 3x3 held 4 turns; conjured vines there 12 turns |
+| Dionysus's Vine | 2 | the target's 3x3 held 4 turns; conjured vines there 12 turns, which may catch whatever steps in (the hazard's chance and save) |
 | Shrink the Earth | 2 | an aimed step to a seen, empty tile within 6, over a clear line of walkable ground (never through a wall the Crown of Brahma shows; a tile spell: `needs_tile`) |
 | Bough of Somnus | 2 | the target and all beside it asleep 8 turns |
 | Galdr of Dulled Blades | 3 | everything in sight Weakened 8 turns |

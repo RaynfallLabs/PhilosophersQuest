@@ -303,7 +303,9 @@ packed at once.
   common light needs no identify; a named one keeps the unique rules.
 * **Old saves**: a `Light` reads its class defaults for any field it lacks;
   a wand of light pickled with its old radius `power` reads today's turns
-  by id (`lights.wand_light`).
+  by id when zapped (`lights.wand_light`), and takes them on load, so its
+  card and its Kit row say the same (`Game._migrate_light_wands`,
+  `lights.refresh_wand`).
 * **QA** (Titivillus, Shift+T with the arsenal): every light, three torches
   and two flasks of fire oil in the pack.
 * **Art**: stand-in sprites made in code from painted ones

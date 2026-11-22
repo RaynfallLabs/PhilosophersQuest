@@ -1638,7 +1638,10 @@ class InputMixin:
                 px, py = self.player.x, self.player.y
                 if max(abs(nx - px), abs(ny - py)) > _sreach:
                     return
-                if nx == px and ny == py:
+                # (a creature spell never aims at the hero's own tile; a tile
+                # spell's cursor opens on it and crosses it: Enter refuses it)
+                if (nx == px and ny == py and not
+                        (getattr(self, '_pending_spell', None) or {}).get('needs_tile')):
                     return
             self.target_cursor_x = nx
             self.target_cursor_y = ny

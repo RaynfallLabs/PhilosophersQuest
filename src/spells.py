@@ -742,7 +742,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': "Dionysus's Vine", 'effect': 'entangle', 'power': '',
         'mp_cost': 7, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'entangle', 'duration': 4,
-        'desc': 'Vines burst up round one foe: everything walking there is held fast for 4 turns, and for 12 turns the vines catch whatever steps in, you too.',
+        'desc': 'Vines burst up round one foe: everything walking there is held fast for 4 turns, and for 12 turns the vines may catch whatever steps in, you too.',
     },
     'shrink_the_earth_spell': {
         'name': 'Shrink the Earth', 'effect': 'aimed_step', 'power': '',

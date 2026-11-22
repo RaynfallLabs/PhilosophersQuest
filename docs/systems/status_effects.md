@@ -174,6 +174,8 @@ Hard immunity table. If the resist effect is active, the listed debuffs are refu
   'drain_resist':  {'diseased', 'draining'},     # v2.18.0: draining now blocked
   'fire_resist':   {'burning'},
   'cold_resist':   {'frozen'},
+  'fire_shield':   {'burning'},       # and laying a full shield ends it
+  'cold_shield':   {'frozen'},        # (_QUENCHES)
   'magic_resist':  {'confused', 'charmed', 'silenced', 'feared',
                     'hallucinating', 'hallucinating_pot'},
 }

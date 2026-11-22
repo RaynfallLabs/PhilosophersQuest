@@ -849,6 +849,111 @@ def test_sanctuary_cast_again_is_a_new_rite():
     assert wards._gen(p, 'sanctuary') > first
 
 
+# ----------------------------------------- h2-08: the turns that were laid
+
+def _turns(n):
+    return f"{n} turn{'s' if n != 1 else ''}"
+
+
+MASS = [('dulled_blades_spell', 'weakened'), ('darkness_of_egypt_spell', 'blinded'),
+        ('hush_of_the_feralia_spell', 'silenced')]
+
+
+@pytest.mark.parametrize('sid,status', MASS + [('bough_of_somnus_spell', 'sleeping'),
+                                               ('dionysus_vine_spell', 'immobilized')])
+def test_the_new_spells_say_the_turns_they_laid(g, monkeypatch, sid, status):
+    m = _mon(g, 'kobold', 2)
+    m.is_mini_boss = True
+    monkeypatch.setattr(g, '_boss_resist_cc', lambda t, d: (max(1, d // 2), False))
+    said = _cast(g, sid, m)
+    got = m.status_effects[status]
+    assert f'({_turns(got)})' in said, said
+
+
+@pytest.mark.parametrize('sid,status', MASS)
+def test_a_mixed_room_hears_both_ends(g, monkeypatch, sid, status):
+    small = _mon(g, 'kobold', 2)
+    great = _mon(g, 'kobold', -2)
+    great.is_mini_boss = True
+    monkeypatch.setattr(g, '_boss_resist_cc',
+                        lambda t, d: ((max(1, d // 2) if t is great else d), False))
+    said = _cast(g, sid)
+    lo, hi = sorted((small.status_effects[status], great.status_effects[status]))
+    assert lo < hi and f'({lo} to {hi} turns)' in said, said
+
+
+def test_the_sceptre_says_the_turns_it_laid(g, monkeypatch):
+    m = _mon(g, 'goblin', 2)
+    monkeypatch.setattr(g, '_boss_resist_cc', lambda t, d: (3, False))
+    g._advance_turn = lambda: None
+    g._sceptre_quiz_done(types.SimpleNamespace(score=6))
+    assert f"({_turns(m.status_effects['feared'])})" in ' '.join(g.said), g.said
+
+
+@pytest.mark.parametrize('wid,status', [('wand_of_panic_wave', 'feared'),
+                                        ('wand_of_sleep', 'sleeping')])
+def test_wands_say_the_turns_they_laid(g, wid, status):
+    m = _mon(g, 'kobold', 2)
+    m.status_weak = [status]
+    said = _zap(g, wid, m)
+    assert _turns(m.status_effects[status]) in said, said
+
+
+@pytest.mark.parametrize('sid,status', [('scroll_of_madness', 'confused'),
+                                        ('scroll_of_deep_slumber', 'sleeping')])
+def test_area_scrolls_say_the_turns_they_laid(g, sid, status):
+    m = _mon(g, 'kobold', 2)
+    m.is_mini_boss = True
+    m.status_weak = [status]
+    said = _read(g, sid)
+    if m.status_effects.get(status):
+        assert _turns(m.status_effects[status]) in said, said
+
+
+@pytest.mark.parametrize('sid,status', [('mass_sleep_spell', 'sleeping'),
+                                        ('mass_paralyze_spell', 'paralyzed'),
+                                        ('mass_slow_spell', 'slowed')])
+def test_the_older_area_spells_say_the_turns_they_laid(g, monkeypatch, sid, status):
+    m = _mon(g, 'kobold', 2)
+    m.is_mini_boss = True
+    monkeypatch.setattr(g, '_boss_resist_cc', lambda t, d: (max(1, d // 2), False))
+    said = _cast(g, sid)
+    assert _turns(m.status_effects[status]) in said, said
+
+
+# -------------------------------------------------- h2-09: a story's lamp
+
+def test_darkness_leaves_a_story_lamp(g):
+    import light_shy
+    p = g.player
+    p.add_floor_effect('light', 2)
+    assert light_shy.snuff(p, 'dark') == ''
+    assert p.status_effects.get('light') == -1
+
+
+def test_light_on_a_story_lamp_costs_nothing(g):
+    p = g.player
+    p.add_floor_effect('light', 2)
+    p.known_spells = {'light_spell': 2}
+    mp = p.mp
+    g._invoke_spell('light_spell')
+    assert p.mp == mp and g.state == STATE_PLAYER
+    assert lights.line('spell_held') in g.said and 'for good' not in lights.line('spell_held')
+
+
+def test_a_known_wand_of_light_on_a_story_lamp_keeps_its_charge(g):
+    p = g.player
+    p.add_floor_effect('light', 2)
+    wand = items.make_item_by_id('wand', 'wand_of_candle_light')
+    wand.identified = True
+    p.known_item_ids.add(wand.id)
+    p.inventory.append(wand)
+    n = wand.charges
+    g._invoke_wand(wand)
+    assert wand.charges == n and g.state == STATE_PLAYER
+    assert lights.line('spell_held') in g.said
+
+
 # ----------------------------------------- h2-10: lit for a look is lit
 
 def _look_and_douse(game):
@@ -965,6 +1070,176 @@ def test_what_is_owed_survives_a_save_and_an_old_save_owes_nothing():
     assert back._light_last == '' and back._kindled is None and back._kindled_glow == 0
 
 
+# ------------------------------------------------ h2-11: an empty room
+
+@pytest.mark.parametrize('sid', ['hush_of_the_feralia_spell', 'pans_panic_spell',
+                                 'darkness_of_egypt_spell', 'dulled_blades_spell'])
+def test_an_area_spell_into_an_empty_room_keeps_sanctuary(g, sid):
+    p = g.player
+    wards.grant(p, 'sanctuary', 8)
+    _cast(g, sid)
+    assert p.has_effect('sanctuary')
+
+
+def test_a_tune_and_the_sceptre_with_no_one_to_hear_keep_sanctuary(g):
+    p = g.player
+    wards.grant(p, 'sanctuary', 8)
+    _read(g, 'scroll_of_the_hamelin_piper')
+    assert p.has_effect('sanctuary'), 'the tune'
+    _zap(g, 'krotala_of_athena')
+    assert p.has_effect('sanctuary'), 'the Krotala'
+    g.monsters[:] = []
+    g._advance_turn = lambda: None
+    g._sceptre_quiz_done(types.SimpleNamespace(score=3))
+    assert p.has_effect('sanctuary'), 'the Sceptre'
+
+
+def test_an_area_spell_at_someone_still_ends_sanctuary(g):
+    p = g.player
+    wards.grant(p, 'sanctuary', 8)
+    _mon(g, 'kobold', 2)
+    _cast(g, 'hush_of_the_feralia_spell')
+    assert not p.has_effect('sanctuary')
+
+
+def test_the_audits_ruling_stands_for_a_foe_out_of_its_reach(g):
+    """M3, 2026-11-20: a foe in sight makes it a hostile act, even one the
+    spell does not work on."""
+    p = g.player
+    wards.grant(p, 'sanctuary', 8)
+    p.PER = 18
+    m = _mon(g, 'kobold', 5)
+    assert g._in_spell_sight(m)
+    _cast(g, 'pans_panic_spell')
+    assert not p.has_effect('sanctuary')
+
+
+def test_a_creature_that_only_appears_is_no_blow(g):
+    p = g.player
+    wards.grant(p, 'sanctuary', 8)
+    g._mm_acting(lambda: _mon(g, 'kobold', 2))
+    assert p.has_effect('sanctuary')
+
+
+# ------------------------------------------------- h2-12: the tile cursor
+
+def test_the_tile_cursor_crosses_the_hero(g):
+    p = g.player
+    g.player.known_spells = {'shrink_the_earth_spell': 6}
+    g._invoke_spell('shrink_the_earth_spell')
+    assert g.state == STATE_TARGET
+    g._target_input(pygame.K_RIGHT)
+    g._target_input(pygame.K_LEFT)
+    assert (g.target_cursor_x, g.target_cursor_y) == (p.x, p.y)
+    g._target_input(pygame.K_LEFT)
+    assert g.target_cursor_x == p.x - 1
+
+
+# ---------------------------------------------------- h2-13: fire and cold
+
+@pytest.mark.parametrize('shield,status', [('fire_shield', 'burning'), ('cold_shield', 'frozen')])
+def test_the_full_shield_keeps_off_what_the_resist_keeps_off(shield, status):
+    p = Player()
+    p.add_effect(shield, 30)
+    assert p.add_effect(status, 6) is False and not p.has_effect(status)
+
+
+@pytest.mark.parametrize('shield,status', [('fire_shield', 'burning'), ('cold_shield', 'frozen')])
+def test_laying_the_shield_puts_out_what_is_there(shield, status):
+    p = Player()
+    assert p.add_effect(status, 6)
+    p.add_effect(shield, 30)
+    assert not p.has_effect(status)
+
+
+# ------------------------------------------- h2-14: turns said, turns laid
+
+@pytest.mark.parametrize('sid,status', [('scroll_of_absolute_ward', 'shielded'),
+                                        ('scroll_of_aegis', 'shielded')])
+def test_a_warding_rite_says_the_turns_it_has(g, sid, status):
+    p = g.player
+    said = _read(g, sid)
+    assert f'for {_turns(p.status_effects[status])}.' in said, said
+
+
+def test_a_rite_read_again_says_what_is_left(g):
+    p = g.player
+    p.add_effect('shielded', 25)
+    said = _read(g, 'scroll_of_aegis')
+    assert f"for {_turns(p.status_effects['shielded'])}." in said, said
+
+
+@pytest.mark.parametrize('sid,status', [('mage_armor_spell', 'shielded'),
+                                        ('displacement_spell', 'displacement'),
+                                        ('detect_monsters_spell', 'clairvoyant'),
+                                        ('sanctuary_spell', 'sanctuary'),
+                                        ('stayed_spear_spell', 'stayed_spear'),
+                                        ('galdr_of_loosing_spell', 'free_action'),
+                                        ('mist_of_manannan_spell', 'veiled')])
+def test_a_spell_on_the_hero_says_what_he_has(g, sid, status):
+    p = g.player
+    p.status_effects[status] = 55
+    said = _cast(g, sid)
+    assert _turns(p.status_effects[status]) in said, said
+
+
+@pytest.mark.parametrize('wid_effect,status', [('shield_self', 'shielded'),
+                                               ('regeneration_self', 'regenerating'),
+                                               ('reflect_self', 'reflecting')])
+def test_a_wand_on_the_hero_says_what_he_has(g, wid_effect, status):
+    p = g.player
+    p.status_effects[status] = 55
+    wand = items.make_item_by_id('wand', 'wand_of_candle_light')
+    wand.effect, wand.quiz_tier = wid_effect, 5
+    g.said.clear()
+    g._apply_wand_effect(wand)
+    assert _turns(p.status_effects[status]) in ' '.join(g.said), g.said
+
+
+@pytest.mark.parametrize('pid,status', [('potion_of_see_invisible', 'see_invisible'),
+                                        ('potion_of_regeneration', 'regenerating'),
+                                        ('potion_of_levitation', 'levitating'),
+                                        ('potion_of_fire_resistance', 'fire_resist'),
+                                        ('theriac', 'poison_resist')])
+def test_a_potion_says_the_turns_it_gave(g, pid, status):
+    import food_system
+    p = g.player
+    pot = items.make_item_by_id('potion', pid)
+    pot.buc = 'uncursed'
+    p.inventory.append(pot)
+    out = ' '.join(str(m) for m in food_system.drink_potion(p, pot))
+    assert _turns(p.status_effects[status]) in out, out
+
+
+# ------------------------------------------------- h2-15: the card is true
+
+def test_the_vines_card_agrees_with_the_fixture(g):
+    with open(os.path.join(ROOT, 'data', 'hazards.json'), encoding='utf-8') as f:
+        text = f.read()
+    spec = text[text.index('"conjured_vine"'):]
+    assert '"chance": 0.6' in spec and '"save": true' in spec
+    assert 'may catch whatever steps in' in LEARNABLE_SPELLS['dionysus_vine_spell']['desc']
+    said = _cast(g, 'dionysus_vine_spell', _mon(g, 'kobold', 3))
+    assert 'may catch whatever steps in' in said
+
+
+# ---------------------------------------------------- h2-16: Sanctification
+
+def test_sanctification_passes_over_the_torch(g):
+    p = g.player
+    g._equip_item(_light(p))
+    _read(g, 'scroll_of_sanctification')
+    assert p.shield.buc == 'uncursed'
+
+
+def test_sanctification_still_blesses_what_it_helps(g):
+    p = g.player
+    g._equip_item(_light(p))
+    _weapon(p, 'longsword', 'hand')
+    _read(g, 'scroll_of_sanctification')
+    assert p.weapon.buc == 'blessed' and p.shield.buc == 'uncursed'
+
+
 # -------------------------------------------------------- h2-17: Penelope
 
 def test_a_lantern_in_and_out_is_no_change_of_armour(g):
@@ -976,3 +1251,31 @@ def test_a_lantern_in_and_out_is_no_change_of_armour(g):
     assert g.quirk_system._p('penelope_count') == n
 
 
+# ----------------------------------------------- h2-18: an old save's wand
+
+def test_an_old_saves_light_wands_read_their_turns(g):
+    import main
+    import save_system
+    p = g.player
+    old = {'wand_of_candle_light': ('4', '60'), 'lantern_of_diogenes': ('8', '120'),
+           'wand_of_torch_light': ('8', '120')}
+    candle = items.make_item_by_id('wand', 'wand_of_candle_light')
+    candle.power = old[candle.id][0]
+    p.inventory.append(candle)
+    lantern = items.make_item_by_id('wand', 'lantern_of_diogenes')
+    lantern.power, lantern.light_reveals = old[lantern.id][0], False
+    lantern.x, lantern.y = p.x, p.y
+    g.ground_items.append(lantern)
+    torch = items.make_item_by_id('wand', 'wand_of_torch_light')
+    torch.power = old[torch.id][0]
+    thief = _mon(g, 'kobold', 2)
+    thief.__dict__['stolen_items'] = [torch]
+    assert save_system.save_game(g) is not False
+    g2, err = main._restore_saved_game(g.screen, g.player_name, save_system.load_game(g.player_name))
+    assert g2 is not None, err
+    found = list(g2.player.inventory) + list(g2.ground_items)
+    for m in g2.monsters:
+        found += m.__dict__.get('stolen_items') or []
+    seen = {i.id: i for i in found if i.id in old}
+    assert {k: v.power for k, v in seen.items()} == {k: v[1] for k, v in old.items()}
+    assert seen['lantern_of_diogenes'].light_reveals

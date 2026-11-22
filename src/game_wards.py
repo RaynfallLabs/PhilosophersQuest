@@ -26,7 +26,7 @@ the player's ``_ward_gen`` and ``_sceptre_floors``; a monster's ``_wards_broken`
 """
 from __future__ import annotations
 
-from naming import quantity
+from naming import quantity, turns_span
 from game_states import STATE_PLAYER, STATE_QUIZ, STATE_TARGET
 from geom import monster_at_tile
 
@@ -85,17 +85,26 @@ class MagicWardsMixin:
 
     def _mm_end_sanctuary(self) -> None:
         """A hostile act (a spell, a scroll, a wand or a clash at creatures,
-        whether or not one is aimed): sanctuary ends."""
+        whether or not one is aimed): sanctuary ends. An area act asks
+        _mm_area_act first, for an empty room is not struck."""
         import wards
         line = wards.hostile_act(self.player)
         if line:
             self.add_message(line, 'info')
 
-    def _mm_world_state(self) -> tuple:
-        return tuple((id(m), bool(m.alive), int(getattr(m, 'hp', 0) or 0),
-                      tuple(sorted((k, int(v)) for k, v in (m.status_effects or {}).items() if v)))
-                     for m in (getattr(self, 'monsters', None) or ())
-                     if not getattr(m, 'is_allied', False))
+    def _mm_area_act(self) -> None:
+        """An act at whoever is in sight (an area spell, the tune, the clash,
+        the assembly): with any foe there it is a hostile one, whether or not
+        it is his kind it works on (audit 2026-11-20 M3). Into an empty room
+        it is no blow."""
+        if self._mm_foes_in_sight():
+            self._mm_end_sanctuary()
+
+    def _mm_world_state(self) -> dict:
+        return {id(m): (bool(m.alive), int(getattr(m, 'hp', 0) or 0),
+                        tuple(sorted((k, int(v)) for k, v in (m.status_effects or {}).items() if v)))
+                for m in (getattr(self, 'monsters', None) or ())
+                if not getattr(m, 'is_allied', False)}
 
     def _mm_acting(self, fn, *args):
         """Run a spell's, a wand's or a scroll's effect; if it did anything to a
@@ -107,16 +116,20 @@ class MagicWardsMixin:
         try:
             return fn(*args)
         finally:
-            if watch and p.has_effect('sanctuary') and self._mm_world_state() != before:
-                self._mm_end_sanctuary()
+            if watch and p.has_effect('sanctuary'):
+                now = self._mm_world_state()
+                # (one that only appeared, a wand's conjuring, was not struck)
+                if any(now.get(k) != was for k, was in before.items()):
+                    self._mm_end_sanctuary()
 
     def _mm_mass(self, foes, status: str, turns: int, landed: str, none: str,
                  gate: bool = False) -> int:
         """Lay ``status`` on each of ``foes`` (through _inflict, or the gate
         rules for silenced / unstrung / babbled), and say how many of those
-        the hero sees took it. Returns that count."""
+        the hero sees took it, and for how long. Returns that count."""
         import attack_gates
-        self._mm_end_sanctuary()
+        self._mm_area_act()
+        laid = []
         took = 0
         seen = 0
         for m in foes:
@@ -125,8 +138,9 @@ class MagicWardsMixin:
             got = attack_gates.inflict(m, status, turns) if gate else self._inflict(m, status, turns)[0]
             if got and vis:
                 took += 1
+                laid.append(got)
         if seen:
-            self.add_message(landed.format(n=took, of=seen, dur=quantity(turns, 'turn')),
+            self.add_message(landed.format(n=took, of=seen, dur=turns_span(laid, turns)),
                              'success' if took else 'warning')
         else:
             self.add_message(none, 'info')
@@ -136,7 +150,7 @@ class MagicWardsMixin:
         """Every creature of ``family`` in sight takes ``status`` (the Piper's
         tune on vermin, the Krotala's clash on birds). Named foes stand."""
         import family_lore
-        self._mm_end_sanctuary()
+        self._mm_area_act()
         foes = [m for m in self._mm_foes_in_sight() if family_lore.family_of(m) == family]
         if not foes:
             self.add_message(none, 'info')
@@ -209,7 +223,7 @@ class MagicWardsMixin:
         p = self.player
 
         if effect == 'stayed_spear_self':
-            wards.grant(p, 'stayed_spear', dur)
+            dur = wards.grant(p, 'stayed_spear', dur)
             self.add_message(f"You sing the fifth charm and keep your eyes open: arrows, stones "
                              f"and spears from any foe you can see will drop short of you "
                              f"({quantity(dur, 'turn')}).", 'success')
@@ -220,7 +234,7 @@ class MagicWardsMixin:
                      if p.status_effects.pop(s, None) is not None]
             if 'in_pit' in freed and hasattr(self.dungeon, 'pits'):
                 self.dungeon.pits.discard((p.x, p.y))
-            wards.grant(p, 'free_action', dur)
+            dur = wards.grant(p, 'free_action', dur)
             if freed:
                 self.add_message(f"You sing the charm for a man in chains, and whatever held you "
                                  f"springs off. Nothing can grab or pin you "
@@ -231,14 +245,14 @@ class MagicWardsMixin:
             return True
 
         if effect == 'sanctuary_self':
-            wards.grant(p, 'sanctuary', dur)
+            dur = wards.grant(p, 'sanctuary', dur)
             self.add_message(f"The old law of the church door closes round you: ordinary foes "
                              f"will not strike you until you strike ({quantity(dur, 'turn')}).",
                              'success')
             return True
 
         if effect == 'veil_self':
-            wards.grant(p, 'veiled', dur)
+            dur = wards.grant(p, 'veiled', dur)
             self.add_message(f"Manannan's cloak of mist comes down round you: nothing more than "
                              f"two steps off can see you ({quantity(dur, 'turn')}).", 'success')
             return True
@@ -284,11 +298,12 @@ class MagicWardsMixin:
             from geom import chebyshev_distance
             near = [m for m in self.monsters if m.alive and not getattr(m, 'is_allied', False)
                     and (m is target or chebyshev_distance(target.x, target.y, m) <= 1)]
-            took = sum(1 for m in near if self._inflict(m, 'sleeping', dur)[0])
+            laid = [got for got in (self._inflict(m, 'sleeping', dur)[0] for m in near) if got]
+            took = len(laid)
             if took:
                 self.add_message(f"You shake the bough of Lethe over them: "
                                  f"{quantity(took, 'creature')} {'falls' if took == 1 else 'fall'} "
-                                 f"asleep ({quantity(dur, 'turn')}).", 'success')
+                                 f"asleep ({turns_span(laid, dur)}).", 'success')
             else:
                 self.add_message("The dew of Lethe falls, and no one sleeps.", 'warning')
             return True
@@ -332,14 +347,20 @@ class MagicWardsMixin:
                 return True
             band = max(2, int(12 * cs))
             took = 0
+            laid, babbling = [], []
             for m in foes:
-                if self._inflict(m, 'confused', dur)[0] and self._mm_seen(m):
+                got = self._inflict(m, 'confused', dur)[0]
+                vis = self._mm_seen(m)
+                if got and vis:
                     took += 1
-                attack_gates.inflict(m, 'babbled', band)
+                    laid.append(got)
+                bab = attack_gates.inflict(m, 'babbled', band)
+                if vis:
+                    babbling.append(bab)
             self.add_message(f"Their speech is confounded: each hears his fellows babble. "
                              f"{took} of {sum(1 for m in foes if self._mm_seen(m))} Confused "
-                             f"({quantity(dur, 'turn')}), and no pack or band among them fights "
-                             f"as one ({quantity(band, 'turn')}).", 'success')
+                             f"({turns_span(laid, dur)}), and no pack or band among them fights "
+                             f"as one ({turns_span(babbling, band)}).", 'success')
             return True
 
         if effect == 'settled_strife':
@@ -349,13 +370,17 @@ class MagicWardsMixin:
                                  "giant is here to hear it.", 'info')
                 return True
             took = 0
+            laid = []
             for m in foes:
-                if self._inflict(m, 'charmed', dur)[0]:
+                got = self._inflict(m, 'charmed', dur)[0]
+                if got:
                     m._strife_peace = True
-                    took += 1 if self._mm_seen(m) else 0
+                    if self._mm_seen(m):
+                        took += 1
+                        laid.append(got)
             self.add_message(f"You sing the song that settles hatred: laying down arms, {took} of "
                              f"{sum(1 for m in foes if self._mm_seen(m))} "
-                             f"({quantity(dur, 'turn')}). Strike one, and it is over for that one.",
+                             f"({turns_span(laid, dur)}). Strike one, and it is over for that one.",
                              'success' if took else 'warning')
             return True
 
@@ -363,13 +388,15 @@ class MagicWardsMixin:
 
     def _cast_entangle(self, target, dur: int) -> None:
         """Dionysus's Vine: everything on the target's tile and the eight
-        round it is held fast; the vines stay and catch whoever steps in."""
+        round it is held fast; the vines stay and may catch whoever steps in
+        (the fixture's chance and save: data/hazards.json)."""
         import decor
         import hazards
         from dungeon import FLOOR
         tx, ty = target.x, target.y
         tiles = [(tx + dx, ty + dy) for dy in (-1, 0, 1) for dx in (-1, 0, 1)]
         caught = 0
+        laid = []
         for m in list(self.monsters):
             if not m.alive or getattr(m, 'is_allied', False):
                 continue
@@ -378,8 +405,10 @@ class MagicWardsMixin:
                 continue
             if hazards.floats(m):
                 continue
-            if self._inflict(m, 'immobilized', dur)[0] and self._mm_seen(m):
+            got = self._inflict(m, 'immobilized', dur)[0]
+            if got and self._mm_seen(m):
                 caught += 1
+                laid.append(got)
         until = int(getattr(self, 'turn_count', 0)) + 12
         grown = 0
         try:
@@ -398,10 +427,10 @@ class MagicWardsMixin:
                 grown += 1
         if caught:
             self.add_message(f"Vines burst up out of the stones and wind round "
-                             f"{quantity(caught, 'creature')}: held fast ({quantity(dur, 'turn')}). "
-                             f"The vines stay a while, and catch whatever steps in.", 'success')
+                             f"{quantity(caught, 'creature')}: held fast ({turns_span(laid, dur)}). "
+                             f"The vines stay a while, and may catch whatever steps in.", 'success')
         elif grown:
-            self.add_message("Vines burst up out of the stones. They stay a while, and catch "
+            self.add_message("Vines burst up out of the stones. They stay a while, and may catch "
                              "whatever steps in.", 'success')
         else:
             self.add_message("Vines stir under the stones, but nothing here will hold them.", 'warning')
@@ -662,19 +691,22 @@ class MagicWardsMixin:
         import attack_gates
         import war_bands
         turns = min(12, 2 * chain)
-        self._mm_end_sanctuary()
         foes = [m for m in self._mm_foes_in_sight() if attack_gates.heeds_assembly(m)]
+        self._mm_area_act()
         bands = {getattr(m, '_band', None) for m in foes} - {None}
         for uid in bands:
             war_bands.break_hold(self.monsters, uid)
         took = 0
+        laid = []
         for m in foes:
-            if self._inflict(m, 'feared', turns)[0] and self._mm_seen(m):
+            got = self._inflict(m, 'feared', turns)[0]
+            if got and self._mm_seen(m):
                 took += 1
+                laid.append(got)
         if took:
             self.add_message(f"The sceptre comes down, and the will goes out of them: "
                              f"{quantity(took, 'foe')} {'turns' if took == 1 else 'turn'} and "
-                             f"{'runs' if took == 1 else 'run'} ({quantity(turns, 'turn')})."
+                             f"{'runs' if took == 1 else 'run'} ({turns_span(laid, turns)})."
                              + (" The war band's leader has lost his hold on it." if bands else ''),
                              'success')
         else:
