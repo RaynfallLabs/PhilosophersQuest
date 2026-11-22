@@ -4372,16 +4372,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             '"Then Death and Hades were thrown into the lake of fire."', 'danger'
         )
         self.add_message(
-            "The Shimmer tears open -- a vast Abyss of black fire yawns beneath Death's feet.", 'danger'
+            "The Shimmer is torn asunder, and an Abyss of black fire opens beneath the feet of Death.", 'danger'
         )
         self.add_message(
-            "Death writhes, claws at the stone -- and is consumed.", 'danger'
+            "Death claws at the stone and finds no hold there, and the fire consumes it utterly.", 'danger'
         )
         self.add_message(
-            "What no soul before you has ever achieved:  DEATH IS DEAD.", 'success'
+            "You have done what no soul has done since the world began, for Death itself is dead.", 'success'
         )
         self.add_message(
-            "Take this code to your father proudly -- you have shown true Wisdom and Courage.", 'success'
+            "Carry this code proudly to your father, for you have shown true wisdom and courage.", 'success'
         )
         self.add_message(">> A scroll materializes from the void. <<", 'loot')
 
@@ -4397,13 +4397,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.ground_items.remove(_tab)
             self.player.inventory.append(_tab)
             self.add_message(
-                "The Tablet lies at the lip of the Abyss, unmarked. You take it "
-                "up again. It is cold now.", 'loot')
+                "The Tablet lies unharmed at the lip of the Abyss, cold as a "
+                "winter well, and you take it up again.", 'loot')
         # Mark this run as the SECRET-victory path so the victory screen
         # renders the Abyss-distinct variant (arcane purple, "DEATH IS DEAD"
         # headline) instead of the standard gold "VICTORY!" screen.
         self._secret_victory = True
-        self._chron('boss', "I killed Death. The lake of fire opened beneath it and swallowed it whole. The silence afterwards was the loudest thing I've ever heard.")
+        self._chron('boss', "Death destroyed in the lake of fire. Must carry the Tablet out.")
 
         # Drop the sixth boss reward scroll
         reward = make_death_bane_scroll(dx, dy)
@@ -4469,7 +4469,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # floor-1 bones file with the hero's whole kit for the next run.)
         self._on_game_over(leave_bones=False, victory=has_stone)
         if has_stone:
-            self._chron('milestone', "I made it. I climbed back out with the Stone. The sunlight hurt my eyes. I'd forgotten what it looked like.")
+            self._chron('milestone', "Out, with the Stone. On to Amber.")
             self._show_story_popup('exit_with_stone', STATE_VICTORY)
         else:
             self.defeat_reason = 'fled'
@@ -8994,26 +8994,28 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'THE PHILOSOPHER\'S QUEST',
             'accent': (80, 120, 200),
             'lines': [
-                "Your village of Amber is dying.",
+                "Long ago, in an age whose kings are all forgotten, a great city stood upon",
+                "the hill above the village of Amber. Nothing is left of it now but broken",
+                "walls and a stair that winds beneath them into the dark, and for many",
+                "generations the folk of Amber tilled their fields in its shadow and gave",
+                "little thought to what might lie below.",
                 "",
-                "A magical plague -- born of corruption and forgotten wisdom -- has spread",
-                "through every home, every hearth, every life you have ever known.",
-                "Children grow pale. Elders speak in whispers of an ancient remedy.",
+                "Then there came upon them a plague of sorcery, born of corruption and",
+                "forgotten wisdom. It passed from hearth to hearth until there was scarcely a",
+                "house without a child lying pale beside the fire, and when every herb and",
+                "prayer had failed, the elders called to mind an ancient tale of the",
+                "Philosopher's Stone, which rests at the root of the dungeon and holds wisdom",
+                "enough to lift any curse.",
                 "",
-                "The Philosopher's Stone.",
+                "Many have gone down to seek it, and none has returned. Yet the need of Amber",
+                "is great, and so you have taken up such arms as the village could spare and",
+                "have come to the head of the stair, while those who love you keep watch",
+                "behind you. Go down with a stout heart and a ready mind, win the Stone, and",
+                "bear it home while there is yet time.",
                 "",
-                "Forged at the very bottom of the dungeon beneath the ancient ruins,",
-                "it holds the wisdom needed to break the plague's hold forever.",
-                "No one who has sought it has returned.",
-                "",
-                "But you are not no one.",
-                "",
-                "Descend. Claim the Stone. Return it to the light.",
-                "The people who love you are counting on you.",
-                "",
-                "As you delve deeper, you may uncover lost codes -- ancient secrets",
-                "known only to those who venture far enough to find them.",
-                "Present them to your father for rewards.",
+                "It is said besides that secret codes lie hidden in the deep places, known",
+                "only to those who venture far. Should you discover any, carry them to your",
+                "father, and he will reward you.",
             ],
             'code': None,
         },
@@ -9021,16 +9023,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'ASTERION THE MINOTAUR FALLS',
             'accent': (180, 50, 50),
             'lines': [
-                "Asterion was born of Pasiphae and a divine white bull sent by Poseidon --",
-                "a creature of two worlds, neither fully beast nor fully man.",
-                "King Minos imprisoned him in the labyrinth built by Daedalus,",
-                "where he was fed on tribute of youths until Theseus came.",
+                "So fell Asterion, the son of Queen Pasiphae and of the white bull that",
+                "Poseidon sent out of the sea, who was neither wholly beast nor wholly man.",
+                "In the elder days King Minos shut him within the Labyrinth that Daedalus",
+                "built and gave him youths and maidens of Athens for tribute, until Theseus",
+                "came among them.",
                 "",
-                "The hero navigated the maze with Ariadne's thread and slew the Minotaur",
-                "not with overwhelming strength, but with preparation and cleverness.",
-                "",
-                "Today, that thread was your knowledge.",
-                "The first guardian falls. The dungeon opens deeper.",
+                "Ariadne had given that hero a thread, and by it he found his way through the",
+                "winding dark to the monster and home again. You have followed the thread of",
+                "your own learning to the same end. The first of the great guardians lies",
+                "dead, and beyond his hall the road descends into the deeper places of the",
+                "earth.",
             ],
             'code': None,
         },
@@ -9038,15 +9041,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'MEDUSA THE GORGON FALLS',
             'accent': (50, 160, 80),
             'lines': [
-                "Once a beautiful mortal priestess, Medusa was transformed by Athena's curse",
-                "into a creature whose gaze turned living flesh to stone.",
-                "Her hair became serpents. Her beauty became terror.",
+                "So perished Medusa, who in her youth was a priestess and fairer than any",
+                "other mortal woman, until the curse of Athena turned her shining hair to",
+                "serpents. From that day whoever looked upon her face was changed to stone,",
+                "and she dwelt through long years among the likenesses of all who had come to",
+                "slay her.",
                 "",
-                "Perseus slew her by meeting her eyes only in a mirrored shield --",
-                "trusting reflection over direct sight, wisdom over recklessness.",
-                "From her blood sprang Pegasus and Chrysaor.",
-                "",
-                "Her gaze is stilled. The passage deepens.",
+                "At last Perseus drew near with his eyes upon the bronze of his shield, and",
+                "struck her as he watched her image there, and from her blood sprang winged",
+                "Pegasus and his brother Chrysaor. Now those dreadful eyes are closed again,",
+                "and the stair that she guarded stands open before you.",
             ],
             'code': None,
         },
@@ -9054,16 +9058,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'FAFNIR THE DRAGON FALLS',
             'accent': (200, 100, 30),
             'lines': [
-                "Fafnir was not always a dragon.",
-                "He was a dwarf -- son of the sorcerer Hreidmar -- who murdered his own father",
-                "for cursed Andvari's gold, then transformed over years into a great serpent,",
-                "hoarding his stolen wealth in the Gnita Heath.",
+                "So fell Fafnir, who was born the son of the sorcerer Hreidmar, of the race",
+                "of the dwarves. When his father came into the gold of Andvari, upon which a",
+                "curse had been laid, Fafnir slew him for the sake of it and bore the hoard",
+                "away to Gnita Heath, and there he brooded over it until greed had wrought",
+                "him into a dragon.",
                 "",
-                "The hero Sigurd slew him not by charging, but by patience:",
-                "hiding in a pit along Fafnir's path, striking from below as the dragon passed.",
-                "Cunning over power. Patience over courage alone.",
-                "",
-                "His fire is extinguished. The way below grows darker still.",
+                "In the songs of the North it is told how Sigurd dug a pit in the dragon's",
+                "path and lay hidden in it until the great belly passed above him, and then",
+                "thrust upward with the sword Gram, for patience and craft may win what",
+                "strength alone cannot. The fire of Fafnir is quenched, and the road goes",
+                "down into a colder darkness.",
             ],
             'code': None,
         },
@@ -9071,16 +9076,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'FENRIR THE WOLF FALLS',
             'accent': (80, 140, 200),
             'lines': [
-                "Fenrir is the monstrous wolf of Norse prophecy -- son of Loki,",
-                "so terrible that the gods themselves feared to approach him.",
-                "They bound him with Gleipnir, a magical ribbon forged from impossible things:",
-                "a cat's footstep, a mountain's roots, a woman's beard, a bear's sinew,",
-                "a fish's breath, and a bird's spittle.",
+                "So fell Fenrir the wolf, the son of Loki, whom the gods of Asgard reared",
+                "among them until they grew afraid of his strength. They bound him with",
+                "Gleipnir, a ribbon soft as silk which the dwarves had made from six",
+                "impossible things: the footfall of a cat, the beard of a woman, the roots of",
+                "a mountain, the sinews of a bear, the breath of a fish and the spittle of a",
+                "bird.",
                 "",
-                "At Ragnarok, he was prophesied to swallow Odin himself.",
-                "",
-                "That prophecy is broken. You have done what even the Allfather could not.",
-                "The deepest chamber lies ahead.",
+                "It was foretold that at Ragnarok he would burst that bond and swallow Odin,",
+                "the father of the gods, but the prophecy shall never now be fulfilled, for",
+                "you have accomplished what the Allfather himself could not. The last and",
+                "deepest chamber lies below you, and in it the end of your long road.",
             ],
             'code': None,
         },
@@ -9088,16 +9094,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'ABADDON THE DESTROYER FALLS',
             'accent': (130, 60, 200),
             'lines': [
-                "Abaddon is named in Revelation as the angel of the bottomless pit --",
-                "the Destroyer, king of the locust army that rises at the fifth trumpet.",
-                "His name means 'destruction' in Hebrew. He is ruin given form.",
+                "So fell Abaddon, whom the Book of Revelation calls the angel of the",
+                "bottomless pit. His name in the Hebrew tongue signifies destruction, and it",
+                "was written that at the sound of the fifth trumpet he should reign as king",
+                "over the locusts that come swarming out of the smoke of the Abyss.",
                 "",
-                "That you have defeated him is more than a feat of arms.",
-                "It is a statement about the nature of wisdom itself:",
-                "that knowledge, courage, and preparation can overcome even destruction.",
-                "",
-                "The Philosopher's Stone lies before you.",
-                "Take it. The village is waiting.",
+                "Now his host is scattered and his throne is empty, for knowledge and courage",
+                "have stood against ruin itself and have prevailed. Beyond that throne waits",
+                "the Philosopher's Stone, as it has waited through all the ages of the world.",
+                "Take it up, and turn your steps toward the long stair and the village that",
+                "watches for your coming.",
             ],
             'code': None,
         },
@@ -9105,22 +9111,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'THE QUEST IS COMPLETE',
             'accent': (220, 180, 40),
             'lines': [
-                "You have done what many believed impossible.",
+                "So it came to pass, when hope had all but failed in Amber, that the watchers",
+                "on the hill saw you climb out of the ruins, weary and stained with many",
+                "battles, and bearing in your hands the Philosopher's Stone.",
                 "",
-                "You descended into the darkness, faced and defeated five legendary adversaries,",
-                "claimed the Philosopher's Stone, and returned to the light.",
+                "Word ran before you from door to door, and by nightfall the Stone had been",
+                "carried to every sickbed in the village. The plague withdrew before it as",
+                "mist withdraws before the morning. Children who had long lain silent sat up",
+                "and asked for bread, and the elders who had blessed you at your going wept",
+                "openly for joy.",
                 "",
-                "Your village of Amber will be saved.",
-                "The plague will lift. The children will recover.",
-                "The elders will weep with relief.",
-                "The people who counted on you -- who believed in you --",
-                "will see the sun rise again because of what you did today.",
-                "",
-                "You are a Philosopher in the truest sense:",
-                "one who loves wisdom enough to seek it at the cost of everything,",
-                "and wise enough to bring it home.",
-                "",
-                "Well done.",
+                "For many years afterward the tale was told beside the fires of Amber: how",
+                "you went down among monsters and fallen powers for love of your people, and",
+                "overcame them by learning as much as by the sword. They gave you the name of",
+                "Philosopher, which is to say a lover of wisdom, and it was held in honour",
+                "there as long as the village endured.",
             ],
             'code': None,
             'achievement': 'stone_home',     # its code is the Seeker's (_show_story_popup)
@@ -9129,22 +9134,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'title': 'THE DESERTER',
             'accent': (100, 100, 100),
             'lines': [
-                "You ran.",
+                "So you came again to the head of the stair with empty hands, and behind you",
+                "the Philosopher's Stone lay in the darkness where it had always lain.",
                 "",
-                "Not from monsters. Not from darkness. Not even from death.",
-                "You ran from the people who needed you most.",
+                "The watchers on the hill ran gladly to meet you, until they drew near enough",
+                "to see that you carried nothing. The elders who had pressed their last bread",
+                "upon you at your going asked you no questions, but went back slowly to their",
+                "houses and to those who lay sick within them.",
                 "",
-                "From the children who grow weaker with each passing day.",
-                "From the elders who pressed your hands and told you they believed in you.",
-                "From the village that gave everything it had left to send you here.",
-                "",
-                "The Philosopher's Stone remains at the bottom of the dungeon.",
-                "Unreached. Unclaimed. Its wisdom wasted on the dark.",
-                "",
-                "The village of Amber will not see another spring.",
-                "",
-                "You were not overcome by the dungeon.",
-                "You overcame yourself -- and chose retreat.",
+                "The plague did not abate that winter. One after another the hearths of Amber",
+                "grew cold, and when spring returned to the valley there were none to plough",
+                "the fields. The tale of that village is seldom told now, but wherever it is",
+                "remembered, you are named in it the Deserter.",
             ],
             'code': None,
         },

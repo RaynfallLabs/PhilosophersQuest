@@ -8986,7 +8986,7 @@ class RenderMixin:
             fil_strong  = FP.ARCANE_BRIGHT
             fil_subtle  = FP.ARCANE
             title_text  = "DEATH IS DEAD"
-            sub_text    = "The Abyss has closed beneath you."
+            sub_text    = "The Abyss has closed over Death for ever."
             title_col   = FP.ARCANE_BRIGHT
             sub_col     = FP.ARCANE_ACCENT
             glow_col    = None
@@ -8998,7 +8998,7 @@ class RenderMixin:
             fil_strong  = FP.GOLD
             fil_subtle  = FP.GOLD_DARK
             title_text  = "VICTORY!"
-            sub_text    = "You retrieved the Philosopher's Stone!"
+            sub_text    = "You have borne the Philosopher's Stone home to Amber."
             title_col   = FP.GOLD_BRIGHT
             sub_col     = FP.PARCHMENT_LIGHT
             glow_col    = None
@@ -9076,7 +9076,7 @@ class RenderMixin:
         _on_side = _side(self.dungeon_level)      # (numbered 999 or 997: not a level to name)
         if self.defeat_reason == 'fled':
             title_text = "YOU FLED THE DUNGEON"
-            sub_text   = "Your quest ends in cowardice."
+            sub_text   = "You turned back, and left Amber to its doom."
             tc = FP.WARNING_TEXT
         elif self.defeat_reason == 'starved':
             title_text = "YOU HAVE STARVED"
