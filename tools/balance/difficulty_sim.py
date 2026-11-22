@@ -258,7 +258,6 @@ import food_system as food_system_mod            # noqa: E402
 import kitchen as kitchen_mod                    # noqa: E402
 import boons as boons_mod                        # noqa: E402
 import monster as monster_mod                    # noqa: E402
-import pet_system as pet_system_mod              # noqa: E402
 import game_magic as game_magic_mod              # noqa: E402
 import floor_curve as floor_curve_mod            # noqa: E402
 import wanderers as wanderers_mod                # noqa: E402
@@ -285,8 +284,11 @@ import sim_ai2                                   # noqa: E402  (AI-2: the Tactic
 import sim_groups                                # noqa: E402  (the group fight: the back rank, the clock)
 import sim_late                                  # noqa: E402  (the late game's instruments)
 import sim_magic                                 # noqa: E402  (magic written for the real hero)
+import sim_archetypes                            # noqa: E402  (many ways to win: the archetypes)
+import sim_pets                                  # noqa: E402  (the pet fed, and mortal)
+import sim_ranger                                # noqa: E402  (the hero's own bow)
 import paths as paths_mod                        # noqa: E402  (sim_late's overlay reaches the locusts)
-from items import Flask                          # noqa: E402
+from items import Ammo, Flask                    # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
 
@@ -329,8 +331,8 @@ def install_caches() -> None:
 
 def uninstall() -> None:
     """Everything a run puts on the game, out again: the cache and the bones
-    stub, the cell's switches and rules, and what sim_ai1, sim_late and
-    sim_magic hook. The suite calls it after every test (tests/conftest.py):
+    stub, the cell's switches and rules, and what sim_ai1, sim_late, sim_magic
+    and sim_archetypes hook. The suite calls it after every test (tests/conftest.py):
     import was made clean for 3.5.3, but two tests that ran cells brought
     the doubled stacks back before 3.6.0. A hook added here is undone here."""
     global _CACHES_ON
@@ -348,6 +350,7 @@ def uninstall() -> None:
         sim_ai2.apply_flags(defaults)
         sim_ai3.apply_flags(defaults)
         sim_late.uninstall()
+    sim_archetypes.uninstall()
     sim_ai1.uninstall()
     sim_late.uninstall_runtime()
     sim_magic.uninstall()
@@ -538,6 +541,11 @@ KNOB_DEFAULTS.update(sim_late.KNOBS)
 # mg_bigfoe: every default is the game as it is (described there).
 KNOB_DEFAULTS.update(sim_magic.KNOBS)
 # ---- end magic ----
+# ---- many ways to win (2026-11-21; tools/balance/sim_archetypes.py) ----
+# ar_* (sim_ranger.py), pt_* (sim_pets.py), cl_*, fu_*, la_wt, dx_finesse:
+# every default is the game as it is (described there).
+KNOB_DEFAULTS.update(sim_archetypes.KNOBS)
+# ---- end many ways to win ----
 
 DEFENCE_KNOBS = ('dodge_per_dex', 'dodge_cap', 'speed_per_dex', 'speed_cap', 'medium_quick',
                  'heavy_quick', 'medium_drag',
@@ -987,6 +995,7 @@ BUILD_CELLS = {'b_fianna': ('fianna', 'mastery_mage'), 'b_fluffs': ('fluffs', 'm
                'b_odysseus': ('odysseus of ithaca', 'mastery_dex')}
 for _n, (_b, _base) in BUILD_CELLS.items():
     PROFILES[_n] = dict(PROFILES[_base], build=_b)
+sim_archetypes.register(PROFILES)               # arch_*: the archetypes
 
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
 
@@ -1243,6 +1252,7 @@ class SimPlayer(Player):
             amount = max(1, round(amount * _sm))
         if self.__dict__.get('_sim_aura'):                # sim_late: an aura's heat or cold
             amount = sim_late.aura_amount(self, amount, damage_type)
+        amount = sim_archetypes.incoming(self, amount)    # R3: fury's toughness
         before = self.hp
         actual = super().take_damage(amount, damage_type)
         self._dmg_taken += max(0, before - self.hp)
@@ -1269,6 +1279,12 @@ class SimPlayer(Player):
             ac = 10 - round((10 - ac) * k)
         return ac
 
+    def stat_cap_for_tier(self, stat, tier):              # R2: WIS's food cap
+        return super().stat_cap_for_tier(sim_archetypes.stat_for_cap(self, stat), tier)
+
+    def effective_wis(self) -> int:                       # R2: the clock keeps today's longest
+        return super().effective_wis() - sim_archetypes.clock_excess(self)
+
     def heal(self, amount: float) -> int:
         """All simulator-side healing funnels through here (heal knob)."""
         amount = int(round(amount * self._heal_x))
@@ -1285,7 +1301,7 @@ GEN_FAILURES = []      # (floor, error) for every generation the game crashed on
 
 
 class FloorSnap:
-    __slots__ = ('floor', 'groups', 'items', 'n_monsters', 'fountains', 'thrones', 'tour')
+    __slots__ = ('floor', 'groups', 'items', 'n_monsters', 'fountains', 'thrones', 'tour', 'ammo')
 
 
 def _room_index(m, rooms) -> int:
@@ -1325,6 +1341,9 @@ def build_snapshot(floor: int) -> FloorSnap:
     snap.n_monsters = sum(len(g) for g in snap.groups)
     keep = (Weapon, Armor, Shield, Potion, Food, Spellbook, Accessory, Container, Scroll)
     snap.items = [it for it in floor_items if isinstance(it, keep)]
+    # Apart from the loot, so no other hero rolls for it (sim_ranger.floor_found).
+    snap.ammo = [(it.id, int(getattr(it, 'count', 1) or 1))
+                 for it in floor_items if isinstance(it, Ammo)]
     tiles = getattr(dungeon, 'tiles', None) or []
     snap.fountains = sum(row.count(dungeon_mod.FOUNTAIN) for row in tiles)
     snap.thrones = sum(row.count(dungeon_mod.THRONE) for row in tiles)
@@ -1879,7 +1898,7 @@ class Run(_MMMagicSim):
             else:
                 cm = w.chain_multipliers
                 mult = cm[min(chain - 1, len(cm) - 1)]
-        return max(1.0, base * mult * (1.0 + max(0, p.STR - 10) * 0.03))
+        return max(1.0, base * mult * sim_archetypes.str_factor(self, w))
 
     def _weapon_score(self, w) -> float:
         """Expected damage per attack with w under this player's quiz model."""
@@ -1897,7 +1916,8 @@ class Run(_MMMagicSim):
                 dist = [self.quiz.sample_chain(tier, timer, max_chain)[0]
                         for _ in range(150)]
             self._score_cache[key] = dist
-        return sum(self._est_damage(w, c) for c in dist) / len(dist)
+        est = {c: self._est_damage(w, c) for c in set(dist)}    # a chain's blow once, not 150 times
+        return sum(est[c] for c in dist) / len(dist)            # summed in dist's order, to the same float
 
     # ---------------------------------------------------------------- tactics
     @staticmethod
@@ -2038,9 +2058,11 @@ class Run(_MMMagicSim):
         no question: coatings.apply). Known kinds only, or what he has felt."""
         if not self.knobs.get('tactics') or target is None or not self.flasks:
             return
+        if sim_ranger.coat_bow(self, target):    # an archer: the arrowheads, or nothing
+            return
         p = self.p
         w = p.weapon
-        if w is None or getattr(w, 'requires_ammo', None):
+        if w is None or (getattr(w, 'requires_ammo', None) and not self.__dict__.get('_hand')):
             return
         if target.hp <= max(1.0, self._value_vs(w, target)):
             return
@@ -2072,7 +2094,8 @@ class Run(_MMMagicSim):
             return False
         if not self._knows(getattr(target, 'kind', '')):
             return False
-        best, best_v = None, 1.1 * self._value_vs(self.p.weapon, target)
+        best, best_v = None, 1.1 * sim_ranger.best_blow(self, target,
+                                                        self._value_vs(self.p.weapon, target))
         for it in self.flasks:
             dmg, dtype = coatings_mod.thrown_damage(it, target)
             if dmg <= 0:
@@ -2199,7 +2222,9 @@ class Run(_MMMagicSim):
         self._visit = {'goods': 0.0, 'service': 0.0}
         try:
             self._shop_at(floor, inc, defn, svc, share, reserve)
-            sim_late.shop(self, floor, defn, svc, inc, reserve)    # supply's stall and smith
+            sim_ranger.shop(self, floor, defn)                     # R5: an archer's arrows
+            with sim_ranger.hand(self):                            # an archer's inlay is his bow's
+                sim_late.shop(self, floor, defn, svc, inc, reserve)    # supply's stall and smith
         finally:
             self._sell_outgrown(floor, defn)
             self._visit = None
@@ -2212,7 +2237,7 @@ class Run(_MMMagicSim):
             got = p.max_hp - p.hp
             p.hp = p.max_hp
             self._healed('trader', got)
-        w = p.weapon
+        w = sim_ranger.main_weapon(self)
         if self.knobs.get('tactics') and w is not None:
             for side, key, sh, _fam in domain_counters_mod.needs(floor):
                 if side != 'weak' or sh < 0.2:
@@ -2306,12 +2331,14 @@ class Run(_MMMagicSim):
         what he has outgrown: with tradein >= 1 the gear let go of here waits
         for the next stall (_sell_outgrown)."""
         p = self.p
+        sim_archetypes.light_answers(self)       # R3: coatings weigh little
         _before = list(self.flasks)
         self._fit_pack()
         sim_late.on_shed(self, _before)
         new = (list(self.arsenal) + list(self.scraps)
                + list(self.potions) + list(self.food) + list(self.flasks)
-               + list(self.pantry) + sim_late.kit(self))
+               + list(self.pantry) + sim_late.kit(self)
+               + sim_ranger.spares(self) + sim_ranger.ammo_pack(self))
         if self.knobs.get('traders') and int(self.kv('tradein') or 0) > 0:
             keep = {id(x) for x in new} | {id(x) for x in p.worn_items()}
             pile = getattr(self, '_to_sell', None)
@@ -2409,7 +2436,9 @@ class Run(_MMMagicSim):
         carried = (sum(self._wt(x) for x in self.arsenal) + sum(self._wt(x) for x in self.scraps)
                    + sum(self._wt(x) for x in self.potions) + sum(self._wt(x) for x in self.food)
                    + sum(self._wt(x) for x in self.flasks) + sum(self._wt(x) for x in self.pantry)
-                   + sum(self._wt(x) for x in sim_late.kit(self)))     # sim_late's counters
+                   + sum(self._wt(x) for x in sim_late.kit(self))      # sim_late's counters
+                   + sum(self._wt(x) for x in sim_ranger.spares(self))
+                   + sum(self._wt(x) for x in sim_ranger.ammo_pack(self)))
         total_lb = worn + carried + p.purse_weight()
         # The profile's line (Light for the Dexterity build) is for what he
         # can spare: food past a belly, coin, spare weapons, flasks. What he
@@ -2461,6 +2490,8 @@ class Run(_MMMagicSim):
         # 3. the arsenal's weakest weapons, 4. flasks
         if over > 0:
             shed(self.arsenal, self._weapon_score)
+        if over > 0:
+            shed(sim_ranger.spares(self), self._weapon_score)    # an archer's spare bows
         if over > 0:
             shed(self.flasks, lambda it: 0)
         if over > 0:
@@ -2554,6 +2585,7 @@ class Run(_MMMagicSim):
             return False
         v, c, tier, el, base, fx = best
         weapon_v = self._value_vs(p.weapon, target) if p.weapon is not None else 1.0
+        weapon_v = sim_ranger.best_blow(self, target, weapon_v)
         if v < 1.1 * weapon_v:
             return False
         p.mp -= c
@@ -2619,9 +2651,10 @@ class Run(_MMMagicSim):
                 if piece.enchant_bonus < cap or delta < 0:
                     piece.enchant_bonus = max(-3, min(cap, piece.enchant_bonus + delta))
                     break
-        elif p.weapon is not None:
+        elif sim_ranger.main_weapon(self) is not None:
+            w = sim_ranger.main_weapon(self)
             cap = items_mod.ENCHANT_CAP.get('weapon', 5)
-            p.weapon.enchant_bonus = max(-3, min(cap, p.weapon.enchant_bonus + delta))
+            w.enchant_bonus = max(-3, min(cap, w.enchant_bonus + delta))
         self.fs['scrolls_read'] = self.fs.get('scrolls_read', 0) + 1
 
     def consider(self, item):
@@ -2649,6 +2682,11 @@ class Run(_MMMagicSim):
             if prof['eats_for_hp']:
                 self.fs['heal_supply'] += item.hp_restore * self.kv('heal')
             self._sync_pack()
+            return
+        if isinstance(item, Ammo):
+            sim_ranger.consider_ammo(self, item)
+            return
+        if isinstance(item, Spellbook) and sim_archetypes.learn(self, item):   # wards, the cleric's school
             return
         if isinstance(item, Spellbook) and sim_magic.learn(self, item):   # M5: escape, hold
             return
@@ -2683,7 +2721,8 @@ class Run(_MMMagicSim):
             return                      # a prepared player identifies first
         if isinstance(item, Weapon):
             if getattr(item, 'requires_ammo', None) is not None:
-                return                  # ranged play is not modelled
+                sim_ranger.consider_bow(self, item)
+                return                  # (ar_bow=0: ranged play is not modelled)
             if self.knobs.get('tactics'):
                 self._arsenal_add(item)
             cur = p.weapon
@@ -2720,8 +2759,9 @@ class Run(_MMMagicSim):
             if item.slot == 'body':
                 # A build's own weight class (the Dexterity build wears light
                 # armour: his dodge and quickness are what keep him alive).
-                want = self.prof.get('armour_class')
-                if want and gear_mod.piece_weight_class(item) != want:
+                want = self.prof.get('armour_class')        # one class, or those he will wear
+                if want and gear_mod.piece_weight_class(item) not in (
+                        want if isinstance(want, tuple) else (want,)):
                     return
                 new_v = self._body_value(item)
                 old_v = self._body_value(cur)
@@ -2805,7 +2845,7 @@ class Run(_MMMagicSim):
             return gear_mod.ac_value(s) + (1 if b == 'blessed' else -1 if b == 'cursed' else 0)
         ac = p.get_ac() + core(p.shield) - core(shield)
         h = min(0.95, max(0.05, (21 - (self._typical_thac0() - ac)) / 20.0))
-        per = max(0.1, self._weapon_score(weapon))
+        per = max(0.1, sim_ranger.kit_blow(self, self._weapon_score(weapon)))
         return h * (1.0 + floor_curve_mod.target_hp(self.floor) / per)
 
     def _choose_kit(self):
@@ -2945,15 +2985,16 @@ class Run(_MMMagicSim):
         chain = self.quiz.escalator_chain(5)
         self._prayed_chain = chain           # (sim_effects.stop_stone: the same prayer)
         p.prayer_cooldown = max(100, 100 + 25 * chain)
+        gift = sim_archetypes.wis_step(self)     # R2: prayer's gifts read WIS
         if chain >= 1:
-            p.restore_sp(max(15, p.max_sp // 4))
+            p.restore_sp(int(max(15, p.max_sp // 4) * gift))
         if chain >= 2:
-            self._healed('prayer', p.heal(max(15, p.max_hp // 4)))
+            self._healed('prayer', p.heal(max(15, p.max_hp // 4) * gift))
         if chain >= 3:
-            p.restore_mp(max(5, p.max_mp // 4))
+            p.restore_mp(int(max(5, p.max_mp // 4) * gift))
         sim_ai1.prayed(self, chain)          # AI-1: drained life back, sickness lifted
         if chain >= 5:
-            p.status_effects['shielded'] = max(p.status_effects.get('shielded', 0), 20)
+            p.status_effects['shielded'] = max(p.status_effects.get('shielded', 0), int(20 * gift))
         return True
 
     def _best_spell(self, missing: float):
@@ -2964,8 +3005,9 @@ class Run(_MMMagicSim):
         for sid, (cost, power, tier) in self.spells.items():
             if cost > self.p.mp:
                 continue
-            heal = max(dice_mean(power) * MAGIC_TIER_MULT[tier] * sim_magic.int_factor(self),
-                       SPELL_HEAL_SHARE.get(tier, 0.45) * self.p.max_hp)   # floor_curve.mend
+            heal = max(dice_mean(power) * MAGIC_TIER_MULT[tier] * sim_archetypes.heal_factor(self),
+                       SPELL_HEAL_SHARE.get(tier, 0.45) * sim_archetypes.wis_step(self)
+                       * self.p.max_hp)                                    # floor_curve.mend
             score = min(heal, missing) / cost
             if best is None or score > best[0]:
                 best = (score, sid, cost, power, tier)
@@ -3020,8 +3062,8 @@ class Run(_MMMagicSim):
             return False
         p.mp -= cost                                    # spent even on a fizzle
         if self.quiz.one_question(tier):                # one science question
-            amt = mend(int(roll(power) * MAGIC_TIER_MULT[tier] * sim_magic.int_factor(self)),
-                       p.max_hp, SPELL_HEAL_SHARE.get(tier, 0.45))
+            amt = mend(int(roll(power) * MAGIC_TIER_MULT[tier] * sim_archetypes.heal_factor(self)),
+                       p.max_hp, SPELL_HEAL_SHARE.get(tier, 0.45) * sim_archetypes.wis_step(self))
             self._healed('spell', p.heal(amt * self.knobs['spell_heal']))
         return True
 
@@ -3338,6 +3380,7 @@ class Run(_MMMagicSim):
                 if kind:
                     butchered_mod.learn(self.p, kind)
                 self.fs['harvests'] = self.fs.get('harvests', 0) + 1
+                sim_ranger.on_harvest(self, kind)        # R1: arrows fletched
                 if free:
                     self.fs['free_harvests'] = self.fs.get('free_harvests', 0) + 1
 
@@ -3589,7 +3632,9 @@ class Run(_MMMagicSim):
         if stat_ready and self.dishes_left > 0:
             stat_ready.sort(key=lambda r: (kitchen_mod.dish_stat(r) not in focus,
                                            -kitchen_mod.dish_value(p, r)))
-            self._cook_dish(stat_ready[0])
+            stat_ready = sim_archetypes.lean_dish(self, stat_ready)     # kt_lean
+            if not sim_pets.feed(self, stat_ready):      # R4: or the pet's dish
+                self._cook_dish(stat_ready[0])
         for _ in range(6):
             multis = [r for r in self._ready() if kitchen_mod.dish_size(r) >= 2]
             if not multis or self.dishes_left <= 0:
@@ -3851,7 +3896,7 @@ class Run(_MMMagicSim):
                 and p.hp >= 0.5 * p.max_hp and any(is_named(m) for m in group)):
             chain = self.quiz.escalator_chain(5)
             p.prayer_cooldown = max(100, 100 + 25 * chain)
-            bonus, turns = prayers_mod.guide_my_hand(p.WIS, chain)
+            bonus, turns = prayers_mod.guide_my_hand(sim_archetypes.clock_wis(p), chain)
             p.grant_insight(bonus, turns)
             self.fs['guide'] = self.fs.get('guide', 0) + 1
         slots = [(6, 5), (5, 6), (6, 6), (4, 5), (5, 4), (4, 4), (6, 4), (4, 6)]
@@ -3861,6 +3906,7 @@ class Run(_MMMagicSim):
         self._tactical_pick(_first, free=True)
         self._coat_for(_first)
         self._set_stance(group)
+        sim_archetypes.fight_start(self)     # fury, the bow in hand, the pet's mending
         sim_ai1.fight_start(self, group)     # AI-1: a light against the light-shy
         sim_ai2.fight_start(self, group)     # AI-2: who in the group thinks
         self._mm_open(group)                 # MONSTERS AND MAGIC (_MMMagicSim)
@@ -3912,6 +3958,8 @@ class Run(_MMMagicSim):
             # ---- end AI-1 ----
             active = [m for m in active if m.alive]
             queue = [m for m in queue if m.alive]       # an area spell can kill those waiting
+            if sim_ranger.volley(self, active, queue, turn):
+                continue                                # R1: one fell on the way in
             while len(active) < k and queue:
                 m0 = sim_groups.next_up(self, queue, active)   # grp_orders: a band falling back
                 if m0 is None:
@@ -3932,6 +3980,7 @@ class Run(_MMMagicSim):
             # ---------------- player's action ----------------
             action = None
             if self.player_can_act():
+                sim_archetypes.call_fury(self)          # R3: at will, no action
                 hpf = p.hp / max(1, p.max_hp)
                 prof = self.prof
                 # (AI-1: ai_vanish=0, the old game's hider in plain sight)
@@ -4014,6 +4063,10 @@ class Run(_MMMagicSim):
                             setattr(p, stat, getattr(p, stat) - 1)
                         p._gleipnir_binds = binds + 1
                         action = 'bind'
+                if action is None and sim_pets.recall(self):
+                    action = 'recall'                   # R4: the pet into its sphere
+                if action is None and sim_archetypes.ward(self, active, queue):
+                    action = 'cast'                     # R2: a ward
                 if action is None:
                     # His charmer and what frightens him he leaves be.
                     reachable = sim_effects.strikeable(self, reachable)
@@ -4025,9 +4078,10 @@ class Run(_MMMagicSim):
                     target = named[0] if named else min(reachable, key=lambda m: m.hp)
                     target = sim_ai3.target(self, reachable, target)   # AI-3: the holder, a chant
                     target = sim_magic.pick_target(self, reachable, target)   # M5: the awake first
-                    if target._flee_timer > 0 and random.random() > CHASE_HIT_PROB:
+                    _shot = sim_ranger.will_shoot(self, target)     # R1: no chase, no closing
+                    if not _shot and target._flee_timer > 0 and random.random() > CHASE_HIT_PROB:
                         action = 'chase'
-                    elif (target.ai_pattern in RANGED_PATTERNS                     # AI-1: a breather drawing
+                    elif (not _shot and target.ai_pattern in RANGED_PATTERNS       # AI-1: a breather drawing
                           and random.random() < sim_ai1.kite_prob(target, sim_ai2.kite_prob(   # breath comes in
                               self, target, RANGED_KITE_PROB))):
                         action = 'closing'
@@ -4040,11 +4094,13 @@ class Run(_MMMagicSim):
                         action = 'cast'
                     elif sim_late.recoat(self, target):     # recoat=1: a coating, his action
                         action = 'coat'
-                    elif (not any(p.has_effect(x) for x in ('stunned', 'fumbling', 'frozen', 'hexed'))
+                    elif (not _shot and not any(p.has_effect(x) for x in ('stunned', 'fumbling', 'frozen', 'hexed'))
                           and self._tactical_pick(target, free=False)):
                         action = 'swap'         # (dazed or numb, a kid who knows does not fiddle)
                     elif not p.has_effect('frozen') and self._throw_flask(target):
                         action = 'throw'
+                    elif _shot:
+                        action = sim_ranger.shoot_or_kite(self, target, active)
                     else:
                         self._player_attack(target, active)
                         self._feel(target)
@@ -4053,13 +4109,13 @@ class Run(_MMMagicSim):
             # ---------------- the pet's bite (game_combat pet turn) ----------------
             if self.prof.get('pet') and self.floor >= 3:
                 bitten = [m for m in active if m.alive and m._sim_away <= 0]
-                if bitten:
+                if bitten and sim_pets.here(self):
                     foe = min(bitten, key=lambda m: m.hp)
                     qp = self._quest_pet()
-                    foe.take_damage(int(pet_system_mod.growth('bite', self.floor)
-                                        * sim_magic.pet_bite_mult(self) * min(
+                    foe.take_damage(int(sim_pets.bite(self, foe) * min(
                         1.0, (0.5 + 0.7 * acc_at(self.quiz.accuracy, 1)) / 1.165)
                         * QUEST_PET_BITE.get(qp, 1.0)))
+                    sim_pets.bit(self, foe)
 
             # ---------------- the world's turn ----------------
             # The hero's speed rating (Player.get_speed: Dexterity, the
@@ -4203,9 +4259,12 @@ class Run(_MMMagicSim):
             self.pass_time_in_fight()
         if not acts:
             return
+        sim_pets.swipes(self, active)        # R4: the foes' blows on the pet
         for m in active:
             if p.hp <= 0:
                 break
+            if sim_ranger.kited(m):          # R1: its turn went following a step back
+                continue
             # --- slice M: the Cu-Sith barks; the third is its turn (lore_powers) ---
             if (self.knobs['mm_powers'] and m.alive
                     and not any(m.has_effect(e) for e in ('sleeping', 'paralyzed', 'stunned', 'frozen'))
@@ -4332,6 +4391,7 @@ class Run(_MMMagicSim):
         p._fight_low = p.hp / max(1, p.max_hp)
         result = self.fight(group, mandatory=mandatory, boss_ctx=boss_ctx)
         sim_late.unprep(self)
+        sim_archetypes.fight_end(self, result)   # R1: arrows found again; R4: the pet mended
         sim_late.on_fight(self, group)
         self._book_fight(group, result, (p._dmg_taken - dmg0) / max(1, p.max_hp), t0)
         kills = 0
@@ -4341,6 +4401,7 @@ class Run(_MMMagicSim):
                 kills += 1
                 self.floor_alive = max(0, self.floor_alive - 1)
                 self._drop_loot(m)
+                sim_ranger.on_kill(self, m)
                 self._study(m)
                 if len(self.corpses) < 24:
                     self.corpses.append(getattr(m, 'kind', None))
@@ -4417,7 +4478,8 @@ class Run(_MMMagicSim):
     def _quest_pet(self):
         """The quest pet at his side now ('mooble' / 'bococho'), once won."""
         qp = self.prof.get('quest_pet')
-        if qp and self.prof.get('pet') and self.floor >= QUEST_PET_JOINS.get(qp, 999):
+        if (qp and self.prof.get('pet') and self.floor >= QUEST_PET_JOINS.get(qp, 999)
+                and sim_pets.quest_line(self)):
             return qp
         return None
 
@@ -4425,6 +4487,7 @@ class Run(_MMMagicSim):
         p = self.p
         self.floor = floor
         sim_magic.sync_mp(self)                  # M4: max MP from INT
+        sim_archetypes.sync_mp(self)
         self.quiz.floor = floor
         if self._quest_pet() == 'bococho':
             p.saddlebag_lb = 20                  # her saddlebags (player.get_carry_limit)
@@ -4482,6 +4545,7 @@ class Run(_MMMagicSim):
             if sw is not None:
                 self._equip(sw)          # Michael's own blade: the hero takes it up
         snap = self.cache.get(floor)
+        sim_archetypes.floor_start(self, snap)   # arrows found, a pet again
         # The floor's own clock for newcomers (src/wanderers.py).
         self.wfloor = types.SimpleNamespace(_explore_tour=int(getattr(snap, 'tour', 0) or 0))
         self.wtick = self.turn
@@ -4610,6 +4674,7 @@ class Run(_MMMagicSim):
         fs['dodge'] = fs.get('dodge', 0.0) + float(p.dodge_chance())
         fs['body_' + gear_mod.body_class(p)] = fs.get('body_' + gear_mod.body_class(p), 0) + 1
         fs['carried_lb'] = fs.get('carried_lb', 0.0) + p.get_current_weight()
+        sim_archetypes.floor_end(self)
         fs['wealth'] = fs.get('wealth', 0.0) + self.wealth()
         fs['hp_lost'] += (p._dmg_taken - dmg0) / max(1, hp_start_max)
         low = getattr(p, '_floor_low', 1.0)
@@ -4746,6 +4811,8 @@ def run_cell(profile='prepared', accuracy=0.85, trials=100, floors=(1, 100),
     sim_late.install(knobs)                       # the overlay and the HP stand-in, before any floor
     sim_magic.install_bigfoe(knobs)               # M5: the big-foe test before the stand-in
     sim_magic.install_flasks(knobs)               # flasks written against the careful blow
+    sim_archetypes.install(knobs)                   # PER on a shot, fury, finesse
+    sim_archetypes.install_kitchen(knobs, PROFILES[profile])    # kt_even
     sim_late.cell_begin()
     apply_defence_knobs(knobs)
     packs_mod.ENABLED = bool(knobs.get('packs', 1))
