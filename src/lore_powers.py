@@ -135,10 +135,14 @@ def at_peace(m) -> bool:
     """No one left to himself (a pet, a horn's ally, boots that throw
     lightning) breaks this peace: one that holds its fire, has yielded
     (src/morale.py), or was bought or sung to a peace a blow breaks (the
-    Bribe, a family's calm, the Song of Settled Strife). The hero's own
-    blow, or a special he orders, still may."""
+    Bribe, a family's calm, the Song of Settled Strife), or Old Nickel while
+    he plays the friend (two tiles behind the hero, a pet would end the act
+    for him). The hero's own blow, or a special he orders, still may."""
     d = getattr(m, '__dict__', {})
     if d.get('_yielded') or holds_fire(m):
+        return True
+    import old_nickel
+    if old_nickel.is_friend(m):
         return True
     return bool((d.get('_bribed') or d.get('_strife_peace'))
                 and int((getattr(m, 'status_effects', None) or {}).get('charmed', 0) or 0) > 0)

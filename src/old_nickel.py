@@ -65,6 +65,18 @@ def voice(m) -> dict:
     return v
 
 
+# The noises he follows out of sight (senses.emit): the hero's own.
+FOLLOWS_NOISE = ('step', 'door', 'coin', 'melee', 'shot', 'spell', 'struck')
+
+
+def is_friend(m) -> bool:
+    """Old Nickel while the act holds: a friend, to the hero's pets and to a
+    hero busy dressing. Struck, or revealed, he is a foe."""
+    d = getattr(m, '__dict__', {})
+    return (getattr(m, 'ai_pattern', '') == 'stalker_coward'
+            and not d.get('_revealed') and not d.get('_struck'))
+
+
 def _cheb(a, b) -> int:
     return max(abs(a[0] - b[0]), abs(a[1] - b[1]))
 

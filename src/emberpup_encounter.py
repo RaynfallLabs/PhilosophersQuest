@@ -281,6 +281,28 @@ class EmberpupMixin:
         self.monsters.append(pup)
         st['spawned'] = True
 
+    def _emberpup_refresh(self):
+        """A pup who walked after the hero (saves from before 2026-11-22:
+        rooted things followed) and stands in a passage, which he would block
+        for good, is set back in the nearest room. One in a room stays."""
+        pups = [m for m in self.monsters or () if is_emberpup(m) and getattr(m, 'alive', False)]
+        rooms = list(getattr(self.dungeon, 'rooms', None) or ())
+        if not pups or not rooms:
+            return
+        from geom import all_occupied_tiles
+        for pup in pups:
+            if any(r.x < pup.x < r.x + r.width - 1 and r.y < pup.y < r.y + r.height - 1 for r in rooms):
+                continue
+            taken = set(all_occupied_tiles(self.monsters, exclude=pup)) | self._occupants()
+            theirs = [_room_of(rooms, m.x, m.y) for m in self.monsters if is_wearer(m)]
+            spots = [t for r in rooms if r not in theirs for t in r.inner_tiles()
+                     if t not in taken and self.dungeon.is_walkable(*t)
+                     and max(abs(t[0] - self.player.x), abs(t[1] - self.player.y)) > 1]
+            if spots:
+                pup.x, pup.y = min(spots, key=lambda t: (max(abs(t[0] - pup.x), abs(t[1] - pup.y)), t))
+                pup._path = pup._goal = None
+                pup._searching = False
+
     # ---- the screen -------------------------------------------------------
 
     def _emberpup_too_soon(self, pup) -> bool:
@@ -623,7 +645,10 @@ class EmberpupMixin:
 #     first, the act drops too. After that he follows the
 #     hero a few tiles off, backs away from him toward his hoard, strikes
 #     only when cornered with the hero beside him, and darts in again on a
-#     hero at rest. Cornered, he is a real fight for his floor.
+#     hero at rest. Cornered, he is a real fight for his floor. Out of
+#     sight he follows by the last place he saw or heard the hero. While
+#     the act holds, pets leave him be and he gives way when walked into
+#     (``_old_nickel_gives_way``).
 #   * He talks (old_nickel.py, data/old_nickel.json): as the friend, an offer
 #     at first sight, then offers and asides under his breath as the hero
 #     comes at him or round him, then the lines urging him to rest; the line
@@ -893,6 +918,31 @@ class BloomleafMixin:
                 m.x, m.y = t
                 m._path = None
                 return
+
+    def _old_nickel_gives_way(self, m) -> bool:
+        """The hero walks at the friend: he steps back before he is walked
+        into, as he does on his own turn (a quicker hero takes steps in which
+        he has none), past the hero's own pet if that is what is at his back.
+        Cornered, held or revealed he does not: the step is a blow."""
+        import old_nickel
+        if not old_nickel.is_friend(m) or any(m.has_effect(e) for e in (
+                'sleeping', 'paralyzed', 'stunned', 'frozen', 'immobilized', 'impaled',
+                'stuck_in_pit', 'feared', 'charmed', 'confused')):
+            return False
+        p = self.player
+        taken = self._occupants(hero=False)
+        if m._stalker_step_away(p, self.dungeon, self.monsters, taken):
+            return True
+        pets = {(q.x, q.y): q for q in (getattr(self, 'pets', None) or ()) if q.alive}
+        if (not pets or not self.dungeon.is_walkable(p.x, p.y)
+                or (p.x, p.y) in getattr(self.dungeon, 'pits', set())):
+            return False
+        if not m._stalker_step_away(p, self.dungeon, self.monsters, taken - set(pets)):
+            return False
+        pet = pets.get((m.x, m.y))
+        if pet is not None:
+            pet.x, pet.y = p.x, p.y          # (the tile the hero is leaving)
+        return True
 
     def _old_nickel_say(self, m, text: str, kind: str = 'warning', aside: bool = False):
         """One of his lines: in the log after his name, and floating over him

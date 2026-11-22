@@ -3393,8 +3393,10 @@ class CombatMixin:
         _floor_at_start = self.dungeon_level
         # What the monsters can hear this turn (src/senses.py).
         self._senses_begin_turn()
-        # An Old Nickel saved before he was a stalker becomes one.
+        # An Old Nickel saved before he was a stalker becomes one; a pup who
+        # walked after the hero in an old save goes back to a room.
         self._old_nickel_refresh()
+        self._emberpup_refresh()
         # Asterion's cracks fade (slice 6).
         self._tick_wall_cracks()
         # The fire vents breathe (game_hazards.py).

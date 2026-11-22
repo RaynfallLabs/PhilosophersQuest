@@ -3690,6 +3690,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
 
         tile_at_dest = self.dungeon.tiles[ny][nx]
+        if target and self._old_nickel_gives_way(target):
+            target = None                    # the false friend stepped out of the way
 
         if target:
             # Secret cow dialog

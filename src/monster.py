@@ -3042,8 +3042,13 @@ class Monster:
         3. A hero at rest or helpless he darts in on again, and strikes him
            the turn he reaches him.
         4. A hero walking away he follows, 'keep' to keep + 'slack' tiles off.
-        5. A hero coming at him he backs away from, toward his hoard.
-        Out of sight 'lose_after' turns, he goes back to his hoard.
+           Out of sight, he goes all the way to where he last saw or heard
+           him (footsteps carry round corners), and on from there. A hero
+           quicker than he is, he scurries after: a second step when left
+           behind.
+        5. A hero coming at him he backs away from, toward his hoard, and
+           round the elbow of a passage.
+        Neither seen nor heard for 'lose_after' turns, he goes back to his hoard.
 
         `_stalk_event` says what the turn did, for the game's lines: 'dash',
         'creep' (the friend closing on a hero at rest, still smiling), 'prey'
@@ -3052,6 +3057,8 @@ class Monster:
         'struck') that the act has just dropped."""
         s = self.stalker or {}
         import senses as _senses
+        import old_nickel as _nickel
+        heard = self.__dict__.pop('_heard', None)
         self._stalk_event = ''
         revealed = bool(self.__dict__.get('_revealed', False))
         if self.__dict__.get('_struck'):
@@ -3124,17 +3131,29 @@ class Monster:
 
         if not seen:
             last = self.__dict__.get('_stalk_seen_at')
+            if last is not None and not hidden and heard and heard[2] in _nickel.FOLLOWS_NOISE:
+                # One he has met he follows by ear too, round the corner.
+                last = self._stalk_seen_at = (heard[0], heard[1])
+                self._stalk_lost = 0
+                self._tracking = True
             if last is None or self._stalk_lost > lose_after:
                 # Lost him for good (or never saw him): back to his hoard.
                 self._tracking = False
                 if self._stalker_go_home(player, dungeon, all_monsters, extra_occupied):
                     self._stalk_event = 'home'
                 return False
-            # Lost him a moment ago: to where he saw him last, no nearer than
-            # he keeps.
-            if max(abs(self.x - last[0]), abs(self.y - last[1])) > keep:
-                if _senses.step_toward(self, dungeon, last, all_monsters, extra_occupied, player):
-                    self._stalk_event = 'follows'
+            # Lost him a moment ago. A hero still standing where he knows him
+            # to be, he keeps his distance from, as the feet go (not through
+            # the stone). One who has gone, he follows all the way to that
+            # place: short of it was inside the doorway, where he stuck
+            # (Brandon's play-test, 2026-11-22).
+            if tuple(last) == here and _senses.find_path(self, dungeon, last, max_len=keep) is not None:
+                return False
+            if _senses.step_toward(self, dungeon, last, all_monsters, extra_occupied, player):
+                self._stalk_event = 'follows'
+                if (self._outpaced(player) and (self.x, self.y) != tuple(last)
+                        and not _senses.sees(self, player, dungeon)):
+                    _senses.step_toward(self, dungeon, last, all_monsters, extra_occupied, player)
             return False
 
         # 5. Too close: he backs away (cornered, he holds and waits).
@@ -3146,7 +3165,15 @@ class Monster:
         if dist > keep + slack:
             if _senses.step_toward(self, dungeon, here, all_monsters, extra_occupied, player):
                 self._stalk_event = 'follows'
+                if (self._outpaced(player)
+                        and max(abs(self.x - here[0]), abs(self.y - here[1])) > keep + slack):
+                    _senses.step_toward(self, dungeon, here, all_monsters, extra_occupied, player)
         return False
+
+    def _outpaced(self, player) -> bool:
+        """The hero is quicker than he is (defence.speed_rating's scale)."""
+        pace = getattr(player, 'get_speed', None)
+        return callable(pace) and float(pace()) > float(self.speed or 10)
 
     def _stalker_reveal(self, why: str) -> None:
         """The act drops, for good: 'prey' (the hero at rest or helpless) or
@@ -3260,6 +3287,7 @@ class Monster:
         now = max(abs(self.x - player.x), abs(self.y - player.y))
         hoard = self._hoard_tile()
         best, best_key = None, None
+        elbows = []
         for ddx in (-1, 0, 1):
             for ddy in (-1, 0, 1):
                 if not ddx and not ddy:
@@ -3269,6 +3297,8 @@ class Monster:
                     continue
                 d = max(abs(nx - player.x), abs(ny - player.y))
                 if d <= now:
+                    if d == now == 1 and self._round_the_elbow(player, dungeon, occupied, nx, ny):
+                        elbows.append((nx, ny))
                     continue
                 door = dungeon.in_bounds(nx, ny) and dungeon.tiles[ny][nx] == DOOR
                 if not door and not self._can_move_to(dungeon, nx, ny):
@@ -3278,7 +3308,10 @@ class Monster:
                 if best_key is None or key < best_key:
                     best, best_key = (nx, ny), key
         if best is None:
-            return False
+            if not elbows:
+                return False
+            best = min(elbows, key=lambda t: (
+                max(abs(t[0] - hoard[0]), abs(t[1] - hoard[1])) if hoard else 0, t))
         nx, ny = best
         if dungeon.tiles[ny][nx] == DOOR:
             dungeon.open_door(nx, ny)
@@ -3287,6 +3320,27 @@ class Monster:
                 return False
         self.x, self.y = best
         return True
+
+    def _round_the_elbow(self, player, dungeon, occupied, nx: int, ny: int) -> bool:
+        """Is (nx, ny) the next tile of a passage that turns here? It is
+        diagonal to the hero, stone fills the bend, and the way goes on from
+        it. The open corner of a room is none: there he is cornered."""
+        px, py = player.x, player.y
+        if nx == px or ny == py or not self._can_move_to(dungeon, nx, ny):
+            return False
+        bend = {(px, ny), (nx, py)}
+        if (self.x, self.y) not in bend:
+            return False
+        (bx, by), = bend - {(self.x, self.y)}
+        if dungeon.is_walkable(bx, by):
+            return False
+        for ax in (-1, 0, 1):
+            for ay in (-1, 0, 1):
+                tx, ty = nx + ax, ny + ay
+                if (max(abs(tx - px), abs(ty - py)) >= 2 and (tx, ty) not in occupied
+                        and self._can_move_to(dungeon, tx, ty)):
+                    return True
+        return False
 
     def _stalker_go_home(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """A step back toward his hoard. True if he moved."""

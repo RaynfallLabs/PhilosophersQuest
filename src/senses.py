@@ -528,6 +528,12 @@ def keeps_way_round(m, player, all_monsters) -> bool:
     return False
 
 
+def rooted(m) -> bool:
+    """It never walks: a mold, a floating eye, the Emberpup on his rock, a
+    figure of a story (ai_pattern 'sessile', or stationary: the Black Knight)."""
+    return getattr(m, 'ai_pattern', '') == 'sessile' or bool(getattr(m, 'stationary', False))
+
+
 def _avoid_fn(m, dungeon):
     """A creature that knows the floor's snares (tactical_mind: knows_traps)
     keeps off them when it has another way; None for every other."""
@@ -637,6 +643,8 @@ def step_toward(m, dungeon, goal, all_monsters, extra_occupied, player) -> bool:
     real way it waits its turn, a few turns with no new search, and steps
     up as soon as the tile in front is free."""
     from dungeon import DOOR
+    if rooted(m):
+        return False
     goal = (int(goal[0]), int(goal[1]))
     occ = _occupied(m, all_monsters, extra_occupied, player)
     d = m.__dict__
@@ -799,6 +807,13 @@ def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:
         m._lead_used = True
         return True
     m._tracking = False
+    if rooted(m):
+        # A rooted thing that has lost him has nowhere to go and look. (It
+        # went after him: the Emberpup followed the hero out of his room,
+        # Brandon's play-test 2026-11-22.)
+        m._goal = None
+        m._searching = False
+        return False
     if int(m.__dict__.get('_tm_watch', 0) or 0) > 0 and not hidden:
         # It holds its post beyond a narrow way, out of the hero's sight,
         # for him to come out (the Tactical Mind: src/tactical_mind.py); it
