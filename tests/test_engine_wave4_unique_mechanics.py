@@ -9,7 +9,7 @@ Covers:
 - Rod of Moses chain_tier_status_table
 - Zulfiqar every_hit_secondary_target
 - Gandiva multi_arrow_at_chain_5
-- Soul Reaver growth_on_innocent_kill
+- Soul Reaver (its growth_on_innocent_kill is gone: ruling C7, 2026-11-22)
 - Chandrahasa karma_disappear_proc
 - Ruyi Jingu Bang chain_modulated_reach
 - Curtana spare_kill_chance
@@ -73,8 +73,9 @@ def test_loads_multi_arrow_at_chain_5():
     assert _w(multi_arrow_at_chain_5={'targets': 3, 'damage_per': 0.5}).multi_arrow_at_chain_5
 
 
-def test_loads_growth_on_innocent_kill():
-    assert _w(growth_on_innocent_kill=True).growth_on_innocent_kill is True
+def test_growth_on_innocent_kill_is_gone():
+    """Ruling C7 (2026-11-22): the branch could never run."""
+    assert not hasattr(_w(growth_on_innocent_kill=True), 'growth_on_innocent_kill')
 
 
 def test_loads_karma_disappear_proc():
@@ -152,14 +153,12 @@ def test_combat_wires_return_to_hand_ward():
     assert '_return_to_hand_active' in src
 
 
-def test_combat_wires_growth_on_innocent_kill():
-    """Chain combat v2 (v2.14.0) — Soul Reaver rewire.
-    Killing an innocent used to grant next-hit auto-crit; crit is retired,
-    so it now grants a `blade_flow` stack (next hit bypasses damage reduction).
-    Same 'blade grows on innocent blood' feel via a chain-combat-v2 mechanic."""
+def test_combat_has_no_growth_on_innocent_kill():
+    """Ruling C7 (2026-11-22): the Soul Reaver's branch could never run, and
+    woken it would have paid for the killing of innocents."""
     import combat
     src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
-    assert 'growth_on_innocent_kill' in src
+    assert 'growth_on_innocent_kill' not in src
     assert "'blade_flow'" in src
 
 

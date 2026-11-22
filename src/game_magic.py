@@ -2288,22 +2288,29 @@ class MagicMixin(MagicWardsMixin):
 
         # --- Detect Magic / Identify / Omnisight: reveal magical item BUC ---
         # v2.12.0: three-tier family. T1 detect_magic reveals FLOOR items in
-        # sight. T3 identify_spell also reveals PACK items. T5 omnisight also
-        # reveals EQUIPPED items (all slots).
+        # sight. T3 identify_spell also reveals PACK items. T5 omnisight
+        # reveals everything (ruling C15, 2026-11-22): every item on the whole
+        # floor, in the pack and worn (all slots, the belt too).
         if effect == 'identify_item':
-            from items import Wand, Scroll, Spellbook
+            from items import Wand, Scroll, Spellbook, Corpse, buc_known_to
             _stier = int(spell.get('tier', spell.get('quiz_tier', 1)))
+            _all = _stier >= 5
             revealed = 0
             for it in self.ground_items:
-                if (it.x, it.y) in self.visible and isinstance(it, (Wand, Scroll, Spellbook)):
+                if _all:
+                    if (not isinstance(it, Corpse) and hasattr(it, 'buc_known')
+                            and not buc_known_to(it, self.player)):
+                        it.buc_known = True
+                        revealed += 1
+                elif (it.x, it.y) in self.visible and isinstance(it, (Wand, Scroll, Spellbook)):
                     if hasattr(it, 'buc_known'):
                         it.buc_known = True
                     revealed += 1
             inv_reveals = 0
-            from items import buc_known_to
             if _stier >= 3:
                 for it in self.player.inventory:
-                    if (isinstance(it, (Wand, Scroll, Spellbook))
+                    if ((isinstance(it, (Wand, Scroll, Spellbook))
+                         or (_all and not isinstance(it, Corpse)))
                             and hasattr(it, 'buc_known')
                             and not buc_known_to(it, self.player)):
                         it.buc_known = True
@@ -2322,6 +2329,9 @@ class MagicMixin(MagicWardsMixin):
                 am = getattr(self.player, 'amulet_slot', None)
                 if am:
                     equipped.append(am)
+                belt = getattr(self.player, 'belt_slot', None)
+                if belt:
+                    equipped.append(belt)
                 for it in equipped:
                     if hasattr(it, 'buc_known') and not buc_known_to(it, self.player):
                         it.buc_known = True

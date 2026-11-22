@@ -41,7 +41,7 @@ from dungeon import (spawn_monsters, WALL, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_
                      ALTAR, WATER, LAVA, FOUNTAIN, GRAVE, THRONE, ICE)
 from food_system import harvest_corpse, cook_ingredient, cook_compound_recipe
 from fov import calculate_fov
-from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Spellbook, Ammo, Food, Potion, Flask
+from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container, Lockpick, Accessory, Wand, Scroll, Spellbook, Ammo, Food, Potion, Flask, worn_statuses
 from level_manager import LevelManager
 from player import Player
 import sound_system as _snd
@@ -8037,10 +8037,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Check accessories (ring/amulet effects)
         for acc in p.accessory_slots:
             if acc and hasattr(acc, 'effects'):
-                if acc.effects.get('status') == effect_id:
+                if effect_id in worn_statuses(acc.effects):
                     return acc.name
         if p.amulet_slot and hasattr(p.amulet_slot, 'effects'):
-            if p.amulet_slot.effects.get('status') == effect_id:
+            if effect_id in worn_statuses(p.amulet_slot.effects):
                 return p.amulet_slot.name
         # Timed effects are likely from potions/wands/monsters
         dur = p.status_effects.get(effect_id, 0)
@@ -9670,8 +9670,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return f"shield  -{gear.ac_value(item)} AC  tier {item.tier}"
         elif isinstance(item, Accessory):
             fx = item.effects or {}
-            if 'status' in fx:
-                return f"grants {fx['status']}"
+            if worn_statuses(fx):
+                return f"grants {' and '.join(worn_statuses(fx))}"
             if 'stat' in fx and 'amount' in fx:
                 return f"{fx['stat']} +{fx['amount']}"
             # Equip-time effects empty — fall back to the carry bonus

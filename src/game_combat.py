@@ -71,7 +71,7 @@ import holds            # Held Fast (AI-3)
 import lore_powers      # who is at peace (slice M)
 import habits          # They Learn Your Tricks (AI-2)
 import tactical_mind    # the Tactical Mind (AI-2)
-from items import Artifact, Weapon
+from items import Artifact, Weapon, worn_statuses
 from pet_system import Pet, pet_damage_type, random_species as random_pet_species
 
 
@@ -96,9 +96,13 @@ def _is_bystander(m) -> bool:
     an allied angel. Monster.take_damage leaves them unhurt; area blows
     (cleave, ricochet, Joyeuse, the Boots of Thor) also pass them by, so
     they print no damage they did not take."""
-    return bool(getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)
-                or getattr(m, '_is_unicorn', False) or getattr(m, 'is_allied', False))
+    from monster import is_innocent
+    return is_innocent(m)
 
+
+# A riposte's share of the weapon's base damage: the shortsword's, and the
+# Samosek's when it swings of itself.
+RIPOSTE_SHARE = 0.85
 
 # Shares of the creature's own health (floor_curve.wound).
 PIT_FALL_SHARE = 0.10         # a monster that blunders into a pit
@@ -1123,8 +1127,8 @@ class CombatMixin:
                                 break
                     self.player.accessory_off(_acc)
                     self.player.hp = max(1, self.player.max_hp // 2)
-                    if 'status' in _fx:
-                        self._remove_status_if_no_other_grants(_fx['status'])
+                    for _st in worn_statuses(_fx):
+                        self._remove_status_if_no_other_grants(_st)
                     self.add_message(
                         "The Ankh of Isis shatters! Isis breathes life back into you!",
                         'success')
@@ -3379,6 +3383,30 @@ class CombatMixin:
         return bool(self.state == STATE_DEAD
                     or (self.__dict__.get('_run_over') and self.player.hp <= 0))
 
+    def _self_swing(self, m) -> None:
+        """The Samosek fights of itself (ruling C9, 2026-11-22): a blow taken
+        from a foe beside the hero has its `counter_attack_chance` of being
+        answered by the sword alone, for a riposte's share of its base
+        damage. A copy from an old save reads today's data."""
+        p = self.player
+        w = p.weapon
+        if w is None or p.hp <= 0:
+            return
+        chance = float(getattr(w, 'counter_attack_chance', 0) or 0)
+        if chance <= 0:
+            import wards as _wards
+            chance = float(_wards.item_def('weapon', getattr(w, 'id', '')).get(
+                'counter_attack_chance', 0) or 0)
+        if chance <= 0 or not m._adjacent_to(p) or random.random() >= chance:
+            return
+        import combat as _combat
+        m._incoming_forms = _combat.blow_forms_of(w)
+        done = m.take_damage(max(1, int((w.base_damage or 4) * RIPOSTE_SHARE)))
+        self.add_message(f"Your {self._display_name(w)} swings of itself and strikes "
+                         f"{the_name(m, lower=True)} for {done}!", 'success')
+        if not m.alive:
+            self._on_monster_killed(m)
+
     def _do_monster_turns(self):
         # Time stop: monsters are frozen this turn. Death is not: he is not
         # in time. (The return used to come first, so a scroll of time stop
@@ -3843,7 +3871,7 @@ class CombatMixin:
                 if self.player.has_effect('riposte_armed') and dmg > 0 and m.alive:
                     _w = self.player.weapon
                     if _w and getattr(_w, 'class_mechanic', '') == 'quick_riposte':
-                        _rip = max(1, int((_w.base_damage or 4) * 0.85))
+                        _rip = max(1, int((_w.base_damage or 4) * RIPOSTE_SHARE))
                         _rip_actual = m.take_damage(_rip)
                         self.add_message(
                             f"You riposte {the_name(m, lower=True)} for {_rip_actual}!", 'success')
@@ -3852,6 +3880,8 @@ class CombatMixin:
                             0, self.player.status_effects.get('riposte_armed', 0) - 1)
                         if not m.alive:
                             self._on_monster_killed(m)
+                if dmg > 0 and m.alive:
+                    self._self_swing(m)
 
                 if self._hero_fell():
                     return                 # a burst his flames, his riposte or its shot set off

@@ -14,6 +14,17 @@ Group B, monsters that are what their lore says:
   B12 the Ushabti Overseer's workers fall still with it
   B13 skeletal_archer is named the Skeleton Bowman (its id stays)
 
+Group C, items that do what their lore says:
+  C1  the Sailor's Amulet lends warning beside its cold resistance
+  C7  the Soul Reaver's dead growth flag is gone
+  C9  the Samosek strikes back by itself, one blow taken in four
+  C10 the T5 Chandrahasa is retired: the T4 Chandrahas holds the legend's
+      condition (items.RETIRED_IDS reads the old id)
+  C11 Pandora's Box and Aladdin's Lamp are parked
+  C12 the healing herb stops bleeding
+  C14 the Shamshir-e Zomorrodnegar lends magic resistance in the hand
+  C15 Omnisight's book says what it shows
+
     py tools/content/rulings_360_pass_2026_11.py            # report (dry run)
     py tools/content/rulings_360_pass_2026_11.py --write
 
@@ -32,6 +43,11 @@ sys.path.insert(0, os.path.join(ROOT, 'tools', 'content'))
 MONSTERS = 'data/monsters.json'
 AFFINITY = 'data/family_affinity.json'
 INGREDIENTS = 'data/items/ingredient.json'
+WEAPONS = 'data/items/weapon.json'
+ACCESSORIES = 'data/items/accessory.json'
+FOOD = 'data/items/food.json'
+BOOKS = 'data/items/spellbook.json'
+ARTIFACTS = 'data/items/artifact.json'      # no exact round trip: edited as text (park)
 
 _SPHINX_TELL = {
     'sign': "{The} watches the way, and looks about to ask you something.",
@@ -85,8 +101,44 @@ WEAK = {'redcap': 'holy', 'shadow_assassin': 'holy', 'shadow_archer': 'holy'}
 
 ATTACK_NAMES = {'crypt_thing': {'Teleport': 'Bewilder'}}
 
+# (file, id) -> the item fields set.
+ITEM_FIELDS = {
+    (WEAPONS, 'kladenets'): {'counter_attack_chance': 0.25},
+    (WEAPONS, 'shamshir_e_zomorrodnegar'): {'on_equip_status': 'magic_resist'},
+    (ACCESSORIES, 'sailors_amulet'): {
+        'effects': {'status': 'cold_resist', 'status2': 'warning', 'duration': -1}},
+    (FOOD, 'healing_herb'): {'stops': ['bleeding']},
+}
+DROP_FIELDS = [(WEAPONS, 'soul_reaver', 'growth_on_innocent_kill'),
+               (WEAPONS, 'kladenets', '_note')]
+RETIRED = [(WEAPONS, 'chandrahasa')]
+PARKED = ('pandoras_box', 'aladdins_lamp')
+
 # (file, kind, field): the words as they stood, the words now.
 WORDS = [
+    (ACCESSORIES, 'sailors_amulet', 'lore',
+     "and its wearer bears wind and wave as a sailor does, and does not mind the cold.",
+     "and its wearer feels trouble coming as a sailor feels the weather, and does not mind the cold."),
+    (FOOD, 'healing_herb', 'lore',
+     "do little for hunger but something to mend a hurt.",
+     "do little for hunger but a great deal to staunch bleeding."),
+    (WEAPONS, 'kladenets', 'lore',
+     "which in their tales fights of itself",
+     "which fights of itself"),
+    (WEAPONS, 'kladenets', 'lore',
+     "but it leaps so readily to the hand, and stuns so many of those it strikes, that they count "
+     "it very useful.",
+     "but since the sword does the fighting and they live through it, they take no fright at its "
+     "having a will of its own, and count it very useful."),
+    (WEAPONS, 'shamshir_e_zomorrodnegar', 'lore',
+     "It is the bane of demons still, and out of one that it slays",
+     "Whoever bears it in the hand is guarded from sorcery. It is the bane of demons still, and "
+     "out of one that it slays"),
+    (BOOKS, 'spellbook_omnisight', 'lore',
+     "and before it the wands, scrolls and books in sight or in the pack, and the arms, armour, "
+     "rings and amulet that are worn, declare their blessing or their curse.",
+     "and before it all things on the floor, in the pack and on the body declare their blessing "
+     "or their curse."),
     (MONSTERS, 'ochre_jelly', 'lore',
      "Delvers once told how a sword or lightning would divide it in two, but either does it only "
      "half harm, and its bane is fire and frost.",
@@ -188,6 +240,17 @@ def apply(files: dict) -> list:
         if text.count(old) != 1:
             raise SystemExit(f'{kind}.{field}: neither the old words nor the new')
         put(row, field, text.replace(old, new), kind)
+    for (path, iid), fields in ITEM_FIELDS.items():
+        for k, v in fields.items():
+            put(files[path][iid], k, v, iid)
+    for path, iid, key in DROP_FIELDS:
+        if key in files[path][iid]:
+            del files[path][iid][key]
+            done.append(f'{iid}.{key} (dropped)')
+    for path, iid in RETIRED:
+        if iid in files[path]:
+            del files[path][iid]
+            done.append(f'{iid} (retired)')
     aff = files[AFFINITY]
     for gid, fields in GROUPS.items():
         for k, v in fields.items():
@@ -199,22 +262,43 @@ def apply(files: dict) -> list:
     return done
 
 
+def park(text: str) -> tuple:
+    """(artifact.json with each parked entry marked `parked`, what changed)."""
+    done = []
+    for iid in PARKED:
+        start = text.index(f'"{iid}": {{')
+        at = text.index('"_disabled_reason"', start)
+        if '"parked": true' in text[start:at]:
+            continue
+        line = text.rindex('\n', 0, at) + 1
+        nl = '\r\n' if text[line - 2:line] == '\r\n' else '\n'
+        text = text[:line] + text[line:at] + '"parked": true,' + nl + text[line:]
+        done.append(f'{iid}.parked')
+    return text, done
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--write', action='store_true')
     a = ap.parse_args(argv)
     import jsonfmt
-    paths = (MONSTERS, AFFINITY, INGREDIENTS)
+    paths = (MONSTERS, AFFINITY, INGREDIENTS, WEAPONS, ACCESSORIES, FOOD, BOOKS)
     loaded = {p: jsonfmt.load(os.path.join(ROOT, p)) for p in paths}
     files = {p: data for p, (data, _fmt) in loaded.items()}
     done = apply(files)
-    for line in done:
+    with open(os.path.join(ROOT, ARTIFACTS), 'rb') as f:
+        artifacts, parked = park(f.read().decode('utf-8'))
+    for line in done + parked:
         print('changed', line)
-    if not done:
+    if not done and not parked:
         print('nothing to change (the pass is up to date)')
     if a.write and done:
         for p, (data, fmt) in loaded.items():
             jsonfmt.save(os.path.join(ROOT, p), data, fmt)
+    if a.write and parked:
+        with open(os.path.join(ROOT, ARTIFACTS), 'wb') as f:
+            f.write(artifacts.encode('utf-8'))
+    if a.write and (done or parked):
         print('written')
     return 0
 

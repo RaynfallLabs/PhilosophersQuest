@@ -48,7 +48,10 @@ def test_detect_magic_says_what_it_shows_in_plain_words(sid):
     desc = LEARNABLE_SPELLS[sid]['desc']
     assert 'BUC' not in desc and 'every magical item' not in desc
     assert desc.startswith('Shows blessed or cursed')
-    assert 'wands, scrolls and books' in desc
+    if sid == 'omnisight_spell':
+        assert 'every item on the floor' in desc      # ruling C15: not only the magical
+    else:
+        assert 'wands, scrolls and books' in desc
     assert len(desc) <= 92
 
 

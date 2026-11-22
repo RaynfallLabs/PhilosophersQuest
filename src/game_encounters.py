@@ -1674,8 +1674,9 @@ class EncountersMixin:
                 p.amulet_slot = None
                 p.accessory_off(old)
                 # Its status, unless something else worn still grants it
-                if 'status' in fx:
-                    p.drop_worn_status(fx['status'], old)
+                from items import worn_statuses
+                for _st in worn_statuses(fx):
+                    p.drop_worn_status(_st, old)
                 removed = True
             else:
                 for i, slot in enumerate(p.accessory_slots):
@@ -1683,8 +1684,9 @@ class EncountersMixin:
                         fx = slot.effects
                         p.accessory_slots[i] = None
                         p.accessory_off(slot)
-                        if 'status' in fx:
-                            p.drop_worn_status(fx['status'], slot)
+                        from items import worn_statuses
+                        for _st in worn_statuses(fx):
+                            p.drop_worn_status(_st, slot)
                         removed = True
                         break
         if not removed:
@@ -1704,8 +1706,9 @@ class EncountersMixin:
                 fx = getattr(belt, 'effects', None) or {}
                 p.belt_slot = None
                 p.accessory_off(belt)
-                if 'status' in fx:
-                    p.drop_worn_status(fx['status'], belt)
+                from items import worn_statuses
+                for _st in worn_statuses(fx):
+                    p.drop_worn_status(_st, belt)
                 removed = True
         return removed
 

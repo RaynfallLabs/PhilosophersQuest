@@ -289,7 +289,7 @@ Monsters have NO `floorSpawnWeight` — they use Gaussian exclusively.
 | `max_enchant` | int | enchant cap |
 | `weapon_class_chain` | str | chain mode for this class |
 | `design_notes` | str | author notes (not loaded) |
-| `growth_on_innocent_kill` | bool | Curtana / Soul Reaver mechanic |
+| `counter_attack_chance` | float | The Samosek (0.25): the chance that it answers a blow taken from a foe beside the hero by itself, at a riposte's share of its base (`game_combat._self_swing`) |
 
 ### 3.2 CamelCase + snake_case duplication
 
@@ -309,7 +309,6 @@ Flagged for cleanup; still shipping while cleanup is incremental:
 - `max_chain_length` on `sword_of_michael` — overridden by a
   `@property` returning `len(chain_multipliers)`.
 - `neverMiss: true` on `gungnir` — no reader.
-- `counterAttackChance: 0.25` on `kladenets` — no consumer.
 - `design_notes` claiming AOE / spread for `boomstick` and
   `mjolnir_shard` — not wired.
 - `undead_bonus: 2.5` on `anduril` — code uses hardcoded 1.5× when

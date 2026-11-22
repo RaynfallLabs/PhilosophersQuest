@@ -885,7 +885,7 @@ Brandon's ruling 13 (2026-11-16): "mini-bosses with cool unique drops are suppos
 | 4 | 69 | Wendigo | The winter hunger of the northern forests, whose heart is ice: the frost is its country (it was floor 85). | Wendigo's Fang (`wendigo_fang`) | 4 | floor 85 -> 69; drop tier 5 -> 4 |
 | 4 | 74 | The Green Knight | Morgan le Fay's enchanted knight, who keeps his chapel at the turn of the year, in the snow. | The Green Girdle (`green_girdle`) | 4 | drop tier 5 -> 4 |
 | 4 | 76 | Wild Hunt Captain | The riders of the winter storm, Wotan's or Herne's: the frost is theirs (he was floor 90). | Hunt Captain's Sword (`hunt_captains_sword`) | 4 | floor 90 -> 76; drop tier 5 -> 4 |
-| 4 | 77 | Charybdis | The whirlpool that swallows the sea three times a day, opposite Scylla (74). | Sailor's Amulet (`sailors_amulet`) | 4 | floor 78 -> 77; drop tier 2 -> 4 |
+| 4 | 77 | Charybdis | The whirlpool that swallows the sea three times a day, opposite Scylla (74). | Sailor's Amulet (`sailors_amulet`: cold resistance, and warning as `effects.status2`) | 4 | floor 78 -> 77; drop tier 2 -> 4 |
 | 4 | 78 | Ymir's Last Spawn | A frost giant of the first morning, before the flood of Ymir's blood: the mightiest of the frost, met at Fenrir's door (it was floor 85). | Vambraces of the First Winter (`vambraces_of_the_first_winter`) | 4 | floor 85 -> 78; drop tier 5 -> 4 |
 | 5 | 82 | Ravana's Arm | One arm of Ravana, king of the rakshasas, that did not die with him: a demon's remnant, the least of the abyss. | Ring of Iron Grip (`ring_of_iron_grip`) | 5 | floor 80 -> 82; drop tier 2 -> 5 |
 | 5 | 84 | Blood Archon | An older grade of fiend who keeps his ledger in blood. | The Exsanguinating Blade (`exsanguinating_blade`) | 5 | floor 82 -> 84; new drop |

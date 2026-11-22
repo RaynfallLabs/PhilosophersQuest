@@ -173,7 +173,7 @@ def test_the_ring_of_gyges_takes_one_for_striking_an_innocent_unseen():
     p._combat_game_ref = g
     m = Monster(dict(defs['giant_rat'], id='giant_rat'), 6, 5)
     m.hp = m.max_hp = 10 ** 8
-    m.hostile = False                        # an innocent, as the ring counts it
+    m.is_allied = True                       # an innocent (monster.is_innocent)
     combat.player_attack(p, m, _Quiz(5), lambda *a, **k: None)
     assert g.karma == 2
     led = g._deeds['karma']['ledger']

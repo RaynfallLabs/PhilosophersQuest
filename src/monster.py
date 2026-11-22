@@ -268,6 +268,17 @@ def pronoun_fill(monster) -> dict:
             'himself': obj + 'self'}
 
 
+def is_innocent(m) -> bool:
+    """Whom the game counts innocent, said in this one place (ruling C8,
+    2026-11-22): the people of an encounter, the unicorn, someone the hero
+    walks with (an escort) and the allied (the angels). No blow hurts them
+    (Monster.take_damage), no area blow seeks them (game_combat), and to
+    strike one unseen is the Ring of Gyges' wrong (combat.player_attack)."""
+    return bool(getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)
+                or getattr(m, '_is_unicorn', False) or getattr(m, 'is_allied', False)
+                or getattr(m, 'is_escort', False))
+
+
 def fill(monster, text: str, **kw) -> str:
     """``text`` with the creature put in: {The} / {the} its name with the
     article, {A} / {a} with an indefinite one, the pronoun slots
@@ -1393,8 +1404,7 @@ class Monster:
         no damage at all. They have 1 HP and stand among the monsters, and
         area spells do not skip them: one blast could delete a quest.
         """
-        if (getattr(self, '_npc_encounter_tag', None) or getattr(self, '_flavor_encounter_tag', None)
-                or getattr(self, '_is_unicorn', False) or getattr(self, 'is_allied', False)):
+        if is_innocent(self):
             return 0
         if amount > 0:
             self._unhurt_turns = 0           # see _recover_when_left

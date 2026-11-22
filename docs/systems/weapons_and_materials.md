@@ -50,7 +50,6 @@ The file is a dict keyed on weapon id. Every entry is a UNIQUE weapon in the cur
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "finesse",  // "normal" | "finesse" — purely cosmetic design-note tag
-    "growth_on_innocent_kill": true,  // unique proc
     "design_notes": "Signature chain: finesse opener…"
   }
 }
@@ -420,7 +419,7 @@ Every unique has at least one distinctive mechanic. The audit of 2026-05-30 coun
 
 | Weapon | Flag(s) | Behavior |
 |---|---|---|
-| **Soul Reaver** | `lifestealPercent: 0.3`, `growth_on_innocent_kill: true`, `chain_exponent: 1.15` | Heals 30% of damage dealt. Killing a non-hostile NPC grants +1 `blade_flow` stack (rewired from "next hit auto-crit" in v2.14.0). |
+| **Soul Reaver** | `lifestealPercent: 0.3`, `chain_exponent: 1.15` | Heals 30% of damage dealt. (Its `growth_on_innocent_kill` branch could never run and was removed on 2026-11-22: ruling C7.) |
 | **Mjolnir** | `chain_lightning_at_chain_n: {from_chain: 6, splash_pct: 0.5, max_targets: 1}`, `effective_against: [giant]`, `undead_bonus: 2.5` (inert) | At chain 6+, splash lightning damage to one adjacent enemy of the primary target. Material + unique anti-tag arrays stack. |
 | **Dawnbreaker** | `effective_against: [undead]`, `ignore_resistances: true`, `burnChance: 0.3`, `holy` damage type | Shatters resistance checks; every hit vs undead takes the weak step (x2, the unique's own bane counted as substance, under the x3 cap); burn proc on top. |
 | **Sword of Michael** | `abaddon_bonus_damage: "2d20"`, `holy_smite_message: true` | Rolls 2d20 bonus damage vs `monster.kind == 'abaddon_destroyer'`. Emits flavor messages on evil-tagged hits (demon / undead / evil). |
@@ -437,7 +436,7 @@ Every unique has at least one distinctive mechanic. The audit of 2026-05-30 coun
 | **Robin Hood's Longbow** | `stealth_damage_bonus: 0.5` | +50% damage when the player has `invisible` status. |
 | **Kusanagi** | `surrounded_proc_bonus: true` | When 3+ enemies are adjacent to the player, ×1.25 damage. Rewired from force-crit in v2.14.0. |
 | **Khopesh of Anubis** | `kill_max_hp_bonus: 1`, `kill_max_hp_cap: 10` | +1 max HP per kill, capped at +10 total. |
-| **Chandrahasa** | `low_hp_damage_bonus: true` | At HP < 50%, damage mult up to 2× at 0% HP. |
+| **Chandrahasa** (retired 2026-11-22, ruling C10) | `low_hp_damage_bonus: true` | No new one is made: the old id gives `chandrahas` (`items.RETIRED_IDS`). A copy in an old save keeps its power: at HP < 50%, damage mult up to 2× at 0% HP. |
 | **Green Chapel Axe** | `class_mechanic: returning_blow`, `on_hit_regen: N` | Max chain blows return to the wielder for half damage. The beheading-game pact. |
 | **Oathkeeper** | `adjacent_pet_damage_bonus: 0.25` | +25% damage when any pet is within 1 tile of the player. |
 | **Curtana** | `spare_kill_chance: 0.25`, `spare_kill_max_hp_per_floor: 5` | On a kill-blow, 25% chance to spare: leave monster at 1 HP, grant player +1 max HP. Up to 5/floor (counter never reset — bug). |
@@ -447,7 +446,7 @@ Every unique has at least one distinctive mechanic. The audit of 2026-05-30 coun
 | **Sudarshana Chakra** | `return_to_hand_ward: true`, thrown returning | On max-chain kill, next monster attack misses outright (consumed by `monster.attack`). |
 | **Spear of Longinus** | `weep_heal_on_kill_scaled: 0.1` | On kill, heal player by 10% of target's max_hp. |
 | **Vulcan's Brand** | `effects: {status: burning, effect_chance: 0.3, effect_duration: 5}`, `material: volcanic_iron` | **v2.18.0 fix:** material id corrected from `"volcanic iron"` (space) to `"volcanic_iron"` so effective_against tags (ice/frost) apply. On-hit burn status via Weapon.effects (wire-up 2026-05-30). |
-| **Kladenets (Samosek)** | `_note: "design_intent: counterAttackChance=0.25 ..."` | **v2.18.0 fix:** removed inert `counterAttackChance: 0.25` field. Added `_note` recording the Slavic "Sword That Fights Itself" counter-attack design, flagged for a future passive-defense hook. |
+| **Kladenets (Samosek)** | `counter_attack_chance: 0.25` | One blow in four that a foe beside the hero lands, the sword answers by itself for 0.85 of its base, a riposte's share (`game_combat._self_swing`; ruling C9, 2026-11-22). |
 | **Punch in the Face** | `base_damage: 35`, `material: dad` | Dad-tier joke. Not part of the balance curve. Material lookup silently returns 1.0× — the base_damage carries the gag. |
 | **Staff of Emrys** (2026-11-16) | `spell_tier_ease: 1`, `on_equip_status: magic_resist`, two-handed, base 8 at maths tier 1, `min_level: 9999` | Merlin's own staff, his starting weapon. Art over strength (he moved the Giants' Dance by art where no army could): a spell cast with it in hand asks its science question a tier easier, never below 1, and still lands at its own tier's power (`MagicMixin._staff_spell_ease`, `_start_spell_quiz`). His ward (no enchantment held him but the one he taught Nimue): Magic Resist while it is in hand. A walking staff, not a war staff: its blows fade with depth, its art does not. Never random loot; any hero but Merlin can earn it at Merlin's stone (floors 10-16, [quests_mysteries](quests_mysteries.md) §2.13). The card says "Spells you cast with it in hand ask an easier science question" and "In hand: Magic Resist". |
 | **Boudicca's Spear** (2026-11-17) | `effects: {status: feared, effect_chance: 0.25, effect_duration: 4}`, one hand, reach 2, base 30 at maths tier 2, `min_level: 9999` | Boudicca's starting weapon, for her iron longsword (Cassius Dio 62.2: she "grasped a spear to aid her in terrifying all beholders"). Each hit has a 25% chance to frighten its target for 4 turns, through `Monster.hold` (the mindless and the fearless are not frightened). A mortal queen's war spear, the peer of the Dory of Leonidas and the Spear of Romulus. Never random loot. A weapon's own `effects` now shows on its card ("Each hit has a 25% chance to frighten its target", `RenderMixin._weapon_hit_effect`) and in its Special ("Fear 25%"), for Wendigo's Fang, Echidna's Fang, Vulcan's Brand, the Vel of Murugan and the Hunt Captain's Sword too. |
@@ -462,7 +461,7 @@ See `src/items.py::Weapon.__init__` lines 379–627 for the schema. Field count 
 - **At-max / per-chain-rung procs** (10): `multi_arrow_at_chain_5`, `boss_doom_dot_at_chain_5`, `chain_lightning_at_chain_n`, `damage_double_vs_resistant_at_max`, `reveal_tag_on_chain_5_kill`, `return_to_hand_ward`, `chain_tier_status_table`, `every_hit_secondary_target`, `combat_start_aoe_confuse_chance`, `surrounded_proc_bonus`.
 - **Damage mults vs condition** (8): `first_blood_bonus`, `low_hp_damage_bonus`, `stealth_damage_bonus`, `damage_bonus_vs_gaze`, `adjacent_pet_damage_bonus`, `prophecy_blade`, `undead_bonus`, `effective_against` (list), `bonus_damage_vs_tag` (dict of 8 pre-known tags).
 - **On-hit statuses + chances** (10): `stunChance`, `bleedChance`, `poisonChance`, `burnChance`, `confuseChance`, `freezeChance`, `apply_heal_block_chance`, `random_status_from_pool`, `effects` (dict), `knockback`.
-- **On-kill** (10): `lifestealPercent`, `kill_heal_amount`, `growingPower + killsToGrow`, `kill_max_hp_bonus + cap`, `aoe_slow_on_kill`, `weep_heal_on_kill_scaled`, `kill_count_karma_adjust`, `extra_action_after_kill`, `growth_on_innocent_kill`, `spare_kill_chance`, `summon_after_kill_with_tag`.
+- **On-kill** (10): `lifestealPercent`, `kill_heal_amount`, `growingPower + killsToGrow`, `kill_max_hp_bonus + cap`, `aoe_slow_on_kill`, `weep_heal_on_kill_scaled`, `kill_count_karma_adjust`, `extra_action_after_kill`, `spare_kill_chance`, `summon_after_kill_with_tag`.
 - **Shields / resistances bypass** (3): `ignore_shield`, `ignore_resistances`, `ignores_all_armor` / `ignores_half_armor` (via class_mechanic).
 - **Cursed / selected** (6): `cursed_lineage`, `selects_wielder`, `betrays_at_low_hp`, `cursedMissBacklash`, `cast_me_away`, `glows_near_orcs`.
 - **Flavor / messaging** (3): `abaddon_bonus_damage` (Sword of Michael), `holy_smite_message`, `vigilance_aware`.
@@ -547,7 +546,7 @@ Open items from SYSTEMS_AUDIT.md, not fixed in v2.18.0:
 - **`boomstick` dual-identity bug.** `template_basis: "crossbow"` but `weapon_class: "ranged"` + `min_level: 9999`. Routes through BOW specials, so its crossbow-identity reload lockout doesn't apply.
 - **`mjolnir_shard` lore vs code.** Design notes claim a chain-5 lightning proc; only Mjolnir carries `chain_lightning_at_chain_n`.
 - **`Curtana._spare_kill_floor_hp` counter not reset** on floor change. "Per floor" silently becomes "per run."
-- **`chandrahas` ≠ `chandrahasa`.** Two nearly identical-named entries (T4 finesse-3.0× and T5 normal-2.0×). Likely duplicate; both spawn under different tier bands.
+- **`chandrahasa` is retired** (ruling C10, 2026-11-22): it was a second copy of `chandrahas`, the T4 that holds the legend's condition. `items.current_id` reads the old id.
 - **`equipped_monster_aggro_radius`, `equipped_sound_radius_modifier`, `_karma_disappear_rolled_this_floor`** loaded but no consumers.
 - **`sword_of_michael::max_chain_length=6`** silently overridden by the `@property` returning `len(chain_multipliers)`. Works incidentally; JSON field is authoritative-in-name-only.
 - **`ammo.shotgun_shell` + `boomstick`** both `min_level: 9999`. No natural discovery path.

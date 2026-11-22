@@ -425,7 +425,7 @@ sidebar and character sheet show "Everything's Right 2:10" while it plays
 
 The first is **Caviar and Tater Tots** (`dish_caviar_and_tater_tots`: caviar and tater tots,
 the song's own art cut from its album cover). Both foods are rare plain finds (about one food
-find in fifty each, every band), good to eat as they are with a line of their own (`eat_line`);
+find in fifty each, every band), good to eat as they are with a line of their own (`eat_line`; a food may also end an ill as it is eaten, `stops`: the healing herb stops bleeding);
 caviar sells dear and tater tots for next to nothing (`data/item_worth.json`). They go into no
 other dish (`build_kitchen.SONG_FOOD`), and the dish shows on the menu only once both are held
 (a ration alone builds toward nothing). Robyn starts with one of each (`_start_food`). Cooking it

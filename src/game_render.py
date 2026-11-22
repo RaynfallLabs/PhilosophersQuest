@@ -33,7 +33,7 @@ from fantasy_ui import (FP, KT, get_font, draw_dark_panel,
                          draw_key_hints, draw_key_badge, key_hints_height,
                          display_title, kit_on, display_text, fit_text,
                          divider_reach, confused_color)
-from items import (Weapon, Armor, Shield, Corpse, Accessory,
+from items import (Weapon, Armor, Shield, Corpse, Accessory, worn_statuses,
                    Wand, Scroll, Spellbook, Ammo, Food, Potion)
 from game_helpers import (
     wrap_text as _gh_wrap_text,
@@ -965,8 +965,9 @@ class RenderMixin:
                     lines.append(f"{fx['stat']} {int(fx.get('amount', 0)):+d}")
                 if 'stat2' in fx:
                     lines.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
-                if 'status' in fx:
-                    lines.append(f"Grants {str(fx['status']).replace('_', ' ').title()}")
+                if worn_statuses(fx):
+                    lines.append("Grants " + " and ".join(
+                        str(s).replace('_', ' ').title() for s in worn_statuses(fx)))
             cb = getattr(item, 'carry_bonus', None) or {}
             if cb.get('stat') and cb.get('amount'):
                 lines.append(f"{cb['stat']} +{cb['amount']} while carried")
@@ -4595,6 +4596,11 @@ class RenderMixin:
                     ls = 0.0
                 if ls > 0:
                     out.append(f"Heals you by {ls * 100 if ls <= 1 else ls:.0f}% of the damage it deals.")
+                ca = float(getattr(item, 'counter_attack_chance', 0) or 0) or float(_wd.item_def(
+                    'weapon', getattr(item, 'id', '')).get('counter_attack_chance', 0) or 0)
+                if ca > 0:
+                    out.append(f"When a foe beside you lands a blow, it has a {ca * 100:.0f}% chance "
+                               f"to strike back by itself.")
         if isinstance(item, Shield) and _g.is_light(item):
             # A torch or a lantern: what it lights, its power, its burn, its
             # price (lights.card_lines), and no AC.
@@ -4631,9 +4637,10 @@ class RenderMixin:
                 bits.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
             if bits:
                 out.append(', '.join(bits))
-        status = getattr(item, 'on_equip_status', '') or ((getattr(item, 'effects', {}) or {}).get('status')
-                                                          if isinstance(item, Accessory) else '')
-        if status:
+        own = getattr(item, 'on_equip_status', '') or ''
+        lent = [own] if own else (worn_statuses(getattr(item, 'effects', None))
+                                  if isinstance(item, Accessory) else [])
+        for status in lent:
             from status_effects import EFFECT_INFO as _EI
             info = _EI.get(status)
             name = info[0] if info else _cap(str(status).replace('_', ' '))
@@ -5722,8 +5729,8 @@ class RenderMixin:
                 elif isinstance(item, Accessory):
                     if self._item_is_known(item):
                         fx = item.effects
-                        if 'status' in fx:
-                            detail = f"Grants {_cap(fx['status'])}"
+                        if worn_statuses(fx):
+                            detail = f"Grants {' and '.join(_cap(s) for s in worn_statuses(fx))}"
                         elif 'stat' in fx:
                             detail = f"{fx['stat']} +{fx.get('amount', 0)}"
                         elif getattr(item, 'slot', '') == 'none':
@@ -6593,6 +6600,7 @@ class RenderMixin:
             for attr, label in (('stun_chance', 'Stun'), ('bleed_chance', 'Bleed'),
                                 ('poison_chance', 'Poison'), ('burn_chance', 'Burn'),
                                 ('confuse_chance', 'Confuse'),
+                                ('counter_attack_chance', 'Strikes Back'),
                                 ('lifesteal_percent', 'Lifesteal')):
                 try:
                     v = float(getattr(w, attr, 0) or 0)
@@ -6649,8 +6657,8 @@ class RenderMixin:
             parts.append(f"{fx['stat']} +{fx.get('amount', 0)}")
         if 'stat2' in fx:
             parts.append(f"{fx['stat2']} +{fx.get('amount2', 0)}")
-        if 'status' in fx:
-            parts.append(f"Grants {_cap(fx['status'])}")
+        if worn_statuses(fx):
+            parts.append(f"Grants {' and '.join(_cap(s) for s in worn_statuses(fx))}")
         return ', '.join(parts) if parts else '-'
 
     def _kit_armour_rows(self, item, short: bool = False) -> list:
@@ -9955,7 +9963,10 @@ class RenderMixin:
         parts = [f"{int(v)} {unit}" for v, unit in
                  ((self._food_sp(item), 'SP'),
                   (getattr(item, 'hp_restore', 0) or 0, 'HP')) if v]
-        return "Restores " + " and ".join(parts) if parts else "Restores nothing"
+        text = "Restores " + " and ".join(parts) if parts else "Restores nothing"
+        from food_system import food_stops
+        ills = [str(e).replace('_', ' ') for e in food_stops(item)]
+        return f"{text}; stops {' and '.join(ills)}" if ills else text
 
     def _lore_enchant_text(self, item) -> str:
         """The enchantment, once this copy is identified or its kind known
@@ -10109,8 +10120,8 @@ class RenderMixin:
                     parts.append(f"{fx['stat']} {int(fx.get('amount', 0)):+d}")
                 if 'stat2' in fx:
                     parts.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
-                if 'status' in fx:
-                    parts.append(f"Grants {_cap(fx['status'])}")
+                if worn_statuses(fx):
+                    parts.append(f"Grants {' and '.join(_cap(s) for s in worn_statuses(fx))}")
                 lines.append(("Effect: " + ', '.join(parts), FP.CYAN_ACCENT, self.font_sm))
             lines.append((self._lore_equip_line(item), FP.BODY_TEXT, self.font_sm))
 
@@ -10868,8 +10879,8 @@ class RenderMixin:
             effects = entry.get('effects', {}) or {}
             if 'stat' in effects:
                 return f"{effects.get('stat')} {int(effects.get('amount', 0)):+d}"
-            if 'status' in effects:
-                return f"Grants {_cap(effects.get('status'))}"
+            if worn_statuses(effects):
+                return f"Grants {' and '.join(_cap(s) for s in worn_statuses(effects))}"
             return 'accessory'
         if category in ('wand', 'scroll'):
             return f"Effect: {entry.get('effect', '?')}"
@@ -11033,8 +11044,8 @@ class RenderMixin:
                     bits.append(f"{effects.get('stat')} {int(effects.get('amount', 0)):+d}")
                 if 'stat2' in effects:
                     bits.append(f"{effects.get('stat2')} {int(effects.get('amount2', 0)):+d}")
-                if 'status' in effects:
-                    bits.append(f"Grants {_cap(effects.get('status'))}")
+                if worn_statuses(effects):
+                    bits.append(f"Grants {' and '.join(_cap(s) for s in worn_statuses(effects))}")
                 lines.append(("Effect: " + ', '.join(bits), FP.BODY_TEXT, self.font_sm))
         elif category == 'wand':
             lines += [

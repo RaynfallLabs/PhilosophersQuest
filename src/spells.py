@@ -439,7 +439,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Omnisight', 'effect': 'identify_item', 'power': '',
         'mp_cost': 20, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'detect_magic',
-        'desc': 'Shows blessed or cursed: worn gear but the belt; wands, scrolls and books seen or carried.',
+        'desc': 'Shows blessed or cursed: every item on the floor, in your pack and worn.',
     },
 
     # ==================================================================
