@@ -7,7 +7,7 @@
   "benefit": "INT",
   "trophy": true,
   "permanent": "all_stats_plus_1",
-  "flavor": "Apocalypse Pottage — every axis of the self rises together.",
+  "flavor": "The Apocalypse Pottage raises every part of the self together.",
   "art": "recipe_trophy_abaddon_destroyer_recipe"
  },
  "cook_aboleth_lesser": {
@@ -25,7 +25,7 @@
    "abyssal_behemoth_prime"
   ],
   "benefit": "sp",
-  "flavor": "A whole bowl and you will not want food for days.",
+  "flavor": "After a whole bowl you will not want food for days.",
   "art": "dish_stew_t4_sp"
  },
  "cook_abyssal_dragon": {
@@ -43,7 +43,7 @@
    "abyssal_hound_prime"
   ],
   "benefit": "PER",
-  "flavor": "Pungent; you smell an ambush three rooms away.",
+  "flavor": "This pungent broth lets you smell an ambush three rooms away.",
   "art": "dish_soup_t3_stat"
  },
  "cook_abyssal_kelp": {
@@ -61,7 +61,7 @@
    "abyssal_mimic_prime"
   ],
   "benefit": "warning",
-  "flavor": "Sour; you feel the trap before you step in it.",
+  "flavor": "Sour; you feel the ambush before it springs.",
   "art": "dish_soup_t4_special"
  },
  "cook_acid_blob": {
@@ -79,7 +79,7 @@
    "adult_blue_dragon_prime"
   ],
   "benefit": "shock_resist",
-  "flavor": "It crackles in the mouth; lightning stops stinging.",
+  "flavor": "It crackles in the mouth, and lightning stops stinging you.",
   "art": "dish_fritter_t2_special"
  },
  "cook_altar_incense": {
@@ -88,7 +88,7 @@
    "altar_incense"
   ],
   "benefit": "WIS",
-  "flavor": "Sweet smoke; your thoughts settle.",
+  "flavor": "Its sweet smoke settles your thoughts.",
   "art": "dish_drink_t1_stat"
  },
  "cook_ammit_spawn": {
@@ -106,7 +106,7 @@
    "anansi_prime"
   ],
   "benefit": "WIS",
-  "flavor": "Each bite tells a tale; you grow wiser.",
+  "flavor": "Each bite tells a tale, and you grow wiser.",
   "art": "dish_sausage_t5_stat"
  },
  "cook_anubis_guardian": {
@@ -115,7 +115,7 @@
    "anubis_guardian_prime"
   ],
   "benefit": "mp",
-  "flavor": "Bitter and balanced; magic settles into you.",
+  "flavor": "Bitter and well balanced, it settles magic into you.",
   "art": "dish_soup_t3_mp"
  },
  "cook_apocalypse_herald": {
@@ -124,7 +124,7 @@
    "apocalypse_herald_prime"
   ],
   "benefit": "hp",
-  "flavor": "Iron-red and heavy; you feel hard to kill.",
+  "flavor": "Iron-red and heavy, it makes you feel hard to kill.",
   "art": "dish_roast_t5_hp"
  },
  "cook_arachne": {
@@ -133,7 +133,7 @@
    "arachne_prime"
   ],
   "benefit": "DEX",
-  "flavor": "Neat and nimble; your fingers fly.",
+  "flavor": "This neat, nimble steak sets your fingers flying.",
   "art": "dish_steak_t1_stat"
  },
  "cook_arcane_golem": {
@@ -162,7 +162,7 @@
   "benefit": "save_guard_all",
   "trophy": true,
   "permanent": "one_time_death_save",
-  "flavor": "Infernal Compact — the ink dries in the blood.",
+  "flavor": "The ink of the Infernal Compact dries in your blood.",
   "art": "recipe_trophy_asmodeus_recipe"
  },
  "cook_assassin_vine": {
@@ -180,7 +180,7 @@
    "asterion_minotaur_prime"
   ],
   "benefit": "hp",
-  "flavor": "A ham for a hall of heroes; wounds close.",
+  "flavor": "This ham for a hall of heroes will close your wounds.",
   "art": "dish_roast_t1_hp"
  },
  "trophy_asterion_minotaur_recipe": {
@@ -191,7 +191,7 @@
   "benefit": "STR",
   "trophy": true,
   "permanent": "plus_2_str_confuse_immune",
-  "flavor": "Crown of the Labyrinth — the maze itself hums under your skin.",
+  "flavor": "In the Crown of the Labyrinth the maze itself hums under your skin.",
   "art": "recipe_trophy_asterion_minotaur_recipe"
  },
  "cook_astral_horror": {
@@ -209,7 +209,7 @@
    "ba_spirit_prime"
   ],
   "benefit": "mp",
-  "flavor": "Pale and calm; your mana rises like the Nile.",
+  "flavor": "This pale, calm broth makes your mana rise like the Nile.",
   "art": "dish_soup_t1_mp"
  },
  "cook_baba_yaga": {
@@ -218,7 +218,7 @@
    "baba_yaga_prime"
   ],
   "benefit": "hp",
-  "flavor": "Golden pastries from a witch's oven; you feel mended.",
+  "flavor": "These golden pastries from a witch's oven make you feel mended.",
   "art": "dish_roast_t3_hp"
  },
  "cook_balor_lesser": {
@@ -227,7 +227,7 @@
    "balor_lesser_prime"
   ],
   "benefit": "fire_resist",
-  "flavor": "It catches fire twice. After that, fire stops bothering you.",
+  "flavor": "It catches fire twice, and after that fire stops bothering you.",
   "art": "dish_flambe_t2_special"
  },
  "cook_banshee": {
@@ -236,7 +236,7 @@
    "banshee_prime"
   ],
   "benefit": "WIS",
-  "flavor": "Thin and mournful; you know what is coming.",
+  "flavor": "This thin, mournful broth lets you know what is coming.",
   "art": "dish_soup_t1_stat"
  },
  "cook_basilisk": {
@@ -263,7 +263,7 @@
    "behir_lesser_prime"
   ],
   "benefit": "shock_resist",
-  "flavor": "It sparks; lightning stops hurting.",
+  "flavor": "It sparks as you eat, and lightning stops hurting.",
   "art": "dish_roast_t2_special"
  },
  "cook_beholder": {
@@ -281,7 +281,7 @@
    "black_pudding_prime"
   ],
   "benefit": "hp",
-  "flavor": "Breakfast of heroes; it mends you.",
+  "flavor": "This breakfast of heroes will mend you.",
   "art": "dish_sausage_t2_hp"
  },
  "cook_blink_dog": {
@@ -301,7 +301,7 @@
   "benefit": "hp",
   "trophy": true,
   "permanent": "lifesteal_5pct_on_melee",
-  "flavor": "Sanguine Vitae — the rich red pours warm through you.",
+  "flavor": "The rich red Sanguine Vitae pours warm through you.",
   "art": "recipe_trophy_blood_archon_recipe"
  },
  "cook_boggart": {
@@ -319,7 +319,7 @@
    "bone_colossus_prime"
   ],
   "benefit": "STR",
-  "flavor": "It needs a cart to carry; it makes you strong.",
+  "flavor": "It needs a cart to carry it, but it makes you strong.",
   "art": "dish_roast_t2_stat"
  },
  "cook_bone_devil": {
@@ -328,7 +328,7 @@
    "bone_devil_prime"
   ],
   "benefit": "STR",
-  "flavor": "Salty and fierce; it puts iron in the shoulders.",
+  "flavor": "Salty and fierce, it puts iron in the shoulders.",
   "art": "dish_stew_t2_stat"
  },
  "cook_bone_golem": {
@@ -346,7 +346,7 @@
    "bone_witch_prime"
   ],
   "benefit": "mp",
-  "flavor": "Thin violet broth that crackles with spells.",
+  "flavor": "The thin violet broth crackles with spells.",
   "art": "dish_soup_t1_mp"
  },
  "cook_bugbear": {
@@ -364,7 +364,7 @@
    "bullywug_prime"
   ],
   "benefit": "sp",
-  "flavor": "Tastes like chicken; fills like a feast.",
+  "flavor": "It tastes like chicken and fills you like a feast.",
   "art": "dish_sausage_t1_sp"
  },
  "cook_burning_skeleton": {
@@ -373,7 +373,7 @@
    "burning_skeleton_prime"
   ],
   "benefit": "fire_resist",
-  "flavor": "It lights itself; fire stops hurting you.",
+  "flavor": "It lights itself, and fire stops hurting you.",
   "art": "dish_flambe_t1_special"
  },
  "cook_cacus": {
@@ -382,7 +382,7 @@
    "cacus_prime"
   ],
   "benefit": "STR",
-  "flavor": "Smoky beef; the strength of Heracles' herd.",
+  "flavor": "This smoky beef has the strength of Heracles' herd.",
   "art": "dish_sausage_t3_stat"
  },
  "cook_camazotz": {
@@ -391,7 +391,7 @@
    "camazotz_prime"
   ],
   "benefit": "dark_vision",
-  "flavor": "Sharp and cold; the dark turns grey and clear.",
+  "flavor": "Sharp and cold, it turns the dark grey and clear.",
   "art": "dish_soup_t2_special"
  },
  "cook_carbuncle": {
@@ -400,7 +400,7 @@
    "carbuncle_prime"
   ],
   "benefit": "mp",
-  "flavor": "It glows faintly red; your mana glows too.",
+  "flavor": "It glows faintly red and sets your mana glowing too.",
   "art": "dish_roast_t1_mp"
  },
  "cook_carrion_crawler": {
@@ -427,7 +427,7 @@
    "catoblepas_prime"
   ],
   "benefit": "hp",
-  "flavor": "Heavy and rich; your wounds close.",
+  "flavor": "Heavy and rich, it closes your wounds.",
   "art": "dish_steak_t3_hp"
  },
  "cook_cave_bear": {
@@ -436,7 +436,7 @@
    "cave_bear_prime"
   ],
   "benefit": "hp",
-  "flavor": "Thick, red and mending; a bear's whole autumn on one plate.",
+  "flavor": "A bear's whole autumn is on this plate, thick and red and mending.",
   "art": "dish_steak_t1_hp"
  },
  "cook_cave_mushroom": {
@@ -454,7 +454,7 @@
    "cerberus_prime"
   ],
   "benefit": "fear_immune",
-  "flavor": "Three bites and fear has nothing to grip.",
+  "flavor": "After three bites fear has nothing to grip.",
   "art": "dish_steak_t5_special"
  },
  "cook_changeling": {
@@ -463,7 +463,7 @@
    "changeling_prime"
   ],
   "benefit": "displacement",
-  "flavor": "It shimmers; enemies swing at where you are not.",
+  "flavor": "It shimmers, and your enemies swing at where you are not.",
   "art": "dish_jelly_t1_special"
  },
  "cook_chaos_troll": {
@@ -499,7 +499,7 @@
    "chimera_prime"
   ],
   "benefit": "fire_resist",
-  "flavor": "Three flavours and a fire that does not burn you.",
+  "flavor": "The steak has three flavours and a fire that does not burn you.",
   "art": "dish_steak_t2_special"
  },
  "cook_clay_golem": {
@@ -508,7 +508,7 @@
    "clay_golem_prime"
   ],
   "benefit": "hp",
-  "flavor": "Earthy and thick; cuts close as if smoothed shut.",
+  "flavor": "Earthy and thick, it closes cuts as if smoothing them shut.",
   "art": "dish_stew_t2_hp"
  },
  "cook_clockwork_horror": {
@@ -517,7 +517,7 @@
    "clockwork_horror_prime"
   ],
   "benefit": "INT",
-  "flavor": "Crunchy, ticking candy; ideas fall into place.",
+  "flavor": "This crunchy, ticking candy makes ideas fall into place.",
   "art": "dish_fritter_t2_stat"
  },
  "cook_cloud_giant": {
@@ -526,7 +526,7 @@
    "cloud_giant_prime"
   ],
   "benefit": "WIS",
-  "flavor": "Rises in the pan; your thoughts rise with it.",
+  "flavor": "It rises in the pan, and your thoughts rise with it.",
   "art": "dish_pudding_t3_stat"
  },
  "cook_cobra": {
@@ -535,7 +535,7 @@
    "cobra_prime"
   ],
   "benefit": "DEX",
-  "flavor": "Quick, lean meat; your strike quickens.",
+  "flavor": "The quick, lean meat will quicken your strike.",
   "art": "dish_steak_t1_stat"
  },
  "cook_cockatrice": {
@@ -544,7 +544,7 @@
    "cockatrice_prime"
   ],
   "benefit": "save_guard_CON",
-  "flavor": "Tastes like chicken, if chicken could turn you to stone.",
+  "flavor": "It tastes like chicken, if chicken could turn you to stone.",
   "art": "dish_leg_t1_special"
  },
  "cook_corrupted_angel": {
@@ -553,7 +553,7 @@
    "corrupted_angel_prime"
   ],
   "benefit": "hp",
-  "flavor": "Golden, glowing, and it closes wounds you had forgotten.",
+  "flavor": "Golden and glowing, it closes wounds you had forgotten.",
   "art": "dish_stew_t5_hp"
  },
  "cook_corrupted_treant": {
@@ -562,7 +562,7 @@
    "corrupted_treant_prime"
   ],
   "benefit": "hp",
-  "flavor": "Bitter, then sweet; your wounds close like bark.",
+  "flavor": "Bitter and then sweet, it closes your wounds like bark.",
   "art": "dish_stew_t4_hp"
  },
  "cook_cow_king": {
@@ -580,7 +580,7 @@
    "crypt_thing_prime"
   ],
   "benefit": "mp",
-  "flavor": "Thin and humming; your mana fills.",
+  "flavor": "The thin broth hums, and your mana fills.",
   "art": "dish_soup_t1_mp"
  },
  "cook_crystal_ooze": {
@@ -607,7 +607,7 @@
    "cyclops_prime"
   ],
   "benefit": "sp",
-  "flavor": "Herb-sharp mutton: a shepherd's supper.",
+  "flavor": "This herb-sharp mutton is a shepherd's supper.",
   "art": "dish_sausage_t2_sp"
  },
  "cook_darkmantle": {
@@ -616,7 +616,7 @@
    "darkmantle_prime"
   ],
   "benefit": "sp",
-  "flavor": "Seared by feel, eaten in the dark; you will not be hungry for hours.",
+  "flavor": "Seared by feel and eaten in the dark, it will keep hunger from you for hours.",
   "art": "dish_steak_t1_sp"
  },
  "cook_death_dog": {
@@ -652,7 +652,7 @@
    "death_mage_prime"
   ],
   "benefit": "INT",
-  "flavor": "Thin and thoughtful; the mind sharpens.",
+  "flavor": "This thin, thoughtful broth sharpens the mind.",
   "art": "dish_soup_t2_stat"
  },
  "cook_deep_iron": {
@@ -661,7 +661,7 @@
    "deep_iron"
   ],
   "benefit": "STR",
-  "flavor": "Tastes of the forge; your arms harden.",
+  "flavor": "It tastes of the forge, and your arms harden.",
   "art": "dish_stew_t2_stat"
  },
  "cook_deep_one_priest": {
@@ -679,7 +679,7 @@
    "demon_knight_prime"
   ],
   "benefit": "STR",
-  "flavor": "It boils by itself; your swing gets heavier.",
+  "flavor": "It boils by itself and lends weight to your swing.",
   "art": "dish_stew_t2_stat"
  },
  "cook_demonic_trickster": {
@@ -688,7 +688,7 @@
    "demonic_trickster_prime"
   ],
   "benefit": "mp",
-  "flavor": "It looks like one thing and tastes like another; your magic loves it.",
+  "flavor": "It looks like one thing and tastes like another, and your magic loves it.",
   "art": "dish_jelly_t3_mp"
  },
  "cook_dire_lion": {
@@ -697,7 +697,7 @@
    "dire_lion_prime"
   ],
   "benefit": "hp",
-  "flavor": "It roars on the fire; your wounds close.",
+  "flavor": "It roars on the fire, and your wounds close.",
   "art": "dish_leg_t3_hp"
  },
  "cook_displacer_beast": {
@@ -715,7 +715,7 @@
    "dracolich_prime"
   ],
   "benefit": "drain_resist",
-  "flavor": "Cold as a tomb; nothing can drain you.",
+  "flavor": "Cold as a tomb, it lets nothing drain you.",
   "art": "dish_soup_t3_special"
  },
  "cook_drake_fire": {
@@ -733,7 +733,7 @@
    "draugr_prime"
   ],
   "benefit": "CON",
-  "flavor": "Heavy and sullen; you feel hard to move.",
+  "flavor": "Heavy and sullen, it makes you feel hard to move.",
   "art": "dish_stew_t4_stat"
  },
  "cook_dretch": {
@@ -760,7 +760,7 @@
    "dullahan_spawn_prime"
   ],
   "benefit": "fear_immune",
-  "flavor": "Dark broth; fear finds nothing to hold.",
+  "flavor": "After this dark broth, fear finds nothing to hold.",
   "art": "dish_soup_t2_special"
  },
  "cook_each_uisce": {
@@ -769,7 +769,7 @@
    "each_uisce_prime"
   ],
   "benefit": "mp",
-  "flavor": "Cold and deep; mana rises like a tide.",
+  "flavor": "Cold and deep, it raises your mana like a tide.",
   "art": "dish_soup_t2_mp"
  },
  "cook_earth_elemental": {
@@ -787,7 +787,7 @@
    "echidna_prime"
   ],
   "benefit": "hp",
-  "flavor": "Rich and dark; it mends what monsters broke.",
+  "flavor": "Rich and dark, it mends what monsters broke.",
   "art": "dish_steak_t2_hp"
  },
  "cook_entropy_elemental": {
@@ -796,7 +796,7 @@
    "entropy_elemental_prime"
   ],
   "benefit": "magic_resist",
-  "flavor": "It tastes of nothing finishing; spells fray before they touch you.",
+  "flavor": "It tastes of the end of all things, and spells fray before they touch you.",
   "art": "dish_soup_t5_special"
  },
  "cook_erinyes_lesser": {
@@ -814,7 +814,7 @@
    "erlking_prime"
   ],
   "benefit": "mp",
-  "flavor": "Cool and misty; your spells gather like fog.",
+  "flavor": "Cool and misty, it gathers your spells like fog.",
   "art": "dish_soup_t2_mp"
  },
  "cook_ethereal_filcher": {
@@ -834,7 +834,7 @@
   "benefit": "hp",
   "trophy": true,
   "permanent": "max_hp_per_floor_descent",
-  "flavor": "Heart of the Dragon — a slow, terrible warmth spreads out from the middle.",
+  "flavor": "The Heart of the Dragon spreads a slow, terrible warmth out from the middle.",
   "art": "recipe_trophy_fafnir_dragon_recipe"
  },
  "cook_fenrir_pup": {
@@ -843,7 +843,7 @@
    "fenrir_pup_prime"
   ],
   "benefit": "STR",
-  "flavor": "It snarls in the pan; your bite gets sharper.",
+  "flavor": "It snarls in the pan and gives you a sharper bite.",
   "art": "dish_leg_t4_stat"
  },
  "trophy_fenrir_wolf_recipe": {
@@ -863,7 +863,7 @@
    "fetch_prime"
   ],
   "benefit": "warning",
-  "flavor": "Thin and uneasy; your neck prickles at danger.",
+  "flavor": "The thin, uneasy broth makes your neck prickle at danger.",
   "art": "dish_soup_t1_special"
  },
  "cook_fionn_hound": {
@@ -881,7 +881,7 @@
    "fire_beetle_prime"
   ],
   "benefit": "dark_vision",
-  "flavor": "They glow on the plate; the dark lights up.",
+  "flavor": "They glow on the plate, and the dark lights up.",
   "art": "dish_skewer_t1_special"
  },
  "cook_fire_elemental": {
@@ -908,7 +908,7 @@
    "flesh_colossus_prime"
   ],
   "benefit": "hp",
-  "flavor": "Hot and heavy; your wounds knit like stitching.",
+  "flavor": "Hot and heavy, it knits your wounds like stitching.",
   "art": "dish_stew_t5_hp"
  },
  "cook_flesh_golem": {
@@ -935,7 +935,7 @@
    "frost_crawler_prime"
   ],
   "benefit": "sp",
-  "flavor": "Fatty and filling for a long cold walk.",
+  "flavor": "Its fat will fill you for a long, cold walk.",
   "art": "dish_roast_t4_sp"
  },
  "cook_frost_giant": {
@@ -944,7 +944,7 @@
    "frost_giant_prime"
   ],
   "benefit": "cold_resist",
-  "flavor": "It never quite thaws; neither will the cold reach you.",
+  "flavor": "It never quite thaws, and the cold will not reach you either.",
   "art": "dish_stew_t3_special"
  },
  "cook_frost_skeleton": {
@@ -1025,7 +1025,7 @@
    "giant_mantis_prime"
   ],
   "benefit": "DEX",
-  "flavor": "Lean and fast; you strike first.",
+  "flavor": "This lean, fast meat lets you strike first.",
   "art": "dish_steak_t1_stat"
  },
  "cook_giant_rat": {
@@ -1043,7 +1043,7 @@
    "giant_scorpion_prime"
   ],
   "benefit": "STR",
-  "flavor": "Crack it open; strength pours out.",
+  "flavor": "When you crack it open, strength pours out.",
   "art": "dish_stew_t2_stat"
  },
  "cook_giant_spider": {
@@ -1070,7 +1070,7 @@
    "gibbering_mouther_prime"
   ],
   "benefit": "sp",
-  "flavor": "It mutters while it simmers. Eat it before it finishes a sentence.",
+  "flavor": "It mutters while it simmers, so eat it before it can finish a sentence.",
   "art": "dish_sausage_t1_sp"
  },
  "cook_gilded_mimic": {
@@ -1106,7 +1106,7 @@
    "goblin_king_prime"
   ],
   "benefit": "STR",
-  "flavor": "Greasy and grand; you swagger a little after.",
+  "flavor": "Greasy and grand, it makes you swagger a little afterward.",
   "art": "dish_bread_t1_stat"
  },
  "cook_goblin": {
@@ -1115,7 +1115,7 @@
    "goblin_prime"
   ],
   "benefit": "sp",
-  "flavor": "Chewy, salty and endless; it keeps a crawler going.",
+  "flavor": "Chewy, salty and endless, it keeps a delver going.",
   "art": "dish_stew_t1_sp"
  },
  "cook_gorgon_warrior": {
@@ -1142,7 +1142,7 @@
    "gravehound_prime"
   ],
   "benefit": "PER",
-  "flavor": "Strong-smelling; so is the world, for a while.",
+  "flavor": "It smells strongly, and so does the world for a while.",
   "art": "dish_bread_t1_stat"
  },
  "trophy_green_knight_recipe": {
@@ -1153,7 +1153,7 @@
   "benefit": "hp",
   "trophy": true,
   "permanent": "revive_once_at_half_hp",
-  "flavor": "Honor-Bound Sash — the vow settles heavy and warm.",
+  "flavor": "The vow in the Honor-Bound Sash settles heavy and warm on you.",
   "art": "recipe_trophy_green_knight_recipe"
  },
  "cook_green_slime": {
@@ -1198,7 +1198,7 @@
    "griffin_prime"
   ],
   "benefit": "hp",
-  "flavor": "Slow-cooked in its own fat; your wounds close.",
+  "flavor": "Slow-cooked in its own fat, it will close your wounds.",
   "art": "dish_roast_t2_hp"
  },
  "cook_harpy": {
@@ -1261,7 +1261,7 @@
    "hollow_one_prime"
   ],
   "benefit": "sp",
-  "flavor": "Plain, filling, and better than it sounds.",
+  "flavor": "Plain and filling, it is better than it sounds.",
   "art": "dish_porridge_t1_sp"
  },
  "cook_holy_water": {
@@ -1279,7 +1279,7 @@
    "homunculus_prime"
   ],
   "benefit": "mp",
-  "flavor": "A sip of a wizard's errand-boy; your mana stirs.",
+  "flavor": "One sip of a wizard's errand-boy sets your mana stirring.",
   "art": "dish_drink_t1_mp"
  },
  "cook_hook_horror": {
@@ -1288,7 +1288,7 @@
    "hook_horror_prime"
   ],
   "benefit": "INT",
-  "flavor": "Every bite clicks; you think in clean lines.",
+  "flavor": "Every bite clicks, and you think in clean lines.",
   "art": "dish_steak_t2_stat"
  },
  "trophy_hrungnirs_ghost_recipe": {
@@ -1299,7 +1299,7 @@
   "benefit": "CON",
   "trophy": true,
   "permanent": "plus_2_con_petrify_immune",
-  "flavor": "Stone-Heart Loaf — the deep patience settles into the bones.",
+  "flavor": "The deep patience of the Stone-Heart Loaf settles into your bones.",
   "art": "recipe_trophy_hrungnirs_ghost_recipe"
  },
  "cook_huecuva": {
@@ -1317,7 +1317,7 @@
    "hugin_raven_prime"
   ],
   "benefit": "PER",
-  "flavor": "Dark meat with a sharp edge; you catch every movement.",
+  "flavor": "The dark, sharp-edged meat lets you catch every movement.",
   "art": "dish_roast_t1_stat"
  },
  "cook_hydra": {
@@ -1362,7 +1362,7 @@
    "incubus_prime"
   ],
   "benefit": "WIS",
-  "flavor": "Sweet, then sharp; you see through pretty faces.",
+  "flavor": "First sweet, then sharp, it lets you see through pretty faces.",
   "art": "dish_soup_t2_stat"
  },
  "cook_iron_golem": {
@@ -1380,7 +1380,7 @@
    "iron_sentinel_prime"
   ],
   "benefit": "PER",
-  "flavor": "You will not blink for an hour, and you will not miss a thing.",
+  "flavor": "You will not blink for an hour, nor will you miss a thing.",
   "art": "dish_soup_t2_stat"
  },
  "cook_jiangshi": {
@@ -1407,7 +1407,7 @@
    "jormungandr_spawn_prime"
   ],
   "benefit": "INT",
-  "flavor": "Deep and briny; your mind uncoils.",
+  "flavor": "Deep and briny, it uncoils your mind.",
   "art": "dish_steak_t4_stat"
  },
  "cook_kobold": {
@@ -1416,7 +1416,7 @@
    "kobold_prime"
   ],
   "benefit": "DEX",
-  "flavor": "Small, sharp and spicy; your fingers find the gaps.",
+  "flavor": "Small, sharp and spicy, it helps your fingers find the gaps.",
   "art": "dish_sausage_t1_stat"
  },
  "cook_kuo_toa": {
@@ -1434,7 +1434,7 @@
    "kusarikku_prime"
   ],
   "benefit": "CON",
-  "flavor": "Thick and stubborn; you hold your ground.",
+  "flavor": "Thick and stubborn, they help you hold your ground.",
   "art": "dish_sausage_t5_stat"
  },
  "cook_lahamu": {
@@ -1488,7 +1488,7 @@
    "lindworm_prime"
   ],
   "benefit": "CON",
-  "flavor": "Crunchy and tough; you feel hard to knock down.",
+  "flavor": "Crunchy and tough, it makes you feel hard to knock down.",
   "art": "dish_fritter_t1_stat"
  },
  "cook_lizardfolk": {
@@ -1506,7 +1506,7 @@
    "locust_swarmlord_prime"
   ],
   "benefit": "sp",
-  "flavor": "It crunches like a harvest; the hunger flees.",
+  "flavor": "It crunches like a harvest, and your hunger flees.",
   "art": "dish_roast_t4_sp"
  },
  "cook_lurker_above": {
@@ -1515,7 +1515,7 @@
    "lurker_above_prime"
   ],
   "benefit": "sp",
-  "flavor": "It falls on you all at once. So does the fullness.",
+  "flavor": "It falls on you all at once, and so does the fullness.",
   "art": "dish_stew_t2_sp"
  },
  "cook_lurking_horror": {
@@ -1533,7 +1533,7 @@
    "magma_elemental_prime"
   ],
   "benefit": "fire_resist",
-  "flavor": "Dip bread in molten rock. Do not ask how.",
+  "flavor": "Dip bread in molten rock, and do not ask how.",
   "art": "dish_flambe_t3_special"
  },
  "cook_manticore": {
@@ -1551,7 +1551,7 @@
    "marilith_spawn_prime"
   ],
   "benefit": "DEX",
-  "flavor": "Fast in the pan; your hands feel like six.",
+  "flavor": "It fries fast and makes your hands feel like six.",
   "art": "dish_stirfry_t2_stat"
  },
  "trophy_medusa_gorgon_recipe": {
@@ -1562,7 +1562,7 @@
   "benefit": "save_guard_CON",
   "trophy": true,
   "permanent": "petrify_immunity",
-  "flavor": "Gorgon's Antitoxin — the mirror-drink; the gaze is now yours to answer, not to fear.",
+  "flavor": "The Gorgon's Antitoxin is the mirror-drink, by which you may answer the gaze and need not fear it.",
   "art": "recipe_trophy_medusa_gorgon_recipe"
  },
  "cook_medusa": {
@@ -1598,7 +1598,7 @@
    "minotaur_prime"
   ],
   "benefit": "STR",
-  "flavor": "A ham you have to fight; it makes you a fighter.",
+  "flavor": "You must fight this ham, and it will make you a fighter.",
   "art": "dish_roast_t1_stat"
  },
  "cook_mohrg": {
@@ -1607,7 +1607,7 @@
    "mohrg_prime"
   ],
   "benefit": "DEX",
-  "flavor": "Snappy and quick; your hands quicken.",
+  "flavor": "Snappy and quick, it quickens your hands.",
   "art": "dish_fritter_t2_stat"
  },
  "cook_moss_sentinel": {
@@ -1616,7 +1616,7 @@
    "moss_sentinel_prime"
   ],
   "benefit": "CON",
-  "flavor": "Earthy and patient; you stand like a standing stone.",
+  "flavor": "Earthy and patient, it makes you stand like a standing stone.",
   "art": "dish_soup_t2_stat"
  },
  "cook_mud_crawler": {
@@ -1661,7 +1661,7 @@
    "nalfeshnee_lesser_prime"
   ],
   "benefit": "WIS",
-  "flavor": "Rich and stern; you think twice before acting, and act right.",
+  "flavor": "Rich and stern, it makes you think twice before acting, and so act right.",
   "art": "dish_stew_t2_stat"
  },
  "cook_nemean_lion": {
@@ -1670,7 +1670,7 @@
    "nemean_lion_prime"
   ],
   "benefit": "shielded",
-  "flavor": "Tough as its hide; blades glance off you.",
+  "flavor": "Tough as lion hide, it makes blades glance off you.",
   "art": "dish_leg_t1_special"
  },
  "cook_nidhogg_brood": {
@@ -1690,7 +1690,7 @@
   "benefit": "mp",
   "trophy": true,
   "permanent": "max_mp_per_floor_descent_and_poison_immunity",
-  "flavor": "Root-Gnawer Brew — the earth's slow toxin becomes a hum you carry.",
+  "flavor": "In the Root-Gnawer Brew the earth's slow toxin becomes a hum you carry.",
   "art": "recipe_trophy_nidhoggr_fragment_recipe"
  },
  "cook_night_hag": {
@@ -1699,7 +1699,7 @@
    "night_hag_prime"
   ],
   "benefit": "mp",
-  "flavor": "Dark violet syrup; your dreams turn to spells.",
+  "flavor": "This dark violet syrup turns your dreams to spells.",
   "art": "dish_drink_t2_mp"
  },
  "cook_nightwing": {
@@ -1726,7 +1726,7 @@
    "nothic_prime"
   ],
   "benefit": "see_invisible",
-  "flavor": "One great yolk, and it stares at things nobody else can see.",
+  "flavor": "The one great yolk stares at things that nobody else can see.",
   "art": "dish_steak_t1_special"
  },
  "cook_nue": {
@@ -1735,7 +1735,7 @@
    "nue_prime"
   ],
   "benefit": "mp",
-  "flavor": "Strange and dark; your mana crackles.",
+  "flavor": "Strange and dark, it sets your mana crackling.",
   "art": "dish_leg_t2_mp"
  },
  "cook_ochre_jelly": {
@@ -1762,7 +1762,7 @@
    "orc_warrior_prime"
   ],
   "benefit": "sp",
-  "flavor": "Coarse and heavy; it keeps a warband marching.",
+  "flavor": "Coarse and heavy, it keeps a warband marching.",
   "art": "dish_stew_t2_sp"
  },
  "cook_ossuary_horror": {
@@ -1789,7 +1789,7 @@
    "owlbear_prime"
   ],
   "benefit": "hp",
-  "flavor": "Heavy as a bear; it puts you back together.",
+  "flavor": "Heavy as a bear, it puts you back together.",
   "art": "dish_steak_t1_hp"
  },
  "cook_pazuzu_spawn": {
@@ -1798,7 +1798,7 @@
    "pazuzu_spawn_prime"
   ],
   "benefit": "INT",
-  "flavor": "Dry as sand; your thoughts sharpen to points.",
+  "flavor": "Dry as sand, it sharpens your thoughts to points.",
   "art": "dish_soup_t5_stat"
  },
  "cook_pegasus": {
@@ -1816,7 +1816,7 @@
    "peryton_prime"
   ],
   "benefit": "sp",
-  "flavor": "Rich game with a berry sauce: a proper supper.",
+  "flavor": "This rich game in berry sauce makes a proper supper.",
   "art": "dish_roast_t2_sp"
  },
  "cook_phase_spider": {
@@ -1852,7 +1852,7 @@
    "pixie_swarm_prime"
   ],
   "benefit": "mp",
-  "flavor": "Glittery and sweet; your mana sparkles.",
+  "flavor": "Glittery and sweet, it sets your mana sparkling.",
   "art": "dish_dumpling_t1_mp"
  },
  "cook_plague_ooze": {
@@ -1897,7 +1897,7 @@
    "rangda_prime"
   ],
   "benefit": "WIS",
-  "flavor": "Dark and wise; you see the curse before it lands.",
+  "flavor": "Dark and wise, it shows you a curse before it lands.",
   "art": "dish_soup_t3_stat"
  },
  "cook_ravanas_arm": {
@@ -1915,7 +1915,7 @@
    "redcap_prime"
   ],
   "benefit": "STR",
-  "flavor": "Red-hot and fierce; your blows land harder.",
+  "flavor": "Red-hot and fierce, it makes your blows land harder.",
   "art": "dish_stew_t2_stat"
  },
  "cook_revenant": {
@@ -1924,7 +1924,7 @@
    "revenant_prime"
   ],
   "benefit": "STR",
-  "flavor": "Stubborn and strong; you keep going.",
+  "flavor": "Stubborn and strong, it keeps you going.",
   "art": "dish_soup_t2_stat"
  },
  "cook_river_salt": {
@@ -1942,7 +1942,7 @@
    "roc_chick_prime"
   ],
   "benefit": "hp",
-  "flavor": "One leg feeds a whole party. You will need a bigger plate.",
+  "flavor": "One leg feeds a whole party, and you will need a bigger plate.",
   "art": "dish_leg_t1_hp"
  },
  "cook_rock_python": {
@@ -1978,7 +1978,7 @@
    "ruinous_djinn_prime"
   ],
   "benefit": "hasted",
-  "flavor": "Hot, dry and spinning; you move like the wind.",
+  "flavor": "Hot, dry and spinning, it makes you move like the wind.",
   "art": "dish_porridge_t3_special"
  },
  "cook_rust_monster": {
@@ -2032,7 +2032,7 @@
    "sea_dragon_spawn_prime"
   ],
   "benefit": "mp",
-  "flavor": "Salt, moonlight and mana.",
+  "flavor": "It tastes of salt, moonlight and mana.",
   "art": "dish_chowder_t2_mp"
  },
  "cook_sea_serpent_norse": {
@@ -2041,7 +2041,7 @@
    "sea_serpent_norse_prime"
   ],
   "benefit": "hp",
-  "flavor": "Salty and deep; it mends you.",
+  "flavor": "Salty and deep, it mends you.",
   "art": "dish_roast_t4_hp"
  },
  "cook_sea_snake": {
@@ -2059,7 +2059,7 @@
    "seal_demon_death_prime"
   ],
   "benefit": "drain_resist",
-  "flavor": "Grey and quiet; nothing can drain what you have.",
+  "flavor": "Grey and quiet, it lets nothing drain what you have.",
   "art": "dish_soup_t5_special"
  },
  "cook_seal_demon_earthquake": {
@@ -2284,7 +2284,7 @@
    "stone_golem_prime"
   ],
   "benefit": "CON",
-  "flavor": "Gritty, heavy, and it makes you feel heavy in the good way.",
+  "flavor": "Gritty and heavy, and it makes you feel heavy in the good way.",
   "art": "dish_soup_t2_stat"
  },
  "cook_storm_elemental": {
@@ -2340,7 +2340,7 @@
   "benefit": "fire_resist",
   "trophy": true,
   "permanent": "fire_immunity",
-  "flavor": "Lavabread — the ember at the middle stays hot for good.",
+  "flavor": "The ember at the middle stays hot for good.",
   "art": "recipe_trophy_surtur_recipe"
  },
  "cook_swamp_moss": {
@@ -2376,7 +2376,7 @@
    "the_sphinx_prime"
   ],
   "benefit": "WIS",
-  "flavor": "Morning, noon and evening; you understand.",
+  "flavor": "You understand the riddle of morning, noon and evening.",
   "art": "dish_steak_t3_stat"
  },
  "cook_thoth_construct": {
@@ -2405,7 +2405,7 @@
   "benefit": "fire_resist",
   "trophy": true,
   "permanent": "chromatic_resist_all",
-  "flavor": "Five-Element Brew — every color of dragon runs cold-then-hot in the throat.",
+  "flavor": "Every color of dragon runs cold and then hot in the throat.",
   "art": "recipe_trophy_tiamat_recipe"
  },
  "cook_titan": {
@@ -2605,7 +2605,7 @@
   "benefit": "WIS",
   "trophy": true,
   "permanent": "plus_2_wis_auto_reveal_secret_doors",
-  "flavor": "Wyrd-Whisper Tea — the old voice teaches you to listen wider.",
+  "flavor": "The old voice teaches you to listen wider.",
   "art": "recipe_trophy_whispering_crone_recipe"
  },
  "cook_wight": {
@@ -2733,7 +2733,7 @@
   "benefit": "cold_resist",
   "trophy": true,
   "permanent": "cold_immunity",
-  "flavor": "Primordial Stew — the great frost quiets inside you.",
+  "flavor": "The great frost quiets inside you.",
   "art": "recipe_trophy_ymir_last_spawn_recipe"
  },
  "cook_young_black_dragon": {
@@ -2778,7 +2778,7 @@
    "zombie_prime"
   ],
   "benefit": "hp",
-  "flavor": "Boil it twice. Then it mends you.",
+  "flavor": "Boil it twice, and then it mends you.",
   "art": "dish_soup_t1_hp"
  },
  "feast_01": {
@@ -2995,7 +2995,7 @@
    "crystal_shard"
   ],
   "benefit": "WIS",
-  "flavor": "The three who spin fate eat this. For one night, so do you.",
+  "flavor": "The three who spin fate eat this, and for one night so do you.",
   "legendary": true,
   "art": "feast_norns_supper"
  },
@@ -3154,7 +3154,7 @@
    "cave_mushroom"
   ],
   "benefit": "CON",
-  "flavor": "The world was built from Ymir's bones. Now you are, too.",
+  "flavor": "As the world was built from Ymir's bones, so now are you.",
   "legendary": true,
   "art": "feast_first_giant_marrow"
  },
@@ -3238,7 +3238,7 @@
    "deep_iron"
   ],
   "benefit": "STR",
-  "flavor": "Bael led sixty legions. One bite and you could too.",
+  "flavor": "Bael led sixty legions, and after one bite so could you.",
   "legendary": true,
   "art": "feast_king_of_hell_war_roast"
  },
@@ -3266,7 +3266,7 @@
    "dried_meat"
   ],
   "benefit": "CON",
-  "flavor": "The ground shook for this meal. Afterwards, you will not.",
+  "flavor": "The ground shook for this meal, but after it you will stand unshaken.",
   "legendary": true,
   "art": "feast_earthshaker"
  },
@@ -3332,7 +3332,7 @@
    "bread_ration"
   ],
   "benefit": "fire_resist",
-  "flavor": "Dip the bread in molten rock. It does not burn.",
+  "flavor": "Dip the bread in molten rock, and it does not burn.",
   "art": "dish_flambe_t3_special",
   "cross_depth": true
  },
@@ -3427,7 +3427,7 @@
    "deep_iron"
   ],
   "benefit": "DEX",
-  "flavor": "Fast in, fast out. So are you.",
+  "flavor": "Fast in and fast out, and so are you.",
   "art": "dish_stirfry_t3_stat"
  },
  "dish_012": {
@@ -3569,7 +3569,7 @@
    "hard_cheese"
   ],
   "benefit": "mp",
-  "flavor": "Cheese melted over a mana core. The aboleth remembers for you.",
+  "flavor": "Cheese melted over a mana core, and the aboleth remembers for you.",
   "art": "dish_roast_t3_mp",
   "cross_depth": true
  },
@@ -3655,7 +3655,7 @@
    "bread_ration"
   ],
   "benefit": "INT",
-  "flavor": "Cold and clever. Dip the bread and think.",
+  "flavor": "Cold and clever; dip the bread and think.",
   "art": "dish_soup_t5_stat",
   "cross_depth": true
  },
@@ -3714,7 +3714,7 @@
    "trail_rations"
   ],
   "benefit": "sp",
-  "flavor": "One pot feeds a party. This one feeds a week.",
+  "flavor": "Other pots feed a party, but this one feeds a whole week.",
   "art": "dish_stew_t4_sp",
   "cross_depth": true
  },
@@ -3783,7 +3783,7 @@
    "holy_water"
   ],
   "benefit": "sp",
-  "flavor": "It swirls, it squirms, it fills.",
+  "flavor": "It swirls and squirms, and it fills you.",
   "art": "dish_stew_t4_sp",
   "cross_depth": true
  },
@@ -3843,7 +3843,7 @@
    "trail_rations"
   ],
   "benefit": "sp",
-  "flavor": "Hunger itself, eaten. You will not feel it for days.",
+  "flavor": "You eat hunger itself, and will not feel it again for days.",
   "art": "dish_stew_t4_sp",
   "cross_depth": true
  },
@@ -3950,7 +3950,7 @@
    "crystal_shard"
   ],
   "benefit": "mp",
-  "flavor": "Not a sound from the bowl. Then the spells come roaring.",
+  "flavor": "The bowl makes no sound until the spells come roaring out of it.",
   "art": "dish_soup_t5_mp",
   "cross_depth": true
  },
@@ -4435,7 +4435,7 @@
    "gnoll_prime"
   ],
   "benefit": "sp",
-  "flavor": "Four kinds of meat. You will not need lunch.",
+  "flavor": "Four kinds of meat, so you will not need lunch.",
   "art": "dish_roast_t3_sp"
  },
  "dish_098": {
@@ -4667,7 +4667,7 @@
    "holy_water"
   ],
   "benefit": "fear_immune",
-  "flavor": "The Valkyrie and the hound of Hades fear nothing. Now neither do you.",
+  "flavor": "The Valkyrie and the hound of Hades fear nothing, and now neither do you.",
   "art": "dish_steak_t5_special"
  },
  "dish_118": {
@@ -4713,7 +4713,7 @@
    "young_red_dragon_prime"
   ],
   "benefit": "fire_resist",
-  "flavor": "Cooked on a hot stone, the hottest stone there is.",
+  "flavor": "Cooked on the hottest stone there is.",
   "art": "dish_fritter_t3_special"
  },
  "dish_122": {
@@ -4841,7 +4841,7 @@
    "healing_herb"
   ],
   "benefit": "regenerating",
-  "flavor": "Gross. Good for you.",
+  "flavor": "Foul to eat, but good for you.",
   "art": "dish_pudding_t1_special"
  },
  "dish_133": {
@@ -4973,7 +4973,7 @@
    "shield_guardian_prime"
   ],
   "benefit": "see_invisible",
-  "flavor": "It looks at you. Then you can see what cannot be seen.",
+  "flavor": "It looks at you, and then you can see what cannot be seen.",
   "art": "dish_pudding_t1_special"
  },
  "dish_145": {
@@ -5173,7 +5173,7 @@
    "altar_incense"
   ],
   "benefit": "DEX",
-  "flavor": "It hops off the plate. Catch it.",
+  "flavor": "It hops off the plate, so be quick to catch it.",
   "art": "dish_bread_t1_stat"
  },
  "dish_163": {
@@ -5282,7 +5282,7 @@
    "elvish_bread"
   ],
   "benefit": "DEX",
-  "flavor": "Cats land on their feet. So will you.",
+  "flavor": "Cats land on their feet, and so will you.",
   "art": "dish_bread_t3_stat"
  },
  "dish_173": {
@@ -5550,7 +5550,7 @@
    "hard_cheese"
   ],
   "benefit": "PER",
-  "flavor": "Polyphemus never missed a sheep. You will not miss a thing.",
+  "flavor": "Polyphemus never missed a sheep, and you will not miss a thing.",
   "art": "dish_pie_t3_stat"
  },
  "dish_196": {
@@ -5814,7 +5814,7 @@
    "bread_ration"
   ],
   "benefit": "WIS",
-  "flavor": "Weigh your words. Eat your sausage.",
+  "flavor": "Weigh your words while you eat your sausage.",
   "art": "dish_bread_t2_stat"
  },
  "dish_220": {
@@ -5908,7 +5908,7 @@
    "werewolf_prime"
   ],
   "benefit": "PER",
-  "flavor": "A gravehound sniffs out the dead. After this, so do you.",
+  "flavor": "A gravehound sniffs out the dead, and after this so do you.",
   "art": "dish_bread_t3_stat"
  },
  "dish_228": {
@@ -5940,7 +5940,7 @@
    "hard_cheese"
   ],
   "benefit": "PER",
-  "flavor": "Odin's raven sees everything. The Furies see the rest.",
+  "flavor": "Odin's raven sees everything, and the Furies see the rest.",
   "art": "dish_bread_t3_stat"
  },
  "dish_231": {
@@ -6076,7 +6076,7 @@
    "hard_cheese"
   ],
   "benefit": "hp",
-  "flavor": "The stirge drank first. Now it is your turn.",
+  "flavor": "The stirge drank first, and now it is your turn.",
   "art": "dish_roast_t4_hp"
  },
  "dish_243": {
@@ -6122,7 +6122,7 @@
    "bread_ration"
   ],
   "benefit": "sp",
-  "flavor": "Hyena links, dried meat and a log of yellow mold. It is better than it sounds.",
+  "flavor": "Hyena links, dried meat and a log of yellow mold, and better than it sounds.",
   "art": "dish_bread_t2_sp"
  },
  "dish_247": {
@@ -6144,7 +6144,7 @@
    "altar_incense"
   ],
   "benefit": "DEX",
-  "flavor": "Crunch, flash, gone; you are somewhere else before the blow lands.",
+  "flavor": "A crunch and a flash; you are somewhere else before the blow lands.",
   "art": "dish_porridge_t1_stat"
  },
  "dish_249": {
@@ -6156,7 +6156,7 @@
    "altar_incense"
   ],
   "benefit": "DEX",
-  "flavor": "A minotaur never catches a blink dog. Eat both and dodge like one.",
+  "flavor": "A minotaur never catches a blink dog, so eat both and you will dodge like one.",
   "art": "dish_steak_t2_stat"
  },
  "dish_250": {
@@ -6201,7 +6201,7 @@
    "trail_rations"
   ],
   "benefit": "sp",
-  "flavor": "It eats the dead; you eat it. Very filling.",
+  "flavor": "It eats the dead, and you eat it; it is very filling.",
   "art": "dish_stew_t1_sp"
  },
  "dish_254": {
@@ -6266,7 +6266,7 @@
    "wild_mushroom"
   ],
   "benefit": "sp",
-  "flavor": "It talks while it cooks. Eat it before it says something rude.",
+  "flavor": "It talks while it cooks, so eat it before it says something rude.",
   "art": "dish_sausage_t2_sp"
  },
  "dish_260": {
@@ -6323,7 +6323,7 @@
    "dried_meat"
   ],
   "benefit": "displacement",
-  "flavor": "The cheese keeps changing shape. So, for a while, do you.",
+  "flavor": "The cheese keeps changing shape, and for a while so do you.",
   "art": "dish_platter_t2_special"
  },
  "dish_265": {
@@ -6609,7 +6609,7 @@
    "wild_mushroom"
   ],
   "benefit": "sp",
-  "flavor": "It smells like a troglodyte. It fills like three.",
+  "flavor": "It smells like one troglodyte, and fills you like three.",
   "art": "dish_stew_t1_sp"
  },
  "dish_290": {
@@ -6792,7 +6792,7 @@
    "swamp_moss"
   ],
   "benefit": "WIS",
-  "flavor": "A naga, a sky-giant and a demon-judge at one table. Somebody will be wiser afterwards.",
+  "flavor": "A naga, a sky-giant and a demon-judge share one table, and somebody will rise from it wiser.",
   "art": "dish_stew_t4_stat",
   "cross_depth": true
  },
@@ -6828,7 +6828,7 @@
    "swamp_moss"
   ],
   "benefit": "hp",
-  "flavor": "Clay and tide, both built to last. So are you.",
+  "flavor": "Clay and tide are both built to last, and so are you.",
   "art": "dish_stew_t3_hp"
  },
  "dish_309": {
@@ -7033,7 +7033,7 @@
    "apple"
   ],
   "benefit": "hp",
-  "flavor": "The boar that took a hundred heroes, roasted with a vampire's bone.",
+  "flavor": "The boar that took a hundred heroes to hunt, roasted with a vampire's bone.",
   "art": "dish_roast_t2_hp"
  },
  "dish_327": {
@@ -7069,7 +7069,7 @@
    "abyssal_kelp"
   ],
   "benefit": "hp",
-  "flavor": "Baba Yaga's fence is made of bones. So is this pot, and it mends you.",
+  "flavor": "Baba Yaga's fence is made of bones, and so is this pot, which mends you.",
   "art": "dish_stew_t4_hp",
   "cross_depth": true
  },
@@ -7105,7 +7105,7 @@
    "ugallu_demon_prime"
   ],
   "benefit": "STR",
-  "flavor": "Ravana had twenty arms. One bite and you could use them all.",
+  "flavor": "Ravana had twenty arms, and after one bite you could use them all.",
   "art": "dish_stew_t5_stat"
  },
  "dish_333": {
@@ -7129,7 +7129,7 @@
    "altar_incense"
   ],
   "benefit": "WIS",
-  "flavor": "Anansi owns every story. This one ends with you wiser.",
+  "flavor": "Anansi owns every story, and this one ends with you wiser.",
   "art": "dish_stirfry_t5_stat",
   "cross_depth": true
  },
@@ -7279,7 +7279,7 @@
    "elvish_bread"
   ],
   "benefit": "INT",
-  "flavor": "A lich gave up his life to know more. The Death Lord rules what the lich learned. Both lessons are in the pot.",
+  "flavor": "A lich gave up his life to know more and the Death Lord rules what the lich learned; both lessons are in the pot.",
   "art": "dish_stew_t5_stat",
   "cross_depth": true
  },
@@ -7291,7 +7291,7 @@
    "philosopher_tea"
   ],
   "benefit": "INT",
-  "flavor": "Doctor Faust sold his soul to a demon for knowledge. This costs you only the tea.",
+  "flavor": "Doctor Faust sold his soul to a demon for knowledge, but this costs you only the tea.",
   "art": "dish_drink_t5_stat"
  },
  "dish_355": {
@@ -7350,7 +7350,7 @@
    "apple"
   ],
   "benefit": "WIS",
-  "flavor": "God answered Job out of the whirlwind with Behemoth and Leviathan. Wisdom begins with knowing how small you are.",
+  "flavor": "God answered Job out of the whirlwind with Behemoth and Leviathan, and you too grow wise by knowing how small you are.",
   "art": "dish_stew_t4_stat",
   "cross_depth": true
  },
@@ -7522,7 +7522,7 @@
    "wild_mushroom"
   ],
   "benefit": "PER",
-  "flavor": "In the Second World War the British said their night pilots saw in the dark because they ate carrots. This carrot really does it.",
+  "flavor": "In the Second World War the British said their night pilots saw in the dark because they ate carrots, and this carrot truly does it.",
   "art": "dish_stew_t2_stat"
  },
  "dish_340": {
@@ -7587,7 +7587,7 @@
    "healing_herb"
   ],
   "benefit": "CON",
-  "flavor": "Sun Wukong, the Monkey King, ate the peaches of immortality in Heaven's own orchard and no blade could kill him after. A dragon king and Heaven's soldiers could not stop him.",
+  "flavor": "Sun Wukong, the Monkey King, ate the peaches of immortality in Heaven's own orchard, and afterward no blade could kill him, nor could a dragon king or Heaven's soldiers stop him.",
   "art": "dish_stew_t5_stat",
   "cross_depth": true
  },
@@ -8085,7 +8085,7 @@
    "cave_mushroom"
   ],
   "benefit": "carry",
-  "flavor": "Andromachus's antidote: viper flesh, cave herbs and moss pounded together and bound, as Nero's physician bound his, to drive venom out.",
+  "flavor": "Andromachus's antidote, made as Nero's physician made it: viper flesh, cave herbs and moss pounded and bound together to drive venom out.",
   "makes": "potion:theriac",
   "art": "dish_stew_t1_special"
  }

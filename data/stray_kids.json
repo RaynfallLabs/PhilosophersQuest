@@ -31,13 +31,13 @@
       "You touch the idol. Eight voices count you in: \"Five, six, seven, EIGHT!\"",
       "A spotlight swallows you, and the dungeon falls away."
     ],
-    "spent_bump": "The gold has gone dull and the glitter has fallen off. The encore is over.",
+    "spent_bump": "The gold has grown dull and its glitter has fallen off, for the encore is over.",
     "touch_chronicle": "Touched a gold K-pop idol twice. A spotlight took me to a stage.",
     "call": "Something gold glitters across the room, and a faint bass beat thumps from it. It seems to be calling you over."
   },
   "stage": {
     "arrival": [
-      "You stand in the wings of a stage. Lights blaze, and a bass beat shakes the floor.",
+      "You stand in the wings of a stage, where lights blaze and a bass beat shakes the floor.",
       "Out there, eight voices are warming up, and none of them is breathing."
     ],
     "atmosphere": [
@@ -45,9 +45,9 @@
       "Rows of lightsticks glow in the dark seats like fireflies.",
       "The empty seats chant: STAY! STAY! STAY!"
     ],
-    "seen": "The spotlights swing onto you. Eight dead heads turn as one. The music kicks in.",
+    "seen": "The spotlights swing onto you, eight dead heads turn as one, and the music kicks in.",
     "door_line": "The stage door is the way out (> on it).",
-    "leave_cleared": "You slip out through the stage door. Behind you, the lights go down. The show is over.",
+    "leave_cleared": "You slip out through the stage door. Behind you the lights go down, for the show is over.",
     "leave_unfinished": "You slip out through the stage door. Behind you, the music cuts off mid-chorus, and the door will not open again.",
     "leave_chronicle": "Walked out of the zombie concert halfway through.",
     "cleared_chronicle": "Outdanced all eight zombie Stray Kids and won the dance-off.",

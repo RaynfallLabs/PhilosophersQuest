@@ -2567,11 +2567,7 @@ def _make_ariadnes_thread():
         'item_class': 'artifact',
         'weight': 0.1,
         'min_level': 15,
-        'lore': ("A ball of plain linen thread, wound by a princess of Crete "
-                 "for a stranger she meant to save. Theseus tied one end to "
-                 "the door of the Labyrinth and paid it out behind him. "
-                 "Whatever walks those passages has never been able to step "
-                 "across it, or to hide from whoever holds the other end."),
+        'lore': ("A princess of Crete wound this ball of plain linen thread for a stranger whom she meant to save. Theseus tied one end to the door of the Labyrinth and paid it out behind him, and whatever walks those passages has never been able to step across it, or to hide from whoever holds the other end."),
     })
     from items import make_fully_known
     make_fully_known(thread)
@@ -2976,17 +2972,14 @@ def _structure_anchor(dungeon, room):
 
 # What the player notices on arriving at each Gleipnir ingredient's floor.
 _GLEIPNIR_FLOOR_LINES = {
-    'cats_footstep': "Something small crosses the passage ahead of you on four "
-                     "feet and makes no sound at all.",
-    'womans_beard':  "Somewhere behind these walls a woman is laughing, low, "
-                     "as if at a private joke.",
+    'cats_footstep': "Something small goes across the passage before you on four feet, and makes no sound at all.",
+    'womans_beard':  "Somewhere behind these walls a woman laughs low, as though at some jest known to her alone.",
     'mountain_root': "The floor hums, very low, as if something enormous were "
                      "growing underneath it.",
     'fish_breath':   "The air is damp here and smells faintly of a tide.",
     'bird_spittle':  "A single feather turns in the air above the stair and "
                      "does not come down.",
-    'bear_sinew':    "Something has been dragged through here. The marks are "
-                     "a bear's, and far too deep.",
+    'bear_sinew':    "Something has been dragged through here, and the marks are a bear's and far too deep.",
 }
 
 

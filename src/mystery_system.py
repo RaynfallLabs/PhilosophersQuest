@@ -19,13 +19,13 @@ MYSTERIES = {
         'floor_range': (22, 35),
         'symbol': 'W',
         'color': (218, 165, 32),  # gold
-        'description': "A stone sphinx lies across the passage, woman-faced and lion-bodied. 'Thebes sent me its cleverest,' she says. 'I ate most of them. Answer.'",
+        'description': "A stone sphinx lies across the passage, with a woman's face and a lion's body. 'Thebes sent me its cleverest,' she says, 'and I ate most of them. Now answer me.'",
         'key_item': None,
         'gold_cost': 0,
         'challenge': {'mode': 'escalator_threshold', 'subject': 'philosophy', 'tier': 3, 'threshold': 2, 'total': 6},
         'reward': {'WIS': 2, 'INT': 1},
-        'reward_text': "The Sphinx gives one cry and throws herself from her perch, as her sister did at Thebes. Something of her long patience stays with you. (Wisdom +2, Intelligence +1)",
-        'fail_text': "The Sphinx yawns. 'Not clever enough to be worth eating,' she says, and settles back into stone.",
+        'reward_text': "With one cry the Sphinx throws herself from her perch, as her sister did at Thebes, and something of her long patience stays with you. (Wisdom +2, Intelligence +1)",
+        'fail_text': "The Sphinx yawns. 'You are not clever enough to be worth eating,' she says, and settles back into stone.",
         'invert_result': False,
     },
     'pandora': {
@@ -33,13 +33,13 @@ MYSTERIES = {
         'floor_range': (20, 30),
         'symbol': '[',
         'color': (180, 30, 30),  # dark red
-        'description': "A coffer of black stone, cold to the touch. One line is cut into the lid: 'Do not open.' The lock looks as though it would yield to a practised hand.",
+        'description': "A coffer of black stone stands here, cold to the touch, and upon its lid is cut one line: 'Do not open.' Its lock looks as though it would yield to a practised hand.",
         'key_item': {'name': "Pandora's Key", 'symbol': 'P', 'color': (180, 30, 30), 'weight': 0.5},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'economics', 'tier': 2, 'threshold': 2, 'total': 5},
         'reward': {'effects': ['magic_resist', 'displacement'], 'gold': 300},
-        'reward_text': "The lock slips, the lid flies back, and every sorrow in the box goes howling past you into the dark. One small thing is left at the bottom. It is Hope, and it is yours. (Magic Resistance, Displacement, gold)",
-        'fail_text': "The lock opens cleanly under your hand. Inside is a neat stack of coin and nothing else. Whatever else was kept here stays shut in.",
+        'reward_text': "The lock slips and the lid flies back, and every sorrow in the box goes howling past you into the dark. At the bottom one small thing remains, and it is Hope, given to you for your own. (Magic Resistance, Displacement, gold)",
+        'fail_text': "The lock opens cleanly under your hand upon a neat stack of coin and nothing more, for whatever else was kept here remains shut within.",
         'fail_reward': {'gold': 100},
         'invert_result': True,  # INVERTED: failure quiz = actual reward
     },
@@ -48,13 +48,13 @@ MYSTERIES = {
         'floor_range': (45, 55),
         'symbol': 'U',
         'color': (200, 200, 255),  # silver-blue
-        'description': "A ruined chapel, roofless and quiet. The altar stone is bare, with a ring worn into it where a cup once stood.",
+        'description': "This ruined chapel is roofless and quiet, and in the bare stone of its altar a ring is worn where once a cup stood.",
         'key_item': {'name': "Tarnished Chalice", 'symbol': 'U', 'color': (200, 200, 255), 'weight': 1.0},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'theology', 'tier': 3, 'threshold': 2, 'total': 7},
         'reward': {'max_hp': 30, 'CON': 2},
-        'reward_text': "The cup fills from nowhere with clear water. You drink, and the ache of the whole descent leaves you. (Max HP +36, Constitution +2)",
-        'fail_text': "The cup stays empty and the chapel stays silent. Galahad's seat is not for everyone.",
+        'reward_text': "The cup fills from nowhere with clear water, and as you drink, the ache of the whole descent leaves you. (Max HP +36, Constitution +2)",
+        'fail_text': "The cup stays empty and the chapel silent, for the seat of Galahad is not for everyone.",
         'invert_result': False,
     },
     'fleece': {
@@ -62,13 +62,13 @@ MYSTERIES = {
         'floor_range': (38, 50),
         'symbol': '+',
         'color': (218, 165, 32),  # golden
-        'description': "A bare oak, and beneath it an altar carved with a ram. A great serpent lies coiled in the roots. It has not blinked since Colchis.",
+        'description': "Beneath a bare oak stands an altar carved with a ram, and in the roots lies coiled a great serpent that has not blinked since it left Colchis.",
         'key_item': {'name': "Golden Fleece", 'symbol': '+', 'color': (218, 165, 32), 'weight': 2.0},
         'gold_cost': 0,
         'challenge': {'mode': 'chain', 'subject': 'animal', 'tier': 3, 'threshold': 2, 'max_chain': 2},
         'reward': {'effects': ['regenerating', 'poison_resist']},
-        'reward_text': "The serpent lowers its head and lets you hang the Fleece where it belongs. Its gold warms you through. (Regeneration, Poison Resistance)",
-        'fail_text': "The serpent takes the Fleece out of your hands and draws it down into the roots. It did not think much of your woodcraft.",
+        'reward_text': "The serpent lowers its head and lets you hang the Fleece where it belongs, and the gold of it warms you through. (Regeneration, Poison Resistance)",
+        'fail_text': "The serpent takes the Fleece from your hands and draws it down among the roots, for it thought little of your woodcraft.",
         'invert_result': False,
     },
     'mimir': {
@@ -76,7 +76,7 @@ MYSTERIES = {
         'floor_range': (42, 55),
         'symbol': 'o',
         'color': (50, 120, 200),  # dark teal-blue
-        'description': "A dark well under a root as thick as a tower. A severed head floats in it with its eyes open. 'Odin paid an eye for one horn of this,' says Mimir. 'I do not give credit.'",
+        'description': "Under a root as thick as a tower lies a dark well, where a severed head floats with open eyes. 'Odin paid an eye for one horn of this water,' says Mimir, 'and I give credit to no one.'",
         'key_item': None,
         'gold_cost': 0,
         # PER-1 is applied before the quiz starts; it is deliberately KEPT on
@@ -86,8 +86,8 @@ MYSTERIES = {
         'stat_cost': {'PER': -1},  # applied before quiz starts; not refunded on fail
         'challenge': {'mode': 'chain', 'subject': 'philosophy', 'tier': 4, 'threshold': 3, 'max_chain': 3},
         'reward': {'WIS': 1, 'INT': 1},
-        'reward_text': "The water is so cold it rings in your teeth. For one breath you see how everything fits. Most of it fades. Enough stays. (Wisdom +1, Intelligence +1)",
-        'fail_text': "The water runs through your mind like a sieve. Mimir keeps the price. He always does.",
+        'reward_text': "The water is so cold that it rings in your teeth, and for one breath you see how all things fit. Though most of it fades, enough remains with you. (Wisdom +1, Intelligence +1)",
+        'fail_text': "The water runs through your mind as through a sieve, and Mimir keeps the price, as is his custom.",
         'invert_result': False,
     },
     'mjolnir': {
@@ -95,13 +95,13 @@ MYSTERIES = {
         'floor_range': (33, 45),
         'symbol': '^',
         'color': (255, 140, 0),  # orange
-        'description': "A dwarven forge, still hot, with the bellows stopped mid-stroke. The story goes that a fly bit the smith's eyelid at the worst moment. Someone has to finish the count.",
+        'description': "A dwarven forge stands here, still hot, with its bellows stopped in mid-stroke. It is told that a fly bit the smith's eyelid at the worst moment, and now another must finish the count.",
         'key_item': {'name': "Unfinished Hammer-Head", 'symbol': '^', 'color': (255, 140, 0), 'weight': 8.0},
         'gold_cost': 0,
         'challenge': {'mode': 'escalator_threshold', 'subject': 'math', 'tier': 3, 'threshold': 2, 'total': 6},
         'reward': {'special': 'forge_mjolnir', 'STR': 2},
-        'reward_text': "You keep the bellows steady to the last stroke. The handle still comes out short. Nobody has ever complained about the rest of it. (Strength +2)",
-        'fail_text': "The count slips and the iron cools grey. The hammer-head is slag now.",
+        'reward_text': "You keep the bellows steady to the last stroke, and still the handle comes out short, though none has ever found fault with the rest of the hammer. (Strength +2)",
+        'fail_text': "The count slips and the iron cools grey, and the hammer-head is no more than slag.",
         'invert_result': False,
     },
     'crucible': {
@@ -109,13 +109,13 @@ MYSTERIES = {
         'floor_range': (10, 22),
         'symbol': 'V',
         'color': (150, 150, 160),  # gray
-        'description': "An alchemist's crucible. The inscription reads: 'From base matter, golden truth.'",
+        'description': "Upon an alchemist's crucible these words are written: 'From base matter, golden truth.'",
         'key_item': {'name': "Lead Ingot", 'symbol': 'V', 'color': (150, 150, 160), 'weight': 5.0},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'philosophy', 'tier': 1, 'threshold': 3, 'total': 4},
         'reward': {'gold': 400},
-        'reward_text': "The lead shivers, runs bright, and sets as gold. The alchemists were right about one thing.",
-        'fail_text': "The crucible spits and goes dark. The lead has boiled away to a grey smear.",
+        'reward_text': "The lead shivers, runs bright and sets as gold, for in this one thing the alchemists were right.",
+        'fail_text': "The crucible spits and goes dark, and the lead has boiled away to a grey smear.",
         'invert_result': False,
     },
     'oracle': {
@@ -123,13 +123,13 @@ MYSTERIES = {
         'floor_range': (25, 35),
         'symbol': 'D',
         'color': (160, 80, 200),  # purple
-        'description': "Sweet smoke rises from a crack in the floor. A priestess sits over it on a three-legged stool, and she has plainly been sitting there a long time. A bronze bowl waits for coin.",
+        'description': "Sweet smoke rises from a crack in the floor, and over it on a three-legged stool sits a priestess who has plainly been long at her watch. A bronze bowl beside her waits for coin.",
         'key_item': None,
         'gold_cost': 50,
         'challenge': {'mode': 'threshold', 'subject': 'theology', 'tier': 3, 'threshold': 2, 'total': 7},
         'reward': {'special': 'oracle_reveal'},
-        'reward_text': "The Oracle speaks. Three hidden paths revealed.",
-        'fail_text': "The priestess says something in hexameter that could mean anything. The coin stays in the bowl.",
+        'reward_text': "The Oracle has spoken, and three hidden paths are revealed.",
+        'fail_text': "The priestess utters a line of hexameter that might mean anything, and the coin stays in the bowl.",
         'invert_result': False,
     },
     'solomon': {
@@ -137,12 +137,12 @@ MYSTERIES = {
         'floor_range': (30, 42),
         'symbol': '*',
         'color': (255, 220, 50),  # bright gold
-        'description': "Two women carved in stone face an empty judgment seat, and a carved infant lies between them. A sword hangs on the wall behind. The inscription is one word: 'Judge.'",
+        'description': "Two women carved in stone face an empty judgment seat, and between them lies a carved infant. A sword hangs on the wall behind, and the inscription is the one word 'Judge.'",
         'key_item': {'name': "Seal of Solomon", 'symbol': '*', 'color': (255, 220, 50), 'weight': 0.5},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'history', 'tier': 3, 'threshold': 3, 'total': 4},
         'reward': {'WIS': 2, 'special': 'ring_of_command'},
-        'reward_text': "One stone mother lowers her arms and the other turns her face away. The seat finds your judgment sound. (Wisdom +2, and a signet from the throne room)",
+        'reward_text': "One stone mother lowers her arms and the other turns her face away, for the seat has found your judgment sound. (Wisdom +2, and a signet from the throne room)",
         'fail_text': "Your judgment is found wanting.",
         'invert_result': False,
     },
@@ -151,13 +151,13 @@ MYSTERIES = {
         'floor_range': (58, 72),
         'symbol': '+',
         'color': (100, 220, 100),  # light green
-        'description': "A cold hall with a dead hearth. A king lies on a litter beside it, wounded through the thigh, and watches you come in. He seems to be waiting for you to say something.",
+        'description': "In a cold hall a king lies upon a litter by the dead hearth, wounded through the thigh. He watches you come in, and it seems that he is waiting for you to speak.",
         'key_item': {'name': "Healing Herb", 'symbol': '+', 'color': (100, 220, 100), 'weight': 0.5},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'theology', 'tier': 4, 'threshold': 2, 'total': 7},
         'reward': {'max_hp': 30, 'special': 'fisher_cooldown'},
-        'reward_text': "You ask what ails him, which is all anyone ever had to do. The king stands. Somewhere far above, rain begins to fall on the Waste Land. (Max HP +30. Heaven hears you twice as often.)",
-        'fail_text': "You talk of everything but the wound. The king turns his face to the wall.",
+        'reward_text': "You ask what ails him, which was all that was ever required, and the king rises. Far above you, rain begins to fall upon the Waste Land. (Max HP +30. Heaven hears you twice as often.)",
+        'fail_text': "You speak of everything but the wound, and the king turns his face to the wall.",
         'invert_result': False,
     },
     'sisyphus': {
@@ -165,7 +165,7 @@ MYSTERIES = {
         'floor_range': (78, 92),
         'symbol': '*',
         'color': (140, 140, 140),  # stone gray
-        'description': "A steep slope carved into the stone. At its base lies an enormous boulder with a worn handprint.",
+        'description': "At the foot of a steep slope carved in the stone lies an enormous boulder, worn with the print of a hand.",
         'key_item': {'name': "The Boulder", 'symbol': '*', 'color': (140, 140, 140), 'weight': 20.0},
         'gold_cost': 0,
         'challenge': {'mode': 'physical', 'tiles': 15},  # carry the boulder 15 steps (any load; it can always be picked up, even past the limit)
@@ -179,10 +179,7 @@ MYSTERIES = {
           'floor_range': (5, 9),
           'symbol': 'B',
           'color': (90, 160, 190),
-          'description': 'A leather boat no bigger than a bathtub sits on dry stone, with a sea '
-                         'chart nailed to its mast. The chart shows an island with an eye. A note '
-                         "beneath it reads: 'Mark where you are, pilgrim, and take what the voyage "
-                         "taught me.'",
+          'description': "A leather boat no bigger than a bathtub rests upon dry stone with a sea chart nailed to its mast, and on the chart is drawn an island with an eye. A note beneath it reads: 'Mark where you are, pilgrim, and take what the voyage taught me.'",
           'key_item': None,
           'gold_cost': 0,
           'challenge': {   'mode': 'threshold',
@@ -191,11 +188,8 @@ MYSTERIES = {
                            'threshold': 2,
                            'total': 3},
           'reward': {'PER': 1, 'gold': 80},
-          'reward_text': "You set your finger on the chart and the island's eye winks. Brendan of "
-                         'Clonfert said Mass on that island one Easter, until it swam away. It was a '
-                         'whale. You will look twice at solid ground from now on, and there are '
-                         'coins under the thwart. (Perception +1)',
-          'fail_text': 'The chart rolls itself up. Wherever you are, it is not where you pointed.',
+          'reward_text': "As you set your finger on the chart the island's eye winks, for this is the whale on whose back Brendan of Clonfert said Mass one Easter, as upon dry land, until it swam away. You will look twice at solid ground hereafter, and there are coins under the thwart. (Perception +1)",
+          'fail_text': "The chart rolls itself up, for wherever you may be, it is not where you pointed.",
           'invert_result': False,
           },
     'jerome': {
@@ -203,10 +197,7 @@ MYSTERIES = {
           'floor_range': (73, 77),
           'symbol': 'J',
           'color': (200, 170, 110),
-          'description': "A scholar's desk in a cave, with a skull for a paperweight and a lion "
-                         'asleep beneath it like a large dog. A half-translated page lies under the '
-                         "lamp. In the margin, in a tired hand: 'Finish the sentence properly or "
-                         "leave it alone.'",
+          'description': "In a cave stands a scholar's desk with a skull for a paperweight, and a lion sleeps beneath it like a great hound. A half-translated page lies under the lamp, and in its margin a tired hand has written: 'Finish the sentence properly or leave it alone.'",
           'key_item': None,
           'gold_cost': 0,
           'challenge': {   'mode': 'threshold',
@@ -215,11 +206,8 @@ MYSTERIES = {
                            'threshold': 3,
                            'total': 4},
           'reward': {'WIS': 2, 'INT': 1},
-          'reward_text': 'The sentence holds. The lion opens one eye, approves, and goes back to '
-                         'sleep. Jerome spent half a lifetime in Bethlehem turning Hebrew and Greek '
-                         'into plain Latin, and would not let a hard word go by. Some of his '
-                         'stubbornness stays with you. (Wisdom +2, Intelligence +1)',
-          'fail_text': 'The lion sighs. The page is exactly as unfinished as you found it.',
+          'reward_text': "The sentence holds, and the lion opens one eye in approval and sleeps again. For half a lifetime in Bethlehem Jerome laboured to turn Hebrew and Greek into plain Latin and would let no hard word go by, and something of his stubbornness stays with you. (Wisdom +2, Intelligence +1)",
+          'fail_text': "The lion sighs, for the page is as unfinished as when you found it.",
           'invert_result': False,
           },
     'cauldron': {
@@ -227,13 +215,13 @@ MYSTERIES = {
         'floor_range': (14, 26),
         'symbol': 'Q',
         'color': (40, 140, 100),  # dark green
-        'description': "A black cauldron rimmed with pearls, kept warm by no fire you can see. The Welsh say it will not boil a coward's food. It looks hungry.",
+        'description': "A black cauldron rimmed with pearls is warmed by no fire that you can see, and it looks hungry. The Welsh tell that it will not boil the food of a coward.",
         'key_item': None,  # no key -- requires 3 Food items in inventory
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'cooking', 'tier': 2, 'threshold': 1, 'total': 1},
         'reward': {'effects': ['searching', 'warning']},
-        'reward_text': "The cauldron takes all three dishes and boils without complaint. Its steam clears your eyes. (Searching, Danger Sense)",
-        'fail_text': "The cauldron goes cold in an instant. It has decided what kind of cook you are.",
+        'reward_text': "The cauldron takes all three dishes and boils them without complaint, and its steam clears your eyes. (Searching, Danger Sense)",
+        'fail_text': "The cauldron grows cold in an instant, for it has judged what manner of cook you are.",
         'invert_result': False,
     },
 }
@@ -467,30 +455,30 @@ def _oracle_reveal_quirks(player, game):
     try:
         from quirk_system import _QUIRK_EFFECTS
     except ImportError:
-        game.add_message("The Oracle sees strange things... but cannot speak them.", 'info')
+        game.add_message("The Oracle sees strange things of which she may not speak.", 'info')
         return
 
     locked = [qid for qid in _QUIRK_EFFECTS
               if qid not in getattr(player, 'unlocked_quirks', set())]
     if not locked:
-        game.add_message("The Oracle sees you have walked all paths. Remarkable.", 'info')
+        game.add_message("The Oracle sees that you have walked all paths, and marvels at you.", 'info')
         return
 
     chosen = random.sample(locked, min(3, len(locked)))
 
     _HINTS = {
-        'odin':        "Some wait long enough to perceive all things.",
+        'odin':        "He who waits long enough may come to perceive all things.",
         'mithridates': "The great king survived every poison by tasting each one.",
         'tiresias':    "The blind prophet answered correctly while he could not see.",
-        'penelope':    "She wove and unwove, ever patient. Armor is her art.",
-        'orpheus':     "Music calmed beasts. He descended to find those he had lost.",
+        'penelope':    "She wove and unwove with endless patience, and armor was her art.",
+        'orpheus':     "With music he calmed beasts, and he went down to seek those he had lost.",
         'hermes':      "Speed is earned through many small steps.",
-        'atalanta':    "Swiftness and precision over brute force.",
-        'musashi':     "One precise strike, not many hurried ones.",
+        'atalanta':    "Be swift and sure rather than trust to brute force.",
+        'musashi':     "Strike once and well, and hurry no second blow.",
         'scheherazade':"She read and told stories before anyone knew her name.",
         'merlin':      "Wands were used before they were understood.",
-        'prometheus':  "Suffering repeated and survived becomes strength.",
-        'ragnarok':    "Descend so deep, with so little -- and survive.",
+        'prometheus':  "He who suffers often and lives shall gain strength by it.",
+        'ragnarok':    "Descend very deep with very little, and yet live.",
     }
 
     # Every quirk has a written hint now (quirk_text.QUIRK_HINT). The old
@@ -580,8 +568,7 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
         if old:
             player.inventory.remove(old)
         if weapon is None or not unique_available(weapon):
-            game.add_message("The hammer is already out in the world. The anvil "
-                             "has nothing left to finish.", 'info')
+            game.add_message("The hammer is already out in the world, and nothing is left for the anvil to finish.", 'info')
         else:
             claim_unique(weapon)
             # Forged by the hero's own count: known through and through.
@@ -693,9 +680,7 @@ class MerchantNPC:
         self.name = self.person          # short: the In Sight rail lists him by name
         self.sprite_id = (friend or d).get('sprite', 'merchant_npc')
         self.sprite_fallback = d.get('sprite_fallback', 'merchant_npc')
-        self.lore = d.get('lore', "A small grey trader with a pack twice his size and a lantern "
-                                  "he never seems to need. He will not say where his stock comes "
-                                  "from, only that the previous owners are past caring.")
+        self.lore = d.get('lore', "Grindle is a small grey trader with a pack twice his size and a lantern that he never seems to need. He will not say where his stock comes from, save that the previous owners are past caring.")
         self.markup = float(d.get('markup', 1.0))
         self.purse = economy.share(self.level, float(d.get('purse', economy.TRADER_PURSE_SHARE)))
         self.buys = d.get('buys', 'all')

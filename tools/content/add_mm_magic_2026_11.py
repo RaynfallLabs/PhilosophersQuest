@@ -219,8 +219,7 @@ SCROLLS = {
     'scroll_of_the_heart_sutra': dict(
         name='scroll of the Heart Sutra', tier=3, unid='rice-paper scroll', color=[235, 235, 225],
         lore='family_ward_hoichi_scroll', effect='family_ward', ward='ward_hoichi', turns=20,
-        read_line=("You read the sutra over yourself, every inch of skin. The ghosts cannot see "
-                   "you, but strike one and they will all find you")),
+        read_line=("You read the sutra over every inch of your skin. The ghosts cannot see you, but strike one and they will all find you")),
     'scroll_of_saint_martha': dict(
         name="scroll of Saint Martha's Hymn", tier=4, unid='blue-corded vellum', color=[200, 220, 240],
         lore='family_ward_martha_scroll', effect='family_ward', ward='ward_martha', turns=25,
@@ -399,19 +398,17 @@ VINE_HAZARD = {
 }
 VINE_FIXTURE = {
     'name': 'grapevine and ivy', 'layer': 'floor',
-    'look': ("Grapevine and ivy, grown up out of the stone in a moment and still moving. "
-             "Whatever walks through them is held. They will not last."),
+    'look': ("Grapevine and ivy have grown up out of the stone in a moment and are moving still. Whatever walks through them is held, but they will not last."),
 }
 THERIAC_RECIPE = {
     'name': 'Theriac of Andromachus', 'ingredients': ['cobra_prime', 'swamp_moss', 'cave_mushroom'],
     'benefit': 'carry',
-    'flavor': ("Andromachus's antidote: viper flesh, cave herbs and moss pounded together and "
-               "bound, as Nero's physician bound his, to drive venom out."),
+    'flavor': ("Andromachus's antidote, made as Nero's physician made it: viper flesh, cave herbs and moss pounded and bound together to drive venom out."),
     'makes': 'potion:theriac', 'art': 'dish_stew_t1_special',
 }
 HINTS = {
     '2': ["An archer you can see cannot hurt you while the Galdr of the Stayed Spear holds.",
-          "A silenced foe cannot wail, sing, summon or heal. Seal the healer's mouth first."],
+          "Seal the healer's mouth first, for a silenced foe cannot wail, sing, summon or heal."],
     '3': ["A scroll of greater protection turns every arrow aside, seen or unseen.",
           "Confusion of Tongues breaks a war band or a pack into creatures that fight alone."],
     '4': ["Zap an archer or a slinger with the Wand of Unstringing and it has to come to you.",

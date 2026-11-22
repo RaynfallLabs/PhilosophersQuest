@@ -175,7 +175,7 @@
       "pronoun": "he",
       "reach": "deep_folk",
       "sprite": "merchant_npc",
-      "lore": "A small grey trader with a pack twice his size and a lantern he never seems to need. He will not say where his stock comes from, only that the previous owners are past caring. He buys anything, cheaply, and talks about himself in the third person, which he says is a gnome thing. It is not a gnome thing.",
+      "lore": "Grindle is a small grey trader with a pack twice his size and a lantern that he never seems to need. He will not say where his stock comes from, save that the previous owners are past caring. He buys anything, cheaply, and he always speaks of himself by name, saying that this is the custom of gnomes, though it is no such thing.",
       "stock": [
         {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 2},
         {"class": "accessory", "picks": 2}, {"class": "wand", "picks": 2},
@@ -195,27 +195,27 @@
       "buys": "all",
       "services": ["map", "trade_in"],
       "lines": {
-        "counter": "Grindle hears that below here {foes}. Grindle sells {take}. Funny, that.",
-        "greet": ["Grindle sells. Grindle buys. Grindle does not ask where you got it.",
-                  "Previous owners? Very past caring. Have a look.",
-                  "Everything is real. Mostly. Some of it.",
-                  "You smell like a fight. Fights mean customers. Welcome!"],
-        "bought": "Pleasure. Grindle never saw you.",
-        "sold": "Done. Don't tell Grindle its story. Grindle doesn't want to know.",
-        "broke": "No coin, no deal. Grindle likes you, but not that much.",
-        "refuse": "Grindle doesn't buy that. Grindle has standards. Low ones, but standards.",
-        "purse_empty": "Grindle's purse is empty. Grindle is also sad about it.",
-        "sold_out": "That's the lot. Grindle's pack is light and Grindle's heart is glad."
+        "counter": "Grindle hears that below here {foes}, and as luck has it, Grindle sells {take}.",
+        "greet": ["Grindle sells and Grindle buys, and Grindle never asks where you got it.",
+                  "The previous owners are long past caring, so have a look.",
+                  "Grindle's wares are all real, or most, or some of them.",
+                  "You smell like a fight, and fights bring Grindle customers. Welcome!"],
+        "bought": "A pleasure, and Grindle never saw you.",
+        "sold": "Done, but don't tell Grindle its story, for Grindle doesn't want to know.",
+        "broke": "No coin, no deal. Grindle likes you, but not so well as that.",
+        "refuse": "Grindle won't buy that, for even Grindle has standards, low though they be.",
+        "purse_empty": "Grindle's purse is empty, and it makes Grindle very sad.",
+        "sold_out": "That is all there is. Grindle's pack is light and Grindle's heart is glad."
       },
       "reactions": [
-        {"when": "open_hand", "mult": 1.10, "line": "Heard you pay other people's debts. Grindle has debts. Prices reflect that."},
-        {"when": "wrens_mark", "mult": 1.15, "line": "You're the soft touch Wren's lot talk about? Ha! Prices just went up."}
+        {"when": "open_hand", "mult": 1.10, "line": "Grindle hears you pay other people's debts. Grindle has debts, so prices go up."},
+        {"when": "wrens_mark", "mult": 1.15, "line": "So you're the soft touch that Wren's lot talk about? Ha! Then prices go up."}
       ],
       "friend": {"person": "quill", "pronoun": "he", "when": {"deeds_all": ["saved.quill"]},
                  "reach": "ordinary", "floors": [2, 20],
-                 "counter": "Word is that below here {foes}. I brought {take}, for you especially.",
+                 "counter": "The word is that below here {foes}, so I have brought {take}, for you especially.",
                  "name": "Pomfrey Quill", "title": "Alderman and Trader", "sprite": "npc_lost_merchant",
-                 "line": "Pomfrey Quill, alderman, trader, and ALIVE, thanks to you. Friend's price on everything. I mean it this time."}
+                 "line": "Pomfrey Quill, alderman, trader, and ALIVE, thanks to you! You shall have a friend's price on everything, and this time I mean it."}
     },
 
     "apothecary": {
@@ -224,7 +224,7 @@
       "pronoun": "she",
       "reach": "hardy",
       "sprite": "trader_apothecary", "sprite_fallback": "npc_poisoned_herbalist",
-      "lore": "Agnes Wort came down for the cave-moss that has never seen the sun, because it cures things the sun-moss can't. She has been down here eleven years. She says she will go back up when the moss runs out, and the moss will not run out.",
+      "lore": "Agnes Wort came down into the dark for the cave-moss that has never seen the sun, since it cures what the sun-moss cannot. Eleven years she has dwelt here, and she says that she will climb home again when the moss runs out, though in truth it never will.",
       "stock": [
         {"ids": ["potion_of_healing", "potion_of_cure_poison", "potion_of_cure_disease"], "cat": "potion", "picks": 1},
         {"class": "potion", "picks": 3},
@@ -243,25 +243,25 @@
       "buys": ["potion", "food", "ingredient", "flask"],
       "services": ["cure", "restore", "heal", "trade_in"],
       "lines": {
-        "counter": "Below here {foes}, dear. Take {take}, and thank me later.",
-        "greet": ["Wipe your feet. You're bleeding on my moss.",
-                  "Moss that's never seen the sun cures what the sun-moss can't. Don't touch that jar.",
-                  "Sit. Tongue out. ...Ugh. Right. Let's see what we can do."],
-        "bought": "Drink it slowly. Or don't, and find out why I said that.",
-        "sold": "I'll take it. Somebody down here always needs one.",
-        "broke": "I don't do credit. Credit is how apothecaries end up as moss.",
-        "refuse": "That's not medicine, dear. That's a thing.",
-        "purse_empty": "I'm spent out. Come back when someone's paid me.",
-        "sold_out": "Shelves are bare. Go and get hurt somewhere else for a while."
+        "counter": "Below here {foes}, dear, so take {take} and thank me later.",
+        "greet": ["Wipe your feet, dear, for you're bleeding on my moss.",
+                  "Moss that's never seen the sun cures what the sun-moss can't, so don't touch that jar.",
+                  "Sit and put your tongue out. Ugh! Well, let's see what we can do."],
+        "bought": "Drink it slowly, or you'll soon learn why I told you to.",
+        "sold": "I'll take it, for somebody down here always needs one.",
+        "broke": "I give no credit, dear, for that's how an apothecary ends up as moss.",
+        "refuse": "That is no medicine, dear, it is only a thing.",
+        "purse_empty": "I've spent all I had. Come back when someone has paid me.",
+        "sold_out": "My shelves are bare, so go and get hurt somewhere else for a while."
       },
       "reactions": [
-        {"when": "open_hand", "mult": 0.90, "line": "I heard what you did for those folk. Kindness gets a kinder price here."}
+        {"when": "open_hand", "mult": 0.90, "line": "I heard what you did for those folk, and kindness gets a kinder price here."}
       ],
       "friend": {"person": "marta", "pronoun": "she", "when": {"deeds_all": ["saved.marta"]},
                  "reach": "ordinary", "floors": [2, 20],
-                 "counter": "Down there {foes}. I'd take {take}, if I were you. I was nearly you.",
+                 "counter": "Down there {foes}. I'd take {take} if I were you, and I was very nearly you.",
                  "name": "Marta Venn", "title": "Rat-Catcher and Apothecary", "sprite": "npc_rat_catcher",
-                 "line": "Leg's mended, and forty kids at Saint Agatha's got their fever cure. You get a friend's price. Don't argue."}
+                 "line": "My leg's mended, and forty kids at Saint Agatha's got their fever cure. You get a friend's price, and don't argue."}
     },
 
     "armourer": {
@@ -270,7 +270,7 @@
       "pronoun": "he",
       "reach": "exceptional",
       "sprite": "trader_armourer", "sprite_fallback": "npc_dwarf",
-      "lore": "Ulf Brannoc followed a king's army down twenty years ago as its armourer. The army never came back up. Brannoc stayed, to mend whatever does, and he is very good at it. He is less good at small talk.",
+      "lore": "Ulf Brannoc went down twenty years ago as armourer to the army of a king, and that army never came back up. He remained to mend whatever does return, and at that work he is very skilled, though he has little gift for idle talk.",
       "stock": [
         {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 3}, {"gear": "shield", "picks": 1},
         {"class": "ammo", "picks": 1},
@@ -288,24 +288,24 @@
                    "cold_iron_inlay", "lining", "special_order", "trade_in"],
       "lines": {
         "counter": "Where you're going, {foes}. Take {take}.",
-        "order_placed": "{item}. It'll be on my rack at the stall on floor {floor}.",
+        "order_placed": "Your {item} will be on my rack at the stall on floor {floor}.",
         "order_ready": "Your {item}. Made as you asked.",
         "order_refund": "There's no stall of mine below this one. Have your coin back.",
-        "greet": ["Twenty years I've waited for that army to come back up. You'll do instead.",
-                  "Show me the blade. ...Who sharpened this? A goat?",
-                  "Rust is just metal giving up. I don't let it."],
-        "bought": "Keep it oiled. I'll know if you don't.",
-        "sold": "Decent steel. Someone died holding it, I expect.",
-        "broke": "Steel costs. Come back richer or bleed on someone else's anvil.",
-        "refuse": "I work metal. That isn't metal.",
-        "purse_empty": "I've no coin left for buying. Plenty of hammer, though.",
-        "sold_out": "Racks are empty. Go and kill something with a sword and bring it here."
+        "greet": ["Twenty years I've waited for that army to come back up, so you'll have to do instead.",
+                  "Show me the blade. Who sharpened this for you, a goat?",
+                  "Rust is how metal gives up, and I don't let it."],
+        "bought": "Keep it oiled, for I'll know if you don't.",
+        "sold": "It's decent steel, and I expect that someone died holding it.",
+        "broke": "Steel costs money, so come back richer or bleed on someone else's anvil.",
+        "refuse": "I work in metal, and that is no metal.",
+        "purse_empty": "I've no coin left for buying, though I've plenty of hammer.",
+        "sold_out": "The racks are empty. Kill something that has a sword, and bring the sword here."
       },
       "friend": {"person": "pell", "pronoun": "he", "when": {"deeds_all": ["saved.ormond_company"]},
                  "reach": "hardy", "floors": [10, 40],
-                 "counter": "Scouts say {foes} past here. Take {take}. The Legion would.",
+                 "counter": "Scouts say {foes} past here, so take {take}, as the Legion would.",
                  "name": "Jory Pell", "title": "Armourer", "sprite": "npc_deserter",
-                 "line": "Pell. Ex-Legion. I sell what my company doesn't need now. Friend's price for the one who sent me back."}
+                 "line": "I'm Pell, late of the Legion. I sell what my company doesn't need now, at a friend's price to the one who sent me back."}
     },
 
     "bookseller": {
@@ -314,7 +314,7 @@
       "pronoun": "he",
       "reach": "hardy",
       "sprite": "trader_bookseller", "sprite_fallback": "npc_scholar",
-      "lore": "A scribe who copies the writing off the dungeon walls and sells it to anyone who will pay for words. He has been sneezing since the third floor and refuses to discuss it. He goes no deeper than Athena's temple: below it, he says, the walls start writing back.",
+      "lore": "Crispin Vellum is a scribe who copies the writing from the dungeon walls and sells it to all who will pay for words. He has been sneezing since the third floor and will not speak of it. He goes no deeper than the temple of Athena, for below it, he says, the walls begin to write back.",
       "stock": [
         {"class": "scroll", "picks": 3}, {"class": "spellbook", "picks": 1}
       ],
@@ -325,22 +325,22 @@
       "buys": ["scroll", "spellbook"],
       "services": ["id_retry", "map", "trade_in"],
       "lines": {
-        "counter": "The walls below say {foes}. I have {take} on the shelf. ACHOO. Sorry.",
-        "greet": ["Quietly, please. The books are sleeping.",
-                  "Every wall down here is a page, if you can read it. I can. For a fee.",
-                  "That spellbook bit a man. Fair price, though."],
-        "bought": "Read it twice. Then read it again.",
-        "sold": "Oh, that's a good one. ACHOO. Sorry. A good one.",
-        "broke": "Words are cheap. Mine are not.",
-        "refuse": "I deal in words. That has none in it.",
+        "counter": "The walls below say {foes}, and I have {take} on the shelf. ACHOO! Your pardon.",
+        "greet": ["Speak quietly, please, for the books are sleeping.",
+                  "Every wall down here is a page to one who can read, and for a fee I'll read it.",
+                  "That spellbook once bit a man, but the price is fair."],
+        "bought": "Read it twice, and afterward read it again.",
+        "sold": "Oh, that's a good one. ACHOO! Your pardon, it's a good one.",
+        "broke": "Words may be cheap, but mine are not.",
+        "refuse": "I deal in words, and that has none in it.",
         "purse_empty": "My purse is as empty as a blank page.",
-        "sold_out": "I've nothing left to sell you but advice: read more."
+        "sold_out": "I have nothing left to sell you but advice, which is to read more."
       },
       "friend": {"person": "helena", "pronoun": "she", "when": {"deeds_all": ["saved.helena"]},
                  "reach": "hardy", "floors": [15, 40],
-                 "counter": "I've mapped what's below: {foes}. I'd carry {take}.",
+                 "counter": "I've mapped what lies below, where {foes}, and I'd carry {take}.",
                  "name": "Helena Marsh", "title": "Cartographer and Bookseller", "sprite": "npc_injured_scholar",
-                 "line": "Twelve years and never a bad line, and you're the reason I can still hold the pen. Friend's price."}
+                 "line": "Twelve years and never a bad line, and it's thanks to you that I can still hold the pen. You get a friend's price."}
     },
 
     "abyssal": {
@@ -349,7 +349,7 @@
       "pronoun": "it",
       "reach": "deep_being",
       "sprite": "trader_abyssal", "sprite_fallback": "npc_mystic",
-      "lore": "Nobody knows what Vesper is. Nobody has seen Vesper blink. Vesper takes gold, buys curses, and is very polite about all of it, which is somehow worse.",
+      "lore": "No one knows what Vesper is, and none has seen it blink. It takes gold and buys curses, and it is so courteous in all its dealings that folk fear it the more.",
       "stock": [
         {"class": "accessory", "picks": 2, "unique_first": true}, {"class": "wand", "picks": 2},
         {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 1},
@@ -365,19 +365,19 @@
       "buys_cursed": true,
       "services": ["cut_curse", "restore", "trade_in"],
       "lines": {
-        "counter": "Down there {foes}, darling. You'll want {take}.",
-        "greet": ["How lovely. A customer with a pulse.",
-                  "Everything here belonged to someone braver than you. Prices reflect that.",
-                  "I buy curses, darling. Especially the ones that bite."],
-        "bought": "It suits you. Most things do, briefly.",
-        "sold": "Mm. It remembers its last owner. I like that in a thing.",
-        "broke": "Oh dear. Poverty. I've heard of it.",
-        "refuse": "No, I don't think so. I have taste.",
-        "purse_empty": "I've spent all I care to on you today.",
-        "sold_out": "All gone. I do love a customer who commits."
+        "counter": "Down there {foes}, darling, so you will want {take}.",
+        "greet": ["How lovely it is to have a customer with a pulse.",
+                  "All that you see belonged to someone braver than you, and is priced accordingly.",
+                  "I buy curses, darling, and most gladly the ones that bite."],
+        "bought": "It suits you, as most things do for a little while.",
+        "sold": "Mm, it remembers its last owner. I do like that in a thing.",
+        "broke": "Oh dear, is this poverty? I have heard of it.",
+        "refuse": "No, I think not, darling, for I have taste.",
+        "purse_empty": "I have spent all that I care to on you today.",
+        "sold_out": "It is all gone. I do love a wholehearted customer."
       },
       "reactions": [
-        {"when": "open_hand", "mult": 1.10, "line": "Generous, aren't you? So am I. I'll generously charge you more."}
+        {"when": "open_hand", "mult": 1.10, "line": "You are so generous that I shall very generously charge you more."}
       ]
     },
 
@@ -387,7 +387,7 @@
       "pronoun": "she",
       "reach": "hardy",
       "sprite": "trader_sutler", "sprite_fallback": "npc_traveler",
-      "lore": "A sutler follows an army and sells it what it needs. Mags follows heroes down to the gates instead, because heroes pay best the night before a fight. She has buried a lot of customers. She keeps their deposits. She goes as far as Medusa's gate and not one stair further: below that, she says, nobody comes back to pay.",
+      "lore": "Old Mags Thorn is a sutler, one of those who follow an army and sell it what it needs, save that she follows heroes down to the gates, for heroes pay best on the night before a fight. She has buried many customers and kept the deposit of each. She will go as far as Medusa's gate and not one stair further, since below it, she says, nobody comes back to pay.",
       "stock": [
         {"ids": ["potion_of_healing", "potion_of_extra_healing"], "cat": "potion", "picks": 2},
         {"class": "potion", "picks": 2}, {"class": "food", "picks": 2},
@@ -405,22 +405,22 @@
       "buys": "all",
       "services": ["repair", "cure", "heal", "porter", "trade_in"],
       "gate_lines": {
-        "19": "Asterion's below. Bull's head, man's temper, and a maze he knows by heart. Buy healing. Buy string if you can find it.",
-        "39": "Medusa's down there. Don't look at her. I mean it. The last lad who looked is my coat rack now. And this is my last camp: past her, it's dwarves and worse."
+        "19": "Asterion's below, with a bull's head, a man's temper and a maze he knows by heart. Buy healing, and buy string if you can find it.",
+        "39": "Medusa's below, and I mean it when I say don't look at her. The last lad who looked is my coat rack now. This is my last camp, for past her it's dwarves and worse."
       },
       "lines": {
-        "counter": "Past this camp {foes}. Buy {take} or buy a coffin.",
-        "greet": ["Last stall before the gate. Prices are fair. Heroes are not, generally.",
-                  "Buy now. The dead don't haggle, and you might be dead by teatime."],
-        "bought": "Good. Now you're slightly less likely to die.",
-        "sold": "I'll take it. If you don't come back up, I'll take the rest too.",
-        "broke": "No money? Then you'd better be very good at sums.",
-        "refuse": "I can't sell that on to anyone with sense.",
-        "purse_empty": "Purse is empty. Somebody's deposit will come in, give it a day.",
-        "sold_out": "Cleaned me out. Go on, then. Go and be a legend."
+        "counter": "Past this camp {foes}, so buy {take} or else buy a coffin.",
+        "greet": ["This is the last stall before the gate, and my prices are fairer than most heroes.",
+                  "Buy now, for the dead can't haggle and you might be dead by teatime."],
+        "bought": "Good, you are a little less likely to die now.",
+        "sold": "I'll take it, and if you don't come back up I shall take the rest as well.",
+        "broke": "No money? Then you had better be very good at sums.",
+        "refuse": "I could never sell that on to anyone with sense.",
+        "purse_empty": "My purse is empty, but give it a day and somebody's deposit will come in.",
+        "sold_out": "You've cleaned me out, so go on now and be a legend."
       },
       "reactions": [
-        {"when": "open_hand", "mult": 0.90, "line": "I heard what you did for those folk. Mags remembers."}
+        {"when": "open_hand", "mult": 0.90, "line": "I heard what you did for those folk, and Mags will remember."}
       ]
     },
 
@@ -430,7 +430,7 @@
       "pronoun": "he",
       "reach": "deep_folk",
       "sprite": "nibelung_hoardwarden", "sprite_fallback": "npc_dwarf",
-      "lore": "Regin is Fafnir's own brother, a dwarf and a smith. Their father Hreidmar took a ransom of gold for a third son, Otr, and would not share a coin of it. Fafnir killed him for it and lay down on the gold until he became the worm below. Regin got nothing. He reforged the sword Gram for the hero Sigurd and told him to dig a pit in the dragon's path. In the saga, the birds told Sigurd what Regin meant to do once his brother was dead.",
+      "lore": "Regin is Fafnir's own brother, a dwarf and a smith. When their father Hreidmar took a ransom of gold for his third son, Otr, he would not share a coin of it. For this Fafnir killed him and lay down upon the gold until he became the worm below, and Regin had nothing. He reforged the sword Gram for the hero Sigurd and told him to dig a pit in the dragon's path, but the saga tells how the birds revealed to Sigurd what Regin meant to do when his brother was dead.",
       "stock": [
         {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 2}, {"gear": "shield", "picks": 1},
         {"class": "ammo", "picks": 1},
@@ -446,22 +446,22 @@
       "services": ["repair", "sharpen", "reinforce", "reforge", "silvering", "cold_iron_inlay",
                    "trade_in"],
       "gate_lines": {
-        "59": "My brother takes the same track down to the water every day. Dig a pit in it, lie in the pit, and drive up under his left shoulder as he crawls over you. That's all you need to know. That's all anybody needs to know."
+        "59": "My brother takes the same track down to the water every day. Dig a pit in it and lie there, and drive up under his left shoulder as he crawls over you. That is all that you, or anybody else, will ever need to know."
       },
       "lines": {
-        "counter": "Below, {foes}. Take {take}. A smith knows what kills what.",
-        "greet": ["Hreidmar's son. The other one. The one who didn't get the gold.",
-                  "Steel, mail, a good edge. Everything a hero needs to kill a dragon. Ask me how I know.",
-                  "My brother was a dwarf, once. The gold did the rest."],
-        "bought": "Good. Now go down and use it on him.",
-        "sold": "I'll melt it down. Everything melts if the fire is hot enough. Ask my brother.",
-        "broke": "No gold, no steel. It's a family rule.",
+        "counter": "Below us {foes}. Take {take}, for a smith knows what kills what.",
+        "greet": ["I am Hreidmar's other son, the one who didn't get the gold.",
+                  "I sell steel, mail and a good edge, all a hero needs to kill a dragon, as I have cause to know.",
+                  "My brother was a dwarf once, before the gold made a worm of him."],
+        "bought": "Good, now go down and use it on him.",
+        "sold": "I'll melt it down, for in a hot enough fire all things melt, as my brother could tell you.",
+        "broke": "There's no steel without gold, by our family's rule.",
         "refuse": "That's no use to a smith.",
-        "purse_empty": "My purse is empty. His isn't. Funny, that.",
-        "sold_out": "The racks are bare. Everything I had is going down that stair with someone."
+        "purse_empty": "My purse is empty, though my brother's is not.",
+        "sold_out": "The racks are bare, for all that I had is going down that stair with someone."
       },
       "reactions": [
-        {"when": "otters_wergild", "mult": 0.90, "line": "You told two quarrelling dwarves my father's story, I hear. Then you know mine too. Honest prices, and I'll keep my hands where you can see them."}
+        {"when": "otters_wergild", "mult": 0.90, "line": "I hear you told two quarrelling dwarves my father's story, so you know mine as well. My prices will be honest, and my hands will stay where you can see them."}
       ]
     },
 
@@ -471,7 +471,7 @@
       "pronoun": "he",
       "reach": "norse_god",
       "sprite": "npc_old_warrior", "sprite_fallback": "npc_old_warrior",
-      "lore": "An old soldier keeps the last camp before the wolf. His right hand is gone at the wrist, a clean and very old bite. He laid it once in a wolf's mouth as a pledge he knew would be broken, and he will tell you he knew the price before he paid it. He calls himself Tiw; the English named Tuesday for a god of that name. He fed the wolf when it was a pup and the others were afraid to go near it, and nobody has ever called him a peacemaker.",
+      "lore": "An old soldier who calls himself Tiw keeps the last camp before the wolf, and his right hand is gone at the wrist, by a clean and very old bite. He laid it once in a wolf's mouth as a pledge that he knew would be broken, and he will tell you that he knew the price before ever he paid it. The English named Tuesday for a god of that name. He fed the wolf when it was a pup and the others were afraid to go near it, and no one has ever called him a peacemaker.",
       "stock": [
         {"ids": ["potion_of_healing", "potion_of_extra_healing"], "cat": "potion", "picks": 2},
         {"class": "potion", "picks": 2}, {"class": "food", "picks": 2},
@@ -486,22 +486,22 @@
       "buys": "all",
       "services": ["repair", "sharpen", "heal", "reforge", "silvering", "cold_iron_inlay", "trade_in"],
       "gate_lines": {
-        "79": "He's on his island down there, bound with a ribbon the dwarves made from six things that are not. It held when no chain would. Gather the six and bind him again."
+        "79": "He lies on his island below, bound with a ribbon the dwarves made from six things that are not. It held when no chain would, so gather the six and bind him again."
       },
       "lines": {
-        "counter": "On the road down, {foes}. Take {take}. Fair's fair.",
-        "greet": ["Sit. Eat. The wolf will keep.",
-                  "I fed him when he was a pup and the others were afraid to. He took my hand for it later. Fair's fair.",
-                  "Ask me anything but what happened to the hand."],
-        "bought": "Good choice. You'll want it on the island.",
-        "sold": "I'll take it. A soldier never has too many of those.",
-        "broke": "No coin. Then fight well, and come back with some.",
-        "refuse": "No use to me, or to anyone on that island.",
-        "purse_empty": "I've nothing more to give. I gave the best of it a long time ago.",
-        "sold_out": "That's the lot. Go on down. He's waiting, and he never liked waiting."
+        "counter": "On the road down, {foes}. Take {take}, for fair's fair.",
+        "greet": ["Sit and eat, for the wolf will keep.",
+                  "I fed him when he was a pup and the others were afraid to, and later he took my hand for it. I call that fair.",
+                  "Ask me anything you like but what happened to the hand."],
+        "bought": "A good choice, for you'll want it on the island.",
+        "sold": "I'll take it, for a soldier never has too many of those.",
+        "broke": "You have no coin, so fight well and come back with some.",
+        "refuse": "It's no use to me, or to anyone on that island.",
+        "purse_empty": "I have no more to give, for I gave the best of it a long time ago.",
+        "sold_out": "That is all I have. Go on down, for he is waiting and never liked to wait."
       },
       "reactions": [
-        {"when": "noticed_gods", "mult": 0.85, "line": "You've an eye for a god in a beggar's coat, I hear. Then you know whose camp this is. Keep it to yourself, and you pay what things are worth."}
+        {"when": "noticed_gods", "mult": 0.85, "line": "I hear you've an eye for a god in a beggar's coat, so you know whose camp this is. Keep it to yourself, and you shall pay what things are worth."}
       ]
     },
 
@@ -511,7 +511,7 @@
       "pronoun": "she",
       "reach": "deep_folk",
       "sprite": "npc_dwarf", "sprite_fallback": "trader_armourer",
-      "lore": "Brunhild Irontemper is a dwarf of the deep forges, and the honest kind. When Fafnir's gold came among her people, half of them went wrong; she went to work. Dwarves made Thor's hammer, Odin's spear and the ribbon that holds the wolf, and she will tell you about all three while she mends your mail. She charges what a thing is worth and not a coin more.",
+      "lore": "Brunhild Irontemper is a dwarf of the deep forges and of the honest kind, for when Fafnir's gold came among her people and half of them went wrong, she turned to her work. Dwarves made Thor's hammer, Odin's spear and the ribbon that holds the wolf, and she will tell you of all three while she mends your mail. For her work she will charge you what it is worth and not a coin more.",
       "stock": [
         {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 3}, {"gear": "shield", "picks": 1},
         {"class": "ammo", "picks": 1}
@@ -525,25 +525,25 @@
       "services": ["repair", "sharpen", "reinforce", "cut_curse", "reforge", "silvering",
                    "cold_iron_inlay", "lining", "special_order", "trade_in"],
       "lines": {
-        "counter": "Down there {foes}. Take {take}, and keep the edge off stone.",
-        "order_placed": "{item}. Paid fair. It'll be on my rack at the stall on floor {floor}.",
-        "order_ready": "Your {item}, as ordered. Dwarf work, and worth the wait.",
-        "order_refund": "I've no stall below this one. A fair price means you get it back.",
-        "greet": ["Weapon's looking a bit sad, isn't it? I can fix that, for a fair price.",
-                  "The ribbon that holds the wolf was dwarf work. So is everything on this rack.",
-                  "Rust is just metal that's stopped caring. I care for it."],
-        "bought": "Keep the edge off stone. It isn't a pick.",
-        "sold": "Good steel, badly kept. I'll put it right and sell it to someone kinder.",
-        "broke": "Fair price means you pay it. That's what fair means.",
-        "refuse": "Steel I'll take. That isn't steel.",
-        "purse_empty": "Purse is empty. Anvil isn't. Bring me work, not wares.",
-        "sold_out": "Rack's bare. Go and break something, then come back and let me mend it."
+        "counter": "Down there {foes}, so take {take}, and keep the edge off stone.",
+        "order_placed": "You have paid fair. Your {item} will be on my rack at the stall on floor {floor}.",
+        "order_ready": "Here's your {item} as ordered, dwarf work and worth the wait.",
+        "order_refund": "I've no stall below this one, and a fair price means you get it back.",
+        "greet": ["Your weapon looks a little sad, doesn't it? I can fix that for a fair price.",
+                  "The ribbon that holds the wolf was dwarf work, and so is everything on this rack.",
+                  "Rust is metal that has stopped caring, so I do the caring for it."],
+        "bought": "Keep the edge off stone, for it is no pick.",
+        "sold": "It's good steel, badly kept. I'll put it right and sell it to someone kinder.",
+        "broke": "My price is a fair one, and a fair price has to be paid.",
+        "refuse": "I'll take steel, but that is no steel.",
+        "purse_empty": "My purse is empty but my anvil isn't, so bring me work, not wares.",
+        "sold_out": "The rack's bare, so go and break something, then bring it back for me to mend."
       },
       "friend": {"person": "frida", "pronoun": "she", "when": {"deeds_all": ["saved.frida"]},
                  "reach": "deep_folk", "floors": [41, 75],
-                 "counter": "Father always said: know what's below. Below is {foes}. Take {take}.",
+                 "counter": "Father always said to know what's below. Down there {foes}, so take {take}.",
                  "name": "Frida", "title": "Smith's Daughter", "sprite": "npc_dwarf",
-                 "line": "Hepti filled his trench in and I took my hand off the lid. We split Father's tools as well. Friend's price, for the one who told us about Otr."}
+                 "line": "Hepti filled his trench in and I took my hand off the lid, and we split Father's tools as well. You'll have a friend's price, since it was you who told us about Otr."}
     },
 
     "ghost_bookseller": {
@@ -552,7 +552,7 @@
       "pronoun": "he",
       "reach": "dead",
       "sprite": "npc_ghost", "sprite_fallback": "npc_scholar",
-      "lore": "Quentin Shelfmark came down a hundred years ago to copy the writing off the walls, as Crispin Vellum does now. He died at it somewhere past Medusa's gate and has not stopped working. He labels everything: walls, torches, rats, you. He keeps his catalogue the way Callimachus kept the great Library of Alexandria's, in a hundred and twenty rolls: by subject first, then by author. The coins you pay him fall through his hands into a box, and he files them under G.",
+      "lore": "Quentin Shelfmark came down a hundred years ago to copy the writing from the walls, as Crispin Vellum does now, and somewhere past Medusa's gate he died at the work and did not leave off working. He puts a label on all things, on walls and torches, on rats and on you, and he orders his catalogue as Callimachus ordered that of the great Library of Alexandria in a hundred and twenty rolls, first by subject and then by author. When you pay him, the coins fall through his hands into a box, and he files them under the letter G.",
       "stock": [
         {"class": "scroll", "picks": 3}, {"class": "spellbook", "picks": 1}
       ],
@@ -563,22 +563,22 @@
       "buys": ["scroll", "spellbook"],
       "services": ["id_retry", "map", "trade_in"],
       "lines": {
-        "counter": "Below: {foes}. Catalogued. Filed beside it, under Remedies: {take}.",
-        "greet": ["Customer! Encountered! Do hold still while I label you.",
-                  "Everything down here is in my catalogue. Subject first, then author. You are under Visitors.",
-                  "Mind the rat. He is catalogued, and I should hate to start again."],
-        "bought": "Struck from the catalogue. Read it before something else does.",
-        "sold": "Oh, I have no copy of that one. A new shelfmark. How lovely.",
+        "counter": "Below, {foes}. It is catalogued, and filed beside it under Remedies is {take}.",
+        "greet": ["A customer, encountered at last! Do hold still while I label you.",
+                  "Everything down here is in my catalogue, first by subject and then by author, and you are under Visitors.",
+                  "Mind the rat, for he is catalogued and I should hate to start again."],
+        "bought": "I strike it from the catalogue. Read it before something else does.",
+        "sold": "Oh, I have no copy of that one. How lovely to have a new shelfmark!",
         "broke": "No coin? I shall file you under Browsers.",
-        "refuse": "That has no words in it. I only catalogue words.",
-        "purse_empty": "My purse is empty. It goes straight through me, I'm afraid.",
-        "sold_out": "Nothing left on the shelves. Do come back when you've found me something to read."
+        "refuse": "That has no words in it, and I catalogue only words.",
+        "purse_empty": "My purse is empty, for money goes straight through me, I'm afraid.",
+        "sold_out": "There's nothing left on the shelves. Do come back when you've found me something to read."
       },
       "friend": {"person": "sibyl", "pronoun": "she", "when": {"deeds_any": ["aid.sibyl"]},
                  "reach": "immortal", "floors": [41, 90],
-                 "counter": "I have seen what is below, dear: {foes}. You will want {take}.",
+                 "counter": "I have seen what lies below, dear, where {foes}, and you will want {take}.",
                  "name": "The Sibyl of Cumae", "title": "Seller of Books", "sprite": "npc_blind_seer",
-                 "line": "Same price as before, dear. No. For you, a little less. You paid the first time, and nobody ever does."}
+                 "line": "It is the same price as before, dear. No, for you a little less, since you paid the first time, as nobody ever does."}
     },
 
     "damned_generalist": {
@@ -587,7 +587,7 @@
       "pronoun": "he",
       "reach": "damned_demon",
       "sprite": "npc_merchant", "sprite_fallback": "merchant_npc",
-      "lore": "Ortolan kept a shop in a city above and never once gave a beggar a crumb from his table. He is keeping it still. The coins melt between his fingers as he counts them, and the chest he sits on is warm because of where it stands. He cannot stop trading; he has tried, and wherever a customer goes in the Abyss, his shop is there first. Jesus told of treasure laid up on earth, where moth and rust corrupt and thieves break through and steal. Ortolan has all three in stock.",
+      "lore": "Ortolan kept a shop in a city above and never gave a beggar so much as a crumb from his table, and he keeps his shop still. As he counts his coins they melt between his fingers, and the chest on which he sits is warm because of where it stands. He has tried to leave off trading and cannot, for wherever a customer goes in the Abyss his shop is there before him. Jesus told of treasure laid up on earth, where moth and rust corrupt and thieves break through and steal, and all three have found their way among the wares of Ortolan.",
       "stock": [
         {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 2},
         {"class": "accessory", "picks": 2}, {"class": "wand", "picks": 2},
@@ -603,19 +603,19 @@
       "buys": "all",
       "services": ["map", "trade_in"],
       "lines": {
-        "counter": "Down there {foes}. I have {take}. I always have what you need. It never helps.",
-        "greet": ["Ortolan's Emporium! The deepest shop in the world, established longer than you've been alive.",
-                  "Buy something. Please. I can't stop selling, and nobody ever comes.",
-                  "Don't mind the coins. They do that."],
-        "bought": "Sold. Sold. It doesn't help. It never helps.",
-        "sold": "I'll buy it. I have to. Trade is all I'm allowed now.",
-        "broke": "No coin? I know the feeling. A chest full, and not a coin I can keep.",
-        "refuse": "Even down here I have standards. They're all I have left.",
-        "purse_empty": "My purse is empty. It's always empty. It's always full. It's hard to explain.",
-        "sold_out": "Nothing left. Come back tomorrow. There is always a tomorrow here. That's the trouble."
+        "counter": "Down there {foes}. I have {take}. I always have what you need, though it never helps.",
+        "greet": ["Welcome to Ortolan's Emporium, the deepest shop in the world, established longer than you've been alive!",
+                  "Buy something, please, for I can't stop selling and nobody ever comes.",
+                  "Pay the coins no heed, for they always do that."],
+        "bought": "Sold, and it doesn't help me. Selling never helps.",
+        "sold": "I'll buy it, as I must, for trade is all I'm allowed now.",
+        "broke": "No coin? I know how that feels, with a full chest and not a coin I can keep.",
+        "refuse": "Even down here I have standards, and they are all I have left.",
+        "purse_empty": "My purse is empty. It is always empty and always full, which is hard to explain.",
+        "sold_out": "There's nothing left, so come back tomorrow. My trouble is that here there is always a tomorrow."
       },
       "reactions": [
-        {"when": "open_hand", "mult": 1.15, "line": "Pay other people's debts, do you? I never did. You'd think I'd have learned by now. Prices are up."}
+        {"when": "open_hand", "mult": 1.15, "line": "So you pay other people's debts? I never did, and you'd think I'd have learned by now. Prices are up."}
       ]
     }
   }

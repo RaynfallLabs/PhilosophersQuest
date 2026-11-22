@@ -63,12 +63,7 @@ NEW = {
         'resistances': [], 'weaknesses': [], 'tags': ['beast'],
         'family': 'great_beasts', 'pronoun': 'it', 'harvest_tier': 1,
         'treasure': {'gold': [0, 0], 'item_chance': 0.05, 'item_tier': 1, 'purse': 'none'},
-        'lore': ("The Egyptians watched jackals nosing at the edges of their desert graves and made "
-                 "the guardians of the dead jackals: Anubis, who weighs the heart, and Wepwawet, the "
-                 "Opener of the Ways. In the Indian fables of the Panchatantra the jackal is the "
-                 "trickster who wins by wit and never by strength. Golden jackals hunt in pairs and "
-                 "small families, and none of them will stand and fight: each darts in to snap and is "
-                 "gone again before the blow can fall, while its mate comes in from the other side."),
+        'lore': ("Because they saw jackals nosing at the borders of their graves in the desert, the Egyptians made jackals the guardians of the dead: Anubis, who weighs the heart, and Wepwawet, who is called the Opener of the Ways. In the Indian fables of the Panchatantra the jackal is ever the trickster, who wins by his wit and never by his strength. Golden jackals hunt in pairs and small families, and not one of them will stand and fight, for each darts in to snap and is gone again before the blow can fall, while its mate comes in from the other side."),
         'frequency': 6, 'thac0_lore': 20,
         'shrugs_off': [], 'status_immune': [], 'status_weak': ['fear_of_fire'],
         'pack': True, 'pack_size': [2, 3],
@@ -83,12 +78,7 @@ NEW = {
         'resistances': [], 'weaknesses': [], 'tags': ['beast'],
         'family': 'great_beasts', 'pronoun': 'it', 'harvest_tier': 1,
         'treasure': {'gold': [0, 0], 'item_chance': 0.08, 'item_tier': 1, 'purse': 'none'},
-        'lore': ("The grey wolf runs down deer and elk by working as a pack: the fastest hold the "
-                 "quarry's eyes while the rest close on its flanks and go for the legs. Rome was "
-                 "founded, the story goes, by twins a she-wolf suckled, and Norse warriors named their "
-                 "sons for wolves. The dungeon wolves are the same lean grey hunters, and a passage "
-                 "does not fool them: they will not file down a corridor into a sword one at a time, "
-                 "but wait in the open for their prey to come to them."),
+        'lore': ("By the strength of the pack the grey wolf runs down deer and elk, for the swiftest hold the eyes of the quarry while the rest close upon its flanks and go for the legs. It was a she-wolf, the story goes, that suckled the twins who founded Rome, and Norse warriors named their sons for wolves. Those of the dungeon are the same lean grey hunters, and no passage will deceive them: they will not file down a corridor onto a sword one at a time, but wait in the open until their prey comes to them."),
         'frequency': 6, 'thac0_lore': 16,
         'shrugs_off': [], 'status_immune': [], 'status_weak': ['fear_of_fire'],
         'pack': True, 'pack_size': [2, 3],
@@ -104,14 +94,7 @@ NEW = {
         'resistances': [], 'weaknesses': [], 'tags': ['beast'],
         'family': 'great_beasts', 'pronoun': 'it', 'harvest_tier': 2,
         'treasure': {'gold': [0, 0], 'item_chance': 0.1, 'item_tier': 2, 'purse': 'none'},
-        'lore': ("In 1821 William Buckland crawled into Kirkdale Cave in Yorkshire and found its floor "
-                 "covered in the gnawed bones of elephants, rhinoceroses and hippopotamuses. From the "
-                 "tooth marks and the droppings he worked out what had happened: for thousands of years "
-                 "the cave had been a hyena den, and the hyenas had dragged their kills inside. The cave "
-                 "hyena of the Ice Age was bigger and heavier than the spotted hyena of Africa, its jaws "
-                 "cracked the bones of woolly rhinos, and its clans ran horses down for miles. Down here "
-                 "the breed never died out. A clan hangs back from strong prey, whooping to the rest, "
-                 "and closes in on anything that bleeds."),
+        'lore': ("When William Buckland crept into Kirkdale Cave in Yorkshire in the year 1821, he found the floor strewn with the gnawed bones of elephants, rhinoceroses and hippopotamuses, and from the marks of teeth and the droppings he read what had befallen. For thousands of years the cave had been a den of hyenas, and they had dragged their kills within. The cave hyena of the Ice Age was bigger and heavier than the spotted hyena of Africa, its jaws cracked the bones of woolly rhinos, and its clans would run horses down for miles. Here below the breed has never died out, and a clan will hang back from strong prey, whooping to the rest, but closes in upon anything that bleeds."),
         'frequency': 4, 'thac0_lore': 11,
         'shrugs_off': [], 'status_immune': [], 'status_weak': ['fear_of_fire'],
         'pack': True, 'pack_size': [3, 4],
@@ -128,8 +111,7 @@ HARVEST_TO = {'wolf': 'wolf_pack_leader_prime', 'jackal': 'wolf_pack_leader_prim
               'cave_hyena': 'gnoll_prime'}
 INGREDIENTS = ROOT / 'data' / 'items' / 'ingredient.json'
 DESCRIPTIONS = {
-    'wolf_pack_leader_prime': ("A steak from the wild dogs of the dungeon: grey wolves, jackals, the "
-                               "leaders of the wolf packs and the dire wolf alphas. Lean, red and wild."),
+    'wolf_pack_leader_prime': ("A lean, red, wild steak from the wild dogs of the dungeon: grey wolves, jackals, the leaders of the wolf packs and the dire wolf alphas."),
     'gnoll_prime': ("Hyena-meat sausages, from the cave hyenas themselves or from the gnolls, the "
                     "laughing pack-hunters of Yeenoghu. They eat everything, always."),
 }

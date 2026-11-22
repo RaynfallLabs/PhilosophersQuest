@@ -279,7 +279,7 @@ class EncountersMixin:
     def _exit_cow_level(self):
         """Return from Moo Moo Farm to the level where the cow was."""
         self._cow_level_done = True
-        self.add_message("You step through the portal. The pasture fades behind you.", 'info')
+        self.add_message("You step through the portal, and the pasture fades behind you.", 'info')
         self.add_message("The cow is gone. The portal closes. Moo.", 'info')
         try:
             self._change_level(self._cow_return_level, enter_from_top=False, via='cow')
@@ -547,10 +547,10 @@ class EncountersMixin:
     _UNICORN_LINES = {
         'first_seen': "A beautiful white unicorn stands nearby. She watches you warily.",
         'seen_again': "The unicorn has seen you again. She watches you warily.",
-        'watching': "The unicorn has not run. She is watching you, ears forward.",
+        'watching': "The unicorn has not fled, but stands watching you with her ears forward.",
         'lost': "The unicorn loses sight of you, and her wariness comes back.",
-        'relaxing': "The unicorn seems to relax slightly. She sniffs the air...",
-        'eating': "The unicorn's ears perk up! She approaches the Magic Dungeon Carrot and begins to eat.",
+        'relaxing': "The unicorn seems to lose a little of her fear, and she sniffs the air.",
+        'eating': "The unicorn pricks up her ears, draws near the Magic Dungeon Carrot and begins to eat.",
         'trusting': "The unicorn finishes the carrot and looks at you with gentle eyes. You may approach her now.",
         'too_soon_wary': "The unicorn startles and leaps away from you! Too soon: she does not know you yet.",
         'too_soon_relaxing': ("The unicorn shies from your hand and watches you nervously, wary again. "
@@ -590,16 +590,14 @@ class EncountersMixin:
             karma = getattr(self, 'karma', 0)
             if karma < 0:
                 self.add_message(
-                    "The unicorn gazes into your eyes... and recoils. She senses "
-                    "darkness in your heart and gallops away!", 'danger')
+                    "The unicorn gazes into your eyes and recoils. She gallops away, for she senses darkness in your heart!", 'danger')
                 unicorn._unicorn_state = 'fled'
                 unicorn.alive = False
                 return True
 
             # Start the AI escalator quiz
             self.add_message(
-                "The unicorn lowers her head and nuzzles your hand. "
-                "A warm light envelops you both...", 'success')
+                "The unicorn lowers her head and nuzzles your hand, and a warm light enfolds you both.", 'success')
             self._start_unicorn_quiz(unicorn)
             return True
 
@@ -745,7 +743,7 @@ class EncountersMixin:
 
         # Chain 1+: Regenerating status
         self.player.add_effect('regenerating', 30)
-        self.add_message("The unicorn's horn glows — warm healing energy fills you! (Regenerating, 30 turns)", 'success')
+        self.add_message("The unicorn's horn glows, and a warm healing fills you! (Regenerating, 30 turns)", 'success')
 
         if chain >= 2:
             # Full HP/SP/MP restore
@@ -771,7 +769,7 @@ class EncountersMixin:
             if uncursed:
                 self.add_message(f"Holy light purifies your belongings — {uncursed} item{'s' if uncursed != 1 else ''} uncursed!", 'success')
             else:
-                self.add_message("Holy light sweeps through your belongings — all is pure.", 'success')
+                self.add_message("Holy light sweeps through your belongings and finds all of them pure.", 'success')
 
         if chain >= 4:
             # Permanent bonus: magic resistance
@@ -789,8 +787,7 @@ class EncountersMixin:
             self._seeker_event('unicorn_joined')
             unicorn.alive = False  # remove the NPC monster
             self.add_message(
-                "The unicorn bows her head to you. A bond forms between your souls — "
-                "the Ethereal Unicorn joins you as a companion!", 'success')
+                "The unicorn bows her head to you, a bond is forged between your souls, and the Ethereal Unicorn joins you as a companion!", 'success')
             self.add_message(
                 "She will heal you, cleanse afflictions, and sense hidden traps.",
                 'info')
@@ -2414,7 +2411,7 @@ class EncountersMixin:
                     from items import grant_identified
                     grant_identified(self, sw)
                     self._give_item(sw)
-                    self.add_message("The Sword of Michael materializes in your hands!", 'success')
+                    self.add_message("The Sword of Michael takes shape in your hands!", 'success')
             except Exception:
                 from game_log import log_error
                 log_error('game_encounters._resolve_judgment: recovered from an error')

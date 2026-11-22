@@ -10,7 +10,7 @@
       ],
       "boss": "asterion_minotaur",
       "theme": null,
-      "arrival": "The stone here was cut by the men of Minos, long ago. Somewhere below, a bull-headed thing walks his halls, and he knows every one of them.",
+      "arrival": "It was the men of Minos who cut this stone, long ago. Somewhere below you a bull-headed thing walks his halls, and there is not one of them that he does not know.",
       "decor": {
         "wall": {
           "ids": {
@@ -67,7 +67,7 @@
       ],
       "boss": "medusa_gorgon",
       "theme": "temple",
-      "arrival": "The masonry changes. Pale marble now, gone green in every crack, and ivy where no sun has ever reached. This was a temple of Athena once, and something made the goddess turn her face from it. The statues all look back over their shoulders.",
+      "arrival": "Now the masonry changes to pale marble that is green in every crack, and ivy grows where no sun has ever reached. This was once a temple of Athena, until something made the goddess turn her face away from it, and its statues all look back over their shoulders.",
       "decor": {
         "wall": {
           "ids": {
@@ -163,7 +163,7 @@
       ],
       "boss": "fafnir_dragon",
       "theme": "deep",
-      "arrival": "The worked stone ends. These are caves, raw and black with old soot, and the air tastes of ash. The bones down here wore armour, and the armour has melted.",
+      "arrival": "Here the worked stone ends and the raw caves begin, black with old soot, and the air tastes of ash. The bones that lie here once wore armour, and you see that the armour has melted.",
       "decor": {
         "wall": {
           "ids": {
@@ -250,7 +250,7 @@
       ],
       "boss": "fenrir_wolf",
       "theme": "rime",
-      "arrival": "Frost. It furs the stones and creaks underfoot, and your breath hangs in front of you. Round shields hang on these walls, as in the halls of the north. Somewhere below, something has been waiting a long time for the end of the world.",
+      "arrival": "Frost lies like fur upon the stones and creaks beneath your feet, and your breath hangs before you. Round shields hang on these walls, as in the halls of the north, and somewhere below, something has waited a long age for the end of the world.",
       "decor": {
         "wall": {
           "ids": {
@@ -336,7 +336,7 @@
       ],
       "boss": "abaddon_destroyer",
       "theme": "abyss",
-      "arrival": "The floor is black glass, and it is warm. Red light moves in the cracks, and smoke rises from below as from a great furnace. This is the shaft of the Abyss, and its king is waiting at the bottom.",
+      "arrival": "The floor is of black glass and warm to the foot. Red light moves in the cracks, and smoke rises from below as from a great furnace, for you have come into the shaft of the Abyss, and at the bottom of it its king is waiting.",
       "decor": {
         "wall": {
           "ids": {
@@ -424,25 +424,25 @@
     ]
   },
   "clan_lines": {
-    "demons": "Sulphur, and claw-marks gouged into the doors.",
-    "restless_dead": "Grave-dirt on the flagstones, and footprints that lead away from it.",
-    "ghosts": "The cold here moves, and there is no draught to move it.",
-    "mortals": "Boot-prints, cold fires, a dropped knife.",
-    "goblinkin": "Crude marks daubed on every wall.",
+    "demons": "Sulphur hangs in the air, and claws have gouged the doors.",
+    "restless_dead": "There is grave-dirt on the flagstones, and footprints lead away from it.",
+    "ghosts": "The cold moves about here, though there is no draught to move it.",
+    "mortals": "Here are boot-prints, cold fires and a dropped knife.",
+    "goblinkin": "Crude marks are daubed on every wall.",
     "vermin": "The walls rustle and click.",
     "giants": "The doorways here have been knocked wider.",
-    "aberrations": "Nothing here is the shape a living thing should be.",
-    "fair_folk": "Music, faint, from no direction at all.",
-    "vampires_liches": "No rats, no flies, no sound at all.",
-    "dragons": "Scorched stone, and the smell of hot metal.",
+    "aberrations": "Nothing here has the shape that a living thing should have.",
+    "fair_folk": "Faint music comes from no direction at all.",
+    "vampires_liches": "No rat or fly stirs, and no sound is heard.",
+    "dragons": "The stone is scorched and smells of hot metal.",
     "serpents": "Shed skins in every corner.",
-    "great_beasts": "Claw-marks gouged high up the walls.",
-    "constructs": "Gears and stone dust, and the tick of something wound up long ago.",
+    "great_beasts": "Claws have gouged the walls high overhead.",
+    "constructs": "Gears and stone dust lie about, and something wound up long ago still ticks.",
     "elementals": "The air itself is restless here.",
-    "plants": "Roots through the walls and spores on the air.",
+    "plants": "Roots come through the walls and spores are on the air.",
     "oozes": "Every surface is slick.",
-    "birds": "Feathers, and droppings on every ledge.",
-    "gorgons": "Too many statues, and every one of them afraid.",
-    "shapeshifters": "Prints that change shape halfway down a corridor."
+    "birds": "There are feathers, and droppings on every ledge.",
+    "gorgons": "Too many statues stand here, and every face is afraid.",
+    "shapeshifters": "The footprints change shape halfway down a corridor."
   }
 }

@@ -19,7 +19,7 @@ _SPECIES = {
             {'name': 'Voltpaw',      'symbol': 'Z', 'msg': '{old} surges with energy and evolves into Voltpaw!',
              'hatch_msg': 'The sphere bursts in a crackle of sparks and out leaps Voltpaw, already grown, '
                           'its fur standing on end with lightning!'},
-            {'name': 'Thundertail',  'symbol': 'Z', 'msg': '{old} roars with lightning — it has become Thundertail!',
+            {'name': 'Thundertail',  'symbol': 'Z', 'msg': '{old} roars with lightning, and it has become Thundertail!',
              'hatch_msg': 'Thunder booms inside the sphere and Thundertail strides out of the flash, '
                           'full-grown and roaring with lightning!'},
         ],
@@ -51,7 +51,7 @@ _SPECIES = {
             {'name': 'Tideshell',    'symbol': 'S', 'msg': '{old} hardens its shell and evolves into Tideshell!',
              'hatch_msg': 'A wave spills out of the sphere and Tideshell rises from it, '
                           'its shell already as hard as stone!'},
-            {'name': 'Torrentoise',  'symbol': 'S', 'msg': '{old} unleashes a tidal surge — it has become Torrentoise!',
+            {'name': 'Torrentoise',  'symbol': 'S', 'msg': '{old} unleashes a tidal surge, and it has become Torrentoise!',
              'hatch_msg': 'A tidal surge pours out of the sphere and Torrentoise stands in the middle of it, '
                           'vast and ancient!'},
         ],
@@ -85,7 +85,7 @@ _SPECIES = {
             {'name': 'Thornback',    'symbol': 'B', 'msg': '{old} blooms with thorns and evolves into Thornback!',
              'hatch_msg': 'Vines burst out of the sphere and Thornback pushes its way out of them, '
                           'bristling with thorns!'},
-            {'name': 'Bloomsaur',    'symbol': 'B', 'msg': '{old} erupts in brilliant flowers — it has become Bloomsaur!',
+            {'name': 'Bloomsaur',    'symbol': 'B', 'msg': '{old} erupts in brilliant flowers, and it has become Bloomsaur!',
              'hatch_msg': 'The sphere splits like a seed pod and Bloomsaur unfolds out of it '
                           'in a storm of brilliant flowers!'},
         ],
@@ -122,7 +122,7 @@ _SPECIES = {
             {'name': 'Flamescale',   'symbol': 'E', 'msg': '{old} spreads fiery wings and evolves into Flamescale!',
              'hatch_msg': 'Fire rolls out of the sphere and Flamescale steps from the flames, '
                           'wings spread, the flame on its tail burning bright!'},
-            {'name': 'Infernodrake', 'symbol': 'E', 'msg': '{old} roars with infernal power — it has become Infernodrake!',
+            {'name': 'Infernodrake', 'symbol': 'E', 'msg': '{old} roars with infernal power, and it has become Infernodrake!',
              'hatch_msg': 'The sphere erupts in a pillar of flame and Infernodrake rises out of it, '
                           'roaring, its tail a blazing torch!'},
         ],

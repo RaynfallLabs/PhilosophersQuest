@@ -96,7 +96,8 @@ _Q = 'data/questions/'
 _C = 'data/question_contexts/'
 ALLOW: dict[tuple[str, str], str] = {
 
-    ('data/items/shield.json', 'every act of their'): "their = 'the dead'",
+    ('data/items/shield.json', 'every deed of their'): "their = 'the dead'",
+    ('data/items/potion.json', 'anyone who can follow their speech'): "their = 'the birds'",
     ('data/monsters.json', 'anyone who enters their'): 'their = the dead soldiers of the line',
     ('data/monsters.json', 'everyone but themselves'): 'themselves = the tengu',
     (_Q + 'ai.json', 'every image including ones outside their'): 'their = image-recognition systems',

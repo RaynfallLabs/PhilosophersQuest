@@ -842,29 +842,26 @@ def apply_fafnirs_blood(player, chain: int) -> list:
     if chain == 0:
         burn = max(1, player.max_hp // 5)
         player.hp = max(1, player.hp - burn)
-        msgs.append("The blood scalds your mouth and throat, and that is all it does.")
-        msgs.append("Birds are making a noise somewhere overhead. It is only noise.")
+        msgs.append("The blood scalds your mouth and throat, and it does nothing more.")
+        msgs.append("Birds are crying somewhere overhead, but to you it is only noise.")
         return msgs
     earned = {name for need, name in FAFNIR_BLOOD_STEPS if chain >= need}
     if 'heal' in earned:
         player.restore_hp(player.max_hp - player.hp)
-        msgs.append("The blood scalds all the way down. Then the pain is gone, "
-                    "and every wound with it.")
+        msgs.append("The blood scalds all the way down, and then the pain is gone and every wound with it.")
     if 'hint' in earned:
-        msgs.append("Two birds are talking overhead, and the words are plain: "
-                    "a broken sword, a one-eyed god's stone, a throw.")
+        msgs.append("Two birds are talking overhead, and you plainly hear them tell of a broken sword, a one-eyed god's stone and a throw.")
     else:
-        msgs.append("Two birds are talking overhead. You almost follow them.")
+        msgs.append("Two birds are talking overhead, and you almost follow their words.")
     if 'fire_resist' in earned:
         player.add_effect('fire_resist', -1)
         msgs.append("Fire will never bite you as deep again.")
     if 'warning' in earned:
         player.add_effect('warning', -1)
-        msgs.append("The birds go on talking, and now they are talking to you. "
-                    "Nothing will come up on you unannounced again.")
+        msgs.append("The birds talk on, and now they speak to you, so that nothing shall ever again come upon you unannounced.")
     if 'wisdom' in earned:
         player.apply_stat_bonus('WIS', 1)
-        msgs.append("You find you understand rather more than birds.")
+        msgs.append("You find that you understand far more than the speech of birds.")
     return msgs
 
 

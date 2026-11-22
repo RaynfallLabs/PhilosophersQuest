@@ -24,8 +24,8 @@
       "delay_turns": 0,
       "lines": {
         "raise": "You set Robin Hood's horn to your lips and blow.",
-        "fail": "The note cracks and dies in the dark, and nobody comes. The horn will not sound for you again.",
-        "arrive": "Men in Lincoln green come out of the dark as if out of the trees of Sherwood: {who}.",
+        "fail": "The note cracks and dies in the dark, so that no one comes, and the horn will not sound for you again.",
+        "arrive": "Men in Lincoln green come out of the dark as though out of the trees of Sherwood: {who}.",
         "leave": "{name} raises a hand to you and goes back into the greenwood.",
         "chronicle": "Blew Robin Hood's horn. His men came: {who}.",
         "chronicle_fail": "Blew Robin Hood's horn badly. Nobody came."
@@ -45,8 +45,8 @@
       "delay_turns": 0,
       "lines": {
         "raise": "You set Arthur's bugle to your lips and blow.",
-        "fail": "Your breath catches in the old horn and the note is gone before it is out of it. Far off, something turns over in its sleep and is still.",
-        "arrive": "The air rings like a struck bell, and the sleepers come out of it awake and armed: {who}.",
+        "fail": "Your breath catches in the old horn so that the note dies within it, and far away something turns over in its sleep and is still.",
+        "arrive": "The air rings like a struck bell, and the sleepers step out of it awake and armed: {who}.",
         "leave": "{name} bows his head to you and is gone, back to sleep under the hill.",
         "chronicle": "Blew Arthur's bugle in need. The sleepers came: {who}.",
         "chronicle_fail": "Blew Arthur's bugle too weakly. The sleepers slept on."
@@ -65,10 +65,10 @@
       "turns": 10,
       "delay_turns": 0,
       "lines": {
-        "raise": "You lift Gjallarhorn and blow.",
-        "fail": "The great horn only groans, and far above you nobody wakes. It will not sound for you again.",
-        "arrive": "The note goes up through every floor above you and into Valhalla, and its doors open. Down out of the light ride {who}, Odin's chosen dead.",
-        "leave": "{name} turns back toward the light. He will fight again tomorrow, and stand up whole at evening.",
+        "raise": "You lift Gjallarhorn to your lips and blow.",
+        "fail": "The great horn only groans, so that no one far above you wakes, and it will not sound for you again.",
+        "arrive": "The note climbs through every floor above you and into Valhalla, until its doors swing open and down out of the light ride {who}, Odin's chosen dead.",
+        "leave": "{name} turns back toward the light, for he will fight again tomorrow and stand up whole at evening.",
         "chronicle": "Blew Gjallarhorn. The einherjar came from Valhalla: {who}.",
         "chronicle_fail": "Blew Gjallarhorn, but it groaned. Nobody in Valhalla heard it."
       }
@@ -87,10 +87,10 @@
       "delay_turns": 12,
       "lines": {
         "raise": "You set the Olifant to your lips and blow, as Roland did, until your temples ache.",
-        "fail": "The crack in the mouthpiece takes the note, and it dies in the pass. Nobody far off hears it.",
-        "far": "Thirty leagues off, an emperor hears it. A traitor tells him it is nothing; his oldest duke tells him no man blows like that unless he is fighting. The host turns back, but it is a long road. Give ground, and hold on until it comes.",
-        "on_road": "Hooves behind you, a great many of them, and coming hard.",
-        "arrive": "Charlemagne's host comes up out of the dark at the gallop, too late for Roland and not too late for you: {who}.",
+        "fail": "The crack in the mouthpiece swallows the note, so that it dies in the pass and no one far off hears it.",
+        "far": "Thirty leagues off, an emperor hears it. A traitor tells him that it is nothing, but his oldest duke answers that no man blows so unless he is fighting, and the host turns back, though the road is long. Give ground, and hold on until it comes.",
+        "on_road": "Hooves behind you beat upon the stone, a great many of them, and coming hard.",
+        "arrive": "Charlemagne's host rides up out of the dark at the gallop. It was too late for Roland, but it has come in time for you: {who}.",
         "leave": "{name} turns his horse for France.",
         "chronicle": "Blew the Olifant in time. Charlemagne's host came: {who}.",
         "chronicle_fail": "Blew the Olifant, but its crack took the note. Nobody far off heard."

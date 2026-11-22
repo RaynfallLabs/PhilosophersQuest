@@ -42,7 +42,7 @@
                 {"ids": {"ruined_throne": 1}, "count": [1, 1], "where": "boss_room"},
                 {"ids": {"fallen_star": 1}, "count": [1, 1], "where": "entry"}],
       "lore": [{"id": "smoke_vent", "count": [4, 6], "where": "boss_room"}],
-      "arrival": "The shaft ends here. Smoke pours up out of the dark as from a great furnace, and in it something vast is moving its wings. Seven black stones stand round the pit, one for every seal you broke.",
+      "arrival": "Here the shaft comes to its end. Smoke pours up out of the dark as from a great furnace, and within it something vast is moving its wings, while round the pit stand seven black stones, one for every seal that you have broken.",
       "phase": {"abaddon_destroyer": {"floor": {"ids": {"glow_fissure": 1}, "count": [8, 12]}}}
     }
   }

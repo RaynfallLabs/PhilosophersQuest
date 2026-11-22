@@ -40,16 +40,16 @@
   },
   "title": "A LONELY DANCER",
   "story": [
-    "In a quiet side cave the old miners' lamps hang cold on their hooks. The only light is a small red glow on a ledge high up the wall: the bobble on the antenna of a little cream-furred creature with bat wings. He is dancing all alone, a hop, a hop and a spin, and the bobble glows brighter with every step. Then he sees you, and freezes.",
-    "\"Nobody comes down here any more...pom,\" he says. \"The miners danced with us every night, to keep the dark back. Then they went away, and the others went quiet one by one. I still dance. But a dance needs a partner...pom.\"",
-    "His stomach growls. \"The miners used to bring us Starnut Tarts: a starnut, a bread ration and a sweet apple, baked golden. Oh, I do miss a Starnut Tart...pom.\" He looks at you, then at the dark, and stays on his ledge."
+    "In a quiet side cave the old miners' lamps hang cold upon their hooks, and the only light is a small red glow on a ledge high up the wall. It comes from the bobble on the antenna of a little cream-furred creature with bat wings, who is dancing all alone, a hop, a hop and a spin, and with every step the bobble glows brighter, until he catches sight of you and freezes where he stands.",
+    "\"Nobody comes down here any more...pom,\" he says. \"The miners used to dance with us every night, to keep the dark back, but they went away, and then the others went quiet one by one. I still dance, but a dance needs a partner...pom.\"",
+    "His stomach growls. \"The miners used to bring us Starnut Tarts, made of a starnut, a bread ration and a sweet apple and baked golden. Oh, how I miss a Starnut Tart...pom.\" He looks from you to the dark, and he does not leave his ledge."
   ],
-  "waiting_ledge": "The Mooble watches you from his ledge, high up the cave wall. His bobble glows faintly. He looks hungry, and a little hopeful.",
+  "waiting_ledge": "The Mooble watches you from his ledge high up the wall of the cave. His bobble glows faintly, and he looks hungry and a little hopeful.",
   "waiting": [
-    "The Mooble sits at the foot of his ledge, licking the last tart crumbs off his paws. He keeps glancing at the empty floor of the cave, where the miners used to dance.",
-    "The Mooble bounces on his toes when you come in. His bobble is a little brighter than it was.",
+    "At the foot of his ledge the Mooble sits licking the last crumbs of the tart from his paws, and often he glances at the empty floor of the cave, where the miners used to dance.",
+    "The Mooble bounces on his toes as you come in, and his bobble is a little brighter than it was.",
     "The Mooble is already humming a tune when you come in, and his wings twitch in time with it.",
-    "The Mooble hovers in front of you, his bobble glowing like a lantern. He keeps looking at you, then at the way out of his cave, then at you again."
+    "The Mooble hovers before you with his bobble glowing like a lantern, and he looks from you to the way out of his cave and back to you again."
   ],
   "options": {
     "practice": "Practise the dance with him",
@@ -58,33 +58,33 @@
     "choose": "\"I choose you!\"",
     "leave": "Leave him be"
   },
-  "on_ledge": "He shakes his head from his ledge. \"I can't dance on an empty stomach...pom. Not without a Starnut Tart.\"",
-  "no_tart": "You search your pack, but you have no Starnut Tart. He sniffs hopefully all the same. \"A starnut, a bread ration and a sweet apple, baked golden...pom,\" he reminds you.",
-  "tart_given": "You hold out the Starnut Tart. The Mooble's ears go straight up. He glides down from his ledge on his little wings, takes the tart in both paws and eats it in four enormous bites. Then he licks every crumb off his paws, and his bobble glows warm and bright. \"Just like the miners made...pom!\" He hops onto the empty floor of the cave and holds out a paw. He wants to dance.",
+  "on_ledge": "He shakes his head upon his ledge. \"I can't dance on an empty stomach, not without a Starnut Tart...pom.\"",
+  "no_tart": "You search your pack and find no Starnut Tart, yet he sniffs hopefully for all that. \"A starnut, a bread ration and a sweet apple, baked golden...pom,\" he reminds you.",
+  "tart_given": "You hold out the Starnut Tart, and the Mooble's ears rise straight up. He glides down from his ledge on his little wings, takes the tart in both paws and eats it in four enormous bites, and when he has licked every crumb from his paws his bobble glows warm and bright. \"Just like the miners made...pom!\" he cries, and he hops out upon the empty floor of the cave and holds out a paw to you, for he wants to dance.",
   "already_ate": "He has eaten his tart, and he is ready to dance. \"Tarts are for after...pom!\"",
   "dance_won": [
-    "You finish together. He bobs, unsure, and looks down at his own feet as if they belonged to somebody else. Then he does the last step again, by himself, and smiles. \"We danced...pom,\" he whispers.",
-    "You finish on the beat, together. His bobble glows, bright as a miner's lamp, and for a moment the whole cave is lit. \"I had forgotten...pom,\" he says. \"I had forgotten how that feels.\"",
-    "He spins and laughs, and you spin with him, and the old cave rings with it. When you stop, his bobble is blazing and every corner of the cave is full of light. He looks at you for a long moment. \"Can I come with you...pom? I don't want to dance alone any more.\""
+    "You finish together. For a moment he bobs, unsure, and looks down at his own feet as if they belonged to somebody else, and then he does the last step again by himself and smiles. \"We danced...pom,\" he whispers.",
+    "You finish on the beat together. His bobble glows as bright as a miner's lamp, and for a moment the whole cave is lit. \"I had forgotten how that feels...pom,\" he says.",
+    "He spins and laughs, and you spin with him until the old cave rings. When you stop, his bobble is blazing and every corner of the cave is filled with light, and he looks at you a long while before he speaks. \"Can I come with you...pom? I don't want to dance alone any more.\""
   ],
-  "all_danced": "\"We've danced all three...pom!\" he says, hovering hopefully in front of you. \"Was there something you wanted to ask me?\"",
-  "dance_lost":"The Mooble's bobble dims. \"Not yet...pom,\" he says, kindly. \"Come back when your feet have rested, and we'll try again.\"",
+  "all_danced": "\"We've danced all three...pom!\" he says, hovering hopefully before you. \"Was there something you wanted to ask me?\"",
+  "dance_lost":"The Mooble's bobble dims. \"Not yet...pom,\" he says kindly. \"Come back when your feet have rested, and we'll try again.\"",
   "too_soon": [
-    "The Mooble is still dancing the last one through on his own, slowly, step by step. \"Not a dance-off yet...pom,\" he says. \"But we can practise.\"",
-    "The Mooble is still dancing the last one through, and waves you off with a wing. \"Not yet...pom. Practise with me if you like.\"",
+    "The Mooble is still dancing the last one through on his own, slowly, step by step. \"It's not time for a dance-off yet...pom,\" he says, \"but we can practise.\"",
+    "The Mooble is still dancing the last one through, and he waves you off with a wing. \"Not yet...pom. Practise with me if you like.\"",
     "The Mooble is still dancing the last one through, humming as he goes. \"Soon...pom! We can practise while we wait.\""
   ],
   "_too_soon_note": "One line per dance won so far (0, 1, 2): bumped before gap_turns have passed since the last dance-off (or a fumbled ask), he says so; the dance-off (and the ask) wait, and nothing counts, but practice is always on offer (Brandon, 2026-11-14: 'an option to practice as many times as you want before you try it').",
-  "refused_ledge": "You hold out your hand and say it. The Mooble only shrinks back on his ledge. \"I don't even know you...pom,\" he says, and his stomach growls.",
+  "refused_ledge": "You hold out your hand and say it, but the Mooble only shrinks back upon his ledge. \"I don't even know you...pom,\" he says, while his stomach growls.",
   "refused_dances": [
-    "\"A friend is somebody you've danced with...pom,\" he says. \"And we haven't danced at all.\"",
-    "\"One dance is a start...pom,\" he says. \"Two more, and then ask me again.\"",
-    "\"One more dance...pom,\" he says, his bobble flickering. \"Just one more.\""
+    "\"A friend is somebody you've danced with...pom,\" he says, \"and we haven't danced at all.\"",
+    "\"One dance is a start...pom,\" he says. \"Dance two more with me, and then ask me again.\"",
+    "\"One more dance...pom,\" he says, and his bobble flickers. \"Just one more.\""
   ],
   "quiz_title": "\"I CHOOSE YOU!\"  --  ANIMAL",
-  "pass": "\"Pom!\" The Mooble shoots up into the air, turns a somersault and lands on your shoulder. Then he hops down and takes his place at your side, one step behind, the way a dance partner waits for the music. Behind you, the old cave seems a little less dark.",
+  "pass": "\"Pom!\" cries the Mooble, and he shoots up into the air, turns a somersault and lands upon your shoulder. Then he hops down to take his place at your side, one step behind, as a partner in the dance waits for the music, and at your back the old cave seems a little less dark.",
   "fail": "You try, but the words come out in a jumble, and the Mooble tilts his head. \"I don't think you meant that...pom,\" he says. \"Come back and ask me properly.\"",
-  "ignore": "You leave the Mooble in his cave. Behind you, the little red glow starts to bob again, all alone.",
+  "ignore": "You leave the Mooble in his cave, and behind you the little red glow begins to bob again, all alone.",
   "name_title": "HE CHOSE YOU TOO",
   "name_prompt": "Will you give your Mooble a name?",
   "named_message": "{name} the Mooble will never dance alone again.",
@@ -140,9 +140,9 @@
         {"name": "Mooble", "symbol": "m", "sprite": "mooble",
          "msg": "A small cream-furred sprite with little bat wings flutters to your side, his red bobble glowing."},
         {"name": "Mooble Dancer", "symbol": "M", "sprite": "mooble_dancer",
-         "msg": "{old} spins so fast his wings blur, and his bobble blazes like a lamp. He has become a Mooble Dancer!"},
+         "msg": "{old} spins so fast that his wings blur and his bobble blazes like a lamp, for he has become a Mooble Dancer!"},
         {"name": "Mooble Troupe-Leader", "symbol": "M", "sprite": "mooble_troupe_leader",
-         "msg": "{old} dances a step nobody ever taught him, and the dark itself seems to sway along. He has become a Mooble Troupe-Leader!"}
+         "msg": "{old} dances a step that nobody ever taught him and the dark itself seems to sway along, for he has become a Mooble Troupe-Leader!"}
       ],
       "mana_gift": {
         "name": "Bobble Glow",
@@ -176,7 +176,7 @@
       ],
       "bands": [
         {"name": "flop", "label": "A Flop", "min_score": 0.0, "radius": 2, "turns": 1, "max_held": 1, "lift": false,
-         "line": "{pet}'s bobble only flickers. The dance falls apart, and barely a foe looks up."},
+         "line": "{pet}'s bobble only flickers as the dance falls apart, and barely a foe looks up."},
         {"name": "shaky", "label": "Shaky", "min_score": 0.3, "radius": 3, "turns": 2, "max_held": 2, "lift": false,
          "line": "{pet} wobbles through the Dance of the Dark, and a few eyes turn to the glow."},
         {"name": "good", "label": "Good", "min_score": 0.6, "radius": 4, "turns": 3, "max_held": 4, "lift": true,
@@ -184,7 +184,7 @@
         {"name": "great", "label": "Great", "min_score": 0.9, "radius": 5, "turns": 3, "max_held": 6, "lift": true,
          "line": "You and {pet} dance it together, step for step, and the dark itself seems to sway."},
         {"name": "dazzling", "label": "Dazzling", "min_score": 1.15, "radius": 6, "turns": 4, "max_held": 99, "lift": true,
-         "line": "Every step lands. {pet}'s bobble blazes like a little sun, and the whole room stands staring."}
+         "line": "Every step lands true, and {pet}'s bobble blazes like a little sun while the whole room stands staring."}
       ],
       "title": "DANCE OF THE DARK",
       "how": "Dance his steps on the arrow keys as they light up.",

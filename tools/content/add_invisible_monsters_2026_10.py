@@ -55,13 +55,7 @@ NEW = {
         'resistances': ['cold'], 'weaknesses': ['holy'],
         'tags': ['fey', 'humanoid'], 'harvest_tier': 3,
         'treasure': {'gold': [60, 160], 'item_chance': 0.32, 'item_tier': 3},
-        'lore': ("Icelanders tell of the huldufolk, the hidden people who live inside rocks and "
-                 "hills, keep farms and churches of their own, and are seen only when they wish to "
-                 "be. One story says Eve hid her unwashed children from God, and God decreed that "
-                 "what was hidden from Him would be hidden from men. Road crews in Iceland still "
-                 "bend a road round an elf rock rather than blast it. The raiders down here have "
-                 "stopped waiting to be wronged. They walk beside a traveller unseen, lead him in "
-                 "circles, and use the knife once he is lost."),
+        'lore': ("Icelanders tell of the huldufolk, the hidden people, who dwell within rocks and hills with farms and churches of their own and are seen only when they wish it. One tale says that Eve hid her unwashed children from God, and God decreed that what was hidden from Him should be hidden from men. The makers of roads in Iceland will even now bend a road about an elf rock rather than blast it. But the raiders of these depths no longer wait to be wronged. They walk beside a traveller unseen and lead him in circles, and when he is wholly lost they use the knife."),
         'frequency': 2, 'prefers_flank': True, 'invisible': True,
     },
     'darkhelm_shade': {
@@ -77,13 +71,7 @@ NEW = {
         'resistances': ['cold', 'drain', 'poison', 'shadow'], 'weaknesses': ['holy', 'fire'],
         'tags': ['undead'], 'harvest_tier': 4,
         'treasure': {'gold': [110, 300], 'item_chance': 0.45, 'item_tier': 4},
-        'lore': ("The Cyclopes forged three gifts for the sons of Kronos: the thunderbolt for Zeus, "
-                 "the trident for Poseidon, and for Hades a helm of darkness that hid whoever wore "
-                 "it. Athena put it on at Troy so that Ares never saw her spear coming, and Perseus "
-                 "wore it to slip away from the Gorgons. Hades keeps a guard of the dead in lesser "
-                 "copies of that helm and sends them after anyone who carries off what belongs "
-                 "below. They still carry the long spears they were buried with. The living feel the "
-                 "cold of the grave a moment before the point arrives."),
+        'lore': ("For the three sons of Kronos the Cyclopes forged three gifts, the thunderbolt for Zeus, the trident for Poseidon and for Hades a helm of darkness that hid whoever wore it. Athena put it on at Troy so that Ares never saw her spear coming, and Perseus wore it when he slipped away from the Gorgons. Hades has a guard of the dead who wear lesser copies of that helm, and these he sends after any who carry off what belongs below. They bear yet the long spears with which they were buried, and the living feel the cold of the grave a moment before the point strikes home."),
         'frequency': 2, 'invisible': True,
     },
     'whirlwind_jinni': {
@@ -99,12 +87,7 @@ NEW = {
         'resistances': ['fire', 'poison'], 'weaknesses': ['holy', 'cold'],
         'tags': ['outsider', 'elemental'], 'harvest_tier': 4,
         'treasure': {'gold': [130, 320], 'item_chance': 0.6, 'item_tier': 5},
-        'lore': ("The Qur'an says the jinn were made from smokeless fire, and that Iblis and his "
-                 "tribe see men from where men cannot see them. Egyptian villagers told the "
-                 "traveller Edward Lane that a jinni rides inside every dust-devil that spins "
-                 "across the fields, and shouted 'Iron!' at one as it passed, because the jinn "
-                 "fear iron. This one rides its whirlwind down the corridors. A blow comes out of "
-                 "empty air, the dust settles, and by the time anyone turns it is somewhere else."),
+        'lore': ("Of smokeless fire the jinn were made, as the Qur'an says, and Iblis and his tribe see men from where men cannot see them. The villagers of Egypt told the traveller Edward Lane that a jinni rides within every dust-devil that spins across the fields, and they cried 'Iron!' at one as it passed, because the jinn fear iron. This jinni rides his whirlwind along the corridors. A blow falls out of empty air, and by the time the dust has settled and a man has turned about, the rider is somewhere else."),
         'frequency': 2, 'can_phase_blink': True, 'phase_blink_chance': 0.25,
         'invisible': True,
     },
@@ -121,13 +104,7 @@ NEW = {
         'resistances': ['cold', 'poison'], 'weaknesses': ['holy'],
         'tags': ['humanoid'], 'harvest_tier': 4,
         'treasure': {'gold': [220, 520], 'item_chance': 0.7, 'item_tier': 5},
-        'lore': ("In the Nibelungenlied the dwarf Alberich guarded the Nibelung hoard wearing the "
-                 "Tarnkappe, a cloak that hid its wearer from sight and gave him the strength of "
-                 "twelve men. Siegfried wrestled it off him and took the treasure, and later stood "
-                 "unseen beside King Gunther to win Brunhild's games for him. Alberich's sworn "
-                 "wardens still keep what is left of the hoard, deep down, in cloaks cut from the "
-                 "same cloth. Nobody sees a hoard-warden. You see a coin lift off the pile, and "
-                 "then the pick."),
+        'lore': ("Alberich the dwarf, so the Nibelungenlied tells, guarded the Nibelung hoard and wore the Tarnkappe, a cloak that hid its wearer from sight and lent him the strength of twelve men. Siegfried wrested it from him and took the treasure, and afterward stood unseen at King Gunther's side to win Brunhild's games for him. Far below, the sworn wardens of Alberich still keep what remains, in cloaks cut from the same cloth, and no one ever sees a hoard-warden, but only a coin that lifts from the pile and afterward the falling of the pick."),
         'frequency': 2, 'invisible': True,
     },
 }
@@ -135,19 +112,9 @@ NEW = {
 # Existing creatures whose own lore already says nobody sees them.
 MAKE_INVISIBLE = {
     'haunting_presence': (
-        "Something terrible happened in this room, and a little of the person it happened to "
-        "never left. The presence has no face and no voice. It is a cold spot, a held breath, the "
-        "certainty of being watched from the corner. Then the dread arrives all at once, and "
-        "strong men find themselves running before they have decided to. No one has ever seen "
-        "it. Those with eyes for the unseen describe a grey smudge in the corner, about the "
-        "height of whoever died there."),
+        "Some terrible thing befell in this room, and a little of the person who suffered it has never departed. The presence has neither face nor voice, but may be known by a cold place in the air, by a stillness as of breath held, and by the certainty that one is watched from the corner. Then the dread descends all at once, and strong men find that they are running before they have resolved to run. No one has ever seen it, though those who have eyes for the unseen tell of a grey smudge in the corner, about the height of the one who died there."),
     'dread_wraith': (
-        "A wraith that has fed for centuries stops troubling to keep a shape anyone can see. "
-        "The dread wraith stands half a step outside the world and reaches through it: a "
-        "traveller feels the cold first, then the hand on his heart, and sees nothing at all. Old "
-        "soldiers' advice was to swing at the cold. Its wail freezes the limbs, and the air round "
-        "it stays dark and bitter long after it has gone. Fire and holy light find it where eyes "
-        "cannot."),
+        "After a wraith has fed for centuries it no longer troubles to wear a shape that eyes can see. The dread wraith stands half a step outside the world and reaches through, so that a traveller feels first the cold and next the hand upon his heart, and all the while sees nothing. Old soldiers therefore counselled that one should swing at the place where the cold is felt. Its wail freezes the limbs, and the air about it stays dark and bitter long after it has gone, but fire and holy light can find it out where the eye cannot."),
 }
 
 # The mimic-AI monsters, drawn as what they imitate until they spring.

@@ -2497,8 +2497,7 @@ class CombatMixin:
                 and not getattr(self.dungeon, '_old_pit_seen', False):
             self.dungeon._old_pit_seen = True
             self.add_message(
-                "This hole is old. Its rim is scorched black, and beside it "
-                "the stone is scored as if by a sword's point.", 'info')
+                "This hole is old, its rim scorched black, and the stone beside it is scored as though by the point of a sword.", 'info')
 
     # ------------------------------------------------------------------
     # Ranged attack resolution

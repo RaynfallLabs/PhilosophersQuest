@@ -464,45 +464,22 @@ def get_inventory_filter(cost: dict | None) -> str | None:
 
 _JUDGMENT_TIERS = [
     (-10, -6, 'abaddon_empowered',
-     "Michael weighs your soul and recoils.\n"
-     "\"You have walked in darkness.\"\n"
-     "The scales crash to the ground. A terrible power surges\n"
-     "toward the Pit below.\n\n"
-     "Below, the Destroyer grows stronger on what was done above."),
+     "Michael weighs your soul and recoils from it.\n\"You have walked in darkness,\" he says, and the scales crash to the ground as a terrible power surges toward the Pit.\n\nFar below, the Destroyer grows stronger on what was done above."),
 
     (-5, -1, 'locusts_strengthened',
-     "Michael weighs your soul and frowns.\n"
-     "\"Your deeds are wanting.\"\n"
-     "The scales tip toward shadow. A buzzing fills the air.\n\n"
-     "THE LOCUST SWARMS GROW LARGER AND MORE NUMEROUS."),
+     "Michael weighs your soul and frowns.\n\"Your deeds are wanting,\" he says, and as the scales tip toward shadow a buzzing fills the air.\n\nTHE LOCUST SWARMS GROW LARGER AND MORE NUMEROUS."),
 
     (0, 0, 'silence',
-     "Michael weighs your soul.\n"
-     "The scales balance perfectly, and remain cold.\n"
-     "\"You have done nothing worthy of praise or condemnation.\"\n\n"
-     "The altar falls silent. Michael has nothing to hand you."),
+     "Michael weighs your soul, and the scales balance perfectly and remain cold.\n\"You have done nothing worthy of praise or of condemnation,\" he says.\n\nThe altar falls silent, and Michael has nothing to give you."),
 
     (1, 7, 'scales_granted',
-     "Michael weighs your soul and nods.\n"
-     "\"You have walked in light.\"\n"
-     "The scales glow with golden fire. They lift from the altar\n"
-     "and float into your hands.\n\n"
-     "YOU RECEIVE THE SCALES OF MICHAEL."),
+     "Michael weighs your soul and nods.\n\"You have walked in light,\" he says, and the scales glow with golden fire, lift from the altar and float into your hands.\n\nYOU RECEIVE THE SCALES OF MICHAEL."),
 
     # The Sword at 8 or more. It used to need exactly 10, and a run offers
     # exactly ten chances at +1: one missed encounter in a hundred floors
     # put the game's best reward out of reach.
     (8, 10, 'sword_and_scales',
-     "Michael descends in a pillar of white fire. He kneels.\n"
-     "\"In all the ages of this world, few mortals have walked\n"
-     "as you have walked. You gave when you had nothing.\n"
-     "You sacrificed when it would have been easier to take.\"\n"
-     "He places a flaming sword in your hands and anoints\n"
-     "your brow with light.\n"
-     "\"Rise, Paladin. Chosen of God.\n"
-     "The Destroyer will know your name.\"\n\n"
-     "YOU RECEIVE THE SWORD AND SCALES OF MICHAEL.\n"
-     "YOU ARE ANOINTED PALADIN AND CHOSEN OF GOD."),
+     "Michael descends in a pillar of white fire and kneels. \"In all the ages of this world few mortals have walked as you have walked, for you gave when you had nothing, and sacrificed when it would have been easier to take.\"\nHe lays a flaming sword in your hands and anoints your brow with light. \"Rise, Paladin, Chosen of God, and the Destroyer shall know your name.\"\n\nYOU RECEIVE THE SWORD AND SCALES OF MICHAEL.\nYOU ARE ANOINTED PALADIN AND CHOSEN OF GOD."),
 ]
 
 

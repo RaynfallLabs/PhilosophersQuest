@@ -12,15 +12,15 @@
     "symbol": "@",
     "color": [170, 200, 220]
   },
-  "atmosphere": "The air on this floor smells of river mud and myrrh.",
+  "atmosphere": "The air on this floor is heavy with the smell of river mud and myrrh.",
   "door_message": "A door of black stone that was never meant to open swings inward at your touch.",
-  "read_spent_message": "The words are still there. They will not do it twice.",
+  "read_spent_message": "The words remain upon the page, but they will not work their wonder a second time.",
   "spent_name": "Book of Thoth (Read)",
   "altar": {
-    "unread_message": "Not yet. You swore to read it first.",
-    "on_time_message": "The book is wet when you lay it down, though it was dry in your pack. When you look again, it is gone, and the altar smells of river.",
+    "unread_message": "It is too soon to lay it here, for you swore that you would read it first.",
+    "on_time_message": "The book is wet when you lay it down, though it was dry in your pack. When next you look it is gone, and the altar smells of the river.",
     "on_time_chronicle": "Laid the Book of Thoth on an altar, as sworn to the prince. It had gone home.",
-    "late_message": "The book is wet when you lay it down, late. For a moment you hear a woman say a child's name.",
+    "late_message": "Late as you come, the book is wet when you lay it down, and for a moment you hear a woman say a child's name.",
     "late_thread_line": "Took the Book of Thoth back late. Heard a woman say a child's name.",
     "late_chronicle": "Laid the Book of Thoth on an altar, later than sworn. It still went home."
   }
