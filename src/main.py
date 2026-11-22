@@ -5134,6 +5134,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if _spots:
                 self.player.x, self.player.y = min(
                     _spots, key=lambda t: max(abs(t[0] - _px), abs(t[1] - _py)))
+                self._hero_left_tile()
                 self.add_message(
                     "You feel solid again — the wall pushes you back into open space.",
                     'info')
@@ -5177,6 +5178,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         not any(m.alive and m.x == _nx and m.y == _ny
                                 for m in self.monsters):
                     self.player.x, self.player.y = _nx, _ny
+                    self._hero_left_tile()
             except (TypeError, ValueError, AttributeError):
                 pass
         # A giant's blow threw the hero back (src/shove.py, AI-1).
@@ -5899,6 +5901,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             floors = [t for t in floors if t in _reach] or floors
         if floors:
             self.player.x, self.player.y = _rng.choice(floors)
+            self._hero_left_tile()
             self._refresh_fov()
             self.add_message("You feel disoriented as space warps around you!", 'warning')
             _qs_tp = getattr(self, 'quirk_system', None)

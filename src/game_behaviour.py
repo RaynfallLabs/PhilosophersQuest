@@ -218,6 +218,7 @@ class BehaviourMixin:
         (nx, ny), aimed = got
         p.x, p.y = nx, ny
         self.add_message(sv['aimed'] if aimed else sv['line'], 'danger')
+        self._hero_left_tile()
         _hz = getattr(self, '_hazard_step_hero', None)
         if _hz is not None:
             _hz(nx, ny)

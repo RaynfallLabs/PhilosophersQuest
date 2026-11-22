@@ -379,7 +379,8 @@ def test_a_monster_records_what_it_swung_for_the_armor_that_answers():
     """The Hydra carapace and the three fire-throwing shields read fields no
     monster had, so none of them ever fired."""
     mon = open(os.path.join(ROOT, 'src', 'monster.py'), encoding='utf-8').read()
-    assert mon.count("self._last_attack_type = atk.get('type', 'physical')") == 2      # the blow, and Medusa's swing
+    assert mon.count("self._last_attack_type = atk.get('type', 'physical')") == 1      # the one blow
+    assert 'actual, msg = self._resolve_blow(atk, player)' in mon   # Medusa's swing is that blow (h2-05)
     gc = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
     assert 'damage_types' not in gc and 'attack_types' not in gc
     assert "getattr(m, '_last_attack_type', None) == 'poison'" in gc

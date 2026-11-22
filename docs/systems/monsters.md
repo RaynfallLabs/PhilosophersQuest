@@ -120,7 +120,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `revive_hp_pct` | float | default 0.5 | HP fraction after revive. |
 | `drain_heals_self` | float | default 0.0 | 1.0 = full heal from damage of drain attacks; 0.5 = half. Two monsters: `vampire` 1.0, `ancient_vampire_lord` 1.0. |
 | `pull_chance` | float | default 0.0 | Grappler family — chance a hit drags the player one tile toward the monster. Charybdis / kraken. |
-| `gaze_paralyze` | int | default 0 | Paralysis duration on gaze. Blocked by blindness (sight_radius 0); reflected by Aegis of Athena (shield turns gaze back on Medusa). `floating_eye` 4, `medusa_gorgon` 3. |
+| `gaze_paralyze` | int | default 0 | Paralysis duration on gaze. The wards are asked first (Sanctuary, the Mist past its reach: `wards.blow_gate`). Blocked by blindness (sight_radius 0); reflected by Aegis of Athena (shield turns gaze back on Medusa). `floating_eye` 4, `medusa_gorgon` 3. |
 | `gaze_cooldown` | int | default 4 | Turns between gazes (counted down in `tick_effects` for every gazer, AI-1). |
 | `gaze_group` | str | default "" | Gazers in one group share one gaze: when any of them uses it, every living member waits out the cooldown, so the group never paralyses twice in one turn. `stheno_gorgon` and `euryale_gorgon` ("gorgon_sisters"; Stheno 2 turns, Euryale 1). |
 | `dragon_scales` | float | default 0 | Fraction of damage absorbed in `combat.py`'s melee pipeline. `fafnir_dragon` 0.8. |
@@ -764,7 +764,7 @@ Tests: `tests/test_war_bands.py`.
 ### Attack-time flow (abridged)
 
 1. `return_to_hand_ward` consumed → auto-miss.
-2. `gaze_paralyze` cooldown fires its own branch (blind player / Aegis reflect / save-vs-DC) with full mitigation sweep for the fall-through swing.
+2. `gaze_paralyze` cooldown fires its own branch (the wards first, then blind player / Aegis reflect / save-vs-DC); the fall-through swing is an ordinary blow (`_resolve_blow`).
 3. **Fenrir rage ≥ 3** → `_fenrir_multi_attack(player)` (all attacks).
 4. `multi_attack_count` → first N attacks via `_fenrir_multi_attack(player, attack_limit=N)`. `enraged_multi_attack_count` swaps N on enrage. `multi_attack_always` or `multi_attack_count ≥ len(attacks)` fires all.
 5. Ranged routing picks a ranged-worded attack when `ai_pattern=='ranged'` and non-adjacent.

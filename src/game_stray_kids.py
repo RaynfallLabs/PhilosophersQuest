@@ -591,6 +591,7 @@ class StrayKidsMixin:
         if edge in taken or not self.dungeon.is_walkable(*edge):
             edge = self._stray_kids_free_tile(edge[0], edge[1], taken) or (p.x, p.y)
         p.x, p.y = edge
+        self._hero_left_tile()
         stray_kids.settle_band(self.dungeon, self.monsters, (p.x, p.y))
         self.add_message(do['laugh'], 'warning')
         self.add_message(do['lost_log'], 'info')

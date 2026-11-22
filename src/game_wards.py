@@ -70,6 +70,19 @@ class MagicWardsMixin:
         from game_magic import _hero_sees
         return _hero_sees(self, m)
 
+    def _hero_left_tile(self) -> None:
+        """The hero was moved off his tile by something other than his own
+        step (a teleport, a stride, a pull, a shove, a lift): what belongs to
+        the tile stays there. He is out of the pit, and a hold he was moved
+        out of lets go now (holds.validate). What is on his body (a web, a
+        spear through the leg) goes with him."""
+        p = self.player
+        (getattr(p, 'status_effects', None) or {}).pop('in_pit', None)
+        import holds
+        line = holds.validate(p, self.monsters)
+        if line:
+            self.add_message(line, 'success')
+
     def _mm_end_sanctuary(self) -> None:
         """A hostile act (a spell, a scroll, a wand or a clash at creatures,
         whether or not one is aimed): sanctuary ends."""
@@ -256,6 +269,7 @@ class MagicWardsMixin:
                 self.add_message(why, 'warning')
                 return True
             p.x, p.y = spot
+            self._hero_left_tile()          # out of the pit, out of a hold he strode from
             self._refresh_fov()
             self.add_message("You fold the veins of the earth and take one stride. You stand "
                              "where you looked.", 'success')

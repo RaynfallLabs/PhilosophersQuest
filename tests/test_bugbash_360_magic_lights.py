@@ -622,6 +622,233 @@ def test_any_sequence_conserves_items_and_gives_back_what_the_light_replaced(g, 
             owed.slung = None             # the slung torch itself burnt out
 
 
+# ----------------------------------------- h2-04: off the tile, out of it
+
+def _pit(game):
+    p = game.player
+    game.dungeon.pits = set(getattr(game.dungeon, 'pits', None) or ())
+    game.dungeon.pits.add((p.x, p.y))
+    p.add_effect('in_pit', -1)
+
+
+def test_shrink_the_earth_out_of_a_pit_leaves_it(g):
+    p = g.player
+    _pit(g)
+    g._aimed_tile = (p.x + 3, p.y)
+    _cast(g, 'shrink_the_earth_spell')
+    assert not p.has_effect('in_pit')
+    m = _mon(g, 'young_red_dragon', 3)
+    m.thac0 = -40
+    breath = next(a for a in m.attacks if 'breath' in a['name'].lower())
+    assert 'pit' not in m._resolve_blow(dict(breath), p)[1]
+
+
+def test_every_teleport_leaves_the_pit(g):
+    p = g.player
+    _pit(g)
+    g._teleport_player()
+    assert not p.has_effect('in_pit'), 'teleport'
+
+    _pit(g)
+    import hero_specials
+    hero_specials._eff_teleport_self(g, {}, {'range': 4}, 5)
+    assert not p.has_effect('in_pit'), "Hermes' step"
+
+    for sid in ('scroll_of_blink', 'scroll_of_teleportation', 'scroll_of_recall'):
+        _pit(g)
+        _read(g, sid)
+        assert not p.has_effect('in_pit'), sid
+
+
+def test_the_seven_league_step_leaves_the_pit(g):
+    p = g.player
+    _pit(g)
+    p._facing_dx, p._facing_dy = 1, 0
+    p._seven_league_used_this_floor = False
+    x = p.x
+    g._activate_seven_league_step()
+    assert p.x > x and not p.has_effect('in_pit')
+
+
+def test_the_roc_sets_him_down_out_of_the_pit(g):
+    p = g.player
+    _pit(g)
+    g._lore_powers_landing = lambda lo, hi: (p.x + 5, p.y)
+    p.__dict__['_lp_carry_off'] = (8, 15)
+    g._lore_powers_lift(_mon(g, 'roc_adult', -1))
+    assert not p.has_effect('in_pit') and p.has_effect('immobilized')
+
+
+def test_a_pull_a_shove_and_a_drag_leave_the_pit(g):
+    p = g.player
+    _pit(g)
+    x = p.x
+    p._pending_pull_toward = (x + 4, p.y)
+    g._advance_turn()
+    assert p.x == x + 1 and not p.has_effect('in_pit'), 'pull'
+
+    _pit(g)
+    p._pending_shove = {'from': (p.x - 1, p.y), 'aim': False, 'line': 'thrown', 'aimed': 'thrown'}
+    g._ai_resolve_shove()
+    assert not p.has_effect('in_pit'), 'shove'
+
+    import holds
+    m = _mon(g, 'kobold', 1)
+    p.add_effect('in_pit', -1)
+    d = g.dungeon
+    from dungeon import WATER
+    d.tiles[p.y][m.x + 4] = WATER
+    assert holds._drag_step(m, p, d, g.monsters, set())
+    assert not p.has_effect('in_pit'), 'drag'
+
+
+def test_a_stride_out_of_reach_ends_a_hold_at_once(g):
+    import holds
+    p = g.player
+    m = _mon(g, 'kobold', -1)
+    p.status_effects[holds.STATUS] = 3
+    p.__dict__['_held'] = {'uid': holds.uid(m), 'kind': 'constrict', 'name': 'the kobold'}
+    m.__dict__['_holding'] = True
+    g._aimed_tile = (p.x + 4, p.y)
+    _cast(g, 'shrink_the_earth_spell')
+    assert not holds.is_held(p) and not p.has_effect(holds.STATUS)
+
+
+# ------------------------------------------------- h2-05: a gaze asks too
+
+def _no_save(monkeypatch):
+    import status_effects
+    monkeypatch.setattr(status_effects, 'apply_debuff_with_save',
+                        lambda p, eff, dur, dc, **k: (bool(p.add_effect(eff, dur)), ''))
+
+
+def test_a_floating_eye_cannot_paralyse_through_sanctuary_or_mist(g, monkeypatch):
+    _no_save(monkeypatch)
+    p = g.player
+    m = _mon(g, 'floating_eye', 1)
+    wards.grant(p, 'sanctuary', 8)
+    for _ in range(10):
+        m._gaze_cooldown = 0
+        m.attack(p)
+        assert not p.has_effect('paralyzed')
+    p.status_effects.clear()
+    m.x = p.x + 4
+    wards.grant(p, 'veiled', 20)
+    for _ in range(10):
+        m._gaze_cooldown = 0
+        m.attack(p)
+        assert not p.has_effect('paralyzed')
+        assert m._gaze_cooldown > 0              # its turn, spent
+
+
+def test_a_bare_gazer_asks_the_wards_too(g, monkeypatch):
+    _no_save(monkeypatch)
+    p = g.player
+    m = _mon(g, 'floating_eye', 4)
+    m.attacks = []
+    wards.grant(p, 'veiled', 20)
+    m.attack(p)
+    assert not p.has_effect('paralyzed')
+
+
+@pytest.mark.parametrize('kind', ['medusa_gorgon', 'stheno_gorgon'])
+def test_a_gorgons_gaze_does_not_cross_the_mist(g, monkeypatch, kind):
+    _no_save(monkeypatch)
+    p = g.player
+    m = _mon(g, kind, 5)
+    wards.grant(p, 'veiled', 20)
+    m._gaze_cooldown = 0
+    m.attack(p)
+    assert not p.has_effect('paralyzed')
+
+
+def test_medusas_fang_meets_the_styx(g):
+    p = g.player
+    m = _mon(g, 'medusa_gorgon', 1)
+    m.thac0 = -60
+    # Her fang. (The Styx stops no venom, on this road or any other: the
+    # ward's rule is physical blows, wards.blow_gate.)
+    m.attacks = [a for a in m.attacks if a['name'] == 'Serpent Fang']
+    p.add_effect('petrify_immune', 40)
+    wards.grant(p, 'styx_dipped', 6)
+    hp = p.hp
+    for _ in range(30):
+        m._gaze_cooldown = 0
+        dmg, msg = m.attack(p)
+        assert dmg == 0 and p.hp == hp, msg
+
+
+def test_a_gazers_follow_up_is_an_ordinary_blow(g, monkeypatch):
+    p = g.player
+    m = _mon(g, 'stheno_gorgon', 1)
+    p.add_effect('petrify_immune', 40)
+    seen = []
+    monkeypatch.setattr(m, '_resolve_blow', lambda atk, pl, **k: (seen.append(atk) or (3, 'struck')))
+    m._gaze_cooldown = 0
+    dmg, msg = m.attack(p)
+    assert dmg == 3 and seen and msg.endswith('struck') and 'slides off' in msg
+
+
+def test_medusas_swing_records_what_it_swung_and_can_be_slipped(g, monkeypatch):
+    p = g.player
+    m = _mon(g, 'medusa_gorgon', 1)
+    m.thac0 = -60
+    p.add_effect('petrify_immune', 40)
+    m.attacks = [a for a in m.attacks if a['name'] == 'Venom Strike']
+    monkeypatch.setattr(random, 'randint', lambda lo, hi: hi)
+    m._gaze_cooldown = 0
+    m.attack(p)
+    assert m._last_attack_type == 'poison'
+    monkeypatch.setattr(m, '_slipped', lambda pl, atk: True)
+    m._gaze_cooldown = 0
+    dmg, msg = m.attack(p)
+    assert dmg == 0 and 'You slip' in msg and 'slides off' in msg
+
+
+# ------------------------------------------------------- h2-06: the Roc
+
+def test_a_loosed_hero_is_not_carried_off(g):
+    import lore_powers
+    p = g.player
+    m = _mon(g, 'roc_adult', 1)
+    wards.grant(p, 'free_action', 6)
+    hp = p.hp
+    out = lore_powers.after_blow(m, p, {'carry_off': {'chance': 1.0, 'share': 0.1}}, 5)
+    assert '_lp_carry_off' not in p.__dict__ and p.hp == hp
+    assert wards.line('pull_loosed', m) in out
+
+
+# --------------------------------------------------- h2-07: a rite again
+
+def test_a_rite_read_again_holds_again(g):
+    p = g.player
+    m = _mon(g, 'skeleton', 1)
+    blow = {'name': 'claw', 'type': 'physical', 'delivery': 'blow', 'damage': '1d4'}
+    wards.grant(p, 'ward_lemuria', 15)
+    wards.hero_struck(p, m, g.turn_count)
+    assert wards.blow_gate(p, m, blow) is None
+    _read(g, 'scroll_of_the_lemuria')
+    assert wards.blow_gate(p, m, blow) is not None
+
+
+def test_deliver_us_prayed_again_holds_again(g):
+    p = g.player
+    m = _mon(g, 'skeleton', 1)
+    blow = {'name': 'claw', 'type': 'physical', 'delivery': 'blow', 'damage': '1d4'}
+    wards.grant(p, 'ward_deliver_us', 12)
+    wards.hero_struck(p, m, g.turn_count)
+    wards.grant(p, 'ward_deliver_us', 12)
+    assert wards.blow_gate(p, m, blow) is not None
+
+
+def test_sanctuary_cast_again_is_a_new_rite():
+    p = Player()
+    wards.grant(p, 'sanctuary', 8)
+    first = wards._gen(p, 'sanctuary')
+    wards.grant(p, 'sanctuary', 8)
+    assert wards._gen(p, 'sanctuary') > first
+
+
 # ----------------------------------------- h2-10: lit for a look is lit
 
 def _look_and_douse(game):

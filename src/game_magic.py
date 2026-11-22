@@ -3278,6 +3278,7 @@ class MagicMixin(MagicWardsMixin):
                             abs(t[0] - _sx) + abs(t[1] - _sy), t)) if _free else None
                 if target:
                     self.player.x, self.player.y = target
+                    self._hero_left_tile()
                     self._refresh_fov()
                     self.add_message("Space folds — you step directly to the stairs down!", 'success')
                     _qs_tp = getattr(self, 'quirk_system', None)
@@ -3306,6 +3307,7 @@ class MagicMixin(MagicWardsMixin):
                 ]
                 if floors:
                     self.player.x, self.player.y = _rng.choice(floors)
+                    self._hero_left_tile()
                     self._refresh_fov()
                     self.add_message("You step through a remembered place.", 'success')
                     _qs_tp = getattr(self, 'quirk_system', None)
