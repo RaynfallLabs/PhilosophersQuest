@@ -295,7 +295,9 @@ def main(argv):
     merged, left = {}, {}
     for j in jobs:
         left[j['name']] = left.get(j['name'], 0) + 1
-    with mp.Pool(workers, initializer=mc._low_priority) as pool:
+    # A worker keeps about 100 MB of every chunk it plays (30 of them took 40 GB
+    # fourteen cells into a sweep, 2026-11-22): a fresh one every two chunks.
+    with mp.Pool(workers, initializer=mc._low_priority, maxtasksperchild=2) as pool:
         for res in pool.imap_unordered(run, jobs):
             name = res['cell']['name']
             merged[name] = merge(merged.get(name), res)
