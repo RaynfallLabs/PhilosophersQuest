@@ -903,6 +903,12 @@ def idle(m, player, dungeon, all_monsters, extra_occupied) -> None:
             if not step_toward(m, dungeon, feast, all_monsters, extra_occupied, player):
                 m._scavenge = None
         return
+    # A hunting pack goes about as one while it has no prey (src/packs.py):
+    # its head keeps its own business, the rest keep beside it. (Each roamed
+    # the floor alone, and a pack set down together was 8 to 10 tiles apart
+    # within 50 to 200 turns: Brandon's play-test, 2026-11-22.)
+    if _keep_with_pack(m, player, dungeon, all_monsters, extra_occupied):
+        return
     job = m.__dict__.get('_job') or 'wander'
     if m._is_named_foe() or getattr(m, 'is_boss', False) or job in ('guard', 'sleep'):
         home = m.__dict__.get('_home')
@@ -913,6 +919,20 @@ def idle(m, player, dungeon, all_monsters, extra_occupied) -> None:
             step_toward(m, dungeon, home, all_monsters, extra_occupied, player)
         return
     _roam(m, player, dungeon, all_monsters, extra_occupied)
+
+
+def _keep_with_pack(m, player, dungeon, all_monsters, extra_occupied) -> bool:
+    """One of a pack, not its head: it keeps within tactics idle_keep tiles
+    of the head, and steps after it when it falls behind. True when its turn
+    went on keeping with the pack."""
+    import packs
+    head = packs.head_of(m, all_monsters)
+    if head is None or head is m:
+        return False
+    m._roam_to = None
+    if _cheb(m.x, m.y, head.x, head.y) > int(packs.tactics().get('idle_keep', 2)):
+        step_toward(m, dungeon, (head.x, head.y), all_monsters, extra_occupied, player)
+    return True
 
 
 def _roam(m, player, dungeon, all_monsters, extra_occupied) -> None:

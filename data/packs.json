@@ -1,7 +1,7 @@
 {
   "_doc": "Packs (src/packs.py; Brandon 2026-11-18: 'add packs that fight 2+ at a time, the more diverse and unique our monsters are, the better'; the design he approved 2026-11-19). A pack is a kin group that hunts together, set down at once (data/monsters.json pack + pack_size; dungeon._spawn_one_in_room). A war-band (data/war_bands.json) is a mixed group with a leader and roles; a band's member keeps to its band and never uses pack tactics. 'tactics' are the numbers of the hunt every pack below shares: in the open they spread round the hero, each to a free tile on its own side; where only one of them could reach him (a corridor, a doorway) they do not come on single file (corridor 'hold': they wait out of his sight beside the mouth for him to come out, or go round to come at him from another side; 'press': vermin pour in anyway); one that notices him rouses the rest. 'packs' are the lore groups (a kind belongs to one), each with its own trick in 'tricks'. 'herds' are the kinds that are set down in groups (pack: true) but do not hunt as a pack, with the reason. Every line is plain player text; {The}, {the}, {He}, {he}, {his}, {him} name the creature (monster.fill), {pack} the pack's plural, {n} a count in words.",
   "tactics": {
-    "_doc": "engage_radius: tactics only within this many tiles of the hero (Chebyshev), so far-off members just come on. mates_radius: packmates this close count. choke_slots: the hero is at a choke when no more than this many tiles beside him can be reached from the pack's side (a short walk: slack steps more than the straight distance, at most reach_nodes tiles searched). round_*: the search for a way round (at most round_nodes tiles, a path of round_max steps; looked for again every round_every turns). patience: turns a pack holds a mouth before one of them tries his luck. rouse_radius: how far the first one's cry carries (as sound does, round corners, not through stone).",
+    "_doc": "engage_radius: tactics only within this many tiles of the hero (Chebyshev), so far-off members just come on. mates_radius: packmates this close count. choke_slots: the hero is at a choke when no more than this many tiles beside him can be reached from the pack's side (a short walk: slack steps more than the straight distance, at most reach_nodes tiles searched). round_*: the search for a way round (at most round_nodes tiles, a path of round_max steps; looked for again every round_every turns). patience: turns a pack holds a mouth before one of them tries his luck. rouse_radius: how far the first one's cry carries (as sound does, round corners, not through stone). idle_keep: while it has no prey a pack goes about as one, each within this many tiles of its head (packs.head_of; senses.idle).",
     "engage_radius": 5,
     "mates_radius": 8,
     "choke_slots": 1,
@@ -12,6 +12,7 @@
     "round_every": 6,
     "patience": 12,
     "rouse_radius": 8,
+    "idle_keep": 2,
     "hold_line": "The {pack} will not follow you into the narrow way. They wait beyond it, out of sight, for you to come out.",
     "round_line": "One of the {pack} slips away to come at you from another side.",
     "press_line": "Tired of waiting, one of the {pack} tries its luck.",

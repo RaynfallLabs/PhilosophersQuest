@@ -947,6 +947,26 @@ def on_spawned(members, dungeon, rng, pool=None, monsters=None) -> list:
     return members
 
 
+def head_of(m, monsters):
+    """The one an idle pack follows (senses.idle): the pack's leader kind
+    when one is with it (the wolves' parent), else the first of it still
+    alive. None for a creature in no pack, or one not hunting as its pack
+    does (in_pack: a band's man, a friend, babbled). The rest keep within
+    tactics idle_keep of it, so a pack set down together goes about together
+    (Brandon's play-test, 2026-11-22: the dire rats were all over the floor,
+    never two together)."""
+    uid = getattr(m, '__dict__', {}).get('_pack')
+    if not uid or not in_pack(m):
+        return None
+    mates = [o for o in monsters or () if getattr(o, 'alive', False)
+             and getattr(o, '__dict__', {}).get('_pack') == uid]
+    if not mates:
+        return None
+    leads = {v.get('kind') for v in (spec(pack_of(m)).get('leader') or {}).values()
+             if isinstance(v, dict)}
+    return next((o for o in mates if getattr(o, 'kind', '') in leads), mates[0])
+
+
 def alarm(m, all_monsters, x: int, y: int, dungeon=None) -> int:
     """``m`` has just found the hero at (x, y): its pack is roused to him, as
     far as its cry carries (rouse_radius; a hound's bay, much farther). A

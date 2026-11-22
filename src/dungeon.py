@@ -1477,7 +1477,11 @@ def _spawn_one_in_room(room, eligible, dungeon, monsters, rng) -> bool:
             _ps = defn.get('pack_size')
             if _ps:
                 pack_extra = rng.randint(int(_ps[0]), int(_ps[-1])) - 1
-            for ptx, pty in tiles:
+            # Set down beside the first, nearest tiles first (the shuffle
+            # breaks ties): any free tile of the room scattered a pack of
+            # rats across it (Brandon's play-test, 2026-11-22).
+            near = sorted(tiles, key=lambda t: max(abs(t[0] - tx), abs(t[1] - ty)))
+            for ptx, pty in near:
                 if pack_extra <= 0:
                     break
                 if not dungeon.is_walkable(ptx, pty):
