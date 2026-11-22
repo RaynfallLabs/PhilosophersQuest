@@ -268,15 +268,22 @@ def pronoun_fill(monster) -> dict:
             'himself': obj + 'self'}
 
 
+def is_bystander(m) -> bool:
+    """One standing among the monsters whom no blow hurts (Monster.take_damage)
+    and no area blow seeks (game_combat): the people of an encounter, the
+    unicorn and the allied (the angels, and the zombie band on its stage)."""
+    return bool(getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)
+                or getattr(m, '_is_unicorn', False) or getattr(m, 'is_allied', False))
+
+
 def is_innocent(m) -> bool:
     """Whom the game counts innocent, said in this one place (ruling C8,
-    2026-11-22): the people of an encounter, the unicorn, someone the hero
-    walks with (an escort) and the allied (the angels). No blow hurts them
-    (Monster.take_damage), no area blow seeks them (game_combat), and to
-    strike one unseen is the Ring of Gyges' wrong (combat.player_attack)."""
-    return bool(getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)
-                or getattr(m, '_is_unicorn', False) or getattr(m, 'is_allied', False)
-                or getattr(m, 'is_escort', False))
+    2026-11-22): a bystander (but the zombie band, who are only spared) and
+    someone the hero walks with (an escort). To strike one unseen is the
+    Ring of Gyges' wrong (combat.player_attack)."""
+    if getattr(m, 'is_escort', False):
+        return True
+    return is_bystander(m) and not getattr(m, 'is_sk_zombie', False)
 
 
 def fill(monster, text: str, **kw) -> str:
@@ -1404,7 +1411,7 @@ class Monster:
         no damage at all. They have 1 HP and stand among the monsters, and
         area spells do not skip them: one blast could delete a quest.
         """
-        if is_innocent(self):
+        if is_bystander(self):
             return 0
         if amount > 0:
             self._unhurt_turns = 0           # see _recover_when_left
@@ -2574,7 +2581,8 @@ class Monster:
 
         # --- Phase-blink: chance to teleport adjacent to player when at distance ---
         # Applied AFTER detection/awareness so unaware monsters don't teleport.
-        if self.can_phase_blink and dist_to_player >= 3:
+        if (self.can_phase_blink and dist_to_player >= 3
+                and self._may_blink_at(player, dungeon)):
             if random.random() < self.phase_blink_chance:
                 if self._phase_blink_to_player(player, dungeon, all_monsters, extra_occupied):
                     return True  # adjacent now — attack this turn
@@ -3910,6 +3918,14 @@ class Monster:
             return self._standard_move(player, dungeon, all_monsters, extra_occupied, 'aggressive')
         # Still hidden — completely inert until player walks into range
         return False
+
+    def _may_blink_at(self, player, dungeon) -> bool:
+        """The blink dog leaps a short way over open ground
+        (`blink_needs_sight`): its nose finds him through a wall, but it
+        does not blink through one (ruling B6: walls stay legend)."""
+        import kind_data
+        return (not kind_data.field(self, 'blink_needs_sight')
+                or self._has_los(player.x, player.y, dungeon))
 
     def _phase_blink_to_player(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Teleport to an empty walkable tile adjacent to the player.

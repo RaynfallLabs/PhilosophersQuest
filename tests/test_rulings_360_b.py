@@ -74,7 +74,8 @@ def test_b5_the_crypt_things_attack_no_longer_says_teleport():
     import monster
     names = [a['name'] for a in MONS['crypt_thing']['attacks']]
     assert names == ['Bewilder', 'Claw']
-    assert 'Teleport' not in _data('combat_lines.json')['attack_verbs']
+    # (A Crypt Thing in an old save keeps the old name: its verb is the same.)
+    assert _data('combat_lines.json')['attack_verbs']['Teleport'] == 'bewilders'
     m = _mk('crypt_thing', 5, 5)
     assert monster._attack_verb(m.attacks[0]) == 'bewilders'
     assert m.attacks[0]['effect'] == 'confused'
@@ -161,7 +162,7 @@ def test_b6_refused_it_fights():
 
 def test_b6_with_too_little_nothing_is_taken():
     g, m = _bargain(0)
-    assert g._parley_offer()
+    assert not g._parley_offer()              # nothing to ask, so D stays Drop
     assert not getattr(g, '_ask_data', None) and not m.__dict__.get('_lp_calm')
     assert 'you have not' in ' '.join(_msgs(g, 3))
 

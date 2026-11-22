@@ -9671,7 +9671,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif isinstance(item, Accessory):
             fx = item.effects or {}
             if worn_statuses(fx):
-                return f"grants {' and '.join(worn_statuses(fx))}"
+                from status_effects import EFFECT_INFO
+                names = [(EFFECT_INFO.get(s) or (str(s).replace('_', ' ').title(),))[0]
+                         for s in worn_statuses(fx)]
+                return f"grants {' and '.join(names)}"
             if 'stat' in fx and 'amount' in fx:
                 return f"{fx['stat']} +{fx['amount']}"
             # Equip-time effects empty — fall back to the carry bonus

@@ -391,7 +391,8 @@ class MagicWardsMixin:
     def _cast_entangle(self, target, dur: int) -> None:
         """Dionysus's Vine: everything on the target's tile and the eight
         round it is held fast; the vines stay and catch whoever steps in,
-        unless the saving throw slips them (data/hazards.json)."""
+        unless the hero's saving throw slips them, or a great foe's roll
+        (data/hazards.json `save`, `resist`)."""
         import decor
         import hazards
         from dungeon import FLOOR

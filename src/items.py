@@ -1785,7 +1785,7 @@ def is_found_gold(pile) -> bool:
 
 
 def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int,
-                     found: bool = True) -> 'GoldPile':
+                     found: bool = True, set_down: bool = False) -> 'GoldPile':
     """Pool gold on a single tile instead of creating overlapping piles.
     If a GoldPile of the same kind (found, or the hero's own) already exists
     at (x, y), add to it; otherwise create new. Returns the resulting pile.
@@ -1793,18 +1793,23 @@ def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int,
     The two kinds never merge: found gold poured onto a pile the hero
     dropped lost its "found" mark, and the hero's own gold returned by a
     thief onto a found pile gained one (a gold ring doubled it,
-    ECONOMY_REFACTOR_PROPOSAL S2)."""
+    ECONOMY_REFACTOR_PROPOSAL S2). Nor does what he set down himself
+    (``set_down``) merge with the rest of his own, an overflow or a thief's
+    return: a gold-digging ant takes that pile only (ruling A4)."""
     if amount <= 0:
         return None
     for it in ground_items:
         if (isinstance(it, GoldPile) and it.x == x and it.y == y
-                and is_found_gold(it) == bool(found)):
+                and is_found_gold(it) == bool(found)
+                and bool(getattr(it, '_set_down', False)) == bool(set_down)):
             it.amount += amount
             it._refresh_name()
             return it
     pile = GoldPile(amount, x, y)
     if not found:
         pile._dropped_by_player = True
+    if set_down:
+        pile._set_down = True
     ground_items.append(pile)
     return pile
 

@@ -128,6 +128,9 @@ class LorePowersMixin:
         d = m.__dict__
         state = d.get('_lp_parley')
         if state is None:
+            if lore_powers.too_late(m):
+                d['_lp_parley'] = 'angry'     # the fight came first
+                return
             # It calls out once it has noticed the hero (src/senses.py) and
             # has him in its sight: a voice, heard whether or not he can see
             # it yet. Silenced, it has no voice to call with.
@@ -231,7 +234,7 @@ class LorePowersMixin:
         plan = self._payment_plan(cost)
         if plan is None:
             self.add_message(f"{wants}, and you have not enough in coin or treasure.", 'warning')
-            return True
+            return False                      # nothing to ask, so D is Drop as ever
 
         def settle(paid: bool) -> None:
             for o in group:

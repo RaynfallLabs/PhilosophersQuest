@@ -214,7 +214,7 @@ def migrate(player, all_items) -> None:
         for st in before[id(w)] - after[id(w)]:
             player.drop_worn_status(st)
         for st in after[id(w)] - before[id(w)]:
-            if st not in player.status_effects:
+            if player.status_effects.get(st) != -1:      # a timed one running too
                 player.add_effect(st, -1)
     # The worn stats move only if what a worn piece lends moved (a save's
     # ledger is otherwise left exactly as it was).

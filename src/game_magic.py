@@ -188,6 +188,9 @@ def _polymorph_swap(game, target, new_m) -> str:
     target.__dict__['stolen_items'] = []
     idx = game.monsters.index(target)
     game.monsters[idx] = new_m
+    falls = getattr(game, '_ai_summons_fall', None)
+    if callable(falls):
+        falls(target)           # an Overseer no more: its workers fall still
     if _hidden(new_m, game.player):
         new_m._unseen = True
         return f"{old} warps and vanishes from sight!"
@@ -576,6 +579,8 @@ class MagicMixin(MagicWardsMixin):
         got = target.add_effect(effect, duration)
         if not got:
             return 0, ''
+        import lore_powers as _lp_wound
+        _lp_wound.wronged(target, effect)       # a wound laid ends a peace, as a blow does
         return got, (_aff.status_line('weak', effect, target) if weak else '')
 
     def _say_inflicted(self, target, got: int, why: str, landed: str, shrugged: str) -> None:

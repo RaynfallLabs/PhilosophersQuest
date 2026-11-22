@@ -96,8 +96,8 @@ def _is_bystander(m) -> bool:
     an allied angel. Monster.take_damage leaves them unhurt; area blows
     (cleave, ricochet, Joyeuse, the Boots of Thor) also pass them by, so
     they print no damage they did not take."""
-    from monster import is_innocent
-    return is_innocent(m)
+    from monster import is_bystander
+    return is_bystander(m)
 
 
 # A riposte's share of the weapon's base damage: the shortsword's, and the
@@ -3402,7 +3402,7 @@ class CombatMixin:
         import combat as _combat
         m._incoming_forms = _combat.blow_forms_of(w)
         done = m.take_damage(max(1, int((w.base_damage or 4) * RIPOSTE_SHARE)))
-        self.add_message(f"Your {self._display_name(w)} swings of itself and strikes "
+        self.add_message(f"Your {self._bare_name(w)} swings of itself and strikes "
                          f"{the_name(m, lower=True)} for {done}!", 'success')
         if not m.alive:
             self._on_monster_killed(m)

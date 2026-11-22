@@ -111,7 +111,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `pack_min_allies` | int | default 1 | Threshold used by `pack_dependent`. |
 | `prefers_flank` | bool | default False | Rotates approach direction 90° when an ally is already pressuring the player on the same vector. 3 monsters. |
 | `can_phase_walls` | bool | default False | Movement can pass through `dungeon.phasing_walls`. Three monsters: `asterion_minotaur` (hit-and-run), `elder_vampire`, `ancient_vampire_lord`. |
-| `can_phase_blink` | bool | default False | Chance to teleport adjacent when `>= 3` tiles from the player. 14 monsters, the blink dog among them (ruling B6, 2026-11-22). |
+| `can_phase_blink` | bool | default False | Chance to teleport adjacent when `>= 3` tiles from the player. 14 monsters, the blink dog among them (ruling B6, 2026-11-22), which alone must see the hero to blink (`blink_needs_sight`: never through a wall). |
 | `phase_blink_chance` | float | default 0.30 | Per-turn chance when eligible. |
 | `can_charge` | bool | default False | Arms a damage multiplier when approaching the player on a cardinal or diagonal axis at distance 2-5. 7 monsters. |
 | `charge_bonus_mult` | float | default 1.5 | Damage multiplier when a charged attack lands. |
@@ -163,7 +163,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `summon_kind` | str or [str] | Monster id(s) to summon. Empty = no summoner. Monsters that carry a value include `ancient_lich`, `skeleton_mage`, `skeleton_necromancer`, `skeleton_lich`, `banshee_lich`, `lich_sovereign` (its court of dead knights, 2026-11-17), `cult_hierophant`, `imp_lord`, `snake_charmer`, `whispering_crone`, `crypt_summoner`, `endor_medium`, `ushabti_overseer`, `tiamat`, `asmodeus`. |
 | `summon_cooldown` | int | default 5 | Turns between summons. |
 | `summon_max` | int | default 4 | Hard cap on summoned minions this encounter. |
-| `summons_fall` | `{line}` | default none | When it dies, what it called (`_summoned_by`) falls still with it: gone, with no loot, body or kill (`summoning.fall_still`). The Ushabti Overseer (ruling B12, 2026-11-22). |
+| `summons_fall` | `{line, tell}` | default none | When it dies or is polymorphed, what it called (`_summoned_by`) falls still with it: gone, with no loot, body or kill (`summoning.fall_still`). The Ushabti Overseer (ruling B12, 2026-11-22). |
 | `locust_interval` | int | default 0 | Abaddon-specific: turns between locust-swarm bursts. |
 | `locust_count` | [min, max] | default [0, 0] | Range of locusts per burst. |
 | `base_resistances` | [str] | | Abaddon's base resistance set (surfaced during the locust-ring quest mechanic). |
@@ -520,7 +520,7 @@ The drain type (67 kinds) cost a point of CON on a failed save, at most once a f
 
 ### Grave Rot (`grave_rot`, `src/grave_rot.py`)
 
-`diseased` cost a stat point about one bite in three and no health, and was gone in 4-8 turns; on a monster it ticked 0.4% a turn. Now, on the hero, while diseased his wounds do not mend by rest (`main._tick_hp_regen`) and every heal that goes through `Player.restore_hp` does half (potions, healing wands, spells, prayers, meals, the hero specials, the Wish and Restore Body; a drain wand's draw, a kill's heal, a life-stealing blow or special and a paid physician do not go through it: ruling D5, 2026-11-22; a heal's line prints what was healed, and one that calls him whole is said only when he is: `grave_rot.told`, `grave_rot.whole`; the stat sap stays); a monster's disease lasts its rider's own `effect_duration`, times the kind's `disease_linger` where its lore makes the sickness one that lingers (mummy rot 10; Pazuzu's spawn, Hel's handmaid, the plague ooze 8; the plague witch, Nidhogg's brood 6; the aboleth, the otyugh, the demon general, the abyssal dragon 5; the plague zombie, the harrow witch, the ghast-eater 4; the huecuva 3), at most 60 turns (`status_effects.MAX_EFFECT_DURATION`); a rat's bite, a zombie's claw, a wererat's or a death dog's bite keep their own few turns. (A first build lingered every disease x 10, which the lore never asked of a rat's bite; the simulation section of the AI-1 report says what it cost the slowest kid.) On a monster it costs `max_hp / 40` a turn (poison's rate) and stops its regeneration (a sick troll does not mend). Cured by the Potion of Cure Disease, the Mercy prayer at a chain of 4 (before its heal, so the heal is whole), the physician, a fountain's best water; `poison_resist` and `drain_resist` block it. The rubric's line on riders (`docs/design/MONSTER_LORE_PASS_2026_11_19.md`) now says what each one does.
+`diseased` cost a stat point about one bite in three and no health, and was gone in 4-8 turns; on a monster it ticked 0.4% a turn. Now, on the hero, while diseased his wounds do not mend by rest (`main._tick_hp_regen`) and every heal that goes through `Player.restore_hp` does half (potions, healing wands, spells, prayers, meals, the hero specials, the Wish and Restore Body; a drain wand's draw, a kill's heal, a life-stealing blow or special, a paid physician, the Phoenix Rising power and the full restores of the unicorn and the lore fixtures do not go through it: ruling D5, 2026-11-22, names the specials, the Wish and Restore Body; a heal's line prints what was healed, and one that calls him whole is said only when he is: `grave_rot.told`, `grave_rot.whole`; the stat sap stays); a monster's disease lasts its rider's own `effect_duration`, times the kind's `disease_linger` where its lore makes the sickness one that lingers (mummy rot 10; Pazuzu's spawn, Hel's handmaid, the plague ooze 8; the plague witch, Nidhogg's brood 6; the aboleth, the otyugh, the demon general, the abyssal dragon 5; the plague zombie, the harrow witch, the ghast-eater 4; the huecuva 3), at most 60 turns (`status_effects.MAX_EFFECT_DURATION`); a rat's bite, a zombie's claw, a wererat's or a death dog's bite keep their own few turns. (A first build lingered every disease x 10, which the lore never asked of a rat's bite; the simulation section of the AI-1 report says what it cost the slowest kid.) On a monster it costs `max_hp / 40` a turn (poison's rate) and stops its regeneration (a sick troll does not mend). Cured by the Potion of Cure Disease, the Mercy prayer at a chain of 4 (before its heal, so the heal is whole), the physician, a fountain's best water; `poison_resist` and `drain_resist` block it. The rubric's line on riders (`docs/design/MONSTER_LORE_PASS_2026_11_19.md`) now says what each one does.
 
 ### Light-Shy and Snuff the Light (`light_shy_and_snuff`, `src/light_shy.py`)
 
@@ -645,7 +645,9 @@ family assignment, harvest and the kitchen, packs.json herds, tells, hints, purs
     surprise) (`lore_powers.calls`; never asleep, held or silenced; one
     whose fellows are angry already is angry too, and only those who never called wait)
     and hold their fire 6 turns; D answers (one
-    question of `subject` at their tier); right, the pack is calm for the floor; wrong,
+    question of `subject` at their tier; struck before it calls, or found already fighting,
+    it never offers one, and a poison or other lasting wound he lays breaks the peace as
+    a blow does: `lore_powers.too_late`, `wronged`); right, the pack is calm for the floor; wrong,
     the squall comes down at once (each one's next blow is its `storm` attack). A kind's
     own tell is the parley's `tell`. Walk
     away or strike and they attack. Waiting, fed or answered (`lore_powers.holds_fire`)

@@ -163,6 +163,15 @@ def parley_group(m, monsters) -> list:
             and max(abs(o.x - m.x), abs(o.y - m.y)) <= PARLEY_GROUP]
 
 
+def too_late(m) -> bool:
+    """The fight has begun, so there is no more parley: the hero or his pet
+    struck it before it called (after_damage angers it at once), or it is
+    found fighting (a save from before it could parley). A vent's or another
+    creature's blow (`_lp_jostled`) is no fight with the hero."""
+    d = m.__dict__
+    return bool(d.get('_opened') or (d.get('_struck') and not d.get('_lp_jostled')))
+
+
 def calls(m, player, dungeon, monsters) -> bool:
     """It has just noticed the hero (Monster._spots_player): one of a parley
     kind that has him in sight and has never called spends this turn calling
@@ -172,6 +181,9 @@ def calls(m, player, dungeon, monsters) -> bool:
     if (not ENABLED or dungeon is None or d.get('_lp_parley') is not None or d.get('_lp_call')
             or not spec(m, 'parley')):
         return False                      # (a call the game has yet to say is one turn, not more)
+    if too_late(m):
+        d['_lp_parley'] = 'angry'
+        return False
     if m.has_effect('silenced') or not _in_sight(m, player, dungeon):
         return False
     if any(o.__dict__.get('_lp_parley') == 'angry' for o in parley_group(m, monsters)):
@@ -383,24 +395,45 @@ def on_tick(m) -> None:
             return
 
 
+# What wounds by itself once it is laid: laying one on a creature at peace is
+# a blow (wronged), or a peace could be poisoned to death without breaking.
+LAID_WOUNDS = ('poisoned', 'diseased', 'bleeding', 'burning', 'doom_dot', 'ruptured', 'petrifying')
+
+
+def wronged(m, effect: str) -> None:
+    """The hero laid a wound that works by itself (game_magic._inflict: a
+    wand, a spell, a thrown flask)."""
+    if ENABLED and effect in LAID_WOUNDS:
+        _break_peace(m, 'hero')
+
+
+def _break_peace(m, by: str) -> None:
+    d = m.__dict__
+    if d.pop('_lp_calm', None):
+        say(_fill(m, "{The} turns on you: the peace is broken." if by == 'hero'
+                  else "{The} turns on your companion: the peace is broken."), 'warning', m=m)
+    state = d.get('_lp_parley')
+    if state in ('waiting', 'calm') or (state is None and spec(m, 'parley')):
+        d['_lp_parley'] = 'angry'
+
+
 def after_damage(m, actual: int) -> None:
     """The creature took a blow: a calm one is calm no more, and a Lindworm
     sheds a skin at its marks.
 
     Only the hero's own blow breaks a peace or a parley, or his pet's (and
-    then the line says so). A bleed, a burn or a poison ticking is no blow
-    (``_dot_tick``, set by Monster.tick_effects), nor is a fire vent, a
-    monster's blow or an escort's."""
+    then the line says so), or ends one before it is called. A bleed, a burn
+    or a poison ticking is no blow (``_dot_tick``, set by Monster.tick_effects;
+    laying one is: wronged), nor is a fire vent, a monster's blow or an
+    escort's."""
     if actual <= 0 or not ENABLED:
         return
     d = m.__dict__
     by = None if d.get('_dot_tick') else _striker()
     if by in ('hero', 'pet'):
-        if d.pop('_lp_calm', None):
-            say(_fill(m, "{The} turns on you: the peace is broken." if by == 'hero'
-                      else "{The} turns on your companion: the peace is broken."), 'warning', m=m)
-        if d.get('_lp_parley') in ('waiting', 'calm'):
-            d['_lp_parley'] = 'angry'
+        _break_peace(m, by)
+    elif by is not None and d.get('_lp_parley') is None and spec(m, 'parley'):
+        d['_lp_jostled'] = True               # no fight with the hero (too_late)
     ss = spec(m, 'sheds_skin')
     if not ss or m.hp <= 0 or not getattr(m, 'alive', True):
         return

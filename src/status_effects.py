@@ -863,7 +863,9 @@ def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> 
         # the cooking path did not: every "Heroic" or "Brilliant" meal ended
         # by taking away two STR, or a point each of INT and WIS, for good.
         limit = max(MAX_EFFECT_DURATION, int(cap)) if cap else MAX_EFFECT_DURATION
-        player.status_effects[effect] = min(current + duration, limit)
+        # (A limit stops stacking past it; it never cuts what already runs
+        # longer: Absolute Ward's 80 fell to 60 as any other Shielded came.)
+        player.status_effects[effect] = min(current + duration, max(limit, current))
         sync_timed_grants(player)
     if effect in _QUENCHES and player.status_effects.get(effect, 0):
         for put_out in _RESIST_BLOCKS[effect]:

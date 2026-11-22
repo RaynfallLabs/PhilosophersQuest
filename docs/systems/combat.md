@@ -461,7 +461,8 @@ the coating's substance, so it meets a weakness through the one bane rule
 dust on a steel mace hits a werewolf as silver. `player_attack`'s callback
 calls `coatings.after_blow` on every blow that lands: the rider (venom
 poisons, frost slows, fire may set burning) takes hold only on a creature
-that neither resists nor shrugs off the substance and whose nature allows
+that neither resists nor shrugs off the substance, for a venom has blood
+to carry it (`Monster.can_bleed`; ruling A2, 2026-11-22), and whose nature allows
 the effect (`Monster.hold`: status_immune, named-foe caps); fire or acid on a
 blade also stops a troll's mending and frightens what fears fire
 (`Monster._after_typed_hit`); one blow is spent. A refused rider ("The Viper

@@ -2,7 +2,7 @@
 recommended"; BUGBASH_3_6_0_REPORT_2026_11_22.md).
 
 Group B, monsters that are what their lore says:
-  B1  the Ochre Jelly divides under an edge or lightning
+  B1  the Ochre Jelly divides under lightning or an edge that cannot thrust
   B3  the Grick's hide turns blade and point
   B5  the Crypt Thing's attack is named for what it does (the real teleport
       is for later)
@@ -73,7 +73,8 @@ def _sphinx(name: str, tier: int) -> dict:
 # kind -> the fields set (a dict or a list is written whole).
 FIELDS = {
     'ochre_jelly': {'splits': {'by': ['slash', 'lightning'], 'max': 6}},    # as the black pudding
-    'blink_dog': {'can_phase_blink': True, 'phase_blink_chance': 0.25},     # the commonest chance
+    'blink_dog': {'can_phase_blink': True, 'phase_blink_chance': 0.25,      # the commonest chance
+                  'blink_needs_sight': True},       # a short leap: walls stay legend
     'xorn': {'parley': {
         'toll': True,
         'call': "The Xorn sniffs at your pack and holds out a stony hand. For gold or gems it will let you be.",
@@ -91,6 +92,8 @@ FIELDS = {
     'sphinx_lesser': {'parley': _sphinx('Lesser Sphinx', 3)},   # floors 40-51: the third
     'ushabti_overseer': {'summons_fall': {
         'line': "With {the} broken, the workers it called fall still.",
+        'tell': {'counter': "Strike {him} while {he} chants: a blow breaks the call. Break {him}, "
+                            "and all that {he} called falls still."},
     }},
     'skeletal_archer': {'name': 'skeleton bowman'},
 }
@@ -142,8 +145,8 @@ WORDS = [
     (MONSTERS, 'ochre_jelly', 'lore',
      "Delvers once told how a sword or lightning would divide it in two, but either does it only "
      "half harm, and its bane is fire and frost.",
-     "Whoever smites it with a sword or a bolt of lightning only divides it, and has then two "
-     "hungry jellies to face."),
+     "Whoever smites it with a blade that can only cut, or with a bolt of lightning, only divides "
+     "it, and has then two hungry jellies to face."),
     (MONSTERS, 'grick', 'lore',
      "and its hide gives like wet leather, and magic will hurt it worse than any blade.",
      "and its hide gives like wet leather under an ordinary blade and takes little hurt."),
@@ -189,8 +192,8 @@ WORDS = [
 ]
 
 GROUPS = {'jellies': {
-    'lore': "An edge divides a jelly of this kind instead of wounding it worse, and only fire "
-            "and cold truly harm it.",
+    'lore': "A blow that can only cut divides a jelly of this kind, and only fire and cold "
+            "truly harm it.",
     'form': {'slash': 'neutral'},
 }}
 

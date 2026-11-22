@@ -11724,7 +11724,7 @@
       "item_tier": 2,
       "purse": "none"
     },
-    "lore": "Under a door, or through a crack no wider than a finger, the ochre jelly will squeeze its mustard-yellow body, and then it pours down the corridor faster than a man can trot. It has no power to eat metal or stone, but flesh and leather it devours to the last scrap. Whoever smites it with a sword or a bolt of lightning only divides it, and has then two hungry jellies to face.",
+    "lore": "Under a door, or through a crack no wider than a finger, the ochre jelly will squeeze its mustard-yellow body, and then it pours down the corridor faster than a man can trot. It has no power to eat metal or stone, but flesh and leather it devours to the last scrap. Whoever smites it with a blade that can only cut, or with a bolt of lightning, only divides it, and has then two hungry jellies to face.",
     "frequency": 6,
     "thac0_lore": 13,
     "shrugs_off": [],
@@ -19623,7 +19623,8 @@
       "range": 1
     },
     "can_phase_blink": true,
-    "phase_blink_chance": 0.25
+    "phase_blink_chance": 0.25,
+    "blink_needs_sight": true
   },
   "death_dog": {
     "name": "death dog",
@@ -40146,7 +40147,10 @@
     ],
     "status_weak": [],
     "summons_fall": {
-      "line": "With {the} broken, the workers it called fall still."
+      "line": "With {the} broken, the workers it called fall still.",
+      "tell": {
+        "counter": "Strike {him} while {he} chants: a blow breaks the call. Break {him}, and all that {he} called falls still."
+      }
     }
   },
   "ushabti_worker": {

@@ -130,7 +130,7 @@ it may still use; at range it loses the turn, with a line.
 | Elf-Shot | 1 | paralyses one foe 3 turns (the paralyse ladder's first rung) |
 | Galdr of the Stayed Spear | 2 | Stayed Spear 12 turns |
 | Tacita's Seal | 2 | one foe Silenced 10 turns |
-| Dionysus's Vine | 2 | the target's 3x3 held 4 turns; conjured vines there 12 turns, which catch whatever steps in (always; the hazard's save is the way out) |
+| Dionysus's Vine | 2 | the target's 3x3 held 4 turns; conjured vines there 12 turns, which catch whatever steps in (always; the hero's save is his way out, and a great foe's resist roll, the cast's own, is its way out) |
 | Shrink the Earth | 2 | an aimed step to a seen, empty tile within 6, over a clear line of walkable ground (never through a wall the Crown of Brahma shows; a tile spell: `needs_tile`) |
 | Bough of Somnus | 2 | the target and all beside it asleep 8 turns |
 | Galdr of Dulled Blades | 3 | everything in sight Weakened 8 turns |
