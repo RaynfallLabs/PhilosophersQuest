@@ -83,9 +83,9 @@ EFFECT_INFO: dict[str, tuple] = {
     'boomstick_aoe_next': ('Boomstick Loaded',   (200, 90, 30),   'Next shot scatters'),
     'control_immune':     ('Recovering',         (200, 230, 255), 'Shaking it off -- briefly immune to being disabled'),
     # Cooked / power "ward" buffs — a timed bonus to a saving-throw category.
-    'save_guard_CON':     ('Body Ward',          (150, 230, 170), 'Bonus to resisting paralysis / sleep / stun'),
-    'save_guard_WIS':     ('Mind Ward',          (160, 200, 245), 'Bonus to resisting confusion / fear / charm'),
-    'save_guard_DEX':     ('Reflex Ward',        (205, 230, 150), 'Bonus to resisting slow / immobilize'),
+    'save_guard_CON':     ('Body Ward',          (150, 230, 170), 'Bonus to resisting paralysis / sleep / stun / freezing / stone / weakness'),
+    'save_guard_WIS':     ('Mind Ward',          (160, 200, 245), 'Bonus to resisting confusion / fear / charm / a mind-eater'),
+    'save_guard_DEX':     ('Reflex Ward',        (205, 230, 150), 'Bonus to resisting slow / immobilize / holds / knock-down'),
     'save_guard_all':     ('Warded',             (210, 230, 255), 'Bonus to all saving throws'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Monsters act half as often'),
