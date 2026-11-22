@@ -86,7 +86,7 @@ def test_every_knob_is_in_the_simulator_and_is_the_game():
         assert ds.KNOB_DEFAULTS[k] == v
     for k in ('cl_wis', 'cl_wis_cap', 'cl_wards', 'cl_mp_wis', 'fu_on', 'fu_tough', 'dx_finesse',
               'ar_bow', 'ar_per', 'ar_recover', 'ar_fletch', 'ar_stall', 'ar_heads',
-              'pt_hp', 'pt_feed', 'pt_lv', 'pt_per', 'pt_full', 'st_lean', 'kt_even', 'kt_lean', 'ar_draw'):
+              'pt_hp', 'pt_feed', 'pt_lv', 'pt_per', 'pt_full', 'pt_know', 'st_lean', 'kt_even', 'kt_lean', 'ar_draw'):
         assert not sa.KNOBS[k], k
     assert sa.KNOBS['la_wt'] == 1.0
     assert sa.BERSERK == sa.KNOBS['fu_dmg'] == 1.3
@@ -142,7 +142,7 @@ def test_the_default_cell_is_the_one_before_the_archetype_hooks(monkeypatch):
                          main_weapon=lambda run: run.p.weapon),
         sim_pets: dict(here=lambda run: True, quest_line=lambda run: True, bit=none, recall=no,
                        swipes=none, feed=no,
-                       bite=lambda run: (pet_system.growth('bite', run.floor)
+                       bite=lambda run, foe=None: (pet_system.growth('bite', run.floor)
                                          * sim_magic.pet_bite_mult(run))),
     }
     for mod, fns in old.items():
@@ -427,6 +427,17 @@ def test_r4_a_pet_never_dies_without_the_knob():
     sim_pets.bit(run, foe)
     sim_pets.swipes(run, [foe])
     assert sim_pets.here(run)
+
+
+def test_r4_a_raised_pet_hunts_only_known_quarry_by_the_dial():
+    import sim_pets
+    for knobs, knows, grows in (('', False, True), (',pt_know=1', False, False), (',pt_know=1', True, True)):
+        run = _run('arch_beast', 'pt_feed=1,pt_full=0.5' + knobs)
+        run.floor = 50
+        plain = sim_pets.bite(run, _foe())
+        sim_pets.state(run)['fed'] = 20
+        run._knows = lambda kind, _k=knows: _k
+        assert (sim_pets.bite(run, _foe()) > plain) is grows
 
 
 def test_r4_feeding_grows_the_bite_the_level_and_the_health():

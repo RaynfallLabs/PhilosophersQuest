@@ -28,6 +28,9 @@ simulator as it was (a pet of the floor's level that never dies).
   pt_per    share of health a dish fed adds.
   pt_full   the bite of a pet fed to the cap, as a share of the careful blow at
             its level; part way there for part of the dishes. Unfed, the table's.
+  pt_know   a finding's dial: 1 = what pt_full adds works only on a kind the
+            hero knows (his studies, a probe, a quest's teaching): he can set
+            it only on quarry he has learned to hunt.
 
 mg_pet_anchor (sim_magic) re-sizes the whole bite table against the careful
 blow, read at the pet's own level here.
@@ -51,6 +54,7 @@ KNOBS = {
     'pt_lv': 0.0,
     'pt_per': 0.0,
     'pt_full': 0.0,
+    'pt_know': 0,
 }
 BESIDE_PET = 0.5
 _BLOW = {}
@@ -122,7 +126,7 @@ def max_health(run) -> int:
     return max(1, int(round(pet_system.growth('health', level(run)) * mult)))
 
 
-def bite(run) -> float:
+def bite(run, foe=None) -> float:
     import pet_system
     import sim_magic
     if not on(run):
@@ -136,7 +140,8 @@ def bite(run) -> float:
         out *= anchor * _RATIO[lv]
     full = float(k(run, 'pt_full') or 0)
     fed = state(run)['fed']
-    if full > 0 and fed:
+    if full > 0 and fed and (foe is None or not k(run, 'pt_know')
+                             or run._knows(getattr(foe, 'kind', ''))):
         if lv not in _BLOW:
             _BLOW[lv] = sim_magic._careful_blow(lv)
         out += max(0.0, full * _BLOW[lv] - out) * min(1.0, fed / food_cap())

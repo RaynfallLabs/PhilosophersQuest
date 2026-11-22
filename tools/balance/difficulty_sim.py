@@ -4072,7 +4072,7 @@ class Run(_MMMagicSim):
                 if bitten and sim_pets.here(self):
                     foe = min(bitten, key=lambda m: m.hp)
                     qp = self._quest_pet()
-                    foe.take_damage(int(sim_pets.bite(self) * min(
+                    foe.take_damage(int(sim_pets.bite(self, foe) * min(
                         1.0, (0.5 + 0.7 * acc_at(self.quiz.accuracy, 1)) / 1.165)
                         * QUEST_PET_BITE.get(qp, 1.0)))
                     sim_pets.bit(self, foe)
