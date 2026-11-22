@@ -39,9 +39,9 @@ jobs:
     # Windows: the platform the suite is written and run on day to day.
     runs-on: windows-latest
     # The full suite runs serially (no xdist: a few tests are still order-
-    # dependent under parallel runs) and takes about 40 minutes on a hosted
-    # runner with the slow UI gates, so the job gets headroom.
-    timeout-minutes: 75
+    # dependent under parallel runs). At 8,400 tests it took 44-52 minutes on a
+    # hosted runner, and 3.6.0 has over 10,000: the limit only catches a hang.
+    timeout-minutes: 150
     env:
       SDL_VIDEODRIVER: dummy
       SDL_AUDIODRIVER: dummy
