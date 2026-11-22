@@ -162,6 +162,13 @@ def parts(m, key: str) -> tuple:
         sign = e.get('sign_friend', sign)
         does = e.get('does_friend', does)
         counter = e.get('counter_friend', counter)
+    if key == 'parley':
+        # A kind's own words: the Blue Men's verse is no Sphinx's riddle.
+        import lore_powers
+        own = (lore_powers.spec(m, 'parley') or {}).get('tell') or {}
+        sign = own.get('sign', sign)
+        does = own.get('does', does)
+        counter = own.get('counter', counter)
     if key == 'splits':
         spec = getattr(m, 'splits', None)
         by = spec.get('by', 'weak_blow') if isinstance(spec, dict) else 'weak_blow'

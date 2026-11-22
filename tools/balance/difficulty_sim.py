@@ -4081,12 +4081,15 @@ class Run(_MMMagicSim):
 
     # --- slice M (MONSTERS AND MAGIC kinds) -----------------------------------
     def _mm_parley(self, queue: list) -> list:
-        """The Blue Men of the Minch call out a verse and wait (game_lore_powers.py):
-        one grammar question at their tier, untimed; right, the whole pack
-        sinks away; wrong, they fight. Every hero answers: it costs nothing."""
-        kinds = {m.kind for m in queue if lore_powers_mod.spec(m, 'parley')}
+        """A parley (the Blue Men's verse, a Sphinx's riddle) is put and waits
+        (game_lore_powers.py): one question at its tier, untimed; right, they
+        let him be; wrong, they fight. Every hero answers: it costs nothing.
+        A toll (the Xorn's) costs gold, which is not spent here: it fights."""
+        specs = {m.kind: lore_powers_mod.spec(m, 'parley') for m in queue}
+        kinds = {k for k, spec in specs.items() if spec and not spec.get('toll')}
         for kind in kinds:
-            tier = max(1, min(5, int(next(m for m in queue if m.kind == kind).harvest_tier or 1)))
+            lead = next(m for m in queue if m.kind == kind)
+            tier = lore_powers_mod.parley_tier(lead, lore_powers_mod.spec(lead, 'parley'))
             if self.quiz.one_question(tier):
                 self.fs['mm_parleys'] = self.fs.get('mm_parleys', 0) + 1
                 queue = [m for m in queue if m.kind != kind]

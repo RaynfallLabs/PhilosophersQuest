@@ -2717,9 +2717,9 @@ class Monster:
         It used to be distance alone, 8 tiles through solid stone, and a
         monster that had noticed him once knew where he was for ever. Now it
         is sight, sound and the lore senses of data/senses.json, with a
-        search when the trail goes cold (src/senses.py). For the Blue Men,
-        noticing him is calling to him: the turn goes on the call
-        (lore_powers.calls)."""
+        search when the trail goes cold (src/senses.py). For a parley kind
+        (the Blue Men, the Sphinxes, the Xorn), noticing him is calling to
+        him: the turn goes on the call (lore_powers.calls)."""
         import senses as _senses
         seen = _senses.notice(self, player, dungeon, all_monsters, extra_occupied)
         seen = home_ground.leash(self, player, dungeon, all_monsters, extra_occupied, seen)  # AI-3
@@ -2729,6 +2729,7 @@ class Monster:
             self._lost_turns = 0
             if lore_powers.calls(self, player, dungeon, all_monsters):
                 self._lp_call = True         # the game says the verse
+                self._mimic_surprise = False # one that calls out is no surprise (the Sphinx)
                 return False
         else:
             self._lost_turns = int(self.__dict__.get('_lost_turns', 0) or 0) + 1

@@ -23,7 +23,8 @@ says one plain line when it fires:
 * ``appeased_by`` -- a gift of plain food quiets the Kappa and the Preta for
   the floor (the game sets ``_lp_calm``: game_lore_powers.py); struck, the
   deal is off.
-* ``parley`` -- the Blue Men wait for an answer (game_lore_powers.py asks
+* ``parley`` -- the Blue Men and the Sphinxes wait for an answer, a Xorn
+  for its price (``toll``) (game_lore_powers.py asks
   it); calling it is their first turn of noticing him (calls), and while
   they wait they hold their fire (at_peace: no blow on the hero, a pet or
   an escort, pinned or free, and no pet goes for them unbidden).
@@ -148,6 +149,12 @@ def at_peace(m) -> bool:
 # The parley's call
 # ---------------------------------------------------------------------------
 PARLEY_GROUP = 10        # those this near call, wait and answer as one
+
+
+def parley_tier(m, parley: dict) -> int:
+    """The tier of a parley's question: the parley's own `tier`, else what
+    the kind is to study (harvest_tier)."""
+    return max(1, min(5, int(parley.get('tier') or getattr(m, 'harvest_tier', 1) or 1)))
 
 
 def parley_group(m, monsters) -> list:

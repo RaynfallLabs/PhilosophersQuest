@@ -111,7 +111,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `pack_min_allies` | int | default 1 | Threshold used by `pack_dependent`. |
 | `prefers_flank` | bool | default False | Rotates approach direction 90° when an ally is already pressuring the player on the same vector. 3 monsters. |
 | `can_phase_walls` | bool | default False | Movement can pass through `dungeon.phasing_walls`. Three monsters: `asterion_minotaur` (hit-and-run), `elder_vampire`, `ancient_vampire_lord`. |
-| `can_phase_blink` | bool | default False | Chance to teleport adjacent when `>= 3` tiles from the player. 7 monsters. |
+| `can_phase_blink` | bool | default False | Chance to teleport adjacent when `>= 3` tiles from the player. 14 monsters, the blink dog among them (ruling B6, 2026-11-22). |
 | `phase_blink_chance` | float | default 0.30 | Per-turn chance when eligible. |
 | `can_charge` | bool | default False | Arms a damage multiplier when approaching the player on a cardinal or diagonal axis at distance 2-5. 7 monsters. |
 | `charge_bonus_mult` | float | default 1.5 | Damage multiplier when a charged attack lands. |
@@ -163,6 +163,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `summon_kind` | str or [str] | Monster id(s) to summon. Empty = no summoner. Monsters that carry a value include `ancient_lich`, `skeleton_mage`, `skeleton_necromancer`, `skeleton_lich`, `banshee_lich`, `lich_sovereign` (its court of dead knights, 2026-11-17), `cult_hierophant`, `imp_lord`, `snake_charmer`, `whispering_crone`, `crypt_summoner`, `endor_medium`, `ushabti_overseer`, `tiamat`, `asmodeus`. |
 | `summon_cooldown` | int | default 5 | Turns between summons. |
 | `summon_max` | int | default 4 | Hard cap on summoned minions this encounter. |
+| `summons_fall` | `{line}` | default none | When it dies, what it called (`_summoned_by`) falls still with it: gone, with no loot, body or kill (`summoning.fall_still`). The Ushabti Overseer (ruling B12, 2026-11-22). |
 | `locust_interval` | int | default 0 | Abaddon-specific: turns between locust-swarm bursts. |
 | `locust_count` | [min, max] | default [0, 0] | Range of locusts per burst. |
 | `base_resistances` | [str] | | Abaddon's base resistance set (surfaced during the locust-ring quest mechanic). |
@@ -636,12 +637,17 @@ family assignment, harvest and the kitchen, packs.json herds, tells, hints, purs
     does not break it (lore_powers.BLAME, the Game's `_damage_by`; `_dot_tick`). Asleep,
     held, stunned or frozen, a creature takes no gift and gathers no gold.
   - attack `steal: "offering"`: the Preta snatches plain food and eats it (theft.py).
-  - `parley`: the Blue Men call a verse the turn one notices the hero and has him in
-    sight, in place of a blow (`lore_powers.calls`; never asleep, held or silenced; one
+  - `parley`: the Blue Men (a verse: grammar), the two Sphinxes (a riddle: philosophy,
+    at the parley's own `tier`, 2 and 3) and the Xorn (`toll`: gold, then treasure, a
+    share of the floor's income set once, `economy.BRIBE_SHARE`; refused, it fights; a
+    hero short of it is told so and pays nothing) call the turn one notices the hero and has him in
+    sight, in place of a blow (a hidden Sphinx as he comes near, and then it is no
+    surprise) (`lore_powers.calls`; never asleep, held or silenced; one
     whose fellows are angry already is angry too, and only those who never called wait)
     and hold their fire 6 turns; D answers (one
     question of `subject` at their tier); right, the pack is calm for the floor; wrong,
-    the squall comes down at once (each one's next blow is its `storm` attack). Walk
+    the squall comes down at once (each one's next blow is its `storm` attack). A kind's
+    own tell is the parley's `tell`. Walk
     away or strike and they attack. Waiting, fed or answered (`lore_powers.holds_fire`)
     a creature strikes no hero, pet or escort, pinned, at bay or free, and no pet, horn's
     ally or rescue goes for it unbidden (`lore_powers.at_peace`).
@@ -681,7 +687,8 @@ family assignment, harvest and the kitchen, packs.json herds, tells, hints, purs
 - **QA key:** Shift+Y (Titivillus only) sets the next new kind down beside the hero.
 - **Simulator:** knob `mm_powers` (default 1; 0 is the ablation): the powers run in
   the real code the simulator calls, the Cu-Sith's barks in its world turn, and the
-  Blue Men's verse is answered before the fight.
+  Blue Men's verse and the Sphinxes' riddle are answered before the fight. A toll
+  (the Xorn's) is not: the simulator's hero keeps his gold and fights it.
 - **Tests:** `tests/test_mm_kinds.py`, `tests/test_mm_kinds_ai1.py`.
 
 ## The Tactical Mind (AI-2, 2026-11-20)

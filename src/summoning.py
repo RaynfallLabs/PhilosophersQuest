@@ -46,6 +46,20 @@ def live_summons(m, monsters) -> int:
                if getattr(o, 'alive', False) and o.__dict__.get('_summoned_by') is m)
 
 
+def fall_still(m, monsters) -> list:
+    """A summoner whose own stand only while it does (`summons_fall`: the
+    Ushabti Overseer) has fallen: what it called falls still. They are gone,
+    not slain (no loot, no body, no kill)."""
+    if not kind_data.field(m, 'summons_fall'):
+        return []
+    fallen = [o for o in monsters or ()
+              if getattr(o, 'alive', False) and o.__dict__.get('_summoned_by') is m]
+    for o in fallen:
+        o.alive = False
+        o._kill_handled = True
+    return fallen
+
+
 def can_call(m, player, monsters, dungeon=None) -> bool:
     if not getattr(m, 'summon_kind', None):
         return False

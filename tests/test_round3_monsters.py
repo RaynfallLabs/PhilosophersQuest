@@ -158,7 +158,7 @@ def test_the_miss_lines_name_the_creature_and_his_own(monkeypatch):
     sk = _m('skeletal_archer')
     bow = next(a for a in sk.attacks if a.get('ranged') or 'arrow' in a['name'].lower())
     _d, msg = _miss(sk, bow, monkeypatch)
-    assert msg.startswith("The Skeletal Archer's ") and msg.endswith('misses you!'), msg
+    assert msg.startswith("The Skeleton Bowman's ") and msg.endswith('misses you!'), msg
     gob = _m('goblin')
     _d, msg = _miss(gob, gob.attacks[0], monkeypatch)
     assert msg == 'The Goblin swings at you and misses!'
