@@ -469,6 +469,7 @@ def _make_intercession_game(*, at_altar=False, karma=0):
 
     g = types.SimpleNamespace()
     g._seeker_event = lambda *a, **k: []   # no Seeker in this test (game_seeker.py)
+    g._gate = lambda *a, **k: True         # the doors: tests/test_action_doors.py
     g.player = p
     g.dungeon = d
     g.dungeon_level = 20

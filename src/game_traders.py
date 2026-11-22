@@ -35,7 +35,8 @@ TAB_BUY, TAB_SELL, TAB_SERVICES = 0, 1, 2
 # Statuses a physician treats (the 'cure' service). Only a timed one: a
 # status an item grants for good (-1) is the item's, not an illness.
 CURABLE = ('poisoned', 'diseased', 'blinded', 'confused', 'hallucinating', 'stunned',
-           'fumbling', 'weakened', 'bleeding', 'slowed', 'petrifying', 'burning', 'corroding')
+           'fumbling', 'weakened', 'bleeding', 'slowed', 'petrifying', 'burning', 'corroding',
+           'frozen', 'feared', 'charmed', 'silenced', 'hexed', 'forgetting')
 
 
 class TraderMixin:

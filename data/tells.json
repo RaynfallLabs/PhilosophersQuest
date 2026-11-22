@@ -2,10 +2,10 @@
   "_doc": "Tells (Dungeon Alive slice 5; known and unknown 2026-11-12; src/tells.py). Brandon: players must pay attention to lore, weaknesses and abilities (stay away from things that confuse; use ranged), and the notes must not give away what a creature is or how to beat it before the hero knows it. Each tell has three parts: 'sign' (what the eye sees), 'does' (what the creature can do to him), 'counter' (what to do about it). How much is said follows family_lore.knowledge: UNKNOWN hears the sign; KIN (its family at Recognise or Forewarned, the kind itself never studied) the sign, 'kin_lead' and what it does; KNOWN (studied, its page opened, or its family at Lore) all three, then what it is made of (tells.lore_lines, winning-build plan 2026-11-13 section 3.1; the sizes and the materials since the 3.5.1 audit, from affinity.damage_profile, the one reading the blow follows): 'weak_one'/'weak_many' with its weaknesses and {size} ('double'), 'bane_tail' (or 'bane_only' when it has no other weakness) with the materials it cannot bear, then one line of what it resists ('resist_one'/'resist_many') and shrugs off ('shrugs_one'/'shrugs_many'), then one of what its nature refuses ('immune', with 'status_words') and falls to easily ('easily', and 'fire_flight' for a beast that fire puts to flight). These are said at KNOWN even of a creature with no tell; then 'known_lead' goes first, so the creature is named before the lines that call it 'it' (bug bash WB-E02). A sign never names the mechanic or the counter. The counter is honest about reach: when the creature can put the effect on the hero from across a room (tells.reach), 'counter_far' is used, or 'far_counter' when the tell has none. 'splits' fills {split_by} from the creature's own splits.by; 'does_weak'/'counter_weak' are for a creature split by a weak blow. The first time in a run the hero sees a kind, its worst tell is said at what he knows; it is said again when he comes to know the kind better. Observe (O) says up to 'max_lines' of them. The 'pack_<trick>' tells are a pack's trick, not an attack's rider (src/packs.py, data/packs.json): a creature has one when its kind's pack has that trick. 'order' ranks the effects, worst first; 'min_chance' ignores an attack effect rarer than this.",
   "min_chance": 0.1,
   "max_lines": 2,
-  "order": ["gaze_paralyze", "paralyzed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
+  "order": ["petrify_lethal", "gaze_paralyze", "paralyzed", "petrifying", "forgetting", "charmed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
             "silenced", "stunned", "immobilized", "hold_swallow", "hold_constrict", "hold_drag", "aura_fear", "casts_curse", "pack_feast", "pack_swarm", "pack_hamstring", "splits", "death_throes", "revive_once_on_death", "drain_heals_self", "life_drain",
             "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "light_shy", "aura_heat", "aura_cold", "aura_stench", "second_shape", "casts_ward", "casts_dispel", "casts_darkness", "casts_escape", "carries_fire", "carries_potion", "territorial", "bargains", "skittish", "summon_kind", "heals_allies", "pull_chance", "breath_recharge", "sp_drain", "snuffs_light",
-            "can_charge", "shove", "pack_harry", "pack_sling", "pack_traps", "pack_bay", "raises_alarm", "pack_dart", "pack_snatch",
+            "can_charge", "shove", "knocked_down", "pack_harry", "pack_sling", "pack_traps", "pack_bay", "raises_alarm", "pack_dart", "pack_snatch",
             "can_phase_blink", "relurks", "hides_in_dark", "stalker", "bleeding", "burning", "slowed", "hallucinating",
             "countdown_voice", "metal_eater", "corpse_hop", "parley", "appeased_by", "on_stunned", "hidden_overhead", "weak_spot_chain", "sheds_skin", "carry_off", "ranged_pull", "gold_gatherer", "steal_offering", "fumbling", "strangulation", "heal_blocked", "talisman",
             "mind_cunning", "mind_soldier", "mind_trickster", "mind_caster", "dark_edge", "knows_traps", "band_orders"],
@@ -14,8 +14,38 @@
   "status_words": {"feared": "frightened", "charmed": "charmed", "confused": "confused",
                    "sleeping": "put to sleep", "poisoned": "poisoned", "paralyzed": "held still",
                    "blinded": "blinded", "immobilized": "held fast", "stunned": "stunned",
-                   "diseased": "sickened", "burning": "set alight", "slowed": "slowed"},
+                   "diseased": "sickened", "burning": "set alight", "slowed": "slowed",
+                   "petrifying": "turned to stone", "weakened": "weakened", "cursed": "cursed"},
   "effects": {
+    "petrify_lethal": {
+      "sign": "Around {the} the stone has shapes in it: a hand, a shoulder, an open mouth.",
+      "does": "{He} can start you turning to stone: in ten turns you would be dead.",
+      "counter": "Carry Oil of Rue, the grey-green oily flask at every stall from floor 19. Cleanse, a cure-all or a prayer for mercy (a chain of four) stops the count too, and a mirror shield turns a gaze.",
+      "counter_far": "Carry Oil of Rue, the grey-green oily flask at every stall from floor 19. Cleanse, a cure-all or a prayer for mercy (a chain of four) stops the count too. {He} can reach you from across a room: keep stone between you, or watch a gaze in a mirror shield."
+    },
+    "petrifying": {
+      "sign": "Small things lie stiff where {the} has been.",
+      "does": "{He} can stiffen you toward stone, slow and then still for a moment.",
+      "counter": "It will not kill you. Gloves guard against a touch, a mirror shield turns a gaze, and Oil of Rue ends it.",
+      "counter_far": "It will not kill you, and Oil of Rue ends it. {He} can reach you from across a room: a mirror shield turns a gaze, and a wall turns anything."
+    },
+    "forgetting": {
+      "sign": "{The} watches your head, as if it were the part of you good to eat.",
+      "does": "{He} can eat what you know: an identified thing, or a page of your Bestiary.",
+      "counter": "Kill {him} before you leave the floor and it all comes back. A Mind Ward, a helm or magic resistance keeps {him} out.",
+      "counter_far": "Kill {him} before you leave the floor and it all comes back. A Mind Ward, a helm or magic resistance keeps {him} out."
+    },
+    "charmed": {
+      "sign": "You find that you would like to stand nearer {the}.",
+      "does": "{He} can charm you: you cannot strike {him}, and your feet take you to {him}.",
+      "counter": "Moly, magic resistance and a helm help against any charm, wax against a song, a mirror against a gaze. The first wound {he} gives you breaks it.",
+      "counter_far": "{He} can do it from across a room. Moly, magic resistance and a helm help against any charm, wax against a song, a mirror against a gaze. The first wound {he} gives you breaks it."
+    },
+    "knocked_down": {
+      "sign": "{The} means to go through you, not round you.",
+      "does": "{He} can knock you off your feet, and getting up takes a turn.",
+      "counter": "Meet {him} in Guard (Shift+S): in Guard you keep your feet. Good boots help."
+    },
     "gaze_paralyze": {
       "sign": "Something about the eyes of {the} makes you want to look away.",
       "does": "{His} gaze can hold you where you stand, from across a room.",
@@ -40,8 +70,9 @@
     },
     "frozen": {
       "sign": "Frost crackles round {the}.",
-      "does": "{He} can freeze you solid, and frozen, you cannot fight back.",
-      "counter": "Keep out of {his} reach."
+      "does": "{He} can freeze you: feet stuck, hands numb, and your blows at half.",
+      "counter": "Keep a lit torch in hand: it thaws you in a turn. Cold resistance keeps the ice off.",
+      "counter_far": "{He} can reach you from across a room. Keep a lit torch in hand: it thaws you in a turn. Cold resistance keeps the ice off."
     },
     "teleportitis": {
       "sign": "{The} flickers at the edges.",
@@ -50,13 +81,15 @@
     },
     "feared": {
       "sign": "Looking at {the} makes your stomach drop.",
-      "does": "{He} can break your nerve and send you running.",
-      "counter": "Know where you would run before you fight {him}. If it is a voice that does it, wax in your ears will stop it."
+      "does": "{He} can break your nerve: you cannot go nearer {him} or strike {him}.",
+      "counter": "Have a bow or a spell ready, or your back to a wall: cornered, you can fight. Nepenthe ends fear, and wax stops a voice.",
+      "counter_far": "{He} can do it from across a room. Have a bow or a spell ready, or your back to a wall: cornered, you can fight. Wax stops a voice."
     },
     "blinded": {
       "sign": "Everything about {the} seems aimed at your eyes.",
-      "does": "{He} can blind you, and a blind hero fights by touch alone.",
-      "counter": "Do not let {him} close."
+      "does": "{He} can blind you: you see one tile, and quiz answers are dark but for a light you move.",
+      "counter": "A helm guards your eyes, and a mirror shield turns a gaze. Blinded, move the light with the arrows.",
+      "counter_far": "{He} can reach you from across a room. A helm guards your eyes, a mirror shield turns a gaze, and a wall turns both."
     },
     "silenced": {
       "sign": "{The} moves in a pocket of dead quiet.",
@@ -66,14 +99,15 @@
     },
     "stunned": {
       "sign": "{The} is built like a falling wall.",
-      "does": "{His} blows can leave you dazed.",
-      "counter": "Do not trade blows with {him} for long."
+      "does": "{His} blows can stun you: you see double, your first step falls and your first fumble drops.",
+      "counter": "Fight in Guard (Shift+S) and you neither fall nor drop. Stunned, stand and fight rather than step or fiddle.",
+      "counter_far": "{He} can reach you from across a room. Fight in Guard (Shift+S) and you neither fall nor drop."
     },
     "immobilized": {
       "sign": "{The} trails sticky strands.",
-      "does": "{He} can pin you where you stand.",
-      "counter": "Pinned, you cannot run: fight {him} only where you would not need to.",
-      "counter_far": "Pinned, you cannot run: fight {him} only where you would not need to."
+      "does": "{He} can pin your feet where you stand.",
+      "counter": "Pinned, you cannot run, but you can still fight and drink: fight {him} where you would not need to run.",
+      "counter_far": "Pinned, you cannot run, but you can still fight and drink: fight {him} where you would not need to run."
     },
     "splits": {
       "sign": "{The} looks as if {he} would come apart and keep coming.",
@@ -158,13 +192,14 @@
     },
     "slowed": {
       "sign": "The air round {the} feels thick, like wading.",
-      "does": "{He} can slow you, and slowed, you cannot outrun {him}.",
-      "counter": "Choose to fight or flee before {he} reaches you."
+      "does": "{He} can slow you: every action takes two turns, whatever you do.",
+      "counter": "Good boots and quick feet throw it off. Slowed, spend no action you do not need.",
+      "counter_far": "{He} can reach you from across a room. Good boots and quick feet throw a slowing off; close in or get out of sight."
     },
     "hallucinating": {
       "sign": "Colours run strangely round {the}.",
-      "does": "{He} fills heads with things that are not there, and while it lasts, what you see may not be what is there.",
-      "counter": ""
+      "does": "{He} fills your head: creatures wear wrong faces, and quizzes grow a false answer that fades.",
+      "counter": "Wait for the false answer to fade. Moly, magic resistance and Clear Sight keep the visions out, and cold iron a fairy's."
     },
     "rust": {
       "sign": "Every nail and hinge near {the} has gone to red dust.",
@@ -283,8 +318,8 @@
     },
     "fumbling": {
       "sign": "Bad luck hangs round {the} like smoke.",
-      "does": "Ill luck clings to whoever {he} touches: for a long while your plans keep going wrong.",
-      "counter": "Put out {his} eye or finish {him} fast; a prayer or an altar lifts the ill luck."
+      "does": "Ill luck clings to whoever {he} looks on: you drop the first thing you handle.",
+      "counter": "Put out {his} eye or finish {him} fast. In Guard (Shift+S) you hold on to what you handle."
     },
     "strangulation": {
       "sign": "{The} has long, strong fingers that never stop moving.",

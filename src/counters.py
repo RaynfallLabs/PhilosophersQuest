@@ -240,6 +240,8 @@ def names_for(m, key: str) -> list:
     out = []
     if key == 'gaze_paralyze' and getattr(m, 'gaze_paralyze', 0):
         out.append(GAZE)
+    if key == 'petrify_lethal':
+        key = 'petrifying'
     for atk in getattr(m, 'attacks', None) or ():
         if not isinstance(atk, dict) or atk.get('effect') != key:
             continue

@@ -359,6 +359,8 @@ class CombatMixin:
             if why:                          # swallowed: nothing spent, no turn
                 self.add_message(why, 'warning')
                 return
+        if not self._gate('throw', target=hit_monster, item=item):
+            return
         if isinstance(item, Artifact) and item.id == 'unusual_soul_sphere':
             self._throw_unusual_sphere(item, hit_monster, tx, ty)
         elif isinstance(item, Artifact) and is_soul_sphere(item):
@@ -1221,6 +1223,7 @@ class CombatMixin:
                                   or (getattr(monster, 'treasure', None) or {}).get('boss_scroll_id'))
                   else 'kill')
         self.level_mgr.monsters_killed += 1
+        self._effects_killed(monster)      # what it ate comes back; its hold ends (game_effects.py)
         # Marker read by _process_collateral_kills so a monster handled here
         # is not processed a second time by the post-attack sweep.
         monster._kill_handled = True
@@ -1911,6 +1914,8 @@ class CombatMixin:
             return
 
         # Store target for the quiz callback
+        if not self._gate('wand', target=target):
+            return
         self._wand_target_monster = target
         display = self._display_name(wand)
         self.quiz_title = f"INVOKING {display.upper()}  --  SCIENCE"
@@ -2018,6 +2023,10 @@ class CombatMixin:
                 self._refund_pending_spell()
                 self.state = STATE_PLAYER
                 return
+        if not self._gate('cast' if str(pid or '').startswith('spell_') else 'power', target=target):
+            self._refund_pending_spell()
+            return
+        if pid and pid.startswith('spell_'):
             # Targeted spell: start the quiz with this target
             spell = getattr(self, '_pending_spell', None)
             spell_id = getattr(self, '_pending_spell_id', None)
@@ -2326,6 +2335,8 @@ class CombatMixin:
         # trace here.
         first_monster, blocked_by_wall = self._trace_projectile_obstacle(px, py, cx, cy)
 
+        if not self._gate('shoot', target=first_monster):
+            return
         if first_monster is not None:
             # Real shot — let _fire_ranged handle ammo + quiz
             self._fire_ranged(first_monster)
@@ -2417,6 +2428,8 @@ class CombatMixin:
             self.add_message(holds.inside_line(self.player, self.monsters), 'warning')
             return
 
+        if not self._gate('strike'):
+            return
         # 2. Mystery altar at cursor
         from mystery_system import MysteryAltar
         altar = next(
@@ -3064,18 +3077,19 @@ class CombatMixin:
         if why:                              # swallowed: nothing spent, no turn
             self.add_message(why, 'warning')
             return
+        if not self._gate('strike', target=monster):
+            return
         # Whom this blow can reach, as it is begun: only the gut, for a
         # swallowed hero, even if the blow then cuts him out of it.
         _within = holds.strikable(self.player, self.monsters)
+        if self.player.has_effect('feared') and not self._fear_cornered(monster):
+            # (Nor does a sweep's edge find what he dares not strike.)
+            import effect_rules
+            _within = [m for m in _within
+                       if m is monster or not effect_rules.spares(self.player, m, melee=True)]
         # A blow struck carries a long way (src/senses.py).
         self._make_noise('melee')
         habits.hero_melee(self, monster)     # They Learn Your Tricks (src/habits.py)
-        # Charmed: 40% chance to hesitate instead of attacking
-        if self.player.has_effect('charmed') and random.random() < 0.40:
-            self.add_message("You hesitate, unable to bring yourself to attack.", 'warning')
-            self._advance_turn()
-            return
-
         self.state = STATE_QUIZ
         self.combat_target = monster
         # Short fixed title: the combat strip already names the target and
@@ -3751,8 +3765,9 @@ class CombatMixin:
                                           if eff in _DEBUFFS
                                           and eff not in ('reloading', 'in_pit')]
                             if _candidates and hasattr(m, 'add_effect'):
-                                _eff = random.choice(_candidates)
-                                m.add_effect(_eff, 5)
+                                from status_effects import reflected
+                                _eff, _eff_turns = reflected(random.choice(_candidates), 5)
+                                m.add_effect(_eff, _eff_turns)
                                 self.add_message(
                                     f"Theseus's sandals turn {the_name(m, lower=True)}'s tactic against "
                                     f"{pronouns(m)[1]} — {_eff.replace('_', ' ')}!",
@@ -3950,7 +3965,8 @@ class CombatMixin:
                     for _new_eff in list(_new_effects):
                         if _new_eff in _DEBUFFS:
                             del self.player.status_effects[_new_eff]
-                            m.add_effect(_new_eff, 8)
+                            from status_effects import reflected
+                            m.add_effect(*reflected(_new_eff, 8))
                             self.add_message(
                                 f"Your spell turning reflects the {_new_eff.replace('_', ' ')} "
                                 f"back at {the_name(m, lower=True)}!", 'info'
@@ -3989,6 +4005,8 @@ class CombatMixin:
         they resolve instantly here, no cursor.
         """
         from game_states import STATE_TARGET, STATE_PLAYER
+        if not self._gate('pet'):
+            return
         if special.get('rhythm') and special.get('effect') == 'dance_of_the_dark':
             # The Mooble's Dance of the Dark is danced: the rhythm screen
             # opens, and how well it goes sets its power (game_mooble_dance).
@@ -4062,6 +4080,8 @@ class CombatMixin:
                 self.add_message(f"{pet.name} has no clear way to that spot.", 'warning')
                 self.state = STATE_PLAYER
                 return
+        if not self._gate('pet'):
+            return
         self._resolve_pet_special(pet, special, tx, ty)
         pet.use_special(special['id'])
         self.state = STATE_PLAYER

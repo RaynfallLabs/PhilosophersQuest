@@ -45,11 +45,18 @@ def test_control_single_application_capped():
 
 def test_soft_control_refreshes_not_stacks():
     p = _p()
-    se.apply_effect(p, 'slowed', 3)
-    se.apply_effect(p, 'slowed', 3)
-    assert p.status_effects['slowed'] == 3      # max(3,3), not 6
-    se.apply_effect(p, 'slowed', 5)
-    assert p.status_effects['slowed'] == 5      # refreshed up, capped < 6
+    se.apply_effect(p, 'weakened', 3)
+    se.apply_effect(p, 'weakened', 3)
+    assert p.status_effects['weakened'] == 3    # max(3,3), not 6
+    se.apply_effect(p, 'weakened', 5)
+    assert p.status_effects['weakened'] == 5    # refreshed up, capped at 8
+
+
+def test_slowed_is_a_bout_not_refreshed():
+    p = _p()
+    se.apply_effect(p, 'slowed', 2)
+    assert se.apply_effect(p, 'slowed', 4) is False      # effects pass, 2026-11-22
+    assert p.status_effects['slowed'] == 2
 
 
 def test_confusion_is_a_bout_not_refreshed():
@@ -65,7 +72,10 @@ def test_dots_and_buffs_still_stack():
     p = _p()
     se.apply_effect(p, 'poisoned', 3)
     se.apply_effect(p, 'poisoned', 3)
-    assert p.status_effects['poisoned'] == 6    # DOT still additive
+    assert p.status_effects['poisoned'] == 3    # the longer dose, never the sum (2026-11-22)
+    se.apply_effect(p, 'draining', 3)
+    se.apply_effect(p, 'draining', 3)
+    assert p.status_effects['draining'] == 6    # what data/effects.json does not name still adds
     se.apply_effect(p, 'hasted', 5)
     se.apply_effect(p, 'hasted', 5)
     assert p.status_effects['hasted'] == 10     # buff still additive

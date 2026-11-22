@@ -45,6 +45,7 @@ from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container
 from level_manager import LevelManager
 from player import Player
 import sound_system as _snd
+import quiz_sight
 from quiz_engine import QuizEngine, QuizState, settle_for as scramble_settle_for
 from effects_runtime import build_default_runtime
 from renderer import Renderer
@@ -112,6 +113,7 @@ from game_lore_powers import LorePowersMixin
 import lore_powers as lore_powers_mod     # its BLAME hook (game_lore_powers.py)
 from game_behaviour import BehaviourMixin
 from game_monster_ways import MonsterWaysMixin    # monster behaviour, third wave (AI-3)
+from game_effects import EffectsMixin    # the one gate, and the debuffs at work (2026-11-22)
 import monster as monster_mod_wards      # its HERO_STRUCK hook (game_wards.py, via MagicMixin)
 import habits as habits_mod              # They Learn Your Tricks: his action's line (AI-2)
 from spells import LEARNABLE_SPELLS
@@ -283,7 +285,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
            MoobleMixin, MoobleDanceMixin,
            BocochoMixin, RaceMixin, RidingMixin, BocochoRenderMixin, SongsMixin,
            ManifestMixin, HornsMixin, BehaviourMixin,
-           LorePowersMixin, MonsterWaysMixin):
+           LorePowersMixin, MonsterWaysMixin, EffectsMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -513,8 +515,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # read as each question goes up.
         self.quiz_engine.scramble_hook = (
             lambda timed: scramble_settle_for(self.player, timed))
+        # Stunned sees double, the blind a pool of light, a hallucinating
+        # hero a false answer (quiz_sight.py: display only).
+        self.quiz_engine.sight_hook = (
+            lambda timed: (quiz_sight.sight_for(self.player), quiz_sight.wait_for(self.player, timed)))
         self.quirk_system = QuirkSystem(self)
-        self._slow_skip         = False    # toggled each turn when slowed
         # Key-held movement (arrow key auto-repeat)
         self._move_hold_timer   = 0.0      # countdown until next repeated move
         self._move_hold_delay   = 0.18     # seconds before repeat kicks in
@@ -1432,8 +1437,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _migrate_monster_affinities(self, state: dict) -> int:
         """Every monster on this floor and every stored one that was saved
         before the lore pass (winning build, slice 2) takes its kind's
-        lists from data/monsters.json: affinity.refresh_from_data."""
+        lists from data/monsters.json: affinity.refresh_from_data. One saved
+        before the effects pass lays what its kind lays now:
+        effect_rules.refresh_monster."""
         import affinity as _affinity
+        import effect_rules as _effect_rules
         pools = [getattr(self, 'monsters', None) or []]
         lm = state.get('level_mgr') if isinstance(state, dict) else None
         if lm:
@@ -1442,6 +1450,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         for pool in pools:
             for m in pool:
                 n += 1 if _affinity.refresh_from_data(m) else 0
+                _effect_rules.refresh_monster(m)
         return n
 
     def _migrate_ranged_weapons(self):
@@ -1984,6 +1993,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._seeker_event('rode_down', floor=int(new_level))
         self._riding_level_change(via)
         self._ways_level_change()          # a hold ends with the floor (AI-3)
+        self._effects_left_floor()         # so do dread and charm; what was eaten is lost
         self._bococho_left(_from_level, new_level)
         # Notify quirk system before level change (fast-exit check)
         # New depth: a floor deeper than any reached. A side floor (the Cow
@@ -3562,38 +3572,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self.state != STATE_PLAYER:
             return
 
-        # Feared: force movement away from nearest visible monster
-        if self.player.has_effect('feared'):
-            visible_monsters = [m for m in self.monsters if self._sees_monster(m)]
-            if visible_monsters:
-                nearest = min(visible_monsters, key=lambda m: abs(m.x - self.player.x) + abs(m.y - self.player.y))
-                flee_dx = 0 if nearest.x == self.player.x else (-1 if nearest.x > self.player.x else 1)
-                flee_dy = 0 if nearest.y == self.player.y else (-1 if nearest.y > self.player.y else 1)
-                dx, dy = flee_dx, flee_dy
-                self.add_message("You flee in terror!", 'danger')
-                # Chain-equip passive: three_apples (Anklet of Atalanta T4+).
-                # 1/floor, when fleeing, the next 3 moves cost no turn.
-                try:
-                    from chain_passives import consume_passive_charge
-                    if not getattr(self.player, '_three_apples_remaining', 0):
-                        if consume_passive_charge(self.player, 'three_apples'):
-                            self.player._three_apples_remaining = 3
-                            self.add_message(
-                                "Atalanta's three apples scatter behind you!",
-                                'success')
-                except ImportError:
-                    pass
-
-        # Sleep: skip turn
-        if self.player.has_effect('sleeping'):
-            self.add_message("You are fast asleep!", 'warning')
-            self._advance_turn()
-            return
-
-        # Paralyzed: skip turn
-        if self.player.has_effect('paralyzed'):
-            self.add_message("You are paralyzed and cannot move!", 'danger')
-            self._advance_turn()
+        p = self.player
+        # What stops every action (asleep, paralysed, off his feet) comes
+        # before the direction does (game_effects.py: the one gate).
+        if (p.has_effect('sleeping') or p.has_effect('paralyzed') or p.has_effect('knocked_down')) \
+                and not self._gate('wait'):
             return
 
         # Held (a coil, a gullet, a drowning grip: src/holds.py, AI-3): a step
@@ -3602,57 +3585,37 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self._ways_held_move(dx, dy):
             return
 
-        # Immobilized (bear trap): skip turn
-        if self.player.has_effect('immobilized'):
-            self.add_message("You're stuck and cannot move!", 'danger')
-            self._advance_turn()
-            return
-
-        # Slowed: skip every other turn
-        if self.player.has_effect('slowed'):
-            self._slow_skip = not self._slow_skip
-            if self._slow_skip:
-                self.add_message("You move sluggishly.", 'warning')
-                self._advance_turn()
-                return
-
-        # Frozen: encased in ice — skip every other turn (same as slowed).
-        # Also halves attack damage at combat use-site (see combat.player_attack).
-        if self.player.has_effect('frozen'):
-            self._frozen_skip = not getattr(self, '_frozen_skip', False)
-            if self._frozen_skip:
-                self.add_message("Ice locks your limbs — you cannot move!", 'warning')
-                self._advance_turn()
-                return
-
-        # Fumbling: 20% chance to waste turn
-        if self.player.has_effect('fumbling') and random.random() < 0.20:
-            self.add_message("You stumble and waste your turn!", 'warning')
-            self._advance_turn()
-            return
-
-        # Stunned: 25% chance to fail
-        if self.player.has_effect('stunned') and random.random() < 0.25:
-            self.add_message("You are too dazed to act!", 'warning')
-            self._advance_turn()
-            return
-
         # In a pit: movement = climb out (stay in place, costs a turn)
-        if self.player.has_effect('in_pit'):
-            del self.player.status_effects['in_pit']
+        # (Feet held, a key at a foe beside the pit is the blow it would be
+        # out of one: Immobilized stops the feet only.)
+        if p.has_effect('in_pit') and not (
+                (p.has_effect('immobilized') or p.has_effect('frozen'))
+                and monster_at_tile(self.monsters, p.x + dx, p.y + dy) is not None):
+            if not self._gate('climb'):
+                return                      # feet held: no climbing either
+            del p.status_effects['in_pit']
             self.add_message("You climb out of the pit.", 'info')
             self._tick_sp()
             self._advance_turn()
             return
 
-        # Confused: randomize direction
-        if self.player.has_effect('confused'):
-            dx, dy = random.choice(
-                [(0,-1),(0,1),(-1,0),(1,0),(-1,-1),(-1,1),(1,-1),(1,1)]
-            )
-            self.add_message("You stumble in a random direction!", 'warning')
+        # Confused, a key at a foe still strikes it and any other goes
+        # astray; charmed, a key at no one walks him to the charmer.
+        if p.has_effect('confused') or p.has_effect('charmed'):
+            dx, dy = self._gate_bump_dir(dx, dy)
+            if not dx and not dy:
+                self._advance_turn()        # he stands and gazes
+                return
 
         nx, ny = self.player.x + dx, self.player.y + dy
+        _stood = (self.player.x, self.player.y)
+        # A bump at someone is an action (a blow asks its own door in
+        # _start_combat); anything else is a step.
+        if monster_at_tile(self.monsters, nx, ny) is not None:
+            if not self._gate('work'):
+                return
+        elif not self._gate_step(nx, ny):
+            return
 
         # Track player facing direction (used by back_attack_weakness passive).
         if dx != 0 or dy != 0:
@@ -3746,6 +3709,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.dungeon.open_door(nx, ny)
             self._make_noise('door', nx, ny)
             self.player.x, self.player.y = nx, ny
+            if self.player.has_effect('feared'):
+                self._fled_a_step(_stood)
             self._apply_aoo_disengage(_aoo_pre_adjacent)
             self._check_floor_trap(nx, ny)
             self._sleepers_stir('step')       # deep sleepers may stir (sleepers.py)
@@ -3816,6 +3781,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _swap_pet.x, _swap_pet.y = _ox, _oy
                 self.add_message(f"You swap places with {_swap_pet.name}.", 'info')
             self.player.x, self.player.y = nx, ny
+            if self.player.has_effect('feared'):
+                self._fled_a_step(_stood)
             self._apply_aoo_disengage(_aoo_pre_adjacent)
             # Ice sliding: keep moving in the same direction until hitting non-ice
             if self.dungeon.tiles[ny][nx] == ICE and not self.player.has_effect('levitating'):
@@ -3966,6 +3933,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return False
         if monster_at_tile(self.monsters, tx, ty) is not None:
             return False
+        if not self._gate('step'):
+            return True
         consume_passive_charge(self.player, 'phase_step_once_per_floor')
         self.player.x, self.player.y = tx, ty
         self._refresh_fov()
@@ -4167,6 +4136,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         # A side floor's portal (the farm's, the stage door): back to the dungeon
         if is_side_floor(self.dungeon_level):
+            if not self._gate('stairs'):
+                return
             self._leave_side_floor()
             return
         # A floor may bar its stair while its guardian lives (the Labyrinth).
@@ -4185,6 +4156,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"{'its keeper' if remaining == 1 else 'their keepers'} still "
                 f"live{'s' if remaining == 1 else ''} on the floors above.", 'warning')
             return
+        if not self._gate('stairs'):         # (a barred stair costs nothing to find barred)
+            return
         try:
             self._change_level(self.dungeon_level + 1, enter_from_top=True, via='stairs')
             self._autosave('descend')      # checkpoint each new floor reached
@@ -4199,6 +4172,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message("There are no stairs leading up here.", 'info')
             return
         if self._ways_held_at_stairs():      # in a coil or a gullet: no stair (AI-3)
+            return
+        if not self._gate('stairs'):
             return
         if self.dungeon_level == 1:
             has_stone = any(
@@ -4979,6 +4954,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._black_knight_tick()          # what the action did to him: one limb at most
         habits_mod.close_action(self)      # his action's blows and shots (src/habits.py, AI-2)
         self.turn_count += 1
+        # Slowed, or far enough turned to stone: read now, for a slowing
+        # that runs out on this action slowed it all the same.
+        import effect_rules as _effect_rules
+        _moves_slow = _effect_rules.moves_slow(self.player)
         # A hit that met a weakness or a resistance this action: one line for
         # each, Pokemon style (affinity.py, data/affinity_lines.json).
         self._say_affinity_lines()
@@ -5124,6 +5103,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if text == '_teleport':
                 self._teleport_player()
             elif text == '_petrify_death':
+                # A killing blow like any other: the wards against death
+                # answer it (Player.is_dead).
+                self.player.hp = 0
+                if not self.player.is_dead():
+                    import effect_rules
+                    self.add_message(effect_rules.line('stone_saved'), 'success')
+                    continue
                 self.defeat_reason = 'died'
                 self._on_game_over()
                 self.state = STATE_DEAD
@@ -5525,10 +5511,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # (speed 9) gives the world two turns one action in nine. No dice:
         # the same actions always give the same turns. Player-side ticks
         # (cooldowns, status durations, HP regen) happen on every action.
-        # (The Slowed status still costs the hero his own turn instead, in
-        # _do_move; the load's every-second-step rule is gone.)
+        # (Slowed is this same clock: every action takes two turns, whatever
+        # the key. It used to skip every other step, and no other key at all.)
         import defence as _defence
-        _speed = float(self.player.get_speed())
+        _speed = float(self.player.get_speed(slow=_moves_slow))
         _n_world, self._world_clock = _defence.world_turns(
             float(self.__dict__.get('_world_clock', 0.0) or 0.0), _speed)
         self._world_waits = _n_world == 0
@@ -5579,6 +5565,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._black_knight_tick(end=True)  # his shouts; the next action may take a limb
         self._stray_kids_tick()            # the Stray Kids: the dance, the shouts, a show
         self._bococho_tick()               # the racing camp's pictures
+        self._effects_after_world()        # a memory eaten, a dead thing's hold (game_effects.py)
         self._family_drain()               # wards and techniques the monsters' turns set off
         # Hits the world's turn dealt (Boots of Thor, Shep's rescue, a pet's
         # or a trap's typed blow): said now, not after the hero's next action.
@@ -6217,6 +6204,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # once more for another free hint)
                 if not trap or not trap.get('revealed') or trap.get('safe_for_player'):
                     continue
+                if not self._gate('work'):
+                    return True
                 trap_name = _trap_noun(trap['type'])
                 self.quiz_title = f"DISARMING {trap_name.upper()} TRAP  --  AI"
                 self.state = STATE_QUIZ
@@ -6620,6 +6609,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if not any_here:
                 self.add_message("There is nothing here to pick up.", 'info')
             return
+        if not self._gate('pickup'):
+            return
         if isinstance(item, GoldPile):
             # Coins weigh a tenth of an ounce each: the hero takes only what
             # he can carry and the rest stays where it lies (game_purse).
@@ -6857,6 +6848,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         slot, kicking the existing head armor (cursed or not) into
         inventory. The Duck is itself cursed, so try_unequip_slot will
         refuse to remove it through normal channels."""
+        if not self._gate('swap', worn=self.player.armor_slots[0] is not None):
+            return
         # Remove from ground
         if duck in self.ground_items:
             self.ground_items.remove(duck)
@@ -7008,6 +7001,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
 
         # Mimic springs out on first interaction — surprise attack!
+        if not self._gate('work'):
+            return
         if container.is_mimic:
             from container_system import _spawn_mimic
             mimic = _spawn_mimic(container, self.monsters, self.dungeon_level,
@@ -7182,6 +7177,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # A person (a brigand, a knight, a cultist, an elf, Gilt Varro) is
         # never harvested (Brandon, 2026-11-16: "that's weird, we're not
         # cannibals"): H searches the body for what he carried instead.
+        if not self._gate('work'):
+            return
         from food_system import corpse_yield, corpse_is_person
         if corpse_is_person(corpse):
             self._search_corpse(corpse)
@@ -7288,6 +7285,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Guard: only consume the ingredient if it has a dish of its own
         # (every kitchen ingredient does; an unknown old id must NOT be
         # silently destroyed by a single cook).
+        if not self._gate('work'):
+            return
         from food_system import _find_recipe_for_ingredient, _recipe_quiz_tier, RUINED_PREFIX
         _recipe_for_quirk = _find_recipe_for_ingredient(ingredient)
         if _recipe_for_quirk is None:
@@ -7341,6 +7340,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         cook_ingredient(self.player, ingredient, self.quiz_engine, on_complete)
 
     def _cook_compound(self, recipe: dict):
+        if not self._gate('work'):
+            return
         self.quiz_title = f"PREPARING {recipe['name'].upper()}  --  COOKING"
         self.state = STATE_QUIZ
 
@@ -7616,6 +7617,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message("Reality is still stabilizing...", 'warning')
             self.state = STATE_PLAYER
             return
+        if not self._gate('power'):
+            return
         self.add_message("You speak the First Word. Reality shudders...", 'info')
         self.quiz_title = "HACK REALITY  --  AI"
         self.state = STATE_QUIZ
@@ -7673,10 +7676,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         p.hp = p.max_hp
         p.sp = p.max_sp
         p.mp = p.max_mp
-        _ALL_NEGATIVES = ['poisoned', 'paralyzed', 'confused', 'bleeding',
-                          'blinded', 'sleeping', 'slowed', 'weakened', 'cursed',
-                          'feared', 'burning', 'diseased', 'immobilized',
-                          'petrifying', 'aggravated']
+        from status_effects import ailments_on
+        _ALL_NEGATIVES = ailments_on(p)
         removed = []
         for neg in _ALL_NEGATIVES:
             if p.status_effects.get(neg, 0) > 0:
@@ -8083,7 +8084,35 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"It feels wrong... the {self._bare_name(item)} will not come off.",
                 'warning')
 
+    def _can_put_on(self, item) -> bool:
+        """Nothing of its own refuses ``item`` (_equip_item's checks)."""
+        p = self.player
+
+        def off(worn) -> bool:
+            return worn is None or worn is item or p.try_unequip_slot(worn)[0]
+
+        if isinstance(item, Weapon):
+            if getattr(item, 'two_handed', False) and not off(p.shield):
+                return False
+            return off(p.ranged_weapon if getattr(item, 'requires_ammo', None) is not None else p.weapon)
+        if isinstance(item, Shield):
+            return bool(p.can_equip_shield()) and off(p.shield)
+        if isinstance(item, Armor):
+            from items import ARMOR_SLOTS
+            return item.slot not in ARMOR_SLOTS or off(p.armor_slots[ARMOR_SLOTS.index(item.slot)])
+        if isinstance(item, Accessory):
+            slot = getattr(item, 'slot', '')
+            if slot == 'amulet':
+                return p.amulet_slot is None
+            if slot == 'belt':
+                return off(getattr(p, 'belt_slot', None))
+            return slot != 'none' and any(s is None for s in p.accessory_slots)
+        return True
+
     def _equip_item(self, item):
+        if not self._gate('swap', item=item, worn=self._takes_off_to_wear(item),
+                          possible=lambda: self._can_put_on(item)):
+            return
         import lights as _lights
         if isinstance(item, Weapon):
             # Check if switching to 2H while shield is cursed
@@ -8171,6 +8200,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Take a worn item off into the pack. Body armour takes half its
         donning time to come off; everything else one turn (game_dressing,
         _dress_start_off and _take_off_now)."""
+        if not self._gate('doff', worn=True, possible=lambda: self.player.try_unequip_slot(item)[0]):
+            return
         ok, msg = self.player.try_unequip_slot(item)
         if not ok:
             self.add_message(msg, 'warning')
@@ -9346,6 +9377,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._lore_subject = corpse
             self.state = STATE_LORE
             return
+        if not self._gate('work'):
+            return
         self.quiz_title = f"STUDYING {corpse.monster_name.upper()} CORPSE  --  PHILOSOPHY"
         self.state = STATE_QUIZ
 
@@ -9464,6 +9497,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _ROCK_DROP_MSG = "You are inside solid rock: there is nowhere to set anything down."
 
     def _do_drop_item(self, item):
+        if not self._gate('drop', worn=self._is_worn(item)):
+            return
         if self._inside_rock():
             self.add_message(self._ROCK_DROP_MSG, 'warning')
             return

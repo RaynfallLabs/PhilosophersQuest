@@ -42,6 +42,8 @@ class LoreFixturesMixin:
                              f"drop things from your Kit (K) instead.", 'info')
             return True
         self._lore_armed = None
+        if not self._gate('work'):
+            return True
         tier = int(((self.dungeon.__dict__.get('lore_fixtures') or {}).get(pos) or {}).get('tier', 1))
         subject = d['subject']
         self.add_message(f"You {d.get('verb', 'look closer')}...", 'info')
@@ -172,7 +174,8 @@ class LoreFixturesMixin:
         self._lore_reward_coin(pos, fid)
 
     def _lore_reward_blessing(self, pos, fid) -> None:
-        for bad in ('poisoned', 'diseased', 'bleeding', 'confused', 'blinded', 'weakened'):
+        for bad in ('petrifying', 'poisoned', 'diseased', 'bleeding', 'confused', 'blinded', 'weakened',
+                    'hexed', 'charmed'):
             if self.player.has_effect(bad):
                 self.player.status_effects.pop(bad, None)
                 self.add_message(f"You are no longer {bad}.", 'success')

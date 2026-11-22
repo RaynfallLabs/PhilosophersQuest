@@ -181,7 +181,7 @@ An `attacks[]` is a list of attack dicts. One is picked each turn (`random.choic
 | `type` | str | Damage type. Known values: `acid`, `blunt`, `cold`, `drain`, `fire`, `holy`, `lightning`, `magic`, `necrotic`, `physical`, `pierce`, `poison`, `psionic`, `shadow`, `slash`. **`psionic`** is NOT in `_damage_multiplier`'s set — treated as `1.0` unresistable (audit P5). |
 | `ranged` | bool | Optional explicit ranged flag. |
 | `piercing` | bool | Optional — allows the attack to shoot through intervening allied monsters (sets `_piercing_collateral` on this monster for the game loop to resolve). |
-| `effect` | str | Status effect to apply on hit. One of 17 ids: `bleeding`, `blinded`, `burning`, `confused`, `cursed`, `diseased`, `feared`, `frozen`, `hallucinating`, `paralyzed`, `poisoned`, `silenced`, `sleeping`, `slowed`, `stunned`, `teleportitis`, `weakened`. All 17 verified in `status_effects.py`. |
+| `effect` | str | Status effect to apply on hit. One of 25 ids: `bleeding`, `blinded`, `burning`, `charmed`, `confused`, `corroding`, `diseased`, `feared`, `forgetting`, `frozen`, `fumbling`, `hallucinating`, `heal_blocked`, `immobilized`, `paralyzed`, `petrifying`, `poisoned`, `rust`, `silenced`, `sleeping`, `slowed`, `strangulation`, `stunned`, `teleportitis`, `weakened`. With `lethal: true`, `petrifying` ends in death. What each does: [status_effects](status_effects.md), the monster effects. |
 | `effect_chance` | float | default 0.30 | Probability of attempting the effect. |
 | `effect_duration` | str or int | default 5 | Dice or int, parsed by `dice.roll_duration`. |
 | `effect_save_dc` | int | default `min(18, 12 + min_level // 7)` | DC vs the player's saving-throw stat. |
@@ -1086,7 +1086,7 @@ if roll:
 - `apply_debuff_with_save` returns `(applied, message)` which the caller may suffix to the attack-hit message.
 - Gaze paralyze uses the same DC formula.
 
-The attack-table status-effect ids are 17 (verified in `status_effects.py`): `bleeding`, `blinded`, `burning`, `confused`, `cursed`, `diseased`, `feared`, `frozen`, `hallucinating`, `paralyzed`, `poisoned`, `silenced`, `sleeping`, `slowed`, `stunned`, `teleportitis`, `weakened`.
+The attack-table status-effect ids are 25 (2026-11-22, the monster-effects pass): `bleeding`, `blinded`, `burning`, `charmed`, `confused`, `corroding`, `diseased`, `feared`, `forgetting`, `frozen`, `fumbling`, `hallucinating`, `heal_blocked`, `immobilized`, `paralyzed`, `petrifying`, `poisoned`, `rust`, `silenced`, `sleeping`, `slowed`, `strangulation`, `stunned`, `teleportitis`, `weakened`. A shove or a trample also knocks down (`src/knockdown.py`).
 
 **Who can bleed (3.3.3):** `data/monster_blood.json`, read by `monster.kind_can_bleed` and `Monster.can_bleed`. A creature with no blood never takes `bleeding` (`add_effect`, `hold`, the weapon and pet procs that write it straight in; `tick_effects` drops one left by an old save) and is never called "bleeding". Order: the kind's own entry (`bleeds` / `bloodless`), then `bleeding_families` (vampires), then `bloodless_families` (ghosts, constructs, elementals, oozes, plants) or `bloodless_tags` (undead, construct, plant), else it bleeds. The fleshy dead (ghouls, zombies, revenants, deadites, the wendigo) bleed; liches, bone witches and the jiangshi do not.
 

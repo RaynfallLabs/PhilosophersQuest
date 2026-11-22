@@ -115,6 +115,16 @@ class DressingMixin:
                 return 'belt', getattr(p, 'belt_slot', None)
         return '', None
 
+    def _takes_off_to_wear(self, item) -> bool:
+        """Equipping ``item`` would take something off him (the hex's
+        question: action_gate 'refuse_worn')."""
+        from items import Weapon
+        p = self.player
+        if isinstance(item, Weapon):
+            cur = p.ranged_weapon if getattr(item, 'requires_ammo', None) is not None else p.weapon
+            return cur is not None or bool(getattr(item, 'two_handed', False) and p.shield is not None)
+        return self._occupant_for(item)[1] is not None
+
     def _known_by_hand_mark(self, item) -> str:
         """'Known by Hand' for a wearable the hero knows, else ''."""
         return kbh.mark_for(getattr(self, 'player', None), item)
@@ -500,12 +510,21 @@ class DressingMixin:
 
     def _busy_helpless(self) -> str:
         """Why the hero cannot go on working at all ('' when he can): asleep
-        or paralysed, as _helpless_turn reads it (bug bash WB-A02)."""
+        or paralysed, as _helpless_turn reads it (bug bash WB-A02), off his
+        feet, numb with ice, or hexed with a piece still to come off."""
         p = self.player
         if p.has_effect('paralyzed'):
             return 'you cannot move'
         if p.has_effect('sleeping'):
             return 'you have fallen asleep'
+        if p.has_effect('knocked_down'):
+            return 'you are off your feet'
+        if p.has_effect('frozen'):
+            return 'your hands are numb with ice'
+        if p.has_effect('hexed'):
+            act = getattr(self, '_busy', None)
+            if act is not None and not act.done and act.current.kind == 'off':
+                return 'the hex holds it to you'
         return ''
 
     def _busy_run(self) -> None:
@@ -749,6 +768,11 @@ class DressingMixin:
                 return False
             self.add_message("Nothing is at your back. Ready a weapon from the Kit "
                              "(K, then R).", 'info')
+            return False
+        if not self._gate('swap', item=back, worn=hand is not None, possible=lambda: (
+                (hand is None or p.try_unequip_slot(hand)[0])
+                and (not getattr(back, 'two_handed', False) or p.shield is None
+                     or p.try_unequip_slot(p.shield)[0]))):
             return False
         if hand is not None:
             ok, msg = p.try_unequip_slot(hand)
@@ -1107,6 +1131,8 @@ class DressingMixin:
         if not steps:
             self.add_message(f"You are already dressed in {kit['name']}." if plan['already']
                              else f"Nothing of {kit['name']} can be put on.", 'info')
+            return
+        if not self._gate('swap', worn=any(s.kind == 'off' for s in steps)):
             return
         act = BusyAction(steps, label=kit['name'], prompt='Keep dressing?',
                          done_line=f"You are dressed in {kit['name']}.")

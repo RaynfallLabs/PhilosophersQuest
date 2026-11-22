@@ -46,6 +46,8 @@ class ArsenalMixin:
         """Shift+S: Neutral, Press, Guard, and round again. One turn, as
         swapping a weapon is: the stance is for the fight, not each blow."""
         import stance
+        if not self._gate('stance'):
+            return
         self.add_message(stance.change(self.player), 'info')
         self._advance_turn()
 
@@ -118,6 +120,10 @@ class ArsenalMixin:
         if _label in ('Put Out', 'Light'):
             self._toggle_light()
             return True
+        if not self._gate('apply', item=item, possible=lambda: (
+                not coatings.refusal(self.player, item) if coatings.coat_spec(item) is not None
+                else bool(counters.is_applied(item) or counters.crows(item)))):
+            return False
         if coatings.coat_spec(item) is not None:
             why = coatings.refusal(self.player, item)
             if why:

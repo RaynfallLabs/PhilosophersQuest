@@ -252,6 +252,8 @@ class MenuMixin:
     def _eat_now(self, item):
         """Eat ``item`` from the pack (the Z menu's choice), one turn."""
         self.state = STATE_PLAYER
+        if not self._gate('eat', item=item):
+            return
         self.player.remove_from_inventory(item)
         if isinstance(item, Food):
             messages = eat_food(self.player, item)
@@ -411,6 +413,8 @@ class MenuMixin:
             self._apply_item(self.quaff_menu_items[idx])
             return
         self.state = STATE_PLAYER
+        if not self._gate('drink', item=self.quaff_menu_items[idx]):
+            return
         item = self.quaff_menu_items[idx]
         self.player.remove_from_inventory(item)
 
@@ -1507,6 +1511,8 @@ class MenuMixin:
         if pdef.get('uses', 0) > 0 and uses_remaining <= 0:
             self.add_message(f"{pdef['label']} has no uses remaining.", 'warning')
             return
+        if not self._gate('power'):
+            return
         if not self._activate_power(pid):
             self._advance_turn()
 
@@ -1599,7 +1605,8 @@ class MenuMixin:
 
         elif pid == 'mind_fortress':
             cleared = []
-            mental = {'confused', 'blinded', 'hallucinating', 'hallucinating_pot', 'stunned', 'feared'}
+            mental = {'confused', 'blinded', 'hallucinating', 'hallucinating_pot', 'stunned', 'feared',
+                      'charmed', 'forgetting'}
             for eff in mental:
                 if pl.has_effect(eff):
                     pl.status_effects.pop(eff, None)
@@ -1791,7 +1798,8 @@ class MenuMixin:
             from combat import _line_of_sight
             import holds
             _dist = max(abs(fenrir.x - pl.x), abs(fenrir.y - pl.y))
-            if holds.shields(pl, fenrir) or _dist > self.GLEIPNIR_RANGE or not _line_of_sight(
+            import effect_rules
+            if holds.shields(pl, fenrir) or effect_rules.spares(pl, fenrir) or _dist > self.GLEIPNIR_RANGE or not _line_of_sight(
                     pl.x, pl.y, fenrir.x, fenrir.y, self.dungeon):
                 self.add_message(
                     "The ribbon will not reach him from here. You need him in "
@@ -1917,6 +1925,13 @@ class MenuMixin:
         if getattr(pl, '_seven_league_used_this_floor', False):
             self.add_message("Seven-League Step is spent for this floor.", 'warning')
             return True  # bug-bash fix afdf: don't burn a turn on a warning
+        _tx = pl.x + int(getattr(pl, '_facing_dx', 0) or 0)
+        _ty = pl.y + int(getattr(pl, '_facing_dy', 0) or 0)
+        if not self._gate('step', possible=lambda: (
+                (_tx, _ty) != (pl.x, pl.y) and self.dungeon.in_bounds(_tx, _ty)
+                and self.dungeon.is_walkable(_tx, _ty)
+                and monster_at_tile(self.monsters, _tx, _ty) is None)):
+            return True
         dx = int(getattr(pl, '_facing_dx', 0) or 0)
         dy = int(getattr(pl, '_facing_dy', 0) or 0)
         if dx == 0 and dy == 0:
@@ -2212,6 +2227,8 @@ class MenuMixin:
         """Consume one unit of `food` from inventory; restore some pet HP +
         grant XP. XP is scaled by the food's sp_restore value so cooked
         compound recipes are stronger pet-food than raw ingredients."""
+        if not self._gate('pet'):
+            return
         food_name = getattr(food, 'name', 'food')
         # Heal: 25% of pet max HP per feed (rounded up)
         heal = max(1, int(pet.max_hp * 0.25))
@@ -2272,6 +2289,8 @@ class MenuMixin:
         self.state = STATE_PET_MENU
 
     def _apply_pet_heal(self, pet, potion):
+        if not self._gate('pet'):
+            return
         from dice import roll as _roll
         effect = getattr(potion, 'effect', 'heal')
         if effect == 'full_heal':
@@ -2301,6 +2320,8 @@ class MenuMixin:
             self.add_message(
                 f"{pet.name} has already had your attention this floor.", 'info')
             return
+        if not self._gate('pet'):
+            return
         pet.last_pet_floor = self.dungeon_level
         msgs = pet.gain_xp(5)
         self.add_message(
@@ -2315,6 +2336,8 @@ class MenuMixin:
         The returned sphere is BOUND — throwing it later spawns this same pet
         with all state preserved (level, XP, nickname, kills).
         """
+        if not self._gate('pet'):
+            return
         if max(abs(pet.x - self.player.x), abs(pet.y - self.player.y)) > 1:
             self.add_message(
                 f"You must be adjacent to {pet.name} to recall it.", 'warning')

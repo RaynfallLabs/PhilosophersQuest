@@ -163,6 +163,8 @@ class LorePowersMixin:
                    and lore_powers._in_sight(m, self.player, self.dungeon)]
         if not waiting:
             return False
+        if not self._gate('work'):
+            return True
         lead = waiting[0]
         spec = lore_powers.spec(lead, 'parley') or {}
         subject = str(spec.get('subject', 'grammar'))

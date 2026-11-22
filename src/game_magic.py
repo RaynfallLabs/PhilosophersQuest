@@ -186,6 +186,10 @@ def _polymorph_swap(game, target, new_m) -> str:
     new_m.stolen_items = list(target.__dict__.get('stolen_items') or ())
     target.stolen_gold = 0
     target.__dict__['stolen_items'] = []
+    # And who it is: what it ate of his mind is still in it (mind_theft.py).
+    _tok = target.__dict__.pop('_effect_token', None)
+    if _tok:
+        new_m.__dict__['_effect_token'] = _tok
     idx = game.monsters.index(target)
     game.monsters[idx] = new_m
     if _hidden(new_m, game.player):
@@ -322,6 +326,8 @@ class MagicMixin(MagicWardsMixin):
                 f"({quantity(self.player.recall_lore_cooldown, 'turn')} remain)", 'warning'
             )
             return
+        if not self._gate('work'):
+            return
         self.add_message("You close your eyes and search your memory...", 'info')
         self.quiz_title = "RECALL LORE  --  TRIVIA"
         self.state = STATE_QUIZ
@@ -393,6 +399,14 @@ class MagicMixin(MagicWardsMixin):
     # ------------------------------------------------------------------
 
     def _invoke_wand(self, wand: 'Wand'):
+        # An empty wand only crumbles, and a lamp that already burns keeps
+        # its charge: neither is a zap to fumble.
+        _tool = wand.id in ('philosophers_wrench', 'flux_capacitor')
+        _held = bool(wand.effect == 'light' and self.player.status_effects.get('light', 0) == -1
+                     and (getattr(wand, 'identified', False) or wand.id in self.player.known_item_ids))
+        if not self._gate('wand' if _tool or wand.charges > 0 else 'work', item=wand,
+                          possible=lambda: _tool or not _held):
+            return
         # Philosopher's Wrench: no quiz -- it's a tool, not magic
         if wand.id == 'philosophers_wrench':
             wand.identified = True
@@ -444,9 +458,10 @@ class MagicMixin(MagicWardsMixin):
             self._throw_targeting = False
             self._observe_targeting = False
             px, py = self.player.x, self.player.y
+            import holds                  # (aim at anything: the gate says why not)
             candidates = [
-                m for m in self.monsters
-                if m.alive and self._in_hero_reach(m)
+                m for m in holds.strikable(self.player, self.monsters, spare=False)
+                if m.alive and (m.x, m.y) in self.visible
             ]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             self._target_candidates = candidates
@@ -1404,7 +1419,9 @@ class MagicMixin(MagicWardsMixin):
         # -- Tier 5 wand effects -------------------------------------------
         elif effect == 'nova':
             from dice import roll as _roll
-            all_monsters = [m for m in self.monsters if m.alive]
+            import effect_rules
+            all_monsters = [m for m in self.monsters
+                            if m.alive and not effect_rules.spares(self.player, m)]
             if not all_monsters:
                 self.add_message("The wand fires but no creatures are present!", 'info')
             else:
@@ -1562,6 +1579,19 @@ class MagicMixin(MagicWardsMixin):
             return f"{name} needs a foe beside you: you must lay hands on it."
         return f"Nothing is close enough for {name}: it reaches {quantity(reach, 'tile')}."
 
+    def _can_cast(self, spell: dict) -> bool:
+        """The MP (or the floor's free cast) and, aimed, someone to aim at."""
+        from chain_passives import is_charge_available
+        p = self.player
+        if (p.mp < p.spell_mp_cost(spell['mp_cost'])
+                and not is_charge_available(p, 'free_cast_once_per_floor')):
+            return False
+        if spell.get('needs_target') and not spell.get('needs_tile'):
+            import holds
+            return any(m.alive and self._sees_monster(m) and self._spell_in_reach(spell, m)
+                       for m in holds.strikable(p, self.monsters, spare=False))
+        return True
+
     def _in_hero_reach(self, m) -> bool:
         """A creature a wand, a scroll or a spell's wave can catch: on a tile
         the hero sees. Swallowed, only the creature round him: nothing
@@ -1569,8 +1599,9 @@ class MagicMixin(MagicWardsMixin):
         (holds.shields, AI-3)."""
         if (m.x, m.y) not in self.visible:
             return False
+        import effect_rules
         import holds
-        return not holds.shields(self.player, m)
+        return not holds.shields(self.player, m) and not effect_rules.spares(self.player, m)
 
     def _in_spell_sight(self, m) -> bool:
         """An area spell's victim: alive, on a tile the hero sees, and in a
@@ -1582,6 +1613,9 @@ class MagicMixin(MagicWardsMixin):
         import holds
         if holds.shields(self.player, m):
             return False             # swallowed, he reaches only the gut round him (AI-3)
+        import effect_rules
+        if effect_rules.spares(self.player, m):
+            return False             # his charmer: no wave of his takes it
         from combat import _line_of_sight
         from geom import occupied_tiles
         px, py = self.player.x, self.player.y
@@ -1602,6 +1636,8 @@ class MagicMixin(MagicWardsMixin):
             import lights
             self.add_message(lights.line('spell_held'), 'info')
             self.state = STATE_PLAYER
+            return
+        if not self._gate('cast', possible=lambda: self._can_cast(spell)):
             return
         mp_cost = self.player.spell_mp_cost(spell['mp_cost'])
         from chain_passives import consume_passive_charge, find_passive_item, refund_passive_charge
@@ -1632,7 +1668,7 @@ class MagicMixin(MagicWardsMixin):
             # thing: its tile would show where it stands) and only what the
             # spell reaches (spells.SPELL_REACH: a touch, a short sign).
             import holds                  # swallowed, he can aim only at the gut round him
-            seen = [m for m in holds.strikable(self.player, self.monsters)
+            seen = [m for m in holds.strikable(self.player, self.monsters, spare=False)
                     if m.alive and self._sees_monster(m)]
             candidates = [m for m in seen if self._spell_in_reach(spell, m)]
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
@@ -1929,12 +1965,13 @@ class MagicMixin(MagicWardsMixin):
 
         # Cleanse: remove one negative status effect
         if effect == 'cleanse_self':
-            from status_effects import DEBUFFS
-            active = [e for e in self.player.status_effects if e in DEBUFFS]
+            from status_effects import EFFECT_INFO, ailments_on
+            active = ailments_on(self.player)
             if active:
                 removed = active[0]
                 self.player.status_effects.pop(removed, None)
-                self.add_message(f"Cleansed! {removed.title()} removed.", 'success')
+                _label = EFFECT_INFO.get(removed, (removed.replace('_', ' ').title(),))[0]
+                self.add_message(f"Cleansed! {_label} removed.", 'success')
             else:
                 self.add_message("You have no ailments to cleanse.", 'info')
             return
@@ -2808,6 +2845,8 @@ class MagicMixin(MagicWardsMixin):
         outcome, tier-scaled magnitude), consistent with the identify /
         harvest / cook philosophy.
         """
+        if not self._gate('read', item=scroll):
+            return
         display = self._bare_name(scroll)
         self.quiz_title = f"READING {display.upper()}  --  GRAMMAR"
         self.state = STATE_QUIZ
@@ -3082,6 +3121,9 @@ class MagicMixin(MagicWardsMixin):
                 #   T4: ALL equipped + status debuffs + uncurse inventory items
                 #   T5: T4 + bless one equipped item (uncursed → blessed) for free
                 _scope = _tstep  # 0..4
+                # A hex is a curse on what he wears: every uncursing lifts it.
+                if self.player.status_effects.pop('hexed', None):
+                    self.add_message("The hex lifts from what you wear.", 'success')
                 # Status debuffs cleared at T3+ (was unconditional)
                 removed = []
                 if _scope >= 2 or _scroll_buc == 'blessed':
@@ -3775,6 +3817,8 @@ class MagicMixin(MagicWardsMixin):
         paid service, game_traders.py). The question is the same; a wrong
         answer costs only the fee, no stun.
         """
+        if not self._gate('work'):
+            return
         display = self._bare_name(item)
         # Chain-equip passive: identify_one_per_floor_free (Cloak of Odin
         # T2+). Skip the quiz entirely and grant a full identify, 1/floor.
@@ -4161,6 +4205,9 @@ class MagicMixin(MagicWardsMixin):
         contract. Spellbooks are one-read even on success (you internalize the
         spell, the physical text is consumed).
         """
+        if (getattr(book, 'is_consumable_artifact', False)
+                or book.spell_id not in self.player.known_spells) and not self._gate('read', item=book):
+            return
         # v2.10.0: artifact spellbooks (Book of Thoth) fire an EFFECT on
         # read, not learn-a-spell (and the Book of Thoth is not consumed:
         # see _read_book_of_thoth). Route through the dedicated
@@ -4779,6 +4826,21 @@ class MagicMixin(MagicWardsMixin):
             getattr(p, 'known_class_ids', set()).discard(cls)
         if fid:
             getattr(p, 'known_forms', set()).discard(fid)
+        pool = self._kind_copies(iid, cls)
+        if not any(it is item for it in pool):
+            pool.append(item)
+        for it in pool:
+            if str(getattr(it, 'item_class', '')) == 'treasure':
+                continue
+            it.id_level = 0
+            if hasattr(it, 'buc_known'):
+                it.buc_known = False
+
+    def _kind_copies(self, iid: str, cls) -> list:
+        """Every copy of one kind the game can reach (``_forget_kind``; a
+        mind-eater's meal given back: mind_theft.py)."""
+        from items import type_class
+        p = self.player
 
         def same_kind(it) -> bool:
             if getattr(it, 'id', None) == iid:
@@ -4806,13 +4868,12 @@ class MagicMixin(MagicWardsMixin):
         for herd in herds:
             for m in herd:
                 pool.extend(getattr(m, '__dict__', {}).get('stolen_items') or [])
+        out, seen = [], set()
         for it in pool:
-            if it is item or same_kind(it):
-                if str(getattr(it, 'item_class', '')) == 'treasure':
-                    continue
-                it.id_level = 0
-                if hasattr(it, 'buc_known'):
-                    it.buc_known = False
+            if id(it) not in seen and same_kind(it):
+                seen.add(id(it))
+                out.append(it)
+        return out
 
     def _auto_identify_all(self):
         """Identify every item in inventory and on the ground (Philosopher's Stone).

@@ -382,6 +382,14 @@ class QuizEngine:
     # the seconds it has been in front of the hero (the clock's own time:
     # nothing while the card has the clock stopped).
     scramble_hook       = None      # Game: callable(timed) -> settle seconds
+    # Stunned, Blinded and Hallucinating on the quiz (quiz_sight.py, display
+    # only): stamped with the scramble, on the same seconds.
+    sight_hook          = None      # Game: callable(timed) -> (which of the three, settle seconds)
+    sight               = None      # {'double', 'dark', 'phantom'} for the question on screen
+    sight_settle        = 0.0
+    phantom             = None      # the false answer: {'text', 'slot', 'touched'}
+    dark_at             = 0         # the answer card in the pool of light
+    _sight_q            = None
     scramble_settle     = 0.0
     scramble_seed       = 0
     _scramble_q         = None
@@ -532,9 +540,11 @@ class QuizEngine:
           threshold     -- for threshold modes: number of correct answers needed.
                           Total questions asked = ceil(threshold * 1.5).
           max_chain     -- for chain modes: auto-succeed after this chain length (None = unlimited).
-          timer_modifier -- multiplier on the base timer (e.g. 0.70 when blinded).
-                          Confusion does not cut the clock: it scrambles the
-                          words until they settle (scramble_hook, settle_for).
+          timer_modifier -- multiplier on the base timer (a blessing's 1.25).
+                          No debuff cuts the clock: confusion scrambles the
+                          words until they settle (scramble_hook, settle_for)
+                          and Stunned, Blinded and Hallucinating show on the
+                          quiz the same way (sight_hook, quiz_sight.py).
           base_seconds  -- pre-computed base timer from Player.get_quiz_timer(subject).
                           If provided, replaces the legacy (10 + wisdom) calculation.
           timed         -- True/False forces, None auto-detects from subject
@@ -973,6 +983,72 @@ class QuizEngine:
         text = str((self.current_question or {}).get('question', ''))
         self.scramble_seed = zlib.crc32(
             f"{self.session_id}|{self.asked_count}|{text}".encode('utf-8'))
+        self._stamp_sight()
+
+    # --- Stunned, Blinded, Hallucinating (quiz_sight.py: display only) ----
+
+    def _stamp_sight(self) -> None:
+        """The question that just went up: which of the three are on it,
+        how long it takes to come clear, and its false answer."""
+        self._sight_q = self.current_question
+        self.sight, self.sight_settle, self.phantom, self.dark_at = None, 0.0, None, 0
+        hook = getattr(self, 'sight_hook', None)
+        if hook is None or self.current_question is None:
+            return
+        try:
+            seen, settle = hook(bool(getattr(self, 'timed', False)))
+            if not any(seen.values()):
+                return
+            self.sight = dict(seen)
+            self.sight_settle = max(0.0, float(settle or 0.0))
+            if seen.get('phantom') and self.sight_settle > 0:
+                import quiz_sight
+                pool = self._decks.get((self.subject, self.tier)) or []
+                self.phantom = quiz_sight.phantom_for(self.current_question, pool, self.scramble_seed,
+                                                      self.subject)
+        except Exception:
+            from game_log import log_error
+            log_error('quiz_engine._stamp_sight: sight hook')
+            self.sight, self.phantom = None, None
+
+    def sees(self, what: str) -> bool:
+        """``what`` ('double', 'dark', 'phantom') was on the hero when the
+        question on screen went up."""
+        seen = getattr(self, 'sight', None)
+        return (bool(seen and seen.get(what)) and self.current_question is not None
+                and getattr(self, '_sight_q', None) is self.current_question)
+
+    def sight_share(self) -> float:
+        """How much of the settle time has gone (1.0: all clear)."""
+        settle = float(getattr(self, 'sight_settle', 0.0) or 0.0)
+        if settle <= 0:
+            return 1.0
+        return min(1.0, float(getattr(self, 'q_elapsed', 0.0) or 0.0) / settle)
+
+    def double_view(self):
+        """The share settled while the question is still seen double, else
+        None. The result is always drawn true."""
+        if self.state != QuizState.ASKING or not self.sees('double'):
+            return None
+        share = self.sight_share()
+        return share if share < 1.0 else None
+
+    def dark_view(self):
+        """The lit answer card's slot while the answers are dark, else None."""
+        if self.state != QuizState.ASKING or not self.sees('dark'):
+            return None
+        return int(self.dark_at)
+
+    def phantom_slot(self):
+        """The false answer and the slot it keeps until the question is
+        gone, faded or not (no real answer may change its number)."""
+        return self.phantom if self.phantom and self.sees('phantom') else None
+
+    def phantom_shows(self) -> bool:
+        """The false answer is still there to be seen."""
+        ph = self.phantom_slot()
+        return (ph is not None and self.state == QuizState.ASKING
+                and not ph.get('touched') and self.sight_share() < 1.0)
 
     def confused_quiz(self) -> bool:
         """The hero was confused when the question on screen went up: the

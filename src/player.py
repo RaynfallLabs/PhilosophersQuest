@@ -1069,6 +1069,12 @@ class Player:
         # yet, so the next harvest of each kind asks its question.
         if not isinstance(self.__dict__.get('butchered_kinds'), set):
             self.butchered_kinds = set(self.__dict__.get('butchered_kinds') or ())
+        # Saves from before the effects pass (2026-11-22): a curse on the hero
+        # did nothing; it is a hex now. A status already running starts its
+        # bout when first read (effect_rules.bout).
+        _st = self.__dict__.get('status_effects')
+        if isinstance(_st, dict) and _st.get('cursed'):
+            _st['hexed'] = _st.pop('cursed')
         from loadouts import valid as _kits_valid, default_kits as _default_kits
         if not _kits_valid(self.__dict__.get('loadouts')):
             self.loadouts = _default_kits()
@@ -1360,7 +1366,7 @@ class Player:
         WIS 10 -> 10s, WIS 20 -> 20s. Floor of 5s prevents an
         unwinnable combat under drain-WIS curses; ``QuizEngine.start_quiz``
         applies the same 5 s floor again AFTER the status multiplier
-        (``get_quiz_timer_modifier``), so blindness or a stun can never
+        (``get_quiz_timer_modifier``), so no status can ever
         take the clock below it.
 
         Callers for non-math subjects still request this and pass the
@@ -1498,7 +1504,7 @@ class Player:
         `defence` and `load`)."""
         # Nobody who cannot act can sidestep.
         if any(self.has_effect(e) for e in ('paralyzed', 'sleeping', 'immobilized',
-                                            'stunned', 'frozen', 'petrifying')):
+                                            'stunned', 'frozen', 'petrifying', 'knocked_down')):
             return 0.0
         import defence
         base = defence.dex_dodge(self.DEX) + self._worn_bonus('dodge_bonus')
@@ -1561,15 +1567,10 @@ class Player:
         unsolvable, and the engine never lets the result fall below 5 s
         (``quiz_engine.MIN_TIMED_SECONDS``, applied after this multiplier)."""
         mod = 1.0
-        # (Confusion no longer cuts the clock. Brandon, 2026-11-19: its
-        # words swim, then settle, and that wait is its cost on the clock:
-        # quiz_engine.settle_for.)
-        if self.has_effect('stunned'):
-            mod *= 0.75
-        if self.has_effect('blinded'):
-            mod *= 0.70
-        if self.has_effect('hallucinating'):
-            mod *= 0.80
+        # (No debuff cuts the clock. Brandon, 2026-11-19, of confusion: its
+        # words swim, then settle, and that wait is its cost. Since
+        # 2026-11-22 Stunned, Blinded and Hallucinating show on the quiz the
+        # same way: quiz_engine.settle_for, quiz_sight.py.)
         # (Haste no longer lengthens the clock. Brandon, 2026-11-12: "Wisdom
         # increases timer, not how fast you are." Speed is how often the
         # hero acts against the world: get_speed.)
@@ -1577,7 +1578,7 @@ class Player:
             mod *= 1.25
         return round(max(0.40, mod), 2)
 
-    def get_speed(self) -> float:
+    def get_speed(self, slow: bool | None = None) -> float:
         """The hero's speed rating, on the scale of a monster's `speed`
         (data/monsters.json: 10 is a creature of ordinary speed). It sets
         how often he acts against how often the world does
@@ -1592,7 +1593,10 @@ class Player:
         armour back, and a Heavy, Burdened or Overloaded load
         slower still (Marius' Mule keeps his stride under all but
         Overloaded). Speed boots add their share (enchantments.quickness)
-        and haste doubles it. Wisdom sets the quiz clock, never this."""
+        and haste doubles it. Slowed, or far enough turned to stone, halves
+        it: every action takes two turns, by whatever key (``slow``: given
+        by a caller that read it before the statuses ticked). Wisdom sets
+        the quiz clock, never this."""
         import defence
         import gear
         try:
@@ -1602,7 +1606,11 @@ class Player:
             quick = 0.0
         share = defence.speed_share(self.DEX, self.STR, gear.body_class(self),
                                     self.load_tier(), ignore_load=self.keeps_stride())
-        return defence.speed_rating(share, quick, self.has_effect('hasted'))
+        rating = defence.speed_rating(share, quick, self.has_effect('hasted'))
+        if slow is None:
+            import effect_rules
+            slow = effect_rules.moves_slow(self)
+        return rating / 2.0 if slow else rating
 
     def keeps_stride(self) -> bool:
         """Marius' Mule (a trait): a Light, Heavy or Burdened load does not
@@ -2431,6 +2439,9 @@ class Player:
         # 2026-05-30 — JSON flag was inert.
         if slot_item and getattr(slot_item, 'selects_wielder', False):
             return False, f"The {item_bare_name(self, slot_item)} clings to your hand. It will not be put down."
+        if slot_item and self.has_effect('hexed'):
+            import effect_rules
+            return False, effect_rules.line('hexed')
         return True, ""
 
     # ------------------------------------------------------------------

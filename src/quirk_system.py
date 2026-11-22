@@ -18,6 +18,7 @@ if TYPE_CHECKING:
 _DEBUFF_EFFECTS = frozenset({
     'paralyzed','sleeping','stunned','confused','blinded','hallucinating',
     'poisoned','diseased','petrifying','strangulation','fumbling','slowed',
+    'hexed','knocked_down','forgetting',
     'aggravated','teleportitis','feared','charmed','cursed','weakened','bleeding',
 })
 
@@ -1201,9 +1202,11 @@ class QuirkSystem:
                 self._award_power('zeus_bolt', "Zeus' Bolt", lambda pl2: None)
         self._sp('zeus_was_hasted', hasted_now)
 
-        # Gorgon Ward (power): survive petrification 3 times. Counted on the
-        # turn the creeping stone ENDS with the player still alive.
-        petrifying_now = pl.has_effect('petrifying')
+        # Gorgon Ward (power): survive the stone that kills. Counted on the
+        # turn the creeping stone ENDS with the player still alive; a
+        # cockatrice's, which never kills, is not counted.
+        import effect_rules
+        petrifying_now = pl.has_effect('petrifying') and effect_rules.is_lethal(pl)
         if self._p('gorgon_was_petrifying', False) and not petrifying_now and pl.hp > 0:
             self._inc('gorgon_ward_petrify')
             if self._p('gorgon_ward_petrify') >= 1 and not self.is_unlocked('gorgon_ward'):
@@ -1808,7 +1811,7 @@ _QUIRK_TRIGGER = {
     'philosophers_stone': "You identified 200 items.",
     'atlas_burden':  "You carried 90%+ of your weight limit for 100 turns.",
     'zeus_bolt':     "You became Hasted 15 separate times in a single run.",
-    'gorgon_ward':   "You began turning to stone and survived it, 1 time.",
+    'gorgon_ward':   "You began turning to the stone that kills and survived it, 1 time.",
     'phoenix_rising': "You survived at 5% HP or below 10 separate times.",
     'eye_storm':     "You completed 5 new floors without taking any damage.",
     'iron_will':     "You took damage 10 times while paralyzed.",

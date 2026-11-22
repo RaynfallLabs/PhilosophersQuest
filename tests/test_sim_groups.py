@@ -322,7 +322,7 @@ def _set_speed(p, hero):
     if hero == 'hasted':
         p.status_effects['hasted'] = 10 ** 6
     else:
-        p.get_speed = lambda v=float(hero): v
+        p.get_speed = lambda slow=None, v=float(hero): v / 2 if slow else v
 
 
 def _game_turns(mspeed, hero, n, slowed=0):
@@ -403,25 +403,24 @@ def test_a_slowed_foe_and_a_hasted_hero_tick_once_an_action():
     assert game != _sim_turns(10, 'hasted', n, slowed=20, knobs='grp_speed=0')
 
 
-def test_a_slowed_hero_loses_every_other_blow(monkeypatch):
-    """main._do_move: Slowed, every other move or blow is lost (the world
-    still turns); a potion, a prayer or a spell is not slowed there."""
+def test_a_slowed_hero_loses_no_blow_every_action_takes_two_turns(monkeypatch):
+    """The effects pass (2026-11-22): Slowed is the world's clock for every
+    key (Player.get_speed halves), no longer every other step or blow lost."""
     import combat
     src = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
     move = src.split('def _do_move', 1)[1].split('\n    def ', 1)[0]
-    assert "has_effect('slowed')" in move and 'self._slow_skip = not self._slow_skip' in move
+    assert '_slow_skip' not in move
     blows = []
     monkeypatch.setattr(combat, 'player_attack', lambda *a, **k: blows.append(1))
-    for on in (1, 0):
-        blows.clear()
-        ds, run = _sim(f'grp_speed={on}')
-        foe = _mon(ds, run, 'skeleton')
-        run.p.status_effects['slowed'] = 10
-        assert all(run.player_can_act() for _ in range(4))        # he may still drink or pray
-        for _ in range(6):
-            run._player_attack(foe, [foe])
-        assert len(blows) == (3 if on else 6), (on, len(blows))
-        assert bool(run.fs.get('grp_slowed_lost')) == bool(on)
+    ds, run = _sim('')
+    foe = _mon(ds, run, 'skeleton')
+    fast = run.p.get_speed()
+    run.p.status_effects['slowed'] = 10
+    assert run.p.get_speed() == pytest.approx(fast / 2)
+    assert all(run.player_can_act() for _ in range(4))
+    for _ in range(6):
+        run._player_attack(foe, [foe])
+    assert len(blows) == 6
 
 
 def test_a_quick_creature_strikes_on_arrival_half_the_time_it_closes():
@@ -497,7 +496,6 @@ def test_with_every_group_knob_off_the_fight_is_the_old_one(monkeypatch):
     monkeypatch.setattr(sim_groups, 'next_up', lambda run, queue, active: queue.pop(0))
     monkeypatch.setattr(sim_groups, 'back_rank', lambda run, active, queue, ctx, tick=True, act=True: queue)
     monkeypatch.setattr(sim_groups, 'arrival', lambda run, m, free, opening: free)
-    monkeypatch.setattr(sim_groups, 'hero_slowed', lambda run: False)
     monkeypatch.setattr(sim_groups, 'ticks_now', lambda run, w: True)
     monkeypatch.setattr(sim_groups, 'tick_alone', lambda run, n: False)
     assert fights() == with_hooks

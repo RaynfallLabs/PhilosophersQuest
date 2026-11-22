@@ -94,14 +94,15 @@
             {
               "id": "restless_dead_grave_salt",
               "name": "Grave-Salt",
-              "text": "You get +1 on saving throws against their paralysis, disease and life drain, and their disease lasts a tenth less time.",
+              "text": "You get +1 on saving throws against their paralysis, holding, disease and life drain, and their disease lasts a tenth less time.",
               "trigger_msg": "Grave-Salt: {The} reaches for you with cold, dead fingers, but the salt in your pocket crackles, and {his} grip slides harmlessly away.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
                   "paralyzed",
                   "diseased",
-                  "drain"
+                  "drain",
+                  "immobilized"
                 ],
                 "amount": 1
               },
@@ -314,13 +315,14 @@
             {
               "id": "vampires_liches_garlic_and_ash",
               "name": "Garlic and Ash",
-              "text": "You get +1 on saving throws against their life drain and paralysis, and their bite no longer heals them.",
+              "text": "You get +1 on saving throws against their life drain, paralysis and weakness, and their bite no longer heals them.",
               "trigger_msg": "Garlic and Ash: {The} fixes you with {his} stare, but the garlic at your throat makes {him} flinch, and {his} hold on you is broken.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
                   "drain",
-                  "paralyzed"
+                  "paralyzed",
+                  "weakened"
                 ],
                 "amount": 1
               },
@@ -422,13 +424,14 @@
             {
               "id": "demons_circle_of_salt",
               "name": "Circle of Salt",
-              "text": "You get +1 on saving throws against their burning and confusion, and their burning lasts a tenth less time.",
+              "text": "You get +1 on saving throws against their burning, confusion and charm, and their burning lasts a tenth less time.",
               "trigger_msg": "Circle of Salt: {The}'s dark power washes toward you, but you scatter a ring of salt about your feet, and it cannot cross the line.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
                   "burning",
-                  "confused"
+                  "confused",
+                  "charmed"
                 ],
                 "amount": 1
               },
@@ -1402,13 +1405,14 @@
             {
               "id": "birds_hooded",
               "name": "Hooded",
-              "text": "You get +1 on saving throws against their blinding and confusion, as a falconer's hood calms a hawk.",
+              "text": "You get +1 on saving throws against their blinding, confusion and charm, as a falconer's hood calms a hawk.",
               "trigger_msg": "Hooded: {The} dives at your eyes, but you shield them in time and keep your head clear.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
                   "blinded",
-                  "confused"
+                  "confused",
+                  "charmed"
                 ],
                 "amount": 1
               }
@@ -2163,13 +2167,16 @@
             {
               "id": "aberrations_steel_mind",
               "name": "Steel Mind",
-              "text": "You get +1 on saving throws against their confusion and paralysis, and their hallucinations last a tenth less time.",
+              "text": "You get +1 on saving throws against their confusion, charm, paralysis, holding and mind-eating, and their hallucinations last a tenth less time.",
               "trigger_msg": "Steel Mind: {The} claws at your thoughts, but you hold fast to what is real, and the attack on your mind fails.",
               "effect": "save_bonus",
               "params": {
                 "effects": [
                   "confused",
-                  "paralyzed"
+                  "paralyzed",
+                  "immobilized",
+                  "forgetting",
+                  "charmed"
                 ],
                 "amount": 1
               },
@@ -2527,14 +2534,15 @@
       "boon": {
         "id": "circle_unbent_mind",
         "name": "Unbent Mind",
-        "text": "You get +1 on every saving throw against confusion, charm and fear, from anything.",
+        "text": "You get +1 on every saving throw against confusion, charm, fear and mind-eating, from anything.",
         "trigger_msg": "",
         "effect": "save_bonus",
         "params": {
           "effects": [
             "confused",
             "charmed",
-            "feared"
+            "feared",
+            "forgetting"
           ],
           "amount": 1,
           "scope": "any"

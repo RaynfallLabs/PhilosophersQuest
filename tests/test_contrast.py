@@ -133,7 +133,7 @@ def test_choice_button_renders_text_in_parchment_not_danger():
     src = Path('src/fantasy_ui.py').read_text(encoding='utf-8')
     idx = src.find('def draw_choice_button(')
     assert idx >= 0
-    block = src[idx:idx + 2500]
+    block = src[idx:src.index('\ndef ', idx + 1)]
     # The text-color line should not branch on correct/incorrect anymore
     assert 't_color = FP.PARCHMENT_LIGHT' in block
     # And specifically must NOT have the old branching pattern

@@ -56,8 +56,8 @@ def test_advance_turn_gates_the_world_on_the_clock():
     import main
     src = inspect.getsource(main.Game._advance_turn)
     gate = "for _wt in range(_n_world):"
-    assert "get_speed()" in src and "world_turns(" in src
-    assert src.find("get_speed()") < src.find("self._do_monster_turns()")
+    assert "get_speed(" in src and "world_turns(" in src
+    assert src.find("get_speed(") < src.find("self._do_monster_turns()")
     assert gate in src, f"expected gate line '{gate}' in _advance_turn"
     after_gate = src[src.index(gate):]
     for call in ("self._do_monster_turns()", "self._do_pet_turns()",

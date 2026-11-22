@@ -649,7 +649,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Counterspell', 'effect': 'counterspell_self', 'power': '',
         'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
         'spell_family': 'counterspell',
-        'desc': 'Magic resist for 12 turns -- blocks confused/charmed/feared/silenced/hallucinating.',
+        'desc': 'Magic resist for 12 turns -- blocks confused/charmed/feared/silenced/hallucinating and a mind-eater.',
     },
     'summon_guardian_spell': {
         'name': 'Summon Guardian', 'effect': 'summon_guardian', 'power': '',

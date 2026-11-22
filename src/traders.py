@@ -406,7 +406,33 @@ def build_stock(defn: dict, level: int, rng, seen=()) -> list:
     _rack_counters(final, rng)
     final += _gem_stock(defn, level, rng, taken)
     final += _rare_stock(defn, level, rng, taken)
+    _rack_always(final, level, rng)
     return final
+
+
+def _rack_always(final: list, level: int, rng) -> None:
+    """What every stall of a band has (data/traders.json ``always_stocked``:
+    Oil of Rue before and wherever stone kills), on top of the shelf, so it
+    crowds no ware out. It is never marked and stands in no telling place
+    (marking an unknown potion names it: bug bash WB-C09): the tell and the
+    hint teach its look, which is the same every run. Its place is drawn
+    from a copy of the trader's generator, as _rack_counters' are."""
+    from items import make_item_by_id
+    for entry in data().get('always_stocked') or ():
+        lo, hi = entry.get('floors', (1, 100))
+        if not int(lo) <= int(level) <= int(hi):
+            continue
+        if any(getattr(w, 'id', None) == entry['id'] for w in final):
+            continue
+        made = make_item_by_id(entry['cat'], entry['id'])
+        if made is None:
+            continue
+        shelf = random.Random()
+        try:
+            shelf.setstate(rng.getstate())
+        except AttributeError:
+            shelf.seed(len(final))
+        final.insert(shelf.randint(0, len(final)), copy.copy(made))
 
 
 def _rack_counters(final: list, rng) -> None:

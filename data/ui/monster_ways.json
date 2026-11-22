@@ -1,5 +1,5 @@
 {
-  "_note": "The 'Monsters and Their Ways' page of the help screen (? then Tab three times). Same shape as how_quizzes_work.json. Keep it true to the code and data: src/breath.py, src/morale.py, src/life_drain.py, src/grave_rot.py, src/light_shy.py, src/gone_again.py, src/alarm.py, src/death_throes.py, src/relurk.py, src/shove.py, src/faction.py and src/summoning.py, their numbers in data/monster_ai.json (monster behaviour, first wave, AI-1). Observe (O) shows a creature's own ways as its tells.",
+  "_note": "The 'Monsters and Their Ways' page of the help screen (? then Tab three times). Same shape as how_quizzes_work.json. Keep it true to the code and data: src/breath.py, src/morale.py, src/life_drain.py, src/grave_rot.py, src/light_shy.py, src/gone_again.py, src/alarm.py, src/death_throes.py, src/relurk.py, src/shove.py, src/faction.py and src/summoning.py, src/action_gate.py and data/effects.json (what their effects stop), their numbers in data/monster_ai.json (monster behaviour, first wave, AI-1). Observe (O) shows a creature's own ways as its tells.",
   "title": "Monsters and Their Ways",
   "sections": [
     {
@@ -12,6 +12,21 @@
       "heading": "When they break",
       "paragraphs": [
         "Badly hurt, a creature may break, the way its nature says. The mindless dead, constructs, oozes and plants never do. A beast bolts and gives up the fight. A goblin or a bandit runs for its friends and comes back with them: kill the runner first. A giant or a demon falls back, fighting as it goes. Caught with no friend and nowhere to go, a bandit may throw down his weapon and his purse and beg; you may spare him or not. Cornered, any of them turns at bay and fights harder."
+      ]
+    },
+    {
+      "heading": "What they lay on you",
+      "rows": [
+        ["Stunned", "Your first step falls and the first thing you handle drops. Stand and fight, or be in Guard (Shift+S), and neither happens."],
+        ["Knocked down", "A shove or a trample can take you off your feet, and getting up is your next action. Guard, good boots and levitation keep you standing."],
+        ["Frozen", "Your feet are stuck and your hands too numb to swap, drink, shoot or throw. You can still strike, cast, read and eat, and a lit torch in hand thaws you."],
+        ["Held by the feet", "Immobilized, you cannot walk or take a stair. Everything else works."],
+        ["Slowed", "Every action takes two turns, whatever you do."],
+        ["Afraid", "You will not go nearer what frightens you or strike it. Step away, shoot or cast. Cornered, you can fight."],
+        ["Charmed", "You cannot harm your charmer and your feet carry you to it. The first wound it gives you breaks the charm, and so does its death."],
+        ["Hexed", "What you wear will not come off until the hex lifts. Cleanse, an altar, a remove-curse or a prayer for mercy at a chain of four ends it."],
+        ["Turning to stone", "You stiffen, then slow. A cockatrice's stone holds you for a moment; a basilisk's or a gorgon's kills. Oil of Rue, Cleanse, a cure-all or a prayer for mercy at a chain of four stops the count."],
+        ["Mind-bitten", "A mind-eater takes one thing you had identified or one page of the Bestiary. Kill it before you leave the floor and it all comes back."]
       ]
     },
     {

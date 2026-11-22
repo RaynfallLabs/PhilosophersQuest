@@ -456,6 +456,8 @@ def test_the_preta_eats_plain_food_and_never_a_carried_dish():
 # ------------------------------------------------- the game's side (a stand-in game)
 
 class _Game(LorePowersMixin):
+    _gate = staticmethod(lambda *a, **k: True)       # the doors: tests/test_action_doors.py
+
     def __init__(self, monsters, ground=()):
         self.monsters = list(monsters)
         self.ground_items = list(ground)

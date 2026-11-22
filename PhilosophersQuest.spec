@@ -36,6 +36,7 @@ added_files = [
     ('data/monster_sizes.json',     'data'),
     ('data/monster_families.json',  'data'),   # monster family knowledge (family_lore.py)
     ('data/senses.json',            'data'),   # how monsters notice the hero (senses.py)
+    ('data/effects.json',           'data'),   # what each debuff does: the gate, the quiz (effect_rules.py)
     ('data/wards.json',             'data'),   # the wards and the monster gates (wards.py, attack_gates.py)
     ('data/domains.json',           'data'),   # the five domains (decor.py)
     ('data/fixtures.json',          'data'),   # fixtures (decor.py)

@@ -32,10 +32,12 @@
         "hallucinating",
         "sleeping",
         "stunned",
-        "blinded"
+        "blinded",
+        "charmed",
+        "forgetting"
       ],
       "long": "gazes, screams and other attacks on the mind",
-      "stops": "fear, confusion, sleep, stunning and blindness"
+      "stops": "fear, confusion, charm, forgetting, sleep, stunning and blindness"
     },
     "hands": {
       "name": "touches and grabs",
@@ -46,10 +48,11 @@
       "riders_any": [
         "paralyzed",
         "immobilized",
-        "frozen"
+        "frozen",
+        "petrifying"
       ],
       "long": "touches and grabs",
-      "stops": "paralysis and being held"
+      "stops": "paralysis, stone and being held"
     },
     "arms": {
       "name": "arrows and missiles",
@@ -80,7 +83,8 @@
       "riders_any": [
         "slowed",
         "immobilized",
-        "frozen"
+        "frozen",
+        "knocked_down"
       ],
       "riders_from": {
         "stunned": [
@@ -88,7 +92,7 @@
         ]
       },
       "long": "trampling and whatever pins your feet",
-      "stops": "slowing, holds, freezing and being knocked senseless"
+      "stops": "slowing, holds, freezing, falls and being knocked senseless"
     },
     "cloak": {
       "name": "breath and elements",

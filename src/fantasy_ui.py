@@ -1163,7 +1163,9 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
                        selected: bool = False,
                        correct: bool | None = None,
                        incorrect: bool | None = None,
-                       swim: list | None = None) -> None:
+                       swim: list | None = None,
+                       ghost: tuple | None = None,
+                       dark: bool = False) -> None:
     """
     # FANTASY: Ornate answer-choice button for the quiz modal.
     rect = (x, y, w, h)
@@ -1173,6 +1175,11 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     swim: a confused hero's card (quiz_engine.scramble_runs): per line,
           its ``(text, swimming)`` runs; the words still swimming are
           tinted. The lines in ``text`` are those runs joined.
+    ghost: a stunned hero's card (quiz_sight.double_offset): the text is
+          drawn twice, that many pixels either side of its place, inside
+          the card.
+    dark: a blinded hero's card outside the pool of light: its key, and
+          nothing to read.
     """
     x, y, w, h = rect
 
@@ -1209,6 +1216,11 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     t_color = FP.PARCHMENT_LIGHT
     if art:
         t_color = KT.OK_TEXT if correct else KT.BAD_TEXT if incorrect else KT.TEXT_QUIZ
+    if dark:
+        _shade = pygame.Surface((max(1, w - badge_w), h), pygame.SRCALPHA)
+        _shade.fill((0, 0, 0, 205))
+        surf.blit(_shade, (x + badge_w, y))
+        return
     if isinstance(text, list):
         lines = text or ['']
     else:
@@ -1219,12 +1231,21 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     tx = x + choice_text_insets()[0]
     runs = swim if (isinstance(swim, list) and len(swim) == len(lines)) else None
     s_color = swim_color(t_color, KT.RAISED if art else FP.MIDNIGHT) if runs else None
+    places = [(0, 0)]
+    if ghost and any(ghost):
+        import quiz_sight
+        pad = ui_scale.px(2)
+        wide = max(text_font.size(line)[0] for line in lines)
+        places = quiz_sight.ghost_places(
+            ghost, (tx - (x + badge_w) - pad, ty - y - pad,
+                    x + w - pad - (tx + wide), y + h - pad - (ty + block_h)))
     for i, line in enumerate(lines):
-        if runs is not None:
-            blit_runs(surf, text_font, runs[i], (tx, ty), t_color, s_color)
-        else:
-            t_surf = text_font.render(line, True, t_color)
-            surf.blit(t_surf, (tx, ty))
+        for ox, oy in places:
+            if runs is not None:
+                blit_runs(surf, text_font, runs[i], (tx + ox, ty + oy), t_color, s_color)
+            else:
+                t_surf = text_font.render(line, True, t_color)
+                surf.blit(t_surf, (tx + ox, ty + oy))
         ty += line_h
 
 

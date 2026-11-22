@@ -21,6 +21,7 @@ from ui_scale import px as S
 from renderer import TILE_SIZE
 from geom import any_tile_in_set
 import gear
+import quiz_sight
 import unseen
 import ui_theme
 import lore_art
@@ -1272,7 +1273,7 @@ class RenderMixin:
                 continue
             info = EFFECT_INFO.get(eid)
             name, col = (info[0], info[1]) if info else (_cap(eid), FP.BODY_TEXT)
-            active.append((f"{name} {dur}" if dur > 0 else name, col))
+            active.append((f"{name} {dur}" if self._effect_count(eid, dur) else name, col))
         chip_h = lh + S(6)
         # Room kept for Monster Lore: its heading, one entry (up to three
         # wrapped lines) and "+N more"; just the heading and "None yet" when
@@ -1637,7 +1638,7 @@ class RenderMixin:
                 continue
             info = EFFECT_INFO.get(eid)
             name, col = (info[0], info[1]) if info else (eid.replace('_', ' ').title(), FP.BODY_TEXT)
-            chips.append((f"{name} {dur}" if dur > 0 else name, col))
+            chips.append((f"{name} {dur}" if self._effect_count(eid, dur) else name, col))
         for idx, (label, col) in enumerate(chips[:4]):
             r = pygame.Rect(body.x + (idx % 2) * (chip_w + S(10)), y + (idx // 2) * S(27),
                             chip_w, S(22))
@@ -2320,6 +2321,7 @@ class RenderMixin:
         self.renderer.draw_dungeon(self.dungeon, self.visible, cam_x, cam_y)
         for item in self.ground_items:
             self.renderer.draw_item(item, cam_x, cam_y, self.visible)
+        _raving = quiz_sight.sight_for(self.player)['phantom']     # wrong faces on the map
         # Treasure the Fern-Flower showed (game_wards._treasure_sight): a dim
         # picture of it where it lies, out of sight, until it is taken.
         _ts = self.dungeon.__dict__.get('treasure_seen')
@@ -2347,11 +2349,12 @@ class RenderMixin:
                         self.renderer.draw_shimmer(m.x, m.y, unseen.FELT_SHIMMER,
                                                    self.turn_count, self.visible)
                     continue
+                _face = quiz_sight.false_face(m, self.turn_count) if _raving else None
                 self.renderer.draw_entity(
                     m.x, m.y, m.color, cam_x, cam_y, self.visible,
                     # a creature whose picture follows its state (the Black
                     # Knight's limb stages) names it in sprite_id
-                    mid=getattr(m, 'sprite_id', None) or m.kind,
+                    mid=_face[0] if _face else (getattr(m, 'sprite_id', None) or m.kind),
                     footprint=getattr(m, 'footprint', (1, 1)),
                     symbol=getattr(m, 'symbol', ''),
                     # seen through see invisible: its art, cold and see-through
@@ -2436,6 +2439,13 @@ class RenderMixin:
         self.msg_log.draw(self.screen, layout.MAP_X, layout.GAME_H, layout.MAP_W, layout.MSG_H)
         # The In Sight panel lists only what the hero can see (src/unseen.py).
         hud_monsters = [m for m in self.monsters if not unseen.concealed(m, self.player)]
+        if quiz_sight.sight_for(self.player)['phantom']:
+            # Hallucinating: named as they seem (quiz_sight.py).
+            _seem = []
+            for m in hud_monsters:
+                _face = quiz_sight.false_face(m, self.turn_count)
+                _seem.append(quiz_sight.Seeming(m, *_face) if _face else m)
+            hud_monsters = _seem
         self.sidebar.draw(
             self.player, self.dungeon_level, self.turn_count, self.player_gold,
             player_name=getattr(self, 'player_name', 'Adventurer'),
@@ -3003,6 +3013,13 @@ class RenderMixin:
         else:
             display_choices = choices
             choice_answers = raw_choices
+        # A hallucinating hero's false answer keeps a slot of its own, faded
+        # or not, so no real answer moves (quiz_sight.py).
+        _ph = getattr(qe, 'phantom_slot', None)
+        _ph = _ph() if callable(_ph) else None
+        if _ph:
+            display_choices = quiz_sight.with_phantom(display_choices, _ph, display_text(_ph['text']))
+            choice_answers = quiz_sight.with_phantom(choice_answers, _ph, quiz_sight.NOT_AN_ANSWER)
         # Two columns; every bank question has four choices (two rows), but
         # a malformed question with more extends the grid downward (and the
         # shrink-then-scroll ladder below copes with the extra height)
@@ -3182,8 +3199,12 @@ class RenderMixin:
         chain quiz with a chain built, Space (ends the chain there)."""
         chain_mode = qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN)
         chain = int(getattr(qe, 'chain', 0) or 0)
+        _ph = getattr(qe, 'phantom_slot', None)
+        answer = ("1-5" if callable(_ph) and _ph() else "1-4", "Answer")
+        _dark = getattr(qe, 'dark_view', None)
+        light = [("Arrows", "Move Your Light")] if callable(_dark) and _dark() is not None else []
         if is_combat:
-            pairs = [("1-4", "Answer")]
+            pairs = [answer] + light
             if chain >= 1:
                 pairs.append(("Space", "Strike Now", FP.GOLD_PALE))
             if has_blurb:
@@ -3193,7 +3214,8 @@ class RenderMixin:
         pairs = []
         asking = qe.state == QuizState.ASKING
         if asking:
-            pairs.append(("1-4", "Answer"))
+            pairs.append(answer)
+            pairs.extend(light)
             if chain_mode and chain >= 1:
                 pairs.append(("Space", "Stop Here"))
         if has_blurb:
@@ -3293,6 +3315,22 @@ class RenderMixin:
             q_runs, c_runs = _runs[0], _runs[1:]
             q_lines = [''.join(t for t, _s in r) for r in q_runs]
             c_wrapped = [[''.join(t for t, _s in r) for r in block] for block in c_runs]
+
+        # Stunned, Blinded, Hallucinating (quiz_sight.py): drawn only. All
+        # slide or fade on the question's own seconds; nothing flashes.
+        ghost = lit = gone_slot = None
+        _dv = getattr(qe, 'double_view', None)
+        _share = _dv() if callable(_dv) else None
+        if _share is not None:
+            _gx, _gy = quiz_sight.double_offset(_share)
+            ghost = (S(_gx), S(_gy))
+        _kv = getattr(qe, 'dark_view', None)
+        if callable(_kv):
+            lit = _kv()
+        _pv = getattr(qe, 'phantom_slot', None)
+        _phantom = _pv() if callable(_pv) else None
+        if _phantom is not None and not qe.phantom_shows():
+            gone_slot = int(_phantom['slot'])
 
         # Effects background pass -- the chain aura paints a soft border
         # glow around the panel here. Runs BEFORE the opaque panel so
@@ -3398,10 +3436,11 @@ class RenderMixin:
         # chip after the tier pips, in the timer row, so nothing below moves;
         # a timed bar starts after it.
         chip_rect = None
-        _cq = getattr(qe, 'confused_quiz', None)
-        if callable(_cq) and _cq():
+        _states = self._quiz_states(qe)
+        if _states:
             chip_rect = self._draw_quiz_confused_chip(
-                bar_x, pip_cy, bar_w, timed=bool(getattr(qe, 'timed', True)), kit=kit)
+                bar_x, pip_cy, bar_w, timed=bool(getattr(qe, 'timed', True)), kit=kit,
+                states=_states)
             used = chip_rect.w + S(12)
             bar_x += used
             bar_w -= used
@@ -3478,6 +3517,28 @@ class RenderMixin:
                 continue
             if scrollable and qy > scroll_rect.bottom:
                 break
+            if ghost is not None:
+                # Seen double: two whole lines, sliding together, inside the
+                # question's own band (under no chip, over no card).
+                line_w = q_font.size(line)[0]
+                line_x = (bx + (bw - line_w) // 2) if is_combat else bx + inset
+                _spare = (q_height - len(q_lines) * q_line_h) // 2 if is_combat else 0
+                _l, _r, _up = bx + S(8), bx + bw - S(8), _spare + S(2)
+                if scrollable:
+                    # (A long question scrolls inside a clip, which cuts too.)
+                    _l, _r = max(_l, scroll_rect.x), min(_r, scroll_rect.right)
+                    _up = min(_up, max(0, q_top - scroll_rect.y))
+                _room = (line_x - _l, _up, _r - (line_x + line_w), _spare + SECTION_GAP - S(2))
+                for _dx, _dy in quiz_sight.ghost_places(ghost, _room):
+                    _at = (line_x + _dx, qy + _dy)
+                    if q_runs is not None:
+                        from fantasy_ui import blit_runs, swim_color
+                        blit_runs(self.screen, q_font, q_runs[li], _at, q_color,
+                                  swim_color(q_color, KT.INTERIOR if kit else FP.MIDNIGHT))
+                    else:
+                        self.screen.blit(q_font.render(line, True, q_color), _at)
+                qy += q_line_h
+                continue
             if q_runs is not None:
                 # Still swimming: the scrambled words a touch purple.
                 line_w = q_font.size(line)[0]
@@ -3520,6 +3581,8 @@ class RenderMixin:
             self.screen.blit(_vt, (bx + bw - inset - _vt.get_width(), sep_y - _vt.get_height() - S(2)))
 
         for i, (raw_choice, wrapped_lines) in enumerate(zip(choice_answers, c_wrapped)):
+            if i == gone_slot:
+                continue               # the false answer has faded; its slot stays
             card = choice_rects[i]
 
             # Skip entirely-offscreen cards when scrolling (cheap cull).
@@ -3545,10 +3608,12 @@ class RenderMixin:
                 text=wrapped_lines,
                 key_font=self.font_md,
                 text_font=c_font,
-                selected=is_selected and not in_result,
+                selected=(is_selected or (lit is not None and i == lit)) and not in_result,
                 correct=mark_correct or None,
                 incorrect=mark_incorrect or None,
                 swim=c_runs[i] if c_runs is not None and i < len(c_runs) else None,
+                ghost=ghost,
+                dark=lit is not None and i != lit,
             )
 
         if scrollable:
@@ -3595,8 +3660,11 @@ class RenderMixin:
         elif is_combat:
             # Four fixed key-hint slots across the row, so the hints never
             # move and never run into each other.
+            keys = [f"{k}  {'Light' if k == 'Arrows' else v}"
+                    for k, v, *_ in self._quiz_footer_pairs(qe, True, False)
+                    if k in ("1-4", "1-5", "Arrows")]
             hints = [
-                ("1-4  Answer", FP.HINT_TEXT),
+                *((k, FP.HINT_TEXT) for k in keys),
                 # At chain 0 Space only throws the swing away, as Esc does:
                 # it is not offered as a harmless "Cancel".
                 ("SPACE  Strike Now" if qe.chain >= 1 else "", FP.GOLD_PALE),
@@ -3604,6 +3672,8 @@ class RenderMixin:
                  FP.GOLD if new_reader else FP.FADED_TEXT),
                 ("ESC  Abort", FP.FADED_TEXT),
             ]
+            if len(keys) > 1:
+                hints = [h for h in hints if h[0]]     # the light's key needs an empty slot's room
             slot_w = status_rect.w // len(hints)
             for i, (h_text, h_color) in enumerate(hints):
                 if not h_text:
@@ -3623,8 +3693,17 @@ class RenderMixin:
             if qe.state == QuizState.ASKING:
                 _txt = "   ".join(f"{k}  {v}" for k, v, *_ in
                                   self._quiz_footer_pairs(qe, False, False))
-                hint = self.font_sm.render(_txt, True, FP.HINT_TEXT)
-                self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, status_y + S(10)))
+                _right = bx + bw - PAD
+                if has_blurb:
+                    _right -= S(12) + self.font_sm.size(
+                        "C  Read About This" if new_reader else "C  Context")[0]
+                _left = bx + PAD
+                hint_font = self.font_sm
+                if hint_font.size(_txt)[0] > _right - _left:
+                    hint_font, _txt = self._fit_line(_txt, _right - _left, (18, 16, 14, 12))
+                hint = hint_font.render(_txt, True, FP.HINT_TEXT)
+                hx = min(bx + (bw - hint.get_width()) // 2, _right - hint.get_width())
+                self.screen.blit(hint, (max(_left, hx), status_y + S(10)))
             # Context-blurb discoverability hint: only shown when the current
             # (subject, topic) HAS a blurb — hidden otherwise so a bank
             # without authored blurbs doesn't tease the key for nothing.
@@ -3660,14 +3739,56 @@ class RenderMixin:
             )
             rt.draw_foreground(self.screen, protected)
 
-    def _quiz_confused_label(self, avail_w: int, timed: bool) -> tuple:
-        """(font, label, chip width) for the confused quiz's chip: the whole
-        line (data/confusion.json 'quiz_chip') where it fits beside the
-        clock, else only its first word ("Confused")."""
+    def _quiz_states(self, qe) -> list:
+        """The (status, whole line) pairs the quiz's chip names: each effect
+        that changed how the question on screen is drawn."""
+        out = []
+        _cq = getattr(qe, 'confused_quiz', None)
+        if callable(_cq) and _cq():
+            from quiz_engine import confused_chip_text
+            out.append(('confused', confused_chip_text()))
+        sees = getattr(qe, 'sees', None)
+        if callable(sees):
+            chips = quiz_sight.rules()['chips']
+            for key, eff in (('double', 'stunned'), ('dark', 'blinded'), ('phantom', 'hallucinating')):
+                if sees(key):
+                    out.append((eff, str(chips[key])))
+        return out
+
+    def _quiz_show_lit(self) -> None:
+        """Scroll a long quiz so the card in a blinded hero's light shows."""
+        qe = self.quiz_engine
+        L = self._quiz_layout(qe)
+        if not L['scrollable']:
+            return
+        r = L['choice_rects'][min(int(qe.dark_at), len(L['choice_rects']) - 1)]
+        box = L['scroll_rect']
+        off = int(L['scroll_offset'])
+        if r.bottom - off > box.bottom:
+            off = r.bottom - box.bottom
+        if r.y - off < box.y:
+            off = r.y - box.y
+        qe._quiz_scroll_offset = max(0, min(off, int(L['scroll_max'])))
+
+    def _quiz_confused_label(self, avail_w: int, timed: bool, states: list | None = None) -> tuple:
+        """(font, label, chip width) for the quiz's status chip: one effect's
+        whole line where it fits beside the clock, else only its first word
+        ("Confused"); several at once by their first words ("Confused +
+        Stunned"), as many as fit."""
         from quiz_engine import confused_chip_text
         f = get_font('body', 16, bold=True)
-        full = confused_chip_text()
-        short = full.split(':')[0].strip() or full
+        lines = [t for _e, t in states] if states else [confused_chip_text()]
+        names = [t.split(':')[0].strip() or t for t in lines]
+        if len(lines) > 1:
+            room_n = (avail_w // 2 if timed else avail_w) - S(20)
+            shown = len(names)
+            label = " + ".join(names)
+            while shown > 1 and f.size(label)[0] > room_n:
+                shown -= 1
+                label = " + ".join(names[:shown]) + f" +{len(names) - shown}"
+            return f, label, f.size(label)[0] + S(20)
+        full = lines[0]
+        short = names[0]
         pad = S(20)
         w_full = f.size(full)[0] + pad
         # A timed bar keeps at least half the row.
@@ -3677,13 +3798,18 @@ class RenderMixin:
         return f, short, f.size(short)[0] + pad
 
     def _draw_quiz_confused_chip(self, x: int, cy: int, avail_w: int, *,
-                                 timed: bool, kit: bool) -> 'pygame.Rect':
-        """The Confused chip in the quiz's timer row, its left edge at ``x``,
-        centred on ``cy``. Returns its rect."""
-        f, label, w = self._quiz_confused_label(avail_w, timed)
+                                 timed: bool, kit: bool,
+                                 states: list | None = None) -> 'pygame.Rect':
+        """The status chip in the quiz's timer row (Confused, Stunned,
+        Blinded, Hallucinating: ``states``), its left edge at ``x``, centred
+        on ``cy``. Returns its rect."""
+        f, label, w = self._quiz_confused_label(avail_w, timed, states)
         h = f.get_height() + S(4)
         rect = pygame.Rect(x, cy - h // 2, w, h)
         purple = confused_color()
+        if states and states[0][0] != 'confused':
+            from status_effects import EFFECT_INFO
+            purple = tuple(EFFECT_INFO[states[0][0]][1])
         if kit and ui_theme.draw_piece(self.screen, 'chip', rect):
             col = readable(purple, KT.RAISED)
         else:
@@ -4652,7 +4778,25 @@ class RenderMixin:
                          'confused': ('confuse its target', 'Confuse'),
                          'stunned': ('stun its target', 'Stun'),
                          'paralyzed': ('stun its target', 'Stun'),
-                         'silenced': ('silence its target', 'Silence')}
+                         'silenced': ('silence its target', 'Silence'),
+                         'charmed': ('charm its target', 'Charm'),
+                         'petrifying': ('turn its target to stone', 'Stone'),
+                         'cursed': ('curse its target', 'Curse')}
+
+    @staticmethod
+    def _rider_label(atk) -> str:
+        """An attack's effect by its status's own name ("Mind-Bitten");
+        stone that kills says so."""
+        from status_effects import EFFECT_INFO
+        eff = str(atk.get('effect') or '')
+        name = EFFECT_INFO[eff][0] if eff in EFFECT_INFO else eff.replace('_', ' ').title()
+        return f"{name} (Deadly)" if atk.get('lethal') else name
+
+    @staticmethod
+    def _effect_count(eid: str, dur: int) -> bool:
+        """A status shows its turns unless it lasts until he acts."""
+        from status_effects import UNTIL_ACTED
+        return dur > 0 and eid not in UNTIL_ACTED
 
     @staticmethod
     def _weapon_hit_effect(item):
@@ -10318,7 +10462,7 @@ class RenderMixin:
                 line = f"{atk.get('name', '?').replace('_', ' ').title()}: {atk.get('damage', '?')} ({_cap(atk.get('type', 'physical'))})"
                 effect = atk.get('effect')
                 if effect:
-                    line += f" -> {effect.replace('_', ' ').title()} {int(atk.get('effect_chance', 0) * 100)}%"
+                    line += f" -> {self._rider_label(atk)} {int(atk.get('effect_chance', 0) * 100)}%"
                 if atk.get('steal'):
                     line += " -> Steals"
                 mechanics.append((line, FP.BODY_TEXT, self.font_sm))
@@ -10997,7 +11141,7 @@ class RenderMixin:
             for atk in entry.get('attacks', []) or []:
                 line = f"{atk.get('name', '?').replace('_', ' ').title()}: {atk.get('damage', '?')} ({_cap(atk.get('type', 'physical'))})"
                 if atk.get('effect'):
-                    line += f" -> {atk.get('effect').replace('_', ' ').title()} {int(atk.get('effect_chance', 0) * 100)}%"
+                    line += f" -> {self._rider_label(atk)} {int(atk.get('effect_chance', 0) * 100)}%"
                 if atk.get('steal'):
                     line += " -> Steals"
                 lines.append((line, FP.BODY_TEXT, self.font_sm))

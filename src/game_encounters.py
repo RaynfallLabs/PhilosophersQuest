@@ -754,6 +754,10 @@ class EncountersMixin:
             self.add_message("A radiant pulse fully restores your body, stamina, and magic!", 'success')
 
         if chain >= 3:
+            from status_effects import lift_hex
+            _unhexed = lift_hex(self.player)
+            if _unhexed:
+                self.add_message(_unhexed, 'success')
             # Remove curse from all equipped items
             uncursed = 0
             for item in self.player.get_equipped_items().values():
@@ -1208,7 +1212,9 @@ class EncountersMixin:
             self._npc_pay_cost(e['cost'], None)
         eff = e.get('effect')
         if isinstance(eff, dict) and eff.get('effect'):
-            self.player.add_effect(eff['effect'], int(eff.get('duration', 5)))
+            from status_effects import price_cap
+            _turns = int(eff.get('duration', 5))
+            self.player.add_effect(eff['effect'], _turns, cap=price_cap(eff['effect'], _turns))
         if e.get('deeds'):
             self._record_deeds(e['deeds'], enc.get('tag', ''))
 
@@ -1974,7 +1980,9 @@ class EncountersMixin:
         elif rtype == 'effect':
             eff = reward['effect']
             dur = reward.get('duration', 20)
-            self.player.add_effect(eff, dur)
+            from status_effects import landed_as, price_cap
+            self.player.add_effect(eff, dur, cap=price_cap(eff, dur))
+            eff = landed_as(eff)
             eff_name = eff.replace('_', ' ').title()
             # The turns it really lasts: statuses are capped (status_effects.
             # MAX_EFFECT_DURATION), and "Blessed for 150 turns!" gave 60.

@@ -166,6 +166,12 @@ src/
   rededication.py     - The altar's rededication: give a stat point back to take another, once per altar
   boons.py            - Gate-boss gifts (pick one of three)
   status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
+  effect_rules.py     - The debuffs' rules and their bouts, pure (data/effects.json): who laid it, lethal, self-inflicted, prices paid
+  action_gate.py      - The one gate every action asks (a door per action): what each debuff stops, refuses, drops or floors
+  game_effects.py     - EffectsMixin: the gate at work (Game._gate, _gate_step), holds that end with their owner, Forget
+  knockdown.py        - Knocked Down: a shove or a trample floors the hero; Guard, boots and levitation keep him up
+  mind_theft.py       - Forget: one identified kind or one Bestiary page eaten; back on the kill, lost on leaving the floor
+  quiz_sight.py       - Stunned, Blinded, Hallucinating on the quiz and map, display only (double, a light, a false answer)
   food_system.py      - Harvest and cook (the two quiz flows), eating, potions
   butchered.py        - Butchered Before: a kind identified and harvested once is harvested again with no question
   kitchen.py          - The kitchen: kin ingredients, the recipe book, what a dish gives (cooking_rules.json), the cook menu's rows; cook to carry (a recipe's `makes`)
@@ -248,6 +254,7 @@ data/
   affinity_rules.json, family_affinity.json - The weak / resisted / shrugs-off steps; each family's lore profile
   enemy_lore.json, kit_sense.json - What Recall Lore, probing and the quests teach of a creature; Kit Sense's lines
   arsenal.json      - Coatings, thrown flasks, Press or Guard, the parry, the named counters
+  effects.json      - The debuffs: the gate's doors, refresh and caps, stone, the quiz effects, their lines
   lights.json       - Carried lights and the Light spell: status sight, spell turns, the oil, lines, card and HUD words
   gear_rules.json   - Armour and ring rules: thresholds, donning turns, load tiers, the light / heavy trade
   packs.json        - Packs: the hunt's numbers, the lore packs and their tricks, the herds that do not hunt as one

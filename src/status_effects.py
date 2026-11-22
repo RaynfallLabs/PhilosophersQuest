@@ -9,8 +9,12 @@ Effect durations are stored in player.status_effects as:
 All NetHack-style effects are registered here even if their
 full mechanics are yet to be wired in -- the UI, tick, and
 resistance systems are fully active for all of them.
+
+What a debuff does to the hero's actions is not decided here: the one gate
+(action_gate.py) and its data (data/effects.json) do that.
 """
 
+import effect_rules
 from lights import status_sight as _light_sight
 
 MAX_EFFECT_DURATION = 60  # hard cap on status effect turns (prevents infinite stacking)
@@ -24,21 +28,25 @@ EFFECT_INFO: dict[str, tuple] = {
     # ---- Debuffs ----
     'paralyzed':          ('Paralyzed',         (220,  50,  50), 'Cannot move or act'),
     'sleeping':           ('Sleeping',           (100, 100, 210), 'Asleep; woken by damage'),
-    'stunned':            ('Stunned',            (225, 155,  50), 'May stumble; quiz timer -25%'),
-    'confused':           ('Confused',           (185, 100, 230), 'Random movement; quiz words swim, then settle'),
-    'blinded':            ('Blinded',            ( 80,  80,  80), 'Sight radius 1; quiz timer -30%'),
-    'hallucinating':      ('Hallucinating',      (210,  85, 230), 'Reality distorted; quiz timer -20%'),
+    'stunned':            ('Stunned',            (225, 155,  50), 'Double vision in quizzes. Your first step falls and your first fumble drops, unless in Guard'),
+    'confused':           ('Confused',           (185, 100, 230), 'Steps go astray, but blows land where aimed; quiz words swim, then settle'),
+    'blinded':            ('Blinded',            (165, 165, 178), 'Sight radius 1; quiz answers are dark but for a light you move'),
+    'hallucinating':      ('Hallucinating',      (210,  85, 230), 'Monsters wear wrong faces; quizzes grow a false answer that fades'),
     'poisoned':           ('Poisoned',           ( 80, 210,  60), 'Losing 2% of max HP per turn'),
     'diseased':           ('Diseased',           (135, 205,  60), 'No rest healing; most heals halved; saps STR/CON'),
-    'petrifying':         ('Petrifying',         (205, 205, 130), 'Turning to stone -- find a cure!'),
+    'petrifying':         ('Petrifying',         (205, 205, 130), 'Turning to stone: stiff, then slow, then stone. Oil of Rue cures it'),
     'strangulation':      ('Strangled',          (200,  80,  80), 'Losing 4% of max HP per turn'),
-    'fumbling':           ('Fumbling',           (220, 170,  80), '20% chance actions fail'),
-    'slowed':             ('Slowed',             (155, 155, 230), 'Every other action is skipped'),
+    'fumbling':           ('Fumbling',           (220, 170,  80), 'You drop the first thing you handle, unless in Guard'),
+    'slowed':             ('Slowed',             (155, 155, 230), 'Every action takes two turns'),
     'aggravated':         ('Aggravated',         (230, 100,  50), 'All monsters are alerted'),
     'teleportitis':       ('Teleportitis',       (100, 225, 225), 'May randomly teleport (4%/turn)'),
-    'feared':             ('Feared',             (200,  80, 200), 'Fleeing -- cannot approach enemies'),
-    'charmed':            ('Charmed',            (255, 160, 200), 'Under enemy influence'),
-    'cursed':             ('Cursed',             (120,  40, 160), 'Under a dark curse'),
+    'feared':             ('Feared',             (200,  80, 200), 'No going nearer or striking what frightens you, unless cornered. Shoot, cast or drink'),
+    'charmed':            ('Charmed',            (255, 160, 200), 'You cannot harm your charmer, and walk toward it. Its first wound frees you'),
+    'cursed':             ('Cursed',             (120,  40, 160), 'Misses more: -2 to hit'),
+    'hexed':              ('Hexed',              (180, 120, 235), 'What you wear will not come off'),
+    'knocked_down':       ('Knocked Down',       (215, 165,  90), 'Off your feet, no dodge: your next action is standing up'),
+    'forgetting':         ('Mind-Bitten',        (190, 120, 220), 'Something ate a memory. Kill it on this floor to win it back'),
+    'footing':            ('Footing',            (200, 220, 190), 'Sure-footed for a moment: cannot be slowed or knocked down'),
     'heal_blocked':       ('Wound Lingers',      (160,  30,  50), 'HP cannot be restored while active (Gae Dearg)'),
     'doom_dot':           ('Doom',               (140,  60, 200), 'Ticking damage as fraction of max HP per turn (Laevateinn)'),
     'weakened':           ('Weakened',           (150, 150,  80), 'Attack damage halved'),
@@ -46,11 +54,11 @@ EFFECT_INFO: dict[str, tuple] = {
     'doomed':             ('Doomed',             (100,  20,  20), 'A death-curse; losing 1 HP per ~8 turns'),
     'draining':           ('Draining',           ( 80,  30, 100), 'Ring drains 1 HP per ~6 turns'),
     'burning':            ('Burning',            (245, 100,  20), 'On fire! Losing 2% of max HP per turn'),
-    'frozen':             ('Frozen',             ( 80, 200, 245), 'Encased in ice; movement slowed'),
-    'corroding':          ('Corroding',          (180, 200,  50), 'Acid eats at your gear; defense weakened'),
-    'immobilized':        ('Immobilized',        (180, 130,  60), 'Trapped! Cannot move'),
+    'frozen':             ('Frozen',             ( 80, 200, 245), 'Feet stuck, hands numb, melee halved. A lit torch thaws you'),
+    'corroding':          ('Corroding',          (180, 200,  50), 'Acid eats at your gear: one piece at most'),
+    'immobilized':        ('Immobilized',        (180, 130,  60), 'Feet held fast: you can still fight and use your hands'),
     'in_pit':             ('In Pit',             (140, 100,  60), 'Stuck in a pit; must climb out'),
-    'silenced':           ('Silenced',           (120, 120, 160), 'No voice: no spell, no scroll, no song or call'),
+    'silenced':           ('Silenced',           (120, 120, 160), 'No voice: no spell or scroll, and for a monster no call'),
     'empowered':          ('Empowered',          (255, 200,  80), 'Next melee attack deals 3x damage'),
     'berserk':            ('Berserk',            (220,  60,  40), 'Battle-fury: your blows land harder while it lasts'),
     'riposte_armed':      ('Riposte Armed',      (220, 220, 160), 'Next melee hit against you triggers a free counter'),
@@ -75,9 +83,9 @@ EFFECT_INFO: dict[str, tuple] = {
     'boomstick_aoe_next': ('Boomstick Loaded',   (200, 90, 30),   'Next shot scatters'),
     'control_immune':     ('Recovering',         (200, 230, 255), 'Shaking it off -- briefly immune to being disabled'),
     # Cooked / power "ward" buffs — a timed bonus to a saving-throw category.
-    'save_guard_CON':     ('Body Ward',          (150, 230, 170), 'Bonus to resisting paralysis / sleep / stun'),
-    'save_guard_WIS':     ('Mind Ward',          (160, 200, 245), 'Bonus to resisting confusion / fear / charm'),
-    'save_guard_DEX':     ('Reflex Ward',        (205, 230, 150), 'Bonus to resisting slow / immobilize'),
+    'save_guard_CON':     ('Body Ward',          (150, 230, 170), 'Bonus to resisting paralysis / sleep / stun / freezing / stone / weakness'),
+    'save_guard_WIS':     ('Mind Ward',          (160, 200, 245), 'Bonus to resisting confusion / fear / charm / a mind-eater'),
+    'save_guard_DEX':     ('Reflex Ward',        (205, 230, 150), 'Bonus to resisting slow / immobilize / holds / knock-down'),
     'save_guard_all':     ('Warded',             (210, 230, 255), 'Bonus to all saving throws'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Monsters act half as often'),
@@ -91,7 +99,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'displacement':       ('Displaced',          (200, 200, 200), 'Monsters may miss your true position'),
     'heroism':            ('Heroic',             (255, 200,  40), 'STR +2; surging with battle-strength'),
     'brilliance':         ('Brilliant',          (140, 180, 255), 'INT +1, WIS +1; mind razor-sharp'),
-    'hallucinating_pot':  ('Hallucinating',      (210,  85, 230), 'Reality distorted; quiz timer -20%'),
+    'hallucinating_pot':  ('Hallucinating',      (210,  85, 230), 'Monsters wear wrong faces; quizzes grow a false answer that fades'),
     # ---- Accessory-granted permanent buffs ----
     'life_save':          ('Life Save',          (255, 215,  80), 'Survive one killing blow; effect is then spent'),
     'sustained':          ('Sustained',          (150, 230, 170), 'SP drains at half rate; need less food'),
@@ -120,7 +128,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'disint_resist':      ('Disint. Resist',     (245, 185, 100), 'Immune to disintegration'),
     # ---- Trophy immunities (permanent; granted by boss-trophy recipes) ----
     'petrify_immune':     ('Stoneproof',         (205, 205, 130), 'Cannot be turned to stone'),
-    'confuse_immune':     ('Clear-Headed',       (160, 220, 240), 'Cannot be confused'),
+    'confuse_immune':     ('Clear-Headed',       (160, 220, 240), 'Cannot be confused or made to forget'),
     'acid_resist':        ('Acid Resist',        (170, 220,  90), 'Gear and flesh shrug off corrosion'),
     # ---- Story-encounter effects (ENCOUNTER_STORIES_DRAFT J3). Each lasts
     # whole floors or turns as its reward says; none changes a stat. ----
@@ -142,7 +150,7 @@ DEBUFFS: frozenset = frozenset({
     'slowed', 'aggravated', 'teleportitis',
     'feared', 'charmed', 'cursed', 'weakened', 'bleeding', 'doomed', 'draining',
     'burning', 'frozen', 'corroding', 'immobilized', 'in_pit', 'silenced',
-    'hallucinating_pot',
+    'hallucinating_pot', 'hexed', 'knocked_down', 'forgetting',
     # v2.15+ audit sync: berserk was double-classified (BUFFS + DEBUFFS).
     # It grants +STR damage but costs HP/turn — treated as a BUFF (below);
     # removed from DEBUFFS so `abjuration`/`cancellation`/`dispel_magic`
@@ -177,6 +185,8 @@ BUFFS: frozenset = frozenset({
     'blade_flow', 'melee_dmg_reduction',
     # Post-lock grace buff (set when a hard-control effect expires).
     'control_immune',
+    # The same grace after standing up from a knock-down.
+    'footing',
     # Cooked / power "ward" buffs that grant a timed saving-throw bonus.
     'save_guard_CON', 'save_guard_WIS', 'save_guard_DEX', 'save_guard_all',
     # Story-encounter buffs that last whole floors (porter, a bright lantern).
@@ -189,16 +199,16 @@ BUFFS: frozenset = frozenset({
 # actions: HALVED on a save. Both REFRESH (max) instead of stacking, and are
 # capped per single application so one failed save is never a death sentence.
 #
-# NOTE (v2.15+): `stunned` is a SOFT effect in semantics (player still acts,
-# with a -25% quiz timer + stumble) but is deliberately kept in HARD_CONTROL
+# NOTE (v2.15+): `stunned` is a SOFT effect in semantics (player still acts:
+# data/effects.json gate) but is deliberately kept in HARD_CONTROL
 # so that a successful save fully negates it and cannot be re-applied within
 # the post-lock grace window. This is an anti-stunlock guarantee — removing
 # it would allow fast monsters to stunlock the player to death.
 # NOTE (v2.15+): `petrifying` moved into HARD_CONTROL. Its val==1 tick sends
 # the '_petrify_death' signal, and half-duration on a save could still kill;
 # HARD_CONTROL means a successful CON save NEGATES it outright.
-# NOTE (2026-10): `feared` moved into HARD_CONTROL. A feared player cannot
-# attack at all (every move becomes flight), a save only halved it, every
+# NOTE (2026-10): `feared` moved into HARD_CONTROL. A feared player could not
+# attack at all then (every move was flight), a save only halved it, every
 # new hit refreshed it and there was no grace window after: one fear-caster
 # was a lock with no answer. Now a save negates it and the usual grace
 # window follows.
@@ -255,7 +265,7 @@ HARD_CONTROL: frozenset = frozenset({
     'paralyzed', 'sleeping', 'immobilized', 'stunned', 'frozen',
     'petrifying', 'feared',
 })
-SOFT_CONTROL: frozenset = frozenset({'confused', 'charmed', 'slowed'})
+SOFT_CONTROL: frozenset = frozenset({'confused', 'charmed', 'slowed', 'weakened', 'forgetting'})
 CONTROL: frozenset = HARD_CONTROL | SOFT_CONTROL
 
 # Saving-throw stat per effect (D&D-style): body (CON) / mind (WIS) / reflex (DEX).
@@ -263,16 +273,31 @@ SAVE_STAT: dict = {
     'paralyzed': 'CON', 'sleeping': 'CON', 'stunned': 'CON', 'frozen': 'CON',
     'petrifying': 'CON',
     'confused': 'WIS', 'feared': 'WIS', 'charmed': 'WIS',
-    'slowed': 'DEX', 'immobilized': 'DEX',
+    'slowed': 'DEX', 'immobilized': 'DEX', 'knocked_down': 'DEX',
+    'weakened': 'CON', 'forgetting': 'WIS',
 }
 
 # Hard cap on how long a SINGLE control application can last on the player —
 # clamps egregious data durations so one failed save is never a death sentence.
 CONTROL_CAP: dict = {
     'paralyzed': 4, 'sleeping': 5, 'stunned': 3, 'frozen': 4, 'immobilized': 4,
-    'confused': 6, 'feared': 6, 'charmed': 6, 'slowed': 6,
+    'confused': 6, 'feared': 6, 'charmed': 6,
 }
+# Slowed, Weakened, the stone and a bitten mind (data/effects.json statuses);
+# the caps of effects that are not control live there too (STATUS_CAP).
+STATUS_CAP: dict = {k: int(v) for k, v in effect_rules.statuses()['caps'].items()}
+CONTROL_CAP.update({k: v for k, v in STATUS_CAP.items()
+                    if k in ('slowed', 'weakened', 'petrifying', 'forgetting')})
+# A second dose runs to the longer of the two, never their sum: ten poison
+# bites were 120% of max HP.
+REFRESHES: frozenset = frozenset(effect_rules.statuses()['refresh'])
+# Turns one action spends of a status (Slowed counts the world's turns).
+TICK_STEPS: dict = {k: int(v) for k, v in effect_rules.statuses()['steps'].items()}
+# A status that lasts until the hero does something about it.
+UNTIL_ACTED: frozenset = frozenset({'knocked_down'})
+FOOTING_TURNS: int = int(effect_rules.statuses()['footing_turns'])
 
+SAVE_FAILED = 10 ** 6         # the dc of a save already rolled and failed (auras.py)
 GRACE_TURNS = 3  # turns of immunity to re-disable after a hard-control effect ends
 
 
@@ -290,8 +315,15 @@ def _load_soft_grace() -> dict:
             rec = json.load(f).get('recovery') or {}
     except (OSError, ValueError):
         rec = {}
-    return {'confused': (str(rec.get('status', 'confuse_immune')),
-                         max(1, int(rec.get('turns', 3))))}
+    grace = (str(rec.get('status', 'confuse_immune')), max(1, int(rec.get('turns', 3))))
+    # A bitten mind (2026-11-22) is a bout of the same shape: one memory a
+    # bout, then Clear-Headed, which keeps the next bite off.
+    # Slowed and Charmed are bouts too (2026-11-22, "no locks: a bout is
+    # never refreshed, and recovery follows it"): after a slowing his
+    # Footing, after a charm his Clear Sight.
+    footing = max(1, int(effect_rules.statuses()['footing_turns']))
+    return {'confused': grace, 'forgetting': grace,
+            'slowed': ('footing', footing), 'charmed': ('clear_sight', footing)}
 
 
 SOFT_GRACE: dict = _load_soft_grace()
@@ -347,12 +379,13 @@ _RESIST_BLOCKS: dict[str, set] = {
     # 2026: magic_resist now actively blocks mind-affecting / magical debuffs
     # so counterspell + Magic Resist amulets become meaningful.
     'magic_resist':  {'confused', 'charmed', 'silenced', 'feared',
-                      'hallucinating', 'hallucinating_pot'},
+                      'hallucinating', 'hallucinating_pot', 'forgetting'},
     # Boss-trophy immunities. These statuses were granted by trophy recipes
     # but nothing read them, so "permanent immunity" did nothing.
     'petrify_immune': {'petrifying'},
-    'confuse_immune': {'confused'},
+    'confuse_immune': {'confused', 'forgetting'},
     'acid_resist':    {'corroding'},
+    'footing':        {'slowed', 'knocked_down'},
 }
 
 _QUENCHES = ('fire_shield', 'cold_shield')
@@ -676,7 +709,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'poisoned':       ('The poison leaves your body.',           'success'),
     'diseased':       ('You recover from the disease.',          'success'),
     'strangulation':  ('You gasp free -- strangulation ends.',    'success'),
-    'fumbling':       ('You regain your footing.',               'info'),
+    'fumbling':       ('Your hands are steady again.',            'info'),
     'slowed':         ('You are moving at normal speed.',        'info'),
     'aggravated':     ('The monsters calm down.',                'info'),
     'teleportitis':   ('The teleportation urge fades.',          'info'),
@@ -701,6 +734,8 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'feared':         ('Your fear subsides.',                    'info'),
     'charmed':        ('The charm over you breaks.',             'info'),
     'cursed':         ('The curse lifts.',                       'success'),
+    'hexed':          ('The hex lifts. What you wear is yours to take off.', 'success'),
+    'forgetting':     ('The thing is out of your head, and you are Clear-Headed for a moment.', 'info'),
     'weakened':       ('Your strength returns.',                 'info'),
     'bleeding':       ('Your wounds close.',                     'success'),
     'heroism':        ('The heroic surge fades. STR returns.',   'info'),
@@ -801,6 +836,8 @@ def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> 
     cooked meal's power lasts as long as its rules say (cooking_rules.json),
     not the 60 turns that stop a potion or a wand stacking forever.
     """
+    if effect == 'cursed':
+        effect = 'hexed'               # on the hero a curse is a hex; Cursed is a monster's
     if effect in SOFT_GRACE and duration != 0:
         # A bout cured since the last tick earns its Clear-Headed turns
         # before anything can lay a new one on (confusion's recovery).
@@ -827,13 +864,21 @@ def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> 
     if current == -1:
         return False  # permanent -- can't be changed
 
+    if effect in UNTIL_ACTED:
+        # Down until he stands: never twice, and not again while he has his
+        # footing back.
+        if duration == 0 or current > 0 or player.status_effects.get('footing', 0):
+            return False
+        player.status_effects[effect] = 1
+        return True
     if duration == -1:
         player.status_effects[effect] = -1
         sync_timed_grants(player)
     elif effect in CONTROL:
-        cap = CONTROL_CAP.get(effect)
-        if cap is not None:
-            duration = min(duration, cap)
+        # (A price the game sets may pass the cap: its caller gives ``cap``.)
+        most = cap or CONTROL_CAP.get(effect)
+        if most is not None:
+            duration = min(duration, most)
         if effect in HARD_CONTROL:
             # Hard control cannot be re-applied OR refreshed while you are already
             # locked, nor within the post-lock grace window. This GUARANTEES that
@@ -863,12 +908,85 @@ def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> 
         # the cooking path did not: every "Heroic" or "Brilliant" meal ended
         # by taking away two STR, or a point each of INT and WIS, for good.
         limit = max(MAX_EFFECT_DURATION, int(cap)) if cap else MAX_EFFECT_DURATION
-        player.status_effects[effect] = min(current + duration, limit)
+        if effect in STATUS_CAP:
+            # One dose lasts this long at most, unless its caller sets the price.
+            limit = int(cap) if cap else STATUS_CAP[effect]
+        if effect in REFRESHES:
+            player.status_effects[effect] = max(current, min(duration, limit))
+        else:
+            player.status_effects[effect] = min(current + duration, limit)
         sync_timed_grants(player)
+    if not current and player.status_effects.get(effect, 0):
+        effect_rules.opened(player, effect)
     if effect in _QUENCHES and player.status_effects.get(effect, 0):
         for put_out in _RESIST_BLOCKS[effect]:
             player.status_effects.pop(put_out, None)
     return True
+
+
+# What a cure lifts: every debuff but the crossbow's crank and the pit he
+# stands in.
+AILMENTS: frozenset = DEBUFFS - {'reloading', 'in_pit'}
+# Which one a cure of ONE lifts first (Cleanse): what kills, then what
+# stops him, then the rest.
+_URGENT = ('petrifying', 'strangulation', 'ruptured', 'doom_dot', 'paralyzed', 'sleeping',
+           'poisoned', 'bleeding', 'burning', 'frozen', 'knocked_down', 'hexed', 'charmed',
+           'feared', 'stunned', 'slowed', 'weakened', 'silenced', 'forgetting')
+
+
+def ailments_on(player) -> list:
+    """The ailments a cure can lift, the most urgent first. One with no end
+    (-1: the gear he wears holds it on him) goes with the gear, not a cure."""
+    on = [e for e, v in player.status_effects.items() if v > 0 and e in AILMENTS]
+    return sorted(on, key=lambda e: (_URGENT.index(e) if e in _URGENT else len(_URGENT), e))
+
+
+# What the hero's own statuses become on a monster they are turned back on.
+# A countdown would kill it outright; the others are the hero's alone.
+_REFLECTS_AS = {'petrifying': ('paralyzed', 2), 'forgetting': ('confused', None),
+                'knocked_down': ('stunned', 2), 'hexed': ('cursed', None)}
+
+
+def reflected(effect: str, turns: int) -> tuple:
+    """``(status, turns)`` for an effect thrown back at the monster that
+    laid it."""
+    to, fixed = _REFLECTS_AS.get(effect, (effect, None))
+    return to, (fixed if fixed is not None else turns)
+
+
+def landed_as(effect: str) -> str:
+    """The status the hero gets when ``effect`` is named."""
+    return 'hexed' if effect == 'cursed' else effect
+
+
+def price_cap(effect: str, turns: int):
+    """The ``cap`` of a price the game announces (a story's): the caps that
+    are for a creature's dose don't shorten it. None: the ordinary cap
+    (control and Slowed keep theirs: a price may not be a lock)."""
+    if effect in ('blinded', 'silenced', 'fumbling', 'weakened') and int(turns) > 0:
+        return min(int(turns), MAX_EFFECT_DURATION)
+    return None
+
+
+def lift_hex(player) -> str:
+    """A curse is lifted, and a hex with it. Its line, or ''."""
+    if player.status_effects.pop('hexed', None):
+        effect_rules.ended(player, 'hexed')
+        return 'The hex lifts from what you wear.'
+    return ''
+
+
+def end_bout(player, effect: str) -> None:
+    """``effect`` is over early for a reason of the world's (its owner died,
+    his wound broke its charm, the hero thawed): gone, with the recovery
+    that follows it at the tick."""
+    if not player.status_effects.pop(effect, None):
+        return
+    effect_rules.ended(player, effect)
+    if effect in HARD_CONTROL:
+        player.status_effects['control_immune'] = GRACE_TURNS
+    if effect in SOFT_GRACE:
+        _grant_recovery(player, effect)
 
 
 def turns_now(player, effect: str, asked: int) -> int:
@@ -889,8 +1007,14 @@ def apply_penalty(player, effect: str, turns: int) -> None:
     down; they are not meant to shorten a price the game has just announced.
     The identify backlash said "Stunned (10 turns)" and lasted two.
     """
-    player.status_effects[effect] = max(int(turns),
-                                        int(player.status_effects.get(effect, 0) or 0))
+    had = int(player.status_effects.get(effect, 0) or 0)
+    player.status_effects[effect] = max(int(turns), had)
+    if not had:
+        effect_rules.opened(player, effect)
+    # His own doing, also when it lengthens a creature's stun: the double
+    # vision only, never a fall or a drop (Brandon, 2026-11-22: a failed
+    # identification is not a chore).
+    effect_rules.self_inflicted(player, effect)
 
 
 # Save-feedback flavor: the player should FEEL which stat saved them (body /
@@ -913,6 +1037,7 @@ _EFFECT_NOUN: dict = {
     'poisoned': 'poison', 'diseased': 'disease', 'burning': 'fire',
     'blinded': 'blindness', 'weakened': 'weakness', 'hallucinating': 'false sight',
     'silenced': 'silence', 'teleportitis': 'slipping',
+    'knocked_down': 'blow', 'forgetting': 'feeding', 'hexed': 'hex',
 }
 
 # Held Fast (AI-3, src/holds.py): a coil, a gullet or a drowning grip. HARD
@@ -927,6 +1052,7 @@ HARD_CONTROL = HARD_CONTROL | frozenset({'held'})
 CONTROL = HARD_CONTROL | SOFT_CONTROL
 CONTROL_CAP.setdefault('held', 4)
 SAVE_STAT.setdefault('held', 'DEX')
+NEGATED_BY_SAVE: frozenset = HARD_CONTROL | frozenset({'knocked_down', 'forgetting'})
 # The Caster's Book (AI-3, src/caster_ai.py): a ward raised about a caster.
 EFFECT_INFO.setdefault('spell_ward', ('Warded', (170, 170, 230),
                                       'A ward turns weapons aside: blows land weak; spells pass it'))
@@ -973,14 +1099,16 @@ def _say_ward_held(player, source, effect: str, gaze: bool) -> None:
 
 
 def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
-                           source=None, gaze: bool = False) -> tuple[bool, str]:
+                           source=None, gaze: bool = False,
+                           lethal: bool = False) -> tuple[bool, str]:
     """Apply a MONSTER-inflicted debuff gated by a D&D-style saving throw.
 
     Two-gate model: the caller already passed the monster's to-apply check
     (effect_chance — its skill at landing the blow). Here the player rolls
     d20 + stat-modifier vs ``dc``:
       - HARD control (paralyze/sleep/immobilize/stun/freeze): a save NEGATES it.
-      - SOFT control (confuse/fear/charm/slow): a save HALVES the duration.
+      - SOFT control (confuse/charm/slow/weaken): a save HALVES the duration.
+      - a knock-down and a bitten mind: a save NEGATES it (there is no half).
       - effects with no SAVE_STAT entry (poison, bleed, etc.): applied directly.
 
     Returns (applied, message). The message is FLAVOR, not math — on a save the
@@ -1021,17 +1149,24 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
     mod = (int(getattr(player, stat, 10)) - 10) // 2
     bonus = player.save_bonus_for(stat) if hasattr(player, 'save_bonus_for') else 0
     roll = _r.randint(1, 20) + mod + bonus + _ward
+    was_on = bool(player.status_effects.get(effect, 0)) if effect in effect_rules.BOUTED else True
     flavor = _SAVE_FLAVOR.get(stat, 'You')
     if roll >= dc:
         if _ward > 0:
             _say_ward_held(player, source, effect, gaze)
-        if effect in HARD_CONTROL:
+        if effect in NEGATED_BY_SAVE:
             # Full save on hard control — negated, and you feel your stat earn it.
             return False, f"{flavor} throws off the {noun}!"
         applied = player.add_effect(effect, max(1, duration // 2))
+        if applied and not was_on:
+            effect_rules.laid_by(player, effect, source)
         return applied, (f"{flavor} blunts the {noun} — it barely takes hold." if applied else "")
     # Failed save — the effect lands.
     applied = player.add_effect(effect, duration)
+    if applied and not was_on:
+        effect_rules.laid_by(player, effect, source, lethal=lethal)
+    if applied and effect == 'knocked_down':
+        return applied, effect_rules.line('floored')
     return applied, (f"The {noun} takes hold!" if applied else "")
 
 
@@ -1043,6 +1178,8 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
     Special signals prefixed with '_' are meant for main.py:
         '_teleport'      -- teleport the player to a random tile
         '_petrify_death' -- player has fully turned to stone (death)
+    The world's own count of a slowed action is main's (Player.get_speed);
+    here such an action spends two of Slowed's turns (TICK_STEPS).
     """
     sync_timed_grants(player)
     import random
@@ -1115,15 +1252,18 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                     share = REGEN_SHARE
                 player.restore_hp(max(1, int(player.max_hp * share)))
 
-        elif effect == 'petrifying':
-            if val <= 3:
-                messages.append(('Your limbs are rigid -- death is moments away!', 'danger'))
-                if val == 1:
-                    messages.append(('_petrify_death', 'danger'))
-            elif val <= 6:
-                messages.append(('Your skin is hardening into stone!', 'danger'))
-            elif val <= 10:
-                messages.append(('You feel yourself stiffening...', 'warning'))
+        elif effect == 'petrifying' and val > 0:
+            lethal = effect_rules.is_lethal(player)
+            if val == 1 and lethal:
+                messages.append(('_petrify_death', 'danger'))
+            elif val > 1:
+                # The count he watches: how it stands with a turn less.
+                left = val - 1
+                stage = effect_rules.stone_stage(player, left)
+                key = {'stiff': 'stiff', 'slow': 'stiff_slow',
+                       'rigid': 'rigid_lethal' if lethal else 'rigid_lesser'}[stage]
+                messages.append((f"{effect_rules.line(key)} ({left})",
+                                 'warning' if stage == 'stiff' else 'danger'))
 
         elif effect == 'bleeding':
             dmg = player.take_damage(dot_tick(player), 'physical')
@@ -1145,18 +1285,23 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                 dmg = player.take_damage(dot_tick(player), 'fire')
                 if dmg:
                     messages.append(('You are on fire!', 'danger'))
-                scorch = _scorch_random_gear(player)
-                if scorch:
-                    messages.append(scorch)
+                if effect_rules.may_wear(player, 'burning'):
+                    scorch = _scorch_random_gear(player)
+                    if scorch:
+                        messages.append(scorch)
+                        if '(-1' in scorch[0]:
+                            effect_rules.wore(player, 'burning')
 
         elif effect == 'corroding':
             # Acid eats at a random equipped metal item each turn
-            result = _corrode_random_gear(player)
+            result = _corrode_random_gear(player) if effect_rules.may_wear(player, 'corroding') else None
             if result:
                 messages.append(result)
+                if '(-1' in result[0]:
+                    effect_rules.wore(player, 'corroding')
 
         elif effect == 'frozen':
-            pass  # slowing mechanic handled by caller; cold DOT negligible
+            pass  # feet, hands and the thaw are the gate's (action_gate.py)
 
         elif effect == 'weakened':
             pass  # damage halving is checked at combat time via has_effect('weakened')
@@ -1170,8 +1315,8 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
         # wakes a sleeper); writing the snapshot value back would re-add it.
         if effect not in player.status_effects:
             continue
-        if val > 0:
-            new_val = val - 1
+        if val > 0 and effect not in UNTIL_ACTED:
+            new_val = val - TICK_STEPS.get(effect, 1)
             if new_val <= 0:
                 to_expire.append(effect)
             else:
@@ -1179,7 +1324,17 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
 
     # Expire finished effects
     for effect in to_expire:
+        _lesser_stone = effect == 'petrifying' and not effect_rules.is_lethal(player)
         player.status_effects.pop(effect, None)
+        effect_rules.ended(player, effect)
+        if _lesser_stone:
+            # A cockatrice's stone ends in a short paralysis, never death. It
+            # is set outright: the save was made when the countdown began.
+            if not player.has_effect('sleep_resist'):
+                player.status_effects['paralyzed'] = int(
+                    effect_rules.data()['petrify']['lesser']['end_paralyzed'])
+                messages.append((effect_rules.line('lesser_end'), 'danger'))
+                continue                     # its grace follows the paralysis
         # Post-lock grace: after a hard-control effect ends, grant brief immunity
         # to being re-disabled so the player ALWAYS gets free turns to act/flee.
         if effect in HARD_CONTROL:
@@ -1208,6 +1363,8 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
             if bonus:
                 player.STR -= bonus
                 player._berserk_str_bonus = 0
+        if effect == 'petrifying' and ('_petrify_death', 'danger') in messages:
+            continue                         # no softening: he is stone
         msg_pair = _EXPIRE_MSGS.get(effect)
         if msg_pair:
             messages.append(msg_pair)

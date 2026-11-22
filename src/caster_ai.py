@@ -606,7 +606,8 @@ def _control(m, player, atk) -> str:
     eff = str(atk.get('effect') or '')
     se = getattr(player, 'status_effects', None) or {}
     if eff and int(se.get('spell_turning', 0) or 0) != 0:
-        m.add_effect(eff, 8)              # Spell Turning: every cast curse goes back
+        from status_effects import reflected
+        m.add_effect(*reflected(eff, 8))  # Spell Turning: every cast curse goes back
         return ai_lines.fill(m, (rules().get('lines') or {}).get('turned', ''))
     text = m._apply_attack_effect(atk, player, gaze=atk.get('delivery') == 'gaze')
     return text.strip() or ai_lines.fill(m, (rules().get('lines') or {}).get('resisted', ''))

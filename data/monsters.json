@@ -441,7 +441,7 @@
         "type": "acid",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "blow"
       }
     ],
@@ -504,7 +504,7 @@
         "type": "necrotic",
         "effect": "slowed",
         "effect_chance": 0.35,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "touch",
         "drains_life": true
       },
@@ -582,7 +582,7 @@
         "name": "Bite",
         "damage": "1d2+1",
         "type": "pierce",
-        "effect": "paralyzed",
+        "effect": "immobilized",
         "effect_chance": 0.2,
         "effect_duration": 3,
         "delivery": "bite"
@@ -593,7 +593,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": "1d6",
+        "effect_duration": 3,
         "delivery": "blow"
       }
     ],
@@ -722,7 +722,7 @@
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.5,
-        "effect_duration": 10,
+        "effect_duration": 8,
         "delivery": "touch"
       }
     ],
@@ -1406,7 +1406,7 @@
         "type": "acid",
         "effect": "weakened",
         "effect_chance": 0.3,
-        "effect_duration": 10,
+        "effect_duration": 8,
         "delivery": "touch"
       }
     ],
@@ -1649,7 +1649,7 @@
         "type": "necrotic",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "touch",
         "drains_life": true
       }
@@ -1883,7 +1883,7 @@
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 15,
+        "effect_duration": 8,
         "delivery": "touch"
       }
     ],
@@ -2038,7 +2038,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "breath"
       }
     ],
@@ -2225,7 +2225,7 @@
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "touch"
       },
       {
@@ -2234,7 +2234,7 @@
         "type": "shadow",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "voice"
       }
     ],
@@ -2306,10 +2306,11 @@
         "name": "Stony Gaze",
         "damage": "1d4+2",
         "type": "magic",
-        "effect": "paralyzed",
+        "effect": "petrifying",
         "effect_chance": 0.6,
-        "effect_duration": 4,
-        "delivery": "gaze"
+        "effect_duration": 10,
+        "delivery": "gaze",
+        "lethal": true
       }
     ],
     "resistances": [
@@ -2519,7 +2520,7 @@
         "delivery": "blow",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 5
+        "effect_duration": 4
       }
     ],
     "resistances": [
@@ -2582,10 +2583,11 @@
         "name": "Stony Gaze",
         "damage": "2d6+4",
         "type": "magic",
-        "effect": "paralyzed",
+        "effect": "petrifying",
         "effect_chance": 0.5,
-        "effect_duration": 4,
-        "delivery": "gaze"
+        "effect_duration": 10,
+        "delivery": "gaze",
+        "lethal": true
       }
     ],
     "resistances": [
@@ -2644,7 +2646,7 @@
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "bite"
       },
       {
@@ -2657,7 +2659,7 @@
         "name": "Charm Gaze",
         "damage": "1d4+3",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.35,
         "effect_duration": 6,
         "delivery": "gaze"
@@ -2917,7 +2919,7 @@
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 0.45,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "ranged"
       },
       {
@@ -3016,7 +3018,10 @@
         "name": "Tentacle",
         "damage": "2d8+6",
         "type": "drain",
-        "delivery": "grapple"
+        "delivery": "grapple",
+        "effect": "forgetting",
+        "effect_chance": 0.35,
+        "effect_duration": 6
       }
     ],
     "resistances": [
@@ -3076,14 +3081,14 @@
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "bite"
       },
       {
         "name": "Charm",
         "damage": "1d6+4",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.4,
         "effect_duration": 6,
         "delivery": "voice"
@@ -3154,7 +3159,7 @@
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "voice"
       },
       {
@@ -3482,7 +3487,7 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.6,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "ranged"
       },
       {
@@ -3554,7 +3559,7 @@
         "name": "Charm Gaze",
         "damage": "1d8+3",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.5,
         "effect_duration": 5,
         "delivery": "gaze"
@@ -4108,7 +4113,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "sting"
       },
       {
@@ -4277,7 +4282,7 @@
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "blow"
       },
       {
@@ -4295,7 +4300,7 @@
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "gaze"
       }
     ],
@@ -4422,7 +4427,7 @@
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.45,
-        "effect_duration": 15,
+        "effect_duration": 8,
         "delivery": "touch"
       },
       {
@@ -4498,7 +4503,7 @@
         "delivery": "ranged",
         "effect": "weakened",
         "effect_chance": 0.3,
-        "effect_duration": 10
+        "effect_duration": 8
       }
     ],
     "resistances": [
@@ -4999,7 +5004,7 @@
         "name": "Charm Song",
         "damage": "1d3",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.45,
         "effect_duration": 6,
         "delivery": "voice"
@@ -5292,7 +5297,7 @@
         "type": "necrotic",
         "effect": "slowed",
         "effect_chance": 0.35,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "touch"
       }
     ],
@@ -5508,11 +5513,12 @@
         "name": "Petrifying Breath",
         "damage": "2d6+6",
         "type": "magic",
-        "effect": "slowed",
+        "effect": "petrifying",
         "effect_chance": 0.4,
-        "effect_duration": 5,
+        "effect_duration": 10,
         "piercing": true,
-        "delivery": "breath"
+        "delivery": "breath",
+        "lethal": true
       }
     ],
     "resistances": [
@@ -5586,7 +5592,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "grapple"
       }
     ],
@@ -5995,7 +6001,7 @@
         "type": "pierce",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "bite"
       }
     ],
@@ -6052,7 +6058,7 @@
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.55,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "blow"
       },
       {
@@ -6342,7 +6348,7 @@
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "blow"
       }
     ],
@@ -6412,7 +6418,7 @@
         "type": "pierce",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "bite"
       }
     ],
@@ -6546,7 +6552,7 @@
         "type": "shadow",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "voice"
       }
     ],
@@ -6839,7 +6845,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.35,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "sting"
       }
     ],
@@ -7406,7 +7412,7 @@
         "delivery": "blow",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12
+        "effect_duration": 8
       },
       {
         "name": "Crocodile Snap",
@@ -7750,7 +7756,7 @@
         "type": "shadow",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "touch"
       }
     ],
@@ -7821,7 +7827,7 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "blow"
       }
     ],
@@ -7884,7 +7890,7 @@
         "name": "Death Wail",
         "damage": "2d6+2",
         "type": "magic",
-        "effect": "paralyzed",
+        "effect": "feared",
         "effect_chance": 0.3,
         "effect_duration": 3,
         "delivery": "voice"
@@ -8433,7 +8439,7 @@
         "type": "shadow",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "blow"
       }
     ],
@@ -8788,7 +8794,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "trample"
       }
     ],
@@ -8936,7 +8942,10 @@
         "name": "Mind Drain",
         "damage": "1d8+4",
         "type": "drain",
-        "delivery": "voice"
+        "delivery": "voice",
+        "effect": "forgetting",
+        "effect_chance": 0.35,
+        "effect_duration": 6
       }
     ],
     "resistances": [
@@ -8992,7 +9001,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "grapple"
       },
       {
@@ -9127,7 +9136,7 @@
         "name": "Devour Intellect",
         "damage": "1d8+1",
         "type": "necrotic",
-        "effect": "confused",
+        "effect": "forgetting",
         "effect_chance": 0.4,
         "effect_duration": 6,
         "delivery": "blow"
@@ -10083,7 +10092,7 @@
         "name": "Charm Gaze",
         "damage": "1d4+2",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.5,
         "effect_duration": 6,
         "delivery": "gaze"
@@ -10159,7 +10168,7 @@
         "name": "Entrancing Gaze",
         "damage": "1d4+2",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.5,
         "effect_duration": 6,
         "delivery": "gaze"
@@ -10171,7 +10180,7 @@
         "delivery": "blow",
         "effect": "weakened",
         "effect_chance": 0.5,
-        "effect_duration": 15
+        "effect_duration": 8
       }
     ],
     "resistances": [
@@ -10371,7 +10380,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "blow"
       },
       {
@@ -10863,7 +10872,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "sting"
       },
       {
@@ -10942,7 +10951,7 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "blow"
       }
     ],
@@ -11007,7 +11016,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.35,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "blow"
       }
     ],
@@ -11142,7 +11151,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -11917,7 +11926,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.7,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "ranged": true,
         "delivery": "ranged"
       },
@@ -12652,7 +12661,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "blow"
       }
     ],
@@ -12720,7 +12729,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "grapple"
       }
     ],
@@ -12844,16 +12853,16 @@
         "name": "Beak",
         "damage": "1d4+1",
         "type": "pierce",
-        "effect": "paralyzed",
+        "effect": "petrifying",
         "effect_chance": 0.35,
-        "effect_duration": 3,
+        "effect_duration": 4,
         "delivery": "blow"
       },
       {
         "name": "Petrifying Touch",
         "damage": "1d3",
         "type": "magic",
-        "effect": "paralyzed",
+        "effect": "petrifying",
         "effect_chance": 0.45,
         "effect_duration": 4,
         "delivery": "touch"
@@ -12994,7 +13003,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.55,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "blow"
       }
     ],
@@ -13386,7 +13395,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.25,
-        "effect_duration": 3,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -14001,7 +14010,7 @@
         "type": "pierce",
         "effect": "slowed",
         "effect_chance": 0.35,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "bite"
       }
     ],
@@ -14586,7 +14595,7 @@
         "type": "necrotic",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "blow"
       },
       {
@@ -14734,7 +14743,7 @@
         "name": "Mesmerize",
         "damage": "1d4",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.3,
         "effect_duration": 4,
         "delivery": "blow"
@@ -14806,9 +14815,9 @@
         "name": "Drain",
         "damage": "1d8+2",
         "type": "drain",
-        "effect": "paralyzed",
+        "effect": "weakened",
         "effect_chance": 0.3,
-        "effect_duration": 3,
+        "effect_duration": 6,
         "delivery": "touch"
       }
     ],
@@ -15269,7 +15278,7 @@
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "blow"
       }
     ],
@@ -15355,7 +15364,7 @@
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "ranged": true,
         "delivery": "ranged"
       },
@@ -15453,7 +15462,7 @@
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.35,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "blow"
       }
     ],
@@ -15684,7 +15693,7 @@
         "name": "Entangle",
         "damage": "1d8+2",
         "type": "blunt",
-        "effect": "paralyzed",
+        "effect": "immobilized",
         "effect_chance": 0.3,
         "effect_duration": 3,
         "delivery": "blow"
@@ -15907,7 +15916,7 @@
         "type": "holy",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -15985,7 +15994,7 @@
         "name": "Bind",
         "damage": "1d6+1",
         "type": "magic",
-        "effect": "paralyzed",
+        "effect": "immobilized",
         "effect_chance": 0.3,
         "effect_duration": 3,
         "delivery": "blow"
@@ -16066,7 +16075,7 @@
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.35,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "blow"
       }
     ],
@@ -16341,7 +16350,7 @@
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.45,
-        "effect_duration": 15,
+        "effect_duration": 8,
         "delivery": "touch"
       },
       {
@@ -16656,7 +16665,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -16811,7 +16820,7 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "voice"
       }
     ],
@@ -16969,7 +16978,7 @@
         "type": "necrotic",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "piercing": true,
         "delivery": "breath"
       },
@@ -17528,7 +17537,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "touch"
       }
     ],
@@ -17733,7 +17742,7 @@
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "touch"
       }
     ],
@@ -18187,7 +18196,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.7,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "breath"
       }
     ],
@@ -18304,7 +18313,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "blow"
       },
       {
@@ -18375,7 +18384,7 @@
         "type": "shadow",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "blow"
       }
     ],
@@ -18493,9 +18502,9 @@
         "name": "Petrifying Gaze",
         "damage": "1d2",
         "type": "magic",
-        "effect": "paralyzed",
+        "effect": "petrifying",
         "effect_chance": 0.3,
-        "effect_duration": 3,
+        "effect_duration": 4,
         "delivery": "gaze"
       }
     ],
@@ -18686,7 +18695,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 3,
+        "effect_duration": 2,
         "delivery": "blow"
       },
       {
@@ -18747,7 +18756,7 @@
         "type": "slash",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -18987,7 +18996,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -19746,7 +19755,7 @@
         "type": "slash",
         "effect": "slowed",
         "effect_chance": 0.35,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -19799,7 +19808,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "grapple",
         "carry_off": {
           "chance": 0.2,
@@ -19882,7 +19891,7 @@
         "type": "necrotic",
         "effect": "slowed",
         "effect_chance": 0.25,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -20275,7 +20284,7 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "voice"
       }
     ],
@@ -20445,7 +20454,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "grapple"
       },
       {
@@ -20652,7 +20661,7 @@
         "name": "Panpipe Charm",
         "damage": "1d4",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.45,
         "effect_duration": 6,
         "delivery": "voice"
@@ -20720,7 +20729,7 @@
         "name": "Charm Gaze",
         "damage": "1d6+5",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.5,
         "effect_duration": 6,
         "delivery": "gaze"
@@ -20862,7 +20871,7 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "voice"
       }
     ],
@@ -21133,7 +21142,7 @@
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "delivery": "touch"
       }
     ],
@@ -21359,7 +21368,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "blow"
       },
       {
@@ -21368,7 +21377,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "touch"
       }
     ],
@@ -21756,7 +21765,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 5,
+        "effect_duration": 3,
         "delivery": "blow"
       }
     ],
@@ -22374,7 +22383,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "sting"
       }
     ],
@@ -22609,7 +22618,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -22725,7 +22734,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.25,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -23131,7 +23140,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "blow"
       }
     ],
@@ -23200,7 +23209,7 @@
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "ranged": true,
         "delivery": "ranged"
       }
@@ -23437,7 +23446,7 @@
         "type": "lightning",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "blow"
       }
     ],
@@ -23502,7 +23511,7 @@
         "type": "lightning",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "blow"
       }
     ],
@@ -24044,7 +24053,7 @@
         "type": "pierce",
         "effect": "slowed",
         "effect_chance": 0.35,
-        "effect_duration": 4,
+        "effect_duration": 2,
         "delivery": "trample",
         "shove": {
           "chance": 0.3
@@ -24856,7 +24865,7 @@
         "delivery": "blow",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "snuffs_light": "dark",
         "snuff_chance": 0.5
       },
@@ -25140,7 +25149,7 @@
         "type": "pierce",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "bite"
       },
       {
@@ -25579,7 +25588,10 @@
         "name": "Brain Extraction",
         "damage": "4d8+14",
         "type": "drain",
-        "delivery": "blow"
+        "delivery": "blow",
+        "effect": "forgetting",
+        "effect_chance": 0.4,
+        "effect_duration": 6
       },
       {
         "name": "Tentacle Grasp",
@@ -25739,14 +25751,14 @@
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.6,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "ranged"
       },
       {
         "name": "Charm Ray",
         "damage": "1d8+8",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.55,
         "effect_duration": 6,
         "delivery": "ranged"
@@ -25906,7 +25918,7 @@
         "delivery": "grapple",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12
+        "effect_duration": 8
       },
       {
         "name": "Chaos Bolt",
@@ -26088,7 +26100,7 @@
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "blow"
       },
       {
@@ -26246,7 +26258,7 @@
         "type": "poison",
         "effect": "slowed",
         "effect_chance": 0.6,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "bite"
       },
       {
@@ -26812,7 +26824,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 4,
+        "effect_duration": 3,
         "delivery": "blow"
       }
     ],
@@ -27018,7 +27030,7 @@
         "name": "Lure",
         "damage": "5d6+1",
         "type": "magic",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.4,
         "effect_duration": 5,
         "delivery": "blow"
@@ -29148,10 +29160,11 @@
         "name": "Petrifying Bite",
         "damage": "4d10+22",
         "type": "poison",
-        "effect": "paralyzed",
+        "effect": "petrifying",
         "effect_chance": 0.35,
-        "effect_duration": 3,
-        "delivery": "bite"
+        "effect_duration": 10,
+        "delivery": "bite",
+        "lethal": true
       }
     ],
     "resistances": [
@@ -29326,7 +29339,7 @@
         "type": "acid",
         "effect": "weakened",
         "effect_chance": 0.3,
-        "effect_duration": 10,
+        "effect_duration": 8,
         "delivery": "blow"
       }
     ],
@@ -31444,7 +31457,7 @@
         "delivery": "breath",
         "effect": "weakened",
         "effect_chance": 0.45,
-        "effect_duration": 12
+        "effect_duration": 8
       },
       {
         "name": "Bone Claw",
@@ -31959,7 +31972,7 @@
         "delivery": "blow",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12
+        "effect_duration": 8
       },
       {
         "name": "Paralysis Touch",
@@ -32079,7 +32092,7 @@
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.45,
-        "effect_duration": 15,
+        "effect_duration": 8,
         "delivery": "breath"
       },
       {
@@ -32243,7 +32256,7 @@
         "delivery": "bite",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12
+        "effect_duration": 8
       }
     ],
     "resistances": [
@@ -32450,7 +32463,7 @@
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.45,
-        "effect_duration": 15,
+        "effect_duration": 8,
         "delivery": "touch"
       },
       {
@@ -32532,7 +32545,7 @@
         "delivery": "blow",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 5
+        "effect_duration": 4
       }
     ],
     "resistances": [
@@ -33260,7 +33273,7 @@
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "ranged"
       }
     ],
@@ -33811,7 +33824,7 @@
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "touch"
       },
       {
@@ -33965,7 +33978,7 @@
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 10,
+        "effect_duration": 8,
         "delivery": "blow"
       },
       {
@@ -34326,7 +34339,7 @@
         "delivery": "ranged",
         "effect": "slowed",
         "effect_chance": 0.3,
-        "effect_duration": 3
+        "effect_duration": 2
       },
       {
         "name": "Scavenger Bite",
@@ -34856,7 +34869,7 @@
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 0.25,
-        "effect_duration": 10,
+        "effect_duration": 8,
         "delivery": "voice"
       }
     ],
@@ -34923,7 +34936,7 @@
         "type": "shadow",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "ranged": true,
         "delivery": "ranged"
       }
@@ -35010,7 +35023,7 @@
         "type": "slash",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "blow"
       },
       {
@@ -35248,7 +35261,7 @@
         "delivery": "touch",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12
+        "effect_duration": 8
       },
       {
         "name": "Barrow-Iron Sword",
@@ -35475,7 +35488,7 @@
         "type": "shadow",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "blow"
       }
     ],
@@ -35815,7 +35828,7 @@
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 15,
+        "effect_duration": 8,
         "delivery": "ranged"
       },
       {
@@ -36936,7 +36949,7 @@
         "type": "blunt",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "blow"
       }
     ],
@@ -37018,7 +37031,7 @@
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.45,
-        "effect_duration": 5,
+        "effect_duration": 4,
         "delivery": "breath"
       }
     ],
@@ -37085,7 +37098,7 @@
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.45,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "voice"
       },
       {
@@ -37510,9 +37523,9 @@
         "name": "Mind Drain",
         "damage": "3d8+16",
         "type": "drain",
-        "effect": "confused",
+        "effect": "forgetting",
         "effect_chance": 0.45,
-        "effect_duration": 5,
+        "effect_duration": 6,
         "delivery": "voice"
       },
       {
@@ -37521,7 +37534,7 @@
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 15,
+        "effect_duration": 8,
         "delivery": "voice"
       }
     ],
@@ -38181,7 +38194,7 @@
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.25,
-        "effect_duration": 3,
+        "effect_duration": 2,
         "delivery": "trample"
       }
     ],
@@ -39265,7 +39278,7 @@
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.5,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "delivery": "touch"
       },
       {
@@ -40267,7 +40280,7 @@
         "delivery": "blow",
         "effect": "weakened",
         "effect_chance": 0.35,
-        "effect_duration": 12
+        "effect_duration": 8
       }
     ],
     "resistances": [
@@ -40930,7 +40943,7 @@
         "type": "pierce",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12,
+        "effect_duration": 8,
         "delivery": "bite"
       }
     ],
@@ -43442,7 +43455,7 @@
         "name": "Bewitching Gaze",
         "type": "magic",
         "delivery": "gaze",
-        "effect": "confused",
+        "effect": "charmed",
         "effect_chance": 0.5,
         "effect_duration": 5,
         "damage": "3d6+14"
@@ -44143,9 +44156,9 @@
         "damage": "1d3",
         "type": "magic",
         "delivery": "voice",
-        "effect": "paralyzed",
+        "effect": "charmed",
         "effect_chance": 0.35,
-        "effect_duration": 2
+        "effect_duration": 3
       },
       {
         "name": "Wide Jaws",
@@ -44777,7 +44790,7 @@
         "delivery": "gaze",
         "effect": "fumbling",
         "effect_chance": 0.35,
-        "effect_duration": 16
+        "effect_duration": 6
       },
       {
         "name": "Leaping Grab",
@@ -44786,7 +44799,7 @@
         "delivery": "grapple",
         "effect": "fumbling",
         "effect_chance": 0.5,
-        "effect_duration": 12
+        "effect_duration": 6
       },
       {
         "name": "Gnarled Hands",
@@ -44931,7 +44944,7 @@
         "delivery": "breath",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 3,
         "ranged": true
       },
       {
@@ -45023,7 +45036,7 @@
         "delivery": "ranged",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "ranged": true
       }
     ],
@@ -45479,7 +45492,7 @@
         "delivery": "voice",
         "effect": "weakened",
         "effect_chance": 0.4,
-        "effect_duration": 12
+        "effect_duration": 8
       }
     ],
     "resistances": [
@@ -45726,7 +45739,7 @@
         "delivery": "touch",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6
+        "effect_duration": 4
       }
     ],
     "resistances": [
@@ -46042,7 +46055,7 @@
         "delivery": "breath",
         "effect": "slowed",
         "effect_chance": 0.4,
-        "effect_duration": 6,
+        "effect_duration": 4,
         "ranged": true,
         "pulls": 2,
         "pull_line": "The Yacumama breathes in, and the air drags you toward its coils!"
@@ -46124,7 +46137,7 @@
         "delivery": "voice",
         "effect": "weakened",
         "effect_chance": 0.5,
-        "effect_duration": 20
+        "effect_duration": 8
       },
       {
         "name": "Web Cast",

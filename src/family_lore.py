@@ -177,6 +177,15 @@ def studied(player) -> set:
     return s if isinstance(s, set) else set(s or ())
 
 
+def ever_studied(player) -> set:
+    """Every kind ever studied: what the family tiers count. A page a
+    mind-eater took (mind_theft.py) is no longer known, and still counts:
+    Forget never costs a tier."""
+    s = studied(player)
+    gone = getattr(player, 'forgotten_pages', None)
+    return (s | set(gone)) if gone else s
+
+
 def grants(player) -> dict:
     g = getattr(player, 'family_lore_grants', None)
     return g if isinstance(g, dict) else {}
@@ -186,7 +195,7 @@ def score(player, fid) -> int:
     """Kinds studied in the family, a keystone counting keystone_weight."""
     total = 0
     table = _kinds()
-    for kind in studied(player):
+    for kind in ever_studied(player):
         rec = table.get(kind)
         if rec and rec[0] == fid:
             total += int(data().get('keystone_weight', 2)) if rec[1] else 1
@@ -206,9 +215,10 @@ def tiers(player) -> dict:
     player while the studied set and grants are unchanged."""
     if player is None:
         return {}
-    s = studied(player)
+    s = ever_studied(player)
     g = grants(player)
-    key = (id(s), len(s), id(g), tuple(sorted(g.items())), id(_DATA))
+    gone = getattr(player, 'forgotten_pages', None) or ()
+    key = (id(studied(player)), len(s), id(g), tuple(sorted(g.items())), id(_DATA), len(gone))
     cache = player.__dict__.get('_family_tier_cache')
     if cache and cache[0] == key:
         return cache[1]
@@ -252,7 +262,7 @@ def studied_count(player, fid) -> int:
     """Distinct kinds studied (keystones counted once: this is a count of
     kinds, the progress line counts their weight)."""
     table = _kinds()
-    return sum(1 for k in studied(player) if (table.get(k) or (None,))[0] == fid)
+    return sum(1 for k in ever_studied(player) if (table.get(k) or (None,))[0] == fid)
 
 
 def members_seen(player, fid) -> list:
@@ -335,6 +345,9 @@ def record_study(player, kind) -> bool:
     if k in s:
         return False
     s.add(k)
+    gone = getattr(player, 'forgotten_pages', None)
+    if gone:
+        gone.discard(k)              # learned again
     return True
 
 

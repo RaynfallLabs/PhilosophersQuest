@@ -289,12 +289,17 @@ def test_every_trader_kind_stocks_from_its_own_list():
         # seeded draw met one only once the magic of 2026-11-19 joined the pools.
         named = {e['id'] for e in d['stock'] if 'id' in e}
         extra += sum(1 for i in stock if getattr(i, 'id', '') in named)
+        # ... and what every stall of a band has (Oil of Rue, 2026-11-22).
+        always = [a for a in traders.data().get('always_stocked') or ()
+                  if a['floors'][0] <= lvl <= a['floors'][1]]
+        extra += len(always)
         assert len(stock) <= max(traders.stock_size(d, lvl), 2) + extra
         classes = {getattr(i, 'item_class', '') for i in stock}
         allowed = {e.get('class') or e.get('gear') or e.get('cat') for e in d['stock']}
         # A counter for what walks below may be of a class he sets out only
         # for that (slice 5: Mother Wort's beeswax, Brannoc's cold iron).
         allowed |= set(d.get('counter_classes') or ())
+        allowed |= {a['cat'] for a in always}
         assert classes <= allowed, (kind, classes, allowed)
         for it in stock:
             assert getattr(it, 'buc', 'uncursed') != 'cursed'
