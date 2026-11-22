@@ -2602,16 +2602,16 @@
       "name": "Jory Pell",
       "reach": "exceptional"
     },
-    "text": "A young soldier sits in the dark with his knees drawn up, still wearing a torn Legion tabard. His hands won't stop shaking. A captain's heavy signet hangs on a cord at his neck, far too big for any finger of his. \"A hundred of us. Something came out of the dark. I ran.\" He stares at his hands. \"Sergeant Ormond got some of them into the old granary, below. I heard the bar go across as I ran. I just need food to reach the surface. I'll disappear.\" His sword is clean, and so is his tabard. Whatever happened down there, he never drew.",
+    "text": "In the darkness beside the way sits a young soldier of the Legion with his tabard torn, and upon a cord at his neck hangs a captain's heavy signet, too great for any finger of his. He trembles as he lifts his face to you. \"We came down a hundred strong,\" he says, \"and something rose against us out of the dark, and I fled from it. Sergeant Ormond brought some of the men into the old granary below, and I heard the bar fall across the door as I ran. Give me only food enough to reach the sunlight, and I will trouble no one again.\" You see that there is no blood upon his sword or upon his tabard. It is plain to you that he struck no blow before he fled.",
     "options": [
       {
         "label": "Give him food for the climb",
         "naive": true,
-        "warning": "His sword is clean, and so is his tabard.",
+        "warning": "You see that there is no blood upon his sword or upon his tabard.",
         "cost": {
           "type": "food"
         },
-        "outcome": "He eats like a starving dog, then stops, ashamed, and goes. Below, behind a barred door, eleven men are waiting for a runner who has just gone the other way.",
+        "outcome": "He eats as one who has long gone hungry, until shame comes upon him and he lays the rest aside, and then he thanks you in a low voice and climbs away toward the light. Far beneath you, behind a barred door, eleven men still wait for help, and the one who might have brought it to them has taken the upward road.",
         "deeds": [
           "aid.pell",
           "flag.ormond_unwarned"
@@ -2628,7 +2628,7 @@
         "chronicle": "Fed a deserter named Pell and sent him up. I think I just sent away the only runner his company had.",
         "road": {
           "id": "deserter.food",
-          "hint": "Helping a man run is still helping him run."
+          "hint": "One who flees may have left comrades in need of him."
         }
       },
       {
@@ -2642,7 +2642,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You tell him about Aristodemus, sent home sick from the pass, called the Trembler for a year, who came back to the next battle and fought better than any man there. Pell listens with his whole face. Then he stands up and picks up his clean sword. \"The granary's a few floors down. I know the way.\"",
+          "outcome": "You tell him of Aristodemus the Spartan, who was sent home sick from Thermopylae and for a year was shamed among his people with the name of Trembler, and who came afterward to the next great battle and fought there more bravely than any other. Pell listens as one who hears his own tale told, and at the end of it he rises and takes up his sword. \"The granary lies a few floors below us,\" he says, \"and I know the road to it.\"",
           "karma": 1,
           "karma_kind": "judgment",
           "deeds": [
@@ -2661,7 +2661,7 @@
           "chronicle": "Told a deserter named Pell about a Spartan who came back. He went back. I hope his story ends better than the Spartan's did."
         },
         "fail": {
-          "outcome": "The story comes out as a lecture about duty. Pell nods politely, takes nothing, and runs uphill.",
+          "outcome": "You begin the tale, but in your telling it becomes a sermon upon duty, and he finds no comfort in it. Pell hears you courteously to the end, and then, taking nothing from you, he turns and climbs the stair as swiftly as he is able.",
           "deeds": [
             "met.pell",
             "flag.ormond_unwarned"
@@ -2679,12 +2679,12 @@
         },
         "road": {
           "id": "deserter.aristodemus",
-          "hint": "A man who ran once can still decide which way he runs next."
+          "hint": "An old tale may give a frightened soldier the heart to turn back."
         }
       },
       {
         "label": "Point him toward the stairs and keep your food",
-        "outcome": "\"Yes.\" He stands like a puppet and walks the way you pointed. He doesn't ask again.",
+        "outcome": "\"Yes,\" he answers softly, and asks nothing more of you. He rises like one who walks in an evil dream and sets out along the passage you have shown him, toward the world above.",
         "deeds": [
           "met.pell",
           "flag.ormond_unwarned"
@@ -2701,7 +2701,7 @@
         "chronicle": "Pointed a deserter upstairs. He went. Somewhere below me is a granary with a barred door.",
         "road": {
           "id": "deserter.point",
-          "hint": "Up is not always away."
+          "hint": "A frightened man will take whatever road he is shown."
         }
       },
       {
@@ -2713,14 +2713,14 @@
           "item_type": "accessory",
           "item_id": "officers_signet"
         },
-        "outcome": "\"Take it. It's Captain Dorn's. I took it off him when he fell.\" He pulls the cord over his head. It is heavier than it looks.",
+        "outcome": "\"Take it, for I have no right to it,\" he says, and draws the cord over his head. \"It was Captain Dorn's, and I took it from him when he fell.\" He gives it up willingly, and as it passes into your keeping you find it heavier than so small a thing should be.",
         "deeds": [
           "wrong.took_signet"
         ],
         "chronicle": "Took a dead captain's signet off a deserter. He gave it up easily. I think he wanted rid of it.",
         "road": {
           "id": "deserter.signet",
-          "hint": "A dead captain's ring still carries his orders."
+          "hint": "A captain's ring may still carry his orders after his death."
         }
       }
     ]
