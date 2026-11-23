@@ -401,3 +401,28 @@ def test_a_bleed_does_not_rouse_a_territorial_creature_on_its_ground():
     assert w.hp < 200
     assert home_ground.leash(w, hero, dun, [w], set(), True) is False   # it lets him go
     assert not w.__dict__.get('_lair_roused')
+
+
+def test_a_blink_with_nowhere_to_go_spends_nothing():
+    """AI12: a battle mage beside the hero in a corridor, hurt: its blink
+    found no tile four paces off with a shot at him, and the turn and the
+    spell's rest were spent with nothing done and nothing said."""
+    import caster_ai
+    w, h = 12, 5
+    tiles = [[WALL] * w for _ in range(h)]
+    for x in range(1, 11):
+        tiles[2][x] = FLOOR                                # a corridor, one wide
+    dun = Dungeon(tiles, [Room(0, 0, w, h)], w, h, 5)
+    hero = Hero(5, 2)
+    mage = make('battle_mage', 6, 2)
+    mage.hp = int(mage.max_hp * 0.3)
+    mage._tracking = True
+    blocker = make('goblin', 9, 2)                        # the one tile four off is taken
+    blocker2 = make('goblin', 1, 2)
+    ctx = caster_ai.Context(hero, dun, [mage, blocker, blocker2])
+    esc = next(s for s in caster_ai.book(mage) if s['kind'] == 'escape')
+    assert caster_ai.usable(mage, esc, ctx)
+    assert caster_ai._fire(mage, esc, ctx, set()) is None
+    assert (mage.x, mage.y) == (6, 2)
+    assert caster_ai.cooldown(mage, esc['id']) == 0       # its blink is still there
+    assert not (mage.__dict__.get('_spells_cast') or {}).get('escape')

@@ -512,9 +512,11 @@ def usable_now(m, s: dict, ctx: Context) -> bool:
             m._spell_cd = cd
 
 
-def act(m, choice, player, dungeon, monsters, extra_occupied=None) -> bool:
+def act(m, choice, player, dungeon, monsters, extra_occupied=None):
     """Cast ``choice`` (from choose). A wind-up spell begins its chant: its
-    turn is spent and it fires next turn unless a blow breaks it."""
+    turn is spent and it fires next turn unless a blow breaks it. None: it
+    could not be cast after all (a blink with nowhere to go): its turn goes
+    on."""
     s = choice['spell']
     ctx = Context(player, dungeon, list(monsters or ()))
     if s.get('wind_up') and not m.__dict__.get('_casting'):
@@ -555,10 +557,20 @@ def _fire(m, s: dict, ctx: Context, extra_occupied=None) -> bool:
             faction.heal(m, target)       # the game says who was mended (_heal_target)
         return False
     if kind == 'escape':
-        if ctx.dungeon is not None and m._blink_to_standoff(p, ctx.dungeon, ctx.monsters,
-                                                           extra_occupied):
+        if ctx.dungeon is None:
+            return False                  # the simulator's melee: it blinks off (sim_ai3 counts it)
+        if m._blink_to_standoff(p, ctx.dungeon, ctx.monsters, extra_occupied):
             _say(m, _line('cast', m, s), 'escape', 'warning')
-        return False
+            return False
+        # No tile four paces off with a shot at him (a corridor, a crowd):
+        # nothing was cast. It spent its turn and its blink's rest for
+        # nothing, and said nothing; now the fight goes on (None).
+        cd = dict(m.__dict__.get('_spell_cd') or {})
+        cd.pop(s['id'], None)
+        m._spell_cd = cd
+        counts[kind] -= 1
+        m._spells_cast = counts
+        return None
     if kind == 'dispel':
         buff = hero_buff(p)
         if buff:
