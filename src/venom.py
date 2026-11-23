@@ -13,7 +13,8 @@ and a hydra bit alike, and on floors 6-20 the share rounded down to 1-2.
   (status_effects.dot_tick).
 - **Doses add, a little:** a bite on a poisoned hero adds half its turns,
   never past one and a half of the longest dose (data/effects.json
-  ``poison``). The strongest venom on him sets the tick.
+  ``poison``). The strongest venom on him sets the tick, a share poison's
+  among them: a weaker bite never lowers it.
 - **A CON save halves the dose** (it never cancels the bite).
 - **Venom Ward** (a plain meal against venom): half the venom, half the turns.
 - **It shows:** what the venom will still take (``to_come``) is drawn on
@@ -68,10 +69,18 @@ def dose(player, current: int, turns: int, limit: int) -> int:
     if warded(player):
         turns = _half(turns)
     rec = record(player)
+    bite = player.__dict__.pop('_venom_landing', None)      # (lands: a creature's venom)
     if int(current or 0) <= 0:
         rec.clear()
         rec['venom'], rec['dose'] = 0, turns
         return min(turns, limit)
+    if bite is None and int(rec.get('venom', 0) or 0) > 0:
+        # A dose with no venom of its own (a raw meal, a needle) on a bite:
+        # its share of his health sets the tick when that is the stronger.
+        from status_effects import dot_tick
+        if dot_tick(player) > int(rec['venom']):
+            rec['venom'] = 0
+            rec.pop('by', None)
     # The longest single dose of the bout (what was left, for a poison from
     # an older save that kept no record), never the turns already added up.
     longest = max(int(rec.get('dose', 0) or 0) or int(current), turns)
@@ -94,8 +103,15 @@ def lands(player, turns: int, dc: int, source=None, venom: int | None = None) ->
     if saved:
         turns = _half(turns)
     was = on(player)
-    strong_before = int(record(player).get('venom', 0) or 0) if was else 0
-    applied = player.add_effect(STATUS, turns)
+    # What a turn of the poison already on him does: its venom, or for a
+    # poison with none (a raw meal, a needle) the share of his health. A
+    # weaker bite on top set the tick to its own venom: a rat's 3 on an 8.
+    strong_before = _raw_strength(player) if was else 0
+    player.__dict__['_venom_landing'] = max(0, int(venom or 0))
+    try:
+        applied = player.add_effect(STATUS, turns)
+    finally:
+        player.__dict__.pop('_venom_landing', None)
     if not applied:
         return False, ''
     rec = record(player)
@@ -124,13 +140,20 @@ def lands(player, turns: int, dc: int, source=None, venom: int | None = None) ->
 # The tick, and what is still to come
 # ---------------------------------------------------------------------------
 
-def strength(player) -> int:
-    """What one turn of the poison on him does before his body's share
-    (the venom, or the old share of max HP for a poison with none)."""
+def _raw_strength(player) -> int:
+    """A turn of the poison on him before the Venom Ward and his body: the
+    venom, or the old share of max HP for a poison with none."""
     v = int(record(player).get('venom', 0) or 0) if on(player) else 0
     if v <= 0:
         from status_effects import dot_tick
         v = dot_tick(player)
+    return v
+
+
+def strength(player) -> int:
+    """What one turn of the poison on him does before his body's share
+    (the venom, or the old share of max HP for a poison with none)."""
+    v = _raw_strength(player)
     if warded(player):
         v = _half(v)
     return v

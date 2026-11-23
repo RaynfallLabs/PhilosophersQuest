@@ -242,3 +242,35 @@ def test_s10_the_poison_potion_card_says_this_heros_turn(game):
     line = ' '.join(item_words.what_it_does(it, p, buc_known=True))
     assert p.damage_after(dot_tick(p), 'poison') < dot_tick(p)
     assert f"({p.damage_after(dot_tick(p), 'poison')})" in line, line
+
+
+# ---------------------------------------------------------------------------
+# S12: the strongest poison sets the tick
+# ---------------------------------------------------------------------------
+
+def _poisoned_hero(game):
+    p = copy.deepcopy(game.player)
+    p.status_effects.clear()
+    p.__dict__.pop('_venom', None)
+    p.max_hp = p.hp = 400
+    return p
+
+
+def test_s12_a_weak_bite_on_a_share_poison_keeps_the_share(game):
+    from status_effects import dot_tick
+    p = _poisoned_hero(game)
+    p.add_effect('poisoned', 8)                    # a raw meal, a needle trap
+    assert venom.strength(p) == dot_tick(p) > 3
+    venom.lands(p, 6, 1, None, venom=3)            # a rat's bite on top
+    assert venom.strength(p) == dot_tick(p)
+
+
+def test_s12_a_share_poison_on_a_weak_bite_takes_over_and_a_strong_bite_on_it(game):
+    from status_effects import dot_tick
+    p = _poisoned_hero(game)
+    venom.lands(p, 6, 1, None, venom=3)
+    assert venom.strength(p) == 3
+    p.add_effect('poisoned', 8)
+    assert venom.strength(p) == dot_tick(p)
+    venom.lands(p, 6, 1, None, venom=dot_tick(p) + 5)
+    assert venom.strength(p) == dot_tick(p) + 5
