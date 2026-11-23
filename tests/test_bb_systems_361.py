@@ -160,3 +160,48 @@ def test_s04_a_big_sp_dish_does_not_promise_sustained_to_a_hero_already_sustaine
     msgs = kitchen.apply_dish(p, rec)
     assert 'You are already Sustained.' in msgs
     assert p.status_effects['sustained'] == -1
+
+
+# ---------------------------------------------------------------------------
+# S08: the card says what this copy does
+# ---------------------------------------------------------------------------
+
+def _copy(cls, iid, buc):
+    from items import make_item_by_id
+    it = make_item_by_id(cls, iid)
+    it.buc, it.id_level = buc, 5
+    return it
+
+
+@pytest.mark.parametrize('buc', ('blessed', 'cursed'))
+def test_s08_a_kind_ring_says_the_level_it_works_at(game, monkeypatch, buc):
+    import enchantments
+    import rings
+    it = _copy('accessory', 'amulet_life_saving', buc)
+    kind = rings.kind_of(it)
+    working = rings.describe(kind, enchantments.effective_level(it))
+    own = rings.describe(kind, it.ench_level)
+    assert working != own
+    assert rings.life_saving_share(it) == rings.value(kind, enchantments.effective_level(it))
+    monkeypatch.setattr(game, '_copy_buc_known', lambda item: True)
+    assert working in game._item_power_lines(it) and own not in game._item_power_lines(it)
+    monkeypatch.setattr(game, '_copy_buc_known', lambda item: False)
+    assert own in game._item_power_lines(it)       # (an unknown curse is not given away)
+
+
+def test_s08_a_stat_kind_lends_its_tier_whatever_its_blessing(game, monkeypatch):
+    import rings
+    it = _copy('accessory', 'amulet_of_wisdom', 'cursed')
+    monkeypatch.setattr(game, '_copy_buc_known', lambda item: True)
+    assert rings.card_text(it, True) == it.special
+
+
+@pytest.mark.parametrize('buc', ('blessed', 'cursed'))
+def test_s08_an_enchanted_piece_says_the_level_it_works_at(game, monkeypatch, buc):
+    import enchantments
+    it = _copy('armor', 'cloak_of_the_morrigan', buc)      # Displacement: a power, not a stat
+    ench = enchantments.get(it.ench_id)
+    working = enchantments.describe(ench, enchantments.working_level(it))
+    assert working != enchantments.describe(ench, it.ench_level) or buc == 'blessed'
+    monkeypatch.setattr(game, '_copy_buc_known', lambda item: True)
+    assert any(working in ln for ln in game._item_power_lines(it))

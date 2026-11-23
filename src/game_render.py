@@ -936,14 +936,21 @@ class RenderMixin:
                 # enchantment together), never two shares that disagree.
                 import enchantments as _ench_k
                 import guards as _guards_k
+                import rings as _rings_k
                 _sg = _ench_k.is_slot_guard(item)
-                _el = getattr(item, 'ench_line', '')
-                if getattr(item, 'special', '') and not (_sg and item.special == _el):
-                    lines.append(item.special)
+                _raw_el = getattr(item, 'ench_line', '')
+                # Said as this copy works (a known curse or blessing moves
+                # an enchantment's or a kind ring's level).
+                _bk = self._copy_buc_known(item)
+                _el = _ench_k.working_line(item, _bk)
+                _spc = getattr(item, 'special', '') or ''
+                _spc = _el if (_spc and _spc == _raw_el) else _rings_k.card_text(item, _bk)
+                if _spc and not (_sg and _spc == _el):
+                    lines.append(_spc)
                 if _sg:
                     lines.append(_guards_k.guard_text(item))
                 # A named piece's enchantment (its card text is its own).
-                elif _el and _el != getattr(item, 'special', ''):
+                elif _el and _el != _spc:
                     lines.append(_el)
                 if getattr(item, 'dodge_bonus', 0):
                     lines.append(f"Dodge +{item.dodge_bonus:.0%}")
@@ -4795,12 +4802,15 @@ class RenderMixin:
             if gt:
                 out.append(gt)
             if getattr(item, 'ench_line', '') and known and not _en.is_slot_guard(item):
-                add(_en.card_line(item), 'ench_line')
+                add(_en.card_line(item, self._copy_buc_known(item)), 'ench_line')
             if getattr(item, 'damage_resistances', None):
                 add(_ip.resist_line(_g.piece_profile(item)), 'damage_resistances')
             out += _g.card_lines(item)
         if isinstance(item, Accessory):
-            sp = str(getattr(item, 'special', '') or '').strip()
+            import rings as _rg
+            # (said as this copy works: a known curse or blessing moves a
+            # kind ring's level, rings.card_text)
+            sp = _rg.card_text(item, self._copy_buc_known(item)).strip()
             if sp and sp != '-':
                 add(sp, 'special')
             fx = getattr(item, 'effects', {}) or {}
