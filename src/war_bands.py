@@ -445,10 +445,14 @@ def is_great_blow(leader, chain: int, damage=None) -> bool:
     return float(damage) >= float(g.get('share', 0.0)) * max(1, int(getattr(leader, 'max_hp', 1) or 1))
 
 
-def on_great_blow(monsters, leader, chain: int, damage=None) -> str:
+def on_great_blow(monsters, leader, chain: int, damage=None, dungeon=None) -> str:
     """A great blow (is_great_blow) on a band's living leader shakes the
-    followers who see it: each falters `falter` of the time. Returns the
-    line."""
+    followers who see it (awake, its eyes open, the leader in its sight:
+    sees_blow): each falters `falter` of the time. Returns the line, said
+    only when one did falter (a follower its nature keeps from fear, an
+    undead of the procession, is not shaken). It shook every follower on
+    the floor, asleep or in another room, and said the line when none could
+    be frightened."""
     d = data()
     if (not getattr(leader, '_band', None) or getattr(leader, '_band_role', '') != 'leader'
             or not leader.alive or not is_great_blow(leader, chain, damage)):
@@ -457,12 +461,30 @@ def on_great_blow(monsters, leader, chain: int, damage=None) -> str:
     b = d['bands'].get(getattr(leader, '_band_id', ''), {})
     shaken = 0
     for m in members_of(monsters, leader._band):
-        if m is leader or not m.alive:
+        if m is leader or not m.alive or not sees_blow(m, leader, dungeon):
             continue
         if random.random() < float(g.get('falter', 0.5)):
-            _frighten(m, int(g.get('turns', 4)))
-            shaken += 1
+            if _frighten(m, int(g.get('turns', 4))):
+                shaken += 1
     return b.get('break_line', '') if shaken else ''
+
+
+_UNSEEING = ('sleeping', 'paralyzed', 'stunned', 'frozen', 'blinded')
+
+
+def sees_blow(m, leader, dungeon=None) -> bool:
+    """A follower who saw the blow on his leader: awake, his eyes open, the
+    leader within his sight with nothing between (no dungeon: a test of the
+    rule, the sight's reach only)."""
+    st = getattr(m, 'status_effects', None) or {}
+    if any(int(st.get(e, 0) or 0) > 0 for e in _UNSEEING):
+        return False
+    import senses
+    if 'blind' in senses.senses_of(m):
+        return False
+    if max(abs(m.x - leader.x), abs(m.y - leader.y)) > senses.sight_range(m):
+        return False
+    return dungeon is None or senses.clear_view(m.x, m.y, leader.x, leader.y, dungeon)
 
 
 def break_hold(monsters, uid: str) -> int:
@@ -479,15 +501,17 @@ def break_hold(monsters, uid: str) -> int:
     return n
 
 
-def _frighten(m, turns: int) -> None:
+def _frighten(m, turns: int) -> bool:
+    """Fear for ``turns`` turns; True if it took (never on the fearless or a
+    nature that knows none)."""
     if getattr(m, 'fearless', False):
-        return
+        return False
     try:
         if m.resists_control('feared'):
-            return
+            return False
     except Exception:
         pass
-    m.add_effect('feared', turns)
+    return bool(m.add_effect('feared', turns))
 
 
 def holds_nerve(m) -> bool:

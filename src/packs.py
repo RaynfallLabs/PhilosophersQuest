@@ -582,9 +582,10 @@ def _at_choke(m, player, dungeon, all_monsters, occ, slot_tiles, steps, bold, ne
     # Only one that can act is fighting him (a wolf asleep at his feet is not).
     engaged = [o for o in near if _beside(player, o) and can_fight(o)]
     # Hurt while it waited (an arrow, a thrown flask): it comes for him.
+    import under_fire
     hp_was = m.__dict__.get('_pack_hp')
-    m._pack_hp = m.hp
-    if hp_was is not None and m.hp < hp_was:
+    m._pack_hp = under_fire.blow_hp(m)      # (a bleed ticking is no blow)
+    if hp_was is not None and m._pack_hp < hp_was:
         m._pack_wait = 0
         return None
     wait = int(m.__dict__.get('_pack_wait', 0) or 0) + 1

@@ -357,8 +357,9 @@ def snapshot(m, player, dungeon, all_monsters, extra_occupied):
     if dist <= engage_r and (w.get('hold_choke') or w.get('flank') or w.get('feint')):
         ctx.slots = side_slots(m, player, dungeon, all_monsters, extra_occupied, allies)
         choke = len(ctx.slots) == 1 or (not ctx.slots and narrow(dungeon, *hero))
+    import under_fire
     hp_was = d.get('_tm_hp')
-    hurt = hp_was is not None and m.hp < int(hp_was)
+    hurt = hp_was is not None and under_fire.blow_hp(m) < int(hp_was)   # (a bleed is no blow)
     usable = lanes.usable(m)
     has_lane = bool(usable) and 2 <= dist <= lanes.reach(m) and lanes.clear_shot(
         m.x, m.y, player.x, player.y, dungeon, occ - {hero})
@@ -960,7 +961,16 @@ def say(m, key: str, dungeon, colour: str = 'warning', **kw) -> bool:
 
 def hero_sees(m, player, dungeon) -> bool:
     """Can the hero see this creature where it stands (his light's reach, a
-    clear view, not invisible to him)?"""
+    clear view, not invisible to him)? In the game, as its turn began, his
+    own field of view says (the Game's ``_hero_saw``, Game._sees_monster):
+    the guess below (a square of his sight's radius, a straight line) took
+    a creature at the corner of his sight, outside his round field of view,
+    for one he could see, and its line named it to a hero who could not.
+    The guess is for a creature the Game has not looked at this turn (the
+    simulator, a test)."""
+    saw = getattr(m, '__dict__', {}).get('_hero_saw')
+    if isinstance(saw, tuple) and len(saw) == 2 and TURN.n and saw[0] == TURN.n:
+        return bool(saw[1])
     if getattr(m, '_unseen', False) is True:
         return False
     try:
@@ -993,7 +1003,7 @@ def turn(m, player, dungeon, all_monsters, extra_occupied=None, pattern: str = '
     _new_fight(m)
     feint = _feint_turn(m, player, dungeon, all_monsters, extra_occupied)
     if feint is not None:
-        m._tm_hp = m.hp
+        m._tm_hp = _blow_hp(m)
         return feint
     view, ctx = snapshot(m, player, dungeon, all_monsters, extra_occupied)
     sp = tactics.spec(view.mind)
@@ -1008,7 +1018,7 @@ def turn(m, player, dungeon, all_monsters, extra_occupied=None, pattern: str = '
         opt = 'attack'
     if opt == 'attack':
         _say_why_it_comes(m, view, sp, dungeon)
-    m._tm_hp = m.hp
+    m._tm_hp = _blow_hp(m)
     m._tm_witnessed = hero_sees(m, player, dungeon)
     if opt == 'attack':
         m._tm_plan = None
@@ -1061,6 +1071,11 @@ def _stepped(m, path, ctx, player, dungeon) -> bool:
     got = packs._step_along(m, list(path), ctx.occ, player, dungeon,
                             under_fire.steps(m, 2 if int(getattr(m, 'speed', 10) or 10) >= 14 else 1))
     return got is not None
+
+
+def _blow_hp(m) -> int:
+    import under_fire
+    return under_fire.blow_hp(m)
 
 
 def _waited(m) -> None:

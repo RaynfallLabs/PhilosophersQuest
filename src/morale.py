@@ -207,7 +207,8 @@ def break_share(m) -> float:
 def start_flight(m, player, monsters, rng=random) -> None:
     r = rules()
     st = style(m)
-    m._mo_hp = m.hp                          # a fresh wound from here on is a blow as it runs
+    import under_fire
+    m._mo_hp = under_fire.blow_hp(m)         # a fresh wound from here on is a blow as it runs
     lines = r.get('lines') or {}
     unseen = r.get('unseen') or {}
     if st in ('regroup', 'yield'):
@@ -355,9 +356,10 @@ def run(m, player, dungeon, monsters, extra_occupied):
     # Caught and struck as it runs (the hero beside it, its wound fresh):
     # it turns at bay rather than take blow after blow in the back; one
     # that would yield begs instead.
+    import under_fire
     hp_was = d.get('_mo_hp')
-    m._mo_hp = m.hp
-    if hp_was is not None and m.hp < int(hp_was) and m._adjacent_to(player):
+    m._mo_hp = under_fire.blow_hp(m)        # (a bleed ticking is no blow)
+    if hp_was is not None and m._mo_hp < int(hp_was) and m._adjacent_to(player):
         if d.pop('_yield_ready', None):
             give_up(m)
             return False

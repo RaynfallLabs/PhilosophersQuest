@@ -17,9 +17,10 @@ when it is under fire, and what it does about it is its kind's nature:
     (tactics.activation, tactical_mind.band_order);
   * an archer or a caster answers with its own shot, as it always did.
 
-Under fire: hurt since its last turn while neither it nor the hero stood
-beside the other (at the top of its last turn or now) and no pet was at it:
-an arrow, a bolt, a thrown flask, a spell from across the room. It stays
+Under fire: hurt by a blow since its last turn while neither it nor the hero
+stood beside the other (at the top of its last turn or now) and no pet was
+at it: an arrow, a bolt, a thrown flask, a spell from across the room (a
+wound bleeding, burning or poisoned is no blow: ``blow_hp``). It stays
 under fire ``memory`` turns (data/monster_ai.json ``under_fire``).
 
 State in the creature's own __dict__ (``_uf_hp``, ``_uf_adj``, ``_uf_turns``,
@@ -43,6 +44,19 @@ def _int(d: dict, key: str) -> int:
         return 0
 
 
+def blow_hp(m) -> int:
+    """Its health with what a wound ticking took (a bleed, a burn, poison:
+    Monster.take_damage's ``_dot_lost``) put back: it falls only to a blow.
+    Every "struck since its last turn" test compares this, never bare
+    health (here; morale's caught as it runs; a pack waiting at a narrow
+    way; the Tactical Mind's hurt and its watch): a goblin bleeding from a
+    sword cut was taken for one shot from afar and ran for cover, and a
+    charger rushed at a hero who had only stepped back. A wound that keeps
+    bleeding is not a new blow (it springs no lurker and breaks no chant
+    either: Monster.take_damage)."""
+    return int(getattr(m, 'hp', 0) or 0) + int(getattr(m, '__dict__', {}).get('_dot_lost', 0) or 0)
+
+
 def note(m, player, pets=()) -> bool:
     """At the top of its turn: was it shot since its last one? Updates its
     state and returns True when it was (a fresh wound from afar)."""
@@ -52,7 +66,7 @@ def note(m, player, pets=()) -> bool:
     adj = bool(m._adjacent_to(player))
     was_hp = d.get('_uf_hp')
     was_adj = bool(d.get('_uf_adj', False))
-    hurt = was_hp is not None and m.hp < int(was_hp)
+    hurt = was_hp is not None and blow_hp(m) < int(was_hp)
     at_it = any(getattr(p, 'alive', False) and max(abs(p.x - m.x), abs(p.y - m.y)) <= 1
                 for p in pets or ())
     shot = bool(hurt and not adj and not was_adj and not at_it)
@@ -62,7 +76,7 @@ def note(m, player, pets=()) -> bool:
     elif left > 0:
         m._uf_turns = left - 1
     m._uf_new = shot
-    m._uf_hp = m.hp
+    m._uf_hp = blow_hp(m)
     m._uf_adj = adj
     rest = _int(d, '_rush_rest')
     if rest > 0:

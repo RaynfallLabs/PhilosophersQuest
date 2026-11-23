@@ -2864,7 +2864,7 @@ class CombatMixin:
 
     def _band_great_blow(self, monster, chain: int, damage=None) -> None:
         import war_bands
-        line = war_bands.on_great_blow(self.monsters, monster, chain, damage)
+        line = war_bands.on_great_blow(self.monsters, monster, chain, damage, self.dungeon)
         if line:
             self.add_message(line, 'success')
 
@@ -3564,7 +3564,13 @@ class CombatMixin:
                             'success')
                 continue
             # Track monsters the player has seen (for encyclopedia bestiary)
-            if self._sees_monster(m):
+            _seen_at_start = self._sees_monster(m)
+            # Whether he saw it as its turn began: the Tactical Mind's line for
+            # a choice he watched it make stands though its move takes it out
+            # of his sight (tactical_mind.hero_sees reads this, his real field
+            # of view, not a guess at it).
+            m._hero_saw = (self.turn_count, _seen_at_start)
+            if _seen_at_start:
                 self.player.known_monster_ids.add(m.kind)
                 # A dangerous creature shows what it can do (src/tells.py).
                 self._maybe_tell(m)
@@ -3654,12 +3660,16 @@ class CombatMixin:
                 m._wants_summon = False
                 self._spawn_summoner_minion(m)
             # Healer AI: announce heals that occurred this turn
+            # (This turn's mending only: one done out of sight is not told
+            # later, on a turn it mends no one. A caster's book mends too,
+            # and nothing else cleared it: caster_ai._fire.)
             heal_target = getattr(m, '_heal_target', None)
-            if heal_target is not None and (m.x, m.y) in self.visible:
+            if heal_target is not None:
                 amt = getattr(m, '_heal_amount', 0)
-                self.add_message(
-                    f"{the_name(m)} chants and heals {the_name(heal_target, lower=True)} for {amt} HP!",
-                    'info')
+                if (m.x, m.y) in self.visible:
+                    self.add_message(
+                        f"{the_name(m)} chants and heals {the_name(heal_target, lower=True)} for {amt} HP!",
+                        'info')
                 m._heal_target = None
                 m._heal_amount = 0
             # HP-threshold phase-change announcement (boss enrage)

@@ -155,3 +155,166 @@ def test_the_spell_runs_out_and_its_own_rest_wakes_to_noise_again():
     assert gob.has_effect('sleeping') and not sleepers.laid(gob)
     _fight_beside(dun, hero)
     assert senses.resolve_noises(dun, [gob], hero, rng=Zero()) == [gob]
+
+
+# ---------------------------------------------------------------------------
+# AI02: a great blow on a band's leader shakes only the followers who see it,
+# and is said only when one did falter
+# ---------------------------------------------------------------------------
+
+def _band(leader, followers, bid='goblin_scouts'):
+    uid = f'{bid}@test'
+    for m, role in [(leader, 'leader')] + [(o, 'guard') for o in followers]:
+        m._band, m._band_id, m._band_role = uid, bid, role
+    for o in followers:
+        o._band_leader = leader
+
+
+def test_a_great_blow_shakes_only_the_followers_who_see_it(monkeypatch):
+    import war_bands
+    dun = room()
+    for y in range(1, 11):
+        dun.tiles[y][8] = WALL                    # a wall between the camp and the far side
+    lead = make('hobgoblin', 3, 5)
+    lead.max_hp = lead.hp = 100
+    near, asleep, beyond = make('goblin', 4, 5), make('goblin', 3, 6), make('goblin', 9, 5)
+    asleep.status_effects['sleeping'] = 300
+    _band(lead, [near, asleep, beyond])
+    monkeypatch.setattr(war_bands.random, 'random', lambda: 0.0)   # every one who sees it falters
+    line = war_bands.on_great_blow([lead, near, asleep, beyond], lead, 9, 50, dun)
+    assert line
+    assert near.has_effect('feared')
+    assert not asleep.has_effect('feared') and not beyond.has_effect('feared')
+
+
+def test_a_great_blow_that_frightens_no_one_is_not_said(monkeypatch):
+    import war_bands
+    dun = room()
+    lead = make('hobgoblin', 3, 5)
+    lead.max_hp = lead.hp = 100
+    skel = make('goblin', 4, 5)
+    skel.status_immune = ['feared']                # a follower that knows no fear
+    _band(lead, [skel], 'necro_procession')
+    monkeypatch.setattr(war_bands.random, 'random', lambda: 0.0)
+    assert war_bands.on_great_blow([lead, skel], lead, 9, 50, dun) == ''
+    assert not skel.has_effect('feared')
+
+
+# ---------------------------------------------------------------------------
+# AI04: the Tactical Mind's "he saw it decide" is the hero's own field of view
+# ---------------------------------------------------------------------------
+
+def test_the_mind_asks_the_heros_real_sight_when_the_game_has_looked():
+    import tactical_mind
+    dun = room()
+    hero = Hero(2, 2)
+    hero.get_sight_radius = lambda: 5
+    gob = make('goblin', 6, 6)                     # the corner of a 5-tile sight: a square's, not a round one's
+    was = tactical_mind.TURN.n
+    try:
+        tactical_mind.TURN.n = 40
+        assert tactical_mind.hero_sees(gob, hero, dun)          # the old guess: in sight
+        gob._hero_saw = (40, False)                              # the Game: out of his field of view
+        assert not tactical_mind.hero_sees(gob, hero, dun)
+        gob._hero_saw = (39, False)                              # last turn's look is no answer
+        assert tactical_mind.hero_sees(gob, hero, dun)
+    finally:
+        tactical_mind.TURN.n = was
+
+
+# ---------------------------------------------------------------------------
+# AI05: a wound bleeding is no blow: not "shot", not "caught as it runs"
+# ---------------------------------------------------------------------------
+
+def test_a_bleed_ticking_is_not_being_shot():
+    import under_fire
+    hero = Hero(5, 10)
+    orc = make('orc_warrior', 5, 5)
+    orc.max_hp = orc.hp = 100
+    under_fire.note(orc, hero)
+    orc.status_effects['bleeding'] = 5
+    orc.tick_effects()                             # the bleed takes its share
+    assert orc.hp < 100
+    assert not under_fire.note(orc, hero) and not under_fire.start_rush(orc, hero)
+    orc.take_damage(4)                             # an arrow
+    assert under_fire.note(orc, hero)
+
+
+def test_a_runner_beside_him_bleeding_is_not_caught_and_struck():
+    import morale
+    dun, hero = room(), Hero(5, 5)
+    gob = make('goblin', 5, 6)
+    gob.max_hp = gob.hp = 60
+    morale.start_flight(gob, hero, [gob])
+    gob.status_effects['bleeding'] = 5
+    gob.tick_effects()
+    morale.run(gob, hero, dun, [gob], set())
+    assert not int(gob.__dict__.get('_at_bay', 0) or 0)
+
+
+# ---------------------------------------------------------------------------
+# AI06: a blow beside it tells an eyeless creature where the hero is
+# ---------------------------------------------------------------------------
+
+def test_an_ooze_struck_by_a_hero_standing_still_strikes_back():
+    dun, hero = room(), Hero(5, 5)
+    jelly = make('ochre_jelly', 5, 6)
+    jelly.max_hp = jelly.hp = 200
+    senses.begin_turn(moved=True, guilty=False, floor=10)
+    assert senses.notice(jelly, hero, dun, [jelly], set())       # it felt his step
+    senses.begin_turn(moved=False, guilty=False, floor=10)
+    assert not senses.notice(jelly, hero, dun, [jelly], set())   # he stands still: its tremor fails
+    jelly.take_damage(5)                                          # he strikes it
+    assert senses.notice(jelly, hero, dun, [jelly], set())
+    assert jelly._sensed_by == 'touch'
+    far = make('ochre_jelly', 5, 9)
+    far.take_damage(5)                                            # an arrow from afar: no touch
+    assert not senses.notice(far, hero, dun, [far], set())
+
+
+# ---------------------------------------------------------------------------
+# On a staged Game
+# ---------------------------------------------------------------------------
+
+import pygame  # noqa: E402
+
+from test_bugbash_wb_e import make_game, open_floor, place_monster  # noqa: E402,F401
+
+
+def test_a_mending_done_out_of_sight_is_not_told_later(make_game):
+    """AI03: a caster's book mends a friend out of the hero's sight; the
+    mending was not cleared, and the next turn he saw the caster the game
+    said "chants and heals" of a turn it mended no one."""
+    g, h = make_game()
+    p = g.player
+    p.hp = p.max_hp = 500
+    open_floor(g, p.x, p.y, 3)
+    priest = place_monster(g, 'goblin', 2)
+    friend = place_monster(g, 'goblin', 3)
+    for m in (priest, friend):
+        m.status_effects.pop('sleeping', None)
+        m.stationary = True                       # they keep where they are
+    g.visible = set()                             # he sees nothing this turn
+    priest._heal_target, priest._heal_amount = friend, 5   # as faction.heal leaves it
+    g._sees_monster = lambda m: False
+    g._do_monster_turns()
+    assert priest._heal_target is None
+    del g._sees_monster
+    g._refresh_fov()
+    h.said()
+    h.wait()
+    assert not any('heals' in s for s in h.said())
+
+
+def test_the_game_tells_the_mind_what_the_hero_saw(make_game):
+    """AI04: before each creature's turn the Game notes whether the hero saw
+    it (tactical_mind.hero_sees reads it: his real field of view)."""
+    g, h = make_game()
+    p = g.player
+    open_floor(g, p.x, p.y, 3)
+    gob = place_monster(g, 'goblin', 2)
+    gob.status_effects.pop('sleeping', None)
+    g._refresh_fov()
+    turn = g.turn_count
+    g._do_monster_turns()
+    assert gob._hero_saw == (turn, True)

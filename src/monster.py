@@ -1452,6 +1452,7 @@ class Monster:
             # lurker, ends no hiding (Gone Again) and breaks no chant or spell.
             if not self.__dict__.get('_dot_tick'):
                 self._struck = True          # a calmed locust remembers (Locust Charm)
+                self._felt_blow = True       # it feels where a blow beside it came from (senses.notice)
                 self.spring()                # a struck lurker gives itself away
                 if self.__dict__.get('_chanting'):
                     summoning.spoil(self)    # a blow breaks a chant (src/summoning.py)
@@ -1475,6 +1476,10 @@ class Monster:
         actual = max(0, amount)
         hp_before = self.hp
         self.hp = max(0, self.hp - actual)
+        if self.__dict__.get('_dot_tick') and hp_before > self.hp:
+            # What a wound ticking took (a bleed, a burn, poison): the tests
+            # of "struck since its last turn" leave it out (blow_hp).
+            self.__dict__['_dot_lost'] = int(self.__dict__.get('_dot_lost', 0) or 0) + hp_before - self.hp
         if actual > 0 and DAMAGE_OBSERVER is not None:
             try:
                 DAMAGE_OBSERVER(self, actual, min(actual, hp_before))

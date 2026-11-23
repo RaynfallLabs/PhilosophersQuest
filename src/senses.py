@@ -785,10 +785,17 @@ def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:
     the turn on its own business or on looking for him."""
     how = perceive(m, player, dungeon)
     heard = m.__dict__.pop('_heard', None)
+    felt = m.__dict__.pop('_felt_blow', False)
     tracking = bool(m.__dict__.get('_tracking'))
     hidden = how is None and _hidden(m, player, dungeon)
     if how is None and not hidden and heard and tracking and heard[2] == 'step':
         how = 'hearing'                # it hears him going round the corner
+    if how is None and not hidden and felt and _cheb(m.x, m.y, player.x, player.y) <= 1:
+        # A blow landed on it with the hero beside it: it feels where it came
+        # from. An eyeless ooze or vine (blind, its tremor sense failing while
+        # he stands still) lost the hero who stood hacking at it, and spent
+        # half its turns beside him looking about for him.
+        how = 'touch'
     if how:
         if not tracking:
             _first_line(m, how, dungeon, player)
@@ -825,8 +832,9 @@ def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:
         # for him to come out (the Tactical Mind: src/tactical_mind.py); it
         # does not walk in to look for him until its patience runs out. A
         # wound or a fight's noise ends the watch: it answers the shot.
+        import under_fire
         hp_was = m.__dict__.get('_tm_hp')
-        struck = hp_was is not None and m.hp < int(hp_was)
+        struck = hp_was is not None and under_fire.blow_hp(m) < int(hp_was)   # (a bleed is no blow)
         # One in cover from his bow (Into Cover) keeps it at the twang of
         # the bow: that is what it hides from.
         calm = ('step', 'shot') if m.__dict__.get('_tm_cover') else ('step',)
