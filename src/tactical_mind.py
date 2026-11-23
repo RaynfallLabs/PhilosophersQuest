@@ -204,6 +204,7 @@ class Ctx:
         self.leader = None
         self.allies = []
         self.occ = set()
+        self.cover = None            # path to a tile out of his line of fire
 
 
 def _clear(ax, ay, bx, by, dungeon) -> bool:
@@ -319,7 +320,7 @@ def _new_fight(m) -> None:
     seen = d.get('_tm_seen')
     if TURN.n and seen is not None and TURN.n - int(seen) > NEW_FIGHT:
         for k in ('_tm_wait', '_tm_edge', '_tm_door', '_tm_bait', '_tm_dark_strike', '_tm_plan',
-                  '_tm_watch'):
+                  '_tm_watch', '_tm_cover', '_tm_covered', '_tm_cover_struck'):
             d.pop(k, None)
     m._tm_seen = TURN.n
 
@@ -427,6 +428,20 @@ def snapshot(m, player, dungeon, all_monsters, extra_occupied):
         if leader is not None and leader is not m and _cheb(m.x, m.y, leader.x, leader.y) > 2:
             view['rally_tile'] = True
             ctx.leader = leader
+    # Into Cover (src/under_fire.py): shot from afar, a thinking kind that
+    # fights hand to hand ducks out of his line of fire (a charger rushes).
+    import under_fire
+    view['under_fire'] = under_fire.under_fire(m)
+    if (tactics.cover_weight(mind) > 0 and getattr(m, 'ai_pattern', '') == 'aggressive'
+            and not under_fire.rusher(m) and not adjacent and 'take_cover' not in OFF):
+        in_sight = hero_sees(m, player, dungeon)
+        view.setdefault('in_his_sight', in_sight)
+        view['in_cover'] = bool(d.get('_tm_cover'))
+        view['covered'] = int(d.get('_tm_covered', 0) or 0)
+        view['cover_struck'] = bool(d.get('_tm_cover_struck'))
+        if view['under_fire'] and in_sight and not has_lane:
+            ctx.cover = _cover_path(m, player, dungeon, occ)
+            view['cover_tile'] = ctx.cover is not None
     return tactics.View(**view), ctx
 
 
@@ -496,6 +511,45 @@ def _dark(m, player, dungeon, occ, ctx) -> int:
             best = min(sorted(paths), key=lambda t: (len(paths[t]), _cheb(t[0], t[1], *hero)))
             ctx.dark = list(paths[best])
     return hs
+
+
+def _cover_path(m, player, dungeon, occ):
+    """A path to a tile within cover_reach steps that the hero cannot see
+    (round a corner, or past his light), no more than cover_slack tiles
+    farther from him than it stands, never beside him or on a danger; the
+    shortest, then the nearest him. None when there is none."""
+    import packs
+    import senses
+    cfg = tactics.data().get('under_fire') or {}
+    reach = int(cfg.get('cover_reach', 2))
+    slack = int(cfg.get('cover_slack', 1))
+    try:
+        hs = int(player.get_sight_radius())
+    except Exception:
+        hs = 5
+    hero = (player.x, player.y)
+    here = _cheb(m.x, m.y, *hero)
+    ok = packs._ok_fn(dungeon)
+    goals = []
+    for y in range(m.y - reach, m.y + reach + 1):
+        for x in range(m.x - reach, m.x + reach + 1):
+            if (x, y) in occ or not ok(x, y):
+                continue
+            dd = _cheb(x, y, *hero)
+            if dd < 2 or dd > here + slack:
+                continue
+            if dd <= hs and senses.clear_view(player.x, player.y, x, y, dungeon):
+                continue
+            if hazard_here(dungeon, x, y):
+                continue
+            goals.append((x, y))
+    if not goals:
+        return None
+    paths = packs.bfs((m.x, m.y), ok, occ, goals, reach, 80)
+    if not paths:
+        return None
+    best = min(sorted(paths), key=lambda t: (len(paths[t]), _cheb(t[0], t[1], *hero)))
+    return list(paths[best])
 
 
 def _door_path(m, player, dungeon, occ):
@@ -832,7 +886,16 @@ def band_order(m, player, dungeon, all_monsters) -> str:
             band['fell_back'] = True
             band['fall_back_until'] = TURN.n + int(o.get('fall_back_turns', 6))
         else:
-            order = 'screen'
+            import under_fire
+            if under_fire.under_fire(lead):
+                # Shot at, he no longer hangs back behind his guards: the
+                # band comes on (src/under_fire.py).
+                order = ''
+                text = ((tactics.data().get('under_fire') or {}).get('lines') or {}).get('drop_screen', '')
+                if text and band.get('order') == 'screen' and ai_lines.once(lead, 'drop_screen'):
+                    ai_lines.say(lead, ai_lines.fill(lead, text), '', 'warning')
+            else:
+                order = 'screen'
     was = str(band.get('order') or '')
     band['order'] = order
     band['order_turn'] = TURN.n
@@ -951,6 +1014,7 @@ def turn(m, player, dungeon, all_monsters, extra_occupied=None, pattern: str = '
         m._tm_plan = None
         m._tm_last = 'attack'
         d.pop('_tm_watch', None)
+        d.pop('_tm_cover', None)             # it comes out of cover
         if view.adjacent:
             m._tm_wait = 0
         return None
@@ -991,10 +1055,11 @@ def _say_why_it_comes(m, view, sp, dungeon) -> None:
 def _stepped(m, path, ctx, player, dungeon) -> bool:
     """One step of ``path`` (a fast one two); True if it moved."""
     import packs
+    import under_fire
     if not path:
         return False
     got = packs._step_along(m, list(path), ctx.occ, player, dungeon,
-                            2 if int(getattr(m, 'speed', 10) or 10) >= 14 else 1)
+                            under_fire.steps(m, 2 if int(getattr(m, 'speed', 10) or 10) >= 14 else 1))
     return got is not None
 
 
@@ -1097,6 +1162,8 @@ def execute(opt, m, player, dungeon, all_monsters, extra_occupied, view, ctx):
         if not senses.step_toward(m, dungeon, (lead.x, lead.y), all_monsters, extra_occupied, player):
             return None
         return False
+    if opt == 'take_cover':
+        return _take_cover(m, player, dungeon, all_monsters, extra_occupied, view, ctx)
     if opt == 'bait':
         b = ctx.bait
         if not b:
@@ -1151,6 +1218,34 @@ def _leave_light(m, player, dungeon, all_monsters, extra_occupied, view, ctx):
             return True
         return None
     _waited(m)
+    return False
+
+
+def _take_cover(m, player, dungeon, all_monsters, extra_occupied, view, ctx):
+    """Into Cover: in his sight and shot at, it ducks out of his line of
+    fire and keeps its post there (senses.notice: the twang of his bow does
+    not draw it out); round the corner it waits, and when he comes within
+    two tiles it steps out and strikes first (once a fight)."""
+    import senses
+    d = m.__dict__
+    if view.in_cover and (view.dist <= 2 or not view.in_his_sight):
+        if view.dist <= 2:
+            if (senses.step_toward(m, dungeon, (player.x, player.y), all_monsters, extra_occupied, player)
+                    and m._adjacent_to(player)):
+                m._tm_cover_struck = True
+                d.pop('_tm_cover', None)
+                return True
+            return None
+        _waited(m)
+        return False
+    if not ctx.cover or not _stepped(m, ctx.cover, ctx, player, dungeon):
+        return None
+    m._tm_cover = True
+    m._tm_covered = int(d.get('_tm_covered', 0) or 0) + 1
+    m._tm_watch = max(1, int(tactics.data().get('patience', 10)) - int(d.get('_tm_wait', 0) or 0))
+    text = ((tactics.data().get('under_fire') or {}).get('lines') or {}).get('take_cover', '')
+    if text and ai_lines.once(m, 'take_cover'):
+        ai_lines.say(m, ai_lines.fill(m, text), '', 'warning')
     return False
 
 
@@ -1311,6 +1406,12 @@ def bestiary_lines(kind) -> list:
         import wards
         if any(wards.is_missile(a) for a in kd.get('attacks') or () if isinstance(a, dict)):
             out.append(flags['archer'])
+    # Into Cover: a thinking kind that fights hand to hand, shot at.
+    import under_fire
+    cover = (tactics.data().get('under_fire') or {}).get('bestiary', '')
+    if (mind and cover and tactics.cover_weight(mind) > 0 and kd.get('ai_pattern') == 'aggressive'
+            and not under_fire.rusher(k)):
+        out.append(cover)
     return out
 
 

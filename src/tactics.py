@@ -28,6 +28,9 @@ nothing is worth more than striking, today's code runs unchanged.
   hold_door    a hurt soldier backs into a doorway
   bait         one that knows the floor's snares waits beyond one
   flank        it comes round to a side of the hero away from its friends
+  take_cover   shot from afar with no shot of its own, it ducks out of his
+               line of fire, waits round the corner and strikes first when he
+               comes within two tiles (minds.json `under_fire`)
 
 ``decide`` is deterministic: no random draw at all, ties by the order above.
 A chosen option other than attack is kept ``commit_turns`` turns (no
@@ -42,7 +45,8 @@ import json
 from dataclasses import dataclass
 
 OPTIONS = ('attack', 'rotate', 'feint', 'focus_pet', 'cast', 'screen', 'fall_back',
-           'hold_choke', 'wait_allies', 'leave_light', 'hold_door', 'bait', 'flank')
+           'hold_choke', 'wait_allies', 'leave_light', 'hold_door', 'bait', 'flank',
+           'take_cover')
 # The options a creature keeps with the hero beside it: every other one
 # gives way to a blow.
 KEEP_ADJACENT = ('rotate', 'feint', 'focus_pet')
@@ -73,6 +77,12 @@ def spec(mind) -> dict:
 
 def weight(sp: dict, opt: str) -> float:
     return float((sp.get('weights') or {}).get(opt, 0.0) or 0.0)
+
+
+def cover_weight(mind) -> float:
+    """How readily a mind takes cover under fire (minds.json `under_fire`)."""
+    w = ((data().get('under_fire') or {}).get('weights') or {}).get(mind or '', 0.0)
+    return float(w or 0.0)
 
 
 @dataclass(frozen=True)
@@ -118,6 +128,11 @@ class View:
     habit_area: int = 0
     habit_kiter: int = 0
     habit_rest: int = 0
+    under_fire: bool = False        # shot from afar lately (src/under_fire.py)
+    cover_tile: bool = False        # a tile out of his line of fire it can reach now
+    in_cover: bool = False          # it took cover and he cannot see it where it stands
+    covered: int = 0                # times it has taken cover this fight
+    cover_struck: bool = False      # it has struck from cover this fight
 
 
 def rules() -> dict:
@@ -173,7 +188,8 @@ def activation(opt: str, v: View, sp: dict) -> float:
         if v.order != 'screen' or not v.screen_tile or press or v.engaged:
             return 0.0
         if v.role == 'leader':
-            return 1.0 if (v.dist >= 2 and v.waited < patience) else 0.0
+            # Shot at, he stops hanging back behind them.
+            return 1.0 if (v.dist >= 2 and v.waited < patience and not v.under_fire) else 0.0
         return 1.0 if (v.role == 'guard' and v.dist >= 3) else 0.0
     if opt == 'fall_back':
         # Those well clear of the fight gather round the captain; the ones
@@ -224,6 +240,20 @@ def activation(opt: str, v: View, sp: dict) -> float:
         if v.engaged:
             return 1.3 if v.habit_area >= 1 else 1.0
         return 0.0
+    if opt == 'take_cover':
+        # Round the corner it waits for him, and strikes first when he comes
+        # within two tiles; in his sight and shot at, it ducks out of it.
+        if press:
+            return 0.0
+        if v.in_cover:
+            if v.dist <= 2:
+                return 1.6 if not v.cover_struck else 0.0
+            if not v.in_his_sight:
+                return 1.0 if v.waited < patience else 0.0
+        if (not v.under_fire or not v.cover_tile or v.has_lane
+                or v.covered >= int((rules().get('under_fire') or {}).get('cover_moves', 2))):
+            return 0.0
+        return 1.0
     return 0.0
 
 
@@ -234,7 +264,10 @@ def scores(v: View, sp: dict) -> dict:
         a = activation(opt, v, sp)
         if a <= 0:
             continue
-        w = 1.0 if opt == 'attack' and 'attack' not in (sp.get('weights') or {}) else weight(sp, opt)
+        if opt == 'take_cover':
+            w = cover_weight(v.mind)
+        else:
+            w = 1.0 if opt == 'attack' and 'attack' not in (sp.get('weights') or {}) else weight(sp, opt)
         s = a * w
         if opt == 'attack' and v.adjacent:
             s += _r('adjacent_bonus', 1.0)

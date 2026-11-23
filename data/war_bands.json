@@ -586,5 +586,32 @@
     "shooter": "one archer",
     "caster": "one caster",
     "healer": "one healer"
+  },
+  "leader_falls": {
+    "_doc": "When a 'rout' band's leader falls (or begs), each follower takes a morale test (src/morale.py: 2d10 over its kind's morale less `penalty` breaks it), and breaks its own way (a goblin runs for his friends and comes back with them, a beast bolts...; cornered or caught as it runs, it turns at bay). If `successor`, the band's biggest guard who passes his own test (no penalty) first takes up the lead: the band is his, and the rest test at `rallied_penalty`. The line said is 'rally' (someone took the lead), 'hold' (no one did, and not all broke) or the band's own 'rout_line' (every one broke). {The} is the new leader in 'rally', the fallen one in 'hold'. 'bands' holds a band's own numbers and lines, by its lore: goblins are bold only in a crowd, a cult's faithful are fanatics, hounds without their master's horn hunt no more.",
+    "penalty": 3,
+    "rallied_penalty": 1,
+    "successor": true,
+    "lines": {
+      "rally": "{The} takes up the lead, and the band rallies!",
+      "hold": "The band fights on without {the}!"
+    },
+    "bands": {
+      "goblin_scouts": {"penalty": 3, "lines": {"rally": "The goblins rally around {the}!", "hold": "The goblins shriek for {the} and fight on!"}},
+      "goblin_raiders": {"penalty": 3, "lines": {"rally": "The goblins rally around {the}!", "hold": "The goblins howl for {the} and fight on!"}},
+      "gnoll_pack": {"penalty": 2, "lines": {"rally": "{The} howls, and the pack follows {him} now!"}},
+      "bandit_crew": {"penalty": 3, "lines": {"rally": "{The} takes charge: \"Stand, lads!\""}},
+      "footpads": {"penalty": 4, "successor": false},
+      "cult_circle": {"penalty": 1, "lines": {"rally": "{The} takes up the chant, and the faithful hold!"}},
+      "giant_hunt": {"penalty": 5, "successor": false},
+      "fae_hunt": {"penalty": 2}
+    }
+  },
+  "great_blow": {
+    "_doc": "A great blow on a band's living leader shakes the followers who see it (war_bands.on_great_blow): at least `chain` answers in the chain AND at least `share` of his health in the one blow (a blow that staggers him, not an ordinary one: the old rule was any chain of 6, most of a kid's chains). Each follower falters (frightened `turns` turns) `falter` of the time.",
+    "chain": 8,
+    "share": 0.3,
+    "falter": 0.5,
+    "turns": 4
   }
 }

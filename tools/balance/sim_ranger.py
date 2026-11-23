@@ -31,7 +31,9 @@ revisited, so a bow can carry a whole run). Measurement only: with `ar_bow` 0
 Measured for this model, 2026-11-21, on the real generator's floors 5-95: from
 a room's doorway a monster stands MEET_TILES away (mean about 5); the hero
 sees it no farther than his sight (5 at PER 10) and shoots no farther than the
-bow's reach. He gets the shots that fit while it walks in.
+bow's reach. He gets the shots that fit while it walks in; a charger
+(src/under_fire.py, 2026-11-22) answers the first arrow with its rush, two
+strides a turn for its burst.
 
 Not modelled: cover and walls between, a shot into the dark, noise, habits
 (They Learn Your Tricks), arrows of the named uniques' own effects.
@@ -494,6 +496,12 @@ def _shots_before_contact(run, group, tiles: int) -> int:
     steps = max(0.0, (seen - 1) * float(k(run, 'ar_open')))
     if steps <= 0:
         return 0
+    # A charger answers the first arrow with its rush (src/under_fire.py,
+    # 2026-11-22): two strides a turn for its rush, then one.
+    import under_fire
+    if any(under_fire.rusher(m) and not ds.is_named(m) for m in walkers):
+        burst = int(under_fire.rules().get('rush_turns', 3))
+        steps = steps / 2.0 if steps <= 2 * burst else burst + (steps - 2 * burst)
     n = min(float(MAX_VOLLEY), steps * float(p.get_speed()) / max(1.0, float(fastest)))
     if getattr(bow, 'weapon_class', '') == 'crossbow':
         n /= 2.0

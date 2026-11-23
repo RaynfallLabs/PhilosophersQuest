@@ -76,9 +76,11 @@ him on the room's side, in the queue's order, nearest first.
                 of its side falls and its hurt kin that saw it check their
                 nerve (the real morale.kin_fell, as Game._ai_on_kill); a
                 band's leader falls or yields and the band answers
-                (war_bands.on_death: the rout, the crumble, the quarrel; half
-                the band down, some of the rest lose heart); a chain of
-                war_bands' nerve_chain (6) or more on a living leader shakes
+                (war_bands.on_death: a rout band's followers each test their
+                nerve and the biggest guard may take up the lead, 2026-11-22;
+                the crumble, the quarrel; half the band down, some of the
+                rest lose heart); a great blow on a living leader (war_bands
+                great_blow: a chain of 8 that takes 30% of his health) shakes
                 his followers (war_bands.on_great_blow). The followers'
                 `_band_leader` is set to the leader in this fight: it was the
                 floor's cached creature (copy.copy of the snapshot), which
@@ -485,7 +487,9 @@ def deaths(run, active: list, queue: list) -> None:
                 _fs(run, 'grp_kin_checks', n)
         if d.get('_band') and not d.get('_band_answered'):
             d['_band_answered'] = True
-            out = war_bands.on_death(everyone, m)
+            # Each follower tests his nerve when the leader falls, and the
+            # biggest guard may take up the lead (war_bands.leader_falls).
+            out = war_bands.on_death(everyone, m, run.p)
             if out.get('effect'):
                 _fs(run, 'grp_band_' + str(out['effect']))
             for f in out.get('fall') or ():
@@ -504,7 +508,7 @@ def deaths(run, active: list, queue: list) -> None:
             continue
         was = st.lead_hp.get(id(m), m.hp)
         if chain >= need and m.hp < was:
-            if war_bands.on_great_blow(everyone, m, chain):
+            if war_bands.on_great_blow(everyone, m, chain, was - m.hp):
                 _fs(run, 'grp_great_blows')
         st.lead_hp[id(m)] = m.hp
 

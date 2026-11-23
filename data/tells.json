@@ -5,10 +5,10 @@
   "order": ["petrify_lethal", "gaze_paralyze", "paralyzed", "petrifying", "forgetting", "charmed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
             "silenced", "stunned", "immobilized", "hold_swallow", "hold_constrict", "hold_drag", "aura_fear", "casts_curse", "pack_feast", "pack_swarm", "pack_hamstring", "splits", "death_throes", "revive_once_on_death", "drain_heals_self", "life_drain",
             "weakened", "rust", "corroding", "diseased", "poisoned", "regeneration", "light_shy", "aura_heat", "aura_cold", "aura_stench", "second_shape", "casts_ward", "casts_dispel", "casts_darkness", "casts_escape", "carries_fire", "carries_potion", "territorial", "bargains", "skittish", "summon_kind", "heals_allies", "pull_chance", "breath_recharge", "sp_drain", "snuffs_light",
-            "can_charge", "shove", "knocked_down", "pack_harry", "pack_sling", "pack_traps", "pack_bay", "raises_alarm", "pack_dart", "pack_snatch",
+            "can_charge", "rush", "shove", "knocked_down", "pack_harry", "pack_sling", "pack_traps", "pack_bay", "raises_alarm", "pack_dart", "pack_snatch",
             "can_phase_blink", "relurks", "hides_in_dark", "stalker", "bleeding", "burning", "slowed", "hallucinating",
             "countdown_voice", "metal_eater", "corpse_hop", "parley", "appeased_by", "on_stunned", "hidden_overhead", "weak_spot_chain", "sheds_skin", "carry_off", "ranged_pull", "gold_gatherer", "steal_offering", "fumbling", "strangulation", "heal_blocked", "talisman",
-            "mind_cunning", "mind_soldier", "mind_trickster", "mind_caster", "dark_edge", "knows_traps", "band_orders"],
+            "mind_cunning", "mind_soldier", "mind_trickster", "mind_caster", "dark_edge", "knows_traps", "band_orders", "regroups"],
   "kin_lead": "{He} is one of {kin}.",
   "far_counter": "{He} can reach you from across a room, but only where {he} can see you: keep stone between you until you can close in.",
   "status_words": {"feared": "frightened", "charmed": "charmed", "confused": "confused",
@@ -17,6 +17,18 @@
                    "diseased": "sickened", "burning": "set alight", "slowed": "slowed",
                    "petrifying": "turned to stone", "weakened": "weakened", "cursed": "cursed"},
   "effects": {
+    "rush": {
+      "sign": "{The} stands hunched forward, weight on {his} toes, ready to run at you.",
+      "cue": "{The} charges when shot at.",
+      "does": "Shoot at {him} from afar and {he} rushes you, two strides a turn for a few turns; then {he} must catch {his} breath before {he} can rush again.",
+      "counter": "Let {him} come to you round a corner or through a doorway, or slow {him} before you start shooting."
+    },
+    "regroups": {
+      "sign": "{The} keeps glancing back toward {his} friends.",
+      "cue": "{The} runs for friends when beaten, and brings them back.",
+      "does": "Beaten, {he} runs for the nearest of {his} own side and comes back with more of {his} kind; caught as {he} runs, {he} turns at bay.",
+      "counter": "Finish {him} before {he} reaches them, or be ready for more when {he} comes back."
+    },
     "petrify_lethal": {
       "sign": "Around {the} the stone has shapes in it: a hand, a shoulder, an open mouth.",
       "cue": "{The} can turn you to stone, and the stone kills.",

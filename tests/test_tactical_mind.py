@@ -1118,7 +1118,8 @@ def test_every_mind_has_its_weights_lines_and_bestiary_sentence():
         assert sp['bestiary'] and sp['weights'].get('attack') == 1.0, mind
         for opt in sp['weights']:
             assert opt in tactics.OPTIONS, (mind, opt)
-    lines = MINDS['lines']
+    # Into Cover keeps its line with its numbers (minds.json under_fire).
+    lines = dict(MINDS['lines'], **((MINDS.get('under_fire') or {}).get('lines') or {}))
     for opt in tactics.OPTIONS:
         if opt != 'attack':
             assert any(k == opt or k.startswith(opt) for k in lines) or opt in (
@@ -1157,7 +1158,9 @@ def test_the_tells_of_a_thinking_creature_are_reachable_and_last():
 
 
 def test_the_bestiary_says_the_mind_in_one_sentence():
-    assert tm.bestiary_lines('hobgoblin') == [MINDS['minds']['soldier']['bestiary']]
+    # Its mind first, then how it answers being shot (Into Cover).
+    assert tm.bestiary_lines('hobgoblin') == [MINDS['minds']['soldier']['bestiary'],
+                                              MINDS['under_fire']['bestiary']]
     assert MINDS['flags']['dark_edge'] in tm.bestiary_lines('drow_warrior')
     assert MINDS['flags']['knows_traps'] in tm.bestiary_lines('kobold')
     assert tm.bestiary_lines('wolf') == []

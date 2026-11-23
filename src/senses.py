@@ -821,7 +821,10 @@ def notice(m, player, dungeon, all_monsters, extra_occupied) -> bool:
         # wound or a fight's noise ends the watch: it answers the shot.
         hp_was = m.__dict__.get('_tm_hp')
         struck = hp_was is not None and m.hp < int(hp_was)
-        if struck or (heard and heard[2] != 'step'):
+        # One in cover from his bow (Into Cover) keeps it at the twang of
+        # the bow: that is what it hides from.
+        calm = ('step', 'shot') if m.__dict__.get('_tm_cover') else ('step',)
+        if struck or (heard and heard[2] not in calm):
             m._tm_watch = 0
         else:
             m._tm_watch = int(m._tm_watch) - 1

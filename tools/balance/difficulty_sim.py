@@ -3937,6 +3937,12 @@ class Run(_MMMagicSim):
                     free = 0
             elif m.speed >= FAST_SPEED or pat in ('ambush', 'mimic'):
                 free = 1
+            # A band's goblin slings stones as the hero closes, its stones at
+            # most (packs.band_sling, 2026-11-22), then comes on.
+            slinger = opening and packs_mod.band_slinger(m) and packs_mod._ranged_attacks(m)
+            if slinger:
+                free = max(free, min(int(self.knobs['ranged_shots']),
+                                     int((packs_mod.data().get('band_sling') or {}).get('stones', 3))))
             free = sim_groups.arrival(self, m, free, opening)   # grp_speed: the double step's arrival
             # Its opener (monster.OPENER_WIND_UP, 2026-11-19): the first
             # blow is its signature attack, before the hero strikes. (A gaze,
@@ -3954,7 +3960,9 @@ class Run(_MMMagicSim):
             for _ in range(free):
                 if p.hp <= 0 or not m.alive:
                     break
-                if pat in RANGED_PATTERNS or pat == 'dragon':
+                if slinger:
+                    m._pack_blow = random.choice(packs_mod._ranged_attacks(m))
+                if pat in RANGED_PATTERNS or pat == 'dragon' or slinger:
                     ax, ay = m.x, m.y
                     m.x, m.y = 9, 5              # at range: attack() picks a ranged blow
                     self._monster_attack(m)

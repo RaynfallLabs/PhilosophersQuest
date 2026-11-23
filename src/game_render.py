@@ -134,6 +134,14 @@ def monster_trait_lines(mdef: dict, known: bool = True) -> list:
         # How it thinks (the Tactical Mind, src/tactical_mind.py).
         import tactical_mind as _tm
         out.extend(_tm.bestiary_lines(kind))
+        # Shot at, a charger rushes (src/under_fire.py); and its nerve, by
+        # its kind's lore (src/morale.py).
+        import under_fire as _uf
+        import morale as _morale
+        out.extend(_uf.bestiary_lines(kind))
+        nerve = _morale.bestiary_line(kind)
+        if nerve and not mdef.get('fearless'):
+            out.append(nerve)
     return out
 
 

@@ -387,10 +387,16 @@ def test_351_e02_the_band_breaks_after_its_leader_falls(make_game, monkeypatch):
     g._refresh_fov()
     h.said()
     said = blow(h, lead, 3)
+    # Since 2026-11-22 the goblin tests his nerve, or takes up the lead
+    # (war_bands.leader_falls): the band's line is one of its three.
+    from monster import fill
+    spec = war_bands.leader_falls_spec('goblin_scouts')
     rout = war_bands.data()['bands']['goblin_scouts']['rout_line']
-    assert 'The Hobgoblin is slain!' in said and rout in said, said
-    assert said.index('The Hobgoblin is slain!') < said.index(rout), said
-    assert gob.has_effect('feared')
+    lines = [rout, fill(gob, spec['lines']['rally']), fill(lead, spec['lines']['hold'])]
+    band_said = [t for t in said if t in lines]
+    assert 'The Hobgoblin is slain!' in said and band_said, said
+    assert said.index('The Hobgoblin is slain!') < said.index(band_said[0]), said
+    assert not gob.has_effect('feared')
     no_errors(h)
 
 

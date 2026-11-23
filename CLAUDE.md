@@ -74,6 +74,7 @@ src/
   tactical_mind.py    - The Tactical Mind in play: who thinks, the View, the plan carried out, a band leader's orders, the feint, focus on a hurt pet
   lanes.py            - Archers Find a Lane: each missile's reach, a lane past its friends, a step back, no walking into melee
   habits.py           - They Learn Your Tricks: what a side SAW the hero do on this floor (corridors, blasts, kiting, resting)
+  under_fire.py       - Answers Being Shot: hurt from afar, a charger rushes (two strides a turn), a thinking kind takes cover, a band's goblins sling back
   # Monster behaviour, first wave (AI-1, 2026-11-19): small pure modules, numbers and lines in data/monster_ai.json
   kind_data.py        - A kind's own fields where the Monster keeps no copy; data/monster_ai.json; the behaviours' tells
   ai_lines.py         - What a behaviour leaves for the Game to say (seen / unseen)

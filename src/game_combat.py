@@ -2822,10 +2822,12 @@ class CombatMixin:
         if not getattr(monster, '_band', None) or getattr(monster, '_band_answered', False):
             return
         monster._band_answered = True
-        out = war_bands.on_death(self.monsters, monster)
+        # A rout band's followers each test their nerve (src/war_bands.py
+        # leader_falls); the biggest guard may take up the lead.
+        out = war_bands.on_death(self.monsters, monster, self.player)
         members = war_bands.members_of(self.monsters, monster._band)
         if out.get('line') and any(self._sees_monster(m) for m in members + [monster]):
-            self.add_message(out['line'], 'success')
+            self.add_message(out['line'], 'warning' if out.get('successor') is not None else 'success')
         for m in out.get('fall') or ():
             if m.alive:
                 m.hp = 0
@@ -2833,9 +2835,9 @@ class CombatMixin:
                 m._band_answered = True
                 self._on_monster_killed(m)
 
-    def _band_great_blow(self, monster, chain: int) -> None:
+    def _band_great_blow(self, monster, chain: int, damage=None) -> None:
         import war_bands
-        line = war_bands.on_great_blow(self.monsters, monster, chain)
+        line = war_bands.on_great_blow(self.monsters, monster, chain, damage)
         if line:
             self.add_message(line, 'success')
 
@@ -3173,7 +3175,7 @@ class CombatMixin:
             # A great blow on a war-band's leader shakes his followers
             # (src/war_bands.py): the maths decides the fight's nerve too.
             if chain and not killed and monster.alive:
-                self._band_great_blow(monster, chain)
+                self._band_great_blow(monster, chain, damage)
             if chain == 0:
                 self.add_message(
                     f"You swing wildly at {the_name(monster, lower=True)} and miss!", 'warning'

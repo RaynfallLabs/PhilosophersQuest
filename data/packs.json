@@ -208,5 +208,11 @@
       {"why": "Spirits and sea-folk who gather but fight each alone: the bell-ringing biloko, the Blue Men of the Minch, the Ponaturi ashore at night, the dog-headed psoglavci, and the relic guardians set in pairs.",
        "kinds": ["eloko", "blue_men_of_the_minch", "ponaturi", "psoglav", "bhuta_vahana_yanta"]}
     ]
+  },
+  "band_sling": {
+    "_doc": "A war-band's slinger (2026-11-22; packs.band_sling): a member of a band whose kind's pack has the sling trick (a goblin of the scouts or the raiders) keeps its pack's way with a sling though it keeps its band's orders: with the hero two to the sling's range off and a clear throw past its friends it pelts him rather than walk into his blows, `stones` stones at most, then drops its sling and comes on (into a narrow way, where the band will not follow him, it pelts him as long as it likes); never once its leader calls the charge or the fall-back. Beside him it uses its knife, as a pack's goblin does. The line is said once a fight for the band.",
+    "stones": 3,
+    "line": "The goblins pelt you with sling stones!",
+    "unseen": "Stones clatter round you out of the dark!"
   }
 }
