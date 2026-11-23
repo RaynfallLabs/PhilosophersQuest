@@ -52,7 +52,7 @@ mode, a T1-T5 stack of parts), the potency formulas, the Single tab.
 | `data/items/recipes.json` | The recipe book (§4). Built. |
 | `data/cooking_rules.json` | Every number a dish gives (§5), and `search`: what a person's body gives when searched (§8.1). Hand-written. |
 | `data/items/food.json` | Rations: eaten as they are, and called for by many dishes. `special: true` marks the special foods, each in a dish of its own (§4.4). |
-| `tools/content/kitchen/` | `build_kitchen.py` (the build and every check), the content (`kin_groups.txt`, `people.txt`, `ingredients_*.txt`, `dishes_*.txt`), the frozen structure (`structure.json`), `dish_art.py` (which picture each dish shows) and the record it writes (`dish_art.json`), snapshots of the old data it reads colours and trophy text from. Keeping the book cookable (§4.1): `part_freq.json` (how often each part turns up in a simulated run), `part_freq.py` (makes it), `part_rules.py` (the rules), `restructure.py` (edits the structure by them). |
+| `tools/content/kitchen/` | `build_kitchen.py` (the build and every check), the content (`kin_groups.txt`, `people.txt`, `ingredients_*.txt`, `dishes_*.txt`), the frozen structure (`structure.json`), `dish_art.py` (which picture each dish shows, §4.2), the catalogue of what each picture shows (`dish_pictures.json`), the record it writes (`dish_art.json`) and the dishes still waiting for a fair picture (`dish_art_no_match.json`), snapshots of the old data it reads colours and trophy text from. Keeping the book cookable (§4.1): `part_freq.json` (how often each part turns up in a simulated run), `part_freq.py` (makes it), `part_rules.py` (the rules), `restructure.py` (edits the structure by them). |
 
 The old generators (`tools/gen_recipes*.py`, `tools/gen_ingredients_v265.py`,
 `tools/tune_sp_soft_boundary.py`, `tools/balance/fix_broken_ingredients.py`,
@@ -281,29 +281,64 @@ accessory) and Soma (a potion). The hearty stew is an ordinary find, a meal alre
 
 ### 4.2 Pictures (`tools/content/kitchen/dish_art.py`)
 
-A dish's picture says three things at a glance:
+Brandon, 2026-11-22: "a Goblin Cheese grill looks like a steak, tomatoes, and sausage... we need
+to review our recipe art for consistency". The rule since then: **a dish's picture is of its
+form, and shows no food the dish does not contain.** Then, where a picture allows, it keeps the
+two cues every picture carries:
 
-- **its kind**, from its name: soup, stew, chowder, porridge, drink, pickle, roast, leg, steak,
-  sausage, skewer, stir-fry, fritter, flambe, platter, pie, dumpling, bread, jelly, pudding. The
-  last kind word of the name decides ("Kuo-Toa Brine Ham Stew" is a stew), after a few phrases
-  ("black pudding" is a sausage, "leg roast" a leg); a name with no kind word is a stew;
 - **its tier**, by the vessel: dark walnut wood (1), tawny clay (2), black iron (3), bright silver
   (4), jewelled gold (5). A drink is in a cup, mug, tankard or goblet of that material, a pickle
-  in a crock or jar;
+  in a keg or urn;
 - **its main benefit** (menu tab), by one colour cue: warm red for HP, amber-gold for SP, glowing
   deep blue for MP, emerald green for Stat, violet for Special (a broth, filling or sauce of that
-  colour, or berries, honey, leaves or flowers on solid food).
+  colour, or honey, leaves or flowers on solid food).
 
-The pictures are `assets/tiles/items/dish_<kind>_t<tier>_<tab>.png`. Stew and roast are drawn
-at all 25 tiers and tabs; the other kinds where the book has two or more dishes of them. A dish
-whose kind has no picture at its tier and tab shows the nearest kind drawn there
-(`dish_art.FALLBACK`: a pie a dumpling, then bread, then a roast; every chain ends at the stew),
-so its vessel and colour are always true. The pick reads only the name, tier and benefit: a
-renamed or new dish needs no table edit, and a new picture dropped into the folder under that
-name is used on the next build. Each legendary feast has its own `feast_<name>.png`
-(`dish_art.FEASTS`), drawn for it from its name, flavour and lore; the 14 trophy dishes keep
-their boss's `recipe_<id>.png`. The briefs are `tools/content/genart/briefs/items_dishes.json`
-and `items_feasts.json`.
+The pieces, all in `tools/content/kitchen/`:
+
+- **The catalogue** (`dish_pictures.json`): every `dish_<form>_t<tier>_<tab>.png` looked at one by
+  one: the form it looks like (a steak on a plate, a stew in a pot, a drink in a mug...), what you
+  can see on it (`sees`), the foods on it (meat, bone, sausage, a whole bird, cheese, bread,
+  tomatoes, mushrooms) and its colour garnish. A food marked `counts: false` is read as part of
+  the form (a stew's potatoes, a stir-fry's onion shreds); the herb sprig, the violets, the honey,
+  the blue glow and the red broth are the benefit's colour, never a food. The old HP pictures'
+  red berries read as tomatoes, so they count.
+- **The dish's form**, from its name (`FORM_WORDS`): the last form word decides ("Kuo-Toa Brine
+  Ham Stew" is a stew), after a few phrases that end a name ("black pudding" is a sausage, "mixed
+  grill" a fry-up, "leg roast" a leg; "Black Pudding Pie" stays a pie). A grill is a steak, a
+  posset a drink, a bake a roast or a crust, a fondue a pot of melted cheese; a supper, feast or
+  banquet names no form, so what it holds picks a stew or a platter. A name with no form word is
+  a stew.
+- **What it contains** (`contents`), from its ingredients: a creature's cut is meat on the bone, a
+  bone part is bone and marrow, a gland or bladder is offal (meat), but an ooze's sac and a ghost's
+  ectoplasm are slime, ichor is blood, a scale is scale, and a construct's core, a fey mote and an
+  elemental's jar are no flesh at all; a bird's cut may roast whole; a part that is a sausage
+  (Bugbear Bangers) is one. Staples are what they say (trail rations are jerky and hardtack). The
+  form makes its own: sausages of meat or blood for a sausage dish or a fry-up, bread for a
+  sandwich or toast.
+- **The choice** (`judge`): a picture is FAIR when its form is the dish's own or one that reads
+  the same (`FORM_FIT` rank 0 or 1: a platter as a carved roast, a bun as a stuffed roll, a jelly
+  as a pudding) and it shows no counted food the dish lacks. Of the fair ones the dish takes its
+  own tier (else the nearest), its own form, its own benefit (else the nearest colour: red and
+  amber stand for each other, blue and violet), then the picture showing most of what it holds.
+
+So the Goblin Cheese Grill (goblin gristle and hard cheese) shows the one grilled fillet with
+nothing beside it, not the steak, sausage and tomatoes; a blood pottage shows a meatless pottage;
+an HP dish whose form's red pictures all have tomatoes shows that form's amber or green one.
+A dish with **no fair picture** (a meatless sandwich, a stir-fry of mushrooms or vines, a flambe
+of ichor, a cheese board) shows the least wrong one (a near stand-in such as fritters for a
+stir-fry costs less than a food it lacks; a far one, a dumpling for a sandwich, costs more) and
+is listed in `dish_art_no_match.json` with what its own picture should show; its `wanted` counts
+the dishes per form, tier and benefit that show another form, tier or benefit today: the list
+for new art (a steak with no sausage at every tier first). The list only shrinks.
+
+The rule reads only the name, ingredients, tier and benefit: a new or renamed dish needs no table
+edit (`build_kitchen.py` calls it), and a new picture is used once it has a catalogue row.
+`py tools/content/kitchen/dish_art.py` prints what it would change; `--write` re-places every
+dish and writes `recipes.json` `art`, the record `dish_art.json` and the no-match list. Each
+legendary feast has its own `feast_<name>.png` (`dish_art.FEASTS`), drawn for it from its name,
+flavour and lore; the 14 trophy dishes keep their boss's `recipe_<id>.png`; a song's dish its
+song's. The briefs are `tools/content/genart/briefs/items_dishes.json` and `items_feasts.json`;
+the review sheets are `DISH_ART_REVIEW_2026_11_22_*.png` in the project root.
 
 ### 4.5 The two low rungs (2026-11-22)
 
@@ -728,8 +763,11 @@ lines and chip, the learned dish under Building Toward, its art, withheld).
 `tests/test_caviar_and_tater_tots.py`: the two rare foods and their lines and prices, the dish on
 the Special tab once both are held, half damage while the song plays and not after, the real-time
 clock, F5, a dance's hold, a save mid-song, a fall, Robyn's start, the achievement.
-`tests/test_dish_art.py`: every picture exists at 64 px, feasts own theirs, a shared picture is
-one tier and one tab, names say their kind, any renamed dish finds a true vessel and colour.
+`tests/test_dish_art.py`: every picture exists at 64 px and has a catalogue row, feasts own
+theirs, every dish shows its form and no food it lacks (the no-match list aside, which is exactly
+the dishes without a fair picture and only shrinks), the Goblin Cheese Grill, no tomatoes, tier
+and benefit kept where a fair picture has them, names say their form, a new dish placed by the
+rule.
 `tests/test_cooking_rulings_2026_11_16.py`: every stat at every tier from parts got at that depth
 (§4.3); the people list, no part of a person anywhere, the search (no question, one or two
 ordinary finds of the band, a cultist's incense, an elf's bread), the corpse dossier, the hunt,
@@ -758,3 +796,4 @@ old saves; every special food in a decent dish of its tier, shown when held, use
 | LR | 2026-11-22 | **The two low rungs** (§4.5): plain fare (any two staples) and one part with one staple for every part. 334 dishes, 1,097 in all; a Reflex Ward dish in every tier; the older 763 unchanged. The SP and MP tabs' tier gaps closed. The Widow's Jar doesn't count the rungs. |
 | KV | 2026-11-22 | **Variety and hunger** (§4.6): each part's lore strength and side gift (1,097 dishes from 523 different results to nearly all different); hunger every 3 steps; Sustained only from SP dishes of three or more and feasts, 60-120 turns flat; dishes off the SP tab feed half as much; Hungry, Weak and Starving statuses (`src/hunger.py`). |
 | KA | 2026-11-14 | **Dish pictures.** 134 kind pictures (20 kinds; vessel = tier, one colour cue = main benefit; stew and roast at every tier and tab) picked by `dish_art.py` from the name, and 36 feasts drawn one by one; the old cluster picker and `art_clusters.json` retired. |
+| DA | 2026-11-22 | **Every dish's picture fits the dish** (§4.2; Brandon: the Goblin Cheese Grill showed a steak, tomatoes and sausage). The 180 dish pictures catalogued by what each shows (`dish_pictures.json`); `dish_art.py` places a dish by its form and its ingredients first (no food it lacks), then tier and benefit; `FALLBACK` and the kind-only pick retired. 418 dishes changed picture; 63 with no fair picture are listed for new art (`dish_art_no_match.json`). |
