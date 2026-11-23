@@ -978,6 +978,10 @@ def test_the_photo_puts_on_a_show_that_stops_the_room_then_bows_out():
     from monster import Monster
     g = _game('__test_sk_show__')
     _open_floor(g)
+    # The lamia does not stop for the show: since the 3.6.1 AI bug bash a
+    # hunter blocked by the dancers walks round them, and she would kill a
+    # 30-HP hero before the bow. The hero lives through the scene.
+    g.player.max_hp = g.player.hp = 100000
     gob = Monster({**MONS['goblin'], 'id': 'goblin'}, 13, 10)
     boss = Monster({**MONS['lamia'], 'id': 'lamia'}, 10, 15)
     g.monsters.extend([gob, boss])
