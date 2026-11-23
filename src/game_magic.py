@@ -516,7 +516,7 @@ class MagicMixin(MagicWardsMixin):
             import random as _rng_wand
             if getattr(wand, 'buc', 'uncursed') == 'cursed' and _rng_wand.random() < 0.03:
                 self.add_message(
-                    "The cursed wand misfires! The charge is doubly wasted.",
+                    "The cursed wand misfires, and the charge is wasted.",
                     'warning')
                 if wand.charges <= 0:
                     self.add_message(
@@ -1206,7 +1206,7 @@ class MagicMixin(MagicWardsMixin):
                     self._on_monster_killed(target)
 
             elif effect == 'disintegrate':
-                # 85% instant kill. Bosses immune to instant kill, take max_hp/3 instead.
+                # 70% instant kill. Bosses immune to instant kill, take max_hp/3 instead.
                 is_boss = _is_big_foe(target)
                 if not is_boss and _rng.random() < 0.70:
                     target.hp = 0
@@ -1539,10 +1539,7 @@ class MagicMixin(MagicWardsMixin):
                     [m.add_effect('confused', 8) for m in self.monsters
                      if m.alive and self._in_hero_reach(m)],
                     self.add_message("A wave of confusion erupts!", 'success'))),
-                ('fireball', lambda: (
-                    [m.take_damage(self._wand_tier_damage(_rng.randint(8, 20), wand.quiz_tier), 'fire')
-                     for m in self.monsters if m.alive and self._in_hero_reach(m)],
-                    self.add_message("A burst of flame erupts from the wand!", 'success'))),
+                ('fireball', lambda: self._wonder_fireball(wand, _rng)),
                 ('teleport', lambda: (self._teleport_player(),
                     self.add_message("The wand teleports you randomly!", 'warning'))),
                 ('shield', lambda: (self.player.add_effect('shielded', 10),
@@ -1565,6 +1562,16 @@ class MagicMixin(MagicWardsMixin):
             _, fn = _rng.choice(_WONDER_EFFECTS)
             fn()
             self.add_message("The wand of wonder crackles with chaotic energy!", 'warning')
+
+    def _wonder_fireball(self, wand, rng) -> None:
+        """The Wand of Wonder's burst of flame on every foe in reach. What it
+        kills goes through the kill (loot, the kill's credit): it was left
+        dead with neither (found writing its card, 2026-11-22)."""
+        self.add_message("A burst of flame erupts from the wand!", 'success')
+        for m in [m for m in self.monsters if m.alive and self._in_hero_reach(m)]:
+            m.take_damage(self._wand_tier_damage(rng.randint(8, 20), wand.quiz_tier), 'fire')
+            if not m.alive:
+                self._on_monster_killed(m)
 
     # ------------------------------------------------------------------
     # Spell menu  (m key -- learned spells, cast with one-Q science quiz)
@@ -3326,7 +3333,7 @@ class MagicMixin(MagicWardsMixin):
                 self.add_message("You wear no armor to enchant.", 'info')
 
         elif effect == 'enchant_item':
-            from items import ARMOR_SLOTS, effective_enchant_cap
+            from items import ARMOR_SLOTS, effective_enchant_cap, set_ench_level
             candidates = []
             if self.player.weapon:
                 candidates.append((self.player.weapon, 'weapon'))
@@ -3353,6 +3360,22 @@ class MagicMixin(MagicWardsMixin):
             n = count_by_step[_tstep]
             if candidates:
                 for target, slot_key in candidates[:n]:
+                    if slot_key == 'accessory' or (slot_key not in ('weapon', 'shield')
+                                                   and slot_key not in _gear_ei.CORE_SLOTS):
+                        # A lesser piece, a ring or an amulet is a kind at an
+                        # enchantment level (gear.py, rings.py): it takes a
+                        # level, as Enchant Armour gives a lesser piece. A plus
+                        # did nothing on them (found writing its card, 2026-11-22).
+                        _tn = self._bare_name(target)
+                        old_lv = int(getattr(target, 'ench_level', 0) or 0)
+                        new_lv = set_ench_level(target, old_lv + delta)
+                        if new_lv > old_lv:
+                            self.add_message(f"A golden light infuses your {_tn}: its enchantment grows.", 'success')
+                        elif new_lv < old_lv:
+                            self.add_message(f"A dark energy corrupts your {_tn}: its enchantment fades.", 'warning')
+                        else:
+                            self.add_message(f"Your {_tn} shudders but can hold no more enchantment.", 'info')
+                        continue
                     cap = effective_enchant_cap(self.player, slot_key, target)
                     old_val = getattr(target, 'enchant_bonus', 0)
                     # (as Enchant Armour: a curse takes its point off whatever the
@@ -3795,9 +3818,9 @@ class MagicMixin(MagicWardsMixin):
             # event.
             self.player.knows_all_maps = True
             self.add_message(
-                "The scroll survives your reading; the shape of the whole dungeon "
-                "rises in your memory -- corridors, rooms, stairs, and doors from "
-                "surface to root, all preserved.",
+                "The scroll crumbles as you read it, but the shape of the whole "
+                "dungeon rises in your memory -- corridors, rooms, stairs, and "
+                "doors from surface to root, all preserved.",
                 'success')
 
         elif effect == 'lake_of_fire':

@@ -118,11 +118,11 @@
     "enchant_item": {
       "tiers": {"delta": [1, 1, 1, 2, 3], "delta_blessed": [2, 2, 2, 3, 4], "count": [1, 2, 3, 5, 99]},
       "line": [
-        "Adds +{delta} to the first thing you have equipped (weapons first, then armour, shield and rings).",
-        "Adds +{delta} to the first {count} things you have equipped (weapons first, then armour, shield and rings).",
-        "Adds +{delta} to the first {count} things you have equipped (weapons first, then armour, shield and rings).",
-        "Adds +{delta} to the first {count} things you have equipped (weapons first, then armour, shield and rings).",
-        "Adds +{delta} to everything you have equipped."
+        "Adds +{delta} to the first thing you have equipped (weapons first, then armour, shield and rings). A weapon, body armour or shield takes the plus; a lesser piece, ring or amulet rises {delta} enchantment level instead.",
+        "Adds +{delta} to the first {count} things you have equipped (weapons first, then armour, shield and rings). A weapon, body armour or shield takes the plus; a lesser piece, ring or amulet rises {delta} enchantment level instead.",
+        "Adds +{delta} to the first {count} things you have equipped (weapons first, then armour, shield and rings). A weapon, body armour or shield takes the plus; a lesser piece, ring or amulet rises {delta} enchantment level instead.",
+        "Adds +{delta} to the first {count} things you have equipped (weapons first, then armour, shield and rings). A weapon, body armour or shield takes the plus; a lesser piece, ring or amulet rises {delta} enchantment level instead.",
+        "Adds +{delta} to everything you have equipped. A weapon, body armour or shield takes the plus; a lesser piece, ring or amulet rises {delta} enchantment level instead."
       ],
       "short": [
         "+{delta} to one equipped thing",
@@ -131,7 +131,7 @@
         "+{delta} to {count} equipped things",
         "+{delta} to all you have equipped"
       ],
-      "line_cursed": "Cursed, it takes 1 off what you have equipped instead.",
+      "line_cursed": "Cursed, it takes 1 off what you have equipped (a level off a lesser piece, ring or amulet) instead.",
       "short_cursed": "Takes 1 off your gear"
     },
     "remove_curse": {

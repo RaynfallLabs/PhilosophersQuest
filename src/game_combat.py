@@ -1953,7 +1953,7 @@ class CombatMixin:
             import random as _rng_wand
             if getattr(wand, 'buc', 'uncursed') == 'cursed' and _rng_wand.random() < 0.03:
                 self.add_message(
-                    "The cursed wand misfires! The charge is doubly wasted.",
+                    "The cursed wand misfires, and the charge is wasted.",
                     'warning')
                 if wand.charges <= 0:
                     self.add_message(
