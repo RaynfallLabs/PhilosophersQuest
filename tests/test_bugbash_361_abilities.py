@@ -543,3 +543,21 @@ def test_orpheus_slows_through_monster_hold():
     src = inspect.getsource(main.Game._change_level)
     i = src.index("orpheus_active")
     assert "m.hold('slowed', 5)" in src[i:i + 400]
+
+
+def test_a_hero_specials_cleanse_lifts_what_a_cure_lifts():
+    """Harmony of Spheres and Viriditas popped debuffs at random, a worn -1
+    one (the Blindfold's dark) and the crossbow's crank among them."""
+    import hero_specials as hs
+    g = _game()
+    p = g.player
+    p.hp = 1
+    for build in ('pythagoras of samos', 'saint hildegard von bingen'):
+        sp = hs.HERO_SPECIALS[build]
+        p.status_effects['blinded'] = -1
+        p.status_effects['reloading'] = 2
+        p.status_effects['poisoned'] = 4
+        hs.resolve_active_special(g, sp, 5)
+        assert p.status_effects.get('blinded') == -1, build
+        assert p.status_effects.get('reloading') == 2, build
+        assert not p.status_effects.get('poisoned'), build

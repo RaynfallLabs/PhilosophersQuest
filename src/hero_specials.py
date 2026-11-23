@@ -6,7 +6,11 @@ with chain-tier-graded effects per the design spec.
 
 Boss CC immunity: any special that applies a status effect (charm, fear,
 confuse, paralyze, sleep, immobilize) checks `is_boss_or_huge(monster)`
-and skips. Damage specials work on bosses but with 0.5x scaling.
+and skips, picks only a foe that can take it (`_can_hold`: not a bystander,
+not one whose nature refuses it) and lays it through Monster.hold (`_hold`).
+Damage specials work on bosses, a share of their health a tenth as large
+(floor_curve.wound, WOUND_NAMED). A cure lifts what a cure lifts
+(status_effects.ailments_on).
 
 Passives are stored on `player.hero_passives: set[str]` and checked at
 hook sites in combat.py, player.py, game_menus.py, and main.py.
@@ -79,6 +83,18 @@ def _hold(monster, effect: str, turns: int) -> None:
     else:
         cur = int(monster.status_effects.get(effect, 0) or 0)
         monster.status_effects[effect] = max(cur, int(turns))
+
+
+def _ailments(player) -> list:
+    """What a hero cure may lift, the most urgent first (the shared rule)."""
+    from status_effects import ailments_on
+    return ailments_on(player)
+
+
+def _ailment_name(effect: str) -> str:
+    """The status's own name, in lower case ("poisoned" read as a code id)."""
+    from status_effects import EFFECT_INFO
+    return str((EFFECT_INFO.get(effect) or (effect.replace('_', ' '),))[0]).lower()
 
 
 def _named_or_huge(monster) -> bool:
@@ -253,7 +269,8 @@ HERO_SPECIALS: dict[str, dict] = {
     "merlin ambrosius": {
         'id': 'hero_stardrop',
         'name': 'Stardrop',
-        'desc': 'Falling-star single-target damage. Bosses take 0.5x.',
+        'desc': ('A falling star strikes the nearest foe in sight for a share of its health '
+                 '(a boss or a huge foe takes a tenth as much).'),
         'cooldown': 300,
         'effect': 'damage_single',
         'tier_effects': {
@@ -606,12 +623,12 @@ def _eff_self_heal(game, special, tier, chain):
     game.add_message(grave_rot.told(game.player, game.player.hp - before,
                                     "Harmony — you recover {n} HP."), 'success')
     if cleanse_n > 0:
-        from status_effects import DEBUFFS
-        debuffs = [e for e in list(game.player.status_effects) if e in DEBUFFS]
-        random.shuffle(debuffs)
-        for d in debuffs[:cleanse_n]:
+        # What a cure lifts, the most urgent first (status_effects.ailments_on):
+        # never a status the gear he wears holds (-1), the crossbow's crank or
+        # the pit. It drew at random from every debuff.
+        for d in _ailments(game.player)[:cleanse_n]:
             game.player.status_effects.pop(d, None)
-            game.add_message(f"  ...{d} clears from you.", 'success')
+            game.add_message(f"  ...{_ailment_name(d)} clears from you.", 'success')
 
 
 def _eff_self_aoe_fire(game, special, tier, chain):
@@ -1047,12 +1064,9 @@ def _eff_aoe_heal_self(game, special, tier, chain):
         game.add_message(grave_rot.told(game.player, got, "Viriditas — green life. +{n} HP."),
                          'success')
     if cleanse_n > 0:
-        from status_effects import DEBUFFS
-        debs = [e for e in list(game.player.status_effects) if e in DEBUFFS]
-        random.shuffle(debs)
-        for d in debs[:cleanse_n]:
+        for d in _ailments(game.player)[:cleanse_n]:     # (as Harmony of Spheres)
             game.player.status_effects.pop(d, None)
-            game.add_message(f"  ...{d} fades.", 'success')
+            game.add_message(f"  ...{_ailment_name(d)} fades.", 'success')
 
 
 _DISPATCH = {
