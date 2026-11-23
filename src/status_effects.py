@@ -738,7 +738,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'time_stopped':   ('Time resumes its flow.',                 'info'),
     'invulnerable':   ('The divine shield around you fades.',    'info'),
     'blessed':        ('The divine clarity fades.',              'info'),
-    'inspired':       ('The Guiding Hand Lifts. Your Wisdom Is Your Own Again.', 'warning'),
+    'inspired':       ('The guiding hand lifts. Your wisdom is your own again.', 'warning'),
     'feared':         ('Your fear subsides.',                    'info'),
     'charmed':        ('The charm over you breaks.',             'info'),
     'cursed':         ('The curse lifts.',                       'success'),
