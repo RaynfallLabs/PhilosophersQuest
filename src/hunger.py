@@ -12,7 +12,9 @@ SP), each a status the HUD shows:
 
 ``sync`` sets the statuses to match the belly and returns the line to say when
 it got worse. Game._tick_sp calls it on every hunger tick, Player.restore_sp
-after every meal, and the simulator as it walks. Pure: no pygame, no Game.
+after every meal, Game._advance_turn every turn (SP set straight in: a
+prayer's full belly, a famine demon's drain), and the simulator as it walks.
+Pure: no pygame, no Game.
 """
 import json
 
