@@ -318,8 +318,10 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
   own numbers from their lore at the horn's tier. On the map each is a
   `horns.CalledAlly`, a helper that comes and goes (never the one companion, never in
   the Shift+P menu): its mean `hp`, its first attack's dice and type for every blow,
-  no healing, no specials (so nothing holds or binds). It follows the hero and fights
-  the nearest foe within four tiles, **never a gate's guardian** (the five bosses of
+  no healing, no specials (so nothing holds or binds). It fights beside the hero as
+  a companion does (`pet_system.companion_turn`, [pets](pets.md) 3.4: a foe near the
+  hero that he can see; fierce, it falls back only when badly hurt and losing),
+  **never a gate's guardian** (the five bosses of
   `data/domains.json`: `horns.strikes`), so Gleipnir and the Sandal still decide
   Fenrir and no horn takes a gate. It stays its turns (ticked in `_do_pet_turns`) and
   leaves with its horn's line; leaving the floor sends every one home

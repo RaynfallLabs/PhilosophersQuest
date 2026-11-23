@@ -1,0 +1,50 @@
+{
+  "_note": "How a companion fights beside the hero (src/pet_tactics.py, pet_system.companion_turn; Brandon 2026-11-22: 'targeting seems off for the Pet... he just seems to soak damage when I can't see an enemy... make sure they also take defensive maneuvers and cry for help when their life is low'). A pet fights near its master: it goes only for a foe near the hero that the hero can see (a 'return' pet), it breaks off and comes back when it is out of his sight, it falls back behind him when it is hurt and losing, and comes back in when it can win. When its health is low it cries for help, once a bout of danger. Each kind's nature (fierce, steady, timid) says when it breaks; its voice is its cry.",
+  "commands": {
+    "return": {"reach": 4, "needs_sight": true, "follow": 2, "max_route": 8, "regroup_unseen": true,
+               "label": "Return (stay near, fight beside you)"},
+    "stay":   {"reach": 0, "needs_sight": true, "follow": null, "max_route": 0, "regroup_unseen": false,
+               "label": "Stay (hold position)"},
+    "wander": {"reach": 8, "needs_sight": false, "follow": null, "max_route": 14, "regroup_unseen": false,
+               "label": "Wander (hunt near you)"}
+  },
+  "_natures": "break_below: the share of its health at or under which it falls back when it is losing (a foe it cannot finish before it would fall). rally_above: once out of the fight, under this share it goes back in only when it can win (the foe worn down, or itself mended past it). margin: the turns to spare it wants: losing when the bites it needs plus margin are more than the blows it can take. cry_below: the share at or under which it cries for help. card: its line on the pet card.",
+  "natures": {
+    "fierce":   {"break_below": 0.25, "rally_above": 0.5,  "margin": 0, "cry_below": 0.25,
+                 "card": "Fierce: fights on until badly hurt, then falls back to you."},
+    "steady":   {"break_below": 0.4,  "rally_above": 0.6,  "margin": 1, "cry_below": 0.33,
+                 "card": "Steady: falls back to you when hurt and losing."},
+    "timid":    {"break_below": 0.6,  "rally_above": 0.75, "margin": 2, "cry_below": 0.4,
+                 "card": "Timid: falls back to you early when a fight goes badly."},
+    "fearless": {"break_below": 0.0,  "rally_above": 0.0,  "margin": 0, "cry_below": 0.0, "card": ""}
+  },
+  "default_nature": "steady",
+  "_species": "By species key. A quest companion's own data file may carry 'nature' and 'voice' in its species block (data/mooble.json, data/bococho.json); this table is for the lines kept in pet_system.py. A voice is one word for every stage, or one a stage.",
+  "species": {
+    "electric":     {"nature": "timid",  "voice": ["squeaks", "squeals", "roars"]},
+    "water":        {"nature": "steady", "voice": ["hisses", "hisses", "bellows"]},
+    "plant":        {"nature": "steady", "voice": ["whimpers", "groans", "bellows"]},
+    "fire":         {"nature": "fierce", "voice": ["yelps", "shrieks", "roars"]},
+    "duck_of_doom": {"nature": "steady", "voice": ["quacks", "honks", "honks"]},
+    "sherlock":     {"nature": "fierce", "voice": "yowls"},
+    "irene":        {"nature": "steady", "voice": "shrieks"},
+    "shep":         {"nature": "fierce", "voice": "yelps"},
+    "fenrir":       {"nature": "fierce", "voice": "howls"},
+    "called":       {"nature": "fierce", "voice": "calls out"},
+    "sketch":       {"nature": "fearless"},
+    "dad":          {"nature": "fearless"},
+    "unicorn":      {"nature": "fearless"}
+  },
+  "danger_reach": 2,
+  "cry": {
+    "_note": "One line when its health falls to its nature's cry_below with a foe within danger_reach of it; not again until the bout is over (calm_turns with no foe that near, or its health back above cry_below + reset_gap). Unseen, it says where the cry came from; out of hear_range, or with wax in the hero's ears, it is not heard.",
+    "calm_turns": 5,
+    "reset_gap": 0.15,
+    "hear_range": 30,
+    "default_voice": "cries out",
+    "seen": "{pet} {voice}: {subj} is hurt!",
+    "unseen": "{pet} {voice} from {place} to the {dir}: {subj} is hurt!",
+    "place_corridor": "the corridor",
+    "place_room": "the dark"
+  }
+}

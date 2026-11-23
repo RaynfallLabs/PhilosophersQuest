@@ -56,6 +56,7 @@ added_files = [
     ('data/philosophy_mastery.json', 'data'),  # philosophy tier traits (philosophy_mastery.py)
     ('data/boss_boons.json',        'data'),
     ('data/pet_growth.json',        'data'),
+    ('data/pet_tactics.json',       'data'),   # how a companion fights beside the hero (pet_tactics.py)
     ('data/chest_templates.json',   'data'),
     ('data/chest_traps.json',       'data'),
     ('data/flavor_encounters.json', 'data'),

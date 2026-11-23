@@ -2389,9 +2389,9 @@ class MenuMixin:
             idx = 0
         new_cmd = order[(idx + 1) % len(order)]
         pet.command = new_cmd
-        label = {'return': 'Return (follow + engage)',
-                 'stay': 'Stay (hold position)',
-                 'wander': 'Wander (aggressive roam)'}[new_cmd]
+        # Its words are with the rest of how it fights (data/pet_tactics.json).
+        import pet_tactics
+        label = pet_tactics.command_label(new_cmd)
         self.add_message(f"{pet.name}: command set to {label}.", 'info')
 
     # ----- Pet sub-menus: Specials -----------------------------------------

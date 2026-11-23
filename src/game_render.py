@@ -8554,6 +8554,7 @@ class RenderMixin:
                 (f"Command: {cmd}", FP.CYAN_ACCENT, self.font_sm),
             ]
             details = [
+                *self._pet_nature_lines(pet),
                 *self._pet_cloak_lines(pet),
                 *self._pet_rescue_lines(pet),
                 *self._pet_gift_lines(pet),        # the Mooble's (mooble_encounter)
@@ -8609,6 +8610,13 @@ class RenderMixin:
             detail_share=0.56,
             list_footer=entries[selected].get('actions') if entries else None,
         )
+
+    def _pet_nature_lines(self, pet) -> list:
+        """How it fights beside you, its nature's line (data/pet_tactics.json):
+        "Fierce: fights on until badly hurt, then falls back to you."."""
+        import pet_tactics
+        card = pet_tactics.nature(pet).get('card', '')
+        return [(card, FP.BODY_TEXT, self.font_sm)] if card else []
 
     def _pet_cloak_lines(self, pet) -> list:
         """The Emberpup who wears the Bloomleaf Cloak says so on his card."""

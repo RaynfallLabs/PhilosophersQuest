@@ -7,7 +7,10 @@ Out of scope here: pet damage resolution inside combat (see [combat](combat.md))
 **File map.**
 ```
 src/pet_system.py       # Species, Pet, FenrirPet, SketchedPet, DadPet, UnicornPet, random_species;
-                        # the six spheres: spheres, sphere_spec, hatch_level, roll_sphere_species, sphere_for_floor
+                        # the six spheres: spheres, sphere_spec, hatch_level, roll_sphere_species, sphere_for_floor;
+                        # companion_turn (how a pet fights beside the hero, §3.4)
+src/pet_tactics.py, data/pet_tactics.json
+                        # the pet's plan, pure: who it goes for, falling back, natures, the cry for help
 src/game_combat.py      # the six Soul Spheres, the Unusual Soul Sphere (Dad), bound-sphere resummon, _dig_pit
 src/game_menus.py       # Shift+P pet menu + sub-menus (feed/heal/pet/recall/command/specials)
 src/game_encounters.py  # UnicornPet spawn via unicorn-encounter chain
@@ -182,19 +185,23 @@ Set via the naming popup after a sphere hatch. If empty, display name is the spe
 
 The `name` / `symbol` / `color` properties resolve against the current `stage` so UI code reads the right stage without the pet caching it.
 
-### 3.4 AI — `take_turn(player, dungeon, monsters, pets, ground_items)`
+### 3.4 AI — `take_turn(player, dungeon, monsters, pets, ground_items, visible=, quiz_acc=)`
 
 ```python
 self.command: str = 'return'   # 'return' | 'stay' | 'wander'
 ```
 
-Command cycle (Shift+P → Command): `return → stay → wander → return`.
+Command cycle (Shift+P → Command): `return → stay → wander → return`; the labels it prints are `data/pet_tactics.json` `commands.<cmd>.label`.
 
-- **return** (default): follow player, engage enemies within 4 tiles.
-- **stay**: hold position; only attack adjacent enemies.
-- **wander**: engage enemies within 8 tiles; don't auto-follow player.
+**A pet fights near its master (3.6.1 play-test, 2026-11-22).** Brandon: "targeting seems off for the Pet... he just seems to soak damage when I can't see an enemy... make sure they also take defensive maneuvers and cry for help when their life is low". The cause: `take_turn` went for the nearest foe within 4 tiles of the PET (through walls, into the dark beyond the hero's light: his sight is only 4-5 tiles), walked round to it by `_route_step` out of his sight and fought there; a pet beside a foe always bit, whatever its health; a monster beside a pet that slung at the hero got a whole blow on the pet as well. Now `Pet.take_turn` (and `horns.CalledAlly.take_turn`) is `pet_system.companion_turn`: it gathers what the pet knows (each foe that `pet_foe` allows: its distance from the pet and from the HERO, whether the hero sees its tile or it is beside him, its health, its blow on the pet by the swipe pass's dice, `blow_on`, and the steps of a short walk to it, `route_map`), the pure `pet_tactics.choose` makes the plan, and `companion_turn` carries it out. Every number and word is `data/pet_tactics.json`.
 
-Nearest enemy is picked by Chebyshev distance. Adjacent enemies are melee-attacked regardless of command. Beyond adjacency, movement runs through `_move_toward(tx, ty, dungeon, monsters, pets, player, ground_items)`.
+- **Who it goes for** (`commands`): on **return**, a foe within `reach` (4) of the hero, on a tile he can see (or beside him), by a walk of at most `max_route` (8) steps; the one at his side first. On **wander**, within 8 of the hero, seen or not (the hero asked it to hunt); on **stay**, only what comes beside it. Beside a foe, it bites the one it can finish, then the one at the hero's side, then the weakest. It never chains from foe to foe across the floor, and never goes round a wall for something nobody can see.
+- **Caught out of his sight** (`regroup_unseen`, return only): beside a foe it cannot finish with this bite while its own tile is out of the hero's sight (and not beside him), it breaks off and comes back to him, bringing the fight into his light; it bites only when it cannot get away.
+- **Falls back when hurt and losing** (every command): at or under its nature's `break_below` share of health, beside a foe it would lose to (`pet_tactics.losing`: the bites it needs plus its nature's `margin` are more than the blows it can stand), it takes the safest tile beside the hero (`_fall_back`, `pick_fall_back`: no foe beside it, fewest foes with a clear view of it, since a cunning foe goes for a hurt pet it can see, then farthest from them, then fewest steps; the hero ends up between). Cornered (no better tile), it fights. It comes back in **when it can win**: under its `rally_above` share it walks back into a fight only against a foe it would beat (worn down by the hero, or itself mended past the share), so it does not step back in for one point of health mended.
+- **Natures** (`natures`, by kind in `species`, or a quest pet's own `nature` in its data file): **fierce** breaks at 25% (the fire line, Sherlock, Shep, Fenrir, a horn's ally), **steady** at 40% (water, plant, Waddlekind, Irene; the default), **timid** at 60% (Zappik's line, the Mooble, the Bococho), **fearless** never (a sketch, Dad, the unicorn). The pet card says its nature's line (`card`, `RenderMixin._pet_nature_lines`).
+- **It cries for help** (`cry`, `CombatMixin._pet_cries` after the swipe pass, pure `pet_tactics.cry_step`): its health at or under its nature's `cry_below` (fierce 25%, steady 33%, timid 40%) with a foe that can swing within `danger_reach` (2) of it, one console line in its own voice (`voice`: a word, or one a stage; "cries out" by default): "Ember yelps: it is hurt!", or out of the hero's sight, where it came from: "Ember yelps from the corridor to the south: it is hurt!" (`the corridor` off any room, `the dark` in one; the compass word from the hero). Once a bout of danger: not again until no foe has come near for `calm_turns` (5) or its health is back over `cry_below + reset_gap`. Not heard out of `hear_range` (30) or with wax in the hero's ears (`counters.deafened`). It names the pet as the hero calls it: the nickname, Shep's or a cat's own name, else its name; he, she or it by its data.
+
+The Mooble (`support`) keeps within two tiles of the hero on return and bites only what comes beside him, as before; he falls back too. Movement runs through `_move_toward(tx, ty, dungeon, monsters, pets, player, ground_items)` (§3.5), the fall-back's step through `route_map`. `visible` is the hero's sight (`Game._do_pet_turns` passes it; worked out by `hero_sight` when not given; a bare test map counts every tile as seen). Tests: `tests/test_pet_tactics.py` (the rule, pure; the data; staged Games: the wall, the dark, caught out of sight, a hurt pet falling back and crying once, an unseen cry, wax, the slinger's clip, "something" in the dark).
 
 ### 3.5 `_move_toward` (v2.18 — pit + trap awareness; 2026-10-24 — routes round walls)
 
@@ -207,11 +214,14 @@ fallback when no route exists.
 
 **Being hit.** A monster beside a pet swipes at it once a turn
 (`_monster_swipes`): half its first attack's dice when it is also beside the
-hero (it has struck him this turn), but a whole blow of one of its attacks when
-it cannot reach him, or when the pet bit it in the last two turns
-(`_pet_aggro`). Every hit the hero can see is in the log ("The goblin hits
-Ember."); before 2026-10-24 a pet's wounds were silent, so pets looked
-untouchable. The unicorn is never targeted.
+hero, or when it struck him this turn from afar (a sling, a bow, a spell:
+`_struck_hero_turn`, set in `_do_monster_turns`; 2026-11-22, a slinger beside a
+pet used to sling at the hero AND give the pet a whole blow), but a whole blow
+of one of its attacks when it has not struck him, or when the pet bit it in
+the last two turns (`_pet_aggro`). Every hit the hero can see is in the log
+("The goblin hits Ember."); a foe standing in the dark beside a pet in his
+light is "Something" (`game_combat.striker_name`). Before 2026-10-24 a pet's
+wounds were silent, so pets looked untouchable. The unicorn is never targeted.
 
 Pets now consult `dungeon.pits` and `dungeon.traps` so they don't walk into a player-dug pit or repeatedly trigger an alarm trap. The logic is **two-pass**:
 
@@ -376,9 +386,10 @@ Gjallarhorn or the Olifant ([quests_mysteries §2.12](quests_mysteries.md)). Bui
 its kind's own entry in `data/monsters.json` (`horn`): health its mean `hp`, every blow
 its first attack's dice (`get_attack_damage`, no quiz scaling), struck as that attack's
 `type` (`bite_type`, read in `_do_pet_turns` as a sketch's is). `is_called` marks it.
-It never levels, heals or uses a special; it follows the hero and strikes the nearest
-foe within four tiles, never a gate's guardian (`horns.strikes`); monsters swipe at it
-like any pet. Its stay (`turns_remaining`) ticks in `_do_pet_turns` and it leaves with
+It never levels, heals or uses a special; it fights beside the hero as a companion
+does (`pet_system.companion_turn`, §3.4: a foe near the hero that he can see; his
+nature is `called`, fierce, his cry "calls out"), never a gate's guardian
+(`horns.strikes`); monsters swipe at it like any pet. Its stay (`turns_remaining`) ticks in `_do_pet_turns` and it leaves with
 its horn's line (`HornsMixin._horn_ally_leaves`); leaving the floor sends it home
 (`_horn_allies_left_behind`). A helper that comes and goes: never the one companion.
 
@@ -491,9 +502,11 @@ Pet turns run inside `game_combat.py`'s turn loop, after the player action resol
 2. **`tick_regen(bonus)`** — HP regen pass (varies by subclass).
 3. **`tick_duration()`** — temporary pets only (Sketch, and Dad with no song). If it returns True, the pet dissolves. Dad with his song: the song decides.
 4. **`gain_xp_passive()`** — may return messages for level-ups.
-5. **`take_turn(player, dungeon, monsters, pets, ground_items)`** — AI action.
+5. **`take_turn(player, dungeon, monsters, pets, ground_items, visible=, quiz_acc=)`** — AI action (§3.4).
 6. **Resolve action** — `('attack', target)` → melee damage with quiz-accuracy scaling; `('unicorn_actions', msgs)` → iterate healing/cleanse/trap messages; `None` → no action.
 7. **Post-kill XP** — if the action killed a monster, `gain_xp_from_kill(monster_max_hp)` runs and may produce evolution messages.
+
+After every pet has acted: the monsters' swipes (`_monster_swipes`), then each pet badly hurt with a foe near cries for help (`_pet_cries`, §3.4).
 
 Dead pets are left in the list but skipped by `take_turn` (they return None immediately). The game loop prunes dead pets on floor transitions (`_change_level`) so stale references don't accumulate.
 
