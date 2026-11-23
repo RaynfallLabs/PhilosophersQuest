@@ -364,6 +364,26 @@ def test_each_bands_numbers_are_its_own():
             assert ' they ' not in low and ' them ' not in low and len(t) <= 70, t
 
 
+def test_half_the_band_down_tests_their_nerve_only_with_no_leader():
+    lead, fol = _scouts(3)
+    # The leader lives: when half are down they hold for him.
+    fol[0].alive = False
+    fol[1].alive = False
+    war_bands.on_death([lead] + fol, fol[1])
+    assert not fol[2].__dict__.get('_morale_check') and not fol[2].has_effect('feared')
+    # No leader leads them: each of the rest tests on his next turn.
+    lead2, fol2 = _scouts(3)
+    lead2.alive = False
+    for f in fol2:
+        f._band_leader = None
+    lead2._band_role = 'fallen'
+    fol2[0].alive = False
+    fol2[1].alive = False
+    war_bands.on_death([lead2] + fol2, fol2[1])
+    assert fol2[2]._morale_check == 'half' and not fol2[2].has_effect('feared')
+    assert int(fol2[2]._morale_penalty) == int(war_bands.data()['leader_falls']['half_down_penalty'])
+
+
 def test_a_great_blow_must_be_great():
     lead, fol = _scouts(4)
     g = war_bands.data()['great_blow']

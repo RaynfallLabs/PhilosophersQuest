@@ -415,14 +415,21 @@ def on_death(monsters, dead, player=None, rng=random) -> dict:
             else:
                 _frighten(m, 12)
         return out
-    # Half the band down: some of the rest lose heart, leader or no.
+    # Half the band down: while a leader leads them they hold for him (his
+    # fall-back order gathers them); with none, each of the rest tests his
+    # nerve on his next turn (2026-11-22: it was a coin flip of fear for
+    # each, leader or no).
     total = len(members_of(monsters, uid))
     if total and len(alive) * 2 <= total and not getattr(dead, '_band_halved', False):
-        p = float(d.get('half_down_flee', 0.5))
+        lead = leader_of(monsters, uid)
+        leads = lead is not None and lead.alive and not lead.__dict__.get('_yielded')
+        pen = int(leader_falls_spec(getattr(dead, '_band_id', '')).get('half_down_penalty', 2))
         for m in alive:
             m._band_halved = True
-            if getattr(m, '_band_role', '') != 'leader' and random.random() < p:
-                _frighten(m, 8)
+            if leads or getattr(m, '_band_role', '') == 'leader':
+                continue
+            m._morale_check = 'half'
+            m._morale_penalty = pen
     return out
 
 
