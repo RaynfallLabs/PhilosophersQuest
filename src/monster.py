@@ -2900,7 +2900,7 @@ class Monster:
                 return False
 
         dx, dy = self._preferred_dir(player, effective_pattern)
-        candidates = self._move_candidates(dx, dy)
+        candidates = self._closing_steps(player, effective_pattern, self._move_candidates(dx, dy))
 
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(all_monsters, exclude=self)
@@ -2945,7 +2945,8 @@ class Monster:
             # Recalculate direction for second step
             if _step == 0 and move_steps > 1:
                 dx, dy = self._preferred_dir(player, effective_pattern)
-                candidates = self._move_candidates(dx, dy)
+                candidates = self._closing_steps(player, effective_pattern,
+                                                 self._move_candidates(dx, dy))
                 from geom import all_occupied_tiles
                 occupied = all_occupied_tiles(all_monsters, exclude=self)
                 if extra_occupied:
@@ -3039,6 +3040,30 @@ class Monster:
                 if dy:
                     return (1 if random.random() < 0.5 else -1, 0)
         return dx, dy
+
+    def _closing_steps(self, player, effective_pattern: str, candidates) -> list:
+        """The steps a hunter tries as it closes on the hero (_standard_move):
+        its own way first (a flanker's turn included), then, of the other
+        steps of the eight, only those that bring it nearer him (fewer steps
+        to him; as many, but fewer tiles), nearest first. A sidestep that
+        brings it no nearer is not taken: with its straight way blocked by a
+        friend, the second of two skeletons stepped from side to side two
+        tiles from the hero for twelve turns, a free tile beside him one
+        diagonal away (bug bash 3.6.1). With no step that closes, it goes
+        round by a real path (senses.step_toward: Wait Your Turn). A
+        coward's, a stumbling one's and a grid bug's steps are as they were."""
+        if (not candidates or effective_pattern == 'cowardly' or self.ai_pattern == 'grid_bug'
+                or self.has_effect('confused') or self.has_effect('blinded')):
+            return candidates
+
+        def dist(t):
+            ex, ey = player.x - (self.x + t[0]), player.y - (self.y + t[1])
+            return (max(abs(ex), abs(ey)), abs(ex) + abs(ey))
+        first = tuple(candidates[0])
+        here = dist((0, 0))
+        rest = [(ox, oy) for ox in (-1, 0, 1) for oy in (-1, 0, 1)
+                if (ox or oy) and (ox, oy) != first]
+        return [first] + sorted((t for t in rest if dist(t) < here), key=lambda t: (dist(t), t))
 
     def _move_candidates(self, dx: int, dy: int) -> list[tuple[int, int]]:
         if self.ai_pattern == 'grid_bug':

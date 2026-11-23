@@ -133,6 +133,7 @@ class View:
     in_cover: bool = False          # it took cover and he cannot see it where it stands
     covered: int = 0                # times it has taken cover this fight
     cover_struck: bool = False      # it has struck from cover this fight
+    rushing: bool = False           # a charger in its rush (src/under_fire.py)
 
 
 def rules() -> dict:
@@ -147,8 +148,10 @@ def _r(name: str, default):
 def pressing(v: View, sp: dict) -> bool:
     """It presses in, holding back from nothing: its leader called the
     charge; or it is a kind that smells blood and sees the hero badly hurt
-    or held; or its side has seen him rest with foes about and he rests."""
-    if v.order == 'charge':
+    or held; or its side has seen him rest with foes about and he rests;
+    or it is a charger in its rush (shot from afar: src/under_fire.py). A
+    band's guard that roared and charged stood on its leader's screen."""
+    if v.order == 'charge' or v.rushing:
         return True
     if sp.get('presses_wounded') and v.sees_hero and (
             v.hero_held or v.hero_hp_share < _r('press_below', 0.35)):

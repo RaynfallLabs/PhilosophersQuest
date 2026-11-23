@@ -397,18 +397,26 @@ def test_w11_control_immunities_follow_creature_nature():
 
 
 def test_w11_feared_ranged_monster_flees_instead_of_shooting():
-    """Special AI patterns used to return before the fear check."""
+    """Special AI patterns used to return before the fear check. A frightened
+    creature runs along a real way first (morale.frightened_turn, 2026-11-22),
+    the old straight step only where there is none: on an open floor it runs,
+    and never shoots."""
     from types import SimpleNamespace
+    from dungeon import Dungeon, Room, WALL, FLOOR
+    tiles = [[WALL] * 14 for _ in range(11)]
+    for y in range(1, 10):
+        for x in range(1, 13):
+            tiles[y][x] = FLOOR
+    dungeon = Dungeon(tiles, [Room(0, 0, 14, 11)], 14, 11, 3)
     m = _monster(tags=['humanoid'], ai_pattern='ranged')
     m.status_effects['feared'] = 5
     called = []
-    m._flee_from = lambda *a, **k: called.append('flee')
     m._ranged_turn = lambda *a, **k: called.append('shoot') or True
     player = SimpleNamespace(x=7, y=5, has_effect=lambda n: False,
                              equipped_accessories=[])
-    dungeon = SimpleNamespace()
     assert m.take_turn(player, dungeon, [m]) is False
-    assert called == ['flee']
+    assert called == []
+    assert max(abs(m.x - 7), abs(m.y - 5)) > 2              # it ran from him
 
 
 def test_w16_multi_attack_applies_on_hit_effect_once(monkeypatch):

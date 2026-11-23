@@ -433,6 +433,7 @@ def snapshot(m, player, dungeon, all_monsters, extra_occupied):
     # fights hand to hand ducks out of his line of fire (a charger rushes).
     import under_fire
     view['under_fire'] = under_fire.under_fire(m)
+    view['rushing'] = under_fire.rushing(m)
     if (tactics.cover_weight(mind) > 0 and getattr(m, 'ai_pattern', '') == 'aggressive'
             and not under_fire.rusher(m) and not adjacent and 'take_cover' not in OFF):
         in_sight = hero_sees(m, player, dungeon)
@@ -1049,8 +1050,8 @@ def turn(m, player, dungeon, all_monsters, extra_occupied=None, pattern: str = '
 def _say_why_it_comes(m, view, sp, dungeon) -> None:
     """It would have held the mouth or waited for its friends, and comes on
     instead: say why, once (a habit seen, or the hero's wounds)."""
-    if view.adjacent:
-        return
+    if view.adjacent or view.rushing:
+        return                               # (a charger's rush said its own line)
     if not (view.choke or (view.coming and 3 <= view.dist <= 5)):
         return
     h = tactics.data().get('habits') or {}

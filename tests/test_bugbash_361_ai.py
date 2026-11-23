@@ -264,12 +264,58 @@ def test_an_ooze_struck_by_a_hero_standing_still_strikes_back():
     assert senses.notice(jelly, hero, dun, [jelly], set())       # it felt his step
     senses.begin_turn(moved=False, guilty=False, floor=10)
     assert not senses.notice(jelly, hero, dun, [jelly], set())   # he stands still: its tremor fails
+    jelly.x, jelly.y = 5, 6                                       # (its search may have moved it)
     jelly.take_damage(5)                                          # he strikes it
     assert senses.notice(jelly, hero, dun, [jelly], set())
     assert jelly._sensed_by == 'touch'
     far = make('ochre_jelly', 5, 9)
     far.take_damage(5)                                            # an arrow from afar: no touch
     assert not senses.notice(far, hero, dun, [far], set())
+
+
+# ---------------------------------------------------------------------------
+# AI07: a hunter whose straight step is blocked takes a step that closes, not
+# a sidestep that brings it no nearer (it shuffled from side to side)
+# ---------------------------------------------------------------------------
+
+def test_a_hunter_blocked_by_a_friend_steps_in_beside_the_hero():
+    dun, hero = room(), Hero(5, 5)
+    friend = make('skeleton', 5, 6)              # on the straight way
+    skel = make('skeleton', 5, 7)                # two tiles off, behind it
+    seen = set()
+    for _ in range(4):
+        skel._standard_move(hero, dun, [friend, skel], set(), 'aggressive')
+        seen.add((skel.x, skel.y))
+        if skel._adjacent_to(hero):
+            break
+    assert skel._adjacent_to(hero), seen       # (4, 6) or (6, 6): a free tile beside him
+
+
+def test_a_coward_and_a_grid_bug_keep_their_own_steps():
+    hero = Hero(5, 5)
+    skel = make('skeleton', 5, 7)
+    assert skel._closing_steps(hero, 'cowardly', [(0, 1), (1, 0), (-1, 0)]) == [(0, 1), (1, 0), (-1, 0)]
+    steps = skel._closing_steps(hero, 'aggressive', [(0, -1), (1, 0), (-1, 0)])
+    assert steps[0] == (0, -1) and (1, 0) not in steps and (-1, 0) not in steps
+    assert {(1, -1), (-1, -1)} <= set(steps)
+
+
+# ---------------------------------------------------------------------------
+# AI08: a charger in its rush holds back from nothing (it roared and charged,
+# then stood on its leader's screen)
+# ---------------------------------------------------------------------------
+
+def test_a_charger_in_its_rush_does_not_stand_on_the_screen():
+    import tactics
+    sp = tactics.spec('cunning')
+    v = tactics.View(mind='cunning', dist=5, order='screen', screen_tile=True, role='guard')
+    assert tactics.activation('screen', v, sp) > 0
+    v = tactics.View(mind='cunning', dist=5, order='screen', screen_tile=True, role='guard',
+                     rushing=True)
+    assert tactics.activation('screen', v, sp) == 0
+    v = tactics.View(mind='cunning', dist=4, choke=True, rushing=True)
+    assert tactics.activation('hold_choke', v, sp) == 0
+    assert tactics.decide(v, sp)[0] == 'attack'
 
 
 # ---------------------------------------------------------------------------
