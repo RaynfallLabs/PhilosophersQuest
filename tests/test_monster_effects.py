@@ -57,7 +57,9 @@ def _tick_out(p, limit=30):
 # No stacking, shorter doses
 # ---------------------------------------------------------------------------
 
-@pytest.mark.parametrize('effect', sorted(effect_rules.statuses()['refresh']))
+# (Poison on the hero has its own rule since the poison pass: a second bite
+# adds half its turns, never past one and a half doses: tests/test_venom.py.)
+@pytest.mark.parametrize('effect', sorted(set(effect_rules.statuses()['refresh']) - {'poisoned'}))
 def test_a_second_dose_never_adds(effect):
     p = Player()
     assert p.add_effect(effect, 3)

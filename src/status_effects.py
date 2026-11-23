@@ -32,7 +32,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'confused':           ('Confused',           (185, 100, 230), 'Steps go astray, but blows land where aimed; quiz words swim, then settle'),
     'blinded':            ('Blinded',            (165, 165, 178), 'Sight radius 1; quiz answers are dark but for a light you move'),
     'hallucinating':      ('Hallucinating',      (210,  85, 230), 'Monsters wear wrong faces; quizzes grow a false answer that fades'),
-    'poisoned':           ('Poisoned',           ( 80, 210,  60), 'Losing 2% of max HP per turn'),
+    'poisoned':           ('Poisoned',           ( 80, 210,  60), 'Venom hurts every turn; the striped end of your health bar is what it will still take'),
     'diseased':           ('Diseased',           (135, 205,  60), 'No rest healing; most heals halved; saps STR/CON'),
     'petrifying':         ('Petrifying',         (205, 205, 130), 'Turning to stone: stiff, then slow, then stone. Oil of Rue cures it'),
     'strangulation':      ('Strangled',          (200,  80,  80), 'Losing 4% of max HP per turn'),
@@ -126,6 +126,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'cold_resist':        ('Cold Resist',        (100, 195, 245), 'Halves cold damage; cannot be frozen'),
     'shock_resist':       ('Shock Resist',       (245, 245,  80), 'Halves lightning damage'),
     'poison_resist':      ('Poison Resist',      (100, 245,  80), 'Cannot be poisoned or diseased; halves poison damage'),
+    'venom_ward':         ('Venom Ward',         (150, 225, 110), 'A venom bites at half its strength, for half its turns'),
     'sleep_resist':       ('Sleep Resist',       (130, 130, 245), 'Immune to sleep and paralysis'),
     'magic_resist':       ('Magic Resist',       (200, 150, 245), 'Halves magic damage; turns aside mind magic'),
     'drain_resist':       ('Drain Resist',       (185,  80, 245), 'Immune to stat drain'),
@@ -179,7 +180,7 @@ BUFFS: frozenset = frozenset({
     'warning', 'searching', 'clairvoyant', 'displacement', 'heroism', 'brilliance', 'inspired',
     'shielded', 'fire_shield', 'cold_shield', 'reflecting', 'phasing', 'time_stopped', 'blessed',
     'invulnerable',
-    'fire_resist', 'cold_resist', 'shock_resist', 'poison_resist',
+    'fire_resist', 'cold_resist', 'shock_resist', 'poison_resist', 'venom_ward',
     'sleep_resist', 'magic_resist', 'drain_resist', 'disint_resist',
     'life_save', 'sustained', 'truesight', 'dark_vision', 'identify_sight', 'spell_turning',
     'riposte_armed', 'parry_armed', 'see_invisible',
@@ -713,6 +714,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'blinded':        ('Your vision returns!',                   'success'),
     'hallucinating':  ('Reality snaps back into focus.',         'info'),
     'poisoned':       ('The poison leaves your body.',           'success'),
+    'venom_ward':     ('Your Venom Ward fades.',                 'info'),
     'diseased':       ('You recover from the disease.',          'success'),
     'strangulation':  ('You gasp free -- strangulation ends.',    'success'),
     'fumbling':       ('Your hands are steady again.',            'info'),
@@ -917,7 +919,11 @@ def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> 
         if effect in STATUS_CAP:
             # One dose lasts this long at most, unless its caller sets the price.
             limit = int(cap) if cap else STATUS_CAP[effect]
-        if effect in REFRESHES:
+        if effect == 'poisoned':
+            # Doses add a little, never past one and a half (venom.py).
+            import venom as _venom
+            player.status_effects[effect] = _venom.dose(player, current, duration, limit)
+        elif effect in REFRESHES:
             player.status_effects[effect] = max(current, min(duration, limit))
         else:
             # (A limit stops stacking past it; it never cuts what already runs
@@ -1108,7 +1114,7 @@ def _say_ward_held(player, source, effect: str, gaze: bool) -> None:
 
 def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
                            source=None, gaze: bool = False,
-                           lethal: bool = False) -> tuple[bool, str]:
+                           lethal: bool = False, venom: int | None = None) -> tuple[bool, str]:
     """Apply a MONSTER-inflicted debuff gated by a D&D-style saving throw.
 
     Two-gate model: the caller already passed the monster's to-apply check
@@ -1117,7 +1123,9 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
       - HARD control (paralyze/sleep/immobilize/stun/freeze): a save NEGATES it.
       - SOFT control (confuse/charm/slow/weaken): a save HALVES the duration.
       - a knock-down and a bitten mind: a save NEGATES it (there is no half).
-      - effects with no SAVE_STAT entry (poison, bleed, etc.): applied directly.
+      - poison: a CON save halves the dose, and the bite's ``venom`` (its
+        damage a turn, data/monsters.json) is noted (venom.lands).
+      - effects with no SAVE_STAT entry (bleed, burn, etc.): applied directly.
 
     Returns (applied, message). The message is FLAVOR, not math — on a save the
     player hears their constitution/will/reflexes hold; on a failure they hear
@@ -1143,6 +1151,9 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
         return False, f"The {noun} cannot take hold of you."
     if _share < 1.0:
         duration = max(1, int(round(int(duration) * _share)))
+    if effect == 'poisoned':
+        import venom as _venom
+        return _venom.lands(player, duration, dc, source, venom)
     if stat is None:
         # v2.15+ audit sync: effects without a SAVE_STAT entry (poison, bleed,
         # burn, disease, etc.) previously bypassed save_bonus entirely. Now the
@@ -1220,9 +1231,13 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
 
         # ---- Per-turn side effects ----
         if effect == 'poisoned' and not player.has_effect('poison_resist'):
-            dmg = player.take_damage(dot_tick(player), 'poison')
+            import venom as _venom
+            dmg = player.take_damage(_venom.strength(player), 'poison')
             if dmg:
                 messages.append(('The poison burns through you!', 'danger'))
+                _warn = _venom.warn_once(player)
+                if _warn:
+                    messages.append((_warn, 'danger'))
 
         elif effect == 'diseased':
             if not player.has_effect('poison_resist') and not player.has_effect('drain_resist'):

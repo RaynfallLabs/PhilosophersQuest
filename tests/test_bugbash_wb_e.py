@@ -985,6 +985,9 @@ def test_journey_05_the_smith(make_game):
     assert any('Your ' + order['name'] + ' is waiting for you there.' in s for s in h.said())
     stall = next(m for m in g.ground_items if isinstance(m, MerchantNPC))
     assert stall.person == 'Brannoc'
+    # The walk is not what is tested: on some runs a floor-16 creature held
+    # the 36-HP hero on the way and his talk was lost (2026-11-22).
+    g.monsters = []
     walk_beside(h, stall.x, stall.y)
     h.said()
     h.key('y')

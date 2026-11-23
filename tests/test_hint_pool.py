@@ -56,11 +56,13 @@ def test_each_tier_keeps_about_its_old_count():
     for tier, n in OLD_COUNTS.items():
         # (10 until 2026-11-22: tiers 1-3 stood at it when the monster
         # effects each needed a hint at the depth they begin.)
-        assert abs(len(POOL[tier]) - n) <= 11, (tier, len(POOL[tier]), n)
+        # (11 until 2026-11-22's poison pass, which needed its hint at
+        # tier 1, where venom begins.)
+        assert abs(len(POOL[tier]) - n) <= 12, (tier, len(POOL[tier]), n)
     # (400 until 2026-11-19: the carried lights and the packs each added
     # their hints; 420 until 2026-11-20, when the third wave of monster
     # behaviour added six at tiers 4 and 5, inside their tiers' allowance.)
-    assert 360 <= len(ALL) <= 429
+    assert 360 <= len(ALL) <= 430
 
 
 def test_no_hint_is_longer_than_the_old_longest():

@@ -253,8 +253,12 @@ def test_the_ward_sits_outside_the_save_cap():
         _param('restless_dead_grave_salt', 'save_bonus', 'amount')       # on top of the 5
 
 
-def test_no_save_effects_wear_off_faster():
+def test_no_save_effects_wear_off_faster(monkeypatch):
+    import random
     import status_effects
+    # Poison has its own CON save since the poison pass (venom.lands): it
+    # fails here, so only the family's ward shortens the dose.
+    monkeypatch.setattr(random, 'randint', lambda a, b: a)
     p = _player_at()
     rat = _mon('giant_rat')
     status_effects.apply_debuff_with_save(p, 'poisoned', 10, 12, source=rat)
@@ -267,8 +271,8 @@ def test_no_save_effects_wear_off_faster():
     ward = _param('vermin_web_and_plague', 'save_bonus', 'amount')
     assert 0 < share < 1
     best = min(share, family_edges.no_save_ward_share(ward))
-    assert warded == max(1, max(1, round(10 * best)) - p.save_bonus_for('CON'))
-    assert warded < plain
+    assert warded == max(1, round(10 * best))
+    assert warded < plain == 10
 
 
 def test_duration_zero_means_it_never_takes_hold():

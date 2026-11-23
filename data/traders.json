@@ -16,6 +16,7 @@
   },
 
   "always_stocked": [
+    {"cat": "potion", "id": "potion_of_cure_poison", "floors": [2, 20], "why": "Poison bites from floor 1, and the first stalls stand from floor 2: a venom's cure is always for sale where venom starts (poison pass 2026-11-22). Unmarked, as every potion is."},
     {"cat": "potion", "id": "oil_of_rue", "floors": [19, 99], "why": "The lethal petrifiers (basilisks, gorgons) begin on floor 25, and every gate camp stands on 19, 39, 59 and 79: the cure is always for sale before stone can kill (Brandon, 2026-11-22: counters always obtainable)."}
   ],
 
@@ -245,7 +246,8 @@
       "sprite": "trader_apothecary", "sprite_fallback": "npc_poisoned_herbalist",
       "lore": "Agnes Wort came down into the dark for the cave-moss that has never seen the sun, since it cures what the sun-moss cannot. Eleven years she has dwelt here, and she says that she will climb home again when the moss runs out, though in truth it never will.",
       "stock": [
-        {"ids": ["potion_of_healing", "potion_of_cure_poison", "potion_of_cure_disease"], "cat": "potion", "picks": 1},
+        {"ids": ["potion_of_healing", "potion_of_cure_disease"], "cat": "potion", "picks": 1},
+        {"id": "potion_of_cure_poison", "cat": "potion"},
         {"class": "potion", "picks": 3},
         {"class": "food", "picks": 2},
         {"class": "flask", "picks": 2},

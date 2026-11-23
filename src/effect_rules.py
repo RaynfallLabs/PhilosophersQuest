@@ -86,8 +86,8 @@ def source_in(monsters, tok):
 # A monster saved before the pass
 # ---------------------------------------------------------------------------
 
-EFFECTS_PASS = 1
-_ATTACK_FIELDS = ('effect', 'effect_chance', 'effect_duration', 'lethal')
+EFFECTS_PASS = 2          # 2: the venom (2026-11-22, venom.py)
+_ATTACK_FIELDS = ('effect', 'effect_chance', 'effect_duration', 'lethal', 'venom')
 
 
 def refresh_monster(monster) -> bool:
@@ -95,7 +95,7 @@ def refresh_monster(monster) -> bool:
     ``_effects_pass``: Monster.__init__ sets one) lays what its kind's
     attacks lay now, by the attack's name. True when it was refreshed."""
     d = getattr(monster, '__dict__', None)
-    if d is None or d.get('_effects_pass'):
+    if d is None or int(d.get('_effects_pass', 0) or 0) >= EFFECTS_PASS:
         return False
     d['_effects_pass'] = EFFECTS_PASS
     atks = d.get('attacks')

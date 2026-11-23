@@ -72,7 +72,10 @@ def test_dots_and_buffs_still_stack():
     p = _p()
     se.apply_effect(p, 'poisoned', 3)
     se.apply_effect(p, 'poisoned', 3)
-    assert p.status_effects['poisoned'] == 3    # the longer dose, never the sum (2026-11-22)
+    assert p.status_effects['poisoned'] == 4    # half again, never past one and a half doses (venom.py)
+    se.apply_effect(p, 'bleeding', 3)
+    se.apply_effect(p, 'bleeding', 3)
+    assert p.status_effects['bleeding'] == 3    # the longer dose, never the sum (2026-11-22)
     se.apply_effect(p, 'draining', 3)
     se.apply_effect(p, 'draining', 3)
     assert p.status_effects['draining'] == 6    # what data/effects.json does not name still adds

@@ -61,8 +61,21 @@
     "lesser": {"slow_at": 2, "rigid_at": 1, "end_paralyzed": 1}
   },
   "knockdown": {
-    "_doc": "A shove that beat the hero's STR save also floors him; a landed trample asks a DEX save when no other effect of that blow took hold. A standing hero has his footing for statuses.footing_turns.",
+    "_doc": "A shove that beat the hero's STR save also floors him; a landed trample asks a DEX save when no other effect of that blow took hold. A gore, a tusk or an antler is a thrust, not a trample: its attack says \"floors\": false (it stays a trample for the boots' guard). A standing hero has his footing for statuses.footing_turns.",
     "delivery": "trample"
+  },
+  "poison": {
+    "_doc": "Poison on the hero (src/venom.py; Brandon 2026-11-22: 'two damage? why have these cure poison potions'). A monster's bite does its attack's own 'venom' a turn (data/monsters.json, written by lore in tools/content/poison_pass_2026_11_22.py, never by floor); a poison with none (a potion, a trap, foul water) keeps status_effects.DOT_SHARE of max HP. A bite on a poisoned hero adds add_share of its turns, never past most_doses of the longest dose; the strongest venom on him sets the tick. A CON save (d20 + CON mod + save bonus against the attack's dc) halves the dose and never cancels it. Venom Ward (status venom_ward) halves both the venom and the turns. What it will still take is drawn on the HP bar and said on the chip and the bite's line: venom.to_come.",
+    "add_share": 0.5,
+    "most_doses": 1.5,
+    "lines": {
+      "bitten": "{by}'s venom is in you: {n} to come.",
+      "poisoned": "You are poisoned: {n} to come.",
+      "saved": "Your body throws off half the venom: {n} to come.",
+      "chip": "Poisoned: {n} to come",
+      "deadly": "The venom will kill you unless it is cured.",
+      "bestiary": "{v} a turn for {t} turns"
+    }
   },
   "quiz": {
     "_doc": "Display only. Confused, Stunned and Hallucinating share ONE settle time (confusion's: they run side by side and never add up), so no pile of effects is an auto-kill. Blinded has no wait: the question stays lit and the arrows move a pool of light over the answers; the number keys answer as ever. A false answer keeps a slot of its own, so no real answer changes its number when it fades. Reaching for it is no answer. Nothing flashes or shakes.",

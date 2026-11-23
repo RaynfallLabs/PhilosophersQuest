@@ -1483,7 +1483,7 @@ MM_SPELL_IDS = frozenset(('stayed_spear_spell', 'tacitas_seal_spell', 'dulled_bl
                           'pans_panic_spell', 'settled_strife_spell', 'mist_of_manannan_spell',
                           'hush_of_the_feralia_spell', 'cockcrow_spell', 'elf_shot_spell',
                           'galdr_of_loosing_spell'))
-MM_POTION_EFFECTS = frozenset(food_system_mod._WARD_POTIONS) | {'restoration'}
+MM_POTION_EFFECTS = frozenset(food_system_mod._WARD_POTIONS) | {'restoration', 'cure_poison'}
 MM_WARD_FAMILY = {'ward_lemuria': 'restless_dead', 'ward_daniel': 'great_beasts',
                   'ward_psylli': 'serpents', 'ward_hoichi': 'ghosts', 'ward_martha': 'dragons',
                   'ward_udug_hul': 'demons'}
@@ -2122,7 +2122,9 @@ class Run(_MMMagicSim):
         p = self.p
         named = any(is_named(m) for m in group)
         hpf = p.hp / max(1, p.max_hp)
-        p.stance = ('guard' if named and hpf < 0.5 else
+        # (2026-11-22) and Guard against a known floorer or stunner, as the
+        # help teaches: in Guard he neither falls nor drops.
+        p.stance = ('guard' if (named and hpf < 0.5) or sim_effects.wants_guard(self, group) else
                     'press' if not named and hpf >= 0.6 else 'neutral')
 
     def _feel(self, target) -> None:
@@ -2289,6 +2291,8 @@ class Run(_MMMagicSim):
                     break
                 self.potions.append(pot)
                 self.fs['potions_bought'] = self.fs.get('potions_bought', 0) + 1
+        sim_effects.buy_venom_cure(self, floor, defn, reserve)
+        sim_effects.buy_rue(self, floor, defn, reserve)
 
     def rededicate(self, floor: int) -> None:
         """altars=1: on an altar floor (every 15th from floor 1; shrine rooms
@@ -3080,6 +3084,7 @@ class Run(_MMMagicSim):
         p = self.p
         sim_effects.fight_over(p)            # nobody lies down between fights
         sim_effects.stop_stone(self)         # and a count to stone is stopped first
+        sim_effects.stop_venom(self)         # and a venom worth curing is cured
         # let short debuffs run out first (poison, bleed tick for real)
         guard = 0
         while guard < 60 and any(v > 0 and e in DEBUFFS
@@ -3853,6 +3858,8 @@ class Run(_MMMagicSim):
             return False
         if sim_effects.stop_stone(self):
             return False
+        if sim_effects.stop_venom(self):
+            return False
         return True
 
     def _tick_monster(self, m):
@@ -3910,6 +3917,7 @@ class Run(_MMMagicSim):
         self._tactical_pick(_first, free=True)
         self._coat_for(_first)
         self._set_stance(group)
+        sim_effects.note_stone(self, group)  # a stone that kills, met: Oil of Rue at the next stall
         sim_archetypes.fight_start(self)     # fury, the bow in hand, the pet's mending
         sim_ai1.fight_start(self, group)     # AI-1: a light against the light-shy
         sim_ai2.fight_start(self, group)     # AI-2: who in the group thinks

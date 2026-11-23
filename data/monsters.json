@@ -308,7 +308,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 1
       }
     ],
     "resistances": [
@@ -657,7 +658,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 8,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 4
       }
     ],
     "resistances": [
@@ -914,7 +916,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 5,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 1
       }
     ],
     "resistances": [
@@ -1592,7 +1595,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 5,
-        "delivery": "ranged"
+        "delivery": "ranged",
+        "venom": 10
       }
     ],
     "resistances": [],
@@ -2165,7 +2169,8 @@
         "effect_chance": 0.4,
         "effect_duration": 6,
         "delivery": "ranged",
-        "ranged": true
+        "ranged": true,
+        "venom": 6
       },
       {
         "name": "Bite",
@@ -2300,7 +2305,8 @@
         "delivery": "bite",
         "effect": "poisoned",
         "effect_chance": 0.4,
-        "effect_duration": 6
+        "effect_duration": 6,
+        "venom": 6
       },
       {
         "name": "Stony Gaze",
@@ -2387,7 +2393,8 @@
         "effect": "stunned",
         "effect_chance": 0.2,
         "effect_duration": 2,
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       }
     ],
     "resistances": [
@@ -2450,7 +2457,8 @@
         "delivery": "trample",
         "shove": {
           "chance": 0.35
-        }
+        },
+        "floors": false
       },
       {
         "name": "Slam",
@@ -2577,7 +2585,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 8,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 5
       },
       {
         "name": "Stony Gaze",
@@ -3843,7 +3852,8 @@
         "effect": "poisoned",
         "effect_chance": 0.6,
         "effect_duration": 6,
-        "delivery": "breath"
+        "delivery": "breath",
+        "venom": 12
       }
     ],
     "resistances": [
@@ -4598,7 +4608,8 @@
         "delivery": "blow",
         "effect": "poisoned",
         "effect_chance": 0.4,
-        "effect_duration": 5
+        "effect_duration": 5,
+        "venom": 1
       }
     ],
     "resistances": [
@@ -5861,7 +5872,8 @@
         "effect": "poisoned",
         "effect_chance": 0.65,
         "effect_duration": 10,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 4
       },
       {
         "name": "Venom Spit",
@@ -5945,7 +5957,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 8,
-        "delivery": "sting"
+        "delivery": "sting",
+        "venom": 13
       }
     ],
     "resistances": [
@@ -6503,7 +6516,8 @@
         "effect": "poisoned",
         "effect_chance": 0.55,
         "effect_duration": 10,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 13
       }
     ],
     "resistances": [
@@ -6720,7 +6734,8 @@
         "effect_chance": 0.5,
         "effect_duration": 6,
         "piercing": false,
-        "delivery": "breath"
+        "delivery": "breath",
+        "venom": 14
       }
     ],
     "resistances": [
@@ -6851,7 +6866,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 8,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 4
       },
       {
         "name": "Tail Sweep",
@@ -7287,7 +7303,8 @@
         "effect": "poisoned",
         "effect_chance": 0.25,
         "effect_duration": 4,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 8
       }
     ],
     "resistances": [
@@ -7435,7 +7452,8 @@
         "effect": "poisoned",
         "effect_chance": 0.35,
         "effect_duration": 6,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 6
       }
     ],
     "resistances": [
@@ -8182,7 +8200,8 @@
         "effect": "poisoned",
         "effect_chance": 0.35,
         "effect_duration": 7,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 4
       }
     ],
     "resistances": [
@@ -8800,7 +8819,8 @@
         "name": "Bull Gore",
         "damage": "6d10+36",
         "type": "pierce",
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       },
       {
         "name": "Chaos Stomp",
@@ -9625,7 +9645,8 @@
         "effect_chance": 0.5,
         "effect_duration": 8,
         "piercing": true,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 3
       }
     ],
     "resistances": [
@@ -9696,7 +9717,8 @@
         "effect": "poisoned",
         "effect_chance": 0.35,
         "effect_duration": 6,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 3
       }
     ],
     "resistances": [
@@ -9900,7 +9922,8 @@
         "effect": "poisoned",
         "effect_chance": 0.35,
         "effect_duration": 5,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 1
       },
       {
         "name": "Bite",
@@ -9979,7 +10002,8 @@
         "effect_chance": 0.35,
         "effect_duration": 4,
         "piercing": true,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 1
       }
     ],
     "resistances": [
@@ -10265,7 +10289,8 @@
         "effect": "poisoned",
         "effect_chance": 0.25,
         "effect_duration": 4,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 1
       }
     ],
     "resistances": [
@@ -10472,7 +10497,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 5,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 3
       }
     ],
     "resistances": [
@@ -10610,7 +10636,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 8,
-        "delivery": "sting"
+        "delivery": "sting",
+        "venom": 4
       },
       {
         "name": "Tail Lash",
@@ -10677,7 +10704,8 @@
         "effect": "poisoned",
         "effect_chance": 0.3,
         "effect_duration": 5,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 8
       },
       {
         "name": "Entangling Rope",
@@ -10751,7 +10779,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 5,
-        "delivery": "sting"
+        "delivery": "sting",
+        "venom": 1
       }
     ],
     "resistances": [
@@ -10872,7 +10901,8 @@
         "effect": "poisoned",
         "effect_chance": 0.6,
         "effect_duration": 6,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 11
       },
       {
         "name": "Claws",
@@ -11635,7 +11665,7 @@
         "name": "Pseudopod",
         "damage": "1d8+1",
         "type": "acid",
-        "effect": "poisoned",
+        "effect": "corroding",
         "effect_chance": 0.3,
         "effect_duration": 5,
         "delivery": "touch"
@@ -11702,7 +11732,7 @@
         "name": "Pseudopod",
         "damage": "2d6",
         "type": "acid",
-        "effect": "poisoned",
+        "effect": "corroding",
         "effect_chance": 0.3,
         "effect_duration": 4,
         "delivery": "touch"
@@ -12073,7 +12103,7 @@
         "name": "Burrow",
         "damage": "1d2",
         "type": "blunt",
-        "effect": "poisoned",
+        "effect": "diseased",
         "effect_chance": 0.4,
         "effect_duration": 6,
         "delivery": "blow"
@@ -12144,7 +12174,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 6,
-        "delivery": "grapple"
+        "delivery": "grapple",
+        "venom": 3
       },
       {
         "name": "Bite",
@@ -12405,7 +12436,8 @@
         "effect_chance": 0.5,
         "effect_duration": 6,
         "ranged": true,
-        "delivery": "breath"
+        "delivery": "breath",
+        "venom": 2
       },
       {
         "name": "Staff",
@@ -13022,7 +13054,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 3
       },
       {
         "name": "Claws",
@@ -13220,7 +13253,8 @@
         "effect": "poisoned",
         "effect_chance": 0.6,
         "effect_duration": 6,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 5
       }
     ],
     "resistances": [
@@ -13284,7 +13318,8 @@
         "effect": "poisoned",
         "effect_chance": 0.55,
         "effect_duration": 8,
-        "delivery": "sting"
+        "delivery": "sting",
+        "venom": 7
       }
     ],
     "resistances": [
@@ -13809,7 +13844,7 @@
         "name": "Claw",
         "damage": "1d4+1",
         "type": "slash",
-        "effect": "poisoned",
+        "effect": "diseased",
         "effect_chance": 0.3,
         "effect_duration": 4,
         "delivery": "blow"
@@ -13891,9 +13926,6 @@
         "name": "Claw",
         "damage": "1d4",
         "type": "slash",
-        "effect": "poisoned",
-        "effect_chance": 0.2,
-        "effect_duration": 3,
         "delivery": "blow"
       }
     ],
@@ -13966,7 +13998,8 @@
         "effect": "poisoned",
         "effect_chance": 0.35,
         "effect_duration": 5,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 2
       }
     ],
     "resistances": [
@@ -17643,7 +17676,7 @@
         "name": "Drip",
         "damage": "1d4",
         "type": "acid",
-        "effect": "poisoned",
+        "effect": "corroding",
         "effect_chance": 0.4,
         "effect_duration": 5,
         "delivery": "blow"
@@ -17914,7 +17947,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "delivery": "touch"
+        "delivery": "touch",
+        "venom": 1
       }
     ],
     "resistances": [
@@ -18050,7 +18084,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "delivery": "sting"
+        "delivery": "sting",
+        "venom": 2
       }
     ],
     "resistances": [
@@ -18293,7 +18328,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 5,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 2
       }
     ],
     "resistances": [
@@ -18359,7 +18395,8 @@
         "effect": "poisoned",
         "effect_chance": 0.3,
         "effect_duration": 4,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 1
       }
     ],
     "resistances": [
@@ -18849,7 +18886,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 1
       }
     ],
     "resistances": [
@@ -19161,7 +19199,8 @@
         "effect": "poisoned",
         "effect_chance": 0.3,
         "effect_duration": 8,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 2
       }
     ],
     "resistances": [
@@ -19231,7 +19270,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 6,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 6
       },
       {
         "name": "Terrifying Howl",
@@ -19451,7 +19491,8 @@
         "effect": "poisoned",
         "effect_chance": 0.3,
         "effect_duration": 6,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 3
       },
       {
         "name": "Rake",
@@ -21561,7 +21602,8 @@
         "effect_chance": 0.35,
         "effect_duration": 4,
         "ranged": true,
-        "delivery": "ranged"
+        "delivery": "ranged",
+        "venom": 1
       }
     ],
     "resistances": [
@@ -21871,7 +21913,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 5,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 1
       }
     ],
     "resistances": [
@@ -21943,7 +21986,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 5,
-        "delivery": "touch"
+        "delivery": "touch",
+        "venom": 1
       },
       {
         "name": "Tendril Whip",
@@ -22082,7 +22126,9 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 6,
-        "delivery": "trample"
+        "delivery": "trample",
+        "venom": 5,
+        "floors": false
       },
       {
         "name": "Trample",
@@ -22232,7 +22278,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 6,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 6
       },
       {
         "name": "Nightmare Shriek",
@@ -22296,7 +22343,8 @@
         "name": "Antler Gore",
         "damage": "2d8+6",
         "type": "pierce",
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       },
       {
         "name": "Shadow Dive",
@@ -23998,7 +24046,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 6,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 5
       },
       {
         "name": "Divine Curse",
@@ -24111,7 +24160,8 @@
         "delivery": "trample",
         "shove": {
           "chance": 0.3
-        }
+        },
+        "floors": false
       }
     ],
     "resistances": [],
@@ -24173,7 +24223,8 @@
         "effect_chance": 0.4,
         "effect_duration": 6,
         "piercing": true,
-        "delivery": "breath"
+        "delivery": "breath",
+        "venom": 4
       },
       {
         "name": "Bite",
@@ -24708,7 +24759,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 8,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 5
       }
     ],
     "resistances": [
@@ -24769,7 +24821,8 @@
         "effect": "poisoned",
         "effect_chance": 0.55,
         "effect_duration": 8,
-        "delivery": "sting"
+        "delivery": "sting",
+        "venom": 8
       }
     ],
     "resistances": [
@@ -24835,7 +24888,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 8,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 4
       },
       {
         "name": "Constrict",
@@ -24858,7 +24912,8 @@
         "effect_chance": 0.5,
         "effect_duration": 6,
         "piercing": false,
-        "delivery": "breath"
+        "delivery": "breath",
+        "venom": 5
       }
     ],
     "resistances": [
@@ -25569,7 +25624,8 @@
         "delivery": "bite",
         "effect": "poisoned",
         "effect_chance": 0.25,
-        "effect_duration": 5
+        "effect_duration": 5,
+        "venom": 6
       }
     ],
     "resistances": [
@@ -26470,7 +26526,8 @@
         "effect": "bleeding",
         "effect_chance": 0.3,
         "effect_duration": 4,
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       },
       {
         "name": "Trample",
@@ -26554,7 +26611,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 6,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 11
       }
     ],
     "resistances": [
@@ -27016,7 +27074,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 8,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 8
       },
       {
         "name": "Claw",
@@ -27591,7 +27650,8 @@
         "effect_chance": 0.6,
         "effect_duration": 10,
         "piercing": true,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 11
       },
       {
         "name": "Constrict",
@@ -28109,7 +28169,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 8,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 14
       }
     ],
     "resistances": [
@@ -28180,7 +28241,8 @@
         "effect": "poisoned",
         "effect_chance": 0.55,
         "effect_duration": 10,
-        "delivery": "breath"
+        "delivery": "breath",
+        "venom": 17
       },
       {
         "name": "Claw",
@@ -28334,7 +28396,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 8,
-        "delivery": "touch"
+        "delivery": "touch",
+        "venom": 13
       },
       {
         "name": "Miasma Breath",
@@ -28904,7 +28967,8 @@
         "name": "Gore",
         "damage": "1d6+6",
         "type": "pierce",
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       }
     ],
     "resistances": [
@@ -29330,7 +29394,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 3
       }
     ],
     "resistances": [
@@ -29665,7 +29730,8 @@
         "name": "Goat Gore",
         "damage": "2d10+12",
         "type": "blunt",
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       }
     ],
     "resistances": [
@@ -29932,7 +29998,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 5,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 12
       },
       {
         "name": "Web Snare",
@@ -32388,7 +32455,8 @@
         "delivery": "blow",
         "effect": "poisoned",
         "effect_chance": 0.45,
-        "effect_duration": 5
+        "effect_duration": 5,
+        "venom": 12
       }
     ],
     "resistances": [
@@ -32840,7 +32908,8 @@
         "effect_chance": 0.5,
         "effect_duration": 6,
         "damage": "3d6+16",
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 9
       }
     ],
     "resistances": [
@@ -33112,7 +33181,8 @@
         "effect": "poisoned",
         "effect_chance": 0.55,
         "effect_duration": 8,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 13
       },
       {
         "name": "Falling Star-Ash",
@@ -33804,7 +33874,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 16
       },
       {
         "name": "Throat Slash",
@@ -35468,7 +35539,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 6,
-        "delivery": "sting"
+        "delivery": "sting",
+        "venom": 2
       },
       {
         "name": "Talon Swipe",
@@ -35678,7 +35750,8 @@
         "effect": "poisoned",
         "effect_chance": 0.35,
         "effect_duration": 5,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 6
       },
       {
         "name": "Snake-Pipe Drone",
@@ -35748,7 +35821,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 6,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 6
       },
       {
         "name": "Venom-Prayer",
@@ -36053,7 +36127,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 8,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 3
       },
       {
         "name": "Coil",
@@ -36365,7 +36440,8 @@
         "effect_chance": 0.4,
         "effect_duration": 6,
         "ranged": true,
-        "delivery": "ranged"
+        "delivery": "ranged",
+        "venom": 4
       }
     ],
     "resistances": [
@@ -38242,7 +38318,8 @@
         "effect": "bleeding",
         "effect_chance": 0.3,
         "effect_duration": 4,
-        "delivery": "trample"
+        "delivery": "trample",
+        "floors": false
       },
       {
         "name": "Trampling Charge",
@@ -39263,7 +39340,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 28
       }
     ],
     "resistances": [
@@ -39420,7 +39498,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 6,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 12
       }
     ],
     "resistances": [
@@ -39498,7 +39577,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 6,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 12
       }
     ],
     "resistances": [
@@ -39933,7 +40013,8 @@
         "effect": "poisoned",
         "effect_chance": 0.55,
         "effect_duration": 8,
-        "delivery": "blow"
+        "delivery": "blow",
+        "venom": 17
       },
       {
         "name": "Coils",
@@ -40487,7 +40568,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "delivery": "breath"
+        "delivery": "breath",
+        "venom": 19
       }
     ],
     "resistances": [
@@ -40563,7 +40645,8 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 5,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 13
       }
     ],
     "resistances": [
@@ -41074,7 +41157,8 @@
         "effect": "poisoned",
         "effect_chance": 0.55,
         "effect_duration": 6,
-        "delivery": "bite"
+        "delivery": "bite",
+        "venom": 29
       }
     ],
     "resistances": [
@@ -43433,7 +43517,8 @@
         "effect": "poisoned",
         "effect_chance": 0.45,
         "effect_duration": 6,
-        "damage": "7d6+14"
+        "damage": "7d6+14",
+        "venom": 18
       },
       {
         "name": "Spit of Venom-Blood",
@@ -43442,7 +43527,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "damage": "3d10+16"
+        "damage": "3d10+16",
+        "venom": 27
       },
       {
         "name": "Constricting Coils",
@@ -43592,7 +43678,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 6,
-        "damage": "6d10+36"
+        "damage": "6d10+36",
+        "venom": 18
       },
       {
         "name": "Gaze of the Honest Face",
@@ -44447,7 +44534,8 @@
         "delivery": "trample",
         "shove": {
           "chance": 0.3
-        }
+        },
+        "floors": false
       },
       {
         "name": "Furnace Breath",
@@ -45624,7 +45712,8 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 8,
-        "ranged": true
+        "ranged": true,
+        "venom": 12
       },
       {
         "name": "Root Wrap",
@@ -46218,7 +46307,8 @@
         "delivery": "bite",
         "effect": "poisoned",
         "effect_chance": 0.4,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "venom": 11
       }
     ],
     "resistances": [
@@ -46443,7 +46533,8 @@
         "delivery": "touch",
         "effect": "poisoned",
         "effect_chance": 0.5,
-        "effect_duration": 8
+        "effect_duration": 8,
+        "venom": 20
       },
       {
         "name": "Freezing Slag",
