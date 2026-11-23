@@ -112,7 +112,8 @@ kept). Learnt for the run (`Player.known_by_hand`, saved); an old save
 counts what is worn as known, and a hero's starting kit is known. A cursed
 piece still refuses to come off. The Kit, the @ sheet and the equip menu
 mark a known kind "Known by Hand" (BY HAND in the equip menu), and a line
-says so when it fires ("You have worn one of these before. On it goes.").
+says so the first time it fires for each kind ("You have worn one of these
+before. On it goes."), then never again that run (`src/said_once.py`).
 
 **One disguise per kind** (round 3, 2026-11-14). Because Known by Hand
 tells kinds apart, two kinds may never share an unidentified name: the BY

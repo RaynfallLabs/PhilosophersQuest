@@ -2855,7 +2855,7 @@ class CombatMixin:
         import counters as _counters
         if _counters.deafened(self.player):
             return
-        # The make-up and how to break it only for a hero who knows the
+        # The band named, with its make-up, only for a hero who knows the
         # leader's kind itself, or its family's Lore (family_lore.knowledge).
         import family_lore
         knows = family_lore.knowledge(self.player, band.get('leader_kind')) >= family_lore.KNOWN
@@ -2899,14 +2899,16 @@ class CombatMixin:
                          f"lore {lore}.", 'info')
 
     def _maybe_tell(self, m) -> None:
-        """The first time in a run the hero sees a kind, its worst tell, told
-        as far as he knows the kind (family_lore.knowledge, src/tells.py):
-        the sign of one he does not know; the sign, its family and what it
-        does once he knows its family; all that and what to do once he knows
-        the kind itself, and then what it is made of (tells.lore_lines: its
-        weaknesses, what it resists and shrugs off, what its nature refuses
-        and falls to easily), tell or no tell. Said again the first time he
-        sees it after he has come to know it better."""
+        """The first time in a run the hero sees a kind, ONE line of its
+        worst tell, as far as he knows the kind (family_lore.knowledge,
+        tells.log_line): the sign of one he does not know; the cue (the
+        creature named and what it can do, in a few words) once he knows
+        its family or the kind. A cue, not a soliloquy (Brandon 2026-11-22):
+        the tell in full and what to do are Observe's (O). Once he knows the
+        kind itself, what it is made of (tells.lore_lines: its weaknesses,
+        what it resists and shrugs off, what its nature refuses and falls to
+        easily), tell or no tell. Said again the first time he sees it after
+        he has come to know it better, but never the same line twice."""
         import family_lore
         import tells
         # (A friend, an encounter's person, and the Stray Kids' band, who are
@@ -2941,9 +2943,11 @@ class CombatMixin:
             self.add_message(_senses._fill(m, m.sight_sign), 'warning')
         keys = tells.abilities(m)
         if keys:
-            fid = family_lore.family_of(m)
-            self.add_message(tells.line(m, keys[0], level, family_lore.kin(fid) if fid else ''),
-                             'warning')
+            text = tells.log_line(m, keys[0], level)
+            # The cue is one line at KIN and at KNOWN: a hero who comes to
+            # know the kind better is told only what it is made of.
+            if was < family_lore.UNKNOWN or text != tells.log_line(m, keys[0], was):
+                self.add_message(text, 'warning')
         if level >= family_lore.KNOWN:
             # One line, naming the creature itself (tells.lore_line): no lead
             # line before it and no line per kind of damage.
@@ -3673,6 +3677,9 @@ class CombatMixin:
             if self._hero_fell():
                 return                     # its own turn set the death off: it has no blow
             if did_attack:
+                # Its blow this turn was at the hero, from beside him or from
+                # afar: a pet beside it is only clipped (_monster_swipes).
+                m._struck_hero_turn = getattr(self, 'turn_count', 0)
                 # Displacement: a share of the blows land where you are not:
                 # the spell's DISPLACEMENT_MISS while its status lasts, or the
                 # worn cloak's ladder (enchantments.displacement), the larger.
@@ -4484,9 +4491,11 @@ class CombatMixin:
             # Pet AI turn
             # (escorts are bodies too: a pet never steps onto one, PET-05)
             # (the Bococho under her rider takes no turn of her own: game_riding.py)
+            # It fights beside the hero, by what he can see (pet_tactics.py).
             result = (None if pet is rescuer or getattr(pet, 'ridden', False) else
                       pet.take_turn(self.player, self.dungeon, self.monsters,
-                                    list(self.pets) + self._escorts_here(), self.ground_items))
+                                    list(self.pets) + self._escorts_here(), self.ground_items,
+                                    visible=getattr(self, 'visible', None), quiz_acc=quiz_acc))
             if result:
                 action = result[0] if isinstance(result, tuple) else None
                 # Unicorn pet returns ('unicorn_actions', [...]) instead of combat
@@ -4576,6 +4585,58 @@ class CombatMixin:
             return
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
         self._monster_swipes(self.pets)
+        # A pet the blows have left badly hurt cries for help.
+        self._pet_cries()
+
+    def _pet_cries(self):
+        """A companion whose health has fallen to its nature's share, with a
+        foe near it, cries for help: one line a bout of danger
+        (pet_tactics.cry_step, data/pet_tactics.json 'cry'), in its own voice.
+        Out of the hero's sight it says where the cry came from; too far off,
+        or with wax in his ears, it is not heard."""
+        import counters as _counters
+        import pet_tactics as _pt
+        from geom import chebyshev_distance
+        from pet_system import can_swing, pet_foe
+        cry = _pt.rules().get('cry') or {}
+        reach = int(_pt.rules().get('danger_reach', 2) or 2)
+        px, py = self.player.x, self.player.y
+        visible = getattr(self, 'visible', None) or ()
+        for pet in self.pets:
+            if not getattr(pet, 'alive', False) or getattr(pet, 'is_unicorn', False):
+                continue
+            nat = _pt.nature(pet)
+            danger = any(pet_foe(m) and can_swing(m) and chebyshev_distance(pet.x, pet.y, m) <= reach
+                         for m in self.monsters)
+            share = pet.hp / max(1, pet.max_hp)
+            said, bout, calm = _pt.cry_step(pet.__dict__.get('_cry_bout', False),
+                                            pet.__dict__.get('_cry_calm', 0), share, danger, nat)
+            pet._cry_bout, pet._cry_calm = bout, calm
+            if not said:
+                continue
+            seen = (pet.x, pet.y) in visible
+            if not seen and (_counters.deafened(self.player)
+                             or max(abs(pet.x - px), abs(pet.y - py)) > int(cry.get('hear_range', 30))):
+                continue
+            # By the name the hero calls it: "Ember", "Shep", else its own.
+            from pet_system import has_own_name
+            name = getattr(pet, 'nickname', '') or pet.name
+            if not getattr(pet, 'nickname', '') and has_own_name(getattr(pet, 'species', None) or {}):
+                name = pet.call_name
+            self.add_message(_pt.cry_line(
+                name, _pt.voice(pet), pet.pronouns()[0], seen=seen,
+                place=_pt.place_word(self._in_a_room(pet.x, pet.y)),
+                direction='' if seen else self._compass_word(pet.x - px, pet.y - py)), 'warning')
+
+    def _in_a_room(self, x: int, y: int) -> bool:
+        """(x, y) lies inside one of the floor's rooms (not a corridor)."""
+        for r in getattr(self.dungeon, 'rooms', None) or ():
+            try:
+                if r.x < x < r.x + r.width - 1 and r.y < y < r.y + r.height - 1:
+                    return True
+            except (AttributeError, TypeError):
+                continue
+        return False
 
     def _monster_swipes(self, targets, *, escorts: bool = False):
         """Each monster beside one of ``targets`` swipes at it once, for half
@@ -4642,14 +4703,20 @@ class CombatMixin:
                         if random.randint(1, 20) < to_hit:
                             break         # a miss is still this monster's swipe
                     # A monster beside the hero has struck him this turn, and
-                    # only swipes at the pet for half its first attack. One
-                    # that cannot reach him, or that the pet has just bitten,
-                    # gives the pet a real blow: a whole attack of its own
-                    # (playtest 2026-10-24: "do monsters target pets at all?").
+                    # only swipes at the pet for half its first attack; so
+                    # does one that shot or cast at him from afar this turn
+                    # (a slinger beside a pet had its sling at the hero AND a
+                    # whole blow at the pet: play-test 2026-11-22, "he just
+                    # seems to soak damage"). One that has not struck him,
+                    # or that the pet has just bitten, gives the pet a real
+                    # blow: a whole attack of its own (playtest 2026-10-24:
+                    # "do monsters target pets at all?").
                     from dice import roll as _dice_roll
                     _aggro = getattr(m, '_pet_aggro', None)
                     full = (not escorts and (
-                        not m._adjacent_to(self.player) or _focus == id(pet)
+                        not (m._adjacent_to(self.player)
+                             or m.__dict__.get('_struck_hero_turn') == _turn)
+                        or _focus == id(pet)
                         or (_aggro and _aggro[0] == id(pet) and _turn - _aggro[1] <= 2)))
                     if full:
                         _atk = random.choice(m.attacks)
@@ -4675,11 +4742,15 @@ class CombatMixin:
                         pass
                     pet.take_damage(pet_dmg)
                     _seen = (pet.x, pet.y) in getattr(self, 'visible', ())
+                    # What the hero sees strike it: a foe in the dark beside a
+                    # pet in his light is "something" (2026-11-22).
+                    _by = striker_name(self, m)
+                    _killer = striker_name(self, m, lower=True)
                     if escorts and pet.alive and _seen:
-                        self.add_message(f"{the_name(m)} strikes {pet.name}. ({pet_dmg} damage)", 'danger')
+                        self.add_message(f"{_by} strikes {pet.name}. ({pet_dmg} damage)", 'danger')
                     elif pet.alive and _seen:
                         # A pet's wounds were silent, so pets looked untouchable.
-                        self.add_message(f"{the_name(m)} {'hits' if full else 'clips'} "
+                        self.add_message(f"{_by} {'hits' if full else 'clips'} "
                                          f"{pet.name}. ({pet_dmg} damage)"
                                          + (" The cold bites deep." if _pet_weak else ''), 'warning')
                     if not pet.alive:
@@ -4694,6 +4765,23 @@ class CombatMixin:
                             self.add_message(f"{pet.name} has been slain by {_killer}!", 'danger')
                     break  # one pet swipe per monster per turn
         return slain
+
+
+def striker_name(game, m, lower: bool = False) -> str:
+    """A creature as the hero sees it strike: by its name in his sight,
+    "something unseen" when invisible (the_name), "something" when it
+    stands in the dark (2026-11-22)."""
+    name = the_name(m, lower=lower)
+    if name.lower().startswith('something'):
+        return name
+    sees = getattr(game, '_sees_monster', None)
+    if sees is not None:
+        seen = sees(m)
+    else:
+        seen = (m.x, m.y) in (getattr(game, 'visible', None) or ())
+    if seen:
+        return name
+    return 'something' if lower else 'Something'
 
 
 def songs_active_id(player):

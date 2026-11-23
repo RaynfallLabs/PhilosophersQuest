@@ -121,6 +121,12 @@ def test_a_known_kind_goes_on_with_no_quiz(game):
     assert game.state == STATE_PLAYER
     assert _body(game) is second
     assert any(kbh.FIRES_LINE in t for t in _said(game))
+    # Said the first time for the kind only (said_once.py, 2026-11-22).
+    game._unequip_slot('body', second)
+    n = len(game.msg_log.entries)
+    game._equip_item(first)
+    assert game.state == STATE_PLAYER and _body(game) is first
+    assert not any(kbh.FIRES_LINE in str(e[0]) for e in game.msg_log.entries[n:])
 
 
 def test_a_new_material_is_a_new_kind(game):

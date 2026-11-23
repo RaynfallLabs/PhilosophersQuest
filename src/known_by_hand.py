@@ -169,11 +169,15 @@ def mark_for(player, item) -> str:
     return MARK
 
 
-def fires_line(item) -> str:
-    """The line said when a known kind goes on with no quiz."""
-    if getattr(item, 'is_unique', False):
-        return FIRES_LINE_UNIQUE
-    return FIRES_LINE
+def fires_line(item, player=None) -> str:
+    """The line said when a known kind goes on with no quiz. With the hero,
+    said the first time for each kind only, '' after (said_once.py; the
+    equip menus show the mark every time)."""
+    text = FIRES_LINE_UNIQUE if getattr(item, 'is_unique', False) else FIRES_LINE
+    if player is None:
+        return text
+    import said_once
+    return said_once.line(player, 'by_hand', kind_key(item), text)
 
 
 def seed_from_worn(player) -> None:

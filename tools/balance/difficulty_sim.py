@@ -4121,7 +4121,7 @@ class Run(_MMMagicSim):
             # ---------------- the pet's bite (game_combat pet turn) ----------------
             if self.prof.get('pet') and self.floor >= 3:
                 bitten = [m for m in active if m.alive and m._sim_away <= 0]
-                if bitten and sim_pets.here(self):
+                if bitten and sim_pets.here(self) and not sim_pets.fallen_back(self, bitten):
                     foe = min(bitten, key=lambda m: m.hp)
                     qp = self._quest_pet()
                     foe.take_damage(int(sim_pets.bite(self, foe) * min(

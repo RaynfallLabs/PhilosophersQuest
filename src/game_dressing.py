@@ -404,8 +404,11 @@ class DressingMixin:
     # ------------------------------------------------------------------
 
     def _dress_known(self, item, tier: int = 0) -> None:
-        """A kind known by hand: no quiz. Say so, then put it on."""
-        self.add_message(kbh.fires_line(item), 'info')
+        """A kind known by hand: no quiz. Say so the first time for its kind
+        (said_once.py), then put it on."""
+        line = kbh.fires_line(item, self.player)
+        if line:
+            self.add_message(line, 'info')
         self._dress_begin_on(item, tier=tier)
 
     def _dress_begin_on(self, item, tier: int = 0) -> None:

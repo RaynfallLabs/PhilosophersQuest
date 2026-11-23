@@ -696,9 +696,10 @@ class Pet:
         # Per-special cooldown tracking; key = special_id, value = turns remaining.
         # Initialized empty; populated as specials unlock + are used.
         self._special_cooldowns: dict[str, int] = {}
-        # AI command: 'return' (default — follow player + attack), 'stay' (hold
-        # position, attack adjacent only), 'wander' (roam aggressively within
-        # 8 tiles; don't auto-follow player).
+        # AI command (data/pet_tactics.json 'commands'): 'return' (default:
+        # keep near the hero, fight foes near him that he can see), 'stay'
+        # (hold position, bite only what comes beside it), 'wander' (hunt
+        # within 8 tiles of the hero; don't auto-follow him).
         self.command: str = 'return'
         # Floor on which this pet last received a "pet" interaction (once-per-floor cooldown).
         self.last_pet_floor: int = -1
@@ -1034,79 +1035,20 @@ class Pet:
 
     # --- AI ------------------------------------------------------------------
 
-    def take_turn(self, player, dungeon, monsters, pets, ground_items=None) -> tuple[str, object] | None:
-        """Pet AI turn. Returns (action_type, target) or None.
+    def take_turn(self, player, dungeon, monsters, pets, ground_items=None, *,
+                  visible=None, quiz_acc=None) -> tuple[str, object] | None:
+        """Pet AI turn. Returns ('attack', target) or None (it moved or held).
 
-        action_type is only ever 'attack' here; specials are player-triggered
-        via the pet menu (Shift+P) post-2026-05-17. The command field
-        controls movement behavior:
-          'return' - follow player; engage enemies within 4 tiles (default)
-          'stay'   - hold position; only attack adjacent enemies
-          'wander' - aggressive: engage enemies within 8 tiles; don't auto-follow
-        """
-        if not self.alive:
-            return None
-
-        # Find nearest alive enemy monster
-        nearest = None
-        nearest_dist = 999
-        for m in monsters:
-            if not m.alive:
-                continue
-            # Never hunt allies: the secret cow, the unicorn, moral-encounter
-            # NPCs and the Heavenly Host all live in the monster list.
-            if getattr(m, 'is_allied', False):
-                continue
-            # Nor what nobody knows is there: an ambusher that has not sprung
-            # or a mimic in its disguise. A pet hits it once it has sprung
-            # (bug bash 5 PET-04).
-            if not getattr(m, '_aware', False) and getattr(m, 'ai_pattern', '') in ('ambush', 'mimic'):
-                continue
-            # Nor one at peace (lore_powers.at_peace): begging (morale.py),
-            # fed, answered, waiting for an answer, bought. The hero spares
-            # it or strikes it himself.
-            if lore_powers.at_peace(m):
-                continue
-            # to the nearest tile it covers: a pet south or east of a
-            # two-by-two monster measured to its far corner and never attacked
-            from geom import chebyshev_distance
-            d = chebyshev_distance(self.x, self.y, m)
-            if d < nearest_dist:
-                nearest = m
-                nearest_dist = d
-
-        # Adjacent enemy: always melee-attack regardless of command.
-        if nearest and nearest_dist <= 1:
-            return ('attack', nearest)
-
-        cmd = getattr(self, 'command', 'return')
-
-        # A support companion (the Mooble) keeps at the hero's side on
-        # 'return' rather than charging: he bites only what comes beside
-        # him, and stays near enough to lend his gifts (mana_gift).
-        if cmd == 'return' and (getattr(self, 'species', None) or {}).get('support'):
-            if max(abs(self.x - player.x), abs(self.y - player.y)) > 2:
-                self._move_toward(player.x, player.y, dungeon, monsters, pets, player, ground_items)
-            return None
-
-        # Stay: don't move from current tile. Only attack adjacent (handled above).
-        if cmd == 'stay':
-            return None
-
-        # Wander: engage within 8 tiles, don't auto-follow player.
-        if cmd == 'wander':
-            if nearest and nearest_dist <= 8:
-                self._move_toward(nearest.x, nearest.y, dungeon, monsters, pets, player, ground_items)
-            return None
-
-        # Default 'return': enemy within 4 tiles → engage; otherwise follow player.
-        if nearest and nearest_dist <= 4:
-            self._move_toward(nearest.x, nearest.y, dungeon, monsters, pets, player, ground_items)
-            return None
-        pdist = max(abs(self.x - player.x), abs(self.y - player.y))
-        if pdist > 2:
-            self._move_toward(player.x, player.y, dungeon, monsters, pets, player, ground_items)
-        return None
+        Specials are the player's, from the pet menu (Shift+P). How it fights
+        beside the hero is companion_turn's (src/pet_tactics.py, data/
+        pet_tactics.json): on 'return' it goes for a foe near the hero that
+        he can see, breaks off when caught out of his sight, falls back
+        behind him when hurt and losing, and comes back in when it can win;
+        'stay' holds its tile; 'wander' hunts anything within eight of him.
+        ``visible`` is the hero's sight (worked out here when not given);
+        ``quiz_acc`` his answers so far (its bite scales by them)."""
+        return companion_turn(self, player, dungeon, monsters, pets, ground_items,
+                              visible=visible, quiz_acc=quiz_acc)
 
     def mana_gift(self, player) -> int:
         """A support companion's gift of mana (the Mooble's Bobble Glow,
@@ -1251,6 +1193,247 @@ class Pet:
             return
 
 
+def pet_foe(m) -> bool:
+    """A creature a companion fights: alive, never an ally (the secret cow,
+    the unicorn, the encounters' people and the Heavenly Host live in the
+    monster list), nor what nobody knows is there (an ambusher that has not
+    sprung, a mimic in its disguise: bug bash 5 PET-04), nor one at peace
+    (lore_powers.at_peace: begging, fed, answered, bought; the hero spares it
+    or strikes it himself)."""
+    if not getattr(m, 'alive', False) or getattr(m, 'is_allied', False):
+        return False
+    if not getattr(m, '_aware', False) and getattr(m, 'ai_pattern', '') in ('ambush', 'mimic'):
+        return False
+    return not lore_powers.at_peace(m)
+
+
+# Held, it has no blow for a pet (as in game_combat._monster_swipes).
+_NO_BLOW = ('sleeping', 'paralyzed', 'stunned', 'frozen', 'feared', 'charmed')
+
+
+def can_swing(m) -> bool:
+    """It could strike a pet this turn: not asleep, held, feared or charmed."""
+    has = getattr(m, 'has_effect', None)
+    return not (callable(has) and any(has(e) for e in _NO_BLOW))
+
+
+def hero_sight(player, dungeon):
+    """The tiles the hero sees now, or None when it cannot be worked out (a
+    bare test map: then every tile counts as seen)."""
+    try:
+        from fov import calculate_fov
+        return calculate_fov(dungeon, int(player.x), int(player.y), int(player.get_sight_radius()))
+    except Exception:
+        return None
+
+
+def pet_bite(pet, quiz_acc=None) -> float:
+    """What its bite lands, as Pet.get_attack_damage scales it by the hero's
+    answers; a sketch's or a called ally's bite is its own (base_damage)."""
+    base = float(getattr(pet, 'base_damage', 1) or 1)
+    if getattr(pet, 'is_sketch', False) or getattr(pet, 'is_called', False):
+        return max(1.0, base)
+    acc = 0.5 if quiz_acc is None else float(quiz_acc)
+    return max(1.0, base * min(1.0, (0.5 + min(0.7, acc * 0.7)) / 1.165))
+
+
+def blow_on(pet, m, player) -> float:
+    """What `m` lands on `pet` in a turn (the swipe pass's dice: half its
+    first attack beside the hero, else a whole one of its attacks; the pet's
+    line weakness counted). Nothing from one that cannot swing."""
+    import pet_tactics
+    atks = [a for a in (getattr(m, 'attacks', None) or ()) if isinstance(a, dict) and a.get('damage')]
+    if not atks or not can_swing(m):
+        return 0.0
+    try:
+        beside_hero = bool(m._adjacent_to(player))
+    except Exception:
+        from geom import chebyshev_distance
+        beside_hero = chebyshev_distance(player.x, player.y, m) <= 1
+    if beside_hero:
+        hits = [(pet_tactics.dice_mean(atks[0]['damage']) / 2.0, atks[0].get('type'))]
+    else:
+        hits = [(pet_tactics.dice_mean(a['damage']), a.get('type')) for a in atks]
+    got = [harm_taken(pet, max(1, int(round(v))), t)[0] for v, t in hits]
+    return sum(got) / len(got)
+
+
+def _cursed_tiles(ground_items) -> set:
+    """Tiles with cursed loot on them: pets keep off them."""
+    return {(gi.x, gi.y) for gi in (ground_items or ())
+            if getattr(gi, 'buc', 'uncursed') == 'cursed'}
+
+
+def route_map(pet, dungeon, monsters, pets, player, cursed, max_steps: int,
+              avoid_traps: bool = True) -> dict:
+    """{tile: (steps, first step)} for every tile the pet can walk to within
+    `max_steps`, by the rules of one step (_route_step): no walls, pits,
+    cursed loot, the hero, a monster or another body; known traps only when
+    `avoid_traps` is off. Its own tile is (0, None)."""
+    from collections import deque
+    from geom import occupied_tiles
+    pits = getattr(dungeon, 'pits', None) or set()
+    traps = getattr(dungeon, 'traps', None) or {}
+    taken = {(p.x, p.y) for p in pets if p is not pet and getattr(p, 'alive', False)}
+    for m in monsters:
+        if getattr(m, 'alive', True):
+            taken.update(occupied_tiles(m))
+    hero = (player.x, player.y)
+    start = (pet.x, pet.y)
+    out = {start: (0, None)}
+    queue = deque([start])
+    while queue:
+        cur = queue.popleft()
+        steps, first = out[cur]
+        if steps >= max_steps:
+            continue
+        for mx in (-1, 0, 1):
+            for my in (-1, 0, 1):
+                n = (cur[0] + mx, cur[1] + my)
+                if (mx == 0 and my == 0) or n in out:
+                    continue
+                if (not dungeon.is_walkable(*n) or n == hero or n in taken or n in cursed
+                        or n in pits or (avoid_traps and n in traps)):
+                    continue
+                out[n] = (steps + 1, first or n)
+                queue.append(n)
+    return out
+
+
+def _route_to(routes: dict, pet, m):
+    """Steps for the pet to stand beside `m` (0 when it already does), or
+    None when no short walk gets there."""
+    from geom import chebyshev_distance, occupied_tiles
+    if chebyshev_distance(pet.x, pet.y, m) <= 1:
+        return 0
+    best = None
+    for tx, ty in occupied_tiles(m):
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                r = routes.get((tx + dx, ty + dy))
+                if r is not None and (best is None or r[0] < best):
+                    best = r[0]
+    return best
+
+
+def _fall_back(pet, player, dungeon, monsters, pets, ground_items, foes) -> str:
+    """Take the safest tile beside the hero (pet_tactics.pick_fall_back: no
+    foe beside it, out of the foes' view, the hero between). 'moved' when it
+    stepped, 'there' when it stands on the best tile already, 'stuck' when
+    it can neither."""
+    import pet_tactics
+    import senses
+    from geom import chebyshev_distance
+    px, py = player.x, player.y
+    was = (pet.x, pet.y)
+    if max(abs(pet.x - px), abs(pet.y - py)) > 3:
+        pet._move_toward(px, py, dungeon, monsters, pets, player, ground_items)
+        return 'moved' if (pet.x, pet.y) != was else 'stuck'
+    cursed = _cursed_tiles(ground_items)
+    routes = route_map(pet, dungeon, monsters, pets, player, cursed, 6)
+    if len(routes) <= 1:
+        routes = route_map(pet, dungeon, monsters, pets, player, cursed, 6, avoid_traps=False)
+    swingers = [f['m'] for f in foes if can_swing(f['m'])]
+    for ring in (1, 2):
+        cands = []
+        for (x, y), (steps, _first) in routes.items():
+            if max(abs(x - px), abs(y - py)) > ring:
+                continue
+            dists = [chebyshev_distance(x, y, m) for m in swingers]
+            cands.append({'x': x, 'y': y, 'steps': steps,
+                          'beside': sum(1 for d in dists if d <= 1),
+                          'seen_by': sum(1 for m in swingers
+                                         if senses.clear_view(m.x, m.y, x, y, dungeon)),
+                          'far': min(dists) if dists else 99})
+        best = pet_tactics.pick_fall_back(cands)
+        if best is None:
+            continue
+        if (best['x'], best['y']) == was:
+            return 'there'
+        pet.x, pet.y = routes[(best['x'], best['y'])][1]
+        return 'moved'
+    pet._move_toward(px, py, dungeon, monsters, pets, player, ground_items)
+    return 'moved' if (pet.x, pet.y) != was else 'stuck'
+
+
+def companion_turn(pet, player, dungeon, monsters, pets, ground_items=None, *,
+                   visible=None, quiz_acc=None, foe_ok=None):
+    """One turn of a companion that fights beside the hero (Pet.take_turn,
+    horns.CalledAlly.take_turn; the plan is pet_tactics.choose). Returns
+    ('attack', foe) or None. `foe_ok` narrows who it may fight (a horn's
+    ally never fights a gate's guardian)."""
+    if not getattr(pet, 'alive', False):
+        return None
+    import pet_tactics
+    from geom import chebyshev_distance, occupied_tiles
+    if visible is None:
+        visible = hero_sight(player, dungeon)
+    px, py = player.x, player.y
+
+    def ken(x, y):
+        # In the hero's sight, or beside him (he feels a fight at his elbow).
+        return visible is None or (x, y) in visible or max(abs(x - px), abs(y - py)) <= 1
+
+    cmd = getattr(pet, 'command', 'return') or 'return'
+    crules = pet_tactics.command(cmd)
+    nat = pet_tactics.nature(pet)
+    reach = int(crules.get('reach', 4) or 0)
+    most = int(crules.get('max_route', 8) or 0)
+    danger = int(pet_tactics.rules().get('danger_reach', 2) or 2)
+    routes = None
+    foes = []
+    for m in monsters:
+        if not pet_foe(m) or (foe_ok is not None and not foe_ok(m)):
+            continue
+        # (to the nearest tile it covers: a pet south or east of a two-by-two
+        # monster measured to its far corner and never attacked)
+        d_pet = chebyshev_distance(pet.x, pet.y, m)
+        d_hero = chebyshev_distance(px, py, m)
+        if d_pet > danger and d_hero > reach:
+            continue
+        route = 0 if d_pet <= 1 else None
+        if route is None and d_hero <= reach and most > 0:
+            if routes is None:
+                routes = route_map(pet, dungeon, monsters, pets, player,
+                                   _cursed_tiles(ground_items), most)
+            route = _route_to(routes, pet, m)
+        foes.append({'m': m, 'd_pet': d_pet, 'd_hero': d_hero,
+                     'seen': any(ken(x, y) for x, y in occupied_tiles(m)),
+                     'hp': max(0, int(getattr(m, 'hp', 1) or 0)),
+                     'blow': blow_on(pet, m, player), 'route': route})
+    bite = pet_bite(pet, quiz_acc)
+    what, f = pet_tactics.choose(
+        hp=float(getattr(pet, 'hp', 1) or 0), max_hp=float(getattr(pet, 'max_hp', 1) or 1),
+        bite=bite, nat=nat, cmd=cmd,
+        support=bool((getattr(pet, 'species', None) or {}).get('support')),
+        with_hero=ken(pet.x, pet.y), foes=foes)
+    target = f['m'] if f else None
+    if what == 'attack':
+        return ('attack', target)
+    if what == 'engage':
+        pet._move_toward(target.x, target.y, dungeon, monsters, pets, player, ground_items)
+        return None
+    if what == 'regroup':
+        # Caught out of the hero's sight: back to him, the fight brought
+        # with it; it bites only when it cannot get away.
+        was = (pet.x, pet.y)
+        pet._move_toward(px, py, dungeon, monsters, pets, player, ground_items)
+        if (pet.x, pet.y) == was and target is not None:
+            return ('attack', target)
+        return None
+    if what == 'fall_back':
+        how = _fall_back(pet, player, dungeon, monsters, pets, ground_items, foes)
+        # Nowhere better to stand and a foe still beside it: it fights.
+        if how != 'moved' and target is not None and chebyshev_distance(pet.x, pet.y, target) <= 1:
+            return ('attack', target)
+        return None
+    if what == 'follow':
+        keep = crules.get('follow')
+        if keep is not None and max(abs(pet.x - px), abs(pet.y - py)) > int(keep):
+            pet._move_toward(px, py, dungeon, monsters, pets, player, ground_items)
+    return None
+
+
 _FENRIR_SPECIES = {
     'element': 'holy',
     'damage_type': 'holy',
@@ -1343,15 +1526,15 @@ class FenrirPet(Pet):
         if self.hp < self.max_hp:
             self.hp = min(self.max_hp, self.hp + 3 + bonus)
 
-    def take_turn(self, player, dungeon, monsters, pets, ground_items=None) -> tuple[str, object] | None:
+    def take_turn(self, player, dungeon, monsters, pets, ground_items=None, **kw) -> tuple[str, object] | None:
         """Fenrir moves at double speed — gets two attempts to move/attack per turn."""
         if not self.alive:
             return None
-        result = super().take_turn(player, dungeon, monsters, pets, ground_items)
+        result = super().take_turn(player, dungeon, monsters, pets, ground_items, **kw)
         if result:
             return result
         # Second move attempt (fast wolf)
-        return super().take_turn(player, dungeon, monsters, pets, ground_items)
+        return super().take_turn(player, dungeon, monsters, pets, ground_items, **kw)
 
 
 class SketchedPet(Pet):
@@ -1626,7 +1809,7 @@ class UnicornPet(Pet):
             if self.hp < self.max_hp:
                 self.hp = min(self.max_hp, self.hp + 2)
 
-    def take_turn(self, player, dungeon, monsters, pets, ground_items=None) -> tuple | None:
+    def take_turn(self, player, dungeon, monsters, pets, ground_items=None, **_kw) -> tuple | None:
         """Unicorn AI: follow player, heal, cleanse, detect traps. Never attacks."""
         if not self.alive:
             return None

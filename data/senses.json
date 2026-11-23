@@ -7,7 +7,7 @@
       "through_walls": true,
       "sees_invisible": true,
       "lines": {
-        "known": "{The} lifts {his} head and sniffs the air. {He} has your scent, and walls will not hide you from {him}.",
+        "known": "{The} sniffs the air: {he} has your scent.",
         "seen": "{The} lifts {his} head, sniffs the air, and turns toward you.",
         "unseen": "Somewhere close, something sniffs the air, and stops."
       }
@@ -18,7 +18,7 @@
       "needs_motion": true,
       "sees_invisible": true,
       "lines": {
-        "known": "{The} goes still, then turns toward you. {He} feels your footsteps through the stone; stand still and {he} loses you.",
+        "known": "{The} goes still: {he} feels your footsteps in the stone.",
         "seen": "{The} goes very still, then turns toward you.",
         "unseen": "You feel, more than hear, something shift in the stone nearby."
       }
@@ -28,7 +28,7 @@
       "through_walls": true,
       "sees_invisible": true,
       "lines": {
-        "known": "A chill runs over your skin. {The} has felt the warmth of the living.",
+        "known": "A chill on your skin: {the} has felt the warmth of the living.",
         "seen": "A chill runs over your skin as {the} turns toward you.",
         "unseen": "A chill runs over your skin, as if something had noticed you."
       }
@@ -58,7 +58,7 @@
       "through_walls": true,
       "sees_invisible": true,
       "lines": {
-        "known": "{The} turns, as if someone had called {his} name. The Furies always find the guilty.",
+        "known": "{The} turns as if called by name: the Furies find the guilty.",
         "seen": "{The} turns, as if someone had called {his} name.",
         "unseen": "Somewhere, something turns, as if someone had called its name."
       }
@@ -84,7 +84,7 @@
       "sees_invisible": true,
       "fails_at_rest": true,
       "lines": {
-        "known": "{The} turns {his} head, sniffing. {He} has found your breath; stand still and hold it, and {he} loses you.",
+        "known": "{The} sniffs: {he} has found your breath.",
         "seen": "{The} turns {his} head, sniffing, and hops toward you.",
         "unseen": "Somewhere close, something takes a long, slow sniff."
       }
@@ -95,8 +95,8 @@
       "sees_invisible": true,
       "needs_bleeding": true,
       "lines": {
-        "known": "{The} lifts {his} head, tasting the air. {He} smells your blood, and will follow it anywhere until it stops.",
-        "seen": "{The} lifts {his} head, tasting the air, and turns toward you.",
+        "known": "{The} tastes the air: {he} smells your blood.",
+        "seen": "{The} tastes the air and turns toward you.",
         "unseen": "Somewhere a long tongue flickers, tasting the air."
       }
     }
@@ -822,14 +822,14 @@
   "wanderers": {
     "_doc": "What the hero is told as a floor's grace runs out (src/wanderers.py; the dials are in src/floor_curve.py). Nothing new comes onto a floor while he explores it. 'warning' is said once, near the end of the grace; 'stirs' when it runs out and newcomers begin to come down the stairs, slowly at first, faster the longer he stays. A hero who leaves and comes back finds the floor settled again, and may hear both again.",
     "warning": [
-      "The floor has gone quiet, the way a held breath is quiet. You have been here a long while.",
-      "Somewhere above, something sniffs the air where you walked. You have been here a long while.",
-      "Dust sifts down from the ceiling, as if something heavy is moving on the stair. You have lingered here a long time."
+      "The floor has gone quiet, like a held breath. You have lingered long.",
+      "Above, something sniffs where you walked. You have lingered long.",
+      "Dust sifts from the ceiling: something heavy is on the stair."
     ],
     "stirs": [
-      "Footsteps on the stair, and more behind them: word of you has spread. Things will come looking now, and keep coming while you stay.",
-      "Somewhere a door bangs open. The floor knows you are here, and more of the dungeon is coming down to see. The longer you stay, the more will come.",
-      "A horn sounds far above. The dungeon has noticed you, and newcomers will find their way down here for as long as you linger."
+      "Footsteps on the stair, and more behind them: word of you has spread.",
+      "A door bangs open somewhere: more of the dungeon is coming down.",
+      "A horn sounds far above: the dungeon has noticed you."
     ]
   }
 }
