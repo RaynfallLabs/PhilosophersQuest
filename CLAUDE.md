@@ -84,6 +84,7 @@ src/
   ai_blow.py          - What the behaviours add to one monster blow (to-hit shift; after the blow)
   life_drain.py       - Life Drained: a drain blow lowers max HP; half back on the stairs, all from prayer, a physician or the Water of Epidaurus
   grave_rot.py        - Grave Rot: disease lingers, stops rest mending, halves heals; ticks on a monster
+  venom.py            - Poison: each venom its own strength (data), doses that add to one and a half, the CON save, the venom still to come on the health bar, the Venom Ward
   light_shy.py        - Light-Shy (flinch, a troll's wounds, stiffening) and Snuff the Light (a soaked wick)
   gone_again.py       - Gone Again: a hit-and-run creature hides out of sight (in the dark, unseen)
   alarm.py            - Raise the Alarm: a lookout's shout rouses its side, once a floor
