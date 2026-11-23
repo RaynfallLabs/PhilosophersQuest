@@ -1030,11 +1030,32 @@ class Monster:
             self.status_effects[name] = max(
                 self.status_effects.get(name, 0),
                 min(int(duration), NAMED_FOE_CONTROL_CAP))
+            if name == 'sleeping':
+                self._note_laid_sleep(int(self.status_effects[name]))
             return int(self.status_effects[name])
         current = self.status_effects.get(name, 0)
         self.status_effects[name] = min(current + duration, MAX_EFFECT_DURATION)
+        if name == 'sleeping':
+            self._note_laid_sleep(min(self._laid_sleep_left() + int(duration),
+                                      int(self.status_effects[name])))
         lore_powers.on_effect(self, name)          # the Kappa's dish spills (slice M)
         return int(self.status_effects[name])
+
+    # A sleep LAID on a creature (a spell, a wand, a scroll, a flask, a gas:
+    # add_effect and hold) holds for its turns whatever the noise: only a
+    # blow ends it (Deep Slumber and the Bough of Somnus: "A blow wakes the
+    # one it lands on"). Its own rest (a sleeping job, a den's or a zoo's deep
+    # sleep, written straight in when the floor is made) still wakes to a
+    # noise (senses._wake_p, sleepers.laid). Mass Sleep's targets woke to the
+    # cast's own noise, or to the fight beside them, within a turn.
+    def _laid_sleep_left(self) -> int:
+        if not self.has_effect('sleeping'):
+            return 0
+        return int(self.__dict__.get('_laid_sleep', 0) or 0)
+
+    def _note_laid_sleep(self, turns: int) -> None:
+        if int(turns) > 0:
+            self.__dict__['_laid_sleep'] = max(self._laid_sleep_left(), int(turns))
 
     def hold(self, name: str, duration: int):
         """Apply an effect keeping the longer of the old and new duration
@@ -1062,6 +1083,8 @@ class Monster:
             duration = _aff.status_weak_duration(duration)
         cur = int(self.status_effects.get(name, 0) or 0)
         self.status_effects[name] = max(cur, int(duration))
+        if name == 'sleeping':
+            self._note_laid_sleep(min(int(duration), int(self.status_effects[name])))
         if self.status_effects[name] > 0:
             lore_powers.on_effect(self, name)      # the Kappa's dish spills (slice M)
 
@@ -1228,6 +1251,13 @@ class Monster:
                       and not any(self.status_effects.get(e, 0) > 0
                                   for e in _HARD_CONTROL)):
                     self.status_effects['control_immune'] = NAMED_FOE_CONTROL_GRACE
+        if self.__dict__.get('_laid_sleep'):
+            # The laid sleep runs down with the sleep (_note_laid_sleep).
+            left = self._laid_sleep_left() - 1
+            if left > 0:
+                self.__dict__['_laid_sleep'] = left
+            else:
+                self.__dict__.pop('_laid_sleep', None)
         # A wound that keeps bleeding is not a new blow: it never splits a
         # creature that splits (src/splitting.py).
         self._dot_tick = True
@@ -1474,6 +1504,7 @@ class Monster:
                 self.alive = False
         if actual > 0:
             self.status_effects.pop('sleeping', None)
+            self.__dict__.pop('_laid_sleep', None)
             self._after_typed_hit(damage_type, actual)
             lore_powers.after_damage(self, actual)    # peace broken; the Lindworm's skins (slice M)
         return actual

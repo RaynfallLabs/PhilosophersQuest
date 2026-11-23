@@ -196,7 +196,9 @@ def test_a_sleeper_sleeps_through_silence_and_wakes_to_a_fight():
     dun = two_rooms()
     hero = Hero(3, 3)
     gob = make('goblin', 5, 5)
-    gob.add_effect('sleeping', 500)
+    # Its own rest, written straight in as senses.assign_jobs does (a spell's
+    # sleep, laid through add_effect, wakes only to a blow: test_bugbash_361_ai).
+    gob.status_effects['sleeping'] = 500
     for _ in range(10):
         gob.take_turn(hero, dun, [gob])
     assert gob.has_effect('sleeping')

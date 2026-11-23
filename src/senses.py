@@ -350,6 +350,8 @@ def _wake_p(m, kind: str, d: int, r: int, player) -> float:
     the noise's reach)."""
     w = data()['waking']
     import sleepers
+    if sleepers.laid(m):
+        return 0.0                  # a spell's sleep (Mass Sleep...): only a blow wakes it
     if sleepers.factor(player, 'take') <= 0:       # the Hand of Glory
         return 0.0
     if sleepers.is_deep_sleeper(m):
@@ -419,13 +421,17 @@ def resolve_noises(dungeon, monsters, player, rng=None) -> list:
 
 
 def rouse(m, x: int, y: int) -> None:
-    """Something called this monster to (x, y): an ally's cry, an alarm."""
+    """Something called this monster to (x, y): an ally's cry, an alarm. One
+    under a spell's sleep sleeps on (sleepers.laid): it goes there when it
+    wakes."""
+    import sleepers
     m._alerted = True
     m._aware = True
     m._goal = (int(x), int(y))
     m._searching = False
     m._lead_used = True
-    m.status_effects.pop('sleeping', None)
+    if not sleepers.laid(m):
+        m.status_effects.pop('sleeping', None)
 
 
 def rouse_near(monsters, x: int, y: int, radius: int, dungeon=None) -> int:

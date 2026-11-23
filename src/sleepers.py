@@ -58,6 +58,18 @@ def in_room(room, x: int, y: int) -> bool:
     return room.x <= x < room.x + room.width and room.y <= y < room.y + room.height
 
 
+def laid(m) -> bool:
+    """Its sleep was laid on it (a spell, a wand, a scroll, a flask, a gas:
+    Monster.add_effect / hold, `_laid_sleep`) and still runs: no noise, no
+    footstep, no gold taken and no friend's shout wakes it; only a blow
+    (Monster.take_damage), as Deep Slumber and the Bough of Somnus say."""
+    try:
+        return (int(m.status_effects.get('sleeping', 0) or 0) > 0
+                and int(m.__dict__.get('_laid_sleep', 0) or 0) > 0)
+    except (AttributeError, TypeError, ValueError):
+        return False
+
+
 def is_deep_sleeper(m) -> bool:
     try:
         return bool(getattr(m, 'alive', True)) and int(m.status_effects.get('sleeping', 0)) >= DEEP
@@ -131,7 +143,7 @@ def stirred(player, kind: str, x: int, y: int, sleepers, rtype: str,
     if not rule or not sleepers:
         return []
     if aggravates(player):
-        return list(sleepers)
+        return [m for m in sleepers if not laid(m)]
     f = factor(player, kind)
     if f <= 0:
         return []
@@ -140,6 +152,8 @@ def stirred(player, kind: str, x: int, y: int, sleepers, rtype: str,
     rng = rng or random
     out = []
     for m in sleepers:
+        if laid(m):
+            continue                             # a spell's sleep: only a blow
         if max(abs(m.x - x), abs(m.y - y)) <= reach and rng.random() < chance:
             out.append(m)
     return out
