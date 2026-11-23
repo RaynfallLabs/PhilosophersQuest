@@ -174,6 +174,7 @@ src/
   mind_theft.py       - Forget: one identified kind or one Bestiary page eaten; back on the kill, lost on leaving the floor
   quiz_sight.py       - Stunned, Blinded, Hallucinating on the quiz and map, display only (double, a light, a false answer)
   food_system.py      - Harvest and cook (the two quiz flows), eating, potions
+  hunger.py           - Hunger you can see: Hungry, Weak (STR -2, no natural healing) and Starving, from SP (data/hunger.json)
   butchered.py        - Butchered Before: a kind identified and harvested once is harvested again with no question
   kitchen.py          - The kitchen: kin ingredients, the recipe book, what a dish gives (cooking_rules.json), the cook menu's rows; cook to carry (a recipe's `makes`)
   cook_menu.py        - The cook menu's words (why it opened where, chips, what is missing) and its list window (pure)
