@@ -36,7 +36,15 @@ it is under half and one of its own falls within its sight; and when five
 of its blows in a row land and do nothing (it cannot hurt the foe). One
 check a trigger: it never re-arms itself. Healed above half it steadies.
 A broken creature runs along a real path, away or to its friends; cornered
-beside the hero, it turns at bay for a few turns (+2 to hit, no flight).
+beside the hero, or caught and struck by him as it runs, it turns at bay for
+a few turns (+2 to hit, no flight). A frightened one (``frightened_turn``)
+runs the same way and turns at bay when cornered.
+
+Each kind's own nerve (2026-11-22): its kind's ``morale`` in monsters.json
+by its lore (an orc warrior or a bugbear holds, a rat breaks), and its kind's
+``break_share`` where a wound tests it sooner or later (a jackal at half its
+health). The Bestiary says it in one line (``bestiary_line``). When a war-
+band's leader falls each follower tests here too (war_bands.leader_falls).
 
 Kept as they were: the galla (fearless), a war-band follower while his
 leader lives, a hyena that smells a wounded hero (packs 'harry'), the

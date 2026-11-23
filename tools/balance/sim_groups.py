@@ -502,7 +502,7 @@ def deaths(run, active: list, queue: list) -> None:
     # chain landed on him (his health fell with it).
     chain = int(run.quiz.chain_sum) - st.cs0
     st.cs0 = int(run.quiz.chain_sum)
-    need = int(war_bands.data().get('nerve_chain', 6))
+    need = int((war_bands.data().get('great_blow') or {}).get('chain', war_bands.data().get('nerve_chain', 6)))
     for m in active:
         if m.__dict__.get('_band_role') != 'leader' or not m.alive:
             continue

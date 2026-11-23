@@ -10,11 +10,15 @@ makes camp in one room (data/war_bands.json):
 * **Guards** keep beside him. **Shooters** keep their distance. **Casters**
   hang back. **Healers** finally have someone to mend.
 * **Morale.** When the leader falls the band breaks its own way:
-  - a goblin war-band routs;
+  - a 'rout' band (goblins, gnolls, bandits, a cult, a hunt): each follower
+    tests his nerve (2026-11-22, ``leader_falls``: his kind's morale less the
+    band's penalty), not fear for all; the biggest guard may take up the
+    lead first. One that breaks runs its own way (morale.start_flight);
   - a necromancer's dead crumble;
   - devils turn on one another.
-  When half the band is down, the rest may flee. A great maths chain on
-  the leader can break their nerve before he falls.
+  When half the band is down, the rest may flee. A great blow on the leader
+  (a long chain that staggers him: data ``great_blow``) can break their
+  nerve before he falls.
 * **Knowing pays.** A hero who knows the leader's family hears the band's
   make-up on arrival.
 
