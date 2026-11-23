@@ -244,8 +244,9 @@ def roster_text(band: dict) -> str:
 
 
 def arrival_line(band: dict, knows_family: bool) -> str:
-    """The band heard on arrival; named in full, with how to break it, only
-    for a hero who knows the leader's kind (family_lore.knowledge KNOWN)."""
+    """The band heard on arrival; named, with its make-up, only for a hero
+    who knows the leader's kind (family_lore.knowledge KNOWN). A cue: how to
+    break it is the leader's Observe line (2026-11-22)."""
     b = data()['bands'].get(band.get('id', ''), {})
     if knows_family and b.get('known_line'):
         return b['known_line'].replace('{roster}', roster_text(band))

@@ -155,7 +155,7 @@
       "withdraw": "{The} falls back, fighting as {he} goes.",
       "rally": "{The} brings {his} friends back into the fight!",
       "at_bay": "{The} turns at bay, cornered!",
-      "yield": "{The} throws down {his} weapon and {his} purse and begs for {his} life!"
+      "yield": "{The} throws down {his} weapon and purse and begs for mercy!"
     },
     "unseen": {
       "bolt": "Something scrambles away from you.",
@@ -254,7 +254,7 @@
       "cast": "{The}'s chant ends.",
       "cast_ward": "{The}'s chant ends: a ward of bone and smoke rises about {him}.",
       "cast_control": "{The}'s chant ends in a curse.",
-      "cast_dispel": "{The} speaks a word of unmaking: your {buff} is torn away!",
+      "cast_dispel": "{The} unmakes your {buff} with a word!",
       "cast_darkness": "{The} closes {his} fist, and the dark comes down.",
       "cast_escape": "{The} steps into nothing and is four paces off.",
       "spoil": "The blow breaks {the}'s chant!",
@@ -268,7 +268,7 @@
       "wind_up": "Somewhere near, a voice begins to chant.",
       "darkness": "Somewhere near, a voice speaks, and your light goes out.",
       "curse": "Somewhere near, a voice speaks a curse.",
-      "dispel": "Somewhere near, a voice speaks a word of unmaking: your {buff} is torn away!"
+      "dispel": "A voice in the dark unmakes your {buff}!"
     },
     "buff_words": {
       "hasted": "haste",
@@ -290,7 +290,7 @@
     "struggle_dc_add": 0,
     "lines": {
       "start_constrict": "{The}'s coils close round you!",
-      "start_swallow": "{The} swallows you whole! It is dark, and {his} gut closes round you.",
+      "start_swallow": "{The} swallows you whole, and {his} gut closes round you!",
       "swallowed_aim": "You are inside {the}: you can strike only {him}.",
       "start_drag": "{The} seizes you and starts to drag you toward the water!",
       "loosed_loosed": "{The}'s grip slides off you: nothing can hold you.",
@@ -321,7 +321,7 @@
     "_doc": "src/auras.py (Auras). A kind's 'aura' {kind: fear|stench|heat|cold, radius 1-3, ...} works on the hero each world turn he is within its radius: fear once a fight when he sees it (a WIS save; 'turns'), stench each turn until he once masters his stomach (a CON check; 'effect' for 'turns' at 'chance'), heat and cold a 'share' of his own health a turn (at most twice the strongest at once). A kind's own 'line' / 'steady_line' before these; {damage}.",
     "lines": {
       "fear": "Dread rolls off {the} like a cold wind, and you turn to run!",
-      "fear_steady": "Dread rolls off {the}, but you stand your ground. It will not shake you again.",
+      "fear_steady": "Dread rolls off {the}, but you stand your ground.",
       "stench": "The reek of {the} turns your stomach.",
       "stench_steady": "You master your stomach against the reek of {the}.",
       "heat": "The heat of {the} scorches you for {damage} damage.",
@@ -341,7 +341,7 @@
     "line": "{The} stops at the edge of {his} ground and watches you go.",
     "line_unseen": "",
     "roused_turns": 5,
-    "roused_line": "{The} turns on you: {he} will not be struck and walk away."
+    "roused_line": "Struck on {his} own ground, {the} turns on you!"
   },
   "kit": {
     "_doc": "src/monster_kit.py (Uses What It Carries). A kind's 'kit' [{item, chance}] is rolled once. Under drink_below of its health a healing potion it carries (or stole) is drunk with its turn; a flask of fire oil is thrown at a hero throw_range tiles off with a clear throw. What is left falls where it dies. {potion} {potion_bare} {flask} {amount}.",

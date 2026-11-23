@@ -622,7 +622,8 @@ kind skips the question when the hero has also studied that kind himself at that
 study or the Wand of Probing (`family_lore.studied`; Brandon, 2026-11-17: "Only if studied": a page
 opened by the Book of Thoth, Omnisight, a gate boss's quest or the family's tier does not count), so a
 success recorded before the kind was studied counts from the moment it is. The free harvest is the right answer's harvest (`food_system._harvest_yield`:
-the same part, the family's extra portion, the corpse used up, the turn spent), said by one line first
+the same part, the family's extra portion, the corpse used up, the turn spent), said by one line first,
+the first free harvest of each kind only (`src/said_once.py`; Brandon 2026-11-22: "just noise")
 ("You know how to butcher a Giant Rat. No question needed."). It starts no quiz, so it sends no
 `quiz_answer` (no answer counter, streak or answer quirk moves); the Seeker's `harvest` event carries
 `free=True` and still counts toward `harvests`. The corpse dossier and the kind's Bestiary page say

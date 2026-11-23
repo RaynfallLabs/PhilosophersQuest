@@ -366,7 +366,7 @@ def test_a_band_holds_the_room_rather_than_file_into_a_corridor():
         assert all(m.x <= 7 for m in mons), [(m.x, m.y) for m in mons]
         assert not any(m._adjacent_to(hero) for m in mons)
     lines = [s for m in mons for s in said(m)]
-    assert any('will not follow you into the narrow way' in s for s in lines), lines
+    assert any('hang back from the narrow way' in s for s in lines), lines
     # Its patience runs out: they come (no stalemate).
     turns(mons, hero, d, patience + 8)
     assert any(m.x >= 8 for m in mons)
@@ -1627,7 +1627,7 @@ def test_audit_d8_every_line_in_minds_json_can_be_said():
     d, hero, mons = _corridor_scene('kobold_pack_leader', n=1)
     hero.hp = int(hero.max_hp * 0.2)
     turns(mons, hero, d, 1)
-    assert any('can see you are hurt' in s for s in said(mons[0]))
+    assert any('see you are hurt' in s for s in said(mons[0]))
 
 
 def test_audit_d8_the_kiter_habit_is_told_when_it_changes_their_play():
@@ -1636,7 +1636,7 @@ def test_audit_d8_the_kiter_habit_is_told_when_it_changes_their_play():
     habits.note(d, 'kiter', mons, 60)
     tm.TURN.n = 70
     mons[0].take_turn(hero, d, mons)
-    assert any('shoot and step back' in s for s in said(mons[0]))
+    assert any('hit and run' in s for s in said(mons[0]))
 
 
 def test_audit_d9_reach_goes_by_delivery_and_lore():

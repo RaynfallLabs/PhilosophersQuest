@@ -297,7 +297,7 @@ Brandon: "NONE automatically know where you are unless it's thematically and lor
   | `master` | Asterion, Abaddon, Death | always knows, in his own house |
 
   The first time on a floor that a kind finds him by a lore sense within 12 tiles, `senses._first_line` marks it (`_sense_how`), and `Game._say_sense_lines` says one of its three `lines` (2026-11-12):
-  - **known:** he sees it and knows the kind (`family_lore.knowledge` KNOWN). The sense is explained: "It has your scent, and walls will not hide you from it."
+  - **known:** he sees it and knows the kind (`family_lore.knowledge` KNOWN). The sense is named, in a few words: "The Wolf sniffs the air: it has your scent." (How it hunts in full is Observe's `senses_line` and the Bestiary's.)
   - **seen:** he sees it but doesn't know it. Only what it does: "lifts its head, sniffs the air, and turns toward you".
   - **unseen:** he can't see it. Never named: "Somewhere close, something sniffs the air, and stops."
 
@@ -366,7 +366,7 @@ Brandon: monsters must "pose a real challenge and players need to pay attention 
 - **Half the band down:** each follower flees with a 50% chance.
 - **A great blow.** A maths chain of `nerve_chain` (6) or more on the living leader makes about half his followers falter (`feared` for 4 turns), with the band's `break_line`.
 
-**Knowing pays.** On arrival, `_announce_band` says the band's `line`, which is sound and signs only and never names the band's kind. If the hero knows the leader's kind (`family_lore.knowledge` KNOWN: studied, its page opened, or its family at Lore), it says the `known_line` instead, which names the roster and how to break it. Recognise alone is not enough (2026-11-12). The camp is furnished by `decor.furnish_band_camp`: the fire and banner near the middle, bedrolls round the fire, bones and candles in one group against a wall.
+**Knowing pays.** On arrival, `_announce_band` says the band's `line`, which is sound and signs only and never names the band's kind. If the hero knows the leader's kind (`family_lore.knowledge` KNOWN: studied, its page opened, or its family at Lore), it says the `known_line` instead, a short cue that names the band and its roster ("Goblin war-drums. A leader, two fighters and one archer."); how to break it is the leader's Observe line (2026-11-22: a cue, not a soliloquy). Recognise alone is not enough (2026-11-12). The camp is furnished by `decor.furnish_band_camp`: the fire and banner near the middle, bedrolls round the fire, bones and candles in one group against a wall.
 
 Observe (`war_bands.observe_line`, data `observe`) says what anyone can see:
 - **a follower:** "It marches with a goblin war-band."
@@ -400,7 +400,7 @@ Brandon, 2026-11-18: "add packs that fight 2+ at a time, the more diverse and un
 - **At a choke** (`choke_slots`: one tile or none beside him can be reached from their side; a corridor, the far side of a doorway): the one already on him fights. The rest go round when there is another way to another side (`packs.round_path`: at most `round_nodes` tiles, `round_max` steps, kept `round_every` turns while he stands still). Failing that, they hold beyond the mouth out of his sight, in reach of it (`packs.hold_step`), for him to come out. A slinger holds where it can see him to pelt him. After `patience` (12) turns of holding with no one fighting him, the nearest that can come tries his luck (`packs.can_fight`, `can_come`: one asleep, held, broken or at peace fights no one and is waited on by no one). One hurt while it waits (an arrow, a flask) comes for him. Rats (`corridor: press`) pour in anyway: vermin do not think so far, so a corridor is the hero's answer to a swarm.
 - **Go about together** (2026-11-22): the extras are set down on the free tiles nearest the first, and while it has no prey the pack follows its head (`packs.head_of`: the leader kind when one is with it, else the first alive). The rest keep within `idle_keep` (2) tiles of it (`senses._keep_with_pack`, from `senses.idle`). Each member used to roam alone, and a pack was 8 to 10 tiles apart within 50 to 200 turns. Herds keep their own ways.
 - **Hunt together** (`packs.alarm`, from `senses.notice` when one first finds him): the pack is roused to him as far as its cry carries round corners (`rouse_radius`, 8; a hound's bay much farther). A silenced one has no cry or bay.
-- **Lines** (`_pack_line`, said by `CombatMixin._pack_turn_after` after the monster's turn, once a fight for the pack): "The wolves will not follow you into the narrow way...", "One of the wolves slips away to come at you from another side.", "The goblins drop their slings and rush you together!"
+- **Lines** (`_pack_line`, said by `CombatMixin._pack_turn_after` after the monster's turn, once a fight for the pack): "The wolves hang back from the narrow way.", "One of the wolves slips away to come at you from another side.", "The goblins drop their slings and rush you together!"
 
 **The tricks** (`tricks`; each has a tell, `pack_<trick>` in `data/tells.json`, ranked with the others, and a Bestiary line, `bestiary`, for a kind the hero knows):
 
@@ -427,7 +427,8 @@ Tests: `tests/test_packs.py` (data, the swarm's numbers, the choke and the hold 
 The tells live in `data/tells.json` and `src/tells.py`. Each tell has three parts:
 - **sign:** what the eye sees;
 - **does:** what the creature can do to the hero;
-- **counter:** what to do about it.
+- **counter:** what to do about it;
+- **cue:** the log's one line on first sight (2026-11-22, Brandon: "you need a cue, not a soliloquy, especially for console messages"): the creature named and what it can do, in a few words, never how to beat it ("The Hobgoblin will shout for help when he sees you.").
 
 How much is said follows `family_lore.knowledge` (Brandon, 2026-11-12: the notes must not give away what a creature is or how to beat it before the hero knows it, and two corpses must not teach a whole family):
 
@@ -437,7 +438,7 @@ How much is said follows `family_lore.knowledge` (Brandon, 2026-11-12: the notes
 | KIN | its family at Recognise or Forewarned, the kind never studied | the sign, "It is one of {kin}.", and what it does, never the counter |
 | KNOWN | the kind studied, its page opened (Thoth, Omnisight, Recall Lore at chain 5, the Wand of Probing, a gate boss's quest step), or its family at Lore (`full_lore_tier`, 3) | the sign, what it does and the counter, then what it is made of, in ONE line that names it (`tells.lore_line`, 2026-11-16): "The Skeleton: weak to blunt, holy and silver weapons (or metals like it); resists slash, pierce, cold and poison; can't be put to sleep, poisoned or charmed." No multipliers (the help page defines the words), and nothing of a creature still hidden (named "something") until it is seen |
 
-- **First sight:** the first time in a run the hero sees a kind, `_maybe_tell` says its worst tell at what he knows, and at KNOWN what it is made of, tell or no tell (winning-build plan 3.1). It is said again the first time he sees the kind after he knows it better. This is tracked in `_dungeon_alive['told_level']` ({kind: level}, saved); an old save's `told` list counts as told at UNKNOWN.
+- **First sight:** the first time in a run the hero sees a kind, `_maybe_tell` says ONE short line of its worst tell (`tells.log_line`): its sign at UNKNOWN, its cue at KIN or KNOWN; and at KNOWN what it is made of, tell or no tell (winning-build plan 3.1). It is said again the first time he sees the kind after he knows it better, never the same line twice (the cue is one line at KIN and KNOWN, so a hero who comes to know the kind hears only what it is made of). The table above is Observe's. This is tracked in `_dungeon_alive['told_level']` ({kind: level}, saved); an old save's `told` list counts as told at UNKNOWN.
 - **Observe:** says up to 2 tells at the same level, and at KNOWN what it is made of (`tells.lore_lines`). A KIN creature adds "You know its kind, but not how to beat it. Study its corpse."; how it hunts (`senses_line`) is said only at KNOWN.
 - **The Bestiary:** (what a KNOWN page shows, with sizes, bane materials, scales, ward and regeneration: combat.md "What the hero is told of it", 3.5.1) a KIN kind's page opens, but its weaknesses, resistances, what it shrugs off and its nature read "not yet studied" until it is KNOWN; at KNOWN the page shows "Weak to", "Resists", "Shrugs Off", "Immune To" and "Falls Easily To".
 - **The hit lines, the Strike Now preview and the combat strip's weakness tag** follow the same levels: see [combat](combat.md), "Knowledge decides what the line says".

@@ -12,6 +12,10 @@ family_lore.knowledge):
   KNOWN    the kind studied, its page opened, or its family at Lore: all
            that, what to do, and what it fears.
 
+That is Observe (O). On first sight the log says one short line of it
+(tells.log_line, 2026-11-22): the sign, or the cue once the family or the
+kind is known.
+
 A counter never tells the hero to keep his distance from a creature that
 can do the thing from across a room.
 """
@@ -213,6 +217,9 @@ class _G:
 
 
 def test_first_sight_says_more_as_the_hero_learns():
+    """One short line a moment, a cue and not a soliloquy (Brandon
+    2026-11-22): the sign; then the cue, the creature named and what it
+    can do; then what it is made of. The counter is Observe's (O)."""
     hero = _hero()
     g = _G(hero)
     ghoul = _m('ghoul')
@@ -222,28 +229,29 @@ def test_first_sight_says_more_as_the_hero_learns():
     assert len(g.msgs) == 1, 'once per run at what he knows'
     hero.family_lore_grants = {'restless_dead': 1}
     g._maybe_tell(ghoul)
-    assert len(g.msgs) == 2 and 'restless dead' in g.msgs[1] and 'distance' not in g.msgs[1]
+    assert len(g.msgs) == 2 and g.msgs[1] == 'The Ghoul can hold you still where you stand.'
+    assert 'distance' not in g.msgs[1] and 'restless dead' not in g.msgs[1]
     hero.studied_monster_ids.add('ghoul')
     g._maybe_tell(ghoul)
-    # The tell with its counter, then what it is made of (tells.lore_lines,
+    # The cue was said at KIN: now only what it is made of (tells.lore_lines,
     # winning-build plan 3.1): weaknesses, resistances, its nature.
     lore = tells.lore_lines(ghoul)
     assert len(lore) == 1
-    assert len(g.msgs) == 3 + len(lore)
-    assert 'distance' in g.msgs[2] and g.msgs[3].startswith('The Ghoul: weak to ')
-    assert g.msgs[3:] == lore and 'pierce' in lore[0] and 'put to sleep' in lore[0]
+    assert len(g.msgs) == 2 + len(lore)
+    assert g.msgs[2:] == lore and g.msgs[2].startswith('The Ghoul: weak to ')
+    assert 'pierce' in lore[0] and 'put to sleep' in lore[0]
     n = len(g.msgs)
     g._maybe_tell(ghoul)
     assert len(g.msgs) == n
 
 
-def test_a_known_kind_seen_first_gets_the_whole_line_at_once():
+def test_a_known_kind_seen_first_gets_the_cue_and_what_it_is_made_of():
     hero = _hero()
     hero.studied_monster_ids.add('troll')
     g = _G(hero)
     g._maybe_tell(_m('troll'))
-    assert 'do not wear him down' in g.msgs[0]
-    assert g.msgs[1:] == ['The Troll: weak to fire and acid; easily confused; flees from fire.']
+    assert g.msgs == ['The Troll heals as he fights.',
+                      'The Troll: weak to fire and acid; easily confused; flees from fire.']
 
 
 def test_a_known_kind_with_no_tell_is_still_told_what_it_is_made_of():
@@ -268,7 +276,7 @@ def test_a_save_from_before_the_versions_still_says_the_known_line():
     g = _G(hero)
     g._dungeon_alive = {'domains_seen': [], 'told': ['ghoul']}
     g._maybe_tell(_m('ghoul'))
-    assert g.msgs and 'distance' in g.msgs[0]
+    assert g.msgs and 'hold you still' in g.msgs[0]
 
 
 def test_a_creature_with_no_tell_says_nothing_on_sight():

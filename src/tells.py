@@ -20,10 +20,14 @@ Lore) hears all three, and so learns which sign means what.
 A counter is honest about reach: an effect the creature can put on the hero
 from across a room gets the far counter, never "fight it from a distance".
 
-The first time in a run the hero sees a kind, the Chronicler says its worst
-tell (Game._maybe_tell); Observe (O) says them all. Every tell comes from
-what the creature really does: an attack effect in data/monsters.json, or
-one of its flags. Pure module.
+The first time in a run the hero sees a kind, the log says ONE short line of
+its worst tell (Game._maybe_tell, `log_line`): the sign to a hero who does
+not know it, the tell's 'cue' (the creature named, what it can do, in a few
+words) to one who knows its family or the kind (Brandon 2026-11-22: "you
+need a cue, not a soliloquy, especially for console messages"). Observe (O)
+says them in full, with the counter at KNOWN. Every tell comes from what the
+creature really does: an attack effect in data/monsters.json, or one of its
+flags. Pure module.
 
 At KNOWN the hero is also told what the creature is made of, in ONE line
 that names it (`lore_line`, winning-build plan 2026-11-13 section 3.1;
@@ -161,17 +165,19 @@ def _words(items) -> str:
     return items[0] if len(items) == 1 else ', '.join(items[:-1]) + ' or ' + items[-1]
 
 
-def parts(m, key: str) -> tuple:
-    """(sign, does, counter) of one tell, filled in for this creature."""
+_PARTS = ('sign', 'cue', 'does', 'counter')
+
+
+def _raw(m, key: str) -> dict:
+    """The words of one tell chosen for this creature (its sign, cue, does
+    and counter), not yet filled in."""
     d = data()
     e = d['effects'][key]
-    sign, does, counter = e.get('sign', ''), e.get('does', ''), e.get('counter', '')
+    t = {p: e.get(p, '') for p in _PARTS}
     if key == 'stalker' and not getattr(m, '_revealed', False):
         # The false friend before the act drops (Old Nickel): a smile, an
         # offer to keep watch. What he is, only for a hero who knows.
-        sign = e.get('sign_friend', sign)
-        does = e.get('does_friend', does)
-        counter = e.get('counter_friend', counter)
+        t = {p: e.get(p + '_friend', t[p]) for p in _PARTS}
     if key in ('parley', 'summon_kind'):
         # A kind's own words: the Blue Men's verse is no Sphinx's riddle, and
         # what the Overseer calls falls with it.
@@ -182,26 +188,54 @@ def parts(m, key: str) -> tuple:
             import kind_data
             block = kind_data.field(m, 'summons_fall')
         own = (block or {}).get('tell') or {}
-        sign = own.get('sign', sign)
-        does = own.get('does', does)
-        counter = own.get('counter', counter)
+        t = {p: own.get(p, t[p]) for p in _PARTS}
     if key == 'splits':
         spec = getattr(m, 'splits', None)
         by = spec.get('by', 'weak_blow') if isinstance(spec, dict) else 'weak_blow'
         if by == 'weak_blow' or not isinstance(by, (list, tuple)):
-            does, counter = e.get('does_weak', does), e.get('counter_weak', counter)
+            t['does'] = e.get('does_weak', t['does'])
+            t['counter'] = e.get('counter_weak', t['counter'])
+            t['cue'] = e.get('cue_weak', t['cue'])
         else:
             from affinity import word_for
-            does = does.replace('{split_by}', _words(word_for(b) for b in by))
+            words = _words(word_for(b) for b in by)
+            t['does'] = t['does'].replace('{split_by}', words)
+            t['cue'] = t['cue'].replace('{split_by}', words)
     elif key not in _FLAGS and reach(m, key) == 'far':
-        counter = e['counter_far'] if 'counter_far' in e else d.get('far_counter', '')
-    return _fill(m, sign), _fill(m, does), _fill(m, counter)
+        t['counter'] = e['counter_far'] if 'counter_far' in e else d.get('far_counter', '')
+    return t
+
+
+def parts(m, key: str) -> tuple:
+    """(sign, does, counter) of one tell, filled in for this creature."""
+    t = _raw(m, key)
+    return _fill(m, t['sign']), _fill(m, t['does']), _fill(m, t['counter'])
+
+
+def cue(m, key: str) -> str:
+    """The tell in a few words, the creature named: what it can do, never
+    how to beat it ("The hobgoblin will shout for help when he sees you.")."""
+    t = _raw(m, key)
+    return _fill(m, t['cue'] or t['sign'])
+
+
+def log_line(m, key: str, level: int = KNOWN) -> str:
+    """The ONE line the log says of a tell on first sight (Game._maybe_tell):
+    the sign to a hero who does not know the kind, the cue to one who knows
+    its family or the kind. A cue, not a soliloquy (Brandon 2026-11-22:
+    "Just saying the Goblin warband leader will call for help is enough...
+    you don't need an exhaustive rundown of what will happen"): what it
+    does in full and what to do about it are Observe's (O: `line`)."""
+    if level <= UNKNOWN:
+        return _fill(m, _raw(m, key)['sign'])
+    return cue(m, key)
 
 
 def line(m, key: str, level: int = KNOWN, kin: str = '') -> str:
-    """One tell, told as far as the hero knows the kind. `kin` names its
-    family in the KIN line ("It is one of the restless dead."); Observe,
-    which names the family itself, leaves it out."""
+    """One tell in full, told as far as the hero knows the kind (Observe;
+    the log's first-sight line is `log_line`). `kin` names its family in
+    the KIN line ("It is one of the restless dead."); Observe, which names
+    the family itself, leaves it out."""
     sign, does, counter = parts(m, key)
     if level <= UNKNOWN:
         return sign
