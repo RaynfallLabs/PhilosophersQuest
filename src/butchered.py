@@ -95,12 +95,18 @@ def learn(player, obj) -> bool:
     return True
 
 
-def fires_line(corpse) -> str:
+def fires_line(corpse, player=None) -> str:
     """What the log says as a known kind is harvested with no question: "You
     know how to butcher a Giant Rat. No question needed." (monster.a_name of
-    the creature the corpse was: "an Orc Scout", "Fenrir")."""
+    the creature the corpse was: "an Orc Scout", "Fenrir"). With the hero,
+    said the first time for each kind only, '' after (said_once.py; Brandon
+    2026-11-22: "just noise. The player gets it")."""
     from monster import a_name, kind_of_corpse
-    return f"You know how to butcher {a_name(kind_of_corpse(corpse))}. No question needed."
+    text = f"You know how to butcher {a_name(kind_of_corpse(corpse))}. No question needed."
+    if player is None:
+        return text
+    import said_once
+    return said_once.line(player, 'butchered', kind_key(corpse), text)
 
 
 def card_line(player, obj) -> str:

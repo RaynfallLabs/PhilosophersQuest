@@ -4624,6 +4624,12 @@ class RenderMixin:
                 or self._menu_item_is_equipped(item))
 
     def _menu_bonus_label(self, key, value) -> str:
+        # The plain words first (item_powers.chain_label), as the Kit and
+        # the dossier say them; the key's own name only where none is written.
+        import item_powers as _ip
+        _said = _ip.chain_label(key, value)
+        if _said:
+            return _said
         if key == 'ac_bonus':
             return f"AC {int(value):+d}"
         if key == 'regen_bonus':
@@ -4658,35 +4664,58 @@ class RenderMixin:
             return getattr(item, 'item_class', 'item').replace('_', ' ').title()
 
     def _item_power_lines(self, item) -> list:
-        """What a piece does for the hero, in plain lines, powers first: its
-        AC, what it guards against, what its enchantment or ring kind does,
-        its resistances, the stats and states it lends, a weapon's damage and
-        its special (Brandon 2026-11-16: "what are the actual benefits of the
-        gloves I have on vs what I'm selecting?... tells me the top level
-        name like 'Life-Grip' but not what that actually does... I want to
-        see the powers it gives me before the lore"). [] while it is not
-        identified enough to say."""
+        """What an item does for the hero, in plain lines, powers first: the
+        one list both the Kit card and the dossier's Mechanics pane show
+        (Brandon 2026-11-16: "I want to see the powers it gives me before
+        the lore"; 2026-11-22: "Ring of Wizardry gets identified, has
+        nothing useful in mechanics, and no idea what it actually does;
+        assume this problem persists across many items").
+
+        A scroll, potion, wand or spellbook: its words (item_words.py). Food,
+        ammunition, an ingredient, a lockpick, a chest, an artifact,
+        treasure, a flask: theirs (item_powers.py). Gear: its AC, what it
+        guards against, its enchantment or ring kind, its resistances, the
+        stats and states it lends, a weapon's damage and its specials. Every
+        kind's own lines (data/ui/item_powers.json) come last; their
+        ``covers`` silence a generic line saying the same field. [] while it
+        is not identified enough to say."""
         from items import Weapon, Armor, Shield, Accessory
         import gear as _g
         import guards as _gd
         import enchantments as _en
+        import item_powers as _ip
         if item is None or self._kit_visible_level(item) < 3:
             return []
         import item_words as _iw
+        hero = getattr(self, 'player', None)
         if _iw.covers(item):
             # A scroll, potion, wand or spellbook: what it does, its numbers
             # filled for this hero (src/item_words.py, data/ui/item_effects.json;
             # Brandon 2026-11-22: "for scrolls and spells, I can't tell what
             # they actually do"). It printed "Nothing beyond its stats."
-            return _iw.what_it_does(item, getattr(self, 'player', None),
-                                    buc_known=self._copy_buc_known(item))
+            return _iw.what_it_does(item, hero, buc_known=self._copy_buc_known(item))
+        if not isinstance(item, (Weapon, Armor, Shield, Accessory)):
+            return [str(t) for t in _ip.lines(item, hero) if str(t).strip()]
         known = self._lore_enchant_text(item) != '?'
+        quiet = _ip.covers(item)
         out = []
+
+        def add(text, *fields):
+            """A generic line, unless the kind's own lines say that field."""
+            if text and not (quiet & set(fields)):
+                out.append(str(text))
+
         if isinstance(item, Weapon):
             dts = [str(d).replace('_', ' ') for d in (getattr(item, 'damage_types', []) or ['physical'])]
             types = dts[0] if len(dts) == 1 else ', '.join(dts[:-1]) + ' or ' + dts[-1]
             hands = 'two-handed' if getattr(item, 'two_handed', False) else 'one-handed'
             out.append(f"Damage {self._kit_damage_str(item)}: {types}, {hands}.")
+            # A melee weapon's reach past the next tile (game_combat's melee
+            # targeting: a clear line to a foe in sight). Only the dossier said it.
+            _reach = int(getattr(item, 'reach', 1) or 1)
+            if _reach >= 2 and not getattr(item, 'requires_ammo', None)                     and str(getattr(item, 'weapon_class', '') or '') != 'ranged':
+                add(f"It strikes foes up to {_reach} tiles away (A), along a clear line to one you can see.",
+                    'reach')
             tier = int(getattr(item, 'quiz_tier', 0) or 0)
             if tier:
                 hard = {1: 'the easiest', 2: 'easy', 3: 'middling', 4: 'hard',
@@ -4697,13 +4726,15 @@ class RenderMixin:
                 from combat import class_mechanic_info
                 info = class_mechanic_info(mech)
                 if info:
-                    out.append(f"{info[0]}: {info[1]}" if len(info) > 1 and info[1] else str(info[0]))
+                    add(f"{info[0]}: {info[1]}" if len(info) > 1 and info[1] else str(info[0]),
+                        'class_mechanic')
             if int(getattr(item, 'spell_tier_ease', 0) or 0) > 0:
-                out.append("Spells you cast with it in hand ask an easier science question.")
+                add("Spells you cast with it in hand ask an easier science question.",
+                    'spell_tier_ease')
             if int(getattr(item, 'equipped_light_aura', 0) or 0) > 0:
                 # A torch held as a weapon is one of the hero's lights (lights.py).
-                out.append(f"In hand it gives light: sight +{int(item.equipped_light_aura)}. "
-                           f"Only your brightest light counts.")
+                add(f"In hand it gives light: sight +{int(item.equipped_light_aura)}. "
+                    f"Only your brightest light counts.", 'equipped_light_aura')
             if self._kit_visible_level(item) >= 4:
                 # ("to make it bleed its target" read as nonsense: each phrase
                 # names the target itself.)
@@ -4718,55 +4749,60 @@ class RenderMixin:
                         v = 0.0
                     if v > 0:
                         pct = v * 100 if v <= 1 else v
-                        out.append(f"Each hit has a {pct:.0f}% chance to {words}.")
+                        # A stun is then shaken off by size (combat.py: the
+                        # bigger the creature, the likelier), so the chance is
+                        # less than it reads against a big foe.
+                        tail = "; a big creature often shakes it off" if attr == 'stun_chance' else ''
+                        add(f"Each hit has a {pct:.0f}% chance to {words}{tail}.", attr)
                 # Its own on-hit state (`effects`: Boudicca's Spear frightens,
                 # Wendigo's Fang slows), in the same words.
                 _hit = self._weapon_hit_effect(item)
                 if _hit:
-                    out.append(f"Each hit has a {_hit[1]:.0f}% chance to {_hit[0]}.")
+                    add(f"Each hit has a {_hit[1]:.0f}% chance to {_hit[0]}.", 'effects')
                 # Its power in the V menu, in a line (the Sceptre of Agamemnon).
                 import wards as _wd
                 _pn = _wd.item_def('weapon', getattr(item, 'id', '')).get('power_line')
                 if _pn:
-                    out.append(str(_pn))
+                    add(str(_pn), 'power_line')
                 try:
                     ls = float(getattr(item, 'lifesteal_percent', 0) or 0)
                 except (TypeError, ValueError):
                     ls = 0.0
                 if ls > 0:
-                    out.append(f"Heals you by {ls * 100 if ls <= 1 else ls:.0f}% of the damage it deals.")
+                    add(f"Heals you by {ls * 100 if ls <= 1 else ls:.0f}% of the damage it deals.",
+                        'lifesteal_percent')
                 ca = float(getattr(item, 'counter_attack_chance', 0) or 0) or float(_wd.item_def(
                     'weapon', getattr(item, 'id', '')).get('counter_attack_chance', 0) or 0)
                 if ca > 0:
-                    out.append(f"When a foe beside you lands a blow, it has a {ca * 100:.0f}% chance "
-                               f"to strike back by itself.")
+                    add(f"When a foe beside you lands a blow, it has a {ca * 100:.0f}% chance "
+                        f"to strike back by itself.", 'counter_attack_chance')
         if isinstance(item, Shield) and _g.is_light(item):
             # A torch or a lantern: what it lights, its power, its burn, its
             # price (lights.card_lines), and no AC.
             import lights as _lights
             return [str(t) for t in _lights.card_lines(item) + ["No AC: it is a light, not a shield."]
-                    if str(t).strip()]
+                    + _ip.own_lines(item) if str(t).strip()]
         if isinstance(item, (Armor, Shield)):
             if _g.is_core(item):
                 base = int(getattr(item, 'ac_bonus', 0) or 0)
                 out.append(f"AC +{_g.ac_value(item)}" if known else f"AC +{base}, and a plus you have not learned")
             elif _g.is_standard(item):
                 out.append("No AC: it is a standard, not a shield.")
-            out += self._off_hand_power_lines(item)
+            for _ohl, _ohf in zip(self._off_hand_power_lines(item),
+                                  self._off_hand_power_fields(item)):
+                add(_ohl, _ohf)
             gt = _gd.guard_text(item, known=known)
             if gt:
                 out.append(gt)
-            el = getattr(item, 'ench_line', '') or ''
-            if el and known and not _en.is_slot_guard(item):
-                lab = _en.label(item)
-                out.append(f"{lab}: {el}" if lab and not el.lower().startswith(lab.lower()) else el)
+            if getattr(item, 'ench_line', '') and known and not _en.is_slot_guard(item):
+                add(_en.card_line(item), 'ench_line')
             if getattr(item, 'damage_resistances', None):
-                out.append(f"Resists: {self._kit_resist_str(item)}")
+                add(_ip.resist_line(_g.piece_profile(item)), 'damage_resistances')
             out += _g.card_lines(item)
         if isinstance(item, Accessory):
             sp = str(getattr(item, 'special', '') or '').strip()
             if sp and sp != '-':
-                out.append(sp)
+                add(sp, 'special')
             fx = getattr(item, 'effects', {}) or {}
             bits = []
             import rings as _rg
@@ -4776,6 +4812,10 @@ class RenderMixin:
                 bits.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
             if bits:
                 out.append(', '.join(bits))
+            # A named counter carried or put in (the earplugs, cold iron, the
+            # cockerel: counters.py): what it stops is what it does.
+            import counters as _ct
+            out += [str(t) for t in _ct.card_lines(item)]
         own = getattr(item, 'on_equip_status', '') or ''
         lent = [own] if own else (worn_statuses(getattr(item, 'effects', None))
                                   if isinstance(item, Accessory) else [])
@@ -4786,8 +4826,16 @@ class RenderMixin:
             what = f": {info[2]}" if info and len(info) > 2 and info[2] else ''
             # A weapon lends it in the hand (the Staff of Emrys' ward,
             # Stormbringer's rage), worn gear while it is worn.
-            out.append(f"{'In hand' if isinstance(item, Weapon) else 'While worn'}: {name}{what}")
-        return [str(t) for t in out if str(t).strip()]
+            add(f"{'In hand' if isinstance(item, Weapon) else 'While worn'}: {name}{what}",
+                'on_equip_status', 'status:' + str(status))
+        out += _ip.own_lines(item)
+        seen, uniq = set(), []
+        for t in out:
+            t = str(t)
+            if t.strip() and t not in seen:
+                seen.add(t)
+                uniq.append(t)
+        return uniq
 
     # A weapon's own on-hit state (`effects`), in the card's words.
     _HIT_EFFECT_WORDS = {'feared': ('frighten its target', 'Fear'),
@@ -4840,6 +4888,20 @@ class RenderMixin:
             # Only some take it (the Sceptre: a man or a goblin it strikes).
             words = words.replace('its target', str(fx['target_words']))
         return words, (ch * 100 if ch <= 1 else ch), label
+
+    @staticmethod
+    def _off_hand_power_fields(item) -> list:
+        """The field each of ``_off_hand_power_lines`` says, in the same
+        order, so a kind's own line on that field stands in for it."""
+        out = []
+        try:
+            if float(getattr(item, 'rally_damage_mult', 0) or 0) > 1.0:
+                out.append('rally_damage_mult')
+        except (TypeError, ValueError):
+            pass
+        if int(getattr(item, 'fallen_cover_turns', 0) or 0) > 0:
+            out.append('fallen_cover_turns')
+        return out
 
     @staticmethod
     def _off_hand_power_lines(item) -> list:
@@ -4923,9 +4985,12 @@ class RenderMixin:
         for _work in _smithing.work_lines(item):
             lines.append((_work, FP.CYAN_ACCENT, self.font_sm))
         # A coating, a two-hander's parry, a named counter, what a flask does
-        # (the arsenal's tools: all seen, so shown identified or not).
+        # (the arsenal's tools: all seen, so shown identified or not). Once
+        # known, What It Does says the ones it holds; they are not said twice.
+        _said_below = set(self._item_power_lines(item)) if idl >= 3 else set()
         for _al in self._arsenal_card_lines(item):
-            lines.append((_al, FP.CYAN_ACCENT, self.font_sm))
+            if _al not in _said_below:
+                lines.append((_al, FP.CYAN_ACCENT, self.font_sm))
 
         if hasattr(item, 'identified') and idl < 3:
             # ``_display_name`` already shows either the true name or the
@@ -6201,7 +6266,8 @@ class RenderMixin:
         for _work in _smithing.work_lines(item):
             lines.append((_work, FP.CYAN_ACCENT, self.font_sm))
         for _al in self._arsenal_card_lines(item):
-            lines.append((_al, FP.CYAN_ACCENT, self.font_sm))
+            if _al not in powers:
+                lines.append((_al, FP.CYAN_ACCENT, self.font_sm))
         # The plain details on one line: material, blessing, weight.
         bits = []
         mat = getattr(item, 'material', '') if idl >= 3 else ''
@@ -6642,10 +6708,8 @@ class RenderMixin:
                 # What its enchantment does, not only its name (Brandon
                 # 2026-11-16: "tells me the top level name like 'Life-Grip'
                 # but not what that actually does").
-                lab = _ench.label(item)
-                el = (getattr(item, 'ench_line', '') or '').strip()
+                lab = _ench.card_line(item) if _ench.label(item) else ''
                 if lab:
-                    lab = f"{lab}: {el}" if el and not el.lower().startswith(lab.lower()) else lab
                     resists = lab if resists in ('', '-', None) else f"{lab}; {resists}"
             else:
                 ac, resists = '?', '?'
@@ -6796,10 +6860,10 @@ class RenderMixin:
         # A named piece's own resistances; a common body armour's (or tower
         # shield's) template forms and material elements (gear.piece_profile),
         # so the Kit's column compares them at a glance.
-        r = gear.piece_profile(a) or {}
-        if not r:
-            return '-'
-        return ', '.join(f"{k} {round(v * 100)}%" for k, v in r.items() if v and abs(v - 1.0) > 1e-9) or '-'
+        # Damage taken, less or more ("slash -20%"): it printed the
+        # multiplier ("slash 80%"), read as 80% resisted (item_powers.py).
+        import item_powers as _ip
+        return _ip.resist_cell(gear.piece_profile(a) or {})
 
     def _kit_accessory_effect(self, a) -> str:
         # A ring or amulet kind (rings.py): its kind and tier say it all.
@@ -6988,9 +7052,12 @@ class RenderMixin:
             bits = [f"+{self._food_sp(c)} SP"]
             if getattr(c, 'hp_restore', 0):
                 bits.append(f"+{c.hp_restore} HP")
-            bt = getattr(c, 'bonus_type', 'none')
-            if bt and bt != 'none':
-                bits.append(f"{bt}")
+            # Its own gift in words ("Wisdom +1"): it printed the code
+            # name ("random_stat"; item_powers.py).
+            import item_powers as _ip_c
+            _gift = _ip_c.food_bonus_cell(c)
+            if _gift:
+                bits.append(_gift)
             import kitchen
             _uses = len(kitchen.dishes_with(getattr(c, 'id', '')))
             if _uses:
@@ -10063,6 +10130,14 @@ class RenderMixin:
         return int(getattr(item, 'id_level', 0) or 0)
 
     def _lore_bonus_label(self, key, value):
+        """A chain-equip tier's bonus in plain words: written ones from the
+        data (item_powers.chain_label, data/ui/item_powers.json), the rest
+        from the key (Brandon 2026-11-22: the cards said "Stealth In Dark",
+        "Mp Bonus")."""
+        import item_powers as _ip
+        _said = _ip.chain_label(key, value)
+        if _said:
+            return _said
         if key == 'ac_bonus':
             return f"AC +{value}"
         if key.startswith('resistance_'):
@@ -10189,12 +10264,26 @@ class RenderMixin:
         return out
 
     def _lore_item_mechanic_lines(self, item, id_level):
+        """The dossier's Mechanics pane: What It Does first, the very list
+        the Kit card shows (``_item_power_lines``), then the details only
+        the dossier gives (material, tier, reach, what equipping asks), a
+        chain-equip piece's tiers, a horn's state. Brandon 2026-11-22: "Ring
+        of Wizardry gets identified, has nothing useful in mechanics": the
+        pane built its own shorter list, and a ring's power, an artifact's
+        use and a named piece's own power were on neither."""
         lines = []
         if id_level < 3 and hasattr(item, 'id_level'):
             lines.append(("Mechanics unrevealed", FP.GOLD_BRIGHT, self.font_sm))
             lines.append(("Identify this item to reveal its stats, effects and chain abilities.",
                           FP.FADED_TEXT, self.font_sm))
             return lines
+
+        powers = self._item_power_lines(item)
+        if powers:
+            lines.append(("What It Does", FP.GOLD_BRIGHT, self.font_sm))
+            for _t in powers:
+                lines.append((_t, FP.CYAN_ACCENT, self.font_sm))
+        said = set(powers)
 
         if isinstance(item, Weapon):
             dmg_types = ', '.join(_cap(d) for d in (getattr(item, 'damage_types', []) or ['physical']))
@@ -10207,21 +10296,7 @@ class RenderMixin:
                 (f"Reach: {getattr(item, 'reach', 1)}   {'Two-handed' if getattr(item, 'two_handed', False) else 'One-handed'}",
                  FP.BODY_TEXT, self.font_sm),
             ]
-            special = self._kit_weapon_special(item, id_level)
-            if special and special != '-':
-                lines.append((f"Special: {special}", FP.CYAN_ACCENT, self.font_sm))
-            # What it does in the hand beyond its blows (the Staff of Emrys).
-            if int(getattr(item, 'spell_tier_ease', 0) or 0) > 0:
-                lines.append(("Spells you cast with it in hand ask an easier science question",
-                              FP.CYAN_ACCENT, self.font_sm))
-            _st = getattr(item, 'on_equip_status', '') or ''
-            if _st:
-                from status_effects import EFFECT_INFO as _EI_w
-                _inf = _EI_w.get(_st)
-                _nm = _inf[0] if _inf else _cap(str(_st).replace('_', ' '))
-                _wh = f": {_inf[2]}" if _inf and len(_inf) > 2 and _inf[2] else ''
-                lines.append((f"In hand: {_nm}{_wh}", FP.CYAN_ACCENT, self.font_sm))
-            if getattr(item, 'requires_ammo', ''):
+            if getattr(item, 'requires_ammo', '') and not getattr(item, 'infinite_ammo', False):
                 lines.append((f"Requires ammo: {_cap(item.requires_ammo)}", FP.WARNING_TEXT, self.font_sm))
 
         elif isinstance(item, Armor):
@@ -10232,35 +10307,18 @@ class RenderMixin:
                 (self._lore_armour_line(item), FP.BODY_TEXT, self.font_sm),
                 (self._lore_equip_line(item), FP.BODY_TEXT, self.font_sm),
             ]
-            if getattr(item, 'damage_resistances', None):
-                lines.append((f"Resists: {self._kit_resist_str(item)}",
-                              FP.CYAN_ACCENT, self.font_sm))
-            # A common body armour's forms and elements, and any body
-            # armour's weight class (gear.card_lines).
-            import gear as _ap_l
-            for _apl in _ap_l.card_lines(item):
-                lines.append((_apl, FP.CYAN_ACCENT, self.font_sm))
-            import guards as _guards
-            import enchantments as _ench_l
-            _known = self._lore_enchant_text(item) != '?'
-            _gt = _guards.guard_text(item, known=_known)
-            if _gt:
-                lines.append((_gt, FP.CYAN_ACCENT, self.font_sm))
-            # The guard line already says a slot guard's enchantment.
-            _el = getattr(item, 'ench_line', '') or ''
-            if _el and _known and not _ench_l.is_slot_guard(item):
-                lines.append((_el, FP.CYAN_ACCENT, self.font_sm))
 
         elif isinstance(item, Shield) and gear.is_light(item):
             # A torch, a lantern, a lamp (lights.py): held with no question,
-            # no AC; what it lights and how long it burns.
+            # no AC; what it lights and how long it burns is in What It Does.
             import lights as _lt
             lines += [
                 ("Light", FP.GOLD_BRIGHT, self.font_sm),
                 (f"Tier: {item.tier}   Equip: in the off hand, no quiz", FP.BODY_TEXT, self.font_sm),
             ]
-            for _ll in _lt.card_lines(item):
-                lines.append((_ll, FP.CYAN_ACCENT, self.font_sm))
+            for _ll in _lt.card_lines(item) + ["Lights do not add up: only your brightest light counts."]:
+                if _ll not in said:
+                    lines.append((_ll, FP.CYAN_ACCENT, self.font_sm))
 
         elif isinstance(item, Shield):
             import gear as _ap_std
@@ -10271,47 +10329,26 @@ class RenderMixin:
                 (self._lore_armour_line(item), FP.BODY_TEXT, self.font_sm),
                 (self._lore_equip_line(item), FP.BODY_TEXT, self.font_sm),
             ]
-            if getattr(item, 'damage_resistances', None):
-                lines.append((f"Resists: {self._kit_resist_str(item)}",
-                              FP.CYAN_ACCENT, self.font_sm))
-            # A standard's rally, the Shield of Ilion's cover.
-            for _ohl in self._off_hand_power_lines(item):
-                lines.append((_ohl, FP.CYAN_ACCENT, self.font_sm))
-            import gear as _ap_s
-            _sl = _ap_s.protection_line(item)
-            if _sl:
+            _sl = _ap_std.protection_line(item)
+            if _sl and _sl not in said:
                 lines.append((_sl, FP.CYAN_ACCENT, self.font_sm))
 
         elif isinstance(item, Accessory):
-            lines += [
-                ("Accessory", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Slot: {_cap(getattr(item, 'slot', 'accessory'))}",
-                 FP.BODY_TEXT, self.font_sm),
-            ]
-            fx = getattr(item, 'effects', {}) or {}
-            if fx:
-                parts = []
-                if 'stat' in fx:
-                    parts.append(f"{fx['stat']} {int(fx.get('amount', 0)):+d}")
-                if 'stat2' in fx:
-                    parts.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
-                if worn_statuses(fx):
-                    parts.append(f"Grants {' and '.join(_cap(s) for s in worn_statuses(fx))}")
-                lines.append(("Effect: " + ', '.join(parts), FP.CYAN_ACCENT, self.font_sm))
-            lines.append((self._lore_equip_line(item), FP.BODY_TEXT, self.font_sm))
+            slot = str(getattr(item, 'slot', '') or '')
+            lines.append(("Accessory", FP.GOLD_BRIGHT, self.font_sm))
+            if slot and slot.lower() != 'none':
+                # (the earplugs have no slot: they go in with Apply)
+                lines.append((f"Slot: {_cap(slot)}", FP.BODY_TEXT, self.font_sm))
+            if slot and slot.lower() != 'none':
+                lines.append((self._lore_equip_line(item), FP.BODY_TEXT, self.font_sm))
 
         elif isinstance(item, (Wand, Scroll, Spellbook, Potion)):
-            # What it does in plain words, its numbers for this hero, and a
-            # wand's charges (item_words.py, data/ui/item_effects.json). It
-            # said "Effect: Heal   Power: 2d4", a code name and its dice.
-            import item_words as _iw_l
+            # What it does is above (item_words.py); here the quiz it asks.
             head = next(w for c, w in ((Wand, "Wand"), (Scroll, "Scroll"),
                                         (Spellbook, "Spellbook"), (Potion, "Potion"))
                         if isinstance(item, c))
-            lines.append((head, FP.GOLD_BRIGHT, self.font_sm))
-            for _t in _iw_l.what_it_does(item, self.player, buc_known=self._copy_buc_known(item)):
-                lines.append((_t, FP.CYAN_ACCENT, self.font_sm))
             if not isinstance(item, Potion):
+                lines.append((head, FP.GOLD_BRIGHT, self.font_sm))
                 lines.append((_threshold_line("Science" if isinstance(item, Wand) else "Grammar",
                                               getattr(item, 'quiz_threshold', '?')),
                               FP.BODY_TEXT, self.font_sm))
@@ -10320,34 +10357,18 @@ class RenderMixin:
             import treasure as _tr
             lines += [
                 (_tr.kind_label(item), FP.GOLD_BRIGHT, self.font_sm),
-                (_tr.value_text(self.player, item), FP.GOLD_PALE, self.font_sm),
                 (f"Weight: {getattr(item, 'weight', 0):g}   (A gold piece weighs 0.1 oz: "
                  f"160 to the pound.)", FP.BODY_TEXT, self.font_sm),
-                ("Carried out, it counts toward your score. Any trader buys it near its worth "
-                 "or takes it as payment.", FP.FADED_TEXT, self.font_sm),
             ]
-
-        elif isinstance(item, Food):
-            lines += [
-                ("Food", FP.GOLD_BRIGHT, self.font_sm),
-                (self._food_restores_text(item), FP.BODY_TEXT, self.font_sm),
-            ]
-            bonus_type = getattr(item, 'bonus_type', 'none')
-            if bonus_type and bonus_type != 'none':
-                target = getattr(item, 'bonus_stat', '') or getattr(item, 'bonus_effect', '')
-                lines.append((f"Bonus: {_cap(bonus_type)} {_cap(target)} +{getattr(item, 'bonus_amount', 0)}",
-                              FP.CYAN_ACCENT, self.font_sm))
 
         elif isinstance(item, Ammo):
             lines += [
                 ("Ammunition", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Type: {getattr(item, 'ammo_type', '?')}   Tier: {getattr(item, 'tier', '?')}",
-                 FP.BODY_TEXT, self.font_sm),
-                (f"Damage bonus: +{getattr(item, 'damage_bonus', 0)}   Count range: {getattr(item, 'count_min', '?')}-{getattr(item, 'count_max', '?')}",
+                (f"Type: {_cap(getattr(item, 'ammo_type', '?'))}   Tier: {getattr(item, 'tier', '?')}",
                  FP.BODY_TEXT, self.font_sm),
             ]
 
-        _arsenal = self._arsenal_card_lines(item)
+        _arsenal = [t for t in self._arsenal_card_lines(item) if t not in said]
         if _arsenal:
             import coatings as _coat_l
             if _coat_l.is_tool(item):
@@ -10383,7 +10404,8 @@ class RenderMixin:
                               color, self.font_sm))
 
         cb = getattr(item, 'carry_bonus', None) or {}
-        if cb.get('stat') and cb.get('amount'):
+        import item_powers as _ip_k
+        if cb.get('stat') and cb.get('amount') and 'carry_bonus' not in _ip_k.covers(item):
             lines += [
                 ("Keepsake", FP.GOLD_BRIGHT, self.font_sm),
                 (f"{cb['stat']} +{cb['amount']} while carried", FP.CYAN_ACCENT, self.font_sm),

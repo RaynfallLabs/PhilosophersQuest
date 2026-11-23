@@ -262,7 +262,8 @@ def test_the_card_says_what_it_does_in_plain_words():
     assert "Spells you cast with it in hand ask an easier science question." in powers
     assert any(t.startswith('In hand: Magic Resist') for t in powers)
     words = [t for t, _c, _f in g._lore_item_mechanic_lines(staff, 5)]
-    assert 'Spells you cast with it in hand ask an easier science question' in words
+    # (the dossier leads with the Kit's own What It Does list: 3.6.1)
+    assert 'Spells you cast with it in hand ask an easier science question.' in words
     assert any(w.startswith('In hand: Magic Resist') for w in words)
     for t in powers + words:                                  # the staff's own lines:
         if 'spells' in t.lower() or t.startswith('In hand'):  # no "(double damage)" asides

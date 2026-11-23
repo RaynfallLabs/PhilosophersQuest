@@ -386,26 +386,32 @@ def test_the_cards_say_what_each_does_in_plain_words_before_the_lore():
     g = _game(JOAN)
     std = g.player.shield
     lines = g._item_power_lines(std)
-    assert lines == ['No AC: it is a standard, not a shield.',
-                     'Your pets and allies hit harder while they are in your sight.']
+    # Its own line, with its number (data/ui/item_powers.json, 3.6.1).
+    rally = 'While it is in your off hand, every pet or ally you can see hits 50% harder.'
+    assert lines == ['No AC: it is a standard, not a shield.', rally]
     lore = [t for t, _c, _f in g._lore_item_mechanic_lines(std, 5)]
-    assert lore[0] == 'Standard' and 'No AC: a standard, not a shield' in lore
-    assert 'Your pets and allies hit harder while they are in your sight.' in lore
+    # The dossier leads with What It Does, the Kit's own list (3.6.1).
+    assert lore[0] == 'What It Does' and 'Standard' in lore
+    assert 'No AC: a standard, not a shield' in lore
+    assert rally in lore
     ilion = items.make_item_by_id('shield', 'shield_of_ilion')
     ilion.id_level = 5
-    cover = ('Once a floor, when a blow leaves you at a quarter of your health, '
-             'it covers you: you are Shielded.')
+    cover = ('Once a floor, when a hurt leaves you at a quarter of your health or less, '
+             'you crouch under it: Shielded for 5 turns.')
     assert g._item_power_lines(ilion) == ['AC +3', cover]
     achilles = items.make_item_by_id('shield', 'shield_of_achilles')
     achilles.id_level = 5
-    assert g._item_power_lines(achilles) == ['AC +5', 'Resists: pierce 50%']
+    # The damage taken, not the multiplier read as a resistance (3.6.1).
+    assert g._item_power_lines(achilles) == ['AC +5', 'Takes less damage: pierce 50%.']
     spear = items.make_item_by_id('weapon', SPEAR)
     spear.id_level = 5
     sl = g._item_power_lines(spear)
     assert 'Each hit has a 25% chance to frighten its target.' in sl
     assert 'Fear 25%' in g._kit_weapon_special(spear, 5)
     for t in lines + [cover]:                         # plain: no "(double damage)" asides
-        assert '(' not in t and not any(ch.isdigit() for ch in t), t
+        # (Its real numbers are what it does: 3.6.1, "no idea what it
+        # actually does". The status it lends explains itself, no aside.)
+        assert '(' not in t and 'halved' not in t and 'double' not in t, t
     for t in lines + sl + [cover]:
         assert ' they ' not in f' {t.lower()} ' or 'pets and allies' in t.lower(), t
 

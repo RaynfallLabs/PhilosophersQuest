@@ -148,6 +148,7 @@ src/
   gear_saves.py       - Old saves meet the armour ladder: named pieces refreshed, worn grants re-synced
   item_actions.py     - Item actions shared by the Kit (K) and the character sheet (@)
   item_words.py       - What It Does for scrolls, potions, wands and spellbooks, in plain words with their real numbers (data/ui/item_effects.json)
+  item_powers.py      - What It Does for everything else: a kind's own lines (data/ui/item_powers.json), food, ammo, ingredients, chests, chain tiers in words, damage taken said plainly
   known_by_hand.py    - Known by Hand: a kind of gear put on once goes on again with no quiz
   game_dressing.py    - DressingMixin: donning time, the weapon At Your Back (S), Loadouts (Shift+E)
   busy.py             - Busy for N turns: a multi-turn action, stopped by a foe in view or a blow
@@ -177,6 +178,7 @@ src/
   food_system.py      - Harvest and cook (the two quiz flows), eating, potions
   hunger.py           - Hunger you can see: Hungry, Weak (STR -2, no natural healing) and Starving, from SP (data/hunger.json)
   butchered.py        - Butchered Before: a kind identified and harvested once is harvested again with no question
+  said_once.py        - Said Once: a line that a known kind spares a question (Butchered Before, Known by Hand) is said the first time for each kind, then never again
   kitchen.py          - The kitchen: kin ingredients, the recipe book, what a dish gives (cooking_rules.json), the cook menu's rows; cook to carry (a recipe's `makes`)
   cook_menu.py        - The cook menu's words (why it opened where, chips, what is missing) and its list window (pure)
   container_system.py - Chests, sacks, lockable containers (lockpicking)

@@ -2855,7 +2855,7 @@ class CombatMixin:
         import counters as _counters
         if _counters.deafened(self.player):
             return
-        # The make-up and how to break it only for a hero who knows the
+        # The band named, with its make-up, only for a hero who knows the
         # leader's kind itself, or its family's Lore (family_lore.knowledge).
         import family_lore
         knows = family_lore.knowledge(self.player, band.get('leader_kind')) >= family_lore.KNOWN
@@ -2899,14 +2899,16 @@ class CombatMixin:
                          f"lore {lore}.", 'info')
 
     def _maybe_tell(self, m) -> None:
-        """The first time in a run the hero sees a kind, its worst tell, told
-        as far as he knows the kind (family_lore.knowledge, src/tells.py):
-        the sign of one he does not know; the sign, its family and what it
-        does once he knows its family; all that and what to do once he knows
-        the kind itself, and then what it is made of (tells.lore_lines: its
-        weaknesses, what it resists and shrugs off, what its nature refuses
-        and falls to easily), tell or no tell. Said again the first time he
-        sees it after he has come to know it better."""
+        """The first time in a run the hero sees a kind, ONE line of its
+        worst tell, as far as he knows the kind (family_lore.knowledge,
+        tells.log_line): the sign of one he does not know; the cue (the
+        creature named and what it can do, in a few words) once he knows
+        its family or the kind. A cue, not a soliloquy (Brandon 2026-11-22):
+        the tell in full and what to do are Observe's (O). Once he knows the
+        kind itself, what it is made of (tells.lore_lines: its weaknesses,
+        what it resists and shrugs off, what its nature refuses and falls to
+        easily), tell or no tell. Said again the first time he sees it after
+        he has come to know it better, but never the same line twice."""
         import family_lore
         import tells
         # (A friend, an encounter's person, and the Stray Kids' band, who are
@@ -2941,9 +2943,11 @@ class CombatMixin:
             self.add_message(_senses._fill(m, m.sight_sign), 'warning')
         keys = tells.abilities(m)
         if keys:
-            fid = family_lore.family_of(m)
-            self.add_message(tells.line(m, keys[0], level, family_lore.kin(fid) if fid else ''),
-                             'warning')
+            text = tells.log_line(m, keys[0], level)
+            # The cue is one line at KIN and at KNOWN: a hero who comes to
+            # know the kind better is told only what it is made of.
+            if was < family_lore.UNKNOWN or text != tells.log_line(m, keys[0], was):
+                self.add_message(text, 'warning')
         if level >= family_lore.KNOWN:
             # One line, naming the creature itself (tells.lore_line): no lead
             # line before it and no line per kind of damage.

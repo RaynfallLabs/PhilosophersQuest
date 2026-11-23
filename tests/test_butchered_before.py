@@ -162,6 +162,7 @@ def test_a_wrong_answer_records_nothing():
 
 
 def test_the_message_names_the_creature():
+    # (Without the hero: the words. With him, said once a kind: test_said_once.py.)
     c = _corpse('giant_rat')
     assert butchered.fires_line(c) == "You know how to butcher a Giant Rat. No question needed."
     assert butchered.fires_line(_corpse('orc_scout' if 'orc_scout' in MONS else 'goblin')).startswith(
@@ -289,6 +290,15 @@ def test_h_asks_then_harvests_free(game, monkeypatch):
     assert any(s.startswith('You harvest the') for s in said)
     assert ('harvest', {'monster': 'giant_rat', 'free': True}) in events
     assert not [e for e, _f in events if e == 'quiz_answer']
+    # The next free harvest of the kind says nothing of it (said_once.py,
+    # 2026-11-22: "just noise. The player gets it"): only what was harvested.
+    n = len(g.msg_log.entries)
+    g.ground_items.append(_corpse('giant_rat', p.x, p.y))
+    g._harvest()
+    assert started == ['animal']
+    new = [str(e[0]) for e in g.msg_log.entries[n:]]
+    assert not any('know how to butcher' in s for s in new), new
+    assert any(s.startswith('You harvest the') for s in new), new
 
 
 def test_a_free_harvest_counts_as_a_harvest_but_no_answer():

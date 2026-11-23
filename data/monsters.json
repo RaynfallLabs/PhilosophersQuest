@@ -5716,6 +5716,7 @@
       "unasked": "The Sphinx will wait no longer for an answer.",
       "tell": {
         "sign": "{The} watches the way, and looks about to ask you something.",
+        "cue": "{The} will ask you a riddle before you pass.",
         "does": "{He} asks one riddle: a good answer lets you pass, and a poor one brings {his} curse down on you.",
         "counter": "Press D and answer well: it is a question of philosophy."
       }
@@ -6624,7 +6625,7 @@
       "kind": "fear",
       "radius": 2,
       "turns": 3,
-      "line": "{The}'s eyes catch the light, and you cannot bear to look. You turn to run!"
+      "line": "{The}'s eyes catch the light, and you turn to run!"
     },
     "territorial": true,
     "lair_radius": 8,
@@ -12292,6 +12293,7 @@
       "unasked": "The Xorn will wait no longer for its gold.",
       "tell": {
         "sign": "{The} sniffs at your pack as if it smelt something to eat there.",
+        "cue": "{The} will let you pass for gold or gems.",
         "does": "{He} will let you be for gold or gems, and fights if {his} prize is denied.",
         "counter": "Press D and pay what {he} asks in gold or treasure."
       }
@@ -15085,7 +15087,7 @@
     },
     "talisman": {
       "turns": 2,
-      "line": "You hold up the written page, and the Jiangshi stops dead, as if a talisman had been pressed to its forehead."
+      "line": "The written page stops the Jiangshi dead, like a talisman!"
     }
   },
   "vrykolakas": {
@@ -22249,6 +22251,7 @@
       "unasked": "The Lesser Sphinx will wait no longer for an answer.",
       "tell": {
         "sign": "{The} watches the way, and looks about to ask you something.",
+        "cue": "{The} will ask you a riddle before you pass.",
         "does": "{He} asks one riddle: a good answer lets you pass, and a poor one brings {his} curse down on you.",
         "counter": "Press D and answer well: it is a question of philosophy."
       }

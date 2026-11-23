@@ -9,6 +9,37 @@ quiz see [identify_v3](identify_v3.md); for chest/trap logic see
 
 Source of truth: `src/items.py` + `data/items/*.json`.
 
+### What It Does: one list, two cards (3.6.1, 2026-11-22)
+
+Every identified item says what it does under **What It Does**, on the Kit
+card and first in the Item Dossier's Mechanics pane. Both read one list,
+`RenderMixin._item_power_lines` (src/game_render.py); the dossier adds only
+its details after it (material, tier, reach, the equip quiz, chain tiers, a
+horn's state). Brandon, play-testing: "Ring of Wizardry gets identified, has
+nothing useful in mechanics... assume this problem persists across many
+items": the dossier had built its own shorter list.
+
+- Scrolls, potions, wands, spellbooks: `src/item_words.py`
+  (`data/ui/item_effects.json`).
+- Everything else: `src/item_powers.py`. Food, ammunition, ingredients,
+  lockpicks, chests, treasure and flasks from their own fields and systems;
+  gear from its fields (AC, guards, enchantment, ring kind, resistances,
+  stats, lent states, a weapon's chances); then **a kind's own lines**,
+  `data/ui/item_powers.json` `by_id[class][id]`: `lines` (placeholders
+  `{field}` / `{field:pct}` read the item's own data, so a number never
+  drifts) and `covers` (fields those lines say, so the generic line for
+  that field is not shown twice).
+- Chain-equip tiers in words: `chain_bonus[key].label` in the same file
+  (`item_powers.chain_label`, read by `_lore_bonus_label`).
+- Resistances are said as damage taken: "Takes less damage: slash 20%"
+  (`item_powers.resist_line`; the Kit column `resist_cell`, "slash -20%").
+  The profile is a multiplier (0.8 takes 80% of a cut); the cards printed
+  "Resists: slash 80%".
+- Guard: `tests/test_every_item_says_what_it_does.py`: every item says
+  something, no line is a code name, the dossier leads with the Kit's list,
+  every accessory power field and every artifact has written lines, every
+  chain bonus key is in words.
+
 ---
 
 ## 1. Base `Item` schema

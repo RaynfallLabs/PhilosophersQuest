@@ -241,9 +241,12 @@ def test_the_arrival_names_the_band_only_for_a_hero_who_knows_its_leader():
 
     plain = war_bands.data()['bands']['goblin_raiders']['line']
     assert said() == plain
-    assert said(grants={'goblinkin': 1}) == plain, 'Recognise does not teach how to break it'
-    assert 'Kill the chief' in said(studied=('goblin_king',))
-    assert 'Kill the chief' in said(grants={'goblinkin': 3})
+    assert said(grants={'goblinkin': 1}) == plain, 'Recognise does not name the band'
+    # Named, with its make-up: a cue (2026-11-22). How to break it is the
+    # leader's Observe line.
+    named = 'Goblin war-drums. A leader, two fighters and one archer.'
+    assert said(studied=('goblin_king',)) == named
+    assert said(grants={'goblinkin': 3}) == named
 
 
 def test_every_tell_key_has_a_line_and_order():

@@ -349,7 +349,7 @@ def test_a_seen_unknown_creature_shows_what_it_does_and_a_known_one_explains():
     g = _SenseGame(_knower('wolf_pack_leader'), sees=True)
     wolf._sense_how = 'scent'
     g._say_sense_lines(wolf)
-    assert 'It has your scent' in g.msgs[0]
+    assert 'has your scent' in g.msgs[0]
     assert not wolf.__dict__.get('_sense_how'), 'said once'
 
 
