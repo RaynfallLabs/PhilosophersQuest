@@ -1,0 +1,2569 @@
+{
+  "_doc": [
+    "What a kind does that the cards cannot build from its fields (src/item_powers.py).",
+    "by_id[class][id].lines: one plain sentence each, shown under What It Does on the Kit card and the dossier's Mechanics pane.",
+    "A placeholder {field} is the item's own data field as it is, {field:pct} a fraction as a whole percent, so a number never drifts from the data.",
+    "by_id[class][id].covers: the item's own fields those lines already say; a generic line for that field is not shown twice.",
+    "Brandon 2026-11-22: 'Ring of Wizardry gets identified, has nothing useful in mechanics, and no idea what it actually does; assume this problem persists across many items.'"
+  ],
+  "by_id": {
+    "accessory": {
+      "amulet_of_fortitude": {
+        "lines": [
+          "While worn, +3 to resisting paralysis, sleep, stun, freezing, turning to stone, weakness, poison and life drain, and bleeding or burning from a blow lasts 3 turns less (such bonuses add up to +5 at most)."
+        ],
+        "covers": [
+          "save_bonus"
+        ]
+      },
+      "amulet_of_insight": {
+        "lines": [
+          "While worn, +3 to resisting fear, charm, confusion and having your memory eaten (such bonuses add up to +5 at most)."
+        ],
+        "covers": [
+          "save_bonus"
+        ]
+      },
+      "andvaranaut": {
+        "lines": [
+          "Gold piles you find in the dungeon come to {gold_multiplier} times as much the first time you touch each one (two such rings do not add up)."
+        ],
+        "covers": [
+          "gold_multiplier"
+        ]
+      },
+      "ankh_of_isis": {
+        "lines": [
+          "When anything but hunger would kill you, the ankh shatters and you come back with half your health; it is gone for good."
+        ],
+        "covers": [
+          "resurrect_on_death"
+        ]
+      },
+      "ariadnes_thread": {
+        "lines": [
+          "Carried or worn, it counts as Ariadne's own Thread: in the Labyrinth it lays the way to the Minotaur's hall out on your map.",
+          "While you have it, the Minotaur can no longer walk through walls or slip away to hide, and he is slowed.",
+          "Have it with you when he falls, and the gift you choose is 1 point greater."
+        ]
+      },
+      "azaraels_brand": {
+        "lines": [
+          "Once you put it on, it never comes off, whatever a scroll does."
+        ],
+        "covers": [
+          "bound_to_wielder"
+        ]
+      },
+      "black_string_bracelet": {
+        "lines": [
+          "While worn, it adds {quiz_timer_bonus} seconds to the clock of every fight.",
+          "Once you put it on, it never comes off, whatever a scroll does."
+        ],
+        "covers": [
+          "quiz_timer_bonus",
+          "bound_to_wielder"
+        ]
+      },
+      "brass_wardens_cog": {
+        "lines": [
+          "While worn, it adds {quiz_timer_bonus} seconds to the clock of every fight."
+        ],
+        "covers": [
+          "quiz_timer_bonus"
+        ]
+      },
+      "brisingamen": {
+        "lines": [
+          "While worn, it drops {tears_of_freya_gold} gold into your purse each turn, more the deeper you are (twice as much from floor 40, three times from 60, four times from 80), while your purse has room."
+        ],
+        "covers": [
+          "tears_of_freya",
+          "tears_of_freya_gold",
+          "tears_of_freya_interval"
+        ]
+      },
+      "charmander_stuffie": {
+        "lines": [
+          "Carried in your pack (it need not be worn): CON +2, and you take half damage from fire.",
+          "It also gives Fire Breath in V: a cone of fire up to 6 tiles long, harder for each AI question you answer right; then it rests 500 turns."
+        ],
+        "covers": [
+          "carry_bonus"
+        ]
+      },
+      "dragonslayer_ring": {
+        "lines": [
+          "Your weapon blows and shots deal 10% more damage to dragons."
+        ],
+        "covers": [
+          "monster_tag_chain_bonus"
+        ]
+      },
+      "draupnir": {
+        "lines": [
+          "Gold piles you find in the dungeon come to {gold_multiplier} times as much the first time you touch each one (two such rings do not add up)."
+        ],
+        "covers": [
+          "gold_multiplier"
+        ]
+      },
+      "dreamspun_sketchbook": {
+        "lines": [
+          "Carried in your pack (it need not be worn): INT +2.",
+          "It also gives Manifest in V: draw a creature you have studied or can see (never a boss), and it fights beside you for your INT plus 5 turns for each AI question you answer right; then the power rests 500 turns."
+        ],
+        "covers": [
+          "carry_bonus"
+        ]
+      },
+      "elaras_silver_ring": {
+        "lines": [
+          "A keepsake with no power: worn, it does nothing."
+        ]
+      },
+      "eye_of_horus": {
+        "lines": [
+          "While worn, it heals you {passive_regen} HP every {passive_regen_interval} turns."
+        ],
+        "covers": [
+          "passive_regen",
+          "passive_regen_interval"
+        ]
+      },
+      "hamsa_hand": {
+        "lines": [
+          "While worn, +2 to resisting paralysis, sleep, stun, poison, life drain, fear, charm, confusion, slowing, holds and being knocked down, and bleeding or burning from a blow lasts 2 turns less (such bonuses add up to +5 at most)."
+        ],
+        "covers": [
+          "save_bonus"
+        ]
+      },
+      "hand_of_glory": {
+        "lines": [
+          "In V (powers), Light the Hand of Glory: the nearest enemy you can see is held still for {paralyze_duration} turns (a boss or other named foe for 2 at most).",
+          "It has {max_charges} fingers to burn in all, and they never come back.",
+          "When the last finger burns out, the hand turns cursed and will not come off.",
+          "While worn, your footsteps make no sound, monsters notice you from only half as far, and sleepers never wake at your step or when you take their gold.",
+          "While worn, your sight reaches 4 tiles farther."
+        ],
+        "covers": [
+          "use_charged",
+          "charges",
+          "max_charges",
+          "paralyze_duration",
+          "expended_curse",
+          "passive_silent_walk",
+          "passive_dark_vision"
+        ]
+      },
+      "jade_cicada": {
+        "lines": [
+          "Once a floor, when anything but hunger would kill you, the jade cracks but holds and you are left at 1 HP."
+        ],
+        "covers": [
+          "death_save"
+        ]
+      },
+      "locust_charm": {
+        "lines": [
+          "While worn, the Destroyer's locusts take you for one of their own: each leaves you alone until it is struck."
+        ],
+        "covers": [
+          "calms_locusts"
+        ]
+      },
+      "lyre_of_orpheus": {
+        "lines": [
+          "In V (powers), Play the Lyre: the nearest enemy you can see is held spellbound for 10 turns (a boss or other named foe for 2 at most).",
+          "It has {max_charges} plays in all and they never come back; a creature that by its nature cannot be held still does not stop, and the play is spent."
+        ],
+        "covers": [
+          "use_charged",
+          "charges",
+          "max_charges"
+        ]
+      },
+      "rands_heart": {
+        "lines": [
+          "Worn as your amulet, it saves you once from death: you rise with full HP, MP and SP and every ill lifted, and the locket is gone."
+        ]
+      },
+      "ring_of_command": {
+        "lines": [
+          "Each turn, every monster within two steps of you has a {pacify_chance:pct} chance to stand still for 2 turns. Never a named foe."
+        ],
+        "covers": [
+          "pacify_chance"
+        ]
+      },
+      "ring_of_gyges": {
+        "lines": [
+          "While it hides you, striking a bystander or someone you are escorting costs you 1 karma, once for each person you strike."
+        ],
+        "covers": [
+          "gyges_invisible_attack_karma"
+        ]
+      },
+      "ring_of_hypatia": {
+        "lines": [
+          "Once a floor, when three or more creatures stand next to you, you are Shielded for 3 turns."
+        ],
+        "covers": [
+          "protected_when_surrounded"
+        ]
+      },
+      "ring_of_pythia": {
+        "lines": [
+          "While worn, the philosophy question to identify an item is {identify_tier_reduction} tier easier (never easier than tier 1)."
+        ],
+        "covers": [
+          "identify_tier_reduction"
+        ]
+      },
+      "ring_of_the_assassin": {
+        "lines": [
+          "While worn, your footsteps make no sound, monsters notice you from only half as far, and sleepers never wake at your step."
+        ],
+        "covers": [
+          "passive_silent_walk"
+        ]
+      },
+      "ring_of_the_nibelung": {
+        "lines": [
+          "Gold piles you find in the dungeon come to {gold_multiplier} times as much the first time you touch each one (two such rings do not add up)."
+        ],
+        "covers": [
+          "gold_multiplier"
+        ]
+      },
+      "seal_of_solomon": {
+        "lines": [
+          "While worn, each turn every creature within 2 steps of you has a {pacify_chance:pct} chance to be held still for 2 turns (never a boss, mini-boss or seal demon)."
+        ],
+        "covers": [
+          "pacify_chance"
+        ]
+      },
+      "silverlight_pendant": {
+        "lines": [
+          "Someone further down may know whose it was."
+        ]
+      },
+      "talisman_of_troy": {
+        "lines": [
+          "While worn, +2 to resisting paralysis, sleep, stun, poison, life drain, fear, charm, confusion, slowing, holds and being knocked down, and bleeding or burning from a blow lasts 2 turns less (such bonuses add up to +5 at most)."
+        ],
+        "covers": [
+          "save_bonus"
+        ]
+      },
+      "torc_of_boudicca": {
+        "lines": [
+          "While worn, +2 to resisting fear, charm, confusion and having your memory eaten (such bonuses add up to +5 at most)."
+        ],
+        "covers": [
+          "save_bonus"
+        ]
+      },
+      "torque_of_lugh": {
+        "lines": [
+          "While worn, +3 to resisting paralysis, sleep, stun, poison, life drain, fear, charm, confusion, slowing, holds and being knocked down, and bleeding or burning from a blow lasts 3 turns less (such bonuses add up to +5 at most).",
+          "While worn, each attack that lands strikes as if you had answered {attack_chain_cap_bonus} more sum right."
+        ],
+        "covers": [
+          "save_bonus",
+          "attack_chain_cap_bonus"
+        ]
+      }
+    },
+    "ammo": {
+      "adamantine_bolt": {
+        "lines": [
+          "Fired from a crossbow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest bolts first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "arrows_of_artemis": {
+        "lines": [
+          "Fired from a bow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest arrows first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "arrows_of_eros": {
+        "lines": [
+          "Fired from a bow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest arrows first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "bolts_of_zeus": {
+        "lines": [
+          "Fired from a crossbow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest bolts first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "diamond_arrow": {
+        "lines": [
+          "Fired from a bow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest arrows first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "diamond_bolt": {
+        "lines": [
+          "Fired from a crossbow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest bolts first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "dragonbone_arrow": {
+        "lines": [
+          "Fired from a bow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest arrows first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "hardened_gold_arrow": {
+        "lines": [
+          "Fired from a bow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest arrows first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "hardened_gold_bolt": {
+        "lines": [
+          "Fired from a crossbow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest bolts first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "iron_arrow": {
+        "lines": [
+          "Fired from a bow (F): a plain arrow that adds nothing to a shot's damage."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "iron_bolt": {
+        "lines": [
+          "Fired from a crossbow (F): a plain bolt that adds nothing to a shot's damage."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "shotgun_shell": {
+        "lines": [
+          "Fired from the Boomstick (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "steel_arrow": {
+        "lines": [
+          "Fired from a bow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest arrows first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      },
+      "steel_bolt": {
+        "lines": [
+          "Fired from a crossbow (F), each adds {damage_bonus} to the shot's damage before the chain multiplies it.",
+          "You always shoot your weakest bolts first, so these are kept until the weaker ones run out."
+        ],
+        "covers": [
+          "damage_bonus"
+        ]
+      }
+    },
+    "armor": {
+      "anansi_web_cloak": {
+        "lines": [
+          "Once a floor, a blow that would take a quarter or more of your health does only 1 damage."
+        ],
+        "covers": [
+          "special",
+          "story_thread"
+        ]
+      },
+      "arachne_silk_cloak": {
+        "lines": [
+          "A monster that wounds you hand to hand is Slowed for 3 turns."
+        ],
+        "covers": [
+          "special",
+          "webbed_strike"
+        ]
+      },
+      "babr_e_bayan": {
+        "lines": [
+          "Once a floor, the first blow that lands on you does no harm."
+        ],
+        "covers": [
+          "special",
+          "first_hit_absorb"
+        ]
+      },
+      "blindfold": {
+        "lines": [
+          "While worn you see nothing at all, not even with a light, and so no gaze can catch you.",
+          "You feel every monster within {tremor_sense} tiles, even through walls.",
+          "You are Blinded as well: on a quiz the answers stay dark except where you move your light."
+        ],
+        "covers": [
+          "special",
+          "tremor_sense",
+          "on_equip_status"
+        ]
+      },
+      "bloomleaf_cloak": {
+        "lines": [
+          "While worn, nothing you wear can rust: not a rust trap's water, not a rust monster's feelers."
+        ],
+        "covers": [
+          "special",
+          "special_properties"
+        ]
+      },
+      "boots_of_seven_leagues": {
+        "lines": [
+          "Power (V), once a floor, Seven-League Step: you stride up to 7 tiles the way you last moved, stopping short of a wall or a monster."
+        ],
+        "covers": [
+          "special",
+          "seven_league_step"
+        ]
+      },
+      "boots_of_thor": {
+        "lines": [
+          "Each turn there is a {thors_step:pct} chance that lightning strikes a monster beside you for a twentieth of its health, less for a named foe."
+        ],
+        "covers": [
+          "special",
+          "thors_step"
+        ]
+      },
+      "bracers_of_arjuna": {
+        "lines": [
+          "Your first shot on each floor hits half again as hard."
+        ],
+        "covers": [
+          "special",
+          "gita_focus"
+        ]
+      },
+      "bracers_of_atalanta": {
+        "lines": [
+          "While worn, your chance to slip a blow rises by {dodge_bonus:pct} (all your armour together gives at most 10%), less in medium armour or under a heavy load and none in heavy armour."
+        ],
+        "covers": [
+          "dodge_bonus"
+        ]
+      },
+      "bracers_of_cu_chulainn": {
+        "lines": [
+          "Every third blow or shot of yours that wounds sets its target bleeding for 5 turns."
+        ],
+        "covers": [
+          "special",
+          "riastrad_echo"
+        ]
+      },
+      "breastplate_of_joan": {
+        "lines": [
+          "Once a floor, a blow that would kill you leaves you at 1 health instead."
+        ],
+        "covers": [
+          "special",
+          "maid_does_not_fall"
+        ]
+      },
+      "brigandine_of_william_wallace": {
+        "lines": [
+          "While worn, AC +2 in a corridor or with your back in a corner."
+        ],
+        "covers": [
+          "special",
+          "guerrilla_terrain"
+        ]
+      },
+      "carapace_of_the_hydra": {
+        "lines": [
+          "When a poisonous attack lands on you, the attacker has a {caustic_blood:pct} chance of being poisoned itself for 4 turns."
+        ],
+        "covers": [
+          "special",
+          "caustic_blood"
+        ]
+      },
+      "cestus_of_polydeuces": {
+        "lines": [
+          "While worn, you take {toughness_bonus:pct} less damage from everything but hunger (all your armour together gives at most 10%)."
+        ],
+        "covers": [
+          "toughness_bonus"
+        ]
+      },
+      "cloak_of_mulan": {
+        "lines": [
+          "Once a floor, stepping onto an altar fills your health, mana and stamina (SP) completely."
+        ],
+        "covers": [
+          "special",
+          "disguise_at_camp"
+        ]
+      },
+      "cloak_of_sun_wukong": {
+        "lines": [
+          "One attack in every {monkey_king_dodge} that would land on you misses outright."
+        ],
+        "covers": [
+          "special",
+          "monkey_king_dodge"
+        ]
+      },
+      "cloth_of_penelope": {
+        "lines": [
+          "Below a quarter of your health, your natural mending as you rest comes twice as often."
+        ],
+        "covers": [
+          "special",
+          "weave_and_unweave"
+        ]
+      },
+      "coat_of_cu_chulainn": {
+        "lines": [
+          "When your health falls to {berserk_hp_threshold:pct} or less, the frenzy takes you: Strength +{berserk_str_bonus} and Berserk for {berserk_duration} turns.",
+          "While the frenzy lasts you lose {berserk_hp_cost} health a turn, though never your last point."
+        ],
+        "covers": [
+          "special",
+          "berserk_trigger",
+          "berserk_hp_threshold",
+          "berserk_str_bonus",
+          "berserk_duration",
+          "berserk_hp_cost"
+        ]
+      },
+      "coif_of_beowulf": {
+        "lines": [
+          "While worn, paralysis, sleep, stunning, freezing, being pinned and strangling are all thrown off at your next turn.",
+          "No creature can take hold of you: no coil, no swallow, no drag."
+        ],
+        "covers": [
+          "special",
+          "grendel_grip"
+        ]
+      },
+      "cow_kings_horns": {
+        "lines": [
+          "While worn, every attack chain that lands counts {chain_bonus} longer."
+        ],
+        "covers": [
+          "chain_bonus"
+        ]
+      },
+      "cuirass_of_hannibal": {
+        "lines": [
+          "While worn, AC +2 with three or more enemies beside you.",
+          "When three or more enemies besides the one you strike stand beside you, your blows land 4% harder for each of them."
+        ],
+        "covers": [
+          "special",
+          "cannae_encirclement"
+        ]
+      },
+      "duck_of_doom": {
+        "lines": [
+          "Pick it up and it jumps straight onto your head, pushing off whatever you wore there.",
+          "It is cursed and will not come off until the curse is lifted, and it guards nothing."
+        ],
+        "covers": [
+          "buc",
+          "auto_equip_on_pickup",
+          "guards_nothing"
+        ]
+      },
+      "erlking_mantle": {
+        "lines": [
+          "While worn, you sense every monster within {forest_hearing} tiles, even through walls."
+        ],
+        "covers": [
+          "special",
+          "forest_hearing"
+        ]
+      },
+      "falcon_cloak_of_freyja": {
+        "lines": [
+          "While worn, your chance to slip a blow rises by {dodge_bonus:pct} (all your armour together gives at most 10%), less in medium armour or under a heavy load and none in heavy armour."
+        ],
+        "covers": [
+          "dodge_bonus"
+        ]
+      },
+      "gauntlets_of_mars": {
+        "lines": [
+          "While worn, AC +1 when you stand next to a door."
+        ],
+        "covers": [
+          "special",
+          "boundary_guardian"
+        ]
+      },
+      "girdle_of_hippolyta": {
+        "lines": [
+          "After three steps in a straight line, your next hand-to-hand blow hits half again as hard."
+        ],
+        "covers": [
+          "special",
+          "amazon_charge"
+        ]
+      },
+      "glove_of_tyr": {
+        "lines": [
+          "While worn, you take {toughness_bonus:pct} less damage from everything but hunger (all your armour together gives at most 10%)."
+        ],
+        "covers": [
+          "toughness_bonus"
+        ]
+      },
+      "gloves_of_wayland": {
+        "lines": [
+          "While worn, you get {quiz_timer_bonus} extra second on the clock of every fight."
+        ],
+        "covers": [
+          "quiz_timer_bonus"
+        ]
+      },
+      "great_helm_of_galahad": {
+        "lines": [
+          "Putting it on lifts the curse from everything you wear, and while it is on, anything cursed you put on is cleansed as it goes on."
+        ],
+        "covers": [
+          "special",
+          "purity"
+        ]
+      },
+      "greaves_of_goliath": {
+        "lines": [
+          "While worn, you take {toughness_bonus:pct} less damage from everything but hunger (all your armour together gives at most 10%)."
+        ],
+        "covers": [
+          "toughness_bonus"
+        ]
+      },
+      "green_girdle": {
+        "lines": [
+          "Once a floor, a blow that would take a quarter or more of your health does only 1 damage.",
+          "Worn, it keeps the Green Knight's return blow from killing you, once: you are left at 1 health."
+        ],
+        "covers": [
+          "special",
+          "story_thread"
+        ]
+      },
+      "hair_shirt_of_becket": {
+        "lines": [
+          "While worn, you take {toughness_bonus:pct} less damage from everything but hunger (all your armour together gives at most 10%)."
+        ],
+        "covers": [
+          "toughness_bonus"
+        ]
+      },
+      "half_cloak_of_martin": {
+        "lines": [
+          "While worn, you take {toughness_bonus:pct} less damage from everything but hunger (all your armour together gives at most 10%)."
+        ],
+        "covers": [
+          "toughness_bonus"
+        ]
+      },
+      "haramaki_of_yoshitsune": {
+        "lines": [
+          "Each time you go down to a floor deeper than you have been, you are Hasted for {descent_haste} turns."
+        ],
+        "covers": [
+          "special",
+          "descent_haste"
+        ]
+      },
+      "helm_of_achilles": {
+        "lines": [
+          "While worn, each monster, the first time it comes into your sight, has a 40% chance to be frightened for 4 turns."
+        ],
+        "covers": [
+          "special",
+          "ringing_intimidation"
+        ]
+      },
+      "helm_of_gilgamesh": {
+        "lines": [
+          "Power (V), once a floor, Gilgamesh's Bribe: pay gold to the nearest creature in sight that would take it, never a boss, and it stands aside for 3 turns or until you strike it."
+        ],
+        "covers": [
+          "special",
+          "gold_offering"
+        ]
+      },
+      "helm_of_leonidas": {
+        "lines": [
+          "Below a fifth of your health, your blows and shots land 15% harder."
+        ],
+        "covers": [
+          "special",
+          "last_stand_bonus"
+        ]
+      },
+      "hermes_sandals_early": {
+        "lines": [
+          "Once a floor, the first attack from afar that would hit you misses: an arrow, a bolt, a spit, a ray, a breath or a spell."
+        ],
+        "covers": [
+          "special",
+          "dodge_first_arrow_per_floor"
+        ]
+      },
+      "hide_of_nemean_lion": {
+        "lines": [
+          "While worn, cuts, stabs and blows from a creature without magic do half damage to you."
+        ],
+        "covers": [
+          "special",
+          "unskinnable"
+        ]
+      },
+      "jarngreipr_gauntlets": {
+        "lines": [
+          "While worn, every attack chain that lands counts {chain_bonus} longer."
+        ],
+        "covers": [
+          "chain_bonus"
+        ]
+      },
+      "kilt_of_the_pharaoh": {
+        "lines": [
+          "If you die wearing it, another piece you had on lies uncursed in your grave for the hero who finds it later."
+        ],
+        "covers": [
+          "special",
+          "royal_burial"
+        ]
+      },
+      "leggings_of_enkidu": {
+        "lines": [
+          "While worn, your companions take {wild_friend:pct} less damage from blows."
+        ],
+        "covers": [
+          "special",
+          "wild_friend"
+        ]
+      },
+      "linothorax_of_alexander": {
+        "lines": [
+          "Standing on an altar, you heal {phalanx_recovery} health each turn."
+        ],
+        "covers": [
+          "special",
+          "phalanx_recovery"
+        ]
+      },
+      "lorica_hamata_of_caesar": {
+        "lines": [
+          "On each floor the first monster to wound you is marked, and the next once it dies: your blows and shots on it do half again as much damage."
+        ],
+        "covers": [
+          "special",
+          "et_tu_charge"
+        ]
+      },
+      "mantle_of_elijah": {
+        "lines": [
+          "While worn, your maximum mana is 3 higher."
+        ],
+        "covers": [
+          "special",
+          "prophets_passing"
+        ]
+      },
+      "mantle_of_muspelheim": {
+        "lines": [
+          "While worn, you take {toughness_bonus:pct} less damage from everything but hunger (all your armour together gives at most 10%)."
+        ],
+        "covers": [
+          "toughness_bonus"
+        ]
+      },
+      "orichalcum_breastplate": {
+        "lines": [
+          "Every {atlantean_resonance} turns it hums, and you are Shielded for 3 turns."
+        ],
+        "covers": [
+          "special",
+          "atlantean_resonance"
+        ]
+      },
+      "panoply_of_hephaestus": {
+        "lines": [
+          "While worn, your weapon can be enchanted {divine_smithing} step higher than usual."
+        ],
+        "covers": [
+          "special",
+          "divine_smithing"
+        ]
+      },
+      "sandals_of_theseus": {
+        "lines": [
+          "When a monster hits you, there is a {their_own_methods:pct} chance it catches one of the ailments you suffer, for 5 turns; you keep yours."
+        ],
+        "covers": [
+          "special",
+          "their_own_methods"
+        ]
+      },
+      "scale_of_dilmun": {
+        "lines": [
+          "On or beside water or a fountain, AC +{water_tile_ac_bonus} and you heal {water_tile_regen_bonus} health a turn."
+        ],
+        "covers": [
+          "special",
+          "water_tile_ac_bonus",
+          "water_tile_regen_bonus"
+        ]
+      },
+      "seamless_tunic": {
+        "lines": [
+          "While worn, you take {toughness_bonus:pct} less damage from everything but hunger (all your armour together gives at most 10%)."
+        ],
+        "covers": [
+          "toughness_bonus"
+        ]
+      },
+      "tarnhelm": {
+        "lines": [
+          "Once a floor, when a blow leaves you below 30% of your health, you turn Invisible for {invisibility_duration} turns."
+        ],
+        "covers": [
+          "special",
+          "invisibility_power",
+          "invisibility_duration"
+        ]
+      },
+      "trainers_cap": {
+        "lines": [
+          "While worn, your companions mend {pet_regen_bonus} more health every 3 turns.",
+          "Each time you reach a floor deeper than you have been, one companion that can still grow gains a level."
+        ],
+        "covers": [
+          "special",
+          "pet_regen_bonus",
+          "bond_check"
+        ]
+      },
+      "vambraces_of_achilles": {
+        "lines": [
+          "Standing on an altar, you regain {peace_at_the_forge} mana and {peace_at_the_forge} stamina (SP) each turn."
+        ],
+        "covers": [
+          "special",
+          "peace_at_the_forge"
+        ]
+      },
+      "vambraces_of_roland": {
+        "lines": [
+          "While worn, you take {toughness_bonus:pct} less damage from everything but hunger (all your armour together gives at most 10%)."
+        ],
+        "covers": [
+          "toughness_bonus"
+        ]
+      },
+      "vambraces_of_the_first_winter": {
+        "lines": [
+          "While worn, you take {toughness_bonus:pct} less damage from everything but hunger (all your armour together gives at most 10%)."
+        ],
+        "covers": [
+          "toughness_bonus"
+        ]
+      }
+    },
+    "artifact": {
+      "aladdins_lamp": {
+        "lines": [
+          "Not found in this version of the game."
+        ]
+      },
+      "arthurs_bugle": {
+        "lines": [
+          "Power (V), once a run: answer a history chain, and the sleepers under the hill wake to fight beside you for 10 turns, 2 for one right answer, up to 6 for five."
+        ]
+      },
+      "bear_sinew": {
+        "lines": [
+          "One of the six impossible things in Gleipnir: set it down (D) on the dwarves' forge, deep below, while you carry the other five, and the ribbon is made."
+        ]
+      },
+      "bird_spittle": {
+        "lines": [
+          "One of the six impossible things in Gleipnir: set it down (D) on the dwarves' forge, deep below, while you carry the other five, and the ribbon is made."
+        ]
+      },
+      "bronze_bull": {
+        "lines": [
+          "Set it down (D) in the right fountain, further down, and a sealed chamber opens and a voice tells you how the Minotaur is beaten."
+        ]
+      },
+      "cats_footstep": {
+        "lines": [
+          "One of the six impossible things in Gleipnir: set it down (D) on the dwarves' forge, deep below, while you carry the other five, and the ribbon is made."
+        ]
+      },
+      "cursed_lodestone": {
+        "lines": [
+          "It will not leave your hand anywhere but on an altar: lay it there and it breaks, and your promise to Sir Aldric is kept."
+        ]
+      },
+      "cuthberts_gospel": {
+        "lines": [
+          "Your promise to Brother Hunred: carry it down to the chapel below and lay it on its reading desk."
+        ]
+      },
+      "eye_of_graeae": {
+        "lines": [
+          "Set it down (D) on the right altar, further down, and a sealed chamber opens and a voice tells you how the Gorgon is beaten."
+        ]
+      },
+      "fish_breath": {
+        "lines": [
+          "One of the six impossible things in Gleipnir: set it down (D) on the dwarves' forge, deep below, while you carry the other five, and the ribbon is made."
+        ]
+      },
+      "gjallarhorn": {
+        "lines": [
+          "Power (V), once a run: answer a history chain, and the einherjar ride down from Valhalla to fight beside you for 10 turns, 3 for one right answer, up to 8 for five."
+        ]
+      },
+      "gleipnir": {
+        "lines": [
+          "Power (V), Bind Odinkiller: cast it over Fenrir when he is in sight within 6 tiles, and he is held for 3 turns and his rage is gone.",
+          "Each cast costs you one point for good: Strength, then Dexterity, then Constitution, in turn.",
+          "Bind him at least once, and the gift he leaves when he falls is one point greater."
+        ]
+      },
+      "greater_hearth_sphere": {
+        "lines": [
+          "Throw it (T) where you want it: one of the family's own rare companions you have not met yet this run hatches there, at level 25; once you have met them all, an ordinary one.",
+          "Only one companion walks with you at a time: the one beside you goes back into a sphere in your pack."
+        ]
+      },
+      "greater_soul_sphere": {
+        "lines": [
+          "Throw it (T) where you want it: a companion hatches there already grown, at level 25, past its first change.",
+          "Only one companion walks with you at a time: the one beside you goes back into a sphere in your pack."
+        ]
+      },
+      "hearth_sphere": {
+        "lines": [
+          "Throw it (T) where you want it: one of the family's own rare companions you have not met yet this run hatches there, at level 1; once you have met them all, an ordinary one.",
+          "Only one companion walks with you at a time: the one beside you goes back into a sphere in your pack."
+        ]
+      },
+      "leather_scrap": {
+        "lines": [
+          "Heavy, stiff shoe leather, too hard to patch armour or to sew: no use you can see."
+        ]
+      },
+      "lions_thorn": {
+        "lines": [
+          "A keepsake from the lion you helped: keep it, for its part in the story is still to come."
+        ]
+      },
+      "master_hearth_sphere": {
+        "lines": [
+          "Throw it (T) where you want it: one of the family's own rare companions you have not met yet this run hatches there, at level 55; once you have met them all, an ordinary one.",
+          "Only one companion walks with you at a time: the one beside you goes back into a sphere in your pack."
+        ]
+      },
+      "master_sphere": {
+        "lines": [
+          "Throw it (T) where you want it: a companion hatches there at level 55, in its final form.",
+          "Only one companion walks with you at a time: the one beside you goes back into a sphere in your pack."
+        ]
+      },
+      "mountain_root": {
+        "lines": [
+          "One of the six impossible things in Gleipnir: set it down (D) on the dwarves' forge, deep below, while you carry the other five, and the ribbon is made."
+        ]
+      },
+      "olifant": {
+        "lines": [
+          "Power (V), once a run: answer a history chain, and 12 turns later Charlemagne's host rides up to fight beside you for 10 turns, 2 for one right answer, up to 8 for five."
+        ]
+      },
+      "palladium": {
+        "lines": [
+          "Carried, it shows you every stair on the floor, up and down, even through walls."
+        ],
+        "covers": [
+          "stair_reveal"
+        ]
+      },
+      "pandoras_box": {
+        "lines": [
+          "Not found in this version of the game."
+        ]
+      },
+      "philosophers_stone": {
+        "lines": [
+          "Picking it up names every item you carry and every item lying on this floor, and from then on everything you pick up is named at once.",
+          "Carry it up the stairs and out of the dungeon to win the game; it also adds 50,000 to your score.",
+          "Once it leaves floor 100, Death follows it up every stair."
+        ]
+      },
+      "raphaels_gall": {
+        "lines": [
+          "Carried, the first time you would be blinded it is used up instead, and you keep your sight."
+        ],
+        "covers": [
+          "cures_blindness_once"
+        ]
+      },
+      "robin_hoods_horn": {
+        "lines": [
+          "Power (V), once a run: answer a history chain, and Robin Hood's Merry Men come out to fight beside you for 10 turns, 2 for one right answer, up to 7 for five."
+        ]
+      },
+      "scales_of_michael": {
+        "lines": [
+          "Power (V), once: call the Heavenly Host, and from then on, each time Abaddon calls up locusts, one angel comes down beside you for each locust, as room allows."
+        ]
+      },
+      "seal_of_death": {
+        "lines": [
+          "One of the seven seals: it shatters the moment you touch it, for what counts is that its keeper is dead.",
+          "The stair down from floor 99 stays shut until all seven keepers are dead."
+        ]
+      },
+      "seal_of_earthquake": {
+        "lines": [
+          "One of the seven seals: it shatters the moment you touch it, for what counts is that its keeper is dead.",
+          "The stair down from floor 99 stays shut until all seven keepers are dead."
+        ]
+      },
+      "seal_of_famine": {
+        "lines": [
+          "One of the seven seals: it shatters the moment you touch it, for what counts is that its keeper is dead.",
+          "The stair down from floor 99 stays shut until all seven keepers are dead."
+        ]
+      },
+      "seal_of_pestilence": {
+        "lines": [
+          "One of the seven seals: it shatters the moment you touch it, for what counts is that its keeper is dead.",
+          "The stair down from floor 99 stays shut until all seven keepers are dead."
+        ]
+      },
+      "seal_of_silence": {
+        "lines": [
+          "One of the seven seals: it shatters the moment you touch it, for what counts is that its keeper is dead.",
+          "The stair down from floor 99 stays shut until all seven keepers are dead."
+        ]
+      },
+      "seal_of_war": {
+        "lines": [
+          "One of the seven seals: it shatters the moment you touch it, for what counts is that its keeper is dead.",
+          "The stair down from floor 99 stays shut until all seven keepers are dead."
+        ]
+      },
+      "seal_of_wrath": {
+        "lines": [
+          "One of the seven seals: it shatters the moment you touch it, for what counts is that its keeper is dead.",
+          "The stair down from floor 99 stays shut until all seven keepers are dead."
+        ]
+      },
+      "sealed_dispatch": {
+        "lines": [
+          "Your promise to the dying courier: carry it down to Sergeant Holt's Watch post on the lower stair and hand it to her."
+        ]
+      },
+      "soul_sphere": {
+        "lines": [
+          "Throw it (T) where you want it: a newborn companion hatches there, at level 1.",
+          "A Bound Soul Sphere gives back the companion it holds, just as it was.",
+          "Only one companion walks with you at a time: the one beside you goes back into a sphere in your pack."
+        ]
+      },
+      "tablet_of_destinies": {
+        "lines": [
+          "Carried, once a floor, your first wrong answer in a fight's chain is wiped away and a new question comes, so the chain goes on."
+        ],
+        "covers": [
+          "quiz_reroll"
+        ]
+      },
+      "unusual_soul_sphere": {
+        "lines": [
+          "Throw it (T), and help comes to fight beside you for a short while.",
+          "On a boss floor it will not open, and you keep it."
+        ]
+      },
+      "vidars_sandal": {
+        "lines": [
+          "Carried, any blow of yours that lands on Fenrir ends him at once."
+        ]
+      },
+      "wats_oil_flask": {
+        "lines": [
+          "Your promise to old Wat: carry it down to the foot of the Long Stair and light the seventh lamp with it."
+        ]
+      },
+      "womans_beard": {
+        "lines": [
+          "One of the six impossible things in Gleipnir: set it down (D) on the dwarves' forge, deep below, while you carry the other five, and the ribbon is made."
+        ]
+      }
+    },
+    "container": {
+      "apothecary_chest": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a poisoned needle, a spring, a dart that leaves you bleeding, dust that confuses you, or a snapping hinge), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 3 things, potions, foraged herbs and scrolls, and coin, with up to a 4% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "crypt_chest": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a stunning shock, slowing frost, flame, a deep bleeding cut, or a hex), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 5 things, treasure, scrolls, potions, rings or amulets, weapons, or a light, and coin, with up to a 10% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "cursed_coffer": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (confusion, blinding fire, a life-draining blight, a long hex, or silence), the chest is spent, and the noise may wake monsters near you."
+        ]
+      },
+      "dragon_hoard": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (blinding fire, paralysis, creeping stone that can kill, being rooted in place, or dragon fire), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 6 things, treasure, gear, wands, scrolls or spellbooks, and extra coin, and coin, with up to a 80% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "enchanted_coffer": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (confusion, blinding fire, a life-draining blight, a long hex, or silence), the chest is spent, and the noise may wake monsters near you."
+        ]
+      },
+      "gilded_chest": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (confusion, blinding fire, a life-draining blight, a long hex, or silence), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 5 things, treasure, wands, scrolls or spellbooks, gear, rings or amulets, and extra coin, and coin, with up to a 40% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "inferno_chest": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (blinding fire, paralysis, creeping stone that can kill, being rooted in place, or dragon fire), the chest is spent, and the noise may wake monsters near you."
+        ]
+      },
+      "iron_chest": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a stunning blade, confusing gas, acid, cold that slows you, or sleep), the chest is spent, and the noise may wake monsters near you."
+        ]
+      },
+      "iron_lockbox": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a stunning blade, confusing gas, acid, cold that slows you, or sleep), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 4 things, treasure, at most one piece of gear, wands, scrolls or spellbooks, and rings or amulets, and coin, with up to a 6% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "jewelry_box": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a stunning blade, confusing gas, acid, cold that slows you, or sleep), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 4 things, treasure, rings and amulets, and extra coin, and coin, with up to a 10% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "merchant_strongbox": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a stunning blade, confusing gas, acid, cold that slows you, or sleep), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 4 things, treasure, at most one piece of gear, potions, scrolls, wands, rings or amulets, or a light, and coin, with up to a 6% chance of a named piece. Everything in it comes out already identified.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "ornate_chest": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (confusion, blinding fire, a life-draining blight, a long hex, or silence), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 5 things, treasure, wands, scrolls, rings or amulets, weapons, armour and shields, and coin, with up to a 24% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "reliquary": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (blinding fire, paralysis, creeping stone that can kill, being rooted in place, or dragon fire), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 6 things, rings or amulets, scrolls and relics, and coin, with up to a 70% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "scholar_satchel": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a stunning shock, slowing frost, flame, a deep bleeding cut, or a hex), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 5 things, spellbooks, scrolls and wands, and coin, with up to a 8% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "shock_trap_vault": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a stunning shock, slowing frost, flame, a deep bleeding cut, or a hex), the chest is spent, and the noise may wake monsters near you."
+        ]
+      },
+      "spiked_chest": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a stunning blade, confusing gas, acid, cold that slows you, or sleep), the chest is spent, and the noise may wake monsters near you."
+        ]
+      },
+      "steel_vault": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a stunning shock, slowing frost, flame, a deep bleeding cut, or a hex), the chest is spent, and the noise may wake monsters near you."
+        ]
+      },
+      "trapped_chest": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a poisoned needle, a spring, a dart that leaves you bleeding, dust that confuses you, or a snapping hinge), the chest is spent, and the noise may wake monsters near you."
+        ]
+      },
+      "warlord_warchest": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a stunning shock, slowing frost, flame, a deep bleeding cut, or a hex), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 5 things, weapons, armour and shields, up to two of each, and coin, with up to a 12% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      },
+      "wooden_chest": {
+        "lines": [
+          "Press P beside it or standing on it: one economics question (tier {quiz_tier}) picks the lock, and Knock or a Wand of Opening opens it with none.",
+          "Right, you get all it holds; wrong, its trap goes off (a poisoned needle, a spring, a dart that leaves you bleeding, dust that confuses you, or a snapping hinge), the chest is spent, and the noise may wake monsters near you.",
+          "Inside: up to 3 things, at most one weapon, armour or shield, then potions, arrows, scrolls or a light, and coin, with up to a 2% chance of a named piece.",
+          "Nothing in a chest is ever cursed, but from floor 8 down some chests are mimics, and trying one wakes it."
+        ]
+      }
+    },
+    "food": {
+      "ambrosia": {
+        "lines": [
+          "Eaten as it is, its gift does not use up this floor's stat lesson from cooking."
+        ]
+      },
+      "apple": {
+        "lines": [
+          "In a dish you cook (C), it adds Mind Ward: you resist confusion, fear and charm better, for 60 to 120 turns, the better the dish the longer."
+        ]
+      },
+      "bread_ration": {
+        "lines": [
+          "In a dish you cook (C), it adds Fearless: nothing can frighten you, for 60 to 120 turns, the better the dish the longer."
+        ]
+      },
+      "caviar": {
+        "lines": [
+          "Cooked (C) with tater tots, it makes a special dish: for a little while, every blow and spell on you does half damage."
+        ]
+      },
+      "deep_fungi": {
+        "lines": [
+          "Eaten as it is, its gift does not use up this floor's stat lesson from cooking."
+        ]
+      },
+      "dried_meat": {
+        "lines": [
+          "In a dish you cook (C), it adds Warning: you sense monsters within 5 tiles, for 60 to 120 turns, the better the dish the longer."
+        ]
+      },
+      "elvish_bread": {
+        "lines": [
+          "In a dish you cook (C), it adds 2 to 6 mana, the better the dish the more."
+        ]
+      },
+      "golden_apple": {
+        "lines": [
+          "Eaten as it is, its gift does not use up this floor's stat lesson from cooking."
+        ]
+      },
+      "hard_cheese": {
+        "lines": [
+          "In a dish you cook (C), it adds Cold Resist: cold does half damage and cannot freeze you, for 60 to 120 turns, the better the dish the longer."
+        ]
+      },
+      "healing_herb": {
+        "lines": [
+          "In a dish you cook (C), it adds Regenerating: you mend 1 health every 3 turns, for 60 to 120 turns, the better the dish the longer."
+        ]
+      },
+      "hearty_stew": {
+        "lines": [
+          "In a dish you cook (C), it heals you a further 4% to 8% of your health, the better the dish the more."
+        ]
+      },
+      "magic_dungeon_carrot": {
+        "lines": [
+          "Best not eaten: set it down (D) near the right shy creature, and it wins that creature's trust."
+        ]
+      },
+      "peach_of_immortality": {
+        "lines": [
+          "Eaten as it is, its gift does not use up this floor's stat lesson from cooking."
+        ]
+      },
+      "philosopher_tea": {
+        "lines": [
+          "Eaten as it is, its gift does not use up this floor's stat lesson from cooking."
+        ]
+      },
+      "starnut_tart": {
+        "lines": [
+          "Good to eat, but someone deep in the dungeon has been hoping for one of these for a long time."
+        ]
+      },
+      "tater_tots": {
+        "lines": [
+          "Cooked (C) with caviar, it makes a special dish: for a little while, every blow and spell on you does half damage."
+        ]
+      },
+      "trail_rations": {
+        "lines": [
+          "In a dish you cook (C), it adds Searching: hidden doors and traps beside you are found as you walk, for 60 to 120 turns, the better the dish the longer."
+        ]
+      },
+      "void_ration": {
+        "lines": [
+          "Eaten as it is, its gift does not use up this floor's stat lesson from cooking."
+        ]
+      },
+      "wild_mushroom": {
+        "lines": [
+          "In a dish you cook (C), it adds Dark Vision: sight +4 even in deep darkness, for 60 to 120 turns, the better the dish the longer."
+        ]
+      }
+    },
+    "light": {
+      "dark_lantern": {
+        "lines": [
+          "When its oil runs out, a flask of fire oil in your pack fills it by itself.",
+          "In its light, light-shy creatures such as trolls, kobolds, dark elves and shadows hit you as if you had 2 more AC, and a troll's wounds stop closing.",
+          "A blow of water, wind or darkness can put it out, and the soaked wick will not light again for 1 to 3 turns."
+        ]
+      },
+      "everburning_lamp": {
+        "lines": [
+          "In its light, light-shy creatures such as trolls, kobolds, dark elves and shadows hit you as if you had 4 more AC, and a troll's wounds stop closing.",
+          "No blow of water, wind or darkness can put it out."
+        ]
+      },
+      "hecates_torch": {
+        "lines": [
+          "In its light, light-shy creatures such as trolls, kobolds, dark elves and shadows hit you as if you had 4 more AC, and a troll's wounds stop closing.",
+          "No blow of water, wind or darkness can put it out."
+        ]
+      },
+      "heros_lamp": {
+        "lines": [
+          "When its oil runs out, a flask of fire oil in your pack fills it by itself.",
+          "In its light, light-shy creatures such as trolls, kobolds, dark elves and shadows hit you as if you had 4 more AC, and a troll's wounds stop closing.",
+          "No blow of water, wind or darkness can put it out."
+        ]
+      },
+      "horn_lantern": {
+        "lines": [
+          "When its oil runs out, a flask of fire oil in your pack fills it by itself.",
+          "In its light, light-shy creatures such as trolls, kobolds, dark elves and shadows hit you as if you had 2 more AC, and a troll's wounds stop closing.",
+          "A blow of water, wind or darkness can put it out, and the soaked wick will not light again for 1 to 3 turns."
+        ]
+      },
+      "jacks_lantern": {
+        "lines": [
+          "In its light, light-shy creatures such as trolls, kobolds, dark elves and shadows hit you as if you had 2 more AC, and a troll's wounds stop closing.",
+          "No blow of water, wind or darkness can put it out."
+        ]
+      },
+      "psyches_lamp": {
+        "lines": [
+          "When its oil runs out, a flask of fire oil in your pack fills it by itself.",
+          "In its light, light-shy creatures such as trolls, kobolds, dark elves and shadows hit you as if you had 2 more AC, and a troll's wounds stop closing.",
+          "No blow of water, wind or darkness can put it out."
+        ]
+      },
+      "torch": {
+        "lines": [
+          "When it burns out, the next torch in your pack is lit by itself.",
+          "In its light, light-shy creatures such as trolls, kobolds, dark elves and shadows hit you as if you had 2 more AC, and a troll's wounds stop closing.",
+          "A blow of water, wind or darkness can put it out, and the soaked wick will not light again for 1 to 3 turns."
+        ]
+      }
+    },
+    "lockpick": {
+      "lockpick": {
+        "lines": [
+          "You have no need of it, for your master lockpick does the work: one found lying about is taken as a few coins of scrap."
+        ]
+      },
+      "master_lockpick": {
+        "lines": [
+          "Press P with a chest beside you or under you: one economics question, harder for a better chest, picks its lock.",
+          "Right, the chest opens with all it holds; wrong, its trap goes off and the chest is lost to you.",
+          "It never wears out, and no one can take it from you."
+        ]
+      }
+    },
+    "shield": {
+      "aegis_of_athena": {
+        "lines": [
+          "Held up against a gaze that would hold you still, it turns the gaze back: the creature that looked stands frozen for 2 turns and loses its attack.",
+          "Have it with you when Medusa falls, and the gift you choose is 1 point greater."
+        ],
+        "covers": [
+          "special"
+        ]
+      },
+      "ancile": {
+        "lines": [
+          "While you hold it, it adds {quiz_timer_bonus} seconds to the clock of every fight."
+        ],
+        "covers": [
+          "quiz_timer_bonus"
+        ]
+      },
+      "greater_aegis_of_athena": {
+        "lines": [
+          "Have it with you when Medusa falls, and the gift you choose is 1 point greater."
+        ]
+      },
+      "horse_armor_of_the_norns": {
+        "lines": [
+          "When a monster's blow of fire, cold, lightning, acid, poison or other magic hurts you, there is a {spell_reflect:pct} chance it takes the same damage back."
+        ],
+        "covers": [
+          "spell_reflect"
+        ]
+      },
+      "joans_standard": {
+        "lines": [
+          "While it is in your off hand, every pet or ally you can see hits 50% harder."
+        ],
+        "covers": [
+          "rally_damage_mult"
+        ]
+      },
+      "lendings_of_beowulf": {
+        "lines": [
+          "When a monster's fire blow lands on you, the shield throws {fire_reflect:pct} of the blow back at it."
+        ],
+        "covers": [
+          "fire_reflect"
+        ]
+      },
+      "lionheart_shield": {
+        "lines": [
+          "Someone further down may know whose it was."
+        ]
+      },
+      "macedonian_aspis_of_philip": {
+        "lines": [
+          "When a monster's fire blow lands on you, the shield throws {fire_reflect:pct} of the blow back at it."
+        ],
+        "covers": [
+          "fire_reflect"
+        ]
+      },
+      "o_tate_of_the_samurai": {
+        "lines": [
+          "While you hold it, it adds {quiz_timer_bonus} to the seconds on the clock of every fight."
+        ],
+        "covers": [
+          "quiz_timer_bonus"
+        ]
+      },
+      "scarab_of_apophis_binding": {
+        "lines": [
+          "When a monster's blow of fire, cold, lightning, acid, poison or other magic hurts you, there is a {spell_reflect:pct} chance it takes the same damage back."
+        ],
+        "covers": [
+          "spell_reflect"
+        ]
+      },
+      "shield_of_ilion": {
+        "lines": [
+          "Once a floor, when a hurt leaves you at a quarter of your health or less, you crouch under it: Shielded for {fallen_cover_turns} turns."
+        ],
+        "covers": [
+          "fallen_cover_turns"
+        ]
+      },
+      "smoking_mirror_of_tezcatlipoca": {
+        "lines": [
+          "When a monster's blow of fire, cold, lightning, acid, poison or other magic hurts you, there is a {spell_reflect:pct} chance it takes the same damage back."
+        ],
+        "covers": [
+          "spell_reflect"
+        ]
+      },
+      "svalinn": {
+        "lines": [
+          "When a monster's fire blow lands on you, the shield throws {fire_reflect:pct} of the blow back at it."
+        ],
+        "covers": [
+          "fire_reflect"
+        ]
+      },
+      "yamas_dharma_watch": {
+        "lines": [
+          "When a monster's blow of fire, cold, lightning, acid, poison or other magic hurts you, there is a {spell_reflect:pct} chance it takes the same damage back."
+        ],
+        "covers": [
+          "spell_reflect"
+        ]
+      }
+    },
+    "weapon": {
+      "achilles_spear": {
+        "lines": [
+          "Each kill heals you {killHealAmount} HP."
+        ],
+        "covers": [
+          "killHealAmount"
+        ]
+      },
+      "aiglos": {
+        "lines": [
+          "Each hit has a {freeze_chance:pct} chance to freeze its target, so it cannot act for a few turns.",
+          "While it is in your hand, fire does you no harm.",
+          "Its blows ignore a foe's resistances and a dragon's scales; a weakness still counts."
+        ],
+        "covers": [
+          "freeze_chance",
+          "wielder_fire_immunity",
+          "wielder_status_immunity",
+          "ignore_resistances"
+        ]
+      },
+      "akinakes_acrisius": {
+        "lines": [
+          "The first time you take it up, it marks one kind of creature for the whole run (humanoids, the undead, demons, beasts, dragons, the fey or aberrations), and it hits that kind half again as hard."
+        ],
+        "covers": [
+          "prophecy_blade"
+        ]
+      },
+      "amenonuhoko": {
+        "lines": [
+          "When it kills a foe, every foe beside the fallen one is slowed for 3 turns."
+        ],
+        "covers": [
+          "aoe_slow_on_kill"
+        ]
+      },
+      "anduril": {
+        "lines": [
+          "The undead are weak to it, and it hits them half again as hard on top of that.",
+          "Its blows ignore a foe's resistances and a dragon's scales; a weakness still counts."
+        ],
+        "covers": [
+          "undead_bonus",
+          "effective_against",
+          "ignore_resistances"
+        ]
+      },
+      "atalanta_bow": {
+        "lines": [
+          "A shot that lands at a chain of exactly 1 on a foe still at full health does half again as much damage."
+        ],
+        "covers": [
+          "first_blood_bonus"
+        ]
+      },
+      "bellerophon_lance": {
+        "lines": [
+          "Against beasts, each hit rolls {beast_bonus_damage} more damage."
+        ],
+        "covers": [
+          "beast_bonus_damage"
+        ]
+      },
+      "bow_of_rama": {
+        "lines": [
+          "Demons are weak to it."
+        ],
+        "covers": [
+          "effective_against"
+        ]
+      },
+      "broken_gram": {
+        "lines": [
+          "Half of a legendary sword that waits to be made whole: keep it, for its place in the story is still to come."
+        ]
+      },
+      "cadmus_sword": {
+        "lines": [
+          "Against dragons, each hit rolls {dragon_bonus_damage} more damage.",
+          "When it kills a dragon, an ally springs up from the body and fights at your side for 5 turns."
+        ],
+        "covers": [
+          "dragon_bonus_damage",
+          "summon_after_kill_with_tag"
+        ]
+      },
+      "cain_club": {
+        "lines": [
+          "Every miss costs you {cursedMissBacklash} HP."
+        ],
+        "covers": [
+          "cursedMissBacklash"
+        ]
+      },
+      "caladbolg": {
+        "lines": [
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "knockback"
+        ]
+      },
+      "caliburn": {
+        "lines": [
+          "Every {killsToGrow} kills it makes, its damage grows by 2% of what it was forged with (at least 1 point)."
+        ],
+        "covers": [
+          "growingPower",
+          "killsToGrow"
+        ]
+      },
+      "carnwennan": {
+        "lines": [
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "ignoreShield"
+        ]
+      },
+      "chandrahas": {
+        "lines": [
+          "Each time you change floors while your karma is below zero, there is a {karma_disappear_proc:pct} chance it vanishes back to Shiva, even from your pack."
+        ],
+        "covers": [
+          "karma_disappear_proc"
+        ]
+      },
+      "chrysaor": {
+        "lines": [
+          "A cursed scroll that would weaken a weapon's enchantment cannot weaken this one.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "weapon_immune_to_enchant_loss",
+          "ignoreShield"
+        ]
+      },
+      "club_of_polyphemus": {
+        "lines": [
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "knockback"
+        ]
+      },
+      "cronus_scythe": {
+        "lines": [
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "ignoreShield"
+        ]
+      },
+      "cuchulainn_hurley": {
+        "lines": [
+          "Beasts are weak to it.",
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "effective_against",
+          "knockback"
+        ]
+      },
+      "curtana": {
+        "lines": [
+          "When a blow would kill a foe, there is a {spare_kill_chance:pct} chance it spares it at 1 HP instead and your max HP rises by 1 for good, at most {spare_kill_max_hp_per_floor} times a floor."
+        ],
+        "covers": [
+          "spare_kill_chance",
+          "spare_kill_max_hp_per_floor"
+        ]
+      },
+      "dawnbreaker": {
+        "lines": [
+          "The undead are weak to it.",
+          "Its blows ignore a foe's resistances and a dragon's scales; a weakness still counts."
+        ],
+        "covers": [
+          "effective_against",
+          "ignore_resistances"
+        ]
+      },
+      "durendal": {
+        "lines": [
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "ignoreShield"
+        ]
+      },
+      "echidna_fang": {
+        "lines": [
+          "Each hit has a 40% chance to also leave its target poisoned, confused, slowed or weakened (one of the four, at random) for 5 turns."
+        ],
+        "covers": [
+          "random_status_from_pool"
+        ]
+      },
+      "excalibur": {
+        "lines": [
+          "Each kill heals you {killHealAmount} HP.",
+          "Once a run, when a blow leaves you at a quarter of your health or less, it gives up one point of its enchantment to give you Life Save again (of use only once its first is spent)."
+        ],
+        "covers": [
+          "killHealAmount",
+          "cast_me_away"
+        ]
+      },
+      "fragarach": {
+        "lines": [
+          "Humanoids (men, orcs, goblins, giants and their like) are weak to it.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "effective_against",
+          "ignoreShield"
+        ]
+      },
+      "fragarach_the_whisperer": {
+        "lines": [
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "ignoreShield"
+        ]
+      },
+      "gae_bulg": {
+        "lines": [
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "ignoreShield"
+        ]
+      },
+      "gae_dearg": {
+        "lines": [
+          "Each hit has a {apply_heal_block_chance:pct} chance to stop its target healing for 10 turns.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "apply_heal_block_chance",
+          "ignoreShield"
+        ]
+      },
+      "gandiva": {
+        "lines": [
+          "A shot at a chain of 5 or more also strikes the 3 nearest other foes for half its damage."
+        ],
+        "covers": [
+          "multi_arrow_at_chain_5"
+        ]
+      },
+      "gilgamesh_axe": {
+        "lines": [
+          "Constructs (golems and other made things) are weak to it."
+        ],
+        "covers": [
+          "effective_against"
+        ]
+      },
+      "glamdring": {
+        "lines": [
+          "Orcs and goblin-kin are weak to it.",
+          "Against orcs and goblin-kin (goblins, hobgoblins, bugbears and their like), each hit rolls 33d8 more damage, and a goblin itself takes {goblin_bonus_damage} more on top.",
+          "Against an orc or a goblin, each blow that lands adds 1 to the chain."
+        ],
+        "covers": [
+          "effective_against",
+          "goblin_bonus_damage",
+          "bonus_damage_vs_tag",
+          "glows_near_orcs"
+        ]
+      },
+      "gram": {
+        "lines": [
+          "Its blows ignore a foe's resistances and a dragon's scales; a weakness still counts.",
+          "Against dragons, each hit rolls {dragon_bonus_damage} more damage."
+        ],
+        "covers": [
+          "ignore_resistances",
+          "dragon_bonus_damage"
+        ]
+      },
+      "green_chapel_axe": {
+        "lines": [
+          "Each time a foe's blow wounds you, it mends {on_hit_regen} HP."
+        ],
+        "covers": [
+          "on_hit_regen"
+        ]
+      },
+      "gungnir": {
+        "lines": [
+          "It never misses: even a wrong first answer still lands a light hit. Striking before you answer is not a wrong answer.",
+          "Humanoids and the fey are weak to it.",
+          "Its blows ignore a foe's resistances and a dragon's scales; a weakness still counts.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "cannot_miss",
+          "effective_against",
+          "ignore_resistances",
+          "ignoreShield"
+        ]
+      },
+      "harpe": {
+        "lines": [
+          "Against gorgons, basilisks, cockatrices, the catoblepas and the floating eye, each blow that lands adds 1 to the chain.",
+          "At a chain of 15 or more, an ordinary foe starts turning to stone and dies as stone in a few turns; bosses and great foes are too strong for it.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "skip_chain_warmup_vs_tag",
+          "petrify_on_crit",
+          "ignoreShield"
+        ]
+      },
+      "hector_javelin": {
+        "lines": [
+          "Against beasts, each hit rolls {beast_bonus_damage} more damage."
+        ],
+        "covers": [
+          "beast_bonus_damage"
+        ]
+      },
+      "heracles_club": {
+        "lines": [
+          "Against beasts, each hit rolls {beast_bonus_damage} more damage.",
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "beast_bonus_damage",
+          "knockback"
+        ]
+      },
+      "hofud": {
+        "lines": [
+          "While it is in your hand, your PER is 2 higher, so you see farther."
+        ],
+        "covers": [
+          "vigilance_aware"
+        ]
+      },
+      "hrunting": {
+        "lines": [
+          "Once a floor, a wrong first answer still lands a light hit. Striking before you answer is not a wrong answer.",
+          "Every miss costs you {cursedMissBacklash} HP."
+        ],
+        "covers": [
+          "one_shot_chain_save_per_floor",
+          "cursedMissBacklash"
+        ]
+      },
+      "joyeuse": {
+        "lines": [
+          "Each time you attack with it (A), there is a {combat_start_aoe_confuse_chance:pct} chance it flashes and confuses every foe you can see within 3 tiles for a turn."
+        ],
+        "covers": [
+          "combat_start_aoe_confuse_chance"
+        ]
+      },
+      "khopesh_of_anubis": {
+        "lines": [
+          "Each kill heals you {kill_heal_amount} HP.",
+          "Each kill also raises your max HP by {kill_max_hp_bonus} for good, up to {kill_max_hp_cap} in all."
+        ],
+        "covers": [
+          "kill_heal_amount",
+          "kill_max_hp_bonus",
+          "kill_max_hp_cap"
+        ]
+      },
+      "kusanagi": {
+        "lines": [
+          "When 3 or more foes stand beside you, its blows do 25% more damage.",
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "surrounded_proc_bonus",
+          "knockback"
+        ]
+      },
+      "laevateinn": {
+        "lines": [
+          "At a chain of 5 or more on a boss, it lays Doom on it: it loses 5% of its full health each turn for 30 turns.",
+          "Its blows ignore a foe's resistances and a dragon's scales; a weakness still counts.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "boss_doom_dot_at_chain_5",
+          "ignore_resistances",
+          "ignoreShield"
+        ]
+      },
+      "leonidas_dory": {
+        "lines": [
+          "Humanoids (men, orcs, goblins, giants and their like) are weak to it."
+        ],
+        "covers": [
+          "effective_against"
+        ]
+      },
+      "meleager_spear": {
+        "lines": [
+          "Against beasts, each hit rolls {beast_bonus_damage} more damage."
+        ],
+        "covers": [
+          "beast_bonus_damage"
+        ]
+      },
+      "mistilteinn": {
+        "lines": [
+          "At a chain of 5 or more, it hits any foe that resists anything at all twice as hard.",
+          "Its blows ignore a foe's resistances and a dragon's scales; a weakness still counts.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "damage_double_vs_resistant_at_max",
+          "ignore_resistances",
+          "ignoreShield"
+        ]
+      },
+      "mjolnir": {
+        "lines": [
+          "Constructs and giants are weak to it.",
+          "At a chain of 6 or more, lightning leaps from its target to one foe beside it for half the blow's damage.",
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "effective_against",
+          "chain_lightning_at_chain_n",
+          "knockback"
+        ]
+      },
+      "mwindo_axe": {
+        "lines": [
+          "Each kill heals you {kill_heal_amount} HP."
+        ],
+        "covers": [
+          "kill_heal_amount"
+        ]
+      },
+      "naegling": {
+        "lines": [
+          "Against dragons, each hit rolls {dragon_bonus_damage} more damage."
+        ],
+        "covers": [
+          "dragon_bonus_damage"
+        ]
+      },
+      "net_of_hephaestus": {
+        "lines": [
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "reach",
+          "ignoreShield"
+        ]
+      },
+      "oathkeeper_sword": {
+        "lines": [
+          "While a pet stands beside you, its blows do {adjacent_pet_damage_bonus:pct} more damage."
+        ],
+        "covers": [
+          "adjacent_pet_damage_bonus"
+        ]
+      },
+      "parashu": {
+        "lines": [
+          "When it kills a humanoid, the chain carries on: your next blow with it that lands adds the killing blow's chain to its own.",
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "chain_no_reset_on_tag",
+          "knockback"
+        ]
+      },
+      "pelops_sword": {
+        "lines": [
+          "While it is in your hand, your STR is 1 lower and your max HP 2 higher.",
+          "Each time you go down a stair with it in hand, there is a 5% chance that one of the cursed House of Atreus comes hunting you."
+        ],
+        "covers": [
+          "cursed_lineage"
+        ]
+      },
+      "penitents_blade": {
+        "lines": [
+          "Every {kill_count_karma_adjust} kills you make with it raise your karma by 1 while it is below zero, never above zero."
+        ],
+        "covers": [
+          "kill_count_karma_adjust"
+        ]
+      },
+      "prometheus_torch": {
+        "lines": [
+          "The undead are weak to it."
+        ],
+        "covers": [
+          "effective_against"
+        ]
+      },
+      "punch_in_the_face": {
+        "lines": [
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "knockback"
+        ]
+      },
+      "rans_net": {
+        "lines": [
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "reach",
+          "ignoreShield"
+        ]
+      },
+      "ridill": {
+        "lines": [
+          "Against dragons, each hit rolls {dragon_bonus_damage} more damage.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "dragon_bonus_damage",
+          "ignoreShield"
+        ]
+      },
+      "robin_hoods_longbow": {
+        "lines": [
+          "While you are Invisible, its shots do {stealth_damage_bonus:pct} more damage."
+        ],
+        "covers": [
+          "stealth_damage_bonus"
+        ]
+      },
+      "rod_of_moses": {
+        "lines": [
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "reach",
+          "knockback"
+        ]
+      },
+      "romulus_spear": {
+        "lines": [
+          "Beasts are weak to it."
+        ],
+        "covers": [
+          "effective_against"
+        ]
+      },
+      "ruyi_jingu_bang": {
+        "lines": [
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "reach",
+          "knockback"
+        ]
+      },
+      "shamshir_e_zomorrodnegar": {
+        "lines": [
+          "Demons are weak to it.",
+          "Half the times it kills a demon, an ally springs up from the body and fights at your side for 5 turns.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "effective_against",
+          "summon_after_kill_with_tag",
+          "ignoreShield"
+        ]
+      },
+      "sharur": {
+        "lines": [
+          "Each time you first reach a floor with it in hand, it shows you a few tiles of the map around the stairs down.",
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "floor_start_reveal_chance",
+          "knockback"
+        ]
+      },
+      "sigurds_shovel": {
+        "lines": [
+          "Aim a melee attack (A) at the open floor beside you to dig a pit there; it costs 30 SP and 3 turns.",
+          "A foe that walks into the pit falls in, is hurt and is stuck for a few turns."
+        ],
+        "covers": [
+          "can_dig"
+        ]
+      },
+      "skofnung": {
+        "lines": [
+          "Humanoids (men, orcs, goblins, giants and their like) are weak to it.",
+          "Each time you are hurt while at half your health or less, your next blow with it that lands adds {chain_bonus_on_low_hp_window} to the chain."
+        ],
+        "covers": [
+          "effective_against",
+          "chain_bonus_on_low_hp_window"
+        ]
+      },
+      "sling_of_david": {
+        "lines": [
+          "It never runs out: it needs no stones.",
+          "Giants are weak to it."
+        ],
+        "covers": [
+          "infiniteAmmo",
+          "requiresAmmo",
+          "effective_against"
+        ]
+      },
+      "spear_of_longinus": {
+        "lines": [
+          "The undead and demons are weak to it.",
+          "Its blows ignore a foe's resistances and a dragon's scales; a weakness still counts.",
+          "Each kill heals you {weep_heal_on_kill_scaled:pct} of the slain foe's full health."
+        ],
+        "covers": [
+          "effective_against",
+          "ignore_resistances",
+          "weep_heal_on_kill_scaled"
+        ]
+      },
+      "spear_of_lugh": {
+        "lines": [
+          "Against a creature with a gaze attack (a basilisk, Medusa, the floating eye and their like), its blows do three times the damage.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "damage_bonus_vs_gaze",
+          "ignoreShield"
+        ]
+      },
+      "staff_of_moses": {
+        "lines": [
+          "A blow at a chain of 3 or more slows its target for 3 turns; at 5 or more it blinds it for 2 turns as well.",
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "chain_tier_status_table",
+          "knockback"
+        ]
+      },
+      "stormbringer": {
+        "lines": [
+          "Once in your hand, it will not let go: you cannot put it down or change it for another weapon.",
+          "When you are at 15% of your health or less, each blow it lands has a 25% chance to drink from a pet beside you as well, for half the blow's damage.",
+          "Its blows ignore a foe's resistances and a dragon's scales; a weakness still counts."
+        ],
+        "covers": [
+          "selects_wielder",
+          "betrays_at_low_hp",
+          "ignore_resistances"
+        ]
+      },
+      "sudarshana": {
+        "lines": [
+          "A kill at a chain of 5 or more readies the discus: the next blow a foe aims at you is turned aside.",
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "return_to_hand_ward",
+          "knockback"
+        ]
+      },
+      "sword_of_damocles": {
+        "lines": [
+          "From its {damoclean_counter_threshold}th hit in a row without a miss, a hit at a chain of just 1 kills an ordinary foe outright (never a boss or another named foe); then the count starts again.",
+          "A miss costs you {cursedMissBacklash} HP and starts the count again."
+        ],
+        "covers": [
+          "damoclean_counter_auto_kill",
+          "damoclean_counter_threshold",
+          "cursedMissBacklash"
+        ]
+      },
+      "sword_of_michael": {
+        "lines": [
+          "Each hit rolls more damage on the forces of darkness: 48d8 more on a demon, 24d8 more on the undead, and 24d8 more on anything evil (a foe that is both takes both).",
+          "Against Abaddon the Destroyer, each hit rolls {abaddon_bonus_damage} more on top.",
+          "Its blows ignore a foe's resistances and a dragon's scales; a weakness still counts.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "bonus_damage_vs_tag",
+          "abaddon_bonus_damage",
+          "ignore_resistances",
+          "ignoreShield"
+        ]
+      },
+      "theseus_club": {
+        "lines": [
+          "Against humanoids, each hit rolls {humanoid_bonus_damage} more damage."
+        ],
+        "covers": [
+          "humanoid_bonus_damage"
+        ]
+      },
+      "trident_of_poseidon": {
+        "lines": [
+          "Each hit pushes its target back a tile, if there is room."
+        ],
+        "covers": [
+          "knockback"
+        ]
+      },
+      "tyrfing": {
+        "lines": [
+          "Every miss costs you {cursedMissBacklash} HP.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "cursedMissBacklash",
+          "ignoreShield"
+        ]
+      },
+      "vel_of_murugan": {
+        "lines": [
+          "Demons are weak to it.",
+          "Half the times it kills a demon, an ally springs up from the body and fights at your side for 5 turns.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "effective_against",
+          "summon_after_kill_with_tag",
+          "ignoreShield"
+        ]
+      },
+      "wepwawet_mace": {
+        "lines": [
+          "Aim a melee attack (A) at the open floor beside you to dig a pit there; it costs 30 SP and 3 turns.",
+          "A foe that walks into the pit falls in, is hurt and is stuck for a few turns."
+        ],
+        "covers": [
+          "can_dig"
+        ]
+      },
+      "zireael": {
+        "lines": [
+          "Whenever a foe is killed while it is in your hand, you are Hasted for a turn, so you often act again before the monsters do (once a turn)."
+        ],
+        "covers": [
+          "extra_action_after_kill"
+        ]
+      },
+      "zulfiqar": {
+        "lines": [
+          "Demons and the undead are weak to it.",
+          "Every hit also strikes one other foe beside its target for half the damage.",
+          "A foe's magic shield (Shielded) does not halve its blows."
+        ],
+        "covers": [
+          "effective_against",
+          "every_hit_secondary_target",
+          "ignoreShield"
+        ]
+      }
+    }
+  },
+  "chain_bonus": {
+    "ac_bonus": {
+      "label": "AC +{value}: the piece's whole armour at this tier"
+    },
+    "passive_aesir_young": {
+      "label": "Young again: each time you put it on, physical blows do half damage to you for 5 turns"
+    },
+    "passive_anti_being": {
+      "label": "Heart of Ahriman: on each new floor, your next spell that hurts a foe does twice the damage"
+    },
+    "passive_atalantas_choice": {
+      "label": "Atalanta's choice: reach a new floor below 30% health and all monsters in sight freeze 10 turns"
+    },
+    "passive_attack_chain_cap_bonus": {
+      "label": "Every blow that lands counts as {value} more right answer in its chain (more damage)"
+    },
+    "passive_aura_of_awe": {
+      "label": "Aura of awe: each foe you first see has a 50% chance to flee in fear for 3 turns"
+    },
+    "passive_back_attack_weakness": {
+      "label": "The linden leaf: a blow from behind (opposite your last step) hits {value} times as hard"
+    },
+    "passive_beautiful_ruin": {
+      "label": "Harmonia's curse: the strongest creature in sight is always stirred against you"
+    },
+    "passive_command_undead": {
+      "label": "Once a floor, the first undead you see is oath-bound: it will not attack you for 15 turns"
+    },
+    "passive_death_omen_mark": {
+      "label": "Death omen: each floor's strongest monster is marked, and your attacks do 25% more to it"
+    },
+    "passive_death_save_bonus": {
+      "label": "Death save {value:+}: once a floor, a killing blow may leave you at 1 HP (10% at +1, +5% a point)"
+    },
+    "passive_demon_command_one_per_floor": {
+      "label": "Once a floor, the first demon you see is charmed: it will not attack you for 20 turns"
+    },
+    "passive_detect_magic": {
+      "label": "Wands, scrolls and spellbooks you see on the floor show if they are blessed or cursed"
+    },
+    "passive_doom_of_the_gods": {
+      "label": "Doom of the Gods: a killing blow makes it burst, tearing the foes near you; you live, it is gone"
+    },
+    "passive_double_cast_at_peak_tier": {
+      "label": "Your tier 5 spells, cast right, take effect twice"
+    },
+    "passive_dragon_blood_bath": {
+      "label": "Dragon's blood: fire, cold and lightning do half damage; you cannot burn or freeze"
+    },
+    "passive_fafnirs_glare": {
+      "label": "Helm of Awe: each turn, every foe in sight has a 25% chance to flee in fear for 3 turns"
+    },
+    "passive_first_hit_absorb": {
+      "label": "Once a floor, the first monster blow that hurts you does no damage"
+    },
+    "passive_four_faces_360_fov": {
+      "label": "Four faces: you see all round you through walls, out to 1.5 tiles a point of Perception"
+    },
+    "passive_free_cast_once_per_floor": {
+      "label": "Once a floor, the first spell you cast costs no MP"
+    },
+    "passive_free_escape_once_per_floor": {
+      "label": "Once a floor, at a quarter of your health or less, you leap to a random spot on the floor"
+    },
+    "passive_free_move_every_10": {
+      "label": "Every 10th step you take costs no time"
+    },
+    "passive_gorgoneion_petrify_on_hit": {
+      "label": "Gorgoneion: once a floor, the first foe whose blow hurts you may freeze 4 turns (50%)"
+    },
+    "passive_grammar_chain_cap_bonus": {
+      "label": "Scrolls ask an easier grammar question ({value} tier lower); their power is unchanged"
+    },
+    "passive_huginn_muninn": {
+      "label": "Huginn and Muninn: on a new floor, for 5 turns, see all monsters within 10 tiles, through walls"
+    },
+    "passive_hunger_slow": {
+      "label": "Food lasts {value:pct} longer: you grow hungry more slowly"
+    },
+    "passive_identify_one_per_floor_free": {
+      "label": "Once a floor, the first item you identify is known at once, with no question"
+    },
+    "passive_invisible_to_undead": {
+      "label": "The undead cannot find you unless they are right next to you"
+    },
+    "passive_life_save_resets_per_floor": {
+      "label": "Its life save comes back on each new, deeper floor you reach"
+    },
+    "passive_max_mp_bonus": {
+      "label": "Max MP {value:+}"
+    },
+    "passive_mirror_of_souls": {
+      "label": "Mirror of Souls: 20% chance a physical blow that hurts you hurts its striker just as much"
+    },
+    "passive_mp_bonus": {
+      "label": "Max MP {value:+}"
+    },
+    "passive_no_attack_of_opportunity": {
+      "label": "Step away from a foe beside you and its next swing at you lands less often (-2 to hit)"
+    },
+    "passive_no_man_dares": {
+      "label": "No man dares: the Helm of Awe's fear grows to 40% a turn, and they flee for 4 turns"
+    },
+    "passive_one_thousand_and_one": {
+      "label": "A Thousand and One Nights: once a floor, a wrong answer in an attack does not end the chain"
+    },
+    "passive_pacify_demon_chance": {
+      "label": "Each demon you first see has a {value:pct} chance to fall asleep for 15 turns"
+    },
+    "passive_paths_of_the_dead": {
+      "label": "Paths of the Dead: once a run, arrive at half health and the strongest foe you see spares you 30 turns"
+    },
+    "passive_phase_step_once_per_floor": {
+      "label": "Once a floor, walk into a wall one tile thick to step through it"
+    },
+    "passive_psychopomp_step": {
+      "label": "Psychopomp's step: once a run, a killing blow instead carries you up one floor at 1 HP"
+    },
+    "passive_raven_scout": {
+      "label": "The Morrigan's ravens: each time you reach a floor, the ground within 12 tiles is mapped"
+    },
+    "passive_raven_scout_extended": {
+      "label": "The Morrigan's ravens: each time you reach a floor, the whole floor is mapped"
+    },
+    "passive_reassembly": {
+      "label": "Reassembly: once a run, a killing blow leaves you at full health, mending fast for 10 turns"
+    },
+    "passive_reflect_spell": {
+      "label": "{value}% chance a magic or elemental blow that hurts you hits its maker back as hard"
+    },
+    "passive_scroll_save_on_fail": {
+      "label": "A scroll or spellbook you read wrong is not lost"
+    },
+    "passive_seventy_two_seals": {
+      "label": "Seventy-Two Seals: once a floor, a demon you see will not attack you for 50 turns"
+    },
+    "passive_solomonic_key": {
+      "label": "Once a floor, the first lock you pick opens by itself, with no question"
+    },
+    "passive_spell_crit": {
+      "label": "{value}% chance a spell strikes twice as hard (a healing spell heals twice as much)"
+    },
+    "passive_spell_damage_bonus": {
+      "label": "Your spells do {value:pct} more damage (and healing spells heal more)"
+    },
+    "passive_spell_reflect": {
+      "label": "{value}% chance a magic or elemental blow that hurts you hits its maker back as hard"
+    },
+    "passive_spellbook_chain_bonus": {
+      "label": "Spells and spellbooks ask an easier question ({value} tier lower); their power is unchanged"
+    },
+    "passive_stealth_in_dark": {
+      "label": "In a dark room, monsters not right next to you cannot find you"
+    },
+    "passive_suryas_gift": {
+      "label": "Surya's gift: a reward for a good deed in an encounter is given to you twice"
+    },
+    "passive_three_apples": {
+      "label": "Atalanta's apples: once a floor, fleeing what frightens you, three steps cost no time"
+    },
+    "passive_three_oclock": {
+      "label": "Gawain's morning: rest (wait) for up to 3 more Strength; it ebbs a point every 30 turns"
+    },
+    "passive_unseen_when_still": {
+      "label": "Wait in place and monsters not right next to you lose you until you move"
+    },
+    "passive_weaken_summoned": {
+      "label": "Creatures a monster summons do half damage to you"
+    },
+    "passive_wisdom_at_a_price": {
+      "label": "Odin's price: on each new floor, 1 max HP is traded for 1 Wisdom, for good (from 20 max HP)"
+    },
+    "resistance_blunt": {
+      "label": "Blunt resistance {value}: each level takes 8% off crushing blows"
+    },
+    "resistance_cold": {
+      "label": "Cold resistance {value}: each level takes 8% off cold damage"
+    },
+    "resistance_fear": {
+      "label": "{value:+} to resisting fear, charm, confusion and memory loss (+2 at most from these)"
+    },
+    "resistance_fire": {
+      "label": "Fire resistance {value}: each level takes 8% off fire damage"
+    },
+    "resistance_lightning": {
+      "label": "Lightning resistance {value}: each level takes 8% off lightning damage"
+    },
+    "resistance_magic": {
+      "label": "Magic resistance {value}: each level takes 8% off magic damage"
+    },
+    "resistance_pierce": {
+      "label": "Pierce resistance {value}: each level takes 8% off piercing blows"
+    },
+    "resistance_poison": {
+      "label": "Poison resistance {value}: each level takes 8% off poison damage"
+    },
+    "resistance_slash": {
+      "label": "Slash resistance {value}: each level takes 8% off cutting blows"
+    },
+    "stat_bonus_CON": {
+      "label": "Constitution {value:+}"
+    },
+    "stat_bonus_DEX": {
+      "label": "Dexterity {value:+}"
+    },
+    "stat_bonus_INT": {
+      "label": "Intelligence {value:+}"
+    },
+    "stat_bonus_STR": {
+      "label": "Strength {value:+}"
+    },
+    "stat_bonus_WIS": {
+      "label": "Wisdom {value:+}"
+    },
+    "status_blessed": {
+      "label": "Blessed while worn: 25% more time on every timed quiz"
+    },
+    "status_fire_resist": {
+      "label": "Fire Resist while worn: fire does half damage and cannot set you alight"
+    },
+    "status_hasted": {
+      "label": "Hasted while worn: you act twice as often, so monsters get half as many turns"
+    },
+    "status_life_save": {
+      "label": "Life save: once, a blow that would kill you leaves you at 1 HP instead"
+    },
+    "status_petrify_immune": {
+      "label": "Stoneproof while worn: you cannot be turned to stone"
+    },
+    "status_regenerating": {
+      "label": "Regenerating while worn: you heal about 1% of your max HP every 9 turns"
+    }
+  },
+  "chain_unwired": {}
+}

@@ -142,10 +142,15 @@ def _ordinal(n: int) -> str:
 
 
 def display_name(ench: dict, level: int) -> str:
-    """'of Iron Will II' or 'of Greater Iron Will II'."""
+    """'of Iron Will II' or 'of Greater Iron Will II'; a name that is a
+    title keeps its article first: 'of the Greater Scholar II' (it read
+    'of Greater the Scholar II')."""
     t = tier_of(level)
-    greater = 'Greater ' if level % 2 == 0 else ''
-    return f"of {greater}{ench['name']} {ROMAN[t - 1]}"
+    name = str(ench['name'])
+    if level % 2 == 0:
+        name = (f"the Greater {name[4:]}" if name.lower().startswith('the ')
+                else f"Greater {name}")
+    return f"of {name} {ROMAN[t - 1]}"
 
 
 def label(piece) -> str:
@@ -156,6 +161,27 @@ def label(piece) -> str:
     if not ench or level <= 0:
         return ''
     return display_name(ench, level)[len('of '):]
+
+
+def card_line(piece) -> str:
+    """The enchantment as a card says it: its full name, then what it does
+    ("Greater Night Eyes V: Lets you see in the dark..."). A named piece's
+    ``ench_line`` begins with the plain name ("Night Eyes V: ..."), and the
+    cards printed both ("Greater Night Eyes V: Night Eyes V: ..."). ''
+    when the piece has none."""
+    el = str(getattr(piece, 'ench_line', '') or '').strip()
+    lab = label(piece)
+    if not lab:
+        return el
+    ench = get(getattr(piece, 'ench_id', '')) or {}
+    level = int(getattr(piece, 'ench_level', 0) or 0)
+    plain = f"{ench.get('name', '')} {ROMAN[tier_of(level) - 1]}" if ench else ''
+    for head in (lab, plain):
+        if head and el.lower().startswith(head.lower()):
+            el = el[len(head):].lstrip(' :').strip()
+            break
+    text = f"{lab}: {el}" if el else lab
+    return text[:1].upper() + text[1:]
 
 
 def apply_to(piece, ench_id: str) -> None:
