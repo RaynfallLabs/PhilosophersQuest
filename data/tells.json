@@ -1,5 +1,5 @@
 {
-  "_doc": "Tells (Dungeon Alive slice 5; known and unknown 2026-11-12; src/tells.py). Brandon: players must pay attention to lore, weaknesses and abilities (stay away from things that confuse; use ranged), and the notes must not give away what a creature is or how to beat it before the hero knows it. Each tell has three parts: 'sign' (what the eye sees), 'does' (what the creature can do to him), 'counter' (what to do about it). How much is said follows family_lore.knowledge: UNKNOWN hears the sign; KIN (its family at Recognise or Forewarned, the kind itself never studied) the sign, 'kin_lead' and what it does; KNOWN (studied, its page opened, or its family at Lore) all three, then what it is made of (tells.lore_lines, winning-build plan 2026-11-13 section 3.1; the sizes and the materials since the 3.5.1 audit, from affinity.damage_profile, the one reading the blow follows): 'weak_one'/'weak_many' with its weaknesses and {size} ('double'), 'bane_tail' (or 'bane_only' when it has no other weakness) with the materials it cannot bear, then one line of what it resists ('resist_one'/'resist_many') and shrugs off ('shrugs_one'/'shrugs_many'), then one of what its nature refuses ('immune', with 'status_words') and falls to easily ('easily', and 'fire_flight' for a beast that fire puts to flight). These are said at KNOWN even of a creature with no tell; then 'known_lead' goes first, so the creature is named before the lines that call it 'it' (bug bash WB-E02). A sign never names the mechanic or the counter. The counter is honest about reach: when the creature can put the effect on the hero from across a room (tells.reach), 'counter_far' is used, or 'far_counter' when the tell has none. 'splits' fills {split_by} from the creature's own splits.by; 'does_weak'/'counter_weak' are for a creature split by a weak blow. The first time in a run the hero sees a kind, its worst tell is said at what he knows; it is said again when he comes to know the kind better. Observe (O) says up to 'max_lines' of them. The 'pack_<trick>' tells are a pack's trick, not an attack's rider (src/packs.py, data/packs.json): a creature has one when its kind's pack has that trick. 'order' ranks the effects, worst first; 'min_chance' ignores an attack effect rarer than this.",
+  "_doc": "Tells (Dungeon Alive slice 5; known and unknown 2026-11-12; src/tells.py). Brandon: players must pay attention to lore, weaknesses and abilities (stay away from things that confuse; use ranged), and the notes must not give away what a creature is or how to beat it before the hero knows it. Each tell has three parts: 'sign' (what the eye sees), 'does' (what the creature can do to him), 'counter' (what to do about it); and a 'cue', the log's one line (2026-11-22, Brandon: 'you need a cue, not a soliloquy, especially for console messages'): the creature named and what it can do in a few words, never how to beat it. How much is said follows family_lore.knowledge: UNKNOWN hears the sign; KIN (its family at Recognise or Forewarned, the kind itself never studied) the sign, 'kin_lead' and what it does; KNOWN (studied, its page opened, or its family at Lore) all three, then what it is made of (tells.lore_lines, winning-build plan 2026-11-13 section 3.1; the sizes and the materials since the 3.5.1 audit, from affinity.damage_profile, the one reading the blow follows): 'weak_one'/'weak_many' with its weaknesses and {size} ('double'), 'bane_tail' (or 'bane_only' when it has no other weakness) with the materials it cannot bear, then one line of what it resists ('resist_one'/'resist_many') and shrugs off ('shrugs_one'/'shrugs_many'), then one of what its nature refuses ('immune', with 'status_words') and falls to easily ('easily', and 'fire_flight' for a beast that fire puts to flight). These are said at KNOWN even of a creature with no tell; then 'known_lead' goes first, so the creature is named before the lines that call it 'it' (bug bash WB-E02). A sign never names the mechanic or the counter. The counter is honest about reach: when the creature can put the effect on the hero from across a room (tells.reach), 'counter_far' is used, or 'far_counter' when the tell has none. 'splits' fills {split_by} from the creature's own splits.by; 'does_weak'/'counter_weak' are for a creature split by a weak blow. The first time in a run the hero sees a kind, the log says one line of its worst tell (tells.log_line): its sign to a hero who does not know it, its cue once he knows its family or the kind; said again when he comes to know the kind better, never the same line twice. Observe (O) says up to 'max_lines' of them in full (sign, does and counter, at what he knows). The 'pack_<trick>' tells are a pack's trick, not an attack's rider (src/packs.py, data/packs.json): a creature has one when its kind's pack has that trick. 'order' ranks the effects, worst first; 'min_chance' ignores an attack effect rarer than this.",
   "min_chance": 0.1,
   "max_lines": 2,
   "order": ["petrify_lethal", "gaze_paralyze", "paralyzed", "petrifying", "forgetting", "charmed", "confused", "sleeping", "frozen", "teleportitis", "feared", "blinded",
@@ -19,495 +19,597 @@
   "effects": {
     "petrify_lethal": {
       "sign": "Around {the} the stone has shapes in it: a hand, a shoulder, an open mouth.",
+      "cue": "{The} can turn you to stone, and the stone kills.",
       "does": "{He} can start you turning to stone: in ten turns you would be dead.",
       "counter": "Carry Oil of Rue, the grey-green oily flask at every stall from floor 19. Cleanse, a cure-all or a prayer for mercy (a chain of four) stops the count too, and a mirror shield turns a gaze.",
       "counter_far": "Carry Oil of Rue, the grey-green oily flask at every stall from floor 19. Cleanse, a cure-all or a prayer for mercy (a chain of four) stops the count too. {He} can reach you from across a room: keep stone between you, or watch a gaze in a mirror shield."
     },
     "petrifying": {
       "sign": "Small things lie stiff where {the} has been.",
+      "cue": "{The} can stiffen you toward stone.",
       "does": "{He} can stiffen you toward stone, slow and then still for a moment.",
       "counter": "It will not kill you. Gloves guard against a touch, a mirror shield turns a gaze, and Oil of Rue ends it.",
       "counter_far": "It will not kill you, and Oil of Rue ends it. {He} can reach you from across a room: a mirror shield turns a gaze, and a wall turns anything."
     },
     "forgetting": {
       "sign": "{The} watches your head, as if it were the part of you good to eat.",
+      "cue": "{The} can eat what you know.",
       "does": "{He} can eat what you know: an identified thing, or a page of your Bestiary.",
       "counter": "Kill {him} before you leave the floor and it all comes back. A Mind Ward, a helm or magic resistance keeps {him} out.",
       "counter_far": "Kill {him} before you leave the floor and it all comes back. A Mind Ward, a helm or magic resistance keeps {him} out."
     },
     "charmed": {
       "sign": "You find that you would like to stand nearer {the}.",
+      "cue": "{The} can charm you to {his} side.",
       "does": "{He} can charm you: you cannot strike {him}, and your feet take you to {him}.",
       "counter": "Moly, magic resistance and a helm help against any charm, wax against a song, a mirror against a gaze. The first wound {he} gives you breaks it.",
       "counter_far": "{He} can do it from across a room. Moly, magic resistance and a helm help against any charm, wax against a song, a mirror against a gaze. The first wound {he} gives you breaks it."
     },
     "knocked_down": {
       "sign": "{The} means to go through you, not round you.",
+      "cue": "{The} can knock you off your feet.",
       "does": "{He} can knock you off your feet, and getting up takes a turn.",
       "counter": "Meet {him} in Guard (Shift+S): in Guard you keep your feet. Good boots help."
     },
     "gaze_paralyze": {
       "sign": "Something about the eyes of {the} makes you want to look away.",
+      "cue": "{The}'s gaze can hold you where you stand.",
       "does": "{His} gaze can hold you where you stand, from across a room.",
       "counter": "Keep a wall or a pillar between you. Eyes that cannot see are safe from it, and so is a hero who watches {him} in a mirror shield, as Perseus did."
     },
     "paralyzed": {
-      "sign": "{The} moves slowly and surely, like a thing that never has to chase its prey.",
+      "sign": "{The} moves slow and sure, like a thing that never has to chase.",
+      "cue": "{The} can hold you still where you stand.",
       "does": "{He} can hold you still where you stand.",
       "counter": "Do not let {him} reach you: fight {him} from a distance. If it is a gaze that holds you, a mirror shield turns it.",
       "counter_far": "{He} can reach you from across a room, but only where {he} can see you: keep stone between you until you can close in. If it is a gaze that holds you, a mirror shield turns it."
     },
     "confused": {
       "sign": "Looking at {the} too long makes the room tilt.",
+      "cue": "{The} can scramble your thoughts.",
       "does": "{He} can scramble your thoughts until you cannot think straight.",
       "counter": "Keep your distance, or end {him} fast. Wax in your ears stops a scream that does it; cold iron stops a fairy's glamour.",
       "counter_far": "{He} can reach you from across a room, but only where {he} can see you: keep stone between you until you can close in. Wax in your ears stops a scream that does it; cold iron stops a fairy's glamour."
     },
     "sleeping": {
       "sign": "Just watching {the} makes your eyelids heavy.",
+      "cue": "{The} can put you to sleep where you stand.",
       "does": "{He} can put you to sleep where you stand.",
       "counter": "Never fight {him} with others close by. Wax in your ears stops a song that does it, and cold iron a fairy's."
     },
     "frozen": {
       "sign": "Frost crackles round {the}.",
+      "cue": "{The} can freeze you where you stand.",
       "does": "{He} can freeze you: feet stuck, hands numb, and your blows at half.",
       "counter": "Keep a lit torch in hand: it thaws you in a turn. Cold resistance keeps the ice off.",
       "counter_far": "{He} can reach you from across a room. Keep a lit torch in hand: it thaws you in a turn. Cold resistance keeps the ice off."
     },
     "teleportitis": {
       "sign": "{The} flickers at the edges.",
+      "cue": "{The} can fling you elsewhere on the floor.",
       "does": "{He} can fling you somewhere else on the floor, far from your way out.",
       "counter": "End {him} fast."
     },
     "feared": {
       "sign": "Looking at {the} makes your stomach drop.",
+      "cue": "{The} can break your nerve.",
       "does": "{He} can break your nerve: you cannot go nearer {him} or strike {him}.",
       "counter": "Have a bow or a spell ready, or your back to a wall: cornered, you can fight. Nepenthe ends fear, and wax stops a voice.",
       "counter_far": "{He} can do it from across a room. Have a bow or a spell ready, or your back to a wall: cornered, you can fight. Wax stops a voice."
     },
     "blinded": {
       "sign": "Everything about {the} seems aimed at your eyes.",
+      "cue": "{The} can blind you.",
       "does": "{He} can blind you: you see one tile, and quiz answers are dark but for a light you move.",
       "counter": "A helm guards your eyes, and a mirror shield turns a gaze. Blinded, move the light with the arrows.",
       "counter_far": "{He} can reach you from across a room. A helm guards your eyes, a mirror shield turns a gaze, and a wall turns both."
     },
     "silenced": {
       "sign": "{The} moves in a pocket of dead quiet.",
+      "cue": "{The} can take your voice, and your spells with it.",
       "does": "{He} can take your voice, and your spells with it.",
       "counter": "Cast before {he} reaches you, or fight {him} with steel.",
       "counter_far": "Fight {him} with steel, not spells."
     },
     "stunned": {
       "sign": "{The} is built like a falling wall.",
+      "cue": "{The}'s blows can stun you.",
       "does": "{His} blows can stun you: you see double, your first step falls and your first fumble drops.",
       "counter": "Fight in Guard (Shift+S) and you neither fall nor drop. Stunned, stand and fight rather than step or fiddle.",
       "counter_far": "{He} can reach you from across a room. Fight in Guard (Shift+S) and you neither fall nor drop."
     },
     "immobilized": {
       "sign": "{The} trails sticky strands.",
+      "cue": "{The} can pin your feet where you stand.",
       "does": "{He} can pin your feet where you stand.",
       "counter": "Pinned, you cannot run, but you can still fight and drink: fight {him} where you would not need to run.",
       "counter_far": "Pinned, you cannot run, but you can still fight and drink: fight {him} where you would not need to run."
     },
     "splits": {
       "sign": "{The} looks as if {he} would come apart and keep coming.",
+      "cue": "{The} splits in two under {split_by}.",
       "does": "Strike {him} with {split_by} and there will be two.",
       "counter": "Use anything else.",
       "does_weak": "Strike {him} with a weak blow and there will be two.",
+      "cue_weak": "{The} splits in two under a weak blow.",
       "counter_weak": "Hit {him} hard, or not at all."
     },
     "revive_once_on_death": {
       "sign": "The wounds on {the} should have killed {him}, and did not.",
+      "cue": "{The} does not stay dead the first time.",
       "does": "{He} will not stay dead the first time.",
       "counter": "When {he} falls, keep your guard up."
     },
     "drain_heals_self": {
       "sign": "{The} watches your throat, not your blade.",
+      "cue": "{The} heals {himself} on your blood.",
       "does": "{He} heals {himself} on your blood: every blow {he} lands mends {him}.",
       "counter": "Do not trade blows with {him}."
     },
     "weakened": {
       "sign": "Whatever {the} has touched looks withered.",
+      "cue": "{The} can drain the strength out of you.",
       "does": "{He} can drain the strength out of you.",
       "counter": "Fight {him} fast, or from afar."
     },
     "diseased": {
       "sign": "{The} reeks of rot.",
+      "cue": "The wounds {the} gives fester.",
       "does": "The wounds {he} gives fester long after the fight.",
       "counter": "Kill {him} before {he} lands many."
     },
-    "corroding": {"sign": "Where {the} has passed, the stone is pitted and crumbling.", "does": "What {he} touches rots and crumbles: your armour gives way while it lasts.", "counter": "Kill {him} fast, or from afar."},
+    "corroding": {
+      "sign": "Where {the} has passed, the stone is pitted and crumbling.",
+      "cue": "{The}'s touch rots your armour.",
+      "does": "What {he} touches rots and crumbles: your armour gives way while it lasts.",
+      "counter": "Kill {him} fast, or from afar."
+    },
     "poisoned": {
       "sign": "Something on {the} glistens wet.",
+      "cue": "{The} is poisonous.",
       "does": "{He} is poisonous, and every wound {he} gives keeps hurting after: the striped end of your health bar is what the venom will still take.",
       "counter": "Carry a cure: a potion of cure poison, Cleanse, a meal against venom, or a prayer for mercy at a chain of four. A second bite adds half again; a hardy body throws off half."
     },
     "regeneration": {
       "sign": "The old scars of {the} have closed without a mark.",
+      "cue": "{The} heals as {he} fights.",
       "does": "{He} heals {himself} as {he} fights.",
       "counter": "Finish {him}; do not wear {him} down."
     },
     "summon_kind": {
       "sign": "{The} keeps glancing behind {him}, as if {he} expects company.",
+      "cue": "{The} can call others to {his} side.",
       "does": "{He} can call others to {him}, a few at a time.",
       "counter": "Strike {him} while {he} chants: a blow breaks the call. Kill what {he} calls, and {he} must call again."
     },
     "pull_chance": {
       "sign": "{The} has a long reach with a hook to it.",
+      "cue": "{The} can drag you to {him} from afar.",
       "does": "{He} will drag you to {him} from further off than you think.",
       "counter": "Stay well out of {his} reach, or close in on your own terms."
     },
     "sp_drain": {
       "sign": "{The} sniffs at your pack.",
+      "cue": "{The} is after your food.",
       "does": "{He} is after your food: every blow {he} lands leaves you hungrier.",
       "counter": "Keep {him} off you."
     },
     "can_charge": {
       "sign": "{The} paws the ground.",
+      "cue": "{The} charges across open ground.",
       "does": "Across open ground {he} will charge.",
       "counter": "Make {him} come to you round a corner."
     },
     "can_phase_blink": {
       "sign": "{The} is never quite where you last looked.",
+      "cue": "{The} blinks from place to place.",
       "does": "{He} steps from place to place without crossing between.",
       "counter": "Distance will not save you: stand and fight."
     },
     "stalker": {
       "sign": "{The} keeps just out of reach and never takes {his} eyes off you.",
+      "cue": "{The} stalks you, waiting for you to rest.",
       "does": "{He} waits for you to rest. Rest, sleep or lose your wits near {him}, and {he} is on you in a moment.",
       "counter": "Never rest where {he} can find you. Back {him} into a corner, or rest on another floor.",
       "sign_friend": "{The} follows you, smiling, offering to keep watch.",
+      "cue_friend": "{The} is no friend: {he} waits for you to rest.",
       "does_friend": "{He} is no friend. {He} waits for you to rest, and then {he} strikes hard.",
       "counter_friend": "Never rest where {he} can find you. Strike first, or rest on another floor."
     },
     "bleeding": {
       "sign": "{The} looks made for tearing.",
+      "cue": "The wounds {the} gives keep bleeding.",
       "does": "The wounds {he} gives go on bleeding after the blow.",
       "counter": "Do not let {him} land many."
     },
     "burning": {
       "sign": "Heat shimmers off {the}.",
+      "cue": "{The} sets what {he} hits alight.",
       "does": "{He} sets what {he} hits alight, and the fire keeps burning after.",
       "counter": "Keep out of {his} reach."
     },
     "slowed": {
       "sign": "The air round {the} feels thick, like wading.",
+      "cue": "{The} can slow you.",
       "does": "{He} can slow you: every action takes two turns, whatever you do.",
       "counter": "Good boots and quick feet throw it off. Slowed, spend no action you do not need.",
       "counter_far": "{He} can reach you from across a room. Good boots and quick feet throw a slowing off; close in or get out of sight."
     },
     "hallucinating": {
       "sign": "Colours run strangely round {the}.",
+      "cue": "{The} can fill your head with visions.",
       "does": "{He} fills your head: creatures wear wrong faces, and quizzes grow a false answer that fades.",
       "counter": "Wait for the false answer to fade. Moly, magic resistance and Clear Sight keep the visions out, and cold iron a fairy's."
     },
     "rust": {
       "sign": "Every nail and hinge near {the} has gone to red dust.",
+      "cue": "{The}'s feelers rust iron and steel.",
       "does": "{His} feelers rust iron and steel: a brush takes a point off your weapon or armour.",
       "counter": "Keep good steel out of {his} reach: fight {him} with wood or bronze."
     },
     "pack_swarm": {
       "sign": "You hear claws scrabbling in the dark all round {the}: {he} is never alone.",
+      "cue": "{The} and {his} kin swarm you, biting deeper together.",
       "does": "Rats swarm: each one bites harder for every other rat beside you, so four at once are deadly and one is not.",
       "counter": "Never let the pack surround you. Back into a corridor or a doorway, where only one rat can reach you, and kill the first one fast."
     },
     "pack_feast": {
       "sign": "The reek of an opened grave hangs round {the}.",
+      "cue": "{The} and {his} pack feed on prey that cannot move.",
       "does": "When you cannot move, every ghoul near by falls on you to feed, and each bites harder at prey that cannot fight back.",
       "counter": "Thin the pack out before it closes: a ghoul that comes alone is no feast. Ghouls will not follow you down a narrow passage one at a time, so waiting there does no good; above all, never be held where the pack can reach you."
     },
     "pack_hamstring": {
       "sign": "{The} watches your legs, not your eyes.",
+      "cue": "{The} hunts with {his} pack and goes for your legs.",
       "does": "Wolves hunt together: while one holds your eyes, another slips behind you and bites at your hamstring, and a hamstrung hero is slowed.",
       "counter": "Keep your back to a wall so no wolf can get behind you, and kill one fast so it is never two on one. Wolves will not follow you down a narrow passage one at a time: the pack waits outside it, or comes round."
     },
     "pack_harry": {
       "sign": "{The} hangs back and watches you, as if waiting for something.",
+      "cue": "{The} hunts the wounded, bolder as you bleed.",
       "does": "{He} hunts the wounded: once you are badly hurt, the whole pack closes in and bites harder.",
       "counter": "Fight the pack while you are fresh, heal before you are down to half, and kill the boldest first."
     },
     "pack_sling": {
       "sign": "{The} weighs a stone in {his} hand.",
+      "cue": "{The} slings stones while {his} pack gathers.",
       "does": "Goblins pelt you with sling stones from afar while more of the pack gathers, then rush you all together.",
       "counter": "Close on the slingers before the rest arrive, or keep stone between you and the pack."
     },
     "pack_traps": {
       "sign": "{The} carries a coil of cord and a pouch that clinks with iron.",
+      "cue": "{The} lays snares and caltrops where {he} goes.",
       "does": "Kobolds lay snares and caltrops round a den, and drop more as each one backs away, so whoever chases a kobold steps in it.",
       "counter": "Never chase a kobold blindly. Watch the floor where it has just stood, and disarm what it dropped (P) or step round it."
     },
     "pack_bay": {
       "sign": "{The} lifts {his} nose and tests the air.",
+      "cue": "{The} bays to bring the pack to your scent.",
       "does": "Hounds hunt by scent and voice: the first to find you bays, the whole pack comes running, and the hounds follow your scent wherever you go for a while.",
       "counter": "Kill the first hound before the rest arrive, or be ready for the whole pack: running will not lose it."
     },
     "pack_dart": {
       "sign": "{The} never stands still: {he} circles, yips and edges in.",
+      "cue": "{The} darts in to bite, then out of reach.",
       "does": "Jackals dart in to bite and back out of reach, each in turn, so you can never pin one down.",
       "counter": "Strike the one that has just bitten you while it is still beside you. Never chase a jackal across a room: it is faster than you."
     },
     "pack_snatch": {
       "sign": "{The} eyes your pack, and the food in it.",
+      "cue": "{The} snatches food from your pack.",
       "does": "Harpies snatch food out of your pack and fly off with it, as the harpies robbed the table of the blind king Phineus.",
       "counter": "Kill the thief and what {he} took falls where {he} dies. Keep the flock off you, or fight where a harpy cannot swoop."
     },
     "countdown_voice": {
       "sign": "{The} stands silent and watches you, its great chest filling.",
+      "cue": "{The}'s third bark brings terror.",
       "does": "{He} barks three times, slowly; whoever is still in {his} sight at the third bark is overtaken by terror.",
       "counter": "Get out of {his} sight before the third bark: a wall or a corner is shelter, as a house was in the Highlands. Wax in the ears stops the bark too."
     },
     "metal_eater": {
       "sign": "Needles, spoons and spear-heads bristle half-swallowed from {the}'s hide.",
+      "cue": "{The} eats iron, and your blade with it.",
       "does": "{He} eats iron: a blade of iron or steel that bites {him} may be gnawed blunt, and every mouthful mends {him}.",
       "counter": "Strike {him} with something {he} cannot eat: fire, a coating of fire oil, a silver, bronze or wooden weapon, or a named blade."
     },
     "corpse_hop": {
       "sign": "{The} grins with a face that does not fit the body {he} wears.",
+      "cue": "Slain, {the} leaps into the nearest corpse.",
       "does": "When the body {he} wears falls, the spirit slips into the nearest corpse and gets up again.",
       "counter": "Harvest or search the dead lying near the fight before you finish {him}, or cast Banishment on {him}: a spirit sent away finds no body."
     },
     "parley": {
       "sign": "{The} rises from the water and calls out, as if waiting for an answer.",
+      "cue": "{The} and {his} kin ask a riddle in verse.",
       "does": "{He} and {his} kin ask a riddle in verse; a good answer lets you pass, and a poor one brings the storm down on you.",
       "counter": "Answer well: it is a question of words and the way a sentence is built."
     },
     "appeased_by": {
       "sign": "{The} sniffs at your pack with a starving look.",
+      "cue": "A gift of food can turn {the} away.",
       "does": "Hunger drives {him}, and a gift of food can turn {him} away.",
       "counter": "Set down a ration or some plain food near {him}: {he} eats it and leaves you be."
     },
     "on_stunned": {
       "sign": "Water slops in a dish on the top of {the}'s head.",
+      "cue": "{The}'s strength is in the water on {his} head.",
       "does": "{His} strength is in the water on {his} head.",
       "counter": "Knock {him} senseless and the water spills: {his} arms go weak."
     },
     "hidden_overhead": {
       "sign": "Something hangs among the shadows of the roof above {the}.",
+      "cue": "{The} hangs overhead and drops on passers-by.",
       "does": "{He} hangs overhead in the dark and drops on whoever passes under.",
       "counter": "Carry a light: in its glow you see {him} waiting above you."
     },
     "weak_spot_chain": {
       "sign": "{The}'s matted hide is thick as tree bark, except at the belly.",
+      "cue": "{The}'s hide gives only at the soft belly.",
       "does": "{His} hide turns weak blows; only the soft place at {his} navel gives.",
       "counter": "Only a long chain of right answers finds the soft place: fire works too."
     },
     "sheds_skin": {
       "sign": "Old skins hang in tatters from {the}'s coils.",
+      "cue": "{The} sheds a skin, and {his} wounds with it.",
       "does": "When {he} is badly hurt {he} sheds a skin and the worst of {his} wounds with it, but {he} has only so many skins.",
       "counter": "Press on through each shedding: the skins run out."
     },
     "carry_off": {
       "sign": "{The}'s talons are big enough to close round a horse.",
+      "cue": "{The} can snatch you up and drop you far away.",
       "does": "{He} can snatch you up and drop you far away, hurt and alone.",
       "counter": "A heavy load makes you harder to lift: weighed down by your gear, you are snatched half as often."
     },
     "ranged_pull": {
       "sign": "The air moves toward {the} as {he} breathes.",
+      "cue": "{The}'s breath drags you toward {his} coils.",
       "does": "{He} breathes in, and the pull of {his} breath drags you toward {his} coils from far away.",
       "counter": "Stay out of {his} sight, or fight {him} where you want to be: the breath only draws you in."
     },
     "gold_gatherer": {
       "sign": "Glittering sand clings to {the}'s legs.",
+      "cue": "{The} lives for gold and tracks a thief by scent.",
       "does": "{He} lives for gold and follows a thief by scent.",
       "counter": "Drop a little gold and {he} stops to gather it, as the camels of Herodotus' tale were let go to slow the ants."
     },
     "steal_offering": {
       "sign": "{The}'s needle-thin throat works as {he} looks at your pack.",
+      "cue": "{The} snatches food from your pack and eats it.",
       "does": "{He} snatches food out of your pack and crams it down, and it is gone.",
       "counter": "Keep your rations few when {he} is near, or set one down for {him} freely: an offering quiets {him}."
     },
     "fumbling": {
       "sign": "Bad luck hangs round {the} like smoke.",
+      "cue": "{The}'s gaze makes you fumble.",
       "does": "Ill luck clings to whoever {he} looks on: you drop the first thing you handle.",
       "counter": "Put out {his} eye or finish {him} fast. In Guard (Shift+S) you hold on to what you handle."
     },
     "strangulation": {
       "sign": "{The} has long, strong fingers that never stop moving.",
+      "cue": "{The} goes for your throat.",
       "does": "{He} grips you by the throat and holds you under.",
       "counter": "Break free fast and keep out of {his} grip; a free hand is your best friend."
     },
     "heal_blocked": {
       "sign": "A smell of old spices and rot hangs round {the}.",
+      "cue": "{The}'s touch leaves wounds slow to mend.",
       "does": "{His} touch leaves a wound that will not mend for a while, by potion or by prayer.",
       "counter": "Do not let {him} touch you, or fight {him} with fire: old linen burns."
     },
     "talisman": {
       "sign": "{The} hops stiffly, arms out, a strip of yellow paper fluttering at {his} brow.",
+      "cue": "{The} finds the living by their breath.",
       "does": "{He} finds a living man by his breath.",
       "counter": "Read any scroll with {him} in your sight: the written page stops {him} like a talisman. Standing still holds your breath from {him}."
     },
     "breath_recharge": {
       "sign": "{The}'s chest heaves like a bellows.",
+      "cue": "{The} breathes, then must draw breath again.",
       "does": "{He} breathes, then must draw breath again for a few turns. Meanwhile {he} fights you in reach with tooth and claw, in {his} full fury.",
       "counter": "Strike hard while {he} draws breath. When the smoke at {his} jaws says the breath is back, put stone between you."
     },
     "heals_allies": {
       "sign": "{The} stays close behind the others, eyeing every wound.",
+      "cue": "{The} mends {his} hurt friends.",
       "does": "{He} mends a badly hurt friend, then must rest {his} voice a few turns before the next.",
       "counter": "Kill {him} first, or finish the friend {he} has just mended before {he} can mend again."
     },
     "life_drain": {
       "sign": "The air about {the} is thin and cold, like the air of a tomb.",
+      "cue": "{The}'s touch drains your life away.",
       "does": "{His} touch takes life that rest will not give back: your greatest health falls with every blow {he} lands.",
       "counter": "Do not let {him} touch you often. What {he} takes comes back half with a night's sleep on the next floor down, and all of it from a physician or a strong prayer."
     },
     "light_shy": {
       "sign": "{The} squints and turns {his} face from every lamp.",
+      "cue": "{The} hates a bright light.",
       "does": "{He} hates a bright light: in its glare {he} strikes worse, and a troll's wounds will not close in it.",
       "counter": "Carry a lit light or cast Light, and fight {him} inside its glow. The Light spell's glare hurts {him} most."
     },
     "hold_swallow": {
       "sign": "{The} is wide enough to take a man whole.",
+      "cue": "{The} can swallow you whole.",
       "does": "{He} takes you inside {him}, and {his} gut eats at you every turn, though nothing else can reach you there.",
       "counter": "Cut your way out: one hard blow from inside frees you. The Galdr of Loosing keeps {him} from taking you."
     },
     "hold_constrict": {
       "sign": "{The} moves in long, slow loops and is never quite still.",
+      "cue": "{The} can wrap round you and squeeze.",
       "does": "{He} wraps round you and squeezes every turn, and while {he} has you, you cannot walk away.",
       "counter": "One hard blow on {him} breaks the coils, or struggle free. The Galdr of Loosing keeps any coil off you."
     },
     "hold_drag": {
       "sign": "{The} keeps glancing toward the water.",
+      "cue": "{The} drags {his} prey into the water.",
       "does": "{He} seizes you and drags you toward the water, and at its edge pulls you under.",
       "counter": "Strike {him} hard to tear free, and keep away from the water's edge. The Galdr of Loosing keeps {his} grip off you."
     },
     "aura_fear": {
       "sign": "The air goes cold and still wherever {the} turns.",
+      "cue": "Dread rolls off {the}.",
       "does": "Dread rolls off {him}: the first time you see {him} close, your will must hold or you flee.",
       "counter": "A strong will or a ward against fear keeps you steady, and once you have stood it, {he} cannot frighten you again this fight."
     },
     "casts_curse": {
       "sign": "{The} mutters under {his} breath and will not meet your eye.",
+      "cue": "{The} lays curses with a muttered chant.",
       "does": "{He} draws a curse up for a turn, then lays it on you: a binding, a dread, a darkness of the eyes.",
       "counter": "Strike {him} while {he} chants and the curse breaks; wax in your ears stops a spoken one, and a mirror an evil eye."
     },
     "aura_heat": {
       "sign": "The air shimmers with heat round {the}.",
+      "cue": "{The} scorches whoever stands beside {him}.",
       "does": "Standing beside {him} scorches you every turn.",
       "counter": "A fire ward or a draught against fire turns the heat or halves it; a sling, a bow or a wand keeps you out of it."
     },
     "aura_cold": {
       "sign": "Frost creeps over the stones where {the} stands.",
+      "cue": "{The} numbs whoever stands beside {him}.",
       "does": "Standing beside {him} numbs you with cold every turn.",
       "counter": "A draught against cold halves it and a cold shield turns it; a sling, a bow or a wand keeps you out of it."
     },
     "aura_stench": {
       "sign": "A heavy reek hangs in the air round {the}.",
+      "cue": "{The}'s reek can turn your stomach.",
       "does": "Standing in {his} reek can turn your stomach, until you get used to it.",
       "counter": "Stand it once and it no longer touches you this fight; or fight {him} from beyond {his} reek."
     },
     "second_shape": {
       "sign": "Something animal moves behind {the}'s eyes.",
+      "cue": "Badly hurt, {the} turns into a beast.",
       "does": "Badly hurt, {he} changes shape into a beast, with new and harder blows.",
       "counter": "Finish {him} before half {his} health is gone, and bring what the beast fears."
     },
     "casts_ward": {
       "sign": "Old charms and fetishes hang about {the}.",
+      "cue": "Hurt, {the} chants a ward up about {himself}.",
       "does": "Hurt, {he} chants a ward up about {himself}, and your blows land weak until it fades.",
       "counter": "Strike {him} while {he} chants and the ward never rises; a spell, a wand or a thrown flask goes through it."
     },
     "casts_dispel": {
       "sign": "{The}'s fingers trace signs that unravel in the air.",
+      "cue": "{The} can tear your spells off you.",
       "does": "{He} can tear one of your spells off you: a haste, a shield, a ward of fire.",
       "counter": "Silence {him} first, or cast your strongest spell when {he} is spent."
     },
     "casts_darkness": {
       "sign": "Shadows gather in {the}'s cupped hands.",
+      "cue": "{The} can put out your light.",
       "does": "{He} puts out the light you carry and ends your Light spell.",
       "counter": "Carry a light that never goes out, or a spare torch; silence {him} and the dark stays away."
     },
     "casts_escape": {
       "sign": "{The} never stands with {his} back to a wall.",
+      "cue": "Caught, {the} steps into nothing and away.",
       "does": "Hurt and caught beside you, {he} steps into nothing and is four paces off.",
       "counter": "Hold {him} still before you close in, or reach {him} with a sling, a bow or a wand."
     },
     "carries_fire": {
       "sign": "{The} carries a clay pot stopped with a rag.",
+      "cue": "{The} carries a fire pot to throw.",
       "does": "From a few paces off {he} throws it: oil that bursts into flame on you.",
       "counter": "Close in before {he} throws, or keep stone between you; a fire ward halves the flames."
     },
     "carries_potion": {
       "sign": "A stoppered flask hangs at {the}'s belt.",
+      "cue": "{The} carries a healing potion.",
       "does": "Badly hurt, {he} drinks it and {his} wounds close.",
       "counter": "Strike hard before {he} can drink, and the potion is yours when {he} falls."
     },
     "territorial": {
       "sign": "{The} keeps close to one place, as if guarding it.",
+      "cue": "{The} guards {his} own ground.",
       "does": "{He} will not follow you far from {his} ground, and on it {he} never runs.",
       "counter": "Hurt, leave {his} ground and {he} lets you go; rest, and come back."
     },
     "bargains": {
       "sign": "{The} jingles a heavy purse and grins.",
+      "cue": "{The} darts at your back, and bargains when cornered.",
       "does": "{He} keeps out of reach and darts in when you turn your back; caught, {he} offers {his} gold for {his} freedom.",
       "counter": "Back {him} into a corner: take the purse, or refuse and fight for all {he} carries."
     },
     "skittish": {
       "sign": "{The} flits about at the edge of sight.",
+      "cue": "{The} keeps {his} distance and darts at your back.",
       "does": "{He} keeps a few paces off and darts in when you turn your back.",
       "counter": "Back {him} into a corner, or reach {him} with a sling, a bow or a wand."
     },
     "snuffs_light": {
       "sign": "The flames near {the} gutter and bow.",
+      "cue": "{The}'s blows can put out your light.",
       "does": "{His} blows can put out the light in your hand, and a wet wick will not light again at once.",
       "counter": "Keep a spare light, or carry one that never goes out."
     },
     "raises_alarm": {
       "sign": "{The} keeps looking about, ready to shout.",
+      "cue": "{The} will shout for help when {he} sees you.",
       "does": "When {he} first sees you {he} raises the alarm, and the rest come running.",
       "counter": "Kill or silence {him} before {he} sees you, or move quietly and keep out of sight."
     },
     "death_throes": {
       "sign": "{The} looks swollen, as if something inside {him} wants out.",
+      "cue": "{The} bursts when {he} dies.",
       "does": "When {he} dies {he} bursts, and everything beside {him} is caught in it.",
       "counter": "When {he} swells, step back or finish {him} from a distance."
     },
     "relurks": {
       "sign": "Old webbing and husks hang above where {the} waits.",
+      "cue": "Hurt, {the} slips back into hiding.",
       "does": "Hurt and out of your sight, {he} goes back into hiding to drop on you again.",
       "counter": "Finish {him} before {he} gets away. Once {he} hides, look for {him} with Hecate's Torch or, for vermin, Tremor-Sense."
     },
     "hides_in_dark": {
       "sign": "{The} is hard to keep in view, as if the shadows lean toward {him}.",
+      "cue": "{The} hides in the dark between blows.",
       "does": "When {he} breaks off {he} hides in the dark, unseen, until {he} strikes again.",
       "counter": "A lit light leaves {him} no dark to hide in."
     },
     "shove": {
       "sign": "{The} is built like a battering ram.",
+      "cue": "{The}'s blows can throw you back.",
       "does": "{His} blows can throw you back a step, and a clever one throws you into what hurts.",
       "counter": "Fight {him} with your back to a wall, and keep clear of fire and pits."
     },
     "mind_cunning": {
       "sign": "{The} watches you, and keeps glancing at {his} friends.",
+      "cue": "{The} is cunning: {he} waits for {his} friends.",
       "does": "{He} waits for {his} friends, will not follow you into a corridor, and goes for whoever is bleeding, your pet too.",
       "counter": "Kill {him} before the rest come up, call a badly hurt pet back to its Soul Sphere, and do not wait in a corridor for {him} to come to you."
     },
     "mind_soldier": {
       "sign": "{The} keeps {his} place in the line like a drilled soldier.",
+      "cue": "{The} fights like a drilled soldier.",
       "does": "{He} holds a line with {his} fellows, changes places when the front man tires, and may feign flight to draw you out of a narrow way.",
       "counter": "Finish a hurt one before {he} can step back, and do not follow a foe who runs too neatly. Study the kind and you will see through the feint."
     },
     "mind_trickster": {
       "sign": "{The} never comes straight at you.",
+      "cue": "{The} slips round to come at your side.",
       "does": "{He} slips round to your side and will not be drawn into a narrow way.",
       "counter": "Fight with a wall at your back, or draw {him} out with a ranged attack."
     },
     "mind_caster": {
       "sign": "{The} hangs back behind the others, muttering.",
+      "cue": "{The} casts at you from behind {his} friends.",
       "does": "{He} keeps {his} distance and casts at you over {his} friends.",
       "counter": "Silence {him}, or reach {him} past the others with a ranged attack or a spell."
     },
     "dark_edge": {
       "sign": "{The} keeps to the shadows at the very edge of your light.",
+      "cue": "{The} strikes from the edge of your light.",
       "does": "{He} steps out of your light and strikes first when you come close; an archer of {his} kind shoots from the dark, where you cannot see to shoot back.",
       "counter": "Carry a brighter light or cast Light: the farther you see, the less dark there is for {him} to hide in."
     },
     "knows_traps": {
       "sign": "{The} picks {his} way across the floor as if {he} knew every stone.",
+      "cue": "{The} knows every trap on {his} ground.",
       "does": "{He} never steps on the snares and hazards of {his} own ground, and waits where your straight way to {him} runs over one.",
       "counter": "Look before you charge, find the traps first, or come at {him} another way."
     },
     "band_orders": {
       "sign": "{The} shouts orders, and the others obey.",
+      "cue": "{The} leads the band and shouts its orders.",
       "does": "While {he} lives and can shout, {his} band keeps a guard in front of {him}, charges when you are hurt, and falls back round {him} when half of them are down.",
       "counter": "Kill or silence the leader first. Wax in your ears keeps out the words, not the orders."
     }

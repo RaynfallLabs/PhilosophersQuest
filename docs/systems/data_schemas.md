@@ -914,10 +914,12 @@ Building Toward (`kitchen.is_keystone`).
 - `legendary` — a five-ingredient feast with a permanent bonus.
 - `trophy` + `permanent` — a boss trophy's own dish and its power.
 - `cross_depth` — joins an early part (floors 1-20) with a deep one (40+).
-- `art` — the dish's picture, picked by `tools/content/kitchen/dish_art.py`:
-  `dish_<kind>_t<tier>_<tab>` (the kind its name says, its tier's vessel, its
-  benefit's colour), `feast_<name>` for a legendary feast, the boss's own
-  `recipe_<id>` for a trophy dish (food_system.md §4.2).
+- `art` — the dish's picture, placed by `tools/content/kitchen/dish_art.py`:
+  a `dish_<form>_t<tier>_<tab>` picture of the form its name says that shows
+  no food its ingredients lack (`dish_pictures.json` says what each shows),
+  at its tier's vessel and benefit's colour where one is drawn;
+  `feast_<name>` for a legendary feast, the boss's own `recipe_<id>` for a
+  trophy dish (food_system.md §4.2).
 - No numbers: what a dish gives comes from `cooking_rules.json`.
 
 Ids: `cook_<kin>` for a single dish, `trophy_<boss>_recipe`, `dish_###`,

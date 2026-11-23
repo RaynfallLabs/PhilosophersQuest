@@ -179,11 +179,11 @@ def _recent(g, n=12):
 
 def test_o_on_an_unknown_monster_says_only_its_signs():
     """2026-11-12: seeing is not knowing. An unknown creature shows its sign
-    ("moves slowly and surely"), never what it does or how to beat it."""
+    ("moves slow and sure"), never what it does or how to beat it."""
     g, m = _scene('ghoul', known=False)
     _observe(g, m)
     recent = _recent(g)
-    assert 'moves slowly and surely' in recent
+    assert 'moves slow and sure' in recent
     assert 'hold you still' not in recent and 'distance' not in recent
     assert 'hurts it most' not in recent and 'do little to it' not in recent
 

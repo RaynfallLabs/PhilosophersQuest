@@ -13,7 +13,7 @@
     "patience": 12,
     "rouse_radius": 8,
     "idle_keep": 2,
-    "hold_line": "The {pack} will not follow you into the narrow way. They wait beyond it, out of sight, for you to come out.",
+    "hold_line": "The {pack} hang back from the narrow way.",
     "round_line": "One of the {pack} slips away to come at you from another side.",
     "press_line": "Tired of waiting, one of the {pack} tries its luck.",
     "surround_line": "The {pack} spread out to come at you from every side."
@@ -108,20 +108,20 @@
       "chance": 0.25,
       "effect": "slowed",
       "turns": 3,
-      "line": "{The} slips behind you and bites at your hamstring while {his} packmate holds your eyes!"
+      "line": "{The} slips behind you and bites at your hamstring!"
     },
     "dart": {
       "bestiary": "Hunts as a pack: darts in to bite and back out of reach, by turns.",
       "_doc": "A jackal that closes to the hero snaps at once (no free blow for him), and on its next turn darts back out of reach if a packmate is near to take its place; no more than max_in of the pack are on him at a time.",
       "max_in": 2,
-      "line": "{The} darts in, snaps at you and is away again before you can strike."
+      "line": "{The} darts in, snaps at you, and is away again!"
     },
     "harry": {
       "bestiary": "Hunts as a pack: closes in and bites harder once you are badly hurt.",
       "_doc": "Hyenas and gnolls hang back from a strong hero and close on a wounded one: while he is below 'below' of his health their bites are worth mult more, they do not flee when hurt, and they do not wait at a corridor's mouth.",
       "below": 0.5,
       "mult": 1.3,
-      "line": "The {pack} smell your blood and close in, bolder now that you are hurt!"
+      "line": "The {pack} smell your blood and close in!"
     },
     "sling": {
       "bestiary": "Hunts as a pack: slings stones until the pack has gathered, then rushes you together.",
@@ -138,7 +138,7 @@
       "den_radius": 3,
       "each": 1,
       "withdraw_chance": 0.4,
-      "line": "{The} backs away and scatters something on the floor where {he} stood.",
+      "line": "{The} backs away, scattering something where {he} stood.",
       "kinds": {
         "snare": {
           "type": "snare",
@@ -182,7 +182,7 @@
       "_doc": "The first hound of a pack to find the hero bays: every hound of the pack the sound reaches (radius) is roused to him and keeps his scent for scent_turns turns, wherever he goes.",
       "radius": 14,
       "scent_turns": 20,
-      "line": "{The} throws back {his} head and bays. The rest of the pack answer it.",
+      "line": "{The} bays, and the rest of the pack answer!",
       "line_unseen": "Somewhere close a hound bays, and others answer it."
     }
   },

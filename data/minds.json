@@ -180,8 +180,8 @@
     "harrow_witch": {"mind": "caster"}
   },
   "lines": {
-    "hold_choke": "{The} and the others will not follow you into the narrow way: they wait for you out of sight.",
-    "hold_choke_alone": "{The} will not follow you into the narrow way. {He} waits for you out of sight.",
+    "hold_choke": "{The} and the others hang back from the narrow way.",
+    "hold_choke_alone": "{The} hangs back from the narrow way.",
     "round": "{The} slips away to come at you from another side.",
     "wait_allies": "{The} hangs back, waiting for the others to come up.",
     "flank": "{The} slips round to come at you from the side.",
@@ -189,18 +189,18 @@
     "hold_door": "{The} backs into the doorway, to fight you one at a time.",
     "rotate": "{The} steps back, and a fresh fighter takes {his} place.",
     "feint": "{The} breaks and runs!",
-    "feint_known": "{The} falls back too neatly. It is a feint: the others will be waiting beside the way out.",
-    "feint_sprung": "It was a trick! The rest of them were waiting for you beside the way out.",
+    "feint_known": "{The} falls back too neatly: a feint!",
+    "feint_sprung": "A trick! The rest were waiting beside the way out!",
     "focus_pet": "{The} sees that {pet} is hurt, and goes for the kill!",
-    "press": "{The} and the others press in: they can see you are hurt.",
+    "press": "{The} and the others see you are hurt, and press in.",
     "bait": "{The} grins and waits on the far side of the {hazard}.",
-    "bait_hidden": "{The} waits very still, as if daring you to come straight at {him}.",
+    "bait_hidden": "{The} waits very still, daring you to come straight at {him}.",
     "cast": "{The} keeps {his} distance and casts.",
     "lane": "{The} slips aside for a clear shot.",
-    "habit_choke_fighter": "{The} and the others have seen your corridor trick: they stay in their room.",
-    "habit_opens_with_area": "{The} and the others have seen your blasts: they spread out.",
-    "habit_kiter": "{The} and the others have seen you shoot and step back: they come at you fast.",
-    "habit_rester_near_foes": "{The} and the others have seen you rest with foes about: they rush you while you rest."
+    "habit_choke_fighter": "{The} and the others know your corridor trick: they stay put.",
+    "habit_opens_with_area": "{The} and the others spread out, wary of your blasts.",
+    "habit_kiter": "{The} and the others close fast, wise to your hit and run.",
+    "habit_rester_near_foes": "{The} and the others rush you as you rest!"
   },
   "unseen": {
     "feint": "Somewhere ahead, running feet.",
@@ -214,7 +214,7 @@
     "fall_back_turns": 6,
     "screen_reach": 7,
     "unseen": "Somewhere ahead, a voice barks orders.",
-    "wax": "You see {the} shout something, but the wax keeps out the words.",
+    "wax": "{The} shouts something, but the wax keeps out the words.",
     "default": {
       "screen": "{The} barks: \"Shields to me! Archers, loose!\"",
       "charge": "{The} roars: \"Now, while the hero bleeds! All of you!\"",
@@ -226,7 +226,7 @@
       "fall_back": "{The} snarls: \"Back! Back to me, you cowards!\""
     },
     "gnoll_pack": {
-      "screen": "{The} gives a barking laugh, and the pack spreads out before {him}.",
+      "screen": "{The} barks a laugh, and the pack spreads out before {him}.",
       "charge": "{The} howls, and the whole pack rushes in for the kill!",
       "fall_back": "{The} yelps, and the pack falls back round {him}."
     },
@@ -251,12 +251,12 @@
       "fall_back": "{The} beckons, and {his} dead fall back round {him}."
     },
     "fae_hunt": {
-      "screen": "{The} sings out a high, cold call, and the hunt spreads before {him}.",
+      "screen": "{The} sings out, and the hunt spreads before {him}.",
       "charge": "{The} sings out, and the whole hunt rushes in!",
       "fall_back": "{The} calls, and the hunt melts back round {him}."
     },
     "demon_warband": {
-      "screen": "{The} bellows, and the devils form a wall of horns before {him}.",
+      "screen": "{The} bellows, and the devils make a wall of horns.",
       "charge": "{The} bellows: \"Tear the mortal apart!\"",
       "fall_back": "{The} bellows, and the devils gather round {him}."
     }

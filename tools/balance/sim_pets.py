@@ -32,6 +32,10 @@ simulator as it was (a pet of the floor's level that never dies).
             hero knows (his studies, a probe, a quest's teaching): he can set
             it only on quarry he has learned to hunt.
 
+With pt_hp it also keeps the game's fall-back (pet_tactics.py, 2026-11-22):
+hurt to its nature's share and losing to the weakest foe, it stands behind
+the hero, neither biting nor bitten (fallen_back).
+
 mg_pet_anchor (sim_magic) re-sizes the whole bite table against the careful
 blow, read at the pet's own level here.
 
@@ -251,10 +255,45 @@ def bit(run, foe) -> None:
         _learn(s, 3 + max(1, min(100, int(getattr(foe, 'peak_floor', 1) or 1))) * 6 // 10)
 
 
+def _nature(run) -> dict:
+    """Its nature (data/pet_tactics.json): the quest pet's own, else the
+    file's default (the simulated pet is no one line)."""
+    import types
+    import pet_system
+    import pet_tactics
+    qp = run._quest_pet() or ''
+    return pet_tactics.nature(types.SimpleNamespace(
+        species_key=qp, species=pet_system._SPECIES.get(qp) or {}))
+
+
+def fallen_back(run, foes: list) -> bool:
+    """With its health (pt_hp), the game's own rule (pet_tactics.choose,
+    2026-11-22): hurt to its nature's share and losing to the weakest foe,
+    it has fallen back behind the hero, so it neither bites nor is struck
+    this turn."""
+    if not k(run, 'pt_hp') or not here(run):
+        return False
+    import pet_tactics
+    live = [m for m in foes if m.alive and getattr(m, 'attacks', None)
+            and getattr(m, '_sim_away', 0) <= 0]
+    if not live:
+        return False
+    nat = _nature(run)
+    top = max_health(run)
+    hp = top - state(run)['hurt']
+    if not pet_tactics.hurt(hp, top, nat):
+        return False
+    weakest = min(live, key=lambda m: m.hp)
+    threat = sum(pet_tactics.dice_mean(m.attacks[0]['damage']) for m in live) * BESIDE_PET
+    return pet_tactics.losing(hp, bite(run, weakest), threat, weakest.hp, nat.get('margin', 0))
+
+
 def swipes(run, active: list) -> None:
     """One world turn of blows on the pet."""
     if not run.prof.get('pet') or run.floor < 3 or not k(run, 'pt_hp') or not here(run):
         return
+    if fallen_back(run, active):
+        return                                  # behind the hero: out of their reach
     from dice import roll
     catch_up(run)
     s = state(run)

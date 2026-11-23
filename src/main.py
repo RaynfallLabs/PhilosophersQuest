@@ -7215,7 +7215,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         import butchered as _butchered
         free = harvest_is_free(self.player, corpse)
         if free:
-            self.add_message(_butchered.fires_line(corpse), 'info')
+            # Said the first free harvest of each kind only (said_once.py).
+            _free_line = _butchered.fires_line(corpse, self.player)
+            if _free_line:
+                self.add_message(_free_line, 'info')
         else:
             self.quiz_title = f"HARVESTING {corpse.name.upper()}  --  ANIMAL"
             self.state = STATE_QUIZ
@@ -8353,18 +8356,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """
         from chain_equip import get_chain_subject, get_chain_mode
         import known_by_hand as _kbh
+        import said_once as _said_once
         item_name = self._bare_name(item)
         best = _kbh.best_tier(self.player, item)
         if best > 0 and not retake:
+            # Said the first time it goes back on with no quiz (said_once.py).
             if best >= 5:
-                self.add_message(f"You have worn the {item_name} before, at tier 5/5. "
-                                 f"On it goes.", 'info')
+                if _said_once.first(self.player, 'by_hand', _kbh.kind_key(item)):
+                    self.add_message(f"You have worn the {item_name} before, at tier 5/5. "
+                                     f"On it goes.", 'info')
                 self._dress_begin_on(item, tier=5)
                 return
 
             def _wear(_i=item, _t=best):
-                self.add_message(f"You have worn the {item_name} before. On it goes, "
-                                 f"at tier {_t}/5.", 'info')
+                if _said_once.first(self.player, 'by_hand', _kbh.kind_key(_i)):
+                    self.add_message(f"You have worn the {item_name} before. On it goes, "
+                                     f"at tier {_t}/5.", 'info')
                 self._dress_begin_on(_i, tier=_t)
 
             def _climb(_i=item, _k=item_type):

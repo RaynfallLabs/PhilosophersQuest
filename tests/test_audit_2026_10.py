@@ -288,10 +288,12 @@ def test_w20_permanent_fear_immunity_blocks_fear():
 # ---- W9: pets do not target allied NPCs -------------------------------------
 
 def test_w9_pet_targeting_skips_allies():
-    src = (_ROOT / 'src' / 'pet_system.py').read_text(encoding='utf-8')
-    block = src[src.index('# Find nearest alive enemy monster'):]
-    block = block[:block.index('# Adjacent enemy')]
-    assert "getattr(m, 'is_allied', False)" in block
+    # Who a companion may fight is pet_system.pet_foe (companion_turn's
+    # filter since the pet tactics of 2026-11-22).
+    import types
+    from pet_system import pet_foe
+    ally = types.SimpleNamespace(alive=True, is_allied=True, _aware=True, ai_pattern='aggressive')
+    assert not pet_foe(ally)
 
 
 # ---- W18: recalling a pet with a full pack keeps the pet -------------------

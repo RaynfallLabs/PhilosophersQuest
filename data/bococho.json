@@ -246,6 +246,9 @@
       "color": [235, 190, 60],
       "pronoun": "she",
       "quest_only": true,
+      "nature": "timid",
+      "voice": "squawks",
+      "_nature_note": "How she fights beside you (data/pet_tactics.json 'natures'): a runner, she breaks off early when a fight goes badly, and squawks for help when badly hurt.",
       "bite_mult": 1.25,
       "_bite_mult_note": "Strong kicks: a quarter harder than the growth table's bite at her level (data/pet_growth.json is everyone's).",
       "stages": [
