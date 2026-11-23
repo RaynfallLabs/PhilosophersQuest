@@ -327,22 +327,39 @@ class Player:
 
     # --- Resources ---
 
+    def damage_after(self, amount: int, damage_type: str = 'physical') -> int:
+        """What a blow of ``amount`` and this type would take from him now,
+        after every immunity, resistance and share take_damage applies, with
+        nothing done (the venom still to come on the health bar: venom.py).
+        It used to copy three of take_damage's shares, so a hero in the
+        Carapace of the Hydra was told a poison would take 120 that took 42."""
+        return self._damage_after(amount, damage_type) or 0
+
     def take_damage(self, amount: int, damage_type: str = 'physical') -> int:
         """Apply damage after immunity and resistance checks. Returns actual damage."""
+        actual = self._damage_after(amount, damage_type)
+        if actual is None:
+            return 0
+        self.hp = max(0, self.hp - actual)
+        return self._after_damage(actual)
+
+    def _damage_after(self, amount: int, damage_type: str):
+        """take_damage's shares, pure: the damage, or None for a blow that
+        never lands at all (immune, invulnerable)."""
         from affinity import PHYSICAL as _PHYSICAL_BLOWS
         from status_effects import DAMAGE_IMMUNITY, SHIELD_IMMUNITY, DAMAGE_HALVED
         # v2.13.0 Divine Intercession: 'invulnerable' status blocks ALL damage
         # for its duration (10 turns from a successful intercession).
         if self.has_effect('invulnerable'):
-            return 0
+            return None
         # Full immunity via status effect
         immunity_effect = DAMAGE_IMMUNITY.get(damage_type)
         if immunity_effect and self.has_effect(immunity_effect):
-            return 0
+            return None
         # Shield effects also grant elemental immunity
         shield_effect = SHIELD_IMMUNITY.get(damage_type)
         if shield_effect and self.has_effect(shield_effect):
-            return 0
+            return None
         # Resistance (as opposed to immunity): half damage, rounded up.
         halving_effect = DAMAGE_HALVED.get(damage_type)
         if halving_effect and self.has_effect(halving_effect) and amount > 0:
@@ -375,7 +392,7 @@ class Player:
         if damage_type == 'fire':
             for _slot in (self.weapon, getattr(self, 'ranged_weapon', None)):
                 if _slot and getattr(_slot, 'wielder_fire_immunity', False):
-                    return 0
+                    return None
         # Engine wave 3: generalized wielder_status_immunity. A weapon can
         # declare a list of damage types it blocks for the wielder. The
         # narrower wielder_fire_immunity flag stays for backward compat;
@@ -384,7 +401,7 @@ class Player:
             if _slot:
                 _imm = getattr(_slot, 'wielder_status_immunity', None) or []
                 if damage_type in _imm:
-                    return 0
+                    return None
 
         # Chain-equip tier_bonuses (resistance_<type>): each level takes
         # CHAIN_RESIST_STEP off a blow of that type (applied with the other
@@ -434,7 +451,10 @@ class Player:
         # rounded to nothing by any resistance at all.
         if actual == 0 and amount > 0 and resistance > 0:
             actual = 1
-        self.hp = max(0, self.hp - actual)
+        return actual
+
+    def _after_damage(self, actual: int) -> int:
+        """What a blow that landed sets off (take_damage, after the hit)."""
         # Hero passive trigger: Ciri's Elder Blood — auto-teleport when HP drops <25%
         # once per floor (gated by the existing _elder_blood_escape_used floor flag).
         if 'elder_blood_escape' in self.hero_passives and \

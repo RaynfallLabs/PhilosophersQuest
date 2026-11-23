@@ -1875,7 +1875,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # Lockpicks no longer spawn — the Master Lockpick is a permanent inventory
     # item granted at char-creation. Eco quiz is the gating mechanic.
 
-    # -- Food -- 1-3 items scattered across rooms ------------------------------
+    # -- Food -- 2-4 items scattered across rooms ------------------------------
     try:
         all_food = load_items('food')
     except FileNotFoundError:

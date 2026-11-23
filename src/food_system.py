@@ -1154,7 +1154,8 @@ def drink_potion(player, potion) -> list[str]:
         else:
             applied = player.add_effect('poisoned', max(1, int(20 * _harm_mult)))
             if applied:
-                messages.append("You feel violently ill. You are Poisoned!")
+                import venom
+                messages.append("You feel violently ill. " + venom.line(player))
             else:
                 messages.append("You feel fine -- your body resists the poison.")
 
@@ -1430,6 +1431,7 @@ def eat_raw(player, ingredient) -> list[str]:
 
     messages = [f"You choke down the raw {ingredient.name}. ({sp} SP, unpleasant)."]
     if random.random() < 0.30 and not player.has_effect('poison_resist'):
-        player.add_effect('poisoned', 8)
-        messages.append("Your stomach churns... food poisoning! (-1 HP/turn for 8 turns)")
+        if player.add_effect('poisoned', 8):
+            import venom
+            messages.append(venom.line(player, 'food'))
     return messages

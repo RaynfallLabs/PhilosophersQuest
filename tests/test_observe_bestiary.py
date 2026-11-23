@@ -131,12 +131,12 @@ def test_o_on_a_known_monster_opens_its_bestiary_page():
 def test_o_on_an_unknown_monster_keeps_the_plain_look():
     from game_states import STATE_PLAYER
     g, m = _scene(_plain_kind(), known=False)
-    n0 = len(g.msg_log.entries)
+    start = len(g.msg_log.entries)
     _observe(g, m)
     assert g.state == STATE_PLAYER
-    # (Every line of the look, not the last four: an orc warrior shows two
-    # tells since 2026-11-22, the charger's rush and its drill.)
-    assert any('You see' in str(e[0]) for e in g.msg_log.entries[n0:])
+    # Everything the look wrote (its tells grow with the creature's ways:
+    # 3.6.1's charger tell is one more line), not a fixed last few.
+    assert any('You see' in str(e[0]) for e in g.msg_log.entries[start:])
 
 
 def test_o_on_a_seen_but_unstudied_monster_does_not_open_its_page():

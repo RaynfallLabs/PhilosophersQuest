@@ -74,6 +74,23 @@ def describe(kind: dict, level: int) -> str:
     return text[:1].upper() + text[1:] + '.'
 
 
+def card_text(item, buc_known: bool = False) -> str:
+    """A kind ring's line as this copy works (``special`` says its own
+    level): once its blessing or curse is known, at the level ``_worn``
+    reads (effective_level), so a cursed Amulet of Life Saving III no longer
+    promises the 25% it does not give. A stat kind lends its tier whatever
+    its blessing (level_fields), so its line stands."""
+    sp = str(getattr(item, 'special', '') or '')
+    kind = kind_of(item)
+    level = int(getattr(item, 'ench_level', 0) or 0)
+    if not kind or level <= 0 or not buc_known or kind.get('stat'):
+        return sp
+    lv = _ench.effective_level(item)
+    if lv == level or sp != describe(kind, level):
+        return sp
+    return describe(kind, lv)
+
+
 def level_fields(item, level: int) -> dict:
     """What a kind ring at `level` is: its level, tier, equip threshold,
     name, line, and effects (a stat kind's amount is its tier). Empty for a

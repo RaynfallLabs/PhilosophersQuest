@@ -412,6 +412,9 @@ def test_w11_feared_ranged_monster_flees_instead_of_shooting():
     m.status_effects['feared'] = 5
     called = []
     m._ranged_turn = lambda *a, **k: called.append('shoot') or True
+    # (No real floor here: the frightened turn's search for a way off,
+    # morale.flee_away, finds none and takes the old straight step.)
+    m._can_move_to = lambda *a, **k: False
     player = SimpleNamespace(x=7, y=5, has_effect=lambda n: False,
                              equipped_accessories=[])
     assert m.take_turn(player, dungeon, [m]) is False

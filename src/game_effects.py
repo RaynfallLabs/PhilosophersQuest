@@ -65,17 +65,16 @@ class EffectsMixin:
         words = {}
         if v.key.startswith(('feared_', 'charmed_')):
             words['the'] = self._effect_name(v.effect, target)
+        # The line is the cue alone (Brandon 2026-11-22: "a cue, not a
+        # soliloquy"): what the hero could do instead, and the counter (a
+        # lit torch thaws ice, Guard keeps him steady), are the status's own
+        # words and the help screen's (Monsters and Their Ways).
         if v.what == action_gate.REFUSE:
-            text = effect_rules.line(v.key, **words)
-            if v.effect == 'frozen':
-                text += effect_rules.data()['lines']['frozen_hint']
-            self.add_message(text, 'warning')
+            self.add_message(effect_rules.line(v.key, **words), 'warning')
             return
         if v.what == action_gate.LOSE:
-            text = effect_rules.line(v.key, **words)
-            if v.effect == 'frozen':
-                text += effect_rules.data()['lines']['frozen_hint']
-            self.add_message(text, 'danger' if v.effect == 'paralyzed' else 'warning')
+            self.add_message(effect_rules.line(v.key, **words),
+                             'danger' if v.effect == 'paralyzed' else 'warning')
         elif v.what == action_gate.STAND:
             self._stand_up(advance=False)
         elif v.what == action_gate.THAW:
@@ -351,10 +350,10 @@ class EffectsMixin:
 
     def _mind_eaten_by(self, monster) -> None:
         """It eats one identified kind from the pack, or one earned page."""
-        from monster import pronouns, the_name
+        from monster import the_name
         from naming import proper_name
         p = self.player
-        words = {'The': the_name(monster), 'him': pronouns(monster)[1]}
+        words = {'The': the_name(monster)}
         meals = ([('item', it) for it in mind_theft.item_candidates(p, self._forgettable)]
                  + [('page', k) for k in mind_theft.page_candidates(p)])
         if not meals:

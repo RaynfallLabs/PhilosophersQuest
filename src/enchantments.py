@@ -163,13 +163,41 @@ def label(piece) -> str:
     return display_name(ench, level)[len('of '):]
 
 
-def card_line(piece) -> str:
+def working_level(piece) -> int:
+    """The level a piece's enchantment works at: its blessed or cursed level
+    (``effective_level``: every hook below reads it) for a power, its own for
+    a stat, which ``_grant`` lends at its tier whatever its blessing."""
+    ench = get(getattr(piece, 'ench_id', '')) or {}
+    if ench.get('stat'):
+        return int(getattr(piece, 'ench_level', 0) or 0)
+    return effective_level(piece)
+
+
+def working_line(piece, buc_known: bool = False) -> str:
+    """The piece's ``ench_line`` as this copy works, once its blessing or
+    curse is known: a cursed Night Eyes II said a level II number and worked
+    at level I. Its own level while the blessing is not known (the card
+    gives nothing away). The name keeps the piece's own level."""
+    el = str(getattr(piece, 'ench_line', '') or '').strip()
+    ench = get(getattr(piece, 'ench_id', ''))
+    level = int(getattr(piece, 'ench_level', 0) or 0)
+    if not (el and ench and buc_known and level > 0):
+        return el
+    lv = working_level(piece)
+    if lv == level:
+        return el
+    old, new = describe(ench, level), describe(ench, lv)
+    return el.replace(old, new) if old in el else el
+
+
+def card_line(piece, buc_known: bool = False) -> str:
     """The enchantment as a card says it: its full name, then what it does
     ("Greater Night Eyes V: Lets you see in the dark..."). A named piece's
     ``ench_line`` begins with the plain name ("Night Eyes V: ..."), and the
     cards printed both ("Greater Night Eyes V: Night Eyes V: ..."). ''
-    when the piece has none."""
-    el = str(getattr(piece, 'ench_line', '') or '').strip()
+    when the piece has none. What it does is said as this copy works
+    (``working_line``)."""
+    el = working_line(piece, buc_known)
     lab = label(piece)
     if not lab:
         return el

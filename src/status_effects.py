@@ -15,6 +15,7 @@ What a debuff does to the hero's actions is not decided here: the one gate
 """
 
 import effect_rules
+import hunger as _hunger
 from lights import status_sight as _light_sight
 
 MAX_EFFECT_DURATION = 60  # hard cap on status effect turns (prevents infinite stacking)
@@ -231,8 +232,9 @@ REGEN_SHARE = 1 / 300          # of max health, each REGEN_PERIOD turns
 TIMED_STAT_GRANTS: dict = {
     'heroism':    (('STR', 2),),
     'brilliance': (('INT', 1), ('WIS', 1)),
-    # Weak with hunger (src/hunger.py sets and clears it by the belly).
-    'weak_from_hunger': (('STR', -2),),
+    # Weak with hunger (src/hunger.py sets and clears it by the belly; its
+    # Strength is data/hunger.json weak_str, which nothing read before).
+    'weak_from_hunger': (('STR', int(_hunger.rules().get('weak_str', -2))),),
 }
 
 
@@ -577,10 +579,8 @@ def rust_worn_gear(player, source=None, rng=None) -> tuple[str, str] | None:
         from monster import the_name
         who = the_name(source)
         if wear_down(item):
-            return (f"{who}'s feelers brush your {name}, and good steel flakes to red rust! {loss}",
-                    'danger')
-        return (f"{who}'s feelers brush your {name}. It is pitted with rust, but it holds.",
-                'warning')
+            return (f"{who}'s feelers rust your {name}! {loss}", 'danger')
+        return (f"{who}'s feelers pit your {name} with rust, but it holds.", 'warning')
     if wear_down(item):
         return (f"Your {name} rusts! {loss}", 'danger')
     return (f"Your {name} is corroded but holds together.", 'warning')
@@ -710,7 +710,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'paralyzed':      ('You can move again.',                    'info'),
     'sleeping':       ('You wake up!',                           'info'),
     'stunned':        ('Your head clears -- no longer stunned.',  'info'),
-    'confused':       ('Your mind sharpens. Confusion gone, and you are Clear-Headed for a moment.', 'info'),
+    'confused':       ('Your mind sharpens: you are Clear-Headed.', 'info'),
     'blinded':        ('Your vision returns!',                   'success'),
     'hallucinating':  ('Reality snaps back into focus.',         'info'),
     'poisoned':       ('The poison leaves your body.',           'success'),
@@ -738,12 +738,12 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'time_stopped':   ('Time resumes its flow.',                 'info'),
     'invulnerable':   ('The divine shield around you fades.',    'info'),
     'blessed':        ('The divine clarity fades.',              'info'),
-    'inspired':       ('The Guiding Hand Lifts. Your Wisdom Is Your Own Again.', 'warning'),
+    'inspired':       ('The guiding hand lifts. Your wisdom is your own again.', 'warning'),
     'feared':         ('Your fear subsides.',                    'info'),
     'charmed':        ('The charm over you breaks.',             'info'),
     'cursed':         ('The curse lifts.',                       'success'),
-    'hexed':          ('The hex lifts. What you wear is yours to take off.', 'success'),
-    'forgetting':     ('The thing is out of your head, and you are Clear-Headed for a moment.', 'info'),
+    'hexed':          ('The hex lifts from what you wear.',      'success'),
+    'forgetting':     ('The thing is out of your head: you are Clear-Headed.', 'info'),
     'weakened':       ('Your strength returns.',                 'info'),
     'bleeding':       ('Your wounds close.',                     'success'),
     'heroism':        ('The heroic surge fades. STR returns.',   'info'),
@@ -752,7 +752,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'draining':       ('The ring stops draining your life.',     'success'),
     'burning':        ('The flames are extinguished.',           'success'),
     'frozen':         ('The ice cracks -- you can move freely!',  'success'),
-    'sustained':      ('The deep fullness fades; hunger comes at its usual pace again.', 'info'),
+    'sustained':      ('The deep fullness fades.',               'info'),
     'truesight':      ('Your true sight fades.',                 'info'),
     'dark_vision':    ('Your dark vision fades.',                'info'),
     'spell_turning':  ('Your spell turning aura dissipates.',   'info'),
@@ -771,7 +771,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'armor_crack':       ('The armor cracks reseal.',                 'info'),
     'sundered':          ('The sundered limb steadies.',              'info'),
     'deep_wound':        ('The deep wound finally closes.',           'success'),
-    'ruptured':          ('The rupture stems -- you can be healed again.', 'success'),
+    'ruptured':          ('The rupture stems.',                       'success'),
     'impaled':           ('You wrench free of the impalement!',       'success'),
     'heal_blocked':      ('Your wounds are willing to close once more.', 'success'),
     'blade_flow':        ('The blade-flow subsides.',                 'info'),
@@ -831,8 +831,8 @@ def _gall_saves_sight(player) -> bool:
             return False
     game = getattr(player, '_combat_game_ref', None)
     if game is not None and hasattr(game, 'add_message'):
-        game.add_message("The dark comes over your eyes, and the fish's gall in your pack "
-                         "goes cold and is gone. The dark goes with it.", 'success')
+        game.add_message("Your eyes go dark, then clear: the fish's gall in your pack is spent.",
+                         'success')
     return True
 
 

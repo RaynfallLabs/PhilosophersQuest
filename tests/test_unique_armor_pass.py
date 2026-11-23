@@ -228,7 +228,8 @@ def test_a_named_piece_says_what_it_does_on_its_card():
         assert len(armor[iid]['special']) > 30
         assert make_item_by_id('armor', iid).special == armor[iid]['special']
     src = open(os.path.join(ROOT, 'src', 'game_render.py'), encoding='utf-8').read()
-    assert "lines.append(item.special)" in src
+    # (its special, or the same line said as this copy works: game_render's _spc)
+    assert "lines.append(_spc)" in src
 
 
 # ---------------------------------------------------------------- the same pass: art and small fixes

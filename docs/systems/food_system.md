@@ -398,6 +398,10 @@ cave bear gave.
   else an arcane part's mana, else its family's gift (a troll regenerates, a ghost lends sight of
   the unseen, a goblin dark vision), else a little healing. Every dish carries the sides of all its
   ingredients, once each and never its own power twice, and the menu shows them under "Also".
+  A heal side is counted in the dish's own heal, which every card says (on the HP tab first; on
+  any other beside its SP: "+150 SP, +31 HP"), since every dish heals. A gift this very meal makes
+  lasting (a feast's resistance, a boss trophy's) is said only under For Good, never as timed
+  (`kitchen.made_lasting`).
   The nine staples each give a different one: bread Fearless, dried meat Warning, cheese Cold
   Resist, apple Mind Ward, trail rations Searching, mushroom Dark Vision, herb Regenerating,
   elvish bread mana, stew a heal.

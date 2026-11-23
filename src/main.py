@@ -4990,6 +4990,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._black_knight_tick()          # what the action did to him: one limb at most
         habits_mod.close_action(self)      # his action's blows and shots (src/habits.py, AI-2)
         self.turn_count += 1
+        # Hungry, Weak and Starving follow the belly whatever moved it (a
+        # prayer's or a wish's full SP, a famine demon's drain, the stair's
+        # rest: src/hunger.py). Only the hunger tick asked before, so a hero
+        # a prayer filled stayed Starving, Strength -2, until he walked.
+        import hunger as _hunger
+        for _ln in _hunger.sync(self.player):
+            self.add_message(_ln, 'danger' if self.player.sp <= 0 else 'warning')
         # Slowed, or far enough turned to stone: read now, for a slowing
         # that runs out on this action slowed it all the same.
         import effect_rules as _effect_rules

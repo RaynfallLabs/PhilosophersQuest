@@ -222,7 +222,7 @@ def test_combat_wires_chain_carry_consumption():
 
 def test_player_take_damage_wires_skofnung_pending():
     from player import Player
-    src = inspect.getsource(Player.take_damage)
+    src = (inspect.getsource(Player.take_damage) + inspect.getsource(Player._damage_after) + inspect.getsource(Player._after_damage))   # (its shares, then what a hit sets off)
     assert '_skofnung_low_hp_pending' in src
 
 
@@ -240,7 +240,7 @@ def test_player_sight_radius_includes_equipped_light_aura():
 
 def test_player_wielder_status_immunity_blocks():
     from player import Player
-    src = inspect.getsource(Player.take_damage)
+    src = (inspect.getsource(Player.take_damage) + inspect.getsource(Player._damage_after) + inspect.getsource(Player._after_damage))   # (its shares, then what a hit sets off)
     assert 'wielder_status_immunity' in src
 
 

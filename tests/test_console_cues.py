@@ -11,6 +11,10 @@ and the tells on first sight) is ONE short line: filled in with a long
 creature name it stays under CAP, and it never tells what WILL happen
 (RUNDOWN). The Bestiary, Observe (O) and the help page keep the fuller
 words where they teach. Data-layer tests: they read the JSON.
+
+The effects and statuses meet the same rule (effect_lines, at the end):
+data/effects.json and data/hunger.json's lines, the expiry lines, and every
+line the effect modules write in their own source.
 """
 import json
 import os
@@ -37,7 +41,12 @@ RUNDOWN = ('will not follow', 'will be waiting', 'will come', 'will run', 'will 
            'will not last', 'will seek', 'will not care', 'the longer you', 'keep coming while',
            'for as long as', 'if you drop', 'if you end', 'if he falls', 'if {he} falls', 'when he falls',
            'stand still and',
-           'kill the', 'kill {him}', 'strike {him}', 'drop him', 'they wait', '{he} waits for you')
+           'kill the', 'kill {him}', 'strike {him}', 'drop him', 'they wait', '{he} waits for you',
+           # The effects' asides: what he could do instead, the counter, the rule.
+           'you can still', 'you can step', 'you can fight', 'in guard', 'would have', 'would thaw',
+           'takes a turn', 'no mp is spent', 'win it back', 'you will have to', 'unless it is cured',
+           'until you eat', 'will not mend', 'stops it', 'yours to take off', 'can be healed again',
+           'usual pace', 'every action takes')
 
 # A long name, so a line that fits with it fits with any.
 _LONG = {'{The}': 'The hobgoblin warlord', '{the}': 'the hobgoblin warlord',
@@ -47,7 +56,8 @@ _LONG = {'{The}': 'The hobgoblin warlord', '{the}': 'the hobgoblin warlord',
          '{potion}': 'a potion of healing', '{potion_bare}': 'potion of healing', '{damage}': '12',
          '{n}': '4', '{light}': 'torch', '{buff}': 'magic resistance', '{flask}': 'a fire pot',
          '{attack}': 'longbow', '{noun}': 'venom', '{tool}': 'silver dust', '{pack}': 'wolves',
-         '{weapon}': 'longsword'}
+         '{weapon}': 'longsword', '{by}': 'The hobgoblin warlord', '{item}': 'potion of healing',
+         '{kind}': 'Hobgoblin Warlord', '{what}': 'potion of healing, Hobgoblin Warlord'}
 
 
 def _load(name):
@@ -210,3 +220,169 @@ def test_the_variants_have_their_own_cues():
     assert tells.cue(blood, 'splits').endswith('under a weak blow.')
     sphinx = Monster({**MONS['sphinx'], 'id': 'sphinx'}, 1, 1)
     assert tells.cue(sphinx, 'parley').endswith(' will ask you a riddle before you pass.')
+
+
+# ---------------------------------------------------------------- the effects
+#
+# The same ruling, met by the effects and statuses the same night (the
+# systems bug bash): a fall said "(Stand still, fight or be in Guard while
+# Stunned.)", a fear "You can step away, shoot, cast or drink." Each line
+# is what the hero feels or sees now; what he can do about it is the
+# status's own words (status_effects.EFFECT_INFO) and the help screen's
+# (data/ui/monster_ways.json, "What they lay on you").
+
+EFFECT_MODULES = ('action_gate', 'game_effects', 'status_effects', 'knockdown', 'mind_theft',
+                  'quiz_sight', 'venom', 'hunger', 'holds')
+# What an f-string's value is, at its longest; anything else a long name.
+_EXPR_FILL = {'loss': '(-1 enchantment)', 'left': '9', 'stat': 'STR', 'noun': 'creeping frost',
+              'flavor': 'Your hardy constitution', '_what': 'strength'}
+
+
+def _src_text(node):
+    """A string the source writes, its f-string values filled in; None for
+    anything else."""
+    import ast
+    if isinstance(node, ast.Constant) and isinstance(node.value, str):
+        return node.value
+    if isinstance(node, ast.JoinedStr):
+        out = ''
+        for v in node.values:
+            if isinstance(v, ast.Constant):
+                out += str(v.value)
+            else:
+                out += _EXPR_FILL.get(ast.unparse(v.value), 'the hobgoblin warlord')
+        return out
+    if isinstance(node, ast.IfExp):
+        return _src_text(node.body) or _src_text(node.orelse)
+    return None
+
+
+def _said_in(module):
+    """[(where, line)] a module writes for the log in its own source: what it
+    hands add_message, what it appends to ``messages`` and the line of a
+    (line, kind) or (applied, line) it returns. ('_signals' are main's.)"""
+    import ast
+    with open(os.path.join(ROOT, 'src', module + '.py'), encoding='utf-8') as f:
+        tree = ast.parse(f.read())
+    found = []
+    for node in ast.walk(tree):
+        cands = []
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) and node.args:
+            first = node.args[0]
+            if node.func.attr == 'add_message':
+                cands = [first]
+            elif (node.func.attr == 'append' and isinstance(node.func.value, ast.Name)
+                  and node.func.value.id == 'messages'):
+                cands = list(first.elts[:1]) if isinstance(first, ast.Tuple) else [first]
+        elif isinstance(node, ast.Return) and isinstance(node.value, ast.Tuple):
+            cands = list(node.value.elts)
+        for c in cands:
+            s = _src_text(c)
+            if s and ' ' in s.strip() and not s.startswith('_'):
+                found.append((f'{module}:{getattr(c, "lineno", 0)}', s.strip()))
+    return found
+
+
+def effect_lines():
+    """[(where, line)] of every line the effects and statuses can say."""
+    import status_effects
+    fx = _load('effects.json')
+    out = [(f'effects.lines.{k}', s) for k, s in fx['lines'].items()]
+    poison = {k: s for k, s in fx['poison']['lines'].items() if k not in ('chip', 'bestiary')}
+    out += [(f'effects.poison.{k}', s) for k, s in poison.items()]
+    # A bite that would kill says so after its own line (venom.line, lands).
+    out += [(f'effects.poison.{k}+deadly', f"{s} {poison['deadly']}")
+            for k, s in poison.items() if k != 'deadly']
+    out.append(('effects.quiz.nothing_there', fx['quiz']['nothing_there']))
+    # The stone's count is said after its line: "Your limbs drag. (5)".
+    out += [(f'effects.lines.{k}+count', fx['lines'][k] + ' (9)')
+            for k in ('stiff', 'stiff_slow', 'rigid_lethal', 'rigid_lesser')]
+    out += [(f'hunger.lines.{k}', s) for k, s in _load('hunger.json')['lines'].items()]
+    out += [(f'status_effects.expire.{k}', s) for k, (s, _kind) in status_effects._EXPIRE_MSGS.items()]
+    for module in EFFECT_MODULES:
+        out += _said_in(module)
+    return out
+
+
+def test_the_effect_census_finds_the_lines():
+    lines = effect_lines()
+    assert len(lines) > 150
+    where = {w.split('.')[0].split(':')[0] for w, _ in lines}
+    assert {'effects', 'hunger', 'status_effects', 'game_effects'} <= where
+    said = {s for _w, s in lines}
+    assert 'You are knocked off your feet!' in said           # effects.json
+    assert 'You stumble in a random direction!' in said        # game_effects.py
+    assert 'The hobgoblin warlord takes hold!' not in said     # (a noun, not a name)
+    assert 'The creeping frost takes hold!' in said            # status_effects.py, filled
+
+
+def test_every_effect_line_is_one_short_cue():
+    long = [(w, len(_filled(s)), _filled(s)) for w, s in effect_lines() if len(_filled(s)) > CAP]
+    assert not long, long
+
+
+def test_no_effect_line_is_a_rundown_of_what_to_do():
+    bad = [(w, s) for w, s in effect_lines() for r in RUNDOWN if r in s.lower()]
+    assert not bad, bad
+
+
+def test_most_effect_lines_fit_the_target():
+    lines = effect_lines()
+    over = [(w, s) for w, s in lines if len(_filled(s)) > TARGET]
+    assert len(over) <= len(lines) // 10, over
+
+
+def test_no_effect_line_carries_a_counter_in_brackets():
+    """"(In Guard you would have held it.)": an aside in brackets is a rule,
+    never a cue. A count, a lost plus or a stat ("(5)", "(-1 level)") is
+    what happened."""
+    import re
+    bad = [(w, s) for w, s in effect_lines()
+           for inner in re.findall(r'\(([^)]*)\)', s) if re.search(r'[a-z]{3,} [a-z]{3,}', inner)]
+    assert not bad, bad
+
+
+# What the log no longer says, each status's own words and the help screen
+# still teach: (status, a word of its counter in the status's words, its row
+# in "What they lay on you", a word of it there).
+TAUGHT = (('stunned', 'Guard', 'Stunned', 'Guard'),
+          ('fumbling', 'Guard', None, None),
+          ('knocked_down', 'standing up', 'Knocked down', 'getting up'),
+          ('frozen', 'lit torch', 'Frozen', 'lit torch'),
+          ('frozen', 'hands', 'Frozen', 'still strike'),
+          ('immobilized', 'still fight', 'Held by the feet', 'Everything else works'),
+          ('feared', 'Shoot, cast or drink', 'Afraid', 'Step away, shoot or cast'),
+          ('charmed', 'cannot harm your charmer', 'Charmed', 'cannot harm your charmer'),
+          ('hexed', 'will not come off', 'Hexed', 'will not come off'),
+          ('petrifying', 'Oil of Rue', 'Turning to stone', 'Oil of Rue'),
+          ('petrifying', 'slow', 'Turning to stone', 'slow'),
+          ('forgetting', 'Kill it on this floor', 'Mind-bitten', 'Kill it before you leave the floor'),
+          ('silenced', 'no spell or scroll', None, None),
+          ('weak_from_hunger', 'Strength -2, wounds do not mend', None, None),
+          ('starving', 'hunger wounds you until you eat', None, None),
+          ('ruptured', 'cannot be healed', None, None))
+
+
+def test_the_counters_left_out_of_the_log_are_taught_elsewhere():
+    from status_effects import EFFECT_INFO
+    rows = {}
+    for sec in _load(os.path.join('ui', 'monster_ways.json'))['sections']:
+        rows.update({r[0]: r[1] for r in sec.get('rows') or ()})
+    for status, word, row, there in TAUGHT:
+        assert word in EFFECT_INFO[status][2], (status, word)
+        if row:
+            assert there in rows[row], (row, there)
+    # Hunger's cost is on How Quizzes Work too.
+    hunger = ' '.join(p for sec in _load(os.path.join('ui', 'how_quizzes_work.json'))['sections']
+                      for p in sec.get('paragraphs') or ())
+    assert 'Strength -2' in hunger and 'wounds do not mend' in hunger and 'until you eat' in hunger
+
+
+def test_a_frozen_refusal_is_the_cue_alone():
+    """The torch is the chip's and the help's: the refusal no longer adds
+    "A lit torch would thaw you."."""
+    import effect_rules
+    assert 'frozen_hint' not in effect_rules.data()['lines']
+    assert effect_rules.line('frozen_hands') == 'Your hands are numb with ice.'
+    assert effect_rules.line('fall') == 'You step, the floor tips, and you fall.'
+    assert effect_rules.line('feared_strike', the='the banshee') == 'You cannot make yourself strike the banshee.'
