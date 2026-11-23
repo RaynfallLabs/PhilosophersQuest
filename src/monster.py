@@ -1657,6 +1657,22 @@ class Monster:
                 if _at_range:
                     return 0, (f"{the_name(self)} turns {_his} face full on you. "
                                f"You see nothing, and nothing happens.")
+            # Check mirror shield (Aegis): reflects gaze back. Asked before
+            # the plain proofs below, which only stop the gaze: the Greater
+            # Aegis is stoneproof from its first tier, and that check, asked
+            # first, kept its mirror from ever turning a gaze.
+            elif getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
+                _counters.fired(_counters.GAZE, self)
+                player._reflected_back = True      # read by game_combat for Perseus's trait
+                # She loses this turn and the next, and does NOT also attack.
+                # (It used to set 1 turn, which the next status tick removed
+                # before she ever lost an action, and then she hit anyway.)
+                # With a gaze every gaze_cooldown turns this is about half
+                # her actions, which is what CURVE.md asks of the Aegis.
+                self.status_effects['paralyzed'] = max(
+                    self.status_effects.get('paralyzed', 0), 2)
+                return 0, (f"{the_name(self)} meets {_his} own eyes in the bronze "
+                           f"and stands rigid, snakes and all.")
             # Proof against petrification (Medusa's trophy, the Greater
             # Aegis). The status existed but nothing consulted it: every gaze
             # paralyses, so the reward protected against nothing.
@@ -1673,19 +1689,6 @@ class Monster:
                             f"of your shield, and the gaze slides off.")
                 if _at_range:
                     return 0, gaze_msg
-            # Check mirror shield (Aegis): reflects gaze back
-            elif getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
-                _counters.fired(_counters.GAZE, self)
-                player._reflected_back = True      # read by game_combat for Perseus's trait
-                # She loses this turn and the next, and does NOT also attack.
-                # (It used to set 1 turn, which the next status tick removed
-                # before she ever lost an action, and then she hit anyway.)
-                # With a gaze every gaze_cooldown turns this is about half
-                # her actions, which is what CURVE.md asks of the Aegis.
-                self.status_effects['paralyzed'] = max(
-                    self.status_effects.get('paralyzed', 0), 2)
-                return 0, (f"{the_name(self)} meets {_his} own eyes in the bronze "
-                           f"and stands rigid, snakes and all.")
             # Any other mirror shield (counters.py): watched in its face, the
             # gaze cannot take the hero (it is not the Aegis: no reflection).
             elif _mirror is not None:

@@ -12,6 +12,10 @@ AC and level from its template. This finishes the job, once per load:
   effects, saving throws), keeping what is the hero's own: its blessing,
   what he knows of it, its wear, an Enchant Armour scroll's plus, an
   attunement's tier;
+- a common ring or amulet of a kind (rings.py) takes its effects from
+  today's data and its kind's ladder at its own level: the Ring of
+  Sustenance lent Sustained for good from its old data, on top of its
+  kind's hunger ladder (2026-11-22);
 - what the hero wears lends what it lends now: a status it no longer
   grants comes off (unless something else still grants it), a new one goes
   on, and the worn stats re-sync.
@@ -179,6 +183,24 @@ def refresh_named(item) -> bool:
     return True
 
 
+def refresh_kind(item) -> bool:
+    """A common ring or amulet of a kind: its effects as today's data has
+    them, with what its kind's ladder adds at its level (a stat kind's
+    amount: rings.level_fields). True if it is one."""
+    from items import Accessory, make_item_by_id
+    import rings
+    if not isinstance(item, Accessory) or getattr(item, 'is_unique', False)             or not rings.kind_of(item):
+        return False
+    fresh = make_item_by_id('accessory', getattr(item, 'id', '') or '')
+    if fresh is None:
+        return False
+    item.effects = dict(getattr(fresh, 'effects', None) or {})
+    lv = int(getattr(item, 'ench_level', 0) or 0)
+    if lv > 0:
+        item.effects = rings.level_fields(item, lv).get('effects', item.effects)
+    return True
+
+
 def _named_accessory(iid: str):
     """A named ring or amulet not flagged unique (the Ouroboros, the Ankh
     of Ra) or a plot one."""
@@ -205,7 +227,7 @@ def migrate(player, all_items) -> None:
     for it in all_items:
         try:
             enchant_common(it)
-            refresh_named(it)
+            refresh_named(it) or refresh_kind(it)
         except Exception:
             from game_log import log_error
             log_error(f"gear_saves: could not refresh {getattr(it, 'id', '?')}")

@@ -59,6 +59,28 @@ def _is_foe(monster) -> bool:
                 or (hasattr(monster, 'has_effect') and monster.has_effect('charmed')))
 
 
+def _can_hold(monster, effect: str) -> bool:
+    """A foe the power may be spent on that can take ``effect``: not the cow,
+    an encounter NPC or one already charmed (_is_foe), and not one whose
+    nature refuses it (Monster.resists_control: the mindless know no fear,
+    the dead take no charm, a named foe is never charmed or frightened)."""
+    if not _is_foe(monster):
+        return False
+    rc = getattr(monster, 'resists_control', None)
+    return not (rc is not None and rc(effect))
+
+
+def _hold(monster, effect: str, turns: int) -> None:
+    """Lay ``effect`` through Monster.hold (the longer of old and new, a
+    named foe's cap and grace, what its nature refuses). The specials wrote
+    the status straight in, so a golem was confused and a zombie charmed."""
+    if hasattr(monster, 'hold'):
+        monster.hold(effect, int(turns))
+    else:
+        cur = int(monster.status_effects.get(effect, 0) or 0)
+        monster.status_effects[effect] = max(cur, int(turns))
+
+
 def _named_or_huge(monster) -> bool:
     """Who takes a tenth of a share-of-health effect: any named foe (boss,
     mini-boss, seal demon) or anything huge for its floor."""
@@ -213,7 +235,7 @@ HERO_SPECIALS: dict[str, dict] = {
     "odysseus of ithaca": {
         'id': 'hero_cunning_stratagem',
         'name': 'Cunning Stratagem',
-        'desc': 'Charm visible non-boss monsters as temporary allies.',
+        'desc': 'Charm visible non-boss monsters: for a while they will not attack you.',
         'cooldown': 400,
         'effect': 'charm_visible',
         'boss_immune': True,
@@ -555,17 +577,15 @@ def _eff_confuse_visible(game, special, tier, chain):
         return
     targets = [m for m in _in_reach(game) if game._sees_monster(m)
                and 'humanoid' in getattr(m, 'tags', [])
-               and not is_boss_or_huge(m)]
+               and not is_boss_or_huge(m) and _can_hold(m, 'confused')]
     if not targets:
         game.add_message("No one in sight to question.", 'info')
         return NOTHING
     random.shuffle(targets)
     for m in targets[:cnt]:
-        cur = m.status_effects.get('confused', 0)
-        m.status_effects['confused'] = max(cur, dur)
+        _hold(m, 'confused', dur)
         if tier.get('slow_too'):
-            cur = m.status_effects.get('slowed', 0)
-            m.status_effects['slowed'] = max(cur, dur)
+            _hold(m, 'slowed', dur)
         game.add_message(f"{the_name(m)} questions everything {pronouns(m)[0]} knows.", 'success')
 
 
@@ -663,17 +683,15 @@ def _eff_fear_visible(game, special, tier, chain):
         game.add_message("No one cowers.", 'warning')
         return
     targets = [m for m in _in_reach(game) if game._sees_monster(m)
-               and not is_boss_or_huge(m)]
+               and not is_boss_or_huge(m) and _can_hold(m, 'feared')]
     if not targets:
         game.add_message("No one in sight to cower.", 'info')
         return NOTHING
     random.shuffle(targets)
     for m in targets[:cnt]:
-        cur = m.status_effects.get('feared', 0)
-        m.status_effects['feared'] = max(cur, dur)
+        _hold(m, 'feared', dur)
         if immob:
-            cur = m.status_effects.get('immobilized', 0)
-            m.status_effects['immobilized'] = max(cur, immob)
+            _hold(m, 'immobilized', immob)
         game.add_message(f"{the_name(m)} breaks before you.", 'success')
 
 
@@ -772,15 +790,16 @@ def _eff_charm_visible(game, special, tier, chain):
         game.add_message("None are persuaded.", 'warning')
         return
     targets = [m for m in _in_reach(game) if game._sees_monster(m)
-               and not is_boss_or_huge(m)]
+               and not is_boss_or_huge(m) and _can_hold(m, 'charmed')]
     if not targets:
         game.add_message("No one in sight to persuade.", 'info')
         return NOTHING
     random.shuffle(targets)
     for m in targets[:cnt]:
-        cur = m.status_effects.get('charmed', 0)
-        m.status_effects['charmed'] = max(cur, dur)
-        game.add_message(f"{the_name(m)} turns to your side.", 'success')
+        _hold(m, 'charmed', dur)
+        # (A charmed creature holds its blow and wanders: it does not fight
+        # for him. "turns to your side" promised an ally.)
+        game.add_message(f"{the_name(m)} lowers {pronouns(m)[2]} guard.", 'success')
 
 
 def _eff_damage_single(game, special, tier, chain):
@@ -832,9 +851,8 @@ def _eff_drain_attractive(game, special, tier, chain):
     game.player.hp = min(game.player.max_hp, game.player.hp + min(hp_drain, drained))
     game.add_message(
         f"Ash drains {drained} HP from {the_name(target, lower=True)}. \"Groovy.\"", 'success')
-    if charm_dur and target.alive and not is_boss_or_huge(target):
-        cur = target.status_effects.get('charmed', 0)
-        target.status_effects['charmed'] = max(cur, charm_dur)
+    if charm_dur and target.alive and not is_boss_or_huge(target)             and _can_hold(target, 'charmed'):
+        _hold(target, 'charmed', charm_dur)
     if not target.alive:
         game._on_monster_killed(target)
 
@@ -922,17 +940,15 @@ def _eff_paralyze_target(game, special, tier, chain):
         game.add_message("The calculation diverges.", 'warning')
         return
     targets = [m for m in _in_reach(game) if game._sees_monster(m)
-               and not is_boss_or_huge(m)]
+               and not is_boss_or_huge(m) and _can_hold(m, 'paralyzed')]
     if not targets:
         game.add_message("No tractable target.", 'warning')
         return NOTHING
     targets.sort(key=lambda m: max(abs(m.x - game.player.x), abs(m.y - game.player.y)))
     target = targets[0]
-    cur = target.status_effects.get('paralyzed', 0)
-    target.status_effects['paralyzed'] = max(cur, par)
+    _hold(target, 'paralyzed', par)
     if slow:
-        cur = target.status_effects.get('slowed', 0)
-        target.status_effects['slowed'] = max(cur, slow)
+        _hold(target, 'slowed', slow)
     game.add_message(f"{the_name(target)} freezes in {pronouns(target)[2]} loop.", 'success')
 
 

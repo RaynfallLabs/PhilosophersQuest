@@ -60,7 +60,9 @@ KINDS = [
         'effects': {}, 'unidentified_name': 'a ring'}),
     ('ring_of_sustenance', 'sustenance', 'ring_sustenance_amber', {
         'name': 'ring of sustenance', 'min_level': 1, 'weight_by_floor': 8,
-        'effects': {'status': 'sustained', 'duration': -1}, 'unidentified_name': 'a ring'}),
+        # (No Sustained: the kind's hunger ladder is its power, and Sustained
+        # comes only from a big dish. Bug bash 3.6.1, 2026-11-22.)
+        'effects': {}, 'unidentified_name': 'a ring'}),
     ('ring_of_wizardry', 'wizardry', None, {
         'name': 'ring of wizardry', 'symbol': '=', 'color': [150, 120, 230],
         'weight': 0.1, 'slot': 'ring', 'min_level': 1, 'weight_by_floor': 8,

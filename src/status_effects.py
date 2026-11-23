@@ -853,7 +853,10 @@ def apply_effect(player, effect: str, duration: int, cap: int | None = None) -> 
     for resist, blocked in _RESIST_BLOCKS.items():
         if effect in blocked and player.has_effect(resist):
             return False
-    if effect == 'blinded' and duration != 0 and _gall_saves_sight(player):
+    # The gall answers a darkness that comes on him (a blow, a spell, a
+    # trap), never one he wears (-1: the Blindfold): tying it on used the
+    # gall up, and the blindfold still left him in the dark.
+    if effect == 'blinded' and duration > 0 and _gall_saves_sight(player):
         return False
     if effect == 'burning' and duration != 0:
         # Body armour that will not catch (dragonscale: gear_rules wards
