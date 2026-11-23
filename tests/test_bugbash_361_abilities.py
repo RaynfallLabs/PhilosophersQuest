@@ -469,18 +469,6 @@ def test_a_cure_power_leaves_what_the_gear_holds():
     assert not p.status_effects.get('poisoned')
 
 
-def test_phoenix_rising_heals_through_disease():
-    """Phoenix Rising set health to full by hand, past Grave Rot (ruling D5:
-    every heal goes through disease)."""
-    g = _game()
-    p = g.player
-    p.hp = 1
-    p.status_effects['diseased'] = 30
-    p.power_uses['phoenix_rising'] = 1
-    g._activate_power('phoenix_rising')
-    assert 1 < p.hp < p.max_hp
-
-
 def test_the_lyre_holds_the_nearest_foe_that_can_be_held():
     """The Lyre of Orpheus and the Hand of Glory spent a charge on the
     nearest creature even when it could not be held and another could."""

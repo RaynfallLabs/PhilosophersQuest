@@ -1663,11 +1663,11 @@ class MenuMixin:
             self.add_message(f"{label}: The gorgon's ward wraps around you -- Sleep Resist + Displacement 15t.", 'success')
 
         elif pid == 'phoenix_rising':
-            # Through disease like any heal (ruling D5): it set health to
-            # full by hand, past Grave Rot's halving and a heal block.
-            pl.restore_hp(pl.max_hp - pl.hp)
-            self.add_message(f"{label}: " + grave_rot.whole(
-                pl, "You rise from the ashes -- HP fully restored!"), 'success')
+            # (Not through disease: ruling D5 named the specials, the Wish
+            # and Restore Body; docs/systems/monsters.md keeps Phoenix
+            # Rising's full restore apart.)
+            pl.hp = pl.max_hp
+            self.add_message(f"{label}: You rise from the ashes -- HP fully restored!", 'success')
 
         elif pid == 'iron_will':
             pl.add_effect('shielded', 10)
