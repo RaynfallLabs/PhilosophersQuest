@@ -390,6 +390,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # quiz. The old "+ mastery" step is gone -- masteries were removed
         # in the 2026-08-06 identify-v3 redesign (commit 2778305).
         self._scroll_identify_pending: bool = False
+        # How far that pick reaches: 'sort' (the Scroll of Identify) names
+        # every other unknown thing of the chosen one's sort he carries too.
+        self._scroll_identify_reach: str = ''
         # The cook menu (game_menus._open_cook_menu): each tab's rows as
         # kitchen.menu_rows gave them, the tab shown, the tab it opened on
         # and why.
@@ -2422,12 +2425,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # still holds the floor just left at this point).
                 _arrival_fov = calculate_fov(self.dungeon, self.player.x, self.player.y,
                                              self.player.get_sight_radius())
+                _held = 0
                 for m in self.monsters:
                     if m.alive and (m.x, m.y) in _arrival_fov:
-                        m.add_effect('paralyzed', 10)
-                self.add_message(
-                    "Atalanta's choice! Time itself pauses for you to breathe.",
-                    'success')
+                        _held += 1 if m.add_effect('paralyzed', 10) else 0
+                # Said only when something was held: with no one in sight
+                # (or only what cannot be held) it told of a pause that froze
+                # nothing.
+                if _held:
+                    self.add_message(
+                        "Atalanta's choice! Time itself pauses for you to breathe.",
+                        'success')
         except ImportError:
             pass
 
@@ -2546,8 +2554,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if _new_depth and getattr(self.player, 'quirk_progress', {}).get('orpheus_active'):
                 for m in self.monsters:
                     if m.alive:
-                        m.status_effects['slowed'] = max(
-                            m.status_effects.get('slowed', 0), 5)
+                        m.hold('slowed', 5)      # (what its nature refuses: Monster.hold)
 
         # Grant HP/SP/MP rest-heal on FIRST visit only. Revisits (e.g.
         # stair-stomping between two floors to grind SP) get nothing —
@@ -3286,6 +3293,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         self.visible.add((_mm.x, _mm.y))
         except ImportError:
             pass
+        # Meleager's Boar-Spear (reveal_tag_on_chain_5_kill): the beasts it
+        # marked on a top-of-the-chain kill are shown for their turns, as the
+        # senses above show what they reach. The marks were set and nothing
+        # read them.
+        if int(getattr(self.player, '_revealed_tag_turns_left', 0) or 0) > 0:
+            _marked = getattr(self.player, '_revealed_tag_ids', None) or ()
+            for _mm in self.monsters:
+                if getattr(_mm, 'alive', False) and id(_mm) in _marked:
+                    self.visible.add((_mm.x, _mm.y))
 
         # Palladium: reveal stairs through walls
         _has_palladium = any(getattr(i, 'id', '') == 'palladium' for i in self.player.inventory)
@@ -3324,11 +3340,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         try:
             from chain_passives import player_has_passive
             if player_has_passive(self.player, 'beautiful_ruin') and self.monsters:
+                # The strongest the hero SEES (a lurker unseen in its tile is
+                # not in sight), stirred against him as an alarm stirs it
+                # (senses.rouse: it knows where he is and comes). It only set
+                # _aware, which unmasked a mimic without springing it and
+                # sent nothing after him.
+                from monster import is_bystander as _bys
                 _visible_alive = [m for m in self.monsters
-                                  if m.alive and (m.x, m.y) in self.visible]
+                                  if m.alive and self._sees_monster(m) and not _bys(m)]
                 if _visible_alive:
+                    import senses as _sn_br
                     _strongest = max(_visible_alive, key=lambda m: m.max_hp)
-                    _strongest._aware = True
+                    _sn_br.rouse(_strongest, self.player.x, self.player.y)
         except ImportError:
             pass
 
@@ -3385,18 +3408,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if getattr(self.player, '_paths_armed', False):
             try:
                 from chain_passives import consume_run_passive as _crp, player_has_passive as _php
+                # Only a foe that can take the charm: the run's one use went
+                # on the strongest in sight, often a named foe, a mindless
+                # thing or one of the dead, which refuse it (resists_control).
+                from hero_specials import _can_hold as _takes
                 _cands = [m for m in _reached
-                          if self._sees_monster(m)
-                          and not getattr(m, 'is_boss', False)]
+                          if getattr(m, 'alive', False) and self._sees_monster(m)
+                          and not getattr(m, 'is_boss', False)
+                          and _takes(m, 'charmed')]
                 if not _php(self.player, 'paths_of_the_dead'):
                     self.player._paths_armed = False
                 elif _cands and _crp(self.player, 'paths_of_the_dead'):
                     self.player._paths_armed = False
                     _ally = max(_cands, key=lambda m: m.max_hp)
                     _ally.add_effect('charmed', 30)
+                    # (A charm holds its blow; it does not fight for him.)
+                    from monster import pronouns as _prn_pd
                     self.add_message(
-                        f"The Paths of the Dead open: {the_name(_ally, lower=True)} bends to your service for 30 turns!",
-                        'success')
+                        f"The Paths of the Dead open: {the_name(_ally, lower=True)} "
+                        f"lowers {_prn_pd(_ally)[2]} guard.", 'success')
             except ImportError:
                 pass
 
@@ -3419,10 +3449,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 player_has_passive, consume_passive_charge,
             )
             for _tag, _flag, _dur, _msg in (
+                # (A charm holds the creature's blow; it does not fight for
+                # him: "bound to your will" and "to your service" promised
+                # an ally, and the card says "will not attack you".)
                 ('demon', 'seventy_two_seals', 50,
-                 "By the Seventy-Two Seals, the {name} is bound to your will!"),
+                 "By the Seventy-Two Seals, the {name} is bound from striking you."),
                 ('demon', 'demon_command_one_per_floor', 20,
-                 "Solomon's seal compels the {name} to your service!"),
+                 "Solomon's seal stays the {name}'s hand."),
                 ('undead', 'command_undead', 15,
                  "Aragorn's helm overawes the {name}!"),
             ):
@@ -3495,9 +3528,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if m._is_named_foe():
                         continue
                     m._solomon_rolled = True
-                    if _rng.random() < _pac_chance:
-                        m.status_effects['sleeping'] = max(
-                            m.status_effects.get('sleeping', 0), 15)
+                    # Through Monster.hold: a demon that by nature never
+                    # sleeps (status_immune) is not put to sleep, nor told so.
+                    if _rng.random() < _pac_chance and not m.resists_control('sleeping'):
+                        m.hold('sleeping', 15)
                         self.add_message(
                             f"The Ring of Solomon pacifies {the_name(m, lower=True)}!", 'success')
         except ImportError:
@@ -4619,7 +4653,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             '_death_save_used_this_floor', '_seven_league_used_this_floor',
                             '_gold_offering_used_this_floor', '_eluned_auto_invis_used',
                             '_hypatia_protected_used', '_gorgoneion_used_this_floor',
-                            '_fallen_cover_used')
+                            '_fallen_cover_used',
+                            # the Ring of Mastery's daimonion: its stops a floor
+                            '_daimonion_used')
 
     def _once_a_floor_state(self) -> dict:
         p = self.player
@@ -5270,10 +5306,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if m.alive and abs(m.x - self.player.x) <= 2 and abs(m.y - self.player.y) <= 2:
                         # Two turns (one was ticked off before the monster
                         # ever lost an action, so the ring did nothing), and
-                        # never a named foe.
+                        # never a named foe. Through Monster.hold, as the Lyre
+                        # and the Hand of Glory: what by nature cannot be held
+                        # (status_immune) is not held. It was written straight
+                        # in, and held the golem and the ooze as well.
                         if not m._is_named_foe() and random.random() < _acc.pacify_chance:
-                            m.status_effects['paralyzed'] = max(
-                                m.status_effects.get('paralyzed', 0), 2)
+                            m.hold('paralyzed', 2)
 
         # Clairvoyant: reveal tiles within 10-tile radius each turn.
         if self.player.has_effect('clairvoyant'):
@@ -5432,8 +5470,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                               and abs(_mm.x - self.player.x) <= 1
                               and abs(_mm.y - self.player.y) <= 1
                               and not (_mm.x == self.player.x and _mm.y == self.player.y))
-                    if _adj >= 3:
-                        self.player.add_effect('shielded', 3)
+                    # (Spent only when the shield takes: see the Ring of Eluned.)
+                    if _adj >= 3 and self.player.add_effect('shielded', 3):
                         self.player._hypatia_protected_used = True
                         self.add_message(
                             "Hypatia's ring shields you from the mob — shielded 3 turns!",
@@ -5441,12 +5479,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         break
 
         # Ring of Eluned (auto_invisible_at_low_hp): once/floor, drop below 25% HP -> invisible 10t.
+        # The floor's use is spent only when the veil takes: the ring's own
+        # Invisible is permanent, so add_effect refused the 10 turns while
+        # "Luned's ring veils you" was said and the use was gone.
         if not getattr(self.player, '_eluned_auto_invis_used', False) and \
                 self.player.hp > 0 and self.player.max_hp > 0 and \
                 self.player.hp / self.player.max_hp < 0.25:
             for _acc in self.player.equipped_accessories:
                 if getattr(_acc, 'auto_invisible_at_low_hp', False):
-                    self.player.add_effect('invisible', 10)
+                    if not self.player.add_effect('invisible', 10):
+                        break
                     self.player._eluned_auto_invis_used = True
                     self.add_message(
                         "Luned's ring veils you from sight — invisible 10 turns!",
@@ -6637,10 +6679,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _snd.play('gold')
                 self._advance_turn()
             return
-        if isinstance(item, Lockpick):
+        if isinstance(item, Lockpick) and getattr(item, 'id', '') != 'master_lockpick':
             # Lockpicks are no longer needed — player already has the Master
             # Lockpick from char-creation. Treat floor picks as a small gold
             # find so the item isn't a dead drop if old saves still have it.
+            # (Never the Master Lockpick itself: dropped and picked up again,
+            # the hero's own kit was sold for scrap and gone.)
             import economy
             _scrap = max(5, economy.share(self.dungeon_level, economy.SCRAP_SHARE))
             self.ground_items.remove(item)
@@ -8836,7 +8880,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _daimonion_stops(self) -> bool:
         """The quiz engine asks on a wrong choice: does a worn ring's
         daimonion (the Philosopher's Ring of Mastery) stop it? Each ring
-        stops its `daimonion` choices a floor (reset on every floor change)."""
+        stops its `daimonion` choices a floor (given back on a floor reached
+        for the first time, as every once-a-floor charge is: a stair up and
+        back down gave them all again)."""
         p = self.player
         rings = [a for a in p.equipped_accessories if int(getattr(a, 'daimonion', 0) or 0) > 0]
         if not rings:

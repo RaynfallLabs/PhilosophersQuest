@@ -209,7 +209,7 @@ run and consumes itself.
 |------|-------|--------------|
 | 1 | varies | `excalibur` (weapon, `is_unique`) spawns through the normal Gaussian unique pool (`peak_floor` + `peak_weight`). |
 | 2 | combat | While equipped, each kill restores `kill_heal_amount` HP (purity signature). |
-| 3 | HP ≤ 25% | **`cast_me_away` fires once per run**: the next attack drains the weapon's enchantment / effect for a one-shot burst, after which Excalibur is spent. |
+| 3 | HP ≤ 25% | **`cast_me_away` fires once per run**: a blow that leaves the wielder at a quarter of his health or less, while he holds no Life Save, takes one point of the blade's enchantment and gives him Life Save again (`Player.take_damage`). While its first Life Save (or an amulet's) is held it waits: it used to be spent then, refused, for nothing (bug bash 3.6.1). |
 
 Flag: `cast_me_away` in `items.py:425-427`. Doc/data mismatch logged
 in SYSTEMS_AUDIT §3 (`chainMultipliers` peak 2.0 vs `design_notes`

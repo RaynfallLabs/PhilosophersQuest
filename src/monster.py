@@ -24,6 +24,7 @@ import second_shape
 import surprise
 import lanes            # Archers Find a Lane (AI-2)
 import tactical_mind    # the Tactical Mind (AI-2)
+import under_fire       # Answers Being Shot (2026-11-22)
 
 
 # Ceiling on escalating rage (Fenrir, and the mini-bosses that borrow his
@@ -1657,6 +1658,22 @@ class Monster:
                 if _at_range:
                     return 0, (f"{the_name(self)} turns {_his} face full on you. "
                                f"You see nothing, and nothing happens.")
+            # Check mirror shield (Aegis): reflects gaze back. Asked before
+            # the plain proofs below, which only stop the gaze: the Greater
+            # Aegis is stoneproof from its first tier, and that check, asked
+            # first, kept its mirror from ever turning a gaze.
+            elif getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
+                _counters.fired(_counters.GAZE, self)
+                player._reflected_back = True      # read by game_combat for Perseus's trait
+                # She loses this turn and the next, and does NOT also attack.
+                # (It used to set 1 turn, which the next status tick removed
+                # before she ever lost an action, and then she hit anyway.)
+                # With a gaze every gaze_cooldown turns this is about half
+                # her actions, which is what CURVE.md asks of the Aegis.
+                self.status_effects['paralyzed'] = max(
+                    self.status_effects.get('paralyzed', 0), 2)
+                return 0, (f"{the_name(self)} meets {_his} own eyes in the bronze "
+                           f"and stands rigid, snakes and all.")
             # Proof against petrification (Medusa's trophy, the Greater
             # Aegis). The status existed but nothing consulted it: every gaze
             # paralyses, so the reward protected against nothing.
@@ -1673,19 +1690,6 @@ class Monster:
                             f"of your shield, and the gaze slides off.")
                 if _at_range:
                     return 0, gaze_msg
-            # Check mirror shield (Aegis): reflects gaze back
-            elif getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
-                _counters.fired(_counters.GAZE, self)
-                player._reflected_back = True      # read by game_combat for Perseus's trait
-                # She loses this turn and the next, and does NOT also attack.
-                # (It used to set 1 turn, which the next status tick removed
-                # before she ever lost an action, and then she hit anyway.)
-                # With a gaze every gaze_cooldown turns this is about half
-                # her actions, which is what CURVE.md asks of the Aegis.
-                self.status_effects['paralyzed'] = max(
-                    self.status_effects.get('paralyzed', 0), 2)
-                return 0, (f"{the_name(self)} meets {_his} own eyes in the bronze "
-                           f"and stands rigid, snakes and all.")
             # Any other mirror shield (counters.py): watched in its face, the
             # gaze cannot take the hero (it is not the Aegis: no reflection).
             elif _mirror is not None:
@@ -2324,7 +2328,13 @@ class Monster:
         # ("is stunned!") and then read by nothing.
         if (self.has_effect('sleeping') or self.has_effect('paralyzed')
                 or self.has_effect('stunned') or self.has_effect('frozen')):
+            under_fire.stop(self)
             return False
+
+        # Was it shot since its last turn (an arrow, a bolt, a spell from
+        # across the room)? What it does about it is its kind's nature
+        # (src/under_fire.py): a charger rushes, a thinking kind takes cover.
+        under_fire.note(self, player, tactical_mind.TURN.pets)
 
         # A hound of a pack that bayed keeps the hero's scent (src/packs.py).
         if self.__dict__.get('_scent_left'):
@@ -2422,8 +2432,10 @@ class Monster:
         # (sessile, a mimic still in disguise) cannot flee or stumble.
         if self.ai_pattern not in ('sessile', 'mimic'):
             if self._under('feared'):
-                self._flee_from(player, dungeon, all_monsters, extra_occupied)
-                return False
+                # It runs along a real way; cornered beside the hero it
+                # turns at bay (src/morale.py), never cowers under blows.
+                under_fire.stop(self)
+                return morale.frightened_turn(self, player, dungeon, all_monsters, extra_occupied)
             if self._under('charmed'):
                 # A charmed creature will not raise a hand against the player.
                 self._wander(dungeon, all_monsters, extra_occupied, player)
@@ -2479,6 +2491,7 @@ class Monster:
         # that bolted keeps away for good; one that yielded never strikes.
         _run = morale.run(self, player, dungeon, all_monsters, extra_occupied)
         if _run is not None:
+            under_fire.stop(self)
             return _run
 
         # The lore powers of the 2026-11-19 kinds (src/lore_powers.py): fed or
@@ -2488,9 +2501,11 @@ class Monster:
             return _lp
 
         # Its pattern's turn; a blow of it beside the hero is its first
-        # blow's pounce, whatever the pattern (_first_blow).
-        return self._first_blow(
-            player, self._pattern_turn(player, dungeon, all_monsters, extra_occupied))
+        # blow's pounce, whatever the pattern (_first_blow). A charger's
+        # rush spends a stride (src/under_fire.py).
+        struck = self._pattern_turn(player, dungeon, all_monsters, extra_occupied)
+        under_fire.spend_rush(self, player)
+        return self._first_blow(player, struck)
 
     def _pattern_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Its own way of fighting (take_turn, after every gate)."""
@@ -2649,6 +2664,10 @@ class Monster:
 
         # (Fear / charm / confusion / blindness are handled near the top of
         # take_turn so every AI pattern honours them.)
+
+        # A charger shot from afar rushes him (src/under_fire.py).
+        if effective_pattern == 'aggressive':
+            under_fire.start_rush(self, player)
 
         _tm = tactical_mind.turn(self, player, dungeon, all_monsters, extra_occupied, effective_pattern)
         if _tm is not None:                  # the Tactical Mind (src/tactical_mind.py, AI-2)
@@ -2825,6 +2844,8 @@ class Monster:
     def _standard_move(self, player, dungeon, all_monsters, extra_occupied, effective_pattern):
         """Standard movement logic used by aggressive/cowardly AI."""
         move_steps = 2 if self.speed >= 14 else 1
+        if effective_pattern != 'cowardly':
+            move_steps = under_fire.steps(self, move_steps)     # a charger's rush
         # A hunter with no clear view of the hero (it has his scent, hears
         # him, feels his steps) follows a real path round the walls; one that
         # sees him charges straight in, and takes the path only when the

@@ -485,9 +485,9 @@ class Player:
         _sh = getattr(self, 'shield', None)
         _cover = int(getattr(_sh, 'fallen_cover_turns', 0) or 0) if _sh is not None else 0
         if (_cover > 0 and actual > 0 and 0 < self.hp <= self.max_hp * 0.25
-                and not getattr(self, '_fallen_cover_used', False)):
+                and not getattr(self, '_fallen_cover_used', False)
+                and self.add_effect('shielded', _cover)):
             self._fallen_cover_used = True
-            self.add_effect('shielded', _cover)
             _g = getattr(self, '_combat_game_ref', None)
             if _g is not None and hasattr(_g, 'add_message'):
                 _nm = _g._bare_name(_sh) if hasattr(_g, '_bare_name') else _sh.name
@@ -499,13 +499,18 @@ class Player:
         # per run — _cast_me_away_used is a run-wide flag. Per audit
         # 2026-05-30 — the JSON flag was inert. Lore: "the blade keeps
         # Arthur alive once, then dims."
+        # Only while no Life Save is held (its card: "of use only once its
+        # first is spent"): the blade's own first ward, or an amulet's, used
+        # to be refused the second (it is permanent already) while the run's
+        # one use and the enchantment point were spent all the same.
         if (self.hp > 0 and self.hp <= self.max_hp * 0.25
                 and self.weapon
                 and getattr(self.weapon, 'cast_me_away', False)
-                and not getattr(self, '_cast_me_away_used', False)):
+                and not getattr(self, '_cast_me_away_used', False)
+                and not self.has_effect('life_save')
+                and self.add_effect('life_save', -1)):
             self._cast_me_away_used = True
             self.weapon.enchant_bonus = max(0, self.weapon.enchant_bonus - 1)
-            self.add_effect('life_save', -1)
 
         # Engine wave 3: combat-tracker hooks. (Fail-not's vow reads full
         # health now, combat._vow_holds: its old hurt-this-combat flag was

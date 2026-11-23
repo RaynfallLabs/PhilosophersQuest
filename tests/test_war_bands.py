@@ -117,8 +117,17 @@ def test_the_leader_falls_and_the_band_breaks():
     rest = [m for m in members if m is not leader]
     b = war_bands.data()['bands'][leader._band_id]
     if b['morale'] == 'rout':
-        assert all(m.has_effect('feared') or m.fearless for m in rest)
-    assert all(not war_bands.holds_nerve(m) for m in rest)
+        # Each follower tests his nerve (no hero here: on his next turn), or
+        # one of them took up the lead; none is simply frightened.
+        new = out.get('successor')
+        assert not any(m.has_effect('feared') for m in rest)
+        for m in rest:
+            if m is new:
+                assert m._band_role == 'leader'
+            elif new is None:
+                assert m._morale_check == 'leader' or not m.__dict__.get('_band_leader')
+    else:
+        assert all(not war_bands.holds_nerve(m) for m in rest)
 
 
 def test_a_necromancers_dead_crumble_with_him():
@@ -151,7 +160,11 @@ def test_a_great_blow_on_the_leader_shakes_them():
     for g in gobs:
         g._band, g._band_id, g._band_role, g._band_leader = 'u', 'goblin_raiders', 'guard', lead
     assert war_bands.on_great_blow([lead] + gobs, lead, 3) == ''
-    line = war_bands.on_great_blow([lead] + gobs, lead, 7)
+    # A great blow is great (data great_blow): a chain of 8 and a third of
+    # his health; an ordinary chain of 7, or a scratch, shakes no one.
+    assert war_bands.on_great_blow([lead] + gobs, lead, 7) == ''
+    assert war_bands.on_great_blow([lead] + gobs, lead, 9, damage=1) == ''
+    line = war_bands.on_great_blow([lead] + gobs, lead, 8, damage=lead.max_hp // 3 + 1)
     assert line and any(g.has_effect('feared') for g in gobs)
 
 

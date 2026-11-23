@@ -120,7 +120,8 @@
       "radius": 10,
       "line": "{The} yells to the others!",
       "line_unseen": "Somewhere near, a thin voice yells."
-    }
+    },
+    "morale": 10
   },
   "grid_bug": {
     "name": "grid bug",
@@ -282,7 +283,8 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "morale": 5
   },
   "cobra": {
     "name": "cobra",
@@ -343,7 +345,8 @@
     "opener": {
       "attack": "Venomous Bite",
       "range": 1
-    }
+    },
+    "morale": 11
   },
   "zombie": {
     "name": "zombie",
@@ -890,7 +893,8 @@
       "radius": 10,
       "line": "{The} yaps a warning!",
       "line_unseen": "Somewhere ahead, a shrill yapping."
-    }
+    },
+    "morale": 8
   },
   "cave_spider": {
     "name": "cave spider",
@@ -1077,7 +1081,8 @@
       "effect_duration": 2,
       "line": "{The}'s glands burst in a spray of fire!",
       "warn_line": "{The}'s glands glow white-hot!"
-    }
+    },
+    "morale": 8
   },
   "orc_scout": {
     "name": "orc scout",
@@ -1131,7 +1136,8 @@
       "radius": 12,
       "line": "{The} bellows a warning!",
       "line_unseen": "A bellow of warning, not far off."
-    }
+    },
+    "morale": 11
   },
   "gnoll": {
     "name": "gnoll",
@@ -1196,7 +1202,8 @@
       "radius": 12,
       "line": "{The} lets out a whooping laugh!",
       "line_unseen": "A whooping laugh echoes from somewhere near."
-    }
+    },
+    "morale": 11
   },
   "hobgoblin": {
     "name": "hobgoblin",
@@ -1250,7 +1257,8 @@
       "radius": 10,
       "line": "{The} shouts an order!",
       "line_unseen": "Somewhere near, a harsh order is shouted."
-    }
+    },
+    "morale": 13
   },
   "ghoul": {
     "name": "ghoul",
@@ -1384,7 +1392,8 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "morale": 7
   },
   "acid_blob": {
     "name": "acid blob",
@@ -1515,7 +1524,9 @@
     "turns_to_stone_in_light": true,
     "territorial": true,
     "lair_radius": 7,
-    "lair_line": "{The} stops at the edge of {his} lair and watches you go."
+    "lair_line": "{The} stops at the edge of {his} lair and watches you go.",
+    "morale": 17,
+    "rush": true
   },
   "orc_warrior": {
     "name": "orc warrior",
@@ -1569,7 +1580,9 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "morale": 14,
+    "rush": true
   },
   "dark_elf": {
     "name": "dark elf",
@@ -1808,7 +1821,9 @@
     "opener": {
       "attack": "Claw",
       "range": 1
-    }
+    },
+    "morale": 14,
+    "rush": true
   },
   "ogre": {
     "name": "ogre",
@@ -1862,7 +1877,9 @@
     "status_immune": [],
     "status_weak": [
       "confused"
-    ]
+    ],
+    "morale": 13,
+    "rush": true
   },
   "shadow": {
     "name": "shadow",
@@ -2493,7 +2510,8 @@
     "opener": {
       "attack": "Gore",
       "range": 1
-    }
+    },
+    "rush": true
   },
   "frost_crawler": {
     "name": "frost crawler",
@@ -4576,7 +4594,8 @@
         },
         "cast": "{The} howls the name of {his} god at you."
       }
-    ]
+    ],
+    "morale": 11
   },
   "giant_centipede": {
     "name": "giant centipede",
@@ -4636,7 +4655,8 @@
     "thac0_lore": 20,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 8
   },
   "skeletal_archer": {
     "name": "skeleton bowman",
@@ -4770,7 +4790,8 @@
     "opener": {
       "attack": "Acid Spit",
       "range": 3
-    }
+    },
+    "morale": 7
   },
   "brigand": {
     "name": "brigand",
@@ -4831,7 +4852,8 @@
     "thac0_lore": 20,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 9
   },
   "shadow_hound": {
     "name": "shadow hound",
@@ -5060,7 +5082,8 @@
       "radius": 12,
       "line": "{The} shrieks!",
       "line_unseen": "A shriek, somewhere near."
-    }
+    },
+    "morale": 9
   },
   "necromancer_apprentice": {
     "name": "necromancer apprentice",
@@ -5138,7 +5161,8 @@
         },
         "cast": "{The}'s chant ends: grave-dust rises about {him} and hangs in the air."
       }
-    ]
+    ],
+    "morale": 10
   },
   "stymphalian_bird": {
     "name": "Stymphalian Bird",
@@ -8305,7 +8329,8 @@
     "opener": {
       "attack": "Savage Bite",
       "range": 1
-    }
+    },
+    "morale": 15
   },
   "puca": {
     "name": "Púca",
@@ -11574,7 +11599,9 @@
     "opener": {
       "attack": "Claws",
       "range": 1
-    }
+    },
+    "morale": 17,
+    "rush": true
   },
   "black_pudding": {
     "name": "Black Pudding",
@@ -12081,7 +12108,8 @@
     "thac0_lore": 13,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 12
   },
   "rot_grub_swarm": {
     "name": "Rot Grub Swarm",
@@ -12352,7 +12380,8 @@
     "thac0_lore": 15,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 14
   },
   "lizardfolk": {
     "name": "Lizardfolk",
@@ -12411,7 +12440,7 @@
     "status_immune": [],
     "status_weak": [],
     "morale_style": "regroup",
-    "morale": 8
+    "morale": 12
   },
   "lizardfolk_shaman": {
     "name": "Lizardfolk Shaman",
@@ -12483,7 +12512,8 @@
     "opener": {
       "attack": "Venom Spit",
       "range": 4
-    }
+    },
+    "morale": 12
   },
   "troglodyte": {
     "name": "Troglodyte",
@@ -12550,7 +12580,8 @@
       3
     ],
     "morale_style": "regroup",
-    "morale": 8
+    "morale": 14,
+    "rush": true
   },
   "kobold_sorcerer": {
     "name": "Kobold Sorcerer",
@@ -12628,7 +12659,8 @@
         },
         "cast": "{The} spits a word, and your light gutters out."
       }
-    ]
+    ],
+    "morale": 8
   },
   "bullywug": {
     "name": "Bullywug",
@@ -12758,7 +12790,8 @@
     "thac0_lore": 18,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 14
   },
   "behir_lesser": {
     "name": "Lesser Behir",
@@ -13229,7 +13262,8 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "morale": 12
   },
   "phase_spider": {
     "name": "Phase Spider",
@@ -18060,7 +18094,8 @@
     "shrugs_off": [],
     "status_immune": [],
     "status_weak": [],
-    "multi_attack_count": 2
+    "multi_attack_count": 2,
+    "morale": 15
   },
   "giant_wasp": {
     "name": "giant wasp",
@@ -18118,7 +18153,8 @@
     "opener": {
       "attack": "Sting",
       "range": 1
-    }
+    },
+    "morale": 14
   },
   "giant_beetle": {
     "name": "giant beetle",
@@ -18170,7 +18206,8 @@
     "thac0_lore": 21,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 10
   },
   "giant_mantis": {
     "name": "giant mantis",
@@ -18235,7 +18272,8 @@
     "opener": {
       "attack": "Raptorial Strike",
       "range": 1
-    }
+    },
+    "morale": 12
   },
   "spider_queen": {
     "name": "spider queen",
@@ -18683,7 +18721,8 @@
     "opener": {
       "attack": "Bite",
       "range": 1
-    }
+    },
+    "morale": 11
   },
   "komodo_brute": {
     "name": "komodo brute",
@@ -18745,7 +18784,8 @@
     "thac0_lore": 14,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 13
   },
   "giant_frog": {
     "name": "giant frog",
@@ -18862,7 +18902,8 @@
     "thac0_lore": 18,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 9
   },
   "swamp_serpent": {
     "name": "swamp serpent",
@@ -18919,7 +18960,8 @@
     "status_immune": [],
     "status_weak": [
       "charmed"
-    ]
+    ],
+    "morale": 10
   },
   "sea_snake": {
     "name": "sea snake",
@@ -18975,7 +19017,8 @@
     "status_immune": [],
     "status_weak": [
       "charmed"
-    ]
+    ],
+    "morale": 9
   },
   "dire_lion": {
     "name": "dire lion",
@@ -19101,7 +19144,9 @@
     "status_weak": [
       "fear_of_fire"
     ],
-    "multi_attack_count": 2
+    "multi_attack_count": 2,
+    "morale": 15,
+    "rush": true
   },
   "wolf_pack_leader": {
     "name": "wolf pack leader",
@@ -19169,7 +19214,8 @@
     "opener": {
       "attack": "Howl",
       "range": 4
-    }
+    },
+    "morale": 15
   },
   "werewolf": {
     "name": "werewolf",
@@ -19388,7 +19434,8 @@
     "shrugs_off": [],
     "status_immune": [],
     "status_weak": [],
-    "multi_attack_count": 2
+    "multi_attack_count": 2,
+    "rush": true
   },
   "wererat": {
     "name": "wererat",
@@ -19676,7 +19723,8 @@
     },
     "can_phase_blink": true,
     "phase_blink_chance": 0.25,
-    "blink_needs_sight": true
+    "blink_needs_sight": true,
+    "morale": 10
   },
   "death_dog": {
     "name": "death dog",
@@ -19746,7 +19794,8 @@
     "opener": {
       "attack": "Bite",
       "range": 1
-    }
+    },
+    "morale": 14
   },
   "giant_eagle": {
     "name": "giant eagle",
@@ -19806,7 +19855,8 @@
     "opener": {
       "attack": "Talon Strike",
       "range": 1
-    }
+    },
+    "morale": 12
   },
   "roc_chick": {
     "name": "roc chick",
@@ -19865,7 +19915,8 @@
     "thac0_lore": 14,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 11
   },
   "roc_adult": {
     "name": "Adult Roc",
@@ -20017,7 +20068,8 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "morale": 9
   },
   "tengu_warrior": {
     "name": "tengu warrior",
@@ -20082,7 +20134,8 @@
     "opener": {
       "attack": "Katana Strike",
       "range": 1
-    }
+    },
+    "morale": 15
   },
   "thunderbird_lesser": {
     "name": "lesser thunderbird",
@@ -22623,7 +22676,8 @@
         },
         "cast": "{The} flings a pinch of smoke at your face."
       }
-    ]
+    ],
+    "morale": 9
   },
   "goblin_king": {
     "name": "goblin king",
@@ -22692,7 +22746,8 @@
         "item": "potion_of_healing",
         "chance": 0.25
       }
-    ]
+    ],
+    "morale": 14
   },
   "hobgoblin_captain": {
     "name": "hobgoblin captain",
@@ -22756,7 +22811,8 @@
         "item": "potion_of_healing",
         "chance": 0.25
       }
-    ]
+    ],
+    "morale": 15
   },
   "hobgoblin_warlord": {
     "name": "hobgoblin warlord",
@@ -22814,7 +22870,8 @@
     "thac0_lore": 4,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 16
   },
   "bugbear": {
     "name": "bugbear",
@@ -22870,7 +22927,9 @@
     "opener": {
       "attack": "Club Smash",
       "range": 1
-    }
+    },
+    "morale": 15,
+    "rush": true
   },
   "bugbear_chieftain": {
     "name": "bugbear chieftain",
@@ -22938,7 +22997,9 @@
         "item": "potion_of_healing",
         "chance": 0.25
       }
-    ]
+    ],
+    "morale": 17,
+    "rush": true
   },
   "orc_berserker": {
     "name": "orc berserker",
@@ -22991,7 +23052,9 @@
     "opener": {
       "attack": "Frenzy Strike",
       "range": 1
-    }
+    },
+    "morale_style": "never",
+    "rush": true
   },
   "orc_warchief": {
     "name": "orc warchief",
@@ -23059,7 +23122,9 @@
         "item": "potion_of_healing",
         "chance": 0.25
       }
-    ]
+    ],
+    "morale": 16,
+    "rush": true
   },
   "bandit_captain": {
     "name": "bandit captain",
@@ -23214,7 +23279,8 @@
         },
         "cast": "{The} whispers what waits for you below."
       }
-    ]
+    ],
+    "morale": 13
   },
   "mercenary_veteran": {
     "name": "mercenary veteran",
@@ -23381,7 +23447,8 @@
         "item": "potion_of_healing",
         "chance": 0.2
       }
-    ]
+    ],
+    "morale": 12
   },
   "hill_giant": {
     "name": "hill giant",
@@ -23771,7 +23838,9 @@
     "status_weak": [
       "confused"
     ],
-    "multi_attack_count": 2
+    "multi_attack_count": 2,
+    "morale": 14,
+    "rush": true
   },
   "ice_troll": {
     "name": "ice troll",
@@ -23846,7 +23915,8 @@
       "kind": "cold",
       "radius": 1,
       "share": 0.02
-    }
+    },
+    "rush": true
   },
   "drow_warrior": {
     "name": "drow warrior",
@@ -24193,7 +24263,9 @@
     "opener": {
       "attack": "Gore",
       "range": 1
-    }
+    },
+    "morale": 18,
+    "rush": true
   },
   "young_black_dragon": {
     "name": "young black dragon",
@@ -25585,7 +25657,8 @@
     ],
     "multi_attack_count": 2,
     "light_shy": true,
-    "turns_to_stone_in_light": true
+    "turns_to_stone_in_light": true,
+    "rush": true
   },
   "wyrm": {
     "name": "wyrm",
@@ -29258,7 +29331,8 @@
       "confused"
     ],
     "light_shy": true,
-    "turns_to_stone_in_light": true
+    "turns_to_stone_in_light": true,
+    "rush": true
   },
   "elder_basilisk": {
     "name": "elder basilisk",
@@ -29559,7 +29633,9 @@
     "thac0_lore": 1,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 17,
+    "rush": true
   },
   "veteran_knight": {
     "name": "veteran knight",
@@ -30174,7 +30250,8 @@
       "confused"
     ],
     "light_shy": true,
-    "turns_to_stone_in_light": true
+    "turns_to_stone_in_light": true,
+    "rush": true
   },
   "frost_giant_jarl": {
     "name": "frost giant jarl",
@@ -33374,7 +33451,8 @@
     "opener": {
       "attack": "Shortbow",
       "range": 6
-    }
+    },
+    "morale": 12
   },
   "orc_priest": {
     "name": "orc priest",
@@ -33450,7 +33528,8 @@
         },
         "cast": "{The}'s prayer ends: {he} daubs {himself} with blood, and blows turn on it."
       }
-    ]
+    ],
+    "morale": 13
   },
   "orc_marauder": {
     "name": "orc marauder",
@@ -33517,7 +33596,9 @@
         "item": "flask_of_fire_oil",
         "chance": 0.3
       }
-    ]
+    ],
+    "morale": 15,
+    "rush": true
   },
   "orc_warbringer": {
     "name": "orc warbringer",
@@ -33577,7 +33658,9 @@
     "thac0_lore": 5,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 16,
+    "rush": true
   },
   "dread_orc_champion": {
     "name": "dread orc champion",
@@ -33639,7 +33722,9 @@
     "thac0_lore": -3,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 18,
+    "rush": true
   },
   "goblin_sniper": {
     "name": "goblin sniper",
@@ -33712,7 +33797,8 @@
       "radius": 10,
       "line": "{The} whistles shrilly!",
       "line_unseen": "A shrill whistle, close by."
-    }
+    },
+    "morale": 10
   },
   "goblin_warpriest": {
     "name": "goblin warpriest",
@@ -33789,7 +33875,8 @@
         },
         "cast": "{The}'s chant ends: greasy smoke wraps about {him}, and blows slide off it."
       }
-    ]
+    ],
+    "morale": 13
   },
   "hobgoblin_marshal": {
     "name": "hobgoblin marshal",
@@ -33855,7 +33942,8 @@
         "item": "potion_of_extra_healing",
         "chance": 0.3
       }
-    ]
+    ],
+    "morale": 16
   },
   "goblin_kingslayer": {
     "name": "goblin kingslayer",
@@ -33932,7 +34020,8 @@
     "opener": {
       "attack": "Throat Slash",
       "range": 1
-    }
+    },
+    "morale": 15
   },
   "skeleton_necromancer": {
     "name": "skeleton necromancer",
@@ -34318,7 +34407,8 @@
       "radius": 10,
       "line": "{The} shrieks a warning!",
       "line_unseen": "Somewhere near, a shrill shriek."
-    }
+    },
+    "morale": 8
   },
   "kobold_dragonshield": {
     "name": "kobold dragonshield",
@@ -34380,7 +34470,8 @@
     "thac0_lore": 8,
     "shrugs_off": [],
     "status_immune": [],
-    "status_weak": []
+    "status_weak": [],
+    "morale": 15
   },
   "kobold_pack_leader": {
     "name": "kobold pack leader",
@@ -34446,7 +34537,8 @@
       "radius": 12,
       "line": "{The} barks an order, and the warren stirs!",
       "line_unseen": "A barked order echoes, and something stirs."
-    }
+    },
+    "morale": 12
   },
   "gnoll_archer": {
     "name": "gnoll archer",
@@ -34521,7 +34613,8 @@
     "opener": {
       "attack": "Yew Longbow",
       "range": 6
-    }
+    },
+    "morale": 11
   },
   "gnoll_fang_of_yeenoghu": {
     "name": "gnoll fang of Yeenoghu",
@@ -34589,7 +34682,8 @@
     "opener": {
       "attack": "Demon-Blessed Flail",
       "range": 1
-    }
+    },
+    "morale": 16
   },
   "gnoll_alpha_of_yeenoghu": {
     "name": "gnoll alpha of Yeenoghu",
@@ -34658,7 +34752,8 @@
     "opener": {
       "attack": "Demon-Howl",
       "range": 4
-    }
+    },
+    "morale": 16
   },
   "bandit_thug": {
     "name": "bandit thug",
@@ -34744,7 +34839,8 @@
         },
         "drops": false
       }
-    ]
+    ],
+    "morale": 10
   },
   "bandit_archer": {
     "name": "bandit archer",
@@ -34819,7 +34915,8 @@
     "opener": {
       "attack": "Hunting Bow",
       "range": 6
-    }
+    },
+    "morale": 9
   },
   "bandit_thief": {
     "name": "bandit thief",
@@ -35131,7 +35228,8 @@
         },
         "cast": "{The}'s litany ends, and your feet will not move."
       }
-    ]
+    ],
+    "morale": 15
   },
   "cult_zealot": {
     "name": "cult zealot",
@@ -35939,7 +36037,9 @@
     "turns_to_stone_in_light": true,
     "territorial": true,
     "lair_radius": 7,
-    "lair_line": "{The} stops at the edge of {his} cave and watches you go."
+    "lair_line": "{The} stops at the edge of {his} cave and watches you go.",
+    "morale": 18,
+    "rush": true
   },
   "harrow_witch": {
     "name": "Harrow Witch",
@@ -44010,7 +44110,9 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "morale": 6,
+    "break_share": 0.5
   },
   "wolf": {
     "name": "wolf",
@@ -44069,7 +44171,8 @@
     "opener": {
       "attack": "Bite",
       "range": 1
-    }
+    },
+    "morale": 12
   },
   "cave_hyena": {
     "name": "cave hyena",
@@ -44124,7 +44227,8 @@
     "pack_size": [
       2,
       3
-    ]
+    ],
+    "morale": 10
   },
   "mandrake": {
     "name": "Mandrake",
@@ -44284,7 +44388,8 @@
     "appeased_by": {
       "food": "plain",
       "line": "The Kappa takes your offering, bows low, and goes back to its pool."
-    }
+    },
+    "morale": 12
   },
   "eloko": {
     "name": "Eloko",

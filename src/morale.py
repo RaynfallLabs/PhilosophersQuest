@@ -36,7 +36,15 @@ it is under half and one of its own falls within its sight; and when five
 of its blows in a row land and do nothing (it cannot hurt the foe). One
 check a trigger: it never re-arms itself. Healed above half it steadies.
 A broken creature runs along a real path, away or to its friends; cornered
-beside the hero, it turns at bay for a few turns (+2 to hit, no flight).
+beside the hero, or caught and struck by him as it runs, it turns at bay for
+a few turns (+2 to hit, no flight). A frightened one (``frightened_turn``)
+runs the same way and turns at bay when cornered.
+
+Each kind's own nerve (2026-11-22): its kind's ``morale`` in monsters.json
+by its lore (an orc warrior or a bugbear holds, a rat breaks), and its kind's
+``break_share`` where a wound tests it sooner or later (a jackal at half its
+health). The Bestiary says it in one line (``bestiary_line``). When a war-
+band's leader falls each follower tests here too (war_bands.leader_falls).
 
 Kept as they were: the galla (fearless), a war-band follower while his
 leader lives, a hyena that smells a wounded hero (packs 'harry'), the
@@ -170,19 +178,36 @@ def turn(m, player, monsters, rng=random) -> None:
     if d.get('_yielded') or d.get('_cowed'):
         return
     why = None
-    if share < float(r.get('break_share', 0.25)) and not d.get('_wound_checked'):
+    pen = None
+    if share < break_share(m) and not d.get('_wound_checked'):
         m._wound_checked = True
         why = 'wound'
     elif d.get('_morale_check'):
         why = d['_morale_check']
+        pen = d.get('_morale_penalty')       # its band's own, when its leader fell
     d.pop('_morale_check', None)
-    if why and breaks(m, int((r.get('penalty') or {}).get(why, 0)), rng):
+    d.pop('_morale_penalty', None)
+    if pen is None:
+        pen = (r.get('penalty') or {}).get(why, 0)
+    if why and breaks(m, int(pen or 0), rng):
         start_flight(m, player, monsters, rng)
+
+
+def break_share(m) -> float:
+    """The share of its health under which a wound tests its nerve: its
+    kind's own ``break_share`` where its lore says otherwise (a jackal
+    sooner, a berserker never), else the rule's quarter."""
+    own = kind_data.field(m, 'break_share', None)
+    try:
+        return float(own) if own is not None else float(rules().get('break_share', 0.25))
+    except (TypeError, ValueError):
+        return float(rules().get('break_share', 0.25))
 
 
 def start_flight(m, player, monsters, rng=random) -> None:
     r = rules()
     st = style(m)
+    m._mo_hp = m.hp                          # a fresh wound from here on is a blow as it runs
     lines = r.get('lines') or {}
     unseen = r.get('unseen') or {}
     if st in ('regroup', 'yield'):
@@ -327,6 +352,16 @@ def run(m, player, dungeon, monsters, extra_occupied):
         return cowed_turn(m, player, dungeon, monsters, extra_occupied)
     if int(getattr(m, '_flee_timer', 0) or 0) <= 0:
         return None
+    # Caught and struck as it runs (the hero beside it, its wound fresh):
+    # it turns at bay rather than take blow after blow in the back; one
+    # that would yield begs instead.
+    hp_was = d.get('_mo_hp')
+    m._mo_hp = m.hp
+    if hp_was is not None and m.hp < int(hp_was) and m._adjacent_to(player):
+        if d.pop('_yield_ready', None):
+            give_up(m)
+            return False
+        return turn_at_bay(m)
     kin = d.get('_rally_to')
     if kin is not None:
         if not getattr(kin, 'alive', False):
@@ -348,13 +383,43 @@ def run(m, player, dungeon, monsters, extra_occupied):
     if d.pop('_yield_ready', None):
         give_up(m)
         return False
+    return turn_at_bay(m)
+
+
+def turn_at_bay(m) -> bool:
+    """Cornered or caught: it turns at bay for at_bay_turns turns (better
+    to hit, no flight). True: it strikes now."""
     r = rules()
+    d = m.__dict__
     m._at_bay = int(r.get('at_bay_turns', 3))
     m._flee_timer = 0
     d.pop('_rally_to', None)
     if ai_lines.once(m, 'at_bay'):
         ai_lines.say(m, ai_lines.fill(m, (r.get('lines') or {}).get('at_bay', '')), '')
     return True
+
+
+def frightened_turn(m, player, dungeon, monsters, extra_occupied) -> bool:
+    """A frightened creature's turn (feared: a spell, a scroll, fire, a
+    band's nerve gone): it runs along a real way from the hero, the old
+    straight step only where there is none; cornered beside him, it turns
+    at bay and strikes (it used to cower there and take every blow). True
+    when it strikes."""
+    d = m.__dict__
+    if int(d.get('_at_bay', 0) or 0) > 0:
+        m._at_bay = int(d['_at_bay']) - 1
+        if m._adjacent_to(player):
+            return True
+        m._at_bay = 0
+    if flee_away(m, player, dungeon, monsters, extra_occupied):
+        return False
+    before = (m.x, m.y)
+    flee = getattr(m, '_flee_from', None)
+    if flee is not None:
+        flee(player, dungeon, monsters, extra_occupied)
+    if (m.x, m.y) != before or not m._adjacent_to(player):
+        return False
+    return turn_at_bay(m)
 
 
 def withdraw_strikes() -> float:
@@ -444,6 +509,49 @@ def kin_fell(monsters, dead, dungeon=None) -> int:
         o._morale_check = 'kin'
         n += 1
     return n
+
+
+def tell_keys(m) -> list:
+    """Its tells (data/tells.json): one that runs for its friends."""
+    try:
+        if ruled(m) and style(m) == 'regroup':
+            return ['regroups']
+    except (AttributeError, TypeError):
+        pass
+    return []
+
+
+def bestiary_line(kind) -> str:
+    """The Bestiary's one line of a kind's nerve: its morale in a word and
+    how it breaks ('' for one that never does: the Fearless line says it)."""
+    import kind_data as _kd
+
+    class _K:
+        pass
+    k = _K()
+    k.kind = str(kind or '')
+    kd = _kd.kind_def(k)
+    k.family = kd.get('family')
+    k.tags = kd.get('tags') or ()
+    k.fearless = bool(kd.get('fearless'))
+    k.status_immune = kd.get('status_immune') or ()
+    k.ai_pattern = kd.get('ai_pattern', '')
+    k.is_boss = kd.get('is_boss')
+    k.is_mini_boss = kd.get('is_mini_boss')
+    if not ruled(k):
+        return ''
+    st, score = nature(k)
+    b = rules().get('bestiary') or {}
+    words = (b.get('styles') or {}).get(st, '')
+    if not words:
+        return ''
+    if score >= int(b.get('steady_at', 15)):
+        lead = b.get('steady', '')
+    elif score <= int(b.get('shaky_at', 8)):
+        lead = b.get('shaky', '')
+    else:
+        lead = b.get('nerve', '')
+    return ' '.join(p for p in (lead, words) if p)
 
 
 def futile_blow(m, landed_for: int) -> None:

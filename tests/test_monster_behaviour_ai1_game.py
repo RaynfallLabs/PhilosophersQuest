@@ -198,7 +198,14 @@ def test_d5_a_band_routs_when_its_captain_yields():
     morale.give_up(lead)
     g._ai_turn_after(lead)
     assert f.__dict__.get('_band_leader') is None
-    assert f.has_effect('feared') or f.quarrelsome
+    # A morale test, not fear for all (war_bands.leader_falls, 2026-11-22):
+    # he broke his own way, held, or took up the lead himself; the captain
+    # who begs leads no one.
+    import war_bands
+    assert not f.has_effect('feared')
+    assert lead._band_role != 'leader'
+    assert (int(f._flee_timer or 0) > 0 or f.__dict__.get('_took_lead')
+            or not war_bands.holds_nerve(f))
 
 
 def test_d7_a_pet_leaves_a_begging_foe_alone():

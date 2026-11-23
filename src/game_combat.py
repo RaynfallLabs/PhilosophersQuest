@@ -1683,6 +1683,10 @@ class CombatMixin:
                 f"{the_name(monster)} drops {gold:,} gold coins.", 'loot'
             )
         item_chance = treasure.get('item_chance', 0.0)
+        # A demon bound by the Seventy-Two Seals (the Robes of Solomon, tier
+        # 5) always leaves an item: the mark was set and nothing read it.
+        if monster.__dict__.get('_seal_marked'):
+            item_chance = 1.0
         if _rng.random() < item_chance:
             item_tier = int(treasure.get('item_tier', 1))
             self._spawn_treasure_item(monster.x, monster.y, item_tier)
@@ -2075,7 +2079,10 @@ class CombatMixin:
                 kills = 0
                 for m in list(self.monsters):
                     if m.alive and (m.x, m.y) in cone and self._in_hero_reach(m):
-                        m.take_damage(floor_curve.wound(_share, m.max_hp, m._is_named_foe()))
+                        # Fire: a creature's fire resistance counts (it was
+                        # taken as a plain blow, so a fire elemental burned).
+                        m.take_damage(floor_curve.wound(_share, m.max_hp, m._is_named_foe()),
+                                      'fire')
                         hits += 1
                         if not m.alive:
                             self._on_monster_killed(m)
@@ -2636,8 +2643,14 @@ class CombatMixin:
                 )
                 self._after_strike_line(monster, damage)
             else:
+                # A shot's stun and knockback are told and done as a blow's
+                # are: the Sling of David's knockback was resolved, then
+                # dropped here, so a shot never pushed anything back.
+                _riders = f" {the_name(monster)} is stunned!" if stunned and not killed else ''
+                _riders += self._knock_back(monster, knocked, killed)
                 self.add_message(
-                    f"Chain x{chain}! Your {weapon.requires_ammo} strikes {the_name(monster, lower=True)} for {damage} damage!",
+                    f"Chain x{chain}! Your {weapon.requires_ammo} strikes {the_name(monster, lower=True)} "
+                    f"for {damage} damage!{_riders}",
                     'success'
                 )
                 self._after_strike_line(monster, damage)
@@ -2686,6 +2699,20 @@ class CombatMixin:
         self._ring_veil_slips()
         player_attack(self.player, monster, self.quiz_engine, on_complete,
                       ammo=ammo_item, ranged=True)
+
+    def _knock_back(self, monster, knocked: bool, killed: bool) -> str:
+        """A blow or a shot that knocks back (the weapon's `knockback`,
+        combat's ``knocked``) pushes a living target a tile away from the
+        hero, if there is room. Returns the line's ending, or ''."""
+        if not knocked or killed or not getattr(monster, 'alive', False):
+            return ''
+        from combat import apply_knockback
+        _was = (monster.x, monster.y)
+        apply_knockback(self.player, monster, self.dungeon, self.monsters,
+                        occupied=self._occupants())
+        if (monster.x, monster.y) != _was:
+            return f" {the_name(monster)} is knocked back!"
+        return ''
 
     def _refund_pending_spell(self) -> bool:
         """Give back what a targeted spell that was never cast had cost.
@@ -2822,10 +2849,12 @@ class CombatMixin:
         if not getattr(monster, '_band', None) or getattr(monster, '_band_answered', False):
             return
         monster._band_answered = True
-        out = war_bands.on_death(self.monsters, monster)
+        # A rout band's followers each test their nerve (src/war_bands.py
+        # leader_falls); the biggest guard may take up the lead.
+        out = war_bands.on_death(self.monsters, monster, self.player)
         members = war_bands.members_of(self.monsters, monster._band)
         if out.get('line') and any(self._sees_monster(m) for m in members + [monster]):
-            self.add_message(out['line'], 'success')
+            self.add_message(out['line'], 'warning' if out.get('successor') is not None else 'success')
         for m in out.get('fall') or ():
             if m.alive:
                 m.hp = 0
@@ -2833,9 +2862,9 @@ class CombatMixin:
                 m._band_answered = True
                 self._on_monster_killed(m)
 
-    def _band_great_blow(self, monster, chain: int) -> None:
+    def _band_great_blow(self, monster, chain: int, damage=None) -> None:
         import war_bands
-        line = war_bands.on_great_blow(self.monsters, monster, chain)
+        line = war_bands.on_great_blow(self.monsters, monster, chain, damage)
         if line:
             self.add_message(line, 'success')
 
@@ -3173,7 +3202,7 @@ class CombatMixin:
             # A great blow on a war-band's leader shakes his followers
             # (src/war_bands.py): the maths decides the fight's nerve too.
             if chain and not killed and monster.alive:
-                self._band_great_blow(monster, chain)
+                self._band_great_blow(monster, chain, damage)
             if chain == 0:
                 self.add_message(
                     f"You swing wildly at {the_name(monster, lower=True)} and miss!", 'warning'
@@ -3239,13 +3268,7 @@ class CombatMixin:
                 # (Never a creature with no blood: Monster.can_bleed.)
                 if monster.status_effects.get('bleeding', 0) > 0 and getattr(monster, 'can_bleed', lambda: True)():
                     msg += f" {the_name(monster)} is bleeding!"
-                if knocked and not killed:
-                    from combat import apply_knockback
-                    _was = (monster.x, monster.y)
-                    apply_knockback(self.player, monster, self.dungeon, self.monsters,
-                                    occupied=self._occupants())
-                    if (monster.x, monster.y) != _was:
-                        msg += f" {the_name(monster)} is knocked back!"
+                msg += self._knock_back(monster, knocked, killed)
                 if kwargs.get('poisoned'):
                     msg += f" {the_name(monster)} is poisoned!"
                 if kwargs.get('burned'):
@@ -3345,6 +3368,13 @@ class CombatMixin:
         (_say_veil_slip): it was said before the attack quiz had opened."""
         import rings
         line = rings.on_strike(self.player)
+        # The Invisibility spell breaks on a strike (its desc); Greater
+        # Invisibility does not (it clears the mark: game_magic).
+        _until = self.player.__dict__.pop('_spell_veil_until', None)
+        if (_until is not None and int(self.turn_count) <= int(_until)
+                and self.player.status_effects.get('invisible', 0) > 0):
+            del self.player.status_effects['invisible']
+            line = line or 'Your invisibility breaks as you strike.'
         if line:
             self.__dict__['_veil_slip_line'] = line
         import wards                                   # a strike ends sanctuary
@@ -3871,23 +3901,25 @@ class CombatMixin:
                     self.add_message(
                         f"{the_name(m)}'s attack drains your stamina! (-{_sp_drain} SP)", 'danger')
 
-                # Fire shield: reflect melee damage back
-                if self.player.has_effect('fire_shield') and dmg > 0:
-                    reflect_dmg = floor_curve.wound(SHIELD_LASH_SHARE, m.max_hp, m._is_named_foe())
-                    m.hp -= reflect_dmg
-                    m._unhurt_turns = 0
-                    self.add_message(f"Flames lash back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
-                    if m.hp <= 0:
-                        m.alive = False
+                # Fire shield: reflect melee damage back. Fire and cold,
+                # through Monster.take_damage: the striker's resistance or
+                # immunity counts (a fire elemental is not burned by the
+                # fire shield) and Death takes none. Both were taken off the
+                # health bar by hand.
+                if self.player.has_effect('fire_shield') and dmg > 0 and m.alive:
+                    reflect_dmg = m.take_damage(floor_curve.wound(
+                        SHIELD_LASH_SHARE, m.max_hp, m._is_named_foe()), 'fire')
+                    if reflect_dmg > 0:
+                        self.add_message(f"Flames lash back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
+                    if not m.alive:
                         self._on_monster_killed(m)
                 # Cold shield: reflect melee damage back
-                if self.player.has_effect('cold_shield') and dmg > 0:
-                    reflect_dmg = floor_curve.wound(SHIELD_LASH_SHARE, m.max_hp, m._is_named_foe())
-                    m.hp -= reflect_dmg
-                    m._unhurt_turns = 0
-                    self.add_message(f"Ice shatters back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
-                    if m.hp <= 0 and m.alive:
-                        m.alive = False
+                if self.player.has_effect('cold_shield') and dmg > 0 and m.alive:
+                    reflect_dmg = m.take_damage(floor_curve.wound(
+                        SHIELD_LASH_SHARE, m.max_hp, m._is_named_foe()), 'cold')
+                    if reflect_dmg > 0:
+                        self.add_message(f"Ice shatters back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
+                    if not m.alive:
                         self._on_monster_killed(m)
 
                 # Shortsword riposte: free counter at 0.85× weapon base damage
@@ -3914,7 +3946,11 @@ class CombatMixin:
                     if self.player.hp > 0 and self.player.hp / max(1, self.player.max_hp) < 0.30:
                         for _arm_slot in self.player.armor_slots:
                             if _arm_slot and getattr(_arm_slot, 'invisibility_power', False):
-                                self.player.add_effect('invisible', _arm_slot.invisibility_duration)
+                                # Spent only when the veil takes (a worn
+                                # permanent Invisible refuses it).
+                                if not self.player.add_effect(
+                                        'invisible', _arm_slot.invisibility_duration):
+                                    break
                                 self._tarnhelm_used = True
                                 self.add_message("The Tarnhelm shimmers — you vanish from sight!", 'success')
                                 break
@@ -3938,12 +3974,15 @@ class CombatMixin:
                         and getattr(m, '_last_attack_type', None) == 'fire' and m.alive:
                     _roll = int(getattr(m, '_last_attack_roll', 0) or 0)
                     if _roll > 0:
-                        _fire_ref = max(1, int(_roll * _shld.fire_reflect))
-                        m.hp -= _fire_ref
-                        m._unhurt_turns = 0
-                        self.add_message(f"The {_shld.name} throws flame back at {the_name(m, lower=True)} for {_fire_ref}!", 'combat')
-                        if m.hp <= 0 and m.alive:
-                            m.alive = False
+                        # Fire, through Monster.take_damage: its fire
+                        # resistance or immunity counts (a fire drake shrugs
+                        # its own flame off), and Death and an encounter's
+                        # bystander take none. It was taken off the health bar
+                        # by hand.
+                        _fire_ref = m.take_damage(max(1, int(_roll * _shld.fire_reflect)), 'fire')
+                        if _fire_ref > 0:
+                            self.add_message(f"The {_shld.name} throws flame back at {the_name(m, lower=True)} for {_fire_ref}!", 'combat')
+                        if not m.alive:
                             self._on_monster_killed(m)
 
                 # Babr-e Bayan: absorb first hit per floor.

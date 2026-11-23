@@ -861,7 +861,8 @@ def after_blow(player, target, chain: int, actual: int, monsters=(), visible=Non
             target.hold('charmed', int(ch[1].get('turns', 1)))
             tell(player, target, ch[0])
         st = stun_on_hit(player, target, chain)
-        if st is not None:
+        # (As the charm above: never said of one whose nature refuses it.)
+        if st is not None and not target.resists_control('stunned'):
             target.hold('stunned', int(st[1].get('turns', 1)))
             tell(player, target, st[0])
         su = surrender(player, target, chain)

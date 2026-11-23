@@ -736,7 +736,7 @@ class MagicMixin(MagicWardsMixin):
             else:
                 self.player.add_effect('light', _turns, cap=lights.wand_cap())
                 turns = int(self.player.status_effects.get('light', 0) or 0)
-                self.add_message(lights.line('wand', sight=lights.status_sight(), turns=turns),
+                self.add_message(lights.line('wand', sight=lights.status_glow(self.player)[0], turns=turns),
                                  'success')
                 if _reveals:
                     self.player.add_effect('see_invisible', turns, cap=lights.wand_cap())
@@ -1757,7 +1757,10 @@ class MagicMixin(MagicWardsMixin):
             # Chain-equip passive: double_cast_at_peak_tier (Robe of the Magus
             # T5). v2.12.0: no chain, so this now fires on every SUCCESSFUL
             # cast at the spell's peak tier (T5).
-            if int(spell.get('tier', spell.get('quiz_tier', 1))) >= 5:
+            # (Never at a foe the first casting killed: "Holy fire smites the
+            # Goblin for 2067 damage!" was said of a corpse.)
+            if (int(spell.get('tier', spell.get('quiz_tier', 1))) >= 5
+                    and (target is None or getattr(target, 'alive', False))):
                 from chain_passives import player_has_passive
                 if player_has_passive(self.player, 'double_cast_at_peak_tier'):
                     self.add_message(
@@ -2078,7 +2081,7 @@ class MagicMixin(MagicWardsMixin):
                                    cap=lights.spell_cap())
             turns = int(self.player.status_effects.get('light', 0) or 0)
             self._refresh_fov()
-            self.add_message(lights.line('spell', sight=lights.status_sight(), turns=turns),
+            self.add_message(lights.line('spell', sight=lights.status_glow(self.player)[0], turns=turns),
                              'success')
             return
 
@@ -2478,6 +2481,14 @@ class MagicMixin(MagicWardsMixin):
             dur = min(_MAXD, max(2, int(base_dur * chain_scale)))
             self.player.add_effect(eff_name, dur)
             dur = turns_now(self.player, eff_name, dur)     # what is applied is what is said
+            if effect == 'invisibility_self':
+                # "Vanish from sight for 15 turns; breaks on attack": a strike
+                # while it runs ends it (_ring_veil_slips). It never did, so
+                # Greater Invisibility ("attacking does NOT break it") was
+                # only the longer of two equal spells.
+                self.player._spell_veil_until = int(self.turn_count) + int(dur)
+            elif effect == 'greater_invis_self':
+                self.player.__dict__.pop('_spell_veil_until', None)
             # MK-10: the status's display name, not its raw id ("magic_resist")
             from status_effects import EFFECT_INFO as _EI
             _shown = (_EI.get(eff_name) or (eff_name.replace('_', ' ').title(),))[0]
@@ -2983,12 +2994,30 @@ class MagicMixin(MagicWardsMixin):
             return getattr(t, 'achievement', '') or ''
         return 'lake_of_fire' if scroll_id == 'scroll_deaths_bane' else ''
 
+    @staticmethod
+    def _scroll_num(scroll, key: str, default=None):
+        """One of a scroll kind's own numbers (data/items/scroll.json: today's
+        entry by id, so an old save's scroll reads today's data), by the
+        copy's blessing (wards.field_of). Its card reads the same field
+        (item_words), so the two cannot drift."""
+        import wards
+        return wards.field_of(wards.item_def('scroll', str(getattr(scroll, 'id', '') or '')),
+                              key, getattr(scroll, 'buc', 'uncursed'), default)
+
     def _apply_scroll_effect(self, scroll: 'Scroll'):
         """v2.10.0: no chain arg. `_tstep` is derived from scroll.tier
         (0..4 for T1..T5) and drives the same 5-element ladders per effect
         that the old escalator_chain path used -- but now the tier is a
         FIXED property of the scroll (locked at spawn) rather than a
         variable chain length that the reader accumulated.
+
+        2026-11-22: where a ladder was a number by tier (mapping, identify,
+        light, confusion, sleep, haste, stopped time, protection, the
+        enchantments), each kind keeps its own number in its data entry and
+        the handler reads it there (``_scroll_num``), as its card does; the
+        ladders still by `_tstep` are a heal's least share and the earth's
+        (module constants the card reads), and the scopes of remove curse,
+        teleport, charging, annihilation, great power and genocide.
         """
         from dice import roll
         effect = scroll.effect
@@ -3037,24 +3066,49 @@ class MagicMixin(MagicWardsMixin):
             return  # skip the remove that the caller does
 
         elif effect == 'mapping':
-            # Chain ladder (Path A): radius around player scales by chain tier.
-            # T5 = full floor (original behavior); lower tiers reveal less.
-            _radius_by_step = [6, 12, 22, 40, 999]
-            radius = _radius_by_step[_tstep]
+            # The kind's own reach (data/items/scroll.json map_radius, 0 for
+            # the whole floor; 2026-11-22: tier 1 mapped 6 tiles, a twentieth
+            # of a floor, now 35, about half of one, and the whole floor from
+            # Cartography on), and what the deeper charts also find
+            # (map_finds): the doors hidden in the rock, the snares in the floor.
+            radius = int(self._scroll_num(scroll, 'map_radius', 0) or 0)
+            finds = set(self._scroll_num(scroll, 'map_finds', ()) or ())
             px, py = self.player.x, self.player.y
-            if radius >= 999:
+            if radius <= 0:
                 for y in range(self.dungeon.height):
                     for x in range(self.dungeon.width):
                         self.dungeon.explored.add((x, y))
-                self.add_message("The dungeon layout floods your mind!", 'success')
+                self.add_message("The whole floor's layout floods your mind!", 'success')
             else:
                 for y in range(max(0, py - radius), min(self.dungeon.height, py + radius + 1)):
                     for x in range(max(0, px - radius), min(self.dungeon.width, px + radius + 1)):
                         if abs(x - px) + abs(y - py) <= radius:
                             self.dungeon.explored.add((x, y))
                 self.add_message(
-                    f"A partial map blooms in your mind — {quantity(radius, 'tile')} in every direction.",
+                    f"A map blooms in your mind: every passage within {quantity(radius, 'tile')} of you.",
                     'success')
+            if 'secret_doors' in finds:
+                from dungeon import SECRET_DOOR, DOOR
+                doors = 0
+                for y in range(self.dungeon.height):
+                    for x in range(self.dungeon.width):
+                        if self.dungeon.tiles[y][x] == SECRET_DOOR:
+                            self.dungeon.tiles[y][x] = DOOR
+                            doors += 1
+                if doors:
+                    self._refresh_fov()
+                    self.add_message(f"{quantity(doors, 'hidden door')} "
+                                     f"{'shows itself' if doors == 1 else 'show themselves'} "
+                                     f"on your map.", 'success')
+            if 'traps' in finds:
+                snares = 0
+                for trap in (getattr(self.dungeon, 'traps', None) or {}).values():
+                    if isinstance(trap, dict) and not trap.get('revealed'):
+                        trap['revealed'] = True
+                        snares += 1
+                if snares:
+                    self.add_message(f"{quantity(snares, 'trap')} on this floor "
+                                     f"{'is' if snares == 1 else 'are'} marked on your map.", 'success')
 
         elif effect == 'identify':
             if _scroll_buc == 'cursed':
@@ -3062,38 +3116,35 @@ class MagicMixin(MagicWardsMixin):
                 # AMNESIA — the kid forgets one item they had already
                 # studied. Drops id_level to 0 and forgets the type.
                 self._scroll_identify_amnesia()
-            elif _scroll_buc == 'blessed' or _tstep >= 3:
-                # Blessed OR T4+ (mass_identify / omnisight): fully identify
-                # everything in inventory + tile. No picker needed. T5
-                # (omnisight) additionally reveals ONE carried corpse's
-                # species lore -- the extra reveal hook.
-                self._scroll_identify_mass()
-                if _tstep >= 4:
-                    self._omnisight_corpse_reveal()
-            elif _tstep == 0:
-                # T1: pick ONE item to fully identify (existing picker UI).
-                self._open_scroll_identify_picker()
             else:
-                # T2 / T3: identify the first 2 / 3 unidentified items in
-                # inventory order. Skips the picker UI (no multi-select in
-                # current UI) but scales the payload with the scroll's tier.
-                self._scroll_identify_mass(limit=(_tstep + 1))
+                # How far the kind reaches (data/items/scroll.json
+                # identify_reach; a blessed copy one rung further: its
+                # identify_reach_blessed). 2026-11-22, Brandon: "identifies
+                # all items in inventory, maybe?" It named one thing, then the
+                # first 2, the first 3. Now: 'sort', the thing chosen and every
+                # unknown thing of its sort carried (the picker); 'pack',
+                # everything carried and at his feet; 'sight', and every thing
+                # lying in view; 'floor', and every thing lying on this floor.
+                # identify_lore (Omnisight): every carried corpse's kind is
+                # studied too. Identifying by question stays the everyday
+                # road: a scroll is one find, and only answers master a
+                # philosophy tier (philosophy_mastery.py).
+                reach = str(self._scroll_num(scroll, 'identify_reach', 'sort') or 'sort')
+                if reach == 'sort':
+                    self._open_scroll_identify_picker(reach='sort')
+                else:
+                    self._scroll_identify_mass(reach=reach)
+                if self._scroll_num(scroll, 'identify_lore', False):
+                    self._omnisight_corpse_reveal()
 
         elif effect == 'enchant_weapon':
             from items import effective_enchant_cap
-            # Chain ladder (Path A): delta + how many weapons get hit.
-            #   T1: +0 net (no-op except messaging) for uncursed, blessed=+1
-            #   T2: +1 (uncursed)
-            #   T3: +1 to BOTH melee + ranged
-            #   T4: +2 to BOTH
-            #   T5: +3 to BOTH
-            if _scroll_buc == 'blessed':
-                delta = max(2, [1, 2, 2, 3, 4][_tstep])
-            elif _scroll_buc == 'cursed':
-                delta = -1
-            else:
-                delta = [1, 1, 1, 2, 3][_tstep]      # tier 1 gave 0: an uncursed Sharpen or Bracing did nothing
-            multi = _tstep >= 2
+            # The kind's own plus (data delta, delta_blessed: Sharpen +1 or +2
+            # blessed ... Legendary Edge +3 or +4) and whether it reaches the
+            # bow as well (both_weapons, from Enchant Weapon on). A curse
+            # takes 1 off.
+            delta = -1 if _scroll_buc == 'cursed' else int(self._scroll_num(scroll, 'delta', 1) or 1)
+            multi = bool(self._scroll_num(scroll, 'both_weapons', False))
             targets = []
             if self.player.weapon:
                 targets.append(self.player.weapon)
@@ -3222,8 +3273,9 @@ class MagicMixin(MagicWardsMixin):
                     self.add_message("You feel purified (no curses to remove).", 'info')
 
         elif effect == 'confuse_monsters':
-            # Chain ladder (Path A): chain raises duration sharply.
-            duration = [3, 6, 10, 16, 25][_tstep]
+            # The kind's own turns (data control_turns: Bewilderment 5, it
+            # was 3, Confusion 10, Madness 25), on everything in sight.
+            duration = int(self._scroll_num(scroll, 'control_turns', 5) or 5)
             count = 0
             seen = 0
             laid = []
@@ -3247,8 +3299,9 @@ class MagicMixin(MagicWardsMixin):
 
         # -- Tier 3 scroll effects ------------------------------------------
         elif effect == 'sleep_monsters':
-            # Chain ladder (Path A): chain raises duration sharply.
-            duration = [3, 6, 10, 16, 25][_tstep]
+            # The kind's own turns (data control_turns: Drowsing 6, Sleep 10,
+            # Deep Slumber 25), on everything in sight.
+            duration = int(self._scroll_num(scroll, 'control_turns', 6) or 6)
             targets = [m for m in self.monsters if m.alive and self._in_hero_reach(m)]
             # Counted as they fall asleep: the dead and the made never sleep
             # (status_immune, Monster.add_effect).
@@ -3266,10 +3319,9 @@ class MagicMixin(MagicWardsMixin):
                 self.add_message("No creatures are in sight to affect.", 'info')
 
         elif effect == 'haste_self':
-            # Chain ladder (Path A): scales duration.
-            base_dur = int(scroll.power) if scroll.power else 15
-            duration = int(base_dur * [0.4, 0.7, 1.0, 1.6, 2.5][_tstep])
-            duration = max(3, duration)
+            # The kind's own turns, its power (data: Quickness 10, Haste 15,
+            # Alacrity 37; they were a power of 15 times a tier's share).
+            duration = max(1, int(self._scroll_num(scroll, 'power', '') or scroll.power or 15))
             self.player.add_effect('hasted', duration)
             duration = turns_now(self.player, 'hasted', duration)
             self.add_message(f"Energy surges through you -- hasted for {quantity(duration, 'turn')}!", 'success')
@@ -3287,16 +3339,12 @@ class MagicMixin(MagicWardsMixin):
             if self.player.shield is not None and _gear.is_core(self.player.shield):
                 equipped.insert(1 if equipped and equipped[0][1] in _gear.CORE_SLOTS else 0,
                                 (self.player.shield, 'shield'))
-            # Chain ladder (Path A): delta + how many armor slots get hit.
-            if _scroll_buc == 'blessed':
-                delta = max(2, [1, 2, 2, 3, 4][_tstep])
-            elif _scroll_buc == 'cursed':
-                delta = -1
-            else:
-                delta = [1, 1, 1, 2, 3][_tstep]      # tier 1 gave 0: an uncursed Sharpen or Bracing did nothing
+            # The kind's own plus (data delta, delta_blessed) and how many
+            # pieces it reaches (pieces: Bracing 1 ... Legendary Ward every
+            # one). A curse takes 1 off.
+            delta = -1 if _scroll_buc == 'cursed' else int(self._scroll_num(scroll, 'delta', 1) or 1)
             if equipped:
-                # T1: just first slot. T2: 2 slots. T3: 3 slots. T4: 4. T5: all.
-                slot_count = [1, 2, 3, 4, 99][_tstep]
+                slot_count = int(self._scroll_num(scroll, 'pieces', 1) or 1)
                 hits = equipped[:slot_count]
                 for target, slot_name in hits:
                     if slot_name not in _gear.CORE_SLOTS and slot_name != 'shield':
@@ -3348,16 +3396,11 @@ class MagicMixin(MagicWardsMixin):
             for s in getattr(self.player, 'accessory_slots', []):
                 if s:
                     candidates.append((s, 'accessory'))
-            # Chain ladder (Path A): all-equipped enchant — scales delta and
-            # count of items hit.
-            if _scroll_buc == 'blessed':
-                delta = max(2, [1, 2, 2, 3, 4][_tstep])
-            elif _scroll_buc == 'cursed':
-                delta = -1
-            else:
-                delta = [1, 1, 1, 2, 3][_tstep]      # tier 1 gave 0: an uncursed Sharpen or Bracing did nothing
-            count_by_step = [1, 2, 3, 5, 99]
-            n = count_by_step[_tstep]
+            # The kind's own plus (data delta, delta_blessed) and how many
+            # things it reaches (count: Enchantment 3, Greater 5, Grand all).
+            # A curse takes 1 off.
+            delta = -1 if _scroll_buc == 'cursed' else int(self._scroll_num(scroll, 'delta', 1) or 1)
+            n = int(self._scroll_num(scroll, 'count', 1) or 1)
             if candidates:
                 for target, slot_key in candidates[:n]:
                     if slot_key == 'accessory' or (slot_key not in ('weapon', 'shield')
@@ -3564,9 +3607,9 @@ class MagicMixin(MagicWardsMixin):
                         'info')
 
         elif effect == 'time_stop_scroll':
-            # Chain ladder (Path A): scales duration.
-            base_dur = int(scroll.power) if scroll.power else 10
-            duration = max(2, int(base_dur * [0.3, 0.6, 1.0, 1.5, 2.5][_tstep]))
+            # The kind's own turns, its power (data: Slow Time 4, Time Stop 6,
+            # Timeless 10; they were a power of 4 times a tier's share).
+            duration = max(1, int(self._scroll_num(scroll, 'power', '') or scroll.power or 4))
             self.player.add_effect('time_stopped', duration)
             duration = turns_now(self.player, 'time_stopped', duration)
             self.add_message(f"Time itself halts -- {quantity(duration, 'turn')} of absolute stillness!", 'success')
@@ -3596,9 +3639,10 @@ class MagicMixin(MagicWardsMixin):
 
         elif effect == 'earth':
             from dice import roll as _roll_e
-            # Chain ladder (Path A): scales damage multiplier on the base roll.
-            base_dmg = _roll_e(scroll.power) if scroll.power else 12
-            _chain_mult = [1.0, 1.8, 3.0, 5.0, 8.0][_tstep]
+            # (The dice are still rolled, as they always were, and read by
+            # nothing: a multiplier ladder on them was dropped long ago.)
+            if scroll.power:
+                _roll_e(scroll.power)
             # The earth takes a share of each creature's own health, by the
             # scroll's tier (EARTH_SHARE), a little more for a sharp mind.
             _earth_share = EARTH_SHARE[_tstep] * self._int_share_factor()
@@ -3617,12 +3661,10 @@ class MagicMixin(MagicWardsMixin):
 
         elif effect == 'protection':
             _buc = getattr(scroll, 'buc', 'uncursed')
-            # Chain ladder (Path A): both bonus & duration scale.
-            if _buc == 'cursed':
-                bonus = 1
-            else:
-                bonus = [1, 2, 3, 5, 8][_tstep] + (2 if _buc == 'blessed' else 0)
-            dur = [10, 20, 30, 50, 80][_tstep]
+            # The kind's own turns (data shield_turns: Ward 10 ... Absolute
+            # Ward 80, cursed 60). (A bonus ladder, 1 to 10, was worked out
+            # here and read by nothing: the ward is the Shielded status.)
+            dur = int(self._scroll_num(scroll, 'shield_turns', 10) or 10)
             # The turns written, past the 60 that stop a potion stacking
             # (Absolute Ward's 80). A cursed rite keeps that limit.
             self.player.add_effect('shielded', dur, cap=None if _buc == 'cursed' else dur)
@@ -3637,21 +3679,17 @@ class MagicMixin(MagicWardsMixin):
 
         elif effect == 'enchant_accessory':
             _buc = getattr(scroll, 'buc', 'uncursed')
-            # Chain ladder (Path A): scales bonus + count of accessory slots hit.
-            if _buc == 'blessed':
-                bonus = max(2, [1, 2, 2, 3, 4][_tstep])
-            elif _buc == 'cursed':
-                bonus = -1
-            else:
-                bonus = [0, 1, 1, 2, 3][_tstep]
+            # The kind's own strengthening (data delta, delta_blessed: Enchant
+            # Ring 1 or 2 blessed ... Master Trinketry 3 or 4) and how many it
+            # reaches (count). A curse weakens them by 1.
+            bonus = -1 if _buc == 'cursed' else int(self._scroll_num(scroll, 'delta', 0) or 0)
             # Every ring and amulet worn, as the scrolls promise: the rings
             # first, so the lesser scrolls keep their targets. A belt is neither.
             accs = [s for s in getattr(self.player, 'accessory_slots', []) if s is not None]
             _amulet = getattr(self.player, 'amulet_slot', None)
             if _amulet is not None:
                 accs.append(_amulet)
-            count_by_step = [1, 1, 2, 3, 99]
-            n = count_by_step[_tstep]
+            n = int(self._scroll_num(scroll, 'count', 1) or 1)
             if accs:
                 touched = 0
                 import rings as _rings
@@ -3755,44 +3793,46 @@ class MagicMixin(MagicWardsMixin):
                         self.add_message("The scroll's power finds nothing it can erase.", 'warning')
 
         elif effect == 'full_light':
-            _buc = getattr(scroll, 'buc', 'uncursed')
-            # Chain ladder (Path A):
-            #   T1: reveal half the floor radius from player.
-            #   T2: reveal whole floor (legacy).
-            #   T3: reveal whole floor + 10t clairvoyance.
-            #   T4: reveal floor + 30t clairvoyance + detect monsters 30t.
-            #   T5: same as T4 but 60t each.
-            explored = self.dungeon.explored
-            def _mark(x, y):
-                if isinstance(explored, set):
-                    explored.add((x, y))
-                else:
-                    try:
-                        explored[y][x] = True
-                    except Exception:
-                        pass
-            if _tstep == 0:
-                radius = max(self.dungeon.width, self.dungeon.height) // 2
-                px, py = self.player.x, self.player.y
-                for y in range(max(0, py - radius), min(self.dungeon.height, py + radius + 1)):
-                    for x in range(max(0, px - radius), min(self.dungeon.width, px + radius + 1)):
-                        _mark(x, y)
-                self.add_message("Soft light spreads outward, revealing half the floor.", 'success')
+            # The scrolls of Light, Illumination and Revelation (2026-11-22,
+            # Brandon: "make it create a light that follows you for some
+            # significant number of turns"). They mapped half or all of the
+            # floor and made no light at all; mapping is the mapping
+            # scrolls' work. Now each lays the light status that goes with
+            # the hero, the Light spell's own, for its kind's light_turns at
+            # its light_sight (data/items/scroll.json; lights.kindle): spent
+            # once, it burns hundreds of turns where the spell burns one
+            # hundred, brighter by tier, and only the brightest light counts.
+            # Revelation lends Lynceus's eyes besides: the invisible seen for
+            # as long as its light (light_reveals), and for clairvoyant_turns
+            # the floor round him shows through stone. Cursed, its words call
+            # the dark (light_shy.snuff 'dark').
+            import lights
+            if _scroll_buc == 'cursed':
+                import light_shy
+                put_out = light_shy.snuff(self.player, 'dark')
+                self.add_message(f"{lights.line('scroll_cursed')} {put_out}" if put_out
+                                 else lights.line('scroll_cursed_none'), 'warning')
             else:
-                for y in range(self.dungeon.height):
-                    for x in range(self.dungeon.width):
-                        _mark(x, y)
-                self.add_message("Brilliant light floods every corner of the level!", 'success')
-            clair_dur = [0, 0, 10, 30, 60][_tstep]
-            if _buc == 'blessed':
-                clair_dur = max(clair_dur, 30)
-            if clair_dur:
-                self.player.add_effect('clairvoyant', clair_dur)
-                clair_dur = turns_now(self.player, 'clairvoyant', clair_dur)
-                self.add_message(
-                    f"Your vision extends to sense all creatures for {quantity(clair_dur, 'turn')}!", 'success')
-            # (A second status, `detect_monsters`, was applied here and read by
-            # nothing: clairvoyance above is what shows the creatures.)
+                turns = int(self._scroll_num(scroll, 'light_turns', 0)
+                            or lights.rules()['spell']['base_turns'])
+                sight = int(self._scroll_num(scroll, 'light_sight', 0) or lights.status_sight())
+                lights.kindle(self.player, turns, sight)
+                _shown = int(self.player.status_effects.get('light', 0) or 0)
+                self.add_message(lights.line(
+                    'scroll', read_line=self._scroll_num(scroll, 'read_line', '') or
+                    lights.line('scroll_read'),
+                    sight=lights.status_glow(self.player)[0],
+                    turns=_shown if _shown > 0 else turns), 'success')
+                if self._scroll_num(scroll, 'light_reveals', False):
+                    self.player.add_effect('see_invisible', turns, cap=turns)
+                    self._sync_unseen()
+                    self.add_message(lights.line('scroll_reveals'), 'info')
+                far = int(self._scroll_num(scroll, 'clairvoyant_turns', 0) or 0)
+                if far:
+                    self.player.add_effect('clairvoyant', far, cap=far)
+                    self.add_message(lights.line(
+                        'scroll_far', turns=turns_now(self.player, 'clairvoyant', far)), 'info')
+            self._refresh_fov()
 
         elif effect == 'dead_sea_map':
             # v2.10.0 Dead Sea Scroll: reveals the LAYOUT of every floor of
@@ -4071,13 +4111,17 @@ class MagicMixin(MagicWardsMixin):
     # Scroll of Identify rework (D2 + D3, 2026-05-29)
     # ------------------------------------------------------------------
 
-    def _open_scroll_identify_picker(self, bless: bool = False) -> None:
+    def _open_scroll_identify_picker(self, bless: bool = False, reach: str = 'sort') -> None:
         """Open the identify menu in 'scroll-reveals-directly' mode.
 
         The player picks one item from their inventory / ground tile; on
         select, the chosen item is fully identified with no philosophy
-        quiz. Triggered after a successful Scroll of Identify read.
+        quiz, and with ``reach`` 'sort' (the Scroll of Identify) every other
+        unknown thing of its sort he carries or stands on too
+        (``_identify_sort``). Triggered after a successful Scroll of
+        Identify read.
         """
+        self._scroll_identify_reach = reach
         # Build the same target list `_open_identify_menu` uses, so the
         # menu UI is shared.
         from items import Corpse
@@ -4103,68 +4147,120 @@ class MagicMixin(MagicWardsMixin):
         self._scroll_identify_pending = True
         self.state = STATE_IDENTIFY_MENU
         self.add_message(
+            "The scroll trembles in your hand — choose a thing: it, and every unknown thing "
+            "of its sort you carry, will be named." if reach == 'sort' else
             "The scroll trembles in your hand — choose the item to be revealed.",
             'info')
+
+    @staticmethod
+    def _identify_sort(item) -> str:
+        """The sort a Scroll of Identify names together: the item's class
+        (every potion, every scroll, every wand, every ring and amulet...)."""
+        return str(getattr(item, 'item_class', '') or type(item).__name__.lower())
 
     def _scroll_full_identify(self, item) -> None:
         """Bypass the philosophy quiz: fully identify `item`. Called when
         the identify menu was entered via a Scroll of Identify (see
-        _scroll_identify_pending).
+        _scroll_identify_pending). With the picker's reach 'sort' (the
+        Scroll of Identify), every other unknown thing of the item's sort
+        that he carries or stands on is named with it.
         """
+        reach = getattr(self, '_scroll_identify_reach', '') or ''
+        self._scroll_identify_reach = ''
         self._full_identify(item)
         self.add_message(
             f"Truth crashes through you — it is the {_the_less(item.name)}!",
             'success')
+        if reach == 'sort':
+            sort = self._identify_sort(item)
+            more = [it for it in self._identify_reach_pool('pack')
+                    if it is not item and self._identify_sort(it) == sort
+                    and self._needs_identify(it)]
+            named = []
+            for it in more:
+                if self._needs_identify(it):        # (a copy of a kind just named is known)
+                    self._full_identify(it)
+                    named.append(it)
+            if named:
+                self.add_message(
+                    f"Its touch names the rest of that sort you carry: "
+                    f"{self._named_list(named)}.", 'success')
         if item.lore:
             self._lore_subject = item
             self.state = STATE_LORE
 
-    def _scroll_identify_mass(self, limit: int | None = None) -> None:
-        """Blessed / high-tier Scroll of Identify: fully identify items in
-        inventory + tile. If `limit` is None, identifies EVERY unidentified
-        item (mass_identify / omnisight); if limit=N, identifies the first
-        N unidentified items in inventory order (T2/T3 mid-tier scrolls).
-        No picker -- the scroll just does the work.
-        """
-        from items import Corpse
-        count = 0
-        pool = list(self.player.inventory) + [
-                g for g in self.ground_items
-                if g.x == self.player.x and g.y == self.player.y]
+    @staticmethod
+    def _named_list(named: list) -> str:
+        """'the A, the B and the C' (four at most, then 'N more')."""
+        names = [f"the {_the_less(i.name)}" for i in named]
+        if len(names) > 4:
+            names = names[:4] + [f"{len(named) - 4} more"]
+        return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+    def _identify_reach_pool(self, reach: str = 'pack') -> list:
+        """What a Scroll of Identify reaches: everything he carries (the pack,
+        and what he wears and wields) and what lies at his feet ('pack'); and
+        every thing lying in his sight ('sight') or anywhere on this floor
+        ('floor'). Never a corpse (its own lore path) nor a chest, a trader
+        or a fixture (only loot lying loose)."""
+        import philosophy_mastery as pm
+        from items import Container, Corpse, Item
+        px, py = self.player.x, self.player.y
+        pool = pm.carried(self.player) + [
+            g for g in self.ground_items if g.x == px and g.y == py]
+        if reach in ('sight', 'floor'):
+            seen = getattr(self, 'visible', None) or set()
+            pool += [g for g in self.ground_items
+                     if isinstance(g, Item) and not isinstance(g, Container)
+                     and (reach == 'floor' or (g.x, g.y) in seen)]
+        out = []
         for it in pool:
-            if isinstance(it, Corpse):
-                continue
+            if not isinstance(it, Corpse) and all(it is not o for o in out):
+                out.append(it)
+        return out
+
+    def _scroll_identify_mass(self, limit: int | None = None, reach: str = 'pack') -> None:
+        """A Scroll of Identify that needs no picker: fully identify every
+        unknown thing it reaches (``_identify_reach_pool``: 'pack', 'sight'
+        or 'floor'), or the first ``limit`` of them when one is given.
+        """
+        count = 0
+        for it in self._identify_reach_pool(reach):
             if self._needs_identify(it):
                 self._full_identify(it)
                 count += 1
                 if limit is not None and count >= limit:
                     break
+        where = {'sight': "your pack and everything in sight",
+                 'floor': "your pack and the whole floor"}.get(reach, "your pack")
         if count:
             self.add_message(
-                f"An apocalypse of revelation washes over your pack — "
-                f"{count} item{'s' if count != 1 else ''} revealed!",
+                f"Revelation washes over {where}: "
+                f"{count} item{'s' if count != 1 else ''} named!",
                 'success')
         else:
             self.add_message("The scroll's revelation finds nothing left to reveal.", 'info')
 
     def _omnisight_corpse_reveal(self) -> None:
-        """T5 Scroll of Omnisight: also reveals the lore of one carried
-        corpse's species. Picks the first corpse in inventory whose kind the
-        hero has not studied, adds its species to lore_known_monster_ids
-        (its Bestiary page) and counts it as STUDIED (a study of its kind for
-        its monster family: family_lore), identifies every carried corpse of
-        it, and drops a message. Silent no-op if the kid carries no corpses.
+        """Scroll of Omnisight (identify_lore): also opens the lore of every
+        carried corpse's kind the hero has not studied: its species joins
+        lore_known_monster_ids (its Bestiary page) and counts as STUDIED (a
+        study of its kind for its monster family: family_lore), every
+        carried corpse of it is identified, and a line says so. (It was the
+        first such corpse only.) Silent no-op if the kid carries no corpses.
         """
         from items import Corpse
         lore_known = getattr(self.player, 'lore_known_monster_ids', None)
         if lore_known is None:
             return
         studied = getattr(self.player, 'studied_monster_ids', set()) or set()
-        for it in self.player.inventory:
+        done = set()
+        for it in list(self.player.inventory):
             if isinstance(it, Corpse):
                 sp = getattr(it, 'monster_id', '') or ''
-                if not sp or sp in studied:
+                if not sp or sp in studied or sp in done:
                     continue
+                done.add(sp)
                 lore_known.add(sp)
                 for other in self.player.inventory:
                     if isinstance(other, Corpse) and getattr(other, 'monster_id', '') == sp:
@@ -4174,7 +4270,6 @@ class MagicMixin(MagicWardsMixin):
                     f"its whole species opens up in your mind.",
                     'success')
                 self._family_study(sp)
-                return
 
     def _forgettable(self, it) -> bool:
         """A thing the hero knows and could forget: a copy fully identified

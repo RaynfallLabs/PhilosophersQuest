@@ -10,11 +10,15 @@ makes camp in one room (data/war_bands.json):
 * **Guards** keep beside him. **Shooters** keep their distance. **Casters**
   hang back. **Healers** finally have someone to mend.
 * **Morale.** When the leader falls the band breaks its own way:
-  - a goblin war-band routs;
+  - a 'rout' band (goblins, gnolls, bandits, a cult, a hunt): each follower
+    tests his nerve (2026-11-22, ``leader_falls``: his kind's morale less the
+    band's penalty), not fear for all; the biggest guard may take up the
+    lead first. One that breaks runs its own way (morale.start_flight);
   - a necromancer's dead crumble;
   - devils turn on one another.
-  When half the band is down, the rest may flee. A great maths chain on
-  the leader can break their nerve before he falls.
+  When half the band is down, the rest may flee. A great blow on the leader
+  (a long chain that staggers him: data ``great_blow``) can break their
+  nerve before he falls.
 * **Knowing pays.** A hero who knows the leader's family hears the band's
   make-up on arrival.
 
@@ -292,11 +296,97 @@ def alarm(m, all_monsters, x: int, y: int) -> int:
     return n
 
 
-def on_death(monsters, dead) -> dict:
+def leader_falls_spec(bid: str) -> dict:
+    """The leader's-fall numbers and lines for band ``bid``: the default
+    (data/war_bands.json leader_falls) with the band's own over it."""
+    lf = data().get('leader_falls') or {}
+    own = (lf.get('bands') or {}).get(bid or '') or {}
+    spec = {k: v for k, v in lf.items() if k not in ('bands', 'lines') and not k.startswith('_')}
+    spec.update({k: v for k, v in own.items() if k != 'lines'})
+    spec['lines'] = dict(lf.get('lines') or {}, **(own.get('lines') or {}))
+    return spec
+
+
+def _can_lead(m) -> bool:
+    """Awake, free and his own master: one who could take up the lead."""
+    import morale
+    st = getattr(m, 'status_effects', None) or {}
+    if any(int(st.get(e, 0) or 0) > 0 for e in ('sleeping', 'paralyzed', 'stunned', 'frozen',
+                                                 'feared', 'charmed', 'confused', 'babbled')):
+        return False
+    d = getattr(m, '__dict__', {})
+    if int(getattr(m, '_flee_timer', 0) or 0) > 0 or d.get('_yielded') or d.get('_cowed'):
+        return False
+    return morale.ruled(m) and morale.style(m) != 'never'
+
+
+def successor_of(dead, followers) -> object:
+    """The band's biggest guard who could take up the lead (the most health
+    to lose, then the most left), or None."""
+    guards = [m for m in followers if getattr(m, '_band_role', '') == 'guard' and _can_lead(m)]
+    if not guards:
+        return None
+    return max(guards, key=lambda m: (int(m.max_hp), int(m.hp), -guards.index(m)))
+
+
+def leader_falls(monsters, dead, followers, b: dict, player=None, rng=random) -> dict:
+    """A 'rout' band's leader has fallen: a morale test for each follower
+    (morale.breaks, the band's penalty), not fear for all. The biggest
+    guard may take up the lead first (his own test, no penalty), and then
+    the rest test at the rallied penalty. One that breaks breaks its own
+    way (morale.start_flight); with no hero to run from (a test of the
+    rule), its test waits for its next turn. Returns {'line', 'successor',
+    'broke', 'held'}."""
+    import morale
+    spec = leader_falls_spec(getattr(dead, '_band_id', ''))
+    new = None
+    if spec.get('successor', True):
+        cand = successor_of(dead, followers)
+        if cand is not None and not morale.breaks(cand, 0, rng):
+            new = cand
+    if new is not None:
+        new._band_role = 'leader'
+        new._band_leader = None
+        new._took_lead = True
+    pen = int(spec.get('rallied_penalty', 1) if new is not None else spec.get('penalty', 3))
+    broke, held = [], []
+    for m in followers:
+        if m is new:
+            continue
+        m._band_leader = new
+        if not morale.ruled(m) or morale.style(m) == 'never':
+            held.append(m)
+            continue
+        if player is None:
+            m._morale_check = 'leader'
+            m._morale_penalty = pen
+            continue
+        if morale.breaks(m, pen, rng):
+            if new is not None:
+                m._band_leader = None            # he does not follow the new man
+            morale.start_flight(m, player, monsters, rng)
+            broke.append(m)
+        else:
+            held.append(m)
+    lines = spec.get('lines') or {}
+    if new is not None:
+        from monster import fill
+        line = fill(new, lines.get('rally', ''))
+    elif held or player is None:
+        from monster import fill
+        line = fill(dead, lines.get('hold', ''))
+    else:
+        line = b.get('rout_line', '')
+    return {'line': line[:1].upper() + line[1:] if line else '', 'successor': new,
+            'broke': broke, 'held': held}
+
+
+def on_death(monsters, dead, player=None, rng=random) -> dict:
     """What the band does when ``dead`` falls: {'line', 'effect', 'fall':
-    [members who fall with him]}. Applies fear or quarrel itself."""
+    [members who fall with him], 'successor'}. Applies the leader's-fall
+    test (a rout band), the fear or the quarrel itself."""
     uid = getattr(dead, '_band', None)
-    out = {'line': '', 'effect': '', 'fall': []}
+    out = {'line': '', 'effect': '', 'fall': [], 'successor': None}
     if not uid:
         return out
     d = data()
@@ -306,6 +396,12 @@ def on_death(monsters, dead) -> dict:
         effect = b.get('morale', 'rout')
         out['effect'] = effect
         out['line'] = b.get('rout_line', '')
+        dead._band_role = 'fallen'               # he leads no one now (a captain who begs lives)
+        if effect == 'rout':
+            got = leader_falls(monsters, dead, alive, b, player, rng)
+            out['line'] = got['line']
+            out['successor'] = got['successor']
+            return out
         for m in alive:
             m._band_leader = None
             if effect == 'crumble':
@@ -319,31 +415,52 @@ def on_death(monsters, dead) -> dict:
             else:
                 _frighten(m, 12)
         return out
-    # Half the band down: some of the rest lose heart, leader or no.
+    # Half the band down: while a leader leads them they hold for him (his
+    # fall-back order gathers them); with none, each of the rest tests his
+    # nerve on his next turn (2026-11-22: it was a coin flip of fear for
+    # each, leader or no).
     total = len(members_of(monsters, uid))
     if total and len(alive) * 2 <= total and not getattr(dead, '_band_halved', False):
-        p = float(d.get('half_down_flee', 0.5))
+        lead = leader_of(monsters, uid)
+        leads = lead is not None and lead.alive and not lead.__dict__.get('_yielded')
+        pen = int(leader_falls_spec(getattr(dead, '_band_id', '')).get('half_down_penalty', 2))
         for m in alive:
             m._band_halved = True
-            if getattr(m, '_band_role', '') != 'leader' and random.random() < p:
-                _frighten(m, 8)
+            if leads or getattr(m, '_band_role', '') == 'leader':
+                continue
+            m._morale_check = 'half'
+            m._morale_penalty = pen
     return out
 
 
-def on_great_blow(monsters, leader, chain: int) -> str:
-    """A chain of ``nerve_chain`` or more on a band's living leader shakes
-    the followers who see it: about half of them falter. Returns the line."""
+def is_great_blow(leader, chain: int, damage=None) -> bool:
+    """A blow that staggers the leader (data/war_bands.json great_blow): a
+    long enough chain, and (when the blow's damage is known) a big enough
+    share of his health in it."""
+    g = data().get('great_blow') or {}
+    if int(chain) < int(g.get('chain', data().get('nerve_chain', 6))):
+        return False
+    if damage is None:
+        return True
+    return float(damage) >= float(g.get('share', 0.0)) * max(1, int(getattr(leader, 'max_hp', 1) or 1))
+
+
+def on_great_blow(monsters, leader, chain: int, damage=None) -> str:
+    """A great blow (is_great_blow) on a band's living leader shakes the
+    followers who see it: each falters `falter` of the time. Returns the
+    line."""
     d = data()
     if (not getattr(leader, '_band', None) or getattr(leader, '_band_role', '') != 'leader'
-            or not leader.alive or int(chain) < int(d.get('nerve_chain', 6))):
+            or not leader.alive or not is_great_blow(leader, chain, damage)):
         return ''
+    g = d.get('great_blow') or {}
     b = d['bands'].get(getattr(leader, '_band_id', ''), {})
     shaken = 0
     for m in members_of(monsters, leader._band):
         if m is leader or not m.alive:
             continue
-        if random.random() < 0.5:
-            _frighten(m, 4)
+        if random.random() < float(g.get('falter', 0.5)):
+            _frighten(m, int(g.get('turns', 4)))
             shaken += 1
     return b.get('break_line', '') if shaken else ''
 

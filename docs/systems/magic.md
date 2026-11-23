@@ -104,7 +104,9 @@ alter the raw contract:
 - **`free_cast_once_per_floor`** — pops the next spell's `mp_cost` to 0
   (one cast per floor, consumed via `consume_passive_charge`).
 - **`double_cast_at_peak_tier`** — if the successful cast was `tier >= 5`,
-  `_apply_spell_effect` fires a **second** time with the same target.
+  `_apply_spell_effect` fires a **second** time with the same target, unless
+  the first casting killed it (bug bash 3.6.1: the second weave was said of
+  a corpse).
 
 See `src/chain_passives.py` for the passive wiring.
 
@@ -354,6 +356,9 @@ _SELF_BUFF_DURATIONS = {
     'foresight_self':     ('clairvoyant',  30),    # long detect-all
     'resurrection_self':  ('life_save',    50),    # one-shot revive
     'greater_invis_self': ('invisible',    25),    # longer invis
+    # (Invisibility "breaks on attack": the cast marks player._spell_veil_until,
+    # and a strike while it runs ends it, CombatMixin._ring_veil_slips; Greater
+    # Invisibility clears the mark and holds through a strike. Bug bash 3.6.1.)
     # Missing-handler audit: phase_door + levitate were falling through.
     'phase_self':         ('phasing',      15),    # walk through walls
     'levitation_self':    ('levitating',   12),    # float over floor traps
@@ -520,6 +525,21 @@ are documented in [status_effects](status_effects.md).
   Lantern of Diogenes 120 and the unseen shown for as long,
   `light_reveals`); see [items](items.md), "Lights in
   the off hand".
+- **The scrolls of light** (2026-11-22; Brandon: "create a light that
+  follows you for some significant number of turns") lay the same `light`
+  status for their own `light_turns` at their own `light_sight`
+  (data/items/scroll.json; `lights.kindle`): Light 500 turns at +3,
+  Illumination 1,000 at +4, Revelation 1,500 at +5 (half again blessed). A
+  scroll is spent once, so it burns far longer than the 2 MP spell. One
+  brighter than the spell's keeps its brightness (its glow) for its own
+  turns while the status runs (`lights.status_glow`, `glow_tick`); only the
+  brightest counts and a lit hero is seen farther by it. Revelation lends
+  Lynceus's eyes besides: the invisible seen for as long, and 100 turns of
+  clairvoyance. They no longer map the floor: that is the mapping scrolls'
+  work (Local Mapping 35 tiles round, about half a floor; Area Mapping 50;
+  Cartography the whole floor; Deep Mapping and its hidden doors; Dungeon
+  Mapping and its traps too: `map_radius`, `map_finds`). Cursed, a light
+  scroll's words call the dark (`light_shy.snuff` 'dark').
 - **`cleanse_self`** — pop one debuff.
 - **`identify_item`** (Detect Magic / Identify / Omnisight family) — a
   three-tier BUC reveal: T1 reveals magic items in sight, T3 adds
@@ -542,14 +562,16 @@ are documented in [status_effects](status_effects.md).
       ...
   ```
 
-- **`power_word_kill`** (T5) — instakill if target HP at or below
-  `INT * 20`. Bosses immune (take `INT * 5` consolation damage). The
-  threshold is a hard-coded pin of the chain=5 fossil expression:
+- **`power_word_kill`** (T5) — instakill a foe at or below a share of its
+  own health: `DEATH_WORD_BASE` (0.25) plus `DEATH_WORD_PER_INT` (0.01) a
+  point of INT, at most `DEATH_WORD_CAP` (0.60). A big foe (`_is_big_foe`:
+  bosses, mini-bosses, seal demons, the huge) only staggers, losing
+  `DEATH_WORD_STAGGER` through `floor_curve.wound`. (The spell's desc said
+  "INT x 20", the retired rule, until bug bash 3.6.1.)
 
   ```python
-  # v2.15+ audit sync: chain retired. Fossil expression
-  # `INT * chain * 4` pinned at chain=5 (INT * 20).
-  threshold = self.player.INT * 20
+  threshold = int(target.max_hp * min(
+      DEATH_WORD_CAP, DEATH_WORD_BASE + DEATH_WORD_PER_INT * self.player.INT))
   ```
 
 - **`disintegrate_spell`** (T5) — 50% instakill vs non-bosses, else

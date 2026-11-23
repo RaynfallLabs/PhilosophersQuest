@@ -131,9 +131,12 @@ def test_o_on_a_known_monster_opens_its_bestiary_page():
 def test_o_on_an_unknown_monster_keeps_the_plain_look():
     from game_states import STATE_PLAYER
     g, m = _scene(_plain_kind(), known=False)
+    start = len(g.msg_log.entries)
     _observe(g, m)
     assert g.state == STATE_PLAYER
-    assert any('You see' in str(e[0]) for e in g.msg_log.entries[-4:])
+    # Everything the look wrote (its tells grow with the creature's ways:
+    # 3.6.1's charger tell is one more line), not a fixed last few.
+    assert any('You see' in str(e[0]) for e in g.msg_log.entries[start:])
 
 
 def test_o_on_a_seen_but_unstudied_monster_does_not_open_its_page():

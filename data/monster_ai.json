@@ -49,6 +49,20 @@
     "at_bay_hit": 2,
     "withdraw_strikes": 0.5,
     "futile_blows": 5,
+    "bestiary": {
+      "_doc": "The Bestiary's line of a creature's nerve (morale.bestiary_line, 2026-11-22): its kind's morale in a word ('steady' at steady_at or more, 'shaky' at shaky_at or less, else 'nerve'), then how it breaks.",
+      "steady_at": 15,
+      "shaky_at": 8,
+      "steady": "Steady: it rarely breaks.",
+      "shaky": "Shaky: it breaks easily.",
+      "nerve": "",
+      "styles": {
+        "bolt": "Beaten, it bolts and gives up the fight.",
+        "regroup": "Beaten, it runs for its friends and comes back with them.",
+        "withdraw": "Beaten, it falls back fighting, then comes again.",
+        "yield": "Beaten and cornered, it throws down its weapon and begs."
+      }
+    },
     "kin_sight": 8,
     "penalty": {
       "wound": 0,
@@ -372,5 +386,14 @@
   "surprise": {
     "_doc": "src/surprise.py (Lurkers Keep Their Promise). An ambusher springs when the hero is within spring_reach tiles with nothing between them; unseen till then, its first blow that lands is a surprise (x1.75, as a mimic's). Spotted first, or a mimic of a kind he knows, it surprises no one.",
     "spring_reach": 2
+  },
+  "under_fire": {
+    "_doc": "src/under_fire.py (Answers Being Shot, 2026-11-22). A creature is under fire when it was hurt since its last turn while neither it nor the hero stood beside the other and no pet was at it: an arrow, a bolt, a thrown flask, a spell from across the room. It stays under fire `memory` turns. What it does about it is its kind's nature: a charger (a kind's own `rush` in monsters.json: true, or {turns, rest, line}) rushes, two strides a turn for `rush_turns` turns, then must catch its breath `rush_rest` turns before it can rush again; a thinking kind ducks out of the hero's line of fire and waits round the corner (the Tactical Mind's `take_cover`, data/minds.json `under_fire`); a band's slinger pelts him back (src/packs.py band_sling); a band's leader under fire stops hanging back behind his guards. An archer or a caster answers with its own shot, as before.",
+    "memory": 6,
+    "rush_turns": 3,
+    "rush_rest": 12,
+    "rush_line": "{The} roars and charges at you!",
+    "rush_unseen": "Heavy feet come pounding toward you!",
+    "bestiary": "A charger: shot at from afar, it rushes you two strides a turn."
   }
 }

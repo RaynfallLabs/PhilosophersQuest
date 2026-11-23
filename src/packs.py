@@ -493,6 +493,8 @@ def hunt_turn(m, player, dungeon, all_monsters, extra_occupied=None):
     beside him. Returns 'attack' (it strikes now: a sling stone, a jackal's
     dart, a fast one that came beside him), 'moved', 'held' (it waits), or
     None (it comes on the ordinary way)."""
+    if band_slinger(m):
+        return band_sling(m, player, dungeon, all_monsters)
     if not in_pack(m) or m.has_effect('confused') or m.has_effect('blinded'):
         return None
     t = tactics()
@@ -745,6 +747,56 @@ def _sling(m, player, dungeon, all_monsters, near, extra_occupied=None):
             return None
     m._stones = int(m.__dict__.get('_stones', 0) or 0) + 1
     m._pack_blow = random.choice(shots)
+    return 'attack'
+
+
+def band_slinger(m) -> bool:
+    """A war-band's member whose kind's pack slings (a goblin of the scouts
+    or the raiders): its own master, hostile, with its wits about it."""
+    d = getattr(m, '__dict__', {})
+    if not d.get('_band') or 'sling' not in tricks_of(m) or not getattr(m, 'alive', False):
+        return False
+    if getattr(m, 'is_allied', False) or m.has_effect('confused') or m.has_effect('blinded'):
+        return False
+    return not _named(m)
+
+
+def band_sling(m, player, dungeon, all_monsters):
+    """A band's slinger with the hero two to its sling's range off and a
+    clear throw past its friends pelts him ('attack') rather than walk into
+    his blows, `stones` stones at most (as long as it likes at a narrow
+    way), unless its leader has called the charge or the fall-back (None:
+    it comes on, or keeps its band's order). The line is said once a
+    fight for the band (data/packs.json band_sling)."""
+    shots = _ranged_attacks(m)
+    if not shots:
+        return None
+    hero = (player.x, player.y)
+    d0 = _cheb(m.x, m.y, *hero)
+    if d0 < 2 or d0 > int(trick('sling').get('range', 5)):
+        return None
+    band = getattr(dungeon, 'band', None)
+    if isinstance(band, dict) and band.get('uid') == m.__dict__.get('_band') and \
+            band.get('order') in ('charge', 'fall_back'):
+        return None
+    if not m._has_clear_shot(player.x, player.y, dungeon,
+                             [o for o in all_monsters or () if getattr(o, 'alive', False)]):
+        return None
+    # Its stones thrown, it drops the sling and comes on; at a narrow way,
+    # where its band will not follow him, it pelts him as long as it likes.
+    cap = int((data().get('band_sling') or {}).get('stones', 3))
+    if int(m.__dict__.get('_stones', 0) or 0) >= cap and not choke(
+            slots(m, player, dungeon, all_monsters)):
+        return None
+    m._stones = int(m.__dict__.get('_stones', 0) or 0) + 1
+    m._pack_blow = random.choice(shots)
+    uid = m.__dict__.get('_band')
+    band_mates = [o for o in all_monsters or () if getattr(o, '__dict__', {}).get('_band') == uid]
+    if not any(o.__dict__.get('_band_sling_said') for o in band_mates):
+        for o in band_mates:
+            o._band_sling_said = True
+        bs = data().get('band_sling') or {}
+        _say(m, _fill(m, bs.get('line', '')), player, bs.get('unseen', ''))
     return 'attack'
 
 

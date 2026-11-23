@@ -305,5 +305,17 @@
     "_doc": "Wait Your Turn: a hunter takes a way round only if it is at most `slack` steps longer than the straight way; stuck behind one of its own side in a narrow way it waits `wait` turns before it looks for another way.",
     "slack": 6,
     "wait": 3
+  },
+  "under_fire": {
+    "_doc": "Into Cover (2026-11-22; src/under_fire.py says when a creature is under fire). A thinking kind that fights hand to hand, shot from afar with no shot of its own to answer, ducks out of the hero's line of fire: a tile within `cover_reach` steps that he cannot see (round a corner, or past his light), no more than `cover_slack` tiles farther from him than it stands, never beside him or on a danger. There it waits round the corner for him (its patience, as at a corridor's mouth; the twang of his bow does not draw it out), and when he comes within two tiles it steps out and strikes first. At most `cover_moves` times a fight; a charger (a kind's own `rush`) rushes instead. `weights` is how readily each mind does it (none: never). A band's leader under fire stops hanging back behind his guards (`drop_screen`, said once a fight).",
+    "cover_reach": 2,
+    "cover_slack": 1,
+    "cover_moves": 2,
+    "weights": {"cunning": 1.5, "trickster": 1.6, "soldier": 1.2, "caster": 1.1},
+    "bestiary": "Shot at, it ducks round a corner and waits to strike first.",
+    "lines": {
+      "take_cover": "{The} ducks out of your line of fire!",
+      "drop_screen": "{The} takes the hit and waves {his} band on!"
+    }
   }
 }

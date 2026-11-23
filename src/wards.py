@@ -468,3 +468,16 @@ def item_def(item_class: str, item_id: str) -> dict:
         except (OSError, ValueError):
             _ITEM_DEFS[item_class] = {}
     return dict(_ITEM_DEFS[item_class].get(item_id) or {})
+
+
+def field_of(entry: dict, key: str, buc: str = 'uncursed', default=None):
+    """One of a kind's own numbers from its data entry (``item_def``): its
+    ``<key>_blessed`` or ``<key>_cursed`` when the copy is so and the data
+    names one, else ``<key>``, else ``default``. The one lookup a scroll's
+    handler and its card (item_words) share, so the two cannot drift: the
+    handler passes the copy's blessing, the card the blessing the hero
+    knows."""
+    entry = entry or {}
+    if buc in ('blessed', 'cursed') and f"{key}_{buc}" in entry:
+        return entry[f"{key}_{buc}"]
+    return entry.get(key, default)

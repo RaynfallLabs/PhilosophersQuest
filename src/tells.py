@@ -111,6 +111,15 @@ def abilities(m) -> list:
         have.update(kind_data.tell_keys(m))
     except (ImportError, OSError, ValueError):
         pass
+    # How it answers being shot (src/under_fire.py: a charger rushes) and
+    # how it breaks (src/morale.py: one that runs for its friends).
+    try:
+        import under_fire
+        import morale
+        have.update(under_fire.tell_keys(m))
+        have.update(morale.tell_keys(m))
+    except (ImportError, OSError, ValueError):
+        pass
     # How it thinks (AI-2, src/tactical_mind.py): its mind, the dark edge,
     # its snares, a band leader's orders.
     try:

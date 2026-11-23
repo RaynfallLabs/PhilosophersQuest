@@ -237,7 +237,9 @@ def test_a_follower_answers_to_the_leader_in_this_fight():
         lead.hp, lead.alive = 0, False
         sim_groups.deaths(run, [lead], [thug])
         if on:
-            assert thug._under('feared') and run.fs.get('grp_band_rout') == 1
+            # A morale test, not fear for all (war_bands.leader_falls): he
+            # breaks his own way, holds, or takes up the lead himself.
+            assert not thug._under('feared') and run.fs.get('grp_band_rout') == 1
             assert not morale.held_by_others(thug, run.p)
         else:
             assert not thug._under('feared')
@@ -267,8 +269,8 @@ def test_a_great_blow_on_the_captain_shakes_his_band():
         lead = group[0]
         sim_groups.fight_start(run, group, [])
         sim_groups.deaths(run, group, [])                # the marks: his health, the chain
-        lead.hp -= 5
-        run.quiz.chain_sum += 7                          # a chain of seven landed on him
+        lead.hp -= lead.max_hp // 3 + 1                  # a third of his health in one blow
+        run.quiz.chain_sum += 8                          # a chain of eight landed on him
         sim_groups.deaths(run, group, [])
         shaken = sum(1 for m in group[1:] if m._under('feared'))
         assert (shaken > 0) == bool(on) and bool(run.fs.get('grp_great_blows')) == bool(on)

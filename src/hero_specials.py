@@ -6,7 +6,11 @@ with chain-tier-graded effects per the design spec.
 
 Boss CC immunity: any special that applies a status effect (charm, fear,
 confuse, paralyze, sleep, immobilize) checks `is_boss_or_huge(monster)`
-and skips. Damage specials work on bosses but with 0.5x scaling.
+and skips, picks only a foe that can take it (`_can_hold`: not a bystander,
+not one whose nature refuses it) and lays it through Monster.hold (`_hold`).
+Damage specials work on bosses, a share of their health a tenth as large
+(floor_curve.wound, WOUND_NAMED). A cure lifts what a cure lifts
+(status_effects.ailments_on).
 
 Passives are stored on `player.hero_passives: set[str]` and checked at
 hook sites in combat.py, player.py, game_menus.py, and main.py.
@@ -57,6 +61,40 @@ def _is_foe(monster) -> bool:
                 or getattr(monster, '_flavor_encounter_tag', None)
                 or getattr(monster, '_is_unicorn', False)
                 or (hasattr(monster, 'has_effect') and monster.has_effect('charmed')))
+
+
+def _can_hold(monster, effect: str) -> bool:
+    """A foe the power may be spent on that can take ``effect``: not the cow,
+    an encounter NPC or one already charmed (_is_foe), and not one whose
+    nature refuses it (Monster.resists_control: the mindless know no fear,
+    the dead take no charm, a named foe is never charmed or frightened)."""
+    if not _is_foe(monster):
+        return False
+    rc = getattr(monster, 'resists_control', None)
+    return not (rc is not None and rc(effect))
+
+
+def _hold(monster, effect: str, turns: int) -> None:
+    """Lay ``effect`` through Monster.hold (the longer of old and new, a
+    named foe's cap and grace, what its nature refuses). The specials wrote
+    the status straight in, so a golem was confused and a zombie charmed."""
+    if hasattr(monster, 'hold'):
+        monster.hold(effect, int(turns))
+    else:
+        cur = int(monster.status_effects.get(effect, 0) or 0)
+        monster.status_effects[effect] = max(cur, int(turns))
+
+
+def _ailments(player) -> list:
+    """What a hero cure may lift, the most urgent first (the shared rule)."""
+    from status_effects import ailments_on
+    return ailments_on(player)
+
+
+def _ailment_name(effect: str) -> str:
+    """The status's own name, in lower case ("poisoned" read as a code id)."""
+    from status_effects import EFFECT_INFO
+    return str((EFFECT_INFO.get(effect) or (effect.replace('_', ' '),))[0]).lower()
 
 
 def _named_or_huge(monster) -> bool:
@@ -213,7 +251,7 @@ HERO_SPECIALS: dict[str, dict] = {
     "odysseus of ithaca": {
         'id': 'hero_cunning_stratagem',
         'name': 'Cunning Stratagem',
-        'desc': 'Charm visible non-boss monsters as temporary allies.',
+        'desc': 'Charm visible non-boss monsters: for a while they will not attack you.',
         'cooldown': 400,
         'effect': 'charm_visible',
         'boss_immune': True,
@@ -231,7 +269,8 @@ HERO_SPECIALS: dict[str, dict] = {
     "merlin ambrosius": {
         'id': 'hero_stardrop',
         'name': 'Stardrop',
-        'desc': 'Falling-star single-target damage. Bosses take 0.5x.',
+        'desc': ('A falling star strikes the nearest foe in sight for a share of its health '
+                 '(a boss or a huge foe takes a tenth as much).'),
         'cooldown': 300,
         'effect': 'damage_single',
         'tier_effects': {
@@ -555,17 +594,15 @@ def _eff_confuse_visible(game, special, tier, chain):
         return
     targets = [m for m in _in_reach(game) if game._sees_monster(m)
                and 'humanoid' in getattr(m, 'tags', [])
-               and not is_boss_or_huge(m)]
+               and not is_boss_or_huge(m) and _can_hold(m, 'confused')]
     if not targets:
         game.add_message("No one in sight to question.", 'info')
         return NOTHING
     random.shuffle(targets)
     for m in targets[:cnt]:
-        cur = m.status_effects.get('confused', 0)
-        m.status_effects['confused'] = max(cur, dur)
+        _hold(m, 'confused', dur)
         if tier.get('slow_too'):
-            cur = m.status_effects.get('slowed', 0)
-            m.status_effects['slowed'] = max(cur, dur)
+            _hold(m, 'slowed', dur)
         game.add_message(f"{the_name(m)} questions everything {pronouns(m)[0]} knows.", 'success')
 
 
@@ -586,12 +623,12 @@ def _eff_self_heal(game, special, tier, chain):
     game.add_message(grave_rot.told(game.player, game.player.hp - before,
                                     "Harmony — you recover {n} HP."), 'success')
     if cleanse_n > 0:
-        from status_effects import DEBUFFS
-        debuffs = [e for e in list(game.player.status_effects) if e in DEBUFFS]
-        random.shuffle(debuffs)
-        for d in debuffs[:cleanse_n]:
+        # What a cure lifts, the most urgent first (status_effects.ailments_on):
+        # never a status the gear he wears holds (-1), the crossbow's crank or
+        # the pit. It drew at random from every debuff.
+        for d in _ailments(game.player)[:cleanse_n]:
             game.player.status_effects.pop(d, None)
-            game.add_message(f"  ...{d} clears from you.", 'success')
+            game.add_message(f"  ...{_ailment_name(d)} clears from you.", 'success')
 
 
 def _eff_self_aoe_fire(game, special, tier, chain):
@@ -663,17 +700,15 @@ def _eff_fear_visible(game, special, tier, chain):
         game.add_message("No one cowers.", 'warning')
         return
     targets = [m for m in _in_reach(game) if game._sees_monster(m)
-               and not is_boss_or_huge(m)]
+               and not is_boss_or_huge(m) and _can_hold(m, 'feared')]
     if not targets:
         game.add_message("No one in sight to cower.", 'info')
         return NOTHING
     random.shuffle(targets)
     for m in targets[:cnt]:
-        cur = m.status_effects.get('feared', 0)
-        m.status_effects['feared'] = max(cur, dur)
+        _hold(m, 'feared', dur)
         if immob:
-            cur = m.status_effects.get('immobilized', 0)
-            m.status_effects['immobilized'] = max(cur, immob)
+            _hold(m, 'immobilized', immob)
         game.add_message(f"{the_name(m)} breaks before you.", 'success')
 
 
@@ -772,15 +807,16 @@ def _eff_charm_visible(game, special, tier, chain):
         game.add_message("None are persuaded.", 'warning')
         return
     targets = [m for m in _in_reach(game) if game._sees_monster(m)
-               and not is_boss_or_huge(m)]
+               and not is_boss_or_huge(m) and _can_hold(m, 'charmed')]
     if not targets:
         game.add_message("No one in sight to persuade.", 'info')
         return NOTHING
     random.shuffle(targets)
     for m in targets[:cnt]:
-        cur = m.status_effects.get('charmed', 0)
-        m.status_effects['charmed'] = max(cur, dur)
-        game.add_message(f"{the_name(m)} turns to your side.", 'success')
+        _hold(m, 'charmed', dur)
+        # (A charmed creature holds its blow and wanders: it does not fight
+        # for him. "turns to your side" promised an ally.)
+        game.add_message(f"{the_name(m)} lowers {pronouns(m)[2]} guard.", 'success')
 
 
 def _eff_damage_single(game, special, tier, chain):
@@ -832,9 +868,8 @@ def _eff_drain_attractive(game, special, tier, chain):
     game.player.hp = min(game.player.max_hp, game.player.hp + min(hp_drain, drained))
     game.add_message(
         f"Ash drains {drained} HP from {the_name(target, lower=True)}. \"Groovy.\"", 'success')
-    if charm_dur and target.alive and not is_boss_or_huge(target):
-        cur = target.status_effects.get('charmed', 0)
-        target.status_effects['charmed'] = max(cur, charm_dur)
+    if charm_dur and target.alive and not is_boss_or_huge(target)             and _can_hold(target, 'charmed'):
+        _hold(target, 'charmed', charm_dur)
     if not target.alive:
         game._on_monster_killed(target)
 
@@ -922,17 +957,15 @@ def _eff_paralyze_target(game, special, tier, chain):
         game.add_message("The calculation diverges.", 'warning')
         return
     targets = [m for m in _in_reach(game) if game._sees_monster(m)
-               and not is_boss_or_huge(m)]
+               and not is_boss_or_huge(m) and _can_hold(m, 'paralyzed')]
     if not targets:
         game.add_message("No tractable target.", 'warning')
         return NOTHING
     targets.sort(key=lambda m: max(abs(m.x - game.player.x), abs(m.y - game.player.y)))
     target = targets[0]
-    cur = target.status_effects.get('paralyzed', 0)
-    target.status_effects['paralyzed'] = max(cur, par)
+    _hold(target, 'paralyzed', par)
     if slow:
-        cur = target.status_effects.get('slowed', 0)
-        target.status_effects['slowed'] = max(cur, slow)
+        _hold(target, 'slowed', slow)
     game.add_message(f"{the_name(target)} freezes in {pronouns(target)[2]} loop.", 'success')
 
 
@@ -1031,12 +1064,9 @@ def _eff_aoe_heal_self(game, special, tier, chain):
         game.add_message(grave_rot.told(game.player, got, "Viriditas — green life. +{n} HP."),
                          'success')
     if cleanse_n > 0:
-        from status_effects import DEBUFFS
-        debs = [e for e in list(game.player.status_effects) if e in DEBUFFS]
-        random.shuffle(debs)
-        for d in debs[:cleanse_n]:
+        for d in _ailments(game.player)[:cleanse_n]:     # (as Harmony of Spheres)
             game.player.status_effects.pop(d, None)
-            game.add_message(f"  ...{d} fades.", 'success')
+            game.add_message(f"  ...{_ailment_name(d)} fades.", 'success')
 
 
 _DISPATCH = {
