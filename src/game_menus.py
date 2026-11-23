@@ -2010,7 +2010,7 @@ class MenuMixin:
         pl = self.player
         if getattr(pl, '_gold_offering_used_this_floor', False):
             self.add_message("Gilgamesh's Bribe is spent for this floor.", 'warning')
-            return False
+            return True                   # (nothing paid: no turn passes)
         # Find closest visible, non-boss, INT-5+ monster
         candidates = []
         import holds
@@ -2036,7 +2036,7 @@ class MenuMixin:
             self.add_message(
                 "Nothing in sight would take gold: only beasts, the dead, or kings.",
                 'warning')
-            return False
+            return True                   # (nothing paid: no turn passes)
         candidates.sort(key=lambda t: t[0])
         target = candidates[0][1]
         import economy
@@ -2054,7 +2054,7 @@ class MenuMixin:
             self.add_message(
                 f"You need {cost:,} gold to bribe {the_name(target, lower=True)}. You have {_purse:,}.",
                 'warning')
-            return False
+            return True                   # (nothing paid: no turn passes)
         self.player_gold = _purse - cost
         # Paid to let you pass, not to stand still while you stab it: it
         # stands aside (charmed: no blow at you, it wanders) and the deal is

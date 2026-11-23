@@ -2422,12 +2422,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # still holds the floor just left at this point).
                 _arrival_fov = calculate_fov(self.dungeon, self.player.x, self.player.y,
                                              self.player.get_sight_radius())
+                _held = 0
                 for m in self.monsters:
                     if m.alive and (m.x, m.y) in _arrival_fov:
-                        m.add_effect('paralyzed', 10)
-                self.add_message(
-                    "Atalanta's choice! Time itself pauses for you to breathe.",
-                    'success')
+                        _held += 1 if m.add_effect('paralyzed', 10) else 0
+                # Said only when something was held: with no one in sight
+                # (or only what cannot be held) it told of a pause that froze
+                # nothing.
+                if _held:
+                    self.add_message(
+                        "Atalanta's choice! Time itself pauses for you to breathe.",
+                        'success')
         except ImportError:
             pass
 
@@ -2546,8 +2551,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if _new_depth and getattr(self.player, 'quirk_progress', {}).get('orpheus_active'):
                 for m in self.monsters:
                     if m.alive:
-                        m.status_effects['slowed'] = max(
-                            m.status_effects.get('slowed', 0), 5)
+                        m.hold('slowed', 5)      # (what its nature refuses: Monster.hold)
 
         # Grant HP/SP/MP rest-heal on FIRST visit only. Revisits (e.g.
         # stair-stomping between two floors to grind SP) get nothing —

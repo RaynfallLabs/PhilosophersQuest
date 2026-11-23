@@ -512,3 +512,46 @@ def test_the_stuffies_fire_breath_is_fire():
     src = inspect.getsource(game_combat.CombatMixin._confirm_power_target)
     i = src.index('cone = get_cone_tiles')
     assert "m._is_named_foe()),\n" in src[i:i + 800] and "'fire')" in src[i:i + 800]
+
+
+def test_gilgameshs_bribe_with_no_taker_spends_no_turn():
+    """No one in sight to take gold, or too little gold: it spent a turn."""
+    g = _game()
+    assert g._activate_gold_offering() is True         # nothing in sight to take gold
+
+
+def test_a_family_stun_is_not_said_of_one_that_cannot_be_stunned(monkeypatch):
+    """stun_on_hit held the stun through Monster.hold (refused by its nature)
+    and said the technique's line all the same."""
+    import family_edges
+    from player import Player
+    p = Player()
+    m = _mon('giant_rat')
+    m.status_immune = ['stunned']
+    told = []
+    monkeypatch.setattr(family_edges, 'stun_on_hit', lambda pl, t, c: ({'name': 'X'}, {'turns': 2}))
+    monkeypatch.setattr(family_edges, 'tell', lambda pl, t, a, **k: told.append(a) or True)
+    for name in ('execute', 'turn_on_hit', 'charm_on_hit', 'surrender'):
+        monkeypatch.setattr(family_edges, name, lambda *a, **k: None)
+    monkeypatch.setattr(family_edges, 'block_regen_turns', lambda pl, t: 0)
+    family_edges.after_blow(p, m, 5, 10)
+    assert told == [] and not m.status_effects.get('stunned', 0)
+    m.status_immune = []
+    family_edges.after_blow(p, m, 5, 10)
+    assert told and m.status_effects.get('stunned', 0) == 2
+
+
+def test_atalantas_choice_is_said_only_when_it_holds_something():
+    import inspect
+    import main
+    src = inspect.getsource(main.Game._change_level)
+    i = src.index("Atalanta's choice! Time itself pauses")
+    assert 'if _held:' in src[i - 300:i]
+
+
+def test_orpheus_slows_through_monster_hold():
+    import inspect
+    import main
+    src = inspect.getsource(main.Game._change_level)
+    i = src.index("orpheus_active")
+    assert "m.hold('slowed', 5)" in src[i:i + 400]
