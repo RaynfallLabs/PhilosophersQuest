@@ -1757,7 +1757,10 @@ class MagicMixin(MagicWardsMixin):
             # Chain-equip passive: double_cast_at_peak_tier (Robe of the Magus
             # T5). v2.12.0: no chain, so this now fires on every SUCCESSFUL
             # cast at the spell's peak tier (T5).
-            if int(spell.get('tier', spell.get('quiz_tier', 1))) >= 5:
+            # (Never at a foe the first casting killed: "Holy fire smites the
+            # Goblin for 2067 damage!" was said of a corpse.)
+            if (int(spell.get('tier', spell.get('quiz_tier', 1))) >= 5
+                    and (target is None or getattr(target, 'alive', False))):
                 from chain_passives import player_has_passive
                 if player_has_passive(self.player, 'double_cast_at_peak_tier'):
                     self.add_message(
@@ -2478,6 +2481,14 @@ class MagicMixin(MagicWardsMixin):
             dur = min(_MAXD, max(2, int(base_dur * chain_scale)))
             self.player.add_effect(eff_name, dur)
             dur = turns_now(self.player, eff_name, dur)     # what is applied is what is said
+            if effect == 'invisibility_self':
+                # "Vanish from sight for 15 turns; breaks on attack": a strike
+                # while it runs ends it (_ring_veil_slips). It never did, so
+                # Greater Invisibility ("attacking does NOT break it") was
+                # only the longer of two equal spells.
+                self.player._spell_veil_until = int(self.turn_count) + int(dur)
+            elif effect == 'greater_invis_self':
+                self.player.__dict__.pop('_spell_veil_until', None)
             # MK-10: the status's display name, not its raw id ("magic_resist")
             from status_effects import EFFECT_INFO as _EI
             _shown = (_EI.get(eff_name) or (eff_name.replace('_', ' ').title(),))[0]

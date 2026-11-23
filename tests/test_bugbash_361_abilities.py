@@ -376,3 +376,139 @@ def test_an_old_save_ring_of_sustenance_stops_lending_sustained():
     rings.relevel(amu, 6)
     assert gear_saves.refresh_kind(amu)
     assert amu.effects.get('stat') == 'WIS' and amu.effects.get('amount') == 3
+
+
+# ------------------------------------------------------------------- spells
+
+def _cast(g, sid):
+    from game_states import STATE_TARGET
+    g.player.mp = g.player.max_mp = 999
+    g.quiz_engine.start_quiz = lambda **kw: kw['callback'](
+        types.SimpleNamespace(success=True, score=5))
+    g._refresh_fov()
+    g._invoke_spell(sid)
+    if g.state == STATE_TARGET:
+        g._confirm_power_target()
+
+
+def test_the_invisibility_spell_breaks_on_a_strike_and_greater_does_not():
+    """"Vanish from sight for 15 turns; breaks on attack": it never broke, so
+    Greater Invisibility ("attacking does NOT break it") was only longer."""
+    g = _game()
+    _cast(g, 'invisibility_spell')
+    assert g.player.status_effects.get('invisible', 0) > 0
+    g._ring_veil_slips()                               # a blow, a shot, a spell at a foe
+    assert not g.player.status_effects.get('invisible', 0)
+    _cast(g, 'greater_invisibility_spell')
+    left = g.player.status_effects.get('invisible', 0)
+    assert left > 0
+    g._ring_veil_slips()
+    assert g.player.status_effects.get('invisible', 0) == left
+
+
+def test_power_word_kill_says_its_real_rule():
+    """Its desc said "HP at or below INT x 20"; it kills a share of the
+    foe's own health (game_magic.DEATH_WORD_*)."""
+    from spells import LEARNABLE_SPELLS
+    import game_magic
+    d = LEARNABLE_SPELLS['power_word_kill_spell']['desc']
+    assert 'INT x' not in d
+    assert 'quarter' in d and f"{round(game_magic.DEATH_WORD_CAP * 100)}%" in d
+    assert game_magic.DEATH_WORD_BASE == 0.25 and game_magic.DEATH_WORD_PER_INT == 0.01
+
+
+def test_the_robe_of_the_magus_does_not_weave_at_a_corpse():
+    """The second weave of a tier-5 spell was cast at the foe the first had
+    killed: "Holy fire smites the Goblin for 2067 damage!" of a corpse."""
+    import chain_passives
+    g = _game()
+    gob = _beside(g, 'goblin')
+    orig = chain_passives.player_has_passive
+    chain_passives.player_has_passive = lambda p, f: f == 'double_cast_at_peak_tier' or orig(p, f)
+    try:
+        _cast(g, 'judgment_spell')
+    finally:
+        chain_passives.player_has_passive = orig
+    assert not gob.alive
+    assert not any('a second time' in t for t in _texts(g, 12))
+
+
+# --------------------------------------------------------------- the V menu
+
+def test_a_quirk_power_with_nothing_to_do_keeps_its_use():
+    """Mind Fortress, Reality Anchor, Phoenix Rising, Life Drain, Metabolic
+    and the Iron Ration spent one of their few uses doing nothing."""
+    g = _game()
+    p = g.player
+    p.status_effects = {k: v for k, v in p.status_effects.items() if v == -1}
+    p.hp = p.max_hp
+    p.sp = p.max_sp
+    for pid in ('mind_fortress', 'reality_anchor', 'phoenix_rising', 'life_drain',
+                'metabolic', 'iron_ration'):
+        p.power_uses[pid] = 2
+        assert g._activate_power(pid) is True, pid        # no turn passes
+        assert p.power_uses[pid] == 2, pid
+    # With something to do, the use goes.
+    p.status_effects['confused'] = 5
+    assert g._activate_power('mind_fortress') is False
+    assert p.power_uses['mind_fortress'] == 1 and not p.status_effects.get('confused')
+
+
+def test_a_cure_power_leaves_what_the_gear_holds():
+    """Reality Anchor and Mind Fortress popped every debuff, a worn -1 one
+    (the Blindfold's dark) and the crossbow's crank among them."""
+    g = _game()
+    p = g.player
+    p.status_effects['blinded'] = -1
+    p.status_effects['reloading'] = 2
+    p.status_effects['poisoned'] = 4
+    p.power_uses['reality_anchor'] = 1
+    g._activate_power('reality_anchor')
+    assert p.status_effects.get('blinded') == -1
+    assert p.status_effects.get('reloading') == 2
+    assert not p.status_effects.get('poisoned')
+
+
+def test_phoenix_rising_heals_through_disease():
+    """Phoenix Rising set health to full by hand, past Grave Rot (ruling D5:
+    every heal goes through disease)."""
+    g = _game()
+    p = g.player
+    p.hp = 1
+    p.status_effects['diseased'] = 30
+    p.power_uses['phoenix_rising'] = 1
+    g._activate_power('phoenix_rising')
+    assert 1 < p.hp < p.max_hp
+
+
+def test_the_lyre_holds_the_nearest_foe_that_can_be_held():
+    """The Lyre of Orpheus and the Hand of Glory spent a charge on the
+    nearest creature even when it could not be held and another could."""
+    g = _game()
+    lyre = _item('accessory', 'lyre_of_orpheus')
+    g.player._apply_equip(lyre)
+    g._sees_monster = lambda m: True
+    swarm = _beside(g, 'scarab_swarm', dist=1)
+    rat = _beside(g, 'giant_rat', dist=2)
+    before = lyre.charges
+    g._activate_accessory_charge('lyre_of_orpheus')
+    assert not swarm.status_effects.get('paralyzed', 0)
+    assert rat.status_effects.get('paralyzed', 0) > 0
+    assert lyre.charges == before - 1
+    # Only a creature that cannot be held: the charge is kept, no turn.
+    g.monsters = [swarm]
+    assert g._activate_accessory_charge('lyre_of_orpheus') is True
+    assert lyre.charges == before - 1
+
+
+def test_gleipnir_with_no_wolf_spends_no_turn():
+    g = _game()
+    assert g._activate_power('bind_odinkiller') is True
+
+
+def test_the_stuffies_fire_breath_is_fire():
+    import inspect
+    import game_combat
+    src = inspect.getsource(game_combat.CombatMixin._confirm_power_target)
+    i = src.index('cone = get_cone_tiles')
+    assert "m._is_named_foe()),\n" in src[i:i + 800] and "'fire')" in src[i:i + 800]

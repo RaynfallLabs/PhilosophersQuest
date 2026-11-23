@@ -2079,7 +2079,10 @@ class CombatMixin:
                 kills = 0
                 for m in list(self.monsters):
                     if m.alive and (m.x, m.y) in cone and self._in_hero_reach(m):
-                        m.take_damage(floor_curve.wound(_share, m.max_hp, m._is_named_foe()))
+                        # Fire: a creature's fire resistance counts (it was
+                        # taken as a plain blow, so a fire elemental burned).
+                        m.take_damage(floor_curve.wound(_share, m.max_hp, m._is_named_foe()),
+                                      'fire')
                         hits += 1
                         if not m.alive:
                             self._on_monster_killed(m)
@@ -3363,6 +3366,13 @@ class CombatMixin:
         (_say_veil_slip): it was said before the attack quiz had opened."""
         import rings
         line = rings.on_strike(self.player)
+        # The Invisibility spell breaks on a strike (its desc); Greater
+        # Invisibility does not (it clears the mark: game_magic).
+        _until = self.player.__dict__.pop('_spell_veil_until', None)
+        if (_until is not None and int(self.turn_count) <= int(_until)
+                and self.player.status_effects.get('invisible', 0) > 0):
+            del self.player.status_effects['invisible']
+            line = line or 'Your invisibility breaks as you strike.'
         if line:
             self.__dict__['_veil_slip_line'] = line
         import wards                                   # a strike ends sanctuary
