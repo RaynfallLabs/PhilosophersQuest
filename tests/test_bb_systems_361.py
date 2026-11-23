@@ -205,3 +205,40 @@ def test_s08_an_enchanted_piece_says_the_level_it_works_at(game, monkeypatch, bu
     assert working != enchantments.describe(ench, it.ench_level) or buc == 'blessed'
     monkeypatch.setattr(game, '_copy_buc_known', lambda item: True)
     assert any(working in ln for ln in game._item_power_lines(it))
+
+
+# ---------------------------------------------------------------------------
+# S10: a poisoning no creature laid
+# ---------------------------------------------------------------------------
+
+def test_s10_raw_food_poisoning_says_what_it_will_take(game, monkeypatch):
+    import random
+    import food_system
+    from items import load_items
+    p = copy.deepcopy(game.player)
+    p.status_effects.clear()
+    p.max_hp = p.hp = 400
+    raw = next(i for i in load_items('ingredient')
+               if not getattr(i, 'edible_safe', False) and i.id != 'assorted_monster_parts')
+    monkeypatch.setattr(random, 'random', lambda: 0.0)          # the 30% comes up
+    msgs = food_system.eat_raw(p, raw)
+    assert p.has_effect('poisoned')
+    said = ' '.join(msgs)
+    assert '1 HP/turn' not in said
+    assert f"{venom.to_come(p)} to come" in said, said
+
+
+def test_s10_the_poison_potion_card_says_this_heros_turn(game):
+    import item_words
+    from items import make_item_by_id
+    from status_effects import dot_tick
+    p = copy.deepcopy(game.player)
+    p.status_effects.clear()
+    p.max_hp = p.hp = 400
+    p.CON = 30                                                   # a hardy body: toughness
+    it = make_item_by_id('potion', 'potion_of_poison') or next(
+        i for i in __import__('items').load_items('potion') if getattr(i, 'effect', '') == 'poison')
+    it.id_level = 5
+    line = ' '.join(item_words.what_it_does(it, p, buc_known=True))
+    assert p.damage_after(dot_tick(p), 'poison') < dot_tick(p)
+    assert f"({p.damage_after(dot_tick(p), 'poison')})" in line, line

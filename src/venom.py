@@ -181,6 +181,15 @@ def to_come(player) -> int:
     return per_turn(player) * int(player.status_effects.get(STATUS, 0) or 0)
 
 
+def line(player, key: str = 'poisoned') -> str:
+    """A poisoning's line with what it will still take ("You are poisoned:
+    14 to come."), and the warning once a bout when it would kill: for a
+    poison no creature laid (a raw meal), whose line said "-1 HP/turn" while
+    it took 2% of max HP a turn."""
+    warn = warn_once(player)
+    return rules()['lines'][key].format(n=to_come(player)) + ((' ' + warn) if warn else '')
+
+
 def deadly(player) -> bool:
     """What is to come is more than he has: drink the cure now."""
     n = to_come(player)

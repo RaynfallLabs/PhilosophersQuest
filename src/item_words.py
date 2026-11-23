@@ -274,7 +274,14 @@ class _Fields(dict):
         if key == 'per_turn':
             from status_effects import DOT_SHARE, dot_tick
             pct = f"{round(DOT_SHARE * 100)}% of your health"
-            return f"{pct} ({dot_tick(p)})" if p is not None else pct
+            if p is None:
+                return pct
+            # What a turn of it takes from this hero (his toughness, what
+            # resists poison: Player.damage_after), as the tick will.
+            n = dot_tick(p)
+            if callable(getattr(p, 'damage_after', None)):
+                n = p.damage_after(n, 'poison')
+            return f"{pct} ({n})"
         if key == 'amount':
             return _points(2 if self.buc == 'cursed' else 1)
         if key.startswith('quiz_'):
