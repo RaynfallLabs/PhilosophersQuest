@@ -89,7 +89,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'save_guard_all':     ('Warded',             (210, 230, 255), 'Bonus to all saving throws'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Monsters act half as often'),
-    'invisible':          ('Invisible',          (185, 235, 235), 'Harder to hit: 2 points of armor'),
+    'invisible':          ('Invisible',          (185, 235, 235), 'Unseen by monsters more than a step away, unless they see the invisible; 2 points harder to hit'),
     'levitating':         ('Levitating',         (185, 215, 245), 'Floating; immune to floor traps'),
     'regenerating':       ('Regenerating',       ( 80, 225, 105), 'Recovering 1 HP every 3 turns'),
     'telepathy':          ('Telepathy',          (205, 145, 245), 'All monsters visible on level'),
