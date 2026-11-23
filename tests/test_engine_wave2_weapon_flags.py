@@ -167,7 +167,7 @@ def test_cast_me_away_wired_in_take_damage():
     """player.take_damage must check weapon.cast_me_away at HP <= 25% and
     fire the one-shot life_save proc."""
     from player import Player
-    src = inspect.getsource(Player.take_damage)
+    src = (inspect.getsource(Player.take_damage) + inspect.getsource(Player._damage_after) + inspect.getsource(Player._after_damage))   # (its shares, then what a hit sets off)
     assert 'cast_me_away' in src
     assert '_cast_me_away_used' in src
     assert "'life_save'" in src or 'life_save' in src

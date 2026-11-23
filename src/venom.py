@@ -137,8 +137,13 @@ def strength(player) -> int:
 
 
 def _after_body(player, amount: int) -> int:
-    """Player.take_damage's shares of a poison tick, without the damage: the
-    lore circle, a dish's song, toughness."""
+    """Player.take_damage's shares of a poison tick, without the damage:
+    every one of them (Player.damage_after: armour and rings that resist
+    poison too, which a copy of three shares here left out), or for a
+    harness hero the lore circle, a dish's song and toughness."""
+    preview = getattr(player, 'damage_after', None)
+    if callable(preview):
+        return max(0, int(preview(amount, 'poison')))
     if amount <= 1:
         return max(0, amount)
     try:

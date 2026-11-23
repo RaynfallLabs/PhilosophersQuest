@@ -684,6 +684,22 @@ def feast_resist_for(player, rec: dict):
     return None
 
 
+def made_lasting(player, rec: dict, out: dict | None = None) -> set:
+    """The statuses this very meal makes the hero's for good: a special
+    feast's resistance and its boss trophies' (Surtur's coal: Fire Resist).
+    A timed line for one of them is not said, on the card or as it is eaten:
+    the Serpent-King's broth read "Poison Resist, 600 turns" over a Poison
+    Resist its trophy gave for good."""
+    out = out if out is not None else dish_outcome(rec)
+    got = {TROPHY_RESISTS[p] for p in out.get('trophy_powers') or () if p in TROPHY_RESISTS}
+    perm = out.get('permanent')
+    if perm and perm[0] == 'resist':
+        res = feast_resist_for(player, rec)
+        if res:
+            got.add(res)
+    return got
+
+
 def power_label(power: str) -> str:
     from status_effects import EFFECT_INFO
     info = EFFECT_INFO.get(power)
@@ -713,7 +729,7 @@ def mp_amount(player, out: dict) -> int:
                int(out['mp_least'])) + side
 
 
-def side_line(player, out: dict) -> str:
+def side_line(player, out: dict, lasting=()) -> str:
     """The dish's side gifts, for the menu: "Also: Dark Vision, 90 turns;
     +4 MP" ('' when it has none). A heal or mana side already counted in the
     dish's own HP or MP line is not said twice; a power held for good is
@@ -721,12 +737,11 @@ def side_line(player, out: dict) -> str:
     bits = []
     for kind, amount in out.get('sides', ()):
         if kind == 'heal':
-            if out['tab'] != 'hp':
-                bits.append(f"+{int(round(amount * int(getattr(player, 'max_hp', 1) or 1)))} HP")
+            continue             # in the card's own HP line on every dish (heal_amount)
         elif kind == 'mp':
             if out['tab'] != 'mp':
                 bits.append(f"+{int(amount)} MP")
-        elif not held_for_good(player, kind):
+        elif not held_for_good(player, kind) and kind not in lasting:
             bits.append(f"{power_label(kind)}, {quantity(int(amount), 'turn')}")
     return ("Also: " + "; ".join(bits)) if bits else ''
 
@@ -770,14 +785,22 @@ def dish_effects(player, rec: dict) -> list:
     out = dish_outcome(rec)
     tab = out['tab']
     lines = []
+    lasting = made_lasting(player, rec, out)
     # SP cannot pass the bar's top: a feast's SP reads as "+210 SP", not "+1104".
     max_sp = int(getattr(player, 'max_sp', 0) or 0)
     sp_shown = min(out['sp'], max_sp) if max_sp > 0 else out['sp']
+    # Food is food: every dish heals (apply_dish), said beside its SP. Only
+    # the HP tab's card said so; a stew's side said "+12 HP" of a heal of
+    # 31, and a dish with no heal side said nothing of its 40.
+    healed = heal_amount(player, out)
+    heal_too = f", +{healed} HP" if healed > 0 else ''
     if tab == 'hp':
-        lines.append(f"+{heal_amount(player, out)} HP")
+        lines.append(f"+{healed} HP")
     elif tab == 'sp':
-        lines.append(f"+{sp_shown} SP")
-        if out['sustained'] > 0:
+        lines.append(f"+{sp_shown} SP" + heal_too)
+        if out['sustained'] > 0 and held_for_good(player, 'sustained'):
+            lines.append("Sustained: already yours")       # (a story's, for whole floors)
+        elif out['sustained'] > 0:
             lines.append(f"Sustained, {quantity(out['sustained'], 'turn')}")
     elif tab == 'mp':
         lines.append(f"+{mp_amount(player, out)} MP")
@@ -793,7 +816,7 @@ def dish_effects(player, rec: dict) -> list:
         bonus = f" (+{out['ward']})" if out['ward'] else ''
         if held_for_good(player, out['power']):
             lines.append(f"{label}: already yours for good")
-        else:
+        elif out['power'] not in lasting:          # (its For Good line says it)
             lines.append(f"{label}{bonus}, {quantity(out['turns'], 'turn')}")
     if is_legendary(rec) and (getattr(player, 'quirk_progress', None) or {}).get('fatted_calf_active'):
         # The Fatted Calf (a trait): a feast heals the hero fully
@@ -809,12 +832,12 @@ def dish_effects(player, rec: dict) -> list:
             lines.append(f"+{gain} Max HP")
         elif tab == 'hp':
             lines.append(MAX_HP_FULL_FLOOR)
-    also = side_line(player, out)
+    also = side_line(player, out, lasting)
     if also:
         lines.append(also)
     lines.extend(_lasting_lines(player, out, rec))
-    if tab != 'sp':
-        lines.append(f"+{sp_shown} SP")
+    if tab not in ('hp', 'sp'):
+        lines.append(f"+{sp_shown} SP" + heal_too)
     return lines
 
 
@@ -1261,7 +1284,11 @@ def apply_dish(player, rec: dict) -> list:
     elif tab == 'hp':
         msgs.append("You feel sated, but your body is already full of nourishment this floor.")
     # The main benefit.
-    if tab == 'sp' and out['sustained'] > 0:
+    if tab == 'sp' and out['sustained'] > 0 and held_for_good(player, 'sustained'):
+        # (Held for whole floors, Diogenes' lesson: a meal's turns add nothing,
+        # and it said "You are Sustained for 90 turns" over it.)
+        msgs.append("You are already Sustained.")
+    elif tab == 'sp' and out['sustained'] > 0:
         _add_effect(player, 'sustained', out['sustained'], int(rules()['sp'].get('sustained_cap', 800)))
         msgs.append(f"You are Sustained for {quantity(out['sustained'], 'turn')}: "
                     f"hunger comes at half its pace.")
@@ -1289,8 +1316,9 @@ def apply_dish(player, rec: dict) -> list:
             msgs.append(lingers)
     # Each ingredient's side gift (its heal and mana came with the meal).
     gifts = []
+    lasting = made_lasting(player, rec, out)
     for kind, amount in out.get('sides', ()):
-        if kind in SIDE_AMOUNTS or held_for_good(player, kind):
+        if kind in SIDE_AMOUNTS or held_for_good(player, kind) or kind in lasting:
             continue
         cap = int((rules()['special']['powers'].get(kind) or {}).get('max_turns', 60))
         _add_effect(player, kind, int(amount), cap)

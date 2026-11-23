@@ -192,7 +192,7 @@ def test_player_wires_wielder_fire_immunity():
     """player.take_damage must block fire when wielded weapon has
     wielder_fire_immunity (Aiglos)."""
     from player import Player
-    src = inspect.getsource(Player.take_damage)
+    src = (inspect.getsource(Player.take_damage) + inspect.getsource(Player._damage_after) + inspect.getsource(Player._after_damage))   # (its shares, then what a hit sets off)
     assert 'wielder_fire_immunity' in src
 
 

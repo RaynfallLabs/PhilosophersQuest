@@ -15,6 +15,7 @@ What a debuff does to the hero's actions is not decided here: the one gate
 """
 
 import effect_rules
+import hunger as _hunger
 from lights import status_sight as _light_sight
 
 MAX_EFFECT_DURATION = 60  # hard cap on status effect turns (prevents infinite stacking)
@@ -231,8 +232,9 @@ REGEN_SHARE = 1 / 300          # of max health, each REGEN_PERIOD turns
 TIMED_STAT_GRANTS: dict = {
     'heroism':    (('STR', 2),),
     'brilliance': (('INT', 1), ('WIS', 1)),
-    # Weak with hunger (src/hunger.py sets and clears it by the belly).
-    'weak_from_hunger': (('STR', -2),),
+    # Weak with hunger (src/hunger.py sets and clears it by the belly; its
+    # Strength is data/hunger.json weak_str, which nothing read before).
+    'weak_from_hunger': (('STR', int(_hunger.rules().get('weak_str', -2))),),
 }
 
 
