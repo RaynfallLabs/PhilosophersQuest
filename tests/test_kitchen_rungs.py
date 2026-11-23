@@ -140,13 +140,18 @@ def test_the_stew_goes_into_these_two_rungs_only():
 
 
 def test_each_new_dish_shows_its_own_kind_of_dish():
-    """Item art is the item: a sandwich never shows a roast."""
+    """Item art is the item: a sandwich never shows a roast, and a cheese
+    grill never shows sausage (dish_art.py places every dish; a dish with no
+    fair picture yet is on its no-match list)."""
     sys.path.insert(0, os.path.join(ROOT, 'tools', 'content', 'kitchen'))
+    import json
     import dish_art
+    with open(dish_art.NO_MATCH, encoding='utf-8') as f:
+        lost = set(json.load(f)['dishes'])
     for r in _rung('plain') + _rung('step'):
-        want = dish_art.art_id(dish_art.dish_kind(r['name']), kitchen.dish_tier(r),
-                               kitchen.dish_tab(r))
-        assert r['art'] == want, (r['id'], r['name'])
+        v = dish_art.judge(r['name'], r['ingredients'], kitchen.dish_tier(r), r['benefit'])
+        assert r['art'] == v['art'], (r['id'], r['name'])
+        assert v['fair'] or r['id'] in lost, (r['id'], r['name'])
 
 
 def test_the_builder_rebuilds_the_rungs_as_shipped():

@@ -1,5 +1,5 @@
 {
-  "_note": "What a scroll, potion, wand or spellbook does, one plain line each (src/item_words.py). Keyed by the item's class, then its `effect` id (a spellbook by class alone); `by_id` holds the few kinds whose own handler differs from their effect's. `line` is the sentence on the Kit card, the read / quaff / zap menu card, the Lore page and the Encyclopedia; `short` is the Kit list's Effect column and the menu rows. Either may be a list of five, one per tier (the scroll's own `tier`, else its quiz tier). `tiers` are the handler's own ladders (index = tier - 1), with a `<name>_blessed` or `<name>_cursed` ladder where the blessing or the curse changes the number (used only when the copy's blessing is known). `blessed` / `cursed` are a note added after the line when the copy's blessing is known; `line_blessed` / `line_cursed` replace the line. Placeholders are filled by item_words from the item and the hero: {power} the item's dice, {turns} its turns as the handler lays them (a potion's cut by the status cap), {least} a heal's share of the hero's health, {damage} a wand's damage range (by its tier and the hero's Intelligence), {int_note} ' (more with Intelligence)' when no hero is given, {share} the earth's share of each creature's health, {ward} a family ward's words (data/wards.json), {also} what a protection rite also keeps off, {family} the family a tune or a clash drives off, {sight} the light status's sight. Keep every line TRUE to its handler: src/game_magic.py (_apply_scroll_effect, _apply_wand_effect), src/game_wards.py (_mm_scroll, _mm_wand, _protection_also), src/food_system.py (drink_potion) and src/game_menus.py (the quiz draughts). tests/test_item_words.py pins the ladders and the numbers to them. Plain player text: no code ids, no 'tier'; he, she or it for one creature.",
+  "_note": "What a scroll, potion, wand or spellbook does, one plain line each (src/item_words.py). Keyed by the item's class, then its `effect` id (a spellbook by class alone); `by_id` holds the few kinds whose own handler differs from their effect's. `line` is the sentence on the Kit card, the read / quaff / zap menu card, the Lore page and the Encyclopedia; `short` is the Kit list's Effect column and the menu rows. Either may be a list of five, one per tier (the scroll's own `tier`, else its quiz tier). `fields` names the placeholders a scroll kind keeps as its own numbers in its data entry (data/items/scroll.json: map_radius, light_turns, delta...), with a `<name>_blessed` or `<name>_cursed` field where the blessing or the curse changes the number (used only when the copy's blessing is known): the card reads them as the handler does (wards.field_of), so the two cannot drift. `tiers` are a handler's own ladders (index = tier - 1), with `<name>_blessed` / `<name>_cursed` ladders likewise. `blessed` / `cursed` are a note added after the line when the copy's blessing is known; `line_blessed` / `line_cursed` replace the line. Placeholders are filled by item_words from the item and the hero: {power} the item's dice, {turns} its turns as the handler lays them (a potion's cut by the status cap), {least} a heal's share of the hero's health, {damage} a wand's damage range (by its tier and the hero's Intelligence), {int_note} ' (more with Intelligence)' when no hero is given, {share} the earth's share of each creature's health, {ward} a family ward's words (data/wards.json), {also} what a protection rite also keeps off, {family} the family a tune or a clash drives off, {sight} the light status's sight. Keep every line TRUE to its handler: src/game_magic.py (_apply_scroll_effect, _apply_wand_effect), src/game_wards.py (_mm_scroll, _mm_wand, _protection_also), src/food_system.py (drink_potion) and src/game_menus.py (the quiz draughts). tests/test_item_words.py pins the ladders and the numbers to them. Plain player text: no code ids, no 'tier'; he, she or it for one creature.",
   "fallback": "What it does is not written down.",
   "charges": "{charges} of {max_charges} charges left.",
   "charges_found": "Found with {charges_min} to {charges_max} charges.",
@@ -42,43 +42,56 @@
       "short": "Its power waits for its place"
     },
     "mapping": {
-      "tiers": {"radius": [6, 12, 22, 40, 999]},
+      "fields": ["map_radius"],
       "line": [
-        "Maps the floor within {radius} tiles of you.",
-        "Maps the floor within {radius} tiles of you.",
-        "Maps the floor within {radius} tiles of you.",
-        "Maps the floor within {radius} tiles of you.",
-        "Maps the whole floor."
+        "Maps every passage within {map_radius} tiles of you, about half the floor.",
+        "Maps every passage within {map_radius} tiles of you, most of the floor.",
+        "Maps the whole floor.",
+        "Maps the whole floor, and every hidden door on it shows itself.",
+        "Maps the whole floor; every hidden door on it shows itself, and every trap on it is marked."
       ],
       "short": [
-        "Maps {radius} tiles around you",
-        "Maps {radius} tiles around you",
-        "Maps {radius} tiles around you",
-        "Maps {radius} tiles around you",
-        "Maps the whole floor"
+        "Maps {map_radius} tiles around you",
+        "Maps {map_radius} tiles around you",
+        "Maps the whole floor",
+        "Maps the floor, finds hidden doors",
+        "Maps the floor, its doors and traps"
       ]
     },
     "identify": {
       "line": [
-        "Identifies one item you choose.",
-        "Identifies the first 2 unknown things you carry or stand on.",
-        "Identifies the first 3 unknown things you carry or stand on.",
-        "Identifies everything you carry and stand on.",
-        "Identifies everything you carry and stand on, and opens the lore of one corpse's kind you carry."
+        "Identifies one thing you choose, and every other unknown thing of its sort that you carry: choose a potion, and all your potions are named.",
+        "Identifies everything you carry and everything at your feet.",
+        "Identifies everything you carry, everything at your feet, and everything lying in sight.",
+        "Identifies everything you carry and everything lying anywhere on this floor.",
+        "Identifies everything you carry and everything lying anywhere on this floor, and opens the lore of every kind of corpse you carry."
+      ],
+      "line_blessed": [
+        "Blessed, it identifies everything you carry and everything at your feet.",
+        "Blessed, it identifies everything you carry, everything at your feet, and everything lying in sight.",
+        "Blessed, it identifies everything you carry and everything lying anywhere on this floor.",
+        "Blessed, it identifies everything you carry and everything lying anywhere on this floor, and opens the lore of every kind of corpse you carry.",
+        "Identifies everything you carry and everything lying anywhere on this floor, and opens the lore of every kind of corpse you carry."
       ],
       "short": [
-        "Identifies one item",
-        "Identifies 2 items",
-        "Identifies 3 items",
-        "Identifies everything you carry",
-        "Identifies everything you carry"
+        "Identifies a whole sort you carry",
+        "Identifies all you carry",
+        "Identifies all you carry and see",
+        "Identifies all on this floor",
+        "All on this floor, and corpse lore"
       ],
-      "blessed": "Blessed, it identifies everything you carry and stand on.",
+      "short_blessed": [
+        "Identifies all you carry",
+        "Identifies all you carry and see",
+        "Identifies all on this floor",
+        "All on this floor, and corpse lore",
+        "All on this floor, and corpse lore"
+      ],
       "line_cursed": "Cursed, it makes you forget one kind of thing you knew.",
       "short_cursed": "Makes you forget a kind"
     },
     "enchant_weapon": {
-      "tiers": {"delta": [1, 1, 1, 2, 3], "delta_blessed": [2, 2, 2, 3, 4]},
+      "fields": ["delta"],
       "line": [
         "Adds +{delta} to the weapon in your hand, up to what it can hold.",
         "Adds +{delta} to the weapon in your hand, up to what it can hold.",
@@ -97,7 +110,7 @@
       "short_cursed": "Takes 1 off your weapon"
     },
     "enchant_armor": {
-      "tiers": {"delta": [1, 1, 1, 2, 3], "delta_blessed": [2, 2, 2, 3, 4], "pieces": [1, 2, 3, 4, 99]},
+      "fields": ["delta", "pieces"],
       "line": [
         "Adds +{delta} to one piece of armour you wear, body armour and shield first. A piece that gives no armour class gains enchantment levels instead.",
         "Adds +{delta} to {pieces} pieces of armour you wear, body armour and shield first. A piece that gives no armour class gains enchantment levels instead.",
@@ -116,7 +129,7 @@
       "short_cursed": "Takes 1 off your armour"
     },
     "enchant_item": {
-      "tiers": {"delta": [1, 1, 1, 2, 3], "delta_blessed": [2, 2, 2, 3, 4], "count": [1, 2, 3, 5, 99]},
+      "fields": ["delta", "count"],
       "line": [
         "Adds +{delta} to the first thing you have equipped (weapons first, then armour, shield and rings). A weapon, body armour or shield takes the plus; a lesser piece, ring or amulet rises {delta} enchantment level instead.",
         "Adds +{delta} to the first {count} things you have equipped (weapons first, then armour, shield and rings). A weapon, body armour or shield takes the plus; a lesser piece, ring or amulet rises {delta} enchantment level instead.",
@@ -154,17 +167,17 @@
       "short_cursed": "Does nothing"
     },
     "confuse_monsters": {
-      "tiers": {"turns": [3, 6, 10, 16, 25]},
-      "line": "Confuses every monster in sight for {turns} turns ({boss_cap}); the mindless are not muddled.",
-      "short": "Confuses all in sight, {turns} turns"
+      "fields": ["control_turns"],
+      "line": "Confuses every monster in sight for {control_turns} turns ({boss_cap}); the mindless are not muddled.",
+      "short": "Confuses all in sight, {control_turns} turns"
     },
     "sleep_monsters": {
-      "tiers": {"turns": [3, 6, 10, 16, 25]},
-      "line": "Puts every monster in sight to sleep for {turns} turns ({boss_cap}); the undead and the made never sleep.",
-      "short": "Sleeps all in sight, {turns} turns"
+      "fields": ["control_turns"],
+      "line": "Puts every monster in sight to sleep for {control_turns} turns ({boss_cap}); the undead and the made never sleep.",
+      "short": "Sleeps all in sight, {control_turns} turns"
     },
     "haste_self": {
-      "power_turns": {"default": 15, "mult": [0.4, 0.7, 1.0, 1.6, 2.5], "least": 3},
+      "power_turns": {"default": 15},
       "line": "Hastes you for {turns} turns: monsters act half as often.",
       "short": "Hastes you for {turns} turns"
     },
@@ -217,7 +230,7 @@
       ]
     },
     "time_stop_scroll": {
-      "power_turns": {"default": 10, "mult": [0.3, 0.6, 1.0, 1.5, 2.5], "least": 2},
+      "power_turns": {"default": 4},
       "line": "Stops time for {turns} turns: monsters cannot act.",
       "short": "Stops time for {turns} turns"
     },
@@ -242,13 +255,13 @@
       "short": "All in sight lose {share} of health"
     },
     "protection": {
-      "tiers": {"turns": [10, 20, 30, 50, 80], "turns_cursed": [10, 20, 30, 50, 60]},
-      "line": "Shields you for {turns} turns: 2 points of armour, and blows do half their harm.{also}",
-      "short": "Shields you for {turns} turns",
+      "fields": ["shield_turns"],
+      "line": "Shields you for {shield_turns} turns: 2 points of armour, and blows do half their harm.{also}",
+      "short": "Shields you for {shield_turns} turns",
       "cursed": "Cursed, it gives the shield alone."
     },
     "enchant_accessory": {
-      "tiers": {"delta": [0, 1, 1, 2, 3], "delta_blessed": [2, 2, 2, 3, 4], "count": [1, 1, 2, 3, 99]},
+      "fields": ["delta", "delta_blessed", "count"],
       "line": [
         "Uncursed, it does nothing; blessed, it strengthens a ring or amulet you wear by {delta_blessed}.",
         "Strengthens one ring or amulet you wear by {delta}, rings first.",
@@ -290,28 +303,23 @@
       ]
     },
     "full_light": {
-      "tiers": {"clair": [0, 0, 10, 30, 60], "clair_blessed": [30, 30, 30, 30, 60]},
+      "fields": ["light_turns", "light_sight", "clairvoyant_turns"],
       "line": [
-        "Lights up the map of half the floor around you.",
-        "Lights up the map of the whole floor.",
-        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too.",
-        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too.",
-        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too."
-      ],
-      "line_blessed": [
-        "Lights up the map of half the floor around you, and for {clair} turns you see far round you, the invisible too.",
-        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too.",
-        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too.",
-        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too.",
-        "Lights up the map of the whole floor, and for {clair} turns you see far round you, the invisible too."
+        "A light goes with you for {light_turns} turns: sight +{light_sight}, and monsters see you from {light_sight} tiles farther. Only your brightest light counts.",
+        "A light goes with you for {light_turns} turns: sight +{light_sight}, and monsters see you from {light_sight} tiles farther. Only your brightest light counts.",
+        "A light goes with you for {light_turns} turns: sight +{light_sight}, and monsters see you from {light_sight} tiles farther. Only your brightest light counts.",
+        "A light goes with you for {light_turns} turns: sight +{light_sight}, and monsters see you from {light_sight} tiles farther. Only your brightest light counts.",
+        "A light goes with you for {light_turns} turns: sight +{light_sight}, and monsters see you from {light_sight} tiles farther; for as long you see the invisible, and for {clairvoyant_turns} turns you see through stone, the floor round you filling in your map. Only your brightest light counts."
       ],
       "short": [
-        "Maps half the floor",
-        "Maps the whole floor",
-        "Maps the floor, far sight {clair} turns",
-        "Maps the floor, far sight {clair} turns",
-        "Maps the floor, far sight {clair} turns"
-      ]
+        "A light with you, {light_turns} turns",
+        "A light with you, {light_turns} turns",
+        "A bright light, {light_turns} turns",
+        "A bright light, {light_turns} turns",
+        "Light and far sight, {light_turns} turns"
+      ],
+      "line_cursed": "Cursed, its words call the dark: the light about you goes out, and the light in your hand is smothered.",
+      "short_cursed": "Puts your light out"
     },
     "dead_sea_map": {
       "line": "Shows you the layout of every floor of the dungeon: this one at once, each other one as you arrive.",

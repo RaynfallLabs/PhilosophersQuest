@@ -1516,10 +1516,28 @@ class MenuMixin:
         if not self._activate_power(pid):
             self._advance_turn()
 
+    # What Mind Fortress clears (the mind's ailments).
+    _MIND_FORTRESS_CLEARS = frozenset({'confused', 'blinded', 'hallucinating', 'hallucinating_pot',
+                                       'stunned', 'feared', 'charmed', 'forgetting'})
+
+    def _power_idle_line(self, pid: str) -> str:
+        """Why a quirk power would do nothing now, or '' (it would act)."""
+        from status_effects import ailments_on
+        pl = self.player
+        if pid == 'mind_fortress' and not [e for e in ailments_on(pl)
+                                           if e in self._MIND_FORTRESS_CLEARS]:
+            return "Your mind is already clear."
+        if pid == 'reality_anchor' and not ailments_on(pl):
+            return "Nothing ails you."
+        if pid in ('phoenix_rising', 'life_drain') and pl.hp >= pl.max_hp:
+            return "You have no wounds to close."
+        if pid in ('metabolic', 'iron_ration') and pl.sp >= pl.max_sp:
+            return "Your stamina is already full."
+        return ''
+
     def _activate_power(self, pid: str) -> bool:
         """Activate a power. Returns True if it defers turn advance (e.g. targeting)."""
         from quirk_system import _ACTIVE_POWER_DEFS
-        from status_effects import DEBUFFS
         pl = self.player
 
         # ----- Hero special branch (Phase 3B) -----
@@ -1552,6 +1570,14 @@ class MenuMixin:
         if _song_id and _songs.active(pl) is not None:
             self.add_message(_songs.wait_line(pl), 'warning')
             return True                       # nothing done: no turn passes
+        # A cure with nothing to cure, a heal with no wound, stamina when he
+        # is full: the use is kept and no turn passes (as a hero special that
+        # finds nothing: "is not spent"). Each spent one of its few uses on
+        # "Your mind is already fortress-clear."
+        _idle = self._power_idle_line(pid)
+        if _idle:
+            self.add_message(f"{label}: {_idle} It is not spent.", 'info')
+            return True
         # Consume uses or set cooldown
         if pdef.get('uses', 0) > 0:
             pl.power_uses[pid] = max(0, pl.power_uses.get(pid, 1) - 1)
@@ -1605,12 +1631,13 @@ class MenuMixin:
 
         elif pid == 'mind_fortress':
             cleared = []
-            mental = {'confused', 'blinded', 'hallucinating', 'hallucinating_pot', 'stunned', 'feared',
-                      'charmed', 'forgetting'}
-            for eff in mental:
-                if pl.has_effect(eff):
-                    pl.status_effects.pop(eff, None)
-                    cleared.append(eff.replace('_', ' '))
+            mental = self._MIND_FORTRESS_CLEARS
+            # What a cure lifts (status_effects.ailments_on): never a status
+            # the gear he wears holds on him (-1: the Blindfold's dark).
+            from status_effects import ailments_on as _ail_mf
+            for eff in [e for e in _ail_mf(pl) if e in mental]:
+                pl.status_effects.pop(eff, None)
+                cleared.append(eff.replace('_', ' '))
             if cleared:
                 self.add_message(f"{label}: Mental walls slam shut -- {', '.join(cleared)} cleared!", 'success')
             else:
@@ -1636,6 +1663,9 @@ class MenuMixin:
             self.add_message(f"{label}: The gorgon's ward wraps around you -- Sleep Resist + Displacement 15t.", 'success')
 
         elif pid == 'phoenix_rising':
+            # (Not through disease: ruling D5 named the specials, the Wish
+            # and Restore Body; docs/systems/monsters.md keeps Phoenix
+            # Rising's full restore apart.)
             pl.hp = pl.max_hp
             self.add_message(f"{label}: You rise from the ashes -- HP fully restored!", 'success')
 
@@ -1701,7 +1731,10 @@ class MenuMixin:
                 pl, got, "Vital energy flows back -- +{n} HP!"), 'success')
 
         elif pid == 'reality_anchor':
-            cleared = [e for e in list(pl.status_effects.keys()) if e in DEBUFFS]
+            # What a cure lifts (ailments_on): not a worn -1 status, the
+            # crossbow's crank or the pit he stands in.
+            from status_effects import ailments_on as _ail_ra
+            cleared = _ail_ra(pl)
             for e in cleared:
                 pl.status_effects.pop(e, None)
             if cleared:
@@ -1791,7 +1824,7 @@ class MenuMixin:
                            if m.alive and m.kind == 'fenrir_wolf'), None)
             if not fenrir:
                 self.add_message("The ribbon lies quiet in your hands. The wolf is not here.", 'warning')
-                return
+                return True               # nothing cast: no turn passes
             # The ribbon has to be thrown: in sight, within GLEIPNIR_RANGE.
             # (There was no check at all: he could be bound from anywhere on
             # the floor, through walls.)
@@ -1804,7 +1837,7 @@ class MenuMixin:
                 self.add_message(
                     "The ribbon will not reach him from here. You need him in "
                     "sight and close.", 'warning')
-                return
+                return True               # nothing cast: no turn passes
             fenrir.reset_rage()
             # Held this turn and the two after. (A value of 2 was gone after
             # a single turn, so a bind bought one attack for a stat point.)
@@ -1977,7 +2010,7 @@ class MenuMixin:
         pl = self.player
         if getattr(pl, '_gold_offering_used_this_floor', False):
             self.add_message("Gilgamesh's Bribe is spent for this floor.", 'warning')
-            return False
+            return True                   # (nothing paid: no turn passes)
         # Find closest visible, non-boss, INT-5+ monster
         candidates = []
         import holds
@@ -2003,7 +2036,7 @@ class MenuMixin:
             self.add_message(
                 "Nothing in sight would take gold: only beasts, the dead, or kings.",
                 'warning')
-            return False
+            return True                   # (nothing paid: no turn passes)
         candidates.sort(key=lambda t: t[0])
         target = candidates[0][1]
         import economy
@@ -2021,7 +2054,7 @@ class MenuMixin:
             self.add_message(
                 f"You need {cost:,} gold to bribe {the_name(target, lower=True)}. You have {_purse:,}.",
                 'warning')
-            return False
+            return True                   # (nothing paid: no turn passes)
         self.player_gold = _purse - cost
         # Paid to let you pass, not to stand still while you stab it: it
         # stands aside (charmed: no blow at you, it wanders) and the deal is
@@ -2056,14 +2089,26 @@ class MenuMixin:
         if not targets:
             self.add_message(
                 "Nothing in sight to use the charge on.", 'warning')
-            return False
-        # Closest target wins
+            return True               # nothing used: no charge, no turn
+        # Closest target wins: the closest that can be held. The hero does
+        # not choose it, so the charge went on the nearest even when that
+        # one could not take it (a swarm, a golem, the cow) and another
+        # beside it could. If none in sight can, nothing is spent.
+        from hero_specials import _can_hold
+        _hold_as = {'lyre_of_orpheus': 'paralyzed', 'hand_of_glory': 'paralyzed'}.get(
+            acc_id, 'sleeping')
         targets.sort(key=lambda t: abs(t.x - pl.x) + abs(t.y - pl.y))
-        target = targets[0]
+        _able = [t for t in targets if _can_hold(t, _hold_as)]
+        if not _able:
+            _, _why = self._inflict(targets[0], _hold_as, 1, roll=False)                 if targets[0].resists_control(_hold_as) else (0, '')
+            self.add_message((_why or f"Nothing in sight would be held by the {self._bare_name(acc)}.")
+                             + " The charge is kept.", 'warning')
+            return True
+        target = _able[0]
         # Each charge goes through Game._inflict (no resist roll, as before):
         # what the creature's nature refuses (a swarm cannot be held still,
         # the dead never sleep) is not said to take hold, and why is said
-        # only to a hero who knows it. The charge is spent either way.
+        # only to a hero who knows it.
         if acc_id == 'lyre_of_orpheus':
             # Charm: pacified for 10 turns (using paralyzed as charm proxy)
             got, why = self._inflict(target, 'paralyzed', 10, roll=False)
@@ -2389,9 +2434,9 @@ class MenuMixin:
             idx = 0
         new_cmd = order[(idx + 1) % len(order)]
         pet.command = new_cmd
-        label = {'return': 'Return (follow + engage)',
-                 'stay': 'Stay (hold position)',
-                 'wander': 'Wander (aggressive roam)'}[new_cmd]
+        # Its words are with the rest of how it fights (data/pet_tactics.json).
+        import pet_tactics
+        label = pet_tactics.command_label(new_cmd)
         self.add_message(f"{pet.name}: command set to {label}.", 'info')
 
     # ----- Pet sub-menus: Specials -----------------------------------------

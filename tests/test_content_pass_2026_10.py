@@ -179,10 +179,13 @@ def test_accessory_statuses_are_real_effects():
 
 
 def test_haste_and_time_stop_scrolls_are_not_scaled_twice():
-    """`power` is authored per tier and the handler multiplies by a tier factor
-    again. The top haste scroll gave 95 turns and the top time stop 62."""
+    """`power` was authored per tier and the handler multiplied it by a tier
+    factor again: the top haste scroll gave 95 turns and the top time stop 62.
+    Since 2026-11-22 each kind's power IS its turns, and nothing scales it
+    (tests/test_scroll_ladders.py holds the handler to it): the same 37 and 10
+    the halved powers gave by their tier's share."""
     scrolls = _load('items', 'scroll.json')
-    assert int(scrolls['scroll_of_alacrity']['power']) <= 20
+    assert int(scrolls['scroll_of_alacrity']['power']) <= 40
     assert int(scrolls['scroll_of_timeless']['power']) <= 12
 
 

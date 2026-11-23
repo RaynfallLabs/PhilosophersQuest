@@ -404,7 +404,7 @@ THERIAC_RECIPE = {
     'name': 'Theriac of Andromachus', 'ingredients': ['cobra_prime', 'swamp_moss', 'cave_mushroom'],
     'benefit': 'carry',
     'flavor': ("Andromachus's antidote, made as Nero's physician made it: viper flesh, cave herbs and moss pounded and bound together to drive venom out."),
-    'makes': 'potion:theriac', 'art': 'dish_stew_t1_special',
+    'makes': 'potion:theriac', 'art': 'dish_drink_t1_special',
 }
 HINTS = {
     '2': ["An archer you can see cannot hurt you while the Galdr of the Stayed Spear holds.",
@@ -435,7 +435,7 @@ def main():
     write_roundtrip('data/fixtures.json', lambda d: d['fixtures'].update({'conjured_vine': VINE_FIXTURE}))
     write_appended('data/items/recipes.json', {'brew_theriac': THERIAC_RECIPE}, indent=1)
     # The kitchen's record of each dish's picture (tools/content/kitchen/dish_art.py
-    # picks it: a stew of the first tier for this brew).
+    # picks it: a drink of the first tier for this brew, a theriac being drunk).
     write_roundtrip('tools/content/kitchen/dish_art.json',
                     lambda d: d.update({'brew_theriac': THERIAC_RECIPE['art']}), indent=1, tail='')
 

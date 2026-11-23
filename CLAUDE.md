@@ -191,6 +191,7 @@ src/
   treasure.py         - Coin weight (1 gp = 0.1 oz) and treasure: gems, jewellery, art; values, payment plans
   game_purse.py       - PurseMixin: receiving gold (weight-limited), paying with coin then treasure, gold piles
   pet_system.py       - Soul Sphere pets: AI, bonding, levels
+  pet_tactics.py      - How a pet fights beside the hero, pure (data/pet_tactics.json): foes near the hero he can see, falling back when hurt and losing, each kind's nature, the cry for help
   riding.py           - Riding the Bococho, the rules: getting on, the two-tile step, what sets the rider down
   game_riding.py      - RidingMixin: mount and dismount, the mounted step, set-downs, her saddlebags
   escort_system.py    - Escorts: people the hero walks somewhere
@@ -272,6 +273,7 @@ data/
   mooble.json       - The Mooble: his floors, lines, the dance (windows, pass mark, phrases and tempi) and his pet species
   bococho.json      - The Bococho: the camp, Varro, the race's numbers and words, the pet, her saddlebags, riding
   songs.json        - Songs the hero plays: the track, its length, its power, its lines (from Brandon's lyrics)
+  pet_tactics.json  - How a companion fights beside the hero: the commands' reach, the natures (fierce, steady, timid), each kind's voice, the cry's words
   manifest.json     - Manifest: what the sketchbook can draw, the bite-type map, the quiz, INT + 5 turns a right answer, the cooldown
   (data/ holds only runtime JSON; the old generator/migration scripts were moved out)
 

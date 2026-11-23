@@ -1698,9 +1698,12 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
                     log_error('combat._callback: recovered from an error')
 
     # Chain-equip passive: death_omen_mark (Cloak of the Morrigan T5).
-    # +25% damage against the floor's highest-level monster.
+    # +25% damage against the floor's highest-level monster. Only while the
+    # cloak is worn: the mark stayed on the floor's foe after it came off.
     if getattr(player, '_death_omen_target', None) is monster:
-        damage = int(damage * 1.25)
+        from chain_passives import player_has_passive as _php_omen
+        if _php_omen(player, 'death_omen_mark'):
+            damage = int(damage * 1.25)
 
     # Helm of Leonidas (last_stand_bonus): LAST_STAND_SHARE more damage
     # while at <20% HP.
@@ -2199,7 +2202,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # killed by reading monster.hp BEFORE this resolution — already
         # actual >= monster.hp_before_hit, so check is_dead() post-hit.
         _sp_ch = float(getattr(weapon, 'spare_kill_chance', 0.0) or 0.0) if weapon else 0.0
+        # Never a named foe (a gate boss, a seal demon, a mini-boss): mercy
+        # is for a beaten enemy, and the killing blow on one of them ends a
+        # quest or opens a gate (as the Damoclean finisher above).
         if (_sp_ch > 0 and monster.is_dead() and actual > 0
+                and not monster._is_named_foe()
                 and random.random() < _sp_ch):
             _per_floor_cap = int(getattr(weapon, 'spare_kill_max_hp_per_floor', 5) or 5)
             _already = int(getattr(weapon, '_spare_kill_floor_hp', 0) or 0)

@@ -63,6 +63,12 @@ def test_arrival_passive_fires_on_new_depth_only(monkeypatch, flag):
     real = chain_passives.player_has_passive
     monkeypatch.setattr(chain_passives, 'player_has_passive',
                         lambda p, f: f == flag or real(p, f))
+    if flag == 'atalantas_choice':
+        # Its line is said only when it holds something (bug bash 3.6.1):
+        # every creature on the floor is in view from the arrival stair.
+        import main
+        monkeypatch.setattr(main, 'calculate_fov', lambda d, x, y, r: {
+            (tx, ty) for ty in range(d.height) for tx in range(d.width)})
     g = _game()
     said = _said(g)
 

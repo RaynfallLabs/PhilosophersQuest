@@ -1683,6 +1683,10 @@ class CombatMixin:
                 f"{the_name(monster)} drops {gold:,} gold coins.", 'loot'
             )
         item_chance = treasure.get('item_chance', 0.0)
+        # A demon bound by the Seventy-Two Seals (the Robes of Solomon, tier
+        # 5) always leaves an item: the mark was set and nothing read it.
+        if monster.__dict__.get('_seal_marked'):
+            item_chance = 1.0
         if _rng.random() < item_chance:
             item_tier = int(treasure.get('item_tier', 1))
             self._spawn_treasure_item(monster.x, monster.y, item_tier)
@@ -2075,7 +2079,10 @@ class CombatMixin:
                 kills = 0
                 for m in list(self.monsters):
                     if m.alive and (m.x, m.y) in cone and self._in_hero_reach(m):
-                        m.take_damage(floor_curve.wound(_share, m.max_hp, m._is_named_foe()))
+                        # Fire: a creature's fire resistance counts (it was
+                        # taken as a plain blow, so a fire elemental burned).
+                        m.take_damage(floor_curve.wound(_share, m.max_hp, m._is_named_foe()),
+                                      'fire')
                         hits += 1
                         if not m.alive:
                             self._on_monster_killed(m)
@@ -2636,8 +2643,14 @@ class CombatMixin:
                 )
                 self._after_strike_line(monster, damage)
             else:
+                # A shot's stun and knockback are told and done as a blow's
+                # are: the Sling of David's knockback was resolved, then
+                # dropped here, so a shot never pushed anything back.
+                _riders = f" {the_name(monster)} is stunned!" if stunned and not killed else ''
+                _riders += self._knock_back(monster, knocked, killed)
                 self.add_message(
-                    f"Chain x{chain}! Your {weapon.requires_ammo} strikes {the_name(monster, lower=True)} for {damage} damage!",
+                    f"Chain x{chain}! Your {weapon.requires_ammo} strikes {the_name(monster, lower=True)} "
+                    f"for {damage} damage!{_riders}",
                     'success'
                 )
                 self._after_strike_line(monster, damage)
@@ -2686,6 +2699,20 @@ class CombatMixin:
         self._ring_veil_slips()
         player_attack(self.player, monster, self.quiz_engine, on_complete,
                       ammo=ammo_item, ranged=True)
+
+    def _knock_back(self, monster, knocked: bool, killed: bool) -> str:
+        """A blow or a shot that knocks back (the weapon's `knockback`,
+        combat's ``knocked``) pushes a living target a tile away from the
+        hero, if there is room. Returns the line's ending, or ''."""
+        if not knocked or killed or not getattr(monster, 'alive', False):
+            return ''
+        from combat import apply_knockback
+        _was = (monster.x, monster.y)
+        apply_knockback(self.player, monster, self.dungeon, self.monsters,
+                        occupied=self._occupants())
+        if (monster.x, monster.y) != _was:
+            return f" {the_name(monster)} is knocked back!"
+        return ''
 
     def _refund_pending_spell(self) -> bool:
         """Give back what a targeted spell that was never cast had cost.
@@ -3241,13 +3268,7 @@ class CombatMixin:
                 # (Never a creature with no blood: Monster.can_bleed.)
                 if monster.status_effects.get('bleeding', 0) > 0 and getattr(monster, 'can_bleed', lambda: True)():
                     msg += f" {the_name(monster)} is bleeding!"
-                if knocked and not killed:
-                    from combat import apply_knockback
-                    _was = (monster.x, monster.y)
-                    apply_knockback(self.player, monster, self.dungeon, self.monsters,
-                                    occupied=self._occupants())
-                    if (monster.x, monster.y) != _was:
-                        msg += f" {the_name(monster)} is knocked back!"
+                msg += self._knock_back(monster, knocked, killed)
                 if kwargs.get('poisoned'):
                     msg += f" {the_name(monster)} is poisoned!"
                 if kwargs.get('burned'):
@@ -3347,6 +3368,13 @@ class CombatMixin:
         (_say_veil_slip): it was said before the attack quiz had opened."""
         import rings
         line = rings.on_strike(self.player)
+        # The Invisibility spell breaks on a strike (its desc); Greater
+        # Invisibility does not (it clears the mark: game_magic).
+        _until = self.player.__dict__.pop('_spell_veil_until', None)
+        if (_until is not None and int(self.turn_count) <= int(_until)
+                and self.player.status_effects.get('invisible', 0) > 0):
+            del self.player.status_effects['invisible']
+            line = line or 'Your invisibility breaks as you strike.'
         if line:
             self.__dict__['_veil_slip_line'] = line
         import wards                                   # a strike ends sanctuary
@@ -3679,6 +3707,9 @@ class CombatMixin:
             if self._hero_fell():
                 return                     # its own turn set the death off: it has no blow
             if did_attack:
+                # Its blow this turn was at the hero, from beside him or from
+                # afar: a pet beside it is only clipped (_monster_swipes).
+                m._struck_hero_turn = getattr(self, 'turn_count', 0)
                 # Displacement: a share of the blows land where you are not:
                 # the spell's DISPLACEMENT_MISS while its status lasts, or the
                 # worn cloak's ladder (enchantments.displacement), the larger.
@@ -3870,23 +3901,25 @@ class CombatMixin:
                     self.add_message(
                         f"{the_name(m)}'s attack drains your stamina! (-{_sp_drain} SP)", 'danger')
 
-                # Fire shield: reflect melee damage back
-                if self.player.has_effect('fire_shield') and dmg > 0:
-                    reflect_dmg = floor_curve.wound(SHIELD_LASH_SHARE, m.max_hp, m._is_named_foe())
-                    m.hp -= reflect_dmg
-                    m._unhurt_turns = 0
-                    self.add_message(f"Flames lash back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
-                    if m.hp <= 0:
-                        m.alive = False
+                # Fire shield: reflect melee damage back. Fire and cold,
+                # through Monster.take_damage: the striker's resistance or
+                # immunity counts (a fire elemental is not burned by the
+                # fire shield) and Death takes none. Both were taken off the
+                # health bar by hand.
+                if self.player.has_effect('fire_shield') and dmg > 0 and m.alive:
+                    reflect_dmg = m.take_damage(floor_curve.wound(
+                        SHIELD_LASH_SHARE, m.max_hp, m._is_named_foe()), 'fire')
+                    if reflect_dmg > 0:
+                        self.add_message(f"Flames lash back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
+                    if not m.alive:
                         self._on_monster_killed(m)
                 # Cold shield: reflect melee damage back
-                if self.player.has_effect('cold_shield') and dmg > 0:
-                    reflect_dmg = floor_curve.wound(SHIELD_LASH_SHARE, m.max_hp, m._is_named_foe())
-                    m.hp -= reflect_dmg
-                    m._unhurt_turns = 0
-                    self.add_message(f"Ice shatters back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
-                    if m.hp <= 0 and m.alive:
-                        m.alive = False
+                if self.player.has_effect('cold_shield') and dmg > 0 and m.alive:
+                    reflect_dmg = m.take_damage(floor_curve.wound(
+                        SHIELD_LASH_SHARE, m.max_hp, m._is_named_foe()), 'cold')
+                    if reflect_dmg > 0:
+                        self.add_message(f"Ice shatters back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
+                    if not m.alive:
                         self._on_monster_killed(m)
 
                 # Shortsword riposte: free counter at 0.85× weapon base damage
@@ -3913,7 +3946,11 @@ class CombatMixin:
                     if self.player.hp > 0 and self.player.hp / max(1, self.player.max_hp) < 0.30:
                         for _arm_slot in self.player.armor_slots:
                             if _arm_slot and getattr(_arm_slot, 'invisibility_power', False):
-                                self.player.add_effect('invisible', _arm_slot.invisibility_duration)
+                                # Spent only when the veil takes (a worn
+                                # permanent Invisible refuses it).
+                                if not self.player.add_effect(
+                                        'invisible', _arm_slot.invisibility_duration):
+                                    break
                                 self._tarnhelm_used = True
                                 self.add_message("The Tarnhelm shimmers — you vanish from sight!", 'success')
                                 break
@@ -3937,12 +3974,15 @@ class CombatMixin:
                         and getattr(m, '_last_attack_type', None) == 'fire' and m.alive:
                     _roll = int(getattr(m, '_last_attack_roll', 0) or 0)
                     if _roll > 0:
-                        _fire_ref = max(1, int(_roll * _shld.fire_reflect))
-                        m.hp -= _fire_ref
-                        m._unhurt_turns = 0
-                        self.add_message(f"The {_shld.name} throws flame back at {the_name(m, lower=True)} for {_fire_ref}!", 'combat')
-                        if m.hp <= 0 and m.alive:
-                            m.alive = False
+                        # Fire, through Monster.take_damage: its fire
+                        # resistance or immunity counts (a fire drake shrugs
+                        # its own flame off), and Death and an encounter's
+                        # bystander take none. It was taken off the health bar
+                        # by hand.
+                        _fire_ref = m.take_damage(max(1, int(_roll * _shld.fire_reflect)), 'fire')
+                        if _fire_ref > 0:
+                            self.add_message(f"The {_shld.name} throws flame back at {the_name(m, lower=True)} for {_fire_ref}!", 'combat')
+                        if not m.alive:
                             self._on_monster_killed(m)
 
                 # Babr-e Bayan: absorb first hit per floor.
@@ -4490,9 +4530,11 @@ class CombatMixin:
             # Pet AI turn
             # (escorts are bodies too: a pet never steps onto one, PET-05)
             # (the Bococho under her rider takes no turn of her own: game_riding.py)
+            # It fights beside the hero, by what he can see (pet_tactics.py).
             result = (None if pet is rescuer or getattr(pet, 'ridden', False) else
                       pet.take_turn(self.player, self.dungeon, self.monsters,
-                                    list(self.pets) + self._escorts_here(), self.ground_items))
+                                    list(self.pets) + self._escorts_here(), self.ground_items,
+                                    visible=getattr(self, 'visible', None), quiz_acc=quiz_acc))
             if result:
                 action = result[0] if isinstance(result, tuple) else None
                 # Unicorn pet returns ('unicorn_actions', [...]) instead of combat
@@ -4582,6 +4624,58 @@ class CombatMixin:
             return
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
         self._monster_swipes(self.pets)
+        # A pet the blows have left badly hurt cries for help.
+        self._pet_cries()
+
+    def _pet_cries(self):
+        """A companion whose health has fallen to its nature's share, with a
+        foe near it, cries for help: one line a bout of danger
+        (pet_tactics.cry_step, data/pet_tactics.json 'cry'), in its own voice.
+        Out of the hero's sight it says where the cry came from; too far off,
+        or with wax in his ears, it is not heard."""
+        import counters as _counters
+        import pet_tactics as _pt
+        from geom import chebyshev_distance
+        from pet_system import can_swing, pet_foe
+        cry = _pt.rules().get('cry') or {}
+        reach = int(_pt.rules().get('danger_reach', 2) or 2)
+        px, py = self.player.x, self.player.y
+        visible = getattr(self, 'visible', None) or ()
+        for pet in self.pets:
+            if not getattr(pet, 'alive', False) or getattr(pet, 'is_unicorn', False):
+                continue
+            nat = _pt.nature(pet)
+            danger = any(pet_foe(m) and can_swing(m) and chebyshev_distance(pet.x, pet.y, m) <= reach
+                         for m in self.monsters)
+            share = pet.hp / max(1, pet.max_hp)
+            said, bout, calm = _pt.cry_step(pet.__dict__.get('_cry_bout', False),
+                                            pet.__dict__.get('_cry_calm', 0), share, danger, nat)
+            pet._cry_bout, pet._cry_calm = bout, calm
+            if not said:
+                continue
+            seen = (pet.x, pet.y) in visible
+            if not seen and (_counters.deafened(self.player)
+                             or max(abs(pet.x - px), abs(pet.y - py)) > int(cry.get('hear_range', 30))):
+                continue
+            # By the name the hero calls it: "Ember", "Shep", else its own.
+            from pet_system import has_own_name
+            name = getattr(pet, 'nickname', '') or pet.name
+            if not getattr(pet, 'nickname', '') and has_own_name(getattr(pet, 'species', None) or {}):
+                name = pet.call_name
+            self.add_message(_pt.cry_line(
+                name, _pt.voice(pet), pet.pronouns()[0], seen=seen,
+                place=_pt.place_word(self._in_a_room(pet.x, pet.y)),
+                direction='' if seen else self._compass_word(pet.x - px, pet.y - py)), 'warning')
+
+    def _in_a_room(self, x: int, y: int) -> bool:
+        """(x, y) lies inside one of the floor's rooms (not a corridor)."""
+        for r in getattr(self.dungeon, 'rooms', None) or ():
+            try:
+                if r.x < x < r.x + r.width - 1 and r.y < y < r.y + r.height - 1:
+                    return True
+            except (AttributeError, TypeError):
+                continue
+        return False
 
     def _monster_swipes(self, targets, *, escorts: bool = False):
         """Each monster beside one of ``targets`` swipes at it once, for half
@@ -4648,14 +4742,20 @@ class CombatMixin:
                         if random.randint(1, 20) < to_hit:
                             break         # a miss is still this monster's swipe
                     # A monster beside the hero has struck him this turn, and
-                    # only swipes at the pet for half its first attack. One
-                    # that cannot reach him, or that the pet has just bitten,
-                    # gives the pet a real blow: a whole attack of its own
-                    # (playtest 2026-10-24: "do monsters target pets at all?").
+                    # only swipes at the pet for half its first attack; so
+                    # does one that shot or cast at him from afar this turn
+                    # (a slinger beside a pet had its sling at the hero AND a
+                    # whole blow at the pet: play-test 2026-11-22, "he just
+                    # seems to soak damage"). One that has not struck him,
+                    # or that the pet has just bitten, gives the pet a real
+                    # blow: a whole attack of its own (playtest 2026-10-24:
+                    # "do monsters target pets at all?").
                     from dice import roll as _dice_roll
                     _aggro = getattr(m, '_pet_aggro', None)
                     full = (not escorts and (
-                        not m._adjacent_to(self.player) or _focus == id(pet)
+                        not (m._adjacent_to(self.player)
+                             or m.__dict__.get('_struck_hero_turn') == _turn)
+                        or _focus == id(pet)
                         or (_aggro and _aggro[0] == id(pet) and _turn - _aggro[1] <= 2)))
                     if full:
                         _atk = random.choice(m.attacks)
@@ -4681,11 +4781,15 @@ class CombatMixin:
                         pass
                     pet.take_damage(pet_dmg)
                     _seen = (pet.x, pet.y) in getattr(self, 'visible', ())
+                    # What the hero sees strike it: a foe in the dark beside a
+                    # pet in his light is "something" (2026-11-22).
+                    _by = striker_name(self, m)
+                    _killer = striker_name(self, m, lower=True)
                     if escorts and pet.alive and _seen:
-                        self.add_message(f"{the_name(m)} strikes {pet.name}. ({pet_dmg} damage)", 'danger')
+                        self.add_message(f"{_by} strikes {pet.name}. ({pet_dmg} damage)", 'danger')
                     elif pet.alive and _seen:
                         # A pet's wounds were silent, so pets looked untouchable.
-                        self.add_message(f"{the_name(m)} {'hits' if full else 'clips'} "
+                        self.add_message(f"{_by} {'hits' if full else 'clips'} "
                                          f"{pet.name}. ({pet_dmg} damage)"
                                          + (" The cold bites deep." if _pet_weak else ''), 'warning')
                     if not pet.alive:
@@ -4700,6 +4804,23 @@ class CombatMixin:
                             self.add_message(f"{pet.name} has been slain by {_killer}!", 'danger')
                     break  # one pet swipe per monster per turn
         return slain
+
+
+def striker_name(game, m, lower: bool = False) -> str:
+    """A creature as the hero sees it strike: by its name in his sight,
+    "something unseen" when invisible (the_name), "something" when it
+    stands in the dark (2026-11-22)."""
+    name = the_name(m, lower=lower)
+    if name.lower().startswith('something'):
+        return name
+    sees = getattr(game, '_sees_monster', None)
+    if sees is not None:
+        seen = sees(m)
+    else:
+        seen = (m.x, m.y) in (getattr(game, 'visible', None) or ())
+    if seen:
+        return name
+    return 'something' if lower else 'Something'
 
 
 def songs_active_id(player):

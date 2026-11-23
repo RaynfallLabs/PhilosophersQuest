@@ -170,18 +170,40 @@ compat.
 Scroll of Identify short-circuits the philosophy quiz entirely —
 reading the scroll succeeded on grammar, which is the quiz we paid.
 
-Three branches, routed by `game_magic._open_scroll_identify_picker`
-and sibling helpers:
+How far each kind reaches is its own data (`identify_reach` in
+data/items/scroll.json; a blessed copy reaches one rung further,
+`identify_reach_blessed`). 2026-11-22, Brandon: "identifies all items in
+inventory, maybe?" The ladder was one item, the first 2, the first 3, then
+everything carried; tiers 1-3 were barely worth a read. Now:
 
-- **Single-pick** (normal Scroll of Identify) — opens the identify
-  menu with `_scroll_identify_pending = True`. On select,
-  `_scroll_full_identify(item)` reveals one item with no further
-  quiz. ESC wastes the scroll's revelation.
-- **Mass** (`_scroll_identify_mass(limit=N)`) — T2/T3 blessed scrolls
-  reveal the first N unidentified items in inventory + current tile
-  (a second copy of a kind just learnt is already known, so N counts
-  kinds). Omnisight (T5) passes `limit=None` and reveals *every*
-  unidentified item.
+| Scroll (tier) | Reach | What it names |
+|---|---|---|
+| Identify (1) | `sort` | the thing chosen, and every other unknown thing of its sort (item class) carried or underfoot: all your potions |
+| Discernment (2) | `pack` | everything carried, worn and underfoot |
+| Appraisal (3) | `sight` | and every loose thing lying in sight |
+| Mass Identify (4) | `floor` | and every loose thing lying anywhere on this floor |
+| Omnisight (5) | `floor` + `identify_lore` | and the lore of every kind of corpse carried |
+
+Why the question stays worth asking: a scroll is one find, and only
+answers master a philosophy tier (every item of a mastered tier names
+itself forever, §8), while the quiz is free and always at hand. Tier 1
+names a whole sort, not the whole pack, so the quiz keeps its everyday
+place on floors 1-20; from tier 2 on (floors 8 and deeper) a scroll is the
+pack's clean sweep. (Discernment and Appraisal were "Identify Two" and
+"Identify Three"; their ids are unchanged.)
+
+The routes (`game_magic`):
+
+- **Sort** (Scroll of Identify) — `_open_scroll_identify_picker(reach='sort')`
+  opens the identify menu with `_scroll_identify_pending = True`. On
+  select, `_scroll_full_identify(item)` reveals the item and every other
+  unknown thing of its sort (`_identify_sort`) with no further quiz. ESC
+  wastes the scroll's revelation.
+- **Mass** (`_scroll_identify_mass(reach=...)`) — everything
+  `_identify_reach_pool` reaches: `philosophy_mastery.carried` (the pack,
+  worn and wielded) and the hero's tile, plus loose items in view or on the
+  floor (never a chest, a corpse or a trader). A second copy of a kind just
+  learnt is already known.
 - **Cursed amnesia** (`_scroll_identify_amnesia`) — picks a random
   known thing in the pack (never the Shard, never treasure) and forgets
   its KIND (`_forget_kind`): the id, its accessory family and its form
@@ -190,11 +212,12 @@ and sibling helpers:
   its blessing unknown. The Book of Thoth's curse forgets three kinds the
   same way.
 
-Omnisight also calls `_omnisight_corpse_reveal` so one carried corpse's
-species joins `lore_known_monster_ids` (drives pre-identified corpse
-spawns and bestiary lore).
+Omnisight (`identify_lore`) also calls `_omnisight_corpse_reveal`, so the
+species of every corpse carried joins `lore_known_monster_ids` (drives
+pre-identified corpse spawns and bestiary lore) and counts as a study of
+its kind (it was the first such corpse only).
 
-Scroll of Identify never affects corpses — those always route through
+Otherwise the Scroll of Identify never affects corpses — those always route through
 the normal lore path (`_examine_corpse_direct` in the scroll-pending
 branch, `src/game_menus.py:822`).
 

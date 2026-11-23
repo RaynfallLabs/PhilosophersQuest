@@ -209,7 +209,7 @@ run and consumes itself.
 |------|-------|--------------|
 | 1 | varies | `excalibur` (weapon, `is_unique`) spawns through the normal Gaussian unique pool (`peak_floor` + `peak_weight`). |
 | 2 | combat | While equipped, each kill restores `kill_heal_amount` HP (purity signature). |
-| 3 | HP ≤ 25% | **`cast_me_away` fires once per run**: the next attack drains the weapon's enchantment / effect for a one-shot burst, after which Excalibur is spent. |
+| 3 | HP ≤ 25% | **`cast_me_away` fires once per run**: a blow that leaves the wielder at a quarter of his health or less, while he holds no Life Save, takes one point of the blade's enchantment and gives him Life Save again (`Player.take_damage`). While its first Life Save (or an amulet's) is held it waits: it used to be spent then, refused, for nothing (bug bash 3.6.1). |
 
 Flag: `cast_me_away` in `items.py:425-427`. Doc/data mismatch logged
 in SYSTEMS_AUDIT §3 (`chainMultipliers` peak 2.0 vs `design_notes`
@@ -318,8 +318,10 @@ allies). Code: `src/horns.py` (pure, plus `CalledAlly`), `src/game_horns.py`
   own numbers from their lore at the horn's tier. On the map each is a
   `horns.CalledAlly`, a helper that comes and goes (never the one companion, never in
   the Shift+P menu): its mean `hp`, its first attack's dice and type for every blow,
-  no healing, no specials (so nothing holds or binds). It follows the hero and fights
-  the nearest foe within four tiles, **never a gate's guardian** (the five bosses of
+  no healing, no specials (so nothing holds or binds). It fights beside the hero as
+  a companion does (`pet_system.companion_turn`, [pets](pets.md) 3.4: a foe near the
+  hero that he can see; fierce, it falls back only when badly hurt and losing),
+  **never a gate's guardian** (the five bosses of
   `data/domains.json`: `horns.strikes`), so Gleipnir and the Sandal still decide
   Fenrir and no horn takes a gate. It stays its turns (ticked in `_do_pet_turns`) and
   leaves with its horn's line; leaving the floor sends every one home

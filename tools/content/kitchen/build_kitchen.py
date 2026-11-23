@@ -70,9 +70,11 @@ one decent recipe"): a quest, key or one-of-a-kind food (the Magic Dungeon
 Carrot, the Starnut Tart, the mythic fruits) goes into the dish or dishes
 ``SPECIAL_FOOD`` names for it and no other.
 
-Each dish's picture (``art``) comes from ``dish_art.py``: the kind its name
-says, at its tier and main benefit (a legendary feast has its own, a trophy
-dish its boss's). The build writes the result to ``dish_art.json``.
+Each dish's picture (``art``) comes from ``dish_art.py``: a picture of the form
+its name says, showing no food its ingredients do not hold, at its tier and
+main benefit where one is drawn (a legendary feast has its own, a trophy dish
+its boss's). The build writes the result to ``dish_art.json``;
+``dish_art.py --write`` re-places every dish by the rule alone.
 """
 import json
 import os
@@ -661,11 +663,11 @@ def rung_recipes() -> dict:
         tier = band_of(max(floors))
         if len(set(parts)) >= int(big['parts']):
             tier = min(5, tier + int(big['tier_bonus']))        # kitchen.dish_tier
-        art = dish_art.art_id(dish_art.dish_kind(name), tier, dish_art.tab_of(benefit))
+        art = dish_art.art_for(name, tier, benefit, have_art, parts)
         if benefit not in ('hp', 'sp', 'mp') and benefit not in powers:
             problems.append(f'{rid}: benefit {benefit} (never a stat on these rungs)')
         if art not in have_art:
-            problems.append(f'{rid}: {name!r} has no picture of its kind ({art})')
+            problems.append(f'{rid}: {name!r} shows a picture that is not drawn ({art})')
         if rid in book or rid in out:
             problems.append(f'{rid}: id used twice')
         key = frozenset(parts)
@@ -786,7 +788,7 @@ def apply_natures(ing_json: dict, recipes: dict) -> None:
             raise SystemExit(f'part_natures.txt: {part} has no single dish {rid}')
         rec['benefit'] = stat
         tier = band_of(int(ing['min_level']))
-        rec['art'] = dish_art.art_for(rec['name'], tier, stat, have_art)
+        rec['art'] = dish_art.art_for(rec['name'], tier, stat, have_art, rec['ingredients'])
 
 
 def apply_lore(ing_json: dict) -> dict:
@@ -880,14 +882,14 @@ def build():
                 'name': o['name'], 'ingredients': [iid], 'benefit': code, 'trophy': True,
                 'permanent': r['permanent_power'], 'flavor': o.get('flavor', ''),
             }
-            recipes[rid]['art'] = dish_art.recipe_art(rid, recipes[rid], tier_of([iid]), have_art)
+            recipes[rid]['art'] = dish_art.recipe_art(rid, recipes[rid], tier_of([iid]), have_art, ings)
             continue
         rid = f"cook_{r['key']}"
         recipes[rid] = {
             'name': r['single'], 'ingredients': [iid], 'benefit': code,
             'flavor': r['single_flavor'],
         }
-        recipes[rid]['art'] = dish_art.recipe_art(rid, recipes[rid], tier_of([iid]), have_art)
+        recipes[rid]['art'] = dish_art.recipe_art(rid, recipes[rid], tier_of([iid]), have_art, ings)
     for did, d in structure.items():
         if did not in names:
             raise SystemExit(f'no name for {did}')
@@ -899,7 +901,7 @@ def build():
             rec['makes'] = d['makes']
         if d.get('song'):
             rec['song'] = d['song']
-        rec['art'] = dish_art.recipe_art(did, rec, tier_of(d['parts']), have_art)
+        rec['art'] = dish_art.recipe_art(did, rec, tier_of(d['parts']), have_art, ings)
         if d['cross_depth']:
             rec['cross_depth'] = True
         recipes[did] = rec
@@ -964,9 +966,7 @@ def build():
         json.dump(recipes, f, ensure_ascii=False, indent=1)
         f.write('\n')
     with open(os.path.join(HERE, 'dish_art.json'), 'w', encoding='utf-8') as f:
-        json.dump({'_doc': ('Recipe id -> its picture (assets/tiles/items/<art>.png), written by '
-                            'build_kitchen.py from dish_art.py: the kind its name says, at its tier and '
-                            'main benefit. A record to read; edit dish_art.py, not this file.'),
+        json.dump({'_doc': dish_art.RECORD_DOC,
                    **{rid: r['art'] for rid, r in sorted(recipes.items())}},
                   f, ensure_ascii=False, indent=1)
         f.write('\n')

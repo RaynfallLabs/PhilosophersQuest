@@ -667,7 +667,8 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Power Word: Kill', 'effect': 'power_word_kill', 'power': '',
         'mp_cost': 22, 'tier': 5, 'quiz_tier': 5, 'needs_target': True,
         'spell_family': 'power_word_kill',
-        'desc': 'Instakill any non-boss with HP at or below INT x 20. Bosses immune.',
+        'desc': ('Kills a foe at or below a quarter of its health, and 1% more for each '
+                 'point of Intelligence (60% at most). A boss or a huge foe only staggers.'),
     },
     'wish_spell': {
         'name': 'Wish', 'effect': 'wish', 'power': '',

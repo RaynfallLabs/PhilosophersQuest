@@ -225,6 +225,9 @@ def test_pet_lines_never_name_an_unseen_creature():
     assert m._unseen
     pet = Pet('electric', g.player.x + 1, g.player.y)
     pet.hp = 1
+    # One that fights on whatever its wounds (a timid Zappik at 1 HP now
+    # falls back to the hero: pet_tactics.py), so it bites and is slain.
+    pet.species = dict(pet.species, nature='fearless')
     g.pets = [pet]
     random.seed(1)
     g._do_pet_turns()

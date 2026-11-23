@@ -1478,6 +1478,7 @@
       },
       "greater_aegis_of_athena": {
         "lines": [
+          "Held up against a gaze that would hold you still, it turns the gaze back: the creature that looked stands frozen for 2 turns and loses its attack.",
           "Have it with you when Medusa falls, and the gift you choose is 1 point greater."
         ]
       },
@@ -1973,10 +1974,12 @@
       },
       "meleager_spear": {
         "lines": [
-          "Against beasts, each hit rolls {beast_bonus_damage} more damage."
+          "Against beasts, each hit rolls {beast_bonus_damage} more damage.",
+          "Kill a beast at the top of its chain, and every other beast on the floor shows itself to you for 5 turns."
         ],
         "covers": [
-          "beast_bonus_damage"
+          "beast_bonus_damage",
+          "reveal_tag_on_chain_5_kill"
         ]
       },
       "mistilteinn": {
@@ -2176,12 +2179,14 @@
       "sling_of_david": {
         "lines": [
           "It never runs out: it needs no stones.",
-          "Giants are weak to it."
+          "Giants are weak to it.",
+          "Each hit pushes its target back a tile, if there is room."
         ],
         "covers": [
           "infiniteAmmo",
           "requiresAmmo",
-          "effective_against"
+          "effective_against",
+          "knockback"
         ]
       },
       "spear_of_longinus": {
@@ -2466,7 +2471,7 @@
       "label": "A scroll or spellbook you read wrong is not lost"
     },
     "passive_seventy_two_seals": {
-      "label": "Seventy-Two Seals: once a floor, a demon you see will not attack you for 50 turns"
+      "label": "Seventy-Two Seals: once a floor, a demon you see will not attack you for 50 turns, and leaves an item when it dies"
     },
     "passive_solomonic_key": {
       "label": "Once a floor, the first lock you pick opens by itself, with no question"

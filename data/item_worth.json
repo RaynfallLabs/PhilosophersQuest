@@ -42,8 +42,8 @@
       "fear": "junk"
     },
     "scroll": {
-      "identify": 0.6,
-      "mapping": 0.7,
+      "identify": 0.9,
+      "mapping": 0.9,
       "remove_curse": 1.0,
       "protection": 1.0,
       "heal": 0.8,
@@ -57,7 +57,7 @@
       "haste_self": 1.0,
       "teleport_self": 0.8,
       "charging": 1.5,
-      "full_light": 0.5,
+      "full_light": 0.8,
       "earth": 0.9,
       "genocide": 2.5,
       "time_stop_scroll": 2.0,
@@ -182,5 +182,6 @@
     "wand": 1.0,
     "accessory": 1.0
   },
-  "_note_permanent_potions": "2026-10-24: the potions that give a permanent level or stats (Gain Level, Soma, Elixir of Gilgamesh, Fafnir's Blood) went from 4-6 to 8-10 (the top of the 0.1-10 worth range), about one floor of income where they are sold: 'too easy to get good stuff cheap' (playtest)."
+  "_note_permanent_potions": "2026-10-24: the potions that give a permanent level or stats (Gain Level, Soma, Elixir of Gilgamesh, Fafnir's Blood) went from 4-6 to 8-10 (the top of the 0.1-10 worth range), about one floor of income where they are sold: 'too easy to get good stuff cheap' (playtest).",
+  "_note_scrolls": "2026-11-22: the scrolls of identify, mapping and light were made worth reading at every tier (identify names a whole sort at tier 1 and everything carried from tier 2; mapping maps about half the floor at tier 1 and the whole floor from tier 3; light lays a light that goes with the hero for hundreds of turns). Their worth rose with them: identify 0.6 to 0.9, mapping 0.7 to 0.9, light 0.5 to 0.8, beside a heal scroll's 0.8 and protection's 1.0."
 }
