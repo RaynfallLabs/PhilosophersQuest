@@ -1,11 +1,11 @@
 {
- "_doc": "Hunger you can see (Brandon, 2026-11-22: 'SP seems like an afterthought, where it used to be a major issue and killer'). Below hungry_below of the belly (max SP) the hero is Hungry: a line, no cost. Below weak_below he is Weak: Strength weak_str and no natural healing until he eats. At 0 he is Starving, still Weak, and hunger wounds him each time he would have lost a point of SP (main._tick_sp, STARVE_SHARE). src/hunger.py reads this; the simulator plays the same rules.",
+ "_doc": "Hunger you can see (Brandon, 2026-11-22: 'SP seems like an afterthought, where it used to be a major issue and killer'). Below hungry_below of the belly (max SP) the hero is Hungry: a line, no cost. Each line is the cue alone (Brandon 2026-11-22: 'a cue, not a soliloquy'); the costs are the statuses' words and How Quizzes Work's. Below weak_below he is Weak: Strength weak_str and no natural healing until he eats. At 0 he is Starving, still Weak, and hunger wounds him each time he would have lost a point of SP (main._tick_sp, STARVE_SHARE). src/hunger.py reads this; the simulator plays the same rules.",
  "hungry_below": 0.25,
  "weak_below": 0.10,
  "weak_str": -2,
  "lines": {
   "hungry": "You are getting hungry.",
-  "weak": "You are weak with hunger: Strength -2, and your wounds will not mend until you eat.",
-  "starving": "You are starving! Hunger will wound you until you eat."
+  "weak": "You are weak with hunger.",
+  "starving": "You are starving!"
  }
 }
