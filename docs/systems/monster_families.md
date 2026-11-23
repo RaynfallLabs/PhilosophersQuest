@@ -72,7 +72,7 @@ long enough: knowledge unlocks the technique, performance lands it.
 ## How knowledge is earned
 - One study = a correct corpse study (`_start_corpse_identify`), a zap of the **Wand of
   Probing** (Brandon, 2026-11-14: "identifying a creature, thus getting the family
-  identification point"), or a Scroll of Omnisight (`_omnisight_corpse_reveal`). The corpse
+  identification point"), or a Scroll of Omnisight (`_omnisight_corpse_reveal`: every kind of corpse carried). The corpse
   study and the probe share one path, `FamilyMixin._learn_kind`: the kind's page opens
   (`lore_known_monster_ids`), every corpse of it on the floor and in the pack is known, the
   Seeker counts it (`monster_known`), and `_family_study` records it and announces any tier,

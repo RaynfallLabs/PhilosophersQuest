@@ -525,6 +525,21 @@ are documented in [status_effects](status_effects.md).
   Lantern of Diogenes 120 and the unseen shown for as long,
   `light_reveals`); see [items](items.md), "Lights in
   the off hand".
+- **The scrolls of light** (2026-11-22; Brandon: "create a light that
+  follows you for some significant number of turns") lay the same `light`
+  status for their own `light_turns` at their own `light_sight`
+  (data/items/scroll.json; `lights.kindle`): Light 500 turns at +3,
+  Illumination 1,000 at +4, Revelation 1,500 at +5 (half again blessed). A
+  scroll is spent once, so it burns far longer than the 2 MP spell. One
+  brighter than the spell's keeps its brightness (its glow) for its own
+  turns while the status runs (`lights.status_glow`, `glow_tick`); only the
+  brightest counts and a lit hero is seen farther by it. Revelation lends
+  Lynceus's eyes besides: the invisible seen for as long, and 100 turns of
+  clairvoyance. They no longer map the floor: that is the mapping scrolls'
+  work (Local Mapping 35 tiles round, about half a floor; Area Mapping 50;
+  Cartography the whole floor; Deep Mapping and its hidden doors; Dungeon
+  Mapping and its traps too: `map_radius`, `map_finds`). Cursed, a light
+  scroll's words call the dark (`light_shy.snuff` 'dark').
 - **`cleanse_self`** — pop one debuff.
 - **`identify_item`** (Detect Magic / Identify / Omnisight family) — a
   three-tier BUC reveal: T1 reveals magic items in sight, T3 adds

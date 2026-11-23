@@ -1,0 +1,1074 @@
+{
+ "_doc": "Dishes with NO fair picture yet (dish_art.py: a picture of its own form, or one that reads the same, showing no food it does not contain). Each shows the least wrong picture drawn (given) until art is made for it (wants). Written by `py tools/content/kitchen/dish_art.py --write`; tests/test_dish_art.py checks the list is exactly the dishes the rule cannot place, and that it only shrinks. `wanted` counts, for the art to come, the dishes per form, tier and benefit that show another form, tier or benefit today.",
+ "dishes": {
+  "cook_assassin_vine": {
+   "name": "Strangler Vine Stir-Fry",
+   "ingredients": [
+    "Assassin Vine Stalk"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "stirfry",
+   "wants": "a stir-fry of Assassin Vine Stalk, with no meat or tomato",
+   "given": "dish_fritter_t1_special",
+   "given_shows": "a heap of golden battered fritters, violet flowers; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "cook_balor_lesser": {
+   "name": "Flame-Whip Ichor Flambé",
+   "ingredients": [
+    "Balor Flame Ichor"
+   ],
+   "tier": 2,
+   "benefit": "special",
+   "form": "flambe",
+   "wants": "a dish in flames of Balor Flame Ichor, with no meat",
+   "given": "dish_flambe_t2_special",
+   "given_shows": "a round browned steak under violet flames; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "cook_boggart": {
+   "name": "Hearth-Ember Toast",
+   "ingredients": [
+    "Boggart Hearth-Ember"
+   ],
+   "tier": 1,
+   "benefit": "sp",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Boggart Hearth-Ember, with no meat",
+   "given": "dish_bread_t1_sp",
+   "given_shows": "a split bread roll wrapped round pink meat, amber glaze; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "cook_bulgasari": {
+   "name": "Rice-Heart Cakes",
+   "ingredients": [
+    "Bulgasari Rice-Heart"
+   ],
+   "tier": 1,
+   "benefit": "stat",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Bulgasari Rice-Heart, with no meat",
+   "given": "dish_bread_t1_stat",
+   "given_shows": "a bread roll round sliced meat, green leaves either side; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "cook_cave_mushroom": {
+   "name": "Fried Cave Mushrooms",
+   "ingredients": [
+    "Cave Mushroom"
+   ],
+   "tier": 1,
+   "benefit": "sp",
+   "form": "stirfry",
+   "wants": "a stir-fry of Cave Mushroom, with no meat or tomato",
+   "given": "dish_fritter_t1_stat",
+   "given_shows": "a heap of golden battered fritters, green leaves; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "cook_dryad_guardian": {
+   "name": "Heart-Acorn Salad",
+   "ingredients": [
+    "Dryad Heart-Acorn"
+   ],
+   "tier": 2,
+   "benefit": "special",
+   "form": "platter",
+   "wants": "a platter of Dryad Heart-Acorn, with no cheese or meat",
+   "given": "dish_roast_t2_special",
+   "given_shows": "a roast joint with violet flowers; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "cook_imp": {
+   "name": "Brimstone Ichor Glaze",
+   "ingredients": [
+    "Imp Brimstone Ichor"
+   ],
+   "tier": 1,
+   "benefit": "mp",
+   "form": "stirfry",
+   "wants": "a stir-fry of Imp Brimstone Ichor, with no meat or tomato",
+   "given": "dish_fritter_t1_special",
+   "given_shows": "a heap of golden battered fritters, violet flowers; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "cook_impundulu": {
+   "name": "Lightning-Fat Flambe",
+   "ingredients": [
+    "Jarred Impundulu Fat"
+   ],
+   "tier": 3,
+   "benefit": "special",
+   "form": "flambe",
+   "wants": "a dish in flames of Jarred Impundulu Fat, with no meat",
+   "given": "dish_flambe_t3_special",
+   "given_shows": "a steak under violet flames; black iron pan",
+   "why": "shows meat it does not have"
+  },
+  "cook_marilith_spawn": {
+   "name": "Six-Blade Ichor Stir-Fry",
+   "ingredients": [
+    "Marilith Serpent Ichor"
+   ],
+   "tier": 2,
+   "benefit": "stat",
+   "form": "stirfry",
+   "wants": "a stir-fry of Marilith Serpent Ichor, with no meat or tomato",
+   "given": "dish_fritter_t2_stat",
+   "given_shows": "golden battered fritters, green leaves; clay plate",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "cook_myconid_worker": {
+   "name": "Myconid Stalk Fricassee",
+   "ingredients": [
+    "Myconid Stalk"
+   ],
+   "tier": 1,
+   "benefit": "stat",
+   "form": "stirfry",
+   "wants": "a stir-fry of Myconid Stalk, with no meat or tomato",
+   "given": "dish_fritter_t1_stat",
+   "given_shows": "a heap of golden battered fritters, green leaves; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "cook_river_salt": {
+   "name": "Salt-Crusted Crackers",
+   "ingredients": [
+    "River Salt"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of River Salt, with no meat",
+   "given": "dish_bread_t1_special",
+   "given_shows": "a bread roll with browned meat inside, violet flowers on top; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "cook_seal_demon_war": {
+   "name": "War-Seal Ichor Roast",
+   "ingredients": [
+    "Bael's War Ichor"
+   ],
+   "tier": 5,
+   "benefit": "stat",
+   "form": "roast",
+   "wants": "a roast of Bael's War Ichor, with no meat, tomato or whole bird",
+   "given": "dish_roast_t5_stat",
+   "given_shows": "a roast joint under green leaves; jewelled gold plate",
+   "why": "shows meat it does not have"
+  },
+  "cook_shade": {
+   "name": "Gloom-Jelly on Toast",
+   "ingredients": [
+    "Shade Gloom-Jelly"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Shade Gloom-Jelly, with no meat",
+   "given": "dish_bread_t1_special",
+   "given_shows": "a bread roll with browned meat inside, violet flowers on top; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "cook_sunroot": {
+   "name": "Roasted Sunroot",
+   "ingredients": [
+    "Sunroot"
+   ],
+   "tier": 2,
+   "benefit": "sp",
+   "form": "roast",
+   "wants": "a roast of Sunroot, with no meat, tomato or whole bird",
+   "given": "dish_roast_t2_sp",
+   "given_shows": "a roast joint, amber; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "cook_talos": {
+   "name": "Bronze Heart Flambé",
+   "ingredients": [
+    "Talos Bronze Heart"
+   ],
+   "tier": 1,
+   "benefit": "stat",
+   "form": "flambe",
+   "wants": "a dish in flames of Talos Bronze Heart, with no meat",
+   "given": "dish_flambe_t1_special",
+   "given_shows": "a browned roast lump of meat under low violet flames; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "cook_violet_fungus": {
+   "name": "Spore-Stalk Sauté",
+   "ingredients": [
+    "Violet Fungus Stalk"
+   ],
+   "tier": 1,
+   "benefit": "stat",
+   "form": "stirfry",
+   "wants": "a stir-fry of Violet Fungus Stalk, with no meat or tomato",
+   "given": "dish_fritter_t1_stat",
+   "given_shows": "a heap of golden battered fritters, green leaves; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "cook_waq_waq_tree": {
+   "name": "Waq-Waq Fruit Platter",
+   "ingredients": [
+    "Waq-Waq Fruit"
+   ],
+   "tier": 4,
+   "benefit": "stat",
+   "form": "platter",
+   "wants": "a platter of Waq-Waq Fruit, with no cheese or meat",
+   "given": "dish_roast_t4_stat",
+   "given_shows": "a roast joint under green leaves; silver plate",
+   "why": "shows meat it does not have"
+  },
+  "cook_wyrm": {
+   "name": "Whip-Scale Stir-Fry",
+   "ingredients": [
+    "Wyrm Coil-Scale"
+   ],
+   "tier": 3,
+   "benefit": "stat",
+   "form": "stirfry",
+   "wants": "a stir-fry of Wyrm Coil-Scale, with no meat or tomato",
+   "given": "dish_fritter_t3_special",
+   "given_shows": "golden battered fritters, violet flowers; black iron pan",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "cook_yellow_mold": {
+   "name": "Mold Log Hash",
+   "ingredients": [
+    "Yellow Mold Log"
+   ],
+   "tier": 1,
+   "benefit": "sp",
+   "form": "stirfry",
+   "wants": "a stir-fry of Yellow Mold Log, with no meat or tomato",
+   "given": "dish_fritter_t1_stat",
+   "given_shows": "a heap of golden battered fritters, green leaves; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "cook_young_red_dragon": {
+   "name": "Fire-Scale Flambé",
+   "ingredients": [
+    "Red Dragon Fire-Scale"
+   ],
+   "tier": 2,
+   "benefit": "special",
+   "form": "flambe",
+   "wants": "a dish in flames of Red Dragon Fire-Scale, with no meat",
+   "given": "dish_flambe_t2_special",
+   "given_shows": "a round browned steak under violet flames; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "dish_020": {
+   "name": "Hound-Nose Mushroom Sauté",
+   "ingredients": [
+    "Abyssal Hound Scent Ichor",
+    "Violet Fungus Stalk"
+   ],
+   "tier": 3,
+   "benefit": "stat",
+   "form": "stirfry",
+   "wants": "a stir-fry of Abyssal Hound Scent Ichor, Violet Fungus Stalk, with no meat or tomato",
+   "given": "dish_fritter_t3_special",
+   "given_shows": "golden battered fritters, violet flowers; black iron pan",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "dish_075": {
+   "name": "Loch-Side Hag Skillet",
+   "ingredients": [
+    "Each Uisce Tide-Mote",
+    "Night Hag Nightmare Mote",
+    "Wild mushroom"
+   ],
+   "tier": 2,
+   "benefit": "mp",
+   "form": "stirfry",
+   "wants": "a stir-fry of Each Uisce Tide-Mote, Night Hag Nightmare Mote, Wild mushroom, with no meat or tomato",
+   "given": "dish_fritter_t2_special",
+   "given_shows": "golden battered fritters, violet flowers; clay plate",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "dish_131": {
+   "name": "Regrowth Salad",
+   "ingredients": [
+    "Assassin Vine Stalk",
+    "Green Slime Sac",
+    "Swamp Moss"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "platter",
+   "wants": "a platter of Assassin Vine Stalk, Green Slime Sac, Swamp Moss, with no cheese or meat",
+   "given": "dish_roast_t1_special",
+   "given_shows": "a roast joint with violet flowers; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "dish_174": {
+   "name": "Vulture-Dance Mushrooms",
+   "ingredients": [
+    "Shadow Gloom-Ectoplasm",
+    "Vrock Vulture Bile",
+    "Altar Incense",
+    "Cave Mushroom"
+   ],
+   "tier": 3,
+   "benefit": "stat",
+   "form": "stirfry",
+   "wants": "a stir-fry of Shadow Gloom-Ectoplasm, Vrock Vulture Bile, Altar Incense, Cave Mushroom, with no meat or tomato",
+   "given": "dish_fritter_t3_special",
+   "given_shows": "golden battered fritters, violet flowers; black iron pan",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "dish_240": {
+   "name": "Smoke-and-Acid Glaze",
+   "ingredients": [
+    "Shadow Demon Smoke Ichor",
+    "Acid Blob Bladder",
+    "Apple"
+   ],
+   "tier": 2,
+   "benefit": "special",
+   "form": "stirfry",
+   "wants": "a stir-fry of Shadow Demon Smoke Ichor, Acid Blob Bladder, Apple, with no meat or tomato",
+   "given": "dish_fritter_t2_special",
+   "given_shows": "golden battered fritters, violet flowers; clay plate",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "dish_265": {
+   "name": "Red-Cap Ember Roast",
+   "ingredients": [
+    "Redcap Ember-Acorn",
+    "Devil's Bone-Brine",
+    "Altar Incense"
+   ],
+   "tier": 2,
+   "benefit": "stat",
+   "form": "roast",
+   "wants": "a roast of Redcap Ember-Acorn, Devil's Bone-Brine, Altar Incense, with no meat, tomato or whole bird",
+   "given": "dish_roast_t2_stat",
+   "given_shows": "a roast joint under green leaves; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "dish_285": {
+   "name": "Heartwood Wyvern Salad",
+   "ingredients": [
+    "Dryad Heart-Acorn",
+    "Wyvern Tail-Scale",
+    "Wild mushroom"
+   ],
+   "tier": 2,
+   "benefit": "special",
+   "form": "platter",
+   "wants": "a platter of Dryad Heart-Acorn, Wyvern Tail-Scale, Wild mushroom, with no cheese or meat",
+   "given": "dish_roast_t2_special",
+   "given_shows": "a roast joint with violet flowers; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "dish_297": {
+   "name": "Cog-and-Bronze Hash",
+   "ingredients": [
+    "Clockwork Horror Cog Crystal",
+    "Talos Bronze Heart",
+    "Altar Incense",
+    "Apple"
+   ],
+   "tier": 3,
+   "benefit": "stat",
+   "form": "stirfry",
+   "wants": "a stir-fry of Clockwork Horror Cog Crystal, Talos Bronze Heart, Altar Incense, Apple, with no meat or tomato",
+   "given": "dish_fritter_t3_special",
+   "given_shows": "golden battered fritters, violet flowers; black iron pan",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "dish_309": {
+   "name": "End-of-Days Amber Roast",
+   "ingredients": [
+    "Clay Golem Amber Heart",
+    "Apocalypse Herald Ichor",
+    "Hard cheese",
+    "River Salt"
+   ],
+   "tier": 5,
+   "benefit": "hp",
+   "form": "roast",
+   "wants": "a roast of Clay Golem Amber Heart, Apocalypse Herald Ichor, Hard cheese, River Salt, with no meat, tomato or whole bird",
+   "given": "dish_roast_t5_sp",
+   "given_shows": "a whole roast bird on golden grain; gold platter",
+   "why": "shows whole bird it does not have"
+  },
+  "dish_333": {
+   "name": "Demon-King's Brine Roast",
+   "ingredients": [
+    "Ravana's Arm Ichor",
+    "Devil's Bone-Brine",
+    "Altar Incense"
+   ],
+   "tier": 5,
+   "benefit": "stat",
+   "form": "roast",
+   "wants": "a roast of Ravana's Arm Ichor, Devil's Bone-Brine, Altar Incense, with no meat, tomato or whole bird",
+   "given": "dish_roast_t5_stat",
+   "given_shows": "a roast joint under green leaves; jewelled gold plate",
+   "why": "shows meat it does not have"
+  },
+  "dish_335": {
+   "name": "Trickster's Starnut Flatbread",
+   "ingredients": [
+    "Rakshasa Trick Ichor",
+    "Starnut",
+    "Elvish bread"
+   ],
+   "tier": 3,
+   "benefit": "mp",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Rakshasa Trick Ichor, Starnut, Elvish bread, with no meat",
+   "given": "dish_bread_t3_stat",
+   "given_shows": "a bread roll stuffed with meat, green leaves; black iron pan",
+   "why": "shows meat it does not have"
+  },
+  "dish_348": {
+   "name": "Coiling Serpent Skewers",
+   "ingredients": [
+    "World Serpent Scale",
+    "Wyrm Coil-Scale",
+    "River Salt"
+   ],
+   "tier": 4,
+   "benefit": "stat",
+   "form": "skewer",
+   "wants": "skewers of World Serpent Scale, Wyrm Coil-Scale, River Salt, with no meat",
+   "given": "dish_skewer_t2_stat",
+   "given_shows": "skewered meat chunks with green leaves; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "dish_350": {
+   "name": "Night-and-Coil Wyrm Kebabs",
+   "ingredients": [
+    "Void Wyrm Night-Scale",
+    "Wyrm Coil-Scale",
+    "Shadow Gloom-Ectoplasm"
+   ],
+   "tier": 5,
+   "benefit": "stat",
+   "form": "skewer",
+   "wants": "skewers of Void Wyrm Night-Scale, Wyrm Coil-Scale, Shadow Gloom-Ectoplasm, with no meat",
+   "given": "dish_skewer_t2_stat",
+   "given_shows": "skewered meat chunks with green leaves; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "dish_356": {
+   "name": "Dragon's-Eye Night Skewers",
+   "ingredients": [
+    "Void Wyrm Night-Scale",
+    "Abyssal Hound Scent Ichor",
+    "River Salt"
+   ],
+   "tier": 5,
+   "benefit": "stat",
+   "form": "skewer",
+   "wants": "skewers of Void Wyrm Night-Scale, Abyssal Hound Scent Ichor, River Salt, with no meat",
+   "given": "dish_skewer_t2_stat",
+   "given_shows": "skewered meat chunks with green leaves; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "dish_mm_bakunawa_b": {
+   "name": "Moon and Fire Stir-Fry",
+   "ingredients": [
+    "Bakunawa Moon-Scale",
+    "Drake Ember-Scale"
+   ],
+   "tier": 5,
+   "benefit": "stat",
+   "form": "stirfry",
+   "wants": "a stir-fry of Bakunawa Moon-Scale, Drake Ember-Scale, with no meat or tomato",
+   "given": "dish_fritter_t3_special",
+   "given_shows": "golden battered fritters, violet flowers; black iron pan",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "dish_mm_preta_a": {
+   "name": "Ember-Roasted Offering Loaf",
+   "ingredients": [
+    "Preta Hunger-Ember",
+    "Bread ration"
+   ],
+   "tier": 3,
+   "benefit": "sp",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Preta Hunger-Ember, Bread ration, with no meat",
+   "given": "dish_bread_t3_stat",
+   "given_shows": "a bread roll stuffed with meat, green leaves; black iron pan",
+   "why": "shows meat it does not have"
+  },
+  "dish_mm_star_jelly_b": {
+   "name": "Two-Jelly Platter",
+   "ingredients": [
+    "Star Jelly",
+    "Ochre Jelly Sac"
+   ],
+   "tier": 3,
+   "benefit": "stat",
+   "form": "platter",
+   "wants": "a platter of Star Jelly, Ochre Jelly Sac, with no cheese or meat",
+   "given": "dish_roast_t3_stat",
+   "given_shows": "a roast joint under green leaves; black iron pan",
+   "why": "shows meat it does not have"
+  },
+  "fare_bread_cheese": {
+   "name": "Bread and Cheese Sandwich",
+   "ingredients": [
+    "Bread ration",
+    "Hard cheese"
+   ],
+   "tier": 1,
+   "benefit": "sp",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Bread ration, Hard cheese, with no meat",
+   "given": "dish_bread_t1_sp",
+   "given_shows": "a split bread roll wrapped round pink meat, amber glaze; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "fare_bread_cheese_apple": {
+   "name": "Scholar's Luncheon Plate",
+   "ingredients": [
+    "Bread ration",
+    "Hard cheese",
+    "Apple"
+   ],
+   "tier": 1,
+   "benefit": "mp",
+   "form": "platter",
+   "wants": "a platter of Bread ration, Hard cheese, Apple, with no meat",
+   "given": "dish_platter_t1_mp",
+   "given_shows": "sliced meat and a cheese wedge over glowing blue sauce; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "fare_bread_mushroom": {
+   "name": "Glow-Cap Toast",
+   "ingredients": [
+    "Bread ration",
+    "Wild mushroom"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Bread ration, Wild mushroom, with no meat",
+   "given": "dish_bread_t1_special",
+   "given_shows": "a bread roll with browned meat inside, violet flowers on top; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "fare_cheese_herb": {
+   "name": "Cloister Cheese Board",
+   "ingredients": [
+    "Hard cheese",
+    "Healing herb"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "platter",
+   "wants": "a platter of Hard cheese, Healing herb, with no meat",
+   "given": "dish_platter_t1_special",
+   "given_shows": "sliced meat, cheese wedges and violet flowers; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "fare_cheese_mushroom": {
+   "name": "Cave-Wheel Skillet",
+   "ingredients": [
+    "Hard cheese",
+    "Wild mushroom"
+   ],
+   "tier": 1,
+   "benefit": "hp",
+   "form": "stirfry",
+   "wants": "a stir-fry of Hard cheese, Wild mushroom, with no meat or tomato",
+   "given": "dish_fritter_t1_stat",
+   "given_shows": "a heap of golden battered fritters, green leaves; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "fare_cheese_mushroom_herb": {
+   "name": "Hermit's Skillet",
+   "ingredients": [
+    "Hard cheese",
+    "Wild mushroom",
+    "Healing herb"
+   ],
+   "tier": 1,
+   "benefit": "hp",
+   "form": "stirfry",
+   "wants": "a stir-fry of Hard cheese, Wild mushroom, Healing herb, with no meat or tomato",
+   "given": "dish_fritter_t1_stat",
+   "given_shows": "a heap of golden battered fritters, green leaves; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "fare_cheese_waybread": {
+   "name": "Fair Folk's Cheese Toast",
+   "ingredients": [
+    "Hard cheese",
+    "Elvish bread"
+   ],
+   "tier": 1,
+   "benefit": "mp",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Hard cheese, Elvish bread, with no meat",
+   "given": "dish_bread_t1_mp",
+   "given_shows": "a crusty bread roll with browned meat inside, in a pool of glowing blue sauce; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "step_assassin_vine": {
+   "name": "Vine and Yarrow Sauté",
+   "ingredients": [
+    "Assassin Vine Stalk",
+    "Healing herb"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "stirfry",
+   "wants": "a stir-fry of Assassin Vine Stalk, Healing herb, with no meat or tomato",
+   "given": "dish_fritter_t1_special",
+   "given_shows": "a heap of golden battered fritters, violet flowers; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "step_black_pudding": {
+   "name": "Full Dungeon Breakfast",
+   "ingredients": [
+    "Black Pudding Sac",
+    "Bread ration"
+   ],
+   "tier": 2,
+   "benefit": "hp",
+   "form": "fryup",
+   "wants": "a fry-up or mixed grill of Black Pudding Sac, Bread ration, with no meat, sausage or tomato",
+   "given": "dish_steak_t2_stat",
+   "given_shows": "one grilled pale fillet on green herb sauce, nothing else; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "step_changeling": {
+   "name": "Cradle-Swap Bread",
+   "ingredients": [
+    "Changeling Glamour Acorn",
+    "Bread ration"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Changeling Glamour Acorn, Bread ration, with no meat",
+   "given": "dish_bread_t1_special",
+   "given_shows": "a bread roll with browned meat inside, violet flowers on top; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "step_dryad_guardian": {
+   "name": "Dryad's Waybread Salad",
+   "ingredients": [
+    "Dryad Heart-Acorn",
+    "Elvish bread"
+   ],
+   "tier": 2,
+   "benefit": "special",
+   "form": "platter",
+   "wants": "a platter of Dryad Heart-Acorn, Elvish bread, with no cheese or meat",
+   "given": "dish_roast_t2_special",
+   "given_shows": "a roast joint with violet flowers; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "step_earth_elemental": {
+   "name": "Bedrock Bannock",
+   "ingredients": [
+    "Earth Elemental Bedrock Jar",
+    "Wild mushroom"
+   ],
+   "tier": 2,
+   "benefit": "sp",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Earth Elemental Bedrock Jar, Wild mushroom, with no meat",
+   "given": "dish_bread_t2_sp",
+   "given_shows": "a round glazed loaf with a swirl of meat inside, amber; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "step_ethereal_filcher": {
+   "name": "Pickpocket's Cheese Board",
+   "ingredients": [
+    "Ethereal Filcher Ectoplasm",
+    "Hard cheese"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "platter",
+   "wants": "a platter of Ethereal Filcher Ectoplasm, Hard cheese, with no meat",
+   "given": "dish_platter_t1_special",
+   "given_shows": "sliced meat, cheese wedges and violet flowers; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "step_imp": {
+   "name": "Brimstone Cheese Toast",
+   "ingredients": [
+    "Imp Brimstone Ichor",
+    "Hard cheese"
+   ],
+   "tier": 1,
+   "benefit": "mp",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Imp Brimstone Ichor, Hard cheese, with no meat",
+   "given": "dish_bread_t1_mp",
+   "given_shows": "a crusty bread roll with browned meat inside, in a pool of glowing blue sauce; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "step_marilith_spawn": {
+   "name": "Six-Handed Sandwich",
+   "ingredients": [
+    "Marilith Serpent Ichor",
+    "Bread ration"
+   ],
+   "tier": 2,
+   "benefit": "special",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Marilith Serpent Ichor, Bread ration, with no meat",
+   "given": "dish_bread_t2_special",
+   "given_shows": "a bread roll stuffed with red meat slices and violet flowers; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "step_myconid_worker": {
+   "name": "Mushroom-Folk Skillet",
+   "ingredients": [
+    "Myconid Stalk",
+    "Hard cheese"
+   ],
+   "tier": 1,
+   "benefit": "hp",
+   "form": "stirfry",
+   "wants": "a stir-fry of Myconid Stalk, Hard cheese, with no meat or tomato",
+   "given": "dish_fritter_t1_stat",
+   "given_shows": "a heap of golden battered fritters, green leaves; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "step_ochre_jelly": {
+   "name": "Ochre Apple Glaze",
+   "ingredients": [
+    "Ochre Jelly Sac",
+    "Apple"
+   ],
+   "tier": 1,
+   "benefit": "hp",
+   "form": "stirfry",
+   "wants": "a stir-fry of Ochre Jelly Sac, Apple, with no meat or tomato",
+   "given": "dish_fritter_t1_stat",
+   "given_shows": "a heap of golden battered fritters, green leaves; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "step_shambling_mound": {
+   "name": "Compost-Cap Hash",
+   "ingredients": [
+    "Shambling Mound Compost Jar",
+    "Wild mushroom"
+   ],
+   "tier": 2,
+   "benefit": "hp",
+   "form": "stirfry",
+   "wants": "a stir-fry of Shambling Mound Compost Jar, Wild mushroom, with no meat or tomato",
+   "given": "dish_fritter_t2_stat",
+   "given_shows": "golden battered fritters, green leaves; clay plate",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "step_shield_guardian": {
+   "name": "Warding Loaf",
+   "ingredients": [
+    "Shield Guardian Ward Core",
+    "Bread ration"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Shield Guardian Ward Core, Bread ration, with no meat",
+   "given": "dish_bread_t1_special",
+   "given_shows": "a bread roll with browned meat inside, violet flowers on top; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "step_spriggan": {
+   "name": "Spriggan's Stolen Loaf",
+   "ingredients": [
+    "Spriggan Root-Acorn",
+    "Bread ration"
+   ],
+   "tier": 2,
+   "benefit": "sp",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Spriggan Root-Acorn, Bread ration, with no meat",
+   "given": "dish_bread_t2_sp",
+   "given_shows": "a round glazed loaf with a swirl of meat inside, amber; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "step_storm_elemental": {
+   "name": "Uncorked-Storm Flambé",
+   "ingredients": [
+    "Bottled Thunderhead",
+    "Elvish bread"
+   ],
+   "tier": 2,
+   "benefit": "special",
+   "form": "flambe",
+   "wants": "a dish in flames of Bottled Thunderhead, Elvish bread, with no meat",
+   "given": "dish_flambe_t2_special",
+   "given_shows": "a round browned steak under violet flames; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "step_violet_fungus": {
+   "name": "Violet Dream Sauté",
+   "ingredients": [
+    "Violet Fungus Stalk",
+    "Wild mushroom"
+   ],
+   "tier": 1,
+   "benefit": "mp",
+   "form": "stirfry",
+   "wants": "a stir-fry of Violet Fungus Stalk, Wild mushroom, with no meat or tomato",
+   "given": "dish_fritter_t1_special",
+   "given_shows": "a heap of golden battered fritters, violet flowers; walnut bowl",
+   "why": "no fair picture of its form; shows fritters"
+  },
+  "step_void_elemental": {
+   "name": "Nothing-Spread Toast",
+   "ingredients": [
+    "Void Elemental Nothing-Jar",
+    "Elvish bread"
+   ],
+   "tier": 2,
+   "benefit": "special",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Void Elemental Nothing-Jar, Elvish bread, with no meat",
+   "given": "dish_bread_t2_special",
+   "given_shows": "a bread roll stuffed with red meat slices and violet flowers; clay plate",
+   "why": "shows meat it does not have"
+  },
+  "step_wild_hunt_captain": {
+   "name": "Hunting-Horn Ribs",
+   "ingredients": [
+    "Wild Hunt Horn-Spark",
+    "Elvish bread"
+   ],
+   "tier": 4,
+   "benefit": "special",
+   "form": "leg",
+   "wants": "a roast leg on the bone of Wild Hunt Horn-Spark, Elvish bread, with no bone, meat or tomato",
+   "given": "dish_roast_t4_special",
+   "given_shows": "a roast joint with a violet flower; silver plate",
+   "why": "no fair picture of its form; shows a roast; shows meat it does not have"
+  },
+  "step_yellow_mold": {
+   "name": "Veined-Cheese Toast",
+   "ingredients": [
+    "Yellow Mold Log",
+    "Hard cheese"
+   ],
+   "tier": 1,
+   "benefit": "special",
+   "form": "bread",
+   "wants": "a sandwich, toast or loaf of Yellow Mold Log, Hard cheese, with no meat",
+   "given": "dish_bread_t1_special",
+   "given_shows": "a bread roll with browned meat inside, violet flowers on top; walnut bowl",
+   "why": "shows meat it does not have"
+  },
+  "step_young_dragon": {
+   "name": "Sigurd's Thumb Roast",
+   "ingredients": [
+    "Dragon Heart-Scale",
+    "Elvish bread"
+   ],
+   "tier": 3,
+   "benefit": "hp",
+   "form": "roast",
+   "wants": "a roast of Dragon Heart-Scale, Elvish bread, with no meat, tomato or whole bird",
+   "given": "dish_roast_t3_sp",
+   "given_shows": "a roast joint, amber; black iron pan",
+   "why": "shows meat it does not have"
+  }
+ },
+ "wanted": {
+  "stew t2 hp": 13,
+  "stew t2 sp": 10,
+  "stirfry t1 hp": 10,
+  "stew t1 hp": 9,
+  "stew t3 hp": 9,
+  "soup t2 special": 8,
+  "roast t1 hp": 7,
+  "soup t3 stat": 7,
+  "steak t2 special": 7,
+  "steak t3 stat": 7,
+  "stew t2 stat": 7,
+  "stew t4 hp": 7,
+  "bread t1 special": 6,
+  "soup t2 mp": 6,
+  "soup t2 stat": 6,
+  "soup t5 mp": 6,
+  "soup t5 stat": 6,
+  "steak t1 stat": 6,
+  "platter t1 special": 5,
+  "soup t2 hp": 5,
+  "steak t1 hp": 5,
+  "stew t5 stat": 5,
+  "stirfry t2 hp": 5,
+  "bake t5 hp": 4,
+  "fryup t1 hp": 4,
+  "meal t2 hp": 4,
+  "platter t2 special": 4,
+  "platter t3 stat": 4,
+  "roast t3 hp": 4,
+  "sausage t1 hp": 4,
+  "sausage t2 hp": 4,
+  "soup t1 hp": 4,
+  "steak t1 sp": 4,
+  "steak t3 hp": 4,
+  "steak t4 stat": 4,
+  "stirfry t3 stat": 4,
+  "bake t1 hp": 3,
+  "flambe t2 special": 3,
+  "fondue t3 special": 3,
+  "fryup t2 hp": 3,
+  "fryup t3 hp": 3,
+  "jelly t2 special": 3,
+  "jelly t3 mp": 3,
+  "leg t3 hp": 3,
+  "roast t2 hp": 3,
+  "roast t4 hp": 3,
+  "roast t5 hp": 3,
+  "soup t1 mp": 3,
+  "soup t1 special": 3,
+  "soup t5 special": 3,
+  "steak t2 hp": 3,
+  "steak t2 sp": 3,
+  "bake t2 hp": 2,
+  "bread t1 mp": 2,
+  "bread t1 sp": 2,
+  "bread t2 sp": 2,
+  "bread t2 special": 2,
+  "bread t3 sp": 2,
+  "bread t3 special": 2,
+  "chowder t4 sp": 2,
+  "chowder t5 mp": 2,
+  "drink t4 special": 2,
+  "fondue t1 special": 2,
+  "fryup t4 hp": 2,
+  "jelly t1 sp": 2,
+  "meal t1 hp": 2,
+  "meal t5 stat": 2,
+  "pie t2 sp": 2,
+  "pie t3 hp": 2,
+  "pie t4 stat": 2,
+  "pie t5 stat": 2,
+  "platter t1 mp": 2,
+  "platter t2 mp": 2,
+  "platter t3 sp": 2,
+  "platter t4 stat": 2,
+  "porridge t4 sp": 2,
+  "roast t5 sp": 2,
+  "roast t5 stat": 2,
+  "sausage t3 hp": 2,
+  "skewer t5 stat": 2,
+  "soup t4 special": 2,
+  "soup t4 stat": 2,
+  "soup t5 sp": 2,
+  "steak t1 special": 2,
+  "steak t3 special": 2,
+  "steak t4 hp": 2,
+  "steak t5 special": 2,
+  "stew t3 sp": 2,
+  "stew t3 special": 2,
+  "stew t4 sp": 2,
+  "stew t4 stat": 2,
+  "stew t5 hp": 2,
+  "stirfry t1 mp": 2,
+  "stirfry t1 sp": 2,
+  "stirfry t1 special": 2,
+  "stirfry t1 stat": 2,
+  "stirfry t2 sp": 2,
+  "bake t1 special": 1,
+  "bake t3 hp": 1,
+  "bake t4 hp": 1,
+  "bread t1 stat": 1,
+  "bread t3 mp": 1,
+  "bread t4 hp": 1,
+  "bread t4 sp": 1,
+  "bread t5 mp": 1,
+  "chowder t3 hp": 1,
+  "chowder t3 special": 1,
+  "chowder t5 special": 1,
+  "drink t1 sp": 1,
+  "drink t2 stat": 1,
+  "drink t4 stat": 1,
+  "dumpling t3 sp": 1,
+  "dumpling t4 stat": 1,
+  "dumpling t5 sp": 1,
+  "flambe t1 stat": 1,
+  "flambe t3 special": 1,
+  "fondue t5 special": 1,
+  "fritter t2 mp": 1,
+  "fritter t4 stat": 1,
+  "fryup t4 sp": 1,
+  "jelly t1 hp": 1,
+  "jelly t1 mp": 1,
+  "jelly t1 stat": 1,
+  "jelly t2 stat": 1,
+  "leg t2 hp": 1,
+  "leg t2 sp": 1,
+  "leg t4 sp": 1,
+  "leg t4 special": 1,
+  "leg t5 stat": 1,
+  "meal t2 sp": 1,
+  "meal t5 hp": 1,
+  "pickle t1 sp": 1,
+  "pickle t5 hp": 1,
+  "pie t2 hp": 1,
+  "pie t3 mp": 1,
+  "pie t3 sp": 1,
+  "pie t4 mp": 1,
+  "pie t5 hp": 1,
+  "platter t1 stat": 1,
+  "platter t2 stat": 1,
+  "platter t3 special": 1,
+  "platter t4 special": 1,
+  "platter t5 special": 1,
+  "platter t5 stat": 1,
+  "porridge t2 stat": 1,
+  "porridge t3 stat": 1,
+  "porridge t4 hp": 1,
+  "porridge t4 stat": 1,
+  "pudding t2 hp": 1,
+  "pudding t2 stat": 1,
+  "pudding t3 mp": 1,
+  "pudding t3 special": 1,
+  "pudding t4 stat": 1,
+  "pudding t5 hp": 1,
+  "roast t2 sp": 1,
+  "roast t2 stat": 1,
+  "roast t4 sp": 1,
+  "sausage t3 special": 1,
+  "sausage t5 hp": 1,
+  "sausage t5 mp": 1,
+  "skewer t1 mp": 1,
+  "skewer t1 sp": 1,
+  "skewer t2 mp": 1,
+  "skewer t2 special": 1,
+  "skewer t3 special": 1,
+  "skewer t3 stat": 1,
+  "skewer t4 special": 1,
+  "skewer t4 stat": 1,
+  "soup t1 stat": 1,
+  "soup t3 hp": 1,
+  "soup t3 sp": 1,
+  "soup t4 hp": 1,
+  "soup t4 sp": 1,
+  "steak t1 mp": 1,
+  "steak t4 special": 1,
+  "steak t5 hp": 1,
+  "steak t5 stat": 1,
+  "stew t1 sp": 1,
+  "stew t4 special": 1,
+  "stew t5 sp": 1,
+  "stirfry t2 mp": 1,
+  "stirfry t2 special": 1,
+  "stirfry t2 stat": 1,
+  "stirfry t3 sp": 1,
+  "stirfry t3 special": 1,
+  "stirfry t4 sp": 1,
+  "stirfry t5 stat": 1
+ }
+}

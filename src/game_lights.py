@@ -7,7 +7,8 @@
 * **Burning** (``_light_tick``, every turn from ``_advance_turn``): a held,
   lit light burns one turn of its fuel. A spent torch is gone and the next
   torch in the pack is lit at once; a lantern that runs dry takes the next
-  flask of fire oil from the pack, or goes dark.
+  flask of fire oil from the pack, or goes dark. A scroll's brighter light
+  about him burns a turn of its own (lights.glow_tick).
 * **In and out** (Shift+L, ``_swap_light``): one turn, as S is for the
   readied weapon. The light comes out of the pack and the shield goes into
   it; pressed again, the light is stowed and back comes whatever it took
@@ -84,6 +85,7 @@ class LightsMixin:
         p = getattr(self, 'player', None)
         if p is None:
             return
+        lights.glow_tick(p)                       # a scroll's brighter light burns a turn
         try:
             now = lights.light_bonus(p)
         except Exception:

@@ -36,6 +36,11 @@ perception." A PER-10 hero sees five tiles and an archer shoots from six.
   ('none'). A light burns only while held and lit (LightsMixin._light_tick).
 * **The Light spell** gives the ``light`` status for turns from Intelligence
   (``spell_turns``); a wand of light for its ``power`` in turns.
+* **A scroll of light** (Light, Illumination, Revelation: data/items/scroll.json
+  ``light_turns``, ``light_sight``) lays the same ``light`` status for its own
+  turns (``kindle``), hundreds of them, for a scroll is spent once. One
+  brighter than the spell's keeps its brightness, its ``glow``, for its own
+  turns while the status runs (``glow_tick``); only the brightest glow counts.
 
 Every number is in data/lights.json and data/items/light.json. Pure rules:
 no pygame, no game state; works on stand-ins (getattr with defaults).
@@ -211,7 +216,7 @@ def sources(player, extra: int = 0, aura: int | None = None) -> list:
     if is_lit(lt):
         out.append(('carried', sight_of(lt), notice_of(lt)))
     if _has(player, 'light'):
-        out.append(('status', status_sight(), status_notice()))
+        out.append(('status', *status_glow(player)))
     a = weapon_aura(player) if aura is None else int(aura or 0)
     if a > 0:
         out.append(('weapon', a, a))
@@ -324,6 +329,64 @@ def wand_light(wand) -> tuple:
     if d.get('effect') == 'light':
         return wand_turns(d.get('power', '')), bool(d.get('light_reveals', False))
     return wand_turns(getattr(wand, 'power', '')), bool(getattr(wand, 'light_reveals', False))
+
+
+# ------------------------------------------------- a scroll's light, its glow
+
+def _glows(player) -> list:
+    d = getattr(player, '__dict__', None) or {}
+    g = d.get('_light_glows')
+    return g if isinstance(g, list) else []
+
+
+def status_glow(player) -> tuple:
+    """(sight, notice) the ``light`` status gives now: the brightest scroll
+    light still burning in it, else the status's own (data status_sight,
+    status_notice). (0, 0) with no light status."""
+    if not _has(player, 'light'):
+        return 0, 0
+    sight, notice = status_sight(), status_notice()
+    for g in _glows(player):
+        if int(g.get('turns', 0) or 0) > 0:
+            sight = max(sight, int(g.get('sight', 0) or 0))
+            notice = max(notice, int(g.get('notice', 0) or 0))
+    return sight, notice
+
+
+def kindle(player, turns: int, sight: int | None = None, notice: int | None = None) -> int:
+    """Lay the ``light`` status for ``turns`` at ``sight`` (a scroll's light).
+    On a light already burning it adds to what is left up to the longer of
+    the two, and never cuts what runs (status_effects.apply_effect). A light
+    brighter than the status's own keeps that brightness for its own turns
+    (its glow; a lit hero is seen farther by its ``notice``, its sight unless
+    given). Returns the status's turns now (-1: a story's lamp, held for
+    floors, which the brighter glow still outshines for its turns)."""
+    turns = max(1, int(turns))
+    sight = status_sight() if sight is None else max(0, int(sight))
+    notice = sight if notice is None else max(0, int(notice))
+    if not _has(player, 'light'):
+        player.__dict__['_light_glows'] = []      # a glow from a light now gone
+    player.add_effect('light', turns, cap=turns)
+    if _has(player, 'light') and (sight > status_sight() or notice > status_notice()):
+        glows = [g for g in _glows(player) if int(g.get('turns', 0) or 0) > 0]
+        glows.append({'sight': sight, 'notice': notice, 'turns': turns})
+        player.__dict__['_light_glows'] = glows
+    return int((getattr(player, 'status_effects', None) or {}).get('light', 0) or 0)
+
+
+def glow_tick(player) -> None:
+    """One turn of each brighter light's own burning (LightsMixin._light_tick).
+    A glow goes with the status: a darkness that put the light out (light_shy
+    'dark'), a dispel, or its turns run out."""
+    glows = _glows(player)
+    if not glows:
+        return
+    if not _has(player, 'light'):
+        player.__dict__['_light_glows'] = []
+        return
+    player.__dict__['_light_glows'] = [
+        {**g, 'turns': int(g.get('turns', 0) or 0) - 1} for g in glows
+        if int(g.get('turns', 0) or 0) > 1]
 
 
 # ------------------------------------------------------------ burning
