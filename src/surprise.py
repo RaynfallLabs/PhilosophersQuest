@@ -57,6 +57,11 @@ def ambush_step(m, player, dungeon) -> str:
         import senses
         if not senses.clear_view(m.x, m.y, player.x, player.y, dungeon):
             return 'lurk'
+        # On a hero it can see or touch (docs: never one its senses miss:
+        # an invisible hero standing still, one a ward hides from its kind).
+        # It sprang on him whether it sensed him or not.
+        if senses.perceive(m, player, dungeon) is None:
+            return 'lurk'
     return 'spring'
 
 

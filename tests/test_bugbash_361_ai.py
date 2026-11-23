@@ -319,6 +319,27 @@ def test_a_charger_in_its_rush_does_not_stand_on_the_screen():
 
 
 # ---------------------------------------------------------------------------
+# AI10: an ambusher springs on a hero it can see or touch, never on one its
+# senses miss
+# ---------------------------------------------------------------------------
+
+def test_an_ambusher_does_not_spring_on_a_hero_it_cannot_sense():
+    import surprise
+    dun = room()
+    hero = Hero(5, 5)
+    spider = make('giant_spider', 7, 5)                    # two off, a clear view
+    senses.begin_turn(moved=False, guilty=False, floor=5)
+    assert surprise.ambush_step(spider, hero, dun) == 'spring'
+    hero.status_effects['invisible'] = 20                  # unseen, and standing still
+    assert surprise.ambush_step(spider, hero, dun) == 'lurk'
+    senses.begin_turn(moved=True, guilty=False, floor=5)   # his steps in its web
+    assert surprise.ambush_step(spider, hero, dun) == 'spring'
+    spider.x = 6                                            # beside him: it touches him
+    senses.begin_turn(moved=False, guilty=False, floor=5)
+    assert surprise.ambush_step(spider, hero, dun) == 'spring'
+
+
+# ---------------------------------------------------------------------------
 # On a staged Game
 # ---------------------------------------------------------------------------
 
@@ -364,3 +385,19 @@ def test_the_game_tells_the_mind_what_the_hero_saw(make_game):
     turn = g.turn_count
     g._do_monster_turns()
     assert gob._hero_saw == (turn, True)
+
+
+def test_a_bleed_does_not_rouse_a_territorial_creature_on_its_ground():
+    import home_ground
+    dun, hero = room(), Hero(9, 9)
+    w = make('goblin', 3, 3)                              # (the barrow kinds have no blood)
+    w.max_hp = w.hp = 200
+    w._home = (3, 3)
+    w.__dict__['territorial'] = True
+    w.__dict__['lair_radius'] = 2
+    home_ground.leash(w, hero, dun, [w], set(), True)        # its first look
+    w.status_effects['bleeding'] = 5
+    w.tick_effects()
+    assert w.hp < 200
+    assert home_ground.leash(w, hero, dun, [w], set(), True) is False   # it lets him go
+    assert not w.__dict__.get('_lair_roused')

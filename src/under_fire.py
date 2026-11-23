@@ -49,7 +49,8 @@ def blow_hp(m) -> int:
     Monster.take_damage's ``_dot_lost``) put back: it falls only to a blow.
     Every "struck since its last turn" test compares this, never bare
     health (here; morale's caught as it runs; a pack waiting at a narrow
-    way; the Tactical Mind's hurt and its watch): a goblin bleeding from a
+    way; the Tactical Mind's hurt and its watch; a territorial creature
+    roused on its ground: home_ground.leash): a goblin bleeding from a
     sword cut was taken for one shot from afar and ran for cover, and a
     charger rushed at a hero who had only stepped back. A wound that keeps
     bleeding is not a new blow (it springs no lurker and breaks no chant

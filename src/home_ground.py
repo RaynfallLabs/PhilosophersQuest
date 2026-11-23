@@ -79,10 +79,12 @@ def leash(m, player, dungeon, all_monsters, extra_occupied, seen: bool) -> bool:
     hero_off = _cheb(player.x, player.y, hx, hy)
     d = m.__dict__
     # Struck since its last turn: it turns and fights, and it does not walk
-    # home under fire until it has gone roused_turns unhurt.
+    # home under fire until it has gone roused_turns unhurt. (A wound
+    # ticking is no blow: under_fire.blow_hp.)
+    import under_fire
     was = d.get('_lair_hp')
-    d['_lair_hp'] = int(m.hp)
-    if was is not None and int(m.hp) < int(was):
+    d['_lair_hp'] = under_fire.blow_hp(m)
+    if was is not None and int(d['_lair_hp']) < int(was):
         d['_lair_roused'] = int(rules().get('roused_turns', 5))
     roused = int(d.get('_lair_roused', 0) or 0)
     if roused > 0:
