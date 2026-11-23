@@ -390,6 +390,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # quiz. The old "+ mastery" step is gone -- masteries were removed
         # in the 2026-08-06 identify-v3 redesign (commit 2778305).
         self._scroll_identify_pending: bool = False
+        # How far that pick reaches: 'sort' (the Scroll of Identify) names
+        # every other unknown thing of the chosen one's sort he carries too.
+        self._scroll_identify_reach: str = ''
         # The cook menu (game_menus._open_cook_menu): each tab's rows as
         # kitchen.menu_rows gave them, the tab shown, the tab it opened on
         # and why.

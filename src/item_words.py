@@ -10,9 +10,11 @@ module fills them from the item's own fields (its dice, its tier, its turns,
 its charges, the ward or the family it names) and, when a hero is given, from
 him (his health for a heal's least share, his Intelligence for a wand's
 damage, his sight, his armour's tax on a spell). The numbers are the ones the
-handlers use: the ladders the handlers write inline are in the data, the rest
-are read from the handlers' own modules (game_magic, food_system,
-status_effects, lights, wards), and tests/test_item_words.py pins both.
+handlers use: a scroll kind keeps its own in its data entry (an entry's
+``fields``: map_radius, light_turns, delta..., read by wards.field_of as its
+handler reads them), the rest are read from the handlers' own modules
+(game_magic, food_system, status_effects, lights, wards), and
+tests/test_item_words.py pins both.
 
 Pure: no Game. It never asks whether the item is identified; the callers
 gate that as before (unidentified still says to identify it).
@@ -212,6 +214,14 @@ class _Fields(dict):
         return val
 
     def _ladder(self, key):
+        # A number the kind keeps in its own data entry (``fields``: a
+        # scroll's map_radius, light_turns, delta...), by the blessing the
+        # hero knows: the very lookup its handler makes (wards.field_of).
+        if key in (self.spec.get('fields') or ()):
+            import wards
+            got = wards.field_of(self._own_def(), key, self.buc)
+            if got is not None:
+                return got
         tiers = self.spec.get('tiers') or {}
         if self.buc != 'uncursed' and f"{key}_{self.buc}" in tiers:
             return tiers[f"{key}_{self.buc}"][self.t]
@@ -333,8 +343,13 @@ class _Fields(dict):
         if cls == 'scroll':
             pt = spec.get('power_turns')
             if pt:
-                base = _int_of(_get(it, 'power', '')) or int(pt.get('default', 10))
-                turns = max(int(pt.get('least', 1)), int(base * pt['mult'][self.t]))
+                # The kind's power is its turns (today's data, as its handler
+                # reads it; a tier's share of it when the data gives 'mult').
+                base = (_int_of(self._own_def().get('power', '')) or _int_of(_get(it, 'power', ''))
+                        or int(pt.get('default', 10)))
+                mult = pt.get('mult')
+                turns = max(int(pt.get('least', 1)),
+                            int(base * mult[self.t]) if mult else base)
                 from status_effects import MAX_EFFECT_DURATION
                 return min(turns, MAX_EFFECT_DURATION)
             # The family wards and the Piper's tune: the kind's own turns,

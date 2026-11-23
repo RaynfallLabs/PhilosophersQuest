@@ -315,9 +315,12 @@ def test_a_scroll_on_the_hero_lays_the_turns_its_line_says(g, sid, status):
     ('scroll_of_absolute_ward', 'cursed', 'shielded'),       # a cursed rite keeps the 60 limit
     ('scroll_of_the_lemuria', 'blessed', 'ward_lemuria'),
     ('scroll_of_the_udug_hul', 'cursed', 'ward_udug_hul'),
-    ('scroll_of_light', 'blessed', 'clairvoyant'),
-    ('scroll_of_illumination', 'blessed', 'clairvoyant'),
-    ('scroll_of_revelation', 'uncursed', 'clairvoyant')])
+    # (The light scrolls lay a light that goes with the hero, 2026-11-22:
+    # they mapped the floor and gave clairvoyance before.)
+    ('scroll_of_light', 'blessed', 'light'),
+    ('scroll_of_illumination', 'blessed', 'light'),
+    ('scroll_of_revelation', 'uncursed', 'light'),
+    ('scroll_of_absolute_ward', 'blessed', 'shielded')])
 def test_a_known_blessing_or_curse_changes_the_number_as_the_handler_does(g, sid, buc, status):
     sc = _item('scroll', sid, buc)
     g._apply_scroll_effect(sc)

@@ -10,6 +10,7 @@
     "max_turns": 250
   },
   "wand_max_turns": 250,
+  "_doc_scroll": "A scroll of light (Light, Illumination, Revelation; Brandon 2026-11-22: 'create a light that follows you for some significant number of turns') lays the same light status for its own light_turns (data/items/scroll.json, light_turns_blessed when blessed), at its own light_sight: a scroll is spent once, so it burns hundreds of turns where the spell burns one hundred. On a light already burning it adds to what is left up to the longer of the two. One brighter than status_sight keeps that brightness (its glow) for its own turns while the status runs; only the brightest counts, and a lit hero is seen farther by it (src/lights.py kindle, status_glow, glow_tick). Cursed, its words call the dark: the light about the hero goes out and a held light is smothered (light_shy.snuff 'dark'), and no light is laid.",
   "_doc_fuel": "A torch burns itself away ('fuel': 'self'): when it is spent it is gone, and the next torch in the pack is lit at once. A lantern or a lamp burns oil ('fuel': 'oil'): when it runs dry the next flask of oil in the pack is poured in at once (oil_items), else it goes dark until filled (the Kit's Apply). 'burn' is the turns a fresh torch or a full lantern lasts; 0 means it never burns out. A light burns only while it is held and lit. low_share: below this share of its burn the sidebar shows how much is left, and the hero is told once.",
   "oil_items": ["flask_of_fire_oil"],
   "low_share": 0.2,
@@ -40,6 +41,12 @@
     "spell_held": "A light already burns about you.",
     "wand": "Light pours from the wand and stays about you: sight +{sight} for {turns} turns.",
     "wand_reveals": "In its light you see what hides from sight.",
+    "scroll": "{read_line}: sight +{sight} for {turns} turns.",
+    "scroll_read": "A light kindles about you and goes where you go",
+    "scroll_reveals": "In its light you see the invisible for as long.",
+    "scroll_far": "For {turns} turns your eyes see through stone, and the floor round you fills in your map as you go.",
+    "scroll_cursed": "The words on the page call the dark.",
+    "scroll_cursed_none": "The words on the page call the dark, but no light burns about you to put out.",
     "way_down": "The {light} burns toward the way down: the stair shows on your map.",
     "two_hander": "You need a free hand for the {light}: your weapon takes both."
   },

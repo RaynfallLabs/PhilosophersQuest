@@ -138,7 +138,7 @@ EFFECT_INFO: dict[str, tuple] = {
     # ---- Story-encounter effects (ENCOUNTER_STORIES_DRAFT J3). Each lasts
     # whole floors or turns as its reward says; none changes a stat. ----
     'porter':             ('Porter',             (190, 160, 110), 'Someone carries part of your load: carry limit +50'),
-    'light':              ('Light',              (255, 230, 140), f'A light burns about you: sight +{_light_sight()}, and you are seen from farther'),
+    'light':              ('Light',              (255, 230, 140), f'A light burns about you: sight +{_light_sight()} or more (a scroll of light burns brighter), and you are seen from farther'),
     'sickly':             ('Sickly',             (160, 170,  90), 'A low fever: stamina drains twice as fast'),
 }
 

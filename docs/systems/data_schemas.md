@@ -581,7 +581,23 @@ Fix: set to `0` (unidentified) or `5` (identified).
 - `quiz_threshold` — grammar-quiz threshold to read (zero-tolerance).
 - `effect` — effect id (e.g. `"heal"`, `"identify"`, `"magic_mapping"`).
 - `power` — dice string, scalar, or power argument interpreted per
-  effect.
+  effect. Haste and stopped time: the turns themselves (Quickness `"10"`).
+- **A kind's own numbers (2026-11-22).** Where an effect's handler had an
+  inline ladder by tier, each scroll kind now carries its own number, read
+  by its handler and its card alike (`wards.field_of`: a `<field>_blessed` /
+  `<field>_cursed` entry when the copy is so; `game_magic._scroll_num`,
+  `item_words` through the card's `fields`):
+  - mapping: `map_radius` (tiles; 0 = the whole floor), `map_finds`
+    (`"secret_doors"`, `"traps"`);
+  - identify: `identify_reach` (`sort` / `pack` / `sight` / `floor`),
+    `identify_reach_blessed`, `identify_lore` (every carried corpse's kind);
+  - full_light: `light_turns` (+ `_blessed`), `light_sight`,
+    `light_reveals` (the invisible seen for as long), `clairvoyant_turns`
+    (+ `_blessed`), `read_line`;
+  - confuse_monsters / sleep_monsters: `control_turns`;
+  - protection: `shield_turns` (+ `_cursed`);
+  - enchant_weapon / enchant_armor / enchant_item / enchant_accessory:
+    `delta`, `delta_blessed`, and `both_weapons`, `pieces` or `count`.
 
 ### 7.2 Wand schema
 
