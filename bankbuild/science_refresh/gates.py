@@ -94,8 +94,14 @@ def unit_problems(u: dict, lines: dict[str, dict], qs: list[dict]) -> list[str]:
     return errs
 
 
-def run(kind_pref: tuple[str, ...] = ('final', 'draft')) -> dict:
-    """Gate every unit's questions together. Returns {unit_id: report}."""
+def run(kind_pref: tuple[str, ...] = ('final', 'draft'), write: set[str] | None = None) -> dict:
+    """Gate every unit's questions together. Returns {unit_id: report}.
+
+    Every unit's questions go into the bank (duplicates are checked across
+    all of them), but gates.json is written only for the units in `write`
+    (all of them when it is None), so agents gating their own units at the
+    same time never rewrite each other's reports. A unit whose file does not
+    parse (an author mid-write) is left out and reported, never a crash."""
     from bankbuild.cards.stage import check
     from bankbuild.tellgate import gate as tell_gate
 
@@ -104,8 +110,13 @@ def run(kind_pref: tuple[str, ...] = ('final', 'draft')) -> dict:
     bank: list[dict] = []
     per_unit: dict[str, list[dict]] = {}
     which: dict[str, str] = {}
+    broken: dict[str, str] = {}
     for u in units:
-        kind, qs = unit_questions(u['id'], kind_pref)
+        try:
+            kind, qs = unit_questions(u['id'], kind_pref)
+        except (ValueError, KeyError, TypeError) as e:
+            kind, qs = '', []
+            broken[u['id']] = f'{type(e).__name__}: {e}'
         which[u['id']] = kind
         per_unit[u['id']] = qs
         bank += [dict(q) for q in qs]
@@ -132,6 +143,10 @@ def run(kind_pref: tuple[str, ...] = ('final', 'draft')) -> dict:
     reports = {}
     for u in units:
         qs = per_unit[u['id']]
+        if u['id'] in broken:
+            reports[u['id']] = {'kind': 'unparsed', 'unit': [f'its file does not parse: {broken[u["id"]]}'],
+                                'questions': {}, 'n_fail': 1}
+            continue
         rep = {'kind': which[u['id']], 'unit': unit_problems(u, lines, qs), 'questions': {}}
         for q in qs:
             h = stem_hash(q['question'])
@@ -141,7 +156,7 @@ def run(kind_pref: tuple[str, ...] = ('final', 'draft')) -> dict:
             rep['questions'][h] = r
         rep['n_fail'] = len(rep['unit']) + sum(len(r['fail']) for r in rep['questions'].values())
         reports[u['id']] = rep
-        if qs:
+        if qs and (write is None or u['id'] in write):
             write_json(UNITS_DIR / u['id'] / 'gates.json', rep)
     if loose:
         reports['_loose'] = loose
@@ -156,7 +171,7 @@ def main() -> None:
         i = args.index('--kind')
         pref = (args[i + 1],)
         args = args[:i] + args[i + 2:]
-    reports = run(pref)
+    reports = run(pref, set(args) if args else None)
     for line in reports.pop('_loose', []):
         print('BANK', line)
     show = args or [u for u, r in reports.items() if r['kind']]

@@ -44,9 +44,21 @@ def read_json(p: Path, default=None):
 
 
 def write_json(p: Path, obj) -> None:
+    """Write through a temp file and a rename, so three agents running the
+    gates at once never read each other's half-written file."""
+    import os
+    import time
     p = Path(p)
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(obj, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    tmp = p.with_name(f'{p.name}.{os.getpid()}.tmp')
+    tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    for attempt in range(20):
+        try:
+            os.replace(tmp, p)
+            return
+        except PermissionError:          # Windows: another process has it open
+            time.sleep(0.1 * (attempt + 1))
+    os.replace(tmp, p)
 
 
 def load_units() -> list[dict]:
