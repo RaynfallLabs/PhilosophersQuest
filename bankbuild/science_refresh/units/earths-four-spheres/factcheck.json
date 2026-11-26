@@ -1,0 +1,351 @@
+{
+ "unit": "earths-four-spheres",
+ "questions": {
+  "98587b4962": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: nitrogen is the gas that makes up most of air (about 78 percent of dry air)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "Grokipedia: nitrogen 78.08% by volume, oxygen 20.95%, argon 0.934%."
+    },
+    {
+     "claim": "Wrong choice 'Oxygen' is wrong (about 21 percent)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'Carbon dioxide' is wrong (about 0.04 percent)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "Grokipedia: about 430 ppm (0.043%) as of June 2025; 'about 0.04 percent' holds as CO2 rises for decades yet."
+    },
+    {
+     "claim": "Wrong choice 'Water vapour' is wrong (0 to about 4 percent, never most)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "Grokipedia: water vapor varies from near 0% to 4%."
+    },
+    {
+     "claim": "Context: nearly four times as much nitrogen as oxygen (78/21 = 3.7)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": ""
+    },
+    {
+     "claim": "Context: most of the last 1 percent is argon",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "Argon 0.934% of the remaining ~0.97%."
+    },
+    {
+     "claim": "Stem: air in a jar is the same mixture as the atmosphere (well mixed near the ground)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Homosphere",
+     "note": "Main gases in constant proportions up to the turbopause, 85-90 km."
+    }
+   ]
+  },
+  "304c5d20fe": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: groundwater belongs to the hydrosphere",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hydrosphere",
+     "note": "Grokipedia: hydrosphere 'includes oceans, seas, lakes, rivers, groundwater, glaciers, ice sheets, and atmospheric water vapor.' Britannica likewise includes groundwater held in soil and rock."
+    },
+    {
+     "claim": "Wrong choice 'The geosphere' is wrong: the rock and sand holding the water are geosphere, the water is not",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/5-ess2-1-earths-systems",
+     "note": "NGSS ESS2.A: geosphere = solid and molten rock, soil and sediments; hydrosphere = water and ice."
+    },
+    {
+     "claim": "Wrong choices 'The biosphere' and 'The atmosphere' are wrong",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/5-ess2-1-earths-systems",
+     "note": ""
+    },
+    {
+     "claim": "Stem: groundwater fills spaces between grains of sand and cracks in rock; comes from rain soaking in",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Groundwater",
+     "note": ""
+    },
+    {
+     "claim": "Context: hydrosphere includes sea, rivers, lakes, ice and snow, water vapour, groundwater",
+     "result": "ok",
+     "source": "https://www.britannica.com/science/hydrosphere",
+     "note": "Some scientists split ice off as the cryosphere, but the four-sphere school model (NGSS) puts ice in the hydrosphere; true at the grade's level."
+    }
+   ]
+  },
+  "bcf5470c9e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: soil belongs in the geosphere (as the stem asks: which of the four belongs in the geosphere)",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/5-ess2-1-earths-systems",
+     "note": "NGSS ESS2.A names soil in the geosphere. Grokipedia's Soil page calls soil a medium that 'interfaces the lithosphere, hydrosphere, atmosphere, and biosphere', which the context honours ('even though it also holds water, air and living things'); since the other three choices are plainly not geosphere, the key is safe."
+    },
+    {
+     "claim": "Context: soil is mostly tiny grains of weathered rock",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Soil",
+     "note": "Grokipedia: soil is 'composed primarily of mineral particles derived from weathered rock'. By volume minerals are about 45% (the largest single part) and by weight far more than half."
+    },
+    {
+     "claim": "Wrong choice 'snow on a high peak' is hydrosphere, not geosphere",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/5-ess2-1-earths-systems",
+     "note": "NGSS: hydrosphere (water and ice)."
+    },
+    {
+     "claim": "Wrong choice 'roots of a pine tree' is biosphere",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/5-ess2-1-earths-systems",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'steam from a hot spring' is hydrosphere (water)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hydrosphere",
+     "note": "Water vapour and its visible condensed droplets are water."
+    }
+   ]
+  },
+  "9763d9373a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: warm sea water heating the air above it is the hydrosphere acting on the atmosphere",
+     "result": "ok",
+     "source": "https://wmo.int/content/how-ocean-shapes-weather-and-climate",
+     "note": "WMO: the ocean absorbs solar energy and currents carry heat 'before releasing much of it back into the atmosphere'. Grokipedia Earth system science: air-sea exchanges of heat."
+    },
+    {
+     "claim": "Context: the ocean takes in most of the Sun's energy that reaches Earth",
+     "result": "ok",
+     "source": "https://wmo.int/content/how-ocean-shapes-weather-and-climate",
+     "note": "WMO states it in these words ('The ocean absorbs most of the solar energy reaching the Earth'), and NOAA Ocean Explorer says the majority of the Sun's radiation is absorbed by the ocean. Strictly it is most of the sunlight absorbed at the surface (air and clouds absorb or reflect the rest); optional tightening: 'most of the sunlight that reaches Earth's surface'."
+    },
+    {
+     "claim": "Wrong choice 'Rain slowly wearing a rocky hill down' is hydrosphere on geosphere, not on the atmosphere",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth_system_science",
+     "note": "Grokipedia: 'precipitation and river flows break down rocks'."
+    },
+    {
+     "claim": "Wrong choice 'A forest's leaves giving oxygen to the air' is biosphere on atmosphere",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth_system_science",
+     "note": "Grokipedia: plants absorb atmospheric CO2 through photosynthesis, releasing oxygen."
+    },
+    {
+     "claim": "Wrong choice 'A volcano blowing ash high into the sky' is geosphere on atmosphere",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volcanic_ash",
+     "note": "Ash is rock, minerals and glass, so geosphere material."
+    }
+   ]
+  },
+  "0cffbed5f9": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: roots prying rock apart are the biosphere acting on the geosphere",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weathering",
+     "note": "Grokipedia Weathering: 'plant roots prying apart cracks'; root wedging: 'expanding roots exert pressure on cracks in bedrock, fragmenting rock.'"
+    },
+    {
+     "claim": "Wrong choices (hydrosphere+geosphere, biosphere+atmosphere, biosphere+hydrosphere) are wrong for roots splitting rock",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/5-ess2-1-earths-systems",
+     "note": "Tree = biosphere, cliff = geosphere (NGSS ESS2.A)."
+    },
+    {
+     "claim": "Context: water freezing in the same crack would be the hydrosphere at work (frost wedging)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weathering",
+     "note": "Frost wedging occurs when water in cracks freezes and expands about 9%."
+    },
+    {
+     "claim": "Context: broken bits of rock may one day become soil that feeds plants",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weathering",
+     "note": "Weathering products 'form regolith and ultimately soils, which support life and agriculture.'"
+    }
+   ]
+  },
+  "fd4646efcc": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: water vapour is the gas a volcano gives off most of",
+     "result": "ok",
+     "source": "https://www.usgs.gov/programs/VHP/volcanic-gases-can-be-harmful-health-vegetation-and-infrastructure",
+     "note": "USGS: 'By far the most abundant volcanic gas is water vapor.' Wikipedia: 'consistently the most abundant volcanic gas, normally comprising more than 60% of total emissions.'"
+    },
+    {
+     "claim": "Wrong choice 'Carbon dioxide' is wrong (second, 10-40 percent)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volcanic_gas",
+     "note": "Grokipedia: CO2 10-40% by volume. Wikipedia notes abundances vary from volcano to volcano, and some cold vents (mofettes) are mostly CO2, but water vapour is consistently first; the context's 'usually' covers the variation."
+    },
+    {
+     "claim": "Wrong choice 'Sulfur dioxide' is wrong (1-10 percent)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volcanic_gas",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'Oxygen' is wrong: volcanoes give off essentially no free oxygen (writer's inference, confirmed)",
+     "result": "ok",
+     "source": "https://volcanoes.sdsu.edu/Volcanic_gases.html",
+     "note": "SDSU: 'Other than free oxygen, generated by photosynthesis, all atmospheric gases were derived from inside the earth'. Britannica (Evolution of the atmosphere, via search excerpt) says modern volcanic gases contain no O2, their H, C and S being in oxidized forms; Wikipedia lists O2 only as 'meteoric' (air contamination); the USGS gas list omits oxygen."
+    },
+    {
+     "claim": "Context: gases dissolved in magma under pressure bubble out as it rises",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volcanic_gas",
+     "note": "Grokipedia: gases derive from components dissolved in magma; as pressure drops they come out of solution as bubbles."
+    },
+    {
+     "claim": "Context: water vapour usually 60 to 90 percent, then carbon dioxide, then sulfur dioxide",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volcanic_gas",
+     "note": "Grokipedia: H2O 60-90%, CO2 10-40%, SO2 1-10%. SDSU gives 70-90% for water vapour."
+    }
+   ]
+  },
+  "a255e49d38": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: most ocean waves are made by wind blowing across the water",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/facts/wavesinocean.html",
+     "note": "NOAA: 'Waves are most commonly caused by wind'; friction between wind and surface water."
+    },
+    {
+     "claim": "Wrong choice 'The pull of the Moon's gravity' is wrong: it makes the tides",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/facts/wavesinocean.html",
+     "note": "NOAA: waves caused by the pull of the Moon and Sun are called tides. The context's 'the pull of the Moon makes the tides' leaves out the Sun's smaller share, a fair simplification since the Moon is the main cause."
+    },
+    {
+     "claim": "Wrong choice 'Earthquakes under the sea floor' is wrong: they make tsunamis, not most waves",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/facts/wavesinocean.html",
+     "note": "NOAA: tsunamis from earthquakes, landslides or volcanic eruptions displacing water."
+    },
+    {
+     "claim": "Wrong choice 'Earth spinning on its axis' is wrong",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/facts/wavesinocean.html",
+     "note": "NOAA names wind, the Moon and Sun's pull (tides) and underwater disturbances; rotation does not make beach waves (it only sets the timing of the tides)."
+    },
+    {
+     "claim": "Context: wind drags on the surface and pushes water into ridges; atmosphere acting on hydrosphere",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/facts/wavesinocean.html",
+     "note": ""
+    }
+   ]
+  },
+  "d9b1f60a17": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: old ash has weathered into rich soil",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volcanic_ash",
+     "note": "Grokipedia: 'Over longer timescales, volcanic ash contributes to the formation of highly fertile Andisols through weathering'; ash 'enriches soils with essential nutrients such as potassium and phosphorus.' USGS Volcano Watch: ash soils sustained sugar cane on Hawaii."
+    },
+    {
+     "claim": "Context: volcanic ash is tiny bits of rock and glass, not the soft ash of a fire",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volcanic_ash",
+     "note": "Grokipedia: fragments of rock, minerals and glass under 2 mm; 'hard, rocky material and lacks organic components'."
+    },
+    {
+     "claim": "Wrong choice 'Heat from the magma keeps the soil warm' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volcanic_ash",
+     "note": "The fertility comes from the weathered ash's minerals, not heat."
+    },
+    {
+     "claim": "Wrong choice 'The high slopes are safe from frost' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "Air cools with height. A real effect, the thermal belt, keeps some mid-slopes freer of frost than valley floors on calm nights (AMS glossary: the warm belt lies between the cold valley floor and the cold hilltops), but high slopes are not 'safe from frost' and that is not why volcanic land is fertile. Optional softening of the context: 'High slopes are usually colder than the land below them'."
+    },
+    {
+     "claim": "Wrong choice 'Steam from below keeps the soil damp' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volcanic_ash",
+     "note": "Andisols hold water well because of their structure, not steam."
+    },
+    {
+     "claim": "Context: air cools by about 6.5 degrees Celsius per kilometre of height",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "Grokipedia: average environmental lapse rate about 6.5 C per km in the troposphere."
+    }
+   ]
+  },
+  "91bec6dd34": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the air is thin, so each breath holds less oxygen",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Effects_of_high_altitude_on_humans",
+     "note": "Grokipedia: reduced atmospheric pressure lowers the partial pressure of oxygen, due to the reduced weight of the air column above."
+    },
+    {
+     "claim": "Wrong choice 'Oxygen makes up a smaller share of the air there' is truly wrong",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Altitude_sickness",
+     "note": "Wikipedia: 'the relative percentage of oxygen in air, at about 21%, remains practically unchanged up to 21,350 metres'. Grokipedia Homosphere: constant proportions up to 85-90 km."
+    },
+    {
+     "claim": "Wrong choice 'No plants grow up there to give off oxygen' is wrong (air well mixed)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Homosphere",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'The heavy oxygen sinks and stays near the ground' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Homosphere",
+     "note": "Oxygen is slightly heavier than nitrogen, but turbulent mixing keeps proportions constant below the turbopause."
+    },
+    {
+     "claim": "Context: near the top of the highest mountain air pressure is about a third of sea level",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Effects_of_high_altitude_on_humans",
+     "note": "Summit ~253 mmHg vs 760 mmHg at sea level (0.33). Measured summit pressures 309-343 hPa (eos.org), also about a third."
+    },
+    {
+     "claim": "Context: air there still about 21 percent oxygen because moving air keeps gases mixed",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Altitude_sickness",
+     "note": ""
+    },
+    {
+     "claim": "Stem: climbers on the highest mountains often carry bottled oxygen",
+     "result": "ok",
+     "source": "https://www.alanarnette.com/2026/01/26/everest-by-the-numbers-2026-edition/",
+     "note": "Himalayan Database via Alan Arnette: about 98% of Everest climbers through 2024 used supplemental oxygen; Grokipedia Death zone: open-circuit systems are the standard."
+    }
+   ]
+  }
+ },
+ "unit_notes": "All 9 checked against Grokipedia first, with NGSS, NOAA, USGS, WMO, Wikipedia and SDSU as second sources. No errors. Two optional wording tightenings, neither required: 9763d9373a context ('most of the Sun's energy that reaches Earth' is WMO's own wording; strictly it is most of the sunlight absorbed at the surface) and d9b1f60a17 context ('High slopes are colder' could read 'usually colder', since thermal belts can leave mid-slopes less frosty than valley floors on calm nights). The soil-in-geosphere key is safe: NGSS ESS2.A puts soil in the geosphere, the context admits it holds water, air and life, and the other three choices are plainly not geosphere. Climbers: the share of oxygen stays about 21% to about 21 km, so 'a smaller share of oxygen' is truly wrong."
+}

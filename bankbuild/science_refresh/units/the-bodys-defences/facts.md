@@ -146,3 +146,14 @@ M6. Students mix up the jobs of the parts of the blood: white blood cells (fight
 
 G1. NGSS MS-LS1-3 and Core Knowledge 2023 Grade 6 (The Human Body: Circulatory, Lymphatic, and Immune Systems) place the body's defences at 6th grade (curriculum map line G6.L8). Middle-school lessons teach them as lines of defence: barriers first (skin, mucus, tears, stomach acid), then phagocytes, inflammation and fever, then lymphocytes, antibodies and memory cells, with the lymph nodes behind the "swollen glands" a doctor checks.
     bankbuild/science_refresh/curriculum_map.json (G6.L8) ; https://keslerscience.com/immune-system-lesson-plan-teks-7.13a (a middle-school lesson, MS-LS1-3: barriers, phagocytes, inflammation, fever, B and T cells, antibodies, memory cells "which is why chickenpox usually happens only once", lymph nodes and "swollen glands"; its vaccine section is not used here)
+
+## Added in the revision (2026-11-26; read on the web this day)
+
+F36. How sure the fever facts are: Evans, Repasky and Fisher (2015, Nature Reviews Immunology) say fever "confers a survival benefit during infection", that fever-range temperatures "cause a greater than 200-fold reduction in the replication rate of poliovirus in mammalian cells", and that "Thermal stress further increases neutrophil recruitment to local sites of infection", but that the evidence is "largely based on experimental models employing LPS or fever-range hyperthermia as surrogates for pathogen-induced fever". Science News Explores, on a mouse study in which fever helped immune cells reach germs faster: "But researchers still need to prove it." So the bank says a fever is THOUGHT to slow some germs and help white blood cells work faster. (No source says a fever sweats germs out (M3), dries up mucus, or keeps more germs from getting in.)
+    https://pmc.ncbi.nlm.nih.gov/articles/PMC4786079 ; https://www.snexplores.org/article/fever-can-help-immune-cells-attack ; https://grokipedia.com/page/Fever
+
+F37. How long swollen glands last: lymph nodes swollen by a viral infection "will shrink to normal size on their own in about two to four weeks" (AboutKidsHealth, SickKids); the NHS says they "should go down within 1 to 2 weeks". So: within a few weeks.
+    https://aboutkidshealth.ca/swollen-lymph-nodes ; https://www.nhs.uk/conditions/swollen-glands/
+
+F38. Why colds are commoner in winter: Grokipedia Common cold gives "increased indoor crowding during colder months", "reduced relative humidity from indoor heating" and children back in classrooms, and says "cold exposure may modestly influence susceptibility" by "impairing nasal mucosal defenses"; yet "low temperatures do not directly cause the common cold". So crowding indoors is part of the reason, not all of it.
+    https://grokipedia.com/page/Common_cold

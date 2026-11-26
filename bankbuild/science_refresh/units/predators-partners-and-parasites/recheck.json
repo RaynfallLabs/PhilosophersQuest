@@ -1,0 +1,25 @@
+{"unit": "predators-partners-and-parasites",
+ "questions": {
+  "316e3aa25b": {"verdict": "pass",
+   "why": "Old tell fixed: no type is named in the stem, so the sorting rule cannot be read off 'mutualism' or 'parasitism'. Key true (Grokipedia sorts the three primary types by net effect on each partner); the three lures are not criteria in any source and stay live ('plants, animals or both' matches the key's three-part shape). Grokipedia also mentions amensalism, but calls mutualism, commensalism and parasitism the three primary types, so 'three types' is fair at grade 6. Voice clean; 'they' is the biologists.",
+   "sources": ["https://grokipedia.com/page/Symbiosis", "https://openstax.org/books/biology-2e/pages/45-6-community-ecology"]},
+  "2cce2fac53": {"verdict": "pass",
+   "why": "Old tell fixed: the dead oxygen lure is replaced by 'squeeze the food along the gut', which is false (peristalsis is the gut wall's smooth muscle) and live (bacteria are popularly said to 'keep things moving'). Bile is made by the liver and emulsifies fat, so 'breaks up fat' is now exact. Key true (the microbiota ferments fibre the body cannot digest). Context true.",
+   "sources": ["https://grokipedia.com/page/Gut_microbiota", "https://grokipedia.com/page/Peristalsis", "https://grokipedia.com/page/Bile"]},
+  "a288a83bf6": {"verdict": "pass",
+   "why": "New item, on the scope's parasitism line (why a parasite seldom kills its host), told as the kind of interaction, not the worm's life story. Facts hold: the scolex fastens to the intestinal wall, the worm absorbs nutrients through its tegument, egg-filled segments leave in the faeces for new hosts, and it can live in the gut for years. OpenStax: a parasite is unlikely to kill its host, especially not quickly, since that leaves no time to spread. Lures false: it siphons resources the host would use (B12 loss in the fish tapeworm), it does not leave a weakening host, and it gives nothing back. The four choices are parallel explanations of similar length. 6th-grade content; voice clean.",
+   "sources": ["https://openstax.org/books/biology-2e/pages/45-6-community-ecology", "https://grokipedia.com/page/Cestoda"]},
+  "0a83478dc5": {"verdict": "pass",
+   "why": "Old tell fixed: 'Sugar broken out of rotting leaves' is not struck by the dark roots, is live from the T1 decomposer idea, and is false (decomposers release inorganic minerals, and the plant pays the rhizobia with its own carbohydrates). Key true; water and oxygen lures false (leghemoglobin keeps oxygen low). Farmers' wording now says 'rich' and no longer implies they knew it was nitrogen.",
+   "sources": ["https://grokipedia.com/page/Rhizobia", "https://grokipedia.com/page/Decomposer", "https://grokipedia.com/page/Nitrogen_fixation"]},
+  "789733bc41": {"verdict": "pass",
+   "why": "Old tell fixed: 'but never grow into the tree' is cut, so Parasitism (M2) is live. The key still follows because the roots take rain and mist, not anything from inside the tree. Grokipedia Epiphyte: epiphytes get their resources from rain, mist and debris, not the host, and 'Epiphytism exemplifies a commensal interaction'. The context keeps the hard-to-prove caveat.",
+   "sources": ["https://grokipedia.com/page/Epiphyte", "https://grokipedia.com/page/Commensalism"]},
+  "3099952515": {"verdict": "pass",
+   "why": "Fact error fixed: Lyme disease is no longer counted as the deer's cost (deer are dead-end hosts, with negligible reservoir competence). The context now says a heavy tick load wears an animal down, which Grokipedia supports (energy depletion, anaemia, lower survival). 'while the deer walks on' is cut, so Predation is live and the student must know that a predator kills its prey. Feeding for several days then dropping off swollen is true for hard ticks. Still an easy item, but it is grade content.",
+   "sources": ["https://grokipedia.com/page/Tick", "https://www.pa.gov/agencies/pgc/wildlife/wildlife-health/wildlife-diseases/lyme-disease.html"]},
+  "cf9da7e256": {"verdict": "pass",
+   "why": "Uncertain fact fixed: the stem no longer says hare furs were sold for a century. HBC lynx fur records run 1845-1935 (Grokipedia; Stenseth et al. give lynx series 1821-1939), and the hare series covers 1844/45-1935, fur records then questionnaires, so 'records of snowshoe hares cover the same years' is true. Key: lynx peak 1-2 years after hares (Grokipedia, OpenStax). The lures stay wrong, since the lynx peak falls during the hare decline, not at its low.",
+   "sources": ["https://grokipedia.com/page/Canada_lynx", "https://pmc.ncbi.nlm.nih.gov/articles/PMC24646", "https://openstax.org/books/biology-2e/pages/45-6-community-ecology"]}
+ }
+}

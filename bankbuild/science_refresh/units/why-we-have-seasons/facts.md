@@ -103,3 +103,14 @@ M3. The axis changes direction through the year (turning to face the Sun, or roc
 M4. The equator, where the Sun is high, has the longest summer days. In June the day grows longer the farther north one goes, up to 24 hours in the Arctic (F10).
 
 (M2-M4 are the mix-ups the lures model; their wrongness rests on the facts cited. I found no single survey to cite for their frequency, so no question claims how common they are.)
+
+## Added in the revision (2026-11-26; read on the web that day)
+
+F25. At the equinox day and night are only about equal: in theory 12 hours each at every latitude, in practice a little unequal (refraction and the Sun's size), and the North and South Poles have continuous daylight for about four days around each equinox, with the Sun skimming the horizon. So "about equal almost everywhere" is the true wording. The March equinox falls March 19-21 (March 20 in every year 2020-2030); the September one September 21-24.
+    https://grokipedia.com/page/Equinox ("theoretically equal durations of daylight and nighttime—precisely 12 hours each—at every latitude"; "only approximately equal"; "both the North Pole and South Pole experience continuous daylight for approximately four days around each equinox")
+
+F26. The lag of the seasons (seasonal lag): the hottest weeks come after the June solstice because of thermal inertia, whose "primary cause is the high specific heat capacity of water", which covers most of the planet and heats and cools slowly (land heats faster). In the Northern Hemisphere peak warmth comes about four to six weeks after the June solstice, in late July or August; coastal places lag longer than continental interiors. EarthSky: "Earth just takes a while to warm up after a long winter"; the Sun has to "warm the oceans" before the hottest weather.
+    https://grokipedia.com/page/Seasonal_lag ; https://earthsky.org/astronomy-essentials/everything-you-need-to-know-june-solstice/ ("This effect is called the lag of the seasons")
+
+F27. North of the tropics the noon Sun is highest in the sky at the June solstice: "During the summer solstice, the sun reaches its highest noonday point in the sky", and noon shadows are the shortest of the year (EarthSky). (At the Tropic of Cancer it is straight overhead, F18.)
+    https://earthsky.org/astronomy-essentials/everything-you-need-to-know-june-solstice/ ; https://grokipedia.com/page/Solstice (the Sun "directly overhead at the Tropic of Cancer (23.5° N latitude)"; maximum insolation from "higher solar elevation angles")

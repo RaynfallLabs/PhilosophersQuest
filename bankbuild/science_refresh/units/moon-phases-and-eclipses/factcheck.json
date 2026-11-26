@@ -1,0 +1,428 @@
+{
+ "unit": "moon-phases-and-eclipses",
+ "questions": {
+  "7cd7f580d1": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: phases come from more or less of the Moon's sunlit half facing Earth",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/moon-phases/",
+     "note": "NASA: 'how much we are able to see of that illuminated half changes as the Moon travels through its orbit.' Grokipedia Lunar_phase agrees."
+    },
+    {
+     "claim": "Wrong: Earth's shadow covers more or less of it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "Grokipedia: 'Earth's shadow only affects the Moon during a lunar eclipse.' Truly wrong."
+    },
+    {
+     "claim": "Wrong: the Sun lights up more or less of it",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/moon-phases/",
+     "note": "NASA: 'The Moon is always half-lit by the Sun.' The lit amount does not change, only our view of it. Truly wrong."
+    },
+    {
+     "claim": "Wrong: other planets' shadows",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "No source gives planets' shadows any role; clearly wrong."
+    },
+    {
+     "claim": "Stem: cycle about four weeks",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "Synodic month 29.53 days; 'about four weeks' is a fair round figure."
+    },
+    {
+     "claim": "Context: Sun always lights one half; none of the lit half faces Earth at new moon, all at full; Earth's shadow falls on the Moon only in a lunar eclipse",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "Grokipedia: 'The Moon is always half-illuminated by the Sun'; new moon has 'its illuminated side facing away from Earth'. None/all is the standard simplification and true to grade level."
+    }
+   ]
+  },
+  "86175ed485": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: at new moon the far side is lit all over by the Sun",
+     "result": "ok",
+     "source": "https://www.timeanddate.com/astronomy/moon/far-side.html",
+     "note": "timeanddate: 'At New Moon, the side we see from Earth is in darkness, while the far side of the Moon is fully lit up by the Sun's rays.' NASA SVS says the same (near side in full shadow at new moon)."
+    },
+    {
+     "claim": "Wrong: dark, as it always is",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/top-moon-questions/",
+     "note": "NASA: 'There is no permanent dark side of the Moon.' Truly wrong."
+    },
+    {
+     "claim": "Wrong: dark, in Earth's shadow",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "At new moon the Moon is between Earth and the Sun, nowhere near Earth's shadow (which points away from the Sun). Truly wrong."
+    },
+    {
+     "claim": "Wrong: half lit and half dark",
+     "result": "ok",
+     "source": "https://www.timeanddate.com/astronomy/moon/far-side.html",
+     "note": "At new moon the far hemisphere is essentially the sunlit hemisphere ('fully lit up'). Truly wrong."
+    },
+    {
+     "claim": "Stem: at new moon the near side is dark and the Moon cannot be seen in the sky",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "Grokipedia: new moon 'rises and sets with the Sun, making it unobservable against the daytime sky.' (Only exception: the dark disc seen during a solar eclipse; acceptable at grade level.)"
+    },
+    {
+     "claim": "Context: the far side is often called the dark side but gets just as much sunlight as the near side",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Far_side_of_the_Moon",
+     "note": "Grokipedia: far side 'often erroneously referred to as the \"dark side\" despite receiving equivalent sunlight'. NASA: 'The far side of the Moon gets as much sunlight as the near side.'"
+    }
+   ]
+  },
+  "b9838634e1": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: after full moon the order is waning gibbous, third quarter, waning crescent",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/moon-phases/",
+     "note": "NASA lists the phases after full as 'waning gibbous, third quarter, and waning crescent'. Grokipedia Lunar_phase gives the same order. Third quarter = last quarter."
+    },
+    {
+     "claim": "Wrong: waxing gibbous, first quarter, waxing crescent",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "Waxing phases come between new and full, and this is also their reverse order. Truly wrong."
+    },
+    {
+     "claim": "Wrong: waning crescent, third quarter, waning gibbous",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "Right phases, reversed order. Truly wrong."
+    },
+    {
+     "claim": "Wrong: waxing crescent, first quarter, waxing gibbous",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "This is the order from new to full, not after full. Truly wrong."
+    },
+    {
+     "claim": "Stem: full to new takes about two weeks",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "Half of the 29.53-day synodic month is about 14.8 days."
+    },
+    {
+     "claim": "Context: waning = shrinking, gibbous = more than half lit, half disc at third quarter, waxing = growing, waxing phases in the two weeks before full",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Lunar_phase",
+     "note": "Matches Wikipedia and Grokipedia definitions (gibbous more than half, quarter half-lit, waxing growing, waning shrinking)."
+    }
+   ]
+  },
+  "a4030d77ef": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a full moon rises at sunset because it is on the far side of Earth from the Sun",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "Grokipedia: at full moon 'the Moon is on the opposite side of our planet from the Sun'; 'It rises at sunset and sets at sunrise.' NASA: 'A full Moon rises around sunset and sets around sunrise.'"
+    },
+    {
+     "claim": "Wrong: it is between Earth and the Sun",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "That is the new-moon position (Moon rises and sets with the Sun). Truly wrong."
+    },
+    {
+     "claim": "Wrong: it is at its closest point to Earth",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Supermoon",
+     "note": "Perigee full moons (supermoons) come only 3 to 4 times a year with new moons included; distance has nothing to do with rising time. Truly wrong."
+    },
+    {
+     "claim": "Wrong: it is circling Earth once every day",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/moon-phases/",
+     "note": "NASA: the Moon 'travels around our planet once every 27.322 days'. Daily rising comes from Earth's spin (Grokipedia Diurnal_motion). Truly wrong."
+    },
+    {
+     "claim": "Stem: rises in the east at sunset, up all night, sets at sunrise",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Lunar_phase",
+     "note": "Wikipedia's table: full moon visible 'Sunset to sunrise (all night)'. 'Just as' is the usual approximation (NASA says 'around sunset')."
+    },
+    {
+     "claim": "Context: Moon takes about 27 days to go round Earth; daily rising and setting from Earth's spin",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Diurnal_motion",
+     "note": "Grokipedia: diurnal motion 'resulting from the Earth's rotation on its axis' makes the Moon rise in the east and set in the west. Orbit 27.322 days (NASA)."
+    },
+    {
+     "claim": "Context: most full moons are not at the closest point",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Supermoon",
+     "note": "Grokipedia: perigee and full moon 'do not align perfectly each month', a 'misalignment that prevents supermoons in most cycles'."
+    }
+   ]
+  },
+  "2c7a93d38a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the Moon spins once for each trip round Earth, so the same side faces Earth",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tidal_locking",
+     "note": "Grokipedia: the Moon 'rotates continuously on its axis once approximately every 27.3 days', synchronous rotation 'ensures that the same side always faces Earth'. NASA: 'spins on its axis exactly once each time it orbits our planet'."
+    },
+    {
+     "claim": "Stem wording: people 'never see its far side' (libration)",
+     "result": "ok",
+     "source": "https://www.timeanddate.com/astronomy/moon/far-side.html",
+     "note": "Libration lets us see up to 59% of the surface over time, only 50% at once (timeanddate; Grokipedia Far_side_of_the_Moon: ~59%, glimpses of the far side near the limbs, 'never the entire hidden hemisphere'). NASA itself says 'The far side of the Moon can never be seen from Earth', so the stem's wording matches NASA's grade-level phrasing and the key is unaffected. Optional hardening if wanted: 'Why do they never see most of its far side?' or 'never see the far side's middle'. Not an error."
+    },
+    {
+     "claim": "Wrong: it does not spin at all as it goes round",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/top-moon-questions/",
+     "note": "Grokipedia Tidal_locking names this 'the common misconception that the Moon does not rotate'. NASA: without the spin 'we would see different parts of the Moon throughout the month'. Truly wrong."
+    },
+    {
+     "claim": "Wrong: it spins once a day, just as Earth does",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tidal_locking",
+     "note": "Rotation period is about 27.3 days, not one day. Truly wrong."
+    },
+    {
+     "claim": "Wrong: its far side is always in darkness",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/top-moon-questions/",
+     "note": "NASA: 'There is no permanent dark side of the Moon... The far side of the Moon gets as much sunlight as the near side.' Truly wrong."
+    },
+    {
+     "claim": "Context: about 27 days; a non-spinning Moon would show every side over one trip; far side as sunlit as near side",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/top-moon-questions/",
+     "note": "27.3-day rotation and orbit (NASA, Grokipedia). NASA: a Moon without the spin would show 'different parts of the Moon throughout the month'; Britannica's rotation video shows front, side, then back. Far side sunlight per NASA."
+    }
+   ]
+  },
+  "d559d0278b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a solar eclipse only at new moon because only then is the Moon between the Sun and Earth",
+     "result": "ok",
+     "source": "https://science.nasa.gov/eclipses/geometry",
+     "note": "NASA: 'Solar eclipses only occur during the new moon, when the Moon and Sun are aligned on the same side of Earth.' Grokipedia Solar_eclipse: 'Solar eclipses can only happen during the new moon phase.'"
+    },
+    {
+     "claim": "Wrong: only then is Earth between the Sun and the Moon",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_eclipse",
+     "note": "That is the lunar-eclipse line-up, at full moon. Truly wrong."
+    },
+    {
+     "claim": "Wrong: only then is the Moon inside Earth's shadow",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_eclipse",
+     "note": "The Moon in Earth's shadow is a lunar eclipse, at full moon. Truly wrong."
+    },
+    {
+     "claim": "Wrong: only then is the Moon on Earth's night side",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/moon-phases/",
+     "note": "At new moon 'the Moon is in the same part of the sky as the Sun and rises and sets with the Sun' (NASA), so it is on the day side. Truly wrong."
+    },
+    {
+     "claim": "Context: the Moon blocks the Sun's light from part of Earth; at new moon it is in the daytime sky near the Sun; Earth between Sun and Moon is a lunar eclipse",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/moon-phases/",
+     "note": "All consistent with NASA and Grokipedia (Lunar_phase, Solar_eclipse, Lunar_eclipse)."
+    }
+   ]
+  },
+  "268dd14f60": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a lunar eclipse only at full moon",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_eclipse",
+     "note": "Grokipedia: 'This phenomenon only happens during a full moon phase.' NASA eclipse types: 'Lunar eclipses occur at the full moon phase.'"
+    },
+    {
+     "claim": "Wrong: only at new moon",
+     "result": "ok",
+     "source": "https://science.nasa.gov/eclipses/geometry",
+     "note": "New moon is when solar eclipses happen; the Moon is then on the Sun's side of Earth, away from Earth's shadow. Truly wrong."
+    },
+    {
+     "claim": "Wrong: only at first quarter",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_eclipse",
+     "note": "Truly wrong; only full moon."
+    },
+    {
+     "claim": "Wrong: at any phase of the month",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_phase",
+     "note": "Earth's shadow 'only affects the Moon during a lunar eclipse', which needs the full-moon line-up. Truly wrong."
+    },
+    {
+     "claim": "Stem: Earth's shadow darkens the Moon over a few hours",
+     "result": "ok",
+     "source": "https://science.nasa.gov/eclipses/types/",
+     "note": "NASA: Earth's shadow dims the Moon 'over a few hours'; Grokipedia: a total lunar eclipse 'unfolds over several hours'."
+    },
+    {
+     "claim": "Context: Earth's shadow points away from the Sun; the Moon enters it only at full moon; at other phases it is off to one side, so the shadow cannot make the phases",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Lunar_phase",
+     "note": "Geometry agrees with NASA (Earth 'precisely between the Moon and Sun') and Wikipedia ('The phases are not caused by the Earth's shadow falling on the Moon')."
+    }
+   ]
+  },
+  "2bed95be11": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: sunlight bent through Earth's air reaches the eclipsed Moon",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_eclipse",
+     "note": "Grokipedia: 'Sunlight grazing the Earth's limb is bent toward the Moon by atmospheric refraction'; blue light 'preferentially scattered away by air molecules via Rayleigh scattering'. NASA (March 2025 eclipse page): sunlight 'filtered through a thick slice of Earth's atmosphere'."
+    },
+    {
+     "claim": "Wrong: sunlight bounced off Earth's oceans",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Earth_phase",
+     "note": "Earth's phases are opposite the Moon's: at full moon lunar observers see a 'new Earth', so the side of Earth facing the eclipsed Moon is night and sends it almost no reflected sunlight. Truly wrong."
+    },
+    {
+     "claim": "Wrong: light given off by the Moon's rocks",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/top-moon-questions/",
+     "note": "NASA: 'The Moon does not make its own light.' Truly wrong."
+    },
+    {
+     "claim": "Wrong: light given off by Earth's shadow",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Shadow",
+     "note": "A shadow is where light is blocked; it emits nothing. Truly wrong."
+    },
+    {
+     "claim": "Stem: in totality the whole Moon is in Earth's shadow, does not vanish, glows dull coppery red",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lunar_eclipse",
+     "note": "Standard description. Colour varies by eclipse (Danjon scale); at the darkest, L=0, the Moon is 'almost invisible', as after Pinatubo in 1992, but not gone, so 'does not vanish' holds. 'Glows' is loose for reflected light, but the question itself teaches that the light comes from the Sun."
+    },
+    {
+     "claim": "Context: air bends sunlight into the shadow, scatters away most blue, same reason sunsets are red; Moon makes no light; shadow gives none; Earth's side facing the Moon is in night",
+     "result": "ok",
+     "source": "https://science.nasa.gov/solar-system/skywatching/what-you-need-to-know-about-the-march-2025-total-lunar-eclipse/",
+     "note": "NASA: 'The same phenomenon that makes our sky blue and our sunsets red causes the Moon to turn reddish-orange.' Grokipedia compares it to sunset colours. The rest is consistent with NASA and Wikipedia Earth_phase."
+    }
+   ]
+  },
+  "6c0774bca9": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the Moon's tilted orbit usually carries it above or below the Sun at new moon",
+     "result": "ok",
+     "source": "https://science.nasa.gov/eclipses/geometry",
+     "note": "NASA: orbit 'tilted (or inclined) by about five degrees'; 'During the new moon, the Moon usually passes below or above the Sun, and its shadow misses Earth.'"
+    },
+    {
+     "claim": "Number: tilt about 5 degrees",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solar_eclipse",
+     "note": "Grokipedia: 'inclined by approximately 5.145 degrees relative to the ecliptic plane'."
+    },
+    {
+     "claim": "Stem: most new moons bring no solar eclipse, not even partial",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solar_eclipse",
+     "note": "Solar eclipses of all kinds occur 'between 2 and 5 times annually', out of about 12 to 13 new moons a year. True."
+    },
+    {
+     "claim": "Wrong: usually too far away from Earth to block the Sun",
+     "result": "ok",
+     "source": "https://science.nasa.gov/eclipses/types/",
+     "note": "A far Moon still makes an annular eclipse (NASA: at or near apogee it appears smaller than the Sun, leaving a ring), and partial eclipses happen at any distance. Distance never prevents every eclipse. Truly wrong in the stem's 'not even a partial one' situation."
+    },
+    {
+     "claim": "Wrong: usually passes behind the Sun instead of in front",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Supermoon",
+     "note": "The Moon orbits Earth at about 384,400 km; the Sun is about 400 times farther, so the Moon never goes behind the Sun. Truly wrong."
+    },
+    {
+     "claim": "Wrong: usually on Earth's night side at new moon",
+     "result": "ok",
+     "source": "https://science.nasa.gov/moon/moon-phases/",
+     "note": "At new moon the Moon 'is in the same part of the sky as the Sun' (day side). Truly wrong."
+    },
+    {
+     "claim": "Context: eclipse only when a new moon falls where the two paths cross, a few times a year; a farther Moon still makes a ring eclipse",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Solar_eclipse",
+     "note": "Wikipedia: 'A solar eclipse can occur only when a new moon occurs close to one of the points' where the paths cross (the nodes, per Grokipedia). 2 to 5 a year = 'a few'. Annular at apogee per NASA. (Annular eclipses are in fact slightly more common than total ones, about 60% of central eclipses per Wikipedia; the context's wording stays true.)"
+    }
+   ]
+  },
+  "52479c8328": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: the Sun lies about 400 times farther away than the Moon",
+     "result": "ok",
+     "source": "https://science.nasa.gov/eclipses/geometry",
+     "note": "NASA: 'Even though the Sun is about 400 times bigger than the Moon, it is also about 400 times farther away.' Average figures give about 389 (149.6 million km / 384,400 km); it ranges roughly 360 to 430 as both distances vary. 'About 400' is the standard rounding (Wikipedia Solar_eclipse uses it too)."
+    },
+    {
+     "claim": "Stem number: Sun about 400 times wider than the Moon",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Solar_eclipse",
+     "note": "Wikipedia: 'the Sun's diameter is about 400 times the Moon's diameter' (about 1.39 million km / 3,475 km = 400). NASA Space Place: Moon 'about 400 times smaller than the Sun'."
+    },
+    {
+     "claim": "Wrong: the Moon's shadow grows many times wider on its way to Earth",
+     "result": "ok",
+     "source": "https://science.nasa.gov/eclipses/geometry",
+     "note": "NASA: 'As the shadow extends away from the Moon, the umbra narrows.' (The faint penumbra does widen, to a thousand miles or more per NASA, only about twice the Moon's width, and it gives only a partial eclipse, so it cannot explain the Sun being wholly hidden.) Truly wrong."
+    },
+    {
+     "claim": "Wrong: Earth's air makes the Moon look many times bigger",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Moon_illusion",
+     "note": "Grokipedia: refraction 'does not increase the overall angular size'; any effect is 'less than 1%'. Truly wrong."
+    },
+    {
+     "claim": "Wrong: the Moon moves out close to the Sun during the eclipse",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Supermoon",
+     "note": "The Moon stays in its orbit round Earth (perigee about 356,400 km, apogee about 405,500 km). Truly wrong."
+    },
+    {
+     "claim": "Context: the two look about the same size; coin-and-house analogy",
+     "result": "ok",
+     "source": "https://spaceplace.nasa.gov/total-solar-eclipse/en/",
+     "note": "NASA Space Place: 'the Moon and the Sun appear to be roughly the same size in the sky'. Both about half a degree (Grokipedia Moon_illusion: about 0.5 degrees)."
+    },
+    {
+     "claim": "Context number: the Moon's dark shadow narrows to a strip 'only about 100 to 270 kilometres wide'",
+     "result": "uncertain",
+     "source": "https://eclipse.gsfc.nasa.gov/SEpath/SEpath2001/SE2026Aug12Tpath.html",
+     "note": "Sources disagree. Grokipedia (Umbra,_penumbra_and_antumbra) gives a TYPICAL range of 'about 100 to 270 kilometers'; Wikipedia gives typical 100 to 160 km, at most 267 km; NASA's geometry page says 'A typical umbral path may be less than 50 miles wide' (80 km). Real paths fall outside the stated range: NASA's table for the 12 August 2026 total eclipse gives 294 km at greatest eclipse (up to 319 km along the path); the 14 December 2020 eclipse was at most 90 km wide (Wikipedia). The context drops the word 'typically', so it reads as a hard range. Safe fix: 'to a strip usually only a hundred or two kilometres wide, never more than a few hundred', or 'to a strip far narrower than the Moon itself, rarely more than a few hundred kilometres wide'. The teaching point (the umbra narrows, so that wrong choice is wrong) is correct."
+    }
+   ]
+  }
+ },
+ "unit_notes": "All ten keys hold and every wrong choice is truly wrong. Points the brief flagged: far side lit at new moon (true, timeanddate/NASA); waning order (NASA); full moon rises around sunset (NASA, Grokipedia); same face via one spin per orbit, with libration showing about 59% over time: the stem's 'never see its far side' matches NASA's own wording ('The far side of the Moon can never be seen from Earth'), so left ok, optional hardening 'most of its far side'; eclipses only at new/full (NASA, Grokipedia); red Moon from refracted sunlight with blue scattered away (Grokipedia, NASA); 5-degree tilt (5.145, Grokipedia; NASA 'about five degrees'); Sun about 400 times wider (about 400) and about 400 times farther (about 389 on average, roughly 360 to 430 as distances vary; NASA and Wikipedia both round to 400). Only open item: the context of 52479c8328 states the totality path as 'only about 100 to 270 km wide'; sources disagree (NASA says a typical path may be under 50 miles) and real paths fall outside it (294 km on 12 Aug 2026, 90 km on 14 Dec 2020). Soften the number. No quotations appear in the unit; no myths told as fact; no figure that changes over time affects any question (the Moon's slow drift outward, about 4 cm a year, is irrelevant here)."
+}

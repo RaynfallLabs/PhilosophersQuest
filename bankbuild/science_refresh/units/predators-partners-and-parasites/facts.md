@@ -104,3 +104,26 @@ M4. Any animal that feeds on another is a predator, so a tick drinking blood is 
 M5. Predator and prey peak in the same year, or the predator peaks first. The predator lags the prey by one to two years (F20).
 M6. Predators hold back or stop hunting to leave prey for later, or prey escape into burrows. In fact the predators starve and grow fewer when prey run short (F21), and snowshoe hares have no burrows (F22).
 M7. The bacteria in the gut are all germs. Many are partners that digest fibre and make vitamins (F6, F7).
+
+## Added in the revision (2026-11-26; read on the web this day)
+
+F27. Tapeworms (cestodes) have no gut. An adult fastens itself to the wall of its host's intestine with its scolex ("a holdfast organ equipped with suckers, hooks, or spines") and absorbs nutrients "directly through their tegument", its outer covering; the beef tapeworm absorbs "sugars and amino acids". Egg-filled segments leave the host in the faeces, and new hosts are infected by swallowing the eggs or larvae. OpenStax: "The tapeworm can live inside the intestine of the host for several years, benefiting from the food the host is eating"; the adult beef tapeworm "can persist in the human host for up to 25 years" and is "often asymptomatic". Adults compete with the host for nutrients (Diphyllobothrium latum can cause vitamin B12 deficiency).
+    https://grokipedia.com/page/Cestoda ; https://grokipedia.com/page/Taenia_saginata ; https://openstax.org/books/biology-2e/pages/45-6-community-ecology
+
+F28. Why a parasite seldom kills its host: OpenStax, a parasite "is unlikely to kill the host, especially not quickly, because this would allow no time for the organism to complete its reproductive cycle by spreading to another host". Grokipedia Parasitism: "Obligate parasites require a host to complete their life cycle and cannot survive independently"; parasite adaptations "avoid premature host death, which would interrupt transmission"; "parasitism weakens the host gradually over time". (No source has a tapeworm leaving a weakening host, taking only food the host does not need, or helping its host digest: the adult stays fastened for years and takes nutrients the host would otherwise absorb, F27.)
+    https://openstax.org/books/biology-2e/pages/45-6-community-ecology ; https://grokipedia.com/page/Parasitism
+
+F29. Ticks harm their hosts by "energy depletion, anemia, and pathogen transmission", and "heavy tick burdens have been documented to reduce reproductive success and survival rates" (Grokipedia Tick). Deer do not get Lyme disease: "Deer are a dead-end host for the Lyme disease bacteria"; deer do not "contract the disease when an infected tick feeds on them" (Pennsylvania Game Commission); reservoir competence is "negligible in deer" (Grokipedia Tick). So a heavy load of ticks can wear an animal down, but Lyme disease is no cost to the deer.
+    https://grokipedia.com/page/Tick ; https://www.pa.gov/agencies/pgc/wildlife/wildlife-health/wildlife-diseases/lyme-disease.html
+
+F30. The lynx and hare records: the lynx series are fur returns (the Hudson's Bay Company's; F19) running 1821 to 1939; the classic hare series (MacLulich, 1845-1935) "are really two different sets of data": "1844-1904 represents fur records, whereas 1905-1935 derives from questionnaires" (Stenseth et al. 1997, PNAS). So a stem may say the Company counted lynx furs for close to a century and that hare records cover the same years, but not that hare furs were sold to it for the whole century.
+    https://pmc.ncbi.nlm.nih.gov/articles/PMC24646 ; https://grokipedia.com/page/Canada_lynx
+
+F31. Food is moved along the gut by peristalsis, "coordinated contractions of circular and longitudinal smooth muscles" in the gut wall: the gut's own muscles do the squeezing, not its bacteria.
+    https://grokipedia.com/page/Peristalsis
+
+F32. Bile is made by liver cells ("synthesized and secreted continuously by hepatocytes") and breaks fat up: "Bile facilitates the digestion of dietary fats primarily through the emulsifying action of its bile salts", which break large fat globules into small droplets for lipase.
+    https://grokipedia.com/page/Bile
+
+F33. Decomposers, chiefly bacteria and fungi, break dead leaves and other dead matter down "into simpler inorganic substances" (carbon dioxide, water and mineral nutrients) and release "inorganic compounds back into the soil or water" for plants. They hand plants no sugar; a legume makes its own sugar and pays its root bacteria with it (F9, F26).
+    https://grokipedia.com/page/Decomposer

@@ -1,0 +1,42 @@
+{"unit": "why-we-have-seasons",
+ "questions": {
+  "15039e5821": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "medium",
+     "what": "'The Sun's heat rising and falling' can be read as true. The heat a place gets from the Sun does rise and fall through the year, and that rise and fall is what the seasons are. The writer means the Sun's own output, but a careful student can defend this choice, so the question has two defensible answers.",
+     "fix": "Make the lure about the Sun itself: 'The Sun burning hotter, then cooler'. The context already says the Sun's output barely changes."}
+   ]},
+  "c957dcd792": {"verdict": "ok", "issues": []},
+  "a0f65667ec": {"verdict": "ok", "issues": []},
+  "c3e8a3a2de": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'it carries that axis along' pictures the axis being carried around unchanged, which nudges toward the key 'It keeps pointing the same way all year'.",
+     "fix": "'Earth spins on a tilted axis as it makes its year-long trip around the Sun. As Earth travels around, what happens to the direction its axis points in space?'"}
+   ]},
+  "da117dccf7": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem gives the premise of the solution: 'its light strikes the ground at a slant'. The key, 'Its energy is spread over more ground', repeats 'ground' and is the only choice that uses the stem's slant. A student who has never met the spreading beam can still match slant on the ground to spread over more ground.",
+     "fix": "Cut the slant clause and the shared word: 'The Sun stands high over a town in Canada at noon in June, but at noon in December it hangs low in the sky. Why does the low December Sun warm the town less than the high June Sun does?' Key: 'Its light is spread over a wider area'. Keep the three lures. 'Earth spins faster in the winter months' is a live idea for a child who links short winter days to a faster spin."}
+   ]},
+  "49dcec957c": {"verdict": "ok", "issues": []},
+  "591a09856e": {"verdict": "ok", "issues": []},
+  "9baa0d3735": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem pairs two dates, says the hemispheres swap roles between them, and then asks for one answer that fits 'those two dates'. 'Days are longer in the Northern Hemisphere' and 'Days are longer in the Southern Hemisphere' cannot both hold on two dates that mirror each other, so the stem itself rules them out. 'Nights are longer than days everywhere' is weak, because no 6th grader expects night to win everywhere at once. So a student who does not know the equinox can still reach the key by elimination.",
+     "fix": "Ask about one date and give it live lures: 'Spring begins in the Northern Hemisphere around March 20. How do day and night compare across Earth on that date?' Choices: 'About equal all over Earth' (key), 'Equal only along the equator' (the equator is about 12 hours all year, so this tempts), 'Days longer in the Northern Hemisphere', 'Days longer in the Southern Hemisphere'. Keep the September date in the context. Do not name the equinox in the stem, because its Latin root ('equal night') would give the key away."}
+   ]},
+  "174bfcbc28": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "This asks the same fact as 15039e5821. 'No tilt, so almost no seasons' is just the reverse of 'the tilt causes the seasons', and its live lure ('They would stay just as they are') is the distance belief that question already tests. A student who gets one gets the other, and the unit rule wants every question on a different fact. The stem's 'stood straight up, with no tilt at all ... What would happen to the seasons?' also tells a player of 15039e5821 that the tilt is the cause.",
+     "fix": "Re-key on seasonal lag (F24, sourced): 'The June solstice gives the Northern Hemisphere its most direct sunlight and its longest day. Yet the hottest weeks there usually come in July and August. Why do they come later?' Key: 'Land and sea take weeks to warm up'. Lures: 'Earth is nearest the Sun in July and August' (the distance belief again; Earth is in fact farthest in early July), 'The Sun gives off the most heat in July', 'The days keep growing longer into August'. Do not re-key on F6 (a bigger tilt gives stronger seasons). Tilt that changes over thousands of years belongs to the T5 unit what-drives-earths-climate (Milankovitch)."},
+    {"axis": "tell", "severity": "low",
+     "what": "'They would each last twice as long' and 'They would grow much stronger' draw almost no one. Only 'They would stay just as they are' is live.",
+     "fix": "Moot once the question is re-keyed."}
+   ]},
+  "32e56a3b52": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Coverage: every scope line is keyed. The tilt as the cause is 15039e5821, the size of the tilt 32e56a3b52, its fixed direction c3e8a3a2de, direct against slanting light da117dccf7, longer days 49dcec957c, opposite hemispheres a0f65667ec, the January perihelion c957dcd792, the solstice 591a09856e and the equinoxes 9baa0d3735. Two questions on one fact: 174bfcbc28 (no tilt, no seasons) is the reverse of 15039e5821 (the tilt causes the seasons). Fix: re-key 174bfcbc28 on seasonal lag (F24), or drop it and leave 9, which is within the unit rule. Do not re-key it on F6 (tilt size and the 41,000-year cycle), which would collide with T5 what-drives-earths-climate. 49dcec957c (day length grows toward the pole in late June) and 591a09856e (the June solstice has the most daylight) are neighbours but key different facts, one about latitude and one about the date. Acceptable. MISCONCEPTION: the distance belief is a live lure, not a straw man. It is a plain choice, parallel to the key, in 15039e5821, and it comes back as 'In early July' in c957dcd792, 'farther from the Sun then' in da117dccf7 and 'nearest to the Sun that day' in 591a09856e. It is sourced (A Private Universe). Four uses is a lot, but each question keys a different fact, so it stays. LANE: Stonehenge in 591a09856e is scenery. The question keys the June solstice's daylight, which is science, and Stonehenge's alignment appears only in the context. Keep it, and never key the alignment, which is the geography (or history) bank's. Canada and Australia are scenery in the same way. Overlap with T1: day-night-and-shadows keys the axis's name, the 24-hour spin and the low Sun's long shadow. Here da117dccf7 uses a low Sun but keys how its energy spreads, and c3e8a3a2de and 32e56a3b52 use the axis but key its fixed direction and its lean. the-sun-and-its-planets keys one trip round the Sun as a year, which is not asked here. No T1 fact is re-asked. Overlap with the other units: the tides and moon-phases-and-eclipses units share no fact with this one. 'The Moon's pull on Earth' in 15039e5821 is the tides unit's fact used only as a lure. No other final.json asks about seasons (weather-and-climate-basics and adaptations-built-for-a-place only use winter as scenery). Grade: all ten facts are 6th-grade seasons content, none is too advanced, and a0f65667ec (opposite seasons) is plain but is named in the scope."}

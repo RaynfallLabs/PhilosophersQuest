@@ -1,0 +1,47 @@
+{"unit": "moon-phases-and-eclipses",
+ "questions": {
+  "7cd7f580d1": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'More or less of its sunlit half faces Earth' can be read with the idiom 'more or less' (meaning roughly), as 'roughly its sunlit half faces Earth'. The same idiom runs through all four choices.",
+     "fix": "Swap the idiom in all four and keep them parallel: 'A bigger or smaller part of its sunlit half faces Earth', 'Earth's shadow covers a bigger or smaller part of it', 'The Sun lights a bigger or smaller part of it', 'Other planets' shadows cover a bigger or smaller part of it'."}
+   ]},
+  "86175ed485": {"verdict": "ok", "issues": []},
+  "b9838634e1": {"verdict": "ok", "issues": []},
+  "a4030d77ef": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem's picture, the Moon rising in the east just as the Sun sets in the west, is itself the opposite-sides geometry. A student can reason from 'opposite horizons at once' to 'far side of Earth' without knowing the full moon's place. This is close to the grade's simple why, so it is only polish.",
+     "fix": "If tightened: 'A full moon rises just as the Sun sets, shines all night and sets as the Sun rises. Why does it rise just as the Sun sets?'"}
+   ]},
+  "2c7a93d38a": {"verdict": "ok", "issues": []},
+  "d559d0278b": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'A solar eclipse dims the daytime sky' rules out the lure 'Only then is the Moon on Earth's night side', because a Moon on the night side cannot dim the daytime sky. So the stem's own clause kills one wrong choice, and only three stay live.",
+     "fix": "Cut the clause: 'A solar eclipse can happen only at new moon, never at any other phase. Why only at new moon?' The night-side lure is then live (students picture a dark new moon on the night side), and the context already corrects it."}
+   ]},
+  "268dd14f60": {"verdict": "ok", "issues": []},
+  "2bed95be11": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Light given off by Earth's shadow' is dead. A 6th grader taught at T1 that a shadow is where light is blocked will not believe a shadow shines, and M7's second half (that students think a shadow gives off light) has no source. Only three choices are live. The stem's 'cut off from direct sunlight' already hints that some indirect sunlight gets in, so the real contest is between the two sunlight choices.",
+     "fix": "Replace it with 'Sunlight bounced off the other planets'. It is a live idea, since students know the planets shine by reflected sunlight, and it is false: their light is far too faint and not red."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'What light reaches it?' has more than one true answer if read strictly: faint starlight and planet light reach it too. The question means the light that makes the red glow.",
+     "fix": "End on 'What light makes it glow red?'"}
+   ]},
+  "6c0774bca9": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'carries it above or below the Sun' can read as the Moon passing physically above the Sun in space. It means in the sky as seen from Earth, and a 6th grader may picture the wrong thing.",
+     "fix": "'Its tilted path takes it above or below the Sun in the sky'. This keeps the key about the same length as the lures."}
+   ]},
+  "52479c8328": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The writer's fear is right. 'The Sun lies that many times farther away' is the only choice that picks up the stem's number ('that many'), so it reads as the designed partner of 'about 400 times wider', while the lures say only a vague 'many times'. A student also needs only the everyday idea that far things look small, not the 400-and-400 match the question is meant to teach.",
+     "fix": "Tie every choice to the stem's number so the key no longer stands out: 'The Sun lies that many times farther away' (key), 'The Moon's shadow grows that many times wider on its way to Earth', 'Earth's air makes the Moon look that many times bigger'. Keep 'The Moon moves out close to the Sun during the eclipse', which is live because at new moon the Moon sits beside the Sun in the sky. Do not echo '400' in the key, which would tie it back even harder."}
+   ]}
+ },
+ "unit_notes": "Coverage: every scope line is keyed. One half always lit and the phases are 7cd7f580d1 and 86175ed485, the phases in order b9838634e1, not Earth's shadow 7cd7f580d1 (and the context of 268dd14f60), the same face 2c7a93d38a, the solar eclipse at new moon d559d0278b and the lunar eclipse at full moon 268dd14f60. The moon's reflected light is T1 and appears here only as context and as a lure (in 2bed95be11), which is right. The extras (a4030d77ef full moon opposite the Sun, 2bed95be11 the red eclipse, 6c0774bca9 the tilted orbit, 52479c8328 the 400-and-400 match) are in grade. MISCONCEPTION: Earth's shadow as the cause of the phases is a live lure, not a straw man. In 7cd7f580d1 it is worded exactly in parallel with the key ('Earth's shadow covers more or less of it'), and it comes back in 86175ed485 ('Dark, in Earth's shadow'), d559d0278b ('inside Earth's shadow') and 268dd14f60 ('At any phase of the month'). It is sourced (NSTA, Driver et al.). Inside the unit: 86175ed485 keys the far side being lit at new moon, and 2c7a93d38a uses 'Its far side is always in darkness' as a lure and re-teaches it in its context. That is a lure, not a second key, so it is acceptable. a4030d77ef (the full moon on Earth's far side from the Sun), d559d0278b (the Moon between at new moon) and 268dd14f60 (the lunar eclipse only at full moon) interlock, each using the others' keys as lures, but they key three different facts. d559d0278b and 6c0774bca9 both concern new moons and solar eclipses, but one keys the line-up and the other why it misses most months. Distinct. OVERLAP with the tides unit: no tide fact is keyed here, and spring and neap tides rightly stay with the tides. 52479c8328 and the tides question 872deb5a0c both rest on the Sun being far farther than the Moon, but they key different consequences (equal apparent size here, smaller tides there). Keep both, and align the numbers: the tides context says 390, this unit says 400. Overlap with T1: the-sun-and-its-planets keys the Moon's reflected sunlight, and here it is only a lure ('Light given off by the Moon's rocks'). That unit's question on the Sun looking brighter than the stars because it is closer is a different fact from 52479c8328's apparent size. how-light-travels keys refraction (the straw, the magnifier), and 2bed95be11 applies the bending to Earth's air in an eclipse, a new 6th-grade fact rather than a re-ask. day-night-and-shadows keys Earth's spin and that shadows point away from the Sun. a4030d77ef and 268dd14f60 use these only as steps in their reasoning, and their keys are the full moon's position and timing. No T1 fact is re-asked. No other final.json touches the Moon. Grade: all ten facts are 6th-grade Sun-Earth-Moon content (NGSS MS-ESS1-1). The tilted orbit (6c0774bca9) and the red eclipse (2bed95be11) are at the top of the grade but within it. Lane: no named places. Clean."}

@@ -74,3 +74,26 @@ M6 In everyday speech a community is a group of people (Grokipedia: "a social ag
 M7 Author's judgement: because a tadpole looks and breathes so unlike a frog (gills, no legs, F4), a student may leave the young out, or count them only once they look like frogs (with legs); Aristotle described early frogs as "small, fish-like creatures with tails" (Grokipedia, Tadpole). They are the same species, so the same population (F2, F3).
 
 M8 Author's judgement: students may think water, air or clouds are found only on Earth, and so that other worlds lack a biosphere for want of them; in fact Mars has water ice and Mars and Venus have atmospheres, Venus with thick clouds (F15, F16). What no other world is known to have is life (F14).
+
+## Added in the revision (2026-11-26; read on the web this day)
+
+F24. Life reaches tens of kilometres up, not just 10 km: an ISRO balloon cryosampler flown from Hyderabad collected air from 20 to 41 km up, and 12 bacterial and six fungal colonies grew from it, three of them new species (ScienceDaily, 2009); Wikipedia Biosphere: life is found "at least 64 km (40 mi) high in the atmosphere". Grokipedia Biosphere gives microbes "as high as 10 kilometers", so 10 km is a height where microbes are found, not the top of life's reach.
+    https://www.sciencedaily.com/releases/2009/03/090318094642.htm ; https://en.wikipedia.org/wiki/Biosphere ; https://grokipedia.com/page/Biosphere
+
+F25. Amphipods are small crustaceans of "shrimp-like" form, most under 20 mm long, found "from coastal zones to the deepest trenches" (Grokipedia Amphipoda); the floor of the Challenger Deep, about 11 km down, is "populated by small amphipods" (F9).
+    https://grokipedia.com/page/Amphipoda ; https://grokipedia.com/page/Mariana_Trench
+
+F26. A biome is a "large ecological community of plants, animals, and microorganisms adapted to a dominant climate regime", such as deserts, tundra or tropical rainforests; biomes are "aggregations of such ecosystems unified by overarching climatic envelopes" (Grokipedia Biome), and "The scope of the biosphere includes diverse biomes" (Grokipedia Biosphere). So a biome is one great region of similar ecosystems, not all of Earth's ecosystems.
+    https://grokipedia.com/page/Biome ; https://grokipedia.com/page/Biosphere
+
+F27. Where one population ends: a population is "a group of individuals of the same species that interact and potentially interbreed within a defined area" (Grokipedia Population ecology), and groups of one species in separate habitat patches are "spatially discrete subpopulations of the same species occupying separate habitat patches" (Grokipedia Metapopulation). Two ponds whose frogs never cross between them hold two populations, each counting its young (F3).
+    https://grokipedia.com/page/Population_ecology ; https://grokipedia.com/page/Metapopulation
+
+F28. The organism level: ecology runs "from individual organisms and their physiological responses" up through populations, communities and ecosystems, and "The biosphere represents the broadest scale" (Grokipedia Ecology). The red fox (Vulpes vulpes) is one species, "the most widely distributed wild carnivore", active through the winter, when it hunts rodents "under snow cover up to 1 meter deep" (Grokipedia Red fox).
+    https://grokipedia.com/page/Ecology ; https://grokipedia.com/page/Red_fox
+
+F29. Correction to F11: only the step from population to community adds more kinds of living things. The step from organism to population adds more members of the same species, the step from community to ecosystem adds the nonliving surroundings, and the biosphere, all of Earth's ecosystems, does add ground (fact-check of 2026-11-26, against OpenStax Biology 2e 1.2).
+    https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology
+
+F30. A community holds every kind of living thing in its area, "plants, animals, fungi, and microbes", and leaves out the nonliving parts (F6). So a list of a pond's fish, frogs, insects and birds leaves out its plants, algae and bacteria; its water, mud and sunlight belong only to its ecosystem (F7, F22); and people living in a town some way off are not in the pond's area at all (F2).
+    https://grokipedia.com/page/Community_(ecology) ; https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology

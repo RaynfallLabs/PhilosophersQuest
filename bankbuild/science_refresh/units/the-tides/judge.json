@@ -1,0 +1,46 @@
+{"unit": "the-tides",
+ "questions": {
+  "450a3a2ac7": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "'twice a day' in the stem gives away the twice-daily pattern that fc56f04187 (12 hours 25 minutes between highs) and 1d6b48be1b (the second bulge) both test.",
+     "fix": "'On most coasts, the sea creeps up the beach and slides back down it again, day after day, and fishermen and swimmers plan around these tides. What mainly causes the tides?'"}
+   ]},
+  "1d6b48be1b": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Rising up into high water too' is the only choice that echoes the stem's first sentence, through the word 'too', which marks it as the designed partner of the near-side mound.",
+     "fix": "Drop 'too': 'Rising up into high water'."}
+   ]},
+  "fc56f04187": {"verdict": "ok", "issues": []},
+  "8846cf43e0": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The Sun moves on along its path around Earth' is dead for a 6th grader. The T1 unit day-night-and-shadows taught that the Sun does not go round Earth, and this choice states a false model of the sky, not a mix-up about tides. Only three choices are live.",
+     "fix": "Replace it with the sourced wind misconception (M1): 'The wind holds the tide back a little more each day'."}
+   ]},
+  "872deb5a0c": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two of the three lures are weak. 'Its pull is mostly blocked by Earth's air' is unlikely, because the Moon's pull passes through the same air and few students think air blocks gravity. 'Its heat keeps the sea from rising high' is not a tide idea at all. Only 'made of hot gas' is live. The stem's 'about 27 million times as much mass ... Yet' sets up the one other thing a 6th grader knows gravity depends on, so the plain distance key stands out.",
+     "fix": "Replace the two weak lures with live naive ideas: 'It pulls on the sea only in the daytime' (false: the Sun's pull acts on the whole Earth) and 'Its pull is shared out among all the planets' (false: gravity is not used up). Keep 'It is made of hot gas, not solid rock'."}
+   ]},
+  "20e142e1f0": {"verdict": "ok", "issues": []},
+  "4078fe05a9": {"verdict": "ok", "issues": []},
+  "5834d546f9": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The stem restates the key of 20e142e1f0 ('the highest high tides and the lowest low tides'), so a player who meets this question first gets that one free.",
+     "fix": "Define spring tides by their line-up instead: 'Sailors and fishermen check their tide tables for spring tides, which come when the Sun, the Moon and Earth line up. How often do spring tides come?' This also turns the question into the grade's simple why: the line-up comes at new moon and at full moon, so twice a month."}
+   ]},
+  "9715dafe0d": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "Its fact, that the Sun raises tides of its own about half the size of the Moon's, is stated outright in the stem of 872deb5a0c ('the tides that the Sun raises on Earth's oceans are only about half as big as the Moon's'). The stems of 20e142e1f0 and 4078fe05a9 assume it too, since the Sun's position changes the tides there. A player who has met any of those gets this question free, and every scope line is already keyed elsewhere in the unit.",
+     "fix": "Re-key on a distinct sourced fact, F19: 'Once a month the Moon, on its slightly oval path, comes nearest to Earth. What happens to the tides in the days around then?' Key: 'They rise and fall a little more than usual'. Lures: 'They stay just the same as usual', 'They rise and fall a little less than usual', 'They turn into neap tides'. Or drop the question. Eight questions is within the unit rule."},
+    {"axis": "tell", "severity": "low",
+     "what": "'The same tides would carry on' and 'Bigger tides would carry on' draw almost no one. Only 'The tides would stop for good' is live.",
+     "fix": "Moot once the question is re-keyed or dropped."}
+   ]}
+ },
+ "unit_notes": "Coverage: every scope line is keyed. The Moon's gravity is 450a3a2ac7, the two bulges 1d6b48be1b, two highs a day about 12 hours 25 minutes apart fc56f04187, the Sun's smaller part and the distance reason 872deb5a0c, spring tides at the line-up 20e142e1f0 and 5834d546f9, and neap tides at the quarter moons 4078fe05a9. The 50-minute daily slip (8846cf43e0) is an extra, in grade. Two questions on one fact: 9715dafe0d (the Sun raises tides of its own, smaller) is the stated premise of 872deb5a0c and is assumed by 20e142e1f0 and 4078fe05a9. Fix: re-key it on F19 (perigee) or drop it. Stem leaks between questions: 450a3a2ac7's 'twice a day' gives away fc56f04187 and 1d6b48be1b, and 5834d546f9's stem gives the key of 20e142e1f0 (fixes on each). MISCONCEPTIONS: both are live, sourced lures, not straw men. Wind is a plain choice, parallel to the key, in 450a3a2ac7 (Kesler Science), and replacing the dead Sun lure in 8846cf43e0 with wind uses it once more. One tide a day is modelled by 'Sinking down into extra-low water' in 1d6b48be1b and by 'About 24 hours and 50 minutes' in fc56f04187. The spring-season belief is in 5834d546f9 (NOAA, Grokipedia). OVERLAP with moon-phases-and-eclipses: spring tides at new and full moon belong here (20e142e1f0, 5834d546f9), and that unit keys no tide fact. 4078fe05a9 uses the quarter-moon term that unit teaches, at the same grade, and also explains it in its own stem (a right angle; half lit in the context). Fine. 872deb5a0c here and 52479c8328 there both rest on the Sun being far farther away than the Moon, but they key different consequences (smaller tides here, equal apparent size there). Keep both, but make the numbers agree: this context says 'about 390 times farther' and that unit says 'about 400 times'. Write 'nearly 400 times farther' here. Overlap with T1: the-sun-and-its-planets keys the Sun's gravity holding Mars (with 'Earth's gravity' as a lure) and the Moon's reflected light. Nothing here re-asks either. 8846cf43e0 leans on the Moon's orbit (a T1 scope line) but keys the 50-minute slip, a new fact. pushes-pulls-and-gravity and action-and-reaction key Earth's pull on falling things, not tides. ecosystems-living-and-nonliving uses a tide pool only as scenery. Future: the T3 unit gravity-and-orbits (pull weaker with distance) must not re-key 872deb5a0c's tide-distance fact. LANE: no named coast, bay or harbour is used. Clean. Grade: all nine facts are the 6th-grade tides standard. None is babyish or too advanced. The context's cube-law sentence in 872deb5a0c ('fades very fast with distance, even faster than the pull itself') is fine as teaching and is not keyed."}

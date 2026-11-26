@@ -1,0 +1,49 @@
+{"unit": "earths-layers",
+ "questions": {
+  "1ae4acfe23": {"verdict": "ok", "issues": []},
+  "980b5db065": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "'Under a shallow sea near a coast' is wrong only because the continental shelf is continental crust, which 6th grade does not teach. A student who knows the grade fact ('thinner under the oceans') may see two ocean choices. 'Open ocean' is still clearly the more oceanic of the two and the context teaches the shelf, so the lure is hard but fair.",
+     "fix": "Keep. If the lead wants it gentler, swap that lure for 'Under a wide, flat plain on land'."}
+   ]},
+  "ea1da3c355": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key (25 characters) is clearly the shortest; the lures run 32 to 36.",
+     "fix": "Shorten the lures: 'Into the top of the mantle', 'Halfway through the mantle', 'To the top of the outer core'."}
+   ]},
+  "cd07413950": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two test-wise moves reach the key with no knowledge. The two 'Solid' choices form a pair, which suggests the answer is one of them, and of the pair 'Solid, and it never moves at all' carries the absolute 'never ... at all'. That leaves 'Solid, yet it flows very slowly'.",
+     "fix": "Replace the absolute lure so the choices split two solid and two melted, with no absolute: 'Solid, yet it flows very slowly' (key), 'Liquid, like the lava of a volcano', 'Solid and rigid, like the crust above', 'Half melted, like slushy snow'."}
+   ]},
+  "0e2f4630d8": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "'Liquid melted rock' says liquid twice, and 'Hot solid rock' is the only choice with 'hot'. Small, but the grid of choices is otherwise neatly balanced.",
+     "fix": "'Melted rock, like magma' and 'Solid rock, like the mantle'."}
+   ]},
+  "481c691281": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "Only the key carries an intensifier ('enormous'). Also, c11da0f8f6's stem states the pressure-depth fact that is this key, so a player who has met that question gets this one free (see unit_notes).",
+     "fix": "Key: 'The pressure so deep inside Earth'."}
+   ]},
+  "72a1ca7558": {"verdict": "ok", "issues": []},
+  "c0c5acd36e": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Both are cooler than the mantle' is a weak lure: few students think the core is cooler than the layer above it.",
+     "fix": "'Each is cooler toward the centre', a coherent wrong picture (the centre as a cold heart), or accept as is."}
+   ]},
+  "c11da0f8f6": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The clause 'and the squeeze grows with every kilometre down' rules out the lures that do not grow with depth ('The pull of the Moon from above', and 'Earth's spin squeezing it inward' for many readers), and it all but describes rock piling up kilometre by kilometre, which is the key. 'From above' also points the Moon's pull the wrong way for squeezing, which makes that lure weaker still.",
+     "fix": "'Rock deep inside Earth is squeezed far harder than rock at the surface. What makes the pressure so great down there?' Choices: 'The weight of all the rock above it' (key), 'Heat from the core pushing outward', 'Earth's spin squeezing it inward', 'The pull of the Moon on Earth'."}
+   ]},
+  "4c8e9e6455": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "No seismic-wave evidence anywhere: no stem, choice or context uses earthquake waves, the S-wave shadow or Lehmann, so how-we-know stays with T5 earths-interior-and-age as ruled. CROSS-QUESTION LEAKS inside the unit (low, but in a random-draw game they make some items free): 481c691281's and 4c8e9e6455's stems both say the core is iron, which gives away the metal half of 0e2f4630d8 (the liquid-or-solid half still has to be known); c11da0f8f6's stem states that pressure rises with depth, which is the key of 481c691281; 72a1ca7558's key (heat flows out from deep inside, so deeper is hotter) lets c0c5acd36e be reasoned. Fix the worst one with the 481c691281 key rewording and the c11da0f8f6 stem rewrite; accept the rest. 4c8e9e6455 (iron sank because it is denser) goes past the listed scope, but it is a fit 6th-grade 'simple why' for the order of the layers, and it does not re-ask T2 density-float-or-sink, whose questions key on things floating and sinking in liquids. OVERLAPS with other units: none found. The rock types are the-rock-cycle's, and 980b5db065's context names no rock (good). earths-four-spheres asks nothing of the interior. rock-layers-and-fossils' sediment layers are not used. Lanes: 'the far north of Russia' (ea1da3c355) is a setting, not asked; the Kola hole and the Mponeng mine are not named. Scope coverage is complete: crust thickness (980b5db065), the deepest hole (ea1da3c355), the mantle (1ae4acfe23, cd07413950), the outer core (0e2f4630d8), the inner core (481c691281, c0c5acd36e), temperature and pressure with depth (72a1ca7558, c11da0f8f6). The order of the layers is never asked outright, but stems state it."}

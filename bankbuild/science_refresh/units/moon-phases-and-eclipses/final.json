@@ -1,0 +1,236 @@
+{
+ "unit": "moon-phases-and-eclipses",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "moon-phases-and-eclipses",
+   "question": "Over about four weeks, the Moon goes from a thin crescent to a round, bright full moon, and then back to a crescent again. What makes the Moon's shape seem to change?",
+   "answer": "A bigger or smaller part of its sunlit half faces Earth",
+   "choices": [
+    "A bigger or smaller part of its sunlit half faces Earth",
+    "Earth's shadow covers a bigger or smaller part of it",
+    "The Sun lights a bigger or smaller part of it",
+    "Other planets' shadows cover a bigger or smaller part of it"
+   ],
+   "context": "The Sun always lights one half of the Moon. As the Moon travels round Earth, a bigger or smaller part of that sunlit half is turned toward Earth. Earth's shadow plays no part in the phases: it falls on the Moon only in a lunar eclipse.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "grade_note": "Why the Moon has phases, and that Earth's shadow is not the cause, is the heart of the 6th-grade Sun-Earth-Moon unit (NGSS MS-ESS1-1)."
+  },
+  {
+   "tier": 2,
+   "topic": "moon-phases-and-eclipses",
+   "question": "At new moon, the side of the Moon that faces Earth is dark, and the Moon cannot be seen in the sky at all. What is the far side of the Moon like at that moment?",
+   "answer": "Lit all over by the Sun",
+   "choices": [
+    "Lit all over by the Sun",
+    "Dark, as it always is",
+    "Dark, in Earth's shadow",
+    "Half lit and half dark"
+   ],
+   "context": "The Sun always lights half of the Moon, and at new moon that sunlit half is the far side, turned away from Earth. The far side is often called the dark side, but it gets just as much sunlight as the side people see from Earth.",
+   "facts": [
+    "F1",
+    "F12",
+    "F8",
+    "F3",
+    "M4"
+   ],
+   "grade_note": "6th-grade phase lessons teach that one half of the Moon is always lit, and the far side's sunlit new moon corrects the dark-side myth."
+  },
+  {
+   "tier": 2,
+   "topic": "moon-phases-and-eclipses",
+   "question": "A full moon shines on a clear night. Over the next two weeks, its lit part changes night by night until the Moon is new again. Which phases does it pass through, in order?",
+   "answer": "Waning gibbous, third quarter, waning crescent",
+   "choices": [
+    "Waning gibbous, third quarter, waning crescent",
+    "Waxing gibbous, first quarter, waxing crescent",
+    "Waning crescent, third quarter, waning gibbous",
+    "Waxing crescent, first quarter, waxing gibbous"
+   ],
+   "context": "After full moon the lit part shrinks, and a shrinking Moon is waning. It is gibbous first, more than half lit, then a half circle at third quarter, then a thin crescent before new moon. Waxing means growing: the waxing phases come in the two weeks before full moon.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6",
+    "F7"
+   ],
+   "grade_note": "The eight phases in order, with waxing and waning, are the standard 6th-grade phase sequence."
+  },
+  {
+   "tier": 2,
+   "topic": "moon-phases-and-eclipses",
+   "question": "A full moon comes up just as the Sun goes down. It shines all night and sets as the Sun rises in the morning. Why does it come up just as the Sun goes down?",
+   "answer": "It is on Earth's far side from the Sun",
+   "choices": [
+    "It is on Earth's far side from the Sun",
+    "It sits between Earth and the Sun",
+    "It is at its closest point to Earth",
+    "It goes all the way round Earth each day"
+   ],
+   "context": "At full moon the Moon and the Sun sit on opposite sides of Earth, so as the spinning Earth turns a place away from the Sun at sunset, it turns that place toward the Moon. The Moon takes about 27 days to go round Earth, not one day; its daily rising and setting comes from Earth's spin. Most full moons come when the Moon is not at its closest point.",
+   "facts": [
+    "F9",
+    "F13",
+    "F8",
+    "F25"
+   ],
+   "grade_note": "Where the Moon is at full moon, and so why a full moon is up all night, is part of the 6th-grade Sun-Earth-Moon model."
+  },
+  {
+   "tier": 2,
+   "topic": "moon-phases-and-eclipses",
+   "question": "Night after night, year after year, people on Earth see the same face of the Moon, with the same pattern of dark patches on it. Why do they never see its far side?",
+   "answer": "It spins once for each trip round Earth",
+   "choices": [
+    "It spins once for each trip round Earth",
+    "It does not spin at all as it goes round",
+    "It spins once a day, just as Earth does",
+    "Its far side is always in darkness"
+   ],
+   "context": "The Moon turns once on its axis in the same time it takes to go once round Earth, about 27 days, so the same side always faces Earth. A Moon that did not spin at all would show every side over one trip round. The far side is not always dark either: it gets as much sunlight as the near side.",
+   "facts": [
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "M5"
+   ],
+   "grade_note": "That the same side of the Moon always faces Earth, because it spins once per orbit, is taught with the 6th-grade Moon's motions."
+  },
+  {
+   "tier": 2,
+   "topic": "moon-phases-and-eclipses",
+   "question": "A solar eclipse can happen only at new moon, never at any other phase. Why only at new moon?",
+   "answer": "Only then is the Moon between the Sun and Earth",
+   "choices": [
+    "Only then is the Moon between the Sun and Earth",
+    "Only then is Earth between the Sun and the Moon",
+    "Only then is the Moon inside Earth's shadow",
+    "Only then is the Moon on Earth's night side"
+   ],
+   "context": "In a solar eclipse the Moon blocks the Sun's light from part of Earth, and it can do that only from between the two, where it sits at new moon. Then it is in the daytime sky near the Sun, not on Earth's night side. Earth between the Sun and the Moon is the line-up for a lunar eclipse instead.",
+   "facts": [
+    "F14",
+    "F8",
+    "F15",
+    "F3"
+   ],
+   "grade_note": "A solar eclipse as the Moon passing between the Sun and Earth, only at new moon, is a named 6th-grade eclipse fact (NGSS MS-ESS1-1)."
+  },
+  {
+   "tier": 2,
+   "topic": "moon-phases-and-eclipses",
+   "question": "In a lunar eclipse, Earth's shadow falls across the Moon and darkens it over a few hours. At which phase of the Moon can that happen?",
+   "answer": "Only at full moon",
+   "choices": [
+    "Only at full moon",
+    "Only at new moon",
+    "Only at first quarter",
+    "At any phase of the month"
+   ],
+   "context": "Earth's shadow points straight away from the Sun, and the Moon can move into it only at full moon, when its whole sunlit face is turned toward Earth. At every other phase the Moon is off to one side of the shadow, which is why Earth's shadow cannot be what makes the phases.",
+   "facts": [
+    "F15",
+    "F9",
+    "F3",
+    "M1"
+   ],
+   "grade_note": "A lunar eclipse as Earth's shadow on the Moon, only at full moon, is a named 6th-grade eclipse fact, and it is where students meet Earth's shadow on the Moon."
+  },
+  {
+   "tier": 2,
+   "topic": "moon-phases-and-eclipses",
+   "question": "During a total lunar eclipse, the whole Moon sits inside Earth's shadow, cut off from direct sunlight. Yet it does not vanish: it glows a dull coppery red. What light makes it glow red?",
+   "answer": "Sunlight bent through Earth's air",
+   "choices": [
+    "Sunlight bent through Earth's air",
+    "Sunlight bounced off Earth's oceans",
+    "Light given off by the Moon's rocks",
+    "Sunlight bounced off the other planets"
+   ],
+   "context": "Earth's air bends some sunlight round the edge of the planet and into its shadow. On the way, the air scatters away most of the blue light, the same reason sunsets look red, so the light that reaches the Moon is red. The Moon makes no light of its own, the side of Earth facing it is then in night, and the light of the planets is far too faint.",
+   "facts": [
+    "F21",
+    "F22",
+    "F26",
+    "F29",
+    "M7"
+   ],
+   "grade_note": "The red Moon of a total lunar eclipse is the classic 6th-grade eclipse observation, and it uses the bending of light students met in 5th grade."
+  },
+  {
+   "tier": 2,
+   "topic": "moon-phases-and-eclipses",
+   "question": "A new moon comes about once a month, but most new moons bring no solar eclipse anywhere on Earth, not even a partial one. Why does a new moon usually bring no eclipse?",
+   "answer": "Its tilted orbit usually carries it above or below the Sun",
+   "choices": [
+    "Its tilted orbit usually carries it above or below the Sun",
+    "It is usually too far away from Earth to block the Sun",
+    "It usually passes behind the Sun instead of in front of it",
+    "It is usually on Earth's night side at new moon"
+   ],
+   "context": "The Moon's orbit is tilted about 5 degrees to Earth's path round the Sun, so at most new moons the Moon passes just above or below the Sun and its shadow misses Earth. Only when a new moon falls where the two paths cross is there an eclipse, a few times a year. A Moon farther away than usual still makes an eclipse, a ring of Sun round its edge.",
+   "facts": [
+    "F16",
+    "F17",
+    "F19",
+    "F28",
+    "F8"
+   ],
+   "grade_note": "Why eclipses do not happen every month, the Moon's tilted orbit, is the 6th-grade follow-up to the eclipse line-ups."
+  },
+  {
+   "tier": 2,
+   "topic": "moon-phases-and-eclipses",
+   "question": "In a total solar eclipse, the Moon covers the Sun's whole bright face, even though the Sun is about 400 times wider than the Moon. How can the small Moon hide the huge Sun?",
+   "answer": "The Sun lies that many times farther away",
+   "choices": [
+    "The Sun lies that many times farther away",
+    "The Moon's shadow grows that many times wider on its way to Earth",
+    "Earth's air makes the Moon look that many times bigger",
+    "The Moon moves out close to the Sun during the eclipse"
+   ],
+   "context": "The Sun is about 400 times wider than the Moon but also about 400 times farther away, so the two look about the same size in the sky, the way a coin held close can hide a distant house. The Moon's darkest shadow narrows on its way to Earth, to a strip rarely more than a few hundred kilometres wide, and Earth's air does not magnify the Moon.",
+   "facts": [
+    "F18",
+    "F20",
+    "F24",
+    "F28",
+    "F30"
+   ],
+   "grade_note": "That the Sun is about 400 times wider and 400 times farther than the Moon is the standard 6th-grade reason a total solar eclipse is possible."
+  }
+ ],
+ "revised": {
+  "81cf31d9e0": {
+   "old_hash": "7cd7f580d1",
+   "why": "Judge (low, fixed because it was cheap): the idiom 'more or less' (meaning 'roughly') ran through all four choices and could misread the key. All four now say 'a bigger or smaller part', kept parallel (the judge's wording). The stem drops 'a half circle', whose 'half' only the key echoed ('its sunlit half'). The context drops 'from none of it at new moon to all of it at full moon', which spelled out 86175ed485's answer. Same fact (F1, F2)."
+  },
+  "c2fedcf73b": {
+   "old_hash": "a4030d77ef",
+   "why": "Judge (low, fixed because it was cheap): 'comes up in the east just as the Sun goes down in the west' drew the opposite-sides picture of the key. The compass directions are cut (the judge's fix). The key was also the longest choice; it is now 'It is on Earth's far side from the Sun' (same claim, shorter) and the once-a-day lure reads 'It goes all the way round Earth each day', so a lure is the longest. Context unchanged."
+  },
+  "6fd6deac45": {
+   "old_hash": "d559d0278b",
+   "why": "Judge (medium): 'A solar eclipse dims the daytime sky' ruled out the lure 'Only then is the Moon on Earth's night side'. The clause is cut (the judge's fix), so all four choices are live. Key, choices and context unchanged."
+  },
+  "b260626b6b": {
+   "old_hash": "2bed95be11",
+   "why": "Judge (medium): the lure 'Light given off by Earth's shadow' was dead (a shadow is where light is blocked). It is replaced by the judge's 'Sunlight bounced off the other planets', live because students know the planets shine by reflected sunlight, and false: even Venus at its brightest is more than a thousand times fainter than the full Moon (F29, new). Judge (low): the closer 'What light reaches it?' had more than one true answer read strictly; it is now 'What light makes it glow red?'. The context now corrects the new lure instead of the old one. Key unchanged."
+  },
+  "52479c8328": {
+   "old_hash": "52479c8328",
+   "why": "Judge (medium): the key was the only choice to pick up the stem's number ('that many'), while the lures said a vague 'many times'. Two lures now say 'that many times' too (the judge's fix); the fourth is kept and is live. Fact-check (uncertain): the context's path width 'only about 100 to 270 kilometres wide' read as a hard range that real paths break; it now says 'rarely more than a few hundred kilometres wide' (the fact-check's wording, F30, new). Stem and key unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

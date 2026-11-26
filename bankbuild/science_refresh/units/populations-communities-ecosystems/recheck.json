@@ -1,0 +1,19 @@
+{"unit": "populations-communities-ecosystems",
+ "questions": {
+  "73e30e11a2": {"verdict": "pass",
+   "why": "Old grade problem fixed: the item now tests both halves of the definition, one species in ONE area and all ages. 'Never cross' makes two ponds two populations (Grokipedia Population ecology: same species, same area, potentially interbreeding; Metapopulation: separate patches are separate local populations). Tadpoles count, since age structure covers every life stage. All three lures are real confusions (one species = one population; life stages as separate groups). Choices are parallel.",
+   "sources": ["https://grokipedia.com/page/Population_ecology", "https://grokipedia.com/page/Metapopulation", "https://grokipedia.com/page/Tadpole"]},
+  "9cf06b8b35": {"verdict": "pass",
+   "why": "New item fills the missing organism level of TEKS 6.12C. Key true (OpenStax: organisms are individual living entities; Kesler: an organism is a single living thing). The lures are the other levels, each a group, so a student needs the definitions to strike them. Red fox facts true (active and hunting through winter). An easy item, but it is the grade's own content, and 'she' is the ecologist.",
+   "sources": ["https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology", "https://keslerscience.com/teks-6.12c-hierarchy-of-ecosystems?hsLang=en", "https://grokipedia.com/page/Red_fox"]},
+  "5940a4e355": {"verdict": "pass",
+   "why": "Old tell fixed: the key is no longer the one nonliving choice among living ones. Key true (a community holds plants, animals, fungi and microbes and leaves out abiotic parts: Grokipedia Community (ecology), OpenStax). 'Water, mud and sunlight' (M2) and 'Nothing, since a community is its animals' are live confusions. 'The people of the nearest town' is the weakest lure, kept live only by the everyday sense of 'community' (M6); a low-severity point, not a reason to drop.",
+   "sources": ["https://grokipedia.com/page/Community_(ecology)", "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology", "https://keslerscience.com/teks-6.12c-hierarchy-of-ecosystems?hsLang=en"]},
+  "abb327d477": {"verdict": "pass",
+   "why": "Fact error fixed: 'tens of kilometres up' matches the ISRO balloon samples, which gave living bacteria from 20-41 km, and no height is called a limit now. Amphipods populate the Challenger Deep floor (10,935 m, 'nearly 11 kilometres'). Old tell fixed: no 'Life' opener, and 'The biome', a second bio- word, sits among the lures. A biome is a large climate-defined group of ecosystems, not all of them. The atmosphere and hydrosphere stay live, since the stem's scenes are in air and water. Key true (the biosphere is the global sum of all ecosystems). The lead's ruling puts the biosphere in this unit.",
+   "sources": ["https://www.sciencedaily.com/releases/2009/03/090318094642.htm", "https://grokipedia.com/page/Mariana_Trench", "https://grokipedia.com/page/Biome", "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"]},
+  "373855b060": {"verdict": "pass",
+   "why": "Fact error fixed: the context now makes 'more kinds, not more land' a rule for the population-to-community step only, and the grade note matches. The patch is metric (about 30 centimetres). Key true: several species under the log make a community, the squirrels are one population, and Kesler uses this very case. Choices unchanged and sound.",
+   "sources": ["https://keslerscience.com/teks-6.12c-hierarchy-of-ecosystems?hsLang=en", "https://grokipedia.com/page/Community_(ecology)", "https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology"]}
+ }
+}

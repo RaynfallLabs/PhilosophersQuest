@@ -1,0 +1,63 @@
+{"unit": "the-rock-cycle",
+ "questions": {
+  "501d6488db": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem says both rocks form 'when melted rock cools and hardens', and the key repeats it ('How fast the melted rock cooled'). A test-wise student narrows to the two choices about the melted rock (key and 'How hot the melted rock was') and then picks the one that repeats the stem's verb.",
+     "fix": "'Granite and basalt are both igneous rocks, made from melted rock. Granite is speckled with crystals big enough to see, but the crystals in basalt are too small to see with the naked eye. What mainly made the difference?' Keep the four choices."}
+   ]},
+  "74f39a7237": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "This asks the same rule as 501d6488db: cooling speed sets crystal size. The stem gives 'no crystals at all', and the two igneous choices are that question's slow and fast pair ('Lava cools very fast at the surface' and 'Magma cools very slowly deep underground'). A student who gets one gets the other, and the unit rule wants each question on a different fact. 'Black sand is pressed' is a good lure (glass from sand), but it cannot carry the item alone.",
+     "fix": "Re-key on a fact no other question asks. Option A, oceanic basalt (earths-layers left the rock types to this unit): 'Under the mud of the deep sea floor lies the ocean's crust, made mostly of one dark igneous rock that cooled from lava. Which rock is it?' Choices: 'Basalt' (key), 'Granite', 'Obsidian', 'Slate'. Check its grade fit first: oceanic basalt and continental granite are taught in many middle-school layer lessons. Option B: drop this item, keep obsidian as a line in 501d6488db's context ('lava that cools faster still, like obsidian, hardens into glass with no crystals at all'), and let the unit stand at 9."}
+   ]},
+  "2c0f167902": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'An earthquake heaved it up all in a single day' is made silly by 'all in a single day'; the recorded student idea is just that earthquakes bring rock up.",
+     "fix": "'Earthquakes shoved it up through the rock above'."}
+   ]},
+  "00ead6161d": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's 'a far harder rock' rules out two lures: grains 'crushed into a fine powder' and grains that 'split apart into thin, flat sheets' do not make a far harder rock. That leaves the key and 'They melt and harden into glass'. The key's 'lock tightly together' also echoes 'far harder'. The 'sheets' lure is slate's property, which 361a54e6c7's stem teaches.",
+     "fix": "Test the grade's core fact directly and drop the rock names: 'Rock buried kilometres deep is heated and squeezed for millions of years until it turns into a new kind of rock, a metamorphic rock. What happens to the rock while it changes?' Choices: 'It stays solid while its minerals change' (key), 'It melts, then cools and hardens again' (the recorded 'metamorphic rocks melt' belief), 'It crumbles to sand, then is cemented again', 'It dissolves in water, then dries hard'. Context: keep sandstone to quartzite as the example."},
+    {"axis": "grade", "severity": "low",
+     "what": "The key teaches the mechanism (sand grains regrow and interlock). The 6th-grade fact is only that the rock changes without melting, and the item uses that only to rule out one lure. Quartzite is also outside the scope's two named pairs. Naming sandstone to quartzite here removes 'Quartzite' as a lure in 3c0c7153b7 and 'Sandstone' as a lure in 361a54e6c7 for any player who has met this question.",
+     "fix": "The rewrite above fixes all three."}
+   ]},
+  "3c0c7153b7": {"verdict": "ok", "issues": []},
+  "361a54e6c7": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Shale' is the only choice that looks and sounds like 'slate' (S, then -ale / -ate), so a pure guesser leans to it. The pair is the fact itself, and the names really are confused in class, so no rewrite removes this.",
+     "fix": "Accept. Make sure the context keeps saying that the two names sound alike but are two different rocks, one sedimentary and one metamorphic."}
+   ]},
+  "9dd30610c7": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only one of its kind. All three lures are surface processes with water (frost, mud, seeping water); only the key is a deep process, and it carries the unit's catchphrase 'heat and pressure'. A student who spots the odd one out gets it with no knowledge of banding.",
+     "fix": "Give the key a deep-process neighbour: 'Heat and pressure sorted its minerals into bands' (key), 'It cooled, and its crystals settled into layers' (an igneous process, wrong for solid granite), 'Ice froze in its cracks and split it into layers', 'Mud filled its cracks and hardened in layers'. Drop 'Water seeped in and stained some of its crystals'."},
+    {"axis": "grade", "severity": "low",
+     "what": "Banding (foliation) and gneiss are not in the scope; the scope point the grade note claims, igneous rock turning straight into metamorphic rock, is not what the stem asks. It is common middle-school rock-identification content, so it can stay.",
+     "fix": "Optional: end the stem 'What made the stripes as the granite became a metamorphic rock?' so the igneous-to-metamorphic path the grade note wants is stated."}
+   ]},
+  "58c05b5e11": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key sits at the centre of the choice set. 'Metamorphic' is the start of two choices and 'igneous' the end of two, and the key is the only choice with both. 'Metamorphic' and 'igneous' each appear in three of the four choices. A guesser who picks the choice sharing the most with the others lands on the key.",
+     "fix": "Rebalance: 'Metamorphic rock becoming igneous rock' (key), 'Igneous rock becoming metamorphic rock', 'Sedimentary rock becoming metamorphic rock', 'Igneous rock becoming sedimentary rock'. The centre of that set is the reversed lure, not the key."},
+    {"axis": "clarity", "severity": "medium",
+     "what": "'Gneiss' is used before it is taught. It is not in the scope, and only 9dd30610c7 says what it is (and even that never says it is metamorphic). A player who meets this question first cannot know the start of the change.",
+     "fix": "Teach it in the stem by how it formed, so the student still has to know which kind that makes it: 'Deep in the roots of a mountain range, a body of gneiss, a striped rock made by heat and pressure, grows hot enough to begin melting. The melt gathers, rises and hardens into granite. Which change of the rock cycle is this?'"}
+   ]},
+  "f11434b84c": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "The knowledge that decides the item is T1: sedimentary rock is made of bits of worn-down rock (rock-layers-and-fossils) and weathering is what breaks it up (wind-water-and-ice-shape-the-land). It is not a re-ask: no T1 question asks what igneous rock must go through to become sedimentary, and T1's not_here gives the rock cycle to T2. But it is the thinnest T2 item in the unit.",
+     "fix": "Keep. The lures 'melt and then cool again' and 'heated and squeezed underground' are the cycle's other arrows and keep it a rock-cycle question."}
+   ]},
+  "f0c1841451": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "TWO QUESTIONS ON ONE FACT: 501d6488db and 74f39a7237 both rest on cooling speed setting crystal size; fix in 74f39a7237. LEAKS INSIDE THE UNIT: the three metamorphic-pair items answer one another by elimination, because 00ead6161d's stem names sandstone to quartzite, 3c0c7153b7 has a Quartzite lure and 361a54e6c7 a Sandstone lure. The 00ead6161d rewrite removes the names. 58c05b5e11 needs gneiss, which only 9dd30610c7 introduces; fixed in its stem. OVERLAPS with other units, none a same-fact re-ask: (1) T1 rock-layers-and-fossils: no question re-asks sediment pressed and cemented into rock or limestone from shells; 3c0c7153b7 and 361a54e6c7 use limestone and shale only as parent rocks, which is new. T1's fossil-hunter question has lures that describe the other two kinds ('cooled from red-hot lava', 'squeezed and heated deep underground'); f0c1841451 asks a different fact (kinds are defined by how a rock formed). (2) T1 wind-water-and-ice-shape-the-land: 2c0f167902 and f11434b84c use weathering and erosion as one step of the cycle, not as the fact asked; f11434b84c leans hardest on T1 knowledge (low, see its entry). 9dd30610c7's 'Ice froze in its cracks' is T1's frost wedging used as a lure only, and the fix keeps it as one lure of four. (3) T1 solids-liquids-and-gases (lava hardening is freezing): not re-asked. T2 density-float-or-sink (pumice): not used. T2 pure-substances-and-mixtures (granite as a mixture): not re-asked. (4) earths-layers names no rock types, and earths-four-spheres asks no rock-cycle fact. Nothing shared. Lanes: no named place or landform ('cliffs and domes of bare granite in many mountain ranges' is unnamed). SCOPE: once 00ead6161d is rewritten, metamorphism without melting is asked directly (now it is only a lure). Magma vs lava is used throughout but never asked, which is fine. If 74f39a7237 takes Option B the unit stands at 9 of a 10 target."}

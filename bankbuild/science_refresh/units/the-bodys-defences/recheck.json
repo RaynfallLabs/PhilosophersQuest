@@ -1,0 +1,19 @@
+{"unit": "the-bodys-defences",
+ "questions": {
+  "dc95b42d9d": {"verdict": "pass",
+   "why": "Old tell fixed as the judge proposed: each lure now gives a defender's reason (blown out, breathed out, killed by white blood cells), so all four are live. Facts: cilia beat 10-20 times a second, and windpipe mucus moves up to the pharynx, where it is swallowed or coughed up; nasal mucus also goes to the pharynx, not out of the nose. Context true.",
+   "sources": ["https://en.wikipedia.org/wiki/Mucociliary_clearance", "https://grokipedia.com/page/Mucus"]},
+  "db3be3e787": {"verdict": "pass",
+   "why": "Old grade problem fixed: the item now asks the scope's fever line (the job of a fever), not the hypothalamic set point. Key is hedged 'thought to', matching Evans, Repasky and Fisher 2015 (fever-range heat cuts poliovirus replication more than 200-fold and raises neutrophil recruitment, but largely in experimental models). Lures false: sweating comes as the fever breaks and does not expel germs (M3), and no source has a fever drying mucus or blocking entry. Each lure is a heat-based mechanism, so the key is not a standout. Strep throat is a familiar germ, and there is no vaccine content.",
+   "sources": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC4786079", "https://grokipedia.com/page/Fever", "https://www.healthline.com/health/sweating-out-a-fever"]},
+  "8308558054": {"verdict": "pass",
+   "why": "Uncertain fact fixed: 'within a few weeks' covers the NHS's 1-2 weeks and SickKids' about two to four weeks for a viral infection. Key true (reactive swelling from lymphocytes multiplying and more arriving). 'The cold virus has spread to her neck's skin' stays the weakest lure (the judge's low note, not taken up), but it is not dead.",
+   "sources": ["https://www.aboutkidshealth.ca/swollen-lymph-nodes", "https://www.nhs.uk/conditions/swollen-glands/", "https://grokipedia.com/page/Lymphadenopathy"]},
+  "7bfd380501": {"verdict": "pass",
+   "why": "Uncertain fact fixed: 'does not by itself cause' and 'partly because people crowd together indoors' match Grokipedia, which gives crowding, dry heated air and school terms, and says low temperatures do not directly cause colds. More than 200 viruses, strain-specific immunity and 7-10 days are all confirmed. The stem still states the body's memory, which is the chickenpox item's key (the judge's unit note called this tolerable); no problem inside this item.",
+   "sources": ["https://grokipedia.com/page/Common_cold", "https://grokipedia.com/page/Measles"]},
+  "b3705ebe8c": {"verdict": "pass",
+   "why": "Old tell fixed: the sentence saying soap removes more germs than water is gone, so the keep-them-out lures (pores, coating) are live, and 'water' no longer echoes the stem. CDC: soap's surfactants lift soil and microbes from skin, scrub at least 20 seconds, water temperature does not matter. Lures false for plain soap (it is rinsed away, leaving no coat, and it removes surface germs without drawing them out of the skin).",
+   "sources": ["https://www.cdc.gov/handwashing/show-me-the-science-handwashing.html", "https://www.ncbi.nlm.nih.gov/books/NBK144036/"]}
+ }
+}

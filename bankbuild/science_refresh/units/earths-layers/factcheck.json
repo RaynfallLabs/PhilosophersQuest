@@ -1,0 +1,434 @@
+{
+ "unit": "earths-layers",
+ "questions": {
+  "1ae4acfe23": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the mantle makes up about 84 percent of Earth's volume",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_mantle",
+     "note": "Grokipedia: 'approximately 84% of Earth's total volume and 67% of its mass'; Internal structure page agrees ('roughly 84% of Earth's volume')."
+    },
+    {
+     "claim": "84 percent is far more than the other three layers together (about 16 percent)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Internal_structure_of_Earth",
+     "note": "Core radius about 3,480 km of 6,371 km gives the core about 16 percent of the volume; crust under 1 percent."
+    },
+    {
+     "claim": "Wrong: inner core, outer core, crust (none is the 84 percent layer)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Crust_(geology)",
+     "note": "Crust 'less than 1% of Earth's total volume'; the inner core (radius about 1,220 km) is under 1 percent; the outer core about 15 percent."
+    },
+    {
+     "claim": "Context: mantle from the crust's base to about 2,900 km, the thickest layer",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_mantle",
+     "note": "'The total thickness of the mantle is about 2,900 km'; 'the thickest layer of the planet'. Outer core about 2,260 km, inner core radius about 1,220 km."
+    },
+    {
+     "claim": "Context: the two core layers hold almost all the rest; the crust less than 1 percent",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Crust_(geology)",
+     "note": ""
+    }
+   ]
+  },
+  "980b5db065": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: crust usually thinnest under the floor of the open ocean",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Crust_(geology)",
+     "note": "Oceanic crust 'about 5 to 10 kilometers under the oceans'; continental 30 to 50 km, up to 70 km."
+    },
+    {
+     "claim": "Wrong: under a shallow sea near a coast (continental shelf is continental crust, thicker)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Continental_shelf",
+     "note": "Shelf is 'the gently sloping, submerged prolongation of a continent's continental crust', 'underlain primarily by continental crust'. Margin profiles (e.g. Grand Banks about 30 km, Morocco 35 km) show the crust thins mainly near the shelf break and beyond; 'usually' in the stem covers rifted exceptions."
+    },
+    {
+     "claim": "Wrong: under high mountains / under the middle of a continent (thick continental crust)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Crust_(geology)",
+     "note": "'maximum thicknesses exceeding 70 km beneath major mountain belts'."
+    },
+    {
+     "claim": "Context: oceanic crust usually 5-10 km; continental several times thicker; thickest under high mountains",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Internal_structure_of_Earth",
+     "note": "'Oceanic crust is typically 5 to 10 kilometers'; continental 'averages 30 to 70 kilometers'."
+    },
+    {
+     "claim": "Context: a shallow sea near a coast often covers the drowned edge of a continent, thick continental crust beneath",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Continental_shelf",
+     "note": "True of the inner shelf (about 30-40 km); crust thins toward the shelf break, but 'often' keeps it safe."
+    }
+   ]
+  },
+  "ea1da3c355": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "The deepest hole ever drilled (Kola Superdeep Borehole) is still the record by depth",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kola_Superdeep_Borehole",
+     "note": "Grokipedia: Kola 'maintains the record for the deepest true vertical borehole'. Longer wells (Al Shaheen 12,289 m long) are not deeper; China's Shenditake 1 finished in Feb 2025 at 10,910 m, second in the world (https://globaltimes.cn/page/202502/1328780.shtml). The stem says 'deepest', not 'longest', so it survives; a future well could change it."
+    },
+    {
+     "claim": "Bored into the hard rock of a continent, in the far north of Russia",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+     "note": "Pechengsky District, Murmansk Oblast, Kola Peninsula near the Norwegian border; Baltic Shield gneiss and granite (continental crust)."
+    },
+    {
+     "claim": "Drillers worked at it for about 20 years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kola_Superdeep_Borehole",
+     "note": "Began 24 May 1970; record 12,262 m in 1989 (19 years); drilling halted 1992 (Grokipedia) or ended 1995 (Wikipedia). 'About 20 years' is fair."
+    },
+    {
+     "claim": "Got a little more than 12 km down",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+     "note": "'maximum true vertical depth of 12,262 metres (40,230 ft) in 1989'."
+    },
+    {
+     "claim": "Key: partway through the crust",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kola_Superdeep_Borehole",
+     "note": "Crust there 35-40 km (Grokipedia) / about 35 km (Wikipedia); the hole went 'approximately one-third of the continental crust thickness'."
+    },
+    {
+     "claim": "Wrong: just past the crust into the mantle / halfway through the mantle / top of the outer core",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+     "note": "All far deeper than 12.3 km (Moho about 35 km; outer core about 2,900 km)."
+    },
+    {
+     "claim": "Context: crust about 35 km; hole about a third of the way through; about 0.2 percent of the way to the centre",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kola_Superdeep_Borehole",
+     "note": "'just 0.2% of the distance to the planet's core' (12.26 / 6,371 = 0.19 percent)."
+    },
+    {
+     "claim": "Context: 'No drill has ever reached the mantle, let alone the core.'",
+     "result": "uncertain",
+     "source": "https://www.whoi.edu/press-room/news-release/rocks-recovered-from-mantle-could-reveal-sources-of-volcanoes-and-origins-of-life-on-earth/",
+     "note": "In 2023 IODP Expedition 399 drilled 1,268 m into mantle rock (serpentinized peridotite) at the Atlantis Massif, where mantle rock lies exposed on the Atlantic seafloor; news reports called it a record hole 'into Earth's mantle' (e.g. https://gizmodo.com/epic-drilling-mission-sets-new-record-with-4160-foot-mantle-core-2000484808). No drill has gone DOWN THROUGH the crust into the mantle, but the bare sentence can be read as false. Fix: 'No drill has ever bored down through the crust into the mantle beneath it, let alone the core.'"
+    }
+   ]
+  },
+  "cd07413950": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: near the core the mantle is more than 3,000 degrees Celsius",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_mantle",
+     "note": "Grokipedia: 'exceeding 3,000°C near the core boundary'; NatGeo 3,700 °C (https://education.nationalgeographic.org/resource/mantle/); Wikipedia about 4,200 K (3,900 °C) (https://en.wikipedia.org/wiki/Earth%27s_mantle)."
+    },
+    {
+     "claim": "Key: most of the mantle is solid, yet flows very slowly",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mantle_convection",
+     "note": "'the slow, creeping motion of the Earth's solid silicate mantle'; Wikipedia: 'predominantly solid but, on geologic time scales, it behaves as a viscous fluid'."
+    },
+    {
+     "claim": "Wrong: liquid like lava",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Earth%27s_mantle",
+     "note": "'The enormous lithostatic pressure exerted on the mantle prevents melting.'"
+    },
+    {
+     "claim": "Wrong: solid and never moves at all",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mantle_convection",
+     "note": "It creeps (solid-state flow over geological time)."
+    },
+    {
+     "claim": "Wrong: half melted like slushy snow",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_mantle",
+     "note": "Melt is only about 1-3 percent, and only in a thin layer (lithosphere-asthenosphere boundary). NatGeo calls the asthenosphere 'semi-molten', but the stem asks about MOST of the mantle, which is solid; not defensible."
+    },
+    {
+     "claim": "Context: creeps about 1 to 10 cm a year",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mantle_convection",
+     "note": "'sluggish velocities of 1-10 cm/year'; interior flow 'on the order of ~1 cm/yr', plates 2-5 cm/yr."
+    },
+    {
+     "claim": "Context: only small parts partly melted; not a sea of magma",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_mantle",
+     "note": "'containing 1% to 3% melt' at the lithosphere-asthenosphere boundary."
+    }
+   ]
+  },
+  "0e2f4630d8": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: outer core lies below the mantle, more than 2,000 km thick",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_outer_core",
+     "note": "About 2,890 to 5,150 km deep, 'a thickness of about 2,260 kilometers'; NatGeo 'about 2,200 kilometers'."
+    },
+    {
+     "claim": "Key: liquid iron and nickel",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_outer_core",
+     "note": "'a fluid layer of molten metal', 'primarily composed of iron and nickel'; NatGeo 'mostly composed of liquid iron and nickel' (https://education.nationalgeographic.org/resource/core/)."
+    },
+    {
+     "claim": "Wrong: solid iron and nickel (that is the inner core)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Earth%27s_outer_core",
+     "note": "'The outer core of Earth is liquid, unlike its inner core, which is solid.'"
+    },
+    {
+     "claim": "Wrong: liquid melted rock; hot solid rock",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Internal_structure_of_Earth",
+     "note": "It is a metal alloy, not silicate rock: 'molten iron-nickel alloy'."
+    },
+    {
+     "claim": "Context: about 85-90 percent iron, some nickel, a little of a few lighter elements",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Internal_structure_of_Earth",
+     "note": "'85-90% iron, 5-10% nickel', plus light elements such as sulfur and oxygen (about 10 percent by mass on the Outer core page)."
+    },
+    {
+     "claim": "Context: far too deep to be the source of a volcano's lava",
+     "result": "ok",
+     "source": "https://serc.carleton.edu/NAGTWorkshops/intro/misconception_list.html",
+     "note": "Magma forms by partial melting in the upper mantle and crust (Wikipedia Earth's mantle: partial melting at ridges and subduction zones); 'Magma comes from Earth's outer core' is a listed misconception."
+    }
+   ]
+  },
+  "481c691281": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Stem: at the surface iron melts at about 1,500 degrees Celsius",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Iron",
+     "note": "1,538 °C at 1 atm."
+    },
+    {
+     "claim": "Stem: the inner core is mostly iron",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_inner_core",
+     "note": "'iron constituting approximately 85-90% by weight and nickel making up 5-10%'."
+    },
+    {
+     "claim": "Stem: the inner core 'is hotter than 5,000 degrees' (Celsius, the stem's unit)",
+     "result": "uncertain",
+     "source": "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+     "note": "Most current figures clear it: Wikipedia 5,400-5,700 K (5,100-5,400 °C), Anzellini 2013 iron melting 5,957 ± 500 °C; NatGeo 5,200 °C; Grokipedia up to 5,400 °C, centre 5,400-6,000 K (5,130-5,730 °C). But the margin is thin and some published figures fall below it: Grokipedia's own Outer core page gives the inner-core boundary as 'roughly 5,000-6,000 K' (from about 4,730 °C), and a 1993 Nature estimate put it at 4,850 ± 200 K (about 4,580 °C) (https://dx.doi.org/10.1038/363534a0). Fix: 'is more than 4,000 degrees' or 'is about as hot as the surface of the Sun'; the question's point (over three times iron's surface melting point) is unchanged."
+    },
+    {
+     "claim": "Key: the enormous pressure keeps it solid",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+     "note": "'The inner core is solid at high temperature because of its high pressure'; NatGeo: the pressure 'prevents the iron from melting'."
+    },
+    {
+     "claim": "Wrong: the nickel mixed with the iron",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Nickel",
+     "note": "Nickel melts at 1,455 °C, lower than iron; it does not explain solidity."
+    },
+    {
+     "claim": "Wrong: the lack of air or oxygen; the pull of the magnetic field",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_inner_core",
+     "note": "Melting is a physical change needing heat, not air; the field is made by the outer core and does not freeze the inner core."
+    },
+    {
+     "claim": "Context: pressure at the centre is millions of times the air's",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/core/",
+     "note": "'nearly 3.6 million atmospheres'; Grokipedia 330 GPa at the boundary, about 365 GPa at the centre."
+    },
+    {
+     "claim": "Context: under such pressure iron needs far more heat to melt; nickel melts lower than iron",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+     "note": "'its melting temperature increases dramatically at pressures of that magnitude'; iron 1,538 °C, nickel 1,455 °C."
+    }
+   ]
+  },
+  "72a1ca7558": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: the world's deepest mine reaches about 4 km underground",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mponeng_Gold_Mine",
+     "note": "Mponeng, South Africa: 'approximately 4 kilometers', 'the world's deepest underground mine'; Wikipedia 'over 4 kilometres' (https://en.wikipedia.org/wiki/Mponeng_Gold_Mine). A record that could change, but 'about 4 km' survives small deepening."
+    },
+    {
+     "claim": "Stem: bare rock about 60 degrees Celsius",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mponeng_Gold_Mine",
+     "note": "Wikipedia 66 °C; Grokipedia 'exceeding 60°C'."
+    },
+    {
+     "claim": "Stem: ice is pumped down to cool the tunnels",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mponeng_Gold_Mine",
+     "note": "'the mine pumps slurry ice underground to cool the tunnel air to below 30 °C'."
+    },
+    {
+     "claim": "Key: heat flows up from deep inside Earth",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Geothermal_gradient",
+     "note": "Heat flows outward by conduction from the hotter interior; gradient about 25-30 °C per km in typical continental crust."
+    },
+    {
+     "claim": "Wrong: the Sun's heat soaks down",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Geothermal_gradient",
+     "note": "Solar/seasonal effects only in the upper 10-30 m."
+    },
+    {
+     "claim": "Wrong: melted rock just beneath the mine; hot water seeping down from the surface",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mponeng_Gold_Mine",
+     "note": "Witwatersrand Basin is old stable continental crust with no magma; surface water is cooler, not hotter."
+    },
+    {
+     "claim": "Context: the Sun's warmth reaches only the top 20 metres or so",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ground_source_heat_pump",
+     "note": "Seasonal variation fades within about 8-20 m (Wikipedia); Grokipedia says solar/seasonal effects in the upper 10-30 m. 'About 20 metres or so' fits both."
+    },
+    {
+     "claim": "Context: no melted rock under the mine",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mponeng_Gold_Mine",
+     "note": ""
+    }
+   ]
+  },
+  "c0c5acd36e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the inner core is the hotter layer",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Internal_structure_of_Earth",
+     "note": "Outer core 'roughly 4,000 K near the core-mantle boundary to 5,700 K at its inner boundary'; inner core 'around 5,700-6,000 K at the inner core boundary'; EBSCO: 'Temperature increases with distance from the surface', about 6,100 °C at the centre (https://www.ebsco.com/research-starters/earth-and-atmospheric-sciences/earths-core)."
+    },
+    {
+     "claim": "Wrong: the outer core is hotter / the two equally hot",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Earth%27s_outer_core",
+     "note": "The outer core runs from about 3,000-4,500 K at its top up to the boundary value; the inner core is at or above the boundary value throughout. NatGeo's figures (inner 5,200 °C inside an outer-core range of 4,500-5,500 °C, and the boundary called the hottest part) are muddled, but the physics and Grokipedia/Wikipedia/EBSCO make the inner core hotter. Not defensible."
+    },
+    {
+     "claim": "Wrong: both cooler than the mantle",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Earth%27s_mantle",
+     "note": "Mantle runs about 230 °C at the top to about 3,900 °C at the core boundary; both core layers are hotter."
+    },
+    {
+     "claim": "Context: temperature keeps rising toward the centre; inner core hottest layer, about as hot as the Sun's surface",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+     "note": "'approximately 5,700 K (5,430 °C)', 'about the temperature at the surface of the Sun' (photosphere about 5,772 K)."
+    },
+    {
+     "claim": "Context: the mantle above both is far cooler",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/mantle/",
+     "note": "Mantle 1,000-3,700 °C (NatGeo). At the core-mantle boundary the two meet at about the same temperature, but as a layer the mantle is far cooler than either core layer; acceptable."
+    }
+   ]
+  },
+  "c11da0f8f6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: pressure rises because of the weight of all the rock above",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Overburden_pressure",
+     "note": "Overburden pressure is from 'the weight of the overlying rock, soil, sediment, and pore fluids'; it 'increases with depth', about 1 psi/ft (22.7 kPa/m)."
+    },
+    {
+     "claim": "Wrong: heat from the core pushing outward",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Overburden_pressure",
+     "note": "Pressure at depth is from gravity on the overlying load, not heat."
+    },
+    {
+     "claim": "Wrong: Earth's spin squeezing it inward",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Equatorial_bulge",
+     "note": "Rotation lets material 'flow outward, forming the bulge'; about 21.4 km between equatorial and polar radii."
+    },
+    {
+     "claim": "Wrong: the pull of the Moon from above",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Overburden_pressure",
+     "note": "Tides are tiny and pull outward, not a squeeze that grows with depth."
+    },
+    {
+     "claim": "Context: only 5 km down the pressure is more than a thousand times the air's",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Internal_structure_of_Earth",
+     "note": "At about 5 km 'approximately 130-140 MPa (roughly 1,300-1,400 atmospheres)'; 22.7 MPa/km x 5 km = 113 MPa, about 1,100 atm, still over a thousand."
+    },
+    {
+     "claim": "Context: spin makes Earth bulge outward at the equator",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Equatorial_bulge",
+     "note": "'The primary cause of the equatorial bulge is the planet's rotation.'"
+    }
+   ]
+  },
+  "4c8e9e6455": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: young Earth largely melted; much of its iron gathered at the centre as the core",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Planetary_differentiation",
+     "note": "Magma oceans about 4.5 billion years ago from giant impacts; core formation complete within about 30 million years."
+    },
+    {
+     "claim": "Key: iron is denser than rock, so it sank",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Planetary_differentiation",
+     "note": "'heavier elements like iron sinking toward the center while lighter silicates rise to the surface', driven by density differences; NatGeo: 'Droplets of iron, nickel, and other heavy metals gravitated to the center' (https://education.nationalgeographic.org/resource/core/)."
+    },
+    {
+     "claim": "Wrong: iron is magnetic, so it was pulled inward",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Planetary_differentiation",
+     "note": "The page treats magnetism as a consequence of a liquid core, not a driver; hot iron above about 770 °C (its Curie point) is not magnetic anyway."
+    },
+    {
+     "claim": "Wrong: the Sun's heat drove it inward; iron cooled first and hardened in the middle",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Planetary_differentiation",
+     "note": "Neither is the mechanism; the core formed as liquid metal sinking, and the outer core is still liquid."
+    },
+    {
+     "claim": "Context: layers sorted by density, dense metal core at centre, light crust on top",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Planetary_differentiation",
+     "note": "Core about 11 g/cm3, mantle about 4.4, crust about 2.7."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Two uncertain, both one-line fixes; every key is sound. (1) ea1da3c355 context: 'No drill has ever reached the mantle' clashes with the 2023 Atlantis Massif hole (1,268 m into mantle rock exposed on the Atlantic seafloor); say 'bored down through the crust into the mantle beneath it'. (2) 481c691281 stem: 'hotter than 5,000 degrees' holds for current mainstream figures (about 5,100-6,000 C) but the margin is thin and some published values for the inner core's edge fall below 5,000 C; 'more than 4,000 degrees' or 'about as hot as the surface of the Sun' is safe. Records checked Nov 2026: Kola (12,262 m) is still the deepest vertical hole (Shenditake 1 stopped at 10,910 m in Feb 2025); Mponeng is still the deepest mine (about 4 km)."
+}

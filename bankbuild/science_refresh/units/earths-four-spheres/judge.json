@@ -1,0 +1,49 @@
+{"unit": "earths-four-spheres",
+ "questions": {
+  "98587b4962": {"verdict": "ok",
+   "issues": [
+    {"axis": "voice", "severity": "low",
+     "what": "The jar does no work. Screwing the lid on tight plays no part in the question, and a careful student may wonder whether sealing the jar changes the air inside it (oxygen used up, for instance). The fact is sound and Oxygen is a strong, real lure.",
+     "fix": "Drop the lid: 'A girl scoops a glass jar through the air of her garden. The air in the jar is the same mixture of gases as the atmosphere around Earth. Which gas makes up most of it?' Keep the four choices."}
+   ]},
+  "304c5d20fe": {"verdict": "ok", "issues": []},
+  "bcf5470c9e": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Two lures are water (snow and steam) and none is the atmosphere, so the item samples only three of the four spheres. 'The steam from a hot spring' also sits on the hydrosphere/atmosphere line in some school models (water vapour in the air), a needless wobble even though it is not the key. 'The roots of a pine tree' as a thing she 'sees' is a small stretch.",
+     "fix": "Replace 'The steam from a hot spring' with 'The cold wind blowing down the valley' (atmosphere), and say 'four things she finds there' instead of 'sees'."}
+   ]},
+  "9763d9373a": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The context says 'The ocean takes in most of the Sun's energy that reaches Earth.' I believe that overstates it: about 30 percent of incoming sunlight is reflected and a fifth or more is absorbed by the air, so the ocean takes in most of the sunlight that reaches Earth's SURFACE, not most of all that reaches Earth. For the fact-checker.",
+     "fix": "'The ocean takes in most of the sunlight that reaches Earth's surface and gives much of that heat back to the air above it.'"}
+   ]},
+  "0cffbed5f9": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Biosphere' is in three of the four choices and 'geosphere' in two; the key is the only choice made of the two most frequent spheres. A student who knows nothing can pick it by choosing the choice that shares the most with the others, and the biosphere half is never tested at all.",
+     "fix": "Rebalance so each sphere appears exactly twice: 'The biosphere and the geosphere' (key), 'The hydrosphere and the geosphere', 'The biosphere and the atmosphere', 'The atmosphere and the hydrosphere'. The key is then no longer the centre of the set."},
+    {"axis": "other", "severity": "low",
+     "what": "The scene is T1 wind-water-and-ice-shape-the-land's root question almost word for word (a seed sprouts in a narrow crack, the roots split the rock), and this stem retells that T1 key. The fact asked here (which two spheres) is new, so it is not a re-ask, and roots breaking rock is this unit's own scope example; it is also close to the 5th-grade NGSS 5-ESS2-1 level once the choices are fair.",
+     "fix": "Keep the scene with the rebalanced choices; trim the retold mechanism so the stem does not replay T1's answer: 'A pine seed sprouts in a narrow crack in a cliff, and over many years the crack grows wider as the tree grows. Which two of Earth's spheres act on each other here?'"}
+   ]},
+  "fd4646efcc": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Oxygen' is a weak lure: few 6th graders would think a volcano's cloud of ash and fumes is mostly oxygen, so only three choices are live.",
+     "fix": "Replace 'Oxygen' with 'Nitrogen': a live wrong idea (it is most of the air, as the unit's nitrogen question teaches, so a student may think volcanic gas is air-like), and it is only a minor volcanic gas. Context: 'while nitrogen, the main gas of the air, is only a small part of it.'"},
+    {"axis": "grade", "severity": "low",
+     "what": "The scope line is 'a volcano adds gases and ash'; which gas is most abundant is a detail a step past it. It is in middle-school volcano chapters, so it can stay, but it is the least Earth-systems item in the unit and one of three volcano items (with 9763d9373a's lure and d9b1f60a17).",
+     "fix": "Keep if the Nitrogen swap is made; otherwise no change needed."}
+   ]},
+  "a255e49d38": {"verdict": "ok", "issues": []},
+  "d9b1f60a17": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key's 'rich soil' is the only choice that restates the stem's 'so good for crops' in other words; the three lures each give a mechanism (warmth, no frost, damp) without an evaluative word.",
+     "fix": "Key: 'Weathered ash fills the soil with minerals'. Keep the three lures."}
+   ]},
+  "91bec6dd34": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Lead's biosphere ruling kept: no stem or key asks what the biosphere is or names it from a description. The biosphere appears only as a category to sort into (0cffbed5f9's key, bcf5470c9e's and 9763d9373a's lures); after the 0cffbed5f9 rebalance the student must know a tree belongs to the biosphere, which applies the sphere rather than defining it. If the lead reads the ruling strictly, that is the one item to watch. Populations-communities-ecosystems' own biosphere question uses The atmosphere and The hydrosphere as lures: no clash. OVERLAPS, none a same-fact re-ask: (1) 0cffbed5f9 replays the scene of T1 wind-water-and-ice-shape-the-land's root question (seed in a crack, roots split the rock); it asks a new fact (which spheres), so keep, with the stem trimmed as in its fix. (2) a255e49d38 mirrors T2 the-tides' first question (tides: Moon key, wind lure; here waves: wind key, Moon lure); two different facts that teach the contrast, keep. (3) 9763d9373a and T1 weather-and-climate-basics' sea breeze both have the Sun, the sea and the air, but the sea breeze keys on land warming faster than sea; this keys on which sphere acts on which; keep. (4) 9763d9373a's lure 'A forest's leaves giving oxygen to the air' is T1 how-plants-make-food's pondweed fact, and 'Rain slowly wearing a rocky hill down' is T1 weathering; both are lures only, which is right: the scope's 'plants add oxygen to the air' and 'rain wears down rock' must NOT become keys here, since they would re-ask T1. (5) 304c5d20fe and T1 the-water-cycle's groundwater question: different facts (seeps into rivers vs which sphere). Its stem describes groundwater filling the pores and cracks of rock and a well, which is the future T3 watersheds-and-groundwater scope; when that unit is built it should key on the aquifer and the water table, not on 'groundwater fills pores and cracks'. (6) d9b1f60a17 and T1 earths-resources' topsoil question (how long topsoil takes): different facts. (7) Against earths-layers and the-rock-cycle: no shared fact; no interior question here. Grade fit as a whole: 9763d9373a's own grade note cites NGSS 5-ESS2-1, a 5th-grade standard, and NGSS teaches the four spheres and their interactions in 5th grade. The map puts this unit at G6, so its 6th-grade worth rests on the harder cases (groundwater in rock, soil, the volcano's gas, thin air at height), which most items have. 9763d9373a and 0cffbed5f9 are the closest to 5th-grade level. Balance: three of nine items show a volcano (9763d9373a's lure, fd4646efcc, d9b1f60a17). Scope coverage is otherwise complete for a unit that may not ask the biosphere."}

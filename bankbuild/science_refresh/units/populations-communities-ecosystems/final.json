@@ -1,0 +1,213 @@
+{
+ "unit": "populations-communities-ecosystems",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "populations-communities-ecosystems",
+   "question": "A hardwood forest holds sugar maples, American beeches and yellow birches, with deer, ferns and mushrooms living among them. Which group from this forest is a population?",
+   "answer": "Every sugar maple growing in it",
+   "choices": [
+    "Every sugar maple growing in it",
+    "Every tree of any kind growing in it",
+    "Every sugar maple and beech in it",
+    "One sugar maple and its own seedlings"
+   ],
+   "context": "A population is all the members of one species living in one area, so the forest's sugar maples, young and old, make up one population. Trees of every kind, or maples and beeches together, are several populations living side by side, and one tree with its seedlings is only a few members of its population.",
+   "facts": [
+    "F2",
+    "F6",
+    "F20",
+    "M1"
+   ],
+   "grade_note": "TEKS 6.12C asks 6th graders to describe the levels from organism to community, and one species against many is the line that marks out a population."
+  },
+  {
+   "tier": 2,
+   "topic": "populations-communities-ecosystems",
+   "question": "Bullfrogs live in two ponds far apart, with dry land between them that the frogs never cross. Each pond holds tadpoles as well as grown frogs. How many bullfrog populations live in the two ponds?",
+   "answer": "Two, one in each pond, tadpoles included",
+   "choices": [
+    "Two, one in each pond, tadpoles included",
+    "One, since all of them are bullfrogs",
+    "Four, the tadpoles and frogs of each pond",
+    "Two, the tadpoles and the grown frogs"
+   ],
+   "context": "A population is all the members of one species living in one area, young and old together. The frogs of the two ponds never meet to breed, so each pond holds a population of its own, and the tadpoles belong to it: they are young bullfrogs, the same species as their parents, not a separate group.",
+   "facts": [
+    "F2",
+    "F3",
+    "F4",
+    "F27",
+    "M1",
+    "M7"
+   ],
+   "grade_note": "6th graders learn that a population is all the members of one species in one area, and two cut-off ponds, tadpoles and all, test both halves of that: the one area and the all."
+  },
+  {
+   "tier": 2,
+   "topic": "populations-communities-ecosystems",
+   "question": "Ecologists study life at several levels. One ecologist follows a single red fox through a winter, weighing it each month and tracking how far it travels each day. Which level is she studying?",
+   "answer": "An organism",
+   "choices": [
+    "An organism",
+    "A population",
+    "A community",
+    "An ecosystem"
+   ],
+   "context": "An organism is one living thing, the lowest level of ecological organisation, and her one fox is one organism. Every level above it, from the population up to the ecosystem, is built of many organisms.",
+   "facts": [
+    "F1",
+    "F2",
+    "F6",
+    "F7",
+    "F10",
+    "F28"
+   ],
+   "grade_note": "The organism, one living thing, is the first level in the 6th-grade hierarchy of organism, population, community and ecosystem (TEKS 6.12C)."
+  },
+  {
+   "tier": 2,
+   "topic": "populations-communities-ecosystems",
+   "question": "A student wades along the edge of a pond with a notebook and lists its community: the fish, frogs, insects and birds that live there. What, if anything, has she left out?",
+   "answer": "Its plants, algae and bacteria",
+   "choices": [
+    "Its plants, algae and bacteria",
+    "Its water, mud and sunlight",
+    "The people of the nearest town",
+    "Nothing, since a community is its animals"
+   ],
+   "context": "A pond's community is every population of living things in it, of every kind: plants, algae, bacteria and fungi as well as animals. Its water, mud and sunlight are nonliving, so they join in only at the next level up, the ecosystem, and people living in a town some way off are not in the pond's area at all.",
+   "facts": [
+    "F6",
+    "F7",
+    "F22",
+    "F30",
+    "M2",
+    "M5",
+    "M6"
+   ],
+   "grade_note": "6th graders learn that a community is all the populations of living things in an area, of every kind, and that the nonliving surroundings join only in the ecosystem (TEKS 6.12C)."
+  },
+  {
+   "tier": 2,
+   "topic": "populations-communities-ecosystems",
+   "question": "Scientists have found living microbes tens of kilometres up in the air, and tiny shrimp-like animals crawl on the floor of the deepest ocean trench, nearly 11 kilometres down. All of Earth's ecosystems, taken together, form the highest level of ecological organisation. What is it called?",
+   "answer": "The biosphere",
+   "choices": [
+    "The biosphere",
+    "The biome",
+    "The atmosphere",
+    "The hydrosphere"
+   ],
+   "context": "The biosphere is every ecosystem on Earth, the whole zone where life is found. A biome, such as a desert or a rainforest, is one great region of similar ecosystems within it, while the atmosphere is Earth's air and the hydrosphere all its water, and living things reach into parts of both.",
+   "facts": [
+    "F8",
+    "F9",
+    "F13",
+    "F23",
+    "F24",
+    "F25",
+    "F26"
+   ],
+   "grade_note": "Texas's older 6th-grade standard ran the levels of organisation on to the biosphere, the top level, and Earth's spheres are taught beside it."
+  },
+  {
+   "tier": 2,
+   "topic": "populations-communities-ecosystems",
+   "question": "In one forest, the trees draw nitrogen, a nutrient, up from the soil through their roots and drop it again in their fallen leaves. Fungi and bacteria rot the leaves and return the nitrogen to the soil. Which level of organisation does an ecologist study when she follows this loop?",
+   "answer": "The ecosystem",
+   "choices": [
+    "The ecosystem",
+    "The community",
+    "The population",
+    "The biosphere"
+   ],
+   "context": "The loop runs between living things, the trees, fungi and bacteria, and a nonliving part, the soil, so it belongs to the ecosystem, the community together with its surroundings. A study of the trees, fungi and bacteria alone would stop at the community, and the biosphere is all of Earth's ecosystems, not one forest.",
+   "facts": [
+    "F7",
+    "F17",
+    "F18",
+    "F8"
+   ],
+   "grade_note": "6th graders learn that an ecosystem joins a community to its nonliving surroundings, and a nutrient passing between soil and living things is the plainest case."
+  },
+  {
+   "tier": 2,
+   "topic": "populations-communities-ecosystems",
+   "question": "A small town is home to people, dogs, pigeons, oak trees, lawns and the bacteria in its soil, among its roads and houses. To an ecologist, where do the town's people belong in its levels of organisation?",
+   "answer": "In its community, as one population",
+   "choices": [
+    "In its community, as one population",
+    "In its ecosystem, but not its community",
+    "Outside its ecosystem, apart from nature",
+    "In a separate community of their own"
+   ],
+   "context": "People are living things of one species, so the town's people are a population, and with the dogs, pigeons, trees, grass and bacteria they make up the town's community; the roads, houses and soil join them in its ecosystem. Everyday speech calls a town's people its community, but to an ecologist one species alone is never a community.",
+   "facts": [
+    "F2",
+    "F6",
+    "F19",
+    "M4",
+    "M6"
+   ],
+   "grade_note": "6th graders sort real cases into the levels of organisation, and teachers report that students leave people out of ecosystems."
+  },
+  {
+   "tier": 2,
+   "topic": "populations-communities-ecosystems",
+   "question": "Under one rotting log, in a patch of forest floor about 30 centimetres across, live beetles, ants, pill bugs, fungi and a salamander. Across many kilometres of the same forest, an ecologist counts the eastern gray squirrels. Which of the two groups sits at the higher level of organisation?",
+   "answer": "The log's group, since it holds many species",
+   "choices": [
+    "The log's group, since it holds many species",
+    "The squirrels, since they cover far more ground",
+    "The squirrels, since each is a larger animal",
+    "Neither, since each group is one population"
+   ],
+   "context": "The life under the log is a community, populations of several species living together, however small the patch. The squirrels, spread over far more ground, are still one species and so one population, for the step from population to community adds more kinds of living things, not more land.",
+   "facts": [
+    "F11",
+    "F12",
+    "F21",
+    "F6",
+    "F2",
+    "F29",
+    "M3",
+    "M1"
+   ],
+   "grade_note": "TEKS 6.12C has 6th graders order organism, population and community, and teachers stress that the step from population to community adds kinds of living things, not area."
+  }
+ ],
+ "revised": {
+  "73e30e11a2": {
+   "old_hash": "2f6818056e",
+   "why": "Judge (medium grade): counting the tadpoles was everyday sense, and the line's other half, one species in ONE area, was asked nowhere. Re-aimed on the same definition (F2, F3) as the judge proposed: two ponds whose frogs never cross, each with tadpoles and grown frogs. 'Never cross' (not 'almost never') keeps the ponds from being one linked population (F27). The key is reworded so that 'pond' is shared with a wrong choice."
+  },
+  "5940a4e355": {
+   "old_hash": "12ce6d59c6",
+   "why": "Judge (medium grade): the key was the only nonliving choice among three living ones, so the T1 living-and-nonliving fact picked it as the odd one out. Asked now from the community side of the same line (F6): a list of only animals, with wrong choices for the real mix-ups (the community is the ecosystem, M2; a community is only animals; the everyday 'community' of people, M6). The key is no longer the odd one out in form."
+  },
+  "abb327d477": {
+   "old_hash": "89f15ef1c3",
+   "why": "Fact-check error: the stem gave 10 km as the top of life's reach, but living microbes have been recovered from 20 to 41 km up (F24); it now says 'tens of kilometres up' and no longer calls either height a limit. Judge (medium tell): the stem opened on 'Life', and three wrong choices named other spheres by their roots; the opener is gone and 'The biome', a second bio- word (F26), replaces the geosphere. Lead's ruling: this unit keeps the biosphere as the top level."
+  },
+  "373855b060": {
+   "old_hash": "14533a8d14",
+   "why": "Fact-check error: the context and grade note made 'a step up adds kinds, not land' a rule for every step; it holds only for population to community (F29), and both now say so. Judge (low): the stem mixed a square foot with kilometres; the patch is now about 30 centimetres across. Choices and key unchanged."
+  }
+ },
+ "added": {
+  "9cf06b8b35": "Replaces f5e6d15591, as the judge proposed: the organism, the first level of G6.L6, was asked nowhere in the unit. Facts F1, F10 and F28 (Grokipedia Ecology and Red fox, read 2026-11-26). The stem avoids 'organisation', which would echo the key's root."
+ },
+ "dropped": [
+  {
+   "old_hash": "f5e6d15591",
+   "question": "In the levels of ecological organisation, a community sits one level above a population. What makes the community the higher level?",
+   "why": "Judge (medium): it asked the same fact as the rotting-log item (a community is above a population because it holds many species), and its stem struck the lure 'It is one part of a larger population'. The organism level, asked nowhere in the unit, takes its place."
+  },
+  {
+   "old_hash": "d283e1020c",
+   "question": "Every ecosystem on Earth, from a pond to an ocean, belongs to one great whole, the top level of ecological organisation. Scientists know of no other planet or moon with ecosystems of its own. Why not?",
+   "why": "Judge (high, drop): it re-asks T1 the-sun-and-its-planets ('Earth is the only planet known to have living things'), and its why was circular; its lures were struck by T1 solar-system facts. Lead's notes agree."
+  }
+ ]
+}
