@@ -1,0 +1,66 @@
+{"unit": "ecosystems-living-and-nonliving",
+ "questions": {
+  "f1302093f5": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "Two of the wrong choices, 'A community' and 'A population', are the vocabulary of the T2 unit populations-communities-ecosystems, whose core comparison is 'an ecosystem is the community plus its nonliving surroundings'. This question is in this unit's scope (ecosystem = living + nonliving), but it is the first step of that T2 comparison. A 5th grader reads 'community' in its everyday sense, so the choice stays live and the question is sound.",
+     "fix": "Keep the question; tell the T2 writer that the ecosystem-vs-community fact is asked here, so the T2 unit should ask about community and population themselves (e.g. which level holds only one kind), not ask again which word covers the living and the nonliving together."},
+    {"axis": "clarity", "severity": "low",
+     "what": "The stem is 57 words, the longest in the unit (length budget over cap). The opening clause adds length without helping.",
+     "fix": "Trim: 'A tide pool on a rocky shore holds snails, crabs, seaweed and tiny fish, with the seawater, the rocks and the sunlight all around them. What is the name for all of these together, the living and the nonliving, acting on one another?'"}
+   ]},
+  "999af44500": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem defines 'biotic' as 'living', so what is left to answer is 'which of moss, wind, water and clouds is alive?', which children can answer well before grade 5. The 5th-grade fact, the term itself, is given away rather than tested, and the answer is the only living thing among the four. It also overlaps food-chains-and-food-webs, whose producer question already has 'The moss' (on rocks) as its answer and teaches 'moss is a small green plant that makes its own food'; this question's context gives the same reasoning.",
+     "fix": "Test the term, not the sort: 'In a mountain valley, the moss on the rocks, the deer in the meadow and the bacteria in the soil are all living parts of its ecosystem. What do ecologists call the living parts of an ecosystem?' Choices: 'Its biotic factors', 'Its abiotic factors', 'Its habitats', 'Its producers' (moss is a producer, but the deer and the bacteria are not). The moss then is no longer the answer, which clears the food-chains overlap. If the sort is kept instead, use a living thing that does not look alive and that no other unit uses, such as 'The seeds lying in the soil', against the wind, the water and the clouds."}
+   ]},
+  "a20036bb7c": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "medium",
+     "what": "The stem defines abiotic factors as 'the nonliving parts of an ecosystem'. Nectar is a sweet liquid and is not alive, so a careful student can defend 'A bee sipping nectar from a cactus flower' as an animal using a nonliving thing. That makes two defensible answers. The context's reading, that the bee is using the flower, is not what the choice says.",
+     "fix": "Replace the bee choice with one where the thing used is plainly alive: 'A bird nesting inside a tall cactus'. Keep the lizard, the hawk and the rabbit."},
+    {"axis": "other", "severity": "low",
+     "what": "The same scene, a desert lizard with a hawk nearby, is the camouflage question in adaptations-built-for-a-place (a sandy-brown lizard on desert sand with a hawk overhead). The facts are different, but a player meets the same picture twice.",
+     "fix": "Move one of the two scenes: here, 'A snake warming itself on a sunny rock' works just as well; or change the other unit's camouflage animal."}
+   ]},
+  "4544ce5ce3": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "Lane. The stem is built from one named species' own natural history (the mountain lion hunts deer, uses a hidden den, needs a large range: F12), which belongs to the animal bank. The fact asked, what a habitat is, is general science and does not need any one species.",
+     "fix": "Use a general frame: 'A forest gives the animals that live in it food to eat, streams to drink from, places to hide and rest, and room enough to roam. What is the forest to each of these animals?' Answer 'Its habitat'. Keep 'Its shelter' and 'Its niche'."},
+    {"axis": "tell", "severity": "low",
+     "what": "'Its climate' is the weakest choice: few 5th graders would call a forest an animal's climate.",
+     "fix": "Optional: replace it with 'Its food web', which the same grade learns. A forest has a food web, but a forest is not one."}
+   ]},
+  "c3bf16afde": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Many kinds of living things' is the 'variety is good' answer a test-wise child leans to. Also, 'only the strongest kinds' is vague: a student could read 'strongest' as 'drought-hardy' and argue for it. The opening sentence ('Ecologists judge ... in several ways') adds length without content.",
+     "fix": "Optionally sharpen the lure to 'One with only its biggest, toughest kinds' and cut the first sentence to 'Some ecosystems stand up to trouble better than others.'"}
+   ]},
+  "bb08c5a01e": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The answer is the only hedged choice ('Some ...'), and every wrong choice is absolute ('the plants all live on', 'the animals all stay on', 'Each animal changes ...'). A test-wise student picks the one choice with no 'all' or 'each', without knowing what happens in a drought. It is also the only choice that names more than one outcome.",
+     "fix": "Take the absolutes out of the wrong choices so all four read alike: 'Some die or leave, and new kinds move in' / 'The animals leave, but the plants stay and grow' / 'The plants die, but the animals stay on' / 'The animals change their bodies to need less water'."},
+    {"axis": "other", "severity": "low",
+     "what": "The lure 'Each animal changes its body to need less water' depends on the fact that adaptations-built-for-a-place asks outright (adaptations are inherited, not grown in one lifetime: its webbed-feet question). Here it is only a wrong choice, so this is not an overlap of asked facts.",
+     "fix": "None needed; keep the correction in this context brief, as it is."}
+   ]},
+  "5a79ebebca": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'trees, stumps and all' points straight at the roots, and the answer is the only choice that connects to what the trees did. 'The soil turns to sand without shade' is not a misconception a 5th grader holds, so only three choices are live.",
+     "fix": "Stem: 'Workers cut every tree from a steep hillside and clear the ground bare to make way for new houses. In the next heavy rains, much of the hill's soil washes down into the valley below. Why does the soil wash away so easily now?' Replace 'The soil turns to sand without shade' with 'The soil is lighter without the trees on it', a child's idea that heavy trees press the soil down. Keep 'The soil has lost its nutrients' and 'Rain soaks into bare ground faster'."}
+   ]},
+  "97fd28a48d": {"verdict": "ok",
+   "issues": []},
+  "0af7a18750": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Planting ...' is the choice children are taught to call green. The three lures (mowing, clearing logs, feeding bread) are honest tidy-or-kind misconceptions, so the question holds.",
+     "fix": "None needed."}
+   ]}
+ },
+ "unit_notes": "Scope covered: what an ecosystem is (f130), biotic and abiotic parts (999a, a200), habitat (4544), a healthy ecosystem (c3bf), drought (bb08), forest clearing (5a79), pollution (97fd) and people helping (0af7). No core fact is missing. Within the unit, 999a and a200 both come down to 'pick the one living (or nonliving) thing after the stem defines the term'; the 999a fix (ask for the term) separates them. 5a79 (roots hold soil) and 0af7 (shore plants catch runoff and hold the bank) share a reason in their contexts but ask different facts; that is fine. OVERLAPS: (1) 999a vs food-chains-and-food-webs' producer question: same answer item, moss on the rocks, and the same 'a green plant that makes its own food' reasoning. The fix is in 999a (make the term the answer, or use seeds). (2) a200's desert lizard and hawk vs the adaptations-built-for-a-place camouflage question's sandy lizard under a circling hawk: different facts, same scene. Change one of them. (3) bb08's lure 'Each animal changes its body' rests on the adaptations unit's inherited-not-grown fact. It is only a wrong choice here, so no change. (4) f130 vs the T2 unit populations-communities-ecosystems: the ecosystem-vs-community fact is asked here, so the T2 unit must key on community and population themselves. (5) Checked and clear: 4544's habitat vs food-chains' 'A habitat' distractor; 5a79 vs roots-stems-leaves-and-flowers' roots question (anchoring the plant there, holding the soil here); 97fd's algae rotting vs decomposers-and-recycling-matter (context only, no shared question). LANE: 4544 is built on the mountain lion's own natural history; reframe it generally. No named places appear in any stem."}

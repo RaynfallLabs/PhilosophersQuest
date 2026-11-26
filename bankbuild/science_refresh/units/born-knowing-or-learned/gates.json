@@ -1,0 +1,64 @@
+{
+ "kind": "final",
+ "unit": [],
+ "questions": {
+  "d7af21e4c2": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "ad7c7c7379": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "d13dab9ea2": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 353 chars > tier 1 hard cap 294 (target 280 + 5%)"
+   ],
+   "flag": []
+  },
+  "5707d900a7": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 305 chars > tier 1 hard cap 294 (target 280 + 5%)"
+   ],
+   "flag": []
+  },
+  "4d7ce512e6": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "fd8d06002c": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 442 chars > tier 1 hard cap 294 (target 280 + 5%)",
+    "voice: long(50>45)"
+   ],
+   "flag": []
+  },
+  "61b71e1584": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "90ea79e4bf": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 314 chars > tier 1 hard cap 294 (target 280 + 5%)"
+   ],
+   "flag": []
+  }
+ },
+ "n_fail": 0
+}

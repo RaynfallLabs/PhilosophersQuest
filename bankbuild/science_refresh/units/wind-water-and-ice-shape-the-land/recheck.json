@@ -1,0 +1,15 @@
+{"unit": "wind-water-and-ice-shape-the-land",
+ "questions": {
+  "fcb178685b": {"verdict": "pass",
+   "why": "Overlap with mixtures-and-solutions gone: it now keys where frost splits rock fastest, and the stem no longer says 'freezing and thawing'. Grokipedia Frost weathering: most prevalent 'where freeze-thaw cycles are frequent', 'less pronounced in continuous permafrost', repeated cycles do more damage than prolonged single freezing, best in a -3 to -8 C window (so bitter cold is no help). All three lures wrong; choices parallel; NGSS 4-ESS2-1 freeze-thaw content.",
+   "sources": ["https://grokipedia.com/page/Frost_weathering", "https://en.wikipedia.org/wiki/Frost_weathering"]},
+  "e8a589793b": {"verdict": "pass",
+   "why": "'Stretches' replaces the river-cue 'winds'; the glacier lure is live and wrong (U-shaped valleys have broad floors and are wider than river incision; canyons are narrow, V-shaped, cut by rivers abrading like sandpaper over millions of years). Earthquake and wind lures wrong. Unnamed plateau, in lane.",
+   "sources": ["https://grokipedia.com/page/Canyon", "https://grokipedia.com/page/U-shaped_valley"]},
+  "cdb066effb": {"verdict": "pass",
+   "why": "Context error fixed: 'ordinary rock is two to three times as dense as water, so a boulder like these never floats' is true (common rock 2.5-3.0, sandstone down to about 2.0-2.2; pumice, 0.25-0.75, is excluded by 'like these'). Key true (competence rises with velocity squared). The judge's low on the weak wind lure remains, with a sound reason for keeping it; two lures stay live.",
+   "sources": ["https://grokipedia.com/page/Pumice", "https://grokipedia.com/page/Rock_(geology)", "https://grokipedia.com/page/Hjulstr%C3%B6m_curve"]},
+  "cbcc129cf1": {"verdict": "pass",
+   "why": "The fast-verb cue 'pouring' is gone and the roots key no longer recurs; 'A river building a delta at its mouth' is a live slow lure (thousands of years). Landslides: gravity-driven, rain and earthquake triggers, fastest classes over in seconds to minutes. Dunes migrate 1-50 m a year and glaciers centimetres to metres a day, so no lure works in minutes.",
+   "sources": ["https://grokipedia.com/page/Landslide", "https://en.wikipedia.org/wiki/River_delta", "https://grokipedia.com/page/Dune"]}
+ }}

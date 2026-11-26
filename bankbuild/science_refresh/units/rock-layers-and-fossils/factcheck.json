@@ -1,0 +1,393 @@
+{
+ "unit": "rock-layers-and-fossils",
+ "questions": {
+  "0fa3ec4aad": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: loose bits of rock, sand, mud and shell that settle in layers on a lake floor are called sediment",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sediment",
+     "note": "Grokipedia: sediment is solid particles mostly broken from older rock, including shell fragments; in lakes fine muds settle out of still water in layers."
+    },
+    {
+     "claim": "Wrong choice: bedrock is solid rock under soil and sediment, not loose settled material",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Bedrock",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: magma is melted rock underground (lava at the surface), not settled grains",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Magma",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: humus is the rotted organic part of soil, not settled rock, sand, mud and shell",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Humus",
+     "note": "Lake floors can hold organic-rich mud, but the stem names rock, sand, mud and shell, so humus cannot be defended."
+    },
+    {
+     "claim": "Context: water, wind or ice carry sediment and drop it elsewhere in layers",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sediment",
+     "note": "Grokipedia lists water, wind, ice (and gravity) as the agents."
+    }
+   ]
+  },
+  "0263ee3155": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: loose sand and mud become rock by being pressed together (compaction) and glued by minerals (cementation)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lithification",
+     "note": "Compaction by overburden squeezes out pore water; cementation by calcite, silica or iron oxides precipitated from groundwater binds the grains."
+    },
+    {
+     "claim": "Wrong choice: dried out and baked hard by the Sun is not how rock forms",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lithification",
+     "note": "Sun-drying is not a lithification mechanism; dried mud is not rock. Matches the misconception in Kesler Science TEKS 5.10B."
+    },
+    {
+     "claim": "Wrong choice: melted together by heat makes igneous rock, not sandstone or shale",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lithification",
+     "note": "Melting appears only under metamorphism / igneous processes, not lithification."
+    },
+    {
+     "claim": "Wrong choice: frozen together by ice is not lithification",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lithification",
+     "note": "Frozen ground thaws; it is not rock."
+    },
+    {
+     "claim": "Context: weight of layers above presses grains and squeezes out water; minerals in the water glue them; takes thousands to millions of years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lithification",
+     "note": "Grokipedia: lithification 'typically unfolds over thousands to millions of years following deposition'."
+    }
+   ]
+  },
+  "31c8e94325": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Key: shells, skeletons and coral bits piled on a warm shallow sea floor become limestone",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Limestone",
+     "note": "Most limestone grains are skeletal fragments of marine organisms (corals, forams, molluscs); Grokipedia: limestone typically forms in warm, shallow marine environments. The stem says 'this way' and describes the shell-and-coral route, so the chemically formed limestones do not make the wording unsafe."
+    },
+    {
+     "claim": "Wrong choice: sandstone forms from (mostly quartz) sand, not shells and coral",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Calcarenite",
+     "note": "Grokipedia Sandstone: grains mostly quartz. Wikipedia Calcarenite: a rock of sand-sized carbonate grains such as corals and shells is a limestone (calcarenite), so sandstone stays wrong for a shell-and-coral pile."
+    },
+    {
+     "claim": "Wrong choice: shale forms from mud (clay and silt)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Shale",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: coal forms from swamp plants",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coal",
+     "note": ""
+    },
+    {
+     "claim": "Context: limestone is made mostly of calcite and is often full of fossil shells",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Limestone",
+     "note": ""
+    },
+    {
+     "claim": "Context: calcite is 'the hard material of shells, corals and skeletons'",
+     "result": "error",
+     "source": "https://en.wikipedia.org/wiki/Limestone",
+     "note": "Wrong as stated. Coral skeletons and most mollusc shells are aragonite, not calcite (Wikipedia Limestone: aragonite is typical of molluscs and corals; Grokipedia Coral: stony coral skeletons are aragonite). Both are calcium carbonate; the aragonite turns to calcite in the rock over time. Vertebrate skeletons are bone, not calcite at all. Fix: 'Limestone is made mostly of calcium carbonate, the hard material of shells and corals, and it is often full of fossil shells.'"
+    },
+    {
+     "claim": "Context: sandstone from sand, shale from mud, coal from the plants of ancient swamps",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coal",
+     "note": ""
+    }
+   ]
+  },
+  "5908ed1f10": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: quick burial by mud and sand gives remains the best chance of becoming a fossil",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Fossil",
+     "note": "Wikipedia: the organism must be covered by sediment soon after death or scavengers and decomposition destroy the remains. Grokipedia Fossil: rapid burial shields remains from scavengers and weathering; oxygen-poor lake bottoms slow decay."
+    },
+    {
+     "claim": "Stem: most living things never become fossils",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Fossil",
+     "note": "Organisms are 'only rarely preserved as fossils in the best of circumstances'."
+    },
+    {
+     "claim": "Wrong choice: lying uncovered for many years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fossil",
+     "note": "Exposure lets scavengers, weathering and decay destroy remains."
+    },
+    {
+     "claim": "Wrong choice: scavengers picking the bones clean",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Fossil",
+     "note": "Scavenging is named as a destroyer of remains, not a help."
+    },
+    {
+     "claim": "Wrong choice: waves washing it up onto the shore",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fossil",
+     "note": "Being stranded exposed on a shore is not burial; it is not the best chance."
+    },
+    {
+     "claim": "Context: quick cover keeps scavengers away and slows rotting; hard bones last; few living things become fossils",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fossil",
+     "note": "Grokipedia: hard parts such as bone and shell persist longer than soft tissue."
+    }
+   ]
+  },
+  "3f87743dde": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: lava's heat destroys dead plants and animals, so lava rock holds so few fossils",
+     "result": "ok",
+     "source": "https://www.nps.gov/subjects/fossils/volcanoes-and-fossils.htm",
+     "note": "NPS: 'Due to their high temperatures, lava flows typically rapidly incinerate organic material. Therefore, fossils are rarely present in lava flows.'"
+    },
+    {
+     "claim": "Stem: fossils almost never found in rock formed from lava (exceptions such as tree molds)",
+     "result": "ok",
+     "source": "https://www.nps.gov/articles/000/lava-tree-mold-fossils.htm",
+     "note": "Lava tree molds (and the rare Blue Lake Rhino mold in Washington basalt) exist, but NPS calls tree molds 'the main exception' to fossils being rare in lava. The stem says 'almost never' and 'so few', so the exceptions do not break it; tree molds themselves form because the heat burns the tree away, which agrees with the key."
+    },
+    {
+     "claim": "Stem: fossils found again and again in sandstone and shale",
+     "result": "ok",
+     "source": "https://www.discovermagazine.com/why-are-fossils-only-found-in-sedimentary-rocks-44759",
+     "note": "Fossils are most commonly found in sedimentary rock (Wikipedia Sedimentary rock; Discover)."
+    },
+    {
+     "claim": "Wrong choice: no plants or animals lived near volcanoes",
+     "result": "ok",
+     "source": "https://www.nps.gov/subjects/fossils/volcanoes-and-fossils.htm",
+     "note": "Ash beds near volcanoes preserve many plants and animals; life plainly lived there."
+    },
+    {
+     "claim": "Wrong choice: lava rock formed before life began",
+     "result": "ok",
+     "source": "https://www.nps.gov/subjects/fossils/volcanoes-and-fossils.htm",
+     "note": "Lava flows with tree molds are only a few thousand years old; lava rock forms today."
+    },
+    {
+     "claim": "Wrong choice: lava rock is too hard for fossils to form in",
+     "result": "ok",
+     "source": "https://www.nps.gov/subjects/fossils/volcanoes-and-fossils.htm",
+     "note": "The reason given by NPS is heat, not hardness; hard sedimentary rocks such as limestone are full of fossils."
+    },
+    {
+     "claim": "Context: melted rock wipes away remains; sandstone, shale, limestone are sedimentary and bury remains without that heat, so most fossils are in them",
+     "result": "ok",
+     "source": "https://www.discovermagazine.com/why-are-fossils-only-found-in-sedimentary-rocks-44759",
+     "note": "Wikipedia Sedimentary rock: sedimentary rocks form at temperatures and pressures that do not destroy fossil remnants."
+    }
+   ]
+  },
+  "593e91cb41": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a leaf print counts as a fossil because it is a print left by a living thing",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fossil",
+     "note": "Grokipedia: a fossil is any preserved evidence of past life, including remains, impressions or traces; impression fossils keep no original material."
+    },
+    {
+     "claim": "Wrong choice: any shape found inside a rock is a fossil",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fossil",
+     "note": "Pseudofossils (dendrites, concretions, crystal growths) look like fossils but are non-biological, so not every shape is a fossil."
+    },
+    {
+     "claim": "Wrong choice: a fossil must be a bone, tooth or shell",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Fossil",
+     "note": "Definition includes impressions and traces."
+    },
+    {
+     "claim": "Wrong choice: a fossil must be a piece of the living thing",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Fossil",
+     "note": "Impressions and traces count."
+    },
+    {
+     "claim": "Fern prints are kept in fine-grained rock such as shale",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Fossil",
+     "note": "Wikipedia: 'Compression fossils, such as those of fossil ferns'; when the carbon film is lost only an impression remains."
+    },
+    {
+     "claim": "Context: usually more than 10,000 years old",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fossil",
+     "note": "Grokipedia: 'typically dates to more than 10,000 years ago'; Wikipedia: 'over 10,000 years old'."
+    },
+    {
+     "claim": "Context: footprints and burrows are fossils; a shape no living thing made is not",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fossil",
+     "note": "Trace fossils include footprints and burrows; pseudofossils are non-biological."
+    }
+   ]
+  },
+  "033887fd16": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: fossil corals and starfish on dry land show an ocean once covered it",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/3-ls4-1-biological-evolution-unity-and-diversity",
+     "note": "NGSS 3-LS4-1 example: 'marine fossils found on dry land'. Real case: Kansas wheat country sits on rock laid down under ancient seas full of corals and crinoids (Kansas Geological Survey, https://www.kgs.ku.edu/Publications/primer/03_fossils.html). 'Ocean' for a shallow or inland sea is a fair grade-5 simplification; the context says 'seawater'."
+    },
+    {
+     "claim": "Starfish live only in the sea",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Starfish",
+     "note": "'exclusively marine invertebrates', 'entirely absent from freshwater habitats'; starfish fossils exist from the Ordovician on."
+    },
+    {
+     "claim": "Corals live only in the sea, never in lakes or rivers",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coral",
+     "note": "Corals are marine invertebrates (salinity 27-40 ppt); Anthozoa are exclusively marine; freshwater look-alikes (sponges, Hydra) are not corals."
+    },
+    {
+     "claim": "Wrong choices: a lake, a river, a glacier",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Starfish",
+     "note": "No coral or starfish lives in fresh water or ice, so none of these can explain the fossils."
+    },
+    {
+     "claim": "Context: fossils tell what a place was like long ago",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fossil",
+     "note": "Fossils reveal past environmental conditions."
+    }
+   ]
+  },
+  "1993ea8714": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: amber was sticky resin oozing from a tree when the insect was trapped",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Amber",
+     "note": "'fossilized tree resin, primarily from ancient coniferous species'; resin 'initially viscous and adhesive', trapping small arthropods."
+    },
+    {
+     "claim": "Wrong choice: honey from a hive",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Amber",
+     "note": "Amber is tree resin, not honey."
+    },
+    {
+     "claim": "Wrong choice: soft mud at a pond's edge",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Amber",
+     "note": "Mud becomes shale, not clear golden amber."
+    },
+    {
+     "claim": "Wrong choice: thick tar seeping from the ground",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Amber",
+     "note": "Tar (asphalt) seeps do trap animals and insects, but they do not become amber; amber is tree resin. Not defensible as the answer."
+    },
+    {
+     "claim": "Stem: amber millions of years old, clear and golden",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Amber",
+     "note": "Amber forms over millions of years (copal is the younger stage); colours pale yellow through golden, orange, reddish-brown; transparent to opaque."
+    },
+    {
+     "claim": "Context: resin is 'a sticky gum'",
+     "result": "uncertain",
+     "source": "https://en.wikipedia.org/wiki/Resin",
+     "note": "Wikipedia Resin: resins 'should not be confused with gums', which are water-soluble polysaccharides; resins are insoluble terpenes, though the words 'are often interchangeable in the less formal context'. Calling resin a gum is loose in a question whose point is the exact word (resin, not sap). Fix: 'Amber is tree resin, a thick, sticky liquid that oozes from some trees; many books call it sap.'"
+    },
+    {
+     "claim": "Context: many books call it sap",
+     "result": "ok",
+     "source": "https://ucmp.berkeley.edu/paleo/fossils/amber.html",
+     "note": "True as a statement about books (the Bridgewater State lesson says 'sap'); the scientific word is resin, and sap is a different, watery fluid. The context does not endorse sap."
+    },
+    {
+     "claim": "Context: buried resin hardened over millions of years into amber with the insect inside",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Amber",
+     "note": "Resin polymerizes after burial, through copal, into amber over millions of years."
+    }
+   ]
+  },
+  "ebdd549f23": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: most oil formed from tiny living things adrift in the sea (plankton and algae)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Petroleum",
+     "note": "'organic remains of ancient planktonic and algal organisms deposited in marine sediments'. Marine source rocks are commonly cited as sourcing about 85% or more of recoverable oil; some oil comes from lake algae, so 'most' is the right word and is in the stem."
+    },
+    {
+     "claim": "Wrong choice: dinosaurs",
+     "result": "ok",
+     "source": "https://www.sciencenorway.no/a/2024040",
+     "note": "Reidar Mueller (University of Oslo): oil as 'a kind of dinosaur soup' is 'pure fantasy'; oil 'comes from trillions of tiny algae and plankton'."
+    },
+    {
+     "claim": "Wrong choice: trees of swampy forests",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Source_rock",
+     "note": "Land-plant matter (Type III kerogen) makes coal and mostly gas with some light oil; it is not the source of most oil, so the choice is wrong for 'most'."
+    },
+    {
+     "claim": "Wrong choice: whales",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Petroleum",
+     "note": "Oil's source is plankton and algae; whales are not named as a source (and most source rocks are older than whales)."
+    },
+    {
+     "claim": "Stem: buried and slowly cooked by heat and pressure over millions of years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Petroleum",
+     "note": "Oil window about 60-120 C at 2,000-4,000 m; takes 10-100 million years."
+    },
+    {
+     "claim": "Context: natural gas often forms alongside oil",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Petroleum",
+     "note": "Catagenesis releases liquid hydrocarbons together with methane and wet gases."
+    },
+    {
+     "claim": "Context: coal, not oil, formed mostly from ancient swamp plants",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coal",
+     "note": "Coal formed from plant matter in ancient wetlands and peat mires."
+    }
+   ]
+  }
+ },
+ "unit_notes": "One error and one uncertain, both in contexts; every key and every wrong choice holds. Q3 (limestone) context calls calcite 'the hard material of shells, corals and skeletons': corals and most mollusc shells are aragonite, and bone is not calcium carbonate, so say 'calcium carbonate, the hard material of shells and corals'. Q8 (amber) context calls resin 'a sticky gum'; resin and gum are chemically different, so use 'a thick, sticky liquid'. Points the lead asked about: 'almost no fossils' in lava rock is safe (NPS: fossils rarely present in lava flows; lava tree molds are 'the main exception'); amber as resin, never sap, is right and sap is not a wrong choice; the limestone stem says 'this way' about the shell route, so chemical limestones do not make it unsafe, and a shell-sand rock is still limestone (calcarenite), not sandstone; quick burial and compaction plus cementation check out; oil from marine plankton is right and 'trees' is wrong for 'most'."
+}

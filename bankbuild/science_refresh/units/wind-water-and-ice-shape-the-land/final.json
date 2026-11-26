@@ -1,0 +1,200 @@
+{
+ "unit": "wind-water-and-ice-shape-the-land",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "wind-water-and-ice-shape-the-land",
+   "question": "Geologists use two words for the ways water, wind and ice wear the land down: weathering and erosion. What is the difference between the two?",
+   "answer": "Weathering breaks rock up, and erosion carries it away",
+   "choices": [
+    "Weathering breaks rock up, and erosion carries it away",
+    "Erosion breaks rock up, and weathering carries it away",
+    "Weathering happens slowly, and erosion happens fast",
+    "Weathering happens on land, and erosion happens in water"
+   ],
+   "context": "Weathering breaks rock into smaller pieces where it lies, the work of ice in cracks, growing roots and blown sand. Erosion carries the pieces off by running water, wind, ice or gravity, and deposition drops them somewhere new. Either one can be slow or fast, on land or under the sea.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F20"
+   ],
+   "grade_note": "Telling weathering (breaking in place) from erosion (carrying away) is the core of TEKS 5.10C and NGSS 4-ESS2-1, and mixing up the two words is a well-studied student error."
+  },
+  {
+   "tier": 1,
+   "topic": "wind-water-and-ice-shape-the-land",
+   "question": "Rain seeps into the cracks of rocks, and where the weather turns cold, the water in the cracks can freeze and split the rock apart. Where does freezing water split rock fastest?",
+   "answer": "Where it freezes and thaws again and again",
+   "choices": [
+    "Where it freezes and thaws again and again",
+    "Where the ground stays frozen all year round",
+    "Where it freezes hard just once each winter",
+    "Where the winter cold is the most bitter"
+   ],
+   "context": "Ice pushes a crack a little wider each time it forms, and each thaw lets water seep deeper before the next freeze, so rock breaks fastest where the temperature swings above and below freezing again and again, as on high mountains. Rock that stays frozen all year, or freezes only once a winter, cracks far more slowly, however bitter the cold.",
+   "facts": [
+    "F5",
+    "F22"
+   ],
+   "grade_note": "NGSS 4-ESS2-1 names cycles of freezing and thawing as a cause of weathering, and that rock cracks fastest where those cycles come often is the point of the standard 5th-grade freeze-thaw lesson."
+  },
+  {
+   "tier": 1,
+   "topic": "wind-water-and-ice-shape-the-land",
+   "question": "A seed lands in a narrow crack in a boulder and sprouts into a young tree, sending its roots down into the crack. What will the roots do to the boulder over many years?",
+   "answer": "Push the crack wider until the rock splits",
+   "choices": [
+    "Push the crack wider until the rock splits",
+    "Hold the two sides of the crack together",
+    "Fill the crack so no water can freeze in it",
+    "Do nothing, since rock is too hard for roots"
+   ],
+   "context": "Roots thicken as they grow, and in a crack they pry the rock apart like a slowly driven wedge, which is a kind of weathering. In loose soil roots do the opposite and hold it in place, but in solid rock they break it.",
+   "facts": [
+    "F8",
+    "F9"
+   ],
+   "grade_note": "Plant roots breaking rock is one of the weathering agents 5th graders learn (NGSS 4-ESS2-1 lists vegetation), alongside ice and wind."
+  },
+  {
+   "tier": 1,
+   "topic": "wind-water-and-ice-shape-the-land",
+   "question": "A deep, narrow canyon stretches for many kilometres across a high plateau. Its steep rock walls drop hundreds of metres to the canyon floor. What made the canyon?",
+   "answer": "A river slowly cutting down through the rock",
+   "choices": [
+    "A river slowly cutting down through the rock",
+    "An earthquake suddenly splitting the ground open",
+    "The wind slowly blowing the rock away",
+    "A glacier slowly scraping the rock away"
+   ],
+   "context": "Rivers carve canyons. The sand and stones in the water scrape the riverbed like sandpaper and cut it a little deeper each year, so a deep canyon can take millions of years. Earthquakes crack the ground but do not open canyons, and a glacier grinds out a wide valley shaped like a U, not a narrow canyon.",
+   "facts": [
+    "F11",
+    "F15",
+    "F20"
+   ],
+   "grade_note": "TEKS 5.10C names canyons as landforms 5th graders must explain, and the standard teaching is that a river cuts one over a very long time."
+  },
+  {
+   "tier": 1,
+   "topic": "wind-water-and-ice-shape-the-land",
+   "question": "A delta is a wide, flat stretch of land at the mouth of a river, where it flows into the sea. How does a delta form?",
+   "answer": "The river drops the mud and sand it carries",
+   "choices": [
+    "The river drops the mud and sand it carries",
+    "The river cuts the coast into a new shape",
+    "The wind heaps sand up along the shore",
+    "The ground there is pushed up from below"
+   ],
+   "context": "A river slows down as it runs into the still sea, and slow water cannot carry as much, so it drops its mud and sand. This dropping is called deposition, and over many years it builds new land out into the sea. The name comes from the Greek letter delta, a triangle, the shape many deltas take.",
+   "facts": [
+    "F4",
+    "F12"
+   ],
+   "grade_note": "TEKS 5.10C names deltas, and 5th graders learn that a delta is built where a river drops its sediment at its mouth."
+  },
+  {
+   "tier": 1,
+   "topic": "wind-water-and-ice-shape-the-land",
+   "question": "Water, wind and ice each build or carve their own kinds of landforms. Which of these landforms does the wind make?",
+   "answer": "Sand dunes",
+   "choices": [
+    "Sand dunes",
+    "Deltas",
+    "Canyons",
+    "U-shaped valleys"
+   ],
+   "context": "Wind bounces sand grains along close to the ground and drops them where it slows, heaping them into dunes in deserts and along beaches; the dunes creep downwind year by year. Rivers build deltas and cut canyons, and glaciers carve U-shaped valleys.",
+   "facts": [
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F15"
+   ],
+   "grade_note": "TEKS 5.10C names sand dunes beside deltas and canyons, and matching each landform to the wind, water or ice that made it is the standard 5th-grade task."
+  },
+  {
+   "tier": 1,
+   "topic": "wind-water-and-ice-shape-the-land",
+   "question": "High in the mountains, a valley has steep walls and a wide, rounded floor, so that it is shaped like the letter U. What carved this valley?",
+   "answer": "A glacier",
+   "choices": [
+    "A glacier",
+    "A river",
+    "The wind",
+    "An earthquake"
+   ],
+   "context": "A glacier is a huge mass of ice that creeps slowly downhill, grinding the rock with stones frozen into its base and tearing out blocks as it goes. It scrapes the sides as well as the floor and leaves a U shape. A river cuts mostly downward and leaves a narrower valley shaped like a V.",
+   "facts": [
+    "F14",
+    "F15"
+   ],
+   "grade_note": "The curriculum line for this grade (G5.E5) names glacier-carved valleys, and the U shape is the mark by which a glacier's valley is told from a river's V."
+  },
+  {
+   "tier": 1,
+   "topic": "wind-water-and-ice-shape-the-land",
+   "question": "On most days a mountain stream moves only sand and small pebbles. After a heavy storm it swells into a flood that sweeps boulders downstream. Why can the flood move the boulders?",
+   "answer": "The water is moving much faster",
+   "choices": [
+    "The water is moving much faster",
+    "The boulders float in the deeper water",
+    "The storm's wind pushes the boulders",
+    "The rain makes the riverbed slippery"
+   ],
+   "context": "The faster water flows, the bigger the rocks it can push and carry, so a flood moves boulders that sit still on a calm day. Ordinary rock is two to three times as dense as water, so a boulder like these never floats, however deep the stream.",
+   "facts": [
+    "F17",
+    "F18",
+    "F19",
+    "F23"
+   ],
+   "grade_note": "NGSS 4-ESS2-1 has students test how the slope and volume of flowing water change erosion, and floods are among the fast changes 5th-grade units teach."
+  },
+  {
+   "tier": 1,
+   "topic": "wind-water-and-ice-shape-the-land",
+   "question": "Most changes to the land are slow, taking thousands of years or more, but a few are fast. Which of these can change the land in a few minutes?",
+   "answer": "A landslide on a steep hillside",
+   "choices": [
+    "A landslide on a steep hillside",
+    "A glacier carving out a valley",
+    "A river building a delta at its mouth",
+    "The wind piling sand into a dune"
+   ],
+   "context": "In a landslide, gravity pulls a mass of rock and soil down a slope, often after heavy rain soaks the ground or an earthquake shakes it, and the fastest are over in seconds or minutes. Glaciers carve valleys, rivers build deltas and the wind heaps up dunes over many years.",
+   "facts": [
+    "F16",
+    "F20",
+    "F12",
+    "F13",
+    "F14",
+    "F24"
+   ],
+   "grade_note": "Students learn from 2nd grade (NGSS 2-ESS1-1) that Earth events can be quick or slow, and 5th-grade units on shaping the land add landslides and floods as the fast ones."
+  }
+ ],
+ "revised": {
+  "fcb178685b": {
+   "old_hash": "903abc790e",
+   "why": "Judge (medium): the key (water takes up more space as ice) and the weight lure were mixtures-and-solutions' frozen-bottle fact. Re-angled to the cracking rock, as the judge proposed: it now keys where frost splits rock fastest, where it freezes and thaws often (F5, F22; NGSS 4-ESS2-1's freeze-thaw cycles). The stem no longer says 'freezing and thawing'. Lures: ground frozen all year (Grokipedia: 'less pronounced in continuous permafrost zones lacking seasonal thaw periods'), one hard freeze a winter (few cycles), and the most bitter cold (the colder-is-better idea; ice segregation's cracking window is -3 to -8 degrees Celsius, F22). The expansion stays out of the context."
+  },
+  "e8a589793b": {
+   "old_hash": "e6b28d4f1a",
+   "why": "Judge (medium): 'winds' pointed at a river, and 'A volcano suddenly blasting the rock apart' was a weak lure. The canyon now 'stretches' across the plateau, and 'A glacier slowly scraping the rock away' replaces the volcano: a real process ruled out only by knowing that ice grinds out a wide U, not a narrow canyon (F15), which the context now says. Key unchanged."
+  },
+  "cdb066effb": {
+   "old_hash": "cdb066effb",
+   "why": "Fact-check (error): 'Rock is more than twice as dense as water, so a boulder never floats' is false for pumice, a rock that floats (F23), and porous sandstone is about 2.0 g/cm3. The context now says ordinary rock is two to three times as dense as water, so a boulder like these never floats (F19). Judge (low) on the wind lure: kept, since the suggested 'lighter once soaked' lure is partly true for a boulder under water (buoyancy). Stem, key and choices unchanged."
+  },
+  "cbcc129cf1": {
+   "old_hash": "cbcc129cf1",
+   "why": "Judge (medium): 'pouring' was the only fast verb among the choices, and 'Tree roots prying a boulder apart' was the roots question's key word for word. The key is now 'A landslide on a steep hillside', and 'A river building a delta at its mouth' (thousands of years, F24) replaces the roots. The context follows. Stem unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

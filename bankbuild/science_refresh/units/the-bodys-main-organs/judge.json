@@ -1,0 +1,46 @@
+{"unit": "the-bodys-main-organs",
+ "questions": {
+  "a5fff1e98b": {"verdict": "ok",
+   "issues": []},
+  "b0604aeb09": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The wrong choice 'It carries signals along the nerves' states, as a given, the answer to 40c88f27eb (nerves carry the brain's messages). A player who meets this question first is handed that one. The stem's head-to-toes framing also leans a little toward 'each part'.",
+     "fix": "Replace it with 'It carries the brain's orders to the muscles', which keeps the mix-up without naming nerves."}
+   ]},
+  "c8ea5dfced": {"verdict": "ok",
+   "issues": []},
+  "bae029bd7e": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "This is the easiest kind of T1 basic: 'a swallowed bite slides down a tube into' is the first stop after swallowing, and 'strong acid' pairs with 'stomach' in everyday speech. It is in scope and allowed as an almost-by-memory basic. 'The liver' is the weakest choice, because food never passes through it.",
+     "fix": "Optional: replace 'The liver' with 'The esophagus' (the tube itself, a fair 5th-grade confusion), and drop 'slides down a tube' so the stem gives only the acid and the churning."}
+   ]},
+  "a34afd22cb": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'It is soaked in strong acid' falls to the stem's 'After the stomach' for anyone who has met bae029bd7e. The answer also follows from b0604aeb09 (blood brings food to each part). Both are fair knowledge eliminations within one unit, not stem tells.",
+     "fix": "None needed. If desired, replace the acid choice with 'It is turned back into a thick soup', which keeps a stomach mix-up without the word acid."}
+   ]},
+  "40c88f27eb": {"verdict": "ok",
+   "issues": []},
+  "0fe702fd3c": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "'The skull guards the brain' is the most babyish fact in the unit (taught with the skeleton by grade 3). It is in scope and acceptable as a T1 basic, but it sits at the floor of the grade.",
+     "fix": "None required."}
+   ]},
+  "6afcbfbc63": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two of the wrong choices are not the same kind of answer. 'By pumping blood into it' and 'By sending a signal to it' are not ways to move a bone, so a 5th grader drops them, leaving pull against push. The stem's 'the hand rises toward the shoulder' then leans to pulling. In effect this is a coin flip with a hint.",
+     "fix": "Ask in a 2-by-2 so all four choices are live and the contraction is tested too (F20): 'By getting shorter and pulling it' (answer) / 'By getting longer and pushing it' / 'By getting longer and pulling it' / 'By getting shorter and pushing it'. The context already teaches that a working muscle gets shorter."}
+   ]},
+  "2fb8fb5a94": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The opening sentence ('Every organ in the body has its own job, and some organs are much bigger than others') is padding. The answer is famous trivia and the only organ on the outside, but that is the fact itself, not a tell.",
+     "fix": "Optional trim: 'Some of the body's organs are far bigger than others. Which organ is the largest in the human body?'"}
+   ]}
+ },
+ "unit_notes": "Scope covered: heart (a5ff), blood (b060), the lungs' waste gas (c8ea), stomach (bae0), small intestine (a34a), brain and nerves (40c8), bones protecting (0fe7), muscles (6afc) and skin (2fb8). The lungs' oxygen intake appears only in b060's answer and c8ea's context, which is acceptable. LANE: clinical and simple throughout; no reproductive system; the one person shown is a nurse taking a boy's pulse. GRADE: several facts (heart pumps, skull guards the brain, food goes to the stomach) are 3rd- and 4th-grade review. That is allowed for T1 almost-by-memory basics, but only a34a (absorption into the blood) and c8ea (cells' waste gas) reach past grade 4. WITHIN THE UNIT: b060's distractor names 40c8's answer (nerves carry signals); fix in b060. b060 (blood brings food) and a34a (food passes into the blood) touch the same chain but ask different facts. OVERLAPS: c8ea vs how-plants-make-food. That unit asks the gas a plant takes in (carbon dioxide) and the gas a pondweed gives off (oxygen); this one asks the gas the body's cells make and breathe out (carbon dioxide). These are different facts, and no change is needed, though the choice pools look alike (carbon dioxide, oxygen, nitrogen, plus one). 6afc's 'pull' vs pushes-pulls-and-gravity's 'a force is a push or a pull': different facts, clear. No other T1 final (telling-materials-apart, solids-liquids-and-gases, matter-made-of-tiny-particles, mixtures-and-solutions, energy-changes-form, how-light-travels, electric-circuits, the-sun-and-its-planets, food-chains-and-food-webs, decomposers-and-recycling-matter, roots-stems-leaves-and-flowers) asks any of these facts."}

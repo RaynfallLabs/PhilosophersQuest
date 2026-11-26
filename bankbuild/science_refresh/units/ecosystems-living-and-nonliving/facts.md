@@ -73,3 +73,15 @@ F28 The grade-5 standards: TEKS 5.12A, "observe and describe how a variety of or
 ## Notes
 - Lanes: no named places in the stems. The chestnut example (F14) is used in a context without its region; the puma example (F11, F12) is National Geographic's own habitat example, told as a mountain lion.
 - F14 is worded with care: diversity helps an ecosystem stand up to a drought or disease; faster recovery is not established.
+
+## Revision facts (2026-11-26, the one revision round)
+
+F29 Turtles are ectotherms that warm their bodies mainly by basking in sunlight, often on rocks or logs. https://grokipedia.com/page/Turtle ("Turtles are ectotherms that primarily regulate body temperature through behavioral means, such as basking in sunlight to elevate core temperatures"; sliders pile "atop one another at logs or rocks for thermoregulation")
+
+F30 Adult frogs are mostly meat-eaters that catch insects, flies among them, with a sticky tongue. https://grokipedia.com/page/Frog ("Adult frogs are predominantly carnivorous, capturing prey such as insects (including flies, moths, locusts, and spiders)"; "extensible, sticky tongues")
+
+F31 Pondweeds are living water plants: dabbling ducks eat their leaves, stems and seeds, and dense beds of pondweed and other water plants give fish shelter from predators. https://grokipedia.com/page/Potamogeton ("dabbling ducks and coots feed on vegetative parts and seeds of various pondweeds"; "Dense beds offer refuge from predators, shelter for juvenile fish"); https://grokipedia.com/page/Aquatic_plant ("native macrophytes sustain fish populations by providing both forage and refuge")
+
+F32 Some frogs live through a drought by burrowing into the soil or mud and aestivating: the body's metabolism slows (in aestivation to as little as 1-20% of normal), some shed skin layers into a waterproof cocoon, and they wait out the dry season and breed when the rains come. They slow the body they have; no animal grows a new kind of body because its home dried. https://grokipedia.com/page/Aestivation (frogs "burrow into soil, shed skin layers to form waterproof barriers"; "metabolic rate to as low as 1–20% of normal levels"; amphibians "aestivate through dry seasons and breed explosively during monsoons"; obligatory aestivation "is seasonally programmed"); with F17 (inherited features change only over generations)
+
+F33 MISCONCEPTION (author's judgement, the judge's suggested lure): heavy trees press the soil down, so cleared soil is lighter and washes away. Cutting the trees does not change the soil's own weight; cleared soil washes off because no roots bind it and bare ground soaks up less rain (F18, F19).

@@ -1,0 +1,49 @@
+{
+ "unit": "day-night-and-shadows",
+ "questions": {
+  "31b0992935": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "497fce2fad": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "94338eff56": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "8b1fd9e1a2": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "5385df1a84": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "29d8a6ab78": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "b2b239c13e": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "b7a95e8e18": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "39cd8405e8": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'High in the sky' and 'Straight overhead' both mean a high Sun (both give short shadows), and 'Halfway up the sky' is vague (halfway between what?).",
+     "fix": "'Halfway between the horizon and overhead' for the middle choice; the horizon is taught in the axis question's context."
+    }
+   ]
+  }
+ },
+ "unit_notes": "A clean unit: every question asks a different scope fact plainly, the lures are the sourced misconceptions (Baxter, Vosniadou and Brewer, Boero, the NSTA probes), and the writer kept to 'about 24 hours', 'roughly' west and east, and never 'straight overhead at noon'. Overlap with how-light-travels: that unit keys a shadow's SHAPE (light travels in straight lines); this unit asks only direction and length, so there is no clash. Overlap with the-sun-and-its-planets: that unit keys one trip round the Sun = a year; here the year is only a lure in the 24-hour spin question, a distinct fact (rotation, not revolution); no fix needed. Within the unit, the shadow questions come in two pairs that lean on shared rules but key different facts: the girl's shadow (a shadow points away from the Sun) and the stick (its direction swings from west to east through the day); the flagpole (the daily long, short, long pattern) and the tree (a low Sun makes a long shadow). Acceptable. Seasons and the Moon's phases are rightly left to their T2 units."
+}

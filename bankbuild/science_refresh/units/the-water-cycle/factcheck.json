@@ -1,0 +1,357 @@
+{
+ "unit": "the-water-cycle",
+ "questions": {
+  "9873c1648a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: nearly all the energy for evaporation comes from the Sun's heat",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Water_cycle",
+     "note": "Grokipedia: solar energy drives evaporation and the other processes of the cycle; USGS for schools: 'The sun is what makes the water cycle work.' (https://water.usgs.gov/edu/watercycle-kids-int.html). 'Nearly all' is the right hedge. NOAA JetStream notes the energy 'can come from any source: the sun, the atmosphere, the Earth' (https://www.noaa.gov/jetstream/atmosphere/hydro), but warm air and ground are themselves sun-warmed, and heat from Earth's interior is under a thousandth of the Sun's, so the key holds."
+    },
+    {
+     "claim": "Stem: most evaporated water comes from the oceans",
+     "result": "ok",
+     "source": "https://water.usgs.gov/edu/watercycle-kids-int.html",
+     "note": "USGS: 'almost all the water that evaporates ... comes from the oceans'; Grokipedia Water cycle: oceans supply most atmospheric water vapour."
+    },
+    {
+     "claim": "Wrong choice / context: heat from deep inside Earth is less than a thousandth of the Sun's",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_internal_heat_budget",
+     "note": "Grokipedia: about 44 TW (44-47 TW), 'less than 0.03%' / about 0.04% of the solar energy absorbed, i.e. well under a thousandth (0.1%). Not defensible as the answer to 'nearly all'."
+    },
+    {
+     "claim": "Wrong choice: the pull of the Moon",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tide",
+     "note": "The Moon's gravity (with the Sun's and Earth's rotation) raises tides; it supplies no meaningful energy for evaporation."
+    },
+    {
+     "claim": "Wrong choice / context: Earth's gravity pulls rain and snow down and makes rivers run downhill (the opposite job)",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/ms-ess2-4-earths-systems",
+     "note": "NGSS ESS2.C: water's movements 'are propelled by sunlight and gravity', gravity driving precipitation and downhill flow. Gravity is not the energy source for evaporation."
+    },
+    {
+     "claim": "Context: sunlight warms oceans, lakes and land; evaporation is liquid water changing to water vapour",
+     "result": "ok",
+     "source": "https://www.noaa.gov/jetstream/atmosphere/hydro",
+     "note": ""
+    }
+   ]
+  },
+  "6a4968424b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the puddle went into the air as water vapour (evaporation)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Evaporation",
+     "note": "Evaporation below the boiling point, driven mainly by solar radiation; vapour is invisible (Grokipedia Water vapor)."
+    },
+    {
+     "claim": "Wrong choice: through the glass into the ground",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glass",
+     "note": "Grokipedia: 'The impermeability of glass to gases, liquids, and contaminants.' Context 'glass lets no water through' is true."
+    },
+    {
+     "claim": "Wrong choice: up to the Sun, drawn by its heat",
+     "result": "ok",
+     "source": "https://water.usgs.gov/edu/watercycle-kids-int.html",
+     "note": "Vapour rises into the atmosphere and may form clouds; it never leaves Earth for the Sun. A documented child misconception (NZCER SPACE summary)."
+    },
+    {
+     "claim": "Wrong choice: nowhere, it no longer exists",
+     "result": "ok",
+     "source": "https://webharvest.gov/peth04/20041014212930/http://ga.water.usgs.gov/edu/earthwherewater.html",
+     "note": "Evaporated water still exists as vapour; USGS: Earth 'neither, as a whole, gains nor loses much matter, including water'."
+    },
+    {
+     "claim": "Context: in time that vapour may become part of a cloud",
+     "result": "ok",
+     "source": "https://water.usgs.gov/edu/watercycle-kids-int.html",
+     "note": ""
+    }
+   ]
+  },
+  "d704d5a6f6": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: warm damp air rises, cools as it climbs, and its vapour turns into tiny liquid drops that make clouds",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cloud",
+     "note": "Grokipedia: 'Clouds arise when rising air cools to its dew point'; the parcel 'ascends and expands due to decreasing atmospheric pressure'; vapour condenses on aerosol particles (cloud condensation nuclei). The stem need not name the particles."
+    },
+    {
+     "claim": "Key: condensation",
+     "result": "ok",
+     "source": "https://www.noaa.gov/jetstream/atmosphere/hydro",
+     "note": "NOAA: 'Condensation is the process whereby water vapor is changed into a liquid state.'"
+    },
+    {
+     "claim": "Wrong choices: evaporation, precipitation, transpiration",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Transpiration",
+     "note": "Evaporation is liquid to vapour; precipitation is water falling from a cloud; transpiration is 'the evaporation of water from the aerial parts of plants'. None names vapour turning to cloud droplets."
+    },
+    {
+     "claim": "Context: transpiration is water evaporating from the leaves of plants",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Transpiration",
+     "note": "Mostly through stomata in the leaves; the child-level wording is true."
+    },
+    {
+     "claim": "Context: cloud droplets are 'far too small and light to fall'",
+     "result": "error",
+     "source": "https://www.usgs.gov/water-science-school/science/precipitation-and-water-cycle",
+     "note": "Cloud droplets DO fall, slowly: Grokipedia Cloud gives terminal fall speeds of about 1-10 cm/s, kept aloft by updrafts and turbulence 'exceeding fall speeds'. USGS says they are 'way too small to fall as precipitation' because 'their fall speed is not large enough to overcome updrafts which support the clouds'. Saying something is too light to fall teaches a physics misconception (everything falls; lightness only slows it). Fix: 'its vapour condenses into droplets so small that rising air holds them up, and together they make a cloud' (or 'far too small to fall as rain')."
+    }
+   ]
+  },
+  "389fff75bd": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: rain, snow, sleet and hail fall from clouds and are called precipitation",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Precipitation",
+     "note": "Grokipedia: 'any product of the condensation of atmospheric water vapor that falls from a cloud'; forms include rain, snow, sleet, hail, graupel, drizzle."
+    },
+    {
+     "claim": "Key: rain begins when the cloud's tiny drops join into heavy drops",
+     "result": "ok",
+     "source": "https://www.usgs.gov/water-science-school/science/precipitation-and-water-cycle",
+     "note": "USGS: when collisions 'produce a droplet with a fall velocity which exceeds the cloud updraft speed' it falls; USGS for schools: 'When the cloud droplets combine to form heavier cloud drops, it can start to rain'. Note only: in cold (mid-latitude) clouds much rain starts as ice crystals that grow (Bergeron process), clump and melt as they fall; the droplets-join picture is the warm-cloud process and the USGS's own grade-school picture, still true as stated, and no wrong choice is the ice route."
+    },
+    {
+     "claim": "Wrong choice: two clouds bump into each other",
+     "result": "ok",
+     "source": "https://arbs.nzcer.org.nz/node/7340",
+     "note": "A documented child misconception ('clouds bumping into each other or bursting'); rain needs droplet growth inside a cloud, not a collision of clouds."
+    },
+    {
+     "claim": "Wrong choices: wind squeezes it like a sponge; it rips open like a bag of water",
+     "result": "ok",
+     "source": "https://www.nsta.org/lesson-plan/what-are-clouds-made",
+     "note": "Documented misconceptions (Bar 1986 via NSTA). A cloud is a visible crowd of tiny droplets or ice crystals (Grokipedia Cloud), not a container."
+    },
+    {
+     "claim": "Context: rising air holds the droplets up; a drop grows until too heavy to stay up",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cloud",
+     "note": "Grokipedia: droplets have 'low terminal fall velocities of 1-10 cm/s', sustained by updrafts exceeding fall speeds. This wording is accurate (contrast the d704d5a6f6 context)."
+    },
+    {
+     "claim": "Context: it takes millions of cloud droplets to make one raindrop",
+     "result": "ok",
+     "source": "https://www.usgs.gov/water-science-school/science/precipitation-and-water-cycle",
+     "note": "USGS: 'Millions of cloud droplets are required to produce a single raindrop.' Consistent with sizes (cloud droplet 10-20 micrometres, raindrop 0.5-5 mm: a 2 mm drop is about a million 20-micrometre droplets)."
+    }
+   ]
+  },
+  "7067c11582": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: runoff is rain that flows over the land when it falls faster than the soil can soak it up",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Surface_runoff",
+     "note": "Grokipedia: precipitation 'that travels over the land surface without infiltrating into the soil'; occurs 'when the rate of precipitation exceeds the soil's infiltration capacity'."
+    },
+    {
+     "claim": "Context: runoff is rain or melted snow; creeks and rivers carry it to lakes and the sea",
+     "result": "ok",
+     "source": "https://water.usgs.gov/edu/watercycle-kids-int.html",
+     "note": "USGS: 'This runoff water reaches creeks, rivers, lakes, and the oceans'."
+    },
+    {
+     "claim": "Wrong choice / context: groundwater is water that soaks into the soil",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Groundwater",
+     "note": "Groundwater is infiltrated water in the saturated zone; the stem's water flows over the surface instead."
+    },
+    {
+     "claim": "Wrong choice: meltwater",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Meltwater",
+     "note": "'Meltwater is freshwater produced by the melting of snow, ice, glaciers...'; the stem's water is storm rain, so not meltwater."
+    },
+    {
+     "claim": "Wrong choice / context: spring water is groundwater flowing back out of the ground",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Spring_(hydrology)",
+     "note": "A spring is 'a natural opening in the Earth's surface where groundwater flows out to the land surface'."
+    }
+   ]
+  },
+  "9a3ccb613f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: some rain soaks through the soil and becomes groundwater",
+     "result": "ok",
+     "source": "https://water.usgs.gov/edu/watercycle-kids-int.html",
+     "note": "USGS: 'the water sinks (infiltrates) into the ground'; Grokipedia Groundwater: recharged mainly by rain and snowmelt."
+    },
+    {
+     "claim": "Key: groundwater seeps slowly into rivers and seas",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Groundwater",
+     "note": "Grokipedia: discharge as 'baseflow to perennial streams and rivers', springs, seeps and 'direct seepage to lakes, wetlands, and oceans'; USGS for schools: 'Water seeps upwards and sideways, too, from the ground into the bottom of rivers, lakes, and the oceans.' (Some also leaves through plant roots and wells; the key is still true.)"
+    },
+    {
+     "claim": "Wrong choice: it stays in one place for ever",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Groundwater",
+     "note": "Groundwater moves; even deep confined water has finite residence times ('millennia to over a million years')."
+    },
+    {
+     "claim": "Wrong choices: hardens into solid rock; sinks to Earth's hot centre",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Groundwater",
+     "note": "Groundwater fills pores and cracks in the upper crust and discharges back to the surface; neither choice is defensible."
+    },
+    {
+     "claim": "Context: groundwater moves often only centimetres to metres a year",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Groundwater",
+     "note": "Grokipedia: typically 'centimeters to meters per year'. USGS Circular 1186 (https://pubs.usgs.gov/circ/circ1186/pdf/facts.pdf, via search summary) calls 1 foot per day high, with many systems near 1 foot per year or 1 foot per decade (about 3-30 cm a year). Coarse gravels can be faster; 'often' covers that."
+    },
+    {
+     "claim": "Context: deep groundwater may stay underground for thousands of years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Groundwater",
+     "note": "Deep confined aquifers: 'millennia to over a million years'; shallow 'years to decades'."
+    }
+   ]
+  },
+  "aa3fb41e94": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: rain has fallen on Earth for millions of years, since long before the dinosaurs",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Origin_of_water_on_Earth",
+     "note": "Jack Hills zircons show liquid water and surface oceans by about 4.4 billion years ago; dinosaurs appeared in the Triassic, about 245-233 million years ago (https://www.nhm.ac.uk/discover/when-did-dinosaurs-live.html, https://www.nps.gov/subjects/fossils/triassic-dinosaurs.htm). 'Millions' understates billions but is true."
+    },
+    {
+     "claim": "Key: about the same amount of water, used over and over",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Water_cycle",
+     "note": "Grokipedia: total 'remains nearly constant at approximately 1.386 billion cubic kilometers', 'barring minor cosmic inputs or losses'; USGS (archived): 'the same water that existed on Earth millions of years ago is still here' (https://webharvest.gov/peth04/20041014212930/http://ga.water.usgs.gov/edu/earthwherewater.html). Loss to space is tiny: present hydrogen escape (about 3 kg of H a second) equals 'roughly 1 metre of global water loss per 1 billion years', called 'insignificant' (https://arxiv.org/html/2512.09844v2), about 0.25 m since the dinosaurs against a 3,682 m mean ocean depth. Exchange with the mantle is the largest real change: Karlsen, Conrad and Magni (G-Cubed 2019) model net regassing as a sea-level drop of up to about 130 m over the past 230 Myr (via search summary, https://duo.uio.no/handle/10852/73922), i.e. at most a few percent of the ocean moved into the mantle, and that water is still inside Earth. 'About the same' survives; never 'exactly'."
+    },
+    {
+     "claim": "Wrong choice: less, since the Sun burns it up",
+     "result": "ok",
+     "source": "https://arxiv.org/html/2512.09844v2",
+     "note": "Sunlight's UV does split some water high in the air, and the hydrogen escapes, but the loss is insignificant on this timescale (about 1 m of ocean per billion years). Not defensible against 'about the same'."
+    },
+    {
+     "claim": "Wrong choice: more, since clouds make new water",
+     "result": "ok",
+     "source": "https://www.noaa.gov/jetstream/atmosphere/hydro",
+     "note": "Clouds form by condensation of existing vapour; they make no new water."
+    },
+    {
+     "claim": "Wrong choice: less, since the ground soaks it up",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Groundwater",
+     "note": "Soaked-in water becomes groundwater and returns via rivers, springs and the sea; it is still Earth's water. Even subduction into the mantle (the up-to-130 m sea-level model above) keeps the water inside Earth and is a few percent at most, so the choice is not defensible as right."
+    },
+    {
+     "claim": "Context: Earth as a whole neither gains nor loses much water; evaporated water is still in the air; soaked-in water is still on Earth",
+     "result": "ok",
+     "source": "https://webharvest.gov/peth04/20041014212930/http://ga.water.usgs.gov/edu/earthwherewater.html",
+     "note": "USGS: 'the Earth neither, as a whole, gains nor loses much matter, including water'."
+    }
+   ]
+  },
+  "69a1fdb26a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: oceans cover about 71 percent of Earth's surface; their water is salty",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ocean",
+     "note": "Grokipedia: 'covering about 71 percent of Earth's surface'; average salinity about 35 g of salts per litre."
+    },
+    {
+     "claim": "Key: nearly all of Earth's water is in the oceans",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/where-earths-water",
+     "note": "USGS table: oceans, seas and bays 96.54 percent of all water; Grokipedia Ocean: 97 percent / 96.5 percent."
+    },
+    {
+     "claim": "Wrong choices: about three quarters; about half; only a small part",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/where-earths-water",
+     "note": "96.5 percent is far from 75 or 50 percent and is not a small part; none is defensible. (Three quarters is the honest 71-percent-of-the-surface lure.)"
+    },
+    {
+     "claim": "Context: about 97 percent of Earth's water is salty ocean water",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/facts/oceanwater.html",
+     "note": "NOAA: 'About 97 percent of Earth's water is in the ocean.' (USGS finer figure 96.5 percent; saline groundwater and salt lakes bring all salt water to about 97.5 percent.)"
+    },
+    {
+     "claim": "Context: on average the oceans are more than three and a half kilometres deep",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ocean",
+     "note": "Grokipedia: 'The average depth of the ocean is 3,682 meters (12,080 feet)'."
+    },
+    {
+     "claim": "Context: only about 2.5 percent of Earth's water is fresh",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/where-earths-water",
+     "note": "USGS: 'only 2.5% of Earth's water is freshwater'."
+    }
+   ]
+  },
+  "ed63112d22": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: most fresh water is in ice caps and glaciers",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/where-earths-water",
+     "note": "USGS table: ice caps, glaciers and permanent snow 68.7 percent of fresh water; Grokipedia Water cycle: 'approximately 68.7%'."
+    },
+    {
+     "claim": "Wrong choice: lakes, ponds and rivers",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/where-earths-water",
+     "note": "Fresh lakes 0.26 percent and rivers 0.006 percent of fresh water: a tiny fraction."
+    },
+    {
+     "claim": "Wrong choice: in the air, as water vapour",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/where-earths-water",
+     "note": "Atmosphere 0.04 percent of fresh water."
+    },
+    {
+     "claim": "Wrong choice: swamps and marshes",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/where-earths-water",
+     "note": "Swamp water 0.03 percent of fresh water."
+    },
+    {
+     "claim": "Is any wrong choice close enough to argue (e.g. groundwater at about 30 percent)?",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/where-earths-water",
+     "note": "Groundwater (30.1 percent) is NOT offered; the strongest wrong choice, lakes and rivers, is about 0.27 percent. No choice comes near 68.7 percent."
+    },
+    {
+     "claim": "Context: about 69 percent frozen in ice caps and glaciers, about 30 percent groundwater; lakes, rivers, swamps and the air a tiny fraction",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Water_cycle",
+     "note": "Grokipedia: glaciers and ice caps about 68.7 percent, groundwater about 30.1 percent of fresh water; USGS: 'Another 30 percent of freshwater is in the ground'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "8 ok, 1 error. The one error is context wording only: d704d5a6f6 says cloud droplets are 'far too small and light to fall'; they do fall, at about 1-10 cm/s, and updrafts hold them up (Grokipedia Cloud; USGS: 'too small to fall as precipitation'). Copy 389fff75bd's own accurate wording ('so small that rising air holds them up'). Lead's specific checks: oceans 96.54 percent and ice 68.7 percent confirmed on the USGS table; no fresh-water choice is near the key (groundwater is not offered). The 'same water' claim holds as 'about the same': hydrogen escape is about 1 m of ocean per billion years, and the biggest real change since the dinosaurs is ocean water carried into the mantle (modelled as up to about 130 m of sea level over 230 Myr), which stays inside Earth. Clouds: condensation on tiny dust, salt or smoke particles as rising air cools (USGS, Grokipedia Cloud); the stem need not name the particles. Rain: the droplets-join key is the warm-cloud process (USGS's grade-school picture); cold clouds also make rain through growing ice crystals, but no wrong choice is that route. Earth's internal heat is 0.03-0.04 percent of absorbed sunlight (under a thousandth), and the Moon drives tides, not evaporation."
+}

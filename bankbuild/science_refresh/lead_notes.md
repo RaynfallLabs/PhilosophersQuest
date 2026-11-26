@@ -12,3 +12,6 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
   - The mixtures judge and reviser must check against those finals.
 - `how-light-travels` asks why a shadow has the object's shape (light travels in straight lines).
   - The `day-night-and-shadows` brief must say so: ask shadows' length and direction through the day (the Sun's apparent path), not why a shadow has its shape.
+- The adaptations reviser noted an overlap:
+  - `born-knowing-or-learned`'s blacksmith question (a muscle gained in life is not passed on) asks the same fact as the `adaptations-built-for-a-place` webbed-feet question (adaptations are inherited, not gained in one life).
+  - The born-knowing judge must rule on it.

@@ -1,0 +1,77 @@
+{
+ "unit": "wind-water-and-ice-shape-the-land",
+ "questions": {
+  "ee2af1c0e7": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "903abc790e": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "Overlap with mixtures-and-solutions, whose final keys this same fact: water frozen in a capped bottle changes 'Its volume, but not its mass'. Here the key ('Water takes up more space as ice') and the lure 'Ice weighs more than the water did' are that same volume-not-mass fact, so a player who met the mixtures question answers this one without knowing anything about weathering.",
+     "fix": "Keep the frost-wedging scene but key the weathering fact in F5 (it works best where it freezes and thaws often). Stem: 'Water that freezes in the cracks of rocks splits them much faster in some places than in others. Where does it split rock fastest?' Answer: 'Where it freezes and thaws again and again'. Lures: 'Where it stays frozen solid all year', 'Where it freezes hard only once a year', 'Where the winters are long, dark and cold'. The stem must no longer say 'freezing and thawing'. The expansion can stay in the context."
+    }
+   ]
+  },
+  "f411ec033f": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "e6b28d4f1a": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'A deep, narrow canyon winds for many kilometres': winding is what a river does, so the stem's verb points at the key. And 'A volcano suddenly blasting the rock apart' is a weak lure (few 10-year-olds would picture a volcano cutting a long, narrow trench across a plateau), leaving two live lures.",
+     "fix": "'A deep, narrow canyon stretches for many kilometres across a high plateau.' Replace the volcano with 'A glacier slowly scraping the rock away', a nearby real process ruled out only by knowing that ice leaves a wide U, not a narrow canyon."
+    }
+   ]
+  },
+  "a0d9a93aaa": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "9140d7e730": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The easiest item in the unit: anyone who has stood on a windy beach knows wind moves sand. Its three lures are this unit's own keys (the canyon, the delta and the U-shaped valley questions). Acceptable at T1, since the dune is a named TEKS 5.10C landform.",
+     "fix": "None required."
+    }
+   ]
+  },
+  "6c586b4511": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "cdb066effb": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'The storm's wind pushes the boulders' is the weakest lure: wind cannot reach a boulder under a flood. Its only source is the writer's judgement (M5).",
+     "fix": "Use a lure a child holds about rock and water, e.g. 'The boulders are lighter once they are soaked' (false: soaking adds weight), sourced before use."
+    }
+   ]
+  },
+  "cbcc129cf1": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'A landslide pouring down a hillside' is the only choice with a fast verb (the lures carve, pry and pile), and a glacier and tree roots are proverbially slow, so only the dune lure is live. 'Tree roots prying a boulder apart' is also the roots question's key word for word.",
+     "fix": "Answer: 'A landslide on a steep hillside'. Replace 'Tree roots prying a boulder apart' with 'A river building a delta at its mouth' (its speed is not common knowledge). Keep 'The wind piling sand into a dune' and 'A glacier carving out a valley'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Overlaps ruled. (1) The frost-wedging question against mixtures-and-solutions' frozen bottle: the same fact (water takes up more room as ice, its mass unchanged); fix by re-keying on where frost splits rock fastest (above). (2) The roots question against ecosystems-living-and-nonliving's cleared hillside ('No roots hold the soil together'): no overlap. This unit keys roots breaking ROCK, and the soil-binding fact appears only as a lure ('Hold the two sides of the crack together') and one line of context, which makes the two questions complementary; keep both. The landslide question and ecosystems' rain-washed soil key different facts (a fast change against roots binding soil). The flood's 'boulders float' lure and context touch telling-materials-apart's floating question (how heavy for its size), and the 'Ice is harder than the rock' lure touches its hardness question, but only as lures, never as keys; fine. The-water-cycle draft (runoff, groundwater) does not clash. Within the unit, the dune and landslide questions draw their lures from other questions' keys; the cards teach every fact anyway, but the landslide question's copy of the roots key is removed by its fix. Lane: every example is unnamed ('a high plateau', 'a mountain stream', 'high in the mountains'); no named place or landform. Scope gap: wind-blown sand as a weathering agent (sand-blasting rock, F10) is in the scope but unasked; the dune question tests wind deposition, not wind weathering. Worth a question if one is added."
+}

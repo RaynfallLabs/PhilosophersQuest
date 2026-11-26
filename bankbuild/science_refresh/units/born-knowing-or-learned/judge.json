@@ -1,0 +1,124 @@
+{
+ "unit": "born-knowing-or-learned",
+ "questions": {
+  "d7af21e4c2": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The key is the only choice that carries its own trigger ('a finger placed in her palm'), so it reads as something done TO the baby while the three lures are things she would do herself; a test-wise player can lean on that.",
+     "fix": "Give one lure a trigger too, e.g. 'Reach for a rattle shaken near her face' in place of 'Reach out to grab a toy'."
+    }
+   ]
+  },
+  "f77578b173": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'It learned from its brothers and sisters' is the weakest lure: spiderlings scatter, and few children picture siblings teaching one another.",
+     "fix": "Use 'It copied an old web on a nearby bush' instead (another learning route a child might believe, parallel to the others)."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'spins its first web, a wheel of silk threads' says the very first web is already wheel-shaped; facts.md F6's own caveat (spiderlings raised alone first laid silk with no clear shape) told the writer to avoid 'first try' wording, and 'its first web' is that claim. 'first' also hints that there was no practice.",
+     "fix": "'A young garden spider spins a web, a wheel of silk threads for catching flies. How did it come to know how to build it?'"
+    }
+   ]
+  },
+  "dcd5ad30b5": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "high",
+     "what": "The stem says 'Heading for the sea is an instinct', which rules out two lures outright ('practise the crawl until it is fast' and 'learn the way by trial and error' are both learning), and the key 'It knows the way with no one to teach it' is the definition of instinct restated. A player who knows only the word gets it; the survival fact (F9, no adult is there to teach) is never tested. Only 'follow its mother' stays live.",
+     "fix": "Key F9 instead. Stem: 'Sea-turtle hatchlings dig out of their sandy nest at night and crawl straight down the beach to the sea. They are born knowing the way. Why does knowing it from birth matter so much to them?' Answer: 'No adult turtle is on the beach to show them'. Lures: 'Their mother leads only the first few down', 'Their father waits far out at sea for them', 'Older hatchlings are too busy to show them'. Each lure assumes a teacher nearby (M2), so it tests whether one is there."
+    }
+   ]
+  },
+  "5707d900a7": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'Jerking a hand back from a hot pan' can be read as the lesson children learn after a burn ('don't touch hot pans'), so a careful child could argue it is learned too.",
+     "fix": "'Snatching a hand back the instant it touches a hot pan' makes it plainly the reflex."
+    }
+   ]
+  },
+  "4d7ce512e6": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Two lures say the same thing: 'It is born with an instinct for it' and 'It inherits the trick from its parents' are both 'inborn', so if one were right the other would be too; they fall together and leave the key against only 'It simply grows into it with age'. The key is also the only learning route among the four.",
+     "fix": "Replace 'It inherits the trick from its parents' with 'It learns it from its mother as a puppy', so two choices are learning routes and the player must know that tricks come from the owner's rewards."
+    }
+   ]
+  },
+  "c74cf89546": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "The stem never says blue tits are birds; a US 5th grader may not know the name (only 'pecking' hints at it), and teenage players may snicker at it.",
+     "fix": "'...small birds called blue tits began pecking through the caps...'"
+    },
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'They can get by without any instincts' is the weakest lure; it does not read as a way of surviving.",
+     "fix": "Use the rigid-instinct lure: 'They can keep the same habits all their lives'."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'to drink the cream': US children rarely know bottled milk had cream at the top.",
+     "fix": "'to drink the cream at the top'."
+    }
+   ]
+  },
+  "61b71e1584": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The key 'Her brown eyes' is the shortest choice (14 characters against 20-23).",
+     "fix": "'The brown colour of her eyes'."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "'Her skill at swimming' echoes adaptations-built-for-a-place's duckling lure 'Swimming stretches its toes into webs'; the two units already sit close on inherited-versus-gained.",
+     "fix": "'Her skill at the piano'."
+    }
+   ]
+  },
+  "e72b878568": {
+   "verdict": "drop",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "high",
+     "what": "Common sense answers it: no baby is born with thick, muscled arms, whatever anyone believes about inheritance, so the player picks 'No'. Of the two 'No' choices, 'No, a son inherits only from his mother' is plainly wrong (the context itself says a child inherits from both parents), leaving the key. 'Yes, if the work came before the boy's birth' is confusing, since the twenty years of work did come before the birth.",
+     "fix": "Drop; no rewrite saves it, because the fact itself is already asked (next issue)."
+    },
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "Overlap. The fact (a change gained in life is not passed on) is already keyed in this unit by Ana's question (her scar and her skill are not from her birth parents), and it recurs in the dog context and the blue tits' 'eggs' lure. Across units, adaptations-built-for-a-place's webbed-feet question keys the converse (a feature comes by inheritance, not by use) with 'Swimming stretches its toes into webs', the same Lamarckian error, as its lure.",
+     "fix": "Drop the blacksmith; keep Ana here and the duckling in adaptations. Replace with a learned-behaviour question (see unit_notes)."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Blacksmith against adaptations' webbed feet, ruled: the two key mirror facts (the duckling: an adaptation is inherited, not made by use; the blacksmith: a change made by use is not inherited), so they are not the identical fact, but they rest on one idea (Lamarck's error), and the blacksmith is also the second question in its own unit on inherited versus gained (Ana). Drop the blacksmith; keep the duckling and Ana. That leaves 7 against target_q 8. Replace it with a learned-behaviour question the unit lacks: the scope's own bicycle, or TEKS 5.13B's own example, orcas hunting in packs, keyed on learning by watching older members of the group, so it differs from the dog (rewards) and the road (taught by adults). Do not repeat the dog's flaw of two 'inborn' lures that mean the same thing. Spider and turtle both carry 'the young are alone, so it must be inborn'; keep them keyed apart: the spider on 'it is inborn', the revised turtle on why that matters (no adult on the beach). Lane: no stem asks one species' behaviour for its own sake; the turtle fix stays in lane because the mother's absence is the reason the instinct matters (F9). Species detail (the garden spider's mother dying, hatchlings following the brightest sky) stays in the contexts, which is fine. Other T1 finals: adaptations' first question uses 'An instinct' and 'A learned skill' only as lures, with no clash; nothing else overlaps. Scope coverage after the fixes: instincts (grasp, spider, turtles), learned (dog, road, blue tits), both helping survival (turtles, blue tits), inherited versus gained (Ana); the bicycle is still unasked."
+}

@@ -1,0 +1,69 @@
+{
+ "kind": "draft",
+ "unit": [],
+ "questions": {
+  "fda47cb5d6": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: short(24<25)"
+   ],
+   "flag": []
+  },
+  "83deef4734": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 314 chars > tier 1 hard cap 294 (target 280 + 5%)"
+   ],
+   "flag": []
+  },
+  "d7a3f569a2": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "9cfba02ba4": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: short(22<25)"
+   ],
+   "flag": []
+  },
+  "7dbb19df6c": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "1c0118ee37": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "78328d0acd": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: short(20<25)"
+   ],
+   "flag": []
+  },
+  "fbec84865b": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "7d3ffac908": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  }
+ },
+ "n_fail": 0
+}

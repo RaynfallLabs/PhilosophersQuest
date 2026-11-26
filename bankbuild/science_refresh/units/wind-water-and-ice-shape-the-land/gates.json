@@ -1,0 +1,73 @@
+{
+ "kind": "final",
+ "unit": [],
+ "questions": {
+  "ee2af1c0e7": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 356 chars > tier 1 hard cap 294 (target 280 + 5%)"
+   ],
+   "flag": []
+  },
+  "fcb178685b": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 346 chars > tier 1 hard cap 294 (target 280 + 5%)"
+   ],
+   "flag": []
+  },
+  "f411ec033f": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 337 chars > tier 1 hard cap 294 (target 280 + 5%)"
+   ],
+   "flag": []
+  },
+  "e8a589793b": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 330 chars > tier 1 hard cap 294 (target 280 + 5%)"
+   ],
+   "flag": []
+  },
+  "a0d9a93aaa": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "9140d7e730": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: short(21<25)"
+   ],
+   "flag": []
+  },
+  "6c586b4511": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "cdb066effb": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 319 chars > tier 1 hard cap 294 (target 280 + 5%)"
+   ],
+   "flag": []
+  },
+  "cbcc129cf1": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  }
+ },
+ "n_fail": 0
+}

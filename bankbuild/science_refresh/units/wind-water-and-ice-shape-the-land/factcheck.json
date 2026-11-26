@@ -1,0 +1,405 @@
+{
+ "unit": "wind-water-and-ice-shape-the-land",
+ "questions": {
+  "ee2af1c0e7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: weathering breaks rock up (in place, no transport), erosion carries it away",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weathering",
+     "note": "Grokipedia: weathering is disintegration and decomposition of rock 'without the transport of material to other locations'; Erosion page: 'This process differs from weathering, which breaks down materials in place without transport'. Lumen geology: weathering is 'in situ breakdown of rock material without transport'."
+    },
+    {
+     "claim": "Wrong choice: erosion breaks rock up and weathering carries it away (the words swapped)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Erosion",
+     "note": "False; the swap is the classic student error."
+    },
+    {
+     "claim": "Wrong choice: weathering is slow and erosion is fast",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Erosion",
+     "note": "False as a definition: erosion runs at slow baseline rates in vegetated land and 10-100x faster in floods, landslides in seconds (Grokipedia Erosion); weathering also varies (ice wedging 'works quickly', warm wet climates weather fastest: Lumen geology https://courses.lumenlearning.com/colorado-wmopen-geology/chapter/outcome-weathering-and-erosion). Speed is not the dividing line."
+    },
+    {
+     "claim": "Wrong choice: weathering happens on land and erosion in water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weathering",
+     "note": "False: weathering happens on the ocean floor ('Submarine weathering refers to the breakdown and alteration of rocks on the ocean floor') and erosion happens on land by wind, ice and gravity (Grokipedia Erosion)."
+    },
+    {
+     "claim": "Context: weathering is the work of ice in cracks, growing roots and blown sand",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weathering",
+     "note": "Grokipedia Weathering lists frost wedging, root wedging and wind abrasion ('propelling abrasive particles like sand against exposed surfaces') under physical weathering. (Some texts count wind abrasion as erosion, since the sand is being carried; Grokipedia's classification makes this acceptable.)"
+    },
+    {
+     "claim": "Context: erosion carries pieces off by running water, wind, ice or gravity; deposition drops them somewhere new",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Erosion",
+     "note": "'transported by natural agents including water, wind, ice, and gravity'; deposition when the agent loses energy: https://grokipedia.com/page/Deposition_(geology)"
+    },
+    {
+     "claim": "Context: either one can be slow or fast, on land or under the sea",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Erosion",
+     "note": "Submarine erosion occurs in continental slope and canyon settings; submarine weathering on the ocean floor (Grokipedia Weathering); rates range from slow to fast for both."
+    }
+   ]
+  },
+  "903abc790e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: freezing water splits rock because water takes up more space as ice",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Frost_weathering",
+     "note": "True at the 5th-grade level, with a research caveat. Water does expand about 9% on freezing (Grokipedia Ice; Wikipedia Frost weathering 'its volume increases by nine percent'), and it is the explanation the NPS teaches (Bryce Canyon: 'When water freezes into ice, it expands by 9%... causes it to break apart', https://www.nps.gov/brca/learn/nature/hoodoos.htm; Devils Tower, Yosemite, Mount Rushmore pages). Since Walder and Hallet (1985-86) research holds that ice segregation (water drawn to growing ice) does more in most natural rock, and volumetric expansion needs near-saturated, sealed cracks (Grokipedia: segregation 'proves more impactful than simple volumetric expansion'; Wikipedia: expansion's conditions are 'unusual'). But neither page calls expansion wrong: Grokipedia presents it 'as a valid mechanism alongside ice segregation', and Wikipedia notes expansion can matter in very impermeable rock such as granite, which fits a mountain boulder. Among the four choices it is the only true one. Optional context tweak (not required): 'Water swells by nearly a tenth as it freezes, and the growing ice draws in more water, so ice in a crack pushes the rock apart'."
+    },
+    {
+     "claim": "Wrong choice: water takes up less space as ice",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ice",
+     "note": "False: ice density about 0.917 g/cm3 against water's 1; water expands about 9% on freezing."
+    },
+    {
+     "claim": "Wrong choice: ice weighs more than the water did",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/5-ps1-2-matter-and-its-interactions",
+     "note": "False: weight is conserved in a change of state (NGSS 5-PS1-2, phase changes)."
+    },
+    {
+     "claim": "Wrong choice: ice is harder than the rock",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ice",
+     "note": "False: ice near its melting point is Mohs 2 or less; quartz 7, feldspar 6, granite about 6-7 (https://grokipedia.com/page/Mohs_scale)."
+    },
+    {
+     "claim": "Context: water swells by nearly a tenth as it freezes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ice",
+     "note": "'Upon freezing, water expands by about 9% in volume' - nearly a tenth."
+    },
+    {
+     "claim": "Context: each thaw lets water creep a little deeper; many winters of freeze-thaw split the boulder",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Frost_weathering",
+     "note": "'Thawing then releases the pressure, permitting additional water entry'; NPS Yosemite: freeze-thaw 'can incrementally lever loose rocks away from cliff faces'; NPS Bryce Canyon hoodoos page: above and below freezing on 'over 170 nights out of the year', ice 'literally wedging apart the rocks'."
+    },
+    {
+     "claim": "Context: ice weighs the same as the water it came from and is far softer than rock",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ice",
+     "note": "Mass conserved; ice Mohs 2 or less at its melting point."
+    }
+   ]
+  },
+  "f411ec033f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: roots push the crack wider until the rock splits (root wedging)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weathering",
+     "note": "'Plant roots contribute to physical weathering via root wedging', expanding roots exert pressure on cracks in bedrock. Biogeosciences 2026 review: 'woody roots may split rock masses by physically prying them apart', working through existing fissures (https://bg.copernicus.org/articles/23/4113/2026/bg-23-4113-2026.pdf). The stem's root enters an existing narrow crack, which matches."
+    },
+    {
+     "claim": "Wrong choice: roots hold the two sides of the crack together",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Soil_erosion",
+     "note": "False for a crack in solid rock; roots bind loose SOIL ('root systems mechanically bind soil aggregates'), not the walls of a crack in a boulder."
+    },
+    {
+     "claim": "Wrong choice: roots fill the crack so no water can freeze in it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weathering",
+     "note": "False: roots widen cracks and also release acids that promote mineral dissolution; they do not seal rock against water."
+    },
+    {
+     "claim": "Wrong choice: roots do nothing, rock is too hard",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weathering",
+     "note": "False: root wedging is a standard mechanical weathering process (Grokipedia Weathering; Biogeosciences 2026 review, https://bg.copernicus.org/articles/23/4113/2026/bg-23-4113-2026.pdf)."
+    },
+    {
+     "claim": "Context: roots thicken and pry rock apart like a wedge, a kind of weathering; in loose soil they hold it in place",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weathering",
+     "note": "Both halves supported (Weathering: root wedging; Soil erosion: roots bind soil)."
+    }
+   ]
+  },
+  "e6b28d4f1a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a deep, narrow, winding canyon on a high plateau was cut by a river slowly cutting down through the rock",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Canyon",
+     "note": "'A canyon is a deep, narrow valley with steep sides, typically carved by the erosive action of a river'; 'Canyons form primarily through fluvial erosion, where rivers incise downward into elevated landscapes'. NPS Grand Canyon geology: downcutting as the plateau rose (https://home.nps.gov/grca/learn/nature/grca-geology.htm)."
+    },
+    {
+     "claim": "Wrong choice: an earthquake suddenly splitting the ground open",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Canyon",
+     "note": "False: Grokipedia names fault activity and quakes only as speeding or amplifying river incision, never as opening a canyon; this is the documented student misconception (Sexton, Journal of Geoscience Education)."
+    },
+    {
+     "claim": "Wrong choice: the wind slowly blowing the rock away",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Canyon",
+     "note": "False: the page names rivers (and, for slot canyons, flash floods; for submarine canyons, turbidity currents); no wind-carved canyons."
+    },
+    {
+     "claim": "Wrong choice: a volcano suddenly blasting the rock apart",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Canyon",
+     "note": "False: volcanism appears only as lava dams that redirect rivers, which then cut the canyon."
+    },
+    {
+     "claim": "Context: sand and stones in the water scrape the riverbed like sandpaper and cut it a little deeper each year",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Canyon",
+     "note": "Abrasion: particles 'grind and scrape against the channel floor and walls, wearing them down like sandpaper'."
+    },
+    {
+     "claim": "Context: a deep canyon can take millions of years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Canyon",
+     "note": "'The formation of canyons typically spans immense timescales, ranging from 5 to 70 million years' (the fact sheet's '5 to 6 million years or more' is not what the page now says, but the draft only says 'millions of years', which is true)."
+    },
+    {
+     "claim": "Context: earthquakes crack the ground but do not open canyons",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Canyon",
+     "note": "Consistent with Grokipedia (faults speed incision; the river cuts). Some canyons follow fault lines, but the cutting is still done by water."
+    }
+   ]
+  },
+  "a0d9a93aaa": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: a delta is a wide, flat stretch of land at a river's mouth where it flows into the sea",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/River_delta",
+     "note": "'a depositional landform that develops at the mouth of a river'; 'a broad, low-relief depositional environment'. Deltas also form in lakes, but the stem's sea case is true."
+    },
+    {
+     "claim": "Key: the river drops the mud and sand it carries (deposition)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/River_delta",
+     "note": "'the river's velocity decreases dramatically upon entering the receiving water body', so sediment settles; Deposition (geology): 'the deposition of sand and silt at the mouth of a river, forming deltas'."
+    },
+    {
+     "claim": "Wrong choice: the river cuts the coast into a new shape",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/River_delta",
+     "note": "False: a delta is depositional, built outward, not cut."
+    },
+    {
+     "claim": "Wrong choice: the wind heaps sand up along the shore",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dune",
+     "note": "False: that describes coastal dunes, not a delta."
+    },
+    {
+     "claim": "Wrong choice: the ground is pushed up from below",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/River_delta",
+     "note": "False: deltas are built by sediment, not uplift."
+    },
+    {
+     "claim": "Context: the river slows as it runs into the still sea; slow water carries less, so it drops mud and sand; this is deposition and builds new land out into the sea",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/River_delta",
+     "note": "Receiving water is a 'slower-moving or standing body of water'; progradation is 'the seaward advancement of the shoreline as successive layers of sediment build outward'. 'Still sea' is a simplification (tides and waves move the sea) but the sea is still beside the river's current."
+    },
+    {
+     "claim": "Context: the name comes from the Greek letter delta, a triangle, the shape many deltas take",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/River_delta",
+     "note": "Named from the Greek letter delta after the triangular Nile delta; Herodotus 'referred to the Nile's depositional area as the Delta'."
+    }
+   ]
+  },
+  "9140d7e730": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the wind makes sand dunes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dune",
+     "note": "Dunes are built of 'wind- or water-driven sand'; aeolian dunes are 'most commonly associated with arid desert environments' and 'also occur along coastlines'. Water also builds underwater dunes, but that does not stop the wind making dunes; none of the other choices is wind-made."
+    },
+    {
+     "claim": "Wrong choices: deltas, canyons, U-shaped valleys are not wind-made",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/River_delta",
+     "note": "Deltas: river deposition (River delta). Canyons: river incision (https://grokipedia.com/page/Canyon). U-shaped valleys: glacial erosion (https://grokipedia.com/page/U-shaped_valley)."
+    },
+    {
+     "claim": "Context: wind bounces sand grains along close to the ground",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dune",
+     "note": "Saltation: 'particles bounce along the surface after being lifted to heights of a few centimeters'."
+    },
+    {
+     "claim": "Context: drops them where it slows, heaping them into dunes in deserts and along beaches",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Deposition_(geology)",
+     "note": "Deposition 'occurs when the energy of the transporting agent decreases'; Dune page: zones of flow deceleration, deserts and coastlines."
+    },
+    {
+     "claim": "Context: the dunes creep downwind year by year",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dune",
+     "note": "'Aeolian dunes advance downwind', at rates 'generally ranging from 1 to 50 meters per year'. True of active dunes in general; exceptions exist (vegetation 'can halt movement entirely'; a star dune's core 'remains stable'). Optional polish: 'most dunes creep downwind'."
+    },
+    {
+     "claim": "Context: rivers build deltas and cut canyons; glaciers carve U-shaped valleys",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/U-shaped_valley",
+     "note": "Supported by the River delta, Canyon and U-shaped valley pages."
+    }
+   ]
+  },
+  "6c586b4511": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: a mountain valley with steep walls and a wide, rounded floor, shaped like a U",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Valley",
+     "note": "'glacial valleys typically feature U-shaped cross-sections with broad, rounded bottoms and near-vertical walls'; U-shaped valley page: 'a broad, flat floor flanked by steep, near-vertical walls', 'a parabolic profile'."
+    },
+    {
+     "claim": "Key: a glacier carved it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/U-shaped_valley",
+     "note": "'U-shaped valleys result from glacial erosion' (Valley); glaciers transform 'pre-existing V-shaped fluvial valleys into U-shapes' (U-shaped valley)."
+    },
+    {
+     "claim": "Wrong choice: a river",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Valley",
+     "note": "False: river valleys are V-shaped, by 'predominant vertical incision by running water'."
+    },
+    {
+     "claim": "Wrong choice: the wind",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Valley",
+     "note": "False: wind deflation makes only 'elongated, shallow depressions', no steep walls."
+    },
+    {
+     "claim": "Wrong choice: an earthquake",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Valley",
+     "note": "False: earthquakes appear only as triggers of mass wasting; fault-bounded rift valleys are not called U-shaped and are not made by one earthquake."
+    },
+    {
+     "claim": "Context: a glacier is a huge mass of ice that creeps slowly downhill",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glacier",
+     "note": "Ice 'originating on land from the compaction of snow'; flows under its own weight 'at rates from centimeters to meters per day'."
+    },
+    {
+     "claim": "Context: grinds the rock with stones frozen into its base and tears out blocks",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glacier",
+     "note": "Abrasion: 'the grinding action of ice and embedded rock debris against the underlying bedrock'; plucking: 'the mechanical removal of larger bedrock fragments'."
+    },
+    {
+     "claim": "Context: it scrapes the sides as well as the floor and leaves a U; a river cuts mostly downward and leaves a narrower V",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/U-shaped_valley",
+     "note": "Plucking is 'undercutting and broadening the valley sides'; valley glaciers 'promote balanced lateral and vertical erosion'; V-valleys from 'downward cutting by rivers'."
+    }
+   ]
+  },
+  "cdb066effb": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Key: the flood moves boulders because the water is moving much faster",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hjulstr%C3%B6m_curve",
+     "note": "'coarse gravels and boulders demand progressively higher velocities for entrainment'; competence 'scales approximately with the square of the velocity'; Flood page: 'boulder deposits displaced by high-velocity flows' (https://grokipedia.com/page/Flood). (Greater depth also adds force, but through faster flow and more shear; the key is the standard and true answer.)"
+    },
+    {
+     "claim": "Wrong choice: the boulders float in the deeper water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Rock_(geology)",
+     "note": "False for ordinary stream boulders: common rock 2.5-3.0 g/cm3, granite 2.63-2.75. Water's buoyancy lightens a boulder but cannot float it."
+    },
+    {
+     "claim": "Wrong choice: the storm's wind pushes the boulders",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hjulstr%C3%B6m_curve",
+     "note": "False: the flowing water moves the bed load; wind cannot move a boulder on a stream bed."
+    },
+    {
+     "claim": "Wrong choice: the rain makes the riverbed slippery",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sediment_transport",
+     "note": "False: a riverbed is already under water; motion starts when bed shear stress passes 'the minimum value of bed shear stress at which sediment particles begin to move', and 'larger gravels demand progressively higher velocities to initiate motion'; wetness is not the cause."
+    },
+    {
+     "claim": "Context: the faster water flows, the bigger the rocks it can push and carry, so a flood moves boulders that sit still on a calm day",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hjulstr%C3%B6m_curve",
+     "note": "Supported as above."
+    },
+    {
+     "claim": "Context: 'Rock is more than twice as dense as water, so a boulder never floats, however deep the stream'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Pumice",
+     "note": "Too absolute. Pumice is a rock that floats: density 'typically ranges from 0.25 to 0.75 g/cm3', 'low enough for many specimens to float on water', forming rafts after eruptions (pumice floating is a common classroom demonstration a 5th grader may know). Also porous sandstone is about 2.0 g/cm3 (Grokipedia Rock), not 'more than twice'. Common rocks are 2.5-3.0 g/cm3, so the point holds for ordinary boulders. Fix: 'Ordinary rock is two to three times as dense as water, so a boulder like these never floats, however deep the stream.'"
+    }
+   ]
+  },
+  "cbcc129cf1": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a landslide can change the land in a few minutes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Landslide",
+     "note": "'Very rapid' class: 'Motion observable over seconds to minutes'; 'Extremely rapid' above 5 m/s. (Some landslides are extremely slow, but the stem asks which CAN be fast.)"
+    },
+    {
+     "claim": "Wrong choice: a glacier carving out a valley",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glacier",
+     "note": "False for minutes: glaciers move centimetres to metres a day, and carving a U-shaped trough from a river valley takes very long times."
+    },
+    {
+     "claim": "Wrong choice: tree roots prying a boulder apart",
+     "result": "ok",
+     "source": "https://bg.copernicus.org/articles/23/4113/2026/bg-23-4113-2026.pdf",
+     "note": "False for minutes: root wedging works through slow radial root growth over years."
+    },
+    {
+     "claim": "Wrong choice: the wind piling sand into a dune",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dune",
+     "note": "False for minutes: wind moves sand grain by grain (saltation, a few centimetres up), and dunes advance only 1-50 m a year; building a dune is a matter of years, not minutes."
+    },
+    {
+     "claim": "Context: in a landslide gravity pulls rock and soil down a slope, often after heavy rain soaks the ground or an earthquake shakes it; the fastest are over in seconds or minutes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Landslide",
+     "note": "'the movement of a mass of rock, debris, earth, or other materials down a slope', gravity-driven; triggers 'prolonged heavy rainfall saturating slopes', 'earthquake shaking destabilizing materials'."
+    },
+    {
+     "claim": "Context: glaciers, roots and wind do their work over many years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dune",
+     "note": "Supported by the Glacier, Dune and root-wedging sources above."
+    }
+   ]
+  }
+ },
+ "unit_notes": "9 questions: 8 ok, 1 error (cdb066effb, context only: 'Rock is more than twice as dense as water, so a boulder never floats' is false for pumice, which floats, and porous sandstone (~2.0 g/cm3); fix to 'Ordinary rock is two to three times as dense as water, so a boulder like these never floats'). Frost wedging (903abc790e): the key 'water takes up more space as ice' is still true at the 5th-grade level. Since Walder and Hallet (1985-86), research holds that ice segregation does more in most natural rock and that plain expansion needs near-saturated, sealed cracks, but Grokipedia and Wikipedia both keep expansion as a valid mechanism (notably in impermeable rock like granite), NPS teaches it, and it is the only true choice. An optional context tweak is given there. Optional polish in 9140d7e730: 'most dunes creep downwind' (vegetated dunes and star-dune cores stay put). The fact sheet's F11 quote of canyon time ('5 to 6 million years or more') does not match the live Grokipedia Canyon page ('5 to 70 million years'); the draft only says 'millions of years', which is fine."
+}

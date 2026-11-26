@@ -1,0 +1,57 @@
+{"unit": "adaptations-built-for-a-place",
+ "questions": {
+  "4660801600": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem says each feature is 'a part of a living thing'. That rules out 'A habitat' (a place) and 'A life cycle' (a series of stages) for any student who knows those 3rd- and 4th-grade words, which leaves adaptation against instinct. 'A life cycle' is also weak on its own: no child would call a beak a life cycle.",
+     "fix": "Drop 'a part of a living thing' so 'A habitat' stays a live lure ('... a cactus's sharp spines each help a living thing survive where it lives. What is a feature like this called?'), and replace 'A life cycle' with 'A habit'. Choices: 'An adaptation', 'An instinct', 'A habitat', 'A habit'."}
+   ]},
+  "5bca6eb8c3": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Cold pond water makes its toes grow webs' is the weakest of the three lures. The other two (use stretches the toes; wanting makes them grow) are the documented Lamarckian misconceptions.",
+     "fix": "Optional: 'Paddling hard each day makes its webs grow' keeps the use-and-disuse idea in a second form, or keep it as is."}
+   ]},
+  "a0fd1358f8": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The answer is the only cold place and the only watery place among four. A student who has never heard of blubber still knows from everyday life that thick fur keeps an animal warm, and the three hot choices fall away together. The blubber half of the fact is never tested.",
+     "fix": "Replace 'Dry grasslands' with 'Snowy mountain peaks'. Dense fur suits a mountain's cold too, but blubber is the covering of animals in icy water, so only a student who knows blubber picks the seas. Add a context line: mountain animals have thick fur but no blubber."}
+   ]},
+  "cf53b403b1": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "All three wrong choices fall to the stem. The lizard is lying on the sand in plain view, so it is neither hibernating nor migrating. 'Sandy-brown' is not a warning colour, and the name 'warning colours' explains itself. A student who does not know the word camouflage reaches it by elimination, so only one choice is live.",
+     "fix": "Keep the stem; use choices that are all about colouring or skin, and that the stem does not rule out: 'Camouflage', 'Mimicry', 'Warning colours', 'Moulting'. The context then adds that mimicry is looking like a different animal (a harmless fly striped like a wasp), and that moulting is shedding old skin or fur."}
+   ]},
+  "7e5eb00f2b": {"verdict": "ok",
+   "issues": []},
+  "e7b03bbb46": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Odd one out. Three wrong choices are all animal diets (rabbits and mice, fish and frogs, beetles and ants) and the answer is the only plant diet, so the question shrinks to 'plants or animals?' and a test-wise student picks the odd one. The useful clue, 'no long, pointed teeth at the front', which rules out an omnivore, is never tested. Also, in the context, 'Animals that eat other animals, from mice to fish to insects' reads as if mice, fish and insects were the eaters.",
+     "fix": "Replace 'Beetles and ants' with 'Berries and beetles', an omnivore's mixed diet that the missing pointed teeth rule out. Choices: 'Grass and leaves', 'Berries and beetles', 'Rabbits and mice', 'Fish and frogs'. In the context: 'Animals that hunt mice, fish or insects have sharp, pointed teeth ... ; animals that eat both plants and animals have flat back teeth and long, pointed front teeth.'"}
+   ]},
+  "020c21c540": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'In its flowers' is not live: the stem says the cactus goes months without rain, and every child knows a cactus flower lasts only a short time. The real 5th-grade confusion is missing: children take a cactus's fleshy pads and columns for leaves.",
+     "fix": "Replace 'In its flowers' with 'In its leaves'. The context then says that a cactus's fleshy green body is its stem and that its only leaves are its spines. Keep 'In its spines' and 'In its roots'."}
+   ]},
+  "11f412c474": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "Overlap with roots-stems-leaves-and-flowers, whose final asks what roots take in ('Take in water and minerals') with the same lure, 'Take in food from the soil'. This question can be answered from that fact alone, roots take in water and the stem says desert, so the new fact (deep roots reach groundwater) is not what decides it. The lure 'Food stored deep in the soil' repeats that unit's misconception.",
+     "fix": "Ask the contrast that only this unit teaches: 'Desert plants grow roots of two kinds. Some spread shallow roots wide, just under the ground; others send a single root straight down many metres. What can the deep root reach that the shallow ones cannot?' Answer 'Water that stays underground all year'. Choices: 'Water that stays underground all year', 'Rain in the first minutes after it falls', 'Food stored deep in the soil', 'Richer soil far below the sand'. Every root takes in water, so the old fact no longer settles it."},
+    {"axis": "tell", "severity": "medium",
+     "what": "'Warmth deep in the ground' is not a real lure; no 5th grader thinks a root goes looking for warmth. With 'Rain that has just fallen' weakened by 'many metres into the ground', only two choices are live.",
+     "fix": "Covered by the rewrite above: 'Rain in the first minutes after it falls' becomes the shallow roots' real job, and 'Richer soil far below the sand' replaces the warmth choice."}
+   ]},
+  "78c23acc6e": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "All three wrong choices are absurd to a 5th grader who has just met how-plants-make-food: a bare tree cannot make more food without leaves, catch more sunlight on bare twigs, or grow taller while it rests. Each claims a gain from losing leaves, and the answer is the only one about saving anything. Only one choice is live.",
+     "fix": "Use wrong choices that sound like real reasons for the cold: 'They lose less water while the ground is frozen' (answer) / 'They keep the trunk warmer through the frost' / 'They make room for next spring's new leaves' / 'They stop the sap from freezing inside'. Avoid 'snow slides off bare branches' and 'fallen leaves feed or warm the soil', which are partly true."}
+   ]}
+ },
+ "unit_notes": "Scope covered: the term (4660), inherited not chosen (5bca), body coverings for cold (a0fd), colouring (cf53), beaks (7e5e), teeth (e7b0), the cactus's stem (020c), deep desert roots (11f4) and winter leaf-fall (78c2). 'Spines instead of leaves' appears only in 020c's context; the 020c fix ('In its leaves' as a lure) brings it into a question. LANE: clean. Every example is a kind or group (hawks, turtles, cacti, ducks and other water birds, an unnamed lizard, bird and skull, desert trees, snowy-land trees), and no single species' famous trick is asked. The Kalahari tree and the horned lizard stay in the fact sheet only. OVERLAPS: (1) 11f4 vs roots-stems-leaves-and-flowers' root-job question: same deciding fact (roots take in water, not food) and the same lure. Fix in 11f4 (the shallow-versus-deep contrast). (2) cf53's sandy lizard under a hawk vs ecosystems-living-and-nonliving's desert lizard on a sunny rock with a hawk among the choices: different facts, same scene. Change one of them. (3) 5bca's fact (adaptations are inherited, not grown in one lifetime) is the correction behind a wrong choice in ecosystems-living-and-nonliving's drought question. It is asked only here, so this is fine. The coming T1 unit born-knowing-or-learned (inherited traits vs things gained in life) must not ask it again with a body feature. (4) Checked and clear: 78c2 vs roots-stems-leaves-and-flowers' stomata question (water out of leaves is context there, the asked fact here); 7e5e vs 4660 (4660 names the hawk's hooked beak but does not say what it is for, so nothing leaks into 7e5e); 4660's 'A habitat' distractor vs ecosystems' habitat question (the term is taught there, used as a lure here)."}

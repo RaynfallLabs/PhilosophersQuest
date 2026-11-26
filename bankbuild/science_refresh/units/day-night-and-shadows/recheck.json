@@ -1,0 +1,6 @@
+{"unit": "day-night-and-shadows",
+ "questions": {
+  "39cd8405e8": {"verdict": "pass",
+   "why": "Context fixed: an overhead Sun puts the tree's shadow right underneath it (Wikipedia Shadow: 'shadows are cast directly underneath objects'), no longer 'almost none'. Key true (length goes with the cotangent of the Sun's elevation; a shadow several times the height needs a low Sun); each wrong choice wrong, and 'Halfway up the sky' (about one height of shadow) is excluded by 'many times longer'. The judge's low on that vague choice remains but leaves one defensible answer.",
+   "sources": ["https://en.wikipedia.org/wiki/Shadow", "https://scied.ucar.edu/activity/sunshine-shadows"]}
+ }}
