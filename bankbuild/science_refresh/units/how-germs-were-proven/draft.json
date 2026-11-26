@@ -1,0 +1,200 @@
+{
+ "unit": "how-germs-were-proven",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "how-germs-were-proven",
+   "question": "Ignaz Semmelweis worked in the two maternity clinics of Vienna General Hospital in the 1840s. Doctors and medical students delivered the babies in the First Clinic, which lost about one mother in ten to childbed fever; midwives delivered them in the Second, which lost fewer than one in twenty-five. A woman in labour was sent to whichever clinic was taking patients that day, as the two took turns, a day at a time. What did that way of sorting the women rule out?",
+   "answer": "That one clinic was sent the sicker women",
+   "choices": [
+    "That one clinic was sent the sicker women",
+    "That the doctors' own work explained the gap",
+    "That foul air in the hospital caused the fever",
+    "That fear of the First Clinic made women ill"
+   ],
+   "context": "The day a woman arrived, not anyone's choice, decided where she went, so neither clinic could have been handed the sicker cases, and the gap had to come from something done inside the clinics. It was, by accident, a controlled trial. The doctors' own work was exactly what Semmelweis went on to suspect.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6",
+    "F7"
+   ],
+   "grade_note": "Ninth-grade investigation design teaches confounding variables and fair comparison groups, and Semmelweis's two clinics are the classic natural example."
+  },
+  {
+   "tier": 5,
+   "topic": "how-germs-were-proven",
+   "question": "Jakob Kolletschka, a professor at Vienna General Hospital, was pricked by a student's scalpel during an autopsy in March 1847 and soon died. His autopsy showed the same signs that Ignaz Semmelweis kept finding in mothers dead of childbed fever, though Kolletschka had never given birth. What did his death suggest to Semmelweis about the fever?",
+   "answer": "Matter from a corpse, entering a cut, could cause it",
+   "choices": [
+    "Matter from a corpse, entering a cut, could cause it",
+    "Foul air in the autopsy room could cause it",
+    "Fear and shock after an injury could cause it",
+    "A chill caught at the dissecting table could cause it"
+   ],
+   "context": "Semmelweis concluded that 'cadaverous particles' from the corpses, carried on the hands of doctors and students, had entered Kolletschka through the cut and were reaching mothers the same way. Bad air, emotional shock and chilling all appeared in the textbooks of his day as causes of childbed fever. The student midwives of the safer clinic never touched a corpse.",
+   "facts": [
+    "F2",
+    "F5",
+    "F9",
+    "F31"
+   ],
+   "grade_note": "Ninth-grade science asks students to reason from an observation to a hypothesis, and this death is the clue that turned Semmelweis toward the autopsy room."
+  },
+  {
+   "tier": 5,
+   "topic": "how-germs-were-proven",
+   "question": "Ignaz Semmelweis made the doctors and students of his Vienna clinic wash their hands in chlorinated lime from May 1847, to clear off the 'cadaverous particles' he blamed for childbed fever. Deaths there fell from 18.3 percent in April to 1.2 percent in July. Johann Klein, the head of the clinic, never accepted the idea, and critics raised an objection that was hard to answer. What could Semmelweis not show them?",
+   "answer": "What the particles were and how they did harm",
+   "choices": [
+    "What the particles were and how they did harm",
+    "How his clinic's deaths ran in the years before",
+    "How the midwives' clinic compared with his own",
+    "How many women each of the two clinics took in"
+   ],
+   "context": "Semmelweis had the counts, the midwives' clinic to compare with, and a fall that held through 1848, but no mechanism: no one could yet see or name what was being carried, and Klein wanted more than statistics. The washing worked all the same, and germ theory explained it after his death. Shunned by much of his profession, he died in an asylum near Vienna in 1865, aged 47, of an infected wound on his hand.",
+   "facts": [
+    "F9",
+    "F10",
+    "F11",
+    "F12"
+   ],
+   "grade_note": "Ninth graders learn that a result needs both evidence and an explanation, and that sceptical review can be right to ask for a mechanism even when the result is true."
+  },
+  {
+   "tier": 5,
+   "topic": "how-germs-were-proven",
+   "question": "John Snow, a London doctor, argued that the cholera killing hundreds in Soho in 1854 came from the water of the public pump on Broad Street, not from the bad air most doctors blamed. He checked his idea against the people living and working near the pump. Which finding would have counted most against him?",
+   "answer": "Brewery men by the pump, who drank only beer, dying as often as others nearby",
+   "choices": [
+    "Brewery men by the pump, who drank only beer, dying as often as others nearby",
+    "Families who walked past nearer pumps to fetch its water falling ill",
+    "Deaths crowding most thickly into the houses that stood closest to the pump",
+    "A widow who lived miles away, and was sent its water by cart, dying of cholera"
+   ],
+   "context": "Men who breathed the street's air but never drank the pump's water would have died like everyone else if bad air were the cause; in fact none of the brewery's seventy-odd workmen fell seriously ill. The other three are things Snow really found, and each fits a disease carried in water. A test that could have proved him wrong, and did not, made his case stronger.",
+   "facts": [
+    "F2",
+    "F13",
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "Ninth-grade science teaches that a claim is tested by asking which result would disprove it, and Snow's brewery is the standard case."
+  },
+  {
+   "tier": 5,
+   "topic": "how-germs-were-proven",
+   "question": "John Snow persuaded the parish to take the handle off the Broad Street pump on 8 September 1854, and the outbreak soon died away. Many retellings end the story there, with the handle as the proof. Snow himself wrote that the removal could not settle whether the well still held the poison by then. Why not?",
+   "answer": "Deaths had already been falling for days before it",
+   "choices": [
+    "Deaths had already been falling for days before it",
+    "Every other pump in Soho was shut on that same day",
+    "The handle was put back on within a few days",
+    "Most of the dead had never once drunk from that pump"
+   ],
+   "context": "Fatal attacks had dropped from 143 on 1 September to 12 on the day the handle came off, partly because many people had fled. When deaths are already falling, a step taken at that moment cannot show that it was the step that stopped them. Snow's real evidence was the pattern of who drank the water and who fell ill.",
+   "facts": [
+    "F14",
+    "F17"
+   ],
+   "grade_note": "Judging evidence in ninth grade includes spotting a trend already under way, and the pump handle is the famous case where the popular story overclaims."
+  },
+  {
+   "tier": 5,
+   "topic": "how-germs-were-proven",
+   "question": "Félix Pouchet, Louis Pasteur's rival, defended spontaneous generation, the idea that life can arise from lifeless matter. He held that life needs the oxygen in air to arise, so broth sealed away from the air proved nothing to him. Pasteur boiled broth in a flask whose neck he had drawn out into a long S-shaped bend, open at the tip. Why did that neck answer Pouchet?",
+   "answer": "Air could reach the broth, but dust stuck in the bend",
+   "choices": [
+    "Air could reach the broth, but dust stuck in the bend",
+    "Air could reach the broth, but only once it was heated",
+    "The bend kept the air off the broth while it cooled",
+    "Air could reach the broth, but its oxygen could not"
+   ],
+   "context": "Air moved freely in and out of the open neck, so the oxygen Pouchet said life needs reached the broth, yet it stayed clear, because dust and the microbes on it settled on the moist glass of the bend. Theodor Schwann had earlier fed broth heated air, which left critics room to say the heat had changed it; Pasteur's air was untouched. The life in spoiled broth comes from specks carried in the air, not from the air itself.",
+   "facts": [
+    "F1",
+    "F19",
+    "F20",
+    "F21"
+   ],
+   "grade_note": "Ninth graders learn to design a test that answers a specific objection, and the swan-neck flask is the textbook example of a design that does."
+  },
+  {
+   "tier": 5,
+   "topic": "how-germs-were-proven",
+   "question": "One of Louis Pasteur's swan-necked flasks of boiled broth stayed clear for a long time. Then he snapped the neck off close to the body of the flask, so that dust from the room could fall straight in. Soon the broth was cloudy with microbes. What did that cloudy broth show?",
+   "answer": "The boil had not ruined the broth as food for microbes",
+   "choices": [
+    "The boil had not ruined the broth as food for microbes",
+    "Lifeless specks of dust can turn into living microbes",
+    "A few microbes had lived through the long boil all along",
+    "The bend in the neck had been keeping the air out"
+   ],
+   "context": "Pouchet had argued that Pasteur's long boil destroyed the broth's power to support life; once dust fell in, the same broth teemed, so it had not. When Pasteur instead tipped an unbroken flask so the broth washed over the dust in the bend, it clouded too, showing that the life came in from outside on the dust. Air had passed through the open neck all along.",
+   "facts": [
+    "F21",
+    "F22",
+    "F23"
+   ],
+   "grade_note": "Ninth-grade science asks what each part of an experiment rules out, and the broken neck is the step that shows the boiled broth could still feed life."
+  },
+  {
+   "tier": 5,
+   "topic": "how-germs-were-proven",
+   "question": "Robert Koch, a country doctor in Wollstein, set out in the 1870s to prove that a rod-shaped microbe found in animals dying of anthrax was the cause of the disease. With home-made slivers of wood he put rods from the spleens of animals dead of anthrax into mice, and every one died. At the same time he gave other mice blood from the spleens of healthy animals. What did that second group rule out?",
+   "answer": "That the cut or any spleen blood could kill a mouse",
+   "choices": [
+    "That the cut or any spleen blood could kill a mouse",
+    "That something else in the sick blood did the killing",
+    "That the rods can grow only inside a living body",
+    "That anthrax spreads through the air of a sick farm"
+   ],
+   "context": "The healthy-blood mice had the same cut and the same kind of blood, and none fell ill, so neither the wound nor blood as such was the killer: that is the job of a control group, everything the same but the one thing tested. It could not rule out some other poison riding along in the sick blood. So Koch grew the rods for several generations in fluid from an ox's eye, far from any animal, and they still caused anthrax.",
+   "facts": [
+    "F4",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "Ninth-grade investigation design teaches what a control group is for, and Koch's healthy-blood mice are a clean historical example."
+  },
+  {
+   "tier": 5,
+   "topic": "how-germs-were-proven",
+   "question": "Robert Koch laid down four steps, known as Koch's postulates, for proving that a particular germ causes a particular disease. Working on cholera, he later found its germ in people who showed no sign of the disease. Koch gave up part of one step because of those healthy carriers. Which step was it?",
+   "answer": "The germ is found in all the sick and in none of the well",
+   "choices": [
+    "The germ is found in all the sick and in none of the well",
+    "The germ is grown pure, apart from the body it came from",
+    "The pure germ should bring on the disease in a healthy animal",
+    "The germ is found again in the animal that fell ill"
+   ],
+   "context": "The first step said the germ must be in every case of the disease and absent from the healthy; carriers broke the second half, so Koch dropped it. Most people infected with cholera are now known to have mild symptoms or none. The steps remain the backbone of the proof, but as a guide with known exceptions: viruses, for one, cannot be grown pure outside living cells.",
+   "facts": [
+    "F26",
+    "F27"
+   ],
+   "grade_note": "Ninth-grade biology teaches Koch's postulates as the test for a disease's cause, and the healthy carrier is the standard example of the method's limits."
+  },
+  {
+   "tier": 5,
+   "topic": "how-germs-were-proven",
+   "question": "Joseph Lister, a surgeon in Glasgow, saw wounds fester and rot after operations, and nearly half of his amputation patients died. Surgeons blamed the rot on the oxygen in the air. After reading Louis Pasteur's work on why broth spoils, Lister tried a new plan in 1865. What did he set out to do?",
+   "answer": "Destroy the living specks that reached each wound",
+   "choices": [
+    "Destroy the living specks that reached each wound",
+    "Seal each wound so that no oxygen could reach it",
+    "Clear the wards of the foul vapours from the wounds",
+    "Amputate sooner, before a wound could start to fester"
+   ],
+   "context": "Pasteur had traced rotting to tiny living things carried in the air, not to its oxygen, so Lister could leave the air alone and kill the living things at the wound with carbolic acid, then used on the sewage of Carlisle. Amputation deaths in his wards fell from 16 of 35 to 6 of 40. Critics asked whether other changes explained the fall, and The Lancet urged a side-by-side test of wards with and without the acid.",
+   "facts": [
+    "F2",
+    "F28",
+    "F29",
+    "F30"
+   ],
+   "grade_note": "Ninth graders learn how one finding becomes a testable plan in another field, and Lister's step from Pasteur's broth to the surgical wound is the classic case."
+  }
+ ]
+}

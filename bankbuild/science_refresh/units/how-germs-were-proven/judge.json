@@ -1,0 +1,89 @@
+{"unit": "how-germs-were-proven",
+ "questions": {
+  "aa2e793af0": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only choice of its kind. It is the one claim about which women went where; the other three are causes inside the clinics (the doctors' work, foul air, fear), and a sorting rota plainly cannot speak to any of them. A student who does not grasp what random-like assignment does can still match 'that way of sorting the women' to 'one clinic was sent the sicker women' (the stem's 'was sent' even echoes it). The reasoning the question exists to test, what a fair assignment does and does NOT rule out, is never put under strain.",
+     "fix": "Keep the stem and the key. Replace 'That fear of the First Clinic made women ill' and 'That the doctors' own work explained the gap' with the two real 9th-grade slips about random assignment: 'That chance alone made the two rates differ' (students think the sorting removes chance; only the numbers do that) and 'That the clinics differed in anything but their staff' (students think a fair sort makes everything equal; it equalizes only the women). Keep 'That foul air in the hospital caused the fever'. All four then make the same kind of claim about the comparison."},
+    {"axis": "clarity", "severity": "low",
+     "what": "83 words, but the question is clear and every sentence is needed. No change is required for length.",
+     "fix": "Optional trim: drop 'in the 1840s' (the card carries the date)."}
+   ]},
+
+  "3ae492f911": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key restates the stem's own events: 'pricked by a student's scalpel during an autopsy' becomes 'Matter from a corpse, entering a cut'. It is the only choice that uses the cut, which is the one detail the stem puts in front. 'Foul air in the autopsy room' is a good lure (miasma), but 'A chill caught at the dissecting table' tempts no 9th grader, so the item is close to a gimme. The respectable historical causes (chill, shock) are honest, but they are not live.",
+     "fix": "Replace the chill with a lure that also uses the wound, so the student must see that the corpse matter is the point: 'A clean cut of any kind could cause it'. Reword the key so it does not echo 'cut': 'Matter from a corpse, entering a wound, could cause it'. Keep 'Foul air in the autopsy room' and 'Fear and shock after an injury'."},
+    {"axis": "fact", "severity": "low",
+     "what": "'Was pricked ... in March 1847 and soon died' dates the prick, but F9 dates only the death (13 March 1847). The wound may have come in late February or early March.",
+     "fix": "'... was pricked by a student's scalpel during an autopsy and died in March 1847.'"}
+   ]},
+
+  "96ff6347d0": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two cues hand over the key. First, the word echo: the stem names 'cadaverous particles' in scare quotes, and the key begins 'What the particles were'. Second, the odd one out: the three wrong choices are all record-keeping (earlier years, the other clinic, admissions), which the stem's own monthly percentages show he had, while the key is the one non-statistical choice. So the 9th-grade point (statistics without a mechanism) can be reached without the reasoning.",
+     "fix": "Take the term out of the stem ('... wash their hands in chlorinated lime from May 1847, before they examined the mothers.') and reword the key: 'What was killing the mothers, and how it worked'. Make one lure a non-statistical thing he COULD show: 'That the lime took the corpse smell off the hands' (F10: that is why he chose it). Keep 'How his clinic's deaths ran in the years before' and replace the admissions choice with 'That deaths stayed low long after the washing began' (true for 1848). Keep the card's fair treatment of Klein: it steel-mans the demand for a mechanism and meets the framing note without a sermon."}
+   ]},
+
+  "f09f77429b": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "'who drank only beer' goes beyond the source. Snow's own account (F15) says only that the men had a malt-liquor ration and never took water from the street pump; the brewery also had its own well.",
+     "fix": "'Brewery men by the pump, who never drank its water, dying as often as others nearby'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'He checked his idea against the people living and working near the pump' does not cover the widow choice: she lived miles away. A careful reader may wonder whether that finding is in scope.",
+     "fix": "'He checked his idea house by house, against who fell ill and where each one's water came from.'"}
+   ]},
+
+  "1e35e9dfaa": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Whether the well still held the poison by then' carries a time cue ('still', 'by then') that points to a decline already under way. It is Snow's own reasoning and a fair clue, and 'Every other pump in Soho was shut on that same day' is a good confound lure. 'Most of the dead had never once drunk from that pump' would sink Snow's whole case, not just the handle's, so a careful reader sets it aside quickly. The item still works.",
+     "fix": "None required. Optional: replace the last choice with 'Rain had flushed the well clean that same week', which is about the well at that moment and is false."}
+   ]},
+
+  "6ce260bd73": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem and the choices together hand over the answer. The stem says the design had to let oxygen reach the broth to answer Pouchet, and that the neck was open at the tip. That kills 'The bend kept the air off the broth while it cooled' (the F21 misconception, but the stem rules it out here). It also kills 'Air could reach the broth, but its oxygen could not' (air through an open tube without its oxygen, which would not answer Pouchet anyway). Of the two left, only the key involves the bend, and the question asks why the neck answered him. A 9th grader who has never heard of the swan-neck flask gets it by elimination, never meeting the actual insight (the bend traps the dust that carries microbes).",
+     "fix": "Keep the stem. Make all four choices grant the air and give the bend a different job, so that only knowing (or reasoning) that microbes ride on dust decides: 'Air could reach the broth, but dust stuck in the bend' / 'Air could reach the broth, but the bend dried it first' / 'Air could reach the broth, but the bend cooled it first' / 'Air could reach the broth, but the hot glass killed what it carried' (the heat-sterilizes slip, Schwann's heated air). Move the 'bend keeps the air out' misconception to the card."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'only once it was heated': 'it' can be read as the air or the broth.",
+     "fix": "Resolved by the new choices above."}
+   ]},
+
+  "38f2341e28": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The key answers Pouchet's objection (that the long boil ruined the broth), which this stem never names. A 9th grader who expects the textbook line 'the microbes came in on the dust' will not find it and must work out the less obvious inference. That inference is true and reachable, and the lures are good: dust turning into life (spontaneous generation), survivors of the boil (ruled out by 'stayed clear for a long time') and the bend keeping the air out (F21, which knowledge rules out). So the item stands.",
+     "fix": "None required. Make sure the card states Pouchet's boil objection so that the key reads as the point."}
+   ]},
+
+  "1d91496e55": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "medium",
+     "what": "The stem never gives the control group's result. It says that every inoculated mouse died and that 'other mice' got healthy spleen blood, then asks what that group ruled out, without saying that those mice stayed well. The evidence the student is asked to reason from is missing; it appears only in the card ('none fell ill'). A careful 9th grader cannot know what the second group showed.",
+     "fix": "'At the same time he gave other mice blood from the spleens of healthy animals, and none of them fell ill. What did that second group rule out?'"},
+    {"axis": "tell", "severity": "medium",
+     "what": "Only one wrong choice is live. 'That something else in the sick blood did the killing' is an excellent lure, the classic over-reading of a control, and the card answers it with Koch's ox-eye cultures. But 'That the rods can grow only inside a living body' has nothing to do with what a control can show. 'That anthrax spreads through the air of a sick farm' is both weak and half-arguable, since control mice in the same room did stay healthy.",
+     "fix": "Replace the air choice with 'That the rods would kill a larger animal as well' (the over-generalizing slip: nothing about other species was tested). Replace 'grow only inside a living body' with 'That the rods alone, and nothing else, did the killing'. Paired with the 'something else in the sick blood' lure, it makes the student see that the control speaks to neither."}
+   ]},
+
+  "3af2278332": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's words negate the key's words. 'Found its germ in people who showed no sign of the disease' is a direct match for 'found ... in none of the well'. 'Gave up part of one step' also points to the only two-part choice ('in all the sick and in none of the well'). Step 3 ('in a healthy animal') is a real lure, but the item tests matching more than knowing the steps or reasoning about them.",
+     "fix": "Teach step 1 in the stem and ask the real reasoning: when an exception meets a rule of proof, which gives way? 'Robert Koch's first step for proving that a germ causes a disease said the germ must be found in every sick person and in no healthy one. Working on cholera, he found its germ in every victim he examined, and then in people who carried it and never fell ill. What did he conclude?' Choices: 'That the step was too strict to hold for every disease' (key, F27) / 'That this germ could not be the cause of cholera' (what step 1 strictly demands, so a strong lure) / 'That the carriers would all fall ill later on' (false: most cholera infections stay mild or silent) / 'That cholera came from bad air after all'."}
+   ]},
+
+  "149b4e6d94": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Amputate sooner, before a wound could start to fester' does not follow from reading Pasteur and tempts no one who reads the stem. 'Seal each wound so that no oxygen could reach it' is the strong lure: the stem primes it on purpose, and it is the plan that Pasteur's result made needless. 'Clear the wards of the foul vapours' (miasma) is fair.",
+     "fix": "Replace it with 'Cool each wound so the rot would grow slowly' (real kitchen science that students apply here, and not Lister's plan)."}
+   ]}
+ },
+ "unit_notes": "Scope coverage is complete. It has the two rival ideas (spontaneous generation in G6 and G7; miasma as the foil in G2, G4 and G10), Semmelweis (G1 the rota, G2 Kolletschka, G3 the mechanism objection), Snow (G4 the brewery as a disproof test, G5 the handle myth), Pasteur (G6 why the neck answered Pouchet, G7 the broken neck), Koch (G8 the control, G9 the carriers) and Lister (G10), with what a control group is for in both G1 and G8. No two questions test the same fact. Grade fit is right for 9th grade (map line G9.M2), and the honest caveats (G3's fair-minded Klein, G5's handle myth, G10's card on the Lancet's call for a side-by-side test) meet the framing note: dissent is honoured, the test rather than authority settles it, and nothing is preached. G9.M1 is touched only lightly (G3: evidence without a mechanism; G9 as rewritten: a rule of proof yields to evidence), which is enough for a unit led by M2. Stems are long (G1 83 words, G8 74, G3 71), but each states one question clearly at the end; G8's problem is a missing result, not density. One pattern runs through the revises and should go to the author's spec: at T5 the wrong choices must make the same KIND of claim as the key, or the key is the odd one out (G1, G3), and a stem must not state the very fact that settles the choices (G6's objection plus 'open at the tip'; G9's 'found ... no sign'). G4, G5 and G7 are the model: four choices of one kind, each a real reading of the evidence, with careful reasoning separating them. Voice is clean: no second person, no exclamation marks, no date openers and no singular 'they'."
+}

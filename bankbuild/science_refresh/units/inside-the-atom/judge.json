@@ -1,0 +1,62 @@
+{"unit": "inside-the-atom",
+ "questions": {
+  "bbe0648f6a": {"verdict": "ok", "issues": []},
+
+  "5a13481a74": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Gaining three more electrons' runs against the stem's own arithmetic: 82 down to 79 is a loss, so any student who reads the two numbers sets every 'gaining' choice aside without knowing what the atomic number counts. Three choices are live, and the key still needs the fact, so it stands.",
+     "fix": "Ask 'Which change would make a lead atom into gold?' (drop 'single') and replace the choice with 'Losing three electrons and three neutrons': a loss, tempting to the student who mixes atomic number with mass (RSC M4), and still lead, since its 82 protons are untouched."}
+   ]},
+
+  "613cf6d12d": {"verdict": "ok", "issues": []},
+
+  "942cdd0d46": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The same number of particles in the nucleus' is the weakest choice: the stem's own figures (11 and 19 electrons, so 11 and 19 protons in neutral atoms) already show that the two nuclei differ. 'The same number of electron shells' is a strong lure (the group-versus-period confusion), and 'inner electrons' is fair.",
+     "fix": "Replace it with 'The same number of neutrons in the nucleus' (sodium-23 has 12, potassium-39 has 20; the stem gives no neutron count, so it stays live)."}
+   ]},
+
+  "944f57c3e1": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem kills 'Waves in the ether, like waves of light'. It says the beam bent toward the positive plate, which any 8th grader reads as a negative charge, and the other three choices all open 'Negatively charged'. The one choice without a charge is the one the stem's own evidence rules out, so only three are live. (Hertz's aether waves are an honest rival theory, but the deflection the stem describes is what refuted them.)",
+     "fix": "Keep the stem. Make all four choices charged so that only Thomson's mass result, which the stem leaves out, decides: 'Negatively charged pieces of atoms' / 'Negatively charged atoms of the gas' / 'Negatively charged atoms of the metal' / 'Negatively charged atoms of hydrogen' (hydrogen was the lightest atom known, and Thomson's particles came out about a thousand times lighter). Move the aether-wave rival into the card."}
+   ]},
+
+  "0baaa4590d": {"verdict": "ok", "issues": []},
+
+  "cf64111af9": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Each atom's electrons are hard and heavy' is the weakest choice. 8th grade teaches that the electron has almost no mass (the unit's own Q1 card says 1/1836 of a proton), and no historical model gave the electron weight, so it is half a choice. 'Charge spread out evenly' (Thomson) and 'packed solid' are good lures.",
+     "fix": "Replace it with 'Each atom has a hard outer shell' (RSC M3, shells pictured as rigid; a hard shell is what a student thinks a bounce needs, and the 'very few' in the stem is what rules it out)."}
+   ]},
+
+  "809b89cfb6": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Only two choices are live. The clause 'but it was still many atoms thick' is written to rule out 'The foil had gaps between its atoms', and the 'but' flags it. 'Alpha particles are lighter than electrons' is not a belief an 8th grader holds (the unit's own Q3 makes an alpha particle a helium nucleus), and nothing in the stem invites it. What remains is the key against 'Alpha particles carry no electric charge'.",
+     "fix": "Drop both weak choices (see the next issue for the full rewrite). Use lures that make the same kind of claim as the key: 'The heavy centre pulls them straight on' (the attraction slip, ruled out by knowing that both are positive) and 'Alpha particles are smaller than electrons' (the size slip), next to 'Alpha particles carry no electric charge'."},
+    {"axis": "fact", "severity": "medium",
+     "what": "Taken alone, the straight passes do not show empty space: Thomson's spread-out atom predicted exactly this result. The unit's own Q6 card says so ('his model predicted that alphas fired through gold foil would bend by a few degrees at most'), and facts.md F16 says the same. Rutherford's empty-space conclusion came from the passes together with the rare bounces. A student who has read the Q6 card can rightly ask why 'what did that show?' has this key. The textbook line is standard for 8th grade, but the accuracy rail says a simplification must stay true.",
+     "fix": "Put the question inside Rutherford's atom: 'Ernest Rutherford explained the rare alpha particles that bounced back from Hans Geiger and Ernest Marsden's gold foil with a tiny, heavy centre in each atom. Yet the foil was many atoms thick, and almost every alpha particle went straight through it or bent only slightly. How did Rutherford's atom explain those straight passes?' Key 'Most of each atom is empty space'; choices as in the issue above."}
+   ]},
+
+  "aaa8525a5a": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's clue is a paraphrase of the key. 'Glows in just a few sharp colours, not a smooth rainbow' maps word for word onto 'only ... certain' against 'any distance at all' and 'spiral steadily'. A student who knows nothing of Bohr can pick the one choice that restricts the electrons to a few set values, because the evidence in the stem is a few set values. 'They stay fixed in place' is weak on top of that.",
+     "fix": "Move the spectrum into the card and give the stem the older physics' problem instead: 'Niels Bohr came to Manchester in 1912 to work with Ernest Rutherford and his new nuclear atom. By the physics of the day, an electron circling a nucleus should give off light all the time and spiral into it. Bohr's model of 1913 gave the electrons a new rule. What was it?' Choices: 'They can only be at certain energy levels' / 'They move in a cloud with no set paths' (the later quantum picture, F5: true of today's atom, not Bohr's rule) / 'They circle in one flat ring, like Saturn's rings' (Nagaoka's 1904 model; needs a source) / 'They sit still, held by the positive charge'."}
+   ]},
+
+  "f8b4d87ec9": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the only choice that is not an already-known kind of radiation (gamma rays, electrons, protons), so in a discovery question a test-wise student can pick 'the new thing'. The three lures are good real science (the Joliot-Curies' gamma rays above all), and a student who knows the electron's tiny mass can rule out the electron choice honestly, so it stands.",
+     "fix": "Optional: replace 'Fast electrons thrown out of the beryllium' with 'Alpha particles that had picked up two electrons' (neutral and penetrating, but about four times a proton's mass), so that two choices are new neutral particles and only the mass decides."}
+   ]}
+ },
+ "unit_notes": "Coverage of the scope is complete and the grade fit is sound in both directions: the particles' charges and places (Q1, Q3), the atomic number (Q2), valence electrons (Q4), and Thomson, Rutherford, Bohr and Chadwick (Q5 to Q10). Every fact is 8th-grade content (TEKS 2017 8.5A-B, map line G8.P10), nothing is babyish, and the spectrum and paraffin detail stay in the setting rather than being tested. Two gold-foil questions (Q7 the bounces, Q8 the straight passes) test different facts, which is right. Q8 needs the frame fix above, because the unit's own Q6 card teaches that Thomson's model predicted the straight passes. 'The electrons move in a cloud' is taught only in Q9's card and is never asked. That is acceptable, since the curriculum line stresses the models. Q6's wrong choice 'Packed into one tiny, heavy centre' is Q7's key; under the teaching-card rule that is not a leak. Voice is clean: no second person, no exclamation marks, no date openers and no singular 'they'. The three revises share one pattern: a stem clause (Q5's bend toward the positive plate, Q8's 'many atoms thick', Q9's few sharp colours) settles a choice that knowledge should settle."
+}

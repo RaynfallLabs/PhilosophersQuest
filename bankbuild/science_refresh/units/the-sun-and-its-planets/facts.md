@@ -89,3 +89,17 @@ M9 Saturn is the only planet with rings. Not used as a key claim; every question
 - Pluto's path sometimes crosses inside Neptune's, so say "beyond Neptune" (the Kuiper belt), not "always farther than Neptune".
 - Venus's surface temperature differs by source (462, 467, 475 C): say "over 450 degrees Celsius".
 - Jupiter's centre is far hotter than Venus's surface, so ask about the hottest SURFACE and keep the giants out of that question's choices.
+
+## Added in the revision (2026-11-25; sources read today, Grokipedia first)
+
+F30 Mercury and Venus have no moons; Mars has two small moons, Phobos and Deimos; the four outer (giant) planets all have large moon systems. So Earth is not the only planet with a moon. https://grokipedia.com/page/Natural_satellite ("Smaller terrestrial planets like Mercury and Venus have no natural satellites"; "Mars has two tiny, irregularly shaped moons, Phobos and Deimos"; "the outer planets host extensive moon systems")
+
+F31 Anything that has mass has gravity, so every planet has gravity. Gravity holds the planets in orbit round the Sun and keeps the Moon in orbit round Earth. https://spaceplace.nasa.gov/what-is-gravity/en/ ("Anything that has mass also has gravity"; "Gravity is what holds the planets in orbit around the sun and what keeps the moon in orbit around Earth"); https://grokipedia.com/page/Gravity ("mutual attraction between all objects with mass or energy"; gravity "maintains the stability of planetary orbits around stars")
+
+F32 Mars has clouds, of water ice and of carbon dioxide ice. https://grokipedia.com/page/Climate_of_Mars ("Martian clouds primarily consist of water ice and carbon dioxide (CO2) ice particles")
+
+F33 Where the year has four seasons (spring, summer, autumn, winter), each lasts about three months, so one year holds all four; equatorial tropical places have a wet and a dry season instead. https://grokipedia.com/page/Season ("one of the four primary divisions of the year"; "typical duration of approximately three months each in the four-season model"; tropical climates show "a pronounced two-season pattern dominated by alternating wet and dry periods")
+
+M10 Gravity only on Earth: Science Learning Hub lists "Gravity only exists on the Earth or its surface" and "there is no gravity on the Moon or in space because there is no air" among students' alternative conceptions. Used for the lures 'Gravity' (as unique to Earth) and 'Earth's gravity' (as what holds Mars). https://www.sciencelearn.org.nz/resources/294-alternative-conceptions-about-gravity
+
+M11 That only Earth has a moon, and that one season is one trip round the Sun: author's judgment (no survey found); both are plainly false (F30, F16, F33).

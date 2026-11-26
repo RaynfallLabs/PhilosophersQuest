@@ -1,0 +1,227 @@
+{
+ "unit": "the-sun-and-its-planets",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "the-sun-and-its-planets",
+   "question": "The Sun looks far bigger and brighter than the stars that twinkle at night. Why does the Sun look so much brighter than they do?",
+   "answer": "It is much closer than they are",
+   "choices": [
+    "It is much closer than they are",
+    "It is much bigger than they are",
+    "It is much hotter than they are",
+    "It is a different kind of thing than they are"
+   ],
+   "context": "The Sun is a star, the closest one to Earth, and its light and heat keep Earth warm enough to live on. Many stars are far bigger and hotter than the Sun, but they are so far away that they look like tiny points of light.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "grade_note": "NGSS 5-ESS1-1 asks 5th graders to argue that the Sun looks brighter than other stars because it is so much closer to Earth."
+  },
+  {
+   "tier": 1,
+   "topic": "the-sun-and-its-planets",
+   "question": "Eight planets travel around the Sun, each on its own path. Which planet travels closest to the Sun?",
+   "answer": "Mercury",
+   "choices": [
+    "Mercury",
+    "Venus",
+    "Earth",
+    "Mars"
+   ],
+   "context": "Mercury comes first, then Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune. Pluto, out beyond Neptune, was once called the ninth planet but is now called a dwarf planet.",
+   "facts": [
+    "F8",
+    "F10",
+    "F24",
+    "F28"
+   ],
+   "grade_note": "5th-grade solar-system units teach the eight planets in order from the Sun, starting with Mercury."
+  },
+  {
+   "tier": 1,
+   "topic": "the-sun-and-its-planets",
+   "question": "The planets range from frozen worlds to scorching ones. Which planet has the hottest surface in the solar system?",
+   "answer": "Venus",
+   "choices": [
+    "Venus",
+    "Mercury",
+    "Mars",
+    "Earth"
+   ],
+   "context": "Venus is the hottest planet, over 450 degrees Celsius, even though Mercury is closer to the Sun. Its thick air traps heat like a blanket, while Mercury has almost no air to hold its heat in. Venus's bright clouds also help make it the brightest planet in the night sky.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13",
+    "F14"
+   ],
+   "grade_note": "Comparing the planets is a 5th-grade benchmark (Florida SC.5.E.5.2), and Venus, not Mercury, as the hottest planet is a staple of those units."
+  },
+  {
+   "tier": 1,
+   "topic": "the-sun-and-its-planets",
+   "question": "The four planets nearest the Sun are small and rocky. The four farther out are giants, made mostly of gas and ice. Which planet is the largest of all?",
+   "answer": "Jupiter",
+   "choices": [
+    "Jupiter",
+    "Saturn",
+    "Uranus",
+    "Neptune"
+   ],
+   "context": "Jupiter is the largest planet, with more than twice as much matter as all the other planets put together. It is the nearest of the giants, just beyond the asteroid belt that lies between them and the rocky planets.",
+   "facts": [
+    "F9",
+    "F20",
+    "F27"
+   ],
+   "grade_note": "Florida's 5th-grade benchmark SC.5.E.5.2 contrasts the small rocky inner planets with the giant outer ones, and Jupiter as the largest is part of it."
+  },
+  {
+   "tier": 1,
+   "topic": "the-sun-and-its-planets",
+   "question": "All four giant planets have rings, but only one has rings bright enough to see through a small telescope. Which planet is it?",
+   "answer": "Saturn",
+   "choices": [
+    "Saturn",
+    "Jupiter",
+    "Uranus",
+    "Neptune"
+   ],
+   "context": "Saturn's rings are made of countless chunks of ice and rock, and the ice shines in sunlight. The rings of Jupiter, Uranus and Neptune are faint and dark, far too dim for a small telescope.",
+   "facts": [
+    "F21",
+    "F22",
+    "F23"
+   ],
+   "grade_note": "5th-grade comparisons of the outer planets teach that all four have rings but only Saturn's are easy to see through a telescope."
+  },
+  {
+   "tier": 1,
+   "topic": "the-sun-and-its-planets",
+   "question": "Mars looks like a reddish star in the night sky, and people call it the Red Planet. What gives Mars its red colour?",
+   "answer": "Rusty dust covers its ground",
+   "choices": [
+    "Rusty dust covers its ground",
+    "Hot lava covers its ground",
+    "Its rocks glow with heat",
+    "Its sky is full of red gas"
+   ],
+   "context": "The rocks and dust of Mars are full of iron, and the iron has rusted, like an old nail left out in the rain. The red is not heat: Mars is farther from the Sun than Earth, and even on a warm day its ground reaches only about 20 degrees Celsius.",
+   "facts": [
+    "F17",
+    "F18"
+   ],
+   "grade_note": "5th-grade planet units describe what each planet looks like, and Mars's red colour from rusted iron is the standard explanation."
+  },
+  {
+   "tier": 1,
+   "topic": "the-sun-and-its-planets",
+   "question": "Astronomers have studied all eight planets with telescopes and space probes. What is Earth the only planet known to have?",
+   "answer": "Living things",
+   "choices": [
+    "Living things",
+    "A moon",
+    "Gravity",
+    "Clouds in its sky"
+   ],
+   "context": "Earth is the only planet known to have life, and the only one known to have liquid water on its surface. Every planet has gravity, Mars and the four giant planets all have moons, and clouds float in the skies of Venus, Mars and Jupiter.",
+   "facts": [
+    "F15",
+    "F29",
+    "F30",
+    "F31",
+    "F32",
+    "F13",
+    "F19"
+   ],
+   "grade_note": "Earth as the only planet known to have life and liquid water on its surface is a basic fact of 5th-grade solar-system units."
+  },
+  {
+   "tier": 1,
+   "topic": "the-sun-and-its-planets",
+   "question": "The Moon travels around Earth, and on some clear nights it shines brightly enough to walk by. Where does the Moon's light come from?",
+   "answer": "It reflects light from the Sun",
+   "choices": [
+    "It reflects light from the Sun",
+    "It makes its own light, like a star",
+    "It stores sunlight and glows at night",
+    "It glows with heat from deep inside"
+   ],
+   "context": "The Moon makes no light of its own. Moonlight is sunlight that bounces off the Moon's rocky surface and travels on to Earth.",
+   "facts": [
+    "F25",
+    "F26"
+   ],
+   "grade_note": "NSTA's Moonlight probe is written for grade 5, where students learn that the Moon shines by reflected sunlight."
+  },
+  {
+   "tier": 1,
+   "topic": "the-sun-and-its-planets",
+   "question": "Mars goes round and round the Sun, year after year, and never flies off into space. What holds it on its path?",
+   "answer": "The Sun's gravity",
+   "choices": [
+    "The Sun's gravity",
+    "The Sun's magnetism",
+    "Earth's gravity",
+    "Its own spinning"
+   ],
+   "context": "The Sun's gravity pulls every planet toward it, the way a string pulls on a ball whirled round on it; let the string go and the ball flies off. Each planet also races forward along its path, so instead of falling in, it keeps curving round the Sun. Earth's gravity holds the Moon on its path round Earth, but Mars and the other planets go round the Sun.",
+   "facts": [
+    "F1",
+    "F7",
+    "F25",
+    "F31"
+   ],
+   "grade_note": "5th graders learn gravity as a pull (NGSS 5-PS2-1), and solar-system units add that the Sun's pull keeps the planets in orbit."
+  },
+  {
+   "tier": 1,
+   "topic": "the-sun-and-its-planets",
+   "question": "Earth never stops moving along its path around the Sun. How long does Earth take to go once all the way around?",
+   "answer": "One year",
+   "choices": [
+    "One day",
+    "One month",
+    "One season",
+    "One year"
+   ],
+   "context": "One trip round the Sun takes Earth about 365 days, and that trip is what a year is. A day is one spin of Earth, and a month is roughly the time the Moon takes to go round Earth. Where there are four seasons, each lasts about three months, so one trip round the Sun holds all four.",
+   "facts": [
+    "F16",
+    "F25",
+    "F33"
+   ],
+   "grade_note": "Earth going once round the Sun in a year (about 365 days) is a Florida 4th-grade benchmark (SC.4.E.5.3) that 5th-grade solar-system units build on."
+  }
+ ],
+ "revised": {
+  "2e08dea7cc": {
+   "old_hash": "2e08dea7cc",
+   "why": "Judge (medium): the fourth choice 'It is a ball of fire, not a star' broke the 'It is ... than they are' form and gave no reason for looking brighter, so only three choices were live. Replaced it with the same misconception (M1, the Sun is not a star) in the parallel form, 'It is a different kind of thing than they are'. Stem, key and context unchanged."
+  },
+  "444d79e2d5": {
+   "old_hash": "5b22461a47",
+   "why": "Judge (low, grade): the hat-brim picture made it a 3rd-grade question and hid the one new fact (all four giants have rings) in the context. The stem now states that fact and asks the basic; same key and choices (F22, F23)."
+  },
+  "8df372dcea": {
+   "old_hash": "8df372dcea",
+   "why": "Judge (medium): the key was the only choice of its kind against three landforms no child thinks unique to Earth. Lures are now real mix-ups: that only Earth has a moon, that gravity exists only on Earth (M10, Science Learning Hub), and clouds. Same key and fact; context rewritten to say why each lure is wrong (F30 moons, F31 gravity, F32 clouds on Mars), each checked on Grokipedia/NASA now."
+  },
+  "00c04492bd": {
+   "old_hash": "b3e199b0c1",
+   "why": "Judge (medium): 'The Sun's heat pulls on them' was dead, and the ball-on-a-string picture killed 'spinning' and left 'gravity' in the key alone. The heat lure is now 'Earth's gravity' (the gravity-only-on-Earth mix-up, M10), so gravity is in two choices and the student must know whose pull it is; the picture moved to the context; the stem names one planet (Mars) so that 'Earth's gravity' is not ruled out by Earth being one of 'the planets'. Choices shortened to parallel noun phrases. Also clears the length note (315 > 294). Facts F7, F31 (NASA: gravity keeps the planets round the Sun and the Moon round Earth)."
+  },
+  "b0a279ddb1": {
+   "old_hash": "b0a279ddb1",
+   "why": "Judge (medium): 'Ten years' was filler and broke the 'One ___' form. Replaced with 'One season' (seasons come with Earth's trip round the Sun, so a season can be mistaken for the whole trip). Context adds that each of four seasons lasts about three months (F33, Grokipedia Season), sourced now."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

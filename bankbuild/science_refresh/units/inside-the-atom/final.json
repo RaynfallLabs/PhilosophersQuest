@@ -1,0 +1,231 @@
+{
+ "unit": "inside-the-atom",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "inside-the-atom",
+   "question": "A gold atom's nucleus is a speck at its centre, less than a ten-thousandth as wide as the whole atom. Which particles is the nucleus made of?",
+   "answer": "Protons and neutrons",
+   "choices": [
+    "Protons and neutrons",
+    "Protons and electrons",
+    "Neutrons and electrons",
+    "Protons, neutrons and electrons"
+   ],
+   "context": "A gold nucleus packs 79 protons and 118 neutrons together, and the atom's 79 electrons move in a cloud far outside it. An electron has about 1/1836 of a proton's mass, so the nucleus holds over 99.9 percent of the atom's mass. Until the neutron was found in 1932, physicists thought a nucleus was built of protons and electrons.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F7",
+    "F25"
+   ],
+   "grade_note": "8th grade (TEKS 2017 8.5A) teaches the masses, charges and places of the three particles: protons and neutrons in the nucleus, electrons in the cloud around it."
+  },
+  {
+   "tier": 4,
+   "topic": "inside-the-atom",
+   "question": "Alchemists spent centuries trying to turn lead into gold. Lead's atomic number is 82, and gold's is 79. Which change would make a lead atom into gold?",
+   "answer": "Losing three protons from its nucleus",
+   "choices": [
+    "Losing three protons from its nucleus",
+    "Losing three neutrons from its nucleus",
+    "Losing three of its electrons",
+    "Losing three electrons and three neutrons"
+   ],
+   "context": "The atomic number counts the protons in the nucleus, and the protons alone settle which element an atom is: any atom with 79 protons is gold. A lead atom that loses three electrons is still lead, only with a charge, and one that loses three neutrons as well is still lead, only lighter. Chemistry moves electrons and never touches the nucleus, which is why no alchemist's furnace could ever make gold.",
+   "facts": [
+    "F6",
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "8th grade (TEKS 2017 8.5B) teaches that the number of protons, the atomic number, decides which element an atom is."
+  },
+  {
+   "tier": 4,
+   "topic": "inside-the-atom",
+   "question": "A helium atom holds two protons and two neutrons in its nucleus and two electrons around it, so it carries no charge overall. An alpha particle, the kind Geiger and Marsden fired at gold foil, is a helium atom stripped of both electrons. What charge does an alpha particle carry?",
+   "answer": "A positive charge of two",
+   "choices": [
+    "A positive charge of two",
+    "A positive charge of four",
+    "A negative charge of two",
+    "No electric charge at all"
+   ],
+   "context": "In a neutral atom the electrons' negative charge cancels the protons' positive charge exactly. Take away helium's two electrons and nothing cancels its two protons, so an alpha particle carries a charge of plus two. Its two neutrons add mass but no charge, so they do not raise it to plus four.",
+   "facts": [
+    "F1",
+    "F9",
+    "F10"
+   ],
+   "grade_note": "8th grade teaches each particle's charge and that a neutral atom has as many electrons as protons, so an atom that loses electrons is left positive."
+  },
+  {
+   "tier": 4,
+   "topic": "inside-the-atom",
+   "question": "Sodium and potassium are soft, silvery metals, and both react strongly with water. A sodium atom has 11 electrons, and a potassium atom has 19. What do the two atoms share that makes them react alike?",
+   "answer": "The same number of outer electrons",
+   "choices": [
+    "The same number of outer electrons",
+    "The same number of inner electrons",
+    "The same number of electron shells",
+    "The same number of neutrons in the nucleus"
+   ],
+   "context": "Sodium's electrons sit in shells of 2, 8 and 1, and potassium's in 2, 8, 8 and 1, so each has a single outer (valence) electron that it gives up easily. The outermost electrons are the ones that meet other atoms in a reaction, so they set how an atom reacts. Beneath that outer electron the two differ: 10 inner electrons against 18, three shells against four, and 12 neutrons in sodium's nucleus against 20 in most potassium atoms.",
+   "facts": [
+    "F11",
+    "F12"
+   ],
+   "grade_note": "8th grade (TEKS 2017 8.5B) teaches that valence electrons decide an element's chemical properties, including how reactive it is."
+  },
+  {
+   "tier": 4,
+   "topic": "inside-the-atom",
+   "question": "J. J. Thomson sent a beam of cathode rays down a glass tube holding only a trace of gas, at Cambridge in 1897. Charged metal plates bent the beam as it passed between them, and a magnet bent it too. What did Thomson conclude the rays were?",
+   "answer": "Negatively charged pieces of atoms",
+   "choices": [
+    "Negatively charged pieces of atoms",
+    "Positively charged pieces of atoms",
+    "Negatively charged atoms of the gas",
+    "Positively charged atoms of the gas"
+   ],
+   "context": "The beam bent toward the positive plate, so its particles were negative, and Thomson's two bends gave their mass for each unit of charge: about a thousandth of a hydrogen ion's, the same whatever gas filled the tube and whatever metal the cathode was made of. That pointed to pieces found in every atom and far lighter than any atom, which his measurement of their charge in 1899 bore out (about 1,800 times lighter than a hydrogen atom, by today's measure). He called them corpuscles; they are now called electrons.",
+   "facts": [
+    "F13",
+    "F14",
+    "F29"
+   ],
+   "grade_note": "8th-grade lessons on atomic models begin with Thomson's cathode-ray tube, the experiment that found the electron and showed that atoms have smaller parts."
+  },
+  {
+   "tier": 4,
+   "topic": "inside-the-atom",
+   "question": "Every atom holds electrons, which carry a negative charge, yet an atom carries no charge overall. J. J. Thomson's model of 1904 balanced the electrons with an equal positive charge. Where did his model put that positive charge?",
+   "answer": "Spread evenly all through the atom",
+   "choices": [
+    "Spread evenly all through the atom",
+    "Packed into one tiny, heavy centre",
+    "Held in a thin shell around the outside",
+    "Carried by a few large positive particles"
+   ],
+   "context": "Thomson pictured the electrons inside a ball of evenly spread positive charge, a design later nicknamed the plum pudding, though Thomson never used the name. Charge spread so thinly can only nudge a passing alpha particle, so his model predicted that alphas fired through gold foil would bend by a few degrees at most. The tiny, heavy centre came later, from Rutherford.",
+   "facts": [
+    "F15",
+    "F16"
+   ],
+   "grade_note": "8th-grade lessons on atomic models teach Thomson's plum-pudding model as the step between the electron's discovery and Rutherford's nucleus."
+  },
+  {
+   "tier": 4,
+   "topic": "inside-the-atom",
+   "question": "Hans Geiger and his undergraduate student Ernest Marsden fired alpha particles at a thin gold foil in Ernest Rutherford's laboratory at Manchester in 1909. In a darkened room they counted the faint flash each particle made when it struck a screen. A very few bounced back off the foil toward their source. What did Rutherford work out, in 1911, that these bounces showed?",
+   "answer": "Each atom has a tiny, heavy centre",
+   "choices": [
+    "Each atom has a tiny, heavy centre",
+    "Each atom's electrons are hard and heavy",
+    "Each atom's charge is spread out evenly",
+    "Each atom is packed solid all through"
+   ],
+   "context": "Only something very heavy and strongly charged, packed into a tiny space, could throw an alpha particle straight back, so Rutherford concluded that nearly all of an atom's mass sits in a tiny centre, now called the nucleus. Electrons are far too light to do it, and atoms packed solid would have turned back far more than a few. Rutherford later said it was as if a 15-inch shell fired at tissue paper had come back and hit him.",
+   "facts": [
+    "F17",
+    "F18",
+    "F19",
+    "F20",
+    "F21",
+    "F22"
+   ],
+   "grade_note": "The gold-foil experiment and the nucleus it revealed are the centre of 8th-grade lessons on atomic models (curriculum line G8.P10; the plan's own T4 example)."
+  },
+  {
+   "tier": 4,
+   "topic": "inside-the-atom",
+   "question": "Ernest Rutherford explained the rare alpha particles that bounced back from Hans Geiger and Ernest Marsden's gold foil with a heavy centre in every atom. The foil was many atoms thick, and almost all the other alpha particles went straight through it or bent only slightly. By Rutherford's account, why did they pass through?",
+   "answer": "Most of each atom is empty space",
+   "choices": [
+    "Most of each atom is empty space",
+    "Alpha particles carry no electric charge",
+    "Alpha particles are heavier than gold atoms",
+    "Gold atoms are too soft to stop them"
+   ],
+   "context": "In Rutherford's atom the heavy centre is less than a ten-thousandth of the atom's width, so almost every alpha particle passes far from every centre on its way and meets only electrons, far too light to turn it: most of each atom is empty space. An alpha particle carries a charge of plus two, and a gold atom has nearly 50 times its mass; softness belongs to gold as a metal, not to its single atoms.",
+   "facts": [
+    "F4",
+    "F10",
+    "F18",
+    "F19",
+    "F20",
+    "F21",
+    "F31",
+    "M6"
+   ],
+   "grade_note": "8th grade teaches that the atom is mostly empty space, with the gold-foil result, most alpha particles passing straight through Rutherford's nuclear atom, as the evidence."
+  },
+  {
+   "tier": 4,
+   "topic": "inside-the-atom",
+   "question": "Niels Bohr came to Manchester in 1912 to work with Ernest Rutherford and his new nuclear atom. By the physics of the day, an electron circling a nucleus should give off light all the time and spiral into it. Bohr's model of 1913 gave the electrons a new rule. What was it?",
+   "answer": "They can only be at certain energy levels",
+   "choices": [
+    "They can only be at certain energy levels",
+    "They move in a cloud with no set paths",
+    "They sit still beside the nucleus",
+    "They are held in their orbits by gravity"
+   ],
+   "context": "Bohr's electron keeps to one of its set energy levels, giving off no light there, and gives off light only when it drops to a lower level; each drop has a set size and gives one set colour, which is why glowing hydrogen shows just a few sharp colours. The nucleus's electric pull, not gravity, holds the electron on its path, and the cloud with no set paths came later, when physicists of the 1920s replaced Bohr's neat orbits but kept his energy levels.",
+   "facts": [
+    "F5",
+    "F23",
+    "F24",
+    "F30"
+   ],
+   "grade_note": "8th-grade lessons on atomic models teach Bohr's model, electrons in set energy levels around the nucleus (curriculum line G8.P10); glowing hydrogen's few colours were his evidence."
+  },
+  {
+   "tier": 4,
+   "topic": "inside-the-atom",
+   "question": "Beryllium struck by alpha particles gives off an unusually penetrating radiation. Aimed at paraffin wax, it knocks protons out of the wax at high speed. James Chadwick studied it at the Cavendish Laboratory in Cambridge in 1932, measuring how hard it struck different kinds of atoms. What did he show the radiation was?",
+   "answer": "Neutral particles about as heavy as protons",
+   "choices": [
+    "Neutral particles about as heavy as protons",
+    "Gamma rays, a kind of light with great energy",
+    "Fast electrons thrown out of the beryllium",
+    "Protons thrown out of the beryllium nuclei"
+   ],
+   "context": "Irène Joliot-Curie and Frédéric Joliot in Paris had taken the radiation for gamma rays, but Chadwick showed that light would need impossibly great energy to knock protons out so hard, while a particle of about a proton's mass could do it easily, as one billiard ball knocks another. The particle had no charge, so it left no track and slipped through matter. It was the neutron, the nucleus's uncharged particle that Rutherford had predicted in 1920, and it won Chadwick the 1935 Nobel Prize in Physics.",
+   "facts": [
+    "F25",
+    "F26",
+    "F27",
+    "F28"
+   ],
+   "grade_note": "8th-grade lessons on the atom's parts end with Chadwick's discovery of the neutron, the uncharged particle in the nucleus (curriculum line G8.P10)."
+  }
+ ],
+ "revised": {
+  "382ff58113": {
+   "old_hash": "5a13481a74",
+   "why": "Judge (low): 'Gaining three more electrons' ran against the stem's own arithmetic (82 down to 79 is a loss), so only three choices were live. Replaced it with 'Losing three electrons and three neutrons' (a loss, still lead because its 82 protons are untouched; F6, F9) and dropped 'single' from the stem, since the new choice is two changes. The context now says why the new choice is still lead."
+  },
+  "942cdd0d46": {
+   "old_hash": "942cdd0d46",
+   "why": "Judge (low): 'The same number of particles in the nucleus' was ruled out by the stem's own electron counts (11 and 19 protons in neutral atoms). Replaced it with 'The same number of neutrons in the nucleus' (sodium-23 has 12, potassium-39 has 20; F12), which the stem leaves live. Stem unchanged; the context's last sentence now gives the neutron counts."
+  },
+  "4823284877": {
+   "old_hash": "944f57c3e1",
+   "why": "Judge (medium): the stem's bend toward the positive plate killed the one uncharged choice ('Waves in the ether'). The stem now says only that charged plates and a magnet bent the beam, and the choices are a two-by-two of charge (negative or positive) and kind (pieces of atoms or charged atoms of the gas, Crookes's view, F13), so the student must know both the sign and that the rays were subatomic; no choice is the odd one out. Fact-check (uncertain): the context no longer says the 1897 ratio alone showed the small mass; it now says the ratio pointed to it and his 1899 charge measurement bore it out (F29), and it teaches the bend toward the positive plate that the stem no longer gives."
+  },
+  "03a9eda987": {
+   "old_hash": "809b89cfb6",
+   "why": "Judge (medium, fact): taken alone the straight passes did not show empty space, since Thomson's spread atom predicted them too; the question now sits inside Rutherford's atom, as the judge proposed (explain the passes by his account, F20). Judge (medium, tell): 'The foil had gaps between its atoms' (ruled out by 'many atoms thick') and 'lighter than electrons' (a belief no one holds) are gone; every choice now offers a reason the particles could pass: no charge (the neutron mix-up, F10, F28), heavier than gold atoms (Rutherford's shell-and-tissue-paper picture; about 4 against 197 mass units, F31), soft gold atoms (the bulk-property misconception, M6). The stem says 'heavy centre', not 'tiny', so it does not hand over the empty space."
+  },
+  "7647ac8fa4": {
+   "old_hash": "aaa8525a5a",
+   "why": "Judge (medium): the stem's 'a few sharp colours, not a smooth rainbow' paraphrased the key. The stem now gives the older physics' problem instead (a circling electron gives off light and spirals in, F23, F30), as the judge proposed, and the spectrum moved to the context. Choices: 'They spiral steadily in' (now the stem's problem) and 'any distance' are gone; the cloud with no set paths (the later model, F5), 'sit still' and 'held by gravity' (F30) are in. The judge's Saturn-ring choice was not used, since Bohr's own 1913 papers also set electrons in rings (F30), so it was not cleanly wrong. Fact-check (uncertain): 'They stay fixed in place' clashed with 'fixed orbits'; it is now 'They sit still beside the nucleus'. The context's 'a few set energy levels' is now 'its set energy levels' (n runs without end)."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

@@ -1,0 +1,21 @@
+{"unit": "mendels-peas-and-inherited-traits",
+ "questions": {
+  "87b97962d6": {"verdict": "pass",
+   "why": "Old clarity issue fixed: 'two children' is now 'a son', so nothing invites a splitting reading. Key true: strength built by work is an acquired trait and is not passed on through genes (Grokipedia Lamarckism: no DNA-level mechanism; epigenetic results do not substantiate Lamarck's core claims). The quarter, half and all lures are wrong. The context's 'about half' of the genes from each parent is a true simplification. Lamarck is correctly called a French naturalist.",
+   "sources": ["https://grokipedia.com/page/Lamarckism", "https://en.wikipedia.org/wiki/Acquired_characteristic", "https://grokipedia.com/page/Mendelian_inheritance"]},
+  "63641a90f9": {"verdict": "pass",
+   "why": "Old error fixed: the defensible 'The petals' (Mendel removed the keel) is replaced by 'The ovary'. The ovary had to stay for seeds, so it is plainly wrong. The stem now gives the removal's purpose, so neither the keel nor the stigma can be argued (the stigma received the father's pollen). The bag sentence, which had no primary source, is gone. Mendel's paper: 'the bud is opened before it is perfectly developed, the keel is removed, and each stamen carefully extracted by means of forceps'; 'the anthers burst within the bud'. Grokipedia: 'excising the anthers with fine forceps'. Context accurate.",
+   "sources": ["https://www-archiv.fdm.uni-hamburg.de/b-online/e08_mend/mendel.htm", "https://grokipedia.com/page/Gregor_Mendel", "https://grokipedia.com/page/Stamen"]},
+  "57d91c1aad": {"verdict": "pass",
+   "why": "Old tell fixed: the dead soil lure is replaced by the dominance misconception (M3), 'The tall one turns the short one tall'. It is live for a 7th grader and wrong by Mendel's account: the factors are discrete and unchanged, and the recessive one returns intact in the next generation. The key, the other lures and the context (blending; Johannsen, a Danish botanist, named genes in 1909) are all correct.",
+   "sources": ["https://grokipedia.com/page/Gregor_Mendel", "https://grokipedia.com/page/Mendelian_inheritance", "https://www.genome.gov/25520244/online-education-kit-1909-the-word-gene-coined"]},
+  "90158f1c83": {"verdict": "pass",
+   "why": "Old clarity issue fixed: the stem now opens with 'tall is dominant over short', so the short parent is tt and the cross is Tt x tt. That gives 1:1, about one half short (Grokipedia Mendelian_inheritance, test cross). One in four, three in four and none are wrong. Punnett square glossed in the stem; context accurate.",
+   "sources": ["https://grokipedia.com/page/Mendelian_inheritance", "https://grokipedia.com/page/Punnett_square", "https://openstax.org/books/biology-2e/pages/12-2-characteristics-and-traits"]},
+  "ff8beed272": {"verdict": "pass",
+   "why": "Old tell fixed as the judge prescribed. The stem no longer says both plants are tall, so the student must apply the dominance rule to see that they look alike. The 'gene' root in 'genotype' only halves the field, which the judge accepted as unavoidable. Key true: TT and Tt are both tall, the same phenotype with different genotypes; pea height is completely dominant in Mendel's lines. Context accurate (Johannsen coined both words in 1909).",
+   "sources": ["https://grokipedia.com/page/Mendelian_inheritance", "https://grokipedia.com/page/Wilhelm_Johannsen", "https://openstax.org/books/biology-2e/pages/12-2-characteristics-and-traits"]},
+  "ece410e8bd": {"verdict": "pass",
+   "why": "Old error fixed: 'about three times' is now 'only a handful of times before 1900'. Grokipedia gives four to eleven references; Olby and Gautrey (1968) count eleven. The new lure 'It made Mendel famous in his lifetime' is live and truly wrong: Mendel died on 6 January 1884, before the rediscovery in 1900. The stem's facts check out: read to the Brno society in February and March 1865, printed in 1866. Darwin and the 'proved it wrong' lures stay wrong. Context accurate (de Vries and Correns in 1900).",
+   "sources": ["https://grokipedia.com/page/Gregor_Mendel", "https://en.wikipedia.org/wiki/Gregor_Mendel", "https://pmc.ncbi.nlm.nih.gov/articles/PMC6972880/"]}
+ }}

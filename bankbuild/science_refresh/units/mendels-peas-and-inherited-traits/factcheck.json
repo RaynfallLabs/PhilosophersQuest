@@ -1,0 +1,111 @@
+{
+ "unit": "mendels-peas-and-inherited-traits",
+ "questions": {
+  "961a538081": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key 'None of it': strength built by work is an acquired trait and is not passed on through genes", "result": "ok", "source": "https://grokipedia.com/page/Lamarckism", "note": "Grokipedia: Weismann and Mendelian genetics 'demonstrated no DNA-level mechanism for such inheritance'; epigenetic results are limited and 'do not substantiate Lamarck's core claims'. Muscle gained at work is not inherited."},
+    {"claim": "Wrong choices 'About a quarter', 'About half', 'All of it' are wrong", "result": "ok", "source": "https://grokipedia.com/page/Lamarckism", "note": "Any non-zero share would require inheritance of acquired characteristics, which genetics rejects. 'About half' is the honest distractor built on the half-of-genes rule, and the context explains why it does not apply."},
+    {"claim": "Jean-Baptiste Lamarck was a French naturalist who taught that traits gained by use pass to offspring", "result": "ok", "source": "https://grokipedia.com/page/Lamarckism", "note": "Grokipedia: 'French naturalist Jean-Baptiste Lamarck (1744-1829)'; changes from use during life are 'heritable and passed to subsequent generations'. Grokipedia also gives the blacksmith's forearms as the stock example."},
+    {"claim": "Genetics found no way for acquired traits to be passed on", "result": "ok", "source": "https://grokipedia.com/page/Lamarckism", "note": "True as stated for traits like muscle; the narrow epigenetics debate does not rescue Lamarck's claim."},
+    {"claim": "Each child gets half of his or her genes from each parent", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "Grokipedia: two alleles per gene, 'one inherited from each parent'. Grade-level simplification (ignores mitochondrial DNA and the X/Y difference) and still true for the nuclear genes the unit teaches."}
+   ]
+  },
+  "2d836053d2": {
+   "verdict": "error",
+   "checks": [
+    {"claim": "Pea flowers pollinate themselves, often before the bud has opened", "result": "ok", "source": "https://www-archiv.fdm.uni-hamburg.de/b-online/e08_mend/mendel.htm", "note": "Mendel's paper (Bateson translation): the fertilizing organs are closely packed inside the keel and the anthers burst within the bud, so the stigma is covered with pollen before the flower opens."},
+    {"claim": "Mendel described as a monk in Brno", "result": "ok", "source": "https://en.wikipedia.org/wiki/Gregor_Mendel", "note": "Precise title is 'Augustinian friar' (Wikipedia lead; Grokipedia lead). Both pages also call him a monk in their body text ('He became a monk'; 'As a monk and later prelate'), and he lived under vows in an abbey led by an abbot, so 'monk' is a true loose usage. 'Friar' would be more exact if the writer wants it."},
+    {"claim": "Key 'The anthers': he opened young buds and removed the anthers with fine forceps", "result": "ok", "source": "https://grokipedia.com/page/Gregor_Mendel", "note": "Grokipedia: 'selecting immature flower buds, prying open the keel petals ... excising the anthers with fine forceps prior to pollen release'. Mendel's own words: 'each stamen carefully extracted by means of forceps' (the whole stamen, anther and filament; 'anthers' is the standard textbook phrasing, as in OpenStax)."},
+    {"claim": "Wrong choice 'The petals' is truly wrong", "result": "error", "source": "https://www-archiv.fdm.uni-hamburg.de/b-online/e08_mend/mendel.htm", "note": "Mendel's own account says he removed petals too: 'the bud is opened before it is perfectly developed, the keel is removed, and each stamen carefully extracted by means of forceps' (German original: 'das Schiffchen entfernt', https://www.zobodat.at/pdf/Verh-naturf-Ver-Bruenn_49_0003-0047.pdf). The keel of a pea flower is the two lower petals joined together (https://pmc.ncbi.nlm.nih.gov/articles/PMC2492476). A student who knows the paper can defend 'The petals'. The 2016 Genetics translation says 'the keel separated' (https://academic.oup.com/genetics/article/204/2/407/6072056), which still puts the petals in play. FIX: replace 'The petals' with 'The ovary' (removing it would leave no seeds, so it is plainly wrong), or keep the four choices and change the stem to ask which part he removed so that the flower could not pollinate itself."},
+    {"claim": "Wrong choice 'The stigma' is wrong", "result": "ok", "source": "https://grokipedia.com/page/Stamen", "note": "The stigma is where the foreign pollen was dusted on; it had to stay (Mendel: 'the stigma can at once be dusted over with the foreign pollen')."},
+    {"claim": "Wrong choice 'The sepals' is wrong", "result": "ok", "source": "https://www-archiv.fdm.uni-hamburg.de/b-online/e08_mend/mendel.htm", "note": "Mendel's method names the keel and the stamens only; the sepals were not removed."},
+    {"claim": "Then he brushed on pollen from the father plant", "result": "ok", "source": "https://grokipedia.com/page/Gregor_Mendel", "note": "Grokipedia: transferred pollen 'using a brush'. Mendel wrote that the stigma is 'dusted over with the foreign pollen'."},
+    {"claim": "Context: anthers, at the tips of the stamens, make the pollen; the stigma is where pollen lands", "result": "ok", "source": "https://grokipedia.com/page/Stamen", "note": "Grokipedia: stamen = filament + anther; the anther houses the pollen sacs; pollen is 'transferred to the stigma'."},
+    {"claim": "Context: 'He then covered each flower with a bag so that no stray pollen could reach it.'", "result": "uncertain", "source": "https://academic.oup.com/genetics/article/204/2/407/6072056", "note": "Grokipedia says he was 'enclosing flowers in bags', but Mendel's paper says nothing of bags in either the Bateson or the 2016 Genetics translation, and OpenStax does not mention it. Mendel relied on the closed keel, controls in a greenhouse, and watching for the pea beetle Bruchus pisi. The bag is a common textbook detail with no primary source. FIX: drop the sentence, or replace it with: 'He made each cross in a bud, before any pollen of its own could reach the stigma.'"}
+   ]
+  },
+  "43c5045bbd": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Mendel was a monk at St Thomas's Abbey in Brno", "result": "ok", "source": "https://en.wikipedia.org/wiki/St._Thomas%27s_Abbey,_Brno", "note": "The abbey's name is right: 'St Thomas's Abbey, Brno' (Wikipedia), 'Augustinian Abbey of St. Thomas in Brno' (Grokipedia, OpenStax). Brno was then called Brunn (Brünn). His precise title is 'Augustinian friar'; 'monk' is a true loose usage that Wikipedia and Grokipedia also use in their body text. 'Friar' is the more exact word."},
+    {"claim": "He grew peas in the abbey's garden", "result": "ok", "source": "https://grokipedia.com/page/Gregor_Mendel", "note": ""},
+    {"claim": "Key 'All of them tall': a true-breeding tall line crossed with a true-breeding short line gave an all-tall first generation", "result": "ok", "source": "https://openstax.org/books/biology-2e/pages/12-1-mendels-experiments-and-the-laws-of-probability", "note": "OpenStax: F1 '100 percent tall'. Mendel's paper adds that the hybrids were often taller than the tall parent (6 to 7.5 ft from 1 ft x 6 ft parents), which only strengthens 'tall'."},
+    {"claim": "Wrong choices 'All medium height', 'Half tall and half short', 'Mostly tall, with a few short' are wrong", "result": "ok", "source": "https://www-archiv.fdm.uni-hamburg.de/b-online/e08_mend/mendel.htm", "note": "Mendel: stems of 1 ft and 6 ft 'yielded without exception hybrids' of 6 to 7.5 ft. No medium and no short plants in the F1. The short form returned only in the next generation."},
+    {"claim": "Context: most naturalists of the day expected blending", "result": "ok", "source": "https://grokipedia.com/page/Gregor_Mendel", "note": "Grokipedia: 'The prevailing doctrine of blending inheritance ... dominated mid-19th-century biology.' OpenStax also calls blending the prevailing theory."},
+    {"claim": "Context: Mendel called the trait that showed in every hybrid dominant", "result": "ok", "source": "https://www-archiv.fdm.uni-hamburg.de/b-online/e08_mend/mendel.htm", "note": "Mendel: characters 'transmitted entire, or almost unchanged in the hybridization ... are termed the dominant'. Wikipedia: he coined the terms."}
+   ]
+  },
+  "e509e69567": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Hybrids self-pollinated; the next generation was counted (modern F2)", "result": "ok", "source": "https://www-archiv.fdm.uni-hamburg.de/b-online/e08_mend/mendel.htm", "note": "Mendel himself called it 'the first generation from the hybrids'. The stem's 'second generation' is the modern F2 numbering and agrees with Q3's 'first generation' for the hybrids."},
+    {"claim": "Key 'About three tall for every short one'", "result": "ok", "source": "https://openstax.org/books/biology-2e/pages/12-1-mendels-experiments-and-the-laws-of-probability", "note": "OpenStax: 787 tall and 277 dwarf, 2.84:1. Grokipedia's table: 'Tall:Short stems | 787:277 | 2.84:1 | 3:1'."},
+    {"claim": "Wrong choices '1 to 1', 'All tall', 'All of a height between' are wrong", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "A hybrid x hybrid cross gives 3:1, not 1:1; short plants did appear; nothing in between."},
+    {"claim": "Context: 787 tall, 277 short; about one in four short", "result": "ok", "source": "https://www-archiv.fdm.uni-hamburg.de/b-online/e08_mend/mendel.htm", "note": "Mendel: 'Out of 1064 plants, in 787 cases the stem was long, and in 277 short.' 277/1064 = 26 percent."},
+    {"claim": "Context: the short trait came back as short as ever; Mendel called it recessive", "result": "ok", "source": "https://www-archiv.fdm.uni-hamburg.de/b-online/e08_mend/mendel.htm", "note": "Mendel: 'those which become latent in the process recessive'; recessive characters reappear unchanged in the progeny of the hybrids."}
+   ]
+  },
+  "57d91c1aad": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Mendel proposed hereditary factors, later named genes", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "Mendel's own word was mostly 'elements' (Elemente); 'factors' also appears in the Bateson translation and is the standard textbook name. Grokipedia: Mendel's 'factors' are now understood as genes."},
+    {"claim": "Key 'They stay separate and unchanged'", "result": "ok", "source": "https://grokipedia.com/page/Gregor_Mendel", "note": "Grokipedia: each parent contributes one indivisible factor per trait; the factors part again when gametes form. OpenStax: dominant traits are 'inherited unchanged'."},
+    {"claim": "Wrong choices 'blend into one', 'short one used up and lost', 'change to suit the soil' are wrong", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "Blending was the theory Mendel's results overturned; the recessive factor is not lost (it returns in the F2); factors do not change with soil."},
+    {"claim": "Context: blending, the idea that parents' traits fuse like mixed paints, could not explain the return of short plants", "result": "ok", "source": "https://grokipedia.com/page/Gregor_Mendel", "note": "Grokipedia: blending held that traits 'fused into an intermediate form irrecoverable in subsequent generations'."},
+    {"claim": "Context: Wilhelm Johannsen, a Danish botanist, named the factors genes in 1909", "result": "ok", "source": "https://www.genome.gov/25520244/online-education-kit-1909-the-word-gene-coined", "note": "genome.gov: '1909: The Word Gene Coined' by 'Danish botanist Wilhelm Johannsen'. Grokipedia agrees (Elemente der exakten Erblichkeitslehre, 1909)."}
+   ]
+  },
+  "e5ba5b3b06": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "A pea plant carries two copies of each gene; versions of a gene are alleles", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "Grokipedia: 'Each gene locus carries two alleles in diploid organisms, one inherited from each parent.'"},
+    {"claim": "Key 'One allele, tall or short by chance'", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "Law of segregation. Grokipedia: gametes are '50% A and 50% a'. A pollen grain's cells all come from one product of meiosis, so the grain carries one allele."},
+    {"claim": "Wrong choices 'Both alleles', 'Always the dominant one', 'A new blended allele' are wrong", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "Gametes are haploid (one allele); dominance does not decide which allele a gamete gets; alleles do not blend."},
+    {"claim": "Context: each pollen grain and egg gets one allele, equally likely; the seed holds two again", "result": "ok", "source": "https://openstax.org/books/biology-2e/pages/12-2-characteristics-and-traits", "note": "The seed's embryo is diploid, one allele from each parent. Grade-level simplification and true."}
+   ]
+  },
+  "2eb14ba569": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key 'Each carries one short copy': two tall parents of a short offspring must both be hybrids (Tt)", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "Grokipedia: only 'those homozygous for the recessive allele (aa) show the recessive phenotype'; heterozygotes show the dominant trait; recessive traits 'often skip generations' through carrier parents."},
+    {"claim": "Wrong choice 'Only one carries a short copy' is wrong", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "The short seed needs a short allele from each parent, so both must carry one."},
+    {"claim": "Wrong choice 'Each carries two short copies' is wrong", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "A tt plant is short, but both parents are tall."},
+    {"claim": "Wrong choice 'Neither carries a short copy' is wrong", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "TT x TT gives only TT offspring, all tall."}
+   ]
+  },
+  "df07e7e3a9": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key 'About one half': Tt x tt gives half short", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "Grokipedia's test cross Aa x aa gives 'a 1:1 phenotypic ratio'. Same for Tt x tt."},
+    {"claim": "Wrong choices 'One in four', 'Three in four', 'None' are wrong", "result": "ok", "source": "https://openstax.org/books/biology-2e/pages/12-2-characteristics-and-traits", "note": "One in four is the Tt x Tt share; three in four is the dominant share in Tt x Tt; none would need a TT parent."},
+    {"claim": "Punnett square defined as a grid pairing each parent's possible copies", "result": "ok", "source": "https://grokipedia.com/page/Punnett_square", "note": ""},
+    {"claim": "Context: two of four boxes are tt; one in four is the hybrid x hybrid share; the square gives chances, not counts", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "1 TT : 2 Tt : 1 tt for Tt x Tt; Mendel's real 787:277 shows counts only approach the ratio."}
+   ]
+  },
+  "00b5d27015": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key 'Same phenotype, different genotype' for TT and Tt tall plants", "result": "ok", "source": "https://grokipedia.com/page/Mendelian_inheritance", "note": "Heterozygotes show the dominant phenotype; TT and Tt are different genotypes."},
+    {"claim": "Wrong choices (same genotype/different phenotype; same both; different both) are wrong", "result": "ok", "source": "https://openstax.org/books/biology-2e/pages/12-2-characteristics-and-traits", "note": "The genotypes differ (TT vs Tt) and both plants are tall. Pea height (Le/le) shows complete dominance in Mendel's lines, so 'different phenotype' is not defensible."},
+    {"claim": "Context: genotype = the gene copies carried; phenotype = the trait that shows", "result": "ok", "source": "https://www.genome.gov/25520244/online-education-kit-1909-the-word-gene-coined", "note": "genome.gov: phenotype is 'the outward appearance of an individual' and genotype 'its genetic traits'. 'The pair of gene copies' is the one-gene simplification."},
+    {"claim": "Context: Wilhelm Johannsen, a Danish botanist, coined both words in 1909", "result": "ok", "source": "https://grokipedia.com/page/Wilhelm_Johannsen", "note": "Grokipedia: 'phenotype' and 'genotype' introduced in 1909 in Elemente der exakten Erblichkeitslehre. Wikipedia's footnotes agree (genotype p. 130 of the 1909 book). His 1911 essay restated them; it did not coin them."}
+   ]
+  },
+  "ece410e8bd": {
+   "verdict": "error",
+   "checks": [
+    {"claim": "Mendel read his results to the Natural History Society of Brno in 1865; the society printed the paper the next year", "result": "ok", "source": "https://en.wikipedia.org/wiki/Gregor_Mendel", "note": "Read on 8 February and 8 March 1865 to the Natural History Society of Brno (Naturforschender Verein in Brünn); printed in its Verhandlungen, vol. IV for 1865, published 1866 (Grokipedia: 'published April 1866')."},
+    {"claim": "Key 'Few scientists took any notice of it'", "result": "ok", "source": "https://openstax.org/books/biology-2e/pages/12-1-mendels-experiments-and-the-laws-of-probability", "note": "OpenStax: the work 'went virtually unnoticed by the scientific community' until 1900."},
+    {"claim": "Wrong choice 'Charles Darwin built it into his theory' is wrong", "result": "ok", "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6972880/", "note": "Fairbanks (2020): all available evidence indicates that Darwin knew nothing of Mendel. Wikipedia: 'Charles Darwin was not aware of Mendel's paper.' (The 'uncut copy in Darwin's library' tale is apocryphal and is not used.)"},
+    {"claim": "Wrong choice 'Botanists repeated it and proved it wrong' is wrong", "result": "ok", "source": "https://grokipedia.com/page/Gregor_Mendel", "note": "No one disproved it; when botanists repeated such crosses in 1900 they confirmed it."},
+    {"claim": "Wrong choice 'It was taught in schools across Europe' is wrong", "result": "ok", "source": "https://en.wikipedia.org/wiki/Gregor_Mendel", "note": ""},
+    {"claim": "Context: 'cited only about three times in 35 years'", "result": "error", "source": "https://grokipedia.com/page/Gregor_Mendel", "note": "Sources disagree, and the best count is higher. Wikipedia says 'about three times', but Grokipedia says 'estimates ranging from four to eleven references' before 1900. The standard study is Olby and Gautrey, 'Eleven references to Mendel before 1900', Annals of Science 24 (1968) (https://informahealthcare.com/doi/ref/10.1080/00033796800200021), and a 2002 JRSM letter counts twelve (https://pmc.ncbi.nlm.nih.gov/articles/PMC1279276). Focke's 1881 book alone names Mendel 17 times. FIX: 'The paper sat in a small society's journal and was cited only a handful of times before 1900; ...'"},
+    {"claim": "Context: Darwin's own idea of heredity was pangenesis, and he seems never to have known of the paper", "result": "ok", "source": "https://grokipedia.com/page/Pangenesis", "note": "Pangenesis was Darwin's 1868 hypothesis (Variation of Animals and Plants under Domestication). 'Seems never to have known' fits Fairbanks 2020."},
+    {"claim": "Context: Mendel died in 1884 with his pea work unknown to most scientists", "result": "ok", "source": "https://grokipedia.com/page/Gregor_Mendel", "note": "Grokipedia: died January 6, 1884."},
+    {"claim": "Context: in 1900 Hugo de Vries and Carl Correns, who had found the same patterns in their own crosses, brought it to light", "result": "ok", "source": "https://en.wikipedia.org/wiki/Gregor_Mendel", "note": "Wikipedia and Grokipedia: de Vries, Correns and Tschermak in 1900; Tschermak's credit 'is no longer accepted', so naming only de Vries and Correns is sound."}
+   ]
+  }
+ },
+ "unit_notes": "Two errors and one uncertain detail. (1) 2d836053d2: Mendel's own paper says he opened the bud, removed the KEEL (the pea flower's two joined lower petals) and then pulled out each stamen with forceps ('das Schiffchen entfernt'), so the wrong choice 'The petals' can be defended; swap it for 'The ovary'. The context's bag sentence has no primary source (Mendel never mentions bags; only Grokipedia and homework sites do), so drop it. (2) ece410e8bd: 'cited only about three times in 35 years' is Wikipedia's figure; Grokipedia gives four to eleven, and the standard study (Olby and Gautrey 1968) counts eleven references before 1900. Say 'a handful of times'. Checked as asked: his title (precisely an Augustinian friar; 'monk' is the common loose word, used in the body of both Wikipedia and Grokipedia, and true by the dictionary sense, so left as ok; 'friar' would be more exact); the abbey (St Thomas's Abbey, Brno: right); read 1865 (8 Feb and 8 Mar), printed 1866 (right); Darwin knew nothing of the paper (Fairbanks 2020: right); the ratio (787:277, 2.84:1, near 3:1: right; Mendel himself called this 'the first generation from the hybrids', the modern F2); the part removed (anthers/stamens, by forceps: right). Every genetics distractor in Q6-Q9 is wrong for a simple one-gene, completely dominant trait; pea height (Le/le) in Mendel's lines is completely dominant (hybrids were even taller than the tall parent), so no distractor survives."
+}

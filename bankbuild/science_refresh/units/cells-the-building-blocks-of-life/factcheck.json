@@ -1,0 +1,512 @@
+{
+ "unit": "cells-the-building-blocks-of-life",
+ "questions": {
+  "20e2f8f8f0": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Robert Hooke looked at thin slices of cork under a microscope (a compound microscope of his own design) and named the compartments cells",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Robert_Hooke",
+     "note": ""
+    },
+    {
+     "claim": "Micrographia was published in 1665",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Robert_Hooke",
+     "note": "Grokipedia: published January 1665 by the Royal Society; Peters 2024 also gives London 1665."
+    },
+    {
+     "claim": "'rows of tiny boxes': sections cut one way showed rows of roughly rectangular cavities; Hooke spoke of pores divided by diaphragms",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11530768/",
+     "note": "Not in quotation marks, so no quote check needed; the description fits Hooke's own account."
+    },
+    {
+     "claim": "The cells in cork are dead",
+     "result": "ok",
+     "source": "https://openstax.org/books/microbiology/pages/3-2-foundations-of-modern-cell-theory",
+     "note": "OpenStax: the cork cells were long dead and lacked the internal structures of living cells."
+    },
+    {
+     "claim": "Key: what Hooke saw were the cell walls",
+     "result": "ok",
+     "source": "https://ucmp.berkeley.edu/history/hooke.html",
+     "note": "UCMP Berkeley: 'what Hooke saw were the cell walls in cork tissue'. Grokipedia Robert_Hooke: 'the lignified cell walls of dead plant tissue'."
+    },
+    {
+     "claim": "Wrong: the cell membrane (gone with the dead protoplast in cork)",
+     "result": "ok",
+     "source": "https://openstax.org/books/microbiology/pages/3-2-foundations-of-modern-cell-theory",
+     "note": "Dead cork cells lack their living contents; the membrane is part of the living protoplast, not the wall."
+    },
+    {
+     "claim": "Wrong: the nucleus",
+     "result": "ok",
+     "source": "https://openstax.org/books/microbiology/pages/3-2-foundations-of-modern-cell-theory",
+     "note": "Hooke's dead cork cells had no internal structures left to see."
+    },
+    {
+     "claim": "Wrong: the central vacuole",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_theory",
+     "note": "Grokipedia: 'empty walls without visible contents'; the vacuole is inside the living cell."
+    },
+    {
+     "claim": "Context: only the walls were left, holding air",
+     "result": "ok",
+     "source": "https://openstax.org/books/microbiology/pages/3-2-foundations-of-modern-cell-theory",
+     "note": "Hooke himself called them 'small Boxes or Bladders of Air' (quoted by OpenStax)."
+    },
+    {
+     "claim": "Context: Hooke likened them to the cells of a honeycomb",
+     "result": "ok",
+     "source": "https://ucmp.berkeley.edu/history/hooke.html",
+     "note": "Hooke: 'all perforated and porous, much like a Honey-comb'. Peters 2024 confirms the honeycomb was his comparison. The draft rightly avoids the monk's-room story, which Peters calls a myth."
+    },
+    {
+     "claim": "Context: in a living plant cell the membrane, nucleus and vacuole all sit inside the wall",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_wall",
+     "note": "The wall lies outside the plasma membrane."
+    }
+   ]
+  },
+  "9d5fdfc333": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the first idea of cell theory is that all living things are made of one or more cells",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_theory",
+     "note": "Grokipedia lists it first: 'all living organisms are composed of one or more cells', then the cell as basic unit, then cells from pre-existing cells."
+    },
+    {
+     "claim": "Wrong: many cells working together (false for one-celled life such as bacteria)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Unicellular_organism",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: cells that each hold a nucleus (bacteria have none; mature red blood cells have none either)",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: cells that each have a cell wall (animal cells have none)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_wall",
+     "note": ""
+    },
+    {
+     "claim": "Context: a person is built of around 30 trillion cells",
+     "result": "ok",
+     "source": "https://www.sciencedaily.com/releases/2016/01/160128132026.htm",
+     "note": "Sender, Fuchs and Milo (2016): about 30 trillion human cells in a typical adult (about 84 percent of them red blood cells). 'Around 30 trillion' holds."
+    },
+    {
+     "claim": "Context: a bacterium is a single cell with no nucleus; a person's cells have no wall",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
+     "note": ""
+    }
+   ]
+  },
+  "c1d34ba1b2": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "A scab forms over a scrape and new skin grows across beneath it",
+     "result": "ok",
+     "source": "https://my.clevelandclinic.org/health/body/scab",
+     "note": "Cleveland Clinic: the scab stays until the skin underneath heals and new skin cells appear. Grokipedia Wound_healing: cells 'must burrow beneath' a scab."
+    },
+    {
+     "claim": "Key: the new skin came from living skin cells at the edge of the wound",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Wound_healing",
+     "note": "Grokipedia: re-epithelialization 'begins with the migration of keratinocytes from the viable epidermis at the wound margins', so the key is true. But a scrape is a partial-thickness wound, and in those much of the new skin grows out of living skin cells left in the wound's floor, around hair follicles and sweat glands (Rittie et al., Am J Pathol 2013, 'Eccrine sweat glands are major contributors to reepithelialization of human wounds', https://www.eurekalert.org/news-releases/679597). 'At the edge' is incomplete for a scraped knee. Fix: key 'Living skin cells around and beneath the wound', and context 'Living skin cells left around and beneath the wound multiply and spread across it'. The question's point (new cells come only from living cells) is untouched."
+    },
+    {
+     "claim": "Wrong: dead skin cells from the skin's outer layer",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Stratum_corneum",
+     "note": "The stratum corneum is dead, anucleate corneocytes; keratinocytes are made in the stratum basale."
+    },
+    {
+     "claim": "Wrong: dried blood from the scab",
+     "result": "ok",
+     "source": "https://my.clevelandclinic.org/health/body/scab",
+     "note": "A scab is a dried blood clot (platelets, blood cells, fibrin, plasma) that protects the wound and falls off; it does not become skin."
+    },
+    {
+     "claim": "Wrong: clear fluid that seeped out of the wound",
+     "result": "ok",
+     "source": "https://kidshealth.org/en/kids/scab.html",
+     "note": "Fluid holds no skin-making cells; new tissue forms under the scab from living cells."
+    },
+    {
+     "claim": "Context: cell theory says every new cell comes from a cell that already exists",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_theory",
+     "note": ""
+    },
+    {
+     "claim": "Context: the scab only shields the wound and falls off once the skin has healed",
+     "result": "ok",
+     "source": "https://my.clevelandclinic.org/health/body/scab",
+     "note": "Cleveland Clinic also gives it a role in stopping bleeding, which does not conflict."
+    },
+    {
+     "claim": "Context: the dead cells of the outer layer can make nothing new",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Stratum_corneum",
+     "note": ""
+    }
+   ]
+  },
+  "f706443891": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Eukaryotes (amoebas, plant and animal cells) have a nucleus; prokaryotes such as bacteria have none",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Prokaryote",
+     "note": "Grokipedia Amoeba: a single-celled eukaryotic protist with 'a single, centrally located vesicular nucleus'. Prokaryotes lack membrane-bound organelles."
+    },
+    {
+     "claim": "Key: a bacterium keeps its DNA in its cytoplasm (the nucleoid)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Prokaryote",
+     "note": "Grokipedia: the nucleoid is 'an irregularly shaped region within the cytoplasm that houses the prokaryotic genome'; plasmids are also in the cytoplasm. OpenStax Biology 2e 4.2 agrees. (The exotic giant Thiomargarita magnifica keeps DNA in membrane sacs, 'pepins', which are still inside its cytoplasm; no effect at this level.)"
+    },
+    {
+     "claim": "Wrong: in its cell wall",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
+     "note": "The wall is an outer covering; the DNA is in the nucleoid."
+    },
+    {
+     "claim": "Wrong: in its mitochondria",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Prokaryote",
+     "note": "Prokaryotes 'lack membrane-bound organelles such as mitochondria, chloroplasts'."
+    },
+    {
+     "claim": "Wrong: in its chloroplasts",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Prokaryote",
+     "note": "Even photosynthetic cyanobacteria have no chloroplasts."
+    },
+    {
+     "claim": "Context: 'Every cell carries genetic instructions (DNA).'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Red_blood_cell",
+     "note": "False as a universal. Mature mammalian red blood cells push out their nucleus and mitochondria (Grokipedia: 'the nucleus and most organelles, including mitochondria and ribosomes, are extruded'; Wikipedia: without a nucleus and organelles, mature red blood cells do not contain DNA). They are about 84 percent of the 30 trillion cells in a human body (Sender et al. 2016). OpenStax states the textbook rule that all cells share DNA, but it does not survive this case, and 6th graders are taught that red blood cells have no nucleus. Fix: drop the sentence and open 'With no nucleus to hold its genetic instructions (DNA), a bacterium keeps them in a clump in its cytoplasm, a region called the nucleoid.'"
+    },
+    {
+     "claim": "Context: the bacterium's DNA sits in a clump in the cytoplasm, the nucleoid",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
+     "note": ""
+    },
+    {
+     "claim": "Context: bacteria have no mitochondria or chloroplasts at all; the wall is an outer layer",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Prokaryote",
+     "note": ""
+    }
+   ]
+  },
+  "8c69d19f11": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "The heart is built of muscle tissue and other kinds of tissue that pump blood together",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Organ_(biology)",
+     "note": "Grokipedia: 'the heart comprises cardiac muscle, connective, and endothelial tissues to pump blood'."
+    },
+    {
+     "claim": "Key: the heart is an organ",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Organ_(biology)",
+     "note": "Organs 'consist of two or more tissue types'."
+    },
+    {
+     "claim": "Wrong: a tissue (a group of similar cells; the heart has several tissue types)",
+     "result": "ok",
+     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: an organ system (the heart is one organ in the circulatory system)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Circulatory_system",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: an organism",
+     "result": "ok",
+     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
+     "note": "An organism can independently perform all functions of life; the heart cannot."
+    },
+    {
+     "claim": "Context: tissue = group of similar cells doing one job; organ = two or more kinds of tissue",
+     "result": "ok",
+     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
+     "note": "OpenStax: 'A tissue is a group of many similar cells' that 'work together to perform a specific function'; an organ is 'composed of two or more tissue types'."
+    },
+    {
+     "claim": "Context: the heart, blood vessels and blood make up the circulatory system, an organ system",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Circulatory_system",
+     "note": "Grokipedia: 'an organ system that includes the heart, blood vessels, and blood'. Some books fold in the lymphatic system; the draft's version matches the usual 6th-grade definition."
+    },
+    {
+     "claim": "Context: all the body's systems together make the organism",
+     "result": "ok",
+     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
+     "note": ""
+    }
+   ]
+  },
+  "25bcd13a1b": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Every cell has a cell membrane, including plant cells and bacteria with walls",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
+     "note": "OpenStax: all cells share a plasma membrane, cytoplasm, DNA and ribosomes (the DNA part has the red-blood-cell exception; the membrane part holds for every cell)."
+    },
+    {
+     "claim": "Key: the membrane controls what enters and leaves the cell",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": "OpenStax: 'The plasma membrane controls the passage of organic molecules, ions, water, and oxygen into and out of the cell.' Grokipedia Cell_(biology): a 'selectively permeable barrier'."
+    },
+    {
+     "claim": "Wrong: it gives the cell a stiff and boxy shape",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": "That is the cell wall: 'a rigid covering that protects the cell, provides structural support, and gives shape to the cell'."
+    },
+    {
+     "claim": "Wrong: it holds the genetic instructions of the cell",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Prokaryote",
+     "note": "DNA is in the nucleus (eukaryotes) or the nucleoid in the cytoplasm (bacteria)."
+    },
+    {
+     "claim": "Wrong: it releases the energy stored in the cell's food",
+     "result": "error",
+     "source": "https://openstax.org/books/microbiology/pages/8-3-cellular-respiration",
+     "note": "Defensible as right for the bacterium the stem names. Bacteria have no mitochondria; their respiration's electron transport happens 'on the inner part of the cell membrane of prokaryotic cells', and ATP synthase 'spans the cytoplasmic membrane' (OpenStax Microbiology 8.3). Grokipedia Prokaryote: the plasma membrane 'facilitates energy generation through processes like electron transport'. So a bacterium's membrane does help release the energy in its food. Fix: either drop 'or a bacterium' from the stem (in plant and animal cells the mitochondria do this, so the choice is then clean), or replace the choice with one no cell's membrane does, such as 'It stores the water the cell needs' (the vacuole's job)."
+    },
+    {
+     "claim": "Context: the membrane lets in water, oxygen and food and lets out wastes, keeping the cell's parts inside",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": ""
+    },
+    {
+     "claim": "Context: in a plant cell the stiff wall outside the membrane gives shape and support, but the membrane controls what passes through",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_wall",
+     "note": "The wall lies outside the plasma membrane; the membrane is the selective barrier."
+    }
+   ]
+  },
+  "65fdce7d3a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the nucleus holds the genetic instructions and directs the cell's work",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_nucleus",
+     "note": "Grokipedia: the nucleus keeps 'the cell's genetic material in the form of DNA' and is 'the primary control center for cellular activities'. OpenStax Biology 2e 4.3: it 'houses the cell's DNA and directs the synthesis of ribosomes and proteins'. (Mitochondria and chloroplasts carry a little DNA of their own, but neither is a choice and the nucleus holds nearly all of it.)"
+    },
+    {
+     "claim": "Wrong: the cytoplasm",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": "In a plant or animal cell (as the stem says) the DNA is in the nucleus, not loose in the cytoplasm; the cytoplasm does not direct the cell."
+    },
+    {
+     "claim": "Wrong: the cell membrane",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": "It controls passage in and out; it holds no instructions."
+    },
+    {
+     "claim": "Wrong: the vacuole",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Vacuole",
+     "note": "It stores water and other substances."
+    },
+    {
+     "claim": "Context: the nucleus is the control centre and uses the DNA to direct work such as making proteins",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_nucleus",
+     "note": ""
+    },
+    {
+     "claim": "Context: the cytoplasm is the jelly the cell's parts sit in; the membrane is the border",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_(biology)",
+     "note": "Grokipedia: 'the aqueous gel-like substance that fills the interior of the cell'. A fair grade-6 simplification."
+    }
+   ]
+  },
+  "d26fc7de8b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "A green leaf cell makes sugar from sunlight and also has mitochondria, as animal cells do",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": "OpenStax: mitochondria are the 'powerhouses' or 'energy factories' 'of both plant and animal cells'."
+    },
+    {
+     "claim": "Key: mitochondria release the energy stored in that sugar",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mitochondrion",
+     "note": "Grokipedia: mitochondria are 'the primary site for aerobic respiration and the production of adenosine triphosphate', breaking down glucose with oxygen to release usable energy."
+    },
+    {
+     "claim": "Wrong: to make more sugar at night without sunlight",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chloroplast",
+     "note": "Sugar is made from light in the chloroplasts; mitochondria break sugar down and make none."
+    },
+    {
+     "claim": "Wrong: to store the water that the roots carry up",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Vacuole",
+     "note": "Water storage is the central vacuole's job."
+    },
+    {
+     "claim": "Wrong: to let food in and wastes out of the cell",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": "That is the plasma membrane's job (and in a plant cell, unlike a bacterium, the membrane is not where the food's energy is released)."
+    },
+    {
+     "claim": "Context: chloroplasts make the sugar, mitochondria release its energy; plant and animal cells alike have mitochondria",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": ""
+    }
+   ]
+  },
+  "fdc637dfc0": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "A cell from inside a green leaf can make food from sunlight; a cheek cell cannot",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chloroplast",
+     "note": "Chloroplasts are densest in the palisade mesophyll (inside the leaf); 'inside' rightly avoids most epidermal cells, which have few or none. Chloroplasts are 'absent in animal cells'."
+    },
+    {
+     "claim": "Key: the chloroplasts",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chloroplast",
+     "note": "They convert 'solar energy into chemical energy stored in glucose and other carbohydrates'."
+    },
+    {
+     "claim": "Wrong: the mitochondria",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mitochondrion",
+     "note": "They release energy from food; cheek cells have them too, so they cannot be the difference."
+    },
+    {
+     "claim": "Wrong: the cell wall",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": "Support and shape only."
+    },
+    {
+     "claim": "Wrong: the central vacuole",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Vacuole",
+     "note": "Storage and turgor, not food-making."
+    },
+    {
+     "claim": "Context: chloroplasts use light, water and carbon dioxide to make sugar; chlorophyll gives leaves their colour",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chloroplast",
+     "note": "Grokipedia: light reactions make ATP and NADPH used to fix CO2; chlorophyll reflects green light, 'imparting the characteristic green hue'."
+    },
+    {
+     "claim": "Context: plants and algae have chloroplasts; animal cells such as cheek cells do not",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chloroplast",
+     "note": "Grokipedia: 'found primarily in the cells of plants and algae'. The one famous exception, the sea slug Elysia chlorotica, keeps stolen algal chloroplasts (kleptoplasty) rather than its own; the line about cheek cells stays true."
+    },
+    {
+     "claim": "Context: mitochondria, which both cells have, release energy from food but make none",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": ""
+    }
+   ]
+  },
+  "188757af31": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "A wilted potted plant stands up again after watering",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wilting",
+     "note": "Grokipedia: wilting is 'due to the loss of turgor pressure in cells'; 'Temporary wilting is reversible'."
+    },
+    {
+     "claim": "Key: the central vacuole fills with water and presses outward",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Vacuole",
+     "note": "Water entering the vacuole 'presses the plasma membrane against the cell wall' (turgor)."
+    },
+    {
+     "claim": "Wrong: the cell wall",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": "The wall is what is pressed against; 'As the central vacuole shrinks, it leaves the cell wall unsupported'."
+    },
+    {
+     "claim": "Wrong: the cell membrane",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Vacuole",
+     "note": "The membrane is pushed out against the wall but does not itself fill with water; the stem's 'fills with water' makes the vacuole the only fit. Acceptable at grade 6."
+    },
+    {
+     "claim": "Wrong: the chloroplasts",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chloroplast",
+     "note": ""
+    },
+    {
+     "claim": "Context: a mature plant cell's large central vacuole stores water and can fill most of the cell",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Vacuole",
+     "note": "Grokipedia: 'often occupies 80-90% of the mature cell's volume'; Wikipedia: typically over 30 percent, up to 80 percent. 'Can fill most of the cell' holds under both."
+    },
+    {
+     "claim": "Context: full, it presses the cell against its wall and keeps the plant firm; short of water it shrinks and the plant wilts",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells",
+     "note": ""
+    },
+    {
+     "claim": "Context: 'Animal cells have smaller, fewer vacuoles.'",
+     "result": "error",
+     "source": "https://en.wikipedia.org/wiki/Vacuole",
+     "note": "Sources disagree on 'fewer'. Grokipedia Vacuole says animal vacuoles 'are typically smaller and fewer in number', but Wikipedia says 'Animal vacuoles are smaller than their plant counterparts but also usually greater in number. There are also animal cells that do not have any vacuoles', and the usual comparison (Sciencing, Testbook, Lumen) is one large central vacuole in a plant cell against a scatter of small vacuoles, or none, in an animal cell. A plant cell with one vacuole cannot have more than an animal cell with several. Fix: 'Animal cells have only small vacuoles, or none at all.' This is true under every source."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Three errors and one uncertain. Two errors are in the contexts only (f706443891: 'Every cell carries DNA' fails for mature red blood cells; 188757af31: animal cells' vacuoles are smaller but not fewer). One is a defensible wrong choice (25bcd13a1b: the stem names a bacterium, and a bacterium's membrane is where its respiration releases food energy). The uncertain one (c1d34ba1b2) is the key's 'at the edge of the wound': in a scrape much of the new skin grows from living cells left in the wound's floor. The Hooke question is sound: it uses his own honeycomb comparison and avoids the monk's-room story, which Peters (2024) shows is a myth. The writer's fact sheet F10 ('every cell has DNA') and F19 ('smaller and fewer') carry the two context errors."
+}

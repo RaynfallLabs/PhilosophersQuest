@@ -1,0 +1,55 @@
+{"unit": "mendels-peas-and-inherited-traits",
+ "questions": {
+  "961a538081": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "The core fact (traits gained in life are not inherited) is first taught in 4th grade (TEKS 4.13B-style inherited versus learned traits). The fractions and 'through his genes', with the half-from-each-parent lure (M5), lift it to 7th-grade application, so it passes; it sits at the floor of the grade.",
+     "fix": "None required. If the lead wants more 7th-grade weight, add the half rule to the stem so the lure is earned: 'Each child gets half of his or her genes from each parent.'"},
+    {"axis": "clarity", "severity": "low",
+     "what": "'Later he has two children' is an unexplained detail that invites a splitting reading ('about half of it' to each child). Harmless to the key, but it is noise.",
+     "fix": "'Later he has a son.' and 'How much of the strength he gained at the forge passes to the boy through his genes?'"}
+   ]},
+  "2d836053d2": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'cut one part out of each' is singular, but the key is plural ('The anthers', ten in a pea flower); the singular nudges toward 'The stigma', the only singular choice.",
+     "fix": "'cut one kind of flower part out of each with fine forceps'."},
+    {"axis": "grade", "severity": "low",
+     "what": "The fact tested is flower anatomy (which part makes pollen), first taught in 4th-5th grade and outside map line G7.L8; the Mendel frame makes it an application, so it stands, but it spends one of ten slots on a fact the scope does not list.",
+     "fix": "Acceptable. If a slot is wanted for the scope's own content, ask why Mendel chose peas (sharp either/or traits, pure lines from self-pollination, many plants in a season)."}
+   ]},
+  "43c5045bbd": {"verdict": "ok", "issues": []},
+  "e509e69567": {"verdict": "ok", "issues": []},
+  "57d91c1aad": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'They change to suit the plant's soil' is not live: nothing in the stem raises soil, and no 7th grader thinks a hybrid's two factors respond to dirt. Only three choices are in play.",
+     "fix": "Use the dominance misconception (M3: 'dominant' means it wins and wipes out the other): 'The tall one turns the short one tall'. Choices: 'They stay separate and unchanged', 'They blend into one in-between factor', 'The short one is used up and lost', 'The tall one turns the short one tall'."}
+   ]},
+  "e5ba5b3b06": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'A new allele, blended from the two' is the fourth blending lure in the unit (Q3 medium height, Q4 a height between, Q5 blend into one). By this point a player rejects any 'blend' choice on reflex, so the lure is weaker here than its idea deserves.",
+     "fix": "'One allele, always the mother's' (a real mix-up: that a parent passes on the copy from one particular side). Parallel with 'One allele, always the dominant one'."}
+   ]},
+  "2eb14ba569": {"verdict": "ok", "issues": []},
+  "df07e7e3a9": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "medium",
+     "what": "The stem never says tall is dominant, and the share of short seeds depends on it (if short were dominant the answer changes and the short parent's copies are unknown). Q7 states the dominance; this apply question should too, so the student applies the Punnett square instead of recalling which pea trait was dominant.",
+     "fix": "Open with the rule: 'In peas, tall is dominant over short. A pea plant with one tall copy and one short copy of the height gene is crossed with a short plant. ...' The rest unchanged."}
+   ]},
+  "00b5d27015": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's 'copies of the height gene' shares its root with 'genotype', and the stem also states the other half outright ('Two tall pea plants'). A student who knows neither word guesses that the 'gene' word means the copies (which differ) and the other word means the look (both tall, as the stem says), and lands on the key. The four choices are the 2-by-2 grid, so one guess about the root solves it with no genetics at all.",
+     "fix": "The root is built into the word and cannot be hidden, so make the other half need T3 reasoning: give the dominance rule and the alleles, and do not say the plants are both tall. 'In peas, tall is dominant over short. One pea plant carries two tall alleles for height; another carries one tall allele and one short allele. How do the two plants compare?' Same four choices. The student must now apply dominance to see that both grow tall; the root alone only halves the field. 'Alleles' (taught in Q6) also replaces the stem's 'gene'."}
+   ]},
+  "ece410e8bd": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'It was taught in schools across Europe' is the weakest choice: a 7th grader knows a brand-new paper is not school material within thirty years, and the 'overlooked genius' story is familiar enough that the stem's 'What became of the paper' leans toward it.",
+     "fix": "'It made Mendel famous in his lifetime' (the real mix-up: assuming a famous discovery was famous at once). Parallel in length with the others."}
+   ]}
+ },
+ "unit_notes": "Scope fully covered: inherited versus acquired (Q1), Mendel's method (Q2), the all-tall first generation (Q3), the 3 to 1 return (Q4), separate factors (Q5), one allele per gamete (Q6), a recessive trait needs a copy from both parents (Q7), a Punnett square on a new cross (Q8), genotype and phenotype (Q9), overlooked until 1900 (Q10). The grade is right: Q1 and Q5-Q9 apply or explain, and Q3, Q4 and Q10 are the first discovery story the grade teaches. The words 'dominant' and 'recessive' are taught only in contexts (Q3, Q4) and used in Q7's stem; with Q8 and Q9 fixed to state 'tall is dominant over short', every apply question gives its rule. Blending is the lure in four questions (Q3, Q4, Q5, Q6); keep it where it is the historical rival (Q3, Q4, Q5) and vary Q6. Q7 and the fixed Q9 both rest on 'one tall copy is enough to make a plant tall'; different facts asked (what parents must carry versus what a genotype looks like), acceptable. No voice, singular-they or stance problems; the epigenetics caveat on Lamarck is handled by 'through his genes'."}

@@ -1,0 +1,42 @@
+{"unit": "the-sun-and-its-planets",
+ "questions": {
+  "2e08dea7cc": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The fourth choice, 'It is a ball of fire, not a star', breaks the form of the other three ('It is much ___ than they are') and does not even answer the question asked: being a ball of fire gives no reason for looking BRIGHTER, so a careful 10-year-old drops it and only three choices are live. The misconception behind it (M1, the Sun is not a star) is real; the wording wastes it.",
+     "fix": "Keep the misconception in the parallel form: 'It is a different kind of thing than they are'. The choices then read: closer / bigger / hotter / a different kind of thing, all 'It is ... than they are'."}
+   ]},
+  "bf15db996b": {"verdict": "ok", "issues": []},
+  "094c3cd94e": {"verdict": "ok", "issues": []},
+  "e650593947": {"verdict": "ok", "issues": []},
+  "5b22461a47": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "The easiest question in the unit. Saturn's rings is grade-3 content (the map line's own TEKS 3.8D and CK G3 sources), and 'bright rings around its middle, like the brim of a hat' gives it to any 8-year-old; as written it teaches a 5th grader nothing new. The one new fact (all four giants have rings) is hidden in the context.",
+     "fix": "Put the new fact in the stem and ask the basic: 'All four giant planets have rings, but only one planet's rings are bright enough to see through a small telescope. Which planet is it?' Same four choices."}
+   ]},
+  "ab5a32b07c": {"verdict": "ok", "issues": []},
+  "8df372dcea": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The answer is the only choice of its kind: 'Living things' against three landforms and weather features. The wrong choices are not mix-ups a 5th grader actually makes (no child believes Earth is the only planet with canyons); they are just features of other planets, so the question is answered by the slogan every child already knows and the lures carry no weight.",
+     "fix": "Use the real 5th-grade misconceptions as the lures: choices 'Living things', 'A moon', 'Gravity', 'Clouds in its sky' (children often think only Earth has a moon, or gravity: CfA lists 'there is no gravity in space'). Avoid 'Air around it' (breathable air IS unique to Earth). Alternatively key the scope's other half: 'What is Earth the only planet known to have on its surface?' with 'Liquid water', 'Rocky ground', 'Frozen ice', 'Tall volcanoes'."}
+   ]},
+  "9f51813710": {"verdict": "ok", "issues": []},
+  "b3e199b0c1": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The Sun's heat pulls on them' is a dead choice: heat is never a pull in a 10-year-old's experience. The ball-on-a-string picture then tells the student an inward pull is needed, which also kills 'Their own spinning keeps them on track' (the ball spins too and still flies off). That leaves gravity against magnetism, and 'gravity' is a word only the answer contains.",
+     "fix": "Replace the heat choice with 'Earth's gravity pulls on them' (the 'gravity is Earth's own thing' mix-up; gravity then appears in two choices, so the student must know whose pull it is). Move the ball-on-a-string picture to the context, where it already is, and shorten the stem: 'The planets travel round the Sun year after year and never fly off into space. What holds them on their paths?' This also brings the record under the length cap (315 > 294)."}
+   ]},
+  "b0a279ddb1": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Ten years' is filler: no 5th grader believes Earth's trip takes a decade, and it is the only choice not of the form 'One ___'. Three choices are live.",
+     "fix": "Replace 'Ten years' with 'One season': children know the seasons come with Earth's trip round the Sun and can mistake one season for one trip. Choices: 'One day', 'One month', 'One season', 'One year'."},
+    {"axis": "grade", "severity": "low",
+     "what": "By its own grade note this is a 4th-grade benchmark (Florida SC.4.E.5.3). Acceptable as 5th-grade review because the scope names it, but it sits at the floor of the grade.",
+     "fix": "No change needed if the season lure is added; it raises the question from recall of a word to telling the year from its parts."}
+   ]}
+ },
+ "unit_notes": "Coverage: Pluto as a dwarf planet (named on map line G5.E7 and in the scope), the asteroid belt and Venus as the brightest planet are taught only in contexts and never asked; no question tests the order beyond 'closest' (for example Neptune the farthest, or Earth third). If Q7 or Q10 cannot be fixed, a Pluto question is the natural replacement: 'Pluto, out beyond Neptune, was counted as the ninth planet until 2006. What is it called now?' with 'A dwarf planet', 'A moon', 'A comet', 'An asteroid'. Q4 (Jupiter) and Q5 (Saturn) use the identical four choices, and Q2 and Q3 share three of four (Mercury, Venus, Earth); not a fault, but it makes the unit feel narrower than its scope. Map line G5.E2's clause on constellations changing with the seasons is in no unit's scope (the lead's call, not this unit's). No voice, singular-they or stance problems; every keyed fact matches the fact sheet."}

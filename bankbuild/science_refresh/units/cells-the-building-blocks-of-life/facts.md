@@ -110,3 +110,29 @@ M5. MYTH, not used in the questions: Hooke named cells after the little rooms mo
     https://pmc.ncbi.nlm.nih.gov/articles/PMC11530768/
 
 M6. Folk belief that the scab itself turns into the new skin; it does not, it falls off (F25).
+
+## Added in the revision (2026-11-25; sources read today, Grokipedia first)
+
+F27. Bacteria (and archaea) are prokaryotes, single-celled organisms; a single bacterium is one cell. Prokaryotic cells are 0.1 to 5.0 micrometres across, much smaller than eukaryotic cells such as a person's, which are 10 to 100 micrometres across.
+    https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells ("We classify only the predominantly single-celled organisms Bacteria and Archaea as prokaryotes"; "At 0.1 to 5.0 um in diameter, prokaryotic cells are significantly smaller than eukaryotic cells, which have diameters ranging from 10 to 100 um") ; https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology ("Bacteria and Archaea are prokaryotes, single-celled organisms")
+
+F28. A virus is not a cell: it is an acellular infectious agent, a genome in a protein coat, with no cytoplasm or ribosomes of its own; it is a different thing from a bacterium.
+    https://grokipedia.com/page/Virus ("A virus is an acellular infectious agent"; "viruses lack cellular structures such as ribosomes, cytoplasm, and independent metabolic machinery")
+
+F29. Atoms form molecules, and molecules build up into the parts of cells; the cell is the smallest fundamental unit of structure and function in living things (the second idea of cell theory), so a molecule is far smaller than a cell.
+    https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology ("Atoms form molecules"; "Some cells contain aggregates of macromolecules surrounded by membranes"; "The cell itself is the smallest fundamental unit of structure and function in living organisms")
+
+F30. New skin over a scrape grows from living skin cells (basal keratinocytes) at the wound's edges AND from skin cells left in the wound's floor, lining hair follicles and sweat glands; they spread across the wound underneath the scab, which they free from the tissue below.
+    https://grokipedia.com/page/Wound_healing ("migration of keratinocytes from the viable epidermis at the wound margins"; cells "must burrow beneath" scabs) ; https://en.wikipedia.org/wiki/Wound_healing ("Basal keratinocytes from the wound edges and dermal appendages such as hair follicles"; reepithelization "from the wound margins and from skin appendages such as hair follicles"; keratinocytes "stay underneath the scab") ; https://www.eurekalert.org/news-releases/679597 (Rittie and colleagues, American Journal of Pathology, 2012: sweat glands beneath a wound are a major source of the new skin cells)
+
+F31. Cardiac muscle (myocardium) is a muscle TISSUE: it forms the thick middle layer of the heart's walls, makes up most of the heart's mass, and contracts to pump blood. (The heart, built of several tissues, is the organ.)
+    https://grokipedia.com/page/Cardiac_muscle ("Cardiac muscle, also known as myocardium, is the specialized striated muscle tissue"; "forms the thick middle layer of the heart walls"; "comprising the majority of the heart's overall mass"; "responsible for the organ's contractile function in pumping blood")
+
+F32. Animal cells have only small vacuoles (about 0.1 to 1 micrometre), and some animal cells have none. This corrects F19's "fewer": Wikipedia says animal vacuoles are "usually greater in number", while Grokipedia says "fewer", so the questions say neither.
+    https://grokipedia.com/page/Vacuole (animal vacuoles "typically small, ranging from 0.1 to 1 um in diameter") ; https://en.wikipedia.org/wiki/Vacuole ("Animal vacuoles are smaller than their plant counterparts but also usually greater in number. There are also animal cells that do not have any vacuoles.")
+
+F33. CAUTION, correcting F10: not every cell carries DNA. Mature mammalian red blood cells push out their nucleus and most organelles, so no question or context says that every cell has DNA.
+    https://grokipedia.com/page/Red_blood_cell ("the nucleus and most organelles, including mitochondria and ribosomes, are extruded")
+
+M7. Bacteria and viruses are lumped together as "germs". Simon, Enzinger and Fink (2017), PLoS ONE 12(3): e0174402, found severe misconceptions about viruses among Austrian high school and university students, such as "defining a virus as a pro- or eukaryotic cell". The lure "A kind of virus, not a cell" is the same confusion seen from the bacterium's side (author's judgment).
+    https://pmc.ncbi.nlm.nih.gov/articles/PMC5370109/

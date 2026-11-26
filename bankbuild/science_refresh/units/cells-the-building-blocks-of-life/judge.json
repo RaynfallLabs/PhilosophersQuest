@@ -1,0 +1,52 @@
+{"unit": "cells-the-building-blocks-of-life",
+ "questions": {
+  "20e2f8f8f0": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Saw rows of tiny boxes' leans toward 'The cell wall': a box is its sides, so a student with no cell knowledge can lean to the wall over the nucleus and the vacuole. Not decisive, because the membrane is also an outline and stays live.",
+     "fix": "'saw rows of tiny compartments' (or 'tiny chambers like a honeycomb', which is Hooke's own comparison and keeps the picture without the box-walls hint)."}
+   ]},
+  "9d5fdfc333": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The answer is the only hedged, all-inclusive choice ('one or more'), and the stem's 'covers every living thing on Earth, from a bacterium to a person' signals that the broadest choice must win; a test-wise 6th grader picks it without knowing cell theory. The same clause also rules out 'Many cells working together' for anyone who knows a bacterium is one cell. Answer is also much shorter than the three 'Cells that each ...' choices.",
+     "fix": "Test the same idea on a case, with the real 6th-grade mix-up (cells confused with molecules, germs thought too small to be cells, M3) as the lures: 'A bacterium is far too small to see without a microscope, yet it is alive. By cell theory, what is a single bacterium?' Choices: 'One whole living cell', 'A living molecule, smaller than a cell', 'A piece broken off a larger cell', 'A tight cluster of many cells'. Context then states the first idea in full."}
+   ]},
+  "c1d34ba1b2": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Living skin cells' against 'Dead skin cells' hands the answer to common sense: new skin GREW, and every child knows dead things do not grow. The dead-cell choice is a strawman, and the word 'Living' in the answer does the work that knowing the third idea of cell theory (cells come from cells) should do. 'Clear fluid that seeped out' is weak too.",
+     "fix": "Drop 'Living' from the key and give lures a 6th grader really holds: 'Skin cells at the edges of the wound', 'Blood cells that leaked into the wound', 'The scab itself, slowly turning into skin' (M6), 'Fluid that hardened under the scab'. Now the student must know new cells come from cells of the same kind."},
+    {"axis": "fact", "severity": "low",
+     "what": "'At the edge of the wound' is not the whole story for a scrape: new skin also grows up from skin cells left deep in the wound (hair follicles and sweat glands). Simplification is close to true but the fact-checker should look.",
+     "fix": "'Skin cells around and beneath the wound', or keep 'edges' and add 'and from skin cells left deep in it' to the context."}
+   ]},
+  "f706443891": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The stem prints the scope's core fact (prokaryotes such as bacteria have no nucleus; eukaryotes do) and tests the narrower follow-on (the DNA lies in the cytoplasm). Fine as a T2 fact-and-consequence, but the core contrast is never itself asked anywhere in the unit.",
+     "fix": "Acceptable as is. If the lead wants the core fact asked, the stem could stop at 'Bacteria are prokaryotes. What do their cells lack that plant and animal cells have?' with 'A nucleus', 'A cell membrane', 'Cytoplasm', 'Genetic instructions'; but then the nucleoid fact moves to the context."}
+   ]},
+  "8c69d19f11": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "Too easy for 6th grade: 'the heart is an organ' is everyday English that a 3rd grader knows, and the stem then restates the definition of an organ ('built of muscle tissue and other kinds of tissue, all working together'). No knowledge of the levels of organisation is needed. 'An organism' is not live (no child thinks a heart is a whole living thing), so only two choices are in play.",
+     "fix": "Ask the level children really mix up, tissue against organ: 'Heart muscle is made of many similar muscle cells that all do one job, squeezing together. In the levels of organisation, what is heart muscle?' Key 'A tissue'; choices 'A tissue', 'An organ', 'An organ system', 'A single cell'. The heart as an organ moves to the context."}
+   ]},
+  "25bcd13a1b": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'even a plant cell or a bacterium that also has a wall' tells the student the wall is a separate part, which softens the best lure ('stiff and boxy shape', the wall's job, M2).",
+     "fix": "'Every cell, from a bacterium to a leaf cell, has a cell membrane around it. What job does the membrane do?'"}
+   ]},
+  "65fdce7d3a": {"verdict": "ok", "issues": []},
+  "d26fc7de8b": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'just as an animal cell does' rules out two lures by logic alone: if animal cells have mitochondria too, their job cannot be making sugar or storing water carried up from roots, because animals do neither. A careful student with no knowledge of mitochondria is left with two choices.",
+     "fix": "Cut the clause: 'A green cell in a leaf makes its own sugar from sunlight, yet it also holds mitochondria. Why does it need them?' The context already says plant and animal cells both have them."}
+   ]},
+  "fdc637dfc0": {"verdict": "ok", "issues": []},
+  "188757af31": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "The second idea of cell theory (the cell is the basic unit of life) is in the scope and never asked; Q2 and Q3 take the first and third. Cross-echoes a player will notice in a run: Q6's wrong choice 'It releases the energy stored in the cell's food' is Q8's answer nearly word for word, and Q8's wrong choice 'To let food in and wastes out of the cell' is Q6's answer; Q8's stem ('makes its own sugar from sunlight, yet it also holds mitochondria') tells a player that mitochondria are not the sugar-maker, which kills Q9's mitochondria lure, and Q9's context answers Q8. Vary the wording of the echoed lures. Q4 and Q7 both ask where a cell keeps its genetic instructions (bacterium: cytoplasm; plant or animal: nucleus); they are a fair contrast pair, not a duplicate. 'Most cells are too small to see without a microscope' is unasked, acceptable since the-microscope-and-cell-theory unit carries it. Grade fit is right throughout (CK2023 G6, NGSS MS-LS1-1/-2); no voice, singular-they or stance problems found."}

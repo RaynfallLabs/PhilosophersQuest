@@ -101,3 +101,11 @@ M4. That a Punnett square says exactly how many offspring of each kind there wil
 M5. That half of a parent's acquired traits pass on because a child gets half its genes from each parent (an author's note: the half rule is about alleles, not about traits gained in life; F1, F13).
 
 M6. LEGEND, not used: that Mendel began with mice and his bishop made him stop. It comes from later tellings, not Mendel's papers (the old bank said so itself).
+
+## Added in the revision (2026-11-25; sources read today, Grokipedia first)
+
+F23. Mendel's own account of a cross: the bud is opened "before it is perfectly developed, the keel is removed" (the keel is the pea flower's two lower petals, joined), "each stamen carefully extracted by means of forceps", and then "the stigma can at once be dusted over with the foreign pollen". He worked on young buds because in peas "the anthers burst within the bud, so that the stigma becomes covered with pollen even before the flower opens". Grokipedia describes the same step as "selecting immature flower buds, prying open the keel petals, and excising the anthers with fine forceps". CAUTION, correcting F6: Mendel's paper says nothing of covering flowers with bags; no question or context uses the bag.
+    https://www-archiv.fdm.uni-hamburg.de/b-online/e08_mend/mendel.htm (Bateson's translation of Mendel 1866) ; https://grokipedia.com/page/Gregor_Mendel
+
+F24. Mendel's paper was cited only a handful of times before 1900 (Grokipedia: "estimates ranging from four to eleven references"; Olby and Gautrey, "Eleven references to Mendel before 1900", Annals of Science 24, 1968), and his peers sidelined the work "for over three decades"; it was recognised only after its rediscovery in 1900, sixteen years after his death (F21), so it did not make him famous in his lifetime. CAUTION, correcting F20's "about three times": no question or context uses that figure.
+    https://grokipedia.com/page/Gregor_Mendel ; https://informahealthcare.com/doi/ref/10.1080/00033796800200021
