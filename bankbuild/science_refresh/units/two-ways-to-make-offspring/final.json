@@ -1,0 +1,231 @@
+{
+ "unit": "two-ways-to-make-offspring",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "two-ways-to-make-offspring",
+   "question": "A bacterium keeps nearly all of its genes on one long loop. In warm broth rich in food, it grows to about twice its length and splits across its middle into two cells, and some kinds can do this every 20 minutes. How do the genes of the two new cells compare with the genes of the first?",
+   "answer": "Both have the same genes as the first cell",
+   "choices": [
+    "Both have the same genes as the first cell",
+    "Each has half of the first cell's genes",
+    "Each has a new mix of the first cell's genes",
+    "One has the old genes and one has new genes"
+   ],
+   "context": "Before it splits, the bacterium copies its loop of genes, so each new cell gets a full copy, the same genes apart from rare copying mistakes. Nothing is halved and nothing is mixed: one parent makes two identical offspring, and at one split every 20 minutes, a single cell can become over a million in under seven hours.",
+   "facts": [
+    "F5",
+    "F1",
+    "F29"
+   ],
+   "grade_note": "NGSS MS-LS3-2 asks 7th graders to explain why asexual reproduction gives offspring the same genetic information as the parent, and a bacterium splitting in two is the first case the grade's line names."
+  },
+  {
+   "tier": 3,
+   "topic": "two-ways-to-make-offspring",
+   "question": "Baker's yeast is a one-celled fungus. While sugar and other food are plentiful, each cell buds: a small new cell swells from its side and breaks away. When food runs short, yeast can switch to a sexual way of reproducing and form spores. How can the switch help the yeast through hard times?",
+   "answer": "Its offspring vary, so some may suit the change",
+   "choices": [
+    "Its offspring vary, so some may suit the change",
+    "Its offspring come faster, so more survive",
+    "Its offspring copy the parent, so none is weaker",
+    "Its offspring get only the best genes, so they are fitter"
+   ],
+   "context": "Sexual reproduction mixes genes into new combinations, so the offspring differ from each other and from the parent, and if conditions change, some of them may cope better than the parent would; a new mix is not better by rule, since some mixes are better and some worse. The spores are also tough resting cells, whose thick walls help them withstand heat and other harsh conditions until food returns. Budding is the faster way, but it only copies a parent suited to the good times, and biologists still debate every reason sex persists, the repair of damaged genes among them.",
+   "facts": [
+    "F6",
+    "F7",
+    "F4",
+    "F3",
+    "F2",
+    "F26"
+   ],
+   "grade_note": "TEKS 7.13C and MS-LS3-2 compare the results of asexual and sexual reproduction, and a fungus that switches between them as conditions change shows when each one pays."
+  },
+  {
+   "tier": 3,
+   "topic": "two-ways-to-make-offspring",
+   "question": "A loaf of bread comes out of the oven, cools on a rack, and is sliced and sealed in a plastic bag. A week later, fuzzy patches of mould are spreading over several slices, though nothing mouldy ever touched the loaf. Where did the mould most likely come from?",
+   "answer": "Spores carried onto it by the air",
+   "choices": [
+    "Spores carried onto it by the air",
+    "The bread itself as it went stale",
+    "Baker's yeast left alive in the bread",
+    "Bacteria in the bread turning into mould"
+   ],
+   "context": "Mould spores are far too small to see and float through the air indoors and out; some settled on the bread as it cooled or was sliced, and each grew into a new mould, a copy of the one that shed it. Pier Antonio Micheli, an Italian botanist of the 1700s, set spores on slices of melon, grew the same kind of fungus, and argued that fungi do not spring from the food itself, as the old idea of spontaneous generation held. Yeast and bacteria are other microbes, and neither turns into mould.",
+   "facts": [
+    "F8",
+    "F9"
+   ],
+   "grade_note": "Spores of moulds are one of the asexual ways the grade's line (G7.L5) names, and mould on bread is the case students meet at home."
+  },
+  {
+   "tier": 3,
+   "topic": "two-ways-to-make-offspring",
+   "question": "A gardener's best strawberry plant sends out runners, long stems that creep over the soil, and a small new plant takes root at the tip of each. Bees bring pollen to its flowers from the other plants in her bed, and she also sows the seeds from its berries. Which of the young plants carry exactly the parent's genes?",
+   "answer": "Only the plants from the runners",
+   "choices": [
+    "Only the plants from the runners",
+    "Only the plants from the seeds",
+    "Both the runner plants and the seedlings",
+    "Neither the runner plants nor the seedlings"
+   ],
+   "context": "A runner's plant grows from the parent's own stem, so it is a clone with exactly its genes, and growers spread a good strawberry this way, as potato growers plant pieces with eyes. Each seed formed when a cell from a grain of pollen joined an egg cell in the flower, so each seedling holds a new mix of genes, and garden strawberries grown from seed do not come true to their parent.",
+   "facts": [
+    "F10",
+    "F11",
+    "F1",
+    "F3"
+   ],
+   "grade_note": "MS-LS3-2 contrasts the identical offspring of asexual reproduction with the varied offspring of sexual reproduction, and a strawberry plant makes both at once."
+  },
+  {
+   "tier": 3,
+   "topic": "two-ways-to-make-offspring",
+   "question": "A planarian is a small flatworm that glides over the stones of ponds and streams. In a laboratory, a biologist cuts one in two across its middle and keeps both pieces in clean pond water. What becomes of the two pieces over the next few weeks?",
+   "answer": "Each piece grows into a whole worm",
+   "choices": [
+    "Each piece grows into a whole worm",
+    "Only the head piece grows a new tail",
+    "Each piece heals over but stays half a worm",
+    "Both pieces die within a few days"
+   ],
+   "context": "A planarian's body is full of stem cells that can build any missing part, so the head piece grows a new tail and the tail piece a new head; a piece as small as 1/279th of a worm can regrow a whole one. Some planarians reproduce this way on their own, pinching in two across the middle, and each half becomes a worm with the same genes as the one parent.",
+   "facts": [
+    "F12",
+    "F1"
+   ],
+   "grade_note": "Regeneration is one of the asexual ways the grade's line names, and the planarian is the textbook case of it."
+  },
+  {
+   "tier": 3,
+   "topic": "two-ways-to-make-offspring",
+   "question": "John Medley Wood, a botanist, found a single cycad, a cone-bearing plant, at the edge of a South African forest in 1895, and no other wild plant of its kind has ever been found. Gardeners have since raised hundreds of plants from shoots that sprouted at its base. Why has none of them ever made a seed?",
+   "answer": "All are males, cloned from one male plant",
+   "choices": [
+    "All are males, cloned from one male plant",
+    "Plants grown from shoots never make seeds",
+    "Its seeds can form only in its home forest",
+    "The plants are still too young to seed"
+   ],
+   "context": "Cycads grow as separate male and female plants, and a seed forms only when pollen from a male's cones reaches an ovule on a female's cones. Wood's plant was a male, and shoots from its base are clones, so every one of the hundreds of plants raised from it is a male with the very same genes; the one at Kew Gardens, grown from a shoot sent in 1899, bore its first male cone in 2004. Drones searched the forest in 2022 and 2024, and no female has turned up.",
+   "facts": [
+    "F13",
+    "F14",
+    "F3"
+   ],
+   "grade_note": "The grade teaches that sexual reproduction joins cells from two parents (in cycads a male and a female plant, with cones) and that asexual offspring are copies; Wood's cycad shows both at once."
+  },
+  {
+   "tier": 3,
+   "topic": "two-ways-to-make-offspring",
+   "question": "The tassel at the top of a corn stalk sheds clouds of pollen. Each strand of silk on a young ear below is part of one tiny flower's pistil and leads down to one kernel-to-be. A gardener grows corn in a single long row, and many ears come out with gaps where no kernels formed. What most likely went wrong?",
+   "answer": "Too little pollen reached those silks",
+   "choices": [
+    "Too little pollen reached those silks",
+    "Those silks needed insects to bring pollen",
+    "Wind blew the pollen back off those silks",
+    "Those silks got pollen from their own stalk"
+   ],
+   "context": "Corn is pollinated by the wind, and a kernel grows only where a pollen grain lands on its silk and sends a tube down to the ovule. In a single row much of the pollen blows away from the ears, so many silks catch none, and garden guides advise a block of at least three or four short rows. Corn needs no insects, a stalk's own pollen can make kernels too, and a grain that lands on a silk is held fast by its sticky surface, not blown off again.",
+   "facts": [
+    "F19",
+    "F18",
+    "F16",
+    "F15",
+    "F27"
+   ],
+   "grade_note": "The grade's line teaches the pistil and pollination by wind, and NGSS MS-LS1-4 asks how plant structures affect the odds of reproducing; corn's tassels and silks are the standard wind-pollinated case."
+  },
+  {
+   "tier": 3,
+   "topic": "two-ways-to-make-offspring",
+   "question": "A wildflower's blooms are long, narrow red tubes with plenty of watery nectar hidden deep inside, and they give off no scent at all. Which animal does the plant most likely depend on to carry its pollen?",
+   "answer": "A hummingbird",
+   "choices": [
+    "A hummingbird",
+    "A bumblebee",
+    "A hawk moth",
+    "A nectar-feeding bat"
+   ],
+   "context": "Flowers pollinated by birds are typically red or orange, tube-shaped, full of watery nectar and scentless, since birds find flowers by sight and have a poor sense of smell. Bees cannot see red, and the flowers of hawk moths and bats are mostly pale or dull and strongly scented, opening at dusk or at night, though hawk moths too sip from long, narrow tubes. Such patterns are tendencies, not rules, and bees visit some red flowers too.",
+   "facts": [
+    "F20",
+    "F21",
+    "F23",
+    "F24",
+    "F25",
+    "F28"
+   ],
+   "grade_note": "MS-LS1-4 asks how a flower's structures raise its odds of being pollinated, and matching a flower to its pollinator, birds included, applies the grade's line on pollination by insects and birds."
+  },
+  {
+   "tier": 3,
+   "topic": "two-ways-to-make-offspring",
+   "question": "To a person, a meadow buttercup's petals look plain, glossy yellow. A camera that records ultraviolet light shows something more: each petal is pale at its tip and dark toward the centre of the flower. What job does the dark pattern most likely do?",
+   "answer": "It guides bees to the nectar",
+   "choices": [
+    "It guides bees to the nectar",
+    "It warns leaf-eating insects away",
+    "It draws moths to it at night",
+    "It soaks up light to make food"
+   ],
+   "context": "Bees see ultraviolet light, which people cannot, and the dark patch marks the flower's centre, where the nectar lies: a nectar guide, which helps a bee find its reward quickly and brush against pollen as it feeds. Bees cannot see red, one reason bee flowers are so often blue or yellow. Moths seek pale, scented flowers at night, and a plant makes its food in its green leaves, not its petals.",
+   "facts": [
+    "F21",
+    "F22",
+    "F15",
+    "F23"
+   ],
+   "grade_note": "MS-LS1-4 names the colours and patterns that draw pollinating insects to flowers, and the petals' job of attracting pollinators is on the grade's line; an ultraviolet nectar guide is a case students can reason about."
+  },
+  {
+   "tier": 3,
+   "topic": "two-ways-to-make-offspring",
+   "question": "A gardener splits a green pea pod along its seam, and a row of peas sits inside, each joined to the pod by a short stalk. Cooks call the pod a vegetable, but to a botanist it is a fruit, and the peas are its seeds. Which part of the pea flower grew into the pod?",
+   "answer": "The ovary",
+   "choices": [
+    "The ovary",
+    "The petals",
+    "The stamens",
+    "The sepals"
+   ],
+   "context": "After pollen fertilizes the egg cells in the ovules, the ovary at the base of the pistil swells into the fruit and the ovules ripen into seeds. That is why tomatoes and cucumbers are fruits too, sweet or not. Petals draw pollinators, stamens make pollen, and the sepals wrapped the young bud; none of them becomes the pod.",
+   "facts": [
+    "F17",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "The grade's line carries the flower's parts through to seed and fruit, and that a fruit is a ripened ovary is the fact behind calling a pea pod a fruit."
+  }
+ ],
+ "revised": {
+  "fd18798b8c": {
+   "old_hash": "1dbf3eea27",
+   "why": "Judge (low, fact): 'all of its genes on one long loop' was too strong, since many bacteria also carry small extra loops, plasmids (F29). The stem now says 'nearly all'. Key, choices and context unchanged."
+  },
+  "6c1e8fb4df": {
+   "old_hash": "6c1e8fb4df",
+   "why": "Fact-check uncertain and judge (medium, fact): yeast spores really are tougher than budding cells (thick walls, F26), so 'Its offspring are stronger, so all survive' was half true. Replaced by the misconception that sexual offspring get only the best genes (false: mixes are better or worse by chance, F3), which also removes the 'all' (judge low). The context now says the spores are tough resting cells, and that this is not a genetic advantage. Stem and key unchanged."
+  },
+  "a89704083f": {
+   "old_hash": "a89704083f",
+   "why": "Judge (medium, tell): 'The two pieces heal back into one' was not live, since the stem keeps the pieces apart. Replaced, as the judge proposed, by what happens to most cut animals, 'Each piece heals over but stays half a worm' (false for a planarian, F12). Stem, key and context unchanged."
+  },
+  "306d61442c": {
+   "old_hash": "e5c875e343",
+   "why": "Judge (medium, grade): the key 'Every one is a clone of Wood's plant' restated the T2 variation-and-survival fact (plants grown from shoots are copies) and was the only choice about copying. The stem no longer says the plant was a male, and the key now turns on the 7th-grade fact: cycads come as separate male and female plants, so a single male's clones can never make seed (F13, F14). 'Plants grown from shoots never make seeds' is the trap for a player who knows only the T2 fact. The context no longer gives the disputed figure of 500, only 'hundreds'."
+  },
+  "376227fac3": {
+   "old_hash": "376227fac3",
+   "why": "Judge (medium, tell): 'Too much pollen landed on those silks' was dead, since the stem says each silk leads to one kernel-to-be. The judge's 'needed rain' replacement was not used, because drought really can leave ears poorly filled (F19 caveat), which would make it half true. Replaced instead by 'Wind blew the pollen back off those silks' (false: silks are sticky and hold any grain that lands, F27). Stem and key unchanged."
+  },
+  "98b3cf1ccb": {
+   "old_hash": "fc0e830705",
+   "why": "Judge (high, tell): the stem ruled out every wrong choice ('blooms by day' against the night-flying moth and the bat; 'watery nectar' against the pollen-eating beetle). As the judge proposed, 'blooms by day' and the choices' giveaway labels are gone, so only the red colour and the missing scent decide it: the choices are now a hummingbird, a bumblebee (bees cannot see red, F21), a hawk moth (long tubes, but pale, scented, at night, F23, F28) and a nectar-feeding bat (night, strong scent, F24). Key unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

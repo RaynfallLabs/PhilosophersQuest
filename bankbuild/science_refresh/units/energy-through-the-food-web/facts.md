@@ -96,3 +96,40 @@ M4. Counting levels from the first consumer, or counting the producer as a consu
 
 M5. Judging a level by the size of one animal: tiny insects seem to weigh least, though there are so many that together they outweigh the few birds that eat them.
     https://grokipedia.com/page/Ecological_pyramid (2,000 insects feed about 90 birds and one hawk)
+
+## Added in the revision (2026-11-26)
+
+F18. Food-chain length is not set by energy alone, and productivity is
+contested: Post, Pace and Hairston (Nature, 29 June 2000), sampling lakes from
+small ponds to Erie and Ontario, found that chain length "is determined by the
+size of an ecosystem, not by the amount of available food energy", and "big
+lakes have longer food chains than smaller lakes with the same productivity
+levels". So the draft's "longer where there is more plant growth" (F13's
+Grokipedia caveat) is dropped; the size of the habitat is named instead, and
+energy stays the textbook reason. The usual cap is four or five levels (F13);
+Grokipedia (Food chain) says most have 3 to 5, so stems say chains "rarely
+have more than four or five", never "most have four or five".
+    https://news.cornell.edu/node/313291 ; https://grokipedia.com/page/Food_chain
+
+F19. On land most plant growth is never eaten by plant-eaters while it lives:
+herbivores take "less than 15%" of land plant production (Wikipedia,
+Ecological efficiency) or "about one-third to one-fourth" (Grokipedia, Energy
+flow), and "approximately 90% of net primary production enters detrital
+pathways rather than direct grazing routes"; decomposers break down "organic
+matter at all levels". Detritivores such as earthworms also eat dead plant
+matter, so the wording is "plant-eaters while it lives".
+    https://grokipedia.com/page/Energy_flow_(ecology) ; https://en.wikipedia.org/wiki/Ecological_efficiency
+
+F20. Not every food chain runs on sunlight: at deep-sea hydrothermal vents and
+in some caves, chemosynthetic producers form the base of the food web, so
+"sunlight for nearly all of them". (Noted for the record: the draft's
+carbon-atom question, whose context said every chain needs sunlight, is
+dropped.)
+    https://grokipedia.com/page/Chemosynthesis
+
+F21. Decomposers pass energy on: in the soil food web, protists graze "on
+bacterial populations", nematodes include "bacterivores that feed on bacteria,
+fungivores that consume fungal hyphae", enchytraeid worms "graze on bacteria
+and fungi", and springtails "consume fungal hyphae". So "they pass no energy
+on to other living things" is wrong.
+    https://grokipedia.com/page/Soil_food_web

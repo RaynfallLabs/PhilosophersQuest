@@ -1,0 +1,115 @@
+{
+ "unit": "two-ways-to-make-offspring",
+ "questions": {
+  "1dbf3eea27": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'keeps all of its genes on one long loop' is a simplification: many bacteria also carry genes on small extra loops (plasmids), and a few kinds have two chromosomes. The answer is still true.",
+     "fix": "'A bacterium keeps nearly all of its genes on one long loop'."
+    }
+   ]
+  },
+  "6c1e8fb4df": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "fact",
+     "severity": "medium",
+     "what": "The question asks how forming spores helps yeast 'through hard times', but the most direct way sporulation helps a starving yeast is that its spores are far tougher than budding cells and can wait out hunger, heat and drying. The choice 'Its offspring are stronger, so all survive' is therefore half true (the spores are hardier), and only the absolute 'all' makes it wrong. The context mentions DNA repair but not spore toughness, so the teaching is incomplete.",
+     "fix": "Replace the half-true choice with a real misconception: 'Its offspring are born used to hunger, so they cope'. Add to the context: 'Yeast spores are also tougher than budding cells and can wait out hunger, a second way the switch helps.' Consider recasting the stem from 'through hard times' to 'when its surroundings keep changing', which is the case variation answers."
+    },
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'so all survive' is an absolute that a careful player strikes on sight.",
+     "fix": "Fixed by the replacement above."
+    }
+   ]
+  },
+  "180c71cbb1": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "This borders two other units. T2 one-cell-or-many's mould question teaches in its context that a mould grows from a tiny spore, and T5 how-germs-were-proven (Pasteur's flask) teaches that the life in spoiled food comes from specks carried in the air. This question's own fact (mould spores carried onto food by the air, mould making copies of itself) is a different case at its own grade, so it is acceptable.",
+     "fix": "Keep Micheli in the context only, as now, so the unit does not become a second spontaneous-generation question."
+    }
+   ]
+  },
+  "e50e8f46b4": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "The runner half rests on T2 facts (T2 variation-and-survival: a cutting has exactly its parent's genes in the hydrangea context, and the Gros Michel bananas from shoots were all copies). The seedling half (pollen joining an egg cell makes a new mix) is the new 7th-grade contrast, so the question earns its place.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "a89704083f": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'The two pieces heal back into one' is not live: the stem keeps the two pieces apart in a dish, so nobody expects them to rejoin. That leaves three choices.",
+     "fix": "Replace it with what happens to most cut animals: 'Each piece heals over but stays half a worm'."
+    }
+   ]
+  },
+  "e5c875e343": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "The key, 'Every one is a clone of Wood's plant', is the fact T2 variation-and-survival already asks with the Gros Michel bananas: plants grown from shoots are copies of one plant. It is also the only choice about genes or copying, so a T2 player picks it at once without the 7th-grade step (cycads come as separate male and female plants, and a seed needs both).",
+     "fix": "Aim at the new fact: keep the stem to 'It was a male, and no other wild plant of its kind has ever been found. Gardeners have since raised hundreds of plants from shoots that sprouted at its base.' Then ask: 'What would gardeners need to find before Wood's cycad could make seeds of its own kind?' Choices: 'A female plant of its kind' (key) / 'A male plant of its kind from another forest' / 'An older shoot from Wood's first plant' / 'A patch of soil from its home forest'. Keep the context's clone and Kew details."
+    }
+   ]
+  },
+  "376227fac3": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Too much pollen landed on those silks' is not live: the stem has just said each silk leads to one kernel-to-be, and no 7th grader thinks extra pollen stops a seed.",
+     "fix": "Replace it with 'Those silks needed rain to wash pollen down them', a real confusion of a child who has not met wind pollination."
+    }
+   ]
+  },
+  "fc0e830705": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "high",
+     "what": "The stem rules out all three wrong choices by its own words. 'Blooms by day' rules out 'A night-flying moth' (the choice's own adjective) and the bat, which everyone knows flies at night. 'Plenty of watery nectar' rules out 'A pollen-eating beetle'. A student who knows nothing about how flowers match their pollinators gets 'A hummingbird' by elimination.",
+     "fix": "Drop 'blooms by day' and the choices' giveaway labels, so that the colour and the missing scent do the work: 'A wildflower hangs long, narrow red tubes with plenty of watery nectar hidden deep inside, and it gives off no scent at all. Which animal does it most likely depend on to carry its pollen?' Choices: 'A hummingbird' (key) / 'A bumblebee' / 'A hawk moth' / 'A nectar-feeding bat'. The context's notes (bees cannot see red; moths and bats find flowers by scent; patterns are tendencies) then teach every choice."
+    }
+   ]
+  },
+  "d4dde3c5b4": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'dark toward the centre of the flower' leans slightly toward 'guides ... to the nectar'. The moth choice is a fair competitor (both are pollinator jobs), so the student still has to know that bees see ultraviolet and visit by day.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "b5e88a5729": {
+   "verdict": "ok",
+   "issues": []
+  }
+ },
+ "unit_notes": "Overlaps checked against every final.json. (1) T2 variation-and-survival, Gros Michel ('Every plant was a copy of the same plant': plants from shoots are clones): e5c875e343's key restates it, medium; fix by asking for the missing female (sexual reproduction needs a male and a female cycad). (2) T2 variation-and-survival, hydrangea context (a cutting has exactly the parent's genes): e50e8f46b4's runner half rests on it, but its seedling contrast is new; acceptable. (3) T2 one-cell-or-many, yeast is a one-celled fungus: only given in 6c1e8fb4df's stem, not asked; fine. (4) T2 one-cell-or-many, mould-on-bread context (the spore it grew from), and T5 how-germs-were-proven, Pasteur (life comes from specks in the air): border 180c71cbb1, whose own fact differs; acceptable. (5) T1 roots-stems-leaves-and-flowers, pollination by name (stamens make pollen) and the acorn as a fruit: b5e88a5729 asks the new fact (a fruit is the ripened ovary); acceptable. (6) T3 mendels-peas-and-inherited-traits, anthers and 'the ovary, where the seeds form': related to b5e88a5729, but a different fact. (7) T2 predators-partners-and-parasites, bee pollination as mutualism: d4dde3c5b4 asks the ultraviolet nectar guide, a different fact. Within the unit, 1dbf3eea27, e50e8f46b4 and e5c875e343 all turn on 'asexual offspring are identical copies'; the first two test different sides of it (a full copy, not half; runner against seed), and the e5c875e343 fix moves the third onto the two-parent fact. Scope covered: fission, budding, spores, runners, regeneration, sex and variation, petals, the pistil, wind, insect and bird pollination, ovary to fruit. Potato eyes appear only in a context, and no question asks the stamen; both are acceptable. Lane holds: plant- and microbe-led, nothing on human reproduction, the planarian only as regeneration. Gates: clean."
+}

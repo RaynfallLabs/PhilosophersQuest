@@ -1,0 +1,118 @@
+{
+ "unit": "body-systems-supply-and-defence",
+ "questions": {
+  "15110e13c5": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "The key is T1 the-bodys-main-organs' heart fact: that question's answer is 'It pumps blood around the body' and its wrong choice 'It makes new blood for the body', the same split as here (circulation against three ways of making or using up blood). A 5th grader picks 'The same blood goes round' without following Harvey's sums, so the discovery's reasoning is never tested.",
+     "fix": "Put Galen's view in the stem and ask why the sums broke it: 'Doctors had long followed Galen, who taught that the liver makes blood from food and the flesh uses it up. William Harvey, an English doctor, measured how much blood a heart holds and counted its beats, and in a book of 1628 he set out his sums: in half an hour the heart sends out more blood than the whole body contains. Why did those sums count against Galen?' Choices: 'No meal could be made into so much blood so fast' (key) / 'No heart could hold so much blood in one beat' / 'So much blood would burst the body's vessels' / 'They showed that the heart makes the blood itself'."
+    }
+   ]
+  },
+  "7c1df58cf6": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "Context: 'The valves had been found by his teacher, Hieronymus Fabricius' overclaims; others had seen valves in veins before him, and Fabricius described them in 1603.",
+     "fix": "'The valves had been described by his teacher, Hieronymus Fabricius, but it was Harvey who showed what they are for.'"
+    }
+   ]
+  },
+  "932af91502": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "bec34a7667": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "The stem's 'and every vein carries blood back to it' is the key of 7c1df58cf6 (Harvey's arm: the blood goes only toward the heart). A player who meets this question first is handed that one's answer.",
+     "fix": "Keep only what this question needs: 'An artery is any vessel that carries blood away from the heart. The pulmonary artery leaves the heart's right ventricle and runs to the lungs. What is the blood inside it like?'"
+    }
+   ]
+  },
+  "aa2db376a3": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "The fact asked (oxygen leaves the blood for the cell, carbon dioxide enters it) is T1 the-bodys-main-organs' two questions: blood 'brings oxygen and food to each part', and the cells' waste gas is carried by the blood to the lungs. The T3 facts, that capillaries are where the exchange happens and why (walls one cell thick), are given away in the stem, so the question tests a 5th-grade fact.",
+     "fix": "Ask the T3 why: 'Marcello Malpighi, an Italian doctor, first saw capillaries in 1661 through a microscope: blood vessels far too fine to see with the eye alone, linking the smallest arteries to the smallest veins. Blood hands its oxygen to the body's cells in the capillaries, not in the arteries or veins. What lets it do so there?' Choices: 'Their walls are only one cell thick' (key) / 'Their walls hold valves that let gases out' / 'Their blood flows faster there than anywhere' / 'Their blood holds more oxygen than anywhere'."
+    }
+   ]
+  },
+  "03754967fc": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'The air sacs have filled up with mucus and fluid' is partly true of COPD, where chronic bronchitis often comes with emphysema. The stem's stated mechanism keeps the key clear, so this is polish.",
+     "fix": "'The sacs now take in carbon dioxide, not oxygen'."
+    }
+   ]
+  },
+  "55421086e1": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "57fd0185d6": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "2d736ef41d": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Wastes such as urea' is the only general class among three named substances and matches the everyday idea that kidneys 'clean' the blood; acceptable as the scope's core kidney fact, but parallel choices would be fairer.",
+     "fix": "Choices: 'Urea, a waste from broken-down proteins' / 'Carbon dioxide, a waste from his cells' / 'Bile, a juice made by his liver' / 'Worn-out red blood cells'."
+    }
+   ]
+  },
+  "2ab63966fd": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "Levels of organisation (cell, tissue, organ, organ system, organism) is in the scope of T2 cells-the-building-blocks-of-life, whose final asks the same ladder (cardiac muscle is 'A tissue'). This is the next rung of the same recall, with nothing applied.",
+     "fix": "Apply the ladder to a case T2 does not reach, an organ in two systems (F24): 'The pancreas pours a digestive juice into the small intestine. It also releases insulin, a hormone, into the blood, and the glands that release hormones make up the endocrine system. Which organ system is the pancreas part of?' Choices: 'Both the digestive and the endocrine systems' (key) / 'Only the digestive system' / 'Only the endocrine system' / 'Neither, since a gland is not an organ'. Coordinate with body-systems-control-and-support (the pancreas and insulin are in its scope) so neither stem answers the other; if that cannot be done, drop this question (10 remain)."
+    },
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'The digestive system' is an everyday phrase, and the stem lists the digestive organs, so 'An organ system' falls out of household words.",
+     "fix": "As above."
+    }
+   ]
+  },
+  "4441bd3c2d": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "That the heart pumps more blood when the muscles work hard is an early-grade fact children know from feeling their own pulse after running; nothing of 7th grade is needed.",
+     "fix": "Ask the less obvious half of the same fact (F25), how the systems share the blood: 'A girl sprints up a long hill, her leg muscles using oxygen far faster than at rest. Her heart pumps far more blood each minute, and her body also sends less blood to some of its parts. Which of these gets less?' Choices: 'Her gut' (key) / 'Her brain' / 'Her heart's own muscle' / 'Her lungs'."
+    },
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Her gut draws more blood to digest food faster' and 'Her kidneys draw more blood to clean it faster' are not credible mid-sprint, so only the key and 'The vessels in her legs narrow to speed the blood' are live.",
+     "fix": "As above; if the present question is kept, replace the gut and kidney choices with 'Her blood grows thicker to hold more oxygen' and 'Her body makes new blood to carry more'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Overlap check against every final.json. aa2db376a3 re-asks T1 the-bodys-main-organs (blood brings oxygen to each part; carbon dioxide from the cells to the lungs): high. 2ab63966fd re-asks T2 cells-the-building-blocks-of-life's levels of organisation (its scope names the whole ladder; its final asks the tissue rung): high. 15110e13c5's key is T1 the-bodys-main-organs' heart answer (pumps blood round, does not make it): medium. 4441bd3c2d asks an early-grade fact. Within the unit, bec34a7667's stem gives away 7c1df58cf6's key (veins carry blood back to the heart). No overlap with T2 the-bodys-defences (cilia, stomach acid, white cells) or T2 one-cell-or-many (the red cell's lost nucleus); 'red blood cells carry oxygen' from the scope is asked nowhere here, which is fine since T2 covers it. The pancreas rewrite for 2ab63966fd must be squared with T3 body-systems-control-and-support. Lanes clean: clinical throughout, no reproductive system, no diet or nutrition advice (55421086e1's stomach bug and 2d736ef41d's dialysis are plain medicine, fine for teenagers). Two Harvey questions and one Malpighi question make a good T3 discovery thread once 15110e13c5 and aa2db376a3 test the reasoning, not the T1 fact. The id 'body-systems-supply-and-defence' names a defence the unit does not hold (defences are T2, as not_here says); cosmetic. No voice slips, no singular they."
+}

@@ -1,0 +1,53 @@
+{
+ "unit": "two-ways-to-make-offspring",
+ "questions": {
+  "fd18798b8c": {
+   "verdict": "pass",
+   "why": "'Nearly all' answers the plasmid point; the key and the 20-minute and million-in-under-seven-hours figures hold.",
+   "sources": [
+    "https://openstax.org/books/biology-2e/pages/10-5-prokaryotic-cell-division",
+    "https://grokipedia.com/page/Fission_(biology)"
+   ]
+  },
+  "6c1e8fb4df": {
+   "verdict": "pass",
+   "why": "The half-true 'stronger, so all survive' is gone; no choice now names spore toughness, so the key is the one defensible answer. The new 'only the best genes' is a real misconception and false (new mixes are better or worse by chance). The context's thick, heat-resistant spore wall is confirmed (Neiman 2011); the debate caveat stays.",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3213374",
+    "https://openstax.org/books/biology-2e/pages/24-1-characteristics-of-fungi",
+    "https://en.wikipedia.org/wiki/Saccharomyces_cerevisiae"
+   ]
+  },
+  "a89704083f": {
+   "verdict": "pass",
+   "why": "'Heals over but stays half a worm' is live (true of most cut animals) and false for a planarian, whose pieces each regrow into a whole worm.",
+   "sources": [
+    "https://grokipedia.com/page/Planarian"
+   ]
+  },
+  "306d61442c": {
+   "verdict": "pass",
+   "why": "Re-aimed at the 7th-grade fact (cycads are separately male and female; a seed needs both), with the T2 clone fact as the trap ('shoots never make seeds', false). Wood 1895, oNgoye forest edge, single male, no female ever found, about 500 clones, Kew offset 1899 and first male cone 2004: all confirmed. Hybrid seed borne on female E. natalensis does not break 'none of them has ever made a seed'.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Encephalartos_woodii",
+    "https://grokipedia.com/page/Cycad"
+   ]
+  },
+  "376227fac3": {
+   "verdict": "pass",
+   "why": "The dead 'too much pollen' choice is replaced by 'wind blew the pollen back off', live and false: silk papillae secrete a viscous exudate that holds pollen on contact.",
+   "sources": [
+    "https://grokipedia.com/page/Corn_silk",
+    "https://extension.unh.edu/resource/growing-sweet-corn-fact-sheet"
+   ]
+  },
+  "98b3cf1ccb": {
+   "verdict": "pass",
+   "why": "High tell fixed: 'blooms by day' and the choices' giveaway labels are gone, so the red colour and missing scent decide it. Bird flowers are red, tubular, with dilute nectar and no scent; bees cannot see red; hawk-moth and bat flowers are pale or dull, strongly scented, at night (hawk moths also use long tubes). Caveat stated.",
+   "sources": [
+    "https://grokipedia.com/page/Pollination_syndrome",
+    "https://www.fs.usda.gov/wildflowers/pollinators/animals/bats.shtml"
+   ]
+  }
+ }
+}

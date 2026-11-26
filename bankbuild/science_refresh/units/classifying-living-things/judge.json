@@ -1,0 +1,140 @@
+{
+ "unit": "classifying-living-things",
+ "questions": {
+  "6804ce7a76": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "Plain recall at T3: the question only asks which rank the first word of a two-part name stands for, a definition to recite, not an idea used on a new case. The long account of the old Latin phrases does no work toward the answer.",
+     "fix": "Make it an application and move the history to the context, e.g. 'The western honey bee is Apis mellifera, the eastern honey bee Apis cerana and the buff-tailed bumblebee Bombus terrestris. What do these three scientific names show?' Key: 'The two honey bees share a genus'; wrong: 'All three bees share a genus', 'The two honey bees are one species', 'Each bee has a genus of its own'. Or key the discovery itself: why the two-word names replaced the phrases (a short label kept apart from the description, far easier to remember and use)."
+    }
+   ]
+  },
+  "4641c08f0e": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'The lands where they live' is weak (people live in every land, apes and monkeys in a few warm ones), and 'Habits and diets they share' only a little better; the live contest is body features against descent.",
+     "fix": "Swap 'The lands where they live' for a lure closer to the answer's ground, e.g. 'The sounds and calls they make'."
+    }
+   ]
+  },
+  "18027e1f85": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The stem names the partners in rank order (family, order, class, kingdom) and says 'only the kingdom', which shows the list's direction, so the first plant named is the key.",
+     "fix": "Name them out of order and drop 'only': 'The smallest rank the rose shares with the Christmas rose is the class; with a moss, the kingdom; with the apple tree, the family; with the stinging nettle, the order.'"
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "The shared ranks depend on the system used: the nettle family sits in Rosales under APG but in its own order, Urticales, under Cronquist, and APG has no formal class Magnoliopsida. The logic holds because the stem states the ranks, but the context should not imply one fixed answer for every system.",
+     "fix": "Fact-checker to confirm the ranks against one named modern system (APG) and keep the stem's ranks to that system."
+    }
+   ]
+  },
+  "e28aa46c42": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "high",
+     "what": "The premise hands over the solution: all three reports give the same scientific name, so a student who knows nothing of how scientific names work still answers 'one species'. The fact under test (one scientific name means one species everywhere) is stated in effect by the stem.",
+     "fix": "Ask what the Latin name does instead of stating its sameness: 'Scientists in Florida, Canada and Chile each have their own common name for one big cat, panther, cougar or puma, but in their papers all three write Puma concolor. Why do scientists use the Latin name?' Key: 'It names one species the same way in every land and language'; wrong: 'It records where the cat was first found', 'It is the oldest name the cat has', 'It gives the cat's family and order'. (Avoid a 'describes its colour' lure: concolor does mean 'of one colour'.)"
+    }
+   ]
+  },
+  "689b1bd5ff": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "The first sentence carries padding ('each with a picture and a few lines about where it lives', 'animals of sea and river'); 'river' quietly marks the lungfish as the odd one out.",
+     "fix": "Trim to: 'A sign at an aquarium shows four animals whose English names all end in fish. Biologists count only one of the four as a true fish. Which one is it?'"
+    }
+   ]
+  },
+  "d9acb9c78a": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The tree is described in the key's own words ('broad' leaves that 'alternate along its twigs', against 'Leaves alternating along the twig: oak'), so the answer is found by matching words; no grasp of what the couplets mean is needed. Only the 'deeply lobed' maple lure tests anything.",
+     "fix": "Describe the specimen in different plain words so each couplet must be understood: 'wide, flat leaves with deep rounded lobes, which grow one at a time, first on one side of the twig and then a little farther along on the other side'. Keep the lobed-maple lure."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "The key is in field-guide shorthand ('1a. Needles: go to 2. 1b. ...'), which runs together as one paragraph on a quiz screen; a key in a stem should read clearly as words.",
+     "fix": "Write it out: 'Step 1: needle leaves, go to step 2; broad, flat leaves, go to step 3. Step 2: needles in bundles of two to five, pine; needles growing singly, spruce. Step 3: leaves in pairs facing each other on the twig, maple; leaves set one at a time along the twig, oak.' Then word the specimen differently from step 3 (as above)."
+    }
+   ]
+  },
+  "08f6c6d911": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "medium",
+     "what": "Trapping and digesting food does not rule out a plant: the Venus flytrap (taught at T2 in one-cell-or-many) traps and digests flies yet makes its own food, and reef corals feed on trapped food while algae inside them make food from light. Nothing in the stem says the creature cannot make its own food, so 'Among the plants' can be defended.",
+     "fix": "Add: 'It has no green parts and makes no food of its own.'"
+    },
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Among the protists' is dead: the stem says Whittaker told the many-celled kingdoms apart by feeding and calls the creature many-celled, and seventh graders learn the protists as mostly one-celled. Only three choices are live.",
+     "fix": "Replace it with a lure a student might really hold, e.g. 'In a kingdom of its own, since it fits none', or rework the stem so the protists stay in play."
+    }
+   ]
+  },
+  "1f35f24815": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'At first they were counted as bacteria' announces a reversal, which kills the strongest lure, 'They are an unusual kind of bacteria'. The stem's 'no nucleus' also weakens 'a kind of one-celled fungus' for anyone who knows a yeast cell has one.",
+     "fix": "Cut 'At first they were counted as bacteria.' (keep it in the context), and replace the fungus choice with an adjacent wrong reading such as 'They are bacteria changed to live without air'."
+    }
+   ]
+  },
+  "2a5eea9f40": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "Re-asks a T2 fact. cells-the-building-blocks-of-life (T2) states in its stem that 'Eukaryotes, such as amoebas and the cells of plants and animals, have a nucleus' and that bacteria have none, and the-microscope-and-cell-theory (T2) keys the nucleus. A student who did T2 needs nothing new: Eukarya means cells with a nucleus.",
+     "fix": "Replace with a kingdom or domain fact that is new at T3, e.g. Haeckel's third kingdom (facts F20): 'Euglena, a green single cell, swims like an animal yet makes food from light like a plant. Under the two kingdoms Linnaeus used, microbes like it fit neither well. What did Ernst Haeckel propose for such microbes in 1866?' Key: 'A third kingdom of their own'; wrong: 'Counting each as both a plant and an animal', 'Counting all the green ones as plants', 'A new domain above all the kingdoms'."
+    },
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'The power to make food from light' is dead for a list that includes a person and baker's yeast.",
+     "fix": "Moot if the question is replaced as above."
+    }
+   ]
+  },
+  "e95051e8ca": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Only two choices are live: the story sets Linnaeus's genus against Miller's, while the tobacco plant and 'a family of its own' come from nowhere (no relative but the potato is named), so a student who knows nothing picks between the two the story offers.",
+     "fix": "Name the relatives compared in the stem: 'botanists compared the DNA of tomatoes, potatoes, chili peppers and tobacco, all of the nightshade family'. Keep 'the tobacco plant's genus' and replace 'a family of its own' with 'It belongs in the chili pepper's genus'. Do not use the eggplant: it is in Solanum too, so it would be a second right answer."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Scope is well covered: Linnaeus and the two-word name, the ranks, misleading common names, kingdoms, domains, DNA and the key. Overlaps: (1) 2a5eea9f40 re-asks T2 cells-the-building-blocks-of-life (eukaryotes have a nucleus); fix: replace it with Haeckel's third kingdom as given, so the domains stay covered by 1f35f24815 (archaea). (2) 08f6c6d911 leans on T2 one-cell-or-many (fungi digest outside and absorb; the Venus flytrap traps and digests prey). Its key, that animals take food in and digest it inside, is new, but the flytrap makes the plant choice defensible; fix as given. (3) e28aa46c42's key has the same shape as natural-and-artificial-selection's 'One wild species, for all the breeds' (Darwin's pigeons). The facts differ, and the rewrite (why the Latin name) removes the echo. 6804ce7a76 and e28aa46c42 both test the two-part name; after the rewrites one keys a shared genus and the other why one Latin name is used, so they no longer share a fact. No overlap with comets-asteroids-and-moons or gravity-and-orbits. Lanes: 689b1bd5ff and e28aa46c42 name animals but test grouping and naming, not anatomy or behaviour, so they stay in this bank's lane."
+}

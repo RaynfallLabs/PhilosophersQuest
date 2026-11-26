@@ -34,3 +34,28 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
 - **2026-11-26, T3-T5 margin:** T1 kept 97% of what it drafted and T2 kept 95%.
   - At that rate T4 earth (45 written, 45 to keep) had no margin at all, and several other strands had one or two questions.
   - Every T3-T5 unit not yet started now writes one more question.
+- **Drifting continents and deep time (lead's ruling, 2026-11-26).** Five units share this ground. Who owns what:
+  - `plates-at-work` (T3 earth) owns the plate process: the boundary types and what each makes, hot spots, mantle currents as the driver, and where earthquakes and volcanoes cluster.
+    - It does not ask what convection is; `heat-on-the-move` asks that.
+    - It does not ask about Tharp, the magnetic stripes, or how old the sea floor is; those belong to Wegener and T5.
+  - `fossils-layers-and-a-changing-earth` (T3 earth) owns the evidence itself:
+    - sea fossils high on mountains;
+    - Glossopteris and the reptiles across the southern continents;
+    - coal in Antarctica;
+    - matching rocks and mountain belts;
+    - reading a cliff (oldest layer at the bottom; bent or broken after they formed).
+  - `wegener-and-the-drifting-continents` (T3 method) owns the story:
+    - the jigsaw fit and Pangaea;
+    - why geologists rejected him (no force he could name);
+    - Tharp's maps and the magnetic stripes;
+    - how the evidence changed minds.
+    - It does not re-ask Glossopteris or the coal as evidence. It may ask what the critics said those fossils showed instead (land bridges).
+  - `reading-deep-time` (T3 method) owns the method:
+    - Steno as the person behind superposition (not "oldest at the bottom" again);
+    - relative vs absolute age;
+    - index fossils, William Smith, Hutton;
+    - the time scale and Earth's 4.6 billion years.
+  - `earths-interior-and-age` (T5 earth) owns:
+    - sea-floor ages from the ridges outward;
+    - earthquake waves and the core;
+    - radiometric clocks and Patterson.

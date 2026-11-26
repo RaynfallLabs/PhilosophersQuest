@@ -1,0 +1,126 @@
+{
+ "unit": "temperature-and-moving-particles",
+ "questions": {
+  "468f1b64b3": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "Plain recall of the definition (what a thermometer's reading measures), with nothing applied, predicted or explained; the fact is 7th grade but the T3 craft asks to use it on a new case. It also turns on the same average-versus-total split that e80ef5c847 (the bathtub) applies, so the unit asks that distinction twice, once as bare recall.",
+     "fix": "Make it an application of 'temperature is an average' that the bathtub does not cover: 'Two beakers of water stand side by side, and the thermometers in both read 60 degrees Celsius. One beaker is full; the other holds only a few spoonfuls. How does the average speed of the water particles in the two beakers compare?' Choices: 'The same in both beakers' (key) / 'Faster in the full beaker' / 'Faster in the few spoonfuls' / 'Faster in whichever was heated longer'."
+    },
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Only two choices are live. The stem says the particles 'never stop moving', so 'How many of them the beaker holds' and 'How large each one of them is', neither about motion, fall away and leave a coin toss between average and total.",
+     "fix": "If the recall form is kept, give two more motion choices, e.g. 'How fast the fastest of them moves' and 'How far apart they sit, on average', and cut 'but its particles never stop moving' from the stem."
+    }
+   ]
+  },
+  "e80ef5c847": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Both the same, since both are plain water' is weak; few 7th graders would pick it.",
+     "fix": "'Both the same, since the mug's heat makes up for its size'."
+    }
+   ]
+  },
+  "9e55d7d51a": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'freeing particles' does not say free of what; a 7th grader may not tie it to the solid's fixed places.",
+     "fix": "Key 'Into breaking particles free of the solid, not speeding them up'; mirror 'Into speeding particles up, not breaking them free'."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "Overlap, acceptable: the stem's 0-degree plateau is T1 solids-liquids-and-gases' fact ('0 degrees Celsius' while ice melts) and 'breaking free' is T2 particles-in-motion's melting fact (the gold ring: 'They break free of their fixed places'). What is new and asked is that the reading holds because the particles are not sped up, which needs temperature as average motion.",
+     "fix": "Keep the 'not speeding them up' half as the discriminator; do not shorten the key to the freeing half alone."
+    }
+   ]
+  },
+  "96fad211dc": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'move faster' is T2 particles-in-motion's fact (heating gives particles more energy and speed) and the key is the only choice about motion, so the 6th-grade fact picks it without the T3 idea (expansion is particles sitting farther apart, not growing). The key also makes two claims where each wrong choice makes one.",
+     "fix": "Key 'Its particles sit a little farther apart'; wrong choices 'Each of its particles has grown a little larger', 'A fluid of heat has filled the gaps between them', 'Particles from the flame have joined its own'."
+    }
+   ]
+  },
+  "56cd76ba94": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "33f4792a12": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'The heat makes the jar's glass rim shrink' is weak: heat shrinking glass runs against the rest of the unit.",
+     "fix": "'Lid and glass grow alike, and the seal lets go' (the belief that all materials expand equally)."
+    }
+   ]
+  },
+  "b9a3d0f4f8": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'It stayed put, as the glass kept the heat out' is weak, and it leaves the key the only 'sank lower' choice.",
+     "fix": "'It sank lower, as the warmed water shrank', so direction alone does not decide it."
+    }
+   ]
+  },
+  "66ec89cb67": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'as the water slowly dries' points straight at evaporation, and the key is the only choice about water leaving, so a student who knows 'drying is evaporation' but not why evaporation cools still gets it.",
+     "fix": "Stem: 'One has its bulb wrapped in a cloth kept wet with water, and it reads several degrees lower than the dry one.' Replace 'Wet glass makes the thermometer read falsely low' with 'The slowest water particles escape, leaving the fast ones', so that knowing which particles escape, and that temperature is their average, decides it."
+    }
+   ]
+  },
+  "50c9739988": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "Plain recall of a definition (0 on the Kelvin scale is absolute zero): nothing applied, predicted or explained.",
+     "fix": "Replace it with the fact sheet's unused misconception M5, an application of thermal energy: 'Deep inside an Antarctic glacier the ice sits at -30 degrees Celsius, far colder than any freezer. Does that ice hold any thermal energy?' Choices: 'Yes, since its particles still move' (key) / 'Yes, since it has soaked up cold from the air' / 'No, since its particles are frozen still' / 'No, since only warm things hold it'. Move Thomson, the Kelvin scale and its zero into 566d384697's context."
+    },
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "566d384697's stem says nothing anywhere can be colder than absolute zero, which hands over this question's key to a player who meets that one first; two of ten questions sit on absolute zero.",
+     "fix": "Fold this question's facts into 566d384697's context and replace this one as above."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "The scale in use today comes from Thomson's revised absolute scale (1854, with Joule); his 1848 scale was built on Carnot's theory and differed. 'proposed a temperature scale in 1848 that scientists still use' is a common simplification for the fact-checker to confirm.",
+     "fix": "If kept anywhere: 'first proposed an absolute temperature scale in 1848'."
+    }
+   ]
+  },
+  "566d384697": {
+   "verdict": "ok",
+   "issues": []
+  }
+ },
+ "unit_notes": "Overlap check against every final.json: no question asks another unit's fact outright. Near overlaps, each with its fix above: 9e55d7d51a builds on T1 solids-liquids-and-gases (0 degrees while ice melts) and T2 particles-in-motion (melting particles break free), acceptable because it asks the new T3 point; 96fad211dc's key carries T2 particles-in-motion's 'heating speeds particles' as its giveaway; 66ec89cb67 rests on T1 the-water-cycle (evaporation named) and T2 particles-in-motion (boiling particles gain energy to pull away) and adds the T3 idea of a spread of speeds. heat-on-the-move (T3) shares no fact: it reuses only distractor ideas (the heat fluid, cold that flows), which is fine. Inside the unit: 468f1b64b3 and e80ef5c847 both turn on average versus total (468f1b64b3 should become an application, as above); 50c9739988 and 566d384697 both sit on absolute zero and the second's stem gives the first's key (replace 50c9739988). Four of ten are thermal expansion (96fad211dc, 56cd76ba94, 33f4792a12, b9a3d0f4f8), each a different fact (particles farther apart, the gap narrows, unequal expansion, a gas expands more than a liquid): at the ceiling but acceptable. Scope items 'cooling slows them' and 'a thermometer's liquid rising' appear only in contexts. No voice slips, no singular they, no arithmetic asked."
+}

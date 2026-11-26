@@ -1,0 +1,186 @@
+{
+ "unit": "classifying-living-things",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Before Carl Linnaeus, a species' scientific name was a Latin phrase listing the features that set it apart, and the phrases grew longer as more species were found. Linnaeus's 1758 book still describes the honey bee as a downy bee with a greyish thorax and a brown abdomen, but it also names the bee in just two words, Apis mellifera. Which group does the first word, Apis, name?",
+   "answer": "The bee's genus",
+   "choices": [
+    "The bee's genus",
+    "The bee's species",
+    "The bee's family",
+    "The bee's order"
+   ],
+   "context": "Apis is the genus, written with a capital letter, and mellifera, written small, marks out the one species within it; both are printed in italics. Linnaeus's two-word names were far easier to remember and use than the long phrases, and they soon replaced them.",
+   "facts": [
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "Seventh-grade classification teaches that a scientific name is the genus followed by the species, the system Linnaeus standardised."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Carl Linnaeus, a Swedish naturalist, put people in one order with apes and monkeys. He named the order Primates in 1758, the year he also gave our species its scientific name, Homo sapiens. Apes and monkeys went into his genus Simia, people into his genus Homo. On what did Linnaeus base this grouping?",
+   "answer": "Features their bodies share",
+   "choices": [
+    "Features their bodies share",
+    "Descent from a shared ancestor",
+    "Habits and diets they share",
+    "The lands where they live"
+   ],
+   "context": "Linnaeus grouped living things by the features of their bodies, seen by careful study and dissection, and he believed every species had been created unchanging. A century later, in 1859, Charles Darwin's On the Origin of Species explained shared features as the mark of descent from common ancestors. Linnaeus put bats in his Primates too.",
+   "facts": [
+    "F10",
+    "F11"
+   ],
+   "grade_note": "Seventh grade tells Linnaeus's story and teaches that he grouped living things by the physical features they share."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Botanists sort every plant into a ladder of nested ranks. The smallest rank the rose shares with the apple is the family. With the stinging nettle it is the order, with the Christmas rose the class, and with a moss only the kingdom. Which of these plants is the rose's closest relative?",
+   "answer": "The apple tree",
+   "choices": [
+    "The apple tree",
+    "The stinging nettle",
+    "The Christmas rose",
+    "The moss"
+   ],
+   "context": "From the largest group to the smallest, the ranks run kingdom, phylum, class, order, family, genus and species, and the smaller the group two living things share, the closer their kinship. The apple tree shares the rose family, while the Christmas rose, despite its name, belongs to the buttercup family.",
+   "facts": [
+    "F6",
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "Seventh graders learn the order of the ranks and use it to judge which organisms are most closely related."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "A naturalist gathers three reports of a big cat. One from Florida calls it a panther, one from Canada a cougar, and one from Chile a puma. All three give the same scientific name for it, Puma concolor. How many species do the three reports describe?",
+   "answer": "One species, under three names",
+   "choices": [
+    "One species, under three names",
+    "Three species, one in each country",
+    "Three species, all in the genus Puma",
+    "Two species, one on each continent"
+   ],
+   "context": "A scientific name means one species in every land and language, so Puma concolor is one cat whatever a report calls it. It holds the record for the animal with the most names, over 40 in English alone, among them cougar, puma, mountain lion, panther and catamount.",
+   "facts": [
+    "F5",
+    "F16"
+   ],
+   "grade_note": "Seventh grade teaches that scientific names let scientists everywhere mean the same organism, whatever its local common name."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "A sign at a public aquarium names four animals of sea and river whose English names all end in 'fish', each with a picture and a few lines about where it lives. Biologists count only one of the four as a true fish. Which one is it?",
+   "answer": "The lungfish",
+   "choices": [
+    "The lungfish",
+    "The cuttlefish",
+    "The starfish",
+    "The jellyfish"
+   ],
+   "context": "A true fish has a backbone, and the lungfish is a bony fish that gulps air with lungs as well as breathing with gills. The jellyfish is a cousin of the corals, the starfish of the sea urchins, and the cuttlefish of the squid and octopus; the cuttlefish's 'bone' is an inner shell, and none of the three has a backbone.",
+   "facts": [
+    "F17"
+   ],
+   "grade_note": "Seventh grade uses names like jellyfish and starfish to show that common names can mislead and that classification follows shared features."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "A key to four trees reads: 1a. Needles: go to 2. 1b. Broad leaves: go to 3. 2a. Needles in bundles of two to five: pine. 2b. Needles growing singly: spruce. 3a. Leaves in opposite pairs: maple. 3b. Leaves alternating along the twig: oak. A student finds a tree with broad, deeply lobed leaves that alternate along its twigs. What does the key name it?",
+   "answer": "Oak",
+   "choices": [
+    "Oak",
+    "Maple",
+    "Pine",
+    "Spruce"
+   ],
+   "context": "A dichotomous key gives two contrasting choices at each step, and each leads to the next step or to a name. Broad leaves lead to step 3, and leaves that alternate along the twig lead to oak; maple leaves are often lobed too, but they grow in opposite pairs.",
+   "facts": [
+    "F18",
+    "F19"
+   ],
+   "grade_note": "Using a dichotomous key to identify an organism is a standard seventh-grade classification skill."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Robert Whittaker, an American plant ecologist, sorted life into five kingdoms in 1969, and he told the many-celled kingdoms apart mainly by how their members feed. A diver finds a new many-celled creature fixed to a reef like a plant. It traps bits of food from the water and digests them inside its body. Where does Whittaker's scheme place it?",
+   "answer": "Among the animals",
+   "choices": [
+    "Among the animals",
+    "Among the plants",
+    "Among the fungi",
+    "Among the protists"
+   ],
+   "context": "Whittaker's five kingdoms were the monerans, protists, fungi, plants and animals. In his scheme plants make their own food, fungi absorb food they have broken down outside their bodies, and animals take food in and digest it inside. Staying in one place does not make a living thing a plant; what counts is how it feeds.",
+   "facts": [
+    "F20"
+   ],
+   "grade_note": "Seventh grade teaches the kingdoms of life and how they differ, including the way their members get food."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Methane-making microbes from wetlands and the guts of cattle look like bacteria under a microscope: single cells with no nucleus. At first they were counted as bacteria. Carl Woese and George Fox, at the University of Illinois, compared their ribosomal RNA, a molecule found in every cell, with that of other living things. What did the comparison, published in 1977, show?",
+   "answer": "They are a separate branch of life",
+   "choices": [
+    "They are a separate branch of life",
+    "They are an unusual kind of bacteria",
+    "They are the ancestors of all bacteria",
+    "They are a kind of one-celled fungus"
+   ],
+   "context": "The code of their ribosomal RNA set the methane-makers apart from bacteria as well as from plants and animals, so they form a separate branch of life, now called the archaea. Many scientists doubted it at first. In 1990 Woese proposed three domains above the kingdoms: Bacteria, Archaea and Eukarya.",
+   "facts": [
+    "F21",
+    "F22"
+   ],
+   "grade_note": "Seventh-grade classification now teaches the three domains, and Woese's comparison of a molecule shared by all cells is how the third was found."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Biologists now sort all life into three domains: the Bacteria, the Archaea and the Eukarya. Baker's yeast rising in bread dough, a fern on a forest floor and a person all belong to the Eukarya. What do all three share that puts them in that domain?",
+   "answer": "Cells that each hold a nucleus",
+   "choices": [
+    "Cells that each hold a nucleus",
+    "Bodies built of many cells",
+    "Cells with a stiff outer wall",
+    "The power to make food from light"
+   ],
+   "context": "The Eukarya are the living things whose cells keep their genetic material inside a nucleus, from one-celled yeasts and amoebas to plants, fungi and animals; bacteria and archaea have none. Yeast lives as single cells, a person's cells have no walls, and of the three only the fern makes its food from light.",
+   "facts": [
+    "F23"
+   ],
+   "grade_note": "Seventh graders learn the domains and that cells with a nucleus mark the Eukarya."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Carl Linnaeus placed the tomato in the genus Solanum, beside the potato, in 1753. Philip Miller, chief gardener of the Chelsea Physic Garden in London, soon moved it into a genus of its own, Lycopersicon. Long afterwards, botanists compared the DNA of tomatoes, potatoes and their relatives. What did the DNA show about the tomato?",
+   "answer": "It belongs in the potato's genus",
+   "choices": [
+    "It belongs in the potato's genus",
+    "It belongs in a genus of its own",
+    "It belongs in the tobacco plant's genus",
+    "It belongs in a family of its own"
+   ],
+   "context": "The DNA showed the tomato and the potato to be very close relatives within Solanum, so Linnaeus had placed it rightly, and the tomato is Solanum lycopersicum again. Groupings once made by comparing features by eye are now tested against DNA, which can confirm them or overturn them.",
+   "facts": [
+    "F14",
+    "F15"
+   ],
+   "grade_note": "Seventh grade notes that DNA comparison has reshaped classification, and the tomato is a clear case of DNA settling where a species belongs."
+  }
+ ]
+}

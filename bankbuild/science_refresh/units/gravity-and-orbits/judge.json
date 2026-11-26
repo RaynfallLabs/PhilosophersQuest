@@ -1,0 +1,113 @@
+{
+ "unit": "gravity-and-orbits",
+ "questions": {
+  "dcf7603ffd": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "Re-asks lower tiers. T1 the-sun-and-its-planets keys 'The Sun's gravity' as what holds Mars on its path, and T2 hypothesis-theory-and-law states in its stem that Newton's law 'applies to every pair of masses, from an apple and Earth to the Sun and its planets'. Anyone who knows that gravity holds an orbiting body picks the one gravity choice. The respectable old theories (Descartes's whirlpool, Aristotle's separate heavens) are dead to a modern student, so the question tests only the T1 fact.",
+     "fix": "Key something new at T3 rather than 'gravity holds the Moon'. Simplest: replace it with a scope case from facts F20 and F1: 'Jupiter is by far the biggest planet, yet Jupiter and all the other planets circle the Sun. Why does the Sun's pull rule the solar system?' Key: 'The Sun holds nearly all of its mass'; wrong: 'The Sun is the hottest body in it', 'The Sun sits at the centre of space', 'The Sun shines with its own light'. Keep the Newton apple story for the context."
+    },
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The answer repeats the stem's apple ('the pull that drops apples'), and the stem's 'set the falling apple beside the Moon' already says the two are linked.",
+     "fix": "Moot if the question is replaced as above; if the story is kept, the key must not repeat the stem's apple."
+    }
+   ]
+  },
+  "dffb2bf283": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Each ball ... curves down' and 'travel right round Earth' set up the answer's 'Earth's surface curves away'. 'It rises up out of the reach of Earth's pull' goes against the stem's level-fired ball that curves down, so it is weak.",
+     "fix": "Replace 'It rises up out of the reach of Earth's pull' with 'Earth's pull fades away that far above the ground' (facts M2)."
+    }
+   ]
+  },
+  "2405044eb3": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem settles it without any knowledge of orbits. 'Went on circling Earth for years after' its crew left, with 'What became of Skylab?', says its circling ended, which kills 'It kept circling at the same height', and 'slowed it a little on every lap' makes 'drifted away into deep space' unlikely. Only 'hung in place' competes, and few seventh graders think a slowed spacecraft would hover.",
+     "fix": "Recast as a prediction that does not hint the orbit ended: 'Skylab, the first American space station, circled high above Earth with no crew aboard after 1974. Thin traces of air brushed against it and slowed it a little on every lap. What would that slowing do to Skylab in time?' Replace 'It kept circling at the same height' with 'It would climb slowly to a higher orbit' (not 'speed up': a decaying orbit in fact does speed up)."
+    }
+   ]
+  },
+  "7313d530fb": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "Three choices say gravity is missing or weak and one does not, so the answer is the odd one out by shape. Acceptable, since each lure is a documented misconception.",
+     "fix": "None needed."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "Its context ('Earth's pull is still strong up there') gives away 8501805c62's answer.",
+     "fix": "Cut that clause from this context and let 8501805c62 teach it."
+    }
+   ]
+  },
+  "8501805c62": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The stem gives both the rule (the pull weakens with distance from the centre) and both distances, so a student can reason from 6,400 to 6,800 km to 'nearly as strong' without knowing the 90 per cent figure. That is fair T3 application, and no inverse-square sum is needed (the math lane is untouched), but little is left to know.",
+     "fix": "Optional: drop the opening rule sentence, which 25e7a9510b tests, and keep the two distances: 'Earth's centre lies about 6,400 kilometres beneath the ground, and the International Space Station circles about 400 kilometres above it. How strong is Earth's pull up where the station flies?'"
+    }
+   ]
+  },
+  "ba425a35f7": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Yes, hard enough to roll them together' is dead: the stem says the balls rest side by side, so any student can see they are not rolling. Without it the answer is the only 'yes', and the only hedged choice.",
+     "fix": "Replace it with 'No, gravity pulls things only down toward Earth' (a common confusion), or with a second hedged yes such as 'Yes, but only while one of them is moving'."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "T2 hypothesis-theory-and-law states 'every pair of masses' in its stem, and T2 action-and-reaction has the apple pull Earth; the new piece here, 'far too weakly to notice' for small masses, is T3 content.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "f7b8ed41c6": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "fd3a7fa255": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "52de76ca1e": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "25e7a9510b": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The question 'How does Earth's pull on the probe change' rules out 'It stays just as strong the whole way' by its own words, and 8501805c62's stem teaches that the pull weakens with distance. Only the two 'ends' choices compete with the answer.",
+     "fix": "Replace it with another live lure, e.g. 'It weakens until the Sun's pull blocks it out' (the blocking misconception, facts M5), and ask 'What happens to Earth's pull on the probe as the distance grows?'"
+    }
+   ]
+  }
+ },
+ "unit_notes": "Overlaps: (1) dcf7603ffd re-asks T1 the-sun-and-its-planets ('The Sun's gravity' holds Mars) and the T2 hypothesis-theory-and-law stem (Newton's law from the apple to the planets); fix: replace it as given. Its replacement (why the Sun rules, from its mass) uses the same rule as f7b8ed41c6 (more mass, stronger pull) on another case with another fact; if the writer would rather not repeat the rule, use weight on another planet against a spring scale instead. (2) ba425a35f7: its new piece (a pull too weak to notice) is fine against T2 action-and-reaction and hypothesis-theory-and-law. (3) fd3a7fa255 applies T1 measuring-and-the-fair-test (a spring scale measures a pull) and T1 telling-materials-apart (a balance gives the amount of matter) on the Moon, which is new at T3. (4) 7313d530fb (all fall together) is not inertia-newtons-first-law's station question (mass resists a shove) and dffb2bf283 (the fall never ends) is not inertia's whirled ball or coasting probe (straight-line motion). No question on the tides, Kepler or Cavendish (Cavendish is only in a context). No overlap with comets-asteroids-and-moons. Within the unit, three questions rest on the pull weakening with distance (8501805c62 at the station, 52de76ca1e the balance point, 25e7a9510b no edge) and three on an orbit being a fall (dffb2bf283, 2405044eb3, 7313d530fb). Each keys a different fact, so this is acceptable, but no replacement should add another distance case. Lanes: 8501805c62 and 52de76ca1e reason with numbers only qualitatively, and no inverse-square sum is needed."
+}

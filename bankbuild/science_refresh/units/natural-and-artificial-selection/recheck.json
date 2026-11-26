@@ -1,0 +1,70 @@
+{
+ "unit": "natural-and-artificial-selection",
+ "questions": {
+  "12beb72a5d": {
+   "verdict": "pass",
+   "why": "Fixed: the phrase entered the Origin in its fifth edition, 1869, ten years after 1859 (Spencer coined it in 1864; Darwin's first use in print, 1868, is not contradicted now).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Survival_of_the_fittest",
+    "https://grokipedia.com/page/Survival_of_the_fittest"
+   ]
+  },
+  "f56e5f659f": {
+   "verdict": "pass",
+   "why": "The disputed western-European origin is gone, and the method clause no longer gives away d5dda55a37. Broccoli from flower heads; cabbage terminal bud, kohlrabi stem, Brussels sprouts axillary buds; one species; charlock is the plant usually called wild mustard. No T1/T2 question uses these crops.",
+   "sources": [
+    "https://grokipedia.com/page/Brassica_oleracea",
+    "https://en.wikipedia.org/wiki/Sinapis_arvensis"
+   ]
+  },
+  "330e731ee4": {
+   "verdict": "pass",
+   "why": "No longer repeats the pigeon question's one-ancestor fact: now the classify task (a person choosing the parents against the heat doing the choosing), not taught at T2. All three distractors give a live people- or gene-based reason; the key's reason teaches the term. Wayne (Vila et al. 1997) and Lorenz's jackals in the context are right. The hot-city strays read as part of the supposed case.",
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/9180076/",
+    "https://en.wikipedia.org/wiki/Man_Meets_Dog"
+   ]
+  },
+  "d5dda55a37": {
+   "verdict": "pass",
+   "why": "'Soaking the seeds' replaces roasting, so the misconception (the surroundings change the gene) is live without a dead seed. Teosinte, tga1, about 9,000 years ago in southwestern Mexico: true.",
+   "sources": [
+    "https://news.wisc.edu/uw-study-shows-how-a-kernel-got-naked-and-corn-became-king/",
+    "https://grokipedia.com/page/Maize"
+   ]
+  },
+  "b6d06f1cfe": {
+   "verdict": "pass",
+   "why": "The contagion choice also explains speed, so the key is no longer the only speed answer; it is false (resistance is inherited). 'Pass through many generations a year' fixes the voice. DDT, resistance in Europe by 1947, 7-10 days egg to adult, more than 500 insect kinds: true.",
+   "sources": [
+    "https://grokipedia.com/page/Pesticide_resistance",
+    "https://grokipedia.com/page/Housefly"
+   ]
+  },
+  "11c9a7699f": {
+   "verdict": "pass",
+   "why": "Re-aimed at what the comparison wood ruled out (soot as a poison, hardier dark moths, trapping bias), a 7th-grade method step beyond T2's beetles; the Dorset result is not in the stem, so the answer needs the story. Paint under the wings, Birmingham soot, Dorset lichen, two to three times as many pale recaptured in Dorset, Tinbergen's film, 98 in 100 by 1895: true.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kettlewell%27s_experiment",
+    "https://grokipedia.com/page/Peppered_moth_evolution"
+   ]
+  },
+  "a6bc268145": {
+   "verdict": "pass",
+   "why": "No longer repeats 388aa73b3e's fact, and the weak bat choice is gone: it now asks what the re-test meant for the critics' charge, and the result is not in the stem. Critics (trunk sites, inflated densities), six years near Cambridge, a dozen moths a night on branches, over half of wild moths resting on branches, nine bird species, published 2012: true.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Peppered_moth_evolution",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3391436/fullTextXML"
+   ]
+  },
+  "969af57aff": {
+   "verdict": "pass",
+   "why": "Key matches the sources (roses lack the F3'5'H gene for delphinidin; bred 'blue' roses are lilac, lavender or violet). Distractors are honest wrong ideas built on the T3 Mendel unit (hidden recessive, blending) plus not enough generations; parallel and live. Florigene and Suntory's pansy gene and lavender-mauve result: true. Seventh-grade (MS-LS4-5), not a T1/T2 fact. Minor: trace rosacyanin pigments in a few roses, and new mutations over long spans, make the context's 'can never turn up' a crossing-scale simplification, still true for breeding.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Blue_rose",
+    "https://grokipedia.com/page/Blue_rose",
+    "https://www.suntory.com/sic/story/bluerose/"
+   ]
+  }
+ }
+}

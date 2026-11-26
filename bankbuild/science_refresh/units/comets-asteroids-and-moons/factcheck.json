@@ -1,0 +1,518 @@
+{
+ "unit": "comets-asteroids-and-moons",
+ "questions": {
+  "121a58dd34": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: ice giants have a bigger share of water, methane and ammonia than the gas giants",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ice_giant",
+     "note": "Wikipedia: Uranus and Neptune 'consist of only about 20% hydrogen and helium by mass'; Jupiter and Saturn 'more than 90% hydrogen and helium'; the rest of the ice giants is water, ammonia and methane ices. Grokipedia Ice_giant: heavy elements 70-90% of mass."
+    },
+    {
+     "claim": "Wrong choice: bigger share of hydrogen and helium (it is the gas giants that have this)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ice_giant",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: a thick solid crust of ice beneath the clouds (no solid surface; ices are supercritical fluid)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ice_giant",
+     "note": "Wikipedia: 'lacking well-defined solid surfaces'; water 'primarily exists as supercritical fluid'."
+    },
+    {
+     "claim": "Wrong choice: many more moons (the ice giants have fewer moons than Jupiter and Saturn)",
+     "result": "ok",
+     "source": "https://skyandtelescope.org/observing/celestial-objects-to-watch/a-guide-to-planetary-satellites/",
+     "note": "Counts as of late 2025: Jupiter 97, Saturn 274, Uranus 28-29 (a new Uranus moon found by JWST in 2025), Neptune 16. Counts change, but the gap is far too large for the choice ever to become right; no count is keyed."
+    },
+    {
+     "claim": "Stem: deep inside they are thousands of degrees hot",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ice_giant",
+     "note": "Grokipedia: temperatures approach 5000 K at the core-mantle boundary."
+    },
+    {
+     "claim": "Context: only about a fifth hydrogen and helium; ices so called because they were frozen solid when the planets formed; hot dense fluid; no solid surface",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ice_giant",
+     "note": "Wikipedia: the compounds 'were solids when they were primarily incorporated into the planets during their formation'."
+    },
+    {
+     "claim": "Context: Jupiter and Saturn more than nine-tenths hydrogen and helium, far more moons",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ice_giant",
+     "note": ""
+    }
+   ]
+  },
+  "7eac861d9f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Galileo found Europa in January 1610, one of four moons of Jupiter seen through his telescope",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Europa_(moon)",
+     "note": "Grokipedia: discovered 7 January 1610 (7-8 January; Io and Europa were first resolved separately on 8 January). 'January 1610' is right either way."
+    },
+    {
+     "claim": "Stem: surface is a bright crust of ice crossed by long dark cracks, with few craters",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Europa_(moon)",
+     "note": "Smooth bright water-ice crust, dark reddish-brown lineae, few craters (young surface)."
+    },
+    {
+     "claim": "Key: an ocean of salty liquid water beneath the ice",
+     "result": "ok",
+     "source": "https://science.nasa.gov/mission/europa-clipper/why-europa-evidence-for-an-ocean/",
+     "note": "NASA: most likely source of the induced field is 'a global ocean of salty water'. The stem says 'what do scientists think', which fits the ocean not yet being directly confirmed."
+    },
+    {
+     "claim": "Wrong choices: liquid methane sea; thick layer of hot melted rock; solid rock right up to the ice",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Europa_(moon)",
+     "note": "Beneath the ocean lie a silicate mantle and metal core; no molten-rock layer or methane sea is proposed under the ice."
+    },
+    {
+     "claim": "Context: Galileo spacecraft's magnetic-field measurements fit a buried conducting layer of salty water",
+     "result": "ok",
+     "source": "https://science.nasa.gov/mission/europa-clipper/why-europa-evidence-for-an-ocean/",
+     "note": "NASA: Galileo found an induced field from 'a deep layer of some electrically conductive fluid beneath the surface'."
+    },
+    {
+     "claim": "Context: ocean may hold about twice as much water as all Earth's oceans",
+     "result": "ok",
+     "source": "https://science.nasa.gov/mission/europa-clipper/why-europa-evidence-for-an-ocean/",
+     "note": "NASA: 'more than twice the size of Earth's oceans combined'. Grokipedia gives two and three times in different places; 'about twice' matches NASA."
+    },
+    {
+     "claim": "Context: Europa one of the best places to look for life; life needs liquid water",
+     "result": "ok",
+     "source": "https://science.nasa.gov/jupiter/jupiter-moons/europa/",
+     "note": "NASA: 'one of the most promising places in our solar system' for environments that could support life."
+    },
+    {
+     "claim": "Context: seas of liquid methane on Titan; melted rock from Io's volcanoes",
+     "result": "ok",
+     "source": "https://science.nasa.gov/saturn/moons/titan/",
+     "note": "Titan's lakes and seas are liquid methane and ethane; Io is the most volcanically active body (Grokipedia Galilean_moons)."
+    }
+   ]
+  },
+  "af862eef72": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Huygens probe descended to Titan under parachutes in 2005",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Titan_(moon)",
+     "note": "Landed 14 January 2005 after a parachute descent of about 2 h 27 min."
+    },
+    {
+     "claim": "Titan is Saturn's largest moon and the only moon with thick air, mostly nitrogen",
+     "result": "ok",
+     "source": "https://science.nasa.gov/saturn/moons/titan/",
+     "note": "NASA: 'the only moon with a thick atmosphere'; Grokipedia: about 95% nitrogen, 5% methane, about 1.5 bar."
+    },
+    {
+     "claim": "Stem: clouds rain onto the ground, feeding rivers that run to lakes and seas",
+     "result": "ok",
+     "source": "https://science.nasa.gov/saturn/moons/titan/",
+     "note": "NASA lists clouds, rain, rivers, lakes and seas of liquid hydrocarbons."
+    },
+    {
+     "claim": "Key: liquid methane and ethane",
+     "result": "ok",
+     "source": "https://science.nasa.gov/saturn/moons/titan/",
+     "note": "NASA: 'lakes and seas of liquid hydrocarbons like methane and ethane'."
+    },
+    {
+     "claim": "Wrong choices: liquid water, liquid carbon dioxide, liquid ammonia",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Titan_(moon)",
+     "note": "Water is frozen bedrock at about -179 C; no surface CO2 or ammonia liquid is reported (ammonia-water is only proposed for cryovolcanism and any interior ocean)."
+    },
+    {
+     "claim": "Context: ground averages about -179 C; water ice as hard as rock; methane liquid",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Titan_(moon)",
+     "note": "Grokipedia: mean surface temperature about -179 C (94 K); surface water ice acts as rock."
+    },
+    {
+     "claim": "Context: Titan is the only place besides Earth known to have liquid on its surface",
+     "result": "ok",
+     "source": "https://science.nasa.gov/saturn/moons/titan/",
+     "note": "NASA: 'the only place besides Earth known to have liquids on its surface'."
+    }
+   ]
+  },
+  "cb19b47fb7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Giuseppe Piazzi, astronomer in Sicily (Palermo), found Ceres on 1 January 1801 (New Year's night)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ceres_(dwarf_planet)",
+     "note": "Grokipedia and Wikipedia: 1 January 1801, Palermo Observatory, Sicily. Piazzi saw on following nights that the star-like dot moved; 'moving dot' describes the object fairly."
+    },
+    {
+     "claim": "It lay in the gap between Mars and Jupiter where a popular rule of the day (Titius-Bode) said a planet should be",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)",
+     "note": "Titius-Bode law (1772) predicted a planet at about 2.8 AU; Ceres lay near it. The stem does not claim Piazzi was hunting it (he was checking a catalogue star), which is right."
+    },
+    {
+     "claim": "Within a few years more small bodies turned up in the same gap",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Phaeton_(hypothetical_planet)",
+     "note": "Pallas 1802 (Olbers), Juno 1804 (Harding), Vesta 1807 (Olbers)."
+    },
+    {
+     "claim": "Key: leftovers that never came together as a planet",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Phaeton_(hypothetical_planet)",
+     "note": "Wikipedia: most astronomers hold the main-belt asteroids are leftovers of the protoplanetary disk that never formed a planet, Jupiter's perturbations preventing it; Grokipedia Asteroid_belt: leftover planetesimals kept by Jupiter's gravity from accreting into one planet."
+    },
+    {
+     "claim": "Wrong choice: pieces of a planet that broke apart (Olbers' superseded idea)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Asteroid_belt",
+     "note": "Wikipedia: the energy needed to destroy a planet and the belt's low mass 'does not support these hypotheses'; Phaeton article: superseded by the accretion model."
+    },
+    {
+     "claim": "Wrong choices: rocks blasted off Mars; moons broken away from Jupiter",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Asteroid_belt",
+     "note": "Neither is an accepted origin of the belt."
+    },
+    {
+     "claim": "Context: rocky leftovers from the solar system's birth about 4.6 billion years ago; Jupiter's gravity stirred them so they never gathered into a planet",
+     "result": "ok",
+     "source": "https://science.nasa.gov/solar-system/asteroids/facts/",
+     "note": "NASA: 'rocky remnants left over from the formation of our solar system about 4.6 billion years ago'."
+    },
+    {
+     "claim": "Context: Olbers proposed in 1802 that they were pieces of a shattered planet; respectable in its day, since given up",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Phaeton_(hypothetical_planet)",
+     "note": "Olbers in 1802 suggested Ceres and Pallas were fragments of a planet that had 'burst into pieces'; the idea gained backing, now superseded. Told correctly as an old idea since dropped."
+    },
+    {
+     "claim": "Context: Ceres, the largest asteroid, is now called a dwarf planet",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)",
+     "note": "IAU dwarf planet since 2006. Wikipedia calls Ceres the largest asteroid in the main belt; NASA's asteroid page calls Vesta the largest asteroid (treating Ceres as a dwarf planet only). Defensible; 'the largest body in the asteroid belt' would sidestep the quibble."
+    }
+   ]
+  },
+  "25887121f6": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: the belt holds 'hundreds of thousands' of asteroids at least a kilometre wide",
+     "result": "error",
+     "source": "https://science.nasa.gov/solar-system/asteroids/facts/",
+     "note": "NASA: the belt 'is estimated to contain between 1.1 and 1.9 million asteroids larger than 1 kilometer'; Grokipedia Asteroid_belt: 1.1 to 1.9 million (NEOWISE 2020); Wikipedia: 700,000 to 1.7 million. 'Hundreds of thousands' understates the count by two to four times. Fix: 'holds more than a million asteroids at least a kilometre wide' (or 'about a million or more' to cover Wikipedia's lower bound)."
+    },
+    {
+     "claim": "Stem: Ceres, the biggest, is about 950 km across",
+     "result": "ok",
+     "source": "https://science.nasa.gov/dwarf-planets/ceres/facts/",
+     "note": "NASA radius 476 km (diameter about 952 km); Dawn mean diameter 939.4 km (Wikipedia), Grokipedia about 940 km. 'About 950' is within the sources' spread."
+    },
+    {
+     "claim": "Key: much less than the Moon's mass",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Asteroid_belt",
+     "note": "Wikipedia: 2.39e21 kg, '3% of the mass of the Moon'; Grokipedia: about 3-4%; NASA: 'less than that of Earth's Moon'."
+    },
+    {
+     "claim": "Wrong choices: about the same; several times; more than Earth's",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Asteroid_belt",
+     "note": "All false given 3-4% of the Moon."
+    },
+    {
+     "claim": "Context: all asteroids about 3 to 4 percent of the Moon's mass",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Asteroid_belt",
+     "note": ""
+    },
+    {
+     "claim": "Context: Ceres alone holds about a third of that",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ceres_(dwarf_planet)",
+     "note": "Sources disagree: Grokipedia Ceres page 'one-third'; Grokipedia Asteroid_belt 'about 40%' and elsewhere 'about 31%'; Wikipedia 39%; NASA Ceres facts 25%. 'About a third' sits inside the 25-40% spread and is fair; do not tighten to a single figure."
+    },
+    {
+     "claim": "Context: on average nearly a million kilometres apart",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Asteroid_belt",
+     "note": "Wikipedia: average distance about 965,600 km (600,000 miles); 'mostly empty'."
+    },
+    {
+     "claim": "Context: Pioneer 10 and many spacecraft since crossed the belt unharmed",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Asteroid_belt",
+     "note": "Wikipedia: Pioneer 10 was the first spacecraft to traverse the belt (entered July 1972)."
+    },
+    {
+     "claim": "Context: film belts are nothing like the real one",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Asteroid_belt",
+     "note": "Wikipedia: 'Contrary to popular imagery, the asteroid belt is mostly empty.'"
+    }
+   ]
+  },
+  "6e3d4ba94c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the Sun's heat turns its ice into gas (coma and tail)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Comet_tail",
+     "note": "Grokipedia: solar heating sublimates ices in the nucleus, releasing gas and dust that form the coma; NASA: 'heats up and spews dust and gases into a giant glowing head'."
+    },
+    {
+     "claim": "Wrong choice: burning like a torch",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Comet_tail",
+     "note": "The glow is reflected sunlight (dust) and fluorescence (ions); nothing burns."
+    },
+    {
+     "claim": "Wrong choice: sweeps up gas near the Sun",
+     "result": "ok",
+     "source": "https://science.nasa.gov/solar-system/comets/",
+     "note": "The gas comes from the comet itself."
+    },
+    {
+     "claim": "Wrong choice: its rock glows red-hot",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Comet_tail",
+     "note": "Not the cause of the coma or tail."
+    },
+    {
+     "claim": "Context: comet a small lump of ice, rock and dust, a cosmic snowball",
+     "result": "ok",
+     "source": "https://science.nasa.gov/solar-system/comets/",
+     "note": "NASA: 'cosmic snowballs of frozen gases, rock, and dust'."
+    },
+    {
+     "claim": "Context: ice turns straight into gas, carries dust to make coma and tail; glow is sunlight on dust and light from gas",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Comet_tail",
+     "note": "Sublimation; dust reflects sunlight, ion tail fluoresces under solar UV."
+    },
+    {
+     "claim": "Context: an asteroid is mostly rock and metal with little ice, so it stays a bare lump",
+     "result": "ok",
+     "source": "https://science.nasa.gov/solar-system/asteroids/facts/",
+     "note": "NASA: C-types clay and silicate rocks, S-types silicates and nickel-iron, M-types metallic. (Rare 'active asteroids' exist, but the stem's bare lump is the typical case.)"
+    }
+   ]
+  },
+  "9f2ae32e80": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: tail streams for millions of kilometres, pointing away from the Sun",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Comet_tail",
+     "note": "Dust tails 0.1-1 AU, ion tails up to about 3 AU and more; 'always oriented generally away from the Sun'."
+    },
+    {
+     "claim": "Key: the push of sunlight and the solar wind",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Comet_tail",
+     "note": "Radiation pressure pushes the dust tail; the solar wind shapes and pushes the ion tail."
+    },
+    {
+     "claim": "Wrong choice: the trail left behind as it moves",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Comet_tail",
+     "note": "Tail direction is 'independent of the comet's orbital direction'. (The dust tail curves somewhat along the orbit, but that does not send it away from the Sun.)"
+    },
+    {
+     "claim": "Wrong choices: hot gas rising like smoke; outer planets' gravity",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Comet_tail",
+     "note": "Neither sets the tail's direction."
+    },
+    {
+     "claim": "Context: sunlight pushes the dust, the solar wind (charged particles) sweeps the gas away from the Sun",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Comet_tail",
+     "note": ""
+    },
+    {
+     "claim": "Context: heading back out, the comet travels tail first",
+     "result": "ok",
+     "source": "https://starchild.gsfc.nasa.gov/docs/StarChild/solar_system_level2/comets_answer.html",
+     "note": "NASA StarChild: 'as it travels away from the Sun, the tail is in front.'"
+    }
+   ]
+  },
+  "ac07d486d2": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Halley, English astronomer, found the comets of 1531, 1607 and 1682 had nearly the same path",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Halley%27s_Comet",
+     "note": "1705 Synopsis of the Astronomy of Comets: orbital elements 'nearly the same'."
+    },
+    {
+     "claim": "Key: one comet that keeps coming back",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Halley's_Comet",
+     "note": "Halley concluded they were one object returning about every 76 years."
+    },
+    {
+     "claim": "Wrong choices: pieces of one broken comet; three comets passing once each; fires in Earth's air",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Halley%27s_Comet",
+     "note": "None was Halley's conclusion; the last two were the older views he overturned."
+    },
+    {
+     "claim": "Context: returning about every 76 years; predicted return in 1758",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Halley%27s_Comet",
+     "note": "'predicted its return for 1758'."
+    },
+    {
+     "claim": "Context: Halley died in 1742",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Halley%27s_Comet",
+     "note": "Grokipedia: confirmation came 'sixteen years after his death'."
+    },
+    {
+     "claim": "Context: Johann Georg Palitzsch, German farmer and amateur astronomer, saw it on Christmas night 1758",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Halley%27s_Comet",
+     "note": "First seen 25 December 1758 (Grokipedia: night of 25-26 December, near Dresden)."
+    },
+    {
+     "claim": "Context: first time anything but a planet was shown to travel round the Sun",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Halley%27s_Comet",
+     "note": "Wikipedia: 'the first time anything other than planets had been shown to orbit the Sun'."
+    },
+    {
+     "claim": "Context: many thought comets passed once on straight paths; Aristotle taught they were fires high in Earth's air",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Halley%27s_Comet",
+     "note": "Wikipedia: many assumed comets 'must follow straight paths through the Solar System'; Aristotle held comets atmospheric. Aristotle's Meteorology (Webster tr., classics.mit.edu/Aristotle/meteorology) has comets formed when a fiery principle kindles a dry exhalation in the upper air."
+    }
+   ]
+  },
+  "d9b88e62a0": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: the meteor is the glowing trail across the sky",
+     "result": "ok",
+     "source": "https://science.nasa.gov/solar-system/meteors-meteorites/",
+     "note": "NASA: a meteoroid entering the atmosphere at high speed and burning up; the fireball is a meteor, often called a shooting star."
+    },
+    {
+     "claim": "Wrong choice: the pebble drifting in space (meteoroid)",
+     "result": "ok",
+     "source": "https://science.nasa.gov/solar-system/meteors-meteorites/",
+     "note": "NASA: meteoroids 'still are in space'."
+    },
+    {
+     "claim": "Wrong choice: the stone in the field (meteorite)",
+     "result": "ok",
+     "source": "https://science.nasa.gov/solar-system/meteors-meteorites/",
+     "note": "A meteorite survives the passage and reaches the ground."
+    },
+    {
+     "claim": "Wrong choice: the parent asteroid",
+     "result": "ok",
+     "source": "https://science.nasa.gov/solar-system/meteors-meteorites/",
+     "note": ""
+    },
+    {
+     "claim": "Stem: a pebble knocked off an asteroid; blackened surviving piece",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Meteoroid",
+     "note": "Many meteoroids are asteroid chips; a surviving stone has a dark fusion crust."
+    },
+    {
+     "claim": "Context: most meteoroids burn up completely, so meteorites are rare",
+     "result": "ok",
+     "source": "https://science.nasa.gov/solar-system/meteors-meteorites/",
+     "note": "NASA: 'Almost all the material is vaporized in Earth's atmosphere.'"
+    },
+    {
+     "claim": "Context: 'A meteor shower comes when Earth passes through dust a comet has left along its path'",
+     "result": "uncertain",
+     "source": "https://webarchive.library.unt.edu/web/20130102201718/http://science.nasa.gov/science-news/science-at-nasa/2012/09dec_rockcomet",
+     "note": "Matches NASA's general wording, but told as a rule it is not always true: NASA (2012) says 'most meteor showers are caused by icy comets', while the Geminids, one of the strongest yearly showers, come from the rocky asteroid 3200 Phaethon (Wikipedia Geminids). Fix: 'Most meteor showers come when Earth passes through dust a comet has left along its path.'"
+    }
+   ]
+  },
+  "b45eb8cdd6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Clyde Tombaugh found Pluto in 1930; counted as ninth planet for 76 years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pluto",
+     "note": "18 February 1930, Lowell Observatory; ninth planet 1930-2006, about 76 years."
+    },
+    {
+     "claim": "Mike Brown's team found Eris, more massive than Pluto",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Eris_(dwarf_planet)",
+     "note": "Brown, Trujillo, Rabinowitz; identified January 2005, announced July 2005; about 27% more massive than Pluto, though about 2% smaller across (the stem rightly says mass, not size)."
+    },
+    {
+     "claim": "2006 IAU rules; Pluto became a dwarf planet",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/IAU_definition_of_planet",
+     "note": "Adopted 24 August 2006, Prague."
+    },
+    {
+     "claim": "Key: Pluto has not cleared its path of other bodies",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/IAU_definition_of_planet",
+     "note": "Pluto meets criteria (a) and (b) but fails (c), 'cleared the neighbourhood around its orbit'."
+    },
+    {
+     "claim": "Wrong choice: not massive enough to pull itself into a ball",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pluto",
+     "note": "Pluto is nearly round through hydrostatic equilibrium."
+    },
+    {
+     "claim": "Wrong choice: too far from the Sun",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/IAU_definition_of_planet",
+     "note": "No distance criterion."
+    },
+    {
+     "claim": "Wrong choice: travels round Neptune",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pluto",
+     "note": "Pluto orbits the Sun (3:2 resonance with Neptune)."
+    },
+    {
+     "claim": "Context: the three criteria; Pluto shares its Kuiper belt zone with many others",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/IAU_definition_of_planet",
+     "note": ""
+    },
+    {
+     "claim": "Context: no distance rule; Ceres, Eris, Haumea and Makemake are dwarf planets too",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/IAU_definition_of_planet",
+     "note": "The IAU recognises five: Pluto, Eris, Ceres, Haumea, Makemake. The context's 'too' does not claim these are the only others, so it survives if more are named."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Ten questions checked on 2026-11-26, Grokipedia first. One error: the asteroid-belt stem says 'hundreds of thousands' of asteroids over 1 km, where NASA and Grokipedia give 1.1-1.9 million. One uncertain: the meteor context states every meteor shower comes from comet dust (the Geminids come from asteroid 3200 Phaethon); add 'Most'. Ceres's share of the belt's mass varies by source (NASA 25%, Grokipedia one-third / 31% / 40%, Wikipedia 39%); 'about a third' is fair. Moon counts (Jupiter 97, Saturn 274, Uranus 28-29, Neptune 16 as of late 2025) are not keyed and the 'far more moons' claim survives any likely change."
+}

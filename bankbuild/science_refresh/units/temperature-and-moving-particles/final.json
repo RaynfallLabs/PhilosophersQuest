@@ -1,0 +1,227 @@
+{
+ "unit": "temperature-and-moving-particles",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "temperature-and-moving-particles",
+   "question": "Two beakers of water stand side by side on a lab bench, and the thermometers in both read 60 degrees Celsius. One beaker is full to the brim; the other holds only a few spoonfuls of water. How does the average speed of the water particles compare in the two beakers?",
+   "answer": "The same in both",
+   "choices": [
+    "The same in both",
+    "Faster in the full one",
+    "Faster in the few spoonfuls",
+    "Faster in whichever was heated longer"
+   ],
+   "context": "A thermometer reads the average energy of motion of the water's particles, and at 60 degrees that average, and with it the particles' average speed, is the same however much water there is. How long either beaker was heated makes no difference once both read the same.",
+   "facts": [
+    "F1",
+    "F2",
+    "M1",
+    "M4"
+   ],
+   "grade_note": "Seventh grade (TEKS 7.8C, NGSS MS-PS1-4) teaches temperature as the average kinetic energy of a substance's particles and asks students to apply it to new cases."
+  },
+  {
+   "tier": 3,
+   "topic": "temperature-and-moving-particles",
+   "question": "A kettle has just filled a mug with boiling water. Down the hall stands a bathtub full of warm bath water, far cooler than the water in the mug. Which of the two holds more thermal energy?",
+   "answer": "The bathtub, since it holds far more water",
+   "choices": [
+    "The bathtub, since it holds far more water",
+    "The mug, since its water is much hotter",
+    "The bathtub, since its particles move faster",
+    "Both the same, since both are plain water"
+   ],
+   "context": "Thermal energy is the energy of motion of all of a thing's particles added together. The mug's particles move faster on average, which is why its temperature is higher, but the bathtub holds so many more particles that their energy adds up to far more: temperature is an average, thermal energy a total.",
+   "facts": [
+    "F1",
+    "F3",
+    "F4",
+    "M1"
+   ],
+   "grade_note": "Seventh-grade thermal energy units teach that thermal energy is the total energy of all the particles while temperature is their average, using a bathtub and a cup."
+  },
+  {
+   "tier": 3,
+   "topic": "temperature-and-moving-particles",
+   "question": "A student heats a beaker of crushed ice over a low flame, stirring as it melts, with a thermometer in the ice. The reading stays at 0 degrees Celsius for many minutes until the last of the ice has melted, and only then starts to climb. While the reading holds steady, where does the flame's energy go?",
+   "answer": "Into freeing particles, not speeding them up",
+   "choices": [
+    "Into freeing particles, not speeding them up",
+    "Into speeding particles up, not freeing them",
+    "Into the beaker's glass, not into the ice",
+    "Into swelling the particles, not moving them"
+   ],
+   "context": "While the ice melts, the energy that flows in breaks particles free of the fixed places that hold them in the solid, so their average speed, and with it the temperature, stays the same. Once all the ice is liquid, the energy speeds the particles up again and the reading rises.",
+   "facts": [
+    "F7",
+    "F1",
+    "F8",
+    "M4",
+    "M3"
+   ],
+   "grade_note": "NGSS MS-PS1-4 asks seventh graders to model how adding thermal energy changes particle motion, temperature and state, including why the temperature holds steady during melting."
+  },
+  {
+   "tier": 3,
+   "topic": "temperature-and-moving-particles",
+   "question": "A brass ball just slips through a brass ring when both are cool. A teacher heats only the ball in a gas flame, and now it rests on top of the ring and will not pass through. What has changed inside the hot ball?",
+   "answer": "Its particles sit a little farther apart",
+   "choices": [
+    "Its particles sit a little farther apart",
+    "Each of its particles has grown a little larger",
+    "A fluid of heat has filled the gaps between them",
+    "Particles from the flame have joined its own"
+   ],
+   "context": "Heating makes the ball's particles jiggle harder, and as they jostle they push one another a little farther apart, so the whole ball grows; the particles themselves stay the same size. Many scientists of the late 1700s thought a heat fluid called caloric seeped in between the particles and pushed them apart, but the idea was given up in the 1800s, once heat was shown to be energy.",
+   "facts": [
+    "F8",
+    "F9",
+    "F10",
+    "M3"
+   ],
+   "grade_note": "Seventh grade explains thermal expansion in particles, and the ball and ring is its standard classroom demonstration."
+  },
+  {
+   "tier": 3,
+   "topic": "temperature-and-moving-particles",
+   "question": "Where a long concrete bridge meets the road at each end, a gap runs across the roadway, spanned by interlocking steel teeth. An engineer measures one gap on a cold winter morning and again on a hot summer afternoon. How does the summer gap compare with the winter one?",
+   "answer": "Narrower, since the bridge has grown longer",
+   "choices": [
+    "Narrower, since the bridge has grown longer",
+    "Wider, since the bridge has grown shorter",
+    "Wider, since the gap itself grows in the heat",
+    "The same, since concrete is too hard to grow"
+   ],
+   "context": "In summer heat the bridge expands, so its ends push into the gaps and narrow them; in winter the concrete contracts and the gaps open wide again. These expansion joints let a bridge change length without buckling, and railways laid in separate lengths leave small gaps between their rails for the same reason.",
+   "facts": [
+    "F11",
+    "F12",
+    "F8",
+    "M6"
+   ],
+   "grade_note": "Gaps in bridges and railway tracks are the standard seventh-grade applications of thermal expansion."
+  },
+  {
+   "tier": 3,
+   "topic": "temperature-and-moving-particles",
+   "question": "A lab technician cannot twist the metal lid off a glass jar of samples. She holds the lid under a stream of hot water for a minute, and then it turns easily. Why does the lid loosen?",
+   "answer": "The metal lid expands more than the glass",
+   "choices": [
+    "The metal lid expands more than the glass",
+    "The glass expands more than the metal lid",
+    "The heat makes the jar's glass rim shrink",
+    "The hot water makes the metal lid softer"
+   ],
+   "context": "Metal expands more than glass for the same warming, and the hot water heats the lid faster than the glass beneath it, so the lid grows a little wider than the rim and its grip loosens. Glass expands when heated too, only less, and a metal lid stays hard far above the temperature of hot water.",
+   "facts": [
+    "F13",
+    "F14",
+    "F8"
+   ],
+   "grade_note": "Seventh grade applies thermal expansion to everyday cases, and a stuck lid loosened under hot water shows that different materials expand by different amounts."
+  },
+  {
+   "tier": 3,
+   "topic": "temperature-and-moving-particles",
+   "question": "Galileo Galilei made an early thermoscope in Padua. A glass bulb the size of a hen's egg had a long, thin neck, and he turned it upside down so that the neck's open end dipped into a bowl of water. Water stood partway up the neck, with air trapped in the bulb above it. When the room grew warmer, what did the water in the neck do?",
+   "answer": "It sank lower, pushed down by the expanding air",
+   "choices": [
+    "It sank lower, pushed down by the expanding air",
+    "It rose higher, drawn up by the warming air",
+    "It rose higher, as the warmed water expanded",
+    "It stayed put, as the glass kept the heat out"
+   ],
+   "context": "Warmed air expands far more than water does, so the air in the bulb pushed the water down the neck, and when it cooled the water rose again: Galileo's device ran the opposite way to a modern thermometer. In a liquid-in-glass thermometer the liquid itself expands more than its glass and climbs the tube.",
+   "facts": [
+    "F16",
+    "F15",
+    "F8"
+   ],
+   "grade_note": "Seventh grade applies thermal expansion to gases and liquids, and the thermoscope opens the story of the thermometer."
+  },
+  {
+   "tier": 3,
+   "topic": "temperature-and-moving-particles",
+   "question": "Two thermometers hang side by side in a weather station's shelter, in moving air. One has its bulb wrapped in a cloth kept wet with water, and it reads several degrees lower than the dry one. Why is the wet bulb colder?",
+   "answer": "The fastest water particles escape, carrying energy off",
+   "choices": [
+    "The fastest water particles escape, carrying energy off",
+    "The slowest water particles escape, leaving the fast ones",
+    "The water particles give off cold into the bulb",
+    "The water particles shield the bulb from the heat"
+   ],
+   "context": "The particles of a liquid move at many speeds, and only the fastest at the surface can break free into the air, so the water left behind is slower on average and colder, and it draws heat from the bulb. Cold is not a thing that flows into the bulb, and the low reading is a real temperature: weather observers compare the two thermometers to measure the air's humidity.",
+   "facts": [
+    "F5",
+    "F6",
+    "M2"
+   ],
+   "grade_note": "Seventh-grade particle models explain evaporation and its cooling by the fastest particles escaping, which follows from temperature being an average."
+  },
+  {
+   "tier": 3,
+   "topic": "temperature-and-moving-particles",
+   "question": "A block of ice has sat for a week in a laboratory freezer at -80 degrees Celsius, far colder than any kitchen freezer. Does the ice hold any thermal energy at all?",
+   "answer": "Yes, since its particles still move",
+   "choices": [
+    "Yes, since its particles still move",
+    "Yes, since it has soaked up cold from the air",
+    "No, since its particles are frozen still",
+    "No, since only warm things hold it"
+   ],
+   "context": "The particles of ice never stop vibrating in place, even at -80 degrees Celsius, and the energy of that motion is thermal energy, so the ice still holds some. Cold is not a thing that soaks in: the ice grew cold by losing energy, as heat flowed out of it into the colder air of the freezer.",
+   "facts": [
+    "F24",
+    "F25",
+    "M5",
+    "M2"
+   ],
+   "grade_note": "Seventh grade teaches thermal energy as the energy of a substance's moving particles; 'only warm or hot objects have thermal energy' is a listed misconception (MOSART)."
+  },
+  {
+   "tier": 3,
+   "topic": "temperature-and-moving-particles",
+   "question": "In their laboratories, physicists have chilled atoms to less than a billionth of a degree above absolute zero, yet nothing anywhere can ever be colder than absolute zero itself. What makes absolute zero the coldest temperature there can be?",
+   "answer": "Particles there have the least energy possible",
+   "choices": [
+    "Particles there have the least energy possible",
+    "Particles there are all locked in solids",
+    "No thermometer can read any lower",
+    "Scientists agreed to end the scale there"
+   ],
+   "context": "Cooling takes energy from particles and slows them, and at absolute zero they would have the least energy they can possibly have, with nothing more to take away; even then a tiny quantum jiggle remains. Helium never freezes at ordinary pressure, even at absolute zero, and the zero is set by nature, not by choice: Guillaume Amontons estimated it in 1703 from the way air presses less as it cools.",
+   "facts": [
+    "F17",
+    "F18",
+    "F20",
+    "F2"
+   ],
+   "grade_note": "Seventh grade explains absolute zero in particles: cooling slows particles until, at absolute zero, they have the least possible energy."
+  }
+ ],
+ "revised": {
+  "7edb1ee0d0": {
+   "old_hash": "468f1b64b3",
+   "why": "Judge (medium): plain recall of the definition, and only two choices were live. Now an application: two amounts of water at one temperature have the same average particle speed. Choices are four comparisons, including the heating-time misconception (M4); the context no longer defines thermal energy or the spread of speeds, which other questions ask."
+  },
+  "96fad211dc": {
+   "old_hash": "96fad211dc",
+   "why": "Judge (medium): the key carried T2's 'heating speeds particles up' as its giveaway and made two claims where the wrong choices made one. Key is now only the T3 point (particles farther apart, not larger); wrong choices are the swelling misconception, caloric and added matter. Stem and context unchanged."
+  },
+  "c08bde277d": {
+   "old_hash": "66ec89cb67",
+   "why": "Judge (medium): 'as the water slowly dries' pointed at evaporation and the key was the only choice about water leaving. Stem now says only 'kept wet'; 'Wet glass reads falsely low' is replaced by 'the slowest particles escape', so knowing which particles leave, and that temperature is their average, decides it."
+  }
+ },
+ "added": {
+  "feb8d1e619": "Replaces the dropped Kelvin question (50c9739988) with an application the judge proposed: very cold ice still holds thermal energy, against misconceptions M5 and M2. Facts F24, F25 (sourced in the revision), M5, M2."
+ },
+ "dropped": [
+  {
+   "old_hash": "50c9739988",
+   "question": "William Thomson, a physicist later made Lord Kelvin, proposed a temperature scale in 1848 that scientists still use, measured in kelvins. A degree on his scale is the same size as a degree Celsius. On the Kelvin scale, what temperature does 0 stand for?",
+   "why": "Judge (medium x2): plain recall of the Kelvin zero, and 566d384697's stem ('nothing anywhere can ever be colder than absolute zero') gives its key away; fact-check error: today's Kelvin scale is Thomson and Joule's of 1854, not the 1848 scale. Replaced by an application of thermal energy (the ice at -80 degrees), F24."
+  }
+ ]
+}

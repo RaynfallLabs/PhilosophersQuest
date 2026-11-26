@@ -1,0 +1,101 @@
+{
+ "unit": "comets-asteroids-and-moons",
+ "questions": {
+  "121a58dd34": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The name does the work: 'ice giants' points to the one choice naming water, and the stem's 'even though deep inside they are thousands of degrees hot' undercuts the only other ice choice (a solid crust of ice), so the answer is left by elimination. 'Many more moons' has nothing to do with the name and is a plain miss.",
+     "fix": "Move 'thousands of degrees hot' to the context and replace 'Many more moons travel around each of them' with 'They are frozen solid all the way through' (facts M5), so two lures also fit the word 'ice'."
+    }
+   ]
+  },
+  "7eac861d9f": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "Its context names Titan's seas of liquid methane, the answer to af862eef72, so a player who meets this question first gets that one free; its 'deep sea of liquid methane' lure borrows the same fact.",
+     "fix": "Drop the Titan sentence from this context (keep Io's melted rock)."
+    }
+   ]
+  },
+  "af862eef72": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The answer stands out by detail: it is the only choice that names two liquids ('methane and ethane'); the other three name one each.",
+     "fix": "Key 'Liquid methane' and leave ethane to the context, so all four choices name one liquid."
+    }
+   ]
+  },
+  "cb19b47fb7": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "25887121f6": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'More than all of Earth's' is close to silly beside 'hundreds of thousands of asteroids at least a kilometre wide'.",
+     "fix": "Use 'About twice the Moon's' and 'About the same as Mercury's' in place of 'Several times the Moon's' and 'More than all of Earth's'."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'Hundreds of thousands' of asteroids a kilometre or more across: the facts sheet's Wikipedia range is 700,000 to 1.7 million, so 'up to a million or more' may be truer.",
+     "fix": "Fact-checker to settle the wording."
+    }
+   ]
+  },
+  "6e3d4ba94c": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "9f2ae32e80": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem says the tail points 'away from the Sun', and the answer is the only choice that involves the Sun at all, so a student who knows nothing reasons that the Sun must push it. 'Hot gas rising from it, like smoke from a fire' is weak in empty space.",
+     "fix": "Replace 'Hot gas rising from it, like smoke from a fire' with a second lure tied to the Sun, e.g. 'The Sun's spin, which flings the gas outward', so the answer is not the only Sun choice. Keep the trail lure, which the stem's 'nears the Sun' makes live."
+    }
+   ]
+  },
+  "ac07d486d2": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "Halley's name (Halley's Comet is famous for coming back) and the even 75-to-76-year gaps between 1531, 1607 and 1682 lead many players to the answer; this is fair for the discovery story. 'Three fires high in Earth's own air' is the weakest lure.",
+     "fix": "None needed. Optionally state the three years without suggesting they are evenly spaced."
+    }
+   ]
+  },
+  "d9b88e62a0": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'The asteroid the pebble broke away from' is the weakest lure; the real confusion is meteor against meteorite, and the choices do test it.",
+     "fix": "Optional: replace it with 'The whole fall, from space to the field'."
+    }
+   ]
+  },
+  "b45eb8cdd6": {
+   "verdict": "ok",
+   "issues": []
+  }
+ },
+ "unit_notes": "Scope gap: the Kuiper belt and the Oort cloud, both named in the scope, are never keyed (the Kuiper belt appears only in b45eb8cdd6's context; the Oort cloud appears nowhere). Suggest a T3 discovery question from facts F23, e.g. Jan Oort (1950) reasoning from long-period comets that arrive from every direction to a far, round shell of icy bodies. It could replace af862eef72 (Titan), one of two questions on a single moon. Overlaps: 121a58dd34 goes beyond T1 the-sun-and-its-planets ('giants, made mostly of gas and ice') by telling gas giants from ice giants, which is fine. b45eb8cdd6 asks which rule Pluto fails, beyond the T1 context's 'now called a dwarf planet', which is fine. No moon count is keyed. No overlap with gravity-and-orbits (none of its questions is on comets or asteroids) or with T2 the-tides or moon-phases-and-eclipses. Within the unit, 7eac861d9f's context gives away af862eef72's answer (fix given)."
+}

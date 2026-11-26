@@ -1,0 +1,144 @@
+{
+ "unit": "body-systems-control-and-support",
+ "questions": {
+  "d339c9fff3": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "The fact asked (blood cells are made in the bone marrow, not the heart) is already given lower down: T1 the-bodys-main-organs (heart question) offers 'It makes new blood for the body' as a wrong choice and its context says 'Blood is made in the marrow inside the bones, not in the heart'; T2 one-cell-or-many states in its stem that a red blood cell 'matures in the bone marrow'. A player who met either answers this from memory, and the heart choice is the very misconception T1 already corrected. The blood-drive frame is plain recall, not an application.",
+     "fix": "Make it a 7th-grade application of the marrow fact: teach that in a grown-up the marrow in the long middle part of the arm and leg bones has turned to yellow fat, and ask where a doctor takes a sample of the marrow that makes an adult's blood cells. Choices, all bones: 'From the back of her hip bone' (key) / 'From the middle of her thigh bone' / 'From the middle of her shin bone' / 'From the bones of her fingers'. If the writer keeps the present stem, at least replace 'In the chambers of her heart' with 'In her lymph nodes'."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "'a pint of blood' is the only non-metric unit among these units (2.72 metres, 3 kilograms elsewhere).",
+     "fix": "'gives about half a litre of blood'."
+    }
+   ]
+  },
+  "d94aa18043": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Only two choices are live. 'They fall out, like baby teeth' is silly for bones inside the body, and 'They wear away as the others grow' is weak, so the question reduces to fuse versus turn back into cartilage, and fusing is the common-sense way to get fewer bones.",
+     "fix": "Replace 'They fall out, like baby teeth' with 'They dissolve, and the body reuses their calcium', and 'They wear away as the others grow' with 'They shrink until they are too small to count'."
+    }
+   ]
+  },
+  "2f746f7505": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "This re-asks a T1 fact. T1 the-bodys-main-organs asks how the biceps moves the forearm ('It gets shorter and pulls it', with the same shorter or longer, pull or push grid of choices), and its context teaches that muscles pull but never push, work in pairs, and that 'the triceps at the back of the arm pulls it straight again'. That is this question's answer. The only new piece is that the biceps relaxes, so a T1 player needs nothing from 7th grade.",
+     "fix": "Apply the pair rule to a joint the bank has not used, where the T1 arm analogy misleads: 'The quadriceps lies at the front of the thigh and the hamstrings at the back, and both work the knee. A footballer bends her knee to swing her leg back, then straightens it to kick the ball. What do the two muscles do?' Choices: 'The quadriceps shortens and the hamstrings relax' (key) / 'The hamstrings shorten and the quadriceps relaxes' / 'The quadriceps lengthens and pushes the leg straight' / 'The hamstrings lengthen and push the leg straight'."
+    }
+   ]
+  },
+  "769d718d59": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "T1 the-bodys-main-organs asks what carries the brain's news from the eyes, ears and skin (nerves), and T2 one-cell-or-many says nerve cells carry signals. 'What travels along the optic nerve? Signals' is answered by that T1 fact. The 7th-grade content (the retina turns light into electrical signals) is in the context, not in what is asked.",
+     "fix": "Ask where the light becomes signals: 'The cornea and lens of the eye bend light into a sharp, upside-down picture at the back of the eye, and the optic nerve carries signals from the eye to the brain. Where is the light turned into those signals?' Choices: 'In the retina, at the back of the eye' (key) / 'In the lens, as it bends the light' / 'In the optic nerve, as the light enters it' / 'In the brain, when the light arrives there'."
+    },
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The three wrong choices are all a form of light or a picture, and the key is the only one of another kind.",
+     "fix": "The rewrite above makes all four choices places."
+    }
+   ]
+  },
+  "ef264ac3ce": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The clause 'a moment later he feels the sting' tells the student that the brain got the news after the jerk, which rules out 'In his brain'. Of the other three, neither the leg muscles nor the skin of the foot can 'turn a signal back as an order', so the spinal cord is left without any knowledge of the reflex arc.",
+     "fix": "Move the sting-felt-later detail into the context and end the stem at 'His foot jerks up at once. The jerk is a reflex.' Replace 'In the skin of his foot' with 'In the nerve that runs down his leg', a real confusion (the signal does travel along it, but does not turn back there)."
+    }
+   ]
+  },
+  "7a23b57ee3": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Feeling and movement above the injury' is a dead choice: her legs are below the break and the brain is above it, so nobody would expect loss above it. That leaves three live choices.",
+     "fix": "Replace it with the misconception the stem sets up: 'Nothing, since her legs and their nerves are whole'."
+    }
+   ]
+  },
+  "2401f9f0be": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'It soaked down through his skeleton' is a weak choice that no 7th grader would pick, and the other two wrong choices (nerves, spinal cord) are the same idea, so the question rests on a single real contest: blood or nerves.",
+     "fix": "Replace 'It soaked down through his skeleton' with 'It seeped from cell to cell down his body'."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "Wadlow's own pituitary was enlarged (the fact sheet says hyperplasia), so 'a gland the size of a pea' describes a normal pituitary, not his.",
+     "fix": "'His pituitary, a gland normally the size of a pea at the base of the brain, made far too much growth hormone.'"
+    }
+   ]
+  },
+  "10290108b6": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "ae1014a822": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "low",
+     "what": "The stem gives both of the scope's insulin facts (the pancreas makes insulin, and diabetes means too much sugar in the blood) and then asks the mechanism, how insulin lowers blood sugar. That is still a 7th-grade 'explain why', and the choices are good.",
+     "fix": "None needed. Optionally trim 'purified from the pancreases of animals' to shorten a long stem."
+    }
+   ]
+  },
+  "cbe89ccf4b": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The stem sets the jump (nerves) against adrenaline released into the blood, which points toward the hormone. One wrong choice also names adrenaline, which keeps the contest fair.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "937e69ccb8": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Dried oil from glands in the skin' is not a live choice, so the question comes down to dead cells, living cells with no nerves, or bone minerals.",
+     "fix": "Replace it with 'Bendy cartilage, like the tip of the nose'."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "A nurse clipping a boy's fingernails is an odd picture.",
+     "fix": "'A barber trims a boy's hair and his mother clips his fingernails'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Overlaps checked against every final.json. (1) T1 the-bodys-main-organs, biceps question and context (a muscle shortens and pulls, never pushes; pairs; the triceps pulls the arm straight): 2f746f7505 re-asks it, high; fix by moving to the quadriceps and hamstrings at the knee. (2) T1 the-bodys-main-organs, heart question (wrong choice 'It makes new blood', context 'Blood is made in the marrow inside the bones'), and T2 one-cell-or-many, red blood cell stem ('matures in the bone marrow'): d339c9fff3's key fact is already given twice lower down, medium; fix by asking the adult red-versus-yellow marrow application. (3) T1 the-bodys-main-organs, nerves question (nerves carry the news from the eyes to the brain), and T2 one-cell-or-many (nerve cells carry signals): 769d718d59 is answered by that T1 fact, medium; fix by asking where light becomes signals (the retina). (4) T1 born-knowing-or-learned (jerking a hand from a hot pan is a reflex): ef264ac3ce asks the new 7th-grade fact (the spinal cord turns it back), no overlap. (5) T1 the-bodys-main-organs skull context (the spinal cord is the pathway for messages): 7a23b57ee3 extends it to signals both ways below a break, acceptable. (6) T2 the-bodys-defences context (the skin's outer layer of dead cells): 937e69ccb8 asks hair and nails (keratin), a different fact, acceptable. (7) T3 body-systems-supply-and-defence: no shared fact (its exercise question's nerves narrowing vessels is not the adrenaline question). Within the unit, every question asks a different fact, and the scope is fully covered: skeleton jobs and 206 bones, muscle pairs, brain, spinal cord, nerves, senses, reflex, pituitary, thyroid, pancreas and insulin, adrenal glands, skin. The lane holds: clinical, nothing on the reproductive system. The spinal-injury and dying-boy scenes are clinical and fit a teenage audience. Gates: no fails or flags, only short-stem info lines. Several revisions are weak-distractor swaps: four questions (d94aa18043, 7a23b57ee3, 2401f9f0be, 937e69ccb8) each carry one dead choice."
+}

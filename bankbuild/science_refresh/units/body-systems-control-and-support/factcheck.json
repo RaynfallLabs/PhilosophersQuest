@@ -1,0 +1,325 @@
+{
+ "unit": "body-systems-control-and-support",
+ "questions": {
+  "d339c9fff3": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: new red cells after a donation are made in the bone marrow",
+     "result": "ok",
+     "source": "https://stanfordbloodcenter.org/pulse-spring23-what-really-happens-to-your-body-after-you-donate-blood-effects-risks-and-recovery/",
+     "note": "Erythropoietin signals 'the bone marrow to generate red cells'; donation 'capped at one pint'; 4-8 weeks to replace all red cells ('several weeks' is right)."
+    },
+    {
+     "claim": "Red marrow makes red cells, white cells and platelets; lies in the pelvis (hip bones), ribs, sternum (breastbone)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Bone_marrow",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: heart chambers (the heart makes no blood cells)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Haematopoiesis",
+     "note": "Adult haematopoiesis 'primarily occurs in the red bone marrow'; the heart is not a site."
+    },
+    {
+     "claim": "Wrong choice: liver (makes blood before birth, not in a healthy adult)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Haematopoiesis",
+     "note": "Fetal liver colonised from week 6 and sustains haematopoiesis to about week 30; the marrow takes over in adults."
+    },
+    {
+     "claim": "Wrong choice: spleen (clears worn-out red cells; blood-forming largely dormant in adults)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Spleen",
+     "note": "'In adults, splenic hematopoiesis is largely dormant'; red-pulp macrophages remove aged red cells (culling)."
+    }
+   ]
+  },
+  "d94aa18043": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Newborn has somewhere near 300 bones; adult 206",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Human_skeleton",
+     "note": "Grokipedia: 'approximately 270 to 300 bones at birth'; Cleveland Clinic: 275 to 300; adult typically 206. 'Somewhere near 300' fits the range."
+    },
+    {
+     "claim": "Key: extra bones join others to form single bones (fusion through ossification)",
+     "result": "ok",
+     "source": "https://health.clevelandclinic.org/how-many-bones-does-a-baby-have",
+     "note": "'their smaller bones join together to create larger bones'; many baby bones begin as cartilage."
+    },
+    {
+     "claim": "Context: five sacral vertebrae fuse into the sacrum; each hip bone from three (ilium, ischium, pubis); skull plates close over the soft spots",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Human_skeleton",
+     "note": "All stated; fontanelles close by about 18-24 months. (The fontanelles close as the skull bones grow; most skull sutures fuse only in adulthood, but the context does not claim a date, so it stands.)"
+    },
+    {
+     "claim": "Wrong choices: soften back into cartilage / wear away / fall out like baby teeth",
+     "result": "ok",
+     "source": "https://health.clevelandclinic.org/how-many-bones-does-a-baby-have",
+     "note": "The change runs cartilage to bone, and the bones join; none is lost or shed."
+    }
+   ]
+  },
+  "2f746f7505": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Biceps at the front of the upper arm (flexor), triceps at the back (extensor); muscles pull, not push, and work in pairs",
+     "result": "ok",
+     "source": "https://kidshealth.org/en/parents/bones-muscles-joints.html",
+     "note": "'Muscles can pull bones, but they can't push them'; 'work in pairs of flexors and extensors'."
+    },
+    {
+     "claim": "Key: straightening the arm to push, the triceps shortens and the biceps relaxes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Triceps",
+     "note": "Triceps is 'the primary extensor of the elbow joint', helps with pushing, and is 'the chief antagonist to the biceps brachii'. (Some co-contraction may steady the joint, but the grade-level statement is true.)"
+    },
+    {
+     "claim": "Wrong choices: biceps shortens (that bends the arm); a lengthening muscle pushes the arm straight (muscles cannot push)",
+     "result": "ok",
+     "source": "https://kidshealth.org/en/parents/bones-muscles-joints.html",
+     "note": ""
+    }
+   ]
+  },
+  "769d718d59": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: 'The lens of the eye focuses light into a sharp, upside-down picture on the retina'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Human_eye",
+     "note": "Minor but a classic misconception: the cornea does most of the focusing ('roughly two-thirds of the eye's total focusing ability'), the lens the rest; together they form 'a real, inverted, and reversed image on the retina'. Fix: 'The cornea and lens at the front of the eye focus light into a sharp, upside-down picture on the retina...'."
+    },
+    {
+     "claim": "Key: the optic nerve carries electrical signals, made by the retina's light-sensing cells",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Human_eye",
+     "note": "Photoreceptors 'convert light energy into electrical signals'; transmitted 'via the optic nerve to the brain'."
+    },
+    {
+     "claim": "Wrong choices: the light itself / the upside-down picture whole / the picture turned right side up",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Retina",
+     "note": "Light is converted in the retina; no light or picture travels the nerve."
+    },
+    {
+     "claim": "Context: the visual cortex, at the back of the brain, makes the signals into what a person sees",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Human_eye",
+     "note": "Signals 'reach the visual cortex in the occipital lobe' (they pass through the thalamus on the way; the context's simplification is still true)."
+    }
+   ]
+  },
+  "ef264ac3ce": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: in the withdrawal reflex the signal turns back in the spinal cord",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Withdrawal_reflex",
+     "note": "Central integration 'occurs primarily within the spinal cord'; bypasses higher brain centres for speed; stepping on a sharp object lifts the foot."
+    },
+    {
+     "claim": "Context: sensory nerve to spinal cord, motor nerve back to the muscle; the brain gets the signal too, so the sting is felt after",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Reflex_arc",
+     "note": "'an action potential can bypass the brain'; 'The brain will receive the input while the reflex is being carried out'."
+    },
+    {
+     "claim": "Wrong choices: brain / leg muscles / skin of the foot",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Withdrawal_reflex",
+     "note": "The integration is in the spinal cord; muscles and skin are the effector and the receptor, not where the signal turns."
+    }
+   ]
+  },
+  "7a23b57ee3": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a cord cut right through loses feeling and movement below the injury",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Spinal_cord_injury",
+     "note": "Complete injury = 'the total loss of sensory and motor function in all segments below the neurological level'."
+    },
+    {
+     "claim": "Context: the cord carries sensory signals up and motor orders down; a mid-back injury spares the arms",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Spinal_cord_injury",
+     "note": "'transmits signals between the brain and the rest of the body'; 'Thoracic injuries ... result in paraplegia, sparing the upper limbs'; 'Above the injury level, motor function remains intact'. (Simple spinal reflexes below the cut can survive, but voluntary movement and feeling are lost; fine at this level.)"
+    },
+    {
+     "claim": "Wrong choices: movement only / feeling only / above the injury",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Spinal_cord_injury",
+     "note": "A complete cut stops both pathways below, and spares above. Tone is clinical."
+    }
+   ]
+  },
+  "2401f9f0be": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Robert Wadlow of Alton, Illinois; died 1940; 2.72 m; tallest man on record; still growing",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Robert_Wadlow",
+     "note": "'8 ft 11.1 in (2.72 m)'; born and raised in Alton; died 15 July 1940; 'the tallest person in recorded history' (Guinness: tallest man ever); last exam confirmed 'his ongoing growth'. The 2.72 m was measured on 27 June 1940, 18 days before his death (Wikipedia), so 'when he died ... at 2.72 metres' is fair."
+    },
+    {
+     "claim": "Cause: his pituitary made far too much growth hormone",
+     "result": "ok",
+     "source": "https://www.guinnessworldrecords.com/records/hall-of-fame/robert-wadlow-tallest-man-ever",
+     "note": "Grokipedia: 'pituitary gigantism caused by hyperplasia of his pituitary gland'; Wikipedia: 'hypertrophy of his pituitary gland', giving 'an abnormally high level of human growth hormone'. The stem rightly says no 'tumour' (no source names one)."
+    },
+    {
+     "claim": "Stem: 'His pituitary, a gland the size of a pea at the base of his brain'",
+     "result": "uncertain",
+     "source": "https://en.wikipedia.org/wiki/Robert_Wadlow",
+     "note": "A normal pituitary is pea-sized (KidsHealth: 'no bigger than a pea'), but Wadlow's own gland is described as hyperplastic / hypertrophied, that is, enlarged, so calling HIS gland pea-sized is not supported. Fix: 'His pituitary, a gland normally the size of a pea at the base of the brain, made far too much growth hormone.'"
+    },
+    {
+     "claim": "Key: hormones travel in the blood; wrong choices nerves / spinal cord / soaking through the skeleton",
+     "result": "ok",
+     "source": "https://kidshealth.org/en/parents/endocrine.html",
+     "note": "'Endocrine glands release hormones into the bloodstream. This lets the hormones travel to cells in other parts of the body.' Growth hormone 'stimulates the growth of bone'."
+    },
+    {
+     "claim": "Context: the pituitary is called the master gland because its hormones set other glands working",
+     "result": "ok",
+     "source": "https://kidshealth.org/en/parents/endocrine.html",
+     "note": "'often called the master gland'; its hormones control many other endocrine glands."
+    }
+   ]
+  },
+  "10290108b6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Thyroid at the front of the neck; its hormone sets how fast cells burn fuel from food",
+     "result": "ok",
+     "source": "https://kidshealth.org/en/parents/endocrine.html",
+     "note": "'in the front part of the lower neck'; hormones 'control the rate at which cells burn fuels from food to make energy'."
+    },
+    {
+     "claim": "Key: too much thyroid hormone, weight loss though she eats more; context: feels hot, racing heart",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hyperthyroidism",
+     "note": "'unintentional weight loss despite increased appetite'; 'tachycardia'; 'heat intolerance'."
+    },
+    {
+     "claim": "Wrong choices: weight gain eating less / feels cold / slower heart (all signs of too little)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hypothyroidism",
+     "note": "'weight gain despite often reduced appetite'; 'cold intolerance'; 'bradycardia (low heart rate)'. Grokipedia Hyperthyroidism: 'Cold intolerance is characteristic of hypothyroidism, not hyperthyroidism'."
+    }
+   ]
+  },
+  "ae1014a822": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Leonard Thompson's age: 13",
+     "result": "uncertain",
+     "source": "https://collections.library.utoronto.ca/explore/insulin/about/patients",
+     "note": "Sources split. Wikipedia and Grokipedia give his birth as 17 July 1908, which makes him 13 on 11 January 1922 (Wikipedia: 'at 13 years of age'). But the University of Toronto's insulin archive, which holds the records, says 'in January 1922, at age 14' (also the Fisher Library exhibit: 'at age fourteen'), and Grokipedia itself gives 14 in places. Fix: drop the number ('Leonard Thompson, a teenage boy, lay dying...') or say 'aged 13 or 14' in the context."
+    },
+    {
+     "claim": "Toronto General Hospital, early in 1922; first injection 11 January 1922; a sharp fall within a day",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Leonard_Thompson_(diabetic)",
+     "note": "11 January 1922 at Toronto General Hospital (Banting and Best's extract, allergic reaction); 23 January Collip's purer extract, blood sugar '0.520% to 0.120%' within 24 hours. The stem does not tie the fall to the first dose, so it holds."
+    },
+    {
+     "claim": "Insulin purified from the pancreases of animals",
+     "result": "ok",
+     "source": "https://fisherdigitus.library.utoronto.ca/exhibits/show/insulin100/early-patients/leonard-thompson",
+     "note": "The Toronto extracts came from animal pancreases (beef pancreas from slaughterhouses by then; dog pancreases in the first experiments); 'animals' is safe. Collip's 23 January extract was the purified one."
+    },
+    {
+     "claim": "Key: insulin lets the body's cells take sugar in from the blood",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Insulin",
+     "note": "'promoting the uptake and storage of glucose in cells while inhibiting its production in the liver'; made by the beta cells of the islets. (Insulin also curbs the liver's sugar output; the key is still the best answer and true.)"
+    },
+    {
+     "claim": "Wrong choices: breaks sugar down in the blood / stops the gut taking in sugar / sends sugar out through the kidneys",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glycosuria",
+     "note": "Sugar spills into urine when blood sugar exceeds the renal threshold (~180 mg/dL) because insulin is missing; insulin does none of the three."
+    },
+    {
+     "claim": "Context: in type 1 diabetes the immune system destroys the insulin-making cells",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glycosuria",
+     "note": "'an autoimmune destruction of pancreatic beta cells results in absolute insulin deficiency'."
+    }
+   ]
+  },
+  "cbe89ccf4b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Adrenal glands release adrenaline within moments of a fright; glands sit on top of the kidneys",
+     "result": "ok",
+     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-1-an-overview-of-the-endocrine-system",
+     "note": "'the release of adrenal hormones, epinephrine and norepinephrine, within seconds'; Grokipedia Adrenaline: adrenal medulla, glands 'located atop the kidneys'."
+    },
+    {
+     "claim": "Key: the pounding lasts because adrenaline keeps acting until the body clears it (minutes)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Adrenaline",
+     "note": "Plasma half-life about 2-3 minutes (under 5), broken down by COMT and MAO, so an effect of a few minutes fits 'minutes later'."
+    },
+    {
+     "claim": "Wrong choice: nerve signals take minutes to fade",
+     "result": "ok",
+     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-1-an-overview-of-the-endocrine-system",
+     "note": "Neural response comes 'within milliseconds' and 'ceases very quickly once the neural signaling ends'."
+    },
+    {
+     "claim": "Wrong choices: heart stores adrenaline / fright strained the heart; context: effects (heart, blood sugar, digestion)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Adrenaline",
+     "note": "Adrenaline is made in the adrenal medulla, not stored by the heart; it raises heart rate and force, raises blood glucose by glycogenolysis, 'reducing non-essential functions like digestion'."
+    }
+   ]
+  },
+  "937e69ccb8": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: visible hair and nails are dead cells packed with keratin, a tough protein",
+     "result": "ok",
+     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/5-2-accessory-structures-of-the-skin",
+     "note": "Hair 'is primarily made of dead, keratinized cells'; 'The nail body is composed of densely packed dead keratinocytes'. Grokipedia Nail: 'compacted keratinized cells called onychocytes', hard alpha-keratin."
+    },
+    {
+     "claim": "Context: hair and nails grow from living roots; the hair root is wrapped in nerve endings",
+     "result": "ok",
+     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/5-2-accessory-structures-of-the-skin",
+     "note": "Growth begins with keratinocytes made by 'the basal cells of the hair bulb'; 'a hair root plexus surrounding the base of each hair follicle'; 'The nail body forms at the nail root'."
+    },
+    {
+     "claim": "Wrong choices: living cells with no nerves / hard minerals like bone / dried oil",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Nail_(anatomy)",
+     "note": "The plate is dead keratinized cells; calcium appears only as a trace electrolyte, not the structure (dermatologists call the calcium belief a myth). Sebaceous oil coats hair but is not what it is made of."
+    },
+    {
+     "claim": "Context: nails are keratin like hair and the skin's outer layer, not calcium",
+     "result": "ok",
+     "source": "https://www.preventionaus.com.au/article/5-myths-about-nails-628078",
+     "note": "Dermatologist: nails are 'a protein, keratin, that doesn't contain live cells'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "11 questions: 8 ok, 1 error, 2 uncertain. Error (769d718d59, minor): the stem credits the lens alone with focusing the image; the cornea does about two-thirds of the focusing, so say 'the cornea and lens'. Uncertain (ae1014a822): Leonard Thompson's age, 13 by the 17 July 1908 birth date (Wikipedia, Grokipedia) but 14 in the University of Toronto insulin archive; drop the number or say 13 or 14. Uncertain (2401f9f0be): Wadlow's pituitary was hyperplastic (enlarged), so 'a gland the size of a pea' should read 'normally the size of a pea'. Tone is clinical throughout (the fall from the horse, the dying boy, the firework); nothing gory and nothing from the reproductive system."
+}

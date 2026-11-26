@@ -1,0 +1,481 @@
+{
+ "unit": "body-systems-supply-and-defence",
+ "questions": {
+  "15110e13c5": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Harvey measured how much blood the heart holds and reckoned its beats: left ventricle holds upwards of two ounces (in a dead body); more than a thousand beats in half an hour; so in half an hour more blood is sent out than the whole body contains (De Motu Cordis, ch. 9)",
+     "result": "ok",
+     "source": "https://sourcebooks.web.fordham.edu/mod/harvey-blood.asp",
+     "note": "He estimated the beat count rather than counting it in one sitting, but 'counted how often it beats' is a fair child-level gloss."
+    },
+    {
+     "claim": "Book of 1628 (De Motu Cordis, Frankfurt); Harvey an English physician",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/William_Harvey",
+     "note": ""
+    },
+    {
+     "claim": "Key: the same blood goes round again and again (Harvey: blood 'could be furnished in no other way than by making a circuit and returning')",
+     "result": "ok",
+     "source": "https://sourcebooks.web.fordham.edu/mod/harvey-blood.asp",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: the liver makes new blood from food very quickly (Galen's model; Harvey showed no food intake could supply such a quantity)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Galen",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: the flesh uses up blood as fast as it comes (Galen's consumption idea, overturned by the reckoning)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/William_Harvey",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: the heart makes new blood with every beat; context 'the heart makes no blood at all; it only pumps it'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Heart",
+     "note": ""
+    },
+    {
+     "claim": "Context: Galen, a Greek doctor of Roman times, taught the liver makes blood from food and the body uses it up; followed for centuries",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Galen",
+     "note": "Galen of Pergamon, 129-c.216 CE; his physiology shaped medicine for over a millennium."
+    }
+   ]
+  },
+  "7c1df58cf6": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Harvey's band (ligature) on a living man's arm: veins below it swell, knots show where the valves are",
+     "result": "ok",
+     "source": "https://sourcebooks.web.fordham.edu/mod/harvey-blood.asp",
+     "note": "Harvey: 'let anyone make an experiment upon the arm of a man'; the knots 'are all formed by valves'."
+    },
+    {
+     "claim": "Key: blood can be pushed only up the arm, toward the heart (pushing toward the hand, 'you cannot force the blood through or beyond the valve'; streaked upward, the vein refills only from below)",
+     "result": "ok",
+     "source": "https://sourcebooks.web.fordham.edu/mod/harvey-blood.asp",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices (only down; both ways; neither way) are wrong",
+     "result": "ok",
+     "source": "https://sourcebooks.web.fordham.edu/mod/harvey-blood.asp",
+     "note": ""
+    },
+    {
+     "claim": "Context: Galen taught the veins carry blood out from the liver to the limbs",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/William_Harvey",
+     "note": ""
+    },
+    {
+     "claim": "Context: 'The valves had been found by his teacher, Hieronymus Fabricius'",
+     "result": "uncertain",
+     "source": "https://lindahall.org/about/news/scientist-of-the-day/girolamo-fabrici-dacquapendente",
+     "note": "Fabricius (Harvey's teacher at Padua) gave the first detailed description and drawings (De venarum ostiolis, 1603), and Grokipedia credits him with the observation, but Linda Hall says 'the valves had been noticed several times before', and the history literature names Charles Estienne (1545), Canano (1547, reported by Amatus Lusitanus) and Sylvius earlier. Harvey himself notes Riolan credited Sylvius. Fix: 'The valves had been described and drawn by his teacher, Hieronymus Fabricius, but it was Harvey who showed what they are for.' (Fabricius thought they kept blood from pooling in the hands and feet.)"
+    },
+    {
+     "claim": "Context: it was Harvey who showed what the valves are for",
+     "result": "ok",
+     "source": "https://lindahall.org/about/news/scientist-of-the-day/girolamo-fabrici-dacquapendente",
+     "note": ""
+    }
+   ]
+  },
+  "932af91502": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Four chambers: two atria above, two ventricles below",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Heart",
+     "note": ""
+    },
+    {
+     "claim": "Left ventricle wall about three times as thick as the right",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ventricle_(heart)",
+     "note": "Grokipedia: 'approximately three times thicker' (8-12 mm vs 3-5 mm); Wikipedia gives three to six times in adults. 'About three times' holds."
+    },
+    {
+     "claim": "Key: it pumps blood to the whole body (against systemic resistance, ~120 mmHg vs ~25 mmHg)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ventricle_(heart)",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: pumps to the lungs (that is the right ventricle)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Heart",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: beats faster than the right one; context: the ventricles beat at almost the same moment",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ventricle_(heart)",
+     "note": "'The ventricles contract simultaneously during systole.'"
+    },
+    {
+     "claim": "Wrong: takes in blood from the whole body; context: body blood enters the right atrium",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Heart",
+     "note": ""
+    },
+    {
+     "claim": "Context: left ventricle drives blood through the aorta to every part of the body",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Heart",
+     "note": ""
+    }
+   ]
+  },
+  "bec34a7667": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Arteries carry blood away from the heart, veins back to it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pulmonary_artery",
+     "note": ""
+    },
+    {
+     "claim": "Pulmonary artery leaves the right ventricle and runs to the lungs",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Heart",
+     "note": ""
+    },
+    {
+     "claim": "Key: its blood is low in oxygen, high in carbon dioxide (deoxygenated blood from the right ventricle)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pulmonary_artery",
+     "note": "Grokipedia: 'transporting deoxygenated blood from the right ventricle of the heart to the lungs'; unique among arteries in carrying deoxygenated blood."
+    },
+    {
+     "claim": "Wrong choices (high O2/low CO2; high both; low both) are wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pulmonary_artery",
+     "note": ""
+    },
+    {
+     "claim": "Context: blood back from the body has given up oxygen and taken on CO2; the lungs reverse it; an artery is named for direction, not oxygen",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Capillary",
+     "note": ""
+    }
+   ]
+  },
+  "aa2db376a3": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Marcello Malpighi, an Italian doctor (physician; MD Bologna 1653)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Marcello_Malpighi",
+     "note": ""
+    },
+    {
+     "claim": "First saw capillaries in 1661 through a microscope (frog lung, De pulmonibus)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Capillary",
+     "note": "Grokipedia Capillary: 'Marcello Malpighi first observed capillaries in 1661 using an early compound microscope to examine frog lung tissue.' Leonardo had only speculated about fine vessels."
+    },
+    {
+     "claim": "Capillaries link the smallest arteries (arterioles) to the smallest veins (venules), walls one cell thick",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Capillary",
+     "note": "'a single layer of flattened endothelial cells'"
+    },
+    {
+     "claim": "Key: at a working muscle cell oxygen passes out to the cell, CO2 into the blood, by diffusion",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Capillary",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices (reversed; both out; both in) are wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Capillary",
+     "note": ""
+    },
+    {
+     "claim": "Context: in lung capillaries the gases go the other way; Harvey never saw capillaries; Malpighi's were the missing link",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/William_Harvey",
+     "note": "Grokipedia: Harvey did not see capillaries; Malpighi observed pulmonary capillaries of frogs in 1661."
+    }
+   ]
+  },
+  "03754967fc": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Hundreds of millions of alveoli",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pulmonary_alveolus",
+     "note": "Grokipedia ~300 million; Wikipedia (Ochs 2004) ~480 million. 'Hundreds of millions' covers both."
+    },
+    {
+     "claim": "Each alveolus wrapped in a net of capillaries",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pulmonary_alveolus",
+     "note": "'dense capillary network' in the septa"
+    },
+    {
+     "claim": "Emphysema most often caused by smoking; alveolar walls destroyed, sacs merge into fewer, larger spaces",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Emphysema",
+     "note": "Smoking 80-90% of cases."
+    },
+    {
+     "claim": "Key: less surface for oxygen to pass into the blood",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Emphysema",
+     "note": "Surface loss leads to low blood oxygen. Air trapping and lost elastic recoil also add to breathlessness, but no wrong choice names them, so the key stands as the one right answer."
+    },
+    {
+     "claim": "Wrong: fewer red blood cells (emphysema does not destroy red cells)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Emphysema",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: air sacs filled with mucus and fluid (pneumonia or oedema; emphysema is wall destruction, mucus belongs to chronic bronchitis in the airways)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Emphysema",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: the air breathed in holds less oxygen",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Emphysema",
+     "note": ""
+    },
+    {
+     "claim": "Context: healthy lungs spread 70 to 80 square metres of exchange surface",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pulmonary_alveolus",
+     "note": ""
+    }
+   ]
+  },
+  "55421086e1": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Large intestine about 1.5 metres long",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Large_intestine",
+     "note": ""
+    },
+    {
+     "claim": "Key: hurried through, the waste is runny with more water left in it",
+     "result": "ok",
+     "source": "https://www.britannica.com/science/human-digestive-system-disease/Large-intestine",
+     "note": "Britannica: diarrhoea is the abnormally swift passage of waste through the large intestine, with loose faeces; constipation the delayed passage with dry, hardened faeces. Grokipedia: rapid transit impairs water recovery."
+    },
+    {
+     "claim": "Wrong: hard and dry (slow transit, constipation)",
+     "result": "ok",
+     "source": "https://www.britannica.com/science/human-digestive-system-disease/Large-intestine",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: full of undigested food (digestion and absorption are done in the small intestine before the colon)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Large_intestine",
+     "note": "'Unlike the small intestine, the colon does not play a major role in absorption of foods and nutrients.'"
+    },
+    {
+     "claim": "Wrong: will not change",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Large_intestine",
+     "note": ""
+    },
+    {
+     "claim": "Context: about nine-tenths of the water that reaches the large intestine goes back into the blood; main job water and salts",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Large_intestine",
+     "note": "About 1.5-2 L enters daily, ~90% reclaimed."
+    },
+    {
+     "claim": "Context: the small intestine has already taken in most of the food",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Large_intestine",
+     "note": ""
+    }
+   ]
+  },
+  "57fd0185d6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Two kidneys filter about 180 litres of fluid a day",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kidney",
+     "note": "Grokipedia Kidney: 150-180 L of plasma a day; Urinary system page ~180 L in its physiology sections (its intro says ~200)."
+    },
+    {
+     "claim": "Urine only one or two litres a day",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kidney",
+     "note": ""
+    },
+    {
+     "claim": "Key: nearly all the rest is taken back into the blood; context: about 99 percent of the water and useful substances",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kidney",
+     "note": "'Approximately 99% of the filtered water and solutes are reabsorbed.' 180 L in, 1-2 L out is about 99%."
+    },
+    {
+     "claim": "Wrong: breathed out / sweated out / stored in the bladder",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Urinary_system",
+     "note": ""
+    },
+    {
+     "claim": "Context: bladder stores urine up to about half a litre",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Urinary_system",
+     "note": "400-600 mL in adults."
+    },
+    {
+     "claim": "Context: wastes such as urea leave in urine",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Urea",
+     "note": "Some urea is reabsorbed too, but the child-level statement holds."
+    }
+   ]
+  },
+  "2d736ef41d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Kidneys receive about a fifth of the heart's output",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kidney",
+     "note": "'approximately 20-25% of the cardiac output'"
+    },
+    {
+     "claim": "Key: in kidney failure, wastes such as urea build up",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kidney_dialysis",
+     "note": "Urea, creatinine and potassium accumulate, leading to uraemia."
+    },
+    {
+     "claim": "Wrong: carbon dioxide (leaves through the lungs)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Capillary",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: bile from the liver (a liver or bile-duct problem, not kidney)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kidney",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: worn-out red blood cells (kidney failure brings anaemia, not a build-up)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kidney",
+     "note": "Grokipedia lists anaemia as a complication of kidney dysfunction."
+    },
+    {
+     "claim": "Context: the liver turns protein leftovers into urea; kidneys filter it into urine",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Urea",
+     "note": ""
+    },
+    {
+     "claim": "Context: untreated, can kill",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kidney_dialysis",
+     "note": "Untreated end-stage renal disease 'typically leads to uremic death within weeks to months'. Plain and clinical in tone."
+    },
+    {
+     "claim": "Context: dialysis runs the blood through a filter outside the body, usually three times a week",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kidney_dialysis",
+     "note": "True of haemodialysis, the commonest kind (three times a week, 3.5-5 h). Peritoneal dialysis filters inside the body; optional tightening: 'The commonest kind of dialysis runs the blood...'"
+    }
+   ]
+  },
+  "2ab63966fd": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Mouth, food pipe, stomach, intestines, with liver and pancreas adding juices, are the digestive system's organs",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Organ_system",
+     "note": "Grokipedia's table lists mouth, esophagus, stomach, intestines, liver and pancreas under the digestive system."
+    },
+    {
+     "claim": "Key: together they make up an organ system (two or more organs working together)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Organ_system",
+     "note": "'a group of two or more organs that interact in a coordinated manner'"
+    },
+    {
+     "claim": "Wrong: a single organ; a kind of tissue; a whole organism",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Organ_system",
+     "note": ""
+    },
+    {
+     "claim": "Context: an organ is built of several kinds of tissue; cells form tissues, tissues organs, organs organ systems, systems the organism",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Organ_system",
+     "note": "Organ: 'anatomically distinct structures composed of two or more tissue types'."
+    },
+    {
+     "claim": "Context: the body's eleven major organ systems",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Organ_system",
+     "note": "Grokipedia: 'composed of eleven major organ systems' (the common textbook count; some books count ten or twelve, but 'eleven major' matches the standard source)."
+    }
+   ]
+  },
+  "4441bd3c2d": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: her heart pumps much more blood each minute",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Exercise_physiology",
+     "note": "Heart rate rises with intensity; output rises up to 5-6 times resting."
+    },
+    {
+     "claim": "Wrong: gut draws more blood; kidneys draw more blood (flow to both is cut, by up to 75%)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Exercise_physiology",
+     "note": "'reduces flow to the splanchnic organs and kidneys by up to 75%'"
+    },
+    {
+     "claim": "Wrong: the vessels in her legs narrow (they widen: vasodilation in working muscle)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Exercise_physiology",
+     "note": ""
+    },
+    {
+     "claim": "Context: blood turned away from gut and kidneys by up to three-quarters; vessels in working muscle widen",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Exercise_physiology",
+     "note": ""
+    },
+    {
+     "claim": "Context: HER heart raises its output 'from about 5 litres of blood a minute at rest to 20 litres or more'",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Cardiac_output",
+     "note": "Grokipedia gives 5 L/min at rest rising to 20-25 L/min for untrained or moderately trained ADULTS. Measured peaks for women are lower (young women about 17.7 L/min, PMC2838638; a 500-person reference study averaged 11.0 L/min for women, pubmed 28108178), and a schoolgirl, being smaller, rests below 5 and peaks well under 20 (adolescent girls' maximal cardiac index about 7 L/min per square metre). As written, the adult-male figure is pinned on 'her'. Fix: 'Her heart beats faster and harder, pumping three or four times as much blood each minute as at rest (a grown man goes from about 5 litres a minute to 20 or more), while...'"
+    }
+   ]
+  }
+ },
+ "unit_notes": "Tone is clinical throughout (emphysema, diarrhoea, kidney failure 'untreated, can kill' are all plain and factual). Harvey's ch. 9 reckoning and arm-valve demonstration are told as Harvey wrote them (Fordham sourcebook text). Two soft spots: (1) 7c1df58cf6 credits Fabricius with having 'found' the vein valves; he described and drew them (1603), but others had noticed them earlier: say 'described'. (2) 4441bd3c2d gives an adult's 5 to 20+ L/min cardiac-output figure as the sprinting girl's own; restate as a multiple or attribute the litres to an adult. Optional: 2d736ef41d's 'Dialysis runs the blood through a filter outside the body' is true of haemodialysis, the commonest kind, not of peritoneal dialysis."
+}

@@ -1,0 +1,127 @@
+{
+ "unit": "natural-and-artificial-selection",
+ "questions": {
+  "b6a4b37f38": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "26ec2cbd4a": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "This asks the same fact as 6c904c4334 (all the breeds of a domestic animal come from one wild species, not several). Keep this one as Darwin's own discovery story, and re-aim the dog question (see there).",
+     "fix": "None needed here."
+    }
+   ]
+  },
+  "1efa6664ca": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "This re-runs T2 variation-and-survival. Its beetles question ('More brown ones live to pass their colour on' against 'Green beetles turn brown') and hurricane-lizards question ('Lizards with bigger pads held on and lived' against 'grew bigger pads') ask exactly this fact with the same wrong choices: a trait some individuals already had is spared and inherited, and no individual changes itself. T1 adaptations-built-for-a-place (the duckling's webbed feet) adds the same misconception. Nothing here is new at 7th grade.",
+     "fix": "Use Gorongosa for the step T2 never asks: a change counts as evolution only if the spared trait is inherited. 'Ivory hunters killed about nine in ten of Gorongosa's elephants during years of war, and far more tuskless females lived through it than tusked ones. Before the war about one female in five was tuskless. Which later finding showed that the hunting had changed the herd for generations to come?' Choices: 'Many daughters born after the war were tuskless' (key) / 'Tuskless females outlived the tusked ones' / 'Hunters shot tusked elephants far more often' / 'The herd had shrunk to a tenth of its size'."
+    },
+    {
+     "axis": "fact",
+     "severity": "medium",
+     "what": "The reviewer's recollection, for the fact-checker: the paper's 50.9 percent is the tuskless share among females who lived through the war, so most of the rise to about half by 2000 is the hunters' choice of victims within one generation. Among daughters born after the war the share was lower (about a third). The key 'were spared and passed the trait on', set against 'by 2000, about half', overstates how much the inheritance had done by then.",
+     "fix": "Have the fact-checker confirm the after-war daughters' share, and use it in the rewrite above. Otherwise say 'among the survivors, about half' and drop 'passed the trait on' as the explanation of the 2000 figure."
+    }
+   ]
+  },
+  "6d1ae00de0": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "The stem's method clause ('by saving seed, generation after generation, from the plants with the most of whatever part they wanted to eat') states the very fact d5dda55a37 asks (the farmers' part was planting seed from the plants they chose), so this question gives that one away when both appear.",
+     "fix": "Trim to 'Farmers bred it into several vegetables, each by choosing plants for a different part.'"
+    }
+   ]
+  },
+  "6c904c4334": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "This asks the same fact as 26ec2cbd4a: all the breeds come from one wild species, not from several crossed together, and the wrong choices are the same pattern (several wild ancestors, mixed). 'Dogs come from wolves' is also everyday knowledge, so 'Wolves alone' is the popular answer and needs no 7th-grade science. The DNA story frames a fact the student already has.",
+     "fix": "Make it the classify task the scope names, with dogs: 'Dogs descend from wolves. Suppose a breeder lets only her smallest dogs have puppies, and over many generations her dogs grow smaller. In a hot city, meanwhile, stray dogs with short coats outlive long-coated ones and leave more pups, so short coats grow common there. Which change is artificial selection?' Choices: 'Only the smaller dogs, since a person chose who bred' (key) / 'Only the short coats, since people built the city' / 'Both, since both happened among dogs' / 'Neither, since no one changed the dogs' genes'. Keep Wayne and Lorenz in the context."
+    }
+   ]
+  },
+  "d5dda55a37": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Roasting the seeds until the gene itself changed' is the weakest choice (roasted seed does not grow), though the misconception behind it, that the surroundings change genes on purpose, is real.",
+     "fix": "'Soaking the seeds until the gene itself changed'."
+    }
+   ]
+  },
+  "538c86b429": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'What had become resistant, and how?' is two questions in one. The choices pair each thing with a way, so it reads clearly, but the stem should still end on one question.",
+     "fix": "'What had become resistant to the drug?' (the choices keep their 'as ...' halves)."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "This borders T2 variation-and-survival's ash dieback question (resistance is inherited from survivors, not caught or grown). The new 7th-grade piece is that the germs become resistant, not the body, so it is acceptable.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "b6d06f1cfe": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Flies are so small that the poison wears off' is not live, and it does not explain why resistance spread. The key is also the only choice about speed ('many generations in a single year'), which the stem's 'so quickly' points to.",
+     "fix": "Replace it with a choice that also explains speed: 'Resistant flies passed it on to others by touch' (the contagion misconception)."
+    },
+    {
+     "axis": "voice",
+     "severity": "low",
+     "what": "'Flies raise many generations' is odd, since flies do not raise their young.",
+     "fix": "'Flies pass through many generations in a year'."
+    }
+   ]
+  },
+  "388aa73b3e": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "The peppered moth is in lane: it is the classic evidence of natural selection, and its colour is the selected trait, not the moth's anatomy told for its own sake. But the result asked follows from T2 variation-and-survival. The beetles question says birds spot and eat more of the ones that stand out from the ground, and the finches question shows the favoured form flipping with the setting. A T2 player predicts 'those that matched the bark' with no 7th-grade knowledge. It is also the only choice that depends on the wood, which the two-wood stem invites.",
+     "fix": "Ask what the second wood added, which is the discovery story's real point: 'Why did the clean wood in Dorset matter as much as the sooty one near Birmingham?' Choices: 'It showed the match to the bark, not dark colour itself, kept moths alive' (key) / 'It showed that soot poisons pale moths but not dark ones' / 'It showed that dark moths are hardier than pale ones' / 'It showed that birds find moths by scent, not by sight'."
+    }
+   ]
+  },
+  "d5ed63d697": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "This asks the same fact as 388aa73b3e: in clean woods, birds take more of the dark moths. Its own context says so ('as Kettlewell had found in clean woods'). 'Bats, not birds, ate nearly all of the moths' is weak after a stem that says he watched for birds, and 'nearly all' gives it away.",
+     "fix": "Ask what the re-test meant for the critics' charge: 'What did his results mean for Kettlewell's work?' Choices: 'Its main finding held up on natural resting sites' (key) / 'Its main finding came only from the crowded trunks' / 'Its finding was right, but bats did most of the eating' / 'Its finding held only in woods blackened by soot'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Lane rulings: the Gorongosa tuskless elephants are in lane, as evidence of selection (tusklessness is the trait the hunters selected, not elephant anatomy told for its own sake). The peppered moth is in lane: it is the classic evidence, its colour the selected trait. Evolution by natural selection is stated plainly, and the fraud charge is handled as settled; there is no stance problem. Overlaps checked against every final.json. (1) T2 variation-and-survival, beetles and hurricane lizards (a trait some already had is spared and inherited, and no individual changes): 1efa6664ca re-asks it with the same wrong choices, high; fix by asking for the inheritance evidence (tuskless daughters). (2) T2 variation-and-survival, beetles (birds eat the ones that stand out) and finches (the favoured form flips with the setting): 388aa73b3e's result is predictable from them, medium; fix by asking what the second wood showed. (3) T2 variation-and-survival, ash dieback (resistance is inherited, not caught or grown): 538c86b429's new piece (germs become resistant, not the body) keeps it acceptable. (4) T1 adaptations-built-for-a-place, duckling's webbed feet (no animal grows an adaptation by using it): the same misconception is used only as wrong choices here, which is fine. (5) T3 mendels-peas-and-inherited-traits, the Lamarck blacksmith: no question here re-asks it. Within the unit: 26ec2cbd4a and 6c904c4334 ask one fact (all the breeds come from one wild species), so re-aim the dog question to the scope's classify task. 388aa73b3e and d5ed63d697 ask one fact (birds take more of the moths that stand out), so re-aim Majerus at what his re-test meant. 6d1ae00de0's stem states d5dda55a37's answer, so trim the stem. Scope covered: Darwin's idea and fitness, populations not individuals, wild cabbage, dogs, corn, antibiotics, pesticides. The T5 material (Darwin and Wallace together, drift, speciation) is rightly left out. Gates: clean."
+}

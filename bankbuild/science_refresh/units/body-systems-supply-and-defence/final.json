@@ -1,0 +1,228 @@
+{
+ "unit": "body-systems-supply-and-defence",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "body-systems-supply-and-defence",
+   "question": "Galen, a Greek doctor of Roman times, taught that the liver makes blood from food and that the body's flesh uses it up. William Harvey, an English doctor, measured how much blood a heart holds and reckoned how often it beats. In a book of 1628 he set out his sums: in half an hour, the heart sends out more blood than the whole body contains. What did those sums show?",
+   "answer": "The food eaten could never make so much blood",
+   "choices": [
+    "The food eaten could never make so much blood",
+    "The heart must turn food into blood itself",
+    "The body must hold far more blood than he thought",
+    "The veins must turn food into blood as it flows"
+   ],
+   "context": "If Galen were right, the liver would have to make more than the body's whole store of blood from food every half hour, and no meal could ever supply so much. So Harvey reasoned that the same blood must travel round the body in a circuit, again and again. Neither the heart nor the veins make blood; the heart pumps it and the vessels carry it.",
+   "facts": [
+    "F9",
+    "F10",
+    "F11",
+    "F30",
+    "F31"
+   ],
+   "grade_note": "Harvey's proof of the circulation of the blood (1628) is the first discovery story of seventh-grade body systems, and the T3 craft asks why his evidence overturned the old view."
+  },
+  {
+   "tier": 3,
+   "topic": "body-systems-supply-and-defence",
+   "question": "William Harvey tied a band around a volunteer's upper arm until the veins of the forearm swelled, with small knots along them where valves sit inside. Then he pressed on a swollen vein and tried to push the blood along it, first one way and then the other. Which way would the blood go?",
+   "answer": "Only up the arm, toward the heart",
+   "choices": [
+    "Only up the arm, toward the heart",
+    "Only down the arm, toward the hand",
+    "Both ways, as easily one as the other",
+    "Neither way, for the valves held it fast"
+   ],
+   "context": "The valves open only toward the heart, so blood in a vein can be pushed up the arm but never back down it. Harvey concluded that the veins carry blood back to the heart, against the old teaching of Galen, a Greek doctor of Roman times, that the veins carry blood out from the liver to the limbs. The valves had been described and drawn by his teacher, Hieronymus Fabricius, but it was Harvey who showed what they are for.",
+   "facts": [
+    "F6",
+    "F9",
+    "F12",
+    "F26"
+   ],
+   "grade_note": "Seventh grade teaches that veins carry blood back to the heart, with valves that keep it flowing one way, often through Harvey's arm experiment."
+  },
+  {
+   "tier": 3,
+   "topic": "body-systems-supply-and-defence",
+   "question": "The heart has four chambers: two atria above and two ventricles below. The wall of the left ventricle is about three times as thick as the wall of the right ventricle. Why does the left ventricle need so much more muscle?",
+   "answer": "It pumps blood out to the whole body",
+   "choices": [
+    "It pumps blood out to the whole body",
+    "It pumps blood out to the lungs",
+    "It beats faster than the right one",
+    "It takes in blood from the whole body"
+   ],
+   "context": "The left ventricle drives blood through the aorta to every part of the body, from head to toes, so it must squeeze far harder than the right ventricle, which sends blood only the short way to the lungs. The two ventricles beat at almost the same moment, and blood coming back from the body enters the right atrium, not the left ventricle.",
+   "facts": [
+    "F1",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "Seventh grade teaches the heart's four chambers and the job of each, and asks students to explain how a part's build fits its job."
+  },
+  {
+   "tier": 3,
+   "topic": "body-systems-supply-and-defence",
+   "question": "The pulmonary artery is the great blood vessel that leads from the heart to the lungs. What is the blood flowing through it like?",
+   "answer": "Oxygen-poor, as it has just come from the body",
+   "choices": [
+    "Oxygen-poor, as it has just come from the body",
+    "Oxygen-rich, as it has just come from the lungs",
+    "Oxygen-rich, as the blood in all arteries is",
+    "Half and half, as the heart mixes it together"
+   ],
+   "context": "This blood has just come back from the body, where the cells took its oxygen and gave it their carbon dioxide, and the heart sends it to the lungs to trade them back. An artery is named for the way its blood flows, not for the oxygen it carries, and a wall down the middle of the heart keeps the blood of its two sides from mixing.",
+   "facts": [
+    "F1",
+    "F2",
+    "F5",
+    "F28",
+    "M1"
+   ],
+   "grade_note": "Seventh grade teaches the two loops of the circulation and that arteries carry blood away from the heart, veins back to it."
+  },
+  {
+   "tier": 3,
+   "topic": "body-systems-supply-and-defence",
+   "question": "Marcello Malpighi, an Italian doctor, first saw capillaries in 1661, through a microscope trained on a frog's lung: blood vessels too small to see with the eye alone, linking the smallest arteries to the smallest veins. In the body, blood gives up its oxygen in the capillaries, not in the arteries or the veins. What lets it do so there?",
+   "answer": "Their walls are only one cell thick",
+   "choices": [
+    "Their walls are only one cell thick",
+    "Their walls hold valves that let gases out",
+    "Their blood flows faster than anywhere else",
+    "Their blood holds more oxygen than anywhere else"
+   ],
+   "context": "A capillary's wall is a single layer of flat cells, so thin that oxygen and food pass out through it to the cells around it, while carbon dioxide and wastes pass in; artery and vein walls are much thicker. Blood also moves more slowly in the capillaries than in any other vessels, about a thousand times slower than in the aorta, which gives time for the exchange. Malpighi's capillaries were the link between arteries and veins that Harvey never saw.",
+   "facts": [
+    "F7",
+    "F13",
+    "F27",
+    "F6"
+   ],
+   "grade_note": "Seventh grade teaches that capillaries are where the blood and the body's cells exchange oxygen, food and wastes, and asks students to explain how a part's build fits its job."
+  },
+  {
+   "tier": 3,
+   "topic": "body-systems-supply-and-defence",
+   "question": "The lungs hold hundreds of millions of tiny air sacs called alveoli, each wrapped in a net of capillaries. In emphysema, a lung disease most often caused by smoking, the thin walls between the sacs break down, and many small sacs merge into fewer, bigger ones. Why does a person with emphysema run short of breath?",
+   "answer": "Less surface is left for oxygen to pass into the blood",
+   "choices": [
+    "Less surface is left for oxygen to pass into the blood",
+    "Fewer red blood cells are left to carry the oxygen",
+    "The air sacs have filled up with mucus and fluid",
+    "The air breathed in now holds less oxygen than before"
+   ],
+   "context": "Many tiny sacs give far more surface than a few big ones: healthy lungs spread 70 to 80 square metres of thin wall between air and blood, and oxygen can cross only where that wall is. Merged sacs leave less of it, so less oxygen reaches the blood with each breath. The air breathed in is the same as ever; it is the lung that has changed.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "Seventh grade teaches that the lungs' many tiny air sacs give a huge surface for gas exchange, and asks what follows when a part is damaged."
+  },
+  {
+   "tier": 3,
+   "topic": "body-systems-supply-and-defence",
+   "question": "After the small intestine, the leftovers of a meal pass into the large intestine, a tube about 1.5 metres long, and leave the body as waste. A stomach bug makes the leftovers of a boy's meals hurry through his large intestine far faster than usual. How will his waste most likely change?",
+   "answer": "It will be runny, with more water left in it",
+   "choices": [
+    "It will be runny, with more water left in it",
+    "It will be hard and dry, with less water left in it",
+    "It will be full of food that was never digested",
+    "It will not change, for the gut's work is already done"
+   ],
+   "context": "The large intestine's main job is taking water and salts back into the body; about nine-tenths of the water that reaches it goes back into the blood, and the waste firms up as it goes. Hurried through, the waste keeps its water, which is one way diarrhoea comes about, while waste that lingers too long loses more water and grows hard. The small intestine has already taken in most of the food.",
+   "facts": [
+    "F18",
+    "F19"
+   ],
+   "grade_note": "Seventh grade teaches that the large intestine takes water back into the body, and asks students to predict what follows when a part's work changes."
+  },
+  {
+   "tier": 3,
+   "topic": "body-systems-supply-and-defence",
+   "question": "A person's two kidneys filter about 180 litres of fluid out of the blood every day. Yet the same person makes only one or two litres of urine a day. What becomes of nearly all the rest?",
+   "answer": "It is taken back into the blood",
+   "choices": [
+    "It is taken back into the blood",
+    "It is breathed out as water vapour",
+    "It is sweated out through the skin",
+    "It is stored up in the bladder"
+   ],
+   "context": "The kidneys first filter out water, wastes and useful substances together, then take about 99 percent of the water and the useful substances back into the blood, leaving the wastes, such as urea, in a little water as urine. The bladder only stores urine, up to about half a litre, until it leaves the body.",
+   "facts": [
+    "F20",
+    "F21"
+   ],
+   "grade_note": "Seventh grade teaches that the kidneys filter the blood, keeping what the body needs and sending wastes out in urine."
+  },
+  {
+   "tier": 3,
+   "topic": "body-systems-supply-and-defence",
+   "question": "Blood flows through the kidneys all day long, about a fifth of everything the heart pumps out. When both of a man's kidneys stop working, something starts to build up in his blood. Without treatment, what builds up?",
+   "answer": "Wastes such as urea",
+   "choices": [
+    "Wastes such as urea",
+    "Carbon dioxide from his cells",
+    "Bile from his liver",
+    "Worn-out red blood cells"
+   ],
+   "context": "The liver turns the leftovers of broken-down proteins into urea, and healthy kidneys filter it out of the blood into urine; when they fail, urea and other wastes pile up and, untreated, can kill. Dialysis runs the blood through a filter outside the body to take them out, usually three times a week. Carbon dioxide leaves through the lungs, not the kidneys.",
+   "facts": [
+    "F21",
+    "F22",
+    "F23"
+   ],
+   "grade_note": "Seventh grade teaches that the kidneys remove wastes from the blood, and asks what follows when an organ fails."
+  },
+  {
+   "tier": 3,
+   "topic": "body-systems-supply-and-defence",
+   "question": "A girl runs up a long hill, and her leg muscles use oxygen far faster than at rest. Her heart pumps three or four times as much blood each minute as when she sits still, but her body does not share the extra blood out evenly. Which part of her body gets less blood than it did at rest?",
+   "answer": "Her kidneys",
+   "choices": [
+    "Her kidneys",
+    "Her brain",
+    "Her heart muscle",
+    "Her lungs"
+   ],
+   "context": "Nerves narrow the blood vessels of her kidneys and gut, cutting their blood by up to three-quarters, while the vessels in her working muscles widen, so most of her heart's output goes to her muscles and skin. Her brain and her heart muscle get more blood than at rest, and all of the blood her heart pumps passes through her lungs on each round, so they get more as well.",
+   "facts": [
+    "F25",
+    "F29"
+   ],
+   "grade_note": "Seventh grade teaches how the body systems work together in exercise, the circulatory and respiratory systems above all, and how the blood is shared among the organs."
+  }
+ ],
+ "revised": {
+  "d31b65bba8": {
+   "old_hash": "15110e13c5",
+   "why": "Judge (medium): the key was T1 the-bodys-main-organs' heart fact (the heart pumps blood round, it does not make it). Galen's view is now in the stem and the question asks what Harvey's sums showed against it (the food eaten could never make so much blood), so the discovery's reasoning is tested. Harvey's own other arguments (the vessels would burst, the body could not hold it, F30) are kept out of the wrong choices; those are the heart or the veins making blood from food and the body holding more blood, none of which the sums showed."
+  },
+  "7c1df58cf6": {
+   "old_hash": "7c1df58cf6",
+   "why": "Fact-check uncertain (and judge low): Fabricius did not find the valves (others had noticed them first); the context now says he described and drew them (F26). Stem and choices unchanged."
+  },
+  "b8fa54f79f": {
+   "old_hash": "bec34a7667",
+   "why": "Judge (medium): the stem's 'every vein carries blood back to it' gave away 7c1df58cf6's key. The stem now only names the vessel and where it goes (no right ventricle, no vein rule), and the context names no direction. The two 'both high / both low' choices, which T1 knowledge rules out, are replaced by the artery misconception (M1) and the mixing misconception (F28)."
+  },
+  "1d00b74dea": {
+   "old_hash": "aa2db376a3",
+   "why": "Judge (high): the fact asked (oxygen out to the cell, carbon dioxide in) is T1 the-bodys-main-organs', and the T3 fact (walls one cell thick) was given away in the stem. Now the stem gives where the exchange happens and asks why there: the one-cell wall, against valves (the veins'), fast flow (it is slowest there, F27) and the most oxygen (arteries hold more)."
+  },
+  "7a644fabe7": {
+   "old_hash": "4441bd3c2d",
+   "why": "Judge (medium x2): that the heart pumps more in a sprint is an early-grade fact, and two wrong choices were not credible. Now the less obvious half of the same fact (F25, F29): the blood is shared out anew, and the kidneys get less while the brain, the heart muscle and the lungs get more. Fact-check uncertain fixed: no adult litres pinned on the girl, 'three or four times' instead."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "2ab63966fd",
+   "question": "Food passes from the mouth down the food pipe to the stomach and the intestines, and the liver and pancreas pour in their juices along the way. In the levels of organisation of the body, what do these parts make up between them?",
+   "why": "Judge (high): re-asks the T2 cells-the-building-blocks-of-life levels of organisation (its final asks the tissue rung), and 'the digestive system' is an everyday phrase. The judge's pancreas rewrite would cross body-systems-control-and-support, whose scope holds the pancreas and insulin, so it is dropped; ten questions remain."
+  }
+ ]
+}

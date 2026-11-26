@@ -1,0 +1,206 @@
+{
+ "unit": "energy-through-the-food-web",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "energy-through-the-food-web",
+   "question": "In a desert, mice eat seeds, snakes eat the mice, and owls swoop down on the snakes. What kind of consumer is the owl in this food chain?",
+   "answer": "Tertiary consumer",
+   "choices": [
+    "Primary consumer",
+    "Secondary consumer",
+    "Tertiary consumer",
+    "Quaternary consumer"
+   ],
+   "context": "The seeds come from producers, the first level. The mice that eat them are primary consumers, the snakes that eat the mice are secondary consumers, and the owls that eat the snakes are tertiary consumers, at the fourth level. A quaternary consumer would be a fifth level, an animal that hunts the owls.",
+   "facts": [
+    "F1",
+    "F2"
+   ],
+   "grade_note": "Seventh-grade ecology names the trophic levels, from producers through primary, secondary and tertiary consumers, and asks students to place the members of a chain on them."
+  },
+  {
+   "tier": 3,
+   "topic": "energy-through-the-food-web",
+   "question": "A camper eats a handful of wild berries for lunch. For supper he cooks a rabbit he caught, and rabbits eat only plants. At what feeding level is the camper in each of his two meals?",
+   "answer": "Primary consumer, then secondary consumer",
+   "choices": [
+    "Primary consumer, then secondary consumer",
+    "Primary consumer at both meals",
+    "Secondary consumer at both meals",
+    "Secondary consumer, then tertiary consumer"
+   ],
+   "context": "Eating berries, which are part of a plant, the camper feeds as a primary consumer; eating a plant-eater, he feeds one level higher, as a secondary consumer. People are omnivores, and an omnivore can feed at more than one level from one meal to the next, which is one reason a real food web is untidier than a neat chain.",
+   "facts": [
+    "F1",
+    "F3"
+   ],
+   "grade_note": "Seventh grade applies the trophic levels to omnivores, which feed at more than one level."
+  },
+  {
+   "tier": 3,
+   "topic": "energy-through-the-food-web",
+   "question": "A wild rabbit nibbles grass for much of the day, and its body absorbs energy from everything it eats. Over the rabbit's whole life, where does most of that absorbed energy end up?",
+   "answer": "Used for living, then given off as heat",
+   "choices": [
+    "Used for living, then given off as heat",
+    "Stored in its body until a fox eats it",
+    "Passed back to the grass through the soil",
+    "Turned into matter as the rabbit grows"
+   ],
+   "context": "A warm-blooded animal spends nearly all the energy it absorbs on living: moving, breathing, mending its body and keeping warm, and that energy ends up as heat given off to its surroundings. Less than a tenth of it is built into the body, where a fox could get it. Grass takes its energy from sunlight, never from the soil, and energy is not turned into matter.",
+   "facts": [
+    "F6",
+    "F7",
+    "M1",
+    "M3"
+   ],
+   "grade_note": "Seventh-grade standards explain the shrinking energy pyramid by the energy each level uses for living and loses as heat."
+  },
+  {
+   "tier": 3,
+   "topic": "energy-through-the-food-web",
+   "question": "In a meadow, rabbits eat the grass and foxes eat the rabbits. Ecologists use a rough rule of thumb for how much of the energy at one feeding level passes on to the next level up. By that rule, about what share of the grass's energy reaches the foxes?",
+   "answer": "About a hundredth",
+   "choices": [
+    "About a tenth",
+    "About a hundredth",
+    "About a thousandth",
+    "About a fifth"
+   ],
+   "context": "About a tenth of the grass's energy reaches the rabbits, and a tenth of that, a tenth of a tenth, reaches the foxes: about a hundredth. The shares multiply at each step rather than add up, so it is not a fifth. The tenth is only a rough guide, since measured shares often run from about a twentieth to a fifth.",
+   "facts": [
+    "F9",
+    "F10"
+   ],
+   "grade_note": "Seventh grade uses the rough ten percent rule to describe how the energy available shrinks at each level of an energy pyramid."
+  },
+  {
+   "tier": 3,
+   "topic": "energy-through-the-food-web",
+   "question": "A single oak tree can feed about 2,000 leaf-eating insects, and those insects feed a much smaller number of birds. Counted by number of living things, the oak's level is the smallest of the three. In an energy pyramid of this food chain, which level is widest?",
+   "answer": "The tree",
+   "choices": [
+    "The tree",
+    "The insects",
+    "The birds",
+    "All three alike"
+   ],
+   "context": "All the energy the insects and the birds get comes from the oak, and most of it is used for living and lost as heat at each step, so the tree's level holds the most energy. A pyramid of numbers can stand on its point when one big producer feeds many small eaters, but a pyramid of energy is never upside down.",
+   "facts": [
+    "F4",
+    "F5"
+   ],
+   "grade_note": "Seventh grade reads and builds energy pyramids, which always narrow upward from the producers."
+  },
+  {
+   "tier": 3,
+   "topic": "energy-through-the-food-web",
+   "question": "Suppose two kinds of hunting bird, alike in size and appetite, share a big marsh. One kind lives by catching mice, which eat seeds. The other lives by catching frogs, which eat insects that feed on plants. If food alone sets their numbers, which kind can the marsh feed more of?",
+   "answer": "The mouse-catchers, as mice eat plants",
+   "choices": [
+    "The mouse-catchers, as mice eat plants",
+    "The frog-catchers, as frogs eat animals",
+    "The same number, as the birds are alike in size",
+    "The same number, as both kinds of bird eat meat"
+   ],
+   "context": "The mouse-catchers feed one level nearer the plants, so more of the plants' energy is left by the time it reaches them. Each step up a food chain leaves less energy, which is why top predators are always far fewer than the plant-eaters below them. Eating meat-eating prey does not give a hunter more energy; it puts the hunter a level higher, where there is less.",
+   "facts": [
+    "F11",
+    "M2",
+    "M4"
+   ],
+   "grade_note": "Seventh grade uses the energy pyramid to explain why top predators are few and why more animals can live lower on a food chain."
+  },
+  {
+   "tier": 3,
+   "topic": "energy-through-the-food-web",
+   "question": "Food chains in nature rarely have more than four or five levels, from the plants and algae up to a top predator. What keeps food chains so short?",
+   "answer": "Too little energy is left for another level",
+   "choices": [
+    "Too little energy is left for another level",
+    "Each level destroys most of the energy it eats",
+    "The atoms in food are used up along the way",
+    "The top predators hold most of the energy"
+   ],
+   "context": "So much energy is used for living and lost as heat at each step that after four or five levels there is too little left to support another. The energy is not destroyed, since it becomes heat, and the atoms in food are not used up but cycle back to the soil, water and air. Ecologists have found that other things matter too, such as the size of the habitat, since in one study bigger lakes held longer food chains, so energy is the textbook reason but not the whole story.",
+   "facts": [
+    "F13",
+    "F14",
+    "F15",
+    "F18",
+    "M2",
+    "M3"
+   ],
+   "grade_note": "Seventh-grade ecology explains why food chains rarely run past four or five levels by the energy lost at each step."
+  },
+  {
+   "tier": 3,
+   "topic": "energy-through-the-food-web",
+   "question": "Fungi and bacteria are a forest's main decomposers. Yet when ecologists number the steps of the forest's food chains, from the plants up to the top predators, they usually leave the decomposers out. Why do they leave them out?",
+   "answer": "They feed on dead matter from every level",
+   "choices": [
+    "They feed on dead matter from every level",
+    "They feed only on dead leaves and fallen wood",
+    "They pass no energy on to other living things",
+    "They hold too little energy to be counted"
+   ],
+   "context": "Decomposers feed on dead plants, droppings and dead animals from every level, the top predators included, so they fit no single step of the chain. They take in a great deal of energy, since on land most plant growth is never eaten by plant-eaters while it lives and most of it is broken down by decomposers when it dies, and tiny soil animals feed on the decomposers in turn.",
+   "facts": [
+    "F17",
+    "F19",
+    "F21"
+   ],
+   "grade_note": "Seventh grade places decomposers in the flow of energy and matter, feeding on the remains of every level."
+  },
+  {
+   "tier": 3,
+   "topic": "energy-through-the-food-web",
+   "question": "On a grassland, grasshoppers eat the grass, songbirds eat the grasshoppers, and hawks eat the songbirds. Each songbird weighs many times as much as a grasshopper. If an ecologist could weigh all the grasshoppers together and all the songbirds together, which would weigh more?",
+   "answer": "The grasshoppers, as there are so many more of them",
+   "choices": [
+    "The grasshoppers, as there are so many more of them",
+    "The songbirds, as each outweighs many grasshoppers",
+    "About the same, as each bird eats its own weight",
+    "The songbirds, as they take in the grasshoppers' energy"
+   ],
+   "context": "One grasshopper is tiny, but a grassland holds so many of them that all together they far outweigh the songbirds that hunt them. Judging a feeding level by the size of one animal misleads: it is the weight of the whole level that counts.",
+   "facts": [
+    "F12",
+    "M5",
+    "M2"
+   ],
+   "grade_note": "Seventh grade uses the pyramid of feeding levels to predict that the top level holds the least living matter and the fewest predators."
+  }
+ ],
+ "revised": {
+  "5fcfa29a6f": {
+   "old_hash": "ff5c533bb9",
+   "why": "Judge (medium, clarity): 'levels of consumers, counted up from the plants' could be read as counting the plants first, which made 'Quaternary consumer' a fair reading. The instruction is cut; knowing that the plant-eater is the primary consumer now decides it. Choices and context unchanged."
+  },
+  "5ba2ee766f": {
+   "old_hash": "e7f937ea5c",
+   "why": "Judge (medium): the stem stated the rule (a tenth), so the question needed only arithmetic. The stem now names the rule of thumb without giving it, so the student must know the tenth and apply it twice. Choices and context unchanged."
+  },
+  "736100af8a": {
+   "old_hash": "d09cae561e",
+   "why": "Fact-check uncertain: 'most food chains have only four or five levels' implied most have exactly that many; now 'rarely have more than four or five'. The disputed 'longer where there is more plant growth' is replaced by the size of the habitat (Post, Pace and Hairston 2000, F18). Key shortened so it is not the longest choice."
+  },
+  "44568db950": {
+   "old_hash": "5ae6045c11",
+   "why": "Judge (medium): T1 knowledge alone picked the key ('make their own food' and 'take in no energy' were not live). 'Every level' is now the discriminator against 'only dead leaves and fallen wood', and the other two wrong choices are honest misconceptions about decomposers' energy (too little to count; a dead end, against F21). Stem says 'steps' so the key does not echo it. Fact-check uncertain fixed: 'never eaten by plant-eaters while it lives' (F19)."
+  },
+  "f5ada8e3b6": {
+   "old_hash": "d56ca53a60",
+   "why": "Judge (medium): the key (the top predator weighs least) repeated the unit's pyramid idea and was close to common sense. Now the comparison the trap M5 is for: many tiny grasshoppers against fewer, heavier songbirds, with the energy-builds-up misconception (M2) as a wrong choice."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "ad1e3fcfb8",
+   "question": "A carbon atom in a blade of grass passes to a rabbit that eats the grass, then to a fox that eats the rabbit, carried along with some of the food's energy. When the fox dies, fungi and bacteria break its body down. Which of the two can new grass use again?",
+   "why": "Judge (high): re-asks T1 decomposers-and-recycling-matter (matter is reused, energy is not: the rotting log and the pumpkin). Fact-check error: its context said every food chain runs on sunlight (vent and cave webs run on chemical energy). No rewrite on the same fact avoided both the T1 overlap and a sealed-globe tell, so it is dropped; nine questions remain."
+  }
+ ]
+}

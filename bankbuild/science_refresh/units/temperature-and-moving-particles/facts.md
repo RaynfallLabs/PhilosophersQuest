@@ -248,3 +248,28 @@ M6. A heated ring's hole shrinks, as if the metal expanded inward (Kenyon,
 F9): the everyday idea that a gap shares in the heating rather than being
 closed by the solid around it.
     https://physics.kenyon.edu/EarlyApparatus/Thermodynamics/sGravesandes_Apparatus/sGravesandes_Apparatus.html
+
+## Added in the revision (2026-11-26)
+
+F23. The Kelvin scale's history, corrected: Thomson's 1848 absolute scale was
+built on Carnot's theory, its parameters "arbitrarily chosen to coincide with
+the Celsius scale at 0° and 100 °C"; the scale used today, starting at
+absolute zero, comes from "a second absolute scale" that Thomson and Joule
+worked out in 1854. So "worked out in the mid-1800s", never "1848". The
+draft's Kelvin question is dropped; no question names a date for the scale.
+    https://en.wikipedia.org/wiki/Kelvin ; https://web.lemoyne.edu/GIUNTA/KELVIN.html ; https://grokipedia.com/page/Kelvin (gives 1848 only)
+
+F24. Even very cold solids hold thermal energy. Illinois Physics Van: "the
+particles of solids are in perpetual vibration", and "the energy associated
+with these molecular motions already is exactly what we call 'heat'"; only at
+absolute zero is "everything at the lowest possible energy state".
+Grokipedia (Thermal energy): "a frozen lake has more total thermal energy
+than a pot of boiling water", and in solids "lattice vibrations" contribute to
+the thermal energy. So ice at -80 degrees Celsius holds thermal energy, against
+M5 (only warm things have it) and M2 (cold as a substance that soaks in).
+    https://van.physics.illinois.edu/ask/listing/29242 ; https://grokipedia.com/page/Thermal_energy ; https://waps.cfa.harvard.edu/mosart/misconceptions.php
+
+F25. Laboratory ultra-low temperature freezers hold their contents at -80 to
+-86 degrees Celsius (the "minus 80 freezer"); home freezers are kept at 0
+degrees Fahrenheit (-18 degrees Celsius) or lower.
+    https://en.wikipedia.org/wiki/ULT_freezer ; https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety ; https://food.unl.edu/article/refrigerator-and-freezer-storage

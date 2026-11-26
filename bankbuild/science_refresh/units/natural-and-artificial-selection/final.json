@@ -1,0 +1,235 @@
+{
+ "unit": "natural-and-artificial-selection",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "natural-and-artificial-selection",
+   "question": "Charles Darwin set out natural selection in On the Origin of Species in 1859, and in the book's fifth edition, ten years later, he took up Herbert Spencer's phrase for it, survival of the fittest. Four stags share one wood: one wins the most fights, one fathers the most fawns, one runs the fastest and one lives the longest. Which stag does a biologist call the fittest?",
+   "answer": "The one that fathers the most fawns",
+   "choices": [
+    "The one that fathers the most fawns",
+    "The one that wins the most fights",
+    "The one that runs the fastest",
+    "The one that lives the longest"
+   ],
+   "context": "To a biologist, fitness means how many young an animal leaves to carry its traits on; strength, speed and a long life count only as far as they help it breed. A stag that wins every fight but fathers no fawns passes none of his traits to the next generation. Darwin's idea is that living things whose inherited traits suit their surroundings leave more young, so those traits grow more common, generation after generation.",
+   "facts": [
+    "F1",
+    "F3",
+    "F6"
+   ],
+   "grade_note": "Seventh grade names natural selection as Darwin's idea, and fitness as leaving young (not strength) is the standard way it is explained."
+  },
+  {
+   "tier": 3,
+   "topic": "natural-and-artificial-selection",
+   "question": "Charles Darwin kept every breed of pigeon he could buy and joined two London pigeon clubs. A fantail pigeon spreads thirty or even forty tail feathers, where other pigeons have twelve or fourteen, and many breeds look as different from one another as wild species do. Where did Darwin conclude that all the breeds had come from?",
+   "answer": "One wild species, for all the breeds",
+   "choices": [
+    "One wild species, for all the breeds",
+    "A different wild species for each breed",
+    "Two wild species, crossed long ago",
+    "Several wild species, crossed together"
+   ],
+   "context": "Darwin concluded that every breed came from one wild bird, the rock pigeon, changed by breeders who chose which birds to mate, generation after generation; he called this \"man's power of accumulative selection.\" Most pigeon fanciers he met were sure that each main breed came from its own wild species. His book On the Origin of Species opens with such breeds, to show how far choosing can change a living thing.",
+   "facts": [
+    "F7",
+    "F8"
+   ],
+   "grade_note": "Seventh-grade accounts of Darwin tell how breeders' artificial selection, his pigeons above all, led him to natural selection."
+  },
+  {
+   "tier": 3,
+   "topic": "natural-and-artificial-selection",
+   "question": "Farmers bred wild cabbage, a plant of the mustard family, into several vegetables, each by choosing plants for a different part. Which vegetable came from choosing plants with the biggest clusters of flower buds?",
+   "answer": "Broccoli",
+   "choices": [
+    "Broccoli",
+    "Cabbage",
+    "Kohlrabi",
+    "Brussels sprouts"
+   ],
+   "context": "A head of broccoli is a crowd of unopened flower buds on thick stalks, and cauliflower came from the flower clusters too. Kale came from choosing big leaves, cabbage from the big bud at the tip of the plant, kohlrabi from a swollen stalk and Brussels sprouts from the small buds along its side. All of them still belong to the wild plant's one species, which many textbooks loosely call wild mustard, a name more often given to another plant, charlock.",
+   "facts": [
+    "F9",
+    "F8",
+    "F23",
+    "F24"
+   ],
+   "grade_note": "The wild-mustard family of vegetables is the standard seventh-grade example of artificial selection."
+  },
+  {
+   "tier": 3,
+   "topic": "natural-and-artificial-selection",
+   "question": "Dogs descend from wolves. Suppose a breeder lets only her smallest dogs have puppies, and over many generations her dogs grow smaller. In a hot city, meanwhile, stray dogs with short coats outlive long-coated ones and leave more pups, so short coats grow common there. Which change is artificial selection?",
+   "answer": "Only the small dogs, since a person chose the parents",
+   "choices": [
+    "Only the small dogs, since a person chose the parents",
+    "Only the short coats, since people built the hot city",
+    "Both, since dogs were tamed and bred by people",
+    "Neither, since no one changed the dogs' genes"
+   ],
+   "context": "Artificial selection is people choosing which plants or animals breed, as the breeder does with her smallest dogs; among the strays the heat, not a person, decided which dogs left more pups, so that change is natural selection, though it happens in a city people built. Neither needs anyone to change the dogs' genes directly: choosing which dogs breed is enough. Every breed, from the Chihuahua to the Great Dane, was shaped from wolves by people's choosing, and Robert Wayne's DNA studies in the 1990s showed that dogs descend from wolves, not partly from jackals, as Konrad Lorenz once thought.",
+   "facts": [
+    "F8",
+    "F3",
+    "F10",
+    "F4"
+   ],
+   "grade_note": "Seventh grade asks students to tell artificial selection (people choosing which animals breed) from natural selection, and wolves bred into dog breeds is the grade's main animal example."
+  },
+  {
+   "tier": 3,
+   "topic": "natural-and-artificial-selection",
+   "question": "Corn comes from teosinte, a wild grass of Mexico whose small ears hold about a dozen kernels or fewer, each sealed in a stony case. A change in one gene leaves a teosinte kernel bare. Over thousands of years, farmers there turned the grass into corn with bare kernels. What was the farmers' part in it?",
+   "answer": "Planting seed from the plants with the change",
+   "choices": [
+    "Planting seed from the plants with the change",
+    "Cracking the cases until plants stopped making them",
+    "Soaking the seeds until the gene itself changed",
+    "Crossing the grass with wheat to bring the change in"
+   ],
+   "context": "The farmers could not make the change happen; it arose by chance in a few plants, and by planting more of the seed they liked, they made it common. That choosing, generation after generation, is artificial selection, and it began in southwestern Mexico about 9,000 years ago. Cracked cases are not inherited, and wheat reached the Americas only when Europeans brought it, thousands of years later.",
+   "facts": [
+    "F11",
+    "F8",
+    "F22"
+   ],
+   "grade_note": "Seventh grade gives crops bred from wild ancestors, corn from teosinte among them, as examples of artificial selection."
+  },
+  {
+   "tier": 3,
+   "topic": "natural-and-artificial-selection",
+   "question": "Doctors cleared a woman's chest infection twice with the same antibiotic. The third time, the drug barely worked, and tests in the hospital laboratory showed that her infection now resisted it. What had become resistant, and how?",
+   "answer": "The bacteria, as resistant ones lived and multiplied",
+   "choices": [
+    "The bacteria, as resistant ones lived and multiplied",
+    "Her body, as it grew used to the drug over the years",
+    "The bacteria, as each one learned to stand the drug",
+    "Her immune system, as it began to fight the drug off"
+   ],
+   "context": "Each dose killed the bacteria the drug could kill, and the few that could resist it lived and multiplied, passing their resistance on, so the infection came back resistant. No bacterium learns to resist, and a person's body never becomes resistant to an antibiotic, though a World Health Organization survey in 2015 found that three people in four thought it did.",
+   "facts": [
+    "F12",
+    "F13",
+    "F4"
+   ],
+   "grade_note": "Seventh-grade standards ask students to apply natural selection to new cases, and antibiotic resistance is the usual one."
+  },
+  {
+   "tier": 3,
+   "topic": "natural-and-artificial-selection",
+   "question": "A new chemical spray for killing insects came into wide use in the 1940s, and at first it worked well against houseflies. By 1947, flies in parts of Europe were surviving it, and the spraying was failing. Why could resistance spread through the flies so quickly?",
+   "answer": "Flies pass through many generations a year",
+   "choices": [
+    "Flies pass through many generations a year",
+    "Each fly grew tougher after its first dose",
+    "The spray changed the flies' genes to resist it",
+    "Resistant flies passed it on to others by touch"
+   ],
+   "context": "The spray was DDT. Natural selection works from one generation to the next, and a housefly can grow from egg to adult in about ten days, so flies pass through ten or more generations a year; each spraying left the rare flies that could survive it to breed, and their young inherited the resistance, which no fly can catch from another by touch. More than 500 kinds of insect have since evolved resistance to some pesticide.",
+   "facts": [
+    "F14",
+    "F15",
+    "F4"
+   ],
+   "grade_note": "Seventh grade applies natural selection to insects resisting a pesticide and explains why fast breeders change fast."
+  },
+  {
+   "tier": 3,
+   "topic": "natural-and-artificial-selection",
+   "question": "Bernard Kettlewell marked pale and dark peppered moths with a dot of paint under the wings and set them free in a wood near Birmingham, where soot had blackened the bark. When he trapped as many as he could, more of the dark ones came back. He then did the same in a clean wood in Dorset, its bark pale with lichen. What did adding the clean wood show?",
+   "answer": "Matching the bark, not darkness, kept moths alive",
+   "choices": [
+    "Matching the bark, not darkness, kept moths alive",
+    "Soot on the bark poisons pale moths but not dark",
+    "Dark moths are hardier than pale ones in any wood",
+    "Dark moths stay near home, so more get trapped"
+   ],
+   "context": "In Dorset he recaptured two to three times as many of the pale moths as the dark, the reverse of Birmingham, so the dark moths were not simply hardier or easier to trap, and in a wood with no soot, soot could not be the cause. In each wood, birds hunting by sight had eaten more of the moths that stood out against the bark, and Niko Tinbergen filmed them doing it. The dark form had been rare before factory soot blackened the woods, yet by 1895 it made up about 98 moths in 100 around Manchester.",
+   "facts": [
+    "F17",
+    "F18"
+   ],
+   "grade_note": "The peppered moth is the classic seventh-grade example of natural selection, and Kettlewell's two woods, each the other's comparison, are its first test."
+  },
+  {
+   "tier": 3,
+   "topic": "natural-and-artificial-selection",
+   "question": "Critics said Bernard Kettlewell had set his peppered moths on bare tree trunks, far more crowded than in the wild. Michael Majerus tested it again for six years in his garden near Cambridge, where the air had long been clean. Each night he let a dozen moths settle on branches, as wild ones mostly do, and at dawn he watched for birds. What did his results mean for Kettlewell's main finding?",
+   "answer": "It held up on the moths' natural resting sites",
+   "choices": [
+    "It held up on the moths' natural resting sites",
+    "It held only for moths crowded on bare trunks",
+    "It held only in woods blackened by soot",
+    "It was wrong, for birds took more pale moths"
+   ],
+   "context": "Nine kinds of bird, robins and blue tits among them, took the dark moths more often than the pale, and over those years the dark form near Cambridge fell from about 12 moths in 100 to 1. Majerus died in 2009, and four colleagues published his results in 2012 as the most direct evidence yet that camouflage and bird predation drive the change. A 2002 book's charge that Kettlewell had cheated was examined by scientists and found to be without merit.",
+   "facts": [
+    "F19",
+    "F20",
+    "F21"
+   ],
+   "grade_note": "Seventh-grade accounts of the peppered moth now add Majerus's re-test, which answered the critics of Kettlewell's method and confirmed his result."
+  },
+  {
+   "tier": 3,
+   "topic": "natural-and-artificial-selection",
+   "question": "Rose breeders crossed roses for generations and kept the bluest of the seedlings, hoping for a true blue rose. They raised lilac, lavender and purple roses, but never a blue one. Why did all their choosing fail?",
+   "answer": "No rose had a gene for making blue colour",
+   "choices": [
+    "No rose had a gene for making blue colour",
+    "The gene for blue stayed hidden in every rose",
+    "Each new cross blended the blue away again",
+    "They had not chosen for enough generations"
+   ],
+   "context": "Breeding can only choose among differences that already exist, and roses lack the gene needed to make delphinidin, the blue pigment that pansies make, so no rose had any blue to choose. A gene does not blend away in a cross, and a hidden one shows up again in later seedlings, but a gene that no rose has can never turn up. Two companies, Florigene and Suntory, later made a bluish rose by putting a pansy gene into a rose, which is genetic engineering, not selection, and even that rose is lavender-mauve.",
+   "facts": [
+    "F25",
+    "F4",
+    "F8"
+   ],
+   "grade_note": "Seventh grade teaches that artificial selection can only choose among traits a population already has, and sets it beside genetic engineering as two ways people change living things (MS-LS4-5)."
+  }
+ ],
+ "revised": {
+  "12beb72a5d": {
+   "old_hash": "b6a4b37f38",
+   "why": "Fact-check uncertain: Darwin first printed Spencer's phrase in 1868 (Variation under Domestication); 'ten years later' is true of the Origin's fifth edition (1869), which the stem now names (F6). Key, choices and context unchanged."
+  },
+  "f56e5f659f": {
+   "old_hash": "6d1ae00de0",
+   "why": "Fact-check uncertain: the largest genetic study puts the crops' origin in the eastern Mediterranean and finds the western European cliff cabbages feral (F23), so the stem no longer gives them as the ancestor's home. The context now says 'wild mustard' is a loose name, more often given to charlock (F24). Judge (low): the stem's method clause no longer spells out saving seed generation after generation, which gave away d5dda55a37's answer. Key and choices unchanged."
+  },
+  "330e731ee4": {
+   "old_hash": "6c904c4334",
+   "why": "Judge (medium): the Wayne DNA question asked the same fact as the pigeon question (all the breeds come from one wild species), and 'dogs come from wolves' is everyday knowledge. Re-aimed, as the judge proposed, at the classify task the scope names: a breeder's choice against a hot city's selection (F3, F8). Wayne and Lorenz stay in the context (F10). The lead's note that T3 must not re-ask 'dog breeds are one species' is kept."
+  },
+  "d5dda55a37": {
+   "old_hash": "d5dda55a37",
+   "why": "Judge (low, tell): 'Roasting the seeds until the gene itself changed' was weak, since roasted seed does not grow. Now 'Soaking the seeds', as the judge proposed; the misconception behind it (the surroundings change genes on purpose, F4) is unchanged. Stem, key and context unchanged."
+  },
+  "b6d06f1cfe": {
+   "old_hash": "b6d06f1cfe",
+   "why": "Judge (medium, tell): 'Flies are so small that the poison wears off' was not live and did not explain speed. Replaced, as the judge proposed, by the contagion misconception, 'Resistant flies passed it on to others by touch', which also explains a fast spread (false: resistance is inherited, F14). Judge (low, voice): 'Flies raise many generations' became 'Flies pass through many generations a year'. Stem unchanged."
+  },
+  "11c9a7699f": {
+   "old_hash": "388aa73b3e",
+   "why": "Judge (medium, grade): the result asked (the moths that matched the bark came back more) followed from T2 variation-and-survival's beetles and finches, and it was the only choice that depended on the wood. Re-aimed, as the judge proposed, at what the second wood added: the stem gives the Birmingham result only, and the choices are the rival explanations the clean wood rules out (soot, hardier dark moths, dark moths easier to trap; F18). The Dorset result is now in the context."
+  },
+  "a6bc268145": {
+   "old_hash": "d5ed63d697",
+   "why": "Judge (medium): the question asked the same fact as 388aa73b3e (in clean woods birds take more of the dark moths), and 'Bats, not birds, ate nearly all' was weak. Re-aimed, as the judge proposed, at what the re-test meant for the critics' charge: the key is that the finding held up on natural resting sites (F19, F20); the wrong choices are the critics' crowded trunks, a soot-only finding, and a reversed result. The bat choice is gone."
+  }
+ },
+ "added": {
+  "969af57aff": "Added to replace the dropped Gorongosa question, on another fact of the scope: artificial selection works only on variation that already exists (F25, F4, F8). The respectable wrong ideas are honest: a hidden recessive gene, blending inheritance, and not waiting long enough. Facts: F25, F4, F8."
+ },
+ "dropped": [
+  {
+   "old_hash": "1efa6664ca",
+   "question": "Ivory hunters killed about nine in ten of the elephants in Gorongosa National Park, in Mozambique, during years of war. A few female elephants are born with no tusks at all. Before the war, nearly one female in five was tuskless; by 2000, about half of them were. What best explains the change?",
+   "why": "Judge (high, grade): it re-ran T2 variation-and-survival (the beetles and the hurricane lizards: a trait some already had is spared and inherited, no individual changes itself), with the same wrong choices. The judge's re-angle, the tuskless daughters born after the war, was not safe: their share is reported as about a third (PBS, National Geographic) or about half (NPR), and the paper's 50.9 percent is a share of all females sighted, not of survivors (F26). The other re-angles (naming the process, poaching as the pressure) either re-ask the T2 fact or turn on a contested label (natural or artificial selection by poachers). Replaced by the blue rose question."
+  }
+ ]
+}

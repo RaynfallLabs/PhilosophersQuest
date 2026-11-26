@@ -1,0 +1,78 @@
+{
+ "unit": "body-systems-control-and-support",
+ "questions": {
+  "d683f45ab7": {
+   "verdict": "pass",
+   "why": "Old grade issue fixed: an adult's long-bone shafts hold yellow, fatty marrow (red marrow stays in the axial bones and the upper ends of femur and humerus), so the T1/T2 fact 'marrow makes blood' is now the trap, not the key. Seventh-grade content (red and yellow marrow). All four choices live; facts and context true.",
+   "sources": [
+    "https://grokipedia.com/page/Bone_marrow",
+    "https://grokipedia.com/page/Femur",
+    "https://grokipedia.com/page/Bone",
+    "https://grokipedia.com/page/Skeletal_pneumaticity"
+   ]
+  },
+  "d94aa18043": {
+   "verdict": "pass",
+   "why": "Dead choices replaced by two live misconceptions (dissolve and reuse calcium; shrink away), both false: the bones fuse. Context true.",
+   "sources": [
+    "https://grokipedia.com/page/Human_skeleton",
+    "https://health.clevelandclinic.org/how-many-bones-does-a-baby-have"
+   ]
+  },
+  "1e2aed737c": {
+   "verdict": "pass",
+   "why": "No longer re-asks T1's biceps fact: the knee reverses the elbow's front-muscle-bends picture, so the mirror choice is a real trap. Quadriceps extends the knee, hamstrings flex it (antagonists). The relaxing antagonist is the grade-level simplification (some co-contraction occurs); the key is the one defensible answer.",
+   "sources": [
+    "https://grokipedia.com/page/Quadriceps",
+    "https://kidshealth.org/en/parents/bones-muscles-joints.html"
+   ]
+  },
+  "6e5ecfe901": {
+   "verdict": "pass",
+   "why": "Fact error fixed: the stem no longer credits the lens with focusing; the context gives the cornea about two-thirds, the lens the rest. Re-aimed at the retina's photoreceptors turning light into signals, which no T1/T2 question asks; four parallel parts of the eye, each placed correctly (lens behind the iris, iris around the pupil, cornea at the front). 'Light enters through the pupil' is a standard simplification.",
+   "sources": [
+    "https://grokipedia.com/page/Human_eye",
+    "https://grokipedia.com/page/Retina"
+   ]
+  },
+  "652941649e": {
+   "verdict": "pass",
+   "why": "The sting-felt-later clue is gone from the stem; the nerve choice is a real confusion. Integration in the spinal cord, bypassing the brain, is right. T1 born-knowing-or-learned names reflexes but never the spinal cord.",
+   "sources": [
+    "https://grokipedia.com/page/Reflex_arc",
+    "https://grokipedia.com/page/Withdrawal_reflex"
+   ]
+  },
+  "7a23b57ee3": {
+   "verdict": "pass",
+   "why": "Dead 'above the injury' choice replaced by the misconception the stem sets up ('Nothing, since her legs are unhurt'); weakest of the four but live for a student who does not know the cord carries signals both ways. Facts true; tone clinical.",
+   "sources": [
+    "https://grokipedia.com/page/Spinal_cord_injury"
+   ]
+  },
+  "9722d442f2": {
+   "verdict": "pass",
+   "why": "'Normally the size of a pea' fixes the enlarged-gland point; 'seeped from cell to cell' is a live, false choice. Wadlow 1940, 2.72 m, Alton, still growing: true. Hormones carried in the blood is 7th-grade content not asked lower down.",
+   "sources": [
+    "https://grokipedia.com/page/Robert_Wadlow",
+    "https://kidshealth.org/en/parents/endocrine.html"
+   ]
+  },
+  "9f40fcdc52": {
+   "verdict": "pass",
+   "why": "'A teenage boy' is true whether he was 13 (Wikipedia) or 14 (University of Toronto archive). Nothing else changed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Leonard_Thompson_(diabetic)",
+    "https://collections.library.utoronto.ca/explore/insulin/about/patients"
+   ]
+  },
+  "9e74649f96": {
+   "verdict": "pass",
+   "why": "Dead 'dried oil' replaced by cartilage, which is bendy, found in the nose and has no nerves (so the stem does not rule it out), yet hair and nails are keratinized dead cells. 'His mother' fixes the odd nurse picture.",
+   "sources": [
+    "https://openstax.org/books/anatomy-and-physiology-2e/pages/5-2-accessory-structures-of-the-skin",
+    "https://grokipedia.com/page/Cartilage"
+   ]
+  }
+ }
+}

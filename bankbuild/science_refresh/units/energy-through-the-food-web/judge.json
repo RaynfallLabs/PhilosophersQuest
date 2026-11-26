@@ -1,0 +1,88 @@
+{
+ "unit": "energy-through-the-food-web",
+ "questions": {
+  "ff5c533bb9": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "medium",
+     "what": "'levels of consumers, counted up from the plants' can be read as counting the plants as the first level, which makes the owl the fourth and 'Quaternary consumer' (the fact sheet's own misconception M4) a fair reading of the stem's own instruction.",
+     "fix": "Cut the sentence and ask the name plainly: 'In a desert, mice eat seeds, snakes eat the mice, and owls swoop down on the snakes. What kind of consumer is the owl in this food chain?' Keep the four choices; knowing that the plant-eater is the primary consumer now decides it."
+    }
+   ]
+  },
+  "d99b4db3e0": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "959a5dc5a2": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "e7f937ea5c": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem states the rule (about a tenth passes on), so the question needs no science: anyone who takes a tenth of a tenth gets it. In a knowledge subject the stem should not hand over the fact being tested; what is left is a math-lane step.",
+     "fix": "Drop the rule sentence: 'In a meadow, rabbits eat the grass and foxes eat the rabbits. By the rough rule of thumb ecologists use for how much energy passes from one feeding level to the next, about what share of the grass's energy reaches the foxes?' Keep the choices: 'About a tenth' catches the one-step slip and 'About a fifth' the adding slip."
+    }
+   ]
+  },
+  "d700b0ef21": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'All three alike' is weak.",
+     "fix": "'All three alike, since energy is never destroyed' (a live misreading of T2's conservation of energy)."
+    }
+   ]
+  },
+  "e8080abfe1": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "d09cae561e": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "ad1e3fcfb8": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "Re-asks T1 decomposers-and-recycling-matter. Its rotting-log question has young trees take 'Nutrients set free from the wood', not 'Energy left over in the wood'; its pumpkin question sends the matter into air and soil, not 'changed into energy'; its scope line is 'matter is recycled again and again, while energy flows through once from the Sun'. A 5th grader who learned those answers picks 'The atom, but not the energy' with no T3 idea.",
+     "fix": "Ask the T3 half, that energy must keep coming in, on a new case (F16): 'A sealed glass globe holds seawater, algae, tiny shrimp and bacteria. It is never opened, yet kept by a window it can live for years, its atoms used over and over. What must keep reaching it from outside?' Choices: 'Light, for the algae to make food' (key) / 'Oxygen, seeping in for the shrimp' / 'Carbon, seeping in for the algae' / 'Nothing, as all it needs goes round inside'."
+    }
+   ]
+  },
+  "5ae6045c11": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "T1 knowledge alone picks the key. Decomposers feed on dead things (T1 decomposers-and-recycling-matter) and mushrooms are not producers (T1 food-chains-and-food-webs), so 'They make their own food, as plants do' is out, 'They take in no energy from what they eat' is not credible, and the only choice about dead matter wins without the T3 point that they feed from every level.",
+     "fix": "Make 'every level' the discriminator: key 'They feed on dead matter from every level'; wrong choices 'They feed only on fallen leaves and dead wood', 'They hold too little energy to be counted', 'They are not animals, so they are not consumers'."
+    }
+   ]
+  },
+  "d56ca53a60": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "The key (the top predator weighs least) is what d700b0ef21 and e8080abfe1 already teach (less at each level up) and close to common sense (there are only a few hawks), so the unit asks its pyramid idea a third time with little to apply. The fact sheet's trap M5 (one grasshopper is tiny) only bites if a student must weigh grasshoppers against songbirds, and this question never makes him.",
+     "fix": "Ask the comparison the trap is for: 'On a grassland, grasshoppers eat the grass, songbirds eat the grasshoppers, and hawks eat the songbirds. One songbird weighs as much as dozens of grasshoppers. If an ecologist could weigh all the grasshoppers together and all the songbirds together, which would weigh more?' Choices: 'The grasshoppers, as there are so many more of them' (key) / 'The songbirds, as each outweighs dozens of grasshoppers' / 'About the same, as each bird eats its own weight' / 'The songbirds, as they take in the grasshoppers' energy'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Overlap check against every final.json. ad1e3fcfb8 re-asks T1 decomposers-and-recycling-matter (rotting log and pumpkin; that unit's scope also holds 'matter is recycled, energy flows through once'): high, rewrite to the sealed-globe case. 5ae6045c11 leans on T1 decomposers-and-recycling-matter and T1 food-chains-and-food-webs (mushrooms are not producers): fix the choices so 'every level' decides. Within the unit, d56ca53a60 repeats the shrink-up-the-pyramid idea of d700b0ef21 and e8080abfe1: rewrite to grasshoppers against songbirds. No other overlap: T1 food-chains-and-food-webs names herbivore, carnivore and omnivore but never the numbered consumer levels; T2 kinetic-and-potential-energy (energy is not destroyed; friction makes heat) and T2 how-plants-make-food (the grass's energy is from sunlight) only rule out wrong choices in 959a5dc5a2 and d09cae561e, which is fine. The scope is fully covered (levels, the pyramid and why it shrinks, the tenth, few top predators, short chains, matter against energy). No discovery story yet: Charles Elton's pyramid of numbers (1927) or Raymond Lindeman's Cedar Bog Lake (1942), both on the fact sheet, would suit T3 if a question is swapped. Arithmetic only in e7f937ea5c, a tenth of a tenth, easy in the head. Lanes clean: no named species' anatomy, and the camper's two meals are levels, not diet. No voice slips, no singular they ('they' in 5ae6045c11 is the ecologists)."
+}

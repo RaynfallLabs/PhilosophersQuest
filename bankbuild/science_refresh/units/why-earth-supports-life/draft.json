@@ -1,0 +1,187 @@
+{
+ "unit": "why-earth-supports-life",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "why-earth-supports-life",
+   "question": "Astronomers call the band of distances around a star where a planet's surface could keep liquid water the star's habitable zone. A red dwarf is a star far dimmer and cooler than the Sun. Where does a red dwarf's habitable zone lie?",
+   "answer": "Much closer to it than Earth is to the Sun",
+   "choices": [
+    "Much closer to it than Earth is to the Sun",
+    "About as far from it as Earth is from the Sun",
+    "Much farther from it than Earth is from the Sun",
+    "Nowhere, since so dim a star cannot warm a planet"
+   ],
+   "context": "A dimmer star gives off less light and heat, so a planet must circle closer to it to stay warm enough for liquid water. The red dwarf TRAPPIST-1 has three planets in its habitable zone, and all three orbit far closer to it than Mercury does to the Sun. Earth sits inside the Sun's habitable zone, while Venus lies inside its inner edge.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3"
+   ],
+   "grade_note": "Seventh grade teaches the habitable or Goldilocks zone, the distance from a star where water stays liquid, and applies the idea to stars brighter or dimmer than the Sun."
+  },
+  {
+   "tier": 3,
+   "topic": "why-earth-supports-life",
+   "question": "The Moon circles Earth, so it travels round the Sun at the same distance and gets about as much sunlight. Yet it has almost no air, and any water left on its surface soon escapes into space. Why can the Moon not hold on to air the way Earth does?",
+   "answer": "Its gravity is too weak to hold gas",
+   "choices": [
+    "Its gravity is too weak to hold gas",
+    "Earth's gravity pulls its gas away",
+    "It has no ozone layer to seal air in",
+    "It spins too slowly to keep air"
+   ],
+   "context": "Some molecules of any gas move fast enough to escape a weak pull, and a gas molecule needs only about 2.4 kilometres a second to escape the Moon, against about 11.2 for Earth. Over the ages any air the Moon had leaked away into space. Being in the habitable zone is not enough: a world also needs gravity strong enough to keep its air.",
+   "facts": [
+    "F5"
+   ],
+   "grade_note": "Seventh-grade lessons on why Earth supports life explain that a world needs gravity strong enough to hold an atmosphere, which the small Moon lacks."
+  },
+  {
+   "tier": 3,
+   "topic": "why-earth-supports-life",
+   "question": "Earth's average surface temperature is about 15 degrees Celsius. Some gases in its air, called greenhouse gases, slow the escape of heat from the ground into space. Suppose they all vanished while the Sun shone just as before. About what would Earth's average temperature become?",
+   "answer": "About -18 degrees Celsius",
+   "choices": [
+    "About -60 degrees Celsius",
+    "About -18 degrees Celsius",
+    "About 5 degrees Celsius",
+    "About 14 degrees Celsius"
+   ],
+   "context": "Without its greenhouse gases Earth would average about -18 degrees Celsius, some 33 degrees colder than today and well below the freezing point of water. These gases are only a small part of the air, yet this natural greenhouse effect keeps Earth mild enough for liquid water. About -60 degrees is the average on Mars.",
+   "facts": [
+    "F6",
+    "F16"
+   ],
+   "grade_note": "Seventh grade teaches that the greenhouse effect keeps Earth's temperatures mild enough for life, warming it by about 33 degrees."
+  },
+  {
+   "tier": 3,
+   "topic": "why-earth-supports-life",
+   "question": "By day, sunlight passes through Earth's air and warms the ground. The warm ground then sends energy back up toward space as infrared light, which human eyes cannot see. Some gases in the air, such as water vapour and carbon dioxide, are called greenhouse gases. What do they do to the rising infrared light?",
+   "answer": "Absorb much of it and send part back down",
+   "choices": [
+    "Absorb much of it and send part back down",
+    "Reflect all of it back down like a mirror",
+    "Let all of it pass straight out to space",
+    "Trap all of it, so none ever leaves Earth"
+   ],
+   "context": "Greenhouse gases absorb much of the infrared light and give it off again in every direction, some of it back toward the ground, so heat leaves Earth more slowly. They do not bounce it back like a mirror, and they do not trap it for good, since Earth still sends energy out to space. Nitrogen and oxygen, nearly all of the air, let infrared light pass straight through.",
+   "facts": [
+    "F7",
+    "F8"
+   ],
+   "grade_note": "Seventh grade explains the greenhouse effect as gases in the air absorbing the heat the ground gives off and sending some of it back down."
+  },
+  {
+   "tier": 3,
+   "topic": "why-earth-supports-life",
+   "question": "Rocks laid down in Earth's early days show that its air then held almost no free oxygen. Today oxygen makes up about a fifth of the air, and animals depend on it with every breath. Where did most of that oxygen come from?",
+   "answer": "Microbes that made food from sunlight",
+   "choices": [
+    "Microbes that made food from sunlight",
+    "Volcanoes that breathed it out of the ground",
+    "Comets that brought it from deep space",
+    "Rocks that gave it off as they weathered"
+   ],
+   "context": "Cyanobacteria, microbes that make their food by photosynthesis, began filling the air with oxygen about 2.4 billion years ago, in what is called the Great Oxidation Event. At first the oxygen joined with iron dissolved in the sea, and only later did it build up in the air. Volcanic gas is mostly water vapour, carbon dioxide and sulfur dioxide, not oxygen.",
+   "facts": [
+    "F10"
+   ],
+   "grade_note": "Seventh-grade lessons on Earth's atmosphere teach that its oxygen was made by photosynthesising microbes long before animals appeared."
+  },
+  {
+   "tier": 3,
+   "topic": "why-earth-supports-life",
+   "question": "Most of Earth's ozone gas lies in a layer of the air about 15 to 35 kilometres above the ground, in the stratosphere. Suppose the ozone layer above a town grew much thinner for a few months. What would the townspeople need to guard against more than before?",
+   "answer": "Sunburn from the Sun's ultraviolet light",
+   "choices": [
+    "Sunburn from the Sun's ultraviolet light",
+    "Heatstroke from hotter air near the ground",
+    "Shortness of breath from air low in oxygen",
+    "Harm from the Sun's charged particles"
+   ],
+   "context": "The ozone layer absorbs most of the Sun's ultraviolet light, which burns skin, harms eyes and can lead to skin cancer, so a thinner layer lets more of it reach the ground. The extra ultraviolet light does not make the air noticeably hotter, and the oxygen people breathe is in the lower air, not the ozone layer. Scientists reported a thin patch like this, the ozone hole, over Antarctica in 1985.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "Seventh grade teaches that the ozone layer protects living things by blocking much of the Sun's harmful ultraviolet light."
+  },
+  {
+   "tier": 3,
+   "topic": "why-earth-supports-life",
+   "question": "Molten iron churning in Earth's outer core makes a magnetic field that reaches far out into space around the planet. Suppose the field vanished. Which of the things the Sun sends out would then strike the top of Earth's air far more than before?",
+   "answer": "The solar wind",
+   "choices": [
+    "The solar wind",
+    "The ultraviolet light",
+    "The infrared light",
+    "The visible light"
+   ],
+   "context": "The solar wind is a thin stream of electrically charged particles, and a magnetic field pushes on moving charged particles, so Earth's field now steers most of them around the planet; a few are guided down near the poles, where they make the air glow as auroras. Light carries no charge and crosses the field unbent, so it would reach the air just as before. Ultraviolet light is held back by the ozone layer instead.",
+   "facts": [
+    "F14",
+    "F15"
+   ],
+   "grade_note": "Seventh grade teaches that Earth's magnetic field shields it from the solar wind, one of the features that let Earth support life."
+  },
+  {
+   "tier": 3,
+   "topic": "why-earth-supports-life",
+   "question": "Mars lost its global magnetic field about 4 billion years ago. A NASA spacecraft began orbiting Mars in 2014 to measure how the solar wind, the Sun's stream of charged particles, strikes the top of the planet's air. What did the spacecraft's team find the solar wind has done to Mars over the ages?",
+   "answer": "Stripped much of its air away into space",
+   "choices": [
+    "Stripped much of its air away into space",
+    "Boiled its seas away with the Sun's heat",
+    "Blown its dust up into planet-wide storms",
+    "Turned its rocks and dust red with rust"
+   ],
+   "context": "With no global magnetic field to turn it aside, the solar wind knocks gas off the top of Mars's air into space, about 100 grams every second today and likely far more when the young Sun was stormier. In 2017 the spacecraft's team reported that most of Mars's air had been lost this way. Dry riverbeds show that water once flowed on Mars, which is now a frigid desert.",
+   "facts": [
+    "F16",
+    "F17",
+    "F18"
+   ],
+   "grade_note": "Seventh grade compares Earth with Mars, a thin-aired, cold world that lost its magnetic shield and most of its air."
+  },
+  {
+   "tier": 3,
+   "topic": "why-earth-supports-life",
+   "question": "Venus and Mars both have air made mostly of carbon dioxide, a greenhouse gas. On Venus that gas warms the ground by hundreds of degrees, while on Mars it warms the ground hardly at all. What makes the difference?",
+   "answer": "Venus's air holds vastly more of the gas",
+   "choices": [
+    "Venus's air holds vastly more of the gas",
+    "Venus's clouds let all of the sunlight through",
+    "Mars's carbon dioxide is too cold to trap heat",
+    "Venus spins so slowly that its long days bake it"
+   ],
+   "context": "Venus's atmosphere is more than 10,000 times as massive as Mars's, so it absorbs far more of the heat rising from the ground; Mars has so little air that its greenhouse warming is slight. Venus's clouds actually reflect about three-quarters of the sunlight, and its nights are as hot as its days. Scientists call what happened to Venus a runaway greenhouse.",
+   "facts": [
+    "F19",
+    "F20",
+    "F21"
+   ],
+   "grade_note": "Seventh grade compares Earth with Venus, far too hot, and Mars, too cold and thin-aired, to explain why Earth can support life."
+  },
+  {
+   "tier": 3,
+   "topic": "why-earth-supports-life",
+   "question": "Volcanoes on Earth and on Venus have given off carbon dioxide for billions of years. On Venus nearly all of it has stayed in the air, which is now about 96 percent carbon dioxide. Earth's air holds only a trace of the gas. Where has most of Earth's carbon dioxide gone?",
+   "answer": "Locked up in rocks such as limestone",
+   "choices": [
+    "Locked up in rocks such as limestone",
+    "Stored in the bodies of living things",
+    "Carried off into space by the solar wind",
+    "Frozen into the ice of the polar caps"
+   ],
+   "context": "Rain dissolves carbon dioxide and slowly wears down rock, and rivers carry what it dissolves to the sea, where it settles as carbonate rock such as limestone. Earth's carbonate rocks hold about as much carbon dioxide as Venus's whole atmosphere. Venus has no liquid water, so its carbon dioxide stays in the air.",
+   "facts": [
+    "F22",
+    "F20"
+   ],
+   "grade_note": "Seventh grade compares Earth's air with Venus's and teaches that Earth stores much of its carbon in rocks such as limestone."
+  }
+ ]
+}
