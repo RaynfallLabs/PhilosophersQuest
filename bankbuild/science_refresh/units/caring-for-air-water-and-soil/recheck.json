@@ -1,0 +1,58 @@
+{
+ "unit": "caring-for-air-water-and-soil",
+ "questions": {
+  "bc4ca1fe25": {
+   "verdict": "pass",
+   "why": "Old problems fixed: carbon monoxide replaces the dead water-vapour lure and is live (a real poison; that it thins out away from the fire is knowledge, not a stem tell); the particle pair is parallel. EPA: PM2.5 is the biggest threat in wildfire smoke; USDA Forest Service: CO and other gases are in very low concentrations a short way from a fire and particulate matter is the main concern to the public; EPA hair and lung figures match the context.",
+   "sources": [
+    "https://www.epa.gov/wildfires/wildfire-smoke-and-health",
+    "https://www.fs.usda.gov/air/health_impacts.htm",
+    "https://www.epa.gov/pm-pollution/particulate-matter-pm-basics",
+    "https://grokipedia.com/page/Smoke"
+   ]
+  },
+  "6918892ad7": {
+   "verdict": "pass",
+   "why": "Old problem fixed: the stem dates the study to 2022, the edition that ranks land runoff first, seeps second, spills third, oil and gas and vessel discharges after. All four lures fit 'a little at a time', so the stem rules none out.",
+   "sources": [
+    "https://www.nationalacademies.org/news/2022/09/land-based-runoff-remains-top-source-of-oil-in-the-ocean-says-new-report",
+    "https://www.ucdavis.edu/climate/news/most-oil-sea-comes-runoff-land-not-just-oil-spills"
+   ]
+  },
+  "f5a9a7c33b": {
+   "verdict": "pass",
+   "why": "Old problems fixed: the eleven-times figure is now an average (Wei et al. 2016: erosion-control ratio terraced to non-terraced 11.46 +/- 2.34); the run-off-before-it-lifts-soil lure is a real water-movement model, so the key is no longer the only choice about how water moves. Two water and two structure choices, balanced. No arithmetic, no advice.",
+   "sources": [
+    "https://research.fs.usda.gov/treesearch/53295",
+    "https://grokipedia.com/page/Terrace_(earthworks)",
+    "https://sera17.wordpress.ncsu.edu/terraces/"
+   ]
+  },
+  "7d51873cf9": {
+   "verdict": "pass",
+   "why": "Old problem fixed: the weight and crust lures are live pictures; UNL Extension confirms residue absorbs raindrop impact and reduces surface crusting, improving infiltration and decreasing runoff, so the crust lure is the opposite of the truth and keeps-rain-from-soaking-in is wrong. Facts only.",
+   "sources": [
+    "https://water.unl.edu/article/crop-production/residue-management",
+    "https://grokipedia.com/page/Soil_erosion",
+    "https://crops.extension.iastate.edu/encyclopedia/how-reduce-potential-soil-erosion-early-spring"
+   ]
+  },
+  "dcf1cf2a3e": {
+   "verdict": "pass",
+   "why": "Old problem fixed: USU Extension shows a 35 mph wind falling to about 10-15 mph some two heights behind a 35-foot windbreak (half or more) and protection from wind erosion for 10 to 20 times the height downwind; the context now says exactly that. Stem, choices and key unchanged and sound.",
+   "sources": [
+    "https://extension.usu.edu/forestry/publications/utah-forest-facts/005-windbreak-benefits-and-design",
+    "https://grokipedia.com/page/Windbreak"
+   ]
+  },
+  "cc2495e39d": {
+   "verdict": "pass",
+   "why": "Old problem fixed: the key is now the 6th-grade efficiency share (most becomes heat), not the T1 light-and-heat fact or the T2 not-used-up fact; the wattages are out of the stem, so the share cannot be worked out. Parallel share choices; the key is not the convergent one. Grokipedia: over 90 percent leaves as heat and infrared, 5-10 percent or less as light; FTC: a 60 W incandescent and a 9 W LED both give about 800 lumens. Facts only, no advice.",
+   "sources": [
+    "https://grokipedia.com/page/Incandescent_light_bulb",
+    "https://consumer.ftc.gov/articles/shopping-light-bulbs",
+    "https://grokipedia.com/page/Conservation_of_energy"
+   ]
+  }
+ }
+}

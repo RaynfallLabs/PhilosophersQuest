@@ -1,0 +1,51 @@
+{
+ "unit": "hypothesis-theory-and-law",
+ "questions": {
+  "969c0badad": {
+   "verdict": "pass",
+   "why": "Old problems fixed: the dead believer-count lure is replaced by the judge-by-subject lure, which is live and wrong; 'since' replaces 'for'. Sagan's dragon details (invisible, floats so no flour footprints, heatless fire, the no-dragon-at-all question) confirmed; 1995 book; Sagan an astronomer.",
+   "sources": [
+    "https://grokipedia.com/page/The_Demon-Haunted_World",
+    "https://en.wikipedia.org/wiki/The_Demon-Haunted_World",
+    "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/"
+   ]
+  },
+  "95026a0345": {
+   "verdict": "pass",
+   "why": "Old problem fixed as the judge proposed: the asking-other-scientists lure (Berkeley: ideas are judged by evidence, not popularity) makes the student tell a real test from a non-test, so the key no longer wins on the T1 fossil fact alone. Sinosauropteryx 1996, Liaoning, first non-avian dinosaur with feathers; over 30 feathered species (Grokipedia).",
+   "sources": [
+    "https://grokipedia.com/page/Feathered_dinosaur",
+    "https://en.wikipedia.org/wiki/Sinosauropteryx",
+    "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/"
+   ]
+  },
+  "caeaf20e1e": {
+   "verdict": "pass",
+   "why": "Old problems fixed: the law-promotion lure and context clause are gone; the two new lures (tell nothing yet; count for nothing until he knows why) are modest-sounding and wrong, so the key no longer falls by eliminating overclaims. Berkeley: science accepts or rejects ideas on evidence and does not prove them.",
+   "sources": [
+    "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+    "https://grokipedia.com/page/Hypothesis",
+    "https://www.noaa.gov/jetstream/ll-canned-heat"
+   ]
+  },
+  "619daa9136": {
+   "verdict": "pass",
+   "why": "Old error fixed: the context now says Boyle's law goes back to Boyle's 1662 measurements (Science History Institute: never stated outright in his work). The only-a-law-is-an-equation lure is wrong (kinetic theory has PV = 1/3 N m <v^2>) and mirrors the other equation lure. Kinetic theory dates from Clausius 1857 and Maxwell 1860, so 'more than 150 years' holds.",
+   "sources": [
+    "https://www.sciencehistory.org/stories/magazine/full-boyle",
+    "https://grokipedia.com/page/Boyle's_law",
+    "https://grokipedia.com/page/Kinetic_theory_of_gases",
+    "https://grokipedia.com/page/Scientific_theory"
+   ]
+  },
+  "5aa6ca9275": {
+   "verdict": "pass",
+   "why": "Old problems fixed: 'always' makes the reverse-ranking lure clearly wrong, removing the second defensible answer; the tested-more-times lure no longer re-tests another key. Low note only: all three lures now carry a sweeping word (for good, any, always), but the proof lure is the misconception the stem plants, so it stays live. Berkeley: theories and laws differ in breadth, not in level of support; Newton's laws hold only well below light speed.",
+   "sources": [
+    "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+    "https://grokipedia.com/page/Scientific_theory",
+    "https://grokipedia.com/page/Newton's_laws_of_motion"
+   ]
+  }
+ }
+}

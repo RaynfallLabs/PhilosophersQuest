@@ -1,0 +1,49 @@
+{
+ "unit": "measuring-like-a-scientist",
+ "questions": {
+  "2922b1d7da": {
+   "verdict": "pass",
+   "why": "Old grade problem fixed as the judge proposed: kilo- is tested on the kilojoule, a unit students have not memorised, so the question tests a prefix meaning the same factor on every unit. No conversion arithmetic. Grokipedia: the joule is the SI unit of energy and a kilojoule 10^3 joules, used on food labels; the EU mandates kJ.",
+   "sources": [
+    "https://grokipedia.com/page/Joule",
+    "https://grokipedia.com/page/Food_energy",
+    "https://grokipedia.com/page/Metric_prefix"
+   ]
+  },
+  "cba5994641": {
+   "verdict": "pass",
+   "why": "Old problem fixed: average-it-in and rerun-the-four-long-trials are live student habits, so it is no longer a two-way choice. Toronto error-analysis notes: a suspect value may be thrown out only if well documented and the measurement repeated; the context matches. No average is asked for.",
+   "sources": [
+    "https://faraday.physics.utoronto.ca/PVB/Harrison/ErrorAnalysis/Rejection.html",
+    "https://en.wikipedia.org/wiki/Outlier",
+    "https://grokipedia.com/page/Outlier"
+   ]
+  },
+  "60d3405444": {
+   "verdict": "pass",
+   "why": "Old problem fixed: the wide-spread lure now carries the misconception's reason, matching the others in shape. Grokipedia Pendulum: the period is independent of amplitude for small angles, so a wide spread comes from the measuring. The context no longer gives the stopwatch question's key.",
+   "sources": [
+    "https://grokipedia.com/page/Pendulum",
+    "https://grokipedia.com/page/Repeatability",
+    "https://grokipedia.com/page/Observational_error"
+   ]
+  },
+  "0a2b7efe80": {
+   "verdict": "pass",
+   "why": "Added question asks no calculation: it asks why a mean beats one run. Grade fit: TEKS 6.1F repeated trials and means; T1 keys only that each drop differs, and this unit's stopwatch question keys the cause, not the cancelling. Grokipedia Observational_error: random errors scatter around the true value in an unbiased way and are minimised by averaging; systematic errors do not shrink, so no-error-left is wrong. The picks-one-run lure is the weakest (low), but the spread lure is a real 6th-grade center-against-spread confusion.",
+   "sources": [
+    "https://grokipedia.com/page/Observational_error",
+    "https://grokipedia.com/page/Measurement_uncertainty",
+    "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-26"
+   ]
+  },
+  "2deca18b50": {
+   "verdict": "pass",
+   "why": "Old problems fixed: the two true-evaporation lures with real misconception reasons (the too-small-to-count one draws on the stem's 'hairline' and 'slowly') keep the no-change idea live; 'the dish's result' is clear. Grokipedia Pan_evaporation: evaporation is the water lost, and unaccounted loss overestimates it, so a leak reads as extra evaporation.",
+   "sources": [
+    "https://grokipedia.com/page/Pan_evaporation",
+    "https://edu.rsc.org/ideas/help-students-explain-anomalous-results/3008915.article"
+   ]
+  }
+ }
+}

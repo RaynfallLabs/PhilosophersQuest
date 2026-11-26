@@ -107,3 +107,11 @@ M4. "Only an experiment can test an idea", so ideas about the past cannot be tes
     https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/
 
 Note on a disagreement: Grokipedia's Hypothesis page says "a well-supported hypothesis may elevate to the status of a scientific theory", while Berkeley calls hypothesis-to-theory promotion a misconception. No question here keys anything on whether a hypothesis becomes a theory; the questions key only that a theory does not become a law (on which all the sources agree).
+
+## Added at revision (2026-11-26)
+
+F28. Boyle never stated his gas relation as a law: "Boyle's law was never stated outright in Boyle's work"; what we call Boyle's law "was originally published in 1662 in the appendix of the second edition of New experiments" as "a modest table of numbers displaying an inverse relationship between the pressure and volume of air" (Science History Institute). The table's column heading speaks of "the hypothesis, that supposes the pressures and expansions to be in reciprocal proportions". So Boyle's law goes back to Boyle's measurements of 1662; the name came later.
+    https://www.sciencehistory.org/stories/magazine/full-boyle ; https://www.chemteam.info/GasLaw/Gas-Boyle-Data.html
+
+F29. Agreement is not a test: Berkeley lists "Scientific ideas are judged democratically based on popularity" as a misconception and corrects it: "Scientific ideas are judged not by their popularity, but on the basis of the evidence supporting or contradicting them." Scientists come to accept an idea after it has "garnered many lines of supporting evidence".
+    https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/

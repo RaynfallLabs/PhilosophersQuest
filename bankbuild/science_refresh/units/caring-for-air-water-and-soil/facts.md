@@ -122,3 +122,17 @@ M4. Oil in the sea comes mostly from big tanker spills; the 2022 report ranks sp
 M5. Big, visible flakes of ash must be the worst part of smoke; EPA says the reverse: the finest specks are the biggest threat, and larger particles usually do not reach the lungs (F6-F8). (No study found that measures how common this belief is; it is listed as a natural lure, not a documented survey result.)
 
 M6. Trees always protect soil with their roots (the T1 lesson of the cleared hillside); a windbreak's roots reach only a strip near the row, and it protects the rest of the field by slowing the wind (F22-F23).
+
+## Added at revision (2026-11-26)
+
+F29. Carbon monoxide and the other gases from a wildland fire "are found in very low concentrations at short distances away from a fire"; "Particulate matter is the main pollutant of concern to the public" (USDA Forest Service). AirNow's wildfire smoke guide (as quoted in search excerpts): CO from smoke does not usually pose a significant hazard to the public, except to some at-risk people and firefighters very close to the fire line.
+    https://www.fs.usda.gov/air/health_impacts.htm ; https://document.airnow.gov/wildfire-smoke-guide-revised-2019-chapters-1-3.pdf
+
+F30. The terrace figure is an AVERAGE, not a maximum: a global review of terrace studies (Wei and others, 2016, Earth-Science Reviews) found "The most prominent role of terracing was found in erosion control (11.46 ± 2.34)", the ratio of erosion control on terraced slopes to that on slopes without terraces, averaged across studies.
+    https://research.fs.usda.gov/treesearch/53295
+
+F31. Close behind a windbreak the wind is cut by half or more: Utah State University Extension's example has a 35 mph wind falling to about 10 to 15 mph some 60 to 80 feet behind a 35-foot windbreak (about two heights), and to about 15 to 20 mph at 200 feet; "Windbreaks prevent wind erosion for 10 to 20 times their height downwind", and reduce wind speeds up to 30 times their height downwind.
+    https://extension.usu.edu/forestry/publications/utah-forest-facts/005-windbreak-benefits-and-design
+
+F32. Crop residue "absorbs raindrop impact and keeps the wind off the soil surface", and "By protecting the soil surface, surface crusting is also reduced, improving infiltration and decreasing runoff"; bare tilled soil is the one open to raindrop impact, "causing erosion and surface crusting" (University of Nebraska-Lincoln Extension). Residue protects by taking the raindrops' blow and slowing runoff, not by its weight.
+    https://water.unl.edu/article/crop-production/residue-management ; https://grokipedia.com/page/Soil_erosion

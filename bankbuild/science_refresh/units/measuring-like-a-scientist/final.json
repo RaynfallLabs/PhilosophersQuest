@@ -1,0 +1,214 @@
+{
+ "unit": "measuring-like-a-scientist",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "measuring-like-a-scientist",
+   "question": "The Mars Climate Orbiter, an American spacecraft, reached Mars in September 1999, flew far too low into the planet's air and was lost. Engineers at the company that built it had sent the mission's navigators figures for every small thruster firing. What did the review board find wrong with those figures?",
+   "answer": "They were in English units, not metric",
+   "choices": [
+    "They were in English units, not metric",
+    "They were rounded off far too roughly",
+    "They had two digits swapped by mistake",
+    "They came from a faulty thruster sensor"
+   ],
+   "context": "The builders' software gave each thruster's push in pound-force seconds, an English unit, while the navigators' software expected newton-seconds, the metric unit, so the craft's path was worked out wrong and it passed only about 57 kilometres above Mars. Mix-ups like this are why scientists everywhere share one system of units, the International System (SI), the modern metric system.",
+   "facts": [
+    "F6",
+    "F7",
+    "F1",
+    "F5"
+   ],
+   "grade_note": "TEKS 6.1E has 6th graders collect quantitative data in SI units, and the lost Mars orbiter is the well-known case of why everyone must share one system."
+  },
+  {
+   "tier": 2,
+   "topic": "measuring-like-a-scientist",
+   "question": "Food labels in many countries give a snack's energy in kilojoules, a unit built on the joule, the metric unit of energy. How much energy is one kilojoule?",
+   "answer": "A thousand joules",
+   "choices": [
+    "A thousand joules",
+    "A hundred joules",
+    "A million joules",
+    "A thousandth of a joule"
+   ],
+   "context": "Kilo- means a thousand on any unit it is put on: a kilojoule is 1,000 joules, just as a kilogram is 1,000 grams and a kilometre 1,000 metres. The metric prefixes work the same way on every unit, so a person who knows them can read a unit he or she has never met. A hundred of a unit takes the prefix hecto-, and a million takes mega-.",
+   "facts": [
+    "F9",
+    "F8",
+    "F29",
+    "F12",
+    "M2"
+   ],
+   "grade_note": "6th graders use the SI prefixes as a system (TEKS 6.1E): the same prefix means the same factor on every unit, even on a unit such as the joule that they have not met."
+  },
+  {
+   "tier": 2,
+   "topic": "measuring-like-a-scientist",
+   "question": "A lab worker draws 5 millilitres of blue dye into a syringe, ready to add to a test tube. What part of a litre is one millilitre?",
+   "answer": "A thousandth of a litre",
+   "choices": [
+    "A thousandth of a litre",
+    "A millionth of a litre",
+    "A hundredth of a litre",
+    "A tenth of a litre"
+   ],
+   "context": "The prefix milli- comes from the Latin word mille, a thousand, and means a thousandth: 1,000 millilitres fill a litre, just as 1,000 millimetres make a metre. Milli- sounds like million, but a millionth takes the prefix micro-, and a hundredth takes centi-.",
+   "facts": [
+    "F11",
+    "F3",
+    "F12",
+    "M1"
+   ],
+   "grade_note": "Milli- is among the metric prefixes 6th graders learn with SI units (TEKS 6.1E), and its likeness to the word million is the mix-up to clear."
+  },
+  {
+   "tier": 2,
+   "topic": "measuring-like-a-scientist",
+   "question": "A biologist kneels beside a pond and writes in her field notebook that the water is cloudy and green and smells of rotten eggs. What has she recorded?",
+   "answer": "Qualitative data",
+   "choices": [
+    "Qualitative data",
+    "Quantitative data",
+    "An inference",
+    "A prediction"
+   ],
+   "context": "Qualitative data are descriptions in words, such as colour, smell or texture, while quantitative data are measurements in numbers, such as the water's temperature in degrees Celsius; both count as evidence. Her note records what she saw and smelled, not a conclusion drawn from it (an inference) or a guess about what will happen (a prediction).",
+   "facts": [
+    "F13",
+    "F14",
+    "F15"
+   ],
+   "grade_note": "TEKS 6.1E asks 6th graders to collect quantitative data in SI units and qualitative data as evidence, so telling the two apart is taught directly."
+  },
+  {
+   "tier": 2,
+   "topic": "measuring-like-a-scientist",
+   "question": "A student rolls a toy car down the same ramp five times and measures how far it travels across the floor. Four runs reach between 118 and 121 centimetres, but one stops at 64 centimetres. What should she do about that short run?",
+   "answer": "Look for a cause, then run that trial again",
+   "choices": [
+    "Look for a cause, then run that trial again",
+    "Erase it from her notes, as it spoils the pattern",
+    "Average it in with the other four, just as it is",
+    "Run the four long trials again to check them"
+   ],
+   "context": "A result far from the rest, called an outlier, may be a fluke or a slip, such as a misread tape measure or a car that clipped a chair leg, so she looks for the cause and repeats that trial. She keeps the odd result in her notes and says what she did with it, because quietly dropping data misleads. Averaged in as it stands, the short run would drag her result far below what the car really does, and the four runs that agree need no rerun.",
+   "facts": [
+    "F17",
+    "F16",
+    "F22",
+    "F28"
+   ],
+   "grade_note": "TEKS 6.1F builds data from repeated trials and 6.2B asks for sources of error, so spotting and rechecking an odd result is 6th-grade practice."
+  },
+  {
+   "tier": 2,
+   "topic": "measuring-like-a-scientist",
+   "question": "Two groups take turns timing the same pendulum through ten swings, and each group runs five trials. One group's times all lie within a fifth of a second of one another, while the other group's are spread across three seconds. Which group's result can the class trust more?",
+   "answer": "The group whose times agree closely",
+   "choices": [
+    "The group whose times agree closely",
+    "The group whose spread shows how the swings really vary",
+    "Either group, as each one ran five trials",
+    "Neither group, as both groups' times vary"
+   ],
+   "context": "Trials of the same measurement should agree, and when they do, the result can be trusted to come out the same again. A pendulum keeps very nearly the same time swing after swing, so a wide spread comes from the measuring, such as a slip in counting the swings, and that group should find the cause and run more trials. A little spread is normal, and close agreement is still no proof of a right answer, since a faulty tool can be off by the same amount every time.",
+   "facts": [
+    "F18",
+    "F19",
+    "F20",
+    "F21",
+    "F30",
+    "F31"
+   ],
+   "grade_note": "TEKS 6.2B has 6th graders identify the descriptive features of data, and the spread of repeated trials is the one that says how far a result can be trusted."
+  },
+  {
+   "tier": 2,
+   "topic": "measuring-like-a-scientist",
+   "question": "A student times a toy car rolling down a ramp, five runs in all, and her five times differ a little. She takes the average of the five as her result. Why is the average more trustworthy than the time of any one run?",
+   "answer": "It lets too-long and too-short times partly cancel",
+   "choices": [
+    "It lets too-long and too-short times partly cancel",
+    "It picks out the run she timed most carefully",
+    "It shows just how far apart her five times are",
+    "It gives the car's true time, with no error left at all"
+   ],
+   "context": "Chance slips make some times a little too long and others a little too short, so in an average they partly cancel, and no single slip sways the result much. Every run she keeps goes into the average, and the average does not show how far apart the times are: that is the spread. No number of runs takes away every error.",
+   "facts": [
+    "F31",
+    "F20",
+    "F21",
+    "F18"
+   ],
+   "grade_note": "TEKS 6.1F has 6th graders organise data from repeated trials with means; the simple why is that chance errors in both directions partly cancel in an average."
+  },
+  {
+   "tier": 2,
+   "topic": "measuring-like-a-scientist",
+   "question": "A class measures how much water evaporates in a week from four matching dishes set side by side on a sunny windowsill. One dish has a hairline crack, and water slowly seeps out through it. When the class measures the water left in that dish, what will the dish's result seem to show?",
+   "answer": "More evaporation than really happened",
+   "choices": [
+    "More evaporation than really happened",
+    "Less evaporation than really happened",
+    "The true evaporation, as seeping is a kind of evaporating",
+    "The true evaporation, as the crack is too small to count"
+   ],
+   "context": "The class works out evaporation from the water each dish has lost, and the water that seeps through the crack is lost too, so that dish seems to have lost more to evaporation than it really did. Seeping is not evaporating: the water leaves through the crack as a liquid, not into the air as vapour, and even a slow seep adds up over a week. A leaky container is a source of error, and a scientist says which way it throws a result off before setting that result aside.",
+   "facts": [
+    "F26",
+    "F27",
+    "F22"
+   ],
+   "grade_note": "TEKS 6.2B asks 6th graders to identify sources of error, and saying which way a leak throws off a result is the simple why."
+  },
+  {
+   "tier": 2,
+   "topic": "measuring-like-a-scientist",
+   "question": "A student drops a steel ball from a shelf 2 metres up and times each fall with a stopwatch. She makes ten drops from the same spot, and her ten times are all a little different. What causes most of the difference between them?",
+   "answer": "Her reactions as she starts and stops the watch",
+   "choices": [
+    "Her reactions as she starts and stops the watch",
+    "The pull of gravity, which changes between drops",
+    "The ball, which falls faster on some drops",
+    "The stopwatch's clock, which runs fast, then slow"
+   ],
+   "context": "Timing by hand carries the timer's reaction at the start and at the stop, typically about a fifth of a second, and the delay is a little different every time. A ball dropped the same way from the same spot falls in the same time, because gravity's pull at one place holds steady, and a quartz stopwatch drifts only seconds in a month. That is why hand-timed trials are repeated, and why races are now timed electronically.",
+   "facts": [
+    "F23",
+    "F22",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "TEKS 6.2B asks for sources of error, and the timer's own reactions are the usual one in the hand-timed labs of 6th grade."
+  }
+ ],
+ "revised": {
+  "2922b1d7da": {
+   "old_hash": "108e628ef5",
+   "why": "Judge (medium grade): grams to the kilogram is a 4th-grade pair that students know by heart, with no grade-6 why. As the judge proposed, kilo- is now tested on a unit they have not memorised, the kilojoule on food labels (F29), so the question tests the 6th-grade idea that a prefix means the same factor on every unit (F8, F9). Same fact (kilo- is a thousand), same lure set (hecto-, mega-, and the kilo-/milli- mix-up, M2). The context no longer names milli-, which keys another question."
+  },
+  "cba5994641": {
+   "old_hash": "cba5994641",
+   "why": "Judge (medium tell): 'Report 64 centimetres as the true distance' and 'Decide that the four longer runs were wrong' were not live, leaving a two-way choice. They are replaced by the judge's 'Average it in with the other four, just as it is' (a real student habit; no average is asked for) and a modest form of his second lure, 'Run the four long trials again to check them' (F28: it is the suspect run that is checked and repeated). The context now answers both. Stem and key unchanged."
+  },
+  "60d3405444": {
+   "old_hash": "60d3405444",
+   "why": "Judge (medium tell): 'The group whose times cover a wider range' was the one lure with no reason, and common sense struck it. It now carries the misconception's reason, that the spread shows how the swings really vary; the context answers it (F30: a pendulum keeps very nearly the same time swing after swing). Judge (low, on the stopwatch question): the context's example of a cause, 'slips in starting and stopping the stopwatch', was that question's key; it is now a slip in counting the swings (F31). The judge's 'pendulum let go from different heights' was not used, since for small swings the height barely changes the time. Stem and key unchanged."
+  },
+  "2deca18b50": {
+   "old_hash": "e44e578df3",
+   "why": "Judge (medium tell): 'No evaporation at all' was dead and 'Just the same evaporation' gave no reason, leaving more against less. They are replaced by the judge's two misconceptions, 'seeping is a kind of evaporating' and 'the crack is too small to count', which keep the no-change idea live; the context answers both. Judge (low clarity): 'its result' is now 'the dish's result'. Key unchanged."
+  }
+ },
+ "added": {
+  "0a2b7efe80": "Replaces the dropped centimetre question with a scope fact no unit keys: why the average of repeated trials beats any one trial, since random slips scatter both ways and partly cancel (F31, F20, F21; TEKS 6.1F). No arithmetic is asked. Lures: the average as the one best-timed run (it uses every kept run), as the spread, and as error-free (F31: no number of runs removes every error). It keys neither T1's 'each drop comes out a little different' nor this unit's stopwatch cause."
+ },
+ "dropped": [
+  {
+   "old_hash": "12d6bcb193",
+   "question": "A botanist measures a leaf with a ruler marked off in units that are each a hundredth of a metre long. What are those units called?",
+   "why": "Judge (medium grade): a hundredth of a metre is a 3rd-4th grade ruler fact, and with decimetres and hectometres unknown to most 6th graders it came down to two choices. The judge's centilitre fix was not used: its '25 centilitres' strikes the 'A hundred litres' lure, any bottle sets a scale that does the same, and it would repeat the millilitre question's shape and choice set, each card teaching the other's key. Centi- stays taught in the millilitre question's context. Replaced by a question on why repeated trials are averaged (scope: repeated trials, TEKS 6.1F)."
+  }
+ ]
+}

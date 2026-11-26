@@ -110,3 +110,17 @@ M5. "Less water left" is read as "less evaporation", mixing up the water left wi
 M6. Differences between hand-timed trials are blamed on the falling ball or on gravity changing, rather than on the timer's reactions (F23, F25).
 
 M7. NOT used: Grokipedia's Mars Climate Orbiter page states the error's direction inconsistently (a factor of 4.45 over- or under-estimated), so no question or context says which way the figures were off; JPL's plain statement (F7) is used instead.
+
+## Added at revision (2026-11-26)
+
+F28. For repeated measurements of the same quantity, a suspect value "may be thrown out provided that fact is well documented and that the measurement is repeated a number of times more" (University of Toronto physics error-analysis notes); school practice sets an anomalous repeat aside before working out the mean, and repeats the measurement (Save My Exams revision notes). So an odd run is checked and rerun, not averaged in as it is, and the runs that agree need no rerun.
+    https://faraday.physics.utoronto.ca/PVB/Harrison/ErrorAnalysis/Rejection.html ; https://www.savemyexams.com/international-a-level/physics/edexcel/19/revision-notes/6-practical-skills-in-physics-ii/practical-skills-ii-implementation-and-measurements/6-13-anomalous-readings/ ; https://en.wikipedia.org/wiki/Outlier
+
+F29. The joule is "the derived unit of energy, work, and heat in the International System of Units (SI)", named for James Prescott Joule; the kilojoule is "equivalent to 10^3 joules" (1,000 J), and kilojoules are used for "food nutrition" values on food labels. The European Union "mandates declaration of energy values primarily in kilojoules (kJ)" on food labels.
+    https://grokipedia.com/page/Joule ; https://grokipedia.com/page/Food_energy ; https://grokipedia.com/page/Metric_prefix
+
+F30. "The period of oscillation for a simple pendulum is independent of the mass and amplitude (for small angles)"; Galileo noted the period is "roughly independent of swing amplitude", and pendulums regulated clocks. So a pendulum keeps very nearly the same time from swing to swing, and a wide spread in timing ten swings comes from the measuring, not from the pendulum.
+    https://grokipedia.com/page/Pendulum
+
+F31. Random errors make "observed values to scatter around the true value in an unbiased manner" (some too high, some too low), and "these can be minimized through averaging multiple trials"; systematic errors "do not diminish with increased sample size or repeated trials". Gross errors (blunders) "arise from human mistakes or procedural lapses", such as misreading a scale. So in an average, too-long and too-short times partly cancel, but no number of runs removes every error. (Re-read for the added averaging question; see also F20, F21.)
+    https://grokipedia.com/page/Observational_error ; https://grokipedia.com/page/Measurement_uncertainty

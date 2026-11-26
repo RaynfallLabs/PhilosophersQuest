@@ -1,0 +1,147 @@
+{
+ "unit": "the-microscope-and-cell-theory",
+ "questions": {
+  "27b5c888bb": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "The stem says the compound microscopes of the day, 'such as Robert Hooke's', had two lenses. Hooke's microscope is often described with three (an objective, a middle field lens and an eyepiece), and he sometimes took the middle one out. facts.md F5 itself says 'two or more'. Flag for the fact-checker.",
+     "fix": "'The compound microscopes of his day, such as Robert Hooke's, had two or more lenses in a tube, yet Leeuwenhoek's showed far finer detail. Why did one lens do better?' The key still fits."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "Over the tier's length budget (528 chars against a 504 cap, gates info). 'a cloth merchant in Delft' carries no part of the fact.",
+     "fix": "Drop 'a cloth merchant in Delft,' from the stem; the card can keep it."
+    }
+   ]
+  },
+  "20a90a0e7a": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "A clause in the stem kills 'Algae'. He mixed the matter with PURE rainwater, and it came from between his teeth, so the stem itself rules out algae living in water; no knowledge is needed. Only three choices stay live.",
+     "fix": "Replace 'Algae' with 'Tiny worms'. The old belief in tooth worms makes it tempting, and worms are many-celled animals, far bigger than what he saw. Choices: Bacteria, Viruses, Mites, Tiny worms."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "The card says why viruses are wrong but not why mites (or worms) are.",
+     "fix": "Add to the card: 'Mites and worms are many-celled animals, far bigger than the single cells he saw moving.'"
+    }
+   ]
+  },
+  "493cc575ba": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'pepper water' and 'the Fellows' are not explained for a 6th grader. A reader may not know that a Fellow is a member of the Society.",
+     "fix": "'...that one drop of pepper water, water with peppercorns soaked in it, held more than a million living creatures... Some of the Society's members, its Fellows, doubted him.'"
+    }
+   ]
+  },
+  "62503961ef": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem sets up the plant and animal contrast ('Animal cells have no wall'). That primes the reader to drop the two plant-only parts, chloroplasts and the central vacuole, which the pilot cells unit teaches as plant-only. Only nucleus and mitochondria stay live. The history that settles it (mitochondria unknown until 1857) is beyond the grade, so the choice comes down to the nucleus as the famous part.",
+     "fix": "Replace 'Its central vacuole' with 'Its cytoplasm'. Every animal cell has it and the pilot teaches the word, but it is spread through the cell and gives no landmark to find. Choices: Its nucleus, Its chloroplasts, Its cytoplasm, Its mitochondria. Card: add 'cytoplasm fills the whole cell and gives no single spot to look for'."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'What did he look for in each cell?' presumes he already had the cell. The point is that the nucleus was how he found and counted cells whose edges were hard to see.",
+     "fix": "'What did he look for to pick out each cell?'"
+    }
+   ]
+  },
+  "48157db795": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "Overlaps the pilot cells-the-building-blocks-of-life (final). Its scraped-knee question asks where new skin comes from (existing skin cells), which is cell theory's third claim, and it uses the same wrong idea as a choice ('Clear fluid that hardens under the scab' against 'Forming out of the fluid around them'). A player who knows that cells come from cells gets 'Splitting in two' for free. The pilot also left cell division to later units on purpose. Honesty ruling: the Remak and Virchow story itself is told honestly and should stay (Remak's evidence came first, and Virchow made the idea famous without naming him).",
+     "fix": "Re-key on the grade's named scientist, whom no unit asks about: 'Robert Remak watched red blood cells in chicken embryos split in two, and in 1852 he published his evidence that new cells come only from cells that divide. Few took notice. Three years later another scientist made the idea famous in four Latin words, every cell from a cell, without naming Remak. Who was he?' Answer: Rudolf Virchow. Choices: Rudolf Virchow, Theodor Schwann, Matthias Schleiden, Louis Pasteur. Card: Schleiden and Schwann thought new cells formed out of a fluid, as crystals do; Pasteur's 'life from life' experiments came years later and were about microbes, not about cells dividing."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "The Latin motto is often traced to Francois-Vincent Raspail (1825). 'Made the idea famous' is honest, but the card's 'wrote omnis cellula e cellula ... and for years got the credit' can read as if Virchow coined it. 'For years' also suggests the credit has since been put right, though he is still usually credited alone. Flag for the fact-checker.",
+     "fix": "Card: 'Virchow made famous the Latin motto omnis cellula e cellula, every cell from a cell, in 1855, and he is still often given all the credit; his essay never named Remak, and historians such as Paul Weindling say he took Remak's idea without credit.'"
+    }
+   ]
+  },
+  "83e8a524e5": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "voice",
+     "severity": "low",
+     "what": "The 6th-grade curriculum does not teach the names Ernst Ruska and Max Knoll (T2 craft: name a scientist only where the curriculum names him). They also lengthen a stem that is already over the voice word count.",
+     "fix": "'A new kind of microscope, first built in Berlin in 1931, aims a beam of electrons, not light, at its sample...' Keep Ruska and Knoll in the card."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'electrons' appears before this bank teaches the parts of the atom (a later tier). It is not tested, but a 6th grader may stall on it.",
+     "fix": "'a beam of electrons, tiny particles from inside atoms, not light,'"
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'It ... shows far finer detail than any light microscope can' reads as the 1931 machine. The first prototype magnified only about 17 times and did not beat the light microscope's detail until 1933. The card's 'Leeuwenhoek saw bacteria more than 250 years earlier' is also off: 1683 to 1931 is 248 years. Flag for the fact-checker.",
+     "fix": "Stem: 'Microscopes of this kind soon showed far finer detail than any light microscope can.' Card: 'nearly 250 years before'."
+    }
+   ]
+  },
+  "477404ea19": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The diaphragm is the only part among the choices that works on the light. A reader who knows only the jobs of the other three parts can get it by elimination, and 'The stage clips' is the weakest choice. Every part tied to the light (the lamp, a mirror, the condenser, a different objective) would be a second right answer, so this set is the best available.",
+     "fix": "No change needed. Do not swap in the coarse focus knob: beside the fine knob, the pair cancels out."
+    }
+   ]
+  },
+  "23760b9fa2": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'The coarse knob dims the light too much to see by' is the weakest choice. No knob is tied to the light, so it is easy to drop.",
+     "fix": "Replace it with 'The coarse knob moves the lens too little to matter'. That is the reverse of the truth, so it tests what 'coarse' means."
+    }
+   ]
+  },
+  "819e1fd1cd": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem says the eyepiece makes things look 10 times bigger AND the objective 40 times, then asks about 'both lenses together'. Its own words rule out 'Take the objective's number, 40, alone' and 'Take the eyepiece's number, 10, alone', which leaves a two-way choice: add or multiply.",
+     "fix": "Ask the meaning, which also gives the T2 simple why: 'A student's school microscope has an eyepiece lens that makes things look 10 times bigger and a high-power objective lens, the one just above the slide, that makes them look 40 times bigger. Through the two, a cell looks 400 times bigger, not 50. What does the eyepiece do that makes the powers multiply?' Answer: 'It enlarges the picture the objective has already made'. Choices: that answer; 'It enlarges the slide on its own, beside the objective'; 'It gathers ten times as much light onto the slide'; 'It moves the cell ten times nearer the objective'. Card: light passes through the objective first, which makes a picture 40 times bigger, and the eyepiece makes that picture 10 times bigger again, so 400."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "Lane ruling: this is science, not math. Total magnification is how a compound microscope's two lenses combine, which is standard 6th-grade microscope lab content, and the question asks for the rule, not a sum. But 'multiply or add' is the barest form of it and the closest to plain arithmetic, and the lane note asks for meaning.",
+     "fix": "The rewrite above asks the meaning. If the operation form is kept instead, cut 'through both lenses together' and say only that the lenses are marked 10x (ten times) and 40x. Then taking one number alone stays a live mistake."
+    }
+   ]
+  }
+ },
+ "unit_notes": "RULINGS. GRADE FIT: all nine facts are 6th-grade content (TEKS 6.13A on the history of cell theory, 6.4A-B on judging claims, and the microscope-parts lab). None is too young for the grade: the T1 unit asks only microscope against hand lens, and the parts and their jobs belong to the 6th-grade lab. Q1's why (each lens of the day blurred, and more lenses added more blur) is at the top edge of the grade but is one plain, true step, so it stays. Q6 (the electron microscope showed viruses) is standard in middle-school cell chapters. TOTAL MAGNIFICATION (819e1fd1cd): science, not math, because it asks how the lenses combine, not for a sum. Revise it to fix the stem tell and to ask the meaning (fix given). VIRCHOW AND REMAK (48157db795): honest as written (Remak's 1852 evidence comes first; Virchow made the idea famous in 1855 without naming him). Keep that telling, but re-key it for the overlap below, and soften the card's 'for years got the credit' (the motto is older than Virchow: Raspail, 1825). HOW WE KNOW: the method strand holds. Four questions carry it well: Q1 (a better lens), Q3 (a claim checked when someone else repeats it), Q4 (the nucleus used as a marker where cell edges were hard to see) and Q6 (a new tool shows what no old one could). Q2 is the plainest 'what was seen', and Q7-Q9 are tool use; both fit the strand. Nothing core to the scope is missing: Hooke's cork and the word 'cell' are rightly left to the pilot. One optional extra is the better lenses of the 1830s (F24), which came just before Schleiden and Schwann. OVERLAPS, checked against all 49 final units. (1) MEDIUM: 48157db795 and the scraped-knee question in cells-the-building-blocks-of-life (new cells come from existing cells, with the same 'forms out of a fluid' wrong idea) test the same claim. Fix by re-keying on Virchow's name (wording in the question). (2) No overlap: 62503961ef's answer 'nucleus' is the same word as the answer to the pilot's question on the nucleus's job, but the fact differs (Schwann's marker against what the nucleus does). Its wrong choices lean on the pilot's plant-only parts, which is the tell fixed above, not an overlap. (3) No overlap: 20a90a0e7a (the creatures from his teeth were bacteria) asks a different fact from T1 measuring-and-the-fair-test (a microscope shows bacteria) and from the pilot (a bacterium is one whole cell). (4) No overlap: 83e8a524e5 (viruses, too small for light microscopes, first seen with the electron microscope) and the-bodys-defences (colds come from viruses). (5) No overlap: one-cell-or-many's red-blood-cell question (a human red cell pushes out its nucleus) and Remak's dividing chicken red cells; how-light-travels' magnifying glass (refraction) and Q1 or Q9. Notes for units not yet built: the T5 viruses-bacteria-and-antibiotics unit should key on the filter evidence, not 'too small for a light microscope'; the T3 redis-jars unit should not re-ask Leeuwenhoek's sighting; the T5 the-cell-cycle unit should key on the phases of mitosis, not 'cells split in two'. Within the unit, Q1's card ('their powers multiply') teaches Q9's answer. That is fine, since cards teach, but it is one more reason for Q9 to ask the meaning."
+}

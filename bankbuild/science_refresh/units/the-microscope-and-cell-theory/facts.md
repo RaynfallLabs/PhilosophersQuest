@@ -139,3 +139,23 @@ M6. Testimony is evidence enough: eight respected witnesses settle a claim. The 
 M7. Leeuwenhoek invented the microscope (F7); and his "little animals" were tiny animals like mites or worms rather than single cells and bacteria (F8, F12). Author's judgment.
 
 M8. The dinner of Schleiden and Schwann is told in many forms, with dates of 1837 or 1838: it is used only as the conversation about nuclei that Wikipedia and The Scientist both report (F17).
+
+## Revision round (2026-11-26): facts added and checked
+
+F34. Leeuwenhoek wrote in Dutch: his words were mainly dierken, and often diertgens or diertjes ("Dier is animal and the -ken, -gen, or -je endings are the most common form of diminutive in Dutch"), so they mean little animals. Henry Oldenburg, who translated the early letters for the Royal Society, "was the one who first translated dierkens as 'animalcules'". Grokipedia calls animalcules "his term", but it is his translators' English word, not his own.
+    https://lensonleeuwenhoek.net/content/animalcules ; https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek (Oldenburg the first to use "animalcules" to translate the Dutch) ; https://grokipedia.com/page/Antonie_van_Leeuwenhoek (Oldenburg "translated Leeuwenhoek's Dutch writings into English")
+
+F35. Mites are animals: "Mites belong to the subclass Acari within the class Arachnida, phylum Arthropoda, kingdom Animalia", typically 0.08 to 1 mm long; and "Animals are multicellular, eukaryotic organisms", so mites and worms are many-celled animals, while a bacterium is a single cell (pilot cells unit).
+    https://grokipedia.com/page/Mite ; https://grokipedia.com/page/Animal
+
+F36. The cytoplasm "occupies the interior of a cell, enclosed by the plasma membrane and excluding the nucleus in eukaryotic cells": it fills all the space around the nucleus, so it is no single landmark to look for.
+    https://grokipedia.com/page/Cytoplasm
+
+F37. Louis Pasteur "conducted a series of experiments from 1860 to 1864 using specially designed swan-neck flasks filled with nutrient broth", on whether microbes arise on their own or come from the air; around 1855 he was at Lille working on fermentation. His flasks were about where microbes come from, not about cells dividing.
+    https://grokipedia.com/page/Louis_Pasteur
+
+F38. In a compound microscope the objective makes an enlarged picture (the intermediate image) inside the tube, and "The eyepiece then acts as a magnifying glass to further enlarge this intermediate image"; that is why the total magnification is the product of the two powers (F32). HyperPhysics: the objective's image "is then viewed with a short focal length eyepiece used as a simple magnifier."
+    https://grokipedia.com/page/Optical_microscope ; https://hyperphysics.gsu.edu/hbase/geoopt/micros.html
+
+F39. Dates the questions avoid. Remak's first paper on how blood cells form came out in 1841 (Ueber die Entstehung der Blutkoerperchen); his 1852 paper (Ueber extracellulaere Entstehung thierischer Zellen und ueber Vermehrung derselben durch Theilung) is the one OpenStax cites for "convincing evidence that cells are derived from other cells as a result of cell division". For the electron microscope, Wikipedia says the 1933 machine of Ruska and Knoll was the first to beat the light microscope's resolution, while Grokipedia says the 1931 prototype already did, at 400 times: sources differ, so no question dates it.
+    https://www.historyofmedicine.com/id/2042 ; https://zientzia.eus/artikuluak/robert-remak-itzalean-aritu-zen-judua/en/ ; https://openstax.org/books/microbiology/pages/3-2-foundations-of-modern-cell-theory ; https://en.wikipedia.org/wiki/Electron_microscope ; https://grokipedia.com/page/Electron_microscope

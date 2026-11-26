@@ -1,0 +1,209 @@
+{
+ "unit": "caring-for-air-water-and-soil",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "caring-for-air-water-and-soil",
+   "question": "Scientists who study the air find harmful gases and tiny specks of pollution over cities and countryside alike. Most of the polluted air that people breathe comes from one kind of activity. What is it?",
+   "answer": "Burning fuels such as coal, gasoline and wood",
+   "choices": [
+    "Burning fuels such as coal, gasoline and wood",
+    "Spraying farm fields with fertiliser and weedkiller",
+    "Digging coal and rock out of open mines",
+    "Burying rubbish and food scraps in landfills"
+   ],
+   "context": "Burning coal, oil, gas and wood in engines, power plants, factories and home stoves gives off soot and gases such as carbon monoxide, nitrogen dioxide and sulfur dioxide. It makes about 85 percent of the polluted air people breathe, so farms, mines, landfills and everything else together add a much smaller share.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3"
+   ],
+   "grade_note": "6th-grade units on human impact teach that burning fuels in vehicles, power plants and homes is the main source of air pollution."
+  },
+  {
+   "tier": 2,
+   "topic": "caring-for-air-water-and-soil",
+   "question": "Smoke from a great forest fire drifts over a town and turns the sky hazy. The smoke is a mixture of gases, among them carbon dioxide and carbon monoxide, and bits of soot and ash of every size. Health agencies warn that one part of it is the biggest threat to health. Which part?",
+   "answer": "The finest specks of soot and ash",
+   "choices": [
+    "The finest specks of soot and ash",
+    "The largest flakes of soot and ash",
+    "The carbon monoxide gas",
+    "The carbon dioxide gas"
+   ],
+   "context": "The finest specks, under 2.5 thousandths of a millimetre across and about 30 times thinner than a hair, slip past the nose and throat deep into the lungs, and some pass into the blood. Larger flakes usually never reach the lungs, though they sting the eyes and throat. Carbon monoxide is a danger close to the flames but is found only in very low amounts a short way from them, and carbon dioxide is not among the pollutants the World Health Organization names as the most worrying.",
+   "facts": [
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F2",
+    "F29"
+   ],
+   "grade_note": "6th-grade units on air pollution teach smoke and soot as pollutants and why they harm health: the smallest particles reach deep into the lungs."
+  },
+  {
+   "tier": 2,
+   "topic": "caring-for-air-water-and-soil",
+   "question": "A tanker wreck can spill thousands of tonnes of oil into the sea at once. Yet a 2022 study of the seas around North America found that more oil reaches them in another way, a little at a time. What was the biggest source?",
+   "answer": "Rain washing oil off roads and parking lots",
+   "choices": [
+    "Rain washing oil off roads and parking lots",
+    "Oil seeping up through cracks in the seabed",
+    "Ships pumping oily waste water overboard",
+    "Small, steady leaks from offshore oil rigs"
+   ],
+   "context": "Rain and melting snow wash oil from leaking cars, roads and parking lots into drains and rivers, and the rivers carry it to the sea; a National Academies report in 2022 ranked this runoff from the land first. Natural seeps from the seabed came second and spills third, and the oily discharges of ships are small.",
+   "facts": [
+    "F9"
+   ],
+   "grade_note": "6th-grade units on water pollution teach that much of it comes from many small sources on land, such as oil that rain washes off roads."
+  },
+  {
+   "tier": 2,
+   "topic": "caring-for-air-water-and-soil",
+   "question": "At a drinking-water plant, river water is cleaned in several steps on its way to people's taps. Near the end, workers add a small, carefully measured dose of chlorine. What is the chlorine for?",
+   "answer": "To kill any germs left in the water",
+   "choices": [
+    "To kill any germs left in the water",
+    "To make specks of dirt clump and sink",
+    "To keep the water pipes from rusting",
+    "To remove minerals that make water hard"
+   ],
+   "context": "Chlorine kills the germs that the filters did not catch, and a little is left in the water so it keeps killing germs in the pipes on the way to the taps. Water can look perfectly clear and still carry germs too small to see. Alum makes the dirt clump and sink near the start, and softening hard water and protecting pipes are separate treatments.",
+   "facts": [
+    "F15",
+    "F16",
+    "F17",
+    "M2"
+   ],
+   "grade_note": "How a treatment plant cleans drinking water, step by step, is the 6th-grade example of new technology for cleaner water; killing germs is its last step."
+  },
+  {
+   "tier": 2,
+   "topic": "caring-for-air-water-and-soil",
+   "question": "At a sewage treatment plant, dirty water from a town's drains flows into long, deep tanks, and pumps bubble air through it for hours. What is the air for?",
+   "answer": "It brings oxygen to bacteria that eat the waste",
+   "choices": [
+    "It brings oxygen to bacteria that eat the waste",
+    "It kills off the bacteria that live in the waste",
+    "It cools the water before it flows to a river",
+    "It helps the heavy solid waste sink to the bottom"
+   ],
+   "context": "Bacteria in the tanks feed on the waste and break it down, and like people they need oxygen to do it, so the plant keeps them alive and even sends some back into the tanks to keep their numbers up. The heavy solids were already left to sink in tanks of still water. Untreated sewage spreads diseases such as cholera and typhoid, and its rotting uses up the oxygen in rivers.",
+   "facts": [
+    "F13",
+    "F12",
+    "F11",
+    "M3"
+   ],
+   "grade_note": "6th-grade units on cleaning water teach the stages of a sewage treatment plant, in which bacteria break down the waste once the solids have settled."
+  },
+  {
+   "tier": 2,
+   "topic": "caring-for-air-water-and-soil",
+   "question": "On steep hillsides in many lands, farmers cut the slope into a staircase of narrow, flat fields called terraces, each held up by a low wall of stone or earth. How do terraces stop heavy rain from washing the soil downhill?",
+   "answer": "Rain slows down and soaks into each step",
+   "choices": [
+    "Rain slows down and soaks into each step",
+    "Rain runs off the steps before it can lift any soil",
+    "The walls soak up the rain like sponges",
+    "The soil of each step is packed too hard to wash away"
+   ],
+   "context": "A terrace turns one long, steep slope into a row of short, flat steps. Rain landing on a step slows down and has time to soak in, and any soil it picks up settles on the step instead of rushing downhill. In studies around the world, terraced slopes lost on average about eleven times less soil than slopes without terraces; the walls only hold each step up.",
+   "facts": [
+    "F20",
+    "F30"
+   ],
+   "grade_note": "Terracing is one of the soil-saving methods taught in 6th grade, with the reason it works: water that is slowed soaks in instead of carrying soil away."
+  },
+  {
+   "tier": 2,
+   "topic": "caring-for-air-water-and-soil",
+   "question": "After the harvest, a farmer leaves the dead straw and stalks of her crop lying on the field instead of ploughing the ground bare. In the next heavy storm, her field loses far less soil than the bare field next door. What does the straw do?",
+   "answer": "It takes the blow of the falling raindrops",
+   "choices": [
+    "It takes the blow of the falling raindrops",
+    "It keeps the rain from soaking into the soil",
+    "It pins the soil down under its weight",
+    "It packs the soil into a hard crust"
+   ],
+   "context": "Raindrops hit bare soil hard enough to knock specks loose and splash them away, and the splashed specks clog the surface into a crust, so less rain soaks in and more runs off, carrying soil with it. Straw takes the blow of each drop, so the surface stays open and more rain soaks in, not less. It shields the soil rather than weighing it down.",
+   "facts": [
+    "F18",
+    "F19",
+    "F32"
+   ],
+   "grade_note": "6th-grade units teach plant cover as a way to stop erosion; the simple why is that a cover takes the impact of the rain that loosens bare soil."
+  },
+  {
+   "tier": 2,
+   "topic": "caring-for-air-water-and-soil",
+   "question": "On flat, open farmland, farmers plant long rows of trees along the edges of their fields. In dry years the soil in those fields stays put, while open fields nearby lose much of theirs. What do the rows of trees do that saves the soil?",
+   "answer": "They slow the wind across the fields",
+   "choices": [
+    "They slow the wind across the fields",
+    "Their roots hold the soil across the fields",
+    "Their fallen leaves cover the bare soil",
+    "They draw more rain to the dry fields"
+   ],
+   "context": "A row of trees, called a windbreak, can cut the wind's speed by half or more close behind the row and shelters the soil for 10 to 20 times its own height downwind, and slower wind cannot lift and carry off the dry soil. The trees' roots reach only a narrow strip of the field near the row. After the dust storms of the 1930s, about 220 million trees were planted in such rows across the American plains.",
+   "facts": [
+    "F22",
+    "F23",
+    "F24",
+    "F31",
+    "M6"
+   ],
+   "grade_note": "Windbreaks are among the soil-conservation methods taught in 6th grade, with the reason they work: slower wind carries off less soil."
+  },
+  {
+   "tier": 2,
+   "topic": "caring-for-air-water-and-soil",
+   "question": "An old-style incandescent bulb lights up when electricity flows through a thin wire inside it. Many homes now use light-emitting diode (LED) bulbs instead. What becomes of the electrical energy that the old bulb takes in?",
+   "answer": "Most becomes heat, and a little becomes light",
+   "choices": [
+    "Most becomes heat, and a little becomes light",
+    "Most becomes light, and a little becomes heat",
+    "About half becomes light, and half becomes heat",
+    "Most becomes light, and the rest is used up"
+   ],
+   "context": "More than 90 percent of the energy an old incandescent bulb takes in leaves it as heat, and only about a tenth or less becomes light. An LED turns far less of its energy into heat, so a 9-watt LED gives about the same light as a 60-watt old bulb. Energy is never used up: it only changes from one form to another.",
+   "facts": [
+    "F25",
+    "F26",
+    "F28",
+    "M1"
+   ],
+   "grade_note": "Efficiency, the same job done with less energy, is taught in 6th grade with the old incandescent bulb, which turns most of its energy into heat, as the standard example."
+  }
+ ],
+ "revised": {
+  "bc4ca1fe25": {
+   "old_hash": "e1ea63f984",
+   "why": "Judge (medium tell): 'The water vapour' was dead, since a 6th grader knows steam is harmless. It is replaced by 'The carbon monoxide gas', the poison students know from smoke, which health agencies say is a danger near the flames but thins out a short way from them (F29); the stem now names carbon dioxide and carbon monoxide among the gases. Judge (low): the two particle choices are now parallel, 'finest specks' and 'largest flakes', both of soot and ash. The context answers each lure."
+  },
+  "6918892ad7": {
+   "old_hash": "abc339eae2",
+   "why": "Fact-check (uncertain): the 2003 edition of the same National Academies report ranked natural seeps first in North American waters, so a reader who knew it could defend the seeps choice. The stem now dates the study to 2022, the edition that ranks runoff from the land first (F9). Choices, key and context unchanged."
+  },
+  "f5a9a7c33b": {
+   "old_hash": "f5a9a7c33b",
+   "why": "Fact-check (error): 'up to eleven times' stated a review's AVERAGE as a maximum; the context now says terraced slopes lose on average about eleven times less soil (F30). Judge (medium tell): the three lures were not models of how water moves. 'Sunlight bakes the soil hard' is replaced by the opposite of the truth, 'Rain runs off the steps before it can lift any soil' (the judge's lure, without his 'faster', which the stem's 'flat' would strike), and 'The walls press the soil down' by the packed-soil idea, 'The soil of each step is packed too hard to wash away'. Stem unchanged."
+  },
+  "7d51873cf9": {
+   "old_hash": "7d51873cf9",
+   "why": "Judge (medium tell): 'makes the soil heavier' and 'warms the soil so it dries' were weak, leaving a two-way choice. They are replaced by 'It pins the soil down under its weight' (a blanket-on-the-ground picture) and 'It packs the soil into a hard crust' (the opposite of the truth: residue keeps bare soil from crusting, F32). The judge's 'grow new roots' was not used, since the stem's 'dead straw' strikes it. The context no longer teaches that slowed water soaks in, which is the terrace question's key. Stem and key unchanged."
+  },
+  "dcf1cf2a3e": {
+   "old_hash": "dcf1cf2a3e",
+   "why": "Fact-check (uncertain): 'up to half' read as a ceiling, but close behind a dense row the wind is cut by half or more (F31: 35 mph down to 10-15 mph two heights behind). The context now says 'by half or more close behind the row' and gives the sheltered distance as 10 to 20 times the trees' height (F31). Stem, choices and key unchanged."
+  },
+  "cc2495e39d": {
+   "old_hash": "a6e2f0cfd1",
+   "why": "Judge (high grade overlap): T1 energy-changes-form keys that a bulb makes light and heat, and T2 kinetic-and-potential-energy keys that energy is not used up but becomes heat, so the old key 'heat' fell to the T1 fact and 'used up' repeated the T2 one. The question now keys the 6th-grade efficiency fact, that MOST of the old bulb's energy becomes heat and only a little light (F25), with parallel share choices as the judge proposed. The 60-watt and 9-watt figures moved to the context so the waste cannot be worked out from the stem. The judge's 'Nearly all becomes light, with none to spare' was not used (T1 teaches that a bulb gives heat too); the used-up misconception (M1) is the fourth choice instead, paired with 'most becomes light' so the key is not the convergent choice."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

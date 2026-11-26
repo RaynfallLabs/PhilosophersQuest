@@ -1,0 +1,391 @@
+{
+ "unit": "elements-compounds-and-formulas",
+ "questions": {
+  "b8a9bc6288": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Ammonia is a colourless gas with a sharp (pungent) smell",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ammonia",
+     "note": ""
+    },
+    {
+     "claim": "Bacteria and fungi release ammonia when decomposing decaying biomass and animal wastes (ammonification)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ammonia",
+     "note": ""
+    },
+    {
+     "claim": "Key: NH3 is one nitrogen atom bonded to three hydrogen atoms",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ammonia",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices (3N+3H, 3N+1H, 1N+1H) are all wrong for NH3",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ammonia",
+     "note": ""
+    },
+    {
+     "claim": "Context: a subscript counts the atoms of the symbol before it; no number means one atom",
+     "result": "ok",
+     "source": "https://openstax.org/books/chemistry-2e/pages/2-4-chemical-formulas",
+     "note": ""
+    }
+   ]
+  },
+  "96d3f18ba2": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: Co is the symbol of cobalt, a single element",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cobalt",
+     "note": ""
+    },
+    {
+     "claim": "Context: cobalt is a hard, bluish-grey metal",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cobalt",
+     "note": "Grokipedia: 'a hard, lustrous, bluish-gray transition metal'."
+    },
+    {
+     "claim": "Wrong choice: copper's symbol is Cu, from Latin cuprum (so Co is not copper)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Copper",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: carbon and oxygen joined or mixed would be written CO/CO2 (two capitals), not Co",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chemical_formula",
+     "note": ""
+    },
+    {
+     "claim": "Context: CO is carbon monoxide, one carbon and one oxygen, a poisonous gas",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Carbon_monoxide",
+     "note": ""
+    }
+   ]
+  },
+  "71d4c679c6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Glucose is blood sugar, carried by the bloodstream to tissues and used by cells for energy",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Blood_sugar_level",
+     "note": "Grokipedia confirms 'blood sugar' and fuel for ATP; Wikipedia confirms transport via the bloodstream."
+    },
+    {
+     "claim": "Key: C6H12O6 holds twelve hydrogen atoms",
+     "result": "ok",
+     "source": "https://openstax.org/books/chemistry-2e/pages/2-4-chemical-formulas",
+     "note": "OpenStax: 6 carbon, 12 hydrogen, 6 oxygen."
+    },
+    {
+     "claim": "Wrong choices: six (carbon/oxygen count), one, twenty-four (total atoms 6+12+6) are wrong",
+     "result": "ok",
+     "source": "https://openstax.org/books/chemistry-2e/pages/2-4-chemical-formulas",
+     "note": ""
+    },
+    {
+     "claim": "Context: plants make glucose by photosynthesis",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glucose",
+     "note": ""
+    }
+   ]
+  },
+  "41bf99e830": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Quartz is the mineral most sand is made of",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sand",
+     "note": "Grokipedia: sand grains 'predominantly consist of quartz (SiO2)'; tropical carbonate sands are the exception, which 'most' allows."
+    },
+    {
+     "claim": "Quartz has the formula SiO2, a 3-D framework of SiO4 tetrahedra with each oxygen bridging two silicon atoms",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Quartz",
+     "note": ""
+    },
+    {
+     "claim": "Key: the formula of a network solid gives a ratio, two oxygen for every silicon",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Network_covalent_bonding",
+     "note": "Wikipedia: network solids have 'no individual molecules'; quartz is the example; formulas are ratios like ionic ones."
+    },
+    {
+     "claim": "Wrong choices: 2 Si per O, 1 Si + 2 O in all, equal Si and O are all wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Quartz",
+     "note": ""
+    },
+    {
+     "claim": "Stem: 'Each grain of quartz sand is a crystal'; context: 'the atoms link into one network through the whole grain'",
+     "result": "uncertain",
+     "source": "https://www.geological-digressions.com/the-mineralogy-of-sandstones-quartz-grains/",
+     "note": "Many quartz sand grains are single crystals (monocrystalline), but a sizeable share are polycrystalline: aggregates of several crystals (studies of Holocene sands find 13-53% of quartz polycrystalline, depending on source rock). So not every grain is 'a crystal' with one network through it. Minor; fix: 'Each grain of quartz sand is made of crystal: silicon and oxygen atoms linked together' and in the context 'the atoms link into one network through the whole crystal'."
+    }
+   ]
+  },
+  "7c1e372677": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Oxygen in air is O2, colourless and odourless",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Oxygen",
+     "note": ""
+    },
+    {
+     "claim": "Ozone O3 is a pale blue gas with a pungent smell that harms the lungs (respiratory irritant)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ozone",
+     "note": ""
+    },
+    {
+     "claim": "Key: O2 and O3 are two forms (allotropes) of one element",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Allotropy",
+     "note": "Grokipedia names dioxygen and ozone as the example of allotropy."
+    },
+    {
+     "claim": "Wrong choices: element and compound / two different elements / two different compounds are wrong (both hold only oxygen atoms)",
+     "result": "ok",
+     "source": "https://openstax.org/books/chemistry-2e/pages/2-4-chemical-formulas",
+     "note": "OpenStax: two-atom molecules of H, O, N are still elements."
+    },
+    {
+     "claim": "Context: the ozone layer absorbs nearly all of the Sun's harmful ultraviolet light",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ozone",
+     "note": "Grokipedia's wording ('nearly all of the Sun's harmful ultraviolet radiation, including all UV-C and most UV-B'). Wikipedia notes most UV-A passes and is less harmful but not harmless; optional tightening: 'nearly all of the Sun's most harmful ultraviolet light'."
+    }
+   ]
+  },
+  "3d82adc29a": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Key: a water molecule (one O joined to two H, three atoms) is the smallest particle that is still water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Molecule",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: no 'atom of water' exists; a lone oxygen atom is not water; a tiny droplet still holds many molecules",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Molecule",
+     "note": ""
+    },
+    {
+     "claim": "Context: 'A molecule is the smallest particle of a compound that keeps its makeup and properties'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Molecule",
+     "note": "The source definition is 'retains its composition and CHEMICAL properties'. One water molecule has none of water's physical properties (wetness, boiling point, being a liquid): those belong to many molecules together, the same point the unit's Dalton question makes about a gold atom's shine. Dropping 'chemical' teaches the bulk-property misconception. Fix: 'keeps its makeup and chemical properties'."
+    }
+   ]
+  },
+  "7fb52854e9": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Sodium is a soft, silvery metal that reacts violently with water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sodium",
+     "note": ""
+    },
+    {
+     "claim": "Chlorine is a yellow-green gas, poisonous to breathe",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chlorine",
+     "note": "'pale yellow-green', 'highly toxic as a pulmonary irritant'."
+    },
+    {
+     "claim": "Key: sodium and chlorine react to form sodium chloride, table salt (2Na + Cl2 -> 2NaCl), joined 1:1",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sodium_chloride",
+     "note": ""
+    },
+    {
+     "claim": "Context: table salt is safe to eat in moderation and needed by the body",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sodium_chloride",
+     "note": "'safe for consumption in moderate amounts as an essential nutrient'."
+    },
+    {
+     "claim": "Wrong choice: household bleach is sodium hypochlorite NaOCl (needs oxygen)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sodium_hypochlorite",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: caustic soda is NaOH (needs oxygen and hydrogen)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sodium_hydroxide",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: hydrochloric acid is HCl in water (needs hydrogen)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hydrochloric_acid",
+     "note": ""
+    }
+   ]
+  },
+  "cec65f0712": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Electrolysis splits water into hydrogen and oxygen, each collected in its own tube (Hofmann voltameter), hydrogen twice the volume of oxygen",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Electrolysis_of_water",
+     "note": "Wikipedia (Hofmann voltameter): 'This value is 2:1 experimentally.' 'Always' is fine at grade level; real tubes read close to, not exactly, 2:1."
+    },
+    {
+     "claim": "Key: water holds two hydrogen atoms per oxygen atom; with both gases diatomic and equal volumes holding equal numbers of molecules, that gives 2:1 by volume",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Hofmann_voltameter",
+     "note": "Wikipedia notes the 2:1 matches H2O only if both gases are diatomic; the context says so, and gives Avogadro's equal-volumes rule (Grokipedia Gay-Lussac's law)."
+    },
+    {
+     "claim": "Wrong choice: a hydrogen atom is not twice as big as an oxygen atom",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_(data_page)",
+     "note": "H vs O: empirical 25 vs 60 pm; van der Waals 110-120 vs 152; covalent 32 vs 63; calculated 53 vs 48. 'Nowhere near twice' holds on every measure."
+    },
+    {
+     "claim": "Wrong choice: hydrogen gas is not twice as heavy as oxygen; hydrogen is the lightest element",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hydrogen",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: the same current flows through both electrodes (series circuit)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Series_and_parallel_circuits",
+     "note": ""
+    }
+   ]
+  },
+  "d4e5754248": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Joseph Proust was a French chemist",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Joseph_Proust",
+     "note": ""
+    },
+    {
+     "claim": "Key: Proust made artificial copper carbonate, compared it with natural copper carbonate, and found the same proportions by mass",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Joseph_Proust",
+     "note": "Grokipedia: copper carbonate 'from diverse natural and synthetic sources', fixed ratio about 5:1:4 Cu:C:O."
+    },
+    {
+     "claim": "Wrong choices: more copper in his sample / varied with heat / changed batch to batch are all contrary to his finding",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_definite_proportions",
+     "note": ""
+    },
+    {
+     "claim": "Context: Claude Berthollet, a French chemist, argued elements could combine in any proportions",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_definite_proportions",
+     "note": "Essai de Statique Chimique, 1803; Wikipedia calls him 'Proust's fellow Frenchman' (born in Savoy, worked in France)."
+    },
+    {
+     "claim": "Context: the debate lasted years and was settled for Proust in the 1810s",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_definite_proportions",
+     "note": "'largely resolved in Proust's favor during the 1810s'; Wikipedia (Proust) dates acceptance to Berzelius in 1812 (citation needed)."
+    },
+    {
+     "claim": "Context: some crystals vary slightly and are called berthollides after Berthollet",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Non-stoichiometric_compound",
+     "note": "Kurnakov named berthollides after Berthollet; non-stoichiometric compounds are almost always solid inorganic compounds whose composition varies over a narrow range (wustite Fe0.95O). Strictly, berthollides are Kurnakov's sub-class of non-stoichiometric compounds; Grokipedia treats the names as synonyms, fine at grade level."
+    }
+   ]
+  },
+  "c6332b9d67": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Water is two hydrogen atoms joined to one oxygen atom",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Molecule",
+     "note": ""
+    },
+    {
+     "claim": "Key: two H joined to two O is hydrogen peroxide, H2O2, a different compound",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hydrogen_peroxide",
+     "note": ""
+    },
+    {
+     "claim": "Context: pure H2O2 is a pale blue, syrupy (viscous) liquid and a strong bleach/oxidizer",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hydrogen_peroxide",
+     "note": "'pale blue, viscous liquid', 'a powerful oxidizing agent', 'bleaching and cleaning agent'."
+    },
+    {
+     "claim": "Wrong choices: not water with an extra oxygen, not a mixture of water and oxygen gas (atoms are bonded), not a new element",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hydrogen_peroxide",
+     "note": "H2O2 decomposes into water and oxygen, but a liquid of H2O2 molecules is not that mixture."
+    },
+    {
+     "claim": "Context: a compound holds its elements in fixed proportions (law of definite proportions)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_definite_proportions",
+     "note": ""
+    }
+   ]
+  },
+  "5d8565c22b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "John Dalton, an English chemist, set out his atomic theory in A New System of Chemical Philosophy, 1808",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/John_Dalton",
+     "note": "'Fully articulated in the first volume of A New System of Chemical Philosophy (1808)'; first presented in a lecture in 1803."
+    },
+    {
+     "claim": "Key: by Dalton's theory atoms of one element are all alike, with the same weight",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/John_Dalton",
+     "note": "Atoms of one element 'identical in mass and properties'; different elements differ. True of real gold too: one stable isotope, 197Au (Grokipedia Gold)."
+    },
+    {
+     "claim": "Wrong choices: several kinds mixed / same atoms as every metal are contrary to Dalton's theory",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/John_Dalton",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: atoms are not each yellow and shiny; a single atom lacks the bulk material's colour and shine",
+     "result": "ok",
+     "source": "https://edu.rsc.org/cpd/elements-and-compounds/3009350.article",
+     "note": "RSC: 'individual copper atoms have no colour', a misconception that 'atoms share the properties of the bulk material'."
+    },
+    {
+     "claim": "Context: the alchemists before Dalton thought metals formed in the earth from sulfur and mercury",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Jabir_ibn_Hayyan",
+     "note": "Wikipedia: 'metals form in the earth through the mixing of sulfur and mercury', 'the basis of all theories of metallic composition until the 18th century'. Grokipedia (Alchemy) says only that Jabir 'treated metals as composites of intrinsic principles'; second confirmation from Albertus Magnus quoted in search results and the Ambix (Newman 2014) summary. Later alchemists added salt as a third principle (Paracelsus), so 'every metal from sulfur and mercury' is the dominant medieval view, fine as stated."
+    }
+   ]
+  }
+ },
+ "unit_notes": "11 questions: 9 ok, 1 error (3d82adc29a, one word), 1 uncertain (41bf99e830, minor wording). Alchemy (sulfur-mercury theory) confirmed on Wikipedia's Jabir page; Grokipedia's Alchemy page is thin on it and has no sulfur-mercury page, so secondary confirmation came from academic summaries in search results. Formulas and atom counts (NH3, Co vs CO/CO2, C6H12O6, SiO2 as a network ratio, O2/O3 allotropes, NaCl, NaOCl, NaOH, HCl, H2O2) all verified."
+}
