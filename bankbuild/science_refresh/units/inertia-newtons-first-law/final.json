@@ -1,0 +1,212 @@
+{
+ "unit": "inertia-newtons-first-law",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "inertia-newtons-first-law",
+   "question": "Galileo Galilei timed bronze balls rolling down grooves cut in wooden ramps. He reasoned that a ball rolling down one ramp and up a second one climbs almost back to its starting height, however steep the second ramp is. Then he asked what the ball would do if the second ramp were laid flat and perfectly smooth. What did he conclude?",
+   "answer": "It would roll on forever at the same speed",
+   "choices": [
+    "It would roll on forever at the same speed",
+    "It would slow down with no slope to push it",
+    "It would stop as soon as it reached the flat",
+    "It would keep speeding up along the flat"
+   ],
+   "context": "On a flat second ramp the ball could never climb back to its starting height, so Galileo concluded that it would roll on and on without slowing: nothing is needed to keep a moving thing moving. Real balls stop because friction and the air push against them, which is why a ball rolled across grass stops far sooner than one on smooth ice. Aristotle had taught that a pushed thing stops once nothing pushes it, and many people still picture a push that slowly wears off.",
+   "facts": [
+    "F8",
+    "F9",
+    "F10",
+    "F12",
+    "F6",
+    "M2"
+   ],
+   "grade_note": "Seventh-grade lessons on the first law open with Galileo's ramps and his conclusion that a moving body keeps moving unless friction stops it."
+  },
+  {
+   "tier": 3,
+   "topic": "inertia-newtons-first-law",
+   "question": "A space probe far out between the stars, with no star or planet anywhere near it, shuts off its engines. By Newton's first law, the law of inertia, what happens to its motion after that?",
+   "answer": "It keeps moving straight on at the same speed",
+   "choices": [
+    "It keeps moving straight on at the same speed",
+    "It keeps going, but slower and slower until it stops",
+    "It stops at once, with no engine to push it",
+    "It keeps its speed, but curves round in a slow circle"
+   ],
+   "context": "With almost no force acting on it, the probe goes on in a straight line at the same speed, as Newton's first law says. It would take a force, such as a rocket firing or a planet's pull nearby, to speed it up, slow it down or bend its path. On Earth moving things stop because friction and the air push against them, but out between the stars there is nothing to rub against.",
+   "facts": [
+    "F1",
+    "F21",
+    "F27",
+    "F12"
+   ],
+   "grade_note": "Seventh grade states Newton's first law and applies it to motion with no unbalanced force, the spacecraft coasting in space being the standard case."
+  },
+  {
+   "tier": 3,
+   "topic": "inertia-newtons-first-law",
+   "question": "Aboard a space station in orbit, a big cardboard box stuffed with foam and a small steel toolbox crammed with tools float side by side. A bathroom scale would read nothing for either of them. An astronaut gives each a shove to send it drifting across the cabin. Which one is harder to set moving?",
+   "answer": "The toolbox, since it has more mass",
+   "choices": [
+    "The toolbox, since it has more mass",
+    "The foam box, since it is bigger",
+    "Neither, since neither has any weight",
+    "Neither, since nothing rubs against them"
+   ],
+   "context": "A scale reads nothing for either, but neither has lost any mass, and mass, the amount of matter in a thing, is what gives it inertia. The small toolbox holds far more matter than the big box of foam, so it is far harder to start; size does not count, and with no floor to slide on, friction plays no part. A NASA lesson makes the same point with an astronaut struggling to push a one-ton satellite out of a space shuttle's cargo bay.",
+   "facts": [
+    "F4",
+    "F5",
+    "F25",
+    "F3"
+   ],
+   "grade_note": "Seventh grade teaches that more mass, not more size, means more inertia, and that mass, unlike weight, stays the same in orbit."
+  },
+  {
+   "tier": 3,
+   "topic": "inertia-newtons-first-law",
+   "question": "A driver slams on the brakes, and her car jolts to a stop. Her passenger, who has not buckled his seat belt, lurches forward toward the dashboard. Why does he lurch forward?",
+   "answer": "His body goes on moving as the car stops",
+   "choices": [
+    "His body goes on moving as the car stops",
+    "The braking car throws him forward",
+    "The seat behind him pushes him forward",
+    "A force stored up from the drive carries him on"
+   ],
+   "context": "He was moving at the car's speed, and the brakes slow only the car, so his body goes on moving until something stops it: the dashboard or the windshield, if he is not buckled in. A seat belt gives the force that slows him along with the car, spread across the strong bones of the hips and shoulder. Nothing throws him forward and no stored-up force carries him on; the car simply stops beneath him.",
+   "facts": [
+    "F14",
+    "F1",
+    "F3",
+    "M2"
+   ],
+   "grade_note": "Seventh-grade first-law lessons explain why seat belts are needed: passengers keep moving forward when a car stops suddenly."
+  },
+  {
+   "tier": 3,
+   "topic": "inertia-newtons-first-law",
+   "question": "A car swings left around a sharp bend at a steady speed. A box of apples on the back seat slides across to the right and bumps against the right-hand door. Why does the box slide to the right?",
+   "answer": "It goes on straight while the car turns",
+   "choices": [
+    "It goes on straight while the car turns",
+    "An outward force flings it away from the bend",
+    "Its weight pulls it to the outside of the bend",
+    "The turning car pushes it toward the door"
+   ],
+   "context": "The box keeps moving in a straight line while the car turns left beneath it, so the right-hand door swings round to meet it; the seat's grip is too weak to turn the box with the car. Passengers feel flung outward on a bend for the same reason, and the outward force they seem to feel is not a real push from anything.",
+   "facts": [
+    "F16",
+    "F1"
+   ],
+   "grade_note": "Seventh grade applies the first law to a change of direction: a thing goes on in a straight line unless a force turns it."
+  },
+  {
+   "tier": 3,
+   "topic": "inertia-newtons-first-law",
+   "question": "A magician sets plates and glasses on a smooth silk cloth. He yanks the cloth sharply away, and the dishes are left standing on the bare table. Why does the sharp yank leave them in place?",
+   "answer": "Friction has too little time to move them",
+   "choices": [
+    "Friction has too little time to move them",
+    "A fast-moving cloth has no friction at all",
+    "Inertia grips the dishes down onto the table",
+    "The yank flicks the dishes up off the cloth"
+   ],
+   "context": "The cloth rubs on the dishes all the while it slides, but a sharp yank is over so fast that friction acts for too short a time to get them moving much, and their inertia keeps them almost where they were. A slow tug gives friction time to drag them off with the cloth. Inertia is not a grip that holds things down; it is only their resistance to a change in motion.",
+   "facts": [
+    "F18",
+    "F26",
+    "F3",
+    "M6"
+   ],
+   "grade_note": "The tablecloth pulled from under the dishes is a classroom demonstration of the first law that seventh-grade lessons use."
+  },
+  {
+   "tier": 3,
+   "topic": "inertia-newtons-first-law",
+   "question": "A girl whirls a ball on a string in a flat circle above her head. Partway round, the string snaps. Seen from directly above, what path does the ball take as it flies away?",
+   "answer": "A straight line, the way it was heading",
+   "choices": [
+    "A straight line, the way it was heading",
+    "A curve that keeps bending round and round",
+    "A straight line directly out away from her",
+    "A spiral that slowly widens out from her"
+   ],
+   "context": "The string's pull was all that bent the ball's path into a circle, so once it snaps the ball goes on in a straight line in the direction it was moving at that instant, along the edge of the circle. In studies in the 1980s, many college students expected a ball let go from a curved path to keep curving, an idea much like the old theory of impetus.",
+   "facts": [
+    "F17",
+    "F1",
+    "M2"
+   ],
+   "grade_note": "Seventh grade teaches that the first law's motion is in a straight line, so a thing freed from a circle flies off straight."
+  },
+  {
+   "tier": 3,
+   "topic": "inertia-newtons-first-law",
+   "question": "A boy sits on a train gliding along a straight, level track at a steady speed. He tosses a ball straight up above his lap, and while it is in the air the train rolls on down the track. Where does the ball come down?",
+   "answer": "Back down into his hand",
+   "choices": [
+    "Back down into his hand",
+    "A little way behind him",
+    "A little way ahead of him",
+    "Behind him, as far as the train has gone"
+   ],
+   "context": "The ball was already moving forward with the train when it left his hand, and nothing pushes it backward, so it keeps the train's speed and stays above his hand all the way up and down. Galileo argued the same in his Dialogue of 1632 about a stone dropped from the top of a smoothly sailing ship's mast: it falls at the foot of the mast, not behind it.",
+   "facts": [
+    "F19",
+    "F24",
+    "F1"
+   ],
+   "grade_note": "Seventh grade applies the first law to a moving vehicle: anything inside it keeps the vehicle's motion until a force changes it."
+  },
+  {
+   "tier": 3,
+   "topic": "inertia-newtons-first-law",
+   "question": "The iron head of a carpenter's hammer has worked loose on its wooden handle. He holds the hammer upright, head on top, and strikes the bottom end of the handle hard on a concrete floor. The head slides a little farther down the handle and sits tighter. Why?",
+   "answer": "The handle stops, but the head keeps going",
+   "choices": [
+    "The handle stops, but the head keeps going",
+    "The jolt from the floor drives the head down",
+    "Gravity pulls harder on the head at the jolt",
+    "The heavy head falls faster than the handle"
+   ],
+   "context": "Head and handle move down together until the handle hits the floor and stops short; the head, with only the wood's friction to stop it, keeps moving and slides farther on. The floor pushes up, and only on the handle, so it cannot be what drives the head down. Heavy and light things fall alike, and here nothing is falling freely in any case.",
+   "facts": [
+    "F20",
+    "F1",
+    "F22"
+   ],
+   "grade_note": "Seventh grade explains everyday cases with the first law: a moving thing keeps moving when what carries it stops."
+  }
+ ],
+ "revised": {
+  "24f48ef66f": {
+   "old_hash": "bda5f3258a",
+   "why": "Judge (low): its choices mirrored Galileo's ramp question (9cf1d1b552), so the second met was nearly free; 'speeds up, with no air' became 'keeps its speed, but curves round in a slow circle', so it also tests the straight-line half of the law. The Principia sentence and 'Centuries later' were padding and are cut, as the judge proposed."
+  },
+  "e65c1ec3a4": {
+   "old_hash": "2296f19c12",
+   "why": "Judge (medium): 'The pencil is harder' was silly, leaving the 'toolbox far / only a little' twins to point at the key. The pair is now a big light box of foam and a small heavy toolbox, so the wrong choices are three real ideas, one each: size counts (F25), weightless means no inertia (M3), and only friction makes things hard to shove. Same fact: mass, not weight, gives inertia in orbit."
+  },
+  "3c6d266115": {
+   "old_hash": "3c6d266115",
+   "why": "Judge (low): 'The air in the car rushes forward with him' was weak. Replaced with the impetus idea the judge proposed (M2), a force stored up from the drive. Stem and key unchanged."
+  },
+  "0abef0952d": {
+   "old_hash": "04a6a9cbe5",
+   "why": "Judge (high): only one choice said 'the yank', and the trick is famous, so everyday knowledge answered it and the why (F18) was never tested; the stem also asked two questions. The stem now states the yank and its result and asks only why, with the judge's wrong choices (no friction at all, inertia as a grip M6, the dishes flicked up). 'Almost where they were' is kept out of the stem, so it does not rule out the no-friction choice."
+  },
+  "c267604dd1": {
+   "old_hash": "c267604dd1",
+   "why": "Factcheck (uncertain): the Dialogue's object is a stone in the Tel Aviv museum's account and a rock in Wikipedia's, so the context now says 'a stone' (F24). Judge (low): the key was by far the shortest choice; 'Back in his hand' became 'Back down into his hand'. Stem unchanged."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "90144df1cc",
+   "question": "Johannes Kepler coined the word inertia from a Latin word meaning idle or sluggish. Isaac Newton later built his first law of motion on the idea. In Newton's physics, what does a body's inertia do?",
+   "why": "Factcheck error: Kepler did not coin 'inertia' (a Latin word for idleness); he first used it in physics. Judge (medium): the key is the plain definition, recall with nothing applied. The judge's re-aim (what Newton's inertia did that Kepler's did not) leaves 'keep a moving body moving' beside 'push a moving body along, as a force', which a seventh grader cannot tell apart, while the stem's own account of Kepler rules out the rest; other shapes either re-ask the first law (9cf1d1b552, bda5f3258a) or let the stem's words decide. Dropped; F23 records the correction."
+  }
+ ]
+}

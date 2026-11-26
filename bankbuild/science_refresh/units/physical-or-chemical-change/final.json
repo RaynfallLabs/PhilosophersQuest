@@ -1,0 +1,243 @@
+{
+ "unit": "physical-or-chemical-change",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "physical-or-chemical-change",
+   "question": "A science teacher lists four showy changes for her class to sort, and she warns them that a showy change is not always a chemical one. Which change makes a new substance?",
+   "answer": "A firework bursting in the night sky",
+   "choices": [
+    "A firework bursting in the night sky",
+    "Dry ice giving off a cold white fog",
+    "A balloon bursting with a loud pop",
+    "Iodine crystals warmed into a violet vapour"
+   ],
+   "context": "A firework's black powder burns in a flash into new substances: hot gases, mostly carbon dioxide and nitrogen, whose rush bursts the shell, and a white smoke of solid potassium salts. The balloon's rubber only tears, dry ice turns straight into carbon dioxide gas and iodine straight into iodine vapour, so none of those makes a new substance; the dry ice's fog is water from the air, condensed by the cold.",
+   "facts": [
+    "F1",
+    "F2",
+    "F16",
+    "F17",
+    "F26",
+    "F27",
+    "F28"
+   ],
+   "grade_note": "Seventh grade asks students to classify new cases as physical or chemical changes, and a firework is a standard example of a chemical one."
+  },
+  {
+   "tier": 3,
+   "topic": "physical-or-chemical-change",
+   "question": "A glass beaker slips from a student's hand and shatters on the lab floor, and its pieces can never be fitted back into a beaker. Her lab partner says that a change that cannot be undone must be a chemical change. Why is he wrong?",
+   "answer": "Each broken piece is still glass",
+   "choices": [
+    "Each broken piece is still glass",
+    "Glass is far too hard a material to react",
+    "Glass is made from a mixture, and mixtures cannot react",
+    "Only a change giving off heat or light is chemical"
+   ],
+   "context": "A chemical change makes a new substance, and every shard is the same glass as before, so shattering is a physical change, however hard it is to undo; melted down, the pieces make glass again. Hardness decides nothing, since hydrofluoric acid etches hard glass. Mixtures can react, as iron and sulfur powders do when heated together, and many chemical changes, such as a nail rusting, give off no light.",
+   "facts": [
+    "F6",
+    "F7",
+    "F8",
+    "F15",
+    "F29"
+   ],
+   "grade_note": "Seventh grade teaches that a new substance, not whether a change can be undone, makes a change chemical, and breaking glass is its classic physical change."
+  },
+  {
+   "tier": 3,
+   "topic": "physical-or-chemical-change",
+   "question": "A silver cup stands for years in a museum case, and slowly a thin black film of tarnish grows over it. What is the black film?",
+   "answer": "Silver joined with sulfur from the air",
+   "choices": [
+    "Silver joined with sulfur from the air",
+    "Silver joined with oxygen from the air",
+    "Fine dust from the air, settled on the silver",
+    "Silver darkened by age, still pure silver"
+   ],
+   "context": "Traces of sulfur gases in the air, such as hydrogen sulfide given off by wool and rubber, react with the silver and make black silver sulfide, a new substance, so tarnishing is a chemical change. The tarnish on silver holds no oxygen at all. Each polishing rubs away a little of the silver along with the film, since the film is partly made of it.",
+   "facts": [
+    "F9",
+    "F10",
+    "F30"
+   ],
+   "grade_note": "Seventh grade lists the tarnishing of silver among its standard chemical changes, and guessing an oxide like rust is the usual mix-up."
+  },
+  {
+   "tier": 3,
+   "topic": "physical-or-chemical-change",
+   "question": "Michael Faraday lectured to young people at the Royal Institution in London on the chemistry of a candle. He blew a candle out and held a flame in the vapour rising from its wick, and fire ran down through the air and lit the candle again. What was the vapour?",
+   "answer": "Wax turned into a gas",
+   "choices": [
+    "Wax turned into a gas",
+    "Steam made by the burning wax",
+    "Carbon dioxide from the flame",
+    "Air heated by the flame"
+   ],
+   "context": "The flame melts the wax, the liquid climbs the wick, and the heat turns it into a gas: changes of state that leave it wax, still able to burn. Only the burning in the flame is a chemical change, and it makes carbon dioxide and water vapour, which cannot burn. Air is no fuel either, so only the wax vapour could carry the fire back to the wick.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "Seventh grade sorts a burning candle's changes into physical and chemical ones, and Faraday's candle lectures are the classic story of them."
+  },
+  {
+   "tier": 3,
+   "topic": "physical-or-chemical-change",
+   "question": "A student strikes a match and lets it burn until only a thin black stick is left. Nothing she does to that stick will ever make it fresh wood again. Why not?",
+   "answer": "The wood has become new substances",
+   "choices": [
+    "The wood has become new substances",
+    "The wood's particles have shrunk in the heat",
+    "The wood's shape has changed too far to undo",
+    "The wood is coated in soot that will not wash off"
+   ],
+   "context": "Burning turns the wood's substances into carbon dioxide, water vapour and ash, and the black stick left is charcoal, mostly carbon, so no change of shape or size could ever make it wood again. Particles do not shrink when they are heated, and the stick is charcoal itself, not wood under a coat of soot.",
+   "facts": [
+    "F2",
+    "F14",
+    "F31"
+   ],
+   "grade_note": "Seventh grade gives burning a match as a chemical change and explains it by the new substances that burning makes."
+  },
+  {
+   "tier": 3,
+   "topic": "physical-or-chemical-change",
+   "question": "A student stirs a scoop of salt into a beaker of water until no grains can be seen. Her teacher asks for proof that no new substance was made and that the dissolving was only a physical change. Which observation gives that proof?",
+   "answer": "Drying the water away leaves salt again",
+   "choices": [
+    "Drying the water away leaves salt again",
+    "No bubbles, heat or smell came off as it dissolved",
+    "The salt water weighs as much as both did",
+    "The water stays clear and colourless"
+   ],
+   "context": "When the water is dried away the same salt is left, so it was there all along, spread through the water in bits too small to see; salt works make salt from seawater this way. Missing signs prove nothing, since a nail can rust with no bubbles or smell, and mass is kept in every change, chemical ones included. A solid can even vanish into a clear liquid in a chemical change, as zinc does in acid, so only getting the salt back is proof.",
+   "facts": [
+    "F4",
+    "F5",
+    "F15",
+    "F24"
+   ],
+   "grade_note": "Seventh grade explains why dissolving salt is a physical change: the salt can be got back by evaporating the water."
+  },
+  {
+   "tier": 3,
+   "topic": "physical-or-chemical-change",
+   "question": "A teacher touches the ends of a 9-volt battery to a pad of fine steel wool, which is mostly iron. The wool glows and burns with sparks, leaving a dark, brittle mass. How is this burning like the slow rusting of an iron nail left out in the rain?",
+   "answer": "Both join iron with oxygen from the air",
+   "choices": [
+    "Both join iron with oxygen from the air",
+    "Both join iron with nitrogen from the air",
+    "Both turn iron into a different form of iron",
+    "Both break iron into tiny bits of iron"
+   ],
+   "context": "In both, iron joins with oxygen from the air and becomes iron oxide, a new substance, so both are chemical changes: the dark mass and the rust are no longer iron at all. The thin wool reacts in seconds and needs no water, while the nail takes months and rusts only where it is wet. Nitrogen from the air takes no part in either.",
+   "facts": [
+    "F15"
+   ],
+   "grade_note": "Seventh grade names rusting and burning as chemical changes and teaches rusting as iron slowly joining with oxygen."
+  },
+  {
+   "tier": 3,
+   "topic": "physical-or-chemical-change",
+   "question": "A granite boulder sits out through many years of sun, wind, rain and frost, and its hard feldspar crystals slowly turn into a soft, white clay that can be moulded when wet. What is the clay?",
+   "answer": "Feldspar made into a new mineral by rain",
+   "choices": [
+    "Feldspar made into a new mineral by rain",
+    "Feldspar split fine by ice in its cracks",
+    "Feldspar worn to dust by wind-blown sand",
+    "Feldspar crumbled by daily heating and cooling"
+   ],
+   "context": "Rainwater, made a weak acid by carbon dioxide from the air, reacts with the feldspar and turns it into kaolinite, a clay mineral with new properties, so this is chemical weathering. Ice in cracks, wind-blown sand and daily heating and cooling only break rock into smaller pieces of the same minerals: physical weathering. Quartz, another of granite's minerals, resists this weathering.",
+   "facts": [
+    "F20",
+    "F21",
+    "F32"
+   ],
+   "grade_note": "Seventh-grade earth science sorts weathering into physical and chemical, and feldspar turning into clay is the standard example of the chemical kind."
+  },
+  {
+   "tier": 3,
+   "topic": "physical-or-chemical-change",
+   "question": "A student strokes a large iron nail again and again in one direction with a strong magnet. Afterward the nail picks up paper clips on its own, which it could not do before. Has the nail gone through a chemical change?",
+   "answer": "No, the nail is still the same iron",
+   "choices": [
+    "No, the nail is still the same iron",
+    "Yes, it has gained a property it lacked",
+    "Yes, its iron has joined with the magnet's",
+    "No, a chemical change needs heat or a flame"
+   ],
+   "context": "Stroking lines up tiny groups of the iron's atoms, called domains, so that their magnetism points one way, but no new substance forms: the nail is still iron, so magnetizing it is a physical change. A new property alone does not make a new substance, and the nail's iron does not join with the magnet's. Many chemical changes, such as rusting, need no heat or flame at all.",
+   "facts": [
+    "F1",
+    "F15",
+    "F34"
+   ],
+   "grade_note": "Seventh grade classifies new cases as physical or chemical changes by asking whether a new substance forms, and magnetizing iron is a standard physical change."
+  },
+  {
+   "tier": 3,
+   "topic": "physical-or-chemical-change",
+   "question": "Inside an old-style light bulb, a thin wire of the metal tungsten glows white-hot whenever the bulb is switched on, giving off light and a great deal of heat. Is the glowing wire going through a chemical change?",
+   "answer": "No, the wire stays tungsten all along",
+   "choices": [
+    "No, the wire stays tungsten all along",
+    "Yes, it gives off light and heat",
+    "Yes, the tungsten burns in the air inside the bulb",
+    "No, electricity cannot cause a chemical change"
+   ],
+   "context": "Light and heat are only clues: the current heats the wire until it glows, and it is still tungsten when it cools, so the glow is a physical change. The bulb holds no air, only a vacuum or an unreactive gas, so the wire cannot burn. Electricity can drive chemical changes, as when a current splits water into hydrogen and oxygen, but here it only heats the wire, which slowly thins as tungsten atoms escape from it as a gas.",
+   "facts": [
+    "F23",
+    "F33"
+   ],
+   "grade_note": "Seventh grade classifies new cases by asking whether a new substance forms, even when a change gives off light and heat."
+  }
+ ],
+ "revised": {
+  "d6d7606a59": {
+   "old_hash": "40eab4d630",
+   "why": "Fact-check (error): black powder's products are not mostly nitrogen, carbon dioxide and water vapour; more than half is solid potassium salts (the smoke) and water is about 1 percent (F26). The context now says so. Judge (medium): sweat drying and a geode split open were lookalikes a 5th grader sorts at once; every wrong choice is now a showy physical change (a balloon's loud pop, iodine's violet vapour, dry ice's fog), to match the teacher's warning (F27, F28). Judge (low): 'Which of the four' is now 'Which change'. Same key and fact."
+  },
+  "089f43b7a2": {
+   "old_hash": "089f43b7a2",
+   "why": "Judge (medium, tell): the wrong choices shared one pattern and two were weak (speed, and 'only liquids and gases'), leaving the key as the only choice about the glass itself. 'Too hard to react' is kept; the other two are now the judge's live misconceptions: a mixture cannot react (glass is made from a mixture, F8; iron and sulfur powders react when heated, F29) and only a change giving off heat or light is chemical (rusting gives none, F15). The old context's firework line, which gave away the firework question's key, is gone. Stem, key and fact unchanged."
+  },
+  "b385992335": {
+   "old_hash": "d1c0f6375f",
+   "why": "Judge (medium, grade): the stem told the student the film was a new substance, so only the element was asked. The stem no longer says so: two choices are physical (dust settled on the silver, silver darkened by age) and two chemical (sulfur, oxygen), so the student must classify the change as well as know the sulfide. Judge (medium, tell): 'an element carried by a gas' is gone. Fact-check (uncertain): 'mostly hydrogen sulfide' is now 'such as hydrogen sulfide' (carbonyl sulfide is as common, F30). The context no longer says rust is iron and oxygen, which would give away the steel-wool question. Same fact (F9, F10)."
+  },
+  "4fca8a7860": {
+   "old_hash": "dc96dd6b5a",
+   "why": "Judge (medium, tell): 'No physical means ... can turn it back' set up the physical/chemical pair, and two wrong choices were weak (wood melting; heat escaping, not a reason). The stem now just says nothing she does will make it wood again, and the weak choices are replaced with the judge's physical pictures: particles shrunk in the heat (F31) and a change of shape too great to undo, like the broken beaker. The context no longer says burning joins with oxygen, which would give away the steel-wool question. Same key and fact (F2, F14)."
+  },
+  "9f9c9ed99b": {
+   "old_hash": "9f9c9ed99b",
+   "why": "Judge (medium, tell): 'No grains of salt can be seen any more' only repeated the stem and was dead. It is replaced, as the judge proposed, by 'No bubbles, heat or smell came off as it dissolved', missing signs taken for proof; the context answers it (rusting shows no such signs, F15). Stem, key and fact unchanged."
+  },
+  "c2ab11d15c": {
+   "old_hash": "c2ab11d15c",
+   "why": "Judge (high, tell): each wrong choice named a feature only one of the two changes has (water, light, a start of heat), so the key fell out by elimination. Every choice is now something both changes could share, as the judge proposed, so the student must know what rusting and burning are: oxygen, nitrogen, a new form of iron, tiny bits of iron. 'With water' and 'with hydrogen' were avoided, since rust is a hydrated oxide. Stem, key and fact unchanged (F15)."
+  },
+  "d8d565f4d6": {
+   "old_hash": "9e7fe55103",
+   "why": "Judge (high, tell): 'turn into' ruled out the quartz and the washed-in mud, and 'made a weak acid' cued the chemical answer. As the judge proposed, the acid is now in the context only, and every choice starts from the feldspar: one chemical, three physical (ice, wind-blown sand, daily heating and cooling, F32). The stem names sun, wind, rain and frost, so no agent is ruled out. The judge's 'softened by soaking up rainwater' was not used: the reaction does take up water, so it was partly true. Same fact (F20, F21)."
+  },
+  "ce0cbbea7b": {
+   "old_hash": "ce0cbbea7b",
+   "why": "Judge (medium): 'No, metals cannot take part in reactions' was dead beside rusting and the steel wool. It is replaced, as the judge proposed, by 'No, electricity cannot cause a chemical change' (false: a current splits water, F33). Judge (low): the half-true 'the wire is slowly burning up' is now 'the tungsten burns in the air inside the bulb' (which also shares the key's word 'tungsten'), and the context says the bulb holds no air. Stem, key and fact unchanged."
+  }
+ },
+ "added": {
+  "98079f69ef": "Replaces the dropped saliva-and-starch question (4c8aaeb004). A new case on the scope's classifying of changes: a magnetized nail gains a property but stays iron, so the change is physical (F34). The wrong choices are the misconceptions that a new property means a new substance (M6), that the nail's iron joins with the magnet's, and that a chemical change needs heat or a flame. Facts F1, F15, F34; F34 was researched now."
+ },
+ "dropped": [
+  {
+   "old_hash": "4c8aaeb004",
+   "question": "A bite of food goes through several changes in the mouth before it is swallowed. Most of them change only its size or shape, as crushing changes a rock, but one makes a new substance. Which change is that?",
+   "why": "Judge (high, tell): the key was the only choice naming one substance becoming another, so the stem's own definition picked it. Judge (medium) and the lead: its fact, that saliva starts the chemical digestion of starch, belongs to the T3 body-systems unit's digestive system (and through the enzyme to T5). Re-angling it would still teach the mouth's digestion, so it is replaced by a new case on another fact of the scope (a magnetized nail, F34)."
+  }
+ ]
+}

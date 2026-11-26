@@ -1,0 +1,410 @@
+{
+ "unit": "solutions-solute-and-solvent",
+ "questions": {
+  "8fc532151c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: nitrogen is the solvent in air because it is the component present in the greatest amount (stem wording 'chemists count it as a solution' is safe at grade level)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solution_(chemistry)",
+     "note": "Grokipedia: nitrogen 'constitutes approximately 78% of the mixture and functions as the primary solvent'; solvent = 'the component present in the greater amount'. LibreTexts CK-12 16.01 agrees: air 'qualifies as a solution', '78% ... nitrogen, making it the solvent'."
+    },
+    {
+     "claim": "Wrong choice: oxygen (breathed by living things) is the solvent",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "Oxygen is 20.95%, a solute; being breathed has nothing to do with being the solvent."
+    },
+    {
+     "claim": "Wrong choice: water vapour, as water is the universal solvent",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "Water vapour is 'near 0% to 4%' of air, a minor solute; 'universal solvent' refers to liquid water dissolving things."
+    },
+    {
+     "claim": "Wrong choice: carbon dioxide, as it dissolves well in water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "CO2 is about 0.043% of air, a trace solute."
+    },
+    {
+     "claim": "Context: air is about 78 percent nitrogen and 21 percent oxygen; oxygen, water vapour, argon and CO2 are the solutes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "78.08% N2, 20.95% O2, 0.934% Ar, 0.043% CO2 by volume (dry air)."
+    },
+    {
+     "claim": "Context: water is the solvent in seawater because seawater is mostly water (about 96.5% water); air holds only a little water vapour",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Seawater",
+     "note": "Seawater is about 3.5% dissolved salt by weight, so the rest is water."
+    },
+    {
+     "claim": "Context: brass is a solid solution, zinc spread through copper",
+     "result": "ok",
+     "source": "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16:_Solutions/16.01:_Solute-Solvent_Combinations",
+     "note": "LibreTexts table: 'zinc in copper (brass alloy)'; Grokipedia Solution_(chemistry): 'brass, where zinc atoms substitute into the copper lattice'."
+    }
+   ]
+  },
+  "40838f3bd0": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Stem: water is called the universal solvent because it dissolves so many substances; it holds salt in the sea, oxygen in a pond, and in blood carries nutrients",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/water-universal-solvent",
+     "note": "USGS: water dissolves 'more substances than any other liquid', and 'Of course it cannot dissolve everything'; water moving through our bodies 'takes along valuable chemicals, minerals, and nutrients'. The stem does not claim water dissolves everything, so it is honest."
+    },
+    {
+     "claim": "Key: its molecules have slightly charged ends (polar molecule)",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/water-universal-solvent",
+     "note": "USGS: hydrogen side positive, oxygen side negative; water molecules pull the sodium and chloride ions apart. Grokipedia Properties_of_water: polar and ionic compounds dissolve readily."
+    },
+    {
+     "claim": "Wrong choice: it reacts with each thing it touches",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Physical_change",
+     "note": "Dissolving is a physical change; water does not react with what it dissolves."
+    },
+    {
+     "claim": "Wrong choice: it is the only liquid that dissolves solids",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tincture_of_iodine",
+     "note": "Ethanol dissolves solid iodine directly (tincture of iodine)."
+    },
+    {
+     "claim": "Wrong choice: its molecules are smaller than all others",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Kinetic_diameter",
+     "note": "False as a reason and as a fact (helium, kinetic diameter 260 pm, is smaller than water, 265 pm)."
+    },
+    {
+     "claim": "Context: oxygen end slightly negative, hydrogen ends slightly positive; water tugs sodium and chloride apart",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/water-universal-solvent",
+     "note": ""
+    },
+    {
+     "claim": "Context: alcohol dissolves the iodine in the tincture put on cuts",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tincture_of_iodine",
+     "note": "About 2% iodine in about 50% ethanol; 'ethanol ... dissolving iodine directly'; applied to 'minor cuts, scrapes, and burns'."
+    },
+    {
+     "claim": "Context: 'A hydrogen molecule is smaller than a water molecule'",
+     "result": "uncertain",
+     "source": "https://en.wikipedia.org/wiki/Kinetic_diameter",
+     "note": "Depends on the measure of size. By kinetic diameter (the usual gas-molecule size) H2 is 289 pm and H2O only 265 pm, so water is the SMALLER; by van der Waals b (H2 0.0266, H2O 0.0305 L/mol, https://en.wikipedia.org/wiki/Van_der_Waals_constants_(data_page)) and by mass H2 is smaller. A chemist could object. Fix: change the wrong choice to 'Its molecules are the lightest there are' and the context sentence to 'A hydrogen molecule weighs only a ninth as much as a water molecule, so that is not the reason.' (H2 = 2 u, H2O = 18 u; unambiguous)."
+    }
+   ]
+  },
+  "adef2d55ac": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: salt concentration rises as the same salt is in less water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tide_pool",
+     "note": "'evaporation in warm, stagnant pools can elevate salinity to 50 ppt or higher'."
+    },
+    {
+     "claim": "Wrong choice: it falls, as the salt goes off with the water",
+     "result": "ok",
+     "source": "https://archive.bigelow.org/mitzi/tidepool_3.html",
+     "note": "Evaporation removes water only; in isolated pools it causes 'a relative increase in salinity'."
+    },
+    {
+     "claim": "Wrong choices: stays the same (no salt added); falls as the Sun's heat breaks the salt down",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tide_pool",
+     "note": "Concentration depends on the water too; sunlight does not decompose sea salt."
+    },
+    {
+     "claim": "Context: concentration is how much solute a given amount of solution holds",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solution_(chemistry)",
+     "note": "'the amount of solute per unit volume or mass of the solution'."
+    },
+    {
+     "claim": "Context: seawater holds about 35 grams of salt in each kilogram",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Seawater",
+     "note": "'typically averaging 35 grams of dissolved salts per kilogram of seawater (3.5 percent by weight)'."
+    },
+    {
+     "claim": "Context: a sun-baked rock pool can reach 50 or more; rain dilutes the pool",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tide_pool",
+     "note": "50 ppt or higher by evaporation; rain can drop it 'below 30 ppt'. Race Rocks (racerocks.ca) reports a high pool evaporating to saturation."
+    }
+   ]
+  },
+  "608fb33e6e": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Key: after dilution the flask holds the same amount of permanganate, spread through more water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dilution_(equation)",
+     "note": "'the concentration of a solute decreases upon addition of solvent, while the total amount of solute remains constant' (C1V1 = C2V2)."
+    },
+    {
+     "claim": "Wrong choice: a tenth as much, as the colour is so pale",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dilution_(equation)",
+     "note": "The concentration is a tenth; the amount is unchanged."
+    },
+    {
+     "claim": "Wrong choices: ten times as much (more liquid); less, as some has settled",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solution_(chemistry)",
+     "note": "No solute is added; a true solution does not settle."
+    },
+    {
+     "claim": "Stem: one 10 mL + 90 mL dilution turns a deep purple solution pale pink",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Potassium_permanganate",
+     "note": "The writer's own source puts deep purple above about 10^-2 M and pale pink below about 10^-4 M: a hundredfold apart, so one tenfold step cannot take deep purple to pale pink. The classic school demo (https://www.teachoo.com/12518/3426/Activity---Show-Matter-is-Made-up-of-Particles/category/Extra-Questions/) repeats the same 10 mL into 90 mL step several times, each glass only a little paler, before the colour is very pale. Fix: stem 'the liquid turns a much paler purple'; wrong choice 'A tenth as much, as the colour is so much paler'. (Or make it 1 mL into 99 mL, a hundredfold, and change 'ten times'/'a tenth' in the context to 'a hundred times'/'a hundredth'.)"
+    },
+    {
+     "claim": "Context: same permanganate, ten times the liquid, a tenth the concentration, colour fades; a dissolved solute does not settle",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dilution_(equation)",
+     "note": "10 mL made up to about 100 mL is a tenfold dilution."
+    },
+    {
+     "claim": "Stem: potassium permanganate makes a deep purple solution",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Potassium_permanganate",
+     "note": "'intensely magenta-colored solution'; concentrated solutions 'deep purple'."
+    }
+   ]
+  },
+  "cc90c4c8ff": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: the crushed grains dissolve first, as more surface meets the water",
+     "result": "ok",
+     "source": "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.02%3A_Rate_of_Dissolving",
+     "note": "'A given quantity of solute dissolves faster when it is ground into small particles'; Grokipedia Solubility: more surface area increases the rate."
+    },
+    {
+     "claim": "Wrong choices: the lump (weight drags it down); both at once (same mass); the lump (water seeps into its cracks)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solubility",
+     "note": "Rate depends on exposed surface, not mass or sinking; cracks expose far less surface than crushing."
+    },
+    {
+     "claim": "Halite is the mineral form of sodium chloride, rock salt, and dissolves readily",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Halite",
+     "note": "'Halite, commonly known as rock salt, is the naturally occurring mineral form of sodium chloride'; about 35.9 g per 100 mL at 25 C."
+    },
+    {
+     "claim": "Stem: a fist-sized lump in a beaker of water will be 'gone'",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Halite",
+     "note": "A fist is about 250 mL (https://pmc.ncbi.nlm.nih.gov/articles/PMC4976119/table/tab02); at halite's density of about 2.17 g/cm3 that is roughly 540 g of salt, which needs about 1.5 litres of water (35.9 g per 100 mL) before it can all dissolve. In an ordinary beaker the water saturates and neither the lump nor the grains is ever gone. Fix: 'a walnut-sized lump' (about 40 g, needs about 110 mL), or say 'a large tank of water'."
+    },
+    {
+     "claim": "Context: water works only where it touches the solid; crushing bares more surface",
+     "result": "ok",
+     "source": "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.02%3A_Rate_of_Dissolving",
+     "note": ""
+    }
+   ]
+  },
+  "95692c2947": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: hot water's particles move faster and strike the crystal more often",
+     "result": "ok",
+     "source": "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.02%3A_Rate_of_Dissolving",
+     "note": "'Heating up a solvent gives the molecules more kinetic energy'; they 'collide with the solute with greater frequency'."
+    },
+    {
+     "claim": "Wrong choice: the heat melts the crystal into a blue liquid first",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Copper(II)_sulfate",
+     "note": "The pentahydrate does not melt in hot water; on dry heating it loses water (63, 109, 200 C) and decomposes rather than melting (anhydrous about 590 C). Grokipedia Copper(II)_sulfate: dehydrates 'rather than melting'."
+    },
+    {
+     "claim": "Wrong choice: the heat turns the crystal into a new substance",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Physical_change",
+     "note": "Dissolving is a physical change at this grade's level."
+    },
+    {
+     "claim": "Wrong choice: water's particles grow bigger and push the crystal apart",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Thermal_expansion",
+     "note": "Heated matter expands by greater average separation of particles, not bigger particles."
+    },
+    {
+     "claim": "Copper sulfate forms blue crystals",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Copper(II)_sulfate",
+     "note": "'bright blue triclinic crystals or granules'; solubility rises markedly with temperature."
+    },
+    {
+     "claim": "Context: dissolves rather than melts; no new substance; particles stay the same size",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Copper(II)_sulfate",
+     "note": ""
+    }
+   ]
+  },
+  "dff0250687": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: Epsom salt is the crystal used in soaks for sore muscles",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Magnesium_sulfate",
+     "note": "MgSO4.7H2O 'known as Epsom salt', colourless crystals, about 710 g/L at 20 C; used in baths to 'ease muscle aches'. The stem says only that it is used so, not that it works."
+    },
+    {
+     "claim": "Key: stirring keeps bringing fresh water to the crystals",
+     "result": "ok",
+     "source": "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.02%3A_Rate_of_Dissolving",
+     "note": "Unstirred, 'the water right at the surface of the solute becomes saturated'; stirring brings fresh solvent. Grokipedia Solubility: agitation thins 'the hydrodynamic boundary layer adjacent to the solute surface'."
+    },
+    {
+     "claim": "Wrong choice: it splits the salt's particles into smaller bits",
+     "result": "ok",
+     "source": "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.02%3A_Rate_of_Dissolving",
+     "note": "Wrong as written: the salt's particles are not split. Mild caution only: a reader who takes 'particles' as grains could argue a stirring rod grinds crystals; the bank's use of 'particles' (as in the copper sulfate question) is the tiny particles, so it stands."
+    },
+    {
+     "claim": "Wrong choice: it lets the water hold more salt in all",
+     "result": "ok",
+     "source": "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.02%3A_Rate_of_Dissolving",
+     "note": "'neither stirring nor breaking up a solute affect the overall amount of solute that dissolves'."
+    },
+    {
+     "claim": "Wrong choice: it mixes in air, and the air dissolves the salt",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solubility",
+     "note": "Air does not dissolve salt."
+    },
+    {
+     "claim": "Context: saturated layer next to the crystal; stirring changes the rate, not how much can dissolve; no particle split",
+     "result": "ok",
+     "source": "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.02%3A_Rate_of_Dissolving",
+     "note": ""
+    }
+   ]
+  },
+  "e933cb5aad": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: potassium nitrate is a white salt; undissolved crystals mean the solution is saturated",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Potassium_nitrate",
+     "note": "Infobox 'white solid'; Grokipedia Potassium_nitrate 'white to dirty gray crystalline solid'. Grokipedia Solubility: saturated = 'in dynamic equilibrium with any undissolved solute'."
+    },
+    {
+     "claim": "Key: warming the water gets more of the crystals to dissolve",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solubility",
+     "note": "'potassium nitrate rises sharply from 31.6 g/100 g at 20 C to 245 g/100 g at 100 C'."
+    },
+    {
+     "claim": "Wrong choices: stirring faster; crushing to a powder; leaving it to stand for days",
+     "result": "ok",
+     "source": "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.02%3A_Rate_of_Dissolving",
+     "note": "'neither stirring nor breaking up a solute affect the overall amount of solute that dissolves'; a saturated solution at a fixed temperature takes no more however long it stands (standing would if anything evaporate water)."
+    },
+    {
+     "claim": "Context: water near boiling holds more than seven times as much potassium nitrate as water at 20 C",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Potassium_nitrate",
+     "note": "Wikipedia 316 g/L at 20 C, 2439 g/L at 100 C (7.7x); Grokipedia 31.6 to 245 g/100 g (7.8x); chemister.ru 31.6 to 243.6 g/100 g water (7.7x, https://chemister.ru/Databases/Chemdatabase/properties-en.php?id=513)."
+    },
+    {
+     "claim": "Context: warmer water holds more of most solids",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solubility",
+     "note": ""
+    }
+   ]
+  },
+  "19dd2a7afa": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: as the pond warms from 20 to 30 C the oxygen it can hold falls; warm water holds less gas",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solubility",
+     "note": "Gas solubility 'generally decreases with increasing temperature, as higher thermal energy favors the escape of gas molecules from the solution'."
+    },
+    {
+     "claim": "Wrong choices: rises; stays the same as only solids change; drops to none as the gas boils away",
+     "result": "ok",
+     "source": "https://www.engineeringtoolbox.com/oxygen-solubility-water-d_841.html",
+     "note": "It falls only from about 9.1 to 7.6 mg/L, nowhere near zero."
+    },
+    {
+     "claim": "Context: about 9 mg/L at 20 C and about 7.6 mg/L at 30 C in fresh water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Oxygen_saturation",
+     "note": "Grokipedia: about 9 mg/L at 20 C, 7.6 mg/L at 30 C; Engineering Toolbox table: 9.1 and 7.6 mg/L at 1 atm."
+    },
+    {
+     "claim": "Context: hot, calm summer weather can leave pond fish short of oxygen; cold tumbling streams hold plenty",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water",
+     "note": "USGS: 'Cold water can hold more dissolved oxygen than warm water'; 'a period of hot, calm weather, resulting in the loss of many fish'."
+    },
+    {
+     "claim": "Stem: fish breathe oxygen dissolved in the water",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water",
+     "note": ""
+    }
+   ]
+  },
+  "8965308bae": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: CO2 forced into chilled water under pressure and capped",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Carbonated_water",
+     "note": "Water chilled to about 0-5 C; CO2 injected at about 3-6 bar."
+    },
+    {
+     "claim": "Key: the pressure drops, so less gas can stay dissolved",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Carbonated_water",
+     "note": "Henry's law: dissolved CO2 proportional to its partial pressure; 'the sudden pressure drop leads to supersaturation ... dissolved CO2 forms bubbles'. The bubbles are carbon dioxide."
+    },
+    {
+     "claim": "Wrong choice: the pressure drops, so the water starts to boil",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Boiling_point",
+     "note": "At ordinary air pressure water boils at 100 C; cold or room-temperature water does not boil."
+    },
+    {
+     "claim": "Wrong choices: air rushes in and reacts with the water; air rushes in and forms the bubbles",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solubility",
+     "note": "Gas rushes out on opening; the fizz is dissolved CO2 escaping 'as pressure drops and the gas escapes'."
+    },
+    {
+     "claim": "Context: more pressure, more gas held; opening drops pressure to that of ordinary air; the water is far too cold to boil",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Carbonated_water",
+     "note": ""
+    }
+   ]
+  }
+ },
+ "unit_notes": "7 ok, 1 error, 2 uncertain. Error 608fb33e6e: one tenfold dilution cannot turn deep purple permanganate pale pink (the writer's own source puts the two a hundredfold apart); say 'a much paler purple'. Uncertain 40838f3bd0: 'a hydrogen molecule is smaller than a water molecule' depends on the measure (kinetic diameter H2 289 pm > H2O 265 pm); use weight instead. Uncertain cc90c4c8ff: a fist-sized lump (about 540 g) needs about 1.5 L of water to dissolve at all; make it walnut-sized. Air as a solution, the universal-solvent context (honest: it never says water dissolves everything), the tide pool, KNO3 (7.7x), O2 at 20/30 C and the CO2 fizz all check out."
+}

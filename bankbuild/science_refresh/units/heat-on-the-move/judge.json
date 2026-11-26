@@ -1,0 +1,64 @@
+{"unit": "heat-on-the-move",
+ "questions": {
+  "cb1e636227": {"verdict": "ok", "issues": []},
+  "9bebc216fb": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "It re-asks a T1 fact: heat flows from the warmer thing to the cooler one, and cold does not flow. T1 solids-liquids-and-gases already asks it (gallium melting in the palm: 'Heat flowing into it from her hand' against 'Cold flowing out of it into her hand'), and so does T1 telling-materials-apart (the frosty bench: 'The metal draws heat from a hand faster' against 'The metal lets cold flow into a hand'). Both use the same wrong idea. At T3 this applies nothing new.",
+     "fix": "Keep the ice pack but aim it at the 'heat rises' misconception (F11 with F5), which no unit asks: 'A coach rests a player's swollen ankle on top of an ice pack, so the pack lies under the ankle. Does heat still flow out of the ankle into the pack?' Key: 'Yes, heat flows into the cooler pack below it'. Wrong: 'No, heat only rises, so it cannot flow down' / 'Only a little, as most of it rises off the top' / 'No, the cold in the pack sinks away from the ankle'."}
+   ]},
+  "b7b350a0f2": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the only choice in particle language, which test-wise students know as 'the science answer'.",
+     "fix": "Give one wrong choice particle language too: replace 'The hottest metal slowly creeps up toward the top' with 'Hot metal particles drift up the handle to the top'."}
+   ]},
+  "bc4f861aa5": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Potassium permanganate is also the scene of a T3 solutions-solute-and-solvent question (dilution). The facts differ, but the purple crystal shows up twice at one tier.",
+     "fix": "Keep; or use any coloured crystal here, as the demonstration does not depend on permanganate."}
+   ]},
+  "7be41b0d20": {"verdict": "ok", "issues": []},
+  "99152a088f": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'their faces glow with warmth': 'glow' hints at light, and so at rays.",
+     "fix": "'...and soon their faces feel warm.'"}
+   ]},
+  "d18ec790b7": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Convergence tell: 'Radiation' is the first step in two choices and 'conduction' is the second step in two, and the key is the one choice that joins the two most common parts. That is the classic test-wise pick.",
+     "fix": "Choices: 'Radiation, then conduction' / 'Conduction, then radiation' / 'Convection, then radiation' / 'Conduction, then convection'. The convergent pick is now a wrong choice."},
+    {"axis": "grade", "severity": "low",
+     "what": "Each step on its own is T1-familiar (the Sun's rays; touching hot metal). The two-step tracing makes it a fair seventh-grade application, but only just.",
+     "fix": "Keep the two-step frame."}
+   ]},
+  "01c47be3d6": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "'A pane of solid glass lets heat through quickly' overstates. Solid glass is a poor conductor beside metals (0.84 against copper's 390 in F6) and is quick only beside glass wool, so a student may come away thinking glass is a good conductor.",
+     "fix": "'A pane of solid glass lets far more heat through, yet the fluffy mats...'"},
+    {"axis": "tell", "severity": "low",
+     "what": "'thick, fluffy ... a loose tangle' points toward air. That is acceptable, since a student must still know why trapped air insulates.",
+     "fix": "Optional: drop 'fluffy'."}
+   ]},
+  "b91129d092": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'a Scottish chemist' and the laboratory setting rule out 'Germs kept warm at the heat of the body' (a biologist's job) and 'Ice kept frozen on long sea voyages' (a shipping job). Molten metal held in a glass flask is implausible. The key is left by elimination.",
+     "fix": "If the history stays, drop 'a Scottish chemist' and use wrong choices that suit an 1892 laboratory: 'Steam kept hot enough to stay a gas' / 'Living cells kept warm for the microscope' / 'Fresh snow kept from melting for study'."},
+    {"axis": "grade", "severity": "medium",
+     "what": "The key is a history fact (what Dewar wanted the flask for), not seventh-grade science. The science the story carries, that the flask slows heat both ways (F20), appears only in the context.",
+     "fix": "Give the history in the stem and ask the science: 'James Dewar made the first vacuum flask in 1892, to hold gases he had chilled until they turned liquid, far colder than any freezer. Today the same kind of flask keeps a camper's drink hot on a winter hike. How can one flask do both jobs?' Key: 'It slows heat moving either way through its walls'. Wrong: 'It holds heat in and lets cold out' / 'It stores heat or cold in its glass walls' / 'It makes heat or cold to match what is inside'."}
+   ]},
+  "06c1342237": {"verdict": "ok", "issues": []},
+  "e007355022": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The three wrong choices are the T1 telling-materials-apart wool hat's wrong ideas over again ('keeps making heat, like a heater'; 'soaks up warmth from the air'; 'gives off heat stored in its wool'). A student with only the T1 fact (a covering slows heat loss and makes no heat) eliminates all three and never needs this unit's fact, that shiny metal reflects radiated heat (F15).",
+     "fix": "Make the wrong choices other ways of moving heat: 'It reflects his body's heat rays back toward him' (key) / 'Its metal soaks up his heat rays and holds them' / 'Its plastic is too thick for heat to get through' / 'Its metal spreads his heat evenly over his body'."}
+   ]}
+ },
+ "unit_notes": "Scope covered: direction of flow (9beb), thermal equilibrium (cb1e), conduction by particle collisions with caloric as the honest old theory (b7b3), convection currents (bc4f, 7be4), radiation (99152, d18e, e007), insulators (01c4, 06c1, b911). The sea breeze, the black shirt, the cold bench and the wool hat are rightly left to T1, and mantle convection to plates-at-work. Ocean currents, in the scope, are not asked; that is an acceptable gap at 11 questions. Lanes are clean: the scenes are lab beakers, not pans, and the scope's pot of boiling water is rightly avoided. Overlaps with other units: (1) HIGH: 9beb re-asks the T1 'heat flows warm to cool, cold does not flow' fact already asked by T1 solids-liquids-and-gases (gallium) and T1 telling-materials-apart (the frosty bench). Re-aim it at 'heat rises' (above). (2) e007 re-uses the T1 wool hat's three wrong ideas, so the T1 fact alone answers it. Replace them (above). (3) 01c4's trapped air is a new mechanism beside the wool hat's 'it slows the heat', so keep it. (4) d18e asks the route the heat takes, not absorption by colour, so it does not repeat T1 how-light-travels' black shirt. (5) T2 earths-four-spheres' warm sea heating the air and T1 weather-and-climate-basics' sea breeze are not re-asked. (6) T2 particles-in-motion's vibrating particles are built on, not re-asked, by b7b3. (7) bc4f shares potassium permanganate with T3 solutions-solute-and-solvent; the facts differ (low). Boundary for the unbuilt T3 temperature-and-moving-particles: cb1e owns thermal equilibrium here, so that unit should keep to temperature against thermal energy and to expansion. Inside the unit: 06c1 (which transfers a vacuum blocks) and b911 (re-aimed to 'slows heat both ways') are different facts once b911 is fixed. Grade: all eleven are seventh-grade heat-transfer content except 9beb (a T1 re-ask) and b911 (a history key as written)."}

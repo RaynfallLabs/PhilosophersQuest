@@ -1,0 +1,133 @@
+{
+ "unit": "solutions-solute-and-solvent",
+ "questions": {
+  "8fc532151c": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "T2 earths-four-spheres already asks which gas makes up most of the air (nitrogen). The answer is the only nitrogen choice, so a student with that T2 fact alone picks it without the T3 rule that the solvent is the part present in the greatest amount. The stem's comparison with salt in the sea also hints that the main ingredient is the solvent.",
+     "fix": "Let the T3 rule decide a case no lower unit answers: 'Rubbing alcohol, used to clean the skin before an injection, is about 70 parts alcohol to 30 parts water. Which is the solvent, and why?' with 'The alcohol, as there is more of it' / 'The water, as water is the universal solvent' / 'The water, as the alcohol dissolves in it' / 'Neither, as two liquids cannot make a solution'. Air can stay in the context."
+    },
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Carbon dioxide, as it dissolves so well in water' is weak: a fact about water says nothing about the solvent of air, and the gas is a trace.",
+     "fix": "If air is kept, replace it with 'Oxygen, as there is more of it than any other gas', so the reason has to be known as well as the gas."
+    }
+   ]
+  },
+  "40838f3bd0": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "The key (slightly charged ends, water's polarity) is the core fact of T4 waters-sticky-properties, whose scope reads 'a water molecule has a slightly negative end (oxygen) and slightly positive ends (hydrogens)'. So this asks another unit's fact, an 8th-grade one by the map, at any tier. This unit's scope has only the universal solvent itself, with no 'why'.",
+     "fix": "Ask the universal solvent within the scope, with wrong choices the stem does not refute: 'Water holds salt in the sea and oxygen in a pond, and in the blood it carries nutrients round the body. Chemists call it the universal solvent. What does the name mean?' with 'It dissolves more substances than any other liquid' / 'It dissolves every substance there is' / 'It is the solvent in every solution' / 'It can dissolve any amount of a solute'. The context gives the honest caveat (the iodine tincture needs alcohol) and leaves the charged ends to T4."
+    }
+   ]
+  },
+  "adef2d55ac": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Ruling on the T1 overlap: the fact asked, that concentration rises as solvent leaves, is new T3 content, so this is not a re-ask of T1 matter-made-of-tiny-particles (salt left behind as seawater dries). But two of the three wrong choices are T1's own misconceptions, which T1 already taught against: 'the salt goes off with the water' and 'the Sun's heat breaks the salt down'. A student with T1's fact alone is left with the answer against 'stays the same'.",
+     "fix": "Replace 'It falls, as the Sun's heat breaks the salt down' with 'It falls, as less salt water is left in the pool', which mistakes the amount of solution for concentration. Keep 'It stays the same, as no salt has been added', the real T3 trap."
+    }
+   ]
+  },
+  "608fb33e6e": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Ten times as much, as there is more liquid' is silly: pouring in water cannot make more permanganate. 'Less, as some has settled to the bottom' is already answered by T1 mixtures-and-solutions (a solution does not settle). Only 'A tenth as much' is a live trap.",
+     "fix": "Replace 'Ten times as much, as there is more liquid' with 'Less, as the water has broken some of it down' (dilution taken for a reaction). Keep the question on the amount, not the new concentration, so no arithmetic enters (the math bank's lane)."
+    }
+   ]
+  },
+  "cc90c4c8ff": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'The lump, as its weight drags it down through the water' is a weak non-reason, since sinking does not bear on dissolving. And the answer is the only choice with the unit's key idea, surface.",
+     "fix": "Replace it with a second 'grains' choice that gives the wrong reason, so the reason must be known: 'The grains, as small bits of salt are softer than a lump'."
+    }
+   ]
+  },
+  "95692c2947": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The answer is the longest choice and the only one with two linked actions ('move faster and strike the crystal more often').",
+     "fix": "Trim it to 'Its particles move faster and hit the crystal more'."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "Overlap check: T1 mixtures-and-solutions used copper sulfate for an evenly mixed solution, and T2 particles-in-motion taught that heated particles speed up and do not grow. This applies both to a new case (how fast a solid dissolves), so it is not a re-ask, though 'Its particles grow bigger' is a choice T2 already refuted.",
+     "fix": "Keep."
+    }
+   ]
+  },
+  "dff0250687": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'It mixes in air, and the air dissolves the salt' is silly, so only two wrong choices are live.",
+     "fix": "Replace it with 'It helps the salt react with the water sooner' (dissolving taken for a reaction, the fact sheet's M4)."
+    }
+   ]
+  },
+  "e933cb5aad": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "19dd2a7afa": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'It drops to none, as the gas boils away' is silly at 30 degrees Celsius. The fish-in-a-hot-summer framing also signals harm, which leans toward 'falls'.",
+     "fix": "Replace it with 'It stays the same, as the air above it has not changed', and open on the pond rather than the fish: 'A pond's water holds oxygen gas dissolved in it, and its fish breathe that oxygen. Over a long, hot summer...'"
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'Dissolved in its water': 'its' can be read as the fish's.",
+     "fix": "'dissolved in the pond's water'."
+    }
+   ]
+  },
+  "8965308bae": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "high",
+     "what": "The stem states the mechanism. Carbon dioxide 'forced into' the water 'under pressure' and the bottle 'capped tight' tell the reader that pressure holds the gas in, so the answer follows without knowing that gas solubility rises with pressure. 'Chilled' rules out the boiling choice, and the stem's naming of carbon dioxide weakens both air choices.",
+     "fix": "Strip the mechanism from the stem: 'A sealed bottle of fizzy water stands on a shelf, with no bubbles in it. When the cap is twisted off, bubbles stream up through the water. Why do they appear only now?' with 'Less gas can stay dissolved once the pressure drops' / 'The water boils as the pressure drops' / 'Air rushes in and forms bubbles in the water' / 'Air rushes in and reacts with the water to make gas'. The context keeps the bottling plant."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "Fizzy water is a drink, near the cooking bank's lane. The scope names it, and the bottling-plant and lab framing keeps it out of the kitchen.",
+     "fix": "Keep it framed as a bottle or plant, never a drink at a table."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Rulings asked for. (a) adef2d55ac, the rock pool: close to T1 matter-made-of-tiny-particles' seawater-dries fact, but its fact (concentration rises as solvent leaves) is new T3 content, so keep it. Replace the T1-recycled wrong choice as given. Overlaps, with fixes. (1) 40838f3bd0 asks water's polarity, the core fact of T4 waters-sticky-properties. Rewrite it to the scope's universal solvent (as given). (2) 8fc532151c leans on T2 earths-four-spheres ('which gas makes up most of the air': nitrogen), and T2 pure-substances-and-mixtures has air and brass as homogeneous mixtures. Move the solvent rule to a case like rubbing alcohol. (3) 608fb33e6e's settling choice and its context repeat T1 mixtures-and-solutions' copper sulfate fact (a solution does not settle). It is fine as context, but replace the silly choice. (4) 95692c2947 reuses T1's copper sulfate and T2 particles-in-motion's faster particles on a new case; keep. (5) cc90c4c8ff, 95692c2947 and dff0250687 (surface, heat and stirring speed dissolving) must stay distinct from T5 balancing-equations-and-reaction-rates, which uses the same three factors for reactions. That unit should keep to reactions and never re-ask dissolving. (6) 8965308bae is a dissolved gas leaving, distinct from T2 signs-of-a-chemical-change's antacid fizz (a new substance); keep. Across my three units: no fact is repeated. Evaporating salt water now appears in two T1 questions, physical-or-chemical-change's 9f9c9ed99b and adef2d55ac here. The facts differ, but add no more. Scope coverage is complete: solvent (8fc532151c), universal solvent (40838f3bd0), concentration (adef2d55ac), dilution (608fb33e6e), surface, heat and stirring (cc90c4c8ff, 95692c2947, dff0250687), saturation (e933cb5aad), and gases with temperature and pressure (19dd2a7afa, 8965308bae). The unit's main weakness is a silly or recycled wrong choice in most questions. e933cb5aad (the saturated potassium nitrate) is the model. Lane: no kitchen examples (an Epsom salt soak, a lab, a bottling plant). No arithmetic is asked."
+}

@@ -1,0 +1,84 @@
+{"unit": "physical-or-chemical-change",
+ "questions": {
+  "40eab4d630": {"verdict": "error",
+   "checks": [
+    {"claim": "Key: a firework bursting makes new substances (black powder burns; products differ from the reactants)", "result": "ok", "source": "https://grokipedia.com/page/Gunpowder", "note": ""},
+    {"claim": "Context: black powder burns and turns into new substances, 'mostly nitrogen, carbon dioxide and water vapour'", "result": "error", "source": "https://en.wikipedia.org/wiki/Gunpowder", "note": "Grokipedia says the GASES are primarily nitrogen, carbon dioxide and water vapour, but the products as a whole are not mostly gas: the classic Noble and Abel measurement gives about 56% solids (potassium carbonate, sulfate and sulfide: the white smoke), 43% gases (mainly carbon dioxide, nitrogen, carbon monoxide) and only about 1% water. Water vapour is a minor product. Fix: 'turns in a flash into new substances: gases, mostly carbon dioxide and nitrogen, whose rush bursts the shell, and a white smoke of solid potassium salts.'"},
+    {"claim": "Context: the rushing gases burst the shell", "result": "ok", "source": "https://grokipedia.com/page/Fireworks", "note": ""},
+    {"claim": "Wrong choice and context: dry ice sublimes into carbon dioxide gas; its fog is water from the air condensed by the cold (physical)", "result": "ok", "source": "https://grokipedia.com/page/Dry_ice", "note": ""},
+    {"claim": "Wrong choice: sweat drying is water evaporating (physical)", "result": "ok", "source": "https://grokipedia.com/page/Perspiration", "note": ""},
+    {"claim": "Wrong choice: a geode split open holds the same crystals (physical)", "result": "ok", "source": "https://grokipedia.com/page/Geode", "note": ""}
+   ]},
+  "089f43b7a2": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: each broken piece is still glass, so shattering is physical though it cannot be undone", "result": "ok", "source": "https://education.nationalgeographic.org/resource/changes-matter-physical-vs-chemical-changes/", "note": ""},
+    {"claim": "Context: melted down, the pieces make glass again (cullet remelted)", "result": "ok", "source": "https://grokipedia.com/page/Glass_recycling", "note": "Lab beakers are usually borosilicate, which is kept out of ordinary bottle recycling, but it still remelts into glass; the claim stands."},
+    {"claim": "Wrong choice: glass is too hard to react (hydrofluoric acid etches glass)", "result": "ok", "source": "https://grokipedia.com/page/Glass", "note": ""},
+    {"claim": "Wrong choice: the break was too fast for a reaction (a firework reacts in a flash)", "result": "ok", "source": "https://grokipedia.com/page/Fireworks", "note": ""},
+    {"claim": "Wrong choice: only liquids and gases react (solid iron rusts)", "result": "ok", "source": "https://grokipedia.com/page/Rust", "note": ""}
+   ]},
+  "d1c0f6375f": {"verdict": "uncertain",
+   "checks": [
+    {"claim": "Key: silver tarnish is silver sulfide; sulfur joins the silver", "result": "ok", "source": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/metal-objects/understanding-silver-tarnish.html", "note": ""},
+    {"claim": "Wrong choice: oxygen. Is it truly wrong?", "result": "ok", "source": "https://grokipedia.com/page/Tarnish", "note": "Oxygen takes part in the reaction (4Ag + 2H2S + O2 -> 2Ag2S + 2H2O) but leaves as water; it does not join the silver, and silver oxide is not the tarnish. The stem asks which element JOINS the silver, so oxygen is wrong. Safe."},
+    {"claim": "Wrong choices: nitrogen, carbon (carbonyl sulfide carries sulfur, but its carbon does not join the silver)", "result": "ok", "source": "https://grokipedia.com/page/Tarnish", "note": ""},
+    {"claim": "Context: the sulfur gases are 'mostly hydrogen sulfide given off by things such as wool and rubber'", "result": "uncertain", "source": "https://cool.culturalheritage.org/jaic/articles/jaic44-03-002_4.html", "note": "The Canadian Conservation Institute calls H2S the most common sulfur gas, and wool and rubber do give it off. But Franey, Kammlott and Graedel (Corrosion Science, 1985) concluded carbonyl sulfide (OCS) is the principal cause of atmospheric silver sulfidation except near H2S sources, and a 2005 JAIC museum study found OCS in greater concentration than H2S at every gallery site. Fix: drop 'mostly': 'Traces of sulfur gases in the air, such as hydrogen sulfide given off by wool and rubber, react with silver...'"},
+    {"claim": "Context: silver tarnish holds no oxygen; rust is iron joined with oxygen", "result": "ok", "source": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/metal-objects/understanding-silver-tarnish.html", "note": "Sterling tarnish also holds copper sulfide, still no oxygen."},
+    {"claim": "Context: each polishing removes a little silver", "result": "ok", "source": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/metal-objects/understanding-silver-tarnish.html", "note": ""}
+   ]},
+  "2382d08d55": {"verdict": "ok",
+   "checks": [
+    {"claim": "Faraday lectured to young people at the Royal Institution, London, on the chemistry of a candle (Christmas Lectures 1848-49, repeated 1860-61; book 1861)", "result": "ok", "source": "https://grokipedia.com/page/The_Chemical_History_of_a_Candle", "note": ""},
+    {"claim": "Stem: he blew a candle out, held a flame in the rising vapour, and fire ran through the air and lit the candle again", "result": "ok", "source": "https://en.wikisource.org/wiki/The_Chemical_History_of_a_Candle/Lecture_I", "note": "Lecture I: blow it out 'cleverly', hold a lighted taper two or three inches from the wick, and see 'a train of fire going through the air till it reaches the candle'. Told accurately."},
+    {"claim": "Key: the vapour is the fuel (wax) turned into a gas", "result": "ok", "source": "https://en.wikisource.org/wiki/The_Chemical_History_of_a_Candle/Lecture_I", "note": "Faraday: 'the vapour into which this solid matter is transformed', 'the stream of combustible matter'."},
+    {"claim": "Wrong choices: steam, carbon dioxide, heated air cannot carry the fire", "result": "ok", "source": "https://grokipedia.com/page/Candle", "note": ""},
+    {"claim": "Context: melting, wicking, vaporizing are changes of state; the burning makes carbon dioxide and water vapour, which do not burn", "result": "ok", "source": "https://grokipedia.com/page/Candle", "note": ""}
+   ]},
+  "dc96dd6b5a": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: the burnt wood has become new substances; no physical means turns it back into wood", "result": "ok", "source": "https://grokipedia.com/page/Chemical_reaction", "note": ""},
+    {"claim": "Context: burning turns wood into carbon dioxide, water vapour and ash", "result": "ok", "source": "https://grokipedia.com/page/Chemical_reaction", "note": ""},
+    {"claim": "Context: the black stick is charcoal, mostly carbon", "result": "ok", "source": "https://grokipedia.com/page/Charcoal", "note": "The charred stick is char made by heating wood with little oxygen (pyrolysis), a carbon-rich solid: fair at this level."},
+    {"claim": "Wrong choice: wood melts (it decomposes instead)", "result": "ok", "source": "https://www.scienceabc.com/eyeopeners/is-it-possible-to-melt-wood", "note": ""},
+    {"claim": "Wrong choices: heat escaped; a coat of soot", "result": "ok", "source": "https://grokipedia.com/page/Charcoal", "note": ""}
+   ]},
+  "9f9c9ed99b": {"verdict": "ok",
+   "checks": [
+    {"claim": "Stem framing: dissolving salt is a physical change (National Geographic calls such cases hard to classify)", "result": "ok", "source": "https://education.nationalgeographic.org/resource/changes-matter-physical-vs-chemical-changes/", "note": "National Geographic notes salt dissociates but its ions recombine into the same arrangement once the water is removed, and says 'scientists do not consider this to be a chemical change'. The stem is safe."},
+    {"claim": "Key: drying the water away leaves salt again", "result": "ok", "source": "https://education.nationalgeographic.org/resource/changes-matter-physical-vs-chemical-changes/", "note": ""},
+    {"claim": "Context: salt works make salt from seawater by evaporation", "result": "ok", "source": "https://grokipedia.com/page/Salt_evaporation_pond", "note": ""},
+    {"claim": "Wrong choices / context: zinc vanishes into a clear liquid in acid (a chemical change), so vanishing and clearness prove nothing", "result": "ok", "source": "https://grokipedia.com/page/Zinc_chloride", "note": ""},
+    {"claim": "Wrong choice / context: mass is kept in every change, so equal mass proves nothing", "result": "ok", "source": "https://grokipedia.com/page/Chemical_reaction", "note": ""}
+   ]},
+  "c2ab11d15c": {"verdict": "ok",
+   "checks": [
+    {"claim": "Stem: fine steel wool is mostly iron and ignites from the terminals of a 9-volt battery", "result": "ok", "source": "https://grokipedia.com/page/Steel_wool", "note": ""},
+    {"claim": "Key: burning steel wool and rusting both join iron with oxygen (iron oxide)", "result": "ok", "source": "https://chem.washington.edu/lecture-demos/combustion-steel-wool", "note": "UW gives 4Fe + 3O2 -> 2Fe2O3 for the burn; Grokipedia: rust is primarily hydrated iron(III) oxide."},
+    {"claim": "Wrong choice: both need water (burning does not; rusting does)", "result": "ok", "source": "https://grokipedia.com/page/Rust", "note": "Context's 'rusts only where it is wet' is fair: Grokipedia says iron rusts once a thin water film forms (above about 60% humidity) and dry iron does not rust."},
+    {"claim": "Wrong choice: both give off bright light (rusting does not)", "result": "ok", "source": "https://grokipedia.com/page/Rust", "note": ""},
+    {"claim": "Wrong choice: both need heat to start (rusting runs at ordinary temperatures with no flame)", "result": "ok", "source": "https://grokipedia.com/page/Rust", "note": ""}
+   ]},
+  "9e7fe55103": {"verdict": "ok",
+   "checks": [
+    {"claim": "Stem: rainwater is made a weak acid by carbon dioxide (carbonic acid)", "result": "ok", "source": "https://grokipedia.com/page/Weathering", "note": ""},
+    {"claim": "Key: the clay is a new mineral (kaolinite) made from the feldspar by chemical weathering (hydrolysis)", "result": "ok", "source": "https://grokipedia.com/page/Kaolinite", "note": "Kaolinite forms in situ by intense chemical weathering of granitic, feldspar-rich rocks; white, Mohs 2-2.5, plastic when wet."},
+    {"claim": "Wrong choice: feldspar ground into powder (that would be physical; the clay is a different mineral)", "result": "ok", "source": "https://www.geolsoc.org.uk/ks3/gsl/education/resources/rockcycle/page3659.html", "note": ""},
+    {"claim": "Wrong choice and context: quartz grains (quartz resists this weathering)", "result": "ok", "source": "https://grokipedia.com/page/Weathering", "note": ""},
+    {"claim": "Context: ice splitting rock is physical weathering, the same minerals only smaller", "result": "ok", "source": "https://grokipedia.com/page/Weathering", "note": ""}
+   ]},
+  "4c8aaeb004": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: salivary amylase breaks starch into simpler sugars (maltose, dextrins): chemical digestion", "result": "ok", "source": "https://grokipedia.com/page/Digestion", "note": ""},
+    {"claim": "Wrong choices: grinding, wetting into a lump (bolus), rolling with the tongue: physical", "result": "ok", "source": "https://grokipedia.com/page/Digestion", "note": "Lingual lipase also starts fat digestion, mostly in the stomach; the stem's 'one makes a new substance' refers to the listed changes and is not undermined."},
+    {"claim": "Context: stomach churning is mechanical digestion", "result": "ok", "source": "https://grokipedia.com/page/Digestion", "note": ""}
+   ]},
+  "ce0cbbea7b": {"verdict": "ok",
+   "checks": [
+    {"claim": "Stem: a tungsten filament glows white-hot, giving off light and much heat", "result": "ok", "source": "https://grokipedia.com/page/Incandescent_light_bulb", "note": "About 2,500-3,000 K; over 90% of the energy leaves as heat."},
+    {"claim": "Key: the glowing wire stays tungsten (a physical change)", "result": "ok", "source": "https://grokipedia.com/page/Incandescent_light_bulb", "note": ""},
+    {"claim": "Context: the bulb holds a vacuum or an unreactive gas (argon, nitrogen), so the wire cannot burn", "result": "ok", "source": "https://grokipedia.com/page/Incandescent_light_bulb", "note": "Getters remove leftover traces of oxygen and water vapour; the halogen cycle belongs to halogen lamps, not the ordinary bulb in the stem."},
+    {"claim": "Context: the wire thins as tungsten atoms escape as a gas (sublimation), no new substance", "result": "ok", "source": "https://grokipedia.com/page/Incandescent_light_bulb", "note": ""},
+    {"claim": "Wrong choices: light and heat prove a reaction; the wire is burning; metals cannot react (magnesium burns, iron rusts)", "result": "ok", "source": "https://grokipedia.com/page/Magnesium", "note": ""}
+   ]}
+ },
+ "unit_notes": "Faraday's candle relighting is told accurately (Lecture I, 1848-49). Oxygen as the tarnish distractor is safely wrong (it reacts but leaves as water, not joined to the silver). The dissolving-salt stem is safe: National Geographic says scientists do not count it a chemical change. One context error (firework products) and one context uncertainty (which sulfur gas is most common); no key or distractor problems."}

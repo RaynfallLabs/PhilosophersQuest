@@ -1,0 +1,368 @@
+{
+ "unit": "speed-velocity-and-motion-graphs",
+ "questions": {
+  "cf83c5375c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a speedometer shows how fast the car is going at that moment (instantaneous speed)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Speedometer",
+     "note": "Grokipedia: a speedometer 'measures and displays the instantaneous speed of a land vehicle'; Wikipedia Speed: 'By looking at a speedometer, one can read the instantaneous speed of a car at any instant.' (Grokipedia Speed calls it an approximation of instantaneous speed, fine at this level.)"
+    },
+    {
+     "claim": "Wrong choice: its average speed since it set off (average speed is total distance over total time, not what the needle shows)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Speed",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: its speed and the direction it is heading (a speedometer shows no direction; speed is a scalar)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Speed",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: how quickly its speed is going up (that is acceleration, the rate of change of velocity)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Acceleration",
+     "note": ""
+    },
+    {
+     "claim": "Context: instantaneous speed; no direction so not a velocity; average speed = whole distance / whole time; rate of speed change = acceleration",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Velocity",
+     "note": ""
+    }
+   ]
+  },
+  "b70d1f586c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: average speed is lower than 20 km/h because the rest adds time but no distance",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Speed",
+     "note": "Grokipedia: average speed is 'computed as the total distance covered divided by the total time'; its own example keeps the 5 m/s average 'even if it paused midway', i.e. the pause counts in the time. Same distance over more time gives a lower average."
+    },
+    {
+     "claim": "Wrong choice: lower because the rest shortens the distance ridden (the road is the same length; resting removes no distance)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Speed",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: the same, since stops are left out of an average (stopped time counts in total time)",
+     "result": "ok",
+     "source": "https://thirdspacelearning.com/gcse-maths/ratio-and-proportion/distance-time-graph/",
+     "note": "Leaving out the stationary periods is a named misconception."
+    },
+    {
+     "claim": "Wrong choice: the same, since she always rides at that speed (her moving speed is 20, but the average includes the stop)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Speed",
+     "note": "Wikipedia: 'Average speed does not describe the speed variations that may have taken place during shorter time intervals.'"
+    },
+    {
+     "claim": "Context: average speed = total distance / total time, rest counts in the time, pulls average below 20 km/h",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Speed",
+     "note": ""
+    }
+   ]
+  },
+  "63ae2eede2": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the report left out which way the storm is heading (velocity = speed with direction)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Velocity",
+     "note": "Grokipedia: velocity 'describes both the rate and direction of an object's motion'; Grokipedia Speed: velocity is 'a vector quantity incorporating both magnitude and direction'. TEKS 7.7B (distinguish speed and velocity in terms of distance, displacement and direction) confirmed at https://texasgateway.org/teks/s77b-0/alignments."
+    },
+    {
+     "claim": "Wrong choice: how long the storm has been moving (not part of velocity)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Velocity",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: how far the storm has travelled (not part of velocity)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Velocity",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: whether the storm is speeding up (that is acceleration, not velocity)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Acceleration",
+     "note": ""
+    },
+    {
+     "claim": "Context: real storm reports do pair speed with a heading ('moving east at 40 mph'), so 30 km/h toward the east is a velocity; direction decides whether a nearby town is reached",
+     "result": "ok",
+     "source": "https://forecast.weather.gov/glossary.php?word=storm+motion",
+     "note": "NWS Glossary: storm motion is 'The speed and direction at which a thunderstorm travels'; NWS warnings word it as 'moving east at 40 mph'. The scenario (a report giving speed only) is a fair teaching case."
+    }
+   ]
+  },
+  "553c3ce12b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Arithmetic: 400 m in 80 s is 5 m/s (head-easy, correct)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Speed",
+     "note": "400 / 80 = 5."
+    },
+    {
+     "claim": "Standard outdoor track is a 400-metre oval, so one lap ends where it began",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Track_and_field",
+     "note": "Grokipedia: 'a 400-meter oval track measured along the running line in the first lane'."
+    },
+    {
+     "claim": "Key: average velocity is zero because displacement is zero",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Velocity",
+     "note": "Grokipedia Velocity: 5 km east then 5 km west in 1 hour is 'an average speed of 10 km/h but an average velocity of zero'; Wikipedia Speed: a path that 'returns to its starting point' has average velocity zero. Kesler Science (TEKS 7.7B resource) uses the same lap case: https://keslerscience.com/teks-7.7b-speed-velocity"
+    },
+    {
+     "claim": "Wrong choice: 5 m/s, the same as her speed (speed and velocity differ on a closed path)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Speed",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: 5 m/s, the way she ran (no net direction; displacement zero)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Velocity",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: unknown, since her direction kept changing (average velocity needs only start and finish positions, known to be the same)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Displacement_(geometry)",
+     "note": "Displacement is 'independent of the path taken'; a closed path gives zero."
+    },
+    {
+     "claim": "Context: displacement is the straight-line change of position; full lap gives zero displacement and zero average velocity; average speed uses the whole 400 m path",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Displacement_(geometry)",
+     "note": ""
+    }
+   ]
+  },
+  "1c976468fe": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the steeper distance-time line is the faster rider (slope = speed)",
+     "result": "ok",
+     "source": "https://myedspace.co.uk/myresources/gcse/physics/aqa/revision-notes/distance-time-graphs",
+     "note": "'the gradient of the line = the speed'; 'The steeper the line, the faster the speed.' OpenStax 2.3: 'the steepness of the line (slope) is a measure of the speed.'"
+    },
+    {
+     "claim": "Wrong choice: Mia rides more slowly (the reverse)",
+     "result": "ok",
+     "source": "https://openstax.org/books/physics/pages/2-3-position-vs-time-graphs",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: Mia rides up a steeper hill (graph-as-picture misconception; the graph shows distance against time, not terrain)",
+     "result": "ok",
+     "source": "https://mste.illinois.edu/murphy/Papers/GraphInterpPaper.html",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: Mia speeds up while Ben holds steady (both lines straight, so both hold a constant speed)",
+     "result": "ok",
+     "source": "https://myedspace.co.uk/myresources/gcse/physics/aqa/revision-notes/distance-time-graphs",
+     "note": "'A straight diagonal line means the object is travelling at a constant speed.'"
+    },
+    {
+     "claim": "Setup: same gate, same moment, two straight lines from the origin is a consistent picture",
+     "result": "ok",
+     "source": "https://openstax.org/books/physics/pages/2-3-position-vs-time-graphs",
+     "note": ""
+    }
+   ]
+  },
+  "9fb9274707": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a flat stretch of a distance-time graph means he was standing still",
+     "result": "ok",
+     "source": "https://myedspace.co.uk/myresources/gcse/physics/aqa/revision-notes/distance-time-graphs",
+     "note": "A horizontal line 'means the object is stationary - not moving at all'; Third Space Learning keys the same (https://thirdspacelearning.com/gcse-maths/ratio-and-proportion/distance-time-graph/)."
+    },
+    {
+     "claim": "Wrong choice: walking at one steady speed (that is a flat line on a speed-time graph, or a straight sloping line on a distance-time graph)",
+     "result": "ok",
+     "source": "https://savemyexams.com/gcse/maths/aqa/22/foundation/revision-notes/algebra/real-life-graphs/speed-time-graphs",
+     "note": "Save My Exams: a horizontal line on a speed-time graph means 'constant speed'; on a distance-time graph 'Lines that are horizontal represent rest' (https://savemyexams.com/gcse/maths_foundation/edexcel/17/revision-notes/algebra/real-life-graphs/distance-time-and-speed-time-graphs)."
+    },
+    {
+     "claim": "Wrong choice: walking along level ground (graph-as-picture; the graph says nothing of terrain)",
+     "result": "ok",
+     "source": "https://mste.illinois.edu/murphy/Papers/GraphInterpPaper.html",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: walking back toward his house (would not be flat under either reading: distance travelled would still rise; distance from home would fall)",
+     "result": "ok",
+     "source": "https://openstax.org/books/physics/pages/2-3-position-vs-time-graphs",
+     "note": ""
+    },
+    {
+     "claim": "Context: flat = time passes, distance unchanged; a flat line means steady speed on a speed-time graph; graph shows nothing of level ground",
+     "result": "ok",
+     "source": "https://savemyexams.com/gcse/maths_foundation/edexcel/17/revision-notes/algebra/real-life-graphs/distance-time-and-speed-time-graphs",
+     "note": "'only on a speed-time graph' slightly overlooks velocity-time graphs, which are the same idea; fine at this grade."
+    }
+   ]
+  },
+  "39cf460d49": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a distance-time curve growing less steep shows slowing down",
+     "result": "ok",
+     "source": "https://myedspace.co.uk/myresources/gcse/physics/aqa/revision-notes/distance-time-graphs",
+     "note": "'If the curve is getting less steep (flattening out), the object is slowing down (decelerating).'"
+    },
+    {
+     "claim": "Wrong choice: speeding up (that is a curve growing steeper)",
+     "result": "ok",
+     "source": "https://openstax.org/books/physics/pages/2-3-position-vs-time-graphs",
+     "note": "OpenStax: a slope that 'becomes steeper as time progresses' shows velocity increasing."
+    },
+    {
+     "claim": "Wrong choice: one steady speed (that is a straight line; a curve means changing speed)",
+     "result": "ok",
+     "source": "https://myedspace.co.uk/myresources/gcse/physics/aqa/revision-notes/distance-time-graphs",
+     "note": "'A curved line means the speed is changing.'"
+    },
+    {
+     "claim": "Wrong choice: coming over a hill (graph-as-picture misconception)",
+     "result": "ok",
+     "source": "https://mste.illinois.edu/murphy/Papers/GraphInterpPaper.html",
+     "note": ""
+    },
+    {
+     "claim": "Context: slope is speed; less steep = less distance each second; line still rises because still moving forward",
+     "result": "ok",
+     "source": "https://openstax.org/books/physics/pages/2-3-position-vs-time-graphs",
+     "note": ""
+    }
+   ]
+  },
+  "7d8f767b44": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Key: where two distance-from-start lines cross, the runners are at the same distance at the same time, so level",
+     "result": "ok",
+     "source": "https://www.physicsclassroom.com/mmedia/kinema/plv.cfm",
+     "note": "Physics Classroom 'The Passing Lane' (via search snippet; page refused fetch): the two cars 'have the same position at seven seconds; yet they never have the same velocity at any instant'. Follows from the axes (OpenStax 2.3)."
+    },
+    {
+     "claim": "Wrong choice: same speed (speeds are the slopes; two straight lines that cross have different slopes)",
+     "result": "ok",
+     "source": "https://openstax.org/books/physics/pages/2-3-position-vs-time-graphs",
+     "note": "Truly wrong: distinct straight lines with equal slopes are parallel and never cross."
+    },
+    {
+     "claim": "Wrong choices: both speeding up / both slowing down (straight lines mean steady speeds)",
+     "result": "ok",
+     "source": "https://myedspace.co.uk/myresources/gcse/physics/aqa/revision-notes/distance-time-graphs",
+     "note": ""
+    },
+    {
+     "claim": "Setup consistency: 'Two runners race down a track', each a straight line, and the lines cross partway through",
+     "result": "error",
+     "source": "https://openstax.org/books/physics/pages/2-3-position-vs-time-graphs",
+     "note": "As a race is normally read, both runners leave the start line at the gun, so both lines start at the same point (time 0, distance 0). Two different straight lines through one point cannot meet again, so they cannot cross 'partway through the race'. A sharp reader is left with an impossible graph. The key still holds. Fix: give one runner a head start, e.g. 'Two runners race down a track, and the younger is given a 10-metre head start.' (Context then reads correctly: the steeper line is the faster runner catching and passing her.)"
+    },
+    {
+     "claim": "Context: same distance at same time = side by side; speeds are slopes, crossing straight lines differ in slope, steeper one passing; straight lines mean no speeding up or slowing",
+     "result": "ok",
+     "source": "https://openstax.org/books/physics/pages/2-3-position-vs-time-graphs",
+     "note": ""
+    }
+   ]
+  },
+  "3c468e6404": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: yes, a car on a bend at steady speed accelerates because its direction keeps changing",
+     "result": "ok",
+     "source": "https://openstax.org/books/physics/pages/3-1-acceleration",
+     "note": "OpenStax: 'An object traveling at a constant speed does accelerate if it changes direction'; 'turning the steering wheel of a moving car makes the car accelerate because the velocity changes direction.' Grokipedia Velocity: a car on a curved road 'experiences continuously changing velocity'."
+    },
+    {
+     "claim": "Wrong choice: yes, since anything moving is accelerating (false: constant velocity means zero acceleration)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Acceleration",
+     "note": "Acceleration is the rate of change of velocity; it occurs 'whenever velocity changes', and 'can be ... zero'."
+    },
+    {
+     "claim": "Wrong choice: no, since its speed stays the same (direction change still counts)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Acceleration",
+     "note": "'centripetal acceleration in circular motion points toward the center, even if speed remains constant'."
+    },
+    {
+     "claim": "Wrong choice: no, since only speeding up counts (slowing and turning count too)",
+     "result": "ok",
+     "source": "https://openstax.org/books/physics/pages/3-1-acceleration",
+     "note": "'In everyday language, this is called deceleration; but in physics, it is acceleration'."
+    },
+    {
+     "claim": "Context: acceleration is any change in velocity; everyday 'accelerate' means speed up, science counts slowing and turning; steady speed in a straight line is not accelerating",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Acceleration",
+     "note": "'whenever velocity changes in speed, direction, or both - such as speeding up, slowing down, or altering course'."
+    }
+   ]
+  },
+  "08ca784a09": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a train at one speed on a straight track is not accelerating (constant velocity)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Acceleration",
+     "note": "No change in speed or direction, so no change in velocity and zero acceleration (follows from OpenStax's definition: change in velocity over time)."
+    },
+    {
+     "claim": "Wrong choice: a bus braking (slowing is acceleration)",
+     "result": "ok",
+     "source": "https://openstax.org/books/physics/pages/3-1-acceleration",
+     "note": "'When an object slows down, its acceleration is opposite to the direction of its velocity.'"
+    },
+    {
+     "claim": "Wrong choice: a skater gliding round a rink at one speed (turning is acceleration)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Acceleration",
+     "note": "An object in circular motion 'is accelerating due to the change of direction of motion, although its speed may be constant'. 'Round a rink' implies turning."
+    },
+    {
+     "claim": "Wrong choice: a cyclist pedalling faster (speeding up)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Acceleration",
+     "note": ""
+    },
+    {
+     "claim": "Context: acceleration = speeding up, slowing down or turning; only the train keeps both speed and direction",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Acceleration",
+     "note": ""
+    }
+   ]
+  }
+ },
+ "unit_notes": "All physics checks pass: speedometer = instantaneous speed, a stop lowers average speed, velocity needs a direction, a closed lap has zero average velocity but 5 m/s average speed (400/80 correct), distance-time slope = speed, flat = stopped, flattening curve = slowing, crossing = same position not same speed, turning at steady speed = accelerating. One setup flaw: 7d8f767b44's race has no head start, so two straight lines from the same start cannot cross partway; add a head start. TEKS 7.7A-C wording confirmed via texasgateway.org. The Physics Classroom page refused fetch; its quote is from a search snippet, backed by OpenStax."
+}

@@ -1,0 +1,74 @@
+{
+ "unit": "solutions-solute-and-solvent",
+ "questions": {
+  "870af2b034": {
+   "verdict": "pass",
+   "why": "The T2 overlap is gone: no lower unit asks bronze, and the solvent rule (the part there is most of) decides it. Facts hold: about 88% copper and 12% tin, harder than copper, and mainly an FCC solid solution of tin in copper up to about 15% tin. LibreTexts names bronze a solid-solid solution (an alloy), and middle-school texts name copper its solvent. The key is the only copper choice, but the split falls on the very point tested, as in the judge's own one-chemical, three-physical feldspar fix, and 'Tin, as there is less of it' is its live mirror. Not a tell.",
+   "sources": [
+    "https://grokipedia.com/page/Bronze",
+    "https://grokipedia.com/page/Solution_(chemistry)",
+    "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16:_Solutions/16.01:_Solute-Solvent_Combinations",
+    "https://www.rcboe.org/cms/lib/GA01903614/Centricity/Domain/16134/Chapter%2021%20Section%201.pdf"
+   ]
+  },
+  "dd082f2684": {
+   "verdict": "pass",
+   "why": "The T4 polarity fact is gone, and the question now asks the name within this unit's scope. USGS: water dissolves 'more substances than any other liquid', but it cannot dissolve everything. The three lures are other readings of 'universal' (a specialist, every solution, the fastest), live and wrong. Tincture of iodine uses ethanol because iodine's solubility in water is limited.",
+   "sources": [
+    "https://www.usgs.gov/special-topics/water-science-school/science/water-universal-solvent",
+    "https://grokipedia.com/page/Tincture_of_iodine"
+   ]
+  },
+  "adef2d55ac": {
+   "verdict": "pass",
+   "why": "T1's recycled misconception is replaced by 'less salt water is left', which mistakes the amount of solution for its concentration: live and wrong. Grokipedia: evaporating pools can reach 50 ppt or higher, and rain dilutes them below 30.",
+   "sources": [
+    "https://grokipedia.com/page/Tide_pool",
+    "https://grokipedia.com/page/Seawater"
+   ]
+  },
+  "4a79b01ab3": {
+   "verdict": "fail",
+   "why": "The old error is fixed: 'a much paler purple' is right for one tenfold step, since deep purple is above about 1e-2 M and pale pink below about 1e-4 M. But the new lure, 'Less, as the water has broken some of it down', is not cleanly wrong, and the context answers it with a false sentence. Grokipedia: 'In neutral aqueous solutions, potassium permanganate undergoes slow disproportionation' to manganese dioxide, so 'Water does not break the permanganate down' teaches an untruth. The lure fails only because the breakdown is too slow to matter in the minutes since she poured. Fix: use a lure that is false on any timescale, and drop or qualify the water sentence ('in so short a time, the water breaks none of it down').",
+   "sources": [
+    "https://grokipedia.com/page/Potassium_permanganate",
+    "https://grokipedia.com/page/Dilution_(equation)"
+   ]
+  },
+  "438faa09c4": {
+   "verdict": "pass",
+   "why": "The size problem is fixed. A walnut-sized lump of halite (about 40 g at specific gravity 2.17) needs only about 110 mL of water at 35.9 g per 100 mL, so in a large beaker both samples can wholly dissolve. The weak 'weight' lure is now a second 'grains' choice with a wrong reason: halite's hardness (Mohs 2 to 2.5) does not change with size. So the reason must be known.",
+   "sources": [
+    "https://grokipedia.com/page/Halite",
+    "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.02%3A_Rate_of_Dissolving"
+   ]
+  },
+  "dff0250687": {
+   "verdict": "pass",
+   "why": "The silly air lure is replaced by 'helps the salt react with the water', which takes dissolving for a reaction: live, and wrong at this grade, since dissolving is a physical change. The context now says so. A bath soak is not the kitchen lane.",
+   "sources": [
+    "https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/16%3A_Solutions/16.02%3A_Rate_of_Dissolving",
+    "https://grokipedia.com/page/Physical_change",
+    "https://grokipedia.com/page/Magnesium_sulfate"
+   ]
+  },
+  "867ec165db": {
+   "verdict": "pass",
+   "why": "The silly 'drops to none' lure is replaced by 'the air above has not changed': live, and wrong, since the temperature changes how much gas water holds. The stem now opens on the pond's water, not the fish, and 'its' is clear. Fresh water holds about 9.1 mg/L of oxygen at 20 C and 7.6 mg/L at 30 C.",
+   "sources": [
+    "https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water",
+    "https://grokipedia.com/page/Oxygen_saturation",
+    "https://grokipedia.com/page/Solubility"
+   ]
+  },
+  "1b652460f3": {
+   "verdict": "pass",
+   "why": "The high tell is fixed: the stem no longer states the pressure mechanism, 'chilled' or carbon dioxide, which now sit in the context only. Two choices are about the pressure dropping and two about air rushing in, all live. The bubbles are dissolved CO2 coming out as the pressure drops (Henry's law), and room-temperature water does not boil at air pressure. It is a bottle on a shelf, not a drink at a table.",
+   "sources": [
+    "https://grokipedia.com/page/Carbonated_water",
+    "https://grokipedia.com/page/Solubility",
+    "https://grokipedia.com/page/Boiling_point"
+   ]
+  }
+ }
+}

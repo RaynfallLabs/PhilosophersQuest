@@ -1,0 +1,84 @@
+{
+ "unit": "physical-or-chemical-change",
+ "questions": {
+  "d6d7606a59": {
+   "verdict": "pass",
+   "why": "The fact error is fixed: the solids are the smoke and the gases are mostly carbon dioxide and nitrogen (Wikipedia: 55.91% solids, 42.98% gases, 1.11% water). Iodine (violet vapour) and dry ice (fog) are strong showy lures. The balloon is the weakest lure, but it is showy and its burst matches the firework's. 'Which of the four' is gone.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Gunpowder",
+    "https://grokipedia.com/page/Iodine",
+    "https://grokipedia.com/page/Dry_ice",
+    "https://en.wikipedia.org/wiki/Balloon_popping",
+    "https://grokipedia.com/page/Physical_change"
+   ]
+  },
+  "089f43b7a2": {
+   "verdict": "pass",
+   "why": "The tell is fixed: two lures now speak of the glass too, and both are live misconceptions. Mixtures do react (RSC: iron and sulfur powders heated form iron(II) sulfide), and HF etches glass. The firework line is out of the context. Polish only: the context answers 'heat or light' with rusting, which gives off no light but does give off heat (the T2 hand warmer). The lure is still false, since some reactions take in heat (T2), so the key stands. Better to cite a reaction that takes in heat.",
+   "sources": [
+    "https://edu.rsc.org/experiment/iron-and-sulfur-reaction/713.article",
+    "https://grokipedia.com/page/Glass",
+    "https://grokipedia.com/page/Glass_recycling"
+   ]
+  },
+  "b385992335": {
+   "verdict": "pass",
+   "why": "The stem no longer says 'new substance', so the student must classify the change (two physical, two chemical lures) as well as know the sulfide. 'Element carried by a gas' is gone, and so is 'mostly'. CCI: tarnish is silver sulfide (Ag2S, no oxygen), black when thick, and some silver is lost at each cleaning.",
+   "sources": [
+    "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/metal-objects/understanding-silver-tarnish.html",
+    "https://cool.culturalheritage.org/jaic/articles/jaic44-03-002_4.html"
+   ]
+  },
+  "4fca8a7860": {
+   "verdict": "pass",
+   "why": "The stem no longer sets up the physical/chemical pair, and the two weak lures are now live physical pictures (shrunken particles, a change of shape too far to undo). Facts hold: a charred stick is charcoal, mostly carbon, and heated particles do not shrink. The oxygen line is out of the context, so the steel-wool key is not given away.",
+   "sources": [
+    "https://grokipedia.com/page/Charcoal",
+    "https://grokipedia.com/page/Chemical_reaction",
+    "https://grokipedia.com/page/Thermal_expansion"
+   ]
+  },
+  "9f9c9ed99b": {
+   "verdict": "pass",
+   "why": "The dead lure is replaced by 'no bubbles, heat or smell', which is a true observation but no proof. Salt dissolving gives off no heat, and a rusting nail shows none of these signs. The other choices are unchanged.",
+   "sources": [
+    "https://education.nationalgeographic.org/resource/changes-matter-physical-vs-chemical-changes/",
+    "https://grokipedia.com/page/Rust"
+   ]
+  },
+  "c2ab11d15c": {
+   "verdict": "pass",
+   "why": "The elimination tell is fixed: every choice could be true of both changes, so the student must know what rusting and burning are. Oxygen is right (4Fe + 3O2 -> 2Fe2O3; rust is hydrated iron(III) oxide), nitrogen takes no part, and 'with water' was rightly avoided.",
+   "sources": [
+    "https://chem.washington.edu/lecture-demos/combustion-steel-wool",
+    "https://grokipedia.com/page/Rust",
+    "https://grokipedia.com/page/Steel_wool"
+   ]
+  },
+  "d8d565f4d6": {
+   "verdict": "pass",
+   "why": "The stem no longer cues the acid or rules out lures: all four start from the feldspar, and sun, wind, rain and frost each match one choice. The three physical lures are true kinds of physical weathering, and feldspar does weather into kaolinite, a white clay that is soft and plastic when wet.",
+   "sources": [
+    "https://grokipedia.com/page/Weathering",
+    "https://grokipedia.com/page/Kaolinite"
+   ]
+  },
+  "98079f69ef": {
+   "verdict": "pass",
+   "why": "Facts hold: Grokipedia lists magnetizing ferromagnetic iron as a physical change, and the Ontario Science Centre strokes a nail one way until it picks up paper clips (domains, 'tiny groups of atoms', lined up). Lures are live and truly wrong: a new property is not a new substance, nothing joins, and rusting needs no heat or flame. Two Yes and two No choices of similar length. No lower tier asks magnetizing; classifying physical against chemical is TEKS 7.6C; domains stay in the context. No kitchen, no arithmetic.",
+   "sources": [
+    "https://grokipedia.com/page/Physical_change",
+    "https://www.ontariosciencecentre.ca/science-at-home/diy-science-fun/make-a-magnet",
+    "https://socratic.org/answers/165651"
+   ]
+  },
+  "ce0cbbea7b": {
+   "verdict": "pass",
+   "why": "The dead lure is replaced by 'electricity cannot cause a chemical change', which electrolysis proves false. The half-true 'burning up' is now 'burns in the air inside the bulb', and the context says the bulb holds a vacuum or an inert gas, so that is false too. Two Yes and two No choices.",
+   "sources": [
+    "https://grokipedia.com/page/Incandescent_light_bulb",
+    "https://grokipedia.com/page/Electrolysis_of_water"
+   ]
+  }
+ }
+}

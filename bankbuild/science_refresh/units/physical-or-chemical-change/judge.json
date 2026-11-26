@@ -1,0 +1,169 @@
+{
+ "unit": "physical-or-chemical-change",
+ "questions": {
+  "40eab4d630": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Two of the three lookalikes are textbook physical changes a 5th grader sorts at once: sweat evaporating and a rock split open. So only dry ice is a live trap, and the firework, the most famous chemical change there is, is the obvious pick. As asked, the sorting is lower-grade work, and the teacher's 'showy' warning fits only one wrong choice.",
+     "fix": "Make every wrong choice a showy physical change, to match the warning: 'A firework bursting in the night sky' / 'Dry ice giving off a cold white fog' / 'A geyser blasting a column of steam into the air' / 'Iodine crystals warmed into a violet vapour'."
+    },
+    {
+     "axis": "voice",
+     "severity": "low",
+     "what": "'Which of the four' is a near relative of the banned 'Which of the following'.",
+     "fix": "End on 'Which change makes a new substance?'"
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "The context says the black powder 'turns into new substances, mostly nitrogen, carbon dioxide and water vapour'. I believe more than half of black powder's products by mass are solid potassium salts (the smoke), and that water vapour is minor. The fact-checker should confirm.",
+     "fix": "'...turns into new substances in a flash: hot gases such as nitrogen and carbon dioxide, and a smoke of solid salts, whose rushing gases burst the shell.'"
+    }
+   ]
+  },
+  "089f43b7a2": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "All three wrong choices share one pattern, a general rule about why glass cannot react, and two are weak for a 7th grader: a firework shows a reaction can be fast, and rust shows a solid can react. The answer is the only choice about the glass itself, and the shortest, so it stands out.",
+     "fix": "Keep 'Glass is far too hard a material to react', but use live misconceptions for the other two: 'Glass is a mixture, and a mixture cannot react' (false, since black powder is a mixture that burns) and 'A change is chemical only if it gives off heat or light' (signs taken for proof, the T2 lesson)."
+    }
+   ]
+  },
+  "d1c0f6375f": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "This is recall of a chemistry detail (silver tarnish is a sulfide), with nothing applied. The stem already says the film is a new substance, so the question no longer tests the unit's physical-or-chemical idea at all; it tests which element is in tarnish.",
+     "fix": "Give the student a case to reason through: 'A silver cup in a museum case grows a black film of tarnish, and each time it is polished off, the cup is left a little thinner. What is the film?' with 'Silver joined with sulfur from the air' / 'Silver joined with oxygen, as rust is iron and oxygen' / 'Dust from the air, pressed into the silver' / 'The silver's own shine, dulled by light'. The thinning shows the film holds the cup's silver, and the student must still know sulfur from oxygen."
+    },
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'An element carried by a gas in the air' points away from oxygen and nitrogen, which are themselves the air's gases, and toward an element that travels inside another gas (sulfur in hydrogen sulfide, carbon in carbon dioxide). That halves the field for a careful reader.",
+     "fix": "If the question stays as it is, say 'made when the silver joins with an element that reaches it from the air'."
+    }
+   ]
+  },
+  "2382d08d55": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "dc96dd6b5a": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem's 'No physical means ... can turn it back' sets up the physical/chemical pair, so the one choice in the unit's own words ('new substances') is the answer. Two of the three wrong choices are weak: 'The wood's heat has escaped into the air' is not a reason at all, and 'melted' fails because a 7th grader knows wood chars rather than melts. Only the soot choice is live.",
+     "fix": "Replace 'The wood's heat has escaped into the air' with 'The wood's particles have shrunk in the heat' (the T2 particles misconception), and 'The wood has melted out of its shape' with 'The wood's fibres have been crushed too small to rejoin' (a physical-change picture, like the broken beaker)."
+    },
+    {
+     "axis": "grade",
+     "severity": "low",
+     "what": "That burning makes new substances is lower-grade content: T2 pure-substances-and-mixtures already has charcoal burning into carbon dioxide. The explain-why framing and the scope's own line ('burning a match is chemical') keep it at T3.",
+     "fix": "Keep, with the stronger wrong choices above."
+    }
+   ]
+  },
+  "9f9c9ed99b": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'No grains of salt can be seen any more' only repeats the stem ('until no grains can be seen') and is no evidence either way, so it is dead. The live choices are the answer, the mass and the clear water.",
+     "fix": "Replace it with 'No bubbles, heat or smell came off as it dissolved': absent signs taken for proof, the T2 clue misread."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "Ruling on the T1 overlap: this is close to T1 matter-made-of-tiny-particles (the salt left as seawater dries) and T1 mixtures-and-solutions (mass kept as salt dissolves), and both appear here as true choices. It is not a re-ask. Every choice is a true observation, and the T3 step is choosing which one proves no new substance formed, which is the scope's own line.",
+     "fix": "Keep. Do not move the scene to seawater or a dish on a windowsill, which would bring it back to T1's picture."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "Only T4's conservation of mass in reactions rules out the mass choice. The context teaches it, so the choice is fair, but a 7th grader may defend it.",
+     "fix": "Acceptable. Optionally add to the context: 'a burning candle or a rusting nail keeps its mass too, counting the gases'."
+    }
+   ]
+  },
+  "c2ab11d15c": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "high",
+     "what": "This can be answered by elimination with no knowledge of rust. Each wrong choice names a feature only one of the two changes has, and the stem shows which: the nail is in the rain but nothing makes the wool wet, slow rusting plainly gives off no light, and a nail rusting in the rain plainly needs no heat to start. So the answer is the only choice left.",
+     "fix": "Give choices that both changes could share, so the student must know what rusting is: 'Both join iron with oxygen' / 'Both join iron with nitrogen' / 'Both join iron with carbon dioxide' / 'Both break iron into tiny bits of iron'. Avoid 'with water': rust is a hydrated oxide, so that choice would be partly true."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "Overlap check: T1 mixtures-and-solutions (rust is a new substance) and T2 signs-of-a-chemical-change (a hand warmer is iron rusting fast) sit next door. The new fact here, that burning and rusting are the same joining of iron with oxygen, is distinct.",
+     "fix": "Keep. Flag for T5 balancing-equations-and-reaction-rates (rusting and combustion listed as oxidation): it must not ask this again."
+    }
+   ]
+  },
+  "9e7fe55103": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "high",
+     "what": "The stem says the feldspar crystals 'turn into' the clay, which rules out 'Quartz grains worn loose from the granite' and 'Mud washed in by the rain from elsewhere'. With 'made a weak acid', and hard crystals turning into a soft white clay, the chemical answer is cued, leaving a two-way choice that the stem tilts.",
+     "fix": "Drop 'made a weak acid' from the stem and make every choice come from the feldspar, three physical and one chemical: 'A new mineral made from the feldspar' / 'Feldspar split fine by ice in its cracks' / 'Feldspar worn to dust by wind-blown sand' / 'Feldspar softened by soaking up rainwater'. The context keeps the carbonic acid."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "Overlap check: T1 wind-water-and-ice-shape-the-land asks physical weathering (frost), and T2 the-rock-cycle needs weathering before sediment. Chemical weathering into a new mineral is new here.",
+     "fix": "Keep."
+    }
+   ]
+  },
+  "4c8aaeb004": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "high",
+     "what": "The answer is the only choice that names one substance becoming another ('starch into sugar'). The other three are plainly size and shape changes, which the stem itself says most of the changes are, so the stem's definition picks the answer with no knowledge of digestion or of the unit.",
+     "fix": "Make the lookalikes physical changes of substances, so the student must apply the unit's rules (dissolving and melting are physical): 'Saliva breaking starch down into sugar' / 'Saliva dissolving the salt in the food' / 'Fat in the food melting in the mouth's warmth' / 'Teeth grinding the food into crumbs'."
+    },
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "Lane ruling: digestion is the body, science's own lane, and this is not kitchen chemistry, so it may stay here; the bite of food is only the setting. But its fact, that saliva starts the chemical digestion of starch, also belongs to the T3 body-systems-supply-and-defence unit's digestive system (mouth, stomach, small intestine), and through amylase to T5 respiration-and-enzymes. The fact sheet itself says enzymes are left to T5.",
+     "fix": "Keep it here with the rewrite, and name in that unit's not_here that body-systems-supply-and-defence must not ask saliva and starch. Keep the enzyme's name in the context only, never in a choice."
+    }
+   ]
+  },
+  "ce0cbbea7b": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'No, metals cannot take part in reactions' is dead in this unit: the steel-wool question and T1's rusting nail both show metals reacting.",
+     "fix": "Replace it with 'No, electricity cannot cause a chemical change' (false: T2 pure-substances-and-mixtures has electricity splitting water). That keeps two 'No' and two 'Yes' choices."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'Yes, the wire is slowly burning up' is half true in everyday speech: a bulb 'burns out' as its wire thins.",
+     "fix": "Acceptable, since the context explains the thinning. Or say 'Yes, the wire is burning in the bulb's air'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Rulings asked for. (a) 9f9c9ed99b, the salt recovered by drying: close to T1 matter-made-of-tiny-particles' seawater-dries fact, but not a re-ask. Choosing which true observation proves no new substance formed is the T3 step the scope names. Keep it, with the dead 'no grains' choice replaced. (b) 4c8aaeb004, saliva and starch: in science's lane (the body, not cooking), but broken by a tell, and its fact sits in T3 body-systems-supply-and-defence and T5 respiration-and-enzymes. Revise as given and fence it off from body-systems. Other overlaps, with fixes. c2ab11d15c is next to T1 mixtures-and-solutions (rust is a new substance) and T2 signs-of-a-chemical-change (the hand warmer); its fact is distinct, but T5 balancing-equations must not re-ask rusting and burning as oxidation. dc96dd6b5a is next to T2 pure-substances-and-mixtures (charcoal burns to carbon dioxide); the explain-why keeps it distinct. 40eab4d630 (dry ice fog) and ce0cbbea7b (light and heat) apply T2 signs-of-a-chemical-change's lesson, that a sign is a clue and not proof, to new cases; distinct, keep. 40eab4d630's context (fog is condensed water) echoes T1 solids-liquids-and-gases' white-puff question, in context only. 9e7fe55103's chemical weathering is new beside T1's physical weathering. Evaporating salt water now appears four times in the bank (two T1 questions, 9f9c9ed99b here and solutions' rock pool). The facts differ, but add no fifth. No question repeats a fact from elements-compounds-and-formulas or solutions-solute-and-solvent. Within the unit: 2382d08d55 (Faraday) is the only clean question as drafted. Most wrong choices are weak or ruled out by their own stems (three high), which is the unit's main problem; the facts and scope coverage are good (breaking glass, dissolving, changes of state, rusting, burning, tarnish, firework, the scope's two explain-whys). Lane: no kitchen examples; the bite of food is ruled on above. Fact flag for the checker: 40eab4d630's context calls black powder's products 'mostly' nitrogen, carbon dioxide and water vapour."
+}

@@ -1,0 +1,143 @@
+{
+ "unit": "elements-compounds-and-formulas",
+ "questions": {
+  "b8a9bc6288": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "96d3f18ba2": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "low",
+     "what": "Once the capital-letter rule makes Co one symbol, the choice between cobalt and copper rests on knowing Cu (or Co) by heart. Seventh graders read symbols off a periodic table (TEKS 7.6B), which the player does not have, so a student who knows the rule but not Cu is left with a coin flip between the two metals.",
+     "fix": "Acceptable as it stands, since the context teaches Cu and cuprum. If it is tightened, swap 'The metal copper, one element' for a choice that only the capital-letter rule answers, such as 'Carbon monoxide, a poisonous gas'."
+    }
+   ]
+  },
+  "71d4c679c6": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "Same fact as the ammonia question (b8a9bc6288): a subscript counts only the atoms of the symbol just before it. Two of the unit's eleven questions test one skill, and the quartz question's two non-ratio choices test it a third time. 'One hydrogen atom' is also weak, since nothing in C6H12O6 suggests a single hydrogen.",
+     "fix": "Keep glucose but test a different reading skill, the atom/element distinction of TEKS 7.6A: 'Glucose is the sugar that the blood carries to the body's cells for energy, and its formula is C6H12O6. How many different elements does glucose hold?' with choices 'Three' / 'Six' / 'Twelve' / 'Twenty-four' (twenty-four is every atom counted, the real atoms-for-elements mix-up)."
+    }
+   ]
+  },
+  "41bf99e830": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Each grain of quartz sand is a crystal of silicon and oxygen atoms' tells the reader a grain holds many atoms, so 'one silicon atom and two oxygen atoms in all' falls for anyone who thinks it through. That is fair applying, but the other two wrong choices only re-test the subscript skill of the ammonia question.",
+     "fix": "Acceptable. Optionally make one wrong choice a second ratio-type answer, such as 'It has two oxygen atoms for every grain of sand', so the ratio idea, not subscript reading, does the work."
+    }
+   ]
+  },
+  "7c1e372677": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "3d82adc29a": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The answer is the only choice that says 'molecule' and the only one with a count ('three joined atoms'), so it stands out by specificity. 'A single atom of oxygen' is also weak for anyone who knows water is H2O.",
+     "fix": "Make the four choices parallel, so the element/compound idea decides it: 'A single molecule of water' / 'A single atom of water' / 'A single atom of oxygen' / 'A single droplet of water'."
+    },
+    {
+     "axis": "grade",
+     "severity": "low",
+     "what": "This is mostly recall of a definition (the smallest particle of a compound is a molecule). The 'no water atom' trap does make the student apply the compound idea, which keeps it at T3, but only just.",
+     "fix": "Keep with the parallel choices above. Or move it to a new case: 'What is the smallest particle that is still carbon dioxide?' with the same four-way pattern (one molecule / one atom of carbon dioxide / one atom of carbon / one speck of the gas)."
+    }
+   ]
+  },
+  "7fb52854e9": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "This recalls the famous example rather than applying the idea. A student who has heard that salt is sodium chloride answers without using the rule that a compound's properties are unlike its elements'. And the stem's stress on danger ('reacts violently', 'poisonous') makes the one harmless choice the obvious twist.",
+     "fix": "Make it an explain question: 'Sodium is a soft metal that reacts violently with water, and chlorine is a poisonous yellow-green gas. Joined one to one, they make sodium chloride, the table salt the body needs. Why is the salt safe to eat?' with 'A compound has its own properties, unlike its elements' / 'Its properties are a blend, milder than either element's' / 'It holds too little of each element to do harm' / 'It is a mixture that keeps the two elements apart'."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "Household bleach and hydrochloric acid are solutions in water, not single compounds. So the stem's 'a single compound' quietly rules them out for a careful reader, and it loosely calls them compounds.",
+     "fix": "Covered by the rewrite above. If the choices stay, name the substances themselves ('Sodium hypochlorite, the chemical in bleach', 'Hydrogen chloride gas')."
+    }
+   ]
+  },
+  "cec65f0712": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Hydrogen gas is twice as heavy as oxygen gas' is dead: hydrogen is famously the lightest gas, and weight would not explain volume anyway. That leaves the answer as the plain choice that names H2O, which every student knows, against two thin rivals.",
+     "fix": "Replace it with the real misconception that a lighter gas takes up more room: 'A lighter gas, such as hydrogen, spreads to fill more space'. The context's equal-volumes sentence already answers it."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "This sits next to T2 pure-substances-and-mixtures, which asks that electricity splitting water shows it is not an element. The fact asked here, the 2:1 ratio and why, is new, so it is not a repeat.",
+     "fix": "Keep. Flag for T5 balancing-equations-and-reaction-rates (2H2 + O2 -> 2H2O): it must not ask this 2:1 volume ratio again."
+    }
+   ]
+  },
+  "d4e5754248": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The answer is the only 'same' among three 'different' choices. Two of those ('varied with the heat used', 'changed from batch to batch') say nearly the same thing, so a test-wise reader drops the pair and picks the odd one out. A famous chemist's finding told as a story is also expected to be a constancy.",
+     "fix": "Ask what the finding showed, with two constant and two varying choices: 'What did his finding show about a compound?' with 'It holds its elements in fixed proportions' / 'It holds an equal mass of each element' / 'Its proportions depend on how it was made' (Berthollet's view, already in the context) / 'Its proportions slowly drift as it ages'."
+    }
+   ]
+  },
+  "c6332b9d67": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem's own words kill a wrong choice. It names the atoms as hydrogen and oxygen, which rules out 'A new element, made of a new kind of atom'. Its 'joined' also argues against the mixture choice, so only the answer and 'Water, with one extra oxygen' stay fully live.",
+     "fix": "Replace 'A new element, made of a new kind of atom' with 'A form of water, as ozone is a form of oxygen', the live mix-up after the O2/O3 question."
+    },
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Water, with one extra oxygen in each molecule' is half true by atom count (H2O2 is H2O plus one O). It is wrong only in calling the result water, which a pedantic student could argue.",
+     "fix": "Reword it to 'Water still, with its oxygen doubled'. Or accept it, since the context says plainly that the liquid is not water."
+    }
+   ]
+  },
+  "5d8565c22b": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'They are of several kinds, mixed evenly' is dead for anyone who reads 'pure gold' in the stem, since a pure substance was taught at T2. Only three choices are live.",
+     "fix": "Replace it with an alchemists' idea that Dalton's theory overturned: 'They can slowly turn into atoms of another metal'."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'All alike, with the same weight' is true of gold (one stable isotope) but not of most elements. Because the stem attributes it ('By his theory'), it is fair, but a student may carry it away as a general truth.",
+     "fix": "Optionally add one clause to the context: later chemists found that the atoms of most elements come in slightly different weights, though gold's are all alike."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Duplicates within the unit: the ammonia (b8a9bc6288) and glucose (71d4c679c6) questions test one fact, that a subscript counts only the symbol before it; the quartz question's two non-ratio choices test it again. Fix: turn glucose into a count-the-elements question (as given). Fixed proportions carries three questions (electrolysis cec65f0712, Proust d4e5754248, hydrogen peroxide c6332b9d67). They are three distinct facts (the 2:1 volume ratio and why, the same proportions whatever the source, the same elements in a new ratio making a new compound), so they may stay, but there is no room for a fourth. Grade: the table-salt (7fb52854e9) and water-molecule (3d82adc29a) questions lean to recall. Reframe the first as an explain question; give the second parallel choices. Overlaps checked against every final.json, with none blocking: (1) T2 pure-substances-and-mixtures asks that electricity splitting water shows it is not an element, and that carbon dioxide is a compound of carbon and oxygen. cec65f0712 asks the new 2:1 ratio, and 96d3f18ba2 uses CO2 only as a foil, so neither repeats. (2) T2 metals-nonmetals-and-metalloids asks where the Latin symbols come from (Fe, Au, Ag, Pb). 96d3f18ba2 asks the capital-letter rule instead, and its Cu/cuprum line is context only. (3) T4 inside-the-atom asks how lead could become gold (three protons). 5d8565c22b mentions alchemy only in its context. (4) T4 photosynthesis-atoms-in-and-out (not built) will use glucose in its equation. Keep that unit off counting glucose's atoms, which is 71d4c679c6's. (5) T5 balancing-equations-and-reaction-rates (not built) has 2H2 + O2 -> 2H2O. It must not ask the electrolysis 2:1 volume ratio. (6) T3 why-earth-supports-life (not built) owns the ozone layer's UV shield. 7c1e372677 names it only in context, so keep it out of that question's key. (7) T5 the-periodic-tables-patterns (sodium reacts violently with water) is used only as stem description in 7fb52854e9. No overlap with physical-or-chemical-change or solutions-solute-and-solvent: solutions' water-molecule question asks the charged ends, a different fact from 3d82adc29a. Lane: no kitchen examples. Table salt is named by the scope; peroxide's hair bleaching was rightly left out. Scope coverage is complete: element, compound, fixed proportions, properties unlike the elements, molecule, and reading formulas. The scope's CO2 and NaCl appear as foil and context."
+}

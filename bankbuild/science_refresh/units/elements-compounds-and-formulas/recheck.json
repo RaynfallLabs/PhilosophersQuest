@@ -1,0 +1,73 @@
+{
+ "unit": "elements-compounds-and-formulas",
+ "questions": {
+  "e649084bcc": {
+   "verdict": "pass",
+   "why": "Old duplicate fixed: it now asks atoms against elements (TEKS 7.6A/B), not the subscript skill of the ammonia question. Three is right; six, twelve and twenty-four are the real misreadings. No arithmetic is needed for the key. Lane is the body, not the kitchen.",
+   "sources": [
+    "https://openstax.org/books/chemistry-2e/pages/2-4-chemical-formulas",
+    "https://grokipedia.com/page/Glucose"
+   ]
+  },
+  "b22f25fdb7": {
+   "verdict": "pass",
+   "why": "The fact-check point is fixed: a grain is now said to be made of crystal, not to be one crystal (many grains are polycrystalline), and the context speaks of the crystal, not the whole grain. Key and lures unchanged and true.",
+   "sources": [
+    "https://grokipedia.com/page/Quartz",
+    "https://grokipedia.com/page/Sand",
+    "https://www.geological-digressions.com/the-mineralogy-of-sandstones-quartz-grains/"
+   ]
+  },
+  "d1db74c21c": {
+   "verdict": "pass",
+   "why": "Both old problems fixed: the context now says chemical properties, as the source does, and the four choices are parallel. No water atom exists; an oxygen atom is not water; a droplet holds countless molecules.",
+   "sources": [
+    "https://grokipedia.com/page/Molecule"
+   ]
+  },
+  "19dece65a3": {
+   "verdict": "pass",
+   "why": "Now an explain question, as the judge asked: the lures are the real misconceptions (a blend of properties, too small a dose, a mixture). The bleach and acid lures are gone. Facts hold: sodium reacts violently with water, chlorine is a toxic yellow-green gas, NaCl is stable and needed by the body.",
+   "sources": [
+    "https://grokipedia.com/page/Sodium",
+    "https://grokipedia.com/page/Chlorine",
+    "https://grokipedia.com/page/Sodium_chloride",
+    "https://www.thenational.academy/teachers/programmes/science-secondary-ks3/units/atoms-elements-and-compounds/lessons/compounds-and-their-formation"
+   ]
+  },
+  "cec65f0712": {
+   "verdict": "pass",
+   "why": "The dead lure is replaced by a live misconception (a lighter gas fills more space). It is truly wrong: equal volumes of gases hold equal numbers of molecules whatever the gas. The key needs only the 2:1 of H2O; Avogadro stays in the context.",
+   "sources": [
+    "https://grokipedia.com/page/Avogadro's_law",
+    "https://grokipedia.com/page/Electrolysis_of_water",
+    "https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_(data_page)"
+   ]
+  },
+  "6c1611518a": {
+   "verdict": "pass",
+   "why": "The odd-one-out tell is fixed: two constant choices (fixed, equal masses) and two varying ones (Berthollet, drift). Facts hold: lab-made and natural copper carbonate, about 5:1:4 copper to carbon to oxygen, Berthollet opposed, resolved for Proust in the 1810s, berthollides named after him.",
+   "sources": [
+    "https://grokipedia.com/page/Law_of_definite_proportions",
+    "https://en.wikipedia.org/wiki/Joseph_Proust"
+   ]
+  },
+  "413996874c": {
+   "verdict": "fail",
+   "why": "The judge's medium tell is reworded, not fixed, and two lures repeat a lower tier. T2 pure-substances-and-mixtures asks what carbon dioxide is, with the lures 'A mixture of carbon and oxygen' and 'A new element made of the two'. Here 'A new element made of hydrogen and oxygen' falls to the T2 lesson that an element holds one kind of atom. And 'whose molecules each hold two hydrogen atoms and two oxygen atoms' still says the atoms sit bonded in one kind of molecule, which argues against 'A mixture of water and oxygen gas' just as 'joined' did. A student with the T2 lesson has only the key and 'Water still, but in a different form' to choose from. The facts hold (H2O2 is a pale blue, syrupy liquid and a strong oxidiser). Fix: give it two live T3 lures, such as the properties misconception 'The same substance as water, as it holds the same atoms'.",
+   "sources": [
+    "https://grokipedia.com/page/Hydrogen_peroxide",
+    "https://grokipedia.com/page/Law_of_definite_proportions"
+   ]
+  },
+  "5d8565c22b": {
+   "verdict": "pass",
+   "why": "The dead lure is replaced by the alchemists' transmutation, which Dalton's theory denied. The context's isotope line is true: 26 elements are monoisotopic, gold-197 among them, so most elements' atoms come in more than one weight. The 1808 New System is right.",
+   "sources": [
+    "https://grokipedia.com/page/John_Dalton",
+    "https://en.wikipedia.org/wiki/Monoisotopic_element",
+    "https://en.wikipedia.org/wiki/Jabir_ibn_Hayyan"
+   ]
+  }
+ }
+}

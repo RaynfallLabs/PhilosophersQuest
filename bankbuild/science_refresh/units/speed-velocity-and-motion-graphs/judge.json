@@ -1,0 +1,58 @@
+{"unit": "speed-velocity-and-motion-graphs",
+ "questions": {
+  "cf83c5375c": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "The key is everyday knowledge: any child who has ridden in a car knows the needle shows how fast the car is going right now. The 'average speed' and 'velocity' traps never come alive, because nothing in the stem makes the average a rival number. It is plain recall of what a speedometer shows, with nothing applied.",
+     "fix": "Put the average beside the reading so the difference is the puzzle: 'A family drives 150 kilometres to the coast in 3 hours, stopping once for fuel. Near the coast the speedometer needle points to 80 kilometres per hour. Why is that reading so much higher than 50 kilometres per hour, the 150 kilometres divided by the 3 hours?' Key: 'The needle shows one moment; the 50 is the whole drive's average'. Wrong: 'The needle shows velocity; the 50 is only a speed' / 'The 50 is wrong, since the stop must be left out' (the documented F4 error) / 'The needle shows how fast the car is speeding up'. The division is easy in the head and is given, not asked."}
+   ]},
+  "b70d1f586c": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Lower, since the rest shortens the distance ridden' is weak: nothing in the stem suggests a shorter road, so few will pick it.",
+     "fix": "Use F4's documented error instead: 'Lower, as it is the mean of her 20 and her 0'."}
+   ]},
+  "63ae2eede2": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "Close to definition recall (velocity is speed with a direction). The key is the only choice about position or heading, so it stands out a little among three time-and-distance choices.",
+     "fix": "Swap 'How long the storm has been moving' for 'Where the storm is at this moment', a real position-for-velocity confusion (M1)."}
+   ]},
+  "553c3ce12b": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'5 metres per second, the way she ran' is hard to parse; a 7th grader may not read 'the way' as 'in that direction'. 'A runner runs' is also clumsy.",
+     "fix": "'5 metres per second, in the direction she ran'; open with 'A girl runs one lap...'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'Displacement' appears only in the key, never taught in the stem. It is TEKS 7.7B vocabulary and the context teaches it, so it is acceptable.",
+     "fix": "Optional: 'Zero, since she ends where she began'."}
+   ]},
+  "1c976468fe": {"verdict": "ok", "issues": []},
+  "9fb9274707": {"verdict": "ok", "issues": []},
+  "39cf460d49": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'then curves over' can be pictured as the line turning down, like the top of a hill, which would mean the tram is coming back, not slowing. The stem never says the line keeps rising.",
+     "fix": "'...starts as a steep line, then keeps rising, but less and less steeply as the minute goes on.'"}
+   ]},
+  "7d8f767b44": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's 'each runner makes a straight line' rules out both 'They are both speeding up' and 'They are both slowing down' for anyone who has learned this unit's own straight-line fact (F16). The two are also mirror twins. So the question is really a 50/50 between the key and 'same speed'.",
+     "fix": "Replace the pair with graph-reading confusions that stay live: 'The slower runner is just pulling ahead' (reading height or slope wrongly, M2) and 'They are running toward each other' (the X read as a picture of two crossing paths, M3)."},
+    {"axis": "clarity", "severity": "low",
+     "what": "Two runners who leave the start line together at steady speeds cannot cross partway, so a careful 7th grader will wonder how the lines can meet.",
+     "fix": "Add a head start: 'In a race, one runner is given a 10-metre head start. On a graph of distance from the start line against time...'"}
+   ]},
+  "3c468e6404": {"verdict": "ok", "issues": []},
+  "08ca784a09": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "Overlap with 3c468e6404: the skater 'gliding round a rink at one speed' is the one choice that decides the question, and it re-tests the bend question's fact (turning at a steady speed is acceleration). A player who has met the bend question gets this one free, so the unit has two questions on one fact. The fact this question could own, that slowing down counts too (F12, M5), is left to a choice nobody struggles with.",
+     "fix": "Re-aim it at slowing down: 'A cyclist brakes from 20 to 5 kilometres per hour as she nears a junction. Her friend says she is decelerating, so she cannot be accelerating. What would a physicist say?' Key: 'She is accelerating, since her velocity changes'. Wrong: 'She is not accelerating, since she is slowing down' / 'She is accelerating only if she also turns' / 'She is not accelerating, since she goes straight'."},
+    {"axis": "voice", "severity": "low",
+     "what": "'Which of these four' is a near-copy of the banned 'Which of the following'.",
+     "fix": "Moot if re-aimed; otherwise 'Which one belongs in the group that is not accelerating?'"}
+   ]}
+ },
+ "unit_notes": "Scope covered: average speed with stops (b70d), instantaneous speed (cf83), velocity and direction (63ae), distance and displacement (553c), the four distance-time readings (steeper is faster 1c97, flat is stopped 9fb9, curve is changing speed 39cf, crossing is level 7d8f), and acceleration as any change of velocity (3c46, 08ca). Lanes are clean: no question asks arithmetic (553c gives the speed outright), and there are no kitchen scenes. Graphs: all four are described clearly enough for a 7th grader, with two small fixes: 39cf should say the line keeps rising, and 7d8f needs a head start so the crossing makes sense. Overlaps inside the unit: 08ca re-tests 3c46's fact (turning at a steady speed counts) through its skater; fix it by re-aiming 08ca at slowing down (above). Overlaps with other units: (1) 3c46's car on a bend at a steady speed shares a scene with inertia-newtons-first-law ab3b648adb (the box sliding on a left bend). The facts differ (acceleration versus the straight-line path), so both can stay, but change one scene, for example make this one a racing car on a curved track. (2) 08ca's 'train at one speed on a straight track' shares a scene with inertia c267604dd1 (the ball tossed on a steady train). The facts differ, and re-aiming 08ca removes the train anyway. (3) T2 forces-and-net-force asks about a car at a steady speed on a straight highway (balanced forces); 'not accelerating' is a different fact, so there is no clash. (4) T1 pushes-pulls-and-gravity (the falling rock speeds up; the puck swerving west) is not re-asked. Boundary for the neighbour: acceleration here is only 'any change of speed or direction'; Newton's first law stays with inertia-newtons-first-law, and F = ma stays at T4. Grade: cf83 is too easy as written. The rest are seventh-grade applications (TEKS 7.7A-C)."}

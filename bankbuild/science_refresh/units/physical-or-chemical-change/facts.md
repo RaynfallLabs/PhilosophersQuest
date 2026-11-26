@@ -99,6 +99,14 @@ F22. Mechanical digestion "physically fragments larger food particles through ac
 F23. In an incandescent bulb, an electric current heats a tungsten filament until it glows, at roughly 2,200-2,700 degrees Celsius; over 90% of the energy leaves as heat and under 10% as visible light. The filament sits "within a vacuum or inert gas atmosphere to prevent oxidation". It fails by sublimation: tungsten atoms escape from its surface as a gas, thinning it and blackening the glass, until it breaks. The wire stays tungsten while it glows.
     https://grokipedia.com/page/Incandescent_light_bulb
 
+## A solid that vanishes in a chemical change
+
+F24. Zinc added to dilute hydrochloric acid gives off hydrogen gas and forms "a clear zinc chloride solution" (Zn + 2HCl gives ZnCl2 + H2); zinc chloride is a white crystalline solid, highly soluble in water. So a solid can vanish into a clear liquid in a chemical change too: vanishing and a clear liquid do not prove a change was physical.
+    https://grokipedia.com/page/Zinc_chloride
+
+F25. Tungsten, like iron and magnesium, is a metal, and metals do react: iron rusts (F15), and magnesium "appears as a shiny, silvery-white solid" that is highly flammable, "burning with a bright white light". A hot tungsten wire must be kept from oxygen "to prevent oxidation" (F23).
+    https://grokipedia.com/page/Magnesium ; https://grokipedia.com/page/Incandescent_light_bulb
+
 ## Misconceptions (honest wrong choices)
 
 M1. Reversible means physical and irreversible means chemical (F6). A shattered beaker cannot be put back, yet its pieces are still glass.
@@ -113,3 +121,34 @@ M3. Burning is melting: students think only the wick burns while the wax melts o
 M4. Tarnish is an oxide, like rust; for silver it is a sulfide (F9).
 
 M5. Mass kept proves a change was physical; mass is kept in chemical changes too (F5).
+
+## Added in the revision (2026-11-26)
+
+F26. Black powder's products, from one study cited by Wikipedia: 55.91% solids (potassium carbonate, potassium sulfate and potassium sulfide first, then sulfur, potassium nitrate and others), 42.98% gases (carbon dioxide, nitrogen, carbon monoxide, hydrogen sulfide, hydrogen, methane, in descending amount) and 1.11% water; "most of it turns into particulate matter" (the smoke). So its gases are mostly carbon dioxide and nitrogen, and water vapour is a minor product (this corrects F16's "primarily nitrogen, carbon dioxide, and water vapor", which describes only the gases).
+    https://en.wikipedia.org/wiki/Gunpowder
+
+F27. Iodine is "a dense, bluish-black solid" that "readily sublimes upon gentle heating", "to form a distinctive violet-colored vapor". Sublimation is a change of state, as with dry ice (F17), so no new substance forms.
+    https://grokipedia.com/page/Iodine ; https://grokipedia.com/page/Physical_change
+
+F28. "A balloon pops when the material that makes up its surface tears or shreds, creating a hole", and the high-pressure air escapes. Tearing and stretching are physical changes (Grokipedia's own examples include "tearing a sheet of paper" and stretching rubber): the rubber stays rubber.
+    https://en.wikipedia.org/wiki/Balloon_popping ; https://grokipedia.com/page/Physical_change
+
+F29. Mixtures can react. The RSC's 11-14 demonstration heats a mixture of iron and sulfur powders, from which a magnet can first pull out the iron: "the sulfur melts and reacts with the iron exothermically to form iron(II) sulfide", and the glow and a new black substance that a magnet cannot separate are the signs of reaction.
+    https://edu.rsc.org/experiment/iron-and-sulfur-reaction/713.article
+
+F30. Silver tarnish comes from sulfur gases such as hydrogen sulfide and carbonyl sulfide: "hydrogen sulfide (H2S) and carbonyl sulfide (COS) are important because they form silver sulfide on the surface of silver objects causing them to tarnish"; in a museum study "carbonyl sulfide was present in greater concentration than hydrogen sulfide at all of the locations monitored". So hydrogen sulfide is one such gas, not surely the main one.
+    https://cool.culturalheritage.org/jaic/articles/jaic44-03-002_4.html
+
+F31. Heated particles do not shrink or grow: a heated substance expands because of the "greater average separation" of its particles (the T2 particles-in-motion lesson).
+    https://grokipedia.com/page/Thermal_expansion
+
+F32. Physical weathering also includes thermal stress (insolation) weathering, "the physical disintegration of rocks due to repeated cycles of expansion and contraction caused by diurnal or seasonal temperature fluctuations", and abrasion, as "strong winds contribute to physical abrasion by propelling abrasive particles like sand against exposed surfaces". Physical weathering "breaks rocks into smaller fragments" (F20).
+    https://grokipedia.com/page/Weathering
+
+F33. Electricity can drive a chemical change: electrolysis "decomposes liquid water into hydrogen and oxygen gases".
+    https://grokipedia.com/page/Electrolysis_of_water
+
+F34. Magnetizing iron is a physical change. Grokipedia lists among physical changes "the temporary magnetization of ferromagnetic materials, such as iron filings exposed to an external magnetic field". The Ontario Science Centre: stroking a nail "in one direction with one end (pole) of the magnet" magnetizes it, until it "will pick up one then several paperclips"; iron holds "tiny groups of atoms called domains", whose directions "are all jumbled up" before, and stroking "causes the atom domains to arrange themselves in a neat pattern of straight rows". The iron stays iron.
+    https://grokipedia.com/page/Physical_change ; https://www.ontariosciencecentre.ca/science-at-home/diy-science-fun/make-a-magnet
+
+M6. A new property means a new substance (author's judgment): students take a gained property, such as a nail's magnetism, for a sign of a chemical change.

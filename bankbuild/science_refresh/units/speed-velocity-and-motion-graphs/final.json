@@ -1,0 +1,211 @@
+{
+ "unit": "speed-velocity-and-motion-graphs",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "speed-velocity-and-motion-graphs",
+   "question": "A girl cycles to her grandmother's house. Whenever she is moving, her bike's speedometer reads 20 kilometres per hour, but halfway there she stops for a half-hour rest. How does her average speed for the whole trip compare with 20 kilometres per hour?",
+   "answer": "Lower, since the rest adds time but no distance",
+   "choices": [
+    "Lower, since the rest adds time but no distance",
+    "Lower, since the rest shortens the distance ridden",
+    "The same, since stops are left out of an average",
+    "The same, since she always rides at that speed"
+   ],
+   "context": "Average speed is the total distance divided by the total time, and the half hour of rest counts in the time. The road to her grandmother's house is just as long either way, so the rest pulls her average below the 20 kilometres per hour her speedometer showed while she rode.",
+   "facts": [
+    "F2",
+    "F4"
+   ],
+   "grade_note": "Seventh-grade standards (TEKS 7.7A) have students work out average speed as total distance over total time, stops included."
+  },
+  {
+   "tier": 3,
+   "topic": "speed-velocity-and-motion-graphs",
+   "question": "A radio weather report says only that a storm is moving at 30 kilometres per hour. A science teacher listening points out that the report has given the storm's speed, but not its velocity. What has the report left out?",
+   "answer": "Which way the storm is heading",
+   "choices": [
+    "Which way the storm is heading",
+    "How long the storm has been moving",
+    "How far the storm has travelled",
+    "Whether the storm is speeding up"
+   ],
+   "context": "Velocity is speed with a direction, so 30 kilometres per hour toward the east is a velocity. For a town nearby, the direction decides whether the storm arrives at all. How long it has moved and how far it has come are not part of velocity, and a change of speed is acceleration.",
+   "facts": [
+    "F6",
+    "F10",
+    "F11"
+   ],
+   "grade_note": "Seventh grade (TEKS 7.7B) teaches velocity as speed with a direction and asks students to tell the two apart."
+  },
+  {
+   "tier": 3,
+   "topic": "speed-velocity-and-motion-graphs",
+   "question": "A runner runs one lap of a 400-metre oval track in 80 seconds, finishing on the line she started from. Her average speed for the lap is 5 metres per second. What is her average velocity for the lap?",
+   "answer": "Zero, since her displacement is zero",
+   "choices": [
+    "Zero, since her displacement is zero",
+    "5 metres per second, the same as her speed",
+    "5 metres per second, the way she ran",
+    "Unknown, since her direction kept changing"
+   ],
+   "context": "Average velocity uses displacement, the straight-line change of position from start to finish, and a full lap ends where it began, so both are zero. Her average speed uses the whole 400 metres of path, so it is 5 metres per second even though her average velocity is zero.",
+   "facts": [
+    "F7",
+    "F8",
+    "F9",
+    "F2"
+   ],
+   "grade_note": "Seventh grade (TEKS 7.7B) teaches distance against displacement, and the lap that ends where it began is the standard case."
+  },
+  {
+   "tier": 3,
+   "topic": "speed-velocity-and-motion-graphs",
+   "question": "Mia and Ben cycle away from the same gate at the same moment. On a distance-time graph, with distance up the side and time along the bottom, each ride makes a straight line, and Mia's rises more steeply than Ben's. What does the graph show?",
+   "answer": "Mia rides faster than Ben",
+   "choices": [
+    "Mia rides faster than Ben",
+    "Mia rides more slowly than Ben",
+    "Mia rides up a steeper hill",
+    "Mia speeds up while Ben holds steady"
+   ],
+   "context": "The slope of a distance-time graph is the speed: a steeper line gains more distance each second, so Mia is faster. The graph shows distance against time, not the shape of the road, and a straight line means each rider holds one steady speed.",
+   "facts": [
+    "F15",
+    "F16",
+    "M2",
+    "M3"
+   ],
+   "grade_note": "Reading speed from the steepness of a distance-time graph is a seventh-grade standard (TEKS 7.7C)."
+  },
+  {
+   "tier": 3,
+   "topic": "speed-velocity-and-motion-graphs",
+   "question": "A boy walks from his house to a shop. On the distance-time graph of his trip, the line rises, then runs flat for five minutes, then rises again until he reaches the shop. What was he doing during the flat part?",
+   "answer": "Standing still in one spot",
+   "choices": [
+    "Standing still in one spot",
+    "Walking at one steady speed",
+    "Walking along level ground",
+    "Walking back toward his house"
+   ],
+   "context": "A flat line on a distance-time graph means time passes while the distance stays the same, so he was not moving. A flat line means a steady speed only on a speed-time graph, and a distance-time graph shows nothing about whether the ground is level.",
+   "facts": [
+    "F17",
+    "M3",
+    "M4"
+   ],
+   "grade_note": "Seventh-grade standards (TEKS 7.7C) teach that a flat stretch of a distance-time graph means the object has stopped."
+  },
+  {
+   "tier": 3,
+   "topic": "speed-velocity-and-motion-graphs",
+   "question": "A tram's distance-time graph for one minute of its run starts as a steep line, then keeps rising, but less and less steeply as the minute goes on. What does the graph show about the tram?",
+   "answer": "It is slowing down",
+   "choices": [
+    "It is slowing down",
+    "It is speeding up",
+    "It holds one steady speed",
+    "It is coming over a hill"
+   ],
+   "context": "The slope of a distance-time graph is the speed, so a line growing less steep shows the tram covering less distance each second. The line still rises because the tram is still moving forward, and its bend shows how the speed changes, not the shape of the ground.",
+   "facts": [
+    "F18",
+    "F15",
+    "M2",
+    "M3"
+   ],
+   "grade_note": "Seventh-grade graph reading (TEKS 7.7C) includes telling speeding up from slowing down by how a distance-time line bends."
+  },
+  {
+   "tier": 3,
+   "topic": "speed-velocity-and-motion-graphs",
+   "question": "Two sisters race down a straight track, and the younger is given a 10-metre head start. On a graph of distance from the start line against time, each girl's run makes a straight line, and partway through the race the two lines cross. What does the crossing point show about the sisters?",
+   "answer": "They are side by side on the track",
+   "choices": [
+    "They are side by side on the track",
+    "They are running at the same speed",
+    "The younger sister is pulling ahead",
+    "They are swapping lanes on the track"
+   ],
+   "context": "Where the lines cross, both sisters are the same distance from the start line at the same moment, so they are side by side. Their speeds are the slopes, and lines that cross have different slopes: the older sister's steeper line shows she has made up the 10 metres and is passing the younger. The graph shows distance against time, not the lanes they run in.",
+   "facts": [
+    "F19",
+    "F15",
+    "F16",
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "grade_note": "Seventh-grade distance-time graphs (TEKS 7.7C) compare two trips on one graph, and the crossing point is the classic place where students mistake same position for same speed."
+  },
+  {
+   "tier": 3,
+   "topic": "speed-velocity-and-motion-graphs",
+   "question": "A racing car takes a long, sweeping curve of its track at a steady 200 kilometres per hour, and its speed reading never changes all the way round. Is the car accelerating on the curve?",
+   "answer": "Yes, since its direction changes",
+   "choices": [
+    "Yes, since its direction changes",
+    "Yes, since it is moving very fast",
+    "No, since its speed stays the same",
+    "No, since only speeding up counts"
+   ],
+   "context": "Acceleration is any change in velocity, and velocity includes direction, so a car rounding a curve at a steady speed accelerates all the way round. In everyday speech to accelerate means to speed up, but in science a change of direction counts too. Going fast is not the same thing: the same car holding 200 kilometres per hour on a straight is not accelerating at all.",
+   "facts": [
+    "F13",
+    "F11",
+    "F14",
+    "F20",
+    "M5"
+   ],
+   "grade_note": "Seventh-grade motion units define acceleration as any change in speed or direction, with the turning car as the standard example."
+  },
+  {
+   "tier": 3,
+   "topic": "speed-velocity-and-motion-graphs",
+   "question": "A bus driver sees the next stop ahead and presses the brake. Along the straight street, the bus slows steadily from 40 to 10 kilometres per hour. Is the bus accelerating while it slows?",
+   "answer": "Yes, since its speed is changing",
+   "choices": [
+    "Yes, since its speed is changing",
+    "No, since it is slowing down",
+    "No, since it is not turning",
+    "Yes, since it is still moving forward"
+   ],
+   "context": "Acceleration is any change in velocity, so a bus that slows down is accelerating, with its acceleration pointing backward, against its motion. Everyday speech calls this deceleration, but in science it counts as acceleration. Moving is not enough on its own: a bus holding one speed along a straight street is not accelerating.",
+   "facts": [
+    "F12",
+    "F11",
+    "F14",
+    "F21",
+    "M5"
+   ],
+   "grade_note": "Seventh-grade motion units count slowing down as acceleration too, the case everyday speech calls deceleration."
+  }
+ ],
+ "revised": {
+  "34941d91a0": {
+   "old_hash": "39cf460d49",
+   "why": "Judge (low, clarity): 'then curves over' could be pictured as the line turning down. The stem now says the line keeps rising, less and less steeply. Choices unchanged."
+  },
+  "f7e45dbb5d": {
+   "old_hash": "7d8f767b44",
+   "why": "Factcheck error: two runners leaving the start line together at steady speeds cannot cross partway, so the younger sister now has a 10-metre head start. Judge (medium): 'straight line' ruled out both 'speeding up' and 'slowing down'; they are replaced by two graph-reading confusions that stay live, the head-start runner read as pulling ahead (M2) and the X read as a picture of crossing paths (M3). Key reworded 'side by side on the track' to balance lengths."
+  },
+  "4fa63da6a3": {
+   "old_hash": "3c468e6404",
+   "why": "Both units' judge notes asked for one of the two cars-on-a-bend scenes to change (inertia-newtons-first-law ab3b648adb has a car on a left bend), so this is now a racing car on a curve of its track. 'Anything moving is accelerating' became 'moving very fast' (F14). The context no longer says slowing down counts, which is now 08ca's question."
+  },
+  "2d93adc326": {
+   "old_hash": "08ca784a09",
+   "why": "Judge (medium): the skater turning at one speed decided the question and re-tested 3c468e6404's fact; the steady train also shared a scene with the inertia unit. Re-aimed at the fact this question could own, that slowing down is acceleration (F12, M5), as the judge proposed: a braking bus on a straight street, with the everyday view, the over-learned 'only turning counts' and 'moving means accelerating' as wrong choices. 'Which of these four' is gone."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "cf83c5375c",
+   "question": "A car's speedometer needle points to 60 kilometres per hour as the car passes a farm gate on a country road. What does that reading tell about the car?",
+   "why": "Too easy for T3 (judge, medium): what a speedometer shows is everyday knowledge. Every re-framing tried either stays everyday (the needle shows the speed now) or, with the trip's average as the rival number, turns on the slow or stopped parts pulling the average down, which is b70d1f586c's fact. Dropped; the unit keeps nine questions on different facts."
+  }
+ ]
+}

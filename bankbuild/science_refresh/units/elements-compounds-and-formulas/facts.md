@@ -98,3 +98,17 @@ M4. Students could not "discriminate between particulate representations of comp
     https://edu.rsc.org/resources/students-ideas-about-the-differences-between-elements-compounds-and-mixtures-beyond-appearances/4017771.article ; https://teksguide.org/teks/s76a/alignments
 
 M5. Author's judgment: students mix up the C symbols (carbon C, calcium Ca, cobalt Co, copper Cu), and read a formula for a crystal (SiO2, NaCl) as the whole grain's count of atoms.
+
+## Added in the revision (2026-11-26)
+
+F23. Avogadro's law: "equal volumes of gases, at the same temperature and pressure, contain equal numbers of molecules", a rule "independent of the gas's chemical identity" (the page's examples are hydrogen and oxygen; a litre of helium and a litre of nitrogen at STP hold the same number of molecules, though helium is far lighter). So a lighter gas does not fill more space for the same number of molecules.
+    https://grokipedia.com/page/Avogadro's_law
+
+F24. Quartz sand grains are of two kinds: "monocrystalline quartz where each sand grain is a single crystal" and "polycrystalline quartz where grains consist of crystal aggregates", "several interlocking crystals". So a grain is made of crystal, but not always of one crystal.
+    https://www.geological-digressions.com/the-mineralogy-of-sandstones-quartz-grains/
+
+F25. Dalton's theory as taught: "Atoms of one element cannot be converted into atoms of another element" (University of Houston chemistry slides); "Atoms cannot be subdivided, created or destroyed" and "In chemical reactions, atoms are combined, separated, or rearranged" (Wikipedia). The alchemists' transmutation of one metal into another is what this denies.
+    https://www.uh.edu/~chem1p/c2/tsld015.htm ; https://en.wikipedia.org/wiki/John_Dalton
+
+F26. Later chemists found that the atoms of one element can differ in mass: an isotope "differs in the number of neutrons in its nucleus, leading to variations in atomic mass". "80 of the first 82 elements in the periodic table possess at least one stable isotope" (Grokipedia), and only 26 elements have a single one (Wikipedia, Monoisotopic element), gold-197 among them; so most elements' atoms come in more than one weight, while gold's are all alike (F21).
+    https://grokipedia.com/page/Isotope ; https://en.wikipedia.org/wiki/Monoisotopic_element

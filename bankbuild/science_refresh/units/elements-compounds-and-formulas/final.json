@@ -1,0 +1,236 @@
+{
+ "unit": "elements-compounds-and-formulas",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "elements-compounds-and-formulas",
+   "question": "Ammonia is a colourless gas with a sharp smell, given off when bacteria and fungi break down rotting plants and animal waste. Its formula is NH3. What does each molecule of ammonia hold?",
+   "answer": "One nitrogen atom and three hydrogen atoms",
+   "choices": [
+    "One nitrogen atom and three hydrogen atoms",
+    "Three nitrogen atoms and three hydrogen atoms",
+    "Three nitrogen atoms and one hydrogen atom",
+    "One nitrogen atom and one hydrogen atom"
+   ],
+   "context": "A small number written after a symbol counts the atoms of that one element, and a symbol with no number stands for a single atom. So NH3 is one nitrogen atom joined to three hydrogen atoms: the 3 belongs to the hydrogen alone, not to the nitrogen before it.",
+   "facts": [
+    "F5",
+    "F7"
+   ],
+   "grade_note": "Reading a formula for which atoms it holds and how many of each is TEKS 7.6B, and ammonia is the NGSS middle-school example of a simple molecule."
+  },
+  {
+   "tier": 3,
+   "topic": "elements-compounds-and-formulas",
+   "question": "In a lab, a tank of gas is labelled CO2, and a jar on the shelf beside it is labelled Co. What is in the jar labelled Co?",
+   "answer": "The metal cobalt, one element",
+   "choices": [
+    "The metal cobalt, one element",
+    "Carbon and oxygen, joined together",
+    "The metal copper, one element",
+    "Carbon and oxygen, mixed together"
+   ],
+   "context": "A capital letter starts each element's symbol, and a second letter, if there is one, is written small, so Co is a single symbol: cobalt, a hard, bluish-grey metal. Written with two capitals, CO would be two symbols, carbon and oxygen, which make the poisonous gas carbon monoxide. Copper's symbol is Cu, from its Latin name cuprum.",
+   "facts": [
+    "F6"
+   ],
+   "grade_note": "Using the periodic table to name the atoms in a formula is TEKS 7.6B, and the capital letter that begins each symbol is the first rule of reading one."
+  },
+  {
+   "tier": 3,
+   "topic": "elements-compounds-and-formulas",
+   "question": "Glucose is the sugar that the blood carries to the body's cells for energy, and its formula is C6H12O6. How many different elements does glucose hold?",
+   "answer": "Three elements",
+   "choices": [
+    "Three elements",
+    "Six elements",
+    "Twelve elements",
+    "Twenty-four elements"
+   ],
+   "context": "An element is one kind of atom, and glucose's formula holds three symbols: C for carbon, H for hydrogen and O for oxygen. The numbers count atoms, not elements: six carbon, twelve hydrogen and six oxygen, twenty-four atoms in all. Plants make glucose by photosynthesis.",
+   "facts": [
+    "F1",
+    "F5",
+    "F6",
+    "F8"
+   ],
+   "grade_note": "Telling atoms from elements in a formula is TEKS 7.6A and 7.6B, and the seventh-grade formula line names glucose, C6H12O6."
+  },
+  {
+   "tier": 3,
+   "topic": "elements-compounds-and-formulas",
+   "question": "Quartz, the mineral that most sand is made of, has the formula SiO2. Each grain of quartz sand is made of crystal, its silicon and oxygen atoms bonded together. What does the formula tell about a grain?",
+   "answer": "It has two oxygen atoms for every silicon atom",
+   "choices": [
+    "It has two oxygen atoms for every silicon atom",
+    "It has two silicon atoms for every oxygen atom",
+    "It has one silicon atom and two oxygen atoms in all",
+    "It has as many silicon atoms as oxygen atoms"
+   ],
+   "context": "In a crystal such as quartz, the atoms link into one network all through the crystal, so the formula gives a ratio: two oxygen atoms for every silicon atom, with countless atoms in a single grain. The 2 belongs to the oxygen alone.",
+   "facts": [
+    "F5",
+    "F9",
+    "F24"
+   ],
+   "grade_note": "NGSS MS-PS1-1 has middle schoolers model extended structures as well as simple molecules, crystals whose formulas give a ratio of atoms."
+  },
+  {
+   "tier": 3,
+   "topic": "elements-compounds-and-formulas",
+   "question": "The oxygen in air is a gas with no colour or smell, and its formula is O2. Ozone is a pale blue gas with a sharp smell that harms the lungs, and its formula is O3. What are oxygen gas and ozone?",
+   "answer": "Two forms of one element",
+   "choices": [
+    "Two forms of one element",
+    "An element and a compound",
+    "Two different elements",
+    "Two different compounds"
+   ],
+   "context": "An element is made of one kind of atom, and both gases hold nothing but oxygen atoms: two to a molecule in the oxygen people breathe, three in ozone. Joined atoms make a compound only when they belong to two or more different elements. High in the atmosphere, a layer of ozone absorbs nearly all of the Sun's harmful ultraviolet light.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3"
+   ],
+   "grade_note": "TEKS 7.6A compares elements and compounds in terms of atoms and molecules, and its guide's own example is that O2 is an element, not a compound."
+  },
+  {
+   "tier": 3,
+   "topic": "elements-compounds-and-formulas",
+   "question": "A drop of water can be split into smaller and smaller bits, but only so far: past a certain point, a bit is no longer water at all. What is the smallest bit that is still water?",
+   "answer": "A single molecule of water",
+   "choices": [
+    "A single molecule of water",
+    "A single atom of water",
+    "A single atom of oxygen",
+    "A single droplet, too small to see"
+   ],
+   "context": "A molecule is the smallest particle of a compound that keeps its makeup and chemical properties, and a water molecule is one oxygen atom joined to two hydrogen atoms. There is no such thing as a water atom: split a water molecule, and only hydrogen and oxygen are left, neither of them water. Even the tiniest droplet holds countless molecules.",
+   "facts": [
+    "F2"
+   ],
+   "grade_note": "TEKS 7.6A has seventh graders compare elements and compounds in terms of atoms and molecules, and the molecule as the smallest unit of a compound links the two."
+  },
+  {
+   "tier": 3,
+   "topic": "elements-compounds-and-formulas",
+   "question": "Sodium is a soft metal that reacts violently with water, and chlorine is a poisonous yellow-green gas. Together they make sodium chloride, the table salt that the body needs. Why is the salt safe to eat when its elements are so dangerous?",
+   "answer": "As a compound, it has properties all its own",
+   "choices": [
+    "As a compound, it has properties all its own",
+    "Its properties are a blend, milder than either element's",
+    "It holds too little of each element to do harm",
+    "It is a mixture that keeps the two elements apart"
+   ],
+   "context": "Sodium chloride is a compound, a new substance with properties of its own: stable, unreactive and needed by the body in moderate amounts. It is not a blend of its elements' properties, and it is not a mixture, for its sodium and chlorine are joined one to one. Nor is it a weak dose of them: it is made of nothing but sodium and chlorine.",
+   "facts": [
+    "F4",
+    "F10",
+    "F11",
+    "F12"
+   ],
+   "grade_note": "Seventh graders learn that a compound's properties are unlike its elements', and dangerous sodium and chlorine making table salt is the standard example."
+  },
+  {
+   "tier": 3,
+   "topic": "elements-compounds-and-formulas",
+   "question": "An electric current splits water into hydrogen and oxygen, and each gas bubbles up into a tube of its own. The hydrogen always fills twice the space that the oxygen does. What explains the ratio?",
+   "answer": "Water holds two hydrogen atoms for each oxygen",
+   "choices": [
+    "Water holds two hydrogen atoms for each oxygen",
+    "A hydrogen atom is twice as big as an oxygen atom",
+    "Hydrogen is lighter, so it spreads to fill more space",
+    "Twice as much current flows to the hydrogen wire"
+   ],
+   "context": "Each water molecule holds two hydrogen atoms for every oxygen atom, so splitting water frees twice as much hydrogen. Both gases are made of two-atom molecules, and at the same temperature and pressure equal volumes of any gases hold equal numbers of molecules, however light or heavy the gas, so twice the hydrogen fills twice the space. A hydrogen atom is nowhere near twice the size of an oxygen atom, and the same current runs through both wires.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16",
+    "F23"
+   ],
+   "grade_note": "Splitting water is the classic demonstration of fixed proportions, and seventh graders use H2O's two-to-one ratio to explain what the tubes show."
+  },
+  {
+   "tier": 3,
+   "topic": "elements-compounds-and-formulas",
+   "question": "Joseph Proust, a French chemist, made copper carbonate in his laboratory and compared it with copper carbonate found in nature as a mineral. He measured how much of each element the two samples held. What did his measurements show about a compound?",
+   "answer": "It holds its elements in fixed proportions",
+   "choices": [
+    "It holds its elements in fixed proportions",
+    "It holds an equal mass of each element",
+    "Its proportions depend on how and where it formed",
+    "Its proportions slowly drift as the years pass"
+   ],
+   "context": "Proust found the same proportions by mass in both samples, about five parts copper to one of carbon and four of oxygen, however the copper carbonate had formed, and the same held for the other compounds he tested: a compound holds its elements in fixed proportions, though not equal ones. Claude Berthollet, another French chemist, argued that the proportions depend on how a compound forms, and the debate lasted years before the evidence settled it for Proust in the 1810s. A few crystals do vary slightly, and chemists call them berthollides after Berthollet.",
+   "facts": [
+    "F17",
+    "F18"
+   ],
+   "grade_note": "Fixed proportions is part of the seventh-grade definition of a compound, and Proust's copper carbonate is the first discovery story behind it."
+  },
+  {
+   "tier": 3,
+   "topic": "elements-compounds-and-formulas",
+   "question": "John Dalton, an English chemist, set out his theory of atoms in a book of 1808. By his theory, what is true of the atoms in a bar of pure gold?",
+   "answer": "They are all alike, with the same weight",
+   "choices": [
+    "They are all alike, with the same weight",
+    "They can slowly turn into atoms of another metal",
+    "They are the same atoms every metal has",
+    "They are each yellow and shiny, like gold"
+   ],
+   "context": "Dalton held that each element has its own kind of atom, all alike and of the same weight, and that atoms are never created, destroyed or changed into another element's atoms. So pure gold holds gold atoms only, and lead, iron and every other metal are made of other kinds; the alchemists before him had thought metals formed in the earth from sulfur and mercury, and could be changed one into another. Later chemists found that the atoms of most elements come in a few slightly different weights, though gold's really are all alike. A single atom has no colour or shine: those belong to the metal, made of countless atoms together.",
+   "facts": [
+    "F20",
+    "F21",
+    "F22",
+    "F25",
+    "F26"
+   ],
+   "grade_note": "Dalton's atomic theory, each element with its own kind of atom, is the first discovery story behind the seventh-grade definition of an element."
+  }
+ ],
+ "revised": {
+  "e649084bcc": {
+   "old_hash": "71d4c679c6",
+   "why": "Judge (medium, duplicate): counting the hydrogen atoms tested the same subscript skill as the ammonia question. Now, as the judge proposed, it asks how many different elements glucose holds (the atom/element distinction of TEKS 7.6A); the wrong choices are the real misreadings (a subscript read as a count of elements, or every atom counted). Same formula and facts (F5, F8), plus F1 and F6."
+  },
+  "b22f25fdb7": {
+   "old_hash": "41bf99e830",
+   "why": "Fact-check (uncertain): not every quartz grain is a single crystal, since many are several crystals grown together (F24). The stem now says each grain 'is made of crystal' and the context says the network runs 'all through the crystal', not the whole grain. Key, choices and fact unchanged."
+  },
+  "d1db74c21c": {
+   "old_hash": "3d82adc29a",
+   "why": "Fact-check (error): the context said a molecule keeps a compound's 'makeup and properties'; the source says its CHEMICAL properties (one molecule is not wet and has no boiling point), so 'chemical' is added. Judge (medium): the key was the only choice saying 'molecule' and the only one with a count; the four choices are now parallel ('A single ...'), as the judge proposed. The stem no longer says drops split 'but not forever', which could be read against the droplet choice. Same fact (F2)."
+  },
+  "19dece65a3": {
+   "old_hash": "7fb52854e9",
+   "why": "Judge (medium, grade): naming table salt was recall of a famous example, and the stem's stress on danger made the one harmless choice the obvious twist. Now an explain question, as the judge proposed: why the salt is safe, with the misconceptions as wrong choices (a blend of the elements, too small a dose, a mixture). The stem says 'together they make', not 'joined', so the mixture choice stays live. Judge (low): bleach and hydrochloric acid, really solutions, are gone. Same fact (F4, F10-F12)."
+  },
+  "cec65f0712": {
+   "old_hash": "cec65f0712",
+   "why": "Judge (medium): 'Hydrogen gas is twice as heavy as oxygen gas' was dead, since hydrogen is famously the lightest gas. It is replaced, as the judge proposed, by the real misconception that a lighter gas spreads to fill more space; the context answers it with Avogadro's law (equal volumes, equal numbers of molecules, whatever the gas: F23). Stem, key and fact unchanged."
+  },
+  "6c1611518a": {
+   "old_hash": "d4e5754248",
+   "why": "Judge (medium, tell): the key was the only 'same' among three 'different' choices, two of which said nearly the same thing. Now, as the judge proposed, the question asks what the measurements showed, with two constant choices (fixed proportions, equal masses) and two varying ones (Berthollet's view, and drift over the years). Same fact (F17, F18)."
+  },
+  "413996874c": {
+   "old_hash": "c6332b9d67",
+   "why": "Judge (medium): the stem named the atoms, which killed 'A new element, made of a new kind of atom', and said 'joined', which argued against the mixture. The stem no longer prints water's own formula or 'joined', and the element choice now reads 'made of hydrogen and oxygen', ruled out only by knowing what an element is. Judge (low): the half-true 'Water, with one extra oxygen' is now 'Water still, but in a different form'. The judge's 'as ozone is a form of oxygen' was not used, since it would give away the ozone question's key. Same fact (F4, F17, F19)."
+  },
+  "5d8565c22b": {
+   "old_hash": "5d8565c22b",
+   "why": "Judge (medium): 'They are of several kinds, mixed evenly' was dead once the stem said 'pure gold'. It is replaced, as the judge proposed, by the alchemists' idea Dalton's theory denied, that atoms can turn into another metal's (F25). Judge (low): the context now says most elements' atoms come in slightly different weights, though gold's are all alike (F26). Stem, key and fact unchanged."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "413996874c",
+   "question": "A chemist has a liquid whose molecules each hold two hydrogen atoms and two oxygen atoms, the same kinds of atom that water is made of. What is the liquid?",
+   "why": "failed the re-check: The judge's medium tell is reworded, not fixed, and two lures repeat a lower tier. T2 pure-substances-and-mixtures asks what carbon dioxide is, with the lures 'A mixture of carbon and oxygen' and 'A new element made of the two'. Here 'A new element made of hydrogen and oxygen' falls to the T2 lesson that an element holds one kind of atom. And 'whose molecules each hold two hydrogen atoms and two oxygen atoms' still says the atoms sit bonded in one kind of molecule, which argues against 'A mixture of water and oxygen gas' just as 'joined' did. A student with the T2 lesson has only the key and 'Water still, but in a different form' to choose from. The facts hold (H2O2 is a pale blue, syrupy liquid and a strong oxidiser). Fix: give it two live T3 lures, such as the properties misconception 'The same substance as water, as it holds the same atoms'."
+  }
+ ]
+}

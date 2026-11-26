@@ -1,0 +1,234 @@
+{
+ "unit": "heat-on-the-move",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "heat-on-the-move",
+   "question": "A student heats a brass weight in a beaker of boiling water, then drops it into a cup of cool water. A thermometer in the cup climbs for a while, then stops climbing. What is true once the thermometer stops?",
+   "answer": "The weight and the water share one temperature",
+   "choices": [
+    "The weight and the water share one temperature",
+    "The weight is as cool as the water was at first",
+    "The water is as hot as the boiling water was",
+    "The weight has no heat left in it at all"
+   ],
+   "context": "Heat flows from the hot weight into the cool water until the two reach the same temperature, somewhere between where each began, and then the flow stops. The weight is still warm at that point; what has gone is the difference in temperature that drove the flow.",
+   "facts": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "Seventh-grade thermal energy teaches that heat flows between things in contact until they reach thermal equilibrium, one shared temperature."
+  },
+  {
+   "tier": 3,
+   "topic": "heat-on-the-move",
+   "question": "A coach props a player's swollen ankle up on an ice pack, so the pack lies underneath the ankle instead of on top of it. Does heat flow out of the ankle down into the pack?",
+   "answer": "Yes, heat flows into the cold pack below it",
+   "choices": [
+    "Yes, heat flows into the cold pack below it",
+    "No, heat only rises, so it cannot flow down",
+    "Only a little, as heat flows mostly upward",
+    "No, the pack's cold sinks away from the ankle"
+   ],
+   "context": "Heat passes by conduction from a warmer thing to a cooler one it touches, in any direction, so it flows down out of the ankle into the pack as readily as into a pack laid on top. The saying that heat rises is a mix-up: what rises is warm air, not heat.",
+   "facts": [
+    "F21",
+    "F11",
+    "F5",
+    "F8"
+   ],
+   "grade_note": "Seventh-grade heat transfer corrects the saying that heat rises: conduction carries heat from warmer to cooler in any direction, and it is warm air that rises."
+  },
+  {
+   "tier": 3,
+   "topic": "heat-on-the-move",
+   "question": "A metal spoon stands in a beaker of hot water. After a minute or two, the top of its handle, well above the water, feels warm to the touch. How does the heat travel up the spoon's handle?",
+   "answer": "Particles bump their neighbours, passing energy on",
+   "choices": [
+    "Particles bump their neighbours, passing energy on",
+    "An invisible heat fluid seeps up through the metal",
+    "The hottest metal slowly creeps up toward the top",
+    "Rays of heat shine up along the inside of the metal"
+   ],
+   "context": "This is conduction: particles at the hot end jiggle faster and bump into the ones beside them, passing energy along, while the metal itself stays put. Many scientists of the late 1700s explained heat as an invisible fluid they called caloric, but experiments showed heat is energy on the move, and the idea was given up in the 1800s.",
+   "facts": [
+    "F5",
+    "F7"
+   ],
+   "grade_note": "Seventh grade explains conduction as particles passing energy to their neighbours by contact, and the metal spoon in hot water is its standard case."
+  },
+  {
+   "tier": 3,
+   "topic": "heat-on-the-move",
+   "question": "A student lets a crystal of potassium permanganate, which colours water purple, sink to the bottom of a beaker of water near one side. Then she heats the base of the beaker gently, just under the crystal. Which way does the purple colour travel?",
+   "answer": "Up the heated side, across the top, down the far side",
+   "choices": [
+    "Up the heated side, across the top, down the far side",
+    "Up the far side, across the top, down the heated side",
+    "Straight up the heated side, then it stays at the top",
+    "Out evenly in every direction from the crystal"
+   ],
+   "context": "Water warmed at the bottom grows less dense and rises, carrying the purple up the heated side; at the top it moves across, cools, grows denser and sinks down the far side. This loop is a convection current, and the moving water carries the heat with it.",
+   "facts": [
+    "F8",
+    "F9"
+   ],
+   "grade_note": "Seventh grade teaches convection currents in a heated liquid, and the purple crystal in a beaker is the classroom demonstration of one."
+  },
+  {
+   "tier": 3,
+   "topic": "heat-on-the-move",
+   "question": "Heat moves by conduction, convection and radiation, and often by more than one of them at once. Four things are warming up. In which case is most of the heat carried by convection?",
+   "answer": "A hot-water radiator warming a chilly classroom",
+   "choices": [
+    "A hot-water radiator warming a chilly classroom",
+    "A hot-water bottle warming a child's cold feet",
+    "Sunlight warming a car's seats through its windows",
+    "A sun-baked stone wall warming a hand laid on it"
+   ],
+   "context": "Despite its name, a typical radiator gives off only about a quarter of its heat as radiation; mostly it warms the air touching it, and that air rises and flows round the room in a convection current. The hot-water bottle and the wall warm by touch, which is conduction, and sunlight through glass is radiation.",
+   "facts": [
+    "F5",
+    "F10",
+    "F22",
+    "F12"
+   ],
+   "grade_note": "Classifying everyday cases as conduction, convection or radiation is the core skill of seventh-grade heat transfer."
+  },
+  {
+   "tier": 3,
+   "topic": "heat-on-the-move",
+   "question": "Campers sit in a ring round a campfire on a cold night, a few steps back from the flames, and soon their faces feel warm. How does most of the fire's heat reach their faces?",
+   "answer": "As rays that spread straight out from the flames",
+   "choices": [
+    "As rays that spread straight out from the flames",
+    "In warm air that flows straight out from the flames",
+    "Through the air, passed on from particle to particle",
+    "As heat that rises, then spreads down onto them"
+   ],
+   "context": "Most of the warmth a camper feels beside a fire is thermal radiation, mostly infrared rays that travel out in straight lines in every direction. The fire's hot air does carry heat by convection, but it rises straight up into the sky, and air is such a poor conductor that little heat crosses it particle to particle.",
+   "facts": [
+    "F6",
+    "F11",
+    "F12",
+    "F14"
+   ],
+   "grade_note": "Seventh grade gives a fire's warmth as its example of radiation, heat carried by electromagnetic waves."
+  },
+  {
+   "tier": 3,
+   "topic": "heat-on-the-move",
+   "question": "All afternoon the Sun beats down on a metal slide in a playground. Then a boy sits on it and jumps straight back up, because the metal is hot. How did the heat travel, first from the Sun to the slide and then from the slide to the boy?",
+   "answer": "Radiation, then conduction",
+   "choices": [
+    "Radiation, then conduction",
+    "Radiation, then convection",
+    "Convection, then conduction",
+    "Convection, then radiation"
+   ],
+   "context": "Sunlight crosses space and the air as radiation and is absorbed by the metal; then the hot metal passes heat into the boy's legs by direct contact, which is conduction. Convection needs a moving liquid or gas to carry the heat, and neither step works that way.",
+   "facts": [
+    "F5",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "Seventh grade traces one case through two kinds of heat transfer, like the curriculum's metal railing hot in the sun."
+  },
+  {
+   "tier": 3,
+   "topic": "heat-on-the-move",
+   "question": "Builders lay thick mats of fibreglass, a loose tangle of very thin glass threads, in the attic of a house. A slab of solid glass as thick as a mat would let far more heat through, yet the mats help keep the house warm in winter. Why do they slow heat so well?",
+   "answer": "They trap air in pockets too small for it to flow",
+   "choices": [
+    "They trap air in pockets too small for it to flow",
+    "Their glass threads soak up heat and store it",
+    "Their glass threads are hollow, with a vacuum inside",
+    "Glass spun into thin threads cannot carry heat"
+   ],
+   "context": "Still air is a poor conductor, and the tangle of threads breaks it into tiny pockets where it cannot flow round in convection currents. The solid glass threads still conduct a little heat, but there is so little glass and so much trapped air that heat creeps through slowly.",
+   "facts": [
+    "F6",
+    "F17",
+    "F23"
+   ],
+   "grade_note": "Seventh grade explains insulators by trapped air, which conducts poorly and cannot form convection currents in tiny pockets."
+  },
+  {
+   "tier": 3,
+   "topic": "heat-on-the-move",
+   "question": "A vacuum flask has two glass walls, one inside the other, and the air has been pumped out of the narrow gap between them. With almost nothing left in the gap, which ways of moving heat can barely cross it?",
+   "answer": "Conduction and convection",
+   "choices": [
+    "Conduction and convection",
+    "Conduction and radiation",
+    "Convection and radiation",
+    "Conduction, convection and radiation"
+   ],
+   "context": "Conduction needs particles to bump into one another, and convection needs a liquid or gas to flow, so a near-empty gap blocks them both. Radiation needs no matter at all, which is how sunlight crosses empty space to Earth, so the walls facing the gap are silvered like a mirror to reflect it back.",
+   "facts": [
+    "F5",
+    "F8",
+    "F12",
+    "F19"
+   ],
+   "grade_note": "Explaining why a vacuum flask works, by which kinds of heat transfer need matter, is a standard seventh-grade application."
+  },
+  {
+   "tier": 3,
+   "topic": "heat-on-the-move",
+   "question": "At the finish line of a marathon, helpers wrap tired runners in space blankets: thin plastic sheets coated with a very thin layer of aluminium. A runner's warm body gives off heat all the time. How does the metal coating help him keep that heat?",
+   "answer": "Its metal reflects his heat rays back to him",
+   "choices": [
+    "Its metal reflects his heat rays back to him",
+    "Its metal soaks up his heat rays and holds them",
+    "Its metal spreads his heat evenly over his body",
+    "Its metal is a poor conductor that holds heat in"
+   ],
+   "context": "Every warm body radiates infrared heat, and the thin aluminium layer reflects up to 97 percent of it back toward the runner, since shiny metal absorbs very little. Aluminium is a good conductor of heat, not a poor one. The plastic sheet also blocks the wind and holds in moisture, which cuts the heat lost by convection and evaporation.",
+   "facts": [
+    "F12",
+    "F15",
+    "F16",
+    "F24",
+    "F6",
+    "F23"
+   ],
+   "grade_note": "Seventh grade applies radiation to designs that slow heat loss, where a shiny surface reflects radiated heat."
+  }
+ ],
+ "revised": {
+  "3899153636": {
+   "old_hash": "9bebc216fb",
+   "why": "Judge (high): it re-asked the T1 fact that heat flows warm to cool and cold does not flow (T1 solids-liquids-and-gases, T1 telling-materials-apart). Re-aimed, as the judge proposed, at the 'heat rises' misconception (F11, F21): the pack lies under the ankle, and the wrong choices are heat only rises, a softer 'mostly upward', and cold sinking away. 'Still' is kept out of the stem so it does not hint at yes."
+  },
+  "7be41b0d20": {
+   "old_hash": "7be41b0d20",
+   "why": "Factcheck note: the radiant share varies with design, so the context's 'about a quarter' is now said of a typical radiator (F22). Stem, key and choices unchanged."
+  },
+  "3ad32fe1b3": {
+   "old_hash": "99152a088f",
+   "why": "Judge (low): 'their faces glow with warmth' hinted at light, and so at rays; now 'their faces feel warm'. Choices and context unchanged."
+  },
+  "d18ec790b7": {
+   "old_hash": "d18ec790b7",
+   "why": "Judge (medium): the key was the one choice joining the most common first step and the most common second step. The judge's set was not used: it left 'Radiation' first in the key alone, so knowing only that sunlight comes as radiation would answer it. Now two choices start with radiation and two with convection, and two end with conduction, so neither step alone picks the key and the convergent pick is split between the key and 'Convection, then conduction'. Stem, key and context unchanged."
+  },
+  "d75b6339f8": {
+   "old_hash": "01c47be3d6",
+   "why": "Judge (low, fact): 'a pane of solid glass lets heat through quickly' overstated, as solid glass is a poor conductor beside metals; it now says a slab of solid glass as thick as a mat would let far more heat through (about 20 times, F23). 'Fluffy' is dropped. Choices and context unchanged."
+  },
+  "e007355022": {
+   "old_hash": "e007355022",
+   "why": "Judge (medium): the three wrong choices were the T1 wool hat's (makes heat, soaks up warmth from the air, gives off stored heat), so the T1 fact alone answered it. They are now other things a metal coating might do with heat: absorb and hold the rays (shiny metal absorbs little, F24), spread the heat over the body, and insulate as a poor conductor (aluminium is a good one, F23). The judge's 'plastic too thick' was not used, since the stem calls the sheet thin. Key worded 'Its metal reflects...' to match the other three."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "b91129d092",
+   "question": "James Dewar, a Scottish chemist, made the first vacuum flask at the Royal Institution in London in 1892. Its double glass walls, with a vacuum between them, slow heat moving in or out. He was not making a flask for hot drinks. What did he build it to hold?",
+   "why": "Judge (two medium): the key is a history fact (what Dewar built the flask for), not seventh-grade science, and 'a Scottish chemist' rules out the germs and the sea-voyage choices; the fact-check also faulted 'the first vacuum flask'. Its science, that the flask slows heat both ways, is everyday knowledge once both jobs are named, and the judge's re-aimed wrong choices (stores heat, makes heat, lets cold out) are the T1 wool hat's and frosty bench's ideas, which T1 facts rule out. How the vacuum works is 06c1342237's question. Dropped; ten questions remain."
+  }
+ ]
+}

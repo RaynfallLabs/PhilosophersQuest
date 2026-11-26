@@ -1,0 +1,63 @@
+{"unit": "inertia-newtons-first-law",
+ "questions": {
+  "9cf1d1b552": {"verdict": "ok", "issues": []},
+  "bda5f3258a": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Same physics, and almost the same four ideas, as 9cf1d1b552 (Galileo's flat ramp): on at the same speed / slower until it stops / stops at once / speeds up. Whichever of the two a player meets second is nearly free. It is defensible as the law applied beside the discovery story, but the choice sets mirror each other.",
+     "fix": "Make this one test the straight-line half, which the ramp question does not: replace 'It speeds up, with no air to hold it back' with 'It keeps its speed, but curves round in a slow circle'."},
+    {"axis": "voice", "severity": "low",
+     "what": "The Principia sentence is padding, and 'Centuries later' is a clumsy join between the two halves of the stem.",
+     "fix": "'A space probe far out between the stars, with no star or planet anywhere near it, shuts off its engines. By Newton's first law, the law of inertia, what happens to its motion after that?'"}
+   ]},
+  "2296f19c12": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The pencil is harder to set moving' is silly: no one thinks a pencil is harder to shove than a big steel toolbox. That leaves three live choices, and two of them are the 'toolbox is harder' twins (far / only a little), which point a test-wise player straight at the pair.",
+     "fix": "Replace it with a wrong idea that tests inertia working both ways: 'The toolbox is harder to start, but as easy to stop'."}
+   ]},
+  "3c6d266115": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The air in the car rushes forward with him' is weak; few will pick it.",
+     "fix": "Use the impetus misconception (M2): 'A forward force stored in him from the drive carries him on'."}
+   ]},
+  "ab3b648adb": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Its weight pulls it to the outside of the bend' is weak, since weight pulls down, not sideways.",
+     "fix": "'The seat tilts on the bend and tips it to the right'."}
+   ]},
+  "04a6a9cbe5": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "Only one choice says 'the yank', and nearly every teenager has seen the trick done with a fast yank. The key is picked from everyday knowledge with no idea why it works, and 'Neither' is ruled out because the trick is famous. The 'why', which is this unit's fact (F18), is never tested.",
+     "fix": "State the yank in the stem and ask only why: '...He yanks the cloth away in a split second, and the dishes stay almost where they were. Why does the quick yank work?' Key: 'Friction has too little time to move them'. Wrong: 'A fast-moving cloth has no friction at all' / 'Inertia grips the dishes down onto the table' (M6) / 'The yank flicks the dishes up off the cloth'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "The stem asks two questions in one ('Which pull..., and why?').",
+     "fix": "Solved by the rewrite above."}
+   ]},
+  "6658bb3958": {"verdict": "ok", "issues": []},
+  "c267604dd1": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is by far the shortest choice (15 characters against 23 to 37).",
+     "fix": "'Straight back down into his hand'."}
+   ]},
+  "b323a6c1b6": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "It has the same shape as 3c6d266115: what carries a moving thing stops short, and the thing goes on. The grade notes even say so in the same words. The case is new, but it applies the same idea a second time.",
+     "fix": "Keep it, or use the at-rest crash case the unit lacks, the head restraint (F15): 'A car waiting at a red light is struck from behind and shoved forward. Why can the driver's head snap backward if her seat has no head restraint?' Key: 'Her head stays put while the seat shoves her body on'."}
+   ]},
+  "90144df1cc": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "The fact tested is the plain definition of inertia: recall, with nothing applied. The Kepler story is decoration, and the other nine questions already apply the definition.",
+     "fix": "Make the change from Kepler to Newton the question, a first discovery story: 'Johannes Kepler coined the word inertia from a Latin word meaning idle or sluggish, and to him it meant only that a body resists being set moving. Isaac Newton later built his first law of motion on the idea. What did inertia do in Newton's physics that it did not do in Kepler's?' Key: 'Keep a moving body moving'. Wrong: 'Push a moving body along, as a force' / 'Make a moving body slow and stop' / 'Pull a body down toward the ground'."},
+    {"axis": "tell", "severity": "low",
+     "what": "'It pulls the body down toward the ground' is weak (it describes gravity).",
+     "fix": "Keep it only if the rewrite above needs a fourth choice; otherwise use 'It holds a resting body down in place'."}
+   ]}
+ },
+ "unit_notes": "Scope covered: the first law (9cf1, bda5), more mass means more inertia, and mass stays the same in orbit (2296), the passenger lurching forward and seat belts (3c6d), the straight-line path (ab3b, 6658), the tablecloth (04a6), moving with the vehicle (c267), the hammer head (b323), and the meaning of inertia (90144). The ball stopping on grass is rightly left to T1 pushes-pulls-and-gravity and appears only in 9cf1's context. Overlaps inside the unit: (1) 9cf1 and bda5 test the same physics with mirrored choice sets; vary bda5 so it also tests the straight line (above). (2) 3c6d and b323 are the same case shape (the carrier stops short); keep both, or move b323 to the head restraint (F15). (3) ab3b and 6658 both rest on 'straight on once nothing turns it', but their misconceptions differ (an outward force against a curved path), so keep both. Overlaps with other units: (a) speed-velocity-and-motion-graphs 3c468e6404 uses a car on a bend at a steady speed, and ab3b does too. The facts differ (acceleration against the straight path), so change one scene. (b) speed 08ca784a09's steady train on a straight track and c267's train: the facts differ, the scene is the same. (c) T2 action-and-reaction's spacecraft fires its rocket in empty space, while bda5's probe coasts with its engines off. These are different facts; keep. (d) T2 forces-and-net-force's car at a steady speed (balanced forces) is not re-asked. (e) T2 kinetic-and-potential-energy's tennis ball against the Wiffle ball (mass and kinetic energy) differs from 2296 (mass and inertia). Boundary for T4 newtons-laws-force-mass-and-acceleration: 2296 is the qualitative 'more mass, harder to start'. The T4 unit should ask the quantitative a = F/m on carts and must not re-ask 'which is harder to set moving'. Grade: all are seventh-grade first-law content (TEKS 7.7D); 90144 is recall as written. No voice slips beyond bda5's padding."}
