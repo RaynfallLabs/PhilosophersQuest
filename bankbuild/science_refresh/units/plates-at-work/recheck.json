@@ -1,0 +1,15 @@
+{"unit": "plates-at-work",
+ "questions": {
+  "d8c219c10d": {"verdict": "pass",
+                 "why": "Fixed: the key 'Slow churning of hot and cold mantle rock' includes the sinking cold slabs, and the context ranks slab pull strongest and ridge push much smaller. Grokipedia: slab pull is about 70 percent and ridge push 5-10 percent of it; tides and spin are not primary drivers. The earthquake reversal lure replaces the dead Sun-heat lure. It keys the driver, not what convection is (heat-on-the-move asks that), and T2 earths-layers keys only 'solid yet flows'.",
+                 "sources": ["https://grokipedia.com/page/Plate_tectonics", "https://grokipedia.com/page/Mantle_convection"]},
+  "20b877c08a": {"verdict": "pass",
+                 "why": "Fixed: no choice is now ruled out by 'the ocean is gone'. The trench-as-a-continent-sinks and volcano-chain lures are real subduction mix-ups, and sliding past is not stated against by the stem. Grokipedia: fold mountains rise without subduction, and the crust thickens. 'Too light to sink deep into the mantle' takes the fact-check's tightening. No T1 or T2 final keys collision mountains; fossils 7dda748841 keys uplifted sea floor, a different fact.",
+                 "sources": ["https://grokipedia.com/page/Plate_tectonics", "https://grokipedia.com/page/Continental_collision", "https://pubs.usgs.gov/gip/dynamic/understanding.html"]},
+  "afa5130880": {"verdict": "pass",
+                 "why": "Fixed: the stem gives the cause (a north-west plate over a fixed hot spot), not the age sequence, so the student must apply the hot-spot idea; north-west is a live lure. One answer only. The Haleakala problem is gone, and no speed is given that would leak 6f7a39a3c4. Context: Kama'ehuakanaloa is about 35 km south-east of Hawaii and is the youngest edifice; USGS gives ages rising to the west-north-west. Hot-spot ages are not sea-floor dating (T5).",
+                 "sources": ["https://grokipedia.com/page/Kamaʻehuakanaloa_Seamount", "https://www.usgs.gov/news/volcano-watch-island-hawaii-sits-end-long-old-chain-125-volcanoes", "https://grokipedia.com/page/Hotspot_(geology)"]},
+  "71cb543305": {"verdict": "pass",
+                 "why": "Fixed: 'young mountain belts ... follow the plates' edges', since old ranges such as the Appalachians sit inside plates; the stem's wording now reads 'over many years'. Key true (about 90 percent of earthquakes at boundaries; 81 percent of the largest round the Pacific). No other final keys the belts. Note, not a fail: the shrinking-Earth idea is also a lure, debunked in its context, in fossils a44c1dd82e; no question keys it.",
+                 "sources": ["https://grokipedia.com/page/Plate_tectonics", "https://www.usgs.gov/faqs/where-do-earthquakes-occur", "https://www.encyclopedia.com/science/dictionaries-thesauruses-pictures-and-press-releases/contracting-earth-hypothesis"]}
+ }}

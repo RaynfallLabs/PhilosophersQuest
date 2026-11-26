@@ -122,3 +122,20 @@ M5. Ice giants are frozen solid or covered by a crust of ice; their "ices" are a
 M6. Pluto was demoted because it is too small to be round or too far from the Sun; it is round, there is no distance rule, and it fails only the "cleared its neighbourhood" rule (F29, F31).
 M7. The asteroid belt is the wreck of an exploded planet (Olbers, 1802): a respectable theory of its day, now superseded (F15).
 M8. Comets are weather high in Earth's air (Aristotle), or pass through once on straight paths (F24): the older views Halley's comet overturned.
+
+## Added in the revision (2026-11-26)
+
+F38. NASA: "Voyager 2 is the only spacecraft to visit Uranus and Neptune." It flew past Uranus on 24 January 1986 and Neptune on 25 August 1989.
+    https://science.nasa.gov/mission/voyager/voyager-2/
+
+F39. How many asteroids: NASA, "The belt is estimated to contain between 1.1 and 1.9 million asteroids larger than 1 kilometer (0.6 miles) in diameter", and "The total mass of all the asteroids combined is less than that of Earth's Moon." Grokipedia also gives 1.1 to 1.9 million (NEOWISE, 2020); Wikipedia gives 700,000 to 1.7 million. So "more than a million" (replaces the count in F16). For the wrong choices: Mercury has 0.0553 of Earth's mass and the Moon 0.0123, so Mercury is about four and a half Moons.
+    https://science.nasa.gov/solar-system/asteroids/facts/ ; https://grokipedia.com/page/Asteroid_belt ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/planet_table_ratio.html
+
+F40. Meteor showers: NASA, "Unlike most meteor showers which originate from comets, the Geminids originate from an asteroid: 3200 Phaethon." Grokipedia: "Unlike most meteor showers derived from icy comets", the Geminids come from the rocky asteroid Phaethon (sometimes called a dead comet). So most showers, not all, come from comet dust (corrects the context's rule in F28).
+    https://science.nasa.gov/solar-system/meteors-meteorites/geminids/ ; https://grokipedia.com/page/Geminids
+
+F41. Comet 67P/Churyumov-Gerasimenko is a Jupiter-family comet, "originally from the Kuiper belt", with an orbital period of about six and a half years (6.45 years as of 2012); NASA: "Like most Jupiter Family comets, it is thought to have fallen from the Kuiper Belt." ESA's Rosetta reached it in August 2014, and its lander Philae touched down on 12 November 2014, the first landing on a comet's nucleus. (Grokipedia has no page for it under the titles tried.)
+    https://en.wikipedia.org/wiki/67P/Churyumov%E2%80%93Gerasimenko ; https://science.nasa.gov/solar-system/comets/67p-churyumov-gerasimenko
+
+F42. Comet Hale-Bopp is a long-period comet. It was seen with the naked eye for a record 569 days, from May 1996 to December 1997. Its previous trip past the Sun was about 4,200 years earlier, perhaps its first passage in from the Oort cloud; a close pass by Jupiter in 1996 shortened its period to about 2,400 years. Long-period comets come from the Oort cloud (F23). (Grokipedia has no page for it under the title tried.)
+    https://en.wikipedia.org/wiki/Comet_Hale%E2%80%93Bopp ; https://grokipedia.com/page/Comet

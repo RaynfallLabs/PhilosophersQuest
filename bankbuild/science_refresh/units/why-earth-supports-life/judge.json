@@ -1,0 +1,65 @@
+{"unit": "why-earth-supports-life",
+ "questions": {
+  "98b70e061d": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem's 'far dimmer and cooler' points to 'closer' by everyday reasoning (sit nearer a small fire), so a student who has never met the habitable zone can still get it. It is the grade's apply step, and 'Nowhere, since so dim a star cannot warm a planet' is a real misconception (F3), so it passes; it is the easiest question in the unit.",
+     "fix": "None required."}
+   ]},
+  "3568640ae7": {"verdict": "ok", "issues": []},
+  "2fe68de4a8": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Lane: the key is the 33-degree warming (15 C down to -18 C), which units.json lists almost word for word in the T4 the-greenhouse-effect scope ('on average about 33 degrees Celsius warmer'). It is in this unit's scope too ('enough greenhouse warming to keep temperatures mild'), so it can stay here, but the T4 unit will re-ask it unless its brief is told.",
+     "fix": "Keep. Add a lead note: why-earth-supports-life asks Earth's average temperature with no greenhouse gases (about -18 C, some 33 degrees colder); the-greenhouse-effect must not re-ask it."}
+   ]},
+  "cb28d1ffb6": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "All three wrong choices are absolutes ('Reflect all of it', 'Let all of it pass', 'Trap all of it') and the key is the only hedged one ('much of it', 'part'), so a test-wise student picks it on the wording. 'Let all of it pass straight out to space' is also dead: the stem has just named these gases greenhouse gases and asks what they do to the light, so 'nothing at all' is not live.",
+     "fix": "Choices: 'Absorb much of it and send part back down', 'Reflect most of it back down like a mirror', 'Hold most of it for good, so it never leaves', 'Pass it up to the ozone layer, which holds it' (the ozone-keeps-Earth-warm mix-up, F13). No choice says 'all'."},
+    {"axis": "other", "severity": "medium",
+     "what": "Lane: this is the greenhouse mechanism step by step, which units.json gives to the T4 unit the-greenhouse-effect ('the surface gives off infrared heat, and greenhouse gases ... absorb and re-send some of it'), and 'how it works' is T4's craft. This unit's scope asks only that greenhouse warming keeps Earth mild. If it stays here, the T4 unit either loses its core question or re-asks it.",
+     "fix": "Lead to rule. If T4 keeps the mechanism, rekey this slot to the scope item no question asks yet, 'plenty of water': 'NASA's search for life beyond Earth has long followed one rule: follow the water. Why do the searchers look first for liquid water?' Key: 'Every living thing known needs it'; lures such as 'Only a world with water can hold air' and 'Water shows where a world is warmest'. If T3 keeps the mechanism, apply the choice fix above and tell the T4 brief to go deeper (Tyndall's tube, which gases absorb infrared) without re-asking it."}
+   ]},
+  "06220968af": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only photosynthesis choice ('made food from sunlight'), and T2 how-plants-make-food already asks that a plant gives off oxygen as it makes its food (the pondweed bubbles). A T2 student picks it without knowing this unit's new fact, that microbes filled the air with oxygen about two billion years before there were plants on land. No choice tests that step, so the question works as a T2 re-ask in a T3 frame.",
+     "fix": "Add the land-plant lure and ask for the first source: 'Rocks laid down in Earth's early days show that its air then held almost no free oxygen. Today oxygen makes up about a fifth of the air. What first filled the air with oxygen, billions of years ago?' Choices: 'Microbes in the sea that made food from sunlight', 'Forests of plants that spread across the land', 'Volcanoes that breathed it out of the ground', 'Rocks that gave it off as they weathered' (drop the comets)."},
+    {"axis": "fact", "severity": "low",
+     "what": "'Where did most of that oxygen come from?', asked of today's fifth of the air, is shakier than the context: today's oxygen is made roughly half by land plants and half by plankton in the sea, and the air reached today's level long after the Great Oxidation Event. The key holds for the first oxygen; the fact-checker should look.",
+     "fix": "Ask what FIRST filled the air with oxygen, as in the fix above."}
+   ]},
+  "0cd8d44f8e": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Harm from the Sun's charged particles' is weaker for a player who has already met d93f411a62, whose stem calls the solar wind the Sun's stream of charged particles and ties it to the magnetic field, not to ozone. The other two lures are the real F13 mix-ups and stay strong.",
+     "fix": "None required; if the reviser wants a third F13 lure instead: 'Colder days, with the ozone's warmth gone'."}
+   ]},
+  "386c69e97c": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Three of the four choices are kinds of light ('The ultraviolet light', 'The infrared light', 'The visible light') and the key is the only one that is not, so the odd one out wins for a student who knows nothing of magnetism. Also d93f411a62's stem pairs a lost magnetic field with the solar wind striking the air, which hands this key to anyone who met that question first.",
+     "fix": "Drop 'of the things the Sun sends out' and mix the kinds: 'Suppose the field vanished. What would then strike the top of Earth's air far more than before?' Choices: 'The solar wind', 'Ultraviolet light', 'Infrared light', 'Meteors from space' (a real mix-up: that the field shields Earth from space rocks). See also the fix on d93f411a62."}
+   ]},
+  "d93f411a62": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem says the spacecraft measured how the solar wind 'strikes the top of the planet's air', which puts the air in focus, and the key is the only choice about the air. A student guesses 'stripped much of its air' from the stem's own words.",
+     "fix": "'A NASA spacecraft began orbiting Mars in 2014 to measure what the solar wind, the Sun's stream of charged particles, does to the planet. What did the spacecraft's team find the solar wind has done to Mars over the ages?' Move 'Mars lost its global magnetic field about 4 billion years ago' into the context, which also stops this stem giving away 386c69e97c. Choices unchanged."}
+   ]},
+  "2cf96b1e28": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Venus's clouds let all of the sunlight through' is an absolute, easy to strike on its wording alone.",
+     "fix": "'Venus's clouds let more of the sunlight through' (still wrong: they reflect about three-quarters of it, F20)."}
+   ]},
+  "b25bf74134": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Lane: where Earth's carbon is stored is one of 'the carbon cycle's stores (air, oceans, living things, rocks and fossil fuels)' that units.json gives the T4 the-greenhouse-effect unit. Framed here as why Earth is not Venus, which is this unit's scope, it can stay, but T4 must be told.",
+     "fix": "Keep. Add a lead note that why-earth-supports-life asks that most of Earth's carbon dioxide is locked in carbonate rock such as limestone, so the T4 carbon-stores question must take another store or another angle."}
+   ]}
+ },
+ "unit_notes": "Climate lane clean: no stem, key or context touches climate change, a warming trend, a forecast or a policy (the ozone context stops at the 1985 report; no Montreal Protocol). No T1 or T2 re-ask in the earth units: Venus as the hottest planet (T1 the-sun-and-its-planets) is not asked, and 2cf96b1e28 goes a step past it; Earth alone having life (T1) is not asked; nitrogen (T2 earths-four-spheres) and the liquid iron outer core (T2 earths-layers) appear only as premises or context; the Moon's one-sixth pull (gravity-and-orbits) is not re-asked, since 3568640ae7 asks what weak gravity does to air. The one functional re-ask is 06220968af against T2 how-plants-make-food (see its note). Weight: four of ten questions are greenhouse or carbon dioxide (2fe68de4a8, cb28d1ffb6, 2cf96b1e28, b25bf74134), and three of them sit on lines of the T4 the-greenhouse-effect scope (the 33 degrees, absorb and re-send, the carbon stores); the lead should rule on who owns them before T4 is briefed. The scope's 'plenty of water' has no question of its own; the rekey offered for cb28d1ffb6 would fill it. The two magnetic-shield questions (386c69e97c, d93f411a62) ask different facts, but the Mars stem gives away the Earth one; the fix on d93f411a62 separates them."}

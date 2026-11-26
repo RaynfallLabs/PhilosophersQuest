@@ -1,0 +1,78 @@
+{
+ "unit": "classifying-living-things",
+ "questions": {
+  "5b25e4bc84": {
+   "verdict": "pass",
+   "why": "Old grade problem fixed: an application (read three real names) in place of reciting which rank comes first. Apis cerana is the eastern honey bee in Apis with A. mellifera; Bombus terrestris is the buff-tailed bumblebee in Bombus. All three lures are live misreadings (shared word = species; second word = genus; all bees one genus). No overlap: no other unit asks the genus.",
+   "sources": [
+    "https://grokipedia.com/page/Apis_cerana",
+    "https://grokipedia.com/page/Bombus_terrestris",
+    "https://grokipedia.com/page/Binomial_nomenclature"
+   ]
+  },
+  "4641c08f0e": {
+   "verdict": "pass",
+   "why": "Weak lure replaced ('The sounds and calls they make'); the overstated 'created unchanging' is gone from the context. Primates, Simia, Homo and Homo sapiens all 1758 (10th edition); bats in his Primates. Descent stays a fair anachronism lure. No overlap.",
+   "sources": [
+    "https://grokipedia.com/page/Carl_Linnaeus",
+    "https://en.wikipedia.org/wiki/10th_edition_of_Systema_Naturae"
+   ]
+  },
+  "2b49aa3747": {
+   "verdict": "pass",
+   "why": "Partners now named out of rank order and 'only' is gone; the context runs from the kingdom down and puts the domain above it. Ranks check (rose and apple Rosaceae; nettle Rosales; Christmas rose Magnoliopsida, Ranunculales; moss shares only Plantae). No overlap.",
+   "sources": [
+    "https://grokipedia.com/page/Rosaceae",
+    "https://grokipedia.com/page/Urtica_dioica",
+    "https://grokipedia.com/page/Helleborus_niger",
+    "https://grokipedia.com/page/Moss"
+   ]
+  },
+  "c6efd9acb5": {
+   "verdict": "pass",
+   "why": "Old high tell fixed: the three reports no longer share one name, so the student must know which name counts; the common-name pair (two 'panthers') and the same-continent pair are both live. Black panther of South America = melanistic jaguar, Panthera onca; no authenticated black cougar; pumas range into Chile; Florida panther is Puma concolor. No overlap.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Black_panther",
+    "https://grokipedia.com/page/Cougar",
+    "https://en.wikipedia.org/wiki/Cougar"
+   ]
+  },
+  "51bfe22646": {
+   "verdict": "pass",
+   "why": "Specimen no longer described in the key's words ('each sprouting a little higher up the twig than the last' must be read as staggered); key written out as steps. Oak alternate (spiral) with rounded lobes in white oaks; maple opposite, lobed; ash opposite, pinnately compound; beech alternate, unlobed. One defensible answer. No overlap.",
+   "sources": [
+    "https://grokipedia.com/page/Oak",
+    "https://grokipedia.com/page/Maple",
+    "https://grokipedia.com/page/Fraxinus",
+    "https://grokipedia.com/page/Beech"
+   ]
+  },
+  "681d56a3da": {
+   "verdict": "fail",
+   "why": "The added clause 'It has no green parts and makes none of its own food', set beside a scheme that sorts by feeding, rules out 'Among the plants' for any reader who knows plants make their own food (a T1 fact): the same kind of stem-killed lure the judge flagged in the old protist choice. What is left turns on fungi digesting outside and absorbing, which is the key of T2 one-cell-or-many 826df29f72, so the question now mostly re-asks a T2 fact. Facts themselves check (Whittaker, American plant ecologist, five kingdoms 1969, by nutrition).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Robert_Whittaker_(ecologist)",
+    "https://en.wikipedia.org/wiki/Kingdom_(biology)",
+    "https://grokipedia.com/page/Fungus"
+   ]
+  },
+  "d125f1f3d2": {
+   "verdict": "pass",
+   "why": "Fact error fixed: Miller only 'moved it into the genus Lycopersicon' (his 1768 Lycopersicon also held the potato, IPNI 816719-1); later botanists kept the tomatoes there apart from the potato. Relatives now named, so tobacco and chili lures are live (chili, Capsicum, is a natural tomato look-alike). Genetic evidence puts the tomato in Solanum beside the potato. No overlap.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tomato",
+    "https://www.ipni.org/n/816719-1",
+    "https://en.wikipedia.org/wiki/Solanum_sect._Lycopersicon"
+   ]
+  },
+  "b1ea9d5ec2": {
+   "verdict": "pass",
+   "why": "The reversal ('at first counted as bacteria') and 'no nucleus' are out of the stem, so the bacteria and fungus lures are live again. Woese and Fox, Illinois, 16S rRNA of methanogens, 1977 PNAS, a group distinct from bacteria and eukaryotes; three domains 1990. 'A molecule found in every cell' is the standard simplification (every cellular organism). No overlap with the T2 cell units.",
+   "sources": [
+    "https://grokipedia.com/page/Carl_Woese",
+    "https://grokipedia.com/page/Archaea",
+    "https://grokipedia.com/page/Methanogen"
+   ]
+  }
+ }
+}

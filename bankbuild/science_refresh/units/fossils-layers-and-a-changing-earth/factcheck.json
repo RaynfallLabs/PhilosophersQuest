@@ -1,0 +1,363 @@
+{
+ "unit": "fossils-layers-and-a-changing-earth",
+ "questions": {
+  "7dda748841": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Everest summit is almost 9 km above sea level (8,848.86 m)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mount_Everest",
+     "note": ""
+    },
+    {
+     "claim": "Summit rock is grey limestone (Qomolangma Formation) holding crinoid fossils",
+     "result": "ok",
+     "source": "https://iugs-geoheritage.org/?p=3648",
+     "note": "IUGS: Middle Ordovician limestone that 'still contain[s] the fossils of marine animals such as brachiopods, conodonts and crinoids'. Sakai et al. 2005 (via montana.edu/everest/facts/summit-limestone.html search summary) report trilobite, ostracod and crinoid fragments in grey bedded summit limestone. The rock is weakly metamorphosed, but 'limestone' is the standard name."
+    },
+    {
+     "claim": "Crinoids are sea lilies, animals, and live only in the sea",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Crinoid",
+     "note": "'exclusively marine echinoderms', 'also known as sea lilies or feather stars'."
+    },
+    {
+     "claim": "Key: old sea floor was later pushed up into mountains",
+     "result": "ok",
+     "source": "https://iugs-geoheritage.org/?p=3648",
+     "note": "Laid down in a warm shallow Tethyan sea, then 'thrust and uplifted into their present commanding position' after India met Asia."
+    },
+    {
+     "claim": "Wrong: the sea once rose higher than the mountain's top",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Past_sea_level",
+     "note": "Highest known stand about 200-250 m above today's (Cretaceous); nowhere near 8.8 km."
+    },
+    {
+     "claim": "Wrong: a great flood swept them up; wrong: shapes grew inside the rock",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Codex_Leicester",
+     "note": "Both are historical, rejected explanations; neither is defensible today."
+    },
+    {
+     "claim": "Context: limestone formed about 450 million years ago in a warm, shallow sea",
+     "result": "ok",
+     "source": "https://iugs-geoheritage.org/?p=3648",
+     "note": "'some 450 million years ago', 'a warm, shallow-water sea'."
+    },
+    {
+     "claim": "Context: the sea has never stood more than a few hundred metres above today's level",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Past_sea_level",
+     "note": "Peak about 240-250 m (earliest Turonian) or about 200 m (mid-Cretaceous)."
+    },
+    {
+     "claim": "Context: Leonardo da Vinci, some 500 years ago, doubted the Flood carried the shells and argued for ancient seas",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Codex_Leicester",
+     "note": "Codex Leicester c. 1506-1512; he argued Apennine shells came from a time the sea covered the land, 'rejecting biblical flood narratives'. 'Doubted' is a mild but true wording."
+    }
+   ]
+  },
+  "43c0731f4f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Glossopteris is a seed fern",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glossopteris",
+     "note": "'commonly classified among the seed ferns' (a gymnosperm, not a true fern)."
+    },
+    {
+     "claim": "Fossils in rocks of the same age in South America, Africa, India, Australia and Antarctica",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Glossopteris",
+     "note": "Permian; recorded in South America, Africa, India, Australia, New Zealand and Antarctica."
+    },
+    {
+     "claim": "Key: the lands were once joined",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Glossopteris",
+     "note": "Its spread was central to recognising that these lands were joined in Gondwana."
+    },
+    {
+     "claim": "Wrong: winds blew its seeds; context: seeds far too big to blow across thousands of km of open sea",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Glossopteris",
+     "note": "Wikipedia: 'Seeds, much too large to be wind-borne, could not have blown across thousands of miles of open sea.' Grokipedia notes seeds were mostly 0.5-12 mm and some were winged for local spread, but nothing supports transoceanic wind carriage; the context's 'thousands of kilometres' qualifier keeps it true."
+    },
+    {
+     "claim": "Wrong: sea currents floated its seeds; context: floating that far unlikely",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Glossopteris",
+     "note": "Ocean drifting 'considered unlikely' (one species may have had some water dispersal locally)."
+    },
+    {
+     "claim": "Wrong: birds carried its seeds; context: first birds some 100 million years after the plant died out",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Origin_of_birds",
+     "note": "First birds about 150 Ma (Archaeopteryx); Glossopteris extinct at the end-Permian about 252 Ma, with 'no convincing examples' in dated Triassic strata (Wikipedia). Gap about 100 million years."
+    }
+   ]
+  },
+  "23736dfd81": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a plant-eater that lived only on dry land is the strongest evidence",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lystrosaurus",
+     "note": "A land animal cannot cross open ocean; this is the textbook reasoning."
+    },
+    {
+     "claim": "Wrong: a shark of the open ocean",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Great_white_shark",
+     "note": "Great whites migrate thousands of km a year into pelagic waters."
+    },
+    {
+     "claim": "Wrong: a seabird that flew far over the sea",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Albatross",
+     "note": "Wandering albatrosses cover up to 15,000 km in single trips."
+    },
+    {
+     "claim": "Wrong: a fern whose spores rode the wind",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fern",
+     "note": "Wind carries spores 'sometimes hundreds of kilometers'; 'frequent transoceanic dispersal'."
+    },
+    {
+     "claim": "Context: Lystrosaurus a plant-eater of dry land, found in South Africa, India and Antarctica",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lystrosaurus",
+     "note": "Herbivore, 'primary terrestrial lifestyle'; found in South Africa, Antarctica, India, China, Russia, Mongolia. The context names three of the places without saying 'only', so it is true."
+    },
+    {
+     "claim": "Context: Mesosaurus a small reptile of shallow coastal water, only in southern Africa and eastern South America",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mesosaurus",
+     "note": "Brackish to hypersaline shallow coastal waters and lagoons; fossils only in the Irati Formation (Brazil, Uruguay) and Whitehill Formation (South Africa, Namibia); 'no fossils reported from Laurasia or other regions'. Typical adults about 70 cm to 1 m, so 'small' is fair."
+    },
+    {
+     "claim": "Context: neither could have crossed an open ocean",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mesosaurus",
+     "note": "'made transoceanic dispersal across the widening South Atlantic impossible'."
+    }
+   ]
+  },
+  "65d31b180e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Coal is found seam after seam in the rock of Antarctica's mountains",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Geology_of_Antarctica",
+     "note": "'Coal resources are abundant in the Permian strata of the Beacon Supergroup' of the Transantarctic Mountains."
+    },
+    {
+     "claim": "Key: swamp forests grew in a mild, wet climate",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Geology_of_Antarctica",
+     "note": "The deposits indicate 'a once-temperate climate', and Glossopteris grew in a climate about 10-15 C warmer than polar regions today (Grokipedia Glossopteris). The key rightly makes no claim about latitude: Antarctica then lay at high southern latitude near the pole, not at the equator. Against today's ice cap, 'mild' is a fair word for a cool-temperate, humid climate."
+    },
+    {
+     "claim": "Wrong: thick ice covered it as now",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coal",
+     "note": "Coal needs plants that grow and pile up in wetlands; no forest grows under an ice sheet."
+    },
+    {
+     "claim": "Wrong: dry desert dunes; wrong: a warm shallow sea covered all of it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coal",
+     "note": "Coal forms from 'partially decayed plant material in ancient wetlands and peat mires' under 'oxygen-poor, waterlogged conditions'. It does not form in deserts or on a sea floor."
+    },
+    {
+     "claim": "Context: coal forms from plants piled up in waterlogged swamps and buried",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coal",
+     "note": "Peat is buried under sediment and compacted into seams."
+    },
+    {
+     "claim": "Context: many were Glossopteris trees, about 250 to 300 million years ago, in a climate far milder than today's",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Glossopteris",
+     "note": "Glossopteris was 'an important contributor to the vast Permian coal deposits of the Southern Hemisphere continents', and the Permian runs about 299-252 Ma. Some Antarctic coal is Triassic, but 'many' leaves room for that."
+    },
+    {
+     "claim": "Context: coal cannot form under ice, among desert dunes or on a sea floor",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coal",
+     "note": "The page names only wetland and peat-mire settings for coal formation."
+    }
+   ]
+  },
+  "a44c1dd82e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: the Appalachians and the old mountains of Scotland and Norway share rock kinds, age and folding",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Caledonian_orogeny",
+     "note": "'Striking structural parallels' indicate 'a once-continuous orogenic belt'. The Grampian phase is linked to the Taconic and the Scandian to the Acadian (about 490-390 Ma). This is a simplification: the southern Appalachians' last building (the Alleghanian, about 270 Ma) matches Europe's Variscan belt rather than the Caledonides, and the fine correlations are debated. Even so, the stem's premise is the standard classroom evidence, and it holds for the northern Appalachians."
+    },
+    {
+     "claim": "Key: they formed as one range that later split",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Appalachian_Mountains",
+     "note": "The range is related to the Scottish Highlands and the Scandinavian Mountains 'as these ranges all originally belonged to the sprawling Central Pangean Mountains'. The Mesozoic opening of the Atlantic split them (Grokipedia Caledonian orogeny)."
+    },
+    {
+     "claim": "Wrong: rose apart and came out alike by chance; wrong: glaciers dragged rock across",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Caledonian_orogeny",
+     "note": "Neither explains a shared, continuous belt, and glaciers cannot carry a mountain belt across an ocean."
+    },
+    {
+     "claim": "Wrong: one worldwide sea laid the same rock in both (Neptunism)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Neptunism",
+     "note": "A rejected theory, and it cannot explain the matching folding either."
+    },
+    {
+     "claim": "Context: one long range before the Atlantic opened, its pieces now on both sides",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Caledonian_orogeny",
+     "note": "The Appalachian chain was 'offset and truncated by Mesozoic rifting associated with the opening of the central Atlantic'."
+    },
+    {
+     "claim": "Context: Abraham Werner, a German mineralogist of the 1700s, taught that one worldwide sea laid down the rocks; field evidence led geologists to give it up",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Neptunism",
+     "note": "Werner (1749-1817) was 'a German mineralogist and professor at the Mining Academy in Freiberg'. He held that all rocks came from 'a universal ocean'. The Plutonists' evidence of igneous intrusions told against it, and it was fully rejected by the 1860s."
+    }
+   ]
+  },
+  "4c309d00f8": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: sea, then swamp forest, then desert (bottom oldest in flat, unbroken layers)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_superposition",
+     "note": "In undeformed sequences 'the oldest layer is at the bottom and the youngest layer is at the top', and the stem says the layers are flat and unbroken."
+    },
+    {
+     "claim": "Shell-packed limestone means sea floor; coal means swamp plants; dune sandstone means desert",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Navajo_Sandstone",
+     "note": "The Navajo Sandstone 'formed from windblown sand dunes in one of the largest ancient deserts'. Crinoid-rich limestones are marine (Grokipedia Crinoid), and coal comes from wetland plants (Grokipedia Coal)."
+    },
+    {
+     "claim": "Wrong orders (desert-swamp-sea; swamp-sea-desert; sea-desert-swamp)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_superposition",
+     "note": "Each one contradicts the bottom-to-top order."
+    },
+    {
+     "claim": "Context: each layer settled on those already there; reading top-down tells the story backwards",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_superposition",
+     "note": ""
+    }
+   ]
+  },
+  "5d9485919c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: they settled flat and were tilted later",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Principle_of_original_horizontality",
+     "note": "'Layers of sediment are originally deposited horizontally under the action of gravity', and inclined layers 'have been inclined by tectonic forces such as faulting or folding'."
+    },
+    {
+     "claim": "Wrong: settled on end; wrong: settled on a steep slope and hardened",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Principle_of_original_horizontality",
+     "note": "Sloping deposits (delta foresets at 20-35 degrees, dune foresets at 20-34 degrees) never come near vertical."
+    },
+    {
+     "claim": "Wrong: waves wore the flat layers into a slant",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Principle_of_original_horizontality",
+     "note": "Erosion can cut a sloping surface across layers, but it cannot tilt the layers themselves."
+    },
+    {
+     "claim": "Context: the steepest slopes, on the fronts of deltas and dunes, lean only about 20 to 35 degrees",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Navajo_Sandstone",
+     "note": "The Navajo dune foresets dip 'at 20-35 degrees', and delta foresets are 'typically dipping at angles of 20 to 35' (Grokipedia Original horizontality)."
+    },
+    {
+     "claim": "Context: layers on end were tilted by forces in Earth's crust long after they formed",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Principle_of_original_horizontality",
+     "note": ""
+    }
+   ]
+  },
+  "fb3f578248": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the fault formed after all six layers had formed",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cross-cutting_relationships",
+     "note": "'A fault or fracture is interpreted as younger than the rock layers it displaces'. The stem gives every layer the same one-metre offset, which rules out a growth fault: a fault active during deposition shows offset growing with depth (https://en.wikipedia.org/wiki/Growth_fault). So the key holds without exception."
+    },
+    {
+     "claim": "Wrong: before any layer; while the bottom layer formed; while the middle layers formed",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Growth_fault",
+     "note": "A fault that moved during deposition would offset the lower layers more than the upper ones. Equal offset throughout means it moved after the top layer was laid."
+    },
+    {
+     "claim": "Context: a fault is younger than every layer it cuts; it shifted even the top, youngest layer",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_superposition",
+     "note": "Faults, dikes and unconformities that cut layers are younger than the rocks they cut."
+    }
+   ]
+  },
+  "a51b4b684c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: she must first make sure the layers have not been flipped over",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_superposition",
+     "note": "Overturned folds make 'the apparent top' the bottom, and deformation must be recognised before the law is applied."
+    },
+    {
+     "claim": "Wrong: thickest bottom layer; most fossils; same colour",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_superposition",
+     "note": "None of these bears on the order of deposition. Which fossils a layer holds can date it, but how many it holds cannot, and the choice says 'most fossils', so it stays wrong."
+    },
+    {
+     "claim": "Context: squeezing can fold layers so far that they turn upside down, putting the oldest on top",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fold_(geology)",
+     "note": "Folds form 'under compressional tectonic forces that shorten the Earth's crust', and overturned limbs show 'inverted stratigraphy'."
+    },
+    {
+     "claim": "Context: a geologist looks for folds and faults first",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_superposition",
+     "note": "Thrust faults also push older rock over younger, so faults belong on the list."
+    },
+    {
+     "claim": "Context: 'The oldest layer lies at the bottom only where the layers still lie as they formed'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Law_of_superposition",
+     "note": "This is the standard textbook wording ('undisturbed' layers) and is acceptable. Strictly, layers that are tilted but not overturned still have the oldest at the bottom, so this sentence claims a little more than the key ('not flipped over'). An optional tightening: 'The oldest layer lies at the bottom only where the stack has not been turned over.'"
+    }
+   ]
+  }
+ },
+ "unit_notes": "All nine questions were checked against Grokipedia first, with Wikipedia, IUGS and the Growth fault page as second sources. No errors. The Antarctic coal question rightly keys the climate only and makes no equator claim (Antarctica then lay at high southern latitude). The Appalachian-Caledonide match holds for the northern Appalachians and the Caledonides (Taconic with Grampian, Acadian with Scandian). The southern Appalachians' last building matches Europe's Variscan belt, a detail the stem can safely leave out. One optional wording tightening is suggested in the context of a51b4b684c (see its last check)."
+}

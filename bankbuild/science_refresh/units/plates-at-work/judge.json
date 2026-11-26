@@ -1,0 +1,45 @@
+{"unit": "plates-at-work",
+ "questions": {
+  "6f7a39a3c4": {"verdict": "ok", "issues": []},
+  "d8c219c10d": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Heat from the Sun warming the rock of the crust' is dead for anyone who did T2 earths-layers, whose deep-mine question (rock at 60 C, 4 km down) teaches that the heat comes up from inside Earth, not down from the Sun, with this very lure. Three choices are live.",
+     "fix": "Replace it with the cause-and-effect reversal students really make: 'Earthquakes shoving them along, jolt by jolt'."}
+   ]},
+  "5c87d49367": {"verdict": "ok", "issues": []},
+  "93a2a5cd45": {"verdict": "ok", "issues": []},
+  "20b877c08a": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two wrong choices are ruled out by the stem's own clauses: 'A deep trench in the sea floor' by 'the ocean that lay between them is gone', and 'A wide valley splitting the land' by 'close in on each other'. Only the volcano chain is live against the key.",
+     "fix": "Use the subduction and transform mix-ups, which the stem does not rule out: choices 'A range of high, folded mountains', 'A deep trench as one continent sinks', 'A long chain of active volcanoes', 'A long fault where the two slide past'."}
+   ]},
+  "88f077600a": {"verdict": "ok", "issues": []},
+  "1447ef526a": {"verdict": "ok", "issues": []},
+  "7b5be09c4e": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Waves grind the old sea floor into sand' is weak: waves do not reach a sea floor kilometres down, and a careful player sees it.",
+     "fix": "'The continents are squeezed smaller to make room' (parallel with 'The crust everywhere is stretched thinner', and a real way students balance the books)."}
+   ]},
+  "5d042501c7": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'its two halves were shifted about 2.6 metres apart' reads as a gap opening across the fault, which fights 'slide past each other' and lends false weight to 'Rising magma below pushed the two sides apart'. The Bolinas fence was offset sideways along the fault (F18).",
+     "fix": "'Then, in one great earthquake in 1906, its two halves were shifted about 2.6 metres sideways, one past the other.'"}
+   ]},
+  "6669574224": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem lays out the whole age pattern (active at the south-east end, older and older to the north-west), so the next island follows by continuing the sequence, with no idea of a hot spot or a moving plate. Two wrong choices are dead: nothing new rises 'On the oldest island' that the stem says has sunk and worn down, and 'Midway along the chain, among old islands' breaks the pattern the stem has just given. Only north-west is live.",
+     "fix": "Give the cause and ask for the pattern, so the student must apply it: 'A plate carries a chain of volcanic islands toward the north-west, a few centimetres a year, over a hot spot that stays nearly still. Which island of the chain is the youngest?' Choices: 'The one at the south-east end', 'The one at the north-west end', 'The one in the middle of the chain', 'All of them are about the same age' (the island-arc pattern). The north-west lure catches the student who thinks new land forms at the front of the moving plate."}
+   ]},
+  "51db9da9bd": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'the world's strong earthquakes of many years' is awkward.",
+     "fix": "'Geologists mark the world's strong earthquakes over many years as dots on a world map, and its active volcanoes as triangles.'"}
+   ]}
+ },
+ "unit_notes": "Ownership clean under the lead's 2026-11-26 ruling: the boundary types and what each makes, hot spots, the mantle driver and the earthquake and volcano belts are all here. Nothing asks what convection is (d8c219c10d's context describes hot rock rising and cooler rock sinking but keys only the driver; heat-on-the-move's final has no mantle question), and nothing touches Wegener, Tharp, the magnetic stripes or sea-floor ages (6669574224 orders hot-spot islands by age, which is the hot-spot process, not sea-floor dating). Earth's spin and the tides appear only as wrong choices, not as the Wegener story. Lanes clean: the Himalayas, the Red Sea, East Africa and Hawaii appear only in contexts, and every stem gives what it needs (the directions, the trench, the ocean gone), so no question needs a map. No T1 or T2 re-ask: earths-layers' slowly flowing mantle and dense iron sinking, and the-rock-cycle's basalt sea floor, are built on, not asked again. Within the unit: 5c87d49367's and 93a2a5cd45's stems describe a plate sinking into the mantle, and 7b5be09c4e's stem states 88f077600a's key (new sea floor forms where plates pull apart), so a player who meets them in that order gets the later one free; the facts are different, so this is noted, not marked. Three divergent questions (88f077600a, 1447ef526a, 7b5be09c4e) ask three different facts; the scope's every line has a question."}

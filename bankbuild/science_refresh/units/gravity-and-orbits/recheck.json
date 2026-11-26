@@ -1,0 +1,49 @@
+{
+ "unit": "gravity-and-orbits",
+ "questions": {
+  "7e39da1be9": {
+   "verdict": "pass",
+   "why": "Newton's own picture now told: a high mountain, and 'suppose that there is no air about the earth' (Treatise, 1728). The impetus lure replaces the weak 'rises out of reach' one, and 'arcs down' no longer echoes the key. Orbit as a fall past a curving Earth; 7.9 km/s. Not inertia's straight-line questions, no re-ask.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Newton%27s_cannonball",
+    "https://grokipedia.com/page/Newton's_cannonball",
+    "https://grokipedia.com/page/Theory_of_impetus"
+   ]
+  },
+  "5006395924": {
+   "verdict": "pass",
+   "why": "Now a prediction that does not say the circling ended; 'kept circling' replaced by 'climb to a higher orbit'. 'Hang in place' and 'drift away' remain live for the common no-gravity-in-space belief. Skylab: first US station, last crew left 8 February 1974, drag lowered it, Shuttle not ready, re-entry 11 July 1979 over the Indian Ocean and Western Australia. No overlap.",
+   "sources": [
+    "https://grokipedia.com/page/Skylab",
+    "https://grokipedia.com/page/Orbital_decay"
+   ]
+  },
+  "55b679a601": {
+   "verdict": "pass",
+   "why": "Dead 'roll them together' lure replaced by the one-way-pull confusion ('only the heavy ball pulls the light one'), a second hedged yes. Every mass attracts; the pulls are equal and opposite; between bowling balls about 10^-8 N; Cavendish 1797-1798. T2 action-and-reaction and hypothesis-theory-and-law give the pair rule; the too-weak-to-notice key is new at T3.",
+   "sources": [
+    "https://grokipedia.com/page/Newton's_law_of_universal_gravitation",
+    "https://grokipedia.com/page/Cavendish_experiment",
+    "https://grokipedia.com/page/Gravitational_shielding"
+   ]
+  },
+  "f43e30f497": {
+   "verdict": "pass",
+   "why": "'How does it change' no longer rules out a choice; the dead 'stays as strong' lure is now the blocking misconception, and the context says pulls add. Gravity has infinite range and cannot be shielded. No other unit keys gravity's lack of an edge.",
+   "sources": [
+    "https://grokipedia.com/page/Gravity",
+    "https://grokipedia.com/page/Gravitational_shielding",
+    "https://www.sciencelearn.org.nz/resources/294-alternative-conceptions-about-gravity"
+   ]
+  },
+  "818c17116e": {
+   "verdict": "fail",
+   "why": "Tell: 'Jupiter is by far the biggest planet, and its gravity holds dozens of moons' sets up bigger body, stronger hold, so a student who has never learned that the pull grows with mass reasons 'the Sun is bigger still' and picks the only choice about amount; 'far hotter' and 'shines with its own light' are one weak idea told twice. It also re-keys the same unit's f7b8ed41c6 rule (the Moon's pull is weaker because it has less mass). Facts check: the Sun 99.86 percent of the mass, about 1,048 Jupiters; Jupiter's many moons. Not a re-ask of T1 00c04492bd (that keys the Sun's gravity, which this stem gives).",
+   "sources": [
+    "https://grokipedia.com/page/Solar_System",
+    "https://nssdc.gsfc.nasa.gov/planetary/factsheet/planet_table_ratio.html",
+    "https://science.nasa.gov/solar-system/moons/"
+   ]
+  }
+ }
+}

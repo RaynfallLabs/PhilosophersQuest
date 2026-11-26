@@ -1,0 +1,210 @@
+{
+ "unit": "classifying-living-things",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Carl Linnaeus gave each species he described a two-part scientific name, and biologists still name species his way. The western honey bee is Apis mellifera, the eastern honey bee Apis cerana and the buff-tailed bumblebee Bombus terrestris. What do these three scientific names show about the bees?",
+   "answer": "The two honey bees share a genus",
+   "choices": [
+    "The two honey bees share a genus",
+    "All three bees share a genus",
+    "The two honey bees are one species",
+    "Each bee is in a genus of its own"
+   ],
+   "context": "The first word of a scientific name is the genus, written with a capital letter, and the second marks out one species within it, so the two honey bees are two species of the genus Apis, while the bumblebee belongs to another genus, Bombus. Before Linnaeus a species' name was a long Latin phrase describing it, and the phrases grew longer as more species were found; his two-word names were far easier to remember and use, and they soon replaced them.",
+   "facts": [
+    "F2",
+    "F3",
+    "F5",
+    "F24"
+   ],
+   "grade_note": "Seventh-grade classification teaches that a scientific name is the genus followed by the species, and students use it to tell which living things share a genus."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Carl Linnaeus, a Swedish naturalist, put people in one order with apes and monkeys. He named the order Primates in 1758, the year he also gave our species its scientific name, Homo sapiens. Apes and monkeys went into his genus Simia, people into his genus Homo. On what did Linnaeus base this grouping?",
+   "answer": "Features their bodies share",
+   "choices": [
+    "Features their bodies share",
+    "Descent from a shared ancestor",
+    "Habits and diets they share",
+    "The sounds and calls they make"
+   ],
+   "context": "Linnaeus grouped living things by the features of their bodies, seen by careful study and dissection, and he took his groups to show the plan of God's creation. A century later, in 1859, Charles Darwin's On the Origin of Species explained shared features as the mark of descent from common ancestors. Linnaeus put bats in his Primates too.",
+   "facts": [
+    "F10",
+    "F11"
+   ],
+   "grade_note": "Seventh grade tells Linnaeus's story and teaches that he grouped living things by the physical features they share."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Botanists sort every plant into a ladder of nested ranks. The smallest rank the rose shares with the Christmas rose is the class, and with a moss it is the kingdom. With the apple it is the family, and with the stinging nettle the order. Which of these plants is the rose's closest relative?",
+   "answer": "The apple tree",
+   "choices": [
+    "The apple tree",
+    "The stinging nettle",
+    "The Christmas rose",
+    "The moss"
+   ],
+   "context": "From the kingdom down, the ranks run kingdom, phylum, class, order, family, genus and species, with the domain now above the kingdom, and the smaller the group two living things share, the closer their kinship. The apple tree shares the rose family, while the Christmas rose, despite its name, belongs to the buttercup family.",
+   "facts": [
+    "F6",
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "Seventh graders learn the order of the ranks and use it to judge which organisms are most closely related."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "A naturalist reads three reports of big cats. One from Chile names its cat a puma, Puma concolor. Another, from elsewhere in South America, names its cat a black panther, Panthera onca. A third, from Florida, names its cat a panther, Puma concolor. Which two reports describe the same species?",
+   "answer": "The Chile and Florida reports",
+   "choices": [
+    "The Chile and Florida reports",
+    "The South America and Florida reports",
+    "The Chile and South America reports",
+    "All three of the reports"
+   ],
+   "context": "A scientific name means one species in every land and language, so the Chilean puma and the Florida panther, both Puma concolor, are one species whatever the reports call them, and the black panther, though it shares a continent with the puma, is a jaguar with a dark coat, a different species. A shared common name can mislead, and so can a shared homeland. Puma concolor holds the record for the animal with the most names, over 40 in English alone.",
+   "facts": [
+    "F5",
+    "F16",
+    "F25"
+   ],
+   "grade_note": "Seventh grade teaches that scientific names let scientists everywhere mean the same organism, whatever its local common name, and that common names can mislead."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "A sign at a public aquarium names four animals of sea and river whose English names all end in 'fish', each with a picture and a few lines about where it lives. Biologists count only one of the four as a true fish. Which one is it?",
+   "answer": "The lungfish",
+   "choices": [
+    "The lungfish",
+    "The cuttlefish",
+    "The starfish",
+    "The jellyfish"
+   ],
+   "context": "A true fish has a backbone, and the lungfish is a bony fish that gulps air with lungs as well as breathing with gills. The jellyfish is a cousin of the corals, the starfish of the sea urchins, and the cuttlefish of the squid and octopus; the cuttlefish's 'bone' is an inner shell, and none of the three has a backbone.",
+   "facts": [
+    "F17"
+   ],
+   "grade_note": "Seventh grade uses names like jellyfish and starfish to show that common names can mislead and that classification follows shared features."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "A tree key has three steps. Step 1: leaves in pairs across the twig, go to step 2; leaves one at a time, staggered along the twig, go to step 3. Step 2: leaves split into leaflets, ash; leaves in one piece, maple. Step 3: leaves with deep lobes, oak; leaves with no lobes, beech. A student's tree has leaves with deep, rounded lobes, each sprouting a little higher up the twig than the last. What does the key name it?",
+   "answer": "Oak",
+   "choices": [
+    "Oak",
+    "Maple",
+    "Ash",
+    "Beech"
+   ],
+   "context": "A dichotomous key gives two contrasting choices at each step, and each leads to the next step or to a name. Leaves that sprout one above another, never two at the same spot, are staggered, so the tree goes to step 3, and its deep lobes make it an oak. Maple leaves are often lobed too, but they grow in pairs across the twig.",
+   "facts": [
+    "F18",
+    "F19",
+    "F26"
+   ],
+   "grade_note": "Using a dichotomous key to identify an organism is a standard seventh-grade classification skill."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Methane-making microbes live in wetlands and in the guts of cattle, and under a microscope they are tiny single cells shaped like rods and balls. Carl Woese and George Fox, at the University of Illinois, compared their ribosomal RNA, a molecule found in the cells of every living thing, with that of other living things. What did the comparison, published in 1977, show?",
+   "answer": "They are a separate branch of life",
+   "choices": [
+    "They are a separate branch of life",
+    "They are an unusual kind of bacteria",
+    "They are the ancestors of all bacteria",
+    "They are a kind of one-celled fungus"
+   ],
+   "context": "The methane-makers had been counted as bacteria, since they are single cells with no nucleus, but the code of their ribosomal RNA set them apart from bacteria as well as from plants and animals, so they form a separate branch of life, now called the archaea. Many scientists doubted it at first. In 1990 Woese proposed three domains above the kingdoms: Bacteria, Archaea and Eukarya.",
+   "facts": [
+    "F21",
+    "F22"
+   ],
+   "grade_note": "Seventh-grade classification now teaches the three domains, and Woese's comparison of a molecule shared by all cells is how the third was found."
+  },
+  {
+   "tier": 3,
+   "topic": "classifying-living-things",
+   "question": "Carl Linnaeus placed the tomato in the genus Solanum, beside the potato, in 1753. Philip Miller, chief gardener of the Chelsea Physic Garden in London, soon moved it into the genus Lycopersicon, and for about two centuries botanists kept the tomatoes there, apart from the potato. Then botanists compared the DNA of the tomato and its relatives in the nightshade family, among them the potato, chili peppers and tobacco. What did the DNA show about the tomato?",
+   "answer": "It belongs in the potato's genus",
+   "choices": [
+    "It belongs in the potato's genus",
+    "It belongs in a genus of its own",
+    "It belongs in the tobacco plant's genus",
+    "It belongs in the chili pepper's genus"
+   ],
+   "context": "The DNA showed the tomato and the potato to be very close relatives within Solanum, so Linnaeus had placed it rightly, and the tomato is Solanum lycopersicum again; chili peppers and tobacco belong to other genera of the same family. Groupings once made by comparing features by eye are now tested against DNA, which can confirm them or overturn them.",
+   "facts": [
+    "F14",
+    "F15",
+    "F27"
+   ],
+   "grade_note": "Seventh grade notes that DNA comparison has reshaped classification, and the tomato is a clear case of DNA settling where a species belongs."
+  }
+ ],
+ "revised": {
+  "5b25e4bc84": {
+   "old_hash": "6804ce7a76",
+   "why": "Judge (medium, grade): plain recall of which rank the first word names. Per the judge's fix it is now an application: three real bee names (Apis mellifera, Apis cerana, Bombus terrestris; F24, new) and what they show. The old-phrase history moves to the context. Same fact (the genus comes first; F5)."
+  },
+  "4641c08f0e": {
+   "old_hash": "4641c08f0e",
+   "why": "Fact-check uncertain: 'believed every species had been created unchanging' overstated it (later in life he allowed some new species to arise by hybrid crosses). The context now says only that he took his groups to show the plan of God's creation (F11: 'design, not descent'). Judge (low): the weak lure 'The lands where they live' is now 'The sounds and calls they make', per the judge's fix. Stem and key unchanged, so the hash is the same."
+  },
+  "2b49aa3747": {
+   "old_hash": "18027e1f85",
+   "why": "Judge (low, tell): the partners were named in rank order with 'only the kingdom', which showed the list's direction; now they are named out of order and 'only' is gone, per the judge's fix. Fact-check uncertain: 'From the largest group ... kingdom' clashed with the domain above the kingdom; the context now runs from the kingdom down and names the domain above it (F6). Key, choices and ranks unchanged (F6-F9)."
+  },
+  "c6efd9acb5": {
+   "old_hash": "e28aa46c42",
+   "why": "Judge (high, tell): all three reports gave the same scientific name, so 'one species' needed no knowledge. Now each wrong pair has its own pull: the two 'panthers' share a common name (a black panther of South America is a dark jaguar, Panthera onca; F25, new), and the Chilean puma and the black panther share a continent, while only the puma and the Florida panther share Puma concolor (F16). A student must know which name counts. Same fact (F5)."
+  },
+  "51bfe22646": {
+   "old_hash": "d9acb9c78a",
+   "why": "Judge (medium, tell): the tree was described in the key's own words, so the answer came by matching words. Now the specimen's leaves sprout 'each a little higher up the twig than the last', which the student must read as staggered, not paired. Judge (low, clarity): the key is written out as steps in plain words. The two needle trees, ruled out at once by a broad-leaved specimen, are now two broad-leaved trees, ash (paired leaflets) and beech (staggered, unlobed), so each wrong name needs its own misreading (F19, F26 new). Key and maple lure unchanged."
+  },
+  "681d56a3da": {
+   "old_hash": "08f6c6d911",
+   "why": "Judge (medium, clarity): a plant such as the Venus flytrap also traps and digests prey, so 'plants' could be defended; the stem now says the creature has no green parts and makes none of its own food, per the judge's fix. Judge (medium, tell): 'Among the protists' was dead for a many-celled creature; it is now 'In a new kingdom of its own', per the judge's fix. Key and fact unchanged (F20)."
+  },
+  "d125f1f3d2": {
+   "old_hash": "e95051e8ca",
+   "why": "Fact-check error: Miller's Lycopersicon was not the tomato's own genus (his 1768 edition put the potato in it too, as Lycopersicon tuberosum); the stem now says he moved the tomato into Lycopersicon and that later botanists, for about two centuries, kept the tomatoes there apart from the potato (F27, new). Judge (medium, tell): only two choices were live; the stem now names the relatives (the potato, chili peppers, tobacco), 'the tobacco plant's genus' stays and 'a family of its own' is now 'the chili pepper's genus', per the judge's fix. Key unchanged."
+  },
+  "b1ea9d5ec2": {
+   "old_hash": "1f35f24815",
+   "why": "Judge (medium, tell): 'At first they were counted as bacteria' announced a reversal and killed the strongest lure, and 'no nucleus' killed the fungus lure for anyone who knows a yeast cell has one. Both now sit in the context; the stem gives only what a microscope shows (single cells shaped like rods and balls; F22) and no longer says they look like bacteria. Key and choices unchanged (F21, F22)."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "2a5eea9f40",
+   "question": "Biologists now sort all life into three domains: the Bacteria, the Archaea and the Eukarya. Baker's yeast rising in bread dough, a fern on a forest floor and a person all belong to the Eukarya. What do all three share that puts them in that domain?",
+   "why": "Judge (high, grade): re-asks a T2 fact (cells-the-building-blocks-of-life and the-microscope-and-cell-theory already teach that eukaryotes' cells have a nucleus), and the fact-check found its key false as written ('each' cell: a person's red blood cells lose theirs). The domains stay covered by the Woese question, the kingdoms by the Whittaker question; the judge's Haeckel replacement was weighed and not added, since its stem led straight to 'a third kingdom' and its Euglena case re-tells a T2 question."
+  },
+  {
+   "old_hash": "681d56a3da",
+   "question": "Robert Whittaker, an American plant ecologist, sorted life into five kingdoms in 1969, and he told the many-celled kingdoms apart mainly by how their members feed. A diver finds a new many-celled creature fixed to a reef like a plant. It has no green parts and makes none of its own food; it traps bits of food from the water and digests them inside its body. Where does Whittaker's scheme place it?",
+   "why": "failed the re-check: The added clause 'It has no green parts and makes none of its own food', set beside a scheme that sorts by feeding, rules out 'Among the plants' for any reader who knows plants make their own food (a T1 fact): the same kind of stem-killed lure the judge flagged in the old protist choice. What is left turns on fungi digesting outside and absorbing, which is the key of T2 one-cell-or-many 826df29f72, so the question now mostly re-asks a T2 fact. Facts themselves check (Whittaker, American plant ecologist, five kingdoms 1969, by nutrition)."
+  }
+ ],
+ "lead_edits": [
+  {
+   "old_hash": "9cd1432ae4",
+   "new_hash": "b1ea9d5ec2",
+   "change": "\"a molecule found in every cell\" -> \"a molecule found in the cells of every living thing\"",
+   "why": "card writer found the stem overstated"
+  }
+ ]
+}

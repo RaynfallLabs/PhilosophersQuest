@@ -1,0 +1,49 @@
+{
+ "unit": "comets-asteroids-and-moons",
+ "questions": {
+  "3c80c35cac": {
+   "verdict": "pass",
+   "why": "Heat clause moved to the context and the moons miss replaced by 'frozen solid all the way to the centre', so three choices fit 'ice'. Voyager 2 is the only spacecraft to visit Uranus (24 January 1986) and Neptune (25 August 1989). Ice giants about 20 percent hydrogen and helium, the rest mostly water, methane and ammonia ices as hot fluid; no solid surface. Goes beyond T1 the-sun-and-its-planets ('gas and ice'), no re-ask.",
+   "sources": [
+    "https://science.nasa.gov/mission/voyager/voyager-2/",
+    "https://grokipedia.com/page/Ice_giant",
+    "https://en.wikipedia.org/wiki/Ice_giant"
+   ]
+  },
+  "d62fd3fe05": {
+   "verdict": "pass",
+   "why": "Count error fixed: 'more than a million' matches NASA's 1.1 to 1.9 million over 1 km. The size ladder is clean and the key (3 to 4 percent of the Moon) is exact; the stem's million builds the expectation the answer breaks. Ceres about 950 km fits the 939-952 km spread. No overlap.",
+   "sources": [
+    "https://science.nasa.gov/solar-system/asteroids/facts/",
+    "https://grokipedia.com/page/Asteroid_belt",
+    "https://en.wikipedia.org/wiki/Asteroid_belt"
+   ]
+  },
+  "9f2ae32e80": {
+   "verdict": "pass",
+   "why": "Key is no longer the only Sun choice: 'The Sun's gravity pulling hard on its head' is a live second Sun lure, and the context says why gravity cannot point the tail away. Radiation pressure pushes the dust, the solar wind the ion tail. No overlap.",
+   "sources": [
+    "https://grokipedia.com/page/Comet_tail",
+    "https://starchild.gsfc.nasa.gov/docs/StarChild/solar_system_level2/comets_answer.html"
+   ]
+  },
+  "d9b88e62a0": {
+   "verdict": "pass",
+   "why": "Context now says most meteor showers come from comet dust and names the Geminids' asteroid parent, Phaethon, as NASA does. Meteoroid, meteor, meteorite as keyed and lured are right. No other unit asks the three terms.",
+   "sources": [
+    "https://science.nasa.gov/solar-system/meteors-meteorites/geminids/",
+    "https://science.nasa.gov/solar-system/meteors-meteorites/"
+   ]
+  },
+  "36d75473e2": {
+   "verdict": "pass",
+   "why": "Fills the Kuiper belt / Oort cloud gap as an application. 67P: Jupiter-family comet, probably from the Kuiper belt, period 6.45 years, Philae landed 12 November 2014. Hale-Bopp: long-period, period now about 2,399 years, naked-eye for 569 days (May 1996 to December 1997), its earlier passage likely in from the Oort cloud. Four symmetric choices, no tell; 'most likely' hedges fairly. No other unit asks either reservoir.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/67P/Churyumov%E2%80%93Gerasimenko",
+    "https://en.wikipedia.org/wiki/Comet_Hale%E2%80%93Bopp",
+    "https://grokipedia.com/page/Comet",
+    "https://science.nasa.gov/solar-system/comets/"
+   ]
+  }
+ }
+}

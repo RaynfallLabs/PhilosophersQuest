@@ -101,3 +101,17 @@ M4. That archaea are just an odd kind of bacteria (the view before Woese), or th
 M5. That a living thing fixed in one place must be a plant, or a fungus if it is not green; Whittaker's kingdoms turn on how a thing feeds (F20).
 
 M6. That every lobed leaf is a maple's (F19). An author's note: oaks have lobed leaves too.
+
+## Added in the revision (2026-11-26)
+
+F24. Three bee names: the eastern (Asiatic) honey bee is Apis cerana (Fabricius, 1793), one of about 11 species of the genus Apis with the western honey bee, Apis mellifera; the buff-tailed bumblebee, Bombus terrestris (first described by Linnaeus in 1758), is a bumblebee of the genus Bombus, not a honey bee, though both genera are in the family Apidae.
+    https://grokipedia.com/page/Apis_cerana ; https://grokipedia.com/page/Bombus_terrestris
+
+F25. "Black panther" is a common name for the dark (melanistic) colour form of the leopard (Panthera pardus) and of the jaguar (Panthera onca); black jaguars are documented in Central and South America. "There is no authenticated case of a truly melanistic cougar" (Wikipedia). So one common name, "panther", covers more than one species.
+    https://grokipedia.com/page/Black_panther ; https://en.wikipedia.org/wiki/Black_panther
+
+F26. Leaf arrangement: "Alternate phyllotaxis involves a single leaf per node", each leaf turned about half a circle from the one before (staggered); opposite phyllotaxis has "two leaves per node positioned 180° apart" (in pairs across the twig). Ash (Fraxinus) leaves "are arranged oppositely on the stems and are pinnately compound" (split into leaflets). Beech (Fagus) leaves are "arranged alternately", with entire, wavy or toothed margins and no lobes. (Maple: opposite, simple, lobed; oak: alternate, often lobed; F19.)
+    https://grokipedia.com/page/Phyllotaxis ; https://grokipedia.com/page/Fraxinus ; https://grokipedia.com/page/Beech
+
+F27. The tomato's genus after Linnaeus: Philip Miller formally named the genus Lycopersicon in 1754 (IPNI 30022251-2), but his own Lycopersicon also took in the potato: his Gardeners Dictionary, 8th edition (1768), names it Lycopersicon tuberosum (L.) Mill., basionym Solanum tuberosum L. (IPNI 816719-1). Later botanists (Dunal, 1813, and others) kept Lycopersicon for the tomatoes, apart from the potato; Lycopersicon esculentum "came into wide use" and was conserved in 1983 (Wikipedia Tomato). Chloroplast DNA work by Spooner, Anderson and Jansen (1993) "supported inclusion of Lycopersicon in Solanum", and later sequence data "unambiguously show tomatoes to be deeply nested in Solanum" (Peralta, Knapp and Spooner, Tomato Genetics Cooperative Report 56, read as a search excerpt). So for about two centuries, from the early 1800s to the 1990s, most botanists kept the tomatoes in a genus of their own. Chili peppers are the genus Capsicum, "a genus of flowering plants in the nightshade family" (Grokipedia); tobacco is Nicotiana (F14).
+    https://www.ipni.org/n/816719-1 ; https://www.ipni.org/n/30022251-2 ; https://en.wikipedia.org/wiki/Tomato ; https://en.wikipedia.org/wiki/Solanum_sect._Lycopersicon ; https://tgc.ifas.ufl.edu/vol56/html/vol56featr.htm (search excerpt) ; https://dx.doi.org/10.1007%2FBF02866519 ; https://grokipedia.com/page/Capsicum

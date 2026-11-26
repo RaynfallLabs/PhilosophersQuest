@@ -1,0 +1,63 @@
+{"unit": "watersheds-and-groundwater",
+ "questions": {
+  "16587e4256": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Neither, as it is far from both' is the weakest lure: the stem says the farm is far nearer the lake, not far from it, so a careful reader strikes it on the stem's words. 'The lake's' (nearness, the M2 confusion) and 'Both, as it lies between the two' (a New York farm does lie between the lake and the bay on a map) are live.",
+     "fix": "Replace with the other half of M2: 'Neither, as only land beside a river counts'."}
+   ]},
+  "041f490b4f": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Word echo: the stem's 'in hilly country' is picked up by the key's 'ridges and hills', and no other choice shares a word with the stem. A guesser takes the choice that repeats the stem.",
+     "fix": "Say 'in rugged country' (or 'in a land of steep valleys', which also feeds the 'floors of the valleys' lure). The key, the lures and the context stay as they are; 'most of the walk' still covers flat stretches."}
+   ]},
+  "166642dbf9": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The granite' is the one choice a student can strike with no knowledge (solid rock looks dry), so three choices are live, not four. The clay trap and the slow silt are good.",
+     "fix": "Replace with 'The shale', a fine-grained rock of packed clay and silt that looks like it could hold water but lets it through very slowly (the context's granite line becomes: 'Shale is clay pressed into rock, and its pores are as tiny and poorly linked as clay's')."}
+   ]},
+  "bd94dfe982": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The company's drilling shook loose mud into the well' is the weakest lure: mud would make the water muddy, not make the well run dry, and the stem says it ran dry.",
+     "fix": "Use the facts sheet's own misconception M7: 'The company's pumping drained the well's own pocket of water'."}
+   ]},
+  "2893f95960": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "high",
+     "what": "Re-ask of a lower tier, with the answer in the stem. T1 the-water-cycle 0235a0d2ac keys that a paved parking lot sends the most rain off as runoff ('Water cannot soak into pavement'); this key, 'Less rain soaks down to refill it', is the same fact turned over, not a grade deeper. The stem then gives it away: the creek 'now floods higher', so more rain ran off and less soaked in. That clue strikes 'More rain soaks down to refill it', and 'Its weight squeezes the water out' is not live, so a student who never learned recharge still gets it.",
+     "fix": "Replace with the wetlands line of the same standard (facts F17; NGSS MS-ESS3-3 names 'the removal of wetlands'), which no lower tier asks: 'Upstream of a river town, farmers drain a wide marsh and plough it into fields. Afterwards, the river through the town rises higher and faster after every heavy storm. What had the marsh been doing for the town?' Key: 'Holding storm water and letting it out slowly'. Lures: 'Cooling the air so that less rain fell there', 'Sending its water away to another river', 'Soaking the rain down into deep rock for good'. Context: wetlands act as natural sponges (EPA); draining 64 million acres of wetland in the Upper Mississippi basin worsened the 1993 floods. If the paving line must stay, ask the beneficial side instead (which change lets more rain refill the ground: rain gardens, against bigger storm drains, higher creek banks and more gutters), with the flood clue cut."}
+   ]},
+  "873397d34b": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Ground it to dust in its turbines' is not a live choice for a 7th grader, so three are live. The key is also the only choice that repeats the stem's 'lake', and a dam that holds back a lake suggests holding back its sand too. The fact itself is a good grade-deeper step past T1 wind-water-and-ice-shape-the-land (a delta forms where a river drops its mud and sand).",
+     "fix": "Replace the turbine lure with 'Dissolved it away in the lake's deep, still water' (a real confusion of settling with dissolving), so two choices name the lake and the key no longer stands out by echo."}
+   ]},
+  "4a1ce126e4": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem spells out the chain: fertiliser 'washed off farms' feeds the zone, then 'heavy rain soak those farms', so more washing follows on the stem's own words. The dilution lure (M5) keeps it a real choice, and the T1 ecosystems fact (algae, then too little oxygen) is rightly given in the stem, not asked.",
+     "fix": "Say 'Fertiliser from farms across the river's huge watershed feeds it', so the student must supply that rain carries the fertiliser and weigh that against dilution."}
+   ]},
+  "b168619348": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Word echo: the stem's 'deep layers of sand and clay' is picked up by the key's 'Its clay', the only choice that names the ground the stem describes.",
+     "fix": "Say 'pumped groundwater from the thick, loose sediment beneath the valley floor'. 'Sediment' still lets an informed student strike the caves (caves form in limestone, not loose grains), and the key then brings in clay itself."},
+    {"axis": "tell", "severity": "medium",
+     "what": "'The weight of crops and farm machines pressed it down' is not live for ground that sank more than 8 metres, so with 'Earthquakes' only two lures work.",
+     "fix": "Replace with 'Its topsoil dried out and blew away on the wind', the Dust Bowl picture a 7th grader really holds of farmland losing height."}
+   ]},
+  "f16b275d34": {"verdict": "ok",
+   "issues": []},
+  "8ede77985c": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "Context: 'Tides only carry water in and out along the coasts' understates tides, which raise and lower the whole ocean (the fact-checker flagged the same line). The lure itself is a fair wrong choice.",
+     "fix": "Context: 'Tides carry floating things back and forth twice a day but not far out to sea, and waves push them toward the shore, not away from it.'"}
+   ]}
+ },
+ "unit_notes": "Ten questions on ten different facts, covering every line of the scope: the watershed (16587e4256), its divide (041f490b4f), the aquifer's porosity and permeability (166642dbf9), the water table and wells (bd94dfe982), paving (2893f95960), dams (873397d34b), pollution carried downstream (4a1ce126e4), over-pumping (b168619348), overfishing (f16b275d34) and plastics (8ede77985c). Overlaps against every final: the one re-ask is 2893f95960 against T1 the-water-cycle 0235a0d2ac (see its note). The others go a grade deeper and give the lower-tier fact as a premise, never as the key: 873397d34b builds on T1 wind-water-and-ice-shape-the-land's delta; 4a1ce126e4 builds on T1 ecosystems-living-and-nonliving 97fd28a48d (fertiliser, algae, too little oxygen); 8ede77985c goes past T1 earths-resources 7d3ffac908 (a bag breaks into bits); bd94dfe982 keys the water table, where T1 01f53e4e82 and T2 earths-four-spheres 304c5d20fe only show groundwater in the spaces of rock. caring-for-air-water-and-soil's final has no fertiliser key (its runoff question, 6918892ad7, is oil off roads), and nothing here asks what pollutes water. T4 winds-air-masses-and-fronts owns Earth's spin bending the winds and currents carrying heat; 8ede77985c keys only that circling currents gather floating rubbish, so it does not take that ground. Lanes clean: Lake Ontario, the Chesapeake Bay, the San Joaquin Valley and the North Pacific set scenes, and every key is the process; the orange roughy's and the sardine's breeding ages are data given in the stem for a population rule, not the animal bank's biology; no arithmetic. Voice clean: no second person, no exclamation, no date first, no singular they."}

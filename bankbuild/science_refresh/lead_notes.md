@@ -59,3 +59,23 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
     - sea-floor ages from the ridges outward;
     - earthquake waves and the core;
     - radiometric clocks and Patterson.
+- **Greenhouse ownership (lead's ruling, 2026-11-26).** The why-earth judge flagged that `the-greenhouse-effect` (T4) lists ground this T3 unit touches.
+  - `why-earth-supports-life` (T3) keeps the habitability side:
+    - Earth would average about -18 C with no greenhouse gases, 33 degrees colder (2fe68de4a8);
+    - Venus's air holds vastly more carbon dioxide than Mars's (2cf96b1e28);
+    - most of Earth's carbon dioxide is locked in rocks such as limestone (b25bf74134), told as why Earth is not Venus.
+  - `the-greenhouse-effect` (T4) owns the physics:
+    - the mechanism itself (the ground gives off infrared, the gases absorb it and send part back), with Tyndall's measurement;
+    - Arrhenius, Keeling, the other carbon stores, and volcanic cooling.
+    - Its brief must say it may not re-ask the -18 C or the limestone store; it asks oceans, living things and fossil fuels as stores instead.
+  - So the T3 mechanism question cb28d1ffb6 (absorb and send part back) is T4's. The T3 reviser drops it, or replaces it with another habitability fact in scope.
+- **Experiment design ladder (lead's ruling, 2026-11-26).** Several method units share this ground.
+  - T1 `measuring-and-the-fair-test` keys the fair test itself: change one thing, keep the rest the same, repeat.
+  - `designing-a-controlled-experiment` (T3) owns:
+    - naming the independent, dependent and controlled variables in a described experiment;
+    - what a control group is for;
+    - spotting a flaw (two things changed at once, no control);
+    - what a result does and does not show.
+    - It may ask why many trials or a large sample help, but only inside a described design (one odd plant, chance), never "repeat the trials" again.
+    - It does not key Lind (T5 `fair-trials-controls-and-placebos`), blinding or placebos (T4 `testing-a-claim`, T5), or correlation (T4).
+  - `correlation-causation-and-error` (T4) owns precision vs accuracy, measurement error, survivorship bias and correlation. It must not re-ask "more trials help".

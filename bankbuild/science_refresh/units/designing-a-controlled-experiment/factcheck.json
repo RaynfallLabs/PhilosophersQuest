@@ -1,0 +1,77 @@
+{"unit": "designing-a-controlled-experiment",
+ "questions": {
+  "9b05eb0ae2": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: the ramp's height (changed on purpose) is the independent variable and the distance rolled (measured) is the dependent variable", "result": "ok", "source": "https://grokipedia.com/page/Dependent_and_independent_variables", "note": ""},
+    {"claim": "Wrong choice 'Dependent, then independent' is the swap; truly wrong", "result": "ok", "source": "https://grokipedia.com/page/Dependent_and_independent_variables", "note": ""},
+    {"claim": "Wrong choices calling the height or the distance a controlled variable: in standard 7th-grade usage controlled variables are the things held constant (the car, the start point), so both are wrong", "result": "ok", "source": "https://grokipedia.com/page/Dependent_and_independent_variables", "note": "Grokipedia also says the independent variable is 'manipulated or controlled by the researcher', but school usage keeps 'controlled variable' for constants, and the context explains exactly that."},
+    {"claim": "Context: controlled variables are the things kept the same, such as the car and its starting point", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": ""}]},
+
+  "9b2443d52a": {"verdict": "error",
+   "checks": [
+    {"claim": "Stem: Darwin compared maize plants from cross-fertilised and self-fertilised seed, in pairs", "result": "ok", "source": "https://darwin-online.org.uk/converted/manuscripts/Darwin_C_R_CUL-DAR65.86r.html", "note": "Crossed plants were 'crossed with pollen taken from a distinct plant'; seedlings of equal age were planted in pairs on opposite sides of four very large pots."},
+    {"claim": "Stem: the self-fertilised plant came 'from a flower that had pollinated itself'", "result": "error", "source": "https://grokipedia.com/page/Maize", "note": "Maize is monoecious: its male flowers are in the tassel and its female flowers in the ear, so no single maize flower can pollinate itself. Darwin's self-fertilised seed came from a single plant, growing apart in another part of the hothouse, allowed to fertilise itself (pollen from its own tassel onto its own silks; darwin-online MS DAR65.86r). Fix: 'and one from a flower given pollen from its own plant' (or 'from a plant that had pollinated itself')."},
+    {"claim": "Stem: the pair set on opposite sides of one pot; soil mixed uniform; pot kept so both sides equally lit; watered together", "result": "ok", "source": "https://darwin-online.org.uk/converted/published/1876_CrossandSelfFertilisation_F1249/1876_CrossandSelfFertilisation_F1249.html", "note": "Darwin: planted 'on opposite sides of a pot, with a superficial partition'; the partition 'always kept directed towards the chief source of the light, so that the plants on both sides were equally illuminated'; soil 'well mixed, so as to be uniform in composition'; 'watered at the same time and as equally as possible'."},
+    {"claim": "Key: soil, light and watering are controlled variables", "result": "ok", "source": "https://grokipedia.com/page/Dependent_and_independent_variables", "note": ""},
+    {"claim": "Wrong choices: control groups, independent variables, dependent variables are all wrong for conditions held the same", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": ""},
+    {"claim": "Context: in 13 of Darwin's 15 pairs the crossed plant grew taller", "result": "ok", "source": "https://vincentarelbundock.github.io/Rdatasets/csv/HistData/ZeaMays.csv", "note": "Darwin's 15 pairs in 4 pots: 13 differences positive, 2 negative (pairs 2 and 15). Galton's ranked comparison also gives 'only two exceptions' out of fifteen."}]},
+
+  "545107792f": {"verdict": "ok",
+   "checks": [
+    {"claim": "Lawes and Gilbert started Broadbalk at Rothamsted, England, sown autumn 1843 (first harvest 1844)", "result": "ok", "source": "https://era.rothamsted.ac.uk/Broadbalk", "note": ""},
+    {"claim": "Strips get different fertilizer and manure mixes; one control strip has had none since 1843", "result": "ok", "source": "https://era.rothamsted.ac.uk/Broadbalk", "note": "Rothamsted: 'A control strip has received no fertilizer or organic manures since 1843'; 'One strip has had nothing applied since the experiment began and acts as a control' (rothamsted.ac.uk news). Most treatment strips were fixed by 1852, a detail the simplification can skip."},
+    {"claim": "Key: the unfed strip shows what wheat gives with nothing added (the control/baseline)", "result": "ok", "source": "https://www.rothamsted.ac.uk/news/maintaining-wheat-yields-possible-over-many-years", "note": ""},
+    {"claim": "Wrong choices (resting the soil, growing seed, keeping the soil as at the start) are not its purpose", "result": "ok", "source": "https://era.rothamsted.ac.uk/Broadbalk", "note": "Wheat is grown on it, so it is not rested; nothing says it supplies seed; its soil is not preserved unchanged (it is cropped without inputs)."},
+    {"claim": "Context: wheat sown on it every year like the rest", "result": "ok", "source": "https://era.rothamsted.ac.uk/Broadbalk", "note": "Rothamsted: 'Wheat is grown every year on all or part of the experiment' (some sections are rotated or were fallowed 1926-1967). Acceptable at this level."},
+    {"claim": "Context: control yields about 1 t/ha; best-fed strips now ten or more", "result": "ok", "source": "https://era.rothamsted.ac.uk/dataset/rbk1/03-OAWWYields", "note": "Nil plots 'have remained at around 1 t ha-1 in general'; record 13.8 t/ha (2014); 'Best yields now exceed 12 tonne per hectare in some years' (Rothamsted news)."},
+    {"claim": "Context: Rothamsted calls Broadbalk the longest-running scientific experiment in the world", "result": "ok", "source": "https://era.rothamsted.ac.uk/Broadbalk", "note": "e-RA page: 'Broadbalk is the longest running scientific experiment in the world'; Grokipedia: 'the world's longest-running continuous agronomic trial'."}]},
+
+  "11d9fbfa9c": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: the plate with no salt is the control (gets none of the tested factor, the baseline)", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": ""},
+    {"claim": "Wrong choices: the one- and two-spoonful plates are treatment groups; the fastest-melting plate is a result, not a group chosen in advance", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": ""},
+    {"claim": "Setup: salt and melting ice", "result": "ok", "source": "https://grokipedia.com/page/Freezing-point_depression", "note": "Salt dissolves into the film of water on ice and lowers the freezing (melting) point below 0 C, so ice melts at colder temperatures. The question states no result, only a test of 'whether' salt makes ice melt faster, so it makes no claim that could be wrong."}]},
+
+  "9778f7de3c": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: light changed along with the plant food (a confounding second variable)", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": "Controls work by 'holding all other variables constant except the one being tested'; light is a standard plant-growth variable."},
+    {"claim": "Wrong choice: twenty seedlings per group too few", "result": "ok", "source": "https://grokipedia.com/page/Germination", "note": "Twenty per group is a sound school sample; not the flaw."},
+    {"claim": "Wrong choice: plain water to the others (that is the control group, correct design)", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": ""},
+    {"claim": "Wrong choice: height versus leaf count (height is a valid growth measure)", "result": "ok", "source": "https://grokipedia.com/page/Dependent_and_independent_variables", "note": ""}]},
+
+  "dbde82a342": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: her trial lacks a comparison class taking the same tests with no music (a control group)", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": "'Without controls, it becomes impossible to confidently determine whether changes in the dependent variable' come from the intervention."},
+    {"claim": "Wrong choices: a second music term, a marks record (she already has the marks), another class also with music; none supplies an untreated comparison", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": ""},
+    {"claim": "Context: scores often rise as people grow used to a kind of test", "result": "ok", "source": "https://en.wikipedia.org/wiki/Practice_effect", "note": "Practice effect: subjects 'become more familiarized with testing conditions, thus increasing responsiveness and performance'."}]},
+
+  "2e609d796f": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: most brands and most spills (e.g. oil) went untested, so the result cannot be generalised to them", "result": "ok", "source": "https://grokipedia.com/page/External_validity", "note": ""},
+    {"claim": "Wrong choice: five trials each too few (five agreeing trials is a fair school number)", "result": "ok", "source": "https://grokipedia.com/page/Dependent_and_independent_variables", "note": ""},
+    {"claim": "Wrong choice: weighing cannot show the water held (the weight gain is the water taken up)", "result": "ok", "source": "https://grokipedia.com/page/Dependent_and_independent_variables", "note": ""},
+    {"claim": "Wrong choice: letting each square drip (same for every brand, a controlled step)", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": ""}]},
+
+  "9510175a6e": {"verdict": "uncertain",
+   "checks": [
+    {"claim": "Key: one seed can fail to sprout for reasons of its own (sample of one)", "result": "ok", "source": "https://grokipedia.com/page/Germination", "note": "Germination capacity 'often reaching 80-95%' even for high-viability seed; some seeds are non-viable or dormant."},
+    {"claim": "Wrong choice: he should have sprayed both (no; the unsprayed seed is the control)", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": ""},
+    {"claim": "Wrong choice: 'He changed two things between the seeds at once' is truly wrong", "result": "uncertain", "source": "https://www.gardeningknowhow.com/garden-how-to/propagation/seeds/soaking-seeds.htm", "note": "The stem says Sam SOAKS one seed in the spray and leaves the other unsoaked. Soaking in any liquid is itself known to speed germination, so a sharp teacher could say two things changed (soaking, and the spray's contents). Fix: 'Sam sprays one sunflower seed with a new sprouting spray and leaves a second seed from the same packet unsprayed.' (Also 'soaks... in a spray' is an odd pairing of words.)"},
+    {"claim": "Wrong choice: sprouting is the right measure for a sprouting spray (height not needed)", "result": "ok", "source": "https://grokipedia.com/page/Dependent_and_independent_variables", "note": ""},
+    {"claim": "Context quote: Darwin judged two to six pairs 'of little or no value'", "result": "ok", "source": "https://darwin-online.org.uk/converted/published/1876_CrossandSelfFertilisation_F1249/1876_CrossandSelfFertilisation_F1249.html", "note": "Darwin: 'When only from two to six pairs of plants were measured, the results are manifestly of little or no value, except in so far as they confirm and are confirmed by experiments made on a larger scale'."}]},
+
+  "49ca0ea131": {"verdict": "uncertain",
+   "checks": [
+    {"claim": "Eijkman a Dutch doctor (physician) in Java; lab chickens got polyneuritis, a nerve disease, on polished white rice and recovered on unpolished rice", "result": "ok", "source": "https://grokipedia.com/page/Christiaan_Eijkman", "note": "The accident: the birds had been fed leftover polished rice from the military hospital; a new cook refused to give 'military' rice to 'civilian' chickens, they were switched to unpolished rice and recovered in days (Wikipedia; Encyclopedia.com). The stem's wording matches."},
+    {"claim": "Date: 'working in Java in 1889'", "result": "uncertain", "source": "https://www.britannica.com/EBchecked/topic/181273/Christiaan-Eijkman", "note": "He was director of the Batavia laboratory from 1888, so he was working in Java in 1889. But the stem reads as dating the chicken illness, and sources split: Grokipedia says he set up chicken colonies in 1889; Britannica says polyneuritis broke out among the chickens in 1890; Encyclopedia.com says 'around 1890'. Fix: 'working in Java around 1890'."},
+    {"claim": "Key: one flock on polished rice and a matching flock on unpolished rice (controlled comparison)", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": ""},
+    {"claim": "Wrong choices: all on polished rice (no control); cure-only test on sick birds (no comparison group); lab vs farm (place confounded)", "result": "ok", "source": "https://grokipedia.com/page/Confounding", "note": ""},
+    {"claim": "Context: Eijkman ran such trials from 1890 to 1897 with over 100 chickens", "result": "uncertain", "source": "https://encyclopedia.com/medicine/medical-journals/eijkman-christiaan", "note": "Only Grokipedia gives '1890 and 1897' and 'over 100 chickens'. Eijkman left Java for Europe through ill health in 1896, when Grijns took over the work (Encyclopedia.com; James Lind Library); his summary paper appeared in 1897. Fix: 'Eijkman ran such trials through the early 1890s: nearly all the birds on polished rice fell ill, and those on unpolished rice did not.'"},
+    {"claim": "Context: the missing substance was thiamine (vitamin B1); Eijkman shared the 1929 Nobel Prize in Physiology or Medicine (with Hopkins)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Christiaan_Eijkman", "note": ""}]},
+
+  "cf4728c598": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: height does not measure the fruit borne (wrong dependent variable for the question)", "result": "ok", "source": "https://grokipedia.com/page/Dependent_and_independent_variables", "note": ""},
+    {"claim": "Wrong choices: ten per group too few; straw on all twenty; two things changed: none fits (ten a group is fair, the bare plants are the control, straw is the only stated difference)", "result": "ok", "source": "https://grokipedia.com/page/Scientific_control", "note": ""}]}
+ },
+ "unit_notes": "Terms checked against Grokipedia (Dependent and independent variables; Scientific control): independent = changed on purpose, dependent = measured, controlled variables = held the same, control group = gets none of the treatment, the baseline. All ten keys are the answers a science teacher would mark right. One error (Darwin maize: a maize flower cannot pollinate itself, the plant does). Two uncertain: Q8's 'soaks' wording makes 'changed two things' arguable; Eijkman's 1889 date (Britannica gives 1890) and Grokipedia-only '1890 to 1897, over 100 chickens' (he left Java in 1896). Darwin's 13 of 15 checked against his own pair data (HistData ZeaMays). Broadbalk facts all confirmed from Rothamsted's own pages."}

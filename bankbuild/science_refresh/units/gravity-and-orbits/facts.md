@@ -111,3 +111,20 @@ M6. That a fast-moving object escapes gravity's pull, or that an orbiting thing 
 
 M7. That mass and weight are the same thing, so both change on the Moon, or neither does (F18).
     https://grokipedia.com/page/Mass_versus_weight
+
+## Added in the revision (2026-11-26)
+
+F22. Newton's own picture of the cannon: in A Treatise of the System of the World a stone is projected "from the top of a high mountain", and Newton asks us to suppose "that there is no air about the earth, or at least that it is endowed with little or no power of resisting" (as quoted by Wikipedia). The mountain whose top rises above the atmosphere (Grokipedia's wording, and many popular accounts) is a later paraphrase, not Newton's. On the apple: Stukeley's memoir names no place for it (the family-home garden is John Conduitt's account), per the fact-check; no question now uses the apple.
+    https://en.wikipedia.org/wiki/Newton%27s_cannonball ; https://www.newtonproject.ox.ac.uk/view/texts/normalized/OTHE00001
+
+F23. The Sun's mass is 1,988,400 x 10^24 kg, about 332,900 times Earth's; Jupiter's is 317.8 times Earth's, so the Sun has about 1,048 times Jupiter's mass ("more than a thousand times"). Grokipedia: "The Sun accounts for 99.86% of the system's total mass", and of the planets' small share Jupiter contributes "over two-thirds".
+    https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html ; https://nssdc.gsfc.nasa.gov/planetary/factsheet/planet_table_ratio.html ; https://grokipedia.com/page/Solar_System
+
+F24. NASA: "dozens of moons swarm around" Jupiter (counts change as more are found; Grokipedia's Solar System page gives 115 known). A planet's gravity holds its moons, as the Sun's holds the planets.
+    https://science.nasa.gov/solar-system/moons/ ; https://grokipedia.com/page/Solar_System
+
+F25. Two masses pull on each other with forces "equal in magnitude but opposite in direction" (Newton's third law), so a light ball pulls a heavy one exactly as hard as the heavy one pulls it. The pulls of several bodies add: the total field at a point is "the vector sum of the fields from each source mass" (superposition), so a stronger pull from the Sun adds to Earth's pull and does not block it.
+    https://grokipedia.com/page/Newton's_law_of_universal_gravitation ; https://grokipedia.com/page/Gravitational_shielding
+
+F26. The theory of impetus (Philoponus in the 6th century, Jean Buridan in the 14th) held that a thrower or launcher gives a projectile an impressed force, an impetus, that carries it on until resistance and gravity use it up; Grokipedia calls Buridan's impetus a "proto-concept of inertia". Newton's first law replaced it: "Every body perseveres in its state of rest, or of uniform motion in a right line, unless it is compelled to change that state by forces impressed thereon"; uniform motion "persists when the net external force on the object is zero", so no force from the blast is needed to keep a ball moving.
+    https://grokipedia.com/page/Theory_of_impetus ; https://grokipedia.com/page/Newton's_laws_of_motion

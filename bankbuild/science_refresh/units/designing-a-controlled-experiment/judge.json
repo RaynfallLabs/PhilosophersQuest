@@ -1,0 +1,40 @@
+{"unit": "designing-a-controlled-experiment",
+ "questions": {
+  "9b05eb0ae2": {"verdict": "ok",
+   "issues": []},
+  "9b2443d52a": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "At 77 words the stem is the unit's longest, and 'one plant grew from a flower given pollen from another plant, and one from a flower that had pollinated itself' is a mouthful before the part the question is about (the soil, light and watering). The key is sound: only a teacher's 'controlled variables' fits, and 'Control groups' is the honest M2 lure.",
+     "fix": "Shorten the cross: 'In each pair, one plant grew from a cross-pollinated flower and one from a self-pollinated flower.'"}
+   ]},
+  "545107792f": {"verdict": "ok",
+   "issues": []},
+  "11d9fbfa9c": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "A second question on the fact 545107792f already keys: a control gets none of the treatment and is the baseline the others are measured against (Broadbalk's unfed strip; here the unsalted plate). The stem also defines the control for the student ('the one the others are compared with'), so all that is left is spotting the plate that got none.",
+     "fix": "Re-aim it at the deeper case, a control that is the usual condition, not 'none': 'Ana tests whether cold slows how often crickets chirp. She keeps one jar of crickets in a cold garage, one in a cool basement and one in her bedroom at ordinary room temperature, and counts each jar's chirps in a minute. Which jar is her control?' Key: 'The jar in her bedroom, at room temperature'. Lures: 'The jar in the garage, the coldest of the three', 'The jar in the basement, between the other two', 'The jar whose crickets chirp the least'. Context: a test of a condition that every group has (a temperature) compares against the ordinary condition, the one left unchanged."}
+   ]},
+  "9778f7de3c": {"verdict": "ok",
+   "issues": []},
+  "dbde82a342": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'An exact record of every pupil's marks' is the weakest lure: the stem says the marks rose from the first test to the last, so she plainly has them.",
+     "fix": "Replace with 'A class given louder music during the same tests', a second treatment that still leaves nothing untreated to compare with."}
+   ]},
+  "2e609d796f": {"verdict": "ok",
+   "issues": []},
+  "9510175a6e": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Structural standout: three choices begin 'He ...' and say what Sam did wrong, and only the key ('One seed can fail to sprout for reasons of its own') is a fact about seeds. 'He looked for sprouts but never measured height' is also weak, since the question was whether the seed sprouts. The fact suits the lead's ruling (a large sample, inside a described design, one odd seed and chance).",
+     "fix": "Key: 'He tested only one seed on each side'. Replace the height lure with 'He sprayed the seed before planting it, not after'. Keep 'He should have sprayed both of the seeds alike' and 'He changed two things between the seeds at once'. The context already says why one seed misleads."}
+   ]},
+  "49ca0ea131": {"verdict": "ok",
+   "issues": []},
+  "cf4728c598": {"verdict": "ok",
+   "issues": []}
+ },
+ "unit_notes": "The lead's ruling holds. Every question sits on the ground the unit owns: naming the variables (9b05eb0ae2, 9b2443d52a), what a control group is for (545107792f, 11d9fbfa9c), a test with no control (dbde82a342), a second thing changed (9778f7de3c), the wrong thing measured (cf4728c598), planning a controlled test (49ca0ea131), what a result does and does not show (2e609d796f), and one sample-size question inside a described design (9510175a6e, one seed and chance). Nothing keys Lind, blinding, placebos or correlation; the practice effect in dbde82a342 is context only; 'repeat the trials' is never the key, and appears only as lures. No re-ask of T1 measuring-and-the-fair-test (206806948f keeps the rest the same, d206b22021 repeats a drop) or T2 measuring-like-a-scientist (the fluke run): 9778f7de3c asks the student to spot a broken fair test, and 9510175a6e keeps to the lead's 'one odd plant' exception. T2 hypothesis-theory-and-law is not touched (2e609d796f asks what a result covers, not whether it supports a hypothesis). The one overlap inside the unit is 11d9fbfa9c with 545107792f (see its note). Pattern across the unit: the reflex lures recur, 'too few to tell' in 9778f7de3c, 2e609d796f and cf4728c598, 'should have treated all of them' in 9510175a6e and cf4728c598, 'changed two things' in 9510175a6e and cf4728c598. Each is honest (M5), but a player who meets them three times learns they never win; vary their wording, or let one of them be the key once more. Every reasoning key is one a science teacher would mark right; none is arguable. Eijkman (49ca0ea131) should be named in the T5 fair-trials-controls-and-placebos brief as already used, so that unit keeps to Lind. Scene reuse only: a toy car on a ramp (9b05eb0ae2) also appears in T1 pushes-pulls-and-gravity and T2 measuring-like-a-scientist, on different facts. Spelling is mixed across the bank ('fertilizers' in 545107792f, 'fertiliser' in caring-for-air-water-and-soil and the watershed unit); the lead may want one form."}

@@ -1,0 +1,248 @@
+{
+ "unit": "plates-at-work",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "Geologists bolt GPS receivers to solid bedrock on two neighbouring plates and check where each one sits, year after year. The readings show the two plates steadily moving apart. How far does a typical plate move in a year?",
+   "answer": "A few centimetres",
+   "choices": [
+    "A few centimetres",
+    "Less than a millimetre",
+    "A few metres",
+    "A few hundred metres"
+   ],
+   "context": "Most plates move a few centimetres a year, from about 1 to 10, roughly as fast as fingernails grow. That is far too slow to feel, but it adds up: at 5 centimetres a year, a plate travels 50 kilometres in a million years.",
+   "facts": [
+    "F3",
+    "M4"
+   ],
+   "grade_note": "Seventh-grade plate tectonics teaches that plates move slowly, a few centimetres a year, and that GPS measures it."
+  },
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "Earth's great plates are slabs of rock, many of them wider than a continent and roughly 100 kilometres thick. Every one of them is on the move, and they have been moving for many millions of years. What keeps them moving?",
+   "answer": "Slow churning of hot and cold mantle rock",
+   "choices": [
+    "Slow churning of hot and cold mantle rock",
+    "Earthquakes shoving them along, jolt by jolt",
+    "The Moon's pull raising tides in the rock",
+    "Earth's spin flinging them toward the equator"
+   ],
+   "context": "Heat from deep inside Earth, mostly from radioactive atoms and heat left over from its birth, keeps the solid rock of the mantle churning very slowly, hot rock rising and cooler rock sinking. A plate's old, cold edge sinking back into the mantle is part of that churning, and its weight drags the rest of the plate along: geologists count this pull the strongest force on a plate, and the push from the high mid-ocean ridges a much smaller one. Earth's spin and the Moon's tides are far too weak to shift a plate, and earthquakes do not move plates; they happen because moving plates stick at their edges and then slip.",
+   "facts": [
+    "F1",
+    "F4",
+    "F5",
+    "F6",
+    "F27",
+    "F28"
+   ],
+   "grade_note": "Seventh grade teaches that slow, heat-driven currents in the mantle move the plates."
+  },
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "Off the coast of a continent, a plate of ocean floor and the plate that carries the continent push against each other. The ocean plate bends down under the continent's edge and slides deep into the mantle, while the continent rides over it. Why does the ocean plate go under?",
+   "answer": "Its rock is denser than the continent's rock",
+   "choices": [
+    "Its rock is denser than the continent's rock",
+    "It is thicker and heavier than the continent",
+    "The weight of the sea above presses it down",
+    "It is hotter and softer than the continent"
+   ],
+   "context": "The rock of an ocean plate is denser than the lighter rock of a continent, and it grows colder and denser still as it ages, so it sinks into the mantle while the continent rides high. Ocean crust is in fact thinner than a continent's, and the water above it is not what drags it down. Where it bends down, the sea floor drops into a deep trench.",
+   "facts": [
+    "F1",
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "Seventh grade teaches that where an ocean plate meets a continent, the denser ocean plate is the one that sinks."
+  },
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "Far out in an ocean, a long, curved chain of volcanic islands rises from the sea, and many of its volcanoes are active, all along its length. Beside the chain, the sea floor plunges into a trench many kilometres deep. What is going on deep under the islands?",
+   "answer": "One plate is sinking beneath another",
+   "choices": [
+    "One plate is sinking beneath another",
+    "Two plates are pulling apart",
+    "A plate is passing over a hot spot",
+    "Two plates are sliding past each other"
+   ],
+   "context": "Where one ocean plate sinks beneath another, its edge bends down into a deep trench, and water it carries down helps the hot rock above it melt. The melted rock rises to build a curved chain of volcanoes beside the trench, called an island arc. A chain made over a hot spot is different: its volcanoes grow older along the chain, and the youngest, at one end, erupt the most.",
+   "facts": [
+    "F11",
+    "F13",
+    "F14",
+    "F19"
+   ],
+   "grade_note": "Seventh grade teaches that where one plate dives under another, a deep trench forms with a chain of volcanoes beside it."
+  },
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "Two plates, each carrying a continent, close in on each other for millions of years. At last the ocean that lay between them is gone, and continent meets continent. What forms where they meet?",
+   "answer": "A range of high, folded mountains",
+   "choices": [
+    "A range of high, folded mountains",
+    "A deep trench as one continent sinks",
+    "A long chain of active volcanoes",
+    "A long fault where one slides past the other"
+   ],
+   "context": "Continental rock is too light to sink deep into the mantle, so neither continent goes under; instead the crust crumples, folds and stacks up until it is about twice its usual thickness, raising high mountains. With no plate sinking, no trench forms and the volcanoes of the old ocean die out, and the two plates keep pressing head-on rather than sliding past. The Himalayas rose this way, and they are still being pushed higher today.",
+   "facts": [
+    "F11",
+    "F12",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "Seventh grade teaches that colliding continents build mountain ranges (TEKS 7.10B: mountain building)."
+  },
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "Down the middle of an ocean floor runs a long chain of underwater mountains, the longest mountain chain on Earth. Along its crest, two plates move apart a little more every year. What fills the space between them as they part?",
+   "answer": "Magma, which hardens into new sea floor",
+   "choices": [
+    "Magma, which hardens into new sea floor",
+    "Seawater, which leaves a deep, open crack",
+    "Mud and sand that drift down from above",
+    "Broken rock that tumbles from both edges"
+   ],
+   "context": "As the plates part, hot mantle rock rises and partly melts, and the magma fills the crack and hardens into new ocean crust, so the ridge is where sea floor is made. The ridge stands high because its new rock is still hot and swollen, not because plates squeeze it up.",
+   "facts": [
+    "F7",
+    "M3"
+   ],
+   "grade_note": "Seventh grade teaches that magma rising where plates spread apart makes new sea floor at the mid-ocean ridges."
+  },
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "On land, a plate has begun to split in two. A long valley has sunk between great cracks in the ground, and earthquakes shake it and volcanoes erupt along it. Suppose the splitting goes on for millions of years. What will the valley become?",
+   "answer": "The floor of a new ocean",
+   "choices": [
+    "The floor of a new ocean",
+    "A deep trench where a plate sinks",
+    "A range of high, folded mountains",
+    "A fault where the halves slide past"
+   ],
+   "context": "As the two halves pull apart, the valley floor sinks lower until the sea floods in, and magma wells up to make new ocean floor between them, as at a mid-ocean ridge. The Red Sea is a young ocean opening this way, and the rift valleys of East Africa may one day become one. A trench forms only where a plate sinks, and folded mountains only where plates push together.",
+   "facts": [
+    "F7",
+    "F8"
+   ],
+   "grade_note": "Seventh grade teaches that plates spreading apart open new ocean basins (TEKS 7.10B: ocean basin formation)."
+  },
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "New sea floor forms all the time along the ridges where plates pull apart, and it has been forming there for many millions of years. How does Earth make room for all that new rock?",
+   "answer": "Old sea floor sinks back into the mantle",
+   "choices": [
+    "Old sea floor sinks back into the mantle",
+    "Earth slowly swells larger to make room",
+    "The crust everywhere is stretched thinner",
+    "Waves grind the old sea floor into sand"
+   ],
+   "context": "Where plates meet, old sea floor sinks back into the mantle at the trenches, keeping pace with the new floor made at the ridges, so Earth's surface stays the same size. Some geologists once argued that Earth must be swelling like a balloon, but satellite measurements in 2011 found no growth beyond about a tenth of a millimetre a year, too small to tell from none at all.",
+   "facts": [
+    "F9",
+    "F10"
+   ],
+   "grade_note": "Seventh grade teaches that crust made at the ridges is destroyed where plates sink, so the plates recycle the sea floor."
+  },
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "Two plates meet along a great fault on land, where they slide past each other. A fence built straight across the fault stood unbroken for years. Then, in one great earthquake in 1906, its two halves were shifted about 2.6 metres apart. Why did the ground move so far at once?",
+   "answer": "The fault stuck while stress built, then slipped",
+   "choices": [
+    "The fault stuck while stress built, then slipped",
+    "The plates stood still for years, then lurched ahead",
+    "Rising magma below pushed the two sides apart",
+    "A great hollow deep underground caved in"
+   ],
+   "context": "The plates keep moving a few centimetres a year, but friction locks the fault, so the rock on each side slowly bends and stores energy, like a stick bent in two hands. When the stress grows too great, the fault slips all at once and the rock snaps back, and that sudden jolt is an earthquake. Harry Fielding Reid worked this out from the way the ground had moved in the 1906 earthquake.",
+   "facts": [
+    "F16",
+    "F17",
+    "F18",
+    "M5"
+   ],
+   "grade_note": "Seventh grade teaches that plates sliding past each other cause earthquakes along faults, where stress builds and is suddenly released."
+  },
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "Far out in an ocean, a chain of volcanic islands stretches for thousands of kilometres. The plate beneath it moves slowly toward the north-west, over a hot spot deep in the mantle that stays nearly still. Which island of the chain is the youngest?",
+   "answer": "The one at the south-east end",
+   "choices": [
+    "The one at the south-east end",
+    "The one at the north-west end",
+    "The one in the middle of the chain",
+    "All of them are about the same age"
+   ],
+   "context": "A hot spot builds a volcano on the plate above it, and the moving plate then carries that volcano away toward the north-west while a new one grows over the hot spot. So the youngest island lies at the south-east end, and each island farther north-west is older and more worn down, until the oldest have sunk beneath the waves. In the Hawaiian chain a new volcano is already growing under the sea, about 35 kilometres south-east of the island of Hawaii.",
+   "facts": [
+    "F19",
+    "F20",
+    "F30"
+   ],
+   "grade_note": "Seventh grade teaches that a hot spot builds a chain of volcanic islands as a plate moves over it (TEKS 7.10B: hot spots)."
+  },
+  {
+   "tier": 3,
+   "topic": "plates-at-work",
+   "question": "Geologists mark the world's strong earthquakes over many years as dots on a world map, and its active volcanoes as triangles. The marks are not scattered evenly. Most crowd into long, narrow belts that wind across the globe. What do these belts trace?",
+   "answer": "The edges of Earth's plates",
+   "choices": [
+    "The edges of Earth's plates",
+    "The edges of the continents",
+    "Rivers of magma under the crust",
+    "Wrinkles where a cooling Earth shrinks"
+   ],
+   "context": "Plates move as rigid slabs, so most of their grinding, sinking and pulling apart happens at their edges, and that is where most earthquakes and volcanoes are; about 81 percent of the largest earthquakes strike in the belt around the Pacific. Many coasts, such as those of the Atlantic, lie inside a plate and are quiet. Geologists of the 1800s explained mountain belts as wrinkles on a cooling, shrinking Earth, like the skin of a drying apple, but young mountain belts, like the earthquake belts, follow the plates' edges instead.",
+   "facts": [
+    "F21",
+    "F22",
+    "F23",
+    "F29",
+    "M1",
+    "M2"
+   ],
+   "grade_note": "Seventh grade teaches that most earthquakes and volcanoes happen near plate boundaries."
+  }
+ ],
+ "revised": {
+  "d8c219c10d": {
+   "old_hash": "d8c219c10d",
+   "why": "Fact-check error: the context called the sinking edge a mere helper to deep hot currents, but the sources rank slab pull the largest force (about 70 percent) and ridge push small; the key's 'currents of hot rock deep in the mantle' also painted the old conveyor-belt picture. Per the fact-check's fix the key is now 'Slow churning of hot and cold mantle rock' (rising hot rock and sinking cold plate edges), and the context makes the sinking edge's pull the strongest force and the ridges' push a much smaller one (F27, sourced now). Judge (low): 'Heat from the Sun warming the rock of the crust' was dead for anyone who met T2 earths-layers' deep-mine question; replaced with the cause-and-effect reversal 'Earthquakes shoving them along, jolt by jolt' (F28, USGS). Stem unchanged, so the hash is the same."
+  },
+  "20b877c08a": {
+   "old_hash": "20b877c08a",
+   "why": "Judge (medium): two wrong choices were ruled out by the stem ('A deep trench in the sea floor' by 'the ocean ... is gone', 'A wide valley splitting the land' by 'close in on each other'). Per the judge's fix the choices are now the subduction and transform mix-ups the stem does not rule out: 'A deep trench as one continent sinks', 'A long chain of active volcanoes', 'A long fault where one slides past the other'; the key gains 'folded' to keep the four parallel. The context now says why each is wrong and, per the fact-check's optional tightening, 'too light to sink deep into the mantle'. Stem unchanged, so the hash is the same."
+  },
+  "afa5130880": {
+   "old_hash": "6669574224",
+   "why": "Judge (medium): the stem laid out the whole age pattern, so the next island followed by continuing the sequence, and two wrong choices were dead. Per the judge's fix the stem now gives the cause (the plate moving north-west over a hot spot that stays nearly still) and asks which island is the youngest, so the student must apply the hot-spot idea; the north-west lure catches the idea that new land forms at the front of the moving plate, and 'All of them are about the same age' is the island-arc pattern. The stem no longer names a speed, which would have given away 6f7a39a3c4. Fact-check uncertain (Haleakala on Maui counts as active): the stem no longer says only the end island is active (F30, sourced now)."
+  },
+  "71cb543305": {
+   "old_hash": "51db9da9bd",
+   "why": "Fact-check uncertain: 'the belts follow the plates' edges instead', said of mountain belts, was too broad, since old ranges such as the Appalachians now sit inside plates; it now says young mountain belts, like the earthquake belts, follow the plates' edges (F29, sourced now). Judge (low, clarity): 'the world's strong earthquakes of many years' now reads 'over many years'. Key and choices unchanged."
+  }
+ },
+ "added": {},
+ "dropped": [],
+ "lead_edits": [
+  {
+   "old_hash": "93a2a5cd45",
+   "new_hash": "93a2a5cd45",
+   "change": "context: \"only the youngest volcanoes, at one end, are active\" -> \"its volcanoes grow older along the chain, and the youngest, at one end, erupt the most\"",
+   "why": "card writer: the Haleakala correction (F30) retired the old wording"
+  }
+ ]
+}

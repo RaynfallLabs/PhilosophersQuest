@@ -1,0 +1,57 @@
+{"unit": "redis-jars-and-life-from-life",
+ "questions": {
+  "fc6f2ddcaa": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "Answer known without the unit. All three wrong choices are forms of spontaneous generation (wheat turning into mice, sweat turning wheat into mice, mice formed from warm air), which any 7th grader today rejects on sight, so only the key is live and it is everyday common sense (mice come in for food). It also asks the same fact as f58e287a4e: an old recipe 'worked' because its food drew in living animals.",
+     "fix": "Keep the recipe as the scene and ask for the idea itself, which no stem in the unit names though it is the scope's first line: 'Jan Baptist van Helmont, a Flemish doctor and chemist, wrote a recipe for making mice: a dirty shirt and some grains of wheat, left together in a pot for 21 days. Aristotle had taught that some insects and eels arise from rotting matter and mud. What is the old idea behind both called?' Key: 'Spontaneous generation'. Lures: 'Metamorphosis' (one thing changing its form into another, as wheat into mice seems to), 'Decomposition' (the rot), 'Fermentation' (a word the chemists of his day used for many such changes; the reviser should check any claim about van Helmont's own wording before using it). Context: the idea that living things arise from lifeless matter with no parents, taught for about two thousand years; the open pot simply gave mice food and shelter."}
+   ]},
+  "80d5f6bf48": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem names the solution. It gives both halves of Redi's reasoning, flies settling before every crop of maggots and 'later the maggots turned into flies of those same kinds', and the key is the one choice that puts the flies first. A student who never heard of Redi chains the two clues to 'from the flies'. 'They form from the meat's own juices in the heat' also repeats the rot lure, so the wrong choices offer only two ideas.",
+     "fix": "Cut 'and later the maggots turned into flies of those same kinds' from the stem (keep it in the context), so the stem gives only flies settling first, which the rot lure ('They grow from the rot that also draws the flies') explains as well. Replace the juices lure with 'They come from seeds of life carried on the summer air', a wrong idea that reaches outside the meat, as the key does."}
+   ]},
+  "dd5bdf54d9": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Maggots in the sealed flasks, none in the open ones' is not live: no theory, old or new, predicts it, so three choices work. ('Maggots in all eight' is the honest spontaneous-generation prediction and stays.)",
+     "fix": "Replace with 'Maggots in the open flasks, a few in the sealed ones', a leaky-seal result that sits close to what Redi saw (a maggot now and then at the lip, outside the neck)."}
+   ]},
+  "61e3234197": {"verdict": "ok",
+   "issues": []},
+  "cf4c2577aa": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "Its opening, 'To let air reach his meat while keeping flies away', is the key of 61e3234197 (the sealed flasks shut out the air), so a player who meets this question first is handed that one.",
+     "fix": "Open with 'Francesco Redi next set meat and fish in a large vessel and covered it with very fine gauze.' The gauze's job is plain to a 7th grader without the stem saying it."}
+   ]},
+  "e694b5cc8d": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'A second run of the very same sealed test' is ruled out by the stem itself, which says these flasks were left open. On the control dispute: the stem and key never use the word 'control', the key ('A check that the meat could breed maggots') holds whichever jar a textbook labels the control, and the context attributes the label ('Many textbooks call...'). Neither this question nor any other in the unit leans on which jar is the control.",
+     "fix": "Replace with 'A way to draw the flies away from the sealed flasks', a reading a student who does not know what a comparison group is for may well take."}
+   ]},
+  "f58e287a4e": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'It brought the dead flies back to life' is not live. The stem's 'did only one thing' also signals a humble role, which strikes Kircher's own claim ('It turned the dead flies into tiny worms') for any reader who sees that Redi was disagreeing, leaving the key and 'It fed tiny worms hidden in the dead flies'. The fact is the same as fc6f2ddcaa's (the recipe's food drew in living animals); the fix there clears that.",
+     "fix": "Replace the back-to-life lure with 'It kept the dead flies soft and moist', a second humble role that also fits 'only one thing'."},
+    {"axis": "voice", "severity": "low",
+     "what": "'a famous German priest and scholar': 'famous' is a puff word the voice rule avoids.",
+     "fix": "'a German priest and scholar'."}
+   ]},
+  "0029ce1bed": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's contrast sets up the key: microscopes revealed life 'far too small for the eye', and the key is 'His experiments looked only at creatures big enough to see', the stem's words turned round. The other three lures are fair, and 'proved wrong by later scientists' is a good one.",
+     "fix": "Stem: 'Then microscopes revealed tiny living things swarming in drops of water and broth, and some naturalists held that these arose by themselves.' Choices in one shape: key 'He had watched only for maggots and flies'; lures 'He had kept his flasks for only a few weeks', 'He had been shown wrong by later naturalists', 'He had used meat, which tiny life cannot feed on'."}
+   ]},
+  "2edc116739": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two lures are claims nobody made: 'the longer he boiled it, the more life grew' and 'only mutton broth ever grew such life'. The second is weak (he made no such test and the stem gives no other broth), so the key, which rests on the everyday knowledge that boiling kills germs, stands out. The key itself is the one a teacher would mark right.",
+     "fix": "Replace 'Because only mutton broth ever grew such life' with 'Because the tiny life grew faster than any parents could breed', a wrong idea a 7th grader can believe (microbes breed very fast)."}
+   ]}
+ },
+ "unit_notes": "Nine questions cover the scope: the old idea (fc6f2ddcaa, f58e287a4e), Redi's suspicion (80d5f6bf48), the open and sealed flasks (dd5bdf54d9), the air objection (61e3234197), the gauze (cf4c2577aa), the comparison the open flasks gave (e694b5cc8d), the microbes reopening the question (0029ce1bed) and Needham's broth (2edc116739). Two of them ask one fact (fc6f2ddcaa and f58e287a4e: an old recipe's food drew in living animals); the fix on fc6f2ddcaa re-aims it at the name of the idea, which no stem in the unit yet teaches. The control dispute: no question leans on which jar is 'the control' (see e694b5cc8d). Lower and higher tiers: T5 how-germs-were-proven keys Pouchet's air objection answered by Pasteur's swan neck (d7a385bddf) and the broken neck (38f2341e28); here Pasteur is named once, in passing, in 0029ce1bed's context, and 61e3234197 and cf4c2577aa ask Redi's own air objection and gauze, an earlier experiment and a different fact. Needham and Spallanzani appear in no final. Leeuwenhoek, keyed in T2 the-microscope-and-cell-theory, is neither named nor asked (0029ce1bed says only 'microscopes'). T3 two-ways-to-make-offspring's mould from airborne spores is not re-asked. The retelling caution M7 is kept: no question says flies laid eggs on the gauze. Common to the unit: a modern 7th grader already knows that maggots come from flies, so a question whose key is Redi's result can be answered from today's knowledge. The fixes above make the wrong choices strong enough that the student must think about the experiment. Voice clean apart from 'famous' in f58e287a4e: no second person, no exclamation, no date first, no singular they."}

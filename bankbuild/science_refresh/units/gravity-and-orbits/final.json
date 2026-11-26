@@ -1,0 +1,221 @@
+{
+ "unit": "gravity-and-orbits",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "gravity-and-orbits",
+   "question": "Isaac Newton pictured a cannon on a very high mountain, firing level, and supposed that Earth had no air to slow its balls. Each ball arcs down to the ground, and the faster it is fired, the farther it flies before it lands. Fired fast enough, Newton reasoned, a ball would travel right round Earth and back to the mountain. Why does that ball never reach the ground on the way?",
+   "answer": "It falls, but Earth's surface curves away beneath it",
+   "choices": [
+    "It falls, but Earth's surface curves away beneath it",
+    "It moves too fast for gravity to pull it down",
+    "The force of the blast keeps holding it up",
+    "Earth's spin keeps flinging it back upward"
+   ],
+   "context": "An orbit is a fall that never ends: the ball drops toward Earth all the time, but it moves forward so fast that the round Earth curves away beneath it as quickly as it falls, and no force from the blast is needed to keep it moving. Just above the surface, with no air in the way, that takes about 7.9 kilometres a second. Newton described the cannon in his Principia of 1687 and drew it in A Treatise of the System of the World, printed in 1728, after his death.",
+   "facts": [
+    "F8",
+    "F9",
+    "F10",
+    "F22",
+    "F26"
+   ],
+   "grade_note": "Seventh grade explains an orbit as forward motion bent by gravity, and Newton's cannonball is the classic picture of it."
+  },
+  {
+   "tier": 3,
+   "topic": "gravity-and-orbits",
+   "question": "Skylab, the first American space station, circled high above Earth with no crew aboard after 1974. Thin traces of air still brushed against it and slowed it a little on every lap. What would that slowing do to Skylab in time?",
+   "answer": "It would sink lower and fall back to Earth",
+   "choices": [
+    "It would sink lower and fall back to Earth",
+    "It would drift away into deep space",
+    "It would slow to a stop and hang in place",
+    "It would climb slowly to a higher orbit"
+   ],
+   "context": "Moving a little more slowly, Skylab fell toward Earth a little faster than the round Earth curved away beneath it, so it sank into thicker air that slowed it still more, and on 11 July 1979 it plunged back through the atmosphere, scattering pieces across the Indian Ocean and Western Australia. NASA had hoped the new Space Shuttle could boost it higher, but the Shuttle was not ready in time. The International Space Station sinks in the same way, about 2 kilometres a month, so docked spacecraft fire their engines to push it back up.",
+   "facts": [
+    "F11",
+    "F12",
+    "F10"
+   ],
+   "grade_note": "Seventh grade applies the idea that an orbit needs forward speed: a satellite slowed by thin air cannot stay up."
+  },
+  {
+   "tier": 3,
+   "topic": "gravity-and-orbits",
+   "question": "Aboard the International Space Station, about 400 kilometres above Earth, an astronaut lets go of her pen. It does not drop to the floor but hangs in the air beside her. Why does the pen float?",
+   "answer": "She, the pen and the station all fall together",
+   "choices": [
+    "She, the pen and the station all fall together",
+    "There is no gravity at all out in space",
+    "Earth's pull is far too weak that high up",
+    "The station's walls shut out Earth's pull"
+   ],
+   "context": "The station, the astronaut and everything aboard are falling toward Earth all the time and missing it, as Newton's cannonball does, and since they all fall together, the pen never drops toward the floor. Earth's pull is still strong up there, and nothing can shut gravity out, which is why NASA calls the phrase zero gravity misleading.",
+   "facts": [
+    "F15",
+    "F13",
+    "F4",
+    "M1",
+    "M2"
+   ],
+   "grade_note": "Seventh grade explains weightlessness in orbit as free fall, against the common idea that there is no gravity in space."
+  },
+  {
+   "tier": 3,
+   "topic": "gravity-and-orbits",
+   "question": "Earth's pull grows weaker with distance from its centre, which lies about 6,400 kilometres beneath the ground. The International Space Station circles about 400 kilometres above the ground. How strong is Earth's pull up where the station flies?",
+   "answer": "Nearly as strong as on the ground",
+   "choices": [
+    "Nearly as strong as on the ground",
+    "About half as strong as on the ground",
+    "Only a small fraction as strong",
+    "Too weak to be measured at all"
+   ],
+   "context": "Climbing 400 kilometres takes the station only a little farther from Earth's centre, from about 6,400 to about 6,800 kilometres, so the pull there is still about nine-tenths as strong as on the ground. Many students guess the pull is nearly gone that high up, but it takes a far longer trip to weaken it much.",
+   "facts": [
+    "F14",
+    "F13",
+    "F1",
+    "M2"
+   ],
+   "grade_note": "Seventh grade applies the rule that gravity weakens with distance, and the space station is the usual case for how little 400 kilometres changes it."
+  },
+  {
+   "tier": 3,
+   "topic": "gravity-and-orbits",
+   "question": "Two bowling balls, a heavy one and a light one, rest side by side on a rack at a bowling alley, a hand's width apart. Does gravity pull the two balls toward each other?",
+   "answer": "Yes, but far too weakly to notice",
+   "choices": [
+    "Yes, but far too weakly to notice",
+    "Yes, but only the heavy ball pulls the light one",
+    "No, only planets and stars have gravity",
+    "No, Earth's pull blocks out their pull"
+   ],
+   "context": "Every mass pulls on every other mass, and two masses pull on each other equally hard; the pull grows with the masses, so two bowling balls tug on each other far too feebly to feel or to roll them, and only a mass as huge as Earth's gives a pull anyone can feel. Henry Cavendish measured a pull like this between lead balls in 1797 and 1798, with a balance so delicate that he shut it in a case and read it through a telescope. Nothing blocks gravity, not even the whole Earth beneath the balls.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F25",
+    "M5"
+   ],
+   "grade_note": "Seventh-grade standards teach that gravity attracts every pair of masses, not only planets, and that small masses pull too weakly to notice."
+  },
+  {
+   "tier": 3,
+   "topic": "gravity-and-orbits",
+   "question": "An astronaut on the Moon carries a backpack that would be a heavy load on Earth, yet it rides lightly on his back. The Moon pulls on things at its surface only about one-sixth as hard as Earth does. Why is the Moon's pull so much weaker than Earth's?",
+   "answer": "It has far less mass than Earth",
+   "choices": [
+    "It has far less mass than Earth",
+    "It has no air to press things down",
+    "It spins far more slowly than Earth",
+    "It has no magnetic field like Earth's"
+   ],
+   "context": "Gravity grows with mass, and the Moon has only about one-eighty-first of Earth's mass; being smaller also puts its surface nearer its centre, so the pull there comes out at about a sixth of Earth's. The Moon has almost no air and no magnetic field like Earth's, and it turns only about once a month, but none of these makes gravity, though many students mix gravity up with air pressure, spin and magnetism.",
+   "facts": [
+    "F16",
+    "F17",
+    "F1",
+    "M4"
+   ],
+   "grade_note": "Seventh grade applies the rule that more mass means a stronger pull to explain why things weigh less on the Moon."
+  },
+  {
+   "tier": 3,
+   "topic": "gravity-and-orbits",
+   "question": "Suppose you carry a rock to the Moon, with a pan balance and a spring scale. The balance matches the rock against metal masses on its other pan; the scale reads how hard the rock presses down on a spring. On Earth both showed the rock to be 2 kilograms. How do their readings on the Moon compare with those on Earth?",
+   "answer": "The balance reads the same; the scale reads less",
+   "choices": [
+    "The balance reads the same; the scale reads less",
+    "The scale reads the same; the balance reads less",
+    "Both read less than they did on Earth",
+    "Both read the same as they did on Earth"
+   ],
+   "context": "On the Moon the rock and the metal masses are all pulled about six times less, so the pans still balance at 2 kilograms: the rock's mass, its amount of matter, has not changed. The spring scale measures weight, the pull of gravity on the rock, so on the Moon it reads only about a sixth as much, about a third of a kilogram.",
+   "facts": [
+    "F18",
+    "F16",
+    "M7"
+   ],
+   "grade_note": "Seventh grade teaches that mass stays the same everywhere while weight, gravity's pull, changes from world to world."
+  },
+  {
+   "tier": 3,
+   "topic": "gravity-and-orbits",
+   "question": "A spacecraft coasts from Earth toward the Moon with its engines off. Both bodies pull on it the whole way, Earth backward and the Moon forward, and Earth has about 81 times the Moon's mass. Where on the trip are the two pulls on the spacecraft equally strong?",
+   "answer": "Much nearer the Moon than Earth",
+   "choices": [
+    "Much nearer the Moon than Earth",
+    "Much nearer Earth than the Moon",
+    "Exactly halfway between the two",
+    "Nowhere, since Earth always pulls harder"
+   ],
+   "context": "Wherever the two distances are alike, Earth's far greater mass gives it the stronger pull, so the Moon's pull can match it only where the spacecraft is much closer to the Moon, about nine-tenths of the way there. Halfway, Earth still pulls about 81 times as hard as the Moon; past the balance point, the Moon's pull wins and draws the spacecraft in.",
+   "facts": [
+    "F19",
+    "F1",
+    "F16"
+   ],
+   "grade_note": "Seventh-grade standards ask students to reason with both rules at once: the pull grows with mass and weakens with distance."
+  },
+  {
+   "tier": 3,
+   "topic": "gravity-and-orbits",
+   "question": "A space probe leaves Earth for Mars and coasts on, month after month, farther and farther from home. What happens to Earth's pull on the probe as the distance grows?",
+   "answer": "It weakens and weakens but never ends",
+   "choices": [
+    "It weakens and weakens but never ends",
+    "It weakens, then ends once past the Moon",
+    "It ends as soon as the probe leaves the air",
+    "It weakens until the Sun's pull blocks it out"
+   ],
+   "context": "Gravity has no edge: Earth's pull fades as the distance grows but reaches out without end, so even far along the road to Mars the probe still feels a faint tug from Earth. Far out the Sun's pull is much the stronger, but it does not block Earth's; the two pulls simply add together. The air has nothing to do with it, since Earth's pull holds the Moon far beyond the air.",
+   "facts": [
+    "F2",
+    "F1",
+    "F4",
+    "F25",
+    "M3",
+    "M5"
+   ],
+   "grade_note": "Seventh grade teaches that gravity weakens with distance, against the common idea that it stops at the edge of the air."
+  }
+ ],
+ "revised": {
+  "7e39da1be9": {
+   "old_hash": "dffb2bf283",
+   "why": "Fact-check uncertain: 'a mountain so tall that its top rose above the air' is the popular paraphrase; Newton's Treatise has a high mountain and asks us to suppose 'that there is no air about the earth'. The stem now says that (F22, new). Judge (low, tell): 'It rises up out of the reach of Earth's pull' went against the stem's level-fired balls; it is now 'The force of the blast keeps holding it up', the old impetus idea (F26, new), and the context says no such force is needed. The stem's 'curves down' is now 'arcs down', so the key's 'curves away' no longer echoes it. Key unchanged."
+  },
+  "5006395924": {
+   "old_hash": "2405044eb3",
+   "why": "Judge (medium, tell): 'went on circling Earth for years after' its crew left, with 'What became of Skylab?', said the circling ended and killed two lures. Per the judge's fix it is now a prediction ('What would that slowing do to Skylab in time?'), and 'It kept circling at the same height' is now 'It would climb slowly to a higher orbit' (a higher orbit is slower, which tempts the half-informed). Key and facts unchanged (F10-F12)."
+  },
+  "55b679a601": {
+   "old_hash": "ba425a35f7",
+   "why": "Judge (medium, tell): 'Yes, hard enough to roll them together' was dead (the stem says the balls rest), which left the key the only 'yes'. The balls are now a heavy one and a light one, and the lure is 'Yes, but only the heavy ball pulls the light one' (the one-way-pull confusion; F25, new: the pulls are equal and opposite), a second hedged yes as the judge proposed. Key and the other lures unchanged."
+  },
+  "f43e30f497": {
+   "old_hash": "25e7a9510b",
+   "why": "Judge (medium, tell): 'How does Earth's pull ... change' ruled out 'It stays just as strong the whole way' by its own words. Per the judge's fix the question is now 'What happens to Earth's pull ...' and that lure is now 'It weakens until the Sun's pull blocks it out' (the blocking misconception, M5); the context says the pulls add, never block (F4, F25). Key unchanged."
+  }
+ },
+ "added": {
+  "818c17116e": "Replaces dcf7603ffd, per the judge's fix: a T3 step beyond T1's 'the Sun's gravity holds the planets', applying 'more mass, stronger pull' to say why the Sun, not giant Jupiter, rules. Every choice is true of the Sun and only one is the reason. Facts F20 (the Sun's 99.86 percent), F1 (the pull grows with mass), F23 (the Sun about 1,048 Jupiters, NASA) and F24 (NASA: dozens of moons round Jupiter)."
+ },
+ "dropped": [
+  {
+   "old_hash": "dcf7603ffd",
+   "question": "Late in life, Isaac Newton told William Stukeley that the idea of gravity first came to him in the garden of his family home, as he watched an apple fall. Newton went on to set the falling apple beside the Moon, which circles Earth month after month. What did he conclude about the Moon?",
+   "why": "Judge (high, grade): re-asks lower tiers. T1 the-sun-and-its-planets keys 'The Sun's gravity' as what holds Mars on its path, and T2 hypothesis-theory-and-law has Newton's law reach 'from an apple and Earth to the Sun and its planets', so the one gravity choice was the answer. The fact-check also found the place of the apple pinned on the wrong witness (Conduitt, not Stukeley). Replaced, per the judge's fix, by a new question on why the Sun's pull rules the planets (its mass)."
+  },
+  {
+   "old_hash": "818c17116e",
+   "question": "Jupiter is by far the biggest planet, and its gravity holds dozens of moons on their paths around it. Yet Jupiter circles the Sun, as every other planet does. Why is it the Sun's pull that holds all the planets?",
+   "why": "failed the re-check: Tell: 'Jupiter is by far the biggest planet, and its gravity holds dozens of moons' sets up bigger body, stronger hold, so a student who has never learned that the pull grows with mass reasons 'the Sun is bigger still' and picks the only choice about amount; 'far hotter' and 'shines with its own light' are one weak idea told twice. It also re-keys the same unit's f7b8ed41c6 rule (the Moon's pull is weaker because it has less mass). Facts check: the Sun 99.86 percent of the mass, about 1,048 Jupiters; Jupiter's many moons. Not a re-ask of T1 00c04492bd (that keys the Sun's gravity, which this stem gives)."
+  }
+ ]
+}
