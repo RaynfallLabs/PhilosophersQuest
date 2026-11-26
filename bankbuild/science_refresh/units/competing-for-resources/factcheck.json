@@ -1,0 +1,357 @@
+{
+ "unit": "competing-for-resources",
+ "questions": {
+  "ddd0d033b9": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: two living things compete for a resource when there is not enough of it for both",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Competition_(biology)",
+     "note": "Grokipedia: an interaction between individuals or species that share a limited resource; resources must be 'in short supply relative to demand'."
+    },
+    {
+     "claim": "Wrong: 'Whenever they both need the same one' (no competition when supply is ample)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Competition_(biology)",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'Only when they are of different kinds' (intraspecific competition exists and is generally the stronger)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Competition_(biology)",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'Only when the resource is food' (water, space, light, mates also)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Competition_(biology)",
+     "note": ""
+    },
+    {
+     "claim": "Stem list of resources (food, water, light, space, shelter, mates)",
+     "result": "ok",
+     "source": "https://k12.libretexts.org/Bookshelves/Science_and_Technology/Life_Science_for_Middle_School_(CK-12)/12%3A_Ecology/12.07%3A_Competition",
+     "note": "Grokipedia names food, water, space, mates, and light for plants; shelter is a standard middle-school resource."
+    },
+    {
+     "claim": "Context: members of one species compete too, often hardest of all, since they need exactly the same things",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Competition_(biology)",
+     "note": "Intraspecific competition generally stronger because individuals 'share identical resource requirements'."
+    }
+   ]
+  },
+  "c61a38fc6c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: yes, they compete, since each seed one eats is lost to the other (exploitation competition needs no meeting)",
+     "result": "ok",
+     "source": "https://portal.weecology.org/publication/brown1977competition",
+     "note": "Brown and Davidson (Science 1977): extensive diet overlap and reciprocal increases when one taxon is excluded. Grokipedia: exploitative competition is indirect, without physical confrontation."
+    },
+    {
+     "claim": "Wrong choices: 'No, different times of day'; 'No, never fight'; 'Yes, only when they meet'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Competition_(biology)",
+     "note": "All three contradict exploitation competition; none defensible."
+    },
+    {
+     "claim": "Stem: ants gather seeds by day, rodents by night",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Harvester_ant",
+     "note": "Harvester ant foraging 'predominantly diurnal'; kangaroo rats forage nocturnally, seeds about 80% of diet (https://grokipedia.com/page/Kangaroo_rat)."
+    },
+    {
+     "claim": "Stem: 'the same kinds of seeds'",
+     "result": "ok",
+     "source": "https://portal.weecology.org/publication/brown1977competition",
+     "note": "Diets overlap extensively; later work (Davidson, Inouye and Brown 1984) found the two groups lean to some extent toward different seed sizes, so 'the same kinds' is a fair grade-level simplification of 'overlapping'."
+    },
+    {
+     "claim": "Context: ant colonies rose 71 percent where rodents were fenced out; rodents increased where ants were removed",
+     "result": "ok",
+     "source": "https://portal.weecology.org/publication/brown1979experimental/",
+     "note": "Brown, Davidson and Reichman 1979 abstract: ant colonies 'increased 71%' on rodent-exclusion plots; rodents 'increased 20% in numbers'. Optional nuance: over later years ants on the rodent-removal plots fell back, as large-seeded plants crowded out the small-seeded ones ants eat (Davidson, Inouye and Brown 1984, Ecology 65:1780). The context's statement is still true of the 1979 result; adding 'at first' would be more exact."
+    }
+   ]
+  },
+  "3f423b4a77": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "United States Coast Guard released 29 reindeer on St. Matthew Island in 1944",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/St._Matthew_Island",
+     "note": "29 yearlings (24 female, 5 male) on 20 August 1944; also https://www.gi.alaska.edu/alaska-science-forum/when-reindeer-paradise-turned-purgatory-0 (barged from Nunivak)."
+    },
+    {
+     "claim": "No predators there",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/St._Matthew_Island",
+     "note": "'without predators or hunting pressure'; the Coast Guard men left without shooting any (Alaska Science Forum)."
+    },
+    {
+     "claim": "About 6,000 by 1963",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/St._Matthew_Island",
+     "note": "About 6,000 in summer 1963 (Klein's count)."
+    },
+    {
+     "claim": "Fed on lichen through each winter and ate much of it away",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/St._Matthew_Island",
+     "note": "Overgrazing reduced lichen cover; Klein: 'They were really hammering the lichens'."
+    },
+    {
+     "claim": "Key: it crashed as nearly all of them starved",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/St._Matthew_Island",
+     "note": "Fell about 99 percent, 'primarily due to starvation exacerbated by the severe winter'. The 2005 reanalysis (Miller, Barry and Calvert, Rangifer 25:185) blames mainly the weather, but the animals still died for want of food they could not reach, so the key survives."
+    },
+    {
+     "claim": "Wrong choices: levelled off at 6,000; shrank slowly; kept growing",
+     "result": "ok",
+     "source": "https://septentrio.uit.no/index.php/rangifer/article/view/1783",
+     "note": "The crash was abrupt, in the single winter 1963-64; none of the three is defensible."
+    },
+    {
+     "claim": "Context: deep snow covered the last of the lichen in the hard winter of 1963 to 1964; the reindeer starved",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/St._Matthew_Island",
+     "note": "Grokipedia: the winter 'brought deep snow cover that prevented access to remaining lichens'; Alaska Science Forum: weather records show extreme cold and snowfall."
+    },
+    {
+     "claim": "Context: by 1966 only 42 were left",
+     "result": "ok",
+     "source": "https://www.gi.alaska.edu/alaska-science-forum/when-reindeer-paradise-turned-purgatory-0",
+     "note": "Klein counted 42 in summer 1966 (41 females, 1 male, no fawns)."
+    },
+    {
+     "claim": "Context: 'The herd had grown far past the island's carrying capacity.'",
+     "result": "uncertain",
+     "source": "https://septentrio.uit.no/index.php/rangifer/article/view/1783",
+     "note": "Klein (1968) and Grokipedia (overshoot of an estimated 5 to 10 animals per square mile) support it, but Miller, Barry and Calvert (2005), 'Their demise was not nigh', argue the herd was still growing with healthy calf ratios and that 'the winter weather was the all-important factor'. Stated flatly as fact, it takes one side of a live dispute. Fix: 'Most ecologists judge that the herd had grown far past what the island could feed for long, though one later study blamed the savage winter most of all.' Or keep the sentence and add the dissent as a clause."
+    }
+   ]
+  },
+  "da0f557cab": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: some small birds nest only in holes; in woods short of holes, nest boxes led to more of them breeding",
+     "result": "ok",
+     "source": "https://we.copernicus.org/articles/6/37/2006/",
+     "note": "Web Ecology 2006: earlier nest-box studies showed nest sites 'are in short supply and limit the populations of several small passerines'; boxes 'increased the density of breeding Great Tits in patches of all sizes'. Newton's review (Biological Conservation 70:265, 1994) reaches the same conclusion; Brawn and Balda (Condor 1988) found the effect on some Arizona plots, not all."
+    },
+    {
+     "claim": "Key: a limiting factor",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Limiting_factor",
+     "note": "Grokipedia: any environmental condition, resource or biological interaction that restricts growth."
+    },
+    {
+     "claim": "Wrong: carrying capacity (a population size, not a resource); population density; habitat",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/45-3-environmental-limits-to-population-growth",
+     "note": "None names a scarce resource that holds numbers down."
+    },
+    {
+     "claim": "Context: 'A limiting factor is the resource in shortest supply'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Limiting_factor",
+     "note": "Too narrow as a definition. Grokipedia includes 'any environmental condition, resource, or biological interaction' (temperature, predation, disease, parasitism); CK-12's middle-school text: 'resources or other factors in the environment'. A child taught this definition will miss predators and disease, standard 6th-grade limiting factors. Fix: 'A limiting factor is whatever holds a population down, very often the resource in shortest supply, and it caps the population however much of everything else there is.' (CK-12: https://k12.libretexts.org/Bookshelves/Science_and_Technology/Life_Science_for_Middle_School_(CK-12)/12%3A_Ecology/12.05%3A_Section_5-)"
+    },
+    {
+     "claim": "Context: more places to nest meant more birds; carrying capacity is the largest population a place can support, set by its limiting factors",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/45-3-environmental-limits-to-population-growth",
+     "note": "Newton (1994, as summarised) adds that numbers rise after boxes go up, then level off as other limits take over: consistent."
+    }
+   ]
+  },
+  "662d59af5e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Wheat takes nitrogen and phosphorus from the soil",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Plant_nutrition",
+     "note": "Mineral macronutrients absorbed from the soil through the roots."
+    },
+    {
+     "claim": "Key: phosphorus, the scarcer (relative to need), sets growth; extra nitrogen does not help",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Liebig's_law_of_the_minimum",
+     "note": "Growth is controlled 'not by the aggregate availability of essential resources' but by the scarcest. The stem says 'too little phosphorus', so 'scarcer' reads as scarcer relative to need. Co-limitation (Grokipedia's criticism) applies when both are near-limiting, not here, where nitrogen is plentiful."
+    },
+    {
+     "claim": "Wrong: nitrogen since more plentiful; both together since total has risen; nitrogen since more added",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Liebig's_law_of_the_minimum",
+     "note": "Excess non-limiting nutrients cannot make up for the limiting one."
+    },
+    {
+     "claim": "Context: Justus von Liebig made this idea famous in 1840 (no claim he first stated it)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Liebig's_law_of_the_minimum",
+     "note": "Grokipedia: first formulated by Carl Sprengel in 1828; Liebig 'popularized it in 1840' (Organic Chemistry in its Application to Agriculture and Physiology). Van der Ploeg, Boehm and Kirkham (Soil Sci. Soc. Am. J. 63:1055, 1999) say Sprengel's doctrine reappears in Liebig's books of 1840 and 1855. 'Made this idea famous' is safe; it does not credit Liebig with the idea. (Wikipedia's 'Sprengel (1840)' is a slip against that paper's 1828.)"
+    },
+    {
+     "claim": "Context: often pictured as a barrel holding water only up to its shortest stave",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Liebig%27s_law_of_the_minimum",
+     "note": "'Liebig's barrel' (the drawing credited to Dobenecks); 'often pictured' makes no claim about who drew it."
+    }
+   ]
+  },
+  "eefa6dc754": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: carrying capacity is the largest population a home can support year after year",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Carrying_capacity",
+     "note": "Grokipedia 'sustain indefinitely'; OpenStax: 'the maximum population size that a particular environment can support'."
+    },
+    {
+     "claim": "Key: growth slows down and levels off near carrying capacity",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/45-3-environmental-limits-to-population-growth",
+     "note": "'as resources begin to become limited, the growth rate decreases', levelling off: the S-shaped logistic curve."
+    },
+    {
+     "claim": "Wrong: speeds up; same speed; stops at once then crashes to zero",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/45-3-environmental-limits-to-population-growth",
+     "note": "None is the usual pattern; 'usually' in the stem keeps the overshoot case (St. Matthew) from making the last one defensible."
+    },
+    {
+     "claim": "Context: members compete harder as the home fills; S-shaped curve",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/45-3-environmental-limits-to-population-growth",
+     "note": "'as population size increases, this competition intensifies'."
+    },
+    {
+     "claim": "Context: a population that shoots past carrying capacity shrinks back but does not usually die out",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/45-3-environmental-limits-to-population-growth",
+     "note": "Harbor seals exceed carrying capacity 'for short periods of time' and oscillate around it. 'Usually' is needed and present (St. Matthew's herd did die out by the 1980s)."
+    }
+   ]
+  },
+  "c295f68b8b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: sunlight is the resource in shortest supply on a thick forest floor in summer",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Limiting_factor",
+     "note": "'Light availability often limits understory plant growth in dense forests'; Wikipedia Understory: 'Only a small percentage of light penetrates the canopy'."
+    },
+    {
+     "claim": "Wrong: water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Understory",
+     "note": "Forest floors are typically moist; tree roots can compete for water in some forests, but light is the standard and much the scarcer resource in a thick forest. Not defensible as the shortest."
+    },
+    {
+     "claim": "Wrong: warmth",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Understory",
+     "note": "Summer is stated; warmth is not the limit."
+    },
+    {
+     "claim": "Wrong: carbon dioxide",
+     "result": "ok",
+     "source": "https://publish.csiro.au/bt/BT00054",
+     "note": "CO2 is if anything higher near the forest floor, released by soil and root respiration (several studies)."
+    },
+    {
+     "claim": "Context: in summer often less than 7 in 100 of the sunlight reaches the forest floor, sometimes less than 1",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Understory",
+     "note": "'In dense forests, summer light levels at the forest floor often fall between 0.7% and 7% of full sunlight.'"
+    },
+    {
+     "claim": "Context: water usually the limiting factor in a desert; forest-floor plants must be shade-tolerant",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Desert_ecology",
+     "note": "Chronic water scarcity limits desert productivity; Wikipedia Understory: understory plants 'must be shade tolerant'."
+    }
+   ]
+  },
+  "6116b787c3": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: crowded carrots grow smaller, from sharing light, water and nutrients",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Thinning",
+     "note": "Overcrowding brings competition for 'light, water, and soil nutrients' and 'stunted individual development'; UF/IFAS: crowded vegetables 'compete with each other for water, nutrients, and sunlight'; Extension: not thinning carrots 'can result in limited root growth because of crowding'."
+    },
+    {
+     "claim": "Wrong: larger from wind shelter; the same since each makes its own food; larger from roots loosening soil",
+     "result": "ok",
+     "source": "https://extension.illinois.edu/gardening-site/carrots",
+     "note": "Extension advice is to thin to 1 to 2 inches apart; none of the three is defensible."
+    },
+    {
+     "claim": "Stem: carrots spaced a few centimetres apart",
+     "result": "ok",
+     "source": "https://extension.illinois.edu/gardening-site/carrots",
+     "note": "One seedling per 1 to 2 inches (2.5 to 5 cm) for larger varieties."
+    },
+    {
+     "claim": "Context: crowded carrots also twist around one another",
+     "result": "ok",
+     "source": "https://extension.illinois.edu/gardening-site/carrots",
+     "note": "'Twisting and intertwining result from seeding too thickly and inadequate thinning of seedlings.'"
+    },
+    {
+     "claim": "Context: making its own food does not spare a plant from competing, 'because it needs light, water and nutrients to make it'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Plant_nutrition",
+     "note": "Defensible (nitrogen and magnesium are needed to build chlorophyll), but photosynthesis's inputs are light, water and carbon dioxide, and listing soil nutrients as what food is made from brushes the 'plants eat soil' misconception. Optional tightening: 'because it needs light and water to make it, and soil nutrients to grow.'"
+    }
+   ]
+  },
+  "0ed417e97f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: two kinds of paramecium eat the same bacteria; each does well alone in a tube",
+     "result": "ok",
+     "source": "https://archive.org/stream/struggleforexist00gauz/struggleforexist00gauz_djvu.txt",
+     "note": "Gause, The Struggle for Existence (1934): P. aurelia and P. caudatum fed on bacteria (Bacillus pyocyaneus) in centrifuge tubes of 5 cc medium; each grew to a stable level alone (also https://grokipedia.com/page/Competitive_exclusion_principle)."
+    },
+    {
+     "claim": "Key: together, one kind dies out and the other thrives",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Competitive_exclusion_principle",
+     "note": "P. aurelia 'drove P. caudatum extinct'; Gause: competition 'has always resulted in one species being entirely displaced by another'."
+    },
+    {
+     "claim": "Wrong: share evenly; both die out; both do as well as alone",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Competitive_exclusion_principle",
+     "note": "Gause's coexisting pair (P. bursaria) ate mainly yeast, not the same bacteria, so the stem's 'same bacteria' keeps 'share' wrong."
+    },
+    {
+     "claim": "Context: Georgy Gause ran this test in 1934",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Competitive_exclusion_principle",
+     "note": "Published 1934 (the book, and Gause, Nastukova and Alpatov 1934)."
+    },
+    {
+     "claim": "Context: two kinds needing exactly the same scarce resource cannot share it for long; kinds side by side often use different foods or places",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Competitive_exclusion_principle",
+     "note": "Competitive exclusion and niche partitioning. Wikipedia notes Gause could keep P. caudatum alive by changing conditions; 'for long' and the stem's fixed lab set-up keep the claim true."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Nine questions checked. One error: da0f557cab's context defines a limiting factor as 'the resource in shortest supply', too narrow (predators, disease and temperature are limiting factors too). One uncertain: 3f423b4a77's context states flatly that the reindeer herd had grown far past the island's carrying capacity, which Miller, Barry and Calvert (Rangifer 2005) dispute; every figure (29, 1944, Coast Guard, about 6,000 in 1963, winter 1963-64, 42 in summer 1966) checks out. Liebig: the context says he 'made this idea famous in 1840', which is safe (Sprengel stated it in 1828). Brown, Davidson and Reichman 1979: 71 percent more ant colonies confirmed; ants later fell back on rodent-free plots (Davidson et al. 1984), so 'at first' is an optional nuance. Nest boxes: the writer's Newton 1994 citation is real (Biological Conservation 70:265); Web Ecology 2006 confirms boxes raised breeding Great Tit density."
+}

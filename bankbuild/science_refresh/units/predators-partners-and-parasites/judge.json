@@ -1,0 +1,50 @@
+{"unit": "predators-partners-and-parasites",
+ "questions": {
+  "0787ef480b": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem gives the three names, and two of them carry the sorting rule in plain English: a 6th grader knows a parasite lives off another and harms it, and 'mutual' means both ways. A student who has never met symbiosis can read 'helped, harmed or neither' straight off 'parasitism' and 'mutualism'. The three lures are good. Only the stem gives the key away.",
+     "fix": "Take the names out of the stem: 'When two kinds of living things live closely together for a long time, biologists call it symbiosis, and they sort every case into one of three kinds. What decides which kind a case belongs to?' Keep the key and the three lures. The context and the other questions teach the names."}
+   ]},
+  "394f2f8b27": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The scene is almost a copy of the T1 roots-stems-leaves-and-flowers question whose key is 'Pollination': a bee drinks nectar, pollen dusts its body and rubs off on the next flower. The fact asked here is new (the kind of interaction, mutualism), so this is not a grade failure, but the player sees the same picture twice.",
+     "fix": "Change the picture but keep the plant's gain unstated, so the student still has to know that pollination helps the plant: 'A honeybee crawls into a cherry blossom for its nectar, brushing against the blossom's dusty yellow tips, then flies on to the next cherry tree. What kind of interaction is this between the bee and the tree?'"}
+   ]},
+  "2cce2fac53": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'They carry oxygen into the blood' is not a live lure. The T1 body unit teaches that the blood itself carries oxygen, and bacteria in the gut doing that job is absurd to a 6th grader, so only three choices stand.",
+     "fix": "Replace it with 'They squeeze the food along the gut'. That is the job of the gut's own muscles, close to digestion, and false for the bacteria."}
+   ]},
+  "9ff60d589e": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'a green alga' (with 'grey-green paint') all but says photosynthesis. A student who has never heard of a lichen gets the key from facts the bank has already taught: green living things and algae make food from sunlight (T1 food-chains-and-food-webs, T1 how-plants-make-food), and fungi cannot (T2 one-cell-or-many, 'They feed on food made by others'). The lichen fact itself is never needed, and the T2 point, what each partner gives the other, is only half tested.",
+     "fix": "Ask the half that needs the lichen fact: 'A lichen spreads like a crust of grey-green paint over a bare rock. It is a fungus and a green alga living together as one, and each gives the other something. What does the fungus give the alga?' Key 'Shelter, and water it soaks up'. Lures 'Food it makes from sunlight', 'Seeds that carry it to new rocks', 'Oxygen it gives off for the alga'."}
+   ]},
+  "0a83478dc5": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Sugar made from sunlight' is weak. The stem puts the bacteria inside lumps on the roots, underground in the dark, so a careful reader strikes it, even though it is the plant's half of the trade and a fair swap of direction.",
+     "fix": "Use a sugar lure the darkness does not strike: 'Sugar broken out of rotting leaves'. Bacteria as decomposers is a T1 idea, so it is live, and it is false here."}
+   ]},
+  "7c2cad3847": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The clause 'but never grow into the tree' strikes 'Parasitism' outright. A student who can read 'mutual' and 'parasite' in the other names then gets the key by elimination. Some such detail is needed to make the case classifiable, so this is polish.",
+     "fix": "Keep parasitism live: 'Its roots cling to the bark and soak up the rain and mist that run down it.' Drop 'but never grow into the tree'. The key still follows, because nothing is taken from inside the tree, and the 'a plant on a tree is a parasite' belief (M2) becomes a real choice."}
+   ]},
+  "e97034add7": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "Easy for the grade. That a tick is a parasite is everyday knowledge, and 'while the deer walks on' strikes Predation, the one lure the 6th-grade point (a parasite is not a predator) depends on.",
+     "fix": "End the stem at '...and then it drops to the ground, swollen.' The student must then know that a predator kills its prey and a parasite's host lives on. The context already teaches this."}
+   ]},
+  "f63eecbef4": {"verdict": "ok", "issues": []},
+  "efe145d475": {"verdict": "ok", "issues": []},
+  "b3da8b296b": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Overlap check against every unit with a final.json and the T2 drafts: no question asks the same fact as another unit at any tier. Nearest neighbours: (1) Q2 (394f2f8b27) nearly copies the scene of T1 roots-stems-leaves-and-flowers' pollination question. The fact differs (the kind of interaction, not the process); the fix is at Q2. (2) Q4 (9ff60d589e, lichen) can be answered from one-cell-or-many ('fungi feed on food made by others') plus the T1 producer facts; the fix is at Q4. (3) Q5 (0a83478dc5, nitrogen from the air) sits beside one-cell-or-many's Venus flytrap ('Nitrogen that is scarce in its soil') and how-plants-make-food ('Carbon dioxide gas', with 'Nitrogen gas' as a lure). The facts differ and nothing contradicts, but the bank now has three plant-and-nitrogen items; keep them apart in wording. (4) Q7 (e97034add7, tick: parasite, not predator) is beside T1 decomposers-and-recycling-matter's 'Scavengers' item, which has Predators and Parasites as lures. Different fact. (5) Q3 (2cce2fac53) uses stomach acid and bile as lures; the-bodys-defences Q3 has stomach acid as its key. No shared key. No overlap with food-chains-and-food-webs, ecosystems-living-and-nonliving, the-bodys-main-organs, how-germs-were-proven, competing-for-resources, variation-and-survival or populations-communities-ecosystems. Lane: every question asks the kind of interaction or its why, and none tells a creature's life story. The lynx and the hare serve the predator-prey cycle, not their natural history. Balance: four of ten items are mutualism (bee, gut, lichen, legume), and three of those take the same 'what does partner A give B' form. Commensalism has one item, and the tapeworm in the scope and F13 (why a parasite seldom kills its host quickly) are unused. Consider turning Q3 or Q5 into an F13 question, e.g. 'A tapeworm can live for years in a dog's gut. Why does it seldom kill the dog?' Key 'A dead host would end its food and home'. Competition is in G6.L5 but is rightly left to competing-for-resources (its two-paramecia item), so there is no gap. Two items share the lynx-hare case (Q9 the lag, Q10 why the prey survive); the facts differ, which is acceptable. No singular they, no second person, no exclamation marks, no stance."
+}

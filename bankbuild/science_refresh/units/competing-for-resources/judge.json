@@ -1,0 +1,54 @@
+{"unit": "competing-for-resources",
+ "questions": {
+  "ddd0d033b9": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Only when the resource is food' is struck out by the stem itself, which lists six resources and asks when living things compete for 'one of these'; 'Only when they are of different kinds' is weak (any child has seen two dogs fight over one bone). Only the key and the 'whenever they both need it' misconception are live.",
+     "fix": "Replace the two weak lures with 'Whenever they live side by side in one place' and 'Only when both of them are animals' (the belief that plants do not compete, which Q8 later answers)."}
+   ]},
+  "c61a38fc6c": {"verdict": "ok", "issues": []},
+  "da0f557cab": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'A scarce resource that holds a population's size down' names the solution twice: 'holds down' is 'limits', and calling the thing a 'resource' strikes out all three lures by category (a carrying capacity and a population density are sizes, a habitat is a place). Carrying capacity, the strongest confusion, is never live.",
+     "fix": "'Ecologists have a name for whatever is in shortest supply in a place and so decides how many of a kind can live there, as the nest holes did. What is it?' Key 'A limiting factor'; lures 'A carrying capacity', 'A habitat', 'A niche'."}
+   ]},
+  "662d59af5e": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The nitrogen, since it is more plentiful' is weak (plenty is never why something sets a limit). The other two lures are the real 'more fertiliser, more growth' and 'the total counts' misconceptions.",
+     "fix": "Replace it with 'Neither, since wheat makes its own food from light' (the belief that a food-maker needs nothing from the soil)."}
+   ]},
+  "eefa6dc754": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's definition ('the largest population that home can support year after year') already implies the numbers level off, so half the key is read off the stem, and 'It speeds up faster than ever' is weak. Its lure 'crashes to zero' also reads against Q6's key (the reindeer herd crashed), a mixed signal across the unit.",
+     "fix": "'As the population nears that size, how does its growth usually change?' Key 'It slows down before it gets there'; lures 'It keeps its speed until it hits that size', 'It speeds up until it hits that size', 'It shoots past that size, then dies out'."}
+   ]},
+  "3f423b4a77": {"verdict": "ok", "issues": []},
+  "c295f68b8b": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'in summer' strikes out 'Warmth', and 'Carbon dioxide' is not live (it is in the air everywhere), so only Sunlight and Water stand, and 'the floor of a thick forest' all but says shade.",
+     "fix": "See the grade fix; at the least, drop 'in summer' and replace 'Warmth' and 'Carbon dioxide' with 'Soil nutrients' and 'Room to spread roots'."},
+    {"axis": "grade", "severity": "medium",
+     "what": "Too young for 6th grade as asked: that a thick forest's floor is shady is everyday knowledge a 4th grader has. The 6th-grade point, light as the limiting factor that shapes a forest-floor plant's way of life, is not tested.",
+     "fix": "Ask the why: 'In a thick forest of oaks and maples, many small wildflowers sprout, bloom and set seed in a few weeks of early spring, then die back by summer. Why do they grow so early in the year?' Key 'To catch the sunlight before the trees' leaves open'; lures 'To drink the snowmelt before the soil dries', 'To bloom before the summer heat sets in', 'To flower while the air is still cool and damp'."}
+   ]},
+  "6116b787c3": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'far too thickly' passes judgment in the stem, so both 'Larger' lures are struck out; only 'Smaller' and 'The same' stand.",
+     "fix": "'A gardener sows carrot seeds thickly, and the seedlings come up packed close together along the row.'"}
+   ]},
+  "0ed417e97f": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "RULING: competitive exclusion leans to 7th grade (CK2023 places Ecosystem Dynamics at G7; the principle is usually named in high school), but it passes at 6th grade as asked: the stem asks only the plain outcome in one tube, defines a paramecium, and keeps Gause and the principle's name in the context; CK-12 Life Science for Middle School teaches the outcome, and the map's G6.L4 is competition for a scarce resource.",
+     "fix": "None required; keep Gause out of the stem."},
+    {"axis": "tell", "severity": "low",
+     "what": "'Both kinds do well, just as they did alone' is struck out by 'a limited supply of food'.",
+     "fix": "Replace it with 'The larger kind eats the smaller kind'."}
+   ]}
+ },
+ "unit_notes": "Counts: 4 ok, 5 revise, 0 drop; 0 high, 6 medium. OVERLAPS (checked against every final.json, at every tier): none asks a finished unit's fact. ecosystems-living-and-nonliving T1 Q4 lists the same needs (food, water, hiding places, room) to define a habitat; Q1 uses the list as a premise and asks when competition happens: distinct. food-chains-and-food-webs T1 Q8 (more rabbits, less grass) is a food-web knock-on, not competition: distinct. how-plants-make-food T1 (light, water, carbon dioxide) underlies Q7 and Q8 premises; Q7 as written is close to a T1-level fact, see its grade issue. earths-resources T1 uses 'resource' in the human sense: no overlap. Within the batch: one-cell-or-many's flytrap (nitrogen scarce in its soil) and Q4 (scarce phosphorus caps wheat) share soil nutrients but ask different facts; the paramecium of Q9 and one-cell-or-many's cilia question ask different facts. Within the unit: Q3, Q4 and Q7 are all limiting factor but distinct (the name; the scarcest, not the total; light on a forest floor). Q5 and Q6 send a mixed signal (Q5's 'crashes' lure against Q6's crash key); Q5's fix removes it, and Q6's context should say why this herd crashed instead of levelling off (it ate its winter lichen far faster than lichen regrows). RULINGS: Gause (Q9) passes at 6th grade, see its issue. St. Matthew Island (Q6) is a named place used as evidence; the question asks what overshoot past carrying capacity does, reasoned from the stem, not the island or the reindeer's habits: fine. The desert ants and rodents (Q2) and hole-nesting birds (Q3) are unnamed kinds used as evidence: fine. Scope coverage is full except mates, which is optional. FUTURE UNITS: predators-partners-and-parasites (T2) lists competition and must not re-ask Q1, Q2 or Q9; how-evolution-works (T5) lists competition as a condition of selection. No voice slips, no singular they, no stance."}

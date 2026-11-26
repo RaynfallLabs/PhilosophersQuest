@@ -61,3 +61,17 @@ M5 A push is stored up in the thing pushed and carries it along. RESPeCT: "An ob
 M6 Earth's spin holds things in place (F19, Stover and Saunders via SCIMAP).
 
 M7 A blown-up balloon rises because the air inside is light (author's reading: a helium balloon does float, F12; no survey found that quotes this belief for breath-filled balloons).
+
+## Added in the revision (2026-11-26)
+
+F21 When one of two people on skates or skateboards pushes the other, both move apart; when one pulls on a rope the other only holds, both move toward each other, because the other must apply an equal and opposite force at the same moment. https://web.physics.ucsb.edu/~lecturedemonstrations/Composer/Pages/12.57.html (UCSB demo 12.57, "Skateboard push-off and pull-together": "Have one student push against the other, and they both move apart"; with a rope, one student pulls and both move toward each other while the other keeps holding on; the other student "must simultaneously apply an equal and opposite force"); https://www.alloprof.qc.ca/en/students/vl/physics/newton-s-third-law-of-motion-p1090 ("The left skater (Skater A) pushes the right skater (Skater B) to the right." "Both skaters will start moving.")
+
+F22 The two forces of a pair are perfectly simultaneous; the words "action" and "reaction" wrongly suggest that one comes after the other. https://en.wikipedia.org/wiki/Reaction_(physics) ("The terms 'action' and 'reaction' have the misleading suggestion of causality"; "It is therefore easy to think of the second force as being there because of the first, and even happening some time after the first. This is incorrect; the forces are perfectly simultaneous"); https://grokipedia.com/page/Reaction_(physics) ("the second body simultaneously exerts a force"; modern interpretations reject "any notion of one preceding or dominating the other")
+
+F23 Forces between the parts of one body (a system) cancel, so a swimmer's arms cannot move her by pulling on her own body; what moves a swimmer is the water's push on her, the partner of her push on the water. https://openstax.org/books/college-physics-2e/pages/4-4-newtons-third-law-of-motion-symmetry-in-forces ("Thus internal forces (between components of a system) cancel."; a swimmer pushing off the pool wall: "The wall has exerted an equal and opposite force back on the swimmer."); F7
+
+M8 The reaction comes after the action, in answer to it (F22: Wikipedia names it; a search also turned up PMT Education's note that students think the reaction acts after the action has taken place).
+
+M9 A body moves itself with its own muscles, without needing anything outside it to push on (the judge's reading of the classic belief; no survey quoted). F23 answers it.
+
+M10 Two equal pulls on a rope balance, so nothing moves (M1 carried over from the T1 tug-of-war, `pushes-pulls-and-gravity`, where balanced pulls leave the rope still). F21 answers it: the pulls act on two different skaters.

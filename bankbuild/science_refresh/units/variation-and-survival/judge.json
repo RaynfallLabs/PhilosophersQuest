@@ -1,0 +1,71 @@
+{"unit": "variation-and-survival",
+ "questions": {
+  "deb3f89395": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "Everyday knowledge answers it: the key is the only pair a child already calls by one name ('two dogs'), and every child knows mixed-breed dogs have puppies. A player who has never heard the breeding test gets it, so the question tests nothing a 6th grader learns.",
+     "fix": "See the grade fix (re-key to the term). If the breeding test is kept instead, add same-name look-alike lures so 'one name' no longer picks the key: replace 'An alligator and a crocodile' with 'An African elephant and an Asian elephant' and 'A rabbit and a hare' with 'A brown rat and a black rat'."},
+    {"axis": "grade", "severity": "medium",
+     "what": "The asked fact is the biological species test, which the map puts with classification (G7.L7, classifying-living-things T3) and speciation by interbreeding (how-evolution-works T5); the unit's own fact, variation within a species, is only in the context. The scope's core term 'variation' is never named in any stem or answer of the unit.",
+     "fix": "'A Chihuahua can weigh under 3 kilograms and a Great Dane over 70, yet both belong to one species, and their crossbred puppies grow up to have puppies of their own. What do biologists call differences like these among members of one species?' Key 'Variations'; lures 'Adaptations', 'Mutations', 'Acquired traits'."}
+   ]},
+  "d5370b4b79": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the only built-in cause against three situational ones, in a unit about inherited variation; a test-wise player leans to it. The tongue-map lure is a strong, real misconception, so the question still discriminates. Close to born-knowing-or-learned T1 (Ana's eye colour from her birth parents), but the new 6th-grade angle (a hidden variation within one species) is distinct.",
+     "fix": "None required; if revised, replace 'What each student ate for breakfast' with a stronger situational lure such as 'How strong the chemical was on each strip'."}
+   ]},
+  "7f773b129c": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "Two choices are environmental (soil, sunlight), and picking soil over sunlight turns on hydrangea chemistry, one garden plant's own trait, not on the 6th-grade fact. A student who fully knows the unit's idea (a cutting has its parent's genes, so the change came from the surroundings) is still left guessing between soil and sun.",
+     "fix": "Replace 'Sunlight in the friend's garden' with a genetic confusion so the science decides: 'The cutting taking after an older parent plant'. Keep soil as the key and the aluminium in the context."}
+   ]},
+  "3ef04ff1d7": {"verdict": "drop",
+   "issues": [
+    {"axis": "other", "severity": "high",
+     "what": "Same fact as a finished unit: mendels-peas-and-inherited-traits (T3, final.json) asks of the blacksmith's forge-built strength 'How much ... does the boy inherit through his genes?' (None of it). Both ask that a difference gained from the surroundings or from life is not passed on. The fact is also echoed by born-knowing-or-learned T1 (Ana's scar) and adaptations-built-for-a-place T1 (swimming does not stretch toes into webs). No rewrite keeps this question's fact without the clash.",
+     "fix": "Drop it; the unit keeps nine. If a tenth is wanted, write it on a scope line no question covers yet (tolerance of cold or heat as a variation), not on inherited-versus-acquired."}
+   ]},
+  "b49e0f9f17": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The brown soil slowly stains the green beetles' is the weakest lure; the other two are the real 'changes because it needs to' misconceptions.",
+     "fix": "'Each green beetle's young come out a little browner'."}
+   ]},
+  "6544f4dac6": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "Context: 'A year later' is about a year and a half (Donihue et al. 2020 resurveyed in April 2019); and 'The storms changed no lizard's feet' and the grip story are firmer than the authors, who call selection the best explanation and could not rule out alternatives (the fact-checker's error and hedge). The stem's 'best explains' is right.",
+     "fix": "'Most likely, lizards that already had bigger toe pads held on ... About a year and a half later, the survivors' young had toe pads just as big.'"}
+   ]},
+  "2275289699": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "medium",
+     "what": "Two defensible answers: while the heavy rains lasted, food was plentiful and finches of every beak bred well; the small-beak edge came as food grew short again with mostly small seeds left. So 'Thick- and thin-beaked birds alike' is defensible for 'now' as the stem reads.",
+     "fix": "'Then years of heavy rain cover the island in plants with small, soft seeds, and when the rains end, small, soft seeds are most of what is left to eat. Which birds now do best?'"},
+    {"axis": "other", "severity": "low",
+     "what": "The stem states adaptations-built-for-a-place T1's fact (a thick beak cracks hard seeds); the asked fact (the edge flips when the seeds change) is new, so this is not a re-ask.",
+     "fix": "None required."}
+   ]},
+  "982f79da27": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The dead had longer wings than the living' lets a careless reader pick 'shorter' by surface contrast, without the idea that the survivors pass short wings on. Acceptable: the 'longer' lure pulls the other way, and 'stayed the same length' catches the student who knows no single bird's wings change but misses inheritance.",
+     "fix": "None required."}
+   ]},
+  "fc10d61c5b": {"verdict": "ok", "issues": []},
+  "ba26e95a16": {"verdict": "revise",
+   "issues": [
+    {"axis": "fact", "severity": "medium",
+     "what": "Stem: 'a soil fungus called Panama disease'. Panama disease is the disease; the fungus is Fusarium oxysporum f. sp. cubense (the fact-checker's error too).",
+     "fix": "'In the 1950s Panama disease, caused by a fungus in the soil, swept through its plantations in Central America and wiped out huge stretches of them.'"},
+    {"axis": "tell", "severity": "medium",
+     "what": "All three lures are absolutes ('any fungus', 'every kind of plant', 'in a single day') that a test-wise player strikes out at once, and 'The fungus kills every kind of plant it meets' is silly. The key is the only non-absolute and the only one on the unit's theme.",
+     "fix": "Lures: 'The fungus was carried by the insects that visit banana flowers', 'The plants were too old to fight the fungus off', 'Banana plants have no defence against a fungus'."},
+    {"axis": "grade", "severity": "low",
+     "what": "The fact (a crop of genetic copies falls to one disease) is fine at 6th grade as the other side of TEKS 6.13C, but it is the planned T4 biodiversity-and-stability scope (monoculture, the potato famine) and leans on the T3 two-ways-to-make-offspring fact (shoots make identical copies).",
+     "fix": "Keep here; those later units must not re-ask it."}
+   ]}
+ },
+ "unit_notes": "Counts: 5 ok, 4 revise, 1 drop; 2 high, 5 medium. NATURAL SELECTION: not named anywhere; no 'selection', 'evolve', 'Darwin' or 'fittest' in any stem, choice or context. The idea is taught by cases only, as the scope requires. OVERLAPS (checked against every final.json): (1) Q4 (3ef04ff1d7) asks the same fact as mendels-peas-and-inherited-traits T3's blacksmith (an acquired difference is not inherited); drop it. (2) Q2 and Q3 sit close to born-knowing-or-learned T1 (Ana: eye colour inherited, scar not); acceptable as new cases with a 6th-grade angle (hidden inherited variation; same genes, different surroundings), but with Q4 gone two of nine still spend the unit on inherited-versus-environment, which is T1 and T3 ground; the unit's core (variation meeting a changed environment) is Q5-Q10. (3) Q7's stem restates adaptations-built-for-a-place T1's thick-beak fact; the asked fact is new. (4) Q9 and Q10 against ecosystems-living-and-nonliving T1 Q5 (an ecosystem with many kinds withstands drought or disease): that is variety of species, these are variation within one species or crop; distinct, keep. MISSING CORE: the term 'variation' is never named in a stem or answer; Q1's fix tests it. Q5-Q8 are four cases of one mechanism, but each asks a different sub-fact (the helpful variation is inherited; it was there before the change, and the biggest did not do best; the edge flips with conditions; predicting the direction from who died), so no duplicates. LANE RULINGS: the 2017 hurricane lizards (islands unnamed in the stem), the finches (Grants and Galapagos only in the context), the bridge swallows, ash dieback in Europe and the Gros Michel in Central America are each evidence for the general idea, and each question asks the science, not the creature or the place: fine. Q1's dog breeds are evidence for one species varying, not breed traits: fine on lane, but see its grade issue. Q3's hydrangea is the one case where the key turns on a named plant's own trait; see its fix. FUTURE UNITS: Q3 and Q10 (a cutting or a banana shoot is a genetic copy) lean on the T3 two-ways-to-make-offspring fact; Q10 is the T4 biodiversity-and-stability monoculture fact; the species test in Q1 belongs to T3 classifying-living-things and T5 how-evolution-works. No voice slips, no singular they, no stance."}

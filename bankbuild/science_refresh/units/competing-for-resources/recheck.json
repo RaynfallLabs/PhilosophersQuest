@@ -1,0 +1,48 @@
+{
+ "unit": "competing-for-resources",
+ "questions": {
+  "ddd0d033b9": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the food-only lure (struck out by the stem's own list) and the weak 'different kinds' lure are gone. 'Whenever they live side by side' and 'Only when they are of the same kind' are both live mix-ups, and both are wrong. Members of one species compete hardest, but different species compete too (Grokipedia). Key true: competition needs resources 'in short supply relative to demand'. 'Whenever they both need the same one' stays the main live misconception. Shelter as a resource is standard middle-school wording (CK-12). TEKS 6.12A / MS-LS2-1; no voice slips.",
+   "sources": [
+    "https://grokipedia.com/page/Competition_(biology)",
+    "https://k12.libretexts.org/Bookshelves/Science_and_Technology/Life_Science_for_Middle_School_(CK-12)/12%3A_Ecology/12.07%3A_Competition"
+   ]
+  },
+  "81c15c06af": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the stem no longer says 'resource' or a synonym of 'limit'. 'Anything, like those holes, that decides how many of a kind can live in a place' keeps carrying capacity live, since it sounds like 'how many can live', but carrying capacity is a size, not the thing that sets it. Habitat and niche are adjacent terms and wrong. Old fact error fixed: the context now defines a limiting factor broadly, as any resource, predator or disease that holds a population down (Grokipedia: 'any environmental condition, resource, or biological interaction'). Stem fact true: nest sites 'are in short supply and limit the populations of several small passerines', and boxes 'increased the density of breeding Great Tits' (Web Ecology 2006).",
+   "sources": [
+    "https://we.copernicus.org/articles/6/37/2006/",
+    "https://grokipedia.com/page/Limiting_factor",
+    "https://openstax.org/books/biology-2e/pages/45-3-environmental-limits-to-population-growth"
+   ]
+  },
+  "d49c93c84b": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the key no longer repeats the stem's definition (levelling off). It turns on growth slowing before the population reaches carrying capacity, which OpenStax supports: as resources become limited 'the growth rate decreases', giving the S-shaped curve. Lures wrong and live: keeps its speed, speeds up (the J-curve idea), and overshoot then dying out. 'Usually' in the stem keeps the overshoot case from making the last defensible, and OpenStax says overshooting populations oscillate around K. The old 'crashes to zero' lure is gone. Middle-school ecology (MS-LS2-1).",
+   "sources": [
+    "https://openstax.org/books/biology-2e/pages/45-3-environmental-limits-to-population-growth",
+    "https://grokipedia.com/page/Carrying_capacity"
+   ]
+  },
+  "3f423b4a77": {
+   "verdict": "pass",
+   "why": "Old uncertain claim fixed: the overshoot is no longer stated as settled. Klein's view (the herd outgrew its lichen) and the 2005 Rangifer view are both attributed by name. Miller, Barry and Calvert found the herd 'still fast-growing', calf ratios high, and 'the winter weather was the all-important factor'. Key holds on both views: Klein found from the bones that thousands starved, and deep snow kept the animals from 'any of their already depleted food resources' (Alaska Science Forum). Figures true: Coast Guard, 29 in 1944, about 6,000 in 1963, winter 1963-64, 42 in 1966. Stem and choices unchanged; no stance.",
+   "sources": [
+    "https://septentrio.uit.no/index.php/rangifer/article/view/1783",
+    "https://www.gi.alaska.edu/alaska-science-forum/when-reindeer-paradise-turned-purgatory-0",
+    "https://gi.alaska.edu/alaska-science-forum/bitter-weather-may-have-wiped-out-reindeer-0",
+    "https://grokipedia.com/page/St._Matthew_Island"
+   ]
+  },
+  "50e590b22d": {
+   "verdict": "pass",
+   "why": "Old tell fixed: 'far too thickly' is now 'thickly', so the stem passes no judgment and both 'Larger' lures stay live. Old context nit fixed: a plant needs light and water to make its food, and soil nutrients to grow. Key true: overcrowding brings competition for 'light, water, and soil nutrients' and 'stunted development' (Grokipedia Thinning). Illinois Extension thins carrots to 1 to 2 inches, which matches 'a few centimetres', and says twisting comes from 'seeding too thickly'. Lures wrong: wind shelter, 'each makes its own food' (the autotroph misconception), loosened soil. TEKS 6.12A.",
+   "sources": [
+    "https://grokipedia.com/page/Thinning",
+    "https://extension.illinois.edu/gardening-site/carrots"
+   ]
+  }
+ }
+}

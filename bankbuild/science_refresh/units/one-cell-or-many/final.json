@@ -1,0 +1,219 @@
+{
+ "unit": "one-cell-or-many",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "one-cell-or-many",
+   "question": "An amoeba lives by itself in a pond and does every job of life as one cell. A muscle cell taken out of a person's arm and left on its own soon dies. Why can the muscle cell not live alone?",
+   "answer": "It has no blood to bring it food and oxygen",
+   "choices": [
+    "It has no blood to bring it food and oxygen",
+    "It has no nucleus to direct its work",
+    "It has no mitochondria to release energy",
+    "It has no membrane to hold it together"
+   ],
+   "context": "In a many-celled body each cell does its own job and relies on the others: blood, pumped by the heart, brings every muscle cell its food and oxygen. A muscle cell has a membrane, several nuclei and thousands of mitochondria, so it lacks none of those. An amoeba must find its food and take in its oxygen all by itself.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "6th-grade units contrast one-celled organisms, which do every job themselves, with the specialised cells of a many-celled body, which cannot live on their own."
+  },
+  {
+   "tier": 2,
+   "topic": "one-cell-or-many",
+   "question": "Yeast lives wild in the soil and on the skins of fruit, in specks far too small to see. Under a microscope, each speck turns out to be a whole living thing made of a single cell. What is yeast?",
+   "answer": "A one-celled fungus",
+   "choices": [
+    "A one-celled fungus",
+    "A one-celled bacterium",
+    "A one-celled alga",
+    "A one-celled animal"
+   ],
+   "context": "Yeast is a fungus, kin to mushrooms and moulds, but it lives as single cells. Unlike a bacterium, each yeast cell has a nucleus; unlike an alga, it cannot make its own food; and no animal is made of only one cell.",
+   "facts": [
+    "F13",
+    "F8",
+    "F10",
+    "F20",
+    "M2"
+   ],
+   "grade_note": "6th grade sorts living things by one cell or many, and yeast is the standard example of a fungus that is a single cell."
+  },
+  {
+   "tier": 2,
+   "topic": "one-cell-or-many",
+   "question": "Some cells in the human body are up to a metre long, reaching from the lower back all the way down the leg to the foot. What job does one of these long cells do?",
+   "answer": "It carries signals along the leg",
+   "choices": [
+    "It carries signals along the leg",
+    "It shortens to pull on the bones",
+    "It carries blood down to the foot",
+    "It holds the leg's bones together"
+   ],
+   "context": "These are nerve cells, whose long, thin fibres carry signals between the spinal cord and the foot, so one cell can carry a signal the whole way. Muscle cells shorten to pull on bones, but even the longest falls far short of a metre; ligaments hold bones together, and blood flows in vessels built of many cells.",
+   "facts": [
+    "F5",
+    "F3",
+    "F6",
+    "F21"
+   ],
+   "grade_note": "6th-grade lessons on many-celled organisms teach that specialised cells have shapes that suit their jobs, and the long nerve cell is the classic case."
+  },
+  {
+   "tier": 2,
+   "topic": "one-cell-or-many",
+   "question": "As a human red blood cell matures in the bone marrow, it pushes out its nucleus and most of its other parts. What does the cell gain by losing them?",
+   "answer": "More room to carry oxygen",
+   "choices": [
+    "More room to carry oxygen",
+    "The power to divide faster",
+    "A longer life in the blood",
+    "A tougher, stiffer outer wall"
+   ],
+   "context": "Its empty space fills with haemoglobin, the protein that carries oxygen from the lungs to the body. With no nucleus, a red blood cell cannot divide and lives only about four months, and it has no wall at all: it is a soft disc that bends to squeeze through the tiniest blood vessels.",
+   "facts": [
+    "F7"
+   ],
+   "grade_note": "The red blood cell, built to carry oxygen, is one of the specialised cells a 6th grader meets, and its missing nucleus is the usual example of a cell shaped by its job."
+  },
+  {
+   "tier": 2,
+   "topic": "one-cell-or-many",
+   "question": "Euglena is a single cell that swims through ponds with a whip-like tail, and it has a red eyespot. When a jar of pond water is set beside a bright window, the Euglena soon crowd to the side nearest the glass. What does this behaviour suggest about Euglena?",
+   "answer": "It makes its own food from light",
+   "choices": [
+    "It makes its own food from light",
+    "It hunts prey that it can see",
+    "It seeks the warmth of the glass",
+    "It stays close to the others for safety"
+   ],
+   "context": "Euglena has green chloroplasts and makes its own food from light, so it swims to where the light is best; that makes it an autotroph, like a plant. Its eyespot only tells it which way the light lies and cannot see prey, and each cell steers toward the light by itself. In the dark, Euglena can take in food from the water instead.",
+   "facts": [
+    "F19",
+    "F8"
+   ],
+   "grade_note": "6th grade teaches that some single cells, such as one-celled algae, are autotrophs that make their own food, and Euglena swimming toward light is the textbook case."
+  },
+  {
+   "tier": 2,
+   "topic": "one-cell-or-many",
+   "question": "A Venus flytrap snaps the two halves of one leaf shut on a fly in a fraction of a second, then digests it over the next several days. What does the plant mainly get from the flies it catches?",
+   "answer": "Nitrogen that is scarce in its soil",
+   "choices": [
+    "Nitrogen that is scarce in its soil",
+    "Water that is scarce in its soil",
+    "Energy that its leaves cannot make",
+    "Oxygen that its leaves cannot take in"
+   ],
+   "context": "A flytrap is still an autotroph: its green leaves make its food from sunlight, and it can live without catching a single fly. It grows in wet, boggy ground poor in nitrogen and phosphorus, and the flies make up for what its roots cannot find.",
+   "facts": [
+    "F15",
+    "F16",
+    "F22",
+    "F8",
+    "M3"
+   ],
+   "grade_note": "Autotrophs that make their own food are 6th-grade content, and a plant that eats insects yet still makes its own food tests what the word really means."
+  },
+  {
+   "tier": 2,
+   "topic": "one-cell-or-many",
+   "question": "Naturalists counted mushrooms and moulds as plants for centuries. Biologists now give fungi a kingdom of their own, and they call every fungus a heterotroph. What does that word say about a fungus?",
+   "answer": "It takes in food made by other living things",
+   "choices": [
+    "It takes in food made by other living things",
+    "It makes its own food using the light of the Sun",
+    "It is built of many different kinds of cells",
+    "It feeds only on the remains of dead things"
+   ],
+   "context": "Heterotroph means 'other feeder': a fungus cannot make its own food and must take in food made by other living things, as animals do, while plants are autotrophs that make their own. Many fungi feed on dead remains, but others feed on living plants or animals, and many heterotrophs, such as bacteria, are single cells.",
+   "facts": [
+    "F9",
+    "F11",
+    "F12",
+    "F23",
+    "F1",
+    "M1"
+   ],
+   "grade_note": "6th grade classes living things as autotrophs or heterotrophs, and the word heterotroph, with fungi as the example that was long taken for a plant, is the scope's core term."
+  },
+  {
+   "tier": 2,
+   "topic": "one-cell-or-many",
+   "question": "A fuzzy mould spreads over a forgotten slice of bread, its fine threads growing down into the slice. How does the mould feed?",
+   "answer": "It digests the bread outside itself, then absorbs it",
+   "choices": [
+    "It digests the bread outside itself, then absorbs it",
+    "It makes its own food from light, like a plant",
+    "It feeds on water it draws from the damp air",
+    "It lives on food stored in the spore it grew from"
+   ],
+   "context": "The mould's threads pour digestive juices into the bread, break its starch into simpler food, and soak that food up. A fungus has no chlorophyll and cannot make food from light. Mould needs damp to grow, but water is not its food, and the tiny spore it grew from holds far too little to feed it.",
+   "facts": [
+    "F11",
+    "F14",
+    "F13"
+   ],
+   "grade_note": "That fungi cannot make their own food and instead absorb it, after breaking it down outside their bodies, is 6th-grade content on how fungi differ from plants."
+  },
+  {
+   "tier": 2,
+   "topic": "one-cell-or-many",
+   "question": "A paramecium is a single cell shaped like the sole of a slipper. It swims quickly through pond water, and when it bumps into something, it backs up and sets off another way. How does it move?",
+   "answer": "It beats thousands of tiny hairs",
+   "choices": [
+    "It beats thousands of tiny hairs",
+    "It lashes one long, whip-like tail",
+    "It pushes out false feet and flows into them",
+    "It squirts jets of water out behind it"
+   ],
+   "context": "A paramecium is covered in short hairs called cilia, which beat in waves like rows of oars; to back away, it reverses their beat. Euglena swims with one whip-like tail, called a flagellum, and an amoeba crawls by pushing out false feet.",
+   "facts": [
+    "F17",
+    "F18",
+    "F19"
+   ],
+   "grade_note": "The paramecium and its cilia are the standard 6th-grade example of a one-celled organism and how it moves."
+  },
+  {
+   "tier": 2,
+   "topic": "one-cell-or-many",
+   "question": "An amoeba is a single cell that creeps over the mud of a pond, feeding on even smaller living things such as bacteria. How does it take in a meal?",
+   "answer": "It surrounds the meal and closes it inside",
+   "choices": [
+    "It surrounds the meal and closes it inside",
+    "It swallows the meal through a tiny mouth",
+    "It sweeps the meal in with a whip-like tail",
+    "It traps the meal in a sticky slime"
+   ],
+   "context": "The amoeba pushes out arms of its cell, called pseudopods or false feet, around its prey until they meet and seal it inside a bubble, a food vacuole, where it is digested. An amoeba has no mouth and no tail.",
+   "facts": [
+    "F18"
+   ],
+   "grade_note": "How an amoeba surrounds and engulfs its food is the standard 6th-grade example of how a single cell eats."
+  }
+ ],
+ "revised": {
+  "3cd6a2cffd": {
+   "old_hash": "3cd6a2cffd",
+   "why": "Fact-check error and judge (low, fact): the context said even the longest muscle cell is 'under a third of a metre', but sartorius fibres have been measured at over 50 cm (F21). Now 'even the longest falls far short of a metre', as the fact-checker proposed. Stem, key and choices unchanged."
+  },
+  "fe7506e34d": {
+   "old_hash": "f6c431c37c",
+   "why": "Judge (medium, tell): the key was the only plant comparison against three animal ones ('as hawks do', 'as basking lizards do', 'as schooling fish do'), so the odd one out gave it away. The 'as X do' tails are gone and the four choices are now parallel, as the judge proposed. Judge (low, clarity): the stem no longer reads as if the eyespot swims. Same fact (F19), same context."
+  },
+  "0855fedb61": {
+   "old_hash": "00595305b2",
+   "why": "Fact-check error and judge (medium, fact): the stem said the flytrap 'snaps two leaves shut', but each trap is one leaf with two hinged lobes (F22). Now 'the two halves of one leaf'. Key, choices and context unchanged."
+  },
+  "6465f4469d": {
+   "old_hash": "58955065c6",
+   "why": "Judge (medium, grade) and the lead: the key only re-asked the T1 fact that mushrooms make no food (food-chains-and-food-webs, decomposers-and-recycling-matter). Re-keyed to the 6th-grade term itself, as the judge proposed: what the word heterotroph says. 'With animals' is left out of the stem, so the answer is not read off what fungi and animals share. Judge (medium, tell): the two dead lures (moving about, nerves) are gone. The wrong choices are the autotroph mix-up (live for anyone who still takes fungi for plants), the 'hetero means different' trap, and the T1 decomposer fact stretched to 'only' (false: parasitic fungi feed on living hosts, F23). None is true of fungi as stated: yeast and bacteria are single cells, and no fungus photosynthesises."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

@@ -1,0 +1,416 @@
+{
+ "unit": "one-cell-or-many",
+ "questions": {
+  "3b14799cbb": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a muscle cell cannot live alone because it has no blood bringing it food and oxygen; cells of a many-celled body depend on the others and would not survive as independent cells",
+     "result": "ok",
+     "source": "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/Introductory_Biology_(CK-12)/02%3A_Cell_Biology/2.12%3A_Organization_of_Cells",
+     "note": ""
+    },
+    {
+     "claim": "Context: blood pumped by the heart brings cells oxygen and nutrients; capillaries form a rich network around each muscle fibre",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Multicellular_organism ; https://grokipedia.com/page/Skeletal_muscle",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'no nucleus': a skeletal (arm) muscle fibre is multinucleated",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Skeletal_muscle",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'no mitochondria': muscle fibres hold thousands of mitochondria",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mitochondrion",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'no membrane': each fibre has a plasma membrane, the sarcolemma",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Skeletal_muscle",
+     "note": ""
+    },
+    {
+     "claim": "Stem/context: an amoeba, a single cell, does every job of life by itself",
+     "result": "ok",
+     "source": "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/Introductory_Biology_(CK-12)/02%3A_Cell_Biology/2.12%3A_Organization_of_Cells",
+     "note": ""
+    }
+   ]
+  },
+  "139fa0873d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: yeasts are single-celled fungi",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Yeast",
+     "note": ""
+    },
+    {
+     "claim": "Stem: wild yeasts live in soil and on the surfaces of plants and fruits; cells about 3-4 micrometres, far too small to see",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Yeast",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'bacterium': yeast is a eukaryote with a defined nucleus (context line 'each yeast cell has a nucleus')",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Yeast",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'alga': yeasts lack chlorophyll and are heterotrophs that cannot make their own food",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Yeast",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'one-celled animal' / context 'no animal is made of only one cell': all animals are multicellular; one-celled protozoa were removed from Animalia in the 19th century",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Animal",
+     "note": ""
+    },
+    {
+     "claim": "Context: yeast is kin to mushrooms and moulds (same kingdom); yeasts mostly live as single cells (some form limited pseudohyphae, which does not change the answer)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Yeast",
+     "note": ""
+    }
+   ]
+  },
+  "3cd6a2cffd": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: some human cells are up to a metre long, from the lower back down the leg to the foot (axons of the sciatic nerve)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Neuron ; https://en.wikipedia.org/wiki/Axon",
+     "note": "Grokipedia: up to 1 metre, sciatic nerve, spinal cord to the foot. Wikipedia says 'one meter or more' and runs them from the base of the spinal cord to the big toe; 'up to a metre' is a fair grade-6 figure."
+    },
+    {
+     "claim": "Key: these long cells (nerve cells) carry signals",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Neuron",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'shortens to pull on the bones': no muscle fibre is near a metre long",
+     "result": "ok",
+     "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/10-2-skeletal-muscle",
+     "note": "Even the highest estimates for the longest fibres (sartorius) are about half a metre, so the lure stays wrong."
+    },
+    {
+     "claim": "Context: 'even the longest [muscle cell] is under a third of a metre'",
+     "result": "error",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6725658 ; https://www.physio-pedia.com/Sartorius ; https://openstax.org/books/anatomy-and-physiology-2e/pages/10-2-skeletal-muscle",
+     "note": "Sources disagree, so the exact bound is not safe. OpenStax gives up to 30 cm, but anatomy sources (Folia Morphologica 2014, Physiopedia) estimate single sartorius fibres at 35-45 cm, and the 2005 J. Neuroscience study 'Muscle fiber and motor unit behavior in the longest human skeletal muscle' found at least 30% of motor units had fibres running virtually the full length of a muscle over 500 mm long. Fix: 'but even the longest falls far short of a metre'."
+    },
+    {
+     "claim": "Wrong choice 'carries blood down to the foot' / context: blood flows in vessels built of many cells",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Multicellular_organism",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'holds the leg's bones together' / context: ligaments join bone to bone",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ligament",
+     "note": ""
+    }
+   ]
+  },
+  "2ebd6a79b2": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: a human red blood cell, maturing in the bone marrow, pushes out its nucleus and most other parts (the stem says human, so nucleated bird red cells do not clash)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Red_blood_cell",
+     "note": "Grokipedia: in mammals 'the nucleus and most organelles, including mitochondria and ribosomes, are extruded'; the last ribosomal remnants go in the reticulocyte stage after release. Birds and other non-mammals keep nucleated red cells; the stem says human, so it is safe."
+    },
+    {
+     "claim": "Key: losing them gives more room to carry oxygen (more space for haemoglobin)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Red_blood_cell ; https://en.wikipedia.org/wiki/Red_blood_cell",
+     "note": "Grokipedia also names greater deformability as a gain; that is not among the wrong choices."
+    },
+    {
+     "claim": "Wrong choice 'divide faster': with no DNA a mature red cell cannot divide",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Red_blood_cell",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'longer life' / context 'lives only about four months': lifespan about 100-120 days, limited by no repair",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Red_blood_cell ; https://grokipedia.com/page/Red_blood_cell",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'tougher, stiffer outer wall' / context: no cell wall, a flexible disc that squeezes through capillaries as narrow as 3 micrometres",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Red_blood_cell ; https://en.wikipedia.org/wiki/Red_blood_cell",
+     "note": ""
+    },
+    {
+     "claim": "Context: haemoglobin is the protein that carries oxygen from the lungs to the body",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Red_blood_cell",
+     "note": ""
+    }
+   ]
+  },
+  "f6c431c37c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: Euglena is a single cell with a red eyespot that swims with a whip-like flagellum",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Euglena ; https://en.wikipedia.org/wiki/Euglena",
+     "note": "One long emergent flagellum (plus a short one that stays inside the cell)."
+    },
+    {
+     "claim": "Key: swimming to light suggests it makes its own food like a plant; phototaxis 'optimizes positioning for photosynthesis' with chlorophyll a and b chloroplasts",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Euglena",
+     "note": "Grokipedia notes very strong light reverses the response; a jar by a window in the stem is the classic classroom result, so the scenario stands."
+    },
+    {
+     "claim": "Wrong choice 'hunts by sight': the eyespot only shades a photoreceptor to sense light direction, forms no image; engulfing prey is rare in Euglena and never by sight",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Euglena ; https://grokipedia.com/page/Euglena",
+     "note": "Wikipedia: the eyespot itself is not thought to be photosensitive; it shades the light-sensing swelling at the flagellum base."
+    },
+    {
+     "claim": "Wrong choice 'seeks warmth': no documented thermotaxis in Euglena; the light response is phototaxis",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Euglena ; https://ojs.library.ubc.ca/index.php/expedition/article/view/193451",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'follows the others': each cell senses light direction itself as it rotates",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Euglena",
+     "note": ""
+    },
+    {
+     "claim": "Context: in the dark Euglena can take in food from the water instead (osmotrophy on dissolved organics)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Euglena ; https://grokipedia.com/page/Euglena",
+     "note": "The context calls it 'an autotroph, like a plant' and then gives the dark feeding, so the mixotroph fact is told honestly."
+    }
+   ]
+  },
+  "00595305b2": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: a Venus flytrap 'snaps two leaves shut' on a fly",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Venus_flytrap ; https://en.wikipedia.org/wiki/Venus_flytrap",
+     "note": "Each trap is ONE leaf: Grokipedia 'modified terminal leaves divided into two hinged lobes'; Wikipedia 'a pair of terminal lobes hinged at the midrib, forming the trap which is the true leaf'. Fix: 'snaps the two halves of one leaf shut on a fly'."
+    },
+    {
+     "claim": "Stem: shuts in a fraction of a second; digests over several days",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Venus_flytrap ; https://grokipedia.com/page/Venus_flytrap",
+     "note": "About a tenth of a second; digestion 5-12 days (Wikipedia: about ten days)."
+    },
+    {
+     "claim": "Key: it mainly gets nitrogen, scarce in its soil",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Carnivorous_plant ; https://en.wikipedia.org/wiki/Venus_flytrap",
+     "note": "Prey supplies nitrogen, phosphorus and trace elements; nitrogen is the chief one (up to 30-50% of its nitrogen from prey). Stated right."
+    },
+    {
+     "claim": "Wrong choice 'energy its leaves cannot make': carnivory is 'a nutritional supplement rather than a primary energy source'; most energy and carbon from photosynthesis",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Carnivorous_plant ; https://grokipedia.com/page/Venus_flytrap",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices 'water' and 'oxygen': no source names prey as a water or oxygen source; it grows in wet bogs",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Carnivorous_plant ; https://en.wikipedia.org/wiki/Venus_flytrap",
+     "note": ""
+    },
+    {
+     "claim": "Context: still an autotroph; can live without catching a fly; wet boggy ground poor in nitrogen and phosphorus",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Venus_flytrap ; https://en.wikipedia.org/wiki/Venus_flytrap ; https://www.scientificamerican.com/article/how-does-the-venus-flytra/",
+     "note": "Grokipedia: does not require feeding to survive (fed plants grow faster and live longer). 'Can live' is true."
+    }
+   ]
+  },
+  "58955065c6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: naturalists counted fungi as plants for centuries (Linnaeus's Cryptogamia, 1753, into the 20th century); now a kingdom of their own (Whittaker 1969)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fungus",
+     "note": ""
+    },
+    {
+     "claim": "Key: fungi, like animals, are heterotrophs that feed on food made by others",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fungus ; https://grokipedia.com/page/Heterotroph",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'move about from place to place' / context 'Fungi stay put'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fungus",
+     "note": "Mushrooms and moulds grow in place by spreading hyphae. Only the small aquatic chytrid group has swimming zoospores (reproductive cells). Optional tightening: 'Mushrooms and moulds stay put'."
+    },
+    {
+     "claim": "Wrong choice 'no stiff outer walls' / context: fungal cell walls are rigid and chitin-based, plant walls cellulose",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fungus",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'sense the world through nerves': fungi have no nervous system",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fungus",
+     "note": ""
+    },
+    {
+     "claim": "Context: plants and algae are autotrophs",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Autotroph",
+     "note": "Grade-level generalisation (most plants and algae); fine."
+    }
+   ]
+  },
+  "826df29f72": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: bread mould spreads with fine threads (hyphae) growing into the slice",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mold ; https://grokipedia.com/page/Rhizopus_stolonifer",
+     "note": "Moulds are multicellular fungi of branching hyphae; black bread mould's rhizoids anchor it and take up nutrients."
+    },
+    {
+     "claim": "Key: it digests the bread outside itself, then absorbs it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fungus ; https://grokipedia.com/page/Rhizopus_stolonifer",
+     "note": "Secretes extracellular enzymes (amylases, proteases, pectinases) that break starch into simpler compounds, then absorbs them."
+    },
+    {
+     "claim": "Wrong choice 'makes its own food from light' / context: fungi lack chlorophyll and cannot photosynthesise",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fungus",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'feeds on water from the damp air' / context: moisture is the most critical requirement, but water is not its food",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mold",
+     "note": "Mould can take moisture from the air, but its food is organic matter; the lure is a true need misread as food, which is wrong as stated."
+    },
+    {
+     "claim": "Wrong choice 'food stored in the spore' / context: the spore holds far too little to feed it",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4178693 ; https://davidmoore.org.uk/21st_century_guidebook_to_fungi_platinum/Ch04_02.htm",
+     "note": "Spore reserves (trehalose, mannitol, lipids) fuel only swelling and the first germ tube; outside carbon and nitrogen are needed for hyphal growth."
+    },
+    {
+     "claim": "Context: digestive juices break the bread's starch into simpler food",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Rhizopus_stolonifer",
+     "note": ""
+    }
+   ]
+  },
+  "7fb926980f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: a paramecium is a single slipper-shaped cell of pond water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Paramecium ; https://education.nationalgeographic.org/resource/unicellular-vs-multicellular/",
+     "note": ""
+    },
+    {
+     "claim": "Stem: when it bumps into something it backs up and sets off another way (avoidance reaction)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Paramecium",
+     "note": "'rapidly reversing the direction of ciliary beating to back away and reorient'."
+    },
+    {
+     "claim": "Key: it beats thousands of tiny hairs (cilia), in waves",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Paramecium",
+     "note": "'covered entirely with thousands of short, hair-like cilia'; metachronal waves; up to about 1 mm a second."
+    },
+    {
+     "claim": "Wrong choice 'one whip-like tail' / context: that is Euglena's flagellum",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Euglena",
+     "note": "Euglena has one long emergent flagellum (a second stays short inside the cell)."
+    },
+    {
+     "claim": "Wrong choice 'false feet' / context: that is how an amoeba crawls",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Amoeba",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'squirts jets of water': its contractile vacuoles expel water only for osmotic balance, not movement",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Paramecium",
+     "note": ""
+    }
+   ]
+  },
+  "53dabe5ba8": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: an amoeba is a single cell of ponds and sediments that eats smaller living things such as bacteria",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Amoeba ; https://en.wikipedia.org/wiki/Amoeba_proteus",
+     "note": "Grokipedia: Amoeba preys on bacteria, algae and other microorganisms; lives in ponds, streams, soils and sediments."
+    },
+    {
+     "claim": "Key: it surrounds the meal and closes it inside (phagocytosis: pseudopods form a food cup that pinches off as a food vacuole)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Amoeba ; https://grokipedia.com/page/Pseudopodia",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'tiny mouth': no mouth or fixed feeding opening; food is taken in wherever the surface encloses it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Amoeba",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'whip-like tail': an amoeba moves and feeds by pseudopodia, no flagellum",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Amoeba",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'sticky slime': no source describes an amoeba trapping prey in slime",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Amoeba ; https://grokipedia.com/page/Pseudopodia",
+     "note": "Sticky net-like pseudopodia belong to foraminifera, not the amoeba; slime belongs to slime moulds, a separate group."
+    },
+    {
+     "claim": "Context: pseudopods ('false feet'), food vacuole where the prey is digested",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pseudopodia ; https://grokipedia.com/page/Amoeba",
+     "note": ""
+    }
+   ]
+  }
+ },
+ "unit_notes": "2 errors, both one-phrase fixes in otherwise sound questions. (1) 3cd6a2cffd context: 'even the longest [muscle cell] is under a third of a metre' is not safe; OpenStax says up to 30 cm, but sartorius fibres are estimated at 35-45 cm and a 2005 J. Neurosci. study found fibres running nearly the full length of a 50 cm muscle; say 'far short of a metre'. (2) 00595305b2 stem: a flytrap's trap is one leaf with two hinged lobes, not 'two leaves'. Checked on request: the stem names the sciatic-nerve neuron's route correctly (1 m, Grokipedia; 'one meter or more', Wikipedia); the red-cell stem says human, so nucleated bird cells do not clash; no Euglena lure is partly true (it can feed in the dark, but never hunts by sight); the flytrap key is nitrogen, not energy, stated right. Optional: 58955065c6 'Fungi stay put' could read 'Mushrooms and moulds stay put' (chytrid zoospores swim)."
+}

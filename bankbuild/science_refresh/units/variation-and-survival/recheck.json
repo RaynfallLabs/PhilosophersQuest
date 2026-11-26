@@ -1,0 +1,40 @@
+{
+ "unit": "variation-and-survival",
+ "questions": {
+  "7f773b129c": {
+   "verdict": "pass",
+   "why": "Old grade problem fixed: the sunlight lure is gone, so soil is no longer chosen over sun by hydrangea chemistry. The deciding science is now the 6th-grade fact: a cutting has the parent's genes, so the change came from the surroundings. 'A hidden pink trait showing up' is a real inherited-trait confusion and is wrong (a clone carries the same genes). Choices balance two outside causes (soil, pollen) against two inside ones (gene change, hidden trait), so there is no standout. Pollen does not recolour a bloom, and mophead florets are sterile. Key true: blue in acid soil where roots take up aluminium, pink in alkaline soil (Grokipedia). TEKS 6.13C variation; no voice slips.",
+   "sources": [
+    "https://grokipedia.com/page/Hydrangea_macrophylla",
+    "https://grokipedia.com/page/Cutting_(plant)"
+   ]
+  },
+  "6544f4dac6": {
+   "verdict": "pass",
+   "why": "Old fact error fixed: 'about a year and a half later' matches the PNAS 2020 resurvey, which checked whether 'the hurricane effect had persisted in the 18 mo'. The next-generation toepads were 'indistinguishable from that of the hurricane survivors'. Contested claim now attributed: 'Most likely' and 'The biologists called this the best explanation, though they could not rule out others, such as lizards blown in from another island' match Losos (WashU 2018). Stem facts true: two islands, measured just before Irma, Maria followed, back weeks later; survivors had larger toe pads and smaller bodies, so the 'biggest, strongest' lure is wrong and live. 'Best explains' keeps the key right. Natural selection is not named anywhere; TEKS 6.13C.",
+   "sources": [
+    "https://source.washu.edu/2018/07/leggy-lizards-dont-survive-the-storm/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7229758",
+    "https://source.washu.edu/2020/04/hurricanes-twist-evolution-in-island-lizards/"
+   ]
+  },
+  "ee011a045a": {
+   "verdict": "pass",
+   "why": "Old clarity problem fixed: 'Which birds now raise the most young?' asks reproduction, and the sources say the small-beaked finches had more offspring after the rains. Zimmer: 'Ground finches with small beaks were more efficient at eating the new seeds and had more offspring'. National Geographic: they 'grow faster and have more energy for producing offspring'. So 'alike' is wrong as asked. The primary paper (Gibbs and Grant 1987) ties the reversal to the food supply, in agreement. Context true: 1977 drought favoured big beaks; the average beak 'shrank by 2.5% within a few years'. The four choices are evenly balanced (thin, thick, medium, alike). 6th-grade content (TEKS 6.13C: a variation is an advantage or disadvantage as the environment changes).",
+   "sources": [
+    "https://carlzimmer.com/darwins-avian-muses-continue-to-evolve/",
+    "https://www.nationalgeographic.com/science/article/a-career-among-the-finches",
+    "https://www.nature.com/articles/327511a0"
+   ]
+  },
+  "374bbe2a26": {
+   "verdict": "pass",
+   "why": "Old fact error fixed: 'Panama disease, caused by a fungus' (Grokipedia: Fusarium wilt caused by Fusarium oxysporum f. sp. cubense). Old tell fixed: no lure is an absolute or silly, and each is wrong but plausible for an epidemic. Insects carrying it between flowers is wrong: it is soil-borne, enters by the roots and spreads by soil, water and planting material, and weevils play only a minor role. Death in a few days is wrong: collapse takes 6 to 12 months. A brand-new disease is wrong: known from 1874 and in Panama by 1890. Key true: clonal Gros Michel plantations collapsed (Grokipedia Cavendish; Wikipedia: 1950s, Central America). The context is right on the Cavendish switch and on TR4.",
+   "sources": [
+    "https://grokipedia.com/page/Panama_disease",
+    "https://en.wikipedia.org/wiki/Gros_Michel_banana",
+    "https://grokipedia.com/page/Cavendish_banana"
+   ]
+  }
+ }
+}

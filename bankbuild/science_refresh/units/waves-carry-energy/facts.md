@@ -91,3 +91,12 @@ M3. Sound is a thing of its own, "a self-standing entity, different from the med
 
 M4. Mixing up the two kinds: thinking sound waves in air go up and down like a rope wave (the transverse picture drawn for every wave), or mixing up crests and troughs with compressions and rarefactions. This one is the author's reading of the unit's two vocabularies, not taken from a misconceptions study; the sources below are for the correction only (F9, F11: sound in air is longitudinal).
     https://grokipedia.com/page/Transverse_wave ; https://grokipedia.com/page/Sound
+
+## Added in the revision (2026-11-26)
+
+F21. The water's loops under a wave do not quite close: each particle ends a little ahead of where it began (Stokes drift), so a floating leaf ends up almost, not exactly, where it started.
+    https://grokipedia.com/page/Stokes_drift ("they follow closed elliptical paths that result in a net forward displacement over each wave period"; a particle returns "close to but slightly ahead of its starting position")
+
+F22. A school bell jar never removes all the air: typical setups reach about 1 to 10 kPa, "not approaching a perfect vacuum", and the sound falls to "nearly zero" rather than to silence. Part of the fade is a mismatch between the very thin air and the glass, which the thin air can hardly move.
+    https://grokipedia.com/page/Bell_jar ("Achievable vacuum levels in typical setups range from 1 to 10 kPa"; "but not approaching a perfect vacuum"; the sound becomes "faint and eventually inaudible, even though the bell continues to vibrate visibly")
+    https://science.clemson.edu/physics/labs/Demo_Web/Demos/3b30.30.htm ("the sound intensity decreases, ultimately to nearly zero"; "an impedance mismatch between the very low pressure air in the jar and the glass")

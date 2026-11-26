@@ -1,0 +1,39 @@
+{
+ "unit": "action-and-reaction",
+ "questions": {
+  "2461650416": {
+   "verdict": "pass",
+   "why": "Old tell and overlap fixed: the wall is gone, so the 'a wall cannot push' lure no longer repeats the brick and the crate, and the outcome of two skaters on one rope is not everyday knowledge the way rolling back from a wall is. Key true: UCSB demo 12.57, one student pulls a rope the other only holds and 'both students move toward each other', the holder providing 'an equal force in the opposite direction'. Lures wrong and live: only the passive one moves (M3), she hauls herself along (as on a fixed rope), the pulls balance (M10, the T1 tug-of-war). The outcome grid (both, only he, only she, neither) is balanced, and no sizes are given. Context true; no 'you', no singular 'they'.",
+   "sources": [
+    "https://web.physics.ucsb.edu/~lecturedemonstrations/Composer/Pages/12.57.html",
+    "https://grokipedia.com/page/Newton's_laws_of_motion",
+    "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-26"
+   ]
+  },
+  "43801836f9": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the dead air-on-her-back choice is replaced by 'Her arms, pulling on the rest of her body', the live belief that a body moves itself. It is wrong because forces between the parts of one body cancel; only the outside push from the water moves her as a whole (OpenStax: internal forces cancel). Key true (Grokipedia Newton's laws: 'the water exerts an equal forward force on the swimmer'). The key no longer echoes 'forward'. 'Closing in behind her' and the stored force (M5: objects do not contain force) stay wrong. Two 'The water' choices keep the key from standing out. Grade: the swimmer is named in G6.P7 and TEKS 6.7C.",
+   "sources": [
+    "https://grokipedia.com/page/Newton's_laws_of_motion",
+    "https://openstax.org/books/college-physics-2e/pages/4-4-newtons-third-law-of-motion-symmetry-in-forces",
+    "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-26"
+   ]
+  },
+  "bb13d18c67": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the dead 'slows down' choice is now 'It speeds up, but less than it would in air', the other half of the push-on-the-air mistake. It is truly wrong: NASA Glenn says rockets 'actually work better in space than they do in air', with no drag and the exhaust escaping freely. With the stays-put choice, three choices are live, and the two 'speeds up' choices make the student know the vacuum fact. 'Drifts backward' stays as a weak fourth, as the judge allowed. Exactly one choice is true: the key makes no comparison, and the comparison choice is false. Context true: the unsigned Times editorial of 13 January 1920 said a rocket needs 'something better than a vacuum against which to react', and the retraction ran 17 July 1969, the day after the Apollo 11 launch (Grokipedia also gives 20 July once; both fall in the flight, 16-24 July).",
+   "sources": [
+    "https://www.grc.nasa.gov/www/k-12/rocket/TRCRocket/rocket_principles.html",
+    "https://grokipedia.com/page/Robert_H._Goddard"
+   ]
+  },
+  "6c052ec1b2": {
+   "verdict": "pass",
+   "why": "New question on the scope's one unkeyed fact, TEKS 6.7C 'simultaneous force pairs' (Cornell LII text checked). Key true: Wikipedia Reaction (physics) says the terms 'have the misleading suggestion of causality' and 'the forces are perfectly simultaneous'; the door pushes back from first contact, before it moves and however gently she starts. 'Just after her push, in answer to it' is the recorded mistake (M8) and the strong lure, and the stem's 'pushes back' invites it without ruling anything out. The two 'Once...' lures (the push back waits for motion, or for a hard push) are weaker but live for a child who thinks a still thing pushes only when forced. Choices parallel and of similar length. No overlap with the rope question's answer. Voice clean.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Reaction_(physics)",
+    "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-26"
+   ]
+  }
+ }
+}

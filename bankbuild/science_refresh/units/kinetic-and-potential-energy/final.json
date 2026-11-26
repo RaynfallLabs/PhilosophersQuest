@@ -1,0 +1,221 @@
+{
+ "unit": "kinetic-and-potential-energy",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "kinetic-and-potential-energy",
+   "question": "Two girls throw balls of about the same size at a wall, both at exactly the same speed. One throws a hollow plastic Wiffle ball with holes in one half; the other throws a tennis ball. Which ball carries more kinetic energy, and why?",
+   "answer": "The tennis ball, because it has more mass",
+   "choices": [
+    "The tennis ball, because it has more mass",
+    "The tennis ball, because it is bouncier",
+    "Both the same, because their speeds are equal",
+    "Both the same, because their sizes are equal"
+   ],
+   "context": "At the same speed, the heavier of two moving things carries more kinetic energy, and the tennis ball has much more mass than the hollow Wiffle ball, which is why it stings far more when it hits. How bouncy a ball is, or its size on its own, does not change its kinetic energy; its mass does.",
+   "facts": [
+    "F3",
+    "F4",
+    "F6",
+    "F7",
+    "M3",
+    "M11"
+   ],
+   "grade_note": "The middle-school standard NGSS MS-PS3-1 uses this very case, a Wiffle ball against a tennis ball, to teach that kinetic energy grows with mass at the same speed."
+  },
+  {
+   "tier": 2,
+   "topic": "kinetic-and-potential-energy",
+   "question": "A girl rides her bike along a flat road. In which case would she have more kinetic energy than she has now?",
+   "answer": "Riding the same bike much faster",
+   "choices": [
+    "Riding the same bike much faster",
+    "Standing still with it on a hilltop",
+    "Riding as fast as now, but well rested",
+    "Riding as fast as now, but for longer"
+   ],
+   "context": "Kinetic energy is the energy of motion, and it grows as she goes faster. Standing still on a hilltop she has none at all, however high she is, and feeling well rested or riding on for longer at the same speed leaves her kinetic energy just what it was.",
+   "facts": [
+    "F3",
+    "F23",
+    "F9",
+    "M12",
+    "M13"
+   ],
+   "grade_note": "TEKS 6.8A has 6th graders compare and contrast kinetic energy with gravitational and chemical potential energy, and NGSS MS-PS3-1 names riding a bicycle at different speeds as its case of kinetic energy growing with speed, with no calculation."
+  },
+  {
+   "tier": 2,
+   "topic": "kinetic-and-potential-energy",
+   "question": "A girl carries her backpack up the stairs from the ground floor to the third floor of her school and sets it on a desk. Compared with when it lay on the ground floor, what is true of the backpack's gravitational potential energy?",
+   "answer": "It is greater, because the pack is higher up",
+   "choices": [
+    "It is greater, because the pack is higher up",
+    "It is less, because she spent energy lifting it",
+    "It is the same, because its mass has not changed",
+    "It is zero, because the pack is sitting still"
+   ],
+   "context": "Gravitational potential energy is stored energy that grows the higher an object is lifted. Carrying the pack upstairs took energy from the girl's food, and some of it is now stored in the pack's height. A pack sitting still can still hold energy, ready to change into motion if it falls.",
+   "facts": [
+    "F9",
+    "F10",
+    "F11",
+    "M1",
+    "M3",
+    "M7"
+   ],
+   "grade_note": "Texas's grade 6 standard TEKS 6.8A names gravitational potential energy, and NGSS MS-PS3-2 compares objects at different heights."
+  },
+  {
+   "tier": 2,
+   "topic": "kinetic-and-potential-energy",
+   "question": "An archer draws her bowstring back to her cheek and holds it there while she aims. Where, at this moment, is the energy that will send the arrow flying?",
+   "answer": "In the bow itself, bent out of shape",
+   "choices": [
+    "In the bow itself, bent out of shape",
+    "In the muscles of her drawing arm",
+    "In the arrow, waiting to be shot",
+    "In the arrow's height above the ground"
+   ],
+   "context": "A bent bow stores elastic potential energy, the same kind a stretched rubber band or a squeezed spring holds. Her muscles' chemical energy did the bending, but the energy is now held in the bend, and when she lets go the bow springs back and passes it to the arrow as kinetic energy. The arrow holds none of it until then.",
+   "facts": [
+    "F12",
+    "F13",
+    "M2"
+   ],
+   "grade_note": "TEKS 6.8A names elastic potential energy beside gravitational and chemical, and the drawn bow is a standard example of it."
+  },
+  {
+   "tier": 2,
+   "topic": "kinetic-and-potential-energy",
+   "question": "Gasoline in a car's tank, a granola bar in a backpack and a new battery in a drawer each hold a store of energy. While they just sit there, almost none of it comes out. What has to happen to release it?",
+   "answer": "They must react and become new substances",
+   "choices": [
+    "They must react and become new substances",
+    "They must be lifted up high and then dropped",
+    "They must vanish, leaving no matter behind",
+    "They must be crushed into smaller particles"
+   ],
+   "context": "All three hold chemical potential energy, stored in the way their atoms are joined, and it comes out when they react and turn into new substances: gasoline burns in the engine, the body breaks down the bar's sugars in its cells, and the chemicals in the battery react when it is put to work in a circuit. Even the little a battery loses in a drawer leaks out through slow reactions. Burning does not make the gasoline's matter vanish, since it leaves the engine as carbon dioxide and water, and crushing a granola bar into crumbs leaves the same substance with the same store.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16",
+    "F24",
+    "F25",
+    "F26",
+    "M2",
+    "M5"
+   ],
+   "grade_note": "TEKS 6.8A names chemical potential energy, stored in food, fuel and batteries; 6th grade adds that a chemical reaction releases it."
+  },
+  {
+   "tier": 2,
+   "topic": "kinetic-and-potential-energy",
+   "question": "A motor-driven chain hauls a roller coaster train slowly up its first hill. At the top the train tips over and plunges down the far side, faster and faster. What energy change makes it speed up as it drops?",
+   "answer": "Gravitational potential energy changes into kinetic energy",
+   "choices": [
+    "Gravitational potential energy changes into kinetic energy",
+    "Kinetic energy changes into gravitational potential energy",
+    "Electrical energy from the motor changes into kinetic energy",
+    "Gravity makes brand new kinetic energy as it falls"
+   ],
+   "context": "At the top of the hill the train holds the most gravitational potential energy, because it is highest. As it drops, that stored energy changes into kinetic energy, so it goes faster the lower it gets. The motor's energy went into lifting the train, nothing pushes it on the drop, and gravity makes no new energy: the train trades height for speed, and on the next climb trades speed back for height.",
+   "facts": [
+    "F17",
+    "F18",
+    "F19",
+    "M8",
+    "M9"
+   ],
+   "grade_note": "TEKS 6.8B teaches energy conserved in amusement park rides, and NGSS MS-PS3-2 uses a roller coaster cart at different places on a hill."
+  },
+  {
+   "tier": 2,
+   "topic": "kinetic-and-potential-energy",
+   "question": "A physics teacher hangs a heavy bowling ball from the ceiling on a long rope. With his head against a wall, he holds the ball to his nose and lets go without a push. It swings away and back, and stops just short of his face. What makes him sure it cannot hit him?",
+   "answer": "It cannot gain more energy than it began with",
+   "choices": [
+    "It cannot gain more energy than it began with",
+    "It has no energy left at the far end, where it stops",
+    "A heavy ball cannot swing as high as a light one",
+    "Its energy is destroyed a little each swing"
+   ],
+   "context": "Energy is never created or destroyed. Let go without a push, the ball has only the energy it started with, so it can climb back no higher than his nose, whether it is heavy or light. At the far end it stops for a moment, but its energy is not gone, since that is what swings it back. A push would add energy, and then it could hit him.",
+   "facts": [
+    "F17",
+    "F19",
+    "F20",
+    "F27",
+    "M1",
+    "M5"
+   ],
+   "grade_note": "Energy that is never created or destroyed is grade 6 content (Texas's older TEKS 6 wording names the law), and the bowling-ball pendulum is the classic demonstration of it."
+  },
+  {
+   "tier": 2,
+   "topic": "kinetic-and-potential-energy",
+   "question": "A girl on a playground swing stops pumping her legs. Each swing is a little lower than the one before, until at last she hangs still. What has become of the energy of her swinging?",
+   "answer": "Friction and the air changed it into heat",
+   "choices": [
+    "Friction and the air changed it into heat",
+    "It was used up, and now it no longer exists",
+    "It is stored as potential energy in the swing",
+    "It went back into her body as chemical energy"
+   ],
+   "context": "Rubbing at the swing's hooks and pushing through the air turn a little of her energy into heat (thermal energy) on every swing, until none of the motion is left. The warmth is spread so thin that no one can feel it, but the energy still exists. Hanging still at the bottom, she holds less potential energy than at the top of a swing, not more.",
+   "facts": [
+    "F17",
+    "F19",
+    "F21",
+    "M5",
+    "M6",
+    "M10"
+   ],
+   "grade_note": "The grade 6 conservation unit teaches that friction turns some motion into heat, and that energy is not used up; 'used up' is the recorded mistake."
+  },
+  {
+   "tier": 2,
+   "topic": "kinetic-and-potential-energy",
+   "question": "In a game of pool, a player strikes the cue ball hard and straight into a still ball, hitting it head on. The cue ball stops almost dead on the spot. Where has most of its kinetic energy gone?",
+   "answer": "Into the ball that it struck",
+   "choices": [
+    "Into the ball that it struck",
+    "Into the sound of the click",
+    "Into heat in the table's cloth",
+    "Into energy stored in the cue ball"
+   ],
+   "context": "When one object strikes another, energy can pass from one to the other. Here the cue ball's kinetic energy passes to the ball it hits, which rolls off almost as fast as the cue ball was going. Only a little becomes the click's sound and heat, and the stopped cue ball keeps nothing stored up.",
+   "facts": [
+    "F17",
+    "F22",
+    "M6"
+   ],
+   "grade_note": "NGSS MS-PS3-5 teaches that when an object's kinetic energy changes, energy is passed to or from it, and the cue ball is the textbook case."
+  }
+ ],
+ "revised": {
+  "58ba9a881a": {
+   "old_hash": "58ba9a881a",
+   "why": "Fact-check (uncertain): 'how big a ball is does not change its kinetic energy' was false said flat (a bigger ball of the same stuff has more mass); now 'its size on its own'. Judge (low): 'about three times' rested on a Wiffle-ball weight Grokipedia gives two ways; now 'much more mass'. The context no longer states that speed raises kinetic energy (the cyclist's key). Stem, choices and key unchanged."
+  },
+  "60def27b4d": {
+   "old_hash": "ea7f53220b",
+   "why": "Judge (high, grade): 'twice the speed, four times the energy' is 8th-9th-grade content reached by squaring, the math bank's lane. Now the 6th-grade half the judge named, with no number: a faster ride on the same bike has more kinetic energy (EIA, F23). The judge's 'and where does the extra come from' was not used: the stem's 'extra' would rule out the unchanged and shrunk choices, the mass-only and shrunk choices fall to common sense once she is said to go faster, and T1 energy-changes-form already teaches that food's chemical energy moves the body. Instead the wrong choices are the other stores a 6th grader mistakes for energy of motion (TEKS 6.8A): height with no motion (gravitational, F9), feeling rested (the everyday sense of energy, M13), and riding longer at the same speed (energy building up with time, M12). A big meal was not used, since the food would add a little mass. The context names no mass rule (the Wiffle ball's key) and does not say height stores energy (the backpack's)."
+  },
+  "0afbbc3694": {
+   "old_hash": "1757253f26",
+   "why": "Judge (medium, tell): 'store' ruled out 'Kinetic energy', 'Gravitational' was weak and 'Elastic' could be worked out from the bent limbs. Now, as the judge proposed, the question asks where the energy is held, and the context names elastic potential energy. Wrong choices: her muscles (chemical, M2), the arrow itself, and its height (gravitational, M2: 'the only type of potential energy is gravitational'). The key says 'the bow itself, bent out of shape' rather than 'limbs', a word a 6th grader may not know for a bow."
+  },
+  "4cb28dc660": {
+   "old_hash": "adc57ae4bf",
+   "why": "Judge (medium, tell): 'squeezed or stretched' and 'set moving very fast' were silly for gasoline and food. Replaced, as the judge proposed, by the belief that a burned fuel vanishes (M5; worded 'vanish, leaving no matter behind' because 'used up' alone is true in everyday speech; F24) and by crushing, a physical change that leaves the substance (F25). Both carry a science word, like the key. Fact-check (uncertain): 'none of it comes out' is now 'almost none', since a battery self-discharges by slow internal reactions (F26). Key unchanged; the context no longer says dropping a thing gives it kinetic energy (the coaster's key)."
+  },
+  "525ed64cc6": {
+   "old_hash": "525ed64cc6",
+   "why": "Judge (medium, tell): 'Gravity pulls harder on it as it swings back' and 'A heavy ball slows more than a light one' were weak. The first is replaced, as the judge proposed, by the at-rest mistake (M1, 'no energy left at the far end'); the heavy-ball choice now says a heavy ball cannot swing as high, a direct reason a student could give (false: mass cancels, F27). 'Destroyed a little each swing' (M5) stays. Stem and key unchanged. The context no longer names the air turning energy into heat (the swing question's key) or height storing energy (the backpack's)."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

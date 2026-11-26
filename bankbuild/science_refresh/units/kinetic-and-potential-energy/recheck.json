@@ -1,0 +1,50 @@
+{
+ "unit": "kinetic-and-potential-energy",
+ "questions": {
+  "58ba9a881a": {
+   "verdict": "pass",
+   "why": "Both old issues fixed in the context: 'about three times' is now 'much more mass', and size is now 'its size on its own', so the claim is true (a bigger ball of the same stuff would have more mass). 'Much more' holds on every figure: the Hall of Fame's Wiffle ball is two-thirds of an ounce (about 19 g), and a tennis ball is 56.0-59.4 g. 'Its mass does' is read against the stem's equal speeds, and the context does not key the cyclist's speed fact. Stem, choices and key unchanged and already ruled sound; NGSS MS-PS3-1 names this very case.",
+   "sources": [
+    "https://baseballhall.org/discover/wiffle-ball",
+    "https://grokipedia.com/page/Tennis_ball",
+    "https://www.nextgenscience.org/pe/ms-ps3-1-energy"
+   ]
+  },
+  "60def27b4d": {
+   "verdict": "pass",
+   "why": "Old grade problem fixed: there is no 'four times' or squaring. The question asks the 6th-grade descriptive half (NGSS MS-PS3-1: 'riding a bicycle at different speeds'; EIA: 'The faster an object moves, the more energy is stored'). The lures test TEKS 6.8A's kinetic-against-potential contrast: the hilltop (height, no motion), the everyday sense of 'energy' (well rested), and energy building up over time (for longer). Each is truly wrong: with no motion she has no kinetic energy, and at the same speed and mass her kinetic energy is unchanged. No T1 question in the bank keys speed and energy (NGSS 4-PS3-1 meets the plain idea in grade 4, but without the term 'kinetic' or the contrast with stored energy). The context names no mass rule (the Wiffle ball's) and no height store (the backpack's).",
+   "sources": [
+    "https://www.nextgenscience.org/pe/ms-ps3-1-energy",
+    "https://www.eia.gov/energyexplained/what-is-energy/forms-of-energy.php",
+    "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-26",
+    "https://www.nextgenscience.org/pe/4-ps3-1-energy"
+   ]
+  },
+  "0afbbc3694": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the stem no longer says 'store', 'limbs bend' or 'pulls tight', and it asks where the energy is, not its name. So 'elastic' can no longer be read off the stem. Key true: the limbs 'flex under tension, storing elastic potential energy in the deformed structure' (Grokipedia Bow and arrow). The muscles lure is strong (she is holding the draw) and wrong, since her muscles do not push the arrow on release. The arrow holds no stored energy until release, and its height is not what sends it. The context names elastic potential energy. Minor, not failing: 'the bow springs straight' is loose, since a strung bow springs back to its braced, still-curved shape ('springs back' would be exact).",
+   "sources": [
+    "https://grokipedia.com/page/Bow_and_arrow",
+    "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-26"
+   ]
+  },
+  "4cb28dc660": {
+   "verdict": "pass",
+   "why": "Both old issues fixed. The silly 'squeezed or stretched' and 'set moving fast' choices are replaced by 'vanish, leaving no matter behind' (M5, a live account of burning or eating) and 'crushed into smaller particles' (live for food, which is chewed). Both are truly wrong: complete combustion gives 'carbon dioxide and water', with mass conserved (Grokipedia Combustion), and crushing is a physical change. 'Almost none' now fits self-discharge, which Grokipedia ties to 'internal chemical reactions' (alkaline about 2% a year), and the context says so. Key unchanged and true (chemical potential energy is released by reactions forming new substances; the bond-breaking error is avoided). The context no longer keys the coaster.",
+   "sources": [
+    "https://grokipedia.com/page/Combustion",
+    "https://grokipedia.com/page/Self-discharge",
+    "https://grokipedia.com/page/Physical_change",
+    "https://www.eia.gov/energyexplained/what-is-energy/forms-of-energy.php"
+   ]
+  },
+  "525ed64cc6": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the weak gravity lure is replaced by the at-rest mistake (M1, 'no energy left at the far end'). The heavy-ball choice now gives a direct reason a student would offer, and the stem's 'heavy' makes it live. All three lures are truly wrong. At the far end the ball's energy is stored by its height. Kinetic and potential energy are both in proportion to mass, so mass cancels and a heavy ball rises as high as a light one (UKy SciWorks). Energy is not destroyed, only turned to heat. The key is no longer the lone general statement. Key true (Wisconsin: 'will not go higher than its starting height'). The context is true and no longer keys the swing's heat or the backpack's height.",
+   "sources": [
+    "https://wonders.physics.wisc.edu/bowling-ball-pendulum/",
+    "https://www.pa.uky.edu/sciworks/FME/fme/vibe4.htm"
+   ]
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "unit": "one-cell-or-many",
+ "questions": {
+  "3cd6a2cffd": {
+   "verdict": "pass",
+   "why": "Old fact error fixed: the context now says even the longest muscle cell 'falls far short of a metre', which holds (Harris and others 2005: sartorius up to 600 mm, some fibres over 500 mm, tendon to tendon), so the muscle lure stays wrong and nothing overstates. Key true: the metre-long cells are sciatic nerve cells that carry signals from the spinal cord to the foot. Lures wrong and live (muscle shortening, a blood-carrying cell, ligament). Stem, key and choices unchanged; 6th-grade specialised-cell content (TEKS 6.13A-B); no 'you', no singular 'they'.",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6725658",
+    "https://grokipedia.com/page/Neuron",
+    "https://en.wikipedia.org/wiki/Axon"
+   ]
+  },
+  "fe7506e34d": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the 'as hawks/lizards/fish do' tails are gone and the four choices are parallel ('It makes...', 'It hunts...', 'It seeks...', 'It stays...'), so the key is no longer the odd plant comparison. Clarity fixed: the tail now swims, not the eyespot. Key true: Grokipedia, phototaxis 'optimizes positioning for photosynthesis'; Euglena has chloroplasts. Lures wrong and live: the stem's red eyespot draws 'hunts prey it can see' (the eyespot only shades a light sensor), warmth by a window draws the second (no thermotaxis reported), and each cell steers by itself. 'Suggest' covers its dark feeding, which the context tells honestly. Autotrophic single cells are TEKS 6.13B content.",
+   "sources": [
+    "https://grokipedia.com/page/Euglena",
+    "https://en.wikipedia.org/wiki/Euglena"
+   ]
+  },
+  "0855fedb61": {
+   "verdict": "pass",
+   "why": "Old fact error fixed: the stem now says 'the two halves of one leaf' (Grokipedia: 'modified terminal leaves divided into two hinged lobes'; Wikipedia: lobes hinged at the midrib form 'the true leaf'). Key true: prey supplies the nitrogen 'the soil cannot' (Wikipedia), a supplement to photosynthesis, which gives most of its energy (Grokipedia). Lures wrong: not water (it grows in bogs), not energy (it is an autotroph), not oxygen. Shuts in a fraction of a second; digests over 5 to 12 days. Two-by-two choice pairs give no standout; 6th-grade autotroph content.",
+   "sources": [
+    "https://grokipedia.com/page/Venus_flytrap",
+    "https://en.wikipedia.org/wiki/Venus_flytrap",
+    "https://grokipedia.com/page/Carnivorous_plant"
+   ]
+  },
+  "6465f4469d": {
+   "verdict": "pass",
+   "why": "Old grade problem fixed: the question now tests the 6th-grade term itself (heterotroph, TEKS 6.13B 'autotrophic and heterotrophic'), not the T1 'mushrooms make no food' fact. Old tell fixed: the dead 'move about' and 'nerves' lures are gone. Key true: heterotroph is 'other feeder', an organism that consumes organic matter made by others (Grokipedia Heterotroph); every fungus lacks chlorophyll. Lures wrong and live: making food from sunlight (the fungi-are-plants belief, M1; the stem never says why fungi got their own kingdom), 'many different kinds of cells' (the hetero = different trap; yeast is one cell), 'only the remains of dead things' (the T1 decomposer reflex stretched; rusts and other parasitic fungi feed on living hosts, Grokipedia Fungus). Linnaeus 1753 and Whittaker 1969 support the first sentence. Choices of even length; 'they' is the plural biologists.",
+   "sources": [
+    "https://grokipedia.com/page/Heterotroph",
+    "https://grokipedia.com/page/Fungus",
+    "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-26"
+   ]
+  }
+ }
+}

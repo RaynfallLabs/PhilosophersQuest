@@ -1,0 +1,416 @@
+{
+ "unit": "why-we-have-seasons",
+ "questions": {
+  "15039e5821": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the tilt of Earth's axis causes the seasons",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Season",
+     "note": "Grokipedia: 'The primary astronomical cause of Earth's seasons is the planet's axial tilt'; NASA Space Place: 'Earth's tilted axis causes the seasons.'"
+    },
+    {
+     "claim": "Wrong choice: Earth's distance from the Sun (not the cause)",
+     "result": "ok",
+     "source": "https://spaceplace.nasa.gov/seasons/en/",
+     "note": "NASA: 'Earth's distance from the Sun is not the cause of the seasons'; the 6.8% insolation swing is secondary and does not track either hemisphere's seasons."
+    },
+    {
+     "claim": "Wrong choice: the Sun's heat rising and falling (Sun's output varies only about 0.1% over the 11-year cycle)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solar_constant",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: the Moon's pull (raises tides, not seasons)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tide",
+     "note": ""
+    },
+    {
+     "claim": "Context: distance changes by about 5 million km out of some 150 million (147.1 to 152.1 million km)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Apsis",
+     "note": ""
+    },
+    {
+     "claim": "Context: each half of Earth takes its turn leaning toward and then away from the Sun as Earth orbits",
+     "result": "ok",
+     "source": "https://spaceplace.nasa.gov/seasons/en/",
+     "note": ""
+    }
+   ]
+  },
+  "c957dcd792": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: Earth's orbit is a very slightly stretched oval (eccentricity about 0.017; distance varies about 3%)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Season",
+     "note": ""
+    },
+    {
+     "claim": "Key: Earth is closest to the Sun (perihelion) in early January (around January 3; 2026 perihelion January 3)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Apsis",
+     "note": "Grokipedia Apsis: perihelion 'around early January', January 3, 2026. timeanddate: perihelion about two weeks after the December solstice, January 2-5 in its 2026-2030 table, so 'early January' is right every year."
+    },
+    {
+     "claim": "Wrong choice: early July (that is aphelion, the farthest point; July 6 in 2026)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Apsis",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: late March and late September (equinox dates, not perihelion)",
+     "result": "ok",
+     "source": "https://timeanddate.com/astronomy/perihelion-aphelion-solstice.html",
+     "note": ""
+    },
+    {
+     "claim": "Context: about 147 million km at perihelion, about 152 million km at aphelion",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Apsis",
+     "note": "147.1 and 152.1 million km."
+    },
+    {
+     "claim": "Context: Northern Hemisphere has winter while Earth is nearest the Sun",
+     "result": "ok",
+     "source": "https://spaceplace.nasa.gov/seasons/en/",
+     "note": ""
+    }
+   ]
+  },
+  "a0f65667ec": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: late December begins summer in the Southern Hemisphere (December solstice; Australia's meteorological summer began December 1, so late December is early summer under either convention)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Season",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: winter, spring, autumn (none begins in the south in late December)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Season",
+     "note": ""
+    },
+    {
+     "claim": "Context: the two hemispheres have opposite seasons",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Season",
+     "note": "'summer in one coincides with winter in the other.'"
+    },
+    {
+     "claim": "Context: in late December the Southern Hemisphere leans toward the Sun and gets more direct light and longer days",
+     "result": "ok",
+     "source": "https://spaceplace.nasa.gov/seasons/en/",
+     "note": ""
+    },
+    {
+     "claim": "Context: in Australia Christmas comes in early summer, with barbecues and the beach",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Christmas_in_Australia",
+     "note": "Grokipedia: 'early summer'; 'outdoor barbecues, beach outings'."
+    }
+   ]
+  },
+  "c3e8a3a2de": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the axis keeps pointing the same way in space all year (axial parallelism)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Axial_parallelism",
+     "note": "Wikipedia Season: the axis 'remains parallel to itself throughout its orbit'; Grokipedia Season: 'Earth's rotational axis maintains a constant orientation in space throughout its orbit'. Precession (about 26,000 years) and nutation (main term 18.6 years, arcseconds) are far too small within one year to make any other choice right."
+    },
+    {
+     "claim": "Wrong choice: it turns to keep leaning toward the Sun",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Season",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: it rocks back and forth through the year",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Axial_parallelism",
+     "note": "Only tiny nutation wobbles of arcseconds exist; no yearly rocking."
+    },
+    {
+     "claim": "Wrong choice: it stands straight up in spring and autumn",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Equinox",
+     "note": "At the equinoxes the tilt 'is neither toward nor away from the Sun'; the axis stays tilted."
+    },
+    {
+     "claim": "Context: northern end aimed almost at Polaris, the North Star, all year",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Polaris",
+     "note": "Polaris lies about 0.65-0.7 degrees from the north celestial pole."
+    },
+    {
+     "claim": "Context: on one side of the orbit the north leans toward the Sun, six months later away",
+     "result": "ok",
+     "source": "https://spaceplace.nasa.gov/seasons/en/",
+     "note": ""
+    }
+   ]
+  },
+  "da117dccf7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: slanting light spreads the same energy over more ground",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Season",
+     "note": "Wikipedia: low winter rays are 'spread over a larger area of the Earth's surface'. NASA Space Place: the hemisphere tilted away gets 'its rays from more of an angle'."
+    },
+    {
+     "claim": "Wrong choice: the town is farther from the Sun in December",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Apsis",
+     "note": "Earth is in fact nearest the Sun in early January, so in December it is closer, not farther."
+    },
+    {
+     "claim": "Wrong choice: the Sun gives off less energy then (output varies about 0.1% over the 11-year cycle, not by season)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solar_constant",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: Earth spins faster in winter months",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth's_rotation",
+     "note": "Length of day fluctuates only about 1 millisecond; the true solar day's ~30-second yearly swing comes from the orbit and tilt, not a faster spin."
+    },
+    {
+     "claim": "Context: a flashlight tilted to a slant makes a bigger, dimmer spot",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Season",
+     "note": "Standard analogy for the same beam spread over a larger area."
+    }
+   ]
+  },
+  "49dcec957c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: in late June daylight grows longer going north from the equator, up to 24 hours",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Daytime",
+     "note": "Grokipedia Daytime: equator about 12 hours year-round; about 15 hours at 45 degrees in June; north of the Arctic Circle 'the Sun remains visible for 24 continuous hours'."
+    },
+    {
+     "claim": "Wrong choice: they grow shorter, down to none (the December case)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solstice",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: they stay about 12 hours all the way (true only at the equinoxes)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Daytime",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: they grow longer, then shorter again",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Midnight_sun",
+     "note": "Continuous daylight lengthens progressively from the Arctic Circle to the pole; no turn-back in June."
+    },
+    {
+     "claim": "Context: north of the Arctic Circle the Sun does not set in late June (midnight sun); at the equator the day stays close to 12 hours all year",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Midnight_sun",
+     "note": "At the Arctic Circle itself the Sun just grazes the horizon at midnight near the solstice; with refraction it stays up for a few weeks around it. The stem's solstice week in late June is inside that window everywhere north of the circle."
+    }
+   ]
+  },
+  "591a09856e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: thousands gather at Stonehenge to watch the June-solstice sunrise",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Stonehenge",
+     "note": "Grokipedia: 'drawing thousands for sunrise events'; English Heritage reported about 12,000 (2016) and 9,500 (2018); AP/PBS reported about 25,000 in 2025."
+    },
+    {
+     "claim": "Stem: June solstice around June 21 (June 20, 21 or 22)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solstice",
+     "note": ""
+    },
+    {
+     "claim": "Key: the June solstice has the most daylight of the year in the Northern Hemisphere",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solstice",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: least daylight of the year (the December solstice)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solstice",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: day and night equal (the equinoxes)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Equinox",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: Earth nearest the Sun that day (perihelion is early January; in late June Earth is near its farthest)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Apsis",
+     "note": ""
+    },
+    {
+     "claim": "Context: the Southern Hemisphere has its shortest day on the June solstice",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solstice",
+     "note": ""
+    },
+    {
+     "claim": "Context: Stonehenge's main axis points to the sunrise on that day",
+     "result": "ok",
+     "source": "https://www.english-heritage.org.uk/visit/places/stonehenge/things-to-do/solstice/",
+     "note": "English Heritage: 'On the summer solstice, the sun rises behind the Heel Stone in the north-east'; Grokipedia Stonehenge: the central axis 'points toward the sunrise at' the summer solstice, and the winter solstice sunset the other way. The context makes no Heel Stone claim, so the modern slight offset of the sunrise from the stone does not arise."
+    },
+    {
+     "claim": "Context: solstice comes from Latin words for the Sun standing still (sol + sistere)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Solstice",
+     "note": ""
+    }
+   ]
+  },
+  "9baa0d3735": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: spring begins in the north around March 20, autumn around September 22 (astronomical convention)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Equinox",
+     "note": "Grokipedia: vernal 'around March 20 or 21', autumnal 'around September 22 or 23'. Meteorological seasons start March 1 and September 1, but the astronomical start is the usual school convention."
+    },
+    {
+     "claim": "Key: day and night about equal everywhere",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Equinox",
+     "note": "Grokipedia: 'approximately equal durations of daylight and nighttime across the globe'. The only exception is at the poles, where the Sun circles the horizon with a few days of continuous daylight around each equinox, and very near them (at 85 degrees about 13 h of day). This is the standard grade-level simplification and the sources state it the same way. Optional polish: 'almost all over Earth' in the context."
+    },
+    {
+     "claim": "Wrong choices: days longer in the north, days longer in the south, nights longer everywhere",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Equinox",
+     "note": ""
+    },
+    {
+     "claim": "Context: the axis leans neither toward nor away from the Sun; noon Sun overhead at the equator",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Equinox",
+     "note": ""
+    },
+    {
+     "claim": "Context: equinox from Latin for equal night (aequus + nox)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Equinox",
+     "note": ""
+    },
+    {
+     "claim": "Context: day slightly longer because the air bends sunlight and the Sun is a disc",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Equinox",
+     "note": "Grokipedia: finite angular size and refraction make daylight 'slightly longer than that of nighttime even at the equator'."
+    }
+   ]
+  },
+  "174bfcbc28": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: with no tilt the seasons would almost disappear",
+     "result": "ok",
+     "source": "https://earthsky.org/earth/can-you-explain-why-earth-has-4-seasons/",
+     "note": "EarthSky: an upright Earth would have only 'minor variations in temperature throughout each year' from moving slightly closer to and farther from the Sun. NASA: about 6.8% more sunlight in January than July, a small effect."
+    },
+    {
+     "claim": "Wrong choice: they would stay just as they are",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Season",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: they would grow much stronger (a smaller tilt makes seasons milder)",
+     "result": "ok",
+     "source": "https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: they would each last twice as long",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Season",
+     "note": "The year's length is set by the orbit, not the tilt."
+    },
+    {
+     "claim": "Context: each place would get the same slant of sunlight and the same day length all year",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Axial_tilt",
+     "note": "Follows from zero obliquity: the noon Sun's height at each latitude and the 12-hour day would not change through the year."
+    },
+    {
+     "claim": "Context: a bigger tilt makes the seasons stronger, a smaller one milder",
+     "result": "ok",
+     "source": "https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/",
+     "note": "NASA: 'The greater Earth's axial tilt angle, the more extreme our seasons are'."
+    }
+   ]
+  },
+  "32e56a3b52": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: Earth's axis leans about 23.5 degrees from straight up (23.44 today)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Axial_tilt",
+     "note": "Axial tilt is 'the angle between a celestial body's rotational axis and the line perpendicular to its orbital plane'; 'the current axial tilt is 23.44 degrees'. NASA gives 23.4."
+    },
+    {
+     "claim": "Wrong choice: about 66.5 degrees (the axis's angle to the orbital plane, not to straight up)",
+     "result": "ok",
+     "source": "https://courses.ems.psu.edu/meteo7/node/2022",
+     "note": "The stem defines straight up as perpendicular to the orbit's plane and asks how far the axis leans from it, so 66.5 (the complement, measured from the plane) is fairly wrong as asked. Some textbooks state 'inclined at 66.5 degrees to the orbital plane', but the stem's wording rules that reading out."
+    },
+    {
+     "claim": "Wrong choices: about 45 degrees and about 10 degrees",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Axial_tilt",
+     "note": ""
+    },
+    {
+     "claim": "Stem: classroom globes copy the lean on their stands",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Globe",
+     "note": "Grokipedia: axis 'mounted at an approximate 23.5-degree tilt to replicate Earth's axial inclination'."
+    },
+    {
+     "claim": "Context: measured from the orbit's plane the axis stands at about 66.5 degrees; the two add up to 90",
+     "result": "ok",
+     "source": "https://courses.ems.psu.edu/meteo7/node/2022",
+     "note": ""
+    },
+    {
+     "claim": "Context: over some 41,000 years the lean shifts between about 22.1 and 24.5 degrees",
+     "result": "ok",
+     "source": "https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/",
+     "note": "NASA: 'varied between 22.1 and 24.5 degrees' in 'a cycle that spans about 41,000 years'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "All ten questions check out. Perihelion falls January 2-5 (January 3 in 2026), so 'early January' holds every year; aphelion early July (July 6 in 2026). The 66.5-degree lure is fairly wrong because the stem defines 'straight up' from the orbit's plane. Stonehenge is told accurately (main axis to the midsummer sunrise; no Heel Stone claim). Only nuance: the equinox 'about equal everywhere' wording is the standard simplification; at and very near the poles day and night are not equal at the equinox. No number here is likely to change soon (tilt 23.44, slowly shrinking; 'about 23.5' survives)."
+}

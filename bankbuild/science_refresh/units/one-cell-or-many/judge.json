@@ -1,0 +1,71 @@
+{"unit": "one-cell-or-many",
+ "questions": {
+  "3b14799cbb": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the only choice that is not a part of the cell (three cell parts against one outside cause), so a test-wise player can pick the odd one out. The lures stay live for a 6th grader who has not yet learned that a muscle fibre has nuclei, mitochondria and a membrane, so this is polish only.",
+     "fix": "Optional: make one lure an outside cause too, e.g. replace 'It has no membrane to hold it together' with 'It has no light to make its food from'."},
+    {"axis": "other", "severity": "low",
+     "what": "The key restates the-bodys-main-organs (T1) answer 'It brings oxygen and food to each part'. Acceptable: the asked fact (a body cell depends on the other cells and cannot live alone, unlike an amoeba) is new 6th-grade content.",
+     "fix": "None required."}
+   ]},
+  "139fa0873d": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "A bare 'what is it' classification with no simple why; T2 asks for the fact plus a one-step reason. Fair as the unit's one 'kind of organism' fact (yeast as a one-celled fungus is 6th-grade content), and the lures are the real confusions (bacterium, alga, protozoan as 'one-celled animal').",
+     "fix": "None required; if revised, add the why in the context only (no nucleus-free bacterium, no chlorophyll), not in the stem."}
+   ]},
+  "3cd6a2cffd": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "Context: 'even the longest is under a third of a metre' is not safe; OpenStax gives up to 30 cm, but sartorius fibres are estimated at 35-45 cm and some run nearly the length of a 50 cm muscle (the fact-checker's error on this question).",
+     "fix": "'Muscle cells shorten to pull on bones, but even the longest falls far short of a metre; ...'"},
+    {"axis": "tell", "severity": "low",
+     "what": "'It holds the leg's bones together' is the weakest lure: a single cell running from the lower back to the foot holding bones together is hard to picture. The muscle lure and the blood lure are strong.",
+     "fix": "Optional: replace with 'It stores fat to cushion the leg'."}
+   ]},
+  "2ebd6a79b2": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the only choice tied to the red cell's famous job (oxygen), so a player who knows only that red blood cells carry oxygen picks it without knowing why the nucleus goes. Reasoning from job to shape is the 6th-grade lesson, so this is polish.",
+     "fix": "Optional: give one lure the oxygen link too, e.g. replace 'The power to divide faster' with 'The power to make oxygen as it travels'."}
+   ]},
+  "f6c431c37c": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only plant comparison against three animal comparisons (hawks, lizards, fish), and 'light, so it makes food' is the T1 photosynthesis reflex (how-plants-make-food; food-chains-and-food-webs T1 already teaches that tiny floating algae are producers). A player who knows only T1 facts, or who spots the odd one out, gets it without knowing anything of Euglena.",
+     "fix": "Drop the 'as X do' tails so the four are parallel: 'It makes its own food from light' / 'It hunts prey that it can see' / 'It seeks the warmth of the glass' / 'It stays close to the others for safety'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'a single cell with a red eyespot that swims through ponds' reads as if the eyespot swims.",
+     "fix": "'Euglena is a single cell that swims through ponds with a whip-like tail, and it has a red eyespot.'"}
+   ]},
+  "00595305b2": {"verdict": "revise",
+   "issues": [
+    {"axis": "fact", "severity": "medium",
+     "what": "Stem: 'snaps two leaves shut'. Each trap is ONE leaf with two hinged lobes; the stem teaches a wrong anatomy (the fact-checker's error too). The asked fact itself (nitrogen, not energy) is right.",
+     "fix": "'A Venus flytrap snaps the two halves of one leaf shut on a fly in a fraction of a second, then digests it over the next several days.'"}
+   ]},
+  "58955065c6": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two lures are silly for mushrooms and moulds: every child knows they do not walk about ('They move about from place to place') and have no nerves ('They sense the world through nerves'). Only the key and the cell-wall lure are live.",
+     "fix": "Replace those two with adjacent wrong ideas: 'They swallow food and digest it inside' and 'They stop growing once they reach full size'."},
+    {"axis": "grade", "severity": "medium",
+     "what": "The key only re-asks a T1 fact: food-chains-and-food-webs T1 already tests that mushrooms are not producers (do not make their own food), and decomposers-and-recycling-matter T1 that fungi feed on dead matter. The 6th-grade content of the scope, the word heterotroph (and autotroph), never appears in this or any other stem or answer in the unit.",
+     "fix": "Re-key it to the term: 'Naturalists counted mushrooms and moulds as plants for centuries. Biologists now give fungi a kingdom of their own and class them with animals as heterotrophs. What does the word heterotroph say about a living thing?' Key 'It takes in food made by other living things'; lures 'It is built of many different kinds of cells', 'It can live in many different places', 'It has stiff walls around its cells' (the first two are the real 'hetero means different' root trap)."}
+   ]},
+  "826df29f72": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The lure 'It lives on food stored in the spore it grew from' uses 'spore', which no stem teaches at this grade (the context explains it). Its light lure also tests the same fact as Q7's current key (fungi cannot make food), which is fine once Q7 is re-keyed.",
+     "fix": "Optional: 'It lives on food stored in the spore, the tiny speck it grew from'."}
+   ]},
+  "7fb926980f": {"verdict": "ok", "issues": []},
+  "53dabe5ba8": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'It sweeps the meal in with a whip-like tail' repeats the whip-like tail used in the Euglena stem and as the paramecium question's lure; a player who has seen those learns it is Euglena's and strikes it.",
+     "fix": "Use the paramecium's real way instead, a true confusion: 'It sweeps the meal into a groove with tiny hairs'."}
+   ]}
+ },
+ "unit_notes": "Counts: 7 ok, 3 revise, 0 drop; 0 high, 4 medium. OVERLAPS (checked against every final.json): (1) Q7 (58955065c6) re-asks T1: food-chains-and-food-webs (mushrooms are not producers) and decomposers-and-recycling-matter (fungi feed on dead matter); fix by re-keying to the term heterotroph, as in its issue. (2) Q5 (f6c431c37c): 'a single cell that makes its own food from light' sits on food-chains-and-food-webs T1 Q9 (tiny floating algae are producers) and how-plants-make-food T1; the parallel-choices fix makes the Euglena fact, not the T1 reflex, decide it. (3) Q1's key restates the-bodys-main-organs T1 (blood brings oxygen and food) and Q3's job restates its 'nerves carry messages'; both acceptable, since what is asked (a body cell cannot live alone; a metre-long cell is a nerve cell) is new. Pilot cells-the-building-blocks-of-life: no duplicate; its parts and the bacterium-as-one-cell fact appear only as lures and premises, as not_here requires. MISSING CORE: the scope's terms autotroph, heterotroph, unicellular and multicellular are never named in a stem or answer (only in contexts); Q7's fix brings in heterotroph. GRADE: every question is 6th-grade content (G6.L2, CK2023 G6 Cells and Systems); none too young once Q7 is re-keyed. LANES: the Venus flytrap is evidence for what autotroph means (science owns plants; no animal-bank conflict); Euglena, paramecium, amoeba and yeast are microbes, science's own. FUTURE UNITS: Q4 (a red cell drops its nucleus to make room for oxygen) is near the T3 body-systems-supply-and-defence scope ('red blood cells carry oxygen') and the T5 the-cell-cycle line ('red blood cells live about four months'); those units must not re-ask it. The paramecium also appears in competing-for-resources Q9 (Gause), a different fact. No voice slips, no singular they, no stance."}

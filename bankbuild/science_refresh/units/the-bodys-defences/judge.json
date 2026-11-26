@@ -1,0 +1,55 @@
+{"unit": "the-bodys-defences",
+ "questions": {
+  "d2497ea36a": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "Easy. A cold is a nose illness, so many students pick the nose without the skin-barrier fact, which lives only in the lures (pores, under the nails). The item is still sound: F3, entry through the moist linings, is the grade's content, and 'pores' is a real misconception.",
+     "fix": "Optional sharpening: put the barrier itself in the key. 'A cold virus sits on a girl's fingertips for an hour, yet it cannot get into her body there. What stops it?' Key 'Her skin's tough outer layer of dead cells'. Lures 'White blood cells guarding her fingertips', 'Sticky mucus coating her fingertips', 'Tiny hairs on her fingertips that trap it'."}
+   ]},
+  "dc95b42d9d": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem says the mucus traps breathed-in germs, so a defence that carries them 'Down into the lungs' or 'Into the blood' reads as absurd. Both lures are struck by the stem's own logic, and only the key and 'Out through the nose' are live: a coin toss for a student who does not know the cilia's direction.",
+     "fix": "Give each lure a reason a defender might have, and keep them distinct: 'Up to the throat, to be swallowed' (key); 'Out through the nose, to be blown out'; 'Down to the lungs, to be breathed out'; 'Into the blood, where white blood cells kill it'."}
+   ]},
+  "14272d2db6": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'before they reach the intestines' strikes 'Bile from the liver' for a student who knows that bile works in the small intestine. T1 the-bodys-main-organs already shows the stomach's 'juices full of strong acid', so a T1 student can match 'acid' to 'before the intestines'. The fact asked, that the acid kills swallowed germs, is new at T2, so this is not a repeat.",
+     "fix": "Optional: 'yet most of them are dead before the meal has gone far.' The clause still rules out the gut beyond the stomach, but it does not name the intestines."}
+   ]},
+  "16e1e8162d": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'destroy' in the stem weakens 'They seal them inside a blood clot' and 'They coat them in sticky mucus', which trap germs but do not destroy them.",
+     "fix": "'How do many of these white blood cells deal with them?'"}
+   ]},
+  "0532a8d907": {"verdict": "ok", "issues": []},
+  "e5e8b1caac": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "The scope's fever line is a simple why: a fever slows some germs and speeds the defences. That fact appears only in the context. The question asks the fever's trigger instead, the brain raising its set temperature, which is homeostasis and a step past the grade's line. No other unit owns the job of a fever, so the unit leaves it untested.",
+     "fix": "Ask the job: 'A boy with strep throat runs a fever of 39 degrees Celsius. The fever is his own body's doing, not the germs'. How does the extra heat help him?' Key 'It slows the germs as they multiply'. Lures 'It sweats the germs out through his skin' (M3), 'It boils the germs until all are dead', 'It dries out the mucus they live in'. The context keeps the brain's set point and the speeding-up of the white blood cells."}
+   ]},
+  "8308558054": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The cold virus has spread to her neck's skin' is weak. The stem calls the lumps organs under the jaw, not the skin. The 'spit' and 'mucus' lures are good: the first plays on the word 'glands', the second on the runny nose.",
+     "fix": "'They are storing up water to cool her body'. This is false and plausible, and it leans on no fact the stem leaves out."}
+   ]},
+  "30bec64111": {"verdict": "ok", "issues": []},
+  "7bfd380501": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The context says colds 'are commoner in winter because people crowd together indoors' as if it were the only reason. Crowding is the usual explanation, but low humidity and a cooler nose are also put forward. Flag for the fact-checker. The key and the lures are unaffected.",
+     "fix": "'...they are commoner in winter, partly because people crowd together indoors.'"}
+   ]},
+  "65a52c524f": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Soap and scrubbing get rid of many more germs than water alone' tells the student that soap REMOVES germs. That strikes two lures, which are about keeping germs out ('closes the skin's pores', 'leaves a coating that germs cannot stick to'), and leaves only the key and 'draws out germs hiding deep in the skin'. The key also echoes the stem's 'water'.",
+     "fix": "Cut the second sentence: 'Health experts say to scrub the hands with soap and water for at least 20 seconds. How does the soap help?' Keep the four choices. A stronger fourth lure, if wanted: 'It kills every germ it touches' (false, because plain soap mostly lifts germs off; the 'every' keeps it false)."}
+   ]}
+ },
+ "unit_notes": "Framing: no vaccine content in any stem, choice or context. The body's memory is told only as immunity after an illness (Q8 chickenpox, Q9 colds). The germs named are the familiar ones (a cold virus, strep throat, chickenpox, and measles in one context line), with no pathogen detail beyond that, so the unit holds its lane. Coverage: every scope line has an item: skin (Q1), mucus and cilia (Q2), stomach acid (Q3), white blood cells (Q4), fever (Q6), lymph nodes (Q7), memory (Q8, Q9) and hand washing (Q10), plus pus (Q5). The fever line's own why is only in a context; the fix is at Q6. Overlap check: (1) Q3 builds on T1 the-bodys-main-organs' stomach item (key 'The stomach', 'juices full of strong acid') and asks the acid's new job, so it is not a repeat. (2) Q10 and T5 how-germs-were-proven (Semmelweis's chlorinated lime) are different facts. (3) The Q5 splinter and the Q1 fingertips sit beside cells-the-building-blocks-of-life's scraped-knee item (new skin from skin cells); different fact. (4) Q4's lures (platelets, red cells) sit beside one-cell-or-many's red-blood-cell item; no shared key. (5) predators-partners-and-parasites Q3 (gut bacteria) has stomach acid and bile as lures; no shared key. (6) The planned T5 vaccines unit will ask what a vaccine does (antibodies and memory cells). Q8 must stay on memory after an illness, as it does now. Within the unit, Q9's stem says outright that the body remembers germs it has beaten, which is Q8's key. The teaching card makes that tolerable, but a player who meets Q9 first gets Q8 free. No singular they, no second person, no exclamation marks."
+}

@@ -148,3 +148,28 @@ M11. A bouncier ball carries more kinetic energy. Author's judgment (no survey f
 - Do not say chemical energy is released when bonds break (F14 caution).
 - Do not say a pendulum's swings die away with no cause, or that the energy is lost: it becomes heat (F21).
 - The nose basher's ball comes back to just short of its start, because a little energy becomes heat (F20, F21); the question asks why it cannot come back higher, which is conservation, not the losses.
+
+## Added in the revision (2026-11-26)
+
+F23. Motion energy is stored in moving objects, and the faster an object moves, the more energy it stores.
+    https://www.eia.gov/energyexplained/what-is-energy/forms-of-energy.php ("Motion energy is energy stored in moving objects."; "The faster an object moves, the more energy is stored.")
+    https://www.nextgenscience.org/pe/ms-ps3-1-energy (example: "riding a bicycle at different speeds")
+
+F24. Burning a hydrocarbon fuel such as gasoline makes new substances, carbon dioxide and water; the matter is not destroyed (closed-vessel weighings show mass is conserved).
+    https://grokipedia.com/page/Combustion ("In complete combustion of hydrocarbons, carbon dioxide and water form"; "closed-vessel weighings consistently demonstrated mass conservation")
+
+F25. Crushing is a physical change: it makes smaller pieces of the same substance and forms no new one.
+    https://grokipedia.com/page/Physical_change ("A physical change is a transformation in matter that alters its physical properties", without affecting chemical composition; "Crushing applies compressive stress to reduce particle size", the rock salt's formula unchanged)
+
+F26. A battery left unused slowly loses a little of its store (self-discharge) through internal chemical reactions; alkaline cells lose about 2% a year at room temperature.
+    https://grokipedia.com/page/Self-discharge ("the gradual loss of stored electrical charge"; arises from "internal chemical reactions"; alkaline batteries lose "approximately 2% per year at room temperature")
+    https://en.wikipedia.org/wiki/Alkaline_battery (self-discharge under 0.3% a month, per the fact-check)
+
+F27. A pendulum's swing does not depend on the mass of its bob: kinetic and gravitational potential energy are both in proportion to the mass, so a heavy ball and a light one let go from the same height swing back to the same height.
+    https://www.pa.uky.edu/sciworks/FME/fme/vibe4.htm ("Since the kinetic energy and the gravitational potential energy are both proportional to the mass"; "the maximum speed of the pendulum is determined by the distance that it is pulled back, independent of the mass")
+    https://grokipedia.com/page/Pendulum ("the period is independent of the bob's mass m, as mass cancels out in the derivation")
+    https://wonders.physics.wisc.edu/bowling-ball-pendulum/ ("the bowling ball will not go higher than its starting height")
+
+M12. Energy of motion builds up the longer a thing keeps moving, so riding on at the same speed gives more kinetic energy. Author's judgment (no survey found); F3 and F23 say kinetic energy is set by the motion itself, and grows only as the speed grows.
+
+M13. The everyday sense of energy (feeling rested, lively, "full of energy") taken for energy in the physics sense, so a rested rider is thought to have more kinetic energy at the same speed. Author's judgment (no survey found); F3 and F23 say kinetic energy is the energy of the motion itself.

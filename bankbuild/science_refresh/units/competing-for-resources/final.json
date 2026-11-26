@@ -1,0 +1,186 @@
+{
+ "unit": "competing-for-resources",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "competing-for-resources",
+   "question": "Living things need resources such as food, water, light, space, shelter and mates. When do two living things compete for one of these?",
+   "answer": "When there is not enough of it for both",
+   "choices": [
+    "When there is not enough of it for both",
+    "Whenever they both need the same one",
+    "Whenever they live side by side in one place",
+    "Only when they are of the same kind"
+   ],
+   "context": "Competition happens only when a resource is in short supply; where there is plenty for all, sharing it costs no one anything, however close together they live. Members of one species often compete hardest of all, since they need exactly the same things, but different kinds compete too.",
+   "facts": [
+    "F1",
+    "F3"
+   ],
+   "grade_note": "6th-grade ecology (TEKS 6.12A, NGSS MS-LS2-1) teaches that organisms compete for a resource they share when it is limited."
+  },
+  {
+   "tier": 2,
+   "topic": "competing-for-resources",
+   "question": "In a desert, seed-eating ants gather seeds by day, and seed-eating rodents gather the same kinds of seeds by night, so the two seldom meet. Seeds there are in short supply. Do the ants and the rodents compete?",
+   "answer": "Yes, since each seed one eats is lost to the other",
+   "choices": [
+    "Yes, since each seed one eats is lost to the other",
+    "No, since they gather at different times of day",
+    "No, since ants and rodents never fight each other",
+    "Yes, but only when they happen to meet"
+   ],
+   "context": "Competition needs no fight and no meeting: each seed one side eats is a seed the other cannot have. When ecologists fenced rodents out of desert plots, the number of ant colonies there rose by 71 percent, and where they took the ants away, the rodents increased.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "grade_note": "6th graders learn that competition for a shared, limited food can be indirect, between kinds of animals that never meet."
+  },
+  {
+   "tier": 2,
+   "topic": "competing-for-resources",
+   "question": "Some small birds nest only in holes, such as the hollows of old trees. In woods short of such holes, ecologists have put up nest boxes and found more of these birds breeding there. Ecologists have a name for anything, like those holes, that decides how many of a kind can live in a place. What is it?",
+   "answer": "A limiting factor",
+   "choices": [
+    "A limiting factor",
+    "A carrying capacity",
+    "A habitat",
+    "A niche"
+   ],
+   "context": "A limiting factor is anything that holds a population down: a scarce resource such as food, water or places to nest, or a predator or a disease. Here the shortage of nest holes held the birds' numbers down, so more places to nest meant more birds. Carrying capacity is something else: the largest population a place can support, which its limiting factors set.",
+   "facts": [
+    "F7",
+    "F10",
+    "F11",
+    "F21"
+   ],
+   "grade_note": "The limiting factor, a scarce resource that caps how large a population can grow, is named in the 6th-grade interdependence standard (TEKS 6.12A)."
+  },
+  {
+   "tier": 2,
+   "topic": "competing-for-resources",
+   "question": "Wheat needs nitrogen and phosphorus, two nutrients it takes from the soil. A farmer's field has plenty of nitrogen but too little phosphorus, and he spreads extra nitrogen on it. What will set how much his wheat can grow?",
+   "answer": "The phosphorus, since it is the scarcer",
+   "choices": [
+    "The phosphorus, since it is the scarcer",
+    "The nitrogen, since it is more plentiful",
+    "Both together, since their total has risen",
+    "The nitrogen, since he has added more of it"
+   ],
+   "context": "A plant's growth is set by the scarcest thing it needs, not by the total: extra nitrogen cannot stand in for missing phosphorus, and only more phosphorus will help. Justus von Liebig made this idea famous in 1840, and it is often pictured as a barrel that holds water only up to its shortest stave.",
+   "facts": [
+    "F8",
+    "F9"
+   ],
+   "grade_note": "That the scarcest resource, not the total, caps growth is the core of the 6th-grade limiting-factor idea, and plants taking nutrients from the soil is 6th-grade content."
+  },
+  {
+   "tier": 2,
+   "topic": "competing-for-resources",
+   "question": "A population of living things that moves into a new home with plenty of food grows fast. The largest population that home can support year after year is its carrying capacity. As the population nears that size, how does its growth usually change?",
+   "answer": "It slows down before it gets there",
+   "choices": [
+    "It slows down before it gets there",
+    "It keeps its speed until it hits that size",
+    "It speeds up until it hits that size",
+    "It shoots past that size, then dies out"
+   ],
+   "context": "As a population fills its home, its members compete harder for what is left, so its growth slows before it reaches the carrying capacity and its numbers level off near it; graphed over time, this makes an S-shaped curve. A population that does shoot past the carrying capacity shrinks back, but it does not usually die out.",
+   "facts": [
+    "F11",
+    "F12",
+    "F3",
+    "F14"
+   ],
+   "grade_note": "Carrying capacity, and populations levelling off as resources run short, are taught with limiting factors in 6th-grade ecology."
+  },
+  {
+   "tier": 2,
+   "topic": "competing-for-resources",
+   "question": "The United States Coast Guard released 29 reindeer on St. Matthew Island in 1944. With no predators there, the herd grew to about 6,000 by 1963, and through each winter it fed on the island's lichen, eating much of it away. What happened to the herd next?",
+   "answer": "It crashed as nearly all of them starved",
+   "choices": [
+    "It crashed as nearly all of them starved",
+    "It levelled off at about 6,000",
+    "It shrank slowly to a steady size",
+    "It kept growing as the lichen grew back"
+   ],
+   "context": "David Klein, the biologist who counted the herd, judged that it had grown past what the island's lichen could feed, so that when deep snow buried what was left in the hard winter of 1963 to 1964, the reindeer starved. By 1966 only 42 were left. Frank Miller and two colleagues, looking at the records again in 2005, argued that the herd was still growing fast and breeding well, and blamed that savage winter most of all.",
+   "facts": [
+    "F14",
+    "F15",
+    "F22"
+   ],
+   "grade_note": "6th graders learn what happens when a population grows past what its environment can support; St. Matthew Island is a standard documented case."
+  },
+  {
+   "tier": 2,
+   "topic": "competing-for-resources",
+   "question": "A gardener sows carrot seeds thickly, and the seedlings come up packed close together along the row. She leaves every one of them to grow. Compared with carrots spaced a few centimetres apart, what will most of hers be like at harvest?",
+   "answer": "Smaller, from sharing light, water and nutrients",
+   "choices": [
+    "Smaller, from sharing light, water and nutrients",
+    "Larger, from sheltering one another from the wind",
+    "The same, since each makes its own food",
+    "Larger, from crowded roots loosening the soil"
+   ],
+   "context": "Crowded plants of one kind need the same light, water and soil nutrients, so they compete hard and most grow stunted; crowded carrots also twist around one another. Making its own food does not spare a plant from competing, because it needs light and water to make that food, and nutrients from the soil to grow.",
+   "facts": [
+    "F18",
+    "F3",
+    "F19",
+    "F9"
+   ],
+   "grade_note": "That plants compete for light, water and soil nutrients is part of the 6th-grade interdependence standard; crowded seedlings are the everyday case."
+  },
+  {
+   "tier": 2,
+   "topic": "competing-for-resources",
+   "question": "Two kinds of paramecium, tiny one-celled living things, eat the same bacteria. In a lab, each kind does well in a tube of its own. When both kinds share one tube with a limited supply of food, what happens?",
+   "answer": "One kind dies out, and the other thrives",
+   "choices": [
+    "One kind dies out, and the other thrives",
+    "Both kinds live on, sharing the food evenly",
+    "Both kinds die out, as neither gets enough",
+    "Both kinds do well, just as they did alone"
+   ],
+   "context": "Georgy Gause ran this test in 1934: together, one kind kept growing while the other dwindled and died out. Two kinds that need exactly the same scarce resource cannot share it for long, and kinds that live side by side in nature often use different foods or places.",
+   "facts": [
+    "F20"
+   ],
+   "grade_note": "Middle-school texts (CK-12 Life Science) teach that when two kinds compete for the same limited resource, the less suited one may move away or die out."
+  }
+ ],
+ "revised": {
+  "ddd0d033b9": {
+   "old_hash": "ddd0d033b9",
+   "why": "Judge (medium, tell): 'Only when the resource is food' was struck out by the stem's own list of six resources, and 'Only when they are of different kinds' was weak. They are replaced by 'Whenever they live side by side in one place' (living together is not competing; M2's mirror) and 'Only when they are of the same kind' (a respectable mix-up: members of one species compete hardest, but different kinds compete too, F3, F5). The judge's 'only when both are animals' was not used, because the stem lists light. Stem and key unchanged."
+  },
+  "81c15c06af": {
+   "old_hash": "da0f557cab",
+   "why": "Judge (medium, tell): 'a scarce resource that holds a population's size down' said 'limits' in other words and, by calling the thing a resource, struck out the sizes and the place by category. The stem now names no category and no synonym of 'limit': 'anything, like those holes, that decides how many of a kind can live in a place', which also keeps carrying capacity live. 'A population density' is replaced by 'A niche', as the judge proposed. Fact-check error: the context defined a limiting factor as 'the resource in shortest supply', too narrow (predators, disease and temperature are limiting factors too, F21); it now says 'anything that holds a population down', resource, predator or disease. 'In shortest supply' and 'however much of everything else' are left out of the context so it does not hand over the phosphorus question's answer."
+  },
+  "d49c93c84b": {
+   "old_hash": "eefa6dc754",
+   "why": "Judge (medium, tell): the stem's definition already implied the numbers level off, so half the key was read off the stem, and 'It speeds up faster than ever' was weak. Re-keyed on the same fact (F12), as the judge proposed: growth slows BEFORE the population reaches the carrying capacity, against keeping its speed or speeding up until it hits it, and overshoot then extinction (wrong as the usual case, F14). 'At first' is cut from the stem, since it hinted the growth changes. The old 'crashes to zero' lure, which read against the reindeer question, is gone."
+  },
+  "3f423b4a77": {
+   "old_hash": "3f423b4a77",
+   "why": "Fact-check (uncertain, weighed and fixed): the context stated as settled that the herd had grown 'far past the island's carrying capacity', which Miller, Barry and Calvert (2005) dispute, blaming mainly the severe winter. Both views are now attributed: Klein's, that the herd outgrew its lichen, and theirs (F22). Stem, key and choices unchanged; the key (nearly all starved) holds on either view."
+  },
+  "50e590b22d": {
+   "old_hash": "6116b787c3",
+   "why": "Judge (medium, tell): 'far too thickly' passed judgment in the stem and struck out both 'Larger' choices; now 'thickly'. Fact-check (optional, taken): the context no longer lists soil nutrients as what a plant makes its food from (light and water make it; nutrients from the soil let it grow). Key and choices unchanged."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "c295f68b8b",
+   "question": "Few small plants grow on the floor of a thick forest in summer, and those that do grow slowly. Which resource do they run shortest of there?",
+   "why": "Judge (medium, grade): that a thick forest's floor is shady is everyday knowledge below 6th grade; and (medium, tell) 'in summer' struck out 'Warmth' and 'Carbon dioxide' was not live. The judge's rewrite (spring wildflowers that bloom before the trees leaf out) could not be made fair: the sources also give moist spring soil and the cool season as reasons those plants start early, so every live wrong choice would be partly true. The forest-floor light example stays in the unit's scope through the crowded-carrots question (plants compete for light)."
+  }
+ ]
+}

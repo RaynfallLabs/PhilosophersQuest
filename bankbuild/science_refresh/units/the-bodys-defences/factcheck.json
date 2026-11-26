@@ -1,0 +1,426 @@
+{
+ "unit": "the-bodys-defences",
+ "questions": {
+  "d2497ea36a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a cold virus carried on the fingers gets in through the moist lining of the nose (self-inoculation: hands touch the nasal mucosa, eyes or mouth)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Common_cold",
+     "note": "Grokipedia: infection via 'direct contact with the nasal or conjunctival mucosa'; 'self-inoculation, where contaminated hands touch the nasal mucosa, eyes, or mouth'. The eyes are also a route but are not among the choices."
+    },
+    {
+     "claim": "Wrong choice 'The pores of her fingertips': intact skin, pores included, is a barrier cold viruses cannot pass",
+     "result": "ok",
+     "source": "https://www.pfizer.com/news/articles/how_do_viruses_make_us_sick",
+     "note": "Pfizer: viruses can enter through the eyeball surface and skin with an abrasion; 'they cannot get past intact skin'. OpenStax: skin is 'a continuous, impassable barrier'. No source names pores as an entry."
+    },
+    {
+     "claim": "Wrong choice 'The skin under her fingernails': still skin, and cold viruses infect the respiratory lining, not skin",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Common_cold",
+     "note": "Grokipedia: the viruses 'invade and replicate within respiratory epithelial cells'; no skin route described."
+    },
+    {
+     "claim": "Wrong choice 'The canal inside her ear': the ear canal runs from the pinna to the eardrum and is lined with keratinised skin (stratified squamous epithelium); earwax is antimicrobial",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ear_canal",
+     "note": "Grokipedia Common_cold names otitis media only as a secondary complication, not an entry route."
+    },
+    {
+     "claim": "Context: skin's tough, dry outer layer of dead cells is a barrier",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Innate_immune_system",
+     "note": "Outer layer of dead keratinocytes; 'dry, acidic surface that desiccates and mechanically resists penetration by microbes'."
+    },
+    {
+     "claim": "Context: touching the face with unwashed hands is one of the main ways colds spread",
+     "result": "ok",
+     "source": "https://webarchive.library.unt.edu/eot2008/20081009071031/http://www3.niaid.nih.gov/topics/commonCold/transmission.htm",
+     "note": "NIAID (archived) lists touching contaminated skin or surfaces then the eyes or nose as one of the two common routes, with inhaled droplets; CDC: 'People frequently touch their eyes, nose, and mouth without even realizing it'."
+    }
+   ]
+  },
+  "dc95b42d9d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: windpipe cilia beat 10 to 20 times a second",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mucociliary_clearance",
+     "note": "Wikipedia: cilia 'beat constantly at a rate of between 10 and 20 times per second'; Grokipedia Mucociliary_clearance: 10-20 Hz basal (diagnostic normal range given as 7-16 Hz)."
+    },
+    {
+     "claim": "Key: cilia carry the mucus up to the throat (mucociliary escalator), where it is swallowed or coughed up",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mucociliary_clearance",
+     "note": "Grokipedia: tracheal mucus driven 'cephalad', cilia 'uniformly directed toward the glottis'; removed 'via swallowing or expectoration'. Wikipedia: 'upward from the lower respiratory tract'."
+    },
+    {
+     "claim": "Wrong choice 'Down into the lungs': opposite of the escalator's direction",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mucociliary_clearance"
+    },
+    {
+     "claim": "Wrong choice 'Out through the nose': windpipe mucus ends at the pharynx, not the nostrils",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mucociliary_clearance",
+     "note": "Lower-airway mucus moves upward to the pharynx; nasal mucus moves down toward the same pharynx, so neither stream carries windpipe mucus out of the nose."
+    },
+    {
+     "claim": "Wrong choice 'Into the blood': no",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mucociliary_clearance"
+    },
+    {
+     "claim": "Context: the nose's own mucus is mostly moved backward by cilia and swallowed unnoticed",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mucus",
+     "note": "Grokipedia Mucus: nose and sinuses make about 1 litre a day, 'most of which is moved backward by cilia and swallowed unnoticed'. Second sources agree: Wikipedia Mucociliary_clearance ('downwards from the nasal structures' toward the pharynx); Allergy and Asthma Network (cilia sweep mucus 'from your nasal cavity into the back of your throat where it can be swallowed', https://allergyasthmanetwork.org/news/your-nose-the-ultimate-air-cleaner/); Biol Pharm Bull 38(4) review (nasal mucus transported to the nasopharynx and swallowed, https://www.jstage.jst.go.jp/article/bpb/38/4/38_b14-00398/_html). 'Mostly' keeps it safe for the small front part of the nose."
+    },
+    {
+     "claim": "Context: hairs just inside the nostrils catch the bigger bits of dust",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Nasal_hair",
+     "note": "Nasal hairs in the vestibule 'just inside the nostrils' catch 'larger airborne particles such as dust, pollen, and pathogens'."
+    }
+   ]
+  },
+  "14272d2db6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: stomach acid (hydrochloric acid) kills most swallowed bacteria",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gastric_acid",
+     "note": "Grokipedia: gastric acid 'primarily composed of hydrochloric acid'; acidic conditions 'eradicate most ingested bacteria and parasites'. Second sources: Microbiology Society ('destroys many of the microbes that enter the body in food and drink', https://microbiologysociety.org/why-microbiology-matters/what-is-microbiology/microbes-and-the-human-body/immune-system.html); Gastric juice review (https://pubmed.ncbi.nlm.nih.gov/15679471/). Some acid-tolerant germs survive, which 'most' allows."
+    },
+    {
+     "claim": "Context: the same acid helps digest food",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gastric_acid",
+     "note": "Acid 'activates pepsinogen ... into active pepsin' and denatures proteins."
+    },
+    {
+     "claim": "Wrong choice 'Bile from the liver': bile is released into the duodenum, after the stomach, so it cannot be what kills germs before they reach the intestines",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Bile",
+     "note": "Bile acids do have antimicrobial properties, but Grokipedia places that effect in the intestinal lumen; the stem's 'before they reach the intestines' rules bile out cleanly. Context 'Bile does its work later, in the small intestine' is correct."
+    },
+    {
+     "claim": "Wrong choice 'Heat inside the belly': human pathogens grow best near 37 C body temperature",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mesophile",
+     "note": "Mesophiles; 'human pathogens often exhibiting a preferred temperature near 37 C'."
+    },
+    {
+     "claim": "Wrong choice 'Mucus in the food pipe': oesophageal mucus lubricates and shields the lining",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Esophagus",
+     "note": "Mucous glands secrete mucin 'for lubrication' and to shield the mucosa; no germ-killing role claimed."
+    }
+   ]
+  },
+  "16e1e8162d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: within hours, white blood cells squeeze out of nearby blood vessels and reach the bacteria",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Inflammation",
+     "note": "Grokipedia Inflammation: 'Neutrophils predominate in the early phase (within hours)'; immune cells 'migrate from the bloodstream into inflamed tissues' (extravasation). OpenStax: 'Neutrophils and monocytes leave the capillaries'."
+    },
+    {
+     "claim": "Key: many white blood cells (phagocytes) swallow germs and digest them",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/42-1-innate-immune-response",
+     "note": "OpenStax: 'A neutrophil is also a phagocytic leukocyte that engulfs and digests pathogens'; Grokipedia White_blood_cell: neutrophils 'engulf bacteria and fungi'; macrophages engulf and digest pathogens."
+    },
+    {
+     "claim": "Wrong choice 'They seal them inside a blood clot': is it partly true?",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Platelet",
+     "note": "Partly true only at research level and only inside blood vessels: neutrophils cast NETs that 'capture pathogens and provide a scaffold for fibrin deposition', and platelet microthrombi 'trap bacteria' (immunothrombosis; also https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4921471/). It is not defensible here: in the stem the white cells have already left the vessels and are in the tissue of the cut, the question asks how they destroy the bacteria (trapping is not destroying), and Grokipedia White_blood_cell gives clotting to platelets, not white cells. No change needed. Optional polish for the context: 'Clots are mainly the work of platelets', since fibrin and clotting proteins (and NETs) also build a clot."
+    },
+    {
+     "claim": "Wrong choice 'They take away all their oxygen': not a white-cell killing method; red blood cells carry oxygen",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/White_blood_cell",
+     "note": "Neutrophils kill engulfed microbes with a respiratory burst (reactive oxygen species), the opposite of starving them of oxygen. Grokipedia Red_blood_cell: oxygen transport via haemoglobin."
+    },
+    {
+     "claim": "Wrong choice 'They coat them in sticky mucus': mucus comes from airway and gut linings, not white blood cells",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mucus",
+     "note": "Mucus is secreted by goblet cells and glands of the mucous membranes. (Antibodies and complement can 'coat' germs, but that is not mucus.)"
+    },
+    {
+     "claim": "Context: clots are the work of platelets; red blood cells carry oxygen",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Platelet",
+     "note": "Platelets 'primarily function in hemostasis by forming clots'; the clot is a 'fibrin-platelet plug'. Simplification is true at 6th-grade level; see the optional 'mainly' polish above."
+    }
+   ]
+  },
+  "0532a8d907": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: pus is mostly dead and dying white blood cells (chiefly neutrophils)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pus",
+     "note": "Grokipedia: pus is 'dead and living white blood cells (leukocytes), liquefied tissue debris, proteins, and microorganisms', 'predominantly polymorphonuclear leukocytes (PMNs) such as neutrophils'. Wikipedia Pus (https://en.wikipedia.org/wiki/Pus): 'dead leukocytes ... (mostly neutrophils)'; 'As the neutrophils die off ... forming the viscous pus'."
+    },
+    {
+     "claim": "Stem: thick, yellowish pus",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pus",
+     "note": "'thick, whitish-yellow or greenish fluid'."
+    },
+    {
+     "claim": "Wrong choices 'Red blood cells that have gone bad', 'Fat leaking out from under the skin', 'Mucus made by the sore skin'",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Pus",
+     "note": "None is a component named by either source; skin has no mucous glands."
+    },
+    {
+     "claim": "Context: neutrophils are the commonest white blood cells",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/White_blood_cell",
+     "note": "'Neutrophils are the most abundant type of white blood cell', about 50-70% of circulating leukocytes."
+    },
+    {
+     "claim": "Context: redness and warmth from extra blood flowing in; swelling from fluid and white blood cells leaving the vessels",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Inflammation",
+     "note": "'Redness results from vasodilation'; 'Heat stems from this enhanced perfusion, delivering warmer arterial blood'; 'Swelling occurs due to increased vascular permeability'. OpenStax: redness, swelling, heat and pain 'result from the movement of leukocytes and fluid'."
+    }
+   ]
+  },
+  "e5e8b1caac": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Stem: strep throat with a fever",
+     "result": "ok",
+     "source": "https://www.cdc.gov/group-a-strep/about/strep-throat.html",
+     "note": "CDC lists fever among the common signs of strep throat; children 5 to 15 are the most affected group. 39 C is a plausible fever."
+    },
+    {
+     "claim": "Key: the brain (hypothalamus) raises the body's set temperature",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fever",
+     "note": "Fever: a rise above the hypothalamic set point; cytokines IL-1, IL-6, TNF-alpha 'released by immune cells, including monocytes, macrophages, and endothelial cells' drive PGE2 in the preoptic area."
+    },
+    {
+     "claim": "Wrong choice 'The bacteria give off heat as they grow'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fever",
+     "note": "Microbial parts (exogenous pyrogens) only 'provoke the release of endogenous pyrogens'; the heat comes from the host's own thermoregulation."
+    },
+    {
+     "claim": "Wrong choice 'His sore throat heats the blood passing by'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Inflammation",
+     "note": "Local inflammatory heat is warmer arterial blood arriving, not the throat heating blood; the whole-body rise is set by the hypothalamus."
+    },
+    {
+     "claim": "Wrong choice 'His body has lost control of its heat' (hyperthermia)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fever",
+     "note": "Hyperthermia occurs 'without any alteration in the hypothalamic set point, in contrast to the regulated rise seen in fever'. Context's heatstroke line is correct."
+    },
+    {
+     "claim": "Context: chemicals from white blood cells turn up the brain's temperature control centre; body makes heat, often by shivering at first",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fever",
+     "note": "Cytokines from monocytes and macrophages; shivering and skin vasoconstriction raise and hold the heat; chills at onset."
+    },
+    {
+     "claim": "Context: 'The extra heat slows many germs and speeds up white blood cells.'",
+     "result": "uncertain",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4786079",
+     "note": "Not stated as cautiously as the best sources. Grokipedia Fever states it firmly ('accelerated neutrophil migration'; heat slows viral replication), but notes most pathogen evidence is in vitro or animal work. The main review (Evans, Repasky and Fisher 2015, Nat Rev Immunol) supports both halves (fever 'confers a survival benefit'; fever-range heat cuts poliovirus replication over 200-fold in cells, raises neutrophil recruitment and respiratory burst) but says most findings come from experimental hyperthermia models and whether the same mechanisms work in real infections is still open. Science News Explores (https://www.snexplores.org/article/fever-can-help-immune-cells-attack): 'researchers still need to prove it'. Suggested fix: 'The extra heat is thought to slow some germs and help white blood cells work faster.'"
+    }
+   ]
+  },
+  "8308558054": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Stem: lymph nodes are small, bean-shaped organs, felt as tender lumps on both sides of the neck under the jaw, often called glands",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lymph_node",
+     "note": "Grokipedia: 'ovoid or bean-shaped structures measuring 0.5 to 2 cm'; cervical (neck) clusters. NHS (https://www.nhs.uk/conditions/swollen-glands/): 'Glands (known as lymph glands or lymph nodes)'; lumps 'on each side of the neck', 'under the chin'. Healthline names tender under-jaw nodes."
+    },
+    {
+     "claim": "Key: they swell because white blood cells in them multiply (and more arrive)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lymphadenopathy",
+     "note": "Reactive enlargement from 'polyclonal proliferation of lymphocytes and macrophages', plus 'edema, and influx of additional immune cells into the node'; the common cold and strep throat are named causes."
+    },
+    {
+     "claim": "Wrong choice 'Mucus from her nose is draining into them'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lymph_node",
+     "note": "Nodes filter lymph from tissues; mucus is cleared to the throat and swallowed (see the cilia question), not drained into lymph nodes."
+    },
+    {
+     "claim": "Wrong choice 'They are making extra spit for her throat'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lymph_node",
+     "note": "Saliva comes from the salivary glands (some of which also sit under the jaw), but the stem names these lumps as lymph nodes, which make no saliva."
+    },
+    {
+     "claim": "Wrong choice 'The cold virus has spread to her neck's skin'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Common_cold",
+     "note": "Cold viruses infect the respiratory lining; no skin infection."
+    },
+    {
+     "claim": "Context: lymph nodes filter lymph, trap germs and hold many white blood cells",
+     "result": "ok",
+     "source": "https://aboutkidshealth.ca/swollen-lymph-nodes",
+     "note": "'They act like tiny filters, catching viruses and bacteria for white blood cells to destroy'; Grokipedia: 'filter lymph fluid from tissues, trap pathogens'; 'housing lymphocytes'."
+    },
+    {
+     "claim": "Context: 'they go down within a week or two'",
+     "result": "uncertain",
+     "source": "https://www.nhs.uk/conditions/swollen-glands/",
+     "note": "Sources disagree. NHS: 'should go down within 1 to 2 weeks, depending on the cause'. AboutKidsHealth (SickKids, a children's hospital): nodes swollen by a viral infection 'will shrink to normal size on their own in about two to four weeks' (https://aboutkidshealth.ca/swollen-lymph-nodes); Mayo Clinic advises a check only if swollen 2 to 4 weeks (https://www.mayoclinic.org/diseases-conditions/swollen-lymph-nodes/symptoms-causes/syc-20353902). Suggested fix: 'they shrink back on their own within a few weeks' (or 'once the illness is over')."
+    }
+   ]
+  },
+  "30bec64111": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: her body remembers the germ (memory cells, antibodies) and stops it fast",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chickenpox",
+     "note": "Natural infection 'confers lifelong immunity in most cases through both humoral (IgG antibody-mediated) and cellular responses'; 'long-lasting T-cell memory'; IgG 'persists lifelong'; over 90% protection against reinfection, 'rare mild breakthrough cases'. KidsHealth (https://kidshealth.org/en/kids/immune.html): 'someone who gets sick with a disease, like chickenpox, usually won't get sick from it again'; antibodies 'usually stay in our bodies in case we have to fight the same germ again'."
+    },
+    {
+     "claim": "Shingles wording: is 'catching it once usually protects for life' safe, given the virus stays and can return as shingles?",
+     "result": "ok",
+     "source": "https://www.cdc.gov/chickenpox/hcp/clinical-overview/index.html",
+     "note": "Safe. CDC: 'VZV stays in the body (in the sensory nerve ganglia) as a latent infection'; 'Reactivation of latent infection causes herpes zoster (shingles)'; Grokipedia: reactivation is the same virus re-emerging, not a new infection. The draft says only that she does not catch chickenpox again and that most people 'have chickenpox only once', never that the virus is gone or that she can never be ill from it; 'Beating chickenpox' means beating the illness. No change needed. Do not add 'the virus is gone' in any edit."
+    },
+    {
+     "claim": "Wrong choice 'She has grown too old to catch that germ'; context 'a grown-up who has never had it can catch it'",
+     "result": "ok",
+     "source": "https://www.cdc.gov/chickenpox/about/index.html",
+     "note": "CDC: anyone who has not had chickenpox (or been immunised) can get it; Grokipedia: 'adults generally experience more severe disease'."
+    },
+    {
+     "claim": "Wrong choice 'Her skin has grown too thick for that germ'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chickenpox",
+     "note": "Chickenpox spreads through the air and by contact with the blisters' fluid; skin thickness plays no part in immunity."
+    },
+    {
+     "claim": "Wrong choice 'The germ grows weaker as it passes between people'",
+     "result": "ok",
+     "source": "https://www.cdc.gov/chickenpox/hcp/clinical-overview/index.html",
+     "note": "No source supports it; the brother caught it in full, and the virus stays highly contagious from person to person."
+    },
+    {
+     "claim": "Context: spreads to as many as nine in ten people at home who have never had it",
+     "result": "ok",
+     "source": "https://www.cdc.gov/chickenpox/hcp/clinical-overview/index.html",
+     "note": "CDC: 'about 90% of susceptible close contacts will get varicella after exposure'; Grokipedia: household secondary attack rate 'can reach up to 90%' (range 61-100%); CDC Yellow Book about 85%. 'As many as' is safe."
+    }
+   ]
+  },
+  "7bfd380501": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key and context: more than 200 different viruses cause colds",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Common_cold",
+     "note": "Grokipedia: 'more than 200 different respiratory viruses'; rhinoviruses 'in over 100 serotypes'. NIAID (archived, https://webarchive.library.unt.edu/eot2008/20090131041852/http://www3.niaid.nih.gov/topics/commonCold/cause.htm): more than 200 different viruses. Stable figure."
+    },
+    {
+     "claim": "Context: beating one protects only against that one",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Common_cold",
+     "note": "Immunity 'provides only short-term protection against the specific viral strain encountered'; 'no lifelong or cross-strain immunity'. (Protection against even the same strain can fade, but the draft's 'only against that one' and 'usually a virus his body has never met' are both true.)"
+    },
+    {
+     "claim": "Wrong choice 'The body's memory works only on bacteria'; context: measles, a virus, usually leaves protection for life",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Measles",
+     "note": "Measles is 'caused by the measles virus'; natural infection establishes 'typically lifelong protective immunity'; reinfection 'only in exceptional cases'."
+    },
+    {
+     "claim": "Wrong choice 'His first cold was never fully beaten'; context: a cold is over in about a week to ten days",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Common_cold",
+     "note": "'The average total duration is 7 to 10 days' (longer in young children)."
+    },
+    {
+     "claim": "Wrong choice 'Cold weather wipes out the body's memory'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Common_cold",
+     "note": "No source supports it."
+    },
+    {
+     "claim": "Context: 'cold weather does not cause colds: they are commoner in winter because people crowd together indoors'",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Common_cold",
+     "note": "First half is true (Grokipedia: 'low temperatures do not directly cause the common cold'; chilling is 'not a direct cause'). The second half gives one cause as if it were the whole: Grokipedia lists indoor crowding, dry indoor air that helps rhinoviruses survive, school calendars, and says 'cold exposure may modestly influence susceptibility' by impairing nasal defences; a 2022 lab study (Bleier et al.) found winter-cold nasal temperatures weaken a nasal antiviral response (https://www.sciencenews.org/article/why-easier-catch-cold-flu-covid-winter). Suggested fix: 'cold weather does not by itself cause colds: they are commoner in winter partly because people crowd together indoors.'"
+    }
+   ]
+  },
+  "65a52c524f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: health experts say to scrub for at least 20 seconds; soap and scrubbing remove many more germs than water alone",
+     "result": "ok",
+     "source": "https://www.cdc.gov/handwashing/show-me-the-science-handwashing.html",
+     "note": "CDC: 'Scrubbing your hands for at least 20 seconds removes more germs'; 'Washing hands with soap removes germs much more effectively' than water alone. Grokipedia Hand_washing: 77-92% reduction with soap and friction vs 56% with water alone."
+    },
+    {
+     "claim": "Key: soap lifts germs off for the water to rinse away",
+     "result": "ok",
+     "source": "https://www.cdc.gov/handwashing/show-me-the-science-handwashing.html",
+     "note": "CDC: 'the surfactants in soap lift soil and microbes from skin'; Grokipedia Hand_washing: soap 'emulsifies lipids and oils that trap pathogens, and suspends microbes for easier rinsing'."
+    },
+    {
+     "claim": "Wrong choice 'It closes the skin's pores to keep germs out'",
+     "result": "ok",
+     "source": "https://www.cdc.gov/handwashing/show-me-the-science-handwashing.html",
+     "note": "No source gives soap any such action; germs on hands are removed from the surface."
+    },
+    {
+     "claim": "Wrong choice 'It leaves a coating that germs cannot stick to' (writer's inference)",
+     "result": "ok",
+     "source": "https://www.cdc.gov/handwashing/show-me-the-science-handwashing.html",
+     "note": "The inference holds for ordinary soap. CDC says the soap is rinsed away ('Rinsing the soap away also minimizes skin irritation') and makes no claim of lasting protection. The WHO hand-hygiene guidelines (https://www.ncbi.nlm.nih.gov/books/NBK144036/) define plain soap as a detergent with no antimicrobial agent and give 'persistent activity' only to antiseptics such as chlorhexidine, which keep killing germs for a while; that is a medical antiseptic, not ordinary soap, and still not a coating germs cannot stick to. CDC: antibacterial soaps bring no added health benefit to ordinary users."
+    },
+    {
+     "claim": "Wrong choice 'It draws out germs hiding deep in the skin'",
+     "result": "ok",
+     "source": "https://www.ncbi.nlm.nih.gov/books/NBK144036/",
+     "note": "Washing with plain soap removes the loosely held germs on the surface; it does not pull germs out of the skin."
+    },
+    {
+     "claim": "Context: warm and cold water work about as well",
+     "result": "ok",
+     "source": "https://www.cdc.gov/handwashing/show-me-the-science-handwashing.html",
+     "note": "'The temperature of the water does not appear to affect germ removal'."
+    },
+    {
+     "claim": "Context: teaching hand-washing cuts colds and diarrhoea",
+     "result": "ok",
+     "source": "https://www.cdc.gov/clean-hands/data-research/facts-stats/index.html",
+     "note": "Handwashing education cuts diarrhoea by 23-40% and 'respiratory illnesses, like colds' by 16-21%."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Ten questions: 7 ok, 0 error, 3 uncertain; every key and every wrong choice holds. The three flags are all context wording, each a cheap fix: (1) fever: 'slows many germs and speeds up white blood cells' is firmer than the main review (much of the evidence is lab and animal work); soften to 'is thought to slow some germs and help white blood cells work faster'. (2) swollen glands 'go down within a week or two': NHS says 1 to 2 weeks, SickKids says 2 to 4 for a viral infection; say 'within a few weeks'. (3) colds in winter 'because people crowd together indoors': one cause told as the whole (dry air and cooler nasal defences also play a part); add 'partly'. On the points asked about: nose mucus moving backward to the throat is backed by three more sources (Wikipedia Mucociliary_clearance, Allergy and Asthma Network, Biol Pharm Bull review). 'They seal them inside a blood clot' is partly true only at research level and only inside vessels (NETs and immunothrombosis); it is not defensible for white cells already in the tissue of a cut, and the question asks how they destroy the germs. Optional polish: 'Clots are mainly the work of platelets'. The chickenpox wording is safe for shingles: nothing says the virus is gone. Soap's 'leaves no protective coating' holds for ordinary soap; only medical antiseptics such as chlorhexidine have lasting activity. No vaccine content is present and none was added."
+}

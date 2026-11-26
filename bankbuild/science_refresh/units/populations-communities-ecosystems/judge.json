@@ -1,0 +1,60 @@
+{"unit": "populations-communities-ecosystems",
+ "questions": {
+  "ae73f67ec5": {"verdict": "ok", "issues": []},
+  "2f6818056e": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "The point tested, that a population counts its young, is already in the everyday sense of the word (a town's population counts its babies). The key is common sense and needs no 6th-grade fact. The line's real content, one species in ONE area, is asked nowhere in the unit. 'Should she count the tadpoles?' also invites a practical answer, since field ecologists often count tadpoles and adults separately.",
+     "fix": "Test the area and the ages together: 'Bullfrogs live in two ponds a few kilometres apart, with dry farmland between them that the frogs almost never cross. Both ponds hold tadpoles as well as grown frogs. How many bullfrog populations live in the two ponds?' Key 'Two, one in each pond'. Lures 'One, since all of them are bullfrogs', 'Four, the tadpoles and the frogs in each', 'Two, the tadpoles and the grown frogs'."}
+   ]},
+  "f5e6d15591": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "This is the same fact as Q9 (14533a8d14): a community sits above a population because it holds many species. Q9 asks it better, as a case with the 'more ground' trap (M3).",
+     "fix": "Re-aim this item at the level the unit never asks, the organism, which is the first item of G6.L6: 'An ecologist follows one red fox through a winter, noting how far it roams each night, how much it weighs and where it sleeps. Which level of organisation is she studying?' Key 'An organism'. Lures 'A population', 'A species', 'A habitat'."},
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem itself strikes the lure 'It is one part of a larger population': it has just said the community sits ABOVE the population.",
+     "fix": "The re-aim above removes it. If the item is kept, replace the lure with 'It covers a larger patch of ground' (M3)."}
+   ]},
+  "12ce6d59c6": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "The key is the only nonliving choice among three living ones, and T1 ecosystems-living-and-nonliving already settles that: living and nonliving together make an ecosystem, with 'A community' as a lure, and bacteria in the soil are biotic. A student with only the T1 facts picks the odd one out, so the T2 fact (a community is the living things alone) is never needed. The item also hinges on the same distinction as Q7 (e60dc0ef4e).",
+     "fix": "Make each lure a real misconception that only the T2 fact answers. Choices: 'The sunlight warming its water' (key); 'The cattails and algae growing in it' (the belief that a community is only its animals); 'The bacteria in its mud, too small to see' (M5); 'Nothing, since the two words mean the same' (M2)."}
+   ]},
+  "89f15ef1c3": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem opens on 'Life on Earth' and speaks of ecosystems, and three lures name other spheres by their roots (atmo- air, hydro- water, geo- earth). Any student who knows that 'bio' means life, as in biology, strikes all three by root and reads the key off the stem's first word. With the other spheres as lures, this is also really an earths-four-spheres (G6.E4) question; see unit_notes.",
+     "fix": "Drop the 'Life' opener and put a second bio- word among the lures: 'Microbes drift about 10 kilometres up in the air, and tiny shrimp-like animals crawl on the floor of the deepest ocean trench, nearly 11 kilometres down. Together, all of Earth's ecosystems form the highest level of ecological organisation. What is it called?' Key 'The biosphere'. Lures 'The biome', 'The atmosphere', 'The geosphere'."}
+   ]},
+  "d283e1020c": {"verdict": "drop",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "This re-asks a T1 fact. T1 the-sun-and-its-planets asks 'What is Earth the only planet known to have?' (key 'Living things'), and this key is 'No other world is known to have life'. Framing it as the biosphere does not change the fact tested, and the 'why' is circular (no ecosystems, because an ecosystem needs life).",
+     "fix": "Drop it. With the re-aims at Q2 and Q3 the unit still holds 8 items on different facts. If a ninth is wanted, ask how far the biosphere reaches (F9) or how the levels nest (F10), not life on other worlds."},
+    {"axis": "tell", "severity": "medium",
+     "what": "The three lures are struck by T1 solar-system knowledge (Venus's thick clouds, the ice caps of Mars, the atmospheres of both), not by anything in this unit. 'Clouds' is not live as a condition for an ecosystem.",
+     "fix": "Dropped with the item."}
+   ]},
+  "e60dc0ef4e": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "This rests on the same distinction as Q4 (12ce6d59c6), that an ecosystem adds the nonliving parts. This item is the stronger one, because it applies the idea to a process (F18). It sits beside T1 decomposers-and-recycling-matter, which teaches nutrients returned to the soil, but it asks the level, not the recycling, so there is no repeat.",
+     "fix": "Keep it. If Q4 cannot be made to need the T2 fact, drop Q4 rather than this one."}
+   ]},
+  "17dddab646": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Outside its ecosystem, apart from nature' is weak. A 6th grader asked outright knows that people are living things, even if he leaves them out of his own drawings (M4). 'In its ecosystem, but not its community' is the live trap, along with 'a separate community' (M6).",
+     "fix": "Replace it with 'Above its ecosystem, as the ones who run it'. That puts M4's human exceptionalism in a form a student might really pick, and it is not a one-word twin of the key."}
+   ]},
+  "14533a8d14": {"verdict": "ok",
+   "issues": [
+    {"axis": "voice", "severity": "low",
+     "what": "The stem mixes 'about a square foot' with 'many kilometres'. The bank is metric elsewhere.",
+     "fix": "'in a patch of forest floor about 30 centimetres across' (or 'no bigger than a doormat')."}
+   ]}
+ },
+ "unit_notes": "Overlaps: (1) Q6 (d283e1020c) re-asks T1 the-sun-and-its-planets ('Earth is the only planet known to have living things'), so drop it. (2) Q4 (12ce6d59c6) can be answered from T1 ecosystems-living-and-nonliving (ecosystem = living + nonliving, with 'A community' as a lure; bacteria in soil are biotic); the fix is at Q4. (3) Q7 sits beside T1 decomposers-and-recycling-matter but asks the level, which is fine. (4) The biosphere: the curriculum map's G6.L6 lists only organism, population, community and ecosystem. The biosphere ('all living things') is in G6.E4, earths-four-spheres, a T2 unit not yet built whose scope sets the biosphere beside the geosphere, hydrosphere and atmosphere. Q5, with those three spheres as lures, is in effect an earths-four-spheres question. Decide now which unit owns 'what the biosphere is'. If it stays here, the earths-four-spheres builder must not re-ask it; Q5's fix removes the sphere lures, but the name itself would still be shared. No overlap with food-chains-and-food-webs, the-bodys-main-organs, how-germs-were-proven, competing-for-resources (carrying capacity, limiting factors), one-cell-or-many, variation-and-survival or predators-partners-and-parasites. Within the unit: Q3 and Q9 test one fact (community above population because it holds many species), so Q3 is re-aimed. Q4 and Q7 both hinge on 'ecosystem = community + nonliving' and are acceptable once Q4 needs the T2 fact. Missing from the line: the organism level (fix at Q3) and 'one AREA' in the definition of a population (fix at Q2). After the drop and the re-aims, the unit holds 8 items on 8 facts: population is one species (Q1); one area, all ages (Q2); organism (Q3); community vs ecosystem (Q4); biosphere (Q5); a nutrient loop is studied at the ecosystem level (Q7); people are a population in the community (Q8); a step up adds kinds, not ground (Q9). No singular they, no second person, no exclamation marks."
+}

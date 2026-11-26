@@ -1,0 +1,30 @@
+{
+ "unit": "waves-carry-energy",
+ "questions": {
+  "cc6b236696": {
+   "verdict": "pass",
+   "why": "Old fact problem fixed: the leaf now ends up 'almost exactly' where it started, and the water 'mostly just' moves in loops. That matches Stokes drift: a particle returns 'close to but slightly ahead of its starting position', and the drift scales with the square of the wave's steepness, so it is tiny for pebble ripples. The leaf's rising and falling, the ribbon question's key, is gone. Stem, choices and key unchanged; the key was checked true at fact-check (NOAA), and the new context agrees with it.",
+   "sources": [
+    "https://grokipedia.com/page/Stokes_drift"
+   ]
+  },
+  "9a65776596": {
+   "verdict": "pass",
+   "why": "All old issues fixed. Every choice now answers both halves (buzz and light), so the key is no longer the only complete answer. The defensible glass choice is gone. The new 'The pump sucks out the sound, but not the light' is sound as a thing of its own (M3), and it is truly wrong. The buzzer lure is wrong because the bell 'continues to vibrate visibly' (Grokipedia Bell jar). 'Empty space soaks up sound' is wrong: with too little matter, nothing carries the sound. 'Barely be heard' and 'nearly all the air' match real jars (1-10 kPa; 'faint and eventually inaudible'). Key true: sound needs a medium, and light does not (Grokipedia Sound; OpenStax: EM waves 'do not require a medium'). Choices parallel.",
+   "sources": [
+    "https://grokipedia.com/page/Bell_jar",
+    "https://grokipedia.com/page/Sound",
+    "https://openstax.org/books/university-physics-volume-1/pages/16-1-traveling-waves"
+   ]
+  },
+  "4436fd6505": {
+   "verdict": "pass",
+   "why": "Old issues fixed. The trumpet half, which re-asked the hallway question's 'sound is longitudinal', is replaced by a spring shaken side to side. That carries a transverse wave (OpenStax: a spring moved 'vertically up and down, while the wave propagates horizontally'; the kind is set by the disturbance being perpendicular). It is the one wave fact no other question asks. The electric-and-magnetic-fields wording (8th grade) is gone. Key true: light is transverse (Grokipedia Transverse wave: EM waves are 'inherently transverse'; G6.P9 names light). The 2x2 grid is balanced, and 'Spring longitudinal, light transverse' is the honest trap set by the pushed-spring question. 'Transverse' is not readable off 'side to side' without the term, which the answer teaches. The context does not key the pushed spring or the bell jar.",
+   "sources": [
+    "https://openstax.org/books/university-physics-volume-1/pages/16-1-traveling-waves",
+    "https://grokipedia.com/page/Transverse_wave",
+    "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-26"
+   ]
+  }
+ }
+}
