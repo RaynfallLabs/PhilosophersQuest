@@ -1,0 +1,209 @@
+{
+ "unit": "the-water-cycle",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "the-water-cycle",
+   "question": "On a hot afternoon, sunlight warms the sea, and some of its water turns into an invisible gas that rises into the air. What is this change called?",
+   "answer": "Evaporation",
+   "choices": [
+    "Evaporation",
+    "Boiling",
+    "Condensation",
+    "Transpiration"
+   ],
+   "context": "Evaporation is liquid water turning into water vapour, an invisible gas, and the Sun's heat supplies nearly all the energy for it; heat from deep inside Earth is less than a thousandth as much. Boiling happens only when water is heated to its boiling point, with bubbles of gas forming all through it. Condensation is the opposite change, and transpiration is water evaporating from the leaves of plants.",
+   "facts": [
+    "F1",
+    "F2",
+    "F5",
+    "F9",
+    "F22"
+   ],
+   "grade_note": "Florida's grade 5 water-cycle lessons (SC.5.E.7.1) teach evaporation by name as liquid water changing to water vapour, with the Sun's heat supplying the energy, and Texas TEKS 5.10A has 5th graders explain how the Sun and the ocean interact in the water cycle."
+  },
+  {
+   "tier": 1,
+   "topic": "the-water-cycle",
+   "question": "Two damp towels hang on a washing line in the sunshine of a warm afternoon. By evening they are dry. Where did the water in them go?",
+   "answer": "Into the air as water vapour",
+   "choices": [
+    "Into the air as water vapour",
+    "Into the air as tiny water drops",
+    "Up to the Sun, drawn by its heat",
+    "Nowhere, since it no longer exists"
+   ],
+   "context": "The water evaporated: it turned into water vapour, an invisible gas that mixed into the air. Tiny drops of liquid water would be seen as a mist, the way a cloud is seen, but water vapour cannot be seen at all. The water still exists, and in time it may become part of a cloud.",
+   "facts": [
+    "F5",
+    "F8",
+    "F17",
+    "F23"
+   ],
+   "grade_note": "Florida's grade 5 water-cycle lessons (SC.5.E.7.1) teach evaporation as liquid water changing to water vapour, and children's ideas that evaporated water 'disappeared', 'leaked through' its dish or that 'the sun took it away' are documented (SPACE project, via NZCER)."
+  },
+  {
+   "tier": 1,
+   "topic": "the-water-cycle",
+   "question": "Warm, damp air rises from the sea and cools as it climbs. High in the sky its water vapour turns back into tiny drops of liquid water, and the drops gather into clouds. What is this step of the water cycle called?",
+   "answer": "Condensation",
+   "choices": [
+    "Condensation",
+    "Evaporation",
+    "Precipitation",
+    "Transpiration"
+   ],
+   "context": "Condensation is water vapour turning back into liquid water as it cools. Air cools as it rises, and its vapour condenses into droplets so small that rising air holds them up; together they make a cloud. Evaporation is the opposite change, and transpiration is water evaporating from the leaves of plants.",
+   "facts": [
+    "F8",
+    "F9",
+    "F5",
+    "F11"
+   ],
+   "grade_note": "Water vapour cooling and condensing into the droplets that form clouds is one of the named parts of Florida's grade 5 water-cycle model (SC.5.E.7.1)."
+  },
+  {
+   "tier": 1,
+   "topic": "the-water-cycle",
+   "question": "Rain, snow, sleet and hail all fall from clouds, and together they are called precipitation. What makes rain begin to fall from a cloud?",
+   "answer": "Its tiny drops join into heavy drops",
+   "choices": [
+    "Its tiny drops join into heavy drops",
+    "Two clouds bump into each other",
+    "The wind blows its drops out",
+    "Thunder shakes its drops loose"
+   ],
+   "context": "A cloud is a crowd of droplets so small that rising air holds them up. When droplets bump and join, a drop grows until it is too heavy to stay up and falls as rain; it takes millions of cloud droplets to make one raindrop. Wind and thunder often come with rain, but neither makes it fall: thunder is only the sound of lightning, and many clouds rain steadily with no thunder at all.",
+   "facts": [
+    "F10",
+    "F11",
+    "F8",
+    "F24"
+   ],
+   "grade_note": "Rain falling from clouds is part of every grade 5 water-cycle model (Florida SC.5.E.7.1), and children's pictures of clouds as bags that rip open when they collide, or as sponges, are documented up to age 10 (Bar, in NSTA's summary)."
+  },
+  {
+   "tier": 1,
+   "topic": "the-water-cycle",
+   "question": "Runoff is rain that flows over the ground into creeks and rivers instead of soaking in. One heavy storm pours rain on four places side by side. Where does the most rain become runoff?",
+   "answer": "A paved parking lot",
+   "choices": [
+    "A paved parking lot",
+    "A ploughed field",
+    "A grassy meadow",
+    "A pine forest"
+   ],
+   "context": "Water cannot soak into pavement, so nearly all the rain on a parking lot runs off into drains and streams. A ploughed field's bare soil soaks up some of the rain, but more runs off it than off a meadow or a forest, where plants, roots and fallen leaves help the water soak in.",
+   "facts": [
+    "F13",
+    "F25"
+   ],
+   "grade_note": "NGSS 5-ESS3-1 has 5th graders learn how people's use of the land affects Earth's water, and grade 5 water-cycle lessons follow fallen rain as runoff to creeks and rivers (USGS water cycle for schools); paved ground making the most runoff is its plainest case."
+  },
+  {
+   "tier": 1,
+   "topic": "the-water-cycle",
+   "question": "After a long, gentle rain, some of the water soaks down through the soil of a meadow and becomes groundwater under the land. What happens to groundwater over time?",
+   "answer": "It seeps slowly into rivers and seas",
+   "choices": [
+    "It seeps slowly into rivers and seas",
+    "It stays in one place for ever",
+    "It is soaked up for good by the rock",
+    "It sinks to Earth's hot centre"
+   ],
+   "context": "Groundwater fills the tiny spaces and cracks in soil and rock, but it does not stay there for good. It moves slowly, often only centimetres to metres in a year, and seeps sideways and upwards into the beds of rivers, lakes and the sea, or flows out at springs, so it rejoins the rest of the water cycle. Deep groundwater may stay underground for thousands of years first.",
+   "facts": [
+    "F15",
+    "F16"
+   ],
+   "grade_note": "NGSS 5-ESS2-2 names ground water among the reservoirs 5th graders study, and Florida's grade 5 lessons call the ground a large store of fresh water; the USGS water cycle for schools teaches that it seeps back into rivers, lakes and the oceans."
+  },
+  {
+   "tier": 1,
+   "topic": "the-water-cycle",
+   "question": "Rain has fallen on Earth for millions of years, since long before the dinosaurs. How much water does Earth have today, compared with the dinosaurs' time?",
+   "answer": "About the same, used over and over",
+   "choices": [
+    "About the same, used over and over",
+    "Less, since the Sun dries it up",
+    "More, since clouds make new water",
+    "Less, since the ground soaks it up"
+   ],
+   "context": "The water cycle moves water from place to place and from one form to another, but Earth as a whole neither gains nor loses much water. Water that evaporates is still in the air, and water that soaks into the ground is still on Earth. The rain falling today is the same water that has gone round for millions of years.",
+   "facts": [
+    "F17",
+    "F5",
+    "F15"
+   ],
+   "grade_note": "Florida's grade 5 benchmark SC.5.E.7.1 teaches that water 'can go back and forth from one state to another', and the same water moving round the cycle again and again is the idea every 5th-grade water-cycle model is built on."
+  },
+  {
+   "tier": 1,
+   "topic": "the-water-cycle",
+   "question": "Oceans cover about 71 percent of Earth's surface, and their water is salty. How much of all the water on Earth is in the oceans?",
+   "answer": "Nearly all of it",
+   "choices": [
+    "Nearly all of it",
+    "About three quarters of it",
+    "About half of it",
+    "Only a small part of it"
+   ],
+   "context": "About 97 percent of Earth's water is salty ocean water. Oceans cover less of the surface than that, but on average they are more than three and a half kilometres deep. Only about 2.5 percent of Earth's water is fresh.",
+   "facts": [
+    "F19",
+    "F20",
+    "F21"
+   ],
+   "grade_note": "NGSS 5-ESS2-2 has 5th graders describe and graph the amounts of salt and fresh water on Earth, and Florida's grade 5 lessons (SC.5.E.7.2) teach that the oceans contain 97 percent of it."
+  },
+  {
+   "tier": 1,
+   "topic": "the-water-cycle",
+   "question": "Only a small part of Earth's water is fresh water, without the salt of the sea. Where is most of that fresh water?",
+   "answer": "In ice caps and glaciers",
+   "choices": [
+    "In ice caps and glaciers",
+    "In lakes, ponds and rivers",
+    "In the air, as water vapour",
+    "In swamps and marshes"
+   ],
+   "context": "About 69 percent of Earth's fresh water is frozen in ice caps and glaciers, and about 30 percent is underground as groundwater. Lakes and rivers, where fresh water is easiest to see, hold only a tiny fraction of it, and so do swamps and the air.",
+   "facts": [
+    "F21"
+   ],
+   "grade_note": "NGSS 5-ESS2-2's core idea teaches 5th graders that most fresh water is in glaciers or underground, with only a tiny fraction in streams, lakes, wetlands and the air."
+  }
+ ],
+ "revised": {
+  "7aa3fc7f73": {
+   "old_hash": "9873c1648a",
+   "why": "Judge (medium): the Sun-as-energy-source key repeated energy-changes-form's Sun question with the same Moon and Earth's-heat lures, and 'The pull of Earth's gravity' was dead. Re-keyed to the name of the change, Evaporation, which the unit never keyed; the stem keeps the Sun as the taught fact and avoids the word 'vapour'. Boiling is the honest confusion (F22); the context keeps the Sun and Earth's-heat lines (F1, F2)."
+  },
+  "2c3bd99d97": {
+   "old_hash": "6a4968424b",
+   "why": "Judge (medium): the glass table ruled out 'Through the glass into the ground', and (low) the glass dish drying in the Sun echoed matter-made-of-tiny-particles' seawater question. The scene is now towels on a washing line, and the dead lure is replaced by the near-miss students make, evaporated water as a mist of tiny drops (F23, F8)."
+  },
+  "d704d5a6f6": {
+   "old_hash": "d704d5a6f6",
+   "why": "Fact-check (error): the context said cloud droplets are 'far too small and light to fall'; they do fall, slowly, and updrafts hold them up. Now 'so small that rising air holds them up' (F11). Stem, key and choices unchanged."
+  },
+  "389fff75bd": {
+   "old_hash": "389fff75bd",
+   "why": "Judge (medium): the sponge and the rip-open bag are a young child's pictures, so only the bump lure was live for a 10-year-old. They are replaced by causes a 5th grader really suspects, wind and thunder (F24: thunder is the sound of lightning; nimbostratus rains steadily with no thunder). Stem unchanged."
+  },
+  "0235a0d2ac": {
+   "old_hash": "7067c11582",
+   "why": "Judge (high): 'Runoff' explains itself and the stem ruled out all three wrong choices. The term is now taught in the stem and a runoff fact is tested instead, on the judge's pavement suggestion: water cannot soak through pavement, bare soil makes the most runoff of natural ground, and plant cover and leaf litter cut it (F25, USGS and Grokipedia). This also moves off the heavy-rain hillside that ecosystems-living-and-nonliving uses."
+  },
+  "01f53e4e82": {
+   "old_hash": "9a3ccb613f",
+   "why": "Judge (medium): 'It slowly hardens into solid rock' was a weak lure; it is replaced by the idea that soaked-in water is lost to the rock for good (M7), which the context now answers. Judge (low): 'deep under the land' suggested groundwater is always deep; now 'under the land'."
+  },
+  "aa3fb41e94": {
+   "old_hash": "aa3fb41e94",
+   "why": "Judge (low, cheap fix): 'Less, since the Sun burns it up' was weak (water does not burn); now the documented form of the idea, 'Less, since the Sun dries it up' (M1). The context already answers it (evaporated water is still in the air). Stem unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

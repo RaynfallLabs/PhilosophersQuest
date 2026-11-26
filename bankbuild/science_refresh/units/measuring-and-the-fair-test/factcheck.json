@@ -1,0 +1,320 @@
+{
+ "unit": "measuring-and-the-fair-test",
+ "questions": {
+  "61d64971bf": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a spring scale measures force (how hard she pulls); the harder the pull, the farther the spring stretches (proportional)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Spring_scale",
+     "note": "Grokipedia: 'Spring scales measure force in general'; deformation 'directly proportional to the magnitude of the applied force'. Dragging the brick, the scale reads the pull passed through it."
+    },
+    {
+     "claim": "Context: the pointer reads the force in newtons",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Spring_scale",
+     "note": "Dials are marked in grams, kilograms or newtons; school force-meters read newtons. The stem does not name a unit, so a gram-marked scale does not break the item; the context's 'reads the force in newtons' is true of the school force-meter it describes."
+    },
+    {
+     "claim": "Wrong choice 'How much matter is in the brick': mass, measured by a balance, not a spring scale",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mass_versus_weight",
+     "note": "Mass is 'the intrinsic measure of the amount of matter'; found with a balance comparing reference masses; a spring scale responds to a force. Dragged sideways, the scale reads the pull, not the brick's matter, so the lure is plainly wrong here."
+    },
+    {
+     "claim": "Wrong choices 'How fast' / 'How far': speed and distance need a timer and a metre stick, not a spring scale",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Stopwatch",
+     "note": "A stopwatch measures duration; length by a metre stick (https://grokipedia.com/page/Metre). A spring scale reads neither."
+    },
+    {
+     "claim": "Grade note: TEKS 5.1D names spring scales among the grade's tools",
+     "result": "ok",
+     "source": "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-7",
+     "note": "5.1(D) lists 'digital scales, balances, spring scales, graduated cylinders...'."
+    }
+   ]
+  },
+  "336cf5139d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: for water (stem names water and a downward curve), read the bottom of the curve at eye level",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Meniscus_(liquid)",
+     "note": "Concave meniscus: 'the correct reading is taken at the lowest point of the curve'; 'viewing the meniscus at eye level'. Mercury (convex) is read at the top, but the stem says water and describes the bowl shape, so the key is safe."
+    },
+    {
+     "claim": "Context: water clings to the glass and climbs its sides, so the surface sags in the middle",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Meniscus_(liquid)",
+     "note": "Water wets glass: 'adhesive forces exceed cohesive ones, causing the liquid to climb the walls'. (In plastic cylinders water's meniscus is often flat, but the stem states the curve.)"
+    },
+    {
+     "claim": "Wrong choices: top of the curve (eye level or above) and bottom seen from above are wrong; looking from above gives a parallax error",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Graduated_cylinder",
+     "note": "'align your eye level with the meniscus to eliminate parallax error'; 'the volume is read at the lowest point of this curve'. All three lures are wrong for water."
+    },
+    {
+     "claim": "Graduated cylinder measures liquid volume in millilitres",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Graduated_cylinder",
+     "note": "mL equivalent to cm3."
+    }
+   ]
+  },
+  "c2763bbcc6": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: bacteria are living things far too small to see with the eye alone; pond water holds them",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Bacteria",
+     "note": "Typical bacteria 0.5-5 um, too small to see without magnification (giant Thiomargarita is an exception, not a pond-drop bacterium)."
+    },
+    {
+     "claim": "Key: a microscope shows bacteria; a school microscope magnifies about 40 to hundreds of times",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Optical_microscope",
+     "note": "Compound light microscopes 'typically between 40x and 1500x'. At 400x bacteria show as small dots and rods (https://www.microbehunter.com/observing-bacteria-under-the-light-microscope/), so 'enough to show bacteria' holds."
+    },
+    {
+     "claim": "Context: a hand lens magnifies only up to about 10 times",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Magnifying_glass",
+     "note": "Grokipedia gives 2x-10x for handheld magnifiers in one place but 'between 2x and 20x' in its introduction; 20x hand lenses (loupes) are sold. Still far too little for bacteria. Safer: 'up to about 10 or 20 times'."
+    },
+    {
+     "claim": "Context: a magnifying mirror magnifies about 3 times",
+     "result": "error",
+     "source": "https://zadroinc.com/blogs/news/best-magnification-mirror-guide",
+     "note": "Grokipedia Curved mirror says makeup mirrors give 'up to 3x', but magnifying mirrors are widely sold at 5x, 10x, 15x and 20x (Zadro guide; Conair, Revlon 10x products), so 'about 3 times' is wrong for many a child has at home. Even 20x is far too little for bacteria, so the item survives. Fix: 'A hand lens or a magnifying mirror makes things look at most about 10 to 20 times bigger, far too little for bacteria, and a telescope is built for things far away.'"
+    },
+    {
+     "claim": "Wrong choices hand lens, magnifying mirror, telescope cannot show bacteria",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Telescope",
+     "note": "Telescope is for remote objects. A 1 um bacterium at 20x is 20 um, below the eye's ~70 um limit (https://grokipedia.com/page/Naked_eye). All three lures wrong."
+    },
+    {
+     "claim": "Grade note: TEKS 5.1D names hand lenses and microscopes",
+     "result": "ok",
+     "source": "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-7",
+     "note": "Confirmed; 'mirrors' are also listed."
+    }
+   ]
+  },
+  "29d455b478": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: 6 kilograms is a mass; kilograms and grams are units of mass, found with a balance",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weighing_scale",
+     "note": "'Mass is quantified in kilograms (kg), the base unit for mass'; a balance gives 'a direct measure of mass rather than weight'. The stem says 'mass', not 'weight in grams', so the mass/weight wording is safe."
+    },
+    {
+     "claim": "Wrong choice 8 litres: a volume unit",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Litre",
+     "note": "Litre is a unit of volume (1,000 cm3). Plausible for a pumpkin: an 80 cm girth gives a diameter of about 25 cm, a sphere of about 8.6 L, and 6 kg in 8 L fits a hollow pumpkin that floats; the four numbers hang together."
+    },
+    {
+     "claim": "Wrong choice 80 centimetres: a length (girth by tape); centimetre = 1/100 metre",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Metre",
+     "note": "Length unit; the context's 'a tape around the pumpkin's middle' fits."
+    },
+    {
+     "claim": "Wrong choice 15 degrees Celsius: a temperature, read from a thermometer",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Thermometer",
+     "note": "Thermometer measures temperature; Celsius is a temperature scale."
+    },
+    {
+     "claim": "Grade note: TEKS 5.1D metric tools",
+     "result": "ok",
+     "source": "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-7",
+     "note": "Metric rulers, Celsius thermometers, balances, graduated cylinders listed."
+    }
+   ]
+  },
+  "4ac860ae37": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: take away the empty cup's mass (net = gross - tare)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tare_weight",
+     "note": "'net weight = gross weight - tare weight'; tare is the mass of the empty container."
+    },
+    {
+     "claim": "Context: tare button pressed with the empty cup on the scale",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tare_weight",
+     "note": "'pressing a dedicated tare button after placing the empty container on the scale'; Weighing_scale: kitchen scales 'zero out container weights'."
+    },
+    {
+     "claim": "Context arithmetic: 85 g - 5 g = 80 g; a paper cup about 5 g",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tare_weight",
+     "note": "Arithmetic correct; 5 g is a plausible mass for a small paper cup."
+    },
+    {
+     "claim": "Wrong choices: add the cup's mass; read as it stands; take away the cup's volume",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weighing_scale",
+     "note": "Adding doubles the cup's mass; the reading as it stands is cup plus sand (the stem does not say the balance was zeroed with the cup on it); a volume cannot be taken off a mass. All wrong. Minor: 'A cup's volume is the space it fills' is loose (could be read as its capacity) but not false."
+    }
+   ]
+  },
+  "206806948f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: keeping the load and height the same means only the size can cause a difference (fair test: one variable changed, others kept the same)",
+     "result": "ok",
+     "source": "https://www.sciencelearn.org.nz/videos/2066-fair-testing",
+     "note": "'A single variable is changed while keeping other variables the same'; 'Any differences are said to be the result of the changed variable'. Grokipedia Scientific control: differences attributed 'directly to the manipulation of the independent variable'."
+    },
+    {
+     "claim": "Wrong choices: so both fall at the same speed; so the result agrees with the prediction; so each need be dropped only once",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Scientific_control",
+     "note": "Controls prevent confounding; they do not make outcomes equal, confirm a prediction, or replace repeated trials (sciencelearn: scientists 'repeat and reflect on their tests'). All wrong."
+    },
+    {
+     "claim": "Context: the class should still drop each parachute several times",
+     "result": "ok",
+     "source": "https://www.sciencelearn.org.nz/videos/2066-fair-testing",
+     "note": "Repeating makes findings more robust."
+    },
+    {
+     "claim": "Grade note: TEKS 5.1B plan and conduct simple experimental investigations",
+     "result": "ok",
+     "source": "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-7",
+     "note": "Confirmed wording."
+    }
+   ]
+  },
+  "d206b22021": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: trials are repeated because one result alone might be off (random error varies between repeats; averaging reduces it)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Observational_error",
+     "note": "Random error 'varies unpredictably in replicate measurements'; averaging replicate measurements reduces it."
+    },
+    {
+     "claim": "Wrong choices: each drop tests a different variable; a test only counts if done three times; the first drop is only for practice",
+     "result": "ok",
+     "source": "https://www.sciencelearn.org.nz/videos/2066-fair-testing",
+     "note": "The stem says 'the very same drop', so no new variable; no rule fixes three trials (NGSS: 'the number of trials considered'); no rule discards the first. All wrong."
+    },
+    {
+     "claim": "Context: small slips (release height, reading at a slant) change each result a little; comparing or averaging gives a more trustworthy answer; nothing special about three",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Observational_error",
+     "note": "Consistent with random error and averaging. (A reading always taken at the same slant would be systematic, but 'a little' each time reads as random scatter; fine at grade level.)"
+    },
+    {
+     "claim": "Grade note: NGSS 3-5 practice 'fair tests in which variables are controlled and the number of trials considered'",
+     "result": "ok",
+     "source": "https://www2.cde.ca.gov/cacs/science?c0=15&c2=3",
+     "note": "Wording confirmed via the California NGSS listing and Rhode Island specs (search results)."
+    }
+   ]
+  },
+  "e1be3638ed": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: when careful repeated results go against a prediction, change the idea",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hypothesis",
+     "note": "Researchers 'refine or discard it based on evidence'; a working hypothesis stays 'open to revision or rejection based on new evidence'."
+    },
+    {
+     "claim": "Wrong choices: keep it because he was sure; call the test a failure; test until the big magnet wins",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hypothesis",
+     "note": "Certainty is not evidence; a test against the prediction still gave a result to weigh; repeating until a wished-for outcome is cherry-picking. All wrong."
+    },
+    {
+     "claim": "Context: a small neodymium magnet can pull harder than a much bigger magnet of a weaker kind",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Neodymium_magnet",
+     "note": "Neodymium magnets hold 'about 18 times' the magnetic energy of ferrite by volume and allow 'smaller, lighter magnets for a given application'; Grokipedia Neodymium magnet (per fact sheet): ferrite needs larger sizes for comparable strength."
+    },
+    {
+     "claim": "Grade note: TEKS 5.1E collect observations and measurements as evidence; 5.3A explanations supported by data",
+     "result": "ok",
+     "source": "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-7",
+     "note": "5.1(E) 'collect observations and measurements as evidence'; 5.3(A) 'develop explanations and propose solutions supported by data and models'."
+    }
+   ]
+  },
+  "8062571f8a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: 'Do bean plants grow taller in sun or shade?' can be settled by a fair test (grow in sun and shade, keep the rest the same, measure heights)",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/understanding-science-101/what-is-science/science-has-limits-a-few-things-that-science-does-not-do/",
+     "note": "Science deals with natural phenomena; NGSS Appendix H 3-5: 'Science findings are limited to what can be answered with empirical evidence' (https://www.commonplanner.com/standards/next-generation-science-standards-35ce4c68/appendix-h-understanding-the-scientific-enterprise-the-nature-of-science-in-ngss/grades-3-4-5-8ac46840)."
+    },
+    {
+     "claim": "Wrong choices: rose lovelier than tulip (taste); every school should plant a garden (what people should do); gardening the best hobby (value)",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/understanding-science-101/what-is-science/science-has-limits-a-few-things-that-science-does-not-do/",
+     "note": "Aesthetic: 'Individuals make those decisions for themselves'; moral: science 'does not make any judgments about whether that state of affairs is right, wrong, good, or bad'. Evidence can inform the school question but not settle a 'should'; the context says just that."
+    },
+    {
+     "claim": "Grade note: TEKS 5.1A starts with a testable question",
+     "result": "ok",
+     "source": "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-7",
+     "note": "5.1(A) actually reads 'ask questions and define problems based on observations or information...'; 'testable' is the writer's gloss. Grade note only, not player-facing."
+    }
+   ]
+  },
+  "8cfd138225": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a line graph shows how temperature changes through the day",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Line_chart",
+     "note": "'a series of data points connected by straight lines', used 'to depict trends over an ordered independent variable, most commonly time'."
+    },
+    {
+     "claim": "Wrong choice pie chart: parts of a whole, not change over time",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pie_chart",
+     "note": "Shows proportional shares of a whole; 'inherently static and limited to single snapshots'."
+    },
+    {
+     "claim": "Wrong choice Venn diagram: what groups share",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Venn_diagram",
+     "note": "Shows elements unique to each set and shared between sets."
+    },
+    {
+     "claim": "Wrong choice flow chart: steps of a process in order",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Flowchart",
+     "note": "'visually depict stages of a process, workflow, computer algorithm, or system'."
+    },
+    {
+     "claim": "Grade note: TEKS 5.1F tables, graphs, Venn diagrams, flow charts",
+     "result": "ok",
+     "source": "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-7",
+     "note": "5.1(F) 'construct appropriate graphic organizers ... including tables, bar graphs, line graphs, tree maps, concept maps, Venn diagrams, flow charts or sequence maps'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "All 10 checked on the web, Grokipedia first. One context error (c2763bbcc6): a magnifying mirror is said to magnify 'about 3 times' (Grokipedia Curved mirror's makeup-mirror figure), but 5x, 10x, 15x and 20x magnifying mirrors are common products; the hand lens's 'up to about 10 times' is also tight (Grokipedia Magnifying glass gives 2x-20x in its introduction). The key and the lures still stand; only the context's numbers need the fix. Fact sheet F11 carries the same 3x figure. Q2's stem names water and the downward curve, so the bottom of the meniscus is safe (mercury would be read at the top; water in plastic can be flat, but the stem states the curve). Q1's stem names no unit; spring scales may be marked in grams, but the context's newtons describes the school force-meter truly and the key is 'how hard she pulls'. Q4 says mass in kilograms, not weight in grams; its four numbers are mutually consistent (80 cm girth gives about 8.6 L; 6 kg in 8 L fits a hollow pumpkin)."
+}

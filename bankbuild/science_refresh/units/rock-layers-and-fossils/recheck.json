@@ -1,0 +1,60 @@
+{
+ "unit": "rock-layers-and-fossils",
+ "questions": {
+  "792f9e4c22": {
+   "verdict": "pass",
+   "why": "Old tell fixed: 'loose' is gone, so Bedrock is a live lure for a child who links the lake bed to bedrock, and the dead Magma is replaced by Erosion, the material-for-process mix-up. All wrong: bedrock is solid rock under soil and sediment, erosion is a 'geological process' that moves sediment (Grokipedia Erosion), humus is rotted organic matter. Key true (Grokipedia Sediment: particles from older rock and shell fragments carried by water, wind and ice; laminated muds settling in standing water). The context teaches 'sedimentary' and does not restate the weathering-versus-erosion fact. Grade 5 (TEKS 5.10B).",
+   "sources": [
+    "https://grokipedia.com/page/Sediment",
+    "https://grokipedia.com/page/Erosion",
+    "https://grokipedia.com/page/Bedrock",
+    "https://grokipedia.com/page/Humus"
+   ]
+  },
+  "31c8e94325": {
+   "verdict": "pass",
+   "why": "Both old issues fixed. Granite replaces the self-naming Sandstone and gives nothing away; Shale (which sounds like 'shell') and Coal stay live. Granite is truly wrong: it forms 'by the slow crystallization of silica-rich magma deep within the Earth's crust' (Grokipedia Granite). The context now says 'calcium carbonate, the hard material of shells and corals', which is true for both calcite and aragonite (Grokipedia Calcium carbonate: mollusc shells about 95 percent calcium carbonate, reefs of calcium carbonate skeletons) and no longer claims bone. Key true (limestone from marine skeletal remains in warm shallow seas).",
+   "sources": [
+    "https://grokipedia.com/page/Granite",
+    "https://grokipedia.com/page/Calcium_carbonate",
+    "https://grokipedia.com/page/Limestone",
+    "https://en.wikipedia.org/wiki/Limestone"
+   ]
+  },
+  "9237791b44": {
+   "verdict": "pass",
+   "why": "Old clarity low fixed: 'becoming a fossil' replaces the backward-reaching 'one'. Key true: rapid burial 'shields remains from scavengers and weathering' (Grokipedia Fossil); remains must be covered soon after death (Wikipedia Fossil). Lures stay wrong and parallel. No new problem.",
+   "sources": [
+    "https://grokipedia.com/page/Fossil",
+    "https://en.wikipedia.org/wiki/Fossil"
+   ]
+  },
+  "51ee2d2282": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the stem no longer states the core fact, and the key is no longer the one heat choice; it now asks which rock holds fossils, with the kinds described, not named (rock types are T2). Key true: 'fossils are most commonly found in sedimentary rock', which forms at temperatures and pressures that do not destroy them (Wikipedia Sedimentary rock). Lures wrong: lava 'tends to wipe away the traces' (Discover; NPS: lava rarely holds fossils), granite-type rock forms from magma, and metamorphism means 'any fossils within are likely to be melted' (UCMP). 'Squeezed' is a live lure off 0263ee3155's 'pressed together'. 'Best chance' covers rare exceptions. Choices parallel.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sedimentary_rock",
+    "https://ucmp.berkeley.edu/education/explorations/tours/fossil/5to8/metamorphism.html",
+    "https://www.nps.gov/subjects/fossils/volcanoes-and-fossils.htm",
+    "https://grokipedia.com/page/Granite"
+   ]
+  },
+  "341bc44417": {
+   "verdict": "pass",
+   "why": "Old fact problem fixed: the fossils are now in a layer of solid rock under the field, so a glacier cannot have carried them in and 'A glacier once covered it' is no longer defensible. Key true: starfish are 'exclusively marine' and 'entirely absent from freshwater habitats' (Grokipedia Starfish); corals are marine; sea fossils on dry land show a former sea (NGSS 3-LS4-1). Minor, not failing: starfish fossils are sparse (Grokipedia), so 'packed with' is a generous scene, but the habitat fact holds. No named place.",
+   "sources": [
+    "https://grokipedia.com/page/Starfish",
+    "https://grokipedia.com/page/Coral",
+    "https://www.nextgenscience.org/pe/3-ls4-1-biological-evolution-unity-and-diversity"
+   ]
+  },
+  "ae9b7b04e3": {
+   "verdict": "pass",
+   "why": "Both old issues fixed: 'clear, golden' has moved to the context, so tar and mud are live again (tar seeps do trap insects), and 'sticky' is shared by the key and the honey lure, so no lone word gives the key. Resin is now 'a thick, sticky liquid', matching Grokipedia Resin ('solid or highly viscous') and Amber (resin 'thick and sticky' when exuded). Key true: amber is 'fossilized tree resin' hardened over millions of years (Grokipedia Amber). Sap is not a choice. The context's 'Amber is tree resin' is loose (it is fossil resin) but the next sentence says the resin hardened into amber.",
+   "sources": [
+    "https://grokipedia.com/page/Amber",
+    "https://grokipedia.com/page/Resin"
+   ]
+  }
+ }
+}

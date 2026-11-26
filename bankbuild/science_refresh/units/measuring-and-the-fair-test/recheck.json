@@ -1,0 +1,69 @@
+{
+ "unit": "measuring-and-the-fair-test",
+ "questions": {
+  "4553d528ff": {
+   "verdict": "pass",
+   "why": "Old tell fixed: all four choices are now about the brick, the stretch clause is gone, and 'A girl' replaces the unanchored 'she' (the key has no pronoun). The 'scale' name keeps the matter lure strong. Key true: a spring scale measures force, its spring stretching in proportion (Grokipedia Spring scale), and dragging a block with a spring scale to read the pull is a standard classroom activity. Lures truly wrong (mass by a balance; speed and distance by timer and metre stick). Context true.",
+   "sources": [
+    "https://grokipedia.com/page/Spring_scale",
+    "https://grokipedia.com/page/Mass_versus_weight",
+    "https://web.physics.ucsb.edu/~lecturedemonstrations/Composer/Pages/12.66.html"
+   ]
+  },
+  "c2763bbcc6": {
+   "verdict": "pass",
+   "why": "Old fact error fixed: the '3 times' mirror figure is gone and 'at most about 10 to 20 times' matches Grokipedia Magnifying glass (2x-10x handheld, 2x-20x in its introduction) and the common 5x-20x make-up mirrors; the magnifying mirror lure is now taught ('curves inward to make a face look bigger'). Caveat, not a fail: 30x mirrors and 30x loupes are sold, so 'about' is carrying the top of the range, but even 30x leaves a 1-micrometre bacterium at 30 micrometres, below the eye's ~70, so 'far too little for bacteria' stays true. Key true (compound microscope 40x-1500x). Lures wrong.",
+   "sources": [
+    "https://grokipedia.com/page/Magnifying_glass",
+    "https://grokipedia.com/page/Optical_microscope",
+    "https://grokipedia.com/page/Naked_eye",
+    "https://zadroinc.com/blogs/news/best-magnification-mirror-guide"
+   ]
+  },
+  "f88f29cfb2": {
+   "verdict": "pass",
+   "why": "Old tell fixed: 'alone' is gone and the weak volume lure is replaced by the real slip of zeroing the balance with nothing on it, which is truly wrong (the cup's mass is still in the reading; the tare is pressed 'after placing the empty container on the scale', Grokipedia Tare weight). Key true (net = gross - tare). 'Read the balance just as it stands' is wrong since the stem says nothing of a tare. Exactly one defensible answer; the longest choice is a lure, so no length tell. Context arithmetic correct (85 - 5 = 80).",
+   "sources": [
+    "https://grokipedia.com/page/Tare_weight",
+    "https://grokipedia.com/page/Weighing_scale"
+   ]
+  },
+  "d206b22021": {
+   "verdict": "pass",
+   "why": "Old tells fixed: the different-variable lure that 'very same drop' ruled out is gone, and the key is stated flatly with no hedge against absolutes. The new lures are real slips (keep the best, a magic three, a practice throw), none ruled out by the stem; 'three tries' echoes the stem's 'three times', which only strengthens a wrong choice. Key true: random error varies between replicate measurements and averaging reduces it (Grokipedia Observational error). Context true, including the new line on keeping only the highest bounce.",
+   "sources": [
+    "https://grokipedia.com/page/Observational_error",
+    "https://www.sciencelearn.org.nz/videos/2066-fair-testing"
+   ]
+  },
+  "e1be3638ed": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the two plainly-cheating lures are replaced by real student moves, blaming the equipment and leaving out the results that disagree (cherry picking, Grokipedia), so the key no longer stands out by decency alone. 'The big magnet must be broken' is wrong: no evidence points to it, and a small neodymium magnet really out-pulls a much bigger ferrite one (about 18 times the energy by volume, Wikipedia; Grokipedia: ferrite needs larger sizes). Key true (a hypothesis is refined or discarded by evidence, Grokipedia Hypothesis). Context true.",
+   "sources": [
+    "https://grokipedia.com/page/Hypothesis",
+    "https://grokipedia.com/page/Cherry_picking",
+    "https://en.wikipedia.org/wiki/Neodymium_magnet",
+    "https://grokipedia.com/page/Neodymium_magnet"
+   ]
+  },
+  "8062571f8a": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the sunflower question is a question of fact settled by counting, so the key is no longer the only factual choice, and the rose lure also holds a comparison, so 'two conditions' does not single out the key. It is truly not a fair test: a descriptive investigation is observation, an experimental one 'a test with identified variables' with one manipulated (TEKS guide; TEKS 5.1B, grade 5). Key true. Taste and 'should' lures wrong (Berkeley UndSci: science does not settle aesthetic or moral questions). Grade note now accurate.",
+   "sources": [
+    "https://teksguide.org/teks/s21c",
+    "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-7",
+    "https://undsci.berkeley.edu/understanding-science-101/what-is-science/science-has-limits-a-few-things-that-science-does-not-do/"
+   ]
+  },
+  "8cfd138225": {
+   "verdict": "pass",
+   "why": "Old tell fixed: 'A flow chart' (no numbers) is replaced by 'A tally chart', a number-holding chart every 5th grader has met, which records how often each value occurs (Grokipedia Tally marks: frequency tables) and so shows no change over time; truly wrong. Avoiding 'line plot' (which can mean a line graph outside US school maths) is sound. Key true (Grokipedia Line chart: trends over an ordered variable, most often time). Pie and Venn wrong. Context true.",
+   "sources": [
+    "https://grokipedia.com/page/Tally_marks",
+    "https://grokipedia.com/page/Line_chart",
+    "https://grokipedia.com/page/Pie_chart",
+    "https://grokipedia.com/page/Venn_diagram"
+   ]
+  }
+ }
+}

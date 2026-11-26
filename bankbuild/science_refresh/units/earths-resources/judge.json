@@ -1,0 +1,63 @@
+{"unit": "earths-resources",
+ "questions": {
+  "fda47cb5d6": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Wind' and 'Sunlight' are dead. They are the stock examples of renewable energy that every 4th grader is taught, so the question comes down to coal against firewood. Firewood is a good lure (M2), but it is the only live one.",
+     "fix": "Keep Coal and Firewood, and replace the two stock renewables with renewables a child might think get used up. Choices: 'Coal', 'Firewood', 'Fuel made from corn', 'Flowing river water'. Corn fuel is biomass and grows back every year; a river's flow powers dams and is not used up (EIA renewable sources, F5). Add one line to the context for each."},
+    {"axis": "grade", "severity": "low",
+     "what": "Sorting coal, oil and gas from wind, sunlight and wood is a grade 4 standard (the grade_note itself cites TEKS 4.7C, and NGSS has it at 4-ESS3-1). It is in this unit's scope and 5th grade builds on it, so it can stay. The harder choices above keep it from being a 4th-grade review.",
+     "fix": "No change beyond the choices above."},
+    {"axis": "fact", "severity": "low",
+     "what": "The context's 'new trees grow back in 20 to 100 years' sits awkwardly against the stem's own test, 'within a human lifetime', at the 100-year end.",
+     "fix": "'...since new trees grow back within decades...' or drop 'to 100'."}
+   ]},
+  "83deef4734": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Cross-unit leak. 'Old copper wires from a building' gives away electric-circuits' key: that unit asks which metal the wires inside a house's walls are made of, and the answer is Copper. The stem and the answer also share the word 'new' ('new wire', 'new copper ore').",
+     "fix": "'Old copper pipes from a house can be melted down and made into new pipes. Even so, scientists count copper as a nonrenewable resource. Why?' Answer: 'Nature makes copper ore far too slowly'."}
+   ]},
+  "d7a3f569a2": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The answer is the extreme of a time ladder (months, two years, twenty years, hundreds of years), and the stem points at the slowest. 'As rock crumbles into tiny grains' is a process every child knows is slow, so a test-wise student picks the longest time without knowing the fact.",
+     "fix": "Put the answer in the middle, with a longer lure that is a real confusion: soil-making taken for rock-making, which rock-layers-and-fossils teaches takes millions of years. Choices: 'Hundreds of years', 'About twenty years', 'A few months', 'Millions of years'."}
+   ]},
+  "9cfba02ba4": {"verdict": "ok",
+   "issues": []},
+  "7dbb19df6c": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'None of it' is dead. The stem asks 'how much of the energy does using old cans save?', which assumes a saving, and no child believes recycling saves nothing. With 'None' gone, the striking-fact answer is the extreme of the three that are left.",
+     "fix": "Replace 'None of it' with a close rival, so that only a student who knows the roughly 95 percent figure picks the answer. Choices: 'Almost all of it', 'About three quarters of it', 'About half of it', 'About a tenth of it'."}
+   ]},
+  "1c0118ee37": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Odd one out. Paper is the only soft, flimsy material among four. The other three are glass and two metals, all melted and remade, and everyday sense says paper is the thing that 'wears out'. A student who knows nothing about fibres shortening gets it.",
+     "fix": "Make a wrong choice look as flimsy as paper: replace 'Aluminium' with 'Aluminium foil'. Thin foil tears like paper but is metal, melted and remade without wearing out. Choices: 'Paper', 'Glass', 'Aluminium foil', 'Steel'. Add to the context: 'Foil tears as easily as paper, but it is metal and is remade like a can.' Do not offer plastic: most plastics also degrade when recycled, which would make two right answers."}
+   ]},
+  "78328d0acd": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "Reduce, reuse and recycle are taught by name from grades 1-3 (the grade_note says so). Telling them apart is in this unit's scope, and the jam-jar and melting pair is a fair 5th-grade test, so this is low.",
+     "fix": "No change needed."},
+    {"axis": "clarity", "severity": "low",
+     "what": "Some primary lessons call composting 'reusing food scraps', so a student could argue the compost choice. F18 classes it as recycling.",
+     "fix": "Optional: replace it with 'Dropping old newspapers in a recycling bin'. That is plainly recycling, and the light-switch choice still carries the reduce lure."}
+   ]},
+  "fbec84865b": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Replenishing' is above most 5th graders' vocabulary and is taught nowhere in the stem. The actions plainly add no water. Recycling and reusing are the live lures.",
+     "fix": "Replace it with the everyday misreading of 'saving water': 'Storing it'. Choices: 'Conserving it', 'Recycling it', 'Reusing it', 'Storing it'. The context then says that saving water here means using less, not keeping it in a tank."}
+   ]},
+  "7d3ffac908": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Odd one out. In all three wrong choices the bag vanishes ('rots away', 'dissolves away', 'burns away to nothing'). The answer is the only one in which the plastic is still there, and the stem's 'lies there for years' leans the same way. 'Burns away to nothing in the sun' is also weak.",
+     "fix": "Replace the burn lure with the opposite misconception, that plastic never changes: 'It stays whole, just as it was'. Choices: 'It breaks into tiny bits of plastic', 'It stays whole, just as it was', 'It rots away like a fallen leaf', 'It slowly dissolves away in the rain'. Now two choices keep the plastic and two lose it. The context's sunlight-makes-it-brittle line already answers the new lure."}
+   ]}
+ },
+ "unit_notes": "Tone is plain throughout, as the brief asks. Every stem describes, and none urges: no 'should', no 'help the planet', no instruction to the player. The three Rs appear only as curriculum vocabulary, and the harm fact (animals swallow plastic) sits in a context, stated flatly. No prices, laws or policy appear, so the lanes are clean. Selection lean (low): five of nine questions are on recycling or plastic (9cfba02ba4, 7dbb19df6c, 1c0118ee37, 78328d0acd, 7d3ffac908), plus recycled copper in 83deef4734. Water, air and forests as resources are never keyed. Consider trading 7dbb19df6c or 1c0118ee37 for F7: a renewable resource such as a forest can still run out if it is cut faster than it regrows. That is plain science, broadens the scope, and keeps the unit from reading as a recycling lesson. Overlaps. (1) fda47cb5d6 against energy-changes-form: that unit keys the Sun as the first source of coal's energy, and this one keys coal as nonrenewable. Distinct. (2) 9cfba02ba4 (plastic from oil and gas) against rock-layers-and-fossils' oil question (oil from sea plankton): distinct. (3) 83deef4734's stem hands over electric-circuits' copper-wiring key. Fix: copper pipes. (4) d7a3f569a2 (how long topsoil takes) against ecosystems-living-and-nonliving (soil washing off a cleared hill) and decomposers-and-recycling-matter (humus): distinct. Its stem mentions rotting matter but does not ask for humus. (5) fbec84865b's context says nature replenishes fresh water through the water cycle, and the-water-cycle keys the same water going round. This is context only, so there is no conflict. Within the unit, the contexts call switching off lights 'reducing' (78328d0acd) and fixing leaks 'conserving' (fbec84865b), both defined as 'using less'. Add one clause to fbec84865b's context ('using less is also what reduce means') so the two do not seem to contradict each other."}

@@ -1,0 +1,234 @@
+{
+ "unit": "measuring-and-the-fair-test",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "measuring-and-the-fair-test",
+   "question": "A girl hooks a spring scale onto a brick and drags the brick slowly across the classroom floor. What does the spring scale measure?",
+   "answer": "How hard the brick is pulled",
+   "choices": [
+    "How hard the brick is pulled",
+    "How much matter is in the brick",
+    "How fast the brick slides along",
+    "How far the brick slides along"
+   ],
+   "context": "A spring scale measures force: the harder the pull, the farther its spring stretches, and the pointer reads the force in newtons. The amount of matter in the brick is its mass, which a balance measures, and the brick's speed and distance need a timer and a metre stick.",
+   "facts": [
+    "F7",
+    "F8",
+    "F2",
+    "F9",
+    "F1"
+   ],
+   "grade_note": "TEKS 5.1D puts scales among the 5th grader's tools, and 5th-grade force lessons use a spring scale to measure a pull in newtons."
+  },
+  {
+   "tier": 1,
+   "topic": "measuring-and-the-fair-test",
+   "question": "A student pours water into a graduated cylinder to measure its volume in millilitres. Up close, the water's surface is not flat: it curves down in the middle, like a shallow bowl. Where should she read the level?",
+   "answer": "The bottom of the curve, seen at eye level",
+   "choices": [
+    "The bottom of the curve, seen at eye level",
+    "The top of the curve, seen at eye level",
+    "The bottom of the curve, seen from above",
+    "The top of the curve, seen from above"
+   ],
+   "context": "Water clings to the glass and climbs its sides, so its surface sags in the middle, and the volume is read at the bottom of that curve. Her eye must be level with it, because looking down from above lines the water up with the wrong mark.",
+   "facts": [
+    "F4",
+    "F5"
+   ],
+   "grade_note": "Graduated cylinders are among TEKS 5.1D's glassware, and elementary lessons teach reading the bottom of the curve at eye level."
+  },
+  {
+   "tier": 1,
+   "topic": "measuring-and-the-fair-test",
+   "question": "A drop of pond water holds bacteria, living things far too small to see with the eye alone. A scientist wants a look at them. Which tool will show them to her?",
+   "answer": "A microscope",
+   "choices": [
+    "A microscope",
+    "A hand lens",
+    "A telescope",
+    "A magnifying mirror"
+   ],
+   "context": "A school microscope makes things look from about 40 to hundreds of times bigger, enough to show bacteria. A hand lens or a magnifying mirror, the kind that curves inward to make a face look bigger, makes things look at most about 10 to 20 times bigger, far too little for bacteria, and a telescope is built for things far away.",
+   "facts": [
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F23"
+   ],
+   "grade_note": "TEKS 5.1D names hand lenses and microscopes as the grade's tools for seeing small things, and choosing between them is part of using them."
+  },
+  {
+   "tier": 1,
+   "topic": "measuring-and-the-fair-test",
+   "question": "A student measures a pumpkin for the class science fair and writes four measurements in her notebook. Which one is the pumpkin's mass?",
+   "answer": "6 kilograms",
+   "choices": [
+    "6 kilograms",
+    "8 litres",
+    "80 centimetres",
+    "15 degrees Celsius"
+   ],
+   "context": "Kilograms and grams are units of mass, read from a balance. Litres and millilitres measure volume, centimetres and metres measure length (here, a tape around the pumpkin's middle), and degrees Celsius measure temperature, read from a thermometer.",
+   "facts": [
+    "F1",
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "grade_note": "5th graders measure with metric tools (TEKS 5.1D), and NGSS 3-5 asks for accurate measurements, which means matching each quantity to its unit."
+  },
+  {
+   "tier": 1,
+   "topic": "measuring-and-the-fair-test",
+   "question": "A student needs the mass of a scoop of sand, but the sand has to sit in a paper cup on the balance. How does she find the sand's mass?",
+   "answer": "Take away the mass of the empty cup",
+   "choices": [
+    "Take away the mass of the empty cup",
+    "Add on the mass of the empty cup",
+    "Read the balance just as it stands",
+    "Set the balance to zero before the cup goes on"
+   ],
+   "context": "The balance finds the mass of the cup and the sand together, so the cup's own mass must come off the total: if the empty cup is 5 grams and both read 85 grams, the sand is 80 grams. Many digital scales do this with a tare button, pressed with the empty cup already on them; setting the balance to zero before the cup goes on does not help, because the cup's mass is still in the reading.",
+   "facts": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "TEKS 5.1D gives 5th graders scales and glassware, and finding the mass of sand or water in a container on a balance means taking away the container's mass."
+  },
+  {
+   "tier": 1,
+   "topic": "measuring-and-the-fair-test",
+   "question": "Lena and her classmates test whether a bigger paper parachute falls more slowly than a smaller one. They hang the same load on both, drop each from the same height and time each fall with a stopwatch. Why do they keep the load and the height the same?",
+   "answer": "So only the size can cause a difference",
+   "choices": [
+    "So only the size can cause a difference",
+    "So both parachutes fall at the same speed",
+    "So the result agrees with their prediction",
+    "So they need to drop each one only once"
+   ],
+   "context": "In a fair test only one thing is changed, here the size, and everything else is kept the same, so any difference in the falling times must come from the size. Keeping the rest the same does not make the results match each other or anyone's guess, and the class should still drop each parachute several times.",
+   "facts": [
+    "F15",
+    "F16",
+    "F17",
+    "F9"
+   ],
+   "grade_note": "Changing one variable and keeping the rest the same is the heart of 5th-grade fair testing (TEKS 5.1B; NGSS 3-5 planning investigations)."
+  },
+  {
+   "tier": 1,
+   "topic": "measuring-and-the-fair-test",
+   "question": "A student drops a ball from 1 metre and uses a metre stick to measure how high it bounces. Her teacher asks her to make the very same drop three times. Why do scientists repeat a trial like this?",
+   "answer": "Each drop comes out a little different",
+   "choices": [
+    "Each drop comes out a little different",
+    "The highest bounce is the one to keep",
+    "A test needs three tries to count",
+    "The first drop is a practice drop"
+   ],
+   "context": "Small slips, such as letting go a little high or reading the stick at a slant, change each result a little, so a single drop may be off. Repeating the same drop and comparing or averaging the results gives a more trustworthy answer. There is nothing special about three, every drop counts, and keeping only the highest bounce would hide how much the drops differ.",
+   "facts": [
+    "F17",
+    "F1",
+    "F5"
+   ],
+   "grade_note": "The grades 3-5 investigation practice asks students to plan fair tests with the number of trials considered, and 5th-grade labs repeat each trial."
+  },
+  {
+   "tier": 1,
+   "topic": "measuring-and-the-fair-test",
+   "question": "A boy predicts that his biggest magnet will pick up the most paper clips. He tests each of his magnets five times, and every time a small magnet picks up more clips than the big one. What should he do about his prediction?",
+   "answer": "Change his idea to fit the results",
+   "choices": [
+    "Change his idea to fit the results",
+    "Decide the big magnet must be broken",
+    "Call the whole test a failure",
+    "Keep his idea, but leave out these results"
+   ],
+   "context": "A prediction is an idea to be tested, and when careful, repeated results go against it, the honest move is to change the idea. The test did not fail: it showed that size is not all that matters, for a small neodymium magnet can pull harder than a much bigger magnet of a weaker kind. Blaming the magnet or leaving out the results would keep the idea only by ignoring the evidence.",
+   "facts": [
+    "F18",
+    "F19",
+    "F17",
+    "F26"
+   ],
+   "grade_note": "5th graders test predictions and use the evidence to explain (TEKS 5.1E, 5.3A), and NGSS 3-5 teaches that explanations change with new evidence."
+  },
+  {
+   "tier": 1,
+   "topic": "measuring-and-the-fair-test",
+   "question": "Four students each bring a question to the school science fair. Which question can a fair test answer?",
+   "answer": "Do bean plants grow taller in sun or shade?",
+   "choices": [
+    "Do bean plants grow taller in sun or shade?",
+    "Is a rose a lovelier flower than a tulip?",
+    "Should every school plant a garden of its own?",
+    "How many seeds are in a sunflower's head?"
+   ],
+   "context": "A fair test changes one thing and keeps the rest the same: beans can be grown in sun and in shade, with everything else kept the same, and their heights measured. Counting a sunflower's seeds answers a question by looking, but nothing is changed and compared, so it is not a fair test. Which flower is lovelier is a matter of taste, and what schools should do is a choice for people to make, so no test can settle them.",
+   "facts": [
+    "F20",
+    "F15",
+    "F24"
+   ],
+   "grade_note": "NGSS grades 3-5 teaches that science findings are limited to what evidence can answer, and TEKS 5.1B has 5th graders plan both descriptive and simple experimental investigations, the fair test being the experimental kind."
+  },
+  {
+   "tier": 1,
+   "topic": "measuring-and-the-fair-test",
+   "question": "A student reads a thermometer outside every hour from dawn to dusk and writes the temperatures in a table. What should she draw to show how the temperature changes through the day?",
+   "answer": "A line graph",
+   "choices": [
+    "A line graph",
+    "A pie chart",
+    "A Venn diagram",
+    "A tally chart"
+   ],
+   "context": "A line graph joins the hourly readings with lines, so the temperature's rises and falls through the day can be seen at a glance. A pie chart shows the parts of a whole, a Venn diagram shows what two groups share, and a tally chart counts how often something happens, so none of them shows a change over time.",
+   "facts": [
+    "F21",
+    "F6",
+    "F25"
+   ],
+   "grade_note": "TEKS 5.1F asks 5th graders to record data in tables, graphs, Venn diagrams and flow charts and to choose the right one."
+  }
+ ],
+ "revised": {
+  "4553d528ff": {
+   "old_hash": "61d64971bf",
+   "why": "Judge (medium): the key was the only choice about the person's pull, the three lures all described the brick, and 'watching the spring inside it stretch' pointed at the pull. All four choices are now about the brick, the stretch clause is gone, and 'A girl' gives the scene a named role (judge, low: the unanchored 'she'). The 'scale' name keeps the amount-of-matter lure strong (M1). Context unchanged (F7, F8)."
+  },
+  "c2763bbcc6": {
+   "old_hash": "c2763bbcc6",
+   "why": "Fact-check (error): the context said a magnifying mirror magnifies 'about 3 times', but 5, 10, 15 and 20 times mirrors are common; and (uncertain) a hand lens can reach 20 times. Now 'at most about 10 to 20 times bigger, far too little for bacteria' (F23, corrects F10 and F11). Judge (low): the context now says what a magnifying mirror is. Stem, key and choices unchanged."
+  },
+  "f88f29cfb2": {
+   "old_hash": "4ac860ae37",
+   "why": "Judge (medium): 'the sand alone' pointed at taking the cup off, the choices converged on the key, and the volume lure was weak (a balance reads grams). 'alone' is gone, and the volume lure is replaced by the real lab slip of zeroing the balance before the cup goes on (F3: the tare is set with the empty container on the scale); the context now says why that does not help."
+  },
+  "d206b22021": {
+   "old_hash": "d206b22021",
+   "why": "Judge (medium): 'the very same drop' ruled out the different-variable lure, and the key alone hedged ('might') against two absolutes. The key now says flatly that each drop comes out a little different (F17); the lures are real slips (keeping the best result, a magic number of tries, a practice throw) worded without 'only' or 'just'. The context adds that keeping only the highest bounce would hide how much the drops differ. Stem unchanged."
+  },
+  "e1be3638ed": {
+   "old_hash": "e1be3638ed",
+   "why": "Judge (medium): 'Keep his idea, since he was so sure' and 'Test until the big magnet wins' read as plain cheating, so the key stood out by decency. Replaced by the moves students really make when a result goes against them, blaming the equipment and leaving out the results that disagree (M2, F18, F26); the context now says why both ignore the evidence. Stem and key unchanged."
+  },
+  "8062571f8a": {
+   "old_hash": "8062571f8a",
+   "why": "Judge (medium): all three lures were matters of taste or choice, so the key was the only question of fact. 'Is gardening the best hobby for a family?' is replaced by a question of fact that no fair test answers, counting a sunflower's seeds (F24: a descriptive investigation, nothing changed and compared); the context now says so. The grade note no longer glosses TEKS 5.1A as 'testable' (fact-check note). Stem unchanged."
+  },
+  "8cfd138225": {
+   "old_hash": "8cfd138225",
+   "why": "Judge (medium): 'A Venn diagram' and 'A flow chart' hold no numbers, leaving line graph against pie chart. 'A flow chart' is replaced by 'A tally chart', a number-holding chart a 5th grader knows that counts how often things happen and so shows no change over time (F25). Not the judge's 'line plot': outside US school maths the name is also used for a line graph, so that lure could be defended. The context now says what a tally chart shows. Stem and key unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

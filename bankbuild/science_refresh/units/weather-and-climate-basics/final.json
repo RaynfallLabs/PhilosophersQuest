@@ -1,0 +1,234 @@
+{
+ "unit": "weather-and-climate-basics",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "weather-and-climate-basics",
+   "question": "A travel guide says that a desert town has a dry climate. Ana visits on a day of pouring rain, with water rushing down the streets. What does the rainy day show?",
+   "answer": "One day's weather can differ from the climate",
+   "choices": [
+    "One day's weather can differ from the climate",
+    "The town's climate has turned from dry to wet",
+    "The guide was wrong to call the climate dry",
+    "Weather and climate are the same thing"
+   ],
+   "context": "Weather is the state of the air at one place and time, and it changes from day to day; climate is a place's usual weather, the pattern over many years. A desert gets very little rain in most years, so a rare storm, even one that floods the streets, leaves its climate as dry as before.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "Texas's 2017 grade 5 standard 112.16(b)(8)(A) asks students to 'differentiate between weather and climate', and a desert on a rainy day is the scope's own example."
+  },
+  {
+   "tier": 1,
+   "topic": "weather-and-climate-basics",
+   "question": "On a muggy summer morning the air feels damp and sticky, because it holds a great deal of invisible water vapour. What is the amount of water vapour in the air called?",
+   "answer": "Humidity",
+   "choices": [
+    "Humidity",
+    "Precipitation",
+    "Air pressure",
+    "Temperature"
+   ],
+   "context": "Humidity is the water vapour in the air, often given as a percentage, and an instrument called a hygrometer measures it. Precipitation is water falling from clouds as rain, snow, sleet or hail, and air pressure is the push of the air's weight.",
+   "facts": [
+    "F6",
+    "F7",
+    "F1",
+    "F9"
+   ],
+   "grade_note": "Florida's grade 5 benchmark SC.5.E.7.3 names humidity among the factors that determine the weather, and its lesson has it measured with a hygrometer."
+  },
+  {
+   "tier": 1,
+   "topic": "weather-and-climate-basics",
+   "question": "The air above a weather station stretches many kilometres up, and all of it presses down on the ground below. Which instrument measures this push of the air, called air pressure?",
+   "answer": "Barometer",
+   "choices": [
+    "Barometer",
+    "Thermometer",
+    "Anemometer",
+    "Hygrometer"
+   ],
+   "context": "A barometer measures air pressure, the weight of all the air above pressing down. Weather watchers read it because the pressure rises and falls as the weather changes. A thermometer measures temperature, an anemometer wind speed, and a hygrometer the water vapour in the air.",
+   "facts": [
+    "F9",
+    "F10",
+    "F8",
+    "F11",
+    "F13"
+   ],
+   "grade_note": "Florida's grade 5 lesson for SC.5.E.7.3 teaches barometric pressure as the weight of the atmosphere pushing down, 'measured with a tool called a barometer'."
+  },
+  {
+   "tier": 1,
+   "topic": "weather-and-climate-basics",
+   "question": "At the top of a pole at a weather station, three or four small cups sit on the ends of short arms joined at the middle. What does this instrument measure?",
+   "answer": "How fast the wind blows",
+   "choices": [
+    "How fast the wind blows",
+    "Which way the wind blows",
+    "How much rain falls",
+    "How damp the air is"
+   ],
+   "context": "It is an anemometer. The wind catches the cups and spins them, and the stronger the wind, the faster they turn, so their turning gives the wind's speed. The cups hold no water: a rain gauge collects rain, and a wind vane shows the wind's direction.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13",
+    "F6"
+   ],
+   "grade_note": "Florida's grade 5 lesson for SC.5.E.7.3 has wind speed measured with an anemometer, and NOAA's student weather station builds a cup anemometer."
+  },
+  {
+   "tier": 1,
+   "topic": "weather-and-climate-basics",
+   "question": "A wind vane on a barn roof swings round in a breeze, then holds steady, its arrow pointing one way. What does the arrow's point show?",
+   "answer": "Where the wind is coming from",
+   "choices": [
+    "Where the wind is coming from",
+    "Where the wind is going to",
+    "How strong the wind is",
+    "Which way is north"
+   ],
+   "context": "A wind vane's arrow turns to point into the wind, toward the direction it blows from. Winds are named the same way: a north wind blows from the north toward the south. The letters N, E, S and W fixed below the arrow show the compass directions.",
+   "facts": [
+    "F12",
+    "F11"
+   ],
+   "grade_note": "Florida's grade 5 benchmark SC.5.E.7.3 covers wind direction, which its lesson says 'is measured as the direction the wind is blowing from', and NOAA's student weather vane points that way."
+  },
+  {
+   "tier": 1,
+   "topic": "weather-and-climate-basics",
+   "question": "On a warm, sunny afternoon, white clouds with flat bottoms and puffy, rounded tops drift over a park like heaps of cotton. What kind of cloud are they?",
+   "answer": "Cumulus",
+   "choices": [
+    "Cumulus",
+    "Stratus",
+    "Cirrus",
+    "Cumulonimbus"
+   ],
+   "context": "Cumulus clouds form when the Sun warms the ground and warm, damp air rises, and their name is Latin for 'heap'. Small ones like these are fair-weather clouds, but on some days a cumulus keeps growing into a towering cumulonimbus, the thunderstorm cloud.",
+   "facts": [
+    "F15",
+    "F18",
+    "F19"
+   ],
+   "grade_note": "GLOBE's K-5 cloud activity has learners recognise and name the three main kinds (cirrus, cumulus, stratus) by look, and the curriculum map's grade 5 line G5.E8 places them here."
+  },
+  {
+   "tier": 1,
+   "topic": "weather-and-climate-basics",
+   "question": "A low, flat sheet of grey cloud covers the whole sky over a town all day, and a light drizzle falls from it. What kind of cloud is it?",
+   "answer": "Stratus",
+   "choices": [
+    "Stratus",
+    "Cumulus",
+    "Cirrus",
+    "Cumulonimbus"
+   ],
+   "context": "Stratus clouds spread across the sky in an even grey layer, and their name comes from Latin for 'spread out'. They bring dull days and drizzle, and a stratus cloud resting on the ground is fog. A cumulonimbus brings heavy rain and thunder instead.",
+   "facts": [
+    "F16",
+    "F18",
+    "F19"
+   ],
+   "grade_note": "GLOBE's K-5 cloud activity has learners recognise and name the three main kinds (cirrus, cumulus, stratus) by look, and Pennsylvania's eligible content S4.D.2.1.1 asks students to identify cirrus, cumulus, stratus and cumulonimbus."
+  },
+  {
+   "tier": 1,
+   "topic": "weather-and-climate-basics",
+   "question": "A weather report says that cirrus clouds will cross the sky this afternoon. What will they look like?",
+   "answer": "Thin white wisps high in the sky",
+   "choices": [
+    "Thin white wisps high in the sky",
+    "Puffy white heaps with flat bottoms",
+    "A flat grey sheet low over the land",
+    "Dark towers that flash with lightning"
+   ],
+   "context": "Cirrus clouds usually float more than 6 kilometres up, where the air is so cold that they are made of ice crystals; their name is Latin for 'curl of hair'. Puffy heaps are cumulus, a flat grey sheet is stratus, and lightning comes from cumulonimbus.",
+   "facts": [
+    "F17",
+    "F15",
+    "F16",
+    "F18",
+    "F19",
+    "F26"
+   ],
+   "grade_note": "GLOBE's K-5 cloud activity asks learners to describe the look and typical heights of cirrus, cumulus and stratus, and the curriculum map's grade 5 line G5.E8 places them here."
+  },
+  {
+   "tier": 1,
+   "topic": "weather-and-climate-basics",
+   "question": "On a hot, sunny afternoon at the beach, a steady wind begins to blow in from the sea toward the land. Why does this sea breeze blow?",
+   "answer": "The Sun warms the land faster than the sea",
+   "choices": [
+    "The Sun warms the land faster than the sea",
+    "The Sun warms the sea faster than the land",
+    "The waves push the air toward the shore",
+    "Water evaporating from the sea pushes air ashore"
+   ],
+   "context": "Sunshine heats sand and soil faster than water. The warm air over the land rises, and cooler air from over the sea flows in to take its place; evaporation adds water vapour to the air but pushes no air ashore, and waves play no part. At night the land cools faster, and the breeze turns round to blow out to sea.",
+   "facts": [
+    "F22",
+    "F21",
+    "F23"
+   ],
+   "grade_note": "A Texas grade 5 lesson for TEKS 5.10A (how the Sun and the ocean affect weather) teaches that sea breezes come from land and water heating at different rates."
+  },
+  {
+   "tier": 1,
+   "topic": "weather-and-climate-basics",
+   "question": "Weather watchers at a town's weather station write down the temperature and the rainfall every day. To describe the town's climate, scientists average these records over a standard stretch of time. About how long is that stretch?",
+   "answer": "About 30 years",
+   "choices": [
+    "About 30 years",
+    "About 1 year",
+    "About 5 years",
+    "About 100 years"
+   ],
+   "context": "Climate is a place's usual weather, and weather scientists around the world average it over a standard 30 years of records, set by the World Meteorological Organization. One year or five is too short, because the weather changes so much from year to year; 30 years is long enough that one odd year barely moves the average.",
+   "facts": [
+    "F3",
+    "F25"
+   ],
+   "grade_note": "National Geographic's 5th-grade text defines climate as the conditions 'over a long time, usually 30 years or more', and NOAA's K-12 page gives the same 30 years; telling weather from climate is Texas grade 5 standard 112.16(b)(8)(A)."
+  }
+ ],
+ "revised": {
+  "4b296fbfb4": {
+   "old_hash": "4b296fbfb4",
+   "why": "Judge (medium): 'Deserts get as much rain as other places' was dead, since the stem calls the town's climate dry. Replaced by the confusion the scope is built to undo, that weather and climate are the same thing (M5, NCSE). The context now says that weather changes from day to day and climate is the pattern over many years, and no longer says '30 years or more', so it cannot be read against the added climate-span question. Stem unchanged."
+  },
+  "0fca6592b0": {
+   "old_hash": "0fca6592b0",
+   "why": "Judge (medium): the lure 'Rain gauge' named its own job and fell to any reader. Replaced by 'Hygrometer', the humidity tool that the grade 5 Florida lesson names (F6), so all four choices are '-meter' instruments; the context now teaches what a hygrometer measures. Stem unchanged."
+  },
+  "f36a4738e8": {
+   "old_hash": "478d41051d",
+   "why": "Judge (low, cheap fix): 'free to spin round' let a reader reason out speed over direction without knowing the instrument. The stem now says only how it is built (F11: cups on arms round a central spindle); the context still says that the wind spins the cups. Choices and context unchanged."
+  },
+  "f7c30a0e25": {
+   "old_hash": "f7c30a0e25",
+   "why": "Fact-check (uncertain) and judge (low): 'Cirrus clouds float more than 6 kilometres up' was too flat a rule (the WMO Cloud Atlas has polar cirrus at 3-8 km). Now 'usually float more than 6 kilometres up' (F17, F26). Stem, key and choices unchanged."
+  },
+  "f62f365e71": {
+   "old_hash": "f62f365e71",
+   "why": "Judge (low, cheap fix): the tide lure was weak beside the stem's 'hot, sunny', leaving a 50-50 between the key and its mirror. Replaced by a lure that also runs on the Sun's heat, water evaporating from the sea pushing air ashore (M8); the context now says that evaporation adds vapour to the air but pushes no air ashore (F22, F23). Stem and key unchanged."
+  }
+ },
+ "added": {
+  "5ab1770ffe": "Replaces the dropped cloud make-up question with a scope fact no T1 unit keys: a place's climate is averaged over a standard 30 years of weather records (F3, F25). Worded as the standard stretch, so the 100-year lure stays wrong; the stem does not say 'many years', so the 1-year lure stays live. Facts F3, F25."
+ },
+ "dropped": [
+  {
+   "old_hash": "f10baf8e61",
+   "question": "An airliner climbs through a thick white cloud and comes out into bright sunshine above it. What is the cloud made of?",
+   "why": "Judge (medium): repeats a fact the bank already keys twice (the-water-cycle's condensation stem: vapour turns into tiny drops that gather into clouds; solids-liquids-and-gases keys the breath puff as tiny drops of liquid water against the same 'Water vapour' lure), and two of its three lures were dead. No cloud make-up wording avoids the repeat, so the slot is re-keyed to the climate span (added)."
+  }
+ ]
+}

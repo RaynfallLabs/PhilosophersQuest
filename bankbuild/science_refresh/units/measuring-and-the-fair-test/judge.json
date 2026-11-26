@@ -1,0 +1,67 @@
+{"unit": "measuring-and-the-fair-test",
+ "questions": {
+  "61d64971bf": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the odd one out. It is the only choice about the person's pull, and the three wrong choices all describe the brick. The stem's 'watching the spring inside it stretch' as she drags the brick also points straight at a pull stretching the spring, so a player who has never used a spring scale picks the different-shaped choice.",
+     "fix": "Make all four choices about the brick and drop the stretch clause: 'A girl hooks a spring scale onto a brick and drags the brick slowly across the classroom floor. What does the spring scale measure?' Choices: 'The pull on the brick', 'The amount of matter in the brick', 'The speed of the brick', 'The distance the brick slides'. The 'scale' name keeps the amount-of-matter lure strong (M1). Keep the context, which already teaches that the harder the pull, the farther the spring stretches."},
+    {"axis": "clarity", "severity": "low",
+     "what": "The key's 'she' has no antecedent: the stem says only 'A student'.",
+     "fix": "'A girl' in the stem, as above."}
+   ]},
+  "336cf5139d": {"verdict": "ok",
+   "issues": []},
+  "c2763bbcc6": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'A telescope' falls to any 5th grader who knows it is for faraway things, and few 10-year-olds think of 'A magnifying mirror' (a make-up mirror) as a tool for looking at things. The real contest is microscope against hand lens. That contest is the fact, so this is polish.",
+     "fix": "No change needed. If the lead wants a stronger fourth lure, keep the mirror (TEKS 5.1D names mirrors among the grade's tools) and add to the context: 'A make-up mirror that curves inward makes a face look up to about 3 times bigger.' That way the lure is taught, not just named."}
+   ]},
+  "29d455b478": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "Kilograms for mass is first taught in 3rd-grade maths (CCSS 3.MD.2 names grams, kilograms and litres), so for a 5th grader this is easy recall. It is still the scope's own line (TEKS 5.1D metric tools), and it asks all four units at once, so it stands.",
+     "fix": "No change needed."},
+    {"axis": "other", "severity": "low",
+     "what": "Near-overlap with telling-materials-apart. That unit's balance question says in its stem that the geologist 'writes down its mass in grams', which hands a player the mass unit. Its key is a different fact (mass is the amount of matter).",
+     "fix": "No change needed."}
+   ]},
+  "4ac860ae37": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "A player who has never put a container on a balance can reason this out. The stem says the sand has to sit in a cup and asks for 'the sand alone', so the cup must come off. The choices also converge on the key: it shares 'Take away' with one wrong choice and 'the mass of the empty cup' with another. 'Take away the volume of the empty cup' is weak too, since a balance reads grams, not millilitres.",
+     "fix": "Drop 'alone', and replace the volume lure with the real lab slip of zeroing the balance before the cup goes on: 'A student needs the mass of a scoop of sand, but the sand has to sit in a paper cup on the balance. How does she find the sand's mass?' Choices: 'Take away the mass of the empty cup', 'Read the balance just as it stands', 'Set the empty balance to zero first', 'Add on the mass of the empty cup'. Change the context's last sentence to: 'Setting the empty balance to zero does not help, because the cup's mass is still in the reading.'"}
+   ]},
+  "206806948f": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the only choice that names the tested variable, which echoes the stem's 'bigger ... smaller'. The three lures are real student ideas (M3), so this is polish.",
+     "fix": "Name the variable in a wrong choice too: replace 'So they need to drop each one only once' with 'So the size has no effect on the times'. That is the slip of thinking that the kept-same things make the tested thing stop mattering. The context already says that the class should still drop each parachute several times."}
+   ]},
+  "d206b22021": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's 'the very same drop' rules out 'Each new drop tests a different variable'. The two other lures are absolutes ('only counts if', 'only ever'), while the key alone hedges ('might'), the classic hedge tell. A test-wise player picks the key without knowing why trials are repeated.",
+     "fix": "State the key flatly and use real student slips: choices 'Each drop comes out a little different', 'So she can keep the highest bounce', 'A test counts only after three tries', 'The first drop is just for practice'. Keeping the best result instead of comparing them is the real error a 5th grader makes. The context already explains that small slips change each result a little. Add: 'Keeping only the highest bounce would hide that spread.'"}
+   ]},
+  "e1be3638ed": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two lures are plainly bad behaviour. 'Keep his idea, since he was so sure' and 'Test until the big magnet wins' read as cheating to any 10-year-old, so the honest choice stands out by plain decency and only 'Call the whole test a failure' is live.",
+     "fix": "Use moves that students really make after a result goes against them, worded without a moral flag: choices 'Change his idea to fit the results', 'Decide the big magnet must be broken', 'Call the whole test a failure', 'Keep his idea, but leave out these results'. Blaming the equipment and dropping the data that disagrees are the classic slips (facts.md M2, the National Research Council). Add to the context: 'Blaming the magnet or leaving out the results would keep the idea only by ignoring the evidence.'"}
+   ]},
+  "8062571f8a": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "All three wrong choices are of one kind, matters of taste or choice, and their words flag it ('lovelier', 'should', 'best'). The key is the only question of fact, so a student who knows only fact from opinion spots it without knowing what a fair test needs.",
+     "fix": "Replace 'Is gardening the best hobby for a family?' with a question of fact that no fair test answers: 'How many seeds are in a sunflower's head?' It is settled by counting, but nothing is changed and compared (TEKS 5.1B's descriptive against experimental investigations). Add to the context: 'Counting a sunflower's seeds answers a question by looking, but nothing is changed and compared, so it is not a fair test.' Keep the rose and school-garden choices."}
+   ]},
+  "8cfd138225": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'A Venn diagram' and 'A flow chart' hold no numbers at all, and a 5th grader knows both from other lessons (compare-and-contrast circles, steps in order). A student with the table of temperatures in front of her is left with line graph against pie chart.",
+     "fix": "Replace 'A flow chart' with 'A line plot', the 5th-grade dot plot (CCSS 5.MD.2, TEKS math 5.9A). It shows how often each reading turns up, a dot above a number line, and loses the order of the hours, so it is wrong here, and its name is the real confusion with line graph. Keep 'A Venn diagram' (TEKS 5.1F names it) or replace it with 'A tally chart'. Do not offer a bar graph: a bar for each hour is arguable. Add to the context: 'A line plot counts how often each reading turns up, so it loses the order of the hours.' Source the line-plot line before keying."}
+   ]}
+ },
+ "unit_notes": "Overlaps with the named neighbours. (1) telling-materials-apart: its balance question keys mass as the amount of matter, and 61d64971bf uses that key only as a lure (no clash). Its stem's 'mass in grams' hands over the unit that 29d455b478 keys (low, no change). Its graduated-cylinder question keys finding volume by displacement, and 336cf5139d keys reading the curve at eye level, a different fact (no change). (2) pushes-pulls-and-gravity: its ramp question keys friction (shorter on the carpet), and this unit's fair test is a parachute keyed on why the other things stay the same, so the facts differ (no change). Its 'a force is a push or a pull' supports, but does not repeat, the spring scale's force. (3) how-light-travels keys refraction through a magnifying glass, and c2763bbcc6 keys choosing a microscope over a hand lens (no clash). matter-made-of-tiny-particles' steel-nail lure 'Particles a magnifying glass can show' is a neighbour idea, not a duplicate. No overlap with weather-and-climate-basics, the-water-cycle, earths-resources or the other listed T1 units. Within the unit: 206806948f's context tells the class to drop each parachute several times, which is d206b22021's fact; it is a teaching line only, so it is fine. Lanes, as the lead asked: no question asks a sum or an average. d206b22021's context mentions averaging without computing one, and 4ac860ae37's '85 grams take away 5' is an illustration in the context; the question asks the balance procedure (TEKS 5.1D), so it stays in science. Do not turn either into a sum to work. Choosing a graph (8cfd138225) is TEKS 5.1F science, not arithmetic. No named places. Scope coverage: the spring scale, graduated cylinder, microscope against hand lens, units with the balance, the fair test, repeated trials, the prediction, the testable question and the line graph are all keyed. The metric ruler, the timer and the Celsius thermometer appear only in stems and lures, which is acceptable for a 10-question unit. Voice: third person, no exclamation marks, no singular they ('Lena and her classmates ... They' is plural); the one pronoun slip is 61d64971bf's unanchored 'she'."
+}

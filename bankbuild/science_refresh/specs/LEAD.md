@@ -53,7 +53,13 @@ with `PYTHON_MANAGER_AUTOMATIC_INSTALL=false` (and `PYTHONIOENCODING=utf-8`).
   (T1 the-sun-and-its-planets, T2 cells-the-building-blocks-of-life,
   T3 mendels-peas-and-inherited-traits, T4 inside-the-atom,
   T5 how-germs-were-proven).
-- **judge**: `specs/JUDGE.md` and the unit ids.
+  Every research brief also names the neighbours already written, so no
+  question asks a fact another unit asks. From T2 on, it also names the
+  lower-tier units on the same ground: a question must go a grade deeper
+  and never re-ask a lower tier's fact.
+  `lead_notes.md` keeps the cross-unit notes to pass on.
+- **judge**: `specs/JUDGE.md` and the unit ids. Ask the judge to check for
+  overlaps against every unit with a `final.json`, and to rule on lanes.
 - **factcheck**: `specs/FACTCHECK.md` and the unit id.
 - **revise**: `specs/REVISE.md` and the unit ids.
 - **recheck**: `specs/RECHECK.md` and the unit ids.

@@ -1,0 +1,69 @@
+{
+ "unit": "the-water-cycle",
+ "questions": {
+  "7aa3fc7f73": {
+   "verdict": "pass",
+   "why": "Old overlap fixed: the question is re-keyed to the name of the change, which no other finished unit keys (solids-liquids-and-gases has Evaporation only as a wrong choice), and the Moon and gravity lures are gone. The stem says 'invisible gas' and never 'vapour', so the name cannot be read off it. Key true (Grokipedia Evaporation: a surface change below the boiling point, driven mainly by solar radiation). Boiling is a live lure on a 'hot afternoon' and truly wrong: it needs the boiling point, with vapour bubbles through the bulk (Grokipedia Boiling). Condensation and transpiration are wrong. Context true: Earth's inner heat is about 0.04 percent of absorbed sunlight. Grade 5 (SC.5.E.7.1). Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Boiling",
+    "https://grokipedia.com/page/Water_cycle",
+    "https://grokipedia.com/page/Evaporation",
+    "https://grokipedia.com/page/Earth's_internal_heat_budget"
+   ]
+  },
+  "2c3bd99d97": {
+   "verdict": "pass",
+   "why": "Both old issues fixed: no glass, so no lure falls to the stem, and the towels on a line break the echo of matter-made-of-tiny-particles' drying dish. The new lure (tiny water drops) is the real near-miss and truly wrong: tiny drops are a visible mist (Grokipedia Mist: 'a visible aggregate of minute water droplets'), while water vapour is 'invisibly dispersed' (Grokipedia Water vapor). Up to the Sun and Nowhere are documented children's ideas (NZCER) and wrong; the 'no longer exists' lure is the weakest, but two lures stay live. Minor, not failing: 7aa3fc7f73's stem ('an invisible gas that rises into the air') hints at this key for a player who met it first; the cards teach both.",
+   "sources": [
+    "https://grokipedia.com/page/Mist",
+    "https://grokipedia.com/page/Water_vapor",
+    "https://water.usgs.gov/edu/watercycle-kids-int.html"
+   ]
+  },
+  "d704d5a6f6": {
+   "verdict": "pass",
+   "why": "Fact-check error fixed: the context now says the droplets are 'so small that rising air holds them up', matching USGS ('their fall speed is not large enough to overcome updrafts which support the clouds'). Stem, key and choices unchanged and true (condensation is vapour turning to liquid; evaporation, precipitation and transpiration are other steps). No new problem.",
+   "sources": [
+    "https://www.usgs.gov/water-science-school/science/precipitation-and-water-cycle",
+    "https://grokipedia.com/page/Cloud",
+    "https://www.noaa.gov/jetstream/atmosphere/hydro"
+   ]
+  },
+  "389fff75bd": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the young child's sponge and bag pictures are replaced by causes a 10-year-old really suspects, wind and thunder, and the bump lure stays. All three are truly wrong: thunder is 'the audible result of a lightning discharge' (Grokipedia Thunder), nimbostratus gives 'continuous, moderate precipitation' with no thunder (Grokipedia Nimbostratus), and rain starts when collisions make a drop whose fall speed beats the updraft (USGS). Key true (USGS for schools: droplets combine into heavier drops). No freezing or melting lure, as facts.md cautions. Choices parallel. Grade 5.",
+   "sources": [
+    "https://grokipedia.com/page/Thunder",
+    "https://grokipedia.com/page/Nimbostratus_cloud",
+    "https://www.usgs.gov/water-science-school/science/precipitation-and-water-cycle",
+    "https://water.usgs.gov/edu/watercycle-kids-int.html"
+   ]
+  },
+  "0235a0d2ac": {
+   "verdict": "pass",
+   "why": "Old high tell fixed: the term is taught in the stem and a runoff fact is tested, so the name can no longer be read off the description, and the scene moves off ecosystems' hillside. Key true: on paved ground water 'no longer seeps into the ground, but now runs off into storm sewers' (USGS Impervious surfaces); urban runoff coefficients 0.5-0.95 against 0.1-0.3 for undeveloped soils, and bare soil gives the highest runoff of natural ground (Grokipedia Surface runoff). Only the most is asked, so the meadow-forest order does not matter; one answer. The ploughed field is a strong lure. The key is easy (everyday puddles), but that is the grade's plain case (5-ESS3-1), not a stem tell.",
+   "sources": [
+    "https://www.usgs.gov/special-topics/water-science-school/science/impervious-surfaces-and-flooding",
+    "https://grokipedia.com/page/Surface_runoff",
+    "https://water.usgs.gov/edu/watercycle-kids-int.html"
+   ]
+  },
+  "01f53e4e82": {
+   "verdict": "pass",
+   "why": "Both old issues fixed: the rock-hardening lure is now 'soaked up for good by the rock', the documented lost-water idea, which the context answers; 'deep under the land' is now 'under the land' (Grokipedia Groundwater: shallow aquifers lie under 30 m). Key true: discharge as baseflow to rivers, springs and seepage to lakes, wetlands and oceans (Grokipedia Groundwater; USGS: 'seeps upwards and sideways ... into the bottom of rivers, lakes, and the oceans'). 'For ever' and the hot centre stay wrong; deep water stays millennia, which the context says. Context speeds (centimetres to metres a year) true.",
+   "sources": [
+    "https://grokipedia.com/page/Groundwater",
+    "https://water.usgs.gov/edu/watercycle-kids-int.html",
+    "https://grokipedia.com/page/Water_cycle"
+   ]
+  },
+  "aa3fb41e94": {
+   "verdict": "pass",
+   "why": "Old low fixed: 'burns it up' is now 'dries it up', the documented form of the idea (NZCER 'the sun took it away'), and the context answers it (evaporated water is still in the air). Key true: the total stays 'nearly constant at approximately 1.386 billion cubic kilometers' (Grokipedia Water cycle); 'about the same' is the right hedge. The other lures stay wrong. Stem unchanged and true.",
+   "sources": [
+    "https://grokipedia.com/page/Water_cycle",
+    "https://webharvest.gov/peth04/20041014212930/http://ga.water.usgs.gov/edu/earthwherewater.html"
+   ]
+  }
+ }
+}

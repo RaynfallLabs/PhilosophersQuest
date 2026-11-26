@@ -1,0 +1,59 @@
+{"unit": "the-water-cycle",
+ "questions": {
+  "9873c1648a": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "Overlap with energy-changes-form. That unit already asks 'Where did nearly all the energy in the wind and the coal first come from?' and keys The Sun against The Moon and Earth's hot core. This question uses the same three-way choice (Sun, Earth's inner heat, the Moon), and its fact is one case of that unit's general fact (most energy on Earth comes from the Sun). A player who has met that question answers this one by the same reflex.",
+     "fix": "Re-key the question to the name of the change, which the unit never keys. Keep the Sun in the stem as the taught fact, and keep the word 'vapour' out of it, because e-VAPOR-ation shares that root: 'Sunlight warms the sea, and some of the water at its surface slowly turns into an invisible gas and rises into the air. What is this change called?' Choices: 'Evaporation', 'Boiling', 'Condensation', 'Transpiration'. Boiling is the honest confusion (gas only at the boil). The context keeps the Sun-supplies-the-energy line and the 'less than a thousandth' line about Earth's inner heat. If the lead prefers the Sun fact kept, the other option is 'Where does most of the water that rises into the air come from?' keyed 'The oceans' against lakes and rivers, the leaves of plants and damp soil (F6, TEKS 5.10A). The stem must then not say 'most of it from the oceans'."},
+    {"axis": "tell", "severity": "medium",
+     "what": "'The pull of Earth's gravity' falls to the stem. The stem says the water 'rises into the air', and any 5th grader knows gravity pulls things down, so only three choices are live.",
+     "fix": "The re-key above removes it. If the Sun version is kept, replace it with 'Heat from the wind blowing over it'. That is wrong, since moving air speeds evaporation but does not power it, and it is a choice a 10-year-old might really pick."}
+   ]},
+  "6a4968424b": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's 'glass garden table' rules out 'Through the glass into the ground'. Every 5th grader knows water does not pass through glass, which is why the writer chose glass, but it leaves that choice dead.",
+     "fix": "Replace it with the near-miss students really make, evaporated water as a mist of droplets: 'Into the air as tiny water drops'. Choices: 'Into the air as water vapour', 'Into the air as tiny water drops', 'Up to the Sun, drawn by its heat', 'Nowhere, since it no longer exists'. Add to the context: 'Tiny drops of liquid water would be seen as a mist, as a cloud is; water vapour is an invisible gas.'"},
+    {"axis": "other", "severity": "low",
+     "what": "Near-overlap with matter-made-of-tiny-particles. Its seawater question shows the same picture (water in a glass dish dries in the sunshine) with mirrored wrong choices ('soaked into the glass', 'used up by the heat of the Sun'), and its choice 'It rose into the air along with the water' already tells the player where the water went. The facts differ (where the salt goes versus where the water goes), so this is not a duplicate.",
+     "fix": "The new choice above removes the mirrored soak-through lure. Moving the scene off glass would break the echo completely: 'Two damp towels hang on a washing line on a warm afternoon. By evening they are dry. Where did the water in them go?' Use the same four choices."}
+   ]},
+  "d704d5a6f6": {"verdict": "ok",
+   "issues": []},
+  "389fff75bd": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two of the three wrong choices are a young child's pictures, the cloud as a sponge and the cloud as a bag that rips open. NSTA's summary puts the bag at ages 5-7. A 10-year-old sees both as fairy-tale similes, so the answer is the only choice that sounds like science, and only 'Two clouds bump into each other' is live.",
+     "fix": "Keep the bump lure (NZCER records it up to age 10) and replace the two similes with causes a 5th grader really suspects: 'The wind blows its drops out' and 'Thunder shakes its drops loose'. Choices: 'Its tiny drops join into heavy drops', 'Two clouds bump into each other', 'The wind blows its drops out', 'Thunder shakes its drops loose'. Add to the context: 'Wind and thunder often come with rain, but neither makes it fall.' Do not use a freezing, melting or drops-turn-back-to-vapour lure: each is partly true of cold clouds (facts.md caution)."}
+   ]},
+  "7067c11582": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The answer can be worked out from the stem. 'Runoff' says what it is (water that runs off), and the stem describes exactly that: 'flows downhill across the land'. Each wrong choice is also a self-explaining compound that the stem rules out. 'Pours rain' rules out meltwater. 'Faster than the soil can soak it up' rules out groundwater. Water flowing over a hillside is not spring water rising from the ground. A student who has never met the word runoff gets it by reading. The config allows naming a process from a description only when the name cannot be worked out from the description's own words, and here it can.",
+     "fix": "Teach the term in the stem and test a runoff fact instead: 'Runoff is rain that flows over the ground into creeks and rivers instead of soaking in. One heavy storm falls on four places side by side. Where does the most rain become runoff?' Choices: 'A paved car park', 'A ploughed field', 'A grassy meadow', 'A pine forest'. Water cannot soak into pavement. Bare ploughed soil is the strong lure, a meadow is next, and a forest floor soaks up the most. Source the pavement fact (USGS Water Science School, impervious surfaces and runoff) before keying it. This also moves the scene off the heavy-rain hillside that ecosystems-living-and-nonliving uses."}
+   ]},
+  "9a3ccb613f": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'It slowly hardens into solid rock' is a weak lure. No 10-year-old thinks water turns to stone, and in a water-cycle unit the answer is plainly the one that puts the water back into the cycle.",
+     "fix": "Replace it with the documented idea that soaked-in water is lost (M7): 'It is soaked up for good by the rock'. Choices: 'It seeps slowly into rivers and seas', 'It stays in one place for ever', 'It is soaked up for good by the rock', 'It sinks to Earth's hot centre'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'Becomes groundwater, deep under the land' suggests groundwater is always deep. Much of it lies only a few metres down, the context gives deep groundwater as the special case, and the stem is also over the length budget.",
+     "fix": "'...soaks down through the soil of a meadow and becomes groundwater under the land.'"}
+   ]},
+  "aa3fb41e94": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Less, since the Sun burns it up' is the weakest lure: a 10-year-old knows water does not burn. The documented form of the idea is that the Sun dries the water up or takes it away (M1).",
+     "fix": "'Less, since the Sun dries it up'."}
+   ]},
+  "69a1fdb26a": {"verdict": "ok",
+   "issues": []},
+  "ed63112d22": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'In swamps and marshes' is the least tempting of the three lures, though it follows NGSS's own list of tiny stores (streams, lakes, wetlands, the atmosphere). The other two are live. Its opening clause also restates the 2.5 percent fresh-water fact that 69a1fdb26a's context teaches. That is harmless.",
+     "fix": "Acceptable as it stands. Keep 'underground' out of the choices, as facts.md says."}
+   ]}
+ },
+ "unit_notes": "Overlaps. (1) 9873c1648a repeats energy-changes-form's Sun-as-source question (same answer, same Moon and Earth's-heat lures). Fix: re-key it to the name 'evaporation'. That also fills the unit's one gap: evaporation, the most basic water-cycle term, is never keyed and appears only as a wrong choice in d704d5a6f6. After the re-key, 9873c1648a (the name) and 6a4968424b (the water still exists, as an invisible gas in the air) both sit on evaporation but key different facts. If the lead wants evaporation keyed only once, use the oceans-as-main-source option instead. (2) 6a4968424b mirrors matter-made-of-tiny-particles' seawater dish (glass dish drying in the sun, lures 'soaked into the glass' and 'used up by the Sun'). Fix: the new mist lure, and optionally the towels-on-a-line scene. (3) d704d5a6f6 against solids-liquids-and-gases: the cold jar and breath-puff questions key where condensed water comes from and what the white puff is. Their contexts use 'condenses', but neither keys the name 'condensation' or clouds. This is distinct, so no change. (4) 7067c11582's heavy-rain hillside echoes ecosystems-living-and-nonliving's cleared hillside (that unit keys roots holding soil, and its context says bare ground lets more water run over the top). The pavement re-key moves away from it. (5) Heads-up for the T1 weather-and-climate-basics builder, not a fix here: d704d5a6f6's stem teaches that clouds are tiny drops of water, and 389fff75bd's stem lists the forms of precipitation. That unit should not key either fact again. No named places or landforms, no named creatures, no voice slips. Scope coverage is otherwise full: the Sun, evaporation, condensation, precipitation, runoff, groundwater, the same water going round, 97 percent salt water, fresh water locked in ice."}

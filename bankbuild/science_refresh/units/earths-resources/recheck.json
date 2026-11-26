@@ -1,0 +1,76 @@
+{
+ "unit": "earths-resources",
+ "questions": {
+  "fda47cb5d6": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the stock renewables are replaced by fuel from corn and flowing water, both truly renewable (EIA renewable sources: biomass incl. wood and biofuels, and hydropower; EIA Ethanol: 'nearly all fuel ethanol is produced from corn kernel starch'; EIA Hydropower: rain and snow keep rivers flowing). Firewood is now Wood, so the key is no length outlier. 'Within decades' replaces '20 to 100 years'. Key true (EIA Coal: nonrenewable 'because it takes millions of years to form'). The forest line is a plain fact, no slogan.",
+   "sources": [
+    "https://www.eia.gov/energyexplained/renewable-sources/",
+    "https://www.eia.gov/energyexplained/biofuels/ethanol.php",
+    "https://www.eia.gov/energyexplained/hydropower/",
+    "https://www.eia.gov/energyexplained/coal/"
+   ]
+  },
+  "756e072278": {
+   "verdict": "pass",
+   "why": "Old leak fixed: copper pipes replace wires, so electric-circuits' key is not handed over, and 'new' is out of the key. Copper is the usual water-line metal (Wikipedia Copper tubing: 'the most popular choice for water supply lines in modern buildings'). Key true: ores are non-renewable from 'the irreplaceable geological timescales required for their formation' (Grokipedia Non-renewable resource). Lures wrong: copper 'can be used again and again without losing any of its properties' (International Copper Association), it is mined, and its 'non-ferrous nature prevents rusting' (Grokipedia Copper). The rust lure stays live (children expect old pipes to rust).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Copper_tubing",
+    "https://grokipedia.com/page/Non-renewable_resource",
+    "https://internationalcopper.org/resource/a-recycling-champion/",
+    "https://grokipedia.com/page/Copper"
+   ]
+  },
+  "d7a3f569a2": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the key is no longer the slowest time; 'Millions of years' is the real soil-for-rock confusion and truly wrong (lithification takes thousands to millions of years; topsoil far less). Key true: 2.5 cm 'may require 500 to 1,000 years' (Grokipedia Topsoil); the widened 'a few hundred to about a thousand years' fits field figures. Twenty years and months stay wrong. Erosion 'at rates often exceeding formation' is true. No slogan.",
+   "sources": [
+    "https://grokipedia.com/page/Topsoil",
+    "https://grokipedia.com/page/Lithification",
+    "https://www.scientificamerican.com/article/a-case-for-no-till-farmin/"
+   ]
+  },
+  "7dbb19df6c": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the dead 'None of it' is replaced by a close rival, 'About three quarters of it', so only a student who knows the figure separates the top two. Key true: recycling 'saves 95% of the energy needed for primary aluminium production' (International Aluminium Institute, 95.5 percent; Grokipedia: 'merely 5% of the energy'); about four tonnes of bauxite saved per tonne (Grokipedia). The key is still the top of the ladder, which numbers cannot avoid, but the stem does not lean to it. Moving the never-wears-out line out of this context is right.",
+   "sources": [
+    "https://international-aluminium.org/landing/aluminium-recycling-saves-95-of-the-energy-needed-for-primary-aluminium-production/",
+    "https://grokipedia.com/page/Aluminium_recycling"
+   ]
+  },
+  "49b62b4c41": {
+   "verdict": "pass",
+   "why": "Both old issues fixed: 'Aluminium foil' looks as flimsy as paper, so paper is no longer the odd one out, and foil is 'infinitely recyclable without loss of quality' (Grokipedia Aluminium foil). 'Wears out a little each time' and 'often said to be after about five to seven times' match Grokipedia Paper recycling (fibres shorter and weaker each cycle; 4-7 or 5-7 cycles) without claiming a settled count (the Graz 25-loop test). Glass and steel stay wrong at grade 5. Plastic, which also degrades, is not offered, so one answer.",
+   "sources": [
+    "https://grokipedia.com/page/Paper_recycling",
+    "https://grokipedia.com/page/Aluminium_foil",
+    "https://www.procarton.com/its-official-carton-fibres-can-be-recycled-at-least-25-times/"
+   ]
+  },
+  "78328d0acd": {
+   "verdict": "pass",
+   "why": "Old low fixed: the arguable compost choice is replaced by 'Dropping old newspapers in a recycling bin', plainly recycling (paper is pulped into new paper; Grokipedia Reuse: recycling processes material into new goods). Key true: reuse is using an item again, 'in its original form or repurposed' (Grokipedia Reuse). Minor, not failing: the new lure names 'recycling', so it is weak for a student who keeps the three Rs apart, but the melted jars and the light switch stay live. The three Rs are curriculum words, not a slogan; nothing tells the player what to do.",
+   "sources": [
+    "https://grokipedia.com/page/Reuse",
+    "https://www.epa.gov/composting"
+   ]
+  },
+  "fbec84865b": {
+   "verdict": "pass",
+   "why": "Old low fixed: 'Replenishing' is replaced by 'Storing it', the everyday misreading of saving water, and the context answers it. The added clause ('which is also what reducing means') removes the clash with the jam-jar context. Key true: conservation is 'the deliberate reduction of water consumption and waste' (Grokipedia Water conservation); EPA WaterSense lists fixing leaks, showers over baths and sweeping steps. No job reuses or recycles water. The stem describes a family's actions and does not instruct; 'they' and 'the two' are plural.",
+   "sources": [
+    "https://grokipedia.com/page/Water_conservation",
+    "https://www.epa.gov/watersense/start-saving"
+   ]
+  },
+  "7d3ffac908": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the burn lure is replaced by 'It stays whole, just as it was', so two choices keep the plastic and two lose it. The new lure is truly wrong for a bag in the open: 'After nine months in the open air, all the materials had completely disintegrated into fragments' (University of Plymouth), and the stem keeps the bag in the sun, wind and rain (in soil some bags lasted three years, which the stem excludes). Key true (Grokipedia Plastic pollution: fragmentation into microplastics, not breakdown). 'Over 700 species', 'often mistaking it for food' true. Plain facts, no named place.",
+   "sources": [
+    "https://plymouth.ac.uk/news/biodegradable-bags-can-hold-a-full-load-of-shopping-three-years-after-being-discarded-in-the-environment",
+    "https://grokipedia.com/page/Plastic_pollution",
+    "https://grokipedia.com/page/Plastic"
+   ]
+  }
+ }
+}

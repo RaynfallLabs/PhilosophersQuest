@@ -1,0 +1,219 @@
+{
+ "unit": "earths-resources",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "earths-resources",
+   "question": "Scientists call a resource renewable when nature replaces it within a human lifetime, and nonrenewable when nature does not. Which energy resource is nonrenewable?",
+   "answer": "Coal",
+   "choices": [
+    "Coal",
+    "Wood",
+    "Fuel from corn",
+    "Flowing water"
+   ],
+   "context": "Coal takes millions of years to form underground, so the coal people burn is not replaced within a lifetime, and oil and natural gas are the same. Wood and fuel made from corn are renewable, since new trees grow back within decades and a new corn crop grows every year, though a forest can still run out if it is cut faster than it regrows. The flowing water that spins the wheels in a dam is not used up, since rain and snow keep the river flowing.",
+   "facts": [
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F7",
+    "F23",
+    "F24"
+   ],
+   "grade_note": "Sorting coal, oil and natural gas as nonrenewable from plants, wind and sunlight as renewable is a Texas grade 4 standard (4.7C) that 5th-grade resource units (NGSS 5-ESS3-1) build on."
+  },
+  {
+   "tier": 1,
+   "topic": "earths-resources",
+   "question": "Old copper pipes from a house can be melted down and made into new pipes. Even so, scientists count copper as a nonrenewable resource. Why?",
+   "answer": "Nature makes copper ore far too slowly",
+   "choices": [
+    "Nature makes copper ore far too slowly",
+    "Copper wears out after being recycled a few times",
+    "Copper is made in factories, not by nature",
+    "Copper rusts away soon after it is mined"
+   ],
+   "context": "Copper is dug from ores in rock, and nature takes millions of years to make new ore, so copper is nonrenewable like other metals and most minerals. Recycling makes the copper already mined last longer, and recycled copper is as good as new. Copper does not rust either: it slowly grows a thin green coat that protects it.",
+   "facts": [
+    "F3",
+    "F8",
+    "F9",
+    "F10",
+    "F25"
+   ],
+   "grade_note": "The 5th-grade resource line counts most minerals and metals as nonrenewable, and Project Learning Tree's 'Renewable or Not?' activity for these grades targets the mix-up of renewable with recyclable."
+  },
+  {
+   "tier": 1,
+   "topic": "earths-resources",
+   "question": "Topsoil forms as rock crumbles into tiny grains and rotting plants and animals mix in with them. How long does nature usually take to make a new layer of topsoil about 2.5 centimetres (one inch) thick?",
+   "answer": "Hundreds of years",
+   "choices": [
+    "Hundreds of years",
+    "About twenty years",
+    "A few months",
+    "Millions of years"
+   ],
+   "context": "Under natural conditions, about 2.5 centimetres of topsoil takes a few hundred to about a thousand years to form: far longer than a human life, though far quicker than the thousands to millions of years buried sediment takes to harden into rock. Rain and wind often carry topsoil away faster than it forms, so soil that is lost is not made again within a lifetime.",
+   "facts": [
+    "F11",
+    "F12",
+    "F29"
+   ],
+   "grade_note": "Soil is one of the natural resources on the 5th-grade line (G5.E6), and its slow formation from weathered rock and decayed matter is why units treat it as a resource to protect."
+  },
+  {
+   "tier": 1,
+   "topic": "earths-resources",
+   "question": "Bottles, toys and bags are often made of plastic, which factories make out of other materials. What is most plastic made from?",
+   "answer": "Oil and natural gas",
+   "choices": [
+    "Oil and natural gas",
+    "Wood and plant fibres",
+    "Sand and limestone",
+    "Sap from rubber trees"
+   ],
+   "context": "Over 90 percent of plastic is made from nonrenewable fossil fuels, mostly oil and natural gas, and less than 1 percent comes from plants. Wood fibres are made into paper, sand and limestone are melted into glass, and the milky sap of rubber trees makes natural rubber.",
+   "facts": [
+    "F13",
+    "F14"
+   ],
+   "grade_note": "5th-grade resource units trace everyday products back to the natural resources they come from, and plastic from oil is a standard example (EIA's Energy Kids lists plastics among oil's products)."
+  },
+  {
+   "tier": 1,
+   "topic": "earths-resources",
+   "question": "Aluminium for drink cans can be made from bauxite, a rock dug from mines, or from old cans melted down. Compared with making it from bauxite, how much of the energy does using old cans save?",
+   "answer": "Almost all of it",
+   "choices": [
+    "Almost all of it",
+    "About three quarters of it",
+    "About half of it",
+    "About a tenth of it"
+   ],
+   "context": "Making aluminium from old cans takes only about 5 percent of the energy needed to make it from bauxite, a saving of about 95 percent. Each tonne of recycled aluminium also leaves about four tonnes of bauxite in the ground.",
+   "facts": [
+    "F17",
+    "F16"
+   ],
+   "grade_note": "What recycling saves is part of the 5th-grade line on protecting resources (NGSS 5-ESS3-1, Texas 5.11), and the aluminium can is its best-known case."
+  },
+  {
+   "tier": 1,
+   "topic": "earths-resources",
+   "question": "Many materials can be collected at a recycling centre and made into new things. Which material wears out a little each time it is recycled?",
+   "answer": "Paper",
+   "choices": [
+    "Paper",
+    "Glass",
+    "Aluminium foil",
+    "Steel"
+   ],
+   "context": "Paper is made of tiny wood fibres, and each time it is recycled the fibres get a little shorter and weaker, so in the end new fibres must be mixed in, often said to be after about five to seven times. Glass, steel and aluminium are melted and remade, and they can go round again and again without wearing out. Thin foil tears as easily as paper, but it is aluminium, remade like a can.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16",
+    "F26",
+    "F28"
+   ],
+   "grade_note": "Recycling paper, glass and metal is part of the 5th-grade line on protecting resources (Texas 5.11, NGSS 5-ESS3-1), and how the materials differ is the plain science of what recycling can do."
+  },
+  {
+   "tier": 1,
+   "topic": "earths-resources",
+   "question": "Reduce, reuse and recycle are three ways to make Earth's resources go further. Which action is an example of reusing?",
+   "answer": "Filling an empty jam jar with buttons",
+   "choices": [
+    "Filling an empty jam jar with buttons",
+    "Melting old jars down to make new ones",
+    "Switching off lights in empty rooms",
+    "Dropping old newspapers in a recycling bin"
+   ],
+   "context": "Reusing means using a thing again as it is, here as a button jar, without breaking it down. Melting old jars into new ones is recycling, and so is dropping newspapers in a recycling bin, since the paper is pulped and made into new paper. Switching off lights is reducing: using less electricity.",
+   "facts": [
+    "F18",
+    "F19",
+    "F20",
+    "F15"
+   ],
+   "grade_note": "Reduce, reuse and recycle are taught by name from the early grades, and 5th-grade units on protecting resources (NGSS 5-ESS3-1, Texas 5.11 lessons) are built round the three."
+  },
+  {
+   "tier": 1,
+   "topic": "earths-resources",
+   "question": "A father and his daughter fix a dripping tap, take showers instead of baths, and sweep the front steps instead of hosing them down. What are they doing with water?",
+   "answer": "Conserving it",
+   "choices": [
+    "Conserving it",
+    "Recycling it",
+    "Reusing it",
+    "Storing it"
+   ],
+   "context": "Conserving a resource means using less of it and wasting less, which is also what reducing means. None of these jobs uses the same water twice, so the two are neither reusing nor recycling it, and none of them keeps water in a tank: saving water here means using less, not storing it.",
+   "facts": [
+    "F20",
+    "F18",
+    "F2"
+   ],
+   "grade_note": "Conservation, meaning using less, is named in the 5th-grade line (G5.E6) and in the Texas resource standards (4.7C, 5.11)."
+  },
+  {
+   "tier": 1,
+   "topic": "earths-resources",
+   "question": "A plastic bag blows into a field and lies there for years in the sun, wind and rain. What happens to it over those years?",
+   "answer": "It breaks into tiny bits of plastic",
+   "choices": [
+    "It breaks into tiny bits of plastic",
+    "It stays whole, just as it was",
+    "It rots away like a fallen leaf",
+    "It slowly dissolves away in the rain"
+   ],
+   "context": "Bacteria and fungi break down almost no plastic, so it does not rot. Sunlight makes it brittle and the weather breaks it up: in one test, bags left in the open air had all fallen into pieces within nine months, and the bits last for decades or centuries. More than 700 kinds of animals have been found to swallow plastic, often mistaking it for food.",
+   "facts": [
+    "F21",
+    "F22",
+    "F27"
+   ],
+   "grade_note": "How litter and pollution harm land, water and living things is part of the 5th-grade line (NGSS 5-ESS3-1, ESS3.C), and plastic that does not rot is its plainest case."
+  }
+ ],
+ "revised": {
+  "fda47cb5d6": {
+   "old_hash": "fda47cb5d6",
+   "why": "Judge (medium): 'Wind' and 'Sunlight' were dead, the stock renewables every 4th grader knows. They are replaced by renewables a child might think get used up, fuel made from corn (ethanol, biomass: F23) and flowing water (hydropower: F24); 'Firewood' is now 'Wood' so the short key is not a length outlier. Judge (low): '20 to 100 years' is now 'within decades'. Stem unchanged."
+  },
+  "756e072278": {
+   "old_hash": "83deef4734",
+   "why": "Lead and judge (low): 'Old copper wires' gave away electric-circuits' key (copper is the wiring metal). The stem now uses copper water pipes (F25), and 'new' is out of the key so it shares no word with the stem's 'new pipes'. Same fact, same lures."
+  },
+  "d7a3f569a2": {
+   "old_hash": "d7a3f569a2",
+   "why": "Judge (medium): the key was the slowest time on the ladder, so a test-wise student picked it. 'About two years' is replaced by 'Millions of years', the real confusion of soil-making with rock-making, which the context now answers (F29). Fact-check (optional): the range widened to 'a few hundred to about a thousand years' (F11). Stem unchanged."
+  },
+  "7dbb19df6c": {
+   "old_hash": "7dbb19df6c",
+   "why": "Judge (medium): 'None of it' was dead (the stem assumes a saving), leaving the key as the extreme of three. It is replaced by a close rival, 'About three quarters of it'. The context's line that aluminium never wears out is moved to the paper question, whose lures it would otherwise give away. Stem unchanged."
+  },
+  "49b62b4c41": {
+   "old_hash": "1c0118ee37",
+   "why": "Judge (medium): paper was the only soft, flimsy choice among glass and two metals. 'Aluminium' is now 'Aluminium foil', which tears like paper but is metal remade without loss of quality (F26). Fact-check (uncertain): 'only a few times' is now 'wears out a little each time', and five to seven times is given as 'often said' (F28: a 2021 Graz test found carton fibres still strong after 25 loops)."
+  },
+  "78328d0acd": {
+   "old_hash": "78328d0acd",
+   "why": "Judge (low, cheap fix): some primary lessons call composting 'reusing food scraps', so the compost choice could be argued. It is replaced by 'Dropping old newspapers in a recycling bin', plainly recycling (F18). Stem unchanged."
+  },
+  "fbec84865b": {
+   "old_hash": "fbec84865b",
+   "why": "Judge (low, cheap fix): 'Replenishing' was above most 5th graders' vocabulary; it is replaced by the everyday misreading of saving water, 'Storing it'. The context adds that using less is also what reducing means, so it agrees with the jam-jar question's context. Stem unchanged."
+  },
+  "7d3ffac908": {
+   "old_hash": "7d3ffac908",
+   "why": "Judge (medium): in all three wrong choices the bag vanished, so the key was the only one in which the plastic stays. 'It burns away to nothing in the sun' is replaced by the opposite misconception, 'It stays whole, just as it was', which the context answers (F27: bags in the open air all fell to pieces within nine months). Fact-check (optional): 'often mistaking it for food'. Stem unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

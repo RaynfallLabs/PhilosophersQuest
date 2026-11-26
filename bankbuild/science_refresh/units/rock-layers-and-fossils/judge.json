@@ -1,0 +1,53 @@
+{"unit": "rock-layers-and-fossils",
+ "questions": {
+  "0fa3ec4aad": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two of the three wrong choices fall to the stem. 'Magma' is dead: every 5th grader knows magma is red-hot melted rock, and this is mud on a cool lake floor. 'Bedrock' is killed by the stem's own word 'loose' (bedrock is solid rock, as its name says). That leaves sediment against humus.",
+     "fix": "Drop 'loose,' from the question sentence ('What is this settled material called?'). Bedrock then stays a lure for a child who links the lake 'bed' to bedrock. Replace Magma with the material-versus-process mix-up students really make. Choices: 'Sediment', 'Bedrock', 'Erosion', 'Humus'. The context should add only that erosion is the name of a process, not of the material. It must not restate the weathering-versus-erosion difference that wind-water-and-ice-shape-the-land keys."}
+   ]},
+  "0263ee3155": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'They are frozen together by ice in cold winters' is the weakest lure: a 10-year-old knows the ice melts every spring. The Sun-baked lure (M3) and the melted-by-heat lure are both strong.",
+     "fix": "Optional: 'They are packed together by waves pounding on them'. Waves firm a beach but do not make rock."}
+   ]},
+  "31c8e94325": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Sandstone' names itself. The stem lists shells, skeletons and coral but no sand, so a student who knows nothing of rocks drops it on the word alone, and only three choices are live.",
+     "fix": "Replace Sandstone with a familiar rock whose name gives nothing away: 'Granite'. Choices: 'Limestone', 'Granite', 'Shale', 'Coal'. Context: 'Granite forms when melted rock cools deep underground, shale from mud, and coal from the plants of ancient swamps.'"},
+    {"axis": "fact", "severity": "low",
+     "what": "The context says calcite is 'the hard material of shells, corals and skeletons'. Bones are not calcite, and coral skeletons are aragonite, another form of calcium carbonate. The simplification is slightly untrue.",
+     "fix": "'Limestone is made mostly of calcium carbonate, the hard material of seashells and corals, and it is often full of fossil shells.'"}
+   ]},
+  "5908ed1f10": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'...the best chance of becoming one?' makes the reader reach back two sentences to find what 'one' means.",
+     "fix": "'What gives its bones the best chance of becoming a fossil?'"}
+   ]},
+  "3f87743dde": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The answer stands out. The stem says 'rock that formed from lava', every child knows lava is burning hot, and the answer is the only choice about heat. 'No plants or animals lived near volcanoes' is also weak for anyone who has seen a green volcano slope. The question tests what a 3rd grader knows about lava, not the 5th-grade fact. The stem itself also states the scope's core fact (fossils are in sandstone and shale, almost never in lava rock) instead of asking it.",
+     "fix": "Ask the core fact, with the rock kinds described and not named (rock types are T2): 'A fossil hunter hopes to find fossil shells and leaves. Which kind of rock gives her the best chance?' Choices: 'Rock built from layers of sand and mud', 'Rock that cooled from red-hot lava', 'Rock made of big, glittering crystals', 'Rock squeezed and heated deep underground'. 'Squeezed' is a strong lure for a student who half-remembers 'pressed together' from 0263ee3155. The context gives the reason: heat and melting wipe out remains, while gentle burial in sediment keeps them."}
+   ]},
+  "593e91cb41": {"verdict": "ok",
+   "issues": []},
+  "033887fd16": {"verdict": "revise",
+   "issues": [
+    {"axis": "fact", "severity": "medium",
+     "what": "Loose rocks turned up by a plough may have been carried to the field from elsewhere, and glaciers are the classic carrier. Fossil-coral stones spread across fields and beaches by ice sheets are a well-known case. So 'A glacier once covered it' can be defended, and strictly the fossils show only that the rock formed under the sea, not that the field did.",
+     "fix": "Put the fossils in solid rock under the field: 'A farmer digging a deep ditch across a dry wheat field cuts into a layer of solid rock packed with fossil corals and starfish. What do these fossils show about the field long ago?' Keep the choices."}
+   ]},
+  "1993ea8714": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Clear, golden amber' rules out two choices. Tar is black, and mud is neither clear nor golden, so only resin and honey are live. Golden honey is then the only rival to the answer.",
+     "fix": "Drop the colour words: 'A tiny insect, wings and all, lies sealed inside a lump of amber that is millions of years old. What was the amber when the insect was trapped in it?' Keep the choices. Move 'clear, golden' into the context."}
+   ]},
+  "ebdd549f23": {"verdict": "ok",
+   "issues": []}
+ },
+ "unit_notes": "Overlaps. (1) 0fa3ec4aad shows the same scene as wind-water-and-ice-shape-the-land's delta question (a river runs into still water and drops its mud and sand). That unit keys the process (deposition, the delta), and this one keys the word for the material, 'sediment', which no finished unit keys, so the facts are distinct. The new 'Erosion' lure must not bring wind-water's weathering-versus-erosion fact into the context. (2) ebdd549f23 against energy-changes-form: that unit keys the Sun as the first source of coal's energy, and its context says coal formed from ancient plants. This question keys oil's origin in sea plankton. Its swamp-trees lure is coal's origin, taught there but not keyed, so no change. (3) ebdd549f23 against earths-resources (coal nonrenewable, plastic from oil and gas): distinct. Within the unit: 31c8e94325's stem (shells and coral on a sea floor become rock) gives away 033887fd16's answer (coral fossils mean a sea). This is low, since the card teaches both anyway. Gap: the word 'sedimentary', which TEKS 5.10B names, appears in no stem and no key, only in contexts. 0263ee3155's stem could teach it without any tell: 'Loose grains of sand and mud can become solid sedimentary rock, such as sandstone and shale...'. Lanes are clean: no named place (Everest is rightly left out), and the corals and starfish give only their sea habitat, not anatomy. Grade fit is right throughout (TEKS 5.10B). The amber key correctly uses resin, never sap."}

@@ -1,5 +1,5 @@
 {
- "kind": "draft",
+ "kind": "final",
  "unit": [],
  "questions": {
   "fda47cb5d6": {
@@ -10,11 +10,11 @@
    ],
    "flag": []
   },
-  "83deef4734": {
+  "756e072278": {
    "fail": [],
    "warn": [],
    "info": [
-    "length_budget: Total record cost 314 chars > tier 1 hard cap 294 (target 280 + 5%)"
+    "length_budget: Total record cost 308 chars > tier 1 hard cap 294 (target 280 + 5%)"
    ],
    "flag": []
   },
@@ -38,7 +38,7 @@
    "info": [],
    "flag": []
   },
-  "1c0118ee37": {
+  "49b62b4c41": {
    "fail": [],
    "warn": [],
    "info": [],

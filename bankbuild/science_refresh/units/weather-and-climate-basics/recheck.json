@@ -1,0 +1,59 @@
+{
+ "unit": "weather-and-climate-basics",
+ "questions": {
+  "4b296fbfb4": {
+   "verdict": "pass",
+   "why": "Old dead lure fixed: 'Weather and climate are the same thing' is not contradicted by the stem (a child who conflates the two words can reach for it) and is the scope's own confusion (NCSE), truly false (Grokipedia Climate: weather is short-term conditions over hours, days or weeks; climate the long-term pattern). The key no longer stands alone in naming both weather and climate. The other two lures stay live misreadings of one rainy day and are wrong (a desert's climate is defined by low yearly rain; rare storms flood deserts, Grokipedia Desert). Context true and no longer says '30 years or more', so it cannot be read against 5ab1770ffe. The key's 'can' is the true fact, not a hedge tell worth dropping it for. Voice clean (Ana, third person).",
+   "sources": [
+    "https://grokipedia.com/page/Climate",
+    "https://grokipedia.com/page/Desert",
+    "https://education.nationalgeographic.org/resource/weather-or-climate-whats-difference/5th-grade/"
+   ]
+  },
+  "0fca6592b0": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the self-naming 'Rain gauge' is gone and all four choices are '-meter' instruments, so none names its own job. Hygrometer is a fair lure at grade 5: Florida's SC.5.E.7.3 grade 5 lesson says 'Humidity is measured with a tool called a hygrometer', this unit's humidity card (1e0d8ebf1a) and this card's own context teach it, and 'hygro-' points at nothing to do with pressure, so it is neither a standout nor a giveaway beside barometer and anemometer. Key true (barometer measures atmospheric pressure); lures truly wrong (thermometer temperature, anemometer wind speed, hygrometer water vapour: Grokipedia Hygrometer). Stem fact true (pressure from the weight of the air column). Context true.",
+   "sources": [
+    "https://floridascience.squarespace.com/sc5e73-weather-obervations-and-data",
+    "https://grokipedia.com/page/Hygrometer",
+    "https://grokipedia.com/page/Barometer",
+    "https://grokipedia.com/page/Anemometer"
+   ]
+  },
+  "f36a4738e8": {
+   "verdict": "pass",
+   "why": "Old tell fixed: 'free to spin round' is gone; the stem now gives only the build, which matches Grokipedia (three or four cups on horizontal arms from a central axle), so speed over direction can no longer be reasoned out. Still clear to a 10-year-old who has seen one. Key true (rotation rate proportional to wind speed); 'Which way' truly wrong (cup layout is omnidirectional and reports no direction), rain and damp air truly wrong; the cup shape keeps the rain lure live. Context true and still says that the wind spins the cups.",
+   "sources": [
+    "https://grokipedia.com/page/Anemometer",
+    "https://oceanservice.noaa.gov/education/dyw-weather-station.html"
+   ]
+  },
+  "f7c30a0e25": {
+   "verdict": "pass",
+   "why": "Old fact problem fixed: 'usually float more than 6 kilometres up' matches Grokipedia ('altitudes generally exceeding 6 kilometers') and the NWS school figure (above about 20,000 ft) and no longer contradicts the WMO Cloud Atlas (3-8 km polar, 5-13 km temperate, 6-18 km tropics). Ice crystals and Latin 'curl of hair' confirmed. Key and lures unchanged and correct.",
+   "sources": [
+    "https://cloudatlas.wmo.int/en/observation-of-clouds-from-aircraft-descriptions-cirrus.html",
+    "https://grokipedia.com/page/Cirrus_cloud",
+    "https://www.weather.gov/lmk/cloud_classification"
+   ]
+  },
+  "f62f365e71": {
+   "verdict": "pass",
+   "why": "Old weak tide lure replaced by one that also runs on the Sun's heat, so the stem's 'hot, sunny' no longer leaves only the key and its mirror. The evaporation lure is truly wrong: Grokipedia Sea breeze gives the cause wholly as unequal heating of land and sea (warm air over land rises, cooler sea air drawn in) and never names evaporation as a cause; evaporation adds vapour and drives no wind ashore. Choices parallel and similar in length. Context true (land breeze at night).",
+   "sources": [
+    "https://grokipedia.com/page/Sea_breeze",
+    "https://www.noaa.gov/jetstream/ocean/sea-breeze"
+   ]
+  },
+  "5ab1770ffe": {
+   "verdict": "pass",
+   "why": "Key true: the WMO's Climatological Standard Normals are 30-year averages (now 1991-2020), used 'because of the natural variability in our climate'; Grokipedia Climate attributes the 30-year standard to the WMO. The stem says 'standard stretch', so the 100-year lure is wrong against the standard, and it never says 'many years', so 1 and 5 years stay live for a child who does not know. Grade 5: National Geographic's 5th-grade text gives 'usually 30 years or more' and NOAA's K-12 page the same; the number is the basic fact itself. Not keyed elsewhere in the refreshed units; 4b296fbfb4's context no longer gives the span. Context true. Voice clean.",
+   "sources": [
+    "https://wmo.int/media/news/its-warmer-average-what-average",
+    "https://grokipedia.com/page/Climate",
+    "https://education.nationalgeographic.org/resource/weather-or-climate-whats-difference/5th-grade/",
+    "https://www.nesdis.noaa.gov/about/k-12-education/understanding-our-planet/whats-the-difference-between-weather-and-climate"
+   ]
+  }
+ }
+}

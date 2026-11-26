@@ -1,0 +1,404 @@
+{
+ "unit": "weather-and-climate-basics",
+ "questions": {
+  "4b296fbfb4": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: one day's weather can differ from a place's climate (a rainy day in a dry-climate desert town)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Climate",
+     "note": "Grokipedia: climate is 'the long-term average of temperature, precipitation, and other weather variables', weather is 'short-term atmospheric conditions over hours, days, or weeks'; 'a single heatwave constitutes weather'."
+    },
+    {
+     "claim": "Wrong choice: the town's climate has turned from dry to wet (one day changes the climate)",
+     "result": "ok",
+     "source": "https://www.nesdis.noaa.gov/about/k-12-education/understanding-our-planet/whats-the-difference-between-weather-and-climate",
+     "note": "NOAA NESDIS: climate is 'the average weather conditions in a place over a long period of time (30 years or more)'; one storm cannot shift a 30-year average. Plainly wrong."
+    },
+    {
+     "claim": "Wrong choice: the guide was wrong to call the climate dry",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Desert",
+     "note": "A desert is 'defined by extremely low annual precipitation, generally less than 250 millimeters (10 inches)', yet 'Rare precipitation events, concentrated in convective storms, generate flash floods in ephemeral channels'. A flooding storm is consistent with a dry climate, so the guide was right."
+    },
+    {
+     "claim": "Wrong choice: deserts get as much rain as other places",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Desert",
+     "note": "Deserts are defined by very low annual precipitation (under about 250 mm); plainly false."
+    },
+    {
+     "claim": "Context: weather is the state of the air at one place and time; climate is usual weather averaged over 30 years or more",
+     "result": "ok",
+     "source": "https://www.nesdis.noaa.gov/about/k-12-education/understanding-our-planet/whats-the-difference-between-weather-and-climate",
+     "note": "NOAA: weather is 'a specific event... over a short period of time'; climate averaged over '30 years or more'. Grokipedia Climate attributes the 30-year standard to the WMO's climate normals."
+    },
+    {
+     "claim": "Context: a desert gets very little rain in most years, and a rare storm, even a flooding one, leaves its climate dry",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Desert",
+     "note": "Rare convective storms bring flash floods to deserts; the climate is defined by the long-term low total. The context rightly says 'dry', not 'hot' (deserts can be cold)."
+    }
+   ]
+  },
+  "1e0d8ebf1a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the amount of water vapour in the air is called humidity",
+     "result": "ok",
+     "source": "https://forecast.weather.gov/glossary.php?word=humidity",
+     "note": "NWS glossary: humidity is 'Generally, a measure of the water vapor content of the air.' Grokipedia Humidity: 'Humidity is the presence of water vapor in the Earth's atmosphere'."
+    },
+    {
+     "claim": "Stem: muggy air feels damp and sticky because it holds much invisible water vapour",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Humidity",
+     "note": "Grokipedia: high relative humidity raises the felt temperature 'by reducing sweat evaporation'; humid tropical places feel 'muggier'. Water vapour is invisible (Grokipedia Water_vapor)."
+    },
+    {
+     "claim": "Wrong choice: precipitation (water falling from clouds, not vapour in the air)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Precipitation",
+     "note": "Grokipedia: precipitation is 'any product of the condensation of atmospheric water vapor that falls from a cloud to the Earth's surface', in forms 'such as rain, snow, sleet, hail, graupel, and drizzle'. Not the vapour content; wrong."
+    },
+    {
+     "claim": "Wrong choices: air pressure, temperature",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Barometer",
+     "note": "Air pressure is 'the force exerted by the weight of the air above a given point'; temperature is how warm or cold the air is. Neither is the water vapour content."
+    },
+    {
+     "claim": "Context: humidity often given as a percentage; measured with a hygrometer",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Humidity",
+     "note": "Relative humidity is 'expressed as a percentage'; 'The measurement of humidity relies on instruments such as hygrometers.' NOAA's student weather station also builds a hygrometer to measure humidity."
+    },
+    {
+     "claim": "Context: precipitation is water falling from clouds as rain, snow, sleet or hail; air pressure is the push of the air's weight",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Precipitation",
+     "note": "Matches Grokipedia's definition and list of forms (drizzle and graupel omitted, which is fine)."
+    }
+   ]
+  },
+  "0fca6592b0": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: the air above a place stretches many kilometres up and presses down; that push is air pressure",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Atmosphere_of_Earth",
+     "note": "Grokipedia: pressure 'arises from the weight of the overlying air column'; the Karman line is at 100 km and the exosphere reaches around 10,000 km. 'Many kilometres' is true."
+    },
+    {
+     "claim": "Key: a barometer measures air pressure",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Barometer",
+     "note": "Grokipedia: 'an instrument designed to measure atmospheric pressure'; NOAA's student weather station builds a barometer 'to measure atmospheric pressure'."
+    },
+    {
+     "claim": "Context: pressure rises and falls as the weather changes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Barometer",
+     "note": "Grokipedia: 'Rising pressure often indicates clear, stable weather', 'falling pressure may precede storms or precipitation'. The context keeps it general, as the T4 boundary asks."
+    },
+    {
+     "claim": "Wrong choices: thermometer (temperature), anemometer (wind speed), rain gauge (rainfall)",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/education/dyw-weather-station.html",
+     "note": "NOAA's weather-station activity: screened thermometer for air temperature, anemometer for wind speed, rain gauge for rainfall. None measures air pressure; the context's one-line glosses are correct."
+    }
+   ]
+  },
+  "478d41051d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: three or four small cups on short arms, free to spin, on a pole at a weather station",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Anemometer",
+     "note": "Grokipedia: 'three or four hemispherical or conical cups mounted symmetrically on horizontal arms extending from a central vertical shaft'."
+    },
+    {
+     "claim": "Key: it measures how fast the wind blows",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Anemometer",
+     "note": "Grokipedia: an anemometer is 'an instrument designed to measure the speed of the wind'; for cups 'the rotational frequency is linearly proportional to wind speed'."
+    },
+    {
+     "claim": "Wrong choice: which way the wind blows",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Anemometer",
+     "note": "The cup layout responds 'without dependence on wind direction'; direction needs a separate vane. Wrong for the cups described."
+    },
+    {
+     "claim": "Wrong choices: how much rain falls (rain gauge), how damp the air is (hygrometer)",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/education/dyw-weather-station.html",
+     "note": "NOAA: rain gauge measures rainfall, hygrometer measures humidity. Plainly wrong for a cup anemometer."
+    },
+    {
+     "claim": "Context: it is an anemometer; the stronger the wind, the faster the cups turn; a rain gauge collects rain, a wind vane shows direction",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/education/dyw-weather-station.html",
+     "note": "NOAA: 'Build an Anemometer to Measure Wind Speed'; weather vane shows wind direction; rain gauge measures rainfall. All correct."
+    }
+   ]
+  },
+  "fe091a9a50": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a wind vane's arrow points to where the wind is coming from",
+     "result": "ok",
+     "source": "https://courses.ems.psu.edu/meteo101/node/2239",
+     "note": "Penn State: a wind vane 'points into the wind and thus toward the direction FROM which the wind blows'. NOAA: 'The head of the Weather Vane will point to the direction from which the wind is blowing.' Grokipedia Weather_vane: the pointer indicates 'the upwind direction'. The stem asks about 'the arrow's point', which is the head: correct."
+    },
+    {
+     "claim": "Wrong choice: where the wind is going to",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weather_vane",
+     "note": "The tail aligns downwind and the pointer upwind, so the point shows the source, not the destination. Wrong."
+    },
+    {
+     "claim": "Wrong choice: how strong the wind is",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weather_vane",
+     "note": "Grokipedia: vanes give direction 'without any speed indication'. Wrong."
+    },
+    {
+     "claim": "Wrong choice: which way is north",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weather_vane",
+     "note": "The fixed N/E/S/W markers on the base show the compass directions; the arrow swings with the wind. Wrong."
+    },
+    {
+     "claim": "Context: winds are named for where they blow from; a north wind blows from the north toward the south",
+     "result": "ok",
+     "source": "https://courses.ems.psu.edu/meteo101/node/2239",
+     "note": "Penn State: 'the direction of the wind is always expressed as the direction FROM which the wind blows'; a wind from the north toward the south is a north (northerly) wind."
+    },
+    {
+     "claim": "Context: the letters N, E, S and W fixed below the arrow show the compass directions",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Weather_vane",
+     "note": "The fixed cardinal markers on the stationary base let the vane's direction be read against geographic north."
+    }
+   ]
+  },
+  "f10baf8e61": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a cloud is made of tiny drops of water or ice",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cloud",
+     "note": "Grokipedia: 'A cloud is a visible aggregate of minute particles of water droplets or ice crystals suspended in the atmosphere'; NSTA probe's best answer: 'clouds are made of tiny drops of water or tiny ice crystals.'"
+    },
+    {
+     "claim": "Wrong choice: water vapour, a kind of gas",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cloud",
+     "note": "Grokipedia: 'The key ingredient is water, but in its condensed form rather than vapor.' NSTA lists 'made of evaporated water in the form of water vapor' as the students' misconception. The air inside a cloud does hold vapour, but the visible cloud is the drops; not defensible as the answer."
+    },
+    {
+     "claim": "Wrong choices: smoke drifting up from fires; puffs of cold, dry air",
+     "result": "ok",
+     "source": "https://www.nsta.org/lesson-plan/what-are-clouds-made",
+     "note": "NSTA records 'smoke or cotton wool' as a child misconception. Smoke particles can seed droplets, but the cloud itself is water; 'cold, dry air' cannot form a cloud at all. Both wrong."
+    },
+    {
+     "claim": "Context: drops so tiny that they float in the air",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cloud",
+     "note": "Grokipedia: particles 'suspended in the atmosphere'. 'Float' is a fair child-level word for suspended droplets."
+    },
+    {
+     "claim": "Context: water vapour is an invisible gas; a cloud forms where the vapour turns into drops",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Water_vapor",
+     "note": "Grokipedia: vapour molecules are 'invisibly dispersed among other atmospheric gases'; 'water vapor condenses into tiny liquid droplets or ice crystals'."
+    },
+    {
+     "claim": "Context: the drops are what make the cloud look white",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cloud",
+     "note": "Grokipedia: 'Clouds generally appear white because their water droplets or ice crystals' scatter sunlight roughly equally across visible wavelengths."
+    }
+   ]
+  },
+  "6d271e2ba7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: white clouds with flat bottoms and puffy rounded tops like heaps of cotton are cumulus",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cumulus_cloud",
+     "note": "Grokipedia: 'distinctive puffy or cotton-like appearance, featuring flat bases and rounded tops'. NWS Louisville: 'flat bottoms and rounded tops'."
+    },
+    {
+     "claim": "Wrong choices: stratus (flat grey layer), cirrus (thin high wisps)",
+     "result": "ok",
+     "source": "https://www.weather.gov/lmk/cloud_classification",
+     "note": "NWS: stratus 'uniform and flat, producing a gray layer'; cirrus 'wispy, feathery'. Neither matches."
+    },
+    {
+     "claim": "Wrong choice: cumulonimbus",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cloud",
+     "note": "Cumulonimbus are 'towering masses, anvil-shaped tops' with heavy rain, hail or thunder, not small cotton heaps drifting over a park on a sunny afternoon. Wrong."
+    },
+    {
+     "claim": "Context: cumulus form when the Sun warms the ground and warm damp air rises",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cumulus_cloud",
+     "note": "Grokipedia: cumulus 'form primarily through thermal convection, a process driven by surface heating'; warm moist air rises, cools and condenses."
+    },
+    {
+     "claim": "Context: the name is Latin for 'heap'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cloud",
+     "note": "Grokipedia Cloud gives cumulus as Latin 'heap' (Luke Howard's 1803 naming)."
+    },
+    {
+     "claim": "Context: small ones are fair-weather clouds; a cumulus can grow into a towering cumulonimbus, the thunderstorm cloud",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cumulus_cloud",
+     "note": "Grokipedia: cumulus humilis are 'fair weather' clouds; 'Cumulus clouds serve as precursors to cumulonimbus through progressive vertical development.' NWS: scattered sunny-day cumulus 'fair weather cumulus'."
+    }
+   ]
+  },
+  "04cad2ea8a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a low, flat, grey sheet covering the whole sky with light drizzle is stratus",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Stratus_cloud",
+     "note": "Grokipedia: 'continuous, uniform gray or white layer', low ('from the Earth's surface up to about 2 kilometers'), can 'produce light precipitation in the form of drizzle'. NWS: 'uniform and flat, producing a gray layer of cloud cover', 'light precipitation or drizzle'. Nimbostratus and stratocumulus, the near neighbours, are not among the choices."
+    },
+    {
+     "claim": "Wrong choices: cumulus (puffy heaps), cirrus (high thin wisps), cumulonimbus (towering storm cloud)",
+     "result": "ok",
+     "source": "https://www.weather.gov/lmk/cloud_classification",
+     "note": "None is a low, even, sky-covering grey sheet giving drizzle. All wrong."
+    },
+    {
+     "claim": "Context: name from Latin for 'spread out'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Stratus_cloud",
+     "note": "Grokipedia: from a Latin word meaning 'to spread out' or 'to flatten out'; Grokipedia Cloud also glosses stratus as 'spread out'."
+    },
+    {
+     "claim": "Context: stratus brings dull days and drizzle; stratus resting on the ground is fog",
+     "result": "ok",
+     "source": "https://www.weather.gov/lmk/cloud_classification",
+     "note": "NWS defines fog as a 'Layer of stratus clouds on or near the ground'; Grokipedia: at ground level 'it manifests as fog'; overcast conditions."
+    },
+    {
+     "claim": "Context: a cumulonimbus brings heavy rain and thunder",
+     "result": "ok",
+     "source": "https://www.weather.gov/lmk/cloud_classification",
+     "note": "NWS: cumulonimbus produce a thunderstorm with heavy rain, 'resulting in lightning and thunder'."
+    }
+   ]
+  },
+  "f7c30a0e25": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: cirrus look like thin white wisps high in the sky",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cirrus_cloud",
+     "note": "Grokipedia: 'delicate, white, wispy filaments'; NWS: 'wispy, feathery', high clouds."
+    },
+    {
+     "claim": "Wrong choices: puffy heaps with flat bottoms (cumulus), flat grey sheet low over the land (stratus), dark towers with lightning (cumulonimbus)",
+     "result": "ok",
+     "source": "https://www.weather.gov/lmk/cloud_classification",
+     "note": "Each describes another kind; the context names each correctly."
+    },
+    {
+     "claim": "Context: cirrus float more than 6 kilometres up",
+     "result": "uncertain",
+     "source": "https://cloudatlas.wmo.int/en/observation-of-clouds-from-aircraft-descriptions-cirrus.html",
+     "note": "Stated as a rule, this is too strong. The WMO Cloud Atlas puts cirrus usually at 3-8 km in polar regions, 5-13 km in temperate regions and 6-18 km in the tropics; Grokipedia Cirrus_cloud says 'generally exceeding 6 kilometers' and notes polar cirrus at about 3 to 6 km. The NWS's 'above about 20,000 feet' is the usual US school figure. Fix: 'Cirrus clouds usually float more than 6 kilometres up'."
+    },
+    {
+     "claim": "Context: the air there is so cold that cirrus are made of ice crystals",
+     "result": "ok",
+     "source": "https://www.weather.gov/lmk/cloud_classification",
+     "note": "NWS: cirrus 'composed entirely of ice crystals'; Grokipedia: 'composed exclusively of ice crystals'."
+    },
+    {
+     "claim": "Context: the name is Latin for 'curl of hair'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cloud",
+     "note": "Grokipedia Cloud: cirrus from Latin for 'curl of hair'; Cirrus_cloud: 'curl' or 'tuft of hair'."
+    },
+    {
+     "claim": "Context: puffy heaps are cumulus, a flat grey sheet is stratus, lightning comes from cumulonimbus",
+     "result": "ok",
+     "source": "https://www.weather.gov/lmk/cloud_classification",
+     "note": "Correct per NWS descriptions."
+    }
+   ]
+  },
+  "f62f365e71": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the sea breeze blows because the Sun warms the land faster than the sea",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sea_breeze",
+     "note": "Grokipedia: a sea breeze is 'driven by the unequal heating of land and sea surfaces'; solar radiation 'heats the land surface more rapidly than the adjacent ocean' (land's lower specific heat; sunlight confined to the top few inches of soil; mixing in the sea). Wikipedia: 'The sea has a greater heat capacity than land.' Note: NOAA JetStream says 'The sun warms both the ground and ocean at the same rate', meaning the same sunshine falls on both, then adds that temperature swings are 'much greater over land than over water'. 'Warms the land faster' means the land's temperature climbs faster, which is true; the key stands."
+    },
+    {
+     "claim": "Wrong choice: the Sun warms the sea faster than the land",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sea_breeze",
+     "note": "The reverse of the truth; plainly wrong."
+    },
+    {
+     "claim": "Wrong choice: the waves push the air toward the shore",
+     "result": "ok",
+     "source": "https://www.noaa.gov/jetstream/ocean/sea-breeze",
+     "note": "NOAA JetStream and Grokipedia explain the breeze entirely by heating, air density and pressure; neither names waves as a cause. Waves are raised by wind, not the other way round. Wrong."
+    },
+    {
+     "claim": "Wrong choice: the tide pulls the air in with the water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tide",
+     "note": "Grokipedia: tides are 'caused primarily by the gravitational interactions between the Earth, Moon, and Sun, along with the planet's rotation'; the page does not say tides make wind. The sea breeze comes daily with the sunshine, whatever the tide. Wrong."
+    },
+    {
+     "claim": "Stem: a steady sea breeze begins on a hot, sunny afternoon at the beach",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sea_breeze",
+     "note": "Grokipedia: 'typically developing in the afternoon and peaking during hot summer days'."
+    },
+    {
+     "claim": "Context: the warm air over the land rises and cooler air from over the sea flows in to take its place",
+     "result": "ok",
+     "source": "https://www.noaa.gov/jetstream/ocean/sea-breeze",
+     "note": "JetStream: as the air over land warms 'its density decreases, creating a weak low-pressure area'; the cooler, denser sea air 'begins to spread inland' and undercuts the warm air, 'forcing it to rise'. Grokipedia: the warm air 'expands and rises' and cooler air 'from over the water flows inland'."
+    },
+    {
+     "claim": "Context: waves and tides play no part",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sea_breeze",
+     "note": "No source names waves or tides as a cause; the breeze is a thermal circulation."
+    },
+    {
+     "claim": "Context: at night the land cools faster, and the breeze turns round to blow out to sea",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sea_breeze",
+     "note": "Grokipedia: the land breeze is 'driven by the land surface cooling more rapidly than the adjacent ocean water' and blows from land toward the sea at night. Wikipedia: 'dry land also cools faster than water', so the wind flows 'from the land towards the sea'. JetStream: at night 'the land temperature falls to below that of the ocean'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Nine questions are ok and one uncertain (f7c30a0e25: the cirrus context's flat 'more than 6 kilometres up' needs 'usually'; WMO puts cirrus at 5-13 km in temperate regions and 3-8 km in polar ones). The points the lead flagged all hold: the sea-breeze chain (land warms faster, warm air rises, cooler sea air flows in, reverses at night) and its three wrong choices; cumulus, stratus and cirrus by look, with cirrus made of ice; clouds as tiny drops of water or ice, not vapour; barometer (air pressure), anemometer (wind speed), thermometer, rain gauge; the wind vane's arrow pointing to where the wind comes FROM (the stem asks about 'the arrow's point', the head); humidity as the water vapour the air holds, not the amount it can hold. One nuance for the sea breeze, not an error: NOAA JetStream says 'The sun warms both the ground and ocean at the same rate' (the same sunshine falls on both); the land's temperature still rises faster, which is what the key says. No quotations in any stem, choice or context; no changing numbers."
+}

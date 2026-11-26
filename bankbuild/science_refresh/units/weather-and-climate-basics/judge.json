@@ -1,0 +1,55 @@
+{"unit": "weather-and-climate-basics",
+ "questions": {
+  "4b296fbfb4": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Deserts get as much rain as other places' is dead. The stem itself says the town has a dry climate, and every 10-year-old knows deserts are dry places, so only three choices are live. It is also the only wrong choice that is not a conclusion drawn from Ana's rainy day, and with it gone the key is the only choice that names both weather and climate.",
+     "fix": "Replace it with the confusion the scope is built to undo (facts.md M5, NCSE): 'Weather and climate are the same thing'. Choices: 'One day's weather can differ from the climate', 'The town's climate has turned from dry to wet', 'The guide was wrong to call the climate dry', 'Weather and climate are the same thing'. Add to the context: 'Weather and climate are not the same: weather changes from day to day, and climate is the pattern over many years.'"}
+   ]},
+  "1e0d8ebf1a": {"verdict": "ok",
+   "issues": []},
+  "0fca6592b0": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Rain gauge' names its own job, so a student who knows nothing rules it out from the words alone, and 'Thermometer' is the one weather tool every 5th grader already knows. That leaves barometer against anemometer, a coin toss for a student who does not know the fact.",
+     "fix": "Replace 'Rain gauge' with 'Hygrometer', the humidity tool that the humidity question's context already teaches (F6, the Florida grade 5 lesson). The four choices are then four '-meter' names: 'Barometer', 'Thermometer', 'Anemometer', 'Hygrometer'. Change the context's last sentence to: 'A thermometer measures temperature, an anemometer wind speed, and a hygrometer the water vapour in the air.'"},
+    {"axis": "other", "severity": "low",
+     "what": "Near-overlap with matter-made-of-tiny-particles. The stem's 'all of it presses down on the ground below' says that air has weight, which that unit keys in its basketball question ('A little more, because air has weight'). The facts asked differ (the instrument here, air's weight there), so this is not a duplicate.",
+     "fix": "No change needed. The stem's picture is the clearest way to teach air pressure to a 10-year-old."}
+   ]},
+  "478d41051d": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Free to spin round' lets a careful reader reason it out without knowing the anemometer: cups that spin cannot point one way, so the spin must show how fast the wind blows. The rain-cup lure keeps the question honest, so this is polish.",
+     "fix": "Say only how it is built: 'At the top of a pole at a weather station, three or four small cups sit on the ends of short arms joined at the middle. What does this instrument measure?' Keep the choices; the context already says that the wind spins the cups."}
+   ]},
+  "fe091a9a50": {"verdict": "ok",
+   "issues": []},
+  "f10baf8e61": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "Overlap with two finished units. the-water-cycle's condensation question says in its stem that the vapour 'turns back into tiny drops of liquid water, and the drops gather into clouds', and solids-liquids-and-gases keys the breath puff as 'Tiny drops of liquid water' against the same lure, 'Water vapour'. The fact (what is seen is tiny drops, the vapour is invisible) and the lure are the same, so a player who has met either answers this by reflex. The water-cycle judge already asked this unit not to key the cloud-drops fact again.",
+     "fix": "Re-key the slot to a scope fact that no unit keys: how long a climate takes to measure (F3). 'Scientists work out a place's climate from the records of its weather. About how many years of weather records do they usually use?' Choices: 'About 30 years', 'About 1 year', 'About 5 years', 'About 100 years'. One year is the honest lure (a year holds every season), and 100 years sounds suitably long. Context: 'Climate is a place's usual weather, averaged over a standard 30 years of records, the World Meteorological Organization's period; that is long enough that one wet or dry year barely moves it.' Word it as the standard 30 years, not '30 years or more', so that the 100-year lure stays wrong. The number is the basic fact itself, as the voice rule allows. Do not say 'many years' in the stem, which would rule out one year. Confirm the grade placement (NOAA's K-12 page gives '30 years or more') before keying. A rain-gauge question is no answer: the tool's name and its funnel both give its job away. If the lead keeps the cloud fact for the scope anyway, at least make the lures live (the next issue)."},
+    {"axis": "tell", "severity": "medium",
+     "what": "Two of the three wrong choices are dead for a 10-year-old. 'Puffs of cold, dry air' rules itself out: dry air holds no water, and the stem's 'thick white cloud' is plainly made of something that can be seen. 'Smoke drifting up from fires' is a young child's picture (NSTA's summary has it from age 5). Only vapour against drops is live.",
+     "fix": "The re-key above removes it. If the cloud question stays, keep 'Water vapour, a kind of gas' and replace the other two with ideas that are wholly false and that a 10-year-old really holds, such as 'Tiny bubbles full of water vapour'. Have the fact-checker clear each one. Avoid dust, which seeds real cloud drops, so a dust lure is partly true, and avoid 'steam' (facts.md caution)."}
+   ]},
+  "6d271e2ba7": {"verdict": "ok",
+   "issues": []},
+  "04cad2ea8a": {"verdict": "ok",
+   "issues": []},
+  "f7c30a0e25": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The context's 'Cirrus clouds float more than 6 kilometres up' is too flat as a rule. The fact-checker found cirrus at 3-8 km in polar regions (the WMO Cloud Atlas), and facts.md F17 itself says 'generally'.",
+     "fix": "'Cirrus clouds usually float more than 6 kilometres up, where the air is so cold that they are made of ice crystals.'"}
+   ]},
+  "f62f365e71": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key and 'The Sun warms the sea faster than the land' are mirror images, and the stem's 'hot, sunny' points to that pair over waves and tides, so a guesser is left with a 50-50. The choice between the two is the fact itself, so this is polish.",
+     "fix": "Optionally replace 'The tide pulls the air in with the water' with a lure that also runs on the Sun's heat: 'Water evaporating from the sea pushes air ashore'. the-water-cycle teaches that sunlight evaporates sea water, so a 5th grader may really reach for it, and it is wrong: evaporation adds vapour to the air and pushes no wind. Add to the context: 'Evaporation adds water vapour to the air, but it does not push the air ashore.'"}
+   ]}
+ },
+ "unit_notes": "Overlaps. (1) f10baf8e61 (clouds are tiny drops of water or ice) repeats a fact that the bank already has twice: the-water-cycle's condensation stem says the vapour turns into tiny drops that gather into clouds, and solids-liquids-and-gases keys the breath puff as tiny drops of liquid water against the lure 'water vapour'. The water-cycle judge flagged this for this unit in advance. Fix: re-key the slot to the climate span (about 30 years of records, F3), which no unit keys. (2) 0fca6592b0's stem says air presses down with its weight, which matter-made-of-tiny-particles keys in its basketball question; the facts asked differ, so no change. (3) The humidity question's lure 'Precipitation' is a term the-water-cycle teaches; that unit keys neither humidity nor vapour as a weather factor, so no clash. (4) The sea breeze (f62f365e71) is distinct from the-water-cycle's evaporation question (sunlight warming the sea) and from energy-changes-form's wind-from-the-Sun question; it keys land heating faster than water, so no change. (5) No question touches wind-water-and-ice-shape-the-land (its wind keys dunes) or how-light-travels. No overlap with earths-resources, rock-layers-and-fossils or the rest of the listed T1 units. Within the unit: three of the ten questions are cloud kinds (cumulus, stratus, cirrus). Each keys a different kind and the scope names all three, so they stand, though f7c30a0e25's choices restate the other two questions' stems. If the climate-span re-key goes in, 4b296fbfb4's context already says '30 years or more'. That is fine for a teaching card, but the two then sit side by side on climate, so keep 4b296fbfb4 keyed on the single day against the climate, as it is. Scope coverage: weather against climate, humidity, the barometer, the anemometer, the wind vane, cloud make-up, the three kinds and the Sun-and-sea piece are all keyed. The thermometer and the rain gauge appear only as lures, which is acceptable, since a question keyed on either gives itself away. Fronts, air masses, falling-pressure storms and climate change are kept out, as not_here asks. Lanes: no named places (a desert town, a barn, a park, a beach) and no arithmetic. Voice: third person, no exclamation marks, no dates first, no singular they."
+}
