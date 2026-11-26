@@ -27,14 +27,18 @@ def unit_table(units: list[dict], lines: dict) -> list[str]:
         tu = [u for u in units if u['tier'] == tier]
         n = sum(u.get('target_q', 0) for u in tu)
         out.append(f'\n### T{tier}: {ORD[tier]} grade ({len(tu)} units, {n} questions to write)\n')
-        out.append('| # | Unit | Strand | Map lines | Writes | |')
+        out.append('| # | Unit | Strand | Map lines | Writes | What it teaches |')
         out.append('|---|---|---|---|---|---|')
         for i, u in enumerate(sorted(tu, key=lambda u: (STRANDS.index(u['strand']), u['title'])), 1):
-            ml = '; '.join(f"{lid} {lines[lid]['text'][:60]}" + ('...' if len(lines[lid]['text']) > 60 else '')
-                           if lid in lines else lid for lid in u.get('map_lines', []))
-            star = 'pilot' if u.get('pilot') else ''
-            stance = 'stance' if u.get('framing_note', '').startswith('STANCE') else ''
-            out.append(f"| {i} | {u['title']} | {STRAND_NAME[u['strand']]} | {ml} | {u.get('target_q', '')} | {' '.join(x for x in (star, stance) if x)} |")
+            ml = ', '.join(u.get('map_lines', []))
+            star = '**pilot**' if u.get('pilot') else ''
+            stance = '**stance**' if u.get('framing_note', '').startswith('STANCE') else ''
+            scope = u.get('scope', '')
+            if len(scope) > 230:
+                scope = scope[:230].rsplit(' ', 1)[0] + '...'
+            tags = ' '.join(x for x in (star, stance) if x)
+            out.append(f"| {i} | {u['title']} | {STRAND_NAME[u['strand']]} | {ml} | {u.get('target_q', '')} | "
+                       f"{(tags + ' ') if tags else ''}{scope.replace('|', '/')} |")
     return out
 
 
@@ -64,7 +68,8 @@ def pilot_unit(u: dict, lines: dict) -> list[str]:
     card = read_json(d / 'card.json')
     out = [f"\n## Pilot T{u['tier']} ({ORD[u['tier']]} grade): {u['title']}\n"]
     out.append(f"Strand: {STRAND_NAME[u['strand']]}. Curriculum map: "
-               + '; '.join(f"**{lid}** {lines[lid]['text']}" if lid in lines else lid for lid in u.get('map_lines', []))
+               + '; '.join(f"**{lid}** {lines[lid]['text'].rstrip('.')}" if lid in lines else lid
+                           for lid in u.get('map_lines', []))
                + '.\n')
     nd = len(draft.get('questions', []))
     jv = defaultdict(int)
@@ -115,6 +120,19 @@ def info_table(units: list[dict]) -> list[str]:
     return out
 
 
+def old_bank_table() -> list[str]:
+    import json
+    from bankbuild.cards.common import QDIR
+    qs = json.loads((QDIR / 'science.json').read_text(encoding='utf-8'))
+    out = ['| Tier | Questions | Stem words (median, range) | Reading grade (median) | Answer words (median) | Opens on a name/year/place |',
+           '|---|---|---|---|---|---|']
+    for t in range(1, 6):
+        s = summarise([q for q in qs if q.get('tier') == t])
+        out.append(f"| old T{t} | {s['n']} | {s['stem_words_median']} ({s['stem_words_range'][0]}-{s['stem_words_range'][1]}) "
+                   f"| {s['reading_grade_median']} | {s['answer_words_median']} | {s['story_share']}% |")
+    return out
+
+
 def main() -> None:
     sys.stdout.reconfigure(encoding='utf-8')
     out_path = sys.argv[1]
@@ -132,6 +150,8 @@ def main() -> None:
     body.append('\n# Information only (never gates)\n')
     body.append('Length, reading grade and story share, per pilot unit. Brandon ruled on 2026-11-25 that these are not rules.\n')
     body += info_table(pilots)
+    body.append('\nThe same measures on the old bank (3,503 questions), for comparison:\n')
+    body += old_bank_table()
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(body) + '\n')
     print(f'wrote {out_path}')
