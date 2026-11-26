@@ -1,0 +1,55 @@
+{"unit": "signs-of-a-chemical-change",
+ "questions": {
+  "28e07aed6a": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The boiling half re-uses T1 solids-liquids-and-gases ('What is inside the big bubbles? Water in the form of a gas'), also restated in T2 pure-substances-and-mixtures' water-element context. It is given, not asked: a T1 student can strike 'only the boiling water' and 'both', but must still know the tablet's fizz is a new gas to choose between 'only the tablet' and 'neither'. Acceptable as it stands.",
+     "fix": "None needed. Optional precision: 'an effervescent antacid tablet', since chewable antacids do not fizz (the stem's 'it fizzes hard' already covers it)."}
+   ]},
+  "a3a1eeb59e": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Sunlight soaked up by the iron' is the weakest lure: the heat starts when the airtight wrapper is torn open, which sunlight cannot explain.",
+     "fix": "'Heat sealed into it at the factory' (the stored-heat belief; the 'no flame and no battery' clause keeps it live)."}
+   ]},
+  "3e995cb9ac": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Tiny specks of dust she blew into it' is a little weak: breath through a straw carries no dust.",
+     "fix": "'Tiny drops of spit blown into it' (plausible for anyone who has blown through a straw, and clinical enough for teenagers)."}
+   ]},
+  "57fcbc6f60": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Same pattern as T1 mixtures-and-solutions' rust question (metal plus air and water makes a new substance; that question's lure 'The same iron with a new colour' is this question's lesson). Copper's patina is its own fact and the scope names it, so it is not a re-ask. The stem's 'rain and wind' and the key's 'air and rain' share a word, balanced by the 'Rain washing...' lure.",
+     "fix": "None needed."}
+   ]},
+  "5b016ff336": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key alone names a number and a substance the stem never mentions ('Two liquids'), and with 'snaps ... then shakes it' it reads like the stem's mechanism. The lures use the snap and the shake too, so it holds.",
+     "fix": "Optional: 'Chemicals inside it reacting as they mix'."}
+   ]},
+  "5f85385c9c": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Salt that the drying sweat leaves' is weak: most players know salt has no smell.",
+     "fix": "'Sweat warming up in the heat of the race' (the belief that heat itself makes a smell)."},
+    {"axis": "other", "severity": "low",
+     "what": "The key 'Bacteria breaking the sweat down' echoes T1 decomposers-and-recycling-matter's compost key 'Bacteria and fungi breaking it down', and it names the cause rather than the unit's point, that a new substance is made. Tone is clinical and fine for teenagers.",
+     "fix": "'Bacteria turning the sweat into new substances'."}
+   ]},
+  "e352e2dbe0": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem's 'streak of fine powder' and the key's 'ground very fine' share a word.",
+     "fix": "Stem: 'It leaves a reddish-brown streak of powder behind.' Or key: 'The same mineral, crushed to dust'."}
+   ]},
+  "5aacc75716": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'freezes fast to the glass' can be read as 'freezes quickly'. Both readings work, but 'fast' meaning 'firmly' is old-fashioned for a 6th grader.",
+     "fix": "'...so cold that the wet wooden block it stands on freezes to the glass and lifts with the flask.'"}
+   ]}
+ },
+ "unit_notes": "Ruling asked for, the barium hydroxide reaction (5aacc75716): fair at 6th grade. The asked fact, that a change that turns cold on its own can be a reaction because some reactions take in heat, is the scope's own 'getting hot or cold' and TEKS 6.6E's 'change in thermal energy'. The question never uses the word endothermic, and the demo is framing. The line between 'take in heat' and 'give off cold' is not above grade: T1 solids-liquids-and-gases' gallium context already teaches 'cold never flows at all' and T1 telling-materials-apart's bench question teaches heat leaving a hand. The writer was right to avoid the instant cold pack, which is dissolving, arguably a physical change. Overlaps, all acceptable: 28e07aed6a uses the T1 boiling-bubbles fact as a given (see the question); a3a1eeb59e rests on T1 mixtures-and-solutions' rust fact but asks the heat, a new fact; 57fcbc6f60 runs T1's rust pattern on copper (scope example; fine); 5f85385c9c's key echoes T1 decomposers' compost key (reword offered). Reserves for builders not yet started: T3 physical-or-chemical-change must not re-ask grinding or crushing as physical through a streak test (e352e2dbe0 has it); T4 chemical-reactions-conserve-mass owns the burnt log's mass (5aacc75716 only names a burning log as a heat example); a3a1eeb59e's context (powder rusts faster than a gate) touches T5 reaction rates' surface area, context only. Coverage: all six signs (gas, temperature both ways, precipitate, colour, light, smell) plus evidence-not-proof twice (28e07aed6a, e352e2dbe0); no two questions key the same fact. Six of eight keys say 'a reaction made it'. That is natural for a signs unit, and e352e2dbe0 is the counterweight. Lanes: no kitchen examples (antacid, hand warmer, limewater, roof, glow stick, sweat, a mineral, lab powders). Voice: third person, no exclamations, no singular they."}

@@ -1,0 +1,38 @@
+{"unit": "particles-in-motion",
+ "questions": {
+  "5473529713": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'nothing about it seems to move at all' sets up the 'still' misconception well, but 'seems' quietly hints that the appearance is wrong. 'Resting quite still' is an odd phrase ('quite' reads as 'fairly').",
+     "fix": "Wrong choice: 'Sitting still, packed close together'. The stem may stay as it is."}
+   ]},
+  "91da34c974": {"verdict": "ok", "issues": []},
+  "deadcec6e7": {"verdict": "ok", "issues": []},
+  "2bde8ead7e": {"verdict": "ok", "issues": []},
+  "6372151b14": {"verdict": "ok", "issues": []},
+  "031fd0536d": {"verdict": "revise",
+   "issues": [
+    {"axis": "fact", "severity": "high",
+     "what": "The key gives the wrong reason. In an unstirred beaker, the hot-water drop spreads sooner mostly because of convection currents (the hot water cools at its top and sides and starts circulating). Particles bumping the ink (diffusion) is the smaller part. The fact-check file also marks this as an error. The key and context teach the classroom misconception as the reason.",
+     "fix": "Replace the question with one on the scope line that no question in the unit keys yet: boiling in particles. For example: 'Water in a beaker over a lab burner grows hotter and hotter until bubbles of water vapour form all through it. What lets the water particles break away from the liquid?' Key: 'They gain enough energy to pull free of one another'. Wrong choices: 'They swell up until they float away', 'They split apart into hydrogen and oxygen', 'The flame's heat pushes them up and out'. (The hydrogen-and-oxygen choice is only a lure here: solids-liquids-and-gases keys 'what is in the bubbles', and this question keys the particles' energy.) Do not re-key this question to 'hot water's particles move faster': see the grade issue."},
+    {"axis": "grade", "severity": "medium",
+     "what": "The question's other possible facts belong to other units. Re-keyed to 'hot water's particles move faster', it becomes the mirror of 6d456e6b16 (cooling slows the particles), two questions on one fact. It is also the core line of the planned T3 unit temperature-and-moving-particles ('hotter means faster-moving particles'). The true explanation, convection, belongs to the T3 unit heat-on-the-move.",
+     "fix": "Use the boiling replacement above. It covers the scope's 'liquids boil' and clashes with no other unit."},
+    {"axis": "tell", "severity": "low",
+     "what": "'Hot water's particles melt the ink into much finer bits' is weak, because ink is already a liquid.",
+     "fix": "This goes with the replacement."}
+   ]},
+  "93fbb7ed37": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'The pull between the particles' uses a word the unit never teaches. Elsewhere the contexts say 'how they are held together'. A careful 6th grader might read 'pull' as a fixed property of the particles and think it also stays the same.",
+     "fix": "Wrong choice: 'How tightly they are held together'."}
+   ]},
+  "6d456e6b16": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "Two of the three wrong choices ('shrank smaller', 'joined into bigger, heavier particles') rest on the particle-size misconception that 93fbb7ed37 keys. A player who has met that question is left choosing between 'slowed' and 'sped up', and 'cool glass' settles it. The spacing half of the key ('came close together') is never tested.",
+     "fix": "Choices: 'They slowed down and came close together' (key), 'They sped up and spread farther apart' (the picture of evaporation, the classic mix-up), 'They stopped moving and froze fast to the glass' (the static-particle misconception), 'They shrank smaller and packed into drops'."}
+   ]}
+ },
+ "unit_notes": "Grade fit: all eight questions are 6th-grade particle-model content (NGSS MS-PS1-4, TEKS particle model). None is babyish, and none re-asks a T1 fact. Overlap check against every final.json: 91da34c974 asks the particle reason behind solids-liquids-and-gases' 'a liquid keeps its volume', which is fine. 2bde8ead7e shares the diving-tank setting with solids-liquids-and-gases' diver question, and its fact (a gas can be squeezed because of the space between its particles) is new, though the setting could be varied. 6d456e6b16 shares the condensation setting with solids-liquids-and-gases (the ice jar) and the-water-cycle (condensation named), but it asks the particle picture, which is fine. deadcec6e7 differs from matter-made-of-tiny-particles' smell-across-the-room question (T1 keys that particles travel; this question keys why a gas fills its container). Against the other two T2 units judged with this one, no question shares a fact. Collisions with planned units: 031fd0536d (see its issues) runs into T3 temperature-and-moving-particles and T3 heat-on-the-move. 93fbb7ed37 ('particles keep their size') is the misconception that T3 temperature-and-moving-particles will meet under thermal expansion, so the T3 builder should key spreading-out, not 'particles do not grow'. Scope coverage: solid, liquid, gas, compression, melting and condensation are keyed. Boiling in particles (named in the scope) is keyed nowhere, so the replacement for 031fd0536d should cover it. Variety: the particle-size or splitting misconception is a wrong choice in five questions (deadcec6e7, 2bde8ead7e, 6372151b14, 031fd0536d, 6d456e6b16) and the key of a sixth (93fbb7ed37), so vary it. Gold is used as a setting four times across the three T2 physical units (this unit's gold ring; metals' Au and gold leaf; pure-substances' panning). Consider tin or lead melting in a lab crucible for 6372151b14."}

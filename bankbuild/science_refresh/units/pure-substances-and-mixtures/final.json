@@ -1,0 +1,202 @@
+{
+ "unit": "pure-substances-and-mixtures",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "Ancient Greek thinkers counted water as one of four elements, along with earth, air and fire. Chemists today do not. Which observation shows that water is not an element?",
+   "answer": "Electricity splits it into two gases",
+   "choices": [
+    "Electricity splits it into two gases",
+    "Boiling sends bubbles of gas up through it",
+    "Its drops can be split into ever smaller drops",
+    "Salt and many minerals dissolve in it"
+   ],
+   "context": "An element cannot be broken down into simpler substances, but an electric current splits water into hydrogen and oxygen, so water is a compound of the two. The bubbles in boiling water are water vapour, not hydrogen and oxygen, and a drop split into smaller drops is still water. Salt dissolving in water makes a mixture, with no new substance formed.",
+   "facts": [
+    "F2",
+    "F3",
+    "F5",
+    "F6",
+    "F7",
+    "M3"
+   ],
+   "grade_note": "6th graders learn that a pure substance is either an element or a compound (TEKS 112.18(b)(5)(A), map line G6.P2), and water split by electricity into hydrogen and oxygen is the standard case of a compound."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "When charcoal burns, the carbon in it joins with oxygen from the air, and carbon dioxide gas drifts up from the fire. What kind of substance is carbon dioxide?",
+   "answer": "A compound of carbon and oxygen",
+   "choices": [
+    "A compound of carbon and oxygen",
+    "A mixture of carbon and oxygen",
+    "A solution of carbon in oxygen",
+    "A new element made of the two"
+   ],
+   "context": "Burning joins carbon and oxygen chemically, always in the same fixed ratio, into one new substance: a compound, which only another chemical reaction can split. In a mixture the parts are not joined, can come in any amounts and can be sorted out again by physical means such as filtering, and an element holds only one kind of atom. Carbon dioxide is also one of the gases that every person breathes out, about 4 parts in every 100 of a breath.",
+   "facts": [
+    "F2",
+    "F3",
+    "F8",
+    "F10",
+    "F11",
+    "F28",
+    "M4"
+   ],
+   "grade_note": "Telling a compound from a mixture is the heart of the 6th-grade line between pure substances and mixtures (TEKS 6.6B; TEKS 112.18(b)(5)(A), map line G6.P2), and students often take a compound for a mixture of its elements (Briggs and Holding)."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "Chemists call a mixture homogeneous when the substances in it are spread so evenly that every part of it is the same as every other part. Which of these materials is a homogeneous mixture?",
+   "answer": "Brass",
+   "choices": [
+    "Brass",
+    "Copper",
+    "Granite",
+    "Distilled water"
+   ],
+   "context": "Brass is copper and zinc melted together, with the zinc spread evenly all through the copper. Copper is an element, and distilled water, boiled into steam and cooled back into water to leave everything else behind, is a compound, so both are pure substances, not mixtures. Granite is a mixture too, but its grains of different minerals can be seen, which makes it heterogeneous.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15"
+   ],
+   "grade_note": "TEKS 6.6B asks 6th graders to tell pure substances from homogeneous and heterogeneous mixtures, and brass is the map line's own example of a homogeneous mixture (G6.P2)."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "A student shakes a scoop of garden soil with water in a tall jar until it all looks like muddy brown water. Then she leaves the jar standing still for three days. What does the jar show at the end?",
+   "answer": "Layers, with sand at the bottom and clay on top",
+   "choices": [
+    "Layers, with sand at the bottom and clay on top",
+    "Layers, with clay at the bottom and sand on top",
+    "Brown, muddy water, still the same all through",
+    "One even layer of mixed grains, under clear water"
+   ],
+   "context": "Soil is a heterogeneous mixture whose grains of sand, silt and clay do not dissolve, so once the jar stands still they settle out by size. Sand, the biggest, reaches the bottom within a minute, silt settles on top of it within a couple of hours, and the tiny clay grains settle last, over a day or more, as a top layer under clear water.",
+   "facts": [
+    "F11",
+    "F12",
+    "F16",
+    "F17",
+    "F18",
+    "M6"
+   ],
+   "grade_note": "TEKS 6.6B has 6th graders investigate heterogeneous mixtures by their physical properties, and the map line names soil as one (G6.P2); the jar test shows its parts settling out by grain size."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "A chemist heats a flask of pure water and a flask of seawater side by side in a lab at sea level. The pure water boils at 100 degrees Celsius. What does the seawater do?",
+   "answer": "It boils a little above 100, as salt is dissolved in it",
+   "choices": [
+    "It boils a little above 100, as salt is dissolved in it",
+    "It boils a little below 100, as salt is dissolved in it",
+    "It boils at 100 too, as only its water boils away",
+    "It boils far above 100, as its salt must boil too"
+   ],
+   "context": "A pure substance such as water boils at one fixed temperature, but a mixture's boiling point depends on what is in it. Dissolved salt raises the boiling point, so seawater boils at about 100.6 degrees Celsius. As its water boils away and the salt left behind grows stronger, the boiling point climbs higher still.",
+   "facts": [
+    "F1",
+    "F19",
+    "F20",
+    "F21",
+    "M6"
+   ],
+   "grade_note": "G6.P2 has 6th graders tell pure substances from mixtures by properties such as boiling point, and pure water's fixed 100 degrees against salt water's higher boiling point is the standard comparison."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "A prospector scoops sand and gravel from a stream bed into a wide steel pan. She dips the pan under the water and swirls it, so the moving water carries the sand and gravel out over the rim. Tiny flakes of gold stay at the bottom. Why does the gold stay?",
+   "answer": "Gold is many times denser than sand",
+   "choices": [
+    "Gold is many times denser than sand",
+    "Gold is magnetic and clings to the steel pan",
+    "Each gold flake is heavier than a pebble of gravel",
+    "Gold is harder, so water cannot move it"
+   ],
+   "context": "Gold is about 19 times denser than water and about seven times denser than quartz, the main mineral in sand, so the swirling water sweeps the lighter grains away while the gold sinks and stays. A tiny flake weighs far less than a pebble; what keeps it in the pan is how heavy gold is for its size. Gold is not magnetic, and it is far softer than quartz.",
+   "facts": [
+    "F11",
+    "F18",
+    "F23",
+    "F24",
+    "F25",
+    "F31",
+    "M5"
+   ],
+   "grade_note": "G6.P2 names density among the physical properties that let a mixture be separated, and panning, which sorts gold from sand by density, is the classic case."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "Hikers fill their bottles at a mountain spring and drink the water just as it is. Is the spring water a pure substance?",
+   "answer": "No, since rock minerals are dissolved in it",
+   "choices": [
+    "No, since rock minerals are dissolved in it",
+    "No, since water is a compound, not an element",
+    "Yes, since nothing has been added to it",
+    "Yes, since it comes straight from nature"
+   ],
+   "context": "To a chemist, a pure substance is a single substance, an element or a compound, so pure water itself is a pure substance. Spring water is groundwater that has dissolved calcium, magnesium and other minerals from the rock it seeped through, which makes it a mixture, however clean and natural it is.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F26",
+    "M1",
+    "M2",
+    "M6"
+   ],
+   "grade_note": "Telling a pure substance from a mixture is the core of TEKS 6.6B, and students carry the everyday meaning of 'pure' (clean, natural, nothing added) into it; natural spring water is the standard case."
+  }
+ ],
+ "revised": {
+  "5f78c5f33d": {
+   "old_hash": "5f78c5f33d",
+   "why": "Judge (medium, tell): the key was the only choice that changed water into other substances, beside boiling, freezing and dissolving. As the judge proposed, the lures now look like the key: 'Boiling sends bubbles of gas up through it' (the bubbles-are-hydrogen-and-oxygen mistake, M3, F7) and 'Its drops can be split into ever smaller drops' (dividing is not breaking down), with 'Salt and many minerals dissolve in it' kept. The context adds that a smaller drop is still water. Stem and key unchanged."
+  },
+  "647ea3ca66": {
+   "old_hash": "ec59d633ca",
+   "why": "Judge (medium, grade): the old key (a compound's properties are unlike its elements') is the core line of the T3 unit elements-compounds-and-formulas. Re-angled, as the judge proposed, to the T2 line: carbon dioxide is a compound, not a mixture (F3, F11), the confusion M4 records. This also fixes the judge's dead lures (black smoke, black powder): all four choices now name carbon and oxygen together in some way. Fact-check uncertain: 'the gas every person breathes out' is now 'one of the gases', about 4 parts in 100 (F28, checked now)."
+  },
+  "2b27ebbe7f": {
+   "old_hash": "2b27ebbe7f",
+   "why": "Judge (low, fact; low, clarity): the zinc range up to 40 percent sat badly with 'spread evenly' (brass above about 35-38 percent zinc is two-phase), so the range is cut; and the context now says what distilled water is (F14), since distillation is taught later in the unit. Stem, choices and key unchanged."
+  },
+  "0b5eb1c262": {
+   "old_hash": "0b5eb1c262",
+   "why": "Judge (medium, tell): 'Clear water, with all the soil dissolved in it' was dead (nobody expects mud to dissolve clear, and T1 teaches that sand does not dissolve). It is now 'One even layer of mixed grains, under clear water', the belief that everything settles together; the grains settle by size (F17). Stem, key and context unchanged."
+  },
+  "ac6b625728": {
+   "old_hash": "ac6b625728",
+   "why": "Judge (medium, tell): the two 'boils at 100 too' choices made one claim with two compatible reasons, so a test-wise player could rule both out together. 'It boils at 100 too, as dissolved salt has no effect' is now 'It boils far above 100, as its salt must boil too' (the belief that a mixture boils somewhere between its parts; salt itself boils at 1,465 degrees Celsius, F29, checked now). Stem, key and context unchanged."
+  },
+  "660e5b8d54": {
+   "old_hash": "b84a928a3c",
+   "why": "Judge (medium, tell): the stem said 'the blue dye stays behind in the flask', which ruled out 'The cold tube filters the dye from the steam', and 'The dye sticks fast to the flask's hot glass' was weak. The stem now shows what is seen (clear drops, the ink in the flask growing darker, F30, checked now) and asks why the drops are clear, so the filter lure is live again; 'sticks fast' is now 'The dye loses its colour when it turns to steam'. The key stays on the boiling-point 'why' (F22), as the judge asked, never on 'what stays behind'."
+  },
+  "37741c20a7": {
+   "old_hash": "37741c20a7",
+   "why": "Judge (medium, tell): 'Sand dissolves in water, but gold does not' was dead (the stem's water carries the sand away, and T1 teaches sand does not dissolve). It is now 'Each gold flake is heavier than a pebble of gravel', the mass-for-density mix-up; a whole session's gold is often under 0.05 grams, while even the smallest quartz pebble is about 0.09 grams (F31, checked now). The context says so. Stem and key unchanged."
+  },
+  "828580ad23": {
+   "old_hash": "dd59538cd5",
+   "why": "Judge (medium, tell): the stem praised the water ('so clear, cold and clean') and then asked 'To a chemist, is this water a pure substance?', which told a test-wise player the everyday answer was wrong, and 'clear and clean to drink' echoed the stem. Stem and lures as the judge proposed: a plain scene and question, and 'Yes, since nothing has been added to it' (the everyday 'pure', M1). Key and context unchanged."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "660e5b8d54",
+   "question": "A student gently boils blue ink in a flask. The steam passes into a glass tube cooled by cold water, and clear drops of water drip from its far end. Meanwhile the ink left in the flask turns a darker blue. Why are the drops clear?",
+   "why": "failed the re-check: The old tell is back in a softer form. The new clause 'the ink left in the flask turns a darker blue' tells the reader that the dye stays in the flask while the water leaves. That works out the key from the stem and leaves the filter and colour-loss lures, which both need the dye to leave in the steam, barely live. 'The dye sinks to the flask's bottom when hot' dies on mixtures-and-solutions (T1: a dissolved substance stays spread evenly and does not settle). That leaves the key alone for a careful reader. The facts are right: only the water distils, and the ink darkens as it grows more concentrated."
+  }
+ ]
+}

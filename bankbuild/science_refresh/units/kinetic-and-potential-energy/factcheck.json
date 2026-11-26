@@ -1,0 +1,429 @@
+{
+ "unit": "kinetic-and-potential-energy",
+ "questions": {
+  "58ba9a881a": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: at the same speed the tennis ball carries more kinetic energy because it has more mass",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kinetic_energy",
+     "note": "Grokipedia: kinetic energy 'depends on the object's mass and speed'; KE = 1/2 m v^2, so at equal speed KE is in proportion to mass."
+    },
+    {
+     "claim": "NGSS MS-PS3-1 names 'getting hit by a wiffle ball versus a tennis ball' as its example (grade_note)",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/ms-ps3-1-energy",
+     "note": "Clarification statement quoted on the page; grade band 6-8."
+    },
+    {
+     "claim": "Wiffle ball: hollow plastic, holes in one half, about baseball size",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Wiffle_ball",
+     "note": "Wikipedia: 'about the same size as a regulation baseball'; 'One half is perforated with eight .75-inch (19 mm) oblong holes.' Grokipedia agrees (eight oblong slots on one hemisphere)."
+    },
+    {
+     "claim": "Stem: the two balls are 'about the same size'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tennis_ball",
+     "note": "Tennis ball 6.54-6.86 cm (2.57-2.70 in); Wiffle ball about 2.8-2.9 in (9 in circumference). Close enough for 'about the same size'."
+    },
+    {
+     "claim": "Context: the tennis ball has about three times the Wiffle ball's mass",
+     "result": "ok",
+     "source": "https://baseballhall.org/discover/wiffle-ball",
+     "note": "Hall of Fame: Wiffle ball 'two-thirds of an ounce' (about 19 g); tennis ball 56.0-59.4 g (Grokipedia Tennis_ball). Ratio about 2.9-3.1. Grokipedia's Wiffle page contradicts itself (1.6 oz in one section, under 0.5 oz in another); the 0.7 oz figure is the one other sources agree on, and the 1.6 oz figure is an outlier. The question itself survives either way, since every figure is lighter than a tennis ball."
+    },
+    {
+     "claim": "Wrong choice: 'The tennis ball, because it is bouncier' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kinetic_energy",
+     "note": "The ball is right but the reason is wrong; the stem asks 'which ball ... and why', so the choice is wrong. Bounciness does not enter kinetic energy."
+    },
+    {
+     "claim": "Wrong choices: 'Both the same' (equal speeds / equal sizes) are wrong",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/ms-ps3-1-energy",
+     "note": "KE 'is proportional to the mass of the moving object'; equal speed or size does not make it equal when the masses differ."
+    },
+    {
+     "claim": "Context: 'How bouncy or how big a ball is does not change its kinetic energy'",
+     "result": "uncertain",
+     "source": "https://www.nextgenscience.org/pe/ms-ps3-1-energy",
+     "note": "True of bounciness, and true of size only when mass and speed are held fixed. Said flat, it is false in general: a bigger ball of the same stuff has more mass and so more kinetic energy, and NGSS MS-PS3-1's own example is 'rolling different sizes of rocks downhill' (bigger rock, more KE). Fix: 'How bouncy a ball is, or its size on its own, does not change its kinetic energy; only its mass and speed do.'"
+    },
+    {
+     "claim": "Context: the tennis ball stings far more when it hits",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/ms-ps3-1-energy",
+     "note": "This is the sense of the NGSS example; more KE at the same speed means a harder hit."
+    }
+   ]
+  },
+  "ea7f53220b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: twice the speed gives four times the kinetic energy",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Kinetic_energy",
+     "note": "Wikipedia: 'an object doubling its speed has four times as much kinetic energy.' Grokipedia gives KE = 1/2 m v^2."
+    },
+    {
+     "claim": "Fair grade-level content (6th grade)",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/ms-ps3-1-energy",
+     "note": "NGSS MS-PS3-1's core idea (grades 6-8 band) says kinetic energy 'grows with the square of its speed', taught as a descriptive relationship. Placement in 6th vs 8th grade varies by state and district (some put MS-PS3-1 in grade 8, e.g. South Dakota's 8th-grade framework; a New Jersey-aligned 6th-grade 'Energy and Motion' unit lists it in grade 6). The question asks the relationship without arithmetic, which matches the standard's emphasis; fair as middle-school content, at the top end for a 6th grader."
+    },
+    {
+     "claim": "Wrong choice 'twice as great' is wrong",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Kinetic_energy",
+     "note": "Doubling holds for mass, not speed. It is the recorded misconception (Cyberphysics)."
+    },
+    {
+     "claim": "Wrong choice 'eight times as great' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kinetic_energy",
+     "note": "Square, not cube, of speed."
+    },
+    {
+     "claim": "Wrong choice 'stays the same, since energy cannot be created' is wrong",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Kinetic_energy",
+     "note": "Her kinetic energy rises; the energy comes from food, not from nothing."
+    },
+    {
+     "claim": "Context: twice the mass would mean only twice as much",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/ms-ps3-1-energy",
+     "note": "'proportional to the mass of the moving object'."
+    },
+    {
+     "claim": "Context: her legs turn the chemical energy from her food into the motion of the bike",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Kinetic_energy",
+     "note": "Wikipedia: a cyclist 'transfers chemical energy provided by food to the bicycle and cyclist's store of kinetic energy'."
+    }
+   ]
+  },
+  "8920938e47": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the backpack's gravitational potential energy is greater on the third floor because it is higher",
+     "result": "ok",
+     "source": "https://www.eia.gov/energyexplained/what-is-energy/forms-of-energy.php",
+     "note": "EIA: 'The higher and heavier the object, the more gravitational energy is stored.' The stem fixes the comparison against the ground floor, so the reference level is clear."
+    },
+    {
+     "claim": "Wrong choice 'less, because she spent energy lifting it' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Potential_energy",
+     "note": "The work done lifting against gravity is stored as gravitational PE; the girl loses energy, the pack gains it."
+    },
+    {
+     "claim": "Wrong choice 'the same, because its mass has not changed' is wrong",
+     "result": "ok",
+     "source": "https://www.eia.gov/energyexplained/what-is-energy/forms-of-energy.php",
+     "note": "GPE depends on height as well as mass."
+    },
+    {
+     "claim": "Wrong choice 'zero, because the pack is sitting still' is wrong",
+     "result": "ok",
+     "source": "https://www.eia.gov/energyexplained/what-is-energy/forms-of-energy.php",
+     "note": "'Potential energy is stored energy and the energy of position'; a still object can hold it."
+    },
+    {
+     "claim": "Context: GPE is stored energy that grows the higher an object is lifted; carrying it up took energy from her food, some of it now stored in the pack's height",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Potential_energy",
+     "note": "Grokipedia: GPE 'is linear in height' and equals 'the work done to lift the object against gravity'. 'Some of it' is right: most of what she spent went into lifting her own body and into heat."
+    },
+    {
+     "claim": "Context: a pack sitting still can still hold energy, ready to change into motion if it falls",
+     "result": "ok",
+     "source": "https://www.eia.gov/energyexplained/what-is-energy/forms-of-energy.php",
+     "note": ""
+    }
+   ]
+  },
+  "1757253f26": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the bent bow stores the energy as elastic potential energy",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Bow_and_arrow",
+     "note": "Grokipedia: a bow 'stores elastic potential energy when its string is drawn back'. Grokipedia Potential_energy names bows and rubber bands as elastic potential energy."
+    },
+    {
+     "claim": "Stem: archer draws the string to her cheek (anchor point)",
+     "result": "ok",
+     "source": "https://archery360.com/2021/04/20/form-deep-dive-anchor-point-string-contact/",
+     "note": "The cheek, corner of the mouth and jaw are all common anchor points."
+    },
+    {
+     "claim": "Wrong choice 'Gravitational potential energy' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Potential_energy",
+     "note": "Bending the limbs does not raise the bow; the energy is in its changed shape."
+    },
+    {
+     "claim": "Wrong choice 'Chemical potential energy' is wrong for the bow",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Bow_and_arrow",
+     "note": "Her muscles spent chemical energy, but the stem asks how the bent bow stores it: elastic."
+    },
+    {
+     "claim": "Wrong choice 'Kinetic energy' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kinetic_energy",
+     "note": "She holds the bow still at full draw; nothing is moving, so no kinetic energy is stored."
+    },
+    {
+     "claim": "Context: stretched rubber band and squeezed spring hold the same kind; on release the stored energy becomes the arrow's kinetic energy; her muscles' chemical energy did the bending",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Bow_and_arrow",
+     "note": "Grokipedia: 'Upon release, the stored elastic potential energy converts primarily to the arrow's kinetic energy' (some goes into the moving limbs and string). EIA: 'Compressed springs and stretched rubber bands are examples of stored mechanical energy.' 'Becomes' is a fair child-level simplification of 'mostly becomes'."
+    }
+   ]
+  },
+  "adc57ae4bf": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: their chemical energy is released only when they react and become new substances",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chemical_energy",
+     "note": "Grokipedia: chemical energy is 'the potential energy stored in the chemical bonds'; the reactant/product energy difference sets what a reaction gives off. The wording avoids the 'energy comes out when bonds break' error."
+    },
+    {
+     "claim": "Context: gasoline burns in the engine",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chemical_energy",
+     "note": "'the combustion of gasoline in a car engine transforms chemical energy into kinetic energy'."
+    },
+    {
+     "claim": "Context: the body breaks down the bar's sugars in its cells",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chemical_energy",
+     "note": "'the breakdown of glucose during cellular respiration provides the chemical energy needed for bodily functions'. A granola bar's energy is also in fats and starch (starch is digested to glucose), so 'sugars' is a fair simplification."
+    },
+    {
+     "claim": "Context: the battery's chemicals react when it is put to work in a circuit",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Electric_battery",
+     "note": "Batteries 'convert chemical energy into electrical energy through spontaneous redox reactions', driving current 'when connected to an external circuit'."
+    },
+    {
+     "claim": "Stem: 'While they just sit there, none of it comes out'",
+     "result": "uncertain",
+     "source": "https://en.wikipedia.org/wiki/Alkaline_battery",
+     "note": "Not strictly true, and children know it: a battery left in a drawer slowly goes flat. Alkaline cells self-discharge a few percent a year (Wikipedia's alkaline infobox: under 0.3% a month); gasoline and food also change slowly by oxidation. The slow loss is itself a chemical reaction, so the key still stands and the self-discharge actually supports it, but 'none' is an overstatement. Fix: 'While they just sit there, almost none of it comes out.'"
+    },
+    {
+     "claim": "Wrong choices: lifted and dropped / squeezed or stretched / set moving fast are wrong",
+     "result": "ok",
+     "source": "https://www.eia.gov/energyexplained/what-is-energy/forms-of-energy.php",
+     "note": "These store or carry gravitational, elastic and kinetic energy, not the chemical energy asked about (EIA separates the forms)."
+    }
+   ]
+  },
+  "f77fe8e920": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: a motor-driven chain hauls the train up the first hill; at the top it lets go and drops on gravity",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Roller_coaster",
+     "note": "Grokipedia: 'an electric motor drives a continuous chain loop embedded in the lift hill track'; 'Once the peak is reached, the train disengages and descends under gravity, converting potential energy into kinetic motion'."
+    },
+    {
+     "claim": "Key: gravitational potential energy changes into kinetic energy on the drop",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Roller_coaster",
+     "note": "Same Grokipedia sentence; Illinois Ask the Van: at the top the energy is almost all gravitational potential energy, which carries the cars over the later, lower hills."
+    },
+    {
+     "claim": "Wrong choice 'Kinetic energy changes into gravitational potential energy' is wrong",
+     "result": "ok",
+     "source": "https://van.physics.illinois.edu/ask/listing/31",
+     "note": "That is the climb, not the drop."
+    },
+    {
+     "claim": "Wrong choice 'Electrical energy from the motor changes into kinetic energy': is it partly true for the ride as a whole?",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Roller_coaster",
+     "note": "Ruling: wrong as the stem is worded. The motor's electrical energy is the ride's first source, but it went into lifting the train (stored as gravitational potential energy, plus heat in the motor and chain). The stem asks 'What energy change makes it speed up as it drops?', and on the drop the train has left the chain, so no electrical energy is changing into kinetic energy then; the change is potential to kinetic. The choice would only be defensible on a launched coaster or one with booster motors on the drop, which the stem rules out ('motor-driven chain hauls ... up its first hill', 'tips over and plunges'). The context's 'The motor's energy went into lifting the train' meets the objection head on."
+    },
+    {
+     "claim": "Wrong choice 'Gravity makes brand new kinetic energy as it falls' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Conservation_of_energy",
+     "note": "'Energy can neither be created nor destroyed'; the kinetic energy comes from the stored potential energy."
+    },
+    {
+     "claim": "Context: at the top of the (first) hill the train holds the most gravitational potential energy because it is highest",
+     "result": "ok",
+     "source": "https://van.physics.illinois.edu/ask/listing/31",
+     "note": "Illinois Ask the Van: on a chain-lift coaster the first hill must be the highest point, since friction and drag take energy from then on (unless later chain lifts add energy)."
+    },
+    {
+     "claim": "Context: it goes faster the lower it gets; nothing pushes it on the drop; gravity makes no new energy; the next climb trades speed back for height",
+     "result": "ok",
+     "source": "https://van.physics.illinois.edu/ask/listing/31",
+     "note": "Illinois: 'The total energy never goes up, only down, due to frictional losses', so each later hill is lower and the speed from each drop carries the train up the next; Grokipedia Roller_coaster: friction and drag dissipate some energy as heat over the ride, which the context does not deny."
+    }
+   ]
+  },
+  "525ed64cc6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: the bowling-ball pendulum demonstration (heavy ball on a long rope from the ceiling, head against a wall, ball held to the nose, let go without a push, comes back just short)",
+     "result": "ok",
+     "source": "https://learning.physics.iastate.edu/bowling-ball-pendulum",
+     "note": "Iowa State: stand with the back against the chalkboard so as not to lean forward; 'Do not give the ball a push when you release it.' Oberlin: 'standing with your head against the backstop', releasing 'from just in front of your nose (with no initial velocity)'."
+    },
+    {
+     "claim": "Key: it cannot gain more energy than it began with, so it cannot come back higher than it was let go",
+     "result": "ok",
+     "source": "https://wonders.physics.wisc.edu/bowling-ball-pendulum/",
+     "note": "Wisconsin Wonders of Physics: 'Conservation of Energy tells us that the bowling ball will not go higher than its starting height'; 'It can't hit you!' True as stated: with no push and nothing adding energy, the ball's energy can only stay the same or fall."
+    },
+    {
+     "claim": "Wrong choice 'Gravity pulls harder on it as it swings back' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pendulum",
+     "note": "Gravity's pull on the ball is the same on both swings; it would not hold the ball back in any case."
+    },
+    {
+     "claim": "Wrong choice 'A heavy ball slows more than a light one' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pendulum",
+     "note": "Grokipedia: a simple pendulum's period 'is independent of the mass'. If anything a heavier ball of the same size loses a smaller share of its energy to the air. Mass is not why it stops short."
+    },
+    {
+     "claim": "Wrong choice 'Its energy is destroyed a little each swing' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Conservation_of_energy",
+     "note": "'Energy can neither be created nor destroyed'; the small losses that make it come back short are changes to heat ('merely conversions rather than losses'), not destruction. Tempting because the ball does come back a little short, but 'destroyed' makes it false, and the stem asks what makes him sure, which is conservation."
+    },
+    {
+     "claim": "Context: a push would add energy and then it could hit him",
+     "result": "ok",
+     "source": "https://learning.physics.iastate.edu/bowling-ball-pendulum",
+     "note": "Iowa State: a push's 'extra energy you have imparted into the system will cause the ball to hit you in the face on its return'. Wisconsin agrees."
+    },
+    {
+     "claim": "Context: a little energy turns into heat in the air and at the hook on every swing, so it comes back just short",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pendulum",
+     "note": "Grokipedia Pendulum: 'real pendulums experience damping from air resistance and friction', pivot friction named; Grokipedia Friction: friction 'converts mechanical energy into thermal energy'. 'At the hook' assumes the rope hangs from a hook, which the stem does not say ('from the ceiling'); harmless, but 'where the rope hangs' would match the stem."
+    },
+    {
+     "claim": "grade_note: older Texas grade 6 TEKS named the law of conservation of energy",
+     "result": "ok",
+     "source": "https://www.shmoop.com/teks/science/middle-school/6th-grade/TEKS-112-18-b-9",
+     "note": "TEKS 112.18(b)(9): the Law of Conservation of Energy 'states that energy can neither be created nor destroyed, it just changes form.' TEA's vertical alignment lists it as prior grade 6 TEKS."
+    }
+   ]
+  },
+  "f5bdf712c6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: a swing left alone swings a little lower each time and at last hangs still",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pendulum",
+     "note": "A swing is a pendulum; 'damping from air resistance and friction ... gradually reduces the amplitude over time'."
+    },
+    {
+     "claim": "Key: friction and the air changed the energy into heat",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Friction",
+     "note": "Grokipedia Friction: 'a dissipative force that converts mechanical energy into thermal energy'. Grokipedia Conservation_of_energy: friction losses 'are merely conversions rather than losses'. A little goes into the creak's sound first, which also ends as heat; fine at this level."
+    },
+    {
+     "claim": "Wrong choice 'It was used up, and now it no longer exists' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Conservation_of_energy",
+     "note": "'Energy can neither be created nor destroyed'. The recorded misconception (CPP/BSCS; Daane et al.)."
+    },
+    {
+     "claim": "Wrong choice 'It is stored as potential energy in the swing' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pendulum",
+     "note": "At rest at the lowest point she has the least gravitational potential energy of the whole swing; nothing has been stored up."
+    },
+    {
+     "claim": "Wrong choice 'It went back into her body as chemical energy' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Friction",
+     "note": "The swing's motion ends as thermal energy, not as new chemical stores in her body."
+    },
+    {
+     "claim": "Context: the warmth is spread so thin no one can feel it, but the energy still exists",
+     "result": "ok",
+     "source": "https://arxiv.org/abs/1410.0379",
+     "note": "Daane, McKagan, Vokos and Scherr (2014), 'Energy conservation in dissipative processes ... imperceptible thermal energy': in such dissipative cases the thermal energy gained is real but imperceptible."
+    },
+    {
+     "claim": "Context: hanging still at the bottom she holds less potential energy than at the top of a swing",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pendulum",
+     "note": "Equilibrium is the lowest point of the swing, where gravitational PE is least."
+    }
+   ]
+  },
+  "61c895fa6a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: a hard, straight, head-on hit into a still ball can leave the cue ball almost dead on the spot",
+     "result": "ok",
+     "source": "https://drdavepoolinfo.com/FAQ/ball/elasticity/",
+     "note": "This is the stop shot: the ideal is for 'the object ball to leave with 100% of the cue ball's incoming speed'; real balls leave the cue ball creeping forward slightly ('almost dead' is right). It needs the cue ball still sliding at contact, which a hard centre hit gives; the stem states the stop as given."
+    },
+    {
+     "claim": "Key: most of the cue ball's kinetic energy went into the ball it struck",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Kinetic_energy",
+     "note": "Wikipedia: when the cue ball hits another ball, 'it slows down dramatically, and the ball it hit accelerates as the kinetic energy is passed on to it'. Pool-ball collisions are \"nearly perfectly elastic, with a restitution coefficient close to 1\" (Kim, arXiv 2402.13258); with published estimates of about 0.90-0.98 (seen in search), the struck ball takes roughly 90-95% of the kinetic energy in a head-on hit."
+    },
+    {
+     "claim": "Wrong choice 'Into the sound of the click' is wrong (only a little)",
+     "result": "ok",
+     "source": "https://drdavepoolinfo.com/FAQ/ball/elasticity/",
+     "note": "Only the few percent lost to inelasticity go to sound, heat and deformation."
+    },
+    {
+     "claim": "Wrong choice 'Into heat in the table's cloth' is wrong at the moment asked",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Kinetic_energy",
+     "note": "At the moment the cue ball stops, its energy is in the moving struck ball. That ball's energy will in the end become heat in the cloth and cushions as it rolls to a stop, but the stem asks where the energy has gone as the cue ball stops dead, so the key is clearly the best answer."
+    },
+    {
+     "claim": "Wrong choice 'Into energy stored in the cue ball' is wrong",
+     "result": "ok",
+     "source": "https://drdavepoolinfo.com/FAQ/ball/elasticity/",
+     "note": "The stopped cue ball keeps only a slight forward creep; nothing is stored."
+    },
+    {
+     "claim": "Context: the struck ball rolls off almost as fast as the cue ball was going; only a little becomes sound and heat",
+     "result": "ok",
+     "source": "https://billiards.colostate.edu/technical_proofs/TP_3-2.pdf",
+     "note": "It leaves at about (1+e)/2, some 95-98% of the cue ball's speed. Strictly it first slides off at that speed and then settles into a roll at about 5/7 of it (Alciatore, technical proofs TP 3.2 and TP 4.1 on billiards.colostate.edu, seen in search; the site refused a direct fetch), so 'rolls off' is loose; 'shoots off' or 'moves off' would be exact. Not an error at this level."
+    },
+    {
+     "claim": "grade_note: NGSS MS-PS3-5 (energy transferred when kinetic energy changes)",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/ms-ps3-5-energy",
+     "note": "MS-PS3-5 is about energy transferred to or from an object when its kinetic energy changes. 'The cue ball is the textbook case' is the writer's framing (Wikipedia's Kinetic_energy article uses it), not a quote from the standard; grade_note is not shown to players."
+    }
+   ]
+  }
+ },
+ "unit_notes": "9 questions: 7 ok, 2 uncertain, 0 error. Both uncertain ones are wording fixes; neither changes a key. (1) 58ba9a881a context: 'how big a ball is does not change its kinetic energy' is false said flat (a bigger ball of the same stuff has more mass and more KE; NGSS uses rocks of different sizes); add 'on its own'. (2) adc57ae4bf stem: 'none of it comes out' while they sit; batteries in a drawer self-discharge (alkaline under 0.3% a month), and food and fuel oxidize slowly; say 'almost none'. Rulings asked for: four times the KE at twice the speed is true and is in NGSS MS-PS3-1's core idea ('grows with the square of its speed'), descriptive with no arithmetic; fair middle-school content, though some states place MS-PS3-1 in grade 8. The roller coaster's 'electrical energy from the motor' choice is wrong as worded: the stem asks what makes it speed up as it drops, and the train has left the chain by then; the motor's energy went into the height. The bowling-ball pendulum, swing-to-heat, cue ball, bow and chemical-energy examples all check out (Wisconsin, Iowa State, Oberlin, Grokipedia, Dr. Dave's pool physics). Grokipedia's Wiffle_ball page contradicts itself on weight (1.6 oz vs under 0.5 oz); the Baseball Hall of Fame's two-thirds of an ounce gives the 'about three times' ratio, and the question itself gives no weight."
+}

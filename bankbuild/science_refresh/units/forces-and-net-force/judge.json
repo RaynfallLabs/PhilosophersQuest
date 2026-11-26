@@ -1,0 +1,56 @@
+{"unit": "forces-and-net-force",
+ "questions": {
+  "1277710f4c": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Close to T1 pushes-pulls-and-gravity's crate ('Why does the crate stay still? The floor pushes back on it just as hard'). The fact here is different (the vertical normal force equals gravity's pull however hard the surface is), but the T1 key primes 'equal', and the stem never names the normal force, the 6th-grade term this question is for.",
+     "fix": "Name it in the stem so the question is keyed on the grade's term: '...which shows no dent at all. A surface's push on what rests on it is called the normal force. How does the stone floor's normal force on the brick compare with the mattress's?'"}
+   ]},
+  "68d424ea73": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem frames every arrow as a force ('shows each force ... points the way its force acts'), which steers mildly toward the one choice about the force's strength. The motion lures (M6) stay live, so polish only.",
+     "fix": "Optional: 'A force diagram draws an arrow on an object for each force, starting at the object and pointing the way the force acts.'"}
+   ]},
+  "4ac9d27ab1": {"verdict": "ok", "issues": []},
+  "c878c333fd": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'It is a little smaller' is weak: a forward force smaller than the push-back would slow the car, and the stem insists on 'never slower'. That leaves the key the only unhedged choice on a bigger / bigger / smaller scale, and the stem's 'never faster and never slower' mirrors 'neither bigger nor smaller'.",
+     "fix": "Give every choice a reason, so each lure carries a real belief: 'Equal, since its speed is not changing' (key) / 'Bigger, since the car is moving forward' (M2) / 'Bigger, since its engine keeps running' / 'Smaller, since the car is not speeding up'."},
+    {"axis": "other", "severity": "low",
+     "what": "This key and 1277710f4c's both read 'It is equal...'; together with T1's crate ('just as hard'), 'equal' becomes a pattern a player can learn.",
+     "fix": "The reworded choices above, together with the 1bcb87085a fix (whose key is 'stronger'), break the pattern."}
+   ]},
+  "307ddce173": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "Ruling on grade: fair at 6th grade (see unit_notes). The one stumble: T1 taught that a dropped rock 'speeds up all the way down', so a skydiver who 'falls at a steady speed' may puzzle a 6th grader for a moment.",
+     "fix": "Say why in the stem: 'A skydiver falls at a steady speed, the air's push on her matching gravity's pull. Her parachute is still packed. She pulls the cord, the canopy opens...'"}
+   ]},
+  "1bcb87085a": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "Re-asks T1 pushes-pulls-and-gravity's hockey puck (a sideways force bends a moving object's path; this context even contrasts the stick's tap from the far side) with a magnet in place of the stick, plus the 3rd-grade fact that a magnet pulls steel toward itself (T1 telling-materials-apart's ball that jumps up to the magnet). Nothing here is 6th-grade content, and a typical 6th grader answers at once.",
+     "fix": "Keep magnetism, but ask a 6th-grade net-force question with a non-contact force (TEKS 6.7B, vertical): 'A steel paper clip is tied to a thread taped to the desk. Held up by a magnet just above it, the clip floats in mid-air without touching the magnet, and the thread is pulled tight. The clip stays still. How does the magnet's upward pull on the clip compare with gravity's pull on it?' Key: 'It is stronger, since the thread pulls down too'. Wrong: 'It is equal, since the clip is staying still', 'It is weaker, since there is a gap between them', 'It is zero, since the magnet does not touch it'. It balances three forces, the 'equal' lure catches a student who counts only two, and it needs no arithmetic."},
+    {"axis": "tell", "severity": "medium",
+     "what": "'In the path, just ahead of the ball' and 'Above the path, over the ball' cannot send the ball toward a cup off to one side, so only 'Beside the path, opposite the cup' is a live lure.",
+     "fix": "Solved by the re-key above."}
+   ]},
+  "ce0ec48a11": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'She speeds up at first ... though she keeps pedalling just as hard' contradicts 'A steady push can give only a steady speed' for a careful reader, since the same push did speed her up, so that lure catches only a careless one. 'Her bike can store only so much force' is the oddest choice (M4).",
+     "fix": "Optional: replace 'Her bike can store only so much force' with 'Her push is used up by the time she is fast' (the same 'force runs out' belief, worded more naturally)."}
+   ]},
+  "48ca967104": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two weak lures. 'Whether the force works only on metals' is struck at once because gravity, in the first group, pulls on everything. 'Whether the force is strong or weak' sorts neither group, since gravity and magnetism can each be weak or strong. Only 'needs air' (F20) stays live beside the key.",
+     "fix": "Make all four parallel 'Whether the force...' choices: 'Whether the force acts only where things touch' (key) / 'Whether the force needs air around it to work' / 'Whether the force always slows things down' / 'Whether the force acts only on moving things' (the belief that friction needs motion)."},
+    {"axis": "tell", "severity": "low",
+     "what": "The gloss 'the normal force, the push from a surface' points at touching, and the key is the only choice about 'the two objects' rather than 'the force'.",
+     "fix": "The parallel wording above removes the 'two objects' standout. Keep the gloss, since the term must be taught, but it could read 'the normal force, a surface's push on what rests on it'."}
+   ]}
+ },
+ "unit_notes": "Ruling asked for, the parachute (307ddce173): fair at 6th grade. The asked fact, that a net force against the motion slows a moving thing without turning it round, is 6th-grade balanced and unbalanced force content (TEKS 6.7B, NGSS MS-PS2-2, the ATLAST middle-grades idea in F9). Terminal velocity, a Year 8 topic in England, is only the stem's premise, and the stem itself states that the air now pushes harder than gravity, so no 7th-grade knowledge is needed (one clarity polish offered). Overlaps, with fixes: (1) 1bcb87085a magnet steer re-asks T1 pushes-pulls-and-gravity's hockey puck plus T1 telling-materials-apart's magnet and iron; re-key to the paper clip held up by a magnet (three forces). (2) 1277710f4c brick is close to T1's crate ('the floor pushes back on it just as hard'), but its fact differs (the vertical normal force, whatever the surface's hardness); name the normal force in the stem. (3) 4ac9d27ab1 sled builds on T1's tug-of-war (unbalanced forces move the rope); its own fact (an unbalanced force keeps speeding it up, not a steady speed) is new, so it is fine. (4) 307ddce173 and ce0ec48a11 build on T1's falling rock (its context mentions a fall that stops speeding up); nothing there is asked, so they are fine. (5) The T1 measuring-and-the-fair-test spring-scale question (force in newtons) is distinct from 68d424ea73. Reserves for builders not yet started: T3 inertia-newtons-first-law must key on inertia and mass, not on 'a steady speed means balanced forces' (c878c333fd has it); T4 fields-pushes-and-pulls-without-touching must key on fields, charges and poles, not on the contact versus non-contact sort (48ca967104 has it); T4 newtons-laws owns acceleration against force and mass. Inside the unit: c878c333fd and ce0ec48a11 both rest on 'a steady speed means balanced forces' but key different facts (the balance itself; drag rising with speed). Drag growing with speed is often taught in 7th to 8th grade, but as the simple why of a cyclist's top speed it is acceptable here. Four of eight questions are on motion under balanced and unbalanced forces, and friction is never keyed by itself; within scope, but a friction-direction question would be a better use of a slot than a fifth motion item if one is ever added. Lane: no arithmetic anywhere; every question asks which way or what happens. Voice: third person, no exclamations, plural 'they' only for the two students."}

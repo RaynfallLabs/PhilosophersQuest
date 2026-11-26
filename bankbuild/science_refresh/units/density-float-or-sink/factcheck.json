@@ -1,0 +1,406 @@
+{
+ "unit": "density-float-or-sink",
+ "questions": {
+  "97075ffcb8": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a chip has the same density as the whole crystal (density is intensive, independent of sample size)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Density",
+     "note": "Grokipedia: 'As an intensive property, density remains constant for a given substance regardless of the sample size'. Second source: NSTA/Keeley 'Density is an intensive property of matter, which means that it is independent of the amount of material' (https://www.nsta.org/lesson-plan/floating-logs)."
+    },
+    {
+     "claim": "Wrong: 'Less, since it has far less mass' is wrong",
+     "result": "ok",
+     "source": "https://www.nsta.org/lesson-plan/floating-logs",
+     "note": "Mass and volume fall in the same proportion; this is the 'more A, more B' misconception Keeley names (Stavy and Tirosh 2000)."
+    },
+    {
+     "claim": "Wrong: 'More, since it takes up far less space' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Density",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'Less, since a big crystal is packed tighter' is wrong",
+     "result": "ok",
+     "source": "https://www.nsta.org/lesson-plan/floating-logs",
+     "note": "A crystal's lattice is the same throughout; size does not change packing. Keeley cites the misconception 'the more massive or heavy an object, the denser it is' (Kind 2004)."
+    },
+    {
+     "claim": "Context: quartz density about 2.65 g/cm3",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Quartz",
+     "note": "Grokipedia: 'Its specific gravity is 2.65 g/cm3'."
+    },
+    {
+     "claim": "Context: density belongs to the material, not the size; mass and volume shrink in proportion",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Density",
+     "note": ""
+    }
+   ]
+  },
+  "c7ab03776c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: liquids that do not mix layer by density, the densest at the bottom",
+     "result": "ok",
+     "source": "https://www.teachengineering.org/activities/view/cub_flow_activity2",
+     "note": "TeachEngineering: 'the densest fluid sinks to the bottom and the less dense fluid stays above it'."
+    },
+    {
+     "claim": "Wrong: 'Which liquid is the thickest' is wrong (viscosity is not density)",
+     "result": "ok",
+     "source": "https://www.teachengineering.org/activities/view/cub_flow_activity2",
+     "note": "TeachEngineering: 'Absolute viscosity is independent of density' and 'the two properties are often confused'. Dense fluids are often also viscous, but thickness is not what decides the order."
+    },
+    {
+     "claim": "Wrong: 'Which liquid there is most of' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Density",
+     "note": "Density is intensive; the amount does not change it, so it does not decide the layer."
+    },
+    {
+     "claim": "Wrong: 'Which liquid went in first' is wrong",
+     "result": "ok",
+     "source": "https://www.teachengineering.org/activities/view/cub_flow_activity2",
+     "note": "After settling, the order is by density whatever the pouring order."
+    },
+    {
+     "claim": "Context: oil is far thicker than water yet floats on it",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Viscosity",
+     "note": "Water 1.0016 mPa s at 20 C; olive oil 56.2 mPa s at 26 C. TeachEngineering: motor oil floats on water in a puddle."
+    },
+    {
+     "claim": "Context: spilled oil spreads over the sea as a slick because it floats (is less dense)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Oil_spill",
+     "note": "Grokipedia: 'spilled oil spreads rapidly across water surfaces due to its lower density compared to water'; crude typically 0.8-0.95 g/cm3. Some residual oils are denser and sink, but the context makes no claim about every oil."
+    }
+   ]
+  },
+  "a550ab5aac": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: mercury is a metal liquid at room temperature",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mercury_(element)",
+     "note": "Grokipedia: 'the only metallic element that remains liquid at standard room temperature and pressure'."
+    },
+    {
+     "claim": "Stem/Key: an iron bolt floats on mercury because mercury is denser than iron",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mercury_(element)",
+     "note": "Wikipedia: a round pound coin (~7.6 g/cm3) 'floats on mercury due to the buoyancy force upon it'. Sciencing: metals 'such as nickel, iron and copper' float in mercury (https://sciencing.com/can-heavy-objects-float-mercury-16222.html). A real bolt is steel, about 7.85, and floats just the same."
+    },
+    {
+     "claim": "Wrong: 'Iron is denser than mercury' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Iron",
+     "note": "Iron 7.874 g/cm3 (Grokipedia Iron) against mercury 13.53-13.55 g/cm3."
+    },
+    {
+     "claim": "Wrong: 'Mercury's surface skin holds it up' is wrong as the reason (ruling on partial truth)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mercury_(element)",
+     "note": "Mercury's surface tension is high (Grokipedia: 470 dynes/cm at 20 C), and Wikipedia says a pound coin 'appears to float higher because of the strong surface tension'. But the coin 'floats on mercury due to the buoyancy force upon it': buoyancy alone supports anything less dense than mercury, and for an object the size of a bolt surface tension supplies only a small fraction of the support. As the answer to 'why does it float', the choice is wrong; not defensible as the reason. No change needed."
+    },
+    {
+     "claim": "Wrong: 'Mercury pulls on it like a magnet' is wrong",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mercury_(element)",
+     "note": "Mercury is diamagnetic (Wikipedia infobox); it exerts no magnetic pull on iron."
+    },
+    {
+     "claim": "Context: iron about 7.9 g/cm3, mercury about 13.5",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Density",
+     "note": "Grokipedia Density table: iron 7.874, mercury 13.546 g/cm3 at 20 C; Grokipedia Mercury: 13.534 at 25 C."
+    },
+    {
+     "claim": "Context: gold, about 19.3, is denser than mercury and sinks in it",
+     "result": "ok",
+     "source": "https://sciencing.com/can-heavy-objects-float-mercury-16222.html",
+     "note": "Grokipedia Density: gold 19.32 g/cm3. Sciencing: gold and platinum 'will sink in a mercury bath'. (Mercury also slowly dissolves gold into an amalgam, Wikipedia; the context does not deny it, and 'sinks' stays true.)"
+    },
+    {
+     "claim": "Context: a magnet does not pull on mercury at all",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mercury_(element)",
+     "note": "Diamagnetic: a strong magnet very weakly repels it rather than pulling. True as stated. Minor polish (optional): the wrong choice says mercury pulls on the iron, while the context answers that a magnet does not pull on mercury; 'and mercury is not a magnet: it does not pull on iron' would answer the choice more directly."
+    },
+    {
+     "claim": "Context: held up by buoyancy just as a cork is by water",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mercury_(element)",
+     "note": ""
+    }
+   ]
+  },
+  "c6228bdce0": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: ice is less dense than liquid water; a lake freezes over at the top with liquid water below",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ice",
+     "note": "Grokipedia: ice about 0.917 g/cm3 against 1 g/cm3, 'causing ice to float and enabling the persistence of liquid water beneath surface ice layers'."
+    },
+    {
+     "claim": "Key: if ice were denser it would sink and the lake could freeze from the bottom up",
+     "result": "ok",
+     "source": "https://www.gi.alaska.edu/alaska-science-forum/surprises-ice",
+     "note": "University of Alaska Geophysical Institute: such a pond 'would solidify from the bottom up'."
+    },
+    {
+     "claim": "Wrong: 'Ice would still float, and the lake would freeze over as now' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "A solid denser than the liquid sinks in it (specific gravity above 1 sinks)."
+    },
+    {
+     "claim": "Wrong: 'Ice would melt at once, and the lake could never freeze' is wrong",
+     "result": "ok",
+     "source": "https://www.gi.alaska.edu/alaska-science-forum/surprises-ice",
+     "note": "Density does not set the melting point; the hypothetical lake still freezes, from the bottom up."
+    },
+    {
+     "claim": "Wrong: 'Ice would float lower, and the lake would freeze more slowly' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "Denser than the liquid means it cannot float at all; it sinks. And with no insulating lid the lake would lose heat faster, not slower."
+    },
+    {
+     "claim": "Context: most substances are denser as solids than as liquids",
+     "result": "ok",
+     "source": "https://www.gi.alaska.edu/alaska-science-forum/surprises-ice",
+     "note": "'If water were like most other substances, it would be heavier in its solid phase than in its liquid state.'"
+    },
+    {
+     "claim": "Context: water expands about 9 percent as it freezes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ice",
+     "note": "'water expands by about 9% in volume'."
+    },
+    {
+     "claim": "Context: the floating ice lid slows heat loss and the water beneath usually stays liquid all winter",
+     "result": "ok",
+     "source": "https://www.gi.alaska.edu/alaska-science-forum/surprises-ice",
+     "note": "Ice layer 'sealing in the water below and slowing its rate of heat loss to the frigid air'; in a deep enough pond 'free water will remain at the bottom all winter'. 'Usually' covers very shallow ponds that do freeze solid."
+    }
+   ]
+  },
+  "741c299d30": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: she floats higher in the sea because salt water is denser",
+     "result": "ok",
+     "source": "https://van.physics.illinois.edu/ask/listing/12884",
+     "note": "Illinois physics: salt solutions are 'denser than pure water'; 'The denser the liquid, the easier it is to float on it'. Grokipedia Buoyancy: higher salinity increases water density, decreasing the object's specific gravity."
+    },
+    {
+     "claim": "Wrong: 'In the lake, as fresh water is denser' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Seawater",
+     "note": "Seawater about 1.025 kg/L, denser than fresh water."
+    },
+    {
+     "claim": "Wrong: 'In the sea, as its waves lift her up' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "Right place, wrong reason; waves rock a floater up and down but do not raise her average height in the water. Buoyancy from the denser water does."
+    },
+    {
+     "claim": "Wrong: 'In the lake, as its water is calmer' is wrong",
+     "result": "ok",
+     "source": "https://van.physics.illinois.edu/ask/listing/12884",
+     "note": ""
+    },
+    {
+     "claim": "Context: salt adds mass without adding as much volume",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "'higher salt concentrations increase density by adding mass without proportionally increasing volume'."
+    },
+    {
+     "claim": "Context: seawater about 1.025 g/cm3 against 1.000 for fresh water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Seawater",
+     "note": "Grokipedia Seawater: 'density = 1.025 kg/L' at typical surface conditions; OpenStax: water 1.000 g/cm3."
+    },
+    {
+     "claim": "Context: the denser the water, the less of it a floating body must push aside, so she floats higher",
+     "result": "ok",
+     "source": "https://openstax.org/books/college-physics-2e/pages/11-7-archimedes-principle",
+     "note": "A floating body displaces its own weight of fluid (Archimedes); denser fluid means less volume displaced."
+    },
+    {
+     "claim": "Context: 'higher still in a lake about ten times saltier than the sea' (which waters are compared)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dead_Sea",
+     "note": "The comparison is a salt lake against the ocean: Grokipedia Dead Sea gives salinity about 34% (340-348 g/L), 'approximately ten times that of ocean water (3.5%)', density about 1.24 g/cm3, and 'allows humans to float effortlessly'. 34/3.5 is about 9.7, so 'about ten times' is right. Optional polish: name it ('in the Dead Sea, a salt lake about ten times saltier than the ocean'), since 'the sea' and 'Dead Sea' could otherwise blur for a reader."
+    }
+   ]
+  },
+  "f76f3e550b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the air-filled hull makes the whole ship less dense than water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "Grokipedia: ships 'achieve an effective specific gravity below 1 through their large enclosed volume of air'. OpenStax: clay shaped into a boat floats; 'The same is true of steel ships'; 'The average density of an object is what ultimately determines whether it floats.'"
+    },
+    {
+     "claim": "Wrong: 'Its steel is a special kind, less dense than water' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Steel",
+     "note": "Steel is 7.75-8.05 g/cm3, averaging 7.85; no steel is less dense than water."
+    },
+    {
+     "claim": "Wrong: 'Its engines push it upward as well as forward' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "A ship floats at anchor with its engines off; the upward force is buoyancy."
+    },
+    {
+     "claim": "Wrong: 'Its flat bottom rests on the water's surface skin' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "Surface tension can hold up only tiny light objects; a ship's hull sits deep in the water, held by buoyancy."
+    },
+    {
+     "claim": "Context: steel is nearly eight times as dense as water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Steel",
+     "note": "'between 7.75 and 8.05 g/cm3, averaging 7.85 g/cm3'."
+    },
+    {
+     "claim": "Context: if the hull floods, water replaces the air and the ship sinks",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "Follows from the average-density rule (the same rule by which a submarine floods its ballast tanks to dive, Grokipedia Buoyancy). Partly flooded compartmented ships can stay afloat, but 'the hull floods' reads as the hull filling, and then it sinks."
+    },
+    {
+     "claim": "Stem: a cargo ship built from thousands of tonnes of steel",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "Large cargo ships carry thousands to tens of thousands of tonnes of steel; 'thousands' is safely true."
+    }
+   ]
+  },
+  "0437fe6bbc": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a helium balloon rises because helium is far less dense than air",
+     "result": "ok",
+     "source": "https://www.nsta.org/lesson-plan/floating-balloon",
+     "note": "Keeley/NSTA: 'Balloons filled with helium rise because they are less dense', 'not because they have a lesser mass'. Grokipedia Buoyancy: 'helium's inherent low density of 0.178 kg/m3' against air about 1.2."
+    },
+    {
+     "claim": "Wrong: 'Helium has no weight at all' is wrong",
+     "result": "ok",
+     "source": "https://www.nsta.org/lesson-plan/floating-balloon",
+     "note": "'Gases are a form of matter and thus have mass (or weight)'; 'Putting a gas (such as helium in this case) in a balloon adds mass.'"
+    },
+    {
+     "claim": "Wrong: 'Helium is warmer than the air around it' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "Helium balloons rely on helium's own low density; heated air is the hot-air balloon's different case (about 0.9 kg/m3)."
+    },
+    {
+     "claim": "Wrong: 'Every gas floats up through the air' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Carbon_dioxide",
+     "note": "CO2 at 1.977 kg/m3 is about 1.53 times as dense as air and sinks."
+    },
+    {
+     "claim": "Context: helium is about a seventh as dense as air",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Helium",
+     "note": "Grokipedia Helium: about 0.1786 kg/m3 against air's 1.225 kg/m3, a ratio of about 1/6.9 (at the same temperature, STP gives 0.1786/1.293, about 1/7.2). 'About a seventh' is right."
+    },
+    {
+     "claim": "Context: a hot-air balloon needs heat; a helium balloon does not",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": ""
+    },
+    {
+     "claim": "Context: carbon dioxide is denser than air and flows along the ground",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Carbon_dioxide",
+     "note": "'This greater density causes CO2 to flow along low layers and accumulate in basins or low-lying areas.'"
+    },
+    {
+     "claim": "Context: air is a fluid too; the balloon floats up as a cork floats up through water",
+     "result": "ok",
+     "source": "https://openstax.org/books/college-physics-2e/pages/11-7-archimedes-principle",
+     "note": "OpenStax: 'Helium-filled balloons tug upward on their strings, demonstrating air's buoyant effect.'"
+    }
+   ]
+  },
+  "325ba8f88f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: an undersea eruption makes a floating raft of grey, rough pumice; most rock sinks",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pumice_raft",
+     "note": "Rafts form chiefly from submarine eruptions ('vesicular magma that quenches in seawater'). Grokipedia Pumice gives colours 'white, light gray, or greenish' and gray for andesitic/dacitic pumice, so 'grey' is fair: pumice comes in light colours, grey among them. ('Rough' fits its vesicular, rugged surface; GSJ field notes call the 2021 Fukutoku-Oka-no-Ba stones angular and rugged.)"
+    },
+    {
+     "claim": "Key: its many gas bubbles make it less dense than water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pumice",
+     "note": "Density typically 0.25-0.75 g/cm3, 'low enough for many specimens to float on water owing to the trapped gases within the vesicles'. Fauria et al. 2017 (EPSL) title: 'Trapped bubbles keep pumice afloat' (https://ui.adsabs.harvard.edu/abs/2017E&PSL.460...50F)."
+    },
+    {
+     "claim": "Wrong: 'Its glassy stone is itself less dense than water' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Obsidian",
+     "note": "Pumice is 'largely composed of volcanic glass' (Grokipedia Pumice); solid volcanic glass (obsidian) is about 2.35-2.60 g/cm3 (Grokipedia Obsidian)."
+    },
+    {
+     "claim": "Wrong: 'Its heat from the volcano carries it to the top' is wrong",
+     "result": "ok",
+     "source": "https://www.osti.gov/servlets/purl/1479300",
+     "note": "The raft floats long after cooling; and heat works the other way: in Fauria et al.'s experiments hot pumice above about 300 C sinks almost at once in water. Truly wrong."
+    },
+    {
+     "claim": "Wrong: 'Its rough surface catches the water and holds it up' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pumice",
+     "note": "Floating comes from trapped gas lowering the density, not surface texture."
+    },
+    {
+     "claim": "Context: pumice forms when frothy, gas-rich lava cools fast, trapping bubbles; holes can be most of the stone",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pumice",
+     "note": "'formed by the rapid cooling and solidification of frothy, gas-rich lava'; porosity 'can reach up to 90%' (Wikipedia: 64-85% by volume), so 'most of the stone' is right."
+    },
+    {
+     "claim": "Context: the glass between the holes is denser than water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Obsidian",
+     "note": "Volcanic glass about 2.3-2.6 g/cm3."
+    },
+    {
+     "claim": "Context: rafts can drift for months or years until water fills the holes and they sink",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pumice_raft",
+     "note": "Rafts 'can persist for weeks to months, or even years', '1-3 years on average'; 'Sinking ultimately occurs when pores become fully saturated with water.' Wikipedia Pumice: floats 'possibly for years, until it eventually becomes waterlogged and sinks'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "All 8 questions check out. Rulings asked for: (1) mercury's surface tension is real and high (about 470-485 mN/m) and Wikipedia says it makes a floating coin ride a little higher, but buoyancy alone holds up anything less dense than mercury, so 'Mercury's surface skin holds it up' is wrong as the reason; no change needed. (2) 'About ten times saltier' compares a salt lake (the Dead Sea, about 34%) with the ocean (3.5%): correct; optionally name the Dead Sea. (3) Gold sinks in mercury (and also slowly amalgamates with it; the context does not deny that). Optional polish on a550ab5aac: the context says a magnet does not pull on mercury, while the wrong choice says mercury pulls on the iron; both are false, but the context could answer the choice directly."
+}

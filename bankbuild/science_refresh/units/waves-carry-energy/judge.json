@@ -1,0 +1,39 @@
+{"unit": "waves-carry-energy",
+ "questions": {
+  "cc6b236696": {"verdict": "ok", "issues": []},
+  "74f8246465": {"verdict": "ok", "issues": []},
+  "0f19c0daf6": {"verdict": "ok", "issues": []},
+  "ee235f108e": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "'An electromagnetic wave' is a wrong choice that uses an 8th-grade term (the electromagnetic spectrum is T4), and no question or context in this unit teaches it. It does not affect the key, but a 6th grader meets a term he has not been taught.",
+     "fix": "Add one clause to the context: '...and an electromagnetic wave, such as light, needs no matter at all, so a spring's coils cannot carry one.'"}
+   ]},
+  "a7f31f3ac6": {"verdict": "ok", "issues": []},
+  "77d42ecae7": {"verdict": "ok", "issues": []},
+  "ececeeb656": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem asks two things ('Why does the buzz fade while the light still gets out?'), and only the key answers both. Each wrong choice explains the sound alone and says nothing about the light. A student who knows nothing can pick the only complete answer.",
+     "fix": "Give every choice both halves: key 'Sound needs matter to travel; light does not' / 'The buzzer needs air to shake; the lamp does not' (the bell keeps vibrating, F13) / 'Glass blocks sound in a vacuum, but never light' / 'Empty space soaks up sound, but not light' (M3)."},
+    {"axis": "fact", "severity": "low",
+     "what": "'until no one can hear it' is stronger than most classroom pumps manage. The buzz usually becomes very faint, and some still leaks out through the buzzer's mounting and wires. Grokipedia's 'eventually inaudible' supports it for a good vacuum.",
+     "fix": "'The buzz grows fainter and fainter until it can barely be heard...'"}
+   ]},
+  "e42fcf8336": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "medium",
+     "what": "This asks two facts in one question, and one of them repeats another question. 'Sound is longitudinal' is already keyed by the hallway question (77d42ecae7: air particles move back and forth along the path, with 'Up and down, across the sound's path' as a wrong choice). The spring question (ee235f108e) already keys the name 'longitudinal'. So the sound half adds nothing, and only the light half is new.",
+     "fix": "Keep the 2-by-2 grid but pair light with the one wave fact the unit has not asked, that a spring can carry either kind (F10): 'A boy lays a spring toy across a floor and shakes his end from side to side, so ripples wiggle down it, while a friend shines a flashlight along the spring. The ripples and the flashlight's light both travel as waves. What kind of wave is each?' Key: 'Both of them transverse'. Wrong: 'Both of them longitudinal' / 'Spring longitudinal, light transverse' (the trap set by the pushed-spring question) / 'Spring transverse, light longitudinal'. Context: what decides the kind is the way the coils move, across the path here, not what the spring is made of; light is transverse, though no matter moves in it."},
+    {"axis": "grade", "severity": "low",
+     "what": "The context explains light's transverse nature with 'electric and magnetic fields vibrate at right angles'. That is the electromagnetic-wave picture, 8th grade or later (T4 the-electromagnetic-spectrum).",
+     "fix": "Context: 'Light is a transverse wave too, though no matter moves in it: what vibrates runs across the way the light travels.'"}
+   ]},
+  "a9ad9fcbac": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The gloss 'a microphone built to work underwater' points toward the key 'The sea water around it'. The wrong choices ('air trapped in bubbles', 'waves on the sea's surface') are good enough that the question still works.",
+     "fix": "'...lower a hydrophone, a special microphone, deep into the sea.'"}
+   ]}
+ },
+ "unit_notes": "Grade fit, as asked: no question relies on amplitude, frequency, wavelength or the spectrum. The only 8th-grade leaks are the 'electromagnetic wave' wrong choice (ee235f108e) and the electric-and-magnetic-fields context (e42fcf8336), both low with fixes. One fact is taught earlier: 'the water goes up and down in place' is NGSS 4th-grade content (4-PS4-1, PS4.A). TEKS puts 'energy carried by waves' at grade 6, though, and the pond question keys the energy half, so it stays at T2. Overlaps inside the unit: (1) 'the matter stays behind' is keyed by the pond (cc6b236696). The ribbon (74f8246465) and hallway (77d42ecae7) questions use it again in their wrong choices ('rides along the rope', 'all the way to his ear'), but each keys a direction of motion. That is acceptable. (2) 'Sound is longitudinal' was asked twice, by the hallway question and by half of e42fcf8336; the spring-and-light rewrite fixes that. (3) The trough (0f19c0daf6) and rarefaction (a7f31f3ac6) questions share the same four choices (trough, crest, compression, rarefaction). They key different terms, so this is fine, but a player meets the same set twice. Across units: no built unit asks waves. T1 how-light-travels keys straight lines, reflection, refraction and absorption; nothing here repeats them. particles-in-motion pumps the air out of a jar for a different fact (a gas fills its container); the bell jar here keys sound needing matter, so there is no overlap. For later builders: T4 describing-waves lists 'sound needs a medium ... faster in water and steel; light ... needs no medium'. The bell jar (ececeeb656) and the hydrophone (a9ad9fcbac) already key the medium facts, so T4 must key speeds, amplitude, wavelength and frequency, not 'sound needs matter / light does not' or 'sound travels through water'. T5 earths-interior-and-age owns 'S-waves cannot pass through liquid'; F11 here is background only, which is right. No missing core fact of the scope."}

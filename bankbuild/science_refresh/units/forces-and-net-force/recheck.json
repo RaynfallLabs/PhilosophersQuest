@@ -1,0 +1,18 @@
+{"unit": "forces-and-net-force",
+ "questions": {
+  "81596105e3": {"verdict": "pass",
+   "why": "The normal force is now named and taught in the stem, as the judge asked, so the question is keyed on the 6th-grade term rather than on T1's crate. The key is true: a resting brick gets an upward push equal to its weight on both surfaces, and hardness changes only how far the surface gives. The definition leans a little against 'zero, since stone cannot push', but research shows students keep that belief after the term is named, and the other two lures are fully live.",
+   "sources": ["https://grokipedia.com/page/Normal_force", "https://openstax.org/books/college-physics-2e/pages/4-5-normal-tension-and-other-examples-of-forces", "https://www.compadre.org/portal/items/detail.cfm?ID=2356"]},
+  "75459419da": {"verdict": "pass",
+   "why": "Old tell fixed: the 'never faster, never slower' mirror is gone and every choice carries a reason. 'Bigger, since the car is moving forward' (M2) is the classic live lure. The key is true: at a steady speed in a straight line the net force is zero. A step beyond T1's still tug-of-war rope.",
+   "sources": ["https://grokipedia.com/page/Net_force", "https://www.thenational.academy/teachers/lessons/balanced-and-unbalanced-forces"]},
+  "307ddce173": {"verdict": "pass",
+   "why": "The fact-check error is fixed. The context now says the air's push weakens as she slows until it matches gravity while she is still moving down (Illinois Q&A), with no false general rule. The 5-8 m/s canopy speed is sourced. Stem, choices and key were unchanged and sound.",
+   "sources": ["https://van.physics.illinois.edu/ask/listing/125", "https://grokipedia.com/page/Terminal_velocity", "https://physicslens.com/misconception-skydiver-goes-up-when-parachute-opens/"]},
+  "48ca967104": {"verdict": "pass",
+   "why": "Old tells fixed: four parallel 'Whether the force...' choices, and the 'two objects' standout is gone. Each lure is truly wrong: none of the four forces needs air; the normal force does not slow things; static friction and the normal force act on still things. The grouping is true. No T1 question sorts contact from non-contact forces.",
+   "sources": ["https://grokipedia.com/page/Contact_force", "https://grokipedia.com/page/Friction", "https://www.sciencelearn.org.nz/resources/294-alternative-conceptions-about-gravity"]},
+  "d9d60f779e": {"verdict": "fail",
+   "why": "The physics is right: magnet pull = gravity + the thread's tension, so it is stronger (Regina, Vanderbilt kits; tension only pulls). But the stem itself says the magnet 'pulls it up until the thread is tight' and asks about 'the magnet's upward pull'. That strikes 'Zero, since the magnet does not touch it'. A pull that lifted the clip against gravity, and now acts with the clip even closer, also strikes 'Weaker, since the thread holds it up'. Only 'Equal' stays live beside the key, and the stem's account of the lift points at 'stronger'.",
+   "sources": ["https://www.cmste.uregina.ca/Quickstarts/floatingpaperclip.html", "https://cdn.vanderbilt.edu/vu-URL/wp-content/uploads/sites/336/2023/07/28135345/Floating-_Paperclip_Kit_2023.pdf", "https://grokipedia.com/page/Tension_(physics)"]}
+ }}

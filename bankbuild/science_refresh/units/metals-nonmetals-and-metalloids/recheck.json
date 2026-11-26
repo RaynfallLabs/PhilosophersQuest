@@ -1,0 +1,23 @@
+{"unit": "metals-nonmetals-and-metalloids",
+ "questions": {
+  "cb5af24cff": {"verdict": "pass",
+                 "why": "",
+                 "sources": ["https://grokipedia.com/page/Gold",
+                             "https://grokipedia.com/page/Metal"]},
+  "83a2e7610d": {"verdict": "pass",
+                 "why": "",
+                 "sources": ["https://grokipedia.com/page/Metal",
+                             "https://grokipedia.com/page/Nonmetal"]},
+  "e0dc450516": {"verdict": "pass",
+                 "why": "",
+                 "sources": ["https://grokipedia.com/page/Nonmetal",
+                             "https://grokipedia.com/page/Metal"]},
+  "2755f26b12": {"verdict": "pass",
+                 "why": "",
+                 "sources": ["https://en.wikipedia.org/wiki/Silicon"]},
+  "ee90d6cb70": {"verdict": "fail",
+                 "why": "The judge's main tell is not fixed. The stem still names the three textbook magnet devices: motors, generators and speakers. NGSS MS-PS2-3, at this same grade band, gives motors and generators as its examples of devices that use magnetic force, so the answer comes without knowing neodymium. 'A wire coil' still dies on copper wire (electric-circuits keys copper wires), 'A switch' is weak, and 'A battery' fits neither a generator nor a speaker. The judge's fix for the stem was not taken. The facts check out: most EV motors are permanent-magnet (about 86-94%), and neodymium is the usual magnet in headphone drivers.",
+                 "sources": ["https://en.wikipedia.org/wiki/Neodymium_magnet",
+                             "https://www.nextgenscience.org/pe/ms-ps2-3-motion-and-stability-forces-and-interactions",
+                             "https://source.benchmarkminerals.com/article/how-many-rare-earths-are-needed-to-produce-ev-motors"]}
+ }}

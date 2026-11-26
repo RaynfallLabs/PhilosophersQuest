@@ -1,0 +1,46 @@
+{"unit": "action-and-reaction",
+ "questions": {
+  "e5020a9bd3": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Nearly every child who has stood on skates or a skateboard knows that pushing a wall rolls you backward. So the key comes from everyday experience, not from the 6th-grade fact (the wall pushes back). The reasons in the choices are never needed. The choices also give themselves away. The two 'stays put' choices are twins, and a test-wise player drops them both. 'Rolls forward, carried by her own push' would mean rolling into the wall she is shoving, so it is dead. That leaves one live choice.",
+     "fix": "Use the two-skater case (fact sheet F17), where the outcome is not common knowledge and the third law decides it: 'A girl and a boy on roller skates stand still, face to face. She gives him a hard shove with both hands, while he keeps his arms at his sides. What happens to the two of them?' Key: 'Both roll apart, away from each other'. Wrong: 'Only he rolls, since he did not push back' (M3) / 'He rolls away, and she rolls on after him' (her push carries her) / 'Neither rolls, since the two pushes cancel' (M1). Context: as she pushes him, he pushes back on her hands just as hard without trying, and that push rolls her backward. Do not mention their sizes; the mass effect is the apple question's fact."},
+    {"axis": "other", "severity": "low",
+     "what": "The 'a wall cannot push' wrong choice tests the same misconception as two finished questions: forces-and-net-force's brick ('It is zero, since stone cannot push') and T1 pushes-pulls-and-gravity's crate ('The floor pushes back on it just as hard'). The two-skater rewrite drops it.",
+     "fix": "Use the rewrite above. If the wall is kept, put the reason into the key and its twin: 'She rolls backward, pushed by the wall' / 'She rolls backward, pushed by her own arms' / 'She stays put, since a wall cannot push' / 'She stays put, since the wall did not move'."}
+   ]},
+  "43801836f9": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The air above, pressing on her back' is a silly choice. No 6th grader thinks the air pushes a swimmer along the pool, so only three choices are live. The other two wrong choices are good: the water closing in behind her is the old Aristotle-style idea, and the stored force is M5.",
+     "fix": "Replace it with the classic belief that a body moves itself with its own muscles: 'Her arms, pulling her body through the water'. Context addition: her arms only push the water; what moves her is the water's push back on her hands."}
+   ]},
+  "bb13d18c67": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Only one wrong choice is live: 'It stays put, with no air to push against' (M4, a good one). 'It slows down, held back by the gas' and 'It drifts backward, along with the gas' are guesses no student would make once the stem says the gas blasts out of the back, so the question comes down to two choices.",
+     "fix": "Replace 'It slows down, held back by the gas' with the other half of the same misconception, which the fact sheet sources (F9: rockets work better in a vacuum): 'It speeds up, but less than it would in air'. 'Drifts backward, along with the gas' may stay as the fourth choice. Keep the key."}
+   ]},
+  "78962112bf": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Every child has let go of a blown-up balloon and seen it shoot off, so the answer to 'What does the balloon do' comes from experience. The 'why' half is never tested. 'Drops down, dragged by the air rushing out' and 'Stays put, since air is too light to push' go against what everyone has seen, so the question is really 'shoots up' against 'floats up'. The balloon rocket is a 5th-grade investigation (TEKS 5.7B); the 6th-grade fact is the reason.",
+     "fix": "Say what happens in the stem and ask what pushes it: '...She lets go, air streams out of the neck toward the floor, and the balloon shoots up toward the ceiling. What pushes the balloon up?' Key: 'The air streaming out of its neck'. Wrong: 'The floor, pushed on by the air streaming out' (M4) / 'The room's air, since the air inside is lighter' (M7) / 'The force she blew into it' (M5)."},
+    {"axis": "other", "severity": "low",
+     "what": "The balloon and the rocket (bb13d18c67) teach the same fact: gas pushed out of a vessel pushes the vessel the opposite way. The rocket also teaches that no air is needed, so it earns its place. The balloon is the weaker of the two. Separately, the 'air inside is light' choice rests on the density unit's helium balloon (Helium is far less dense than air), which is a fair confusion but next door to a finished question.",
+     "fix": "Keep both, since the scope names both, but make sure the balloon's key is 'the escaping air itself pushes' (rewrite above) and the rocket's key stays 'it works with no air'. If either is cut, cut the balloon and add the walking pair (F16: the floor pushes a walker's shoes forward)."},
+    {"axis": "fact", "severity": "low",
+     "what": "M7 (a breath-filled balloon rises because the air inside is light) is the author's own reading, with no survey behind it. That is fine for a wrong choice, but the context's claim that breath is not lighter than room air is fiddly: warm, damp breath is a little lighter until it cools, and a breath balloon falls mainly because of its rubber.",
+     "fix": "Context: 'A balloon blown up with breath does not float, because breath and rubber together weigh more than the air they push aside; a gas far lighter than air, such as helium, is needed for that.'"}
+   ]},
+  "d1a5b7cb10": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Far more weakly' and 'A bit more weakly' are twins of one misconception. A choice from the other recorded misconception, that the more active object pushes harder (M2), would test something different.",
+     "fix": "Replace 'A bit more weakly than the truck pushes on it' with 'Harder, since the bug is the one that flew into it'."}
+   ]},
+  "c448817c14": {"verdict": "ok", "issues": []},
+  "a18dd6a55c": {"verdict": "ok", "issues": []},
+  "ba9070b24f": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Grade fit: every question sits on TEKS 6.7C / G6.P7 (force pairs: equal, opposite, at the same moment, on different objects), and none relies on second-law arithmetic. Inside the unit: the skater, swimmer, balloon and rocket are four cases of one statement (what you push pushes you back). The scope names all four, so they stay, but each needs a different misconception to test: the two-skater rewrite uses M3 and M1, the swimmer M5 and own muscles, the rocket M4 and the vacuum, the balloon M7 and M4. The bug (d1a5b7cb10) and the apple (ba9070b24f) both rest on 'equal forces, unequal effects'. The bug keys the equal size and the apple keys the mass. That is fine, but keep their contexts from re-teaching each other's key. Across units: (1) the wall question's 'a wall cannot push' choice repeats the misconception in forces-and-net-force's brick ('stone cannot push') and T1 pushes-pulls-and-gravity's crate ('The floor pushes back on it just as hard'); the two-skater rewrite fixes it. (2) density-float-or-sink keys 'Helium is far less dense than air' with a girl letting go of a balloon; the balloon question here must not ask or key density (the rewrite keeps it as one wrong choice). (3) The bat question (c448817c14) keys 'cancel only on the same object'. That is new at T2, and it is consistent with T1's tug-of-war and forces-and-net-force's balanced car, not a repeat of them. For later builders: T4 newtons-laws-force-mass-and-acceleration lists 'a rocket launch (action and reaction)' and 'the same push accelerates a light cart more than a heavy one'. It must not re-ask the rocket's push or the apple and bug's 'heavier object, less change'; it should key the force-mass-acceleration law itself. T5 momentum-and-collisions lists 'a skater pushing off another'. If the two-skater rewrite is adopted, T5 must key momentum (the lighter skater rolls off faster), not that both move. No missing core fact."}

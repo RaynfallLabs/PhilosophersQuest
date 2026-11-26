@@ -1,0 +1,53 @@
+{"unit": "density-float-or-sink",
+ "questions": {
+  "97075ffcb8": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Scenery echo only: T1 solids-liquids-and-gases opens 'A geologist drops a quartz crystal into a big, empty glass jar.' Different fact (shape and volume of a solid), so no overlap, but the two openings read alike in one bank.",
+     "fix": "Optional: 'A chemist cuts a thin sliver off a bar of pure copper...' and 'the same copper' in the key; the facts carry over (density is intensive)."}
+   ]},
+  "c7ab03776c": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "Re-asks the T1 floating rule in a new word. T1 telling-materials-apart asks 'What decides whether a thing floats in water?' (How heavy it is for its size); this asks 'What decides which liquid ends up at the bottom?' (Which liquid is the densest). Same fact, same 'what decides' frame: a student who passed the T1 question answers this one at once, so it adds no 6th-grade step.",
+     "fix": "Keep the layered liquids but ask a comparison no T1 question asks: 'A student pours motor oil onto water in a tall cylinder, and the oil settles in a layer on top. She drops in a small plastic bead. It sinks through the oil, then stops and floats at the top of the water. What does this show about the bead?' Key: 'Denser than the oil, less dense than water'. Wrong: 'Thicker than the oil, thinner than water' (keeps the viscosity lure, M3), 'Less dense than both of the liquids', 'Denser than both of the liquids'. No arithmetic."}
+   ]},
+  "a550ab5aac": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Iron is denser than mercury' is the key turned round, and it explains sinking, not floating, so anyone who knows the T1 rule (heavy for its size sinks) strikes it at once. The mirrored pair also signals that the answer is one of those two. Effectively three live choices.",
+     "fix": "Replace it with 'The bolt is too small and light to sink' (M1, the size-and-weight belief), which stays live and keeps the four choices parallel."},
+    {"axis": "fact", "severity": "low",
+     "what": "Mercury's surface tension is very high and can hold up a small steel pin laid on it, so 'Mercury's surface skin holds it up' is not wholly false for tiny objects; for a bolt, buoyancy does the work.",
+     "fix": "Keep the object a bolt (never a pin, needle or clip) in any rewrite; the context already says buoyancy holds it up."}
+   ]},
+  "c6228bdce0": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem states the fact and its consequence ('Ice is less dense than liquid water, so in winter a lake freezes over at the top') and then asks for its mirror image. Inverting the stem's own 'so' gives 'denser ice, the lake freezes from the bottom up' with no knowledge of density at all.",
+     "fix": "Give the premise without the consequence: 'Most substances are denser as solids than as liquids, but water is not: its ice is less dense than liquid water. If water were like most substances, what could happen to a shallow lake in a long, hard winter?'"},
+    {"axis": "tell", "severity": "medium",
+     "what": "'Ice would melt at once, and the lake could never freeze' is silly (denser ice has nothing to do with melting), so only three choices are live, and it leaves the key the only 'sink' choice.",
+     "fix": "Replace it with a real half-step error: 'Ice would sink, and fish would swim above it all winter' (it misses that the sinking ice piles up until a shallow lake is solid). That gives two sink and two float choices, all live."}
+   ]},
+  "741c299d30": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "Two questions in one stem ('In which does she float higher in the water, and why?'). The paired choices make it one decision, so it works, but the stem reads double-barrelled.",
+     "fix": "'Where does she float higher in the water?' and let each choice carry its reason, as now."}
+   ]},
+  "f76f3e550b": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'A solid block of steel sinks' sets up a solid-versus-hollow contrast that nudges toward 'air-filled'. It is how the idea is taught and the three lures stay live, so polish only.",
+     "fix": "Optional: 'A steel bolt sinks in water at once.'"}
+   ]},
+  "0437fe6bbc": {"verdict": "ok", "issues": []},
+  "325ba8f88f": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "Same fact as the ship question in this unit (trapped gas makes the whole object less dense than water, though its solid stuff is denser), with mirrored lures: 'Its glassy stone is itself less dense than water' matches 'Its steel is a special kind, less dense than water', and 'Its rough surface catches the water and holds it up' matches 'Its flat bottom rests on the water's surface skin'. A player who has met one answers the other. The ship is named in the scope, so pumice is the one to move.",
+     "fix": "Re-key pumice on the raft's end (F23), a fact no other question asks: 'After an undersea volcano erupts, a raft of grey, rough pumice stones floats on the ocean for months. Then, one by one, the stones begin to sink. Why do they sink at last?' Key: 'Water slowly fills the holes in each stone'. Wrong: 'The last of their volcanic heat is gone', 'The waves wear their rough surfaces smooth', 'Storm waves push them down under the sea'. The stem never says the stones are full of gas, so the student must know why pumice floats to answer."}
+   ]}
+ },
+ "unit_notes": "Overlaps, with fixes. (1) c7ab03776c layers vs T1 telling-materials-apart ('What decides whether a thing floats in water? How heavy it is for its size'): same fact in density words; re-key to the bead between two layers (see the question). (2) 325ba8f88f pumice vs f76f3e550b ship, inside this unit: one fact twice with mirrored lures; re-key pumice to waterlogging. If that is done, trim the ship context's last sentence ('If the hull floods, water takes the place of the air, and the ship sinks'), which would teach the new pumice answer. (3) c6228bdce0 ice vs T1 mixtures-and-solutions (water swells about 9 percent on freezing; its context says ice floats because it takes up more room for its mass): the T2 question asks the consequence for a lake, not the swelling, so it is not a re-ask once the stem stops giving the consequence away. T4 waters-sticky-properties owns the molecular why (the open lattice), so no rewrite here may ask it. (4) 97075ffcb8 quartz vs T1 solids-liquids-and-gases quartz crystal: scenery echo only. (5) a550ab5aac mercury: its context's gold-sinks line touches T2 pure-substances-and-mixtures' gold panning (context only, fine). (6) 0437fe6bbc helium: its 'no weight' lure was answered at T1 matter-made-of-tiny-particles (air has weight), but the asked fact (helium is far less dense than air) is new; fine. (7) 325ba8f88f's 'Most kinds of rock sink' restates T1 wind-water-and-ice-shape-the-land's context (rock two to three times as dense as water) as a given; fine. Two lures (a550ab5aac, f76f3e550b) use a surface 'skin'; surface tension is T4 waters-sticky-properties' fact, so it must stay a wrong choice here and never a key. Lanes: no kitchen example (motor oil in the c7ab03776c fix is a garage and lab liquid) and no arithmetic; numbers appear only in contexts. Scope coverage is complete (definition, the rule in any fluid, layers, ice, salt water, the ship, plus air and a rock). a550ab5aac (a solid on a denser liquid) and 0437fe6bbc (a gas in air) both carry the rule beyond water but key different facts; fine."}

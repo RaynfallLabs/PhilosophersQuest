@@ -109,3 +109,16 @@ M5. A gas spreads because its particles repel one another (see F19).
 A solid keeps its shape and volume; water boils at 100 C and ice melts at 0 C; a scent spreads
 across a room; air trapped in a syringe pushes back; drops on a cold jar come from the air.
 Here the stems may give these as settings, and the questions ask what the particles are doing.
+
+## Added in the revision (2026-11-26)
+
+F20. Boiling in particles, for the replacement question: "As a liquid is heated, the average kinetic energy of its particles increases"; "Eventually a point is reached when the molecules all throughout the liquid have enough kinetic energy to vaporize", and bubbles "begin to form in the body of the liquid" (LibreTexts). Grokipedia: boiling "occurs throughout the bulk of the liquid once the boiling point is reached", while evaporation is "a surface-only phenomenon"; both "require the absorption of latent heat of vaporization to overcome intermolecular forces".
+    https://chem.libretexts.org/Bookshelves/Introductory_Chemistry/Introductory_Chemistry_(CK-12)/13%3A_States_of_Matter/13.09%3A_Boiling
+    https://grokipedia.com/page/Boiling
+
+F21. Why the hot/cold ink-drop question was dropped: in an unstirred beaker the visible spreading comes mostly from convection currents, not from particles bumping the ink. The Goethe-Institut activity: the demo is "sometimes explained as showing how heat affects DIFFUSION, but it is really a demonstration of CONVECTION"; Grokipedia notes convection makes "it appear as if diffusion is faster than it truly is". (Convection is the T3 unit heat-on-the-move's.)
+    https://goethe.de/resources/files/pdf286/sff-2022-activity_heat-and-climate.pdf
+    https://grokipedia.com/page/Diffusion
+
+M6. Boiling misconceptions recorded by the RSC: Osborne and Cosgrove (1983) found that the share of New Zealand students who said the bubbles in boiling water were oxygen and hydrogen rose from 25% at age 12 to 40% at 17, and that many 17-year-olds think water can be split into its elements by heating; Brook et al (1984) quote a student saying particles "begin to expand" when heated, and report particles "swelling".
+    https://edu.rsc.org/resources/students-ideas-about-changes-of-state-beyond-appearances/4017768.article

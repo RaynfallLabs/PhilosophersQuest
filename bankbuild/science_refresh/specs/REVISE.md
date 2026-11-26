@@ -50,6 +50,23 @@ and fix every FAIL (ignore only `UNIT names no line of the curriculum map`
 if the lead has not filled the unit's map lines yet). A gate-only fix counts
 as part of this one revision.
 
+## Before you finish: re-check your own changes the way the re-checker will
+A fresh re-checker reads every question you changed or added, and anything it
+fails is dropped. In the first 40 units, nearly every drop at the re-check was
+a NEW tell the revision itself brought in. For each changed or added question,
+check these in turn:
+1. Read the stem, then each wrong choice. Does any word or clause in the stem
+   rule that choice out? ("floats in water" rules out "sinks to the bottom";
+   "pulls it up until the thread is tight" rules out "no pull".) If so,
+   reword the stem or swap the choice.
+2. Does the key echo a word or idea of the stem that no wrong choice shares?
+3. Is the key the longest choice, the only specific one, or the only one in
+   science words?
+4. Could a careful student who does not know the fact rule out two choices by
+   common sense alone? Then only two are live: replace the weak ones.
+5. Does the new context give away another question's answer in the unit?
+Fix what fails before you write `final.json`.
+
 ## Rules
 - Do NOT spawn any sub-agents or workflows; do all the work in this agent.
 - Never delete or overwrite a path you did not create, except that you write

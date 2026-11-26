@@ -1,0 +1,176 @@
+{
+ "unit": "pure-substances-and-mixtures",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "Ancient Greek thinkers counted water as one of four elements, along with earth, air and fire. Chemists today do not. Which observation shows that water is not an element?",
+   "answer": "Electricity splits it into two gases",
+   "choices": [
+    "Electricity splits it into two gases",
+    "A hot flame boils it away into steam",
+    "A hard frost freezes it into solid ice",
+    "Salt and many minerals dissolve in it"
+   ],
+   "context": "An element cannot be broken down into simpler substances, but an electric current splits water into hydrogen and oxygen, so water is a compound of the two. Boiling and freezing only change water's state: the bubbles in boiling water are water vapour, not hydrogen and oxygen. Salt dissolving in water makes a mixture, with no new substance formed.",
+   "facts": [
+    "F2",
+    "F3",
+    "F5",
+    "F6",
+    "F7",
+    "M3"
+   ],
+   "grade_note": "6th graders learn that a pure substance is either an element or a compound (TEKS 112.18(b)(5)(A), map line G6.P2), and water split by electricity into hydrogen and oxygen is the standard case of a compound."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "The carbon in charcoal is a black solid that burns, and oxygen is a gas that fires need in order to burn. When charcoal burns, its carbon joins with oxygen to make a compound, carbon dioxide. What is carbon dioxide like?",
+   "answer": "A colourless gas that puts out flames",
+   "choices": [
+    "A colourless gas that puts out flames",
+    "A colourless gas that makes flames brighter",
+    "A black smoke that catches fire easily",
+    "A black powder that burns like charcoal"
+   ],
+   "context": "A compound's properties differ from those of the elements it is made of. Carbon dioxide does not burn and does not feed a fire, so fire extinguishers use it to smother flames by shutting out the oxygen. It is also the gas that every person breathes out.",
+   "facts": [
+    "F4",
+    "F8",
+    "F9",
+    "F10"
+   ],
+   "grade_note": "The 6th-grade line between elements and compounds (TEKS 112.18(b)(5)(A), map line G6.P2) rests on a compound having properties unlike its elements; carbon dioxide is the compound students meet in breathing and fire safety."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "Chemists call a mixture homogeneous when the substances in it are spread so evenly that every part of it is the same as every other part. Which of these materials is a homogeneous mixture?",
+   "answer": "Brass",
+   "choices": [
+    "Brass",
+    "Copper",
+    "Granite",
+    "Distilled water"
+   ],
+   "context": "Brass is copper and zinc melted together, with the zinc spread evenly all through the copper, and its share of zinc varies, generally from about 5 to 40 percent. Copper is an element and distilled water is a compound, so both are pure substances, not mixtures. Granite is a mixture too, but its grains of different minerals can be seen, which makes it heterogeneous.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15"
+   ],
+   "grade_note": "TEKS 6.6B asks 6th graders to tell pure substances from homogeneous and heterogeneous mixtures, and brass is the map line's own example of a homogeneous mixture (G6.P2)."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "A student shakes a scoop of garden soil with water in a tall jar until it all looks like muddy brown water. Then she leaves the jar standing still for three days. What does the jar show at the end?",
+   "answer": "Layers, with sand at the bottom and clay on top",
+   "choices": [
+    "Layers, with sand at the bottom and clay on top",
+    "Layers, with clay at the bottom and sand on top",
+    "Brown, muddy water, still the same all through",
+    "Clear water, with all the soil dissolved in it"
+   ],
+   "context": "Soil is a heterogeneous mixture whose grains of sand, silt and clay do not dissolve, so once the jar stands still they settle out by size. Sand, the biggest, reaches the bottom within a minute, silt settles on top of it within a couple of hours, and the tiny clay grains settle last, over a day or more, as a top layer under clear water.",
+   "facts": [
+    "F11",
+    "F12",
+    "F16",
+    "F17",
+    "F18",
+    "M6"
+   ],
+   "grade_note": "TEKS 6.6B has 6th graders investigate heterogeneous mixtures by their physical properties, and the map line names soil as one (G6.P2); the jar test shows its parts settling out by grain size."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "A chemist heats a flask of pure water and a flask of seawater side by side in a lab at sea level. The pure water boils at 100 degrees Celsius. What does the seawater do?",
+   "answer": "It boils a little above 100, as salt is dissolved in it",
+   "choices": [
+    "It boils a little above 100, as salt is dissolved in it",
+    "It boils a little below 100, as salt is dissolved in it",
+    "It boils at 100 too, as only its water boils away",
+    "It boils at 100 too, as dissolved salt has no effect"
+   ],
+   "context": "A pure substance such as water boils at one fixed temperature, but a mixture's boiling point depends on what is in it. Dissolved salt raises the boiling point, so seawater boils at about 100.6 degrees Celsius. As its water boils away and the salt left behind grows stronger, the boiling point climbs higher still.",
+   "facts": [
+    "F1",
+    "F19",
+    "F20",
+    "F21",
+    "M6"
+   ],
+   "grade_note": "G6.P2 has 6th graders tell pure substances from mixtures by properties such as boiling point, and pure water's fixed 100 degrees against salt water's higher boiling point is the standard comparison."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "A student gently boils blue ink in a flask. The steam passes into a glass tube cooled by cold water, and clear drops of water drip from its far end, while the blue dye stays behind in the flask. Why does the dye stay behind?",
+   "answer": "The dye does not boil when the water does",
+   "choices": [
+    "The dye does not boil when the water does",
+    "The cold tube filters the dye from the steam",
+    "The dye sinks to the flask's bottom when hot",
+    "The dye sticks fast to the flask's hot glass"
+   ],
+   "context": "Distillation separates a mixture by the boiling points of its parts. At about 100 degrees Celsius the water boils into steam, which the cold tube turns back into liquid water, but the dye does not boil at that temperature, so it stays dissolved in the ink left in the flask. The steam never carries the dye, so there is nothing for the cold tube to catch.",
+   "facts": [
+    "F11",
+    "F19",
+    "F22",
+    "M6"
+   ],
+   "grade_note": "The 6th-grade line G6.P2 has boiling point among the properties that let a mixture be separated, and distillation, the method that uses it, is the unit's named separation beyond filtering and evaporating."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "A prospector scoops sand and gravel from a stream bed into a wide steel pan. She dips the pan under the water and swirls it, so the moving water carries the sand and gravel out over the rim. Tiny flakes of gold stay at the bottom. Why does the gold stay?",
+   "answer": "Gold is many times denser than sand",
+   "choices": [
+    "Gold is many times denser than sand",
+    "Gold is magnetic and clings to the steel pan",
+    "Sand dissolves in water, but gold does not",
+    "Gold is harder, so water cannot move it"
+   ],
+   "context": "Gold is about 19 times denser than water and about seven times denser than quartz, the main mineral in sand, so the swirling water sweeps the lighter grains away while the gold sinks and stays. Gold is not magnetic, it is far softer than quartz, and sand does not dissolve: the water simply carries it off.",
+   "facts": [
+    "F11",
+    "F18",
+    "F23",
+    "F24",
+    "F25",
+    "M5"
+   ],
+   "grade_note": "G6.P2 names density among the physical properties that let a mixture be separated, and panning, which sorts gold from sand by density, is the classic case."
+  },
+  {
+   "tier": 2,
+   "topic": "pure-substances-and-mixtures",
+   "question": "Water bubbles up from a spring on a mountainside, so clear, cold and clean that hikers fill their bottles and drink it just as it is. To a chemist, is this water a pure substance?",
+   "answer": "No, since rock minerals are dissolved in it",
+   "choices": [
+    "No, since rock minerals are dissolved in it",
+    "No, since water is a compound, not an element",
+    "Yes, since it comes straight from nature",
+    "Yes, since it is clear and clean to drink"
+   ],
+   "context": "To a chemist, a pure substance is a single substance, an element or a compound, so pure water itself is a pure substance. Spring water is groundwater that has dissolved calcium, magnesium and other minerals from the rock it seeped through, which makes it a mixture, however clean and natural it is.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F26",
+    "M1",
+    "M2",
+    "M6"
+   ],
+   "grade_note": "Telling a pure substance from a mixture is the core of TEKS 6.6B, and students carry the everyday meaning of 'pure' (clean, natural, nothing added) into it; natural spring water is the standard case."
+  }
+ ]
+}

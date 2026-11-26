@@ -100,3 +100,14 @@ M8. Rare earth elements are rare. Wrong by F23.
 - The exact count of metals (94 or 95 by source) is never keyed: "about four in five" or "most" only.
 - Iodine's lustre and graphite's conduction (F16) are real exceptions; no question rests on "nonmetals are never shiny" or "nonmetals never conduct".
 - Who mines or trades rare earths (economics or history bank's).
+
+## Added in the revision (2026-11-26)
+
+F25. Silicon is not magnetic: Wikipedia's Silicon infobox gives its magnetic ordering as "diamagnetic" (molar magnetic susceptibility -3.9x10^-6 cm3/mol). Only iron, cobalt, nickel and alloys made from them, such as steel, are magnetic in normal conditions.
+    https://en.wikipedia.org/wiki/Silicon ; https://van.physics.illinois.edu/ask/listing/378
+
+F26. Not every electric car motor holds a neodymium magnet: "In 2021, permanent magnet motors made up 84% of the electric car market", rising to 86% in the first half of 2022 (IDTechEx); the rest are magnet-free induction or wound-rotor motors. So "most electric car motors". Wikipedia: neodymium magnets serve as "Drive motors for hybrid and electric vehicles"; wind-turbine generators "(only those with permanent magnet excitation)", and "most wind turbines do not use permanent magnets", so "many wind turbines".
+    https://www.electricvehiclesresearch.com/articles/28314/the-ev-market-doubles-down-on-permanent-magnets-despite-material-costs ; https://en.wikipedia.org/wiki/Neodymium_magnet
+
+F27. Headphones: neodymium-iron-boron magnets "are used in essentially all headphones these days" (Theodore Gray's periodic table); Wikipedia lists "Loudspeakers and headphones" among the magnets' uses. Electrostatic headphones, a small specialist kind, use no magnet, so "the speakers in most headphones".
+    https://theodoregray.com/PeriodicTable/Samples/060.5/index.s6.html ; https://en.wikipedia.org/wiki/Neodymium_magnet ; https://mynewmicrophone.com/why-how-do-headphones-use-magnets/

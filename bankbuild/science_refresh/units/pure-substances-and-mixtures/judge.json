@@ -1,0 +1,70 @@
+{"unit": "pure-substances-and-mixtures",
+ "questions": {
+  "5f78c5f33d": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only choice of its kind. It is the one change that turns water into other substances, while the three wrong choices are boiling, freezing and dissolving, which T1 solids-liquids-and-gases and mixtures-and-solutions already teach leave the substance unchanged. The everyday sense of 'not an element' (made of parts) also points to 'splits it into two'. A student who does not know the definition (an element cannot be broken into simpler substances) can still get it.",
+     "fix": "Give the wrong choices the same look as the key: 'Electricity splits it into two gases' (key), 'Boiling sends bubbles of gas up through it' (the bubbles-are-hydrogen-and-oxygen lure; the bubbles are water vapour), 'Its drops can be split into ever smaller drops' (dividing is not breaking down), 'Salt and many minerals dissolve in it'. Context: add that a smaller drop is still water."}
+   ]},
+  "ec59d633ca": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "The fact keyed (a compound's properties are unlike those of its elements) is not in this unit's scope. It is the core line of the planned T3 unit elements-compounds-and-formulas ('with properties unlike its elements', taught there with sodium and chlorine). Changing the example to carbon dioxide does not change the fact, so two units would ask the same fact.",
+     "fix": "Re-key it to the T2 line, telling a compound from a mixture (the M4 confusion): 'When charcoal burns, its carbon and the oxygen of the air become carbon dioxide, a gas. Which kind of substance is carbon dioxide?' Choices: 'A compound of carbon and oxygen', 'A mixture of carbon and oxygen', 'A solution of carbon in oxygen', 'A new element made from the two'. Context: the carbon and oxygen are joined, in a fixed ratio, into one substance that no filter or magnet can separate. If Brandon prefers to keep the properties question at T2, use the minimal fix below and tell the T3 builder that the fact is taken."},
+    {"axis": "tell", "severity": "medium",
+     "what": "Two wrong choices are dead: 'A black smoke that catches fire easily' and 'A black powder that burns like charcoal'. Carbon dioxide is taught as a gas at T1 (how-plants-make-food keys 'Carbon dioxide gas'; the-bodys-main-organs keys it as the gas breathed out), so only the two 'colourless gas' choices stay live.",
+     "fix": "Minimal fix, if the question is kept: make all four colourless gases: 'A colourless gas that puts out flames', 'A colourless gas that makes flames burn brighter', 'A colourless gas that catches fire easily', 'A colourless gas that burns with a blue flame'."},
+    {"axis": "fact", "severity": "low",
+     "what": "Context: 'It is also the gas that every person breathes out.' Breath out is mostly nitrogen, and carbon dioxide is about 4 percent of it, so 'the gas' overstates.",
+     "fix": "'It is also one of the gases that every person breathes out.'"}
+   ]},
+  "2b27ebbe7f": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The context says brass's zinc share is 'generally from about 5 to 40 percent' and that the zinc is 'spread evenly all through the copper'. Brasses above about 35 to 38 percent zinc are two-phase (alpha-beta), so at the top of that range the second claim is loose. At grade level brass is the textbook homogeneous mixture, and the key stands.",
+     "fix": "Drop the percentage range, or say 'in most brass the zinc is spread evenly all through the copper'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'Distilled water' is used before distillation is taught (b84a928a3c teaches it). It is a common household word, so this is a minor point.",
+     "fix": "Optional: add to the context 'distilled water, boiled into steam and cooled back into water, leaving everything else behind'."}
+   ]},
+  "0b5eb1c262": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Clear water, with all the soil dissolved in it' is dead. T1 telling-materials-apart keys that sand does not dissolve, and nobody expects mud to dissolve into clear water. That leaves three live choices.",
+     "fix": "Wrong choice: 'One even layer of mixed grains, under clear water' (the belief that everything settles together)."},
+    {"axis": "grade", "severity": "low",
+     "what": "The soil jar test is also a common grade 3-4 soils activity, and sorting grains by size is close to mixtures-and-solutions' sieve question (T1 keys 'Their size'). It stays 6th grade because the point is a heterogeneous mixture separating by particle size, and the settling order is new.",
+     "fix": "None needed beyond the choice above. Keep the context's 'heterogeneous mixture' framing."}
+   ]},
+  "ac6b625728": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The two 'It boils at 100 too' choices make the same claim with two compatible reasons. If seawater boiled at 100, both would be right, so a test-wise player can rule out both together. That leaves a straight choice between 'above' and 'below'.",
+     "fix": "Replace 'It boils at 100 too, as dissolved salt has no effect' with 'It boils far above 100, as its salt must boil too' (the belief that a mixture boils at an average; salt itself boils near 1,413 degrees Celsius). Keep 'It boils at 100 too, as only its water boils away'."},
+    {"axis": "grade", "severity": "low",
+     "what": "Boiling-point elevation as a rule is a high-school (colligative) topic in the US. The qualitative fact used here (a mixture's boiling point differs from the pure substance's fixed one) is taught in middle school (KS3 Year 7; TEKS 6.6B uses properties to tell pure substances from mixtures). It fits as written: only the direction is keyed, with no numbers.",
+     "fix": "None needed. Keep the 100.6 figure in the context only."}
+   ]},
+  "b84a928a3c": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem rules out a wrong choice. It says 'the blue dye stays behind in the flask', so 'The cold tube filters the dye from the steam' cannot be true, since a filter in the tube would leave the dye in the tube. 'The dye sticks fast to the flask's hot glass' is weak too, which leaves about two live choices.",
+     "fix": "Wrong choice: 'The dye is a solid, and a solid can never boil' (a real belief that only liquids boil; the context adds that a solid boils too if it is hot enough). The stem may stay as it is."},
+    {"axis": "other", "severity": "low",
+     "what": "This is close to T1. The observation (the dissolved substance stays behind when the water leaves) is the fact of matter-made-of-tiny-particles' seawater dish and a line of mixtures-and-solutions' scope. Here it is the stem, and the key is the new T2 'why' (different boiling points), which is right.",
+     "fix": "Keep the key on the 'why'. Never re-key it to 'what stays behind'."}
+   ]},
+  "37741c20a7": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Sand dissolves in water, but gold does not' is dead. The stem itself says the moving water 'carries the sand and gravel out over the rim', and telling-materials-apart (T1) keys that sand does not dissolve. That leaves three live choices.",
+     "fix": "Wrong choice: 'Each gold flake is heavier than a pebble of gravel' (mixing up mass and density, the T1-to-T2 confusion; the stem's 'tiny flakes' lets a student who understands density reject it)."}
+   ]},
+  "dd59538cd5": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The framing gives the answer away. The stem praises the water's purity ('so clear, cold and clean') and then asks 'To a chemist, is this water a pure substance?', which tells a test-wise player that the everyday answer is wrong. Both 'Yes' choices die, and only the two 'No' choices are left. 'Yes, since it is clear and clean to drink' also just echoes the stem.",
+     "fix": "Stem: 'Hikers fill their bottles at a mountain spring and drink the water just as it is. Is the spring water a pure substance?' Choices: 'No, since rock minerals are dissolved in it' (key), 'No, since water is a compound, not an element', 'Yes, since nothing has been added to it', 'Yes, since it comes straight from nature'."}
+   ]}
+ },
+ "unit_notes": "Grade: judged as 6th-grade content (NGSS MS-PS1-1 and Core Knowledge place pure substances, elements and compounds, and mixtures in middle school), so the 2024 Texas move to grade 7 is not held against it. Every question fits grade 6 except ec59d633ca, whose fact belongs to T3 elements-compounds-and-formulas (see its issues). Lanes: no kitchen. ec59d633ca's charcoal never reaches a grill, and 37741c20a7's prospector is only a frame (the fact is density, not who mines gold). Overlap check against every final.json, with no T2 question purely re-asking a T1 fact. (1) 5f78c5f33d's context restates solids-liquids-and-gases' key (boiling bubbles are water vapour). That is fine as context or as a lure, but it must never be the key. (2) ac6b625728 sits next to mixtures-and-solutions' road-salt question (salt lowers the freezing point). The fact is different, and the T1 fact makes 'below 100' a fair lure. (3) b84a928a3c sits next to matter-made-of-tiny-particles' seawater dish (the salt is left behind): keep the key on the boiling-point 'why'. (4) 0b5eb1c262 sits next to mixtures-and-solutions' sieve (sorting by size): settling order is the new fact. (5) 37741c20a7 sits next to telling-materials-apart's floating question ('how heavy it is for its size'). The planned T2 unit density-float-or-sink must not use panning or gold against sand. (6) dd59538cd5's key fact (natural water carries dissolved minerals) is stated in the stem of electric-circuits' bath-water question. That is only a hint, not the same fact asked. (7) 5f78c5f33d sits next to the planned T2 unit signs-of-a-chemical-change (gas without boiling): that unit should not use the electrolysis of water. Against the other two T2 units judged with this one, no fact is shared; gold returns as a setting (see particles-in-motion's note). Scope coverage: pure substance as element or compound (5f78c5f33d, dd59538cd5), homogeneous mixture (2b27ebbe7f), heterogeneous mixture (0b5eb1c262), a property telling a pure substance from a mixture (ac6b625728), separating by boiling point (b84a928a3c) and by density (37741c20a7). Magnetism and filtering are rightly left to T1. Air, named in the scope as a homogeneous mixture, is never keyed; it is a candidate if ec59d633ca moves to T3. Within the unit, 5f78c5f33d and dd59538cd5 both concern water as a compound, but they key different facts (breaking down; compound counts as pure), which is fine."}

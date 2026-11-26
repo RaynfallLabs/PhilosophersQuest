@@ -27,6 +27,10 @@ background, none spawning others. When an agent finishes:
 ## The lead's scripts between steps
 - After **research**: `py -m bankbuild.science_refresh.gates <id>`. A FAIL left
   over is fine: the reviser must fix gate FAILs.
+- A unit whose judge and fact-check are `ok` on every question, with no
+  gate FAIL, skips the reviser. The lead writes `final.json` with the draft's
+  questions unchanged and empty `revised`, `added` and `dropped`, then runs
+  `finalize`. `signs-of-a-chemical-change` was the first, on 2026-11-26.
 - After **revise**: `py -m bankbuild.science_refresh.gates --kind final <ids>`.
   If a unit changed nothing (empty `revised` and `added`), it skips the re-check.
 - After **recheck** (or for a unit with nothing changed):

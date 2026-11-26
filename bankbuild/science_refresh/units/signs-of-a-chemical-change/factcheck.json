@@ -1,0 +1,280 @@
+{
+ "unit": "signs-of-a-chemical-change",
+ "questions": {
+  "28e07aed6a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: only the tablet's bubbles are a new substance; an effervescent antacid (aspirin, sodium bicarbonate, citric acid) fizzes from an acid-base reaction making carbon dioxide once water reaches it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Alka-Seltzer",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: bubbles in boiling water are water vapour (a change of state, no new substance), so 'only boiling', 'both' and 'neither' are all wrong",
+     "result": "ok",
+     "source": "https://wonderopolis.org/wonder/why-does-water-bubble-when-it-boils",
+     "note": "The first tiny bubbles before a full boil are dissolved air escaping, also not a new substance, so no wrong choice becomes right."
+    },
+    {
+     "claim": "Context: bubbles from a non-boiling liquid are a clue to a new substance, not proof; boiling bubbles are water turned to gas",
+     "result": "ok",
+     "source": "https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Physical_Properties_of_Matter/States_of_Matter/Phase_Transitions/Boiling",
+     "note": ""
+    }
+   ]
+  },
+  "a3a1eeb59e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: an air-activated hand warmer (iron powder, salt, water, charcoal, vermiculite) heats because the iron oxidises (rusts) fast in air, an exothermic reaction; salt speeds it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hand_warmer",
+     "note": ""
+    },
+    {
+     "claim": "Second source for the reaction, the salt as catalyst, and the airtight outer wrapper",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Hand_warmer",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: salt dissolving in water gives off heat. NaCl's enthalpy of solution is about +3.87 kJ/mol, slightly endothermic, so the context's 'gives off no heat at all' is true",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Enthalpy_change_of_solution",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: grains rubbing (friction) and stored sunlight are not the heat source; the heat is the oxidation reaction",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hand_warmer",
+     "note": ""
+    },
+    {
+     "claim": "Context: stays hot for hours (about 50-55 C for 8-12 hours); slow rusting of a gate is not felt as warmth",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hand_warmer",
+     "note": ""
+    }
+   ]
+  },
+  "3e995cb9ac": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: limewater (saturated calcium hydroxide, 'slaked lime') is clear and turns milky as carbon dioxide forms insoluble calcium carbonate, a precipitate",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Calcium_hydroxide",
+     "note": ""
+    },
+    {
+     "claim": "Second source: Ca(OH)2 + CO2 -> CaCO3(s) + H2O, 'milky' from precipitation of insoluble calcium carbonate; calcium hydroxide is traditionally called slaked lime, so 'the lime dissolved in the water' is a fair simplification",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Limewater",
+     "note": ""
+    },
+    {
+     "claim": "Breath turns limewater cloudy within 20-30 seconds through a straw (fits 'within a minute')",
+     "result": "ok",
+     "source": "https://www.chem.indiana.edu/faculty-research/faculty-resources/chemistry-demos/demo/limewater-as-indicator-of-carbon-dioxide-gas",
+     "note": ""
+    },
+    {
+     "claim": "Context: calcium carbonate is the stuff of chalk and limestone and practically insoluble",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Calcium_carbonate",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices (trapped bubbles, mist from breath, dust) are not the cause of the lasting milkiness",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Limewater",
+     "note": ""
+    }
+   ]
+  },
+  "57fcbc6f60": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: copper turns blue-green by reacting with oxygen, carbon dioxide, water (and in cities sulfur dioxide) from air and rain, forming a patina",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Patina",
+     "note": "Real roof patina is a mix of basic copper carbonate, sulfates (brochantite) and near the sea chlorides. The context names only oxygen, carbon dioxide and water; that is incomplete but not false, and the key ('air and rain') covers sulfur from the air too. No fix needed."
+    },
+    {
+     "claim": "Second source: green patina is mixtures of copper chlorides, sulfides, sulfates and carbonates depending on the air; takes many years",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Patina",
+     "note": ""
+    },
+    {
+     "claim": "Context: the patina adheres tightly and protects the copper beneath; patinated copper roofs last over a century",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Patina",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: moss and algae make the green. Copper is toxic to moss and algae (copper strips are sold to keep them off roofs), and the green is a copper compound",
+     "result": "ok",
+     "source": "https://www.askthebuilder.com/removing-moss-and-algae-from-roofs/",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: rain washing off the shine, sunlight fading the colour; neither makes a green compound",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Patina",
+     "note": ""
+    },
+    {
+     "claim": "New copper is reddish-orange",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Copper",
+     "note": ""
+    }
+   ]
+  },
+  "5b016ff336": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a glow stick lights because two liquids (hydrogen peroxide and a phenyl oxalate ester with a fluorescent dye) react once bending breaks the inner glass vial and shaking mixes them (chemiluminescence)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glow_stick",
+     "note": "Grokipedia puts the peroxide in the outer tube, Wikipedia puts it in the vial; the question names neither, so it survives either way."
+    },
+    {
+     "claim": "Second source: bending breaks the inner container, the solutions combine, energy excites the dye; the reaction releases energy mostly as light, so little heat",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Glow_stick",
+     "note": ""
+    },
+    {
+     "claim": "Context and wrong choice: glow-in-the-dark materials absorb light and re-emit it slowly (phosphorescence); chemiluminescence needs no light first, so 'daylight it soaked up' is wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Phosphorescence",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: heat from the snap, static sparks from shaking; neither is the light source",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glow_stick",
+     "note": ""
+    },
+    {
+     "claim": "Glows for hours (4-12 hours standard)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glow_stick",
+     "note": ""
+    }
+   ]
+  },
+  "5f85385c9c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: fresh sweat has almost no smell. Eccrine sweat is odourless; apocrine secretion is an odourless fluid",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Body_odor",
+     "note": ""
+    },
+    {
+     "claim": "Key: skin bacteria (Corynebacterium, Staphylococcus hominis) break sweat components down into smelly compounds (thioalcohols, short-chain fatty acids)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Body_odor",
+     "note": ""
+    },
+    {
+     "claim": "Second source: 'Sweat itself doesn't smell'; the water, salt and fat of sweat mix with bacteria and cause odour (supports the context's 'mostly water with a little salt and fat')",
+     "result": "ok",
+     "source": "https://my.clevelandclinic.org/health/diseases/17865-body-odor",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: drying sweat concentrating a smell, salt left behind, sweat soaking into cloth; none makes the odour, which comes from bacterial breakdown products",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Body_odor",
+     "note": "Salt is odourless or at most faint (Wikipedia Sodium chloride infobox)."
+    }
+   ]
+  },
+  "e352e2dbe0": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Hematite is iron(III) oxide, Fe2O3; massive/crystalline specimens are black to silver-grey and metallic; it leaves a reddish-brown streak",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hematite",
+     "note": ""
+    },
+    {
+     "claim": "Key: the streak is the colour of the mineral's own fine powder rubbed on unglazed porcelain, so the powder is the same mineral ground fine (a physical change)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Streak_(mineralogy)",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'powder from the tile': the plate is about Mohs 6.5-7, harder than metallic hematite (5-6.5), so the mineral, not the tile, is ground off",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Streak_(mineralogy)",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: a new substance made by rubbing, a different red rock inside; both wrong, the streak is hematite itself",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Streak_(mineralogy)",
+     "note": ""
+    },
+    {
+     "claim": "Context: streak often differs from the lump's colour and geologists use it to tell minerals apart; so a colour change is a clue, not proof",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Streak_(mineralogy)",
+     "note": ""
+    }
+   ]
+  },
+  "5aacc75716": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: two white powders (barium hydroxide octahydrate, sold as white crystals or crystalline powder; ammonium chloride, a white crystalline solid) stirred in a flask freeze it to a wetted wooden block",
+     "result": "ok",
+     "source": "https://edu.rsc.org/exhibition-chemistry/chilling-effects/2000044.article",
+     "note": "RSC: 'the water on the base freezes causing the watch glass or wooden block to freeze to the flask'. Colours: https://www.thermofisher.com/order/catalog/product/203140010 and https://grokipedia.com/page/Ammonium_chloride"
+    },
+    {
+     "claim": "Context: temperature drops to about -20 C",
+     "result": "ok",
+     "source": "https://edu.rsc.org/exhibition-chemistry/chilling-effects/2000044.article",
+     "note": ""
+    },
+    {
+     "claim": "Context: products are ammonia, water and a new solid (barium chloride dihydrate); damp red litmus turns blue from ammonia vapour",
+     "result": "ok",
+     "source": "https://edu.rsc.org/experiments/endothermic-solid-solid-reactions/739.article",
+     "note": ""
+    },
+    {
+     "claim": "Key: some reactions take in heat (endothermic), so the surroundings cool",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Endothermic_process",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice 'Yes, some reactions give off cold': cold is not a substance; thermal energy flows only from warmer to cooler, so the reaction draws heat in rather than giving cold out",
+     "result": "ok",
+     "source": "https://www.open.edu/openlearncreate/mod/oucontent/view.php?id=64798&section=5",
+     "note": "This is the standard 'cold flows' misconception lure; the context explains why it is wrong. Not defensible as right in a science frame."
+    },
+    {
+     "claim": "Wrong choices 'reactions only give off heat' and 'only melting makes things colder': this reaction itself (and evaporation, dissolving ammonium nitrate) disproves both",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Endothermic_process",
+     "note": ""
+    }
+   ]
+  }
+ },
+ "unit_notes": "All eight questions check out. Minor notes only: the copper patina context names oxygen, carbon dioxide and water, while real roof patina is often mostly sulfates (from sulfur dioxide) or chlorides near the sea; incomplete but not false. Sources disagree on which glow-stick liquid sits in the glass vial; the question does not say, so it is safe."
+}

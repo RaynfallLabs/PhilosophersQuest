@@ -1,0 +1,158 @@
+{
+ "unit": "density-float-or-sink",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "density-float-or-sink",
+   "question": "A geologist breaks a small chip off a large quartz crystal. She measures the chip's mass and its volume to find its density, the amount of mass packed into each unit of its volume. How does the chip's density compare with the whole crystal's?",
+   "answer": "The same, since it is the same quartz",
+   "choices": [
+    "The same, since it is the same quartz",
+    "Less, since it has far less mass",
+    "More, since it takes up far less space",
+    "Less, since a big crystal is packed tighter"
+   ],
+   "context": "Density belongs to the material, not to the size of the piece. The chip has far less mass than the crystal, but it also takes up far less space, in just the same proportion, so every piece of quartz, big or small, has a density of about 2.65 grams per cubic centimetre.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "M2"
+   ],
+   "grade_note": "6th-grade density lessons teach density as mass per volume, a property of the material that stays the same however small the piece, against the common belief that more material means a higher density."
+  },
+  {
+   "tier": 2,
+   "topic": "density-float-or-sink",
+   "question": "Mercury is a metal, but it is liquid at room temperature. A chemist sets a solid iron bolt on a dish of mercury, and the bolt floats on it. Why does the iron float?",
+   "answer": "Mercury is denser than iron",
+   "choices": [
+    "Mercury is denser than iron",
+    "The bolt is too small and light to sink",
+    "Mercury's surface skin holds it up",
+    "Mercury pulls on it like a magnet"
+   ],
+   "context": "Iron's density is about 7.9 grams per cubic centimetre and mercury's about 13.5, so the iron is less dense than the liquid and floats, held up by buoyancy just as a cork is held up by water. Size is not the reason, since the same bolt sinks at once in water, and mercury is no magnet that could pull on it. Gold, at about 19.3, is denser than mercury and sinks in it.",
+   "facts": [
+    "F2",
+    "F4",
+    "F9",
+    "F10",
+    "M1"
+   ],
+   "grade_note": "G6.P4 asks students to compare a substance's density with various fluids, not only water; a metal floating on a denser liquid metal is the floating rule applied to a fluid other than water."
+  },
+  {
+   "tier": 2,
+   "topic": "density-float-or-sink",
+   "question": "Most substances are denser as solids than as liquids, but water is not: its ice is less dense than liquid water. If water were like most substances, what could happen to a shallow lake in a long, hard winter?",
+   "answer": "Ice would sink, and the lake could freeze from the bottom up",
+   "choices": [
+    "Ice would sink, and the lake could freeze from the bottom up",
+    "Ice would still float, and the lake would freeze over as now",
+    "Ice would sink, and fish would swim above it all winter",
+    "Ice would float lower, and the lake would freeze more slowly"
+   ],
+   "context": "Ice forming at the cold surface would sink and pile up on the bottom, and with no floating lid to slow the loss of heat, more would form and sink until a shallow lake froze solid. Real ice floats on top as a lid, so the water beneath it usually stays liquid all winter, and fish live on in it.",
+   "facts": [
+    "F4",
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "That ice floats because it is less dense than liquid water is in the unit's scope, and 6th-grade lessons draw its consequence: a lake freezes over at the top, with living water below."
+  },
+  {
+   "tier": 2,
+   "topic": "density-float-or-sink",
+   "question": "A girl lies back and floats, first in a freshwater lake and then, a week later, in the sea. In which does she float higher in the water, and why?",
+   "answer": "In the sea, as salt water is denser",
+   "choices": [
+    "In the sea, as salt water is denser",
+    "In the lake, as fresh water is denser",
+    "In the sea, as its waves lift her up",
+    "In the lake, as its water is calmer"
+   ],
+   "context": "Salt dissolved in seawater adds mass without adding as much volume, so seawater is denser than fresh water, about 1.025 grams per cubic centimetre against 1.000. The denser the water, the less of it a floating body must push aside to be held up, so she floats higher in the sea, and higher still in a lake about ten times saltier than the sea.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "G6.P4 names a person floating more easily in salt water than in fresh water as a 6th-grade density case."
+  },
+  {
+   "tier": 2,
+   "topic": "density-float-or-sink",
+   "question": "A solid block of steel sinks in water at once. Yet a cargo ship built from thousands of tonnes of steel floats, even with a full load. What lets the ship float?",
+   "answer": "Its air-filled hull makes it less dense than water",
+   "choices": [
+    "Its air-filled hull makes it less dense than water",
+    "Its steel is a special kind, less dense than water",
+    "Its engines push it upward as well as forward",
+    "Its flat bottom rests on the water's surface skin"
+   ],
+   "context": "Steel is nearly eight times as dense as water, so a solid block of it sinks. A ship's steel is spread thin around a huge hollow hull full of air, so the ship as a whole, steel and air together, is less dense than water and floats.",
+   "facts": [
+    "F17",
+    "F4"
+   ],
+   "grade_note": "The unit's scope names the steel ship: 6th-grade density lessons explain that its hull holds so much air that the ship as a whole is less dense than water."
+  },
+  {
+   "tier": 2,
+   "topic": "density-float-or-sink",
+   "question": "A girl lets go of a balloon filled with helium, and it rises into the sky until it is out of sight. Why does the balloon rise?",
+   "answer": "Helium is far less dense than air",
+   "choices": [
+    "Helium is far less dense than air",
+    "Helium has no weight at all",
+    "Helium is warmer than the air around it",
+    "Every gas floats up through the air"
+   ],
+   "context": "Air is a fluid too. Helium has weight, but it is only about a seventh as dense as air, so a balloon of it, rubber and all, floats up through the air as a cork floats up through water, with no need of heat as a hot-air balloon has. Not every gas rises: carbon dioxide is denser than air and flows along the ground.",
+   "facts": [
+    "F19",
+    "F20",
+    "F21",
+    "M4"
+   ],
+   "grade_note": "G6.P4 is density across fluids, and air is one: 6th-grade density lessons explain the helium balloon by helium being less dense than air, against the belief that gases weigh nothing."
+  }
+ ],
+ "revised": {
+  "b206efc711": {
+   "old_hash": "c7ab03776c",
+   "why": "Judge (medium, grade): 'What decides which liquid ends up at the bottom? Which liquid is the densest' was T1 telling-materials-apart's floating rule ('How heavy it is for its size') in a new word. Re-keyed on what is new at 6th grade in the same scope line: layers form by density whatever the pouring order (water poured on top of motor oil sinks beneath it), and a solid stops at the boundary its density matches. The bead's behaviour in each liquid is given, so the student must know which layer ends on top. Lures: the pouring-order picture with the bead between the layers, the top and the bottom. The judge's own fix (the bead's density between the two) was not used: its lures were all struck by the T1 rule alone, and its viscosity lure ('thicker than the oil') is not a property of a solid bead. New F25 (Scientific American, Grokipedia Motor oil and High-density polyethylene: an HDPE bead, 0.941-0.967, sinks in motor oil, 0.86-0.94, and floats in water). The viscosity point stays in the context."
+  },
+  "a550ab5aac": {
+   "old_hash": "a550ab5aac",
+   "why": "Judge (medium, tell): 'Iron is denser than mercury' was the key turned round and explained sinking, so only three choices were live. Replaced, as the judge proposed, with 'The bolt is too small and light to sink', the size-and-weight belief (M1). The context now answers that lure (the same bolt sinks in water) and, as the fact-check suggested, says mercury is no magnet rather than that a magnet does not pull on mercury. The object stays a bolt, never a pin (judge, low). Stem, key and fact (F4, F9, F10) unchanged."
+  },
+  "fb3f78cbd1": {
+   "old_hash": "c6228bdce0",
+   "why": "Judge (high, tell): the stem gave the fact and its consequence ('so in winter a lake freezes over at the top') and asked for the mirror image. The stem now gives only the premise (most solids are denser than their liquids, water's ice is not), as the judge proposed, so the student must work out what sinking ice does to a lake. Judge (medium): the silly 'Ice would melt at once' lure is now 'Ice would sink, and fish would swim above it all winter', the half-step error that misses the ice piling up (F13: such a pond 'would solidify from the bottom up'); two sink and two float choices. Context rewritten to explain the pile-up and the lid; no molecular why (T4's). Same fact and key."
+  },
+  "f76f3e550b": {
+   "old_hash": "f76f3e550b",
+   "why": "Judge unit note: once the pumice question is re-keyed on water filling the stones' holes, the ship context's last sentence ('If the hull floods, water takes the place of the air, and the ship sinks') would teach that answer. Sentence removed. Stem, choices, key and fact (F17) unchanged; the low 'solid block' polish was left, as the judge rated it optional and the lures stay live."
+  },
+  "eea463decf": {
+   "old_hash": "325ba8f88f",
+   "why": "Judge (medium): the same fact as the ship question (trapped gas makes the whole object less dense than water) with mirrored lures. Re-keyed, as the judge proposed, on the raft's end (F23, new F26): water filling the holes. The stem never says the stones hold gas, so the student must know why pumice floats to answer. The judge's lures were not all used: wave abrasion does speed sinking (Grokipedia Pumice raft: it 'can trigger sinking in 50-80% of fragments') and daytime heat does make some stones bob up (Berkeley Lab), so no lure names wearing, breaking or heat. The lures are the calm-sea belief (waves hold floaters up, as in the swimmer's lure), the size belief (big clumps sink, M1) and the hard-things-sink belief (M6, Science Learning Hub). The ship context's flooding sentence was cut so it does not teach this key."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "b206efc711",
+   "question": "A small plastic bead floats in water but sinks in motor oil. A student pours motor oil into a tall glass cylinder, then pours water in on top of it, and waits a few minutes. Then she drops in the bead. Where does the bead come to rest?",
+   "why": "failed the re-check: Stem clause rules out two lures. The stem says the bead floats in water, so 'On the oil, under the layer of water' (a bead sitting beneath water) and 'At the very bottom of the cylinder' (it floats on the water wherever the water lies) are struck by the stem's own words. Only 'At the very top, on the surface' stays live beside the key. That choice is the real pouring-order outcome (water on top, the bead floating on it). The 'between the layers in pouring order' lure the revision meant to add needs a bead denser than water, so it contradicts the stem. The facts are right (water sinks below motor oil whatever the pouring order; the bead stops at the boundary), but the question is a two-way choice."
+  },
+  {
+   "old_hash": "eea463decf",
+   "question": "After an undersea volcano erupts, a raft of grey, rough pumice stones floats on the ocean for months. Then, one by one, the stones begin to sink. Why do they sink at last?",
+   "why": "failed the re-check: The key is true (pores fill with water as the gas diffuses out; Grokipedia, Berkeley Lab). But the stem's 'one by one, the stones begin to sink' rules out 'The stones cling together into big clumps', since clumped stones would sink as clumps, not one by one. It also undercuts 'The sea grows calm, and no waves hold them up', since a calm sea would let the whole raft down at once. 'One by one' also echoes the key's 'each stone'. That leaves the key against 'Their stone slowly hardens in the cold sea', a weak lure for a stone that is already hard rock. The answer stands out once the stem is read closely."
+  }
+ ]
+}

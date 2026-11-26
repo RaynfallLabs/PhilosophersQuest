@@ -1,0 +1,45 @@
+{"unit": "metals-nonmetals-and-metalloids",
+ "questions": {
+  "ab2d63ea68": {"verdict": "ok", "issues": []},
+  "300e3ec219": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'hammers ... without cracking' is the textbook definition of malleability. The answer's root (malle-, as in 'mallet') matches 'hammers', so a word-savvy player can link the two. T2 allows naming a property from a description, and the lure 'light shines through it', pointing at lustre, is good.",
+     "fix": "Optional: 'A goldbeater beats a small square of gold again and again ...', which loosens the hammer-to-mallet link."}
+   ]},
+  "83a2e7610d": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'About half of it, all down the right side' is the weakest choice. Few students put the metals on the right; the common mistake is the left half.",
+     "fix": "Wrong choice: 'About a third of it, across the middle' (the transition metals alone)."}
+   ]},
+  "f40456e22e": {"verdict": "ok", "issues": []},
+  "0a85fedba3": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "Everyday knowledge answers it. Any 11-year-old knows oxygen, nitrogen and helium are not metals, so 'A metal' is dead. 'A metalloid' carries the word 'metal', and 'A rare earth element' sounds like an earthy solid. It also uses a term the unit teaches only in the context of 42f87ca3de. 'A nonmetal' is the obvious default for a gas, so a student who knows nothing of the periodic table still gets it.",
+     "fix": "Test the scope line ('many nonmetals are gases') where it is not obvious. For example: 'Carbon, sulfur and iodine are nonmetals that are solid at room temperature, and bromine is a liquid. What are most of the other nonmetals at room temperature?' Choices: 'Gases', 'Liquids', 'Brittle solids', 'Shiny, bendable solids'. Context: eleven of the seventeen nonmetals are gases (oxygen, nitrogen, chlorine, helium and the other noble gases), and every element that is a gas is a nonmetal."},
+    {"axis": "grade", "severity": "medium",
+     "what": "As written, the question is too babyish for 6th grade. 'A gas is not a metal' is common sense, not the grade's periodic-table content.",
+     "fix": "The rewrite above fixes it."}
+   ]},
+  "d7667fab73": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "This is the second question in the unit on the table's layout. 83a2e7610d's context already says the nonmetals gather in the top right, and this question keys 'On the right side'. It is acceptable, because the student must first sort the element as a nonmetal from its properties and rule out the shiny metalloids. But it is the closest pair in the unit.",
+     "fix": "Keep both. If one must go, this is the one."}
+   ]},
+  "2755f26b12": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'It can be drawn out into long, thin wires' is nearly dead. The stem says chips are built on thin slices, and wire-drawing has nothing to do with what a chip does. That leaves three live choices. The key is also the longest (11 words against 8 and 9) and the only 'in-between' answer in a unit that teaches metalloids are in between.",
+     "fix": "Wrong choice: 'It is magnetic, the way iron and steel are' (the confusion with magnetic hard drives). Shorten the key to 'It can be made to carry electricity or block it'."}
+   ]},
+  "42f87ca3de": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The device list points to the answer. Motors, generators and speakers are the three textbook magnet devices; anyone who has taken apart a speaker knows it has a magnet, with no knowledge of neodymium. Two wrong choices die on other units' facts: 'A wire coil' (electric-circuits teaches that wires are copper) and 'A microchip' (2755f26b12 in this unit teaches that chips are silicon). 'A switch' is weak, so in effect only 'A magnet' is left.",
+     "fix": "Stem: 'Cordless drills, computer hard disk drives and the motors of electric cars all hold a small part made with neodymium, one of the rare earth elements. What is that part?' Choices: 'A magnet', 'A battery' (the strong lure: drills and cars run on batteries, and lithium is often taken for a rare earth), 'A wire coil', 'A switch'."}
+   ]}
+ },
+ "unit_notes": "Neodymium ruling: it is fair 6th-grade content. The 2024 Texas TEKS 6.6C asks 6th graders to identify elements as metals, nonmetals, metalloids and rare earth elements, and to say why they matter to modern life. The map line G6.P3 follows that, and strong magnets are the standard example. NGSS and Core Knowledge do not name rare earths at grade 6, so the content is Texas-led, but it is the grade's content and not advanced. The unit's scope text should add the rare earths so that it matches its map line. Keep the question with the fixed choices above. Grade fit: the rest is squarely 6th grade (symbols with their Latin roots; lustre, malleability and conductivity, the exact TEKS 6.6A words; where metals sit; metalloids' shine and brittleness; silicon chips). The one babyish item is 0a85fedba3. Overlap check against every final.json: telling-materials-apart and electric-circuits teach that metals conduct, copper wires and iron's magnetism. No question here re-asks them: d7667fab73 uses poor conduction as a given clue, and 2755f26b12's wrong choices draw on copper and glass consistently. inside-the-atom (T4) uses gold's and lead's atomic numbers and the valence of sodium and potassium, with no overlap. Against particles-in-motion and pure-substances-and-mixtures, gold returns as a setting (gold ring, gold panning), but on different facts (melting in particles; density), so it is not an overlap. Within the unit, the closest pair is 83a2e7610d and d7667fab73, both on the table's layout (see d7667fab73). Scope coverage is complete: symbols, metal properties, the metals' place, metalloid properties, nonmetal gases, the nonmetals' place, silicon and rare earths. Lane: 42f87ca3de's context stays off mining and trade, as it should."}

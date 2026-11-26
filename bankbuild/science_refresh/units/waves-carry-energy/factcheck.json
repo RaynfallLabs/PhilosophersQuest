@@ -1,0 +1,357 @@
+{
+ "unit": "waves-carry-energy",
+ "questions": {
+  "cc6b236696": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: pond ripples carry energy, but not the water, across the pond",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/facts/wavesinocean.html",
+     "note": "NOAA: 'Waves transmit energy, not water, across the ocean'; 'water does not actually travel in waves'. OpenStax: mechanical waves 'transfer energy and momentum, without transferring mass'. Safe at grade level as the key."
+    },
+    {
+     "claim": "Wrong: 'The water, but not energy'",
+     "result": "ok",
+     "source": "https://openstax.org/books/university-physics-volume-1/pages/16-1-traveling-waves",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'Both the water and energy' (not defensible via Stokes drift?)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Stokes_drift",
+     "note": "Stokes drift is real but second-order, scaling with wave steepness; for a pebble's few small ripples it is negligible and carries no water to the far bank. Not a defensible answer at this level."
+    },
+    {
+     "claim": "Wrong: 'Neither the water nor energy'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wave",
+     "note": ""
+    },
+    {
+     "claim": "Context: a floating leaf rises and falls as each ripple passes",
+     "result": "ok",
+     "source": "https://openstax.org/books/university-physics-volume-1/pages/16-1-traveling-waves",
+     "note": "OpenStax: the wave causes 'a seagull to move up and down'."
+    },
+    {
+     "claim": "Context: the leaf 'ends up where it started, because the water under it only moves round in small loops'",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Stokes_drift",
+     "note": "NOAA Ocean Explorer does say a floating object ends up 'in the same position as before the wave came by', so this is the standard teaching line. Strictly, the loops do not quite close: Grokipedia Stokes drift says particles follow 'closed orbital paths but with a systematic forward displacement', 'returning close to but slightly ahead of its starting position'. Fix (cheap, keeps it true): 'then ends up almost exactly where it started, because the water under it mostly just moves round in small loops.'"
+    },
+    {
+     "claim": "Context: a wave carries energy from place to place while the matter stays behind",
+     "result": "ok",
+     "source": "https://oceanexplorer.noaa.gov/facts/waves.html",
+     "note": "NOAA: 'The only thing waves do transmit across the sea is energy'; 'the water in waves doesn't travel much at all'."
+    }
+   ]
+  },
+  "74f8246465": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a ribbon tied to a rope rises and falls in one spot as a flicked wave passes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Transverse_wave",
+     "note": "Grokipedia: on a string 'particles move up and down as the wave travels along the string'."
+    },
+    {
+     "claim": "Wrong: 'It rides along the rope to the far end'",
+     "result": "ok",
+     "source": "https://openstax.org/books/university-physics-volume-1/pages/16-1-traveling-waves",
+     "note": "Waves transfer energy 'without transferring mass'."
+    },
+    {
+     "claim": "Wrong: 'It slides back and forth along the rope'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Transverse_wave",
+     "note": "The ribbon is tied on; rope motion in a transverse wave is perpendicular to travel. Not defensible."
+    },
+    {
+     "claim": "Wrong: 'It inches forward a little with each hump'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Transverse_wave",
+     "note": "No net forward motion of the rope in a rope wave."
+    },
+    {
+     "claim": "Context: each bit of rope moves at right angles to the wave's travel; this is a transverse wave",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Transverse_wave",
+     "note": "Grokipedia: 'oscillations occur perpendicular to the direction of propagation'."
+    }
+   ]
+  },
+  "0f19c0daf6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the low dip of a wave is a trough",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Crest_and_trough",
+     "note": "Grokipedia: trough is 'the point of maximum negative displacement'; on water, troughs are 'depressions where the surface dips below equilibrium'."
+    },
+    {
+     "claim": "Wrong: 'A crest' (the high point, not the dip)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Crest_and_trough",
+     "note": "Crests 'appear as elevated ridges'."
+    },
+    {
+     "claim": "Wrong: 'A compression' / 'A rarefaction' (parts of a longitudinal wave, not the dip of a water wave)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Longitudinal_wave",
+     "note": ""
+    },
+    {
+     "claim": "Context: crests are highest points, troughs lowest; compressions and rarefactions are the crowded and spread-out parts of waves such as sound",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Rarefaction",
+     "note": ""
+    }
+   ]
+  },
+  "ee235f108e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a spring toy pushed and pulled along its length, with bunches of squeezed coils travelling down it, carries a longitudinal wave",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Longitudinal_wave",
+     "note": "Grokipedia: particles oscillate 'parallel to the direction of energy propagation'; example 'coiled springs like a slinky'; 'compressions representing regions of increased particle density'. OpenStax: 'the spring oscillates back and forth, while the wave propagates to the right'."
+    },
+    {
+     "claim": "Wrong: 'A transverse wave'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Transverse_wave",
+     "note": "Transverse needs motion perpendicular to travel; the coils here move along the line of travel."
+    },
+    {
+     "claim": "Wrong: 'A surface wave'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wave",
+     "note": "A surface wave travels along an interface between two media (water surface, ground); not this."
+    },
+    {
+     "claim": "Wrong: 'An electromagnetic wave'",
+     "result": "ok",
+     "source": "https://openstax.org/books/university-physics-volume-1/pages/16-1-traveling-waves",
+     "note": "EM waves are field oscillations, not coils of a spring."
+    },
+    {
+     "claim": "Context: in a longitudinal wave the matter moves back and forth along the wave's line; shaken up and down the same spring carries a transverse wave",
+     "result": "ok",
+     "source": "https://openstax.org/books/university-physics-volume-1/pages/16-1-traveling-waves",
+     "note": "OpenStax: 'the spring moves vertically up and down, while the wave propagates horizontally to the right'."
+    }
+   ]
+  },
+  "a7f31f3ac6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the spread-out region left as the drum skin moves back in is a rarefaction",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Rarefaction",
+     "note": "Grokipedia: a region 'where particles are spaced farther apart than in their equilibrium state, resulting in lower pressure'; 'the vibrating source pulls air molecules apart'. OpenStax College Physics 17.1: a vibrating string 'compresses the air in front of it and expands the air behind it'."
+    },
+    {
+     "claim": "Stem physics: the skin moving out and in makes crowded and spread-out regions of air",
+     "result": "ok",
+     "source": "https://openstax.org/books/college-physics-2e/pages/17-1-sound",
+     "note": "OpenStax: 'These compressions (high pressure regions) and rarefactions (low pressure regions) move out'."
+    },
+    {
+     "claim": "Wrong: 'A compression' (the crowded region, the opposite)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Longitudinal_wave",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'A trough' / 'A crest' (high and low points of a transverse wave, not a density region)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Crest_and_trough",
+     "note": ""
+    },
+    {
+     "claim": "Context: sound is a string of compressions and rarefactions; crests and troughs belong to waves such as a rope wave",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sound",
+     "note": "Grokipedia Sound: 'a mechanical longitudinal wave'; compressions and rarefactions moving outward."
+    }
+   ]
+  },
+  "77d42ecae7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: as sound travels down a hallway, air particles move back and forth, each near its own place",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sound",
+     "note": "Grokipedia Sound: the disturbance moves 'without net displacement of the particles themselves'; 'individual particles return to their original positions after each cycle'. (Molecules also have random thermal motion, but the motion the sound gives them is back and forth in place; the grade-level statement is true.)"
+    },
+    {
+     "claim": "Wrong: 'Along the hallway, all the way to his ear'",
+     "result": "ok",
+     "source": "https://oceanservice.noaa.gov/facts/wavesinocean.html",
+     "note": "Waves carry energy, not the medium; Grokipedia Sound: no net displacement of particles."
+    },
+    {
+     "claim": "Wrong: 'Up and down, across the sound's path'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Transverse_wave",
+     "note": "Mechanical transverse waves 'cannot travel through the bulk of fluids like gases or liquids'; sound in air is longitudinal (OpenStax: 'Sound waves in air and water are longitudinal')."
+    },
+    {
+     "claim": "Wrong: 'Not at all, as the sound slips past them'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sound",
+     "note": "Sound is a vibration of the particles of the medium; it cannot propagate without them."
+    },
+    {
+     "claim": "Context: each particle is pushed a little along the path and springs back, passing the push on; air does not flow; sound does not slip through gaps; no particles, no sound",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sound",
+     "note": "Grokipedia: 'It cannot propagate in a vacuum'."
+    }
+   ]
+  },
+  "ececeeb656": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: sound needs matter to travel; light does not",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sound",
+     "note": "Grokipedia Sound: 'It cannot propagate in a vacuum'; Grokipedia Wave: electromagnetic waves 'do not require a medium and can travel through vacuum'."
+    },
+    {
+     "claim": "Stem: as the air is pumped out the buzz fades 'until no one can hear it' (does a real lab jar go silent?)",
+     "result": "ok",
+     "source": "https://web.physics.ucsb.edu/~lecturedemonstrations/Composer/Pages/44.06.html",
+     "note": "With the source isolated on rubber or foam, demo pages report it going inaudible: UCSB 'you and the class cannot hear the ringing of the bell'; Purdue (https://www.physics.purdue.edu/demos/display_page.php?item=4A-03) 'The sound will diminish to an inaudible amplitude'. Others report 'nearly zero' (Clemson) and that a listener inside the jar would still hear it faintly (Iowa), since no school pump makes a true vacuum. 'No one can hear it' (the audience) is a fair description of a well-run demo."
+    },
+    {
+     "claim": "Wrong: 'The glass blocks sound once the air is gone'",
+     "result": "uncertain",
+     "source": "https://science.clemson.edu/physics/labs/Demo_Web/Demos/3b30.30.htm",
+     "note": "Demo-physics pages say the real jar never gets empty enough to stop sound inside it; what the demo actually shows is an impedance mismatch AT THE GLASS. Clemson: it 'demonstrates an impedance mismatch between the very low pressure air in the jar and the glass, which cannot be moved sufficiently to transmit sound'; Iowa (https://instructional-resources.physics.uiowa.edu/node/3796): evacuating the jar creates 'an impedance mismatch' at the walls that hinders sound passing through the glass. A well-read student or teacher could defend this choice. Fix: replace it with a clearly wrong, misconception-based choice, e.g. 'The pump sucks the sound out along with the air' (sound as a thing, M3)."
+    },
+    {
+     "claim": "Wrong: 'The buzzer stops shaking once the air is gone'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Bell_jar",
+     "note": "Grokipedia: the sound fades 'even though the bell continues to vibrate visibly'."
+    },
+    {
+     "claim": "Wrong: 'The empty jar soaks up the sound but not the light'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sound",
+     "note": "Nothing in an evacuated jar absorbs the sound; there is too little matter to carry it."
+    },
+    {
+     "claim": "Context: 'with the air gone the buzz cannot cross the jar, though the buzzer keeps shaking'",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Bell_jar",
+     "note": "The buzzer keeps shaking: ok. But the air is never fully gone in a real jar (Grokipedia Bell jar: typical setups reach about 1 to 10 kPa; the UCLA demo manual, per search, notes sound travels well in a poor vacuum). Fix: 'so as nearly all the air is taken away, too little matter is left to carry the buzz out of the jar, though the buzzer keeps shaking.'"
+    },
+    {
+     "claim": "Context: light needs no matter; sunlight crosses the nearly empty space between the Sun and Earth",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wave",
+     "note": "Electromagnetic waves 'do not require a medium and can travel through vacuum'; 'nearly empty' is correctly hedged."
+    },
+    {
+     "claim": "Robert Boyle / date (fact sheet F13 only; not named in the question)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Bell_jar",
+     "note": "Grokipedia credits Boyle's 1660 New Experiments Physico-Mechanicall, Experiment 27, with a ticking watch whose sound vanished as the air was drawn out (Grokipedia's own source is secondary). Not used in the question, so no exposure."
+    }
+   ]
+  },
+  "e42fcf8336": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the trumpet's sound in air is longitudinal, the flashlight's light transverse",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Light",
+     "note": "Grokipedia Light: light 'consists of oscillating electric and magnetic fields perpendicular to its direction of propagation'; OpenStax: 'Sound waves in air and water are longitudinal'."
+    },
+    {
+     "claim": "Wrong: 'Sound transverse, light longitudinal'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Transverse_wave",
+     "note": "Mechanical transverse waves 'cannot travel through the bulk of fluids like gases or liquids'; EM waves are 'inherently transverse'."
+    },
+    {
+     "claim": "Wrong: 'Both of them longitudinal'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wave",
+     "note": "'Electromagnetic waves are transverse waves'."
+    },
+    {
+     "claim": "Wrong: 'Both of them transverse'",
+     "result": "ok",
+     "source": "https://openstax.org/books/university-physics-volume-1/pages/16-1-traveling-waves",
+     "note": "Sound in air is longitudinal. (Sound can be transverse in solids, per Grokipedia Sound, but this sound reaches the audience through air.)"
+    },
+    {
+     "claim": "Context: sound pushes air back and forth along its path; light is transverse with no matter moving, its electric and magnetic fields vibrating at right angles to its travel",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Light",
+     "note": ""
+    }
+   ]
+  },
+  "a9ad9fcbac": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: a hydrophone is a microphone built to work underwater",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hydrophone",
+     "note": "Grokipedia: 'designed to detect and record sounds propagating through water'; NOAA (https://oceanservice.noaa.gov/facts/hydrophone.html) calls them underwater devices that record ocean sound; a NOAA ship page calls them 'underwater microphones'."
+    },
+    {
+     "claim": "Stem: a hydrophone picks up a distant ship's engine hum",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Underwater_acoustics",
+     "note": "Grokipedia: shipping noise 'generated by propeller cavitation and machinery' dominates 10-500 Hz; Grokipedia Hydrophone: hydrophones captured 'engine and propeller noises'. MBARI's hydrophone heard a container ship from about 70 km (https://www.mbari.org/?p=86750)."
+    },
+    {
+     "claim": "Key: the sea water carries the hum",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Underwater_acoustics",
+     "note": "Sound in water 'manifests as pressure waves'; 'sound travels efficiently over long distances due to water's physical properties'."
+    },
+    {
+     "claim": "Wrong: 'The air above the sea'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Underwater_acoustics",
+     "note": "At the water-air boundary the reflection coefficient is about -1, 'nearly total reflection', so almost no airborne sound gets down to a submerged hydrophone."
+    },
+    {
+     "claim": "Wrong: 'Waves on the sea's surface'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wave",
+     "note": "Surface waves 'occur at the interface' driven by gravity or surface tension; they are not sound and do not carry an engine's hum."
+    },
+    {
+     "claim": "Wrong: 'Air trapped in bubbles in the sea'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Underwater_acoustics",
+     "note": "Bubbles scatter and make noise; they do not carry sound to a hydrophone."
+    },
+    {
+     "claim": "Context: sound travels through liquids and solids as well as gases; water carries it well over long distances; surface waves are a different kind of wave",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Longitudinal_wave",
+     "note": "Longitudinal waves 'can propagate through solids, liquids, and gases'; Grokipedia Underwater acoustics: about 1500 m/s, 'roughly four times faster than in air'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Grade-level physics is sound throughout. Two soft spots, both about stating a demo more absolutely than it happens: (1) cc6b236696 context: a floating leaf ends up 'almost' where it started (Stokes drift: real water orbits do not quite close); add 'almost' / 'mostly'. (2) ececeeb656: demo-physics pages (Clemson, Iowa; UCLA and Britannica per search summaries) say a school bell jar never removes enough air to stop sound inside it; the fade is a coupling (impedance) failure from buzzer to thin air and thin air to glass. So the distractor 'The glass blocks sound once the air is gone' is close to the expert account; replace it, and soften 'with the air gone' in the context. The key stays true. Fact sheet F13 (Boyle 1660, ticking watch, Experiment 27) matches Grokipedia Bell jar but is not used in any question."
+}

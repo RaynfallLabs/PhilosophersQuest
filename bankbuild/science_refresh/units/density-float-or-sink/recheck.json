@@ -1,0 +1,18 @@
+{"unit": "density-float-or-sink",
+ "questions": {
+  "b206efc711": {"verdict": "fail",
+   "why": "Stem clause rules out two lures. The stem says the bead floats in water, so 'On the oil, under the layer of water' (a bead sitting beneath water) and 'At the very bottom of the cylinder' (it floats on the water wherever the water lies) are struck by the stem's own words. Only 'At the very top, on the surface' stays live beside the key. That choice is the real pouring-order outcome (water on top, the bead floating on it). The 'between the layers in pouring order' lure the revision meant to add needs a bead denser than water, so it contradicts the stem. The facts are right (water sinks below motor oil whatever the pouring order; the bead stops at the boundary), but the question is a two-way choice.",
+   "sources": ["https://www.scientificamerican.com/article/stacking-liquids/", "https://www.teachengineering.org/activities/view/cub_flow_activity2", "https://grokipedia.com/page/Motor_oil"]},
+  "a550ab5aac": {"verdict": "pass",
+   "why": "Old tell fixed: 'The bolt is too small and light to sink' (M1) is live and parallel. Key true (iron 7.87 against mercury 13.5); the surface-skin lure stays wrong for a bolt; mercury is diamagnetic, so the reworded context line is true. Applying the rule to a fluid other than water, with the word 'denser', is a step beyond T1's 'heavy for its size' rule.",
+   "sources": ["https://grokipedia.com/page/Mercury_(element)", "https://en.wikipedia.org/wiki/Mercury_(element)", "https://grokipedia.com/page/Density"]},
+  "fb3f78cbd1": {"verdict": "pass",
+   "why": "Old tell fixed: the stem now gives only the premise. The new 'fish would swim above it all winter' lure is a live half-step error, wrong for a shallow lake in a long, hard winter. The key matches the Alaska source ('solidify from the bottom up'). No T1 question asks about lake ice. Minor point only: the key is the one choice with 'could', echoing the stem's 'what could happen'.",
+   "sources": ["https://www.gi.alaska.edu/alaska-science-forum/surprises-ice", "https://grokipedia.com/page/Ice"]},
+  "f76f3e550b": {"verdict": "pass",
+   "why": "Only the flooding sentence was cut, so the context no longer teaches the pumice key. What remains is true (steel about 7.85 g/cm3; the whole ship, steel and air together, less dense than water). Stem and choices unchanged.",
+   "sources": ["https://grokipedia.com/page/Buoyancy", "https://grokipedia.com/page/Steel"]},
+  "eea463decf": {"verdict": "fail",
+   "why": "The key is true (pores fill with water as the gas diffuses out; Grokipedia, Berkeley Lab). But the stem's 'one by one, the stones begin to sink' rules out 'The stones cling together into big clumps', since clumped stones would sink as clumps, not one by one. It also undercuts 'The sea grows calm, and no waves hold them up', since a calm sea would let the whole raft down at once. 'One by one' also echoes the key's 'each stone'. That leaves the key against 'Their stone slowly hardens in the cold sea', a weak lure for a stone that is already hard rock. The answer stands out once the stem is read closely.",
+   "sources": ["https://grokipedia.com/page/Pumice_raft", "https://www.sciencedaily.com/releases/2017/05/170523144110.htm", "https://en.wikipedia.org/wiki/Pumice"]}
+ }}

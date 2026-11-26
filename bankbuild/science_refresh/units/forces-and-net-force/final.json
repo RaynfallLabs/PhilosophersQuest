@@ -1,0 +1,183 @@
+{
+ "unit": "forces-and-net-force",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "forces-and-net-force",
+   "question": "A brick rests on a soft mattress, which sinks a little under its weight. Then the same brick is set on a stone floor, which shows no dent at all. The push a surface gives to what rests on it is called the normal force. How does the stone floor's normal force on the brick compare with the mattress's?",
+   "answer": "It is equal, matching gravity's pull",
+   "choices": [
+    "It is equal, matching gravity's pull",
+    "It is stronger, since stone is harder",
+    "It is weaker, since stone does not sink",
+    "It is zero, since stone cannot push"
+   ],
+   "context": "The brick sits still on both, so on both the upward push exactly matches gravity's pull down. Stone is squeezed too, far too little to see, and pushes back like a very stiff spring; a soft mattress only sinks further before its push matches the load.",
+   "facts": [
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "The normal force, a surface pushing back on what rests on it, is one of the five forces 6th graders must explain (TEKS 6.7A), and the belief that a hard floor cannot push is the misconception lessons tackle."
+  },
+  {
+   "tier": 2,
+   "topic": "forces-and-net-force",
+   "question": "A force diagram shows each force on an object as an arrow. Each arrow starts at the object and points the way its force acts. What does the length of an arrow show?",
+   "answer": "How strong the force is",
+   "choices": [
+    "How strong the force is",
+    "How fast the object moves",
+    "How far the object will go",
+    "How long the force lasts"
+   ],
+   "context": "A longer arrow stands for a stronger force, so a force diagram shows both a force's size and its direction at a glance. The arrows stand for forces, not for motion: a book lying still on a table still gets two arrows of equal length, gravity's pointing down and the table's pointing up.",
+   "facts": [
+    "F1",
+    "F6",
+    "F8",
+    "F3"
+   ],
+   "grade_note": "6th graders draw force diagrams and read them to find the net force (TEKS 6.7B), which needs the rule that an arrow's direction is the force's direction and its length the force's size."
+  },
+  {
+   "tier": 2,
+   "topic": "forces-and-net-force",
+   "question": "A sled sits still on flat snow until a girl starts to pull it. In its force diagram, the arrows for gravity, pointing down, and the snow's push, pointing up, are the same length. Her steady pull points right, with a longer arrow than friction, which points left. What happens to the sled?",
+   "answer": "It starts moving right and speeds up",
+   "choices": [
+    "It starts moving right and speeds up",
+    "It moves right at one steady speed",
+    "It stays still, since the forces balance",
+    "It moves right, then slows to a stop"
+   ],
+   "context": "The up and down arrows cancel, but her pull is bigger than friction, so the net force points right and the forces are unbalanced. An unbalanced force keeps changing the sled's motion: it starts moving the way the net force points and keeps speeding up for as long as she pulls harder than friction holds it back.",
+   "facts": [
+    "F6",
+    "F7",
+    "F9",
+    "F11",
+    "F12"
+   ],
+   "grade_note": "Reading a force diagram to decide whether forces are balanced, and which way the net force points, is a named 6th-grade skill (TEKS 6.7B, NGSS MS-PS2-2)."
+  },
+  {
+   "tier": 2,
+   "topic": "forces-and-net-force",
+   "question": "A car cruises along a straight, flat highway at one steady speed. A forward force from its engine drives it, while friction and the air push back against it. How does the forward force compare with the forces pushing back?",
+   "answer": "Equal, since its speed is not changing",
+   "choices": [
+    "Equal, since its speed is not changing",
+    "Bigger, since the car is moving forward",
+    "Bigger, since its engine keeps running",
+    "Smaller, since the car is not speeding up"
+   ],
+   "context": "A steady speed in a straight line means the forces are balanced: the forward force exactly matches friction and the air together. A bigger forward force would make the car keep speeding up, and a smaller one would slow it. Balanced forces do not mean a thing is still, only that its motion is not changing.",
+   "facts": [
+    "F8",
+    "F10",
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "6th graders learn that balanced forces leave motion unchanged (NGSS MS-PS2-2), and a thing moving at a steady speed is the case students most often get wrong, thinking the forward force must be bigger."
+  },
+  {
+   "tier": 2,
+   "topic": "forces-and-net-force",
+   "question": "A skydiver falls at a steady speed, her parachute still packed. She pulls the cord, the canopy opens, and at once the air pushes up on her harder than gravity pulls her down. What happens to her?",
+   "answer": "She keeps falling, but more slowly",
+   "choices": [
+    "She keeps falling, but more slowly",
+    "She rises upward for a short while",
+    "She hangs still in the air for a while",
+    "She keeps falling at the same speed"
+   ],
+   "context": "The net force now points up, against her motion, so it slows her fall. It cannot send her up: as she slows, the air's push weakens until it matches gravity again while she is still moving down, and she drifts down at a gentle steady speed of about 5 to 8 metres a second. Films seem to show her shooting up only because the camera, carried by another skydiver, is still falling fast.",
+   "facts": [
+    "F9",
+    "F15",
+    "F16",
+    "F17",
+    "F25"
+   ],
+   "grade_note": "Unbalanced forces slowing a moving object, and the net force not always pointing the way a thing moves, are 6th-grade balanced and unbalanced force content (TEKS 6.7B, NGSS MS-PS2-2)."
+  },
+  {
+   "tier": 2,
+   "topic": "forces-and-net-force",
+   "question": "A girl pedals as hard as she can along a flat, straight road. She speeds up at first, but soon her speed stops rising, though she keeps pedalling just as hard. What stops her from going any faster?",
+   "answer": "The air pushes back harder as she speeds up",
+   "choices": [
+    "The air pushes back harder as she speeds up",
+    "Gravity pulls back harder as she speeds up",
+    "A steady push can give only a steady speed",
+    "Her bike can store only so much force"
+   ],
+   "context": "Air resistance grows as she goes faster. Once the air's push against her matches her forward push, the forces are balanced and her speed holds steady. On flat ground gravity pulls straight down, not back, and without the air's growing push a steady push would keep speeding her up.",
+   "facts": [
+    "F11",
+    "F13",
+    "F14",
+    "F22"
+   ],
+   "grade_note": "Air resistance as a force against motion, and forces becoming balanced so that speed stops changing, belong to the 6th-grade study of friction and balanced forces (TEKS 6.7A, 6.7B)."
+  },
+  {
+   "tier": 2,
+   "topic": "forces-and-net-force",
+   "question": "Scientists sort forces into two groups. Gravity and magnetism go in one group, while friction and the normal force, the push from a surface, go in the other. What decides which group a force belongs to?",
+   "answer": "Whether the force acts only where things touch",
+   "choices": [
+    "Whether the force acts only where things touch",
+    "Whether the force needs air around it to work",
+    "Whether the force always slows things down",
+    "Whether the force acts only on moving things"
+   ],
+   "context": "Friction and the normal force act only where two things touch, so they are contact forces. Gravity and magnetism pull across a gap: Earth pulls a falling apple, and a magnet pulls a paper clip, before anything touches. None of the four needs air, and friction and the normal force both act on a book lying still on a slope, where nothing is moving or slowing.",
+   "facts": [
+    "F2",
+    "F3",
+    "F12",
+    "F18",
+    "F20",
+    "F22",
+    "F24"
+   ],
+   "grade_note": "The 6th-grade standard names gravity, friction, magnetism, applied forces and normal forces (TEKS 6.7A), and sorting them into contact forces and forces that act at a distance is how the grade organises them."
+  }
+ ],
+ "revised": {
+  "81596105e3": {
+   "old_hash": "1277710f4c",
+   "why": "Judge (low, other): the stem never named the normal force, the 6th-grade term the question is for, and T1's crate ('the floor pushes back on it just as hard') primed 'equal'. The stem now teaches the term and asks about the normal force by name, as the judge proposed; the context's closing naming sentence went, since the stem now does it. Choices, key and fact (F3, F4, F5) unchanged."
+  },
+  "75459419da": {
+   "old_hash": "c878c333fd",
+   "why": "Judge (medium, tell): 'It is a little smaller' was struck by the stem's 'never slower', the key was the only unhedged choice on a bigger / bigger / smaller scale, and 'never faster and never slower' mirrored 'neither bigger nor smaller'. That phrase is gone, and every choice now carries a reason, as the judge proposed: the key, the forward-motion belief (M2, F11: 'If a body is moving, there is a force acting on it in the direction of the motion'), the running engine, and 'not speeding up' read as a smaller push. The context already answers both bigger and smaller. Same fact (F8, F10)."
+  },
+  "307ddce173": {
+   "old_hash": "307ddce173",
+   "why": "Fact-check (error, context): 'An unbalanced force against an object's motion slows it without turning it around' is false as a rule (gravity slows a rock thrown up and turns it round, new F25, OpenStax). The context now says, in the fact-checker's words, that she cannot be sent up because the air's push weakens as she slows until it matches gravity again while she is still moving down (F16). The judge's low clarity polish (saying in the stem why she falls at a steady speed) was not taken: it would state the car question's balanced-forces answer in this stem. Stem, choices and key unchanged."
+  },
+  "48ca967104": {
+   "old_hash": "48ca967104",
+   "why": "Judge (medium, tell): 'works only on metals' was struck by gravity in the first group and 'strong or weak' sorted neither group, so only 'needs air' stood beside the key; the key was also the only choice about 'the two objects'. All four are now parallel 'Whether the force...' choices, as the judge proposed: the key reworded to 'acts only where things touch', 'needs air around it' (F20), 'always slows things down' (friction's job, F12, not the normal force's) and 'acts only on moving things' (static friction and the normal force act on still things, new F24). The stem keeps 'the push from a surface': the judge's 'a surface's push on what rests on it' would rule out the moving-things lure. The context now answers all three lures. Same fact (F2)."
+  }
+ },
+ "added": {
+  "d9d60f779e": "Replaces the dropped magnet-steering question (1bcb87085a) with a different magnetism fact of the scope, as the judge proposed: a non-contact force in a vertical net-force balance of three forces (F7, F8, F18, new F23: the floating paper clip, Vanderbilt and University of Regina; tension pulls along a thread, Grokipedia). The key is 'stronger', so the unit no longer keys 'equal' twice in a row of compare questions; the lures are counting only two forces ('equal'), the thread holding the clip up (the belief the Regina notes answer) and no force without touching (M5)."
+ },
+ "dropped": [
+  {
+   "old_hash": "1bcb87085a",
+   "question": "Two students roll a steel ball down a ramp and straight across a table. They want it to swerve and hit a paper cup set off to one side of its path, steered only by a strong magnet. Where should they place the magnet?",
+   "why": "Judge (high, grade): T1 pushes-pulls-and-gravity's hockey puck (a sideways force bends a moving object's path, the push from the far side) with a magnet for the stick, plus the 3rd-grade fact that a magnet pulls steel (T1 telling-materials-apart's ball that jumps up to the magnet); two of its lures (in the path, above the path) could not send the ball sideways. Nothing in it is 6th-grade content, so it cannot be fixed on the same fact. Replaced by a magnetism question on vertical net force (the paper clip held by a magnet against a tight thread)."
+  },
+  {
+   "old_hash": "d9d60f779e",
+   "question": "A steel paper clip is tied to a thread whose other end is taped to a desk. A strong magnet held just above the clip pulls it up until the thread is tight, and the clip stays perfectly still in mid-air, not touching the magnet. How does the magnet's upward pull on the clip compare with gravity's pull on it?",
+   "why": "failed the re-check: The physics is right: magnet pull = gravity + the thread's tension, so it is stronger (Regina, Vanderbilt kits; tension only pulls). But the stem itself says the magnet 'pulls it up until the thread is tight' and asks about 'the magnet's upward pull'. That strikes 'Zero, since the magnet does not touch it'. A pull that lifted the clip against gravity, and now acts with the clip even closer, also strikes 'Weaker, since the thread holds it up'. Only 'Equal' stays live beside the key, and the stem's account of the lift points at 'stronger'."
+  }
+ ]
+}

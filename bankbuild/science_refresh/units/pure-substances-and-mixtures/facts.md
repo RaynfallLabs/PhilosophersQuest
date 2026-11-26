@@ -110,3 +110,17 @@ M5. Students commonly believe that all metals are attracted to magnets.
     https://science.nasa.gov/eclips/videos/magnets-and-metals ; https://spark.iop.org/sites/default/files/media/documents/BEST%20Diagnostic%20questions%20for%20Rules%20for%20magnetism_0.doc
 
 M6. Author's judgment, not sourced: students often think only an element counts as "pure", so that a compound such as water cannot be a pure substance (the definition in F1 says otherwise); that a dissolved solid leaves water's boiling point unchanged because "only the water boils"; that the cold tube of a still catches the dye like a filter; and that heavy, sticky clay sinks first in a soil jar.
+
+## Added in the revision (2026-11-26)
+
+F28. A breath out is mostly nitrogen: inhaled air is about 78% nitrogen, 21% oxygen and 0.04% carbon dioxide; in exhaled air "oxygen levels drop to around 16%, while carbon dioxide rises to approximately 4%", with nitrogen "largely unchanged at 78%". So carbon dioxide is one of the gases a person breathes out, about 4 parts in 100.
+    https://grokipedia.com/page/Breathing ; https://www.savemyexams.com/o-level/biology/cie/23/revision-notes/9-human-gas-exchange/9-1-human-gas-exchange/investigating-the-differences-in-inspired-and-expired-air
+
+F29. Salt itself boils far above water: Grokipedia gives sodium chloride a melting point of 800.7 degrees Celsius and "The boiling point of sodium chloride is 1465 °C".
+    https://grokipedia.com/page/Sodium_chloride
+
+F30. In the simple distillation of ink or copper sulfate solution, "it is only water that distils off when a solution is boiled"; the liquid collected is colourless, and "It may be possible to detect a darkening of the original solution" left in the flask as it grows more concentrated (RSC; "ink was the traditional one").
+    https://edu.rsc.org/experiments/recovering-water-from-copperii-sulfate-solution/1768.article
+
+F31. The gold a panner recovers is mostly "small amounts of fine gold dust or flakes"; a session yields "a few grains to 0.05g", and "large nuggets (1g+) are extremely rare" (Grokipedia Gold panning). A pebble is a grain of gravel "4 to 64 millimetres" across (Grokipedia Pebble); the smallest quartz pebble, 4 mm across, has a mass of about 0.09 grams (its volume, about 0.034 cubic centimetres, times quartz's 2.65 g/cm3 from F23). So a tiny gold flake weighs far less than a pebble of gravel: gold stays in the pan because it is denser, not because each flake is heavier.
+    https://grokipedia.com/page/Gold_panning ; https://grokipedia.com/page/Pebble ; https://grokipedia.com/page/Quartz

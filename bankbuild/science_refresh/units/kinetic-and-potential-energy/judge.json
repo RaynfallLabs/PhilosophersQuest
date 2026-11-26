@@ -1,0 +1,46 @@
+{"unit": "kinetic-and-potential-energy",
+ "questions": {
+  "58ba9a881a": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The context's 'about three times the Wiffle ball's mass' and 'about three times the kinetic energy' depend on which Wiffle ball weight is used. The fact sheet notes that Grokipedia gives two weights (1.6 oz and under 0.5 oz); at 1.6 oz the ratio would be under 1.3.",
+     "fix": "Context: 'At the same speed, the tennis ball, with much more mass, carries much more kinetic energy...', or cite only the Hall of Fame's two-thirds of an ounce."}
+   ]},
+  "ea7f53220b": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "Ruling on 'twice the speed, four times the energy': not 6th-grade content. TEKS 6.8A asks only that students 'compare and contrast' the potential energies with kinetic energy. NGSS MS-PS3-1 states the square in its core idea, but limits the expectation to 'descriptive relationships' with no calculation. Integrated course models commonly place that standard in grade 8, and the exact factor of four first becomes taught content with KE = 1/2 mv^2 in 8th-9th grade physical science. The key is also a number reached by squaring (2 squared = 4, and the 'eight times' choice is a cubing trap), which puts the question in the math bank's lane. The fact sheet's own scope says 'faster and heavier means more'. That is the grade's fact, and this question asks something past it.",
+     "fix": "Keep the cyclist but ask the 6th-grade speed half (the mass half is the Wiffle ball's) and where the energy comes from, with no number: 'A cyclist on a flat road pedals harder until she is going faster than before. Her mass and the bike's stay the same. What happens to her kinetic energy, and where does the extra come from?' Key: 'It grows, changed from the food energy her legs use'. Wrong: 'It grows, made from nothing as her speed rises' (M9) / 'It stays the same, since her mass has not changed' (M3) / 'It shrinks, since her legs use up energy' (M7). The 'four times' fact belongs in a T4 or T5 unit; none in units.json scopes it now."}
+   ]},
+  "8920938e47": {"verdict": "ok", "issues": []},
+  "1757253f26": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem gives the answer away. 'Store' rules out 'Kinetic energy' (the bow is held still and the energy is called stored), and nothing is lifted, so 'Gravitational' is weak. 'Elastic' can be worked out from the everyday word: the stem says the limbs bend and the string 'pulls tight', and every child knows elastic means springy and stretchy. That leaves chemical energy as the only live wrong choice.",
+     "fix": "Ask where the energy is held, not its name, and name elastic potential energy in the context: 'An archer draws her bowstring back to her cheek and holds it there while she aims. Where is the energy that will send the arrow flying held at this moment?' Key: 'In the bent limbs of the bow'. Wrong: 'In the muscles of her drawing arm' (chemical, M2) / 'In the arrow, poised to fly' (energy in the thing that will move) / 'In the arrow's height above the ground' (gravitational, M2)."}
+   ]},
+  "adc57ae4bf": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two wrong choices are silly for the items named. No one thinks gasoline or a granola bar gives up its energy by being 'squeezed or stretched out of shape' or 'set moving very fast'. Every student knows gasoline is burned and food is eaten, so the key comes from everyday life and only 'lifted up high and then dropped' (M2) is live.",
+     "fix": "Replace the two silly choices with the confusions students really have about using up a fuel: 'They must be used up, leaving nothing behind' (M5; burning leaves new substances, such as exhaust gases) and 'They must be crushed into tiny pieces' (a physical change that leaves the same substance). Keep 'They must be lifted up high and then dropped' and the key."},
+    {"axis": "other", "severity": "low",
+     "what": "This sits next to signs-of-a-chemical-change, whose hand warmer ('The iron rusting very fast') and glow stick ('Two liquids reacting as they mix') already key 'a reaction gives off the energy'. This question's angle is different: stored chemical energy comes out only when new substances form. It is also not T1 energy-changes-form's 'where' fact (battery: chemical energy; sandwich). It passes, but only just.",
+     "fix": "Keep the stem's three-item list and keep the key worded as 'react and become new substances', so it asks what releases the store, not what made a heat."}
+   ]},
+  "f77fe8e920": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Electrical energy from the motor changes into kinetic energy' can be defended as true at one remove: the motor's energy became the height that now becomes speed. A careful student might hesitate.",
+     "fix": "Wrong choice: 'The motor's chain keeps driving it down the drop' (M8 as written in the fact sheet)."}
+   ]},
+  "525ed64cc6": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Gravity pulls harder on it as it swings back' and 'A heavy ball slows more than a light one' are weak, so the question comes down to the two choices that mention energy: the key and 'destroyed'. The key is also the only statement of a general law, so it stands out.",
+     "fix": "Replace 'Gravity pulls harder on it as it swings back' with the at-rest misconception (M1): 'It has no energy left at the far end, where it stops'. Keep 'Its energy is destroyed a little each swing' (M5) and the heavy-ball choice."}
+   ]},
+  "f5bdf712c6": {"verdict": "ok", "issues": []},
+  "61c895fa6a": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Grade fit: apart from the 'four times' question (ruled 8th-grade and in the math bank's lane, high), every question is TEKS 6.8A/B or NGSS MS-PS3 content asked as meaning and consequence. With the cyclist rewrite, the unit covers the scope: kinetic energy grows with mass (Wiffle ball) and with speed (cyclist); gravitational (backpack), elastic (bow) and chemical (fuel) potential energy; height traded for speed (coaster); never created (nose basher); friction makes heat (swing); energy passed on (pool). Across units: (1) T1 energy-changes-form keys the chemical store's location (battery: chemical; sandwich) and the dam's mechanical energy. The fuel question asks how the store is released and the coaster asks the potential-to-kinetic trade, so neither re-asks T1. (2) T2 signs-of-a-chemical-change keys reactions that give off heat and light (hand warmer, glow stick). The fuel question is adjacent but asks a different fact; keep its key on 'new substances form'. (3) T1 pushes-pulls-and-gravity's soccer ball keys friction as the force that stops it, and forces-and-net-force keys air pushing back on a cyclist. The swing question keys where the energy goes (heat), which is different. (4) T1 decomposers and the water cycle use 'used up / no longer exists' wrong choices for matter; here the same wording is used for energy, which is fine. For later builders: T5 momentum-and-collisions lists 'a cue ball stopping dead as the struck ball rolls on' and must key momentum, not 'the energy passed to the struck ball' (61c895fa6a). T5 energys-two-great-laws must key Joule, the second law and perpetual motion, not the nose basher's 'cannot gain more energy than it began with'. T3 temperature-and-moving-particles owns temperature as average kinetic energy; nothing here touches it. If the 'four times' fact is wanted at all, it belongs in a T4 or T5 unit, and none scopes it now."}
