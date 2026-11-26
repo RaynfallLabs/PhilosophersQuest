@@ -1,0 +1,189 @@
+{
+ "unit": "mendels-peas-and-inherited-traits",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "mendels-peas-and-inherited-traits",
+   "question": "A blacksmith has hammered iron at his forge for twenty years, and his arms have grown thick and strong from the work. Later he has two children. How much of the strength he gained at the forge passes to them through his genes?",
+   "answer": "None of it",
+   "choices": [
+    "None of it",
+    "About a quarter of it",
+    "About half of it",
+    "All of it"
+   ],
+   "context": "Strength built by work is an acquired trait: it changes the blacksmith's muscles, not the genes he passes on, so none of it is inherited. Jean-Baptiste Lamarck, a French naturalist, taught that traits gained by use pass to the young, but genetics found no way for that to happen. Each child gets half of his or her genes from each parent, and the half rule is about genes, not about what a parent gains in life.",
+   "facts": [
+    "F1",
+    "F2",
+    "F13"
+   ],
+   "grade_note": "Seventh-grade heredity opens by sorting inherited traits from acquired ones, and Lamarck's idea is the classic wrong theory it sets aside."
+  },
+  {
+   "tier": 3,
+   "topic": "mendels-peas-and-inherited-traits",
+   "question": "Pea flowers pollinate themselves, often before the bud has even opened. To cross two plants of his own choosing, Gregor Mendel, a monk in Brno, opened young buds on the mother plant and cut one part out of each with fine forceps. Then he brushed on pollen from the father plant. Which part did he cut out?",
+   "answer": "The anthers",
+   "choices": [
+    "The anthers",
+    "The petals",
+    "The stigma",
+    "The sepals"
+   ],
+   "context": "The anthers, at the tips of the stamens, make a flower's pollen, so cutting them out of a young bud kept it from pollinating itself and let Mendel choose its father. The stigma had to stay, because it is where pollen lands. He then covered each flower with a bag so that no stray pollen could reach it.",
+   "facts": [
+    "F3",
+    "F4",
+    "F6",
+    "F7"
+   ],
+   "grade_note": "Seventh grade teaches the flower's parts and pollination, and Mendel's hand-crossing of peas is the usual opening of the heredity story."
+  },
+  {
+   "tier": 3,
+   "topic": "mendels-peas-and-inherited-traits",
+   "question": "Gregor Mendel was a monk at St Thomas's Abbey in Brno, and he grew peas in its garden. He crossed a kind of pea that always grew tall with a kind that always grew short, then planted the seeds of the cross. How did that first generation of offspring grow?",
+   "answer": "All of them tall",
+   "choices": [
+    "All of them tall",
+    "All of them medium height",
+    "Half tall and half short",
+    "Mostly tall, with a few short"
+   ],
+   "context": "Every plant of the first generation grew tall, and the short trait seemed to have vanished. Most naturalists of the day expected blending, offspring halfway between their parents, and Mendel's peas showed nothing of the kind. He called the trait that showed in every hybrid dominant.",
+   "facts": [
+    "F3",
+    "F8",
+    "F10",
+    "F11"
+   ],
+   "grade_note": "The all-tall first generation is the first result of Mendel's experiment that seventh-grade genetics teaches."
+  },
+  {
+   "tier": 3,
+   "topic": "mendels-peas-and-inherited-traits",
+   "question": "Gregor Mendel took the hybrid peas from his cross of tall plants with short ones and let them pollinate themselves. Then he grew their seeds and counted the plants of this second generation. How did they come out?",
+   "answer": "About three tall for every short one",
+   "choices": [
+    "About three tall for every short one",
+    "About one tall for every short one",
+    "All tall, with no short ones at all",
+    "All of a height between the two"
+   ],
+   "context": "He counted 787 tall plants and 277 short ones, close to three to one, so about one plant in four was short again. The short trait had hidden for a generation and come back as short as ever. Mendel called a trait that hides like this recessive.",
+   "facts": [
+    "F9",
+    "F10"
+   ],
+   "grade_note": "The short trait's return in about one plant in four, a ratio near three to one, is the heart of the Mendel story in seventh grade."
+  },
+  {
+   "tier": 3,
+   "topic": "mendels-peas-and-inherited-traits",
+   "question": "To explain his peas, Gregor Mendel proposed hereditary factors, later named genes, that pass from parents to offspring. A hybrid pea gets a factor for tall from one parent and a factor for short from the other. By Mendel's account, what becomes of the two factors inside it?",
+   "answer": "They stay separate and unchanged",
+   "choices": [
+    "They stay separate and unchanged",
+    "They blend into one in-between factor",
+    "The short one is used up and lost",
+    "They change to suit the plant's soil"
+   ],
+   "context": "Mendel's factors were separate units that never mixed, so a tall hybrid could pass its short factor on as whole as it came in. That is why short plants could appear again a generation later, which blending, the idea that parents' traits fuse like mixed paints, could not explain. Wilhelm Johannsen, a Danish botanist, named the factors genes in 1909.",
+   "facts": [
+    "F11",
+    "F12"
+   ],
+   "grade_note": "Seventh grade teaches Mendel's conclusion that traits travel as separate units (genes) that do not blend."
+  },
+  {
+   "tier": 3,
+   "topic": "mendels-peas-and-inherited-traits",
+   "question": "A pea plant carries two copies of the gene for stem height. The versions of a gene are called alleles, and this plant has one tall allele and one short allele. When it makes pollen, what does each grain of pollen carry?",
+   "answer": "One allele, tall or short by chance",
+   "choices": [
+    "One allele, tall or short by chance",
+    "Both alleles, the tall and the short",
+    "One allele, always the dominant one",
+    "A new allele, blended from the two"
+   ],
+   "context": "Each grain of pollen, and each egg cell, gets just one of the plant's two alleles, and either one is equally likely. A seed then holds two again, one from each parent. If only the dominant allele were passed on, a short plant could never come from a tall hybrid.",
+   "facts": [
+    "F13"
+   ],
+   "grade_note": "Seventh-grade genetics teaches that each parent passes on one of its two alleles for a trait, the idea every Punnett square is built on."
+  },
+  {
+   "tier": 3,
+   "topic": "mendels-peas-and-inherited-traits",
+   "question": "In pea plants, tall is dominant over short, and every plant carries two copies of the gene for height. A grower crosses two tall plants, and one of their seeds grows into a short plant. What must be true of the two tall parents?",
+   "answer": "Each carries one short copy",
+   "choices": [
+    "Each carries one short copy",
+    "Only one carries a short copy",
+    "Each carries two short copies",
+    "Neither carries a short copy"
+   ],
+   "context": "A recessive trait shows only when an offspring gets the recessive copy from both parents, so each tall parent passed a short copy to that seed. Each parent still grew tall because one tall copy is enough to make a plant tall. A plant with two short copies would itself be short.",
+   "facts": [
+    "F14"
+   ],
+   "grade_note": "Seventh grade teaches that a recessive trait shows only when an offspring gets the recessive allele from both parents."
+  },
+  {
+   "tier": 3,
+   "topic": "mendels-peas-and-inherited-traits",
+   "question": "A pea plant with one tall copy and one short copy of the height gene is crossed with a short plant. A Punnett square, a grid that pairs up each parent's possible copies, gives the chances for their seeds. About what share of the seeds should grow into short plants?",
+   "answer": "About one half",
+   "choices": [
+    "About one half",
+    "About one in four",
+    "About three in four",
+    "None at all"
+   ],
+   "context": "The short parent has only short copies to pass on, while the hybrid passes tall or short with equal chance. Two of the square's four boxes get two short copies, so about half the seeds should grow short. One in four is the share when two hybrids are crossed, and even then the square gives only the chances, not an exact count.",
+   "facts": [
+    "F16",
+    "F17",
+    "F18"
+   ],
+   "grade_note": "Seventh-grade standards ask students to use Punnett squares to predict the share of offspring with a trait."
+  },
+  {
+   "tier": 3,
+   "topic": "mendels-peas-and-inherited-traits",
+   "question": "Two tall pea plants grow side by side. One carries two tall copies of the height gene, and the other carries one tall copy and one short copy. How do the two plants compare?",
+   "answer": "Same phenotype, different genotype",
+   "choices": [
+    "Same phenotype, different genotype",
+    "Same genotype, different phenotype",
+    "Same genotype and same phenotype",
+    "Different genotype and phenotype"
+   ],
+   "context": "A genotype is the pair of gene copies a living thing carries, and a phenotype is the trait that shows. Both plants stand tall, so their phenotype is the same, but one hides a short copy, so their genotypes differ. Wilhelm Johannsen, a Danish botanist, coined both words in 1909.",
+   "facts": [
+    "F15"
+   ],
+   "grade_note": "Genotype and phenotype are the two words seventh-grade genetics uses for the gene pair and the trait that shows."
+  },
+  {
+   "tier": 3,
+   "topic": "mendels-peas-and-inherited-traits",
+   "question": "Gregor Mendel read his pea results to the Natural History Society of Brno in 1865, and the society printed his paper the next year. What became of the paper over the next thirty years?",
+   "answer": "Few scientists took any notice of it",
+   "choices": [
+    "Few scientists took any notice of it",
+    "Charles Darwin built it into his theory",
+    "Botanists repeated it and proved it wrong",
+    "It was taught in schools across Europe"
+   ],
+   "context": "The paper sat in a small society's journal and was cited only about three times in 35 years; Charles Darwin, whose own idea of heredity was pangenesis, seems never to have known of it. Mendel died in 1884 with his pea work still unknown to most scientists. In 1900 Hugo de Vries and Carl Correns, who had found the same patterns in their own crosses, brought it to light.",
+   "facts": [
+    "F19",
+    "F20",
+    "F21"
+   ],
+   "grade_note": "Seventh-grade accounts of Mendel tell that his work was overlooked in his lifetime and rediscovered in 1900."
+  }
+ ]
+}

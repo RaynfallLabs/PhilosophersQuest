@@ -1,0 +1,58 @@
+{"unit": "the-sun-and-its-planets",
+ "questions": {
+  "2e08dea7cc": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: the Sun looks much brighter than the night-sky stars because it is much closer (NGSS 5-ESS1-1)", "result": "ok", "source": "https://www.nextgenscience.org/pe/5-ess1-1-earths-place-universe", "note": "Grokipedia Sun: apparent magnitude -26.74 at 1 AU but absolute magnitude only 4.74, so distance is the reason."},
+    {"claim": "Wrong choice 'It is much bigger than they are' is not a defensible reason for the night-sky stars", "result": "ok", "source": "https://openstax.org/books/astronomy/pages/18-1-a-stellar-census", "note": "The Sun is bigger than most stars in the galaxy (most are red dwarfs), but OpenStax: of the ~9000 stars visible to the unaided eye only about 50 are intrinsically fainter than the Sun. The stars that twinkle at night are overwhelmingly bigger/brighter, so the choice is false as stated and the stem's 'they' (night-sky stars) keeps it wrong."},
+    {"claim": "Wrong choice 'It is much hotter than they are' is false", "result": "ok", "source": "https://grokipedia.com/page/Stellar_classification", "note": "Sun is a G2V star at ~5,772 K; many bright night-sky stars (O, B, A types such as Sirius, Vega, Rigel) are hotter. Even where the Sun is hotter, that is not why it looks brighter."},
+    {"claim": "Wrong choice 'It is a ball of fire, not a star' is false; the Sun is a star", "result": "ok", "source": "https://grokipedia.com/page/Sun", "note": ""},
+    {"claim": "Context: the Sun is a star and the closest one to Earth (next nearest Proxima Centauri at 4.24 light-years)", "result": "ok", "source": "https://grokipedia.com/page/Sun", "note": ""},
+    {"claim": "Context: its light and heat keep Earth warm enough to live on", "result": "ok", "source": "https://spaceplace.nasa.gov/all-about-the-sun/en/", "note": ""},
+    {"claim": "Context: many stars are far bigger and hotter than the Sun", "result": "ok", "source": "https://spaceplace.nasa.gov/sun-compare/en/", "note": "NASA Space Place: there are larger stars 'even up to 1,000 times larger'; O-type stars exceed 30,000 K (Grokipedia Stellar classification)."}
+   ]},
+  "bf15db996b": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: Mercury is the planet closest to the Sun", "result": "ok", "source": "https://grokipedia.com/page/Mercury_(planet)", "note": "'the smallest and innermost planet in the Solar System'."},
+    {"claim": "Wrong choices Venus, Earth, Mars are 2nd, 3rd, 4th from the Sun", "result": "ok", "source": "https://grokipedia.com/page/Solar_System", "note": ""},
+    {"claim": "Stem: eight planets travel around the Sun", "result": "ok", "source": "https://science.nasa.gov/sun/facts/", "note": ""},
+    {"claim": "Context: order Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune", "result": "ok", "source": "https://grokipedia.com/page/Solar_System", "note": ""},
+    {"claim": "Context: Pluto, out beyond Neptune, was once called the ninth planet and is now a dwarf planet", "result": "ok", "source": "https://grokipedia.com/page/Pluto", "note": "Found by Tombaugh 1930, 'initially classified as the ninth planet', reclassified as a dwarf planet by the IAU in 2006; lies in the Kuiper belt beyond Neptune's orbit (its perihelion dips inside Neptune's orbit, but 'out beyond Neptune' is a fair description of where it lives)."}
+   ]},
+  "094c3cd94e": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: Venus has the hottest surface of any planet", "result": "ok", "source": "https://grokipedia.com/page/Venus", "note": "'making Venus the hottest planet in the Solar System'; NASA: 'Venus is hotter even than the innermost planet, charbroiled Mercury.' Giant planets (hotter deep inside, no solid surface) are kept out of the choices."},
+    {"claim": "Wrong choice Mercury: its surface is cooler than Venus's", "result": "ok", "source": "https://grokipedia.com/page/Mercury_(planet)", "note": "Mercury peaks at about 427-430 C by day and falls to about -173 to -180 C at night; Venus is about 462-475 C everywhere."},
+    {"claim": "Wrong choices Mars and Earth are far cooler", "result": "ok", "source": "https://science.nasa.gov/mars/facts/", "note": ""},
+    {"claim": "Context number: Venus over 450 degrees Celsius", "result": "ok", "source": "https://science.nasa.gov/venus/venus-facts/", "note": "NASA 467 C; Grokipedia 462 C (atmosphere section) and 475 C (intro). 'Over 450' is safe under every source and keeps Venus above Mercury's 430 C peak."},
+    {"claim": "Context: Venus is hotter even though Mercury is closer to the Sun", "result": "ok", "source": "https://science.nasa.gov/venus/venus-facts/", "note": ""},
+    {"claim": "Context: thick air traps heat like a blanket; Mercury has almost no air to hold heat", "result": "ok", "source": "https://grokipedia.com/page/Venus", "note": "Runaway greenhouse effect in a dense CO2 atmosphere; Mercury has only a tenuous exosphere that contributes negligibly to heat retention (Grokipedia Mercury). 'Blanket' is a fair 5th-grade simplification."},
+    {"claim": "Context: Venus's bright clouds help make it the brightest planet in the night sky", "result": "ok", "source": "https://grokipedia.com/page/Venus", "note": "'the brightest object in the night sky after the Moon'; cloud cover reflects about three-quarters of incident sunlight (Bond albedo ~0.76)."}
+   ]},
+  "e650593947": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: Jupiter is the largest planet", "result": "ok", "source": "https://grokipedia.com/page/Jupiter", "note": "'Jupiter is the largest planet in the Solar System'."},
+    {"claim": "Wrong choices Saturn, Uranus, Neptune are all smaller than Jupiter", "result": "ok", "source": "https://grokipedia.com/page/Saturn", "note": "Saturn is the second largest; Uranus and Neptune are far smaller."},
+    {"claim": "Stem: the four inner planets are small and rocky; the four outer ones are giants made mostly of gas and ice", "result": "ok", "source": "https://grokipedia.com/page/Solar_System", "note": "Terrestrial planets Mercury, Venus, Earth, Mars are 'dense, rocky bodies'; gas giants Jupiter and Saturn, ice giants Uranus and Neptune."},
+    {"claim": "Context: Jupiter has more than twice as much matter as all the other planets put together", "result": "ok", "source": "https://grokipedia.com/page/Jupiter", "note": "'more than twice the combined mass of all other planets' (318 Earth masses)."},
+    {"claim": "Context: Jupiter is the nearest of the giants, just beyond the asteroid belt, which lies between the giants and the rocky planets", "result": "ok", "source": "https://grokipedia.com/page/Solar_System", "note": "Jupiter is fifth from the Sun; 'Most asteroids orbit in the main asteroid belt between Mars and Jupiter'."}
+   ]},
+  "5b22461a47": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: Saturn is the planet whose bright rings show in a small telescope", "result": "ok", "source": "https://skyandtelescope.org/observing/solar-system/saturn/viewing-saturn-the-planet-rings-and-moons/", "note": "Observing guides: the rings show in even the smallest telescope at about 25x. Minor caveat, not an error: about every 15 years the rings turn edge-on to Earth (last in March 2025) and nearly vanish in small telescopes for a few months; they are opening again now."},
+    {"claim": "Wrong choices Jupiter, Uranus, Neptune: they have rings, but too faint and dark for a small telescope, so they are not 'bright rings' seen in a small telescope", "result": "ok", "source": "https://grokipedia.com/page/Ring_system", "note": "All four giants have rings; Jupiter's are 'a faint, dusty halo' of 'dark, rocky material' 'previously unseen from Earth-based telescopes' (found by Voyager 1); Uranus's and Neptune's are 'darker, dustier', Bond albedo under 0.05, first found by stellar occultation. No partial-truth problem: the stem says bright rings in a small telescope."},
+    {"claim": "Context: Saturn's rings are countless chunks of ice and rock, and the ice shines in sunlight", "result": "ok", "source": "https://science.nasa.gov/saturn/facts/", "note": "NASA: 'billions of small chunks of ice and rock'; Grokipedia Ring system: 'nearly pure water ice particles that reflect sunlight brilliantly'."},
+    {"claim": "Context: Jupiter, Uranus and Neptune have rings too, but faint and dark", "result": "ok", "source": "https://grokipedia.com/page/Ring_system", "note": "Jupiter's rings 'faint and tenuous', 'predominantly dark, rocky dust grains' (Grokipedia Jupiter); Neptune's 'faint and narrow', 'dark, reddish'."}
+   ]},
+  "ab5a32b07c": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: Mars is red because rusty (iron oxide) dust covers its ground", "result": "ok", "source": "https://science.nasa.gov/mars/facts/", "note": "NASA: 'oxidization - or rusting - of iron in the rocks'; the rusty dust makes the planet look red from afar. ESA (2025) says the rust is better matched by ferrihydrite, a water-bearing iron oxide, which is still rust (https://www.esa.int/ESA_Multimedia/Images/2025/02/Why_is_Mars_red)."},
+    {"claim": "Wrong choice 'Hot lava covers its ground' is false", "result": "ok", "source": "https://grokipedia.com/page/Mars", "note": "Mars is a cold world; no active lava surface."},
+    {"claim": "Wrong choice 'Its rocks glow with heat' is false", "result": "ok", "source": "https://science.nasa.gov/mars/facts/", "note": "Highs only about 20 C; lows about -153 C."},
+    {"claim": "Wrong choice 'Its sky is full of red gas' is false", "result": "ok", "source": "https://science.nasa.gov/mars/facts/", "note": "Mars's air is thin carbon dioxide, nitrogen and argon, none of them red. Its sky does look reddish or yellow-orange, but NASA and Grokipedia both put that down to suspended (rusty) DUST, not gas, so the choice stays wrong as worded. Close to the line only for a child who has seen Mars-sky photos; acceptable."},
+    {"claim": "Stem: Mars looks like a reddish star in the night sky and is called the Red Planet", "result": "ok", "source": "https://grokipedia.com/page/Mars", "note": "'renowned as the Red Planet'."},
+    {"claim": "Context: the rocks and dust are full of iron that has rusted", "result": "ok", "source": "https://www.esa.int/ESA_Multimedia/Images/2025/02/Why_is_Mars_red", "note": "'the red colour is due to iron minerals in the soil rusting'."},
+    {"claim": "Context: Mars is farther from the Sun than Earth", "result": "ok", "source": "https://grokipedia.com/page/Mars", "note": "About 1.5 AU."},
+    {"claim": "Context number: even on a warm day its ground reaches only about 20 degrees Celsius", "result": "ok", "source": "https://science.nasa.gov/mars/facts/", "note": "NASA: 'as high as 70 degrees Fahrenheit (20 degrees Celsius)'; Grokipedia gives about 21 C (up to 24 C at noon) at the equator in summer. The 35 C figure sometimes quoted is Spirit's shaded AIR maximum, not the ground."}
+   ]}
+ },
+ "unit_notes": ""}
