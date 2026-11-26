@@ -15,3 +15,6 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
 - The adaptations reviser noted an overlap:
   - `born-knowing-or-learned`'s blacksmith question (a muscle gained in life is not passed on) asks the same fact as the `adaptations-built-for-a-place` webbed-feet question (adaptations are inherited, not gained in one life).
   - The born-knowing judge must rule on it.
+- **2026-11-26, T2 margin:** after the first 24 T2 questions the drop rate was about 12%, which would leave T2 at about 191 of the 218 written, under 200.
+  - Each of the 18 T2 units not yet started got one more question: T2 now writes 236 (physical 74, life 68, earth 67, method 27).
+  - Revisit T3-T5 targets when T2 ends.
