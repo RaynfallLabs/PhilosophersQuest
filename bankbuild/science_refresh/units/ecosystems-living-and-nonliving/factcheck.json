@@ -1,0 +1,339 @@
+{
+ "unit": "ecosystems-living-and-nonliving",
+ "questions": {
+  "f1302093f5": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the living and nonliving parts of an area acting on one another make an ecosystem",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/ecosystem/",
+     "note": "NatGeo: 'Ecosystems contain biotic (living) factors, as well as abiotic (nonliving) factors.'"
+    },
+    {
+     "claim": "A tide pool, the pond left among the rocks when the tide goes out, is a complete tiny ecosystem",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/ecosystem/",
+     "note": "NatGeo: 'Tide pools, the ponds left by the ocean as the tide goes out, are complete, tiny ecosystems'; it names seaweed and sea stars, clams, mussels in them."
+    },
+    {
+     "claim": "Snails, crabs, seaweed and tiny fish live in tide pools",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/ecosystem/",
+     "note": "Seaweed named by NatGeo; snails, crabs and small fish are standard tide-pool residents."
+    },
+    {
+     "claim": "Wrong choice: a community is only the living things (no nonliving part)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Community_(ecology)",
+     "note": "Grokipedia: a community is 'strictly biotic', while an ecosystem also covers the nonliving parts. The stem says 'the living and the nonliving', so community is wrong."
+    },
+    {
+     "claim": "Wrong choice: a population is the members of one kind",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Population_ecology",
+     "note": "Single species in one area; the pool holds several kinds plus nonliving parts."
+    },
+    {
+     "claim": "Wrong choice: a food web shows only who eats whom",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Food_web",
+     "note": "A network of feeding relationships, not the whole living-plus-nonliving system."
+    }
+   ]
+  },
+  "999af44500": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: moss is a living thing (biotic factor)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Moss",
+     "note": "Mosses are 'small, non-vascular land plants'; the green body is photosynthetic, so it makes its own food; they grow on rock surfaces."
+    },
+    {
+     "claim": "Context: moss is a small green plant that grows and makes its own food",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Moss",
+     "note": "Most are a few centimetres tall; chlorophyll makes them green."
+    },
+    {
+     "claim": "Wrong choice: wind is moving air, abiotic",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Abiotic_component",
+     "note": "Grokipedia lists wind among climatic abiotic factors; wind is 'the movement of air' (Grokipedia Wind)."
+    },
+    {
+     "claim": "Wrong choice: water is abiotic",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Abiotic_component",
+     "note": "Water is in the introductory list of abiotic components."
+    },
+    {
+     "claim": "Wrong choice / context: a cloud is tiny drops of water or bits of ice, nonliving",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cloud",
+     "note": "WMO definition quoted: 'minute particles of liquid water or ice crystals, or a mixture of both'."
+    }
+   ]
+  },
+  "a20036bb7c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a lizard warming itself on a sunny rock uses abiotic factors (sunlight, rock)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Abiotic_component",
+     "note": "Rocks, temperature and sunlight are in Grokipedia's list of abiotic components."
+    },
+    {
+     "claim": "Context: many lizards lie on sun-warmed rocks in the morning to heat their bodies, and a cold lizard is slow",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ectotherm",
+     "note": "Grokipedia: 'many lizards perch on sun-exposed rocks in the morning to increase Tb'; low temperatures slow skeletal muscle; lizards 'often become inactive during cold periods'."
+    },
+    {
+     "claim": "Wrong choice: a bee sipping nectar from a cactus flower uses a living thing (biotic)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Nectar",
+     "note": "Nectar is secreted by the plant's nectaries; the interaction is with a living flower, which is how grade-5 materials class it. (A pedant could call the nectar liquid itself nonliving, but the choice names the flower and the context frames it as using the flower; acceptable at this grade.)"
+    },
+    {
+     "claim": "Wrong choice: a hawk swooping on a mouse uses a living thing",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ecosystem",
+     "note": "Predation is a biotic interaction."
+    },
+    {
+     "claim": "Wrong choice: a rabbit nibbling a bush's leaves uses a living thing",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ecosystem",
+     "note": "Herbivory is a biotic interaction."
+    }
+   ]
+  },
+  "4544ce5ce3": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the place where a living thing finds its food, water, shelter and space is its habitat",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/habitat/",
+     "note": "NatGeo: 'A habitat is a place where an organism makes its home'; 'The main components of a habitat are shelter, water, food and space'; its own example is the puma needing deer and space for a territory."
+    },
+    {
+     "claim": "Mountain lion lives in forests, hunts deer, uses hidden dens, needs large home range",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cougar",
+     "note": "Grokipedia: 'also known as the mountain lion, puma'; 'primarily hunts large ungulates such as deer and elk'; montane coniferous forests among its habitats; 'Kittens are born in hidden dens or thick cover'; large home ranges. Adults rest in found shelters (caves, rock outcrops, thick cover; mountainlion.org 'They don't build dens, they find them'), so 'a hidden den to rest in' is acceptable."
+    },
+    {
+     "claim": "Wrong choice: shelter is only one part of a habitat (the den)",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/habitat/",
+     "note": "Shelter is one of the four components."
+    },
+    {
+     "claim": "Wrong choice: a niche is the role a living thing plays in its ecosystem, not the place",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ecological_niche",
+     "note": "Grokipedia: 'the specific role and position that a species or population occupies within its ecosystem'. A niche is not the place itself; habitat is the clear answer for 'what is the forest to the lion'."
+    },
+    {
+     "claim": "Wrong choice / context: climate is a place's usual weather over many years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Climate",
+     "note": "Long-term pattern of weather in a region."
+    }
+   ]
+  },
+  "c3bf16afde": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: an ecosystem with many kinds of living things usually stands up best to drought or disease",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/biodiversity/",
+     "note": "NatGeo: 'Ecosystems with a lot of biodiversity are generally stronger and more resistant to disease than those with fewer species.' Drought: Tilman & Downing 1994 (Nature 367:363) found drought resistance rose with plant species richness in Minnesota grasslands (https://www.nature.com/articles/367363a0); Grokipedia Biodiversity: higher biodiversity 'generally enhances ecosystem stability', 'primarily through increased resistance rather than resilience', with outcomes varying by ecosystem. 'Stands up' (resistance) and 'usually' are the right hedges; the stem does not claim faster recovery, which is not established."
+    },
+    {
+     "claim": "Wrong choice: many animals of only a few kinds (low diversity)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Biodiversity",
+     "note": "Low-diversity plots lost about twice as much productivity in climate extremes; not defensible as best."
+    },
+    {
+     "claim": "Wrong choice: only the strongest kinds",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/biodiversity/",
+     "note": "A few kinds, however 'strong', is still low diversity; a disease that kills one kind (chestnut blight) is the risk. Not defensible."
+    },
+    {
+     "claim": "Wrong choice and context: no predators; removing predators can throw a food web out of balance",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/ecosystem/",
+     "note": "NatGeo: 'removing the wolves threw off the food web in the ecosystem' (Yellowstone)."
+    },
+    {
+     "claim": "Context: a disease killed most of the chestnut trees in some great forests, and the forests lived on because other kinds of trees grew there",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/biodiversity/",
+     "note": "NatGeo: 'In the early 1900s, American chestnut blight killed most of the chestnut trees in the eastern forests of North America. The forest ecosystem was able to survive because other kinds of trees also grew there.'"
+    }
+   ]
+  },
+  "bb08c5a01e": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Key: when the place changes, some die or leave and new kinds move in",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/3-ls4-4-biological-evolution-unity-and-diversity",
+     "note": "NGSS LS2.C: 'some organisms survive and reproduce, others move to new locations, yet others move into the transformed environment, and some die.' Grokipedia Drought: drought kills vegetation, shrinks wetlands, favours drought-tolerant kinds."
+    },
+    {
+     "claim": "Wrong choices: animals leave but plants all live on / plants die but animals all stay on",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Drought",
+     "note": "Drought brings 'widespread vegetation die-off' and mass die-offs of aquatic animals in drying wetlands; neither 'all' claim holds."
+    },
+    {
+     "claim": "Wrong choice: each animal changes its body to need less water",
+     "result": "ok",
+     "source": "https://evolution.berkeley.edu/teach-evolution/misconceptions-about-evolution/",
+     "note": "As a choice it is wrong: 'Each animal' is universal and the marsh's fish cannot. It works as the evolution misconception."
+    },
+    {
+     "claim": "Context: 'A single animal cannot change its body to need less water: features like that are inherited, and change only over many generations.'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Aestivation",
+     "note": "False as an absolute, and false for the very animals the context names. Marsh frogs and lungfish DO change their bodies in a drought: they aestivate, dropping their metabolism to about 1-20% of normal, and water-holding frogs and cane toads shed skin layers into a cocoon that cuts water loss (Grokipedia Aestivation). Berkeley's own correction says individuals do change during life through environmental effects; what they cannot do is evolve. The ability is inherited, but the change in the body happens in one animal in one drought. Fix: 'No animal can grow a new kind of body because the marsh dried: some frogs can bury themselves in the mud and wait for rain, but only because they were born able to, and features like that change only over many generations.' Optionally sharpen the wrong choice to 'Each animal grows a new body that needs less water'."
+    },
+    {
+     "claim": "Context: plants and animals of dry ground take over from the marsh's reeds and frogs",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Drought",
+     "note": "Drought 'favors drought-tolerant or invasive species while eliminating sensitive ones'; LS2.C 'others move into the transformed environment'."
+    }
+   ]
+  },
+  "5a79ebebca": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: with trees and stumps gone, no roots hold the soil together, so rain washes it off",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Soil_erosion",
+     "note": "Grokipedia: 'Root systems mechanically bind soil aggregates'; without cover 'rainfall directly impacts bare soil, dislodging particles'; steeper slopes raise flow velocity. Grokipedia Deforestation: on slopes 'root removal compromises soil cohesion'. The stem's 'stumps and all' rules out roots left behind."
+    },
+    {
+     "claim": "Wrong choice: the soil has lost its nutrients",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Soil_erosion",
+     "note": "Nutrient loss is a result of erosion, not why freshly cleared soil washes off; not defensible as the reason."
+    },
+    {
+     "claim": "Wrong choice: the soil turns to sand without shade",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Soil_erosion",
+     "note": "Shade does not change soil into sand; plainly false."
+    },
+    {
+     "claim": "Wrong choice: rain soaks into bare ground faster",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Soil_erosion",
+     "note": "The reverse is true: 'bare soils lose the capacity to infiltrate rainfall', with surface sealing and rills. So the choice is truly wrong."
+    },
+    {
+     "claim": "Context: bare ground soaks up less rain than ground with roots, so more water runs over the top",
+     "result": "ok",
+     "source": "https://www.dnr.state.mn.us/waters/shoreline-alterations-natural-buffers-lakescaping.html",
+     "note": "MN DNR: native plants 'slow the water, and allow it to infiltrate the soil'; Grokipedia Soil erosion as above."
+    },
+    {
+     "claim": "Context: eroded soil muddies the streams below; animals lose their habitat",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Deforestation",
+     "note": "Grokipedia Soil erosion: sediment 'clogs habitats'; Deforestation: 'eliminating habitats critical to species survival'."
+    }
+   ]
+  },
+  "97fd28a48d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Fertilizer runoff from farms feeds algae into a bloom that turns the water green",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Eutrophication",
+     "note": "Grokipedia: synthetic fertilizers are 'the largest source of anthropogenic N'; agricultural runoff delivers nitrogen and phosphorus; 'dense phytoplankton blooms' 'obscure light penetration'."
+    },
+    {
+     "claim": "Key and context: when the algae die, bacteria break them down and use up the dissolved oxygen, and fish die from too little oxygen",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water",
+     "note": "USGS: blooms 'die and are eaten by bacteria, depleting the oxygen'; dissolved oxygen 'is breathed by fish ... and is needed by them to survive'; summertime fish kills result. Grokipedia Eutrophication: 'Decomposition of algal biomass consumes dissolved oxygen'; 'Fish kills result from these low-oxygen events'. TPWD's Southard says the same. Every step is in the right order, and the fish are not said to be poisoned by the fertilizer."
+    },
+    {
+     "claim": "Wrong choice: too little light",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Eutrophication",
+     "note": "Shading harms submerged plants ('reducing photosynthesis by submerged aquatic vegetation'), not fish directly; the context says so."
+    },
+    {
+     "claim": "Wrong choice: too much heat",
+     "result": "ok",
+     "source": "https://www.usgs.gov/special-topics/water-science-school/science/dissolved-oxygen-and-water",
+     "note": "Warm water holds less oxygen ('Cold water can hold more dissolved oxygen'), but heat is not what the stem's chain describes; not defensible as the killer here."
+    },
+    {
+     "claim": "Wrong choice: too little food",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Eutrophication",
+     "note": "Not a cause of eutrophication fish kills."
+    },
+    {
+     "claim": "No other answer route left open (toxins)",
+     "result": "ok",
+     "source": "https://tpwd.texas.gov/education/resources/keep-texas-wild/freddie-the-fish/background-for-teachers",
+     "note": "Some blooms also kill fish with toxins (TPWD: 'Another way ... is by the production of toxic substances'), but no choice names toxins and the stem ties the deaths to the algae dying and rotting, so the key stands. The context does not deny the toxin route."
+    }
+   ]
+  },
+  "0af7a18750": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a strip of shrubs and tall grasses along the shore helps the lake's fish, frogs and birds",
+     "result": "ok",
+     "source": "https://www.dnr.state.mn.us/waters/shoreline-alterations-natural-buffers-lakescaping.html",
+     "note": "MN DNR: a natural buffer works by 'intercepting nutrients and reducing runoff, erosion, and sedimentation', and buffer plants 'protect wildlife habitat, water quality, and fish'; 'Tall native plants typically have deep root systems'. Grokipedia Riparian buffer agrees."
+    },
+    {
+     "claim": "Context: a lawn's roots reach down only a few centimetres",
+     "result": "ok",
+     "source": "https://www.dnr.state.mn.us/waters/shoreline-alterations-natural-buffers-lakescaping.html",
+     "note": "MN DNR: 'the roots of lawn grass are only 2-3 inches long' (5-8 cm), against about 2-3 feet for little bluestem."
+    },
+    {
+     "claim": "Wrong choice: mowing the lawn to the water's edge",
+     "result": "ok",
+     "source": "https://www.dnr.state.mn.us/waters/shoreline-alterations-natural-buffers-lakescaping.html",
+     "note": "The buffer's functions 'may have been eliminated previously by sod, hard structures, or mowing'; a buffer is 'an unmowed strip'."
+    },
+    {
+     "claim": "Wrong choice and context: pulling out fallen logs; logs give fish shelter and places to feed",
+     "result": "ok",
+     "source": "https://dnr.wisconsin.gov/topic/fishing/outreach/fishsticks.html",
+     "note": "WI DNR: 'Fallen trees provide shelter and feeding areas for a diversity of fish species'. Removing over 75% of the wood from a basin of Little Rock Lake, Wisconsin, crashed its yellow perch (Sass et al. 2006, Fisheries 31:321-330; https://lternet.edu/biblio/fish-community-and-food-web-responses-to-a-whole-lake-removal-of-coarse-woody-habitat)."
+    },
+    {
+     "claim": "Wrong choice and context: feeding bread to ducks; soggy leftover bread rots and feeds algae",
+     "result": "ok",
+     "source": "https://canalrivertrust.org.uk/about-us/our-campaigns/keeping-our-ducks-healthy/why-is-bread-bad",
+     "note": "Canal and River Trust: 'Bread doesn't have much nutritional value'; uneaten soggy bread 'can cause a build-up of bad nutrients' and 'more algae growing around water', plus disease and pests."
+    }
+   ]
+  }
+ },
+ "unit_notes": "8 ok, 1 error. The error is a context line only (bb08c5a01e): it says flatly that a single animal cannot change its body to need less water, but marsh frogs and lungfish do exactly that in a drought (aestivation, cocoons); reword to 'cannot grow a new kind of body' and credit the inherited ability. The flagged checks all held: biodiversity's benefit is resistance ('stands up'), with drought evidence from Tilman and Downing 1994 and disease from NatGeo's chestnut example; the eutrophication chain is stated step by step correctly (bacteria rotting the dead algae use up the oxygen; fertilizer is not said to poison the fish); bare ground soaks up less rain, so 'soaks in faster' is truly wrong; the lake-shore buffer, logs and bread lines match MN DNR, WI DNR and the Canal and River Trust; moss is a plant, while wind, water and clouds are abiotic."
+}

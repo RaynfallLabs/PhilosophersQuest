@@ -1,0 +1,46 @@
+{"unit": "food-chains-and-food-webs",
+ "questions": {
+  "6b1910d5f6": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Producer' is the term being tested, but this stem never glosses it. Questions are drawn in random order, so a player may meet this one before 5ec41746d1, the only question whose stem defines the word. Glossing it would not give the answer away: the real test, moss against mushroom (M2, fungi are not plants), stays intact.",
+     "fix": "'... Which of these living things is a producer, one that makes its own food?'"}
+   ]},
+  "3fc69f2de6": {"verdict": "ok", "issues": []},
+  "f455ca2e5a": {"verdict": "ok", "issues": []},
+  "8f64709a69": {"verdict": "ok", "issues": []},
+  "5ae2a75d94": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The answer can be read off the drawing. The chain is drawn 'grass → rabbit → fox', and the key, 'Energy passes from the rabbit to the fox', simply puts the arrow's direction into words. Its mirror choice, 'from the fox to the rabbit', goes against the arrow on the page. A child who knows nothing about the convention can match the choice to the arrow. Even a child who reasons it out needs only to know that foxes eat rabbits and that food carries energy (energy-changes-form keys that). The misconception the question is meant to test (M1: children draw the arrow toward the thing eaten) is never tried, because the drawn chain already settles the direction. 'The rabbit runs away from the fox' also goes against the arrow's direction, which weakens it.",
+     "fix": "Ask the convention in words, with no chain drawn whose direction can be read off. Stem: 'Every food chain is drawn with arrows, one between each living thing and the next. Which way does each arrow point?' Choices: 'Toward the living thing that eats', 'Toward the living thing that is eaten', 'Toward the bigger of the two', 'Toward the stronger of the two'. Context: the arrow points from the food to its eater, the way the energy in the food travels; children often draw it backwards (M1); and the eater is not always the bigger one (a wolf pack eats a moose). The writer should source the size counter-example."}
+   ]},
+  "7a1b94bfde": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'A life cycle' is the weakest choice: nothing in 'all of a pond's food chains together' suggests a life cycle.",
+     "fix": "Replace 'A life cycle' with 'One long food chain', the idea that overlapping chains merge into a single longer chain. Then the context: 'chains that overlap form a web, not one longer chain'."},
+    {"axis": "fact", "severity": "low",
+     "what": "The context says 'A food pyramid is a guide to healthy eating'. Some school ecology texts also use 'food pyramid' for the energy (ecological) pyramid, so a child taught that meaning may find the context confusing. It is still not the answer: a pyramid shows amounts at each feeding level, not all the chains joined.",
+     "fix": "Context: 'In nutrition, a food pyramid is a guide to healthy eating; the pyramids of ecology show how much lives at each feeding level, not how the chains join.'"}
+   ]},
+  "d527dfbfc4": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'More herons' is dead. The herons have just lost their food, and no misconception leads to more of them, so the question is down to 'More insects' against 'Fewer insects' (with 'More plants' the reversed-chain lure). The misconception that matters here (M3: a change reaches only some members, or none) is not offered.",
+     "fix": "Stem ending: 'What is most likely to happen next?' Choices: 'More insects', 'Fewer insects', 'No change to the insects', 'More plants'. Do not offer 'Fewer herons', which is also true."}
+   ]},
+  "205636132f": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Less is left, because hawks eat it too' is silly: the stem has just said hawks eat rabbits, and every child knows hawks do not graze. It is also one of the two 'Less is left' choices, and dropping it leaves the key as the only 'Less is left' reason that makes sense.",
+     "fix": "Replace it with 'No change, because grass grows back fast'. That is a live wrong idea, since grass does regrow, but not as fast as far more rabbits eat it (F15). Choices: 'Less is left, because it is eaten faster', 'No change, because it makes its own food', 'No change, because grass grows back fast', 'More grows, because hawks eat the rabbits'."}
+   ]},
+  "5ec41746d1": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key can be reached by elimination without the question's own fact (phytoplankton). The stem defines producers as 'living things that make their own food', which rules out both animal choices ('Tiny floating animals', 'Schools of small fish') for any child who knows animals eat. 'Miles deep' rules out 'Seaweed on the seabed' for a child who knows light does not reach the deep sea. Only the key survives. 'Schools of small fish' is the weaker of the two animal choices, since nobody thinks fish make their own food.",
+     "fix": "Replace 'Schools of small fish' with 'Floating mats of seaweed'. It is a real producer in parts of the open ocean (Sargassum), so it is live, but it is wrong for 'most' (phytoplankton far outnumber it). Choices: 'Tiny floating algae', 'Floating mats of seaweed', 'Tiny floating animals', 'Seaweed on the seabed'. Fact-check the floating-seaweed claim, and keep 'most' in the stem."}
+   ]}
+ },
+ "unit_notes": "Ruling asked for: there is NO overlap with decomposers-and-recycling-matter. Here decomposers appear only as a role: the mushroom is the lure in the producer question (6b1910d5f6), 'Decomposer' is a lure in the herbivore question (3fc69f2de6), and contexts name the role. No question here asks what decomposers do (that is decomposers-and-recycling-matter's), and that unit asks no 'which one is a decomposer' question. The rule holds. One harmless echo: 6b1910d5f6's stem opens 'On a damp forest floor', and decomposers-and-recycling-matter's 9d92579ee5 keys 'On a warm, damp forest floor'. OVERLAP CHECK against the T1 finals: this unit keys neither how-plants-make-food's facts (photosynthesis; the grass's energy came from sunlight) nor energy-changes-form's (the Sun as the main source; food holds chemical energy), as its facts sheet promises. F2 stays in contexts. But 5ae2a75d94 is easier because energy-changes-form has already taught that food carries energy, and the rewrite above avoids that. No overlap with telling-materials-apart, solids-liquids-and-gases, matter-made-of-tiny-particles, mixtures-and-solutions, pushes-pulls-and-gravity, how-light-travels, electric-circuits or the-sun-and-its-planets. WITHIN THE UNIT. Three of nine questions are on the diet words: the herbivore definition (3fc69f2de6), the carnivores in a chain (f455ca2e5a) and the omnivore in a web (8f64709a69). Each keys a different word, so they are acceptable, but the share is heavy. The two prediction questions are different cases (a predator lost in d527dfbfc4; plant-eaters booming in 205636132f), so keep both. 'Energy starts with the Sun' (scope) is left to the neighbouring units on purpose. Every gates.json FLAG list is empty; the 'short' and length_budget lines are information only, and the arrow glyph already appears in the live banks."}

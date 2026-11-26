@@ -1,0 +1,66 @@
+{
+ "unit": "decomposers-and-recycling-matter",
+ "questions": {
+  "67ca898ded": {
+   "verdict": "pass",
+   "why": "Old tell fixed: 'soft and mushy' is gone (it now 'turns brown and slowly shrinks'), so drying is a live lure, and 'Old age making it fall apart' replaces 'Time alone' without its give-away 'alone'. All three wrong choices are the documented grade 5 misconceptions (BSCS/CPP common student ideas 11 and 14: wind, rain, drying, ageing). Key true: microbes, chiefly moulds and bacteria, rot apples (NatGeo Decomposers). Grade 5 (NSTA Rotting Apple probe). Voice clean.",
+   "sources": [
+    "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+    "https://education.nationalgeographic.org/resource/decomposers/"
+   ]
+  },
+  "c59136a1d9": {
+   "verdict": "pass",
+   "why": "Old issue fixed: the context now says the soil nutrients are a small part of a tree, most of it built from air and water, which matches NGSS 5-LS1-1 ('plant matter comes mostly from air and water, not from the soil') and Grokipedia Plant nutrition. So it no longer seems to clash with how-plants-make-food's air-and-water key. Stem, key and choices unchanged and true (Grokipedia Nurse log: decomposing wood supplies nutrients). Grade 5. Voice clean.",
+   "sources": [
+    "https://www.nextgenscience.org/pe/5-ls1-1-molecules-organisms-structures-and-processes",
+    "https://grokipedia.com/page/Plant_nutrition",
+    "https://grokipedia.com/page/Nurse_log"
+   ]
+  },
+  "27cab73b1a": {
+   "verdict": "pass",
+   "why": "Both old issues fixed. The stem no longer says what worms eat, so 'They eat the insects that harm roots' is live. The overstated 'several times richer' is now 'richer', with more nutrients in plant-ready form, which matches the 2019 meta-analysis of 81 articles (Van Groenigen et al., Geoderma): total N, P and C 40-48% higher, mineral N 241% higher, available P 84% higher. Other choices wrong: earthworms raise microbial activity, and their burrows loosen the soil (Grokipedia Earthworm). Grade 5 decomposer content. She/her for the gardener; voice clean.",
+   "sources": [
+    "https://research.wur.nl/en/publications/how-fertile-are-earthworm-casts-a-meta-analysis/",
+    "https://grokipedia.com/page/Earthworm"
+   ]
+  },
+  "9d92579ee5": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the two cold choices are no longer one idea, and the key is no longer the only forest. Warm-damp against cool-damp tests warmth, and the hot dry desert tests moisture. Key true: Grokipedia Decomposition says 'warmer and wetter conditions generally accelerating the breakdown'; rates roughly double per 10 C; tropical litter often loses over 95% of its mass in a year. The context's 'a year or two' and 'far sooner than on a cooler forest floor' hold (Grokipedia Tropical rainforest). Grade 5 compost and decomposition content. One defensible answer. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Decomposition",
+    "https://grokipedia.com/page/Tropical_rainforest",
+    "https://compost.css.cornell.edu/physics.html"
+   ]
+  },
+  "ed15f00fd7": {
+   "verdict": "pass",
+   "why": "Old tell fixed: 'goes soft' is gone ('It slowly rots'), so the dried-to-dust lure is no longer contradicted. Key true: NGSS 5-LS2-1, 'Matter cycles between the air and soil ... as these organisms live and die'. Destroyed, turned into energy and blown away as dust are the documented misconceptions (BSCS/CPP ideas 14, 15, 24). The sealed jar keeping its weight is conservation of matter. Grade 5. Voice clean.",
+   "sources": [
+    "https://www.nextgenscience.org/pe/5-ls2-1-ecosystems-interactions-energy-and-dynamics",
+    "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf"
+   ]
+  },
+  "3e9d5ceaf6": {
+   "verdict": "pass",
+   "why": "Only the grade note changed, and it now cites real soil-unit sources. KidsGardening's soil lesson is for grades 3-5 and teaches organic matter as 'the decayed remains of once-living plants and animals' beside sand, silt and clay. NatGeo's humus entry is for grades 5-8 ('thick brown or black substance'; 'forms in soil when plant and animal matter decays'; soil with humus crumbles). Question, key and choices unchanged and true. Voice clean.",
+   "sources": [
+    "https://kidsgardening.org/lesson-plans-soil-texture-and-composition/",
+    "https://education.nationalgeographic.org/resource/humus/",
+    "https://grokipedia.com/page/Humus"
+   ]
+  },
+  "b7c64c0649": {
+   "verdict": "pass",
+   "why": "New question; facts true. A scavenger eats dead matter it did not kill rather than hunting live prey; vultures are obligate scavengers; burying beetles and carrion beetles (Silphidae) colonise carcasses; scavenging 'accelerates the decomposition of carcasses' (Grokipedia Scavenger). NatGeo Education: scavengers 'usually consume animals that have either died of natural causes'. Predator and parasite are defined correctly (Grokipedia Predation). Grade fit: NatGeo's 5th-grade reading opens 'Vultures are scavengers', and every choice word is grade 5 vocabulary. The 'dies of sickness' clause is the defining condition (it did not kill it), as allowed for naming at T1, and the name cannot be worked out from the stem. 'Predators' stays a live lure (birds of prey); 'Prey' is the weakest lure but not a tell. One defensible answer. Voice clean, no singular they.",
+   "sources": [
+    "https://grokipedia.com/page/Scavenger",
+    "https://education.nationalgeographic.org/resource/scavenger/",
+    "https://education.nationalgeographic.org/resource/role-scavengers-carcass-crunching/5th-grade/",
+    "https://grokipedia.com/page/Predation"
+   ]
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{"unit": "roots-stems-leaves-and-flowers",
+ "questions": {
+  "a409e5410e": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two of the three wrong choices are dead. The stem puts the roots 'under the soil', which by itself rules out 'Make food from sunlight' (no sunlight down there), and 'Draw insects to the flowers' makes no sense for a part buried far from the flowers. That leaves 'Take in water and minerals' against 'Make seeds for new plants', and most children already know roots drink water. The best-known lure for this fact, the documented misconception that plants get their food from the soil (M1), is not offered.",
+     "fix": "Keep the stem. Choices: 'Take in water and minerals', 'Take in food from the soil', 'Make seeds for new plants', 'Make the plant's food'. 'Take in food from the soil' is M1, and the context already says minerals are not food. Do not use 'Store food' (F4)."}
+   ]},
+  "4d7fb4fc43": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Ruling: yes, 'Chlorophyll' reads as a different kind of thing. Xylem and phloem are tubes and stomata are pores, but chlorophyll is a substance, a colouring, and the stem asks for 'tiny tubes'. It is also how-plants-make-food's keyed answer ('the green substance ... Chlorophyll'), so any player who has met that question throws it out at once. This unit's own stomata stem ('tiny pores called stomata') teaches what rules 'Stomata' out too. The question shrinks to xylem against phloem. That pair is the honest test (M8), but only two choices are live.",
+     "fix": "Replace 'Chlorophyll' with 'Root hairs'. Root hairs are a plant part tied to water (Q1's context names them), so they tempt a child, but they take water in rather than carry it up a stem, and a cut flower has none. Make that clear in the stem: 'A cut white carnation stands in a jar of water coloured with blue dye.' Add one clause to the context: 'root hairs take water in at the root; they are not tubes in the stem'."}
+   ]},
+  "ef1c504638": {"verdict": "ok", "issues": []},
+  "12f6fab9b1": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The context says pollination is pollen's 'journey to another flower of the same kind'. Self-pollination counts too: the same flower, or another flower on the same plant (the fact-checker noted this as optional).",
+     "fix": "Context: '... pollination is its journey to the same or another flower of its kind so that seeds can form.'"}
+   ]},
+  "79ae801c69": {"verdict": "ok", "issues": []},
+  "e09ebe36d0": {"verdict": "ok",
+   "issues": [
+    {"axis": "voice", "severity": "low",
+     "what": "'Which of these drifts ...' points at the answer choices, not at anything listed in the stem. That is the banned 'Which of the following' pattern under another name.",
+     "fix": "'... and some float away on water. Which one drifts across the sea to new shores?'"}
+   ]},
+  "ce79a03b29": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The bud' is vague at this grade: a child is likely to picture a flower bud. It is also one more part of the shoot, so the three wrong choices are a single idea (the shoot comes first) split three ways, and the root is the only part that grows down. A careful test-taker could reason that stem, leaves and bud come up together, so none of them can be the one first part.",
+     "fix": "Replace 'The bud' with 'The seed leaves', the two thick halves (F26). It is a live lure for a child who has opened a soaked bean, and it is wrong, because the root comes out first (F28). Keep 'The stem' and 'The leaves'."}
+   ]},
+  "4aa15dbf53": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'A bean seed soaked overnight slips out of its thin skin' gives the seed an action it cannot take; a child peels it. Also, the seed in the stem sits in water with no soil, so 'Take in water from the soil' does not fit the scene and is a little weaker than it needs to be.",
+     "fix": "'A bean seed is soaked overnight, and its thin skin peels away. Inside, it splits into two thick halves, with a tiny plant tucked between them. What do the two thick halves do for the tiny plant?' Keep the choices."}
+   ]},
+  "a9a04dcb44": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's 'bright, sweet berries' points straight to an animal eating them, so a child who does not know the fact can reason sweet = eaten. Only one wrong choice ('Bees feed on them', the M3 lure) shares that cue. 'They keep the seeds warm in winter' is weak: berries ripen and are gone long before winter cold, and no misconception supports it. In practice two choices are live.",
+     "fix": "Stem: 'Many wild plants wrap their seeds in berries. How do the berries help the plant?' Choices: 'Animals eat them and spread the seeds', 'Bees feed on them and carry their pollen', 'They hold water for the dry summer', 'They store food for the parent plant'. The last is wrong (the sugar is a reward for the animal, not food for the parent) and fits the food-from-anywhere confusion (M1). Do not use 'protect the seeds', which is partly true (F18)."}
+   ]}
+ },
+ "unit_notes": "Rulings asked for: (1) 'Chlorophyll' in the xylem question (4d7fb4fc43) does read as a different kind of thing (a substance among tubes and pores), and it is the neighbouring unit's keyed answer, so it is a dead choice; fix given. OVERLAP CHECK. No question here asks the same fact as another unit's, so none is duplicated. how-plants-make-food is the closest neighbour, and four points touch it. (a) The stomata question (ef1c504638, key 'Gases') sits next to how-plants-make-food's 'takes in one thing from the air: Carbon dioxide gas' and its pondweed 'Oxygen'. These are different facts (what the pores pass, against which gas is used or given off), so keep both. The stomata context names CO2 in and oxygen out, which is fine as teaching text, but never re-key the stomata question to carbon dioxide or oxygen, or it would become how-plants-make-food's question. (b) The xylem question uses how-plants-make-food's key (Chlorophyll) as a distractor; replace it with 'Root hairs' as above. (c) Q1 (a409e5410e) uses 'Make food from sunlight' as a lure, which is how-plants-make-food's potato fact (leaves make the food); the fix swaps it for the M1 lure. (d) how-plants-make-food's photosynthesis question offers Pollination and Germination as lures, and its context defines pollination ('carries pollen from flower to flower'). That is a cross-unit context leak toward this unit's pollination key (12f6fab9b1), acceptable because cards teach. The acorn appears in how-plants-make-food's tree-mass stem as well as in 79ae801c69, but the facts differ (matter from air and water, against acorn = fruit). No overlap with telling-materials-apart, solids-liquids-and-gases, matter-made-of-tiny-particles, mixtures-and-solutions, pushes-pulls-and-gravity, energy-changes-form, how-light-travels, electric-circuits or the-sun-and-its-planets. Against the units judged alongside this one: Q1's 'water and minerals' sits beside decomposers-and-recycling-matter's nutrient questions (nurse log, earthworm castings, humus), but the facts differ (the root's job, against where soil nutrients come from). WITHIN THE UNIT. Five of nine questions are on seeds and fruits (acorn, coconut, germination, seed halves, berries), against one each on roots, stem, leaf and flower. That is true to the scope but heavy on seeds. The stem's job of holding the plant up and placing the leaves in the light is never asked, and adding it would balance the unit. The coconut stem ('some hitch a ride on animals') primes the berry question's answer, but the facts differ (water dispersal, against fruit eaten and seeds dropped), so keep both. All gates.json FLAG lists are empty; the two 'short' info lines are information only."}

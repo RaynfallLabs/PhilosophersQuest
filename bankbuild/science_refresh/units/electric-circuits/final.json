@@ -1,0 +1,209 @@
+{
+ "unit": "electric-circuits",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "electric-circuits",
+   "question": "A girl has a battery, a bulb and a single wire. She holds one end of the wire to the top of the battery and the other end to the metal base of the bulb, and nothing else touches. Why does the bulb stay dark?",
+   "answer": "The electricity has no path back to the battery",
+   "choices": [
+    "The electricity has no path back to the battery",
+    "One wire is too thin to carry enough electricity",
+    "The electricity needs a switch to start it flowing",
+    "The electricity is used up inside the wire"
+   ],
+   "context": "Electricity flows only round a complete loop: out of one end of the battery, through the bulb, and back into the other end. With nothing leading back, no electricity flows at all, so none is used up, and a switch is not needed to start it. If the tip of the bulb's base also touches the battery's other end, even one wire can light it.",
+   "facts": [
+    "F1",
+    "F5",
+    "F6"
+   ],
+   "grade_note": "TEKS 5.8B has 5th graders identify what a working circuit needs, a complete loop, and NSTA's one-wire probe finds the single-wire idea that this corrects."
+  },
+  {
+   "tier": 1,
+   "topic": "electric-circuits",
+   "question": "A boy switches on his flashlight, and the bulb lights up. What has happened inside the switch?",
+   "answer": "Metal touched metal and closed the circuit",
+   "choices": [
+    "Metal touched metal and closed the circuit",
+    "Metal touched metal and opened the circuit",
+    "Plastic touched plastic and closed the circuit",
+    "Plastic touched plastic and opened the circuit"
+   ],
+   "context": "A switch brings two metal parts together or pulls them apart. Turned on, they touch and close the circuit, so electricity can cross; turned off, they part and open it, leaving a gap. The words run opposite to a door's: an open door lets people through, but an open switch lets no electricity through, and plastic could never carry it across.",
+   "facts": [
+    "F6",
+    "F7",
+    "F11"
+   ],
+   "grade_note": "Oak National Academy's Year 6 (ages 10 to 11) circuits unit teaches that a switch works by making two conductors touch or separate, and TEKS 5.8B has 5th graders identify what a working circuit needs."
+  },
+  {
+   "tier": 1,
+   "topic": "electric-circuits",
+   "question": "A boy joins a battery and a bulb in one loop of two wires, and the bulb glows. Then the wire leading from the bulb back to the battery slips off the battery's end. What happens to the bulb?",
+   "answer": "It goes out at once",
+   "choices": [
+    "It goes out at once",
+    "It stays lit, since the gap comes after it",
+    "It glows on until the wire runs empty",
+    "It dims to half its glow"
+   ],
+   "context": "A gap anywhere in a single loop stops the electricity all the way round at once, so it makes no difference that the loose end lies after the bulb. No electricity waits in the wire to keep the bulb glowing. That is also why a switch works wherever it sits in the loop.",
+   "facts": [
+    "F8",
+    "F21",
+    "F1"
+   ],
+   "grade_note": "TEKS 5.8B has 5th graders identify the requirements for a functioning circuit, a complete loop with no break, and primary guides for ages 10-12 list 'a gap after the bulb cannot turn it off' as a common mistake (F8, M4)."
+  },
+  {
+   "tier": 1,
+   "topic": "electric-circuits",
+   "question": "The wires inside a house's walls and in a lamp's cord carry electricity along a core of one metal. It is chosen because it conducts electricity very well and bends easily without cracking. Which metal is it?",
+   "answer": "Copper",
+   "choices": [
+    "Copper",
+    "Iron",
+    "Silver",
+    "Gold"
+   ],
+   "context": "Copper conducts electricity better than every metal except silver, and silver costs many times as much. Gold conducts less well than copper, and iron only about a sixth as well. The tall power lines strung between towers are mostly aluminium, which is lighter.",
+   "facts": [
+    "F9",
+    "F10",
+    "F20"
+   ],
+   "grade_note": "5th-grade circuit units name copper and other metals as the conductors that wires are made of (map line G5.P6, TEKS 5.6A), and copper wire is the standard example."
+  },
+  {
+   "tier": 1,
+   "topic": "electric-circuits",
+   "question": "The metal wire in a lamp's cord is wrapped from end to end in a coat of plastic. What is the plastic coat for?",
+   "answer": "It keeps electricity away from a person's hand",
+   "choices": [
+    "It keeps electricity away from a person's hand",
+    "It helps electricity flow along the wire faster",
+    "It slows electricity down to a safe speed",
+    "It makes the metal wire soft enough to bend"
+   ],
+   "context": "Plastic is an insulator: it does not let electricity pass, so it keeps the current inside the metal wire and away from anyone who touches the cord. It does not change how the current flows in the wire, and the metal wire inside bends easily on its own. A cord whose plastic has cracked, with bare wire showing, is dangerous to touch.",
+   "facts": [
+    "F11",
+    "F9"
+   ],
+   "grade_note": "TEKS 5.6A and map line G5.P6 have 5th graders compare conductors and insulators of electricity, and that wires are coated in plastic to keep people safe is the grade's standard example."
+  },
+  {
+   "tier": 1,
+   "topic": "electric-circuits",
+   "question": "A girl joins a buzzer into a loop of copper wire with no gaps anywhere, but the buzzer stays silent. What does the loop still need before the buzzer can sound?",
+   "answer": "A battery",
+   "choices": [
+    "A battery",
+    "A switch",
+    "A bulb",
+    "A thicker wire"
+   ],
+   "context": "A circuit needs a source of energy, such as a battery, to push the electricity round the loop. Copper wire only gives the electricity a path, and a switch only opens or closes that path, so without a battery nothing flows, however good the wires are.",
+   "facts": [
+    "F19",
+    "F1",
+    "F6"
+   ],
+   "grade_note": "TEKS 5.8B has 5th graders identify the requirements for a functioning circuit, and the unit's scope names an energy source (a battery) first; Oak National Academy's Year 6 lesson (ages 10-11) teaches that every circuit must have a cell or a battery."
+  },
+  {
+   "tier": 1,
+   "topic": "electric-circuits",
+   "question": "A woman runs a bath from the tap. Tap water carries tiny amounts of minerals dissolved in it. What does this water do with electricity?",
+   "answer": "It lets electricity pass through it",
+   "choices": [
+    "It lets electricity pass through it",
+    "It blocks electricity, as rubber does",
+    "It soaks up electricity and holds it",
+    "It makes electricity of its own"
+   ],
+   "context": "The dissolved minerals let tap water carry electricity, though perfectly pure water barely lets any through. Water makes no electricity of its own, but it carries any electricity that reaches it. So the safety rule is to keep anything with a plug away from a bath, a sink or a pool, and to dry wet hands before touching a switch.",
+   "facts": [
+    "F15",
+    "F16",
+    "F12",
+    "F23"
+   ],
+   "grade_note": "Electrical-safety lessons at this grade teach that water and electricity must be kept apart, and Oak's primary lessons (ages 8 to 11) teach that minerals dissolved in water conduct electricity."
+  },
+  {
+   "tier": 1,
+   "topic": "electric-circuits",
+   "question": "A crow can perch on one bare power line and fly off unhurt. A big bird whose wings touch two lines at once can be killed. Why is touching two lines so dangerous?",
+   "answer": "Its body completes a loop between them",
+   "choices": [
+    "Its body completes a loop between them",
+    "Its body stores up electricity from both lines",
+    "Its wings carry electricity, but its feet do not",
+    "Two lines hold twice as much electricity"
+   ],
+   "context": "The lines are bare metal, and a bird on one line touches nothing else, so the electricity has no path through its body to the ground or to another wire, and almost none flows through it. A body that touches two lines, or a line and a tower, joins them like a bulb between a battery's two ends, so electricity rushes through it. Feet carry electricity as well as wings do: a bird standing with one foot on each of two lines is in the same danger.",
+   "facts": [
+    "F13",
+    "F22",
+    "F12",
+    "F1"
+   ],
+   "grade_note": "TEKS 5.8B has 5th graders identify that a circuit must be a complete loop, and the power-line safety taught to children (F16: stay away from power lines) rests on it; the one-line case's deeper reason, both feet at one voltage, is left to later grades and is not asked."
+  },
+  {
+   "tier": 1,
+   "topic": "electric-circuits",
+   "question": "Electricity flows only along an unbroken path: out of one end of a battery, along wires and through a bulb, then back into the battery's other end. What is this whole path called?",
+   "answer": "A circuit",
+   "choices": [
+    "A circuit",
+    "A current",
+    "A conductor",
+    "A cable"
+   ],
+   "context": "The circuit is the whole path; the current is the electricity flowing along it; a conductor is a material, such as copper, that lets electricity flow. A cable is only a bundle of wires in one coat, just one part of a circuit.",
+   "facts": [
+    "F1",
+    "F3",
+    "F18"
+   ],
+   "grade_note": "The circuit as a closed path that electricity travels round is the core term of TEKS 5.8B, the 5th-grade standard on complete circuits."
+  }
+ ],
+ "revised": {
+  "f79a2059d8": {
+   "old_hash": "ed8c21c4c7",
+   "why": "Judge (medium, tell): every child has turned a light off at a switch, so 'he turns the switch off' gave the key without the fact. The light switch is gone, as the judge proposed: the wire back to the battery slips off, so only the fact (a gap anywhere in one loop stops the current, F8, F21) gives the key, against the gap-after-the-bulb belief (M4), the wire as a store (M8) and a half glow. Judge (low, clarity): the old-fashioned 'for' meaning 'because' is gone; the lure says 'since'. The context says why a switch therefore works anywhere."
+  },
+  "a4f9975f20": {
+   "old_hash": "a4f9975f20",
+   "why": "Fact-check (error): the context's 'silver costs fifty to a hundred times as much' was out of date (well over a hundred times by weight at November 2026 prices, new F20, checked now). It now says 'many times as much', which survives market swings. Stem, choices and key unchanged."
+  },
+  "d2cd209d35": {
+   "old_hash": "d2cd209d35",
+   "why": "Judge (medium, tell): 'It stores some electricity for the lamp' was dead. It is replaced with 'It makes the metal wire soft enough to bend' (the soft coat taken for what makes a cord bendy, new M11, author's judgment; wrong by F9, copper bends without cracking on its own), and the context says so. The judge's 'keeps the metal wire from getting hot' was not used: insulation does stop short circuits that heat a wire, and a thin coat can even help a thin wire shed heat, so it was close to partly true. Judge (low, clarity): the key's 'a hand' is now 'a person's hand'. Stem unchanged; same fact (F11)."
+  },
+  "c0b4bf0354": {
+   "old_hash": "c0b4bf0354",
+   "why": "Judge (medium, tell): 'It pulls electricity in, like a magnet' was dead. It is replaced with 'It makes electricity of its own' (water power at dams taken for water making electricity, new M10, author's judgment; wrong by new F23, checked now: at a dam the turbines and generators make it). The judge's 'puts electricity out, as it puts out a fire' was not used, since to a child it says the same as 'blocks electricity, as rubber does', and two lures that mean one thing are both given away. Fact-check (uncertain) and judge (low, fact): 'nothing with a plug is used beside a bath, a sink or a pool' was false as a description (bathroom outlets are everyday); it is now the safety rule (F16). Stem and key unchanged."
+  },
+  "9fc5d31154": {
+   "old_hash": "652058d2b6",
+   "why": "Judge (high, grade): the bird on ONE line needs voltage, a later grade, and the loop model cannot carry it (a child sees two feet as a way in and a way out); the fact-check (uncertain) found 'no path through its body' overstated. Rewritten, as the judge proposed, as the danger case the 5th-grade loop explains truly: a body bridging two lines completes a loop, like a bulb between a battery's two ends. This is fair 5th-grade content: it applies the complete loop (TEKS 5.8B) to the power-line safety children are taught. The lures are a body as a store (M12), feet that do not conduct (M12, refuted by new F22: birds with a foot on each of two lines die) and twice the electricity (M8), and the context says feet carry electricity as wings do; the judge's 'The second line carries stronger electricity' was not used, since a second line at a different voltage makes it half defensible. The context now says 'no path through its body to the ground or to another wire, and almost none flows through it', as the fact-check asked (new F22, checked now: Illinois Physics Van, USGS, MIT)."
+  }
+ },
+ "added": {
+  "37a07aec3b": "Replaces the dropped power-tower question, on the scope fact no question asked, as the judge advised: a working circuit needs an energy source (a battery), which gives the push that starts the flow (new F19, checked now: Oak Year 6 'Components and simple circuits'; also F1, F6). The lures are the switch-starts-it belief (M8), a second device, and a thicker wire (M8). It does not repeat energy-changes-form's battery question, which keys the form of energy a battery stores (chemical)."
+ },
+ "dropped": [
+  {
+   "old_hash": "67ef2a1d57",
+   "question": "Power lines strung between tall steel towers carry a great deal of electricity, yet none of it runs down the towers into the ground. What stops it?",
+   "why": "Judge (high, grade; medium, tell; medium, duplicate): how towers are built (bare lines hung from glass or porcelain insulators) is an engineering detail no 5th-grade standard teaches; its premise, that the current would run down into the ground, is the ground-return idea the unit never teaches; 'Rubber pads under the towers' could be argued in principle; and it asks the same fact as d2cd209d35 (an insulator keeps the current in its conductor). Agreed: dropped, and replaced on the scope's untested fact, that a circuit needs an energy source."
+  }
+ ]
+}

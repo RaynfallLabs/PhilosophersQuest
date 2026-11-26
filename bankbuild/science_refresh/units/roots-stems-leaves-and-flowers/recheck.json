@@ -1,0 +1,69 @@
+{
+ "unit": "roots-stems-leaves-and-flowers",
+ "questions": {
+  "a409e5410e": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the two choices that 'under the soil' killed are gone. 'Take in food from the soil' is the documented plants-eat-soil misconception (Ohio State, Beyond Penguins) and 'Make the plant's food' is the roots-make-food confusion; both are wrong (roots absorb water and minerals; leaves make food by photosynthesis). The key is true (Grokipedia Root: 'absorption of water and essential nutrients from the soil'). Context true and teaches why each lure fails. NGSS 4-LS1-1 / 5-LS1-1 plant-part jobs are grade 5. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Root",
+    "https://beyondpenguins.ehe.osu.edu/?p=2290",
+    "https://www.nextgenscience.org/pe/5-ls1-1-molecules-organisms-structures-and-processes"
+   ]
+  },
+  "4d7fb4fc43": {
+   "verdict": "pass",
+   "why": "Old tell fixed: 'Chlorophyll' (a substance, and another unit's key) is replaced by 'Root hairs', a live water-linked lure that takes water in at the root but is not a tube carrying it up a stem. Key true (xylem carries water and minerals up; Science World's white-carnation dye test). Phloem carries sugar; stomata are leaf pores. A carnation in a jar is plainly a cut flower, so leaving out 'cut' costs no clarity. Grade fit confirmed: the Core Knowledge Sequence Grade 5 'Plant Structures and Processes' names 'xylem and phloem, stomata', so every choice word is taught at this grade. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Xylem",
+    "https://grokipedia.com/page/Phloem",
+    "https://www.scienceworld.ca/resource/water-move/",
+    "https://en.wikipedia.org/wiki/Root_hair",
+    "https://www.coreknowledge.org/wp-content/uploads/2016/09/CKFSequence_Rev.pdf"
+   ]
+  },
+  "12f6fab9b1": {
+   "verdict": "pass",
+   "why": "Old issue fixed: the context now allows self-pollination ('the same or another flower of its kind'), which matches Grokipedia Pollination (pollen from anther to stigma). Stem, choices and key unchanged and true; germination, seed dispersal and photosynthesis are plainly wrong but are the real confusions (Oak National Academy's pollination / dispersal mix-up). Pollen from stamens and the list of carriers are true (USDA Forest Service). Grade 5 life-cycle content. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Pollination",
+    "https://www.fs.usda.gov/wildflowers/pollinators/What_is_Pollination/index.shtml",
+    "https://en.wikipedia.org/wiki/Stamen"
+   ]
+  },
+  "cab6e29c07": {
+   "verdict": "pass",
+   "why": "Old voice issue fixed: 'Which one' now refers back to the seeds listed in the stem, not to the answer choices. Facts unchanged and true: a coconut is buoyant and carried by ocean currents (Grokipedia Seed dispersal: 'routinely carried by ocean currents'), dandelion and maple ride the wind, burrs hook onto fur. The context's cautious 'far shores' and 'for months' wording stays safe. Grade 5 seed-dispersal content. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Seed_dispersal",
+    "https://grokipedia.com/page/Coconut",
+    "https://grokipedia.com/page/Samara_(fruit)"
+   ]
+  },
+  "ce79a03b29": {
+   "verdict": "pass",
+   "why": "Old issue fixed: the vague 'The bud' is replaced by 'The seed leaves', a live lure for a child who has opened a soaked bean. Key true: Grokipedia Germination says the radicle 'protrudes first through the seed coat, followed by the shoot and cotyledons', and the common bean is its epigeal example, its cotyledons raised only later by the hypocotyl. The new context makes no claim about where the seed leaves end up, so it is true for every bean. 'Seed leaves' is plain English and taught in grades 3-5 seed lessons. One defensible answer. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Germination",
+    "https://en.wikipedia.org/wiki/Radicle"
+   ]
+  },
+  "b3aaccb065": {
+   "verdict": "pass",
+   "why": "Old clarity issue fixed: a student now peels the skin, so the seed no longer acts by itself, and 'its' clearly means the seed's. Facts unchanged and true: a bean's cotyledons are its food store (Grokipedia Seed: beans 'rely on enlarged cotyledons for stored nutrients'; NSTA: food 'made by the parent plant'). The root grows from the embryo's radicle, and the seed takes in water through its coat. Grade 3-5 seed content. No singular they. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Seed",
+    "https://www.nsta.org/lesson-plan/needs-seeds-0",
+    "https://grokipedia.com/page/Germination"
+   ]
+  },
+  "19c05ecd8b": {
+   "verdict": "pass",
+   "why": "Old tell fixed: 'bright, sweet' is gone, so the stem no longer points to eating, and the weak winter choice is replaced by 'They store food for the parent plant'. That choice is wrong: Grokipedia Seed dispersal says plants invest in 'nutrient-rich fruits ... to entice dispersers'. Key true: 'Fleshy berries attract birds and mammals'; the seeds pass through the gut and come out viable. 'Bees ... pollen' is the real pollination / dispersal mix-up; 'hold water for the dry summer' is no job of a berry. The context's 'a berry with seeds grows only after its flower has been pollinated' is correct (seedless parthenocarpic fruit excepted). Grade 5. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Seed_dispersal",
+    "https://grokipedia.com/page/Fruit",
+    "https://grokipedia.com/page/Parthenocarpy"
+   ]
+  }
+ }
+}

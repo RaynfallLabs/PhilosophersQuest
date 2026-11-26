@@ -98,3 +98,9 @@ M8 Xylem and phloem swapped (phloem for water). Author's judgment; the two are t
 - Common beans and broad beans germinate differently (Wikipedia Seedling: the broad bean keeps its cotyledons below ground); no question depends on where the seed leaves end up.
 - Dye-test timing differs by source (a few hours, overnight, a few days): say "a day later" at most.
 - Pollen colour: no source read today states it, so stems say "fine dust" or "powder", not "yellow".
+
+## Revision facts (2026-11-26, the one revision round)
+
+F30 In a sprouting seed the young root (radicle) comes out first, and the shoot and the seed leaves (cotyledons) follow it; so neither the stem, the leaves nor the seed leaves lead the way. https://grokipedia.com/page/Germination ("the radicle (primary root) protrudes first through the seed coat, followed by the shoot and cotyledons (seed leaves)")
+
+F31 A fleshy fruit's food is there to tempt the animals that spread its seeds, not stored for the parent plant: a fruit's jobs are to protect the seeds and help spread them, and plants "invest in attractive structures such as colorful, nutrient-rich fruits ... to entice dispersers". https://grokipedia.com/page/Seed_dispersal; https://grokipedia.com/page/Fruit ("This structure serves to protect the seeds and aid in their dispersal"; "fleshy fruits attract vertebrates and invertebrates that ingest or carry seeds")

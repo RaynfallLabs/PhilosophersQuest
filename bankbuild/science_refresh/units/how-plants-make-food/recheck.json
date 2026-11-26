@@ -1,0 +1,35 @@
+{
+ "unit": "how-plants-make-food",
+ "questions": {
+  "24bc41fcf8": {
+   "verdict": "pass",
+   "why": "Old tell fixed. The carbon dioxide / carbon monoxide pair is gone, and 'Hydrogen' is a live lure tied to water. Adding 'gas' to every choice evens the lengths without a cue. Key true: photosynthesis takes CO2 from the air (Grokipedia Photosynthesis). Lures wrong: 'respiration requires oxygen' and photosynthesis gives it off (Ohio State); nitrogen is 78% of the air but not in the sugar; hydrogen is 0.00005% of the air (Wikipedia Gas composition), about half a part per million. Context true. NGSS 5-LS1-1 grade content.",
+   "sources": [
+    "https://grokipedia.com/page/Photosynthesis",
+    "https://beyondpenguins.ehe.osu.edu/?p=2290",
+    "https://en.wikipedia.org/wiki/Gas_composition",
+    "https://en.wikipedia.org/wiki/Atmosphere_of_Earth"
+   ]
+  },
+  "b73f332c51": {
+   "verdict": "pass",
+   "why": "Old problems fixed. There is no flame, so fire knowledge no longer gives the key, and there is no Priestley jar, which belongs to the T4 unit. The stem asks what the pondweed gives off as it makes food, not what fills the bubbles, so the nitrogen in real bubbles does not make 'Nitrogen' defensible. Key true: Elodea's oxygen is 'often visible as bubbles on leaf surfaces', a classic classroom demonstration (Grokipedia Elodea). Photosynthesis releases O2 and stops in darkness (Grokipedia Photosynthesis). Lures wrong as the gas made with the food: CO2 is taken in, a submerged leaf does not transpire, and nitrogen is not made. Plants give off oxygen is G5.L3 content. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Elodea",
+    "https://grokipedia.com/page/Photosynthesis",
+    "https://beyondpenguins.ehe.osu.edu/?p=2290"
+   ]
+  },
+  "d37803faca": {
+   "verdict": "fail",
+   "why": "Grade fit of the new lure 'Cellulose'. No 5th-grade standard teaches the word: NGSS 5-LS1-1, TEKS 5 and Core Knowledge G5 do not name it. It turns up only as an optional extension in a grade 6 (5-7) lesson (TeachEngineering), and the writer's own notes call it 'new to the grade' and 'an unknown leaf word' (M9). A 5th grader cannot weigh it. It is live only as an unfamiliar science-sounding term, not as a confusion the grade really makes (config distractor rule), so a half-sure child who studied the unit is pulled by a word he or she was never taught. 'Glucose' is fair: G5.L3 names 'sugar (glucose)', grade 5-7 lessons teach 'a simple sugar called glucose', and food against light-catcher is the real confusion. The facts are otherwise true: chlorophyll is the green light-absorbing pigment, autumn reveals carotenoids already present, cellulose builds cell walls, and glucose is not green. Fix: replace 'Cellulose' with a leaf word the grade is taught; keep Glucose and Carotene.",
+   "sources": [
+    "https://grokipedia.com/page/Photosynthesis",
+    "https://grokipedia.com/page/Autumn_leaf_color",
+    "https://grokipedia.com/page/Cellulose",
+    "https://www.teachengineering.org/lessons/view/duk_photo_mary_less",
+    "https://www.nextgenscience.org/pe/5-ls1-1-molecules-organisms-structures-and-processes"
+   ]
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "kind": "draft",
+ "kind": "final",
  "unit": [],
  "questions": {
   "e900a240f7": {
@@ -18,12 +18,11 @@
    ],
    "flag": []
   },
-  "ed8c21c4c7": {
+  "f79a2059d8": {
    "fail": [],
    "warn": [],
    "info": [
-    "length_budget: Total record cost 376 chars > tier 1 hard cap 294 (target 280 + 5%)",
-    "voice: long(47>45)"
+    "length_budget: Total record cost 311 chars > tier 1 hard cap 294 (target 280 + 5%)"
    ],
    "flag": []
   },
@@ -41,12 +40,10 @@
    ],
    "flag": []
   },
-  "67ef2a1d57": {
+  "37a07aec3b": {
    "fail": [],
    "warn": [],
-   "info": [
-    "length_budget: Total record cost 319 chars > tier 1 hard cap 294 (target 280 + 5%)"
-   ],
+   "info": [],
    "flag": []
   },
   "c0b4bf0354": {
@@ -55,10 +52,12 @@
    "info": [],
    "flag": []
   },
-  "652058d2b6": {
+  "9fc5d31154": {
    "fail": [],
    "warn": [],
-   "info": [],
+   "info": [
+    "length_budget: Total record cost 333 chars > tier 1 hard cap 294 (target 280 + 5%)"
+   ],
    "flag": []
   },
   "94f9c51f92": {

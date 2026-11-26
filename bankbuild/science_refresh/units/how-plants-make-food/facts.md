@@ -90,3 +90,17 @@ M8 "Photo" means picture, from the everyday English word photo. Author's judgmen
 - No scientist is named in any stem (T1 rule): the candle-and-mint jar (F17) is told as a scene, not as Priestley's story.
 - The potato question keys the leaves as the part that makes the food "in the first place": the starch is assembled in the tuber, but from sugar the leaves made (F23).
 - The sugar question's lures (protein, minerals, salt) cannot be made from water and carbon dioxide alone: protein needs nitrogen (F22), minerals and salts come from the soil (F12).
+
+## Added in the revision (2026-11-25, checked on the web now)
+
+F32 A water plant such as the pondweed Elodea gives off oxygen as it makes its food in light, and the oxygen shows as bubbles on and rising from its leaves; this is a standard classroom way to show photosynthesis. https://grokipedia.com/page/Elodea ("vigorous oxygen production under light"; oxygen produced "as a byproduct, often visible as bubbles on leaf surfaces"; "extensively employed in educational laboratories to demonstrate photosynthesis", through "the production of oxygen bubbles from submerged leaves exposed to light"). The process stops in darkness (F18). Caution: the gas in such bubbles is not pure oxygen (some nitrogen from the water and the plant's air spaces joins it; a 2024 Water Resources Research study of submerged plants found bubbles about 21 to 45 percent oxygen, https://doaj.org/article/29c635ba28974fdd83eb41306b1f6b4e, seen in a search summary only), so the question asks which gas the pondweed gives off as it makes its food, never which gas fills the bubbles.
+
+F33 Hydrogen is only a trace in the air: about 0.00005 percent of dry air by volume, about half a part per million. https://en.wikipedia.org/wiki/Gas_composition (dry-air table: hydrogen, H2, 0.00005 percent by volume); NOAA's global air-sampling network measured a global mean of 552.8 parts per billion in 2021 (https://amt.copernicus.org/articles/17/4803/2024/). The hydrogen in a plant's sugar comes from water (F2, F22), not from hydrogen gas in the air.
+
+F34 Cellulose is the main building material of a plant's cell walls, a white substance. https://grokipedia.com/page/Cellulose ("the primary structural component of plant cell walls"; isolated by Payen as "a white, insoluble substance")
+
+F35 Glucose is the simple sugar a plant makes in photosynthesis; as a solid it is colourless crystals or a white powder. https://grokipedia.com/page/Glucose ("In plants, glucose is synthesized de novo primarily through photosynthesis", which "converts carbon dioxide and water into carbohydrates using light energy"; "In its solid form, glucose appears as colorless crystals or a white, odorless powder with a sweet taste")
+
+M9 Author's judgment, from the judge's note: the food a leaf makes (glucose) confused with the green substance that catches the light (chlorophyll); and an unknown leaf word (cellulose) taken for the light-catcher. Used as the lures "Glucose" and "Cellulose"; neither is green (F34, F35).
+
+M10 Author's judgment: bubbles in water taken for water vapour, as in boiling water (the solids-liquids-and-gases unit teaches that boiling bubbles are water as a gas), or for carbon dioxide, as in a fizzy drink, and plants pictured breathing out carbon dioxide (M5). Used as the lures for the pondweed's gas.

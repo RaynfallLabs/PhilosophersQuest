@@ -1,0 +1,53 @@
+{"unit": "decomposers-and-recycling-matter",
+ "questions": {
+  "3583f91887": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem rules out one wrong choice and a word weakens another. 'It goes soft and mushy' rules out 'The Sun's heat drying it out', because a mushy apple is not drying. 'Time alone breaking it down' carries the give-away 'alone' that marks it as wrong. That leaves the key against 'Rain and wind wearing it away'. The misconceptions are the right ones (M1, M2), but two of them are disarmed by the wording.",
+     "fix": "Stem: 'An apple falls from a tree into the long grass. Over the next few weeks it turns brown and slowly shrinks until almost nothing of it is left. What makes the apple rot?' Choices: 'Tiny living things feeding on it', 'Rain and wind wearing it away', 'The Sun's heat drying it out', 'Old age making it fall apart' (M1's 'old age')."}
+   ]},
+  "5e7eea49c1": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "This asks the same fact as 3583f91887 from the other side. 'Rotting needs decomposers' (F3) and 'without decomposers dead things pile up' (F15) are one fact, so a player who knows the apple question's answer gets this one for nothing. Meanwhile the scope names scavengers (F8), and no question in the unit asks about them.",
+     "fix": "Use this slot for scavengers. Draft: 'A deer dies in a forest in the night. By noon, vultures are feeding on its body, and beetles soon join them. What are animals that feed on the bodies of dead animals called?' Choices: 'Scavengers', 'Predators', 'Parasites', 'Prey'. Source it from F8, and check that no choice is partly true. Use vultures, not crows, since crows also hunt and so are partly predators."},
+    {"axis": "tell", "severity": "medium",
+     "what": "If the question stays, two wrong choices are dead. 'The forest floor would stay clean and bare' is ruled out by the stem's own leaf-fall and deaths every autumn. 'Dead plants would turn to soil faster' is absurd once a child knows decomposers are what turn dead things to soil, and the word 'decomposer' all but says so. Only 'The soil would grow richer every year' is a live lure.",
+     "fix": "If the slot is kept for this fact, replace the two dead choices with 'The dead things would slowly dry and blow away' (M2) and 'The dead things would vanish in time anyway' (M1). Note that this makes the overlap with 3583f91887 even closer, so the scavenger replacement is the better fix."}
+   ]},
+  "c59136a1d9": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "how-plants-make-food keys 'Where does most of the matter that builds the tree come from? From air and water', with 'From dead leaves and twigs' and 'From soil and minerals' as wrong choices. A player who meets both questions may think they clash, since this one keys nutrients taken in from rotting wood. They do not clash (nutrients are a small share of the tree), but nothing here says so.",
+     "fix": "Add to the context: 'These nutrients are only a small part of what a tree is built from; most of its wood is made from air and water.'"}
+   ]},
+  "2cc7fe97c9": {"verdict": "ok", "issues": []},
+  "2738af505f": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's 'swallowing dead leaves and bits of earth as they go' rules out 'They eat the insects that harm roots', because the stem has just said what worms eat. It also lays the path to the key: worms swallow dead leaves, so their droppings return the leaves to the soil.",
+     "fix": "Stem: 'A gardener is glad to find earthworms tunnelling through the soil of her vegetable bed. How do the earthworms help her plants?' Keep the choices. The context already teaches what earthworms eat."},
+    {"axis": "fact", "severity": "low",
+     "what": "'They keep moulds and bacteria away' may be partly true. Earthworms digest some soil microbes, and some studies report that they suppress certain fungal plant diseases. The general claim is still wrong (their castings teem with bacteria), but it needs a check.",
+     "fix": "Ask the fact-checker to confirm. If it is defensible, replace it with 'They pull pests off the leaves' or another help that earthworms plainly do not give."}
+   ]},
+  "9d92579ee5": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The two cold choices ('On a cold, dry mountainside', 'In a frozen field in winter') are one idea, and both fall to the everyday knowledge that cold keeps food from rotting. The only live lure is the hot desert, so the question is down to two choices. The key is also the only choice with a forest, the one place full of life.",
+     "fix": "Choices: 'On a warm, damp forest floor', 'On a cool, damp forest floor', 'On a hot, dry desert floor', 'In a frozen field in winter'. Warm and damp against cool and damp tests the warmth half of F20, and the desert tests the moisture half."}
+   ]},
+  "69fe9b78ed": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'It dried to dust and blew away' sits against the stem's 'It goes soft and rots', so that lure (M2) is weaker than it should be.",
+     "fix": "Stem: 'A pumpkin is left in a garden after the harvest. It slowly rots, and a few months later almost nothing of it is left. Where did most of the pumpkin's matter go?'"}
+   ]},
+  "3e9d5ceaf6": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The wrong choices are the familiar trio sand, silt and clay, so a child who knows the set can pick the odd one out, and 'Sand' is weak (every child knows beach sand is pale and gritty). There is no better choice: compost, topsoil, loam and peat all hold or resemble humus, so each would be partly true.",
+     "fix": "Keep the choices as they are."}
+   ]}
+ },
+ "unit_notes": "Rulings asked for. (1) HUMUS (3e9d5ceaf6) is 5th-grade content; keep it. US elementary soil units teach the term in grades 3-5 (FOSS-type grade 4 soil units; TEKS grade 3's soil formed from decomposed remains), National Geographic marks its humus entry for grades 5 to 8, and 5th-grade decomposer units name humus as what decomposition leaves in the soil. It is neither too advanced nor too babyish. The grade_note should cite a soil-unit source, since NGSS 5-LS2-1 does not name humus. (2) There is NO overlap with food-chains-and-food-webs. That unit uses decomposers only as a role (lures and contexts), and no question here asks which creature is a decomposer. One harmless echo: food-chains' 6b1910d5f6 stem 'On a damp forest floor' and this unit's 9d92579ee5 key. OVERLAP CHECK against the T1 finals. how-plants-make-food: c59136a1d9 (nutrients from the log) stands beside its 'From air and water' tree-mass question. The facts differ and do not conflict, and the context fix above makes that plain. energy-changes-form: c59136a1d9's 'Energy left over in the wood' lure agrees with its 'food holds chemical energy' (the energy is there; the trees do not take it in). mixtures-and-solutions and matter-made-of-tiny-particles: 69fe9b78ed asks where a rotting thing's matter goes (into the air and soil), a different fact from 'the same mass after dissolving'; its sealed-jar line is context only. how-light-travels: 2cc7fe97c9 borrows the black-shirt fact as the 'Sunlight soaked up by the dark heap' lure, which is fair. No overlap with telling-materials-apart, solids-liquids-and-gases, pushes-pulls-and-gravity, electric-circuits or the-sun-and-its-planets. Against roots-stems-leaves-and-flowers: its Q1 keys the roots' job (water and minerals), while c59136a1d9, 2738af505f and 3e9d5ceaf6 key where soil nutrients come from, so the facts differ. WITHIN THE UNIT. 3583f91887 and 5e7eea49c1 ask one fact (F3 and F15); fix above. Scavengers (scope; F8) are not asked anywhere, and 5e7eea49c1's slot should take them. Mushrooms and moulds are named only in contexts; 'bacteria and fungi' is keyed in 2cc7fe97c9, which covers NGSS LS2.A. In 3583f91887 and 2cc7fe97c9 the key is the only living cause among non-living ones. That is natural to the misconceptions tested, but do not add a third question with that pattern. Three questions touch nutrients returning to the soil (c59136a1d9, 2738af505f, 3e9d5ceaf6), each on a different fact (matter not energy, earthworm castings, the name humus). All gates.json FLAG lists are empty; the length_budget and 'short' lines are information only."}

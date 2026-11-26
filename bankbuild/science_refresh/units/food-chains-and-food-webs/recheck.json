@@ -1,0 +1,70 @@
+{
+ "unit": "food-chains-and-food-webs",
+ "questions": {
+  "431cf11cdc": {
+   "verdict": "pass",
+   "why": "Old clarity issue fixed: 'producer' is now glossed ('one that makes its own food'), so the question works whatever order it is drawn in. 'Which of these living things' points at the stem's own list, not at the choices. The gloss gives nothing away: the test, moss against the mushroom (fungi are not plants), is intact. Facts true: moss is a photosynthetic plant (Grokipedia Moss); fungi 'lack chlorophyll and cannot perform photosynthesis' and decompose wood (Grokipedia Fungus); snails and beetles are consumers. NGSS 5-LS2-1. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Moss",
+    "https://grokipedia.com/page/Fungus",
+    "https://education.nationalgeographic.org/resource/food-chain/"
+   ]
+  },
+  "3fc69f2de6": {
+   "verdict": "pass",
+   "why": "Old overstatement fixed: only the rabbit is now said to eat nothing else, and Grokipedia Rabbit confirms 'Rabbits are strict herbivores' eating 'grasses, forbs, bark, and twigs'. 'Deer and most caterpillars are herbivores too' is true and allows for the deer filmed eating songbird nestlings (USGS, Pietz and Granfors 2000) and the few predatory caterpillars. Carnivore, omnivore and decomposer are all wrong. Grade 5 consumer vocabulary. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Rabbit",
+    "https://grokipedia.com/page/Herbivore",
+    "https://www.usgs.gov/publications/white-tailed-deer-odocoileus-virginianus-predation-grassland-songbird-nestlings"
+   ]
+  },
+  "964ca9b4b2": {
+   "verdict": "pass",
+   "why": "Old HIGH tell fixed: no chain is drawn in the stem, so the arrow's direction can no longer be read off it, and the real misconception (arrows drawn toward the thing eaten; Wisconsin DNR handout) is now tested. The size and strength lures are weaker but plausible, and not the convention. Key true: trophic links point 'from prey to predators', the way energy moves (Grokipedia Food web). Wolves and moose are true: wolves are 27-65 kg and hunt moose in packs, and bulls are 380-700 kg (Grokipedia Moose, Wolf), several times any wolf. NGSS 5-LS2-1. One defensible answer. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Food_web",
+    "https://grokipedia.com/page/Moose",
+    "https://grokipedia.com/page/Wolf",
+    "https://dnr.wisconsin.gov/sites/default/files/topic/Research/lessons_CreatingChainsEducatorHandout.pdf"
+   ]
+  },
+  "7a1b94bfde": {
+   "verdict": "pass",
+   "why": "Both old issues fixed. The context now gives both meanings of 'food pyramid', healthy-eating guide and ecology's pyramid of feeding levels (Wikipedia Ecological pyramid: 'sometimes food pyramid'), and says why neither is a web. The weak 'A life cycle' is replaced by 'One long food chain', the live join-into-one-chain idea. Key true (NatGeo: 'all the food chains in a single ecosystem'). A habitat is a place. Grade 5 (NGSS 5-LS2-1). Voice clean.",
+   "sources": [
+    "https://education.nationalgeographic.org/resource/food-web/",
+    "https://en.wikipedia.org/wiki/Ecological_pyramid",
+    "https://grokipedia.com/page/Habitat"
+   ]
+  },
+  "f2a54b45bc": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the dead 'More herons' is replaced by 'No change to the insects', the changes-stay-local misconception (Griffiths and Grant; Kesler TEKS 5.12B), and 'Fewer herons', also true, is rightly avoided. The closer 'What is most likely to follow?' fits every choice. Key true: losing the predator releases its prey (Kesler's TEKS 5.12B frog-disease example). 'More plants' is wrong, since more insects eat more plants. Exactly one defensible answer. Grade 5 (TEKS 5.12B). Voice clean.",
+   "sources": [
+    "https://keslerscience.com/teks-5.12b-predicting-changes-in-ecosystems",
+    "https://grokipedia.com/page/Food_web",
+    "https://wordpressua.uark.edu/scimap/?p=336"
+   ]
+  },
+  "205636132f": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the silly 'hawks eat it too' is replaced by 'No change, because it grows back fast', a live idea that is wrong because regrowth cannot keep up with far more grazers (Grokipedia Overgrazing: grazing 'removes plant cover faster than it can recover'). The context teaches exactly that. Key true; the other two choices are wrong reasons. TEKS 5.12B / NGSS 5-LS2-1. One defensible answer. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Overgrazing",
+    "https://grokipedia.com/page/Rabbit",
+    "https://keslerscience.com/teks-5.12b-predicting-changes-in-ecosystems"
+   ]
+  },
+  "5ec41746d1": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the dead 'Schools of small fish' is replaced by 'Floating mats of seaweed', a real open-ocean producer (Grokipedia Sargassum: pelagic species 'form dense, floating mats in regions like the Sargasso Sea' and are 'a local source of primary production'). It is minor next to phytoplankton, so 'most' is now what the question tests. Key true (NOAA: phytoplankton are microscopic algae at the base of ocean food webs; Grokipedia: 'the majority of oceanic primary production'). Seabed seaweed miles down is impossible (seaweed needs light; deepest about 268 m), and zooplankton are consumers. NatGeo's 5th-grade food-web page names phytoplankton. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Sargassum",
+    "https://grokipedia.com/page/Phytoplankton",
+    "https://oceanservice.noaa.gov/facts/phyto.html",
+    "https://grokipedia.com/page/Seaweed"
+   ]
+  }
+ }
+}

@@ -1,0 +1,316 @@
+{
+ "unit": "decomposers-and-recycling-matter",
+ "questions": {
+  "3583f91887": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: an apple rots because tiny living things (decomposers) feed on it",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "BSCS/CPP grade 5 idea 11: for decomposition other organisms (decomposers) must be present. Apple rots are caused mainly by fungi (Penicillium expansum, Monilinia fructigena, Mucor) entering through wounds (archive.bio.ed.ac.uk/jdeacon/microbes/applerot.htm; extension.psu.edu/home-gardening-mucor-rot)."
+    },
+    {
+     "claim": "Wrong: rain and wind wearing it away",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Idea 14 names wind and rain as the student misconception; decomposition is a chemical change done by decomposers."
+    },
+    {
+     "claim": "Wrong: the Sun's heat drying it out",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Idea 14 lists drying out as a misconception; the stem's apple goes soft and mushy, not dry."
+    },
+    {
+     "claim": "Wrong: time alone breaking it down",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Idea 11: things do not rot by themselves as a feature of aging."
+    },
+    {
+     "claim": "Context: bacteria and moulds, mostly too small to see, do the work; worms and insects help",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/decomposers/",
+     "note": "NatGeo: most decomposers are microscopic; BSCS idea 12: bacteria and mould play the major role, larger animals (worms, woodlice, slugs) a support role."
+    },
+    {
+     "claim": "Context: an apple sealed away from all decomposers would not rot at all",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Idea 11: once-living matter in a sealed container free of living organisms would not rot. (The fruit's own enzymes can still soften and brown it, but that is not rotting by decay; acceptable at grade 5.)"
+    }
+   ]
+  },
+  "5e7eea49c1": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: without decomposers dead plants and animals would pile up",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/decomposers/",
+     "note": "NatGeo: 'Without decomposers, dead leaves, dead insects, and dead animals would pile up everywhere.' Grokipedia Decomposer agrees (undecomposed matter would accumulate)."
+    },
+    {
+     "claim": "Wrong: the forest floor would stay clean and bare",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Decomposer",
+     "note": "Opposite of the truth: matter would accumulate."
+    },
+    {
+     "claim": "Wrong: the soil would grow richer every year",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Decomposer",
+     "note": "Nutrients would stay locked in dead material; ecosystems would face nutrient depletion."
+    },
+    {
+     "claim": "Wrong: dead plants would turn to soil faster",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Decomposer",
+     "note": "Decomposers turn litter into humus; without them it would not happen faster."
+    },
+    {
+     "claim": "Context: bacteria and fungi, helped by earthworms and insects; nutrients locked in dead things would never return to the soil",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/5-ls2-1-ecosystems-interactions-energy-and-dynamics",
+     "note": "NGSS LS2.A: fungi and bacteria break down dead organisms; Grokipedia Decomposer: nutrients would stay locked in dead material."
+    }
+   ]
+  },
+  "c59136a1d9": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: besides water, young trees on a nurse log take in nutrients set free from the wood",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Nurse_log",
+     "note": "Grokipedia: the log provides nutrients from decomposing wood and retains moisture; late-decay logs can hold 10-20 times more N and P than adjacent soil. NPS Life in a Log: nurse logs offer seedlings shade, nutrients, water and protection from disease."
+    },
+    {
+     "claim": "Wrong: energy left over in the wood",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Idea 26: decomposers do not recycle energy; what they release to plants holds no usable energy, only matter. The wood's energy feeds the fungi, not the seedlings."
+    },
+    {
+     "claim": "Wrong: light stored up in the wood",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Not a thing; plants get light from the Sun directly. (A log can raise a seedling into better light, but it stores none.)"
+    },
+    {
+     "claim": "Wrong: ready-made food from the wood",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Ideas 5 and 7: a plant's only energy-supplying food is what it makes by photosynthesis; soil nutrients are not food. Mycorrhizal carbon transfer between trees (mentioned on Grokipedia Nurse_log) comes from other living trees, not the log, and is beyond grade 5."
+    },
+    {
+     "claim": "Context: fungi, bacteria and insects break the log down and free nitrogen and phosphorus, taken in through roots; the log gives no energy or food",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Nurse_log",
+     "note": "Grokipedia: fungi lead (white-rot and brown-rot), bacteria follow, termites and beetles speed fragmentation; decomposition releases N, P and C; nutrients become available as roots penetrate the wood."
+    }
+   ]
+  },
+  "2cc7fe97c9": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the heat in a damp heap of clippings and peels comes from bacteria and fungi breaking it down",
+     "result": "ok",
+     "source": "https://compost.css.cornell.edu/physics.html",
+     "note": "Cornell: 'Compost heat is produced as a by-product of the microbial breakdown of organic material.' Grokipedia Compost: bacteria are 80-90% of the microbes and drive the heat; fungi active in the cooler phases. 'Bacteria and fungi' is fine at grade 5."
+    },
+    {
+     "claim": "Wrong: sunlight soaked up by the dark heap",
+     "result": "ok",
+     "source": "https://www.compostguide.com/does-a-compost-pile-need-sun",
+     "note": "Sun warms only the surface at most; the core heat comes from microbial activity. The stem's hot middle rules sunlight out."
+    },
+    {
+     "claim": "Wrong: the heap's weight squeezing the middle",
+     "result": "ok",
+     "source": "https://compost.css.cornell.edu/physics.html",
+     "note": "Cornell names microbial breakdown as the heat source; compaction cuts air and slows heating rather than causing it."
+    },
+    {
+     "claim": "Wrong: warmth rising from the ground below",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Compost",
+     "note": "The pile starts at ambient temperature and rises far above it through microbial activity; the ground is cooler than 55-70 C."
+    },
+    {
+     "claim": "Timing: hot to the touch a few days later",
+     "result": "ok",
+     "source": "https://compost.css.cornell.edu/physics.html",
+     "note": "Cornell: piles heat in two to five days; Grokipedia: mesophilic phase lasts 1-5 days before the thermophilic phase."
+    },
+    {
+     "claim": "Context: middle of a heap reaches 55 to 70 degrees Celsius",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Compost",
+     "note": "Grokipedia: thermophilic phase 'often reaching 130-160 F (55-70 C)'. Cornell gives 60-70 C for large systems. Minor: at the hottest stage it is mostly bacteria (fungi drop out above about 50 C); optional tweak 'Bacteria, with some fungi, feed on the scraps'."
+    }
+   ]
+  },
+  "2738af505f": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Key: earthworms help her plants because their droppings make the soil richer",
+     "result": "ok",
+     "source": "https://research.wur.nl/en/publications/how-fertile-are-earthworm-casts-a-meta-analysis/",
+     "note": "Van Groenigen et al. 2019 meta-analysis (81 studies): casts hold 40-48% more total N, P and organic C than bulk soil, and 241% more mineral N and 84% more available P. Penn State Extension: casts have more available N, P, K and Ca than surrounding soil."
+    },
+    {
+     "claim": "Wrong: they eat the insects that harm roots",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earthworm",
+     "note": "Earthworms eat soil and organic debris (and microbes in it); no source has them eating insects."
+    },
+    {
+     "claim": "Wrong: they keep moulds and bacteria away",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earthworm",
+     "note": "Castings increase microbial activity; earthworms reshape microbial communities (often more bacteria) rather than keeping microbes away."
+    },
+    {
+     "claim": "Wrong: they press the soil down firm and tight",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earthworm",
+     "note": "Burrows improve aeration, water infiltration (up to 10x) and root penetration: the opposite of compacting."
+    },
+    {
+     "claim": "Context: castings hold 'several times more nitrogen and phosphorus than the soil around them'",
+     "result": "error",
+     "source": "https://research.wur.nl/en/publications/how-fertile-are-earthworm-casts-a-meta-analysis/",
+     "note": "Overstated. The 5x N / 7x P figure (Grokipedia Earthworm, facts.md F9) traces to a single old study of available nutrients and is not what the modern evidence shows. The 2019 meta-analysis of 81 articles found casts on average only 40-48% higher in total N and P; available P 84% higher (under 2x); only mineral (plant-ready) N reaches about 3.4x. Fix: 'An earthworm's droppings, called castings, are richer in nitrogen and phosphorus than the soil around them, much of it in a form plants can take up at once.'"
+    },
+    {
+     "claim": "Context: earthworms eat dead plant matter and soil, not insects; droppings full of bacteria; tunnels loosen soil and let in air and water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earthworm",
+     "note": "Diet of soil and decomposing plant material; castings raise microbial activity; burrows improve aeration and water infiltration."
+    }
+   ]
+  },
+  "9d92579ee5": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a leaf rots fastest on a warm, damp forest floor",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Decomposition",
+     "note": "'warmer and wetter conditions generally accelerating the breakdown'; microbial activity peaks at 20-30 C and 50-60% water-holding capacity; tropical litter often loses over 95% of its mass in a year."
+    },
+    {
+     "claim": "Wrong: on a hot, dry desert floor",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4362295/",
+     "note": "Dryland microbial decay is limited by moisture (small moisture changes set the rate). Sunlight's UV photodegradation adds some desert mass loss, but that is not bacteria and fungi (the stem's subject) and does not make desert rates rival a rainforest's."
+    },
+    {
+     "claim": "Wrong: on a cold, dry mountainside",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Decomposition",
+     "note": "Cold and dryness both slow microbes; polar sites lose only about 10-11% a year."
+    },
+    {
+     "claim": "Wrong: in a frozen field in winter",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Decomposition",
+     "note": "Cold constrains decomposition; frozen water stops microbial work."
+    },
+    {
+     "claim": "Context: on a warm, wet rainforest floor a leaf can be gone within a year or two",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tropical_rainforest",
+     "note": "Litter turnover times of 0.5-2 years, far quicker than in temperate forests."
+    },
+    {
+     "claim": "Context: decomposers need water and warmth; in a dry desert too little water; cold slows them",
+     "result": "ok",
+     "source": "https://compost.css.cornell.edu/physics.html",
+     "note": "Cornell: too little moisture (<30%) inhibits bacterial activity; Grokipedia Mold: moisture the most critical requirement."
+    }
+   ]
+  },
+  "69fe9b78ed": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: most of the rotted pumpkin's matter went into the air and the soil",
+     "result": "ok",
+     "source": "https://www.nextgenscience.org/pe/5-ls2-1-ecosystems-interactions-energy-and-dynamics",
+     "note": "NGSS LS2.B: 'Matter cycles between the air and soil and among plants, animals, and microbes as these organisms live and die.' BSCS idea 11: by-products go into the air (CO2, water) or stay in the soil (water, N, P). Matter in the decomposers' own bodies sits in the soil too."
+    },
+    {
+     "claim": "Wrong: it was used up and destroyed",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Idea 15: total matter stays the same; a closed container has the same mass before and after."
+    },
+    {
+     "claim": "Wrong: it was changed into energy",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Idea 24: matter cannot change into energy; the decomposers get energy from the food, but the matter becomes CO2, water and minerals."
+    },
+    {
+     "claim": "Wrong: it dried to dust and blew away",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Idea 14: drying out and wind are misconceptions; decomposition is a chemical change."
+    },
+    {
+     "claim": "Context: CO2 and water to the air, minerals in the soil; none destroyed or turned to energy; plants use it again; a sealed jar would weigh the same",
+     "result": "ok",
+     "source": "https://www.cpp.edu/respect/resources/documents_5th/gr5.fw_common_student_ideas.pdf",
+     "note": "Ideas 11, 15, 22, 24; NatGeo Decomposers: water, CO2 and simple compounds with N, P, Ca."
+    }
+   ]
+  },
+  "3e9d5ceaf6": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the dark, crumbly, nutrient-rich part of soil made by decomposers from dead remains is humus",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Humus",
+     "note": "Grokipedia: 'the stable, dark-colored organic fraction of soil formed by the microbial decomposition of plant and animal residues'. NatGeo (grades 5-8): dark organic material that forms when plant and animal matter decays; brown or black; soil with humus crumbles. Soil scientists now debate humus as a distinct chemical class (Lehmann and Kleber 2015), but the term for the dark decayed organic part of soil stands, and the grade-5 definition is true."
+    },
+    {
+     "claim": "Wrong: clay",
+     "result": "ok",
+     "source": "https://kidsgardening.org/lesson-plans-soil-texture-and-composition/",
+     "note": "Mineral particle under 0.002 mm, from weathered rock."
+    },
+    {
+     "claim": "Wrong: silt",
+     "result": "ok",
+     "source": "https://kidsgardening.org/lesson-plans-soil-texture-and-composition/",
+     "note": "Mineral particle 0.05-0.002 mm, from weathered rock."
+    },
+    {
+     "claim": "Wrong: sand",
+     "result": "ok",
+     "source": "https://kidsgardening.org/lesson-plans-soil-texture-and-composition/",
+     "note": "Mineral particle 2.00-0.05 mm, from weathered rock."
+    },
+    {
+     "claim": "Context: humus dark brown or black, from decayed plants and animals, holds nutrients and water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Humus",
+     "note": "Dark-coloured; a stable reservoir of nutrients; holds several times its weight in water. NatGeo: thick brown or black substance; many nutrients, nitrogen among the most important."
+    },
+    {
+     "claim": "Context: clay, silt and sand are tiny bits of rock broken down over thousands of years",
+     "result": "ok",
+     "source": "https://kidsgardening.org/lesson-plans-soil-texture-and-composition/",
+     "note": "'derived from rock broken down over thousands of years by climatic and environmental conditions'. (Clay is partly new minerals formed in weathering; fine at grade 5.)"
+    }
+   ]
+  }
+ },
+ "unit_notes": "8 questions checked: 7 ok, 1 error (2738af505f: the castings' 'several times more N and P' in the context is overstated against the 2019 meta-analysis; facts.md F9's 5x/7x figure should be softened too). Minor optional tweak on 2cc7fe97c9: at 55-70 C it is mostly bacteria, fungi drop out above about 50 C. The CPP/BSCS grade-5 PDF was read in full and supports F3, F10-F15 and M1-M8 as quoted."
+}

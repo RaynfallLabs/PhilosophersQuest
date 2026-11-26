@@ -1,0 +1,167 @@
+{
+ "unit": "how-light-travels",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "how-light-travels",
+   "question": "A student stands three cards in a row between a flashlight and a wall. Each card has a small hole, and with the holes lined up, a spot of light shines through them onto the wall. What happens to the spot when she slides the middle card so its hole is out of line?",
+   "answer": "It disappears from the wall",
+   "choices": [
+    "It disappears from the wall",
+    "It stays just where it was",
+    "It slides over with the card",
+    "It grows dimmer but stays put"
+   ],
+   "context": "Light travels in straight lines. Once the middle hole is out of line, no straight path runs through all three holes, so the middle card blocks the light, and the light cannot bend around the card to reach the wall.",
+   "facts": [
+    "F1",
+    "F2"
+   ],
+   "grade_note": "TEKS 5.8C asks 5th graders to demonstrate that light travels in a straight line, and the three-card test is a standard classroom activity for grades 3-6 (SERC, Minnesota STEP)."
+  },
+  {
+   "tier": 1,
+   "topic": "how-light-travels",
+   "question": "A wooden chair stands in a sunny room, and a boy on the far side of the room can see it clearly. What lets him see the chair?",
+   "answer": "Light bounces off the chair into his eyes",
+   "choices": [
+    "Light bounces off the chair into his eyes",
+    "Light goes out from his eyes to the chair",
+    "The chair gives off a faint light of its own",
+    "Light passes through the chair to his eyes"
+   ],
+   "context": "The chair makes no light of its own. Sunlight bounces off it, and some of that light travels straight into the boy's eyes, which is how he sees it. Eyes send out no light, so in a room with no light at all he would see nothing.",
+   "facts": [
+    "F8",
+    "F9",
+    "F6"
+   ],
+   "grade_note": "England's Year 6 curriculum (ages 10-11, the age of a US 5th grader) and NGSS PS4.B teach that objects are seen because light reflected from them enters the eye; the scope names it."
+  },
+  {
+   "tier": 1,
+   "topic": "how-light-travels",
+   "question": "A mirror and a sheet of white paper hang side by side in a sunny room. The mirror shows a clear picture of the room, but the paper shows none. Why does the paper show no picture?",
+   "answer": "It bounces light off in every direction",
+   "choices": [
+    "It bounces light off in every direction",
+    "It does not reflect any light at all",
+    "It lets all the light pass straight through",
+    "It needs much brighter light to show one"
+   ],
+   "context": "Both the mirror and the paper reflect light. The mirror is so smooth that it sends light back in an orderly way and makes a clear picture, while the paper, rough on a tiny scale, scatters the light every way. That scattered light is how people see paper, and most other things, at all.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6",
+    "F7"
+   ],
+   "grade_note": "TEKS 5.8C names reflection by mirrors and other shiny surfaces, and 5th-grade TEKS units teach that nearly all surfaces reflect light while only smooth ones give a clear image (Kesler's TEKS 5.8C guide)."
+  },
+  {
+   "tier": 1,
+   "topic": "how-light-travels",
+   "question": "A straw stands in a clear glass of water. Seen from the side, it looks broken at the water's surface. What makes it look broken?",
+   "answer": "Light bends as it goes from water into air",
+   "choices": [
+    "Light bends as it goes from water into air",
+    "The water's weight presses the straw into a bend",
+    "Light bounces back off the top of the water",
+    "The water soaks up the light from the straw"
+   ],
+   "context": "Light travels more slowly in water than in air, so light from the underwater part of the straw bends as it leaves the water on its way to the eye. That bending shifts where the underwater part seems to be. The straw itself is straight, as it shows when it is lifted out.",
+   "facts": [
+    "F10",
+    "F11"
+   ],
+   "grade_note": "The straw or pencil that looks broken in a glass of water is the standard 5th-grade example of refraction (TEKS 5.8C; Kesler's TEKS 5.8C guide)."
+  },
+  {
+   "tier": 1,
+   "topic": "how-light-travels",
+   "question": "A magnifying glass is a lens made of clear, curved glass. Light from a tiny ant bends as it passes through the glass, so the ant looks bigger. What is this bending of light called?",
+   "answer": "Refraction",
+   "choices": [
+    "Refraction",
+    "Reflection",
+    "Absorption",
+    "Magnification"
+   ],
+   "context": "Refraction is light bending as it passes from one material into another, such as from air into glass. The curved glass bends the light so that the ant looks larger than it is. Reflection is light bouncing off a surface, and absorption is light being soaked up.",
+   "facts": [
+    "F10",
+    "F13"
+   ],
+   "grade_note": "TEKS 5.8C asks 5th graders to explain that light can be reflected, refracted or absorbed, and the magnifying lens is an everyday example of refraction named on map line G5.P7."
+  },
+  {
+   "tier": 1,
+   "topic": "how-light-travels",
+   "question": "Sunlight streams through a classroom window and falls across the desks. What is sunlight made of?",
+   "answer": "A mix of many colours",
+   "choices": [
+    "A mix of many colours",
+    "A mix of just red, yellow and blue",
+    "Light of one colour, white",
+    "Light of one colour, yellow"
+   ],
+   "context": "Sunlight looks white, but it is a mix of all the colours of the rainbow. A glass prism spreads sunlight into a band of these colours, and a second prism turned the other way gathers them back into white light, so the colours were in the sunlight all along. Red, yellow and blue are the painters' colours for mixing paint, but sunlight holds every colour from red to violet, not just three.",
+   "facts": [
+    "F15",
+    "F14",
+    "F17",
+    "F19"
+   ],
+   "grade_note": "Virginia's 5th-grade light standard (SOL 5.3) teaches that white light, sunlight included, is made of the colours of the visible spectrum, red to violet, which a prism separates; the scope names 'White light is a mix of colours'."
+  },
+  {
+   "tier": 1,
+   "topic": "how-light-travels",
+   "question": "Two girls stand side by side in hot sunshine for an hour, one in a black T-shirt and one in a white T-shirt. The black shirt grows much warmer. Why does it warm up more?",
+   "answer": "It absorbs more of the sunlight",
+   "choices": [
+    "It absorbs more of the sunlight",
+    "It reflects more of the sunlight",
+    "It lets more sunlight pass through",
+    "It pulls in more heat from the air"
+   ],
+   "context": "Dark things absorb most of the light that hits them, and the absorbed light turns into heat. The white shirt reflects more of the sunlight away, so it stays cooler. The air around both girls is just as warm.",
+   "facts": [
+    "F20"
+   ],
+   "grade_note": "A dark shirt warming in sunlight is the example of absorption that 5th-grade TEKS 5.8C units use, and map line G5.P7 names it."
+  },
+  {
+   "tier": 1,
+   "topic": "how-light-travels",
+   "question": "A girl holds a cardboard star between a lamp and a wall. The shadow on the wall is star-shaped too. Why does the shadow have the same shape as the star?",
+   "answer": "Light travels in straight lines",
+   "choices": [
+    "Light travels in straight lines",
+    "Light bends around the star's edges",
+    "The star reflects its shape onto the wall",
+    "The star's darkness spreads onto the wall"
+   ],
+   "context": "Light from the lamp travels in straight lines. The star blocks the light that hits it, while the light just missing its edges goes straight on to the wall, so the dark patch has the star's outline. A shadow is not a reflection: it is simply a place the light cannot reach.",
+   "facts": [
+    "F1",
+    "F3"
+   ],
+   "grade_note": "England's Year 6 curriculum (ages 10-11) asks pupils to use light's straight-line travel to explain why shadows have the same shape as the objects that cast them; the scope ties shadows to straight lines."
+  }
+ ],
+ "revised": {
+  "a1d877653d": {
+   "old_hash": "d5351f21e0",
+   "why": "Judge (medium, tell): only one lure was live, since a band of colours on the wall can never show sunlight is yellow, 'just red, yellow and blue' fell to the rainbow every child knows, and the stem's band of colours already said the colours were in the beam. The stem now asks the fact without the observation that answers it, as the judge proposed, and the prism moves to the context. The lures are now parallel live beliefs: white light as one colour (M9), sunlight as yellow (M10), sunlight as the paint primaries (M11). Same fact (F15, F17, F19), same key idea."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "877bdd8f2e",
+   "question": "A red apple sits on a windowsill in white sunlight, which holds light of every colour. Why does the apple look red?",
+   "why": "Judge (high, grade): an object's colour as the light it reflects is grade 6 by TEKS (5.8C leaves colour out), NGSS (4-PS4-2 excludes the colours reflected; MS-PS4-2 has it) and CK2023 (grade 6, Light and Matter), and the writer's own grade note conceded it carries on into grade 6. No rewording keeps the fact at T1. The unit ends with 8 questions, which its scope covers in full."
+  }
+ ]
+}

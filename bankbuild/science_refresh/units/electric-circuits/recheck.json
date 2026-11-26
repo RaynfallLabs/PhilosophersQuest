@@ -1,0 +1,60 @@
+{
+ "unit": "electric-circuits",
+ "questions": {
+  "f79a2059d8": {
+   "verdict": "pass",
+   "why": "Old tell fixed. The light switch is gone, so everyday switch use no longer gives the key, and the M4 belief ('the gap comes after it') is live. 'for' is now 'since'. Key true: 'any break in the circuit at any location causes the lamp to immediately de-energize' (All About Circuits). Wrong choices truly wrong: no stored electricity in the wire, no half glow. Context true, including that a switch works anywhere in one loop. TEKS 5.8B grade content. Voice clean.",
+   "sources": [
+    "https://www.allaboutcircuits.com/textbook/experiments/chpt-2/circuit-with-a-switch/",
+    "https://geniebook.com/exam-preparation/psle/article/psle-electric-circuits-misconceptions-guide",
+    "https://teksguide.org/teks/s58b-0"
+   ]
+  },
+  "a4f9975f20": {
+   "verdict": "pass",
+   "why": "Old error fixed. The stale 'fifty to a hundred times' is now 'many times as much', which holds at any recent price (Grokipedia gives a historical 50-100x; the November 2026 fact-check about 110x). Stem, key and choices unchanged and correct. Copper is the predominant building and appliance wiring metal and bends without cracking. Conductivity at 20 C: silver 63.0, copper 59.6, gold 41.1, iron 10.3 MS/m, so gold is less and iron about a sixth. Overhead lines are mostly aluminium. The judge's low silver tell was optional; the stem asks the real metal, and only copper is defensible.",
+   "sources": [
+    "https://grokipedia.com/page/Copper_conductor",
+    "https://en.wikipedia.org/wiki/Electrical_resistivity_and_conductivity",
+    "https://www.thenational.academy/pupils/lessons/choosing-and-using-conductors-and-insulators-non-statutory/video"
+   ]
+  },
+  "d2cd209d35": {
+   "verdict": "pass",
+   "why": "Old tell fixed. The dead 'stores some electricity' lure is now 'It makes the metal wire soft enough to bend'. That is a live belief and truly wrong: the copper bends without cracking on its own (Grokipedia Copper conductor). The key now says 'a person's hand'. Key true: 'To help keep us safe from electrical shocks, wires are covered by electrical insulators made from plastic or rubber' (Oak, Year 6). The speed lures stay wrong. Context true. Choices parallel in length. Grade content (TEKS 5.6A).",
+   "sources": [
+    "https://www.thenational.academy/pupils/lessons/choosing-and-using-conductors-and-insulators-non-statutory/video",
+    "https://grokipedia.com/page/Copper_conductor",
+    "https://grokipedia.com/page/Insulator_(electricity)"
+   ]
+  },
+  "c0b4bf0354": {
+   "verdict": "pass",
+   "why": "Old issues fixed. The dead magnet lure is now 'It makes electricity of its own'. It is live through water power, and wrong: at a dam, turbines drive generators, and water only carries the energy (Grokipedia Hydroelectricity). The false 'nothing with a plug is used beside a sink' is now the safety rule, matching BC Hydro's 'Never use anything with a cord or plug around water'. Key true: USGS says pure water is an excellent insulator, but 'even a small amount of ions' makes water conduct, and tap water carries dissolved minerals. The other lures stay wrong for this water.",
+   "sources": [
+    "https://www.usgs.gov/special-topics/water-science-school/science/conductivity-electrical-conductance-and-water",
+    "https://grokipedia.com/page/Hydroelectricity",
+    "https://www.bchydro.com/safety-outages/stay-safe/safety-at-home/safety-for-kids.html"
+   ]
+  },
+  "9fc5d31154": {
+   "verdict": "pass",
+   "why": "Old grade problem fixed. The question no longer asks why a bird on one line is safe, which needs voltage. It asks the danger case, and the 5th-grade loop model explains that truly: a body that bridges two lines completes a circuit. Children's safety teaching frames it the same way (BC Hydro Schools: a bird is not part of a completed circuit unless it touches something else; touching another wire or the pole causes a short circuit). Key true (MIT: a second wire opens 'a path for the electrons right through the bird's body'; USGS: birds bridging two energized parts are electrocuted). Lures wrong: feet conduct (USGS: contact is often wing skin to foot; Illinois: large raptors with a foot on each of two lines are electrocuted), the body stores nothing, and two lines do not mean twice the electricity. The context's one-line clause now says 'to the ground or to another wire, and almost none flows', as the fact-check asked. Key's 'loop' is the unit's word but answers the fact under test. Voice clean.",
+   "sources": [
+    "https://van.physics.illinois.edu/ask/listing/1341",
+    "https://www.usgs.gov/publications/electrocution",
+    "https://engineering.mit.edu/ask-an-engineer/how-do-birds-sit-on-high-voltage-power-lines-without-getting-electrocuted",
+    "https://schools.bchydro.com/blog/birds-on-a-wire-and-other-power-line-safety-science",
+    "https://www.niehs.nih.gov/health/kids/topics/natural-world/wildlife/animals/high-wire"
+   ]
+  },
+  "37a07aec3b": {
+   "verdict": "pass",
+   "why": "New question on the scope's untested fact. Key true: 'All electrical circuits need to have a cell or a battery', and 'The cell or battery will give the push to start the movement or flow of electricity' (Oak, Year 6). The TEKS guide's circuit has 'a driving voltage' and a closed path. Lures truly wrong: Oak does not list a switch among the needs, a buzzer circuit needs no bulb, and the copper loop already conducts. The switch lure is a live belief (M8). One defensible answer. Grade content (TEKS 5.8B). It does not duplicate energy-changes-form's battery question. Voice clean.",
+   "sources": [
+    "https://www.thenational.academy/pupils/programmes/science-primary-year-6/units/changing-circuits/lessons/components-and-simple-circuits/video",
+    "https://teksguide.org/teks/s58b-0"
+   ]
+  }
+ }
+}

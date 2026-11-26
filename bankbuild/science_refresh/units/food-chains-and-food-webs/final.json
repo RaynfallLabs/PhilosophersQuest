@@ -1,0 +1,216 @@
+{
+ "unit": "food-chains-and-food-webs",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "food-chains-and-food-webs",
+   "question": "On a damp forest floor, moss covers the rocks, mushrooms sprout from a fallen log, and snails and beetles crawl among them. Which of these living things is a producer, one that makes its own food?",
+   "answer": "The moss",
+   "choices": [
+    "The moss",
+    "The mushrooms",
+    "The snails",
+    "The beetles"
+   ],
+   "context": "Moss is a small green plant, and like other plants it makes its own food from sunlight, so it is a producer. A mushroom is a fungus, not a plant: it cannot make its own food, and it is a decomposer. The snails and beetles are consumers, which eat other living things.",
+   "facts": [
+    "F1",
+    "F3",
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "Sorting living things into producers, consumers and decomposers is the core of 5th-grade food-web units (NGSS 5-LS2-1), and 'a fungus is a type of plant' is a documented 5th-grade misconception."
+  },
+  {
+   "tier": 1,
+   "topic": "food-chains-and-food-webs",
+   "question": "A wild rabbit spends much of its day nibbling grass, leaves and twigs. What is an animal that eats only plants called?",
+   "answer": "Herbivore",
+   "choices": [
+    "Herbivore",
+    "Carnivore",
+    "Omnivore",
+    "Decomposer"
+   ],
+   "context": "A herbivore eats plants, and a rabbit eats nothing else; deer and most caterpillars are herbivores too. A carnivore eats other animals, and an omnivore eats both plants and animals. Decomposers, mostly fungi and bacteria, are a different group again.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F23"
+   ],
+   "grade_note": "Herbivore, carnivore and omnivore are the consumer words 5th graders learn for food webs (NGSS 5-LS2-1: some animals eat plants, others eat the animals that eat plants)."
+  },
+  {
+   "tier": 1,
+   "topic": "food-chains-and-food-webs",
+   "question": "A food chain in a field is drawn as grass → grasshopper → frog → snake. Which members of this chain are carnivores?",
+   "answer": "The frog and the snake",
+   "choices": [
+    "The frog and the snake",
+    "The grasshopper and the frog",
+    "The grasshopper and the snake",
+    "Only the snake"
+   ],
+   "context": "A carnivore eats other animals. The frog eats the grasshopper and the snake eats the frog, so both are carnivores, even though the frog is eaten in its turn. The grasshopper eats plants, so it is a herbivore.",
+   "facts": [
+    "F5",
+    "F10",
+    "F18"
+   ],
+   "grade_note": "Telling the carnivores in a food chain from the herbivores is standard 5th-grade food-web work (NGSS 5-LS2-1)."
+  },
+  {
+   "tier": 1,
+   "topic": "food-chains-and-food-webs",
+   "question": "In a forest, deer eat leaves and acorns, caterpillars eat leaves, mice eat seeds and caterpillars, and owls eat mice and small birds. Which of these animals is an omnivore?",
+   "answer": "The mice",
+   "choices": [
+    "The deer",
+    "The caterpillars",
+    "The mice",
+    "The owls"
+   ],
+   "context": "An omnivore eats both plants and animals. The mice eat seeds, which come from plants, and caterpillars, which are animals. In this forest the deer and caterpillars eat only plants, so they are herbivores, and the owls eat only animals, so they are carnivores.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6",
+    "F18"
+   ],
+   "grade_note": "Classifying the animals in a food web as herbivores, carnivores or omnivores from what each eats is a standard 5th-grade task (NGSS 5-LS2-1)."
+  },
+  {
+   "tier": 1,
+   "topic": "food-chains-and-food-webs",
+   "question": "Scientists draw a food chain as a row of living things, with an arrow between each one and the next. Which way does each arrow point?",
+   "answer": "Toward the living thing that eats",
+   "choices": [
+    "Toward the living thing that eats",
+    "Toward the living thing that is eaten",
+    "Toward the bigger of the two",
+    "Toward the stronger of the two"
+   ],
+   "context": "Each arrow points from a living thing to the one that eats it, the way the energy in the food travels, as in grass → rabbit → fox. Students often draw the arrows backwards. The eater is not always the bigger one either: a pack of wolves can bring down a moose several times heavier than any wolf.",
+   "facts": [
+    "F10",
+    "F11",
+    "F22"
+   ],
+   "grade_note": "5th-grade food-web models use arrows for the direction energy moves (NGSS 5-LS2-1), and drawing them backwards is a known mistake at this age (M1)."
+  },
+  {
+   "tier": 1,
+   "topic": "food-chains-and-food-webs",
+   "question": "Most animals eat more than one kind of food, so the many food chains in a pond overlap and share many of the same animals. What is the name for all of a pond's food chains together?",
+   "answer": "A food web",
+   "choices": [
+    "A food web",
+    "A food pyramid",
+    "One long food chain",
+    "A habitat"
+   ],
+   "context": "A food web is all the food chains in one place, joined together, and it shows that most animals eat several kinds of food; chains that overlap make a web, not one longer chain. A habitat is the place where a living thing lives. In nutrition a food pyramid is a guide to healthy eating, and in science a pyramid of feeding levels shows how much living matter or energy each level holds, not how the chains join.",
+   "facts": [
+    "F12",
+    "F13",
+    "F20"
+   ],
+   "grade_note": "A food web as many food chains joined together is a basic 5th-grade idea (NGSS 5-LS2-1, TEKS 5.12B)."
+  },
+  {
+   "tier": 1,
+   "topic": "food-chains-and-food-webs",
+   "question": "In a marsh, insects eat the plants, frogs eat the insects, and herons eat the frogs. Then a disease kills nearly all the frogs. What is most likely to follow?",
+   "answer": "More insects",
+   "choices": [
+    "More insects",
+    "Fewer insects",
+    "No change to the insects",
+    "More plants"
+   ],
+   "context": "With the frogs gone, far fewer insects are eaten, so their numbers grow, and the extra insects eat more of the plants. The herons lose much of their food, so their numbers fall. A change to one member spreads through the whole web, not only to the animals next to it.",
+   "facts": [
+    "F10",
+    "F14",
+    "F18"
+   ],
+   "grade_note": "Predicting what happens to a food web when one member disappears is TEKS 5.12B and part of 5th-grade food-web units."
+  },
+  {
+   "tier": 1,
+   "topic": "food-chains-and-food-webs",
+   "question": "In a meadow, rabbits eat grass and hawks eat rabbits. One spring, far more rabbits are born than usual. What most likely happens to the grass?",
+   "answer": "Less is left, because it is eaten faster",
+   "choices": [
+    "Less is left, because it is eaten faster",
+    "No change, because it makes its own food",
+    "No change, because it grows back fast",
+    "More grows, because hawks eat the rabbits"
+   ],
+   "context": "More rabbits eat more grass, faster than it can grow back, so less of it is left. Grass does make its own food and grow back, but not fast enough to keep up with so many more rabbits, and hawks eat rabbits, not grass.",
+   "facts": [
+    "F4",
+    "F5",
+    "F14",
+    "F15"
+   ],
+   "grade_note": "Predicting how a food web changes when one member grows in number, such as too many grazers, is TEKS 5.12B and NGSS 5-LS2-1 food-web work."
+  },
+  {
+   "tier": 1,
+   "topic": "food-chains-and-food-webs",
+   "question": "Far out in the open ocean, the water is miles deep and no land is in sight. Food chains there still begin with producers, living things that make their own food. What are most of those producers?",
+   "answer": "Tiny floating algae",
+   "choices": [
+    "Tiny floating algae",
+    "Floating mats of seaweed",
+    "Tiny floating animals",
+    "Seaweed on the seabed"
+   ],
+   "context": "Most of the open ocean's producers are tiny floating algae called phytoplankton, each too small to see on its own, drifting near the sunlit surface. Mats of floating seaweed drift in a few parts of the ocean, but they make only a small share of the ocean's food, and no seaweed grows on a seabed miles down in the dark. Tiny floating animals are consumers.",
+   "facts": [
+    "F1",
+    "F3",
+    "F16",
+    "F17",
+    "F21"
+   ],
+   "grade_note": "5th-grade food-web units include ocean webs that start with phytoplankton (National Geographic's 5th-grade food-web page names them among the producers)."
+  }
+ ],
+ "revised": {
+  "431cf11cdc": {
+   "old_hash": "6b1910d5f6",
+   "why": "Judge (low, clarity): the tested word 'producer' was never taught in the stem; now glossed. The test (moss against the mushroom, M2) is unchanged; choices, key and context unchanged."
+  },
+  "3fc69f2de6": {
+   "old_hash": "3fc69f2de6",
+   "why": "Fact-check (uncertain, overstated): the context said deer and caterpillars eat only plants, but deer have been filmed eating songbird nestlings and a few caterpillars are predators (F23). Now: a rabbit eats nothing else; deer and most caterpillars are herbivores too. Stem and choices unchanged."
+  },
+  "964ca9b4b2": {
+   "old_hash": "5ae2a75d94",
+   "why": "Judge (HIGH): the drawn chain 'grass → rabbit → fox' let the key be read off the arrow. Now the convention is asked in words with no direction drawn, so the backwards-arrow misconception (M1) is really tested; size and strength lures added, and the wolves-and-moose counter-example sourced (F22). Same fact (F11)."
+  },
+  "7a1b94bfde": {
+   "old_hash": "7a1b94bfde",
+   "why": "Fact-check (uncertain, overstated): 'food pyramid' also names ecology's energy pyramid (F20); the context now gives both meanings and why neither is a web. Judge (low): the weak 'A life cycle' is replaced by 'One long food chain'. Stem and key unchanged."
+  },
+  "f2a54b45bc": {
+   "old_hash": "d527dfbfc4",
+   "why": "Judge (medium): 'More herons' was dead. Replaced with 'No change to the insects' (M3, a change that goes nowhere); 'Fewer herons' avoided as also true. Closer changed from 'Which change...' to fit the no-change choice. Same fact and key."
+  },
+  "205636132f": {
+   "old_hash": "205636132f",
+   "why": "Judge (medium): 'Less is left, because hawks eat it too' was silly after the stem said hawks eat rabbits. Replaced with 'No change, because it grows back fast' (live: grass regrows, but not as fast as far more rabbits eat it, F15). Context explains it. Stem and key unchanged."
+  },
+  "5ec41746d1": {
+   "old_hash": "5ec41746d1",
+   "why": "Judge (medium): the key could be reached by elimination, and 'Schools of small fish' was dead. Replaced with 'Floating mats of seaweed' (Sargassum: a real open-ocean producer, but minor next to phytoplankton, F21), so 'most' is what the question tests. Context rewritten. Stem and key unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}
