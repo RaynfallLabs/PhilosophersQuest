@@ -1,0 +1,173 @@
+{
+ "unit": "telling-materials-apart",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A geologist back from a field trip sets each rock she collected on a balance and writes down its mass in grams. What does a rock's mass tell about it?",
+   "answer": "The amount of matter in it",
+   "choices": [
+    "The amount of matter in it",
+    "The amount of space it fills",
+    "How tightly packed its matter is",
+    "How hard it is to scratch"
+   ],
+   "context": "Mass is the amount of matter in an object, and a balance finds it by comparing the object with masses that are already known. The space an object fills is its volume, a different property, so a bigger object does not always have more mass than a smaller one.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3"
+   ],
+   "grade_note": "TEKS 5.6A lists mass first among the physical properties 5th graders compare, and the grade defines it as the amount of matter, found with a balance."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A student holds a strong magnet over four small metal balls, one at a time. Three of them do not move at all, but the fourth jumps up to the magnet. Which metal is that ball made of?",
+   "answer": "Iron",
+   "choices": [
+    "Iron",
+    "Aluminium",
+    "Copper",
+    "Silver"
+   ],
+   "context": "A magnet pulls hard on iron, on most steel (which is mostly iron), and on nickel and cobalt. Most other metals, aluminium and silver among them, are not pulled, even though they shine silver-grey like iron. Recycling centres use big magnets in just this way, to lift steel cans out of the rubbish.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "grade_note": "TEKS 5.6A and NGSS 5-PS1-3 have 5th graders test materials with a magnet, and that a magnet pulls iron but not most other metals is the core fact."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "Two boys roll a big pine log into a pond, then toss a small pebble in after it. The log is far heavier than the pebble. What happens to the two of them in the water?",
+   "answer": "The log floats, and the pebble sinks",
+   "choices": [
+    "The log floats, and the pebble sinks",
+    "The pebble floats, and the log sinks",
+    "The log and the pebble both float",
+    "The log and the pebble both sink"
+   ],
+   "context": "Floating does not depend on weight alone but on how heavy a thing is for its size, compared with water. Pine is much lighter for its size than water, so even a huge log floats, while stone is more than twice as heavy for its size as water, so even a tiny pebble sinks.",
+   "facts": [
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "TEKS 5.6A has 5th graders compare materials by relative density: sinking or floating, with water as the reference point."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A student needs the volume of a small, jagged rock: the space it takes up. She has a balance, a ruler, a stopwatch and a graduated cylinder half full of water. How can she find the rock's volume?",
+   "answer": "Sink it and see how far the water rises",
+   "choices": [
+    "Sink it and see how far the water rises",
+    "Set it on the balance and read its mass",
+    "Lay the ruler along its longest side",
+    "Drop it in the water and time its fall"
+   ],
+   "context": "A rock sunk in water pushes aside its own volume of water, so the water level climbs by exactly the rock's volume: a rise from 50 to 65 millilitres means a volume of 15 millilitres, the same as 15 cubic centimetres. A balance finds mass, not volume, and a ruler cannot measure a shape this bumpy.",
+   "facts": [
+    "F10",
+    "F2",
+    "F1"
+   ],
+   "grade_note": "Volume is a TEKS 5.6A property, and 5th-grade lessons find the volume of irregular objects such as rocks by water displacement."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A student stirs a scoop of salt into one jar of water and a scoop of sand into another. Soon the sand lies on the bottom of its jar, but no salt can be seen anywhere. What has happened to the salt?",
+   "answer": "It has dissolved in the water",
+   "choices": [
+    "It has dissolved in the water",
+    "It has melted in the water",
+    "It has turned into water",
+    "It has vanished for good"
+   ],
+   "context": "The salt has dissolved: it has broken into bits far too small to see and spread all through the water, and it is still there, for it comes back when the water evaporates. Melting is different, a solid turning into its own liquid when it is heated. Sand does not dissolve in water at all.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "Solubility in water is a TEKS 5.6A property, and NSTA's Sugar Water probe is written for grade 5 to tell dissolving apart from melting."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A park bench has a metal arm and a wooden seat, and both have stood in the same frosty air all night. At dawn a jogger touches each with a bare hand, and the metal feels far colder. Why does it feel colder?",
+   "answer": "The metal draws heat from a hand faster",
+   "choices": [
+    "The metal draws heat from a hand faster",
+    "The metal is colder than the wooden seat",
+    "The metal lets cold flow into a hand",
+    "The wood makes a little heat of its own"
+   ],
+   "context": "After a night in the same air, the metal and the wood are at the same temperature. Metal is a good conductor of heat, so it carries warmth out of a hand far faster than wood does, and the hand feels that loss as cold. Heat always flows from warmer things to cooler ones, and cold itself never flows at all.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "TEKS 5.6A asks 5th graders to compare materials that conduct or insulate thermal energy, and NZCER's park-bench task is set for students aged 10 to 11."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "On a chilly autumn evening, a girl pulls on a thick wool hat, and soon her head feels snug. How does the hat keep her head warm?",
+   "answer": "It slows the heat leaving her head",
+   "choices": [
+    "It slows the heat leaving her head",
+    "It makes heat of its own",
+    "It gives off heat stored in its wool",
+    "It soaks up warmth from the air"
+   ],
+   "context": "Wool is an insulator: it traps still air among its fibres, and the trapped air slows the heat flowing out of her warm head into the cooler air around it. The hat makes no heat and stores none, so a thermometer tucked inside a hat lying on a table reads no warmer than the room.",
+   "facts": [
+    "F17",
+    "F14"
+   ],
+   "grade_note": "TEKS 5.6A covers materials that insulate thermal energy, and the idea that warm clothes make heat is a known grades 3-5 misconception (Ohio State; NSTA's Mitten Problem)."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A student builds a tester from a battery, a bulb and two wires with bare ends. When she touches both ends to an object, the bulb lights only if electricity can pass through the object. Which object lights the bulb?",
+   "answer": "A steel paper clip",
+   "choices": [
+    "A steel paper clip",
+    "A rubber band",
+    "A plastic straw",
+    "A glass marble"
+   ],
+   "context": "Metals such as steel, copper and aluminium are conductors: they let electricity flow, so the paper clip completes the loop and the bulb glows. Rubber, plastic and glass are insulators that stop electricity, which is why wires wear a plastic coat.",
+   "facts": [
+    "F18",
+    "F19"
+   ],
+   "grade_note": "NGSS 5-PS1-3 names electrical conductivity among the properties 5th graders use to identify materials, and TEKS 5.6A has them compare conductors and insulators of electric energy."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A rock collector's fingernail leaves no mark on a mineral she has found, but the steel blade of her pocketknife scratches it easily. How hard is the mineral?",
+   "answer": "Harder than a fingernail, softer than steel",
+   "choices": [
+    "Harder than a fingernail, softer than steel",
+    "Harder than a fingernail, harder than steel",
+    "Softer than a fingernail, softer than steel",
+    "Harder than a fingernail, as hard as steel"
+   ],
+   "context": "A harder material scratches a softer one, never the other way round, so a mineral that steel scratches is softer than steel, and one that a fingernail cannot scratch is harder than a fingernail. Geologists rank minerals this way, from talc, soft enough for a fingernail, up to diamond, which scratches every other mineral on the scale. The test also unmasks fool's gold: pyrite has the colour and shine of gold but is far harder than soft real gold.",
+   "facts": [
+    "F20",
+    "F21"
+   ],
+   "grade_note": "NGSS 5-PS1-3 lists hardness among the properties 5th graders use to identify materials, and the scratch test is how the grade measures it."
+  }
+ ]
+}

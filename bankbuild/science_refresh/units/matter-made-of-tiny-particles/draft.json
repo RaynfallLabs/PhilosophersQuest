@@ -1,0 +1,120 @@
+{
+ "unit": "matter-made-of-tiny-particles",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "matter-made-of-tiny-particles",
+   "question": "Rocks, seawater, the air and every part of a person's body are all built from tiny particles. What are these particles called?",
+   "answer": "Atoms",
+   "choices": ["Atoms", "Cells", "Crystals", "Germs"],
+   "context": "Atoms are the tiny particles that make up all ordinary matter, from rocks to air. A body is made of living cells, and germs are tiny living things, but rocks, water and air are not built of either. Cells, germs and the crystals in a rock are all made of atoms themselves.",
+   "facts": ["F2", "F21", "F22", "F23"],
+   "grade_note": "NGSS 5-PS1-1 has 5th graders model matter as particles too small to see, and the grade gives 'atom' as their name (map line G5.P2)."
+  },
+  {
+   "tier": 1,
+   "topic": "matter-made-of-tiny-particles",
+   "question": "A student weighs a flat basketball on a scale. Then she pumps it full of air and weighs it again. What does the scale show the second time?",
+   "answer": "A little more, because air has weight",
+   "choices": [
+    "A little more, because air has weight",
+    "A little less, because air makes things lighter",
+    "The same, because air has no weight",
+    "A little more, because its skin is stretched tight"
+   ],
+   "context": "Air is matter, so it has weight. Pumping squeezes extra air into the ball, and the full ball weighs a little more than the flat one. Stretching the ball's skin adds nothing to its weight.",
+   "facts": ["F1", "F3", "F9", "F10"],
+   "grade_note": "NGSS 5-PS1-1 names pumping air into a basketball as evidence for particles, and TERC's grade 5 concept cartoon asks this very question about a flat ball."
+  },
+  {
+   "tier": 1,
+   "topic": "matter-made-of-tiny-particles",
+   "question": "Two plastic syringes are sealed shut at the tip. One holds only air, and the other is filled with water. A student presses hard on each plunger in turn. In which syringe can the plunger be pushed in?",
+   "answer": "Only the one holding air",
+   "choices": [
+    "Only the one holding air",
+    "Only the one holding water",
+    "Both, by the same amount",
+    "Neither, even a little"
+   ],
+   "context": "Air can be squeezed into a smaller space, because there is empty space between its particles, so its plunger slides in part of the way. The particles of water are already packed close together, so the water hardly squeezes at all and its plunger stays put.",
+   "facts": ["F6", "F7", "F11"],
+   "grade_note": "NGSS 5-PS1-1 names compressing air in a syringe as evidence that matter is made of particles, and grade 5 units (Amplify) use it to show air takes up space."
+  },
+  {
+   "tier": 1,
+   "topic": "matter-made-of-tiny-particles",
+   "question": "Roses stand in a vase at one end of a room. A girl at the far end smells them before she even turns to look. What travels from the roses to her nose?",
+   "answer": "Tiny particles that come off the roses",
+   "choices": [
+    "Tiny particles that come off the roses",
+    "Air particles the roses have made smelly",
+    "A wave that spreads the way sound does",
+    "Nothing, since a smell is not matter"
+   ],
+   "context": "A rose's scent is made of tiny particles that leave the petals and drift through the air into the nose. The air itself does not turn smelly: the scent's particles mix in among the air's, too small to see but still matter.",
+   "facts": ["F12", "F13", "F14"],
+   "grade_note": "The 5th-grade line G5.P2 names a scent, the smell of a rose, reaching us unseen as evidence that matter is made of particles."
+  },
+  {
+   "tier": 1,
+   "topic": "matter-made-of-tiny-particles",
+   "question": "A student stirs a spoonful of salt into a beaker of water. Soon no salt can be seen anywhere, and the water looks as clear as before. What has happened to the salt?",
+   "answer": "It has broken up and spread through the water",
+   "choices": [
+    "It has broken up and spread through the water",
+    "It has melted, the way ice melts in sunshine",
+    "It has turned into water, just like the rest",
+    "It has vanished from the water for good"
+   ],
+   "context": "Salt dissolves: it breaks into particles far too small to see, which spread all through the water. It has not melted, since salt melts only when heated to about 800 degrees Celsius. The salt is still there: the water tastes of it, and the salt comes back when the water dries up.",
+   "facts": ["F7", "F8", "F15", "F16"],
+   "grade_note": "NGSS 5-PS1-1 names dissolving in water as evidence for particles, and telling dissolving from melting is a standard 5th-grade lesson."
+  },
+  {
+   "tier": 1,
+   "topic": "matter-made-of-tiny-particles",
+   "question": "A student pours clear seawater into a shallow glass dish and sets it on a sunny windowsill. A week later the water has all dried up. What has become of the salt that was in the seawater?",
+   "answer": "It was left in the dish as white crystals",
+   "choices": [
+    "It was left in the dish as white crystals",
+    "It rose into the air along with the water",
+    "It soaked into the glass of the dish",
+    "It was used up by the heat of the Sun"
+   ],
+   "context": "The water rises into the air as water vapour, but the salt stays behind as white crystals. The salt was in the clear seawater all along, in bits too small to see. Salt-makers dry seawater in shallow ponds in the same way.",
+   "facts": ["F7", "F17", "F18"],
+   "grade_note": "NGSS 5-PS1-1 names evaporating salt water as evidence that a dissolved solid is still there, made of particles too small to see."
+  },
+  {
+   "tier": 1,
+   "topic": "matter-made-of-tiny-particles",
+   "question": "A steel nail is hard, and it looks smooth and solid all the way through. What is the steel made of?",
+   "answer": "Particles far too small to see",
+   "choices": [
+    "Particles far too small to see",
+    "One solid piece with no parts",
+    "Particles with air in the gaps",
+    "Particles a magnifying glass can show"
+   ],
+   "context": "Even hard steel is made of particles, packed so close and so small that the nail looks like one smooth piece. Not even the strongest school microscope can show them, and no air fills the tiny gaps between them.",
+   "facts": ["F2", "F4", "F5", "F6", "F8"],
+   "grade_note": "NGSS PS1.A for grade 5 teaches that matter of any type, solids included, is made of particles too small to see."
+  },
+  {
+   "tier": 1,
+   "topic": "matter-made-of-tiny-particles",
+   "question": "Scientists call anything that has mass and takes up space matter. Which of these is not matter?",
+   "answer": "A beam of sunlight",
+   "choices": [
+    "A beam of sunlight",
+    "A breath of air",
+    "A cloud of steam",
+    "A puff of smoke"
+   ],
+   "context": "Air, steam and smoke all have mass and take up space, so all three are matter, even when they are hard to see or hold. Sunlight has no mass, so it is not matter: light, like heat and sound, is a form of energy.",
+   "facts": ["F1", "F3", "F19", "F20"],
+   "grade_note": "Grade 5 science (Amplify) defines matter by mass and space and lists light as not matter; TERC found children often leave air, steam and smoke out."
+  }
+ ]
+}

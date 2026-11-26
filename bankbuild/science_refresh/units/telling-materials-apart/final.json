@@ -1,0 +1,204 @@
+{
+ "unit": "telling-materials-apart",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A geologist back from a field trip sets each rock she collected on a balance and writes down its mass in grams. What does a rock's mass tell about it?",
+   "answer": "The amount of matter in it",
+   "choices": [
+    "The amount of matter in it",
+    "The amount of space it fills",
+    "How tightly packed its matter is",
+    "What kind of rock it is"
+   ],
+   "context": "Mass is the amount of matter in an object, and a balance finds it by comparing the object with masses that are already known. The space an object fills is its volume, a different property, so a bigger object does not always have more mass than a smaller one. Mass alone cannot name a rock either: a big chunk and a small chip of the same rock have very different masses.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3"
+   ],
+   "grade_note": "TEKS 5.6A lists mass first among the physical properties 5th graders compare, and the grade defines it as the amount of matter, found with a balance."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A student holds a strong magnet over four small metal balls, one at a time. Three of them do not move at all, but the fourth jumps up to the magnet. Which metal is that ball made of?",
+   "answer": "Iron",
+   "choices": [
+    "Iron",
+    "Aluminium",
+    "Copper",
+    "Silver"
+   ],
+   "context": "A magnet pulls hard on iron, on most steel (which is mostly iron), and on nickel and cobalt. Most other metals, aluminium and silver among them, are not pulled, even though they shine silver-grey like iron. Recycling centres use big magnets in just this way, to lift steel cans out of the rubbish.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "grade_note": "TEKS 5.6A and NGSS 5-PS1-3 have 5th graders test materials with a magnet, and that a magnet pulls iron but not most other metals is the core fact."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A class drops a pine block, a pebble, a cork and a steel bolt into a tank of water. Some float and some sink. What decides whether a thing floats in water?",
+   "answer": "How heavy it is for its size",
+   "choices": [
+    "How heavy it is for its size",
+    "How heavy it is altogether",
+    "How big it is altogether",
+    "How hard its material is"
+   ],
+   "context": "Floating depends on how heavy a thing is for its size, compared with water, and not on its weight, its size or its hardness alone. A huge pine log floats because pine is lighter for its size than water, while even a tiny pebble sinks, since stone is more than twice as heavy for its size as water.",
+   "facts": [
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "TEKS 5.6A has 5th graders compare materials by relative density (sinking and floating, with water as the reference point); the word density is left to the T2 density unit."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A student needs the volume of a small, jagged rock: the space it takes up. She has a balance, a ruler, a piece of string and a graduated cylinder half full of water. How can she find the rock's volume?",
+   "answer": "Sink it and see how far the water rises",
+   "choices": [
+    "Sink it and see how far the water rises",
+    "Set it on the balance and read its mass",
+    "Lay the ruler along its longest side",
+    "Wrap the string round it and measure the string"
+   ],
+   "context": "A rock sunk in water pushes aside its own volume of water, so the water level climbs by exactly the rock's volume: a rise from 50 to 65 millilitres means a volume of 15 millilitres, the same as 15 cubic centimetres. A balance finds mass, not volume, and a ruler or a string measures only a length, which cannot give the volume of a shape this bumpy.",
+   "facts": [
+    "F10",
+    "F2",
+    "F1"
+   ],
+   "grade_note": "Volume is a TEKS 5.6A property, and 5th-grade lessons find the volume of irregular objects such as rocks by water displacement."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "Two dishes hold white grains that look much alike. One holds salt, and the other holds fine white sand. Which test tells them apart?",
+   "answer": "Stir a pinch of each into water",
+   "choices": [
+    "Stir a pinch of each into water",
+    "Hold a magnet over each dish",
+    "Test each with a battery and bulb",
+    "Set each dish in the sunshine"
+   ],
+   "context": "Salt dissolves in water and seems to vanish, while sand does not dissolve and only settles to the bottom. Neither is pulled by a magnet, neither lets electricity through while it is dry, and sunshine is far too weak to melt either, so those tests show no difference.",
+   "facts": [
+    "F11",
+    "F12",
+    "F24",
+    "F25",
+    "F26"
+   ],
+   "grade_note": "NGSS 5-PS1-3 has 5th graders identify materials by their properties, solubility among them, and TEKS 5.6A lists solubility in water."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A park bench has a metal arm and a wooden seat, and both have stood in the same frosty air all night. At dawn a jogger touches each with a bare hand, and the metal feels far colder. Why does it feel colder?",
+   "answer": "The metal draws heat from a hand faster",
+   "choices": [
+    "The metal draws heat from a hand faster",
+    "The metal is colder than the wooden seat",
+    "The metal lets cold flow into a hand",
+    "The wood makes a little heat of its own"
+   ],
+   "context": "After a night in the same air, the metal and the wood are at the same temperature. Metal is a good conductor of heat, so it carries warmth out of a hand far faster than wood does, and the hand feels that loss as cold. Heat always flows from warmer things to cooler ones, and cold itself never flows at all.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "TEKS 5.6A asks 5th graders to compare materials that conduct or insulate thermal energy, and NZCER's park-bench task is set for students aged 10 to 11."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "On an autumn evening, a girl pulls on a thick wool hat, and soon her head feels snug. How does the hat keep her head warm?",
+   "answer": "It slows the heat leaving her head",
+   "choices": [
+    "It slows the heat leaving her head",
+    "It keeps making heat, like a heater",
+    "It gives off heat stored in its wool",
+    "It soaks up warmth from the air"
+   ],
+   "context": "Wool is an insulator: it traps still air among its fibres, and the trapped air slows the heat flowing out of her warm head into the cooler air around it. The warmth is her own, for the hat is no heater: a thermometer tucked inside a hat lying on a table reads no warmer than the room.",
+   "facts": [
+    "F17",
+    "F14",
+    "F23"
+   ],
+   "grade_note": "TEKS 5.6A covers materials that insulate thermal energy, and the idea that warm clothes make heat is a known grades 3-5 misconception (Ohio State; NSTA's Mitten Problem)."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A student builds a tester from a battery, a bulb and two wires with bare ends. When she touches both ends to an object, the bulb lights only if electricity can pass through the object. Which object lights the bulb?",
+   "answer": "A steel paper clip",
+   "choices": [
+    "A steel paper clip",
+    "A rubber band",
+    "A plastic straw",
+    "A glass marble"
+   ],
+   "context": "Metals such as steel, copper and aluminium are conductors: they let electricity flow, so the paper clip completes the loop and the bulb glows. Rubber, plastic and glass are insulators that stop electricity, which is why wires wear a plastic coat.",
+   "facts": [
+    "F18",
+    "F19"
+   ],
+   "grade_note": "NGSS 5-PS1-3 names electrical conductivity among the properties 5th graders use to identify materials, and TEKS 5.6A has them compare conductors and insulators of electric energy."
+  },
+  {
+   "tier": 1,
+   "topic": "telling-materials-apart",
+   "question": "A rock collector's fingernail leaves no mark on a mineral she has found, but the steel blade of her pocketknife scratches it easily. How hard is the mineral?",
+   "answer": "Harder than a fingernail, softer than steel",
+   "choices": [
+    "Harder than a fingernail, softer than steel",
+    "Harder than a fingernail, harder than steel",
+    "Softer than a fingernail, softer than steel",
+    "Softer than a fingernail, harder than steel"
+   ],
+   "context": "A harder material scratches a softer one, never the other way round, so a mineral that steel scratches is softer than steel, and one that a fingernail cannot scratch is harder than a fingernail. Geologists rank minerals this way, from talc, soft enough for a fingernail, up to diamond, which scratches every other mineral on the scale. The test also unmasks fool's gold: pyrite has the colour and shine of gold but is far harder than soft real gold.",
+   "facts": [
+    "F20",
+    "F21"
+   ],
+   "grade_note": "NGSS 5-PS1-3 lists hardness among the properties 5th graders use to identify materials, and the scratch test is how the grade measures it."
+  }
+ ],
+ "revised": {
+  "3a4dd43fc4": {
+   "old_hash": "3a4dd43fc4",
+   "why": "Judge (medium): 'How hard it is to scratch' was a dead lure, since no child thinks a balance shows hardness. Replaced with 'What kind of rock it is' (the belief that weighing a thing identifies it); the context now says why mass alone cannot name a rock (F1, F3). Stem, key and fact unchanged."
+  },
+  "cdf0199023": {
+   "old_hash": "d856da01b2",
+   "why": "Judge (medium, grade): every child knows from play that a log floats and a pebble sinks, so the item never tested the grade's rule. Re-keyed to the rule itself (F7), with the three documented wrong rules as lures: weight alone, size alone, and hard things sink (Science Learning Hub, M3 and new M10). The stem no longer shows outcomes, so no lure is ruled out by it. Fact-check (uncertain): 'much lighter for its size than water' overstated green pine; 'much' dropped."
+  },
+  "ce54252946": {
+   "old_hash": "3bc1a1bcca",
+   "why": "Judge (medium): the stopwatch was in the stem only to feed a dead lure ('time its fall'). Swapped the stopwatch for a piece of string and the lure for 'Wrap the string round it and measure the string', a method children really propose for an odd shape; the context says why a length cannot give this volume (F2, F10). Key unchanged."
+  },
+  "c909474c14": {
+   "old_hash": "9c5b71ae35",
+   "why": "Judge (medium, cross-unit): this was the same question as matter-made-of-tiny-particles ecbab890cf (salt stirred into water, 'what has happened to the salt?', same lures). Re-keyed, as the judge proposed, to identifying a material by its solubility, the scope's last clause: which test tells salt from sand. Each lure is another property test of this unit that shows no difference (magnet, battery-and-bulb tester, sunshine), each checked now (F24 magnet, F25 dry salt and sand do not conduct, F26 melting points). Fact-check (uncertain): 'Sand does not dissolve in water at all' is gone; the context says sand does not dissolve and settles."
+  },
+  "d245a0db27": {
+   "old_hash": "196abcd63d",
+   "why": "Fact-check (error): wool gives off a little heat as it takes up water vapour (heat of sorption, Grokipedia Wool, now F23), so the lure 'It makes heat of its own' was partly true and the context's 'makes no heat and stores none' was wrong. The lure is now 'It keeps making heat, like a heater' (the steady-heater idea, M7, which the thermometer test refutes) and the context says 'The warmth is her own, for the hat is no heater', as the fact-check proposed; it does not mention damp wool beside the 'soaks up warmth' lure. Judge (low): dropped 'chilly', which undercut the 'soaks up warmth from the air' lure; the context still says the air is cooler than her head."
+  },
+  "7546383462": {
+   "old_hash": "7546383462",
+   "why": "Judge (medium): three choices began 'Harder than a fingernail', so the key was the choice built from the two most common halves, and 'as hard as steel' contradicted 'scratches it easily'. Replaced it with 'Softer than a fingernail, harder than steel', the answer the scratch rule gives when read backwards (M9). The four choices are now the four combinations, each half twice. Stem, key, context unchanged (F20)."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

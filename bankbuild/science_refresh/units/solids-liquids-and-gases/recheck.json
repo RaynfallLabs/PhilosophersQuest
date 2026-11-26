@@ -1,0 +1,15 @@
+{"unit": "solids-liquids-and-gases",
+ "questions": {
+  "d9c399335b": {"verdict": "pass",
+   "why": "The 'only' problem is fixed: every choice names seawater or air, so 'only' is scoped to the pair. The choices are balanced (two on volume, two on shape; two on each substance). Key true (a liquid has a definite volume, a gas has neither shape nor volume and is highly compressible). Both shape choices are truly wrong. The air tank gives only a faint hint.",
+   "sources": ["https://grokipedia.com/page/State_of_matter", "https://en.wikipedia.org/wiki/Diving_cylinder"]},
+  "85d0ce30af": {"verdict": "pass",
+   "why": "The context is now hedged ('usually needs far colder air, around -35 degrees Celsius or below'), which matches Wikipedia's 'generally ... at or below -35 C' and UAF's -20 to -40 C range. It speaks of a fog of ice crystals, so frost on a scarf is not contradicted. Key and lures unchanged and correct (vapour is invisible; the puff is liquid drops).",
+   "sources": ["https://en.wikipedia.org/wiki/Ice_fog", "https://www.gi.alaska.edu/alaska-science-forum/ice-fog", "https://www.nsta.org/science-and-children/science-and-children-january-2020/q-why-can-i-see-my-breath-cold-days"]},
+  "be8600b1fe": {"verdict": "pass",
+   "why": "The giveaway naming item is re-keyed to the cause, the grade's fact (heat added melts a solid), and it no longer shares the lava item's choices. Gallium melts at 29.76 C and skin is 33-34 C, so heat flows into it from her hand. Lures are truly wrong: cold does not flow; water does not dissolve gallium; air forms only a thin protective oxide on it (Wikipedia: 'not reactive with air and water' at room temperature) and does not turn it liquid. The revision note's 'does not react with air' slightly overstates (it tarnishes), but no player text claims that, and the context's 'Neither sweat nor air turns it liquid' is true. Voice clean.",
+   "sources": ["https://grokipedia.com/page/Gallium", "https://en.wikipedia.org/wiki/Gallium", "https://grokipedia.com/page/Human_body_temperature", "https://beyondpenguins.ehe.osu.edu/?p=2919"]},
+  "75288e1e47": {"verdict": "pass",
+   "why": "The key is no longer the only choice in science words: 'Water vapour from the ice inside it' uses the same term, and the sealed lid plus glass that lets nothing through is the clue to use. That lure is truly wrong, as is the seeping lure (Grokipedia Glass: 'impermeability of glass to gases, liquids'). The near-dead sweating lure is gone. Key true (Grokipedia Condensation: vapour into droplets on a cold glass surface). The lid alone does not settle it, since a child who thinks glass leaks keeps both inside-source choices live.",
+   "sources": ["https://grokipedia.com/page/Condensation", "https://grokipedia.com/page/Glass", "https://grokipedia.com/page/Water_vapor", "https://edu.rsc.org/resources/students-ideas-about-changes-of-state-beyond-appearances/4017768.article"]}
+ }}

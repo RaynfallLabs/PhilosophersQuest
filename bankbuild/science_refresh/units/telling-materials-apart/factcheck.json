@@ -1,0 +1,399 @@
+{
+ "unit": "telling-materials-apart",
+ "questions": {
+  "3a4dd43fc4": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a rock's mass is the amount of matter in it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mass",
+     "note": "Grokipedia: mass is a 'quantitative measure of the amount of matter in an object'."
+    },
+    {
+     "claim": "Wrong: 'the amount of space it fills' is volume, not mass",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volume",
+     "note": "Volume is 'the measure of the three-dimensional space occupied by matter'."
+    },
+    {
+     "claim": "Wrong: 'how tightly packed its matter is' is density (mass per volume), which mass alone does not give",
+     "result": "ok",
+     "source": "https://www.britannica.com/science/density",
+     "note": "Density = mass per unit volume; sciencenotes.org glosses it as the matter packed into a space. Mass alone cannot tell it."
+    },
+    {
+     "claim": "Wrong: 'how hard it is to scratch' is hardness, a separate property",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mohs_scale",
+     "note": ""
+    },
+    {
+     "claim": "Context: a balance finds mass by comparing with known masses",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mass",
+     "note": "Grokipedia: 'balances determine mass by comparing the unknown object to standard masses'. (A digital balance really weighs and is calibrated with known masses; at grade 5 the statement is fine.)"
+    },
+    {
+     "claim": "Context: a bigger object does not always have more mass than a smaller one",
+     "result": "ok",
+     "source": "https://www.acer.org/au/news/article/three-science-concepts-primary-students-struggle-to-grasp",
+     "note": "True (mass and volume differ); ACER found 27% of 8,433 students believed bigger objects always have more mass."
+    }
+   ]
+  },
+  "231980f269": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: an iron ball jumps to a magnet",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ferromagnetism",
+     "note": "Iron, nickel and cobalt are ferromagnetic at room temperature."
+    },
+    {
+     "claim": "Wrong: aluminium is not visibly pulled by a magnet",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Diamagnetism",
+     "note": "Aluminium is paramagnetic, only feebly attracted (susceptibility ~1e-5); a small ball will not move toward even a strong hand magnet. Materials-recovery facilities must use eddy-current separators, not magnets, for aluminium cans (https://grokipedia.com/page/Materials_recovery_facility)."
+    },
+    {
+     "claim": "Wrong: copper is not pulled",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Diamagnetism",
+     "note": "Copper is diamagnetic (feebly repelled)."
+    },
+    {
+     "claim": "Wrong: silver is not pulled",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Diamagnetism",
+     "note": "Silver is diamagnetic; Oak National Academy quiz: silver non-magnetic."
+    },
+    {
+     "claim": "Context: magnets pull iron, most steel (mostly iron), nickel and cobalt; most other metals not",
+     "result": "ok",
+     "source": "https://www.thenational.academy/teachers/programmes/science-primary-ks2/units/simple-forces-including-magnets/lessons/magnetic-and-non-magnetic-materials",
+     "note": "Oak: 'Iron is magnetic, so is steel because it contains iron'; 'Nickel is magnetic'; 'Most other metals are not magnetic'. 'Most steel' correctly hedges for austenitic stainless steels."
+    },
+    {
+     "claim": "Context: recycling centres lift steel cans out with big magnets",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Materials_recovery_facility",
+     "note": "Steel cans removed with 'overhead or drum magnets'."
+    }
+   ]
+  },
+  "d856da01b2": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: a big pine log floats and a small pebble sinks",
+     "result": "ok",
+     "source": "https://extension.psu.edu/calculating-the-green-weight-of-wood-species",
+     "note": "Even freshly cut (green) pine weighs 43-57 lb/ft3 against water's 62.4, so it floats; ordinary stone (granite 2.65-2.75 g/cm3) sinks."
+    },
+    {
+     "claim": "Wrong choices (pebble floats/log sinks; both float; both sink) are wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": "Object less dense than water floats, denser sinks. Pumice is the only common floating stone and the stem says 'pebble' without suggesting it."
+    },
+    {
+     "claim": "Context: floating depends on how heavy a thing is for its size compared with water, not weight alone",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Buoyancy",
+     "note": ""
+    },
+    {
+     "claim": "Context: 'Pine is much lighter for its size than water'",
+     "result": "uncertain",
+     "source": "https://extension.psu.edu/calculating-the-green-weight-of-wood-species",
+     "note": "True of seasoned pine (specific gravity 0.30-0.51, oven-dry basis: https://grokipedia.com/page/Softwood), but a freshly cut pine log is full of sap: Penn State gives green pine at 43-57 lb/ft3, i.e. 0.70-0.91 of water (longleaf 0.91, eastern white 0.88). Such a log floats low, and waterlogged pine logs can sink in time ('sinker logs'). Fix: drop 'much' ('Pine is lighter for its size than water, so even a huge log floats'), or say 'dry pine is about half as heavy for its size as water'."
+    },
+    {
+     "claim": "Context: stone is more than twice as heavy for its size as water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Granite",
+     "note": "Granite 2.65-2.75 g/cm3; quartz, flint, basalt and most limestones and sandstones are 2.2-3.0. True for an ordinary pebble."
+    }
+   ]
+  },
+  "3bc1a1bcca": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: sink the rock and see how far the water rises (displacement)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Displacement_(fluid)",
+     "note": "'submerging a stone in a measuring cylinder raises the water level by an amount corresponding to the stone's volume'; suitable for 'irregular solids like rocks'. The rock must be fully under water, which 'sink it' implies."
+    },
+    {
+     "claim": "Wrong: a balance reads mass, not volume",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mass",
+     "note": "Without a known density, mass alone does not give volume."
+    },
+    {
+     "claim": "Wrong: a ruler along the longest side gives one length, not the volume of a jagged shape",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volume",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: timing its fall through water does not give volume",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Displacement_(fluid)",
+     "note": ""
+    },
+    {
+     "claim": "Context: rise from 50 to 65 mL means 15 mL = 15 cm3",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Volume",
+     "note": "1 mL = 1 cm3; 65 - 50 = 15."
+    }
+   ]
+  },
+  "9c5b71ae35": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: the salt has dissolved in the water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sodium_chloride",
+     "note": "NaCl dissolves to about 360 g per kg of water at 25 C and fully dissociates into ions; a scoop in a jar is well under saturation."
+    },
+    {
+     "claim": "Wrong: 'It has melted in the water' (dissolving is not melting)",
+     "result": "ok",
+     "source": "https://www.nsta.org/lesson-plan/sugar-water",
+     "note": "Salt melts only at 800.7 C (Grokipedia Sodium_chloride). NSTA Sugar Water probe (Grade 5): elementary students explore dissolving and melting as different changes. NZCER ARBS (https://arbs.nzcer.org.nz/node/7346) confirms the Learning in Science Project figure the writer took from the unloadable Victoria page: '25% of the students interviewed used the terms melt and dissolve as if they were synonyms'."
+    },
+    {
+     "claim": "Wrong: 'It has turned into water'",
+     "result": "ok",
+     "source": "https://arbs.nzcer.org.nz/node/7346",
+     "note": "The salt is still present as ions and comes back on evaporation; NZCER shows the sugar-plus-water-gives-plain-water idea as a misconception."
+    },
+    {
+     "claim": "Wrong: 'It has vanished for good'",
+     "result": "ok",
+     "source": "https://arbs.nzcer.org.nz/node/7346",
+     "note": "NZCER Misconception 2: 'The solid ceases to exist when it dissolves'; 'Even though you cannot see the solid it is still present.' NSTA: students 'see the sugar disappear but may not understand where it goes'."
+    },
+    {
+     "claim": "Context: dissolved salt is broken into bits too small to see, spread through the water, and comes back when the water evaporates",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sodium_chloride",
+     "note": "Dissociates into ions; salt is produced by solar evaporation of brines."
+    },
+    {
+     "claim": "Context: melting is a solid turning into its own liquid when heated",
+     "result": "ok",
+     "source": "https://www.nsta.org/lesson-plan/sugar-water",
+     "note": "Melting is one substance changing state; dissolving is two substances interacting."
+    },
+    {
+     "claim": "Context: 'Sand does not dissolve in water at all'",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Silicon_dioxide",
+     "note": "'At all' overstates it: quartz sand dissolves very slightly (Grokipedia: 6-14 mg per litre at 25 C), and shell or coral sand (calcium carbonate) dissolves a little too. The child-level truth is 'practically none'. Fix: 'Sand does not dissolve in water; it only settles to the bottom.' (drop 'at all')."
+    }
+   ]
+  },
+  "ae2249ab42": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the metal draws heat from a hand faster",
+     "result": "ok",
+     "source": "https://annex.exploratorium.edu/xref/exhibits/cold_metal.html",
+     "note": "Exploratorium: all materials at room temperature; 'Metal is a better conductor than wood or styrofoam and hence feels the coldest.' Grokipedia Thermal_conductivity: metals have 'exceptionally high thermal conductivities'."
+    },
+    {
+     "claim": "Wrong: 'The metal is colder than the wooden seat'",
+     "result": "ok",
+     "source": "https://beyondpenguins.ehe.osu.edu/?p=2919",
+     "note": "Ohio State (grades 3-5): 'Objects exposed to the same ambient conditions will have the same temperature'; listed misconception 'metal is naturally cooler than plastic'. Checked the frosty-night twist: under a clear sky, high-emissivity surfaces (wood, paint) radiate and cool a little below the air, while bare low-emissivity metal cools less, so if anything the seat, not the arm, would be the colder; either way a degree or so cannot explain 'far colder'. The choice is wrong."
+    },
+    {
+     "claim": "Wrong: 'The metal lets cold flow into a hand'",
+     "result": "ok",
+     "source": "https://beyondpenguins.ehe.osu.edu/?p=2919",
+     "note": "Misconception 'Cold is transferred from one object to another'; heat moves from the warmer object to the cooler (https://grokipedia.com/page/Thermal_conduction)."
+    },
+    {
+     "claim": "Wrong: 'The wood makes a little heat of its own'",
+     "result": "ok",
+     "source": "https://beyondpenguins.ehe.osu.edu/?p=2919",
+     "note": "A seasoned wooden seat produces no heat; objects in the same surroundings share a temperature."
+    },
+    {
+     "claim": "Context: after a night in the same air the metal and wood are at the same temperature",
+     "result": "ok",
+     "source": "https://beyondpenguins.ehe.osu.edu/?p=2919",
+     "note": "Standard teaching statement; true to within the small radiative differences noted above."
+    },
+    {
+     "claim": "Context: metal carries warmth out of a hand far faster than wood; the hand feels the loss as cold",
+     "result": "ok",
+     "source": "https://annex.exploratorium.edu/xref/exhibits/cold_metal.html",
+     "note": ""
+    },
+    {
+     "claim": "Context: heat always flows from warmer to cooler; cold never flows",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Thermal_conduction",
+     "note": "Conduction runs 'from regions of higher temperature to regions of lower temperature'."
+    },
+    {
+     "claim": "Grade note: NZCER park-bench task set for Year 6 (age 10-11)",
+     "result": "ok",
+     "source": "https://arbs.nzcer.org.nz/resources/heating-metal-and-wood",
+     "note": "Page labels responses Y6, Curriculum Level 3; metal arm and wooden seat, sunny day and cold winter's day."
+    }
+   ]
+  },
+  "196abcd63d": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Key: the hat slows the heat leaving her head",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Thermal_insulation",
+     "note": "Insulation is 'designed to reduce the transfer of thermal energy'; fibrous insulation works by 'the trapping of air'. Grokipedia Wool: crimp creates 'insulating air pockets that trap still air'. This is the main way a wool hat keeps a head warm."
+    },
+    {
+     "claim": "Wrong: 'It makes heat of its own'",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Wool",
+     "note": "Partly true. Wool is hygroscopic and gives off heat as it takes up water vapour (heat of sorption). Grokipedia Wool: 'an exothermic heat of sorption reaction releases a small amount of heat', which it says helps keep the wearer warm in damp conditions; Woolmark (https://www.woolmark.com/industry/research/factsheets/wool-is-naturally-breathable/): 'As absorption occurs, wool releases heat, keeping the wearer feeling warmer and drier in cold damp conditions.' A hat carried from a dry house into a damp autumn evening, over a head giving off moisture, does this for a while. It is minor and temporary next to insulation, but a well-read student could defend the choice. Fix: make the lure a steady-heater claim that the mitten test refutes, e.g. 'It keeps making heat, like a little heater' (the sorption heat stops once the wool has taken up its fill of damp, and a hat on a table makes none)."
+    },
+    {
+     "claim": "Wrong: 'It gives off heat stored in its wool'",
+     "result": "ok",
+     "source": "https://beyondpenguins.ehe.osu.edu/?p=2919",
+     "note": "Truly wrong. The hat starts at room or outdoor temperature, cooler than her scalp, and heat moves only 'from the warmer object to the cooler object' (Ohio State; https://grokipedia.com/page/Thermal_conduction), so whatever thermal energy the wool holds cannot pass into her head; heat flows from her head into the hat and out to the air. The sorption heat above is not a store in the wool: it is released when water vapour from the air or her head binds to the fibre. Not partly true as worded, as long as the stem does not have the hat warmed first (on a radiator, in a pocket)."
+    },
+    {
+     "claim": "Wrong: 'It soaks up warmth from the air'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Thermal_conduction",
+     "note": "Wrong as worded: on a chilly evening the air is colder than her head and the hat, so heat flows out of the hat into the air, not in. NZCER's bench task marks the parallel 'Metal absorbs/soaks up heat' as incorrect (https://arbs.nzcer.org.nz/resources/heating-metal-and-wood). One caution: wool does soak up water vapour from damp air and gives off a little heat as it does (see above), so the context must not mention that effect next to this lure, or the lure starts to look half right."
+    },
+    {
+     "claim": "Context: wool traps still air among its fibres, which slows heat flowing from her head to the cooler air",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wool",
+     "note": ""
+    },
+    {
+     "claim": "Context: 'The hat makes no heat and stores none'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Wool",
+     "note": "'Makes no heat' is contradicted by wool's heat of sorption (Grokipedia Wool; Woolmark factsheet, both quoted above). 'Stores none' is also loose: any object holds thermal energy; what is true is that the hat is cooler than her head and so cannot pass any to it. Fix: 'The warmth is her own: the hat is no heater, and a thermometer tucked inside a hat lying on a table reads no warmer than the room.'"
+    },
+    {
+     "claim": "Context: a thermometer inside a hat lying on a table reads no warmer than the room",
+     "result": "ok",
+     "source": "https://www.tmj4.com/weather/science-experiments/how-do-mittens-actually-work-find-out-with-this-simple-experiment",
+     "note": "Empty mitten: 'The temperature remains largely unchanged'; the mitten acts as an insulator. Watson and Konicek (1990, Phi Delta Kappan): a class put thermometers in hats and sweaters and saw no rise (summary: https://mirjamglessmer.com/2015/04/22/conceptual-change-and-wooly-hats/). A hat already at the room's humidity gives off no sorption heat, so this holds."
+    },
+    {
+     "claim": "Grade note: warm clothes making heat is a grades 3-5 misconception (Ohio State; NSTA Mitten Problem)",
+     "result": "ok",
+     "source": "https://beyondpenguins.ehe.osu.edu/?p=2919",
+     "note": "Ohio State lists 'Objects that keep things warm (sweaters, mittens, blankets) are sources of heat' as a misconception. The NSTA page would not load here either; search confirms 'The Mitten Problem' is a Page Keeley formative assessment probe (Science and Children, March 2011; Uncovering Student Ideas in Science vol. 1) targeting the idea that a mitten makes its own heat (https://www.nsta.org/resources/formative-assessment-probes-mitten-problem)."
+    }
+   ]
+  },
+  "30b3b2a62a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a steel paper clip conducts and lights the bulb",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Electrical_conductor",
+     "note": "Steel is named among common metallic conductors (about 1.45e6 S/m, far below copper but ample for a battery-and-bulb tester). The stem says 'steel', so plastic-coated clips are not in play."
+    },
+    {
+     "claim": "Wrong: a rubber band does not conduct",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Insulator_(electricity)",
+     "note": "Rubber is a common insulator."
+    },
+    {
+     "claim": "Wrong: a plastic straw does not conduct",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Insulator_(electricity)",
+     "note": "Plastics (PVC, polyethylene) are insulators used in cabling."
+    },
+    {
+     "claim": "Wrong: a glass marble does not conduct",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Insulator_(electricity)",
+     "note": "Glass is a common insulator."
+    },
+    {
+     "claim": "Context: steel, copper and aluminium conduct; rubber, plastic and glass are insulators; wires wear a plastic coat",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Electrical_conductor",
+     "note": "Copper, silver, gold, aluminum and steel named as conductors; Insulator page: insulators are used 'to coat wires', PVC for general cabling."
+    },
+    {
+     "claim": "Stem: battery-bulb-wires tester lights only when the object completes the circuit",
+     "result": "ok",
+     "source": "https://www.teachengineering.org/activities/cub_conduct",
+     "note": "'A material that completes the circuit is called a conductor while a material that does not is an insulator'; grades 3-5."
+    }
+   ]
+  },
+  "7546383462": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: unmarked by a fingernail but scratched by steel means harder than a fingernail, softer than steel",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mohs_scale",
+     "note": "Each mineral 'can scratch those of lower rank but not those of equal or higher rank'; fingernail about 2.5, knife blade or steel nail 5.5, so the mineral lies between (calcite 3, fluorite 4). Strictly a fingernail failing to scratch means 'at least as hard as', but no choice turns on equality at the fingernail end."
+    },
+    {
+     "claim": "Wrong: 'harder than steel' (steel would not scratch it)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mohs_scale",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'softer than a fingernail' (a fingernail would scratch it)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mohs_scale",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'as hard as steel' (equal hardness does not scratch)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mohs_scale",
+     "note": "Equal rank cannot scratch, so a mineral steel scratches easily is softer than steel."
+    },
+    {
+     "claim": "Context: a harder material scratches a softer one, never the other way round",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mohs_scale",
+     "note": ""
+    },
+    {
+     "claim": "Context: scale runs from talc, soft enough for a fingernail, to diamond, which scratches every other mineral on the scale",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mohs_scale",
+     "note": "Talc 1, 'the softest mineral'; diamond 10, 'scratches all other minerals'; fingernail scratches up to about 2.5."
+    },
+    {
+     "claim": "Context: pyrite (fool's gold) has the colour and shine of gold but is far harder than soft real gold",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pyrite",
+     "note": "Pyrite Mohs 6-6.5, 'pale brass-yellow hue, metallic luster', 'superficial resemblance to gold'; gold Mohs 2.5, 'pure gold scratches easily' (https://grokipedia.com/page/Gold). Minor: pyrite is a paler yellow than gold, so 'a gold-like colour and shine' would be more exact; acceptable as is."
+    }
+   ]
+  }
+ },
+ "unit_notes": "9 questions: 6 ok, 1 error, 2 uncertain. All keys are correct. Error: the wool-hat context says 'The hat makes no heat and stores none', but wool gives off a little heat as it takes up water vapour (heat of sorption: Grokipedia Wool; Woolmark factsheet), and the lure 'It makes heat of its own' is partly true for the same reason. The two lures the lead asked about hold: 'gives off heat stored in its wool' is truly wrong (the hat is cooler than her head, so no stored heat can pass to it), and 'soaks up warmth from the air' is wrong as worded (the chilly air is colder than the hat), though the context must not mention wool soaking up damp next to it. Uncertain: the pine-log context's 'much lighter for its size than water' (green pine is 0.70-0.91 of water's density; drop 'much'), and the salt context's 'Sand does not dissolve in water at all' (quartz dissolves 6-14 mg per litre; drop 'at all'). Writer's unloaded sources: the Victoria melt/dissolve figure (25% used melt and dissolve as synonyms) is confirmed by NZCER ARBS node 7346; the Victoria float/sink misconception is confirmed by the Science Learning Hub quote already in facts.md; NSTA's Mitten Problem is confirmed by search as a Page Keeley probe (Science and Children, March 2011) on mittens making their own heat."
+}

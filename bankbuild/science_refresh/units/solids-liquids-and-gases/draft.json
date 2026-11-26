@@ -1,0 +1,176 @@
+{
+ "unit": "solids-liquids-and-gases",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "solids-liquids-and-gases",
+   "question": "A geologist drops a quartz crystal into a big, empty glass jar. Quartz is a solid. What does every solid have, whatever container holds it?",
+   "answer": "Its own shape and its own volume",
+   "choices": [
+    "Its own shape and its own volume",
+    "Its own volume, but not its own shape",
+    "Its own shape, but not its own volume",
+    "Neither its own shape nor its own volume"
+   ],
+   "context": "A solid such as quartz keeps its own shape and its own volume, so it looks the same in a box or a jar. A liquid keeps its volume but takes the shape of its container, and a gas has neither: it spreads out to fill whatever holds it.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "Florida's grade 5 benchmark SC.5.P.8.1 compares solids, liquids and gases, and its lessons teach that a solid keeps its shape and volume in a new container."
+  },
+  {
+   "tier": 1,
+   "topic": "solids-liquids-and-gases",
+   "question": "A diver swims through the sea, breathing air from a tank. Seawater is a liquid, and air is a gas. What is one difference between them?",
+   "answer": "Only a liquid keeps its own volume",
+   "choices": [
+    "Only a liquid keeps its own volume",
+    "Only a gas keeps its own volume",
+    "Only a liquid keeps its own shape",
+    "Only a gas keeps its own shape"
+   ],
+   "context": "A litre of seawater still takes up one litre, poured into a jug or a bucket. A gas spreads out to fill whatever holds it, and it can be squeezed into a small space, as the air in a diver's tank is. Neither one keeps a shape of its own: both take the shape of their container.",
+   "facts": [
+    "F3",
+    "F4"
+   ],
+   "grade_note": "Grade 5 lessons for Florida's SC.5.P.8.1 teach that a liquid changes shape but not volume in a new container, while a gas expands to fill its container."
+  },
+  {
+   "tier": 1,
+   "topic": "solids-liquids-and-gases",
+   "question": "A runner breathes out on a chilly autumn morning, and a white puff hangs in the air in front of his face. What is the white puff made of?",
+   "answer": "Tiny drops of liquid water",
+   "choices": [
+    "Tiny drops of liquid water",
+    "Tiny crystals of solid ice",
+    "Water vapour from his lungs",
+    "Warm air from his lungs"
+   ],
+   "context": "Water vapour, the gas form of water, cannot be seen. When warm, damp breath meets cold air, some of its water vapour condenses into tiny drops of liquid water, and the drops make the white puff. Ice crystals form instead only in far colder air, at about -35 degrees Celsius or below.",
+   "facts": [
+    "F5",
+    "F6",
+    "F7",
+    "F8"
+   ],
+   "grade_note": "Florida's grade 5 matter lessons teach that water vapour is invisible and that the steam that can be seen is droplets of liquid water."
+  },
+  {
+   "tier": 1,
+   "topic": "solids-liquids-and-gases",
+   "question": "A student packs a beaker with crushed ice and a little cold water, then stands a thermometer in it. What does the thermometer read while the ice slowly melts?",
+   "answer": "0 degrees Celsius",
+   "choices": [
+    "0 degrees Celsius",
+    "32 degrees Celsius",
+    "10 degrees Celsius",
+    "-10 degrees Celsius"
+   ],
+   "context": "Ice melts at 0 degrees Celsius, and water freezes at the same temperature. While ice and water are mixed, the heat that flows in goes into melting the ice, so the mixture stays at about 0 degrees until the ice is gone. On the Fahrenheit scale that temperature is 32 degrees.",
+   "facts": [
+    "F9",
+    "F10"
+   ],
+   "grade_note": "Measuring the temperature at which water changes state, in degrees Celsius, is taught by grade 5 (England's Year 4 states of matter), and 0 degrees Celsius for melting ice is the basic number."
+  },
+  {
+   "tier": 1,
+   "topic": "solids-liquids-and-gases",
+   "question": "In a lab beside the sea, a scientist heats a beaker of pure water until it boils hard. What temperature does her thermometer show while the water boils?",
+   "answer": "100 degrees Celsius",
+   "choices": [
+    "100 degrees Celsius",
+    "212 degrees Celsius",
+    "80 degrees Celsius",
+    "150 degrees Celsius"
+   ],
+   "context": "At sea level, pure water boils at 100 degrees Celsius, or 212 degrees Fahrenheit. Once it boils, more heat turns more water into vapour but does not make it any hotter. High on a mountain, where the air pressure is lower, water boils below 100 degrees.",
+   "facts": [
+    "F11",
+    "F12"
+   ],
+   "grade_note": "Water boiling at 100 degrees Celsius at sea level is one of the two temperatures every 5th grader learns for water's changes of state, alongside 0 degrees for freezing."
+  },
+  {
+   "tier": 1,
+   "topic": "solids-liquids-and-gases",
+   "question": "A scientist rests a lump of the silvery metal gallium in her palm. The warmth of her hand slowly turns the solid metal into a shiny liquid. What is this change of state called?",
+   "answer": "Melting",
+   "choices": [
+    "Melting",
+    "Freezing",
+    "Evaporation",
+    "Condensation"
+   ],
+   "context": "Melting is a solid turning into a liquid as it takes in heat. Gallium melts at about 30 degrees Celsius, cooler than human skin, so a warm hand is enough. Each substance melts at its own temperature: ice at 0 degrees Celsius, iron only at about 1,538.",
+   "facts": [
+    "F13",
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "Florida's grade 5 benchmark SC.5.P.9.1 teaches that adding heat causes changes of state, and England's curriculum has pupils research the temperatures at which materials such as iron melt."
+  },
+  {
+   "tier": 1,
+   "topic": "solids-liquids-and-gases",
+   "question": "Lava pours from a volcano, glowing at over 1,000 degrees Celsius. As it cools, the liquid rock hardens into solid black rock. Which change of state is this?",
+   "answer": "Freezing",
+   "choices": [
+    "Freezing",
+    "Melting",
+    "Condensation",
+    "Evaporation"
+   ],
+   "context": "Freezing is any liquid turning into a solid as it loses heat. Water freezes at 0 degrees Celsius, but melted rock freezes while it is still hundreds of degrees hot, so lava hardening into rock such as basalt is freezing too. Melting is the opposite change, solid to liquid.",
+   "facts": [
+    "F13",
+    "F14",
+    "F17",
+    "F18"
+   ],
+   "grade_note": "5th graders learn freezing as a liquid turning solid when heat is taken away (Florida SC.5.P.9.1); lava is the unit's rock example of that same change."
+  },
+  {
+   "tier": 1,
+   "topic": "solids-liquids-and-gases",
+   "question": "A scientist screws the lid onto a glass jar full of ice cubes. Soon tiny drops of water cover the outside of the jar. Where does the water come from?",
+   "answer": "Water vapour in the air around it",
+   "choices": [
+    "Water vapour in the air around it",
+    "Melted ice seeping through the glass",
+    "Cold leaking out and turning to water",
+    "The glass sweating, as skin does"
+   ],
+   "context": "Air holds water vapour, an invisible gas. When the air touches the cold glass it cools, and some of its water vapour condenses into drops of liquid water on the outside of the jar. Taking heat away from a gas turns it into a liquid, just as taking heat from a liquid freezes it.",
+   "facts": [
+    "F14",
+    "F19"
+   ],
+   "grade_note": "Condensation on a cold container is the standard grade 5 example of cooling causing a change of state, and 'water comes through the glass' is a documented belief at ages 8 to 15 (Osborne and Cosgrove)."
+  },
+  {
+   "tier": 1,
+   "topic": "solids-liquids-and-gases",
+   "question": "Water boils hard in a glass beaker over a lab burner, and big bubbles rise all through it and burst at the top. What is inside the big bubbles?",
+   "answer": "Water in the form of a gas",
+   "choices": [
+    "Water in the form of a gas",
+    "Air that was mixed in the water",
+    "Heat from the burner's flame",
+    "Oxygen and hydrogen split from water"
+   ],
+   "context": "The big bubbles are water vapour, water turned into a gas, so boiling makes no new substance; cooled again, the vapour condenses back into liquid water. The tiny bubbles that appear as water first warms are different: they are air that was dissolved in it.",
+   "facts": [
+    "F20",
+    "F21",
+    "F22"
+   ],
+   "grade_note": "Florida's grade 5 benchmark SC.5.P.9.1 teaches boiling as heat turning water into a gas, and the air, heat and oxygen-and-hydrogen ideas about the bubbles are documented from age 8 (Osborne and Cosgrove)."
+  }
+ ]
+}

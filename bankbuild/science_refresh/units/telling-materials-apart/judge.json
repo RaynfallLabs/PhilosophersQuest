@@ -1,0 +1,49 @@
+{"unit": "telling-materials-apart",
+ "questions": {
+  "3a4dd43fc4": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'How hard it is to scratch' is a dead lure. The stem has just said the rock sits on a balance, and no 10-year-old thinks a balance tells how easily a rock scratches, so only three choices are live. The other two lures are good: 'the space it fills' is the documented bigger-means-more-mass confusion (M1/M4), and 'how tightly packed' is density.",
+     "fix": "Replace it with 'What kind of rock it is'. Children do think weighing a thing identifies it, and mass alone cannot name a rock. The choices then read: the amount of matter in it / the amount of space it fills / how tightly packed its matter is / what kind of rock it is."}
+   ]},
+  "231980f269": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "'A magnet pulls iron' is grade-3 content (NGSS 3-PS2-3). A child who knows only that answers at once, so the grade-5 point, that most other metals and silver-coloured things are not pulled (M2), never decides the item. It is still the scope's core fact.",
+     "fix": "Optional: key the grade-5 point instead. 'A magnet is held over four shiny metal objects. Which one does it not pull?' with 'An aluminium can', 'A steel can', 'An iron nail', 'A steel paper clip' (the recycling-centre pair from the context). A child who thinks all metals are magnetic has no way out."}
+   ]},
+  "d856da01b2": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "Every child knows from play, long before 5th grade, that logs float and pebbles sink. Experience overrides the 'far heavier' lure (M3), so the item is answered without the grade's fact, which is that floating depends on how heavy a thing is for its size compared with water (TEKS 5.6A, relative density with water as the reference). Two of the four outcomes, those where the pebble floats, are ones no child believes, so only 'both sink' does any work as a lure.",
+     "fix": "Key the rule that the context teaches, in a child's words: 'A huge pine log floats in a pond, though it is far heavier than a pebble that sinks. What decides whether a thing floats in water?' with 'How heavy it is for its size', 'How heavy it is altogether', 'How big it is altogether', 'How hard its material is'. Children wrongly link hard with sinking. Keep water as the reference and leave the word 'density' to the T2 density-float-or-sink unit."}
+   ]},
+  "3bc1a1bcca": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Drop it in the water and time its fall' is a dead choice: no child thinks a falling time gives a size. The stopwatch is in the stem only to feed it, so only three choices are live. Each choice also uses one tool, so a child can answer from 'a graduated cylinder measures volume' alone (the measuring-and-the-fair-test unit's fact) and never needs the displacement idea this question is for.",
+     "fix": "Swap the stopwatch in the stem for 'a piece of string', and the fourth choice for 'Wrap the string around it and measure the string', a method children really propose for an odd shape. Better still, if the writer can make it parallel, have every choice use the water and the cylinder, so that only the rise-in-level idea separates the key from the lures."}
+   ]},
+  "9c5b71ae35": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "This asks the same fact as matter-made-of-tiny-particles ecbab890cf. In both, a student stirs salt into water, no salt can be seen, and the stem asks 'What has happened to the salt?'. Both key dissolving (here 'dissolved'; there 'broken up and spread through the water') and both use the same three lures (melted, turned into water, vanished for good). A player would meet the same question twice in one tier. The particle unit's version keys the particle claim, which is that unit's fact. This unit's fact is solubility as a property for telling materials apart, and the question only asks it as the name of a process.",
+     "fix": "Re-key to identification by solubility, which is the scope's last clause ('identifying a material by its properties'): 'Two white powders look alike: one is salt, the other fine white sand. Which test tells them apart?' with 'Stir each into a jar of water', 'Hold a magnet over each', 'Touch each to a bulb tester', 'Leave each in the sunshine'. The context then teaches that salt dissolves and sand does not, and why the other tests fail: neither is pulled by a magnet, neither conducts when dry, and sunshine changes neither."}
+   ]},
+  "ae2249ab42": {"verdict": "ok", "issues": []},
+  "196abcd63d": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem's own 'chilly autumn evening' undercuts 'It soaks up warmth from the air', since chilly air has little warmth to give. It is the weakest of the three lures, and two of the others carry the same idea (the hat as a source of heat).",
+     "fix": "Drop 'chilly' ('On an autumn evening, a girl pulls on a thick wool hat...'), which leaves the air's warmth open and keeps the lure live. Nothing else needs to change."}
+   ]},
+  "30b3b2a62a": {"verdict": "ok", "issues": []},
+  "7546383462": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Three of the four choices begin 'Harder than a fingernail', and the key is the choice built from the two most common halves, so a test-wise player converges on it without knowing the scratch rule. 'As hard as steel' also contradicts the stem's 'scratches it easily'. The lure for the documented mistake is missing: applied backwards (M9), the scratch rule gives 'softer than a fingernail, harder than steel', and that combination is not offered.",
+     "fix": "Replace 'Harder than a fingernail, as hard as steel' with 'Softer than a fingernail, harder than steel'. The four choices are then the four combinations, each half appears exactly twice, and a child who has the rule backwards has his own choice."}
+   ]}
+ },
+ "unit_notes": "CROSS-UNIT OVERLAP (must fix): Q5 9c5b71ae35 is the same question as matter-made-of-tiny-particles ecbab890cf. Both stir salt into water until it cannot be seen, ask 'what has happened to the salt?', key dissolving and use the same three lures. Re-key this one to identifying a material by its solubility (fix above) and keep the particle unit's version. No fact is shared with solids-liquids-and-gases: physical state is rightly left to that unit. Neighbour leans for the lead: Q1 (what mass means) and Q4 (the displacement method) sit next to measuring-and-the-fair-test's 'balance measures mass, graduated cylinder measures volume'. Neither asks which tool measures what, but Q4's lures are currently knocked out by exactly that fact. Q8's conductor question is already in lead_notes for electric-circuits. If Q3 is re-keyed to 'heavy for its size', the T2 density-float-or-sink unit must still own the word density and the liquid-layer, ice and ship cases. Coverage: colour and shine are taught only in contexts (Q2's silver-grey metals, Q9's pyrite) and are never asked, and identifying a material by its properties is asked only through the magnet. The Q5 re-key adds a second identification item. Q6 (metal conducts heat) and Q7 (wool insulates) share the heat-flows-from-warm-to-cold idea but key different facts. No voice, singular-they, lane or stance problems. Every key matches the fact sheet."
+}

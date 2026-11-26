@@ -1,0 +1,33 @@
+{"unit": "matter-made-of-tiny-particles",
+ "questions": {
+  "6d24f35e86": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem's list (rocks, seawater, air, a body) knocks Crystals out for anyone (air is not crystals), so the real contest is Atoms against Cells (the documented atoms-cells confusion, M8) and Germs (the invisible 'everywhere' things in a child's world). It is weaker than four live choices, but every lure is a real child's idea.",
+     "fix": "Leave as is. Do not swap in 'Molecules', 'Grains', 'Minerals' or 'Elements': each is partly true for some or all of the list and would give a second defensible answer."}
+   ]},
+  "c3dc98eb0b": {"verdict": "ok", "issues": []},
+  "9b606b8a90": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "This asks only the observation (air squeezes and water hardly does), which is the same fact solids-liquids-and-gases d9c399335b keys (a gas does not keep its own volume, and its context says air is squeezed into a diver's tank). The explanation, the space between particles, belongs to the T2 particles-in-motion unit ('a gas can be compressed because of the space between its particles'). So as written the question tests no particle-evidence fact of this unit. 'Only the one holding water' is also near-dead, because no child expects water to squeeze when air will not.",
+     "fix": "Key the 5th-grade evidence the syringe gives, that air is matter and takes up space (Amplify Grade 5: air 'takes up space (you can compress it in a syringe)'): 'A student seals the tip of a syringe of air and pushes hard on the plunger. It slides in part of the way, then stops, and springs back when she lets go. What stops it?' with 'The air trapped inside it' and three mechanical lures such as 'The rubber end of the plunger sticking', 'The plastic walls squeezing the plunger', 'A pull from the sealed tip'. Or replace the question with the scope's own balloon evidence (air fills a balloon and gives it its shape). Either version stays clear of air's weight (Q2) and of the T2 particle-spacing explanation."}
+   ]},
+  "ba6d9a7fec": {"verdict": "ok", "issues": []},
+  "ecbab890cf": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'It has turned into water, just like the rest' is awkward: the rest of what? 'A spoonful of salt' also brushes the kitchen lane in an otherwise lab scene. This question is the twin of telling-materials-apart 9c5b71ae35 (same stem, key and lures). Keep it only if that one is re-keyed, as its judge asks.",
+     "fix": "'It has turned into more water'; 'a scoop of salt' in place of 'a spoonful of salt'."}
+   ]},
+  "7b25001b13": {"verdict": "ok", "issues": []},
+  "f39e11cfba": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'What is the steel made of?' invites the everyday answer 'iron' (steel is mostly iron), which is not among the choices, so a careful child pauses before he sees that the choices are about structure.",
+     "fix": "'What is the steel like, deep inside?' The four choices fit it unchanged."}
+   ]},
+  "33a64311ff": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "CROSS-UNIT OVERLAP (two pairs). (1) Q5 ecbab890cf and telling-materials-apart 9c5b71ae35 are the same question: salt stirred into water vanishes from sight, the stem asks 'what has happened to the salt?', both key dissolving and both use the same three lures (melted, turned into water, vanished for good). Keep this one, whose key is the particle claim; that unit's judge re-keys the other to identifying a material by solubility. If the lead decides the other way round, this one must change instead (for example to the scope's 'the water still tastes of it' evidence), since Q6 already holds 'the solid comes back when the water evaporates'. (2) Q3 9b606b8a90 (only the air syringe squeezes) keys the same observable fact as solids-liquids-and-gases d9c399335b (a gas does not keep its own volume). Fix it here (above), keeping clear of the T2 particles-in-motion explanation. Within the unit: Q5 and Q6 both show that dissolved salt is still there, but they key different facts (it broke up and spread through the water; it is left behind when the water evaporates). That is fine, and Q6 is already in lead_notes for mixtures-and-solutions. Air carries three of eight questions (Q2 has weight, Q3 syringe, Q8 as a lure), which matches the scope's own weighting. Coverage of the scope is otherwise complete: atom as the name (Q1), air's mass (Q2), a smell crossing a room (Q4), the dissolved solid (Q5, Q6), solids made of particles too (Q7) and what counts as matter (Q8). No voice, singular-they, lane or stance problems beyond the low notes."
+}

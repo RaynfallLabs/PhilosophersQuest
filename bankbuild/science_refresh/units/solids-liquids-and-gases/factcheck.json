@@ -1,0 +1,339 @@
+{
+ "unit": "solids-liquids-and-gases",
+ "questions": {
+  "b77d61d8f3": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a solid has its own shape and its own volume whatever container holds it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "Grokipedia: solid particles vibrate in fixed positions, 'resulting in a definite shape and volume'. Florida grade 5 page: solids 'do not change shape, volume, or mass when moved to a new container' (https://floridascience.squarespace.com/physical-science-1)."
+    },
+    {
+     "claim": "Wrong: 'Its own volume, but not its own shape' (that is a liquid)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "Liquid: 'a definite volume but no fixed shape'. Not true of a solid."
+    },
+    {
+     "claim": "Wrong: 'Its own shape, but not its own volume'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "No common state has this combination; a solid keeps its volume."
+    },
+    {
+     "claim": "Wrong: 'Neither its own shape nor its own volume' (that is a gas)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "Gas: 'neither a fixed shape nor a fixed volume'. Not true of a solid."
+    },
+    {
+     "claim": "Quartz is a solid crystal (a mineral a geologist would handle)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Quartz",
+     "note": "Quartz is 'a mineral composed primarily of silicon dioxide' that 'crystallizes in the trigonal crystal system'."
+    },
+    {
+     "claim": "Context: liquid keeps volume, takes container's shape; gas has neither and spreads to fill its container",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "Gas 'expand[s] and fill[s] the entire space of its container'."
+    }
+   ]
+  },
+  "d9c399335b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: of a liquid and a gas, only the liquid keeps its own volume",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "Liquid: definite volume; gas: neither fixed shape nor fixed volume. Florida grade 5: liquids 'will change shape but not volume'; gases 'will change shape and volume' (https://floridascience.squarespace.com/physical-science-1)."
+    },
+    {
+     "claim": "Wrong: 'Only a gas keeps its own volume'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "A gas has no fixed volume."
+    },
+    {
+     "claim": "Wrong: 'Only a liquid keeps its own shape' and 'Only a gas keeps its own shape'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "Neither a liquid nor a gas has a fixed shape; both wrong."
+    },
+    {
+     "claim": "Seawater is a liquid, air is a gas; a diver's tank holds air squeezed (compressed) into a small space",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Diving_cylinder",
+     "note": "Diving cylinders hold gas compressed to up to several hundred times atmospheric pressure (roughly 3,000 psi); Grokipedia State of matter: 'gases are highly compressible'."
+    },
+    {
+     "claim": "Context: a litre of seawater still takes up one litre in a jug or bucket; neither keeps a shape, both take their container's shape",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "True at grade level (ignoring tiny thermal expansion)."
+    }
+   ]
+  },
+  "85d0ce30af": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: the white puff of breath on a chilly morning is tiny drops of liquid water",
+     "result": "ok",
+     "source": "https://www.nsta.org/science-and-children/science-and-children-january-2020/q-why-can-i-see-my-breath-cold-days",
+     "note": "NSTA: 'the water in your moist breath changes from a gas, water vapor, to liquid droplets, which form a fog'; 'Note that water vapor is invisible.' Illinois Physics Van: 'tiny liquid water droplets' (https://van.physics.illinois.edu/ask/listing/738)."
+    },
+    {
+     "claim": "Wrong: 'Water vapour from his lungs' (writer flagged as possibly partly true)",
+     "result": "ok",
+     "source": "https://floridascience.squarespace.com/physical-science-1",
+     "note": "The droplets did come from that vapour, but the white puff itself is not vapour: Florida grade 5: 'Water vapor is invisible. It cannot be seen.' NSTA: you can only see the water after the vapour condenses into droplets. 'Visible mist is water vapour' is the documented misconception this distractor targets, so it is truly wrong. The context explains the distinction."
+    },
+    {
+     "claim": "Wrong: 'Tiny crystals of solid ice' on a chilly autumn morning",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ice_fog",
+     "note": "Ice fog 'generally requires temperatures at or below -35 C'; a chilly autumn morning is far warmer, so the puff is liquid drops."
+    },
+    {
+     "claim": "Wrong: 'Warm air from his lungs'",
+     "result": "ok",
+     "source": "https://www.nsta.org/science-and-children/science-and-children-january-2020/q-why-can-i-see-my-breath-cold-days",
+     "note": "Air is invisible; what is seen is condensed droplets."
+    },
+    {
+     "claim": "Context: water vapour, the gas form of water, cannot be seen; warm damp breath meeting cold air condenses into tiny liquid drops",
+     "result": "ok",
+     "source": "https://www.nsta.org/science-and-children/science-and-children-january-2020/q-why-can-i-see-my-breath-cold-days",
+     "note": ""
+    },
+    {
+     "claim": "Context: 'Ice crystals form instead only in far colder air, at about -35 degrees Celsius or below'",
+     "result": "uncertain",
+     "source": "https://www.gi.alaska.edu/alaska-science-forum/ice-fog",
+     "note": "Wikipedia supports 'generally at or below -35 C', but the University of Alaska Geophysical Institute says ice fog 'may not form until the temperature falls to -40C' in clean air yet 'can start to develop at temperatures as warm as -20C' in dirty air. So 'only ... at about -35' is firmer than the sources. Fix: 'Ice crystals usually form instead only in far colder air, around -35 degrees Celsius or below.' (adding 'usually'), or 'only in air far below freezing'."
+    }
+   ]
+  },
+  "6ac33c385b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a melting ice-and-water mixture reads 0 degrees Celsius",
+     "result": "ok",
+     "source": "https://www.nist.gov/pml/mercury-thermometer-alternatives/mercury-thermometer-alternatives-verification-methods",
+     "note": "NIST: 'When ice and water are packed together into an insulated container, the mixture has a temperature of nearly 0 C (32 F).' At grade level 0 C is the true reading."
+    },
+    {
+     "claim": "Wrong: '32 degrees Celsius' (32 is the Fahrenheit number)",
+     "result": "ok",
+     "source": "https://www.nist.gov/pml/mercury-thermometer-alternatives/mercury-thermometer-alternatives-verification-methods",
+     "note": "32 F, not 32 C; 32 C is warm water."
+    },
+    {
+     "claim": "Wrong: '10 degrees Celsius' and '-10 degrees Celsius'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Melting_point",
+     "note": "Melting absorbs latent heat 'without a rise in temperature' until the change is complete, so the mix holds at 0 C, neither 10 nor -10."
+    },
+    {
+     "claim": "Context: ice melts and water freezes at the same temperature, 0 C; the mix stays at about 0 C until the ice is gone; 32 F",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Melting_point",
+     "note": "Grokipedia: water's 'precise melting point of 0C'; temperature does not rise until the phase change is complete. 0 C = 32 F."
+    }
+   ]
+  },
+  "c3aa9a8736": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: pure water boiling at sea level reads 100 degrees Celsius",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Boiling_point",
+     "note": "Grokipedia: 'the normal boiling point of water is 100 C'; '212F (100C) at sea level'. (Under ITS-90 the 1 atm value is 99.97 C and NIST's 30 m example is 99.87 C, but 100 C is the correct grade-level reading and no other choice is close.)"
+    },
+    {
+     "claim": "Wrong: '212 degrees Celsius' (Fahrenheit number), '80' and '150 degrees Celsius'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Boiling_point",
+     "note": "212 is the Fahrenheit value; boiling water at sea level is neither 80 C nor 150 C."
+    },
+    {
+     "claim": "Context: once boiling, more heat turns more water to vapour but does not make it hotter",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Boiling_point",
+     "note": "At the boiling point the liquid 'can vaporize without further temperature increase'."
+    },
+    {
+     "claim": "Context: high on a mountain, with lower air pressure, water boils below 100 C",
+     "result": "ok",
+     "source": "https://www.nist.gov/pml/mercury-thermometer-alternatives/mercury-thermometer-alternatives-verification-methods",
+     "note": "NIST example: about 94.89 C at 1,524 m; Grokipedia: 'as pressure decreases, the boiling point lowers'."
+    }
+   ]
+  },
+  "d28dd15a74": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: solid gallium turning to liquid in a warm hand is melting",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "'melting (solid to liquid)'."
+    },
+    {
+     "claim": "Wrong: freezing (liquid to solid), evaporation and condensation (to and from gas)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "None of these is solid to liquid."
+    },
+    {
+     "claim": "Gallium is a silvery metal that melts at about 30 C and liquefies in the hand",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gallium",
+     "note": "'a silvery-white, soft metal'; melting point 29.76 C; can 'liquefy upon contact with human skin at typical body temperature'."
+    },
+    {
+     "claim": "Context: about 30 C is cooler than human skin",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Human_body_temperature",
+     "note": "Skin 'typically ranges from 33C to 34C' under neutral conditions, above 29.76 C."
+    },
+    {
+     "claim": "Context: ice melts at 0 C, iron at about 1,538 C",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Melting_point",
+     "note": "'Iron melts at 1538C'; water's melting point 0 C."
+    }
+   ]
+  },
+  "be8b02db61": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: liquid lava hardening into solid rock is 'Freezing' (writer flagged the wording)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Freezing",
+     "note": "Grokipedia: 'Freezing is the conversion of a liquid into a solid phase'; its table gives iron's freezing point as 1538 C, so a freezing point far above 0 C is standard usage. Grokipedia's Lava page itself uses the word for lava lakes ('preventing either overheating or freezing'); Britannica says the constituents of rapidly cooled magma become 'essentially frozen in position' (https://www.britannica.com/science/igneous-rock/Nature-of-magmas); a UCSD SIO15 slide gives magma's 'melting T or freezing point' (https://geowiki.ucsd.edu/sio15/pdfs/video7d-slides.pdf). Geologists more often say 'solidifies' or 'crystallizes' (USGS, Wikipedia), and lava solidifies over a temperature range rather than at one point, but at grade 5 liquid-to-solid is freezing and it is the only correct choice offered. Fair wording."
+    },
+    {
+     "claim": "Wrong: melting (the opposite), condensation and evaporation (gas changes)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/State_of_matter",
+     "note": "None of these is liquid to solid."
+    },
+    {
+     "claim": "Stem: lava glowing at over 1,000 degrees Celsius",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lava",
+     "note": "Lava 'generally ranging from 650C to 1250C'; basaltic lava 'typically erupts at 1000-1200C'. USGS HVO Volcano Watch: 'Lava erupts from Kilauea at a temperature of 1150 C' (https://bigislandvideonews.com/2019/11/01/volcano-watch-why-is-the-2018-lava-still-so-hot, a reprint of the USGS article; usgs.gov timed out)."
+    },
+    {
+     "claim": "Stem and context: it hardens into solid black rock such as basalt",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Basalt",
+     "note": "Basalt is 'dark gray to black', 'formed by the rapid cooling and solidification of low-viscosity lava at or near the Earth's surface'."
+    },
+    {
+     "claim": "Context: melted rock freezes while still hundreds of degrees hot (USGS solidifying temperature, writer flagged)",
+     "result": "ok",
+     "source": "https://bigislandvideonews.com/2019/11/01/volcano-watch-why-is-the-2018-lava-still-so-hot",
+     "note": "USGS HVO Volcano Watch (Oct 2019, reprint): 'For the calculations here, crust is considered solid when it is below 850 C (1560 F)', citing Jaggar's 1917 finding that basalt 'can remain molten at temperatures as low as 750-850 C'. So 850 C is a modelling threshold, not a single freezing point for all lava; Grokipedia Lava says a solid crust forms 'typically when the temperature drops to 900-1000C'. The context prints no number, and 'hundreds of degrees hot' is true on every source. The fact sheet's wording (HVO treats the crust as solid below about 850 C) is accurate."
+    },
+    {
+     "claim": "Context: freezing is any liquid turning into a solid as it loses heat; water freezes at 0 C; melting is the opposite",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Freezing",
+     "note": ""
+    }
+   ]
+  },
+  "75288e1e47": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the drops on the outside of a sealed cold jar come from water vapour in the surrounding air",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Condensation",
+     "note": "'the familiar transformation of water vapor into liquid droplets on a cold glass surface'."
+    },
+    {
+     "claim": "Wrong: 'Melted ice seeping through the glass'",
+     "result": "ok",
+     "source": "https://edu.rsc.org/resources/students-ideas-about-changes-of-state-beyond-appearances/4017768.article",
+     "note": "Glass is not permeable and the jar is sealed; RSC lists 'water comes through the glass' (ages 8-15) as a misconception (Osborne and Cosgrove 1983)."
+    },
+    {
+     "claim": "Wrong: 'Cold leaking out and turning to water'",
+     "result": "ok",
+     "source": "https://edu.rsc.org/resources/students-ideas-about-changes-of-state-beyond-appearances/4017768.article",
+     "note": "RSC lists 'coldness comes through the glass' (ages 12-17) as a misconception; cold is not a substance."
+    },
+    {
+     "claim": "Wrong: 'The glass sweating, as skin does'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Condensation",
+     "note": "Glass has no pores or sweat glands; the water condenses from the air. (RSC's 'sweaty' answers came from a saucer-in-steam task, not this jar; that bears only on the grade_note.)"
+    },
+    {
+     "claim": "Context: air holds water vapour, an invisible gas; cooled air's vapour condenses into drops on the jar",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Water_vapor",
+     "note": "Vapour molecules are 'invisibly dispersed among other atmospheric gases', nearly 0 to about 4 percent of air."
+    },
+    {
+     "claim": "Context: 'Taking heat away from a gas turns it into a liquid, just as taking heat from a liquid freezes it'",
+     "result": "ok",
+     "source": "https://floridascience.squarespace.com/sc5p91-temperatures-affect-in-physical-and-chemical-change",
+     "note": "Grade-level simplification matching Florida SC.5.P.9.1 (changes of state 'caused by adding or removing heat'); Grokipedia Condensation: occurs 'when the temperature decreases'. Below 0 C vapour can deposit straight to frost (Grokipedia Condensation), but that is not this jar's case and the sentence is not false at this grade."
+    }
+   ]
+  },
+  "058c105c12": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the big bubbles in hard-boiling water are water in the form of a gas (water vapour)",
+     "result": "ok",
+     "source": "https://archive.bigelow.org/virtual/handson/diss_air.html",
+     "note": "Bigelow Laboratory: 'The second set of bubbles that form near the boiling point are water vapor bubbles.' RSC: steam is the correct answer to 'What are the bubbles made of?'. Grokipedia Boiling: 'discrete vapor bubbles' forming 'throughout the bulk of the liquid'."
+    },
+    {
+     "claim": "Wrong: 'Air that was mixed in the water' (writer flagged as possibly partly true)",
+     "result": "ok",
+     "source": "https://van.physics.illinois.edu/ask/listing/1436",
+     "note": "Illinois Physics Van: 'Almost all the gas in the bubbles of boiling water is just water vapor'; trapped air 'will soon be cleared out'. Dissolved air forms only the very small early bubbles, from about 35 C (Bigelow). The stem asks about the big bubbles of a hard boil, so this choice is truly wrong; the context names the early air bubbles, which is the honest caveat."
+    },
+    {
+     "claim": "Wrong: 'Heat from the burner's flame'",
+     "result": "ok",
+     "source": "https://edu.rsc.org/resources/students-ideas-about-changes-of-state-beyond-appearances/4017768.article",
+     "note": "Heat is energy, not a substance that fills bubbles; documented misconception."
+    },
+    {
+     "claim": "Wrong: 'Oxygen and hydrogen split from water'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Physical_change",
+     "note": "Boiling is a physical change; 'the H2O molecules remain intact'. Splitting water needs electrolysis, not a burner. Documented misconception (RSC: 25% rising to 40%)."
+    },
+    {
+     "claim": "Context: boiling makes no new substance; cooled vapour condenses back into liquid water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Physical_change",
+     "note": "Physical changes leave chemical identity unchanged and are often reversible."
+    },
+    {
+     "claim": "Context: the tiny bubbles that appear as water first warms are air that was dissolved in it",
+     "result": "ok",
+     "source": "https://archive.bigelow.org/virtual/handson/diss_air.html",
+     "note": "'Very small dissolved air bubbles will begin to form on the bottom at about 35C (95F).'"
+    }
+   ]
+  }
+ },
+ "unit_notes": "8 ok, 1 uncertain, 0 errors. The uncertain item is a context wording only (85d0ce30af): 'Ice crystals form instead only in far colder air, at about -35 degrees Celsius or below' is firmer than the sources (Wikipedia: 'generally' at or below -35 C; U. of Alaska Geophysical Institute: ice fog can start as warm as -20 C in dirty air, -40 C in clean air); add 'usually'. Writer's three flags: (1) 'freezing' for lava turning solid is fair: it is the physics term for liquid to solid (Grokipedia Freezing; iron freezes at 1538 C; Grokipedia's Lava page itself uses 'freezing' for lava lakes), although geologists usually say 'solidifies'. (2) 'Water vapour from his lungs' and 'Air that was mixed in the water' are both truly wrong as worded: the visible puff is liquid droplets (vapour is invisible: NSTA, Florida grade 5) and the big boiling bubbles are almost all water vapour (Illinois Physics Van, Bigelow). (3) The USGS HVO 850 C figure is real but is a threshold 'for the calculations here' (Volcano Watch, Oct 2019), based on Jaggar's 750-850 C; the draft's context prints no number, so nothing to fix. Minor grade_note detail (not player-facing): in the RSC summary of Osborne and Cosgrove the 'sweaty' answers came from a saucer held in steam, not the cold jar. usgs.gov timed out; the HVO article was read from the Big Island Video News reprint."
+}

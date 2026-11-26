@@ -1,0 +1,39 @@
+{"unit": "solids-liquids-and-gases",
+ "questions": {
+  "b77d61d8f3": {"verdict": "ok", "issues": []},
+  "d9c399335b": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Only a liquid keeps its own volume' is true only within the pair. A 5th grader who has just met the solid question (a solid keeps its volume too) may balk at 'only'.",
+     "fix": "Scope the stem to the pair, for example 'What is one difference between the two of them?', or name the substances in the choices: 'The seawater keeps its own volume; the air does not' and so on, all four in that pattern."}
+   ]},
+  "85d0ce30af": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The context says ice crystals form 'only' in air at about -35 degrees Celsius or below. That threshold is right for ice fog, the puff itself, but 'only' is absolute, and breath frosts a scarf or a beard well above -35.",
+     "fix": "'A puff of breath is made of ice crystals mostly only in far colder air, at about -35 degrees Celsius or below.'"}
+   ]},
+  "6ac33c385b": {"verdict": "ok", "issues": []},
+  "c3aa9a8736": {"verdict": "ok", "issues": []},
+  "d28dd15a74": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "Calling solid-to-liquid 'melting' is grade 2-3 content (NGSS 2-PS1-4), and the stem gives every cue. 'The warmth of her hand' rules out Freezing, and 'turns the solid metal into a shiny liquid' rules out Evaporation and Condensation, since both involve a gas. So for any child who knows the four words only one choice is live, and the gallium wonder is spent on a giveaway. The item also has the same four choices and the same naming task as the lava question (be8b02db61), which does the job better because its twist breaks an expectation (hot rock can 'freeze').",
+     "fix": "Key what heating does, with real confusions as lures: 'A scientist rests a lump of the silvery metal gallium in her palm, and it slowly turns into a shiny liquid. What makes it turn to liquid?' with 'Heat flowing into it from her hand', 'Sweat from her skin dissolving it' (the dissolve-for-melt confusion), 'The squeeze of her fingers', 'The air reacting with the metal'. Another option is to key the scope's untested clause, that a change of state makes no new substance: the liquid hardens again on a cold tray and is still gallium."}
+   ]},
+  "be8b02db61": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem fixes both ends of the change (liquid rock to solid rock). Condensation and Evaporation, both changes to or from a gas, fall at once, and Melting is the reverse. A child who holds the misconception the item is built on (hot things cannot 'freeze', M5) has no choice to go to, so he picks Freezing by elimination. The twist teaches, but it never tests.",
+     "fix": "Acceptable as T1 naming. If the item is revised, give the misconception a home: replace Evaporation with 'No change of state, only cooling'."}
+   ]},
+  "75288e1e47": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only choice written in the unit's science words ('water vapour'), and the three lures are phrased as a young child would say them, so a test-wise player picks the one that sounds like science. 'The glass sweating, as skin does' is also near-dead for a 10-year-old, who knows glass is not alive.",
+     "fix": "Replace 'The glass sweating, as skin does' with 'Water vapour from the ice inside it'. This lure uses the same term but puts the source behind the sealed lid. 'Water vapour in the air around it' is then no longer the only science-sounding choice, and the screwed-on lid in the stem becomes the clue the child must use."}
+   ]},
+  "058c105c12": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "CROSS-UNIT OVERLAP: Q2 d9c399335b (a liquid keeps its own volume and a gas does not; its context adds that air is squeezed into a diver's tank) and matter-made-of-tiny-particles 9b606b8a90 (in sealed syringes only the air squeezes, not the water) test the same observable fact. Keep this one, the core of this unit's scope; the fix belongs on the particle unit's question. No other fact is shared with telling-materials-apart or matter-made-of-tiny-particles. The particle unit's 'a cloud of steam is matter' lure agrees with Q3's 'the white puff is liquid drops'. Within the unit: Q6 and Q7 share the same four choices and the same naming task, and Q6 is the giveaway (fix above). Q3 (what the visible puff is), Q8 (where the drops on a cold jar come from) and Q9 (what the boiling bubbles are) all turn on invisible water vapour. They key distinct facts, but that is a third of the unit on vapour. The scope's clause that a change of state makes no new substance appears only in Q9's context and its oxygen-and-hydrogen lure; the Q6 re-key could carry it. Evaporation is not asked, which is right because the-water-cycle unit owns it. That brief should not reuse the breath puff or the cold-jar drops, since its own scope keys condensation into cloud droplets. The T2 rock-cycle unit owns lava hardening into igneous rock; Q7 keys only the name of the state change, which is distinct. Numbers (0 and 100 degrees Celsius) are the basic facts, and the Fahrenheit 32 and 212 are fair lures for US students. No voice, singular-they, lane or stance problems."
+}
