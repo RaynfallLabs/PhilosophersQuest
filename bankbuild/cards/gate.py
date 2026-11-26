@@ -38,6 +38,15 @@ JARGON = re.compile(
 GIVEAWAY = re.compile(r"\b(the (correct )?answer is|the correct answer)\b", re.I)
 URL = re.compile(r"(https?://|www\.|(^|[.!?]\s+)Sources?:)")
 
+# Named exceptions to the two-distractor rule, one card at a time, each with
+# its reason. The rule stays for every other card.
+#   the-sun-and-its-planets (science, T1): the card teaches the eight planets
+#   in order, and Uranus and Neptune are wrong choices on two questions, so
+#   the rule kept Uranus out of the card. Brandon, 2026-11-25: name it.
+MAY_NAME: dict[str, frozenset[str]] = {
+    'the-sun-and-its-planets': frozenset({'Uranus', 'Neptune'}),
+}
+
 
 def _singular_they(text: str) -> list:
     """The repo's own singular-they lint (tests/test_no_singular_they.py)."""
@@ -112,6 +121,7 @@ def check_card(pkt: dict, card: dict) -> list[str]:
     keyed_6: set[tuple] = set()
     for q in pkt['questions']:
         keyed_6 |= _ngrams(words(q['answer']), 6)
+    may_name = MAY_NAME.get(pkt.get('topic', ''), frozenset())
     for q in pkt['questions']:
         h = q['hash']
         # A run the card shares with a stem is forgiven when that same run is a
@@ -142,6 +152,7 @@ def check_card(pkt: dict, card: dict) -> list[str]:
                 if near:
                     errs.append(f'{h}: copies 6+ words of a choice: "{" ".join(sorted(near)[0])}"')
             if (norm(ch) not in keyed and _contains(hay, ch)
+                    and ch not in may_name                # a named exception (MAY_NAME)
                     and not _contains(stems, ch)          # a place another rung is about
                     and not _contains(keyed_text, ch)     # part of another rung's key
                     and not _everyday_word(ch)):          # "paper", "war", "twelve"
