@@ -1,0 +1,194 @@
+{
+ "unit": "mixtures-and-solutions",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "mixtures-and-solutions",
+   "question": "A student stirs a scoop of grey iron filings into a dish of pale sand until the two are mixed all through. Then she sweeps a strong magnet slowly over the dish. What happens?",
+   "answer": "The iron clings to it, and the sand stays put",
+   "choices": [
+    "The iron clings to it, and the sand stays put",
+    "The iron and the sand both cling to it",
+    "Nothing clings, since mixing changed the iron",
+    "Nothing clings, since the sand blocks the pull"
+   ],
+   "context": "In a mixture each substance keeps its own properties, so the iron is still magnetic, and the magnet pulls the filings out of the sand. Pale sand is mostly quartz, which a magnet does not pull, and it does not stop the magnet reaching the iron.",
+   "facts": [
+    "F1",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "TEKS 5.6B asks 5th graders to show that some mixtures keep the properties of their parts, and iron filings and sand is the standard's own example."
+  },
+  {
+   "tier": 1,
+   "topic": "mixtures-and-solutions",
+   "question": "A geologist pours a scoop of dry sand from a riverbank into a stack of sieves and shakes it hard. Each sieve ends up holding a different share of the grains. What does the stack sort the grains by?",
+   "answer": "Their size",
+   "choices": [
+    "Their size",
+    "Their weight",
+    "Their hardness",
+    "Their kind of rock"
+   ],
+   "context": "A sieve sorts by size: grains smaller than its holes fall through, and bigger ones stay behind. The top sieve has the biggest holes, so the coarsest grains stay there while finer and finer sand drops to the sieves below. A grain small enough for the holes drops through, heavy or light, whatever rock it is made of; weighing what each sieve holds comes afterwards.",
+   "facts": [
+    "F6",
+    "F7"
+   ],
+   "grade_note": "Separating mixtures with screens and sieves opens FOSS's grade-5 Mixtures and Solutions module, and England's Year 5 (ages 9-10) names sieving among the ways to separate a mixture."
+  },
+  {
+   "tier": 1,
+   "topic": "mixtures-and-solutions",
+   "question": "A student stirs sand and a little salt into a beaker of water. Then she pours it all through a funnel lined with filter paper. What is left behind on the filter paper?",
+   "answer": "Only the sand",
+   "choices": [
+    "Only the sand",
+    "Only the salt",
+    "Both the sand and the salt",
+    "Neither the sand nor the salt"
+   ],
+   "context": "The little salt all dissolves into bits far too small to see, and they slip through the paper's tiny holes along with the water. The sand grains are too big, so they stay on the paper. A filter cannot take salt out of salt water; to get the salt back, the water that drips through must be dried away.",
+   "facts": [
+    "F8",
+    "F9",
+    "F11"
+   ],
+   "grade_note": "FOSS's grade-5 module has students find that a filter catches undissolved solids but cannot separate salt from water, and the RSC runs the same sand-and-salt practical for ages 9-11."
+  },
+  {
+   "tier": 1,
+   "topic": "mixtures-and-solutions",
+   "question": "A chemist stirs a few blue crystals of copper sulfate into a tall flask of water until every crystal is gone. She seals the flask and leaves it for a month, then takes one drop from the very top and one from the very bottom. How do the two drops compare?",
+   "answer": "Both are the same shade of blue",
+   "choices": [
+    "Both are the same shade of blue",
+    "The bottom drop is a darker blue",
+    "The top drop is a darker blue",
+    "Both are clear, with the blue gone"
+   ],
+   "context": "Copper sulfate dissolved in water makes a solution, which is the same all the way through: its bits are spread evenly and are far too small to settle, however long the flask stands, so every drop is the same blue. Sand or mud stirred into water is different, because its grains are big enough to sink to the bottom.",
+   "facts": [
+    "F10",
+    "F11",
+    "F13",
+    "F24"
+   ],
+   "grade_note": "5th graders learn that a solution is mixed evenly all through (TEKS 5.6C compares substances before and after they form a solution), unlike sand in water, which settles."
+  },
+  {
+   "tier": 1,
+   "topic": "mixtures-and-solutions",
+   "question": "A road crew spreads rock salt over an icy road on a winter morning, when the air is at -5 degrees Celsius. Within an hour the ice has turned to wet slush. Why does the ice melt?",
+   "answer": "Salt lowers the temperature water freezes at",
+   "choices": [
+    "Salt lowers the temperature water freezes at",
+    "Salt gives off heat as it dissolves",
+    "Salt soaks the cold out of the ice",
+    "Salt reacts with ice to make a new substance"
+   ],
+   "context": "Pure water freezes at 0 degrees Celsius, but the more salt water holds, the colder it must get before it freezes: seawater freezes at about -1.8 degrees, and water that is 8 percent salt only at about -5. The salt dissolves into the wet film on the ice and makes salt water strong enough to stay liquid, so the ice it touches melts into slush. Dissolving rock salt gives off no heat, and the slush is only ice and salt water, with nothing new made.",
+   "facts": [
+    "F15",
+    "F16",
+    "F17",
+    "F25"
+   ],
+   "grade_note": "The grade-5 line asks that a dissolved solid makes a solution with properties unlike its parts (TEKS 5.6C), and salt water's lower freezing point is the everyday case behind road salt."
+  },
+  {
+   "tier": 1,
+   "topic": "mixtures-and-solutions",
+   "question": "A student weighs a beaker of water and a dish of salt together on a balance. She tips the salt into the water and stirs until no salt can be seen, then sets the empty dish back beside the beaker. What does the balance show now?",
+   "answer": "The same mass as before",
+   "choices": [
+    "The same mass as before",
+    "A little less mass than before",
+    "A little more mass than before",
+    "Only the mass of the water and dish"
+   ],
+   "context": "The dissolved salt is still in the water, in bits too small to see, so it still has mass: 150 grams of water and 10 grams of salt make 160 grams of salt water. No mass is lost when one substance dissolves in another.",
+   "facts": [
+    "F18",
+    "F19"
+   ],
+   "grade_note": "NGSS 5-PS1-2 asks 5th graders to show that the total weight of matter is conserved when substances dissolve, even when one seems to vanish."
+  },
+  {
+   "tier": 1,
+   "topic": "mixtures-and-solutions",
+   "question": "A student pours water into a plastic bottle, screws the cap on tight, marks the water level and weighs the bottle. She leaves it in a freezer overnight, and by morning the water is solid ice. What has changed about the water?",
+   "answer": "Its volume, but not its mass",
+   "choices": [
+    "Its volume, but not its mass",
+    "Its mass, but not its volume",
+    "Both its mass and its volume",
+    "Neither its mass nor its volume"
+   ],
+   "context": "Freezing adds no water and takes none away, so the bottle weighs exactly what it did. But water swells by about 9 percent as it freezes, so the ice stands above the mark. Ice floats because it takes up more room for its mass, not because it weighs less than the water it came from.",
+   "facts": [
+    "F18",
+    "F20"
+   ],
+   "grade_note": "NGSS 5-PS1-2 names changes of state among the changes that conserve weight, and the grade-5 Inquiry Project teaches that frozen water weighs the same though its volume grows."
+  },
+  {
+   "tier": 1,
+   "topic": "mixtures-and-solutions",
+   "question": "An iron nail lies out in the rain for weeks and grows a flaky, reddish-brown coat of rust. When the nail is scraped, the rust crumbles away like dry dust. What is the rust?",
+   "answer": "A new substance made from the iron",
+   "choices": [
+    "A new substance made from the iron",
+    "The same iron with a new colour",
+    "Dried mud stuck onto the iron",
+    "Iron that weeks of rain have softened"
+   ],
+   "context": "Iron joins with oxygen from the air, helped by water, to make rust, a new substance with new properties: reddish-brown, crumbly and far weaker than iron. It is soft because it is no longer iron at all, and unlike a mixture it cannot be turned back into iron by drying it or picking it apart.",
+   "facts": [
+    "F21",
+    "F22",
+    "F23"
+   ],
+   "grade_note": "NGSS 5-PS1-4 asks 5th graders whether a change makes a new substance, and rusting is the standard first example (England's Year 5 guidance names it too)."
+  }
+ ],
+ "revised": {
+  "b7a00a7255": {
+   "old_hash": "dbb4fb6b2e",
+   "why": "Judge (low, voice and lane): 'for' meaning 'because' in two lures read old-fashioned to a 10-year-old, the key left unsaid where the sand stays, and 'a spoonful' brushed the kitchen lane. Now 'since' in the lures, the key ends 'the sand stays put', and the filings come by the scoop. Same fact (F1, F3, F4), same lures; context unchanged."
+  },
+  "8e0ecb2652": {
+   "old_hash": "78044287cb",
+   "why": "Judge (low, tell): 'sand and gravel' named two size classes and leaned toward the key. The scoop is now dry riverbank sand alone, as the judge proposed, and the context says 'the coarsest grains' for 'pebbles'. Same fact (F6, F7), choices unchanged."
+  },
+  "a1da6d2355": {
+   "old_hash": "f4597f3c24",
+   "why": "Judge (medium, clarity): the stem gave no amount of salt, so a player who had just met saturation (93117846e3) could defend 'Both' (salt past the limit is caught too). Now 'a little salt', as the judge proposed, and the context says the little salt all dissolves. Judge (low): 'Nothing at all' is now 'Neither the sand nor the salt', parallel with the other three. Same fact (F8, F9, F11, F14); key unchanged."
+  },
+  "978626fe65": {
+   "old_hash": "4ebaa8ea5a",
+   "why": "Judge (medium, cross-unit overlap): the key 'Spread evenly all through the water' repeated matter-made-of-tiny-particles 0bfbadd6c7's key (dissolved salt has spread through the water), and the stem stated the key's condition ('all the water has turned pale blue'). Re-keyed, as the judge proposed, on this unit's own fact: a solution is the same in every part and never settles, so a drop from the top and one from the bottom match a month later (F10, F11, new F24: any sample of a homogeneous mixture has the same proportions, Grokipedia Mixture, checked now). 'A few' crystals keep the solution dilute (the fact-check's caveat on near-saturated solutions); the stem no longer names the water's colour."
+  },
+  "3af57031bd": {
+   "old_hash": "93117846e3",
+   "why": "Judge (medium, tell): only the key was live; 'however long she stirs' ruled out 'sank too fast', 'heavier than the rest' was silly for the same salt, and 'lost its power to dissolve' was close to a child's paraphrase of the key. New lures, as the judge proposed: a caked lump, salt water grown too thick, a different kind of salt (new M7, author's judgment). Judge (low, lane): 'spoonful' and 'jar' became 'scoop' and 'beaker'. Same fact and key (F14, F15)."
+  },
+  "942ba4b650": {
+   "old_hash": "dda30a9702",
+   "why": "Fact-check (error) and judge (medium): the context put seawater freezing at -1.8 C beside salt water staying liquid at -5 C without the step between, and the key 'Salt water stays liquid at that temperature' was false for weak salt water such as seawater. The key is now 'Salt lowers the temperature water freezes at', parallel with the three 'Salt ...' lures and true in general, as the judge proposed; the context adds that more salt means a lower freezing point, with 8 percent salt water freezing at about -5 C (new F25, checked now: Grokipedia Freezing-point depression, Wikipedia Saline water). 'Rock salt' in the stem, as the fact-check advised, makes the heat lure wrong for every reader (calcium chloride de-icers do warm as they dissolve; rock salt is halite, sodium chloride, F25)."
+  },
+  "63463bbbe6": {
+   "old_hash": "63463bbbe6",
+   "why": "Judge (low, fact): 'Iron and rainwater mixed together' was near partly true, since rust is hydrated iron oxide and holds water. Replaced with 'Iron that weeks of rain have softened' (the judge's 'Iron that the rain has softened', lengthened so the key is not the longest choice) (rust taken for iron with a changed property, M5); the context now says rust is soft because it is no longer iron. Stem, key and facts unchanged (F21, F22, F23)."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "3af57031bd",
+   "question": "A student stirs salt into a beaker of water a scoop at a time, and each scoop disappears. At last one scoop stays on the bottom, however long she stirs. Why does this last scoop not dissolve?",
+   "why": "failed the re-check: Old tell fixed: the three new lures (a caked lump, salt water too thick, a different kind of salt) are live and truly wrong, since stirring and texture change only how fast salt dissolves, not the limit (Grokipedia Solubility: the rate 'is distinct from the equilibrium solubility'). Remaining problem, new in the revised context and not named in the revision note: 'only more water would take it in' is false as stated. Salt's solubility rises with temperature (Grokipedia Sodium chloride: 36 g per 100 g of water at 25 C, 39.1 g at 100 C, 'increases modestly with temperature'), so warming the beaker would also dissolve more, and the unit's own F14 says solubility rises with temperature for most solids. The clause teaches that heat cannot help, which later grades contradict. Fix: cut the clause, or say 'only more water, or warmer water, would take it in'."
+  }
+ ]
+}

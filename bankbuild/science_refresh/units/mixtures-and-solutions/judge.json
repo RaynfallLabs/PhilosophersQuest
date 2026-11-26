@@ -1,0 +1,115 @@
+{
+ "unit": "mixtures-and-solutions",
+ "questions": {
+  "dbb4fb6b2e": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "A player who learned telling-materials-apart 231980f269 (a magnet pulls iron, not aluminium or copper) reaches the key from that fact alone; only the lure 'Nothing clings, for mixing changed the iron' (M3) tests this unit's own fact, that a mixed-in substance keeps its properties. 'The iron and the sand both cling to it' is the weakest lure for sand named pale. Acceptable: it is the TEKS 5.6B example itself.",
+     "fix": "Leave the key and the lures."
+    },
+    {
+     "axis": "voice",
+     "severity": "low",
+     "what": "'for' meaning 'because' in two lures reads old-fashioned to a 10-year-old; the key's 'the sand stays' leaves 'where' unsaid; 'a spoonful' brushes the kitchen lane.",
+     "fix": "'Nothing clings, since mixing changed the iron'; 'Nothing clings, since the sand blocks the pull'; key 'The iron clings to it, and the sand stays behind'; 'a scoop of grey iron filings'."
+    }
+   ]
+  },
+  "78044287cb": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'sand and gravel' names two size classes, so the stem leans toward size (it also fits weight, since gravel is heavier, so it is not a giveaway). 'Their hardness' is the weakest lure.",
+     "fix": "'A geologist pours a scoop of dry sand from a riverbank into a stack of sieves and shakes it hard. Each sieve ends up holding a different share of the grains.' The four choices fit unchanged."
+    }
+   ]
+  },
+  "f4597f3c24": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "medium",
+     "what": "The stem does not say how much salt. This unit's own 93117846e3 teaches that salt past the limit stays undissolved on the bottom, and undissolved salt would be caught by the paper too, so a careful player who has just met saturation can defend 'Both the sand and the salt'.",
+     "fix": "'A student stirs sand and a little salt into a beaker of water. Then she pours it all through a funnel lined with filter paper. What is left behind on the filter paper?' (Say 'a little', not 'a pinch', to stay out of the kitchen lane.)"
+    },
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "For a player who knows salt dissolves and sand does not (telling-materials-apart c909474c14), 'Only the salt' and 'Nothing at all' are near-dead and the contest is 'Only the sand' against 'Both'. Acceptable, because 'Both' carries the filter misconception (M6) the question exists for, but 'Nothing at all' could be made live.",
+     "fix": "'Nothing, since the water carries it all through' in place of 'Nothing at all'."
+    }
+   ]
+  },
+  "4ebaa8ea5a": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "Near-overlap with matter-made-of-tiny-particles 0bfbadd6c7, whose key is that dissolved salt 'has broken up and spread through the water' with a 'vanished' lure. This key, 'Spread evenly all through the water', repeats that key's words and 'Gone, leaving the water clear again' repeats its lure, so a player who learned 0bfbadd6c7 answers this one from it. The stem also states the key's condition at the start ('all the water has turned pale blue'), so 'a sealed flask does not change' reasoning reaches the key without the fact. This unit's own fact (a solution is the same all through and never settles, however long it stands: F10, F11) rests on the one 'settled' lure.",
+     "fix": "Key the evenness top to bottom, not 'spread': 'A chemist stirs bright blue crystals of copper sulfate into a tall flask of water until every crystal is gone. She seals the flask and leaves it on a shelf for a month, then takes one drop from the very top and one from the very bottom. How do the two drops compare?' Choices: 'Both are the same pale blue' (key), 'The bottom drop is a darker blue', 'The top drop is a darker blue', 'Both are clear, with the blue gone'."
+    }
+   ]
+  },
+  "93117846e3": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Only the key is fully live. 'however long she stirs' rules out 'The salt sank too fast to be dissolved' (stirring keeps it moving); 'The last spoonful is heavier than the rest' is silly (it is the same salt); 'The salt has lost its power to dissolve' is vague and close to a child's own paraphrase of the key ('the water cannot dissolve any more').",
+     "fix": "Choices: 'The water holds all the salt it can' (key), 'The last scoop has caked into a hard lump', 'The salt water has grown too thick to take it', 'The last scoop is a different kind of salt'."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "'a spoonful at a time' and 'a jar' brush the kitchen lane in a lab scene.",
+     "fix": "'stirs salt into a beaker of water a scoop at a time'; 'At last one scoop stays on the bottom'."
+    }
+   ]
+  },
+  "dda30a9702": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "medium",
+     "what": "The key and its context disagree for a careful reader: the context says seawater (salt water) freezes at about -1.8 degrees, yet the key says 'Salt water stays liquid at that temperature' (-5). As a general claim the key is false for weak salt water; only strong salt water stays liquid at -5. The fact-checker flagged the context for the same gap.",
+     "fix": "Key: 'Salt lowers the temperature water freezes at' (parallel with the three 'Salt ...' lures and true in general). Context: add the fact-checker's step, that the more salt the water holds, the colder it must be to freeze, so the strong salt water on the road stays liquid at -5."
+    },
+    {
+     "axis": "grade",
+     "severity": "low",
+     "what": "Salt lowering water's freezing point is at the top edge of grade 5 (it rides on TEKS 5.6C, a solution's properties differ from its parts). It is fine as the unit's applied case, but a 5th-grade text may not teach it.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "46ae317031": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "25d4d665cc": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "63463bbbe6": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'Iron and rainwater mixed together' is close to partly true: rust is hydrated iron oxide and does hold water (facts.md's own caution). It is wrong as a mixture, but a child who has heard 'rust is iron plus water' could defend it.",
+     "fix": "'Iron that the rain has softened' in its place."
+    }
+   ]
+  }
+ },
+ "unit_notes": "OVERLAP RULINGS. (1) 4ebaa8ea5a (copper sulfate) against matter-made-of-tiny-particles 0bfbadd6c7 (salt stirred into water has broken up and spread through the water): a real near-overlap, because the key repeats that key's words and the 'Gone' lure repeats its 'vanished' lure. Fix here: re-key on the top and bottom drops being the same shade after a month (fix above), which keeps this unit's fact (a solution is the same all through and does not settle) and drops the 'spread' wording. (2) f4597f3c24 (sand and salt through a filter) against telling-materials-apart c909474c14 (stir salt and sand into water to tell them apart): different facts, so keep. c909474c14 keys that salt dissolves and sand does not; this one keys that a filter holds back undissolved sand but lets dissolved salt through (FOSS's filter surprise, M6). It builds on the sibling fact without asking it again; the fix above (a little salt) only closes the saturation loophole. (3) dbb4fb6b2e (iron filings and sand) against telling-materials-apart 231980f269 (a magnet picks out the iron ball): different facts (a mixed-in substance keeps its magnetism, against which metal a magnet pulls); keep, it is the TEKS 5.6B example. No overlap with solids-liquids-and-gases or the-sun-and-its-planets: 25d4d665cc keys mass kept and volume grown on freezing, which no solids-liquids final asks. WITHIN THE UNIT: 46ae317031 and 25d4d665cc both key conservation of mass, but for different changes (dissolving; freezing, with the volume twist); the scope names both, so keep both. Salt carries four of nine questions (filter, saturation, road salt, mass), a little heavy but each on a different fact. SCOPE: covered except 'salt left behind when salt water evaporates', rightly left out because matter-made-of-tiny-particles 7b25001b13 asks it (lead_notes); 93117846e3 (saturation) and dda30a9702 (road salt) go a little past the scope line but are grade-5 work (FOSS Investigation 4; TEKS 5.6C). FOR LATER BRIEFS: pure-substances-and-mixtures (T2) must not ask again that a solution is the same all through or does not settle (4ebaa8ea5a) and should key the homogeneous and heterogeneous names instead; signs-of-a-chemical-change (T2) should key the signs, not again 'rust is a new substance' (63463bbbe6); density-float-or-sink (T2) asks why ice floats, which 25d4d665cc's context already says, so key density there, not the volume growth. No voice slips, singular 'they', stance or teen-frame problems found."
+}

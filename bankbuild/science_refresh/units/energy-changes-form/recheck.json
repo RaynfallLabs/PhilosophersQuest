@@ -1,0 +1,48 @@
+{
+ "unit": "energy-changes-form",
+ "questions": {
+  "d1ba8aba88": {
+   "verdict": "pass",
+   "why": "Old overstatement fixed: the stem no longer says classes name six forms; it says the six are all forms of energy, which is true and is Florida SC.5.P.10.1's own list ('basic forms of energy, including light, heat, sound, electrical, chemical, and mechanical'). Key true: energy is the capacity to do work or cause change (Grokipedia Energy; TeachEngineering grades 3-5: 'the ability to do work, to make things happen and to cause changes'). The force, fuel and matter lures stay wrong. Voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Energy",
+    "https://www.teachengineering.org/lessons/view/cub_energy2_lesson01",
+    "https://www.cpalms.org/PreviewStandard/Export/1734"
+   ]
+  },
+  "25a9861767": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the non-change 'Light and electricity' is replaced by 'Light and chemical energy' (energy taken for refilling the battery), which is truly wrong: a flashlight bulb puts out light and heat, and nothing is stored back in the battery. The context pairs heat with 'thermal energy'. Key and context true: incandescent bulbs release 90 percent of their energy as heat, and LEDs make heat too, carried off by heat sinks (ENERGY STAR). No new tell.",
+   "sources": [
+    "https://www.energystar.gov/products/learn-about-led-lighting",
+    "https://grokipedia.com/page/Incandescent_light_bulb"
+   ]
+  },
+  "0712be9448": {
+   "verdict": "pass",
+   "why": "Old dead lure ('The screen', with its rare screen-earpiece exception) replaced by 'The antenna', which is live (the part a child links with a call arriving) and truly wrong: a receiving antenna turns radio waves into electrical signals and makes no sound (Grokipedia Antenna (radio): it converts captured waves 'back into usable electrical signals'). The context now says so. Key true: a loudspeaker turns an electrical signal into sound by vibrating a diaphragm or cone (Grokipedia Loudspeaker), so 'a thin cone or sheet' fits phone speakers.",
+   "sources": [
+    "https://grokipedia.com/page/Antenna_(radio)",
+    "https://grokipedia.com/page/Loudspeaker"
+   ]
+  },
+  "ba1e7368d6": {
+   "verdict": "pass",
+   "why": "Old dead lure ('Thermal energy') replaced by 'Sound energy', which is live (rushing water roars) and truly wrong: the roar does not turn the turbine. Key true: the turbine is turned by the moving water and converts its energy into mechanical energy, which the generator turns into electricity (USGS); mechanical energy is kinetic plus potential (Grokipedia Mechanical energy); grade 5 lessons list flowing water as mechanical energy (Kesler, TEKS 5.8A). 'Electrical' and 'Chemical' stay wrong. The context gives 'the energy of motion' with the name.",
+   "sources": [
+    "https://www.usgs.gov/water-science-school/science/hydroelectric-power-how-it-works",
+    "https://grokipedia.com/page/Mechanical_energy",
+    "https://keslerscience.com/describe-energy-transformations-lesson-plan-teks-5.8a"
+   ]
+  },
+  "10a6afcd3e": {
+   "verdict": "pass",
+   "why": "Old loose stem fixed: 'hold or give off' now fits the ringing bell, which gives off sound energy (vibrations), as the context says. Key true: chemical energy is stored in food, fuel, wood and batteries, with a sandwich as the standard example (Kesler, TEKS 5.8A; EIA: energy stored in chemical bonds). A wound spring stores mechanical (elastic) energy (EIA; Grokipedia Mechanical energy), a warmed stone thermal energy. Choices and context unchanged.",
+   "sources": [
+    "https://keslerscience.com/describe-energy-transformations-lesson-plan-teks-5.8a",
+    "https://www.eia.gov/kids/what-is-energy/forms-of-energy.php",
+    "https://grokipedia.com/page/Mechanical_energy"
+   ]
+  }
+ }
+}

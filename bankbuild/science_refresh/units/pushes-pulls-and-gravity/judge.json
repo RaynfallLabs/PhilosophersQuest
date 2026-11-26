@@ -1,0 +1,122 @@
+{
+ "unit": "pushes-pulls-and-gravity",
+ "questions": {
+  "dc2ec7a7b1": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "low",
+     "what": "'A force is a push or a pull' is first taught in kindergarten and grade 3 (NGSS K-PS2-1, 3-PS2-1). It opens this unit's scope and Florida's grade-5 SC.5.P.13.1 restates it, so it passes as the T1 base fact, but it is the easiest item in the unit.",
+     "fix": "None needed."
+    },
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'A kind of matter' is the weakest lure; few 10-year-olds think a force is stuff.",
+     "fix": "'Something an object carries' (the 'objects contain force' belief, M1)."
+    }
+   ]
+  },
+  "5d6c503bf6": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "Playground experience gives the key without the balanced and unbalanced idea, and 'Gravity must stop holding the rope down' is the weakest lure. Acceptable: the lure is sourced (M3), and 'Both teams must pull harder' carries the real 'more force means motion' confusion.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "96060defa5": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "fact",
+     "severity": "medium",
+     "what": "The context generalises from the rock to 'a falling thing gains almost 10 metres per second of speed every second' and 'Only a very long fall ... ever stops speeding up', both false for leaves, paper and feathers, which stop speeding up almost at once. The fact-checker found this too.",
+     "fix": "Adopt the fact-checker's wording: say 'a dropped rock' for 'a falling thing', and add that light things such as leaves and feathers stop speeding up much sooner because the air holds them back."
+    },
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'It starts fast, then slows down' is weak for a rock let go from rest. The stem's 'the whole time it falls' faintly echoes the key's 'all the way down', but it also pulls the 'force means steady motion' child toward 'It falls at one steady speed', so it does its job.",
+     "fix": "Optional: 'It falls fastest just after it is let go' in place of 'It starts fast, then slows down'."
+    }
+   ]
+  },
+  "8da6c43613": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "f296b17ad7": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Two lures go against what every child has seen a toy car do: 'Shorter on the wood, which makes more friction' and 'Longer on the carpet, which is soft and springy'. Only 'The same on both' is live, and 'smooth' in the stem names the low-friction property outright.",
+     "fix": "Stem: 'Some students roll the same toy car down the same ramp twice: once onto a bare wooden floor, once onto a thick, shaggy carpet. How far will the car roll on each floor?' Replace 'Longer on the carpet, which is soft and springy' with 'Longer on the carpet, which grips the wheels better' (grip as a help to motion, as with shoes and tyres)."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'How will the car's two rolls across the floor compare?' does not say compare in what; the choices supply 'shorter'.",
+     "fix": "Covered by the new last sentence above."
+    }
+   ]
+  },
+  "b71116a5f6": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "medium",
+     "what": "'On which side of the puck should he push?' is easy to read as 'which way should he push', which sends a hasty reader to 'Its west side' through the wording, not through a belief about forces. With a moving puck and four compass sides it is also a two-step spatial puzzle for a 10-year-old, heavier than the scope's fact (a push from the side turns a moving object).",
+     "fix": "'A hockey puck slides straight north across a frozen pond. A player wants to send it swerving west with one tap of his stick. From which side must his stick hit the puck?' Choices unchanged."
+    }
+   ]
+  },
+  "82de92e9ae": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "voice",
+     "severity": "medium",
+     "what": "Singular 'they' in the context: 'wherever a person stands; on the far side of the globe, down is still the ground under their feet' ('their' for 'a person'). House rule: every individual is he, she or it.",
+     "fix": "'wherever people stand; on the far side of the globe, down is still the ground under their feet.'"
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "The key 'A pull toward Earth's centre' never names gravity, while each lure names its source (air, magnetism, spin), and it opens on 'A' against three 'The'. A child who knows the word 'gravity' may hesitate before mapping it.",
+     "fix": "Leave it, or 'The pull of gravity, toward Earth's centre'."
+    }
+   ]
+  },
+  "3e1853012d": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The key is the only 'Yes'; the other three are two 'No' and one 'Only a little', so the answer stands out as the only one of its kind.",
+     "fix": "Choices: 'Yes, just as hard as if it were falling' (key), 'Yes, but more weakly than if it were falling', 'No, gravity stops once a thing is still', 'No, the shelf blocks gravity's pull'."
+    }
+   ]
+  },
+  "862733b9c2": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'The floor pushes back on it just as hard' can be read as the floor pushing up (the normal force of the T2 unit) rather than friction holding the crate back; the context names friction, the key does not. 'No push can move a crate that heavy' is the weakest lure.",
+     "fix": "Optional key: 'Friction from the floor pushes back as hard'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "OVERLAP: none with another unit's fact. 82de92e9ae (Earth's gravity holds people all round the globe) uses the same lure pattern as the-sun-and-its-planets 00c04492bd ('The Sun's magnetism', 'Its own spinning'), but keys a different fact (Earth's pull toward its centre, against the Sun's gravity holding a planet in orbit); keep both. dc2ec7a7b1's key ('A push or a pull') is a lure in energy-changes-form 2ee208e3d3; that pairing teaches the difference between force and energy and is fine. WITHIN THE UNIT: 5d6c503bf6 (tug-of-war: unbalanced forces start motion) and 862733b9c2 (crate: an opposing force balances a push) are both balanced-force items, but they key different facts (Florida SC.5.P.13.4 is its own benchmark); keep both. Friction has three items (8da6c43613 slows things, f296b17ad7 more on rough surfaces, 862733b9c2 holds the crate), each on a different fact. SCOPE: fully covered (push or pull; balanced; unbalanced start, speed up, turn; friction and rough surfaces; gravity toward the centre and on things at rest; the car on a ramp). The weight question is rightly left out (G5.P1: the mass and weight difference is not tested at grade 5). FOR LATER BRIEFS: forces-and-net-force (T2) names the normal force (the shelf holding the book up, said in 3e1853012d's context); it must key the name and the force arrows, not again 'gravity still pulls a book at rest'."
+}

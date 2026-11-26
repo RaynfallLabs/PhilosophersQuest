@@ -1,0 +1,63 @@
+{
+ "unit": "mixtures-and-solutions",
+ "questions": {
+  "b7a00a7255": {
+   "verdict": "pass",
+   "why": "Old voice and lane points fixed: 'since' in both lures, the key now ends 'the sand stays put', and the filings come by the scoop. Facts unchanged and true: in a mixture each component keeps its properties, and a magnet swept over the mixture pulls iron filings from sand (Grokipedia Mixture). Pale quartz sand is not pulled and does not block the field. Lures parallel; no new tell, voice clean.",
+   "sources": [
+    "https://grokipedia.com/page/Mixture",
+    "https://grokipedia.com/page/Magnetic_separation"
+   ]
+  },
+  "8e0ecb2652": {
+   "verdict": "pass",
+   "why": "Old tell fixed: 'sand and gravel' (two size classes named in the stem) is gone; the scoop is riverbank sand alone. Key true: a sieve stack separates particles by size through progressively smaller openings, largest at the top; weight enters only when each sieve's catch is weighed afterwards (Grokipedia Sieve analysis). 'Weight', 'hardness' and 'kind of rock' are not the sorting rule. The context's 'coarsest grains' replaces 'pebbles' and is true.",
+   "sources": [
+    "https://grokipedia.com/page/Sieve_analysis"
+   ]
+  },
+  "a1da6d2355": {
+   "verdict": "pass",
+   "why": "Old clarity loophole closed: 'a little salt' means it all dissolves, so the saturation reading that made 'Both' defensible is gone. 'Neither the sand nor the salt' is now parallel. Key true: the damp sand stays in the filter paper and the salt solution passes through; the salt is got back by evaporating the filtrate (RSC practical, ages 9-11; Grokipedia Suspension: solute particles 'pass through filters'). It builds on telling-materials-apart c909474c14 (salt dissolves, sand does not) without asking it again: the filter is the new fact.",
+   "sources": [
+    "https://edu.rsc.org/experiments/separating-sand-and-salt-by-filtering-and-evaporation/386.article",
+    "https://grokipedia.com/page/Suspension_(chemistry)"
+   ]
+  },
+  "978626fe65": {
+   "verdict": "pass",
+   "why": "Overlap fixed: it no longer repeats matter-made-of-tiny-particles 0bfbadd6c7. That item keys what dissolving is (salt 'has broken up and spread through the water'); this one now keys that a solution is the same in every part and never settles, so a top drop and a bottom drop match after a month. A player who knows 0bfbadd6c7 can set aside the 'clear' lure but must still know that a solution does not settle to beat 'bottom darker'. The stem no longer states the key's condition (the water's colour). Key true: any sample of a homogeneous mixture has 'the same properties and proportions' (Grokipedia Mixture); solute particles 'do not settle' (Grokipedia Suspension); copper(II) sulfate gives a blue solution (Grokipedia Copper(II) sulfate). 'A few' crystals and the sealed flask rule out the fringe cases (near-saturation, evaporation). Lures truly wrong.",
+   "sources": [
+    "https://grokipedia.com/page/Mixture",
+    "https://grokipedia.com/page/Suspension_(chemistry)",
+    "https://grokipedia.com/page/Copper(II)_sulfate"
+   ]
+  },
+  "3af57031bd": {
+   "verdict": "fail",
+   "why": "Old tell fixed: the three new lures (a caked lump, salt water too thick, a different kind of salt) are live and truly wrong, since stirring and texture change only how fast salt dissolves, not the limit (Grokipedia Solubility: the rate 'is distinct from the equilibrium solubility'). Remaining problem, new in the revised context and not named in the revision note: 'only more water would take it in' is false as stated. Salt's solubility rises with temperature (Grokipedia Sodium chloride: 36 g per 100 g of water at 25 C, 39.1 g at 100 C, 'increases modestly with temperature'), so warming the beaker would also dissolve more, and the unit's own F14 says solubility rises with temperature for most solids. The clause teaches that heat cannot help, which later grades contradict. Fix: cut the clause, or say 'only more water, or warmer water, would take it in'.",
+   "sources": [
+    "https://grokipedia.com/page/Solubility",
+    "https://grokipedia.com/page/Sodium_chloride"
+   ]
+  },
+  "942ba4b650": {
+   "verdict": "pass",
+   "why": "Fact-check error and judge issue fixed. The key 'Salt lowers the temperature water freezes at' is true in general and parallel with the three 'Salt ...' lures. The context now gives the missing step (more salt, lower freezing point): seawater about -1.8 C, 8 percent salt water -5.08 C (Wikipedia Saline water table; Grokipedia Freezing-point depression: the depression is proportional to the solute's concentration; seawater 'around -1.8 C'). 'Rock salt' (halite, sodium chloride, used to de-ice roads: Grokipedia Halite) makes the heat lure wrong for every reader, since NaCl dissolving is slightly endothermic (+3.9 kJ/mol, Grokipedia Sodium chloride). -5 C is within salt's working range (it weakens below about -9 C). No new tell; voice clean.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Saline_water",
+    "https://grokipedia.com/page/Freezing-point_depression",
+    "https://grokipedia.com/page/Halite",
+    "https://grokipedia.com/page/Sodium_chloride"
+   ]
+  },
+  "63463bbbe6": {
+   "verdict": "pass",
+   "why": "Old fact issue fixed: the partly true 'iron and rainwater mixed' lure (rust is hydrated) is gone. 'Iron that weeks of rain have softened' is live, since the stem shows the rust crumbling, and truly wrong: rust is hydrated iron(III) oxide, a new substance 'softer and more friable than the base metal', not iron (Grokipedia Rust). The new context sentence (soft because it is no longer iron) is true. The key is not the longest choice. No new tell.",
+   "sources": [
+    "https://grokipedia.com/page/Rust",
+    "https://grokipedia.com/page/Chemical_reaction"
+   ]
+  }
+ }
+}

@@ -1,0 +1,197 @@
+{
+ "unit": "pushes-pulls-and-gravity",
+ "questions": [
+  {
+   "tier": 1,
+   "topic": "pushes-pulls-and-gravity",
+   "question": "A gust of wind sets a still beach ball rolling, and a fence stops it again. Scientists say a force acts on the ball each time. What is a force?",
+   "answer": "A push or a pull",
+   "choices": [
+    "A push or a pull",
+    "A burst of energy",
+    "A kind of motion",
+    "Something an object holds"
+   ],
+   "context": "A force is a push or a pull that one thing gives another: the wind pushes the ball into motion, and the fence pushes back to stop it. A force is not energy or motion, and no object holds a store of force, though a force can change how a thing moves.",
+   "facts": [
+    "F1",
+    "F2"
+   ],
+   "grade_note": "'A force is a push or a pull' opens every 5th-grade forces unit (Florida SC.5.P.13.1 names pushes and pulls; TEKS 5.7A builds on it)."
+  },
+  {
+   "tier": 1,
+   "topic": "pushes-pulls-and-gravity",
+   "question": "Two teams heave on the ends of a rope in a tug-of-war. Both pull hard, yet the middle of the rope stays right where it is. What must happen for the rope to start moving?",
+   "answer": "One team must pull harder than the other",
+   "choices": [
+    "One team must pull harder than the other",
+    "Both teams must pull harder than before",
+    "Both teams must keep pulling for longer",
+    "Gravity must stop holding the rope down"
+   ],
+   "context": "While the two pulls are equal they are balanced, and balanced forces leave the rope's motion unchanged, however hard or long both teams pull. Once one team out-pulls the other the forces are unbalanced, and the rope moves toward the stronger side.",
+   "facts": [
+    "F4",
+    "F5"
+   ],
+   "grade_note": "TEKS 5.7A has 5th graders explain how equal and unequal forces cause patterns of motion, and a tug-of-war is the standard picture of balanced forces."
+  },
+  {
+   "tier": 1,
+   "topic": "pushes-pulls-and-gravity",
+   "question": "A boy at the top of a tall ladder lets go of a rock. Earth's gravity pulls on it the whole time it falls. How does the rock's speed change as it falls?",
+   "answer": "It speeds up all the way down",
+   "choices": [
+    "It speeds up all the way down",
+    "It falls at one steady speed",
+    "It speeds up, then holds steady",
+    "It starts fast, then slows down"
+   ],
+   "context": "Gravity's pull on the rock is an unbalanced force, since the air pushes back on a rock only a little, and an unbalanced force keeps changing an object's speed: a dropped rock gains almost 10 metres per second of speed every second. A rock stops speeding up only after a very long fall, far longer than this one; light things such as leaves and snowflakes stop speeding up much sooner, because the air holds them back.",
+   "facts": [
+    "F3",
+    "F16",
+    "F21"
+   ],
+   "grade_note": "Florida's grade 5 benchmark SC.5.P.13.1 names gravity acting on falling objects, and TEKS 5.7A teaches that an unequal force changes motion; a dropped thing speeding up is the plainest case."
+  },
+  {
+   "tier": 1,
+   "topic": "pushes-pulls-and-gravity",
+   "question": "A boy kicks a soccer ball across a flat, grassy field. No player touches it again, yet it rolls slower and slower until it stops. What slows it down and stops it?",
+   "answer": "Friction pushing against its motion",
+   "choices": [
+    "Friction pushing against its motion",
+    "The force of his kick running out",
+    "Gravity pulling it back to a stop",
+    "Moving things stopping on their own"
+   ],
+   "context": "The grass rubs against the rolling ball, and the air pushes on it too, both against its motion; that rubbing force, friction, slows it to a stop. A kick is a push that ends when the foot leaves the ball, so the ball holds no store of force to run out.",
+   "facts": [
+    "F7",
+    "F8"
+   ],
+   "grade_note": "Friction as the force that slows moving things is part of upper-elementary forces work (TeachEngineering's grades 3-5 ramp activity; Oak National Academy's Year 5 friction lesson)."
+  },
+  {
+   "tier": 1,
+   "topic": "pushes-pulls-and-gravity",
+   "question": "Some students roll the same toy car down the same ramp twice: once onto a bare wooden floor, once onto a thick, shaggy carpet. How will the distances the car rolls on the two floors compare?",
+   "answer": "Shorter on the carpet, which makes more friction",
+   "choices": [
+    "Shorter on the carpet, which makes more friction",
+    "Shorter on the wood, which makes more friction",
+    "The same on both, since the ramp is the same",
+    "Longer on the carpet, which grips the wheels better"
+   ],
+   "context": "Friction is greater on rough surfaces, and the carpet's thick, uneven fibres drag on the wheels far more than bare wood does, so the car stops much sooner there. The ramp starts the car off the same each time, and once it reaches the floor nothing pushes it along, so the carpet's grip can only slow it.",
+   "facts": [
+    "F7",
+    "F9",
+    "F11",
+    "M10"
+   ],
+   "grade_note": "A car on a ramp is the TEKS 5.7B investigation, and a car slowed most by a carpet's rough surface is its classic result (TeachEngineering, grades 3-5)."
+  },
+  {
+   "tier": 1,
+   "topic": "pushes-pulls-and-gravity",
+   "question": "A hockey puck slides straight north across a frozen pond. A player wants to send it swerving west with one tap of his stick. From which side must his stick hit the puck?",
+   "answer": "Its east side",
+   "choices": [
+    "Its east side",
+    "Its west side",
+    "Its south side",
+    "Its north side"
+   ],
+   "context": "A push moves a thing the way the push points. A tap on the puck's east side pushes it west, so it swerves west; a tap on its west side would send it east, a tap from behind (the south) would only speed it up, and one from in front (the north) would slow it down.",
+   "facts": [
+    "F3"
+   ],
+   "grade_note": "That a force has a direction as well as a strength (NGSS PS2.A) is built on at grade 5, where TEKS 5.7A asks how unequal forces change an object's motion, turning included."
+  },
+  {
+   "tier": 1,
+   "topic": "pushes-pulls-and-gravity",
+   "question": "Earth is round, and people live all over it, even on the side a globe shows upside down. What keeps the people there from falling off into space?",
+   "answer": "A pull toward Earth's centre",
+   "choices": [
+    "A pull toward Earth's centre",
+    "The weight of the air above them",
+    "The pull of Earth's magnetism",
+    "The push of Earth's spin"
+   ],
+   "context": "Earth's gravity pulls everything toward the centre of the planet, so down always means toward the centre, wherever people stand; on the far side of the globe, down is still the ground under their feet. The air, Earth's magnetism and Earth's spin do not hold anyone on.",
+   "facts": [
+    "F12",
+    "F13"
+   ],
+   "grade_note": "NGSS 5-PS2-1 asks 5th graders to argue that Earth's gravity pulls objects down, meaning toward the centre of the round Earth."
+  },
+  {
+   "tier": 1,
+   "topic": "pushes-pulls-and-gravity",
+   "question": "A book has rested on a high shelf, perfectly still, for a whole year. Is Earth's gravity still pulling on it?",
+   "answer": "Yes, just as hard as if it were falling",
+   "choices": [
+    "Yes, just as hard as if it were falling",
+    "Yes, but more weakly than if it were falling",
+    "No, gravity stops once a thing is still",
+    "No, the shelf blocks gravity's pull"
+   ],
+   "context": "Gravity pulls on everything all the time, moving or not, so it pulls the resting book down as hard as it would pull a falling one. The book stays put because the shelf holds it up.",
+   "facts": [
+    "F12",
+    "F15"
+   ],
+   "grade_note": "5th graders learn that Earth's gravity pulls every object toward Earth (NGSS 5-PS2-1), and the Science Learning Hub names 'gravity only acts on falling objects' as a common belief to correct."
+  },
+  {
+   "tier": 1,
+   "topic": "pushes-pulls-and-gravity",
+   "question": "A boy leans on a heavy crate of books and pushes with all his strength, but it does not budge. Why does the crate stay still?",
+   "answer": "The floor pushes back on it just as hard",
+   "choices": [
+    "The floor pushes back on it just as hard",
+    "The air around it holds it in place",
+    "His push is too weak to be a force",
+    "No push can move a crate that heavy"
+   ],
+   "context": "A push that moves nothing is still a force. Friction from the floor pushes back against the boy's push, just as hard, so the forces on the crate are balanced and it stays put; a harder push, or a few friends pushing with him, would get it sliding.",
+   "facts": [
+    "F6",
+    "F7"
+   ],
+   "grade_note": "Florida's grade 5 benchmark SC.5.P.13.4: when a force is applied to an object and it does not move, an opposing force from its surroundings balances it."
+  }
+ ],
+ "revised": {
+  "dc2ec7a7b1": {
+   "old_hash": "dc2ec7a7b1",
+   "why": "Judge (low, tell): 'A kind of matter' was the weakest lure. Replaced, as the judge proposed, with 'Something an object holds', the documented belief that objects contain force (F2, M1: RESPeCT, 'Objects don't contain force'); the context says so. Stem and key unchanged."
+  },
+  "96060defa5": {
+   "old_hash": "96060defa5",
+   "why": "Fact-check (error) and judge (medium): the context said 'a falling thing gains almost 10 metres per second every second' and 'only a very long fall ever stops speeding up', both false for leaves and snowflakes. Every speeding-up claim is now about the rock alone, in the fact-checker's wording, and light things are said to stop speeding up much sooner (new F21, checked now: Grokipedia Terminal velocity, leaves 0.5-2 m/s, snowflakes under 1 m/s). Stem, key and choices unchanged."
+  },
+  "99e9b060ac": {
+   "old_hash": "f296b17ad7",
+   "why": "Judge (medium, tell): two lures went against what every child has seen, and 'smooth' in the stem named the low-friction property. 'Smooth wood' is now 'a bare wooden floor'; 'Longer on the carpet, which is soft and springy' is now 'Longer on the carpet, which grips the wheels better' (grip taken as a help to motion, new M10, author's judgment); the context says why grip cannot carry a coasting car farther. Judge (low, clarity): the question now says what to compare (the distances). Same fact and key (F9)."
+  },
+  "8467cd7599": {
+   "old_hash": "b71116a5f6",
+   "why": "Judge (medium, clarity): 'On which side of the puck should he push?' read easily as 'which way should he push', sending a hasty reader to 'Its west side' through the wording. Now 'From which side must his stick hit the puck?', as the judge proposed. Choices, key, context and fact (F3) unchanged."
+  },
+  "82de92e9ae": {
+   "old_hash": "82de92e9ae",
+   "why": "Judge (medium, voice): singular 'they' in the context ('wherever a person stands ... under their feet'). Now 'wherever people stand', so 'their' is plural. Stem, choices, key and facts (F12, F13) unchanged."
+  },
+  "3e1853012d": {
+   "old_hash": "3e1853012d",
+   "why": "Judge (medium, tell): the key was the only 'Yes' against two 'No' and an 'Only a little'. 'Only a little, since it is not moving' is now 'Yes, but more weakly than if it were falling' (the same belief, M4), so two choices say yes and two say no, as the judge proposed. Stem, key, context and facts (F12, F15) unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

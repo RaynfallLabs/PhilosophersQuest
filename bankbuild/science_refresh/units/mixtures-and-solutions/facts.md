@@ -74,3 +74,11 @@ M6 A sieve sorts by weight or by what things are made of, and a filter can catch
 - Road salt: the ice melts because salt water's freezing point is below the air temperature; do not say salt "heats" the ice. Keep the air temperature in the question above about -9 C.
 - Copper sulfate is a lab chemical (poisonous to swallow); keep it in a chemist's hands, not a kitchen.
 - Neighbouring units already ask that salt dissolves in water while sand does not, that dissolved salt comes back when seawater dries, and that a magnet pulls iron but not other metals. This unit does not ask those facts again.
+
+## Added in the revision (2026-11-25)
+
+F24 A solution is the same in every part: any sample taken from it has the same make-up as any other, so a drop from the top of a flask of a solution matches a drop from the bottom. https://grokipedia.com/page/Mixture ("any sample taken from the mixture has the same properties and proportions of components"; homogeneous mixtures are "characterized by a uniform composition throughout its volume")
+
+F25 The more salt water holds, the lower the temperature at which it freezes: salt water of about 3 percent salt (seawater strength) freezes at about -1.8 C, of 8 percent at about -5.1 C, and the saltiest (about 23 percent) at about -21 C. Rock salt, the road crews' de-icer, is halite, the natural mineral form of sodium chloride. https://grokipedia.com/page/Freezing-point_depression ("the extent of the depression is directly proportional to the concentration of the solute"; seawater "freezes at around -1.8 C"; saturation "at approximately 23% by mass, where the solution freezes at -20.5 C"); https://en.wikipedia.org/wiki/Saline_water (sodium chloride table: 3 wt% -1.79 C; 8 wt% -5.08 C; eutectic 23.3 wt% -21.1 C); https://grokipedia.com/page/Halite ("Halite, commonly known as rock salt, is the naturally occurring mineral form of sodium chloride"; "halite in the form of rock salt is widely applied for de-icing roads and highways")
+
+M7 Undissolved salt at the bottom of a saturated solution is blamed on a caked lump, on salt water grown too thick, or on a different kind of salt. Author's judgment (the judge's suggested lures; no survey found). The real limit is how much salt the water can hold (F14); more water takes in more salt.

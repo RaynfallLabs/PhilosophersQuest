@@ -1,0 +1,140 @@
+{
+ "unit": "electric-circuits",
+ "questions": {
+  "e900a240f7": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'and nothing else touches' gives a child a hint that something else ought to touch. The clause is needed (one wire CAN light a bulb if the base's tip also touches the battery, F5), and all three lures are real beliefs (M1, M3, M8).",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "0afa8e86b9": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "The 2x2 grid asks two things at once: that metal parts meet, and that closed means on. The plastic half falls to a child who knows plastic does not carry electricity (telling-materials-apart's fact, 30b3b2a62a), so the real contest is closed against opened (M5, the door confusion). That is the point of the item, so it is acceptable.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "ed8c21c4c7": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Everyday life gives the key without the fact. Every child has turned a light off at a switch, so 'he turns the switch off' points straight to 'It goes out', whatever the child knows about loops. Only the narrow 'a switch after the bulb cannot work' belief (M4) falls for 'It stays lit'. 'It dims, for the switch lets less through' is weak too.",
+     "fix": "Keep the fact (a gap anywhere in one loop stops the current, F8) and take the light switch out: 'A boy joins a battery, a bulb and two wires in one loop, and the bulb glows. Then the wire on the far side of the bulb, the one leading back to the battery, slips off its end. What happens to the bulb?' Choices: 'It goes out at once' (key), 'It stays lit, since the gap is past it', 'It glows on until the wire runs empty', 'It dims to half its glow'. Context as now, with 'a loose wire' for 'the switch'."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'for' meaning 'because' ('It goes out, for the loop is broken') is old-fashioned for a 10-year-old and repeats in all four choices.",
+     "fix": "Use 'since' or drop the reason clauses, as in the rewrite above."
+    }
+   ]
+  },
+  "a4f9975f20": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The stem's reasons ('conducts electricity very well and bends easily without cracking') fit silver at least as well as copper. What rules silver out is its cost, which the stem leaves out. The question asks the real metal, and copper wire is the grade's standard example, so one answer stands, but a child who knows silver is the best conductor could be pulled the wrong way by the stem's own words.",
+     "fix": "Optional: '...because it conducts electricity very well, bends easily without cracking and costs far less than silver.' Gold and iron stay live."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "The context's 'silver costs fifty to a hundred times as much' is flagged as out of date by the fact-check (about 110 to 115 times by weight at November 2026 prices). A ratio that moves with the market will keep going stale.",
+     "fix": "'...better than every metal except silver, and silver costs far more.'"
+    }
+   ]
+  },
+  "d2cd209d35": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The key is what every child is told at home (don't touch bare wires), and two lures are weak: 'It stores some electricity for the lamp' is dead, and 'It helps electricity flow along the wire faster' is weak. Only 'slows electricity down to a safe speed' competes, so the item is close to free.",
+     "fix": "Replace 'It stores some electricity for the lamp' with 'It keeps the metal wire from getting hot' (wrong: a plastic coat holds heat in rather than cooling the wire; a child who pictures the coat as a cooler falls for it). Keep 'slows electricity down to a safe speed'. Do not use 'keeps the wire from rusting' or 'from snapping', since the coat partly does both."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'It keeps electricity from reaching a hand' is awkward ('a hand' whose?).",
+     "fix": "'It keeps electricity from reaching a person's hand' or 'It keeps electricity from reaching anyone who touches it'."
+    }
+   ]
+  },
+  "67ef2a1d57": {
+   "verdict": "drop",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "Ruling on the writer's flag: above 5th grade. The fact it actually needs is how towers are built (bare lines hung from glass or porcelain insulators), an engineering detail no 5th-grade standard teaches. Its premise, that electricity would otherwise 'run down the towers into the ground', is the ground-return idea, which the unit never teaches and which sits awkwardly beside the battery loop it does teach (why would the current go into the ground if it needs a path back to its source?).",
+     "fix": "Drop. Replace it with a scope fact no question asks (see unit_notes)."
+    },
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Rubber pads under the towers block it' would work in principle for a child who knows rubber is an insulator. Only real-world tower design separates it from the key, which is the untaught fact. 'The electricity moves too fast to turn aside' is weak.",
+     "fix": "Moot once dropped."
+    },
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "It asks the same fact as d2cd209d35: an insulator keeps the current in its conductor and away from what touches it.",
+     "fix": "Moot once dropped."
+    }
+   ]
+  },
+  "c0b4bf0354": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'It pulls electricity in, like a magnet' is dead (no child pictures bath water as a magnet), and 'It soaks up electricity and holds it' is weak. The contest is the key against 'It blocks electricity, as rubber does' (M7).",
+     "fix": "Replace 'It pulls electricity in, like a magnet' with 'It puts electricity out, as it puts out a fire' (the dangerous belief behind throwing water on an electrical fire; wrong, since tap water carries the current)."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "The context's 'nothing with a plug is used beside a bath, a sink or a pool' is false as a description: bathroom outlets and hair dryers by the basin are everyday (the fact-check flags it uncertain).",
+     "fix": "'So the safety rule is to keep anything with a plug away from a bath, a sink or a pool, and to dry wet hands before touching a switch.'"
+    },
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Tap water carries tiny amounts of minerals dissolved in it' tells a child that this water is not plain, which nudges toward 'lets electricity pass'. The clause is needed so that the key is true (pure water barely conducts, F15).",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "652058d2b6": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "Ruling on the writer's flag: the bird on ONE line is above 5th grade. The true reason is that both feet sit at the same voltage, and the bird touches nothing that leads to the ground or another line; voltage is a later grade (circuits-motors-and-generators, T5). The 5th-grade loop model cannot carry it. A child just taught 'in at one end, out at the other' (e900a240f7) sees the bird's two feet as exactly that, a way in and a way out, so the key 'It is not part of a complete loop' invites an objection the grade cannot answer. The fact-check agrees the context's 'no path through its body' is overstated: a tiny current does pass through the bird beside the wire between its feet.",
+     "fix": "Keep the frame and the fact (a complete loop is needed for current to flow) by asking the danger case, which the loop model does explain truly: the two lines act like the wires from a battery's two ends, and a body that bridges them completes the loop. 'A crow can perch safely on one bare power line, but a big bird whose wings touch two lines at once can be killed. Why is touching two lines so dangerous?' Key: 'Its body completes a loop between them'. Lures: 'The second line carries stronger electricity', 'Its wings let electricity in, but its feet do not', 'Two lines hold twice the electricity'. Context: the lines are bare metal; a bird on one line touches nothing else, but a body touching two lines, or a line and a tower, joins them like a bulb between a battery's two ends, and electricity rushes through it."
+    }
+   ]
+  },
+  "94f9c51f92": {
+   "verdict": "ok",
+   "issues": []
+  }
+ },
+ "unit_notes": "OVERLAP with the seven finished T1 units. (1) telling-materials-apart 30b3b2a62a (a battery-and-bulb tester; the steel paper clip conducts) against c0b4bf0354 (tap water lets electricity pass): the same KIND of question (does this material conduct?) but a different material and fact (dissolved minerals make water conduct, the non-metal exception M7, and its safety rule). Keep it. The lead's note asked this unit to key the circuit itself; with 67ef2a1d57 dropped, three items stay on conductors and insulators (a4f9975f20 copper wiring, d2cd209d35 the plastic coat's job, c0b4bf0354 water), each a different line of this scope. 0afa8e86b9's plastic choices and 67ef2a1d57's steel lure lean on 30b3b2a62a's fact as lures only, which is fine. (2) telling-materials-apart 231980f269 (the magnet picks iron; copper and silver are lures) against a4f9975f20 (copper is the wiring metal): different facts; keep. (3) energy-changes-form ba098c2519, 25a9861767, 718bf2f525, 0712be9448 (battery, bulb, fan, speaker energy changes): this unit rightly leaves its scope's energy-change clause to them. 0afa8e86b9 shares the flashlight frame but keys the switch; keep. (4) solids-liquids-and-gases, matter-made-of-tiny-particles, mixtures-and-solutions, pushes-pulls-and-gravity, the-sun-and-its-planets: nothing near. WITHIN THE UNIT: the complete loop runs through e900a240f7 (a return path is needed), ed8c21c4c7 (a gap anywhere stops it), 94f9c51f92 (the word circuit) and 652058d2b6 (the bird). Each keys a different fact or belief; 94f9c51f92's stem states e900a240f7's fact, a leak in play only. 67ef2a1d57 duplicates d2cd209d35, so drop it. GRADE RULINGS: the power-tower item is above grade (drop); the bird on one line is above grade (revise to the two-line danger case, or drop it if the rewrite cannot be made plain for a 10-year-old). SCOPE GAP and a replacement for 67ef2a1d57: no item asks that a circuit needs an energy source (TEKS 5.8B, 'the requirements for a functioning electrical circuit'). For example: 'A girl joins a buzzer into a loop of copper wire with no gaps, but the buzzer stays silent. What does the loop still need?' Key 'A battery'; lures 'A switch', 'A bulb', 'A thicker wire' (the switch-starts-it belief of e900a240f7's lure, M8). Series and parallel circuits are rightly left out (T5, circuits-motors-and-generators). No stance, no singular they, no second person found."
+}

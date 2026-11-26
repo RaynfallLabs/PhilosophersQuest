@@ -73,3 +73,9 @@ M9 In a fair test, keep the thing being tested (or the thing measured) the same.
 - The Sun's gravity on the planets is asked in `the-sun-and-its-planets`; this unit asks only Earth's gravity on things at Earth's surface.
 - No weight question: curriculum line G5.P1 says mass and weight are both introduced at grade 5 but "the difference is not tested at this grade", and `mass` would be the only honest lure. F17-F18 stay for the contexts.
 - Left to other units: the fair test itself (`measuring-and-the-fair-test`, T1), the normal force and net force (`forces-and-net-force`, T2), the balloon rocket's action and reaction (`action-and-reaction`, T2), the ramp's stored energy (`kinetic-and-potential-energy`, T2).
+
+## Added in the revision (2026-11-25)
+
+F21 Air pushes back harder on a falling thing the faster it falls, so light things with a large surface for their weight soon stop speeding up: falling leaves top out at about 0.5-2 metres per second and snowflakes under 1 metre per second. A dense rock dropped from a ladder is far below its top speed when it lands, so it speeds up the whole way (F16). https://grokipedia.com/page/Terminal_velocity ("falling leaves demonstrate variable low terminal velocities of 0.5-2 m/s"; "Aggregate snowflakes typically achieve speeds less than 1 m/s"; the drag force "grows proportionally to the square of the velocity"; a thin flat plate "reaches it quickly")
+
+M10 Grip helps a thing move, so a carpet that grips a toy car's wheels would carry it farther (the way shoes and tyres grip). Author's judgment (the judge's suggested lure; no survey found). A coasting car has nothing pushing it along the floor, so the carpet's friction can only slow it (F7, F9).

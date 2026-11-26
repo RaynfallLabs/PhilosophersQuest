@@ -1,0 +1,96 @@
+{
+ "unit": "how-plants-make-food",
+ "questions": {
+  "55cb7430cb": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "59cfb78d34": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Carbon dioxide' and 'Carbon monoxide' are near-twins, and a guesser knows the key is usually one of a look-alike pair, which gives him or her even odds without the fact. Carbon monoxide is also not a gas 5th graders are taught, so the lure is live only as a sound-alike.",
+     "fix": "Replace 'Carbon monoxide' with 'Hydrogen' (a gas a child ties to water, H2O; there is next to none in the air and a plant takes none in for its food). Choices: 'Carbon dioxide', 'Oxygen', 'Nitrogen', 'Hydrogen'. Context: drop the carbon monoxide sentence and say 'Nitrogen is most of the air, but it does not go into the sugar; hydrogen is barely in the air at all.'"
+    }
+   ]
+  },
+  "c3b6a63f99": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem asks which gas 'lets the flame burn', which a child answers from fire knowledge (a flame needs oxygen) with no idea that plants give off oxygen. The fact under test is the plant's.",
+     "fix": "Ask the plant's gas with no flame in the stem: 'A pondweed stands in a jar of water on a sunny windowsill, and tiny bubbles rise from its leaves. Which gas fills the bubbles?' Choices: 'Oxygen' (key), 'Carbon dioxide' (soda bubbles, and M5 the other way round), 'Nitrogen', 'Water vapour' (steam bubbles in boiling water). Use a jar of pond water, not a fish tank, so that no fish breathes into it. Context: in sunlight the leaves make food and give off oxygen, which rises as bubbles; it stops in the dark; the same oxygen is what animals breathe."
+    },
+    {
+     "axis": "other",
+     "severity": "medium",
+     "what": "The candle-and-mint jar is Joseph Priestley's experiment, which the T4 unit photosynthesis-atoms-in-and-out names in its scope ('Priestley's mint plant kept the air in a sealed jar fit for a mouse (the first clues)'). Told here as an unnamed scene, it is still a discovery story at T1, where map line G5.L3 names none, and it takes the first step of a T4 story (unit_rule: 'No T1 question is the first step of an advanced story').",
+     "fix": "The pondweed rewrite above clears it; leave the jar to the T4 unit."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'A sprig of mint is put in' a closed jar: a sharp child asks how, without letting fresh air in, which spoils the logic. (Priestley did it under water.)",
+     "fix": "Moot with the rewrite."
+    }
+   ]
+  },
+  "d838dbe4ce": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "Ruling on the writer's flag: fair. 'In the first place' makes the leaves the one defensible answer: the starch is put together in the tuber, but from sugar the leaves made (F23), and the context says so. Green stems also make a little food, but no choice names the stem. The only cost is that 'Under the ground' and 'in the first place' together hint that the answer is not where the food sits, which weakens 'Its potatoes' and 'Its roots' for a test-wise child. The lures remain real beliefs (M1, M7).",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "d37803faca": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Ruling on the writer's flag: yes, weak. 'Starch' and 'Nectar' are dead for any child who knows them: the stem asks for a GREEN substance in leaves that catches sunlight, and starch is a white food store, nectar a sweet liquid in flowers. 'Carotene' is weakened too, since a child hears 'carrot' in it and the stem has already set the yellow and orange apart from the green. Chlorophyll wins by elimination.",
+     "fix": "Replace 'Starch' and 'Nectar' with leaf substances a child cannot rule out by colour or place: 'Cellulose' (what every leaf's cell walls are built of) and 'Glucose' (the sugar the leaf makes, the classic confusion of the food with the light-catcher). Choices: 'Chlorophyll', 'Carotene', 'Cellulose', 'Glucose'. Do not use 'Chloroplast' (it is green and does hold the light-catcher, so it is partly right) or 'Chlorine' (a sound-alike pair with the key)."
+    }
+   ]
+  },
+  "b4fcd9e06b": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Salt' is the weakest lure (few children think a leaf makes salt). It is acceptable because the obvious stronger lures (starch, fat, vitamins, fibre) are all made from the leaf's sugar and would be partly right. 'Protein' is fair only because the stem says the food is made by joining water and carbon dioxide (leaves do make protein, with nitrogen from the soil), and the context says so.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "469fb7a7c4": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "134567327e": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'It caught it from sunlight' has two 'it's (the grass, the energy), and all four choices share the pattern.",
+     "fix": "'The grass caught it from sunlight', 'The grass drew it up from the soil', 'The grass soaked it up from the rain', 'The grass took it in from the air'; or the stem 'How did the grass get that energy?' with 'From sunlight', 'From the soil', 'From the rain', 'From the air'."
+    }
+   ]
+  },
+  "c5c1cb9f6d": {
+   "verdict": "ok",
+   "issues": []
+  }
+ },
+ "unit_notes": "OVERLAP with the seven finished T1 units. (1) energy-changes-form 49ce602a30 (nearly all the energy in wind and coal first came from the Sun) against 134567327e (the energy in a cow's grass was caught from sunlight): the same answer idea, the Sun as the first source, but different facts. Here it is food energy caught by a plant (NGSS 5-PS3-1); there it is fuels and wind. Keep both, and keep this one on the plant's catching, as it is now. (2) energy-changes-form 10a6afcd3e (a sandwich holds chemical energy): no overlap. (3) matter-made-of-tiny-particles c3dc98eb0b (air has weight) supports 469fb7a7c4 (a tree's matter comes from air and water) without asking it; keep. (4) telling-materials-apart, solids-liquids-and-gases, mixtures-and-solutions, pushes-pulls-and-gravity, the-sun-and-its-planets: nothing near. OTHER UNITS, NOT YET BUILT: roots-stems-leaves-and-flowers (T1) has 'leaves make food' in its scope, which is d838dbe4ce's key. Keep it here, since this scope names 'in their leaves'; that brief must key the other parts' jobs (and stomata, transpiration and germination, which appear here only as lures and context). photosynthesis-atoms-in-and-out (T4) owns Priestley's mint jar (c3b6a63f99; rewrite above) and 'the carbon in a tree's wood comes from the air' with van Helmont's willow. 469fb7a7c4 keys the 5th-grade form (air and water, not soil), so the T4 brief must key what is new: the oxygen comes from the water, van Helmont's numbers. WITHIN THE UNIT: every item keys a different fact, but stems leak each other's keys. b4fcd9e06b's stem names carbon dioxide (59cfb78d34's key) and the leaf (d838dbe4ce's key); 55cb7430cb's 'using the energy in sunlight' gives 134567327e's key; c5c1cb9f6d names photosynthesis (55cb7430cb's key) and teaches photo = light. These are leaks in play, not duplicates, and the cards teach every rung, so no fix is needed. SCOPE: fully covered (photosynthesis named, light, water and carbon dioxide, the leaves, chlorophyll, sugar, oxygen given off, matter from air and water, the Sun's energy in food). That animals depend on plants for oxygen appears only in contexts, which is enough. No stance, no singular they, no voice slips found."
+}

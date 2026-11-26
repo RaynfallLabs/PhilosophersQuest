@@ -1,0 +1,115 @@
+{
+ "unit": "how-light-travels",
+ "questions": {
+  "da46e56e91": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The stem says the spot shines 'with the holes lined up', which tells a child that lining up is what matters, so 'It disappears' half-follows from the set-up. That is the three-card test itself, and the live lures ('slides over with the card', 'grows dimmer but stays put') still catch the child who thinks light bends round things (M5).",
+     "fix": "None needed. If a cut is wanted for length: 'A student stands three cards with small holes in a row between a flashlight and a wall, and a spot of light shines through all three holes onto the wall. What happens to the spot when she slides the middle card so its hole is out of line?'"
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "Leans on the same fact as a5d5855b4c (light travels in straight lines, F1). They test different beliefs (light bends round an obstacle, M5; a shadow is a reflection or spreading darkness, M8), and the scope names straight-line travel with its shadow example, so both can stay.",
+     "fix": "Keep both; let this context carry 'cannot bend round the card' and a5d5855b4c's carry the shadow's outline, as they do now."
+    }
+   ]
+  },
+  "5c09e61ca5": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Light passes through the chair to his eyes' is the weakest lure: every child knows a wooden chair cannot be seen through. The other two (light from the eyes, M1; the chair's own light, M3) are live, which is the point of the item.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "24c91e4c73": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'It lets all the light pass straight through' is weak: a child knows white paper is not see-through like glass. 'Does not reflect any light' (M2) and 'needs much brighter light' are live.",
+     "fix": "Optional: 'It lets most of the light pass straight through' keeps the lure wrong while making it less easy to wave away."
+    },
+    {
+     "axis": "grade",
+     "severity": "low",
+     "what": "Rough surfaces scattering light (diffuse reflection) sits on the grade 5 / middle-school line: NGSS has it in MS-PS4-2, but the TEKS 5.8C guides the writer cites teach that nearly all surfaces reflect and only smooth ones give a clear image. Acceptable at T1 as told, with no technical term.",
+     "fix": "None needed; keep the words 'diffuse' and 'specular' out of stem and choices, as now."
+    }
+   ]
+  },
+  "57d64c4a1f": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "78234912bf": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Magnification' shares its root with the stem's 'magnifying glass', so it is a lure built on an echo of the stem. It is fair, because it names the result (the ant looks bigger), not the bending, and the stem asks for 'this bending of light'.",
+     "fix": "None needed."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "The stem says light 'bends as it passes through the glass', which is the very idea 57d64c4a1f keys (the straw looks broken because light bends). The two items test different facts (the cause of the broken look; the name of the bending), so this is a leak in play, not a duplicate.",
+     "fix": "None needed; the cards teach both."
+    }
+   ]
+  },
+  "d5351f21e0": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Only one lure is live. 'It is pale yellow light' is a non-sequitur here: a band of colours on the wall can never show that sunlight is yellow. 'A mix of just red, yellow and blue' is undercut by the band a child knows from rainbows, with more than three colours. And the stem's 'spreads it across a wall as a band of colours' already says the colours were in the beam. So the item comes down to the key against 'the glass adds them'.",
+     "fix": "Ask the fact without the observation that answers it, and move the prism to the context: 'A beam of sunlight looks white. What is white sunlight made of?' Choices: 'A mix of many colours' (key), 'One pure colour, white', 'Pale yellow light only', 'Just red, yellow and blue light'. Each lure is then a live belief (M9, M10, M11). Context: 'A glass prism spreads sunlight into a band of colours, red to violet, and a second prism turned the other way gathers them back into white light: the colours were in the sunlight all along, and the glass adds none.'"
+    }
+   ]
+  },
+  "cb87d82f3f": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'It lets more sunlight pass through' is weak for a T-shirt. 'Reflects more' and 'pulls in more heat from the air' (the folk 'black attracts heat') are live.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "877bdd8f2e": {
+   "verdict": "drop",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "Ruling on the writer's flag: a grade too high. An object's colour being the light it reflects is not in this unit's scope or in map line G5.P7. Of the three named references, TEKS 5.8C leaves colour out, NGSS 4-PS4-2 rules out 'specific colors reflected and seen' and puts colour-dependent reflection and absorption in middle school (MS-PS4-2, PS4.B), and CK2023 teaches it at grade 6 (Light and Matter). The writer's own grade note concedes it 'carries on into grade 6'. No rewording keeps the fact at T1.",
+     "fix": "Drop from this unit (it stays at 8 questions). If the lead wants the apple in the bank, it belongs at grade 6: no T2 unit holds light and colour now (waves-carry-energy keys wave kinds), so either add a colour line to a T2 scope or give it to the T4 light units (MS-PS4-2). If it moves, make the key 'It reflects red light and absorbs most of the rest', to match its context and the fact sheet's no-absolutes caution (M6)."
+    },
+    {
+     "axis": "other",
+     "severity": "low",
+     "what": "The stem says 'white sunlight, which holds light of every colour', which is d5351f21e0's key told outright.",
+     "fix": "Moot once dropped; if moved, cut the clause to 'in white sunlight'."
+    }
+   ]
+  },
+  "a5d5855b4c": {
+   "verdict": "ok",
+   "issues": []
+  }
+ },
+ "unit_notes": "OVERLAP with the seven finished T1 units: none asks the same fact. (1) the-sun-and-its-planets 9f51813710 (the Moon shines by reflected sunlight) against 5c09e61ca5 (a chair is seen because light bounces off it into the eyes): different facts (the Moon is not a light source; how seeing works). 5c09e61ca5's lure 'The chair gives off a faint light of its own' echoes that item's 'It makes its own light, like a star', which teaches the same distinction from two sides; keep both, no fix. (2) matter-made-of-tiny-particles 33a64311ff (a beam of sunlight is not matter): no overlap. (3) energy-changes-form 25a9861767 (a bulb makes light and heat) and c8a4aea049 (solar panels, light into electrical energy): cb87d82f3f keys absorbed sunlight warming a shirt, which neither asks; keep. (4) telling-materials-apart, solids-liquids-and-gases, mixtures-and-solutions, pushes-pulls-and-gravity: nothing near. (5) day-night-and-shadows (T1, not built): the lead's notes already give a5d5855b4c's fact (a shadow has the object's shape because light travels straight) to this unit; that brief keys shadows' length and direction. WITHIN THE UNIT: da46e56e91 and a5d5855b4c both rest on straight-line travel, but test different beliefs (M5 against M8) and the scope names both, so keep both. 57d64c4a1f and 78234912bf are both refraction, cause against name; 78234912bf's stem says what 57d64c4a1f keys, which is a leak in play, not a duplicate. 5c09e61ca5 and 24c91e4c73 are both reflection (seeing by reflected light; smooth against rough surfaces), on different facts. GRADE RULING: the red apple (877bdd8f2e) is grade 6 by TEKS, NGSS and CK2023 alike; drop it from T1. That leaves 8 questions. SCOPE: everything in it is covered once 877bdd8f2e goes: straight lines and shadows, reflection, refraction (straw, lens, prism), absorption, white light as a mix, seeing by light entering the eye. No stance, no singular they, no voice slips found."
+}

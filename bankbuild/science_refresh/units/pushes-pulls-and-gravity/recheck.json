@@ -1,0 +1,54 @@
+{
+ "unit": "pushes-pulls-and-gravity",
+ "questions": {
+  "dc2ec7a7b1": {
+   "verdict": "pass",
+   "why": "Old weak lure ('A kind of matter') replaced by 'Something an object holds', the documented belief that objects contain force (CPP RESPeCT grade 3 common student ideas: objects do not hold force, so they cannot run out of it; a force is an interaction between two objects). Truly wrong, and the context now says no object holds a store of force. Key true (Grokipedia Force: a push or pull from an interaction). 'A burst of energy' stays wrong (Grokipedia Energy contrasts energy with force, 'the push or pull'). The stem's 'acts on' does not rule the new lure out, since a child with the belief thinks the wind carries the force.",
+   "sources": [
+    "https://www.cpp.edu/respect/resources/documents_3rd/forces/gr3.forces_common_student_ideas.pdf",
+    "https://grokipedia.com/page/Force",
+    "https://grokipedia.com/page/Energy"
+   ]
+  },
+  "96060defa5": {
+   "verdict": "pass",
+   "why": "Fact-check error fixed: every speeding-up claim is now about the rock, and light things are said to stop speeding up much sooner. True: falling leaves reach only 0.5-2 m/s and aggregate snowflakes under 1 m/s, and terminal velocity is approached gradually, not at once (Grokipedia Terminal velocity). A dropped rock gains about 9.8 m/s each second at first; a pebble-sized rock needs a fall of tens of metres to come near its terminal speed, so after a ladder fall it is still speeding up when it lands. Key and lures unchanged and correct.",
+   "sources": [
+    "https://grokipedia.com/page/Terminal_velocity",
+    "https://grokipedia.com/page/Free_fall"
+   ]
+  },
+  "99e9b060ac": {
+   "verdict": "pass",
+   "why": "Old tell fixed as the judge proposed: 'smooth' is gone from the stem ('a bare wooden floor'), 'soft and springy' is replaced by 'grips the wheels better' (grip taken as a help to motion), and the stem now says what to compare (the distances). Key true: toy cars roll best on smooth surfaces rather than carpet, and friction between wheels and floor slows the car (TeachEngineering, grades 3-5). The context's point that nothing pushes the car along on the floor, so the carpet's grip can only slow it, is true. Choices parallel (two 'which makes more friction', two other reasons).",
+   "sources": [
+    "https://www.teachengineering.org/activities/view/cub_measurement_lesson01_activity2",
+    "https://grokipedia.com/page/Friction"
+   ]
+  },
+  "8467cd7599": {
+   "verdict": "pass",
+   "why": "Old clarity issue fixed: 'From which side must his stick hit the puck?' can no longer be misread as 'which way should he push'; a stick hitting from the east side is east of the puck and pushes it west. Key true: acceleration points along the net force (Grokipedia Net force), so a westward tap gives the north-sliding puck a westward motion; taps from behind or in front only change its speed. Choices, context and key unchanged and correct.",
+   "sources": [
+    "https://grokipedia.com/page/Net_force",
+    "https://cdn.shopify.com/s/files/1/0030/6207/1369/files/Air_Puck_lab1_answerkey.pdf"
+   ]
+  },
+  "82de92e9ae": {
+   "verdict": "pass",
+   "why": "Singular 'they' fixed: 'wherever people stand ... under their feet' is plural. No other singular they in stem, choices or context. Key true: Earth's gravity pulls objects toward the planet's center, and 'down' points toward the center of the spherical Earth (NGSS 5-PS2-1 and PS2.B); objects on the 'bottom' of a globe also fall toward the centre (Science Learning Hub). Lures unchanged and wrong.",
+   "sources": [
+    "https://www.nextgenscience.org/pe/5-ps2-1-motion-and-stability-forces-and-interactions",
+    "https://www.sciencelearn.org.nz/resources/294-alternative-conceptions-about-gravity"
+   ]
+  },
+  "3e1853012d": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the choices are now two 'Yes' and two 'No', so the key is not the only one of its kind. The new lure 'Yes, but more weakly than if it were falling' carries the same belief (gravity depends on motion) and is truly wrong: gravity acts whether an object is moving or not (Science Learning Hub); the book stays put because the shelf's support balances gravity (Grokipedia Net force). Key and context unchanged and correct.",
+   "sources": [
+    "https://www.sciencelearn.org.nz/resources/294-alternative-conceptions-about-gravity",
+    "https://grokipedia.com/page/Net_force"
+   ]
+  }
+ }
+}

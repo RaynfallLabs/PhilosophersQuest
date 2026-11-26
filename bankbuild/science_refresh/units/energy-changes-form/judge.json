@@ -1,0 +1,109 @@
+{
+ "unit": "energy-changes-form",
+ "questions": {
+  "2ee208e3d3": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'Science classes name six forms of energy' overstates: lists vary (many add nuclear, some magnetic or gravitational); Florida's SC.5.P.10.1 is the six-form source.",
+     "fix": "'Light, heat, sound, electrical, chemical and mechanical energy are all forms of energy. What do scientists mean by energy?'"
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'work' in the key is the physics sense, never taught here; a 10-year-old reads it as a job. The key still lands through 'or cause change'.",
+     "fix": "Keep (it is Virginia SOL 5.2's and Teach Engineering's wording)."
+    }
+   ]
+  },
+  "ba098c2519": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'Thermal energy' is dead for a battery in a drawer and 'Light energy' is weak; the live contest is chemical against electrical (M1), which is the point. That is built into a form-naming question with six forms to choose from.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "25a9861767": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Light and electricity' is the wrong lure. 'Changes electrical energy into electricity' is a non-change a child sees through, and a child taught the closed loop (electric-circuits) knows the current does flow on out of the bulb and back to the battery, so it is half-defensible. facts.md sources it to M5 (electricity is used up), but M5 is the belief behind 'Only light', not this one. With 'Light and sound' weak, only 'Only light' is live.",
+     "fix": "Replace 'Light and electricity' with 'Light and chemical energy' (energy sent back into the battery; author's judgment as a child's idea of a loop that refills)."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "The key says 'heat' while three of the unit's other items offer 'Thermal energy' as a choice; nothing in this item ties the two names together.",
+     "fix": "Context: 'Every bulb gives off some heat (thermal energy) along with its light.'"
+    }
+   ]
+  },
+  "718bf2f525": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "0712be9448": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'The battery' and 'The screen' are dead (no child thinks a screen plays a voice), so it is speaker against microphone (M7). 'Speaker' also carries its job in its everyday name.",
+     "fix": "Replace 'The screen' with 'The antenna' (the part a child links with a call arriving). Keep 'The microphone' and 'The battery'."
+    }
+   ]
+  },
+  "c8a4aea049": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "49ce602a30": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'The Moon' is the weakest lure for wind and coal; 'Earth's hot core' (coal, M8) and 'Earth's spinning' (wind, M6) are live.",
+     "fix": "None needed."
+    }
+   ]
+  },
+  "ba1e7368d6": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Chemical energy' and 'Thermal energy' are dead for rushing water, so only 'Electrical energy' (M9) is live, and 'rushes' and 'spins' point at motion.",
+     "fix": "Replace 'Thermal energy' with 'Sound energy' (rushing water roars, but sound does not turn the wheels). Keep 'Electrical energy' and 'Chemical energy'."
+    }
+   ]
+  },
+  "94bd35a366": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "Each lure's own words name its form ('warmed', 'ringing'), and the stem says each holds a different form, so a child sets two aside and weighs the sandwich against the spring. That is real form knowledge; acceptable.",
+     "fix": "None needed."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'each holds a different form': a ringing bell's energy is vibration (mechanical) that it gives off as sound, so the spring and the bell are not cleanly different forms; the context's 'gives off' is the accurate verb.",
+     "fix": "'Four everyday things each hold or give off energy, each a different form of it.'"
+    }
+   ]
+  }
+ },
+ "unit_notes": "OVERLAP: none with the four finished T1 units. 2ee208e3d3's lures use other units' keys on purpose ('A push or a pull' is pushes-pulls-and-gravity dc2ec7a7b1's key; 'takes up space' is matter-made-of-tiny-particles 33a64311ff's definition of matter); that teaches the distinction and is fine. WITHIN THE UNIT: ba098c2519 (a battery stores chemical energy) and 94bd35a366 (a sandwich holds chemical energy) both key chemical energy. They test different beliefs (the battery 'holds electricity', M1; food as stored energy), and the scope names both food and batteries, so keep both. 718bf2f525, 0712be9448 and c8a4aea049 share the 'X into Y' energy-change form with a reversed lure; they are three different devices from the scope, which is fine. NAMING: the unit mixes 'heat' and 'thermal energy', 'motion' and 'mechanical energy' across items (25a9861767's key 'heat'; 718bf2f525's key 'motion'; ba1e7368d6's key 'Mechanical energy'). Each item stands alone in play, so each context that uses the second name should give the pair once: 'thermal energy (heat)', 'mechanical energy (motion)'. SCOPE: fully covered (the forms, the flashlight chain, the fan, the speaker, the solar panel, the Sun as the source); the dam (ba1e7368d6) is an extra on mechanical energy and fine. FOR LATER BRIEFS: electric-circuits (T1) has 'A circuit turns electrical energy into light, sound, motion or heat' in its scope, which repeats 25a9861767, 718bf2f525 and 0712be9448; that brief must key the circuit itself (closed loop, switch, conductors), not the device's energy change. kinetic-and-potential-energy (T2) lists the squeezed spring and food, fuel and batteries as potential energy; it must key the names kinetic and potential, not again 'a sandwich holds chemical energy'. how-plants-make-food keeps 'the energy in food first came from the Sun'; 49ce602a30 rightly uses wind and coal instead. No voice slips, singular 'they', stance or teen-frame problems found."
+}
