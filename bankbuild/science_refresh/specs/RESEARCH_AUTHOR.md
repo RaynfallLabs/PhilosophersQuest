@@ -146,6 +146,10 @@ Fix what fails. Then re-run the gate.
 
 ## Rules
 - Do NOT spawn any sub-agents or workflows; do all the work in this agent.
+- Read the web with WebSearch and WebFetch only: do not download files to
+  disk, install packages, or run code on downloaded content.
+- Scratch files: put your unit id (or batch number) at the start of every
+  scratch file name, so two agents never overwrite each other.
 - Never delete or overwrite a path you did not create. Write only inside
   `bankbuild/science_refresh/units/<id>/`.
 - Never override LOCALAPPDATA, APPDATA, USERPROFILE or HOME, and never run

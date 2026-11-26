@@ -84,3 +84,14 @@ M4. Volcanic ash is burnt material like the ash of a fire; it is broken rock and
 M5. Higher ground is nearer the Sun and so warmer; the air in fact cools with height (F10). (Teaching note.)
 
 M6. The Moon makes the waves that break on a beach; the Moon makes the tides, and wind makes most waves (F19). (Teaching note; the T2 `the-tides` unit teaches the Moon and the tides.)
+
+## Added in the revision (2026-11-26)
+
+F20. Nitrogen is only a minor volcanic gas. USGS: "Ninety-nine percent of the gas molecules emitted during a volcanic eruption are water vapor (H2O), carbon dioxide (CO2), and sulfur dioxide (SO2)", the last one percent being small amounts of other gases. Wikipedia lists nitrogen with argon, helium, neon, methane, carbon monoxide and hydrogen after the three main gases, and says "Water vapour is consistently the most abundant volcanic gas". (Used for the 'Nitrogen' lure that replaces 'Oxygen'.)
+    https://www.usgs.gov/faqs/what-gases-are-emitted-kilauea-and-other-active-volcanoes ; https://en.wikipedia.org/wiki/Volcanic_gas ; https://grokipedia.com/page/Volcanic_gas (H2O 60-90%, CO2 10-40%, SO2 1-10%; no nitrogen listed)
+
+F21. About 31 percent of incoming sunlight is reflected to space and about 49 percent passes through the air and is absorbed at the surface, "mostly in the tropical ocean"; the ocean absorbs most of the solar energy reaching Earth and releases much of it back into the atmosphere, as heat and water vapour. So the ocean takes in most of the sunlight that reaches Earth's SURFACE (the wording now used), not most of all that reaches Earth.
+    https://www.personal.kent.edu/~mkeatts/radiationbalance.htm ; https://wmo.int/content/how-ocean-shapes-weather-and-climate ; https://science.nasa.gov/earth/earth-observatory/ocean-and-climate/
+
+F22. On calm, clear nights cold air drains downhill and pools over valley floors, leaving a warmer "thermal belt" partway up a slope, between the cold valley floor and the cold hilltops; on average the air still cools with height (F10). So high slopes are USUALLY colder than the land below them (the wording now used).
+    https://glossarystaging.ametsoc.net/wiki/Thermal_belt (AMS Glossary of Meteorology) ; https://grokipedia.com/page/Atmosphere_of_Earth

@@ -1,0 +1,42 @@
+{
+ "unit": "earths-layers",
+ "questions": {
+  "ea1da3c355": {
+   "verdict": "pass",
+   "why": "Context now says no drill has bored down through the whole crust into the mantle, which stays true beside the 2023 Atlantis Massif hole into mantle rock bared on the sea floor; Kola (12,262 m) is still the deepest vertical hole (Shenditake 1 stopped at 10,910 m). Lures shortened to 26-28 characters against the key's 25, so no length tell.",
+   "sources": [
+    "https://grokipedia.com/page/Kola_Superdeep_Borehole",
+    "https://www.whoi.edu/press-room/news-release/rocks-recovered-from-mantle-could-reveal-sources-of-volcanoes-and-origins-of-life-on-earth/",
+    "https://www.chinaservicesinfo.com/s/202502/20/WS67b899a3498eec7e1f72ff6c/china-completes-drilling-of-asias-deepest-vertical-well.html"
+   ]
+  },
+  "cd07413950": {
+   "verdict": "pass",
+   "why": "Absolute lure gone; set is two solid, two melted. 'Solid and rigid, like the crust above' is wrong: the whole mantle convects slowly over geological time, and only the lithosphere is brittle and rigid. Note only: the lower mantle is stiffer than the upper (Grokipedia 'greater rigidity'), and National Geographic mentions a minority view that it does not move, but neither makes it rigid like the crust; the key matches the unit scope and mainstream sources. The key is the one choice without a 'like' comparison, a small form difference, not a tell.",
+   "sources": [
+    "https://grokipedia.com/page/Earth's_mantle",
+    "https://grokipedia.com/page/Lithosphere",
+    "https://grokipedia.com/page/Mantle_convection",
+    "https://education.nationalgeographic.org/resource/mantle/"
+   ]
+  },
+  "2dc4d566ad": {
+   "verdict": "pass",
+   "why": "'Hotter than 4,000 degrees' clears every estimate (5,400-5,700 K at the inner core's edge; even the low 1993 figure of 4,850 K is about 4,580 C); the intensifier is gone from the key; facts in the context (millions of atmospheres, nickel melting lower than iron) hold. The stem of 9382c7316e still says deep rock is squeezed hard, a mild hint accepted by the judge.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+    "https://grokipedia.com/page/Earth's_inner_core",
+    "https://dx.doi.org/10.1038/363534a0"
+   ]
+  },
+  "9382c7316e": {
+   "verdict": "pass",
+   "why": "The clause that described the key is gone and the Moon lure no longer points the wrong way; the stem is the judge's own. Key true (overburden pressure from the weight of the rock above, over a thousand atmospheres at 5 km); spin bulges Earth outward. All four lures live for the grade.",
+   "sources": [
+    "https://grokipedia.com/page/Overburden_pressure",
+    "https://grokipedia.com/page/Equatorial_bulge",
+    "https://grokipedia.com/page/Internal_structure_of_Earth"
+   ]
+  }
+ }
+}

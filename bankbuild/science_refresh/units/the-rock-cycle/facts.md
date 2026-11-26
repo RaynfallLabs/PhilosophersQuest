@@ -98,3 +98,16 @@ M6. Students who have seen erupting volcanoes on film may take eruption to be TH
 M7. CAUTION from the same Kortz and Murray table: "Rocks can change into any other rock" is listed there as an alternative conception (a rock changing straight into any other rock, with no process). The questions therefore say only that a rock can become another KIND of rock through melting, weathering, or heat and pressure (F15-F17).
 
 M8. Author's judgment, used for wrong choices and labelled as such: glass is made from melted sand, so a child may think a natural glass is pressed sand; banding in a metamorphic rock is easily put down to the surface processes a child already knows, frost splitting rock, mud filling cracks or water staining it (the bands are made inside the rock by heat and pressure, F14; frost wedging is the T1 weathering unit's); crystals are thought to grow bigger as a rock grows older, or under harder squeezing, when cooling speed is what sets an igneous rock's crystal size (F4).
+
+## Added in the revision (2026-11-26)
+
+F20. Basalt is "the dominant rock type in Earth's oceanic crust", which forms mainly at mid-ocean ridges and leaves "a layer of basaltic rocks averaging 7 km thick across the ocean basins". A middle-school text: "Oceanic crust is made of basalt lavas that flow onto the seafloor", and "The average composition of continental crust is granite."
+    https://grokipedia.com/page/Basalt ; https://k12.libretexts.org/Bookshelves/Science_and_Technology/Earth_Science/03%3A_Planet_Earth/3.17%3A_Earth's_Crust (CK-12 Earth Science) ; https://grokipedia.com/page/Crust_(geology) (oceanic crust "primarily basaltic", continental "predominantly granitic")
+
+F21. Limestone forms from "calcium carbonate sediments, such as shells, coral, and other marine organisms", "in warm, shallow marine environments over millions of years". (Lure use: limestone is not the rock of the open ocean floor.)
+    https://grokipedia.com/page/Limestone
+
+F22. Obsidian has ALMOST no crystals, not none: "Impurities such as microcrystals of magnetite (Fe3O4) or pyroxene can occur in trace amounts" (under 1 percent), and snowflake obsidian holds "radiating clusters of white cristobalite inclusions". It forms from felsic (silica-rich) lava ("Produced from felsic lava"), cooled "with minimal crystal growth", while basalt forms from mafic lava; so obsidian is not the rock of the ocean floor.
+    https://grokipedia.com/page/Obsidian ; https://en.wikipedia.org/wiki/Obsidian ; https://grokipedia.com/page/Basalt
+
+Note on M1 (from the fact-check): Kortz and Murray's table records 'Metamorphic rocks melt' but gives no frequencies, so the grade notes call it "a recorded mix-up", not the commonest one.

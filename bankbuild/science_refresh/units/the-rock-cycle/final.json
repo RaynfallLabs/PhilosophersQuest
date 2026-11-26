@@ -1,0 +1,233 @@
+{
+ "unit": "the-rock-cycle",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "the-rock-cycle",
+   "question": "Granite and basalt both form from melted rock. Granite is speckled with crystals big enough to see, but the crystals in basalt are too small to see with the naked eye. What mainly made the difference?",
+   "answer": "How fast the melted rock cooled",
+   "choices": [
+    "How fast the melted rock cooled",
+    "How hot the melted rock was",
+    "How long ago the rock first formed",
+    "How hard the rock was squeezed"
+   ],
+   "context": "Crystals need time to grow. Granite's magma cooled slowly, kilometres underground, over hundreds of thousands of years, so its crystals grew large; basalt's lava cooled quickly at the surface, so its crystals stayed tiny. Some lava cools so fast that it hardens into obsidian, a natural glass with almost no crystals. Neither the rock's age nor squeezing set the size of those crystals.",
+   "facts": [
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F22",
+    "M8"
+   ],
+   "grade_note": "That igneous crystal size comes from cooling speed, large crystals from slow cooling underground and small ones from fast cooling at the surface, is the core igneous fact of the 6th-grade rock-cycle line (G6.E6), taught with granite and basalt."
+  },
+  {
+   "tier": 2,
+   "topic": "the-rock-cycle",
+   "question": "Granite forms from magma that hardens kilometres below the ground. Yet cliffs and domes of bare granite stand in the open air in many mountain ranges. How did the granite get to the surface?",
+   "answer": "The rock above it wore away as the land rose",
+   "choices": [
+    "The rock above it wore away as the land rose",
+    "A volcano blasted it up from deep underground",
+    "It melted again and flowed up to the surface",
+    "An earthquake heaved it up all in a single day"
+   ],
+   "context": "Over millions of years the land is slowly raised while rain, rivers and ice wear away the rock on top, until granite that hardened far below lies bare. Granite does not come out of volcanoes: it is magma that stayed below and hardened there.",
+   "facts": [
+    "F8",
+    "F5",
+    "F17",
+    "M2"
+   ],
+   "grade_note": "Uplift and erosion, the step of the rock cycle that brings deep rock to the surface, is part of the 6th-grade rock-cycle model (G6.E6, NGSS MS-ESS2-1), and 'rocks come up through volcanoes or earthquakes' is a recorded student idea."
+  },
+  {
+   "tier": 2,
+   "topic": "the-rock-cycle",
+   "question": "Rock buried kilometres deep is slowly heated and squeezed until it turns into a new kind of rock, a metamorphic rock. What happens to the rock while it changes?",
+   "answer": "It stays solid, but its crystals regrow",
+   "choices": [
+    "It stays solid, but its crystals regrow",
+    "It melts, then cools and hardens again",
+    "It crumbles to sand, then is cemented again",
+    "It dissolves in water, then dries hard"
+   ],
+   "context": "A rock turns metamorphic while it stays solid: heat and pressure make its crystals regrow, often larger than before, so it comes out denser and more compact. Rock that melted would become magma instead.",
+   "facts": [
+    "F9",
+    "F10",
+    "F11",
+    "F13",
+    "M1"
+   ],
+   "grade_note": "That metamorphic rock forms when heat and pressure change a rock while it stays solid, without melting it, is the 6th-grade definition (G6.E6); 'metamorphic rocks melt' is a recorded student mix-up (Kortz and Murray 2009)."
+  },
+  {
+   "tier": 2,
+   "topic": "the-rock-cycle",
+   "question": "Hot magma pushes up into a thick bed of limestone and cools there. The limestone right beside the magma is baked by its heat for a very long time. What rock does the baked limestone become?",
+   "answer": "Marble",
+   "choices": [
+    "Marble",
+    "Slate",
+    "Quartzite",
+    "Granite"
+   ],
+   "context": "The magma's heat changes the limestone beside it into marble, a stone long used for statues and buildings. Slate and quartzite come from other rocks, and granite is the kind of rock the magma itself can harden into.",
+   "facts": [
+    "F10",
+    "F11",
+    "F5"
+   ],
+   "grade_note": "Limestone to marble is one of the two metamorphic pairs the 6th-grade rock-cycle line names (G6.E6)."
+  },
+  {
+   "tier": 2,
+   "topic": "the-rock-cycle",
+   "question": "Slate is a grey rock that splits into thin, flat sheets, so it has long been used for roof tiles and school blackboards. Heat and pressure made it out of an older rock. Which rock was slate before?",
+   "answer": "Shale",
+   "choices": [
+    "Shale",
+    "Limestone",
+    "Sandstone",
+    "Basalt"
+   ],
+   "context": "Slate begins as shale, a rock of hardened mud. Heat and pressure make it harder and denser, and it splits cleanly into smooth sheets, which is why it makes good roof tiles.",
+   "facts": [
+    "F12",
+    "F9"
+   ],
+   "grade_note": "Shale to slate is one of the two metamorphic pairs the 6th-grade rock-cycle line names (G6.E6)."
+  },
+  {
+   "tier": 2,
+   "topic": "the-rock-cycle",
+   "question": "In granite, crystals of light and dark minerals are scattered evenly, in no pattern. Over millions of years, granite can turn into gneiss, a rock striped with light and dark bands. What made the stripes?",
+   "answer": "Heat and pressure sorted its crystals into layers",
+   "choices": [
+    "Heat and pressure sorted its crystals into layers",
+    "Hot water deep below stained some of its crystals",
+    "Ice froze in its cracks and split it into layers",
+    "Mud filled its cracks and slowly hardened in layers"
+   ],
+   "context": "Deep underground, heat and pressure make granite's light and dark minerals gather into separate bands, which turns it into gneiss, a metamorphic rock. Hot water can stain a rock's crystals, and frost and mud can split or fill its cracks, but none of them can sort its minerals into bands.",
+   "facts": [
+    "F14",
+    "F5",
+    "F17",
+    "M8"
+   ],
+   "grade_note": "That heat and pressure can change igneous rock such as granite straight into banded metamorphic rock is part of the 6th-grade rock cycle (G6.E6), where a rock need not pass through every stage in order."
+  },
+  {
+   "tier": 2,
+   "topic": "the-rock-cycle",
+   "question": "Deep in the roots of a mountain range lies rock that heat and pressure made out of an older rock long ago. Now it grows hot enough to begin melting, and the melt rises and hardens into granite. Which change of the rock cycle is this last step?",
+   "answer": "Metamorphic rock becoming igneous rock",
+   "choices": [
+    "Metamorphic rock becoming igneous rock",
+    "Metamorphic rock becoming sedimentary rock",
+    "Sedimentary rock becoming igneous rock",
+    "Sedimentary rock becoming metamorphic rock"
+   ],
+   "context": "Rock that heat and pressure have made is metamorphic rock, and once rock melts, the melt that cools and hardens is igneous rock, whatever it was before. So the last step turns metamorphic rock into igneous rock, one of many paths through the rock cycle, which runs in no fixed order.",
+   "facts": [
+    "F15",
+    "F9",
+    "F17",
+    "M5"
+   ],
+   "grade_note": "The 6th-grade rock-cycle line (G6.E6) teaches that any rock can become any other kind, and melting is the way metamorphic rock becomes igneous rock."
+  },
+  {
+   "tier": 2,
+   "topic": "the-rock-cycle",
+   "question": "Basalt is a dark rock that forms when lava cools and hardens. In time, basalt can become sedimentary rock. What must happen to it first?",
+   "answer": "It must be worn down by weathering",
+   "choices": [
+    "It must be worn down by weathering",
+    "It must melt and then cool again",
+    "It must be heated and squeezed underground",
+    "It must be buried whole under the sea"
+   ],
+   "context": "Rain, ice, waves and wind must first wear the basalt down into bits, called sediment, which can then be buried and turned into sedimentary rock. A whole block of basalt buried under the sea floor is still basalt.",
+   "facts": [
+    "F16",
+    "F6",
+    "F17"
+   ],
+   "grade_note": "The 6th-grade rock-cycle line (G6.E6) teaches that igneous rock becomes sedimentary rock by way of weathering and erosion."
+  },
+  {
+   "tier": 2,
+   "topic": "the-rock-cycle",
+   "question": "Geologists sort all of Earth's rocks into just three great kinds. What decides which kind a rock belongs to?",
+   "answer": "How the rock formed",
+   "choices": [
+    "How the rock formed",
+    "How hard the rock is",
+    "What colour the rock is",
+    "How old the rock is"
+   ],
+   "context": "Igneous, sedimentary and metamorphic rock are each named for the way a rock formed, and colour, hardness and age can only be clues. A dark rock, for instance, can be igneous like basalt, sedimentary like coal, or metamorphic like slate.",
+   "facts": [
+    "F1",
+    "F19",
+    "M3",
+    "M4"
+   ],
+   "grade_note": "Classifying rocks as igneous, sedimentary or metamorphic by the processes of their formation is the frame of the 6th-grade rock-cycle line (G6.E6)."
+  },
+  {
+   "tier": 2,
+   "topic": "the-rock-cycle",
+   "question": "Far from any coast, the floor of the open ocean lies kilometres down in darkness. Most of the solid rock that forms it is of one kind. Which rock is it?",
+   "answer": "Basalt",
+   "choices": [
+    "Basalt",
+    "Granite",
+    "Limestone",
+    "Obsidian"
+   ],
+   "context": "The crust under the open ocean is made mostly of basalt, from lava that flowed out onto the sea floor and hardened there. Granite is common in the crust of the continents, limestone forms mostly from shells and coral in warm, shallow seas, and obsidian is a glassy rock made from a different kind of lava.",
+   "facts": [
+    "F6",
+    "F20",
+    "F21",
+    "F22"
+   ],
+   "grade_note": "6th-grade Earth-science texts teach that the ocean floor's crust is made of basalt from lava and the continents' crust is on average granite (CK-12 Earth Science, 'Earth's Crust')."
+  }
+ ],
+ "revised": {
+  "57752512b6": {
+   "old_hash": "501d6488db",
+   "why": "Judge (low, tell): the stem said both rocks form 'when melted rock cools and hardens' and the key repeated its verb; the stem now says only that both 'form from melted rock', as the judge proposed. Obsidian, whose own question is dropped, is kept here as one context line, with 'almost no crystals' (F22). Same fact; key and choices unchanged."
+  },
+  "2ff4da04f5": {
+   "old_hash": "00ead6161d",
+   "why": "Judge (medium, tell): 'a far harder rock' ruled out the powder and flat-sheets lures, the key echoed it, and naming sandstone to quartzite struck lures in the marble and slate questions. Rewritten as the judge proposed to test the grade's core fact directly, with no rock names: metamorphism changes a rock while it stays solid (F9). The key says the crystals regrow rather than 'its minerals change' (marble and quartzite keep their minerals, F10, F13). Lures: the recorded 'metamorphic rocks melt' belief (M1), the sedimentary path, and dissolving. Fact-check (low): the grade note now says 'a recorded mix-up', not 'the commonest'."
+  },
+  "9dd30610c7": {
+   "old_hash": "9dd30610c7",
+   "why": "Judge (medium, tell): the key was the only deep process; all three lures were surface processes with water. 'Water seeped in and stained some of its crystals' now happens deep underground ('Hot water deep below stained some of its crystals'), so two choices are deep and two at the surface, and two are about the crystals and two about the cracks. The judge's 'It cooled, and its crystals settled into layers' was not used: the stem says granite's crystals are scattered in no pattern, which rules that one out. Stem and key unchanged (F14)."
+  },
+  "79f973f128": {
+   "old_hash": "58c05b5e11",
+   "why": "Judge (medium, tell): the key was the only choice with both the common start and the common end. The judge's rebalanced set was not used: in it the key shares neither its start nor its end with any other choice, an odd-one-out, and knowing the start alone would give the answer. In the new set the start and the end each appear twice, and the key ties with a lure for the most shared, so the student must know both that heat-and-pressure rock is metamorphic and that hardened melt is igneous. 'Igneous rock becoming metamorphic rock' gives way to 'Sedimentary rock becoming metamorphic rock', the change heat and pressure make, and the question now asks for 'this last step' so that the earlier change is not the one asked. Judge (medium, clarity): the stem used 'gneiss' before teaching it. The stem now describes the starting rock by how it formed (made by heat and pressure out of an older rock), so the student must still know which kind that is, and it no longer names gneiss, so it gives away neither the gneiss-stripes question's key nor the metamorphism question's (the judge's 'striped rock made by heat and pressure' would have answered the stripes question). Same fact (F15); key unchanged."
+  }
+ },
+ "added": {
+  "e3719bad15": "Replaces the dropped obsidian question (74f39a7237) on a fact no other question or unit asks: the open ocean's crust is mostly basalt, the commonest igneous rock, while the continents' is on average granite (F20; earths-layers left the rock types to this unit). Lures: granite (the continents' rock), limestone (shells on the sea floor, F21) and obsidian (lava rock from a different, silica-rich lava, F22). The stem names no lava, mud or cold water, so it neither points at the key nor leans on the basalt-from-lava fact that f11434b84c's stem states."
+ },
+ "dropped": [
+  {
+   "old_hash": "74f39a7237",
+   "question": "Obsidian is a shiny black rock with no crystals in it at all, for it is a natural glass. It breaks into edges so sharp that people long ago made knives and arrowheads from it. How does obsidian form?",
+   "why": "Fact-check error: obsidian has 'almost no crystals', not 'no crystals at all' (snowflake obsidian holds cristobalite clusters, F22). Judge (medium): it asked the same rule as 501d6488db, cooling speed sets crystal size, with that question's slow and fast pair as two lures, so a student who gets one gets the other. Dropped, as the judge's option B; obsidian stays in the unit as a context line in 501d6488db and a lure in the added ocean-floor question."
+  }
+ ]
+}

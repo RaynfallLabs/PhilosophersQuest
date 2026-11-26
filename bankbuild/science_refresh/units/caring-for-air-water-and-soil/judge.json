@@ -1,0 +1,64 @@
+{"unit": "caring-for-air-water-and-soil",
+ "questions": {
+  "28dc101140": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem's 'harmful gases and tiny specks' is a description of smoke and exhaust, which nudges a student toward the one burning choice. The '85 percent' share is the grade-6 fact, but the question never tests the share, only the kind of activity.",
+     "fix": "Optional: open on 'Scientists who study the air measure the pollution over cities and countryside alike.' and leave out the gases-and-specks clause."},
+    {"axis": "fact", "severity": "low",
+     "what": "'Spraying farm fields with fertiliser' may be partly true: ammonia from fertiliser forms a large share of the fine particles in some farm regions, Europe and the eastern US among them. It is still not the biggest source worldwide, so the key stands, but a fact-checker may raise it.",
+     "fix": "If the fact-checker objects, use 'Ploughing dry fields on windy days' instead."}
+   ]},
+  "e1ea63f984": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The water vapour' is a dead choice. A 6th grader knows water vapour is harmless steam, so only three choices are live, and the real contest is just finest specks against largest flakes.",
+     "fix": "Replace it with a misconception students really hold: 'The air the fire left short of oxygen' (smoke that has drifted over a town still has normal oxygen)."},
+    {"axis": "tell", "severity": "low",
+     "what": "The two particle choices are not parallel: 'specks of soot' and 'flakes of ash'. A student may pick soot just because soot sounds dirtier, without knowing anything about size.",
+     "fix": "'The finest specks of soot and ash' / 'The largest flakes of soot and ash'."}
+   ]},
+  "abc339eae2": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "The exact ranking comes from one study, and no 6th grader is taught that ranking. What the grade does teach is that many small sources on land add up to the most pollution, and the question rests on that. It is fine because the stem names the study. A student who knows from the T1 water-cycle unit that a parking lot makes the most runoff gets a small head start, but that is a different fact.",
+     "fix": "None needed."}
+   ]},
+  "7d82ea1906": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'A small, carefully measured dose' hints that chlorine is a poison, which points to 'kill germs'. Many students also know from swimming pools that chlorine kills germs.",
+     "fix": "Shorten the clause to 'workers add a little chlorine'."}
+   ]},
+  "0dd40430a7": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'It cools the water before it flows to a river' is the weakest of the three wrong choices. 'Kills off the bacteria' is a strong lure, and 'helps the solids sink' is live.",
+     "fix": "Optional: 'It blows away the bad smell of the waste'."}
+   ]},
+  "f5a9a7c33b": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "All three wrong choices are weak, and none is a real model of how water moves: sunlight baking the soil, walls soaking up rain like sponges, walls pressing the soil down. The key is the only choice about how water flows, so a student who knows nothing about terraces still picks it.",
+     "fix": "Replace 'Sunlight bakes the soil of each step hard' with 'Rain runs off each step faster, before it can lift soil' (the opposite of the truth, and a picture students really hold). Replace 'The walls press the soil down too hard to move' with 'The flat steps keep the rain from reaching the soil'."}
+   ]},
+  "7d51873cf9": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'It makes the soil underneath it heavier' and 'It warms the soil so it dries out faster' are weak. Only 'keeps the rain from soaking in' competes with the key, so the question is close to a two-way choice. The lures also repeat Q6's pattern of weight and drying-in-sun.",
+     "fix": "Replace 'heavier' with 'Its stalks grow new roots that bind the soil' (the T1 roots lesson misapplied to dead straw). Replace 'warms the soil' with 'It packs the soil into a hard crust' (the opposite of the truth: bare soil is what crusts)."}
+   ]},
+  "dcf1cf2a3e": {"verdict": "ok",
+   "issues": []},
+  "a6e2f0cfd1": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "Overlap. T1 energy-changes-form already keys that a bulb turns electrical energy into 'light and heat'. T2 kinetic-and-potential-energy keys that energy is not used up but becomes heat (the swing; lure 'It was used up, and now it no longer exists'). Light is not among these choices, so a student with only the T1 fact picks 'heat' at once, and 'used up and destroyed' repeats the T2 swing question's fact. The grade-6 fact here, that MOST of the energy becomes heat, is never tested. The stem's 60 W against 9 W also lets a student work out the waste from the numbers.",
+     "fix": "Stem: 'An old-style incandescent bulb and a light-emitting diode (LED) bulb light a room equally well, but the LED uses far less electricity. What becomes of the energy the old bulb takes in?' Choices: 'Most becomes heat, and a little becomes light' (key) / 'Most becomes light, and a little becomes heat' / 'About half becomes light, and half heat' / 'Nearly all becomes light, with none to spare'. Move the 60 W and 9 W figures into the context."},
+    {"axis": "tell", "severity": "medium",
+     "what": "'It is given off as sound' and 'It is stored inside the glass' are not choices a 6th grader would take seriously.",
+     "fix": "The parallel 'most / half / nearly all' choices above remove both."}
+   ]}
+ },
+ "unit_notes": "Overlaps. (1) Q9 (bulb): this is the high issue above; it re-asks T1 energy-changes-form (light and heat) and T2 kinetic-and-potential-energy (energy not destroyed, it becomes heat). Fix: key the share, as given. (2) Q8 (windbreak) uses the T1 ecosystems lesson 'roots hold the soil' only as a lure, and keys a new fact (slower wind). That is fine. (3) Q3 (oil runoff) is next to T1 the-water-cycle (the parking lot makes the most runoff), but it keys that runoff carries oil. Fine. (4) Q5 (aeration) builds on T1 decomposers (bacteria break down waste) and adds the oxygen. Fine. Fertiliser runoff, the cleared hillside, recycling and conserving water are correctly left to T1, and oil floating is left to density-float-or-sink. No question re-asks them. Within the unit, Q4 and Q5 are both treatment-plant questions, and Q6, Q7 and Q8 are three erosion-control questions; each keys a different mechanism, so this is acceptable, but it gives five of nine to water plants and erosion. Tone and lanes are clean: no slogans, no moralising, no prices or policy. The 1930s shelterbelt appears in Q8's context as history only. Climate change is absent. Carbon dioxide appears only as a health lure in Q2, and the context keeps it to the WHO's health list; keep it that way. 'Why managing resources matters' in the scope is not asked, which is the safer choice for tone."
+}

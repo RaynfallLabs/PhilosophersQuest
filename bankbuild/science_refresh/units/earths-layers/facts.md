@@ -123,3 +123,14 @@ M5. The core is the biggest part of Earth; in fact the mantle is about 84 percen
 M6. Melting needs air, as burning does; melting needs only heat, so the lack of air at the centre does nothing to keep iron solid. (Teaching note; physical change, no oxygen involved.)
 
 M7. Sediment layers (rock layers seen in a cliff) are Earth's layers. They are layers of the crust only (`rock-layers-and-fossils`); not used here.
+
+## Added in the revision (2026-11-26)
+
+F27. The lithosphere is "the rigid, outermost mechanical layer of Earth, encompassing the crust and the uppermost part of the mantle", where rock behaves "as a brittle solid rather than a ductile one"; beneath it the mantle "flows ductily". So the crust is rigid, while most of the mantle's hot rock slowly flows (F12). (Used for the 'Solid and rigid, like the crust above' lure.)
+    https://grokipedia.com/page/Lithosphere ; https://grokipedia.com/page/Mantle_convection
+
+F28. In 2023 a drilling expedition recovered "nearly continuous 1,268 metres of mantle rock" from a "tectonic window", "a section of the seabed where rocks from the mantle were exposed along the Mid-Atlantic Ridge" (the Atlantis Massif). That hole started in mantle rock bared on the sea floor; no hole has been drilled down through the whole crust into the mantle beneath it (Kola, the deepest, went about a third of the way through the crust, F8).
+    https://www.whoi.edu/press-room/news-release/rocks-recovered-from-mantle-could-reveal-sources-of-volcanoes-and-origins-of-life-on-earth/ ; https://grokipedia.com/page/Kola_Superdeep_Borehole
+
+F29. Estimates of the inner core's temperature vary: about 5,700 K (5,430 degrees Celsius) at its surface; Alfe and colleagues 5,400-5,700 K (5,100-5,400 C); an experiment on iron's melting point 6,230 +/- 500 K. Some published values for the inner-core boundary are lower (a 1993 estimate of 4,850 +/- 200 K, about 4,580 C). Every estimate is above 4,000 degrees Celsius, so the stem now says "hotter than 4,000 degrees" instead of 5,000.
+    https://en.wikipedia.org/wiki/Earth%27s_inner_core ; https://grokipedia.com/page/Earth's_inner_core ; https://dx.doi.org/10.1038/363534a0

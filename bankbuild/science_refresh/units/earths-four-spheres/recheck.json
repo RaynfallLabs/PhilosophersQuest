@@ -1,0 +1,41 @@
+{
+ "unit": "earths-four-spheres",
+ "questions": {
+  "9763d9373a": {
+   "verdict": "pass",
+   "why": "Old fact problem fixed: the context now says the ocean takes in most of the sunlight that reaches Earth's SURFACE (true: about half of incoming sunlight is absorbed at the surface, mostly by the ocean). Stem, key and choices unchanged and sound; no tell; four spheres are TEKS 6.10A, so 6th grade, and no T1 unit asks the spheres.",
+   "sources": [
+    "https://wmo.int/content/how-ocean-shapes-weather-and-climate",
+    "https://science.nasa.gov/earth/earth-observatory/ocean-and-climate/",
+    "https://www.personal.kent.edu/~mkeatts/radiationbalance.htm"
+   ]
+  },
+  "580034c810": {
+   "verdict": "pass",
+   "why": "Choices now form a balanced ring (each sphere twice, the key shares one sphere with two lures and none with the third, like every other choice), so no centre-of-set tell. The stem gives the widening crack only as a premise and asks which spheres act, so T1's root-wedging key is not re-asked. Tree = biosphere, cliff = geosphere is the TEKS 6.10A sorting skill, and roots breaking rock is the standard 6.10A example.",
+   "sources": [
+    "https://grokipedia.com/page/Weathering",
+    "https://www.nextgenscience.org/pe/5-ess2-1-earths-systems",
+    "https://keslerscience.com/teks-6.10a-differentiate-between-earths-spheres"
+   ]
+  },
+  "fd4646efcc": {
+   "verdict": "pass",
+   "why": "'Nitrogen' replaces the dead 'Oxygen' lure and is live (most of the air) but truly wrong: water vapour, CO2 and SO2 are 99 percent of erupted gas molecules, water vapour 60-90 percent. Context accurate and does not give away the unit's air question.",
+   "sources": [
+    "https://www.usgs.gov/faqs/what-gases-are-emitted-kilauea-and-other-active-volcanoes",
+    "https://grokipedia.com/page/Volcanic_gas",
+    "https://www.usgs.gov/programs/VHP/volcanic-gases-can-be-harmful-health-vegetation-and-infrastructure"
+   ]
+  },
+  "d9b1f60a17": {
+   "verdict": "pass",
+   "why": "Key now names a mechanism like each lure and no longer restates 'good for crops'; true (weathering ash releases potassium and phosphorus and makes fertile Andisols). Context's 'usually colder' fixes the thermal-belt nuance; 6.5 C per km lapse rate is right.",
+   "sources": [
+    "https://grokipedia.com/page/Volcanic_ash",
+    "https://www.eoas.ubc.ca/courses/atsc113/snow/met_concepts/06-met_concepts/06b-diurnal-slope-flows/",
+    "https://grokipedia.com/page/Atmosphere_of_Earth"
+   ]
+  }
+ }
+}

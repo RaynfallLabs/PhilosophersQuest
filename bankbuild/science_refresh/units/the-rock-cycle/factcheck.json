@@ -1,33 +1,422 @@
-{"unit": "the-rock-cycle",
+{
+ "unit": "the-rock-cycle",
  "questions": {
-  "501d6488db": {"verdict": "ok",
+  "501d6488db": {
+   "verdict": "ok",
    "checks": [
-    {"claim": "Key: cooling speed is the main control of igneous crystal size (slow cooling underground = large crystals; fast cooling at the surface = small)", "result": "ok", "source": "https://grokipedia.com/page/Igneous_rock", "note": "Grokipedia: 'Cooling rate is the dominant control'; intrusive rocks coarse (phaneritic), extrusive fine (aphanitic) or glassy."},
-    {"claim": "Granite's crystals are visible to the naked eye; it cools slowly kilometres underground over hundreds of thousands of years", "result": "ok", "source": "https://grokipedia.com/page/Granite", "note": "Grokipedia: 'individual mineral crystals are visible to the naked eye'; crystallizes 'at depths of 5-10 km, where slow cooling rates, spanning 10^5 to 10^6 years'. 'Hundreds of thousands of years' fits the low end of that range."},
-    {"claim": "Basalt's crystals are too small to see with the naked eye because its lava cools quickly at the surface", "result": "ok", "source": "https://grokipedia.com/page/Basalt", "note": "Grokipedia: 'fine-grained (aphanitic)'; rapid cooling 'at or near the Earth's surface' prevents 'the growth of large crystals visible to the naked eye'. (Some basalts carry scattered visible phenocrysts, but the rock's groundmass is aphanitic; fine at grade 6.)"},
-    {"claim": "Wrong: 'How hot the melted rock was' is not the main control", "result": "ok", "source": "https://grokipedia.com/page/Igneous_rock", "note": "Temperature is not named as a crystal-size control; basaltic lava is actually hotter (1100-1250 C, Grokipedia Basalt) yet finer-grained, so this choice cannot be defended as the main cause."},
-    {"claim": "Wrong: age of the rock does not set crystal size", "result": "ok", "source": "https://www.usgs.gov/faqs/what-are-igneous-rocks", "note": "USGS ties grain size to cooling time ('Slow cooling means the individual mineral grains have a very long time to grow'), not to the age of the rock."},
-    {"claim": "Wrong: squeezing (pressure) did not set the crystal size of these igneous rocks", "result": "ok", "source": "https://grokipedia.com/page/Igneous_rock", "note": "Pressure is not given as a control of igneous grain size; cooling rate is dominant."}
-   ]},
-  "74f39a7237": {"verdict": "uncertain",
+    {
+     "claim": "Key: cooling speed is the main control of igneous crystal size (slow cooling underground = large crystals; fast cooling at the surface = small)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Igneous_rock",
+     "note": "Grokipedia: 'Cooling rate is the dominant control'; intrusive rocks coarse (phaneritic), extrusive fine (aphanitic) or glassy."
+    },
+    {
+     "claim": "Granite's crystals are visible to the naked eye; it cools slowly kilometres underground over hundreds of thousands of years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Granite",
+     "note": "Grokipedia: 'individual mineral crystals are visible to the naked eye'; crystallizes 'at depths of 5-10 km, where slow cooling rates, spanning 10^5 to 10^6 years'. 'Hundreds of thousands of years' fits the low end of that range."
+    },
+    {
+     "claim": "Basalt's crystals are too small to see with the naked eye because its lava cools quickly at the surface",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Basalt",
+     "note": "Grokipedia: 'fine-grained (aphanitic)'; rapid cooling 'at or near the Earth's surface' prevents 'the growth of large crystals visible to the naked eye'. (Some basalts carry scattered visible phenocrysts, but the rock's groundmass is aphanitic; fine at grade 6.)"
+    },
+    {
+     "claim": "Wrong: 'How hot the melted rock was' is not the main control",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Igneous_rock",
+     "note": "Temperature is not named as a crystal-size control; basaltic lava is actually hotter (1100-1250 C, Grokipedia Basalt) yet finer-grained, so this choice cannot be defended as the main cause."
+    },
+    {
+     "claim": "Wrong: age of the rock does not set crystal size",
+     "result": "ok",
+     "source": "https://www.usgs.gov/faqs/what-are-igneous-rocks",
+     "note": "USGS ties grain size to cooling time ('Slow cooling means the individual mineral grains have a very long time to grow'), not to the age of the rock."
+    },
+    {
+     "claim": "Wrong: squeezing (pressure) did not set the crystal size of these igneous rocks",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Igneous_rock",
+     "note": "Pressure is not given as a control of igneous grain size; cooling rate is dominant."
+    }
+   ]
+  },
+  "74f39a7237": {
+   "verdict": "error",
    "checks": [
-    {"claim": "Key: obsidian forms when lava cools very fast at the surface", "result": "ok", "source": "https://grokipedia.com/page/Obsidian", "note": "Grokipedia: lava cools rapidly, 'preventing the growth of mineral crystals', 'at the margins of lava flows, domes, or in pyroclastic deposits'. Wikipedia: lava 'cools rapidly with minimal crystal growth'."},
-    {"claim": "Stem: obsidian is 'a shiny black rock with no crystals in it at all, for it is a natural glass'", "result": "uncertain", "source": "https://en.wikipedia.org/wiki/Obsidian", "note": "'Natural glass' and 'shiny black' (usually) are right, but 'no crystals in it at all' overstates it: Grokipedia notes trace microcrystals of magnetite or pyroxene (<1%), and snowflake obsidian holds white spherulites of cristobalite crystals (Wikipedia). The draft's own context says crystals have 'almost no time to form', which is the accurate wording. Fix: 'Obsidian is a shiny black rock with almost no crystals in it, for it is a natural glass.'"},
-    {"claim": "Sharp edges; people long ago made knives and arrowheads from it", "result": "ok", "source": "https://en.wikipedia.org/wiki/Obsidian", "note": "Wikipedia: 'fractures with very sharp edges'; used to make 'sharp blades or arrowheads' in prehistoric times. Grokipedia: 'crafting cutting tools, arrowheads, and blades'."},
-    {"claim": "Wrong: 'Magma cools very slowly deep underground' (that makes coarse rock such as granite)", "result": "ok", "source": "https://grokipedia.com/page/Igneous_rock", "note": "Slow cooling underground gives phaneritic coarse texture, the opposite of glass."},
-    {"claim": "Wrong: 'Black sand is pressed and cemented together' (sedimentary, made of grains, not glass)", "result": "ok", "source": "https://grokipedia.com/page/Obsidian", "note": "Obsidian is an extrusive igneous rock from cooled lava, not cemented sediment."},
-    {"claim": "Wrong: 'Dark mud is heated and squeezed underground' (that makes slate, a metamorphic rock)", "result": "ok", "source": "https://grokipedia.com/page/Slate", "note": "Heated and squeezed mud/shale makes slate, a foliated crystalline rock, not a glass."},
-    {"claim": "Context: pressed sand or squeezed mud makes a rock built of grains, never a glass", "result": "ok", "source": "https://www.usgs.gov/faqs/what-are-sedimentary-rocks", "note": "Sedimentary rock is cemented grains; metamorphism is solid-state recrystallization, not melting, so neither yields glass."}
-   ]},
-  "2c0f167902": {"verdict": "ok",
+    {
+     "claim": "Key: obsidian forms when lava cools very fast at the surface",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Obsidian",
+     "note": "Grokipedia: lava cools rapidly, 'preventing the growth of mineral crystals', 'at the margins of lava flows, domes, or in pyroclastic deposits'. Wikipedia: lava 'cools rapidly with minimal crystal growth'."
+    },
+    {
+     "claim": "Stem: obsidian is 'a shiny black rock with no crystals in it at all, for it is a natural glass'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Obsidian ; https://en.wikipedia.org/wiki/Obsidian ; https://geology.com/rocks/obsidian.shtml",
+     "note": "Key and choices are fine; the stem overstates. 'Natural glass' and 'shiny black' (usually) are right, but 'no crystals in it at all' is not true of obsidian in general: Grokipedia Obsidian notes trace microcrystals of magnetite or pyroxene (under 1%), and snowflake obsidian holds radial clusters of white cristobalite crystals (Wikipedia Obsidian; geology.com: 'some obsidian begins to crystallize'). The draft's own context says crystals have 'almost no time to form', which contradicts the stem. Fix: 'Obsidian is a shiny black rock with almost no crystals in it, for it is a natural glass.'"
+    },
+    {
+     "claim": "Sharp edges; people long ago made knives and arrowheads from it",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Obsidian",
+     "note": "Wikipedia: 'fractures with very sharp edges'; used to make 'sharp blades or arrowheads' in prehistoric times. Grokipedia: 'crafting cutting tools, arrowheads, and blades'."
+    },
+    {
+     "claim": "Wrong: 'Magma cools very slowly deep underground' (that makes coarse rock such as granite)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Igneous_rock",
+     "note": "Slow cooling underground gives phaneritic coarse texture, the opposite of glass."
+    },
+    {
+     "claim": "Wrong: 'Black sand is pressed and cemented together' (sedimentary, made of grains, not glass)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Obsidian",
+     "note": "Obsidian is an extrusive igneous rock from cooled lava, not cemented sediment."
+    },
+    {
+     "claim": "Wrong: 'Dark mud is heated and squeezed underground' (that makes slate, a metamorphic rock)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Slate",
+     "note": "Heated and squeezed mud/shale makes slate, a foliated crystalline rock, not a glass."
+    },
+    {
+     "claim": "Context: pressed sand or squeezed mud makes a rock built of grains, never a glass",
+     "result": "ok",
+     "source": "https://www.usgs.gov/faqs/what-are-sedimentary-rocks",
+     "note": "Sedimentary rock is cemented grains; metamorphism is solid-state recrystallization, not melting, so neither yields glass."
+    }
+   ]
+  },
+  "2c0f167902": {
+   "verdict": "ok",
    "checks": [
-    {"claim": "Key: deep granite reaches the surface as the land rises and the rock above it is worn away (uplift and erosion)", "result": "ok", "source": "https://grokipedia.com/page/Granite", "note": "Grokipedia: 'Granite, exposed at the Earth's surface after uplift and erosion'. USGS (Half Dome FAQ / Yosemite geology): overlying volcanic and metamorphic rock eroded away, revealing the granite, domes forming as confining pressure was removed."},
-    {"claim": "Cliffs and domes of bare granite in mountain ranges", "result": "ok", "source": "https://en.wikipedia.org/wiki/Granite", "note": "Wikipedia: 'Outcrops of granite tend to form tors, domes or bornhardts'; granite cliffs pictured. Yosemite's Half Dome and El Capitan are the classic example (USGS https://www.usgs.gov/faqs/how-did-half-dome-massive-rock-monument-yosemite-national-park-acquire-its-unique-shape)."},
-    {"claim": "Context: 'Over millions of years'", "result": "ok", "source": "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-yosemite-national-park", "note": "USGS: Yosemite's overlying rock was eroded away between about 85 and 15 million years ago, revealing the granite."},
-    {"claim": "Wrong: 'A volcano blasted it up from deep underground'", "result": "ok", "source": "https://grokipedia.com/page/Granite", "note": "Granite is an intrusive rock; its erupted equivalent is rhyolite (Wikipedia Granite: 'The extrusive igneous rock equivalent of granite is rhyolite'). Volcanoes can throw out small granite fragments, but not cliffs and domes. Kortz and Murray record 'rocks come to the surface through volcanoes or earthquakes' as a misconception."},
-    {"claim": "Wrong: 'It melted again and flowed up to the surface'", "result": "ok", "source": "https://en.wikipedia.org/wiki/Granite", "note": "Melt erupted at the surface cools fast into rhyolite or obsidian, not coarse granite."},
-    {"claim": "Wrong: 'An earthquake heaved it up all in a single day'", "result": "ok", "source": "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-yosemite-national-park", "note": "Exhumation took tens of millions of years; a single earthquake moves rock metres at most."},
-    {"claim": "Context: 'Granite does not come out of volcanoes: it is magma that stayed below and hardened there'", "result": "ok", "source": "https://grokipedia.com/page/Granite", "note": "Granite is 'a coarse-grained, intrusive igneous rock'; fine at grade level."}
-   ]}
+    {
+     "claim": "Key: deep granite reaches the surface as the land rises and the rock above it is worn away (uplift and erosion)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Granite",
+     "note": "Grokipedia: 'Granite, exposed at the Earth's surface after uplift and erosion'. USGS (Half Dome FAQ / Yosemite geology): overlying volcanic and metamorphic rock eroded away, revealing the granite, domes forming as confining pressure was removed."
+    },
+    {
+     "claim": "Cliffs and domes of bare granite in mountain ranges",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Granite",
+     "note": "Wikipedia: 'Outcrops of granite tend to form tors, domes or bornhardts'; granite cliffs pictured. Yosemite's Half Dome and El Capitan are the classic example (USGS https://www.usgs.gov/faqs/how-did-half-dome-massive-rock-monument-yosemite-national-park-acquire-its-unique-shape)."
+    },
+    {
+     "claim": "Context: 'Over millions of years'",
+     "result": "ok",
+     "source": "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-yosemite-national-park",
+     "note": "USGS: Yosemite's overlying rock was eroded away between about 85 and 15 million years ago, revealing the granite."
+    },
+    {
+     "claim": "Wrong: 'A volcano blasted it up from deep underground'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Granite",
+     "note": "Granite is an intrusive rock; its erupted equivalent is rhyolite (Wikipedia Granite: 'The extrusive igneous rock equivalent of granite is rhyolite'). Volcanoes can throw out small granite fragments, but not cliffs and domes. Kortz and Murray record 'rocks come to the surface through volcanoes or earthquakes' as a misconception."
+    },
+    {
+     "claim": "Wrong: 'It melted again and flowed up to the surface'",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Granite",
+     "note": "Melt erupted at the surface cools fast into rhyolite or obsidian, not coarse granite."
+    },
+    {
+     "claim": "Wrong: 'An earthquake heaved it up all in a single day'",
+     "result": "ok",
+     "source": "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-yosemite-national-park",
+     "note": "Exhumation took tens of millions of years; a single earthquake moves rock metres at most."
+    },
+    {
+     "claim": "Context: 'Granite does not come out of volcanoes: it is magma that stayed below and hardened there'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Granite",
+     "note": "Granite is 'a coarse-grained, intrusive igneous rock'; fine at grade level."
+    },
+    {
+     "claim": "Grade note: 'rocks come to the surface through volcanoes or earthquakes' is a recorded student idea (Kortz and Murray 2009)",
+     "result": "ok",
+     "source": "https://cdn.serc.carleton.edu/files/NAGTWorkshops/earlycareer2015/monday_am_example_misconceptio.pdf",
+     "note": "Verified in the reprint of Kortz and Murray (2009) Table 4, under the Deep Time barrier: 'Rocks come to the surface through volcanoes or earthquakes.' Paper confirmed at https://digitalcommons.uri.edu/geo_facpubs/144 (J. Geoscience Education 57(4), 2009; ~200 questionnaires and 10 interviews of college students at four colleges)."
+    }
+   ]
+  },
+  "00ead6161d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: under heat and pressure sandstone's quartz grains regrow (recrystallize) and lock tightly together into quartzite",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Quartzite",
+     "note": "Grokipedia: metamorphism 'recrystallizes the original sand grains into a strong, interlocking mosaic structure'. Wikipedia Quartzite: in annealing 'the grains become coarser and acquire a more polygonal texture'."
+    },
+    {
+     "claim": "Stem: quartzite is 'a far harder rock' than sandstone",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Quartzite",
+     "note": "Wikipedia: 'a very hard rock composed predominantly of an interlocking mosaic of quartz crystals'. Mineral hardness of the quartz grains is 7 in both, but as a rock quartzite is far tougher than crumbly sandstone; acceptable everyday sense at grade 6."
+    },
+    {
+     "claim": "Wrong: 'They melt and harden into glass'",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Metamorphism",
+     "note": "Metamorphism occurs 'without actually melting to any great degree'; the rock 'remains mostly solid'."
+    },
+    {
+     "claim": "Wrong: 'They are crushed into a fine powder'",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Quartzite",
+     "note": "Grains recrystallize and coarsen into an interlocking mosaic; they are not powdered."
+    },
+    {
+     "claim": "Wrong: 'They split apart into thin, flat sheets'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Quartzite",
+     "note": "Grokipedia: quartzite is 'a hard, non-foliated metamorphic rock' that 'lacks any preferred orientation'; splitting into sheets is slate's trait."
+    },
+    {
+     "claim": "Context: quartzite breaks through its grains instead of around them; all this happens while the rock stays solid",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Quartzite",
+     "note": "Wikipedia: metaquartzite 'fractures through the grains'; Grokipedia: 'breaking across grains rather than along boundaries'. (Facts sheet rightly cautions that orthoquartzite also does this; the question does not use fracture as a test.)"
+    }
+   ]
+  },
+  "3c0c7153b7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: limestone baked beside a magma intrusion becomes marble (contact metamorphism)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Marble",
+     "note": "Grokipedia: marble 'formed by the recrystallization of limestone or dolostone', including by 'contact metamorphism adjacent to igneous intrusions'. Wikipedia Metamorphism: calcite crystals in limestone 'change into larger crystals in the metamorphic rock marble'; the heated zone is the aureole."
+    },
+    {
+     "claim": "Wrong: Slate (comes from shale)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Slate",
+     "note": "Slate is 'derived from an original shale-type sedimentary rock composed of clay or volcanic ash', not limestone."
+    },
+    {
+     "claim": "Wrong: Quartzite (comes from quartz-rich sandstone)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Quartzite",
+     "note": "Quartzite forms from 'quartz-rich sandstone'; limestone is calcite."
+    },
+    {
+     "claim": "Wrong: Granite (the magma itself can harden into it, igneous)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Granite",
+     "note": "Granite is an intrusive igneous rock crystallized from magma, not baked limestone."
+    },
+    {
+     "claim": "Context: marble long used for statues and buildings",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Marble",
+     "note": "Grokipedia: 'a preferred material for sculpture and architecture since antiquity'."
+    }
+   ]
+  },
+  "361a54e6c7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: slate was shale before (low-grade metamorphism of mudrock)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Slate",
+     "note": "Wikipedia: 'derived from an original shale-type sedimentary rock composed of clay or volcanic ash'; 'low-grade, regional metamorphism'. Grokipedia Slate agrees."
+    },
+    {
+     "claim": "Stem: slate is grey, splits into thin flat sheets, used for roof tiles and school blackboards",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Slate",
+     "note": "Wikipedia: 'frequently grey in color'; 'can easily be split into thin slabs and plates'; 'roofing slate, a type of roof tile'; 'In 18th- and 19th-century schools, slate was extensively used for blackboards and individual writing slates'."
+    },
+    {
+     "claim": "Wrong: Limestone (becomes marble)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Marble",
+     "note": "Metamorphosed limestone is marble, not slate."
+    },
+    {
+     "claim": "Wrong: Sandstone (becomes quartzite)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Quartzite",
+     "note": "Metamorphosed sandstone is quartzite, a non-foliated rock."
+    },
+    {
+     "claim": "Wrong: Basalt (low-grade metamorphism gives greenschist, not slate)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Rock_cycle",
+     "note": "Grokipedia Rock cycle: basalt transforms 'into greenschist'. Slate's parents are mudrock, shale, clay or volcanic ash (Wikipedia Slate), not basalt lava."
+    },
+    {
+     "claim": "Context: shale is a rock of hardened mud; heat and pressure make it harder and denser and it splits into smooth sheets",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Slate",
+     "note": "Wikipedia: slaty cleavage forms as clay flakes regrow in planes perpendicular to compression; slate is made from mudrock. Denser/harder is consistent with USGS: metamorphism transforms rocks 'into denser, more compact rocks' (https://www.usgs.gov/faqs/what-are-metamorphic-rocks)."
+    }
+   ]
+  },
+  "9dd30610c7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: heat and pressure sorted (segregated) granite's light and dark minerals into bands, making gneiss",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gneiss",
+     "note": "Grokipedia: banding from 'segregation and recrystallization of components under intense heat and pressure'; metamorphic differentiation gathers quartz and feldspar into light layers and mafic minerals into dark. Wikipedia Gneiss adds compression and shearing. 'Sorted its crystals' is a fair grade-6 simplification of segregation by recrystallization."
+    },
+    {
+     "claim": "Granite can turn into gneiss (orthogneiss)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gneiss",
+     "note": "Grokipedia: 'Orthogneiss forms through the metamorphism of igneous rocks such as granite.' Wikipedia: augen gneiss is 'a gneiss resulting from metamorphism of granite'."
+    },
+    {
+     "claim": "Stem: in granite the crystals are scattered evenly, in no pattern",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Granite",
+     "note": "Wikipedia: 'Granite is nearly always massive (lacking any internal structures)'; Grokipedia: fabric 'predominantly massive, lacking aligned mineral orientations'."
+    },
+    {
+     "claim": "Stem: 'over millions of years'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gneiss",
+     "note": "Grokipedia: formation takes 'tens to hundreds of millions of years'."
+    },
+    {
+     "claim": "Wrong: ice froze in its cracks and split it into layers (frost wedging, surface weathering)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gneiss",
+     "note": "Gneissic bands are made by high-grade metamorphism (over ~500 C, 2-10 kbar), not by frost."
+    },
+    {
+     "claim": "Wrong: mud filled its cracks and hardened in layers",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gneiss",
+     "note": "Bands are segregated minerals of the rock itself, not infilled mud."
+    },
+    {
+     "claim": "Wrong: water seeped in and stained some crystals",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gneiss",
+     "note": "Staining does not segregate minerals into bands; banding is metamorphic differentiation and recrystallization."
+    }
+   ]
+  },
+  "58c05b5e11": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: gneiss (metamorphic) partly melting and the melt hardening into granite is metamorphic rock becoming igneous rock",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Rock_cycle",
+     "note": "Grokipedia Rock cycle: 'The transition from metamorphic to igneous rocks occurs primarily through anatexis, or partial melting.'"
+    },
+    {
+     "claim": "Stem: in mountain roots, gneiss grows hot enough to begin melting; the melt gathers, rises and hardens into granite",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Migmatite",
+     "note": "Grokipedia Migmatite: gneiss a common protolith; anatexis 'typically 650-850 C' in the mid to lower crust of 'collisional orogenic belts'; 'portions of the melt can be extracted and migrate upward' to form granitic magmas. Grokipedia Gneiss: migmatite melting contributes 'to the formation of granitic plutons'. Wikipedia Granite: 'granitic melts can be produced in place through the partial melting of metamorphic rocks'."
+    },
+    {
+     "claim": "Wrong: igneous rock becoming metamorphic",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gneiss",
+     "note": "The starting rock is gneiss, a metamorphic rock, and the product is granite, igneous; the reverse direction is wrong."
+    },
+    {
+     "claim": "Wrong: sedimentary rock becoming igneous",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gneiss",
+     "note": "Gneiss is metamorphic even if it was once sedimentary (paragneiss); the stem's starting rock is gneiss."
+    },
+    {
+     "claim": "Wrong: metamorphic rock becoming sedimentary",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Rock_cycle",
+     "note": "That path needs weathering and erosion at the surface; melting gives igneous rock."
+    },
+    {
+     "claim": "Context: melt that cools is igneous whatever it was before; the cycle runs in no fixed order",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Rock_cycle",
+     "note": "Igneous rocks 'originate from the cooling and solidification of molten magma or lava'; 'The cycle is not linear but cyclical', any rock type can be parent to the others. RSC: 'The rock cycle proceeds in no particular order'."
+    }
+   ]
+  },
+  "f11434b84c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: basalt must first be worn down by weathering into sediment before it can become sedimentary rock",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Rock_cycle",
+     "note": "Grokipedia Rock cycle: igneous rocks, 'Once uplifted and exposed, these rocks undergo physical and chemical weathering', yielding sediments that later lithify. USGS: 'Pieces of rock are loosened by weathering, then transported...'; Grokipedia Sedimentary rock names igneous rock among the source materials."
+    },
+    {
+     "claim": "Stem: basalt is a dark rock formed when lava cools and hardens",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Basalt",
+     "note": "Grokipedia: 'dark gray to black'; extrusive, from lava 'at or near the Earth's surface'."
+    },
+    {
+     "claim": "Wrong: 'It must melt and then cool again' (that makes igneous rock again)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Igneous_rock",
+     "note": "Melt that cools and solidifies is igneous rock, not sedimentary."
+    },
+    {
+     "claim": "Wrong: 'It must be heated and squeezed underground' (that makes metamorphic rock)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Rock_cycle",
+     "note": "Grokipedia: basalt under greenschist-grade conditions recrystallizes 'into greenschist', a metamorphic rock."
+    },
+    {
+     "claim": "Wrong: 'It must be buried whole under the sea' / context: a buried block of basalt is still basalt",
+     "result": "ok",
+     "source": "https://www.usgs.gov/faqs/what-are-sedimentary-rocks",
+     "note": "Sedimentary rock forms from sediment (pieces loosened by weathering) that is compacted and cemented; burying an unbroken body of basalt does not change what it is (ocean-floor basalt lies under sediment and stays basalt, Grokipedia Basalt: dominant rock of oceanic crust)."
+    },
+    {
+     "claim": "Context: rain, ice, waves and wind wear the basalt into sediment, which is buried and turned into sedimentary rock",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sedimentary_rock",
+     "note": "Grokipedia: sediments from weathering and erosion are moved by 'water, wind, ice, and currents', then compacted and cemented."
+    }
+   ]
+  },
+  "f0c1841451": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the three great kinds of rock are defined by how the rock formed",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Rock_(geology)",
+     "note": "Wikipedia: 'Rocks are usually grouped into three main groups: igneous rocks, sedimentary rocks, and metamorphic rocks', each defined by its formation; 'These physical properties are the result of the processes that formed the rocks.' Grokipedia Rock cycle defines each type by its origin."
+    },
+    {
+     "claim": "Wrong: hardness, colour and age do not decide the kind",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Rock_(geology)",
+     "note": "Classification is by formation process; colour, texture and hardness are results of that process. Kortz and Murray (GSA 2008 abstract, https://gsa.confex.com/gsa/2008AM/webprogram/Paper149559.html) record that students 'do not understand that rocks are the consequences of earth processes and not simply a matter of classification'."
+    },
+    {
+     "claim": "Context: a dark rock can be igneous (basalt), sedimentary (coal) or metamorphic (slate)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coal",
+     "note": "Grokipedia Coal: 'combustible black or brownish-black sedimentary rock'; Grokipedia Basalt: 'dark gray to black' igneous; Wikipedia Slate: metamorphic, 'frequently grey' (often dark grey to black)."
+    },
+    {
+     "claim": "Misconception basis: 'black = igneous' (Kortz and Murray 2009 Table 4)",
+     "result": "ok",
+     "source": "https://cdn.serc.carleton.edu/files/NAGTWorkshops/earlycareer2015/monday_am_example_misconceptio.pdf",
+     "note": "Verified under the Materials barrier: 'Magma turns into a black rock and black rocks were magma (i.e. black = igneous).'"
+    }
+   ]
+  }
  },
- "unit_notes": ""}
+ "unit_notes": "One error, a wording fix in a stem (obsidian 'no crystals in it at all'; the key is right). Kortz and Murray (2009) Table 4 verified from the SERC reprint: 'Metamorphic rocks melt' (Atomic Scale barrier), 'Rocks come to the surface through volcanoes or earthquakes' (Deep Time), 'Granite is made from sediments' (Bedrock), 'black = igneous' and 'Rocks can change into any other rock' (Materials), 'Volcanism is needed to provide the heat for rock formation' (Large Spatial Scale), 'Pressure to form rocks is caused by things like heat, water, faults, and air' (Pressure); the study was of college students (about 200 questionnaires, 10 interviews, four colleges). The GSA 2008 quote in M4 is verified (that abstract is by Kortz, Murray and Smay). Not player-facing but unsupported: the grade_note of 00ead6161d calls 'metamorphic rocks melt' 'the commonest recorded mix-up'; neither the table nor the abstracts give frequencies, so say 'a recorded mix-up'. Facts sheet F2: Grokipedia gives sedimentary rock as about 5% of crustal volume, Wikipedia 7.9%; not asked."
+}

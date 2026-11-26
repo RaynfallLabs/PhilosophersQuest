@@ -1,0 +1,345 @@
+{
+ "unit": "hypothesis-theory-and-law",
+ "questions": {
+  "ef17373efc": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a testable 'If..., then...' statement written before testing is a hypothesis",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hypothesis",
+     "note": "Grokipedia: a hypothesis is 'a proposed explanation ... formulated as a testable statement', 'commonly structured in an if-then format'."
+    },
+    {
+     "claim": "Wrong: 'A theory' (a theory is a broad, well-tested explanation, not an untested prediction)",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'A law' (a law sums up a pattern found in many observations)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Scientific_law",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'A model' (a representation such as a globe; the notebook line is a prediction, not a model)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hypothesis",
+     "note": ""
+    },
+    {
+     "claim": "Context: hypothesis is testable, often if-then; laws and theories rest on many tests; a model is a copy or picture such as a globe",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": "If-then is described as common, not required; context says 'often', which is accurate."
+    }
+   ]
+  },
+  "094d88eb9d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Story details: fire-breathing dragon in the garage; invisible; floats so flour shows no footprints; heatless fire so an infrared (heat) camera finds nothing",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/The_Demon-Haunted_World",
+     "note": "Wikipedia quotes Sagan: 'she's an invisible dragon', flour on the floor answered by 'this dragon floats in the air', infrared camera answered by heatless fire. Grokipedia agrees ('the dragon's fire is cold'). In the book Sagan himself makes the claim to 'you'; the stem's 'a man' and 'his friend' is a fair retelling."
+    },
+    {
+     "claim": "Context: Carl Sagan, astronomer, told this in The Demon-Haunted World and asked how such a dragon differs from no dragon at all",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/The_Demon-Haunted_World",
+     "note": "Sagan: 'Now what's the difference between an invisible, incorporeal, floating dragon who spits heatless fire and no dragon at all?' Book 1995 (Ann Druyan co-wrote four of its chapters; the dragon tale is Sagan's own). Grokipedia: Sagan an American astronomer."
+    },
+    {
+     "claim": "Key: not a scientific hypothesis because no test could ever show it wrong",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/The_Demon-Haunted_World",
+     "note": "Grokipedia: each disproof is met with an ad hoc qualification so the claim cannot be contradicted. Wikipedia quotes Sagan: 'Your inability to invalidate my hypothesis is not at all the same thing as proving it true.' Berkeley: a testable idea is one about which evidence could be gathered."
+    },
+    {
+     "claim": "Wrong: 'No scientist has proven it to be true' (science does not prove ideas; unproven hypotheses are still hypotheses)",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'It is not written as an if-then sentence' (if-then is a common habit, not a requirement)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hypothesis",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'Only one person has ever believed it' (how many believe an idea has nothing to do with testability)",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": ""
+    }
+   ]
+  },
+  "95026a0345": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a hypothesis about an extinct dinosaur's feathers can be tested by searching its fossils for traces of feathers",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": "Berkeley: predictions 'often have to do with past events'; 'experimentation is only one approach'; ideas are tested by detailed observation of the natural world."
+    },
+    {
+     "claim": "Wrong: 'Yes, by building a life-size model of one' (a model shows the builder's idea; it cannot show whether the animal had feathers)",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": ""
+    },
+    {
+     "claim": "Wrong: 'No, for no one has ever seen one alive' and 'No, for ideas about the past cannot be tested'",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": "Berkeley lists 'ideas about the past cannot be tested' (only experiments test) as a misconception."
+    },
+    {
+     "claim": "Context: Sinosauropteryx, a small meat-eating dinosaur, described in 1996 from fine-grained rock in China, the first non-avian dinosaur with feathers",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Sinosauropteryx",
+     "note": "Wikipedia: described 1996 by Ji and Ji, Liaoning Province; first dinosaur taxon outside Avialae with evidence of feathers; lizard in a gut; preserved in 'siltstone mixed with volcanic ash'. Grokipedia Feathered_dinosaur: 'first non-avian dinosaur with filamentary proto-feathers described in 1996', carbonized impressions in fine-grained rock. A collagen-fibre reading (Lingham-Soliar 2007) was rejected by most researchers (Smithwick et al. 2017)."
+    },
+    {
+     "claim": "Context: over 30 feathered kinds are now known",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Feathered_dinosaur",
+     "note": "Grokipedia: 'over 30 species'; Wikipedia: feathers found in 'dozens of genera'. The count only grows, so 'over 30' survives new finds."
+    }
+   ]
+  },
+  "caeaf20e1e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Physics in the stem: a black-painted can of water warms faster in sunshine than a white one",
+     "result": "ok",
+     "source": "https://www.noaa.gov/jetstream/ll-canned-heat",
+     "note": "NOAA JetStream 'Canned Heat' lesson: the dark can absorbs more energy and warms its water more; the white can stays cooler."
+    },
+    {
+     "claim": "Key: results that agree with a hypothesis support it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hypothesis",
+     "note": "Grokipedia: results 'support or refute' a hypothesis; Berkeley: science 'accepts or rejects ideas based on the evidence; it does not prove or disprove them'."
+    },
+    {
+     "claim": "Wrong: 'His results prove it true for good' and 'It needs no more testing at all'",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": "Berkeley lists 'science proves ideas' as a misconception; accepted ideas stay open to new evidence."
+    },
+    {
+     "claim": "Wrong: 'It has now become a scientific law'",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": "Berkeley: hypotheses, theories and laws are different kinds of explanation and none grows into another; in any case a few weeks of one student's tests do not make a law."
+    },
+    {
+     "claim": "Context: science does not call an idea proven for good; scientists keep testing well-supported ideas",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": ""
+    }
+   ]
+  },
+  "81cb5f29a7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: germ theory is the idea that many illnesses are caused by germs too small to see",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Germ_theory_of_disease",
+     "note": "Grokipedia: specific microorganisms (bacteria, viruses, fungi, protozoa) 'are the primary causative agents of many infectious diseases'."
+    },
+    {
+     "claim": "Key: to a scientist a theory is a well-tested explanation of how nature works",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Scientific_theory",
+     "note": "Grokipedia: 'a well-substantiated explanation of some aspect of the natural world', based on facts repeatedly confirmed by observation and experiment."
+    },
+    {
+     "claim": "Wrong: 'A guess that is still waiting for its first test' (the everyday sense the boy uses)",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": "Berkeley: everyday 'theory' is 'a hunch with little evidential support'; the scientific sense differs."
+    },
+    {
+     "claim": "Wrong: 'An idea one step short of becoming a law'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Scientific_theory",
+     "note": "Grokipedia calls theories 'graduating' into laws a common misconception; Berkeley agrees."
+    },
+    {
+     "claim": "Wrong: 'A rule that has been proven true forever'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Scientific_theory",
+     "note": "Theories are provisional and can be refined as new evidence emerges."
+    },
+    {
+     "claim": "Context: germ theory has over a century of evidence, from Louis Pasteur and Robert Koch onward",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Germ_theory_of_disease",
+     "note": "Pasteur's experiments 1850s-1860s; Koch's anthrax work and postulates 1870s-1880s (tuberculosis 1882, cholera 1883). Well over a century."
+    }
+   ]
+  },
+  "0b94a8a87d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Physics: equal extra weights give equal extra stretch, so long as the spring is not overstretched",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hooke's_law",
+     "note": "F = kx; holds only up to the elastic (proportional) limit, past which the spring deforms for good."
+    },
+    {
+     "claim": "Key: a short statement, often an equation, summing up a pattern found again and again is a law",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Scientific_law",
+     "note": "A scientific law is a statement based on repeated experiments or observations that describes a range of phenomena, often as an equation."
+    },
+    {
+     "claim": "Wrong: 'A theory', 'A hypothesis', 'An observation'",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": "A theory explains why (Hooke's statement explains nothing); a hypothesis is a tentative idea still to be tested; a single observation is not a summary of a pattern across many springs."
+    },
+    {
+     "claim": "Context: Hooke's law, named after Robert Hooke, who stated it in the 1670s",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Hooke%27s_law",
+     "note": "Anagram 'ceiiinosssttuv' in 1676; solution 'ut tensio, sic vis' published 1678 in De Potentia Restitutiva (Hooke said he had known it since 1660). 'Stated it in the 1670s' is right."
+    },
+    {
+     "claim": "Context: it says how far a spring stretches, not why, and fails past the spring's limit",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Hooke%27s_law",
+     "note": "Wikipedia: a first-order linear approximation that fails once forces exceed some limit (permanent deformation)."
+    }
+   ]
+  },
+  "71e4cff4fa": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: Newton's law of gravity published in 1687 and applies to every pair of masses",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Newton's_law_of_universal_gravitation",
+     "note": "Published in the Principia, 1687: every particle attracts every other, with force rising with the product of the masses and falling with the square of the distance, along the line joining them."
+    },
+    {
+     "claim": "Stem: in a later edition Newton wrote that something about gravity was still beyond him",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/General_Scholium",
+     "note": "The General Scholium first appeared in the second edition (1713): 'I have not as yet been able to discover the reason for these properties of gravity from phenomena', followed by 'hypotheses non fingo'."
+    },
+    {
+     "claim": "Key: his law left unexplained what causes the pull of gravity",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hypotheses_non_fingo",
+     "note": "Latin: 'Rationem vero harum gravitatis proprietatum ex phaenomenis nondum potui deducere, & hypotheses non fingo'; he declined to invent an explanation of the cause. The draft uses no quotation marks here, and its paraphrase ('refused to make up a guess') is faithful."
+    },
+    {
+     "claim": "Wrong: 'How strongly two masses pull each other', 'How the pull weakens with distance', 'Which way the pull of gravity acts'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Newton's_law_of_universal_gravitation",
+     "note": "The law gives all three: strength from the product of the masses, inverse-square falloff, and direction along the line joining the centres (attraction)."
+    },
+    {
+     "claim": "Context: more than two centuries later, Einstein's general relativity, a theory, explained gravity as mass bending space and time",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Newton's_law_of_universal_gravitation",
+     "note": "General relativity (1915-1916) describes gravity as the warping of spacetime by mass and energy; 1713 to 1915 is just over two centuries. 'Mass bending space and time' is a fair child-level simplification (mass and energy)."
+    }
+   ]
+  },
+  "619daa9136": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: halving a gas's volume at constant temperature doubles its pressure; found in the 1600s; called a law",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Boyle%27s_law",
+     "note": "Fixed amount of gas at fixed temperature: pressure and volume inversely proportional. First noted by Towneley and Power; Boyle published 1662; Mariotte independently 1676/1679."
+    },
+    {
+     "claim": "Stem: the particle theory explains it: crowded closer, the particles strike the walls more often",
+     "result": "ok",
+     "source": "https://openstax.org/books/chemistry-2e/pages/9-5-the-kinetic-molecular-theory",
+     "note": "OpenStax: with a smaller volume 'collisions with the container wall will therefore occur more frequently and the pressure exerted by the gas will increase'; the gas laws 'do not tell us why gases follow these relationships'."
+    },
+    {
+     "claim": "Key: No, a theory does not become a law, for the two do different jobs",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Scientific_theory",
+     "note": "Grokipedia: theories 'graduating' into laws is a common misconception; laws describe, theories explain. Berkeley: 'one cannot grow into another'."
+    },
+    {
+     "claim": "Wrong: 'Yes, once it has been tested enough', 'Yes, once it is written as an equation', 'No, for a theory can never be tested'",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": "All wrong: theories are tested and remain theories; theories have equations too (kinetic theory: PV = 1/3 N m <v^2>)."
+    },
+    {
+     "claim": "Context: Boyle's law 'has been a law since Robert Boyle measured it in 1662'",
+     "result": "error",
+     "source": "https://www.sciencehistory.org/stories/magazine/full-boyle",
+     "note": "Not so. Science History Institute: the law was 'never stated outright in Boyle's work'; it has to be read from his 1662 table, whose column E heading reads 'What that pressure should be according to the hypothesis, that supposes the pressures and expansions to be in reciprocal proportions' (https://www.chemteam.info/GasLaw/Gas-Boyle-Data.html). Boyle presented the relation as a hypothesis his numbers fitted (he credited Towneley and Power); the name 'Boyle's law' came later. Fix: 'the gas law, Boyle's law, goes back to Robert Boyle's measurements of 1662, and the particle theory is still a theory after more than 150 years of tests.'"
+    },
+    {
+     "claim": "Context: the particle theory is still a theory after more than 150 years of tests; it has equations of its own",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Kinetic_theory_of_gases",
+     "note": "Bernoulli 1738; Kronig 1856; Clausius 1857; Maxwell 1860; Boltzmann 1872. Over 165 years since Clausius and Maxwell. The theory derives PV = 1/3 N m <v^2>."
+    }
+   ]
+  },
+  "5aa6ca9275": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: Mia is wrong; both Newton's laws and cell theory rest on a great deal of evidence",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": "Berkeley: hypotheses, theories and laws 'differ in breadth - not in level of support'. Grokipedia Scientific_theory: laws and theories hold 'distinct but equally robust roles in science'."
+    },
+    {
+     "claim": "Wrong: 'Yes, a law has been proven true for good'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Newton's_laws_of_motion",
+     "note": "Newton's laws are valid for speeds much less than light and scales larger than atoms; beyond that relativity and quantum mechanics take over. Science does not prove ideas (Berkeley)."
+    },
+    {
+     "claim": "Wrong: 'Yes, a theory is still partly a guess'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Scientific_theory",
+     "note": "A theory is a well-substantiated explanation, not a guess."
+    },
+    {
+     "claim": "Wrong: 'No, a theory deserves more trust than a law'",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/for-educators/prepare-and-plan/correcting-misconceptions/",
+     "note": "Neither outranks the other in support."
+    },
+    {
+     "claim": "Context: Newton's laws describe how forces change motion; cell theory explains how living things are built",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_theory",
+     "note": "Cell theory: all living things are made of one or more cells, the cell is the basic unit of life, cells come from cells (Schleiden 1838, Schwann 1839, Virchow 1855). Newton's three laws (Principia, 1687) relate forces and motion."
+    },
+    {
+     "claim": "Context: neither is proven forever; Newton's laws give way to Einstein's relativity near the speed of light",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Newton's_laws_of_motion",
+     "note": "Special relativity applies at speeds near light speed. (Cell theory too has been reassessed at its edges, e.g. viruses, without being overturned.)"
+    }
+   ]
+  }
+ },
+ "unit_notes": "One error (619daa9136): the context's 'has been a law since Robert Boyle measured it in 1662' is untrue; Boyle's 1662 table called the reciprocal relation 'the hypothesis' and never stated it as a law. Checked that no key depends on whether a hypothesis becomes a theory: the keys turn only on a theory not becoming a law, on which Grokipedia and Berkeley agree. Minor wording note, not an error: caeaf20e1e's context 'a few weeks of one student's tests do not make a law' could be read as hinting that more tests would turn a hypothesis into a law; dropping the clause, or 'and no amount of testing turns a hypothesis into a law', avoids the hint. Quotation check: no draft puts a real person's words in quotation marks (the only quoted text is the boy's if-then sentence in ef17373efc)."
+}

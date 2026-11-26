@@ -1,0 +1,68 @@
+{
+ "kind": "draft",
+ "unit": [],
+ "questions": {
+  "27b5c888bb": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "length_budget: Total record cost 528 chars > tier 2 hard cap 504 (target 480 + 5%)"
+   ],
+   "flag": []
+  },
+  "20a90a0e7a": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "493cc575ba": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "62503961ef": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: long(70>55)"
+   ],
+   "flag": []
+  },
+  "48157db795": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "83e8a524e5": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: long(59>55)",
+    "voice: closer_long(22)"
+   ],
+   "flag": []
+  },
+  "477404ea19": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "23760b9fa2": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "819e1fd1cd": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  }
+ },
+ "n_fail": 0
+}

@@ -1,0 +1,57 @@
+{"unit": "measuring-like-a-scientist",
+ "questions": {
+  "ea07707af3": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the only choice that is specific and names a contrast ('English units, not metric'). The three lures are generic slips. In a unit on measuring, a student who guesses 'units' gets it right. The lures are still real errors, so this is minor.",
+     "fix": "Optional: make one lure equally specific, e.g. 'They were worked out for Earth's gravity, not Mars's'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'Figures for every small thruster firing' is vague for a 6th grader (figures of what?).",
+     "fix": "'figures for the push of every small thruster firing'."}
+   ]},
+  "108e628ef5": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "'How many grams make one kilogram' is a 4th-grade fact (Common Core 4.MD.1 teaches the relative sizes of kg and g, km and m, l and ml), and it is the metric fact students know best. There is no grade-6 why. Q2, Q3 and Q4 are three prefix-meaning questions in one unit of nine, and this one adds the least.",
+     "fix": "Test kilo- on a unit students have not memorised, so the prefix meaning itself is tested (the same prefix means the same thing on every unit): 'Food labels in many countries give a snack's energy in kilojoules, built on the joule, a unit of energy. What does the kilo- in kilojoule mean?' Choices: 'A thousand joules' / 'A hundred joules' / 'A million joules' / 'A thousandth of a joule'."}
+   ]},
+  "eaeb654b09": {"verdict": "ok",
+   "issues": []},
+  "12d6bcb193": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "100 centimetres to a metre is a 3rd-4th grade ruler fact. Decimetres and hectometres are words few 6th graders know, so a student picks the familiar ruler unit and the question comes down to centimetres against millimetres. Only two choices are live.",
+     "fix": "Test centi- on a unit students do not know by heart: 'A bottle of juice in Europe is labelled 25 centilitres. What part of a litre is one centilitre?' Choices: 'A hundredth of a litre' / 'A thousandth of a litre' / 'A tenth of a litre' / 'A hundred litres' (the centi-/hecto- mix-up, M2)."}
+   ]},
+  "65d919d8c9": {"verdict": "ok",
+   "issues": []},
+  "cba5994641": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Report 64 centimetres as the car's true distance' and 'Decide that the four longer runs were wrong' are not choices a 6th grader would take seriously. Only 'Erase it' competes with the key, so this is a two-way choice. 'Don't leave out results' is also the lesson of T1's magnet question ('Keep his idea, but leave out these results'), which makes the erase lure the easiest one to rule out.",
+     "fix": "Replace 'Report 64 centimetres...' with 'Average it in with the other four, just as it is' (a real student habit; it names the average without asking for one). Replace 'Decide that the four longer runs were wrong' with 'Keep it, but measure only the four good runs again'."}
+   ]},
+  "60d3405444": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Common sense gives the key (times that agree look trustworthy). 'The group whose times cover a wider range' is the weakest lure, and it is the only one that gives no reason, where the 'Either' and 'Neither' lures each carry an 'as...' clause. So the choices are unbalanced and only three are live.",
+     "fix": "Give it the misconception's reason: 'The group whose wider spread caught more of the swings' variety'. Or give the key and that lure no reasons and the other two short ones, so all four match in shape."}
+   ]},
+  "e44e578df3": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'No evaporation at all during the week' is a dead choice, and 'Just the same evaporation as the others' gives no reason. In effect this is a choice between more and less.",
+     "fix": "Replace the two weak lures with 'The true evaporation, since seeping is a kind of evaporating' and 'The true evaporation, since the crack is too small to count'. Both are real misconceptions, and they keep the 'same' idea live."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'what will its result seem to show?': 'its' could be read as the class's result or the dish's.",
+     "fix": "'what will that dish's result seem to show?'"}
+   ]},
+  "07b215ae83": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Q7's context already names 'slips in starting and stopping the stopwatch' as the cause of a spread, which is this question's key. The stem's 'her ten times are all a little different' also restates the key of T1's 'why repeat a trial' question ('Each drop comes out a little different'). Asking for the cause is a real step up, so this is acceptable.",
+     "fix": "Change Q7's context example to 'such as a pendulum let go from different heights' so the two cards do not teach the same cause."}
+   ]}
+ },
+ "unit_notes": "No question asks for arithmetic: Q2 to Q4 ask what a prefix means, not a conversion, and averages appear only in context or as a named habit in the Q6 fix. Prefix load: three of the nine questions are prefix meanings, and two of them (kilogram, centimetre) are 3rd-4th grade facts with no grade-6 why. The fixes test the same prefixes on units students do not know by heart (kilojoule, centilitre), so the prefix's meaning is tested, not a memorised pair. Overlaps with T1 measuring-and-the-fair-test: (1) Q9's stem restates T1's 'each drop comes out a little different' and keys the cause (reaction time). That is acceptable, since it is the next step. (2) Q6 (odd run) shares T1's 'don't leave out results' lesson, but it keys the outlier procedure (find a cause, repeat). Acceptable once the lures are fixed. (3) T1's mass unit (pumpkin, 6 kilograms) is not the same fact as kilo- meaning a thousand. No question re-asks the fair test, the meniscus, taring, the testable question or the line graph. Q7's context touches T4's line between precision and accuracy ('a faulty tool can be off by the same amount every time') in the card only; keep it out of any key. Q1 (Mars Climate Orbiter) gives the grade's 'why one shared system' with a documented case. Scope gaps (the litre, the second and the degree Celsius as units) are fine, since T1 already asked the units of each quantity."
+}

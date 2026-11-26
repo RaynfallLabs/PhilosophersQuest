@@ -1,0 +1,64 @@
+{"unit": "hypothesis-theory-and-law",
+ "questions": {
+  "ef17373efc": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "A strict reader would call 'If longer wings, then farther glide' a prediction rather than a hypothesis, since it names no proposed cause. The scope accepts the if-then form, and 'prediction' is not among the choices, so there is only one defensible answer.",
+     "fix": "None needed. Keep 'prediction' out of the choices."}
+   ]},
+  "094d88eb9d": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Only one person has ever believed it' is a dead choice: no 6th grader thinks a claim stops being scientific because of how many people believe it. Only three choices are live. The stem's list of excuses also leads to the key, so the weak lure matters more.",
+     "fix": "Replace it with 'It is about a dragon, a creature of old stories'. A student who judges by the subject, not by testability, will pick it, and it is clearly wrong."},
+    {"axis": "clarity", "severity": "low",
+     "what": "The two 'for' clauses ('for the dragon floats', 'for its fire gives off no heat') are old-fashioned and slow down a 6th-grade reader.",
+     "fix": "'Flour on the floor would show no footprints, since the dragon floats, and a heat camera would find nothing, since its fire gives off no heat.'"}
+   ]},
+  "95026a0345": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Yes, by searching its fossils' is the common-sense answer for any student who knows from T1 rock-layers-and-fossils that fossils show what lived long ago. 'Yes, by building a life-size model' is weak. The grade-6 lesson (an idea about the past can be tested by observation, not only by experiment) is tested only by the two 'No' lures, so the question comes close to re-asking the T1 fossil fact.",
+     "fix": "Replace the model choice with 'Yes, by asking other scientists whether they agree' (the misconception that agreement tests an idea). Consider 'No, for no experiment can be run on it' in place of 'No, for no one has ever seen one alive', so the experiment-only misconception (M4) is the lure."}
+   ]},
+  "caeaf20e1e": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "All three wrong choices are absolute overclaims ('prove it true for good', 'become a scientific law', 'needs no more testing at all'), and the key is the only modest one, so a test-wise student picks it by elimination. 'Proven for good' and 'needs no more testing' also stand or fall together, so they can be ruled out as a pair.",
+     "fix": "Choices: 'His results support it' (key) / 'His results prove it true for good' / 'His results tell nothing about it yet' / 'His results count for nothing until he explains why'. The two new lures are modest-sounding but wrong."},
+    {"axis": "fact", "severity": "medium",
+     "what": "The lure 'It has now become a scientific law', and the context's reason for it ('a few weeks of one student's tests do not make a law'), suggest that a hypothesis turns into a law once it has enough tests. That is the promotion ladder (M2) the unit rejects elsewhere, and whether a hypothesis 'becomes' anything is where the sources disagree. The unit should not lean on it.",
+     "fix": "Drop the law choice (the fix above does). Cut the context's last clause, or replace it with 'and no number of tests makes an idea proven for good'."}
+   ]},
+  "81cb5f29a7": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The set-up ('a boy shrugs... he says') signals that the boy is wrong, which rules out 'A guess that is still waiting for its first test'. The other two lures (one step short of a law, proven forever) are strong, so three choices stay live.",
+     "fix": "None needed."}
+   ]},
+  "0b94a8a87d": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Every extra weight they add stretches it by the same extra amount' is true only if the weights are equal.",
+     "fix": "'Each equal weight they add stretches it by the same extra amount.'"}
+   ]},
+  "71e4cff4fa": {"verdict": "ok",
+   "issues": []},
+  "619daa9136": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'No, for a theory can never be tested' is the weakest lure. The rest of the unit teaches that a theory is the best-tested kind of idea.",
+     "fix": "'No, for only a law can be written as an equation' (wrong: the context says the theory has equations of its own, and it mirrors the 'Yes, once it is written as an equation' lure)."}
+   ]},
+  "5aa6ca9275": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "medium",
+     "what": "For THIS pair, the lure 'No, a theory deserves more trust than a law' can be defended. The card itself teaches that Newton's laws fail near the speed of light, while cell theory has no such limit, so a sharp student can argue that cell theory deserves more trust than Newton's laws. That is a second defensible answer.",
+     "fix": "Make the lure clearly general: 'No, a theory always deserves more trust than a law'."},
+    {"axis": "other", "severity": "low",
+     "what": "Within the unit, two lures re-test keys from other questions: 'a law has been proven true for good' is Q4's fact and 'a theory is still partly a guess' is Q5's. A student who has learned Q4 and Q5 can rule out both, leaving the key against one lure.",
+     "fix": "Acceptable once the medium fix is made. Optionally replace 'Yes, a theory is still partly a guess' with 'Yes, a law has been tested more times than any theory'."}
+   ]}
+ },
+ "unit_notes": "Honesty rails: Q5 says plainly that a theory is not a guess; Q6 (context) and Q7 say a law describes without explaining; Q8 says a theory does not become a law, on which all the sources agree. No question keys whether a hypothesis becomes a theory. But Q4's law lure and its context lean on the idea that a hypothesis becomes a law after enough tests, the same kind of promotion; fix as given. The proof misconception appears as a lure three times (Q4 key, Q5 'proven forever', Q9 'a law has been proven'), which is acceptable as lures. Q8 and Q9 are close (both reject ranking theory against law) but key different scope lines (different jobs, against both strong). Overlaps with other units: Q2 (untestable dragon) is next to T1 measuring-and-the-fair-test's 'which question can a fair test answer', but it keys unfalsifiability, which is new at grade 6. Q3 (feathered dinosaur) leans on T1 rock-layers-and-fossils; see its issue. Cell theory is only named in Q9 (not keyed), so there is no overlap with cells-the-building-blocks-of-life. Newton's third law (action-and-reaction) is not touched. Q5 keys what the word 'theory' means, not germ theory's evidence, so how-germs-were-proven (T5) is not repeated. Scope is covered: if-then hypothesis (Q1), testability (Q2, Q3), support not proof (Q4), theory (Q5), law (Q6, Q7), different jobs and both strong (Q8, Q9)."
+}

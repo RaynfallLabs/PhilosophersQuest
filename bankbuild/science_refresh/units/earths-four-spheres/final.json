@@ -1,0 +1,206 @@
+{
+ "unit": "earths-four-spheres",
+ "questions": [
+  {
+   "tier": 2,
+   "topic": "earths-four-spheres",
+   "question": "A girl fills a glass jar with ordinary air and screws the lid on tight. The air in the jar is a mixture of gases, the same mixture as the atmosphere around Earth. Which gas makes up most of it?",
+   "answer": "Nitrogen",
+   "choices": [
+    "Nitrogen",
+    "Oxygen",
+    "Carbon dioxide",
+    "Water vapour"
+   ],
+   "context": "Nitrogen makes up about 78 percent of dry air and oxygen about 21 percent, so there is nearly four times as much nitrogen as oxygen. Most of the last 1 percent is argon; carbon dioxide is only about 0.04 percent, and water vapour ranges from almost none to about 4 percent, depending on how damp the air is.",
+   "facts": [
+    "F6",
+    "M1"
+   ],
+   "grade_note": "What the atmosphere is made of, mostly nitrogen and then oxygen, is a 6th-grade Earth-systems fact, and many students believe that air is mostly oxygen."
+  },
+  {
+   "tier": 2,
+   "topic": "earths-four-spheres",
+   "question": "Deep under a farm, rain that soaked into the ground long ago fills the tiny spaces between grains of sand and the cracks in the rock. The farmer pumps this groundwater up from a well. To which of Earth's four spheres does the groundwater belong?",
+   "answer": "The hydrosphere",
+   "choices": [
+    "The hydrosphere",
+    "The geosphere",
+    "The biosphere",
+    "The atmosphere"
+   ],
+   "context": "The hydrosphere is all of Earth's water, wherever it is and whatever its form: the sea, rivers and lakes, ice and snow, the water vapour in the air, and the groundwater under the land. The sand and rock that hold the groundwater are part of the geosphere, but the water in them is not.",
+   "facts": [
+    "F1",
+    "F4",
+    "F5",
+    "M3"
+   ],
+   "grade_note": "Sorting Earth's parts into the four spheres is 6th-grade content (TEKS 6.10A), and groundwater, hidden inside rock, is easy to put in the geosphere by mistake."
+  },
+  {
+   "tier": 2,
+   "topic": "earths-four-spheres",
+   "question": "On a trip to a mountain valley, a student writes down four things she sees there, to sort them into Earth's four spheres. Which of them belongs in the geosphere?",
+   "answer": "The soil of a farmer's field",
+   "choices": [
+    "The soil of a farmer's field",
+    "The snow on a high peak",
+    "The roots of a pine tree",
+    "The steam from a hot spring"
+   ],
+   "context": "Soil is mostly tiny grains of weathered rock, so it belongs in the geosphere with rock, sand and mud, even though it also holds water, air and living things. Snow and steam are both water, part of the hydrosphere, and the roots are part of a living tree, in the biosphere.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "M3"
+   ],
+   "grade_note": "Identifying the parts of each sphere is the 6th-grade line (TEKS 6.10A), and soil, full of roots and worms, is the geosphere part students are least sure of."
+  },
+  {
+   "tier": 2,
+   "topic": "earths-four-spheres",
+   "question": "Earth's four spheres act on one another all the time, and a change in one can change another. Which event shows the hydrosphere acting on the atmosphere?",
+   "answer": "Warm sea water heating the air above it",
+   "choices": [
+    "Warm sea water heating the air above it",
+    "Rain slowly wearing a rocky hill down",
+    "A forest's leaves giving oxygen to the air",
+    "A volcano blowing ash high into the sky"
+   ],
+   "context": "The ocean takes in most of the sunlight that reaches Earth's surface and gives much of that heat back to the air above it, so the hydrosphere warms the atmosphere. Rain wearing down rock is the hydrosphere acting on the geosphere, leaves giving off oxygen are the biosphere acting on the atmosphere, and a volcano's ash is the geosphere's rock blasted into the atmosphere.",
+   "facts": [
+    "F11",
+    "F13",
+    "F14",
+    "F16",
+    "F18",
+    "F21"
+   ],
+   "grade_note": "Telling which sphere acts on which in an everyday event is the 6th-grade four-spheres skill (TEKS 6.10A; NGSS 5-ESS2-1)."
+  },
+  {
+   "tier": 2,
+   "topic": "earths-four-spheres",
+   "question": "A pine tree grows out of a narrow crack in a cliff, and year by year the crack widens as the tree grows. Which two of Earth's spheres act on each other here?",
+   "answer": "The biosphere and the geosphere",
+   "choices": [
+    "The biosphere and the geosphere",
+    "The hydrosphere and the geosphere",
+    "The biosphere and the atmosphere",
+    "The atmosphere and the hydrosphere"
+   ],
+   "context": "The pine is a living thing, part of the biosphere, and the cliff is rock, part of the geosphere: as the tree's roots thicken in the crack, they pry the rock apart. Water freezing in the same crack would be the hydrosphere at work instead, and the broken bits of rock may one day become soil that feeds new plants.",
+   "facts": [
+    "F1",
+    "F2",
+    "F12",
+    "F11"
+   ],
+   "grade_note": "6th-grade lessons on the four spheres use roots breaking rock as the standard case of the biosphere acting on the geosphere."
+  },
+  {
+   "tier": 2,
+   "topic": "earths-four-spheres",
+   "question": "A volcano erupts, and a great grey cloud of ash and gas billows high into the sky above it. Which gas does a volcano give off more of than any other?",
+   "answer": "Water vapour",
+   "choices": [
+    "Water vapour",
+    "Carbon dioxide",
+    "Sulfur dioxide",
+    "Nitrogen"
+   ],
+   "context": "Magma deep underground holds water and other gases dissolved in it under great pressure, and as it rises the gases bubble out of it. Water vapour is usually 60 to 90 percent of a volcano's gas, with carbon dioxide next and then sulfur dioxide, while nitrogen makes up only a small part of it. So an eruption is the geosphere adding water, as well as other gases and ash, to the atmosphere.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16",
+    "F20"
+   ],
+   "grade_note": "A volcano adding gases to the air is the 6th-grade example of the geosphere acting on the atmosphere, and the main gas it adds is the simple fact beneath it."
+  },
+  {
+   "tier": 2,
+   "topic": "earths-four-spheres",
+   "question": "All day long, waves roll in from the open sea one after another and break on a sandy beach. What makes most ocean waves like these?",
+   "answer": "Wind blowing across the water",
+   "choices": [
+    "Wind blowing across the water",
+    "The pull of the Moon's gravity",
+    "Earthquakes under the sea floor",
+    "Earth spinning on its axis"
+   ],
+   "context": "As wind blows over the sea, it drags on the surface and pushes the water up into ridges, so most waves are the atmosphere acting on the hydrosphere. The pull of the Moon makes the tides, the slow rise and fall of the sea through the day, and sudden shoves of the sea floor, as in an undersea earthquake, make tsunamis.",
+   "facts": [
+    "F19",
+    "M6"
+   ],
+   "grade_note": "Wind making waves is the 6th-grade case of the atmosphere acting on the hydrosphere, and students often credit the Moon, which makes the tides."
+  },
+  {
+   "tier": 2,
+   "topic": "earths-four-spheres",
+   "question": "Farmers plant crops on the slopes of many volcanoes, even though the volcano may erupt again one day. Why is the land there so good for crops?",
+   "answer": "Weathered ash adds minerals to the soil",
+   "choices": [
+    "Weathered ash adds minerals to the soil",
+    "Heat from the magma keeps the soil warm",
+    "The high slopes are safe from frost",
+    "Steam from below keeps the soil damp"
+   ],
+   "context": "Volcanic ash is not the soft ash of a fire but tiny bits of rock and glass, and over many years it weathers into soil rich in the minerals that plants need, so the geosphere feeds the biosphere. High slopes are usually colder than the land below them, not safer from frost, for on average the air cools by about 6.5 degrees Celsius for every kilometre of height.",
+   "facts": [
+    "F16",
+    "F17",
+    "F10",
+    "F22",
+    "M4",
+    "M5"
+   ],
+   "grade_note": "6th-grade Earth-systems lessons show the geosphere acting on the biosphere through volcanic soil, and the fertile ash is the reason people farm beside volcanoes."
+  },
+  {
+   "tier": 2,
+   "topic": "earths-four-spheres",
+   "question": "Climbers on the world's highest mountains often carry tanks of oxygen and breathe from them near the top. Why do they need the extra oxygen up there?",
+   "answer": "The air is thin, so each breath holds less oxygen",
+   "choices": [
+    "The air is thin, so each breath holds less oxygen",
+    "Oxygen makes up a smaller share of the air there",
+    "No plants grow up there to give off oxygen",
+    "The heavy oxygen sinks and stays near the ground"
+   ],
+   "context": "The atmosphere thins with height, and near the top of the highest mountain the air pressure is only about a third of that at sea level, so each breath brings in far less oxygen. The air there is still about 21 percent oxygen, as at sea level, because moving air keeps its gases well mixed, so it does not matter that no plants grow on the peak.",
+   "facts": [
+    "F7",
+    "F8",
+    "F9",
+    "M2"
+   ],
+   "grade_note": "6th-grade lessons on the atmosphere teach that air grows thinner with height, and the steady share of oxygen answers the common belief that high air holds less of it."
+  }
+ ],
+ "revised": {
+  "9763d9373a": {
+   "old_hash": "9763d9373a",
+   "why": "Judge and fact-check (low): the context said the ocean takes in 'most of the Sun's energy that reaches Earth', which overstates it, since about 31 percent is reflected and some is absorbed by the air. It now says 'most of the sunlight that reaches Earth's surface' (F21). Stem, key and choices unchanged."
+  },
+  "580034c810": {
+   "old_hash": "0cffbed5f9",
+   "why": "Judge (medium, tell): 'biosphere' was in three choices and 'geosphere' in two, so the key was the choice sharing most with the others. The choices are rebalanced, as the judge proposed, so each sphere appears exactly twice and the key is no more central than any lure. Judge (low): the stem no longer narrates the roots prying the rock apart, the key of T1 wind-water-and-ice-shape-the-land's root question; it says only that the crack widens as the tree grows, so it asks which spheres act (F1, F2, F12), a fact no other unit asks. Context updated."
+  },
+  "fd4646efcc": {
+   "old_hash": "fd4646efcc",
+   "why": "Judge (medium, tell): 'Oxygen' was a dead lure; few 6th graders think a volcano's fumes are mostly oxygen. It is replaced, as the judge proposed, by 'Nitrogen', a live wrong idea (the main gas of the air) that is only a minor volcanic gas: 99 percent of erupted gas molecules are water vapour, carbon dioxide and sulfur dioxide (USGS, F20). The context says nitrogen is a small part of volcanic gas but does not say it is the main gas of the air, so it gives nothing away to the unit's air question. Stem and key unchanged."
+  },
+  "d9b1f60a17": {
+   "old_hash": "d9b1f60a17",
+   "why": "Judge (low, tell): the key's 'rich soil' was the only choice that restated the stem's 'so good for crops'. The key now names the mechanism, as each lure does: 'Weathered ash adds minerals to the soil' (F17: ash enriches soil with nutrients as it weathers). Fact-check (optional): the context now says high slopes are 'usually' colder, since a mid-slope thermal belt can be freer of frost than a valley floor on calm nights (F22). Stem unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

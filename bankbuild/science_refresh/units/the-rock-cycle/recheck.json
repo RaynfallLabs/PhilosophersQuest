@@ -1,0 +1,50 @@
+{
+ "unit": "the-rock-cycle",
+ "questions": {
+  "57752512b6": {
+   "verdict": "pass",
+   "why": "Stem no longer says 'cools and hardens', so the key no longer repeats a stem verb; cooling rate is the main control of igneous crystal size. The obsidian line says 'almost no crystals', which is right (trace microcrystals, snowflake obsidian).",
+   "sources": [
+    "https://grokipedia.com/page/Igneous_rock",
+    "https://www.usgs.gov/faqs/what-are-igneous-rocks",
+    "https://en.wikipedia.org/wiki/Obsidian"
+   ]
+  },
+  "2ff4da04f5": {
+   "verdict": "pass",
+   "why": "Now tests the 6th-grade core fact directly with no rock names, so it no longer kills lures in the marble and slate items. Key true: metamorphism is solid-state recrystallization, grain size usually grows, the rock becomes denser and more compact, and it does not melt. Lures are the recorded 'metamorphic rocks melt' idea, the sedimentary path and dissolving, all live. The key's 'stays solid, but' form differs from the lures' 'X, then Y', but that difference is the fact itself.",
+   "sources": [
+    "https://www.usgs.gov/faqs/what-are-metamorphic-rocks",
+    "https://grokipedia.com/page/Metamorphic_rock"
+   ]
+  },
+  "9dd30610c7": {
+   "verdict": "pass",
+   "why": "Key no longer the only deep process: 'Hot water deep below stained some of its crystals' is a second deep choice, and the set splits two about crystals, two about cracks. The stem rules out the judge's 'settled into layers' lure, so leaving it out was right. Key true (metamorphic differentiation and recrystallization gather light and dark minerals into bands; granite becomes orthogneiss); staining does not make gneissic bands.",
+   "sources": [
+    "https://grokipedia.com/page/Gneiss",
+    "https://www.usgs.gov/faqs/what-are-metamorphic-rocks"
+   ]
+  },
+  "79f973f128": {
+   "verdict": "pass",
+   "why": "Gneiss is no longer named before it is taught; the start rock is described by how it formed. Starts and ends each repeat twice, and the key ties a lure for the most shared, so there is no centre-of-set tell; both halves must be known. 'This last step' clearly sets the earlier sedimentary-to-metamorphic change aside. Fact true: metamorphic rock partly melts (anatexis) and the melt can rise to form granite.",
+   "sources": [
+    "https://grokipedia.com/page/Rock_cycle",
+    "https://grokipedia.com/page/Gneiss",
+    "https://grokipedia.com/page/Migmatite"
+   ]
+  },
+  "e3719bad15": {
+   "verdict": "pass",
+   "why": "Key true: basalt is the dominant rock of oceanic crust and forms the solid sea bed under the sediment; the continents are on average granite (CK-12 middle-school text says both). Lures truly wrong: granite is continental; limestone forms mainly in warm shallow seas, and the deep-sea chalk ooze is a thin, mostly loose layer, which the stem's 'solid rock' excludes; obsidian is glass from felsic lava. Grade fit: 6th-grade crust content, no T1 question asks it (T1's limestone item is only the lure's basis). No knowledge tell: the stem names no lava or volcano, the four names are parallel and all live. Note only: by volume the lower oceanic crust is gabbro, basalt's coarse twin; it is not a choice, and 'mostly basalt' is the standard simplification.",
+   "sources": [
+    "https://grokipedia.com/page/Basalt",
+    "https://grokipedia.com/page/Oceanic_crust",
+    "https://k12.libretexts.org/Bookshelves/Science_and_Technology/Earth_Science/03%3A_Planet_Earth/3.17%3A_Earth's_Crust",
+    "https://grokipedia.com/page/Limestone",
+    "https://en.wikipedia.org/wiki/Obsidian"
+   ]
+  }
+ }
+}

@@ -1,0 +1,309 @@
+{
+ "unit": "measuring-like-a-scientist",
+ "questions": {
+  "ea07707af3": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Mars Climate Orbiter was an American (NASA) spacecraft that reached Mars in September 1999 and was lost",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mars_Climate_Orbiter",
+     "note": "Launched 11 Dec 1998, approached Mars 23 Sep 1999, signal lost about five minutes into the orbit-insertion burn; declared lost 25 Sep 1999 (Wikipedia)."
+    },
+    {
+     "claim": "It flew far too low into the planet's air",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mars_Climate_Orbiter",
+     "note": "Reconstructed periapsis near 57 km against a targeted 226 km, 'well within the Martian atmosphere'. Wikipedia hedges on whether it was destroyed or skipped back out into solar orbit, but the stem says only that it flew into the air and was lost, which holds either way."
+    },
+    {
+     "claim": "The company that built it (Lockheed Martin Astronautics) sent the navigators figures for the small thruster firings",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mars_Climate_Orbiter",
+     "note": "Lockheed Martin built the craft; its ground software (Small Forces / SM_FORCES) output the impulse of the angular momentum desaturation (AMD) events, 'small thruster firings to manage reaction wheel momentum', in a file used by JPL's navigators. 'Every small thruster firing' is a fair child-level simplification of the AMD firings."
+    },
+    {
+     "claim": "Key: the review board found the figures were in English units, not metric",
+     "result": "ok",
+     "source": "https://nssdc.gsfc.nasa.gov/planetary/text/mco_pr_19991110.txt",
+     "note": "NASA release 99-134 (10 Nov 1999): board chairman Arthur Stephenson called the root cause 'the failed translation of English units into metric units' in ground navigation-related software. The Phase I report names the 'Small Forces' file."
+    },
+    {
+     "claim": "Wrong choices: rounded off too roughly / two digits swapped / faulty thruster sensor",
+     "result": "ok",
+     "source": "https://nssdc.gsfc.nasa.gov/planetary/text/mco_pr_19991110.txt",
+     "note": "None of these is among the root cause or the eight contributing factors the board listed."
+    },
+    {
+     "claim": "Context: builders' software gave the push in pound-force seconds; navigators' software expected newton-seconds",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mars_Climate_Orbiter",
+     "note": "Wikipedia: the Lockheed Martin software 'that calculated the total impulse produced by thruster firings produced results in pound-force seconds' while NASA's system expected SI (newton-seconds). Grokipedia agrees. 'Push' for impulse is a fair simplification. No direction of the error is stated, which avoids the inconsistent sources."
+    },
+    {
+     "claim": "Context: it passed only about 57 kilometres above Mars",
+     "result": "ok",
+     "source": "https://spectrum.ieee.org/why-the-mars-probe-went-off-course",
+     "note": "IEEE Spectrum: JPL navigators' newest estimate was 57 km; Grokipedia and Wikipedia give 57 km too."
+    },
+    {
+     "claim": "Context: SI is the modern metric system that scientists everywhere share",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/International_System_of_Units",
+     "note": "SI is the global standard for physical quantities in science, engineering and commerce."
+    }
+   ]
+  },
+  "108e628ef5": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "The kilogram is the SI base unit of mass",
+     "result": "ok",
+     "source": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+     "note": ""
+    },
+    {
+     "claim": "Key: a thousand grams make a kilogram",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Metric_prefix",
+     "note": "kilo- = 10^3."
+    },
+    {
+     "claim": "Wrong choices: a hundred / ten thousand / a million grams",
+     "result": "ok",
+     "source": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+     "note": "Each is wrong; 100 g is a hectogram, 1,000,000 g a megagram, 10,000 g is 10 kg."
+    },
+    {
+     "claim": "Context: kilo- is from the Greek word for a thousand",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Metric_prefix",
+     "note": "Greek khilioi, 'thousand'."
+    },
+    {
+     "claim": "Context: a kilometre is 1,000 metres; hecto- is a hundred, mega- a million",
+     "result": "ok",
+     "source": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+     "note": "hecto 10^2 'hundred', mega 10^6 'million'."
+    }
+   ]
+  },
+  "eaeb654b09": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a millilitre is a thousandth of a litre",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Milli-",
+     "note": "'one-thousandth of a liter', 1 mL = 10^-3 L."
+    },
+    {
+     "claim": "Wrong choices: a millionth / a hundredth / a tenth of a litre",
+     "result": "ok",
+     "source": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+     "note": "Those are micro-, centi- and deci-; all wrong for milli-."
+    },
+    {
+     "claim": "Context: milli- comes from the Latin mille, a thousand",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Milli-",
+     "note": "'originates from the Latin word mille, meaning thousand'."
+    },
+    {
+     "claim": "Context: 1,000 mL fill a litre and 1,000 mm make a metre",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Milli-",
+     "note": ""
+    },
+    {
+     "claim": "Context: a millionth takes micro-, a hundredth takes centi-",
+     "result": "ok",
+     "source": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+     "note": "micro 10^-6 'millionth'; centi 10^-2 'hundredth'."
+    }
+   ]
+  },
+  "12d6bcb193": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: units each a hundredth of a metre are centimetres",
+     "result": "ok",
+     "source": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+     "note": "centi 10^-2, 'hundredth'."
+    },
+    {
+     "claim": "Wrong choices: millimetres / decimetres / hectometres",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Metric_prefix",
+     "note": "milli 10^-3, deci 10^-1, hecto 10^2; none is a hundredth."
+    },
+    {
+     "claim": "Context: centi- from the Latin centum, a hundred; 100 cm make a metre",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Metric_prefix",
+     "note": "'centi- (10^-2, Latin centum hundred)'."
+    },
+    {
+     "claim": "Context: a millimetre is a thousandth of a metre, a decimetre a tenth, a hectometre 100 metres",
+     "result": "ok",
+     "source": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+     "note": ""
+    }
+   ]
+  },
+  "65d919d8c9": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: cloudy, green, smells of rotten eggs are qualitative data",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/qualitative-data/",
+     "note": "Qualitative data: 'descriptive information that does not use numbers', e.g. a distinctive smell, colours."
+    },
+    {
+     "claim": "Wrong choice: quantitative data",
+     "result": "ok",
+     "source": "https://education.nationalgeographic.org/resource/qualitative-data/",
+     "note": "Quantitative data are 'measured information using numbers'; no numbers in her note."
+    },
+    {
+     "claim": "Wrong choices: an inference / a prediction",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Observation",
+     "note": "Observations are 'direct statements of perceptible facts'; inferences are 'interpretive conclusions drawn from those facts'. 'Smells of rotten eggs' describes the smell, not a conclusion about its cause; nothing in the note forecasts."
+    },
+    {
+     "claim": "Context: quantitative data such as the water's temperature in degrees Celsius; both count as evidence",
+     "result": "ok",
+     "source": "https://www.law.cornell.edu/regulations/texas/19-Tex-Admin-Code-SS-112-26",
+     "note": "TEKS 6.1E: 'collect quantitative data using the International System of Units (SI) and qualitative data as evidence'; Grokipedia Observation: 'Both forms are essential'."
+    }
+   ]
+  },
+  "cba5994641": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: look for a cause, then rerun the odd trial",
+     "result": "ok",
+     "source": "https://www.educationquizzes.com/gcse/biology/unit-4-reasons-for-anomalous-results",
+     "note": "An anomalous result 'does not fit the pattern'; 'you should not ignore it'; consider repeating the anomalous reading and explain its likely cause. Wikipedia Outlier: correct an erroneous value if possible."
+    },
+    {
+     "claim": "Wrong choice: erase it from her notes as it spoils the pattern",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Outlier",
+     "note": "Removing a point 'solely because it is an outlier' is 'often frowned upon by many scientists and science instructors'; exclusions 'should be clearly stated'."
+    },
+    {
+     "claim": "Wrong choices: report 64 cm as the true distance / decide the four longer runs were wrong",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Outlier",
+     "note": "An outlier can come from a measurement slip or apparatus malfunction; one odd run against four agreeing runs is not treated as the true value."
+    },
+    {
+     "claim": "Context: an outlier may be a fluke or a slip; keep it in the notes and say what was done",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Outlier",
+     "note": "Causes include a transient apparatus malfunction and transcription error; the educationquizzes page: always include anomalous values in the evaluation."
+    }
+   ]
+  },
+  "60d3405444": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: the group whose repeated times agree closely gives the more trustworthy result",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Repeatability",
+     "note": "Repeatability is 'the closeness of agreement between the results of successive measurements of the same measurand'; a small spread means higher repeatability, a wide spread more random variation."
+    },
+    {
+     "claim": "Wrong choices: the wider-range group / either group because each ran five trials / neither because both vary",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Observational_error",
+     "note": "Random error is always present (a little spread is normal), so 'neither' is wrong; equal trial counts do not make unequal spreads equally trustworthy."
+    },
+    {
+     "claim": "Context: a wide spread shows something changed from trial to trial, such as stopwatch start/stop slips",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Observational_error",
+     "note": "Lists 'inconsistent reaction times in timing experiments' as a random-error source."
+    },
+    {
+     "claim": "Context: close agreement is no proof of a right answer, since a faulty tool can be off by the same amount every time",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Observational_error",
+     "note": "Systematic errors shift 'all measurements in the same direction' and do not shrink with repeated trials (zero error in a scale)."
+    }
+   ]
+  },
+  "e44e578df3": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a leaking dish makes evaporation seem larger than it really was",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pan_evaporation",
+     "note": "Reasoning is sound. Pan evaporation is worked out from the water lost ('evaporation equals the downward level change plus any measured precipitation'), and Grokipedia says unaccounted loss by splash-out 'overestimates evaporation'. A leak is likewise water lost that is not evaporation, so it is counted as evaporation and inflates the figure. No source found that says this of leaks in so many words, but NWS evaporation-station training (seen in search results) requires space under the pan 'to inspect for leaks' and leaks to be reported, which shows leaks are treated as a known error in exactly this measurement."
+    },
+    {
+     "claim": "Wrong choices: less evaporation / no evaporation / the same evaporation as the others",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pan_evaporation",
+     "note": "The extra loss can only raise the apparent evaporation; none of these is defensible."
+    },
+    {
+     "claim": "Context: a scientist says which way an error throws a result off before setting the result aside",
+     "result": "ok",
+     "source": "https://edu.rsc.org/ideas/help-students-explain-anomalous-results/3008915.article",
+     "note": "RSC: 'be specific and explain why the anomalous result is higher or lower than the expected result'. Wikipedia Outlier: a confirmed-erroneous point may be removed, and the exclusion clearly stated."
+    }
+   ]
+  },
+  "07b215ae83": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: most of the difference between hand-timed drops comes from the timer's reactions at start and stop",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Stopwatch",
+     "note": "In lab hand timing 'the uncertainty arises primarily from the observer's reaction at start and stop, typically around 0.2 seconds'. A 2 m fall lasts about 0.64 s, so this dominates."
+    },
+    {
+     "claim": "Wrong choice: gravity changes between drops",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gravity_of_Earth",
+     "note": "'g itself remains constant for all bodies at a given location'; Earth tides shift g by at most about 0.3 mGal, far too little to matter."
+    },
+    {
+     "claim": "Wrong choice: the ball falls faster on some drops",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gravity_of_Earth",
+     "note": "Same ball, same spot, same release: same fall time."
+    },
+    {
+     "claim": "Wrong choice / context: the stopwatch's clock runs fast then slow; a quartz stopwatch drifts only seconds a month",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Stopwatch",
+     "note": "Consumer quartz stopwatches 'accumulate up to 15 seconds per month'; negligible over a sub-second fall."
+    },
+    {
+     "claim": "Context: the reaction is about a fifth of a second and differs a little every time",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Mental_chronometry",
+     "note": "Simple visual reaction time 150-250 ms, with a trial-to-trial standard deviation of 50-100 ms."
+    },
+    {
+     "claim": "Context: races are now timed electronically, because of hand-timing reaction errors",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fully_automatic_time",
+     "note": "Manual timing 'introduces human reaction time errors of up to 0.2 seconds'; fully automatic timing became mandatory for athletics world records on 1 January 1977."
+    }
+   ]
+  }
+ },
+ "unit_notes": "All nine questions checked; no errors found. Mars Climate Orbiter: the board's finding (English units in Lockheed Martin's Small Forces ground software, newton-seconds expected) is stated without saying which way the figures were off, which avoids the sources' inconsistent direction (IEEE Spectrum says the values would be 4.45 times too large, other summaries say the effect was underestimated). 'Figures for every small thruster firing' is a fair simplification of the angular momentum desaturation firings the file covered. The leaky-dish reasoning (unaccounted water loss read as evaporation) is sound and follows from how pan evaporation is computed."
+}

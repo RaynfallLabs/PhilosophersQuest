@@ -69,6 +69,10 @@ Fix what fails before you write `final.json`.
 
 ## Rules
 - Do NOT spawn any sub-agents or workflows; do all the work in this agent.
+- Read the web with WebSearch and WebFetch only: do not download files to
+  disk, install packages, or run code on downloaded content.
+- Scratch files: put your unit id (or batch number) at the start of every
+  scratch file name, so two agents never overwrite each other.
 - Never delete or overwrite a path you did not create, except that you write
   `final.json` and append to `facts.md` in the units you were given.
 - Never override LOCALAPPDATA, APPDATA, USERPROFILE or HOME. Python is

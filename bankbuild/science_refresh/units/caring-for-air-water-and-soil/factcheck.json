@@ -1,0 +1,357 @@
+{
+ "unit": "caring-for-air-water-and-soil",
+ "questions": {
+  "28dc101140": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: most of the polluted air people breathe comes from burning fuels (coal, gasoline, wood)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Air_pollution",
+     "note": "Grokipedia: 'burning fossil fuels and biomass generates approximately 85% of global air pollution exposure'. The primary source (Lancet Commission on Pollution and Health, 2017) says fuel combustion accounts for 85% of airborne particulate pollution and almost all sulfur and nitrogen oxide pollution."
+    },
+    {
+     "claim": "Context: about 85 percent of the polluted air people breathe",
+     "result": "ok",
+     "source": "https://www.pureearth.org/lancet-commission-on-pollution-health/",
+     "note": "Acceptable as written (it follows Grokipedia's 'air pollution exposure'). If the reviser wants the primary source's exact sense: 'about 85 percent of the soot and other specks in the air, and nearly all of the sulfur and nitrogen gases'."
+    },
+    {
+     "claim": "Wrong choice: spraying farm fields with fertiliser and weedkiller is not the main source",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Air_pollution",
+     "note": "Wrong as 'most'. Note only: ammonia from fertiliser and manure does form fine particles (Grokipedia: up to 20-30% of fine aerosol mass in fertilised areas), so farming is a real but smaller contributor; the context's 'much smaller share' is fair."
+    },
+    {
+     "claim": "Wrong choices: open-pit mining; landfills are not the main source",
+     "result": "ok",
+     "source": "https://www.who.int/health-topics/air-pollution",
+     "note": ""
+    },
+    {
+     "claim": "Context: burning in engines, power plants, factories, home stoves gives off soot, carbon monoxide, nitrogen dioxide, sulfur dioxide",
+     "result": "ok",
+     "source": "https://www.who.int/health-topics/air-pollution",
+     "note": "WHO: household combustion devices, motor vehicles, industrial facilities and forest fires are common sources; particulate matter, CO, ozone, NO2 and SO2 are the pollutants of major concern."
+    }
+   ]
+  },
+  "e1ea63f984": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: in wildfire smoke the finest particles (PM2.5) are the biggest threat to health",
+     "result": "ok",
+     "source": "https://www.epa.gov/wildfires/wildfire-smoke-and-health",
+     "note": "EPA: 'fine particulate matter, also called particle pollution or PM2.5, is the biggest threat to your health'. 'Finest specks of soot' is a fair child-level name for smoke's fine particles (Grokipedia: carbonaceous material is 70-90% of wildfire PM2.5 mass)."
+    },
+    {
+     "claim": "Stem: smoke is a mixture of gases, water vapour, soot and ash",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Smoke",
+     "note": ""
+    },
+    {
+     "claim": "Context: under 2.5 thousandths of a millimetre, about 30 times thinner than a hair",
+     "result": "ok",
+     "source": "https://www.epa.gov/pm-pollution/particulate-matter-pm-basics",
+     "note": "EPA: average hair about 70 micrometres, 30 times larger than the largest fine particle; 2.5 micrometres = 2.5 thousandths of a millimetre."
+    },
+    {
+     "claim": "Context: fine specks get deep into the lungs and some pass into the blood",
+     "result": "ok",
+     "source": "https://www.epa.gov/pm-pollution/particulate-matter-pm-basics",
+     "note": "EPA: particles under 10 micrometres can get deep into the lungs and some may get into the bloodstream; PM2.5 the greatest risk."
+    },
+    {
+     "claim": "Wrong choice / context: larger ash flakes usually do not reach the lungs but irritate eyes and throat",
+     "result": "ok",
+     "source": "https://19january2021snapshot.epa.gov/wildfire-smoke-course/why-wildfire-smoke-health-concern_.html",
+     "note": "EPA: larger particles 'usually do not enter the lungs; however, they can still irritate the eyes, nose, and throat'."
+    },
+    {
+     "claim": "Wrong choice: water vapour is harmless",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Smoke",
+     "note": "Grokipedia: water vapour is 'a major non-pollutant gas'."
+    },
+    {
+     "claim": "Wrong choice / context: carbon dioxide is not among WHO's pollutants of greatest concern",
+     "result": "ok",
+     "source": "https://www.who.int/health-topics/air-pollution",
+     "note": "WHO list: particulate matter, CO, ozone, NO2, SO2; CO2 not listed."
+    }
+   ]
+  },
+  "abc339eae2": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: land-based runoff (rain and snowmelt washing oil from roads, parking lots, vehicles) is the top source of oil in North American waters (Oil in the Sea IV, 2022)",
+     "result": "ok",
+     "source": "https://www.nationalacademies.org/news/2022/09/land-based-runoff-remains-top-source-of-oil-in-the-ocean-says-new-report",
+     "note": "Release: runoff 'primarily from cities and vehicles' is the top source; 'Runoff from highways, parking lots, vehicle washing, and vehicle fluid leaks all contribute'. UC Davis: at least 1.2 million tonnes a year in North America."
+    },
+    {
+     "claim": "Wrong choice: natural seeps from the seabed are not the biggest source",
+     "result": "uncertain",
+     "source": "https://www.nationalacademies.org/read/10388/chapter/3",
+     "note": "True for the 2022 report (seeps second). But the 2003 edition of the same report (Oil in the Sea III) ranked natural seeps FIRST in North American waters (about 160,000 of 260,000 tonnes a year; runoff about 54,000). The stem says only 'a study', so a reader who knows the older study would pick seeps. Fix: date the study in the stem, e.g. 'Yet a 2022 study of the seas around North America found...'."
+    },
+    {
+     "claim": "Wrong choices: ship discharges; offshore rig leaks are not the biggest source",
+     "result": "ok",
+     "source": "https://www.nationalacademies.org/news/2022/09/land-based-runoff-remains-top-source-of-oil-in-the-ocean-says-new-report",
+     "note": "Release: commercial vessel discharges 'relatively small' with full compliance; discharge from oil and gas operations is 'another major source' but not ranked above runoff, seeps or spills."
+    },
+    {
+     "claim": "Context: seeps second, spills third, ships' oily discharges small; National Academies report in 2022",
+     "result": "ok",
+     "source": "https://www.ucdavis.edu/climate/news/most-oil-sea-comes-runoff-land-not-just-oil-spills",
+     "note": ""
+    },
+    {
+     "claim": "Stem: a tanker wreck can spill thousands of tonnes at once",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Oil_spill",
+     "note": "Large tanker spills run to thousands or hundreds of thousands of tonnes (Grokipedia: Amoco Cadiz 223,000 tonnes; Torrey Canyon 119,000 tonnes; Exxon Valdez 11 million gallons)."
+    }
+   ]
+  },
+  "7d82ea1906": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: chlorine is added near the end to kill germs that remain",
+     "result": "ok",
+     "source": "https://www.cdc.gov/drinking-water/about/how-water-treatment-works.html",
+     "note": "CDC: disinfectants such as chlorine 'kill remaining germs'; disinfection 'is often the last step'."
+    },
+    {
+     "claim": "Context: a little chlorine is left in the water so it keeps killing germs in the pipes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Water_treatment",
+     "note": "Grokipedia: a measurable residual (0.2-0.5 mg/L free chlorine) 'persists in pipes to prevent regrowth'; CDC says the same."
+    },
+    {
+     "claim": "Wrong choice / context: alum, not chlorine, makes dirt clump and sink near the start",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Water_treatment",
+     "note": "Grokipedia: common coagulants include aluminium sulfate (alum); CDC: coagulation, flocculation and sedimentation come first."
+    },
+    {
+     "claim": "Wrong choice: chlorine is not what protects pipes from rusting",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Water_treatment",
+     "note": "Corrosion control is raising pH (7.5-8.5) and orthophosphate inhibitors, a separate treatment."
+    },
+    {
+     "claim": "Wrong choice: chlorine does not remove the minerals that make water hard",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Water_treatment",
+     "note": "Softening is lime softening or ion exchange removing calcium and magnesium; no role for chlorine."
+    },
+    {
+     "claim": "Context: clear water can still carry germs too small to see",
+     "result": "ok",
+     "source": "https://www.cdc.gov/drinking-water/about/how-water-treatment-works.html",
+     "note": "Filtration removes many but not all germs, hence disinfection after it."
+    }
+   ]
+  },
+  "0dd40430a7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: air pumped through aeration tanks brings oxygen to bacteria that break down the waste",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sewage_treatment",
+     "note": "Grokipedia: 'Oxygen supplied via diffused or mechanical aeration enables aerobic respiration' of the microorganisms that metabolise the organic matter. USGS: 'As organic matter decays, it uses up oxygen. Aeration replenishes the oxygen.'"
+    },
+    {
+     "claim": "Stem: air is bubbled through for hours in long, deep tanks",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Activated_sludge",
+     "note": "Grokipedia: hydraulic retention time in the aeration tank is generally 4-8 hours."
+    },
+    {
+     "claim": "Context: some bacteria are sent back into the tanks to keep their numbers up",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Activated_sludge",
+     "note": "Return activated sludge 'recirculates settled biomass from secondary clarifiers back to the aeration basin' (Sewage_treatment page: 50-90% of settled sludge)."
+    },
+    {
+     "claim": "Wrong choice: the air does not kill off the bacteria",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sewage_treatment",
+     "note": "Chlorine at the end is what kills bacteria before discharge (USGS)."
+    },
+    {
+     "claim": "Wrong choice: the air does not cool the water for the river",
+     "result": "ok",
+     "source": "https://www.usgs.gov/water-science-school/science/a-visit-a-wastewater-treatment-plant",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice / context: heavy solids are settled earlier, in still primary tanks",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sewage_treatment",
+     "note": "Primary treatment is gravity sedimentation (1-3 hours). Note only: aerated grit chambers do use air to help sand and gravel settle, but only for a few minutes at the plant's inlet; the stem's 'for hours' rules that reading out."
+    },
+    {
+     "claim": "Context: untreated sewage spreads cholera and typhoid; its rotting uses up river oxygen",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sewage_treatment",
+     "note": "Grokipedia: 'waterborne illnesses like cholera, typhoid, and hepatitis A'; organic pollutants 'deplete dissolved oxygen via microbial decomposition, suffocating fish and invertebrates'."
+    }
+   ]
+  },
+  "f5a9a7c33b": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Key: on terraces, rain slows down and soaks into each step",
+     "result": "ok",
+     "source": "https://sera17.wordpress.ncsu.edu/terraces/",
+     "note": "Terraces reduce erosion 'by decreasing excessive slope lengths, minimizing runoff velocity', 'capture and store runoff until it can infiltrate into the soil', 'allowing sediment particles to deposit'. Grokipedia Terrace_(earthworks) agrees."
+    },
+    {
+     "claim": "Context: soil picked up settles on the step instead of rushing downhill",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Terrace_(earthworks)",
+     "note": "Grokipedia: terraces 'slow water velocity and promote sediment deposition'."
+    },
+    {
+     "claim": "Context: terraces can cut the soil lost by up to eleven times",
+     "result": "error",
+     "source": "https://research.fs.usda.gov/treesearch/53295",
+     "note": "The figure comes from Wei et al. 2016, a global review of terrace studies, and it is an AVERAGE, not a maximum: erosion control on terraced slopes was 11.46 +/- 2.34 times that of unterraced slopes, on average across studies (some did far better, and poorly kept terraces can even raise erosion). Grokipedia's 'up to 11 times' misreads it. Fix: 'so terraced slopes lose, on average, about eleven times less soil than bare slopes' or simply drop the number."
+    },
+    {
+     "claim": "Wrong choices: sunlight baking the soil hard; walls soaking up rain like sponges; walls pressing soil too hard to move",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Terrace_(earthworks)",
+     "note": "Walls/risers are 'a retaining embankment or wall to hold soil in place'; none of these is how terraces work. A baked crust would increase runoff, not stop it."
+    },
+    {
+     "claim": "Stem: each step held up by a low wall of stone or earth",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Terrace_(earthworks)",
+     "note": "Risers of compacted soil, stone or vegetation."
+    }
+   ]
+  },
+  "7d51873cf9": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: crop residue (straw and stalks) takes the blow of falling raindrops",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Soil_erosion",
+     "note": "Grokipedia: conservation tillage leaves 'residue cover to protect against raindrop impact and sheet flow'; mulch absorbs 'kinetic energy from raindrops'. Nebraska and Missouri extension: residue absorbs the energy of raindrop impact, reducing detachment and sealing."
+    },
+    {
+     "claim": "Context: raindrops knock bare-soil specks loose and splash them; splashed specks clog pores so less soaks in and more runs off",
+     "result": "ok",
+     "source": "https://crops.extension.iastate.edu/encyclopedia/how-reduce-potential-soil-erosion-early-spring",
+     "note": "Iowa State: raindrops dislodge particles 'splashing them 3 to 5 feet away'; they 'clog surface pores, which in turn reduces water infiltration, increases water runoff'."
+    },
+    {
+     "claim": "Context: straw slows water running over the ground so more rain soaks in",
+     "result": "ok",
+     "source": "https://water.unl.edu/article/crop-production/residue-management",
+     "note": "Nebraska extension: residue makes small dams that slow runoff; SARE: slower runoff increases infiltration. Grokipedia: mulch 'slows surface flow, promoting percolation'."
+    },
+    {
+     "claim": "Wrong choice: straw keeps rain from soaking in (it does the opposite)",
+     "result": "ok",
+     "source": "https://sare.org/publications/conservation-tillage-systems-in-the-southeast/chapter-14-water-management/impacts-of-conservation-tillage",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: makes soil heavier; warms soil so it dries faster",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Soil_erosion",
+     "note": "Neither is how residue protects soil; a residue cover keeps soil cooler and moister, not warmer and drier."
+    }
+   ]
+  },
+  "dcf1cf2a3e": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: windbreaks save soil by slowing the wind",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Windbreak",
+     "note": "Windbreaks cut soil loss mainly by reducing the wind's force on the ground; USU Extension: 'Windbreaks prevent wind erosion for 10 to 20 times their height downwind'."
+    },
+    {
+     "claim": "Context: can cut the wind's speed by up to half for 8 to 15 times its height downwind",
+     "result": "uncertain",
+     "source": "https://extension.usu.edu/forestry/publications/utah-forest-facts/005-windbreak-benefits-and-design",
+     "note": "The distance is fine (Grokipedia 8-15H; USDA Forest Service: greatest cut at 2-5H, practical cut to 10H, measurable to 30H). But 'up to half' reads as a ceiling, and close behind a dense row the cut is larger: USU's diagram shows a 35 mph wind falling to 10-15 mph about 2 heights behind a 35-foot windbreak (a 57-71% cut). Grokipedia's 'up to 50%' is the source of the wording. Fix: 'can cut the wind's speed by half or more for a distance of about 10 times its own height downwind' (or '8 to 15 times')."
+    },
+    {
+     "claim": "Wrong choice / context: the trees' roots reach only a narrow strip near the row",
+     "result": "ok",
+     "source": "https://fs.usda.gov/nac/assets/documents/research/publications/2003hou.pdf",
+     "note": "Search excerpts of Hou et al. 2003 and a USDA Colby, Kansas study: tree competition with crops extends about 1-1.5 tree heights (sometimes to 3H), against protection out to 10-20H; Grokipedia Windbreak: competition up to two tree heights."
+    },
+    {
+     "claim": "Wrong choices: fallen leaves covering the soil; drawing more rain",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Windbreak",
+     "note": "Not how windbreaks protect a field."
+    },
+    {
+     "claim": "Context: after the 1930s dust storms, about 220 million trees were planted in windbreaks across the plains",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Windbreak",
+     "note": "Grokipedia: Great Plains Shelterbelt Project planted about 220 million trees, 1935-1942, Texas to North Dakota; Wikipedia Great_Plains_Shelterbelt agrees (220 million trees in 30,233 shelterbelts); one farm-press account gives 217 million."
+    }
+   ]
+  },
+  "a6e2f0cfd1": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: a 60-watt incandescent bulb's light (about 800 lumens) comes from an LED using about 9 watts",
+     "result": "ok",
+     "source": "https://consumer.ftc.gov/articles/shopping-light-bulbs",
+     "note": "FTC: 'a traditional 60-watt incandescent bulb produces about 800 lumens'; an LED gives 'that same 800 lumens but uses only about 9 watts'. Grokipedia LED_lamp gives 10 W for 60 W equivalent: consistent with 'about'."
+    },
+    {
+     "claim": "Key / context: over 90 percent of an incandescent bulb's energy leaves as heat, about a tenth or less as light",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Incandescent_light_bulb",
+     "note": "Grokipedia: 'over 90% of input electrical energy dissipates as heat', 'less than 10% converted to visible light' (elsewhere 2-5% or 5-10%); 'a tenth or less' covers every figure. Heat here includes infrared radiation, a fair grade-6 simplification."
+    },
+    {
+     "claim": "Context: an LED lasts up to 25 times longer",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/LED_lamp",
+     "note": "Grokipedia LED_lamp: 'up to 25 times longer service than standard incandescents'. energy.gov LED Lighting page (wording confirmed through search excerpts; the page itself returned 404 to WebFetch): residential LEDs 'use at least 75% less energy, and last up to 25 times longer'. Note only: rated lives of 25,000-50,000 hours against 750-1,000 hours would allow more, so 'up to 25' is DOE's conservative figure."
+    },
+    {
+     "claim": "LED electricity saving for the same light (energy.gov figures)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/LED_lamp",
+     "note": "Not stated as a number in the question. 60 W to about 9 W is an 85% cut, which sits between DOE's 'at least 75% less' and ENERGY STAR's '90% less' (both via search excerpts); Grokipedia: 'typically using 75% less electricity'."
+    },
+    {
+     "claim": "Wrong choice / context: energy is not used up or destroyed; it changes form",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Conservation_of_energy",
+     "note": "Law of conservation of energy."
+    },
+    {
+     "claim": "Wrong choices: given off as sound; stored inside the glass",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Incandescent_light_bulb",
+     "note": "Neither is where the energy goes."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Tone: all nine stems and contexts state facts; none carries a slogan or tells the player what to do. Two numbers need rewording: f5a9a7c33b (terraces) states a review's AVERAGE as a maximum ('up to eleven times'); dcf1cf2a3e (windbreaks) caps the wind cut at 'up to half' when close behind the row it is more. abc339eae2 (oil) is correct for the 2022 report, but the 2003 edition ranked natural seeps first in North America, so the stem should date the study. energy.gov pages returned 404 to WebFetch; their LED wording was confirmed from search excerpts and matched by Grokipedia LED_lamp."
+}

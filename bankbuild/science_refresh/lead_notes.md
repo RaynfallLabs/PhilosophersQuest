@@ -31,3 +31,6 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
   - `populations-communities-ecosystems` (T2 life) keeps the biosphere as the top level of organisation.
   - `earths-four-spheres` (T2 earth) must not ask what the biosphere is; it asks the four spheres and how they act on one another.
   - The populations "no other world has life" question re-asks T1 the-sun-and-its-planets ("Earth alone has living things"); its judge marked it drop.
+- **2026-11-26, T3-T5 margin:** T1 kept 97% of what it drafted and T2 kept 95%.
+  - At that rate T4 earth (45 written, 45 to keep) had no margin at all, and several other strands had one or two questions.
+  - Every T3-T5 unit not yet started now writes one more question.
