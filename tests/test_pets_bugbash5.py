@@ -23,7 +23,7 @@ import pygame  # noqa: E402
 pygame.init()
 
 from pet_system import Pet, _SPECIES, _EVOLVE_1, _EVOLVE_2  # noqa: E402
-from test_shep import (_game, _messages, _monster, _shep, _special,  # noqa: E402
+from test_shep import (_game, _monster, _shep, _special,  # noqa: E402
                        _open_room, _far_walkable)
 import test_escort  # noqa: E402
 
@@ -73,12 +73,19 @@ def test_a_bound_sphere_with_no_room_comes_down_whole_and_keeps_its_pet():
     shep = _shep(0, 0)
     shep.nickname = 'Bandit'
     sphere = _bound_sphere(g, shep)
+    # Every line said during the throw. The throw ends the hero's turn, so
+    # the rat's turn follows: its bite, its pack's tell and whatever else it
+    # does are said after the sphere's line, so a fixed "last N lines" window
+    # missed the line about one run in six (2026-11-27).
+    said = []
+    add = g.add_message
+    g.add_message = lambda text, *a, **k: (said.append(str(text)), add(text, *a, **k))[1]
     _throw(g, sphere, x + 1, y)
     assert sphere not in g.player.inventory
     assert sphere in g.ground_items and sphere.bound_pet is shep
     assert g.dungeon.is_walkable(sphere.x, sphere.y)
     assert shep not in g.pets
-    assert any('unbroken' in s for s in _messages(g, 4))
+    assert any('unbroken' in s for s in said), said
 
 
 def test_a_throw_lands_on_the_last_open_tile_within_range():
