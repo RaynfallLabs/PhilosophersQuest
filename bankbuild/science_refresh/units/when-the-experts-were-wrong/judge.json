@@ -1,0 +1,88 @@
+{"unit": "when-the-experts-were-wrong",
+ "questions": {
+  "bd5bcf2548": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem's 'inflames its lining and leads to ulcers' states the inflammation half of 6c2e23246e's key ('An inflamed lining, with the bacteria in it') before that question asks it. The question itself is sound: the doubters' reason is given fairly (acid kills germs), the failed piglets keep the mice and monkey lures live, and 'volunteers' is a strong lure.",
+     "fix": "Trim to 'argued that a curved bacterium in the stomach causes ulcers'."}
+   ]},
+  "6c2e23246e": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem gives away bd5bcf2548's key word for word. 'Barry Marshall swallowed a broth of the curved stomach bacteria in 1984, to test whether they could sicken a healthy stomach' answers bd5bcf2548's 'How did he test whether it could sicken a healthy stomach?' ('He drank a broth of the bacteria himself'). The game draws questions at random, so a player who meets this one first gets the other free.",
+     "fix": "Do not name the drinker in the stem; the card names Marshall. 'A man whose stomach lining a first look had shown to be healthy swallowed a broth of the curved stomach bacteria in 1984, to test whether they could sicken it. Ten days later a doctor passed a thin tube with a camera into his stomach and took a tiny sample of the lining. What did the camera and the sample show?' Keep the four choices; the ulcer lure (the popular myth, M1) is the right one."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'What did the sample show?' A tiny biopsy cannot show 'A deep ulcer'; the camera is what would see one. The ulcer lure is a little unfair as asked.",
+     "fix": "Ask 'What did the camera and the sample show?' (included in the rewrite above)."}
+   ]},
+  "018d630861": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The answer is the direction every Marshall stem argues for. Two lures are dead: 'More came back where the bacteria were cleared' has no reason behind it, and 'Too few patients took part to show a difference' is a cop-out against a stem that gives 100 patients and a year of follow-up. That leaves 'Far fewer' against 'About as many', and in a unit about reversals the evidence won, a student who knows only that Marshall was right picks the key. The fact the card teaches, the size of the effect (21 against 84 of every 100), is never tested.",
+     "fix": "Make the lures test the size and lasting of the effect: keep 'Far fewer came back where the bacteria were cleared' and 'About as many came back whether cleared or not'; replace the other two with 'A few fewer came back where the bacteria were cleared' and 'Fewer came back at first, then as many by the year's end' (an honest lure: the trial's bismuth heals ulcers for a while by itself)."}
+   ]},
+  "86aa06d260": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's reason ('no crystal could have tenfold symmetry') makes the definition a matter of arrangement, and the key is the only choice about arrangement or pattern. 'Its atoms all belong to one chemical element' is also killed by the stem's own 'alloy of aluminium and manganese' (if a crystal needed one element, the alloy's symmetry would not be the puzzle). The key is the longest choice too. A student who knows what symmetry means can reach it without knowing the definition.",
+     "fix": "Give two lures that are also about form, so symmetry no longer points at one choice: keep the key and 'It forms only as a melted liquid cools'; replace 'Its atoms all belong to one chemical element' with 'It grows flat faces that meet at sharp angles' (M3) and 'It lets light pass straight through it' with 'Its atoms are packed as tightly as they can be'."}
+   ]},
+  "fbd51e9f07": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'A blur with no spots at all' is dead: nothing in the stem suggests one grain would give no pattern. The two live lures ('Only part of the tenfold pattern', 'An ordinary sixfold pattern instead') both favour Pauling, so a student who knows only that Shechtman won picks the one choice on his side. The key's 'on its own' also echoes the stem's 'none could make alone'.",
+     "fix": "Replace the blur with 'A fourfold pattern, like a cube-shaped crystal's' (Pauling's twins were of cubic crystals, F13), and trim the key to 'The whole tenfold pattern'."},
+    {"axis": "fact", "severity": "low",
+     "what": "The order misleads. The stem has Pauling speak and then Shechtman narrow his beam, so the test reads as a reply to Pauling. Shechtman ruled out twinning in 1982-84, before his paper; Pauling's twinning letter is 1985 (F13, F14), and he kept to it after the test. The grade_note's 'the experiment that answered Pauling' repeats the slip.",
+     "fix": "'Twinning, several ordinary crystals grown together at angles, each adding its own spots so that together they mimic a symmetry none could make alone, was the usual explanation for such odd results, and Linus Pauling, winner of two Nobel Prizes, argued it for years. Shechtman had narrowed his electron beam until it struck inside a single tiny grain of the alloy. What did that one grain show?'"},
+    {"axis": "grade", "severity": "low",
+     "what": "This is fair for 8th grade as written. The key is what one grain showed, and the stem explains twinning in plain words. The stem never says what the spots are, though: a fingerprint of how the atoms are arranged.",
+     "fix": "Optional: 'Dan Shechtman's ring of spots, a pattern made by how a solid's atoms are arranged, got its tenfold symmetry from twinning...'"}
+   ]},
+  "7c4970aa58": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "Not a fair 8th-grade fact. 8th grade teaches the ribosome only as the cell's protein builder; NGSS MS-LS1-2 does not even name it. That mitochondria carry their own bacterium-sized ribosomes is high-school biology (the endosymbiont evidence in a 9th-10th-grade text), and an antibiotic's preference for those ribosomes, with its bone-marrow harm, is college pharmacology. The stem has to teach three advanced premises (ribosome size and build, chloramphenicol's target, 'only one group') before it can ask, and the key is the out-of-grade fact itself.",
+     "fix": "Key the clue an 8th grader can reach: bacteria multiply by splitting in two (middle-school asexual reproduction), and so do mitochondria (F21). 'Lynn Margulis argued in 1967 that mitochondria, the parts of a cell that release energy from food, began as bacteria swallowed by other cells. One clue lies in the only way a cell ever gets new mitochondria. What is it?' Key: 'Old ones grow and split in two'. Lures: 'The cell builds them from scratch' (the rival from-within view, F18), 'They pinch off from the nucleus', 'They bud off the cell membrane'. The card's ribosome and DNA lines can stay as teaching."},
+    {"axis": "tell", "severity": "medium",
+     "what": "Two other stems state the key. 017a54033c's 'chloroplasts and mitochondria began as bacteria' and 3bbd071f01's 'a third claim beside those about mitochondria and chloroplasts... still carry DNA of their own' tell a player which part of a human cell was once a bacterium, and so which part holds bacterium-like ribosomes.",
+     "fix": "The rewrite above names mitochondria in its own stem and keys how they multiply, so the other two stems no longer give it away."}
+   ]},
+  "017a54033c": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'That of bacteria that cause disease in plants' is dead for a student who knows the 6th-grade fact that chloroplasts make food from sunlight. Once a student takes Margulis's side, the key is the only bacterium that matches the chloroplast's own job. Only the nucleus lure (the from-within rival the stem fairly steel-mans) and the weaker mitochondria lure are left.",
+     "fix": "Replace the plant-disease lure with 'That of bacteria that live inside plant roots' (the root-nodule bacteria really do live inside plant cells, so it is a live rival among bacteria). Using the T2 chloroplast fact is then fair application at T4."},
+    {"axis": "fact", "severity": "low",
+     "what": "'compared chloroplast DNA with other DNA, and reported in 1982' may overstate it. The first chloroplast-against-cyanobacteria comparisons (ribosomal RNA) came from Doolittle's and Carl Woese's groups from 1975; 1982 is Gray and Doolittle's review that weighed them ('Has the endosymbiont hypothesis been proven?'). The fact-checker should confirm.",
+     "fix": "If confirmed: 'Michael Gray and Ford Doolittle weighed the comparisons of chloroplast DNA with other DNA in a review of 1982.'"}
+   ]},
+  "3bbd071f01": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only negative choice, and two of the three lures are weak. 'Ribosomes of their own, like a bacterium's' answers a different search from the DNA trail the stem sets up. 'DNA of their own, like a mitochondrion's' has no reason behind it. That leaves a coin flip between 'no DNA' and 'spiral-bacterium DNA', and the odd one out tips it.",
+     "fix": "Balance the choices, two with DNA and two without: 'No DNA of their own at all' (key), 'No DNA, but ribosomes like a bacterium's', 'DNA of their own, like a spiral bacterium's', 'DNA of their own, copied from the nucleus'."}
+   ]},
+  "f997ddce6c": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "Common sense makes the key the first objection to a giant flood in a dry land, and 'Why the channels held no drowned animals' is the weakest lure. The question still holds: 'drained to' and 'no mud' are live, and the uniformitarian reason is steel-manned fairly, with no smugness about Noah's Flood either way.",
+     "fix": "Replace the drowned-animals lure with 'How water alone could cut such hard rock'."}
+   ]},
+  "74c56090f0": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Only one lure is live. 'Wind had heaped the dry lake bed into dunes' is killed by the stem's own 'gravel ridges... up to about 15 metres high' (8th graders know wind moves sand, not gravel), and 'The lake had dried up slowly over centuries' builds no ridges at all. With 'like ripples' and 'a dam of glacier ice' in the stem, only the waves lure stands against the key.",
+     "fix": "Make the lures the alternatives a doubter of the day would offer: keep 'Waves had heaped the gravel as the lake shrank'; replace the other two with 'A river had wandered over the lake bed for ages' (the slow-process reading) and 'Glacier ice had shoved the gravel into ridges' (regularly spaced moraines exist, and the stem names the ice)."}
+   ]},
+  "89846e8644": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'which goes on in the Sun's core at about 15 million degrees' leans against the two fusion choices. It is the consensus's real reason, stated flatly as settled physics, and 'Extra heat but no sign of fusion' stays live (a few groups did report heat), so it is fair. The stance holds: Fleischmann's standing is given, nothing mocks, and replication settles it, which makes the 'an outsider is not always right' point.",
+     "fix": "None needed."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'heavy water' is never explained to an 8th grader.",
+     "fix": "'...a current run through heavy water, made with a heavier kind of hydrogen, with a palladium rod...'"}
+   ]}
+ },
+ "unit_notes": "STANCE, both ways: passes. Dissent honoured: a test settles each case, never an authority or a prize (the 1988 trial, the single grain, the DNA comparison, the ripples, replication). The doubters are steel-manned in the stems themselves: acid kills germs (bd5bcf2548), twinning was the usual explanation (fbd51e9f07), biologists wanted stronger evidence and some held the from-within view (017a54033c), a century of slow-process geology and the unanswered water question (f997ddce6c), the physics of fusion (89846e8644). Pauling's 'quasi-scientists' jibe and Bretz's gloat are rightly left out. Marshall's 'everyone was against me' is balanced by the proper-scepticism line in 018d630861's card. Honest balance: 3bbd071f01 (Margulis's flagella) and 89846e8644 (cold fusion) show bold claims failing the same kind of test, without mockery. No 'denier' or 'conspiracy theorist' anywhere; no sermon (the two lesson lines in the cards say what the test did). GRADE RULINGS: chloramphenicol on mitochondrial ribosomes is NOT a fair 8th-grade fact (high; rewrite on binary fission given). Quasicrystal symmetry as written IS fair: 86aa06d260 keys the crystal definition (a repeating arrangement of atoms, middle-school content), 'no tenfold symmetry' is the textbooks' claim and is never keyed, and the card's pentagon-tiling picture makes it graspable; fbd51e9f07 keys an experiment's result, fair at T4. PATTERN: four 'what did the test show' questions (018d630861, fbd51e9f07, 017a54033c, 74c56090f0) let the unit's premise pick the key because their lures are weak. The fixes make each lure an alternative the doubters really held, which is also the steel-man. LEAKS WITHIN THE UNIT: 6c2e23246e's stem gives bd5bcf2548's key (medium); 017a54033c's and 3bbd071f01's stems give 7c4970aa58's (medium; the rewrite cures it); bd5bcf2548's stem pre-states half of 6c2e23246e's key (low); 74c56090f0's 'vast lake behind a dam of glacier ice' hints at f997ddce6c's key (low, acceptable). OVERLAPS against all 116 final.json units: none keyed twice. T2 cells-the-building-blocks-of-life keys what mitochondria and chloroplasts DO; 017a54033c only applies the chloroplast fact, and 7c4970aa58 (either version) keys a different fact. T3 wegener-and-the-drifting-continents has the same reversal shape but shares no fact; Bretz's 'right in kind, wrong in number' sits only in a card. T5 how-germs-were-proven: Marshall's drink tested Koch's postulates (his 1985 paper's title), but nothing here keys a postulate; the lab-mice lure merely echoes Koch's mice. T4 testing-a-claim keys blinding and chance, not replication, so 89846e8644 is clear. T5 viruses-bacteria-and-antibiotics keys penicillin and the cell wall; the chloramphenicol stem was only adjacent, and the rewrite removes even that. T5 fission-fusion-and-mass-energy keys why fusion needs heat; 89846e8644 uses the Sun's core only as setting. T3 classifying-living-things (Woese's rRNA) is the same method as 017a54033c but a different finding. Planned T5 when-results-do-not-replicate should not re-key cold fusion. LANES: pass. The Channeled Scablands, eastern Washington, western Montana and the Pacific are setting only; no key names a place, and the lake is left unnamed. Scope coverage complete (Marshall 3, Shechtman 2, Margulis 3, Bretz and Pardee 2, cold fusion 1; 11 = target). Singular they: none. Voice: clean."}

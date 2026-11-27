@@ -1,0 +1,227 @@
+{
+ "unit": "when-the-experts-were-wrong",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "Robin Warren and Barry Marshall, two doctors at Royal Perth Hospital in Western Australia, argued that a curved bacterium in the stomach inflames its lining and leads to ulcers. Most doctors blamed ulcers on stress and acid, and held that the stomach's strong acid kills any germ that reaches it. Marshall tried to infect piglets with the bacterium and failed. How did he test whether it could sicken a healthy stomach?",
+   "answer": "He drank a broth of the bacteria himself",
+   "choices": [
+    "He drank a broth of the bacteria himself",
+    "He gave a broth of the bacteria to volunteers",
+    "He fed a broth of the bacteria to lab mice",
+    "He fed a broth of the bacteria to a monkey"
+   ],
+   "context": "Marshall swallowed the broth in 1984, once a first look inside his stomach had shown a healthy lining, and his paper of 1985 called the man who took it only 'a volunteer'. His doubters had real reasons: stomach acid kills nearly all the germs that reach it, and a study of stomach biopsies in 1954 had found no bacteria there at all.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F5"
+   ],
+   "grade_note": "8th grade (curriculum line G8.M3) teaches that explanations are revised in light of new evidence; infecting a healthy host is the classic test of whether a germ causes a disease."
+  },
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "Barry Marshall swallowed a broth of the curved stomach bacteria in 1984, to test whether they could sicken a healthy stomach. A first look inside had shown a healthy lining. Ten days after the drink, a thin tube with a camera was passed into his stomach and a tiny sample of the lining was taken. What did the sample show?",
+   "answer": "An inflamed lining, with the bacteria in it",
+   "choices": [
+    "An inflamed lining, with the bacteria in it",
+    "A deep ulcer, with the bacteria around it",
+    "A healthy lining, with the bacteria gone",
+    "A healthy lining, with the bacteria in it"
+   ],
+   "context": "Marshall had gastritis, an inflamed stomach lining thick with the bacteria, and a mild illness with nausea and some vomiting that lasted 14 days. It was not an ulcer; his paper proposed that such an infection, if it lasts, prepares the way for one.",
+   "facts": [
+    "F5",
+    "F6",
+    "M1"
+   ],
+   "grade_note": "8th grade (curriculum line G8.M3) asks what an observation shows and what it does not: the biopsy showed infection and inflammation, not yet an ulcer."
+  },
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "Barry Marshall, Robin Warren and their colleagues followed 100 patients with duodenal ulcers, sores in the first part of the small intestine just past the stomach, who all carried the curved stomach bacteria. Treatment cleared the bacteria from some patients but not from others, and the team watched for a year to see whose ulcers came back. What did they report in 1988?",
+   "answer": "Far fewer came back where the bacteria were cleared",
+   "choices": [
+    "Far fewer came back where the bacteria were cleared",
+    "About as many came back whether cleared or not",
+    "More came back where the bacteria were cleared",
+    "Too few patients took part to show a difference"
+   ],
+   "context": "Within the year, 21 of every 100 ulcers came back where the bacteria were gone, against 84 of every 100 where they stayed. A US National Institutes of Health conference advised antibiotics for such patients in 1994, and Marshall and Warren shared the Nobel Prize in Physiology or Medicine in 2005. Marshall later said that everyone had been against him; others have argued that his doubters showed proper scepticism until evidence like this arrived.",
+   "facts": [
+    "F4",
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "8th grade (curriculum line G8.M3) teaches that a finding grows more certain as evidence builds; a trial comparing patients with and without the germ is that evidence."
+  },
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "Dan Shechtman passed a beam of electrons through a fast-cooled alloy of aluminium and manganese in 1982, and the bright spots it made formed a ring of ten. He counted them one by one and thought it could not be, because the textbooks said no crystal could have tenfold symmetry. By the definition of the day, what made a solid a crystal?",
+   "answer": "Its atoms repeat one small arrangement over and over",
+   "choices": [
+    "Its atoms repeat one small arrangement over and over",
+    "Its atoms all belong to one chemical element",
+    "It forms only as a melted liquid cools",
+    "It lets light pass straight through it"
+   ],
+   "context": "A crystal was one small group of atoms repeated in every direction, and by sound geometry no repeating arrangement can have tenfold symmetry, just as regular pentagons cannot cover a floor without gaps. Shechtman's solid was ordered but never repeated, so in 1992 the International Union of Crystallography rewrote the definition: a crystal is now any solid that gives a clear-cut pattern of spots. Table salt, a crystal of two elements, grows as salty water dries, and metals, which are crystals, reflect light rather than let it through.",
+   "facts": [
+    "F10",
+    "F11",
+    "F16",
+    "F34",
+    "M3"
+   ],
+   "grade_note": "8th grade teaches that the atoms of a crystalline solid sit in a regular, repeating arrangement; curriculum line G8.M3 teaches that scientists examine an anomaly like Shechtman's rather than ignore it."
+  },
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "Linus Pauling, winner of two Nobel Prizes, said that Dan Shechtman's ring of spots got its tenfold symmetry from twinning: several ordinary crystals grown together at angles, each adding its own spots, so that together they mimic a symmetry none could make alone. Twinning was the usual explanation for such odd results. Shechtman narrowed his electron beam until it struck inside a single tiny grain of the alloy. What did that one grain show?",
+   "answer": "The whole tenfold pattern, on its own",
+   "choices": [
+    "The whole tenfold pattern, on its own",
+    "Only part of the tenfold pattern",
+    "An ordinary sixfold pattern instead",
+    "A blur with no spots at all"
+   ],
+   "context": "Every spot came from the same single grain, so the ring was not several crystals' spots added together; as Shechtman put it, 'It was not twinning.' Other laboratories reported the same patterns in 1985, and in 1987 An-Pang Tsai's team grew grains large and perfect enough to settle most doubts, though Pauling held out until his death in 1994. Shechtman won the Nobel Prize in Chemistry in 2011.",
+   "facts": [
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "8th grade (curriculum line G8.M3) teaches that a rival explanation is tested, not argued away: Shechtman's single-grain test is the experiment that answered Pauling."
+  },
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "Lynn Margulis argued in 1967 that some parts of complex cells began as bacteria swallowed by other cells. One clue lies in the ribosomes, the tiny machines that build proteins: a bacterium's are smaller and built differently from most of a human cell's. The antibiotic chloramphenicol jams a bacterium's ribosomes, and inside a human cell it jams only one group of them. Where are they?",
+   "answer": "Inside the cell's mitochondria",
+   "choices": [
+    "Inside the cell's mitochondria",
+    "Inside the cell's nucleus",
+    "Loose in the cell's cytoplasm",
+    "On the cell's endoplasmic reticulum"
+   ],
+   "context": "Mitochondria carry their own small ribosomes, built like a bacterium's, so a drug that stops bacteria making proteins can stop mitochondria too, which is why high doses can harm the bone marrow. Along with their own loops of DNA like a bacterium's, and their way of multiplying only by splitting in two, these ribosomes were among the clues that mitochondria were once free-living bacteria.",
+   "facts": [
+    "F17",
+    "F19",
+    "F20",
+    "F21"
+   ],
+   "grade_note": "8th grade cell biology teaches the ribosome as the protein builder and the mitochondrion as a cell part; curriculum line G8.M3 asks what evidence supports an explanation."
+  },
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "Lynn Margulis argued in 1967 that chloroplasts and mitochondria began as bacteria swallowed by other cells, though more than a dozen journals had turned her paper down. Many biologists wanted stronger evidence, and some held that these parts had formed step by step inside the cell. Michael Gray and Ford Doolittle compared chloroplast DNA with other DNA, and reported in 1982. Which DNA did it most resemble?",
+   "answer": "That of bacteria that make food from sunlight",
+   "choices": [
+    "That of bacteria that make food from sunlight",
+    "That of bacteria that cause disease in plants",
+    "That in the plant cell's own nucleus",
+    "That in the plant cell's own mitochondria"
+   ],
+   "context": "Chloroplast DNA proved much more like that of free-living bacteria that use sunlight, the cyanobacteria, than like the host cell's own, and mitochondrial DNA, a year later, proved remarkably like that of free-living bacteria that use oxygen. Comparisons like these won over most biologists, and Margulis received the US National Medal of Science in 1999.",
+   "facts": [
+    "F17",
+    "F18",
+    "F22"
+   ],
+   "grade_note": "8th grade (curriculum line G8.M3) teaches that explanations change when new tools bring new evidence; comparing DNA was the test that settled where chloroplasts came from."
+  },
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "Lynn Margulis's paper of 1967 made a third claim beside those about mitochondria and chloroplasts: the whip-like tails called flagella, which sperm and other complex cells swim with, came from captured spiral-shaped bacteria. A captured bacterium leaves a trail, since mitochondria and chloroplasts still carry DNA of their own. What did biologists find when they searched flagella for such a trail?",
+   "answer": "No DNA of their own, from any bacterium",
+   "choices": [
+    "No DNA of their own, from any bacterium",
+    "DNA of their own, like a spiral bacterium's",
+    "DNA of their own, like a mitochondrion's",
+    "Ribosomes of their own, like a bacterium's"
+   ],
+   "context": "Despite many efforts, no genome has ever been tied to the flagella of complex cells, and most biologists now trace them to genes the cell already had, copied and changed. The same kind of test that bore out two of Margulis's claims sank the third.",
+   "facts": [
+    "F17",
+    "F19",
+    "F23",
+    "M4"
+   ],
+   "grade_note": "8th grade (curriculum line G8.M3) teaches that the certainty of findings varies: the same scientist's claims were tested one by one, and one failed."
+  },
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "J Harlen Bretz argued from 1923 that one huge, sudden flood had carved the dry canyons and bare rock of the Channeled Scablands in eastern Washington. Geologists had spent a century explaining the past by slow, everyday processes rather than by Noah's Flood, and to many of them his flood sounded like a step back. They also pressed him with a question he could not answer for years. What was it?",
+   "answer": "Where so much water could have come from",
+   "choices": [
+    "Where so much water could have come from",
+    "Where so much water could have drained to",
+    "Why the channels held no drowned animals",
+    "Why the flood had left no mud behind"
+   ],
+   "context": "Bretz had no source for the water. The answer came from Joseph Pardee of the US Geological Survey, who had traced the old shorelines of a vast lake in western Montana, held back by a dam of glacier ice, whose sudden draining sent its water across the Scablands and down to the Pacific. Bretz's idea was doubted for some forty years, and he won the Geological Society of America's Penrose Medal, its highest honour, in 1979.",
+   "facts": [
+    "F24",
+    "F25",
+    "F26",
+    "F27",
+    "F30"
+   ],
+   "grade_note": "8th grade (curriculum line G8.M3) teaches that a good explanation must account for all the evidence; the doubters rightly asked for the flood's source."
+  },
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "Joseph Pardee of the US Geological Survey had traced the old shorelines of a vast lake that once filled the valleys of western Montana behind a dam of glacier ice. In 1940 he described rows of gravel ridges on the old lake floor, up to about 15 metres high, set out in a regular pattern like ripples. Their pattern is plain from the air. What did Pardee say the ridges showed?",
+   "answer": "The lake had emptied in a fast, deep rush",
+   "choices": [
+    "The lake had emptied in a fast, deep rush",
+    "The lake had dried up slowly over centuries",
+    "Wind had heaped the dry lake bed into dunes",
+    "Waves had heaped the gravel as the lake shrank"
+   ],
+   "context": "The ridges are giant current ripples, shaped like those moving water leaves on a stream bed but far larger, and only a deep, fast torrent could build them: the ice dam had failed and the lake had poured out. Geologists now count 40 or more such floods between 15,000 and 13,000 years ago, so Bretz was right about the kind of event but not about its number.",
+   "facts": [
+    "F27",
+    "F28",
+    "F29",
+    "F30",
+    "M5"
+   ],
+   "grade_note": "8th grade earth science teaches erosion and deposition by moving water; curriculum line G8.M3 teaches that new evidence, here Pardee's ripples, can revise an accepted explanation."
+  },
+  {
+   "tier": 4,
+   "topic": "when-the-experts-were-wrong",
+   "question": "Martin Fleischmann, one of the world's leading electrochemists, and Stanley Pons announced at the University of Utah in 1989 that a current run through heavy water with a palladium rod gave off more heat than chemistry could explain. They said it came from nuclear fusion, which goes on in the Sun's core at about 15 million degrees. Laboratories around the world tried to repeat the test. What did most of them find?",
+   "answer": "No extra heat and no sign of fusion",
+   "choices": [
+    "No extra heat and no sign of fusion",
+    "Extra heat and clear signs of fusion",
+    "Clear signs of fusion but no extra heat",
+    "Extra heat but no sign of fusion"
+   ],
+   "context": "Teams at Caltech, the Massachusetts Institute of Technology and Britain's Harwell laboratory found nothing unusual, and had the heat come from fusion, its neutrons would have been deadly to the experimenters. A US Department of Energy panel found no convincing evidence of a useful energy source in 1989, its review of 2004 came to much the same view, and a few researchers still pursue the idea. The test that bore out Marshall and Shechtman, a result other laboratories can repeat, sank this one.",
+   "facts": [
+    "F31",
+    "F32",
+    "F33",
+    "M4"
+   ],
+   "grade_note": "8th grade (curriculum line G8.M3) teaches that findings must be repeatable; cold fusion is the case of a bold claim against the consensus that other laboratories could not reproduce."
+  }
+ ]
+}

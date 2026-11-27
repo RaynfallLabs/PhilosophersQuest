@@ -1,0 +1,553 @@
+{
+ "unit": "when-the-experts-were-wrong",
+ "questions": {
+  "bd5bcf2548": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Robin Warren and Barry Marshall worked at Royal Perth Hospital, Western Australia; Warren saw curved bacteria near inflamed lining",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Barry_Marshall",
+     "note": ""
+    },
+    {
+     "claim": "Prevailing view: ulcers from stress and acid; doctors held that no bacterium could live in the acid stomach",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Barry_Marshall",
+     "note": ""
+    },
+    {
+     "claim": "Marshall's attempts to infect piglets failed (1984)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Barry_Marshall",
+     "note": ""
+    },
+    {
+     "claim": "KEY: he drank a broth of the cultured bacteria himself",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Barry_Marshall",
+     "note": "Grokipedia: about 50 ml of a culture in alkaline peptone water."
+    },
+    {
+     "claim": "Wrong choices: gave it to volunteers / fed lab mice / fed a monkey",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:3982345&resultType=core&format=json",
+     "note": "The 1985 paper's single 'volunteer' was Marshall himself; the plural 'volunteers' is not defensible."
+    },
+    {
+     "claim": "Context: swallowed in 1984 after a baseline endoscopy showed a healthy lining",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Barry_Marshall",
+     "note": "Month differs by source (June vs July 1984); only the year is used."
+    },
+    {
+     "claim": "Context: the 1985 paper called the man only 'a volunteer'",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:3982345&resultType=core&format=json",
+     "note": "Abstract: 'A volunteer with histologically normal gastric mucosa'."
+    },
+    {
+     "claim": "Context: stomach acid kills nearly all germs that reach it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gastric_acid",
+     "note": ""
+    },
+    {
+     "claim": "Context: a 1954 study of stomach biopsies had found 'no bacteria there at all'",
+     "result": "uncertain",
+     "source": "https://en.wikipedia.org/wiki/Timeline_of_peptic_ulcer_disease_and_Helicobacter_pylori",
+     "note": "Palmer (Gastroenterology 27:218, 1954, 'Investigation of the gastric mucosa spirochetes of the human') searched about 1,000-1,180 suction biopsies for SPIRAL organisms without a silver stain and found none, putting earlier sightings down to contamination. Wikipedia/Grokipedia shorten this to 'no bacteria', but 'no bacteria there at all' overstates what he looked for. Fix: 'a study of more than a thousand stomach biopsies in 1954 had found none of the spiral bacteria'."
+    }
+   ]
+  },
+  "6c2e23246e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: ten days after the drink, an endoscopy with biopsy",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:3982345&resultType=core&format=json",
+     "note": "Primary paper: gastritis 'on the tenth day'; Grokipedia: endoscopies on days 10 and 14. Wikipedia's 'day eight' is the outlier (day 8 is when he vomited)."
+    },
+    {
+     "claim": "KEY: an inflamed lining (gastritis) heavily colonised by the bacteria",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Barry_Marshall",
+     "note": "'acute gastritis and heavy colonization' on day 10."
+    },
+    {
+     "claim": "Wrong choice: a deep ulcer",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Barry_Marshall",
+     "note": "No ulcer; Koch's postulates met for gastritis, not peptic ulcer."
+    },
+    {
+     "claim": "Wrong choices: healthy lining, bacteria gone / healthy lining with bacteria",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:3982345&resultType=core&format=json",
+     "note": "At day 14 the gastritis had largely resolved and no bacteria were seen, but the stem fixes day 10, so 'bacteria gone' stays wrong."
+    },
+    {
+     "claim": "Context: mild illness with nausea and vomiting lasting 14 days",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:3982345&resultType=core&format=json",
+     "note": "'A mild illness developed, which lasted 14 days.' Symptoms per Grokipedia: nausea, vomiting, halitosis."
+    },
+    {
+     "claim": "Context: paper proposed a lasting infection prepares the way for an ulcer",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:3982345&resultType=core&format=json",
+     "note": "'may progress to a chronic infection which predisposes to peptic ulceration'."
+    }
+   ]
+  },
+  "018d630861": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "1988 Lancet trial: 100 patients with duodenal ulcer and C. pylori; followed 12 months",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:2904568&resultType=core&format=json",
+     "note": "Marshall, Goodwin, Warren et al., Lancet 1988;2:1437-42; double-blind, 4 arms; eradication in some arms only."
+    },
+    {
+     "claim": "Duodenum = first part of the small intestine just past the stomach",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Peptic_ulcer_disease",
+     "note": ""
+    },
+    {
+     "claim": "KEY: far fewer relapses where bacteria were cleared",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:2904568&resultType=core&format=json",
+     "note": "21% relapsed when cleared vs 84% when persisting (p<0.0001)."
+    },
+    {
+     "claim": "Wrong choices: same / more / too few patients",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:2904568&resultType=core&format=json",
+     "note": "Difference highly significant."
+    },
+    {
+     "claim": "Context: 21 of 100 vs 84 of 100 within the year",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:2904568&resultType=core&format=json",
+     "note": ""
+    },
+    {
+     "claim": "Context: NIH conference advised antibiotics in 1994",
+     "result": "ok",
+     "source": "https://corpora.tika.apache.org/base/docs/govdocs1/218/218352.html",
+     "note": "NIH Consensus Development Conference, 7-9 February 1994: ulcer patients with H. pylori 'require treatment with anti-microbial agents'."
+    },
+    {
+     "claim": "Context: Marshall and Warren shared the 2005 Nobel Prize in Physiology or Medicine",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Barry_Marshall",
+     "note": ""
+    },
+    {
+     "claim": "Context: Marshall said everyone was against him; others argue the doubters showed proper scepticism",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Barry_Marshall",
+     "note": "1998 Academy of Achievement interview: 'everyone was against me, but I knew I was right'; Wikipedia gives the 'proper degree of scientific scepticism' counter-view. Paraphrased, not quoted."
+    }
+   ]
+  },
+  "86aa06d260": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "1982 (8 April), electron diffraction of a rapidly solidified Al-Mn alloy gave a tenfold ring of spots",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dan_Shechtman",
+     "note": "86 at.% Al, 14 at.% Mn; cooled at about 10^6 K/s."
+    },
+    {
+     "claim": "He counted them one by one and thought it could not be",
+     "result": "ok",
+     "source": "https://physicstoday.aip.org/news/nobel-prize-in-chemistry-honors-the-discovery-of-quasicrystals",
+     "note": "Shechtman: 'counting the diffraction peaks clockwise, one by one up to 10, and thinking that it couldn't be'."
+    },
+    {
+     "claim": "Textbooks: no crystal can have tenfold symmetry (only 2, 3, 4, 6-fold)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Quasicrystal",
+     "note": "Crystallographic restriction theorem."
+    },
+    {
+     "claim": "KEY: by the old definition a crystal's atoms repeat one small arrangement (periodic)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Crystal",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: one element / only from a melt / transparent",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Crystal",
+     "note": "Salt is a crystal of two elements, grows from brine; metals are crystalline and opaque."
+    },
+    {
+     "claim": "Context: regular pentagons cannot tile a plane",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Quasicrystal",
+     "note": ""
+    },
+    {
+     "claim": "Context: 1992 IUCr redefined a crystal as any solid giving a clear-cut (essentially discrete) diffraction pattern",
+     "result": "ok",
+     "source": "https://physicstoday.aip.org/news/nobel-prize-in-chemistry-honors-the-discovery-of-quasicrystals",
+     "note": "'any solid having an essentially discrete diffraction diagram'."
+    }
+   ]
+  },
+  "fbd51e9f07": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Linus Pauling won two Nobel Prizes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Linus_Pauling",
+     "note": "Chemistry 1954, Peace 1962."
+    },
+    {
+     "claim": "Pauling explained the pattern as multiple twinning; twinning was the standard explanation",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Quasicrystal",
+     "note": "Pauling, Nature 317:512 (1985) and 1987 '...twins of an 820-atom cubic crystal'; Physics Today: twinning was 'the obvious explanation'."
+    },
+    {
+     "claim": "Stem order: Pauling's twinning claim, then Shechtman narrowed his beam onto one grain",
+     "result": "error",
+     "source": "https://physicstoday.aip.org/news/nobel-prize-in-chemistry-honors-the-discovery-of-quasicrystals ; https://en.wikipedia.org/wiki/Quasicrystal",
+     "note": "Chronology reversed by implication. Shechtman ran his single-grain tests in 1982, on and just after the day of the discovery, when colleagues suggested twinning (Physics Today; NIST lecture slides); Pauling's twinning papers came in 1985 (Nature 317:512) and 1987, after the 1984 PRL paper, and he kept to twinning after the test. Fix: 'Twinning ... was the usual explanation for such odd results, and Linus Pauling, winner of two Nobel Prizes, argued it for years. Shechtman had already narrowed his electron beam until it struck inside a single tiny grain of the alloy. What did that one grain show?' Also fix the grade_note ('the experiment that answered Pauling')."
+    },
+    {
+     "claim": "KEY: one grain gave the whole tenfold pattern",
+     "result": "ok",
+     "source": "https://physicstoday.aip.org/news/nobel-prize-in-chemistry-honors-the-discovery-of-quasicrystals",
+     "note": "Each peak traced to a single grain; a beam 20 nm across reproduced the full pattern."
+    },
+    {
+     "claim": "Wrong choices: part of the pattern / sixfold / blur",
+     "result": "ok",
+     "source": "https://physicstoday.aip.org/news/nobel-prize-in-chemistry-honors-the-discovery-of-quasicrystals",
+     "note": ""
+    },
+    {
+     "claim": "Quote: Shechtman, 'It was not twinning.'",
+     "result": "ok",
+     "source": "https://physicstoday.aip.org/news/nobel-prize-in-chemistry-honors-the-discovery-of-quasicrystals",
+     "note": "His words: 'I did not know what it was, but I knew what it was not. And it was not twinning.'"
+    },
+    {
+     "claim": "Context: other labs reported the same patterns in 1985",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dan_Shechtman",
+     "note": "Several labs, Japanese teams among them, reported analogous icosahedral patterns by mid-1985."
+    },
+    {
+     "claim": "Context: 1987, An-Pang Tsai's team, large near-perfect grains settled most doubts",
+     "result": "ok",
+     "source": "https://physicstoday.aip.org/news/nobel-prize-in-chemistry-honors-the-discovery-of-quasicrystals",
+     "note": "Tsai (Tohoku University): a stable icosahedral phase grown into large, nearly perfect grains."
+    },
+    {
+     "claim": "Context: Pauling held out until his death in 1994",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Dan_Shechtman",
+     "note": "Died 19 August 1994. (The 'quasi-scientists' line is not used in this unit; Physics Today gives it as 'There is no such thing as quasicrystals... just quasiscientists', a remark Pauling 'often said', per Shechtman's account.)"
+    },
+    {
+     "claim": "Context: Shechtman won the 2011 Nobel Prize in Chemistry",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Dan_Shechtman",
+     "note": "Sole laureate."
+    }
+   ]
+  },
+  "7c4970aa58": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Margulis 1967 argued some organelles began as engulfed bacteria",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5426843/",
+     "note": "'On the Origin of Mitosing Cells', J Theor Biol 1967 (as Lynn Sagan)."
+    },
+    {
+     "claim": "Ribosomes build proteins; bacterial (70S) ribosomes are smaller and built differently from eukaryotic cytoplasmic (80S) ones",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Symbiogenesis",
+     "note": ""
+    },
+    {
+     "claim": "Chloramphenicol binds the 50S subunit of bacterial ribosomes and spares eukaryotic cytoplasmic ribosomes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chloramphenicol",
+     "note": ""
+    },
+    {
+     "claim": "KEY: inside a human cell it affects the mitochondrial ribosomes",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chloramphenicol",
+     "note": "'This ribosomal targeting extends to mitochondrial ribosomes in eukaryotes due to sequence homology'."
+    },
+    {
+     "claim": "Wrong choices: nucleus / loose in cytoplasm / on the endoplasmic reticulum",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chloramphenicol",
+     "note": "Cytoplasmic and ER-bound ribosomes are the same 80S kind the drug spares; the nucleus makes ribosome parts but does not translate."
+    },
+    {
+     "claim": "Context: this is why high doses can harm the bone marrow",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chloramphenicol",
+     "note": "The common dose-dependent, reversible marrow suppression; the rarer aplastic anaemia is not dose-related, and the context does not claim otherwise."
+    },
+    {
+     "claim": "Context: mitochondria have bacteria-like circular DNA and multiply only by splitting in two",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Symbiogenesis",
+     "note": "'formed only through binary fission'."
+    }
+   ]
+  },
+  "017a54033c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Margulis 1967: chloroplasts and mitochondria began as engulfed bacteria",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5426843/",
+     "note": ""
+    },
+    {
+     "claim": "More than a dozen journals turned the paper down",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5426843/",
+     "note": "Gray 2017: 'rejected by more than a dozen journals'; Grokipedia: about 15. Consistent."
+    },
+    {
+     "claim": "Doubters wanted stronger evidence; a rival autogenous view held the organelles formed inside the cell",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/cells-within-cells-an-extraordinary-claim-with-extraordinary-evidence/the-community-reacts/",
+     "note": "Raff and Mahler 1972; Uzzell and Spolsky 1974 (Gray 2017)."
+    },
+    {
+     "claim": "Michael Gray and Ford Doolittle compared chloroplast DNA and reported in 1982",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/cells-within-cells-an-extraordinary-claim-with-extraordinary-evidence/the-smoking-gun-support-from-a-new-technology/",
+     "note": "Berkeley: 'By 1982, the results were in.' Strictly the comparisons were of ribosomal RNA (gene) sequences, many from 1975-81, summed up in Gray and Doolittle's 1982 review 'Has the endosymbiont hypothesis been proven?' (Microbiol Rev). A fair 8th-grade simplification."
+    },
+    {
+     "claim": "KEY: most like photosynthetic bacteria (cyanobacteria)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Symbiogenesis",
+     "note": "Plastid genes 'cluster robustly with those from cyanobacteria'."
+    },
+    {
+     "claim": "Wrong choices: plant-pathogen bacteria / nucleus / mitochondria",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/cells-within-cells-an-extraordinary-claim-with-extraordinary-evidence/the-smoking-gun-support-from-a-new-technology/",
+     "note": "Plastid DNA was 'much more similar' to free-living photosynthesizing bacteria than to the nucleus."
+    },
+    {
+     "claim": "Context: mitochondrial DNA a year later resembled oxygen-using bacteria",
+     "result": "ok",
+     "source": "https://undsci.berkeley.edu/cells-within-cells-an-extraordinary-claim-with-extraordinary-evidence/the-smoking-gun-support-from-a-new-technology/",
+     "note": "Berkeley's wording; today placed within the Alphaproteobacteria."
+    },
+    {
+     "claim": "Context: Margulis received the US National Medal of Science in 1999",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lynn_Margulis",
+     "note": ""
+    }
+   ]
+  },
+  "3bbd071f01": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "The 1967 paper's third claim: flagella (their 9+2 basal bodies) came from captured spirochete-like (spiral) bacteria",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5426843/",
+     "note": "Gray 2017: 'ingestion of certain motile prokaryotes', 'perhaps spirochaete-like'. Margulis later called them undulipodia."
+    },
+    {
+     "claim": "Sperm swim with a flagellum",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lynn_Margulis",
+     "note": "9+2 axoneme of eukaryotic flagella and cilia."
+    },
+    {
+     "claim": "KEY: no DNA of their own was found",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5426843/",
+     "note": "'No genome has been associated with the eukaryotic flagellar apparatus despite efforts to find one.' (A 1989 report of basal-body DNA in Chlamydomonas was refuted in 1991, Johnson and Rosenbaum.)"
+    },
+    {
+     "claim": "Wrong choices: spiral-bacterium DNA / mitochondrion-like DNA / bacterial ribosomes",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5426843/",
+     "note": ""
+    },
+    {
+     "claim": "Context: most biologists trace flagella to the cell's own genes, duplicated and modified",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lynn_Margulis",
+     "note": "'endogenous development through gene duplication and modification'; Berkeley: most biologists reject the endosymbiont origin of tubule organelles."
+    }
+   ]
+  },
+  "f997ddce6c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Bretz argued from 1923 that one huge, sudden flood carved the Channeled Scablands of eastern Washington",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/J_Harlen_Bretz",
+     "note": "1923 J Geol paper; Bretz first thought there was a single 'Spokane flood' (FWS, HistoryLink); multiple floods came later."
+    },
+    {
+     "claim": "Geologists had spent about a century explaining the past by slow present-day processes (uniformitarianism) rather than Noah's Flood; his flood seemed a step back",
+     "result": "ok",
+     "source": "https://magazine.uchicago.edu/0912/features/legacy.shtml",
+     "note": "Lyell 1830-33; Bretz's theory 'smacked of biblical catastrophism'; Wikipedia: it implied 'a Biblical flood, which the scientific community rejected'."
+    },
+    {
+     "claim": "KEY: critics asked where so much water had come from, and he could not answer for years",
+     "result": "ok",
+     "source": "https://magazine.uchicago.edu/0912/features/legacy.shtml",
+     "note": "'There was, however, a question Bretz could not answer: where had so much water come from?' Grokipedia: critics mocked 'floods from nowhere'."
+    },
+    {
+     "claim": "Wrong choices: where it drained to / no drowned animals / no mud",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Missoula_floods",
+     "note": "None was the documented objection; the outlet (the Columbia to the Pacific) was never the puzzle."
+    },
+    {
+     "claim": "Context: the answer came from Joseph Pardee (USGS), who had traced the shorelines of an ice-dammed lake in western Montana whose draining crossed the Scablands to the Pacific",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Missoula_floods",
+     "note": "Pardee identified Glacial Lake Missoula in 1910; 'research by Pardee and Bretz' identified it as the source. Nuance: Bretz himself named the lake as the source in 1930, and Pardee 'never suggested in his paper' that the water carved the Scablands (UChicago Magazine). True as written (the answer rests on Pardee's lake); optional tweak: 'The answer lay in a lake that Joseph Pardee ... had traced'."
+    },
+    {
+     "claim": "Context: doubted for some forty years",
+     "result": "ok",
+     "source": "https://magazine.uchicago.edu/0912/features/legacy.shtml",
+     "note": "1923 to the 1965 field-trip telegram ('We are all now catastrophists!'); the debate is often called four decades long."
+    },
+    {
+     "claim": "Context: Penrose Medal, GSA's highest honour, 1979",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/J_Harlen_Bretz",
+     "note": "Wikipedia: 'the Geological Society of America's highest award'; UChicago confirms 1979."
+    }
+   ]
+  },
+  "74c56090f0": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Pardee (USGS) traced the old shorelines (strandlines) of an ice-dammed lake in western Montana",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Missoula_floods",
+     "note": "1910 paper identified Glacial Lake Missoula; Cordilleran ice-sheet dam across the Clark Fork. NPS: strandlines on Mount Sentinel and Mount Jumbo."
+    },
+    {
+     "claim": "In 1940 he described gravel ridges on the old lake floor, up to about 15 m high, in a ripple pattern",
+     "result": "ok",
+     "source": "https://magazine.uchicago.edu/0912/features/legacy.shtml",
+     "note": "1940 GSA abstract 'Ripple marks (?) in Glacial Lake Missoula', full paper 1942 ('Unusual currents in Glacial Lake Missoula'); Pardee: 'hills nearly 50 feet high and up to 500 feet apart'. NPS (Camas Prairie): ridges 15-50 ft high. 50 ft = 15.2 m."
+    },
+    {
+     "claim": "The pattern is plain from the air",
+     "result": "ok",
+     "source": "https://www.npshistory.com/publications/geology/inf/72-2/sec4.htm",
+     "note": "USGS: 'plainly visible on aerial photographs'; pattern 'almost indistinguishable from the ground'."
+    },
+    {
+     "claim": "KEY: the ripples showed the lake had emptied in a fast, deep rush",
+     "result": "ok",
+     "source": "https://magazine.uchicago.edu/0912/features/legacy.shtml",
+     "note": "Pardee argued the ice dam failed, releasing the lake's water; his 1942 title speaks of 'unusual currents'. Pardee estimated speeds above 45 mph (Wikipedia)."
+    },
+    {
+     "claim": "Wrong choices: dried slowly / wind dunes / waves as the lake shrank",
+     "result": "ok",
+     "source": "https://www.npshistory.com/publications/geology/inf/72-2/sec4.htm",
+     "note": "'typical ripple marks in every respect except their great size'."
+    },
+    {
+     "claim": "Context: giant current ripples like a stream bed's, built by a deep, fast torrent",
+     "result": "ok",
+     "source": "https://www.pbs.org/wgbh/nova/megaflood/scab-04.html",
+     "note": "NOVA: 'not unlike those seen in the bed of a stream'."
+    },
+    {
+     "claim": "Context: 40 or more floods between 15,000 and 13,000 years ago",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Missoula_floods",
+     "note": "Wikipedia: '40 or more separate floods', 15,000-13,000 years ago; NPS: as many as 100 failures in the same window. Counts vary by source, but 'or more' survives."
+    }
+   ]
+  },
+  "89846e8644": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Fleischmann was one of the world's leading electrochemists; with Pons, announced at the University of Utah in 1989 (23 March press conference)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Cold_fusion",
+     "note": ""
+    },
+    {
+     "claim": "Electrolysis of heavy water with a palladium cathode gave excess heat beyond chemistry; attributed to nuclear fusion",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cold_fusion",
+     "note": ""
+    },
+    {
+     "claim": "The Sun's core runs fusion at about 15 million degrees",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Nuclear_fusion",
+     "note": "About 15 million K; Celsius and kelvin are indistinguishable at this scale."
+    },
+    {
+     "claim": "KEY: most labs found no extra heat and no sign of fusion",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cold_fusion",
+     "note": "Caltech, Harwell, MIT found no anomalies by mid-1989. A minority (BARC, SRI, some Los Alamos runs) reported heat or neutrons, so 'most' is the right word."
+    },
+    {
+     "claim": "Wrong choices: heat and fusion / fusion signs no heat / heat but no fusion",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Cold_fusion",
+     "note": "'Extra heat but no sign of fusion' matches a few labs' reports but not most; the stem asks about most."
+    },
+    {
+     "claim": "Context: Caltech, MIT and Harwell found nothing unusual",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cold_fusion",
+     "note": ""
+    },
+    {
+     "claim": "Context: fusion at that power would have given neutrons deadly to the experimenters",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Cold_fusion",
+     "note": "About 10^12 neutrons per second per watt, 'levels that would have been fatal to the researchers'."
+    },
+    {
+     "claim": "Context: 1989 DOE panel found no convincing evidence of a useful energy source; 2004 review much the same; a few still pursue it",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Cold_fusion",
+     "note": "'did not present convincing evidence of a useful source of energy'; 2004: conclusions 'similar to those found in the 1989 review'; 'A small community of researchers continues'."
+    }
+   ]
+  }
+ },
+ "unit_notes": "11 questions: 9 ok, 1 error, 1 uncertain. Error: fbd51e9f07 tells Pauling's twinning claim and then Shechtman's single-grain test as if the test answered Pauling; the test was done in 1982, Pauling's twinning papers are 1985 and 1987 (the judge flagged the same order). Uncertain: bd5bcf2548's context says Palmer's 1954 biopsies found 'no bacteria there at all'; his study searched for spiral organisms (spirochetes) and found none. Checked and fine: Marshall's biopsy was on day 10 (primary 1985 paper; Wikipedia's 'day eight' is wrong); 1988 trial 21% vs 84%; 2005 Nobel with Warren; 8 April 1982; IUCr 1992; Shechtman's 2011 Nobel; Margulis 'more than a dozen' rejections (Gray 2017; Grokipedia about 15); Penrose 1979. Not used in the draft but noted: Pauling's 'quasi-scientists' line appears in Physics Today and Grokipedia as a remark he 'often said', per Shechtman's account (no primary text found); Grokipedia wrongly places the 12 January 1927 Geological Society of Washington meeting 'in Seattle' (it was Washington, D.C.)."
+}
