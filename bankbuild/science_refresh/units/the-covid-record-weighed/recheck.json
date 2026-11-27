@@ -1,0 +1,83 @@
+{
+  "unit": "the-covid-record-weighed",
+  "questions": {
+    "c1fc54ba4c": {
+      "verdict": "pass",
+      "why": "Context now says what the plan proposed ('would use', 'would have'), true to the declaration's 'nursing homes should use staff with acquired immunity' and 'Retired people living at home should have groceries ... delivered'. Stem, key and choices unchanged and sound.",
+      "sources": [
+        "https://gbdeclaration.org/",
+        "https://grokipedia.com/page/John_Snow_Memorandum"
+      ]
+    },
+    "a12187df58": {
+      "verdict": "pass",
+      "why": "'About 150' is now a believable wrong count (the letter: 15 in intensive care, no deaths), so the 'none died' pair is a real choice; the mask-rule clause is gone from the stem. No new problem.",
+      "sources": [
+        "https://www.mghpcs.org/munncenter/Documents/weekly/jan-21/Ludvigsson.pdf",
+        "https://news.ki.se/low-risk-of-severe-covid-19-in-children"
+      ]
+    },
+    "ee493f5f4c": {
+      "verdict": "pass",
+      "why": "'A single compulsory rule' is true to Bhatt's 'the imposition of at least one compulsory, non-pharmaceutical intervention', and the mask-order example is gone. No new problem.",
+      "sources": [
+        "https://www.sciencemediacentre.org/expert-reaction-to-a-preprint-looking-at-the-impact-of-lockdowns-as-posted-on-the-john-hopkins-krieger-school-of-arts-and-sciences-website/"
+      ]
+    },
+    "48f6ac563c": {
+      "verdict": "pass",
+      "why": "The Collins arc-closing clause is gone. The February 2026 acting CDC post is confirmed (PBS/AP, CBS, 18 February 2026) and stated in the past tense; the NIH figures are unchanged. No new problem.",
+      "sources": [
+        "https://www.pbs.org/newshour/health/nihs-bhattacharya-will-also-run-the-cdc-while-trump-administration-looks-for-a-permanent-director",
+        "https://www.cbsnews.com/news/nih-jay-bhattacharya-acting-cdc-director",
+        "https://grokipedia.com/page/Jay_Bhattacharya"
+      ]
+    },
+    "5aff379634": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrase. Re-checker's note: The old fix holds: 'fringe' is gone from the stem and sits in the context exactly ('three fringe epidemiologists'); the key is the email's exact words ('There needs to be a quick and devastating published take down of its premises', two words 'take down'); the three new wrong choices are not in the email (F39), each carries a forceful word, the key is the shortest, not the longest, and does not stand out; 'debunks' and Collins's 2023 words check out. Remaining problem, a giveaway of the declaration question (c1fc54ba4c): the stem's 'the scientists who warned in The Lancet that spread among the young would reach the whole population' presupposes a plan in which only the young mix while the rest are kept apart, which points straight to that question's key and rules out its 'all ages live normally' and 'keep schools shut' choices. Exact fix: replace 'as did the scientists who warned in The Lancet that spread among the young would reach the whole population' with 'as did the scientists who warned in The Lancet that its plan would overwhelm health care' (the John Snow Memorandum: uncontrolled transmission would 'overwhelm the ability of health-care systems to provide acute and routine care'). The steel-man stays and nothing else changes.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Great_Barrington_Declaration",
+        "https://thedailyeconomy.org/article/fauci-emails-and-some-alleged-science/",
+        "https://reason.com/2024/01/03/former-nih-director-ignoring-collateral-damage-inflicted-by-covid-19-policies-was-really-unfortunate/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7557300/"
+      ]
+    },
+    "5b889577ad": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrase. Re-checker's note: Choices now read 'remote for longer', clear, parallel and true to the record (Chalkbeat, AP). The new closure line is true to its sources: Grokipedia gives transmission, influenza models 'where youth drive community spread', 'concerns for teacher and familial vulnerabilities' and 'uncertainty over child-specific risks'; the World Bank chapter (Bundy, Hanushek et al.) gives influenza experience and 'a precautionary measure'. But it is not attributed: 'Schools had first closed' names no one who closed them or gave those reasons, and it states the reasons in the bank's own voice; its 'following ... and from worry' is also not parallel. Exact fix: replace 'Schools had first closed in 2020 as a precaution, following influenza models in which the young drive the spread and from worry for teachers and families, while the new disease's risks to children were still unknown.' with 'Officials who first closed schools in 2020 acted as a precaution, citing influenza models in which the young drive the spread and worry for teachers and families, while the new disease's risks to children were still unknown.'",
+      "sources": [
+        "https://grokipedia.com/page/Impact_of_the_COVID-19_pandemic_on_education",
+        "https://hanushek.stanford.edu/publications/role-school-closures-and-education-system-pandemic-preparedness-and-response",
+        "https://www.chalkbeat.org/2022/10/28/23429271/learning-loss-remote-learning-high-poverty-schools-harvard-stanford-research/"
+      ]
+    },
+    "e44bc2289b": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrase. Re-checker's note: Both new wrong choices are wrong on the record, not just another view. Soares-Weiser said the review examined 'whether interventions to promote mask wearing help to slow the spread', and that it 'is not able to address the question of whether mask-wearing itself reduces people's risk of contracting or spreading respiratory viruses', which rules out 'keeps its wearer from passing illness on'. The trials compared a mask-promotion arm with a control arm (masks against no masks, F18), with no comparison against staying home. The key matches her words. Remaining problem: the context paraphrases her caveat inexactly. 'could not answer whether wearing a mask itself lowers a person's risk' drops 'of contracting or spreading', and the spreading half is exactly what makes the new 'passing illness on' choice wrong, so the card leaves that out. Exact fix: replace 'whether wearing a mask itself lowers a person's risk' with 'whether wearing a mask itself lowers a person's risk of catching or spreading illness'. 42.3 and 13.3 percent, 'inconclusive' and 'hampers drawing firm conclusions' are exact.",
+      "sources": [
+        "https://www.cochrane.org/about-us/news/statement-physical-interventions-interrupt-or-reduce-spread-respiratory-viruses-review",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9885521/"
+      ]
+    },
+    "3a97dc84db": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrase. Re-checker's note: Facts check out: 65 studies from 19 countries; at 40 weeks severe-disease protection was 90.2% (ancestral, alpha, delta) and 88.9% (BA.1), and reinfection protection was 36.1% for BA.1 and 78.6% for the earlier forms. The paper says 'protection from re-infection from all variants wanes over time', and that protection against severe disease 'remained high for all variants'. The context fix is right, and the four choices are coherent and distinct. 'What protection, if any' is neutral. Remaining problem, a standout key: every wrong choice now puts an absolute in the changing slot ('unchanged', 'gone', 'gone ... gone'), and the key alone is hedged ('falling'), the middle of the unchanged-falling-gone scale. A test-wise student who knows no immunology avoids the absolutes and lands on the key, the same tell the judge flagged in 'no fall at all', now in three choices. Exact fix: replace the choice 'Still high against severe illness, and unchanged against catching it again' with 'Falling against severe illness, as fast as against catching it again'. It is not absolute, and it is wrong on the record for every group: severe-disease protection 'remained high' and 'appears to be durable' while reinfection protection waned.",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9998097/",
+        "https://www.cidrap.umn.edu/covid-19/previous-covid-19-may-slash-severe-illness-reinfection-89",
+        "https://sourcebooks.web.fordham.edu/ancient/thuc-plague.asp"
+      ]
+    },
+    "4ea65d608c": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrase. Re-checker's note: The stance fix holds: the stem gives both sides with their confidence (FBI moderate, Energy low; four agencies and the National Intelligence Council toward animals, low) and calls the question open; there is no virus detail and every claim is attributed and dated. The wrong choices are right on the record. The CIA was undecided in 2021 and in 2023: the June 2023 ODNI report says 'The CIA and another agency remain unable to determine the precise origin', and FactCheck.org's 2023 summary agrees. It judged in January 2025 'with low confidence' and said both origins 'remain plausible'; 'We have low confidence in this judgement' is exact (Al Jazeera). Remaining problem, convergence: the choices are (lab, low), (animal, low), (lab, moderate) and (neither), so the key is the one choice that shares an element with two others, the textbook convergence tell for a guesser. Exact fix: replace 'Neither origin was likelier, on the evidence it had' with 'A jump from animals was likelier, held with moderate confidence', which completes a lab-or-animals by low-or-moderate grid and is wrong for the CIA. Minor and optional: Wray stated the FBI's judgement in February 2023, not its confidence level, which came from the 2021 assessment and later reports.",
+      "sources": [
+        "https://www.factcheck.org/2023/03/scicheck-still-no-determination-on-covid-19-origin",
+        "https://irp.fas.org/eprint/wuhan-covid.pdf",
+        "https://www.aljazeera.com/news/2025/1/27/cia-says-more-likely-covid-19-escaped-from-a-lab",
+        "https://www.npr.org/2023/02/28/1160214557/fbi-covid-origins-investigation-wray"
+      ]
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "unit": "vaccines-the-science-and-the-scrutiny",
+  "questions": {
+    "0005f9572c": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrases. Re-checker's note: The judge's high issue is fixed. The stem rules out none of the three new lures, and each is wrong on the record: the defence is specific, not a general boost (OpenStax); the body's own antibodies, not the vaccine's material, block the germ (LibreTexts); and the lasting protection is memory, not germ material that stays on. The key is true. Remaining problem: the context gives away b4f47b3ea8's key. 'some stay on as memory cells' and the new 'the lasting part is the memory cells' settle memory B cells over leftover antibody. Fix: replace 'multiply, many become plasma cells that make antibodies, and some stay on as memory cells' with 'multiply and many become plasma cells that make antibodies'. Then replace 'rather than being a general boost, it is the antibodies the body makes that later block the real germ from reaching cells, and the lasting part is the memory cells;' with 'rather than being a general boost, and it is the antibodies the body makes that later block the real germ from reaching cells;'.",
+      "sources": [
+        "https://openstax.org/books/microbiology/pages/18-5-vaccines",
+        "https://bio.libretexts.org/Bookshelves/Microbiology/Introduction_to_Microbiology_(Liu_et_al.)/22%3A_Adaptive_Immunity_I/22.04%3A_Antigen-Antibody_Interactions",
+        "https://grokipedia.com/page/Immunological_memory"
+      ]
+    },
+    "67198cc413": {
+      "verdict": "fail",
+      "why": "LEAD (2026-11-27): left to drop; the Jesty question (6940cc0a60) is kept, as it teaches what made Jenner's work science (tested and published). Its own stem is fixed: no cowpox and no death counts, engrafting is defined once, and all three lures are wrong on the record (Jenner still made small cuts, took his first matter from Sarah Nelmes's hand, and wrongly promised lifelong protection). Remaining problem: 6940cc0a60's stem says Jenner 'put cowpox matter into eight-year-old James Phipps' and that 'the cowpox alone was not what made Jenner's work unique'. That tells the player that Jenner's method used cowpox, not smallpox, which is this question's key. No one-phrase fix exists: the Jesty question needs cowpox in its stem. Keep one of the pair, or re-key this one (for example on Boylston's counts).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Variolation",
+        "https://en.wikipedia.org/wiki/Edward_Jenner",
+        "https://en.wikipedia.org/wiki/1721_Boston_smallpox_outbreak"
+      ]
+    },
+    "6940cc0a60": {
+      "verdict": "pass",
+      "why": "The milkmaid is cut from the stem. The key, 50 characters, sits within the others' 47-51 range. The key stays true as a pair: Jenner tested his cases with smallpox matter and published the 23 cases of his Inquiry in 1798, while Jesty, whose sons later met smallpox unharmed, did not publicise his. The Hopkins paraphrase matches his documented words. Note: this stem's cowpox gives away 67198cc413's key (see there).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Benjamin_Jesty",
+        "https://en.wikipedia.org/wiki/Edward_Jenner",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC1200696/"
+      ]
+    },
+    "d4ea075bdc": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrases. Re-checker's note: The dead mosquito lure is gone. 'Every case had been cured with a new drug' is parallel, live and wrong: no proven antiviral existed before eradication (Grokipedia), and the context now says so. Remaining problem: the context's 'the campaign won by targeting outbreaks rather than vaccinating everyone' gives away 0930a51354's key (vaccinating the people around each case). Fix: replace 'the campaign won by targeting outbreaks rather than vaccinating everyone' with 'the campaign never vaccinated everyone'.",
+      "sources": [
+        "https://grokipedia.com/page/Smallpox",
+        "https://webharvest.gov/peth04/20041014235807/http://www.who.int/emc/diseases/smallpox/factsheet.html"
+      ]
+    },
+    "0930a51354": {
+      "verdict": "pass",
+      "why": "The judge's high issue is fixed. The radio sentence is in the context, the word 'first' is gone from every choice, and the four choices are parallel. The 80-100 percent belief stays in the stem as the expectation the answer breaks. The facts are right (UW Magazine, Lasker). This question's own key was given away by d4ea075bdc's context; the fix lies there.",
+      "sources": [
+        "https://magazine.washington.edu/feature/william-foege-61-honored-for-his-role-in-eradicating-smallpox",
+        "https://laskerfoundation.org/stopping-smallpox-in-its-tracks/"
+      ]
+    },
+    "6af818d6b0": {
+      "verdict": "pass",
+      "why": "The question now keys the documented finding: the June 1955 hearing concluded 'the problem was primarily the lack of scrutiny from the NIH' Laboratory of Biologics Control. On the record, no source has Cutter faking its tests, blames the clinics or storage, or blames Salk, and the killed vaccine has been the only US polio vaccine since 2000. Offit's figures are attributed. The stem no longer points at the regulator.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cutter_Laboratories",
+        "https://www.cdc.gov/polio/vaccines/index.html",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC1383764/"
+      ]
+    },
+    "0185ee2d81": {
+      "verdict": "pass",
+      "why": "The new lure is live and wrong on both halves. CRS says the VICP 'shields manufacturers and administrators', barring suits against either until a petition is filed and judged, and makers stay liable after that route. The ambiguous dates are now 'nine in the four years 1978 to 1981'. The context's added line on whoever gave the shot is right. The shield is stated as documented fact, with no verdict.",
+      "sources": [
+        "https://www.everycrsreport.com/reports/IF12213.html",
+        "https://grokipedia.com/page/National_Childhood_Vaccine_Injury_Act",
+        "https://en.wikipedia.org/wiki/National_Childhood_Vaccine_Injury_Act"
+      ]
+    },
+    "ca1d8739fa": {
+      "verdict": "pass",
+      "why": "'That officials have confirmed the report' is not ruled out by the stem, and it is wrong: a report alone is not verified, and 'some reports can lack details or contain errors' (CDC). The context now says so. The CDC quotation is exact. This question's key was given away by 4bb196e209's context; the fix lies there.",
+      "sources": [
+        "https://www.cdc.gov/vaccine-safety-systems/vaers/index.html"
+      ]
+    },
+    "050fd30fdc": {
+      "verdict": "pass",
+      "why": "The key follows the report's words ('have not been systematically examined'), and two choices now concern the schedule and two its vaccines. The new lure is wrong on the record: the committee credited immunization for the decline of the diseases. 'up to 24 vaccine doses by age two' matches 'up to 24 immunizations'. Both halves of the finding are given. A hint toward this key in ed4d9cfadd's context is fixed there.",
+      "sources": [
+        "https://www.nationalacademies.org/read/13563/chapter/2"
+      ]
+    },
+    "ed4d9cfadd": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrases. Re-checker's note: These are now right: Salmon's condition (PBS: 'You can't compare that new vaccine to no vaccine, because the standard of care is the old vaccine', said where a vaccine already exists), Kennedy's exact words ('I'm not suggesting we go back and placebo test all childhood vaccines', to a Senate subcommittee), 'gold standard science' as his own wording, and Black's ethical reason and the benefit to the controls. The reasoning given to Benn and Kulldorff is in their preprint's abstract. Remaining problems: (1) The text never ties that reasoning to the preprint or gives a date, and 'answer' implies a reply to Salmon, whose words came later (September 2025, after the July 2025 preprint). Replace 'Christine Stabell Benn and Martin Kulldorff answer that' with 'Christine Stabell Benn and Martin Kulldorff argued in a 2025 preprint that'. (2) 'questions such as the best timing and order of the shots remain open' hands 050fd30fdc its key. Replace 'and that questions such as the best timing and order of the shots remain open' with 'and that much about vaccines is still unknown' (their words: 'there are many things about vaccines that we do not know'). (3) 'a rule that runs from the Nuremberg Code of 1947' hands the T5 when-the-state-decides-the-science question its key (the first principle: voluntary consent). Replace 'a rule that runs from the Nuremberg Code of 1947 to the Declaration of Helsinki of 1964, which added consent by parents for children' with 'a rule that the Declaration of Helsinki of 1964 extended to consent by parents for children' (1964 text: the legal guardian's consent for the legally incompetent).",
+      "sources": [
+        "https://www.pbs.org/newshour/nation/rfk-jr-wants-all-new-vaccines-tested-against-a-placebo-doctors-say-that-isnt-good-science",
+        "https://sciety.org/articles/activity/10.21203/rs.3.rs-7202535/v1",
+        "https://pubmed.ncbi.nlm.nih.gov/10749457/",
+        "https://www.wma.net/what-we-do/medical-ethics/declaration-of-helsinki/doh-jun1964/",
+        "https://www.spotlightpa.org/news/2026/02/trump-vaccine-trials-unethical-children-hhs-rfk-federal-government/"
+      ]
+    },
+    "4bb196e209": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrases. Re-checker's note: The question is now clear, and the key matches the report's stated background ('less than one percent reported', AHRQ), attributed as a reason, not a count. Remaining problem: the context's 'a report does not show that a vaccine caused a problem' hands ca1d8739fa its key; that question turns on exactly this point. Fix: replace 'a report does not show that a vaccine caused a problem, and most problems are never reported' with 'anyone may file a report, and most problems are never reported'.",
+      "sources": [
+        "https://digital.ahrq.gov/ahrq-funded-projects/electronic-support-public-health-vaccine-adverse-event-reporting-system"
+      ]
+    }
+  }
+}

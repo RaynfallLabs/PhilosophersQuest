@@ -1,0 +1,100 @@
+{"unit": "vaccines-the-science-and-the-scrutiny",
+ "questions": {
+  "0005f9572c": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem lists what the three kinds carry: a killed germ, a weakened germ, a protein from a germ's coat. Each wrong choice is something the stem has just said a vaccine does not carry: antibodies from another body, white blood cells from a donor, a germ-killing medicine. A student who knows no immunology gets the key by elimination. The key is also the only choice about the body's own cells.",
+     "fix": "Keep the stem and the key, and use three wrong choices that fit everything the stem says, built on real 9th-grade misconceptions: 'A general boost that strengthens every defence at once' (the non-specific boost), 'Germ parts that block the real germ from getting into cells' (the blocking idea) and 'A store of germ that stays to keep the defences busy' (the lingering-germ idea). Keep the passive-immunity misconception in the context, where it already is."}
+   ]},
+  "b4f47b3ea8": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'An immune system grown stronger with age' is the weakest choice: the stem says the booster came only months later. Grade fit is fine. High-school biology (Miller and Levine, OpenStax Biology) teaches the primary and secondary response and memory B cells, and the key goes past the 6th-grade 'the body remembers' (the-bodys-defences) to the cell behind it, so it does not re-key T2.",
+     "fix": "Replace it with 'White blood cells still gathered in her arm' (it sounds plausible, it fits the timing and it is wrong)."}
+   ]},
+  "9828e3acec": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem gives the answer. It says engrafting put 'smallpox matter' into cuts and that Boylston 'lost about 2 in 100' of his patients, then names 'Jenner's cowpox'. Moving from smallpox matter that killed to cowpox points straight at 'Giving people real smallpox to die of or spread', and 'to die of' echoes the death count. No wrong choice deals with the deaths the stem stresses.",
+     "fix": "Take 'cowpox' and the death counts out of the stem (Boylston's arithmetic can go to the context, or into a question of its own): '...after Onesimus, an enslaved West African man, told the minister Cotton Mather of the practice. Engrafting put matter from a smallpox sore into a small cut. What did Edward Jenner's method, 75 years later, do away with?' Keep all four choices. The student must now know that Jenner used a different, milder disease."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'Engrafted' is used before it is explained; only the 'too' in the next clause hints at what it means. At 75 words with five people named, this stem is the longest in the unit.",
+     "fix": "Define the term once, as in the fix above ('Engrafting put matter from a smallpox sore into a small cut'), and cut the Boston clause down."},
+    {"axis": "other", "severity": "low",
+     "what": "Leak between questions: 117e29d74b's stem says Jenner took cowpox matter 'from a milkmaid's hand', which rules out this question's choice 'Taking the matter from another person's sore' for a player who has seen it.",
+     "fix": "In 117e29d74b, write 'put cowpox matter into eight-year-old James Phipps', and leave the milkmaid to the context."}
+   ]},
+  "117e29d74b": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "Jesty's family was challenged with smallpox too, though not by Jesty and not in print. The facts say his sons were later exposed and did not catch it, and that Robert was inoculated with smallpox in 1805 (Wikipedia may also report a variolation of the boys by a surgeon in 1789). The key holds because Jenner made the test himself and published it, but the half that says 'tested' is not unique to Jenner on its own. The fact-checker should confirm.",
+     "fix": "Write the key as 'Challenged his cases with smallpox matter himself, and published them' (stays near 55 characters)."},
+    {"axis": "tell", "severity": "low",
+     "what": "The key makes two claims (tested, then published) and is the longest choice (58 characters against 47-51). 'Gave cowpox to a whole village during an epidemic' echoes Jesty's own story in the stem, so it is a lure only for a careless reader.",
+     "fix": "Make the others two-part as well, for example 'Explained how cowpox matter makes a body immune to smallpox', and 'Gave cowpox to strangers, not only to his own family'."}
+   ]},
+  "d4ea075bdc": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The mosquitoes that spread it had died out' is a dead choice. Every 9th grader knows mosquitoes have not died out anywhere, and nothing in the stem connects smallpox to insects, so only three choices are live. The rest is good: the eradication is stated flatly, there is no pathogen detail, and the host fact is the WHO's.",
+     "fix": "Replace it with 'The virus had grown weaker as it passed between people' (a real misconception, live, parallel and wrong). Avoid 'one attack gave immunity for life' and 'it could not survive outside the body': both are partly true."}
+   ]},
+  "53124425d5": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem describes half of the answer: Foege 'asked missionaries with radios to report every case they heard of'. The only choice that uses those case reports is the key ('around each case' echoes 'every case'). The key is also the only choice that does not end in 'first', a structural odd-one-out. A student who has never heard of ring vaccination picks it.",
+     "fix": "Move the radio sentence to the context and make the choices parallel, with no 'first': 'Vaccinated the people around each case' / 'Vaccinated every child under five' / 'Vaccinated the people of the largest towns' / 'Vaccinated the doctors and nurses'. Keep the 80-100 percent belief in the stem; it sets up the expectation the answer breaks."}
+   ]},
+  "c4ba06eba6": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem states both premises: the lots held live virus, and they passed every required test. 'The required tests could miss small amounts of live virus' follows from those two by plain logic, so a student needs no knowledge of Cutter. 'A killed-virus polio vaccine could never be safe' overreaches, and a 9th grader sees that. The stance is right: Offit's figures are attributed and dated, the record is stated as fact, and there is no sermon.",
+     "fix": "Teach the insensitive tests in the stem, and key the documented finding of the institutional record: '...Yet those lots had passed every safety test the licence required. A congressional hearing in June 1955 looked for the cause. Where did it lay most of the blame?' Key: 'On too little checking by the federal laboratory' / 'On Cutter's workers, for faking their tests' / 'On Jonas Salk, for a method that could not work' / 'On the clinics, for storing the vaccine badly' (F24: the hearing found 'primarily the lack of scrutiny from the NIH Laboratory of Biologics Control')."}
+   ]},
+  "f856644a7b": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem frames lawsuits as the problem that drove makers out, and Congress 'answered'. 'Makers had to pay every claim themselves; families got a jury in every case' would have made that problem worse, so the stem's own logic rules it out and only three choices are live. The key also repeats the stem's word 'lawsuits'. The stance is right: the shield is stated as documented fact, with no verdict.",
+     "fix": "Replace it with a choice that answers the stem's problem the wrong way, the 'ended all lawsuits' misconception: 'Makers were freed from every lawsuit; families could sue only the doctor who gave the shot'. The Act covers whoever gave the shot too, so this is wrong. Avoid 'families sue the government instead': VICP petitions name the HHS Secretary, so it is partly true."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'rose from nine in 1978 to 1981 to more than 200' can be misread as a climb from 1978 to 1981.",
+     "fix": "'rose from nine in the four years 1978 to 1981 to more than 200 by the mid-1980s'."}
+   ]},
+  "ca1d8739fa": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem rules out 'That a doctor has checked the rash': it has just said that any person, a parent among them, may report, and that the father filed this report. The key also restates the stem's own premise ('two days after a shot'). In practice the choice is between the naive 'the shot caused the rash' and the restatement. The point it teaches is right: this is the CDC's own caution, quoted, and with 9be38d0256 it gives both sides of the VAERS record.",
+     "fix": "Replace the doctor choice with 'That other children have had the same rash' (a single report does not show it; live and wrong). Keep the other three."}
+   ]},
+  "570efc9597": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem is all about the schedule: it grew from 7 diseases to 14 germs and 24 shots, and the committee reviewed 'it'. The key is the only choice about the schedule as a whole; the other three are about 'its vaccines' one at a time. A test-wise student picks the odd one out because it matches the stem's subject. The stance is right: both halves of the IOM finding appear, quoted and dated, and the committee's 'unethical and infeasible' answer is in the context.",
+     "fix": "Replace 'No study had looked for rare side effects of its vaccines' with a choice about the whole schedule that is false: 'No study had shown that the schedule made its diseases rarer' (many have). The key and two choices about single vaccines remain, so it is no longer a structural odd-one-out."},
+    {"axis": "fact", "severity": "low",
+     "what": "IOM 2013 says 'up to 24 immunizations by age 2', and some of those are not injections (rotavirus is given by mouth); 'shots' overstates it. The key's 'No study' is also a little stronger than the report: it says key elements of the schedule 'have not been systematically examined' and that 'few studies' assessed the entire schedule.",
+     "fix": "Write 'with up to 24 vaccine doses by age two'. Word the key 'The schedule as a whole had not been systematically studied' and recast the other choices to match ('Its vaccines had not been...')."}
+   ]},
+  "a0f30e055e": {"verdict": "revise",
+   "issues": [
+    {"axis": "fact", "severity": "medium",
+     "what": "The stem's paraphrase of Salmon makes his claim broader than he made it. His documented words are 'You can't compare that new vaccine to no vaccine, because the standard of care is the old vaccine', a point about a new vaccine where an older one already exists. 'A new vaccine cannot ethically be compared with no vaccine' as a general rule is false: first-of-their-kind vaccines are routinely tested against saline. A steel-man must be the exact argument. The condition also does not fit Prevnar, the first conjugate pneumococcal vaccine for babies. Black's own reason was the ethics of giving 15,000 babies a dummy series.",
+     "fix": "Drop Salmon from the stem; his exact quote can go to the context. Give the ethics to Black, who ran the trial: '...Steven Black, who helped run the 1990s trial of Prevnar, a pneumococcal vaccine for babies, said giving its more than 15,000 control babies a dummy shot raised an ethical concern. What did the control babies get instead?' The stem gets shorter and names three people fewer."},
+    {"axis": "stance", "severity": "low",
+     "what": "The officials' answer is steel-manned, but the dissent's reasoning is not given. The stem has Kennedy 'calling for gold standard science' and nothing more, and the context gives the officials the last argument. The dissenters' main point is that a control given another vaccine shows only how two vaccines compare, not what either does against nothing. Add it, sourced and attributed, so each side has its reason. The researcher's conflict is ruled for the researcher. On the record, Kennedy's May 2025 call covered NEW vaccines, tested against a placebo before approval, and he told senators he was not proposing to re-test existing childhood vaccines. Benn and Kulldorff proposed nine placebo-controlled trials of vaccines already on the schedule. No one called for a placebo trial 'of the whole schedule'. The draft says exactly what each called for, and the card and every later text must keep that: never write that Kennedy called for placebo trials of the existing schedule.",
+     "fix": "Add to the context, with a source found by the fact-checker (the Benn-Kulldorff preprint or the PBS piece): 'Critics answer that a control given another vaccine shows how the two compare, not what either does against an inert shot.'"},
+    {"axis": "fact", "severity": "low",
+     "what": "Check who said 'gold standard science'. F37 gives it to Kennedy ('every innovation in vaccine development must be grounded in gold standard science and transparency'), but the 1 May 2025 statement came through the HHS spokesman Andrew Nixon. If the words were the department's, the stem must not put them in Kennedy's mouth.",
+     "fix": "If the fact-checker cannot pin it to Kennedy himself, write 'the health department led by Robert F. Kennedy Jr., calling for gold standard science, announced in May 2025...'."},
+    {"axis": "tell", "severity": "low",
+     "what": "'Half a dose of the new vaccine' is the weakest choice: any student who has done the fair-trials unit knows a control cannot get the vaccine being tested.",
+     "fix": "Replace it with 'An extra dose of one of their usual baby shots'. It fits the stem's 'no dummy shot' and is wrong (both groups had their usual shots). Do not use an adjuvant-only shot: the stem's ethical concern rules it out as a dummy."}
+   ]},
+  "9be38d0256": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'How much of the problem' is vague: the problem is side effects not reaching VAERS, but the reader has to work that out. The attribution is good: the figure is said to be the report's stated reason, dated 2010, and the context says plainly that the project did not measure it.",
+     "fix": "'What share of vaccine side effects did it say were being reported?'"}
+   ]}
+ },
+ "unit_notes": "12 questions (target 11). All key different facts: two on Jenner (what vaccination removed; what made his work evidence), two on smallpox (why it could be ended; ring vaccination) and two on VAERS (a report is not proof; under-reporting). STANCE, ruled both ways. Settled science is stated flatly: the antigen and memory B cells (0005f9572c, b4f47b3ea8) and the eradication (d4ea075bdc). The institutional record is stated as documented fact, attributed and dated: Cutter (Offit 2005; licensed 1955), the 1986 Act, VAERS (since 1990; Lazarus 2010) and IOM 2013, both halves. The officials' answer is steel-manned: IOM's 'unethical and infeasible', and Prevnar's active control. There is no sermon, no medical advice and no 'anti-vaxxer'. Two gaps: the dissent's own reasoning is missing (see a0f30e055e), and Kennedy is the only dissenter named in a stem. CONFLICT RULING: the researcher is right, and the units.json phrase 'critics such as Robert F. Kennedy Jr. asking for gold-standard placebo-controlled trials of the whole schedule' must not be keyed as written. Kennedy called for placebo tests of NEW vaccines and disclaimed re-testing existing ones. Benn and Kulldorff proposed trials of vaccines in use. The Kulldorff-Hoeg HHS assessment (January 2026) asked for placebo-controlled trials in general. The draft attributes each call correctly; keep it so on the card. Unsourceable: the '<1%' figure is sourced only as the Lazarus report's stated background (it is attributed that way, so it is fine), and the 'gold standard science' speaker needs checking. Pathogen detail: none anywhere; host range and 'live virus' are not enhancement detail. Grade: memory B cells and the primary and secondary response are fine at 9th grade. Overlaps, checked against all 119 final.json files: none re-keyed. the-bodys-defences (T2) keys 'the body remembers'; this unit keys memory B cells. how-germs-were-proven and viruses-bacteria-and-antibiotics share no fact. fair-trials-controls-and-placebos keys the Francis trial's rates and volunteer bias; here placebo is only defined in a stem and randomisation appears only in contexts, and the active control (Prevnar) is new. sciences-dark-chapters (T4) does not key the Nuremberg Code either. Scope gap: informed consent and the Nuremberg Code are in this unit's scope but appear only in a context. The facts sheet hands them to when-the-state-decides-the-science, which has no final.json yet; confirm it keys the Code, or add a consent question here. Leak between questions: the milkmaid's hand in 117e29d74b answers a choice in 9828e3acec."}

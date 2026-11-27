@@ -1,0 +1,241 @@
+{
+ "unit": "vaccines-the-science-and-the-scrutiny",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "Vaccines differ in what they carry. Some hold a germ that has been killed, some a live germ weakened until it causes little or no illness, and some only a single protein taken from a germ's outer coat. Each kind can protect a child against the real germ. What do all three kinds give the immune system?",
+   "answer": "A shape its own cells can learn to recognise",
+   "choices": [
+    "A shape its own cells can learn to recognise",
+    "Antibodies made ready in another body",
+    "White blood cells taken from an immune donor",
+    "A medicine that kills the germ on contact"
+   ],
+   "context": "The killed germ, the weakened germ and the lone protein all carry antigens, the molecular shapes that set off the body's own adaptive defences: B cells that fit the antigen multiply, many become plasma cells that make antibodies, and some stay on as memory cells. Antibodies made in another body, such as those taken from an immunised animal and given against a toxin, are passive immunity, borrowed rather than learned, and a vaccine is not a medicine that attacks the germ itself.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "Ninth-grade biology teaches how the immune system answers an antigen and how a vaccine prepares it, a step beyond the sixth-grade idea that the body remembers a germ."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "A girl gets her first dose of a vaccine, and over the next week or two her blood slowly gains a modest amount of antibody against its antigen. Months later she gets a booster dose, and within a few days her antibody level climbs far higher than it did the first time. What makes the second response faster and larger?",
+   "answer": "Memory B cells formed after the first dose",
+   "choices": [
+    "Memory B cells formed after the first dose",
+    "Antibodies still left over from the first dose",
+    "Antigen stored in her arm since the first dose",
+    "An immune system grown stronger with age"
+   ],
+   "context": "The first time, the few B cells that fit the antigen must be found and multiplied, which takes days to weeks, and some of them stay behind as long-lived memory B cells. At the booster they turn quickly into antibody-making plasma cells, so the response comes in days and is many times larger, while the antibody from the first dose fades in the months between; that is why many vaccines, killed ones especially, are given more than once.",
+   "facts": [
+    "F3",
+    "F5"
+   ],
+   "grade_note": "Ninth-grade biology teaches the primary and secondary immune responses and the memory cells behind them, the reason vaccines are given in a series."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "Lady Mary Wortley Montagu had her son engrafted in the Ottoman Empire in 1718, and in Boston in 1721 smallpox matter went into small cuts too, after Onesimus, an enslaved West African man, told the minister Cotton Mather of the practice. Zabdiel Boylston lost about 2 in 100 of those he inoculated; about 1 in 7 Bostonians who caught smallpox the ordinary way died. What did Edward Jenner's cowpox, 75 years later, do away with?",
+   "answer": "Giving people real smallpox to die of or spread",
+   "choices": [
+    "Giving people real smallpox to die of or spread",
+    "Putting the matter into a cut in the skin",
+    "Taking the matter from another person's sore",
+    "Needing a fresh dose again in later years"
+   ],
+   "context": "Engrafting, or variolation, gave a real though usually milder smallpox, so it still killed some and could spread to others while the sores healed; cowpox is a different, milder disease that protects against smallpox, so vaccination was far safer and rarely passed to contacts. Jenner still put the matter into small cuts, took his first from the sores on a milkmaid's hand, and wrongly promised lifelong protection, for revaccination was later found to be needed.",
+   "facts": [
+    "F6",
+    "F7",
+    "F8",
+    "F9",
+    "F13",
+    "F16"
+   ],
+   "grade_note": "Ninth-grade science compares a risky remedy with a safer one by the evidence, and Boylston's counts are one of the earliest numerical comparisons in medicine."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "Benjamin Jesty, a Dorset farmer, scratched matter from a cow with cowpox into the arms of his wife and two sons in 1774, with smallpox in his village. Edward Jenner, a country doctor, put cowpox matter from a milkmaid's hand into eight-year-old James Phipps in May 1796. Donald Hopkins, an American doctor and historian of smallpox, argued that the cowpox alone was not what made Jenner's work unique. What did Jenner do that Jesty had not?",
+   "answer": "Tested his cases with smallpox matter, then published them",
+   "choices": [
+    "Tested his cases with smallpox matter, then published them",
+    "Explained how cowpox matter makes a body immune",
+    "Gave cowpox to a whole village during an epidemic",
+    "Persuaded Parliament to make vaccination compulsory"
+   ],
+   "context": "On 1 July 1796 Jenner inoculated Phipps with matter from smallpox and no disease followed; he tested others the same way and paid to print the 23 cases of his Inquiry in 1798, while Jesty did not publicise his. Hopkins wrote that Jenner's unique contribution was that he 'then proved [by subsequent challenges] that they were immune to smallpox.' No one could yet explain how the protection worked, and England made infant vaccination compulsory only in 1853, thirty years after Jenner died.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "Ninth-grade science asks what turns a hunch into evidence, and Jenner's deliberate test and published cases are the classic contrast with an untested success."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "Search teams could find nearly every smallpox case by its rash, which looked unlike other illnesses, and the last natural case was in Somalia in 1977. The World Health Assembly declared smallpox eradicated in May 1980, the only human disease wiped out so far. Why could stopping the last cases end it for good?",
+   "answer": "No animal carried the virus, only people",
+   "choices": [
+    "No animal carried the virus, only people",
+    "Every person alive had been vaccinated",
+    "Every lab had destroyed its virus stocks",
+    "The mosquitoes that spread it had died out"
+   ],
+   "context": "Smallpox passes only from person to person, with no animal host and no part played by insects, so once no one anywhere was infected it had nowhere left to live; the easy-to-see rash and the lack of hidden carriers let teams find every outbreak. The campaign won by targeting outbreaks rather than vaccinating everyone, and stocks of the virus are still kept in two laboratories, at the CDC in the United States and at VECTOR in Russia.",
+   "facts": [
+    "F17",
+    "F18",
+    "F19",
+    "F20"
+   ],
+   "grade_note": "Ninth-grade biology teaches how infectious diseases spread between hosts, and smallpox shows why a disease with no animal host can be ended."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "William Foege, an American doctor in eastern Nigeria, faced a smallpox outbreak late in 1966 with too little vaccine to go round. Health officials then held that 80 to 100 percent of a population had to be vaccinated to stop smallpox. Foege asked missionaries with radios to report every case they heard of. What did his teams do with the vaccine they had?",
+   "answer": "Vaccinated the people around each case",
+   "choices": [
+    "Vaccinated the people around each case",
+    "Vaccinated every child under five first",
+    "Vaccinated the largest towns first",
+    "Vaccinated the doctors and nurses first"
+   ],
+   "context": "Foege's teams vaccinated the villages with cases, then the places the disease was likely to reach next along family and market routes, and four weeks later the outbreak was over, before the shipment for mass vaccination had arrived. This surveillance and containment, or ring vaccination, became the method of the worldwide campaign; accounts of how small a share of people it took range from 7 or 8 percent to under half.",
+   "facts": [
+    "F20",
+    "F21"
+   ],
+   "grade_note": "Ninth graders learn to judge a strategy by its evidence, and ring vaccination is the case where a targeted method beat the expected one."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "Cutter Laboratories of Berkeley, California, was licensed in 1955 to make Jonas Salk's new polio vaccine, which was meant to hold only killed virus. Some of Cutter's lots held live poliovirus, and in Paul Offit's 2005 account about 200 children were left with some paralysis and 10 died. Yet those lots had passed every safety test the licence required. What did that show?",
+   "answer": "The required tests could miss small amounts of live virus",
+   "choices": [
+    "The required tests could miss small amounts of live virus",
+    "Cutter had faked the results of its safety tests",
+    "A killed-virus polio vaccine could never be safe",
+    "Live virus had got into the lots after testing"
+   ],
+   "context": "Cutter's tests could not pick up a small amount of surviving virus; inspectors found nothing wrong with its methods, and a congressional hearing in June 1955 laid most of the blame on the lack of scrutiny by the federal Laboratory of Biologics Control, and the head of the National Institutes of Health had set aside Bernice Eddy's 1954 report of paralysed test monkeys. Later that year the laboratory became the Division of Biologics Standards, and federal scientists began testing each lot before release; the killed-virus vaccine, made under the new checks, is the only polio vaccine the United States has used since 2000.",
+   "facts": [
+    "F22",
+    "F23",
+    "F24",
+    "F25",
+    "F41"
+   ],
+   "grade_note": "Ninth-grade science teaches that a clean test result is only as good as the test's sensitivity, and the Cutter lots are the standard case."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "Lawsuits over the diphtheria, tetanus and pertussis (DTP) shot rose from nine in 1978 to 1981 to more than 200 by the mid-1980s, and by the end of 1985 only one American company still made the vaccine for pertussis, or whooping cough. Congress answered with the National Childhood Vaccine Injury Act, signed in November 1986. What trade did the law make?",
+   "answer": "Makers faced fewer lawsuits; families could be paid without proving fault",
+   "choices": [
+    "Makers faced fewer lawsuits; families could be paid without proving fault",
+    "Makers paid a set fine per injury; families gave up any claim to payment",
+    "Makers got federal grants to keep going; families got the shots for free",
+    "Makers had to pay every claim themselves; families got a jury in every case"
+   ],
+   "context": "A family that believes a covered vaccine caused an injury must first file with the National Vaccine Injury Compensation Program, where a special master of the Court of Federal Claims decides without a jury and need find no one at fault; the makers stay liable for faulty manufacture or poor warnings. The awards come from a trust fund filled by a tax of 75 cents on each dose for each disease it prevents, and about 5.4 billion dollars had been paid out by 2025.",
+   "facts": [
+    "F27",
+    "F28",
+    "F29"
+   ],
+   "grade_note": "Ninth-grade science and society asks how institutions handle the risks of a technology, and the 1986 Act is the documented case for vaccines."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "Any person may send a report to the Vaccine Adverse Event Reporting System (VAERS), run since 1990 by the Centers for Disease Control and Prevention and the Food and Drug Administration: a patient, a parent, a nurse or a vaccine maker. A boy breaks out in a rash two days after a shot, and his father files a report. What does that one report show by itself?",
+   "answer": "That the rash came after the shot",
+   "choices": [
+    "That the rash came after the shot",
+    "That the shot caused the rash",
+    "That a doctor has checked the rash",
+    "That the rash is a known side effect"
+   ],
+   "context": "In the CDC's words, 'A VAERS report alone does not indicate whether a vaccine caused or contributed to an adverse event'; the rash might come from a virus, a food or anything else that week, and VAERS takes every report without first judging whether the vaccine was to blame. That open door is what makes the system an early warning: in 1999 fifteen reports of a bowel blockage in babies after a new vaccine, RotaShield, led the CDC to urge a halt, and later studies confirmed the risk.",
+   "facts": [
+    "F30",
+    "F31",
+    "F32"
+   ],
+   "grade_note": "Ninth-grade science teaches that one event following another is not proof that the first caused the second, and a passive reporting system is the plain case."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "Children in the early 1980s were routinely vaccinated against seven diseases; by 2013 the US schedule protected children up to age six against fourteen germs, with up to 24 shots by age two. An Institute of Medicine committee reviewed it that year and found no significant evidence that the schedule is not safe. What gap in the research did the same committee report?",
+   "answer": "No study had systematically examined the schedule as a whole",
+   "choices": [
+    "No study had systematically examined the schedule as a whole",
+    "No study had checked its vaccines for safety after licensing",
+    "No study had tested its vaccines in children before licensing",
+    "No study had looked for rare side effects of its vaccines"
+   ],
+   "context": "The committee wrote that key elements of the entire schedule, the number, frequency, timing, order and age at which vaccines are given, 'have not been systematically examined in research studies', though each vaccine had been tested before licensing and watched afterward; both halves of its finding are quoted on every side. It judged a randomised trial that left some children unvaccinated 'unethical and infeasible', and named the Vaccine Safety Datalink, linked health-plan records, as the best system for studying the schedule.",
+   "facts": [
+    "F34",
+    "F35",
+    "F36"
+   ],
+   "grade_note": "Ninth graders learn that honest science names what has not yet been studied, and the 2013 review states both its finding and its gap."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "Robert F. Kennedy Jr., calling for 'gold standard science', had his health department announce in May 2025 that every new vaccine would be tested against a placebo, an inert dummy shot, before approval. Daniel Salmon of Johns Hopkins answered that a new vaccine cannot ethically be compared with no vaccine. Steven Black helped run the 1990s trial of Prevnar, a pneumococcal vaccine for babies. What did its control babies get?",
+   "answer": "A vaccine against a different disease",
+   "choices": [
+    "A vaccine against a different disease",
+    "An older vaccine against the same germ",
+    "Half a dose of the new vaccine",
+    "The new vaccine, a year later"
+   ],
+   "context": "The 37,868 babies were assigned at random, and the control half got an experimental vaccine against meningococcal disease, so the trial stayed double-blind and fair while no child was left with nothing; Black said a dummy shot for more than 15,000 controls raised an ethical concern. Kennedy told senators he was not proposing to re-test the existing childhood vaccines with placebos, while Christine Stabell Benn and Martin Kulldorff proposed placebo trials of some, designed, they argued, to be ethical, and Paul Offit called those unethical. Any such trial needs the parents' informed consent, the rule of medical ethics since the Nuremberg Code of 1947.",
+   "facts": [
+    "F37",
+    "F38",
+    "F39",
+    "F40"
+   ],
+   "grade_note": "Ninth-grade science teaches what a control group is for, and an active control shows how a fair trial can run without leaving the controls unprotected."
+  },
+  {
+   "tier": 5,
+   "topic": "vaccines-the-science-and-the-scrutiny",
+   "question": "Ross Lazarus led a project at Harvard Pilgrim Health Care, paid for by the federal Agency for Healthcare Research and Quality, that built a system to find possible vaccine side effects in clinic records and report them to the Vaccine Adverse Event Reporting System (VAERS). Its final report, dated 2010, gave the reason the work was needed. How much of the problem did it say was being reported?",
+   "answer": "Fewer than 1 in 100 side effects",
+   "choices": [
+    "Fewer than 1 in 100 side effects",
+    "About 1 in 10 side effects",
+    "About half of all side effects",
+    "Nearly all side effects, but late"
+   ],
+   "context": "The report's background said that side effects of vaccines 'are common but underreported', with less than one percent reported; that figure is a reason given for the work, not a count the project made, and the team's own system flagged possible reactions after 2.6 percent of 1.4 million doses. Both cautions about VAERS stand together: a report does not show that a vaccine caused a problem, and most problems are never reported.",
+   "facts": [
+    "F33",
+    "F31"
+   ],
+   "grade_note": "Ninth graders learn to ask how a data set was collected and what it misses, and passive reporting is the standard example of undercounting."
+  }
+ ]
+}

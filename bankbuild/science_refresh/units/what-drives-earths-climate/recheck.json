@@ -1,0 +1,71 @@
+{
+  "unit": "what-drives-earths-climate",
+  "questions": {
+    "dd18122d04": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrases. Re-checker's note: The revision itself is sound: the new lure 'Winters that come when Earth is farthest from the Sun' is wrong by his reasoning (that hemisphere's summer falls at the nearest point and is warmer; NASA, F40) and is live, 'season by season' is gone, and the key is true (Koppen's cool-summer condition). Remaining problem: the context gives away 45eccd7a02's key. 'the white ground reflects sunlight, so the cold feeds itself' is the ice-albedo feedback that question tests (dark water absorbs the sunlight ice would reflect). Fix: replace 'Snow that outlasts a cool summer piles up year after year, and the white ground reflects sunlight, so the cold feeds itself;' with 'Snow that outlasts a cool summer piles up year after year into an ice sheet;'.",
+      "sources": [
+        "https://science.nasa.gov/earth/earth-observatory/milutin-milankovitch",
+        "https://grokipedia.com/page/Milankovitch_cycles",
+        "https://en.wikipedia.org/wiki/Milutin_Milankovi%C4%87"
+      ]
+    },
+    "d14a5bfad2": {
+      "verdict": "pass",
+      "why": "The new lure 'missed the longest of the three cycles' is wrong on the record (the 100,000-year peak was the strongest, about half the variance; Hays, Imbrie and Shackleton 1976) and is a live partial confirmation, so the guess 'it was confirmed' no longer settles it alone. The context says why. No leak to or from the other questions.",
+      "sources": [
+        "https://grokipedia.com/page/Milankovitch_cycles",
+        "https://en.wikipedia.org/wiki/Milankovitch_cycles",
+        "https://www2.atmos.umd.edu/~nigam/AOSC617/Hays.Imbrie.Shackelton.Orbital.theory.ice.age.Science.1976.pdf"
+      ]
+    },
+    "0fa5a98700": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrases. Re-checker's note: The forecast's size is now in the stem and is right (Kerr, Science 1993: Hansen's model predicted about half a degree C, and the year-end 1992 reports showed it on target). Remaining problems: (1) The old problem is not fixed. No choice now tests the size the stem sets up, and the T4 the-greenhouse-effect card strikes the new lure ('Ash falls out of the sky within days to weeks', the droplets cooling 'for a year or more'). A player who has met T4 can strike all three lures, and the key stands alone. (2) The new context sentence 'The ash fell out of the air within days to weeks, but the fine haze stayed high up and cooled the world' hands the T4 Tambora question its key (the sulfur droplets, not the ash). Fix: replace the choice 'A cooling that ended within weeks, as the ash fell out' with 'A cooling about twice the size the model forecast' (wrong: about 0.5 C was seen, the model if anything cooled too much, and every estimate is 0.2-0.6 C). Then replace 'The ash fell out of the air within days to weeks, but the fine haze stayed high up and cooled the world for one to three years.' with 'The cooling lasted one to three years.'",
+      "sources": [
+        "https://www.osti.gov/biblio/7065976",
+        "https://ntrs.nasa.gov/citations/19920041613",
+        "https://courses.ems.psu.edu/meteo469/node/141",
+        "https://grokipedia.com/page/1991_eruption_of_Mount_Pinatubo",
+        "https://www.usgs.gov/programs/VHP/volcanoes-can-affect-climate"
+      ]
+    },
+    "3b342e900e": {
+      "verdict": "pass",
+      "why": "The lane problem is fixed: the key is now a climate-science finding, attributed and dated. Neukom and colleagues (Nature, 24 July 2019) found the coldest stretch in the 15th century in the central and eastern Pacific, the 17th in northwestern Europe and southeastern North America, and the mid-19th in most other regions, so 'Different regions were coldest in different centuries' is exact. The Bern release confirms the proxies (tree rings, ice cores, lake sediments, corals) and Neukom's words 'generally colder across the whole world' and 'but not everywhere at the same time'. Eos attributes the uncertainty caution to Michael Evans (University of Maryland, not an author). All three lures are wrong on the record: the cold was not synchronous, it was not Europe alone, and the tropical Pacific was coldest first, so it did not spread from the poles to the equator. The stem asks 'when' without handing the answer over. 'Only Europe' answers where rather than when, but it stays live as the common misconception. The Thames facts are unchanged and sourced.",
+      "sources": [
+        "https://mediarelations.unibe.ch/media_releases/2019/medienmitteilungen_2019/the_climate_is_warming_faster_than_it_has_in_the_last_2000_years/index_eng.html",
+        "https://eos.org/articles/the-little-ice-age-wasnt-global-but-current-climate-change-is",
+        "https://ui.adsabs.harvard.edu/abs/2019Natur.571..550N/abstract",
+        "https://en.wikipedia.org/wiki/River_Thames_frost_fairs"
+      ]
+    },
+    "e85bf8d11a": {
+      "verdict": "pass",
+      "why": "The stem now introduces the long report and its Summary for Policymakers (2,391 pages; the SPM about 40), so the key's term is taught. The warming is stated flatly in the context, and the figures are right: about 1.1 C for 2011-2020 (AR6), and 1.34-1.41 C of long-term warming by 2024 (WMO, 19 March 2025). The 2014 quotations match Physics Today word for word. Note: Unsettled (May 2021) came out before AR6 (August 2021). But in August 2021 Koonin said the full report was 'not bad' and that its Summary for Policymakers and the media's retelling are where it 'gets destroyed', so the key holds for his 2021 argument. The stance is balanced: the IPCC comes first, the critics are named, and there is no 'denier'.",
+      "sources": [
+        "https://wmo.int/news/media-centre/wmo-report-documents-spiralling-weather-and-climate-impacts",
+        "https://physicstoday.aip.org/opinion/physicist-steve-koonin-impeaches-scientists-climate-consensus",
+        "https://grokipedia.com/page/IPCC_Sixth_Assessment_Report",
+        "https://dailycaller.com/2021/08/12/obama-trump-scientist-climate-report-destructive-conclusions/",
+        "https://insideclimatenews.org/news/04052021/dissecting-unsettled-a-skeptical-physicists-book-about-climate-science/"
+      ]
+    },
+    "66f1c4ca43": {
+      "verdict": "pass",
+      "why": "Gore is now introduced (Vice President 1993-2001). The named baseline is right: NSIDC's 1979-2000 average minimum is 6.71 million square kilometres. Every minimum from 2010 to 2016 (about 3.4 to 5.1 million) was well below it and far above the 1 million that counts as ice-free, so 'near' and 'above' are wrong. The new balance line matches The Times (via the NZ Herald): Gore's office said the 75 per cent was a 'ballpark figure' Maslowski had used in a conversation years before. The forecast is quoted without mockery.",
+      "sources": [
+        "https://nzherald.co.nz/world/gores-ice-cap-claims-disputed/VO4JUJ4TGFXA4HDIHDDWQV3YYA",
+        "https://nsidc.org/sea-ice-today/analyses/arctic-sea-ice-extent-settles-record-seasonal-minimum",
+        "https://www.archives.gov/research/vice-presidential-records/gore-records"
+      ]
+    },
+    "068c5d30df": {
+      "verdict": "pass",
+      "why": "Only the year was added, and it is right: Chen and colleagues, Nature Sustainability, 11 February 2019. Nothing else changed.",
+      "sources": [
+        "https://www.nasa.gov/feature/ames/human-activity-in-china-and-india-dominates-the-greening-of-earth-nasa-study-shows"
+      ]
+    }
+  }
+}

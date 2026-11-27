@@ -1,0 +1,132 @@
+{
+ "unit": "the-covid-record-weighed",
+ "questions": {
+  "c1fc54ba4c": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "The context says 'while nursing homes used staff with acquired immunity and retired people had groceries delivered'. That reads as what happened, but it was what the plan proposed.",
+     "fix": "'... while nursing homes would use staff with acquired immunity and retired people would have groceries delivered.'"
+    }
+   ]
+  },
+  "d3fb7ecbbe": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem gives Collins's own word 'fringe' and his judgement that the plan was 'dangerous'. A player who knows nothing can then rule out 'A public debate between its authors and the agency's experts' and 'A small trial of its plan before any national decision', since nobody proposes a debate or a trial for an idea he has just called fringe and dangerous. That leaves two live choices, the key and the complaint to the universities. The key's vivid quoted wording ('quick and devastating') also stands out against three flat choices.",
+     "fix": "Move 'about its three fringe epidemiologists' into the context, so the stem reads '... On 8 October 2020 he wrote to Anthony Fauci about it. The email became public ...'. Keep 'dangerous', which is the steel-man. Replace 'A small trial of its plan before any national decision' with 'A review of its plan by a panel of the agency's own scientists'. Optionally key a paraphrase, 'A quick, published rebuttal to tear down its premises', and keep the full quotation in the context."
+    }
+   ]
+  },
+  "b5265010d0": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'None died of COVID-19, but over 1,500 needed intensive care' pairs a hundredfold ICU count with no deaths at all. A careful player can drop it as implausible, which leaves the key the only 'none died' choice that holds together.",
+     "fix": "'None died of COVID-19, but about 150 needed intensive care'."
+    },
+    {
+     "axis": "stance",
+     "severity": "low",
+     "what": "'with no mask rules in the classrooms' brings a mask-rule detail into a question about child illness. The approved scope keeps mandates out, and the clause plays no part in the question.",
+     "fix": "Drop the clause: 'Sweden kept its preschools and schools open for children under 16 through the spring of 2020.' It can stay in the context if wanted."
+    }
+   ]
+  },
+  "c7058f90bd": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "5b889577ad": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'Districts kept remote longer' (in three choices) is a clipped passive that reads awkwardly the first time. Strictly it also says the districts were kept remote by someone.",
+     "fix": "'Districts remote for longer lost more; in-person ones lost too', and the same wording in the other choices ('Only districts remote for long lost ground ...', 'Districts remote for longer lost no more ...', 'Districts remote for longer lost less ...')."
+    }
+   ]
+  },
+  "e44bc2289b": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem says Jefferson's team 'pooled randomised trials' of 'wearing masks in the community', and measured flu-like illness. 'Whether masks block droplets when tested on a dummy head' is then ruled out by the stem's own words, because a dummy head is neither a randomised trial nor in the community. Only three choices stay live.",
+     "fix": "Replace it with 'Whether people who chose to wear masks fell ill less often'. It is wrong on the record: the trials compared groups that were offered masks with groups that were not, whoever actually wore them (F19). It is also the method confusion this unit is meant to teach, since 42.3 percent of one group and 13.3 percent of the other wore masks."
+    },
+    {
+     "axis": "stance",
+     "severity": "low",
+     "what": "'Whether laws ordering people into masks slowed the spread' puts mandates into the question, even as a wrong choice. It is on the record, since F19 names it as the common misreading, and it argues nothing about mandates. But the approved scope says nothing about mandates.",
+     "fix": "Keep it if the lead reads the scope as 'no mandate topic', since a choice that names the misreading is fair. If the lead reads the ban strictly, use 'Whether masks slowed the spread as much as staying home did', which is wrong on the record because no such comparison was in the review."
+    }
+   ]
+  },
+  "616ceafa4f": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'Strong against catching it again, though weaker against severe illness' defeats itself: a person who cannot catch the disease cannot be made severely ill by it, and a careful 9th grader sees that. 'Strong against both, with no fall at all through the months' is marked by its absolute 'no fall at all'. That leaves the key and 'Gone against both', and the stem's set-up (a 2020 claim of 'no evidence', then years of data) tilts against 'Gone'. The question does go deeper than the T2 'the body remembers a germ', as the brief asks, because it tests two measured kinds of protection that behaved differently. It needs four live choices to test that.",
+     "fix": "Replace the mirror choice with 'Falling at one pace against severe illness and against catching it', which is wrong on the record: severe-illness protection held at about 89-90 percent while reinfection protection fell (F22). Optionally soften the third choice to 'Strong against both, with hardly any fall through the months'. It is still wrong, because reinfection protection fell for every variant, but it no longer gives itself away."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "The context says severe-illness protection was 88.9 to 90.2 percent 'for every form of the virus studied'. F22 gives two pooled figures (ancestral, alpha and delta together, and BA.1). The fact-checker should confirm that no other variant in the paper had a 40-week severe-illness figure outside that range.",
+     "fix": "If unconfirmed: 'still about 89 to 90 percent, both for the earlier forms of the virus and for the newest'."
+    }
+   ]
+  },
+  "ee493f5f4c": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "32fb77ed0e": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "stance",
+     "severity": "medium",
+     "what": "The stem tells a one-way arc: a natural origin was defended in February 2020, then the FBI and then the Energy Department judged a lab accident likelier. It then asks what the CIA concluded. It never gives the FBI's moderate or the DOE's low confidence. It never says that four other agencies and the National Intelligence Council leaned, with low confidence, toward a jump from animals, or that the question is unsettled. Those facts sit only in the context, which the player reads after answering. The lab-leak rule asks for who judged what, when and with what confidence, with the question called open and the other agencies' lean given. As written, the stem reads like the old framing's vindication arc. The quoted 'conspiracy theories' is attributed to the 27 signers, so it is not the bank's label. There is no pathogen detail anywhere in the question.",
+     "fix": "Rewrite the stem with both sides and their confidence: 'The FBI judged a laboratory accident the likelier origin of COVID-19, with moderate confidence, as its director said in February 2023; the US Department of Energy, that month, did too, with low confidence. Four other US intelligence agencies and the National Intelligence Council leaned, with low confidence, toward a jump from animals, the source of about three in four new human diseases. What did the Central Intelligence Agency (CIA) conclude in January 2025?' Move the 27 scientists' Lancet letter into the context if the scope's 'first called a conspiracy theory' is to stay. Keep the context's 'The question is not settled' and the 2024 expert survey."
+    },
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The same arc (FBI says lab, DOE agrees, 'What did the CIA conclude?') leads a player to the lab side, which rules out the two 'jump from animals' choices. That leaves a coin toss between high and low confidence, where the cautious 'low' is the likelier guess.",
+     "fix": "The stem above names agencies on both sides, so all four cells of the grid stay live."
+    }
+   ]
+  },
+  "48f6ac563c": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "low",
+     "what": "The fact is who holds which federal post, which is current events rather than 9th-grade evidence or method. The grade_note's 'institutions that fund and review research' is thin. The question is in the approved scope and gives no verdict, so it stays. It is the unit's one question that tests no reasoning.",
+     "fix": "Keep it as the scope's item. Optionally make the institution the content by adding to the stem 'the federal body that funds most US medical research', so that the question teaches what the NIH does as well as who leads it."
+    },
+    {
+     "axis": "stance",
+     "severity": "low",
+     "what": "The context's 'it was the agency Francis Collins had led when he wrote his email of October 2020' closes the dissent arc with a pointed juxtaposition. It is a quiet vindication beat in the bank's own voice. The CDC line of February 2026 is newer than Grokipedia and will go stale.",
+     "fix": "Cut the Collins clause, or put it flatly in its own sentence: 'Francis Collins had led the same agency from 2009 to 2021.' Consider dropping the CDC sentence, or keep it only if the fact-checker confirms it."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Coverage is exactly the approved scope, in ten questions on ten different facts. They are: the Great Barrington Declaration (c1fc), the Collins email (d3fb), Sweden's children (b526), Swedish reading against the Dutch loss (c705), US learning loss and its confounds (5b88, in the scope's 'school closures and their documented learning losses'), Cochrane 2023 and its editor's caveat (e44b), natural immunity (616c), Herby-Jonung-Hanke (ee49), the lab-leak assessments (32fb) and Bhattacharya at the NIH (48f6). Nothing touches vaccines or censorship; the Lancet review's vaccine comparison was kept out on purpose. Mandates come in only as the mask-law wrong choice (e44b) and the 'no mask rules' clause (b526), both low. Pathogen detail: none in any stem, choice or context; no genome, sequence, engineering or lab technique, only 'laboratory accident' and 'research-related origin'. Banned framing: 'conspiracy theories' appears only as the attributed 2020 Lancet quotation; 'misinformation' is absent; no 'disaster', 'crime' or vindication verdict in the bank's voice. The only arc-closing beats are 32fb's stem and 48f6's context, flagged above. Fairness: the three dissenters are named with their universities. The officials are steel-manned: the John Snow Memorandum's reasons appear in c1fc's context, Collins's fear that the plan would cost lives and his later regret in d3fb, the 'less than a year old' caveat in 616c, Flaxman and Bhatt in ee49, and the zoonosis base rate in 32fb. The one thin side is the school-closure case: b526 notes that the study did not measure spread to adults, but no question gives why officials closed schools in spring 2020. Suggest one clause in 5b88's context: 'Districts that stayed remote often cited unknown risks to teachers and to the old at home.' It needs a source. Overlaps: none against the 119 units with a final.json, the drafts of when-results-do-not-replicate and vaccines-the-science-and-the-scrutiny, or the final fair-trials-controls-and-placebos. 616c goes past the T2 the-bodys-defences key ('the body remembers the germ') and past the vaccines unit's memory-B-cell booster question, to two measured kinds of protection over time. The confounding in 5b88 is a new case beside correlation-causation-and-error (T4). Grade fit for 9th grade is sound throughout. Lanes are kept: no party, president or administration is named in any stem."
+}

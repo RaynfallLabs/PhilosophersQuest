@@ -1,0 +1,140 @@
+{
+ "unit": "when-the-state-decides-the-science",
+ "questions": {
+  "cd29afab78": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "'He went further than the plants he treated' says the answer lies beyond the treated seed, and the key is the only choice about offspring. The other three concern the chilled seed itself or the unchilled control. Knowing that 'inherited' means 'in the offspring' is a 7th-grade idea, so the T5 step, that the offspring must go unchilled or the cold explains the result, is never tested.",
+     "fix": "Drop 'He went further than the plants he treated:' and start the sentence 'He claimed that the change would be inherited.' Replace 'Chilled seed giving a bigger harvest than unchilled seed' with 'Seed of chilled plants, chilled again, sown in spring, bearing grain'. Two choices then concern the offspring, and only the unchilled one tests the claim."
+    }
+   ]
+  },
+  "5ebb718ad9": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Two lures are not results that going through pea counts could give. 'the parents' traits blending' and 'traits that the parent plants had acquired' are rival theories, not something a mathematician finds in tallies, so a careful player has two live choices: the key and '1 to 1'. The stem's arc, a follower of a man who denied genes and then a mathematician who checks, also tilts toward the key.",
+     "fix": "Replace the two theory lures with lures shaped like counts: 'They strayed from 3 to 1 further than chance allows' (Ermolaeva's own claim) and 'They matched 3 to 1 too closely to be honest counts' (the charge Ronald Fisher later made against Mendel's own data; it needs a source line if it goes into the card)."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'one of his followers' goes a little past F7. Stark and Seneta say only that Lysenko supported her; Grokipedia calls the data his students'.",
+     "fix": "'N. I. Ermolaeva, whose work Lysenko backed, repeated some of Mendel's pea crosses ...'"
+    }
+   ]
+  },
+  "e5b874aebf": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Once the stem says that Stalin approved the session and that the Party's Central Committee approved Lysenko's report, a player who knows nothing picks suppression. 'taught beside Lysenko's ideas as a rival' and 'put to a public test in the fields' are hard to believe after a Party verdict, so the story answers the question. It also leans into the history bank's lane: two sentences of Party politics and a political act (a ban) as the key, where the brief keeps politics as setting and keys the science.",
+     "fix": "Key the science that was destroyed: 'After the August 1948 session of the Soviet academy of farm science, where Trofim Lysenko's attack on genetics carried the day with Joseph Stalin's approval, an order went out to destroy the stocks of one living thing that geneticists bred in their labs. Which?' Key 'Fruit flies'; lures 'Pea plants', 'Lab mice', 'Maize plants' (F11: the Drosophila order; the fact-checker should confirm that the order named only fruit flies). Fruit flies have been the workhorse of chromosome genetics since Thomas Hunt Morgan, which 9th-grade biology teaches. Move the ban and the 3,000 dismissed into the card."
+    }
+   ]
+  },
+  "af30276e93": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "medium",
+     "what": "The key is a historical record (every nest-sown tree in the Urals dead by September 1951), not something the science predicts. The lure 'Most nests had kept just one strong tree' is just what competition and self-thinning predict, as the card itself says, so a player who knows the ecology is pushed to a wrong answer. A player who follows the story's arc of Lysenko failing picks the most extreme choice. The crowding science itself belongs to the T2 unit competing-for-resources, whose carrot question keys crowded seedlings growing smaller.",
+     "fix": "Re-aim it at the T5 step, and keep the record in the stem and card: 'Vladimir Sukachev, an ecologist who opposed Trofim Lysenko, recorded that by September 1951 every tree sown by Lysenko's nest method in the Ural lands had died. Lysenko had held that seedlings of one kind crowded together help one another. Which planting, set beside the nests, would have shown whether the crowding was to blame?' Key 'Oaks sown one by one on the same ground in the same years'. Lures: 'Oaks sown in nests on the same ground a year later', 'Pines sown in nests on the same ground the same year', 'Oaks sown in nests in a wetter land far away'. Only the key changes the crowding and nothing else, and it does not re-key the T2 carrot fact."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "The stem and card imply that crowding alone killed the trees. A total die-off on the dry steppe, under nurse crops of wheat and oats (F13), has other possible causes, and Grokipedia gives about 10 percent survival overall. The record alone does not single out competition.",
+     "fix": "Card: 'Sukachev and other ecologists blamed the crowding: seedlings of one kind need the same light, water and soil nutrients, so packing them together sharpens their competition.' That attributes the cause rather than stating it flatly."
+    }
+   ]
+  },
+  "71f589d174": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "In a unit about a state that denied genes, the key is the only choice that says 'genes'. The lures are otherwise good; the cold-training lure is Lysenko's idea, told honestly.",
+     "fix": "Key: 'They held traits breeders could cross into new crops'."
+    },
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'built in Leningrad the world's largest collection of crop seeds' needs to say 'of its day'; F16 gives it as the largest of its time.",
+     "fix": "'... built in Leningrad the largest collection of crop seeds of its day.'"
+    }
+   ]
+  },
+  "f63e558577": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "medium",
+     "what": "'Eugenics' appears in three stems (Q6, Q7, Q8), each time inside a name, and no stem or card in the unit says what it is. Yet it is the unit's subject, and the scope's core fact is that eugenics, the claim that society should breed out the 'unfit', was taught as science in the early 1900s.",
+     "fix": "'Charles Davenport's Eugenics Record Office at Cold Spring Harbor, New York, set up to advance eugenics, the claim that society should breed out the 'unfit', sent field workers door to door from 1910 to chart family trees. ...' The card can add that leading institutions, the Carnegie Institution among them, funded it as science (F21, F30)."
+    }
+   ]
+  },
+  "8de937ff64": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'sent a sworn written statement' hints that he was not there, which weakens the two 'His own ...' lures a little.",
+     "fix": "'Harry Laughlin, superintendent of the Eugenics Record Office, gave a Virginia court his sworn expert judgement in 1924 in the case of Carrie Buck, ...'"
+    },
+    {
+     "axis": "stance",
+     "severity": "low",
+     "what": "Name who did it. The colony's superintendent, Albert Priddy, chose Carrie's case to test the law and supplied the language Laughlin repeated (F26, F27). The card says only 'the colony's doctors' and 'the colony'.",
+     "fix": "Card: 'his statement repeated language that the colony's superintendent, Albert Priddy, and its doctors had given him' and '... Virginia's law of 1924, which Priddy chose this case to test, ...'."
+    }
+   ]
+  },
+  "e7f51fb990": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The stem shows the evidence against Vivian as flimsy. A player following the story drops the two negative lures ('lowest tenth', 'special class') and is left with the key and 'A grade skipped'.",
+     "fix": "Replace 'An intelligence score in the lowest tenth' with a second positive lure: 'A prize for arithmetic in her second year'. It is false, since her arithmetic mark was a C (F29). The player then has to know the record, not just the story's direction."
+    }
+   ]
+  },
+  "d1aff8fdbb": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'The first principle opens with a single sentence' is padding, since every principle opens with a sentence, and it reads oddly. The lures are excellent: the Code's own second, third and sixth principles, so only the first sentence's wording decides.",
+     "fix": "'... in their verdict of August 1947. The opening sentence of the first principle calls one thing absolutely essential. What is it?'"
+    }
+   ]
+  },
+  "bf2ffbec7b": {
+   "verdict": "drop",
+   "issues": [
+    {
+     "axis": "grade",
+     "severity": "high",
+     "what": "The self-experimenter exception to the Code's fifth principle is a fine detail of a legal text, met in college bioethics, not in any 9th-grade course. A player cannot reason to it: 'already have a deadly disease' looks as morally plausible to a 14-year-old as the key, so the question is a guess. It is also the unit's second question on one document.",
+     "fix": "Replace it with the ninth principle, which 9th graders meet in science-fair rules for research on people. 'The ninth of the ten principles that the Nuremberg judges set out in 1947 concerns a volunteer who, partway through an experiment, finds that he cannot go on. What does it say?' Key 'He is free to bring the experiment to an end'. Lures: 'He must finish the part he agreed to', 'He may stop only with the doctor's leave', 'He may stop only if a judge agrees'. Avoid a lure about being harmed: the text ties his liberty to reaching a state where going on 'seems to him to be impossible' (Avalon text; F34), and the card should quote it so."
+    }
+   ]
+  }
+ },
+ "unit_notes": "The scope is covered: Lysenko and vernalisation (Q1), Kolmogorov (Q2), the 1948 session (Q3), the nest method's failure (Q4), Vavilov (Q5), the ERO's family trees (Q6), Laughlin and Carrie Buck (Q7), Vivian (Q8) and the Nuremberg Code (Q9, Q10). One gap: the word eugenics is never taught (see Q6). The stance holds well. Each harm is one clause. The actors are named: Lysenko, Davenport, Laughlin and Estabrook, with Stalin as setting. Steel-men are in the cards: the famine and the slow promise of breeding, Vavilov's early support, eugenics as the new genetics seemed to allow, the accused's defence that no law existed. There is no gore and no sneer. Court and Party are setting everywhere except Q3, whose key is a political act. Grade: Kolmogorov's check (Q2) fits 9th grade, because the idea of counts scattering by chance (the card's coin tosses) is taught there. It also puts 3:1 in the stem and keys the scatter, so it does not re-key the T3 Mendel unit's 'About three tall for every short one'; the suggested lures keep that. The fifth principle (Q10) does not fit, so drop it. Overlaps were checked against every final.json. T3 mendels-peas-and-inherited-traits keys that acquired strength is not inherited (the blacksmith). Q1 keys how such a claim is tested, a T5 step, not a re-key, and its fix keeps it that way. T2 competing-for-resources keys crowded seedlings growing smaller (the carrots), which is the science behind Q4, so Q4 must not be rewritten to key that; the suggested fix keys the control instead. T4 correlation-causation-and-error keys a hidden third factor (heat behind ice cream and drownings). Q6 keys the shared home as the confound in a family tree, a new case at T5. T4 sciences-dark-chapters keys Tuskegee and the review board with a non-scientist, not consent itself, so Q9's consent key is new. The Tuskegee, thalidomide and review-board material stays out of this unit's cards, as now. There is no overlap with T5 fair-trials-controls-and-placebos or when-the-experts-were-wrong."
+}

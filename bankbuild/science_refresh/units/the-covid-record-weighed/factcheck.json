@@ -1,0 +1,494 @@
+{
+ "unit": "the-covid-record-weighed",
+ "questions": {
+  "c1fc54ba4c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Authors and universities: Bhattacharya (Stanford), Kulldorff (Harvard), Gupta (Oxford); professors of medicine / epidemiology",
+     "result": "ok",
+     "source": "https://gbdeclaration.org/"
+    },
+    {
+     "claim": "Signed 4 October 2020 at Great Barrington (published 5 October)",
+     "result": "ok",
+     "source": "https://gbdeclaration.org/ ; https://en.wikipedia.org/wiki/Great_Barrington_Declaration"
+    },
+    {
+     "claim": "'seven months into the pandemic': WHO declared a pandemic 11 March 2020; 4 October is 6 months 23 days later",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Great_Barrington_Declaration"
+    },
+    {
+     "claim": "Key: shield the old and frail, let the young and healthy live normally ('Focused Protection')",
+     "result": "ok",
+     "source": "https://gbdeclaration.org/"
+    },
+    {
+     "claim": "Wrong: let all ages live normally (it called for shielding the vulnerable)",
+     "result": "ok",
+     "source": "https://gbdeclaration.org/"
+    },
+    {
+     "claim": "Wrong: keep schools shut (it said schools and universities should be open)",
+     "result": "ok",
+     "source": "https://gbdeclaration.org/"
+    },
+    {
+     "claim": "Wrong: test everyone weekly and isolate positives (not in the declaration; testing only of nursing-home staff and visitors)",
+     "result": "ok",
+     "source": "https://gbdeclaration.org/"
+    },
+    {
+     "claim": "Quote 'Those who are not vulnerable should immediately be allowed to resume life as normal' word for word",
+     "result": "ok",
+     "source": "https://gbdeclaration.org/"
+    },
+    {
+     "claim": "Quote 'Schools and universities should be open for in-person teaching' word for word",
+     "result": "ok",
+     "source": "https://gbdeclaration.org/"
+    },
+    {
+     "claim": "Nursing homes to use staff with acquired immunity; retired people at home to have groceries delivered",
+     "result": "ok",
+     "source": "https://gbdeclaration.org/"
+    },
+    {
+     "claim": "Critics in The Lancet that month (John Snow Memorandum, online 14 October 2020): 'practically impossible' (from 'Prolonged isolation of large swathes of the population is practically impossible and highly unethical')",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/John_Snow_Memorandum"
+    },
+    {
+     "claim": "Paraphrase: spread among the young would reach the whole population ('Uncontrolled transmission in younger people risks significant morbidity and mortality across the whole population')",
+     "result": "ok",
+     "source": "https://www.qmul.ac.uk/media/news/2020/smd/herd-immunity-in-covid-19-control-is-a-dangerous-fallacy-say-authors-of-open-letter.html"
+    }
+   ]
+  },
+  "d3fb7ecbbe": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Collins was NIH director in October 2020 and judged the plan dangerous ('I don't regret saying this is dangerous, it was')",
+     "result": "ok",
+     "source": "https://news.grabien.com/story/francis-collins-says-the-great-barrington-declaration-tried-to-short-c"
+    },
+    {
+     "claim": "Email of 8 October 2020 to Fauci (and Clifford Lane; Tabak copied)",
+     "result": "ok",
+     "source": "https://www.theblaze.com/news/fauci-email-francis-collins-great-barrington-declaration ; https://thedailyeconomy.org/article/fauci-emails-and-some-alleged-science/"
+    },
+    {
+     "claim": "Quote 'three fringe epidemiologists' (from 'this proposal from the three fringe epidemiologists ...')",
+     "result": "ok",
+     "source": "https://reason.com/2024/01/03/former-nih-director-ignoring-collateral-damage-inflicted-by-covid-19-policies-was-really-unfortunate/ ; https://en.wikipedia.org/wiki/Great_Barrington_Declaration"
+    },
+    {
+     "claim": "Key, word for word: 'There needs to be a quick and devastating published take down of its premises'",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Great_Barrington_Declaration ; https://reason.com/2024/01/03/former-nih-director-ignoring-collateral-damage-inflicted-by-covid-19-policies-was-really-unfortunate/"
+    },
+    {
+     "claim": "Wrong choices (public debate, complaint to the universities, small trial) are not in the email",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Great_Barrington_Declaration"
+    },
+    {
+     "claim": "Became public December 2021 through a FOIA request by AIER (Harrigan and Magness, 19 December 2021)",
+     "result": "ok",
+     "source": "https://thedailyeconomy.org/article/fauci-emails-and-some-alleged-science/"
+    },
+    {
+     "claim": "Fauci replied the same night, pasting in a Wired piece he said 'debunks' the declaration",
+     "result": "ok",
+     "source": "https://thedailyeconomy.org/article/fauci-emails-and-some-alleged-science/"
+    },
+    {
+     "claim": "Collins later: 'deeply worried' ('But I was deeply worried'), believed it would cost lives ('would probably kill tens of thousands of people')",
+     "result": "ok",
+     "source": "https://news.grabien.com/story/francis-collins-says-the-great-barrington-declaration-tried-to-short-c"
+    },
+    {
+     "claim": "Collins called the authors 'very distinguished'; 'I regret that I used some terminology that I probably shouldn't' (Braver Angels, Gettysburg, July 2023)",
+     "result": "ok",
+     "source": "https://reason.com/2024/01/03/former-nih-director-ignoring-collateral-damage-inflicted-by-covid-19-policies-was-really-unfortunate/ ; https://news.grabien.com/story/francis-collins-says-the-great-barrington-declaration-tried-to-short-c"
+    },
+    {
+     "claim": "AIER hosted the declaration's signing",
+     "result": "ok",
+     "source": "https://gbdeclaration.org/ ; https://en.wikipedia.org/wiki/Great_Barrington_Declaration"
+    }
+   ]
+  },
+  "b5265010d0": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Sweden kept preschools (ages 1-6) and schools (7-16) open in spring 2020; face masks not encouraged / no mask policies",
+     "result": "ok",
+     "source": "https://www.mghpcs.org/munncenter/Documents/weekly/jan-21/Ludvigsson.pdf (NEJM letter, DOI 10.1056/NEJMc2026670) ; https://depts.washington.edu/pandemicalliance/2021/01/07/open-schools-covid-19-and-child-and-teacher-morbidity-in-sweden"
+    },
+    {
+     "claim": "Ludvigsson et al.: all 1,951,905 children aged 1 to 16, 1 March to 30 June 2020",
+     "result": "ok",
+     "source": "https://www.mghpcs.org/munncenter/Documents/weekly/jan-21/Ludvigsson.pdf (NEJM letter, DOI 10.1056/NEJMc2026670)"
+    },
+    {
+     "claim": "Published online 6 January 2021 (NEJM)",
+     "result": "ok",
+     "source": "https://www.mghpcs.org/munncenter/Documents/weekly/jan-21/Ludvigsson.pdf (NEJM letter, DOI 10.1056/NEJMc2026670) ; https://news.ki.se/low-risk-of-severe-covid-19-in-children"
+    },
+    {
+     "claim": "Key: no child with Covid-19 died; 15 admitted to intensive care (Covid-19 or MIS-C)",
+     "result": "ok",
+     "source": "https://www.mghpcs.org/munncenter/Documents/weekly/jan-21/Ludvigsson.pdf (NEJM letter, DOI 10.1056/NEJMc2026670)"
+    },
+    {
+     "claim": "Wrong choices (1,500 in ICU; about 40 died; about 400 died) contradict the letter",
+     "result": "ok",
+     "source": "https://www.mghpcs.org/munncenter/Documents/weekly/jan-21/Ludvigsson.pdf (NEJM letter, DOI 10.1056/NEJMc2026670)"
+    },
+    {
+     "claim": "About one child in 130,000 (0.77 per 100,000); 4 had underlying chronic conditions",
+     "result": "ok",
+     "source": "https://www.mghpcs.org/munncenter/Documents/weekly/jan-21/Ludvigsson.pdf (NEJM letter, DOI 10.1056/NEJMc2026670)"
+    },
+    {
+     "claim": "All-cause deaths 69 (March-June 2020) vs 65 (November 2019-February 2020)",
+     "result": "ok",
+     "source": "https://www.mghpcs.org/munncenter/Documents/weekly/jan-21/Ludvigsson.pdf (NEJM letter, DOI 10.1056/NEJMc2026670)"
+    },
+    {
+     "claim": "Did not measure household transmission from schoolchildren",
+     "result": "ok",
+     "source": "https://www.mghpcs.org/munncenter/Documents/weekly/jan-21/Ludvigsson.pdf (NEJM letter, DOI 10.1056/NEJMc2026670)"
+    }
+   ]
+  },
+  "c7058f90bd": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Hallin, Danielsson, Nordstrom, Falth, IJER 114 (2022): reading assessments of 97,073 pupils in grades 1-3",
+     "result": "ok",
+     "source": "https://researchportal.scu.edu.au/esploro/outputs/journalArticle/No-learning-loss-in-Sweden-during/991013296947802368"
+    },
+    {
+     "claim": "Key: decoding and reading comprehension not lower during the pandemic",
+     "result": "ok",
+     "source": "https://researchportal.scu.edu.au/esploro/outputs/journalArticle/No-learning-loss-in-Sweden-during/991013296947802368"
+    },
+    {
+     "claim": "Wrong: poorer pupils were hit (low-SES pupils were not especially affected)",
+     "result": "ok",
+     "source": "https://researchportal.scu.edu.au/esploro/outputs/journalArticle/No-learning-loss-in-Sweden-during/991013296947802368"
+    },
+    {
+     "claim": "Wrong: fell by a fifth of a year / fell in grade 1 only (no decline found; share of weak decoders did not rise)",
+     "result": "ok",
+     "source": "https://researchportal.scu.edu.au/esploro/outputs/journalArticle/No-learning-loss-in-Sweden-during/991013296947802368"
+    },
+    {
+     "claim": "Authors concluded open schools benefitted Swedish primary pupils",
+     "result": "ok",
+     "source": "https://researchportal.scu.edu.au/esploro/outputs/journalArticle/No-learning-loss-in-Sweden-during/991013296947802368"
+    },
+    {
+     "claim": "Engzell, Frey, Verhagen (PNAS 2021): Netherlands 8-week lockdown; loss 'equivalent to one-fifth of a school year'; 'up to 60% larger among students from less-educated homes'",
+     "result": "ok",
+     "source": "https://ideas.repec.org/a/nas/journl/v118y2021pe2022376118.html"
+    },
+    {
+     "claim": "PIRLS 2021: Sweden 544 vs 555 in 2016; Skolverket (Fredriksson) linked the fall partly to the pandemic; teaching severely affected two months or more in about one school in three",
+     "result": "ok",
+     "source": "https://www.thelocal.se/20230516/swedish-reading-skills-fell-in-2021-despite-decision-to-keep-schools-open"
+    }
+   ]
+  },
+  "5b889577ad": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "NAEP 2022: 'Largest score declines in NAEP mathematics at grades 4 and 8 since initial assessments in 1990'",
+     "result": "ok",
+     "source": "https://www.nationsreportcard.gov/highlights/mathematics/2022/"
+    },
+    {
+     "claim": "Thomas Kane (Harvard CEPR) and Sean Reardon (Stanford); scorecard incorporates weeks remote by district; released 28 October 2022",
+     "result": "ok",
+     "source": "https://www.gse.harvard.edu/news/22/10/new-research-provides-first-clear-picture-learning-loss-local-level"
+    },
+    {
+     "claim": "Key: losses greater where districts remained online longer; students lost ground even where schools returned quickly",
+     "result": "ok",
+     "source": "https://www.pbs.org/newshour/education/covid-19-pandemic-massively-set-back-learning-especially-for-high-poverty-areas ; https://www.chalkbeat.org/2022/10/28/23429271/learning-loss-remote-learning-high-poverty-schools-harvard-stanford-research/"
+    },
+    {
+     "claim": "Wrong: only remote districts lost ground (in-person ones lost too)",
+     "result": "ok",
+     "source": "https://www.pbs.org/newshour/education/covid-19-pandemic-massively-set-back-learning-especially-for-high-poverty-areas"
+    },
+    {
+     "claim": "Wrong: remote lost no more / lost less (on average remote districts lost more)",
+     "result": "ok",
+     "source": "https://www.chalkbeat.org/2022/10/28/23429271/learning-loss-remote-learning-high-poverty-schools-harvard-stanford-research/ ; https://www.pbs.org/newshour/education/covid-19-pandemic-massively-set-back-learning-especially-for-high-poverty-areas"
+    },
+    {
+     "claim": "Poorest quarter of schools lost about two-thirds of a year in maths",
+     "result": "ok",
+     "source": "https://www.gse.harvard.edu/news/22/10/new-research-provides-first-clear-picture-learning-loss-local-level"
+    },
+    {
+     "claim": "Caveat: analysis can't disentangle remote learning from other factors; Kane: remote learning not the only driver",
+     "result": "ok",
+     "source": "https://www.chalkbeat.org/2022/10/28/23429271/learning-loss-remote-learning-high-poverty-schools-harvard-stanford-research/"
+    },
+    {
+     "claim": "NBER w30010 (May 2022, Goldhaber, Kane et al.): 'remote instruction was a primary driver of widening achievement gaps'",
+     "result": "ok",
+     "source": "https://www.nber.org/papers/w30010",
+     "note": "The paper's gaps are by race and school poverty; 'gaps between rich and poor schools' is a fair simplification."
+    }
+   ]
+  },
+  "e44bc2289b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Jefferson et al., Cochrane review published 30 January 2023; pooled RCTs and cluster-RCTs",
+     "result": "ok",
+     "source": "https://research.bond.edu.au/en/publications/physical-interventions-to-interrupt-or-reduce-the-spread-of-respi-5/"
+    },
+    {
+     "claim": "Quote 'probably makes little or no difference' (masks in the community, ILI/COVID-like illness; RR 0.95, 9 trials)",
+     "result": "ok",
+     "source": "https://research.bond.edu.au/en/publications/physical-interventions-to-interrupt-or-reduce-the-spread-of-respi-5/"
+    },
+    {
+     "claim": "Karla Soares-Weiser, Editor-in-Chief of the Cochrane Library, statement of 10 March 2023: 'masks don't work' an 'inaccurate and misleading interpretation'",
+     "result": "ok",
+     "source": "https://www.cochrane.org/about-us/news/statement-physical-interventions-interrupt-or-reduce-spread-respiratory-viruses-review"
+    },
+    {
+     "claim": "Key: the review looked at 'whether interventions to promote mask wearing help to slow the spread of respiratory viruses'",
+     "result": "ok",
+     "source": "https://www.cochrane.org/about-us/news/statement-physical-interventions-interrupt-or-reduce-spread-respiratory-viruses-review"
+    },
+    {
+     "claim": "Wrong: laws ordering masks (mandates were not what was tested)",
+     "result": "ok",
+     "source": "https://www.cochrane.org/about-us/news/statement-physical-interventions-interrupt-or-reduce-spread-respiratory-viruses-review"
+    },
+    {
+     "claim": "Wrong: whether a mask protects its wearer (review 'not able to address the question of whether mask-wearing itself reduces people's risk')",
+     "result": "ok",
+     "source": "https://www.cochrane.org/about-us/news/statement-physical-interventions-interrupt-or-reduce-spread-respiratory-viruses-review"
+    },
+    {
+     "claim": "Wrong: dummy-head droplet tests (the review pooled randomised trials in people)",
+     "result": "ok",
+     "source": "https://research.bond.edu.au/en/publications/physical-interventions-to-interrupt-or-reduce-the-spread-of-respi-5/"
+    },
+    {
+     "claim": "42.3% of the intervention arm vs 13.3% of control wore masks in the most heavily weighted (largest, Bangladesh) community trial",
+     "result": "ok",
+     "source": "https://www.cochrane.org/about-us/news/statement-physical-interventions-interrupt-or-reduce-spread-respiratory-viruses-review"
+    },
+    {
+     "claim": "Soares-Weiser: results 'inconclusive'",
+     "result": "ok",
+     "source": "https://www.cochrane.org/about-us/news/statement-physical-interventions-interrupt-or-reduce-spread-respiratory-viruses-review"
+    },
+    {
+     "claim": "Authors: low adherence 'hampers drawing firm conclusions'; 'need for large, well-designed RCTs'",
+     "result": "ok",
+     "source": "https://research.bond.edu.au/en/publications/physical-interventions-to-interrupt-or-reduce-the-spread-of-respi-5/"
+    }
+   ]
+  },
+  "616ceafa4f": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Lancet letter (John Snow Memorandum) October 2020: 'no evidence for lasting protective immunity' after natural infection",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/John_Snow_Memorandum ; https://en.wikipedia.org/wiki/Great_Barrington_Declaration"
+    },
+    {
+     "claim": "COVID-19 Forecasting Team, Lancet 401 (2023) 833-842, online 16 February 2023: 65 studies from 19 countries",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PMCID:PMC9998097&resultType=core&format=json"
+    },
+    {
+     "claim": "Key: at 40 weeks severe-disease protection stayed high (90.2% ancestral/alpha/delta; 88.9% BA.1) while reinfection protection fell (78.6%; 36.1% for BA.1)",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PMCID:PMC9998097&resultType=core&format=json ; https://www.cidrap.umn.edu/covid-19/previous-covid-19-may-slash-severe-illness-reinfection-89"
+    },
+    {
+     "claim": "Wrong choices (strong vs reinfection but weak vs severe; no fall at all; gone against both) contradict the paper",
+     "result": "ok",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PMCID:PMC9998097&resultType=core&format=json"
+    },
+    {
+     "claim": "Context: 88.9 to 90.2 percent 'for every form of the virus studied', and reinfection protection against 'the newest form' at 36.1 percent",
+     "result": "error",
+     "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9998097/fullTextXML",
+     "note": "The paper also studied omicron BA.2 and BA.4/BA.5 (few studies): no 40-week severe-disease figure exists for them (BA.2 severe 73.4%, no time point), and BA.1 was not the newest form studied (BA.2 reinfection 37.0% at 40 weeks; BA.4/5 27.7%). The 40-week figures cover only the pooled ancestral/alpha/delta group and BA.1. Fix: 'At 40 weeks, protection against severe illness was still 90.2 percent for the earlier forms of the virus and 88.9 percent for omicron BA.1, while protection against catching BA.1 again had fallen to 36.1 percent.'"
+    },
+    {
+     "claim": "Thucydides, plague of Athens 430 BC; quote 'for the same man was never attacked twice—never at least fatally' (Crawley translation) word for word; recovered people cared for the sick",
+     "result": "ok",
+     "source": "https://sourcebooks.web.fordham.edu/ancient/thuc-plague.asp"
+    }
+   ]
+  },
+  "ee493f5f4c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Herby, Jonung, Hanke, Johns Hopkins Studies in Applied Economics No. 200, January 2022 (21 January): lockdowns 'only reduced COVID-19 mortality by 0.2% on average'",
+     "result": "ok",
+     "source": "https://econpapers.repec.org/RePEc:ris:jhisae:0200"
+    },
+    {
+     "claim": "Revised version No. 210, May 2022: spring 2020 lockdowns in Europe and the US reduced mortality by 3.2%",
+     "result": "ok",
+     "source": "https://econpapers.repec.org/RePEc:ris:jhisae:0210"
+    },
+    {
+     "claim": "Book 'Did Lockdowns Work?' (IEA, 5 June 2023) keeps 3.2%",
+     "result": "ok",
+     "source": "https://iea.org.uk/?p=41107 ; https://uk.news.yahoo.com/revised-report-impact-covid-lockdowns-200910160.html"
+    },
+    {
+     "claim": "Key: 3.2% compared 'to less strict lockdown policies adopted by the likes of Sweden'; Sharfstein: compared legally enforced with voluntary measures, not with doing nothing",
+     "result": "ok",
+     "source": "https://iea.org.uk/?p=41107 ; https://uk.news.yahoo.com/revised-report-impact-covid-lockdowns-200910160.html"
+    },
+    {
+     "claim": "Wrong: vs no rules at all / vs model forecasts (modelling studies were excluded) / vs deaths caused by rules (not counted)",
+     "result": "ok",
+     "source": "https://iea.org.uk/?p=41107 ; https://www.sciencemediacentre.org/expert-reaction-to-a-preprint-looking-at-the-impact-of-lockdowns-as-posted-on-the-john-hopkins-krieger-school-of-arts-and-sciences-website/"
+    },
+    {
+     "claim": "Voluntary behaviour 'played a significant role in mitigating the pandemic'",
+     "result": "ok",
+     "source": "https://iea.org.uk/?p=41107"
+    },
+    {
+     "claim": "Flaxman (Oxford): 'they systematically excluded from consideration any study based on the science of disease transmission'",
+     "result": "ok",
+     "source": "https://www.sciencemediacentre.org/expert-reaction-to-a-preprint-looking-at-the-impact-of-lockdowns-as-posted-on-the-john-hopkins-krieger-school-of-arts-and-sciences-website/"
+    },
+    {
+     "claim": "Bhatt (Imperial): lockdown defined as at least one compulsory NPI, 'This would make a mask wearing policy a lockdown'",
+     "result": "ok",
+     "source": "https://www.sciencemediacentre.org/expert-reaction-to-a-preprint-looking-at-the-impact-of-lockdowns-as-posted-on-the-john-hopkins-krieger-school-of-arts-and-sciences-website/"
+    },
+    {
+     "claim": "Paton (Nottingham economist): modelling studies excluded; 'That is not controversial'",
+     "result": "ok",
+     "source": "https://www.sciencemediacentre.org/expert-reaction-to-a-preprint-looking-at-the-impact-of-lockdowns-as-posted-on-the-john-hopkins-krieger-school-of-arts-and-sciences-website/"
+    }
+   ]
+  },
+  "32fb77ed0e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Lancet statement, February 2020, 27 public-health scientists: 'conspiracy theories suggesting that COVID-19 does not have a natural origin'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/COVID-19_lab_leak_theory"
+    },
+    {
+     "claim": "About three in four emerging infectious diseases come from animals (approximately 75%)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Zoonosis"
+    },
+    {
+     "claim": "FBI: lab incident most likely, moderate confidence; Wray said so publicly 28 February 2023",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/COVID-19_lab_leak_theory ; https://www.npr.org/2023/02/28/1160214557/fbi-covid-origins-investigation-wray"
+    },
+    {
+     "claim": "Department of Energy: lab leak most likely, low confidence, reported February 2023",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/COVID-19_lab_leak_theory ; https://fortune.com/2025/01/26/cia-covid-19-pandemic-origin-theory-chinese-lab-low-confidence/"
+    },
+    {
+     "claim": "Key: CIA, 25 January 2025: research-related origin more likely, low confidence",
+     "result": "ok",
+     "source": "https://www.aljazeera.com/news/2025/1/27/cia-says-more-likely-covid-19-escaped-from-a-lab ; https://fortune.com/2025/01/26/cia-covid-19-pandemic-origin-theory-chinese-lab-low-confidence/"
+    },
+    {
+     "claim": "Quote 'We have low confidence in this judgement' and 'remain plausible'",
+     "result": "ok",
+     "source": "https://www.aljazeera.com/news/2025/1/27/cia-says-more-likely-covid-19-escaped-from-a-lab",
+     "note": "Al Jazeera prints 'judgement'; the CIA's US original may spell it 'judgment'. Wording otherwise matches."
+    },
+    {
+     "claim": "Based on existing intelligence, not new evidence",
+     "result": "ok",
+     "source": "https://fortune.com/2025/01/26/cia-covid-19-pandemic-origin-theory-chinese-lab-low-confidence/"
+    },
+    {
+     "claim": "Four other US agencies and the National Intelligence Council lean natural, low confidence",
+     "result": "ok",
+     "source": "https://www.aljazeera.com/news/2025/1/27/cia-says-more-likely-covid-19-escaped-from-a-lab ; https://grokipedia.com/page/COVID-19_lab_leak_theory"
+    },
+    {
+     "claim": "2024 survey of 168 experts: average 77% for natural origin",
+     "result": "ok",
+     "source": "https://www.lesswrong.com/posts/28hnPFiAoMkJssmf3/most-experts-believe-covid-19-was-probably-not-a-lab-leak (summary of GCRI Technical Report 24-1, https://gcrinstitute.org/papers/069_covid-origin.pdf)"
+    },
+    {
+     "claim": "No pathogen detail (genome, sequence, engineering, lab technique) in stem, choices or context",
+     "result": "ok",
+     "source": "n/a (read of draft)"
+    }
+   ]
+  },
+  "48f6ac563c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Bhattacharya, Stanford professor of medicine, co-author of the declaration",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Jay_Bhattacharya"
+    },
+    {
+     "claim": "Nominated 26 November 2024; confirmed 25 March 2025 (53-47); took office 1 April 2025",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Jay_Bhattacharya ; https://grokipedia.com/page/National_Institutes_of_Health"
+    },
+    {
+     "claim": "Key: National Institutes of Health; 18th director",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Jay_Bhattacharya"
+    },
+    {
+     "claim": "Wrong: FDA, NSF, HHS (he heads none)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Jay_Bhattacharya"
+    },
+    {
+     "claim": "NIH the main US agency for medical research; budget about 47 billion dollars in FY2024 ($47.1-47.4bn program level; ~$48.8bn with ARPA-H)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/National_Institutes_of_Health ; https://www.everycrsreport.com/files/2025-01-13_R41705_cf0e823e156aeecb3d87e5a0287ed21120a4ec17.html"
+    },
+    {
+     "claim": "Collins led the NIH in October 2020",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/National_Institutes_of_Health"
+    },
+    {
+     "claim": "February 2026: named acting CDC director (replacing Jim O'Neill), keeping the NIH post",
+     "result": "ok",
+     "source": "https://www.pbs.org/newshour/health/nihs-bhattacharya-will-also-run-the-cdc-while-trump-administration-looks-for-a-permanent-director"
+    }
+   ]
+  }
+ },
+ "unit_notes": "All sources read 2026-11-27. 9 ok, 1 error (616ceafa4f context overgeneralises the Lancet 2023 40-week figures to 'every form of the virus studied' and calls BA.1 'the newest form'; BA.2 and BA.4/5 were also in the paper). No pathogen detail anywhere. Minor: the John Snow Memorandum's 'whole population' line is paraphrased, not quoted; the CIA quote spelling 'judgement' follows Al Jazeera. The CDC acting-director line (February 2026) is confirmed by PBS/AP and survives, being past tense."
+}

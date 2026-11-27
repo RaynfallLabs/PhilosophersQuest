@@ -1,0 +1,239 @@
+{
+ "unit": "when-results-do-not-replicate",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "when-results-do-not-replicate",
+   "question": "John Ioannidis, a physician, argued in 2005 that the more ideas a field tests, and the less carefully they are chosen, the less likely its published findings are to be true. Suppose a lab tests 100 ideas, and only 1 of them is true. Its test passes the true idea, and by chance it also passes about 1 in every 20 of the false ones. Of all the ideas it passes, what share are false?",
+   "answer": "About five in every six",
+   "choices": [
+    "About five in every six",
+    "About one in every six",
+    "About one in every twenty",
+    "About ninety-nine in every hundred"
+   ],
+   "context": "About 5 of the 99 false ideas pass by chance beside the 1 true one, so about five of every six passes are false, though each cleared the same bar; ninety-nine in a hundred is the share of all the ideas tested that are false, not of the passes. That was the point of Ioannidis's paper 'Why Most Published Research Findings Are False': when few of the ideas tested are true, even a fair test passes more flukes than truths, and his remedies were larger studies, studies registered before they begin, and judging the whole body of evidence. Leah Jager and Jeffrey Leek argued in 2014 that his model rested on assumptions rather than data, and estimated the false share in top medical journals at about 14 percent.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "Ninth-grade science teaches students to critique a claim by its evidence, and the base-rate reasoning in Ioannidis's paper is the plainest case of why passing one test is not proof."
+  },
+  {
+   "tier": 5,
+   "topic": "when-results-do-not-replicate",
+   "question": "Katherine Button and Marcus Munafò led a team that estimated in 2013 that a typical neuroscience study had only about a 21 percent chance of detecting a real effect of the size it sought, because its samples were small; that chance is called the study's power. A false idea still passes such a test about 1 time in 20, as in any study. Across many such studies, what does low power do to the share of passing results that are real?",
+   "answer": "It lowers it, since flukes make up more of the passes",
+   "choices": [
+    "It lowers it, since flukes make up more of the passes",
+    "It leaves it alone, since a fluke passes 1 time in 20 either way",
+    "It raises it, since only strong real effects can pass",
+    "It lowers it, since small studies are more often faked"
+   ],
+   "context": "A small study misses most real effects while false ideas slip through at the usual rate, so flukes make up a larger share of what passes; Button's team wrote that low power, from small samples, small effects or both, lowers the likelihood that a significant result reflects a true effect. John Ioannidis, one of the team, had argued in 2005 that the smaller a field's studies and the smaller its effects, the less likely its findings are to be true. Nothing in the argument turns on fraud, and the remedy he named was better-powered evidence, such as larger studies.",
+   "facts": [
+    "F2",
+    "F4",
+    "F6"
+   ],
+   "grade_note": "Ninth graders learn that how much data a study gathers limits what it can show, and low power is why small studies mislead even when they pass."
+  },
+  {
+   "tier": 5,
+   "topic": "when-results-do-not-replicate",
+   "question": "Brian Nosek, a psychologist at the University of Virginia, led about 270 researchers in repeating 100 studies printed in 2008 in three leading psychology journals, consulting the original authors as they went. Ninety-seven of the originals had reported a significant result, one unlikely to arise by chance alone. When the team reported in 2015, how many of those 97 had come out significant again?",
+   "answer": "About a third of them",
+   "choices": [
+    "About a third of them",
+    "About two thirds of them",
+    "Nearly all of them",
+    "About one in ten of them"
+   ],
+   "context": "Thirty-five of the 97 did, about 36 percent, and the effects the repeats found were on average about half the size first reported. Nosek's team wrote that it could not say whether each failure meant the original effect was false, or whether the repeat had missed a real effect or differed from the original in some unnoticed way.",
+   "facts": [
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "Ninth-grade science names replicable results as a core scientific value, and this project is the best-known measurement of how often published results replicate."
+  },
+  {
+   "tier": 5,
+   "topic": "when-results-do-not-replicate",
+   "question": "Joseph Simmons, Leif Nelson and Uri Simonsohn played 20 students either the Beatles song 'When I'm Sixty-Four' or another tune, then asked for their birth dates. In a 2011 paper they reported a significant result, one unlikely to arise by chance alone: going by their birth dates, the Beatles listeners were nearly a year and a half younger. What did the three set out to show?",
+   "answer": "That common ways of handling data can make a false result look real",
+   "choices": [
+    "That common ways of handling data can make a false result look real",
+    "That many results in their field had been made up by their own authors",
+    "That no single study, however careful, can be trusted on its own",
+    "That a song can make its listeners feel younger than they are"
+   ],
+   "context": "The data were real, but the three handled them in ways common in their field: they added students until the result crossed the line, chose afterwards which measure to adjust for, and left out one of the groups they had tested. Their simulations showed that four such choices together let a false result pass about 61 percent of the time, not the 5 percent a single fair test allows. Trying analysis after analysis on one set of data until one crosses the line is now called p-hacking, and the three answered it with six rules for authors and four for reviewers, such as deciding before a study begins when to stop collecting data.",
+   "facts": [
+    "F10",
+    "F11",
+    "F29"
+   ],
+   "grade_note": "Ninth graders learn to judge an investigation by how its data were analysed, and this deliberately absurd study is the standard demonstration of p-hacking."
+  },
+  {
+   "tier": 5,
+   "topic": "when-results-do-not-replicate",
+   "question": "Andrew Gelman, a statistician, and Eric Loken wrote in 2013 about a trap in analysing data. Suppose a researcher runs a single test and reports exactly what he did. He looks over his scores first, sees that the effect is strongest in the older half of his volunteers, and tests that half alone. The result crosses the line of significance, the cut-off for a result unlikely to be chance. Why, by their argument, can it still mislead?",
+   "answer": "Different data would have led him to test another group",
+   "choices": [
+    "Different data would have led him to test another group",
+    "His sample was far too small for any one test to be trusted",
+    "The 1 in 20 line is too loose for a test run only once",
+    "He broke the rules by leaving out half of his volunteers"
+   ],
+   "context": "His choice of test hung on the data, so his one test stood in for the many he might have run, and its chance of passing by luck was above 1 in 20, by more the more paths the data could have sent him down, with no fishing and nothing hidden. Gelman and Loken's paper says this can happen even when the hypothesis was set out ahead of time; they called the branching choices the garden of forking paths. The cure is to set down the whole analysis before seeing the data, or to test the new idea again on fresh data.",
+   "facts": [
+    "F11",
+    "F12",
+    "F30"
+   ],
+   "grade_note": "Ninth-grade science asks students to critique how a conclusion was reached, and the forking paths show how one honest test can still overstate its evidence."
+  },
+  {
+   "tier": 5,
+   "topic": "when-results-do-not-replicate",
+   "question": "Robert Rosenthal, a psychologist, named the 'file drawer problem' in 1979: studies that find nothing go unpublished, so the journals lean toward success. Annie Franco, Neil Malhotra and Gabor Simonovits followed 221 experiments run through one funded program from 2002 to 2012, to see what became of those that found nothing. Most of those were never published. What, mostly, kept them out of print?",
+   "answer": "Their own authors, who never wrote them up",
+   "choices": [
+    "Their own authors, who never wrote them up",
+    "Journal editors, who turned them down",
+    "Peer reviewers, who judged their methods poor",
+    "The program's funders, who held them back"
+   ],
+   "context": "Nearly two thirds of the studies that found nothing were never even written up: some authors expected journals to reject them, and others simply lost interest. Strong results were about 40 percentage points more likely to be published than null ones, so a reader of the journals alone sees far more of the ideas that worked than of those that failed. The three called for studies to be registered before they are run.",
+   "facts": [
+    "F13",
+    "F14"
+   ],
+   "grade_note": "Ninth graders learn honest reporting as a scientific value, and the file drawer shows how leaving out dull results bends the published record."
+  },
+  {
+   "tier": 5,
+   "topic": "when-results-do-not-replicate",
+   "question": "Daryl Bem, a psychologist at Cornell University, reported nine experiments in 2011 in the Journal of Personality and Social Psychology that seemed to show students sensing the future. Stuart Ritchie, Richard Wiseman and Chris French repeated one of them in three labs and found no effect. Why did the journal that had printed Bem's paper turn theirs away?",
+   "answer": "Its editors held to a rule against printing repeats",
+   "choices": [
+    "Its editors held to a rule against printing repeats",
+    "Its editors held to a rule that repeats need the first author's approval",
+    "Its editors judged that the repeat was not planned ahead",
+    "Its editors judged that the repeat used too few students"
+   ],
+   "context": "Chris French said the paper was rejected without being sent for review, 'on the basis that the journal has a policy of not publishing replications'. The three had registered their plan beforehand, used Bem's own computer program and word list, and tested 50 students in each lab, enough to detect an effect of Bem's size; PLoS ONE printed their paper in 2012. Later that year Bem's journal printed seven more failed repeats by Jeff Galak and his colleagues.",
+   "facts": [
+    "F15",
+    "F16",
+    "F17"
+   ],
+   "grade_note": "Ninth-grade science names replicable results as a scientific value, and this case shows a failed replication and a journal that at first would not print one."
+  },
+  {
+   "tier": 5,
+   "topic": "when-results-do-not-replicate",
+   "question": "Peer reviewers, experts who read a paper before a journal prints it, passed dozens of Diederik Stapel's papers in leading journals. Stapel, a Dutch social psychologist, had made up their data, which he said came from contacts at schools. Who first reported him, in 2011?",
+   "answer": "Young researchers he was supervising",
+   "choices": [
+    "Young researchers he was supervising",
+    "Statisticians at another university who checked his numbers",
+    "A lab that tried and failed to repeat his work",
+    "A journal editor who checked up on his schools"
+   ],
+   "context": "In late August 2011 three young researchers he supervised took their doubts to the head of the department, Marcel Zeelenberg; asked to name his schools, Stapel said they did not exist. Reviewers see the write-up, not the raw data, and the investigators found that his data had a telltale look: large effects, few missing or odd scores, and hypotheses that were rarely wrong. Pim Levelt, who led one of the inquiries, said that 'the scientific checks and balances process has failed at several levels'; the final report of 2012 counted 55 fraudulent publications.",
+   "facts": [
+    "F18",
+    "F19",
+    "F20",
+    "F21"
+   ],
+   "grade_note": "Ninth graders learn sceptical review and honest reporting as scientific values, and Stapel's case shows what peer review cannot check and who could."
+  },
+  {
+   "tier": 5,
+   "topic": "when-results-do-not-replicate",
+   "question": "Jan Hendrik Schön, a physicist at Bell Labs, published striking results on new electronic devices, about one paper every eight days in 2001, many in Nature and Science. Lydia Sohn of Princeton University saw in 2002 that two of his graphs, from experiments at very different temperatures, showed the same noise, wiggle for wiggle. Noise is the small, random jitter in every real measurement. What did the match show?",
+   "answer": "Both graphs came from a single set of data",
+   "choices": [
+    "Both graphs came from a single set of data",
+    "The two experiments had been run on one machine",
+    "The two experiments had been run on the same day",
+    "His devices behaved alike at both temperatures"
+   ],
+   "context": "Random jitter never repeats itself, so no two real measurements share it: one set of data had been used twice. Schön told Nature he had sent the same graph twice by mistake, but Paul McEuen of Cornell University found the same noise in a third experiment, and a committee reported in September 2002 that he had reused whole data sets and made some curves from mathematical formulas. He kept no lab notebooks, his raw data had been erased, and no other lab had ever reproduced his results.",
+   "facts": [
+    "F18",
+    "F22",
+    "F23",
+    "F24",
+    "F25",
+    "F31"
+   ],
+   "grade_note": "Ninth-grade science asks what an observation shows, and identical noise is a clean case of evidence that rules out a real measurement."
+  },
+  {
+   "tier": 5,
+   "topic": "when-results-do-not-replicate",
+   "question": "In a registered report, a format Chris Chambers launched at the journal Cortex in 2013, peer reviewers judge a study's question and plan before any data exist, and the journal promises to publish it whatever the result, so long as the plan is kept. Anne Scheel's team counted in 2021 how often ordinary psychology papers, and how often registered reports, reported support for the first hypothesis they tested. What did the team find?",
+   "answer": "Nearly all ordinary papers, but under half of registered reports",
+   "choices": [
+    "Nearly all ordinary papers, but under half of registered reports",
+    "Nearly all ordinary papers, and nearly as many registered reports",
+    "Under half of ordinary papers, but nearly all registered reports",
+    "About half of each kind, with little gap between the two"
+   ],
+   "context": "The figures were 96 percent of a sample of ordinary papers against 44 percent of registered reports, and the gap stayed large when straight repeats of earlier studies were left out. The authors wrote that the gap suggests psychologists underreport negative results, though their study did not test directly whether registered reports reduce bias. Because the decision to publish comes before the result, a study that finds nothing is printed as readily as one that finds something.",
+   "facts": [
+    "F26",
+    "F27"
+   ],
+   "grade_note": "Ninth graders learn honest reporting as a scientific value, and registered reports are the main reform built to keep negative results in the published record."
+  }
+ ],
+ "revised": {
+  "7345ad28b6": {
+   "old_hash": "7345ad28b6",
+   "why": "Judge (low): 'About one in every two' had no slip behind it, and the key was the only choice in which most passes were false. Replaced it with 'About ninety-nine in every hundred', the slip of counting every idea tested instead of only the passes. Stem unchanged."
+  },
+  "ad5bf17908": {
+   "old_hash": "99bbc7f563",
+   "why": "Judge (low): one study has no 'share of passing results', and the field's word, power, was never named though the card used it. The stem now names the chance 'the study's power' and asks across many such studies. Key and choices unchanged."
+  },
+  "c37744e042": {
+   "old_hash": "3c004eb84f",
+   "why": "Judge (medium): 'students often give a wrong birth date' was a dead lure, leaving two live ones. Replaced it with the over-sceptical reading the three rejected, 'That no single study, however careful, can be trusted on its own' (F29: they proposed disclosure rules instead). Judge (low): 'significant' is now taught in the stem. The fraud lure gains 'own' so the key is not the longest choice. Fact-check note: the card now says they left out one group, not some (F29), and names their rules."
+  },
+  "aa518c8884": {
+   "old_hash": "770a4885d5",
+   "why": "Fact-check (uncertain): the card's 'far above 1 in 20' overstated a single fork; it now says 'above 1 in 20, by more the more paths' (F30). Judge (low): the older-half case was the writer's illustration, now set apart as 'Suppose a researcher...'; the key 'he would have run another test' could read as an extra test and echoed the stem's 'scores', so it is now 'Different data would have led him to test another group'; the sample lure gains 'far' so the key is not the longest choice."
+  },
+  "5b05dedc9a": {
+   "old_hash": "17f2a45cfa",
+   "why": "Judge (low): 'filed away unpublished' pointed at the authors' own drawer; it now says 'go unpublished'. Key and choices unchanged."
+  },
+  "a6eadd086b": {
+   "old_hash": "602921dfd1",
+   "why": "Judge (medium): three lures said 'judged that the repeat...' and only the key named a rule, so the odd one out gave it away. 'had altered Bem's method' is now a second rule, 'repeats need the first author's approval' (no such rule is on record; F17 gives the journal's real reason). The stem's '50 students in each' weakened the too-few lure, so the number moved to the card."
+  },
+  "437dd15ea7": {
+   "old_hash": "68d25568ff",
+   "why": "Judge (medium): the stem's reviewers who passed his papers ruled out the reviewer lure, and the key was the only plural and the only count. The reviewer lure is now 'Statisticians at another university who checked his numbers' (false for Stapel, F20; 'at another university' keeps it clear of the young researchers in his own group), the key drops 'Three' (kept in the card), so two choices are plural and two singular. 'he told his co-workers' echoed the key and is now 'he said'."
+  },
+  "199196b084": {
+   "old_hash": "199196b084",
+   "why": "Fact-check (uncertain) and judge (low): 'one measurement' was too strong, since some of Schon's curves were made from formulas and never measured (F24, F31). Key now 'Both graphs came from a single set of data'. Stem unchanged."
+  },
+  "f961edb5f9": {
+   "old_hash": "feb59692ff",
+   "why": "Judge (low): 'each kind of psychology paper' left the second kind to be inferred; the stem now names ordinary papers and registered reports. Key and choices unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

@@ -134,3 +134,14 @@ F28. The wider record: a 2016 Nature survey of more than 1,500 scientists found 
 - Uri Simonsohn's "Just Post It" cases (Smeesters, Sanna): accounts of data access conflict (Simonsohn against Richard Gill).
 - Begley and Ellis (Amgen), Bayer, Turner 2008 (antidepressant trials), Surgisphere, Wakefield, Hwang: pharma, COVID or vaccine lanes the brief leaves out.
 - Gilbert, King, Pettigrew and Wilson's 2016 critique of the 2015 project: not found in Grokipedia or Wikipedia in the parts read.
+
+## Added in the revision (2026-11-27)
+
+F29. Simmons, Nelson and Simonsohn's answer to the problem was disclosure rules, not distrust of all studies: six requirements for authors and four guidelines for reviewers (BITSS summary; search extracts of the PubMed abstract say the same). The first author requirement: "Decide the rule for terminating data collection before data collection begins and report this rule in the article"; others: report every variable and every condition, report results with and without exclusions and covariates. One reviewer guideline: when a justification is not convincing, require an exact replication (BITSS). They dropped ONE of their three conditions (the Wiggles' 'Hot Potato') from the reported version (fact-check note, APS).
+    https://www.bitss.org/?p=6641 ; https://pubmed.ncbi.nlm.nih.gov/22006061/ ; https://www.psychologicalscience.org/news/were-only-human/scientific-freedom-and-the-fountain-of-youth.html
+
+F30. Gelman and Loken give no figure for how far one data-dependent test raises the chance of passing by luck; it is above the nominal 1 in 20, by more the more paths the data could have sent the analysis down (their case: "a single test based on the data, in an environment where a different test would have been performed given different data"). So the card says only "above 1 in 20", never "far above" (fact-check, 2026-11-27).
+    https://en.wikipedia.org/wiki/Forking_paths_problem ; https://statmodeling.stat.columbia.edu/2016/03/07/29212/
+
+F31. What Schon's matching noise shows is that one set of data was used for two graphs; it does not show that the set was ever measured, since the Beasley committee found some curves had been generated from mathematical functions (F24). The key says "one set of data", never "one measurement" (fact-check, 2026-11-27).
+    https://en.wikipedia.org/wiki/Schön_scandal ; https://grokipedia.com/page/Schön_scandal

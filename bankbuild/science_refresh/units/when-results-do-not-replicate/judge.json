@@ -1,0 +1,121 @@
+{
+ "unit": "when-results-do-not-replicate",
+ "questions": {
+  "7345ad28b6": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "The arithmetic is right for 9th grade and easy in the head (99 / 20 is about 5; 5 false passes beside 1 true one, so 5 in 6). But the opening clause, 'the less likely its published findings are to be true', leans toward a majority-false answer, and 'About five in every six' is the only choice in which most passes are false. 'About one in every two' is the weakest lure: no slip in the working gives it.",
+     "fix": "Replace 'About one in every two' with 'About ninety-nine in every hundred', the slip of counting all 100 ideas tested instead of only the passes. Two choices then say most are false, and the player has to do the sum."
+    }
+   ]
+  },
+  "99bbc7f563": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'the share of the study's passing results' gives one study many passing results; the share is across such studies. The field's word, power, is never named in the stem, though the card uses 'low power'. Grade fit is fine, since the stem defines the idea in plain words.",
+     "fix": "'Katherine Button and Marcus Munafò led a team that estimated in 2013 that a typical neuroscience study had a power, a chance of detecting a real effect of the size it sought, of only about 21 percent, because its samples were small. A false idea still passes such a test about 1 time in 20, as in any study. Across many such studies, what does the low power do to the share of passing results that are real?'"
+    }
+   ]
+  },
+  "f9c9643588": {
+   "verdict": "ok",
+   "issues": []
+  },
+  "3c004eb84f": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem's own absurdity (a song cannot change a birth date) tells the player that the study was a demonstration, and the key is the only choice about how data are handled. 'That students often give a wrong birth date when they are asked' is weak: no one plays the Beatles to test whether students know their own birth dates. That leaves two live lures.",
+     "fix": "Replace that lure with 'That a single study can never be trusted on its own'. It is the over-sceptical reading the three rejected (they proposed rules for authors and reviewers instead). It is shaped like the key, about method, and it carries the unit's stance: the cure is better testing, not less trust."
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'a significant result' is used without being taught in this stem. Questions come in any order, and a 9th grader reads 'significant' as 'large' or 'important'.",
+     "fix": "'In a 2011 paper they reported a significant result, one unlikely to arise by chance alone: going by their birth dates, the Beatles listeners were nearly a year and a half younger.'"
+    }
+   ]
+  },
+  "770a4885d5": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'wrote in 2013 about a researcher who runs a single test' presents the older-half scenario as Gelman and Loken's own example. It is the writer's illustration of their argument (F12).",
+     "fix": "'Andrew Gelman, a statistician, and Eric Loken argued in 2013 that a single honest test can still mislead. Suppose a researcher runs one test and reports exactly what he did. He looks over his scores first, ...'"
+    },
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'Had the scores fallen otherwise' is literary for a 9th grader. 'he would have run another test' can read as an extra test, which the stem's 'single test' seems to rule out.",
+     "fix": "Key: 'Had the scores come out differently, he would have tested another group'."
+    }
+   ]
+  },
+  "17f2a45cfa": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "low",
+     "what": "'studies that find nothing are filed away unpublished' calls up the researcher's own drawer, a mild pointer to the key. The question still works: the editors lure is the very misconception the study corrected.",
+     "fix": "'... named the 'file drawer problem' in 1979: studies that find nothing go unpublished, so the journals lean toward success.'"
+    }
+   ]
+  },
+  "602921dfd1": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "Three lures share the frame 'Its editors judged that the repeat ...', a judgement on quality, and only the key says 'held to a rule', a policy. A test-wise player picks the odd one out without knowing the case. The stem's 'in three labs, with 50 students in each' also weakens the 'too few students' lure a little.",
+     "fix": "Make one lure a policy too: replace 'Its editors judged that the repeat had altered Bem's method' with 'Its editors held to a rule that repeats need the first author's approval'. No such rule is on record. The four choices then split two and two."
+    }
+   ]
+  },
+  "68d25568ff": {
+   "verdict": "revise",
+   "issues": [
+    {
+     "axis": "tell",
+     "severity": "medium",
+     "what": "The stem opens by saying peer reviewers passed dozens of his papers, which undercuts the lure 'A peer reviewer who asked to see his raw data'. The key is also the only choice with a count ('Three') and the only plural, against three singular 'A ...' lures.",
+     "fix": "Replace the reviewer lure with 'A statistician who checked his published numbers'. Statistical checks did later expose other fakers, so it is a respectable lure, and it is false for Stapel (F20). Drop the count from the key: 'Young researchers he was supervising'. Keep 'three' in the card."
+    }
+   ]
+  },
+  "199196b084": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "fact",
+     "severity": "low",
+     "what": "'came from one measurement' is a shade too strong. The committee found that some curves were made from mathematical formulas and never measured at all (F24). What the matching noise shows is that one set of data was used twice, as the card says.",
+     "fix": "Key: 'The two graphs came from one set of data, not two'."
+    }
+   ]
+  },
+  "feb59692ff": {
+   "verdict": "ok",
+   "issues": [
+    {
+     "axis": "clarity",
+     "severity": "low",
+     "what": "'each kind of psychology paper' makes the player infer the second kind. 'Ordinary papers' first appears in the choices.",
+     "fix": "'... counted in 2021 how often ordinary psychology papers, and how often registered reports, reported support for the first hypothesis they tested. What did the team find?'"
+    }
+   ]
+  }
+ },
+ "unit_notes": "The scope is covered in full: Ioannidis (Q1), power (Q2), the 2015 project (Q3), p-hacking (Q4), forking paths (Q5), the file drawer (Q6), a journal that refused a replication (Q7), and peer review missing Stapel and Schön, with who caught each (Q8, Q9). The cure is Q10. The stance holds. The crisis is shown as mostly chance and bias, and fraud is caught by people inside science. The critics are in the cards (Jager and Leek), as are Nosek's caveat that a failed repeat does not prove the original false and Scheel's caveat on her own study. Every figure is attributed, and no line preaches or sneers. Grade fit: Q1's arithmetic is easy in the head, and power (Q2) suits 9th grade because the stem defines it in plain words. Q1 and Q2 rest on the same model, the share of passes that are real, one through how many ideas are true and one through power. They are distinct facts; keep both. Overlaps were checked against every final.json. T4 correlation-causation-and-error keys chance matches among thousands of pairs (Vigen) and small groups swinging more by chance (Tversky's hospitals). Q4 and Q5 key flexible analysis and Q2 keys the share of real passes, so none re-keys them. T4 testing-a-claim keys a pass mark set beforehand (Emily Rosa). Q5 and Q10 mention planning before the data only in their cards and key other facts. T5 fair-trials-controls-and-placebos keys a small trial's null result (the polio school). Q2 keys what low power does to positive results, the other side of the same coin, not a re-key. There is no overlap with sciences-dark-chapters or when-the-experts-were-wrong."
+}
