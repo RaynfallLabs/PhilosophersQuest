@@ -1,0 +1,217 @@
+{
+ "unit": "waves-at-work",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "waves-at-work",
+   "question": "Students in a physics class take the turntable out of a microwave oven, lay a flat bar of chocolate inside and run the oven for a few seconds. Melted spots appear about 6 centimetres apart. Each gap is half a wavelength, so each wave is about 12 centimetres long. The label on the back gives the oven's frequency as 2,450 million waves a second. What do they find by multiplying those two numbers?",
+   "answer": "The speed of the microwaves",
+   "choices": [
+    "The speed of the microwaves",
+    "The energy of each microwave",
+    "The power of the oven",
+    "The time each wave takes to pass"
+   ],
+   "context": "Wave speed is frequency times wavelength: 2,450 million waves a second, each 0.12 metres long, make about 294 million metres a second, close to the 300 million metres a second at which light and every other electromagnetic wave crosses empty space. Real ovens heat unevenly, so the spots are not perfectly spaced and the result is only rough; measuring several gaps and averaging helps.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3"
+   ],
+   "grade_note": "Ninth-grade physical science teaches wave speed as frequency times wavelength (NGSS HS-PS4-1), and the chocolate in the microwave is a classic classroom way to use it."
+  },
+  {
+   "tier": 5,
+   "topic": "waves-at-work",
+   "question": "Thomas Young let a thin beam of sunlight in through a small hole in a window and held a slip of card, about a thirtieth of an inch wide, edgewise in it, as he described in 1803. In the card's shadow, where light passing its two sides overlapped, he saw bright and dark bands. When he blocked the light passing one side, the bands vanished. What was happening in each dark band?",
+   "answer": "Light from the two sides met crest on trough and cancelled",
+   "choices": [
+    "Light from the two sides met crest on trough and cancelled",
+    "Light from the two sides met and turned to heat there",
+    "Particles from the two sides collided and knocked each other away",
+    "The card's edges soaked up the light headed for those spots"
+   ],
+   "context": "Where light from one side arrives half a wave behind light from the other, crest meets trough and the two cancel, while light arriving in step adds into a bright band; nothing is turned to heat, for the energy missing from the dark bands shows up in the bright ones, and with one side blocked there is nothing left to cancel. Light added to light making darkness is what waves do, not a stream of particles, so the bands told against Isaac Newton's particle theory of light, though most scientists were won over only after Augustin Fresnel's and François Arago's work some fifteen years later. Light is now known to behave in some ways as a wave and in others as particles.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F31"
+   ],
+   "grade_note": "Ninth graders learn constructive and destructive interference, and Young's experiment is the standard evidence that light behaves as a wave."
+  },
+  {
+   "tier": 5,
+   "topic": "waves-at-work",
+   "question": "Noise-cancelling headphones carry a tiny microphone that hears the steady drone of a jet engine. A circuit turns the drone's wave upside down and plays it from the headphone's speaker, so each crest of the drone meets a trough and the drone almost vanishes. Suppose the circuit fell behind and its wave reached the ear exactly half a wave late. What would the listener hear?",
+   "answer": "The drone, louder than with the speaker off",
+   "choices": [
+    "The drone, louder than with the speaker off",
+    "The drone, cancelled just as well as before",
+    "The drone, cut to half its usual loudness",
+    "The drone, shifted up to a higher pitch"
+   ],
+   "context": "A wave turned upside down and then delayed by half a wave is back in step with the drone, so crest meets crest and the two add: constructive interference instead of destructive. The timing must be right, which is why such headphones do best on low, steady sounds like engine drone and worse on high or sudden ones, whose short or changing waves are harder to match. Paul Lueg patented the idea in 1936, and working versions followed in the 1950s.",
+   "facts": [
+    "F4",
+    "F9",
+    "F10"
+   ],
+   "grade_note": "Ninth graders apply constructive and destructive interference to devices, and noise-cancelling headphones are the curriculum's own example."
+  },
+  {
+   "tier": 5,
+   "topic": "waves-at-work",
+   "question": "The Titanic's sinking after it struck an iceberg in 1912 set inventors working on ways to find unseen things at sea by their echoes. Paul Langevin, in France, was finding submarines in trials by 1918, using pulses of ultrasound sent from quartz crystals. Suppose a ship's pulse comes back from an iceberg 4 seconds after it is sent, through sea water where sound travels about 1,500 metres a second. How far away is the iceberg?",
+   "answer": "About 3,000 metres",
+   "choices": [
+    "About 3,000 metres",
+    "About 6,000 metres",
+    "About 1,500 metres",
+    "About 750 metres"
+   ],
+   "context": "In 4 seconds the pulse travels 6,000 metres, but that is the trip to the iceberg and back, so the iceberg lies half that distance away: sonar always halves the echo's round trip. Langevin's quartz crystals both sent the pulses and picked up their echoes, and in trials in 1918 his set found a submarine more than a kilometre away. Echo sounders measure the depth of the sea the same way.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13",
+    "F32"
+   ],
+   "grade_note": "Ninth-grade physical science teaches how sonar uses reflected sound to measure distance, and the out-and-back trip is the step students most often miss."
+  },
+  {
+   "tier": 5,
+   "topic": "waves-at-work",
+   "question": "Ian Donald, a Glasgow professor of midwifery, took fibroid tumours and an ovarian cyst removed from patients to a boilermaker's works at Renfrew in 1955. There a machine found hidden cracks in steel by the echoes of ultrasound pulses, and he tried it on the specimens, with a large steak for comparison. A cyst is a thin-walled sac of fluid. What echoes did the cyst give?",
+   "answer": "Echoes from its near and far walls only",
+   "choices": [
+    "Echoes from its near and far walls only",
+    "Echoes that faded steadily with depth",
+    "One strong echo from its near wall only",
+    "Echoes packed thickly from wall to wall"
+   ],
+   "context": "Fluid has no boundaries inside it, so the pulse sends back nothing until it reaches the cyst's far wall, leaving a clear gap on the screen; a solid tumour, in Donald's words, gave echoes that weakened steadily the deeper the sound went. Later his scanner showed that a woman thought to be dying of stomach cancer had a huge, harmless cyst instead, which surgeons removed. Donald, John MacVicar and Tom Brown published their scans in 1958, among them the first published ultrasound image of an unborn baby.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "Ninth graders learn how ultrasound imaging uses reflection at boundaries between materials, and Donald's cyst is the founding case of reading an echo picture."
+  },
+  {
+   "tier": 5,
+   "topic": "waves-at-work",
+   "question": "Robert Watson-Watt and Arnold Wilkins showed near Daventry, in England, on 26 February 1935 that a bomber about eight miles off sends back enough of a radio beam to be picked up. Within a year their test set was finding aircraft over 100 miles away. Yet ships hunting a submarine under the sea rely on the pulses of sound that sonar sends out. Why can radar not find the submarine there?",
+   "answer": "Sea water soaks up radio waves within a short distance",
+   "choices": [
+    "Sea water soaks up radio waves within a short distance",
+    "Steel hulls let radio waves pass straight through them",
+    "Sound travels through water faster than radio waves do",
+    "Radio waves need air to carry them along"
+   ],
+   "context": "Sea water carries electric current, so it drains a radio wave's energy within a short way, about a quarter of a metre for some radio waves and less still for radar's microwaves, while sound crosses kilometres of sea. Radio waves are far faster than sound, need no air at all and reflect strongly off metal, which is how radar finds ships and surfaced submarines. Watson-Watt had first been asked whether radio could be made into a death ray, and Wilkins worked out that it would take impossible amounts of power.",
+   "facts": [
+    "F17",
+    "F18",
+    "F19",
+    "F29",
+    "F30"
+   ],
+   "grade_note": "Ninth-grade physical science (NGSS HS-PS4-5) covers radar and sonar as uses of reflected waves and how different materials absorb or pass waves."
+  },
+  {
+   "tier": 5,
+   "topic": "waves-at-work",
+   "question": "Charles Kao, an engineer at a laboratory in Harlow, England, argued in 1966 that a fibre of very pure glass could carry light for kilometres. Light sent into such a fibre runs along its central core of glass, striking the core's edge again and again. Why does the light not leak out of the core there?",
+   "answer": "It meets the edge at too glancing an angle to cross",
+   "choices": [
+    "It meets the edge at too glancing an angle to cross",
+    "A thin mirror coating round the core sends it back in",
+    "The core is too thin for light to slip out of it",
+    "Glass so pure lets no light out of the core"
+   ],
+   "context": "The core is wrapped in glass in which light travels a little faster, and light meeting that boundary at a glancing angle cannot cross it, so all of it is reflected back in: total internal reflection, with no mirror needed. Purity does a different job. Kao traced the fibres' heavy losses to traces of iron and water in the glass, which soaked up the light along the way and could be removed; Corning made a fibre purer than his target in 1970, and Kao shared the 2009 Nobel Prize in Physics.",
+   "facts": [
+    "F20",
+    "F21"
+   ],
+   "grade_note": "Ninth-grade physical science teaches fibre optics as a use of light's behaviour at boundaries, and Kao's purer glass is the discovery that made fibre communication work."
+  },
+  {
+   "tier": 5,
+   "topic": "waves-at-work",
+   "question": "Christoph Buys Ballot loaded trumpeters onto an open railway car in 1845 and had a locomotive pull them along the line between Utrecht and Maarssen while they held one steady note. Listeners beside the track heard the note about a half-tone higher as the train came toward them and a half-tone lower as it went away, as Christian Doppler had predicted three years before. Why did the note sound higher as the train came on?",
+   "answer": "Each wave set out nearer, so the waves arrived bunched",
+   "choices": [
+    "Each wave set out nearer, so the waves arrived bunched",
+    "The sound rode with the train, so it arrived faster",
+    "The note grew louder, and a louder note sounds higher",
+    "The rushing air pushed the trumpets' note higher"
+   ],
+   "context": "Each crest leaves the trumpet a little nearer the listener than the one before, so the crests arrive closer together, more of them each second, and the note is higher; behind the train they are stretched apart, and it is lower. The trumpets' own note never changed, and the sound's speed is set by the air, not by the train. Police radar guns and Doppler weather radar read the same shift in the echoes of microwaves and radio waves to tell how fast a car, or the rain in a storm, moves toward or away from them.",
+   "facts": [
+    "F22",
+    "F23",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "Ninth-grade physics explains the Doppler effect by waves bunching ahead of a moving source, and Buys Ballot's trumpeters are its classic first test."
+  },
+  {
+   "tier": 5,
+   "topic": "waves-at-work",
+   "question": "Repeaters stand along a long telephone cable, each one strengthening the fading signal before passing it on. An analog cable carries a call as a smooth wave shaped like the sound of the voice. A digital cable carries it as a code of on-and-off pulses, ones and zeros. Why does the digital call arrive clearer after many repeaters?",
+   "answer": "Each repeater sends out fresh pulses, dropping the noise",
+   "choices": [
+    "Each repeater sends out fresh pulses, dropping the noise",
+    "Each repeater boosts the pulses more than the noise",
+    "The pulses travel faster than the smooth wave does",
+    "The pulses pick up no noise at all along the cable"
+   ],
+   "context": "A pulse is either on or off, so a repeater only has to decide which, and noise too small to change that answer is dropped as it sends out a clean new pulse; an analog repeater amplifies the noise along with the voice, so the noise piles up stage after stage. Digital signals do pick up noise, but shrug it off up to that limit, and extra check bits catch many errors beyond it. Storing works the same way: each copy of a copy of a cassette tape grows hissier, while a digital recording can be copied again and again without loss.",
+   "facts": [
+    "F26",
+    "F27"
+   ],
+   "grade_note": "Ninth-grade physical science (NGSS HS-PS4-2) asks students to explain why digital signals are more reliable to store and send than analog ones."
+  }
+ ],
+ "revised": {
+  "4df2970fc7": {
+   "old_hash": "6d5565f8f3",
+   "why": "Judge (low x2): 'The heat in the chocolate' tempted no one; it is replaced by the period, 'The time each wave takes to pass', a real confusion. The scene is now students in a physics class, so it no longer reads as T4's teacher at a microwave oven. Key and context unchanged; the judge ruled the demonstration physics, not kitchen."
+  },
+  "0d6ea71f96": {
+   "old_hash": "0d6ea71f96",
+   "why": "Judge (medium): 'met crest on crest and added' could not explain a DARK band, so it was dead. Replaced by 'Light from the two sides met and turned to heat there', which the stem does not rule out (block one side and nothing meets); the context now says interference only moves the energy into the bright bands (F31). Stem and key unchanged."
+  },
+  "fe5e0d3f02": {
+   "old_hash": "19a48bc74a",
+   "why": "Fact-check (uncertain) and judge (low): quartz-sent pulses found submarines only in 1918 (the 1917 set still sent its beam from mica), so 'By 1917 ... hunting' became 'finding submarines in trials by 1918' (no enemy submarine was found by ultrasound before the war ended, F32); the context's range is now 'more than a kilometre'. Key, choices and arithmetic unchanged."
+  },
+  "d28f4a353a": {
+   "old_hash": "df08c69374",
+   "why": "Judge (high): the stem stated the rule being tested ('Echoes come back from each boundary between one material and another'), so the key followed from the stem alone. That clause is cut; the player must know that ultrasound echoes come from boundaries between materials, which the context teaches. Choices and context unchanged."
+  },
+  "c1ec6b28da": {
+   "old_hash": "2f38fdc7d3",
+   "why": "Judge (medium): the stem's 'Every long cable picks up electrical noise' ruled out 'The pulses pick up no noise at all along the cable'. That sentence is gone, so the misconception (F27: digital signals do still pick up noise) is live again; the stem keeps the repeaters and the fading signal. Choices and context unchanged."
+  },
+  "9d921f4328": {
+   "old_hash": "a547b92315",
+   "why": "Judge (medium x2): the key (impurities, not the glass, took the light) was materials history, not the 9th-grade fact, and 'after all' pointed at a removable cause. Re-keyed, as the judge proposed, to the fibre-optics fact itself, total internal reflection (F20), with Kao as the scene. Wrong choices: a mirror coating (the cladding is glass), a core too thin to leak (thinness is not what keeps light in), and purity, which the stem makes tempting but which only cuts absorption (F21). The judge's 'light cannot pass from glass into air' was not used (common sense kills it: windows) nor 'the glass bends it to curve along the thread' (true of graded-index fibres). Kao's impurities are now in the context."
+  }
+ },
+ "added": {},
+ "dropped": [],
+ "lead_edits": [
+  {
+   "old_hash": "c5628f3ba0",
+   "new_hash": "9d921f4328",
+   "change": "key \"All of it is reflected back into the core\" -> \"It meets the edge at too glancing an angle to cross\"; stem: cut \"at a slant\"",
+   "why": "re-checker's exact fix for its fail"
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{"unit": "energys-two-great-laws",
+ "questions": {
+  "3446e123a2": {"verdict": "revise",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "'Every way, the fall of 772 pounds through one foot made enough heat...' states one exact figure for every method, but F4 gives 772.7 for the water and up to 776.0 for the iron wheels under mercury: the same only to within about half a percent.",
+     "fix": "Write 'Every way, close to 772 pounds falling through one foot made enough heat to warm a pound of water by one degree Fahrenheit.'"}
+   ]},
+  "709939f019": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "Near re-ask of T3. The key (heat is motion, not a substance) is what heat-on-the-move and temperature-and-moving-particles already teach: particles bumping and moving, with 'An invisible heat fluid seeps up through the metal' and 'A fluid of heat has filled the gaps' as their wrong choices. A student who passed T3 picks 'A kind of motion' without weighing any of Rumford's evidence, so the question is not a grade deeper.",
+     "fix": "Key Rumford's reasoning instead. Keep the stem to '...for as long as the horses walked.', then add: 'The caloric theory held heat to be a fluid stored in matter. Why did that endless supply of heat tell against it?' Answer: 'A store of fluid in the brass would have run out'. Wrong: 'A fluid leaving the brass would have made it lighter' / 'A fluid would have boiled the water at once, not after hours' / 'A fluid cannot pass from a metal into water'."}
+   ]},
+  "83f7acd7e3": {"verdict": "ok", "issues": []},
+  "ca82339123": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "Convergence pattern: the key shares 'Some becomes work' with one wrong choice and 'flows on to the cooling water' with another, so a test-wise player picks the choice that overlaps both. The stem's 'cooled back into water by a river or a cooling tower' also points at the cooling water.",
+     "fix": "Break one overlap: replace 'Some becomes work, and the rest is destroyed in the turbine' with 'None becomes work; the steam's pressure, not its heat, turns the blades'."}
+   ]},
+  "94f2df5736": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "A closed room on a hot day, with a boy inside giving off body heat, warms anyway, so 'Higher' is true for reasons that have nothing to do with the fridge. The lead's lane note also bars kitchen settings. The fridge is a heat pump, so the question is physics, not cooking, but the room does not need to be a kitchen.",
+     "fix": "Drop the boy and the hot day: 'A fridge stands in a small, sealed, well-insulated room with its door propped wide open. It runs without stopping, pumping heat out of its cold inside and giving it off through the coils at its back. After a few hours, how does the room's average temperature compare with when it began?'"}
+   ]},
+  "7043b921a3": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The answer can be worked out from the stem. It says the engine, brakes and tyres 'turned the fuel's energy into heat, which spread out into the air', and that rules out both 'destroyed' choices. 'None of the energy, and none of its ability to do work' fails on common sense, since the car needs another tank to drive again. Only the key is left, so a player who knows nothing of the second law still gets it.",
+     "fix": "Cut that sentence and add a live fourth choice. Stem: 'A car burns a tank of gasoline on a long round trip and parks just where it started, no higher and no faster than when it set out. What did the trip use up?' Choices: 'None of the energy, but nearly all of its ability to do work' / 'Most of the energy, destroyed as the fuel was burned' / 'Most of the energy, destroyed by the rubbing of the brake pads' / 'None of the energy, but all of the fuel's matter, burned to nothing'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "A full tank is not burned driving 'across town and back'; a tank lasts hundreds of kilometres.",
+     "fix": "Say 'on a long round trip', as in the stem above."}
+   ]},
+  "bb878e42fc": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Ways to lie broken far outnumber ways to be whole' is hard to read the first time; a 9th grader may not see that 'ways' means arrangements of the pieces. 'Kitchen table' also puts a kitchen into a physics question for no reason (the lead's lane note).",
+     "fix": "Answer: 'Its pieces have far more ways to lie scattered than to fit together', with the other three choices kept near that length; write 'an egg rolling off a table'."}
+   ]},
+  "70caf8701b": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two wrong choices are dead. 'Each far-out weight swings back in before it can pull' contradicts the stem, which says the weights swing far out on the side going down. 'Weights folded in close press harder on the axle' is a push on the axle, which turns nothing, and it is not a belief anyone holds about the wheel. Only 'Gravity pulls more weakly on weights far from the axle' is left to compete with the key.",
+     "fix": "Replace the two with misconceptions from the facts sheet (F20: a free-energy machine fails only because of friction): 'Friction at the axle cancels the far side's extra pull' and 'The air holds back the far-out weights as they swing'."},
+    {"axis": "other", "severity": "low",
+     "what": "The question never uses the Paris Academy sentence. The key is a point about the wheel's geometry, and the unit's own law (over a full turn each weight is lifted as far as it falls) appears only in the context.",
+     "fix": "Move the Academy's resolution to the context, or cut it to a clause. Another option is to ask the energy reason: 'Over one full turn, what does each weight do?' -> 'It is lifted exactly as far as it falls'."}
+   ]},
+  "ad4e96afde": {"verdict": "ok", "issues": []},
+  "584f521463": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "It has the same key as ca82339123: a heat engine must pass much of its heat on unused. A player who has met the power-plant question answers this one from it, and the unit spends two of its ten questions on one fact.",
+     "fix": "Re-key to the motor's side, which the unit does not yet ask. Keep the first two sentences, then: 'Why does the limit that binds every heat engine not bind the electric motor?' Answer: 'It turns electrical energy into motion with no heat in between'. Wrong: 'It runs cooler, and a cool engine wastes less heat' / 'Its battery holds energy that cannot turn into heat' / 'Its magnets add energy of their own to the battery's'."}
+   ]}
+ },
+ "unit_notes": "Scope is covered: Joule and the first law (3446e123a2), Rumford and caloric (709939f019), Carnot, Clausius and the second law (83f7acd7e3, ca82339123, 94f2df5736, ad4e96afde), entropy (7043b921a3, bb878e42fc), perpetual motion (70caf8701b, ad4e96afde) and real efficiency (584f521463). Four questions are about heat engines; two of them (ca82339123 and 584f521463) key the same fact, which is fixed above. The other lower-tier checks pass. kinetic-and-potential-energy (T2) keys energy kept, and friction turning a swing's energy to heat; heat-on-the-move (T3) keys heat flowing warm to cool. None of these is re-asked. 7043b921a3's 'destroyed' choices recall T2's swing, which is fine as wrong choices once the stem stops ruling them out. 709939f019 is close to a re-ask of T3's heat-as-motion. Lanes: the fridge (94f2df5736) is a heat pump and so physics, and the broken egg (bb878e42fc) is the standard entropy picture, so neither is cooking; drop the word 'kitchen' from both anyway, as the lead asked. No question needs arithmetic. Voice is clean: no dashes, no exclamation marks, no stem opens on a date, and no singular they."}

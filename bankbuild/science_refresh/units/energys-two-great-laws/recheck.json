@@ -1,0 +1,74 @@
+{
+ "unit": "energys-two-great-laws",
+ "questions": {
+  "d93dd0b468": {
+   "verdict": "pass",
+   "why": "Fixed: 'close to 772' matches Joule's five 1850 series (772.7 to 776.0). Key and wrong choices hold; Mayer's label is now exact. No new tell; voice fine; no overlap with another final or with T2-T3 keys.",
+   "sources": [
+    "https://grokipedia.com/page/James_Prescott_Joule",
+    "https://en.wikipedia.org/wiki/James_Prescott_Joule",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4360093/",
+    "https://grokipedia.com/page/Julius_von_Mayer"
+   ]
+  },
+  "7211039090": {
+   "verdict": "pass",
+   "why": "Fixed: Rumford's text has the borer held still by a screw and the cylinder turned by horses, in a box of cold water (60 F). The key (the heat 'appeared evidently to be inexhaustible', so not a material substance) is his own argument; heat without fire, the hot chips and the air shut out all fit a fluid squeezed from the metal, so exactly one choice answers. No longer re-asks T3's heat-as-motion (that is only in the context). Calling the bored cylinder, still joined to the casting, 'a cannon' is a fair simplification.",
+   "sources": [
+    "https://av8n.com/physics/refs/rumford-1798.html",
+    "https://en.wikipedia.org/wiki/An_Inquiry_Concerning_the_Source_of_the_Heat_Which_Is_Excited_by_Friction"
+   ]
+  },
+  "fe2c65f8b2": {
+   "verdict": "pass",
+   "why": "Fixed: no boy, no hot day, no kitchen; a sealed, insulated room isolates the fridge's effect. With the coils sentence gone, 'destroys the heat' is no longer ruled out by the stem, and 'cold air spills from the open door' keeps both 'Lower' choices tempting. Key true (more heat dumped than pumped; the room's average temperature rises).",
+   "sources": [
+    "https://van.physics.illinois.edu/ask/listing/1790",
+    "https://energyeducation.ca/encyclopedia/Refrigerator"
+   ]
+  },
+  "54257d39e5": {
+   "verdict": "pass",
+   "why": "Fixed: the heat-spreading sentence is cut, so the stem no longer rules out the 'destroyed' choices; 'a tank on a long drive' is realistic. The new matter choice is a real misconception and truly wrong (combustion gives carbon dioxide and water). Key matches OpenStax (energy not lost, but permanently unavailable to do work). The used-up-energy choices test the unit's own misconception (F18), not a stem tell.",
+   "sources": [
+    "https://openstax.org/books/college-physics-2e/pages/15-6-entropy-and-the-second-law-of-thermodynamics-disorder-and-the-unavailability-of-energy",
+    "https://grokipedia.com/page/Combustion",
+    "https://www.fueleconomy.gov/feg/atv.shtml"
+   ]
+  },
+  "35ab157fb3": {
+   "verdict": "pass",
+   "why": "Fixed: the key now reads plainly and the choices are of even length; no kitchen. Key true (reverse overwhelmingly improbable because scattered arrangements vastly outnumber joined ones); the energy, time-reversal and gravity choices are all wrong. No overlap.",
+   "sources": [
+    "https://grokipedia.com/page/Entropy_as_an_arrow_of_time",
+    "https://en.wikipedia.org/wiki/Arrow_of_time"
+   ]
+  },
+  "91d9bb8be2": {
+   "verdict": "pass",
+   "why": "Fixed: 'over a full turn ... even out' matches Wikipedia's 'even out on average'; 'always' is gone. Key verbatim from Wikipedia (the far-out side 'has fewer weights'). The friction and off-centre-axle choices are live misconceptions and wrong; the Academy is in the context. Not a re-ask of T2's pendulum (energy is only in the context).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Perpetual_motion",
+    "https://grokipedia.com/page/Perpetual_motion"
+   ]
+  },
+  "549adbf590": {
+   "verdict": "pass",
+   "why": "Fixed: re-keyed to the motor's side, no longer the power-plant fact; the stem does not say 'heat engine' or 'as heat'. Figures check: engine losses 64-75%, EV drive losses 15-20% (fueleconomy.gov). Fewer parts (friction is a 'smaller amount'), the Carnot gap misapplied, and magnets adding energy are all wrong; the key avoids T1's 'electrical energy into motion'.",
+   "sources": [
+    "https://www.fueleconomy.gov/feg/atv-ev.shtml",
+    "https://www.fueleconomy.gov/feg/atv.shtml",
+    "https://en.wikipedia.org/wiki/Heat_engine",
+    "https://energyeducation.ca/encyclopedia/Electric_motor"
+   ]
+  },
+  "ca82339123": {
+   "verdict": "pass",
+   "why": "Re-checker failed it and gave the exact fix; the lead applied it (choice \"Part of it spins the blades, and the rest simply vanishes\" -> \"Most of it is lost to friction in the turbine\"). The rest was judged sound.",
+   "sources": [
+    "https://mdpi.org/lin/clausius/clausius.htm",
+    "https://grokipedia.com/page/Thermal_power_station"
+   ]
+  }
+ }
+}

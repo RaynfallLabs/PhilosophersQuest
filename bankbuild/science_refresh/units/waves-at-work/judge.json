@@ -1,0 +1,54 @@
+{"unit": "waves-at-work",
+ "questions": {
+  "6d5565f8f3": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The heat in the chocolate' is a weak choice. Nothing got by multiplying a length by a count per second could be about the chocolate, so only three choices are really live.",
+     "fix": "Replace it with a real confusion, the period: 'The time each wave takes to pass'."},
+    {"axis": "other", "severity": "low",
+     "what": "Lane ruling: this is a physics demonstration, not a kitchen example. The chocolate only marks the hot spots, the oven is a source of 12-centimetre waves, and no cooking fact is asked, so it stays in science. But the-electromagnetic-spectrum (T4) already sets 'a physics teacher' at a microwave oven with microwaves 'about 12 centimetres long', so the two scenes read as one.",
+     "fix": "Change the scene, e.g. 'Students in a physics class take the turntable out of a microwave oven and lay a flat bar of chocolate inside...'."}
+   ]},
+  "0d6ea71f96": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Light from the two sides met crest on crest and added' cannot explain a DARK band. By the choice's own words, light added to light is brighter, so the choice is dead and only three are live.",
+     "fix": "Replace it with a live wrong idea that the stem does not rule out: 'Light from the two sides met and turned to heat there'."}
+   ]},
+  "66d714be46": {"verdict": "ok", "issues": []},
+  "19a48bc74a": {"verdict": "revise",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "'By 1917 Paul Langevin... was hunting submarines' overstates. F12 says quartz became his transmitter only in April 1917 and his set first picked up echoes in November 1917; it found submarines in 1918.",
+     "fix": "'By 1917 Paul Langevin, in France, was building a set to find submarines by pulses of ultrasound sent from quartz crystals.'"}
+   ]},
+  "df08c69374": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem gives away the rule the question tests: 'Echoes come back from each boundary between one material and another, and a cyst is a thin-walled sac of fluid.' A sac of fluid has two boundaries, so 'Echoes from its near and far walls only' follows from the stem alone, with no knowledge of ultrasound.",
+     "fix": "Cut 'Echoes come back from each boundary between one material and another,' and keep 'A cyst is a thin-walled sac of fluid.' The player must then know that ultrasound echoes come from boundaries between materials, which is the unit's fact. The cut also brings the stem down from 78 words."}
+   ]},
+  "888453a2e9": {"verdict": "ok", "issues": []},
+  "a547b92315": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "The key (impurities, not the glass itself, took the light) is a point of materials history, not a 9th-grade fact. The curriculum's fibre-optics fact, that light stays in the thread by total internal reflection (the scope's 'light bouncing along a glass thread'), appears only in the context and as a wrong choice.",
+     "fix": "Re-key to total internal reflection and keep Kao as the scene: 'Charles Kao, at a laboratory in Harlow, England, argued in 1966 that a thread of pure glass could carry light for kilometres, round every bend. Light inside the thread keeps meeting its side at a slant. What keeps the light from leaking out there?' Answer: 'It reflects back in completely at the side'. Wrong: 'A mirror coating on the outside sends it back' / 'The glass bends it to curve along the thread' / 'Light cannot pass from glass into air'."},
+    {"axis": "tell", "severity": "medium",
+     "what": "'argued that a glass fibre could carry light for kilometres after all' tells the player that the loss could be cured. That points away from the two causes built into glass ('The glass itself, which scatters light by nature', 'Light waves too long for so thin a thread') and toward a removable one.",
+     "fix": "The re-key above removes it. If Kao's impurities stay, drop 'after all' and add a removable wrong cause, e.g. 'Scratches on the fibre's outer surface'."}
+   ]},
+  "5ecc4d40af": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Each wave set out nearer, so the waves arrived bunched' does not say nearer to what, and a first-time reader may stall on it.",
+     "fix": "'Each crest set out nearer the listener, so the crests arrived bunched'."}
+   ]},
+  "2f38fdc7d3": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's first sentence, 'Every long cable picks up electrical noise', rules out 'The pulses pick up no noise at all along the cable', so only three choices are live.",
+     "fix": "Replace it with the belief that digital is just a stronger signal: 'The pulses are sent so strong that the noise is too small to matter'."}
+   ]}
+ },
+ "unit_notes": "Lane ruling on the microwave and chocolate: it is a physics demonstration (wave speed from a measured wavelength and a labelled frequency), not kitchen chemistry, and may stay; only the scene should differ from T4's microwave-oven question. Arithmetic is easy in the head: the sonar question is 1,500 x 4 / 2, and the microwave question asks what the product is without working it out. Coverage: wave speed, interference (two questions on different facts: what a dark band is, and timing turning cancellation into reinforcement), sonar, ultrasound, radar, fibre optics, the Doppler effect and digital signals are all asked. Refraction in lenses, named in the scope, is not; how-light-travels (T1) already keys the magnifying glass, so any lens question must go deeper (e.g. where a lens brings light to a point), or the gap is left. Radar guns and weather radar appear only in the context of the Doppler question, which is acceptable. No lower-tier fact is re-asked. describing-waves (T4) keys the frequency-wavelength trade-off at a fixed speed, not frequency times wavelength as speed; waves-carry-energy (T2) and the-electromagnetic-spectrum (T4) are not repeated; galaxies-and-the-expanding-universe (T4) keys what a red shift means, while this unit asks why the waves bunch. Nothing touches light-from-atoms' spectra. Voice is clean."}

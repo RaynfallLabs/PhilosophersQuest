@@ -1,0 +1,203 @@
+{
+ "unit": "balancing-equations-and-reaction-rates",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "balancing-equations-and-reaction-rates",
+   "question": "The Space Shuttle rode into orbit on three main engines that burned liquid hydrogen with liquid oxygen, and the two gases joined to make water. A student writes the reaction as H2 + O2 → H2O, then counts two oxygen atoms on the left of the arrow and only one on the right. Which equation balances it?",
+   "answer": "2H2 + O2 → 2H2O",
+   "choices": [
+    "2H2 + O2 → 2H2O",
+    "H2 + O2 → H2O2",
+    "H2 + O2 → 2H2O",
+    "2H2 + 2O2 → 2H2O"
+   ],
+   "context": "Only the numbers in front may change: 2H2 + O2 → 2H2O has four hydrogen atoms and two oxygen atoms on each side, so no atom, and no mass, is made or lost. Writing H2O2 also evens the count, but it turns the product from water into hydrogen peroxide, a different substance.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "Ninth-grade physical science (TEKS IPC 8B, NGSS HS-PS1-7) has students balance simple equations themselves by choosing coefficients, and hydrogen burning to water is the standard first case."
+  },
+  {
+   "tier": 5,
+   "topic": "balancing-equations-and-reaction-rates",
+   "question": "Fritz Haber, a German chemist, showed in 1909 how to join nitrogen from the air with hydrogen to make ammonia, the raw material of fertiliser. Factories today pass the two gases over hot iron, a catalyst. A student balancing N2 + H2 → NH3 first puts a 2 in front of NH3, which evens out the nitrogen atoms. What number must go in front of H2?",
+   "answer": "3",
+   "choices": [
+    "3",
+    "6",
+    "2",
+    "1"
+   ],
+   "context": "2NH3 holds six hydrogen atoms, and each H2 molecule brings two, so it takes 3H2: N2 + 3H2 → 2NH3 has two nitrogen atoms and six hydrogen atoms on each side. Writing 6 counts the hydrogen atoms instead of the H2 molecules, writing 2 copies the number in front of NH3, and a 1, which leaves H2 as it was, balances the nitrogen only. Haber's ammonia now feeds the crops that grow food for about half the world's people and won him the 1918 Nobel Prize in Chemistry; the same Haber oversaw Germany's first large chlorine gas attack, at Ypres in April 1915, and is called the father of chemical warfare.",
+   "facts": [
+    "F1",
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F9",
+    "F27"
+   ],
+   "grade_note": "Choosing the numbers in front to balance an equation is the ninth-grade step past reading a balanced one, and the Haber process is the textbook industrial reaction."
+  },
+  {
+   "tier": 5,
+   "topic": "balancing-equations-and-reaction-rates",
+   "question": "A student drops a few granules of zinc into dilute hydrochloric acid, and they fizz. She collects some of the gas in a test tube and holds a lit splint at its mouth, and there is a squeaky pop. Which gas is it?",
+   "answer": "Hydrogen",
+   "choices": [
+    "Hydrogen",
+    "Carbon dioxide",
+    "Oxygen",
+    "Chlorine"
+   ],
+   "context": "A metal such as zinc, magnesium or iron gives off hydrogen in an acid and leaves a salt behind, here zinc chloride, dissolved in the liquid; hydrogen burns, and the squeaky pop is the classic test for it. Carbon dioxide comes from an acid acting on a carbonate such as marble, and it would have put the splint out. Oxygen does not burn at all: it only makes a glowing splint flare up.",
+   "facts": [
+    "F2",
+    "F14",
+    "F15"
+   ],
+   "grade_note": "Ninth-grade physical science lists an acid fizzing on a metal as evidence of a reaction, and the lit-splint test is how students identify the gas instead of assuming it."
+  },
+  {
+   "tier": 5,
+   "topic": "balancing-equations-and-reaction-rates",
+   "question": "Hydrochloric acid is a strong acid, and sodium hydroxide is a strong base. A chemist adds the base to the acid in a flask, a few drops at a time, until exactly enough has gone in to neutralise it. What does the flask hold at the end?",
+   "answer": "A salt and water",
+   "choices": [
+    "A salt and water",
+    "A salt and hydrogen gas",
+    "Water and hydrogen gas",
+    "The same acid and base, only watered down"
+   ],
+   "context": "Neutralising makes new substances: the acid's hydrogen ions join the base's hydroxide ions as water, and the sodium and chloride that remain are sodium chloride, table salt, dissolved in it. Chemists call every such product a salt, and each acid and base gives its own. No gas comes off, and once exactly enough base has gone in, neither the acid nor the base is left, only salt water.",
+   "facts": [
+    "F14",
+    "F16"
+   ],
+   "grade_note": "Ninth-grade physical science names neutralisation as one kind of chemical reaction and teaches that an acid and a base react to give a salt and water."
+  },
+  {
+   "tier": 5,
+   "topic": "balancing-equations-and-reaction-rates",
+   "question": "A student sets up three test tubes, each with an iron nail, and leaves them for several days. In the first, the nail lies in water that was boiled to drive out its air, under a layer of oil. In the second, it sits in dry air over calcium chloride, which soaks up water. In the third, it lies in plain water open to the air. Only the third nail rusts. What does the first tube rule out?",
+   "answer": "That water without oxygen can rust iron",
+   "choices": [
+    "That water without oxygen can rust iron",
+    "That oxygen without water can rust iron",
+    "That water and oxygen together rust iron",
+    "That iron needs salt in the water to rust"
+   ],
+   "context": "Boiling drives the dissolved air out of the water and the oil keeps air from dissolving again, so the first nail has water but no oxygen, and it stays bright. The dry tube is the one that rules out oxygen alone, and the third shows that the two together are enough; salt is not needed, though salt water makes iron rust faster still.",
+   "facts": [
+    "F17",
+    "F18"
+   ],
+   "grade_note": "Ninth graders learn rusting as an oxidation that needs both oxygen and water, and reading what each tube of this classic set-up controls for is the standard how-we-know exercise."
+  },
+  {
+   "tier": 5,
+   "topic": "balancing-equations-and-reaction-rates",
+   "question": "Chemists find that warming many reactions by 10 degrees Celsius, from 20 degrees to 30, roughly doubles how fast they go. Yet in a gas at 30 degrees the particles collide less than 2 percent more often than at 20. What explains most of the faster rate?",
+   "answer": "Many more of the collisions are energetic enough to react",
+   "choices": [
+    "Many more of the collisions are energetic enough to react",
+    "The energy a collision needs in order to react becomes smaller",
+    "The particles swell up and make larger targets to strike",
+    "The particles break up into smaller pieces that move faster"
+   ],
+   "context": "A reaction happens only when particles collide with at least a minimum energy, the activation energy. Warming barely changes how often they meet but greatly raises the number of fast, energetic particles, so many more collisions clear that bar, which itself stays where it was; only a catalyst offers a lower one. The particles themselves do not swell or break up.",
+   "facts": [
+    "F10",
+    "F20",
+    "F21",
+    "F22"
+   ],
+   "grade_note": "High-school standard NGSS HS-PS1-5 asks students to explain, with collision theory, why temperature changes a reaction's rate, and the energy of the collisions is the ninth-grade answer."
+  },
+  {
+   "tier": 5,
+   "topic": "balancing-equations-and-reaction-rates",
+   "question": "Gus Grissom, Ed White and Roger Chaffee died in a fire inside their Apollo 1 spacecraft during a launch-pad test in January 1967. The cabin was filled with pure oxygen, a little above the pressure of the air outside, and once what was most likely an electrical spark set nylon and foam alight, flames filled it within half a minute. Air is only about one-fifth oxygen. Why does fuel burn so much faster in pure oxygen?",
+   "answer": "More oxygen molecules strike the fuel every second",
+   "choices": [
+    "More oxygen molecules strike the fuel every second",
+    "Oxygen itself burns, as a second fuel beside it",
+    "Oxygen molecules move faster than nitrogen ones",
+    "Oxygen acts as a catalyst that speeds the burning"
+   ],
+   "context": "Burning happens where oxygen molecules meet the fuel, and pure oxygen crowds about five times as many into each litre as air does, so collisions with the fuel come far more often and the fire races. Oxygen does not burn, and it is used up feeding the fire, so it is no catalyst; at the same temperature its molecules are, if anything, a little slower than nitrogen's. NASA afterwards launched its crews in a mix of 60 percent oxygen and 40 percent nitrogen.",
+   "facts": [
+    "F15",
+    "F20",
+    "F23",
+    "F24"
+   ],
+   "grade_note": "Ninth-grade physical science teaches that higher concentration speeds a reaction because particles collide more often, and the Apollo 1 fire is the starkest real case of it."
+  },
+  {
+   "tier": 5,
+   "topic": "balancing-equations-and-reaction-rates",
+   "question": "Fine sawdust lying in a heap on a workshop floor only smoulders when a spark lands on it. Blown up into a cloud, the same sawdust can burn so fast that it explodes, and flour mills and grain elevators face the same danger from their dust. Why does the cloud burn so much faster than the heap?",
+   "answer": "The flying specks each meet the air all round",
+   "choices": [
+    "The flying specks each meet the air all round",
+    "The flying specks rub together and grow hot",
+    "The flying specks move fast, so they burn hotter",
+    "The flying specks break into finer dust as they fly"
+   ],
+   "context": "Burning happens only where the fuel's surface meets oxygen: in a heap the air reaches only the specks on top, while in a cloud every speck is wrapped in air, so the whole surface of every speck burns at once and the flame races through. The specks are the same wood; what changes is how much of their surface the air can reach. A spark lit the flour dust hanging in the Washburn A Mill in Minneapolis on 2 May 1878, and the blast and fire killed 18 people; most deaths in such disasters come from a second blast, when the first shakes settled dust up into the air.",
+   "facts": [
+    "F20",
+    "F25",
+    "F26",
+    "F28"
+   ],
+   "grade_note": "Ninth-grade physical science teaches that a reaction goes faster when more of a solid's surface meets the other reactant, and the dust cloud against the heap of the same dust is the classic industrial case."
+  },
+  {
+   "tier": 5,
+   "topic": "balancing-equations-and-reaction-rates",
+   "question": "Hydrogen peroxide breaks down into water and oxygen on its own, but so slowly that little changes in a bottle on the shelf. A pinch of black manganese dioxide powder makes it froth with oxygen within seconds. A student wants to know whether the powder is a catalyst or one more reactant. Which result would show that it is a reactant?",
+   "answer": "Less powder is left once the frothing stops",
+   "choices": [
+    "Less powder is left once the frothing stops",
+    "The frothing stops once the peroxide runs out",
+    "More powder makes the peroxide froth faster",
+    "The flask grows warm while the peroxide froths"
+   ],
+   "context": "A reactant is used up as it turns into products; a catalyst is not. Filtered out, washed and dried, the manganese dioxide weighs just what it did before and sets fresh peroxide frothing again, so it is a catalyst, while the frothing's end, its speed and its warmth would fit either one. Catalase, an enzyme in blood and liver, speeds the same breakdown in living things, and the platinum, palladium and rhodium of a car's catalytic converter clean exhaust gas the same way, without being used up.",
+   "facts": [
+    "F10",
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "Ninth graders learn that a catalyst speeds a reaction without being used up, and weighing the recovered catalyst is the standard way a class shows it."
+  }
+ ],
+ "revised": {
+  "ff5a26e062": {
+   "old_hash": "2558f7adc1",
+   "why": "Judge (medium): every choice was a whole equation, so T4's atom counting checked them and the question never asked the student to choose a number. As the lead asked, the student now CHOOSES the number in front of H2 once the 2 in front of NH3 is set; the lures are the three real slips (6: atoms counted for molecules; 2: the NH3 number copied; 1: hydrogen left unbalanced, F27), written as digits so no choice stands out by length. Judge (low): the stem's 'which speeds the reaction without being used up' handed over 6999d96d3f's key and is cut, and the context says 'first large chlorine gas attack', not 'great'."
+  },
+  "1248a46f86": {
+   "old_hash": "eeed12d9c7",
+   "why": "Judge (medium): 'the gas burns' ruled out carbon dioxide and pointed at hydrogen, and the lab partner's 'must be carbon dioxide again' was framed as the guess the test would overturn. Both are gone: the stem gives only the squeaky pop, so the student must know the test. Carbon dioxide stays live through the common belief that every acid fizz is carbon dioxide (F15), oxygen through the belief that it burns, chlorine through the acid's name. Choices and context are unchanged."
+  },
+  "31c99dc761": {
+   "old_hash": "69fa384613",
+   "why": "Fact-check (error): 'A weaker acid and a weaker base' is defensible under the Bronsted-Lowry definition (water and chloride are weaker than the acid and hydroxide). It is replaced, as the lead asked, by 'The same acid and base, only watered down', the misconception of F16; the question now asks what the flask holds, since 'What has the reaction made?' would have ruled that choice out. Judge (low): 'Chlorine gas and water' is replaced by 'Water and hydrogen gas', so salt, water and hydrogen each sit in two choices and the key no longer stands where the others converge. The context no longer says that hydrogen comes from an acid on a metal, which was eeed12d9c7's key."
+  },
+  "f388bf8adb": {
+   "old_hash": "2de20e9fdc",
+   "why": "Judge (medium): it was a near re-ask of T3's crushed rock salt (more surface meets the water). Re-aimed on the judge's lines: a heap and a cloud of the SAME sawdust, so fineness is held fixed and the key is what the air can reach (a dust layer smoulders unless dispersed, F28). The lures are friction, the specks' own motion (collision theory misapplied to whole specks) and the specks breaking up in flight; none can be ruled out by the stem's 'same sawdust'. The Washburn mill and the second blast move to the context, as the industrial hazard."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

@@ -1,0 +1,43 @@
+{"unit": "light-from-atoms",
+ "questions": {
+  "9853be611c": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'They give off light only while the gas is burning' does not try to explain why the light breaks into lines rather than a band, so it is the weakest of the four. The stem's 'the same every time' also leans a little toward 'set amounts'. The key is what Bohr's levels (keyed at T4 in inside-the-atom) do to light, not that they exist, so it is not a re-ask.",
+     "fix": "Replace the burning choice with 'They give off every colour, but most of them too faintly to see', a misconception that does account for lines."}
+   ]},
+  "0a6a8f92fb": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "Re-asks T4, and two choices are dead. The stem says 'a far bigger drop', and no student believes a bigger drop gives off less energy, so both 'less energy' choices fall away. What is left is Violet-more against Red-more, which asks only which colour carries more energy per photon. the-electromagnetic-spectrum (T4) already keys that: ultraviolet's packets carry more energy than red's because of their higher frequency, and violet sits at the short-wave end. A student who knows only T4 answers it, so nothing this unit teaches is tested. facts.md says F5 is to be used 'only as a step', but here it is the whole question.",
+     "fix": "Key what one drop's energy does instead, for example: 'An electron in a hydrogen atom, lifted to the third energy level, can drop straight back to the first and give off one ultraviolet photon. Or it can drop to the second level, giving off a red photon, and then to the first, giving off another ultraviolet one. How do the energies of those two photons together compare with the single photon's?' Answer: 'Together they carry the same energy as the one photon'. Wrong: 'Together they carry twice as much, one share for each drop' / 'Each of them carries as much as the one photon' / 'Together they carry less, as some is lost between the drops'. The writer must first source the two Lyman lines (3 to 1 at 102.6 nm, 2 to 1 at 121.6 nm). If no rewrite is wanted, drop the question: the unit keeps eight questions on different facts."}
+   ]},
+  "da41bd86c3": {"verdict": "ok", "issues": []},
+  "79b5dc97fb": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The stem lists six compounds and five flames, and the list is longer than a 9th grader needs. 'Lighting gas' is never explained, and bromide, iodide and sulphate are words most 9th graders only half know. Its length also reads as a build-up to a 'nothing changed' ending. The 2x2 choices are sound, and so is the reasoning from controlled variables.",
+     "fix": "Shorten it to 'They burned each metal as six different compounds, among them a chloride, an oxide and a carbonate, in flames of sulphur, alcohol, coal gas, hydrogen and more, some far hotter than others.'"}
+   ]},
+  "7c0d76525a": {"verdict": "ok", "issues": []},
+  "e1bdd7cd97": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The stem opens on Comte's claim, but the question never comes back to it. A player reads the philosopher's 'impossible' before learning what is asked, and the story is left hanging in the stem (only the context resolves it). The physics is good: every wrong choice is a live novice explanation, and the key is Kirchhoff's absorption law.",
+     "fix": "Either cut the first sentence (the context already gives Comte's claim and his death two years before the result), or keep it and change the question to 'What did that show about the dark lines in sunlight?', with the key 'Sodium gas in the Sun soaks up the colours it gives off'."}
+   ]},
+  "39cfaf2510": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only choice of its kind. All three wrong choices are the same line seen again in the sky (in other stars, at later eclipses, measured more finely). The key alone is a find on Earth, and it alone carries a specific detail (a uranium mineral). A player who has only heard that helium was later found on Earth, or who simply picks the odd one out, gets it. The reasoning point the question makes (seeing the line again cannot show what made it) is good and should stay.",
+     "fix": "Replace 'Its place was measured again, far more exactly' with an Earth-bound wrong choice that would also have confirmed helium, such as 'Hydrogen heated in a lab turned into a gas that glowed with that line'. Two of the four choices are then lab finds, and the player must know which one happened. Leave the uranium mineral as it is. Do not use a choice that would have disproved helium (sodium heated hotter, say): every student knows helium is real, so it would be dead."}
+   ]},
+  "d5c389b7e9": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem says 'Astronomers had long read a strong line as a lot of an element', and then says Payne 'read the lines again'. Together these tell the player the answer is not 'The amount of hydrogen the star holds', which is the one wrong choice a 9th grader would find strong. That leaves temperature against distance and speed, and neither of those fits a theory of 'how atoms lose electrons'. The roster also lists the stars by colour (white, blue-white, the Sun, Betelgeuse), which hands the player T4's colour-as-temperature (the-life-cycles-of-stars) as a hint. The fact itself, that line strength is set mainly by temperature through ionisation, goes a grade deeper than T4 and belongs here.",
+     "fix": "Cut the 'Astronomers had long read...' sentence; the context can tell the old reading. Replace 'The distance of the star from Earth' and 'The speed of the star toward or away from Earth' with 'The size of the star' and 'The age of the star', so that every wrong choice stays live. Keep 'The amount of hydrogen the star holds' as the respectable old reading."}
+   ]},
+  "0935a3ef9a": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Coverage: the scope is covered. 9853be611c covers line spectra against a continuous glow (neon), da41bd86c3 flame tests and the fingerprint, and 79b5dc97fb Bunsen and Kirchhoff's controlled test. 7c0d76525a covers Fraunhofer's lines in the stars, e1bdd7cd97 absorption and sodium in the Sun, and 39cfaf2510 helium in 1868 and 1895. Payne gets two questions on different facts: d5c389b7e9 (temperature sets line strength) and 0935a3ef9a (Russell's objection). Firework colours appear only in da41bd86c3's context, which is enough. Lower-tier checks: inside-the-atom (T4) keys that Bohr's levels exist. 9853be611c and da41bd86c3 ask what the levels do to light (set amounts; each element's own spacing), which goes a grade deeper, so neither is a re-ask. the-electromagnetic-spectrum (T4) keys the bands and that higher-frequency light carries more energy per packet, and 0a6a8f92fb turns on exactly that fact (high, fixed above). Its Herschel and Ritter prism questions are not re-asked. the-life-cycles-of-stars (T4) keys colour as temperature; d5c389b7e9 leans on it through its colour roster (fixed above). the-periodic-tables-patterns (T5) keys argon and Ramsay: 39cfaf2510 names Ramsay only in its context, and its key is the uranium mineral, not argon, so it passes. Nothing in this unit overlaps the two other units in the batch. Cross-question leak, inherent to the topic: 0a6a8f92fb's stem (and any rewrite) says outright that lines come from electrons dropping between levels, which helps a player on 9853be611c and da41bd86c3. It is acceptable, since T4 has already taught the levels, but keep the rewrite's stem from stating that each element's levels are spaced its own way. No arithmetic, no kitchen, no voice slips, no singular they."}

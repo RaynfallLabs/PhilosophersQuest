@@ -1,0 +1,240 @@
+{
+ "unit": "the-periodic-tables-patterns",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "the-periodic-tables-patterns",
+   "question": "Lithium, sodium and potassium are the first three alkali metals, going down their column of the periodic table. Dropped into water, lithium fizzes steadily, sodium reacts faster and hotter, and potassium reacts violently; caesium, further down the column, explodes. Why is each alkali metal more reactive than the one above it?",
+   "answer": "Its outer electron is farther out and comes away more easily",
+   "choices": [
+    "Its outer electron is farther out and comes away more easily",
+    "It has more outer electrons to give away to the water",
+    "Its nucleus has more protons, so it pulls the water apart",
+    "Its atoms are heavier, so they sink and meet more water"
+   ],
+   "context": "Every alkali metal has a single outer electron and reacts by giving it up. Each step down the column adds a shell, so that electron sits farther from the nucleus, screened from its pull by more inner electrons, and comes away more easily, though the nucleus holds more protons. Lithium, sodium and potassium are all less dense than water and float on it.",
+   "facts": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "Ninth-grade chemistry explains the trend down a group by the distance and shielding of the valence electron, and alkali metals in water are the standard demonstration."
+  },
+  {
+   "tier": 5,
+   "topic": "the-periodic-tables-patterns",
+   "question": "Fluorine, chlorine, bromine and iodine are the halogens, going down their column of the periodic table. Fluorine, at the top, is the most reactive of all the elements, and the halogens grow less reactive step by step down the column, the reverse of the alkali metals. Why is fluorine the most reactive halogen?",
+   "answer": "Its small atom pulls hardest on an electron it takes in",
+   "choices": [
+    "Its small atom pulls hardest on an electron it takes in",
+    "Its nucleus has the most protons, so it pulls hardest",
+    "It gives up its outer electrons more easily than the others",
+    "Its outer shell is nearer to full than the others' are"
+   ],
+   "context": "A halogen has seven outer electrons and reacts by taking in one more. Fluorine's outer shell lies closest to its nucleus, with the fewest inner electrons in the way, so it pulls a new electron in hardest; iodine has far more protons (53 against fluorine's 9), but its outer shell lies much farther out. All four halogens are one electron short of a full shell, and they react by taking electrons, not by giving them up.",
+   "facts": [
+    "F5",
+    "F6",
+    "F4"
+   ],
+   "grade_note": "Ninth graders learn that reactivity falls down the halogens while it rises down the alkali metals, and explain both from how strongly the nucleus holds the outer shell."
+  },
+  {
+   "tier": 5,
+   "topic": "the-periodic-tables-patterns",
+   "question": "Fluorine, with 9 electrons, and sodium, with 11, are two of the most reactive elements. Neon, with 10 electrons, sits between them in the periodic table, yet under ordinary conditions it forms no stable compound with any other element. Why does neon hold back from reacting?",
+   "answer": "Its outer shell is full, with nothing to gain or lose",
+   "choices": [
+    "Its outer shell is full, with nothing to gain or lose",
+    "Its outer shell is empty, with nothing left to share",
+    "Its nucleus is uncharged, with no pull on other atoms",
+    "Its atoms are joined in pairs, with no bond left free"
+   ],
+   "context": "Neon's electrons fill shells of 2 and 8, so its outer shell is full. Fluorine (2 and 7) is one electron short and sodium (2, 8 and 1) has one to spare, so each reacts fiercely, and in doing so reaches neon's arrangement. Neon's nucleus holds 10 protons, and neon stays as single atoms, never pairs; the heavier noble gas xenon was first made to form a compound in 1962, but no stable compound of neon is known.",
+   "facts": [
+    "F7",
+    "F8",
+    "F6",
+    "F9"
+   ],
+   "grade_note": "Ninth-grade chemistry explains the noble gases' unreactivity by their full valence shells, set against the near-full and near-empty shells of their neighbours."
+  },
+  {
+   "tier": 5,
+   "topic": "the-periodic-tables-patterns",
+   "question": "From sodium to chlorine, across one row of the periodic table, each element has one more proton and one more electron than the one before, and the atoms grow heavier. Yet they shrink to about half the width. Why do they shrink?",
+   "answer": "More protons pull harder on the same outer shell",
+   "choices": [
+    "More protons pull harder on the same outer shell",
+    "More neutrons pull harder on the same outer shell",
+    "More electrons push the shells in toward the nucleus",
+    "More mass pulls the shells inward by its gravity"
+   ],
+   "context": "From sodium to chlorine every new electron goes into the same third shell while the inner shells stay as they are, so the growing positive charge of the nucleus draws that shell in: sodium's radius is about 190 picometres, chlorine's about 99. Neutrons carry no charge, electrons repel one another rather than push the shells inward, and gravity between such tiny masses is far too weak to matter.",
+   "facts": [
+    "F10",
+    "F11",
+    "F36"
+   ],
+   "grade_note": "Ninth graders learn the periodic trends across a period, and atomic size explained by nuclear charge is the first of them."
+  },
+  {
+   "tier": 5,
+   "topic": "the-periodic-tables-patterns",
+   "question": "Dmitri Mendeleev left an empty square below aluminium in his periodic table, and in 1871 he described the element that should fill it: an atomic weight of about 68, and about six times as dense as water. Paul-Émile Lecoq de Boisbaudran found gallium in 1875, and its atomic weight proved to be 69.7 and its density 5.9. Why did that forecast count as stronger evidence for the table than all the known elements it already fitted?",
+   "answer": "It was made before the metal was found, so it could fail",
+   "choices": [
+    "It was made before the metal was found, so it could fail",
+    "It proved that the table had no errors left anywhere in it",
+    "Its numbers fitted more closely than the known elements' did",
+    "It matched more properties than any known element had"
+   ],
+   "context": "A table built to fit the known elements was bound to fit them; a forecast set down before anyone had the metal could have been wrong, and it was not. The match was close, not exact, and Lecoq de Boisbaudran's first density, 4.7, was off: Mendeleev had written that the density would be 5.9, and when Lecoq de Boisbaudran measured again, on purer metal, he got 5.9. Gallium melts below 30 degrees Celsius, the low melting point he had forecast; scandium (1879) and germanium (1886) were still to come, not every forecast came true, and by 1890 the table was accepted as basic chemistry.",
+   "facts": [
+    "F13",
+    "F15",
+    "F17",
+    "F18",
+    "F32"
+   ],
+   "grade_note": "Ninth-grade science teaches that a theory is tested by predictions that could fail, and Mendeleev's gallium is the textbook case."
+  },
+  {
+   "tier": 5,
+   "topic": "the-periodic-tables-patterns",
+   "question": "Dmitri Mendeleev forecast an undiscovered element in 1871, which he called eka-silicon, and gave it an atomic weight of about 72. Clemens Winkler found the element in 1886 and named it germanium, and its atomic weight proved to be 72.6. With no sample to weigh, how had Mendeleev reached about 72?",
+   "answer": "From the weights down its column, from silicon to tin",
+   "choices": [
+    "From the weights down its column, from silicon to tin",
+    "From silicon's own weight, since the two would be alike",
+    "From an even step in weight from each element to the next",
+    "From the average weight of all the elements then known"
+   ],
+   "context": "Eka means one place below: eka-silicon had to fall between silicon above it and tin below it in the same column, so its weight could be read off the trend down that column. His density of about 5.5 and a chloride boiling below 100 degrees Celsius came close as well: germanium's density is 5.3 and its chloride boils at about 86 degrees. Silicon itself weighs only about 28, and Winkler's first guess was that his element belonged under antimony; the match made germanium the best confirmation of the table up to that time.",
+   "facts": [
+    "F13",
+    "F14",
+    "F16",
+    "F33"
+   ],
+   "grade_note": "Ninth-grade chemistry teaches how Mendeleev used the trends of his table to predict undiscovered elements, with eka-silicon and germanium as the classic comparison."
+  },
+  {
+   "tier": 5,
+   "topic": "the-periodic-tables-patterns",
+   "question": "Dmitri Mendeleev's table of 1869 set the elements in order of atomic weight. Yet he put tellurium before iodine, though tellurium is slightly the heavier of the two, and he wrote that its weight must have been measured wrongly. Why did he break his own order there?",
+   "answer": "Iodine acts like chlorine and bromine",
+   "choices": [
+    "Iodine acts like chlorine and bromine",
+    "Tellurium acts like chlorine and bromine",
+    "Iodine acts like sulfur and selenium",
+    "Tellurium was found first, so it went first"
+   ],
+   "context": "By weight alone, iodine would have landed in the column of sulfur and selenium and tellurium among chlorine and bromine, the halogens; Mendeleev trusted the families instead and put each element where its chemistry belonged. Later careful weighings showed tellurium (127.6) really is heavier than iodine (126.9), so his order was right and his claim about the weight was wrong, a puzzle that waited for Henry Moseley. Tellurium was indeed found first, in 1782, and iodine in 1811, but the order in which elements were found set no place in his table.",
+   "facts": [
+    "F12",
+    "F19",
+    "F9",
+    "F5",
+    "F34"
+   ],
+   "grade_note": "Ninth graders learn that Mendeleev ordered by weight but grouped by properties, and the tellurium-iodine swap is the standard example of him choosing chemistry over the scales."
+  },
+  {
+   "tier": 5,
+   "topic": "the-periodic-tables-patterns",
+   "question": "Henry Moseley fired electrons at one element after another in 1913 and measured the X-rays each gave off. The X-ray frequency climbed by one regular step from each element to the next. Cobalt weighs slightly more than nickel, yet its X-rays put it one step before nickel. What did that step show about cobalt?",
+   "answer": "It has one proton fewer than nickel",
+   "choices": [
+    "It has one proton fewer than nickel",
+    "It has one neutron fewer than nickel",
+    "It has one electron shell fewer than nickel",
+    "It has one outer electron more than nickel"
+   ],
+   "context": "Each step (strictly, in the square root of the frequency) is one more unit of positive charge in the nucleus, one more proton: cobalt has 27 and nickel 28, so the table is a count of protons, not an order of weights. Cobalt is the heavier because every cobalt atom carries 32 neutrons, while about two in three nickel atoms carry only 30, and the two share a row and so the same shells. Moseley did not measure tellurium and iodine themselves, and his paper kept tellurium first for its chemistry, but the same count, 52 protons against 53, puts it there.",
+   "facts": [
+    "F21",
+    "F22",
+    "F35"
+   ],
+   "grade_note": "Ninth-grade chemistry teaches that Moseley reordered the table by atomic number, and the tellurium-iodine pair is the example every textbook uses."
+  },
+  {
+   "tier": 5,
+   "topic": "the-periodic-tables-patterns",
+   "question": "Chemists of the early 1900s could not agree how many rare-earth metals ran from lanthanum to lutetium. The metals are so alike that chemists could not always tell a pure one from a mixture of two, and didymium, once taken for one element, proved to be two. Henry Moseley measured the X-rays they give off and showed that there must be exactly 15, counting both ends. How could X-rays settle what chemistry could not?",
+   "answer": "Each element's X-rays rise one even step above the last's",
+   "choices": [
+    "Each element's X-rays rise one even step above the last's",
+    "X-rays split a mixed sample into its separate rare earths",
+    "X-rays weigh each rare earth more exactly than any scales",
+    "X-rays count the neutrons in each rare earth's nucleus"
+   ],
+   "context": "Moseley's X-ray frequency rose by one even step per element, so every element took one whole number, with none skipped and none to spare: between lanthanum and lutetium there was room for exactly 15, however alike their chemistry. Number 61 was still empty, and his X-rays found it missing from Georges Urbain's samples; X-rays sort no samples, weigh nothing and follow the nuclear charge, not the neutrons. Moseley enlisted in the army in 1914 and was killed by a sniper at Gallipoli on 10 August 1915, aged 27.",
+   "facts": [
+    "F21",
+    "F23",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "Ninth graders learn that atomic number made the table a count with no room for hidden elements, and Moseley's rare earths show what a measurement can settle that chemistry cannot."
+  },
+  {
+   "tier": 5,
+   "topic": "the-periodic-tables-patterns",
+   "question": "Lord Rayleigh found that a litre of nitrogen taken from the air weighed about half a percent more than a litre made from chemicals. William Ramsay passed nitrogen from the air over heated magnesium, which combines with nitrogen, until only a little gas was left that would join with nothing he tried. In 1894 the two named it argon, from the Greek for lazy. What did argon turn out to be?",
+   "answer": "The first of a family that the table lacked",
+   "choices": [
+    "The first of a family that the table lacked",
+    "The element Mendeleev had left a gap for",
+    "A heavier form of nitrogen, not a new element",
+    "A new element in nitrogen's column of the table"
+   ],
+   "context": "Argon's weight, about 40, matched no empty square, and no column held anything so unreactive; Mendeleev at first argued it was a form of nitrogen. Ramsay found helium in 1895 and, with Morris Travers, neon, krypton and xenon in 1898, having forecast neon from the gap between helium and argon in Mendeleev's own way. Ramsay proposed a new column between the halogens and the alkali metals, and Mendeleev added it to his table in 1902.",
+   "facts": [
+    "F26",
+    "F27",
+    "F28",
+    "F29",
+    "F30"
+   ],
+   "grade_note": "Ninth-grade chemistry tells how the noble gases were found, and argon is the case of a careful measurement revealing a whole family the table had missed."
+  }
+ ],
+ "revised": {
+  "6f30b51770": {
+   "old_hash": "6f30b51770",
+   "why": "Judge (low): convergence, the key shared 'small atom' with one wrong choice and 'pulls hardest' with another. 'Its small atom gives up its outer electrons most easily' now reads 'It gives up its outer electrons more easily than the others', so the key no longer sits where two wrong choices overlap. Stem, key and context unchanged."
+  },
+  "2773c4770e": {
+   "old_hash": "4e67965076",
+   "why": "Judge (low): the old first sentence (atoms grow down a column as shells are added) handed over most of the alkali-metal question's key, and naming only the proton and the electron made 'More neutrons' and 'More mass' look off-topic. The down-column sentence is cut, and the stem now says the atoms grow heavier, which keeps the mass and neutron choices live. Choices and context unchanged."
+  },
+  "4be146cc44": {
+   "old_hash": "af9a1d8d25",
+   "why": "Judge (medium): the three wrong choices were sweeping absolutes, and two were contradicted by the unit's own questions. Kept 'It proved that the table had no errors left' (the misconception that a confirmed forecast is proof); the other two are now modest wrong reasons about fit: a closer fit than the known elements (they fit their places by construction) and more matching properties (the known elements match on many). Judge (low): the closing question is plainer, the density is 'about six times as dense as water', and the melting point moved to the context. Fact-check (uncertain): the letter after the 4.7 is unconfirmed; the context now says Mendeleev had written that the density would be 5.9 (his note of 1875, F32) and that the second measurement, on purer metal, gave 5.9."
+  },
+  "4fcb41d1f8": {
+   "old_hash": "7e0b15f772",
+   "why": "Judge (high): the stem named the gap below silicon, two wrong choices needed a sample nobody had, and the third ('the order of discovery') was no method at all. Every choice is now a way to reach a number with no sample (the stem says so): the column trend (key, F14), copying silicon, an even step in weight, and an average of all the elements. The question now asks only the weight, so each wrong method could give one number; the density and chloride matches moved to the context. The stem no longer names the gap's place (the context explains 'eka', one place below), so 'down its column' is not read off it. The spectral-lines choice, which touched light-from-atoms, is gone. The context gives 86 degrees for the chloride (fact-check polish)."
+  },
+  "b018ada1fa": {
+   "old_hash": "b018ada1fa",
+   "why": "Fact-check (error): 'No new weighing backed his claim, and none ever did' was wrong (Bohuslav Brauner's 1883 weighing gave about 125, and Mendeleev cited it, before it was shown wrong). The context now says 'Later careful weighings showed tellurium (127.6) really is heavier than iodine (126.9)'. Judge (medium): 'A new weighing had shown tellurium lighter' was dead, since the stem says tellurium is heavier and that Mendeleev only claimed a mismeasure. Replaced by 'Tellurium was found first, so it went first' (true dates, 1782 and 1811, F34; a false reason). The judge's 'either order would do' was not used: the stem says he broke his order, which rules it out."
+  },
+  "c7f1580498": {
+   "old_hash": "600299b595",
+   "why": "Fact-check (error): Moseley never measured tellurium or iodine, and his paper kept tellurium first for its chemistry. The stem now uses cobalt and nickel, the inverted pair his 1913 series did measure (cobalt, 27, and nickel, 28, with cobalt's X-rays of the longer wavelength, F35), as the judge proposed; the steps show the table is a count of protons. The context says that Moseley did not measure tellurium and iodine and that the same count settles them. Same key fact (one proton fewer), same three wrong choices pointed at nickel; each is false for cobalt (32 neutrons against nickel's 30 or 32; same row; outer electrons no more than nickel's)."
+  },
+  "c6a5667a1a": {
+   "old_hash": "18bcab778f",
+   "why": "Fact-check (uncertain): the rare earths are 17 today (with scandium and yttrium), so the stem now says 15 from lanthanum to lutetium, counting both ends. Judge (low): 'X-rays give each element one step in an unbroken count' was an odd phrase; the key now reads 'Each element's X-rays rise one even step above the last's', and the purer-samples and weighing choices are reworded to its length ('X-rays split a mixed sample into its separate rare earths', '... more exactly than any scales'). Context unchanged."
+  },
+  "10af583b1b": {
+   "old_hash": "10af583b1b",
+   "why": "Judge (low): 'A heavier relative of chlorine, in chlorine's column' tempted no one, since the stem says the gas joined with nothing. Replaced by 'A new element in nitrogen's column of the table', a natural guess for a gas taken out of nitrogen. Stem, key and context unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

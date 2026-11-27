@@ -1,0 +1,40 @@
+{
+ "unit": "balancing-equations-and-reaction-rates",
+ "questions": {
+  "ff5a26e062": {
+   "verdict": "pass",
+   "why": "Fixed: the student now chooses the coefficient instead of checking whole equations, so it is the balancing that T5 owns, not T4's reading of a given equation (chemical-reactions-conserve-mass). It uses T3's NH3 atom count only as a step. With 2NH3 there are six hydrogen atoms, so 3H2 is right. The lures 6 (atoms counted as molecules), 2 (the number copied) and 1 (left as it was) are real slips, written as digits so none stands out. The catalyst clause that gave away 6999d96d3f's key is cut, and the context says 'first large'. Facts hold: the April 1909 osmium demonstration, the iron catalyst today, about 50% of the world fed, the 1918 Nobel Prize, the first major chlorine attack at Second Ypres in 1915, 'father of chemical warfare'. Haber is told plainly, the fertiliser and the gas side by side.",
+   "sources": [
+    "https://grokipedia.com/page/Fritz_Haber",
+    "https://grokipedia.com/page/Haber_process",
+    "https://grokipedia.com/page/Chemical_equation"
+   ]
+  },
+  "1248a46f86": {
+   "verdict": "pass",
+   "why": "Fixed: 'the gas burns' and the partner's 'must be carbon dioxide' are gone, and the stem gives only the squeaky pop. All three lures are live: carbon dioxide (every acid fizz), oxygen (thought to burn or pop) and chlorine (from the acid's name). The facts hold: RSC, 'Metal + acid -> salt + hydrogen' for zinc and magnesium in hydrochloric acid, with a lit splint held to the mouth of the tube for the 'pop' test. No T1-T4 final keys metal on acid or the pop test; T4's marble fizz and T2's antacid fizz are not re-asked.",
+   "sources": [
+    "https://edu.rsc.org/resources/metals-and-acids-experiment/446.article",
+    "https://grokipedia.com/page/Hydrogen",
+    "https://en.wikipedia.org/wiki/Splint_(laboratory_equipment)"
+   ]
+  },
+  "31c99dc761": {
+   "verdict": "pass",
+   "why": "Fixed: 'a weaker acid and a weaker base', which was defensible under Bronsted-Lowry, is replaced by 'The same acid and base, only watered down', a misconception that is plainly wrong. The chlorine choice is replaced by 'Water and hydrogen gas', so salt, water and hydrogen each sit in two choices and the key is no longer where the choices converge. Grokipedia: neutralisation is 'an acid reacts with a base to form a salt and water', HCl + NaOH -> NaCl + H2O. The lead allows this key here, and it does not re-ask acids-bases-and-ph (T4): no antacid, no pH moving to 7. The context no longer gives away 1248a46f86.",
+   "sources": [
+    "https://grokipedia.com/page/Neutralization_(chemistry)",
+    "https://grokipedia.com/page/Acid"
+   ]
+  },
+  "f388bf8adb": {
+   "verdict": "pass",
+   "why": "Fixed, and not a re-ask of T3: solutions-solute-and-solvent keys crushed salt dissolving faster 'as more of their surface meets the water', with the fineness changed. Here the same sawdust is heaped or dispersed, so fineness is held fixed. The reaction is burning, not dissolving, and T3's own lesson (finer pieces) is now a lure ('break into finer dust'), not the key. Facts hold: Grokipedia says dust in layers 'often leads to smoldering rather than explosive combustion unless airflow disperses them', burning 'proceeds heterogeneously at the particle surfaces', secondary blasts come from disturbed layers, and wood is listed among explosive dusts. The Washburn A Mill (2 May 1878, 18 dead) is as sourced. All choices are parallel and live, and the flour mill is an industrial hazard, not kitchen chemistry.",
+   "sources": [
+    "https://grokipedia.com/page/Dust_explosion",
+    "https://en.wikipedia.org/wiki/Dust_explosion",
+    "https://en.wikipedia.org/wiki/Washburn_A_Mill"
+   ]
+  }
+ }
+}

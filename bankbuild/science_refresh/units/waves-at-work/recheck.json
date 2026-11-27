@@ -1,0 +1,57 @@
+{
+ "unit": "waves-at-work",
+ "questions": {
+  "4df2970fc7": {
+   "verdict": "pass",
+   "why": "Fixed: the period is a live wrong choice, and the scene is students, not T4's teacher. Facts hold (2,450 MHz; hot spots half a wavelength apart; about 2.94e8 m/s). Not a re-ask: describing-waves (T4) keys only 'twice the frequency, half the wavelength' (the equation is only in its context), and this unit's scope owns v = f x wavelength; the T4 spectrum oven question keys molecules twisting.",
+   "sources": [
+    "https://wp.optics.arizona.edu/oscoutreach/measure-the-speed-of-light-with-a-microwave",
+    "https://uwaterloo.ca/chem13-news-magazine/node/619",
+    "https://grokipedia.com/page/Wavelength"
+   ]
+  },
+  "0d6ea71f96": {
+   "verdict": "pass",
+   "why": "Fixed: 'met and turned to heat' is live (blocking one side leaves nothing to meet) and truly wrong (interference only redistributes energy, F31). Young's 1803 card, about a thirtieth of an inch, and the fringes vanishing when one side was blocked are confirmed. Not a re-ask of T2's 'trough' or of T4.",
+   "sources": [
+    "https://van.physics.illinois.edu/ask/listing/25734",
+    "https://grokipedia.com/page/Young's_interference_experiment",
+    "https://jimclifford.ca/philosophical-transactions-ocr-1665-1869/articles/jstor-107135/"
+   ]
+  },
+  "fe5e0d3f02": {
+   "verdict": "pass",
+   "why": "Fixed: 'finding submarines in trials by 1918' fits Grokipedia (quartz transmitter April 1917; June-July 1918 trials, up to 1,300 m) and Physics Today (no enemy submarine found before the war ended); 'more than a kilometre' is safe. Arithmetic right. The halving of the round trip is not T4's lightning fact.",
+   "sources": [
+    "https://grokipedia.com/page/Paul_Langevin",
+    "https://physicstoday.aip.org/features/paul-langevin-u-boats-and-ultrasonics",
+    "https://en.wikipedia.org/wiki/Sonar"
+   ]
+  },
+  "d28f4a353a": {
+   "verdict": "pass",
+   "why": "Fixed: the boundary rule is cut, so the player must know that echoes come from boundaries. Facts confirmed: Renfrew 1955, fibroids, a large ovarian cyst, a steak as a control; Donald: a cyst 'produced echoes only at depth from the near and far walls', a solid tumour attenuated echoes with depth. All three wrong choices are live.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ian_Donald",
+    "https://embryo.asu.edu/pages/ian-donald-1910-1987"
+   ]
+  },
+  "c1ec6b28da": {
+   "verdict": "pass",
+   "why": "Fixed: with 'Every long cable picks up electrical noise' gone, 'no noise at all' is live (F27's misconception), and 'strengthening the fading signal' keeps the boost choice tempting. Key true (regenerating repeaters drop accumulated noise). No overlap.",
+   "sources": [
+    "https://grokipedia.com/page/Digital_signal",
+    "https://grokipedia.com/page/Analog_signal"
+   ]
+  },
+  "9d921f4328": {
+   "verdict": "pass",
+   "why": "Re-checker failed it and gave the exact fix; the lead applied it (key \"All of it is reflected back into the core\" -> \"It meets the edge at too glancing an angle to cross\"; stem: cut \"at a slant\"). The rest was judged sound.",
+   "sources": [
+    "https://grokipedia.com/page/Optical_fiber",
+    "https://en.wikipedia.org/wiki/Charles_K._Kao",
+    "https://grokipedia.com/page/Charles_K._Kao"
+   ]
+  }
+ }
+}

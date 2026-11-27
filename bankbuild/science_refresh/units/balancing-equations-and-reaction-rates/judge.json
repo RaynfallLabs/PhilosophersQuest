@@ -1,0 +1,49 @@
+{"unit": "balancing-equations-and-reaction-rates",
+ "questions": {
+  "fad0aa3fe0": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "'The Space Shuttle rode into orbit on three main engines' leaves out the two solid rocket boosters, which gave most of the thrust at lift-off. The H2O2 choice is what makes this T5 rather than T4's counting: it obeys the atom count but breaks the rule that only the numbers in front may change. Keep it.",
+     "fix": "Write 'The Space Shuttle's three main engines burned liquid hydrogen with liquid oxygen, and the two gases joined to make water.'"}
+   ]},
+  "2558f7adc1": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "This is a second balancing question, and none of its choices changes a formula, so it never tests the balancing rule. A student only has to check the four given equations by counting the atoms on each side, which is exactly what chemical-reactions-conserve-mass (T4) keys in its methane question. The key also sits where the wrong choices converge: it shares '3H2' with one and '2NH3' with another. So it is not a grade deeper than T4, and it repeats fad0aa3fe0's skill.",
+     "fix": "Key the step that T4 does not reach. Give the balanced N2 + 3H2 → 2NH3 in the stem and ask 'How many molecules of hydrogen does it take to make four molecules of ammonia?' Answer: 'Six'. Wrong: 'Three' (the 3 read as it stands) / 'Twelve' (hydrogen atoms counted instead of molecules) / 'Four' (one for one). The only sum is doubling 3, which is easy in the head."},
+    {"axis": "other", "severity": "low",
+     "what": "The stem says 'a catalyst, which speeds the reaction without being used up'. That is 6999d96d3f's key, so a player who meets this question first is handed that one.",
+     "fix": "Write '...over hot iron, a catalyst.' and leave what a catalyst does to 6999d96d3f. The term is only named here, not tested."},
+    {"axis": "voice", "severity": "low",
+     "what": "In the context, 'Germany's first great chlorine gas attack' can read 'great' as praise (the source says 'first major deployment'). Otherwise Haber is told plainly, with no sermon: the fertiliser and the gas warfare stand side by side in the context.",
+     "fix": "Write 'Germany's first large chlorine gas attack'."}
+   ]},
+  "eeed12d9c7": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two stem clauses do the work. 'The gas burns' rules out carbon dioxide, which every student knows puts flames out, and points at hydrogen, famous as the gas that burns (the Hindenburg); oxygen and chlorine then look weak beside it. The partner's 'must be carbon dioxide again' is also framed as the guess the test will overturn. The squeaky pop, which is the fact the question is built on, is never needed.",
+     "fix": "Write '...holds a lit splint at the mouth, and there is a squeaky pop. Which gas is it?' with no 'burns', and have the partner only say that it could be carbon dioxide again, dropping 'must'. Oxygen, which students think makes a flame flare or pop, then stays live."}
+   ]},
+  "69fa384613": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "Convergence: 'salt' is in two choices and 'water' in two, and only the key holds both, so a test-wise player can pick it. The lead's ruling allows the products of neutralisation here; the question rightly leaves out the antacid and the pH moving to 7.",
+     "fix": "Replace 'Chlorine gas and water' with 'Water and hydrogen gas', so salt, water and hydrogen each appear in two choices."}
+   ]},
+  "536aaa08fd": {"verdict": "ok", "issues": []},
+  "142cebecce": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The particles swell up' and 'The particles break up into smaller pieces' are documented misconceptions, but after the particle units both read as weak to a 9th grader. That leaves the key against the lowered energy bar, though that pair is a good one.",
+     "fix": "Replace 'The particles break up into smaller pieces that move faster' with 'Each collision lasts longer, giving the particles more time to react' (it is wrong, as faster particles meet for less time)."}
+   ]},
+  "d7ee77ff7a": {"verdict": "ok", "issues": []},
+  "2de20e9fdc": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "A near re-ask of T3. solutions-solute-and-solvent keys crushed rock salt dissolving faster 'as more of their surface meets the water'. This key is the same idea with air in place of water ('far more surface to reach'). A student who passed T3 answers it without learning anything new, so it does not go a grade deeper. Lane ruling: the Washburn A Mill's flour dust is an industrial hazard (mills and grain elevators, and the US grain-handling rules), not kitchen chemistry, so it may stay.",
+     "fix": "Key what the air reaches rather than how fine the dust is: 'A heap of fine sawdust on a workshop floor only smoulders when a spark lands on it, yet the same sawdust blown up into a cloud can explode. Why does the cloud burn so much faster?' Answer: 'Air reaches every speck at once, not just the top of the heap'. Wrong: 'The specks in a cloud rub together and grow hot as they fly' / 'The specks in a cloud are drier than those in a heap' / 'The cloud holds more sawdust than the heap does'. The Washburn mill and the second blast can move to the context (F25, F26)."}
+   ]},
+  "6999d96d3f": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Coverage: balancing (fad0aa3fe0, 2558f7adc1); the kinds of reaction: an acid on a metal (eeed12d9c7), neutralisation (69fa384613) and rusting as oxidation (536aaa08fd), with combustion running through d7ee77ff7a and 2de20e9fdc; then the rate factors: temperature (142cebecce), concentration (d7ee77ff7a), surface area (2de20e9fdc) and a catalyst (6999d96d3f, with the converter in its context). Leaving stirring out is right, since T3 keys it. Two balancing questions test one skill, and 2558f7adc1 is the one to re-key (above). Lower-tier checks: chemical-reactions-conserve-mass (T4) keys reading a given equation (2H2O2, 4Fe + 3O2, counting the atoms in CH4), Lavoisier and the marble fizz. fad0aa3fe0 goes past it with the H2O2 rule, while 2558f7adc1 does not. eeed12d9c7 uses the marble fizz only as the partner's wrong guess, which is fine. acids-bases-and-ph (T4) keys pH and the antacid, and neither is re-asked. signs-of-a-chemical-change (T2) keys the hand warmer as rusting, limewater and the antacid fizz, and physical-or-chemical-change (T3) keys rust joining iron with oxygen. 536aaa08fd goes deeper, reading the control tubes for water and oxygen both. solutions-solute-and-solvent (T3) keys stirring, and also the crushed salt's surface and the hot water's particles striking more often. 2de20e9fdc is a near re-ask of the first (fixed above). 142cebecce rightly goes past the second, since its stem shows that more frequent collisions are not the main reason. Nothing overlaps the batch's other two units: catalase appears in 6999d96d3f's context only as a clause, and respiration-and-enzymes owns enzymes. Tone: Apollo 1 is told with respect. The three men are named first, the cause (pure oxygen, a likely spark) is stated plainly, there is no detail of their deaths, and the context ends on NASA's change. Haber is told plainly, fertiliser and gas warfare side by side in 2558f7adc1's context, with no sermon; only the word 'great' wants changing. Lanes: no kitchen examples. The flour mill is ruled an industrial hazard, and the catalase 'in blood and liver' is the body, not food. The only arithmetic is counting atoms up to twelve. No singular they and no voice slips. The gates' INFO lines on length are not a rule."}

@@ -1,12 +1,12 @@
 {
- "kind": "draft",
+ "kind": "final",
  "unit": [],
  "questions": {
-  "6d5565f8f3": {
+  "4df2970fc7": {
    "fail": [],
    "warn": [],
    "info": [
-    "voice: long(71>70)"
+    "voice: long(73>70)"
    ],
    "flag": []
   },
@@ -24,20 +24,18 @@
    "info": [],
    "flag": []
   },
-  "19a48bc74a": {
+  "fe5e0d3f02": {
    "fail": [],
    "warn": [],
    "info": [
-    "voice: long(73>70)"
+    "voice: long(75>70)"
    ],
    "flag": []
   },
-  "df08c69374": {
+  "d28f4a353a": {
    "fail": [],
    "warn": [],
-   "info": [
-    "voice: long(78>70)"
-   ],
+   "info": [],
    "flag": []
   },
   "888453a2e9": {
@@ -48,7 +46,7 @@
    ],
    "flag": []
   },
-  "a547b92315": {
+  "9d921f4328": {
    "fail": [],
    "warn": [],
    "info": [],
@@ -62,7 +60,7 @@
    ],
    "flag": []
   },
-  "2f38fdc7d3": {
+  "c1ec6b28da": {
    "fail": [],
    "warn": [],
    "info": [],

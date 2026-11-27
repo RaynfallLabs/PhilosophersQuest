@@ -1,0 +1,387 @@
+{
+ "unit": "the-molecules-of-life",
+ "questions": {
+  "c51ca205d5": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: starch is stored packed in insoluble grains and so draws no water in by osmosis, unlike dissolved glucose",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Starch",
+     "note": "Grokipedia: 'compact packing into insoluble granules that minimize osmotic pressure'; 'dense, osmotically inactive form'. Berg's Biochemistry (Macmillan, berg8e ch11.3) gives the same osmotic reason for storing glucose as a polymer."
+    },
+    {
+     "claim": "Wrong choice: starch builds the cell walls (walls are cellulose, a beta-linked glucose chain)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Starch",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: starch gives energy without being broken down (it is hydrolysed to maltose and glucose first)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Starch",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: starch travels to the rest of the plant (sugar travels as sucrose in the phloem; starch is the stay-put store)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Phloem",
+     "note": ""
+    },
+    {
+     "claim": "Stem: storage starch in roots, seeds and tubers",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Starch",
+     "note": "Grokipedia: storage starch in amyloplasts of 'seeds, roots, and tubers'. The stem's shortcut (leaf glucose to stored starch) skips the sucrose transport step, but the context supplies it; acceptable simplification."
+    },
+    {
+     "claim": "Context: cellulose's links let chains lie straight and bind into strong fibres",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cellulose",
+     "note": ""
+    }
+   ]
+  },
+  "f41392cf66": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: gram for gram fat packs far more energy than glycogen (about 9 against about 4 kcal per gram)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glycogen",
+     "note": "Grokipedia: glycogen 'approximately 4 calories per gram versus 9 calories per gram for fat'. Berg (berg8e ch22.2): nearly anhydrous fat stores 6.75 times the energy of hydrated glycogen."
+    },
+    {
+     "claim": "Wrong choice: fat gives up energy faster (glycogen is the one 'quickly mobilized')",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Glycogen",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: fat dissolves more readily in blood (it is insoluble, carried in lipoproteins)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lipid",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: fat holds more water (glycogen is the hydrated store)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Glycogen",
+     "note": ""
+    },
+    {
+     "claim": "Context: fat holds more than twice the energy per gram; fat stored dry",
+     "result": "ok",
+     "source": "https://digfir-published.macmillanusa.com/berg8e/berg8e_ch22_2.html",
+     "note": "Berg: fat stored 'nearly anhydrous'; 'stored dry' is a fair plain-words version."
+    },
+    {
+     "claim": "Context: each gram of glycogen held with three or four grams of water",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Glycogen",
+     "note": "Wikipedia 'three or four parts of water per part of glycogen'; Grokipedia '3-4 g of water per gram'. Berg gives about 2 g; the 3-4 figure is the common textbook one, so it stands. 'two to four grams' would cover both if the writer wants to be safe."
+    },
+    {
+     "claim": "Context: liver glycogen lasts half a day to a day",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glycogen",
+     "note": "Grokipedia: liver glycogen supplies glucose for 12-24 hours."
+    },
+    {
+     "claim": "Stem: glycogen a branched glucose chain stored in liver and muscles",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glycogen",
+     "note": ""
+    }
+   ]
+  },
+  "ae1f6e8034": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: Overton, 1890s, about 500 substances; fat-soluble ones entered far more readily",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lipid_bilayer",
+     "note": "Grokipedia: 1895-1899, 'over 500 different substances at equal concentrations', lipid-soluble entered more readily 'irrespective of molecular size'. Wikipedia (Charles Ernest Overton): 'around 500 chemical compounds', last years of the 19th century."
+    },
+    {
+     "claim": "Key: the boundary is a thin layer made largely of fatty material",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lipid_bilayer",
+     "note": "Grokipedia: membranes 'must be composed primarily of' lipid material."
+    },
+    {
+     "claim": "Wrong choice: a fine sieve letting in only small molecules (size was not the rule)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lipid_bilayer",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: the stiff cell wall (his work told the plant wall apart from the membrane)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Charles_Ernest_Overton",
+     "note": "Wikipedia: his work allowed 'the distinction to be drawn between the cell wall of plants and their cytoplasmic membrane'."
+    },
+    {
+     "claim": "Wrong choice: a pump that pulls in what dissolves in oil (entry is by diffusion)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cell_membrane",
+     "note": ""
+    },
+    {
+     "claim": "Context: he guessed the membrane held lecithin and cholesterol",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/History_of_cell_membrane_theory",
+     "note": "Wikipedia: Overton (and Meyer) concluded the membrane might contain lecithin and cholesterol."
+    }
+   ]
+  },
+  "0354ff9f7a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: Gorter and Grendel, 1925, red cells of humans and several other mammals; lipid spread as a monolayer covered about twice the cells' surface",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lipid_bilayer",
+     "note": "Grokipedia: humans, rabbits, dogs, sheep and goats; monolayer area 'consistently about twice' the cell surface."
+    },
+    {
+     "claim": "Stem: a mature mammalian red cell has no nucleus and no inner membranes",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Cell_membrane",
+     "note": ""
+    },
+    {
+     "claim": "Key: the membrane is a double layer of fat molecules",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/History_of_cell_membrane_theory",
+     "note": "Wikipedia: 'the fundamental conclusion- that the cell membrane is a lipid bilayer- was correct'."
+    },
+    {
+     "claim": "Wrong choices: single layer; fat on one face and protein on the other; only half the fat in the membrane (no inner membranes)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lipid_bilayer",
+     "note": ""
+    },
+    {
+     "claim": "Context: solvent missed about a quarter of the fat; cell area measured too small; the errors roughly cancelled",
+     "result": "ok",
+     "source": "https://cr.middlebury.edu/biology/SCB2/A/A5.html",
+     "note": "Middlebury: acetone removes 'only about 75% of RBC lipid'; their 99.4 square microns against 138 later; Middlebury's 'Compensatory Errors' page: the extra lipid 'just about accounts for' the extra surface."
+    },
+    {
+     "claim": "Context: heads face the water on each side, two oily tails inward",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lipid_bilayer",
+     "note": ""
+    }
+   ]
+  },
+  "b24bfbbc14": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: Sanger worked on cattle (bovine) insulin from 1943 to 1955, breaking chains into overlapping pieces",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Frederick_Sanger",
+     "note": "Grokipedia: '12 years from 1943 to 1955', bovine insulin, partial hydrolysis to overlapping peptides, DNFB end-labelling."
+    },
+    {
+     "claim": "Key: a protein is a chain of amino acids in one exact order",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Frederick_Sanger",
+     "note": "Grokipedia: 'proteins possess precise, genetically determined sequences rather than variable compositions'."
+    },
+    {
+     "claim": "Wrong choices: a varying mix of chains; one short repeating pattern; a sugar chain with amino acids hung on it",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Frederick_Sanger",
+     "note": ""
+    },
+    {
+     "claim": "Context: two chains of 21 and 30 amino acids",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Frederick_Sanger",
+     "note": ""
+    },
+    {
+     "claim": "Context: many chemists had thought proteins somewhat shapeless",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Frederick_Sanger",
+     "note": "Wikipedia: 'widely assumed that proteins were somewhat amorphous'; Grokipedia: 'random polymers'. The old doubt was about fixed composition and sequence more than shape; 'had doubted that each protein had one fixed order' would be more precise, but the line follows the sources."
+    },
+    {
+     "claim": "Context: Nobel Prize 1958 for the work",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Frederick_Sanger",
+     "note": "Citation: 'for his work on the structure of proteins, especially that of insulin'."
+    }
+   ]
+  },
+  "db5ea33a71": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: Miescher found DNA (nuclein) in white blood cells in the 1860s",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Friedrich_Miescher",
+     "note": "Grokipedia: early 1869, leukocytes from pus-soaked surgical bandages."
+    },
+    {
+     "claim": "Stem: Levene showed DNA is a chain built from four kinds of nucleotide",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Phoebus_Levene",
+     "note": "Wikipedia: 'a string of nucleotide units linked together through the phosphate groups'; Grokipedia: phosphodiester backbone."
+    },
+    {
+     "claim": "Stem: into the 1940s most biologists expected genes to be protein",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/14-1-historical-basis-of-modern-understanding",
+     "note": "OpenStax: proteins, with 20 amino acids, 'regarded as more likely candidates'; Wikipedia (Levene): 'the protein component of chromosomes was thought to be the basis of heredity'."
+    },
+    {
+     "claim": "Key: more kinds of unit could make far more different chains",
+     "result": "ok",
+     "source": "https://openstax.org/books/biology-2e/pages/14-1-historical-basis-of-modern-understanding",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: more energy, harder to break, could copy itself (none was the reason)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Phoebus_Levene",
+     "note": ""
+    },
+    {
+     "claim": "Context: Levene took DNA for a plain repeat of four nucleotides, chemically far too simple to carry genes",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Phoebus_Levene",
+     "note": "Wikipedia: Levene reasoned it was 'chemically far too simple' to store the genetic code; Grokipedia: 'repeating tetramer of the four nucleotides', and his 1916 'no individuality, no specificity'."
+    },
+    {
+     "claim": "Context: experiments of 1944 and 1952 showed genes are DNA; Chargaff found the four not in equal amounts",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Phoebus_Levene",
+     "note": "Avery-MacLeod-McCarty 1944, Hershey-Chase 1952; Grokipedia: Chargaff's rules 'disproved the equal-base tenet'."
+    }
+   ]
+  },
+  "55b0b65792": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: a body cell holds about 30 times as much potassium as the fluid outside",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sodium%E2%80%93potassium_pump",
+     "note": "Grokipedia: 120-150 mM inside against 4-5 mM outside (about 35:1); Wikipedia 100-140 against 3.5-5 mM. 'About 30 times' fits."
+    },
+    {
+     "claim": "Key: a poison that cuts off the energy supply lets the difference fade",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sodium%E2%80%93potassium_pump",
+     "note": "Grokipedia: 'inhibitors like cyanide, which block ATP synthesis via oxidative phosphorylation, halted transport'; 'Without continuous pump activity, these gradients would rundown due to passive leaks'."
+    },
+    {
+     "claim": "Wrong choices: a tear, warming, more potassium outside (each bears on the leak, not on whether energy holds the difference)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Cell_membrane",
+     "note": ""
+    },
+    {
+     "claim": "Context: the pump carrying potassium in and sodium out found by Jens Christian Skou in crab nerves in 1957",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Sodium%E2%80%93potassium_pump",
+     "note": "Grokipedia: 'Discovered in 1957 by Danish biochemist Jens Christian Skou through studies on crab nerve membranes'; Britannica and the Skou Wikipedia page confirm crab nerves (Nobel 1997). Strictly Skou found the enzyme that does the pumping (active sodium transport was known before); 'found the protein that does this pumping' would be the more exact wording, but the line is not wrong."
+    },
+    {
+     "claim": "Context: the pump uses a large share of many cells' energy",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Sodium%E2%80%93potassium_pump",
+     "note": "Wikipedia: 'typically 30% and up to 70% in nerve cells'."
+    }
+   ]
+  },
+  "ba21c4e0cd": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: Nollet 'sealed alcohol inside a piece of pig's bladder' in 1748",
+     "result": "error",
+     "source": "https://en.wikipedia.org/wiki/Jean-Antoine_Nollet",
+     "note": "Wikipedia (Nollet): 'He covered with pig bladder the mouth of a flask of ethanol, then submerged it in water'; EBSCO: he filled a vessel with alcohol and covered it with pig's bladder; scientus.org (from a 1755 Universal Magazine account): a vial of alcohol covered securely with pig's bladder. Only Grokipedia has the alcohol filling the bladder itself. The alcohol was in a vial, the bladder tied over its mouth. Fix the stem: 'Jean-Antoine Nollet filled a jar with alcohol in 1748, tied a piece of pig's bladder over its mouth and set it in water. The bladder bulged outward, and in some trials it burst.' Fix the context's 'so the bladder filled until it was tight' to 'so the jar overfilled and pushed the bladder out tight'. The key and choices are unaffected."
+    },
+    {
+     "claim": "Stem: in some trials the bladder burst",
+     "result": "ok",
+     "source": "https://www.ebsco.com/research-starters/chemistry/nollet-discovers-osmosis",
+     "note": "EBSCO: 'In some experiments, the bladder would expand until it burst.'"
+    },
+    {
+     "claim": "Stem: Henri Dutrochet, a French doctor, named the process in the 1820s",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Osmosis",
+     "note": "Wikipedia: 'osmosis' descends from 'endosmose' and 'exosmose', coined by French physician Dutrochet (1776-1847); Grokipedia dates his coinage to 1826."
+    },
+    {
+     "claim": "Key: the wall let water in far more readily than alcohol out",
+     "result": "ok",
+     "source": "https://www.ebsco.com/research-starters/chemistry/nollet-discovers-osmosis",
+     "note": "EBSCO: water traversed the bladder wall while 'the alcohol would remain trapped'."
+    },
+    {
+     "claim": "Wrong choices: alcohol out faster than water in; alcohol vapour pressing; alcohol soaking into the wall",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Osmosis",
+     "note": ""
+    },
+    {
+     "claim": "Context: osmosis is water moving through a membrane toward the side with more dissolved; a raisin in water swells as water passes in through its skin",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Osmosis",
+     "note": "Grokipedia: dried raisins in fresh water swell as water enters through the raisin's semipermeable skin; Wikipedia caption 'Raisin swells due to osmosis when kept under water'."
+    }
+   ]
+  },
+  "beedf1c6d1": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: salt makes a slug pour out slime and shrivel, and it dies within minutes",
+     "result": "ok",
+     "source": "https://www.sciencefocus.com/nature/why-does-salt-kill-slugs",
+     "note": "BBC Science Focus: slugs exude 'a lot of mucus' and die 'within minutes of dehydration'."
+    },
+    {
+     "claim": "Key: its skin lets water pass out very easily",
+     "result": "ok",
+     "source": "https://www.mentalfloss.com/science/biology/why-does-salt-kill-slugs",
+     "note": "Mental Floss: 'the cells that make up its skin have highly permeable membranes'; 'our skin isn't as permeable as a slug's'."
+    },
+    {
+     "claim": "Wrong choices: slime reacts to form a poison; skin soaks up salt that poisons; grains cut the skin",
+     "result": "ok",
+     "source": "https://www.sciencefocus.com/nature/why-does-salt-kill-slugs",
+     "note": "All sources give dehydration by osmosis, not poisoning, absorption or cutting."
+    },
+    {
+     "claim": "Context: salt dissolves in the slime, a brine saltier than the body, water drawn out by osmosis",
+     "result": "ok",
+     "source": "https://www.mentalfloss.com/science/biology/why-does-salt-kill-slugs",
+     "note": ""
+    },
+    {
+     "claim": "Context: 'Gordon Port of Newcastle University says no chemical reaction is involved'",
+     "result": "error",
+     "source": "https://www.sciencefocus.com/nature/why-does-salt-kill-slugs",
+     "note": "Port is real (senior lecturer, Newcastle University), but the article does not have him say this: the 'rather than by a complex chemical reaction' line is the writer's own narration, unquoted and unattributed. What Port says is 'Salt essentially draws the water out of their skin.' Fix: 'Gordon Port of Newcastle University says the salt simply draws the water out of the slug's skin.'"
+    },
+    {
+     "claim": "Context: red blood cells shrink in strong salt water and swell and can burst in pure water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Osmosis",
+     "note": "Grokipedia: crenation in hypertonic saline; swelling and haemolysis in hypotonic solution."
+    }
+   ]
+  }
+ },
+ "unit_notes": "Nine questions checked on 2026-11-27, Grokipedia first. Two errors, both in framing details, neither touching a key or a choice: Nollet's alcohol was in a vial with the bladder tied over its mouth (ba21c4e0cd), and the 'no chemical reaction' line is the BBC writer's, not Gordon Port's (beedf1c6d1). Minor wording suggestions, not errors: glycogen's bound water is 3-4 g in Wikipedia and Grokipedia but about 2 g in Berg; 'proteins somewhat shapeless' follows Wikipedia's 'amorphous' though the old doubt was about a fixed sequence; Skou found the enzyme that is the pump."
+}

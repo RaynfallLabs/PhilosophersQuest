@@ -1,0 +1,191 @@
+{
+ "unit": "from-dna-to-protein",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "from-dna-to-protein",
+   "question": "Oswald Avery's team reported in 1944 that purified DNA passed an inherited trait between strains of bacteria, yet many biologists suspected protein in the samples. Alfred Hershey and Martha Chase tested it in 1952 with a virus that infects bacteria: DNA in a protein coat. They tagged the DNA of some viruses with radioactive phosphorus and the coats of others with radioactive sulfur, let them infect bacteria, then shook off the empty coats. Which finding would have pointed to protein as the genetic material?",
+   "answer": "Sulfur inside the bacteria, and phosphorus outside",
+   "choices": [
+    "Sulfur inside the bacteria, and phosphorus outside",
+    "Phosphorus inside the bacteria, and sulfur outside",
+    "Both tags inside the bacteria, in equal shares",
+    "Both tags outside, along with all the empty coats"
+   ],
+   "context": "Sulfur marks the protein and phosphorus the DNA, so the genetic material is whichever tag goes into the cells and is passed on to the new viruses. Hershey and Chase found the reverse of the protein result: about four-fifths of the phosphorus stayed with the bacteria, and some of it turned up in the new viruses, while most of the sulfur stayed outside with the coats. That helped settle the doubt Avery's critics had raised: genes are made of DNA.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3"
+   ],
+   "grade_note": "Ninth-grade biology teaches how DNA was shown to be the genetic material, and Hershey and Chase's tagged viruses are the standard experiment."
+  },
+  {
+   "tier": 5,
+   "topic": "from-dna-to-protein",
+   "question": "Erwin Chargaff, at Columbia University, measured the four bases of DNA around 1950: adenine (A), thymine (T), guanine (G) and cytosine (C). Human DNA came out about 29 percent A, 30 percent T, 21 percent G and 20 percent C. DNA from the bacterium E. coli came out about 25 percent A, 24 percent T, 26 percent G and 26 percent C. Which pairing across DNA's two strands explains both sets of figures?",
+   "answer": "A with T, and G with C",
+   "choices": [
+    "A with T, and G with C",
+    "A with G, and T with C",
+    "A with C, and G with T",
+    "A with A, and G with G"
+   ],
+   "context": "Only A with T and G with C fits both: in human DNA, A and T match at about 30 percent and G and C at about 20, while in E. coli all four sit near a quarter, so that species alone could not tell the pairings apart. Each A on one strand faces a T on the other, and each G a C, so the amounts of A and T must match, and of G and C, in every species, even though the share of A and T differs from one species to the next. Watson and Crick built this pairing into their double helix in 1953 and cited Chargaff's matching ratios.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "grade_note": "Ninth-grade biology teaches base pairing (A with T, C with G), and Chargaff's ratios are the standard evidence for it."
+  },
+  {
+   "tier": 5,
+   "topic": "from-dna-to-protein",
+   "question": "Rosalind Franklin and her student Raymond Gosling made an X-ray photograph of DNA at King's College London in May 1952, later known as Photo 51. Its cross of dark spots marked a helix. Maurice Wilkins also worked on DNA at King's. James Watson, who was working out DNA's structure with Francis Crick at Cambridge, saw the photograph on a visit to King's in January 1953. How did he come to see it?",
+   "answer": "Wilkins showed it to him without telling her",
+   "choices": [
+    "Wilkins showed it to him without telling her",
+    "Wilkins showed it to him after asking her leave",
+    "Franklin showed it to him and explained it",
+    "He took a print from her desk while she was away"
+   ],
+   "context": "As Franklin prepared to leave King's, Gosling passed the photograph to Wilkins, who showed it to Watson without telling her: nothing was taken from her desk, but she was not asked, and Crick also saw her measurements in a report that Max Perutz passed him. Watson and Crick's paper thanked Wilkins, Franklin and their co-workers only for a knowledge of 'the general nature' of their unpublished results, while Franklin and Gosling's own paper ran in the same issue. Franklin died in 1958, aged 37, four years before Watson, Crick and Wilkins shared a Nobel Prize.",
+   "facts": [
+    "F8",
+    "F9",
+    "F10",
+    "F11"
+   ],
+   "grade_note": "Ninth-grade biology names Franklin, Watson and Crick for the double helix, and the honest account of how her photograph reached Watson is part of that story."
+  },
+  {
+   "tier": 5,
+   "topic": "from-dna-to-protein",
+   "question": "Watson and Crick's 1953 paper noted that their base pairing 'immediately suggests a possible copying mechanism for the genetic material.' Matthew Meselson and Franklin Stahl tested copying at the California Institute of Technology. They grew bacteria on heavy nitrogen, so their DNA was heavy, then moved them to ordinary nitrogen for one round of copying and sorted the DNA by density in a spinning tube. Suppose each old double helix stayed whole and each copy was built all new. What would the tube have shown?",
+   "answer": "Two bands, one heavy and one light",
+   "choices": [
+    "Two bands, one heavy and one light",
+    "One band, halfway between heavy and light",
+    "One band, as light as ordinary DNA",
+    "One band, as heavy as the old DNA"
+   ],
+   "context": "Under that idea the old heavy helices and the new light ones would sit apart in two bands. Meselson and Stahl found a single band halfway between, so the idea was wrong; after a second round, half the DNA was halfway and half light, just as expected if the two strands part and each is given a new partner built by base pairing. Each old strand serves as the template that the 1953 sentence hinted at.",
+   "facts": [
+    "F6",
+    "F7",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "Ninth-grade biology teaches that DNA copies itself by base pairing, and Meselson and Stahl's heavy-nitrogen test is the classic experiment showing how."
+  },
+  {
+   "tier": 5,
+   "topic": "from-dna-to-protein",
+   "question": "A cell copies a gene into messenger RNA (mRNA), the working copy that carries the gene's instructions to the ribosomes. The RNA is built along one strand of the gene's DNA, each new base pairing with the DNA base it faces, except that RNA uses uracil (U) where DNA uses thymine (T). One stretch of that DNA strand reads T-A-C-G-G-A. What does the messenger RNA built along it read?",
+   "answer": "A-U-G-C-C-U",
+   "choices": [
+    "A-U-G-C-C-U",
+    "A-T-G-C-C-T",
+    "U-A-C-G-G-A",
+    "T-A-C-G-G-A"
+   ],
+   "context": "Each base of the messenger pairs with the DNA base it faces: A with T, G with C, C with G, and U, standing in for T, with A, so T-A-C-G-G-A gives A-U-G-C-C-U. Copying the strand letter for letter, or only swapping its T for U, makes a strand that matches it instead of pairing with it. A-U-G is the start signal at which a ribosome begins to build a protein.",
+   "facts": [
+    "F14",
+    "F15"
+   ],
+   "grade_note": "Ninth-grade biology teaches transcription, with RNA pairing U where DNA has T, and working out a messenger from a DNA strand is a standard exercise."
+  },
+  {
+   "tier": 5,
+   "topic": "from-dna-to-protein",
+   "question": "Francis Crick, Sydney Brenner and two colleagues worked in 1961 with proflavin, a chemical that adds or removes a single base in DNA, on a gene of a virus that infects bacteria. One extra base in the gene wrecked the protein it made, and so did two. Three extra bases gave a working protein again, with one extra amino acid. What did this show about how a cell reads a gene?",
+   "answer": "In words of three bases, from a fixed start",
+   "choices": [
+    "In words of three bases, from a fixed start",
+    "In words of two bases, from a fixed start",
+    "In words of three bases, each overlapping the next",
+    "One base at a time, each base its own word"
+   ],
+   "context": "Each added base shifts how every base after it is grouped into words, so one or two extras garble the rest of the gene; a third puts the grouping back in step, leaving only one extra word and so one extra amino acid. That works only if the words are three bases long, do not overlap and are counted from a fixed starting point. Four kinds of base in words of two would make only 16 words, too few for 20 amino acids, while words of three make 64.",
+   "facts": [
+    "F15",
+    "F16",
+    "F17"
+   ],
+   "grade_note": "Ninth-grade biology teaches that the code is read in codons of three bases and that an insertion shifts the reading frame; the proflavin experiment is how that was shown."
+  },
+  {
+   "tier": 5,
+   "topic": "from-dna-to-protein",
+   "question": "Marshall Nirenberg and Heinrich Matthaei, at the National Institutes of Health, broke open bacteria in 1961 and kept a juice that could still build proteins. They gave it all 20 amino acids and an artificial messenger RNA made of nothing but uracil (U), so that every three-base word in it read U-U-U. What did the juice build?",
+   "answer": "A chain of phenylalanine alone",
+   "choices": [
+    "A chain of phenylalanine alone",
+    "A chain of lysine alone",
+    "A chain of phenylalanine and lysine by turns",
+    "A chain of all twenty, in no set order"
+   ],
+   "context": "With one word repeated, the juice built one amino acid over and over: a mixture in which only phenylalanine was radioactive gave about 38,000 counts, against about 70 for juice given no artificial RNA. U-U-U was the first word of the genetic code to be read; later, an RNA of nothing but A gave lysine, and one of nothing but C gave proline.",
+   "facts": [
+    "F15",
+    "F18"
+   ],
+   "grade_note": "Ninth-grade biology teaches the codon table, and Nirenberg and Matthaei's artificial RNA is how its first word was read."
+  },
+  {
+   "tier": 5,
+   "topic": "from-dna-to-protein",
+   "question": "Vernon Ingram, at Cambridge, compared haemoglobin, the protein that carries oxygen in red blood cells, from healthy people and from people with sickle-cell disease in 1956. He cut each with an enzyme into short pieces and sorted the pieces into a pattern of spots. The two patterns matched in every spot but one. What did that one piece of the sickle-cell protein hold?",
+   "answer": "One amino acid in place of another",
+   "choices": [
+    "One amino acid in place of another",
+    "One amino acid missing from the chain",
+    "One extra amino acid added to the chain",
+    "The same amino acids in a new order"
+   ],
+   "context": "Ingram and his colleagues found that valine stood where glutamic acid should be, at the sixth place in each of haemoglobin's beta chains of 146 amino acids: the gene's word G-A-G had become G-T-G, one base swapped for another. Valine shuns water, so when the haemoglobin gives up its oxygen it sticks to its neighbours, and the molecules stack into long fibres that bend the cell into a stiff sickle. Ingram was the first to show that one changed amino acid in a protein can cause a disease.",
+   "facts": [
+    "F19",
+    "F20"
+   ],
+   "grade_note": "Ninth-grade biology teaches point mutations through the sickle-cell example, a single base change that swaps one amino acid."
+  },
+  {
+   "tier": 5,
+   "topic": "from-dna-to-protein",
+   "question": "Kary Mullis worked out the polymerase chain reaction (PCR) at the Cetus company in California in 1983. It copies one stretch of DNA again and again: in each round the tube is heated, then cooled, and an enzyme builds new DNA, so the amount doubles every round. Why must the tube be heated in each round?",
+   "answer": "To part the two strands, so each can be copied",
+   "choices": [
+    "To part the two strands, so each can be copied",
+    "To kill any germs that would break the DNA down",
+    "To break the DNA down into single bases",
+    "To seal each new strand onto its old partner"
+   ],
+   "context": "Heat parts the two strands of the double helix, and as the tube cools the enzyme builds a new partner along each strand by base pairing, so one helix becomes two, then four, and so on. Early runs used an enzyme that the heat destroyed, so fresh enzyme had to be added after every heating, until one from Thermus aquaticus, a bacterium of hot springs that survives the heat, took its place. Mullis shared the 1993 Nobel Prize in Chemistry for the method.",
+   "facts": [
+    "F21"
+   ],
+   "grade_note": "Ninth-grade biology names PCR as the tool that copies DNA, and its heating step follows from base pairing: the strands must part to be copied."
+  },
+  {
+   "tier": 5,
+   "topic": "from-dna-to-protein",
+   "question": "Alec Jeffreys, at the University of Leicester, saw on an X-ray film in September 1984 that DNA could be sorted into a pattern that differs from person to person, a DNA fingerprint. To make one, DNA is cut into pieces and set in a slab of gel, and an electric current pulls the pieces through it toward the positive end, since DNA carries a negative charge. A long piece carries more charge than a short one, yet the short pieces travel farthest. Why?",
+   "answer": "The gel's mesh holds long pieces back more",
+   "choices": [
+    "The gel's mesh holds long pieces back more",
+    "Short pieces carry more charge for their length",
+    "Short pieces weigh less, so the pull moves them faster",
+    "The current breaks long pieces as they go"
+   ],
+   "context": "Charge and size grow together, so in plain liquid long and short pieces of DNA move at about the same speed; the gel, a tangle of fibres that works like a sieve, slows the long pieces more, and the pieces spread out by size. Jeffreys's pieces came from repeated stretches of DNA whose lengths differ from person to person, so the bands fall in a different pattern for each person. In 1985 such a pattern showed that a boy whose family came from Ghana was closely related to his family in Britain.",
+   "facts": [
+    "F22",
+    "F23"
+   ],
+   "grade_note": "Ninth-grade biology teaches gel electrophoresis as the tool that sorts DNA by size, the basis of DNA fingerprinting."
+  }
+ ]
+}

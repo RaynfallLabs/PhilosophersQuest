@@ -1,0 +1,186 @@
+{
+ "unit": "light-from-atoms",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "light-from-atoms",
+   "question": "A student looks through a prism at two lamps. The white-hot filament of an old light bulb spreads into a smooth band of every colour from red to violet. The thin glowing gas in a neon sign's tube breaks instead into a few sharp bright lines, mostly red and orange, the same every time. What do those lines show about neon's atoms?",
+   "answer": "They give off energy only in set amounts",
+   "choices": [
+    "They give off energy only in set amounts",
+    "They give off every colour, and the tube's glass holds most back",
+    "They give off light only while the gas is burning",
+    "They soak up most colours and give back the rest"
+   ],
+   "context": "An electron in a neon atom can sit only at set energy levels, so when the current's electrons knock it up and it drops back, the atom gives off one set amount of energy, a photon of one exact colour; neon's few possible drops make its few lines, the strongest a red one at 640 nanometres. The filament is a hot solid, which glows in every colour at once, and glass lets every colour through, as the bulb shows. Nothing burns in the tube.",
+   "facts": [
+    "F1",
+    "F3",
+    "F6"
+   ],
+   "grade_note": "Ninth-grade physical science (TEKS IPC 7D, NGSS HS-PS4-3) teaches that atoms give off light of set colours as electrons drop between energy levels, unlike the smooth glow of a hot solid."
+  },
+  {
+   "tier": 5,
+   "topic": "light-from-atoms",
+   "question": "Hydrogen gas glowing in a tube gives off a red line and a violet line, among others. Both come from electrons dropping down to hydrogen's second energy level, one from the third level and the other from the sixth, a far bigger drop. Which colour does the bigger drop give off, and why?",
+   "answer": "Violet, as a bigger drop gives off more energy",
+   "choices": [
+    "Violet, as a bigger drop gives off more energy",
+    "Red, as a bigger drop gives off more energy",
+    "Violet, as a bigger drop gives off less energy",
+    "Red, as a bigger drop gives off less energy"
+   ],
+   "context": "The energy of each drop leaves as one photon, and the bigger the drop, the more energy the photon carries. Violet light carries about twice the energy of red in each photon, so hydrogen's drop from the sixth level gives violet light at 410 nanometres and its drop from the third gives red light at 656. Red comes from the smallest of these drops, though the red glow of embers leads many people to think red means the most energy.",
+   "facts": [
+    "F1",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "Ninth graders link a photon's energy to its colour and learn that a bigger drop between levels gives higher-energy light."
+  },
+  {
+   "tier": 5,
+   "topic": "light-from-atoms",
+   "question": "A chemistry class dips clean wires into salts and holds each one in a Bunsen burner's flame. A strontium salt turns the flame crimson, a copper salt green-blue and a sodium salt bright yellow. Through a prism each colour breaks into thin lines, and no two metals' lines fall in the same places. Why does each element give off colours of its own?",
+   "answer": "Its electrons' energy levels are spaced in its own way",
+   "choices": [
+    "Its electrons' energy levels are spaced in its own way",
+    "It burns in the flame at a temperature of its own",
+    "It strains its own colours out of the flame's light",
+    "Its atoms' weight sets the colours that they give off"
+   ],
+   "context": "An electron can only drop between its own atom's levels, and each element's levels are spaced differently, so its drops, and the colours they give, are its alone: sodium's two yellow lines sit at 589.0 and 589.6 nanometres. The flame's heat only lifts the electrons and does not choose the colour, and firework makers rely on the same fact, with strontium for red, copper for blue and sodium for yellow. Lithium also turns a flame crimson, so a careful chemist checks the lines as well as the colour.",
+   "facts": [
+    "F1",
+    "F2",
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "The emission spectrum as each element's fingerprint, met in the flame-test lab, is a standard ninth-grade chemistry and physical-science topic."
+  },
+  {
+   "tier": 5,
+   "topic": "light-from-atoms",
+   "question": "Robert Bunsen and Gustav Kirchhoff began reading the bright lines of metals in a flame through a prism at Heidelberg in 1859. They burned each metal as a chloride, a bromide, an iodide, an oxide, a sulphate and a carbonate, in flames of sulphur, alcohol, lighting gas, hydrogen and more, some far hotter than others. What did they find about each metal's lines?",
+   "answer": "They kept their places whatever the compound or flame",
+   "choices": [
+    "They kept their places whatever the compound or flame",
+    "They moved with the compound but not with the flame",
+    "They moved with the flame but not with the compound",
+    "They moved with both the compound and the flame"
+   ],
+   "context": "In their words, the compounds, the chemistry of the flames and the great differences in their temperatures 'had no influence on the position of the spectral lines corresponding to the individual metals.' Changing everything except the metal is what let a pattern of lines name the element and nothing else, and their test was so sensitive that the eye could catch less than a three-millionth of a milligram of a sodium salt. Their paper of 1860 said the method could be turned on the Sun and the bright stars.",
+   "facts": [
+    "F9",
+    "F10",
+    "F11"
+   ],
+   "grade_note": "Ninth-grade science teaches controlled variables, and Bunsen and Kirchhoff's tests are the experiment behind the claim that spectra identify elements."
+  },
+  {
+   "tier": 5,
+   "topic": "light-from-atoms",
+   "question": "Joseph von Fraunhofer, a Bavarian lens maker, found hundreds of dark lines in sunlight in 1814. Later he fixed a prism to a telescope and turned it on the night sky. The light of the Moon, Venus and Mars showed the Sun's own dark lines, while the bright stars Sirius and Castor showed lines unlike the Sun's. Where must those lines of Sirius and Castor have been made?",
+   "answer": "In the stars, before their light set out",
+   "choices": [
+    "In the stars, before their light set out",
+    "In Earth's air, as their light came down",
+    "In the prism, as their light passed through",
+    "In the lens, as their light was gathered"
+   ],
+   "context": "The Moon and the planets shine by sunlight they reflect, so they carry the Sun's lines; the stars' light came through the same air, prism and lens, so lines found in Sirius and Castor but not in sunlight had to be made in the stars. Fraunhofer had already got the same lines in sunlight with different glass, which ruled out flaws in it, though two broad bands at the red end of sunlight really are made by oxygen in Earth's air. He never learned what made the lines, and died in 1826.",
+   "facts": [
+    "F12",
+    "F13",
+    "F14",
+    "F16"
+   ],
+   "grade_note": "Ninth graders learn that spectra reveal what stars are made of, and reasoning from what changed and what stayed the same is the grade's core evidence skill."
+  },
+  {
+   "tier": 5,
+   "topic": "light-from-atoms",
+   "question": "Auguste Comte wrote in 1835 that the chemical make-up of the stars could never be studied by any means. A flame coloured with sodium shows two bright yellow lines in exactly the place of the two dark D lines in sunlight. Gustav Kirchhoff sent bright sunlight through such a flame into his spectroscope in 1859, and the dark D lines grew darker. What did that show?",
+   "answer": "Sodium gas soaks up the very colours it gives off",
+   "choices": [
+    "Sodium gas soaks up the very colours it gives off",
+    "The flame's glare makes the lines look darker by contrast",
+    "The flame's heat bends the yellow sunlight off its path",
+    "Sunlight's yellow waves cancel out the flame's yellow"
+   ],
+   "context": "A gas takes up light of exactly the energies its electrons can jump by, the same energies it gives off when they drop back, so a sodium flame with brighter light behind it cuts dark lines where its bright ones would be. The Sun's glowing surface shines out through cooler gas above it, and Kirchhoff concluded that sodium is in the Sun's atmosphere. Comte had died in 1857, two years before the Sun's chemistry was first read from its light.",
+   "facts": [
+    "F8",
+    "F17",
+    "F18",
+    "F19",
+    "F21"
+   ],
+   "grade_note": "Ninth-grade physical science teaches absorption spectra alongside emission spectra and how they reveal the elements in the Sun and stars."
+  },
+  {
+   "tier": 5,
+   "topic": "light-from-atoms",
+   "question": "Pierre Janssen in India in August 1868, and Norman Lockyer in England that October, saw a bright yellow line in the light from the Sun's edge. It lay close to sodium's two yellow lines but on neither, and Lockyer named the element he believed made it helium, after the Greek word for the Sun. The idea met doubt, and even mockery, for 27 years. What finally settled the question?",
+   "answer": "A gas from a uranium mineral glowed with that line",
+   "choices": [
+    "A gas from a uranium mineral glowed with that line",
+    "The line turned up in the light of other stars too",
+    "The line was seen again at every eclipse that followed",
+    "Its place was measured again, far more exactly"
+   ],
+   "context": "William Ramsay treated cleveite, a uranium mineral, with acid in March 1895 and collected a gas whose glow showed the Sun's yellow line; Lockyer and William Crookes confirmed it as helium, and two Swedish chemists isolated it the same year and weighed its atoms. A line seen again, measured more finely or found in other stars, showed only that the line was real, not what made it. The doubters had reason to wait: a green line in the Sun's corona was blamed on a new element, coronium, until it turned out in the 1930s to be iron stripped of 13 electrons by the corona's heat.",
+   "facts": [
+    "F22",
+    "F23",
+    "F24",
+    "F25",
+    "F26"
+   ],
+   "grade_note": "Ninth graders learn helium's discovery in the Sun as the classic case of spectroscopy, and why a claim waits for confirmation by an independent test."
+  },
+  {
+   "tier": 5,
+   "topic": "light-from-atoms",
+   "question": "Hydrogen's dark lines are strongest in the spectra of white stars such as Sirius, and weaker both in blue-white stars and in stars such as the Sun and Betelgeuse. Astronomers had long read a strong line as a lot of an element. Cecilia Payne, at Harvard in 1925, read the lines again with Meghnad Saha's new theory of how atoms lose electrons. What did she find mostly sets their strength?",
+   "answer": "The temperature of the star's outer gas",
+   "choices": [
+    "The temperature of the star's outer gas",
+    "The amount of hydrogen the star holds",
+    "The distance of the star from Earth",
+    "The speed of the star toward or away from Earth"
+   ],
+   "context": "In the hottest stars nearly all the hydrogen has lost its electron and can make no lines, and in cooler stars such as the Sun nearly all of it sits in its lowest level, where it cannot take up visible light; only near 10,000 kelvins are many hydrogen atoms ready to make the lines. Read this way, stars turned out to differ mainly in temperature, and to be made mostly of hydrogen and helium. Today about 73 percent of the Sun's mass is known to be hydrogen.",
+   "facts": [
+    "F27",
+    "F28",
+    "F15",
+    "F29",
+    "F33"
+   ],
+   "grade_note": "Ninth-grade science on stars and spectra teaches that stellar spectra differ mainly by temperature, and Payne's thesis is the classic case."
+  },
+  {
+   "tier": 5,
+   "topic": "light-from-atoms",
+   "question": "Cecilia Payne's 1925 thesis found far more hydrogen in the stars than anyone expected. Henry Norris Russell of Princeton, a leading astronomer and an examiner of her thesis, wrote to her: \"It is clearly impossible that hydrogen should be a million times more abundant than the metals.\" She added a line calling her figures \"almost certainly not real.\" Why did Russell think it impossible?",
+   "answer": "He held that the Sun was made much as Earth is",
+   "choices": [
+    "He held that the Sun was made much as Earth is",
+    "He held that hydrogen is too light for a star to hold",
+    "He held that hydrogen would have burned away long ago",
+    "He held that her photographs of the stars were faulty"
+   ],
+   "context": "Most astronomers then took the stars to be made of the same elements as Earth in much the same proportions, and Russell strongly supported the idea that Earth and the Sun share one make-up. Four years later he reached her answer by a different method and wrote that the most important earlier measure was 'that by Miss Payne', though for years the discovery was credited chiefly to him. Otto Struve later called hers the most brilliant thesis ever written in astronomy.",
+   "facts": [
+    "F27",
+    "F30",
+    "F31",
+    "F32"
+   ],
+   "grade_note": "Ninth graders learn that a reasonable but wrong belief can hold back new evidence, and that a result found again by an independent method is what settles it."
+  }
+ ]
+}

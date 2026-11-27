@@ -1,0 +1,41 @@
+{
+ "unit": "the-molecules-of-life",
+ "questions": {
+  "d24ac80d4f": {
+   "verdict": "pass",
+   "why": "Fixed: without the short-term and long-term labels, 'gives up its energy faster' is a live lure, and the blood choice is replaced by 'turns into glucose more easily'. That is wrong: glycogen is the store made of glucose, and fatty acids give no net glucose in humans; only glycerol does (Wikipedia, Gluconeogenesis; Grokipedia, 5-20% of liver output from glycerol). The context's 'can never ... at all' is the textbook line. A ketone route is only 'controversial', and odd-chain fatty acids are a trace. The facts hold: about 9 against 4 kcal/g, fat stored dry, glycogen held with 3-4 g of water, the liver's store lasting 12-24 hours. No food, calories or diets. All choices are parallel.",
+   "sources": [
+    "https://grokipedia.com/page/Glycogen",
+    "https://grokipedia.com/page/Gluconeogenesis",
+    "https://en.wikipedia.org/wiki/Gluconeogenesis"
+   ]
+  },
+  "fe3498f15e": {
+   "verdict": "pass",
+   "why": "Fixed: the stem no longer assumes one fixed order, and 'order' is not in it, so the respectable lure 'a mix of chains that vary from molecule to molecule' is live. So is the repeating pattern. Grokipedia confirms 1943-1955 on bovine insulin, partial hydrolysis into overlapping fragments, A 21 and B 30 residues, 'precise, genetically determined sequences rather than variable compositions', and the 1958 Nobel Prize. No lower-tier key is re-asked: T3 keys only hair as a tough protein and insulin's job, both used here as the setting.",
+   "sources": [
+    "https://grokipedia.com/page/Frederick_Sanger",
+    "https://en.wikipedia.org/wiki/Frederick_Sanger",
+    "https://openstax.org/books/biology-2e/pages/3-4-proteins"
+   ]
+  },
+  "d7b0610a2c": {
+   "verdict": "pass",
+   "why": "Fixed: the set-up now matches Wikipedia, 'covered with pig bladder the mouth of a flask of ethanol, then submerged it in water'; the bladder 'became convex'. EBSCO: in some trials 'the bladder would expand until it burst'. The dead shrink lure is replaced by 'alcohol took up heat from the water and expanded', a live account of a bulge that is truly wrong. Dutrochet is now only in the context. All four choices are live, and the key is no longer the only choice in which something enters. A minor point that does not fail it: the key alone opens 'Its wall', the other three 'The alcohol'.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jean-Antoine_Nollet",
+    "https://www.ebsco.com/research-starters/chemistry/nollet-discovers-osmosis",
+    "https://grokipedia.com/page/Osmosis"
+   ]
+  },
+  "ee5e43201a": {
+   "verdict": "pass",
+   "why": "Fixed: the context now gives what Port really says. BBC Science Focus quotes him, 'Salt essentially draws the water out of their skin', and the 'chemical reaction' line is the writer's own. 'Shrivel' is gone from the stem, and the cutting lure is replaced by 'lets the salt in, and water floods in after it'. That is a water choice with the flow the wrong way, live and wrong, so the key is no longer the only choice about water. Mental Floss: a slug's skin cells have 'highly permeable membranes', and 'our skin isn't as permeable as a slug's'. The stem's 'dies within minutes' matches Port. No lower-tier final keys osmosis.",
+   "sources": [
+    "https://www.sciencefocus.com/nature/why-does-salt-kill-slugs",
+    "https://www.mentalfloss.com/science/biology/why-does-salt-kill-slugs",
+    "https://grokipedia.com/page/Osmosis"
+   ]
+  }
+ }
+}

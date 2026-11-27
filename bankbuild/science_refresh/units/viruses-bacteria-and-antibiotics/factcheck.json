@@ -1,0 +1,92 @@
+{"unit": "viruses-bacteria-and-antibiotics",
+ "questions": {
+  "4d8eeceb5c": {"verdict": "ok",
+   "checks": [
+    {"claim": "Ivanovsky, 1892, passed sap of mosaic-diseased tobacco through porcelain (Chamberland) filters that retain bacteria, and the filtrate still infected healthy plants", "result": "ok", "source": "https://grokipedia.com/page/Dmitri_Ivanovsky", "note": ""},
+    {"claim": "Key: on its own the result showed the cause was smaller than bacteria (true whether it was a dissolved poison or a tiny living agent)", "result": "ok", "source": "https://grokipedia.com/page/Virus", "note": ""},
+    {"claim": "Wrong: 'a poison that bacteria made' was Ivanovsky's own guess, not something the filter result showed on its own", "result": "ok", "source": "https://en.wikipedia.org/wiki/History_of_virology", "note": ""},
+    {"claim": "Wrong: 'could multiply inside living leaves' was shown only later by Beijerinck's plant-to-plant passage, not by the filter", "result": "ok", "source": "https://ebsco.com/research-starters/history/beijerinck-discovers-viruses", "note": ""},
+    {"claim": "Wrong: 'a new kind of living germ' was not shown by the filter alone (Ivanovsky himself still blamed bacteria)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Contagium_vivum_fluidum", "note": ""},
+    {"claim": "Context: viruses are about a hundredth the size of most bacteria", "result": "ok", "source": "https://en.wikipedia.org/wiki/Virus", "note": ""},
+    {"claim": "Context: Ivanovsky himself suspected a poison made by bacteria (sources: a toxin produced by bacteria, or a very small bacterium that secreted a toxin)", "result": "ok", "source": "https://en.wikipedia.org/wiki/History_of_virology", "note": ""},
+    {"claim": "Context: Beijerinck settled poison vs living agent in 1898 by passing sap from plant to plant", "result": "ok", "source": "https://en.wikipedia.org/wiki/Contagium_vivum_fluidum", "note": ""},
+    {"claim": "Safety: no pathogen enhancement, engineering, culturing-method, transmissibility or virulence detail", "result": "ok", "source": "https://grokipedia.com/page/Dmitri_Ivanovsky", "note": ""}
+   ]},
+  "32451640ef": {"verdict": "ok",
+   "checks": [
+    {"claim": "Beijerinck repeated the filter test on tobacco mosaic disease in 1898 and found the filtrate still infectious", "result": "ok", "source": "https://grokipedia.com/page/Martinus_Beijerinck", "note": ""},
+    {"claim": "He passed the sap from plant to plant (infection in series) and the disease did not fade", "result": "ok", "source": "https://ebsco.com/research-starters/history/beijerinck-discovers-viruses", "note": ""},
+    {"claim": "Key: a poison would have been diluted at every step, so a non-fading disease means the agent reproduces (EBSCO: a toxin would have lost viability as it became increasingly diluted)", "result": "ok", "source": "https://ebsco.com/research-starters/history/beijerinck-discovers-viruses", "note": ""},
+    {"claim": "Wrong: 'a poison could never have passed through the filter' is false; diphtheria and tetanus toxins pass Chamberland filters", "result": "ok", "source": "https://en.wikipedia.org/wiki/Chamberland_filter", "note": ""},
+    {"claim": "Wrong: 'would have killed the plants, not mottled them' and 'would have stayed in the first plant' are not the reasoning that rules out a poison", "result": "ok", "source": "https://en.wikipedia.org/wiki/Contagium_vivum_fluidum", "note": ""},
+    {"claim": "Context: dissolved poisons such as diphtheria toxin pass such filters", "result": "ok", "source": "https://en.wikipedia.org/wiki/Chamberland_filter", "note": ""},
+    {"claim": "Context: the agent grew on no culture medium, only in living, growing tissue (multiplied only in dividing cells)", "result": "ok", "source": "https://en.wikipedia.org/wiki/History_of_virology", "note": ""},
+    {"claim": "Context: Beijerinck named it a virus (he used the word 'virus' throughout his paper; 'contagium vivum fluidum' in the title)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Martinus_Beijerinck", "note": ""},
+    {"claim": "Safety: 'grows in no broth, only living tissue' is the general textbook fact, not a culturing method", "result": "ok", "source": "https://grokipedia.com/page/Martinus_Beijerinck", "note": ""}
+   ]},
+  "8f9cef4c25": {"verdict": "ok",
+   "checks": [
+    {"claim": "Wendell Stanley, 1935, purified TMV into needle-shaped crystals that stayed infectious when redissolved and applied to healthy plants", "result": "ok", "source": "https://grokipedia.com/page/Wendell_Meredith_Stanley", "note": ""},
+    {"claim": "Premise: most biologists classify viruses as non-living, though no consensus exists", "result": "ok", "source": "https://grokipedia.com/page/Virus", "note": ""},
+    {"claim": "Key: a virus can copy itself only inside a living cell (obligate intracellular parasite, no ribosomes or energy production)", "result": "ok", "source": "https://grokipedia.com/page/Virus", "note": ""},
+    {"claim": "Wrong: 'a single cell with no nucleus' describes a bacterium; a virus is not a cell", "result": "ok", "source": "https://grokipedia.com/page/Virus", "note": ""},
+    {"claim": "Wrong: 'pure protein, no genes' was Stanley's 1935 view, shown wrong: TMV holds about 6% RNA (1936-37, Bawden and Pirie among others)", "result": "ok", "source": "https://grokipedia.com/page/Wendell_Meredith_Stanley", "note": ""},
+    {"claim": "Wrong: 'never changes between generations' is false; viruses evolve, RNA viruses fast", "result": "ok", "source": "https://grokipedia.com/page/Viral_evolution", "note": ""},
+    {"claim": "Context: whether viruses are alive is still argued; the crystals blurred the line between life and chemistry", "result": "ok", "source": "https://en.wikipedia.org/wiki/Virus", "note": ""}
+   ]},
+  "e94c2cdda1": {"verdict": "ok",
+   "checks": [
+    {"claim": "Penicillin kills bacteria by blocking the cross-linking of the cell wall as it grows (osmotic lysis during growth)", "result": "ok", "source": "https://grokipedia.com/page/Antibiotic", "note": ""},
+    {"claim": "Antibiotics are ineffective against viral illnesses like the common cold", "result": "ok", "source": "https://grokipedia.com/page/Antibiotic", "note": ""},
+    {"claim": "Key: a virus has none of the parts the drugs attack (no cell wall, no ribosomes, no metabolism of its own)", "result": "ok", "source": "https://grokipedia.com/page/Virus", "note": ""},
+    {"claim": "Wrong: resistance, too small, multiplies too fast are all not the reason", "result": "ok", "source": "https://grokipedia.com/page/Antibiotic", "note": ""},
+    {"claim": "Context: antibiotics target structures unique to bacteria, the peptidoglycan wall and 70S bacterial ribosomes (unlike human 80S)", "result": "ok", "source": "https://grokipedia.com/page/Antibiotic", "note": ""},
+    {"claim": "Context: unnecessary prescriptions for viral infections add to resistance", "result": "ok", "source": "https://grokipedia.com/page/Antibiotic", "note": ""}
+   ]},
+  "f5fa98907e": {"verdict": "ok",
+   "checks": [
+    {"claim": "Fleming, St Mary's Hospital London, September 1928 (back on 3 September), blue-green mould on a staphylococcus plate, colonies near it destroyed", "result": "ok", "source": "https://en.wikipedia.org/wiki/History_of_penicillin", "note": ""},
+    {"claim": "Key: test the mould broth with the mould filtered out; Fleming's filtrate ('mould juice') still killed bacteria, so the agent was a released substance", "result": "ok", "source": "https://grokipedia.com/page/Discovery_of_penicillin", "note": ""},
+    {"claim": "Wrong: mould alone on a dish, mould on other bacteria, a stronger microscope all leave the living mould and the substance together or cannot tell the cause", "result": "ok", "source": "https://grokipedia.com/page/Discovery_of_penicillin", "note": ""},
+    {"claim": "Context: clear, straw-coloured 'mould juice' active against staphylococci, streptococci and pneumococci", "result": "ok", "source": "https://grokipedia.com/page/Discovery_of_penicillin", "note": ""},
+    {"claim": "Context quote: named penicillin (7 March 1929) to avoid the 'rather cumbersome phrase mould broth filtrate'", "result": "ok", "source": "https://en.wikipedia.org/wiki/History_of_penicillin", "note": ""}
+   ]},
+  "d0b1168be3": {"verdict": "ok",
+   "checks": [
+    {"claim": "Fleming named penicillin and published in 1929 (British Journal of Experimental Pathology, June 1929)", "result": "ok", "source": "https://grokipedia.com/page/Discovery_of_penicillin", "note": ""},
+    {"claim": "About ten years of almost no clinical use (penicillin languished in the 1930s; a few small trials such as Paine's are covered by 'almost')", "result": "ok", "source": "https://en.wikipedia.org/wiki/History_of_penicillin", "note": ""},
+    {"claim": "Key: no one could purify it before it broke down (degraded rapidly; Raistrick 1932 stopped by its instability; Craddock and Ridley could not isolate it)", "result": "ok", "source": "https://grokipedia.com/page/Discovery_of_penicillin", "note": ""},
+    {"claim": "Wrong: it did not harm white blood cells (no toxicity to leukocytes) and did not sicken injected mice and rabbits", "result": "ok", "source": "https://grokipedia.com/page/Discovery_of_penicillin", "note": ""},
+    {"claim": "Wrong: 'killed only harmless bacteria' is false; it worked on staphylococci, streptococci, pneumococci", "result": "ok", "source": "https://grokipedia.com/page/Discovery_of_penicillin", "note": ""},
+    {"claim": "Context: Chain, Florey and Heatley at Oxford from 1939 (funding 1939) worked out extraction; press credited Fleming alone", "result": "ok", "source": "https://en.wikipedia.org/wiki/Norman_Heatley", "note": ""}
+   ]},
+  "0a3e5014e4": {"verdict": "ok",
+   "checks": [
+    {"claim": "Saturday 25 May 1940, eight mice given a lethal/virulent dose of streptococci, four then treated with penicillin", "result": "ok", "source": "https://en.wikipedia.org/wiki/History_of_penicillin", "note": ""},
+    {"claim": "By 3:30-3:45 am next morning all four untreated mice dead, treated mice alive (one treated mouse died two days later, which the stem does not contradict)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Norman_Heatley", "note": ""},
+    {"claim": "Key: it showed penicillin could save an animal from infection, 'the crucial step that Fleming had not taken'", "result": "ok", "source": "https://www.sciencehistory.org/education/scientific-biographies/howard-walter-florey-and-ernst-boris-chain/", "note": ""},
+    {"claim": "Wrong: harmlessness when injected and killing streptococci in a dish were already shown by Fleming; 'no bacteria could resist it' is false", "result": "ok", "source": "https://grokipedia.com/page/Discovery_of_penicillin", "note": ""},
+    {"claim": "Context: Fleming never treated an infected animal", "result": "ok", "source": "https://www.path.ox.ac.uk/centenary/our-history/the-discovery-of-penicillin", "note": ""},
+    {"claim": "Context: bacteria that destroy penicillin found that same year (Abraham and Chain, penicillinase, Nature 146:837, December 1940)", "result": "ok", "source": "https://www.nature.com/articles/146837a0", "note": ""},
+    {"claim": "Context: 1945 Nobel to Fleming, Florey and Chain; the three-recipient limit excluded Heatley", "result": "ok", "source": "https://grokipedia.com/page/Discovery_of_penicillin", "note": ""}
+   ]},
+  "f980be0ae6": {"verdict": "ok",
+   "checks": [
+    {"claim": "Resistance mutations arise at about 1 in a million to 1 in a billion per generation", "result": "ok", "source": "https://grokipedia.com/page/Antimicrobial_resistance", "note": ""},
+    {"claim": "Key: bacteria pass resistance genes to one another, across species (horizontal gene transfer, the primary mechanism of spread; conjugation by cell-to-cell contact the predominant route)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Horizontal_gene_transfer", "note": ""},
+    {"claim": "Wrong: antibiotic writing genes, shared ancestor within a few years, the same mutation twice by chance are all not the likely route", "result": "ok", "source": "https://grokipedia.com/page/Antimicrobial_resistance", "note": ""},
+    {"claim": "Context: genes often on plasmids, small extra loops of DNA passed from cell to cell", "result": "ok", "source": "https://en.wikipedia.org/wiki/Horizontal_gene_transfer", "note": ""},
+    {"claim": "Safety: kept at textbook level (plasmids, cell to cell); no mechanism or engineering detail", "result": "ok", "source": "https://en.wikipedia.org/wiki/Horizontal_gene_transfer", "note": ""}
+   ]},
+  "fc2f10c230": {"verdict": "uncertain",
+   "checks": [
+    {"claim": "D'Costa et al., Nature 477 (2011): ancient DNA from 30,000-year-old Beringian permafrost (Dawson City, Yukon) held genes for beta-lactam, tetracycline and glycopeptide (vancomycin) resistance", "result": "ok", "source": "https://www.scientificamerican.com/blog/lab-rat/ancient-resistance-8211-ice-age-bacteria-that-could-fight-off-antibiotics/", "note": ""},
+    {"claim": "Mammoth DNA present and nothing from species common today such as elk, moose or spruce", "result": "ok", "source": "https://www.nationalgeographic.com/science/article/bacteria-resisting-antibiotics-for-at-least-30000-bc", "note": ""},
+    {"claim": "Stem 'long before anyone made a medicine' and context '30,000 years before any medicine'", "result": "uncertain", "source": "https://www.sciencenews.org/article/ancient-dental-plaque-tells-tales-neandertal-diet-and-disease", "note": "Loose: people used plant remedies in prehistory (a 2017 study suggests a Neanderthal at El Sidron, about 49,000 years ago, chewed poplar and Penicillium), so a historian could object to 'any medicine'. The point is antibiotic drugs. Fix: stem 'long before anyone made an antibiotic drug'; context 'were in the ground 30,000 years before the first antibiotic drug'."},
+    {"claim": "Key: antibiotics favour resistance genes that already exist (resistance predates human use; exposure selects existing variation)", "result": "ok", "source": "https://grokipedia.com/page/Antimicrobial_resistance", "note": ""},
+    {"claim": "Wrong: drugs make bacteria build new genes; the patient's body becomes resistant; resistance only from misuse are all false or not what the find shows", "result": "ok", "source": "https://grokipedia.com/page/Antimicrobial_resistance", "note": ""},
+    {"claim": "Context: soil microbes make antibiotics to inhibit competing microbes", "result": "ok", "source": "https://grokipedia.com/page/Antibiotic", "note": ""},
+    {"claim": "Context: no reason to relax; heavy use still favours resistant bacteria", "result": "ok", "source": "https://www.nationalgeographic.com/science/article/bacteria-resisting-antibiotics-for-at-least-30000-bc", "note": ""}
+   ]}
+ },
+ "unit_notes": "Safety sweep: no pathogen enhancement, engineering, culturing-method, transmissibility or virulence detail in any stem, choice or context; vaccines absent. Ivanovsky, Beijerinck, Stanley, Fleming, the lost decade, the 25 May 1940 mouse test (8 mice, 4 treated, controls dead by about 3:30-3:45 am), the 1945 Nobel without Heatley, horizontal gene transfer and D'Costa 2011 all check out. One wording point only, in fc2f10c230 ('any medicine' should be 'an antibiotic drug'). Minor, no fix needed: Grokipedia says Ivanovsky leaned to a tiny bacterium secreting a toxin; the Q1 context's 'suspected a poison made by bacteria' matches that. Grokipedia gives both 3 and 28 September 1928 for Fleming's find; the stem's 'September 1928' is safe."}

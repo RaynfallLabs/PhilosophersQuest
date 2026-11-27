@@ -130,3 +130,14 @@ F28. Open question: why the universe had such low entropy in the past is listed 
 - The first water figure of 1845 (Wikipedia gives 819 ft-lbf/Btu; Grokipedia's intro gives "about 1°C" against 0.563°F elsewhere).
 - The exact wording of the Paris Academy's 1775 resolution (only Universalis's paraphrase was read).
 - Eddington's other claims about the second law, and heat death of the universe.
+
+## Added in revision (sources read 2026-11-27)
+
+F29. Rumford's set-up, in his own words: "a blunt steel borer being so forcibly shoved (by means of a strong screw) against the bottom of the bore of the cylinder", while "the cylinder was turned round on its axis (by the force of horses)"; so the borer was held still and the horses turned the cannon against it. With "the machinery being kept immersed in water, the access of the air of the atmosphere was completely prevented"; the chips' heat was "much greater than that of boiling water, as I found by experiment"; and the source of the heat "appeared evidently to be inexhaustible", for anything a body "can continue to furnish without limitation cannot possibly be a material substance."
+    https://av8n.com/physics/refs/rumford-1798.html (Rumford's 1798 text)
+
+F30. Burning a hydrocarbon fuel such as gasoline does not destroy its matter: "In complete combustion of hydrocarbons, carbon dioxide and water form stoichiometrically" (Grokipedia), and Lavoisier's closed-vessel weighings showed mass conserved. So a car's fuel leaves the exhaust as carbon dioxide and water, not as nothing.
+    https://grokipedia.com/page/Combustion
+
+F31. The overbalanced wheel: "moving weights are attached to a wheel in such a way that they fall to a position further from the wheel's center for one half of the wheel's rotation" and closer for the other half; "the side with weights further from the center has fewer weights than the other side", so "the torque is balanced"; Wikipedia's figure is captioned as showing "that the torques on both sides even out on average." (Not at every angle: the wheel settles where they balance, per the fact-check.)
+    https://en.wikipedia.org/wiki/Perpetual_motion

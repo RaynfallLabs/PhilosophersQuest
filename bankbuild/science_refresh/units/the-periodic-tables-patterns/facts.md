@@ -135,6 +135,24 @@ F31. Rayleigh won the 1904 Nobel Prize in Physics for his gas-density work and t
 - Winkler's 93-94 percent analysis of argyrodite and his first name "neptunium" (only partly confirmed: Wikipedia confirms the neptunium plan).
 - Brauner's re-weighing of tellurium (sources differ on the year).
 - Mendeleev's "N3" form of nitrogen (Wikipedia says only "a form of nitrogen").
-- Whether Moseley found three or four gaps between aluminium and gold (NIST and IUPAC say three, IUPAC adding "there are, in fact, four"; Wikipedia lists 43, 61, 72 and 75), and whether there are 14 or 15 rare earths (IUPAC 14, Wikipedia and NIST 15 counting lanthanum); the questions say "a fixed number".
+- Whether Moseley found three or four gaps between aluminium and gold (NIST and IUPAC say three, IUPAC adding "there are, in fact, four"; Wikipedia lists 43, 61, 72 and 75), and whether there are 14 or 15 rare earths (IUPAC 14, Wikipedia and NIST 15 counting lanthanum); the question says 15 and names the span, lanthanum to lutetium, as Wikipedia does. Whether Moseley photographed tellurium's and iodine's own X-ray lines is not stated; Grokipedia (History of the periodic table) says his "X-ray measurements showed that ordering by atomic number ... resolves inversions such as cobalt/nickel and tellurium/iodine", and NIST gives the three inverted places from his work, so the question says only that his steps put tellurium first.
+- Winkler's own density for germanium (the old bank's 5.469) is unsourced here; the question gives today's values (72.630, 5.323, 86.5 degrees) in the present tense.
 - Rayleigh's exact litre weights (1.2505 and 1.2572 grams); only the half percent is used.
 - The dates of neon, krypton and xenon are 1898 in Grokipedia and Wikipedia; Encyclopedia.com's summary gave 1895, so only 1898 is used, without month order.
+
+## Added in revision (sources read 2026-11-27)
+
+F32. Gallium's density, the dated sequence: Mendeleev's note of 1875, "Remarques à propos de la découverte du gallium", said "its density will be 5.9"; Lecoq de Boisbaudran wrote that in May 1876 he measured a 64-milligram sample and "obtained 4.7"; later, with "a fresh supply of pure gallium" (an ingot of about 58 centigrams), he got 5.90 and 5.97, mean 5.935, and wrote that Mendeleev's forecast was "completely verified." The often-told letter asking him to measure again is not confirmed, so the questions say only that Mendeleev had written the density would be 5.9.
+    https://www.redalyc.org/journal/1816/181676110008/html/ ; https://en.wikipedia.org/wiki/Gallium
+
+F33. Silicon is element 14, in group 14, with an atomic weight of about 28.085, so eka-silicon's forecast weight of about 72 was nothing like silicon's own. Mendeleev's forecasts "stemmed from periodic trends observed in atomic weights and valencies of known elements in the group", and he expected eka-silicon to show "traits transitional between silicon and tin" (Grokipedia).
+    https://grokipedia.com/page/Silicon ; https://grokipedia.com/page/Mendeleev's_predicted_elements
+
+F34. Tellurium "was first discovered in 1782 by Franz-Joseph Müller von Reichenstein in gold ore from Transylvania" (atomic number 52, group 16); Bernard Courtois discovered iodine in 1811 in seaweed ash. So tellurium was found first, but Mendeleev ordered by weight and chemistry, never by date of discovery (F12).
+    https://grokipedia.com/page/Tellurium ; https://grokipedia.com/page/Iodine
+
+F35. Cobalt and nickel in Moseley's 1913 paper: both were measured (cobalt N = 27, K-alpha wavelength 1.798 x 10^-8 cm; nickel N = 28, 1.662), so cobalt's X-rays have the longer wavelength and the lower frequency, one step before nickel's; his order followed the atomic weights "except in the cases of A, Co, and Te, where this clashes with the order of the chemical properties", and neither tellurium nor iodine was measured. Cobalt (atomic number 27, standard atomic weight 58.933) "occurs naturally as a single stable isotope, cobalt-59" (32 neutrons); nickel (28, standard atomic weight 58.693) is 68.077 percent nickel-58 (30 neutrons) and 26.223 percent nickel-60 (32).
+    https://web.lemoyne.edu/GIUNTA/Moseley-article.html (Moseley 1913) ; https://grokipedia.com/page/Cobalt ; https://grokipedia.com/page/Henry_Moseley ; https://en.wikipedia.org/wiki/Isotopes_of_nickel
+
+F36. Atomic weights rise along the third row from sodium (about 23) through magnesium, aluminium, silicon (28.085), phosphorus and sulfur to chlorine (about 35.5, F28), so the atoms grow heavier as they shrink.
+    https://grokipedia.com/page/Periodic_table ; https://grokipedia.com/page/Silicon ; https://grokipedia.com/page/Sodium

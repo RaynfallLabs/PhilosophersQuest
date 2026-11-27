@@ -1,0 +1,57 @@
+{"unit": "the-periodic-tables-patterns",
+ "questions": {
+  "53c5245134": {"verdict": "ok", "issues": []},
+  "6f30b51770": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "Convergence pattern: the key shares 'small atom' with 'Its small atom gives up its outer electrons most easily' and 'pulls hardest' with 'Its nucleus has the most protons, so it pulls hardest', so a test-wise player picks the choice that overlaps both.",
+     "fix": "Break one overlap: replace 'Its nucleus has the most protons, so it pulls hardest' with 'Its outer shell has the most room for one more electron'."}
+   ]},
+  "e3f97306cd": {"verdict": "ok", "issues": []},
+  "4e67965076": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The first sentence teaches that atoms grow down a column because each adds a shell, which is most of the key to 53c5245134 (the alkali metal's outer electron is farther out). A player who meets this question first gets help on that one. 'each element has an extra proton and an extra electron' also names the particles in the two live choices, so 'More neutrons' and 'More mass' look off-topic.",
+     "fix": "'From sodium to chlorine, across one row of the periodic table, each element has one more proton and one more electron than the one before, and the atoms grow heavier, yet they shrink to about half the width. Why do they shrink?'"}
+   ]},
+  "af9a1d8d25": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "All three wrong choices are sweeping absolutes ('no errors left anywhere', 'weight alone decides', 'the very last empty square'), and the key is the only modest claim, so a test-wise player finds it by elimination. Two of them are also contradicted by the unit's own questions: germanium came in 1886 (7e0b15f772), and b018ada1fa shows weight did not decide every place.",
+     "fix": "Keep 'It proved that the table had no errors left anywhere in it' (the honest misconception that a confirmed forecast is proof). Replace the other two with modest wrong reasons: 'Its numbers matched more closely than the known elements' did' and 'A new metal counted for more with chemists than old ones'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'count for more than all the known elements his table already fitted' is a hard phrase for a 9th grader, and 'a density of about 6' has no unit. At 81 words the stem also carries a melting point the question never uses.",
+     "fix": "End: 'Why did that forecast count as stronger evidence for his table than all the known elements it already fitted?' Write 'about six times as dense as water', and move the melting point to the context."}
+   ]},
+  "7e0b15f772": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The answer can be worked out from the stem. It says Mendeleev 'left a gap below silicon in his periodic table' for a missing element, and the key is 'From the known elements around its gap in the table'. Two wrong choices need a sample of the element or its minerals, which nobody had, and 'the order in which the elements had been discovered' is no method at all. The key is the only possible answer.",
+     "fix": "Make every choice a method open to someone with no sample. Answer: 'From the trends down its column, from silicon to tin'. Wrong: 'From the average weight of all the elements then known' / 'From a rule that every weight is a whole number of hydrogen atoms' / 'From the order in which the elements had been discovered'. This also drops the spectral-lines choice, which is how gallium was really found and touches light-from-atoms' ground."}
+   ]},
+  "b018ada1fa": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'A new weighing had shown tellurium lighter' is dead. The stem says tellurium 'is slightly the heavier' and that Mendeleev only 'wrote that its weight must have been measured wrongly', which tells the player that no weighing backed him. Only three choices are live.",
+     "fix": "Replace it with 'Iodine and tellurium act alike, so either order would do'."}
+   ]},
+  "600299b595": {"verdict": "revise",
+   "issues": [
+    {"axis": "fact", "severity": "medium",
+     "what": "'his steps put it first' says Moseley measured the X-rays of tellurium and iodine themselves. facts.md records that this is not stated anywhere, and F21 gives his Oxford series as aluminium to silver (13 to 47), which stops short of tellurium (52) and iodine (53). As written, the claim may be wrong.",
+     "fix": "Unless the fact-checker confirms that he measured both, use cobalt and nickel, which F22 names among the pairs his work set right and which fall in his 1913 calcium-to-zinc series: 'Cobalt weighs slightly more than nickel, yet his steps put cobalt first. What did the steps show about cobalt?' Answer: 'It has one proton fewer than nickel', with the same three wrong choices pointed at nickel. Keep tellurium in b018ada1fa, and say in this context that the same count settles it."}
+   ]},
+  "18bcab778f": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'X-rays give each element one step in an unbroken count' is an odd phrase, since X-rays do not give elements anything. The 'one regular step from each element to the next' is also stated in 600299b595's stem, so a player who has met that question has most of the key here.",
+     "fix": "Answer: 'Each element's X-rays sit one step past the last, with no gaps'. Keep the other three choices at that length."}
+   ]},
+  "10af583b1b": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'A heavier relative of chlorine, in chlorine's column' is weak: the stem says the gas 'would join with nothing he tried', and the unit itself calls the halogens fiercely reactive. Only three choices are really live.",
+     "fix": "Replace it with 'A new element in nitrogen's column of the table' (it came out of nitrogen, so the guess is natural)."}
+   ]}
+ },
+ "unit_notes": "Coverage: the trend down a group (alkali metals 53c5245134, halogens 6f30b51770), the noble gases' full shells (e3f97306cd), the trend across a row (4e67965076), Mendeleev's gaps and forecasts (af9a1d8d25, 7e0b15f772), ordering by weight against chemistry (b018ada1fa), Moseley (600299b595, 18bcab778f) and the noble-gas column found (10af583b1b). Six of the ten questions are history, a fair share at T5. Lower-tier checks pass. inside-the-atom (T4) keys that sodium and potassium share their outer electrons; 53c5245134 goes deeper (why reactivity rises down the column), and 600299b595 goes beyond T4's atomic number to the table's order by protons. metals-nonmetals-and-metalloids (T2) and elements-compounds-and-formulas (T3) are not re-asked. Cross-question leaks within the unit: 4e67965076's stem hands over part of 53c5245134's key, 600299b595's stem hands over 18bcab778f's step, and 6f30b51770's stem names iodine a halogen, which helps b018ada1fa. They are minor, since the game draws questions one at a time, but trim them if the rewrites allow. The two Moseley questions rest on the same one-step-per-element fact; they are kept as different points (what a step means, and why the count leaves no room). Light-from-atoms' ground: only 7e0b15f772's spectral-lines wrong choice touches it, and the fix above replaces it. Arithmetic: none needed. Voice is clean."}

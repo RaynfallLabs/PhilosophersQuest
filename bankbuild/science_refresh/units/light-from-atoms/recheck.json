@@ -1,0 +1,41 @@
+{
+ "unit": "light-from-atoms",
+ "questions": {
+  "bab30d89f9": {
+   "verdict": "pass",
+   "why": "Fixed: the stem now says 'many sharp bright lines, mostly red and orange' (Wikipedia Neon: red-orange 'due to many lines in this range'), the context says 'among them a bright red one at 640 nanometres', not the strongest, and 'the same every time' is gone. The new lure 'every colour, most too faint to see' is live and truly wrong, since a thin gas glows only at its own wavelengths and gives no light between the lines. The other lures are live: a burning gas, and absorbed light given back. No stem clause rules out a choice, and the four choices are parallel. The key says what the levels do to light, not that they exist, so it is not inside-the-atom's (T4) Bohr key.",
+   "sources": [
+    "https://grokipedia.com/page/Neon_lighting",
+    "https://en.wikipedia.org/wiki/Neon",
+    "https://grokipedia.com/page/Emission_spectrum"
+   ]
+  },
+  "a7bcb80c7d": {
+   "verdict": "pass",
+   "why": "Fixed: it no longer turns on T4's fact that violet or ultraviolet light carries more energy than red. The only place that fact appears is a true-but-misapplied lure, and the-electromagnetic-spectrum's UV key is not re-asked. The numbers hold: Lyman-alpha 121.57 nm (10.2 eV) plus H-alpha 656 nm (about 1.89 eV) make about 12.09 eV, the energy of Lyman-beta at 102.57 nm. Ritz's combination principle is from 1908 and Bohr's model from 1913, so 'five years before' is right. The stem never says that each element's levels are its own. Each choice gives a reason, all are of similar length, and there is one defensible answer.",
+   "sources": [
+    "https://grokipedia.com/page/Lyman_series",
+    "https://grokipedia.com/page/Hydrogen_spectral_series",
+    "https://en.wikipedia.org/wiki/Rydberg%E2%80%93Ritz_combination_principle"
+   ]
+  },
+  "39cfaf2510": {
+   "verdict": "pass",
+   "why": "Fixed: two of the choices are now finds on Earth, so the key is no longer the only specific one or the odd one out. The natural-gas lure is live, since natural gas is helium's main source today, and it is truly wrong for 'finally settled': the Dexter, Kansas well was drilled in 1903 and its gas was found to hold helium in December 1905 (Grokipedia: 'discovered in 1903 and analyzed in 1905'; ACS landmark), ten years after Ramsay's cleveite gas of 26 March 1895. The stem's facts hold, and so does the coronium caveat in the context. The key does not overlap the-periodic-tables-patterns (T5), which keys Ramsay's argon, not helium.",
+   "sources": [
+    "https://grokipedia.com/page/Helium",
+    "https://en.wikipedia.org/wiki/Helium",
+    "https://www.acs.org/education/whatischemistry/landmarks/heliumnaturalgas.html"
+   ]
+  },
+  "00681cd038": {
+   "verdict": "pass",
+   "why": "Fixed: the old-reading sentence has moved to the context, so the amount of hydrogen is again a strong, respectable lure. The stars are named without their colours, so T4's colour as temperature is not handed over, and size and age replace distance and speed as live lures. All four choices are short and parallel. Facts hold: OpenStax Table 17.2 gives A stars the 'strongest hydrogen lines', G (the Sun) 'weaker' and M (Betelgeuse) none listed; Sirius is an A1 star of about 9,900 K; 'The primary reason that stellar spectra look different is because the stars have different temperatures.' Line strength set by temperature through ionisation goes past T4's colour as temperature.",
+   "sources": [
+    "https://openstax.org/books/astronomy-2e/pages/17-3-the-spectra-of-stars-and-brown-dwarfs",
+    "https://grokipedia.com/page/Cecilia_Payne-Gaposchkin",
+    "https://grokipedia.com/page/Sirius"
+   ]
+  }
+ }
+}

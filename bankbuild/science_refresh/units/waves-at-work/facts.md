@@ -137,3 +137,11 @@ F29. Radar: "conductive metals yield higher RCS [radar cross-section] due to str
 
 F30. The test set that grew out of Daventry, moved to Orfordness, detected an object at 17 miles on 17 June 1935; its range grew to 40 miles by September, 80 by the end of 1935, and over 100 miles by early 1936.
     https://en.wikipedia.org/wiki/Daventry_Experiment
+
+## Added in revision (sources read 2026-11-27)
+
+F31. Interference moves light's energy; it does not destroy it or turn it to heat: "interference in light waves is just a re-distribution of energy, depending on exactly which parts of the light wave overlap at each point in space" (University of Illinois physics Q&A), and the bright fringes' fourfold peak intensities "are observed countless times in all sorts of interference experiments."
+    https://van.physics.illinois.edu/ask/listing/25734
+
+F32. Langevin's dates, checked again: quartz receivers by February 1917 and a quartz transmitter in April 1917 (Grokipedia); first underwater echoes in November 1917, when the set "still employed a mica transducer to generate the ultrasound beam" (Physics Today); in official demonstrations in mid-1918 it detected submarines "up to 1300 meters" (Grokipedia), so "more than a kilometre" is safe. Physics Today: "The war ended before either navy could detect enemy submarines ultrasonically", so 1918 is a year of trials, not of hunting enemy boats.
+    https://grokipedia.com/page/Paul_Langevin ; https://physicstoday.aip.org/features/paul-langevin-u-boats-and-ultrasonics

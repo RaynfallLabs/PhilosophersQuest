@@ -1,0 +1,74 @@
+{
+ "unit": "the-periodic-tables-patterns",
+ "questions": {
+  "6f30b51770": {
+   "verdict": "pass",
+   "why": "Fixed: the key now shares only 'pulls hardest' with one choice; 'small atom' is no longer split across two. Facts hold (fluorine the most reactive, falling down the group, 9 against 53 protons, all halogens seven outer electrons). Not T4's sodium and potassium question.",
+   "sources": [
+    "https://grokipedia.com/page/Halogen",
+    "https://www.britannica.com/science/halogen/Relative-reactivity"
+   ]
+  },
+  "2773c4770e": {
+   "verdict": "pass",
+   "why": "Fixed: the down-a-column sentence is cut, and 'the atoms grow heavier' makes the mass choice live. Weights rise monotonically from sodium (23) to chlorine (35.5); about 190 against 99 pm is about half. Key true; the neutron, electron and gravity choices are wrong.",
+   "sources": [
+    "https://grokipedia.com/page/Atomic_radius",
+    "https://grokipedia.com/page/Periodic_table"
+   ]
+  },
+  "4be146cc44": {
+   "verdict": "pass",
+   "why": "Fixed: only one sweeping absolute is left; the closer-fit and more-properties choices are modest and wrong. The stem's 68, about 6.0, 1875, 69.7 and 5.9 hold. The context's density sequence is right: Mendeleev's 1875 note said 5.9, Lecoq got 4.7 in May 1876, then 5.90 and 5.97 on a pure ingot; no letter is documented. Minor: 'the low melting point he had forecast' follows Lecoq de Boisbaudran, so 'Mendeleev had forecast' would read better.",
+   "sources": [
+    "https://www.redalyc.org/journal/1816/181676110008/html/",
+    "https://en.wikipedia.org/wiki/Mendeleev%27s_predicted_elements",
+    "https://grokipedia.com/page/Mendeleev's_predicted_elements"
+   ]
+  },
+  "4fcb41d1f8": {
+   "verdict": "pass",
+   "why": "Fixed: the gap's place is no longer in the stem, and every choice is a sample-free method; the spectral-lines choice is gone. Facts hold (72 forecast in 1871; Winkler 1886; 72.6; density 5.3, chloride about 86 C; silicon about 28). Note: historians say he also interpolated from row neighbours (zinc or eka-aluminium, arsenic). The even-step choice claims a step from every element to the next, which is false, so the column key stands.",
+   "sources": [
+    "https://grokipedia.com/page/Mendeleev's_predicted_elements",
+    "https://en.wikipedia.org/wiki/Mendeleev%27s_predicted_elements",
+    "https://link.springer.com/article/10.1007%2Fs10698-018-9312-0"
+   ]
+  },
+  "b018ada1fa": {
+   "verdict": "pass",
+   "why": "Fixed: the context now says later weighings showed tellurium heavier (no 'none ever did'); the dead weighing choice is replaced by 'found first', which is truly wrong (Te 1782, I 1811). Note: the pre-existing grid (iodine or tellurium, halogens or chalcogens) still puts the key at an overlap, but the judge did not flag it and 9th graders know iodine as a halogen.",
+   "sources": [
+    "https://web.lemoyne.edu/GIUNTA/EA/MENDELEEVann.HTML",
+    "https://grokipedia.com/page/History_of_the_periodic_table",
+    "https://grokipedia.com/page/Tellurium",
+    "https://grokipedia.com/page/Iodine"
+   ]
+  },
+  "c7f1580498": {
+   "verdict": "pass",
+   "why": "Fixed: Moseley's 1913 paper measured cobalt (N 27, K-alpha 1.798e-8 cm) and nickel (N 28, 1.662e-8 cm) by cathode rays, and kept Co and Te out of weight order for their chemistry; cobalt 58.933 against nickel 58.693. Each wrong choice is false for cobalt. Not a re-ask of inside-the-atom, which never names Moseley.",
+   "sources": [
+    "https://web.lemoyne.edu/GIUNTA/Moseley-article.html",
+    "https://grokipedia.com/page/Cobalt",
+    "https://en.wikipedia.org/wiki/Isotopes_of_nickel"
+   ]
+  },
+  "c6a5667a1a": {
+   "verdict": "pass",
+   "why": "Fixed: 'from lanthanum to lutetium, counting both ends' answers the 17-rare-earths objection; the key reads naturally. Facts hold (15 members; element 61 missing from Urbain's samples; killed 10 August 1915, aged 27). Note: c7f1580498's stem still says the frequency climbs 'by one regular step from each element to the next', close to this key, but the unit's card teaches both anyway.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Henry_Moseley",
+    "https://www.nist.gov/news-events/news/2024/02/henry-moseley-and-periodic-table-elements"
+   ]
+  },
+  "10af583b1b": {
+   "verdict": "pass",
+   "why": "Fixed: 'A new element in nitrogen's column' is a natural guess for a gas taken from nitrogen, and it is wrong (argon is in the noble-gas group). Facts hold (half a percent heavier, magnesium, 1894, argos 'lazy', first noble gas). No overlap.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Argon",
+    "https://grokipedia.com/page/Argon"
+   ]
+  }
+ }
+}

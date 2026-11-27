@@ -1,0 +1,64 @@
+{"unit": "the-molecules-of-life",
+ "questions": {
+  "c51ca205d5": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Packed in grains, it gives energy without being broken down' is weak once the stem has called starch 'long chains of glucose', and the key is the only choice about water. The question goes a step past photosynthesis-atoms-in-and-out (T4), which keys the glucose and its chemical energy, by asking why the store is starch, so it is not a re-ask.",
+     "fix": "Replace that choice with 'Packed in grains, it holds more energy than the glucose it is made of', a live misconception (a chain of glucose holds about the energy of its glucose)."}
+   ]},
+  "f41392cf66": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem labels glycogen 'short-term' and fat 'long-term'. That makes 'gives up its energy faster' a short-term store's trait, ruled out for fat by the stem itself. 'Dissolves more readily in blood' and 'holds more water' say nothing about a store's size or how long it lasts. Only the key fits a long-term store.",
+     "fix": "Drop the labels: 'The human body keeps some energy as glycogen, a branched chain of glucose, in the liver and muscles, and a far larger reserve as fat, in its fat cells. Why is the big reserve kept as fat?' Then 'Gram for gram, it gives up its energy faster' stays live. Replace 'Gram for gram, it dissolves more readily in blood' with 'Gram for gram, it turns into glucose more easily', which is wrong because glycogen is the store built of glucose."},
+    {"axis": "other", "severity": "low",
+     "what": "Lane: fat's energy per gram is the nearest thing in the unit to a food-label fact. As written it is about the body's store, with no calories or food, and so it is in lane.",
+     "fix": "Keep it framed as the body's store; never bring in calories, food or diets in the stem or the context."}
+   ]},
+  "ae1f6e8034": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key's 'fatty material' echoes the stem's 'dissolve in fats and oils'. 'A pump that pulls in whatever dissolves in oil' shares the root too, which softens the echo, and the inference is the experiment's own (what an observation shows), so the question holds.",
+     "fix": "To widen the echo, change 'It is the stiff cell wall, built of tough fibres' to 'It is the stiff cell wall, its fibres coated with oil', so that three choices share the root."}
+   ]},
+  "0354ff9f7a": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "'Dissolved the fat out' and 'a double layer of fat molecules' call the membrane's phospholipids 'fat'. Yet f41392cf66 uses 'fat' for the stored energy in fat cells. A phospholipid is a lipid but not a fat, so the simplification blurs two molecules the unit teaches apart. Everything else is sound. The single-layer choice stays live because the stem's 'a film one molecule thick' lures a word-matcher toward it.",
+     "fix": "Write 'dissolved the lipids, the fatty molecules, out of the cells', and key 'It is a double layer of lipid molecules', with the wrong choices 'It is a single layer of lipid molecules' and 'It is lipid on one face and protein on the other' to match."}
+   ]},
+  "b24bfbbc14": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem says Sanger 'found the order of amino acids in each piece and fitted the overlapping pieces together', which already assumes there is one fixed order. That rules out 'a mix of chains that vary from molecule to molecule', the respectable view his work overturned and the one wrong choice that carries the story, and the key repeats the stem's 'order'.",
+     "fix": "Describe the method without assuming the result: 'He broke its chains into short pieces in several ways and worked out what each piece was made of, from batch after batch of insulin. What did his finished result show about a protein?' The varying-mix view is then live, and so is the repeating pattern."}
+   ]},
+  "db5ea33a71": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Nucleotide' is used before it is taught. A 9th grader can follow the comparison of four kinds against twenty without the term, but meeting it bare is a stumble. The question stops before DNA's structure, so it leaves from-dna-to-protein's ground alone.",
+     "fix": "Write 'a chain built from four kinds of unit, called nucleotides', which also matches the choices' 'More kinds of unit'."}
+   ]},
+  "55b0b65792": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the longest choice: 65 characters against 50 to 52 for the others.",
+     "fix": "Write 'Cutting off its energy supply lets the difference fade' (54 characters), and leave the cyanide to the context."}
+   ]},
+  "ba21c4e0cd": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Its wall let alcohol out far more readily than water in' would make the bladder shrink, which the stem's 'The bladder swelled' rules out. Only three choices are live, and the key is the only one in which anything enters.",
+     "fix": "Replace it with 'Water soaked into the bladder's wall itself and thickened it', a live misconception that would also explain a swelling."},
+    {"axis": "clarity", "severity": "low",
+     "what": "The sentence 'Henri Dutrochet, a French doctor, gave the process its name in the 1820s' does nothing for the question and leaves the name unsaid in the stem.",
+     "fix": "Cut it from the stem; the context already gives endosmose and exosmose."}
+   ]},
+  "beedf1c6d1": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Shrivel' tells the player that the slug is losing water. The key is the only one of the four choices about water; the other three are all poisons or cuts.",
+     "fix": "Write 'Salt sprinkled on a garden slug makes it pour out slime, and it dies within minutes.' with no 'shrivel'. Then replace 'Its soft skin is cut by the sharp grains of salt' with a wrong choice about water: 'Its skin lets the salt in, and water floods in after it'."}
+   ]}
+ },
+ "unit_notes": "Coverage: carbohydrates (c51ca205d5 starch, f41392cf66 glycogen); lipids (f41392cf66 the store, ae1f6e8034 and 0354ff9f7a the membrane); proteins (b24bfbbc14); nucleic acids (db5ea33a71); diffusion against active transport (55b0b65792); osmosis (ba21c4e0cd, beedf1c6d1, and c51ca205d5 as an application); the slug (beedf1c6d1); the raisin in ba21c4e0cd's context. Cellulose appears only as a wrong choice and in a context, which is enough for its one clause of scope. Nucleic acids get one question, on why genes were long thought to be protein. The plain job, that DNA and RNA carry information, is said only in its context; acceptable, since from-dna-to-protein carries the rest. The three osmosis questions are on different facts. Lower-tier checks: cells-the-building-blocks-of-life (T2) keys the membrane's job (it controls what enters and leaves), and ae1f6e8034 and 0354ff9f7a go to what it is made of, so neither is a re-ask. photosynthesis-atoms-in-and-out (T4) keys the glucose that plants make and the energy stored in it; c51ca205d5 starts from it and asks why the store is starch, which is a grade deeper. three-kinds-of-adaptation (T4) keys the antifreeze protein, and it is not used. body-systems-control-and-support (T3) keys hair and nails as a tough protein and insulin letting cells take up sugar; b24bfbbc14 names keratin and insulin only as its setting. Ownership for the T5 units not yet built: respiration-and-enzymes owns enzymes, and enzymes are only listed in b24bfbbc14's stem. from-dna-to-protein owns DNA's structure, and db5ea33a71 stops before it. When from-dna-to-protein is built, it must not re-key Sanger's fixed sequence (b24bfbbc14) or the old expectation that genes were protein (db5ea33a71). Nothing overlaps the batch's other two units (the equations unit's catalase is a clause in a context). Lane: f41392cf66 (energy per gram) is the nearest to nutrition and stays in lane as the body's store. No kitchen examples. Terms: 'fat' is used both for stored triglyceride (f41392cf66) and for membrane lipid (0354ff9f7a, ae1f6e8034); 'lipid' should be the word for the membrane, fixed above. No singular they and no voice slips. The gates' INFO lines on length are not a rule."}

@@ -184,3 +184,26 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
     - sunspots and space weather;
     - stars forging the elements.
   - So the fission unit may name the Sun as fusion's example but must not key the Sun's core facts.
+- **Light and the Big Bang (lead's ruling, 2026-11-27).**
+  - `galaxies-and-the-expanding-universe` (T4) already keys:
+    - Slipher's red shifts;
+    - the farther-faster law (Lemaître in context);
+    - the expansion having no centre;
+    - Hoyle's steady state and his coining of "Big Bang";
+    - Penzias and Wilson's hiss.
+  - `reading-the-big-bang-in-light` (T5) must not re-ask any of those. It owns:
+    - why a red shift means space itself is stretching;
+    - the background glow PREDICTED before it was found (Alpher and Herman, 1948);
+    - what COBE, WMAP and Planck measured;
+    - the three-quarters hydrogen, one-quarter helium prediction;
+    - dark matter (Zwicky 1933, Vera Rubin's rotation curves);
+    - dark energy (the 1998 supernova finding of a speeding-up expansion).
+  - `light-from-atoms` (T5) owns:
+    - electrons dropping between levels and giving off exact colours;
+    - flame tests and neon;
+    - Fraunhofer's dark lines;
+    - helium in the Sun (1868);
+    - Cecilia Payne's hydrogen.
+  - `inside-the-atom` (T4) already keys Bohr's levels, so the light unit asks what the levels do to light, not that they exist.
+  - `the-electromagnetic-spectrum` (T4) owns the bands.
+  - `the-life-cycles-of-stars` (T4) owns colour as temperature.
