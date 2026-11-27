@@ -1,0 +1,59 @@
+{
+  "unit": "earths-interior-and-age",
+  "questions": {
+    "52abdff309": {
+      "verdict": "pass",
+      "why": "Old problem fixed: the shared 'too ...' frame is gone (density smothers, heat breaks up, too far apart), two wrong choices now share the key's 'sideways', and each is a real misconception the context answers (the hot, dense mantle carries S-waves; a liquid's particles are close-packed). Key true (a liquid's shear rigidity is zero). Minor polish only: three wrong choices open 'A liquid's' and the key 'A liquid does not'.",
+      "sources": [
+        "https://grokipedia.com/page/Shadow_zone",
+        "https://grokipedia.com/page/S_wave"
+      ]
+    },
+    "ea3867c90d": {
+      "verdict": "pass",
+      "why": "Old problem fixed: the T2 layers fact now narrows only to the two inner-core choices, and faster against slower is decided by the shadow-zone reasoning (the core slows and bends waves away; a faster region bends some back in). The stem no longer says 'outer core'; 'then thought to be liquid all through' is true (Grokipedia: 'prevailing models of a fully liquid core'; Jeffreys 1926) and hints at most that the core is not uniform, which does not pick between the two inner-core choices. History right: her 1936 paper gave an inner core with faster P-waves (about 8.6 against 8.0 km/s); Wikipedia: 'In 1940, it was hypothesized that this inner core was made of solid iron', Birch 1952, rigidity 'confirmed in 1971'. 'Others argued from 1940' is true whatever Lehmann herself held. Refraction ('bends') matches Earth Magazine. Choices parallel.",
+      "sources": [
+        "https://grokipedia.com/page/Inge_Lehmann",
+        "https://en.wikipedia.org/wiki/Earth%27s_inner_core",
+        "https://www.earthmagazine.org/article/march-29-1936-notes-earths-inner-core/",
+        "https://en.wikipedia.org/wiki/Inge_Lehmann"
+      ]
+    },
+    "03b05a0831": {
+      "verdict": "pass",
+      "why": "Old problem fixed: 'some 200 kilometres' covers 191 km (Grokipedia) and 221 km (DSDP handout); 'more than 1,600' covers 1,617 and 1,686 km; 'about 76 million' fits 76 and '>76 Ma'. About 2 cm a year checks (1,617 km / 76 Myr = 2.1). Stem and choices unchanged.",
+      "sources": [
+        "https://grokipedia.com/page/Deep_Sea_Drilling_Project",
+        "https://cdn.serc.carleton.edu/files/NAGTWorkshops/intro/activities/student_handout_seafloor_spreading_.v2.pdf"
+      ]
+    },
+    "5c954521d4": {
+      "verdict": "pass",
+      "why": "Old problem fixed: the stem-defeated 'cancel' choice is replaced by the nucleus-against-electrons confusion, parallel to the key, so two choices now name a part of the atom. It is truly wrong (uranium's decay is in the nucleus), and the context says heat and chemistry act on the outer electrons. No new problem.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Radiometric_dating",
+        "https://grokipedia.com/page/Radiometric_dating",
+        "https://en.wikipedia.org/wiki/Radioactive_decay"
+      ]
+    },
+    "09ef5130b7": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrase replaced in the context. Re-checker's note: Choices fixed and sound: Earth's oldest rocks are about 4.03 billion years (wrong), and the isochron plots isotope ratios, not amounts (wrong). But the new context says the line 'dates no rock', while the stem says its slope gave the meteorites' age, and stony meteorites are rocks: false as written. Exact fix: replace 'and it dates no rock:' with 'and it dates none of Earth's rocks:'. (Optional, from the judge and not applied: '...mud from the deep-sea floor, made of rock worn from many lands, and it fell...'.)",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lead%E2%80%93lead_dating",
+        "https://hyperphysics.gsu.edu/hbase/Nuclear/PbPb.html",
+        "https://en.wikipedia.org/wiki/Age_of_Earth"
+      ]
+    },
+    "975f753f0c": {
+      "verdict": "pass",
+      "why": "Old problems fixed: the context keeps only how Patterson knew (dated layers, the comparison across time) with no funding, panel or ban lines; 'most of the lead in the air, and in people' resolves the antecedent; 'some 200 times as much as snow that fell in ancient times' matches the sources (oldest sample about 800 BC; over 200-fold since pre-industrial times) with no timing claim. Choices unchanged and truly wrong (each shows lead is present, not when it came).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ice_core",
+        "https://en.wikipedia.org/wiki/Clair_Cameron_Patterson",
+        "https://www.caltech.edu/news/getting-lead-out-47935",
+        "https://en.wikipedia.org/wiki/Robert_A._Kehoe"
+      ]
+    }
+  }
+}

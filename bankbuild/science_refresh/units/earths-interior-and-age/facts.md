@@ -119,3 +119,20 @@ F26. Tetraethyl lead was developed in December 1921 by Thomas Midgley Jr. at Gen
 - The exact Greenland rise and its timing (200 to 300 times; "after 1940" or "1950 to 1965"): the context says "more than 200 times".
 - The credit for the first clean room (Patterson's lab is "perhaps the first research clean room"); the questions say only that he built one.
 - Tuna, Peruvian bones and the catalytic converter as a cause of the phase-out: not used.
+
+## Added in the revision (2026-11-27)
+
+F27. Before Lehmann the core was taken to be liquid throughout: the odd waves "arrived earlier than expected under prevailing models of a fully liquid core" (Grokipedia, Inge Lehmann). Wikipedia (Earth's inner core): "In 1940, it was hypothesized that this inner core was made of solid iron"; Francis Birch (1952) judged it "probably crystalline iron"; "The rigidity of the inner core was confirmed in 1971." Accounts of the 1936 paper itself report only an inner core in which the P-wave speed is greater than in the outer core (fact-check), so no question says her paper showed it solid.
+    https://grokipedia.com/page/Inge_Lehmann ; https://en.wikipedia.org/wiki/Earth%27s_inner_core
+
+F28. The Leg 3 site distances differ by source: Grokipedia gives Site 16 at 191 km and Site 21 at 1,617 km from the ridge; a NAGT (SERC Carleton) student handout drawn from the DSDP Initial Reports gives Site 16 at about 221 km (about 11 million years) and Site 21 at about 1,686 km (about 76 million years). So the questions say "some 200 kilometres" and "more than 1,600 kilometres", and about 76 million years.
+    https://grokipedia.com/page/Deep_Sea_Drilling_Project ; https://cdn.serc.carleton.edu/files/NAGTWorkshops/intro/activities/student_handout_seafloor_spreading_.v2.pdf (search excerpt)
+
+F29. A lead-lead isochron plots ratios of lead isotopes, "207Pb/204Pb versus 206Pb/204Pb" (or 207Pb/206Pb against 204Pb/206Pb): one kind of lead against another, not amounts. Patterson analysed "terrestrial sediment collected from the ocean floor, which was believed to be representative of the Bulk Earth composition", and it fell on the meteorite isochron (Wikipedia, Lead-lead dating; HyperPhysics: "a sample of modern ocean sediment fell on the same isochron").
+    https://en.wikipedia.org/wiki/Lead%E2%80%93lead_dating ; https://hyperphysics.gsu.edu/hbase/Nuclear/PbPb.html
+
+F30. Patterson's conclusion about lead in people: "the average resident of the United States is being subjected to severe chronic lead insult"; he estimated the "lead burden" at as much as 100 times that of preindustrial ancestors, and found that "very little of it was due to natural causes" (Caltech). His 1965 paper is "Contaminated and Natural Lead Environments of Man", Archives of Environmental Health 11 (1965) 344-360.
+    https://www.caltech.edu/news/getting-lead-out-47935 ; https://en.wikipedia.org/wiki/Clair_Cameron_Patterson
+
+F31. The Greenland rise in lead is measured against snow of ancient times: the oldest sample of Murozumi, Chow and Patterson (1969) dates to about 800 BC, and later papers summarise the result as a rise of "about 200-fold since ancient times" (Nature 362, 1993, abstract via search) and "over 200 since pre-industrial times" (Wikipedia, Ice core). No question gives the rise's timing.
+    https://muroran-it.repo.nii.ac.jp/record/7626/files/r6-3_733.pdf (search excerpt) ; https://www.nature.com/articles/362333a0 (search excerpt) ; https://en.wikipedia.org/wiki/Ice_core

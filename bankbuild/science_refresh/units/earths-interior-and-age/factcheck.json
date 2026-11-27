@@ -1,0 +1,333 @@
+{
+ "unit": "earths-interior-and-age",
+ "questions": {
+  "ad1c0cc312": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Earthquake of 8 October 1909 in the Kupa Valley (Pokuplje, epicentre near Pokupsko, SE of Zagreb), Croatia",
+     "result": "ok",
+     "source": "https://www.geotech.hr/en/discovery-of-mohorovicics-moho-discontinuity/ ; https://ojs.srce.hr/geofizika/article/view/15978 (Mohorovicic's paper 'Earthquake of 8 October 1909')"
+    },
+    {
+     "claim": "Records gathered from 41 stations",
+     "result": "ok",
+     "source": "https://www.geotech.hr/en/discovery-of-mohorovicics-moho-discontinuity/ ; https://geoera.eu/blog/croatian-earthquakes-moho/"
+    },
+    {
+     "claim": "Up to about 240 km only one P-wave; beyond 240 km the new phase (Pa) is the first to arrive",
+     "result": "ok",
+     "source": "https://www.geotech.hr/en/discovery-of-mohorovicics-moho-discontinuity/ ('the Pa phase will be the first to reach the stations at epicentral distances greater than 240 km')"
+    },
+    {
+     "claim": "Key: below a certain depth rock carries the waves faster (one wave by two paths, a velocity jump at depth)",
+     "result": "ok",
+     "source": "https://www.geotech.hr/en/discovery-of-mohorovicics-moho-discontinuity/ ; https://en.wikipedia.org/wiki/Mohorovi%C4%8Di%C4%87_discontinuity"
+    },
+    {
+     "claim": "Wrong: the quake broke twice (rejected: two phases of the same wave)",
+     "result": "ok",
+     "source": "https://www.geotech.hr/en/discovery-of-mohorovicics-moho-discontinuity/"
+    },
+    {
+     "claim": "Wrong: rock below is melted (the faster layer is solid mantle; melt would slow P-waves)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mohorovi%C4%8Di%C4%87_discontinuity"
+    },
+    {
+     "claim": "Wrong: strong waves outrun weak ones (speed is set by the rock)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mohorovi%C4%8Di%C4%87_discontinuity"
+    },
+    {
+     "claim": "Context: boundary about 54 km down; now the Moho, base of the crust",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Mohorovi%C4%8Di%C4%87_discontinuity ; https://grokipedia.com/page/Andrija_Mohorovi%C4%8Di%C4%87"
+    }
+   ]
+  },
+  "52abdff309": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "P-waves compressional, S-waves shear the rock perpendicular to the path",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/S_wave ; https://grokipedia.com/page/Shadow_zone"
+    },
+    {
+     "claim": "No direct S-waves on the far side (beyond about 103 degrees); P-waves recorded except in the 104-140 degree shadow; evidence for a liquid outer core",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Shadow_zone ; https://en.wikipedia.org/wiki/Earth%27s_outer_core"
+    },
+    {
+     "claim": "Key: a liquid does not spring back when sheared (shear modulus zero, S speed sqrt(mu/rho) = 0)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Shadow_zone"
+    },
+    {
+     "claim": "Wrong: too dense / too hot (the hot, dense solid mantle carries S-waves)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Shadow_zone"
+    },
+    {
+     "claim": "Wrong: particles too far apart (a liquid's particles are close-packed; the reason is zero shear rigidity)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/S_wave"
+    },
+    {
+     "claim": "Context: liquids resist squeezing, so P-waves cross the outer core, slowing (about 13.7 to 8 km/s) and bending",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Shadow_zone"
+    }
+   ]
+  },
+  "2a38e5cffe": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Inge Lehmann, Danish seismologist; 1929 New Zealand earthquake (Murchison/Buller)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Inge_Lehmann ; https://grokipedia.com/page/Inge_Lehmann"
+    },
+    {
+     "claim": "Two Russian stations (Sverdlovsk, Irkutsk) inside the P shadow zone recorded unusually large P-waves",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Inge_Lehmann ; https://www.earthmagazine.org/article/march-29-1936-notes-earths-inner-core/ (great-circle distances from Murchison: Irkutsk about 111 deg, Sverdlovsk about 135 deg, both in the 104-140 deg zone)"
+    },
+    {
+     "claim": "1936 paper 'P'' proposing an inner core in which P-waves travel faster",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Inge_Lehmann ; https://www.earthmagazine.org/article/march-29-1936-notes-earths-inner-core/"
+    },
+    {
+     "claim": "Wrong choices: solid all through (S-waves never cross the outer core); a slow layer at the base of the mantle or top of the core (not what she proposed)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Shadow_zone ; https://grokipedia.com/page/Inge_Lehmann"
+    },
+    {
+     "claim": "Context: 'Lehmann held the inner core to be solid inside a liquid outer core'",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Inge_Lehmann ; https://en.wikipedia.org/wiki/Inge_Lehmann ; https://www.lindahall.org/about/news/scientist-of-the-day/inge-lehmann/",
+     "note": "Grokipedia, Wikipedia, Earth Magazine and Linda Hall all say she proposed a solid inner core, but searches on the paper itself report her wording as only 'an inner core in which the velocity is larger than in the outer one', with solidity argued in the 1940s-50s by others (Bullen; Birch). The judge raised the same doubt. Fix (true either way): 'Lehmann's inner core is now known to be solid: studies of the whole Earth ringing after great earthquakes confirmed it by 1971.'"
+    },
+    {
+     "claim": "Gutenberg, Richter and Jeffreys took up her idea within a few years",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Inge_Lehmann ('within two or three years')"
+    },
+    {
+     "claim": "Solidity confirmed by 1971 from free oscillations (Dziewonski and Gilbert)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Inge_Lehmann"
+    }
+   ]
+  },
+  "03b05a0831": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Hess's sea-floor spreading published in 1962 ('History of Ocean Basins')",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Seafloor_spreading"
+    },
+    {
+     "claim": "Glomar Challenger Leg 3, December 1968 to January 1969, across the Mid-Atlantic Ridge in the South Atlantic",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Deep_Sea_Drilling_Project ; https://grokipedia.com/page/Glomar_Challenger"
+    },
+    {
+     "claim": "Sediment ages from fossils in the lowest sediment resting on basalt",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Glomar_Challenger ; https://grokipedia.com/page/Deep_Sea_Drilling_Project (biostratigraphic ages)"
+    },
+    {
+     "claim": "Key: same age everywhere would count most against Hess; the three wrong choices (older farther out, thin near crest, same pace on both sides) are all what Hess predicts",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Seafloor_spreading"
+    },
+    {
+     "claim": "Context distances: 11 Myr at 191 km; more than 76 Myr at 1,617 km",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Deep_Sea_Drilling_Project ; https://cdn.serc.carleton.edu/files/NAGTWorkshops/intro/activities/student_handout_seafloor_spreading_.v2.pdf",
+     "note": "The ages agree across sources (11 and 76 Myr), but the distances do not: Grokipedia gives 191 and 1,617 km, while a NAGT/Carleton data handout citing the DSDP Initial Reports vol. 3 gives Site 16 at 221 km and Site 21 at 1,686 km (and calls Site 21's age 76 Myr, not more than 76). A 1969 Woods Hole release put the planned sites 250-1,300 km out, and Site 21 is on the Rio Grande Rise. Fix: 'about 11 million years old at a site some 200 kilometres out and about 76 million at one more than 1,600 kilometres out'. The stem's 'more than 1,600 kilometres' survives either source."
+    },
+    {
+     "claim": "Spreading about 2 cm a year (half rate), matching the magnetic-stripe ages",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Deep_Sea_Drilling_Project ; https://grokipedia.com/page/Glomar_Challenger"
+    }
+   ]
+  },
+  "91ced26233": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Zircon takes in uranium but strongly rejects lead",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Radiometric_dating ; https://en.wikipedia.org/wiki/Radiometric_dating"
+    },
+    {
+     "claim": "U-235 to Pb-207 half-life about 700 million years (703.8)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Radiometric_dating"
+    },
+    {
+     "claim": "Key: 3 Pb-207 per U-235 left = 1/4 remaining = two half-lives = about 1.4 billion years (2 x 703.8 = 1,408 Myr)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Half-life"
+    },
+    {
+     "claim": "Wrong: 2.1 (three half-lives, 7:1), 2.8 (four, 15:1), 0.7 (one, 1:1) billion years",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Half-life"
+    },
+    {
+     "claim": "Context arithmetic (an eighth left after three half-lives, seven lead per uranium)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Half-life"
+    }
+   ]
+  },
+  "5c954521d4": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Decay rates tested at high temperature and pressure show no significant change",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Radiometric_dating"
+    },
+    {
+     "claim": "Key: decay is nuclear; heat, pressure and chemistry act on the electrons",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Radiometric_dating ; https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Nuclear_Chemistry/Nuclear_Kinetics/Radioactive_Decay_Rates"
+    },
+    {
+     "claim": "Wrong choices (heat and pressure cancel; crystal shields from heat; too slow to hurry) are false: fast and slow decays alike are unaffected",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Radiometric_dating"
+    },
+    {
+     "claim": "Context: only electron-capture decays can shift, usually by less than 1 percent",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Radiometric_dating ('The only exceptions are nuclides that decay by the process of electron capture') ; https://en.wikipedia.org/wiki/Radioactive_decay ('in general, less than 1%'; Be-7 0.9%)"
+    },
+    {
+     "claim": "Context: the crystal keeps uranium and lead from being added or lost (closed system)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Radiometric_dating"
+    }
+   ]
+  },
+  "8afe4a3eb3": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Kelvin 1862: cooling from a molten start, from the rise of temperature with depth; 20 to 400 million years; later (1897) 20 to 40 million",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Age_of_Earth ; https://grokipedia.com/page/Lord_Kelvin"
+    },
+    {
+     "claim": "Pierre Curie and Albert Laborde, 1903: radium melts its own weight in ice in less than an hour",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Age_of_Earth"
+    },
+    {
+     "claim": "Key: Kelvin assumed no internal heat generation",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lord_Kelvin ('without internal heat generation')"
+    },
+    {
+     "claim": "Wrong: molten start; heat out only through solid rock (Perry's point, not radium's); rock alike all the way down",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lord_Kelvin"
+    },
+    {
+     "claim": "Context: U, Th, K give about half of Earth's heat flow (about 20 of 44-47 TW)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Earth%27s_internal_heat_budget"
+    },
+    {
+     "claim": "Context: John Perry 1895, a flowing interior; modern view counts neglected convection the larger error",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lord_Kelvin ; https://en.wikipedia.org/wiki/Age_of_Earth"
+    },
+    {
+     "claim": "Context: Boltwood's 1907 U-Pb ages, refined, 410 million to 2.2 billion years",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Age_of_Earth ; https://en.wikipedia.org/wiki/Bertram_Boltwood (400 to 2,200 million years in 1907)"
+    }
+   ]
+  },
+  "09ef5130b7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Patterson 1956: three stony and two iron meteorites on one isochron, 4.55 (+/- 0.07) billion years",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Lead%E2%80%93lead_dating ; https://hyperphysics.gsu.edu/hbase/Nuclear/PbPb.html"
+    },
+    {
+     "claim": "Deep-sea sediment lead fell on the same isochron",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Lead%E2%80%93lead_dating ; https://hyperphysics.gsu.edu/hbase/Nuclear/PbPb.html"
+    },
+    {
+     "claim": "Key: Earth and the meteorites are of the same age",
+     "result": "ok",
+     "source": "https://hyperphysics.gsu.edu/hbase/Nuclear/PbPb.html ('meteorites and the Earth are closely related and of the same age')"
+    },
+    {
+     "claim": "Wrong: mud as old as meteorites (it is modern sediment); meteorites broke from Earth; meteorites sprinkled lead",
+     "result": "ok",
+     "source": "https://hyperphysics.gsu.edu/hbase/Nuclear/PbPb.html"
+    },
+    {
+     "claim": "Context: Earth's oldest rocks about 4 billion years (Acasta 4.03); age now 4.54 +/- 0.05 billion",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Age_of_Earth ; https://grokipedia.com/page/Age_of_Earth"
+    }
+   ]
+  },
+  "809fe18dce": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Lab lead contamination (even in his hair) and his clean room",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Clair_Cameron_Patterson"
+    },
+    {
+     "claim": "Kehoe, chief medical adviser of Ethyl from 1925; held lead in humans normal and low levels harmless",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Robert_A._Kehoe"
+    },
+    {
+     "claim": "Key: dated ice showed recent snow far richer in lead than ancient snow",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Clair_Cameron_Patterson ; https://en.wikipedia.org/wiki/Ice_core"
+    },
+    {
+     "claim": "Wrong: lead in fresh snow, in his hair, in meteorites and ancient rocks (none tells natural from industrial lead)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Clair_Cameron_Patterson"
+    },
+    {
+     "claim": "Context: a rise of more than 200 times since before industry, climbing soon after leaded petrol came in",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Ice_core ('increased by a factor of over 200 since pre-industrial times') ; https://en.wikipedia.org/wiki/Clair_Cameron_Patterson ('soon after tetraethyl lead (TEL) was introduced')"
+    },
+    {
+     "claim": "Context: Kettering Laboratory funded by GM, DuPont and Ethyl; Patterson left off the 1971 NRC panel",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Robert_A._Kehoe ; https://en.wikipedia.org/wiki/Clair_Cameron_Patterson"
+    },
+    {
+     "claim": "Context: US banned leaded fuel for road vehicles from 1 January 1996; mean blood lead 16 to 3 ug/dL, 1976-1991 (78 percent)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Tetraethyllead"
+    }
+   ]
+  }
+ },
+ "unit_notes": "Two uncertain, no errors. Brief points: Mohorovicic (8 Oct 1909, 41 stations, 240 km, 54 km) holds; Lehmann's Russian stations (Sverdlovsk, Irkutsk) sit inside the shadow zone, but whether her 1936 paper itself called the inner core solid is doubtful; Leg 3 ages hold, its distances differ by source; Kelvin, Curie-Laborde, Perry and Boltwood hold; Patterson's 4.55 Gyr isochron is correctly dated 1956 (1953 was the Canyon Diablo measurement); the sediment point holds; the zircon arithmetic is right. Soft spots, not errors: the 200-fold Greenland rise is measured from about 800 BC ('since ancient times' in the 1969 paper's citations), and some accounts put the steepest rise in the ice after 1940 (the 1969 abstract could not be fetched), so 'climbing soon after ... the 1920s' rests on Wikipedia's wording; 'more than 200 times since ancient times' would be the safer phrase."
+}

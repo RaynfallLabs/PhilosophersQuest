@@ -1,0 +1,79 @@
+{"unit": "fair-trials-controls-and-placebos",
+ "questions": {
+  "b34419f3c9": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The key holds only if the pairs were alike at the start: had the fruit pair been the mildest cases, rest and the ship's food alone could have healed them, so the key leans on the 'mildest cases' choice being false. The stem never says Lind picked like cases (only the context does), and 04c19ebef4 tells the player that the worst two got the seawater. 'That any fresh fruit would have healed the two as fast' is the weakest choice: any 9th grader sees that a trial of oranges and lemons tried no other fruit.",
+     "fix": "Add to the stem: 'Lind picked cases as alike as he could.' The 'mildest' choice stays live, since picking them alike does not show they were. Replace the fresh-fruit choice with 'That the oranges alone would have healed the two as fast' (the pair got oranges and lemon together, so the trial cannot split them: live, parallel and wrong)."}
+   ]},
+  "04c19ebef4": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem asks which step 'stops a doctor from choosing who gets which treatment', and only one choice takes the choosing away. Matching by hand is the doctor choosing, so the stem's own clause rules it out; keeping the patient ignorant and giving a dummy are not about who gets which at all. A student who has never heard of randomisation picks 'Letting chance assign' from the stem's words alone. The bare idea also sits close to T5 how-germs-were-proven, whose key 'That one clinic was sent the sicker women' already teaches that an assignment nobody steers keeps the sicker out of one group. The T5 point the context makes, that chance balances the differences no one thought of while matching balances only the ones the doctor thinks of, is not tested.",
+     "fix": "Ask what chance does that careful matching cannot: '...He gave the seawater to \"the worst patients\". Fair trials today let chance, not the doctor, put each patient in a group. Why is that better than a doctor carefully matching the groups for how sick each patient is?' Key: 'It evens out, on average, differences no one thought of'. Wrong: 'It makes the two groups alike in every way'; 'It lets the trial use far fewer patients'; 'It keeps each patient from knowing his treatment'."},
+    {"axis": "fact", "severity": "high",
+     "what": "'the only two whose hand tendons had gone stiff': I believe Lind's Treatise reads 'with the tendons in the ham rigid', the hamstrings behind the knee (a classic sign of scurvy), not the hand. facts.md F3's transcription may carry a slip like the 'familiar' for 'similar' it already notes in F1. For the fact-checker.",
+     "fix": "'...the only two whose tendons behind the knee had gone stiff', or drop the detail and keep only 'He gave the seawater to \"the worst patients\"'."}
+   ]},
+  "5465d17c80": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Yet it filled only a few paragraphs ... only in 1795' tells the player that Lind did not draw the modern lesson, and the key is then the only choice that is wrong by modern lights. The diet-lack choice and the boiled-juice choice are both true today, and 'fruit and nothing else' is the trial's own lesson, so a test-wise player picks the one old-fashioned idea without knowing anything about Lind.",
+     "fix": "Drop the 'Yet' sentence from the stem (move the few paragraphs and 1795 into the context) and ask 'Which view of scurvy did Lind's book put forward?', so the diet-lack choice becomes the live lure for a player who assumes the trial settled it. Or keep the stem and swap the boiled-juice choice for a second old idea Lind did not hold, such as 'Scurvy is caught from other sick men, as a fever is' (the fact-checker must confirm Lind denied contagion)."},
+    {"axis": "grade", "severity": "low",
+     "what": "Lind's theory of the disease (salt meat, damp air, faulty digestion) is history-of-medicine detail, not 9th-grade content in itself; it earns its place only as the nature-of-science point that a scientist reads his result through the ideas he already holds. Fair, but the thinnest fit in the unit.",
+     "fix": "Keep, and let the context end on the point plainly: Lind read his own result through the theory of his day."}
+   ]},
+  "09a68fc8d3": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'added nothing' is a strong claim for 17 patients, while d5d6a5e76e's context teaches that 'finding no gap in a trial too small to see one' would not show failure. A careful player can see the two pull against each other.",
+     "fix": "Keep the key, and add to the context that a second sham trial agreed before surgeons gave the operation up (Dimond's in Kansas, 1960, if the fact-checker confirms it), so one small trial is not taught as proof on its own."},
+    {"axis": "other", "severity": "low",
+     "what": "Overlap: the core inference (a fake does as well as the real thing, so the real thing's special step adds nothing) is T4 testing-a-claim's Mesmer key 'The fluid and the patients' belief' in surgical dress. The 'imagined all along' choice (relief from a placebo arm is real relief, not imagined pain) and the modern operation make it the T5 step, so this is polish.",
+     "fix": "None needed; keep the 'imagined' choice, which carries the T5 point."}
+   ]},
+  "332b7dcbda": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "Dense for a 9th grader: two research pairs, two years, fifteen trials, 1,082 patients and a third. 'found no evidence of a placebo effect in any of them', with no hint why, can read as contradicting the third who were relieved. 'would have shown the dummy pill's own effect' leaves unsaid that the group is set beside the dummy-pill patients.",
+     "fix": "Drop 'fifteen trials' and the 1,082, and end: 'Set beside the dummy-pill patients, which group would have shown what the dummy itself did?'"}
+   ]},
+  "ec890ef658": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "Convergence: the key shares a part with every wrong choice ('Small' with the blood-pressure choice, 'what patients felt' with the large choice, 'pain' with the no-effects choice), so a test-wise player can pick the choice the others circle. 'not even on pain' also points at pain.",
+     "fix": "'No effects at all on any illness' for the last choice, so pain appears only in the key; or make the grid even with 'Large effects on what tests measured, such as blood pressure'."},
+    {"axis": "stance", "severity": "low",
+     "what": "The context says flatly 'Against no treatment, placebos did nothing measurable to the illnesses themselves'. How big placebo effects are is still argued (later reanalyses of this review, the work on placebo pain relief), so the flat line should be the review's.",
+     "fix": "'The review found that, against no treatment, placebos did nothing measurable to the illnesses themselves...'."}
+   ]},
+  "24644763ae": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The key restates the stem's own data as a rule: big first-year losses were followed by gains, big gains by small losses, and the key says extreme readings are followed by milder ones. 'both changes' then strikes the medicine-takes-a-year and bone-rests choices, each of which explains only one direction, so a student who has never met regression to the mean gets it by reading. The key also describes the pattern rather than explaining it; the why (chance error in one scan, so the women picked for an extreme change were partly picked by luck) is in the context but untested.",
+     "fix": "Ask the why: '...What best explains why both groups swung back?' Key: 'Chance error had made the first changes look bigger'. Keep 'The scanners were set differently in the second year' as the live lure (a fixed error against a chance one, the T4 accuracy and precision idea), and keep the medicine and bone choices."}
+   ]},
+  "2818568119": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'those on a sham' is the stem's only name for the third group, and 'sham' is not glossed in this question (each question stands alone). 'Only the neurologists who knew scored the patients on plasma exchange, which swaps out ..., as doing better than those on a sham' is a long sentence to hold in one read.",
+     "fix": "'...Only the neurologists who knew scored the patients given plasma exchange, which swaps out the liquid part of the blood, as doing better than those given a sham, a fake exchange that looked the same.'"}
+   ]},
+  "d5d6a5e76e": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "Overlap: the key is the bare small-sample idea already keyed at T3 designing-a-controlled-experiment ('He used just one seed in each group') and T4 correlation-causation-and-error ('small groups swing more by chance'), and 'Suppose the trial had enrolled only 2,000' cues it. A student who knows only those units answers without the T5 point, that a rare disease needs many people because the CASES decide it. No choice tempts a player who thinks 4,000 children is plenty.",
+     "fix": "Make the count of children look big and let the cases do the work: drop 'only' from the stem and replace 'The same gap as the big trial, at far less cost' with 'A clear gap, since 4,000 children is a big trial'. Or ask why so many: 'Why did the dummy-shot areas need about 400,000 children?' Key: 'Paralytic polio struck fewer than 1 child in 1,000'; wrong: 'The vaccine shielded only about half of those who had it'; 'Most children would drop out before the season ended'; 'Every school had to hold both groups'."}
+   ]},
+  "251ff949de": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The refused children had been vaccinated elsewhere' is struck by the stem's own 'Neither group had the vaccine', so only three choices are live.",
+     "fix": "Replace it with 'The dummy shot had been a weak dose of the vaccine' (wrong: it would have lowered the dummy group's rate, not raised it)."},
+    {"axis": "clarity", "severity": "medium",
+     "what": "The two groups differ in two ways, the family's choice and the injection, and the stem gives no data that separates them, so 'The dummy shot itself had raised the risk of polio' fits 57 against 36 as well as the key does; only outside knowledge rules it out. Nor is it absurd: I believe an injection given during an infection can bring on paralysis (the documented 'provocation polio'), so a sharp student has a case. The evidence that settles it, that refusers in the observed areas, where no one had a dummy shot, also ran lower (35 against 46), is only in the context.",
+     "fix": "Add one sentence to the stem: 'In the other areas, where no child got a dummy shot, second-graders whose parents refused also had a lower rate than the first- and third-graders watched as controls.' Then ask 'What did these gaps show?'"}
+   ]}
+ },
+ "unit_notes": "Scope covered: Lind (b34419f3c9 control, 04c19ebef4 randomisation, 5465d17c80 his reading), the placebo (332b7dcbda, ec890ef658), the doctor blinded (2818568119), sham control (09a68fc8d3), one success story (24644763ae), the Francis trial (d5d6a5e76e size, 251ff949de volunteers). Ten different facts, but weighted: three Lind and two placebo-size questions. ec890ef658's stem ('some patients got a placebo and others got no treatment at all') hands over 332b7dcbda's key to anyone who meets it first; low, since the facts asked differ. OVERLAPS: none with T1 measuring-and-the-fair-test, Eijkman's chickens, chance matches, survivorship bias or Florey's mice. b34419f3c9 goes past T3's 'what a control is for' by asking what the comparison leaves open, which is fine. 04c19ebef4 as written is close to T5 germs' Semmelweis turn-taking key; the proposed fix (chance against matching by hand) clears it. d5d6a5e76e re-asks the bare T3/T4 small-sample idea (medium above). 2818568119 goes properly deeper than T4's Clever Hans and Franklin: the assessing doctor blinded, measured head to head. 09a68fc8d3's inference mirrors T4's Mesmer sham (low). GRADE RULINGS: regression to the mean is fair at 9th grade as an idea in plain words (G9.M2's sample selection and measurement error; the scope's 'one success story is not evidence'), never as the term; 24644763ae fails on its tell, not its grade. Beecher's claim and its critique are fair as written: the fact asked is which comparison isolates a placebo's own effect, a 9th-grade confounding question, and the names are framing (dense, polish). Sham surgery is fair: a placebo arm in surgical form, read as a control result. ec890ef658's result (small effects on what patients feel) is the scope's own 'a sugar pill can make people feel better'. Lind's theory of scurvy (5465d17c80) is the thinnest grade fit, kept by its nature-of-science point. STANCE: both polio questions are about trial design only (how many cases a trial needs; volunteers against volunteers). The 33 against 115 and Francis's 80 to 90 percent in the context are attributed trial results; nothing on vaccination, safety, schedules or policy, so nothing that belongs to the vaccines unit. The size of the placebo effect is still argued; the stems attribute their findings, and only ec890ef658's context needs the same."}

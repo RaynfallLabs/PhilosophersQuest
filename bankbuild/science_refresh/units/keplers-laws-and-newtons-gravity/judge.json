@@ -1,0 +1,60 @@
+{"unit": "keplers-laws-and-newtons-gravity",
+ "questions": {
+  "f529bba975": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Copernicus's circles had fit those sightings exactly' defeats itself: had any circle model fitted exactly, the stem's 'best model, built on a circle' would not have been the trouble. All three wrong choices cite another astronomer's result, while the key alone speaks of measurement error, which is the unit's point.",
+     "fix": "Replace the Copernicus choice with the misconception facts.md lists: 'Tycho had checked every sighting through a telescope'."}
+   ]},
+  "17c02ecb60": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'A circle, with the Sun off its centre' falls to anyone who has met f529bba975 (Kepler's 'best model, built on a circle' failed). T2 why-we-have-seasons also tells the student that Earth's path is 'a very slightly stretched oval'. The live contest, Sun at the centre against Sun off it, is the T5 point and goes a grade deeper than T2, so this is polish.",
+     "fix": "Replace the circle choice with the old method: 'Small circles riding on a larger one round the Sun'."}
+   ]},
+  "c37e4df042": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The Sun's stronger pull in January holds Earth back' argues the wrong way: a pull that held Earth back would make the winter longer, not shorter, so it falls to anyone who reads the question. 'Earth spins faster on its axis in the winter months' is weak too, since spin does not move Earth along its path. January as the nearest point is T2 why-we-have-seasons' key, but here it is given in the stem, so it is not a re-ask.",
+     "fix": "Replace the hold-back choice with a naive answer that points the right way: 'The winter season takes in February, the calendar's shortest month'. Keep the tilt choice."}
+   ]},
+  "345cd9717c": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The three wrong choices are all one kind (a longer path: an oval, a climb above and below, loops), and the key is the only choice about speed, so the odd one out is the answer. To a student who knows nothing, 'it moves more slowly' is also the default reason anything takes longer. The step this unit adds beyond T3 gravity-and-orbits (the pull weakens with distance) is why the outer planet is slower, and that is not tested. The context's 'ten times as far away, the Sun's pull is a hundredth as strong' also gives away the key of 79ae5124e3.",
+     "fix": "Split speed and path two and two, so the student must know why: answer 'It moves more slowly, as the Sun's pull out there is far weaker'. Wrong: 'It moves more slowly, as its great mass holds it back' (F18's misconception) / 'It moves as fast as Earth, but on a far longer oval' / 'It moves as fast as Earth, but winds along in small loops'. In the context, say 'far weaker' and leave the hundredth to the Moon-test question."}
+   ]},
+  "79ae5124e3": {"verdict": "ok", "issues": []},
+  "cc74511fe2": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Long before any spacecraft could fly past it' points at something moving close to Jupiter, and only the moons choice offers that.",
+     "fix": "'...as a share of the Sun's, from sightings through a telescope alone.' That also makes the width and brightness choices more live."}
+   ]},
+  "4cce6655b4": {"verdict": "ok", "issues": []},
+  "23fc0a39a9": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Found that he was right': 'he' could be Galle or Le Verrier.",
+     "fix": "'...turned a telescope in Berlin to the spot Le Verrier gave him, and Le Verrier was proved right.'"}
+   ]},
+  "7a88b64f2f": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Albert Einstein's new theory of gravity' is the only famous name among the four, and it is the climax the stem's 'in the end' promises. 'Asaph Hall' is a name no 9th grader knows. A student who knows nothing picks Einstein.",
+     "fix": "Take the names out of the choices, at matched lengths: 'A new theory in which mass curves space and time' / 'A tiny change to the square in Newton's law' / 'A belt of small rocks circling inside its path' / 'Drag from the thin gas lying around the Sun'. Name Einstein and Hall in the context."},
+    {"axis": "other", "severity": "medium",
+     "what": "The stem gives away another question's key. 'Whose sums had led to Neptune' and 'as an unseen planet had explained the drift of Uranus' state the answer of 23fc0a39a9 outright, and a player who meets this question first is handed that one.",
+     "fix": "Cut both clauses: 'Urbain Le Verrier found in 1859 that the point of Mercury's orbit nearest the Sun creeps round a little faster than Newton's law and the pulls of the other planets allow. He blamed unseen matter closer to the Sun. What accounted for the extra creep in the end?'"},
+    {"axis": "grade", "severity": "medium",
+     "what": "General relativity and Mercury's perihelion are beyond 9th-grade content and outside the unit's scope; NGSS HS-PS2-4 and HS-ESS1-4 stop at Newton. The grade_note's 'courses name Einstein' justifies the name, not the fact. The honest 'a well-tested law has limits' lesson is good T5 craft, so the question can stay as the unit's one reach, but only if the lead accepts it.",
+     "fix": "Keep it with the two fixes above if the lead accepts the reach; otherwise drop it, and the unit still keeps nine questions on its scope."}
+   ]},
+  "12180c2c5f": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "A re-ask of T2. earths-layers keys 'Iron is denser than rock, so it sank' to the centre, and a student who knows only that picks 'Its inside is far denser than its surface rock' with no T5 step. The T5 step cannot be taken from the stem anyway: the stem gives the average of 5.5 but never the surface rock's 2.7 to 3, so the lower-grade fact is the only route to the key. 'Less dense' and 'hollow' also point the same way, so only the 'about as dense' choice competes.",
+     "fix": "Key the method, which no lower unit has: 'Henry Cavendish hung a rod nearly 2 metres long from a thin wire, with a small lead ball at each end, and set a lead ball of about 158 kilograms beside each small one. He measured how hard each big ball pulled its small ball sideways, and set that beside how hard Earth pulls the same small ball down, which is its weight. Allowing for the distances, what did comparing the two pulls give him?' Answer: 'How many times the big ball's mass Earth holds'. Wrong: 'How many times wider Earth is than the big ball' / 'How much of Earth's pull the big ball blocks' / 'How fast Earth's pull travels across the room'. The context can then give the 5.5, the crust's 2.7 to 3, the heavy core and Halley's hollow Earth. This builds on T3 gravity-and-orbits (more mass, more pull) a grade deeper and does not re-ask it."}
+   ]}
+ },
+ "unit_notes": "Ruling on the Moon-test arithmetic (79ae5124e3): fair reasoning, inside the lane. 60 x 60 is 6 x 6 with two zeros, a one-step product any 9th grader does in the head. Seeing that 3,600 is 60 squared is the very step of Newton's test, and that step is the science of the inverse square, not a sum. No formula is set up or solved, and the wrong powers need no working once 60 x 60 = 3,600 is seen. It is not the 'orbital arithmetic' the lane note gives the maths bank (Kepler's third-law sums, periods from distances). Keep it as written. Overlaps checked against every final.json. T2 why-we-have-seasons (January nearest, a slightly stretched oval) is used only as a given in c37e4df042 and 17c02ecb60. T3 comets-asteroids-and-moons (Halley's three comets were one; sunlight pushes the tail) is gone a grade deeper in 4cce6655b4. T3 gravity-and-orbits (the cannonball, Skylab, the falling station, the never-ending pull, the bowling balls, the balance point) is not re-asked. T4 newtons-laws-force-mass-and-acceleration's Principia is named in cc74511fe2 only as a setting. T2 earths-layers is re-asked by 12180c2c5f. The T5 fission unit's 'gravity only attracts' is not re-asked. Leaks within the unit: 7a88b64f2f's stem gives 23fc0a39a9's key; f529bba975's stem kills a choice in 17c02ecb60; 345cd9717c's context gives 79ae5124e3's key. Fixes are given at each. Scope coverage is complete: the ellipse, fastest when nearest, the farther the longer, the inverse square, Neptune and Cavendish. 'Twice as far, a quarter of the pull' appears only in a context, which is fine since 79ae5124e3 keys the square."}

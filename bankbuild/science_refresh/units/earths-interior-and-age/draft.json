@@ -4,7 +4,7 @@
   {
    "tier": 5,
    "topic": "earths-interior-and-age",
-   "question": "Andrija Mohorovičić gathered the seismograph records of an earthquake that shook the Kupa Valley, in Croatia, on 8 October 1909, from 41 stations. Out to about 240 kilometres from the quake, each station recorded a single P-wave, the fastest kind of earthquake wave. Farther out, two P-waves arrived, and the first of them was one that no nearer station had picked up. What did Mohorovičić conclude?",
+   "question": "Andrija Mohorovičić gathered the seismograph records of an earthquake that shook the Kupa Valley, in Croatia, on 8 October 1909, from 41 stations. Out to about 240 kilometres from the quake, each station recorded a single P-wave, the fastest kind of earthquake wave. Farther out, many stations recorded two P-waves, and the first to arrive was one that no nearer station had picked up. What did Mohorovičić conclude?",
    "answer": "Below a certain depth, rock carries the waves faster",
    "choices": [
     "Below a certain depth, rock carries the waves faster",
@@ -13,7 +13,10 @@
     "Strong waves outrun weak ones over long distances"
    ],
    "context": "Waves that dipped into the faster rock below ran along it and climbed back up, and beyond about 240 kilometres they overtook the waves that stayed in the shallower rock, though their route was longer; Mohorovičić showed that the two were one kind of wave arriving by different paths. Two shocks would have sent two waves to the nearer stations too. He put the boundary about 54 kilometres down, and it is now called the Mohorovičić discontinuity, or Moho: the base of the crust.",
-   "facts": ["F4", "F5"],
+   "facts": [
+    "F4",
+    "F5"
+   ],
    "grade_note": "Ninth-grade earth science teaches that seismic waves change speed and bend at boundaries inside Earth, and the Moho is the first boundary they revealed."
   },
   {
@@ -25,10 +28,13 @@
     "A liquid does not spring back when pushed sideways",
     "A liquid is too dense to be shaken from side to side",
     "A liquid is too hot to be shaken from side to side",
-    "A liquid's particles sit too far apart to pass it on"
+    "A liquid's particles sit too far apart to pass the wave on"
    ],
    "context": "An S-wave travels only through material that pushes back when it is sheared, as solid rock does; a liquid simply flows aside, so the wave dies out at the core's edge. A liquid does spring back when it is squeezed, which is why P-waves cross the outer core, though they slow down and bend where they enter it. The solid mantle just above the core is hot and dense, yet it carries S-waves.",
-   "facts": ["F1", "F2"],
+   "facts": [
+    "F1",
+    "F2"
+   ],
    "grade_note": "Ninth graders learn that S-waves cannot travel through liquid and that their shadow is the evidence for a liquid outer core; the reason a liquid stops them is what makes that evidence work."
   },
   {
@@ -42,14 +48,18 @@
     "A layer at the bottom of the mantle, where waves slow down",
     "A layer at the top of the core, where waves slow down"
    ],
-   "context": "P-waves that reach the inner core speed up, and the change bends some of them out into the shadow zone, where the Russian stations caught them. Lehmann held the inner core to be solid inside a liquid outer core, since a core solid all through would let S-waves cross it, and Beno Gutenberg, Charles Richter and Harold Jeffreys took up her idea within a few years. Studies of the whole Earth ringing after great earthquakes confirmed by 1971 that the inner core is solid.",
-   "facts": ["F2", "F6", "F7"],
+   "context": "P-waves that reach the inner core speed up, and the change bends some of them out into the shadow zone, where the Russian stations caught them. Lehmann held the inner core to be solid inside a liquid outer core, and Beno Gutenberg, Charles Richter and Harold Jeffreys took up her idea within a few years; a core solid all through could not explain why S-waves never cross it. Studies of the whole Earth ringing after great earthquakes confirmed by 1971 that the inner core is solid.",
+   "facts": [
+    "F2",
+    "F6",
+    "F7"
+   ],
    "grade_note": "Ninth-grade earth science tells Lehmann's inner core as the classic case of a few odd readings overturning a model of Earth's interior."
   },
   {
    "tier": 5,
    "topic": "earths-interior-and-age",
-   "question": "Harry Hess's idea of sea-floor spreading, published in 1962, says that new ocean floor forms along the mid-ocean ridges and moves slowly away on either side. The drilling ship Glomar Challenger put it to the test across the ridge in the South Atlantic in 1968 and 1969, at sites from near its crest to more than 1,600 kilometres away. At each site, scientists dated the fossils in the lowest mud, the layer resting on the sea floor's rock. Which result would have counted most against Hess?",
+   "question": "Harry Hess's idea of sea-floor spreading, published in 1962, says that new ocean floor forms along the mid-ocean ridges and moves slowly away on either side. The drilling ship Glomar Challenger tested it across the ridge in the South Atlantic in 1968 and 1969, at sites from near its crest to more than 1,600 kilometres away. At each site, scientists dated the fossils in the lowest mud, the layer resting on the sea floor's rock. Which result would have counted most against Hess?",
    "answer": "The lowest mud about the same age at every site",
    "choices": [
     "The lowest mud about the same age at every site",
@@ -57,8 +67,11 @@
     "The mud thin near the crest and thicker farther out",
     "The ages climbing at the same pace on both sides"
    ],
-   "context": "The first mud settles on new rock soon after it forms, so if the floor moves out from the crest, the lowest mud must be older the farther out it lies. It was: about 11 million years old at a site 191 kilometres out and more than 76 million at one 1,617 kilometres out, a spreading of about 2 centimetres a year, in step with the ages read from the sea floor's magnetic stripes. Mud of one age everywhere would have meant a sea floor made all at once.",
-   "facts": ["F8", "F9"],
+   "context": "The first mud settles on new rock soon after it forms, so if the floor moves out from the crest, the lowest mud must be older the farther out it lies. It was: about 11 million years old at a site 191 kilometres out and more than 76 million at one 1,617 kilometres out, the floor moving away at about 2 centimetres a year, in step with the ages read from the sea floor's magnetic stripes. Mud of one age everywhere would have meant a sea floor made all at once.",
+   "facts": [
+    "F8",
+    "F9"
+   ],
    "grade_note": "Ninth-grade earth science (NGSS HS-ESS1-5) has students use the ages of ocean crust to test plate motion, and the drilling cores were the direct test."
   },
   {
@@ -73,28 +86,35 @@
     "About 700 million years"
    ],
    "context": "Three lead atoms for every uranium atom left means a quarter of the uranium remains: half was gone after one half-life and half of the rest after a second, so two half-lives, about 1.4 billion years, have passed. Three lead atoms do not mean three half-lives, which would leave only an eighth, with seven lead atoms for every uranium atom. Because zircon starts with no lead, its clock begins at zero when the crystal forms.",
-   "facts": ["F11", "F12", "F13"],
+   "facts": [
+    "F11",
+    "F12",
+    "F13"
+   ],
    "grade_note": "Ninth graders (NGSS HS-ESS1-6) work out ages from half-lives, and a count of daughter atoms against parent atoms is the form real dating takes."
   },
   {
    "tier": 5,
    "topic": "earths-interior-and-age",
    "question": "A zircon can lie kilometres underground for billions of years, through great heat and crushing pressure, while the uranium in it decays into lead. Physicists have tested radioactive decay in great heat and under great pressure, and found that its rate hardly changes. Why is a radioactive clock so hard to disturb?",
-   "answer": "Decay goes on in the nucleus, which heat and pressure barely touch",
+   "answer": "Decay happens in the nucleus, which heat and pressure barely touch",
    "choices": [
-    "Decay goes on in the nucleus, which heat and pressure barely touch",
+    "Decay happens in the nucleus, which heat and pressure barely touch",
     "Decay is sped up by heat but slowed by pressure, so the two cancel",
     "Decay is shielded from heat by the crystal packed around each atom",
-    "Decay is far too slow a process for heat to hurry it any further"
+    "Decay is far too slow a process for heat to hurry it along"
    ],
    "context": "Heat, pressure and chemistry act on an atom's outer electrons, while the nucleus sits deep inside, buffered by them, so the decay rate stays fixed. Only decay that captures one of the atom's own electrons can shift, and then usually by less than 1 percent, so a clock that has lain in hot rock can still be trusted. The crystal matters for another reason: it keeps uranium and lead from being added or lost.",
-   "facts": ["F13", "F14"],
+   "facts": [
+    "F13",
+    "F14"
+   ],
    "grade_note": "Ninth-grade science contrasts nuclear change with chemical change, and a decay rate that does not change is the assumption every radiometric age rests on."
   },
   {
    "tier": 5,
    "topic": "earths-interior-and-age",
-   "question": "Lord Kelvin worked out Earth's age in 1862 as the time a hot young planet would need to cool to its present state, reckoning back from how fast rock grows warmer with depth. He put it at 20 to 400 million years, and later at only 20 to 40 million, far too short for the geologists. Pierre Curie and Albert Laborde then found, in 1903, that radium gives off enough heat to melt its own weight of ice in under an hour. Which of Kelvin's assumptions did that discovery undercut?",
+   "question": "Lord Kelvin worked out Earth's age in 1862 as the time a hot young planet would need to cool to its present state, reckoning back from how fast rock grows warmer with depth. He put it at 20 to 400 million years, and later at only 20 to 40 million. Pierre Curie and Albert Laborde found in 1903 that radium gives off enough heat to melt its own weight of ice in under an hour. Which of Kelvin's assumptions did that discovery undercut?",
    "answer": "That Earth makes no new heat of its own inside",
    "choices": [
     "That Earth makes no new heat of its own inside",
@@ -103,7 +123,12 @@
     "That Earth's rock is alike all the way down"
    ],
    "context": "Rocks hold radioactive uranium, thorium and potassium, which make about half the heat now flowing out of Earth, so the planet cools far more slowly than Kelvin's sum allowed. His other flaw, pointed out by John Perry in 1895, was the rigid interior: rock deep inside slowly flows, carrying heat upward far faster than still rock can conduct it, and modern assessments count that the larger error. Radioactivity also gave a better clock, and Bertram Boltwood's uranium-lead ages of 1907 ran, once refined, from 410 million to 2.2 billion years.",
-   "facts": ["F15", "F16", "F17", "F18"],
+   "facts": [
+    "F15",
+    "F16",
+    "F17",
+    "F18"
+   ],
    "grade_note": "Ninth-grade science teaches that a calculation is only as good as its assumptions, and Kelvin's cooling Earth is the famous case undone by a new discovery."
   },
   {
@@ -117,23 +142,32 @@
     "The meteorites broke away from Earth long ago",
     "Meteorites had sprinkled their lead over the sea floor"
    ],
-   "context": "Deep-sea mud was taken to stand for the lead of Earth as a whole, and lying on the meteorites' line meant that Earth's lead had been building up from the same start for the same length of time. The mud itself is young, and the meteorites are pieces of the early solar system, not of Earth, whose own oldest rocks are about 4 billion years old. Later work has moved Patterson's figure little: Earth's age is now given as 4.54 billion years, give or take 50 million.",
-   "facts": ["F20", "F21", "F22"],
+   "context": "Deep-sea mud was taken to stand for the lead of Earth as a whole, and lying on the meteorites' line meant that Earth's lead had been building up from the same start for the same length of time. The mud itself is young, and these meteorites are pieces of the early solar system, not of Earth, whose own oldest rocks are about 4 billion years old. Later work has moved Patterson's figure little: Earth's age is now given as 4.54 billion years, give or take 50 million.",
+   "facts": [
+    "F20",
+    "F21",
+    "F22"
+   ],
    "grade_note": "Ninth graders (NGSS HS-ESS1-6) learn that Earth's age comes from meteorites, and the shared lead line is how the meteorites' age was tied to Earth."
   },
   {
    "tier": 5,
    "topic": "earths-interior-and-age",
-   "question": "Lead from the air and dust of his laboratory kept spoiling Clair Patterson's measurements of meteorites until he built a clean room to keep it out. Robert Kehoe, chief medical adviser of the company that made the lead additive for petrol, held that lead in the human body is normal and that low levels do no harm. Patterson came to think that most of that lead was not natural at all. Which of his findings counted most against Kehoe?",
+   "question": "Lead from the air and dust of his laboratory kept spoiling Clair Patterson's lead measurements until he built a clean room to keep it out. Robert Kehoe, chief medical adviser of the company that made the lead additive for petrol, held that lead in the human body is normal and that low levels do no harm. Patterson came to think that most of that lead was not natural at all. Which of his findings counted most against Kehoe?",
    "answer": "Recent snow in Greenland held far more lead than ancient snow",
    "choices": [
     "Recent snow in Greenland held far more lead than ancient snow",
-    "Fresh snow in Greenland held lead brought down from the air",
-    "Lead turned up even in the hair on his own head",
-    "Meteorites and ancient rocks held lead of their own"
+    "Fresh snow in Greenland held lead that had fallen out of the air",
+    "Lead turned up even in the hair growing on his own head",
+    "Meteorites and the most ancient rocks held lead of their own"
    ],
    "context": "Snow piles up in yearly layers, so Greenland's ice keeps a dated record of the lead in the air, and it showed a rise of more than 200 times since before industry, climbing soon after lead was first added to petrol in the 1920s. Kehoe's laboratory was funded by General Motors, DuPont and his employer, the Ethyl Corporation, and Patterson was left off a national panel on airborne lead in 1971. The United States cut the lead in petrol from the 1970s and banned it for road vehicles in 1996, and Americans' average blood lead fell by more than three-quarters between 1976 and 1991.",
-   "facts": ["F19", "F24", "F25", "F26"],
+   "facts": [
+    "F19",
+    "F24",
+    "F25",
+    "F26"
+   ],
    "grade_note": "Ninth-grade science asks which evidence can tell two explanations apart, and the dated ice layers, a comparison across time, are what Kehoe's claim could not survive."
   }
  ]

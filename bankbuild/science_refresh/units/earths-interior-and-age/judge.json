@@ -1,0 +1,52 @@
+{"unit": "earths-interior-and-age",
+ "questions": {
+  "ad1c0cc312": {"verdict": "ok", "issues": []},
+  "52abdff309": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The three wrong choices share one frame ('too dense', 'too hot', 'too far apart'); the key alone breaks it ('does not spring back'), so a test-wise player can spot the odd one out without the physics. The distractors themselves are the right misconceptions (the hot, dense mantle carries S-waves, as the context says).",
+     "fix": "Mix the frames so the key does not stand alone, e.g. 'A liquid's great density smothers any sideways shaking', 'A liquid's heat breaks up any sideways shaking', 'A liquid's particles sit too far apart to pass the wave on', key unchanged."}
+   ]},
+  "2a38e5cffe": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "The choice is decided by a T2 fact, not by Lehmann's evidence. earths-layers (T2) teaches that Earth has a liquid outer core and a solid inner core; a 6th-grader who knows that picks 'A smaller core inside the core' at once, rules out 'solid all through' (the outer core is liquid) and the two 'layer' choices, and never uses the shadow-zone reasoning. The T5 part of the key, 'where waves travel faster', is shared with a wrong choice, so it decides nothing. The fact tested is the T2 fact in a T5 frame.",
+     "fix": "Make the T5 reasoning the discriminator: have both inner-core choices on the board and let speed decide. Stem: '...Earth's liquid outer core slows P-waves and bends them away from a wide shadow zone on the far side of the planet...'. Choices: 'A smaller core inside the core, where waves travel faster' (key), 'A smaller core inside the core, where waves slow down further', 'A layer at the bottom of the mantle, where waves travel faster', 'A layer at the top of the core, where waves slow down'. Knowing the layers narrows it to two; only seeing that the opposite of the outer core's slowing throws waves back into the zone picks the key."},
+    {"axis": "fact", "severity": "low",
+     "what": "Context: 'Lehmann held the inner core to be solid'. Several histories say her 1936 paper argued only for a distinct inner core with faster P-waves, and that its solidity was proposed later (Francis Birch, 1940) and confirmed in 1971. Fact-checker to confirm.",
+     "fix": "If unconfirmed: 'Lehmann's inner core is now known to be solid: studies of the whole Earth ringing after great earthquakes confirmed it by 1971.'"}
+   ]},
+  "03b05a0831": {"verdict": "ok", "issues": []},
+  "91ced26233": {"verdict": "ok", "issues": []},
+  "5c954521d4": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Decay is sped up by heat but slowed by pressure, so the two cancel' is ruled out by the stem, which says decay was tested in great heat and found hardly to change; it is also a contrived mechanism no student brings. Only three choices are live, and the key is the only one naming a part of the atom.",
+     "fix": "Replace it with the real nucleus-versus-electrons confusion, parallel to the key: 'Decay happens in the outer electrons, which the crystal holds firmly in place'."}
+   ]},
+  "8afe4a3eb3": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The stem gives a laboratory fact (radium melts ice) but never says that such atoms lie in Earth's rocks, so the step from radium on a bench to heat made inside Earth is left unstated; the 'gives off heat' / 'makes no new heat' echo then does much of the work.",
+     "fix": "Add one clause that gives the link without the answer: '...found in 1903 that radium, which ordinary rocks hold in tiny amounts, gives off enough heat...'."}
+   ]},
+  "09ef5130b7": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The meteorites broke away from Earth long ago' fits the stated evidence: pieces of Earth would share its lead history and fall on the same line, so only outside knowledge (meteorites come from the asteroid belt) rules it out, and a sharp student can defend it as what the line shows. The stem also never says why deep-sea mud stands for Earth, the one step the reasoning needs (it is only in the context).",
+     "fix": "Stem: '...He also measured the lead in mud from the deep-sea floor, made of rock worn from many lands, and it fell on the very same line...'. Replace the 'broke away' choice with a graph-reading mistake the evidence does rule out: 'Earth and the meteorites hold the same amount of lead'."}
+   ]},
+  "809fe18dce": {"verdict": "revise",
+   "issues": [
+    {"axis": "stance", "severity": "medium",
+     "what": "Lane and stance: the context drifts from how Patterson knew into institution and policy (Kehoe's lab funded by General Motors, DuPont and Ethyl; Patterson left off a 1971 panel; the cuts from the 1970s and the 1996 ban). That is history-bank material and capture-stance material, and this unit carries no framing_note tagging it for stance. The stem itself stays on the evidence, as it should.",
+     "fix": "Context: keep the dated-layers reasoning and cut the funding, panel and ban lines. If an outcome is kept, keep it as evidence only: 'When lead left petrol, the lead in Americans' blood fell by more than three-quarters, as his account of its source predicted.'"},
+    {"axis": "clarity", "severity": "low",
+     "what": "'most of that lead' has two possible antecedents: the lab's lead of the first sentence, or the lead in the human body of Kehoe's sentence.",
+     "fix": "'Patterson came to think that most of the lead in the air, and in people, was not natural at all.'"},
+    {"axis": "fact", "severity": "low",
+     "what": "Context says the Greenland lead climbed 'soon after lead was first added to petrol in the 1920s', but facts.md lists the rise's timing ('after 1940' or '1950 to 1965') as not pinned down. Fact-checker to confirm.",
+     "fix": "If unconfirmed: '...and it showed a rise of more than 200 times since before industry, steepest in the decades after lead was added to petrol.'"}
+   ]}
+ },
+ "unit_notes": "Nine questions on nine different facts (target 10). The scope is covered: the Moho as a speed change (ad1c), the S-wave shadow and why a liquid stops S-waves (52ab), Lehmann (2a38), drill-core ages across the ridge (03b0), the half-life clock (91ce, 5c95), Patterson's meteorite line (09ef); Kelvin (8afe) and the lead story (809f) are how-we-know extras. Overlap with the finals: 52ab states the T2 earths-layers fact (liquid outer core) and asks the deeper why, which is right; 03b0 builds on T3 plates-at-work and wegener (new floor at ridges, the stripes) with the drilling test, which is right; 09ef does not re-ask reading-deep-time's 4.6 billion; only 2a38 re-asks a lower tier (the T2 inner core), fixed above. Lanes: named places (Kupa Valley, Croatia, New Zealand, Russia, the South Atlantic, Greenland) are setting only and none is tested; 91ce's arithmetic (two half-lives of 700 million) is easy in the head; the only politics is in 809f's context. A tenth question is open for G9.E4's 'Earth's oldest minerals' line: why Earth's own rocks cannot date its birth (F22: plate tectonics, weathering and melting remade them; the oldest grains are 4.4 billion years old), which is HS-ESS1-6 and not yet asked."}

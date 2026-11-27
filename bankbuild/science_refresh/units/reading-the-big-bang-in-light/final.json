@@ -1,0 +1,221 @@
+{
+ "unit": "reading-the-big-bang-in-light",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "reading-the-big-bang-in-light",
+   "question": "Astronomers measure a galaxy's red shift from the dark lines in its spectrum, each of which marks one exact colour of light. In the light of one distant galaxy, every line has moved toward red, and every wave reaches Earth twice as long as when it set out. What do astronomers read from that doubling?",
+   "answer": "Distances between galaxies have doubled since then",
+   "choices": [
+    "Distances between galaxies have doubled since then",
+    "The galaxy itself has swelled to twice its size since then",
+    "The light has slowed to half its speed on the trip",
+    "Dust along the way has reddened the galaxy's light"
+   ],
+   "context": "Light's waves stretch with space itself as the universe expands, so waves twice as long mean that the distances between galaxies have doubled while the light was travelling: the universe was then half its present size. A galaxy itself does not swell, because its own gravity holds it together, and light's speed in empty space never changes. Dust reddens a galaxy's colour by soaking up more blue light than red, but it cannot move the lines; only a true red shift moves them.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "NGSS HS-ESS1-2 has ninth graders explain the red shift as evidence that the universe is expanding, and the stretch of the light is how that evidence is read."
+  },
+  {
+   "tier": 5,
+   "topic": "reading-the-big-bang-in-light",
+   "question": "Ralph Alpher and Robert Herman worked out in 1948 that the hot, dense young universe of George Gamow's theory should have left its heat behind as a faint glow, reaching Earth from every direction. That glow set out from gas thousands of degrees hot, yet they put it now at only about 5 degrees above absolute zero. Why should it be so cold by now?",
+   "answer": "The universe's expansion has stretched its light",
+   "choices": [
+    "The universe's expansion has stretched its light",
+    "Stars have soaked up most of its heat since then",
+    "The gas that sent it out has cooled down since then",
+    "Its heat has leaked out past the universe's edge"
+   ],
+   "context": "The expansion has stretched the glow's waves to about 1,100 times their length since it set out, some 380,000 years after the beginning, so light from gas at about 3,000 degrees above absolute zero now arrives as faint microwaves, at about 2.7 degrees. Once it set out, the glow crossed space freely, so neither the stars nor the gas's later cooling set its warmth, and there is no sign that the universe has an edge. Arno Penzias and Robert Wilson found the glow in 1964, near enough to the forecast, which had drawn almost no notice.",
+   "facts": [
+    "F5",
+    "F6",
+    "F9",
+    "F31"
+   ],
+   "grade_note": "HS-ESS1-2 teaches the background glow as the Big Bang's remnant radiation, and Alpher and Herman's reason for forecasting it so cold is the expansion of space that ninth graders learn to read in light."
+  },
+  {
+   "tier": 5,
+   "topic": "reading-the-big-bang-in-light",
+   "question": "Fred Hoyle and his allies, who never accepted the Big Bang, held that the background glow was starlight soaked up and given off again by specks of dust in space. John Mather's team on the Cosmic Background Explorer (COBE) satellite, launched in 1989, measured the glow's brightness at each wavelength. It fitted almost perfectly the curve of a blackbody, the smooth glow that a perfect absorber of light gives off by its heat alone. Why did that fit count against the dust?",
+   "answer": "Dust at many temperatures would blend many curves",
+   "choices": [
+    "Dust at many temperatures would blend many curves",
+    "Dust gives off no light at the glow's wavelengths",
+    "Dust would glow in bright lines, not a smooth curve",
+    "Starlight passes through dust without warming it"
+   ],
+   "context": "A blackbody's curve is set by its temperature alone, whatever it is made of, and the glow matched one curve at 2.725 degrees above absolute zero to within 50 parts in a million; specks of dust scattered near and far, some warmer and some cooler, would add up to a blend that no single curve fits. Dust does soak up starlight, warming to between 10 and 100 degrees above absolute zero, and gives off a smooth glow at these wavelengths, so it fails for none of the other reasons. The Big Bang explains the pure curve as light that was once in balance with the hot, dense gas of the young universe.",
+   "facts": [
+    "F8",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F32"
+   ],
+   "grade_note": "Ninth graders learn to ask which result would tell two explanations apart, and COBE's curve is the measurement that settled the background glow's origin."
+  },
+  {
+   "tier": 5,
+   "topic": "reading-the-big-bang-in-light",
+   "question": "George Smoot's team used another instrument on the Cosmic Background Explorer satellite to compare the background glow's warmth in every direction across the sky. In April 1992 the team reported spots a little warmer or cooler than the average, by about one part in 100,000. Theorists had predicted such ripples, and astronomers had hunted for them for 27 years. Why did theorists expect the glow to have ripples at all?",
+   "answer": "Galaxies had to grow from slightly denser patches",
+   "choices": [
+    "Galaxies had to grow from slightly denser patches",
+    "The spot where the Big Bang began had to stay warmest",
+    "Starlight had to warm it where galaxies lie thickest",
+    "Separate sources across space had to give it off"
+   ],
+   "context": "The spots mark places where the young universe was a little denser or thinner than average, and over billions of years gravity drew the denser patches together into galaxies and clusters of galaxies; a perfectly even glow would have left them nothing to grow from. The Big Bang has no centre, the glow set out some 380,000 years after the beginning, long before the first stars, and it is far too even to come from separate sources. John Mather and Smoot shared the 2006 Nobel Prize in Physics for the glow's curve and its ripples.",
+   "facts": [
+    "F9",
+    "F12",
+    "F14",
+    "F15"
+   ],
+   "grade_note": "HS-ESS1-2 teaches the cosmic microwave background as the Big Bang's remnant radiation, and the COBE ripples are what tie that glow to the galaxies that grew from it."
+  },
+  {
+   "tier": 5,
+   "topic": "reading-the-big-bang-in-light",
+   "question": "Calculations of the universe's first few minutes predict that its ordinary matter came out about three-quarters hydrogen and one-quarter helium by mass. Astronomers test the prediction in glowing clouds of gas in small galaxies that hold very few elements heavier than helium. Why do they choose such clouds?",
+   "answer": "Stars have added the least helium to them",
+   "choices": [
+    "Stars have added the least helium to them",
+    "Their weak gravity cannot pull in helium from outside",
+    "Heavy elements would hide the light of helium",
+    "Their helium has had the least time to leak away"
+   ],
+   "context": "Stars burn hydrogen into helium and also forge the heavier elements, so gas worked over by many stars carries extra helium, while clouds with almost no heavy elements are nearly as the first minutes left them. There the helium comes out near 24.5 percent by mass, close to the prediction, and the first minutes made about ten times more helium than all the stars since. Fred Hoyle himself, with Roger Tayler in 1964, argued that the universe holds too much helium for its stars to have made.",
+   "facts": [
+    "F17",
+    "F18",
+    "F19",
+    "F20"
+   ],
+   "grade_note": "HS-ESS1-2 names the three-quarters hydrogen, one-quarter helium match as evidence for the Big Bang, and choosing gas that stars have least changed is a ninth-grade lesson in ruling out another source."
+  },
+  {
+   "tier": 5,
+   "topic": "reading-the-big-bang-in-light",
+   "question": "Every star, planet and cloud of gas that astronomers have ever seen is made of ordinary matter, the stuff of atoms. The Wilkinson Microwave Anisotropy Probe (WMAP), launched in 2001, and the European Planck satellite after it mapped the ripples in the background glow far more finely than before. How strong the ripples are at each size depends on what the universe is made of. How much of it does ordinary matter make up?",
+   "answer": "About a twentieth",
+   "choices": [
+    "About a twentieth",
+    "About a quarter",
+    "About half",
+    "Nearly all of it"
+   ],
+   "context": "Planck's map of 2013 put ordinary matter, the atoms, at about 4.9 percent, dark matter at about 26.8 percent and dark energy at about 68.3 percent, and the universe's age at 13.8 billion years; WMAP had found much the same. Dark matter's pull and dark energy's push show in what they do, but neither has been identified, so about 95 percent of the universe is stuff whose nature no one yet knows. The data hold an honest puzzle too: the expansion rate worked out from the glow disagrees with the rate measured from nearby galaxies.",
+   "facts": [
+    "F16",
+    "F24",
+    "F27"
+   ],
+   "grade_note": "Ninth-grade earth and space science teaches that maps of the background glow measure what the universe is made of, and that ordinary matter is only a small share of it."
+  },
+  {
+   "tier": 5,
+   "topic": "reading-the-big-bang-in-light",
+   "question": "Fritz Zwicky worked out in 1933, from the shifts in their light that Edwin Hubble and Milton Humason had measured, how fast the galaxies of the Coma Cluster, a swarm of more than a thousand, move about inside it. They darted about at some 1,000 kilometres a second, far faster than the gravity of all the cluster's stars could hold together. What did Zwicky conclude?",
+   "answer": "Far more matter is there than can be seen",
+   "choices": [
+    "Far more matter is there than can be seen",
+    "The cluster is flying apart and will scatter",
+    "Gravity pulls harder over such vast distances",
+    "The measured speeds must be far too high"
+   ],
+   "context": "Zwicky called the unseen stuff dunkle Materie, dark matter, and his idea was overlooked for decades. Modern studies confirm his inference and put dark matter at about nine-tenths of the cluster's mass, though what it is remains unknown. A few physicists still test a rival idea, that gravity itself works differently where its pull is very weak.",
+   "facts": [
+    "F21",
+    "F24",
+    "F28"
+   ],
+   "grade_note": "Ninth graders reason from measured motion to the mass that gravity needs, and Zwicky's cluster is the first evidence for dark matter, an honest open question."
+  },
+  {
+   "tier": 5,
+   "topic": "reading-the-big-bang-in-light",
+   "question": "Vera Rubin and Kent Ford measured how fast glowing clouds of gas circle the centre of the Andromeda Galaxy, out to its edges, and reported in 1970. Around the Sun, which holds almost all of the Solar System's mass, Neptune circles far more slowly than Mercury. In Andromeda the outer clouds circle about as fast as the inner ones. What did that show about the galaxy's mass?",
+   "answer": "Much of it lies far out, where little light shines",
+   "choices": [
+    "Much of it lies far out, where little light shines",
+    "Nearly all of it sits in the bright centre",
+    "It is spread out through the disk just as its starlight is",
+    "There is less of it than its starlight suggests"
+   ],
+   "context": "If most of the mass sat in the bright centre, or were spread out as the starlight is, the outer clouds would circle more slowly, as Neptune does; keeping their speed means the mass inside their orbits keeps growing outward, so the galaxy must sit in a vast halo of unseen matter, five to ten times the mass that can be seen. Rubin and others found the same flat curves in galaxy after galaxy, 21 spirals in one study of 1980. Rubin herself did not rule out other explanations, and what dark matter is remains unknown: no detector has yet confirmed a particle of it.",
+   "facts": [
+    "F22",
+    "F23",
+    "F24",
+    "F29"
+   ],
+   "grade_note": "Ninth graders compare an observation with what a model predicts, and Rubin's flat rotation curves are the classic case where the mismatch revealed unseen mass."
+  },
+  {
+   "tier": 5,
+   "topic": "reading-the-big-bang-in-light",
+   "question": "A Type Ia supernova, the blast of one kind of exploding star, peaks at nearly the same brightness every time, so how bright one looks shows how far away it is. Saul Perlmutter's team, and a rival team with Brian Schmidt and Adam Riess, measured distant ones, expecting gravity to be slowing the universe's expansion. In 1998 both teams found the distant supernovae fainter than expected. What did they conclude?",
+   "answer": "The expansion has been speeding up",
+   "choices": [
+    "The expansion has been speeding up",
+    "The expansion has been slowing even faster",
+    "Dust between the galaxies had dimmed them",
+    "Such stars exploded more dimly long ago"
+   ],
+   "context": "Fainter meant farther: at the same red shift, the light had been travelling longer than a slowing expansion allows, so the universe grew more slowly long ago than it does now, and the expansion has been speeding up for the last 5 or 6 billion years. Astronomers correct for dust by the way it reddens light as it dims it, later studies found no strong sign that such stars were dimmer long ago, and maps of galaxies and of the background glow have since given the same answer. Perlmutter, Schmidt and Riess shared the 2011 Nobel Prize in Physics, and the cause was named dark energy, but what it is, no one yet knows.",
+   "facts": [
+    "F25",
+    "F26",
+    "F27",
+    "F30"
+   ],
+   "grade_note": "Ninth-grade science teaches reading distance from a standard candle's brightness, and the 1998 supernovae are the evidence that the expansion is speeding up, with its cause still open."
+  }
+ ],
+ "revised": {
+  "136ae40538": {
+   "old_hash": "136ae40538",
+   "why": "Judge (medium, tell): 'racing through space at twice light's speed' broke the rule nearly every 9th grader holds and was dead on sight. It is replaced by the judge's classic misreading of 'everything expands', the galaxy itself swelling (wrong: bound systems such as galaxies do not expand; F2). The context answers the new choice instead of the dropped one. Stem and key unchanged."
+  },
+  "a07aded376": {
+   "old_hash": "b7430dd206",
+   "why": "Judge (high, tell and duplicate): the key restated the stem's 1948-then-1964 order, and 'made before it was found' duplicated the-periodic-tables-patterns' Mendeleev key. Re-keyed, as the judge proposed and the lead asked, on a different fact this unit owns: what Alpher and Herman reasoned, that the expansion has stretched the glow's light so it is now only a few degrees above absolute zero (F5, F31). Wrong choices: stars soaking up its heat (it has streamed freely since it set out), its source cooling (the gas no longer sets its warmth), and heat leaking past an edge (no evidence of one; F31). The stem says 'reaching Earth from every direction', not 'filling all of space', so the edge choice stays live. The 1964 find and the forecast's neglect stay in the context. The stem is kept apart from 136ae40538's (that one reads a galaxy's lines, this one the glow's cold), and this context does not say that waves stretch by the same factor as distances, 136ae40538's key."
+  },
+  "4aa4ec1179": {
+   "old_hash": "50712b1636",
+   "why": "Judge (medium, tell): the gloss 'a body at one single temperature' handed over the key's contrast with 'many temperatures'. The blackbody is now glossed without temperature, as 'the smooth glow that a perfect absorber of light gives off by its heat alone' (F32), and 'set by its temperature alone, whatever it is made of' moves to the context. The stem is also trimmed a little. Key and choices unchanged."
+  },
+  "2790d62e6b": {
+   "old_hash": "2790d62e6b",
+   "why": "Judge (low, tell): 'They lie nearest the spot where the Big Bang began' repeated the no-centre misconception of 373909775f and was dead after T4. Replaced by the judge's 'Their weak gravity cannot pull in helium from outside', which the stem's 'small galaxies' keeps live; it is not why such clouds are chosen (F19). Stem, key and context unchanged. The sun judge's note that this stem's 'three-quarters hydrogen' helps how-the-sun-shines 818d5aace5 is left alone: the stem's shares are the HS-ESS1-2 line itself, and any wording that says the first minutes made hydrogen gives the same help."
+  },
+  "6394b4ec9e": {
+   "old_hash": "35737fa5b0",
+   "why": "Judge (low, fact): 'made of atoms' was loose (neutron stars are not), and Planck's 4.9 percent is ordinary matter in every form. The stem now says 'ordinary matter, the stuff of atoms' and asks how much of the universe ordinary matter makes up, as the judge suggested. Key, choices and context unchanged."
+  },
+  "32ae2fe50c": {
+   "old_hash": "c6027b3fe8",
+   "why": "Fact-check (error): Zwicky did not measure the shifts; he used Hubble and Humason's 1931 red shifts (F28). The stem now says he 'worked out in 1933, from the shifts in their light that Edwin Hubble and Milton Humason had measured, how fast...', in the lead's words, and the wrong choice 'His measured speeds must be far too high' becomes 'The measured speeds must be far too high'. Judge (low, tell): 'the cluster's glowing stars' pointed at the key's 'gives off light'; 'glowing' is cut, and the key now reads 'than can be seen' (same fact), so it no longer shares 'light' with the stem's 'shifts in their light'. Context unchanged."
+  },
+  "a653e56fb5": {
+   "old_hash": "85d264f76e",
+   "why": "Fact-check (error): the context said 'the pull keeps growing outward'; it is the mass inside the orbits that keeps growing (F29), and the context now says so in the lead's words. Fact-check (error, minor): the 1970 survey measured glowing gas, not stars; the stem now says 'glowing clouds of gas' and 'the outer clouds' (F29). Judge (medium, tell): the bright-centre and black-hole choices were one idea, both killed by the Neptune comparison; the black hole is replaced by the expectation Rubin's measurements tested, 'It is spread out through the disk just as its starlight is'. The stem says 'out to its edges', not 'out to its faint edges', so the key's 'where little light shines' no longer echoes it. Key unchanged."
+  },
+  "9835f2ea81": {
+   "old_hash": "9835f2ea81",
+   "why": "Fact-check (error): the context said space had 'stretched more since the light set out than a slowing expansion allows', but that stretch is the measured red shift, the same in both models. It now says, in the lead's words, that at the same red shift the light had been travelling longer than a slowing expansion allows (F30). Stem, key and choices unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

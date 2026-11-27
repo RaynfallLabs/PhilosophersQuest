@@ -1,0 +1,223 @@
+{
+ "unit": "keplers-laws-and-newtons-gravity",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "keplers-laws-and-newtons-gravity",
+   "question": "Johannes Kepler's best model of Mars fit almost every one of Tycho Brahe's sightings of the planet. Yet it missed some of them by eight arcminutes, about a quarter of the full Moon's width. Kepler threw the model out rather than let so small a gap pass. Why would he not accept the gap?",
+   "answer": "Tycho's own errors were far smaller than the gap",
+   "choices": [
+    "Tycho's own errors were far smaller than the gap",
+    "Ptolemy's old circles had missed by less than that",
+    "Tycho had checked every sighting through a telescope",
+    "Galileo's telescope had shown the same gap"
+   ],
+   "context": "Tycho, the last great astronomer to work without a telescope, fixed the planets' places to within about one or two arcminutes, so a miss of eight had to be the model's fault, not his; Kepler wrote that 'these eight minutes alone will lead us along a path to the reform of the whole of Astronomy.' Tables built on Ptolemy's circles had erred by more than 30 arcminutes, and Galileo first turned a telescope on the sky late in 1609, the year Kepler's Astronomia Nova came out.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F6",
+    "F7"
+   ],
+   "grade_note": "Ninth-grade science teaches that a result is judged against the uncertainty of the measurement, and Kepler's eight arcminutes is the classic case of a small, real mismatch overturning a model."
+  },
+  {
+   "tier": 5,
+   "topic": "keplers-laws-and-newtons-gravity",
+   "question": "Johannes Kepler spent years on Tycho Brahe's sightings of Mars, hunting for the true shape of the planet's path round the Sun. The shape he settled on, which he set out in his book Astronomia Nova in 1609, turned out to fit every planet. What did Kepler find?",
+   "answer": "An ellipse, with the Sun off its centre",
+   "choices": [
+    "An ellipse, with the Sun off its centre",
+    "An ellipse, with the Sun at its centre",
+    "A circle, with the Sun off its centre",
+    "An egg shape, with the Sun near its broad end"
+   ],
+   "context": "Kepler's first law: each planet moves on an ellipse with the Sun at one focus, one of two points that lie off the centre along the ellipse's long axis. Kepler tried an off-centre circle and an egg shape first, and each missed Tycho's sightings by about eight arcminutes, the two in opposite directions. The planets' ellipses are nearly round, so even Mars's path, drawn to scale, would look almost like a circle with the Sun a little off centre.",
+   "facts": [
+    "F3",
+    "F4",
+    "F5",
+    "F8"
+   ],
+   "grade_note": "Kepler's first law is the high-school statement of how planets orbit (NGSS HS-ESS1-4), and the Sun's place at a focus rather than the centre is the part students most often get wrong."
+  },
+  {
+   "tier": 5,
+   "topic": "keplers-laws-and-newtons-gravity",
+   "question": "In the Northern Hemisphere, winter runs from the December solstice to the March equinox and lasts about 89 days. Summer, from the June solstice to the September equinox, lasts about 94. Earth passes nearest the Sun in early January. Why is the northern winter the shorter season?",
+   "answer": "Earth moves faster along its path when nearer the Sun",
+   "choices": [
+    "Earth moves faster along its path when nearer the Sun",
+    "Earth spins faster on its axis when nearer the Sun",
+    "Earth's tilt shortens the season tipped away from the Sun",
+    "The winter season takes in February, the calendar's shortest month"
+   ],
+   "context": "By Kepler's second law the line from the Sun to a planet sweeps out equal areas in equal times, so a planet moves fastest when nearest the Sun: Earth, about 147 million kilometres away in early January, crosses its winter stretch of orbit a few days quicker than its summer stretch, when it is about 152 million kilometres away. The tilt makes the seasons but not this difference, since in the south, where winter falls between June and September, winter is the longest season. Earth's spin hardly changes through the year, and the solstice and the equinox are set by Earth's place on its path, however the calendar cuts up its months.",
+   "facts": [
+    "F9",
+    "F10",
+    "F31",
+    "F32"
+   ],
+   "grade_note": "Kepler's second law (fastest when nearest the Sun) is high-school content, and the uneven seasons are its everyday evidence, there on any calendar."
+  },
+  {
+   "tier": 5,
+   "topic": "keplers-laws-and-newtons-gravity",
+   "question": "Saturn lies about ten times as far from the Sun as Earth does. Yet one trip round the Sun takes Saturn about 29 of Earth's years, not 10. Why does Saturn take so long?",
+   "answer": "It moves more slowly, as the pull out there is weaker",
+   "choices": [
+    "It moves more slowly, as the pull out there is weaker",
+    "It moves more slowly, as its great mass holds it back",
+    "It moves as fast as Earth, but on a far longer oval",
+    "It moves as fast as Earth, but winds along in small loops"
+   ],
+   "context": "Kepler's third law says the farther out a planet lies, the longer its year, and the year grows faster than the distance because the planet also moves more slowly: Saturn travels about 9.7 kilometres a second, a third of Earth's 29.8, on a path nearly as round as Earth's and tilted only 2.5 degrees from it. Newton explained why: the Sun's pull weakens with distance, and so weak a pull holds a planet on its curved path only at a slower speed. The small loops called epicycles belonged to the old models of Ptolemy and Copernicus, not to any planet's real path round the Sun.",
+   "facts": [
+    "F6",
+    "F11",
+    "F12",
+    "F18"
+   ],
+   "grade_note": "Kepler's third law in words (farther out, longer year) is in the high-school standards, and tracing the outer planet's slower speed to the Sun's weaker pull out there goes a step past the 7th-grade fact that the pull weakens with distance."
+  },
+  {
+   "tier": 5,
+   "topic": "keplers-laws-and-newtons-gravity",
+   "question": "Isaac Newton compared the Moon with a falling body, such as an apple. The Moon lies about 60 times as far from Earth's centre as the apple does. In each second it curves toward Earth, away from a straight path, by only about 1/3,600 of the distance the apple drops in its first second. What does that show about Earth's pull?",
+   "answer": "It weakens with the square of the distance",
+   "choices": [
+    "It weakens with the square of the distance",
+    "It weakens in step with the distance",
+    "It weakens with the cube of the distance",
+    "It weakens with the square root of the distance"
+   ],
+   "context": "Sixty times sixty is 3,600, so a pull that weakens with the square of the distance is 1/3,600 as strong at the Moon as at the ground, just what the Moon's fall of about 1.4 millimetres a second shows beside the apple's 4.9 metres. So twice as far from any mass its pull is a quarter as strong, and the pull that drops an apple is the same one that holds the Moon on its path. A pull weakening in step with the distance would leave a sixtieth of its strength at the Moon, sixty times too much.",
+   "facts": [
+    "F13",
+    "F14"
+   ],
+   "grade_note": "The inverse-square law of gravitation is in the high-school standards (NGSS HS-PS2-4), and Newton's Moon test is the standard evidence for it."
+  },
+  {
+   "tier": 5,
+   "topic": "keplers-laws-and-newtons-gravity",
+   "question": "Jupiter holds more than 300 times as much mass as Earth. In his Principia, Isaac Newton used his law of gravity and astronomers' sightings to work out Jupiter's mass as a share of the Sun's. What did he use to weigh Jupiter?",
+   "answer": "How fast its moons circle it, at their distances",
+   "choices": [
+    "How fast its moons circle it, at their distances",
+    "How fast it circles the Sun, at its distance",
+    "How wide it looks, at its distance from Earth",
+    "How bright it shines, at its distance from the Sun"
+   ],
+   "context": "The stronger a planet's pull, the faster a moon at a given distance must go round to stay in orbit, so the four large moons Galileo found in 1610 gave Newton a Jupiter of about a thousandth of the Sun's mass, close to today's figure. A planet's own trip round the Sun says almost nothing of its mass: the Jupiter trojans, asteroids tiny beside Jupiter, share its path and take the same 12 years. Size and brightness show only how big and how bright a planet looks, not how much matter it holds.",
+   "facts": [
+    "F7",
+    "F17",
+    "F18"
+   ],
+   "grade_note": "High-school courses use Newton's law to predict the orbits of moons (NGSS HS-ESS1-4), and weighing a planet by its moons shows what the law can measure."
+  },
+  {
+   "tier": 5,
+   "topic": "keplers-laws-and-newtons-gravity",
+   "question": "Halley's comet took over a year longer to come round between 1531 and 1607 than between 1607 and 1682. Before its next return, Alexis Clairaut and two fellow mathematicians in Paris worked out that it would be held back by about 618 days, and it swung past the Sun on 13 March 1759, about a month from their date. What had they reckoned would hold it back?",
+   "answer": "The pull of Jupiter and Saturn as it passed them",
+   "choices": [
+    "The pull of Jupiter and Saturn as it passed them",
+    "The drag of the thin gas lying between the planets",
+    "The push of sunlight on its long, glowing tail",
+    "The loss of the ice it boils off near the Sun"
+   ],
+   "context": "Newton's law says every mass pulls on every other, so the comet feels Jupiter and Saturn as well as the Sun: Halley had blamed its uneven laps on those two planets, and Clairaut's team worked out that their pull would delay it by 618 days. Its arrival close to their date was one of the first great tests of Newton's law. Sunlight pushes a comet's tail away from the Sun, and the jets of gas from its ice shift its timing by only about four days.",
+   "facts": [
+    "F13",
+    "F19",
+    "F20"
+   ],
+   "grade_note": "High-school standards ask students to predict orbits from Newton's law (NGSS HS-ESS1-4), and the comet's late return in 1759 is a classic successful prediction that needed the planets' pull as well as the Sun's."
+  },
+  {
+   "tier": 5,
+   "topic": "keplers-laws-and-newtons-gravity",
+   "question": "Uranus kept drifting off the path that Newton's law of gravity gave it, running ahead of its predicted place for years and then falling behind. Urbain Le Verrier, in Paris, worked out what was causing the drift. Johann Galle turned a telescope in Berlin to the spot Le Verrier gave him on 23 September 1846, and Le Verrier was proved right. What had Le Verrier worked out?",
+   "answer": "An unseen planet farther out was pulling on it",
+   "choices": [
+    "An unseen planet farther out was pulling on it",
+    "An unseen planet nearer the Sun was pulling on it",
+    "An unseen moon of its own was tugging at it",
+    "A passing comet had knocked it off course"
+   ],
+   "context": "From the drift alone Le Verrier worked out where an unseen planet beyond Uranus had to be, as John Couch Adams did separately in England, and that night Galle and his assistant Heinrich d'Arrest found Neptune less than a degree from Le Verrier's spot. Some astronomers had wondered whether Newton's law failed so far from the Sun; instead the law had led to a new planet, showing that it held even at the edge of the known solar system.",
+   "facts": [
+    "F21",
+    "F22",
+    "F23"
+   ],
+   "grade_note": "Ninth-grade science asks how a law is tested by its predictions, and Neptune, found where the law said it must be, is the standard example."
+  },
+  {
+   "tier": 5,
+   "topic": "keplers-laws-and-newtons-gravity",
+   "question": "Henry Cavendish hung a rod nearly 2 metres long from a thin wire, with a small lead ball at each end, and set a lead ball of about 158 kilograms beside each small one. From how far the wire twisted he measured how hard each big ball pulled its small ball sideways. He set that beside the small ball's weight, which is Earth's pull on it. What did comparing the two pulls let him work out?",
+   "answer": "How many big balls' worth of mass Earth holds",
+   "choices": [
+    "How many big balls' worth of mass Earth holds",
+    "How many big balls would fill Earth's whole volume",
+    "How dense the rock of Earth's crust is",
+    "How much harder lead pulls than rock does"
+   ],
+   "context": "A body's pull grows with its mass alone, whatever it is made of, so once the distances were allowed for, the two pulls set Earth's mass beside the big ball's; Cavendish gave the result in 1798 as Earth's average density, about 5.5 times that of water (he printed 5.48), using Earth's known size. The rocks of the crust are only about 2.7 to 3 times as dense as water, so Earth's deep inside must be far denser, evidence for a heavy metal core, and no hollow Earth, such as Edmond Halley had suggested in 1692, could hold so much mass.",
+   "facts": [
+    "F13",
+    "F27",
+    "F28",
+    "F29",
+    "F30",
+    "F33",
+    "F34"
+   ],
+   "grade_note": "Ninth-grade science teaches how indirect measurements reveal Earth's interior, and Cavendish's balance, resting on the law of gravitation, weighed Earth against a lead ball; it built on the 7th-grade idea that more mass pulls harder, and followed the Schiehallion estimate of 1774."
+  }
+ ],
+ "revised": {
+  "2a0956d385": {
+   "old_hash": "f529bba975",
+   "why": "Judge low: the Copernicus choice defeated itself and all three wrong choices cited another astronomer while only the key spoke of measurement error. Replaced it with the misconception that Tycho used a telescope, and cut 'built on a circle' from the stem, which also ruled out the circle choice of 17c02ecb60 for a player who met this question first. Context drops the Copernicus line."
+  },
+  "c37e4df042": {
+   "old_hash": "c37e4df042",
+   "why": "Judge medium: 'the Sun's stronger pull holds Earth back' argued the wrong way. Replaced it with the calendar answer (February); the weak spin choice now reads 'when nearer the Sun', so the key is no longer the only choice using the stem's nearness. Context explains spin and the calendar (new facts F31, F32)."
+  },
+  "345cd9717c": {
+   "old_hash": "345cd9717c",
+   "why": "Judge medium: the key was the only choice about speed. Split speed and path two and two, with a new key giving the reason (the Sun's pull is weaker out there) against the heavy-planet misconception (F18). Context no longer says 'a hundredth', which gave away 79ae5124e3's key, nor names Kepler's ellipses, which gave away 17c02ecb60's."
+  },
+  "9d226e1661": {
+   "old_hash": "79ae5124e3",
+   "why": "Fact-check optional note: 'a falling apple' becomes 'a falling body, such as an apple', so the stem does not lean on the apple story."
+  },
+  "c27cbce1d1": {
+   "old_hash": "cc74511fe2",
+   "why": "Judge low: 'long before any spacecraft could fly past it' pointed at something moving near Jupiter; now 'used his law of gravity and astronomers' sightings'. Fact-check note: the context says a planet's own year tells 'almost nothing' of its mass."
+  },
+  "93b947050a": {
+   "old_hash": "23fc0a39a9",
+   "why": "Judge low: 'found that he was right' was ambiguous (Galle or Le Verrier); now 'Le Verrier was proved right', and the date no longer leads the sentence."
+  },
+  "15ff12d872": {
+   "old_hash": "12180c2c5f",
+   "why": "Judge high: the key (a dense inside) re-asked the T2 earths-layers fact that iron sank because it is denser than rock. Re-keyed on Cavendish's method, which no lower unit asks: comparing the big ball's pull with Earth's pull on the same ball weighs Earth in big balls. Wrong choices are the size-not-mass, crust-only and material misconceptions. Context gives the 5.5 (printed 5.48), the crust's 2.7 to 3, the heavy core and Halley's hollow Earth; grade note no longer calls it the first such clue (Schiehallion, 1774, came first; F33)."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "7a88b64f2f",
+   "question": "Urbain Le Verrier, whose sums had led to Neptune, found in 1859 that the point of Mercury's orbit nearest the Sun creeps round a little faster than Newton's law and the pulls of the other planets allow. He blamed unseen matter closer to the Sun, as an unseen planet had explained the drift of Uranus. What accounted for Mercury's extra creep in the end?",
+   "why": "Grade and scope (judge, medium): general relativity's account of Mercury's perihelion is beyond 9th-grade content and outside the unit's scope, and the lead did not accept the reach. Its stem also gave away 23fc0a39a9's key, and its Einstein key was the only famous name. The unit's scope is covered without it."
+  }
+ ]
+}

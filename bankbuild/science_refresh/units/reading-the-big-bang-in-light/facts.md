@@ -133,3 +133,20 @@ G1. NGSS HS-ESS1-2: "Construct an explanation of the Big Bang theory based on as
 - McKellar's cyanogen and Dicke's "Boys, we've been scooped" (not re-sourced; T4 already tells the find).
 - The Bullet Cluster and the neutrino-as-hot-dark-matter argument (sourced only in the old bank; left out).
 - The 2006 microkelvin figure as one part in 100,000 versus Wikipedia's "one part in 25,000" isotropy: the questions say "about one part in 100,000" from Grokipedia and Wikipedia's COBE page.
+
+## Added in revision (2026-11-27)
+
+F28. Zwicky did not measure the Coma galaxies' red shifts himself: he used "the redshifts of various galaxy clusters, as published by Edwin Hubble and Milton Humason in 1931", applied the virial theorem, and found a line-of-sight speed of about 1,000 km/s where the visible mass predicted about 80 km/s; "dark matter is present in much greater amount than luminous matter" (Bertone and Hooper, A History of Dark Matter). His paper presents the velocities as a compilation from Hubble and Humason.
+    https://arxiv.org/html/1605.04909v2 ; https://ned.ipac.caltech.edu/level5/March17/Zwicky/Zwicky3.html
+
+F29. A flat rotation curve means "the enclosed mass continues to increase linearly with radius" (v squared = GM(r)/r); mass laid out like the visible light would give "a monotonic decline in orbital velocities at large radii" (Grokipedia, Galaxy rotation curve). The pull itself weakens outward; it is the mass inside each orbit that keeps growing. Rubin and Ford's 1970 survey measured emission regions, glowing clouds of ionised hydrogen gas (H II regions), in Andromeda ("Rotation of the Andromeda Nebula from a Spectroscopic Survey of Emission Regions", ApJ 159, 379; Grokipedia, Vera Rubin: emission lines from H II regions).
+    https://grokipedia.com/page/Galaxy_rotation_curve ; https://grokipedia.com/page/Vera_Rubin ; https://ui.adsabs.harvard.edu/abs/1970ApJ...159..379R/abstract
+
+F30. Reading the 1998 supernovae: the red shift is what is measured, and it gives how much space has stretched since the light set out (F1); a supernova "fainter than expected in a decelerating universe" at that red shift is farther away, so its light had been travelling longer than a slowing expansion allows, and the expansion was slower long ago (Grokipedia; Wikipedia: the high-red-shift supernovae "10% to 15% further than expected").
+    https://grokipedia.com/page/Accelerating_expansion_of_the_universe ; https://en.wikipedia.org/wiki/Accelerating_expansion_of_the_universe
+
+F31. Why the glow is cold: "photons from the CMB lose energy as the universe expands, stretching their wavelengths"; after about 380,000 years, at about 3000 K, "the photons entered a free-streaming phase, propagating unimpeded through the expanding universe" (Grokipedia, CMB), so neither stars nor the later cooling of the gas set its temperature. Alpher and Herman "explicitly calculated its current temperature as approximately 5 K" (Grokipedia). Harvard-Smithsonian Center for Astrophysics: "There is no evidence that the universe has an edge"; "The Big Bang took place everywhere in space, not at a particular point in space."
+    https://grokipedia.com/page/Cosmic_microwave_background ; https://lweb.cfa.harvard.edu/seuforum/faq.htm
+
+F32. A black body is "an idealized physical object that absorbs all incident electromagnetic radiation", and its spectrum "depends solely on the temperature of the emitting body", whatever its material or shape (Grokipedia).
+    https://grokipedia.com/page/Black-body_radiation

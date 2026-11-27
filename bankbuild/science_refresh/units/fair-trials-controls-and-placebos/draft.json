@@ -1,0 +1,199 @@
+{
+ "unit": "fair-trials-controls-and-placebos",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "fair-trials-controls-and-placebos",
+   "question": "James Lind took twelve sailors sick with scurvy aboard the Salisbury in 1747. All twelve shared one sick berth and one diet, and each pair got its own remedy, from cider and vinegar to seawater and two oranges and a lemon a day. In six days one of the fruit pair was fit for duty; no other pair mended so fast. What could the other five pairs rule out?",
+   "answer": "That rest and the ship's food alone had healed the two",
+   "choices": [
+    "That rest and the ship's food alone had healed the two",
+    "That luck alone had made those two mend faster",
+    "That those two had been the mildest cases to begin with",
+    "That any fresh fruit would have healed the two as fast"
+   ],
+   "context": "Lind had picked cases 'as similar as I could have them', and all twelve had the same rest and the same food, so if those had done the healing, the other ten would have mended as fast, and they did not. With only two men a pair, the trial could not rule out luck or a difference in the men themselves, and it tried no other fruit. Lind wrote that oranges and lemons were 'the most effectual remedies for this distemper at sea'.",
+   "facts": [
+    "F1",
+    "F2",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "Ninth graders learn what a comparison group rules out and what it leaves open, and Lind's six pairs are the classic early case."
+  },
+  {
+   "tier": 5,
+   "topic": "fair-trials-controls-and-placebos",
+   "question": "James Lind decided for himself which of his twelve scurvy patients got each remedy aboard the Salisbury in 1747. He gave the seawater to 'the worst patients', the only two whose hand tendons had gone stiff. Fair trials today stop a doctor from choosing who gets which treatment. Which step does that?",
+   "answer": "Letting chance assign each patient to a group",
+   "choices": [
+    "Letting chance assign each patient to a group",
+    "Matching the groups by hand for how sick each patient is",
+    "Keeping each patient from knowing his own treatment",
+    "Giving one group a dummy treatment that looks the same"
+   ],
+   "context": "When chance assigns, as the random numbers in sealed envelopes did in Austin Bradford Hill's 1948 trial of streptomycin, no doctor can steer the sickest patients into one group. Matching by hand still leaves the doctor choosing, and it evens out only the differences he thinks of, while chance evens out, on average, the ones no one thought of too. Hiding the treatment and giving a dummy make a trial fairer in other ways, but neither stops the choosing.",
+   "facts": [
+    "F2",
+    "F3",
+    "F10"
+   ],
+   "grade_note": "Ninth-grade investigation design teaches confounding variables and sample selection, and random assignment is the standard answer to a tester choosing who gets what."
+  },
+  {
+   "tier": 5,
+   "topic": "fair-trials-controls-and-placebos",
+   "question": "James Lind's twelve sailors pointed to oranges and lemons, and he wrote the trial up in A Treatise of the Scurvy in 1753. Yet it filled only a few paragraphs of a long book, and the Royal Navy issued lemon juice to every warship only in 1795. Which view did Lind himself hold?",
+   "answer": "Scurvy has several causes, damp air among them",
+   "choices": [
+    "Scurvy has several causes, damp air among them",
+    "Scurvy comes from the lack of one thing in the diet",
+    "Lemon juice boiled down to a syrup loses its power",
+    "Scurvy is cured by fresh fruit and nothing else"
+   ],
+   "context": "Lind shared the opinion of his day that scurvy had several causes, such as salt meat eaten in damp air that held back sweating, and saw it as a fault of digestion rather than a lack in the diet, so he kept recommending other remedies too. He even boiled lemon juice into a 'rob' to carry to sea, not knowing that the boiling destroyed the vitamin C that cures scurvy. The Navy acted after a scurvy-free voyage on lemon juice and the urging of Gilbert Blane.",
+   "facts": [
+    "F4",
+    "F6",
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "Ninth-grade science teaches that evidence is read through the ideas a scientist already holds, and Lind's own book is the honest after-story of his trial."
+  },
+  {
+   "tier": 5,
+   "topic": "fair-trials-controls-and-placebos",
+   "question": "Surgeons once treated angina, chest pain when the heart gets too little blood, by tying off two arteries in the chest wall, and early reports said most patients improved. Leonard Cobb's team in Seattle tested the operation in 1959 on 17 patients: 8 had the arteries tied, and 9 had only the same cuts in the skin. The patients were not told which they had. About as many improved in each group. What did the trial show?",
+   "answer": "The tying of the arteries added nothing to the relief",
+   "choices": [
+    "The tying of the arteries added nothing to the relief",
+    "Both the tying and the skin cuts had mended the heart",
+    "The patients' chest pain had been imagined all along",
+    "Any small operation on the chest can cure angina"
+   ],
+   "context": "The sham patients improved just as often, so the relief came from something other than the tying: the hope an operation brings, the care around it, or pain that eases by itself. Nothing showed that either operation mended a heart, and angina is real pain from a heart short of blood. The operation was soon given up.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "Ninth graders learn to judge a claim by its control group, and the sham operation is the clearest case of a placebo arm showing what a treatment really adds."
+  },
+  {
+   "tier": 5,
+   "topic": "fair-trials-controls-and-placebos",
+   "question": "Henry Beecher, a Harvard anaesthetist, gathered fifteen trials in his 1955 paper 'The Powerful Placebo' and reported that about a third of their 1,082 patients were relieved by a dummy pill alone. Gunver Kienle and Helmut Kiene went back to the same trials in 1997 and found no evidence of a placebo effect in any of them. What kind of group would have shown the dummy pill's own effect?",
+   "answer": "Patients given no pill at all, followed the same way",
+   "choices": [
+    "Patients given no pill at all, followed the same way",
+    "Patients given the real drug, followed the same way",
+    "Patients told openly that their pill was a dummy",
+    "Healthy people given the dummy pill, followed the same way"
+   ],
+   "context": "Sick people often get better on their own, symptoms come and go, and patients enrolled at their worst tend to improve, so a dummy-pill group holds all of that as well as any effect of the pill. Only a group given nothing, followed in the same way, shows what the dummy itself adds, and Beecher's trials had none. Setting a dummy pill beside a real drug measures the drug, not the dummy.",
+   "facts": [
+    "F11",
+    "F14",
+    "F15",
+    "F17"
+   ],
+   "grade_note": "Ninth-grade science asks which comparison a claim needs, and the placebo is the textbook case where the missing no-treatment group changed the answer."
+  },
+  {
+   "tier": 5,
+   "topic": "fair-trials-controls-and-placebos",
+   "question": "Asbjørn Hróbjartsson and Peter Gøtzsche gathered 114 trials in 2001, covering about 40 different illnesses, in which some patients got a placebo and others got no treatment at all. What did they find that the placebos had done?",
+   "answer": "Small effects on what patients felt, such as pain",
+   "choices": [
+    "Small effects on what patients felt, such as pain",
+    "Small effects on what tests measured, such as blood pressure",
+    "Large effects on what patients felt and on test results",
+    "No effects at all, not even on pain"
+   ],
+   "context": "Against no treatment, placebos did nothing measurable to the illnesses themselves, while patients given them reported a little less pain. A dummy pill can ease how people feel, a little; much of the improvement seen in placebo groups comes from getting better anyway.",
+   "facts": [
+    "F11",
+    "F16"
+   ],
+   "grade_note": "Ninth graders meet the placebo effect in biology and health, and this review is the honest measure of how far it reaches."
+  },
+  {
+   "tier": 5,
+   "topic": "fair-trials-controls-and-placebos",
+   "question": "Steven Cummings's team followed women taking a medicine for osteoporosis, thinning of the bones, with a scan of the hip each year. Of the women whose hip bone had thinned by more than 4 percent in the first year, 83 percent gained bone in the second year on the same medicine. Women who had gained 8 percent or more in the first year lost a little, on average, in the second. What best explains both changes?",
+   "answer": "Extreme readings tend to be followed by milder ones",
+   "choices": [
+    "Extreme readings tend to be followed by milder ones",
+    "The medicine takes about a year to begin working",
+    "Bone that grows fast one year rests the next",
+    "The scanners were set differently in the second year"
+   ],
+   "context": "Each scan carries some chance error, so the women picked out for an extreme first change were partly picked out by luck, and their next change drifted back toward the usual: regression to the mean. A doctor who tries a new medicine on her sickest patients will see many of them improve for the same reason, which is why one success story proves little without a comparison group.",
+   "facts": [
+    "F17",
+    "F18"
+   ],
+   "grade_note": "Ninth-grade science asks students to evaluate explanations against the data, and regression to the mean is the standard reason a dramatic recovery is not by itself evidence."
+  },
+  {
+   "tier": 5,
+   "topic": "fair-trials-controls-and-placebos",
+   "question": "John Noseworthy's team reported in 1994 on a Canadian trial of treatments for multiple sclerosis, a disease of the brain and spinal cord. At every check-up each patient was examined by two neurologists: one knew which treatment the patient was getting, and one did not. Only the neurologists who knew scored the patients on plasma exchange, which swaps out the liquid part of the blood, as doing better than those on a sham. What does this show?",
+   "answer": "Knowing the treatment had tilted the doctors' scores",
+   "choices": [
+    "Knowing the treatment had tilted the doctors' scores",
+    "The blinded doctors had missed a benefit the others saw",
+    "The patients' belief in the treatment had made them better",
+    "The sham treatment had made its patients worse"
+   ],
+   "context": "Both neurologists examined the same patients at the same visits, so the gap could come only from the examiners, and only one of them had a reason to be swayed. Judged blind, neither treatment beat the sham, and the authors wrote that blinding the doctors had saved them from a false conclusion. A doctor who knows can tilt a result without meaning to, in how he judges a doubtful case or how he cares for a patient.",
+   "facts": [
+    "F19",
+    "F20",
+    "F21"
+   ],
+   "grade_note": "Ninth-grade science values objectivity and asks why a double-blind trial hides the treatment from the doctor as well as the patient; this trial measured the difference directly."
+  },
+  {
+   "tier": 5,
+   "topic": "fair-trials-controls-and-placebos",
+   "question": "In the areas of the 1954 polio field trial that used a dummy shot, about 200,000 children got Jonas Salk's vaccine and about 200,000 got the dummy. Over the season, paralytic polio struck 33 of the vaccinated children and 115 of the others. Suppose the trial had enrolled only 2,000 children in each group instead. What would it most likely have shown?",
+   "answer": "Too few cases to tell the two groups apart",
+   "choices": [
+    "Too few cases to tell the two groups apart",
+    "No gap at all, showing that the vaccine had failed",
+    "The same gap as the big trial, at far less cost",
+    "A clear gap, as long as chance had chosen the groups"
+   ],
+   "context": "With a hundredth of the children there would have been only one or two cases of paralysis in all, and one case against none shows nothing either way. Paralytic polio was rare even in a bad year, so Thomas Francis's trial needed hundreds of thousands of children in each group to see enough cases, and it enrolled about 1.8 million in all. Finding no gap in a trial too small to see one would not have shown that the vaccine failed.",
+   "facts": [
+    "F22",
+    "F23",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "Ninth-grade investigation design asks how much data a test needs, and a rare disease is the clearest case where the number of cases, not of people, decides it."
+  },
+  {
+   "tier": 5,
+   "topic": "fair-trials-controls-and-placebos",
+   "question": "In the areas of the 1954 polio trial that used a dummy shot, children whose parents asked to join got either the vaccine or the dummy, and children whose parents refused got nothing. Paralytic polio struck the dummy-shot children at 57 in every 100,000, but the children whose parents refused at only 36. Neither group had the vaccine. What did this gap show?",
+   "answer": "Families who sign up differ from those who do not",
+   "choices": [
+    "Families who sign up differ from those who do not",
+    "The dummy shot itself had raised the risk of polio",
+    "Chance alone had made the two rates differ",
+    "The refused children had been vaccinated elsewhere"
+   ],
+   "context": "Families who volunteered were on the whole better off, and polio seemed to strike hardest where homes were cleanest, so their children ran a higher risk from the start; in the areas with no dummy shots the refused second-graders had a lower rate too. So the observed areas, which set vaccinated volunteers beside whole grades of volunteers and non-volunteers alike, were the weaker test, while the dummy-shot areas compared volunteers with volunteers. There, 16 cases in 100,000 among the vaccinated against 57 led Thomas Francis to report the vaccine 80 to 90 percent effective against paralytic polio.",
+   "facts": [
+    "F22",
+    "F23",
+    "F24",
+    "F27"
+   ],
+   "grade_note": "Ninth graders learn that sample selection limits what a comparison can show, and the polio trial's two designs set the volunteer problem and its cure side by side."
+  }
+ ]
+}

@@ -143,3 +143,26 @@ F31. How we know stars make elements now: technetium has no stable isotopes (its
 - The 1859 telegraph operators' exchanged words (only partly quoted in Wikipedia).
 - Flash memory, ammonia clocks, tunnel diodes, microscopes, transistors and alpha decay from the quarried topic (other units' matter).
 - Spectra, helium found in the Sun and Payne (light-from-atoms); E = mc2 and the mass defect, NIF (fission-fusion-and-mass-energy); red giants and the H-R diagram (the-life-cycles-of-stars); the speed of light and Romer (describing-waves); the solar wind and Earth's magnetic shield (why-earth-supports-life).
+
+## Added in revision (2026-11-27)
+
+F32. The first solids of the Solar System: calcium-aluminium-rich inclusions in meteorites are "among the first solids condensed from the cooling protoplanetary disk", "the oldest dated solids, except the presolar grains" (stardust from older stars, which predates the Sun), dated by lead isotopes to 4,567.30 +/- 0.16 million years; this "is commonly used to define the age of the Solar System" (Wikipedia). So the Sun's age comes from the Solar System's first solids, not simply from the oldest grains in meteorites.
+    https://en.wikipedia.org/wiki/Calcium–aluminium-rich_inclusion ; https://eos.org/articles/dust-older-than-the-sun-sheds-light-on-galactic-history
+
+F33. The Sun is slowly brightening on the main sequence: "increasing in brightness by about 1% every 100 million years" (Wikipedia, Sun); Grokipedia (Future of Earth): "a luminosity rise of approximately 1% every 110 million years". Its core hydrogen runs out in about 5 billion years, when it leaves the main sequence (Wikipedia, Sun; Grokipedia, Sun).
+    https://en.wikipedia.org/wiki/Sun ; https://grokipedia.com/page/Future_of_Earth ; https://grokipedia.com/page/Sun
+
+F34. William Herschel's sunspots (1795, "On the Nature and Construction of the Sun and Fixed Stars"): the Sun "surrounded by a hot, glowing atmosphere", with sunspots as "holes" giving a view of the solid Sun below (StarDate); Grokipedia: "an opaque, luminous shell or cloudy atmosphere surrounding a cooler, solid interior surface suitable for life"; the 1795 paper also allowed that spots might be mountains (Astronomical Society of the Pacific). The idea was abandoned: the Sun is gas, and hotter, not darker, below its surface (F1). Galileo's Letters on Sunspots (1613) came first (F23).
+    https://legacy.stardate.org/print/18699 ; https://grokipedia.com/page/William_Herschel ; https://astrosociety.org/news-publications/mercury-online/mercury-online.html/article/2019/07/28/sunspots-a-surprisingly-controversial-history
+
+F35. Burning needs oxygen, not air or warmth around it: "rocket engines carry their own oxidizer", which lets them work "in the vacuum of space"; the oxidizer "supplies the oxygen necessary for combustion in the absence of atmospheric air" (Grokipedia). So "no fire could stay lit in the cold of empty space" is wrong, and it was not Kelvin's reason (F5).
+    https://grokipedia.com/page/Rocket_engine
+
+F36. The Sudbury Neutrino Observatory's two steps: its first results, June 2001, set its own count of electron neutrinos (charged current) beside Super-Kamiokande's elastic-scattering count (Grokipedia, SNO); its own neutral-current count, which has "equal sensitivity to all active neutrino flavors", gave in 2002 a total of about 5.1 million per square centimetre per second, consistent with solar models, against about 1.76 million electron neutrinos (Ahmad et al., Physical Review Letters 89, 011301, 2002). Wikipedia: SNO "observed electron neutrinos specifically, and all flavors of neutrinos collectively", and the electron share was "about 34%". (F16 slip noted by the fact-check: Davis and Koshiba shared one half of the 2002 prize; "a share" is what the questions say.)
+    https://grokipedia.com/page/Sudbury_Neutrino_Observatory ; https://arxiv.org/abs/nucl-ex/0204008 ; https://en.wikipedia.org/wiki/Solar_neutrino_problem
+
+F37. F1 and F3 re-checked for the replacement question: "At the center of the Sun, fusion power is estimated by models to be about 276.5 watts/m3"; the core's peak power density "is similar to an active compost heap, and is lower than the power density produced by the metabolism of an adult human"; centre 15,000,000 degrees Celsius (Wikipedia, Solar core). Grokipedia, Sun: the core "reaches temperatures of around 15 million". The Sun is bright because the core is vast (F1: the inner 20-25 percent of its radius); without fusion, contraction could have kept it shining only some tens of millions of years (F6).
+    https://en.wikipedia.org/wiki/Solar_core ; https://grokipedia.com/page/Sun
+
+F38. Eddington's 1920 Cardiff address (transcription): helium built from hydrogen is his proposal; he says "Now mass cannot be annihilated", and he does not propose radioactivity or the splitting of heavy atoms (the synthesis of radioactive elements "is endothermic"). Heavy atoms such as uranium and radium are only a trace in a Sun about 74 percent hydrogen and 24 percent helium (F4). Not used as a wrong choice: the annihilation of matter, which Eddington himself raised in 1917 and leaned toward later in the 1920s (Kragh), so it could be defended as his idea.
+    https://jila.colorado.edu/~ajsh/courses/astr1120_03/text/eddington.html ; https://arxiv.org/pdf/2111.02096

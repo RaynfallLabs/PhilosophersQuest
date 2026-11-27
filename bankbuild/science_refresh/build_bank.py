@@ -4,7 +4,8 @@
     py -m bankbuild.science_refresh.build_bank --write    # archive the old bank, write the new one
 
 Reads every unit that has a saved `card.json`, keeps its final questions
-minus the ones listed in `pick.json` ({"drop": {"<hash>": "<why>"}}), and writes
+minus the ones listed in `pick.json` and `pick_T<n>.json` ({"drop": {"<hash>": "<why>"}},
+specs/PICK.md), and writes
   data/questions/science.json        [{tier, question, answer, choices, context, topic}]
   data/question_contexts/science.json {topic: {title, context_blurb, teaches}}
 `teaches` keeps only the kept questions' sentences. The old bank and cards are
@@ -28,7 +29,9 @@ FIELDS = ('tier', 'question', 'answer', 'choices', 'context', 'topic')
 
 
 def assemble() -> tuple[list[dict], dict, Counter, list[str]]:
-    drop = (read_json(PICK, {}) or {}).get('drop', {})
+    drop = dict((read_json(PICK, {}) or {}).get('drop', {}))
+    for f in sorted(HERE.glob('pick_T*.json')):      # the per-tier picks (specs/PICK.md)
+        drop.update((read_json(f, {}) or {}).get('drop', {}))
     questions, contexts, counts, missing = [], {}, Counter(), []
     for u in load_units():
         uid = u['id']

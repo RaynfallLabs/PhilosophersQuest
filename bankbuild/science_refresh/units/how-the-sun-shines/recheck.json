@@ -1,0 +1,85 @@
+{
+  "unit": "how-the-sun-shines",
+  "questions": {
+    "20c57196fc": {
+      "verdict": "pass",
+      "why": "Old tell fixed: the two radiation choices that argued against the Sun shining at all are gone. Both new choices single out burning and stay live: the cold-of-space fire is a real misconception and truly wrong (a fire with its own oxidiser burns in a vacuum, as a rocket's does), and the smothering ash is not Kelvin's reason. The ash choice's 'long since' also takes away the key's place as the only choice about time. Choices are balanced in length (48-50 characters), and the context answers the new choice correctly.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rocket_engine",
+        "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/liquid-rocket-engine/",
+        "https://arxiv.org/html/astro-ph/0009259v3"
+      ]
+    },
+    "b88999288a": {
+      "verdict": "pass",
+      "why": "No wrong choice can be defended as Eddington's own view. The Cardiff transcript has him propose building helium from hydrogen. He names neither radium nor uranium as a source, and he calls the making of radioactive elements endothermic. Fission was unknown until 1938, and breaking helium apart takes energy in. Radium decay was Wilson's 1903 idea. Annihilation is rightly left out. All three rivals now turn mass into energy or are about helium, so the dead oxygen-burning choice is gone. Small residue: the Aston clause still points weakly at the two helium choices, but the judge's own fix accepted that.",
+      "sources": [
+        "https://jila.colorado.edu/~ajsh/courses/astr1120_03/text/eddington.html",
+        "https://bfschutz.com/2020/08/24/eddington-in-cardiff-100-years-ago-today-the-first-proposal-that-stars-are-powered-by-fusion/",
+        "https://skullsinthestars.com/2010/12/21/the-first-glimmer-of-a-nuclear-sun-radium-and-solar-energy-1903/"
+      ]
+    },
+    "e96d12ad1d": {
+      "verdict": "pass",
+      "why": "The grade problem is fixed: the stem teaches the three kinds, and the key is the reasoning (which explanation survives), as the judge proposed. '2001 and 2002' is right. SNO's first charged-current results, set beside Super-Kamiokande, came in June 2001. Its own neutral-current total for all kinds, 5.09 million per cm2 per second, consistent with the solar models, against 1.76 million electron neutrinos (about 35 percent), was submitted in April 2002 (PRL 89, 011301). The full total rules out the fewer-made and decay choices, and the one-third share clears Davis's count, so exactly one choice stands. The answer can be worked out from the stem's data by design: this is the T5 what-a-result-leaves-standing craft. The context is accurate.",
+      "sources": [
+        "https://arxiv.org/abs/nucl-ex/0204008",
+        "https://grokipedia.com/page/Sudbury_Neutrino_Observatory",
+        "https://grokipedia.com/page/Homestake_experiment"
+      ]
+    },
+    "7cf500b0bb": {
+      "verdict": "pass",
+      "why": "'The light' fixes the unclear 'Its'. The fact, choices and context are unchanged and still correct, and the key is not the only long choice (the conduction choice is the same length).",
+      "sources": [
+        "https://science.nasa.gov/sun/facts/",
+        "https://grokipedia.com/page/Sun"
+      ]
+    },
+    "c925c310d2": {
+      "verdict": "pass",
+      "why": "The fact error is fixed. The key now names the Solar System's first solids, the calcium-aluminium-rich inclusions, about 4,567 million years old: the oldest dated solids apart from presolar grains, and the usual definition of the Solar System's age. The giveaway 'fusing hydrogen' is cut from the stem. The context now says the Sun is slowly growing brighter (about 1 percent per 100 million years), and the Earth choice's crystals (Jack Hills zircons, about 4.4 billion years) are right. Minor note, not a fail: the Kelvin context (shrinking gave only tens of millions of years) and f604aee039's context (stored heat and shrinking likewise) weaken the shrinking and cooling choices for a player who meets those first.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Calcium%E2%80%93aluminium-rich_inclusion",
+        "https://grokipedia.com/page/Age_of_Earth",
+        "https://en.wikipedia.org/wiki/Sun"
+      ]
+    },
+    "1c50183f12": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact phrase replaced in the context. Re-checker's note: The stem tell is fixed, and Herschel's 1795 view is sourced and fairly given: spots as openings in a luminous atmosphere that show the opaque, solid body below. The choices are sound. The one remaining problem is a new slip in the context: 'Christoph Scheiner took the spots for small moons until Galileo showed in 1613' says Scheiner gave up his view in 1613. In fact he held it for years and came round only by his Rosa Ursina (1626-1630). Exact fix: replace 'took the spots for small moons until Galileo showed in 1613' with 'took the spots for small moons, but Galileo showed in 1613'. Nothing else needs to change.",
+      "sources": [
+        "https://chandra.harvard.edu/edu/formal/icecore/historical_sunspot.html",
+        "https://www2.hao.ucar.edu/education/scientists/christoph-scheiner-1575-1650",
+        "https://jimclifford.ca/philosophical-transactions-ocr-1665-1869/articles/jstor-106944/",
+        "https://stardate.org/?p=16587",
+        "https://astrosociety.org/news-publications/mercury-online/mercury-online.html/article/2019/07/28/sunspots-a-surprisingly-controversial-history"
+      ]
+    },
+    "852b74b194": {
+      "verdict": "pass",
+      "why": "The weak 'stayed the same' choice is replaced by a wrong pattern tied to the planet hunt, Mercury's 88-day orbit, which is plainly not Schwabe's finding and is live given the stem's mention of Mercury. Key, stem and context are unchanged and correct.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Samuel_Heinrich_Schwabe"
+      ]
+    },
+    "2001d9f6c6": {
+      "verdict": "pass",
+      "why": "'Changing' is the taught rule (a changing magnetic field induces a current), and the grade_note is corrected. The key is not the longest choice. The cause is a geomagnetically induced current, as the sources say. 'Swinging' is left only in the context, which is fine.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Carrington_Event",
+        "https://grokipedia.com/page/Carrington_Event"
+      ]
+    },
+    "f604aee039": {
+      "verdict": "pass",
+      "why": "The facts check out: about 276.5 W per cubic metre at the centre, similar to an active compost heap and less than an adult human's metabolism (Wikipedia, Solar core), and a core of about 15 million degrees Celsius. The sum works: the core (inner 20-25 percent of the radius) holds about 1-2 x 10^25 cubic metres, and at its average output of about 34 W per cubic metre that gives the Sun's 3.8 x 10^26 W. All three wrong choices are truly wrong: no fusion outside the core, contraction is negligible now, and stored heat would last only tens of millions of years. They are balanced, and 'vast' is shared so the key is not the only choice about size. It is 9th-grade reasoning on HS-ESS1-1 ground and keys nothing else in the bank. Note, not a fail: the stem's 'fusion' in the Sun's core helps b88999288a a little, but 1c50183f12's and c925c310d2's contexts already say fusion happens in the core.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Solar_core",
+        "https://grokipedia.com/page/Sun",
+        "https://science.nasa.gov/sun/facts/",
+        "https://grokipedia.com/page/Kelvin%E2%80%93Helmholtz_mechanism"
+      ]
+    }
+  }
+}

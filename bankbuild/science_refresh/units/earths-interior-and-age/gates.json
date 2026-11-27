@@ -1,8 +1,8 @@
 {
- "kind": "draft",
+ "kind": "final",
  "unit": [],
  "questions": {
-  "ce4d0dcf34": {
+  "ad1c0cc312": {
    "fail": [],
    "warn": [],
    "info": [],
@@ -14,17 +14,19 @@
    "info": [],
    "flag": []
   },
-  "2a38e5cffe": {
-   "fail": [],
-   "warn": [],
-   "info": [],
-   "flag": []
-  },
-  "7ced194f6c": {
+  "ea3867c90d": {
    "fail": [],
    "warn": [],
    "info": [
-    "voice: too_long(86>85)"
+    "voice: long(72>70)"
+   ],
+   "flag": []
+  },
+  "03b05a0831": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: long(83>70)"
    ],
    "flag": []
   },
@@ -40,11 +42,11 @@
    "info": [],
    "flag": []
   },
-  "628fbf333c": {
+  "8afe4a3eb3": {
    "fail": [],
    "warn": [],
    "info": [
-    "voice: too_long(90>85)"
+    "voice: long(83>70)"
    ],
    "flag": []
   },
@@ -54,11 +56,11 @@
    "info": [],
    "flag": []
   },
-  "2213e18dd3": {
+  "975f753f0c": {
    "fail": [],
    "warn": [],
    "info": [
-    "voice: long(79>70)"
+    "voice: long(84>70)"
    ],
    "flag": []
   }

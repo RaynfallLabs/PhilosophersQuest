@@ -1,0 +1,53 @@
+{"unit": "reading-the-big-bang-in-light",
+ "questions": {
+  "136ae40538": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The galaxy is racing through space at twice light's speed' breaks the one rule about light that nearly every 9th grader already holds (nothing outruns light), so it is dead on sight. 'The light has slowed to half its speed on the trip' is nearly as weak for a student who knows light's speed is fixed. That leaves the key up against the dust choice alone. The key goes properly beyond T4 galaxies-and-the-expanding-universe (Slipher: red shift means moving away), so it is not a re-ask.",
+     "fix": "Replace the racing choice with the classic misreading of 'everything expands': 'The galaxy itself has swelled to twice its size since then' (F2: bound systems such as galaxies do not expand). Keep the slowed-light and dust choices."}
+   ]},
+  "b7430dd206": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The key restates the stem. The stem says the glow was worked out in 1948 and picked up in 1964, so a student can check 'The theory had foretold it before it was found' from the stem alone. 'Its warmth matched the 1948 figure to the degree' cannot be checked, because the stem withholds the temperature found. The other two are dead after T4: the expansion was Hubble's, and galaxies-and-the-expanding-universe keys Penzias and Wilson's hiss, found by testing an antenna, not hunting for it. The lesson is also a duplicate within the grade: the-periodic-tables-patterns (T5) already keys 'It was made before the metal was found, so it could fail' for Mendeleev's gallium.",
+     "fix": "Key what Alpher and Herman reasoned, which is the part this unit owns: 'Ralph Alpher and Robert Herman worked out in 1948 that the hot, dense young universe of George Gamow's theory should have left its heat behind as a glow filling all of space. That glow set out from gas thousands of degrees hot, yet they put it now at only about 5 degrees above absolute zero. Why should it be so cold by now?' Answer: 'The universe's expansion has stretched out its light'. Wrong: 'Stars have soaked up most of its heat since then' / 'Its heat has leaked out past the universe's edge' / 'The gas that sent it out has cooled down since then'. Keep the 1964 find, the 3 degrees and the steady state's lack of a glow for the context. 136ae40538 also rests on stretching, so keep the two stems' wording apart: that one reads a galaxy's lines, this one the glow's cold."}
+   ]},
+  "50712b1636": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's gloss of a blackbody, 'a body at one single temperature', hands over the key's contrast. The only choice that speaks of temperature is 'Dust at many temperatures would blend many curves', so a student can match 'one single temperature' to 'many temperatures' without knowing why a scatter of dust cannot make one curve. The other three are good, honest misconceptions; 'bright lines' especially is the one a light-from-atoms student would bring.",
+     "fix": "Gloss the term without the temperature: 'the curve of a blackbody, the smooth glow a dense, dark body gives off by its heat alone'. Move 'its shape is set by its temperature alone' into the context. The student then needs the T4 idea that a glow's colour shows its temperature (the-life-cycles-of-stars) to see that one curve means one temperature."}
+   ]},
+  "373909775f": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The spot where the Big Bang began had to stay warmest' is the classic misconception, but T4 galaxies-and-the-expanding-universe keys that the expansion has no centre, so the choice is dead for anyone past T4. 2790d62e6b leans on the same centre idea.",
+     "fix": "Keep it here as the unit's one use of the centre idea, and vary 2790d62e6b (see there)."}
+   ]},
+  "2790d62e6b": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'They lie nearest the spot where the Big Bang began' repeats the no-centre misconception of 373909775f, and it is dead after T4.",
+     "fix": "Replace it with 'Their weak gravity cannot pull in helium from outside'."}
+   ]},
+  "35737fa5b0": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "'Every star, planet and cloud of gas that astronomers have ever seen is made of atoms' is loose. Neutron stars, keyed at T4 through Bell's pulsar, are not made of atoms, and Planck's 4.9 percent is ordinary matter in every form.",
+     "fix": "'...is made of ordinary matter, the stuff of atoms', then ask 'How much of it does ordinary matter make up?'"}
+   ]},
+  "c6027b3fe8": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The gravity of all the cluster's glowing stars' sets up the key's 'than gives off light': the word 'glowing' points at the non-glowing alternative.",
+     "fix": "'far faster than the cluster's stars, by their gravity, could keep together'."}
+   ]},
+  "85d264f76e": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Nearly all of it sits in the bright centre' and 'Most of it is in a black hole at the core' are one idea (the mass gathered at the middle). The stem's own Neptune comparison rules both out at once, since mass at the middle gives slow outer orbits and Andromeda's outer orbits are not slow. That leaves the key up against 'There is less of it than its starlight suggests', and the key also echoes the stem's 'out to its faint edges' ('where little light shines').",
+     "fix": "Replace the black-hole choice with the expectation Rubin's measurements tested: 'It is spread out just as its starlight is'. Say 'out to its edges' in the stem, not 'out to its faint edges'."}
+   ]},
+  "9835f2ea81": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "The lead's T4 line is kept. No question re-asks Slipher's red shifts, the farther-faster law, the missing centre, Hoyle's steady state or his name, or Penzias and Wilson's hiss. Two wrong choices (373909775f, 2790d62e6b) lean on the no-centre misconception T4 keyed, so one should change. The owned ground is all here: stretching (136ae40538), the 1948 forecast (b7430dd206, which needs re-keying), COBE's curve and ripples, the helium test, WMAP and Planck's shares, Zwicky, Rubin and the 1998 supernovae. The framing note is honoured: the contexts of 35737fa5b0, c6027b3fe8, 85d264f76e and 9835f2ea81 say plainly that what dark matter and dark energy are is unknown, without preaching. c6027b3fe8 and 85d264f76e both conclude unseen mass from motion. They rest on different observations (a cluster's spread of speeds, one galaxy's flat curve) and have different keys (more mass than light, mass lying far out), so both can stand. Cross-unit: 2790d62e6b's stem says the first minutes made three-quarters hydrogen, which hands over the key of how-the-sun-shines 818d5aace5 (the body's hydrogen is older than the stars); see the note there."}

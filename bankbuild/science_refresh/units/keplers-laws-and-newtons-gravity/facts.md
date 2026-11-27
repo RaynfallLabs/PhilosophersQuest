@@ -133,3 +133,17 @@ F30. Edmond Halley proposed in 1692 a hollow Earth: "a solid outer shell approxi
 - Which edition of the Principia first gave Jupiter's mass.
 - Kepler's exact distance rule for his solar force.
 - F = ma, the Principia's printing and Halley's visit to Newton (owned by the T4 unit newtons-laws-force-mass-and-acceleration); the cannonball, the space station, the bowling balls, the Moon's smaller mass and the pull never ending (owned by the T3 unit gravity-and-orbits); that gravity only attracts (asked in the T5 unit fission-fusion-and-mass-energy); that Halley's three comets were one (T3 comets-asteroids-and-moons); when Earth is nearest the Sun (T2 why-we-have-seasons).
+
+## Added in the revision (2026-11-27)
+
+F31. Earth's spin barely changes through the year: "annual and semi-annual LOD variations of approximately 1 millisecond", driven by winds and ocean currents trading angular momentum with the solid Earth; the page gives no change of spin with distance from the Sun (Grokipedia, Day length fluctuations). The astronomical seasons run between the solstices and equinoxes (F10).
+    https://grokipedia.com/page/Day_length_fluctuations ; https://en.wikipedia.org/wiki/Season
+
+F32. February "is the second and shortest month of the Gregorian calendar, comprising 28 days in common years", 29 in leap years (Grokipedia). The northern winter runs from the December solstice to the March equinox, moments set by Earth's place on its orbit (F10), so the months' lengths do not set the season's length.
+    https://grokipedia.com/page/February
+
+F33. The Schiehallion experiment, led by Nevil Maskelyne, was conducted in 1774; Charles Hutton's analysis (1778) gave Earth a density of 4.5 to 5.0 times that of water, 24 years before Cavendish's torsion balance (Grokipedia). So Cavendish's result was not the first such estimate.
+    https://grokipedia.com/page/Schiehallion_experiment
+
+F34. Cavendish's method (Wikipedia): "the gravitational force of the Earth on the small ball could be measured directly by weighing it"; with the force between the balls found from the rod's twist, "the ratio of the two forces allowed the relative density of the Earth to be calculated", using Newton's law and Earth's known radius; "the gravitational constant does not appear explicitly in Cavendish's work." Newton's law makes the pull depend on the masses only (F13), and gravity gives "identical accelerations regardless of body composition" (Grokipedia, Equivalence principle), so what a body is made of does not change its pull.
+    https://en.wikipedia.org/wiki/Cavendish_experiment ; https://grokipedia.com/page/Equivalence_principle
