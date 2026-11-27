@@ -1,0 +1,13 @@
+{
+ "unit": "viruses-bacteria-and-antibiotics",
+ "verdict": "clean",
+ "flags": [
+  {
+   "where": "9c95fd2033",
+   "rule": 4,
+   "severity": "low",
+   "what": "The find is no reason to relax, for heavy use in hospitals and on farms favours these old defences all the more.",
+   "fix": "Heavy use in hospitals and on farms favours these old defences all the more."
+  }
+ ]
+}

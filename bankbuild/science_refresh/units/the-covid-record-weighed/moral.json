@@ -1,0 +1,27 @@
+{
+ "unit": "the-covid-record-weighed",
+ "verdict": "clean",
+ "flags": [
+  {
+   "where": "e44bc2289b",
+   "rule": 2,
+   "severity": "low",
+   "what": "The review's authors wrote that the low adherence 'hampers drawing firm conclusions', and that large, well-designed trials were still needed.",
+   "fix": "The review's authors wrote that the low adherence 'hampers drawing firm conclusions', and that large, well-designed trials were still needed; in June 2024 Cochrane decided that the review's summary and abstract needed no changes."
+  },
+  {
+   "where": "4ea65d608c",
+   "rule": 2,
+   "severity": "low",
+   "what": "In a 2024 survey of 168 experts, the average estimate was 77 percent for a natural origin.",
+   "fix": "In a 2024 survey of 168 experts, the average estimate was 77 percent for a natural origin, while Germany's foreign intelligence service had put the chance of a laboratory accident at 80 to 90 percent in a 2020 report that German newspapers revealed in 2025."
+  },
+  {
+   "where": "4ea65d608c",
+   "rule": 2,
+   "severity": "low",
+   "what": "Twenty-seven public-health scientists had condemned 'conspiracy theories suggesting that COVID-19 does not have a natural origin' in The Lancet in February 2020",
+   "fix": "Twenty-seven public-health scientists, in a letter organised by Peter Daszak, whose EcoHealth Alliance had worked with the Wuhan Institute of Virology, had condemned 'conspiracy theories suggesting that COVID-19 does not have a natural origin' in The Lancet in February 2020 (source the tie first: The Lancet's addendum on the letter's competing interests, June 2021; F27 already names Daszak as organiser)"
+  }
+ ]
+}

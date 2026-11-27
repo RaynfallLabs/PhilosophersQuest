@@ -1,0 +1,21 @@
+{
+ "unit": "vaccines-the-science-and-the-scrutiny",
+ "verdict": "clean",
+ "flags": [
+  {
+   "where": "card",
+   "rule": 2,
+   "severity": "low",
+   "what": "Makers stay liable for faulty manufacture or poor warnings",
+   "fix": "Makers stay liable only for faulty manufacture, poor warnings or misconduct"
+  },
+  {
+   "where": "0185ee2d81",
+   "rule": 2,
+   "severity": "low",
+   "what": "and the makers stay liable for faulty manufacture or poor warnings.",
+   "fix": "and the makers stay liable only for faulty manufacture, poor warnings or wilful misconduct, the Supreme Court ruling in 2011 that the Act bars suits over a vaccine's design."
+  }
+ ],
+ "note": "Lead's question on the cut card: read alone, it still presents both sides fairly. Kennedy's call is scoped to NEW vaccines and the re-testing of vaccines in use is attributed to Benn and Kulldorff, so dropping his 'not suggesting we go back' remark misattributes nothing; the case against dummy shots keeps its reason through Black's Prevnar sentence (the control babies got a shot with a possible benefit), so Offit's 'unethical' is not reasonless. No add-back required. If room is ever made, Salmon's point is the cleanest steel-man: 'Daniel Salmon of Johns Hopkins argues that where a vaccine already exists, a new one cannot ethically be tested against none.'"
+}

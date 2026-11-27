@@ -1,0 +1,13 @@
+{
+ "unit": "sciences-dark-chapters",
+ "verdict": "clean",
+ "flags": [
+  {
+   "where": "card",
+   "rule": 2,
+   "severity": "low",
+   "what": "Some of the men's wives caught the disease, and some of their children were born with it.",
+   "fix": "The Service kept the men from treatment elsewhere; some wives caught syphilis, and some children were born with it."
+  }
+ ]
+}

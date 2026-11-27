@@ -1,0 +1,13 @@
+{
+ "unit": "when-results-do-not-replicate",
+ "verdict": "clean",
+ "flags": [
+  {
+   "where": "card",
+   "rule": 2,
+   "severity": "low",
+   "what": "found trouble that came mostly from chance and honest habits;",
+   "fix": "found trouble that came mostly from chance and bias, not fraud;"
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "unit": "the-covid-record-weighed",
+ "verdict": "flag",
+ "flags": [
+  {
+   "where": "a12187df58",
+   "rule": 2,
+   "severity": "medium",
+   "what": "About 400 died of COVID-19, most of them under five",
+   "fix": "None died of COVID-19, and none needed intensive care"
+  }
+ ]
+}
