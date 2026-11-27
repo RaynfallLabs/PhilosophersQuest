@@ -1,0 +1,114 @@
+{
+ "unit": "correlation-causation-and-error",
+ "questions": {
+  "f99e57ffca": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key: ice-cream sales and drownings rise together because hot weather drives both, so a ban would hardly change drownings", "result": "ok", "source": "https://grokipedia.com/page/Correlation_does_not_imply_causation", "note": "Grokipedia: both 'influenced by a third variable, such as warmer summer temperatures'. Wikipedia gives the same example with the same explanation."},
+    {"claim": "Wrong choice: the link is pure chance (it is not; it recurs every summer through a real common cause)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation", "note": ""},
+    {"claim": "Wrong choice: drownings fall sharply because the two rise together (the fallacy the item teaches)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation", "note": ""},
+    {"claim": "Wrong choice and context: eating before a swim does not raise the risk of cramps or drowning", "result": "ok", "source": "https://en.wikipedia.org/wiki/List_of_common_misconceptions_about_science,_technology,_and_mathematics", "note": "Wikipedia: eating less than an hour before swimming 'does not significantly increase the risk of experiencing muscle cramps' and 'does not increase the risk of drowning'. The context's 'does not raise the risk' is a fair plain-words reading."},
+    {"claim": "Context: heat as a hidden third factor; the link is no chance match since it comes back every summer", "result": "ok", "source": "https://grokipedia.com/page/Spurious_relationship", "note": ""}
+   ]
+  },
+  "55dccca414": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Richard Stone (University of Pennsylvania) and Graham Quinn (Children's Hospital of Philadelphia) reported in 1999 (Nature, 13 May 1999) that light at night before age two was linked to later myopia", "result": "ok", "source": "https://www.nei.nih.gov/about/news-and-events/news/myopia-development-and-nighttime-light-exposure-infancy", "note": "Quinn was first author (Quinn, Shin, Maguire, Stone); naming both as the researchers is accurate. The stem's 'slept with a light on' covers both room lights and night lights, as the study did."},
+    {"claim": "Karla Zadnik's team at Ohio State checked it in 2000 with more than 1,200 children", "result": "ok", "source": "https://news.osu.edu/night-lights-dont-lead-to-nearsightedness-study-suggests/", "note": "1,220 children; Nature, March 2000 (press release 2 March; issue of 9 March)."},
+    {"claim": "Key: nearsighted parents more often used night lights", "result": "ok", "source": "https://news.osu.edu/night-lights-dont-lead-to-nearsightedness-study-suggests/", "note": "Zadnik: nearsighted parents were more likely to use night lights, 'We think this may be due to the parents' own poor eyesight.' NEI: 'myopic parents were more likely to use night lighting in their children's rooms than non-myopic parents.'"},
+    {"claim": "Wrong choices: night lights harmed eyes as first reported; room lights harmed but night lights did not; parents misremembered which rooms were lit", "result": "ok", "source": "https://www.nei.nih.gov/about/news-and-events/news/myopia-development-and-nighttime-light-exposure-infancy", "note": "Both 2000 studies found no link for any lighting (full room light 22 percent vs dark 20 percent); neither reported recall error as its finding."},
+    {"claim": "Context: 20 percent dark, 17 percent night light, 22 percent full room light", "result": "ok", "source": "https://news.osu.edu/night-lights-dont-lead-to-nearsightedness-study-suggests/", "note": "20% of 417, 17% of 758, 22% of 45."},
+    {"claim": "Context: myopia runs in families; parental myopia was the hidden factor the first study had not checked", "result": "ok", "source": "https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation", "note": "Wikipedia: 'a strong link between parental myopia and the development of child myopia'; NEI says Gwiazda and Zadnik suggested the failure to account for parental myopia may have affected the earlier results."},
+    {"claim": "Context: a team led by Jane Gwiazda found the same", "result": "ok", "source": "https://pubmed.ncbi.nlm.nih.gov/10724158", "note": "Gwiazda et al., Nature 2000;404:144: no association with night lighting; families with two myopic parents reported more night-time lighting."}
+   ]
+  },
+  "39ffebc0c0": {
+   "verdict": "uncertain",
+   "checks": [
+    {"claim": "Fisher laid the foundations of modern statistics", "result": "ok", "source": "https://grokipedia.com/page/Ronald_Fisher", "note": "Grokipedia: he 'established the foundations of modern statistics'."},
+    {"claim": "Quotation: 1958, lung cancer (the pre-cancerous condition) might be 'one of the causes of smoking cigarettes'", "result": "ok", "source": "https://www.york.ac.uk/depts/maths/histstat/fisher274.htm", "note": "Verbatim in 'Cigarettes, Cancer, and Statistics', Centennial Review 2 (1958) 151-166: '...the pre-cancerous condition which must exist and is known to exist for years in those who are going to show overt lung cancer-is one of the causes of smoking cigarettes? I don't think it can be excluded.' The stem's paraphrase of the pre-cancerous stage is faithful."},
+    {"claim": "Key: reverse causation", "result": "ok", "source": "https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation", "note": "Reverse causation: 'cause and effect are reversed'. The quoted proposal is exactly that."},
+    {"claim": "Wrong choice: a hidden third factor (Fisher did also propose one, but not in the quoted sentence the stem asks about)", "result": "ok", "source": "https://www.york.ac.uk/depts/maths/histstat/fisher274.htm", "note": "The stem asks what kind of explanation the quoted idea is; the genotype idea is separate and the context says so. Not defensible as the answer."},
+    {"claim": "Context: he also offered an inborn makeup (genotype) as a common cause, which he thought more likely", "result": "ok", "source": "https://www.york.ac.uk/depts/maths/histstat/fisher274.htm", "note": "'For my part, I think it is more likely that a common cause supplies the explanation.' 'The obvious common cause to think of is the genotype.'"},
+    {"claim": "Context: later evidence went against him; doctors who gave up smoking had far less lung cancer than those who kept on", "result": "ok", "source": "https://grokipedia.com/page/British_Doctors_Study", "note": "Excess risk halved after 10 years without smoking. The context does not present Fisher's idea as a live possibility, and does not smear him."},
+    {"claim": "Honest picture of Fisher: a great statistician, a smoker, a paid tobacco-industry consultant, proved wrong", "result": "uncertain", "source": "https://en.wikipedia.org/wiki/Ronald_Fisher", "note": "Not a false claim but an omission. The item gives his greatness and says the evidence went against him, but leaves out that he was a heavy pipe smoker and was paid as a consultant by the tobacco firms (one of the scientific consultants to the Tobacco Manufacturers' Standing Committee; Hansard, 8 July 1957, https://api.parliament.uk/historic-hansard/written_answers/1957/jul/08/smoking-and-lung-cancer). Wikipedia's correlation article says he rejected the link 'frequently on the industry's behalf'. Without this a reader takes the objection for a disinterested one. Fix: add to the context, e.g. 'Fisher, himself a lifelong pipe smoker, was paid as a consultant by Britain's tobacco makers, and the evidence proved him wrong: doctors who gave up smoking went on to have far less lung cancer than those who kept on.' (Avoid saying the pay changed his mind; that is not documented.)"}
+   ]
+  },
+  "02f8fa5782": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Doll and Hill asked some 40,000 British doctors about their smoking in 1951 and followed them", "result": "ok", "source": "https://grokipedia.com/page/British_Doctors_Study", "note": "Questionnaires October 1951 to 59,600 doctors; 41,024 replied, 40,701 followed. 'Some 40,000' is fair."},
+    {"claim": "Lung-cancer deaths rarest in non-smokers, more in light smokers, most in heavy smokers", "result": "ok", "source": "https://grokipedia.com/page/British_Doctors_Study", "note": "Relative risk about 9 for 1-14 a day, about 24 for 25 or more."},
+    {"claim": "Key: the gradient fits a cause that does more harm in bigger doses", "result": "ok", "source": "https://grokipedia.com/page/Bradford_Hill_criteria", "note": "Biological gradient: risk 'exhibits a monotonic increase' with dose."},
+    {"claim": "Wrong choice: it proves no hidden factor could be at work", "result": "ok", "source": "https://grokipedia.com/page/Bradford_Hill_criteria", "note": "Causation 'cannot be proven definitively'; none of the viewpoints is decisive alone."},
+    {"claim": "Wrong choice: most smokers will die of lung cancer", "result": "ok", "source": "https://pubmed.ncbi.nlm.nih.gov/10926586/", "note": "Cumulative lung-cancer death risk by 75 about 16 percent for continuing male smokers (Peto et al. 2000)."},
+    {"claim": "Wrong choice: giving up cannot lower the risk", "result": "ok", "source": "https://grokipedia.com/page/British_Doctors_Study", "note": "Excess risk halves after 10 years of abstinence."},
+    {"claim": "Context: Bradford Hill later listed dose-response as one of his tests, no single test proves a cause", "result": "ok", "source": "https://grokipedia.com/page/Bradford_Hill_criteria", "note": "1965 address; Hill called them 'viewpoints', so 'tests' is a loose plain-words word, not wrong at this level."},
+    {"claim": "Context: heavy smokers died of lung cancer about 24 times as often as non-smokers", "result": "ok", "source": "https://grokipedia.com/page/British_Doctors_Study", "note": "Grokipedia gives 24 for 25+ a day (early reports, 1954-56). The ten-year report gives a higher ratio (Grokipedia Bradford Hill page: up to 32.4), so the figure depends on the report; 'about 24' matches the early reports the item describes."},
+    {"claim": "Context: Doll first suspected the tar on new roads and car fumes", "result": "ok", "source": "https://en.wikipedia.org/wiki/Richard_Doll", "note": "'at first under the belief that it was due to the new material tarmac, or motor car fumes'."}
+   ]
+  },
+  "dc47a9be7b": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Tyler Vigen was then a law student", "result": "ok", "source": "https://www.avclub.com/there-s-a-correlation-between-nic-cage-movies-and-swimm-1798268565", "note": "'Harvard Law School student Tyler Vigen' (A.V. Club, 2014)."},
+    {"claim": "He searched thousands of sets of yearly figures", "result": "ok", "source": "https://tylervigen.com/spurious-correlations", "note": "The site now holds 25,237 variables; the 2014 site offered some 30,000 charts (archived copy at gwern.net). 'Thousands' holds either way."},
+    {"claim": "US swimming-pool drownings tracked Nicolas Cage films, 1999-2009", "result": "ok", "source": "https://gwern.net/docs/www/tylervigen.com/bdb0831d60f97f488b8d070f920b5c7ca47dccf6.html", "note": "'Number of people who drowned by falling into a pool correlates with Films Nicolas Cage appeared in', 1999-2009, r = 0.666; sources CDC WONDER and IMDb."},
+    {"claim": "Key: out of so many pairs a few match by pure chance; wrong choices (hidden factor, films cause risk-taking, miscounting) are wrong", "result": "ok", "source": "https://grokipedia.com/page/Spurious_relationship", "note": "Grokipedia: the Cage match 'is purely coincidental'."},
+    {"claim": "Context: Vigen's site says any large enough collection of data will throw up strong matches at random", "result": "ok", "source": "https://tylervigen.com/spurious-correlations", "note": "'any sufficiently large dataset will yield strong correlations completely at random'. Paraphrased, not in quotation marks: fine."}
+   ]
+  },
+  "22b242dc56": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key: a scale reading 53 kg every time for a true 50 kg is precise but not accurate; the three other combinations are wrong", "result": "ok", "source": "https://grokipedia.com/page/Accuracy_and_precision", "note": "Grokipedia: 'a scale that always reads 5 grams too high yields precise but inaccurate weights'."},
+    {"claim": "Context: definitions of precision and accuracy", "result": "ok", "source": "https://grokipedia.com/page/Accuracy_and_precision", "note": "VIM definitions: accuracy, closeness to a true value; precision, closeness of repeated measurements."},
+    {"claim": "Context: averaging would never fix a constant offset; calibrating against a known mass would", "result": "ok", "source": "https://grokipedia.com/page/Accuracy_and_precision", "note": "Calibration: 'adjusting an instrument to minimize systematic bias by comparing its output to known reference values'."}
+   ]
+  },
+  "0a0cf8497e": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Hubble's main mirror is 2.4 m across, smooth to about a hundred-thousandth of a millimetre", "result": "ok", "source": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope", "note": "'smooth to about 10 nanometers' = 0.00001 mm."},
+    {"claim": "The makers' final checks said the curve was right; pictures blurred once at work in 1990", "result": "ok", "source": "https://grokipedia.com/page/Hubble_Space_Telescope", "note": "Launched April 1990; NASA announced the flaw 27 June 1990."},
+    {"claim": "Key: the tool that tested its shape (reflective null corrector) had been built wrong", "result": "ok", "source": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope", "note": "Misassembled: 'One lens was out of position by 1.3 mm'. 'Built wrong' is a fair plain-words gloss for misassembled."},
+    {"claim": "Wrong choices: bent in launch, warped by cold, secondary mirror out of line", "result": "ok", "source": "https://grokipedia.com/page/Hubble_Space_Telescope", "note": "'Diagnostic tests ruled out misalignment of the secondary mirror'; the flaw was polished in on Earth."},
+    {"claim": "Context: lens 1.3 mm out of place; outer edge about 2 thousandths of a mm too flat", "result": "ok", "source": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope", "note": "Too flat by about 2,200 nm (2.2 micrometres)."},
+    {"claim": "Context: two older testers that showed the flaw were brushed aside; the board faulted NASA for trusting a single instrument", "result": "ok", "source": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope", "note": "Conventional refractive null correctors 'correctly reported spherical aberration' but 'these results were dismissed'; NASA criticised for 'relying totally on test results from a single instrument'. 'Older' fairly renders 'conventional', used earlier in the polishing."},
+    {"claim": "Context: astronauts fitted correcting optics in 1993", "result": "ok", "source": "https://grokipedia.com/page/Hubble_Space_Telescope", "note": "Servicing Mission 1, December 1993: COSTAR and WFPC2."}
+   ]
+  },
+  "51a807b00b": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Tversky and Kahneman posed the two-hospitals puzzle: about 45 and 15 births a day, about half boys, a year of days with more than 60 percent boys", "result": "ok", "source": "https://en.wikipedia.org/wiki/Insensitivity_to_sample_size", "note": "Published in Science 1974 ('Judgment under uncertainty'); first in their 1972 representativeness paper. The stem gives no year, so either is fine."},
+    {"claim": "Key: the small hospital, since small samples swing more by chance", "result": "ok", "source": "https://grokipedia.com/page/Insensitivity_to_sample_size", "note": "'smaller samples exhibit greater variability due to sampling error'. By the binomial, about 15 percent of days at the small hospital vs about 7 percent at the large: 'many more' is fair."},
+    {"claim": "Wrong choices: the large one; about the same; neither", "result": "ok", "source": "https://en.wikipedia.org/wiki/Insensitivity_to_sample_size", "note": ""},
+    {"claim": "Context: over half of those asked chose about the same", "result": "ok", "source": "https://en.wikipedia.org/wiki/Insensitivity_to_sample_size", "note": "56 percent chose 'about the same', 22 percent each the larger and the smaller."}
+   ]
+  },
+  "c09682ef18": {
+   "verdict": "uncertain",
+   "checks": [
+    {"claim": "Abraham Wald, statistician with the Statistical Research Group at Columbia University, in WWII", "result": "ok", "source": "https://grokipedia.com/page/Abraham_Wald", "note": "Joined the SRG in the summer of 1942."},
+    {"claim": "He studied the damage on American bombers that came back", "result": "ok", "source": "https://en.wikipedia.org/wiki/Abraham_Wald", "note": "Wikipedia: his work was 'on how to minimize the damage to bomber aircraft', estimating the damage on all planes from the planes that returned (memo 'A Method of Estimating Plane Vulnerability Based on Damage of Survivors', 1943). Fair at this level."},
+    {"claim": "The returning planes had many holes in wings and bodies but few in engines", "result": "uncertain", "source": "https://yuxi.ml/logs/posts/2025-survivorship-bias", "note": "Grokipedia states this pattern, but the primary record (the 1943 memoranda, and W. Allen Wallis's 1980 account: 'The military was inclined to provide protection for those parts that on returning planes showed the most hits') does not document which parts had few holes or which planes were studied. The engine pattern comes from the popular retelling. Fix: either soften the stem ('In the story usually told, the returning planes had...') or extend the context's hedge to the hole pattern (see next check)."},
+    {"claim": "Key: the engines, by Wald's reasoning (hits assumed spread over the plane, so the parts with few holes on survivors are the deadly ones)", "result": "ok", "source": "https://grokipedia.com/page/Survivorship_bias", "note": "Given the stem's pattern, the logic is sound and is Wald's method; the item asks what his reasoning points to, not what he advised."},
+    {"claim": "Context: survivorship bias definition", "result": "ok", "source": "https://en.wikipedia.org/wiki/Survivorship_bias", "note": ""},
+    {"claim": "Context: 'The famous scene of Wald pointing at a dotted bomber is a later retelling; his memos of 1943 worked the idea out in mathematics'", "result": "uncertain", "source": "https://cameronmoll.com/journal/abraham-wald-red-bullet-holes-origin-story", "note": "The memos part is right (eight SRG memoranda, 1943, reprinted by CNA in 1980; highly mathematical). But there is no 'famous scene' of Wald pointing at a dotted bomber: the red-dot plane is a modern drawing (Cameron Moll's, about 2005, with made-up dots; the Wikipedia version of 2016 is labelled hypothetical). What is unconfirmed is the popular tale of Wald telling officers to armour where the holes were not (Grokipedia: 'apocryphal and lacks primary corroboration'). Fix: 'The usual telling, with its hole counts and its dotted-bomber drawing (made about 2005), is a later simplification; Wald's memos of 1943 worked the idea out in mathematics.'"}
+   ]
+  },
+  "e2a58708cd": {
+   "verdict": "uncertain",
+   "checks": [
+    {"claim": "E. coli-type bacteria can double about every 20 minutes in broth", "result": "ok", "source": "https://grokipedia.com/page/Exponential_growth", "note": "'doubling time of approximately 20 minutes during the exponential phase' under optimal conditions."},
+    {"claim": "Key: on an ordinary graph the doubling counts make a curve that grows steeper", "result": "ok", "source": "https://grokipedia.com/page/Exponential_growth", "note": "Exponential growth's increments keep getting larger; linear growth adds a constant amount."},
+    {"claim": "Wrong choice: 'A straight line, as the count doubles every time'", "result": "uncertain", "source": "https://grokipedia.com/page/Bacterial_growth", "note": "True on a logarithmic (semi-log) axis, which is how biologists normally plot growth curves: the exponential phase 'shows up as a straight, rising line' (Grokipedia, Bacterial growth). The stem says only that 'a biologist' plots the number up the side, so this choice is defensible. Fix: make the scale explicit, e.g. 'She plots her counts on ordinary graph paper, with evenly spaced times along the bottom and evenly spaced numbers (0, 100, 200, 300...) up the side.'"},
+    {"claim": "Wrong choices: straight line from equal steps; levelling-off curve", "result": "ok", "source": "https://grokipedia.com/page/Linear_function", "note": "The counts show neither equal nor shrinking steps."},
+    {"claim": "Context: 'Only when the broth's food runs out does the curve level off'", "result": "uncertain", "source": "https://grokipedia.com/page/Bacterial_growth", "note": "Minor: the stationary phase comes from nutrient exhaustion together with a build-up of acidic waste products. 'Only' overstates. Fix: 'When the food runs low and wastes build up, the curve levels off.'"}
+   ]
+  }
+ },
+ "unit_notes": "No outright errors. Three items marked uncertain with ready fixes: 39ffebc0c0 (Fisher: facts and quote verified verbatim, context honest that the evidence went against him and does not smear him, but it omits that he was a pipe smoker paid as a tobacco-industry consultant; add one clause), c09682ef18 (Wald: the stem states the popular hole pattern as fact, and the context's 'famous scene of Wald pointing at a dotted bomber' misdescribes the legend; the red-dot drawing is a modern illustration, c. 2005), e2a58708cd (bacteria: the 'straight line' choice is right on a log axis, which biologists use; say the graph has evenly spaced numbers; also 'only when the food runs out' omits waste build-up). Figures that can change: Vigen's variable count (25,237 now) does not affect the stem's 'thousands'. The Doll-Hill '24 times' is from the early reports; later reports give higher ratios."
+}

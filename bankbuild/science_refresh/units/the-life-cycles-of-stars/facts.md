@@ -124,3 +124,23 @@ G1. Texas TEKS 8.9A: "Describe the life cycle of stars and compare and classify 
 - Hertzsprung plotted the magnitudes (brightness) of cluster stars against colour, Russell absolute magnitude against spectral type; the H-R question simplifies both to "true brightness against surface temperature", which is what the axes mean (F19, F21).
 - Ryle's share of the 1974 Nobel Prize was not for pulsars, so the Bell context names only Hewish as cited for the discovery.
 - Fusion, the Sun's age and element-making are the T5 unit how-the-sun-shines's; spectra are light-from-atoms's; neither is keyed here.
+
+## Added in the revision (2026-11-26)
+
+F27. A nebula's magnetism resists collapse; it does not pull the gas together. Collapse must "overcome supportive forces such as thermal pressure and magnetic fields"; magnetic fields and turbulence give "non-thermal pressure that counters gravitational collapse on large scales"; molecular clouds balance "gravitational contraction against internal support from turbulence and magnetic fields"; ambipolar diffusion "gradually weakens magnetic support", which lets contraction go on (Grokipedia, Star formation).
+    https://grokipedia.com/page/Star_formation
+
+F28. A main-sequence star burns its fuel only in its core: stars are "converting hydrogen into helium in their cores", the core region is "where nuclear fusion of hydrogen into helium occurs", and the outer envelope only carries the energy outward; "higher masses yield hotter cores that accelerate fusion rates", and "more massive stars consume their hydrogen fuel much faster despite having more of it" (Grokipedia, Main sequence). (Fusion itself is T5's; the context says only that the fuel burns in the core.)
+    https://grokipedia.com/page/Main_sequence
+
+F29. The red giant: once a Sun-like star has "exhausted the hydrogen fuel in its core", its outer layers "expand dramatically while the surface cools to temperatures around 3,000–5,000 K", with "increased luminosity up to thousands of times that of the Sun"; red giants have radii "from 10 to more than 100 solar radii", and on the Hertzsprung-Russell diagram the star climbs nearly straight up the red-giant branch on the cool side; the Sun's envelope may reach about 256 solar radii, and "Mercury is expected to be swallowed first", Venus likely next (Grokipedia, Red giant). With F7 (OpenStax: the expansion cools the surface; the star grows more luminous, moving up and right).
+    https://grokipedia.com/page/Red_giant ; https://openstax.org/books/astronomy-2e/pages/22-1-evolution-from-the-main-sequence-to-red-giants
+
+F30. Chandrasekhar's first figure: "0.91 times the mass of the Sun", "due to the mean molecular weight of stellar material being estimated to be 2.5 at the time"; with it revised to 2.0 his limit became 1.44 Suns (MacTutor, St Andrews). Grokipedia (Chandrasekhar limit): "initially calculating a value of about 0.91 ... that refined to the modern 1.44".
+    https://mathshistory.st-andrews.ac.uk/HistTopics/Chandrasekhar_Eddington/ ; https://grokipedia.com/page/Chandrasekhar_limit
+
+F31. Bohr and Pauli: they agreed with Chandrasekhar's papers but "were not willing to enter the discussion, claiming to be too busy at the time" (MacTutor); Wikipedia puts their public silence down to Eddington's status. The motive is not agreed, so no motive is given.
+    https://mathshistory.st-andrews.ac.uk/HistTopics/Chandrasekhar_Eddington/ ; https://en.wikipedia.org/wiki/Chandrasekhar_limit
+
+F32. Eddington's own work: "He derived the mass-luminosity relation" for main-sequence stars, and his stellar-interior work culminated "in his 1926 monograph The Internal Constitution of the Stars"; "His most celebrated achievement was organizing and leading the 1919 solar eclipse expeditions" (Grokipedia, Arthur Eddington). His arguments carried "Eddington's fame and charisma" (MacTutor).
+    https://grokipedia.com/page/Arthur_Eddington ; https://mathshistory.st-andrews.ac.uk/HistTopics/Chandrasekhar_Eddington/

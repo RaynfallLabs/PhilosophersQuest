@@ -1,0 +1,43 @@
+{"unit": "winds-air-masses-and-fronts",
+ "questions": {
+  "c2eaf5cf5b": {"verdict": "ok", "issues": []},
+
+  "fe1637f24b": {"verdict": "revise", "issues": [
+   {"axis": "fact", "severity": "medium",
+    "what": "The context says 'Hadley was the first to bring in Earth's spin'. Galileo had explained the trade winds by Earth's rotation a century earlier (fact-check error). Hadley's real first was showing how the spin turns air that flows toward the equator, the piece Halley's theory lacked. The question itself is sound, and Halley's idea is an excellent honest wrong choice.",
+    "fix": "Context: 'Hadley was the first to show how the spin turns air flowing toward the equator, the piece missing from Halley's theory, and the circulation he described now bears his name.'"}]},
+
+  "1db7e2b5cb": {"verdict": "ok", "issues": [
+   {"axis": "clarity", "severity": "low",
+    "what": "'Seen from behind a moving wind' is awkward for an 8th grader. It means 'facing the way the wind blows'.",
+    "fix": "'Looking the way the wind is blowing, which way does the spin bend it in each half of the world?'"}]},
+
+  "94733fd0e2": {"verdict": "ok", "issues": []},
+
+  "2f109ccf92": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The key, 'Strong, steady winds from the west' high above Japan, is stated outright in 964a1669c1's stem: B-29s high over Japan met 'winds from the west of up to about 320 kilometres an hour'. These are two questions on one fact in one unit, and a player who meets the B-29 question first gets this one free.",
+    "fix": "Re-key to a T4 mechanism the unit does not yet ask (F14): keep the stem through '...to measure the winds that carried it away', then: 'The fast winds from the west that he found high above Japan were strongest in winter. Why is a jet stream strongest in winter?' Key: 'Polar and tropical air differ most in temperature then'. Wrong: 'Cold winter air is thinner and flows more freely' / 'Earth spins faster in the winter months' / 'Winter storms push extra air up to that height'."}]},
+
+  "964a1669c1": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "'Why do weather forecasters watch' favours the only choice about the weather moving. Two of the wrong choices are things no forecaster would track a jet stream for: ocean currents, and a UV shield (the ozone layer, T3's).",
+    "fix": "Keep 'Storms below tend to travel along its path' and 'Its path marks where the hottest air on Earth lies'. Replace the other two with weather-shaped wrong ideas: 'The sky beneath its path stays clear of cloud' / 'It marks where the air at the ground is calmest'."}]},
+
+  "4ae7701723": {"verdict": "ok", "issues": []},
+
+  "65e5c412c7": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The stem asks what builds 'such tall clouds so quickly', and that rules out 'Warm air climbs slowly up a long slope of cold air' for a student who knows nothing of fronts. Only three choices are live.",
+    "fix": "Replace it with a live wrong picture that fits a hot, muggy afternoon: 'Hot, muggy air bubbles straight up off the sun-baked plain'."}]},
+
+  "5fbdadb31f": {"verdict": "ok", "issues": []},
+
+  "96cdd39cd3": {"verdict": "ok", "issues": []},
+
+  "29d8f63d81": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The stem says the tropics take in more than they give off over a whole year, which rules out 'Earth's tilt shares out the sunlight evenly over a year'. The key is then the only choice that moves heat from the tropics to the poles, and 'keeps the two in balance' points straight at a transfer.",
+    "fix": "Replace the tilt choice with a second, wrong carrier of heat, so that knowledge decides: 'Heat seeps through the rock of the crust toward the poles'. Keep the core and polar-ice choices."}]}
+ },
+ "unit_notes": "Coverage matches the scope: uneven heating and high-to-low flow, Hadley, Coriolis, the belts, the jet stream (twice), the polar front, cold and warm fronts, the falling barometer, and heat carried poleward. Air-mass kinds (moist or dry, polar or tropical source) are not keyed alone, which is acceptable. Overlaps with weather-and-climate-basics (T1) were checked: nothing re-asks weather against climate, the barometer as an instrument, the wind instruments, cloud names, the sea breeze or the 30 years. 96cdd39cd3 goes a grade deeper (what a falling reading means), and 5fbdadb31f describes cirrus and stratus without naming them. why-we-have-seasons and earths-four-spheres appear only as wrong choices (tilt) or in passing. Within the unit, 'Earth's spin bends the winds' is keyed by fe1637f24b and stated in the stems of 1db7e2b5cb and 94733fd0e2. That is acceptable, because each keys a different fact (what turns the trades, the direction, which belt). The cold- and warm-front questions mirror each other, each key appearing as the other's wrong choice. That is fine as a pair. Batch boundary held: the Coriolis question asks only how the spin bends winds, and nothing here asks a storm's turning. 'The westerlies' is a science term, not a geography name, and no named current, coast or storm is keyed. No climate-change content. Carry the fact-check error in fe1637f24b's context."}

@@ -1,0 +1,190 @@
+{
+ "unit": "correlation-causation-and-error",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "A seaside town's records show that on the days when its shops sell the most ice cream, the most people drown off its beaches. A town councillor wants to ban ice cream to save lives. If the ban goes ahead, what will most likely happen to the number of drownings?",
+   "answer": "It will hardly change, since hot weather drives both",
+   "choices": [
+    "It will hardly change, since hot weather drives both",
+    "It will hardly change, since the link is pure chance",
+    "It will fall sharply, since the two rise together",
+    "It will fall a little, since fewer swimmers get cramps"
+   ],
+   "context": "Hot days send people both to the ice-cream shops and into the sea, so the heat, a hidden third factor, raises both together; ice cream drowns no one, and a ban would leave the swimmers in the water. The link is no chance match either, since it comes back every summer. Eating before a swim does not raise the risk of cramps or of drowning, whatever the old warning says.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: distinguish causal from correlational relationships in data; curriculum line G8.M1) uses ice cream and drownings as the classic correlation with a hidden third factor."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Richard Stone and Graham Quinn, eye researchers in Philadelphia, reported in 1999 that children who had slept with a light on before the age of two were more often nearsighted later. Karla Zadnik's team at Ohio State University checked the claim in 2000 with more than 1,200 children. What did her team find?",
+   "answer": "Nearsighted parents more often used night lights",
+   "choices": [
+    "Nearsighted parents more often used night lights",
+    "Night lights harmed young eyes, as first reported",
+    "Room lights harmed eyes, but night lights did not",
+    "Parents had misremembered which rooms were lit"
+   ],
+   "context": "Zadnik's team found nearsightedness about as common among children who had slept in the dark (20 percent) as among those with a night light (17 percent) or a full room light (22 percent). Nearsightedness runs strongly in families, and nearsighted parents more often used night lights, so the parents' own eyes tied the lights to the children's eyes: a hidden third factor the first study had not checked. A team led by Jane Gwiazda found the same.",
+   "facts": [
+    "F3",
+    "F5",
+    "F6"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: distinguish causal from correlational relationships in data; curriculum line G8.M1) teaches that a hidden third factor can make a link look like a cause."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Ronald Fisher, who laid the foundations of modern statistics, argued that the link between smoking and lung cancer did not prove that one caused the other. In 1958 he asked whether lung cancer itself, in the early stage that lies hidden for years before anyone knows of it, might be \"one of the causes of smoking cigarettes.\" What kind of explanation was he putting forward?",
+   "answer": "Reverse causation",
+   "choices": [
+    "Reverse causation",
+    "A hidden third factor",
+    "A coincidence of chance",
+    "A measurement error"
+   ],
+   "context": "Fisher's question turned the arrow round: instead of the smoking causing the cancer, the hidden illness would cause the smoking. He also offered a hidden third factor, an inborn makeup leading to both, which he thought more likely. Later evidence went against him, since doctors who gave up smoking went on to have far less lung cancer than those who kept on.",
+   "facts": [
+    "F7",
+    "F11",
+    "F12"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: distinguish causal from correlational relationships in data; curriculum line G8.M1) asks which way the arrow of cause points, and reverse causation is one of the ways a link can mislead."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Richard Doll and Austin Bradford Hill learned how much some 40,000 British doctors smoked in 1951, then followed them for years to see who died of lung cancer. Lung-cancer deaths were rarest among the non-smokers, more common among light smokers and most common among heavy smokers. What does this step-by-step pattern add to the case against smoking?",
+   "answer": "It fits a cause that does more harm in bigger doses",
+   "choices": [
+    "It fits a cause that does more harm in bigger doses",
+    "It proves that no hidden factor could be at work",
+    "It shows that most smokers will die of lung cancer",
+    "It shows that giving up smoking cannot lower the risk"
+   ],
+   "context": "When more of a suspect brings more of the harm, step by step, the link is hard to explain any other way; Bradford Hill later listed this dose-response as one of his tests for a cause, though no single test proves one. Heavy smokers died of lung cancer about 24 times as often as non-smokers, yet most smokers never get it, and those who gave up saw their risk fall in the years after. Doll had first suspected the tar on new roads and the fumes of cars.",
+   "facts": [
+    "F8",
+    "F9",
+    "F10",
+    "F11"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: distinguish causal from correlational relationships in data; curriculum line G8.M1) asks how a correlation is built into a strong causal case, and Doll and Hill's smokers are the classic case."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Tyler Vigen, then a law student, searched thousands of sets of yearly figures for pairs that rose and fell together. In one pair, from 1999 to 2009, the number of people in the United States who drowned by falling into a swimming pool tracked the number of films Nicolas Cage appeared in. What best explains the match?",
+   "answer": "Out of so many pairs, a few match by pure chance",
+   "choices": [
+    "Out of so many pairs, a few match by pure chance",
+    "A hidden third factor raises and lowers both",
+    "The films lead viewers to take risks in water",
+    "The drownings were counted wrongly in those years"
+   ],
+   "context": "Compare enough sets of figures and some pairs will rise and fall together by luck alone, with no link between them at all; Vigen's website says any large enough collection of data will throw up strong matches at random. A match like this is a coincidence, not a cause and not a hidden factor. The more pairs anyone searches, the more such matches turn up.",
+   "facts": [
+    "F1",
+    "F13"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: distinguish causal from correlational relationships in data; curriculum line G8.M1) teaches that a correlation can arise by chance alone."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "A girl's true mass is 50 kilograms, as her doctor's carefully checked scale shows. At home she steps onto her bathroom scale five times in a row, and it reads 53 kilograms every time. How would a scientist describe the bathroom scale's readings?",
+   "answer": "Precise, but not accurate",
+   "choices": [
+    "Precise, but not accurate",
+    "Accurate, but not precise",
+    "Both precise and accurate",
+    "Neither precise nor accurate"
+   ],
+   "context": "Precision is how closely repeated readings agree, and accuracy is how close they come to the true value. Five readings of exactly 53 agree perfectly, but each one is 3 kilograms too heavy. Averaging more of them would never fix that; only checking the scale against a known mass and correcting it, which is called calibrating, would.",
+   "facts": [
+    "F14",
+    "F15"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: improve the precision and accuracy of data; curriculum line G8.M1) teaches precision against accuracy, a step past the 6th-grade idea of readings that agree."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "The main mirror of the Hubble Space Telescope, 2.4 metres across, was polished smooth to within about a hundred-thousandth of a millimetre. The makers' final checks said the mirror's curve was right. Yet once Hubble was at work in space in 1990, its pictures came back blurred. What had gone wrong?",
+   "answer": "The tool that tested its shape had been built wrong",
+   "choices": [
+    "The tool that tested its shape had been built wrong",
+    "The mirror had bent in the shaking of the launch",
+    "The mirror had warped in the cold of space",
+    "The small second mirror had been set out of line"
+   ],
+   "context": "One lens in the testing tool sat 1.3 millimetres out of place, so the polishers ground the mirror with great care into the wrong shape: its outer edge came out about 2 thousandths of a millimetre too flat. Every reading from the faulty tool was wrong in the same way, two older testers that had shown the flaw were brushed aside, and the review board faulted NASA for trusting a single instrument. Checks in orbit cleared the second mirror, and astronauts fitted correcting optics in 1993.",
+   "facts": [
+    "F15",
+    "F16"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: consider the limits of data, such as measurement error; curriculum line G8.M1) teaches that a faulty instrument gives the same error every time, which repeating cannot reveal."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Amos Tversky and Daniel Kahneman, two psychologists, posed this puzzle. A town has two hospitals: about 45 babies are born each day in the large one and about 15 in the small one. About half of all babies are boys. For a year, each hospital marks the days on which more than 60 percent of its babies are boys. Which hospital marks more such days?",
+   "answer": "The small one, as small groups swing more by chance",
+   "choices": [
+    "The small one, as small groups swing more by chance",
+    "The large one, as it has more boys born in all",
+    "Both about the same, as the odds of a boy never change",
+    "Neither, as about half of all babies are boys"
+   ],
+   "context": "Each day the share of boys wanders from one half by chance, and the fewer the babies, the farther it can wander, so the small hospital has many more lopsided days. Over half the people Tversky and Kahneman asked chose about the same. This is why scientists trust a big sample over a small one: its result swings less by luck.",
+   "facts": [
+    "F17"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: use statistics, including variability, to analyse data; curriculum line G8.M1) asks why a bigger sample gives a steadier result."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Abraham Wald, a statistician with the Statistical Research Group at Columbia University, studied the damage on American bombers that came back from their missions in the Second World War. The returning planes had many bullet holes in their wings and bodies, but few in their engines. By Wald's reasoning, which part of a bomber most needed more armour?",
+   "answer": "The engines",
+   "choices": [
+    "The engines",
+    "The wings",
+    "The body",
+    "Every part alike"
+   ],
+   "context": "Wald took it that enemy fire struck all over a plane, so the missing engine hits had been on the planes that never came back: a bomber could fly home with its wings full of holes, but a hit in an engine often brought it down. Studying only the planes that survived hides the losses, a trap now called survivorship bias. The famous scene of Wald pointing at a dotted bomber is a later retelling; his memos of 1943 worked the idea out in mathematics.",
+   "facts": [
+    "F18",
+    "F19"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: consider the limits of data; curriculum line G8.M1) asks what data can and cannot show, and survivorship bias is data that leaves out the failures."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "A biologist counts the bacteria in a flask of broth every 20 minutes and finds about 100, then 200, then 400, then 800. She plots her counts on a graph, with time along the bottom and the number of bacteria up the side. What shape does the line make?",
+   "answer": "A curve that grows steeper, as each step adds more",
+   "choices": [
+    "A curve that grows steeper, as each step adds more",
+    "A straight line, as each step adds the same amount",
+    "A curve that levels off, as each step adds less",
+    "A straight line, as the count doubles every time"
+   ],
+   "context": "Every 20 minutes each bacterium splits in two, so the count doubles and the jumps grow: 100, then 200, then 400. Equal jumps would make a straight line, but growing jumps bend the line ever more steeply upward, the shape of exponential growth. Only when the broth's food runs out does the curve level off.",
+   "facts": [
+    "F20",
+    "F21"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: interpret graphs of data to identify linear and nonlinear relationships; curriculum line G8.M1) asks what a straight line and a curve each say about the data."
+  }
+ ]
+}

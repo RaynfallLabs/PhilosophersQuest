@@ -1,0 +1,67 @@
+{"unit": "testing-a-claim",
+ "questions": {
+  "7b05d0aa44": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem lays out both arms so plainly ('magnetised without knowing it' against 'told they were being magnetised when they were not') that the key is a one-step paraphrase: whether the fluid acted, and whether the patient believed. Reading a design this way is the unit's skill, but a lure is dead as well: 'The fluid up close and from far away' matches nothing in the described trials, so only three choices are live. At 76 words the stem is also long for what it asks.",
+     "fix": "Cut 'Mesmer taught that an unseen fluid flowed from a healer into the sick and stirred up fits that cured them' down to 'Mesmer said an unseen fluid from the healer cured the sick'. Replace the dead lure with 'Mesmer's own skill and that of his pupils'; Mesmer later blamed technique (F10), so this lure is live and still wrong for this design."}
+  ]},
+
+  "33937f905a": {"verdict": "ok", "issues": []},
+
+  "a13db2cc7f": {"verdict": "revise", "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "This is a second question on 33937f905a's fact. That question keys belief alone bringing on the fit ('Only the one who believed it'); this one keys the same finding as the commission's word for it ('The patients' own imagination'). The stem's 'a tree that d'Eslon had never touched' also strikes out the fluid, which leaves imagination against trickery. 'A fluid too faint to be measured' does not explain a fit at an untouched tree, so it is weak.",
+     "fix": "Keep the tree in the card and key the aftermath instead (F10): 'Charles d'Eslon, the doctor whose patients Benjamin Franklin's commission had tested, read its report in 1784: no fluid, only imagination, touch and imitation. What did he say about its findings?' Key: 'He accepted them, and said imagination could still help the sick'. Wrong: 'He rejected them, saying the blindfolds had blocked the fluid', 'He rejected them, saying every tree holds the fluid by nature', 'He accepted them, and gave up healing for good'. This also shows a believer answering honestly, which suits 'present, never mock'."},
+    {"axis": "voice", "severity": "low",
+     "what": "The card's 'a fluid that no one could detect explained nothing' is the bank's own verdict, said a little smugly.",
+     "fix": "Attribute it: 'the commissioners wrote that sound physics has no room for a fluid no one can detect'."}
+  ]},
+
+  "6c70b60409": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The question asks 'What did his tests show about the judges' report?', but half the key ('Hans was not counting') is about the horse, not the report. 'No one cheated, and Hans really was counting' is also weak: the stem's 'went on testing' and the horse's famous name rule it out for most players.",
+     "fix": "Ask 'What did his tests show?' and replace the weak lure with 'No one cheated, and Hans could add but not multiply'."}
+  ]},
+
+  "510ff53991": {"verdict": "ok", "issues": []},
+
+  "404a3b4aa7": {"verdict": "drop", "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "This is the fifth Clever Hans question and the most redundant. It keys the same finding as 510ff53991 (Hans fails without the questioner's cue), whose own card already says he failed when the questioner 'stood where Hans could not see him'. As a number question, the story gives the answer away: the one extreme low score is the only choice that fits a horse who cannot see his cue, so the exact figure is never needed.",
+     "fix": "Drop it and give the slot to Emily Rosa (F24): 'The practitioners Emily Rosa tested had used therapeutic touch for anything from 1 year to 27. If they truly felt a human energy field, the old hands should have found her hand more often. How did their scores line up with their years of practice?' Key: 'No link: the old hands did no better'. Wrong: 'The old hands scored far higher', 'The newcomers scored far higher', 'Only the old hands beat chance'."},
+    {"axis": "fact", "severity": "low",
+     "what": "For the fact-checker: the facts sheet ties 50 of 56 (89 percent) and 2 of 35 (6 percent) to whether Hans could see the questioner, but notes that some sources tie 89 and 6 percent to whether the questioner knew the answer. If any card keeps these figures, the condition needs checking.",
+     "fix": "Fact-check the condition before any card uses the 89 and 6 percent pair."}
+  ]},
+
+  "1c505e6cc6": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only cue that is seen. The three lures (a click, a tap of the foot, a word) are all sounds, and the unit has just taught, in 510ff53991 and its card, that Hans failed when he could not see the questioner. The stem's 'watched the hoof closely' (head down) also primes the head coming up.",
+     "fix": "Make every lure a silent movement: 'A tiny upward jerk of the head' / 'A small step back from the horse' / 'A quick glance away toward the crowd' / 'A slight lift of one hand'."},
+    {"axis": "other", "severity": "low",
+     "what": "The card's 'No questioner knew he was making it' teaches d1907add39's key before that question is asked.",
+     "fix": "End the card: 'The 1904 panel, looking for tricks, never noticed it.'"}
+  ]},
+
+  "d1907add39": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'knowing the cue well. What happened?' sets up the twist, and the two 'He held still' lures are the expected outcomes a test-wise player passes over. 'He found Hans read only von Osten's cues' is contradicted by the unit's own cards (Hans did as well for strangers; 6c70b60409, 510ff53991), so it is dead. The key is also half taught by 1c505e6cc6's card (see there).",
+     "fix": "Replace the dead lure with 'He gave no cue, and Hans got about half right by luck'. With 1c505e6cc6's card trimmed, the key is no longer told in advance."}
+  ]},
+
+  "5d8c4d5a86": {"verdict": "revise", "issues": [
+    {"axis": "stance", "severity": "medium",
+     "what": "The key, 'No sense of her field, only guessing', drops the stem's careful attribution: 'her field' takes the energy field as real. 'Only guessing' also claims more than the data show; the card rightly says only that the score is within chance's range. The key is also the odd one out by shape: the only 'No ...' among three 'A ... sense' choices.",
+     "fix": "Key: 'No sign of any sense, just what guessing gives'. Wrong: 'No sign of any sense, since the screen blocked it' (the believers' own objection, a live lure), 'A weak sense, right almost half the time', 'A true sense, but read the wrong way round'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "At 82 words the stem is the unit's longest. 'in 1996 and 1997' and the coin-toss clause carry little that the question needs.",
+     "fix": "Cut 'in 1996 and 1997' (the card can date the two series), and keep the coin toss only if the card explains it."}
+  ]},
+
+  "06f7393ac8": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key restates the stem. 'Fix ... ahead of time' answered by 'So the mark cannot shift after the results' is close to 'fixed beforehand so that it is fixed', and a player needs no knowledge to match them. 'So the trials can stop as soon as one passes' is weak. 'So luck alone can never earn anyone a pass' is the one strong lure.",
+     "fix": "Ask the half the card already teaches: 'Before Emily Rosa's trials began, the authors of her study decided that a practitioner would pass by naming the right hand at least 8 times in 10, though guessing gives about 5. Why set the mark so far above 5?' Key: 'Guessing alone often reaches 6 or 7 of 10'. Wrong: 'A score of 5 would already show a weak sense', 'A pass must be more right than wrong', 'The practitioners asked for a hard test'. The chance sums stay easy: 6 or more of 10 comes up by luck more than a third of the time."}
+  ]}
+ },
+ "unit_notes": "Too lopsided as it stands. Clever Hans takes 5 of 10 (6c70b60409, 510ff53991, 404a3b4aa7, 1c505e6cc6, d1907add39), Mesmer 3 and Emily Rosa 2, and two pairs repeat a fact. 404a3b4aa7 re-asks 510ff53991's finding (Hans fails without the questioner's cue), and a13db2cc7f re-asks 33937f905a's (belief alone brings on the fit). Recommended shape: drop 404a3b4aa7 and add a third Rosa question (years of practice against score, F24). Rewrite a13db2cc7f on d'Eslon's answer to the report (F10). That gives Mesmer 3 (the design, the result, the aftermath), Hans 4 (the panel's verdict, the condition that made him fail, the cue, the tester's own cue) and Rosa 3 (the score against chance, experience, the pass mark). The other Hans questions are on different facts; d1907add39 needs 1c505e6cc6's card trimmed so its key is not told in advance. Overlaps with other units, checked: no re-ask of T1 born-knowing-or-learned (4d7ce512e6, a dog learns a trick by reward; no question here asks how Hans learned); nothing keys double-blind, randomisation or the sugar pill (T5 fair-trials-controls-and-placebos); the placebo effect is named only in 33937f905a's card, in plain words, as 'now called'; replication is left out (the one practitioner's retest is not used; T5 when-results-do-not-replicate); preregistration is one line in 06f7393ac8's card, which is fine. Framing: the believers are presented, not mocked. Von Osten is honest and charges nothing, d'Eslon cooperates, and the practitioners' energy field is attributed in the stem. Two slips: 5d8c4d5a86's key takes 'her field' as real, and a13db2cc7f's card carries the 'explained nothing' line. Arithmetic is easy in the head: 123 against 140 in 280; 8 of 10 against 5. Lanes: the horse sets the scene only; every Hans question asks about the test, not the animal."}

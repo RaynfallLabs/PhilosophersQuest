@@ -1,0 +1,219 @@
+{
+ "unit": "galaxies-and-the-expanding-universe",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "Edwin Hubble sorted the galaxies by shape in 1926. Spirals have a flat disk with winding arms, ellipticals are smooth round or oval balls of stars, and irregulars have no set shape. Young stars blaze in the arms of a spiral, but an elliptical holds mostly old, reddish stars and makes few new ones. What keeps an elliptical from making many new stars?",
+   "answer": "It has little gas and dust left to use",
+   "choices": [
+    "It has little gas and dust left to use",
+    "Its gravity is too weak to gather gas",
+    "Its stars are packed too close for new ones",
+    "Its dim old stars cannot warm gas into stars"
+   ],
+   "context": "A galaxy is a vast system of stars, gas and dust held together by gravity, and new stars form only where clouds of cold gas and dust collapse. Ellipticals have very little of either left, much of it used up or blown away when the galaxies that built them merged, so they shine mostly with old stars. Their gravity is enormous, their stars lie vast distances apart, and warming gas would only hinder its collapse.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "grade_note": "8th grade (TEKS 2017 8.8A; curriculum line G8.E2) teaches galaxies by shape, spiral, elliptical and irregular, as Hubble sorted them."
+  },
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "Harlow Shapley worked out how far away 69 globular clusters lie, timing the pulsing stars inside them. Each cluster is a tight ball of many thousands of stars. Mapped in space, the clusters were not spread evenly around the Sun but crowded toward one part of the sky, in Sagittarius. What did Shapley conclude in 1918?",
+   "answer": "The Sun lies far from the galaxy's centre",
+   "choices": [
+    "The Sun lies far from the galaxy's centre",
+    "The Sun lies close to the galaxy's centre",
+    "The Sun lies outside the galaxy's disk",
+    "The clusters form a galaxy of their own"
+   ],
+   "context": "Shapley reasoned that the clusters swarm around the galaxy's centre, so their crowding toward Sagittarius put that centre far off in that direction, not near the Sun, where Jacobus Kapteyn's model had placed it. Today the Sun is placed in the Orion Arm, a minor spiral arm, about 26,000 light-years from the centre, roughly halfway out in a disk about 100,000 light-years across. Shapley was right about the Sun's place, though he made the galaxy far too big.",
+   "facts": [
+    "F7",
+    "F8",
+    "F10"
+   ],
+   "grade_note": "8th grade (TEKS 2017 8.8B; curriculum line G8.E2) teaches that the Sun lies in a spiral arm of the Milky Way, far from its centre."
+  },
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "Proxima Centauri, the nearest star beyond the Sun, is about 4.2 light-years away. What does the figure of 4.2 light-years tell an astronomer?",
+   "answer": "How far light travels in 4.2 years",
+   "choices": [
+    "How far light travels in 4.2 years",
+    "How long a rocket would take to get there",
+    "How long ago the star began to shine",
+    "How fast its light moves through space"
+   ],
+   "context": "A light-year is a distance, not a time: the ground light covers in one year at nearly 300,000 kilometres a second, about 9.5 trillion kilometres. So Proxima's light takes 4.2 years to reach Earth, and astronomers see the star as it was 4.2 years ago; any rocket, far slower than light, would need far longer to get there.",
+   "facts": [
+    "F11",
+    "F12"
+   ],
+   "grade_note": "8th-grade astronomy (Texas's earlier standard 8.8D; NGSS MS-ESS1-3 lessons) teaches the light-year as the unit for distances between stars and galaxies."
+  },
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "Henrietta Leavitt was one of the women Edward Pickering hired as 'computers' at the Harvard College Observatory, measuring stars on glass photographs of the sky. In the Small Magellanic Cloud, whose stars all lie at about the same distance from Earth, she timed 25 Cepheids, stars that brighten and dim on a steady cycle. What did she find in 1912?",
+   "answer": "The longer its cycle, the brighter the star",
+   "choices": [
+    "The longer its cycle, the brighter the star",
+    "The shorter its cycle, the brighter the star",
+    "Every star kept the same length of cycle",
+    "A star's cycle had no link to its brightness"
+   ],
+   "context": "This is Leavitt's law, the period-luminosity relation: a Cepheid's cycle gives away its true brightness. Because the cloud's stars all lie about equally far away, the ones that looked brighter really were brighter, and the longer-cycle stars were the brighter ones. A year later Ejnar Hertzsprung found the distances of a few Cepheids in the Milky Way and gave her law its scale, making it a ruler for the universe.",
+   "facts": [
+    "F13",
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "8th-grade lessons on measuring the universe (curriculum lines G8.E2, G8.E3, G8.M2) tell Leavitt's pulsing stars as the ruler Hubble later used."
+  },
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "Two Cepheids in different parts of the sky each brighten and dim once every ten days. Yet one of them looks a hundred times fainter than the other. What does that tell an astronomer?",
+   "answer": "The fainter one lies much farther away",
+   "choices": [
+    "The fainter one lies much farther away",
+    "The fainter one gives off much less light",
+    "The two lie the same distance away",
+    "The fainter one is an older, fading star"
+   ],
+   "context": "By Leavitt's law, Cepheids with the same cycle give off about the same amount of light, so a difference in how bright they look comes from distance: the farther away a light is, the fainter it looks. This is how a Cepheid serves as a 'standard candle' for measuring the distances of star clusters and galaxies.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "8th grade (TEKS 2017 8.8D, the data behind theories of the universe) teaches how Cepheids measure the distances that showed the galaxies are separate and moving away."
+  },
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "Harlow Shapley and Heber Curtis argued in Washington in 1920 over the spiral nebulae, such as the faint smudge in Andromeda. Edwin Hubble photographed Andromeda with the 100-inch telescope on Mount Wilson in October 1923. One speck he had marked N, for a new star, he later relabelled as a variable star: it was a Cepheid, and its pulse put it about 900,000 light-years away. What did that show?",
+   "answer": "Andromeda is a separate galaxy beyond the Milky Way",
+   "choices": [
+    "Andromeda is a separate galaxy beyond the Milky Way",
+    "Andromeda is a cloud of gas inside the Milky Way",
+    "Andromeda is a star system forming inside the Milky Way",
+    "Andromeda is a cluster of stars at the Milky Way's edge"
+   ],
+   "context": "The plate still shows his N crossed out and \"VAR!\" written beside it. Even Shapley's giant Milky Way, about 300,000 light-years across by his reckoning, could not hold something 900,000 light-years away, so Curtis had been right in their Great Debate: Andromeda is a galaxy of its own, now measured at about 2.5 million light-years, while the Milky Way is about 100,000 across. Before then, astronomers such as Isaac Roberts had taken the spirals for star systems still forming.",
+   "facts": [
+    "F7",
+    "F17",
+    "F18",
+    "F19",
+    "F20"
+   ],
+   "grade_note": "8th-grade lessons on galaxies (curriculum lines G8.E2, G8.M2) tell Hubble's Cepheid in Andromeda as the proof that other galaxies exist."
+  },
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "Vesto Slipher, at the Lowell Observatory in Arizona, measured the light of spiral nebulae from 1912 to 1917. The light of the Andromeda nebula was shifted toward the blue end of the rainbow, but for nearly all the others he measured, it was shifted toward the red end. What did the red shift show about those nebulae?",
+   "answer": "They were moving away from Earth",
+   "choices": [
+    "They were moving away from Earth",
+    "They were moving toward Earth",
+    "They were cooler than Andromeda",
+    "They were spinning faster than Andromeda"
+   ],
+   "context": "Light from something moving away reaches Earth stretched into longer waves, shifted toward red; light from something coming closer is squeezed toward blue. So Andromeda is moving toward the Milky Way, while nearly all the others were moving away. A star's own colour does show its temperature, but a shift of a whole galaxy's light shows its motion.",
+   "facts": [
+    "F20",
+    "F21",
+    "F22",
+    "F23"
+   ],
+   "grade_note": "8th grade (TEKS 2017 8.8D; curriculum line G8.E3) teaches that distant galaxies' light is shifted toward red because they are moving away."
+  },
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "Edwin Hubble worked out the distances of galaxy after galaxy at Mount Wilson, using Cepheids among other clues. He set each distance beside the galaxy's speed, measured from its light by Vesto Slipher and Milton Humason. What pattern did Hubble report in 1929?",
+   "answer": "The farther the galaxy, the faster it moves away",
+   "choices": [
+    "The farther the galaxy, the faster it moves away",
+    "The nearer the galaxy, the faster it moves away",
+    "Every galaxy moves away at the same speed",
+    "A galaxy's speed has no link to its distance"
+   ],
+   "context": "The farther a galaxy lies, the faster it moves away, the pattern an expanding universe predicts, though Hubble himself long called the speeds only 'apparent'. Georges Lemaître, a Belgian priest and physicist, had derived it from Einstein's theory of gravity in 1927, two years earlier, in a little-read French paper. In 2018 the International Astronomical Union recommended, by a members' vote, calling it the Hubble-Lemaître law.",
+   "facts": [
+    "F24",
+    "F25"
+   ],
+   "grade_note": "8th grade (curriculum lines G8.E3, G8.M2) teaches Hubble's finding that farther galaxies move away faster, the evidence for an expanding universe."
+  },
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "The universe has been expanding since the Big Bang, about 13.8 billion years ago, and almost every distant galaxy is moving away from the Milky Way. A girl decides that the Milky Way must sit at the centre of the universe, the spot where the Big Bang went off. Why is she mistaken?",
+   "answer": "From any galaxy, the others would seem to move away",
+   "choices": [
+    "From any galaxy, the others would seem to move away",
+    "The Milky Way is itself racing away from the true centre",
+    "The Big Bang went off at a point beyond the farthest galaxies",
+    "The Milky Way is too small a galaxy to sit at the centre"
+   ],
+   "context": "The expansion has no centre. Space itself is stretching everywhere, so from any galaxy the rest would seem to move away, just as every raisin in a rising loaf sees the others draw back. The Big Bang was not an explosion at one point in space; it happened everywhere at once.",
+   "facts": [
+    "F26",
+    "F27"
+   ],
+   "grade_note": "8th-grade lessons on the Big Bang (TEKS 2017 8.8D; curriculum line G8.E3) model the expansion with a balloon or rising raisin bread, in which no point is the centre."
+  },
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "Fred Hoyle gave the Big Bang its name in a British radio talk in March 1949, while arguing for a rival theory that he, Hermann Bondi and Thomas Gold had put forward at Cambridge. In their steady-state universe the galaxies move apart, yet the universe has no beginning and always looks the same. How could it stay the same as the galaxies spread?",
+   "answer": "New matter forms in the widening gaps",
+   "choices": [
+    "New matter forms in the widening gaps",
+    "Each galaxy swells to fill the widening gaps",
+    "Gas blown off old stars fills the widening gaps",
+    "Galaxies drift in from beyond to fill the gaps"
+   ],
+   "context": "The steady-state theory accepted the galaxies' flight but had new matter appear in the gaps, an atom at a time, so the universe never thinned out and never began. The faint glow found in 1965 fitted a hot, young universe and not this one, and most astronomers gave up the steady state; Hoyle never did, and kept seeking other explanations for the glow. The name he gave his rivals' idea stuck.",
+   "facts": [
+    "F28",
+    "F29",
+    "F30"
+   ],
+   "grade_note": "8th grade (TEKS 2017 8.8D) has students weigh the data behind rival theories of the universe's origin, the Big Bang against the steady state."
+  },
+  {
+   "tier": 4,
+   "topic": "galaxies-and-the-expanding-universe",
+   "question": "Arno Penzias and Robert Wilson tested a huge horn-shaped antenna at Bell Labs in New Jersey in 1964 and picked up a faint, steady microwave hiss. It came from wherever they aimed the horn, by day and by night, in every season, and a pair of pigeons had made a nest inside it. What was the hiss?",
+   "answer": "The glow left over from the Big Bang",
+   "choices": [
+    "The glow left over from the Big Bang",
+    "Warmth from the pigeons' droppings in the horn",
+    "Static made by the antenna's own electronics",
+    "Radio waves given off by the Milky Way"
+   ],
+   "context": "They moved the pigeons out and scrubbed out the droppings, but the hiss stayed. Physicists at Princeton recognised it as the glow left over from the hot, young universe, stretched by the expansion into microwaves and cooled to about 2.7 degrees above absolute zero: the cosmic microwave background. It won Penzias and Wilson the 1978 Nobel Prize in Physics.",
+   "facts": [
+    "F26",
+    "F31",
+    "F32",
+    "F33"
+   ],
+   "grade_note": "8th grade (curriculum line G8.E3) teaches the cosmic microwave background as radiation left over from the Big Bang, the second great evidence for it."
+  }
+ ]
+}

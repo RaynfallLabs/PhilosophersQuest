@@ -1,0 +1,70 @@
+{"unit": "correlation-causation-and-error",
+ "questions": {
+  "f99e57ffca": {"verdict": "ok", "issues": []},
+
+  "55dccca414": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'checked the claim' tells the player that the 1999 result is about to fall, which weakens 'Night lights harmed young eyes, as first reported'. The key is also the only choice that brings in a new factor, though the unit has just taught that pattern, so this is mild.",
+     "fix": "'Karla Zadnik's team at Ohio State University asked the same question about more than 1,200 children in 2000. What did her team find?'"}
+  ]},
+
+  "39ffebc0c0": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem spells out the answer. Lung cancer causing the smoking is cause and effect turned round, so 'Reverse causation' can be matched from the stem's own words by a player who has never met the term. None of the other three choices touches the direction of the arrow at all.",
+     "fix": "Key what follows from Fisher's own favoured idea instead: 'Ronald Fisher, who laid the foundations of modern statistics, argued in 1958 that the link between smoking and lung cancer did not prove that smoking caused the cancer. He thought it more likely that an inborn makeup, passed down in families, led people both to smoke and to fall ill. If he were right, what would happen to a heavy smoker's risk once he gave up smoking?' Key: 'It would stay about the same, as his makeup is unchanged'. Wrong: 'It would fall over the years, as his lungs mended', 'It would fall at once to a non-smoker's level', 'It would rise, as his body went without the smoke'. Reverse causation (the hidden-cancer question) then moves to the card. Do not fix it by keying 'an inborn makeup' as the answer: f99e57ffca and 55dccca414 already key a hidden third factor."},
+    {"axis": "stance", "severity": "medium",
+     "what": "Fisher is told only as the great statistician who was proved wrong. The card leaves out that he was a lifelong pipe smoker and that he was paid as a consultant by the tobacco industry from 1958, the year of this paper (F12). The honest telling needs all four facts, with no motive alleged.",
+     "fix": "Add to the card: 'Fisher, a lifelong pipe smoker, was also paid as a consultant to the tobacco industry from 1958. He held his view sincerely, and his warning that a link alone proves no cause is still sound.'"},
+    {"axis": "fact", "severity": "low",
+     "what": "The card's 'Later evidence went against him, since doctors who gave up smoking ...' answers the inborn-makeup idea most cleanly (giving up cannot change a person's genes), and the hidden-cancer idea less cleanly.",
+     "fix": "'Later evidence went against him: doctors who gave up smoking went on to have far less lung cancer than those who kept on, which an inborn makeup could not explain.'"}
+  ]},
+
+  "02f8fa5782": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only hedged claim ('It fits'). The three wrong choices are absolutes ('proves', 'most smokers will die', 'cannot lower') that a careful reader rejects on their wording alone. 'Giving up smoking cannot lower the risk' does not follow from a pattern by amount smoked at all, so only two choices are live.",
+     "fix": "Make all four hedged readings of the pattern: 'It fits a cause that does more harm in bigger doses' / 'It fits a link that chance made among so many doctors' / 'It fits doctors who said they smoked less than they did' / 'It fits a harm that comes with the doctors' age, not their smoking'."}
+  ]},
+
+  "dc47a9be7b": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's 'searched thousands of sets of yearly figures for pairs that rose and fell together' is echoed by the key's 'Out of so many pairs', so the setup names the solution. 'The films lead viewers to take risks in water' is silly, so only three choices are live.",
+     "fix": "Stem: 'Tyler Vigen, then a law student, built a website of strange matches between sets of yearly figures from public records.' Replace the silly lure with 'Both followed the summers, hot one year and cool the next'."}
+  ]},
+
+  "22b242dc56": {"verdict": "ok", "issues": []},
+
+  "0a0cf8497e": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only cause on the ground. All three lures (launch, the cold of space, the second mirror in orbit) are things that happen after the making, so the one choice about the making stands out. 'The makers' final checks said the mirror's curve was right. Yet...' also points the player at the checks.",
+     "fix": "Drop the 'final checks' sentence, and replace 'The mirror had warped in the cold of space' with an Earth-side lure: 'The polishers had stopped grinding it too soon'. Two lures then lie on the ground and two in space."}
+  ]},
+
+  "51a807b00b": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Neither, as about half of all babies are boys' is not an answer to 'which marks more'. Read as 'neither marks more', it duplicates 'Both about the same'; read as 'neither marks any such days', it is silly. Either way only three choices are live.",
+     "fix": "Replace it with a right hospital for a wrong reason: 'The small one, as boys are likelier where fewer are born'. The player must then know why, not only which."},
+    {"axis": "other", "severity": "low",
+     "what": "Overlap and lane, checked and cleared. The key (small groups swing more by chance) goes a step deeper than T3 designing-a-controlled-experiment b54fe71bc3 (one seed per group shows little) and T1 measuring-and-the-fair-test d206b22021 (repeat a drop). It is not the 'more trials help' the lead's ruling bars. The card's last line ('This is why scientists trust a big sample') drifts back toward that slogan.",
+     "fix": "End the card on the variability itself: 'The fewer the cases, the more a result can swing by luck alone.'"}
+  ]},
+
+  "c09682ef18": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem gives wings and bodies the same role ('many bullet holes'), so neither can be the single answer, and a test-wise player strikes both. That leaves 'The engines', singled out by 'but few in their engines', against the vague 'Every part alike'. 'By Wald's reasoning' signals a twist on top. The survivorship trap is also famous enough that the counter-intuitive pick is common knowledge. The gate's key_noun_leak flag is confirmed in this form.",
+     "fix": "Key the reasoning, not the part: 'Abraham Wald, a statistician with the Statistical Research Group at Columbia University, worked out in 1943 how to judge where a bomber is weakest from the damage on the planes that came back from their missions. In the story usually told of his work, the returning planes had few bullet holes in their engines. Why, by his reasoning, did the engines need armour most?' Key: 'Planes hit there had mostly not come back'. Wrong: 'Few enemy guns were aimed at the engines', 'Holes in an engine are too small to count', 'The engines were the weakest metal on the plane'."},
+    {"axis": "fact", "severity": "medium",
+     "what": "The retelling is stated as documented fact. 'Studied the damage on American bombers that came back' and 'The returning planes had many bullet holes in their wings and bodies, but few in their engines' state the popular pattern as history. Yet F18 says the dotted-bomber picture is a hypothetical illustration and the 'armour the engines' advice is apocryphal; his memos worked the method out in mathematics. The card says so, but the stem contradicts the card.",
+     "fix": "Mark the pattern as the story's: 'In the story usually told of his work, the returning planes had ...' (as in the fix above), or 'Suppose the returning planes had ...'. Keep the card's last sentence."}
+  ]},
+
+  "e2a58708cd": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Each choice carries a reason that can be checked against the stem's own numbers. 'Each step adds the same amount' and 'each step adds less' are both contradicted by 100, 200, 400, 800, so only the key and 'A straight line, as the count doubles every time' are live, and the key's 'as each step adds more' is the rule itself. The question is also close to the math bank's lane: the shape of a doubling sequence is 8th-grade maths (linear and nonlinear functions), and the only biology is a scene the stem already settles.",
+     "fix": "Drop the reasons and ask about the shape alone: 'A line that curves upward, ever more steeply' / 'A straight line sloping upward' / 'A line that rises, then levels off' / 'A line that rises steeply, then ever more gently'. Or ask the science behind the shape: 'Her line curves upward ever more steeply. What does that tell her about the bacteria?' Key: 'The more there are, the more new ones each step adds'. Wrong: 'The same number of new ones arrive every 20 minutes', 'Each one grows bigger, not more numerous', 'Her counts grow less careful as they rise'."},
+    {"axis": "other", "severity": "low",
+     "what": "Graph shape is already keyed in a T4 physical unit: newtons-laws-force-mass-and-acceleration 7fcc917549 (a straight line rising from zero, with 'A curve that grows ever steeper' as a lure). This is not a re-ask, since that one is linear and this one is not, but the two sit close.",
+     "fix": "None needed if the fix above is taken; the science-behind-the-shape version moves it further from 7fcc917549."}
+  ]}
+ },
+ "unit_notes": "The scope is covered on different facts: a hidden third factor (f99e57ffca, 55dccca414), the direction of cause (39ffebc0c0), building a causal case (02f8fa5782), coincidence (dc47a9be7b), precision against accuracy (22b242dc56), an error that repeats every time (0a0cf8497e), sample size and chance (51a807b00b), survivorship bias (c09682ef18) and a nonlinear graph (e2a58708cd). The lead's ruling holds. Nothing keys variables or controls (T3 designing-a-controlled-experiment), and nothing re-asks the T2 measuring-like-a-scientist keys: precision as close agreement (60d3405444) is taken a grade deeper by 22b242dc56, which splits precision from accuracy; averaging (0a2b7efe80) appears only in 22b242dc56's card; the odd run (cba5994641), the evaporation error (2deca18b50) and reaction time (07b215ae83) are untouched. 'More trials help' is never the key (see 51a807b00b's note on its card). A hidden third factor is keyed twice (f99e57ffca, 55dccca414); the two are different cases with different facts and may stay, but the 39ffebc0c0 fix must not make it three. Smoking carries two questions (39ffebc0c0, 02f8fa5782) on different points, which is fine. Fisher: told honestly only once the card adds that he smoked and was paid by the tobacco industry; the bank must neither smear him (no motive alleged) nor leave those facts out. Wald: the stem states the retelling as fact while the card calls it a retelling, so the stem must change. Arithmetic is easy in the head throughout (no sums are needed in 51a807b00b; 53 against 50 in 22b242dc56). The lane note holds except e2a58708cd, which leans into maths."}

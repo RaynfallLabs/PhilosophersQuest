@@ -1,0 +1,182 @@
+{
+ "unit": "how-hurricanes-form",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "how-hurricanes-form",
+   "question": "North of the equator the longest day of the year comes in June, yet the Atlantic's hurricanes are most common in early September, nearly three months later. Why do they come so late?",
+   "answer": "The sea takes all summer to warm up",
+   "choices": [
+    "The sea takes all summer to warm up",
+    "Earth passes closest to the Sun in September",
+    "The Sun gives off the most heat in September",
+    "The trade winds stop blowing by September"
+   ],
+   "context": "Hurricanes form only over sea water of about 26 degrees Celsius or warmer, and water warms slowly, so the tropical Atlantic goes on gaining heat all summer and is near its warmest in late September; that, with calmer winds high above, puts the season's peak on about 10 September. Earth is in fact closest to the Sun in early January, and the Sun's own output barely changes with Earth's seasons. The trade winds blow all year, steering young storms west across the ocean.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "8th grade (TEKS 8.10C) teaches the ocean's part in making hurricanes: they form only over warm sea water, about 26 degrees Celsius or more."
+  },
+  {
+   "tier": 4,
+   "topic": "how-hurricanes-form",
+   "question": "Meteorologists call a hurricane a heat engine: it turns heat into the motion of its winds. Most of that heat is released high inside the storm's towering clouds, kilometres above the sea. What releases it there?",
+   "answer": "Water vapour condensing into droplets",
+   "choices": [
+    "Water vapour condensing into droplets",
+    "Water droplets evaporating into vapour",
+    "Ice crystals melting into raindrops",
+    "Sunlight warming the tops of the clouds"
+   ],
+   "context": "Warm sea water evaporates, and the vapour carries the sea's heat up hidden inside it; when the rising vapour condenses into cloud droplets, that heat is set free, warming the air so that it rises faster and draws in more moist air from the sea. Evaporation and melting take heat in rather than giving it out. The storm's engine runs on the sea's heat carried up in the vapour, not on sunlight falling on its clouds.",
+   "facts": [
+    "F6",
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "8th grade (TEKS 8.10C) teaches how the ocean powers a hurricane: vapour from the warm sea condenses in rising air and releases the heat that drives the storm."
+  },
+  {
+   "tier": 4,
+   "topic": "how-hurricanes-form",
+   "question": "The sea along the equator is often warm enough to feed a hurricane. Yet hurricanes almost never form within about 5 degrees of latitude of the equator. What stops them there?",
+   "answer": "Earth's spin barely twists the air there",
+   "choices": [
+    "Earth's spin barely twists the air there",
+    "The air there sinks instead of rising",
+    "The air there is too dry to build clouds",
+    "The winds there blow too hard for storms"
+   ],
+   "context": "A hurricane needs a twist to set it turning, and Earth's spin gives moving air that twist (the Coriolis effect), which is zero at the equator and grows toward the poles. The equator's air is in fact humid and rising, full of thunderstorms, and its winds are often light, the calm belt sailors called the doldrums. Only a very few storms, such as Typhoon Vamei in 2001, have ever formed closer in.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "8th grade teaches that Earth's spin sets a hurricane turning, which is why they form over warm water but away from the equator (curriculum line G8.E6)."
+  },
+  {
+   "tier": 4,
+   "topic": "how-hurricanes-form",
+   "question": "Weather satellites watching from above see every hurricane north of the equator turning counter-clockwise. Satellites watch the tropical cyclones south of the equator too. Which way do those storms turn, and why?",
+   "answer": "Clockwise, as Earth's spin bends air the other way",
+   "choices": [
+    "Clockwise, as Earth's spin bends air the other way",
+    "Clockwise, as the seasons there run the other way",
+    "Counter-clockwise, as Earth spins only one way",
+    "Either way, as chance sets the turn of each one"
+   ],
+   "context": "Earth's spin bends moving air to the right north of the equator and to the left south of it, so the air rushing in toward a storm's centre swirls counter-clockwise in the north and clockwise in the south, every time. The reversed seasons come from the tilt of Earth's axis and play no part in the turn. A draining sink is another matter: it is far too small for Earth's spin to steer, so its swirl can go either way.",
+   "facts": [
+    "F14",
+    "F4",
+    "M3"
+   ],
+   "grade_note": "8th grade teaches that Earth's rotation sets a hurricane's spin, counter-clockwise north of the equator and clockwise south of it (curriculum line G8.E6)."
+  },
+  {
+   "tier": 4,
+   "topic": "how-hurricanes-form",
+   "question": "Hurricane John formed in the Pacific off Mexico in August 1994 and lasted about a month. Partway through its life, forecasters began calling it Typhoon John. What did the new name mark?",
+   "answer": "It had moved into another part of the ocean",
+   "choices": [
+    "It had moved into another part of the ocean",
+    "Its winds had grown faster than a hurricane's",
+    "It had grown larger than a hurricane can be",
+    "It had begun to spin the other way round"
+   ],
+   "context": "Hurricane and typhoon are two regional names for one kind of storm, the tropical cyclone: it is a hurricane in the Atlantic and the eastern and central Pacific, and a typhoon in the western Pacific. John was renamed when it crossed the International Date Line, where the western Pacific begins, and when it drifted back east in September it was Hurricane John again. Its winds, size and spin had nothing to do with the name.",
+   "facts": [
+    "F15",
+    "F16",
+    "M1"
+   ],
+   "grade_note": "8th grade (TEKS 8.10C, current wording) teaches tropical cyclones as hurricanes and typhoons: the same storm, named by the ocean it is in (curriculum line G8.E6)."
+  },
+  {
+   "tier": 4,
+   "topic": "how-hurricanes-form",
+   "question": "Joseph Duckworth, an Army pilot, flew a small two-seat trainer into a hurricane on the Texas coast in 1943, the first known flight made on purpose into a hurricane's eye. After violent bumps and pounding rain, the plane broke out into calm air, with the Sun above and the ground in view below. Why is the eye calm and clear?",
+   "answer": "Its air sinks, and sinking air makes no clouds",
+   "choices": [
+    "Its air sinks, and sinking air makes no clouds",
+    "Its air rises too fast for clouds to form",
+    "Winds from every side meet there and cancel",
+    "Cold air pools there and blocks the winds"
+   ],
+   "context": "In the eye, air from high in the storm sinks slowly, warming and drying as it falls, so no clouds can form; the winds die to light breezes, and the pressure is the lowest in the storm. The eye is the storm's warm core, several degrees warmer than the air around it, and on a second flight that day the weather officer William Jones-Burdick recorded temperatures inside it. All around the eye the air rises in a ring of towering thunderstorms, the eyewall.",
+   "facts": [
+    "F17",
+    "F21"
+   ],
+   "grade_note": "8th grade teaches the hurricane's calm eye inside the eyewall (curriculum line G8.E6), and how we know it, from aircraft flown into the storm."
+  },
+  {
+   "tier": 4,
+   "topic": "how-hurricanes-form",
+   "question": "A weather station on a low island lies straight in a hurricane's path. For hours its instruments record a roaring wind from the north-east. Then, within minutes, the wind drops almost to calm and blue sky shows overhead. What will the instruments most likely record next?",
+   "answer": "Fierce winds again, from the opposite way",
+   "choices": [
+    "Fierce winds again, from the opposite way",
+    "Fierce winds again, from the same way",
+    "Light winds, as the storm has blown out",
+    "Light rain, as the outer rain bands pass"
+   ],
+   "context": "The calm is the eye, and all around it lies the eyewall, a ring of towering thunderstorms with the storm's strongest winds. The winds circle the centre, so once the eye has passed, the far side of the eyewall strikes the station from the opposite direction, as fierce as before. Sailors of old took the eye's calm for the end of the storm, and forecasters still warn that the worst winds return soon after the eye passes.",
+   "facts": [
+    "F18",
+    "F19",
+    "F20",
+    "M4"
+   ],
+   "grade_note": "8th grade teaches the hurricane's eye and eyewall (curriculum line G8.E6): a calm centre ringed by the strongest winds."
+  },
+  {
+   "tier": 4,
+   "topic": "how-hurricanes-form",
+   "question": "Herbert Saffir, an engineer, and Robert Simpson, a meteorologist, made a scale in the early 1970s that sorts hurricanes into five categories. In its form since 2010, the scale leaves out the danger that is often the deadliest, so a storm's category can badly understate how deadly it will be. Which danger is that?",
+   "answer": "Its storm surge",
+   "choices": [
+    "Its storm surge",
+    "Its strongest winds",
+    "Its tornadoes",
+    "Its lightning"
+   ],
+   "context": "Since 2010 the Saffir-Simpson scale has rated a storm by its strongest steady winds alone, so it says nothing of the storm surge, the rise of the sea that the winds push ashore; surge caused about half the deaths in US Atlantic hurricanes and tropical storms from 1963 to 2012, against 8 percent for wind and 3 for tornadoes. Hurricane Ike was only a Category 2 as it neared Texas in 2008, yet it drove in a surge typical of a Category 4 or 5.",
+   "facts": [
+    "F23",
+    "F24",
+    "F25",
+    "M5"
+   ],
+   "grade_note": "8th grade (curriculum line G8.E6; NGSS MS-ESS3-2 on natural hazards) teaches storm surge as a hurricane's great danger, and the Saffir-Simpson categories."
+  },
+  {
+   "tier": 4,
+   "topic": "how-hurricanes-form",
+   "question": "Hurricane hunters drop dropsondes, instrument packs that fall by parachute and radio back the wind, into a hurricane drifting north over sea water of 20 degrees Celsius. Day by day its winds grow weaker. Another hurricane weakens just as fast after it moves ashore. What do the two have in common?",
+   "answer": "Each has lost its supply of warm, moist air",
+   "choices": [
+    "Each has lost its supply of warm, moist air",
+    "Each has moved where Earth's spin is weaker",
+    "Each has met cold air that freezes its clouds",
+    "Each gets too little sunlight to keep going"
+   ],
+   "context": "A hurricane runs on warm, moist air off a warm sea, and neither cool water nor land can supply it, so less vapour rises to condense and release its heat, and the storm runs down; over land, the rough ground slows its winds as well. Earth's spin grows stronger, not weaker, away from the equator, and a hurricane's high cloud tops are frozen already, at about -70 degrees Celsius. The storm's heat comes from the sea, not from sunlight on its clouds.",
+   "facts": [
+    "F26",
+    "F22",
+    "F14",
+    "F10",
+    "M6"
+   ],
+   "grade_note": "8th grade (TEKS 8.10C) teaches that the warm ocean powers a hurricane, so it weakens once it moves over land or cold water."
+  }
+ ]
+}

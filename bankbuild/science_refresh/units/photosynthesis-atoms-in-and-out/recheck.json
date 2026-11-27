@@ -1,0 +1,40 @@
+{
+ "unit": "photosynthesis-atoms-in-and-out",
+ "questions": {
+  "3004206b78": {
+   "verdict": "pass",
+   "why": "Key true (light energy changed into chemical energy stored in glucose); the new choice 'As light energy held in the glucose' is an energy form, so the old tell is gone, and the context's 'no light is kept' is sourced (F21). Near-overlap only: energy-changes-form (T1) keys food holding chemical energy and how-plants-make-food's context says grass stores the Sun's energy in its sugar, but no lower unit keys the light-to-chemical change in a plant.",
+   "sources": [
+    "https://grokipedia.com/page/Photosynthesis",
+    "https://grokipedia.com/page/Chlorophyll"
+   ]
+  },
+  "002cd35b96": {
+   "verdict": "pass",
+   "why": "Ruben, Randall, Kamen and Hyde (1941, Berkeley): only the oxygen-18 water gave oxygen-18 gas; oxygen-18 has two extra neutrons. 'Heavy-oxygen water' now avoids the D2O sense of 'heavy water'. The van Niel clause matches Wikipedia (1931, predicted water is the plant's hydrogen donor and oxidised to O2). No other unit keys the tracer result.",
+   "sources": [
+    "https://www.biology-pages.info/P/Photosynthesis_history.html",
+    "https://en.wikipedia.org/wiki/Sam_Ruben",
+    "https://en.wikipedia.org/wiki/C._B._van_Niel",
+    "https://grokipedia.com/page/Oxygen-18"
+   ]
+  },
+  "fbb94655d8": {
+   "verdict": "fail",
+   "why": "Knowledge tell. The facts are right (his own words: 164 pounds 'arose out of water onely'), but the stem says he gave the willow only rainwater or distilled water and that the soil lost 'only' 57 g, and never mentions air, so 'From the water alone' is read off the stem's own account of his set-up, and 'From the air alone' is dead (he watered it for five years). The question rewards careful reading of 'he conclude', not knowing what van Helmont concluded. No one-phrase fix; re-key or drop.",
+   "sources": [
+    "https://web.lemoyne.edu/GIUNTA/helmont.html",
+    "https://grokipedia.com/page/Jan_Baptist_van_Helmont",
+    "https://www.biology-pages.info/P/Photosynthesis_history.html"
+   ]
+  },
+  "170f812ad8": {
+   "verdict": "fail",
+   "why": "Old problem not fixed. The facts are right (over 500 experiments in summer 1779 at a rented house near London; 'no dephlogisticated air is obtained in a warm room, if the sun does not shine upon the jar'). But how-plants-make-food's pondweed key (oxygen bubbles from leaves on a sunny windowsill) and its context ('in the dark the bubbles soon stop') still settle it: the warm room had no sunshine. 'No bubbles in the sunshine or in the warm room' is dead against that key and the stem's 'gas that mends spoiled air', and 'more in the warm room' is weak, so the lower-tier oxygen-bubbles fact alone picks the key. Possible fix: re-key to his dark finding, that leaves kept from the light spoil the air (Grokipedia: plants 'consume oxygen and produce carbon dioxide in the dark').",
+   "sources": [
+    "https://grokipedia.com/page/Jan_Ingenhousz",
+    "https://en.wikipedia.org/wiki/Jan_Ingenhousz"
+   ]
+  }
+ }
+}

@@ -97,3 +97,15 @@ G1. TEKS 8.6E (Texas, 8th grade): "investigate how mass is conserved in chemical
 - Whether Priestley's split-air comparison used mint (his own text names no plant there): the question uses only the dated mint test of 17-27 August 1771; the split air is in the context as "a plant".
 - The oxygen atoms of glucose: they come from carbon dioxide in the standard account, but only a weak teaching source was found, and the oxygen of cellulose exchanges with water; no question or context says where glucose's oxygen comes from.
 - Willstätter and Warburg as named holders of the old carbon-dioxide view: only a search summary; not used.
+
+## Added in the revision (2026-11-26)
+
+F20. Van Helmont's own account (Ortus medicinae, as excerpted by Le Moyne College): he dried 200 pounds of earth in a furnace, put it in an earthen vessel and planted a willow of 5 pounds; he covered the vessel's mouth with an iron plate covered with tin and pierced with many holes, so that "the dust that flew about" would not mingle with the earth; he watered it with rain or distilled water; he did not weigh the leaves that fell in four autumns; after five years the tree weighed about 169 pounds 3 ounces and the dried earth about 200 pounds less about 2 ounces; so 164 pounds of wood, bark and roots had arisen "out of water onely". Grokipedia: the lid was "tin-plated iron ... perforated with small holes", "to minimize dust contamination"; he concluded the tree's mass came "solely from water". Kimball: "He did not consider the possibility that gases in the air might be involved."
+    https://web.lemoyne.edu/GIUNTA/helmont.html ; https://grokipedia.com/page/Jan_Baptist_van_Helmont ; https://www.biology-pages.info/P/Photosynthesis_history.html
+
+F21. Chlorophyll catches light and passes its energy on; it does not store it: "excited chlorophyll molecules transfer energy to neighboring pigments through a series of rapid steps", its role "absorbing light energy and facilitating its conversion into chemical energy" (Grokipedia, Chlorophyll).
+    https://grokipedia.com/page/Chlorophyll
+
+Revision notes (not facts):
+- The judge's ash re-key for de Saussure (the ash's atoms come from soil minerals) was checked against the lower tiers and is already taught there: how-plants-make-food (T1) contexts ("The soil gives it only small amounts of minerals"; "Minerals and salts come into a plant from the soil"), roots-stems-leaves-and-flowers (T1, xylem carries "water and minerals up from the roots"), decomposers-and-recycling-matter (T1, nutrients "only a small part of a tree") and chemical-reactions-conserve-mass (T4, ash is the wood's minerals). Not used.
+- A crop's photosynthetic efficiency (about 1 percent of sunlight stored; Grokipedia, Photosynthetic efficiency; a middle-school NGSS lesson at varsitytutors.com) was considered as a replacement on the light-to-chemical-energy line, but a bare percent keyed to an "about how much" stem breaks the Wonder Pattern gate. Not used.

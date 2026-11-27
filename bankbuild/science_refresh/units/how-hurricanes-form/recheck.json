@@ -1,0 +1,59 @@
+{
+ "unit": "how-hurricanes-form",
+ "questions": {
+  "5a52a8a4e8": {
+   "verdict": "pass",
+   "why": "New question that replaces the T2 seasonal-lag re-ask. Key true: a storm's winds mix up colder water from below, a cold wake of about 2-5 C under slow storms (more than 3.5 C in composites), so about 4 C in a day is fair. Wrong choices are truly wrong: ice from the tops melts high up; a tropical cyclone is warm-cored and non-frontal; low pressure raises the sea about 1 cm per hPa. No other unit keys ocean mixing. The context avoids giving away 280cc72789 and 827ed3db90. It ties to the oceans-and-hurricanes line, with no climate trends.",
+   "sources": [
+    "https://grokipedia.com/page/Tropical_cyclone",
+    "https://science.nasa.gov/earth/earth-observatory/hurricane-nicoles-cold-water-wake-88961/",
+    "https://repository.tudelft.nl/file/File_45e9fa0e-550b-4e22-80b7-e108c0feaa76",
+    "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0309"
+   ]
+  },
+  "e74ea6197e": {
+   "verdict": "pass",
+   "why": "The stem now gives the condensation and asks what it does, so knowing only the T1 water-cycle fact (clouds form by condensation) is not enough. The mechanism decides: condensation releases about 2.5 MJ/kg of latent heat and warms the air. Wrong choices are truly wrong: making droplets gives heat out, shading is not the effect of condensing, and condensing is not neutral. T3's melting-ice key is a different change of state.",
+   "sources": [
+    "https://grokipedia.com/page/Latent_heat",
+    "https://science.nasa.gov/earth/earth-observatory/hurricanes-the-greatest-storms-on-earth",
+    "https://grokipedia.com/page/Tropical_cyclone"
+   ]
+  },
+  "f864aa8288": {
+   "verdict": "pass",
+   "why": "The question now asks only the southern storms' turn (clockwise), which the batch rule allows. The right-and-left direction that 179ce68b78 keys is left out of both the question and the context. Tropical cyclones are cyclonic in both hemispheres. 'The hurricanes' keeps the chance choice live. One stem question.",
+   "sources": [
+    "https://grokipedia.com/page/Tropical_cyclone",
+    "https://spaceplace.nasa.gov/hurricanes/en/"
+   ]
+  },
+  "827ed3db90": {
+   "verdict": "pass",
+   "why": "The question now asks one thing, why the sky is clear. The key (sinking air warms and dries and makes no cloud) answers it fully. Low pressure is a live wrong choice that the context answers (the lowest pressure is in the eye, but the eyewall around it is cloudy). NWS Houston: the first documented intentional flight into a hurricane, with reaching the eye an accident, so the new wording is exact. AT-6 trainer, crew of two. Jones-Burdick flew on the second flight; the context claims only temperatures in the storm.",
+   "sources": [
+    "https://www.weather.gov/hgx/projects_1943surprisehurricane",
+    "https://grokipedia.com/page/Eye_(cyclone)",
+    "https://repository.library.noaa.gov/view/noaa/56748"
+   ]
+  },
+  "0d9861f5f8": {
+   "verdict": "pass",
+   "why": "The weak lightning choice is replaced by flying debris, which is live and wrong. The scale does cover debris: the NHC table for Category 1 warns that people struck by flying or falling debris could be killed, and the risk rises with each category. The scale has been wind-only since 2010. Surge accounted for 49 percent of deaths in 1963-2012, so 'often the deadliest' holds. Tornadoes are left out of the scale but caused only 3 percent.",
+   "sources": [
+    "https://www.nhc.noaa.gov/pdf/sshws.pdf",
+    "https://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_scale",
+    "https://oceanservice.noaa.gov/facts/stormsurge-stormtide.html"
+   ]
+  },
+  "280cc72789": {
+   "verdict": "pass",
+   "why": "The dropsonde clause now does the how-we-know work. 'Weakens too' avoids the shaky equal-rate claim. Key true: over cool water or land the storm loses its warm, moist air. Wrong choices are truly wrong: the spin grows poleward, the tops are already frozen near -70 C, and the storm is not driven by sunlight on its clouds. Context no longer gives away e74ea6197e's latent-heat key.",
+   "sources": [
+    "https://science.nasa.gov/earth/earth-observatory/hurricanes-the-greatest-storms-on-earth",
+    "https://grokipedia.com/page/Dropsonde",
+    "https://grokipedia.com/page/Tropical_cyclone"
+   ]
+  }
+ }
+}

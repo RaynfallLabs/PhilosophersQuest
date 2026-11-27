@@ -151,3 +151,13 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
     - stars forging the elements that supernovae scatter.
   - `light-from-atoms` (T5) owns spectra and what stars are made of.
   - `galaxies-and-the-expanding-universe` (T4) owns galaxies, the light-year, Leavitt, Hubble and the Big Bang.
+- **Photosynthesis ends at 5 questions (2026-11-26).**
+  - Five drafted questions fell, and every one went the same way: it re-asked T2 `how-plants-make-food` (an oak's matter from air and water, the pondweed's bubbles stopping in the dark), or it could be read off its own stem.
+  - Van Niel, de Saussure, the hydrogen question, van Helmont and Ingenhousz all went.
+  - The five kept are the core:
+    - reading the equation;
+    - light stored as chemical energy;
+    - Engelmann's chloroplasts;
+    - Ruben and Kamen's heavy oxygen;
+    - Priestley's mint.
+  - T4 life still keeps about 61 against its target of 55, so no top-up is needed. If the pick runs short, a top-up should ask Ingenhousz's leaves spoiling the air in the dark.

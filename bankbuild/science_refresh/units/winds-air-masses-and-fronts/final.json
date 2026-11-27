@@ -1,0 +1,258 @@
+{
+ "unit": "winds-air-masses-and-fronts",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "Suppose Earth did not spin at all, but the Sun went on heating the equator far more strongly than the poles, just as it does today. What would the wind near the ground do?",
+   "answer": "Blow from the poles toward the equator",
+   "choices": [
+    "Blow from the poles toward the equator",
+    "Blow from the equator toward the poles",
+    "Blow from west to east all round the world",
+    "Barely blow, since the spin is what drives it"
+   ],
+   "context": "Air heated over the equator expands and rises, leaving low pressure at the ground, while cold air sinks over the poles and builds high pressure, and near the ground air flows from high pressure to low; so the wind would blow from the poles to the equator, with the return flow high above. The Sun's uneven heating drives the wind; Earth's spin only bends it, and without the spin nothing would turn the winds to blow from west to east.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "M1"
+   ],
+   "grade_note": "8th grade (TEKS 8.10A; NGSS MS-ESS2-6) teaches that the Sun's uneven heating drives the winds, and that air flows from high pressure to low."
+  },
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "George Hadley, an English lawyer more interested in physics than in law, set out to explain the trade winds in 1735. They blow in toward the equator to replace the warm air rising there, so north of the equator they might be expected to come from due north. Sailors knew they come from the northeast instead. What did Hadley say turns them?",
+   "answer": "Earth spinning beneath the moving air",
+   "choices": [
+    "Earth spinning beneath the moving air",
+    "The air following the Sun's heat each day",
+    "The Moon's pull dragging the air along",
+    "Ocean currents dragging the air along"
+   ],
+   "context": "Earth turns eastward, and the ground near the equator moves east faster than the ground farther north, so air arriving from the north falls behind it and seems to blow from the east. Edmond Halley had said in 1686 that the air follows the Sun's heat westward each day; Hadley added what Halley had left out, the way Earth's spin turns air moving across it, and the circulation he described now bears his name. Ocean currents do not drag the winds: the winds drive the surface currents, and the Moon's pull raises the tides.",
+   "facts": [
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F26",
+    "F30"
+   ],
+   "grade_note": "8th grade (NGSS MS-ESS2-6) teaches that Earth's rotation turns the global winds into the trade winds and the other belts."
+  },
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "Gaspard-Gustave de Coriolis, a French engineer, worked out in 1835 how things move on machines that spin, such as water wheels. Weather scientists later used his mathematics to explain how Earth's spin bends the winds. For someone facing the way a wind blows, which way does the spin bend it in each half of the world?",
+   "answer": "Right in the Northern Hemisphere, left in the Southern",
+   "choices": [
+    "Right in the Northern Hemisphere, left in the Southern",
+    "Left in the Northern Hemisphere, right in the Southern",
+    "Right in both the Northern and the Southern Hemisphere",
+    "Toward the east in both hemispheres alike"
+   ],
+   "context": "Earth's spin turns a moving wind to its right north of the equator and to its left south of it, and the bend fades to nothing at the equator itself. That is why the winds flowing toward the equator on both sides of it end up blowing from the east. The same effect is far too weak to steer the water swirling down a sink, whatever a tour guide on the equator may show.",
+   "facts": [
+    "F9",
+    "F10",
+    "F8",
+    "M2"
+   ],
+   "grade_note": "8th grade (NGSS MS-ESS2-6) names the Coriolis effect as the turn that Earth's rotation gives to winds and ocean currents."
+  },
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "Air sinks to the ground at about 30 degrees north of the equator, building a belt of high pressure, and spreads out from it both ways along the ground. Earth's spin bends the part that flows north, toward the pole. Which winds does that air become?",
+   "answer": "The westerlies",
+   "choices": [
+    "The westerlies",
+    "The polar easterlies",
+    "The northeast trade winds",
+    "The southeast trade winds"
+   ],
+   "context": "Air flowing north is bent to its right, toward the east, so it blows from the southwest: the westerlies, which fill the belt between about 30 and 60 degrees. The part that flows south, toward the equator, bends west into the northeast trade winds, the southeast trade winds blow south of the equator, and nearer the pole cold air sinking over the ice spreads out as the polar easterlies.",
+   "facts": [
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F8"
+   ],
+   "grade_note": "8th grade (NGSS MS-ESS2-6; curriculum line G8.E5) teaches the global wind belts: trade winds, prevailing westerlies and polar easterlies."
+  },
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "Wasaburo Ooishi ran an observatory in Japan that studied the air far above the ground. From 1923 to 1925 he let go more than a thousand small balloons and followed each one through a theodolite, a surveyor's telescope, to measure the winds that carried it away. High above Japan he found fast winds from the west, blowing hardest in winter. Why are such winds strongest in winter?",
+   "answer": "The poles and tropics differ most in temperature then",
+   "choices": [
+    "The poles and tropics differ most in temperature then",
+    "Cold winter air is thinner, so it flows more freely",
+    "Earth spins faster in the winter months",
+    "Winter storms push extra air up to that great height"
+   ],
+   "context": "A jet stream's winds blow hardest where cold and warm air lie side by side, and the bigger the difference in temperature, the faster the wind high above; in winter the polar regions grow far colder while the tropics stay warm, so the jet streams are strongest then. Cold air is denser than warm air, not thinner, and Earth's spin barely changes through the year. Ooishi's balloons gave the first known evidence of a jet stream, but he published in Esperanto, hoping to reach scientists abroad, and few outside Japan read his results.",
+   "facts": [
+    "F4",
+    "F14",
+    "F16",
+    "F31"
+   ],
+   "grade_note": "8th grade (curriculum line G8.E5) teaches the jet streams and what drives them, the contrast between cold and warm air; Ooishi's balloons are the classic first measurement of them."
+  },
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "Crews of American B-29 bombers flying high over Japan late in 1944 met winds from the west of up to about 320 kilometres an hour, which scattered their bombs far from their targets. A fast, narrow band of wind like this, high above the ground, is called a jet stream. Why do weather forecasters watch where a jet stream runs?",
+   "answer": "Storms below tend to travel along its path",
+   "choices": [
+    "Storms below tend to travel along its path",
+    "Its path marks where the hottest air on Earth lies",
+    "The sky beneath its path stays clear of cloud",
+    "It marks where the air at the ground is calmest"
+   ],
+   "context": "A jet stream is the main steering current for the storms of the middle latitudes, carrying them and their fronts along its path, usually from west to east, so its course shows forecasters where the storms will go. Those storms bring cloud, rain and wind to the ground below, so the weather beneath a jet stream's path is often far from clear and calm.",
+   "facts": [
+    "F2",
+    "F14",
+    "F15",
+    "F17"
+   ],
+   "grade_note": "8th grade (curriculum line G8.E5; TEKS 8.10B) teaches that the jet streams steer the weather systems below them."
+  },
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "The First World War cut Norway off from the rest of Europe's weather reports, so Vilhelm Bjerknes set up a dense web of weather stations across the country. In Bergen, he and his son Jacob drew maps from the reports and called each line where the weather changed sharply a front, after the battle fronts of the war. Where did their maps show the storms sweeping over Norway are born?",
+   "answer": "Where cold polar air meets warm tropical air",
+   "choices": [
+    "Where cold polar air meets warm tropical air",
+    "Where damp sea air meets dry land air",
+    "Where the trade winds meet the westerlies",
+    "Where the northern and southern trade winds meet"
+   ],
+   "context": "Their polar front theory showed that the storms of the middle latitudes form and grow as waves along the polar front, the boundary between cold air from the polar regions and warmer air from the tropics. The trade winds and the westerlies spread apart from the calm, dry belt near 30 degrees rather than meeting, and the northern and southern trade winds meet near the equator, far from Norway's storms.",
+   "facts": [
+    "F18",
+    "F19",
+    "F20",
+    "F21",
+    "F8",
+    "F11"
+   ],
+   "grade_note": "8th grade (NGSS MS-ESS2-5; curriculum line G8.E5) teaches that air masses meet at fronts, where the weather changes; the Bergen school is the classic story of how fronts were found."
+  },
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "On a hot, muggy afternoon, a line of towering thunderclouds sweeps across a plain. An hour of pounding rain and gusty wind follows, then the sky clears and the air turns sharply cooler. A cold front has passed. What happens along a cold front to build such tall clouds so quickly?",
+   "answer": "Cold air pushes under the warm air and forces it up steeply",
+   "choices": [
+    "Cold air pushes under the warm air and forces it up steeply",
+    "Warm air pushes under the cold air and forces it up steeply",
+    "The cold and warm air mix, and the blend rises fast",
+    "Cold air sinks onto the warm air and squeezes out its rain"
+   ],
+   "context": "Cold air is denser than warm air, so the advancing cold air shoves in beneath the warm, damp air and drives it steeply upward; the rising air cools fast and builds tall cumulonimbus clouds, so the storms are fierce but soon over. The two air masses differ in density and do not easily mix: the cold air stays low, and the warm air is forced up over it.",
+   "facts": [
+    "F4",
+    "F22",
+    "F32",
+    "M5"
+   ],
+   "grade_note": "8th grade (curriculum line G8.E5; NGSS MS-ESS2-5) teaches that a cold front brings short, sharp storms where cold air forces warm air up."
+  },
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "Over a day and a half, the sky above a town fills first with high, thin cloud, then with a lower grey sheet. A steady rain falls for many hours, and afterwards the air turns warmer and damper. A warm front has come through. Why is its rain so steady and so long-lasting?",
+   "answer": "Warm air rides slowly up a gentle slope of cold air",
+   "choices": [
+    "Warm air rides slowly up a gentle slope of cold air",
+    "Cold air shoves under warm air and lifts it steeply",
+    "Warm air rises straight up from the sun-warmed ground",
+    "Cold air slides slowly up over a layer of warm air"
+   ],
+   "context": "At a warm front the lighter warm air rides up over the cold air ahead of it along a gentle slope, so its first high clouds appear far ahead of the front, and the air rises slowly, spreading wide layers of cloud that give steady rather than heavy rain. Warm fronts also move about half as fast as cold fronts, so the rain lasts for hours. Cold air never rides over warm air, because it is the denser of the two.",
+   "facts": [
+    "F4",
+    "F22",
+    "F23",
+    "M5"
+   ],
+   "grade_note": "8th grade (curriculum line G8.E5; NGSS MS-ESS2-5) teaches that a warm front brings longer, gentler rain as warm air slides up over cold air."
+  },
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "A fishing captain reads the barometer at the harbour before dawn, and the air pressure has fallen fast since the evening before. He reads it again an hour later, and it has dropped further still. What does the steady fall tell him?",
+   "answer": "A low is moving in, with rising air and storms",
+   "choices": [
+    "A low is moving in, with rising air and storms",
+    "A high is moving in, with sinking air and calm",
+    "Damp, heavy air is settling over the harbour",
+    "Cool, heavy air is settling over the harbour"
+   ],
+   "context": "The barometer falls as a low-pressure area moves in, where air flows inward and rises, building clouds, and a fast fall often comes before rain, thunderstorms or a gale; rising pressure usually means a high, with sinking air and clearing skies. Heavier air would make the reading rise, not fall, and damp air is in fact lighter than dry air, because a molecule of water vapour weighs less than the nitrogen and oxygen molecules it replaces.",
+   "facts": [
+    "F2",
+    "F24",
+    "F25",
+    "M3"
+   ],
+   "grade_note": "8th grade (TEKS 8.10B; NGSS MS-ESS2-5) teaches reading high and low pressure on weather maps and that falling pressure warns of stormy weather."
+  },
+  {
+   "tier": 4,
+   "topic": "winds-air-masses-and-fronts",
+   "question": "Over a whole year, the tropics take in more energy from sunlight than they give off into space, while the polar regions give off more than they take in. Yet the tropics do not grow hotter year after year, and the poles do not grow colder. What keeps the two in balance?",
+   "answer": "Winds and ocean currents carry heat toward the poles",
+   "choices": [
+    "Winds and ocean currents carry heat toward the poles",
+    "Heat seeps through the rock of the crust toward the poles",
+    "Heat from Earth's core rises to warm the poles",
+    "The polar ice soaks up extra sunlight in summer"
+   ],
+   "context": "Between them, the winds and the ocean currents carry heat away from the tropics all the time; a warm current flowing toward the pole gives off its heat to the air above it, which is why a coast washed by one has milder winters than it otherwise would. Rock carries far too little heat to do the job: all the heat that flows up through Earth's crust from inside, the core's included, is only a few hundredths of one percent of the sunlight Earth absorbs. And the poles' white ice reflects most of the sunlight that reaches it rather than soaking it up.",
+   "facts": [
+    "F1",
+    "F26",
+    "F27",
+    "F28"
+   ],
+   "grade_note": "8th grade (TEKS 8.10A; NGSS MS-ESS2-6; curriculum line G8.E4) teaches that the atmosphere and the oceans' currents carry the Sun's heat from the tropics toward the poles."
+  }
+ ],
+ "revised": {
+  "fe1637f24b": {
+   "old_hash": "fe1637f24b",
+   "why": "Fact-check (error) and judge (medium, fact): the context said 'Hadley was the first to bring in Earth's spin', but Galileo had already tied the trade winds to Earth's rotation. Context now 'Hadley added what Halley had left out, the way Earth's spin turns air moving across it' (F30). Stem, key and choices unchanged."
+  },
+  "179ce68b78": {
+   "old_hash": "1db7e2b5cb",
+   "why": "Judge (low, clarity): 'Seen from behind a moving wind' was awkward for an 8th grader. The closer now reads 'For someone facing the way a wind blows'. Key, choices and context unchanged."
+  },
+  "bbbe8c9f97": {
+   "old_hash": "2f109ccf92",
+   "why": "Judge (medium, tell): the old key, 'Strong, steady winds from the west' high above Japan, was stated outright in 964a1669c1's stem (B-29s high over Japan met winds from the west). Re-keyed, as the judge proposed, to the T4 mechanism the unit did not ask: the stem now gives his finding (fast westerly winds, hardest in winter) and asks why they are strongest in winter; key: polar and tropical air differ most in temperature then (F14). The key is worded 'The poles and tropics' so that it does not echo 4ae7701723's key ('Where cold polar air meets warm tropical air'). Wrong choices: cold air thinner (it is denser, F4), Earth spinning faster in winter (length of day changes by about a millisecond, F31), winter storms pushing air up. 964a1669c1's context no longer mentions the cold-warm boundary, so it does not hint this key."
+  },
+  "964a1669c1": {
+   "old_hash": "964a1669c1",
+   "why": "Judge (medium, tell): 'Why do weather forecasters watch' favoured the only choice about the weather moving, and two wrong choices (ocean currents, a shield against ultraviolet light) were things no forecaster tracks a jet stream for. As the judge proposed, those two are replaced by weather-shaped wrong ideas, 'The sky beneath its path stays clear of cloud' and 'It marks where the air at the ground is calmest'; key and the hottest-air choice kept. The context now explains the new choices (storms that follow the jet bring cloud, rain and wind, F2, F15) and drops the line on the cold-warm boundary, which would have hinted 2f109ccf92's new key. Stem unchanged."
+  },
+  "65e5c412c7": {
+   "old_hash": "65e5c412c7",
+   "why": "Judge (medium, tell): the stem's 'such tall clouds so quickly' ruled out 'Warm air climbs slowly up a long slope of cold air', leaving three live choices. Replaced by 'The cold and warm air mix, and the blend rises fast', a live picture that fits a fast storm and is wrong, since air masses at a front differ in density and do not easily mix (F32). The judge's 'Hot, muggy air bubbles straight up off the sun-baked plain' was not used: it says nothing of the front the stem asks about, so a careful student could drop it for that alone, and sun-warmed air does feed such storms, which would make it partly true. The context no longer describes the warm front, which would have given away 5fbdadb31f. Stem and key unchanged."
+  },
+  "29d8f63d81": {
+   "old_hash": "29d8f63d81",
+   "why": "Judge (medium, tell): the stem's 'over a whole year' ruled out 'Earth's tilt shares out the sunlight evenly over a year', and the key was then the only choice that moved heat from the tropics to the poles. As the judge proposed, the tilt choice is replaced by a second, wrong carrier of heat, 'Heat seeps through the rock of the crust toward the poles', so that knowledge decides; the core and polar-ice choices are kept. The context drops the tilt line and answers the rock choice with the heat budget (F27). Stem and key unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

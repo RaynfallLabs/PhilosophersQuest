@@ -1,0 +1,150 @@
+{
+ "unit": "photosynthesis-atoms-in-and-out",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "A biology book writes photosynthesis as 6CO2 + 6H2O + light energy → C6H12O6 + 6O2. A leaf cell makes two molecules of glucose by this reaction. Counting carbon atoms, how many molecules of carbon dioxide must it take in?",
+   "answer": "Twelve molecules",
+   "choices": [
+    "Two molecules",
+    "Six molecules",
+    "Twelve molecules",
+    "Twenty-four molecules"
+   ],
+   "context": "Each glucose molecule, C6H12O6, holds six carbon atoms, and each carbon dioxide molecule, CO2, holds one, so two glucose molecules need 2 × 6 = 12 carbon dioxide molecules. Carbon dioxide is the only substance on the left of the arrow that carries carbon, and no atom is made or lost in a reaction, so the carbon atoms on the two sides always match.",
+   "facts": [
+    "F1",
+    "F2"
+   ],
+   "grade_note": "8th grade (TEKS 8.6E; curriculum line G8.P2) reads the photosynthesis equation and counts the atoms of each element on both sides of the arrow."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Sunlight falls on a sunflower's leaves, and their cells use its energy to build glucose out of carbon dioxide and water. The plant stores part of that energy and draws on it long afterwards. In what form does the plant store it?",
+   "answer": "As chemical energy in glucose",
+   "choices": [
+    "As chemical energy in glucose",
+    "As light energy held in the glucose",
+    "As light energy trapped in the chlorophyll",
+    "As heat energy held in the leaves"
+   ],
+   "context": "Photosynthesis changes light energy into chemical energy, held in the glucose for the plant to use later. No light is kept: the chlorophyll catches it and passes its energy on, and light carries no atoms, so every atom of the glucose comes from the carbon dioxide and the water. The leaves hold no warmth for later either.",
+   "facts": [
+    "F1",
+    "F3",
+    "F5",
+    "F21",
+    "M2"
+   ],
+   "grade_note": "8th grade (NGSS MS-LS1-6) traces the flow of energy through photosynthesis: light energy changed into chemical energy stored in sugar."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Theodor Engelmann, a German biologist, laid a strand of green alga in a drop of water swarming with bacteria that swim toward oxygen. Under his microscope, in the early 1880s, he spread the colours of sunlight from a prism along the strand. Where did the bacteria crowd most thickly?",
+   "answer": "Around its chloroplasts, in red and blue light",
+   "choices": [
+    "Around its chloroplasts, in red and blue light",
+    "Around its chloroplasts, in green and yellow light",
+    "Around its nuclei, in red and blue light",
+    "Around its nuclei, in green and yellow light"
+   ],
+   "context": "The bacteria crowded where the alga gave off the most oxygen: around its chloroplasts, where the light fell red or blue. Chlorophyll, the green pigment in the chloroplasts, absorbs red and blue light most strongly and takes in little green, which is why leaves look green and why the bacteria were fewest in the green and yellow.",
+   "facts": [
+    "F3",
+    "F4",
+    "F6",
+    "M6"
+   ],
+   "grade_note": "8th-grade photosynthesis lessons place the reaction in the chloroplasts, whose chlorophyll captures the light; Engelmann's bacteria are the classic experiment that showed both."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Samuel Ruben and Martin Kamen, with two colleagues at the University of California, followed oxygen atoms through photosynthesis in 1941. They used heavy oxygen, a rare kind of oxygen atom with two extra neutrons. In one test they gave algae water rich in heavy oxygen, and in another, carbon dioxide rich in it. Which test made the algae give off oxygen gas rich in heavy oxygen?",
+   "answer": "Only the test with heavy-oxygen water",
+   "choices": [
+    "Only the test with heavy-oxygen water",
+    "Only the test with heavy-oxygen carbon dioxide",
+    "Both tests, about equally",
+    "Neither test, since it all went into sugar"
+   ],
+   "context": "Only the algae given the heavy-oxygen water gave off heavy oxygen gas, in the same share as their water held it, so the oxygen a plant gives off comes from the water it splits, not from the carbon dioxide, as chemists had long believed. The textbook equation is only a net count: to free its six oxygen molecules, a plant splits twelve water molecules and makes six new ones. Cornelis van Niel had foreseen the result in 1931, from purple bacteria that use light to build their food from carbon dioxide and hydrogen sulfide, giving off sulfur where plants give off oxygen.",
+   "facts": [
+    "F7",
+    "F8",
+    "F9",
+    "F10",
+    "F11",
+    "F12",
+    "M4"
+   ],
+   "grade_note": "8th grade traces matter through photosynthesis atom by atom (NGSS MS-LS1-6, tracing the movement of matter); the heavy-oxygen tracer is the experiment that showed where the released oxygen comes from."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Joseph Priestley let a candle burn in a closed jar of air until its flame went out. He put a sprig of mint into that spent air on 17 August 1771 and left it shut in. Ten days later he tried another lit candle in the same air. What happened to its flame?",
+   "answer": "It burned perfectly well",
+   "choices": [
+    "It burned perfectly well",
+    "It went out at once",
+    "It burned feebly, then died",
+    "It flared up, then died"
+   ],
+   "context": "The candle burned perfectly well, so the mint had mended the air that the first flame had spoiled. When Priestley split spent air into two parts and put a plant in one, a candle burned only in that part; a mouse, too, could live in air a plant had mended, and he concluded that plants restore air spoiled by burning and breathing.",
+   "facts": [
+    "F18"
+   ],
+   "grade_note": "Priestley's mint is one of the first clues taught in 8th-grade lessons on the history of photosynthesis: plants restore the air."
+  }
+ ],
+ "revised": {
+  "3004206b78": {
+   "old_hash": "3004206b78",
+   "why": "Judge (low, tell): 'As new atoms in the glucose' was the only choice that was not a form of energy, so the stem's 'In what form' dropped it. Replaced, as the judge proposed, by 'As light energy held in the glucose', the same light-becomes-the-food misconception (M2) told as an energy form. Stem and key unchanged; the context now says no light is kept (chlorophyll passes its energy on, F21) and keeps the no-atoms point."
+  },
+  "002cd35b96": {
+   "old_hash": "002cd35b96",
+   "why": "Judge (low, clarity): 'heavy water' usually means deuterium water (D2O), not water rich in oxygen-18. The key and its mirror now say 'heavy-oxygen water' and 'heavy-oxygen carbon dioxide', and the context matches. Van Niel, whose own question was dropped, keeps one sourced clause here (F9), as the judge suggested. Stem unchanged."
+  },
+  "fbb94655d8": {
+   "old_hash": "0f27822f8c",
+   "why": "Judge (medium, tell): the T1 how-plants-make-food key (a tree's matter from air and water, not soil) ruled out 37 kg and 74 kg, leaving 57 g against 570 g as a remembered number. The judge's fix (why he dried the soil) fails the self-check: drying the soil again at the end rules out its growth-related wrong choices. The stem now gives the result (the 57 grams) and asks what van Helmont concluded from it, which T1 does not teach. The lure is the modern truth that T1 keys (water and air), beside air alone and water with soil (the soil did lose 57 g); his own words, 'out of water onely', are sourced (F20)."
+  },
+  "170f812ad8": {
+   "old_hash": "f0dd22e03a",
+   "why": "Judge (medium, tell): 'Where did the leaves give off the gas?' presumed they did somewhere, so 'Neither' was dead, and 'Only in the warm room' was weak; the choices never made the light-not-warmth point decide. The stem now asks what he saw, and two wrong choices are the warmth misconception (M3) at two strengths (bubbles in both, more in the sunshine or more in the warm room), with 'no bubbles anywhere' live now that the stem presumes nothing. The judge's own fix ('What did the warm room show?') was not used: with the results in the stem its dark-room choice was ruled out by the stem."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "7bdf0d5cbe",
+   "question": "Cornelis van Niel studied a group of purple bacteria at Stanford University's Hopkins Marine Station around 1930. Like plants, they use light to build food from carbon dioxide. But where a plant takes in water (H2O), they take in hydrogen sulfide (H2S), and they give off no oxygen. What do they give off in its place?",
+   "why": "Judge (drop): swapping H2O for H2S hands over 'Sulfur'; its lesson (a plant's oxygen comes from water) is 002cd35b96's key; purple-sulfur-bacteria photosynthesis is past 8th grade. Agreed. Van Niel keeps one sourced clause in 002cd35b96's context."
+  },
+  {
+   "old_hash": "df6ae9880c",
+   "question": "Dry wood is about half carbon by weight. Nicolas-Théodore de Saussure, a Swiss chemist, made careful measurements of growing plants to learn where that carbon comes from, and he published them in 1804. Where did he show that a plant gets its carbon?",
+   "why": "Judge (high): it re-asked the T1 how-plants-make-food keys (carbon dioxide taken from the air; a tree's matter from air and water), and 'carbon' pointed at 'carbon dioxide'. The judge's re-key (the ash's atoms come from soil minerals) was checked against the lower tiers as the lead asked and fails: how-plants-make-food's contexts teach that the soil gives a plant only small amounts of minerals and that minerals come in from the soil, roots-stems-leaves-and-flowers that the xylem carries minerals up from the roots, decomposers-and-recycling-matter that soil nutrients are only a small part of a tree, and chemical-reactions-conserve-mass that ash is the wood's minerals. Every de Saussure re-key tried (water built into the dry matter; carbon via leaves, not roots or humus) is also a T1 key. The scope's carbon-from-the-air fact stays keyed by cae3013372 (carbon atoms counted from carbon dioxide into glucose) and told in the new van Helmont context."
+  },
+  {
+   "old_hash": "b8e5f9dcec",
+   "question": "Jan van Helmont grew a willow in a pot of weighed soil and gave it nothing but rain or distilled water for five years. He concluded that the tree was made of water alone. Chemists now know that he was partly right. Which part of the willow's dry wood came from the water?",
+   "why": "Judge (medium, tell): every wrong choice fell to the formula H2O. The judge's fix (all of the atoms / none, only carrying minerals / half, the rest from soil) leaves each wrong choice ruled out by the T1 key 'from air and water' and by its own stem's 'partly right'. The only choice water could really supply besides hydrogen is oxygen, which would be partly true (the oxygen of a tree's cellulose exchanges with water), so the question cannot be made fair. Its stem also printed van Helmont's conclusion, which the revised 0f27822f8c now asks."
+  },
+  {
+   "old_hash": "fbb94655d8",
+   "question": "Jan van Helmont planted a willow shoot of about 2 kilograms in a pot of 91 kilograms of oven-dried soil. For five years he gave it only rainwater or distilled water, under a lid with small holes that kept out dust. Then he weighed the tree, dried the soil again and weighed it too. The willow had gained about 74 kilograms, and the soil had lost only about 57 grams. Where did he conclude that the new wood had come from?",
+   "why": "failed the re-check: Knowledge tell. The facts are right (his own words: 164 pounds 'arose out of water onely'), but the stem says he gave the willow only rainwater or distilled water and that the soil lost 'only' 57 g, and never mentions air, so 'From the water alone' is read off the stem's own account of his set-up, and 'From the air alone' is dead (he watered it for five years). The question rewards careful reading of 'he conclude', not knowing what van Helmont concluded. No one-phrase fix; re-key or drop."
+  },
+  {
+   "old_hash": "170f812ad8",
+   "question": "Jan Ingenhousz, a Dutch-born physician, ran more than 500 experiments in the summer of 1779 at a house he rented near London. He sank leaves in jars of water and watched for bubbles of the gas that mends spoiled air. He stood some jars in sunshine, and others in a warm room that no sunshine reached. What did he see?",
+   "why": "failed the re-check: Old problem not fixed. The facts are right (over 500 experiments in summer 1779 at a rented house near London; 'no dephlogisticated air is obtained in a warm room, if the sun does not shine upon the jar'). But how-plants-make-food's pondweed key (oxygen bubbles from leaves on a sunny windowsill) and its context ('in the dark the bubbles soon stop') still settle it: the warm room had no sunshine. 'No bubbles in the sunshine or in the warm room' is dead against that key and the stem's 'gas that mends spoiled air', and 'more in the warm room' is weak, so the lower-tier oxygen-bubbles fact alone picks the key. Possible fix: re-key to his dark finding, that leaves kept from the light spoil the air (Grokipedia: plants 'consume oxygen and produce carbon dioxide in the dark')."
+  }
+ ]
+}

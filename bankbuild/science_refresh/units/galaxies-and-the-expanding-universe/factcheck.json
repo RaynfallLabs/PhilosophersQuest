@@ -1,0 +1,427 @@
+{
+ "unit": "galaxies-and-the-expanding-universe",
+ "questions": {
+  "19eca78b63": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Hubble sorted galaxies by shape in 1926 (spiral, elliptical, irregular)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Galaxy_morphological_classification",
+     "note": "1926 paper 'Extra-galactic Nebulae', about 400 nebulae; elliptical, spiral (normal and barred), irregular. Tuning fork 1936."
+    },
+    {
+     "claim": "Spirals: flat disk with arms, young stars in the arms; ellipticals smooth round/oval, mostly old reddish stars; irregulars no set shape",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Elliptical_galaxy",
+     "note": ""
+    },
+    {
+     "claim": "Key: little gas and dust left (so few new stars)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Elliptical_galaxy",
+     "note": "'very little interstellar matter (neither gas nor dust)'; 'starved of star-making gases'. Their gas is mostly hot and tenuous, so 'little gas and dust left to use' is the right plain-words reading."
+    },
+    {
+     "claim": "Wrong: gravity too weak to gather gas",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Elliptical_galaxy",
+     "note": "Giant ellipticals are among the most massive galaxies (10^12-10^13 solar masses). Dwarf ellipticals have shallow wells, but the stem's picture (smooth balls of old stars) and the context make the key clearly best."
+    },
+    {
+     "claim": "Wrong: stars packed too close for new ones",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Galaxy_merger",
+     "note": "Stars in galaxies lie vastly farther apart than their sizes."
+    },
+    {
+     "claim": "Wrong: old stars cannot warm gas into stars",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Star_formation",
+     "note": "Stars form from cold gas collapsing; heating (e.g. by AGN) suppresses star formation, it does not cause it."
+    },
+    {
+     "claim": "Context: gas used up or blown away in the mergers that built them",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Elliptical_galaxy",
+     "note": "Grokipedia: 'the expulsion or consumption of gas that quenches star formation' after mergers."
+    },
+    {
+     "claim": "Context: their gravity is enormous",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Elliptical_galaxy",
+     "note": "True of giants and, in absolute terms, of any galaxy; dwarf ellipticals (tens of millions of stars) are far lighter. Acceptable at this level; 'Big ellipticals have enormous gravity' would be tighter."
+    }
+   ]
+  },
+  "b9512f634f": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: Shapley worked out the distances of 69 globular clusters 'timing the pulsing stars inside them'",
+     "result": "error",
+     "source": "https://adsabs.harvard.edu/pdf/1918ApJ....48..154S",
+     "note": "Shapley's own 1918 paper: 'The parallaxes of a few clusters are obtained directly from the periods and magnitudes of Cepheid variables'; a considerably larger number came from the brightness of their brightest stars, and the survey was completed from the clusters' apparent diameters, both calibrated on the variable-star clusters (harlowshapley.org likewise describes further rungs beyond the variables). So most of the 69 distances did not come from timing pulsing stars. Fix: 'Harlow Shapley worked out how far away 69 globular clusters lie, starting from the pulsing stars he timed in a few of them.'"
+    },
+    {
+     "claim": "69 clusters, 1918",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Harlow_Shapley",
+     "note": "'The Distances, Distribution in Space, and Dimensions of 69 Globular Clusters' (ApJ 48, 1918); results summarised to Eddington on 8 January 1918 (EBSCO)."
+    },
+    {
+     "claim": "Globular cluster = tight ball of many thousands of stars",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Globular_cluster",
+     "note": "Tens of thousands to millions."
+    },
+    {
+     "claim": "Clusters crowded toward Sagittarius; conclusion: Sun far from the galaxy's centre (key)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Harlow_Shapley",
+     "note": "He put the Sun about 50,000 ly from the centre, 'near the periphery rather than the core'."
+    },
+    {
+     "claim": "Wrong choices: Sun close to centre; Sun outside the disk; clusters a galaxy of their own",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Milky_Way",
+     "note": "All three contradict Shapley's conclusion and today's picture (Sun in the disk, in the Orion Arm)."
+    },
+    {
+     "claim": "Context: centre 'not near the Sun, where Jacobus Kapteyn's model had placed it'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Jacobus_Kapteyn",
+     "note": "Kapteyn's model was published in 1920 (revised 1922), after Shapley's 1918 result, so 'had placed' gets the order wrong (Wikipedia, https://en.wikipedia.org/wiki/Jacobus_Kapteyn, dates the Kapteyn Universe to 1922). The Sun-near-centre picture from star counts did come first. Fix: 'not near the Sun, where counts of the stars around us seemed to put it (Jacobus Kapteyn's model of 1920 still did).'"
+    },
+    {
+     "claim": "Context: Sun in the Orion Arm, a minor arm, about 26,000 ly out, roughly halfway out in a disk about 100,000 ly across",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Milky_Way",
+     "note": ""
+    },
+    {
+     "claim": "Context: Shapley right about the Sun's place, made the galaxy far too big",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Harlow_Shapley",
+     "note": "About 300,000 ly; dust absorption later cut it to about 100,000."
+    }
+   ]
+  },
+  "5bf0de95fd": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Proxima Centauri is the nearest star beyond the Sun, about 4.2 ly",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Proxima_Centauri",
+     "note": "4.2465 ly (Gaia DR3), 'the closest known star to the Sun'."
+    },
+    {
+     "claim": "Key: a light-year is how far light travels in a year (a distance)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Light-year",
+     "note": "'a light-year measures distance rather than time'."
+    },
+    {
+     "claim": "Wrong choices: rocket travel time; when the star began to shine; speed of its light",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Light-year",
+     "note": "None is what the figure states."
+    },
+    {
+     "claim": "Context: nearly 300,000 km/s, about 9.5 trillion km; seen as it was 4.2 years ago",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Light-year",
+     "note": "299,792 km/s; 9.46 trillion km."
+    }
+   ]
+  },
+  "e4ffaa2d7e": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Leavitt one of the women 'computers' Pickering hired at Harvard College Observatory, measuring stars on glass plates",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Henrietta_Swan_Leavitt",
+     "note": "Began as a volunteer computer; hired by Pickering in 1902 to measure and catalogue star brightness on photographic plates."
+    },
+    {
+     "claim": "25 Cepheids in the Small Magellanic Cloud, stars all at about the same distance; published 1912",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Henrietta_Swan_Leavitt",
+     "note": "Harvard Circular 173, March 1912, 'prepared by Miss Leavitt'; 25 variables now known as Cepheids."
+    },
+    {
+     "claim": "Key: the longer the cycle, the brighter the star",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Henrietta_Swan_Leavitt",
+     "note": "Brighter stars had longer periods."
+    },
+    {
+     "claim": "Wrong choices: shorter cycle brighter; all same cycle; no link",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Henrietta_Swan_Leavitt",
+     "note": ""
+    },
+    {
+     "claim": "Context: a year later Hertzsprung found distances of a few Milky Way Cepheids and set the scale",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Henrietta_Swan_Leavitt",
+     "note": "Wikipedia: about a year after her report, Hertzsprung determined the distances of 'several Cepheids' in the Milky Way, which calibrated the relation (1913)."
+    }
+   ]
+  },
+  "d596e9b06b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: same period, 100x fainter, so much farther away",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cepheid_variable",
+     "note": "Period gives luminosity (standard candle); 100x fainter means about 10x farther by the inverse square. Dust dimming and the two Cepheid types (Type II about 1.5 mag fainter at the same period) are refinements beyond grade 8 and cannot account for a factor of 100."
+    },
+    {
+     "claim": "Wrong choices: gives off much less light; same distance; older fading star",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Henrietta_Swan_Leavitt",
+     "note": "Contradict Leavitt's law as taught."
+    },
+    {
+     "claim": "Context: same cycle, about the same light; 'standard candle'",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cepheid_variable",
+     "note": "'standard candle' is a term, not a quotation."
+    }
+   ]
+  },
+  "fac5f22b3a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Shapley and Curtis argued in Washington in 1920 over the spiral nebulae",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Great_Debate_(astronomy)",
+     "note": "26 April 1920, National Academy of Sciences, U.S. National Museum, Washington, D.C. Shapley: spirals inside a 300,000 ly Milky Way; Curtis: island universes."
+    },
+    {
+     "claim": "Hubble photographed Andromeda with the 100-inch on Mount Wilson in October 1923; N for nova crossed out, 'VAR!'",
+     "result": "ok",
+     "source": "https://carnegiescience.edu/about/history/archives/plate-archives/m31var",
+     "note": "Plate of 5-6 October 1923, Hooker 100-inch; N crossed out and marked 'VAR!'."
+    },
+    {
+     "claim": "Its pulse put it about 900,000 light-years away",
+     "result": "ok",
+     "source": "https://discovermagazine.com/the-sciences/january-1-1925-the-day-we-discovered-the-universe",
+     "note": "Figures quoted: 930,000 (Discover), 900,000 (NASA, Grokipedia), 950,000 (Nature 1925). 'About 900,000' is fair."
+    },
+    {
+     "claim": "Key: separate galaxy; wrong: gas cloud inside, star system forming inside, cluster at the edge",
+     "result": "ok",
+     "source": "https://carnegiescience.edu/about/history/archives/plate-archives/m31var",
+     "note": "'established beyond any doubt that M31 was a separate galaxy from our own'."
+    },
+    {
+     "claim": "Context: Curtis right; Andromeda now about 2.5 million ly; Milky Way about 100,000 across",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Andromeda_Galaxy",
+     "note": "752 kpc, about 2.5 million ly."
+    },
+    {
+     "claim": "Context: Isaac Roberts took the spirals for star systems still forming",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Andromeda_Galaxy",
+     "note": "Roberts (1888) took Andromeda and similar spiral nebulae for 'star systems being formed'."
+    }
+   ]
+  },
+  "fc080cfa6a": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Slipher at Lowell Observatory, Arizona, measured spiral nebulae 1912-1917",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Vesto_Slipher",
+     "note": "Lowell Observatory, Flagstaff; first spiral (Andromeda) in 1912; 25 spirals by 1917."
+    },
+    {
+     "claim": "Andromeda's light shifted to blue; nearly all the others to red",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Redshift",
+     "note": "Andromeda about -300 km/s (approaching). Of the 25 by 1917: 21 receding, 4 approaching (Grokipedia) or 22 receding, 'all but three' (Wikipedia). 'Nearly all the others' fits either count."
+    },
+    {
+     "claim": "Key: red shift means moving away; wrong: moving toward Earth",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Redshift",
+     "note": "Doppler: receding source, longer wavelength, toward red; approaching, blueshift. Today the galaxies' redshift is read as space stretching, but 'moving away' is the standard grade-8 statement and was Slipher's reading."
+    },
+    {
+     "claim": "Wrong: cooler than Andromeda; spinning faster than Andromeda",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Stellar_classification",
+     "note": "A star's colour shows temperature, but a shift of the spectral lines shows motion along the line of sight; rotation tilts lines, it does not shift a whole spectrum to red."
+    },
+    {
+     "claim": "Context: Andromeda moving toward the Milky Way",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Andromeda_Galaxy",
+     "note": "Approaching the Milky Way at about 110 km/s (about 300 km/s relative to the Sun)."
+    }
+   ]
+  },
+  "6e44bc1d29": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Hubble's 1929 distances used Cepheids among other clues; speeds from Slipher and Humason",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hubble's_law",
+     "note": "'A Relation between Distance and Radial Velocity among Extra-Galactic Nebulae' (PNAS 1929): velocities mainly Slipher's plus Humason's; distances from Cepheids where possible, brightest stars and nebular luminosities beyond."
+    },
+    {
+     "claim": "Key: the farther the galaxy, the faster it moves away; wrong: nearer faster, same speed, no link",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Hubble%27s_law",
+     "note": ""
+    },
+    {
+     "claim": "Context: Hubble long called the speeds 'apparent'",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Edwin_Hubble",
+     "note": "Hubble and Humason to de Sitter, 1931: 'We use the term \"apparent\" velocities to emphasize the empirical features of the correlation.'"
+    },
+    {
+     "claim": "Context: Lemaitre, a Belgian priest and physicist, derived it from Einstein's theory in 1927 in a little-read French paper",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Georges_Lema%C3%AEtre",
+     "note": "Annales de la Societe Scientifique de Bruxelles, in French, a regional journal; drew little attention until Eddington's 1931 English translation."
+    },
+    {
+     "claim": "Context: 2018 IAU recommended, by members' vote, the name Hubble-Lemaitre law",
+     "result": "ok",
+     "source": "https://www.astronomy.com/science/iau-vote-recommends-changing-the-name-of-hubbles-law/",
+     "note": "Proposed at the August 2018 General Assembly, all members invited to vote; 78% in favour; a recommendation, not a mandate."
+    }
+   ]
+  },
+  "bb2f574d6c": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Big Bang about 13.8 billion years ago",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Big_Bang",
+     "note": "Planck 2018: 13.787 +/- 0.020 billion years. Stable figure."
+    },
+    {
+     "claim": "Key: from any galaxy the others would seem to move away (no centre)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Big_Bang",
+     "note": "The Big Bang happened everywhere at once; the universe has no central point; balloon analogy."
+    },
+    {
+     "claim": "Wrong: Milky Way racing from a true centre; Big Bang at a point beyond the farthest galaxies; Milky Way too small",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Big_Bang",
+     "note": "There is no centre or point of origin in space; size is irrelevant."
+    },
+    {
+     "claim": "Context: space stretching everywhere; raisin loaf; not an explosion at one point",
+     "result": "ok",
+     "source": "https://imagine.gsfc.nasa.gov/features/yba/M31_velocity/hubble_law/hubble_meaning.html",
+     "note": "NASA raisin-bread model; Grokipedia: 'the expansion of space itself' rather than an explosion in existing space."
+    }
+   ]
+  },
+  "2bf70b44d3": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Hoyle named the Big Bang in a British radio talk in March 1949",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fred_Hoyle",
+     "note": "BBC Third Programme, 28 March 1949 (also Grokipedia, Big Bang). Kragh (arXiv 1301.0219) dates the coinage to 1949."
+    },
+    {
+     "claim": "Rival theory put forward by Hoyle, Bondi and Gold at Cambridge (1948)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Fred_Hoyle",
+     "note": "Reached independently in discussions at Cambridge; Bondi-Gold paper and Hoyle's companion paper, 1948."
+    },
+    {
+     "claim": "Steady state: galaxies move apart, no beginning, always looks the same; key: new matter forms in the gaps",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Steady-state_model",
+     "note": "'continuous creation of matter' keeps density constant; 'no beginning and no end'."
+    },
+    {
+     "claim": "Wrong: galaxies swell; gas from old stars fills gaps; galaxies drift in from beyond",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Steady-state_model",
+     "note": "None is the steady-state mechanism."
+    },
+    {
+     "claim": "Context: glow found in 1965 fitted a hot young universe; most astronomers gave up the steady state",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cosmic_microwave_background",
+     "note": "Wikipedia: steady state 'now rejected by most cosmologists, astrophysicists, and astronomers'."
+    },
+    {
+     "claim": "Context: 'Hoyle never did [give up the steady state], and kept seeking other explanations for the glow'",
+     "result": "uncertain",
+     "source": "https://paperspast.natlib.govt.nz/newspapers/CHP19651012.2.153",
+     "note": "Broadly true: Hoyle never accepted the Big Bang, explained the glow by iron whiskers or grains and supernova particles, and defended steady-state variants to the 1990s (Grokipedia, Fred Hoyle; RAS obituary https://mathshistory.st-andrews.ac.uk/Obituaries/Hoyle_RAS/). But in October 1965 his Nature article was reported in the press as a retraction of the steady-state theory ('Astronomy Theory Dropped'), and the Oxford DNB says the theory could not survive 'in its original form'; he returned with modified versions. A historian could call 'never did' too absolute. Safe fix: 'most astronomers gave up the steady state; Hoyle never accepted the Big Bang, and kept seeking other explanations for the glow.'"
+    },
+    {
+     "claim": "Context: the name he gave his rivals' idea stuck",
+     "result": "ok",
+     "source": "https://arxiv.org/abs/1301.0219",
+     "note": "Context rightly says nothing of derision (Grokipedia says mockingly; Kragh doubts it)."
+    }
+   ]
+  },
+  "8d784a0f1f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Penzias and Wilson, horn antenna, Bell Labs, New Jersey, 1964; faint steady microwave hiss",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Discovery_of_cosmic_microwave_background_radiation",
+     "note": "Holmdel, NJ; observations May 1964 into early 1965; excess about 3.5 K at 4080 MHz."
+    },
+    {
+     "claim": "From every direction, day and night, every season",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Discovery_of_cosmic_microwave_background_radiation",
+     "note": "'persisted regardless of direction, time of day, or season'."
+    },
+    {
+     "claim": "A pair of pigeons nested inside; removed and droppings cleaned; hiss stayed",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Discovery_of_cosmic_microwave_background_radiation",
+     "note": "'a pair of pigeons nesting inside the horn'; Wikipedia: pigeons removed, noise remained."
+    },
+    {
+     "claim": "Key: glow left over from the Big Bang; wrong: droppings, own electronics, Milky Way radio waves",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Discovery_of_cosmic_microwave_background_radiation",
+     "note": "Electronics and local sources ruled out; the Milky Way's radio emission is strongest toward Sagittarius, not even across the sky (Grokipedia, Karl Jansky)."
+    },
+    {
+     "claim": "Context: Princeton physicists recognised it; about 2.7 K; cosmic microwave background",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Cosmic_microwave_background",
+     "note": "Dicke's group; 2.725 K blackbody."
+    },
+    {
+     "claim": "Context: 1978 Nobel Prize in Physics",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Discovery_of_cosmic_microwave_background_radiation",
+     "note": "Shared with Pyotr Kapitsa (the other half)."
+    }
+   ]
+  }
+ },
+ "unit_notes": "9 ok, 1 error, 1 uncertain. Error b9512f634f: Shapley timed variable stars in only a few of the 69 clusters (most distances came from brightest stars and cluster sizes), and Kapteyn's model (1920, revised 1922) came after Shapley's 1918 result, so 'had placed it' misorders them; both fixes given. Uncertain 2bf70b44d3: 'Hoyle never did' give up the steady state is too absolute given his reported 1965 retraction of the original form; fix: 'Hoyle never accepted the Big Bang'. Minor, no change needed: Slipher's 1917 count is 21 or 22 receding of 25 by source ('nearly all' is safe); Hubble's Andromeda figure is 900,000-950,000 ly by source ('about 900,000' is safe); 19eca78b63's 'Their gravity is enormous' is true of giants (dwarf ellipticals are much lighter)."
+}

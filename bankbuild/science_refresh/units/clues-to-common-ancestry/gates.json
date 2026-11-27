@@ -1,5 +1,5 @@
 {
- "kind": "draft",
+ "kind": "final",
  "unit": [],
  "questions": {
   "c6e1066c93": {
@@ -8,19 +8,23 @@
    "info": [],
    "flag": []
   },
-  "5edfc7fc12": {
+  "9470f91931": {
    "fail": [],
    "warn": [],
-   "info": [],
+   "info": [
+    "voice: short(33<40)"
+   ],
    "flag": []
   },
-  "b4e537f7fd": {
+  "7dd3829537": {
    "fail": [],
    "warn": [],
-   "info": [],
+   "info": [
+    "voice: long(72>70)"
+   ],
    "flag": []
   },
-  "2ce3e08045": {
+  "584e75c52d": {
    "fail": [],
    "warn": [],
    "info": [],
@@ -38,7 +42,7 @@
    "info": [],
    "flag": []
   },
-  "38996578d7": {
+  "dcc77b7090": {
    "fail": [],
    "warn": [],
    "info": [],

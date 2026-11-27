@@ -1,0 +1,66 @@
+{
+ "unit": "galaxies-and-the-expanding-universe",
+ "questions": {
+  "19eca78b63": {
+   "verdict": "pass",
+   "why": "Context now gives enormous gravity only to big ellipticals (giants above 10^12 solar masses, dwarfs 10^7-10^9, F38), which fixes the fact issue. Stem, key and choices unchanged and still sound: ellipticals hold little gas and dust. The stars unit keys why cold clumps collapse; here that idea only answers a wrong choice, so no fact is re-asked.",
+   "sources": [
+    "https://grokipedia.com/page/Elliptical_galaxy",
+    "https://en.wikipedia.org/wiki/Elliptical_galaxy"
+   ]
+  },
+  "1fd84daefc": {
+   "verdict": "pass",
+   "why": "Stem now matches Shapley's 1918 paper: Cepheid parallaxes for a few clusters, the rest scaled from brightest stars and angular diameters. Kapteyn's model is dated 1920 (revised 1922), after Shapley, as the context now says. The new wrong choice, the clusters off to one side, is a live reading of the stem's observation and truly wrong (globulars swarm the centre), so knowledge decides between it and the key. Choices parallel (two Sun, two cluster). No other unit keys the Sun's place.",
+   "sources": [
+    "https://adsabs.harvard.edu/pdf/1918ApJ....48..154S",
+    "https://grokipedia.com/page/Jacobus_Kapteyn",
+    "https://grokipedia.com/page/Harlow_Shapley",
+    "https://grokipedia.com/page/Milky_Way"
+   ]
+  },
+  "6add40cd8f": {
+   "verdict": "pass",
+   "why": "The key no longer spells out the term or repeats the 4.2, and two time readings now pull students who take 'year' as a time, so the old tell is gone. Proxima is a faint red dwarf in southern Centaurus, about 4.24 light-years away; a light-year is a distance. Only one defensible answer. No other unit keys the light-year (describing-waves' light speed is context only).",
+   "sources": [
+    "https://grokipedia.com/page/Proxima_Centauri",
+    "https://grokipedia.com/page/Light-year",
+    "https://en.wikipedia.org/wiki/Light-year"
+   ]
+  },
+  "5a99546b97": {
+   "verdict": "pass",
+   "why": "'Yet' dropped, so the stem no longer says equal cycles mean equal brightness; 'gives off much less light' is now live and decided by Leavitt's law. Key true: same period, same luminosity, so 100 times fainter is about 10 times farther. T1's 'the Sun looks brighter because it is closer' is a simpler fact; this one needs the period-luminosity law.",
+   "sources": [
+    "https://grokipedia.com/page/Cepheid_variable",
+    "https://en.wikipedia.org/wiki/Henrietta_Swan_Leavitt"
+   ]
+  },
+  "26989df08d": {
+   "verdict": "pass",
+   "why": "Stem ends 'What did Hubble report in 1929?', so 'no link' is no longer ruled out, and the new wrong choice (farther galaxies moving faster toward Earth) breaks the template shared with e4ffaa2d7e. Key is Hubble's 1929 velocity-distance relation; velocities mainly Slipher's plus Humason's, distances partly from Cepheids. The T5 big-bang unit has no final.json yet.",
+   "sources": [
+    "https://grokipedia.com/page/Hubble's_law",
+    "https://en.wikipedia.org/wiki/Hubble%27s_law"
+   ]
+  },
+  "bb2f574d6c": {
+   "verdict": "pass",
+   "why": "The silly 'too small a galaxy' choice is replaced by a scientific-sounding misconception that still assumes a centre; it is wrong because the expansion has no centre and happened everywhere at once. Four live choices, one defensible key.",
+   "sources": [
+    "https://grokipedia.com/page/Big_Bang",
+    "https://grokipedia.com/page/Expansion_of_the_universe",
+    "https://imagine.gsfc.nasa.gov/features/yba/M31_velocity/hubble_law/hubble_meaning.html"
+   ]
+  },
+  "2bf70b44d3": {
+   "verdict": "pass",
+   "why": "Context now says Hoyle never accepted the Big Bang, which holds even though he was reported in 1965 to have dropped the original steady state and later defended changed versions. Stem, key (continuous creation of matter) and choices unchanged and sound.",
+   "sources": [
+    "https://grokipedia.com/page/Fred_Hoyle",
+    "https://en.wikipedia.org/wiki/Steady-state_model",
+    "https://www.scientificamerican.com/blog/cross-check/remembering-big-bang-basher-fred-hoyle/"
+   ]
+  }
+ }
+}

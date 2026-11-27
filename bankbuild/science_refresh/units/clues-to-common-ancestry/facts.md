@@ -135,3 +135,32 @@ G1. 8th grade: NGSS MS-LS4-1 (patterns in the fossil record), MS-LS4-2 (anatomic
 - The first summers in the Arctic: 1999 (Grokipedia, Neil Shubin) or 2000 (Wikipedia). Questions do not rely on it.
 - The Haldane quip is anecdotal; it is told only as "said to have", never keyed.
 - Pakicetus's and Ambulocetus's dates sit close (about 50 and about 48-49 million years); the order Pakicetus, Ambulocetus, Basilosaurus is the sources' own.
+
+## Added in the revision (2026-11-26)
+
+F30. The first fish are more than 500 million years old: "Fish represent the earliest vertebrates, emerging approximately 530 million years ago"; the Chengjiang fossils such as Haikouichthys are "dated to approximately 518 million years ago"; Myllokunmingia and Metaspriggina "appeared during the Cambrian period around 520–500 million years ago" (Grokipedia, Evolution of fish). This corrects the 490 million years of F2, which the Precambrian_rabbit page gives for "vertebrates".
+    https://grokipedia.com/page/Evolution_of_fish
+
+F31. The Cambrian began 538.8 million years ago: the International Commission on Stratigraphy "revised the base of the Cambrian Period to 538.8 ± 0.6 Ma", "a revision from the previously estimated 541 Ma" (Grokipedia, Cambrian). So Precambrian rock is more than about 539 million years old. This corrects the 541 of F1.
+    https://grokipedia.com/page/Cambrian
+
+F32. Reptiles come tens of millions of years after Tiktaalik (about 375 million years): a trackway of an amniote with clawed feet, "most probably a reptile", about 350 million years old, from the Mansfield district of Victoria, Australia (Nature, 2025), 35 to 40 million years older than earlier records; the oldest undisputed reptile body fossil, Hylonomus, is about 315 million years old (F7b).
+    https://www.eurekalert.org/news-releases/1083842 ; https://grokipedia.com/page/Hylonomus
+
+F33. Richard Owen did not coin the word: "The word homology, coined in about 1656", and "The term 'homology' was first used in biology by the anatomist Richard Owen in 1843" (Wikipedia, Homology). So Owen gave homology its meaning in biology in 1843.
+    https://en.wikipedia.org/wiki/Homology_(biology)
+
+F34. Theropods were not all small (from the tiny Anchiornis to Tyrannosaurus; fact-check, Grokipedia Theropoda), so "small theropods, the mostly meat-eating dinosaurs". Lizards are not on the bird line: Lepidosauria holds "Squamata (lizards, snakes, and amphisbaenians) alongside the two species of tuatara" (Grokipedia, Lepidosauria), and lepidosaurs are "non-archosaur diapsids"; Archosauria holds the crocodilians and "Dinosauria, Pterosauria, and other bird-line archosaurs", with birds the "descendants of theropod dinosaurs" (Grokipedia, Archosaur).
+    https://grokipedia.com/page/Theropoda ; https://grokipedia.com/page/Lepidosauria ; https://grokipedia.com/page/Archosaur
+
+F35. Pakicetus (Grokipedia): its "initial classification as an early cetacean stemmed from the specimen's dense tympanic bulla", and the involucrum is "a defining feature of cetaceans"; the nasal opening sits "at the rostral tip" and "The nasal passages lack adaptations for a blowhole"; its fossils were "deposited in freshwater fluvial and deltaic environments"; "there is no evidence for sustained swimming", "without evidence of expanded caudal fins for propulsion"; it was "fully terrestrial, quadrupedal", 1 to 2 metres long, about 50 million years ago. Described by Philip Gingerich and Donald Russell in 1981 from northern Pakistan (F12).
+    https://grokipedia.com/page/Pakicetus
+
+F36. All four-legged animals' forelimbs "are all derived from the same ancestral tetrapod structure" (Wikipedia, Homology), so a lizard's and a horse's forelegs are homologous. The "streamlined body shapes, dorsal fins, and flippers of sharks" and of dolphins and ichthyosaurs "evolved independently as adaptations for efficient swimming" (Grokipedia, Convergent evolution); a dolphin's dorsal fin "is made of dense, fibrous connective tissue, with no bone, cartilage, or muscle" (SeaWorld, bottlenose dolphin).
+    https://en.wikipedia.org/wiki/Homology_(biology) ; https://grokipedia.com/page/Convergent_evolution ; https://seaworld.org/animals/all-about/bottlenose-dolphin/characteristics/
+
+F37. In jawed fish, "the first arch pair (mandibular arches) develops into the jaw", "the second gill arches (the hyoid arches) develop into the hyomandibular complex", and "the remaining posterior arches (simply called branchial arches) support the gills" (Wikipedia, Branchial arch): most, not all, of a fish's arches carry gills. Human arch derivatives (Grokipedia, Pharyngeal arch): first, mandible, maxilla, malleus, incus; second, stapes, styloid process, lesser horn and upper part of the hyoid; third, lower body and greater horn of the hyoid; fourth and sixth, the thyroid, cricoid and arytenoid cartilages. "The parts of the skull that arise from the pharyngeal arches are collectively known as the splanchnocranium" (Wikipedia, Pharyngeal arch), while "the neurocranium includes the calvaria or skullcap" (Wikipedia, Neurocranium), its frontal bone from neural crest and its parietal bones from paraxial mesoderm (Grokipedia, Neurocranium). The vertebrae come from the sclerotome of the somites, blocks of paraxial mesoderm "along the neural tube" (Grokipedia, Somite). So neither the neck's vertebrae nor the roof of the skull is built by the arches.
+    https://en.wikipedia.org/wiki/Branchial_arch ; https://grokipedia.com/page/Pharyngeal_arch ; https://en.wikipedia.org/wiki/Pharyngeal_arch ; https://en.wikipedia.org/wiki/Neurocranium ; https://grokipedia.com/page/Neurocranium ; https://grokipedia.com/page/Somite
+
+F38. Whale flukes: "Flukes are flattened pads of tough, dense, fibrous connective tissue, completely without bone, cartilage, or muscle" (SeaWorld, bottlenose dolphin); "The two triangles of the adult fluke are located lateral to the caudal vertebrae with a notch in the midline" (Gavazzi, Thewissen, Cooper and colleagues, Developmental Dynamics 253, 2024, beluga embryos); the last tail vertebrae run into the fluke region and end just before the notch (Fish 1998, via the fact-check). So the flukes are boneless blades on either side of the tail's backbone.
+    https://seaworld.org/animals/all-about/bottlenose-dolphin/characteristics/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC11656686

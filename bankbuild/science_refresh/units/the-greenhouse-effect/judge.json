@@ -1,0 +1,36 @@
+{"unit": "the-greenhouse-effect",
+ "questions": {
+  "4722514995": {"verdict": "ok", "issues": []},
+
+  "597e80884c": {"verdict": "revise", "issues": [
+    {"axis": "grade", "severity": "medium",
+     "what": "Why nitrogen and oxygen let infrared through (each molecule is two identical atoms, so its charge stays even when it vibrates) is beyond a typical 8th-grade course. TEKS 8.11 and NGSS MS-ESS3-5 name the greenhouse gases but stop before why the air's main gases are not among them; the idea is usually first met in high-school chemistry. The key is a bare structural fact the player must take on trust, not the grade's mechanism. The choices are otherwise fair (water and methane really are lighter, all four gases are colourless, oxygen is reactive).",
+     "fix": "Keep it only if the card teaches it in plain words (two identical atoms cannot catch infrared; molecules of three or more atoms can). Better, replace it with an application of the grade's own mechanism: 'On a clear, dry night in the desert the ground cools far faster than on a cloudy, humid night by the sea. Why?' Key: 'Dry, clear air holds little water vapour to send heat back down'. Wrong: 'Desert sand reflects the ground's heat out to space', 'Humid air stops warm air rising, as a glass roof does', 'Clouds hold back the cold that falls from the night sky'."}
+  ]},
+
+  "027dc9d8bf": {"verdict": "ok", "issues": []},
+
+  "16b85883aa": {"verdict": "ok", "issues": []},
+
+  "8e509b1fb7": {"verdict": "revise", "issues": [
+    {"axis": "stance", "severity": "medium",
+     "what": "The card gives a warming amount: Arrhenius 'found that ... doubling it would warm Earth by about 5 to 6 degrees'. That is a climate-sensitivity figure, which the fact sheet itself says it leaves to the T5 climate unit, and the brief bars warming amounts here. 'Found' also reads as if the figure still stood.",
+     "fix": "Cut the doubling clause, ending the card: '...enough for an ice age. He worked out what more of the gas would do as well, and he called the work tedious calculations.' If the lead wants the doubling estimate kept (the scope names it), give it as his estimate and nothing more: 'he estimated that doubling it would warm Earth by about 5 to 6 degrees', and leave how later work revised it to the T5 unit."},
+    {"axis": "tell", "severity": "low",
+     "what": "'Why cities are warmer than the countryside' is the weakest lure: nothing in the stem ties carbon dioxide or latitude bands to towns, and the idea is anachronistic for 1896.",
+     "fix": "Replace it with 'Why the Sun's heat seemed to change from year to year'."}
+  ]},
+
+  "bca954deb3": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "By 1960 Keeling had about two years of readings (F24: 'a rising baseline' by 1960), so 'year after year' overstates the record he had then.",
+     "fix": "Key: 'The gas building up in the air from one year to the next'."}
+  ]},
+
+  "c86f230e03": {"verdict": "ok", "issues": []},
+
+  "2e4b7e4caf": {"verdict": "ok", "issues": []},
+
+  "c3420afd76": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Coverage is the scope's core, one fact each: the mechanism (4722514995), why the air's main gases are not greenhouse gases (597e80884c), Foote (027dc9d8bf), Tyndall (16b85883aa), Arrhenius (8e509b1fb7), Keeling's rise (bca954deb3) and the yearly zigzag (c86f230e03), the carbon stores (2e4b7e4caf) and volcanic cooling (c3420afd76). The lead's ruling holds: nothing keys the -18 C figure, Venus against Mars, or the limestone store (2e4b7e4caf sets limestone aside in its stem and keys the oceans); the T3 mechanism question is not re-asked because the T3 final no longer carries it (only 2fe68de4a8's stem says the gases 'slow the escape of heat'). Infrared (the-electromagnetic-spectrum) and radiation (heat-on-the-move) are used as known terms and never keyed. Other finals checked: earths-four-spheres 98587b4962 (nitrogen is most of the air) is a given in 597e80884c's stem, not re-asked; earths-four-spheres fd4646efcc (a volcano gives off mostly water vapour) is answered consistently by c3420afd76's steam lure; heat-on-the-move e007355022 (a space blanket reflects heat rays) sits well beside the mirror lure of 4722514995; how-plants-make-food 24bc41fcf8 and photosynthesis-atoms-in-and-out (plants take in carbon dioxide) are applied a grade deeper in c86f230e03, not re-asked. Framing: settled physics is stated flatly throughout; no forecast, policy or alarm in any stem or card. Keeling's 313 to about 430 parts per million (bca954deb3's card) is a measured record, stated plainly, and is fine. The one stray is the Arrhenius doubling figure in 8e509b1fb7's card (see there). The 597e80884c grade call is the only real content worry; the rest is polish."}

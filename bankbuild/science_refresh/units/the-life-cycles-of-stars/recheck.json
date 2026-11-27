@@ -1,0 +1,47 @@
+{
+ "unit": "the-life-cycles-of-stars",
+ "questions": {
+  "8f6e6e1a90": {
+   "verdict": "pass",
+   "why": "The silly choice is replaced by magnetism pulling the gas together, which is truly wrong (Grokipedia, Star formation: magnetic fields support clouds against collapse). Key matches the Jeans balance; dense cores are about 10-20 K. Lower units use magnetism only as a wrong choice for orbits and tides.",
+   "sources": [
+    "https://grokipedia.com/page/Star_formation",
+    "https://grokipedia.com/page/Molecular_cloud"
+   ]
+  },
+  "9d4071711c": {
+   "verdict": "pass",
+   "why": "Three choices now tell a fast-burning story, so the core's heat decides. 16 Suns about 10 million years and the Sun about 10 billion (OpenStax); a star burns its fuel only in its core (F28). Fusion is not named, leaving it to T5.",
+   "sources": [
+    "https://openstax.org/books/astronomy-2e/pages/22-1-evolution-from-the-main-sequence-to-red-giants",
+    "https://grokipedia.com/page/Main_sequence"
+   ]
+  },
+  "f5b7955e9c": {
+   "verdict": "pass",
+   "why": "Re-keyed to the red giant, core scope, as a fair 2x2. Grokipedia, Red giant: the Sun's surface cools to about 2,500-3,000 K while it grows about 2,000-3,000 times brighter. Red is not named in the stem. No spectra or fusion keyed. No other unit keys it.",
+   "sources": [
+    "https://grokipedia.com/page/Red_giant",
+    "https://openstax.org/books/astronomy-2e/pages/22-1-evolution-from-the-main-sequence-to-red-giants",
+    "https://grokipedia.com/page/Hertzsprung%E2%80%93Russell_diagram"
+   ]
+  },
+  "33edca010e": {
+   "verdict": "pass",
+   "why": "The history is now right: the stem asks the limit as figured today (about 1.4 Suns), and the context gives his first 0.91, from a mean molecular weight then taken as 2.5 (MacTutor). Eddington's 'any mass' view is fairly stated. The number is the fact here.",
+   "sources": [
+    "https://mathshistory.st-andrews.ac.uk/HistTopics/Chandrasekhar_Eddington/",
+    "https://grokipedia.com/page/Chandrasekhar_limit"
+   ]
+  },
+  "69874dc35d": {
+   "verdict": "pass",
+   "why": "The disputed motive for Bohr's and Pauli's silence is dropped (MacTutor says they pleaded being too busy). Eddington is treated fairly: his 1924 mass-luminosity work and his 1926 book are named, he accepted white dwarfs, and the 'law of Nature' line is in indirect speech.",
+   "sources": [
+    "https://mathshistory.st-andrews.ac.uk/HistTopics/Chandrasekhar_Eddington/",
+    "https://grokipedia.com/page/Arthur_Eddington",
+    "https://en.wikipedia.org/wiki/Chandrasekhar_limit"
+   ]
+  }
+ }
+}

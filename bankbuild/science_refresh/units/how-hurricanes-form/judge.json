@@ -1,0 +1,42 @@
+{"unit": "how-hurricanes-form",
+ "questions": {
+  "4ed68556f0": {"verdict": "revise", "issues": [
+   {"axis": "other", "severity": "high",
+    "what": "This re-asks why-we-have-seasons (T2). That final asks why the hottest weeks come weeks after the June Sun peaks, keyed 'The oceans are slow to warm up', with wrong choices 'Earth is nearest the Sun in July and August' and 'The Sun gives off the most heat in July'. Here the key is 'The sea takes all summer to warm up' and two wrong choices are the same two misconceptions. It is one fact, the sea's seasonal lag, at the same depth.",
+    "fix": "Replace it with a fact this unit does not yet key. The best is the scope's spiral rain bands, which no question asks. Stem: 'A town is still about 200 kilometres from a hurricane's eye. For hours, bursts of heavy rain and gusty squalls sweep over it, with lulls between them. What is passing over the town?' Key: 'The storm's spiral rain bands, one by one'. Wrong: 'The eyewall, with the storm's strongest winds' / 'The calm eye, with sinking air' / 'A cold front running ahead of the storm'. F20 needs a source line on rain bands bringing rain bursts and gusts with lulls between them. An alternative, which needs a source, is a slow storm weakening by churning up cooler water from below the warm surface layer (F1 gives the 50-60 m depth)."}]},
+
+  "98bfb751c5": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The stem puts the heat 'inside the storm's towering clouds'. A student who knows only the T1 water-cycle fact (clouds form by condensation) picks 'Water vapour condensing into droplets' because it names the cloud-making process, not because he knows condensation gives out heat. The T4 fact (latent heat set free) is not what decides it, and the key's surface is the-water-cycle's keyed answer.",
+    "fix": "Give the condensation in the stem and ask its heat effect, with two warm and two cool choices so that the mechanism decides: 'Meteorologists call a hurricane a heat engine: it turns heat into the motion of its winds. High inside its towering clouds, kilometres above the sea, the rising water vapour condenses into droplets. What does the condensing do to the air around it?' Key: 'Warms it, with heat the vapour carried up from the sea'. Wrong: 'Warms it, by friction as the droplets fall' / 'Cools it, as making droplets takes in heat' / 'Cools it, as the droplets shade it from the Sun'."}]},
+
+  "6a62b4c4cb": {"verdict": "ok", "issues": []},
+
+  "31a64f0036": {"verdict": "revise", "issues": [
+   {"axis": "other", "severity": "high",
+    "what": "The 'and why' half re-keys the winds unit's Coriolis question (1db7e2b5cb: the spin bends winds right in the north and left in the south). Under the batch rule, hurricanes may use spin only as the storm's turning. Here a student who knows the winds fact needs only 'Earth's spin bends air the other way' to pick the key, since the other clockwise choice blames the seasons. The stem also asks two things at once.",
+    "fix": "Ask the turn alone: 'Satellites watch the tropical cyclones south of the equator too. Which way do those storms turn?' Key: 'Clockwise, the mirror of the northern storms'. Wrong: 'Counter-clockwise, just like the northern storms' / 'Either way, each one set by chance' / 'Counter-clockwise, but more slowly than in the north'. The context may still give the reason."}]},
+
+  "f9c41652da": {"verdict": "ok", "issues": [
+   {"axis": "other", "severity": "low",
+    "what": "This is a lane edge. A named storm (John, 1994) sets the scene, which is allowed, and the key ('moved into another part of the ocean') is a naming rule by region, not a mechanism. It is in scope (TEKS 8.10C names hurricanes and typhoons), so it can stay as the unit's one naming item. 'It had grown larger than a hurricane can be' is a thin choice.",
+    "fix": "Optional: replace the thin choice with 'It had crossed into waters where storms grow fiercer'. Keep the key as the science point, one kind of storm with two regional names."}]},
+
+  "3eb230897e": {"verdict": "revise", "issues": [
+   {"axis": "clarity", "severity": "medium",
+    "what": "The stem asks two things ('Why is the eye calm and clear?'), but the key explains only the clear sky. Sinking air does not explain the calm. That leaves 'Winds from every side meet there and cancel' as a fair-seeming answer to the calm half, so a careful student may doubt the key.",
+    "fix": "Ask one thing: 'Why is the sky in the eye clear?' Choices: 'Its air sinks, and sinking air makes no clouds' / 'Its air rises too fast for clouds to form' / 'Its low pressure keeps clouds from forming' / 'Cold air pools there and holds off the clouds'. The low-pressure choice is live, because low pressure usually means cloud (96cdd39cd3 in the winds unit)."}]},
+
+  "8c85cef8c3": {"verdict": "ok", "issues": []},
+
+  "0d9861f5f8": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "'Its lightning' is a weak choice: few 8th graders would think lightning is a hurricane's deadliest part. 'Its strongest winds' is also weak for anyone who knows the categories go by wind, since a scale that 'leaves out' the winds makes no sense. Only two choices are live, surge and tornadoes.",
+    "fix": "Replace 'Its lightning' with 'Its flying debris', a wind-borne danger students fear and one the wind scale does cover. Keep 'Its strongest winds' as the misconception (M5), but do not reword it as 'Its strongest gusts': a scale built on one-minute sustained winds really does leave gusts out, which would make a second right answer."}]},
+
+  "c5a0ce3a94": {"verdict": "ok", "issues": [
+   {"axis": "clarity", "severity": "low",
+    "what": "The dropsonde clause does no work. It describes the tool, but nothing the tool measured bears on the question, and it lengthens an already busy stem.",
+    "fix": "Make it the how-we-know: 'Dropsondes, instrument packs that hurricane hunters drop by parachute to radio back the wind, show a hurricane's winds weakening day by day as it drifts north over sea water of 20 degrees Celsius. Another hurricane weakens just as fast after it moves ashore. What do the two have in common?'"}]}
+ },
+ "unit_notes": "Two cross-unit problems. 4ed68556f0 re-asks the T2 seasons lag, with the same key and the same two misconceptions. 31a64f0036's 'why' re-keys the winds unit's Coriolis direction. The fixes are given. Scope gap: the spiral rain bands are in scope but not keyed, and are the natural replacement for 4ed68556f0. The 26 degree Celsius threshold is not keyed alone, but the warm-sea fuel is covered by 98bfb751c5 and c5a0ce3a94, which is enough. Other overlaps were checked: the-water-cycle (T1) keys condensation only as a step. 98bfb751c5 aims a grade deeper (heat released), but as drafted its key can be reached from the T1 fact, so see its fix. variation-and-survival's 2017 hurricane lizards are not touched. 6a62b4c4cb uses spin only as what sets a storm turning, inside the batch rule. Named storms (John, Ike, Vamei) only set scenes or sit in context, and no key is a name or a place. No climate-change or hurricane-trend content: the T5 stance stays out. This unit has no factcheck.json yet."}

@@ -1,0 +1,58 @@
+{"unit": "galaxies-and-the-expanding-universe",
+ "questions": {
+  "19eca78b63": {"verdict": "ok", "issues": [
+   {"axis": "fact", "severity": "low",
+    "what": "The context's 'Their gravity is enormous' is true of giant ellipticals. Dwarf ellipticals are far lighter (the fact-check notes this too). The key itself is sound and the choices are parallel.",
+    "fix": "Context: 'Big ellipticals have enormous gravity, their stars lie vast distances apart, and warming gas would only hinder its collapse.'"}]},
+
+  "b9512f634f": {"verdict": "revise", "issues": [
+   {"axis": "fact", "severity": "high",
+    "what": "The stem says Shapley found the 69 distances by 'timing the pulsing stars inside them'. He timed variables in only a few clusters. Most of the 69 distances came from the clusters' brightest stars and their sizes, scaled from those few. The fact-check marks this as an error from Shapley's 1918 paper, and I agree. As written, the stem teaches the method wrongly.",
+    "fix": "'Harlow Shapley worked out how far away 69 globular clusters lie, starting from the pulsing stars he timed in a few of them.'"},
+   {"axis": "fact", "severity": "medium",
+    "what": "The context says the centre was 'not near the Sun, where Jacobus Kapteyn's model had placed it'. Kapteyn's model came out in 1920-22, after Shapley's 1918 result, so 'had placed' puts them in the wrong order. This does not break the question, but the teaching card would be wrong.",
+    "fix": "'...not near the Sun, where counts of the stars around us seemed to put it (Jacobus Kapteyn's model of 1920 still did).'"},
+   {"axis": "tell", "severity": "low",
+    "what": "The stem says the clusters were 'not spread evenly around the Sun'. A student without the premise (clusters swarm round the galaxy's centre) can still read that as 'the Sun is off-centre', which weakens 'The Sun lies close to the galaxy's centre'. Reasoning from observation to meaning is the T4 craft, so this is only polish.",
+    "fix": "Optional: replace that choice with Curtis's live reading, 'The clusters lie off to one side of the galaxy'."}]},
+
+  "5bf0de95fd": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The key, 'How far light travels in 4.2 years', is the term 'light-year' read word by word. It is also the only choice that repeats the stem's 4.2. A test-wise student who has never been taught the unit picks the literal reading. The time misconception, the real trap, is only half live.",
+    "fix": "Keep the stem neutral and keep the term's words out of the key. Stem: 'Astronomers give Proxima Centauri, the nearest star beyond the Sun, a distance of about 4.2 light-years. What does that figure tell them?' Choices: 'How far away the star lies' / 'How long ago the star first shone' / 'How long a rocket would take to get there' / 'How fast the star moves through space'. Now the two time readings pull students who parse 'year' as a time."},
+   {"axis": "grade", "severity": "low",
+    "what": "This is a definition, the thinnest T4 item in the unit. It is in scope (old TEKS 8.8D) and no T1-T3 unit keys the light-year, so it can stay.",
+    "fix": "No change beyond the fix above. A deeper option is the look-back time (F12): a flare on Proxima tonight is first seen from Earth about 4.2 years from now."}]},
+
+  "e4ffaa2d7e": {"verdict": "ok", "issues": [
+   {"axis": "tell", "severity": "low",
+    "what": "6e44bc1d29 uses the same choice template (longer / shorter / the same / no link), so a player who has met one learns that the direct relation is the key. 'Every star kept the same length of cycle' is also thin: there would have been nothing for her to find.",
+    "fix": "Replace 'Every star kept the same length of cycle' with 'The brighter stars kept less regular cycles'. The 6e44bc1d29 fix below also breaks the shared template."}]},
+
+  "d596e9b06b": {"verdict": "ok", "issues": [
+   {"axis": "tell", "severity": "low",
+    "what": "'Yet one of them looks a hundred times fainter' tells the student that equal cycles should mean equal brightness, which pushes him past 'gives off much less light' without knowing Leavitt's law.",
+    "fix": "Drop 'Yet': 'One of them looks a hundred times fainter than the other.'"}]},
+
+  "fac5f22b3a": {"verdict": "ok", "issues": []},
+
+  "fc080cfa6a": {"verdict": "ok", "issues": []},
+
+  "6e44bc1d29": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "'What pattern did Hubble report' rules out 'A galaxy's speed has no link to its distance', so only three choices are live. The four choices also repeat Leavitt's template in e4ffaa2d7e almost word for word.",
+    "fix": "End the stem 'What did Hubble report in 1929?' Choices: 'The farther the galaxy, the faster it moves away' / 'The nearer the galaxy, the faster it moves away' / 'The farther the galaxy, the faster it moves toward Earth' / 'Every galaxy moves away at the same speed'."}]},
+
+  "bb2f574d6c": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "'The Milky Way is too small a galaxy to sit at the centre' is silly: no 8th grader thinks a centre needs a big galaxy. That leaves three live choices.",
+    "fix": "Replace it with a misconception that sounds scientific and still accepts a centre: 'Light from the true centre has not reached Earth yet'."}]},
+
+  "2bf70b44d3": {"verdict": "ok", "issues": [
+   {"axis": "fact", "severity": "low",
+    "what": "The context's 'Hoyle never did' (give up the steady state) is too absolute. In 1965 he was reported as dropping its original form, and he later defended changed versions (the fact-check marks it uncertain).",
+    "fix": "'...most astronomers gave up the steady state; Hoyle never accepted the Big Bang, and kept seeking other explanations for the glow.'"}]},
+
+  "8d784a0f1f": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Coverage matches the scope: shapes (taught in 19eca78b63's stem, not keyed alone), the Sun's place, the light-year, Leavitt, Andromeda, red shift, Hubble's law, no centre, the steady state and the CMB. Overlaps checked against every final.json: nothing re-asks the-life-cycles-of-stars. Star colour as temperature appears only as a wrong choice in fc080cfa6a, and cold-gas collapse only in 19eca78b63's context, under a different key. describing-waves' 300,000 km/s appears only in 5bf0de95fd's context. Nothing touches T5 spectra or fusion. No T1-T3 unit keys galaxies or light-years. Three questions rest on Cepheids (e4ffaa2d7e, d596e9b06b, fac5f22b3a), but each keys a different fact (the law, using it as a ruler, Andromeda's distance). That is acceptable, though heavy on one tool. Two questions shared one choice template; the fixes above vary it. The reviser must carry the fact-check's two errors in b9512f634f and its uncertain point in 2bf70b44d3. No stance or lane problems: named people and places set the scene, and every key is the science."}

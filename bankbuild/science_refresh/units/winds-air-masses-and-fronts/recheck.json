@@ -1,0 +1,59 @@
+{
+ "unit": "winds-air-masses-and-fronts",
+ "questions": {
+  "fe1637f24b": {
+   "verdict": "pass",
+   "why": "Context no longer claims Hadley was first to bring in Earth's spin (Galileo had tied the trades to rotation). It now says what Halley's theory lacked: how the spin turns air moving across it, which Hadley added. Stem, key and choices unchanged and true. The winds unit owns Coriolis.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hadley_cell",
+    "https://en.wikipedia.org/wiki/George_Hadley",
+    "https://grokipedia.com/page/Hadley_cell"
+   ]
+  },
+  "179ce68b78": {
+   "verdict": "pass",
+   "why": "'For someone facing the way a wind blows' is clear to an 8th grader and is the right frame: right of the motion in the north, left in the south. Key and choices unchanged. This unit owns the Coriolis direction; the hurricane unit now asks only the storm's turn.",
+   "sources": [
+    "https://grokipedia.com/page/Coriolis_force",
+    "https://en.wikipedia.org/wiki/Coriolis_force"
+   ]
+  },
+  "bbbe8c9f97": {
+   "verdict": "pass",
+   "why": "Re-keyed off the westerly fact that 964a1669c1's stem states. Ooishi's 1923-25 pilot-balloon data (about 1,228-1,300 runs, theodolite) showed strong winter westerlies over Tateno (winter means above 70 m/s near 10 km). Key true: jets strengthen in winter with the greater pole-to-tropics temperature contrast. Wrong choices truly wrong: cold air is denser; length of day varies only about 1 ms; storms do not set jet speed. The key does not echo 4ae7701723's. Jet mechanism is 8th-grade (G8.E5); no T1-T3 unit keys it.",
+   "sources": [
+    "https://grokipedia.com/page/Jet_stream",
+    "https://en.wikipedia.org/wiki/Wasaburo_Oishi",
+    "https://www.data.jma.go.jp/kousou/information/journal/2021/pdf/1_3_7_2.pdf",
+    "https://grokipedia.com/page/Earth's_rotation"
+   ]
+  },
+  "964a1669c1": {
+   "verdict": "pass",
+   "why": "The ocean-current and ultraviolet choices are replaced by weather-shaped wrong ideas (clear sky beneath it, calmest ground air). Both are truly wrong: the jet steers mid-latitude cyclones and their fronts, which bring cloud, rain and wind. Context no longer mentions the cold-warm boundary, so it does not hint bbbe8c9f97's key.",
+   "sources": [
+    "https://grokipedia.com/page/Jet_stream",
+    "https://en.wikipedia.org/wiki/Jet_stream",
+    "https://grokipedia.com/page/Westerlies"
+   ]
+  },
+  "65e5c412c7": {
+   "verdict": "pass",
+   "why": "The slow-slope choice that 'so quickly' ruled out is replaced by mixing, a live picture of a fast storm. It is truly wrong because air masses of different density do not easily mix at a front: the denser cold air undercuts the warm air and forces it up fast. Context no longer describes the warm front, so it does not give away 5fbdadb31f.",
+   "sources": [
+    "https://geo.libretexts.org/Courses/Fullerton_College/Introduction_to_Earth_Science_(Ikeda)/17%3A_Weather_Processes/17.03%3A_Air_Masses_and_Weather_Fronts",
+    "https://scied.ucar.edu/learning-zone/how-weather-works/weather-fronts",
+    "https://grokipedia.com/page/Weather_front"
+   ]
+  },
+  "29d8f63d81": {
+   "verdict": "pass",
+   "why": "The tilt choice that 'over a whole year' ruled out is replaced by a second, wrong carrier of heat (conduction through crustal rock), so knowledge now decides between two transfers. All heat flowing up through the crust is about 0.09 W/m2, about 0.04 percent of the roughly 240 W/m2 of absorbed sunlight. Key true: winds and currents carry heat poleward. The T2 earths-layers key (heat flows up from deep inside) appears here only as a wrong choice.",
+   "sources": [
+    "https://grokipedia.com/page/Earth%27s_internal_heat_budget",
+    "https://grokipedia.com/page/Ocean_current",
+    "https://grokipedia.com/page/Atmospheric_circulation"
+   ]
+  }
+ }
+}

@@ -1,0 +1,250 @@
+{
+ "unit": "clues-to-common-ancestry",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "clues-to-common-ancestry",
+   "question": "Common descent predicts an order in the fossil record: no kind of living thing turns up in rock older than the kinds it descends from. Fossil hunters test that order every time they split open a layer of rock. Which find would most clearly break it?",
+   "answer": "A rabbit in rock older than the first fish",
+   "choices": [
+    "A rabbit in rock older than the first fish",
+    "A fish in rock younger than the first rabbits",
+    "A microbe in rock younger than the first rabbits",
+    "A mammal in rock older than the first rabbits"
+   ],
+   "context": "Rabbits are mammals, and mammals descend from older animals with backbones: fish appear more than 500 million years ago, the first mammals about 225 million and rabbits about 55 million, while microbes go back some 3.5 billion years. Fish and microbes in younger rock break nothing, since an older group goes on living beside the groups that descend from it, and a mammal older than the first rabbits is just what descent predicts, for rabbits descend from older mammals. The biologist J. B. S. Haldane is said to have named 'fossil rabbits in the Precambrian', in rock more than about 539 million years old, as the find that would shake his belief in evolution; none has ever been found.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F30",
+    "F31"
+   ],
+   "grade_note": "NGSS MS-LS4-1 has 8th graders read the fossil record's order, simpler and older forms first, as evidence of common descent; the rabbit test shows that order is a prediction that could fail."
+  },
+  {
+   "tier": 4,
+   "topic": "clues-to-common-ancestry",
+   "question": "Neil Shubin's team spent several summers searching Arctic rock about 375 million years old, laid down by ancient streams, and found Tiktaalik there in 2004. Why had they chosen rock of that age?",
+   "answer": "It was laid down as fish were moving onto land",
+   "choices": [
+    "It was laid down as fish were moving onto land",
+    "It was laid down as reptiles were spreading over land",
+    "It was laid down as dinosaurs were roaming the land",
+    "It was laid down as mammals were taking to the seas"
+   ],
+   "context": "Fish with fleshy, lobed fins were known from rock about 380 million years old and the first four-legged animals from rock about 365 million years old, so rock laid down in between was the place to look for a fish partway to life on land. Tiktaalik is one: it has scales, gills and fins, but also a neck, and inside each front fin an upper-arm bone, two forearm bones and wrist-like bones. Reptiles turn up only tens of millions of years after Tiktaalik, and dinosaurs and mammals later still; biologists call Tiktaalik a transitional fossil rather than a 'missing link', probably a late cousin of the first walkers, not their ancestor.",
+   "facts": [
+    "F2",
+    "F5",
+    "F6",
+    "F7",
+    "F7b",
+    "F8",
+    "F10",
+    "F32"
+   ],
+   "grade_note": "8th grade (NGSS MS-LS4-1 and MS-LS4-2) reads the fossil record's order and teaches transitional fossils; Tiktaalik, sought in rock of the age that order pointed to, is the standard middle-school example of the fish-to-land transition."
+  },
+  {
+   "tier": 4,
+   "topic": "clues-to-common-ancestry",
+   "question": "The first skeleton of Archaeopteryx came out of limestone in Bavaria, Germany, in 1861. The animal lived about 150 million years ago, and it had feathered wings. Yet it also had teeth in its jaws, three clawed fingers on each wing and a long, bony tail. Thomas Huxley compared its skeleton with the skeletons of fossil reptiles in 1868, and biologists now agree with his reading. From which animals do birds descend?",
+   "answer": "Small, meat-eating dinosaurs",
+   "choices": [
+    "Small, meat-eating dinosaurs",
+    "Flying reptiles called pterosaurs",
+    "Big, plant-eating dinosaurs",
+    "Early lizards, like today's monitors"
+   ],
+   "context": "Archaeopteryx joins a bird's feathers and wings to the teeth, clawed hands and bony tail of small theropods, the mostly meat-eating dinosaurs, and Huxley argued that birds descend from that stock; birds are now counted as the last living theropods. Pterosaurs had teeth and long tails too, but they were a separate branch that flew on skin stretched from one long finger, the long-necked plant-eaters were another branch, and lizards belong to another line of reptiles altogether. Archaeopteryx came to light just two years after Charles Darwin's On the Origin of Species, a creature between two great groups.",
+   "facts": [
+    "F9",
+    "F10",
+    "F11",
+    "F34"
+   ],
+   "grade_note": "Archaeopteryx, half bird and half reptile, is the transitional fossil most 8th-grade lessons on the evidence for evolution show (NGSS MS-LS4-1, MS-LS4-2)."
+  },
+  {
+   "tier": 4,
+   "topic": "clues-to-common-ancestry",
+   "question": "Philip Gingerich and Donald Russell described Pakicetus in 1981, from fossils found in northern Pakistan. It was a mammal about the size of a wolf, and it walked on four long, slim legs some 50 million years ago. Yet paleontologists count it among the earliest whales. What marks it as one?",
+   "answer": "Its ear bones, unusually thick and dense",
+   "choices": [
+    "Its ear bones, unusually thick and dense",
+    "Its nostrils, set on the top of its head",
+    "Its tail, broad and flat for swimming",
+    "Its bones, found in rock laid down by the sea"
+   ],
+   "context": "Pakicetus's ear bone has the thick, dense wall, the involucrum, that is a defining mark of whales, shared by every whale since and inherited from their common ancestor. Its nostrils sat at the tip of its snout, it shows no sign of swimming with its tail, and its bones lie in rock laid down by rivers and deltas. It is the oldest of the walking whales: Ambulocetus, about 48 million years old, paddled with big, webbed hind feet, and Basilosaurus, about 40 to 34 million, lived wholly at sea on tiny hind legs, so the fossils run from land into the sea.",
+   "facts": [
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F35"
+   ],
+   "grade_note": "NGSS MS-LS4-2 has 8th graders infer relationships from anatomical similarities in living and fossil animals; the walking whales, placed among whales by a shared ear bone, are a standard middle-school sequence."
+  },
+  {
+   "tier": 4,
+   "topic": "clues-to-common-ancestry",
+   "question": "A human's arm, a bat's wing, a whale's flipper and a cat's front leg do very different jobs: grasping, flying, swimming and running. Yet each is built of one upper-arm bone, two forearm bones, a set of wrist bones and the bones of the fingers. Biologists call such parts homologous. What best explains the shared build?",
+   "answer": "All four were inherited from one shared ancestor",
+   "choices": [
+    "All four were inherited from one shared ancestor",
+    "All four follow one ideal plan for every limb",
+    "All four use the only way bones can form a limb",
+    "All four evolved that same build separately"
+   ],
+   "context": "Richard Owen, who gave homology its meaning in biology in 1843, saw in such likeness an ideal plan, an archetype in the mind of the Creator; Charles Darwin argued instead that the animals had inherited the plan from a common ancestor, each line reshaping it for its own way of life. Darwin called it 'hopeless' to explain the likeness 'by utility', and bones can build a limb or fin on other plans, as a fish's fin of fine bony rays shows, while an insect builds its wing with no bones at all. Parts that evolve separately for one job, such as the wings of bats and insects, are built differently, so a build shared part for part across different jobs points to descent from one ancestor.",
+   "facts": [
+    "F7",
+    "F16",
+    "F17",
+    "F18",
+    "F19",
+    "F33"
+   ],
+   "grade_note": "NGSS MS-LS4-2 has 8th graders explain anatomical similarities, and the vertebrate forelimb (arm, wing, flipper, leg) is the classic middle-school example of homologous structures."
+  },
+  {
+   "tier": 4,
+   "topic": "clues-to-common-ancestry",
+   "question": "Biologists call two body parts homologous when they are built on the same plan, part for part, whatever job each one does. Parts that do the same job but are built on different plans they call analogous. Which pair of parts is homologous?",
+   "answer": "A lizard's foreleg and a horse's foreleg",
+   "choices": [
+    "A lizard's foreleg and a horse's foreleg",
+    "A bat's wing and a butterfly's wing",
+    "A shark's back fin and a dolphin's back fin",
+    "A human's eye and an octopus's eye"
+   ],
+   "context": "A lizard's and a horse's forelegs hold the same upper-arm bone, forearm bones, wrist and toe bones, the horse's toes reduced to a single hoofed one, so they are homologous, inherited from an ancestor of all four-legged animals. Each of the other pairs does one job, but its parts arose separately: an insect's wing holds no bones at all, a dolphin's back fin is tough tissue with no bone or cartilage in it and evolved apart from a shark's, and the camera-like eyes of people and octopuses evolved on their own. A shared job alone is no evidence of a shared ancestor; a shared build is.",
+   "facts": [
+    "F17",
+    "F19",
+    "F36"
+   ],
+   "grade_note": "8th-grade lessons on anatomical evidence (NGSS MS-LS4-2) contrast homologous structures with analogous ones, such as a bird's wing and an insect's, which do one job but arose separately."
+  },
+  {
+   "tier": 4,
+   "topic": "clues-to-common-ancestry",
+   "question": "Early in its growth, every embryo of an animal with a backbone, from a shark to a human, forms a row of folds just behind its head, called pharyngeal arches. In a fish, most of the arches go on to build the supports of its gills. What do the same arches build in a human?",
+   "answer": "Parts of the jaw, the middle ear and the throat",
+   "choices": [
+    "Parts of the jaw, the middle ear and the throat",
+    "Gills that close up and vanish before birth",
+    "The bones of the neck, at the top of the spine",
+    "The roof of the skull, over the brain"
+   ],
+   "context": "The first arch builds the jaw and two of the three tiny bones of the middle ear, the second builds the third ear bone, the stapes, and part of the hyoid bone, and the arches behind them build the rest of the hyoid and the cartilages of the throat; the bones of the neck grow from other blocks of tissue along the spine, and the roof of the skull belongs to the braincase, which the arches do not build. A human embryo never has working gills: its pouches stay closed and never open into slits. One set of embryo parts that becomes gill supports in a fish and jaw, ear and throat in a person is a homology, inherited from an ancestor the two share.",
+   "facts": [
+    "F20",
+    "F21",
+    "F29",
+    "F37"
+   ],
+   "grade_note": "NGSS MS-LS4-3 has 8th graders compare embryos across species to find relationships not seen in the adults; the arches every vertebrate embryo forms are the middle-school example, and what they become in a human is the step beyond."
+  },
+  {
+   "tier": 4,
+   "topic": "clues-to-common-ancestry",
+   "question": "Ernst Haeckel printed drawings in 1874 of the early embryos of a fish, a salamander, a chicken, a rabbit and a human, side by side and looking almost the same. Michael Richardson's team photographed real embryos from a wide range of animals with backbones and published the comparison in 1997. What did the photographs show?",
+   "answer": "The embryos differ more than his drawings show",
+   "choices": [
+    "The embryos differ more than his drawings show",
+    "The embryos look just as his drawings show",
+    "The embryos pass through their ancestors' adult forms",
+    "The embryos match his drawings in all but their sizes"
+   ],
+   "context": "Haeckel had added or left out features and even fudged the sizes to make the embryos look alike, and Richardson called the drawings 'one of the most famous fakes in biology'. Yet the real embryos do share pharyngeal arches and a tail, and Richardson wrote in 1998 that 'on a fundamental level, Haeckel was correct'. The evidence for shared ancestry is those shared features, not Haeckel's pictures of near-twins, and his idea that an embryo passes through the adult forms of its ancestors has long been given up.",
+   "facts": [
+    "F21",
+    "F22"
+   ],
+   "grade_note": "8th grade compares embryos across species (NGSS MS-LS4-3), and the honest lesson includes how real photographs corrected Haeckel's famous drawings while keeping the features embryos truly share."
+  },
+  {
+   "tier": 4,
+   "topic": "clues-to-common-ancestry",
+   "question": "Fossils show that whales descend from four-legged mammals that walked on land. A modern whale, though, swims with its tail and shows no hind legs at all. What do anatomists find inside its body?",
+   "answer": "A pair of small hip bones, not joined to the spine",
+   "choices": [
+    "A pair of small hip bones, not joined to the spine",
+    "Hind leg bones hidden inside its two flippers",
+    "Hind leg bones hidden inside its tail flukes",
+    "No bones of hips or hind legs anywhere"
+   ],
+   "context": "A whale keeps two small pelvic bones that do not connect to its backbone, and a whale embryo begins to grow hind limb buds before they stop: leftovers of the legs its ancestors walked on, with no part in swimming. The hip bones still anchor muscles used in mating, so they are vestigial without being useless. A whale's flippers are its front legs, built on the bones of a land mammal's forelimb, and its tail flukes are boneless blades of tough connective tissue, one on either side of the tail's backbone.",
+   "facts": [
+    "F24",
+    "F25",
+    "F26",
+    "F38"
+   ],
+   "grade_note": "8th-grade lessons on anatomical evidence (NGSS MS-LS4-2) teach vestigial structures, and a whale's tiny hip bones are the standard example."
+  },
+  {
+   "tier": 4,
+   "topic": "clues-to-common-ancestry",
+   "question": "A boy in a biology class argues that the coccyx, the few small bones fused together at the base of the spine, cannot be vestigial, because some muscles of the pelvic floor are anchored to it. What is wrong with his argument?",
+   "answer": "Vestigial means it lost its old job, not every job",
+   "choices": [
+    "Vestigial means it lost its old job, not every job",
+    "The coccyx in fact has no muscles anchored to it",
+    "Those muscles are anchored to it only before birth",
+    "Vestigial means a part that is still shrinking"
+   ],
+   "context": "The coccyx is three to five small fused vertebrae, all that is left of the tail a human embryo grows and loses between its fourth and eighth weeks; it does no tail's work, so it is vestigial even though muscles of the pelvic floor anchor to it. A vestigial part has lost its main ancestral job, not every job. Goosebumps are another case: the tiny muscles that fluff up a cat's fur, trapping warm air and making the cat look bigger, still lift the hairs on a person's nearly bare skin.",
+   "facts": [
+    "F24",
+    "F27",
+    "F28"
+   ],
+   "grade_note": "8th-grade lessons on the evidence for common ancestry teach vestigial structures such as the human tailbone, and what the word means (a lost ancestral job, not uselessness) is the point students most often get wrong."
+  }
+ ],
+ "revised": {
+  "c6e1066c93": {
+   "old_hash": "c6e1066c93",
+   "why": "Judge (medium, tell): two wrong choices restated the predicted order (a fish older than rabbits, a microbe older than fish). Replaced, as the judge proposed, by finds that look odd but break nothing: a microbe younger than the first rabbits (the ladder misconception, M1) and a mammal older than the first rabbits (rabbits descend from older mammals). Fact-check (errors, context): fish appear more than 500 million years ago, not 490 (F30); Precambrian rock is more than about 539 million years old after the 2022 revision (F31). Stem unchanged; Haldane's quip stays reported anecdote."
+  },
+  "9470f91931": {
+   "old_hash": "5edfc7fc12",
+   "why": "Judge (medium, tell): the stem bracketed the answer (fish at 380 million years, four-legged animals at 365, the rock at 375), so the only in-between choice was the key. Following the judge, the two dates move to the context and the question asks why the team chose rock of that age; each wrong choice names a real step of the fossil record that came far later (reptiles, dinosaurs, mammals taking to the seas: F32, F10, F2, F15). Fact-check (uncertain): the dated 'about 315 million years' for the first reptiles becomes 'tens of millions of years after Tiktaalik' (clawed reptile-like tracks of about 350 million years, F32)."
+  },
+  "7dd3829537": {
+   "old_hash": "b4e537f7fd",
+   "why": "Judge (medium, clarity): teeth, clawed fingers and a bony tail fit pterosaurs too, so the stem's features could not settle the key. The stem now names Huxley's 1868 comparison with fossil reptiles, as the judge proposed, and asks the fact itself. Judge (low): the bat choice was weak (feathers, not fur) and is replaced by early lizards, a separate reptile line (F34). Fact-check (error, context): 'the small, mostly meat-eating dinosaurs called theropods' defined theropods as small; now 'small theropods, the mostly meat-eating dinosaurs'."
+  },
+  "584e75c52d": {
+   "old_hash": "2ce3e08045",
+   "why": "Judge (medium, tell): of the four orders only land-to-sea and sea-to-land made sense, so the zig-zag orders were dead and the question was a coin toss. The judge's fix (give the order, ask what it shows) puts the answer in the stem: with the ages and ways of life given, the sea-to-land and legs-in-shallow-water choices are ruled out by the stem. Re-keyed instead to the evidence that makes a legged land animal a whale, its thick, dense ear bone (F35), with three whale-like features Pakicetus did not have as the wrong choices; the land-to-sea order of the three whales moves into the context."
+  },
+  "3d446e1dac": {
+   "old_hash": "3d446e1dac",
+   "why": "Judge (medium, tell): 'the best build for the job each does' was ruled out by the stem's 'very different jobs', and 'arose by chance, each one separately' was weak. Replaced by a constraint idea (bones form a limb only that way) and by separate evolution, the analogy-for-homology mix-up (M5). The judge's use-and-disuse choice was not used: different jobs in the stem rule out use as the cause of a shared build, the same flaw as before. Fact-check (error, context): Owen did not coin 'homology'; he 'gave homology its meaning in biology in 1843' (F33). Stem unchanged."
+  },
+  "7298911a89": {
+   "old_hash": "7298911a89",
+   "why": "Judge (medium, tell): the two wing pairs fell to one fact (an insect's wing has no bones), and the key was the only pair of two familiar, closely related mammals. As the judge proposed, the key is now a lizard's and a horse's foreleg (all four-legged animals' forelimbs are homologous, F36) and the sparrow and honeybee pair is replaced by a shark's and a dolphin's back fins, which evolved independently (F36). Stem unchanged."
+  },
+  "dcc77b7090": {
+   "old_hash": "38996578d7",
+   "why": "Judge (medium, tell): the key was the only head-and-neck choice, so the folds' place 'just behind its head' gave it away. The ribs and the shoulder bones are replaced, as the judge proposed, by two head-and-neck parts the arches do not build: the neck's vertebrae (from the somites) and the skull roof (the braincase, not the arch-built splanchnocranium), both sourced now (F37). Judge (medium, fact): not every fish arch supports gills (the first builds the jaws, the second the hyoid arch), so the stem now says 'most of the arches' (F37). The context's hyoid line takes the fact-check's tightening. Grade note per the judge's low."
+  },
+  "ecc16cc25f": {
+   "old_hash": "ecc16cc25f",
+   "why": "Judge (medium, tell): 'more alike than his drawings show' could not be right after 'looking almost the same', and 'share no features' clashed with the unit's whole case. Replaced, as the judge proposed, by Haeckel's own recapitulation (M4, F21) and by 'match his drawings in all but their sizes' (wrong: he added and left out features too, F22). The context adds that recapitulation has been given up. Stem unchanged; Haeckel's faked likeness and the real shared features are both told."
+  },
+  "2d10202d44": {
+   "old_hash": "2d10202d44",
+   "why": "Fact-check (uncertain, context): 'its tail flukes are tough connective tissue with no bone in them' overstated it, since the last tail vertebrae run into the fluke region; now 'boneless blades of tough connective tissue, one on either side of the tail's backbone' (F38). Stem and choices unchanged: the judge's low on the opening sentence no longer applies, as 2ce3e08045 no longer keys the land-to-sea order."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

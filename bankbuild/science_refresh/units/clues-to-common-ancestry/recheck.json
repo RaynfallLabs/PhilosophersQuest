@@ -1,0 +1,87 @@
+{
+ "unit": "clues-to-common-ancestry",
+ "questions": {
+  "c6e1066c93": {
+   "verdict": "pass",
+   "why": "Two old restating choices replaced by finds that break nothing (a microbe younger than rabbits, a mammal older than them); the context's fish date (over 500 million years) and Precambrian edge (about 539 million) are corrected; Haldane stays 'is said to have'. Common descent stated plainly. No other unit keys it.",
+   "sources": [
+    "https://grokipedia.com/page/Precambrian_rabbit",
+    "https://grokipedia.com/page/Evolution_of_fish",
+    "https://grokipedia.com/page/Cambrian",
+    "https://evolution.berkeley.edu/teach-evolution/misconceptions-about-evolution/"
+   ]
+  },
+  "9470f91931": {
+   "verdict": "pass",
+   "why": "The bracketing dates are gone from the stem; the key needs knowing that 375-million-year rock is the fish-to-land time, and reptiles (tracks about 350 million years), dinosaurs and mammals at sea all came later. Context dates (380, 365) and 'tens of millions of years' are sourced. No overlap.",
+   "sources": [
+    "https://grokipedia.com/page/Tiktaalik",
+    "https://evolution.berkeley.edu/evolibrary/news/060501_tiktaalik",
+    "https://www.eurekalert.org/news-releases/1083842"
+   ]
+  },
+  "7dd3829537": {
+   "verdict": "pass",
+   "why": "Huxley's 1868 skeletal comparison now carries the key, so the pterosaur choice is no longer defensible from the stem's features; the lizard choice is a clean wrong line (lepidosaurs); the theropod wording is fixed. Darwin appears only in the context, not keyed.",
+   "sources": [
+    "https://grokipedia.com/page/Origin_of_birds",
+    "https://grokipedia.com/page/Theropoda",
+    "https://grokipedia.com/page/Archosaur",
+    "https://en.wikipedia.org/wiki/Archaeopteryx"
+   ]
+  },
+  "584e75c52d": {
+   "verdict": "pass",
+   "why": "Re-keyed off the coin-toss order. Grokipedia: Pakicetus was placed among whales by its dense tympanic bulla; its nostrils sat at the snout tip, there is no evidence of tail swimming, and its fossils are fluvial and deltaic, so each wrong choice is truly wrong. The whale order moved into the context. No other unit asks it.",
+   "sources": [
+    "https://grokipedia.com/page/Pakicetus",
+    "https://en.wikipedia.org/wiki/Evolution_of_cetaceans"
+   ]
+  },
+  "3d446e1dac": {
+   "verdict": "pass",
+   "why": "The stem no longer rules out a choice (the old 'best build for the job' is gone); the constraint and separate-evolution choices are live and refuted in the context; Owen's 1843 wording is fixed. Darwin appears only in the context.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Homology_(biology)",
+    "https://darwin-online.org.uk/Variorum/1860/1860-434-dns.html",
+    "https://grokipedia.com/page/Convergent_evolution"
+   ]
+  },
+  "7298911a89": {
+   "verdict": "pass",
+   "why": "The two insect-wing pairs no longer fall to one fact; the shark and dolphin back fins (both backboned animals) are a live analogy pair (SeaWorld: the dolphin's dorsal fin has no bone, cartilage or muscle), and the key is no longer two familiar mammals. All tetrapod forelimbs are homologous.",
+   "sources": [
+    "https://seaworld.org/animals/all-about/bottlenose-dolphin/characteristics/",
+    "https://en.wikipedia.org/wiki/Homology_(biology)",
+    "https://grokipedia.com/page/Convergent_evolution"
+   ]
+  },
+  "dcc77b7090": {
+   "verdict": "pass",
+   "why": "Every wrong choice is now a head-and-neck part the arches do not build (neck vertebrae from somites, skull roof from the neurocranium), and 'most of the arches' is true of a jawed fish. Human arch fates match Grokipedia (jaw, malleus and incus, stapes, hyoid, laryngeal cartilages).",
+   "sources": [
+    "https://grokipedia.com/page/Pharyngeal_arch",
+    "https://en.wikipedia.org/wiki/Branchial_arch",
+    "https://grokipedia.com/page/Somite"
+   ]
+  },
+  "ecc16cc25f": {
+   "verdict": "pass",
+   "why": "The two dead choices are replaced by real ideas (recapitulation; sizes only). Haeckel is handled truthfully: Richardson's 'one of the most famous fakes in biology' and his 1998 'on a fundamental level, Haeckel was correct' are both told, and the evidence rests on the features embryos really share.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Embryo_drawing",
+    "https://grokipedia.com/page/Recapitulation_theory",
+    "https://grokipedia.com/page/Ernst_Haeckel"
+   ]
+  },
+  "2d10202d44": {
+   "verdict": "pass",
+   "why": "Only the context changed: the flukes are now boneless blades either side of the tail's backbone (SeaWorld; beluga embryo study), which is accurate. The key and wrong choices stay true; common descent is stated plainly; the opening no longer gives away another question's key.",
+   "sources": [
+    "https://seaworld.org/animals/all-about/bottlenose-dolphin/characteristics/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11656686",
+    "https://grokipedia.com/page/Vestigiality"
+   ]
+  }
+ }
+}
