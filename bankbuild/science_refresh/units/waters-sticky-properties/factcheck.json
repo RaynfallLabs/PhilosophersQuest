@@ -1,0 +1,87 @@
+{"unit": "waters-sticky-properties",
+ "questions": {
+  "5f695810b9": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: the sharing leans toward the oxygen, leaving its end slightly negative (oxygen 3.44 vs hydrogen 2.20 electronegativity; oxygen partial negative, each hydrogen partial positive)", "result": "ok", "source": "https://grokipedia.com/page/Properties_of_water", "note": ""},
+    {"claim": "Stem: one oxygen joined to two hydrogens, each bond a shared pair of electrons", "result": "ok", "source": "https://grokipedia.com/page/Properties_of_water", "note": ""},
+    {"claim": "Wrong: toward the oxygen leaving it slightly positive (wrong: electrons are negative, so the end nearer them is negative)", "result": "ok", "source": "https://grokipedia.com/page/Properties_of_water", "note": ""},
+    {"claim": "Wrong: toward the hydrogens, either charge (wrong: oxygen is the more electronegative atom)", "result": "ok", "source": "https://grokipedia.com/page/Properties_of_water", "note": ""},
+    {"claim": "Context: electrons carry negative charge; oxygen end slightly negative, hydrogen ends slightly positive; these charges make water cling to itself and to other things", "result": "ok", "source": "https://grokipedia.com/page/Properties_of_water", "note": ""}
+   ]},
+  "6dc233b500": {"verdict": "uncertain",
+   "checks": [
+    {"claim": "Key: the slightly negative oxygen end of one molecule draws a slightly positive hydrogen end of the next (hydrogen bond)", "result": "ok", "source": "https://grokipedia.com/page/Hydrogen_bond", "note": ""},
+    {"claim": "Stem: water clings to itself far more strongly than most liquids (surface tension about 72 mN/m, against about 22 for ethanol and 20-30 for many organics)", "result": "ok", "source": "https://grokipedia.com/page/Surface_tension", "note": ""},
+    {"claim": "Wrong: oxygen end draws oxygen end; hydrogen end draws hydrogen end (like charges repel)", "result": "ok", "source": "https://grokipedia.com/page/Hydrogen_bond", "note": ""},
+    {"claim": "Wrong: the two oxygens share a pair of electrons (a hydrogen bond is not a covalent shared pair, and it runs O-H...O, not O-O)", "result": "ok", "source": "https://grokipedia.com/page/Hydrogen_bond", "note": ""},
+    {"claim": "Context: a hydrogen bond is far weaker than the bonds inside a molecule (4-50 kJ/mol against >150 kJ/mol)", "result": "ok", "source": "https://grokipedia.com/page/Hydrogen_bond", "note": ""},
+    {"claim": "Context: a hydrogen bond 'shares no electrons'", "result": "uncertain", "source": "https://grokipedia.com/page/Hydrogen_bond", "note": "Grokipedia: hydrogen bonds are mainly electrostatic but 'possess partial covalent character due to charge transfer and orbital overlap'. 'Shares no electrons' is the usual school telling, but a chemist could object. The point the question needs is that it is not a shared PAIR. Fix: 'It is far weaker than the bonds inside a molecule and is not a shared pair of electrons, but each molecule makes several at once...'"},
+    {"claim": "Context: each molecule makes several hydrogen bonds at once (about 3.2-3.5 on average in the liquid, at most four)", "result": "ok", "source": "https://grokipedia.com/page/Hydrogen_bond", "note": ""}
+   ]},
+  "33eed5d30e": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: a free blob in weightlessness is pulled by its molecules into the shape with least surface (a sphere). This is surface tension, which comes from cohesion; the key and context describe the mechanism correctly without misnaming it", "result": "ok", "source": "https://grokipedia.com/page/Surface_tension", "note": ""},
+    {"claim": "Stem: on the ISS a released water blob forms a near-perfect ball (NASA image of Don Pettit with a ball of water shaped by microgravity)", "result": "ok", "source": "https://www.nasa.gov/image-detail/amf-iss072e742508", "note": ""},
+    {"claim": "Wrong: its own gravity (far too weak; even 420 km Proteus is not round)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Hydrostatic_equilibrium", "note": ""},
+    {"claim": "Wrong: cabin air pressing in all over (uniform pressure does not set the shape; surface tension does)", "result": "ok", "source": "https://grokipedia.com/page/Surface_tension", "note": ""},
+    {"claim": "Wrong: the cold of space freezing a shell (the cabin is warm; the drop stays liquid)", "result": "ok", "source": "https://www.nasa.gov/image-detail/amf-iss072e742508", "note": ""},
+    {"claim": "Context: a sphere has the least surface for its volume; on Earth gravity flattens larger drops", "result": "ok", "source": "https://grokipedia.com/page/Drop_(liquid)", "note": ""},
+    {"claim": "Context: an icy moon 420 km across can stay lumpy (Wikipedia: 'the largest icy object known to have an obviously non-equilibrium shape is the icy moon Proteus at 420 km')", "result": "ok", "source": "https://en.wikipedia.org/wiki/Hydrostatic_equilibrium", "note": ""}
+   ]},
+  "f48fd48205": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: water clings to glass more than to itself (adhesion exceeds cohesion, concave meniscus, rise); mercury does not (cohesion wins, convex meniscus, depression)", "result": "ok", "source": "https://grokipedia.com/page/Capillary_action", "note": ""},
+    {"claim": "Stem: mercury in a thin glass tube stands below the outside level ('for non-wetting liquids like mercury, it is convex, causing depression')", "result": "ok", "source": "https://grokipedia.com/page/Capillary_action", "note": ""},
+    {"claim": "Wrong: mercury too heavy to lift (weight cannot push it BELOW the outside level; the sign of the effect is set by wetting, cohesion against adhesion)", "result": "ok", "source": "https://grokipedia.com/page/Capillary_action", "note": ""},
+    {"claim": "Wrong: glass soaks water into itself (glass is not porous; the water rises as a column inside the bore)", "result": "ok", "source": "https://grokipedia.com/page/Capillary_action", "note": ""},
+    {"claim": "Wrong: air presses harder on mercury than on water (air presses equally inside and outside the open tube)", "result": "ok", "source": "https://grokipedia.com/page/Capillary_action", "note": ""},
+    {"claim": "Context: water's surface curves up at the edges, mercury's bulges; without surface effects a liquid stands level (water in a wide jar)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Jurin%27s_law", "note": ""}
+   ]},
+  "d539afd044": {"verdict": "ok",
+   "checks": [
+    {"claim": "James Jurin (1684-1750), English physician; Fellow of the Royal Society; 1718 paper 'An Account of Some Experiments Shown before the Royal Society' in Philosophical Transactions", "result": "ok", "source": "https://grokipedia.com/page/Jurin%27s_law", "note": ""},
+    {"claim": "Stem: he used glass tubes of varying diameters and measured how high the water rose in each", "result": "ok", "source": "https://grokipedia.com/page/Jurin%27s_law", "note": "Grokipedia: 'glass tubes of varying diameters filled with water to measure the height'. Wikipedia adds that Borelli (1670) had found the inverse rule first and Jurin 'confirmed' it; the question does not claim Jurin was first, so it stands."},
+    {"claim": "Key: the narrower the tube, the higher the water climbed (height inversely proportional to radius)", "result": "ok", "source": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Capillary_Action", "note": ""},
+    {"claim": "Wrong: wider higher; same height in every tube; thicker glass higher (thickness makes no difference, per Hauksbee 1713)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Jurin%27s_law", "note": ""},
+    {"claim": "Context: a tube half as wide lifts water twice as high (h proportional to 1/r)", "result": "ok", "source": "https://grokipedia.com/page/Capillary_action", "note": ""},
+    {"claim": "Context: a tube 0.4 mm across (0.2 mm radius) lifts water about 7 cm (Wikipedia: 70 mm at 20 C)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Jurin%27s_law", "note": ""},
+    {"claim": "Context: Francis Hauksbee had already shown the thickness of the glass makes no difference (1713, 'no dependence on the thickness of the tube walls'; 1911 Britannica: 'the effect was the same in thick tubes as in thin')", "result": "ok", "source": "https://en.wikipedia.org/wiki/Jurin%27s_law", "note": ""}
+   ]},
+  "3e56df99a0": {"verdict": "error",
+   "checks": [
+    {"claim": "Stem: a water strider's feet make small dents in the surface without breaking it ('creating small dimples without breaking the film'); the question does not claim anything about its legs' waxy hairs, which Grokipedia confirms ('hydrophobic setae coated with wax')", "result": "ok", "source": "https://grokipedia.com/page/Gerridae", "note": ""},
+    {"claim": "Key: surface molecules are pulled inward by the water beside and below them (net inward force: surface tension)", "result": "ok", "source": "https://grokipedia.com/page/Surface_tension", "note": ""},
+    {"claim": "Wrong: squeezed by air pressing down; a film of dust; frozen into a sheet (all false; the skin is the liquid's own surface)", "result": "ok", "source": "https://www.usgs.gov/special-topics/water-science-school/science/surface-tension-and-water", "note": ""},
+    {"claim": "Context: a deep molecule's pulls cancel; a surface molecule has water only below and beside it, so it is pulled inward", "result": "ok", "source": "https://www.usgs.gov/special-topics/water-science-school/science/surface-tension-and-water", "note": ""},
+    {"claim": "Context: 'clean water has a stronger one than any other liquid but mercury'", "result": "error", "source": "https://active-oxygens.evonik.com/en/products-and-services/hydrogen-peroxide/general-information/physico-chemical-properties", "note": "USGS says this, but it is not true. Pure hydrogen peroxide is 80.4 mN/m at 20 C against water's 72.8 (Evonik data sheet), and room-temperature liquid metals beat it far: Galinstan 535-718 mN/m (https://en.wikipedia.org/wiki/Galinstan). Grokipedia's Surface tension page makes no such ranking claim. Fix: '...and clean water's is about three times as strong as alcohol's, stronger than almost any other everyday liquid' (ethanol 22.3 mN/m, Grokipedia Surface tension), or drop the clause."}
+   ]},
+  "cfa3c7256c": {"verdict": "ok",
+   "checks": [
+    {"claim": "Stem: steel nearly eight times as dense as water (7.75-8.05 g/cm3, average 7.85)", "result": "ok", "source": "https://grokipedia.com/page/Steel", "note": ""},
+    {"claim": "Stem: a steel paper clip can float if laid gently; breaking the surface sinks it", "result": "ok", "source": "https://www.usgs.gov/special-topics/water-science-school/science/surface-tension-and-water", "note": ""},
+    {"claim": "Key: soap weakened the pull of the surface molecules on each other (surfactant 'disrupts cohesive forces in liquids like water'; lowers surface tension)", "result": "ok", "source": "https://grokipedia.com/page/Surfactant", "note": ""},
+    {"claim": "Wrong: split water into hydrogen and oxygen; made it slippery; coated the clip in a heavy film (none is how soap acts)", "result": "ok", "source": "https://grokipedia.com/page/Surfactant", "note": ""},
+    {"claim": "Context: soap molecule has a water-loving end and one that is not; gathers at the surface with tails into the air", "result": "ok", "source": "https://grokipedia.com/page/Surfactant", "note": ""},
+    {"claim": "Context: surface's pull falls to less than half (72 mN/m to as low as 20-30; 'by 50-90%')", "result": "ok", "source": "https://grokipedia.com/page/Surface_tension", "note": ""}
+   ]},
+  "8f2d3b7c4d": {"verdict": "ok",
+   "checks": [
+    {"claim": "Stem: tallest coast redwoods exceed 100 m", "result": "ok", "source": "https://grokipedia.com/page/Xylem", "note": ""},
+    {"claim": "Stem: Henry Dixon and John Joly proposed the explanation in 1894; still the most widely accepted", "result": "ok", "source": "https://en.wikipedia.org/wiki/Xylem", "note": "Grokipedia gives the 1894 paper; Wikipedia gives both 1894 and 'most widely accepted'."},
+    {"claim": "Key: evaporation at the leaves pulls up a clinging chain of water (transpiration creates tension in the xylem; cohesion holds the column, adhesion to the walls helps)", "result": "ok", "source": "https://grokipedia.com/page/Xylem", "note": ""},
+    {"claim": "Wrong: living cells pumping (Strasburger by 1891 showed transport does not need living xylem cells)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Xylem", "note": ""},
+    {"claim": "Wrong: air pressing on soil (1 atm supports only about 10.3 m of water)", "result": "ok", "source": "https://grokipedia.com/page/Atmospheric_pressure", "note": ""},
+    {"claim": "Wrong: tubes wicking it all the way up (capillary rise insufficient beyond a few metres; Grew: a few inches)", "result": "ok", "source": "https://grokipedia.com/page/Capillary_action", "note": ""},
+    {"claim": "Context: Strasburger showed water still rises in plants whose living cells were poisoned", "result": "ok", "source": "https://theplantconnection.substack.com/p/how-do-plants-move-water", "note": ""},
+    {"claim": "Stem wording: 'every day water climbs from their roots to their topmost leaves through thin tubes'", "result": "ok", "source": "https://grokipedia.com/page/Xylem", "note": "Read as 'water is climbing every day', true. A single parcel of water may take days or longer to reach the top of a 100 m conifer, and a conifer's 'tubes' are chains of tracheid cells; both are fair simplifications here."}
+   ]},
+  "9d76c4eba8": {"verdict": "ok",
+   "checks": [
+    {"claim": "Stem: water expands about 9 percent on freezing; ice (0.917 g/cm3) less dense, floats", "result": "ok", "source": "https://grokipedia.com/page/Ice", "note": ""},
+    {"claim": "Key: molecules lock into an open pattern, held farther apart (open hexagonal lattice with cage-like voids; liquid 'closer-packed')", "result": "ok", "source": "https://grokipedia.com/page/Ice", "note": "Fine as an average: fewer molecules per volume in ice. (Strictly, bonded neighbours in ice sit at 2.76 A against about 2.85 A in the liquid, per Grokipedia Hydrogen bond; the liquid is denser because extra molecules crowd into the gaps. The draft does not claim otherwise.)"},
+    {"claim": "Context: each molecule hydrogen-bonded to exactly four neighbours in ice Ih; six-sided pattern with empty gaps", "result": "ok", "source": "https://grokipedia.com/page/Hydrogen_bond", "note": ""},
+    {"claim": "Wrong: molecules swell (molecules unchanged); move faster (cooling slows them); break into atoms (molecules stay whole)", "result": "ok", "source": "https://grokipedia.com/page/Freezing", "note": ""},
+    {"claim": "Context: 'Freezing water is cooling water, so its molecules slow down rather than speed up'", "result": "ok", "source": "https://grokipedia.com/page/Freezing", "note": "Grokipedia, Freezing: 'the liquid's molecular kinetic energy decreases as it forms a more ordered solid structure'. The same page notes the temperature stays at the freezing point until the change is complete, so 'losing heat' would be a little more exact than 'cooling'. Optional: 'Freezing water is losing heat, not gaining it, so its molecules slow down rather than speed up.'"}
+   ]}
+ },
+ "unit_notes": "Nine questions checked on 2026-11-26, Grokipedia first. One error: Q6's context repeats USGS's 'stronger than any other liquid but mercury', which hydrogen peroxide (80.4 mN/m) and liquid metals like Galinstan disprove. One uncertain: Q2's 'shares no electrons' (Grokipedia gives the hydrogen bond partial covalent character); say 'is not a shared pair of electrons'. Polarity, hydrogen bonds, the ISS ball (surface tension from cohesion, worded correctly), water against mercury in glass, Jurin 1718 and Hauksbee, the strider, soap on the clip, Dixon and Joly 1894 with Strasburger, and ice's open lattice all check out."}

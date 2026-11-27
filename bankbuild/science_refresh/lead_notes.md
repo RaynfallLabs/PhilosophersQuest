@@ -79,3 +79,21 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
     - It may ask why many trials or a large sample help, but only inside a described design (one odd plant, chance), never "repeat the trials" again.
     - It does not key Lind (T5 `fair-trials-controls-and-placebos`), blinding or placebos (T4 `testing-a-claim`, T5), or correlation (T4).
   - `correlation-causation-and-error` (T4) owns precision vs accuracy, measurement error, survivorship bias and correlation. It must not re-ask "more trials help".
+- **Equations ladder (lead's ruling, 2026-11-26).**
+  - T3 `elements-compounds-and-formulas` keys reading a formula: how many atoms of each element are in H2O or CO2.
+  - `chemical-reactions-conserve-mass` (T4) owns:
+    - atoms rearranged, never made or destroyed;
+    - Lavoisier's sealed vessels;
+    - mass that seems to vanish when a gas escapes, or seems to appear when a gas joins (rust, a burning metal);
+    - reading a balanced equation that is given: what the arrow means, what a number in front means, counting atoms on each side.
+    - It must not ask how to balance one (choosing the numbers).
+    - It should not use 2H2 + O2 -> 2H2O, which is T5's example.
+  - `balancing-equations-and-reaction-rates` (T5) owns balancing an equation, the kinds of reaction (combustion, oxidation, neutralisation, acid on metal) and what speeds a reaction.
+  - `photosynthesis-atoms-in-and-out` (T4 life) owns where a tree's mass comes from (van Helmont's willow, carbon from the air). The mass unit may say a burning log's mass goes into the air as gas, but must not key the tree's mass.
+- **Acids and neutralising (lead's ruling, 2026-11-26).**
+  - `acids-bases-and-ph` (T4) owns:
+    - the pH scale and its ten-fold steps;
+    - indicators: litmus, and red cabbage as a test-it-yourself;
+    - an acid and a base neutralising each other, with the pH moving toward 7 (the antacid).
+  - `balancing-equations-and-reaction-rates` (T5) may name neutralisation as one kind of reaction, and may ask what it makes (a salt and water). It must not re-ask the antacid or the pH moving to 7.
+  - Ocean acidification stays out of the T4 unit; carbon dioxide and climate belong to the T4 greenhouse and T5 climate units.

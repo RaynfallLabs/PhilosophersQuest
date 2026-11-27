@@ -97,3 +97,22 @@ M5. Reflex criticisms (too few trials, no control, two things changed) offered w
 
 M6. Overgeneralising a result to other kinds, amounts or uses never tested (F10).
     https://grokipedia.com/page/External_validity
+
+## Added in the revision (2026-11-26)
+
+F20. Maize is monoecious: Grokipedia (Maize), "Maize exhibits separate male and female inflorescences", "the terminal tassel serving as the staminate structure and axillary ears as the pistillate ones", and the plant "is wind-pollinated and cross-fertilizing". So no single maize flower pollinates itself: Darwin's self-fertilised maize came from a plant given its own pollen (tassel to its own silks; darwin-online MS DAR65.86r, as read by the fact-check), and the question says "a flower given pollen from its own plant".
+    https://grokipedia.com/page/Maize ; https://darwin-online.org.uk/converted/manuscripts/Darwin_C_R_CUL-DAR65.86r.html
+
+F21. Eijkman's dates: Grokipedia, director of the Batavia laboratory from 15 January 1888, chicken colonies set up in 1889, tenure "lasting until March 4, 1896"; he "initially hypothesized that beriberi was an infectious condition caused by a bacterial agent". Britannica dates the outbreak of polyneuritis among the chickens to 1890, and Encyclopedia.com to "around 1890"; Grijns carried on the work after Eijkman left in 1896. So the question says "around 1890" and "trials through the early 1890s", and gives no chicken count (only Grokipedia has "over 100").
+    https://grokipedia.com/page/Christiaan_Eijkman ; https://www.britannica.com/EBchecked/topic/181273/Christiaan-Eijkman ; https://encyclopedia.com/medicine/medical-journals/eijkman-christiaan
+
+F22. A fair test that finds no difference is a result, not a failure. Wikipedia (Null result): "a null result is a result without the expected content: that is, the proposed result is absent"; "This does not imply a result of zero or nothing, simply a result that does not support the hypothesis"; the Michelson-Morley experiment is the famous example. Science Buddies' guidance for school projects: if no specific error can be found in the procedure, the data gathered are still valid, and a result that goes against the hypothesis still teaches something. (Grokipedia has no Null result page.)
+    https://en.wikipedia.org/wiki/Null_result ; https://www.sciencebuddies.org/blog/hypothesis-trouble-failed-science-project ; https://www.sciencebuddies.org/science-fair-projects/project_conclusions.shtml
+
+F23. Soaking a seed in any liquid can itself speed sprouting, so "soaks one seed in a spray" changed two things (the soaking and the spray); the question now says "sprays one seed with" (the fact-check's source).
+    https://www.gardeningknowhow.com/garden-how-to/propagation/seeds/soaking-seeds.htm
+
+## Misconceptions added in the revision
+
+M7. That a test that finds no difference "failed" or "shows nothing", or that unwelcome data must hide a mistake or a masked effect. Chinn and Brewer ("Psychological Responses to Anomalous Data", Cognitive Science Society proceedings, 1992; and "The Role of Anomalous Data in Knowledge Acquisition", Review of Educational Research 63, 1993) set out seven responses people make to data that go against their idea; the first six preserve the idea (among them ignoring, excluding, rejecting the data, with the example of students who "rejected the experiment as methodologically too insensitive to detect the predicted effect", and reinterpreting it), and only the last is real change of the idea.
+    https://escholarship.org/uc/item/0d65f9gt ; https://www.causeweb.org/cause/node/6957

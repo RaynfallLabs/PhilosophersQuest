@@ -1,0 +1,57 @@
+{"unit": "reading-deep-time",
+ "questions": {
+  "cea323cee9": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Plain logic settles it with no geology and no Steno: the stem says the rock carries the print of the tooth's every ridge and the tooth carries no print of the rock, and anyone who has stepped in mud knows the soft thing takes the print. That one sentence refutes all three wrong choices (rock hard first; both together; the tooth grew in hard rock), so the question tests careful reading, not the unit. The grade_note also cites superposition and Steno as its author, which this question (rightly, under the lead's ruling) does not ask.",
+     "fix": "Keep the story and the observation, and ask what Steno concluded about the rock, so the student must also know that fossils lie in rock that began as loose sediment (T1 rock-layers-and-fossils): '... What did Steno conclude about the rock around the tooth?' Choices: 'It was soft mud or sand when the tooth was buried', 'It was hot, runny lava when the tooth fell in', 'It was solid rock already, and the tooth grew in it', 'It was solid rock that the tooth was pushed into'. Lava is the lure that needs knowledge (it was soft once too); the last two are the old growth view and the misreading. The context already says the tooth was buried in soft sediment that later hardened; set the grade_note to that, the first step toward his law of superposition."}
+   ]},
+  "db0e5a2dd3": {"verdict": "revise",
+   "issues": [
+    {"axis": "fact", "severity": "medium",
+     "what": "Context: 'the first geological map of a whole country'. William Maclure's geological map of the United States came out in 1809; Smith's 1815 map is the first detailed one (facts.md F9 says so itself).",
+     "fix": "'the first detailed geological map of a whole country'."},
+    {"axis": "tell", "severity": "low",
+     "what": "Thickness, hardness and depth are three measures of the layer's body, so the one choice of another kind (what the layer holds) stands out. Separately, 3b078a2ca2's stem opens 'Geologists use index fossils to match rock layers from place to place', which is this key (see unit_notes).",
+     "fix": "Replace 'The depth of each layer' with 'The pebbles mixed into each layer', so the key is not the only choice about what a layer holds."}
+   ]},
+  "3b078a2ca2": {"verdict": "ok", "issues": []},
+  "6ace61ef8f": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The three lures are the rival views of Hutton's day told honestly (one flood, one early ocean, a few thousand years), but all three say the rocks were laid down quickly or at once, while the stem walks through slow steps (settle, tip on end, wear flat, be covered); the key is the only long-time choice. The knowledge it rests on (such steps are slow) is earlier-grade, so it holds, as the bar's Everest question does.",
+     "fix": "Acceptable. For a livelier lure, replace 'Both kinds of rock settled from one early ocean' with a misreading of the junction: 'The red sandstone is older than the grey layers'."}
+   ]},
+  "3a4093f202": {"verdict": "ok", "issues": []},
+  "76641366b2": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem says the scale was built 'from the order of rock layers', so the three choices about order and matching (which period came first, which life came before, which layers match) are answered by the stem's own word, and the one choice about years is left. A student who has never met relative and absolute age can pick it.",
+     "fix": "Cut 'the order of': 'Geologists of the 1800s built the geologic time scale, with its eras and periods, from rock layers and the fossils in them. What could the layers and fossils alone not tell them?' The choices stay."}
+   ]},
+  "ed76277824": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The first human beings appeared on Earth' cannot have happened at both lines (a first comes once), so the stem's 'the two lines' rules it out; 'Rising seas covered all of Earth's land' (all of it, twice) is barely live. That leaves the key against the ice age.",
+     "fix": "Replace the humans choice with an event that could recur: 'The Sun shone far brighter for a time'. The seas choice may stay."},
+    {"axis": "fact", "severity": "low",
+     "what": "Context: 'the first humans came only about 300,000 years ago'. The genus Homo goes back about 2.8 million years (F22); 300,000 is modern humans, as 5503746286 says.",
+     "fix": "'the first modern humans came only about 300,000 years ago'."}
+   ]},
+  "977ec2b386": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'4.6' appears in two choices, the key and 'About 4.6 million years', so a test-wise student narrows to those two and takes the bigger, since the stem stresses Hutton's endless time. The universe's 13.8 billion is a good lure; the digit echo undoes it.",
+     "fix": "Replace 'About 4.6 million years' with 'About 5 million years' (keeps the millions-for-billions mix-up of M7 without the shared digits)."},
+    {"axis": "fact", "severity": "medium",
+     "what": "Stem: 'no one in his day could give Earth an age in years'. People did give figures: Buffon about 75,000 years in 1778, and the biblical reckoning of about 6,000 years was widely held. What no one could do was measure it.",
+     "fix": "'and no one in his day could measure Earth's age in years.'"}
+   ]},
+  "5503746286": {"verdict": "ok",
+   "issues": [
+    {"axis": "voice", "severity": "low",
+     "what": "'Squeeze all of Earth's history into a single day' is an order to the player, second person by implication; no other stem in the unit or the bar addresses the reader.",
+     "fix": "'If all of Earth's history were squeezed into a single day, from its birth at one midnight to the present at the next, the last of the big dinosaurs would die out about twenty minutes before midnight. When would the first modern humans appear?'"}
+   ]}
+ },
+ "unit_notes": "Ownership under the lead's 2026-11-26 ruling is clean. Steno is asked as a person (his reasoning over the shark's tooth) and superposition appears only in that context, so fossils-layers-and-a-changing-earth's oldest-at-the-bottom (c9f9828312, a51b4b684c) is not re-asked; its tilted-layers key (5d9485919c) appears only as a premise in 6ace61ef8f's stem, and its rule shows up as a lure in 3a4093f202 ('always', rightly wrong). Every scope line has a question: Steno, Smith, index fossils, Hutton, the same-laws assumption, relative against absolute age, the era lines, 4.6 billion years and the one-day clock. No overlap with wegener-and-the-drifting-continents or any other final (comets-asteroids-and-moons mentions 4.6 billion only in a context). Ahead: earths-interior-and-age (T5) owns Patterson and radiometric clocks, so its brief should key how the age was measured, not the figure again; galaxies-and-the-expanding-universe (T4) will key the 13.8 billion that 977ec2b386 uses as a lure, which is fine. Within the unit: 3b078a2ca2's stem states db0e5a2dd3's key (fossils match layers from place to place); both rest on one idea (faunal succession), so the leak is structural and noted rather than marked, but a player who meets the index-fossil question first gets Smith's free. Lanes: Siccar Point sets the scene and the key is the science; 5503746286 needs no arithmetic (its numbers sit in the context). Stance: deep time is settled science stated flatly; the flood, one-ocean and few-thousand-years views appear as the views Hutton rejected, attributed to 'many geologists of his day', not mocked."}

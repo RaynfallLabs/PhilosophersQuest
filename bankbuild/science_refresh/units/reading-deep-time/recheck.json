@@ -1,0 +1,22 @@
+{"unit": "reading-deep-time",
+ "questions": {
+  "d0e6bfb03a": {"verdict": "fail",
+   "why": "Re-asks a T1 fact under a T3 name. The key (the rock around a fossil began as soft mud or sand that later hardened) and its lava lure are rock-layers-and-fossils (T1) keys put together: 51ee2d2282 (fossils lie in rock built from sand and mud, not rock that cooled from lava, with the same lava lure), 9237791b44 (mud and sand bury the remains) and 0263ee3155 (sand and mud harden into rock over time). A 5th-grade graduate answers it knowing nothing of Steno, and the tier rule tests the fact, not the framing; the grade_note itself names the fact as 'a fossil lies in rock that began as soft sediment'. This is the same pattern the lead's ruling forbids for superposition (Steno as the person, not the earlier fact again). Second, smaller: the stem already calls the stone 'such a tooth', which rules out 'the stone slowly grew' in solid rock. The facts themselves check out (UCMP: 'buried in soft sediments which hardened later'; a stone grown in rock 'would have been distorted'). No one-phrase fix: rekey on what Steno added, for instance what he concluded the tongue stones were (teeth of sharks that once lived) without the shark dissection in the stem, or drop it.",
+   "sources": ["https://ucmp.berkeley.edu/history/steno.html", "https://grokipedia.com/page/Nicolas_Steno", "bankbuild/science_refresh/units/rock-layers-and-fossils/final.json", "bankbuild/science_refresh/lead_notes.md"]},
+  "db0e5a2dd3": {"verdict": "pass",
+   "why": "The fact fix is in: 'the first detailed geological map of a whole country' matches Wikipedia (Maclure's US map was 1809). The judge's low odd-one-out tell (fossils against three measures of the layer) was left as is; it is mild and does not sink a sound T3 fact. No other final keys Smith or fossil correlation.",
+   "sources": ["https://en.wikipedia.org/wiki/William_Smith_(geologist)", "https://grokipedia.com/page/William_Smith_(geologist)"]},
+  "4ced7c5107": {"verdict": "pass",
+   "why": "The stem no longer says 'the order of', so the three order and matching choices must be ruled out by knowing what layers and fossils give (relative dates, NGSS ESS1.C). All three are truly answerable from layers and fossils; the key is true (numbers came with radiometric dating in the 1900s). No other final keys relative against absolute age.",
+   "sources": ["https://www.nextgenscience.org/pe/ms-ess1-4-earths-place-universe", "https://grokipedia.com/page/Geologic_time_scale"]},
+  "ed76277824": {"verdict": "pass",
+   "why": "The humans choice is gone; 'The Sun shone far brighter for a time' can recur and is false (the Sun has brightened gradually, a 'monotonic brightening'). The context's 'first humans' clause is gone. Key true: the Paleozoic and Mesozoic ended at the end-Permian and end-Cretaceous mass extinctions. No other final keys the era lines or mass extinctions.",
+   "sources": ["https://grokipedia.com/page/Faint_young_Sun_paradox", "https://grokipedia.com/page/Geologic_time_scale", "https://grokipedia.com/page/Permian%E2%80%93Triassic_extinction_event", "https://grokipedia.com/page/Cretaceous%E2%80%93Paleogene_extinction_event"]},
+  "d75f3f8347": {"verdict": "pass",
+   "why": "Both fixes are in: 'no one in his day knew Earth's age in years' is true (Buffon's 75,000 and Ussher's 4004 BC were given, not known), and '5 million' keeps the millions-for-billions lure without echoing 4.6. Key 4.6 billion is the NGSS figure (4.54 +/- 0.05). No T1 or T2 final keys Earth's age.",
+   "sources": ["https://grokipedia.com/page/Age_of_Earth", "https://www.nextgenscience.org/pe/ms-ess1-4-earths-place-universe"]},
+  "97d8cedace": {"verdict": "pass",
+   "why": "Now a conditional with no order to the reader. Arithmetic holds: 300,000 years at about 53,000 years a second is about 5.6 seconds; 66 million is about 21 minutes. No other final keys this.",
+   "sources": ["https://en.wikipedia.org/wiki/Geologic_Calendar", "https://grokipedia.com/page/Human"]}
+ }
+}

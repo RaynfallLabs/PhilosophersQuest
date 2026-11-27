@@ -1,0 +1,234 @@
+{
+ "unit": "watersheds-and-groundwater",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "watersheds-and-groundwater",
+   "question": "A dairy farm in the hills of New York lies far nearer to Lake Ontario than to the Chesapeake Bay. The creeks on its land run south into a river, and the river empties into the bay. Which watershed is the farm in?",
+   "answer": "The bay's, as its creeks drain there",
+   "choices": [
+    "The bay's, as its creeks drain there",
+    "The lake's, as the lake lies much nearer",
+    "Both, as it lies between the two",
+    "Neither, as it is far from both"
+   ],
+   "context": "A watershed is all the land that drains to one outlet, so the farm lies in the bay's watershed however far away it is: rain on its fields, and whatever the rain washes off them, can travel down its creeks and the river to the bay. Being near a lake does not put land in the lake's watershed; only where its water drains does. The bay's watershed spreads over about 166,000 square kilometres in six states and the District of Columbia.",
+   "facts": [
+    "F1",
+    "F4",
+    "F5",
+    "M2"
+   ],
+   "grade_note": "Texas's grade-7 standard 7.11A has students analyse human influences on the water of a watershed, the land that drains to one river, lake or bay."
+  },
+  {
+   "tier": 3,
+   "topic": "watersheds-and-groundwater",
+   "question": "Scientists mapping the watershed of a river in rugged country trace its edge on the ground by walking the whole way round it. Along most of the walk, what kind of ground are they on?",
+   "answer": "The tops of ridges and hills",
+   "choices": [
+    "The tops of ridges and hills",
+    "The banks of the river's creeks",
+    "The edges of marshes and ponds",
+    "The floors of the valleys"
+   ],
+   "context": "A watershed's edge is its divide, the high ground where the rain parts: rain on one side drains to this river, and rain on the other side to the next. The river and its creeks run through the low middle of the watershed, not along its edge. North America's Continental Divide follows the crest of the Rocky Mountains and sends water on one side toward the Pacific and on the other toward the Atlantic and the Arctic.",
+   "facts": [
+    "F1",
+    "F2",
+    "F31",
+    "M3"
+   ],
+   "grade_note": "Texas 7.11A treats a watershed as a system of landforms, surface water and groundwater; the divides are the landforms that bound it."
+  },
+  {
+   "tier": 3,
+   "topic": "watersheds-and-groundwater",
+   "question": "Under a farm lie four layers of rock and sediment, all below the water table, where every space in the ground is full of water. One layer, the clay, holds the most water of the four, since more than half of it is space between its tiny grains. Which layer should a well draw from to give the most water?",
+   "answer": "The gravel",
+   "choices": [
+    "The gravel",
+    "The clay",
+    "The silt",
+    "The granite"
+   ],
+   "context": "Gravel has less empty space than clay, but its spaces are large and joined, so water flows through it easily and a well in it refills fast: gravel is permeable as well as porous. Clay's spaces are so tiny and poorly linked that water barely moves through it, and silt, with grains between the two in size, lets water through only slowly. Solid granite has almost no spaces at all and gives water only where it is cracked.",
+   "facts": [
+    "F7",
+    "F8",
+    "F9",
+    "M4"
+   ],
+   "grade_note": "Seventh-grade earth science teaches porosity and permeability, and that a good aquifer must be both porous and permeable."
+  },
+  {
+   "tier": 3,
+   "topic": "watersheds-and-groundwater",
+   "question": "A family's shallow well has given good water for years. Then a bottling company drills a big well into the same ground a short walk away and pumps it day and night. Within weeks the family's well runs dry, though rain has fallen as usual. What has happened?",
+   "answer": "The company's pumping lowered the water table",
+   "choices": [
+    "The company's pumping lowered the water table",
+    "The company's drilling cut off an underground stream",
+    "The company's pumping emptied the whole aquifer",
+    "The company's drilling shook loose mud into the well"
+   ],
+   "context": "Pumping lowers the water table around a well in a dip shaped like a funnel, called a cone of depression, deepest at the pump. When the cone reaches a shallow well nearby, the water table there sinks below the well's bottom and the well goes dry, though the ground deeper down is still soaked. Groundwater fills the spaces in soil and rock rather than flowing in underground streams, and the usual fix is to drill the shallow well deeper.",
+   "facts": [
+    "F6",
+    "F10",
+    "F11",
+    "F12",
+    "M1",
+    "M7"
+   ],
+   "grade_note": "Seventh grade teaches the water table, and that a well runs dry when pumping or drought lowers the water table below its bottom."
+  },
+  {
+   "tier": 3,
+   "topic": "watersheds-and-groundwater",
+   "question": "A wide marsh spreads along a river upstream of a town, and its reeds stand in water much of the year. Farmers drain the marsh and plough it into fields of corn. After heavy storms in the years that follow, how will the river through the town most likely rise?",
+   "answer": "Higher and faster, as the rain runs off sooner",
+   "choices": [
+    "Higher and faster, as the rain runs off sooner",
+    "Lower, as the marsh's water has been drained off",
+    "Lower, as the corn takes up much of the rain",
+    "Just as before, as the same rain still falls"
+   ],
+   "context": "A marsh works like a sponge: it soaks up storm water and lets it out slowly, which lowers the flood peaks downstream. Once it is drained and ploughed, the next storm's rain reaches the river much sooner, so the river rises higher and faster. Bottomland wetlands along the Mississippi once held at least 60 days' worth of its floodwater, but they hold only about 12 now that most have been drained or filled.",
+   "facts": [
+    "F17",
+    "F27",
+    "F28"
+   ],
+   "grade_note": "NGSS MS-ESS3-3 names the removal of wetlands among the human changes to water that seventh graders study, and Texas 7.11A has them analyse such changes in a watershed."
+  },
+  {
+   "tier": 3,
+   "topic": "watersheds-and-groundwater",
+   "question": "A big dam is built across a river, and a long lake fills up behind it. In the decades that follow, the beaches and the delta where the river meets the sea begin to wear away. What has the dam done with the sand and mud that once built them?",
+   "answer": "Trapped most of it on the lake bed",
+   "choices": [
+    "Trapped most of it on the lake bed",
+    "Swept it out past the beaches into deep water",
+    "Dissolved it in the lake's still water",
+    "Spread it over the fields along the river"
+   ],
+   "context": "The lake's still water slows the river, so the sand and mud it carries sink and settle on the bottom: big reservoirs trap most of what flows in, and Lake Nasser behind Egypt's Aswan High Dam holds back over 95 percent of the Nile's. With little sand coming down to replace what the waves carry off, the coast wears back, and the Nile delta's shore has retreated faster since the dam was finished in 1970. The dam also stops the floods that once spread fresh silt over the fields along the river.",
+   "facts": [
+    "F18"
+   ],
+   "grade_note": "NGSS MS-ESS3-3 and Texas 7.11A have seventh graders study how dams change a river and the land and coast downstream."
+  },
+  {
+   "tier": 3,
+   "topic": "watersheds-and-groundwater",
+   "question": "Each summer a dead zone forms where a great river meets the sea: near the sea floor, the water holds so little oxygen that most fish leave or die. Fertiliser from farms across the river's huge watershed feeds it. One spring, weeks of heavy rain soak those farms. How will that summer's dead zone most likely compare with those of other years?",
+   "answer": "Larger, as more fertiliser washes down to the sea",
+   "choices": [
+    "Larger, as more fertiliser washes down to the sea",
+    "Smaller, as the extra water thins out the fertiliser",
+    "Smaller, as the rainwater brings more oxygen with it",
+    "About the same, as the rain falls so far from the sea"
+   ],
+   "context": "Rain washes fertiliser off fields all over the watershed, and the swollen river carries more of it to the sea, so the algae it feeds grow thicker; when they die and sink, the bacteria that rot them use up more of the deep water's oxygen. Fresh river water floats on the salty sea, so little new oxygen mixes down to the bottom. Wet springs, as in 2019, bring large dead zones, and the drought of 2012 brought one of the smallest on record.",
+   "facts": [
+    "F19",
+    "F20",
+    "M5"
+   ],
+   "grade_note": "Seventh-grade standards (Texas 7.11A and 7.11B) teach how human activity across a watershed harms its rivers and the sea they reach."
+  },
+  {
+   "tier": 3,
+   "topic": "watersheds-and-groundwater",
+   "question": "Farmers in California's San Joaquin Valley pumped groundwater from the thick, loose sediment beneath the valley floor for decades to water their crops. By the 1970s the ground had sunk by more than 8 metres in places. Why did the ground sink?",
+   "answer": "Its clay packed tighter as the water was pumped out",
+   "choices": [
+    "Its clay packed tighter as the water was pumped out",
+    "The roofs of caverns emptied by pumping fell in",
+    "Its topsoil dried out and blew away on the wind",
+    "Earthquakes along a fault dropped the valley floor"
+   ],
+   "context": "The water in the spaces between grains helps carry the weight of the ground above. As pumping drew the water out, that weight pressed the grains of the clay layers closer together, the clay thinned, and the land sank, mostly for good, so the squeezed clay can never again hold as much water. Collapsing caves make sinkholes in limestone country, but loose sediment holds no caverns, and the Dust Bowl's winds stripped about 13 centimetres of topsoil from millions of acres of farmland, not metres of ground.",
+   "facts": [
+    "F13",
+    "F14",
+    "F30",
+    "M1"
+   ],
+   "grade_note": "CK-12's middle-school earth science teaches that pumping an aquifer faster than it is recharged can make the ground above it sink."
+  },
+  {
+   "tier": 3,
+   "topic": "watersheds-and-groundwater",
+   "question": "Two fish populations each lose the same share of their numbers to fishing boats every year. Sardines are usually ready to breed by the end of their first year. The orange roughy, a fish of the deep sea, does not breed until it is at least 20 years old, though it may live for more than a century. Which population will most likely shrink faster?",
+   "answer": "The orange roughy's, as it breeds so late",
+   "choices": [
+    "The orange roughy's, as it breeds so late",
+    "The sardines', as more of them are caught",
+    "The sardines', as each lives only a few years",
+    "Both alike, as each loses the same share"
+   ],
+   "context": "A population is overfished when fishing takes its fish faster than breeding replaces them. Sardines are ready to breed within about a year and spawn many times a season, so young fish soon fill the gaps, but an orange roughy caught at 15 never bred at all, and its young take decades to replace the old. Many orange roughy stocks were badly depleted within 3 to 20 years of fishing, and about a third of the sea fish stocks that scientists track are overfished.",
+   "facts": [
+    "F23",
+    "F24",
+    "F25",
+    "M8"
+   ],
+   "grade_note": "Texas 7.11B has seventh graders explain how human activities such as fishing change ocean systems."
+  },
+  {
+   "tier": 3,
+   "topic": "watersheds-and-groundwater",
+   "question": "Bottles and bags drift out to sea from coasts all around the Pacific, and fishing boats lose nets far out on the open ocean. Some of this rubbish collects in one vast stretch of the North Pacific, far from any land, roughly midway between Hawaii and California. What gathers it there?",
+   "answer": "Currents that slowly circle the ocean",
+   "choices": [
+    "Currents that slowly circle the ocean",
+    "Tides that pull it away from the coasts",
+    "Ships that dump their rubbish in that spot",
+    "Waves that roll it out from the beaches"
+   ],
+   "context": "Winds and Earth's spin keep the surface water of the great oceans turning in vast loops called gyres, and floating rubbish drifts toward the calm middle of a loop and stays there. The garbage patch is no floating island: most of its pieces, by count, are bits of plastic smaller than 5 millimetres, so scattered that a boat can sail through and see little. Tides only slosh water back and forth, so they cannot herd rubbish to one spot far out at sea, and waves push floating things toward the shore, not away from it.",
+   "facts": [
+    "F21",
+    "F22",
+    "F29",
+    "M6"
+   ],
+   "grade_note": "Texas 7.11B asks seventh graders to explain how human activities affect the ocean; plastic gathered by the gyres is one such effect."
+  }
+ ],
+ "revised": {
+  "199cf0e42d": {
+   "old_hash": "041f490b4f",
+   "why": "Judge (medium, tell): the stem's 'hilly country' was echoed by the key's 'ridges and hills', the only choice sharing a word with the stem. The stem now says 'rugged country', per the judge's fix; key, choices and facts unchanged. Fact-check polish: the Continental Divide also sends water to the Arctic (F31)."
+  },
+  "873397d34b": {
+   "old_hash": "873397d34b",
+   "why": "Judge (medium, tell): 'Ground it to dust in its turbines' was not live, and the key was the only choice naming the lake. Replaced with 'Dissolved it in the lake's still water' (settling mistaken for dissolving), per the judge's fix, so two choices name the lake; the context now says the sand and mud sink and settle. Stem and key unchanged, so the hash is the same."
+  },
+  "d76fba0a88": {
+   "old_hash": "4a1ce126e4",
+   "why": "Judge (low, tell): 'Fertiliser washed off farms' spelled out the chain from rain to the sea. Now 'Fertiliser from farms across the river's huge watershed feeds it', per the judge's fix, so the student must supply that rain carries the fertiliser and weigh it against the dilution lure. Key, choices and context unchanged."
+  },
+  "32ef8ee88d": {
+   "old_hash": "b168619348",
+   "why": "Judge (medium, tell): the stem's 'sand and clay' was echoed by the key's 'Its clay'; the stem now says 'thick, loose sediment', per the judge's fix, and the key brings in clay itself. Judge (medium): 'The weight of crops and farm machines' was not live; replaced with the Dust Bowl picture, 'Its topsoil dried out and blew away on the wind'. Self-check: the key alone echoed the stem's 'pumped', so the cave lure is now 'The roofs of caverns emptied by pumping fell in' (the underground-lake misconception, M1). Fact-check polish: the context now limits the cave line to loose sediment. New facts F30 (the valley's sediments; the Dust Bowl's topsoil loss)."
+  },
+  "fa6dddf1c6": {
+   "old_hash": "8ede77985c",
+   "why": "Fact-check error (context): 'Tides only carry water in and out along the coasts' was wrong; now 'Tides only slosh water back and forth, so they cannot herd rubbish to one spot far out at sea', the lead's wording (F29). Fact-check uncertain (stem): the patch's nets are lost by fishing boats at sea, not from coasts; the stem now says so (F29: nets nearly half the patch's mass; 75-86 percent of its plastic from offshore fishing). Fact-check polish: 'the great oceans turning in vast loops called gyres' (five main gyres, not one per ocean). Key and choices unchanged."
+  }
+ },
+ "added": {
+  "451aa02fef": "Replaces 2893f95960 (paving, a re-ask of T1's runoff fact). Keys a new fact, sourced now: a wetland stores storm water and releases it slowly, so draining one makes floods downstream rise higher and faster (F28; F17; F27's MS-ESS3-3 'removal of wetlands'). The judge's suggested shape asked what the marsh had done after stating the higher floods, which handed over the key; this one asks the student to predict, with the dilution-like 'water drained off', the crops-drink-it and the same-rain-same-flood beliefs as lures. No other final asks a wetland's flood role (T2 caring-for-air-water-and-soil's terraces ask soil held by soaking in)."
+ },
+ "dropped": [
+  {
+   "old_hash": "2893f95960",
+   "question": "A town spreads over its fields and woods, covering much of the ground with roads, roofs and parking lots. After heavy storms its creek now floods higher than it used to. What has the paving done to the groundwater beneath the town?",
+   "why": "Judge (high): a re-ask of T1 the-water-cycle 0235a0d2ac (paving makes the most runoff) turned over, not a grade deeper, and 'floods higher' in the stem gave the key away. Replaced by a drained-marsh question on the same standard's wetland line (added)."
+  }
+ ]
+}

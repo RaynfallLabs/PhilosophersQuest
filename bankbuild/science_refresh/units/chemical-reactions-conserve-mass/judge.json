@@ -1,0 +1,36 @@
+{"unit": "chemical-reactions-conserve-mass",
+ "questions": {
+  "acff340d51": {"verdict": "ok", "issues": []},
+  "440332c57b": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The 'but' in 'Antoine Lavoisier heated tin ... but weighed the whole sealed vessel' sets his trial up as the correction of Boyle's gain, so a test-wise student leans to the one choice that is not a change. The clause also stacks two 'before's ('before and after heating, before breaking the seal').",
+     "fix": "Antoine Lavoisier repeated the trial in 1774 with tin and air sealed in glass. He weighed the whole sealed vessel before heating it and again after, while it was still sealed. What did his balance show?"}]},
+  "7c350bf5c6": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'A burnt log leaves only a little ash' is not live: the stem itself says that wood gives off phlogiston and leaves ash, so this choice only restates what the theory is said to explain. The key also follows from the stem's 'gives off' by logic alone (losing something should make the calx lighter). That logic is an acceptable apply step at T4, but with the ash choice dead the student is left choosing between the key and two choices that need knowledge he does not have.",
+     "fix": "Replace the ash choice with an observation the theory did explain and the stem does not settle, e.g. 'A metal shines, while its calx is a dull powder' (phlogiston was held to give metals their metallic shine; the writer must source it, Grokipedia Phlogiston_theory first)."}]},
+  "ca7d8177c4": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'A gas it makes' and 'The gas it makes' have no clear 'it': the stem never names the reaction, so 'it' could read as the marble, the acid or the flask.",
+     "fix": "'A gas made as the chips fizz escapes into the air' and 'The gas made as the chips fizz weighs nothing at all'."}]},
+  "f725256f76": {"verdict": "ok", "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Near the T3 ground: physical-or-chemical-change keys 'Both join iron with oxygen from the air' for burning steel wool, so a student can reach this key from that T3 fact alone. The lead gives the burning metal's gain in mass to this unit, and the heat and new-matter choices do test the mass idea, so it stands.",
+     "fix": "Optional, to make the T4 step the thing asked: give 0.24 g and 0.40 g and ask how much oxygen joined it (0.16 grams; others 0.40 grams, 0.24 grams, none, as a gas adds no mass). The subtraction is easy in the head."}]},
+  "eec6256f68": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Into the ground beneath the fire' is weak: few 8th graders think a log's mass sinks into the soil, so it is barely live.",
+     "fix": "Replace it with 'Into the smoke, as tiny specks of soot', and add to the context that soot is only a small share (F15: incomplete burning gives some soot); the key stays the invisible gases."}]},
+  "45dbf7260f": {"verdict": "ok", "issues": []},
+  "b10e00657c": {"verdict": "ok", "issues": []},
+  "29a04425c7": {"verdict": "ok", "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "A Bunsen burner burns whatever gas the lab supplies: natural gas (mostly methane) in many schools, propane in others (F8). 'comes from methane gas burning' is true only of a natural-gas burner.",
+     "fix": "'A Bunsen burner fed with natural gas burns methane in air, written CH4 + 2O2 -> CO2 + 2H2O.'"}]},
+  "eb9c684ada": {"verdict": "revise", "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "It has the same set-up and the same key as T1 mixtures-and-solutions: two containers weighed together, one tipped into the other, the empty one set back, 'What does the balance show?', key 'The same mass as before'. A student who knows the T1 fact answers by analogy. Inside the unit, 'mass unchanged when nothing gets in or out' is already the key of Q2 (Lavoisier's sealed vessel), and Q1 keys the atom count behind it. Only the yellow solid carries the T4 step.",
+     "fix": "Ask what the unchanged reading shows, which is new at T4. End the stem: '...a bright yellow solid forms at once. The balance reads exactly what it read before. What does the unchanged reading rule out?' Key: 'That the solid is new matter made in the reaction'. Others: 'That the two solutions reacted at all' (the misconception that no change in mass means no reaction), 'That any atoms changed partners', 'That the yellow solid is a new substance'. If the reviser cannot make it ask something that Q1 and Q2 do not, drop it."}]}
+ },
+ "unit_notes": "The scope is fully covered: atoms rearranged and conserved (Q1), Lavoisier's sealed vessel (Q2) and the phlogiston story it ended (Q3), a gas escaping (Q4), a gas joining (Q5), the burning log (Q6), the arrow (Q7), a number in front (Q8), counting atoms on a side (Q9). The grade fit is right throughout: mechanisms and the classic weighings, no balancing. The lead's rulings are kept: no question asks how to balance an equation, 2H2 + O2 -> 2H2O is not used, and the log's mass going into the air is told without keying where a tree's mass comes from. There are no kitchen examples. Overlaps: (1) Q10 repeats the conservation key of Q2 and the shape of the T1 mixtures balance question (see above). (2) Q3 (a calx weighs more than its metal) and Q5 (the extra mass is oxygen from the air) rest on the same observation, and Q2's stem says outright that Boyle's tin 'had grown heavier', which hands over Q3's key when both are drawn in one run. The keys are distinct, so this is a note, not a fault. (3) Q8 and Q9 both use coefficients but test different skills (what the number means; counting with it). (4) Q4's marble in hydrochloric acid shares calcium carbonate with acids-bases-and-ph Q8 (limestone neutralising acid rain); the keys differ (a gas escapes; the rock uses the acid up). Against signs-of-a-chemical-change (the antacid fizz), physical-or-chemical-change (the burnt match, steel wool joining oxygen) and elements-compounds-and-formulas (atoms in one formula), each question goes a grade deeper; Q5's nearness to the T3 steel-wool key is noted above."
+}

@@ -1,0 +1,45 @@
+{"unit": "acids-bases-and-ph",
+ "questions": {
+  "dfa764ba86": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem defines neutral as 'neither acid nor base', and the two 'a few more X than Y' choices mirror each other. A test-wise student sees that neutral must mean a balance and picks 'Just as many' without knowing what a hydroxide ion is. The only other choice, 'So few ions that neither kind can count', is undercut by the stem's 'a tiny share of them are always split'.",
+     "fix": "Teach the balance in the stem and ask what an acid does to it: '...a tiny share of them are always split into hydrogen ions and hydroxide ions, the same number of each, and that balance makes it neutral. Battery acid poured into water tips the balance. How?' Key: 'It adds more hydrogen ions'. Others: 'It adds more hydroxide ions', 'It takes hydrogen ions away', 'It adds both kinds of ion alike'."},
+    {"axis": "grade", "severity": "low",
+     "what": "Water splitting itself into hydrogen and hydroxide ions is usually first met in high-school chemistry. Acids as hydrogen-ion givers and bases as hydroxide-ion givers is 8th-grade content in many texts, which is why the fix above keys that instead.",
+     "fix": "Use the fix above, so the self-splitting is taught in the stem rather than tested."}]},
+  "96775885b6": {"verdict": "ok", "issues": []},
+  "4584881311": {"verdict": "ok", "issues": []},
+  "e253e2f3c2": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem gives pH 'below 1' and 'of 14', the two ends of the scale, so with the unit's rule (the farther from 7, the stronger) it hands over 'Both'. 'Neither, unless the two are mixed' is not live, since no one thinks battery acid is safe on skin. The question then turns on reading the two numbers, not on knowing that a strong base burns.",
+     "fix": "Drop the two pH figures: 'One holds battery acid, the sulfuric acid inside a car battery. The other holds lye, the sodium hydroxide in drain cleaners.' Change 'Only the lye, with the higher number' to 'Only the lye, as bases are the stronger kind'. Replace 'Neither, unless the two are mixed' with 'Neither, as only a hot liquid can burn' (the heat-burn confusion)."}]},
+  "9958df4296": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem says that litmus is 'used to sort acids from bases', which previews the key's point that it sorts but does not measure ('but not which is stronger').",
+     "fix": "'Litmus is a dye made from lichens, known since about 1300.'"},
+    {"axis": "fact", "severity": "low",
+     "what": "F14 says that Arnaldus de Villa Nova was the first known to use litmus around 1300. It does not say that he used it to tell acids from bases; the indicator use is usually dated to the 1600s (Boyle). The fact-checker should confirm 'used to sort acids from bases since about 1300'.",
+     "fix": "Use the wording above, or 'used as a dye since about 1300', unless the acid-base use at 1300 is sourced."}]},
+  "39ad72ff48": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two choices are not live. 'Its pigment breaks apart into single atoms' is something no 8th grader expects of juice. 'Its pigment is bleached by the acid or base' cannot be right, since bleaching takes colour away and the stem says the juice turns red and green. The key is also the only choice in the hydrogen-ion language that the unit uses for acids.",
+     "fix": "Replace the two weak choices with 'Its pigment clumps into bigger specks, which scatter light differently' and 'Its pigment is used up, and the sample makes a new dye of its own'."},
+    {"axis": "grade", "severity": "low",
+     "what": "A pigment gaining or losing hydrogen ions goes beyond most 8th-grade indicator lessons, which teach that the indicator reacts with the acid or base and changes colour. It holds only if the unit's cards teach acids as hydrogen-ion givers, as Q1's revision would.",
+     "fix": "Keep the key, and make sure Q1's card (or this one's) says first that acids add hydrogen ions."}]},
+  "04a7b7fb01": {"verdict": "ok", "issues": []},
+  "e3282ae6b9": {"verdict": "ok", "issues": []},
+  "f056b136be": {"verdict": "ok", "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The context repeats 'litmus, used since about 1300' as an acid-base test; see the fact note on the litmus question (9958df4296).",
+     "fix": "'Chemists could already tell acids from bases with indicators such as litmus, a dye known since about 1300...', or whatever the fact-checker confirms."}]},
+  "de0f5247c7": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only answer in two parts and the only one in the unit's own words ('neutral', 'base'), so a student who does not know the stomach lining picks it. 'Cells made of something acid cannot harm' is vague and not live. 'An acid too weak to harm living cells' is ruled out by the stem's pH 2 together with the unit's farther-from-7 rule.",
+     "fix": "Make all four choices name a coating, so the key's form does not stand out. Key: 'A coat of mucus with a base in it'. Others: 'A coat of fat that acid cannot soak into', 'A coat of tough skin, like the skin of the hand', 'A coat of cells that acid cannot dissolve'."},
+    {"axis": "grade", "severity": "low",
+     "what": "The mucus and bicarbonate of the stomach lining are body-system detail beyond 8th-grade chemistry. The unit already has two body questions (Q3 blood, Q7 heartburn), and Q7 and this one both sit in the stomach.",
+     "fix": "Keep it with the choices above, or swap it for a non-body case in scope (bleach as a strong household base, F7)."}]}
+ },
+ "unit_notes": "The scope is fully covered: the scale and neutral 7 (Q1), the tenfold step (Q2), acids and bases with their examples (Q3 blood, Q4 battery acid and lye), litmus (Q5), red cabbage as a test-it-yourself (Q6), neutralising (Q7 antacid, Q8 limestone, Q10 stomach lining) and Sorensen's scale (Q9). The lead's rulings are kept: no question keys 'a salt and water', ocean acidification is absent, and the antacid moving the pH toward 7 is here and not at T5. Lanes are kept: red cabbage is the allowed test-it-yourself, there is no lemon or vinegar, and soapy water, ammonia and drain cleaner are household or lab samples, not cooking. The only arithmetic is ten times ten (Q2). The lower units are gone past, not re-asked: Q7 goes beyond signs-of-a-chemical-change's antacid fizz (T2), and Q7 and Q10 go beyond the-bodys-main-organs (T1, stomach acid) and the-bodys-defences (stomach acid kills germs). The balance is body-heavy (Q3, Q7, Q10, two of them in the stomach); see the note on Q10. Two acid-rain questions (Q2 the tenfold step, Q8 limestone) key different facts, which is fine. Q8's calcium carbonate meeting acid also appears in chemical-reactions-conserve-mass Q4 (marble fizzing in hydrochloric acid), with a different key (gas escaping). The 'litmus since about 1300' claim appears twice (Q5's stem, Q9's context) and should be checked once for both."
+}

@@ -1,0 +1,212 @@
+{
+ "unit": "designing-a-controlled-experiment",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "designing-a-controlled-experiment",
+   "question": "Mia tests whether the height of a ramp changes how far a toy car rolls. She props the ramp at 10, then 20, then 30 centimetres, lets the same car go from the top each time, and measures how far it rolls across the floor. What kinds of variable are the ramp's height and the car's distance, in that order?",
+   "answer": "Independent variable, then dependent variable",
+   "choices": [
+    "Independent variable, then dependent variable",
+    "Dependent variable, then independent variable",
+    "Controlled variable, then dependent variable",
+    "Independent variable, then controlled variable"
+   ],
+   "context": "The independent variable is the one the experimenter changes on purpose, here the ramp's height, and the dependent variable is what she measures to see its effect, the distance. Mia sets the height herself, but that does not make it a controlled variable: controlled variables are the things kept the same, such as the car and its starting point.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "M1",
+    "M2"
+   ],
+   "grade_note": "Naming the independent and dependent variables in a described experiment is the core of seventh-grade experimental design (NGSS grades 6-8)."
+  },
+  {
+   "tier": 3,
+   "topic": "designing-a-controlled-experiment",
+   "question": "Charles Darwin grew young maize plants in pairs. In each pair, one plant grew from a flower given pollen from another plant, and one from a flower given pollen from its own plant. He set the two on opposite sides of one pot, in soil mixed to be the same throughout, kept the pot turned so that both sides were equally lit, and watered both at once. In his experiment, what were the soil, the light and the watering?",
+   "answer": "Controlled variables",
+   "choices": [
+    "Controlled variables",
+    "Control groups",
+    "Independent variables",
+    "Dependent variables"
+   ],
+   "context": "They were controlled variables, kept the same for both plants of a pair, so that only the way each seed was made, the independent variable, could explain a difference in their heights, the dependent variable. A control group is a set of plants or animals left without the thing being tested, not a condition such as soil. In 13 of Darwin's 15 pairs, the plant from the flower given another plant's pollen grew taller.",
+   "facts": [
+    "F3",
+    "F5",
+    "F16",
+    "F17",
+    "F20",
+    "M2"
+   ],
+   "grade_note": "Seventh grade names the controlled variables in a described experiment and tells them apart from a control group."
+  },
+  {
+   "tier": 3,
+   "topic": "designing-a-controlled-experiment",
+   "question": "John Bennet Lawes and Joseph Henry Gilbert sowed wheat in long strips across a field at Rothamsted, in England, in 1843. Each strip got its own mix of fertilizers or manure, except one, which has had none at all from that day to this. What is that one strip for?",
+   "answer": "Showing what the wheat gives with nothing added",
+   "choices": [
+    "Showing what the wheat gives with nothing added",
+    "Resting the soil so that it grows rich again",
+    "Growing seed for sowing on the other strips",
+    "Keeping its soil just as it was at the start"
+   ],
+   "context": "It is the experiment's control: wheat is sown on it every year like the rest, and it still yields about 1 tonne of grain a hectare, while the best-fed strips now give ten or more. Each strip's harvest is measured against it to show how much its feeding adds. Rothamsted calls Broadbalk, as the field is known, the longest-running scientific experiment in the world.",
+   "facts": [
+    "F4",
+    "F14",
+    "F15"
+   ],
+   "grade_note": "Seventh grade teaches that a control gets no treatment and serves as the baseline the treated groups are compared with."
+  },
+  {
+   "tier": 3,
+   "topic": "designing-a-controlled-experiment",
+   "question": "Leo tests whether a new plant food helps bean seedlings grow. He gives it to twenty seedlings on a sunny windowsill, and plain water to twenty more on a shelf at the back of the room. All of them grow in the same soil. A month later the fed seedlings are taller. Why can his result not show that the food helped?",
+   "answer": "The windowsill plants also got far more light",
+   "choices": [
+    "The windowsill plants also got far more light",
+    "Twenty seedlings in a group are too few to tell",
+    "He gave the other twenty plain water, not food",
+    "He measured height when he should count leaves"
+   ],
+   "context": "Light changed along with the plant food, so the windowsill seedlings may have grown taller from the light alone; when two things change at once, neither can take the credit. Both groups needed the same light. Giving the others plain water was right, for they were the control group, and twenty seedlings a group, measured by height, were sound choices.",
+   "facts": [
+    "F7",
+    "F8",
+    "F4",
+    "M5"
+   ],
+   "grade_note": "Seventh grade asks students to spot the flaw in a described experiment, such as a second variable changed along with the first."
+  },
+  {
+   "tier": 3,
+   "topic": "designing-a-controlled-experiment",
+   "question": "A teacher plays soft music in her classroom during every test for a whole term, and her pupils' marks rise from the first test to the last. She tells the other teachers that the music works. What does her trial lack?",
+   "answer": "A class taking the same tests with no music",
+   "choices": [
+    "A class taking the same tests with no music",
+    "A second term of music during every test",
+    "An exact record of every pupil's marks",
+    "Another teacher's class with music as well"
+   ],
+   "context": "Without a class to compare, nothing shows whether the music raised the marks or something else did, and scores often rise as people grow used to a kind of test. A class taking the same tests through the same term in silence would be her control group. Another term of music, or another class with music, still leaves nothing to compare with.",
+   "facts": [
+    "F6",
+    "F9",
+    "M4"
+   ],
+   "grade_note": "Seventh grade teaches that a claim needs a control group to compare against, and asks students to spot a test that has none."
+  },
+  {
+   "tier": 3,
+   "topic": "designing-a-controlled-experiment",
+   "question": "Lily tests three brands of paper towel. She weighs a square of each, all cut to one size, dips it in water for ten seconds, lets it drip and weighs it again. In five trials each, the squares of brand A gain the most. Her brother says brand A must be the best towel in the shops for any spill, from juice to motor oil. Why does her test not show that?",
+   "answer": "Most brands and most spills went untested",
+   "choices": [
+    "Most brands and most spills went untested",
+    "Five trials of each brand are too few to tell",
+    "Weighing a towel cannot show the water it holds",
+    "She let each square drip before she weighed it"
+   ],
+   "context": "A result speaks only for what was tested: three brands, soaking up water. Other brands in the shops, and spills such as oil, were never tried, so the result cannot be stretched to cover them. Five trials that agree are a fair number, the gain in weight is the water each square took up, and letting every square drip treats each brand alike.",
+   "facts": [
+    "F10",
+    "F2",
+    "M6"
+   ],
+   "grade_note": "Seventh grade asks what a result does and does not show, and what claim the evidence can support."
+  },
+  {
+   "tier": 3,
+   "topic": "designing-a-controlled-experiment",
+   "question": "Sam sprays one sunflower seed with a new sprouting spray and leaves a second seed from the same packet unsprayed. He plants each in a pot of the same soil, sets both on one windowsill and waters them alike. The sprayed seed sprouts, but the other never does. Why does his result show very little?",
+   "answer": "He used just one seed in each group",
+   "choices": [
+    "He used just one seed in each group",
+    "He should have sprayed both seeds alike",
+    "He took both seeds from the same packet",
+    "He grew the seeds indoors, not in a garden"
+   ],
+   "context": "Some seeds in any packet are dead or dormant and never sprout, so one seed that fails says little about the spray; with many seeds in each group, chance failures fall on both sides and a real difference shows through. Leaving one seed unsprayed was right, for it was the control, and taking both from one packet and growing them side by side kept everything else alike. Charles Darwin judged tests of only two to six pairs of plants 'of little or no value'.",
+   "facts": [
+    "F4",
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "Seventh grade asks how many trials or how large a sample a claim needs, and why one plant can mislead."
+  },
+  {
+   "tier": 3,
+   "topic": "designing-a-controlled-experiment",
+   "question": "Christiaan Eijkman, a Dutch doctor working in Java around 1890, saw that his laboratory's chickens fell ill with a nerve disease while they were fed polished white rice, and that unpolished rice made them well again. Which test would best show whether the polished rice was to blame?",
+   "answer": "Feed one flock polished rice and a matching flock unpolished rice",
+   "choices": [
+    "Feed one flock polished rice and a matching flock unpolished rice",
+    "Feed every chicken polished rice and count how many fall ill",
+    "Feed the sick chickens unpolished rice and see if they get well",
+    "Feed polished rice in the lab and unpolished rice on a farm"
+   ],
+   "context": "Two flocks alike in all else, one on each rice, test the rice alone. Eijkman ran such trials through the early 1890s: nearly all the birds on polished rice fell ill, and those on unpolished rice did not. The substance the polished rice lacked was later found to be thiamine, vitamin B1, and Eijkman shared the 1929 Nobel Prize in Physiology or Medicine.",
+   "facts": [
+    "F18",
+    "F21",
+    "F4",
+    "F7"
+   ],
+   "grade_note": "Seventh grade asks students to plan a controlled experiment that tests one suspected cause against a control group."
+  },
+  {
+   "tier": 3,
+   "topic": "designing-a-controlled-experiment",
+   "question": "Kai wants to know whether a layer of straw on the soil helps strawberry plants bear more fruit. He spreads straw around ten plants in his bed and leaves ten others in the same bed bare. At the end of the summer he measures how tall each plant has grown. What is wrong with his test?",
+   "answer": "Height does not show how much fruit each bore",
+   "choices": [
+    "Height does not show how much fruit each bore",
+    "Ten plants in each group are too few to tell",
+    "He should have put straw around all twenty",
+    "He changed two things between the two groups"
+   ],
+   "context": "The dependent variable must measure what the question asks about, here the fruit, which Kai could count or weigh plant by plant. Leaving ten plants bare was right, for they were the control group, and the straw was the only difference between the groups.",
+   "facts": [
+    "F2",
+    "F19"
+   ],
+   "grade_note": "Seventh grade asks students to choose the dependent variable and how to measure it, and to spot a test that measures the wrong thing."
+  }
+ ],
+ "revised": {
+  "d1911ccc39": {
+   "old_hash": "9b2443d52a",
+   "why": "Fact-check error (stem): maize flowers are each male or female, so no maize flower 'pollinated itself'; the self-fertilised plant now grows 'from a flower given pollen from its own plant', the lead's wording (F20: maize is monoecious). Key, choices and context unchanged."
+  },
+  "b54fe71bc3": {
+   "old_hash": "9510175a6e",
+   "why": "Judge (medium, tell): only the key was a fact about seeds while three choices said what Sam did wrong. Now all four say what Sam did: key 'He used just one seed in each group', per the judge's fix. The weak height lure is gone; 'He changed two things between the seeds' is gone too, since the stem's 'same soil, one windowsill, waters them alike' ruled it out on its own words; the new lures are 'He took both seeds from the same packet' (a controlled variable mistaken for a flaw, M5) and 'He grew the seeds indoors, not in a garden'. Fact-check uncertain: 'soaks' made 'changed two things' arguable (soaking alone speeds sprouting); the stem now says 'sprays one sunflower seed with', the lead's wording. Context now says why the packet and the side-by-side pots were right."
+  },
+  "d0930f8ddf": {
+   "old_hash": "49ca0ea131",
+   "why": "Fact-check uncertain (dates): sources split on 1889 or 1890 for the chickens' illness, and only Grokipedia gives '1890 to 1897, over 100 chickens' while Eijkman left Java in 1896. The stem now says 'around 1890' and the context 'through the early 1890s', the lead's wording, with the chicken count cut (F21). Key and choices unchanged."
+  }
+ },
+ "added": {
+  "68158e1640": "Replaces 11d9fbfa9c (salt plates, the same control fact as Broadbalk). Keys the scope's 'saying what a result shows' on a fact no question in the unit asks: a fair test that finds no difference is a real result, a null result, not a failure (F22, sourced now: Wikipedia Null result, 'does not imply a result of zero or nothing'; Science Buddies). The lures are the documented ways people discount unwelcome data (M7: Chinn and Brewer 1993): it shows nothing, the data must be a mistake, or the idea survives and something hid it. Distinct from T1 measuring-and-the-fair-test e1be3638ed (change a prediction the results contradict) and T2 hypothesis-theory-and-law caeaf20e1e (results support a hypothesis): this asks what a no-difference comparison against a control shows. Not 'repeat the trials', not correlation, not blinding."
+ },
+ "dropped": [
+  {
+   "old_hash": "11d9fbfa9c",
+   "question": "Omar wants to know whether salt makes ice melt faster. He sets out three plates, each with five ice cubes of the same size, in the same warm room. He sprinkles one spoonful of salt over the first plate, two over the second and none over the third. Which plate is his control, the one the others are compared with?",
+   "why": "Judge (medium): asked the same fact as 545107792f (a control gets none of the treatment and is the baseline), and its stem defined the control for the student. Broadbalk, the real experiment, keeps that fact; the salt plates are replaced by a question on what a result that finds no difference shows (added)."
+  },
+  {
+   "old_hash": "68158e1640",
+   "question": "A class tests whether a new wax helps sleds slide farther. Five sleds of one make get the wax, five more of the same make stay bare, and each sled runs down the same snowy hill five times. On average, the waxed sleds slide just as far as the bare ones. What does the class's result show?",
+   "why": "failed the re-check: Re-asks T1 measuring-and-the-fair-test e1be3638ed in a new scene. That question's key is to accept results that go against the idea ('Change his idea to fit the results'), and its lures are this question's three lures in other words: 'Call the whole test a failure' is 'Nothing, as the test found no difference'; 'Decide the big magnet must be broken' is 'The class must have made a mistake somewhere'; 'Keep his idea, but leave out these results' is 'The wax helps, but something hid its effect'. T2 caeaf20e1e's lure 'His results tell nothing about it yet' adds the same 'shows nothing' trap. A student who learned the T1 lesson answers this with no 7th-grade knowledge, and the 'no difference' twist adds no new misconception. The key also nearly restates the stem's result ('slide just as far' becomes 'did not help'). The facts themselves are true (Wikipedia, Null result). No one-phrase fix: re-aim it at a design point this unit does not yet key, or drop it."
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+{"unit": "reading-deep-time",
+ "questions": {
+  "cea323cee9": {"verdict": "ok",
+   "checks": [
+    {"claim": "Steno was a Danish anatomist working in Florence (Medici court) in 1666", "result": "ok", "source": "https://grokipedia.com/page/Nicolas_Steno", "note": ""},
+    {"claim": "In 1666 (October) he dissected the head of a large shark caught off Livorno; the shark was a great white", "result": "ok", "source": "https://science.nasa.gov/earth/earth-observatory/nicolaus-steno", "note": "NASA: the Medici 'acquired the head of a great white shark'; Wikipedia and UCMP give October 1666 near Livorno (species not named there)."},
+    {"claim": "Its teeth matched the tongue stones (glossopetrae) found in rock", "result": "ok", "source": "https://en.wikipedia.org/wiki/Nicolas_Steno", "note": ""},
+    {"claim": "Key: the solid that bears the print of the other on its neighbour hardened first, so the tooth was hard before the rock", "result": "ok", "source": "https://ucmp.berkeley.edu/history/steno.html", "note": "UCMP: a tongue stone 'must have been buried in soft sediments which hardened later'. The 1916 translation of the principle says 'expresses'; the sense is that the first-hardened body impresses its surface on the other (geologyin.com note on the translation)."},
+    {"claim": "Wrong: the rock was hard before the tooth", "result": "ok", "source": "https://ucmp.berkeley.edu/history/steno.html", "note": ""},
+    {"claim": "Wrong: tooth and rock hardened together", "result": "ok", "source": "https://ucmp.berkeley.edu/history/steno.html", "note": "The one-way print rules out simultaneous hardening in Steno's reasoning."},
+    {"claim": "Wrong: the tooth grew inside the hardened rock (the older view Steno rejected)", "result": "ok", "source": "https://ucmp.berkeley.edu/history/steno.html", "note": "UCMP: a stone that grew in rock would have been distorted by it; others had held that fossils grew in rocks (Kircher's 'lapidifying virtue')."},
+    {"claim": "Context: in 1669 (Prodromus) he set out rock layers settling one on another, the lowest first: the law of superposition", "result": "ok", "source": "https://science.nasa.gov/earth/earth-observatory/nicolaus-steno", "note": "NASA quotes him: 'When the lowest stratum was being formed, none of the upper strata existed.' Prodromus printed in Florence, 1669 (Grokipedia, Wikipedia)."},
+    {"claim": "Context: many scholars before him held that such stones grew inside the rock by themselves", "result": "ok", "source": "https://ucmp.berkeley.edu/history/steno.html", "note": ""}
+   ]},
+  "db0e5a2dd3": {"verdict": "error",
+   "checks": [
+    {"claim": "Smith was a canal surveyor and a blacksmith's son", "result": "ok", "source": "https://grokipedia.com/page/William_Smith_(geologist)", "note": "Father John Smith was 'a village blacksmith'; Smith surveyed for the Somerset Coal Canal (Wikipedia: 1791-1799 in Somerset)."},
+    {"claim": "He studied rock layers in coal mines and canal cuts in the 1790s", "result": "ok", "source": "https://en.wikipedia.org/wiki/William_Smith_(geologist)", "note": "Mearns Pit 1791; Somerset Coal Canal survey work to 1799."},
+    {"claim": "Look-alike layers (a sandy layer here, a sandy layer there) told apart and matched by their fossils (key)", "result": "ok", "source": "https://science.nasa.gov/earth/earth-observatory/william-smith/", "note": "NASA: a sandy deposit in one place could resemble one elsewhere; Smith's key was that 'their fossils were different'. Grokipedia: 'each stratum contained organized fossils peculiar to itself'."},
+    {"claim": "Wrong: thickness, hardness, depth of each layer", "result": "ok", "source": "https://en.wikipedia.org/wiki/William_Smith_(geologist)", "note": "Not the means by which Smith identified strata; fossils were."},
+    {"claim": "Context: each layer holds fossils of its own, always in the same order", "result": "ok", "source": "https://en.wikipedia.org/wiki/William_Smith_(geologist)", "note": "Faunal succession."},
+    {"claim": "Context: his 1815 map of the rocks of England and Wales was 'the first geological map of a whole country'", "result": "error", "source": "https://en.wikipedia.org/wiki/William_Smith_(geologist)", "note": "Wikipedia: 'this was not the world's first geological map'; William Maclure's geological map of the United States came out in 1809, six years earlier. What is true: Smith's was the first DETAILED nationwide geological map (Wikipedia lead), 'the first geologic map to cover such a large area in such fine detail' (NASA). Fix: 'the first detailed geological map of a whole country.'"}
+   ]},
+  "3b078a2ca2": {"verdict": "ok",
+   "checks": [
+    {"claim": "Index fossils are used to match layers from place to place and tell which formed at the same time", "result": "ok", "source": "https://en.wikipedia.org/wiki/Index_fossil", "note": ""},
+    {"claim": "Ammonites were sea animals with coiled shells", "result": "ok", "source": "https://grokipedia.com/page/Ammonoidea", "note": "Marine cephalopods with external chambered shells, typically coiled."},
+    {"claim": "Key: best index fossil is short-lived and worldwide", "result": "ok", "source": "https://en.wikipedia.org/wiki/Index_fossil", "note": "'a limited vertical time range' and wide geographic distribution; Grokipedia Ammonoidea: 'geographic range, and brief species durations make them invaluable index fossils'."},
+    {"claim": "Wrong: long-lived worldwide; short-lived in one bay; long-lived in one bay", "result": "ok", "source": "https://en.wikipedia.org/wiki/Index_fossil", "note": "Longer-lived species give poorer precision; a local species cannot correlate distant layers."},
+    {"claim": "Context: ammonites and trilobites are classic index fossils", "result": "ok", "source": "https://en.wikipedia.org/wiki/Index_fossil", "note": ""}
+   ]},
+  "6ace61ef8f": {"verdict": "ok",
+   "checks": [
+    {"claim": "Hutton landed (by boat) at Siccar Point, Scotland, in 1788", "result": "ok", "source": "https://grokipedia.com/page/Siccar_Point", "note": "June 1788, boat trip along the Berwickshire coast with John Playfair and James Hall."},
+    {"claim": "Grey layers once laid flat on a sea floor stand almost on end, worn across their tops, under red sandstone", "result": "ok", "source": "https://grokipedia.com/page/Siccar_Point", "note": "Nearly vertical Silurian greywacke (deep-water marine turbidites, first laid horizontal) under gently dipping Devonian Old Red Sandstone."},
+    {"claim": "Such a junction is called an unconformity (angular unconformity)", "result": "ok", "source": "https://grokipedia.com/page/James_Hutton", "note": ""},
+    {"claim": "Key: Hutton concluded Earth's history reaches back an immense time", "result": "ok", "source": "https://grokipedia.com/page/Siccar_Point", "note": "Cycles of deposition, uplift, erosion and renewed deposition taken as evidence of vast time."},
+    {"claim": "Wrong: one great flood; one early ocean (Neptunism); a few thousand years", "result": "ok", "source": "https://en.wikipedia.org/wiki/James_Hutton", "note": "These are the views Hutton rejected (Werner's Neptunism; catastrophism / a global flood; a short biblical timescale)."},
+    {"claim": "Quote: 'no vestige of a beginning, no prospect of an end'", "result": "ok", "source": "https://en.wikipedia.org/wiki/James_Hutton", "note": "Hutton, Theory of the Earth, Transactions of the Royal Society of Edinburgh vol. I (1788): 'we find no vestige of a beginning,--no prospect of an end.'"},
+    {"claim": "Context: many geologists of his day held that a great flood or one early ocean laid down the rocks", "result": "ok", "source": "https://en.wikipedia.org/wiki/James_Hutton", "note": "Werner's Neptunism; catastrophist/flood views (Grokipedia)."}
+   ]},
+  "3a4093f202": {"verdict": "ok",
+   "checks": [
+    {"claim": "Fossil ripples in sandstone have the shape of ripples made today by flowing water; geologists read them by comparison with modern ones", "result": "ok", "source": "https://grokipedia.com/page/Ripple_marks", "note": "Asymmetrical ripples form under one-way currents such as rivers; geologists compare fossil ripples with modern ones."},
+    {"claim": "Key: she assumes the same natural laws worked in the past as now (uniformitarianism)", "result": "ok", "source": "https://grokipedia.com/page/Uniformitarianism", "note": "Natural laws and processes seen today operated through geological time; 'the present is the key to the past'."},
+    {"claim": "Wrong: lowest layers always oldest (superposition, not needed here, and not always true in overturned beds)", "result": "ok", "source": "https://grokipedia.com/page/Ripple_marks", "note": ""},
+    {"claim": "Wrong: each layer took the same time to form", "result": "ok", "source": "https://grokipedia.com/page/Uniformitarianism", "note": "Uniformitarianism does not require constant rates."},
+    {"claim": "Wrong: Earth has always looked the way it does today", "result": "ok", "source": "https://grokipedia.com/page/Uniformitarianism", "note": "Grokipedia: the principle concerns consistent laws and processes, not an unchanging planet."},
+    {"claim": "Context: Hutton built geology on this assumption, later called uniformitarianism; rare great events allowed under the same laws", "result": "ok", "source": "https://grokipedia.com/page/Uniformitarianism", "note": "Hutton set it out (1785/1795); Whewell coined the word in 1832; modern actualism allows varying rates and rare catastrophes such as Chicxulub."}
+   ]},
+  "76641366b2": {"verdict": "ok",
+   "checks": [
+    {"claim": "The time scale (eras and periods) was built in the 1800s from the order of layers and their fossils", "result": "ok", "source": "https://grokipedia.com/page/Geologic_time_scale", "note": "Superposition and faunal succession; Sedgwick and Murchison's systems (1835); Phillips's eras (1841, Wikipedia John Phillips)."},
+    {"claim": "Key: layers and fossils alone could not give how many years ago each period began", "result": "ok", "source": "https://www.nextgenscience.org/pe/ms-ess1-4-earths-place-universe", "note": "NGSS ESS1.C: 'Analyses of rock strata and the fossil record provide only relative dates, not an absolute scale.'"},
+    {"claim": "Wrong: which period came first; which life came before others; which layers in two lands are the same age", "result": "ok", "source": "https://grokipedia.com/page/Geologic_time_scale", "note": "All given by superposition, faunal succession and correlation."},
+    {"claim": "Context: the time scale got its numbers only in the 1900s, from new ways of dating rocks", "result": "ok", "source": "https://grokipedia.com/page/Geologic_time_scale", "note": "Radioactive decay work 1902-03; Arthur Holmes's uranium-lead ages in 1911."}
+   ]},
+  "ed76277824": {"verdict": "ok",
+   "checks": [
+    {"claim": "The time scale nests eons (longest), eras, periods; last three eras Paleozoic, Mesozoic, Cenozoic", "result": "ok", "source": "https://grokipedia.com/page/Geologic_time_scale", "note": ""},
+    {"claim": "Key: both era boundaries fall at mass extinctions (end-Permian, end-Cretaceous)", "result": "ok", "source": "https://grokipedia.com/page/Geologic_time_scale", "note": "Paleozoic-Mesozoic boundary (251.902 Ma) coincides with the end-Permian extinction; Mesozoic-Cenozoic (66 Ma) with the Cretaceous-Paleogene extinction."},
+    {"claim": "Wrong: first humans appeared at the lines", "result": "ok", "source": "https://grokipedia.com/page/Human", "note": "Homo sapiens about 300,000 years ago; genus Homo about 2.8 million: neither at 252 or 66 Ma."},
+    {"claim": "Wrong: a whole-Earth ice age; rising seas covering all land", "result": "ok", "source": "https://grokipedia.com/page/Permian%E2%80%93Triassic_extinction_event", "note": "Neither boundary is defined by a global glaciation or total flooding."},
+    {"claim": "Context: Paleozoic ended about 252 Ma in the Great Dying, about nine in ten kinds of sea life lost", "result": "ok", "source": "https://grokipedia.com/page/Permian%E2%80%93Triassic_extinction_event", "note": "'about 90% of marine species' (Grokipedia's time-scale page gives about 96%); 'nine in ten' is a fair plain figure."},
+    {"claim": "Context: Mesozoic ended about 66 Ma, the last big dinosaurs died out with about three quarters of all species", "result": "ok", "source": "https://grokipedia.com/page/Cretaceous%E2%80%93Paleogene_extinction_event", "note": "'roughly 76% of Earth's species'; all non-avian dinosaurs lost ('big dinosaurs' rightly leaves room for the birds)."},
+    {"claim": "Context: geologists drew the lines where the fossils change", "result": "ok", "source": "https://en.wikipedia.org/wiki/John_Phillips_(geologist)", "note": "Phillips's 1841 scale ordered strata by their fossils."},
+    {"claim": "Context: the first humans came only about 300,000 years ago", "result": "ok", "source": "https://grokipedia.com/page/Human", "note": "Grokipedia defines a human as a member of Homo sapiens (Jebel Irhoud, about 300,000 years). Optional: 'the first modern humans' would match Q9 and avoid the wider 'early humans' usage."}
+   ]},
+  "977ec2b386": {"verdict": "error",
+   "checks": [
+    {"claim": "Stem: Hutton saw 'no vestige of a beginning'", "result": "ok", "source": "https://en.wikipedia.org/wiki/James_Hutton", "note": "Theory of the Earth (1788)."},
+    {"claim": "Stem: 'no one in his day could give Earth an age in years'", "result": "error", "source": "https://grokipedia.com/page/Age_of_Earth", "note": "In Hutton's day people did give Earth ages in years: Buffon in 1778, from experiments cooling iron spheres, gave about 75,000 years, and Ussher's 4004 BC creation date was widely held. None was right, and none could be measured soundly. Fix: 'and no one in his day knew Earth's age in years.'"},
+    {"claim": "Stem: the time scale starts with Earth's birth", "result": "ok", "source": "https://grokipedia.com/page/Geologic_time_scale", "note": "The Hadean begins at 4,567 Ma."},
+    {"claim": "Key: about 4.6 billion years", "result": "ok", "source": "https://grokipedia.com/page/Age_of_Earth", "note": "4.54 +/- 0.05 billion years; NGSS MS-ESS1-4 uses 'Earth's 4.6-billion-year-old history'. A safe round figure."},
+    {"claim": "Wrong: 13.8 billion (the universe's age)", "result": "ok", "source": "https://grokipedia.com/page/Age_of_Earth", "note": "The universe is about 13.8 billion years old."},
+    {"claim": "Wrong: 100 million; 4.6 million", "result": "ok", "source": "https://grokipedia.com/page/Age_of_Earth", "note": ""},
+    {"claim": "Context: Earth and the solar system formed about 4.6 billion years ago", "result": "ok", "source": "https://en.wikipedia.org/wiki/Age_of_Earth", "note": "Oldest solar-system solids 4.567 billion years."},
+    {"claim": "Context: Kelvin, from how fast Earth cools, gave 20 to 400 million years", "result": "ok", "source": "https://en.wikipedia.org/wiki/Age_of_Earth", "note": "1862: 'between 20 million and 400 million years'."},
+    {"claim": "Context: John Phillips, from how fast mud piles up, about 96 million", "result": "ok", "source": "https://en.wikipedia.org/wiki/Age_of_Earth", "note": "Wikipedia: Phillips calculated 'Earth was about 96 million years old'. His 1860 estimate was the time to deposit the stratified rocks (one source gives 38 to 96 million): a sedimentation estimate, so 'how fast mud piles up' is a fair plain wording."}
+   ]},
+  "5503746286": {"verdict": "ok",
+   "checks": [
+    {"claim": "Arithmetic: one second = about 53,000 years", "result": "ok", "source": "https://grokipedia.com/page/Age_of_Earth", "note": "4.6e9 / 86,400 = 53,241 years a second (52,546 with 4.54 billion)."},
+    {"claim": "Stem: last big dinosaurs die out about twenty minutes before midnight", "result": "ok", "source": "https://grokipedia.com/page/Cretaceous%E2%80%93Paleogene_extinction_event", "note": "66 Ma / 53,241 = 1,240 s = 20.7 minutes (20.9 with 4.54 billion)."},
+    {"claim": "Key: first modern humans a few seconds before midnight; context 'last five or six seconds'", "result": "ok", "source": "https://grokipedia.com/page/Human", "note": "300,000 / 53,241 = 5.6 s (5.7 with 4.54 billion). Wikipedia's Geologic Calendar: modern humans in 'the last two seconds of 11:59 pm' (it uses a younger date): still 'a few seconds'."},
+    {"claim": "Wrong: a few minutes; about an hour; about noon", "result": "ok", "source": "https://en.wikipedia.org/wiki/Geologic_Calendar", "note": "A few minutes = about 6-16 million years ago; an hour = 192 million; noon = 2.3 billion."},
+    {"claim": "Context: human line splits from chimpanzees about two minutes before midnight", "result": "ok", "source": "https://grokipedia.com/page/Human", "note": "Split about 7 Ma (6.5-8): 7e6 / 53,241 = 131 s = 2.2 minutes."},
+    {"claim": "Context: an hour before midnight the dinosaurs were still alive", "result": "ok", "source": "https://grokipedia.com/page/Dinosaur", "note": "One hour = about 192 Ma (Early Jurassic); dinosaurs from about 233 Ma to 66 Ma. 'No person ever saw one' refers to these dinosaurs (birds are avian dinosaurs, but the stem frames 'the big dinosaurs')."},
+    {"claim": "Context: some 66 million years lie between humans and dinosaurs", "result": "ok", "source": "https://grokipedia.com/page/Cretaceous%E2%80%93Paleogene_extinction_event", "note": "66 Ma minus 0.3 Ma = about 65.7 million years."}
+   ]}
+ },
+ "unit_notes": "2 errors, both one-phrase fixes in text a student reads: Q2 context (Smith's map was not the first geological map of a country; Maclure's US map came in 1809: say 'the first detailed geological map of a whole country') and Q8 stem (Buffon gave Earth 75,000 years in 1778: say 'no one in his day knew Earth's age in years'). Keys, wrong choices and the one-day clock arithmetic all check out. Steno's principle: the 1916 translation's 'expresses' reads backwards; the sense used in Q1 (the first-hardened body leaves its print on the other) is the accepted one."}

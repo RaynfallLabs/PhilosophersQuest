@@ -1,0 +1,71 @@
+{"unit": "wegener-and-the-drifting-continents",
+ "questions": {
+  "ce2ad4804d": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem calls Wegener's claim 'a new idea', which leaves 'They have stood in the same places since Earth was young', the view of the day, barely live. The other two old views (rise and sink only; sunken parts) read as new to a 7th grader, so the question holds. The key restates fossils-layers' twice-keyed 'the lands were once joined' (eeebb0bba2, a44c1dd82e), but here as Wegener's claim, which this unit owns.",
+     "fix": "Optional: 'He put before them an idea about Earth's continents that few geologists shared', or replace the permanence choice with the shrinking-Earth view of the day: 'They wrinkled up as a cooling Earth shrank'."}
+   ]},
+  "b89c654cb5": {"verdict": "ok", "issues": []},
+  "89fc4ff50b": {"verdict": "drop",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "It asks only what a name means, so it teaches nothing of what the idea claims or why it mattered (ce2ad4804d already keys the claim). It is answerable from the root: 'pan-' is everyday English (pandemic, panorama, Pan-American), and the stem says the name is made of Greek words. And the shipped geography bank's T2 question on continental-drift-and-plate-tectonics keys the name Pangaea, its card glossing it 'Greek for all Earth', so a player who has met it gets this free.",
+     "fix": "Drop it and fill the slot with a fact of the scope that no question keys. One: 'The shorelines of South America and Africa do not match exactly, and waves and changing seas keep reshaping them. Alfred Wegener said the two continents fit far better along their true edges. Where do those edges lie?' Key: 'Under the sea, where the shallow shelf ends'; wrong: 'Along the mountain tops near each coast', 'At the line the highest tides reach', 'Far inland, where the oldest rock lies' (F8; NGSS MS-ESS2-3 names the shelves). Or key the ridicule the lane_note asks for (F2, F17), set beside the fair mechanism case. Pangaea's meaning can live in ce2ad4804d's context."}
+   ]},
+  "98bac10170": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'worked out how strong those forces really are' signals that Wegener was wrong, which rules out 'just strong enough'; 'so strong they would shatter a continent' is not live. The choice comes down to too weak against too fast, and a student who has only heard that tides lift the sea picks weak.",
+     "fix": "'... worked out the size of those forces in 1924. What did he find?' Replace the shatter choice with 'They pushed the continents toward the poles, not away'."},
+    {"axis": "other", "severity": "medium",
+     "what": "Overlap with plates-at-work's final d8c219c10d: its wrong choices are the tides ('The Moon's pull raising tides in the rock') and Earth's spin ('flinging them toward the equator'), and its context says 'Earth's spin and the Moon's tides are far too weak to shift a plate', which is this key. The lead's ruling gives 'why geologists rejected him (no force he could name)' to this unit, so the question is in its lane, but a player who has met that plates-at-work question gets it free. Not a re-ask (plates-at-work keys the mantle driver), hence medium.",
+     "fix": "plates-at-work is final, so either accept the overlap under the ruling, or move the key to what the case turned on and test the M1 misconception: 'Most geologists of the 1920s turned Wegener's idea down, and Harold Jeffreys, a British geophysicist, led the attack. What was the heart of their case?' Key: 'He could name no force able to move a continent'; wrong: 'He had found no rocks or fossils to back it', 'Measurements showed the continents standing still', 'The continents were too heavy ever to have joined'. The Jeffreys calculation and the 1929 'Newton of drift theory' line stay in the context."}
+   ]},
+  "af69025bd2": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "Asking what the critics said Mesosaurus showed is the lead's allowed angle. But fossils-layers' contexts rebut each lure (23736dfd81: Mesosaurus could not cross an open ocean; eeebb0bba2: floating that far unlikely, and one kind does not arise by itself on separate lands), so a returning player is left with the key. Strictly the question asks the critics' view, which was wrong too, so elimination by truth is not valid; for a new player, 'swam across' is a strong lure, since the stem calls it a swimming reptile.",
+     "fix": "Acceptable. Optional: 'A broad bridge of land once joined the two, then sank' (the bridges were often continent-sized, F10; 'strip' undersells them)."}
+   ]},
+  "142ccf45fc": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'the crest of the ridge in mid-ocean' presumes the student knows there is a ridge; nothing in the stem introduces it. (The submarine lure is safe: Alvin did dive into this rift in 1974, long after Heezen came round, and the stem asks what changed his mind.)",
+     "fix": "'In 1952 she found a deep valley running down the crest of a long mountain ridge in the middle of the ocean floor.'"}
+   ]},
+  "cad64bb0e5": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Times when the Sun was more active' and 'Times when the seawater held more iron' are less live than 'weakened'; the real contest is flipped against weakened (M5), which is the right one, and the context answers it.",
+     "fix": "Acceptable. Optional: 'Times when the lava at the ridge ran hotter' for the Sun choice."}
+   ]},
+  "a34fa6e2b2": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The two stripe questions leak into each other. This stem ('while Earth's magnetic field flips from time to time', beside 'the magnetic stripes') states cad64bb0e5's key, and cad64bb0e5's stem ('long bands run beside the mid-ocean ridges') kills this question's 'Stripes crossing the ridge' lure. 'Stripes that differ from one side to the other' is the bare negation of the key, so with 'moves off on both sides' in the stem, two choices stay live.",
+     "fix": "Drop the flip clause: 'If new sea floor forms along a ridge and moves off on both sides, they said, the magnetic stripes must lie in a telling pattern.' Replace the crossing choice with 'Stripes that grow wider farther from the ridge'. The step from spreading to a mirror image is the Vine-Matthews reasoning and may stay."},
+    {"axis": "other", "severity": "low",
+     "what": "The shipped geography bank's T5 question on continental-drift-and-plate-tectonics gives Vine and Matthews's mirror stripes in its stem and keys spreading: this is its converse at T3. It is in this unit's lane (the lane_note asks for the sea-floor vindication), and it keys the mirror pattern, not sea-floor ages, so T5's ground is untouched.",
+     "fix": "Note only; keep the revision off ages (no 'youngest at the ridge')."}
+   ]},
+  "ce369218c7": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'That the same fossils lie on lands far apart' is an observation, not a part of his idea that could be right or wrong, and af69025bd2's stem says even his critics agreed on it; it is dead. That leaves the movement twice ('once joined', 'still moving') against the one mechanism choice.",
+     "fix": "Replace it with a 'how' claim he got right, so the student must know which part of the mechanism failed: 'That continents are of lighter rock than the sea floor' (F12; plates-at-work keys the same density, so it is knowable)."},
+    {"axis": "fact", "severity": "low",
+     "what": "Context: 'Harry Hess proposed ... so the continents ride along on moving plates'. Hess's 1962 paper came before plate theory (Wilson, McKenzie and Morgan, 1965-68); he had the continents carried along on spreading sea floor.",
+     "fix": "'... spreads out from the mid-ocean ridges, so the continents ride along with the moving sea floor; geologists later called these moving slabs, sea floor and continent together, plates.'"}
+   ]},
+  "cee6ed709f": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Proof of the forces that Wegener proposed' is ruled out by 98bac10170 (Jeffreys showed them far too weak) and by this question's own context; 'A vote taken by the leading geologists' is not live; and the key is the textbook virtue ('new evidence'), so a student who knows only that science follows evidence picks it without the sea-floor story.",
+     "fix": "Make every choice a specific thing that might have changed minds: 'Maps and magnetic readings of the sea floor' (key), 'Satellite measurements of the continents moving' (real, but from the 1980s; plates-at-work's GPS question makes it tempting), 'Proof that Earth is slowly swelling in size' (Heezen's idea, F31), 'Rocks that astronauts brought back from the Moon' (1969, the right years, no bearing)."},
+    {"axis": "stance", "severity": "low",
+     "what": "Wegener dead before the verdict, set beside Jeffreys, who 'lived until 1989 and never accepted it', tells the stubborn-critic story in the stem. The context gives Jeffreys his due ('right that Wegener's forces were far too weak'), so the item balances, but the stem alone leans.",
+     "fix": "Optional: 'Harold Jeffreys, a leading critic, never accepted it.' Or keep, since the line also shows that no one man's verdict decided it."}
+   ]}
+ },
+ "unit_notes": "Ownership under the lead's 2026-11-26 ruling: nothing keys the fossil or coal evidence (b89c654cb5 uses the reptile, the matching mountain rock and the buried coal only as wrong choices; af69025bd2 asks what the critics said Mesosaurus showed, which the ruling allows), and nothing keys sea-floor ages (a34fa6e2b2 keys the mirror pattern; keep it so in revision). Cross-unit: 98bac10170 collides with plates-at-work's final d8c219c10d (spin and tides too weak, in its lures and context); ce2ad4804d restates fossils-layers' 'once joined' as Wegener's claim, owned here; af69025bd2's lures are each rebutted in fossils-layers' contexts. No overlap with reading-deep-time. Against the shipped geography bank (continental-drift-and-plate-tectonics): its T2 keys the name Pangaea and glosses it, one more reason to drop 89fc4ff50b; its T5 is the converse of a34fa6e2b2 (noted). Scope: the fit, the claim, the missing force, the critics' land bridges, Tharp, the stripes, the mirror test, the mechanism he got wrong and what changed minds are all here. With 89fc4ff50b dropped the unit has 9 of its 10; the ridicule the lane_note asks to key appears only in ce2ad4804d's context ('an outsider'), so the freed slot could take it or the shelf fit. Within the unit: cad64bb0e5 and a34fa6e2b2 leak into each other (fixed at a34fa6e2b2); 98bac10170 kills cee6ed709f's forces lure; af69025bd2's stem kills ce369218c7's fossil lure; cee6ed709f's key sums up 142ccf45fc, cad64bb0e5 and a34fa6e2b2, which is right for the story's close once its lures are specific. Framing: the critics are fairly told. The missing force is 'the fair heart of the case', with Wegener's own admission (98bac10170); the land bridges are their reasoned explanation, with Wegener's answer (af69025bd2); 'they were right' that the sea floor is too firm to plough (ce369218c7); Jeffreys is credited in cee6ed709f's context. Heezen's doubt and 'girl talk' are Tharp's own account, and he changes his mind on evidence. Nothing preaches; only cee6ed709f's stem leans a little. Lanes: Frankfurt, Greenland and the Atlantic set scenes; no key is a place; no arithmetic."}

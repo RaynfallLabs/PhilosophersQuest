@@ -1,0 +1,219 @@
+{
+ "unit": "redis-jars-and-life-from-life",
+ "questions": [
+  {
+   "tier": 3,
+   "topic": "redis-jars-and-life-from-life",
+   "question": "Jan Baptist van Helmont, a Flemish doctor and chemist, wrote a recipe for making mice: a dirty shirt and some grains of wheat, left together in a pot for 21 days. Long before him, Aristotle had taught that some insects and eels arise from rotting matter and mud. What is the old idea behind both called?",
+   "answer": "Spontaneous generation",
+   "choices": [
+    "Spontaneous generation",
+    "Biogenesis",
+    "Complete metamorphosis",
+    "Decomposition"
+   ],
+   "context": "Spontaneous generation is the old idea that living things can arise from lifeless matter with no parents, and it was taught from Aristotle's day for some two thousand years. Biogenesis is the opposite idea, that life comes only from life, while decomposition is the rotting of dead matter and complete metamorphosis is a young insect's change into its adult form.",
+   "facts": [
+    "F1",
+    "F2",
+    "F24"
+   ],
+   "grade_note": "Seventh-grade life science names spontaneous generation, the idea Redi tested, and sets it against biogenesis, the rule that life comes only from life."
+  },
+  {
+   "tier": 3,
+   "topic": "redis-jars-and-life-from-life",
+   "question": "Francesco Redi, a doctor at the Medici court in Florence, watched meat, fish and dead snakes rot one summer. Each time, flies settled on the flesh before any maggots showed. What did he begin to suspect about the maggots?",
+   "answer": "They hatch from eggs that flies leave behind",
+   "choices": [
+    "They hatch from eggs that flies leave behind",
+    "They grow from the rot that also draws the flies",
+    "They come from seeds of life carried on the summer air",
+    "They come from small worms living inside animals"
+   ],
+   "context": "Redi had seen flies of the same kinds settle on the meat before every crop of maggots, and later he watched the maggots turn into flies of those same kinds. He also found eggs on meat and fish like the clusters flies leave there, and he wrote that only an experiment could settle the doubt. A maggot is a young fly, hatched from an egg.",
+   "facts": [
+    "F4",
+    "F6",
+    "F7",
+    "F16"
+   ],
+   "grade_note": "Seventh grade tells Redi's work as a hypothesis drawn from observation, that maggots come from flies' eggs, and then put to the test."
+  },
+  {
+   "tier": 3,
+   "topic": "redis-jars-and-life-from-life",
+   "question": "Francesco Redi, an Italian doctor, put a snake, some river fish, small eels from the Arno and a slice of veal into four wide-mouthed flasks one July, and tied paper tightly over their mouths. He filled four more flasks the same way and left them open. He watched all eight for months. What did he find?",
+   "answer": "Maggots in the open flasks, none in the sealed ones",
+   "choices": [
+    "Maggots in the open flasks, none in the sealed ones",
+    "Maggots in the open flasks, a few in the sealed ones",
+    "Maggots in all eight flasks, open and sealed alike",
+    "Maggots in none of the flasks, open or sealed"
+   ],
+   "context": "Before long the open flasks swarmed with maggots, and flies came and went in them at will. In the sealed flasks Redi never saw a maggot, though many months passed; now and then one turned up outside, at the lip of a neck, as if trying to get in. He published the work in 1668 in his book Experiments on the Generation of Insects.",
+   "facts": [
+    "F5",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "The open and sealed flasks are the core result of Redi's experiment as seventh-grade science teaches it."
+  },
+  {
+   "tier": 3,
+   "topic": "redis-jars-and-life-from-life",
+   "question": "Francesco Redi sealed meat and fish in flasks with paper and string, and not one maggot appeared in them, while the same meats in open flasks swarmed with maggots. He expected an objection to the sealed flasks, and he planned his next experiment to answer it. What was the objection?",
+   "answer": "The seals had kept fresh air from the meat",
+   "choices": [
+    "The seals had kept fresh air from the meat",
+    "The seals had kept the meat from rotting",
+    "The seals had trapped too much heat inside",
+    "The seals had kept the sunlight off the meat"
+   ],
+   "context": "Paper and string shut out the air as well as the flies, so a critic could say that meat needs fresh air to breed maggots, and Redi's next test let air in but kept the flies out. The sealed meat did not simply stay fresh either: the fish broke down into a cloudy liquid and the veal slowly dried hard, yet no maggot appeared.",
+   "facts": [
+    "F9",
+    "F10",
+    "F12",
+    "F23"
+   ],
+   "grade_note": "Seventh graders learn why Redi added a gauze-covered jar: the sealed jar shut out air as well as flies, an objection a good test must answer."
+  },
+  {
+   "tier": 3,
+   "topic": "redis-jars-and-life-from-life",
+   "question": "Francesco Redi next set meat and fish in a large vessel and covered its mouth with very fine gauze. Flies soon buzzed all around it. Where did maggots appear?",
+   "answer": "On the gauze, but never on the meat",
+   "choices": [
+    "On the gauze, but never on the meat",
+    "On the meat, as in the open flasks",
+    "On neither the gauze nor the meat",
+    "On the meat, but only after many weeks"
+   ],
+   "context": "Flies landed on the gauze and left maggots there, and a few wriggled into its tiny holes before Redi picked them off, but no maggot ever appeared on the meat or fish. Air reached the meat and flies did not, so the maggots came from the flies, not from the meat or the air.",
+   "facts": [
+    "F12",
+    "F13",
+    "F16"
+   ],
+   "grade_note": "The gauze jar's result, maggots on the gauze but none on the meat, is the part of Redi's experiment seventh grade asks students to explain."
+  },
+  {
+   "tier": 3,
+   "topic": "redis-jars-and-life-from-life",
+   "question": "Francesco Redi sealed a snake, fish, eels and veal in four flasks. At the same time he put the same meats into four more flasks and left those open, so that the only difference was the covering. What did the open flasks add to his test?",
+   "answer": "A check that the meat could breed maggots",
+   "choices": [
+    "A check that the meat could breed maggots",
+    "A spare set in case a sealed flask broke",
+    "A way to draw the flies away from the sealed flasks",
+    "A group in which nothing at all would happen"
+   ],
+   "context": "The open flasks bred maggots in the same weeks, with the same meats, so the empty sealed flasks meant something. Without them a critic could say that this meat, or that summer, would have bred no maggots anyway. Many textbooks call a comparison group like Redi's open flasks the control.",
+   "facts": [
+    "F8",
+    "F9",
+    "F11"
+   ],
+   "grade_note": "Seventh-grade experiment design (G7.M1) teaches the comparison group, and Redi's open flasks are the classic example."
+  },
+  {
+   "tier": 3,
+   "topic": "redis-jars-and-life-from-life",
+   "question": "Athanasius Kircher, a German priest and scholar, wrote that dead flies soaked in honey water and warmed over ashes give rise to tiny worms that grow wings and become new flies. Francesco Redi wrote that the honey water did only one thing. What was it?",
+   "answer": "It drew living flies to the dead ones",
+   "choices": [
+    "It drew living flies to the dead ones",
+    "It made the dead flies rot faster",
+    "It turned the dead flies into tiny worms",
+    "It fed tiny worms hidden in the dead flies"
+   ],
+   "context": "Redi thought the sweet water only invited living flies, which left their young on the dead bodies; from those came maggots, and from the maggots flies. In his own test, dead flies shut in a sealed vessel bred nothing, while maggots appeared among dead flies in an open one.",
+   "facts": [
+    "F3",
+    "F14"
+   ],
+   "grade_note": "Seventh grade asks why the old spontaneous-generation recipes seemed to work; Kircher's dead flies are Redi's own example from his book."
+  },
+  {
+   "tier": 3,
+   "topic": "redis-jars-and-life-from-life",
+   "question": "Many naturalists of Francesco Redi's day accepted what his flasks showed. Then microscopes revealed tiny living things swarming in drops of water and broth, and some naturalists held that these arose by themselves. Why did Redi's flasks not settle the matter for them?",
+   "answer": "He had watched only for maggots and flies",
+   "choices": [
+    "He had watched only for maggots and flies",
+    "He had kept his flasks for only a few days",
+    "He had been shown wrong by later naturalists",
+    "He had used meat, which tiny life cannot feed on"
+   ],
+   "context": "Redi watched for maggots and flies, which anyone can see, so his flasks said nothing about living things only a microscope shows. His results stood, and he had kept his sealed flasks for months. The question of tiny life stayed open for nearly two hundred years, until Louis Pasteur's flasks in the 1860s.",
+   "facts": [
+    "F9",
+    "F10",
+    "F17",
+    "F18",
+    "F21",
+    "F23"
+   ],
+   "grade_note": "Seventh grade teaches that Redi's work did not end the debate, because the microscope's tiny organisms reopened it."
+  },
+  {
+   "tier": 3,
+   "topic": "redis-jars-and-life-from-life",
+   "question": "John Needham, an English priest who worked with microscopes, boiled mutton broth briefly in the 1740s and sealed it in flasks. A few days later the broth swarmed with tiny living things. Why did he take this as strong evidence that life can arise from lifeless matter?",
+   "answer": "Because boiling was thought to kill all life in it",
+   "choices": [
+    "Because boiling was thought to kill all life in it",
+    "Because the longer he boiled it, the more life grew",
+    "Because only boiled broth ever grew such life",
+    "Because the tiny life grew faster than any parents could breed"
+   ],
+   "context": "Needham thought the boil had killed every living thing in the broth, so the tiny life must have arisen there by a life force of its own. Lazzaro Spallanzani, an Italian priest, later boiled broths for an hour or more and sealed them tight, and nothing grew; Needham's short boil had most likely left some tiny life alive.",
+   "facts": [
+    "F19",
+    "F20"
+   ],
+   "grade_note": "Seventh-grade accounts carry the story from Redi's flasks to the broth experiments of Needham and Spallanzani, the later doubters before Pasteur."
+  }
+ ],
+ "revised": {
+  "7d02cf0058": {
+   "old_hash": "fc6f2ddcaa",
+   "why": "Judge (high, tell): all three wrong choices were forms of spontaneous generation, which a modern student rejects on sight, and the question asked the same fact as the Kircher question (an old recipe's food drew in living animals). Re-aimed, per the judge's fix, at the idea itself, which no stem in the unit names though it is the scope's first line: the recipe and Aristotle's insects and eels set the scene, and the student names the idea. Lures: 'Biogenesis' (the opposite idea, taught beside it), 'Complete metamorphosis' (a change of form, as wheat into mice seems to be) and 'Decomposition' (the rotting the stem names). The judge's 'Fermentation' was not used, since van Helmont did credit a ferment-like vital force; new fact F24. The term is no longer used in 61e3234197's context, so no other question hands it over."
+  },
+  "0cf0e750b5": {
+   "old_hash": "80d5f6bf48",
+   "why": "Judge (high, tell): two fly clues in the stem (flies settled first, and the maggots later turned into flies of the same kinds) chained to the key. The second clue is cut from the stem and kept in the context, per the judge's fix, so the stem gives only the flies settling first, which the rot lure explains as well. The juices lure repeated the rot lure; replaced with 'They come from seeds of life carried on the summer air', a wrong idea that reaches outside the meat as the key does. Key unchanged."
+  },
+  "dd5bdf54d9": {
+   "old_hash": "dd5bdf54d9",
+   "why": "Judge (medium, tell): 'Maggots in the sealed flasks, none in the open ones' was not live (no theory predicts it). Replaced with 'Maggots in the open flasks, a few in the sealed ones', the leaky-seal result, per the judge's fix; the context already says the stray maggot Redi saw was outside the neck, not inside a flask. Stem, key and context unchanged, so the hash is the same."
+  },
+  "61e3234197": {
+   "old_hash": "61e3234197",
+   "why": "Fact-check error (context): 'The meat had not dried out' was false, since the sealed veal dried hard over many weeks. The context now carries the lead's sentence, 'The sealed meat did not simply stay fresh either: the fish broke down into a cloudy liquid and the veal slowly dried hard, yet no maggot appeared' (F23; facts.md F10 and M6 corrected by an appended line). With the veal's drying now in the context, the lure 'The seals had let the meat dry out too much' sat too close to a true effect (the fact-checker's note), so it is replaced with 'The seals had kept the meat from rotting', which the same sentence answers. 'A believer in spontaneous generation' became 'a critic', so this context no longer names the idea that fc6f2ddcaa now asks. Stem and key unchanged, so the hash is the same."
+  },
+  "1dda652874": {
+   "old_hash": "cf4c2577aa",
+   "why": "Judge (low, tell): the opening 'To let air reach his meat while keeping flies away' was the key of 61e3234197 (the sealed flasks shut out the air), so a player meeting this question first was handed that one. The opening is cut, per the judge's fix. Fact-check note: Redi wrote that the flies buzzed round the vessel and that the smell drew the maggots, so 'drawn by the smell' becomes 'Flies soon buzzed all around it'. Key, choices and context unchanged."
+  },
+  "e694b5cc8d": {
+   "old_hash": "e694b5cc8d",
+   "why": "Judge (medium, tell): 'A second run of the very same sealed test' was ruled out by the stem, which says these flasks were left open. Replaced with 'A way to draw the flies away from the sealed flasks', per the judge's fix. The key still holds whichever jar a textbook calls the control, and no choice leans on the word. Stem, key and context unchanged, so the hash is the same."
+  },
+  "33c3d52495": {
+   "old_hash": "f58e287a4e",
+   "why": "Judge (medium, tell): 'It brought the dead flies back to life' was not live, and 'did only one thing' signals a humble role. Replaced with a second humble role, 'It made the dead flies rot faster' (the judge's 'kept the dead flies soft and moist' was not used, since soaking really does wet them, which would make that choice partly true). Judge (low, voice): 'famous' cut. The overlap with fc6f2ddcaa is cleared by that question's re-aim. Key and context unchanged."
+  },
+  "3cc4ead7b4": {
+   "old_hash": "0029ce1bed",
+   "why": "Judge (medium, tell): the stem's 'far too small for the eye' set up the key's 'big enough to see'. Per the judge's fix the stem now says only 'tiny living things', and the choices take one shape ('He had ...'), key 'He had watched only for maggots and flies'. The duration lure says 'a few days', which is plainly false (the sealed flasks ran for months, the veal 'many and many weeks', F23). Self-check: the old opening, 'convinced many naturalists that maggots come only from flies', printed 80d5f6bf48's key and would have echoed this key's 'maggots'; it is now 'Many naturalists of Francesco Redi's day accepted what his flasks showed'. Pasteur is named only in passing, in the context."
+  },
+  "2edc116739": {
+   "old_hash": "2edc116739",
+   "why": "Judge (medium, tell): 'Because only mutton broth ever grew such life' was weak (no such test, no other broth in the stem), so the key stood out. Replaced with 'Because the tiny life grew faster than any parents could breed', per the judge's fix, a reason a 7th grader can believe and not Needham's. Stem, key and context unchanged, so the hash is the same."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

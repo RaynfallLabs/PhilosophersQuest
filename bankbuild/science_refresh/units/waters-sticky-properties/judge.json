@@ -1,0 +1,35 @@
+{"unit": "waters-sticky-properties",
+ "questions": {
+  "5f695810b9": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The two-by-two grid gives itself away. Two choices cannot both hold: sharing that leans toward an atom whose end then turns positive ('Toward the oxygen, leaving its end slightly positive' and 'Toward the hydrogens, leaving their ends slightly positive'). Both are dead for any student who knows electrons are negative, as inside-the-atom teaches, which leaves a coin toss on direction. The stem also asks two questions at once ('Which way ... and what charge').",
+     "fix": "Give the lean and ask its result, an apply step like inside-the-atom's alpha-particle charge: '...The oxygen pulls the shared electrons nearer to itself than the hydrogens do. What does that leave on the molecule?' Key: 'A slightly negative oxygen end and slightly positive hydrogen ends'. Others: 'A slightly positive oxygen end and slightly negative hydrogen ends', 'Slightly negative ends and a slightly positive middle', 'No charge anywhere, as the whole molecule is neutral' (the honest misconception)."}]},
+  "6dc233b500": {"verdict": "ok", "issues": []},
+  "33eed5d30e": {"verdict": "revise", "issues": [
+    {"axis": "fact", "severity": "medium",
+     "what": "'where loose things float instead of falling' states the very misconception that the bank's gravity-and-orbits unit corrects: there the pen floats because 'She, the pen and the station all fall together'. A player who has met that card sees the bank contradict itself.",
+     "fix": "'Aboard the International Space Station, where loose things float about the cabin, an astronaut lets go of a blob of water.'"},
+    {"axis": "tell", "severity": "low",
+     "what": "'The cold of space, freezing its outside into a round shell' is weak: the blob is let go inside a warm cabin, and the stem says nothing of ice.",
+     "fix": "Replace it with 'Static electricity on its surface, drawing it in on every side'."}]},
+  "f48fd48205": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Glass soaks water up into itself, but it cannot soak up a metal' is not live, since every drinking glass shows that glass holds water without soaking it in. 'Air in the tube presses down harder on mercury than on water' is weak. And the key is the only choice that weighs two pulls against each other, in two clauses with a semicolon, so it stands out by its shape.",
+     "fix": "Make the choices parallel. Key: 'Water clings to glass more than to itself; mercury clings to itself more'. Others: 'Mercury clings to glass more than to itself; water clings to itself more' (the cohesion-adhesion swap, M3), 'Water is light enough for the glass to lift; mercury is too heavy' (M4), 'Air presses harder on the dense mercury than on the water'."}]},
+  "d539afd044": {"verdict": "ok", "issues": []},
+  "3e56df99a0": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Its molecules are frozen into a thin sheet, like the first ice of winter' is not live on a still pond where an insect is out walking, and 'held in a thin film of dust' is weak. Only the key and the air-pressure choice stand.",
+     "fix": "Replace the frozen choice with 'Its molecules are pulled upward by the air just above them' (the mirror of the true reason), and the dust choice with 'Its molecules are packed in tight rows, like the bricks of a wall'."}]},
+  "cfa3c7256c": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Split the surface molecules into hydrogen and oxygen' is not live: no 8th grader expects a drop of soap to split water. 'Coated the clip in a film heavy enough to drag it down' is ruled out by the stem's own 'at the far side of the glass' and 'at once'. That leaves the key against 'slippery'.",
+     "fix": "Replace the split choice with 'Made the water less dense, too thin to hold up the steel'. The stem's density figure makes it tempting, and the T2 density unit makes it an honest confusion. Then either drop 'at the far side of the glass', so that the coating choice stays live, or replace the coating choice with 'Added its own weight to the surface, pressing the clip under'."}]},
+  "8f2d3b7c4d": {"verdict": "ok", "issues": []},
+  "9d76c4eba8": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'They break apart into atoms, which need more room' is weak; the T2 particles-in-motion unit already shows that a change of state does not split the molecules. facts.md M7 names the wrong choice that was meant to be used (air filling the spaces between the molecules), but the draft does not use it.",
+     "fix": "Replace it with 'They let air fill the spaces between them' (M7)."}]}
+ },
+ "unit_notes": "The scope is fully covered, each part by its own question: the polar molecule (Q1), the hydrogen bond as cohesion (Q2), the round drop (Q3), adhesion against cohesion in a narrow tube (Q4), Jurin's narrower-is-higher (Q5), surface tension's cause (Q6), soap breaking it (Q7), the cohesion-tension climb in a tree (Q8) and ice's open pattern (Q9). The grade fit is right (TEKS 8.6C, mechanisms with the classic demonstrations). Lanes are kept: the water strider only sets the scene, and the key is the water's physics; the garden tap, the glass of water and the liquid soap are not cooking. Overlaps with the lower units are deeper, not re-asks: Q9 takes ice as less dense (density-float-or-sink, T2) and water expanding (mixtures-and-solutions, T1) as given in its stem and asks the molecular reason; Q8 never names or re-asks the xylem (roots-stems-leaves-and-flowers, T1). Q3's stem clashes with gravity-and-orbits (see above). Q4 and Q5 are both on capillary rise but key different facts (wetting against width); Q3, Q6 and Q7 all turn on the surface's pull but key different facts. Q2's key follows from Q1's in one step (opposite charges attract), which is fine as a chain of mechanism, though a player who meets Q1 first has Q2 nearly in hand. The five revisions are all about the wrong choices or one phrase; no question needs a new fact."
+}
