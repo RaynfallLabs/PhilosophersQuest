@@ -8,6 +8,9 @@ style_verdict: WONDER-DRIVEN with HONEST contested-topic framing
 
 # Subject: Science
 
+> **SUPERSEDED 2026-11-25.** The science bank was rebuilt grade-aligned: 1,000 questions, 200 a tier, tier = school grade (T1 5th ... T5 9th), in one-tier units from a curriculum map. The design now lives in `bankbuild/science_refresh/` (config.json, units.json, README.md) and `bankbuild/PIPELINE.md` §17. The stance still comes from `bankbuild/subjects/science.json` "framing", told at T4-T5 only. What follows is the old story-ladder design, kept as history.
+
+
 The science bank teaches REAL data, REAL history, REAL names + dates — and treats contested topics with the **honesty the establishment has too often failed to provide**. Open scientific inquiry + scientific dissent are foundational virtues, not deviations. The Western scientific tradition is celebrated. The cult-like "trust the science" framing is named and rejected.
 
 In-game, the player answers science questions when casting magic / using wands (chain mode).

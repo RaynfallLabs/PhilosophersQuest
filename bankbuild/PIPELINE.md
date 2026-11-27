@@ -247,11 +247,13 @@ Ten subjects (each mapped to an in-game action → quiz mode; see CLAUDE.md's ta
 
 | Subject | KIND | Controlling voice (memory) | De-tell rubric (§9.4) | Ladder-shape fit | Stance load |
 |---|---|---|---|---|---|
-| **science** (magic/wands) | knowledge + WONDER | Discovery — reveal *how we know* / the mechanism (`feedback-science-voice`) | KNOWLEDGE (deducing from the stem IS the tell) | **HIGH** — geography's twin: concept/theme ladders deepened across cases + single-discovery/scientist ladders | **HEAVY** — dissent honored, institutional capture nameable, vaccine SCRUTINIZED not celebrated (RFK/Bhattacharya/GBD given the moral weight); bake into config `framing` |
+| **science** (magic/wands) — **REBUILT 2026-11-25 grade-aligned (§17); this row is history** | knowledge + WONDER | Discovery — reveal *how we know* / the mechanism (`feedback-science-voice`) | KNOWLEDGE (deducing from the stem IS the tell) | **HIGH** — geography's twin: concept/theme ladders deepened across cases + single-discovery/scientist ladders | **HEAVY** — dissent honored, institutional capture nameable, vaccine SCRUTINIZED not celebrated (RFK/Bhattacharya/GBD given the moral weight); bake into config `framing` |
 | **theology** (praying) | WONDER, story-led | Wonder→theology, TELL THE STORY (`feedback-theology-voice`) | KNOWLEDGE/story (deduce = tell, but story-led openings) | HIGH — story-led figure/place/myth ladders | **DELICATE** — STRICTLY SYMMETRIC four traditions (Christian ~30 / Arthurian+medieval ~20 / Greek ~25 / Norse ~25); Brandon is NOT Christian → all on one plane, no Christian-favoring language, no author-attribution. Geography's respectful sacred-site handling (Mecca/Jerusalem/Kailash) is the warm template |
 | **economics** (lockpicking) | REASONING + stance | Bastiat seen/unseen · the incentive · the knowledge-problem (`feedback-economics-voice`, `feedback-surface-good-critique`) | REASONING (a careful kid reasoning to the answer IS the skill, like philosophy — NOT a telegraph) | MED — a reasoning MOVE per rung, not a fact | **HEAVY** — Austrian-correct, Fed-critical, communism 65–100M, Bitcoin great; teach RECOGNITION of moves, not policy verdicts |
 | **grammar** (scrolls/spellbooks) | snappy-rote WITH a voice | Comma-Saves-Lives — punchline via misuse ("Let's eat, Grandma!") (`feedback-grammar-voice`) | different (short punchline items; NOT deep ladders) | LOW–MED — vocab-teaching T1–T3, grade-10; not a topic-ladder subject | light |
 | **math** (combat/chain, ~16 s) | snappy-ROTE EXCEPTION | none — Wonder Pattern EXEMPT, anti-rote gate EXEMPT | different (short factual) | **LOW** — not topic-ladders at all | none |
+
+**Science was built next, and then rebuilt grade-aligned (§17, 2026-11-25); §17 is now the template for the other knowledge banks.** The logic below is the original recommendation.
 
 **Which next — the recommendation logic:** favor **biggest flagship × closest-template-reuse while the machinery is fresh**. That points to **science** — it mirrors geography almost exactly (knowledge+wonder, two ladder shapes, Grokipedia-first, knowledge-kind de-tell, deepen-conditional), and its real stance content makes it the clean next test of "bake the stance into config, not only the audit" (§12.4). Then **theology** (do it while geography's symmetric sacred-site handling is warm) or **economics** (pairs with philosophy; reasoning-kind de-tell). **Save math + grammar for LAST** — they are the snappy-rote exceptions the topic-ladder pipeline fits WORST; don't force the wonder/ladder machinery on them, adapt to short punchy items instead.
 
@@ -283,3 +285,54 @@ Added 2026-10-03 after a playtest hit philosophy T1 "Anselm wax tablets" with ze
 **Subject scope:** every ladder subject. Grammar loses its exemption: it needs its `topic` restamped from `bankbuild/grammar/ladders/`, then rule cards.
 
 **Math (changed 2026-10-04):** math is still not a topic-ladder subject and is still exempt from the ladder-blurb pipeline above, but it is no longer blurb-less. Every math question carries a skill-class `topic` (27 classes, derived from its one-line `context` tip by `tools/balance/math_topics.py`), and each class has one short **method card** in `data/question_contexts/math.json`: what the skill is, the mental trick, one worked example. Cards are ~60-150 words, not the 200-400-word ladder blurb. The leak rule is adapted: a card must not contain the exact sum of any question in its own class (worked examples use numbers outside the bank's range). `tests/test_math_contexts.py` enforces topic coverage, card coverage, length and the leak check. Adding a new math generator means adding a rule to `TOPIC_RULES` (an unmatched tip is a hard error) and, for a new class, a card.
+
+## §17 Grade-aligned builds (the science refresh, 2026-11-25) — the template for the knowledge banks
+
+**Why.** Brandon, 2026-11-16: "Tier 1: 5th grade knowledge, basic facts every kid should know, almost by memory. Tier 2: 6th grade. Tier 3: 7th grade. Tier 4: 8th grade. Tier 5: 9th grade." The story-ladder banks (§3-§12) tell one story from T1 to T5. So a T1 question is the first rung of an advanced story, and every tier feels the same (`BANK_GRADE_LEVEL_AUDIT_2026_11_16.md`, root). On 2026-11-25 he added: subject matter and clarity are the tier test, and length is information only. Science was rebuilt first, as **1,000 questions, exactly 200 a tier**, replacing 3,503. The old bank and cards are archived in `bankbuild/science/_pre_refresh_backup/`. The other knowledge banks are NOT started; ask Brandon before starting one.
+
+**Shape: units, not ladders.**
+- A grade-by-grade curriculum map (`bankbuild/science_refresh/curriculum_map.json`) is drawn from the state and national standards (TEKS 2021, the Core Knowledge Sequence, with NGSS as the cross-check).
+- One-tier units of 8-11 questions, each naming its grade's line in the map (`units.json`: id, Title Case title, tier, strand, map lines, scope, framing note, the old-bank topics it may quarry).
+- Strand keep-targets per tier set the mix. For science these are physical / life / earth / method, with method rising 10 → 45 from T1 to T5.
+- A topic id is a unit id; a unit lives in one tier only.
+- **Cross-tier rule:** a higher tier goes a grade deeper and never re-asks a lower tier's fact. The lead writes who-owns-what rulings into `lead_notes.md` before each research brief. Each brief lists the lower-tier finals' keyed facts (grep `units/*/final.json`).
+- **Lanes:**
+  - named places → geography;
+  - animal biology for its own sake → animal;
+  - the kitchen → cooking;
+  - arithmetic beyond easy-in-head → maths;
+  - politics and court history → history (as setting only).
+- **Stance** (moral_vision §3.10, the subject config `framing`) only at T4-T5, in units tagged for it, built LAST. Every stance brief carries the "present, never preach / attribute / steel-man / banned words / one answer defensible on the record" block.
+
+**The per-unit pipeline** (`bankbuild/science_refresh/README.md`; one spec per step in `specs/`):
+1. research+author;
+2. mechanical gates (`gates.py`);
+3. adversarial judge (grade fit, knowledge tells, clarity, overlaps, lanes);
+4. web fact-check;
+5. ONE revision with a self-check;
+6. a fresh re-check of every changed question;
+7. `finalize` (drops what still fails);
+8. a teaching card per unit (§16, batched as card packets);
+9. a cold reader;
+10. `cards save`.
+
+Each step leaves its file, so a wall costs only the step in flight.
+- **The lead's scheduler:** `status.py` shows units by step and records launches and completions. At most 3 Opus agents at once. Fill free slots in priority order: reader > card > recheck > revise > judge > factcheck > research. Batch up to 3 units per agent, fewer at the tail. Late in the build the remaining research is the critical path; give it a slot rather than letting a single-unit revise wait for company.
+- **The lead's exact fixes:** when the re-checker or the card writer gives an exact one-phrase fix, the lead applies it to `final.json` rather than letting the question drop. For a stem change, re-hash it and rename the hash in `revised`/`added`, `recheck.json`, the card packet and `teaches`, and log it in `lead_edits`. Fixes that need more than a phrase are allowed to drop.
+- **A card the two-distractor rule blocks** from teaching a closed set (the planets) gets a named, reasoned exception in `bankbuild/cards/gate.py` (`MAY_NAME`). Never loosen the rule.
+- **Measured:** about 0.7M tokens a unit with batching; 93-96% of drafted questions kept. Each tier writes about 10% over its 200, and the pick keeps the best 200.
+
+**The whole-bank finish:**
+1. The tone audit and the moral audit of the stance units.
+2. The pick of 200 a tier against the strand targets (`pick.json` lists the drops with a reason).
+3. `py -m bankbuild.science_refresh.build_bank --write`. It refuses while a unit is unfinished, archives the old bank once, and writes the questions and cards (`teaches` trimmed to the kept questions).
+4. The sweep:
+   - unit titles in `bankbuild/cards/topic_titles.json`;
+   - the subject's entries in `data/question_twins.json`;
+   - the old bank's lines in the singular-they allow list;
+   - `UNTAUGHT_BASELINE`;
+   - the anti-rote gate: T1-T2 of a grade-aligned bank are exempt (`GRADE_ALIGNED_LOW_TIERS` in `tools/quizgen/deterministic/anti_rote.py`, and moral_vision §6);
+   - a structure test (`tests/test_science_grade_bank.py`: 200 a tier, one unit one tier, a map line of the unit's own grade, a card and a title for every topic, old saves safe).
+5. Old saves need no migration:
+   - the Lore Codex skips topics with no card;
+   - run mastery re-checks against the bank as it is now.

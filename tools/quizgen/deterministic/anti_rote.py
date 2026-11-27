@@ -9,7 +9,9 @@ the patterns documented in the spec exactly match the list below.
 
 Math and grammar are exempted (their action mapping in the game is
 explicitly snappy/rote — combat and scroll-reading need immediate
-recall).
+recall). So are T1-T2 of a grade-aligned bank (science, from the
+2026-11-25 refresh): tier is school grade, and 5th- and 6th-grade basics
+are that tier's subject matter (Brandon, 2026-11-16 and 11-25).
 """
 from __future__ import annotations
 
@@ -49,11 +51,19 @@ ANTI_ROTE_PATTERN_SOURCES: list[str] = [src for src, _ in _PATTERN_DEFS]
 
 EXEMPT_SUBJECTS = frozenset({"math", "grammar"})
 
+# Grade-aligned banks: tier = school grade, so their low tiers ask plain
+# basics on purpose. A bank joins when it is rebuilt to the grade curve.
+GRADE_ALIGNED_LOW_TIERS: dict[str, frozenset[int]] = {
+    "science": frozenset({1, 2}),
+}
+
 
 def validate_anti_rote(q: Question, subject: str | None = None) -> GateResult:
     """Flag question prompts that match a rote-definition pattern.
 
-    `subject` is optional. If it's "math" or "grammar", the gate returns NA.
+    `subject` is optional. If it's "math" or "grammar", or the question is a
+    low tier of a grade-aligned bank (GRADE_ALIGNED_LOW_TIERS), the gate
+    returns NA.
     Otherwise the question text is checked against every pattern; on the
     first match the gate fails and names the pattern.
     """
@@ -62,6 +72,12 @@ def validate_anti_rote(q: Question, subject: str | None = None) -> GateResult:
             gate="anti_rote",
             status=GateStatus.NA,
             detail=f"Subject {subject!r} is exempt from anti-rote gate.",
+        )
+    if q.get("tier") in GRADE_ALIGNED_LOW_TIERS.get(subject or "", ()):
+        return GateResult(
+            gate="anti_rote",
+            status=GateStatus.NA,
+            detail=f"T{q.get('tier')} {subject} asks its grade's basics; exempt.",
         )
 
     question_text = q.get("question", "")

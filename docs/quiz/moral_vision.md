@@ -171,7 +171,7 @@ Hard topics are *welcome* — war, religion, suffering, ideology, death, race. T
   ^Define\b                                                             # straight definition request
   ```
 
-  Math and grammar are exempted from this gate. *Reframe example:* "Who wrote *Hamlet*?" → "Shakespeare wrote *Hamlet* around 1600. What feature distinguishes it from his earlier history plays?"
+  Math and grammar are exempted from this gate. So are T1-T2 of a grade-aligned bank (science, from the 2026-11-25 refresh): tier is school grade, and the 5th- and 6th-grade basics are those tiers' subject matter (Brandon, 2026-11-16 and 11-25). *Reframe example:* "Who wrote *Hamlet*?" → "Shakespeare wrote *Hamlet* around 1600. What feature distinguishes it from his earlier history plays?"
 - **Length-leaks-the-answer.** No choice may differ from the mean choice length by more than ±15%. Enforced deterministically.
 - **Strawman distractors.** Every wrong choice should be a real position someone has actually held or a real mistake someone might actually make.
 - **Two-questions-in-one.** One question per question.

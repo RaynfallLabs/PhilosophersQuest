@@ -227,6 +227,16 @@ def test_anti_rote_exempts_math_and_grammar():
     assert r.status == GateStatus.NA
 
 
+@pytest.mark.parametrize("tier,status", [(1, GateStatus.NA), (2, GateStatus.NA),
+                                         (3, GateStatus.FAIL), (5, GateStatus.FAIL)])
+def test_anti_rote_lets_grade_aligned_low_tiers_ask_basics(tier, status):
+    """Science is grade-aligned (2026-11-25): T1-T2 are 5th-6th grade basics."""
+    q = make_question(question="What is the chemical symbol for gold?", tier=tier)
+    assert validate_anti_rote(q, subject="science").status == status
+    # Another bank's T1 is not exempt.
+    assert validate_anti_rote(q, subject="history").status == GateStatus.FAIL
+
+
 def test_anti_rote_pattern_list_in_sync_with_moral_vision_doc():
     """The patterns in anti_rote.py must match the spec in moral_vision.md §6.
 
