@@ -1,0 +1,37 @@
+{
+ "unit": "how-evolution-works",
+ "questions": {
+  "47eaf66e9d": {
+   "verdict": "pass",
+   "why": "",
+   "sources": [
+    "https://courses.lumenlearning.com/wm-biology2/chapter/misconceptions-of-evolution/",
+    "https://grokipedia.com/page/Natural_selection"
+   ]
+  },
+  "1cdfe949d3": {
+   "verdict": "pass",
+   "why": "Re-checker failed it for one untrue context line and gave the exact fix; the lead applied it (context: \"told apart by looks\" -> \"defined by looks\"). The judge problem was judged fixed.",
+   "sources": [
+    "https://grokipedia.com/page/Species"
+   ]
+  },
+  "dd6ab3ed72": {
+   "verdict": "pass",
+   "why": "",
+   "sources": [
+    "https://grokipedia.com/page/Northern_elephant_seal",
+    "https://en.wikipedia.org/wiki/Northern_elephant_seal",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5892393"
+   ]
+  },
+  "c18520dc34": {
+   "verdict": "pass",
+   "why": "",
+   "sources": [
+    "https://grokipedia.com/page/E._coli_long-term_evolution_experiment",
+    "https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment"
+   ]
+  }
+ }
+}

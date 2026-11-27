@@ -135,3 +135,17 @@ F30. Vanessa D'Costa, Christine King, Gerard Wright and colleagues (Nature 477, 
 - Fraenkel-Conrat's taking apart and rebuilding of tobacco mosaic virus: a classic experiment, but it is building a virus from parts, so left out under the absolute safety rule.
 - Marine phage kill rates and the giant mimivirus: true wonders, outside the scope.
 - Vaccines: owned by vaccines-the-science-and-the-scrutiny.
+
+## Added at revision (2026-11-27)
+
+F31. Size is not what makes a thing alive or not: the giant virus Mimivirus is about 750 nm across, "visible under light microscopy and larger than many bacteria", and giant viruses surpass "many bacterial cells, such as Mycoplasma species at around 200-300 nm" (Grokipedia, Giant virus); giant viruses still multiply inside host cells (amoebae). Used for the size lure in the Stanley question.
+    https://grokipedia.com/page/Giant_virus
+
+F32. No patent held penicillin back in the 1930s. Fleming "continued to send samples of the mould to researchers" (Wikipedia, History of penicillin; Roger Reid at Johns Hopkins had a sample from Fleming in 1935), and Fleming said: "I found penicillin and have given it free for the benefit of humanity." Chain later wanted a patent, but Florey objected; Andrew Moyer patented methods for producing and isolating penicillin in 1945 (Wikipedia). The Norwegian encyclopedia (SNL): it was unclear whether penicillin, a naturally produced substance, could be patented, and in the USA the production process was patented in the 1940s.
+    https://en.wikipedia.org/wiki/History_of_penicillin ; https://snl.no/Alexander_Fleming
+
+F33. How shared genes are recognised: detection of horizontal gene transfer relies on "phylogenetic incongruences, gene composition anomalies, and comparative genomics", including "high-identity matches to distantly related taxa" (Grokipedia, Horizontal gene transfer); HGT "drives the acquisition of antibiotic resistance genes". In multicellular eukaryotes "the rate is generally lower" (with rare exceptions such as bdelloid rotifers), hence "as a rule" for animals in the context.
+    https://grokipedia.com/page/Horizontal_gene_transfer ; https://en.wikipedia.org/wiki/Horizontal_gene_transfer
+
+F34. Resistance is older than our drugs because microbes make antibiotics: "Antimicrobial resistance predates human antibiotic use"; "Soil actinomycetes, such as species of Streptomyces, produce antimicrobial compounds to suppress rival microbes"; the environmental resistome includes "ancient ARGs in permafrost dating back 30,000 years" (Grokipedia, Antimicrobial resistance). Fact-check wording (fc2f10c230): people used plant remedies in prehistory, so the stem says "long before anyone made an antibiotic drug" and the context "30,000 years before the first antibiotic drug", not "any medicine".
+    https://grokipedia.com/page/Antimicrobial_resistance ; https://grokipedia.com/page/Antibiotic ; https://www.sciencenews.org/article/ancient-dental-plaque-tells-tales-neandertal-diet-and-disease

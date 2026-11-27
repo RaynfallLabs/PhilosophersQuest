@@ -1,0 +1,72 @@
+{
+ "unit": "from-dna-to-protein",
+ "questions": {
+  "80ae5479a5": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The human figures now follow Chargaff's 1950 human sperm DNA: A 30.9, T 29.4, G 19.9, C 19.8 (Grokipedia, Chargaff's rules; the Stanford table gives the same row and E. coli 24.7/23.6/26.0/25.7). The key and the logic are unchanged. The reason for declining the judge's low-severity lure is sound. 'A with A' is still weak, but that is not a new problem.",
+   "sources": [
+    "https://grokipedia.com/page/Chargaff's_rules",
+    "https://web.stanford.edu/class/stats366/exs/Chargaff.html",
+    "https://en.wikipedia.org/wiki/Chargaff%27s_rules"
+   ]
+  },
+  "4b08e617f5": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The Wilkins pair is broken up: each person in the stem now has one choice, so the Wilkins sentence no longer sets up a pair. Grokipedia, Photo 51: Franklin had Gosling give the photograph to Wilkins, and Wilkins showed it to Watson on 30 January 1953 'without Franklin's knowledge or explicit permission'. So 'Gosling showed it to him, with her leave' is wrong in an honest way. The account stays plain and fair.",
+   "sources": [
+    "https://grokipedia.com/page/Photo_51",
+    "https://en.wikipedia.org/wiki/Photo_51",
+    "https://en.wikipedia.org/wiki/Rosalind_Franklin"
+   ]
+  },
+  "8088882083": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The lures are no longer dead extremes. They are the real one-round result, the real two-round result and the conservative idea's later-round picture, and 'in equal amounts' makes the one-round count part of the reasoning. Wikipedia: conservative replication gives 'equal amounts of DNA of the higher and lower densities (but no DNA of an intermediate density)'; one generation gave a single intermediate band; two generations gave equal intermediate and light bands. The 1953 quote is verbatim.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Meselson%E2%80%93Stahl_experiment",
+    "https://grokipedia.com/page/Meselson%E2%80%93Stahl_experiment",
+    "https://annex.exploratorium.edu/origins/coldspring/printit.html"
+   ]
+  },
+  "58306420c3": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The choices no longer converge on the key: 'three, overlapping' is now the choice that shares the most with the others. Each lure is ruled out by the stem's data. Overlapping words would add three amino acids for three bases, not one, and two-base words would be put right by two extras. OpenStax: three insertions gave a functional protein with one extra amino acid; Wikipedia: non-overlapping triplets. The context fix (words between the added bases also misread) is in.",
+   "sources": [
+    "https://openstax.org/books/biology-2e/pages/15-1-the-genetic-code",
+    "https://en.wikipedia.org/wiki/Crick,_Brenner_et_al._experiment"
+   ]
+  },
+  "da59805341": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The coin toss between two amino acids and the codon-table look-up are gone. The stem gives the result and asks what it meant. Facts: NIH, May 1961, cell-free E. coli extract, poly-U gave polyphenylalanine (Wikipedia; Grokipedia: 'implying that the triplet codon UUU encodes this amino acid'). One caution, not a fail: Wikipedia and Grokipedia both say the poly-U result did not by itself fix the number of bases per word. So 'A single U' is wrong only because the code is read in threes, which the grade teaches (and 58306420c3 keys). The key is the standard textbook reading and the only true choice. The card could add that the word length came from other evidence.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nirenberg_and_Matthaei_experiment",
+    "https://grokipedia.com/page/Nirenberg_and_Matthaei_experiment"
+   ]
+  },
+  "cff868c1af": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The doubling clause is cut and the key ends at 'To part the two strands of each helix', so nothing in the stem points to it. The key is now the shortest choice, but only slightly (37 against 39-47). PCR stays at concept level: no temperatures, primers or protocol. Grokipedia and Wikipedia: heat separates the two strands each cycle.",
+   "sources": [
+    "https://grokipedia.com/page/Polymerase_chain_reaction",
+    "https://en.wikipedia.org/wiki/Polymerase_chain_reaction"
+   ]
+  },
+  "f0333edb0c": {
+   "verdict": "pass",
+   "why": "",
+   "note": "Two choices now name the gel, and the new lure 'the gel's own charge' is wrong: the gel sorts by its mesh. Wikipedia, Gel electrophoresis of nucleic acids: mobility in free solution 'is independent of molecular weight', and the matrix acts as 'a sieve'. The weight lure is the classic misconception and is false, because charge grows with length. Jeffreys, Leicester, September 1984, X-ray film: sourced.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Gel_electrophoresis_of_nucleic_acids",
+    "https://grokipedia.com/page/Gel_electrophoresis_of_nucleic_acids",
+    "https://grokipedia.com/page/Alec_Jeffreys"
+   ]
+  }
+ }
+}

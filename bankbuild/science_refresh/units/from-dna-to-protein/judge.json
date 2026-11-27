@@ -1,0 +1,38 @@
+{"unit": "from-dna-to-protein",
+ "questions": {
+  "87d9da3a5f": {"verdict": "ok", "issues": []},
+  "a6658762fe": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'A with A, and G with G' is weak. Like-with-like pairing predicts nothing about the figures, so few will take it.",
+     "fix": "Replace it with 'A with T in humans, but A with G in E. coli'. The near-equal E. coli figures (A 25, G 26) make it tempting, and it makes the stem's 'explains both sets' do real work."}]},
+  "4b08e617f5": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two choices begin 'Wilkins showed it to him', and the stem brings Wilkins in with a sentence ('Maurice Wilkins also worked on DNA at King's') that does nothing but set up that pair. A test-wise player narrows to the pair, then takes the one that makes a story. The account itself is honest and plainly told.",
+     "fix": "Spread the four choices across the people in the stem: 'Wilkins showed it to him without telling her' / 'Gosling showed it to him, with her leave' / 'Franklin showed it in a talk he attended' / 'He took a print from her desk while she was away'. Watson did hear a talk of Franklin's, in November 1951, before Photo 51 was made, so the talk lure is honest but wrong. The writer must source it before using it, or else use 'Crick passed it to him from a report' (a garbling of the Perutz report, F10)."}]},
+  "8088882083": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The supposition says the old helices stay whole and the copies are all new, so any reader sees that both heavy and light DNA are present. That kills 'One band, as light as ordinary DNA' and 'One band, as heavy as the old DNA', and the key is the only two-band choice. Only 'halfway' (the real result) competes.",
+     "fix": "Replace the two single-band extremes with 'Two bands, one halfway and one light', the real result after a second round (F13) and a tempting half-memory, and 'Three bands: heavy, halfway and light'. Keep 'One band, halfway between heavy and light'."}]},
+  "a9607c2000": {"verdict": "ok", "issues": []},
+  "58306420c3": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The choices converge on the key. It shares 'three bases' with one lure and 'from a fixed start' with another, so a test-wise player who takes the choice with the most shared parts gets it without reading the experiment.",
+     "fix": "Change 'In words of two bases, from a fixed start' to 'In words of two bases, each overlapping the next'. The stem's 'two extras wrecked it' still rules it out."}]},
+  "dd0b9a8169": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Every three-base word in it read U-U-U' tells the reader that only one amino acid can be built. That kills 'phenylalanine and lysine by turns' and 'all twenty, in no set order', and leaves a coin toss between phenylalanine and lysine.",
+     "fix": "See the grade fix below."},
+    {"axis": "grade", "severity": "medium",
+     "what": "The coin toss turns on UUU = phenylalanine, a codon-table entry that a 9th grader looks up, not one he is taught to know. The question then tests recall of one table cell, not how the code was read.",
+     "fix": "Give the result and ask what it showed: '...They gave it all 20 amino acids and an artificial messenger RNA made of nothing but uracil (U). The juice built a long chain of phenylalanine alone. What did that show?' Key: 'U-U-U is the code word for phenylalanine'. Lures: 'Phenylalanine is built out of uracil' (the messenger confused with the building blocks), 'Every code word is made of one kind of base' (one result over-read) and 'Phenylalanine starts every protein' (AUG and methionine start proteins, F15)."}]},
+  "da2717fcfe": {"verdict": "ok", "issues": []},
+  "fe3cbd9058": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'So the amount doubles every round' tells the reader that both strands are copied, which points to the key's 'so each can be copied'.",
+     "fix": "Drop 'so the amount doubles every round' from the stem (the card already says one helix becomes two, then four), or end the key at 'To part the two strands of each helix'."}]},
+  "f0333edb0c": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The current breaks long pieces as they go' is weak. The key is also the only choice that names the gel, which the stem has just introduced.",
+     "fix": "Replace it with 'The gel's own charge holds long pieces back more'. It is a gel lure that is wrong, because the mesh, not a charge, does the sorting (F22)."}]}
+ },
+ "unit_notes": "Ownership is kept. da2717fcfe keys the amino-acid swap, not T4's 'a single gene change causes sickle-cell disease', as the lead ruled. 87d9da3a5f's 'many biologists suspected protein in the samples' is Mirsky's contamination doubt (F1), not the-molecules-of-life's reason that protein seemed likelier (more kinds of unit), so nothing is re-asked; nothing touches Levene or Sanger. Nothing touches crossing over, blood groups (meiosis-and-patterns-of-inheritance) or human-chimp DNA (how-evolution-works). Hershey and Chase lie outside the scope's text, but they are the grade's standard proof that genes are DNA and go a grade deeper than the-molecules-of-life. Safety: PCR is at concept level (heat parts the strands; the heat-proof enzyme only in the card; no temperatures or primers), and the phage carries no pathogen detail. Franklin is told honestly and plainly: Wilkins showed Watson the photograph without her knowledge, nothing was taken from a desk, the 1953 paper's thanks were thin, Perutz's report was a second channel, and she died before the Nobel Prize. 4b08e617f5 tests the credit episode rather than what the X pattern showed (the stem gives that); the scope allows this. If it is rewritten, asking what the X meant is a science-first alternative. Translation at the ribosome (transfer RNA bringing each amino acid) is never keyed. 58306420c3 and dd0b9a8169 are both about the code, but they key different facts (reading in threes; the first word read). a6658762fe and a9607c2000 both rest on A-T and G-C, but one keys the pairing and the other transcription with U, so they are different facts."}

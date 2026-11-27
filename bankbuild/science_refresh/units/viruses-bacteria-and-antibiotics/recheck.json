@@ -1,0 +1,83 @@
+{
+ "unit": "viruses-bacteria-and-antibiotics",
+ "questions": {
+  "4d8eeceb5c": {
+   "verdict": "pass",
+   "why": "",
+   "note": "Judge's fix taken as given: the key now claims only what pores that stop the known bacteria can show, and 'It could not be a bacterium of any kind' is the competing over-reading (Grokipedia: Ivanovsky leaned to an ultra-small, unculturable bacterium or a bacterial toxin). The key is no longer the shortest choice (43 against 39-49). That the safest claim wins is built into an 'on its own' question; all four choices are live. Facts true: 1892, Chamberland porcelain filter, the filtered sap still infective. No overlap: T2 keys viruses seen by the electron microscope, not this inference.",
+   "sources": [
+    "https://grokipedia.com/page/Dmitri_Ivanovsky",
+    "https://en.wikipedia.org/wiki/History_of_virology",
+    "https://openstax.org/books/microbiology/pages/6-1-viruses"
+   ]
+  },
+  "7e9fcaa0d6": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The stem now says what the filter test was, so it stands alone. The new clause does not rule out any choice ('could never have passed through the filter' is still a live, false lure: toxins pass Chamberland filters). Beijerinck 1898, infection in series, a poison diluted at each step: all sourced. The gate's length note is information only.",
+   "sources": [
+    "https://ebsco.com/research-starters/history/beijerinck-discovers-viruses",
+    "https://en.wikipedia.org/wiki/Contagium_vivum_fluidum",
+    "https://en.wikipedia.org/wiki/Chamberland_filter"
+   ]
+  },
+  "ad4f482446": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The self-defeating 'single cell' lure is gone; 'far too small to count as a living thing' is a real misconception, and it is wrong (Grokipedia: Mimivirus about 750 nm with its fibres, larger than Mycoplasma at 200-300 nm, yet it multiplies only in host cells). 1935, needle-shaped crystals, infective when redissolved, the pure-protein view later corrected by about 6 percent RNA: all confirmed on Grokipedia. Wording fixed. No other unit keys 'copies itself only inside a living cell'.",
+   "sources": [
+    "https://grokipedia.com/page/Wendell_Meredith_Stanley",
+    "https://grokipedia.com/page/Giant_virus",
+    "https://grokipedia.com/page/Virus"
+   ]
+  },
+  "c4228a2730": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The dead lures are replaced by the judge's 'repeat with fresh mould' (repeating confused with isolating) and 'grow together for longer'. Both look careful but leave the living mould and the killing together. The key is still the only choice that removes the mould, but that is the variable being isolated, which is the grade's skill. 'What he saw' no longer hints that more dishes add nothing. Fleming's filtrate killed staphylococci and streptococci; the name penicillin dates from 7 March 1929.",
+   "sources": [
+    "https://grokipedia.com/page/Discovery_of_penicillin",
+    "https://en.wikipedia.org/wiki/History_of_penicillin"
+   ]
+  },
+  "d0b1168be3": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The new patent lure is false and sourced. Wikipedia: Fleming kept sending samples of the mould to researchers; Chain wanted a patent but Florey objected; Moyer patented production methods in 1945; Fleming: 'I found penicillin and have given it free for the benefit of humanity.' The key (unstable, could not be purified) is confirmed: Raistrick 1932, Craddock and Ridley. 'Almost no one' allows for Paine's small trials.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/History_of_penicillin",
+    "https://grokipedia.com/page/Discovery_of_penicillin",
+    "https://snl.no/Alexander_Fleming"
+   ]
+  },
+  "0a3e5014e4": {
+   "verdict": "pass",
+   "why": "",
+   "note": "Two live lures replace the dead ones. Fleming had already shown streptococci killed in a dish (Wikipedia: Staphylococcus and Streptococcus easily killed); a cure in people was still untested (first patients early 1941). Facts confirmed: 25 May 1940, eight mice, haemolytic streptococci, four treated; the controls were dead by about 3:30 am; 'the crucial step that Fleming had not taken' (Science History Institute). 'Deadly dose' is history, not virulence detail.",
+   "sources": [
+    "https://www.sciencehistory.org/education/scientific-biographies/howard-walter-florey-and-ernst-boris-chain/",
+    "https://en.wikipedia.org/wiki/History_of_penicillin"
+   ]
+  },
+  "82390bb87b": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The planted mutation-rate sentence is cut. The lures now need reasoning from the evidence: a base-for-base match in distant kinds rules out a distant shared ancestor and two separate origins. 'Each kind evolved it on its own' is the T3 idea, a grade deeper, so the T3 fact is not re-keyed. The card now says that animals, as a rule, pass genes only to their young, so it no longer clashes with T3's flies lure. HGT is the main route of resistance spread; detection uses high-identity matches to distantly related taxa (Grokipedia, Horizontal gene transfer). Textbook level only.",
+   "sources": [
+    "https://grokipedia.com/page/Horizontal_gene_transfer",
+    "https://en.wikipedia.org/wiki/Horizontal_gene_transfer",
+    "https://grokipedia.com/page/Antimicrobial_resistance"
+   ]
+  },
+  "9c95fd2033": {
+   "verdict": "pass",
+   "why": "",
+   "note": "Re-keyed off T3's 'resistant ones lived and multiplied' (natural-and-artificial-selection 538c86b429) onto ground that is new at T5: microbes have always made antibiotics. None of T3's lures returns. The fact-check fix is in: 'an antibiotic drug', not 'any medicine'. Sources: Grokipedia, 'Antimicrobial resistance predates human antibiotic use'; Streptomyces 'produce antimicrobial compounds to suppress rival microbes'. National Geographic: 30,000-year-old frozen soil, mammoth DNA but none from elk, moose or spruce, and the vanHAX vancomycin genes; natural antibiotics evolved to keep bacteria at bay. 'Chance mutations ... with no antibiotics to favour them' is false, since natural antibiotics did favour the genes.",
+   "sources": [
+    "https://grokipedia.com/page/Antimicrobial_resistance",
+    "https://www.nationalgeographic.com/science/article/bacteria-resisting-antibiotics-for-at-least-30000-bc",
+    "https://ui.adsabs.harvard.edu/abs/2011Natur.477..457D/abstract"
+   ]
+  }
+ }
+}

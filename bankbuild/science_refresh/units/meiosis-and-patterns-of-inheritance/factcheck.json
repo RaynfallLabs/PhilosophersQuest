@@ -1,0 +1,89 @@
+{"unit": "meiosis-and-patterns-of-inheritance",
+ "questions": {
+  "6b3d5d5272": {"verdict": "ok",
+   "checks": [
+    {"claim": "August Weismann, a German biologist, proposed a reduction division (Reductionstheilung) halving the chromosome number in forming sex cells; 'late 1800s' (Grokipedia: 1887; Wikipedia dates his account to 1890; both fit)", "result": "ok", "source": "https://grokipedia.com/page/August_Weismann", "note": ""},
+    {"claim": "Key: the halving keeps the count from doubling every generation (Weismann's reasoning; OpenStax: sets would double with every round of fertilization)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Meiosis", "note": ""},
+    {"claim": "Wrong: 'equal share from each parent' (each parent would give an equal share with or without halving)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Meiosis", "note": ""},
+    {"claim": "Wrong: 'weed out harmful genes' and 'keep the child from copying just one parent' (meiosis sorts by chance, not by gene quality)", "result": "ok", "source": "https://grokipedia.com/page/Meiosis", "note": ""},
+    {"claim": "46 chromosomes in human body cells, 23 in sex cells, 92 without halving (simplification right for grade 9)", "result": "ok", "source": "https://grokipedia.com/page/Meiosis", "note": ""},
+    {"claim": "Context: Edouard Van Beneden in 1883 saw, in roundworm (Ascaris megalocephala) eggs, two divisions that halve the number", "result": "ok", "source": "https://grokipedia.com/page/Meiosis", "note": "Grokipedia: 'two successive maturation divisions that halve the chromosome number'; Wikipedia: described in 1883 at the level of chromosomes in Ascaris eggs."}
+   ]},
+  "54f9469ff3": {"verdict": "uncertain",
+   "checks": [
+    {"claim": "Key: each pair lines up and sorts by chance independently of the others (independent assortment at metaphase I)", "result": "ok", "source": "https://grokipedia.com/page/Meiosis", "note": ""},
+    {"claim": "Wrong: all 23 from one parent; the same 23 in every egg; the one with more dominant genes", "result": "ok", "source": "https://grokipedia.com/page/Meiosis", "note": ""},
+    {"claim": "Context: 2 to the 23rd power, over 8 million mixes, before crossing over adds more", "result": "ok", "source": "https://grokipedia.com/page/Meiosis", "note": "Grokipedia: 2^23, about 8.4 million, possible combinations per parent."},
+    {"claim": "Context: independent assortment is one reason 'no two of her eggs, and no two brothers or sisters, are quite alike'", "result": "uncertain", "source": "https://grokipedia.com/page/Meiosis", "note": "Identical twins are brothers or sisters from one egg and carry the same chromosomes, so 'no two brothers or sisters' overreaches. Fix: 'no two of her eggs, and no two brothers or sisters other than identical twins, are quite alike.'"}
+   ]},
+  "783e854af3": {"verdict": "ok",
+   "checks": [
+    {"claim": "Morgan and his students at Columbia bred fruit flies in milk bottles (the Fly Room, Schermerhorn Hall)", "result": "ok", "source": "https://grokipedia.com/page/Thomas_Hunt_Morgan", "note": "Grokipedia: 'hundreds of milk bottles containing fly cultures'."},
+    {"claim": "White eye and miniature wing both on the X; in 1911 Morgan found them inherited together more often than chance, yet sometimes apart", "result": "ok", "source": "https://en.wikipedia.org/wiki/Thomas_Hunt_Morgan", "note": "Wikipedia: 'A miniature-wing mutant on the sex chromosome sometimes sorted independently of the white-eye mutation', leading Morgan to linkage and crossing over. Grokipedia Chromosomal_crossover: by 1911 traits 'inherited together more often than expected'. White and miniature recombine at roughly a third, below the one half that chance gives."},
+    {"claim": "Key: crossing over, partners swapping matching pieces", "result": "ok", "source": "https://grokipedia.com/page/Chromosomal_crossover", "note": ""},
+    {"claim": "Wrong: new mutation; gene moved to another chromosome; stray flies", "result": "ok", "source": "https://en.wikipedia.org/wiki/Thomas_Hunt_Morgan", "note": ""},
+    {"claim": "Context: Frans Janssens described chiasmata in 1909 (chiasmatypy)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Thomas_Hunt_Morgan", "note": "Wikipedia: Janssens 'described the phenomenon in 1909 and had called it chiasmatypy'."},
+    {"claim": "Context: Creighton and McClintock, 1931, saw the swapped pieces in maize", "result": "ok", "source": "https://grokipedia.com/page/Chromosomal_crossover", "note": ""},
+    {"claim": "Context: crossing over gives every egg and sperm chromosomes that are new patchworks", "result": "ok", "source": "https://grokipedia.com/page/Chromosomal_crossover", "note": "True for humans and most species (at least one crossover per pair). Male fruit flies do not cross over, so in this fly question 'every ... sperm' is not true of the fly; optional tightening: 'giving eggs and sperm chromosomes that are new patchworks'."}
+   ]},
+  "4bc53510c2": {"verdict": "error",
+   "checks": [
+    {"claim": "Sturtevant, a student in Morgan's lab, put his homework aside one night in 1911 to draw the first map (published 1913)", "result": "ok", "source": "https://embryo.asu.edu/pages/linear-arrangement-six-sex-linked-factors-drosophila-shown-their-mode-association-1913-alfred", "note": "ASU: 'in 1911' he 'went home that night and, to the neglect of his homework, determined the order', as an undergraduate; published 1913 in J. Exp. Zool. Wikipedia: first map 'in 1911'. Caltech: 'blew off his homework that night'. Stem (1911, drawing) and context (1913 map) are consistent."},
+    {"claim": "Crossover frequency as a measure of distance; three genes at a time; one rate close to the sum of the other two", "result": "ok", "source": "https://grokipedia.com/page/Alfred_Sturtevant", "note": "Grokipedia: three-point testcrosses, additive distances; ASU: A-C is the sum of A-B and B-C."},
+    {"claim": "Key: genes lie in a line, each in a fixed place", "result": "ok", "source": "https://en.wikipedia.org/wiki/Alfred_Sturtevant", "note": "'like beads on a necklace'."},
+    {"claim": "Wrong: a clump with no order; genes shift place; evenly spaced (additivity fixes order, not equal gaps)", "result": "ok", "source": "https://embryo.asu.edu/pages/linear-arrangement-six-sex-linked-factors-drosophila-shown-their-mode-association-1913-alfred", "note": ""},
+    {"claim": "Context: one percent crossing over is a centimorgan", "result": "ok", "source": "https://grokipedia.com/page/Alfred_Sturtevant", "note": ""},
+    {"claim": "Context: 'His 1913 map placed six genes of the X in an order later confirmed'", "result": "error", "source": "https://embryo.asu.edu/pages/linear-arrangement-six-sex-linked-factors-drosophila-shown-their-mode-association-1913-alfred", "note": "The paper's title says six 'factors', but two of them (C and O) never recombined and Sturtevant put them at one place (ASU); they were later shown to be white and eosin, two alleles of one gene (Morgan 1914, 'Another Case of Multiple Allelomorphs in Drosophila', https://resolver.caltech.edu/CaltechAUTHORS:20150811-093313946). The map placed five genes (y, w, v, m, r). Fix: 'His 1913 map placed five genes of the X in an order later confirmed' (or drop the number)."}
+   ]},
+  "453bf5b797": {"verdict": "error",
+   "checks": [
+    {"claim": "Round yellow x wrinkled green; F1 all round yellow; round and yellow dominant", "result": "ok", "source": "https://grokipedia.com/page/Dihybrid_cross", "note": ""},
+    {"claim": "556 seeds; 315 round yellow, 108 round green, 101 wrinkled yellow, 32 wrinkled green; close to 9:3:3:1", "result": "ok", "source": "https://passel2.unl.edu/view/lesson/c36f9d4eff39/8", "note": "UNL gives 315, 108, 101; arXiv lecture notes (https://arxiv.org/pdf/1603.04929) and Iowa State's Mendel translation give the full set summing to 556; Britannica: about 9:3:3:1."},
+    {"claim": "Key: about 3 in 16 round green (3/4 x 1/4); 108/556 is about 19 percent", "result": "ok", "source": "https://en.wikipedia.org/wiki/Dihybrid_cross", "note": ""},
+    {"claim": "Wrong: 1 in 16 (that is wrinkled green), 1 in 4, none", "result": "ok", "source": "https://grokipedia.com/page/Dihybrid_cross", "note": ""},
+    {"claim": "Context: 'Had the two traits travelled as a pair there would have been none, as happens with genes lying close together on one chromosome'", "result": "error", "source": "https://grokipedia.com/page/Dihybrid_cross", "note": "Genes close together on one chromosome give FEW new mixes, not none; Grokipedia: complete linkage (0% recombination) 'is rare'. It also clashes with this unit's Morgan question, where linked genes still split. Fix: '...there would have been none, and genes lying close together on one chromosome come near that, giving only a few.'"}
+   ]},
+  "7749057df6": {"verdict": "uncertain",
+   "checks": [
+    {"claim": "Red x white snapdragons give pink; two pinks give 1 red : 2 pink : 1 white", "result": "ok", "source": "https://grokipedia.com/page/Dominance_(genetics)", "note": ""},
+    {"claim": "Wrong: all pink; 3 pink : 1 white; half red half white", "result": "ok", "source": "https://grokipedia.com/page/Dominance_(genetics)", "note": ""},
+    {"claim": "Context: alleles never blended; incomplete dominance", "result": "ok", "source": "https://openstax.org/books/biology-2e/pages/12-2-characteristics-and-traits", "note": ""},
+    {"claim": "Context: Carl Correns found the same pattern in the four o'clock flower in 1903", "result": "uncertain", "source": "https://grokipedia.com/page/Dominance_(genetics)", "note": "Grokipedia says 1903, but Correns's Mirabilis hybrid paper ('Ueber Bastardirungsversuche mit Mirabilis-Sippen') appeared in the Berichte der Deutschen Botanischen Gesellschaft vol. 20 in December 1902 (cited so in his 1905 paper; zobodat scan of vol. 20, pp. 592-594), and his 1900 paper already noted in-between hybrids. Fix: 'in the early 1900s'."}
+   ]},
+  "c9c57e8a7e": {"verdict": "ok",
+   "checks": [
+    {"claim": "Landsteiner in Vienna mixed serum and red cells of himself and his colleagues, 1900-1901; groups A, B and C, C later renamed O", "result": "ok", "source": "https://grokipedia.com/page/Karl_Landsteiner", "note": "Grokipedia: summer 1900, 'including himself and his colleagues'; 1901 paper; C later O (Wikipedia ABO: von Dungern and Hirszfeld introduced 0)."},
+    {"claim": "His students Decastello and Sturli tested 155 people and found 4 whose cells were clumped by the other sera (1902)", "result": "ok", "source": "https://www.ebsco.com/research-starters/history/discovery-human-blood-groups", "note": "EBSCO: 'two students of Landsteiner'; 'Out of 155 individuals, 4 had no antibodies'; cells 'clumped by the other types of serums'. Wikipedia ABO also calls them his students."},
+    {"claim": "Key: both A and B markers (group AB)", "result": "ok", "source": "https://grokipedia.com/page/ABO_blood_group_system", "note": ""},
+    {"claim": "Wrong: neither marker (group O, clumped by neither serum); halfway marker; a third marker", "result": "ok", "source": "https://en.wikipedia.org/wiki/ABO_blood_group_system", "note": ""},
+    {"claim": "Context: codominance; Nobel Prize 1930", "result": "ok", "source": "https://www.nobelprize.org/prizes/medicine/1930/summary/", "note": ""},
+    {"claim": "Context: 'Landsteiner ended the lottery of transfusion'", "result": "ok", "source": "https://grokipedia.com/page/Karl_Landsteiner", "note": "Rhetorical summary; typed matching began with Ottenberg in 1907 and Rh came in 1940, but Grokipedia says the discovery turned transfusion from a hazardous procedure into a routine one. Acceptable at grade 9."}
+   ]},
+  "d9687961f8": {"verdict": "ok",
+   "checks": [
+    {"claim": "Hirszfeld and von Dungern showed in 1910 that the groups are inherited, then proposed two gene pairs (A/a, B/b)", "result": "ok", "source": "https://git.lsit.ucsb.edu/publicdata/nih-gov/raw/commit/f361c7df980b9223e271a590e77e0740726da779/www.ncbi.nlm.nih.gov/omim/616093", "note": "OMIM and Wikipedia ABO: first to explain the inheritance; two allelic pairs A/a and B/b."},
+    {"claim": "Felix Bernstein, a German mathematician, 1924, one gene with three alleles", "result": "ok", "source": "https://en.wikipedia.org/wiki/ABO_blood_group_system", "note": "Wikipedia: 'multiple alleles at one locus in 1924'; EBSCO: controversial 'until the work of Felix Bernstein in 1924'."},
+    {"claim": "Key: whether an AB parent ever has an O child (two-gene model allows it; Bernstein's excludes it)", "result": "ok", "source": "https://git.lsit.ucsb.edu/publicdata/nih-gov/raw/commit/f361c7df980b9223e271a590e77e0740726da779/www.ncbi.nlm.nih.gov/omim/616093", "note": "OMIM: Bernstein's model excludes O children in O x AB, A x AB, B x AB and AB x AB unions; the two-gene model allows them (AaBb x aabb)."},
+    {"claim": "Wrong: O x O giving A; A x A giving O; A x B giving AB (both models agree on each)", "result": "ok", "source": "https://en.wikipedia.org/wiki/ABO_blood_group_system", "note": "Worked: O x O only O under both; Aabb x Aabb and IAi x IAi both give O; Aabb x aaBb and IAi x IBi both give AB."},
+    {"claim": "Context: population counts and family studies bore Bernstein out; very rare exceptions found much later; gene on chromosome 9", "result": "ok", "source": "https://en.wikipedia.org/wiki/ABO_blood_group_system", "note": "OMIM: Hardy-Weinberg on population data and family data excluded the two-gene model. Wikipedia: an O child can be born to an AB parent in rare cases (Bombay phenotype, cis-AB); gene at 9q34. The wording 'very rare exceptions found much later' is right."}
+   ]},
+  "41bd3a5ae5": {"verdict": "ok",
+   "checks": [
+    {"claim": "John Dalton described his own colour blindness in 1794; his brother shared it; he judged it hereditary", "result": "ok", "source": "https://en.wikipedia.org/wiki/John_Dalton", "note": "'As both he and his brother were colour blind, he recognised that the condition must be hereditary.'"},
+    {"claim": "About 1 in 12 men and 1 in 200 women of Northern European descent", "result": "ok", "source": "https://grokipedia.com/page/Color_blindness", "note": "Grokipedia: 1 in 12 males (8.3%) and 1 in 200 females (0.5%) of Northern European ancestry (another section says 0.4%)."},
+    {"claim": "Key: a woman needs the fault on both X chromosomes", "result": "ok", "source": "https://grokipedia.com/page/Color_blindness", "note": "'females require mutations on both X chromosomes for full expression'."},
+    {"claim": "Wrong: father passes it only to sons (he passes his X to daughters); dominant in men, recessive in women; tested less often", "result": "ok", "source": "https://openstax.org/books/biology-2e/pages/12-2-characteristics-and-traits", "note": ""},
+    {"claim": "Context: red and green pigment genes on the X (OPN1LW, OPN1MW, Xq28)", "result": "ok", "source": "https://grokipedia.com/page/Color_blindness", "note": ""},
+    {"claim": "Context: a 1990s study of Dalton's preserved eye found the green-pigment gene missing", "result": "ok", "source": "https://en.wikipedia.org/wiki/John_Dalton", "note": "Wikipedia 1995 (deuteranopia, green photopsin gene missing); Grokipedia dates the DNA work 1994. 'In the 1990s' covers both."}
+   ]},
+  "b52e06763f": {"verdict": "ok",
+   "checks": [
+    {"claim": "Victoria showed no signs; no case known before her", "result": "ok", "source": "https://grokipedia.com/page/Haemophilia_in_European_royalty", "note": "'No hemophilia cases appear in British royal records prior to Leopold's birth in 1853.'"},
+    {"claim": "Leopold had it; Alice and Beatrice were carriers, shown by affected sons", "result": "ok", "source": "https://en.wikipedia.org/wiki/Haemophilia_in_European_royalty", "note": "Both 'were confirmed carriers'; Alice's son Friedrich, Beatrice's son Leopold of Battenberg."},
+    {"claim": "Key: carrier on one X", "result": "ok", "source": "https://grokipedia.com/page/Haemophilia_in_European_royalty", "note": ""},
+    {"claim": "Wrong: both X (she would be ill); Albert gave it to Leopold (a father gives sons his Y); new in Leopold (daughters were carriers too)", "result": "ok", "source": "https://grokipedia.com/page/Haemophilia", "note": ""},
+    {"claim": "Context: reached Russia and Spain; 2009 Romanov study showed haemophilia B", "result": "ok", "source": "https://en.wikipedia.org/wiki/Haemophilia_in_European_royalty", "note": "Also reached Prussia (not claimed as a complete list). 2009 DNA testing of the Romanov remains: haemophilia B, a change in the factor IX gene."},
+    {"claim": "Context: most likely a new mutation in Victoria or her father, though no one can be sure", "result": "ok", "source": "https://grokipedia.com/page/Haemophilia_in_European_royalty", "note": "Grokipedia: 'widely attributed to a de novo occurrence, either in Victoria herself or in the germline of her father'; Wikipedia adds her mother may have been a carrier. The hedge covers this."}
+   ]}
+ },
+ "unit_notes": "Clinical throughout: eggs, sperm and a child's first cell appear only as cells carrying chromosomes; nothing on human reproduction itself. Sturtevant dating is worded correctly (drew the map one night in 1911 as an undergraduate; the 1913 map is the published one); note that Grokipedia's Sturtevant and Morgan pages wrongly put the map's making in 1913. The Bernstein question's key is sound, and its context already admits the rare exceptions (cis-AB, Bombay). Two errors, both in contexts: Q4 'six genes' (five genes; six factors), Q5 'none, as happens with genes lying close together' (few, not none). Two uncertain, both in contexts: Q2 siblings (identical twins), Q6 Correns 1903 (his Mirabilis paper is December 1902)."}

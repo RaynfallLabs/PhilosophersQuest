@@ -1,0 +1,35 @@
+{"unit": "meiosis-and-patterns-of-inheritance",
+ "questions": {
+  "6b3d5d5272": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The lure 'To keep the child from copying just one parent' is not a mistake 9th graders actually make. Both sex cells join, so the halving has nothing to do with copying one parent, and the lure reads as filler next to 'To give the child an equal share from each parent', which already covers the parent-share idea. Only three choices are live. The stem's 'a child's first cell holds the chromosomes of both the egg and the sperm' also sets up the 46 + 46 sum, so the key takes little more than the arithmetic.",
+     "fix": "Replace the lure with 'To let the child's cells keep the stronger copy of each gene', the dominance mistake listed in facts.md (dominant alleles passed on more often). Optionally, soften the setup to 'and at fertilisation the egg and the sperm join into one cell' so the doubling is less spelled out."}]},
+  "54f9469ff3": {"verdict": "ok", "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The context's 'no two of her eggs, and no two brothers or sisters, are quite alike' claims too much. Identical twins come from one egg and carry the same chromosomes.",
+     "fix": "'...and no two brothers or sisters other than identical twins, are quite alike.'"}]},
+  "783e854af3": {"verdict": "ok", "issues": []},
+  "4bc53510c2": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "Recombination mapping is honors depth. Still, the keyed fact (genes lie in a line, each in a fixed place) is 9th-grade content, and the step of adding distances is arithmetic a 9th grader can do, so the question stands. One word may trip readers: 'the rate for one pair' can be read as a speed, when it means the share of young in which crossing over split the pair.",
+     "fix": "'...he found that the percentage for one pair came out close to the sum of the percentages for the other two pairs.'"}]},
+  "453bf5b797": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'None of them at all' sits awkwardly under 'About what share were round and green', which assumes some were, and it is the only choice that does not start 'About'. The linkage idea behind it is real, but the both-dominant share makes a stronger lure.",
+     "fix": "Replace it with 'About nine in sixteen', the round-yellow share, for a player who misreads which class is asked. The context already makes the linkage point."}]},
+  "7749057df6": {"verdict": "ok", "issues": []},
+  "c9c57e8a7e": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Marker' first appears in the choices. The stem never says the groups are told apart by something on the red cells, so the player has to bring that idea in. This is fair, since 9th graders are taught the A and B antigens, but one teaching phrase would help without giving away the key.",
+     "fix": "After 'he sorted people into groups A, B and C, later renamed O', add 'by the markers their red cells carry'."}]},
+  "d9687961f8": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The stem gives the two-gene model as 'one for A or no A, and one for B or no B' without saying that each person carries two copies of each gene, but it gives Bernstein's model 'of which each person carries two'. The key depends on an AB parent carrying a 'no A' copy and a 'no B' copy under the first model, so the comparison is lopsided and the hard step is hidden.",
+     "fix": "'...and they then proposed two genes, each carried in two copies: one for A or no A, and one for B or no B.'"}]},
+  "41bd3a5ae5": {"verdict": "ok", "issues": []},
+  "b52e06763f": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'What does that pattern show about Victoria?' rules out by its grammar the two lures that are not about her ('Her husband, Prince Albert, passed it on to Leopold' and 'The faulty gene arose new in Leopold, by chance'). A test-wise player is left choosing between one X and both X's, and the stem's 'never showed signs' settles that. Both lures are good reasoning traps, and the stem's last clause wastes them.",
+     "fix": "End the stem with 'What best explains that pattern?' and make the choices: 'Victoria carried the faulty gene on one of her X chromosomes' / 'Victoria carried the faulty gene on both of her X chromosomes' / 'Prince Albert carried the faulty gene and passed it on' / 'The faulty gene arose new in Leopold, by chance'."}]}
+ },
+ "unit_notes": "The scope is fully covered: the halving (6b3d5d5272), independent assortment (54f9469ff3), crossing over (783e854af3, with Sturtevant's map, 4bc53510c2, as how we know it), the two-trait cross (453bf5b797), incomplete dominance (7749057df6), codominance (c9c57e8a7e), multiple alleles (d9687961f8), and the sex-linked traits colour blindness (41bd3a5ae5) and haemophilia (b52e06763f). No re-ask found. The two-trait cross goes past T3 mendels-peas-and-inherited-traits' 3:1 and Punnett half. Independent assortment keys the mechanism behind T4 genes-chromosomes-and-mutations' 'each got a different half'. The 46 chromosomes and XX and XY appear only as setup. Sutton's T4 question keys 'each chromosome carries many genes', not assortment. The pairs on shared ground key different facts: recombinants against gene order; codominance against three alleles; why it is rarer in women against the carrier pedigree. The tone is clinical, with egg and sperm appearing only as cells. Across this batch, Weismann also appears in how-evolution-works (8e7e8879ec, the mice tails) and colour blindness in its Pingelap question (total colour blindness and the founder effect). Both are different facts, not repeats."}

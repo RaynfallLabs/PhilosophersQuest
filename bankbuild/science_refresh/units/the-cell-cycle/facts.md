@@ -136,3 +136,17 @@ F31. "Unlike normal cells, cancer cells don't stop growing and dividing when the
 - Gurdon's exact success rate (Grokipedia's figures conflict).
 - Larger animals having "more cells, not bigger cells" (true only for some cell types, so not taught).
 - Henrietta Lacks and the HeLa line (another unit's, or out); meiosis; the 46 chromosomes and karyotypes; Remak and Virchow; asexual reproduction.
+
+## Added at revision (2026-11-27)
+
+F32. Who found what in the 2001 prize (fact-check correction for cfa6b4cf1a): Paul Nurse, working with fission yeast (Schizosaccharomyces pombe), "identified the cdc2 gene as a master regulator initiating both the S-phase and mitosis"; cdc2 encodes "a 34-kDa protein kinase", one of the "cyclin-dependent kinases (CDKs)", the "core molecular engines of eukaryotic cell cycle control" (human match: CDK1). Tim Hunt found cyclins (F25). So: Nurse found the enzyme that drives a cell through its cycle; Hunt found cyclins.
+    https://grokipedia.com/page/Paul_Nurse ; https://grokipedia.com/page/Tim_Hunt
+
+F33. What each checkpoint checks: the G1/S checkpoint "assesses DNA integrity and cell size before replication", the restriction point checking "attainment of sufficient size through accumulated biomass"; the spindle assembly checkpoint "monitors the attachment of kinetochores to microtubules from opposite spindle poles" (Grokipedia, Cell cycle checkpoint). So a cell's size is weighed before its DNA is copied, not at metaphase.
+    https://grokipedia.com/page/Cell_cycle_checkpoint
+
+F34. Skeletal muscle fibres are "elongated, multinucleated cells"; "myoblasts fuse to form multinucleated myotubes" (Grokipedia, Skeletal muscle). Each nucleus still holds the same set of chromosomes, so the lure in b5bfda8682 now speaks of each nucleus (fact-check note).
+    https://grokipedia.com/page/Skeletal_muscle
+
+F35. Yamanaka and Takahashi's tests, all in the mouse study published in 2006 (ASU Embryo Project): each candidate factor put in alone gave no resistant colonies ("none of the cells showed a resistance to G418"); all 24 together gave colonies; leaving out one factor at a time picked out ten; and Oct3/4, Klf4, Sox2 and c-Myc together "produced the most cells that were like embryonic stem cells". Wikipedia: the four were "each necessary and together sufficient"; Grokipedia: four factors "sufficient to induce pluripotency". The stem no longer says "then", which read as later work (fact-check note).
+    https://embryo.asu.edu/pages/induced-pluripotent-stem-cell-experiments-kazutoshi-takahashi-and-shinya-yamanaka-2006-and ; https://en.wikipedia.org/wiki/Induced_pluripotent_stem_cell ; https://grokipedia.com/page/Induced_pluripotent_stem_cell

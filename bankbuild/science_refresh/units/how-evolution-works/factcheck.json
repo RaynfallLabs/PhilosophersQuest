@@ -1,0 +1,493 @@
+{
+ "unit": "how-evolution-works",
+ "questions": {
+  "b189ff86fd": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: Malthus argued that people multiply faster than their food supply (Essay on the Principle of Population, 1798; checks such as famine, disease and war)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Thomas_Robert_Malthus",
+     "note": ""
+    },
+    {
+     "claim": "Darwin worked out natural selection in September 1838 (28 Sept, Notebook D, after reading Malthus) and did not publish it for twenty years (sketch 1842, Essay 1844 unpublished)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Publication_of_Darwin's_theory",
+     "note": ""
+    },
+    {
+     "claim": "Wallace's letter/essay was posted from Ternate and reached Darwin in June 1858 (18 June); wording 'posted from Ternate' holds even though his journal suggests he wrote it on Gilolo (Halmahera)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Alfred_Russel_Wallace",
+     "note": "Grokipedia: drafted on Gilolo, then travelled to Ternate to mail it. 'Posted from' is the safe wording; the stem does not say 'written on'."
+    },
+    {
+     "claim": "Papers read together at the Linnean Society of London on 1 July 1858 (read by the Secretary, J. J. Bennett; neither Darwin nor Wallace present)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Publication_of_Darwin%27s_theory",
+     "note": "Stem names no reader and says nothing about attendance, so no risk."
+    },
+    {
+     "claim": "Both Darwin and Wallace drew on Malthus; Wallace thought of Malthus's checks while ill with fever in February 1858",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Alfred_Russel_Wallace",
+     "note": ""
+    },
+    {
+     "claim": "Context paraphrase: favourable variations preserved, unfavourable destroyed (Darwin, not in quotation marks)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Publication_of_Darwin's_theory",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: slow change over vast ages is Lyell's, not Malthus's",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Charles_Lyell",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: use-and-inheritance is Lamarck's, not Malthus's",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lamarckism",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: design fitting each creature to its way of life is Paley's (Natural Theology, 1802), not Malthus's argument",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Natural_Theology_or_Evidences_of_the_Existence_and_Attributes_of_the_Deity",
+     "note": ""
+    }
+   ]
+  },
+  "69008c2c10": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: within a pure line the weight differences were non-heritable, from growing conditions (resources to the mother plant, position of seeds and pods)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Johannsen",
+     "note": ""
+    },
+    {
+     "claim": "Pure lines each from a single self-pollinating Princess bean plant (Phaseolus vulgaris); published 1903",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wilhelm_Johannsen",
+     "note": ""
+    },
+    {
+     "claim": "Heaviest and lightest seeds of a line sown separately for several generations; offspring means the same",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wilhelm_Johannsen",
+     "note": "Grokipedia: up to four generations in some lines; Botanik Online: 'several subsequent generations'. 'Several' is safe."
+    },
+    {
+     "claim": "Selection in the mixed stock did shift the mean",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wilhelm_Johannsen",
+     "note": "It worked by sorting out the lines already present, which is consistent with the context's 'part of the difference lay in the genes'."
+    },
+    {
+     "claim": "Johannsen coined gene, genotype and phenotype (1909)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Wilhelm_Johannsen",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices (blending away, needs more generations, too slight to act on) are all false explanations",
+     "result": "ok",
+     "source": "https://www-archiv.fdm.uni-hamburg.de/b-online/e13/13.htm",
+     "note": ""
+    }
+   ]
+  },
+  "47eaf66e9d": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a gene version growing more common over generations is evolution (change in allele frequencies in a population over generations)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Evolution",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: genes switching on in each adult as winters turn colder is a change within individuals' lifetimes, not evolution",
+     "result": "ok",
+     "source": "https://courses.lumenlearning.com/wm-biology2/chapter/misconceptions-of-evolution/",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: herd doubling, or lambs heavier in wet years, with every gene as common as before, are not evolution",
+     "result": "ok",
+     "source": "https://open.lib.umn.edu/evosex/chapter/2-3-what-is-not-evolution",
+     "note": ""
+    },
+    {
+     "claim": "Context: selection acts on individuals, populations evolve",
+     "result": "ok",
+     "source": "https://courses.lumenlearning.com/wm-biology2/chapter/misconceptions-of-evolution/",
+     "note": ""
+    }
+   ]
+  },
+  "1cdfe949d3": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: sterile hybrids show the populations can no longer interbreed to produce fertile offspring (biological species concept, Mayr 1942)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Species",
+     "note": ""
+    },
+    {
+     "claim": "Horses and donkeys are separate species because mules are sterile",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Species",
+     "note": "Rare fertile female mules exist; 'sterile' is the standard simplification."
+    },
+    {
+     "claim": "Wrong choices: differences in fur, diet, skulls and teeth do not by themselves make separate species; look-alike (cryptic) species exist",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Species",
+     "note": ""
+    },
+    {
+     "claim": "Context: separated populations diverging until they cannot interbreed is speciation (allopatric)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Speciation",
+     "note": ""
+    }
+   ]
+  },
+  "1b561b8f50": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Hunted for blubber oil; by the 1890s perhaps as few as twenty left",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11009102/",
+     "note": "Hoelzel et al. 2024: ~20 individuals in 1892. Other estimates: 10-30 and 'as few as 20 by around 1890' (Grokipedia), 20-100 (Weber et al. 2000). 'Perhaps as few as twenty' is properly hedged."
+    },
+    {
+     "claim": "'Protected since, the seals now number over 200,000'",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5892393",
+     "note": "Guadalupe Island declared a reserve for the seals in 1922 (Grokipedia also gives Mexican protection 1911); Lowry et al. estimated 225,000 in 2010. 'Protected since' compresses a 20-30 year gap after the 1890s low; optional tightening: 'Protected from the 1920s, the seals now number over 200,000'."
+    },
+    {
+     "claim": "One stretch of DNA (mtDNA control region) has just two types in northern seals; 48 southern elephant seals showed 26",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5892393",
+     "note": "'sequences of this same mtDNA locus from 48 southern elephant seals revealed 26 variable sites and 26 haplotypes'; northern: 2 haplotypes (Hoelzel et al. 1993), confirmed in >100 animals by Weber et al. 2000."
+    },
+    {
+     "claim": "Key: DNA from seals that died before the crash (museum specimens, archaeological remains) can settle it",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5892393",
+     "note": "Weber et al. 2000 'directly demonstrate the reduction in genetic variation through analysis of pre-bottleneck museum specimens' and archaeological remains; Hoelzel et al. 2024: pre-bottleneck heterozygosity ~0.00142 vs ~0.000176 today."
+    },
+    {
+     "claim": "Wrong choice: more DNA from living seals would not settle it",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5892393",
+     "note": "Weber et al. sampled >100 living seals and found only the same 2 haplotypes."
+    },
+    {
+     "claim": "Wrong choice: more southern seals would not settle it (two species can differ for other reasons)",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11009102/",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: seals of the 1920s are post-bottleneck descendants of the survivors",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5892393",
+     "note": ""
+    },
+    {
+     "claim": "Context: drift, strongest in small populations; a crash like this is a bottleneck",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Genetic_drift",
+     "note": ""
+    }
+   ]
+  },
+  "9e9c97f6ac": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Typhoon over Pingelap in 1775 left about twenty survivors",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Pingelap",
+     "note": "Wikipedia: about 20 survivors; Grokipedia: 'as few as 20 immediate survivors' (about 30 after famine in one passage)."
+    },
+    {
+     "claim": "As many as one islander in ten is totally colour-blind (achromatopsia)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Pingelap",
+     "note": "Wikipedia 'almost 10%'; Grokipedia 4-10%. 'As many as' is hedged correctly."
+    },
+    {
+     "claim": "In the United States about 1 in 33,000",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Pingelap",
+     "note": "Wikipedia: 'only 1 in 33,000, or 0.003%'. Grokipedia gives 1 in 30,000-50,000 worldwide."
+    },
+    {
+     "claim": "Key: one of the few survivors (the ruler, Doahkaesa Mwanenihsed) happened to carry the gene (founder effect / drift)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pingelap",
+     "note": "Wikipedia: 'is now believed to have been a carrier'; the context's 'is believed' matches."
+    },
+    {
+     "claim": "Wrong choices: the storm sparing carriers (selection), glare damage, and the gene arising anew after the storm are all false",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Pingelap",
+     "note": ""
+    },
+    {
+     "claim": "Context: about three islanders in ten carry it; marriages among relatives brought pairs together; poor sight in bright sunlight",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Pingelap",
+     "note": "Wikipedia: 'a further 30% being unaffected carriers'; 'founder effect and inbreeding'; a fisherman 'has difficulty seeing in bright sunlight'. 'Carry it' here means unaffected one-copy carriers, which is how the sources count them."
+    }
+   ]
+  },
+  "45e1e8abb4": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: gene flow keeps populations alike and works against their splitting",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gene_flow",
+     "note": "Grokipedia: gene flow 'homogenizes genetic variation across populations'; high rates prevent distinct genetic profiles; limited gene flow promotes divergence. The context's 'whatever selection or drift builds up ... is mixed back' is a fair 9th-grade simplification (very strong local selection can hold differences against gene flow, but the key's 'works against' is exactly right)."
+    },
+    {
+     "claim": "Stem: selection, drift, mutation and gene flow can each change how common a gene is; gene flow defined as movement of genes between populations (wandering animals, pollen)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gene_flow",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: drives them apart / hurries splitting (opposite of the truth)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gene_flow",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: raises the mutation rate (gene flow moves existing alleles; mutation makes new ones)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gene_flow",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choice: changes each migrant's genes to suit its new home (Lamarckian; false)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gene_flow",
+     "note": ""
+    },
+    {
+     "claim": "Context: a species usually splits only after a barrier (sea, mountains, river) cuts gene flow",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Allopatric_speciation",
+     "note": "Allopatric speciation is 'widely regarded as the most common form of speciation'; 'usually' hedges sympatric and parapatric cases."
+    },
+    {
+     "claim": "Context: gene flow can bring in a gene version a population lacked, but only mutation makes new ones",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Gene_flow",
+     "note": ""
+    }
+   ]
+  },
+  "de84f95f39": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Chimpanzee draft genome published in 2005 (Nature, 1 September 2005)",
+     "result": "ok",
+     "source": "https://www.genome.gov/15515096/2005-release-new-genome-comparison-finds-chimps-humans-very-similar-at-dna-level",
+     "note": ""
+    },
+    {
+     "claim": "About 98.8% identical letter for letter where the DNA lines up (1.23% single-nucleotide divergence)",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Chimpanzee_genome_project",
+     "note": "Grokipedia: '~98.8% nucleotide sequence identity (1.23% divergence)'; NHGRI: 'almost 99 percent identical'."
+    },
+    {
+     "claim": "About 96% counting insertions and deletions",
+     "result": "ok",
+     "source": "https://www.genome.gov/15515096/2005-release-new-genome-comparison-finds-chimps-humans-very-similar-at-dna-level",
+     "note": "NHGRI: 'When DNA insertions and deletions are taken into account, humans and chimps still share 96 percent of their sequence.' The stem's 'nearer 96 percent' is suitably loose (the figure varies by method)."
+    },
+    {
+     "claim": "Human and mouse DNA differ about sixty times as much",
+     "result": "ok",
+     "source": "https://www.genome.gov/15515096/2005-release-new-genome-comparison-finds-chimps-humans-very-similar-at-dna-level",
+     "note": "NHGRI: human-chimp differences are 'approximately 60 times less than that seen between human and mouse'."
+    },
+    {
+     "claim": "Key: humans and chimpanzees had a recent common ancestor",
+     "result": "ok",
+     "source": "https://www.genome.gov/15515096/2005-release-new-genome-comparison-finds-chimps-humans-very-similar-at-dna-level",
+     "note": "'diverged from a common ancestor about 6 million years ago'."
+    },
+    {
+     "claim": "Wrong choices: descent from chimpanzees like today's; chimpanzees turning into humans; genomes alike from living alike - all false",
+     "result": "ok",
+     "source": "https://www.pearson.com/channels/biology/study-guides/misconceptions-in-evolutionary-biology-concepts-errors-and",
+     "note": ""
+    },
+    {
+     "claim": "Context: split about six to seven million years ago; mouse line about 75 million",
+     "result": "ok",
+     "source": "https://www.genome.gov/10005832/background-on-the-history-of-the-mouse",
+     "note": "Grokipedia 6-7 Mya; NHGRI mouse page: 'somewhere around 75 million years ago' (an estimate; some molecular-clock studies give 80-90 Mya, so 'about' matters)."
+    }
+   ]
+  },
+  "c18520dc34": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Lenski started twelve E. coli populations from one ancestor on 24 February 1988",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment",
+     "note": "Six from REL606 (Ara-) and six from REL607, a one-mutation derivative of it; 'founded from a common ancestor' is how Lenski's papers put it."
+    },
+    {
+     "claim": "Nearly every day a small sample (0.1 mL, 1%) goes into fresh broth",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/E._coli_long-term_evolution_experiment",
+     "note": "'Nearly' covers the 1990 move and the 2020 COVID freeze."
+    },
+    {
+     "claim": "Frozen every 500 generations; the frozen bacteria stay alive and can be revived",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment",
+     "note": ""
+    },
+    {
+     "claim": "Key: fitness is measured by competing the revived ancestor and the evolved population in one flask, told apart by the neutral Ara marker",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/E._coli_long-term_evolution_experiment",
+     "note": "'Evolved samples are co-cultured with a marked ancestor of the opposite arabinose phenotype'; relative fitness is the ratio of realized growth rates (PMC5607360)."
+    },
+    {
+     "claim": "Wrong choices: growing each alone and counting, counting mutations, and measuring cell size are not how fitness is measured",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5607360",
+     "note": ""
+    },
+    {
+     "claim": "Context: about 70% fitter than the ancestor by 50,000 generations",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/E._coli_long-term_evolution_experiment",
+     "note": "Grokipedia and Lenski's review (Wiser et al. 2013 trajectory): relative fitness ~1.7 at 50,000 generations. Wikipedia instead says ~70% faster by 20,000 generations (older assays); the 50,000 figure is the better-sourced current one."
+    },
+    {
+     "claim": "Context: all twelve evolved bigger cells; six became hypermutators with broken DNA repair",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment",
+     "note": "'All twelve ... show an increase in cell size'; 'six have so far been reported to have developed defects in their ability to repair DNA'."
+    }
+   ]
+  },
+  "40839de97b": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Citrate users appeared in one flask (Ara-3) around generation 31,500",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430337/",
+     "note": "'A citrate-using (Cit+) variant finally evolved in one population by 31,500 generations'."
+    },
+    {
+     "claim": "Citrate in the broth from the start; E. coli normally cannot use citrate in the presence of oxygen",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment",
+     "note": ""
+    },
+    {
+     "claim": "Blount thawed frozen samples and replayed; Cit+ re-arose only from clones of generation 20,000 or later",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430337/",
+     "note": "Every clone that yielded Cit+ mutants came from generation 20,000 or later; none of 600 cultures from earlier clones did (Blount, Borland and Lenski, PNAS 2008)."
+    },
+    {
+     "claim": "Key: an earlier (potentiating) genetic change paved the way",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430337/",
+     "note": "'some potentiating mutation arose by 20,000 generations'; 'contingent on the particular history of that population'."
+    },
+    {
+     "claim": "Wrong choices: one rare mutation equally likely at any time (explicitly rejected); learning; freezer damage - all wrong",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430337/",
+     "note": ""
+    },
+    {
+     "claim": "Context: trillions of cells from the first 15,000 generations never produced Cit+",
+     "result": "ok",
+     "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430337/",
+     "note": "'no Cit+ mutants among 8.4 x 10^12 ancestral cells, nor among 9 x 10^12 cells from 60 clones sampled in the first 15,000 generations'."
+    },
+    {
+     "claim": "Context: final step a duplication putting citT (citrate transporter) under a promoter active in oxygen (rnk)",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/E._coli_long-term_evolution_experiment",
+     "note": "2,933-bp duplication placed citT under the rnk promoter."
+    }
+   ]
+  },
+  "8e7e8879ec": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Weismann cut the tails of white mice and their young for five generations",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/August_Weismann",
+     "note": "Wikipedia: tails of 68 white mice removed 'repeatedly over 5 generations'."
+    },
+    {
+     "claim": "Stories of a tailless cat with tailless kittens prompted the test",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/August_Weismann",
+     "note": "Told as a claim ('stories told'), as Wikipedia reports it."
+    },
+    {
+     "claim": "All 901 young were born with tails of full length",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/August_Weismann",
+     "note": "Weismann's words: '901 young were produced by five generations of artificially mutilated parents, and yet there was not a single example of a rudimentary tail'. Grokipedia: 'every generation of offspring was born with full-length tails'. Some secondary pages (ASU Embryo Project, Grokipedia) call 901 the number of mice cut; the stem follows Weismann's own count of young."
+    },
+    {
+     "claim": "Key: germ plasm - egg and sperm carry traits, set apart from the body",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/August_Weismann",
+     "note": "Weismann took the result to show that 'somatic changes do not alter the hereditary material'."
+    },
+    {
+     "claim": "Wrong choices: pangenesis (gemmules), Lamarckian inheritance of bodily changes, and blending are not what the result supported",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lamarckism",
+     "note": "The context says correctly that the result said nothing about blending."
+    },
+    {
+     "claim": "Context: critics noted a cut tail is an injury, not a change built by use; Darwin partly held Lamarck's idea; genetics retired it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lamarckism",
+     "note": ""
+    },
+    {
+     "claim": "Context: a few chemical marks can pass on for a generation or two, but do not revive Lamarck's theory",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Lamarckism",
+     "note": "Grokipedia: reprogramming 'typically erases acquired marks, limiting stable transmission beyond one or two generations'; 'Epigenetic effects do not substantiate classical Lamarckism'. True for mammals like Weismann's mice; in some plants and worms marks last many generations, so 'in mammals' could be added if the writer wants precision. Not an error as written ('can pass on')."
+    }
+   ]
+  }
+ },
+ "unit_notes": "All 11 checked against the web (Grokipedia first). No errors. Flagged items resolved: Wallace's essay is said to be 'posted from Ternate' (safe: written on Gilolo per his journal, mailed from Ternate); the stem names no Linnean reader and makes no attendance claim (the Secretary, J. J. Bennett, read; neither man present); both men drew on Malthus; Johannsen's within-line variation was non-heritable; seal low point hedged ('perhaps as few as twenty'; sources 10-100); Pingelap figures match Wikipedia; 98.8%/96%/60x match NHGRI and Grokipedia; Lenski competitions use the revived ancestor; citrate replays match Blount 2008; Weismann five generations, 901 young, full-length tails. Optional polish only: seal stem 'Protected since' could read 'Protected from the 1920s'. Grokipedia's seal page says the mtDNA is 'fixed to a single haplotype', which conflicts with the 2-haplotype primary literature; the stem follows the literature."
+}

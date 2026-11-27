@@ -1,0 +1,222 @@
+{
+ "unit": "the-cell-cycle",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "the-cell-cycle",
+   "question": "Walther Flemming, who named mitosis in 1882 after the threads he saw in stained salamander cells, called interphase, the long stretch between two divisions, a resting stage. Alma Howard and Stephen Pelc later gave the root tips of broad beans radioactive phosphorus, which a cell builds into new DNA, and tracked which nuclei took it up. When did the root cells copy their DNA?",
+   "answer": "During part of interphase, before mitosis begins",
+   "choices": [
+    "During part of interphase, before mitosis begins",
+    "During prophase, as the threads first thicken",
+    "During anaphase, as the threads are pulled apart",
+    "At a steady rate, all through the cycle"
+   ],
+   "context": "The label went into the nuclei during one part of interphase, Flemming's resting stage, before any threads appeared. Howard and Pelc named that part the S phase, for synthesis, with gaps called G1 and G2 before and after it. Interphase fills about nine tenths of a cell's cycle as it grows and copies its DNA, so every chromosome is already double when mitosis begins.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F8"
+   ],
+   "grade_note": "Ninth-grade biology teaches interphase as the stage in which the cell grows and copies its DNA, and Howard and Pelc's labelled bean roots are how that was learned."
+  },
+  {
+   "tier": 5,
+   "topic": "the-cell-cycle",
+   "question": "Partway through mitosis, a cell's chromosomes line up across its middle. Each chromosome is now two identical halves, and spindle fibres reaching from opposite ends of the cell take hold of one half each. The cell waits in this stage, metaphase, until every chromosome is held from both ends, and a single loose one can keep it waiting. What does the wait guard against?",
+   "answer": "A new cell getting both copies of a chromosome",
+   "choices": [
+    "A new cell getting both copies of a chromosome",
+    "A new cell being too small when it splits off",
+    "Two chromosomes trading pieces of their DNA",
+    "A break in the DNA being passed on"
+   ],
+   "context": "Each chromosome was copied in interphase, and in anaphase its two copies are pulled to opposite ends of the cell, so only when every chromosome is held from both ends does each new cell get one copy of each. Moving on too soon can leave one new cell with an extra chromosome and the other one short, an error common in tumour cells. A cell's size and any broken DNA are weighed at other checks, before the DNA is copied or before mitosis begins, and trading pieces belongs to meiosis, not mitosis; in telophase a nucleus forms round each set.",
+   "facts": [
+    "F2",
+    "F6",
+    "F7",
+    "F8",
+    "F9",
+    "F10",
+    "F33"
+   ],
+   "grade_note": "Ninth graders learn what happens in each stage of mitosis and why, and the wait at metaphase is the reason each new cell gets one copy of every chromosome."
+  },
+  {
+   "tier": 5,
+   "topic": "the-cell-cycle",
+   "question": "At the end of its division, an animal cell is pinched in two as a ring of protein fibres tightens round its waist like a drawstring. A cell in the growing tip of an onion root is enclosed in a cell wall. Once its nucleus has divided, how does that cell split in two?",
+   "answer": "It builds a new wall from the centre outward",
+   "choices": [
+    "It builds a new wall from the centre outward",
+    "It grows a new wall inward from its old one",
+    "It pinches in, drawing its wall in with it",
+    "It buds off a small new cell through its wall"
+   ],
+   "context": "Small sacs from the Golgi apparatus gather in the middle of the cell and fuse into a cell plate, which spreads outward until it meets the old wall and becomes a new wall between the two daughter cells. The wall is too stiff to be pinched in, and the water pressure inside a plant cell pushes back as well, so the new wall starts at the centre, not at the old wall. This last step, cytokinesis, leaves two cells with identical nuclei.",
+   "facts": [
+    "F11"
+   ],
+   "grade_note": "Ninth-grade biology teaches cytokinesis and the difference between the animal cell's furrow and the plant cell's cell plate."
+  },
+  {
+   "tier": 5,
+   "topic": "the-cell-cycle",
+   "question": "Many chemotherapy drugs, given to fight cancer, also harm healthy parts of the body. Patients often lose their hair while taking them, and their bone marrow makes fewer new blood cells. Why are the hair roots and the marrow hit?",
+   "answer": "Their cells divide again and again",
+   "choices": [
+    "Their cells divide again and again",
+    "Their cells soak up and store the drug",
+    "Their cells take in the most blood",
+    "Their cells no longer obey signals to stop"
+   ],
+   "context": "Such drugs work by stopping cells from dividing, so they strike the healthy tissues that make new cells all the time as well as the cancer: the hair roots, the lining of the gut, renewed every few days, and the marrow, which must replace red blood cells that last only about four months. Mitosis gives the body the cells it needs to grow, mend wounds and replace worn ones, though most nerve cells and heart muscle cells never divide again once they mature. Ignoring the signals to stop is the mark of cancer cells, not of healthy marrow.",
+   "facts": [
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16",
+    "F31"
+   ],
+   "grade_note": "Ninth graders learn that the body needs mitosis to grow, repair and replace worn cells, and that many cancer treatments work by stopping cell division."
+  },
+  {
+   "tier": 5,
+   "topic": "the-cell-cycle",
+   "question": "Every cell in a girl's body descends from a single fertilised egg, and she now has trillions of them. Her nerve cells carry signals from place to place, while the muscle cells of her arms pull on her bones. What makes the two kinds of cell so different?",
+   "answer": "Each puts a different set of its genes to work",
+   "choices": [
+    "Each puts a different set of its genes to work",
+    "Each keeps only the genes it needs for its job",
+    "Each has its own changes in its genes",
+    "Each nucleus holds a different number of chromosomes"
+   ],
+   "context": "Nearly every cell keeps the full set of genes in its nucleus, but each kind switches on only some of them, steered by signals from around it, so a nerve cell makes a nerve cell's proteins and a muscle cell a muscle cell's. August Weismann proposed that cells lose hereditary material as they specialise, but John Gurdon's frogs showed that the genes are kept. Mitosis passes the same chromosomes to every nucleus, even in a muscle fibre, which holds many nuclei, and changes to genes are rare mistakes, not the way cells specialise.",
+   "facts": [
+    "F8",
+    "F17",
+    "F18",
+    "F34"
+   ],
+   "grade_note": "Ninth-grade biology teaches that one fertilised egg becomes many kinds of specialised cell by differentiation, steered by which genes are switched on."
+  },
+  {
+   "tier": 5,
+   "topic": "the-cell-cycle",
+   "question": "John Gurdon aimed ultraviolet light at a frog's egg to destroy its nucleus, then put in its place the nucleus of a gut cell from a feeding tadpole; a few such eggs grew into swimming tadpoles. The gut cells came from tadpoles with a mutation that leaves one nucleolus in each nucleus, where normal frogs have two; the eggs came from normal frogs. The new tadpoles' cells had one. Critics doubted his 1962 result. Which doubt did the single nucleolus settle?",
+   "answer": "That the egg's own nucleus had built the tadpole",
+   "choices": [
+    "That the egg's own nucleus had built the tadpole",
+    "That a stray unspecialised cell gave the nucleus",
+    "That only a rare few gut nuclei could do it",
+    "That the light had harmed the rest of the egg"
+   ],
+   "context": "Tadpoles carrying the donor's mark had been built by the gut cell's nucleus, not by any part of the egg's own that had lived through the light. The mark could not show that the gut cell had been fully specialised, for a stray unspecialised cell from the same tadpole would carry it too, so a team in Basel later did the experiment with the nucleus of a white blood cell making antibodies, and again got tadpoles. Gurdon shared the 2012 Nobel Prize with Shinya Yamanaka for showing that mature cells can be reprogrammed.",
+   "facts": [
+    "F20",
+    "F21",
+    "F23"
+   ],
+   "grade_note": "Ninth graders learn what a stem cell can become and what a control in an experiment rules out, and Gurdon's marked frogs are the classic case of both."
+  },
+  {
+   "tier": 5,
+   "topic": "the-cell-cycle",
+   "question": "Shinya Yamanaka and Kazutoshi Takahashi put 24 genes, all busy in embryonic stem cells, into fibroblasts, cells of connective tissue, taken from mice. A very few of the cells were reset into stem cells able to become any kind of cell in the body. In the same study, published in 2006, they ran the test again and again, each time leaving out one gene, and narrowed the 24 to four that were each needed. Which test would show that those four were enough?",
+   "answer": "Put in the four alone, with none of the other 20",
+   "choices": [
+    "Put in the four alone, with none of the other 20",
+    "Put in each of the four on its own, one at a time",
+    "Leave out all four at once, keeping the other 20",
+    "Put in all 24 again, into many more cells"
+   ],
+   "context": "Only the four put in with none of the others can show that they are enough, and they were: Oct3/4, Sox2, Klf4 and c-Myc together reset a few cells. Leaving genes out shows only which are needed, and the team had found that no gene put in on its own reset a single cell. The reset cells are called induced pluripotent stem cells; one of the four, c-Myc, can drive cancer, so later recipes leave it out at the cost of a slower, rarer reset.",
+   "facts": [
+    "F19",
+    "F22",
+    "F24",
+    "F35"
+   ],
+   "grade_note": "Ninth-grade biology teaches stem cells and how an experiment shows what a result needs, and Yamanaka's tests are the standard modern case of telling 'needed' from 'enough'."
+  },
+  {
+   "tier": 5,
+   "topic": "the-cell-cycle",
+   "question": "Leland Hartwell and Ted Weinert hit baker's yeast with X-rays, which break DNA. Normal cells halted before dividing, and the more harm was done, the longer they halted. Cells with a broken RAD9 gene did not halt; they kept dividing for a few generations and died. Yet when the two held X-rayed cells of that kind for several hours with a drug that blocks division, the cells mended their DNA. What is the RAD9 gene's job?",
+   "answer": "Making the cell wait until the damage is mended",
+   "choices": [
+    "Making the cell wait until the damage is mended",
+    "Mending the breaks that X-rays make in the DNA",
+    "Shielding the cell's DNA from the X-rays",
+    "Pushing the cell on to its next division"
+   ],
+   "context": "Held still, the cells without a working RAD9 could mend their DNA, so the gene does not do the mending: it holds the cell back until the mending is done, and without that wait the cells divided with broken DNA and died. Hartwell called such controls checkpoints, and he shared the 2001 Nobel Prize with Paul Nurse, who found the enzyme that drives a cell through its cycle, and Tim Hunt, who found cyclins, proteins that build up through each cycle and are destroyed at every division. A human cell whose checkpoints fail can go on dividing with damaged DNA, one of the steps toward cancer.",
+   "facts": [
+    "F25",
+    "F26",
+    "F27",
+    "F28",
+    "F29",
+    "F32"
+   ],
+   "grade_note": "Ninth graders learn that checkpoints control the cell cycle and that their failure can lead to cancer, and this yeast experiment is how checkpoints were found."
+  },
+  {
+   "tier": 5,
+   "topic": "the-cell-cycle",
+   "question": "Normal cells taken from an animal's tissue and grown in a dish of food spread and divide until they cover the bottom in a single layer, each touching its neighbours. There they stop, though food remains. Cells taken from a cancer are grown in the same way. What do they usually do?",
+   "answer": "Go on dividing, and pile up over one another",
+   "choices": [
+    "Go on dividing, and pile up over one another",
+    "Go on dividing, but die as fast as they form",
+    "Stop at a single layer, but reach it sooner",
+    "Stop at a single layer of much larger cells"
+   ],
+   "context": "Normal cells stop dividing once they are crowded, but cancer cells usually lose this check and grow over one another, which is what a cancer is: cell division that no longer stops when it should. Cancer cells often divide quickly, and they can ignore the signals that tell a cell to die, but what marks them out is that they do not stop when there are enough of them. In the body the same failure piles extra cells into a tumour, a crowd of cells, not a layer of swollen ones.",
+   "facts": [
+    "F29",
+    "F30",
+    "F31"
+   ],
+   "grade_note": "Ninth-grade biology teaches cancer as cell division escaping its controls, and cells grown in a dish are the plainest way to see it."
+  }
+ ],
+ "revised": {
+  "0437409842": {
+   "old_hash": "0437409842",
+   "why": "Judge medium: the stem's 'Each chromosome is now two identical halves' ruled out 'A chromosome being split before its DNA is copied'. Replaced with 'A new cell being too small when it splits off', a real check that comes earlier, before DNA is copied (F33), so it is wrong in the same adjacent way as the DNA-damage lure. Stem unchanged; context says where the size check sits."
+  },
+  "f453d695b2": {
+   "old_hash": "36a90f9710",
+   "why": "Judge medium: 'stiff cell wall' in the stem killed the pinching lure, and 'cracks its old wall' was no real confusion. 'Stiff' and 'boxed in' are gone ('enclosed in a cell wall'), and the cracking lure is replaced by 'It grows a new wall inward from its old one', the guess a student makes from the animal cell's furrow, so the direction of the new wall (F11: from the centre outward) is what is tested and the key is no longer the only choice that builds a wall."
+  },
+  "b5bfda8682": {
+   "old_hash": "b5bfda8682",
+   "why": "Fact-check note: a skeletal muscle fibre has many nuclei, so 'Each has a different number of chromosomes' was partly true of the whole fibre. The lure now reads 'Each nucleus holds a different number of chromosomes', which is plainly wrong (F34). Stem unchanged. The judge's low suggestion (T4's sibling fact as a lure) was not taken: the stem's 'single fertilised egg' would rule it out."
+  },
+  "3856a0a97e": {
+   "old_hash": "197b11b883",
+   "why": "Judge low (clarity, fairness): the stem said flatly that Gurdon 'destroyed the nucleus', which made the keyed doubt look already settled, and it asked 'Which doubt' without saying anyone doubted. It now says he aimed the light to destroy it, says critics had doubts, and names the single nucleolus as the evidence. Choices and context unchanged."
+  },
+  "7d49bab2ec": {
+   "old_hash": "22a84d98fe",
+   "why": "Judge high: the key restated the stem's own condition (no reset without the gene = could not happen without it). Re-asked as the next step, as the judge proposed: the four were each needed; which test shows they are enough? Key: put in the four alone; lures: each one alone (done, and none worked, F35), its mirror image (leave out all four, keeping the other 20, which shows only that they are needed), and all 24 on more cells. Fact-check note: the stem now says the tests were in the same 2006 study, not 'then'."
+  },
+  "cfa6b4cf1a": {
+   "old_hash": "cfa6b4cf1a",
+   "why": "Fact-check error: the context credited both Nurse and Hunt with cyclins. It now says Nurse found the enzyme that drives a cell through its cycle and Hunt found cyclins (F32), in the lead's wording. Stem and choices unchanged."
+  },
+  "1677c0bac5": {
+   "old_hash": "1677c0bac5",
+   "why": "Judge medium: 'Stop short, leaving bare patches' and 'Die off as soon as they touch' made cancer cells weaker than normal ones. Replaced with 'Stop at a single layer of much larger cells' (a tumour taken for swollen cells) and 'Go on dividing, but die as fast as they form' (cancer cells ignore death signals, F31); 'reach it sooner' (the faster-division error) kept. The judge's 'stop only when the food runs out' was not used: cancer cells that pile up do in the end stop when food or room gives out, so it risked being partly true. Key reworded to 'pile up over one another' so all four choices pair off in shape and length."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

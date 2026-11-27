@@ -1,0 +1,227 @@
+{
+ "unit": "viruses-bacteria-and-antibiotics",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "viruses-bacteria-and-antibiotics",
+   "question": "Dmitri Ivanovsky passed sap from tobacco plants sick with mosaic disease through a porcelain filter in 1892. The filter's pores were fine enough to hold back bacteria, yet the clear sap that came through still made healthy plants sick. What did that result show, on its own, about the cause of the disease?",
+   "answer": "It was smaller than the bacteria then known",
+   "choices": [
+    "It was smaller than the bacteria then known",
+    "It was a poison that bacteria in the sap had made",
+    "It could multiply in the leaves of a living plant",
+    "It could not be a bacterium of any kind"
+   ],
+   "context": "A cause that slips through pores which stop every bacterium then known must be smaller than those bacteria, but the filter could not say it was smaller than every kind: Ivanovsky himself thought it might be a very small bacterium, or a poison made by bacteria. Nor could the filter tell a poison from a living thing that multiplies; Martinus Beijerinck settled that in 1898 by passing the sap from plant to plant. Viruses are now known to be about a hundredth the size of most bacteria.",
+   "facts": [
+    "F4",
+    "F7",
+    "F8",
+    "F9",
+    "F10"
+   ],
+   "grade_note": "Ninth-grade biology tells how viruses were found by filtering sap, and asking what one result can and cannot show on its own is the grade's core reasoning about evidence."
+  },
+  {
+   "tier": 5,
+   "topic": "viruses-bacteria-and-antibiotics",
+   "question": "Martinus Beijerinck found in 1898 that the sap of tobacco plants with mosaic disease, which mottles the leaves, still made plants sick after it passed through a filter that holds back bacteria. Then he infected a healthy plant with the filtered sap, used sap from that plant to infect another, and so on down a line of plants. The disease did not fade down the line. Why did that rule out a poison as the cause?",
+   "answer": "A poison would have been watered down at every step",
+   "choices": [
+    "A poison would have been watered down at every step",
+    "A poison could never have passed through the filter",
+    "A poison would have killed the plants, not mottled them",
+    "A poison would have stayed in the first plant it reached"
+   ],
+   "context": "Each plant received only a little of the sap of the one before, so a fixed dose of poison would have thinned out until the disease faded; instead the agent was multiplying inside each living plant. Dissolved poisons do pass such filters, as diphtheria toxin does, which is why the filter alone could not decide. Beijerinck found the agent would grow in no broth, only in living, growing tissue, and he named it a virus.",
+   "facts": [
+    "F7",
+    "F9",
+    "F10",
+    "F11"
+   ],
+   "grade_note": "Ninth graders learn to judge which result would separate two explanations, and Beijerinck's line of plants is the textbook step from a filterable agent to one that reproduces."
+  },
+  {
+   "tier": 5,
+   "topic": "viruses-bacteria-and-antibiotics",
+   "question": "Wendell Stanley purified the cause of tobacco mosaic disease in 1935 into fine, needle-shaped crystals, like those of a pure chemical. Dissolved and applied to healthy leaves, the crystals still gave them the disease. Most biologists do not count a virus such as this one as a living thing. What is their main reason?",
+   "answer": "It can copy itself only inside a living cell",
+   "choices": [
+    "It can copy itself only inside a living cell",
+    "It is far too small to count as a living thing",
+    "It is pure protein, with no genes inside",
+    "It never changes from one generation to the next"
+   ],
+   "context": "A virus is genetic material, DNA or RNA, in a coat of protein, with no ribosomes or energy-making chemistry of its own: outside a cell it does nothing, and inside one it makes copies with the cell's own machinery. Size is not the test, for some giant viruses are bigger than the smallest bacteria, which are alive; Stanley first took his crystals for pure protein, but they were soon found to hold RNA, and viruses do evolve, often fast. Whether they are alive is still argued, and some biologists place them at the very edge of life.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F5",
+    "F6",
+    "F12",
+    "F31"
+   ],
+   "grade_note": "The ninth-grade standard compares viruses with cells, and why a virus is not usually counted as alive is its central question."
+  },
+  {
+   "tier": 5,
+   "topic": "viruses-bacteria-and-antibiotics",
+   "question": "A boy has a runny nose and a sore throat from a cold, and his mother asks the doctor for an antibiotic. Penicillin, one of the best known, kills bacteria by wrecking the wall that each one builds around itself as it grows. The doctor says no antibiotic can cure a cold. What is the reason?",
+   "answer": "A virus has none of the parts such drugs attack",
+   "choices": [
+    "A virus has none of the parts such drugs attack",
+    "A virus has grown resistant to all such drugs",
+    "A virus is too small for such drugs to hit",
+    "A virus multiplies too fast for such drugs"
+   ],
+   "context": "Antibiotics strike parts that bacteria have and human cells lack, such as the wall penicillin wrecks and the bacteria's own ribosomes. A cold virus has no wall and no ribosomes; it copies itself with the machinery of the boy's own cells, so the drug has nothing to hit. An antibiotic taken for a cold does no good and adds to the overuse that breeds resistant bacteria.",
+   "facts": [
+    "F2",
+    "F14",
+    "F15",
+    "F16",
+    "F17"
+   ],
+   "grade_note": "The ninth-grade standard on viruses asks students to explain why antibiotics act on bacteria and not on viruses."
+  },
+  {
+   "tier": 5,
+   "topic": "viruses-bacteria-and-antibiotics",
+   "question": "Alexander Fleming found a blue-green mould growing on a dish of staphylococcus bacteria in his London laboratory in September 1928, and the bacteria around it had been destroyed. What he saw could not show whether the killing needed the living mould itself. Which test could answer that?",
+   "answer": "Test the broth it grew in, with the mould filtered out",
+   "choices": [
+    "Test the broth it grew in, with the mould filtered out",
+    "Repeat the same dish many times, each with fresh mould",
+    "Grow the mould and the bacteria together for longer",
+    "Set the mould on a dish of a different kind of bacteria"
+   ],
+   "context": "Fleming did just that: the clear, straw-coloured 'mould juice' that came through the filter still worked against staphylococci, streptococci and pneumococci, so the killer was a substance the mould gives off, not the living mould. Repeating the dish, letting it grow longer or setting the mould on other bacteria all leave the living mould and the killing together, so none can tell them apart. In March 1929 he named the substance penicillin, in place of the clumsy phrase 'mould broth filtrate'.",
+   "facts": [
+    "F18",
+    "F19"
+   ],
+   "grade_note": "Ninth-grade investigation design asks which test isolates one variable, here the living mould against the substance it releases."
+  },
+  {
+   "tier": 5,
+   "topic": "viruses-bacteria-and-antibiotics",
+   "question": "Alexander Fleming named his mould's bacteria-killing substance penicillin in a paper of 1929. Yet for about ten years after that, almost no one used it to treat a sick person. What held it back?",
+   "answer": "No one could purify it before it broke down",
+   "choices": [
+    "No one could purify it before it broke down",
+    "It harmed white blood cells as well as germs",
+    "A patent kept other laboratories from making it",
+    "It sickened the animals it was injected into"
+   ],
+   "context": "Penicillin falls apart quickly, and neither Fleming's assistants nor Harold Raistrick's team in 1932 could get it out of the mould broth pure. It did not harm white blood cells, nor the mice and rabbits Fleming injected, and no patent stood in the way: Fleming sent samples of his mould to other researchers, and patents on ways of making penicillin came only in the 1940s, in the United States. From 1939 Ernst Chain, Howard Florey and Norman Heatley at Oxford found how to extract and keep it, the work that the press long credited to Fleming alone.",
+   "facts": [
+    "F19",
+    "F20",
+    "F21",
+    "F22",
+    "F25",
+    "F32"
+   ],
+   "grade_note": "Ninth graders learn that a discovery and a working medicine are different achievements, and penicillin's lost decade is the standard example."
+  },
+  {
+   "tier": 5,
+   "topic": "viruses-bacteria-and-antibiotics",
+   "question": "Howard Florey's team at Oxford, among them Ernst Chain and Norman Heatley, gave eight mice a deadly dose of streptococcus bacteria on 25 May 1940, then gave four of them penicillin. By the early hours of the next morning, all four untreated mice were dead and the four treated ones were alive. What did this show that Alexander Fleming's own tests had not?",
+   "answer": "That it could save an animal from an infection",
+   "choices": [
+    "That it could save an animal from an infection",
+    "That it did an animal no harm when injected",
+    "That it worked against streptococci, not only staphylococci",
+    "That it would cure sick people as it cured mice"
+   ],
+   "context": "Fleming had shown that penicillin worked against streptococci as well as staphylococci in a dish and did injected mice and rabbits no harm, but he never treated an infected animal, the crucial step; the four untreated mice proved the dose of bacteria was deadly. Whether it would cure people too had still to be tried, and the first patients were treated early in 1941. The 1945 Nobel Prize went to Fleming, Florey and Chain, and the rule of three winners at most left Heatley out.",
+   "facts": [
+    "F19",
+    "F20",
+    "F22",
+    "F23",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "Ninth-grade science asks what a new experiment shows beyond earlier ones, and the Oxford mouse test is the step from a dish to a cure."
+  },
+  {
+   "tier": 5,
+   "topic": "viruses-bacteria-and-antibiotics",
+   "question": "Doctors at a hospital find a gene for resisting one antibiotic in two kinds of bacteria that are not close relatives, and its DNA is the same in both, base for base. Within a few years the gene has spread through both kinds. How did it most likely come to be in both?",
+   "answer": "Bacteria passed copies of it directly to one another",
+   "choices": [
+    "Bacteria passed copies of it directly to one another",
+    "Each kind evolved it on its own under the drug",
+    "The antibiotic changed both kinds' genes the same way",
+    "Both kinds inherited it from a shared ancestor"
+   ],
+   "context": "Bacteria can hand genes to other living bacteria, even of another kind, often on plasmids, small extra loops of DNA passed from cell to cell; this sideways sharing is the main way resistance spreads, and the same gene, base for base, in distant kinds is its mark. A gene handed down from so distant an ancestor would no longer match, new resistance mutations are too rare (at most about one cell in a million each generation) to build the same gene twice, and an antibiotic writes no genes: it only favours cells that already carry one. Animals, as a rule, pass genes only down to their young; bacteria also pass them sideways.",
+   "facts": [
+    "F28",
+    "F29",
+    "F33"
+   ],
+   "grade_note": "Ninth-grade biology teaches that bacteria can share genes, resistance genes among them, and this case asks students to reason from the evidence to that route."
+  },
+  {
+   "tier": 5,
+   "topic": "viruses-bacteria-and-antibiotics",
+   "question": "Vanessa D'Costa and her colleagues studied genetic material (DNA) from ground in the far north that had stayed frozen for 30,000 years, long before anyone made an antibiotic drug. Mammoth DNA in it, and none from moose or spruce, showed the DNA was ancient, not modern. Among the old genes were ones that let bacteria resist modern antibiotics, vancomycin among them. Why did bacteria carry such genes so long ago?",
+   "answer": "Soil microbes have long made antibiotics against one another",
+   "choices": [
+    "Soil microbes have long made antibiotics against one another",
+    "Chance mutations made them, with no antibiotics to favour them",
+    "The ice-age cold changed their genes to make them hardier",
+    "Bacteria make genes in advance for dangers still to come"
+   ],
+   "context": "Most antibiotics are natural weapons: soil microbes such as Streptomyces make them to hold back rival microbes, so genes that resist them were favoured in the soil 30,000 years before the first antibiotic drug. Neither a drug nor the cold writes new genes, and bacteria cannot plan ahead; a drug kills the cells that lack resistance and leaves those that carry it to multiply. The find is no reason to relax, for heavy use in hospitals and on farms favours these old defences all the more.",
+   "facts": [
+    "F17",
+    "F29",
+    "F30",
+    "F34"
+   ],
+   "grade_note": "Ninth-grade biology teaches that selection acts on variation already present, and these ancient genes show where resistance comes from: the antibiotics microbes have always made against one another."
+  }
+ ],
+ "revised": {
+  "4d8eeceb5c": {
+   "old_hash": "4d8eeceb5c",
+   "why": "Judge medium: the key restated the stem's premise and the most cautious claim won. The key now says only what the filter shows (smaller than the bacteria then known, which such pores stop, F7), and 'a new kind of living germ' is replaced by the over-reading 'It could not be a bacterium of any kind' (Ivanovsky himself thought a very small bacterium possible, F9). Lengths evened; context says why each over-reading fails."
+  },
+  "7e9fcaa0d6": {
+   "old_hash": "32451640ef",
+   "why": "Judge low (clarity): 'repeated the filter test' assumed the player had just met the Ivanovsky question. The stem now says what the filter test was. Key, choices and context unchanged."
+  },
+  "ad4f482446": {
+   "old_hash": "8f9cef4c25",
+   "why": "Judge medium: 'It is a single cell, but with no nucleus' argued against itself (a single cell is alive). Replaced with the size misconception 'It is far too small to count as a living thing' (giant viruses outgrow the smallest bacteria, F31). Judge low: 'as a pure chemical forms' reworded to 'like those of a pure chemical'; 1935 kept, as the fact-check confirmed it (Grokipedia)."
+  },
+  "c4228a2730": {
+   "old_hash": "f5fa98907e",
+   "why": "Judge medium: the microscope and 'mould alone on a dish' lures tempted no one. Key reworded only for length ('Test the broth it grew in, with the mould filtered out'). Replaced with 'Repeat the same dish many times, each with fresh mould' (repeating confused with isolating) and 'Grow the mould and the bacteria together for longer'; 'The dish alone could not show' became 'What he saw could not show', so the stem no longer hints that more dishes add nothing. Context updated."
+  },
+  "d0b1168be3": {
+   "old_hash": "d0b1168be3",
+   "why": "Judge low: 'It killed only bacteria that cause no disease' was weak. Replaced with 'A patent kept other laboratories from making it', false (no patent in the 1930s; Fleming sent his mould out; production patents came in the US in the 1940s), sourced as F32. Stem unchanged."
+  },
+  "0a3e5014e4": {
+   "old_hash": "0a3e5014e4",
+   "why": "Judge medium: 'kill streptococci in a dish' and 'no bacteria could ever resist it' were dead. Replaced with 'That it worked against streptococci, not only staphylococci' (Fleming had already shown it, F19; the famous dish was staphylococci) and the over-reading 'That it would cure sick people as it cured mice' (first patients came in 1941, F24). Stem unchanged."
+  },
+  "82390bb87b": {
+   "old_hash": "f980be0ae6",
+   "why": "Judge high: the mutation-rate sentence and the stem's clauses left the key by elimination. The mutation-rate sentence is cut; the gene is now the same base for base in two distant kinds, the evidence that separates sharing from separate selection; 'Each kind hit on the very same mutation by chance' is replaced by the T3 idea itself, 'Each kind evolved it on its own under the drug', so the question goes a grade deeper. Judge low: context adds that animals pass genes only to their young as a rule, so it does not clash with T3's flies. Safety: kept at textbook level."
+  },
+  "9c95fd2033": {
+   "old_hash": "fc2f10c230",
+   "why": "Judge high: it re-asked T3 natural-and-artificial-selection's fact (the drug picks out bacteria already resistant) with two of T3's lures. Re-keyed on what the find adds: soil microbes have long made antibiotics, so resistance was favoured before any drug (F29, F34). New lures: chance with no antibiotics to favour them (the stem's own premise misread), the cold writing genes, and foresight. Fact-check uncertain: 'any medicine' is now 'an antibiotic drug' in the stem and context."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

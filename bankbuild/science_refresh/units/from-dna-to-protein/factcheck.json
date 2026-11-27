@@ -1,0 +1,86 @@
+{"unit": "from-dna-to-protein",
+ "questions": {
+  "87d9da3a5f": {"verdict": "ok", "checks": [
+   {"claim": "Avery (with MacLeod and McCarty) reported in 1944 that purified DNA transformed one bacterial strain into another with an inherited trait; protease and RNase left the activity, DNase destroyed it", "result": "ok", "source": "https://grokipedia.com/page/Avery–MacLeod–McCarty_experiment", "note": ""},
+   {"claim": "Many biologists suspected protein contamination in Avery's samples (Mirsky, into the early 1950s)", "result": "ok", "source": "https://grokipedia.com/page/Avery–MacLeod–McCarty_experiment", "note": ""},
+   {"claim": "Hershey and Chase, 1952, used a phage (T2): DNA inside a protein coat; P-32 tagged DNA, S-35 tagged protein; a blender sheared off the empty coats", "result": "ok", "source": "https://grokipedia.com/page/Hershey–Chase_experiment", "note": ""},
+   {"claim": "Key: sulfur inside and phosphorus outside would have pointed to protein (sulfur marks protein, phosphorus marks DNA)", "result": "ok", "source": "https://grokipedia.com/page/Hershey–Chase_experiment", "note": ""},
+   {"claim": "Wrong: phosphorus inside, sulfur outside (this is the DNA result actually found)", "result": "ok", "source": "https://grokipedia.com/page/Hershey–Chase_experiment", "note": ""},
+   {"claim": "Wrong: both tags inside in equal shares; both tags outside (neither points to protein alone)", "result": "ok", "source": "https://grokipedia.com/page/Hershey–Chase_experiment", "note": ""},
+   {"claim": "Context: about four-fifths of the P-32 stayed with the bacteria and some reached the new viruses (about 30 percent of parental P-32 in progeny); most S-35 (75-85 percent) stayed outside with the coats", "result": "ok", "source": "https://grokipedia.com/page/Hershey–Chase_experiment", "note": ""}
+  ]},
+  "a6658762fe": {"verdict": "uncertain", "checks": [
+   {"claim": "Erwin Chargaff worked at Columbia University and measured DNA's bases around 1950 (papers 1949-1952)", "result": "ok", "source": "https://grokipedia.com/page/Chargaff's_rules", "note": ""},
+   {"claim": "Human DNA 'about 29 percent A, 30 percent T, 21 percent G and 20 percent C' as Chargaff's measurement", "result": "uncertain", "source": "https://en.wikipedia.org/wiki/Chargaff%27s_rules ; https://web.stanford.edu/class/stats366/exs/Chargaff.html ; https://grokipedia.com/page/Chargaff's_rules", "note": "These figures come from Wikipedia's table labelled 'Chargaff's 1952 data', but that table is cited to a 2003 review (Bansal) and includes phiX174, which was not analysed until 1959, so the label is not reliable. The human figures usually reproduced as Chargaff's (human thymus or sperm DNA; Grokipedia, Stanford table, Griffiths textbook citing Chargaff and Davidson 1955) are A 30.9, T 29.4, G 19.9, C 19.8. The pattern and key are unaffected. Fix: 'Human DNA came out about 31 percent A, 29 percent T, 20 percent G and 20 percent C.'"},
+   {"claim": "E. coli DNA about 25 A, 24 T, 26 G, 26 C", "result": "ok", "source": "https://en.wikipedia.org/wiki/Chargaff%27s_rules", "note": "Matches the Wikipedia table (24.7, 23.6, 26.0, 25.7); a Chargaff and Davidson (1955) table gives 26.0, 23.9, 24.9, 25.2. Both are near a quarter each, which is all the question uses. Chargaff's lab published bacterial DNA, E. coli among them, in 1952 (Zamenhof, Brawerman and Chargaff). Optional safer wording: 'close to 25 percent for each base.'"},
+   {"claim": "Key: A with T and G with C explains both sets", "result": "ok", "source": "https://en.wikipedia.org/wiki/Chargaff%27s_rules", "note": ""},
+   {"claim": "Wrong: A with G and T with C; A with C and G with T; like with like (the human figures rule them out)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Chargaff%27s_rules", "note": ""},
+   {"claim": "Context: Watson and Crick built the pairing into the 1953 helix and cited the ratios ('the ratio of the amounts of adenine to thymine, and the ratio of guanine to cytosine, are always very close to unity', refs to Chargaff and Wyatt)", "result": "ok", "source": "https://annex.exploratorium.edu/origins/coldspring/printit.html", "note": ""}
+  ]},
+  "4b08e617f5": {"verdict": "ok", "checks": [
+   {"claim": "Photo 51 taken by Franklin and her PhD student Gosling at King's College London in May 1952 (2 or 6 May by source)", "result": "ok", "source": "https://grokipedia.com/page/Photo_51 ; https://en.wikipedia.org/wiki/Photo_51", "note": ""},
+   {"claim": "Its X-shaped cross of reflections marked a helix; Wilkins also worked on DNA at King's", "result": "ok", "source": "https://en.wikipedia.org/wiki/Photo_51", "note": ""},
+   {"claim": "Watson saw it on a visit to King's in January 1953 (30 January)", "result": "ok", "source": "https://grokipedia.com/page/Photo_51 ; https://en.wikipedia.org/wiki/Rosalind_Franklin", "note": ""},
+   {"claim": "Key: Wilkins showed it to him without telling her", "result": "ok", "source": "https://grokipedia.com/page/Photo_51 ; https://en.wikipedia.org/wiki/Photo_51 ; https://en.wikipedia.org/wiki/Rosalind_Franklin", "note": "Grokipedia: 'without Franklin's knowledge or explicit permission'; Wikipedia: 'without Franklin's permission', and she 'did not know this at the time'."},
+   {"claim": "Wrong: after asking her leave; Franklin showed and explained it; he took a print from her desk (the stealing myth)", "result": "ok", "source": "https://grokipedia.com/page/Photo_51", "note": ""},
+   {"claim": "Context: as Franklin prepared to leave, Gosling passed the photo to Wilkins (Gosling says at Franklin's suggestion), nothing taken from her desk", "result": "ok", "source": "https://en.wikipedia.org/wiki/Photo_51 ; https://grokipedia.com/page/Photo_51", "note": ""},
+   {"claim": "Context: Crick saw her measurements in an MRC report that Max Perutz passed him (mid-February 1953; report written December 1952)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Rosalind_Franklin", "note": ""},
+   {"claim": "Context quote 'the general nature': 'stimulated by a knowledge of the general nature of the unpublished experimental results and ideas of Dr. M. H. F. Wilkins, Dr. R. E. Franklin and their co-workers'", "result": "ok", "source": "https://annex.exploratorium.edu/origins/coldspring/printit.html", "note": ""},
+   {"claim": "Context: Franklin and Gosling's paper ran in the same issue of Nature", "result": "ok", "source": "https://en.wikipedia.org/wiki/Rosalind_Franklin ; https://grokipedia.com/page/Photo_51", "note": ""},
+   {"claim": "Context: Franklin died in 1958 aged 37 (16 April 1958; born 25 July 1920), four years before the 1962 Nobel to Watson, Crick and Wilkins", "result": "ok", "source": "https://en.wikipedia.org/wiki/Rosalind_Franklin", "note": ""}
+  ]},
+  "8088882083": {"verdict": "ok", "checks": [
+   {"claim": "Quote: 'immediately suggests a possible copying mechanism for the genetic material' (from 'It has not escaped our notice that the specific pairing we have postulated immediately suggests...')", "result": "ok", "source": "https://annex.exploratorium.edu/origins/coldspring/printit.html", "note": ""},
+   {"claim": "Meselson and Stahl at Caltech (1957, published 1958); E. coli grown on N-15, moved to N-14, DNA sorted by density in a centrifuge", "result": "ok", "source": "https://grokipedia.com/page/Meselson–Stahl_experiment", "note": ""},
+   {"claim": "Key: conservative copying predicts two bands, one heavy and one light, after one round", "result": "ok", "source": "https://grokipedia.com/page/Meselson–Stahl_experiment", "note": ""},
+   {"claim": "Wrong: one halfway band (semi-conservative or dispersive); one light band; one heavy band", "result": "ok", "source": "https://grokipedia.com/page/Meselson–Stahl_experiment", "note": ""},
+   {"claim": "Context: observed a single halfway band after one round; half hybrid and half light after two", "result": "ok", "source": "https://grokipedia.com/page/Meselson–Stahl_experiment", "note": ""}
+  ]},
+  "a9607c2000": {"verdict": "ok", "checks": [
+   {"claim": "mRNA is built complementary to the template strand, with U in place of T, and carries the gene's information to the ribosomes", "result": "ok", "source": "https://grokipedia.com/page/Messenger_RNA", "note": ""},
+   {"claim": "Key: template T-A-C-G-G-A gives A-U-G-C-C-U", "result": "ok", "source": "https://grokipedia.com/page/Messenger_RNA", "note": "Correct under the usual classroom convention (template written 3' to 5'). Strand direction is not mentioned, which is normal at this grade."},
+   {"claim": "Wrong: A-T-G-C-C-T (has T, not RNA); U-A-C-G-G-A (only T swapped for U); T-A-C-G-G-A (identical copy)", "result": "ok", "source": "https://grokipedia.com/page/Messenger_RNA", "note": ""},
+   {"claim": "Context: AUG is the start signal where a ribosome begins a protein", "result": "ok", "source": "https://grokipedia.com/page/Messenger_RNA", "note": ""}
+  ]},
+  "58306420c3": {"verdict": "ok", "checks": [
+   {"claim": "Crick, Brenner and two colleagues (Barnett, Watts-Tobin), 1961, proflavin on a T4 phage gene (rIIB); proflavin causes insertion or deletion of a single base", "result": "ok", "source": "https://en.wikipedia.org/wiki/Crick,_Brenner_et_al._experiment", "note": ""},
+   {"claim": "One or two extra bases wrecked the protein; three gave a working protein with an extra amino acid", "result": "ok", "source": "https://openstax.org/books/biology-2e/pages/15-1-the-genetic-code", "note": "Follows OpenStax ('caused an extra amino acid to be inserted'). Strictly, the 1961 team saw phage function, not the protein, and the three additions sat at separate sites, so the words between them were misread too. Optional precision for the context: 'leaving one extra word, with only a few words garbled between the added bases'."},
+   {"claim": "Key: read in words of three bases from a fixed start (non-overlapping)", "result": "ok", "source": "https://profiles.nlm.nih.gov/101584582X412 ; https://en.wikipedia.org/wiki/Crick,_Brenner_et_al._experiment", "note": "NLM: read 'three (or, less likely, six) nucleotides at a time proceeding from a fixed starting point'; the stem's single-base premise makes three the answer."},
+   {"claim": "Wrong: words of two (two extra bases would restore it); overlapping triplets (frameshift rescue needs a non-overlapping frame); one base per word (one extra base would not garble the rest)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Crick,_Brenner_et_al._experiment", "note": ""},
+   {"claim": "Context: 16 two-base words, too few for 20 amino acids; 64 three-base words", "result": "ok", "source": "https://openstax.org/books/biology-2e/pages/15-1-the-genetic-code", "note": ""}
+  ]},
+  "dd0b9a8169": {"verdict": "ok", "checks": [
+   {"claim": "Nirenberg and Matthaei at NIH, 1961 (May), cell-free extract of broken-open E. coli that could still build protein", "result": "ok", "source": "https://grokipedia.com/page/Nirenberg_and_Matthaei_experiment", "note": ""},
+   {"claim": "All 20 amino acids given (one radioactive at a time) with poly-U", "result": "ok", "source": "https://en.wikipedia.org/wiki/Nirenberg_and_Matthaei_experiment", "note": ""},
+   {"claim": "Key: a chain of phenylalanine alone (polyphenylalanine)", "result": "ok", "source": "https://grokipedia.com/page/Nirenberg_and_Matthaei_experiment", "note": ""},
+   {"claim": "Wrong: lysine alone (poly-A's product); phenylalanine and lysine by turns; all twenty in no order", "result": "ok", "source": "https://grokipedia.com/page/Nirenberg_and_Matthaei_experiment", "note": ""},
+   {"claim": "Context: about 38,000 counts with poly-U against about 70 with no added RNA", "result": "ok", "source": "https://grokipedia.com/page/Nirenberg_and_Matthaei_experiment ; https://en.wikipedia.org/wiki/Nirenberg_and_Matthaei_experiment", "note": ""},
+   {"claim": "Context: UUU the first codon read; poly-A later gave lysine, poly-C proline", "result": "ok", "source": "https://grokipedia.com/page/Nirenberg_and_Matthaei_experiment", "note": ""}
+  ]},
+  "da2717fcfe": {"verdict": "ok", "checks": [
+   {"claim": "Vernon Ingram at Cambridge (Cavendish), 1956 Nature paper comparing normal and sickle-cell haemoglobin", "result": "ok", "source": "https://en.wikipedia.org/wiki/Vernon_Ingram ; https://news.mit.edu/2006/father-molecular-medicine-vernon-ingram-dies-82", "note": ""},
+   {"claim": "Cut with an enzyme (trypsin) and sorted into a pattern of spots (fingerprinting); a single peptide differed", "result": "ok", "source": "https://www1.udel.edu/chem/white/C342/IngramBkgd07.html ; https://grokipedia.com/page/Sickle_cell_disease", "note": ""},
+   {"claim": "Key: one amino acid in place of another (glutamic acid to valine, 1956-57)", "result": "ok", "source": "https://grokipedia.com/page/Sickle_cell_disease ; https://en.wikipedia.org/wiki/Vernon_Ingram", "note": ""},
+   {"claim": "Wrong: one missing; one extra; same amino acids in a new order", "result": "ok", "source": "https://grokipedia.com/page/Sickle_cell_disease", "note": ""},
+   {"claim": "Context: valine for glutamic acid at position 6 of the beta chain (Ingram with Hunt and Stretton); beta chain 146 amino acids; GAG to GTG", "result": "ok", "source": "https://grokipedia.com/page/Hemoglobin ; https://grokipedia.com/page/Sickle_cell_disease ; https://en.wikipedia.org/wiki/Vernon_Ingram", "note": ""},
+   {"claim": "Context: deoxygenated HbS's water-shunning valine sticks to neighbours; molecules stack into fibres that sickle the cell", "result": "ok", "source": "https://grokipedia.com/page/Sickle_cell_disease", "note": ""},
+   {"claim": "Context: Ingram first to show a single amino acid change can cause a disease", "result": "ok", "source": "https://en.wikipedia.org/wiki/Vernon_Ingram ; https://news.mit.edu/2006/father-molecular-medicine-vernon-ingram-dies-82", "note": "Standard description (Wikipedia, MIT obituary); Pauling's 1949 work showed HbS was abnormal but not the single change."}
+  ]},
+  "fe3cbd9058": {"verdict": "ok", "checks": [
+   {"claim": "Kary Mullis invented PCR at Cetus, California, in 1983; the amount roughly doubles each round", "result": "ok", "source": "https://grokipedia.com/page/Polymerase_chain_reaction", "note": ""},
+   {"claim": "Key: heating parts the two strands so each can be copied", "result": "ok", "source": "https://grokipedia.com/page/Polymerase_chain_reaction", "note": ""},
+   {"claim": "Wrong: kill germs; break DNA into single bases; seal new strands onto partners", "result": "ok", "source": "https://grokipedia.com/page/Polymerase_chain_reaction", "note": ""},
+   {"claim": "Context: early enzyme destroyed by heat, fresh enzyme each cycle; Taq from Thermus aquaticus of hot springs replaced it", "result": "ok", "source": "https://grokipedia.com/page/Polymerase_chain_reaction", "note": ""},
+   {"claim": "Context: Mullis shared the 1993 Nobel Prize in Chemistry (with Michael Smith)", "result": "ok", "source": "https://grokipedia.com/page/Polymerase_chain_reaction", "note": "Stays at a concept level: no temperatures, primers or protocol."}
+  ]},
+  "f0333edb0c": {"verdict": "ok", "checks": [
+   {"claim": "Alec Jeffreys, University of Leicester, saw the pattern on an X-ray film (autoradiograph) on 10 September 1984", "result": "ok", "source": "https://grokipedia.com/page/Alec_Jeffreys", "note": ""},
+   {"claim": "DNA is negatively charged (phosphate backbone) and moves toward the positive electrode", "result": "ok", "source": "https://en.wikipedia.org/wiki/Gel_electrophoresis_of_nucleic_acids", "note": ""},
+   {"claim": "Key: the gel's mesh holds long pieces back more; in free solution migration is independent of size", "result": "ok", "source": "https://en.wikipedia.org/wiki/Gel_electrophoresis_of_nucleic_acids ; https://grokipedia.com/page/Gel_electrophoresis_of_nucleic_acids", "note": ""},
+   {"claim": "Wrong: more charge per length (charge density is uniform); lighter so faster (charge grows with mass, so no free-solution separation); current breaks long pieces", "result": "ok", "source": "https://en.wikipedia.org/wiki/Gel_electrophoresis_of_nucleic_acids", "note": ""},
+   {"claim": "Context: repeated stretches (minisatellites) vary in length between people", "result": "ok", "source": "https://grokipedia.com/page/Alec_Jeffreys", "note": ""},
+   {"claim": "Context: 1985 case showed a boy of a Ghanaian family was related to his family in Britain", "result": "ok", "source": "https://grokipedia.com/page/Alec_Jeffreys", "note": ""}
+  ]}
+ },
+ "unit_notes": "One uncertain (a6658762fe): the human base figures come from a Wikipedia table labelled Chargaff's 1952 data, but its source is a 2003 review that also lists 1959 data, so the label is not reliable. The figures usually reproduced as Chargaff's are about 31 A, 29 T, 20 G, 20 C. Key and logic unaffected. Minor optional precision on 58306420c3's context (the words between the three added bases are also misread). All quotes verified verbatim against the Exploratorium transcription of the 1953 paper. PCR stays at a concept level."
+}

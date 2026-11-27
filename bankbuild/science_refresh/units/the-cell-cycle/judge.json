@@ -1,0 +1,31 @@
+{"unit": "the-cell-cycle",
+ "questions": {
+  "25b57da57f": {"verdict": "ok", "issues": []},
+  "0437409842": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem itself rules out 'A chromosome being split before its DNA is copied', since it has just said 'Each chromosome is now two identical halves'. Only two lures are live.",
+     "fix": "Replace it with 'A new cell being too small when it splits off'. A size check is real, but it comes at G1, before DNA is copied (F10), so the lure is adjacent but wrong in the same way as the DNA-damage lure."}]},
+  "36a90f9710": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's 'stiff cell wall' kills 'It pinches in, drawing its stiff wall in with it', and the lure even repeats 'stiff'. 'It cracks its old wall, and each half seals over' is not a confusion students make. That leaves the key and the budding lure. The key is also the only choice in which the cell builds something new.",
+     "fix": "Make the direction of the new wall the knowledge tested (F11: 'from the centre outward'). Stem: '...is boxed in by a cell wall' (drop 'stiff'). Choices: 'It builds a new wall from the centre outward' / 'It grows a new wall inward from its old one' / 'It pinches in, drawing its wall in with it' / 'It buds off a small new cell through its wall'. The inward wall is the guess a student makes from the animal cell's furrow."}]},
+  "08eda1d8e4": {"verdict": "ok", "issues": []},
+  "b5bfda8682": {"verdict": "ok", "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The strongest lure, 'Each keeps only the genes it needs for its job', is the fact that T4 genes-chromosomes-and-mutations keys. Its cheek-cell question has the key 'Yes, for each nucleus holds all of her genes' and the lure 'No, for each cell holds only the genes it uses'. This key, genes switched on, is new and a grade deeper, so the question is not a re-ask, but a player who has done T4 has one fewer live lure.",
+     "fix": "Keep the Weismann lure (it is the respectable wrong theory, F18). Replace 'Each has a different number of chromosomes' with 'Each got a different half of her parents' genes', T4's sibling fact wrongly applied to the cells of one body."}]},
+  "197b11b883": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The stem says flatly that Gurdon 'destroyed the nucleus', which makes the key's doubt (that the egg's own nucleus built the tadpole) look already settled by the stem's own words. It also asks 'Which doubt...' without having said that anyone doubted.",
+     "fix": "'John Gurdon aimed ultraviolet light at a frog's egg to destroy its nucleus, and put in its place...', and end with 'Critics doubted his 1962 result. Which doubt did the mark settle?'"}]},
+  "22a84d98fe": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The key restates the stem's own condition. 'Leaving out a gene meant that no cell was reset' and 'The reset could not happen without it' say the same thing, so no stem-cell knowledge or reasoning is needed. The three lures are logic slips that the paraphrase settles.",
+     "fix": "Ask the next step, which needs real reasoning (F22: four genes, each necessary, then shown 'sufficient'). Keep the stem to '...each time leaving out one of the 24', then: 'The tests found four genes that were each needed. Which test would show that those four were enough?' Key: 'Put in the four alone and look for reset cells'. Lures: 'Put in each of the four on its own', 'Leave out two of the four at a time' and 'Run all 24 again on far more cells'."}]},
+  "cfa6b4cf1a": {"verdict": "ok", "issues": []},
+  "1677c0bac5": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two lures are dead. 'Stop short, leaving bare patches of the dish' and 'Die off as soon as they touch each other' make cancer cells weaker than normal ones, which no player believes. The only live lure is 'reach it sooner', so the key wins as the 'cancer keeps growing' cliche.",
+     "fix": "Use real misconceptions as lures: 'Stop at a single layer of much larger cells' (a tumour taken for swollen cells) and 'Stop only when the food runs out, still one layer deep' (cancer seen as greed for food, not a lost stop signal). Keep 'Stop at a single layer, but reach it sooner' (the faster-division error, F31)."}]}
+ },
+ "unit_notes": "Ownership is kept. There is no Remak or Virchow (T2 the-microscope-and-cell-theory), no bacterium splitting (T3 two-ways-to-make-offspring) and no 46 chromosomes or karyotype (T4 genes-chromosomes-and-mutations). b5bfda8682's main lure is T4's keyed fact (low, noted). 0437409842 uses crossing over only as a lure, and meiosis-and-patterns-of-inheritance (being written) owns it; the card's 'trading pieces belongs to meiosis' should stay a passing word and not become a question here. Gaps in the scope. The order of mitosis's stages and their result (two nuclei, each with the parent's full set of chromosomes) is never keyed: 0437409842 keys only the wait at metaphase, and 25b57da57f uses prophase and anaphase only as lures. A stem cell's plain meaning (an unspecialised cell that can renew itself and become other kinds, such as the marrow's blood-forming cells, F19) is not keyed, because both stem-cell questions are reprogramming stories. Why the body needs mitosis is keyed only through chemotherapy (08eda1d8e4). A reviser short of a question could fill one of these gaps. b5bfda8682 and 197b11b883 both rest on specialised cells keeping their genes, but they key different things. Tone is clinical. Cancer is told plainly, and so are the mice's tumours from c-Myc. Nothing touches human reproduction beyond the scope's 'single fertilised egg', and there is no embryo-ethics debate; embryonic stem cells are named only as a source of genes."}

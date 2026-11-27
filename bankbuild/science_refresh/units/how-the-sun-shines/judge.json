@@ -1,0 +1,67 @@
+{"unit": "how-the-sun-shines",
+ "questions": {
+  "20c57196fc": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two wrong choices argue against the Sun shining at all, whatever its fuel. 'Heat from a fire could never cross 150 million kilometres of space' and 'Light from a fire would fade out long before reaching Earth' are both refuted by the Sun's own heat and light reaching Earth, so neither could be Kelvin's reason for ruling out burning in particular. Heat crossing empty space as radiation is also T3 heat-on-the-move ground (the vacuum flask), so both are dead for anyone past T3. Only the oxygen choice competes, and the key is the only choice about time.",
+     "fix": "Keep 'It holds none of the oxygen that any burning needs'. Replace the other two with ideas that single out burning: 'Ash from so much burning would long since have smothered it' and 'A fire so large would have blown itself apart within days'."}
+   ]},
+  "b88999288a": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The Aston clause names helium and four hydrogen atoms, so only the two helium-and-hydrogen choices fit what Eddington 'seized on'. 'Burning their hydrogen with oxygen' is ruled out by the Kelvin question in this unit and has nothing to do with Aston's weighing. 'The steady decay of radium' has no link to Aston's result either. That leaves building against breaking, and the fission-fusion-and-mass-energy mass-defect question (some mass leaves as energy when particles join) settles that. Separately, the stem of 5ebe7acfdb ('its long, steady life of fusing hydrogen in its core') hands this key to anyone who meets that question first.",
+     "fix": "Replace the two dead choices with rivals that also turn mass into energy, so Aston's result no longer singles out the key: 'Stars shine by splitting heavy atoms such as uranium' and 'Stars shine by turning the whole mass of their atoms into energy' (James Jeans's annihilation idea of the 1920s; the writer must source it). Also trim 5ebe7acfdb's stem (see there)."}
+   ]},
+  "7f4351aa3b": {"verdict": "drop",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "The key is quantum tunnelling. That is not 9th-grade content (it comes in a modern-physics course, if at all), and it is outside this unit's scope. NGSS HS-ESS1-1's assessment boundary also leaves out 'details of the atomic and sub-atomic processes involved with the sun's nuclear fusion'. Without tunnelling, what is left (nuclei repel, and only fast ones get close) is already keyed by fission-fusion-and-mass-energy's 'Why does fusion need such enormous heat?' (key: 'Only fast nuclei get close despite pushing each other away').",
+     "fix": "Drop. unit_notes suggests a replacement on in-scope ground that no question here uses."},
+    {"axis": "tell", "severity": "high",
+     "what": "The stem rules out two choices in its own words. 'Atomic nuclei all carry a positive charge' kills 'In such heat the nuclei lose their positive charge'. 'In the Sun's core a typical one has hundreds of times too little energy' is stated as present fact, which kills 'Better measures showed the core far hotter than thought'. The key is the only choice that keeps the stem's premise, and it reuses the stem's own picture ('the wall they cannot climb').",
+     "fix": "None worth making; see the grade issue."}
+   ]},
+  "dad75b7a60": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "The key is neutrinos changing kind (flavour oscillation, and so neutrino mass). That is particle physics well beyond 9th grade, outside the scope, and outside HS-ESS1-1's assessment boundary. The key also uses a term never taught: nothing in the stem says neutrinos come in kinds, so the answer introduces the idea it tests. The story itself, three suspects and a result that clears two of them, is good 9th-grade reasoning, and that part can be kept.",
+     "fix": "Teach the kinds in the stem and key what the 2001 result ruled out: '...but only about a third as many as models of the Sun predicted. Neutrinos come in three kinds, and Davis's chlorine caught only one of them. In 2001 the Sudbury Neutrino Observatory in Canada counted all three kinds together and found the full number the models predicted. Which explanation of Davis's shortfall did that rule out?' Answer: 'That the Sun's core makes fewer neutrinos than the models said'. Wrong: 'That neutrinos change kind on their way to Earth' / 'That most neutrinos pass straight through Earth' / 'That the Sun's neutrinos fly out at nearly light's speed' (each left standing by the result). Leave 'Davis miscounted' out of the choices, since the result clears that too."}
+   ]},
+  "7cf500b0bb": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The key opens 'Its light', but the last noun in the stem is 'the trip out', so 'its' has no clear owner (the energy's? the core's?).",
+     "fix": "'The light is soaked up and sent off again in random directions'."}
+   ]},
+  "5ebe7acfdb": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The stem's 'its long, steady life of fusing hydrogen in its core' states the key of b88999288a (Eddington: stars shine by building helium out of hydrogen) for anyone who meets this question first.",
+     "fix": "'...and say the Sun is roughly halfway through its long, steady life.'"}
+   ]},
+  "cad4371ebe": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'One cut out and seen on its own would shine brighter than the full Moon' tells the student that the spot gives off strong light of its own. That rules out both the dark-cloud choice and the small-moons choice, because a shadow cut out would not shine. Only the two 'It is cooler, as...' choices are left, and the context of this same question (fusion only in the core) is the unit's own teaching.",
+     "fix": "Move the full-Moon clause into the context and keep 'Yet a sunspot is still thousands of degrees hot.' Replace 'It is shaded by a dark cloud that hangs above it' with William Herschel's respectable wrong idea, 'It is a gap showing the Sun's darker body beneath' (the writer must source Herschel's view). Keep Scheiner's small moons."}
+   ]},
+  "852b74b194": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'He never found the planet. What did his record of the sunspots show?' promises that something was found instead, which makes 'Their number stayed about the same year after year' the weakest of the four.",
+     "fix": "Replace it with a wrong pattern tied to his planet hunt: 'Their number rose and fell with Mercury's trips round the Sun'."}
+   ]},
+  "2001d9f6c6": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Swinging' is a picture word. The rule the student was taught, in circuits-motors-and-generators (T5: 'the field through the coil changes faster'), is a changing magnetic field. The grade_note calls it 'the eighth-grade rule', but by the lead's notes Faraday's induction is that T5 unit's ground. Applying it here to a new case is fine.",
+     "fix": "Key: 'Earth's fast-changing magnetic field drove it along the wires'. Correct the grade_note to say the question applies the ninth-grade rule that a changing magnetic field drives a current."}
+   ]},
+  "818d5aace5": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The key fact (the body's hydrogen is older than the stars) is stated outright in the stem of reading-the-big-bang-in-light 2790d62e6b: 'the universe's first few minutes ... came out about three-quarters hydrogen'. A player who meets that question first gets this one free. Otherwise it is sound: working out that hydrogen, the stars' fuel, is the one thing they did not make is honest 9th-grade reasoning.",
+     "fix": "No change to this stem; the lead should know about the cross-unit leak. If it matters, the Big Bang question's stem could say 'came out almost all hydrogen and helium' and leave the shares to its context."}
+   ]}
+ },
+ "unit_notes": "The lead's ownership lines are otherwise kept. There is no spectrum or helium-in-the-Sun key (light-from-atoms), no E = mc2 or NIF key (fission-fusion-and-mass-energy), no solar-wind shield (T3 why-earth-supports-life) and no red giants (T4 the-life-cycles-of-stars). The Sun's age as a figure (T3 reading-deep-time: Earth about 4.6 billion years) is used only as a given, and 5ebe7acfdb keys how it is known. Two real problems sit on the sub-atomic side. HS-ESS1-1 bounds the Sun's fusion at 9th grade with no sub-atomic detail, and both 7f4351aa3b (tunnelling) and dad75b7a60 (neutrino flavour change) cross that line. Dropping 7f4351aa3b leaves nine questions against a target of ten. The scope's core temperature (about 15 million degrees Celsius) is keyed nowhere; it appears only in the dropped question's context. A replacement on sourced, unused ground (F3) could carry it: 'At the very centre of the Sun, at about 15 million degrees Celsius, fusion gives off only about 280 watts of heat in each cubic metre, about as much as an active compost heap. Why does the Sun shine so brightly all the same?' Answer: 'Its core holds a vast volume of gas, all fusing at once'. Wrong: 'Most of its heat is made near its glowing surface' / 'Its gravity squeezes out far more heat than fusion' / 'Its outer layers focus the core's heat like a lens'. Within the unit, 5ebe7acfdb's stem gives away b88999288a's key; trim it as noted there."}

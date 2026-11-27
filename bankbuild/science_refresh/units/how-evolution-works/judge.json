@@ -1,0 +1,33 @@
+{"unit": "how-evolution-works",
+ "questions": {
+  "b189ff86fd": {"verdict": "ok", "issues": []},
+  "69008c2c10": {"verdict": "ok", "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The blue rose question in T3 natural-and-artificial-selection has the same shape ('Why did all their choosing fail?') and the lures 'Each new cross blended the blue away again' and 'They had not chosen for enough generations'. Here 'blended away again' and 'needed many more generations' are the same two lures. The key is different (variation that is not inherited, not a missing gene) and a grade deeper, so this is not a re-ask, but a player who has done T3 meets wrong answers he has seen before.",
+     "fix": "Keep 'blended away', the respectable rival idea of Johannsen's day. Replace 'The extra weight needed many more generations to show up' with 'The extra weight was spent as each heavy bean sprouted', a plausible slip: it is wrong because the offspring's weight is that of new beans."}]},
+  "47eaf66e9d": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two lures carry the rider 'every gene as common as it was before', which tells the player that those changes leave the genes alone. The third lure is a change inside each adult. That makes the key the only choice in which a gene's share changes across generations, so a player with only a vague sense that evolution has to do with genes picks it. The question is built on the mistaken idea that any change in a population is evolution (F8), and the riders turn that idea into a giveaway.",
+     "fix": "Drop the riders so the lures carry the mistaken idea: 'The herd doubles in size after a run of mild winters' and 'Lambs grow heavier in wet years and lighter in dry ones'. The key is still the only change in a gene's share, so it stays the one right answer."}]},
+  "1cdfe949d3": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only choice about breeding. The other three all say 'they now differ in X' (fur, food, skulls), so the odd one out is the answer, and the stem's 'Then biologists bring mice from the two sides together' points straight at a mating test.",
+     "fix": "Make one lure a breeding result that does not show separate species. For example, replace 'Their skulls and teeth now differ in size and in shape' with 'Their hybrid young look like neither of their parents'. The player then has to know that the test is whether the hybrids are fertile, not how they look (F9)."}]},
+  "45e1e8abb4": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem defines gene flow as 'the movement of genes between populations', which lets a player reason that mixing keeps the two alike without knowing anything about how species form. The key's only strong rival is its mirror image ('It drives them apart'). This is acceptable as T5 reasoning, but light.",
+     "fix": "Optionally, replace 'It raises the rate of new mutations in both of them' with 'It does nothing lasting, as so few migrants come', the 'too few to matter' hunch. A few migrants a generation are enough to keep populations alike, the textbook rule of about one migrant a generation, but that needs a source before it is used."}]},
+  "1b561b8f50": {"verdict": "ok", "issues": []},
+  "9e9c97f6ac": {"verdict": "ok", "issues": []},
+  "de84f95f39": {"verdict": "ok", "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The keyed inference (shared make-up, so a common ancestor) is the one T4 clues-to-common-ancestry keys for the homologous limbs ('All four were inherited from one shared ancestor'), and its lure 'All four evolved that same build separately' matches 'grew alike by living alike' here. The word 'recent' and the mouse comparison carry the T5 step, so this is not a re-ask, but the key could lean harder on the graded comparison.",
+     "fix": "Optionally, key the gradient: 'Our line split from the chimpanzee's long after the mouse's', with the same three lures."}]},
+  "c18520dc34": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "To a 9th grader, 'Grows each one alone and then counts the cells it ends with' can look as good as the key, since both seem to measure multiplying. It is wrong because the broth's sugar caps how many cells any flask can reach (and the evolved cells are bigger), but the context only says that fitness means success 'against competitors'.",
+     "fix": "Add one line to the context, checked against the F18-F20 sources: 'Grown alone, each runs out of the same sugar, so a count at the end hides which multiplied faster.'"}]},
+  "40839de97b": {"verdict": "ok", "issues": []},
+  "8e7e8879ec": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "The scope is covered: Darwin, Wallace and Malthus (b189ff86fd), inherited variation (69008c2c10), populations evolve (47eaf66e9d), speciation (1cdfe949d3), gene flow (45e1e8abb4), drift through a bottleneck (1b561b8f50) and a founder effect (9e9c97f6ac), molecular evidence (de84f95f39), Lenski (c18520dc34, 40839de97b), and Lamarck's rival idea with Weismann's test (8e7e8879ec). Mutation as a source of new variation comes up only in 40839de97b's context and lures, which suits the lead's ruling that T4 owns it. No re-ask found of T3 natural-and-artificial-selection, T2 variation-and-survival, the blacksmith, or T4 three-kinds-of-adaptation and clues-to-common-ancestry. The nearest shared ground is noted on 69008c2c10 (the blue rose's lures), de84f95f39 (T4's homology inference) and c18520dc34, which rests on T3's definition of fitness but keys the method. 1b561b8f50 and 9e9c97f6ac are both drift after a crash but key different things: the evidence that settles it, and the founder effect itself. Evolution is stated plainly throughout, and the animals (sheep, mice, seals, chimpanzees, E. coli) serve only as evidence. Weismann also appears in meiosis-and-patterns-of-inheritance (6b3d5d5272, the reduction division), a different fact."}

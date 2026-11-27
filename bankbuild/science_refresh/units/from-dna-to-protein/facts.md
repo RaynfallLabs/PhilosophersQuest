@@ -115,3 +115,14 @@ F23. Alec Jeffreys, at the University of Leicester, had his "eureka moment" at a
 - Griffith's 1928 mice and the details of Avery's bacteria: kept to one plain line about an inherited trait passing between strains (no pathogen detail).
 - PCR temperatures, primers and steps: classroom concept only.
 - Miescher, Levene and the tetranucleotide idea; why protein seemed the likelier gene (the-molecules-of-life); Sutton, the 46 chromosomes, mutation as a single gene change in sickle-cell disease, the malaria carriers (genes-chromosomes-and-mutations); human-chimp shared DNA (how-evolution-works).
+
+## Added at revision (2026-11-27)
+
+F24. Chargaff's human figures (fact-check fix for a6658762fe): the Wikipedia table in F5 is labelled "Chargaff's 1952 data" but is cited to a 2003 review that also lists later data, so its human row is not reliably Chargaff's. Grokipedia (Chargaff's rules): in human sperm DNA, 1950 (Chargaff, Zamenhof and Green), "adenine comprised approximately 30.9%, thymine 29.4%, guanine 19.9%, and cytosine 19.8%"; the Stanford teaching table gives the same row (Human 30.9 A, 29.4 T, 19.9 G, 19.8 C; E. coli 24.7, 23.6, 26.0, 25.7). The stem now says about 31 percent A, 29 T, 20 G and 20 C.
+    https://grokipedia.com/page/Chargaff's_rules ; https://web.stanford.edu/class/stats366/exs/Chargaff.html
+
+F25. The conservative idea's prediction, in amounts: "conservative replication would result in equal amounts of DNA of the higher and lower densities (but no DNA of an intermediate density)" after one round (Wikipedia, Meselson-Stahl experiment). Each later round adds only light DNA under that idea, so far more light than heavy comes only after more rounds; that is used only as a wrong choice.
+    https://en.wikipedia.org/wiki/Meselson%E2%80%93Stahl_experiment
+
+F26. Crick and Brenner's rescued mutants had their bases "shifted back into the correct reading frame", and the code "is read in non-overlapping triplets" (Wikipedia, Crick, Brenner et al. experiment). The three added bases sat at separate sites, so the words between them were misread too (fact-check note); the context no longer says that only one extra word was left.
+    https://en.wikipedia.org/wiki/Crick,_Brenner_et_al._experiment ; https://openstax.org/books/biology-2e/pages/15-1-the-genetic-code

@@ -1,0 +1,38 @@
+{"unit": "respiration-and-enzymes",
+ "questions": {
+  "e638904aec": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Far more ice for each hour than a lump of burning charcoal' is not a live idea. No one would expect a guinea pig to melt more ice than burning charcoal, and the result would back nothing, so only three choices are live.",
+     "fix": "Replace it with a result one of the old rival ideas would predict (F14, heat inborn in the heart): 'Most of the ice melting beside its chest, where its heart lies'. It tempts a player who thinks body heat comes from the heart, and it would back Galen, not Lavoisier."},
+    {"axis": "clarity", "severity": "low",
+     "what": "The key 'About the same ice for each ounce of fixed air as charcoal melts' takes two reads, because 'as charcoal melts' dangles at the end.",
+     "fix": "'As much ice for each ounce of fixed air as burning charcoal melts', with parallel lures: 'Far less ice for each ounce of fixed air, as breathing is so slow' / 'As much ice for each hour as a lump of burning charcoal melts'."}]},
+  "fc4f050be5": {"verdict": "ok", "issues": []},
+  "378e058ae4": {"verdict": "ok", "issues": []},
+  "1ba3c2a1b3": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two lures are weak. 'It forms only in the heart muscle, never in the muscles of the legs' contradicts the stem, which has just said that muscle cells make it when they run short of oxygen, and every 9th grader learns that it builds up in tired leg muscles. 'It forms only in the muscles of runners who are out of training' would not count against the idea at all for this girl, who is running her first long race, so it answers a different question. That leaves the key against 'It stays in the leg muscles for days', and the key is the only choice that picks up the stem's 'two days later'.",
+     "fix": "Replace the two with wrong claims that would each sink the idea if true, as the key does, without contradicting the stem: 'It numbs the nerve endings in the muscle that sense pain' and 'It forms only in the first few minutes of a race, then stops'."}]},
+  "f38427c9b7": {"verdict": "ok", "issues": []},
+  "6ccdca224c": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Activity' is lab jargon (an enzyme's activity), and a 9th grader may read 'kept the same activity' loosely. The near-miss lure 'kept the same shape' only works if that word is clear.",
+     "fix": "Key: 'Each gram digested as much protein after seven crystallisations as before'. Change the third lure to 'Each batch, dissolved again, could still digest some protein', so that the contrast is the same power for each gram against some power left."}]},
+  "42444afe65": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The two hold the very same atoms, joined in the same order, and differ only in which way one group points' rules out every lure for a player with no knowledge of enzymes. With the same atoms and the same bonds, nothing is left for looseness, dissolving or energy to differ in, so 'shape' can be reached by elimination. The clause also oversimplifies: real alpha and beta forms do differ a little in such properties.",
+     "fix": "Cut the clause to 'The two hold the very same atoms, arranged a little differently', and leave 'which way one group points from the ring' to the context. The three lures then stay live, and the player has to know the fit idea."}]},
+  "7d720a74c2": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Inside a cell at 37 degrees Celsius, with no flame' weakens 'It warms the molecules taking part in the step' before the player weighs it. The jar on the shelf also sets up 'the energy needed to start', a phrase the key shares with one lure. Three choices stay live, so this is low.",
+     "fix": "Drop 'with no flame': 'Inside a cell at 37 degrees Celsius, enzymes break glucose down in a chain of quick steps.'"}]},
+  "859fdf0969": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two lures are dead for a 9th grader. 'Their water begins to boil away as steam' fails at once: water boils at 100 degrees, and the stem says 42. 'The germs inside them multiply faster than ever' is ruled out by the stem itself, which names heat stroke (no germs at all) and says the fever helps fight the virus; T2 the-bodys-defences also keys that fever slows germs. That leaves the key against 'used up'.",
+     "fix": "Replace them with 'Their DNA splits apart into its two strands' (DNA strands part only near 90 degrees, as the from-dna-to-protein PCR question teaches) and 'Their outer membranes stiffen and let nothing pass' (heat loosens membranes rather than stiffening them). Both are wrong at 42 degrees and both tempt a player."}]},
+  "73ee127234": {"verdict": "ok", "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "Szent-Gyorgyi's finding that small amounts of the four-carbon acids speed a muscle's oxygen use is usually dated to his group's 1935 paper. 'In 1933' rests on a single Grokipedia line (F28), and the fact-checker should look at it.",
+     "fix": "If 1933 does not hold up, write 'in the mid-1930s'."}]}
+ },
+ "unit_notes": "The scope is covered: respiration as a slow burning (e638904aec); the equation and where the oxygen goes (fc4f050be5, with the mitochondria and ATP taught in the stem, not keyed again against T2 cells-the-building-blocks-of-life); the ATP gap with and without oxygen (378e058ae4); lactic acid in muscle (1ba3c2a1b3, through the soreness myth); enzymes working outside the cell (f38427c9b7); enzymes are proteins (6ccdca224c); lock and key (42444afe65); activation energy (7d720a74c2); heat unfolding enzymes (859fdf0969); and the Krebs cycle (73ee127234). Two scope items are taught only in contexts: the wrong pH (859fdf0969) and 'roughly photosynthesis in reverse' (fc4f050be5). The second suits T4 photosynthesis-atoms-in-and-out's ownership. If a question is ever added, a pH one is the gap. No re-ask found. balancing-equations-and-reaction-rates never keys 'lowers the activation energy': it keys catalyst against reactant, and the share of collisions with enough energy. T4 chemical-reactions-conserve-mass keys Lavoisier's sealed tin, not his ice calorimeter. The-molecules-of-life's Sanger stem says that enzymes are proteins without keying it, and 6ccdca224c keys the evidence instead. fc4f050be5 mirrors T4's Ruben and Kamen (the oxygen given off comes from water) and is a fair grade up. The lane holds: yeast appears only as a microbe in a flask, with no bread, brewing or kitchen, and cane sugar, milk sugar, jack beans and almonds are only lab reagents or enzyme sources. The fever line is careful: 859fdf0969 says the fever is set by the brain and 'thought to help', and its context sets heat stroke apart from fever. 378e058ae4 and f38427c9b7 both use yeast and Pasteur but key different facts."}

@@ -1,0 +1,245 @@
+{
+ "unit": "how-evolution-works",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "Charles Darwin worked out natural selection in 1838 and kept it unpublished for twenty years. Then, in June 1858, a letter from Alfred Russel Wallace, posted from Ternate in the Malay islands, brought him the same idea, reached on its own. Their papers were read together at the Linnean Society of London on 1 July. Each man had found his key in an essay by Thomas Malthus. What did Malthus argue?",
+   "answer": "People multiply faster than their food supply",
+   "choices": [
+    "People multiply faster than their food supply",
+    "Earth is shaped by slow change over vast ages",
+    "Organs grow with use, and the gain is handed on",
+    "Every creature is designed to fit its way of life"
+   ],
+   "context": "Malthus argued in 1798 that population tends to grow faster than its food, so that famine, disease and war must hold it back. Darwin, reading him in September 1838, saw that in such a struggle favourable variations would tend to be preserved and unfavourable ones destroyed, and Wallace thought of Malthus's checks on population while ill with fever in February 1858. The slow change of Earth came from Charles Lyell, use and inheritance from Jean-Baptiste Lamarck, and design from William Paley.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "Ninth-grade biology names Darwin and Wallace as the independent discoverers of natural selection and Malthus's population argument as the idea that set both of them on it."
+  },
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "Wilhelm Johannsen grew beans in pure lines, each line raised from a single plant whose flowers pollinate themselves. The beans of one line still differed in weight. For several generations he sowed the heaviest and the lightest beans of a line apart, yet the offspring of both weighed the same on average. Why did picking the heaviest fail to breed heavier beans?",
+   "answer": "The extra weight came from growing conditions, not genes",
+   "choices": [
+    "The extra weight came from growing conditions, not genes",
+    "The extra weight blended away again in each new generation",
+    "The extra weight needed many more generations to show up",
+    "The extra weight was far too slight for picking to act on"
+   ],
+   "context": "Every plant in a pure line carried the same genes, so the differences in weight came from how well each mother plant was fed and where each bean grew on it, and none of them was inherited. In a mixed stock of beans the same picking did shift the average weight, because there part of the difference lay in the genes. Selection, by nature or by a gardener, works only on differences that offspring inherit, however many generations it runs; Johannsen went on to coin the words gene, genotype and phenotype.",
+   "facts": [
+    "F6",
+    "F7"
+   ],
+   "grade_note": "Ninth-grade biology teaches that natural selection needs inherited variation, and Johannsen's beans show that variation which is not inherited gives selection nothing to work on."
+  },
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "Suppose biologists follow one herd of wild sheep on an island for thirty years, catching, weighing and taking blood from every animal they can. They record four changes over that time. In the sense biologists give the word, which of the changes is evolution?",
+   "answer": "A gene for dark wool grows more common in each crop of lambs",
+   "choices": [
+    "A gene for dark wool grows more common in each crop of lambs",
+    "Each adult's genes for thick wool switch on as winters turn colder",
+    "The herd doubles in size after a run of mild winters",
+    "Lambs grow heavier in wet years and lighter in dry ones"
+   ],
+   "context": "Biologists define evolution as a change, over generations, in a population's genes: how common each version of a gene is. A herd can double, its lambs can fatten in wet years and every sheep's body can answer the cold, all without changing which genes the next generation carries, so none of those is evolution. Selection acts on single animals, but only a population evolves, as the share of each gene version shifts from one generation to the next.",
+   "facts": [
+    "F6",
+    "F8"
+   ],
+   "grade_note": "Ninth-grade biology defines evolution as a change in a population's gene pool over generations and teaches that populations evolve while individuals do not."
+  },
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "Suppose a river changes course and cuts a population of field mice in two. The halves never meet again for thousands of generations, and each changes in its own way. Then biologists bring mice from the two sides together. Which finding would show that the halves have become separate species?",
+   "answer": "Their hybrid young cannot have young of their own",
+   "choices": [
+    "Their hybrid young cannot have young of their own",
+    "Their hybrid young look like neither of their parents",
+    "Their fur now differs in its colour and in its length",
+    "They now feed mostly on quite different kinds of seeds"
+   ],
+   "context": "Biologists count two populations as one species while they can interbreed and have fertile young, so the test is whether genes can still pass between them: horses and donkeys mate, but their young, mules, are sterile, so they are two species. Species are not defined by looks, so fur, food and the look of the hybrid young can all differ while populations stay one species, and look-alike populations can be separate species. Separated populations that change until they can no longer interbreed have become new species; that is speciation.",
+   "facts": [
+    "F9",
+    "F10"
+   ],
+   "grade_note": "Ninth-grade biology defines a species by interbreeding and fertile offspring and teaches speciation as separated populations changing until they can no longer interbreed."
+  },
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "Natural selection, genetic drift, mutation and gene flow can each change how common a gene is in a population. Gene flow is the movement of genes between populations, as animals wander or pollen blows. Two populations of one species trade a few migrants every generation, and each migrant breeds where it lands. What does that gene flow do to the two populations?",
+   "answer": "It keeps them alike and works against their splitting",
+   "choices": [
+    "It keeps them alike and works against their splitting",
+    "It drives them apart and hurries along their splitting",
+    "It raises the rate of new mutations in both of them",
+    "It changes each migrant's genes to suit its new home"
+   ],
+   "context": "Migrants carry gene versions both ways, so whatever selection or drift builds up in one population is mixed back into the other and the two stay alike. That is why a species usually splits only after a barrier such as a sea, a mountain range or a river cuts gene flow off. Gene flow can bring a population a gene version it lacked, but only mutation makes new ones, and a migrant's genes stay as they were.",
+   "facts": [
+    "F10",
+    "F11",
+    "F12"
+   ],
+   "grade_note": "Ninth-grade biology lists gene flow among the mechanisms of evolution and teaches that it keeps populations alike, so that species usually split once it is cut off."
+  },
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "Hunters killed northern elephant seals for the oil in their blubber until, by the 1890s, perhaps as few as twenty were left. Protected from the 1920s, the seals now number over 200,000, yet one stretch of their DNA comes in just two types, where 48 southern elephant seals showed 26. Either the hunting left them so alike, or the species always was. Which evidence could settle it?",
+   "answer": "DNA from seals that died before numbers crashed",
+   "choices": [
+    "DNA from seals that died before numbers crashed",
+    "DNA from many more of the seals that are alive today",
+    "DNA from many more southern elephant seals",
+    "DNA from the seals first protected in the 1920s"
+   ],
+   "context": "Only seals that lived before the crash can show what the species once carried, and DNA from museum skins and old bones holds more variety than seals today: the few survivors carried only some of the gene versions, and the rest were lost by chance. That is genetic drift, change by chance, which is strongest in small populations, and a crash like this is called a bottleneck. Seals of the 1920s and today descend from the few survivors, and more southern seals could not settle it either, since two species can differ for other reasons.",
+   "facts": [
+    "F12",
+    "F13",
+    "F14",
+    "F28"
+   ],
+   "grade_note": "Ninth-grade biology teaches genetic drift and the bottleneck effect, with the northern elephant seal as the standard case, and asks which evidence could tell two explanations apart."
+  },
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "A typhoon swept over Pingelap, a small atoll in the Pacific, in 1775, and only about twenty people lived through it. Today as many as one islander in ten is totally colour-blind, unable to see any colour at all, while in the United States the condition strikes about one person in 33,000. What best explains why it is so common on the island?",
+   "answer": "One of the few survivors happened to carry its gene",
+   "choices": [
+    "One of the few survivors happened to carry its gene",
+    "The storm and famine spared those who carried its gene",
+    "Glare from the sea and sand damaged islanders' eyes",
+    "The hardship after the storm made its gene arise anew"
+   ],
+   "context": "The ruler of the day, one of the survivors, is believed to have carried one copy of the gene, which does no harm alone; among so few people chance let it spread until about three islanders in ten carry it, and marriages among relatives brought pairs of copies together. That is genetic drift after a bottleneck, the founder effect: in a small population chance can make even a harmful gene common, and people with the condition see poorly in bright sunlight. The condition is inherited, not caused by glare, and it came down from that survivor, not from new mutations after the storm.",
+   "facts": [
+    "F12",
+    "F15"
+   ],
+   "grade_note": "Ninth-grade biology teaches the founder effect and genetic drift in small populations, and Pingelap is a textbook human case."
+  },
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "Scientists published the chimpanzee's genome in 2005 and lined it up against the human one. Letter for letter, about 98.8 percent of the DNA that lines up is the same; counting the stretches one species has gained or lost, the figure is nearer 96 percent. Human and mouse DNA differ about sixty times as much. What does this pattern show?",
+   "answer": "Humans and chimpanzees had a recent common ancestor",
+   "choices": [
+    "Humans and chimpanzees had a recent common ancestor",
+    "Humans descend from chimpanzees like those of today",
+    "Chimpanzees are slowly evolving to become humans",
+    "Humans and chimpanzees grew alike by living alike"
+   ],
+   "context": "Small changes build up in DNA generation by generation, so two lines that split long ago differ more: the human and chimpanzee lines parted about six to seven million years ago, the mouse line about 75 million. Both lines have changed since their split, so chimpanzees are cousins, not ancestors, and neither is turning into the other. Living alike does not make two genomes match letter for letter; the 98.8 and 96 percent figures are two ways of counting the same comparison.",
+   "facts": [
+    "F16",
+    "F17"
+   ],
+   "grade_note": "Ninth-grade biology teaches shared DNA sequences as molecular evidence for common ancestry, and the human and chimpanzee genomes are the standard example."
+  },
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "Richard Lenski started twelve flasks of the bacterium Escherichia coli (E. coli) from one ancestor on 24 February 1988, and nearly every day since, a drop of each has gone into fresh broth. Every 500 generations a sample goes into a freezer, where the bacteria stay alive. To measure how much fitter a population is than its ancestor, the lab thaws a sample of that ancestor. What does it do next?",
+   "answer": "Grows the two in one flask to see which multiplies faster",
+   "choices": [
+    "Grows the two in one flask to see which multiplies faster",
+    "Grows each one alone and then counts the cells it ends with",
+    "Reads both genomes and counts the mutations between them",
+    "Measures the cells of both to see which have grown bigger"
+   ],
+   "context": "Fitness means success at leaving offspring against competitors, so ancestor and descendant share one flask of the same broth, a harmless marker tells them apart, and the faster multiplier is the fitter; by 50,000 generations the populations were about 70 percent fitter than the ancestor in such contests. Grown alone, each stops multiplying when the same small dose of sugar runs out, so a count at the end hides which multiplied faster. All twelve also evolved bigger cells, and six piled up mutations after breaking their own DNA repair, so neither size nor a count of mutations measures fitness. No fossil bed lets an ancestor compete against its own descendants.",
+   "facts": [
+    "F6",
+    "F18",
+    "F19",
+    "F20",
+    "F29"
+   ],
+   "grade_note": "Ninth-grade biology defines fitness as reproductive success and uses Lenski's experiment as evolution watched in the laboratory, where frozen ancestors make the comparison possible."
+  },
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "In one of Richard Lenski's twelve flasks of Escherichia coli (E. coli), cells that could feed on citrate appeared around generation 31,500. Citrate had been in the broth since 1988, but E. coli normally cannot use it where there is oxygen. Zachary Blount thawed frozen samples from that flask's past and regrew them in many cultures. Citrate eaters arose again only from samples taken at generation 20,000 or later. What did that show?",
+   "answer": "An earlier genetic change had paved the way",
+   "choices": [
+    "An earlier genetic change had paved the way",
+    "One rare mutation could have come at any time",
+    "Long years among citrate taught the cells to use it",
+    "The oldest samples had been harmed by the freezing"
+   ],
+   "context": "Trillions of cells from the first 15,000 generations never found the trick, so it was not one rare mutation equally likely at any moment: some change by generation 20,000 had prepared the way, and the population's history mattered. The final step was itself a mutation, a duplicated stretch of DNA that put a citrate-carrying gene beside a switch that works in oxygen. Bacteria do not learn a new food, and frozen samples stay alive: a fossil record that can be brought back to life.",
+   "facts": [
+    "F12",
+    "F19",
+    "F21",
+    "F22",
+    "F23"
+   ],
+   "grade_note": "Ninth-grade biology teaches mutation as the source of new traits and asks what an experiment's result shows; the citrate replays are a famous test of whether history matters in evolution."
+  },
+  {
+   "tier": 5,
+   "topic": "how-evolution-works",
+   "question": "August Weismann cut the tails off white mice and bred them, then cut the tails off their young in turn, for five generations. Stories told of a tailless cat whose kittens had no tails. Yet all 901 of Weismann's young mice were born with tails of full length. Which idea of heredity did his result support?",
+   "answer": "Egg and sperm carry traits, set apart from the body",
+   "choices": [
+    "Egg and sperm carry traits, set apart from the body",
+    "Every part of the body sends particles to egg and sperm",
+    "A parent's body hands on the changes it goes through",
+    "A child's traits are an even blend of its parents'"
+   ],
+   "context": "Weismann argued that heredity runs through the germ plasm of egg and sperm, kept apart from the body, so a wound to the body never reaches it; the result counted against Lamarck's inheritance of acquired traits and Darwin's own gemmules, and said nothing either way about blending. Lamarck's idea was a respectable rival, held in part even by Darwin, and critics fairly noted that a cut tail is an injury, not a change built by use. What retired it was genetics, which found traits passed in genes through egg and sperm; a few chemical marks on DNA can pass on for a generation or two, but they do not revive Lamarck's theory.",
+   "facts": [
+    "F24",
+    "F25",
+    "F26",
+    "F27"
+   ],
+   "grade_note": "Ninth-grade biology contrasts Lamarck's inheritance of acquired traits with natural selection, and Weismann's mice are the classic test of whether a body's changes are inherited."
+  }
+ ],
+ "revised": {
+  "47eaf66e9d": {
+   "old_hash": "47eaf66e9d",
+   "why": "Judge (medium): two lures carried the rider 'every gene as common as (it was) before', which told the player those changes leave the genes alone and left the key as the only choice where a gene's share moves. The riders are gone: the lures are now plain changes that the misconception 'any change in a population is evolution' (F8) counts as evolution, a herd doubling after mild winters and lambs heavier in wet years, lighter in dry. The context now says why neither changes the genes passed on. Stem and key unchanged."
+  },
+  "1cdfe949d3": {
+   "old_hash": "1cdfe949d3",
+   "why": "Judge (medium): the key was the only choice about breeding, and the stem's 'bring mice from the two sides together' pointed at it. 'Their skulls and teeth now differ in size and in shape' is replaced with the judge's breeding lure, 'Their hybrid young look like neither of their parents', so two choices now report a cross and the player must know that the test is whether the hybrids are fertile, not how they look (F9). Context updated. Stem and key unchanged."
+  },
+  "dd6ab3ed72": {
+   "old_hash": "1b561b8f50",
+   "why": "Fact-check note (optional, taken, and asked for by the lead): 'Protected since' put protection straight after the 1890s low; Mexico protected the seals in 1922 (F28), so the stem now says 'Protected from the 1920s', which also matches the lure 'DNA from the seals first protected in the 1920s'. Choices, key and context unchanged."
+  },
+  "c18520dc34": {
+   "old_hash": "c18520dc34",
+   "why": "Judge (low, taken): 'Grows each one alone and then counts the cells it ends with' can look as good as the key, and the context did not say why it fails. One sourced line added: grown alone, each culture stops when the broth's small dose of glucose runs out (F29), so the end count hides the faster multiplier. Stem, choices and key unchanged."
+  }
+ },
+ "added": {},
+ "dropped": [],
+ "lead_edits": [
+  {
+   "old_hash": "1cdfe949d3",
+   "new_hash": "1cdfe949d3",
+   "change": "context: \"told apart by looks\" -> \"defined by looks\"",
+   "why": "re-checker's exact fix for its fail"
+  }
+ ]
+}

@@ -1,0 +1,240 @@
+{
+ "unit": "respiration-and-enzymes",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "respiration-and-enzymes",
+   "question": "Antoine Lavoisier suspected that breathing is a slow burning of carbon. With Pierre-Simon Laplace, in the winter of 1782 to 1783, he shut a guinea pig for ten hours in a chamber packed round with ice and weighed the water from the ice its body heat melted; in separate trials they measured the fixed air, now called carbon dioxide, that it breathed out. They burned charcoal in such a chamber too. Which result would back Lavoisier's idea?",
+   "answer": "As much ice for each ounce of fixed air as burning charcoal melts",
+   "choices": [
+    "As much ice for each ounce of fixed air as burning charcoal melts",
+    "Far less ice for each ounce of fixed air, as breathing is so slow",
+    "As much ice for each hour as a lump of burning charcoal melts",
+    "Far less ice for each hour than a lump of burning charcoal melts"
+   ],
+   "context": "The guinea pig melted about 13 ounces of ice in ten hours, and charcoal giving off as much fixed air melts about 10, as close a match as Lavoisier could hope for, so he wrote that respiration is a combustion, very slow but like the burning of carbon. Burning the same amount of carbon gives the same heat whether it goes slowly or fast, so the fair test is per ounce of fixed air; the ice melted in an hour depends only on the size of the lump and how fast each one gives off heat, so more or less of it says nothing about whether the animal burns carbon. Aristotle and Galen had taught that breathing cools the blood; the slow burning is now known to run, step by step, in the mitochondria of the body's cells.",
+   "facts": [
+    "F12",
+    "F13",
+    "F14",
+    "F5a",
+    "F2",
+    "F35"
+   ],
+   "grade_note": "Ninth-grade biology teaches cellular respiration as a slow, controlled burning of fuel, and Lavoisier's ice calorimeter is the classic first measurement of it."
+  },
+  {
+   "tier": 5,
+   "topic": "respiration-and-enzymes",
+   "question": "In cellular respiration, glucose and oxygen become carbon dioxide and water, and the energy released is stored in a molecule called adenosine triphosphate (ATP). A runner breathes in oxygen with every stride and breathes out carbon dioxide. In the reactions of respiration, where do the atoms of the oxygen she breathes in end up?",
+   "answer": "In the water made in the mitochondria",
+   "choices": [
+    "In the water made in the mitochondria",
+    "In the carbon dioxide she breathes out",
+    "In the ATP made in the mitochondria",
+    "In the glucose stored in her cells"
+   ],
+   "context": "At the end of the chain of reactions on the inner membrane of the mitochondria, each oxygen molecule takes up electrons and hydrogen ions and becomes water; it is the only step in breaking down glucose that uses the oxygen breathed in. The carbon dioxide breathed out is built from the glucose's own carbon, split off in the mitochondria, and no oxygen gas goes into ATP or glucose. Respiration runs roughly as photosynthesis in reverse, which splits water and gives its oxygen off as gas.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "Ninth-grade biology traces the reactants of respiration through to its products, and where the oxygen ends up is the standard check that the equation is understood, not memorised."
+  },
+  {
+   "tier": 5,
+   "topic": "respiration-and-enzymes",
+   "question": "Louis Pasteur grew yeast in sugar solutions around 1860. Spread thin in a shallow dish open to the air, the yeast grew faster and fermented less; shut away from air in a sealed flask, it fermented hard and used far more sugar for each gram of yeast it grew. A cell stores the energy it frees from sugar in a molecule called adenosine triphosphate (ATP). Why does yeast without oxygen need so much more sugar to grow?",
+   "answer": "Each sugar yields far less ATP without oxygen",
+   "choices": [
+    "Each sugar yields far less ATP without oxygen",
+    "Each ATP it makes does less work without oxygen",
+    "Its enzymes are used up faster without oxygen",
+    "It splits sugar to free the oxygen it lacks"
+   ],
+   "context": "Fermenting a molecule of glucose yields only 2 ATP, while respiring it fully with oxygen in the mitochondria yields many times more, about 30 in human cells and up to about 18 in yeast, so a yeast cell without air must break down far more sugar for the same energy and the same growth. Each ATP holds the same energy however it was made, enzymes are not used up, and fermentation frees no oxygen: it keeps the first steps of breaking down sugar running and gives off alcohol and carbon dioxide. Biologists call oxygen's brake on fermentation the Pasteur effect.",
+   "facts": [
+    "F6",
+    "F8",
+    "F15",
+    "F30",
+    "F36"
+   ],
+   "grade_note": "Ninth-grade biology compares the ATP that respiration makes with and without oxygen, and Pasteur's yeast is the classic case of the difference at work."
+  },
+  {
+   "tier": 5,
+   "topic": "respiration-and-enzymes",
+   "question": "A girl runs her first long race, and two days later her legs ache more than ever. Until the 1980s, many blamed such aches on lactic acid, or lactate, which muscle cells make by fermentation when they run short of oxygen. Why do most exercise scientists now reject that idea?",
+   "answer": "It is back to normal within an hour, long before the ache peaks",
+   "choices": [
+    "It is back to normal within an hour, long before the ache peaks",
+    "It stays in the leg muscles for days, yet it causes no pain there",
+    "Trained runners make none of it, yet they get the ache too",
+    "Its level in the blood never rises, even in a hard race"
+   ],
+   "context": "Blood lactate rises in hard running, in trained runners as in beginners, and falls back to normal within about an hour, while the ache builds over the first day and is worst one to three days later; and exercise in which muscles shorten makes lactic acid too without leaving them sore. The ache is thought to come instead from tiny tears in the muscle fibres, mostly in work where muscles lengthen as they pull, such as running downhill, and from the inflammation that follows: in a 1983 test, an easier downhill run left legs sore and a harder level run did not. Lactic acid does form in hard-working leg muscles, and the liver turns much of it back into fuel.",
+   "facts": [
+    "F6",
+    "F9",
+    "F10",
+    "F11",
+    "F32"
+   ],
+   "grade_note": "Ninth-grade biology teaches lactic acid fermentation in muscle, and testing the soreness myth against the timing evidence is a standard exercise in judging a claim."
+  },
+  {
+   "tier": 5,
+   "topic": "respiration-and-enzymes",
+   "question": "Eduard Buchner ground yeast with quartz sand and squeezed out its juice under great pressure in 1897. Mixed with cane sugar, the juice gave off carbon dioxide for days, as living yeast does. Buchner said that a substance dissolved in the juice did the work, while followers of Louis Pasteur held that fermentation needs the living yeast cell. Which result would have counted most against Buchner?",
+   "answer": "Filtered of all its yeast cells, the juice did not ferment",
+   "choices": [
+    "Filtered of all its yeast cells, the juice did not ferment",
+    "Boiled for a few minutes first, the juice did not ferment",
+    "Kept on ice for two weeks, the juice still fermented well",
+    "Given milk sugar in place of cane sugar, the juice did not ferment"
+   ],
+   "context": "A few living cells slipping through the press would have explained everything, so juice passed through a filter that holds back every yeast cell was the deciding test; Buchner's filtered juice still fermented, and he named the dissolved agent zymase, a protein, winning the 1907 Nobel Prize in Chemistry. Boiling, cold and a sugar the juice could not use fit either idea, since heat wrecks a protein as surely as it kills a cell. Zymase proved to be a team of enzymes that, in living yeast, does its work inside the cell.",
+   "facts": [
+    "F17",
+    "F18",
+    "F19",
+    "F26"
+   ],
+   "grade_note": "Ninth-grade biology teaches that enzymes keep working outside the living cell, and Buchner's filtered yeast juice is the experiment that showed it."
+  },
+  {
+   "tier": 5,
+   "topic": "respiration-and-enzymes",
+   "question": "James Sumner crystallised urease, an enzyme from jack beans, in 1926 and found the crystals to be protein. Richard Willstätter, a Nobel Prize chemist, answered that Sumner had crystallised only a protein carrier, with the true enzyme, a much smaller molecule, clinging to it. John Northrop then crystallised pepsin, the stomach's protein-digesting enzyme, again and again. Which of his findings counted most against Willstätter?",
+   "answer": "Each gram kept the same activity through seven crystallisations",
+   "choices": [
+    "Each gram kept the same activity through seven crystallisations",
+    "Each crystal kept the same shape through seven crystallisations",
+    "Each batch, dissolved again, still broke down other proteins",
+    "Each batch worked best in strong acid, as in a stomach"
+   ],
+   "context": "If the true enzyme were a separate molecule merely clinging to a carrier, crystallising again and again should have shed some of it and changed the activity of each gram; Northrop found it steady, with the protein's makeup steady too, and concluded that pepsin itself is a protein. The crystals' shape and their power to digest protein in acid fit Willstätter's idea as well as Sumner's. The doubters gave way one by one, Willstätter last, and Sumner and Northrop shared the 1946 Nobel Prize in Chemistry with Wendell Stanley.",
+   "facts": [
+    "F20",
+    "F21",
+    "F22"
+   ],
+   "grade_note": "Ninth-grade biology teaches that enzymes are proteins, and the dispute over Sumner's crystals shows how a test was found that could settle the question."
+  },
+  {
+   "tier": 5,
+   "topic": "respiration-and-enzymes",
+   "question": "Emil Fischer reported in 1894 on two forms of methyl glucoside, a compound of glucose. The two hold the very same atoms, arranged a little differently. An enzyme from yeast split one form and left the other untouched, while emulsin, an enzyme from almonds, split only the other. By Fischer's account, why could each enzyme split only one form?",
+   "answer": "Only that form fitted the enzyme's own shape",
+   "choices": [
+    "Only that form fitted the enzyme's own shape",
+    "Only that form held its atoms loosely enough",
+    "Only that form dissolved readily enough in water",
+    "Only that form gave out energy as it was split"
+   ],
+   "context": "Fischer wrote that an enzyme and the molecule it works on must fit together like a lock and its key. The two forms differ only in which way one group points from the ring, yet that was enough to shut one enzyme out and let the other in; had looseness, dissolving or energy decided it, both enzymes would have split the same form. Daniel Koshland refined the picture in 1958 with induced fit: the enzyme's working pocket, its active site, is not rigid but closes snugly around the right molecule as it binds. That fit is why each enzyme is said to be specific to its own substrate.",
+   "facts": [
+    "F23",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "Ninth-grade biology teaches enzyme specificity through the lock-and-key and induced-fit models, and Fischer's two glucosides are where the idea began."
+  },
+  {
+   "tier": 5,
+   "topic": "respiration-and-enzymes",
+   "question": "A jar of dry glucose can sit on a laboratory shelf without changing, though glucose gives out a great deal of energy when it burns. Inside a cell at 37 degrees Celsius, enzymes break glucose down in a chain of quick steps. How does an enzyme speed up its step?",
+   "answer": "It lowers the energy needed to start the step",
+   "choices": [
+    "It lowers the energy needed to start the step",
+    "It supplies the energy needed to start the step",
+    "It raises the energy that the step gives out",
+    "It warms the molecules taking part in the step"
+   ],
+   "context": "Every reaction, even one that gives out energy, needs a push to start, its activation energy; an enzyme offers an easier path with a far smaller push, so the step runs millions of times faster at body heat, and the enzyme itself comes out unchanged. It gives no energy of its own and leaves the energy the step gives out just as it was. Heating a cell enough to drive such reactions without enzymes would wreck its parts.",
+   "facts": [
+    "F15",
+    "F16"
+   ],
+   "grade_note": "Ninth-grade biology teaches that enzymes speed reactions by lowering the activation energy, not by adding energy or heat."
+  },
+  {
+   "tier": 5,
+   "topic": "respiration-and-enzymes",
+   "question": "A man with the flu runs a fever of 39 degrees Celsius, a rise set by his brain that is thought to help him fight the virus. A body held at about 42 degrees or more, from heat stroke or an extreme fever, is in grave danger of brain damage and death. What goes wrong inside its cells at such a heat?",
+   "answer": "Their enzymes lose the shape their work depends on",
+   "choices": [
+    "Their enzymes lose the shape their work depends on",
+    "Their enzymes are used up faster than new ones are made",
+    "Their DNA splits apart into its two strands",
+    "Their outer membranes stiffen and let nothing pass"
+   ],
+   "context": "Heat shakes the folded chain of an enzyme loose, so its active site loses the shape that fits the molecules it works on; above about 40 degrees proteins begin to unfold, and held at 42 or more, cells and organs fail. A wrong pH bends enzymes out of shape in the same way, which is why each works best in its own range. The two strands of DNA stay joined until far hotter than 42 degrees, heat makes membranes looser, not stiffer, and heat does not use enzymes up; a fever is a rise the brain sets on purpose, while heat stroke is the body's heat control failing.",
+   "facts": [
+    "F26",
+    "F27",
+    "F15",
+    "F33",
+    "F34"
+   ],
+   "grade_note": "Ninth-grade biology teaches that heat and the wrong pH change an enzyme's shape, with a dangerously high body temperature as the standard example."
+  },
+  {
+   "tier": 5,
+   "topic": "respiration-and-enzymes",
+   "question": "Albert Szent-Györgyi found in the mid-1930s that a small amount of fumarate or succinate, acids that cells make, sped up the oxygen use of minced pigeon breast muscle. The acid was not burned as fuel: the oxygen taken up far outran what so little acid could use. Hans Krebs and William Johnson found in 1937 that citrate did the same. What did Krebs conclude about these acids?",
+   "answer": "Each is remade at the end of a loop of reactions",
+   "choices": [
+    "Each is remade at the end of a loop of reactions",
+    "Each is one step on a one-way chain of reactions",
+    "Each carries oxygen into the cells of the muscle",
+    "Each switches on enzymes that sat idle in the muscle"
+   ],
+   "context": "Krebs and Johnson reasoned that an acid acting this way must be used up by one reaction and made again by a later one, so a little of it carries fuel round again and again; the loop, now called the citric acid or Krebs cycle, runs in the mitochondria and splits off carbon dioxide at each turn. A one-way chain would use up whatever acid was added to it, and these acids do not ferry oxygen. Nature turned down Krebs's short paper for lack of space, so it appeared in another journal, and he shared the 1953 Nobel Prize in Physiology or Medicine.",
+   "facts": [
+    "F28",
+    "F29",
+    "F4",
+    "F2",
+    "F31"
+   ],
+   "grade_note": "Ninth-grade biology introduces the Krebs cycle as the stage of respiration in the mitochondria, and the acids that were not used up are how a cycle was first inferred."
+  }
+ ],
+ "revised": {
+  "d59d4c9fd8": {
+   "old_hash": "e638904aec",
+   "why": "Judge (medium): 'Far more ice for each hour than a lump of burning charcoal' was dead (no one expects a guinea pig to out-melt a fire). It is now 'Far less ice for each hour than a lump of burning charcoal melts', so the four choices cross two questions, as much or far less, per ounce of fixed air or per hour, and only the key is both the fair measure and the match. The judge's 'ice beside its chest' lure was not used: Lavoisier himself placed the burning in the lungs, so it could be read as backing him. Judge (low): the key's dangling 'as charcoal melts' now reads 'As much ice for each ounce of fixed air as burning charcoal melts', with the lures worded in parallel. Fact-check note (optional, taken): the fixed air was measured in separate trials, not in the ice chamber (F35), and the stem now says so. Context says why a per-hour result backs nothing."
+  },
+  "b8377c4aaa": {
+   "old_hash": "378e058ae4",
+   "why": "Fact-check (error x2): Pasteur's yeast-and-air work dates to around 1860 (his shallow-basin run of 16 April 1860; Comptes Rendus 1861), not the late 1850s, and nothing documents air bubbled through the yeast: he spread the liquid a few millimetres deep in flat basins open to the air (F30). The stem now uses the lead's wording: 'around 1860. Spread thin in a shallow dish open to the air ... used far more sugar for each gram of yeast it grew', and the question asks why it needs so much more sugar to grow, to match. Self-check: the new per-gram measure would have ruled out the old lure 'Each sugar yields its ATP more slowly without oxygen' (a rate cannot explain more sugar for each gram grown), so it is replaced with 'Each ATP it makes does less work without oxygen', a rival amount-per-sugar explanation that is false (an ATP's energy, about 30.5 kJ per mole on hydrolysis by water, is the same however it was made, F36). 'It splits sugar to free the oxygen it lacks' stays, another amount-per-sugar reason (fermentation frees no oxygen). Key unchanged; the yeast stays a microbe in a dish."
+  },
+  "1ba3c2a1b3": {
+   "old_hash": "1ba3c2a1b3",
+   "why": "Judge (medium): 'It forms only in the heart muscle' contradicted the stem, and 'only in runners who are out of training' did not count against the idea for this girl. Both are replaced with wrong claims that would each sink the idea if true and that the stem does not rule out: 'Trained runners make none of it, yet they get the ache too' (muscles make lactate all the time, even at rest, F32) and 'Its level in the blood never rises, even in a hard race' (it builds up above the lactate threshold, F32). The judge's 'numbs the nerve endings' lure was not used (not sourceable as plainly false), nor 'forms only in the first few minutes', which would not sink the idea. Fact-check note (optional, taken): the context now says the ache 'is thought to come' from fibre damage. The kept lure now reads 'yet it causes no pain there', so the key is not the longest choice. Stem and key unchanged."
+  },
+  "78bb305103": {
+   "old_hash": "42444afe65",
+   "why": "Judge (medium): 'joined in the same order, and differ only in which way one group points from the ring' left nothing for looseness, dissolving or energy to differ in, so the key could be reached by elimination (and real alpha and beta forms do differ a little in such properties). The stem now says only 'arranged a little differently', as the judge proposed, and the one-group difference moves to the context (F24). Choices and key unchanged."
+  },
+  "e954ef6286": {
+   "old_hash": "7d720a74c2",
+   "why": "Judge (low, taken): 'with no flame' weakened the lure 'It warms the molecules taking part in the step' before the player weighed it; the words are cut. Nothing else changed."
+  },
+  "859fdf0969": {
+   "old_hash": "859fdf0969",
+   "why": "Judge (medium): 'Their water begins to boil away as steam' died against the stem's 42 degrees, and 'The germs inside them multiply faster than ever' was ruled out by the stem's heat stroke and its fever that helps fight the virus (and T2 the-bodys-defences keys that fever slows germs). Replaced with the judge's lures, both wrong at 42 degrees and both tempting: 'Their DNA splits apart into its two strands' (strands part only at about 94-98 degrees, F33) and 'Their outer membranes stiffen and let nothing pass' (heat makes membranes more fluid, F34). The fever line stays careful: a fever is set by the brain and 'thought to help'; heat stroke is set apart. Stem and key unchanged."
+  },
+  "ae6fe40c44": {
+   "old_hash": "73ee127234",
+   "why": "Fact-check (error) and judge (low): only Grokipedia gives 1933; the published record dates the pigeon-muscle finding to 1934-1935, and Krebs's Nobel lecture credits it to Szent-Györgyi at Szeged in 1935 (F31). The stem now says 'in the mid-1930s'. Choices, key and context unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

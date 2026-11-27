@@ -1,0 +1,73 @@
+{
+ "unit": "the-cell-cycle",
+ "questions": {
+  "0437409842": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The lure the stem ruled out is replaced by 'A new cell being too small when it splits off'. Cell size is weighed at G1/S, before DNA is copied (Grokipedia, Cell cycle checkpoint: G1/S 'assesses DNA integrity and cell size before replication'). The spindle checkpoint monitors attachment from opposite poles and prevents aneuploidy. All three lures are now live and wrong in the same adjacent way. Crossing over appears only as a lure, so the meiosis unit's ground is not keyed.",
+   "sources": [
+    "https://grokipedia.com/page/Cell_cycle_checkpoint",
+    "https://en.wikipedia.org/wiki/Spindle_checkpoint"
+   ]
+  },
+  "f453d695b2": {
+   "verdict": "pass",
+   "why": "",
+   "note": "'Stiff' and 'boxed in' are gone, so the pinch lure lives. The cracking lure is replaced by 'grows a new wall inward from its old one', so two choices now build a wall and the direction is what is tested. Grokipedia, Cytokinesis: the plate assembles 'from the center outward' (centrifugal), and turgor 'would resist furrow ingression'; it names no land-plant cell that walls inward. No overlap: T3's yeast budding appears only as a lure.",
+   "sources": [
+    "https://grokipedia.com/page/Cytokinesis",
+    "https://en.wikipedia.org/wiki/Cytokinesis"
+   ]
+  },
+  "b5bfda8682": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The muscle-fibre nit is fixed: 'Each nucleus holds a different number of chromosomes' is plainly false (skeletal fibres are multinucleate, each nucleus with the full set). The key (different genes switched on) is a grade beyond T4's keyed fact that each nucleus holds all the genes (genes-chromosomes-and-mutations), so this is no re-ask; the T4 fact serves only to reject a lure. The writer's reason for keeping the T4 sibling fact out of the lures is sound.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cellular_differentiation",
+    "https://grokipedia.com/page/Cellular_differentiation",
+    "https://grokipedia.com/page/Skeletal_muscle"
+   ]
+  },
+  "3856a0a97e": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The stem now says he aimed the light to destroy the nucleus and that critics had doubts, so the keyed doubt is not already settled. Grokipedia, John Gurdon: UV destroyed the host nucleus; the critics raised 'contamination by residual undifferentiated cells' and 'incomplete enucleation'; the 1-nu nucleolar marker traced the tadpoles to the donor nucleus 'rather than residual host material'. The stray-cell lure is a real doubt the marker could not settle. Clinical, frog eggs only, no embryo ethics.",
+   "sources": [
+    "https://grokipedia.com/page/John_Gurdon",
+    "https://www.scientificamerican.com/article/transplanted-nuclei-and-cell-differentiation-gurdon/",
+    "https://en.wikipedia.org/wiki/John_Gurdon"
+   ]
+  },
+  "7d49bab2ec": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The restating key is gone. The question now asks which test tells 'enough' from 'needed', and the key no longer restates the stem. ASU Embryo Project: no factor put in alone gave any colony; all 24 together did; dropping one at a time narrowed them to ten, then to Oct3/4, Klf4, Sox2 and c-Myc, which made iPS-MEF4. Wikipedia: 'each necessary and together sufficient'. 'In the same study, published in 2006' fixes the fact-check's 'then'. Embryonic stem cells are named only as the genes' source.",
+   "sources": [
+    "https://embryo.asu.edu/pages/induced-pluripotent-stem-cell-experiments-kazutoshi-takahashi-and-shinya-yamanaka-2006-and",
+    "https://en.wikipedia.org/wiki/Induced_pluripotent_stem_cell",
+    "https://grokipedia.com/page/Induced_pluripotent_stem_cell"
+   ]
+  },
+  "cfa6b4cf1a": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The context error is fixed. Nurse found cdc2, the kinase (CDK) that drives the cycle, and Hunt found cyclins (Grokipedia, Paul Nurse; Tim Hunt). The stem and choices are unchanged; the judge rated them ok and the fact-check confirmed them (Weinert and Hartwell, Science 1988).",
+   "sources": [
+    "https://grokipedia.com/page/Paul_Nurse",
+    "https://grokipedia.com/page/Tim_Hunt",
+    "https://scholars.houstonmethodist.org/en/publications/the-rad9-gene-controls-the-cell-cycle-response-to-dna-damage-in-s/"
+   ]
+  },
+  "1677c0bac5": {
+   "verdict": "pass",
+   "why": "",
+   "note": "The two dead lures that made cancer cells weaker are replaced. 'Die as fast as they form' is a balanced misreading that is false (cancer cells ignore death signals), and 'single layer of much larger cells' takes a tumour for swollen cells. Two choices now say 'go on dividing', so the key no longer wins as the cliche. Grokipedia, Contact inhibition: normal cells stop at confluence in a monolayer; malignant cells 'pile up in disordered multilayers'. Avoiding 'stop when the food runs out' was rightly judged a partly-true risk.",
+   "sources": [
+    "https://grokipedia.com/page/Contact_inhibition",
+    "https://en.wikipedia.org/wiki/Contact_inhibition",
+    "https://www.cancerresearchuk.org/about-cancer/what-is-cancer/how-cancer-starts/cancer-cells"
+   ]
+  }
+ }
+}

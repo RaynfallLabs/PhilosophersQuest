@@ -1,0 +1,201 @@
+{
+ "unit": "how-the-sun-shines",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "how-the-sun-shines",
+   "question": "A coal fire gives off its heat as its fuel joins with oxygen from the air. Lord Kelvin, one of the leading physicists of the 1800s, showed in 1862 that the Sun cannot be shining by any burning of that kind. What was his reason?",
+   "answer": "Its fuel would have burned away within a few thousand years",
+   "choices": [
+    "Its fuel would have burned away within a few thousand years",
+    "It holds none of the oxygen that any burning needs",
+    "Heat from a fire could never cross 150 million kilometres of space",
+    "Light from a fire would fade out long before reaching Earth"
+   ],
+   "context": "Kelvin worked out that even the most powerful chemical burning would give only about 3,000 years of the Sun's heat, far too short for Earth's long history. The Sun does hold oxygen, the third most common element in it after hydrogen and helium, and its heat and light cross empty space as radiation. Kelvin turned instead to the Sun's slow shrinking, which still gave it only some tens of millions of years.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6",
+    "F9"
+   ],
+   "grade_note": "Ninth-grade earth science asks how scientists know what powers the Sun, and Kelvin's sum is the classic case of ruling an idea out with numbers."
+  },
+  {
+   "tier": 5,
+   "topic": "how-the-sun-shines",
+   "question": "Francis Aston, weighing atoms with new precision at Cambridge, found that a helium atom has a little less mass than four hydrogen atoms, about one part in 120 less. Arthur Eddington seized on the result in an address at Cardiff in August 1920. Shrinking, he argued, could never give the stars enough energy to shine as long as they do. What did he propose instead?",
+   "answer": "Stars shine by building helium out of hydrogen",
+   "choices": [
+    "Stars shine by building helium out of hydrogen",
+    "Stars shine by breaking helium down into hydrogen",
+    "Stars shine by burning their hydrogen with oxygen",
+    "Stars shine by the steady decay of radium inside them"
+   ],
+   "context": "Lost mass means energy given out, so building a helium nucleus from four hydrogen nuclei turns about 0.7 percent of their mass into energy, while breaking helium apart would take energy in. The Sun is now known to fuse about 600 million tonnes of hydrogen every second, and about 4 million tonnes of its mass leave it as energy each second. Radium had been put forward as the Sun's fuel in 1903, and chemical burning could not have lasted more than a few thousand years.",
+   "facts": [
+    "F2",
+    "F5",
+    "F6",
+    "F8",
+    "F10"
+   ],
+   "grade_note": "Ninth graders learn that hydrogen fuses into helium in the Sun's core, and Eddington's reasoning from Aston's weighing is how that idea first arose."
+  },
+  {
+   "tier": 5,
+   "topic": "how-the-sun-shines",
+   "question": "Arthur Eddington's critics had a hard objection to his account of how stars shine. Atomic nuclei all carry a positive charge, and their electric push stands like a wall between them: in the Sun's core a typical one has hundreds of times too little energy to climb it and get close enough to another to fuse. Eddington told them to go and find a hotter place. What answered the critics?",
+   "answer": "A few nuclei slip through the wall they cannot climb",
+   "choices": [
+    "A few nuclei slip through the wall they cannot climb",
+    "Better measures showed the core far hotter than thought",
+    "The crushing weight above forces the nuclei into contact",
+    "In such heat the nuclei lose their positive charge"
+   ],
+   "context": "Quantum physics lets a particle sometimes get through a barrier it lacks the energy to climb, which is called tunnelling: George Gamow used it in 1928 for radioactive nuclei throwing out particles, and in 1929 Robert Atkinson and Fritz Houtermans used it for fusion in stars. The core is in fact about 15 million degrees Celsius, cooler than the 40 million they assumed, and heat strips nuclei of their electrons but never of their charge. The weight above packs the core to about 150 times the density of water, so nuclei meet often, but it never pushes a pair into contact.",
+   "facts": [
+    "F1",
+    "F2",
+    "F11",
+    "F12"
+   ],
+   "grade_note": "Ninth-grade science asks what an objection demands of a theory, and the electric push between nuclei is the real obstacle the Sun's fusion has to pass."
+  },
+  {
+   "tier": 5,
+   "topic": "how-the-sun-shines",
+   "question": "The nuclear reactions that power the Sun, worked out by Hans Bethe in 1938 and 1939, throw off neutrinos, tiny particles that fly straight out through the Sun. Ray Davis caught some in a tank of 615 tonnes of chlorine-rich cleaning fluid deep in a South Dakota gold mine, but only about a third as many as models of the Sun predicted. What did an observatory in Canada find in 2001?",
+   "answer": "Most of them change into kinds the tank cannot catch",
+   "choices": [
+    "Most of them change into kinds the tank cannot catch",
+    "Most of them decay away on their way to Earth",
+    "The Sun's core is cooler than the models said",
+    "Davis's tank had been counting its catches wrongly"
+   ],
+   "context": "The Sudbury Neutrino Observatory, 2,100 metres down a nickel mine in Ontario, counted neutrinos of every kind in 1,000 tonnes of heavy water and found the total the models predicted, though only about a third arrived as electron neutrinos, the one kind Davis's chlorine could catch: the rest had changed kind on the way, so neutrinos must have mass. The leading suspects for years had been Davis's count and the models of the core, and both were cleared. Bethe won the 1967 Nobel Prize in Physics, Davis a share of the 2002 prize and SNO's Arthur McDonald a share of the 2015 prize.",
+   "facts": [
+    "F13",
+    "F15",
+    "F16",
+    "F17",
+    "F18"
+   ],
+   "grade_note": "Ninth-grade science teaches weighing rival explanations of a surprising result, and the missing solar neutrinos are a famous case where the theory of the Sun's core held."
+  },
+  {
+   "tier": 5,
+   "topic": "how-the-sun-shines",
+   "question": "Light from the Sun's surface crosses to Earth in about eight minutes. The energy it carries was made in the core long before: by most estimates its trip out took from about ten thousand to well over a hundred thousand years, most of that time in the dense layers around the core. Why is the trip out so slow?",
+   "answer": "Its light is soaked up and sent off again in random directions",
+   "choices": [
+    "Its light is soaked up and sent off again in random directions",
+    "Hot atoms jostle their neighbours, passing it on by conduction",
+    "The Sun's strong gravity keeps pulling the light back down",
+    "It waits in the core until enough builds up to break out"
+   ],
+   "context": "The gas around the core is so dense that light goes only a tiny way before an atom soaks it up and sends it off again in a new direction, so the energy zigzags outward like a lost walker; NASA's figure for that stretch is about 170,000 years. Rising and sinking gas then carries it through the outer third of the Sun much faster. Neutrinos from the core, which hardly touch the gas, cross the whole Sun in about two seconds.",
+   "facts": [
+    "F9",
+    "F14",
+    "F15"
+   ],
+   "grade_note": "Ninth graders learn that the Sun's energy slowly works outward from the core before it reaches Earth as radiation, and the zigzag of light is the reason."
+  },
+  {
+   "tier": 5,
+   "topic": "how-the-sun-shines",
+   "question": "No one can bring a piece of the Sun into a laboratory to find its age. Yet astronomers give that age as about 4.6 billion years, and say the Sun is roughly halfway through its long, steady life of fusing hydrogen in its core. Where does the figure of 4.6 billion years come from?",
+   "answer": "Dating the oldest grains in meteorites",
+   "choices": [
+    "Dating the oldest grains in meteorites",
+    "Dating the oldest rocks found on Earth",
+    "Timing how fast the Sun shrinks, then counting back",
+    "Measuring how fast the Sun cools, then counting back"
+   ],
+   "context": "The oldest grains in meteorites, leftovers of the cloud from which the Sun and planets formed, date by their radioactive elements to about 4.57 billion years, and the Sun's age is taken from them. Earth's oldest rocks are only about 4 billion years old, because most of its first crust has been melted and remade. Fusion has used up about half the hydrogen at the very centre of the Sun, which should go on shining much as it does now for about 5 billion years more.",
+   "facts": [
+    "F6",
+    "F19",
+    "F20",
+    "F21"
+   ],
+   "grade_note": "The Sun's age and its place halfway through its life are ninth-grade earth science, and the meteorites are how that age is known."
+  },
+  {
+   "tier": 5,
+   "topic": "how-the-sun-shines",
+   "question": "Through a telescope with a proper solar filter, sunspots look black against the Sun's glowing face. Yet a sunspot is still thousands of degrees hot, and one cut out and seen on its own would shine brighter than the full Moon. Why does it look dark?",
+   "answer": "It is cooler, as its magnetism holds back heat from below",
+   "choices": [
+    "It is cooler, as its magnetism holds back heat from below",
+    "It is cooler, as the fusion beneath it has died down",
+    "It is shaded by a dark cloud that hangs above it",
+    "It is the shadow of small moons crossing the Sun"
+   ],
+   "context": "Strong magnetic fields, thousands of times stronger than the quiet Sun's, choke off the rising and sinking gas that carries heat up to the surface, so a spot's dark centre is some 1,500 degrees or more cooler than the surface around it, about 5,500 degrees Celsius, and looks dim beside it. Fusion happens only in the core, far below. Christoph Scheiner took the spots for clusters of small moons, but Galileo showed in 1613 that they lie on the Sun's face and turn with it.",
+   "facts": [
+    "F1",
+    "F22",
+    "F23"
+   ],
+   "grade_note": "Ninth-grade earth science teaches sunspots as cooler, magnetic regions of the Sun's surface."
+  },
+  {
+   "tier": 5,
+   "topic": "how-the-sun-shines",
+   "question": "Heinrich Schwabe, a pharmacist in Dessau in Germany, watched the Sun on every clear day from 1826 to 1843. He hoped to catch an unknown planet, closer to the Sun than Mercury, crossing its face as a dark dot, and he noted down every sunspot he saw. He never found the planet. What did his record of the sunspots show?",
+   "answer": "Their number rose and fell over about ten years",
+   "choices": [
+    "Their number rose and fell over about ten years",
+    "Their number grew steadily over the seventeen years",
+    "Their number stayed about the same year after year",
+    "Their number rose and fell with Earth's seasons"
+   ],
+   "context": "Schwabe reported a probable ten-year period in 1843; few noticed at first, but Rudolf Wolf took up regular counts, and the Royal Astronomical Society gave Schwabe its Gold Medal in 1857. The cycle is now measured at about 11 years on average, from just under 10 to just over 12, and it is a cycle of the Sun's magnetism: about every 11 years the Sun's magnetic poles swap places. Solar flares come most often near the cycle's peak.",
+   "facts": [
+    "F24",
+    "F25",
+    "F26"
+   ],
+   "grade_note": "The 11-year sunspot cycle is ninth-grade earth science, and Schwabe's patient count is how it was found."
+  },
+  {
+   "tier": 5,
+   "topic": "how-the-sun-shines",
+   "question": "Richard Carrington was drawing sunspots in England just before noon on 1 September 1859 when two patches of brilliant white light flared up among them, then faded within five minutes. About 17 hours later auroras glowed as far south as Cuba, and telegraph lines across Europe and North America threw sparks. On one line operators unhooked their batteries and still sent messages for two hours. What drove the current?",
+   "answer": "Earth's swinging magnetic field drove it along the wires",
+   "choices": [
+    "Earth's swinging magnetic field drove it along the wires",
+    "Charged particles from the Sun fell straight onto the wires",
+    "Charge left by the batteries still filled the long wires",
+    "Lightning from thunderclouds along the line struck the wires"
+   ],
+   "context": "A cloud of magnetised gas thrown out by the Sun struck Earth and set its magnetic field swinging, and a changing magnetic field drives currents along long wires, enough to shock operators and set paper alight. Carrington suspected that the flare had caused the storm but would not claim it from one case, writing that 'one swallow does not make a summer'. Flares are now known to be sudden releases of magnetic energy stored around sunspots, and a storm in March 1989 blacked out the power grid of Quebec for up to nine hours.",
+   "facts": [
+    "F26",
+    "F27"
+   ],
+   "grade_note": "Ninth-grade earth science teaches solar flares and space weather, and the Carrington Event applies the eighth-grade rule that a changing magnetic field drives a current."
+  },
+  {
+   "tier": 5,
+   "topic": "how-the-sun-shines",
+   "question": "Margaret Burbidge, Geoffrey Burbidge, William Fowler and Fred Hoyle set out in 1957 how stars forge the chemical elements, over their long lives and in the supernova blasts that scatter what they made into space, where new stars and planets form from it. Most of the matter in a human body was made in stars. Which of the body's atoms were not?",
+   "answer": "The hydrogen in its water",
+   "choices": [
+    "The hydrogen in its water",
+    "The oxygen in its water",
+    "The carbon in its muscles",
+    "The iron in its blood"
+   ],
+   "context": "Hydrogen was made in the Big Bang, with helium and a little lithium, before any star shone, and it is the fuel that stars fuse into everything heavier, so the hydrogen in every water molecule in a body is older than the stars. The oxygen bonded to it in that water, like the body's carbon, was made by fusion inside stars, and much of its iron in supernovae long ago. Hydrogen is only about a tenth of a body's mass, though it makes up about six of every ten of its atoms.",
+   "facts": [
+    "F28",
+    "F29",
+    "F30"
+   ],
+   "grade_note": "Ninth-grade earth science teaches that stars make the heavier elements and scatter them, so the atoms of living things were made in stars, and hydrogen is the exception."
+  }
+ ]
+}
