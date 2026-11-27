@@ -1,0 +1,204 @@
+{
+ "unit": "photosynthesis-atoms-in-and-out",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "A biology book writes photosynthesis as 6CO2 + 6H2O + light energy → C6H12O6 + 6O2. A leaf cell makes two molecules of glucose by this reaction. Counting carbon atoms, how many molecules of carbon dioxide must it take in?",
+   "answer": "Twelve molecules",
+   "choices": [
+    "Two molecules",
+    "Six molecules",
+    "Twelve molecules",
+    "Twenty-four molecules"
+   ],
+   "context": "Each glucose molecule, C6H12O6, holds six carbon atoms, and each carbon dioxide molecule, CO2, holds one, so two glucose molecules need 2 × 6 = 12 carbon dioxide molecules. Carbon dioxide is the only substance on the left of the arrow that carries carbon, and no atom is made or lost in a reaction, so the carbon atoms on the two sides always match.",
+   "facts": [
+    "F1",
+    "F2"
+   ],
+   "grade_note": "8th grade (TEKS 8.6E; curriculum line G8.P2) reads the photosynthesis equation and counts the atoms of each element on both sides of the arrow."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Sunlight falls on a sunflower's leaves, and their cells use its energy to build glucose out of carbon dioxide and water. The plant stores part of that energy and draws on it long afterwards. In what form does the plant store it?",
+   "answer": "As chemical energy in glucose",
+   "choices": [
+    "As chemical energy in glucose",
+    "As new atoms in the glucose",
+    "As light energy trapped in the chlorophyll",
+    "As heat energy held in the leaves"
+   ],
+   "context": "Photosynthesis changes light energy into chemical energy, held in the glucose for the plant to use later. Light carries energy but no atoms, so every atom of the glucose comes from the carbon dioxide and the water, and the leaves hold neither light nor warmth for later.",
+   "facts": [
+    "F1",
+    "F3",
+    "F5",
+    "M2"
+   ],
+   "grade_note": "8th grade (NGSS MS-LS1-6) traces the flow of energy through photosynthesis: light energy changed into chemical energy stored in sugar."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Theodor Engelmann, a German biologist, laid a strand of green alga in a drop of water swarming with bacteria that swim toward oxygen. Under his microscope, in the early 1880s, he spread the colours of sunlight from a prism along the strand. Where did the bacteria crowd most thickly?",
+   "answer": "Around its chloroplasts, in red and blue light",
+   "choices": [
+    "Around its chloroplasts, in red and blue light",
+    "Around its chloroplasts, in green and yellow light",
+    "Around its nuclei, in red and blue light",
+    "Around its nuclei, in green and yellow light"
+   ],
+   "context": "The bacteria crowded where the alga gave off the most oxygen: around its chloroplasts, where the light fell red or blue. Chlorophyll, the green pigment in the chloroplasts, absorbs red and blue light most strongly and takes in little green, which is why leaves look green and why the bacteria were fewest in the green and yellow.",
+   "facts": [
+    "F3",
+    "F4",
+    "F6",
+    "M6"
+   ],
+   "grade_note": "8th-grade photosynthesis lessons place the reaction in the chloroplasts, whose chlorophyll captures the light; Engelmann's bacteria are the classic experiment that showed both."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Samuel Ruben and Martin Kamen, with two colleagues at the University of California, followed oxygen atoms through photosynthesis in 1941. They used heavy oxygen, a rare kind of oxygen atom with two extra neutrons. In one test they gave algae water rich in heavy oxygen, and in another, carbon dioxide rich in it. Which test made the algae give off oxygen gas rich in heavy oxygen?",
+   "answer": "Only the test with heavy water",
+   "choices": [
+    "Only the test with heavy water",
+    "Only the test with heavy carbon dioxide",
+    "Both tests, about equally",
+    "Neither test, since it all went into sugar"
+   ],
+   "context": "Only the algae given heavy water gave off heavy oxygen gas, in the same share as their water held it, so the oxygen a plant gives off comes from the water it splits, not from the carbon dioxide, as chemists had long believed. The textbook equation is only a net count: to free its six oxygen molecules, a plant splits twelve water molecules and makes six new ones.",
+   "facts": [
+    "F7",
+    "F8",
+    "F10",
+    "F11",
+    "F12",
+    "M4"
+   ],
+   "grade_note": "8th grade traces matter through photosynthesis atom by atom (NGSS MS-LS1-6, tracing the movement of matter); the heavy-oxygen tracer is the experiment that showed where the released oxygen comes from."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Cornelis van Niel studied a group of purple bacteria at Stanford University's Hopkins Marine Station around 1930. Like plants, they use light to build food from carbon dioxide. But where a plant takes in water (H2O), they take in hydrogen sulfide (H2S), and they give off no oxygen. What do they give off in its place?",
+   "answer": "Sulfur",
+   "choices": [
+    "Sulfur",
+    "Hydrogen",
+    "Sulfur dioxide",
+    "Methane"
+   ],
+   "context": "The bacteria keep the hydrogen of hydrogen sulfide to build their food and leave its sulfur behind as tiny globules, just as a plant keeps the hydrogen of water and gives off its oxygen. Van Niel argued from them, in 1931, that the oxygen of green plants comes from water and not from carbon dioxide, and the heavy-oxygen tests of 1941 bore him out.",
+   "facts": [
+    "F8",
+    "F9",
+    "F10"
+   ],
+   "grade_note": "8th grade follows which atoms go where in photosynthesis (TEKS 8.6E, NGSS MS-LS1-6); van Niel's bacteria were the first evidence that the oxygen comes from water."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Jan van Helmont planted a willow shoot of about 2 kilograms in a pot of 91 kilograms of oven-dried soil. For five years he gave it only rainwater or distilled water, under a lid with small holes that kept out dust. Then he weighed the tree, dried the soil again and weighed it too. The willow had gained about 74 kilograms. How much lighter was the soil?",
+   "answer": "About 57 grams",
+   "choices": [
+    "About 57 grams",
+    "About 570 grams",
+    "About 37 kilograms",
+    "About 74 kilograms"
+   ],
+   "context": "The soil was only about 57 grams lighter, so the willow's 74 kilograms could not have come out of it. Van Helmont decided that the tree had grown from water alone and never considered the air; in fact much of the wood was built from carbon dioxide that its leaves took from the air.",
+   "facts": [
+    "F13",
+    "F14",
+    "F16",
+    "F17",
+    "M1"
+   ],
+   "grade_note": "Van Helmont's willow is the classic first clue in 8th-grade lessons tracing where a plant's matter comes from (NGSS MS-LS1-6); the soil's tiny loss is its result."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Dry wood is about half carbon by weight. Nicolas-Théodore de Saussure, a Swiss chemist, made careful measurements of growing plants to learn where that carbon comes from, and he published them in 1804. Where did he show that a plant gets its carbon?",
+   "answer": "Carbon dioxide in the air",
+   "choices": [
+    "Carbon dioxide in the air",
+    "Carbon in the soil's rotting humus",
+    "Minerals in the soil",
+    "Water drawn up by the roots"
+   ],
+   "context": "De Saussure found that plants take their carbon from the carbon dioxide in the air, not from humus, the rotting matter in soil. Water holds no carbon at all, and the soil gives a plant only small amounts of minerals, so the carbon in a tree's wood was once a gas in the air.",
+   "facts": [
+    "F2",
+    "F13",
+    "F14",
+    "F16",
+    "M1",
+    "M5"
+   ],
+   "grade_note": "8th grade traces a plant's matter to the carbon dioxide and water it takes in (NGSS MS-LS1-6; TEKS 8.6E), and asks which atoms come from which."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Jan van Helmont grew a willow in a pot of weighed soil and gave it nothing but rain or distilled water for five years. He concluded that the tree was made of water alone. Chemists now know that he was partly right. Which part of the willow's dry wood came from the water?",
+   "answer": "Its hydrogen atoms",
+   "choices": [
+    "Its hydrogen atoms",
+    "Its carbon atoms",
+    "Its carbon and hydrogen atoms",
+    "Its calcium atoms"
+   ],
+   "context": "In the photosynthesis equation only water carries hydrogen, so the hydrogen atoms in the willow's glucose, and in the wood built from that glucose, came from water. Its carbon came from carbon dioxide in the air and its calcium from the soil; van Helmont saw the water go in but never considered the air.",
+   "facts": [
+    "F2",
+    "F13",
+    "F15",
+    "F16",
+    "F17",
+    "M5"
+   ],
+   "grade_note": "8th grade relates the photosynthesis equation to the atoms that rearrange in it (TEKS 8.6E): carbon from carbon dioxide, hydrogen from water."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Joseph Priestley let a candle burn in a closed jar of air until its flame went out. He put a sprig of mint into that spent air on 17 August 1771 and left it shut in. Ten days later he tried another lit candle in the same air. What happened to its flame?",
+   "answer": "It burned perfectly well",
+   "choices": [
+    "It burned perfectly well",
+    "It went out at once",
+    "It burned feebly, then died",
+    "It flared up, then died"
+   ],
+   "context": "The candle burned perfectly well, so the mint had mended the air that the first flame had spoiled. When Priestley split spent air into two parts and put a plant in one, a candle burned only in that part; a mouse, too, could live in air a plant had mended, and he concluded that plants restore air spoiled by burning and breathing.",
+   "facts": [
+    "F18"
+   ],
+   "grade_note": "Priestley's mint is one of the first clues taught in 8th-grade lessons on the history of photosynthesis: plants restore the air."
+  },
+  {
+   "tier": 4,
+   "topic": "photosynthesis-atoms-in-and-out",
+   "question": "Jan Ingenhousz, a Dutch-born physician, ran more than 500 experiments in the summer of 1779 at a house he rented near London. He sank leaves in jars of water and watched for bubbles of the gas that mends spoiled air. Some jars stood in sunshine, and others in a warm room that no sunshine reached. Where did the leaves give off the gas?",
+   "answer": "Only in the sunshine",
+   "choices": [
+    "Only in the sunshine",
+    "Only in the warm room",
+    "In the sunshine and the warm room alike",
+    "Neither in the sunshine nor in the warm room"
+   ],
+   "context": "Leaves gave off the gas only where sunlight fell on them, and only from their green parts: Ingenhousz wrote that none is obtained in a warm room if the Sun does not shine upon the jar. So it is the Sun's light, not its warmth, that drives the change, which is why the process is named for light.",
+   "facts": [
+    "F19",
+    "M3"
+   ],
+   "grade_note": "Ingenhousz's discovery that plants need light is one of the first clues taught in 8th-grade lessons on the history of photosynthesis."
+  }
+ ]
+}

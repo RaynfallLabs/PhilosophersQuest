@@ -127,3 +127,32 @@ G1. 8th grade: TEKS 8.13C (above, F3) and NGSS MS-LS4-4 (genetic variation of tr
 - The 7 percent figure (F26) is "up to" 7 percent a week; it is given that way.
 - Whether temperature nudges the hares' moult timing: a camera-trap study found some plasticity, especially in spring; the start is said to be set by day length "presumably". Temperature is not a wrong choice for that reason.
 - Snowshoe hares appear in the T2 unit predators-partners-and-parasites for the lynx cycle, a different fact; their coat colour is not asked anywhere else.
+
+## Added in the revision (2026-11-26)
+
+F29. "Female guppies prefer colorful males as mates", and "In locations where there are more dangerous predators, males tend to be less colorful" (UC Berkeley, Understanding Evolution). Grokipedia (Guppy), after Anne Houde's work: "female guppies exhibit a strong preference for males with larger areas of orange coloration on their bodies"; low-predation males evolve "brighter, more extensive coloration with larger and more numerous spots".
+    https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_15 ; https://grokipedia.com/page/Guppy
+
+F30. The guppies' predators in Trinidad's streams: pike cichlids (Crenicichla alta) in the high-predation sites downstream, which "impose strong selective pressure", and killifish (Rivulus hartii) in the low-predation areas upstream (Grokipedia, Guppy); Berkeley speaks of "less dangerous predators" in some parts of the streams. A Glencoe summary of the 1976 transfer (read through a search excerpt): the new site lay above a waterfall "where there were no fish except for the killifish".
+    https://grokipedia.com/page/Guppy ; https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_15 ; https://glencoe.mheducation.com/sites/dl/free/9834092339/120060/evolution_in_action20.pdf
+
+F31. John Endler "transferred guppies from an area with dangerous predatory fish" to a region with less dangerous predators, where they stayed "about two years (~15 guppy generations)"; the population had shifted toward brightly coloured males (Berkeley, citing Endler 1980, Evolution 34: 76-91). Grokipedia (Guppy): field transplants in Trinidadian streams showed spots "increased by up to 50% in low-predation sites within a few generations". The number of fish moved is not used (no source read gives it).
+    https://evolution.berkeley.edu/evolibrary/article/0_0_0/lines_15 ; https://grokipedia.com/page/Guppy
+
+F32. NGSS MS-LS1-4 (middle school): "Examples of behaviors that affect the probability of animal reproduction could include ... vocalization of animals and colorful plumage to attract mates for breeding."
+    https://www.nextgenscience.org/pe/ms-ls1-4-molecules-organisms-structures-and-processes
+
+F33. Antifreeze proteins "primarily affect freezing without substantially altering the melting point" (Grokipedia, Antifreeze protein), and in Antarctic notothenioids they "bind irreversibly to microice crystals, halting their growth". Cziko and colleagues (PNAS, 2014): the proteins superheat the ice inside the fish, so ice persisted inside live fishes more than 1 degree Celsius above its melting point for at least 24 hours, and summer warming in McMurdo Sound never cleared the ice from them. So the proteins do not melt the crystals.
+    https://grokipedia.com/page/Antifreeze_protein ; https://pmc.ncbi.nlm.nih.gov/articles/PMC4209995 ; https://news.illinois.edu/study-antifreeze-proteins-in-antarctic-fishes-prevent-freezing-and-melting/
+
+F34. Ectotherms need far less food than endotherms, "often 10 to 20 times less", for they rely on outside heat sources "rather than generating significant metabolic heat internally"; their behaviour includes basking, "repeated movement between sunlit and shaded areas", and retreats into soil or rock crevices (Grokipedia, Ectotherm).
+    https://grokipedia.com/page/Ectotherm
+
+F35. Karasov, Petrossian, Rosenberg and Diamond (J. Comp. Physiol. B 156, 1986) fed two herbivorous lizards (the chuckwalla and the desert iguana) and two mammals (a woodrat and the laboratory mouse) the same diet: the lizards' apparent digestive efficiencies were slightly lower than the mammals', though food passed through them far more slowly (abstract, as read through search excerpts). So a lizard does not digest its food more fully than a mouse.
+    https://link.springer.com/doi/10.1007/BF00691047
+
+F36. Rattlesnakes "deliver a venomous strike, releasing prey to succumb before relocation and swallowing head-first"; the venom's effects "synergize to immobilize prey via cardiovascular collapse and tissue necrosis" (Grokipedia, Rattlesnake). So the venom kills the rodents it bites.
+    https://grokipedia.com/page/Rattlesnake
+
+F37. The 1,200 kingsnake models (F13) were the whole study: Pfennig, Harcombe and Pfennig (Nature 410: 323, 2001) put 480 replicas at 8 sites inside and 8 sites outside the coral snake's range in North and South Carolina and 720 in Arizona (the fact-check's reading of the Nature letter's methods). So "hundreds of plasticine snakes in the Carolinas".
+    https://www.nature.com/articles/35066628 ; https://www.sciencedaily.com/releases/2001/03/010315075129.htm

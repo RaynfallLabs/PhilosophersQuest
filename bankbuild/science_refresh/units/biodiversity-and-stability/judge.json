@@ -1,0 +1,75 @@
+{"unit": "biodiversity-and-stability",
+ "questions": {
+  "6ea183bec5": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only choice that names a meadow: the other three all open 'Neither', and no choice says 'The second'. Faced with a stem that builds a contrast (seed from many wild parents against cuttings of one), a student who does not know that genes count as biodiversity still picks the odd one out.",
+     "fix": "Balance the forms so the reason decides: 'The first, for the variety in its genes' / 'The first, for seed-grown plants are hardier' / 'Neither, for both hold the same 20 species' / 'Neither, for both hold the same number of plants'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'Neither, for both hold as many plants' is clipped: 'as many' as what?",
+     "fix": "'Neither, for both hold the same number of plants' (as in the fix above)."}
+   ]},
+
+  "31f9d2930c": {"verdict": "ok",
+   "issues": [
+    {"axis": "grade", "severity": "low",
+     "what": "The key is the shape of a curve (each loss costing more than the last), a research nuance rather than the plain result 8th grade teaches. That is deliberate and right here: the plain result, more species withstand drought better, is the T1 ecosystems-living-and-nonliving key and sits in this stem as setting. The four choices span the possible shapes and stay live.",
+     "fix": "None needed; if it reads hard in play, 'Losses cost little at first, then more and more' is a plainer key."},
+    {"axis": "stance", "severity": "low",
+     "what": "The card is fair about the dispute: it attributes the diversity-stability reading to Tilman and Downing, names the nitrogen confound, gives their answer and says a 2017 reanalysis disputes it. Two things would make it fairer: the 2017 work is a conference reanalysis, not a published paper, and the card leaves the impression that the whole idea is in doubt, when later experiments that sowed set numbers of species, free of the nitrogen problem (Isbell's team, 46 experiments, 2015, F6), found that richer plots did resist climate extremes better, though they recovered no faster.",
+     "fix": "End the card: '...though a 2017 conference reanalysis disputes this. Later experiments that sowed set numbers of species, with no fertilizer to confuse them, found that richer plots did resist droughts and other extremes better, though they recovered no faster.'"}
+   ]},
+
+  "84f7dc8f85": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem gives both results and asks what explains both, a puzzle that logic solves: a total that holds steady while each part swings more must have parts that offset one another. Two wrong choices fall to that logic or to the setting: species rising and falling together would make the total swing more (the card says so), and all 207 plots lie at one site under the same weather. A student who knows nothing of compensation or the insurance effect can reason to the key.",
+     "fix": "Hold back the surprising half and key it: '...Yet the total plant mass of the rich plots held steadier from year to year than in plots with few species. What did he find about each species in the rich plots?' Key: 'Each rose and fell more from year to year'. Wrong: 'Each held steadier from year to year'; 'Each grew a little more every year'; 'Each rose and fell in step with the rest'. The card then teaches the compensation and the insurance effect."}
+   ]},
+
+  "b1c6da2fa3": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem names the solution: the sticky rice stood in single rows among 'a hybrid rice that blast seldom harms', so 'Most spores now met plants the fungus could not infect' restates what the stem has set up. 'The hybrid rice took the water the fungus needed' is weak, and 'caught resistance' is the T2 ash-dieback lure a T4 player has already met, so the key falls out with little knowledge of the dilution effect.",
+     "fix": "Cut 'that blast seldom harms' from the stem ('between groups of four or six rows of a hybrid rice'), so the student must know that a resistant neighbour dilutes the disease, and teach the hybrid's resistance in the card. Replace the water choice with 'The hybrid rows' roots gave off a substance that kills the fungus'."}
+   ]},
+
+  "8ae8afad67": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem rules out two choices. It says every Lumper 'carried the same genes, and none could resist', which sets aside 'In seedlings raised from the Lumper's seeds' and weakens 'In old potato varieties grown in Ireland'; 'In potatoes sprayed for years against it' is the inheritance-of-acquired-traits lure the T3 selection unit has already taught against. The wild potatoes are left by elimination.",
+     "fix": "Stem: '...grown from pieces of its tubers, so every plant carried the same genes and the same weakness to late blight, the disease the mould causes.' This keeps the clonal point but leaves the seedlings and the Irish varieties live."},
+    {"axis": "other", "severity": "low",
+     "what": "Lane: the key names a country ('of Mexico'). What is tested is the wild relatives, and named places are the geography bank's; Mexico decorates the key without being the point.",
+     "fix": "Key: 'In wild relatives of the potato'; Solanum demissum and Mexico stay in the card."}
+   ]},
+
+  "4f4644d10a": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The experiment's own design gives the answer. Extra pollen raised the crop only far from the forest, so the far bushes were short of pollen; of the four choices only bees carry pollen, and water, shade or pests are not what a dusting of pollen makes up for (the card says as much). The one fact left to know, that bees carry pollen, is already keyed at T1 (roots-stems-leaves-and-flowers) and T2 (predators-partners-and-parasites), so the question re-asks it.",
+     "fix": "Key the design, the T4 how-we-know: '...At each site they dusted some branches' flowers with extra pollen by hand and left other branches alone. Why did they leave branches alone at every site?' Key: 'To compare under the same water, shade and pests'. Wrong: 'To leave some flowers for the bees to feed on'; 'To have spare flowers if the dusted ones failed'; 'To find which branches the bees liked best'. The card gives the result: a fifth more coffee on the dusted branches far away, the forest's bees worth about $60,000 a year to the farm."}
+   ]},
+
+  "88f024cb05": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Wild insect visits raised fruit set about twice as much' leaves 'as what' to the reader; an 8th grader may read it as 'doubled the fruit'.",
+     "fix": "'An extra wild insect visit did about twice the good of an extra honeybee visit', with the second choice mirrored ('An extra honeybee visit did about twice the good of an extra wild insect visit')."}
+   ]},
+
+  "7139561bbd": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem kills 'Every hybrid had been grown from copies of one plant': it has just said the hybrids were many and each was grown from a cross between two inbred lines. The lure is the T2 Gros Michel answer, which is why it is there, but a careful reader sets it aside. The other two wrong choices are live and the key still needs knowledge, so it stands.",
+     "fix": "Replace it with 'Race T spread on the wind to every field' (spreading is not harming: corn without the trait held up), and keep the Gros Michel contrast for the card."}
+   ]},
+
+  "09dc14116d": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The frame announces the reversal: opening on what 'short experiments, most about two years long' found, then 'for more than a decade', tells the player the short result fell, which sets aside 'Species beyond the first eight still added nothing'. The other choices stay live.",
+     "fix": "Move the short experiments to the card and ask 'How did the plots' growth change with their number of species as the years went by?' Key: 'The richest plots pulled further ahead each year'. Wrong: 'The gap between rich and poor plots shrank each year'; 'Plots above eight species grew no better'; 'The richest plots fell behind as their plants crowded in'."}
+   ]}
+ },
+ "unit_notes": "Coverage of the scope is good: biodiversity's genetic level (6ea183bec5), stability and its mechanism (31f9d2930c, 84f7dc8f85), services (pollination in 4f4644d10a and 88f024cb05, fertile soil in 09dc14116d), loss weakening an ecosystem (09dc14116d), and monocultures (rice in b1c6da2fa3, the Irish potato in 8ae8afad67, the 1970 corn in 7139561bbd). Clean water and flood control are not asked; the writer's reason (the Catskills case re-asks the T1 roots-hold-soil key) is sound. Three questions sit at Cedar Creek and two of them (31f9d2930c, 09dc14116d) both argue against species being redundant, through different experiments; acceptable, but a fourth Cedar Creek question would be too many. Overlaps: 31f9d2930c rightly keys the curve, not the T1 ecosystems-living-and-nonliving result (many kinds withstand drought), which it states as setting; 8ae8afad67 and 7139561bbd use the T2 Gros Michel uniformity only as premise or lure; 4f4644d10a re-asks bees as pollinators (fix above). The fact that a cutting is a clone (T2 hydrangea, T3 runners) is a premise in 6ea183bec5, not its key. Within the batch: no question keys a cascade, a keystone, an invader or DDT, and none keys succession. Honesty: the Cedar Creek dispute is attributed and fairly told; the 31f9d2930c fix adds the later sown-diversity experiments so the card does not leave the whole idea looking overturned. Lanes: the potato famine is kept to the mould, the clonal crop and the genes, with no history, economics or politics; named places set scenes, except 'of Mexico' in 8ae8afad67's key (fix above). No kitchen examples: rice, potatoes, corn and coffee appear only as crops in the field. Voice is clean: no second person, no exclamation marks, no date openers, no singular 'they'."}

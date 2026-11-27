@@ -1,0 +1,45 @@
+{"unit": "the-life-cycles-of-stars",
+ "questions": {
+  "8f6e6e1a90": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "'Cold gas catches fire more easily than warm gas' is silly. No 8th grader thinks cold things catch fire more easily, so only three choices are live.",
+    "fix": "Replace it with a real but wrong mechanism: 'Cold gas is pulled together by the nebula's magnetism'. Magnetic fields in fact resist the collapse. That needs a source line, or a Grokipedia star-formation quote, in facts.md."},
+   {"axis": "grade", "severity": "low",
+    "what": "The balance of gas pressure against gravity at a star's birth (the Jeans idea) goes a step past TEKS 8.9A's 'gravity pulls the nebula together'. It is acceptable as T4 mechanism, told in plain words.",
+    "fix": "No change needed."}]},
+
+  "9d4071711c": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The stem's figures do the work: far more fuel but a far shorter life means the fuel is used up faster. The key is the only choice that says 'faster', and its mirror, 'Its cooler core lets its fuel go out sooner', is weak. A student who knows nothing of core temperature picks the key from the numbers alone.",
+    "fix": "Make every choice a story of fast burning or early ending, so the mechanism decides: 'Its hotter core burns its fuel far faster' / 'Its bigger surface burns its fuel far faster' / 'Its gravity crushes it before its fuel runs out' / 'Its fuel is a kind that burns away faster'. The surface-burning choice is a real student picture of a star."}]},
+
+  "2d1ab15ed2": {"verdict": "ok", "issues": []},
+
+  "dc841eb0a9": {"verdict": "ok", "issues": []},
+
+  "9eef39910b": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The key matches everyday sense (hot things glow brighter), so it can be guessed without the H-R diagram. 'From hot to cool stars, all equally bright' and 'From bright to dim stars, all equally hot' are weak, because a band that crosses the chart cannot keep one axis fixed. Also, the unit never keys the red giant or supergiant, which is core scope.",
+    "fix": "Re-key to classifying a star on the chart, as TEKS 8.9A asks, and fill the red-giant gap. Teach the main sequence in the stem: 'Ejnar Hertzsprung, a Danish astronomer, and Henry Norris Russell, at Princeton, worked separately between 1911 and 1913, plotting stars' true brightness against surface temperature. Most stars, the Sun among them, fell in one band, the main sequence, running from hot, bright stars to cool, dim ones. A few stars sat far above the band on its cool side, much brighter than main-sequence stars of the same temperature. What kind of stars were they?' Key: 'Red giants'. Wrong: 'Red dwarfs' / 'White dwarfs' / 'Blue supergiants'. Each wrong choice sits in another corner of the chart (cool and dim, hot and dim, hot and bright)."}]},
+
+  "e07eb03036": {"verdict": "ok", "issues": []},
+
+  "30ddd9467d": {"verdict": "ok", "issues": [
+   {"axis": "grade", "severity": "low",
+    "what": "The key is a bare number to recall, against powers of ten (14, 140) and Eddington's 'any mass'. Chandrasekhar's limit is usually high-school astronomy. The lead's ruling puts it in this unit, and here the number is the fact itself, so it stands.",
+    "fix": "No change needed. Optionally, steer students away from rote recall by adding a clause in the stem that most white dwarfs hold less than the Sun's mass (F26: average about 0.6), so 1.4 reads as a ceiling a little above the usual."}]},
+
+  "69874dc35d": {"verdict": "ok", "issues": [
+   {"axis": "stance", "severity": "low",
+    "what": "Eddington's standing is honoured: 'Britain's leading astrophysicist' in the stem, and in the context he accepted white dwarfs, and Bohr and Pauli stayed silent out of respect for his standing. The dispute is told plainly, and the evidence decides. The context could still give him one line of his own achievement, so the reader sees why his word carried weight rather than seeing only his mistake.",
+    "fix": "Optional clause in the context: 'Eddington had written the leading book on the insides of stars, and his word carried great weight.' This needs a source line (his 1926 The Internal Constitution of the Stars)."}]},
+
+  "96061d4e59": {"verdict": "ok", "issues": [
+   {"axis": "other", "severity": "low",
+    "what": "The context's 'about 6,500 light-years away' uses the light-year, which galaxies-and-the-expanding-universe (T4) owns and teaches. It appears in the context only and is not keyed.",
+    "fix": "Optional: 'from far across our own galaxy', or keep it, since contexts may use a term another unit teaches."}]},
+
+  "bb3e032a2e": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Overlap check against every final.json and this batch. the-sun-and-its-planets (T1) keys that the Sun looks brighter because it is closer; e07eb03036 (hot but dim because small) is a different fact. why-earth-supports-life (T3) keys the red dwarf's habitable zone, and its stem calls a red dwarf 'dimmer and cooler than the Sun'. That mildly pre-teaches red as cool for dc841eb0a9, but it is a different key and stays acceptable. The lead's stars ruling is kept. Nothing keys fusion (9d4071711c says 'burns its fuel', and the context explains it by core pressure and temperature), the Sun's age (only the ten-billion-year life, which is in scope), element-making, spectra (dc841eb0a9 uses colour only) or galaxies and Hubble. The light-year appears only in 96061d4e59's context. This unit owns Chandrasekhar and Eddington, SN 1054 and Bell's pulsar, and all three are here. SN 1987A is not used, which is fine. SCOPE GAP: the red giant (and red supergiant) is core scope but appears only in contexts (2d1ab15ed2, 9d4071711c). The suggested 9eef39910b fix keys it as classification on the H-R diagram. Otherwise the coverage is full: nebulae and gravity, mass deciding the life, the Sun-like end (planetary nebula, white dwarf), the massive end (supernova, neutron star, and black-hole collapse through the limit), colour as temperature, the H-R diagram. CHANDRASEKHAR AND EDDINGTON: two questions, the limit's value (30ddd9467d) and what Eddington found absurd (69874dc35d). They key different facts. The dissenter is honoured and the establishment figure treated fairly. The story is told plainly, with no smug voice, and no question claims Chandrasekhar was first (Stoner and Anderson). BELL: the Nobel omission is stated plainly and without comment. LANES: Orion, Sirius, the Ring Nebula and the Crab set scenes only. The Song dynasty record is history used as evidence. Arithmetic: none in stems; contexts use easy ratios (16 times the fuel, a thousandth as long). VOICE: third person, no exclamation marks (Eddington's words are in indirect speech), no stem opens on a date, every they/their is plural."
+}

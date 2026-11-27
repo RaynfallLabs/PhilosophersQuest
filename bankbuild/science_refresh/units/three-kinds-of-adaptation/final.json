@@ -1,0 +1,203 @@
+{
+ "unit": "three-kinds-of-adaptation",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "three-kinds-of-adaptation",
+   "question": "Henry Walter Bates spent nearly eleven years collecting insects in the Amazon rainforest. Birds there leave alone the boldly patterned butterflies of one group, which taste foul, and Bates found a few butterflies of a quite different family, safe for birds to eat, that looked almost exactly like them. The look-alikes were far scarcer than the foul kind. Suppose the look-alikes came to outnumber the foul kind many times over. What would most likely happen?",
+   "answer": "Birds would learn the pattern often means a meal",
+   "choices": [
+    "Birds would learn the pattern often means a meal",
+    "Birds would shun the pattern more, seeing it so often",
+    "Birds would go on shunning it, never forgetting a foul taste",
+    "The look-alikes would turn foul-tasting to keep birds off"
+   ],
+   "context": "A bird learns to shun the pattern by tasting foul butterflies that wear it, so the look-alikes are spared only while most of the patterned butterflies a bird tries are foul. If look-alikes far outnumbered the foul kind, birds would mostly find a meal behind the pattern and learn to hunt it, so mimicry of this kind works only while the mimics stay rare. A butterfly's taste is inherited, and it does not change because a change would help.",
+   "facts": [
+    "F8",
+    "F9",
+    "F10",
+    "M1"
+   ],
+   "grade_note": "8th grade (TEKS 8.13C; curriculum line G8.L3) teaches mimicry as a structural adaptation and asks why an adaptation helps; that it works only while predators keep learning from the foul model is the mechanism behind Bates's case."
+  },
+  {
+   "tier": 4,
+   "topic": "three-kinds-of-adaptation",
+   "question": "Scarlet kingsnakes are harmless, but their red, yellow and black rings look much like those of the venomous coral snake. David Pfennig's team set out hundreds of plasticine snakes in the Carolinas, some ringed like kingsnakes and others striped or plain brown. Some went where coral snakes live, and some farther north, where none do. Predators' bites left marks in the soft models. What did the marks show about the rings?",
+   "answer": "They protect only where coral snakes live",
+   "choices": [
+    "They protect only where coral snakes live",
+    "They protect wherever the kingsnakes live",
+    "They draw attacks where coral snakes live",
+    "They make no difference to the predators"
+   ],
+   "context": "Where coral snakes live, only about 6 percent of the attacks fell on ringed models; farther north, where there are none, about half did. Predators that have learned to fear a coral snake spare its look-alikes, but where no coral snake has taught that lesson the rings give no protection. The same colouring that saves a kingsnake in one place does nothing for it in another, just as Bates's idea of mimicry predicts.",
+   "facts": [
+    "F9",
+    "F10",
+    "F12",
+    "F13",
+    "F37"
+   ],
+   "grade_note": "8th grade (TEKS 8.13C; NGSS MS-LS4-4) teaches that whether a trait helps depends on the environment, and the kingsnake models are the field experiment that shows it for mimicry."
+  },
+  {
+   "tier": 4,
+   "topic": "three-kinds-of-adaptation",
+   "question": "Arthur DeVries went to Antarctica in 1961 as a graduate student to study fish that live in seawater about 1.9 degrees Celsius below zero, cold enough to freeze most fishes' blood. With Donald Wohlschlag he found that the salts and other small substances in the Antarctic fishes' blood could account for only about half of its protection against freezing. Much of the rest came from a protein built with sugars. How does such a protein keep the blood from freezing?",
+   "answer": "It binds to tiny ice crystals and stops them growing",
+   "choices": [
+    "It binds to tiny ice crystals and stops them growing",
+    "It makes heat that keeps the blood above freezing",
+    "It melts tiny ice crystals as soon as they form",
+    "It stops cold seawater from soaking into the body"
+   ],
+   "context": "Tiny ice crystals get into the fish with its food and through its gills, and the antifreeze protein sticks to them so they cannot grow, keeping the blood liquid below its usual freezing point. It does not melt them: the crystals stay small inside the fish, and the protein even keeps them from melting when the sea warms a little in summer. It is a physiological adaptation, worked by the body's own chemistry, and the protein makes no heat.",
+   "facts": [
+    "F14",
+    "F15",
+    "F16",
+    "F17",
+    "F33"
+   ],
+   "grade_note": "8th grade (curriculum line G8.L3; TEKS 8.13C) teaches physiological adaptations, the body's own chemistry at work, and the antifreeze of polar fish is one of the standard examples."
+  },
+  {
+   "tier": 4,
+   "topic": "three-kinds-of-adaptation",
+   "question": "Raymond Cowles and Charles Bogert spent four years taking the body temperatures of lizards and snakes in a scorching California desert, and reported in 1944. Lizards were thought of as cold-blooded, simply as warm or as cool as their surroundings, but the two men found that an active lizard keeps its body near a warmth that suits it. A mouse of the same weight keeps itself warm too, yet it must eat many times as much food. Why does the lizard need so little?",
+   "answer": "It burns little food to keep its body warm",
+   "choices": [
+    "It burns little food to keep its body warm",
+    "It digests its food more fully than a mouse does",
+    "Its scales hold in the heat its body makes",
+    "Its body runs on sunlight in place of food"
+   ],
+   "context": "A lizard takes its warmth from the Sun, basking when cool and slipping into shade or a burrow when too hot: control of body temperature by behaviour. A mouse makes its warmth inside, a physiological way, burning food day and night, so a lizard can live on 10 to 20 times less food than a mammal of its size. Sunlight only warms a lizard, and all the energy it lives on still comes from its food; nor does a lizard digest its food any more fully than a mammal does.",
+   "facts": [
+    "F19",
+    "F20",
+    "F21",
+    "F34",
+    "F35"
+   ],
+   "grade_note": "8th grade (curriculum line G8.L3) teaches control of body temperature as an adaptation, behavioural in a lizard that basks and physiological in a mammal that burns food for heat, and why each way suits the animal that has it."
+  },
+  {
+   "tier": 4,
+   "topic": "three-kinds-of-adaptation",
+   "question": "Some desert rodents lose very little water in their urine, because their kidneys can make it up to about five times as concentrated as a person's kidneys can. Biologists sort adaptations into three kinds: structural, behavioural and physiological. Which kind of adaptation is this, and why?",
+   "answer": "Physiological, since it is the way an organ works",
+   "choices": [
+    "Physiological, since it is the way an organ works",
+    "Structural, since the kidneys are parts of the body",
+    "Behavioural, since it lets the animal drink less",
+    "Structural, since the animal is born with it"
+   ],
+   "context": "The kidneys are body parts, but the adaptation is what they do: they save water by making the urine concentrated, an inner working of the body, so it is physiological. The same rodents' habit of spending the hot day in a cool burrow is behavioural, and their fur is structural. All three kinds are inherited, so being born with a trait does not settle which kind it is.",
+   "facts": [
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "8th grade (TEKS 8.13C) asks students to sort adaptations into structural, behavioural and physiological kinds, and concentrated urine is a textbook physiological example."
+  },
+  {
+   "tier": 4,
+   "topic": "three-kinds-of-adaptation",
+   "question": "A desert rattlesnake has three adaptations for catching rodents: blotchy scales in the colours of the ground, venom that kills the rodents it bites, and a habit of lying still in ambush where rodents pass. Biologists sort adaptations as structural, behavioural or physiological. How do they sort these three, in order?",
+   "answer": "Structural, physiological, behavioural",
+   "choices": [
+    "Structural, physiological, behavioural",
+    "Structural, structural, behavioural",
+    "Physiological, structural, behavioural",
+    "Structural, behavioural, behavioural"
+   ],
+   "context": "The blotchy colouring is part of the snake's build, so it is structural, like any camouflage. Venom is a chemical made in the snake's venom glands, so it is physiological, even though the fangs that deliver it are structural. Lying in wait is something the snake does, so it is behavioural.",
+   "facts": [
+    "F3",
+    "F4",
+    "F6",
+    "F36"
+   ],
+   "grade_note": "8th grade (TEKS 8.13C) has students sort new examples into the three kinds, and a teaching guide for the standard gives snake venom as its physiological example."
+  },
+  {
+   "tier": 4,
+   "topic": "three-kinds-of-adaptation",
+   "question": "Rock pocket mice in the deserts of the American Southwest are mostly sandy brown, but on dark lava flows nearly all of them are black. Michael Nachman and Hopi Hoekstra found that the black mice on one lava flow carry changes in a single gene for coat colour. Black mice on another flow, hundreds of miles away, have no changes in that gene. What does this show?",
+   "answer": "Black coats arose separately on the two flows",
+   "choices": [
+    "Black coats arose separately on the two flows",
+    "Black coats spread from one flow to the other",
+    "Black coats come from the dark rock, not from genes",
+    "Black coats on the second flow are not inherited"
+   ],
+   "context": "Two different genetic routes to the same black coat mean it arose twice, each time from chance changes that some mice inherited and passed on, because owls and other hunters that hunt by sight pick off pale mice on dark rock. The mice on the second flow inherit their colour too, through changes in other genes. Mutations happen by chance, but selection does not: the same conditions favoured the same adaptation twice.",
+   "facts": [
+    "F2",
+    "F22",
+    "F23"
+   ],
+   "grade_note": "8th grade (TEKS 8.13C; NGSS MS-LS4-4) teaches that adaptations grow out of inherited variation, and the rock pocket mouse is the standard middle-school case (HHMI's film)."
+  },
+  {
+   "tier": 4,
+   "topic": "three-kinds-of-adaptation",
+   "question": "John Endler studied guppies, small fish of the mountain streams of Trinidad. He moved guppies from a stream where a fierce hunting fish, the pike cichlid, picks them off, to one where only a small killifish, a far weaker hunter, lives. About fifteen generations later, the males in the new stream wore bigger, brighter spots than their drab forebears. What favoured the brighter males there?",
+   "answer": "Bright spots won them more mates from choosy females",
+   "choices": [
+    "Bright spots won them more mates from choosy females",
+    "Bright spots warned the killifish that guppies taste foul",
+    "Bright spots soaked up sunlight to keep the fish warm",
+    "Bright spots startled the killifish into letting go"
+   ],
+   "context": "Female guppies prefer colourful males as mates, so where no pike cichlid picks off the showiest males, the brightest father the most young and their spots spread over the generations. Where pike cichlids hunt, the same bright spots get a male eaten and drab males do better: one colouring helps in one stream and costs lives in the next. Guppies do not taste foul, and their spots are signals to other guppies, not a way to scare, warn or warm.",
+   "facts": [
+    "F29",
+    "F30",
+    "F31",
+    "F32"
+   ],
+   "grade_note": "8th grade (NGSS MS-LS1-4, which names colourful plumage that attracts mates, and MS-LS4-4; curriculum line G8.L3) teaches that a trait can raise an animal's chance of reproducing in one place and cost it in another, and Endler's guppies are the classic field test."
+  }
+ ],
+ "revised": {
+  "bb56614454": {
+   "old_hash": "a646362384",
+   "why": "Judge (high, tell): the stem described the mimicry, so 'birds shun them too' followed without knowing anything. Re-aimed, as the judge proposed, at why the likeness helps and when it stops helping: the rarity condition (F10), a general idea about mimicry that the stem does not give. The stem now says the look-alikes were scarce and asks what would follow if they outnumbered the foul kind. Wrong choices: more sightings make birds shun it more, birds never forget a foul taste, and the need-based idea that the look-alikes would turn foul (M1). The judge's 'more of the foul kind would be eaten' was not used, since that too happens when mimics are common."
+  },
+  "bc79ee331d": {
+   "old_hash": "ebb9e42cb8",
+   "why": "Fact-check (error): the 1,200 models were the whole study, Arizona included; only 480 were in the Carolinas (F37). The stem now says 'set out hundreds of plasticine snakes in the Carolinas', the lead's wording. Choices and context unchanged."
+  },
+  "3bec34166d": {
+   "old_hash": "3bec34166d",
+   "why": "Judge (medium, tell): 'It lets the blood freeze solid and thaw unharmed' contradicted the question's own 'keep the blood from freezing'. It is replaced by 'It melts tiny ice crystals as soon as they form', the road-salt idea of antifreeze; antifreeze proteins leave the melting point unchanged and even keep the fishes' inner ice from melting (F17, F33). The judge's 'thickens the blood' was not used, since the proteins are plentiful enough in the serum that a fact-checker could call it partly true. The wood frog line left the context with its choice. Stem unchanged."
+  },
+  "ff795b5446": {
+   "old_hash": "42984a8b22",
+   "why": "Judge (medium, grade): the key, basking and seeking shade, is a 3rd-5th-grade fact. As the judge proposed, the 1944 study now sets up the cost the lizard's way saves: an ectotherm needs 10 to 20 times less food than an endotherm of its size (F34), because it burns little food for warmth. Wrong choices: better digestion (lizards digest no more fully than mammals, F35), scales holding in body heat (it makes little), and sunlight as food. The stem no longer names the Sun, so the key does not echo it; the behaviour itself moves to the context."
+  },
+  "e0543e61d3": {
+   "old_hash": "74959e8c33",
+   "why": "Judge (medium, clarity): 'venom that it injects through hollow fangs' made the fangs, which are structural, part of the second adaptation, so 'Structural, structural, behavioural' could be defended. The stem now names the venom alone, 'venom that kills the rodents it bites' (F36). Choices and context unchanged."
+  }
+ },
+ "added": {
+  "ec630fc91c": "Replaces the two dropped questions on the scope's last line, why an adaptation that helps in one environment can hurt in another, which the dropped hare question had carried (F29-F32). A colouring that wins mates where predators are weak gets males eaten where they are strong; the key is female choice, a fact no T1-T3 unit keys (T2's beetles key predators picking off the conspicuous). The stem names the weaker hunter in the new stream, so the warning-colour and startle choices stay live, and it does not mention females or mates."
+ },
+ "dropped": [
+  {
+   "old_hash": "dd21427947",
+   "question": "Snowshoe hares turn white each autumn and brown each spring. Marketa Zimova, L. Scott Mills and their team followed nearly 200 radio-collared hares in Montana. The hares began to change on about the same dates every year, however early or late the snow came, and hares left white on bare brown ground were killed more often. What sets off a hare's change of coat?",
+   "why": "Judge (high, tell): 'on about the same dates every year, however early or late the snow came' ruled out the snow and ground-colour choices, and the key, the hare's own moult trigger, is one animal's fact (the lead's ruling). Fact-check (error): selection on moult timing or behaviour, or winter-brown coats, can mend the mismatch, not timing alone. Every rewrite tried either keyed the trigger again, keyed selection on inherited variation (already keyed at T2: beetles, ash dieback) or could be answered from the stem's own account of the mismatch. Dropped; the scope's 'helps in one environment, hurts in another' is now carried by the added guppy question."
+  },
+  {
+   "old_hash": "f9b1afd3a3",
+   "question": "Blackcaps, small songbirds that nest in central Europe, once flew southwest each autumn to winter around Spain. From about 1960 a few began flying northwest to Britain instead, where garden bird tables offer food in winter, and within about thirty years several thousand wintered there. Peter Berthold raised young birds of both groups in identical cages in Germany, and each tried to head the way its own parents had flown. How did the new route spread?",
+   "why": "Judge (high, tell): the stem's cage result ruled out the two learned-route choices, and the key re-asked the natural-selection fact that T2 and T3 already key. The judge's fix (which way the caged young flew) keys inherited against learned behaviour, which T1 born-knowing-or-learned owns and the lead ruled must not come back. Fact-check (uncertain): the Britain-Spain halfway cross rests on one popular article. No in-scope general idea (which kind, why it helps here, why it hurts there) could be keyed on the blackcaps without re-asking one of those facts, so it is dropped."
+  }
+ ]
+}

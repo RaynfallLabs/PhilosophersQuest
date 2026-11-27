@@ -1,0 +1,398 @@
+{
+ "unit": "clues-to-common-ancestry",
+ "questions": {
+  "c6e1066c93": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Key: a rabbit in rock older than the first fish would break the order of descent",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Precambrian_rabbit",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices (fish in rock younger than the first rabbits; fish in rock older than the first rabbits; microbe in rock older than the first fish) break nothing",
+     "result": "ok",
+     "source": "https://evolution.berkeley.edu/teach-evolution/misconceptions-about-evolution/",
+     "note": ""
+    },
+    {
+     "claim": "Context: fish appear about 490 million years ago",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Evolution_of_fish ; https://en.wikipedia.org/wiki/Fish",
+     "note": "The earliest fish (Haikouichthys, Myllokunmingia of the Chengjiang biota) are Cambrian, about 530-520 million years old (Grokipedia: fish 'emerging approximately 530 million years ago'; Myllokunmingia 'around 520 Mya'). 490 is too young; the Grokipedia Precambrian_rabbit page gives 490 only for 'vertebrates' and is out of step with its own fish pages. Fix: 'fish appear more than 500 million years ago' (or 'about 520 million')."
+    },
+    {
+     "claim": "Context: first mammals about 225 million years ago; rabbits about 55 million; microbes some 3.5 billion",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Precambrian_rabbit ; https://en.wikipedia.org/wiki/Precambrian_rabbit",
+     "note": "Rabbit-line (Gomphos elkema) about 55 Ma per Grokipedia; Wikipedia's earliest rabbits about 53 Ma, Eocene. 'About 55 million' is fine."
+    },
+    {
+     "claim": "Context: Haldane 'is said to have named' fossil rabbits in the Precambrian; none found",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Precambrian_rabbit ; https://grokipedia.com/page/Precambrian_rabbit",
+     "note": "Correctly hedged: no primary source in Haldane's writings; earliest printed reports are from the 1990s (Ridley 1993, Benton 1996), via Maynard Smith's retelling. The phrase 'fossil rabbits in the Precambrian' is the standard wording; it is in single quotes as the reported words, attributed with 'is said to have'. Acceptable."
+    },
+    {
+     "claim": "Context: Precambrian rock is 'more than 541 million years old'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Cambrian",
+     "note": "The ICS revised the base of the Cambrian in 2022 to 538.8 million years ('a revision from the previously estimated 541 Ma'). Rock 539-541 Myr old is Precambrian, so 'more than 541' is out of date. Fix: 'in rock more than about 539 million years old' (or 'more than 538 million')."
+    }
+   ]
+  },
+  "5edfc7fc12": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Stem: lobe-finned fish known at about 380 Ma, oldest four-legged animals about 365 Ma",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Tiktaalik",
+     "note": "Wikipedia: Panderichthys about 380 Ma, Acanthostega and Ichthyostega about 365 Ma (other sources give Panderichthys 385)."
+    },
+    {
+     "claim": "Stem: Shubin's team searched Arctic rock about 375 Myr old laid down by ancient streams; found Tiktaalik in 2004",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tiktaalik ; https://evolution.berkeley.edu/evolibrary/news/060501_tiktaalik",
+     "note": "Found 2004, Fram Formation, Ellesmere Island, Nunavut, about 375 Ma; 'a fluvial deposit consisting of ancient river and stream sediments'. Team: Neil Shubin, Edward (Ted) Daeschler, Farish Jenkins Jr."
+    },
+    {
+     "claim": "Key: they predicted a fish with a neck and arm bones inside its fins",
+     "result": "ok",
+     "source": "https://evolution.berkeley.edu/evolibrary/news/060501_tiktaalik",
+     "note": "The prediction was a fish-to-tetrapod intermediate; Berkeley: they 'knew what sort of animal they were looking for' and it 'had the set of characteristics that they had expected'. The key's details are the find's own features; the only intermediate among the choices, so it stands."
+    },
+    {
+     "claim": "Wrong choices: ray-only fins; cartilage fins like a shark's; a four-legged scaly reptile",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Hylonomus",
+     "note": "None is the predicted intermediate; first reptiles (Hylonomus) are about 312-318 Ma."
+    },
+    {
+     "claim": "Context: scales, gills, fins, a neck, humerus, radius, ulna and wrist-like bones in the front fin",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Tiktaalik ; https://en.wikipedia.org/wiki/Tiktaalik",
+     "note": "Earliest-known fish with a neck; fin holds humerus, radius, ulna and wrist bones (intermedium, ulnare)."
+    },
+    {
+     "claim": "Context: transitional fossil, not a missing link; probably a late cousin, not the direct ancestor",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Tiktaalik ; https://evolution.berkeley.edu/evolibrary/news/060501_tiktaalik",
+     "note": "Wikipedia: 'has never been claimed to be a direct ancestor'; Zachelmie tracks about 12-18 Myr older."
+    },
+    {
+     "claim": "Context: 'the first reptiles turn up only in rock about 315 million years old'",
+     "result": "uncertain",
+     "source": "https://grokipedia.com/page/Hylonomus ; https://www.eurekalert.org/news-releases/1083842 ; https://www.sci.news/paleontology/earliest-amniote-tracks-13910.html",
+     "note": "True of the oldest undisputed reptile BODY fossil (Hylonomus, about 315 Ma; Grokipedia also notes a possible 338 Ma Scottish specimen). But clawed amniote ('reptile') footprints about 355 Ma from Victoria, Australia (Long et al., Nature 2025) push the first sign of reptiles back about 40 Myr. The wrong choice stays wrong (355 is still 20 Myr after Tiktaalik), but the figure is now dated. Fix: 'and the first reptiles turn up only in younger rock, tens of millions of years later' (or 'about 355 million years old at the earliest')."
+    }
+   ]
+  },
+  "b4e537f7fd": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: first skeleton found in limestone in Bavaria in 1861; lived about 150 Ma; feathered wings, teeth, three clawed fingers, long bony tail",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Archaeopteryx",
+     "note": "London specimen, summer 1861, near Langenaltheim, Bavaria, Solnhofen limestone; Late Jurassic about 150 Ma."
+    },
+    {
+     "claim": "Key: birds descend from small, meat-eating dinosaurs",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Origin_of_birds",
+     "note": "Birds are a derived subgroup of maniraptoran theropods, among small paravians (dromaeosaurids, troodontids)."
+    },
+    {
+     "claim": "Wrong choices: pterosaurs; big plant-eating dinosaurs; early flying mammals like bats",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pterosaur ; https://grokipedia.com/page/Bat",
+     "note": "Pterosaurs a separate archosaur branch; bats begin about 52.5 Ma."
+    },
+    {
+     "claim": "Context: Huxley argued in 1868 that birds descend from that stock; birds the last living theropods",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Origin_of_birds ; https://grokipedia.com/page/Theropoda",
+     "note": "Royal Institution lecture, 7 February 1868."
+    },
+    {
+     "claim": "Context: 'the small, mostly meat-eating dinosaurs called theropods'",
+     "result": "error",
+     "source": "https://grokipedia.com/page/Theropoda",
+     "note": "Theropods are not all small: they run from half-kilogram Anchiornis to Tyrannosaurus at 12 m and 7+ tons, so the phrase defines theropods wrongly. Fix: 'the small members of the mostly meat-eating dinosaurs called theropods' (or 'small theropods, the mostly meat-eating dinosaurs')."
+    },
+    {
+     "claim": "Context: pterosaurs had teeth and long tails, flew on skin from one long finger; long-necked plant-eaters another branch; bats about 52 Ma; two years after the Origin",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pterosaur ; https://grokipedia.com/page/Bat ; https://grokipedia.com/page/Archaeopteryx",
+     "note": "Early rhamphorhynchoids had teeth and long tails; membrane on the fourth finger."
+    }
+   ]
+  },
+  "2ce3e08045": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: oldest to youngest Pakicetus, Ambulocetus, Basilosaurus",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Evolution_of_cetaceans ; https://en.wikipedia.org/wiki/Evolution_of_cetaceans ; https://en.wikipedia.org/wiki/Ambulocetus",
+     "note": "Grokipedia: Pakicetus about 50 Ma, Ambulocetus about 48-49, Basilosaurus about 40-34. Wikipedia Evolution of cetaceans: about 50, about 49, 41-33.9; Wikipedia Ambulocetus 48-47 Ma and calls Pakicetus 52 Myr old. Only Wikipedia's Pakicetus page dates it 48.7-45.4 Ma, out of step with its own cetacean pages; the order is the standard one."
+    },
+    {
+     "claim": "Wrong choices: the three other orders",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Evolution_of_cetaceans",
+     "note": "Basilosaurus is youngest in every source; Ambulocetus is not older than Pakicetus in the consensus dating."
+    },
+    {
+     "claim": "Stem: Pakicetus four long, slim legs, mostly on land",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pakicetus ; https://en.wikipedia.org/wiki/Pakicetus",
+     "note": "Wikipedia: 'four fully functional long legs'; Grokipedia: predominantly land-based, weight-bearing limbs, 'no evidence for sustained swimming'."
+    },
+    {
+     "claim": "Stem: Ambulocetus short legs, big webbed hind feet, paddled in shallow water",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ambulocetus",
+     "note": "'short, robust hind limbs with webbed feet', 'large, webbed feet that functioned as paddles', shallow marine to brackish water."
+    },
+    {
+     "claim": "Stem: Basilosaurus wholly in the sea, hind legs far too small to walk on",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Basilosaurus ; https://en.wikipedia.org/wiki/Basilosaurus",
+     "note": "'one of the earliest fully aquatic cetaceans'; hind limbs played no role in weight support."
+    },
+    {
+     "claim": "Context: ages about 50, 48 and 40-34 Ma; a 16-metre Basilosaurus with hind legs about 35 cm, ankle bones and three toes, unable to bear weight",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Basilosaurus ; https://grokipedia.com/page/Basilosaurus",
+     "note": "Wikipedia: 'A 16-meter (52 ft) individual of B. isis had 35-centimeter-long (14 in) hind limbs with fused tarsals and only three digits.' Grokipedia Basilosaurus also gives about 35 cm (its cetacean-evolution page says about 60 cm)."
+    },
+    {
+     "claim": "Context: mammals arose on land; first animals lived in the sea; whales went back to the water",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Evolution_of_cetaceans",
+     "note": ""
+    }
+   ]
+  },
+  "3d446e1dac": {
+   "verdict": "error",
+   "checks": [
+    {
+     "claim": "Stem: arm, bat wing, whale flipper, cat foreleg each built of one upper-arm bone, two forearm bones, wrist bones and finger bones",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Forelimb ; https://evolution.berkeley.edu/examples-of-homology/legs-and-limbs",
+     "note": "'All vertebrate forelimbs are homologous'; shared humerus, radius, ulna."
+    },
+    {
+     "claim": "Key: inherited from one shared ancestor",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Homology_(biology) ; https://en.wikipedia.org/wiki/Homology_(biology)",
+     "note": ""
+    },
+    {
+     "claim": "Wrong choices: one ideal plan (Owen's archetype); best build for each job; arose by chance separately",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Richard_Owen ; https://darwin-online.org.uk/Variorum/1860/1860-434-dns.html",
+     "note": "Darwin rejected explanation 'by utility or by the doctrine of final causes'; Owen's archetype was a divine ideal, not descent."
+    },
+    {
+     "claim": "Context: 'Richard Owen, who coined the word homology in 1843'",
+     "result": "error",
+     "source": "https://en.wikipedia.org/wiki/Homology_(biology) ; https://grokipedia.com/page/Richard_Owen",
+     "note": "The word is older: Wikipedia says homology was 'coined in about 1656' and was 'first used in biology by the anatomist Richard Owen in 1843'. Grokipedia's Homology page says 'coined', but its Richard Owen page says only that he introduced the terms' precise use. A historian of science would say Owen gave the word its biological meaning, not that he coined it. Fix: 'Richard Owen, who gave homology its meaning in biology in 1843' (or 'who first used the word homology in biology, in 1843')."
+    },
+    {
+     "claim": "Context: Owen saw an ideal plan, an archetype in the mind of the Creator; Darwin explained it by inheritance from a common ancestor",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Richard_Owen ; https://grokipedia.com/page/Homology_(biology)",
+     "note": "Owen 1849: the archetype 'the idea... answering to the principle of the divine intelligence'; a 'divine Platonic ideal'."
+    },
+    {
+     "claim": "Quote: Darwin called it 'hopeless' to explain the likeness 'by utility'",
+     "result": "ok",
+     "source": "https://darwin-online.org.uk/Variorum/1860/1860-434-dns.html",
+     "note": "'Nothing can be more hopeless than to attempt to explain this similarity of pattern in members of the same class, by utility or by the doctrine of final causes.' No variant from 1859 to 1872."
+    }
+   ]
+  },
+  "7298911a89": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Key: a dog's foreleg and a horse's foreleg are homologous",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Forelimb ; https://en.wikipedia.org/wiki/Homology_(biology)",
+     "note": "All tetrapod forelimbs are homologous; horse monodactyly."
+    },
+    {
+     "claim": "Wrong choices: bat wing / butterfly wing; sparrow wing / honeybee wing; human eye / octopus eye are analogous",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Convergent_evolution ; https://en.wikipedia.org/wiki/Homology_(biology)",
+     "note": "Bat and insect wings 'both enable flight but evolved separately'; insect and bird wings 'evolved independently'; camera eyes of humans and octopuses 'exemplify convergent evolution'. (Eyes share deep genetic homology such as Pax6, but as camera eyes they are the textbook analogy.)"
+    },
+    {
+     "claim": "Context: horse's toes reduced to one hoofed toe; insect wing has no bones; camera eyes evolved separately",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Forelimb ; https://grokipedia.com/page/Convergent_evolution",
+     "note": ""
+    },
+    {
+     "claim": "Stem: homologous defined as same plan part for part; analogous as same job, different plan",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Homology_(biology)",
+     "note": "A structural (Owen-style) working definition; the context adds inheritance from a common ancestor. Fine at grade level."
+    }
+   ]
+  },
+  "38996578d7": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: every vertebrate embryo, shark to human, forms pharyngeal arches behind the head; in fish they build the gill supports",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pharyngeal_arch",
+     "note": "'evolutionarily conserved across vertebrates'; paired bulges on the side of the developing head and neck; in fish the branchial arches 'directly support functional gills'. 'Just behind its head' is a fair simplification of head-and-neck."
+    },
+    {
+     "claim": "Key: in a human they build parts of the jaw, the middle ear and the throat",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pharyngeal_arch",
+     "note": "First arch: maxilla, mandible, malleus, incus; second: stapes, styloid, part of hyoid; third: rest of hyoid; fourth and sixth: thyroid, cricoid, arytenoid cartilages."
+    },
+    {
+     "claim": "Wrong choices: gills that close and vanish; the ribs; the bones of the shoulders and arms",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pharyngeal_arch ; https://grokipedia.com/page/Recapitulation_theory",
+     "note": "No open gill slits form in normal human development; ribs and limb bones are not arch derivatives."
+    },
+    {
+     "claim": "Context: first arch builds jaw and two middle-ear bones; second the stapes; the arches behind build the hyoid and throat cartilages",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pharyngeal_arch",
+     "note": "True in outline. Strictly, the second arch also builds the lesser horns and upper body of the hyoid, with the third building the rest; an optional tweak is 'the second builds the stapes and part of the hyoid, and the arches behind them the rest of the hyoid and the cartilages of the throat'. Not wrong as written."
+    },
+    {
+     "claim": "Context: a human embryo never has working gills; its pouches stay closed",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Pharyngeal_arch ; https://grokipedia.com/page/Recapitulation_theory",
+     "note": "'closed pouches without perforations or functional slits'; the grooves regress, the first membrane becomes the eardrum."
+    }
+   ]
+  },
+  "ecc16cc25f": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: Haeckel's 1874 drawings of fish, salamander, chicken, rabbit and human embryos side by side",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Ernst_Haeckel ; https://ncse.ngo/node/6296",
+     "note": "Anthropogenie (1874) compared 'embryos of fish, salamanders, chickens, rabbits, and humans' (Grokipedia); the plate had 8 species (also turtle, pig, cow), so the list is a true subset."
+    },
+    {
+     "claim": "Stem: Michael Richardson's team photographed real embryos of a wide range of vertebrates and published in 1997",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Embryo_drawing ; https://grokipedia.com/page/Recapitulation_theory",
+     "note": "Richardson et al., Anatomy and Embryology, July 1997, 'There is no highly conserved embryonic stage in the vertebrates'; compared Haeckel's drawings with photographs of actual embryos."
+    },
+    {
+     "claim": "Key: the embryos differ more than his drawings show; wrong choices (more alike, just as shown, share nothing) are wrong",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Embryo_drawing ; https://ncse.ngo/node/6296",
+     "note": "Haeckel exaggerated the similarity; real embryos still share a body plan (notochord, segments, pharyngeal pouches), so 'share no features' is wrong."
+    },
+    {
+     "claim": "Context: Haeckel added or left out features and fudged the sizes",
+     "result": "ok",
+     "source": "https://www.proquest.com/scholarly-journals/haeckels-embryos-fraud-rediscovered/docview/213580620/se-2",
+     "note": "Pennisi, Science 1997, reporting Richardson's team: he added or omitted features and fudged the scale despite 10-fold size differences. (Historian Robert Richards disputes the 'fraud' framing, but the mismatch is not in dispute.)"
+    },
+    {
+     "claim": "Quote: Richardson called the drawings 'one of the most famous fakes in biology'",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Embryo_drawing ; https://ncse.ngo/node/6296",
+     "note": "Richardson in Science (Pennisi 1997, Science 277:1435): 'it looks like it's turning out to be one of the most famous fakes in biology.' The quoted words are his."
+    },
+    {
+     "claim": "Quote: Richardson wrote in 1998 'on a fundamental level, Haeckel was correct'",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Embryo_drawing ; https://ncse.ngo/node/6296",
+     "note": "Richardson et al., 'Haeckel, embryos, and evolution', Science 280 (15 May 1998): 'On a fundamental level, Haeckel was correct: All vertebrates develop a similar body plan.' A co-authored letter with Richardson first author; 'Richardson wrote' is fair."
+    }
+   ]
+  },
+  "2d10202d44": {
+   "verdict": "uncertain",
+   "checks": [
+    {
+     "claim": "Key: a pair of small hip bones, not joined to the spine",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Vestigiality ; https://en.wikipedia.org/wiki/Evolution_of_cetaceans",
+     "note": "Pelvic bones 'lack articulation with the axial skeleton'; some whales also keep femur remnants, which the key does not deny."
+    },
+    {
+     "claim": "Wrong choices: hind leg bones in the flippers; hind leg bones in the flukes; no hip or leg bones at all",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Forelimb ; https://www.britannica.com/science/fluke-whale-anatomy",
+     "note": "Flippers are forelimbs; flukes hold no leg bones; pelvic bones are present."
+    },
+    {
+     "claim": "Context: whale embryos grow hind limb buds that stop; the hip bones anchor muscles used in mating",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Evolution_of_cetaceans ; https://grokipedia.com/page/Vestigiality",
+     "note": "'Limb buds develop normally in cetacean embryos', then arrest; pelvic bones provide 'attachment sites for muscles that control penile extrusion'. Wording is clinical."
+    },
+    {
+     "claim": "Context: flippers are front legs built on a land mammal's forelimb bones",
+     "result": "ok",
+     "source": "https://en.wikipedia.org/wiki/Forelimb",
+     "note": ""
+    },
+    {
+     "claim": "Context: 'its tail flukes are tough connective tissue with no bone in them'",
+     "result": "uncertain",
+     "source": "https://www.britannica.com/science/fluke-whale-anatomy ; https://math.wcupa.edu/sciences-mathematics/biology/fFish/documents/1998FlukeMech.pdf",
+     "note": "The fluke blades are boneless connective tissue (SeaWorld, Britannica), but the last tail vertebrae run into the flukes and end just in front of the notch (Fish 1998, fluke mechanics), so 'no bone in them' overstates it. Fix: 'its tail flukes are boneless blades of tough connective tissue on either side of the tail's backbone'."
+    }
+   ]
+  },
+  "8c6ed9c371": {
+   "verdict": "ok",
+   "checks": [
+    {
+     "claim": "Stem: the coccyx is a few small fused bones at the base of the spine, with pelvic-floor muscles anchored to it",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coccyx ; https://en.wikipedia.org/wiki/Coccyx",
+     "note": "Three to five rudimentary vertebrae, usually fused by adulthood; anchors levator ani, coccygeus and gluteus maximus."
+    },
+    {
+     "claim": "Key: vestigial means it lost its old job, not every job",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Vestigiality",
+     "note": "Vestigial traits 'need not be entirely functionless'; the term centres on loss of an ancestral primary role."
+    },
+    {
+     "claim": "Wrong choices: no muscles anchored; muscles anchored only before birth; vestigial means still shrinking",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coccyx ; https://grokipedia.com/page/Vestigiality",
+     "note": ""
+    },
+    {
+     "claim": "Context: remnant of the embryo's tail, lost between the 4th and 8th weeks",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Coccyx",
+     "note": "The caudal eminence regresses between weeks 4 and 8 of gestation."
+    },
+    {
+     "claim": "Context: goosebumps - the muscles that fluff a cat's fur (warm air, look bigger) still lift a person's hairs",
+     "result": "ok",
+     "source": "https://grokipedia.com/page/Goose_bumps ; https://grokipedia.com/page/Vestigiality",
+     "note": "Arrector pili; raised fur traps insulating air and gives 'a larger silhouette to deter predators'; in humans 'largely vestigial'. Grokipedia notes the muscles have other roles in human skin, which fits the lesson."
+    }
+   ]
+  }
+ },
+ "unit_notes": "10 questions: 5 ok, 3 error, 2 uncertain. All keys are correct; every error and uncertainty is in a context line (or one context date) and has a one-phrase fix. Haldane's quip is properly hedged ('is said to have'); it has no primary source (earliest print reports 1990s, via John Maynard Smith). The Precambrian boundary moved from 541 to 538.8 Ma in the 2022 ICS chart, and Grokipedia's Precambrian_rabbit page still uses 541 and gives 490 Ma for 'vertebrates', which is where the fish date came from; the fact sheet's F2 should be corrected too. Whale dates: Wikipedia's Pakicetus page alone dates Pakicetus 48.7-45.4 Ma; every other source puts it about 50-52 Ma, before Ambulocetus."
+}

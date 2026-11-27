@@ -1,0 +1,41 @@
+{
+ "unit": "ecological-succession",
+ "questions": {
+  "44dcb8ec7d": {
+   "verdict": "pass",
+   "why": "Re-checker failed it for the context clause \"and granite does not soften in the rain.\" (false; contradicts T3 d8d565f4d6) and gave the exact fix. The lead applied that fix: \"and rain alone wears granite down far more slowly than a lichen's acids do.\". Key and choices were judged sound.",
+   "sources": [
+    "https://grokipedia.com/page/Lichen",
+    "https://grokipedia.com/page/Ecological_succession"
+   ]
+  },
+  "a480b07ae6": {
+   "verdict": "pass",
+   "why": "The weak forest-only choice is replaced by Tansley's polyclimax, which Grokipedia dates to 1935 with climaxes set by soil, topography and disturbance. It is a respectable, truly wrong revision, since the page says true climax endpoints are 'rare or nonexistent'. The key now has a moderate rival. The Gleason fix (from 1917; 'coincidence' in 1926) is correct.",
+   "sources": [
+    "https://grokipedia.com/page/Climax_community",
+    "https://en.wikipedia.org/wiki/Henry_A._Gleason",
+    "https://en.wikipedia.org/wiki/Ecological_succession"
+   ]
+  },
+  "67c98e9246": {
+   "verdict": "pass",
+   "why": "The hawk-and-owl choice is replaced by 'evolve into new kinds', a real confusion. It also explains variety and shares 'kinds', so the key no longer stands alone. It is truly wrong: diversity rises as species arrive, and speciation takes far longer than two centuries. The oxygen and moss choices are wrong (well-mixed air; mosses photosynthesize). Habitat layers giving more food and shelter is sourced. No lower-tier re-ask.",
+   "sources": [
+    "https://grokipedia.com/page/Ecological_succession",
+    "https://grokipedia.com/page/Speciation",
+    "https://grokipedia.com/page/Atmosphere_of_Earth"
+   ]
+  },
+  "0dd1589835": {
+   "verdict": "pass",
+   "why": "Re-checker failed it for the stem claim \"no plant took root for two years\" (lupines first seen on the Pumice Plain in 1981, del Moral and Rozzell 2005) and gave the exact fix. The lead applied it (\"no plant grew that first summer\") and matched the context (\"Even there a prairie lupine took root within about a year\"). Key and choices were judged sound.",
+   "sources": [
+    "https://www.sciencedaily.com/releases/2000/04/000427080345.htm",
+    "https://faculty.washington.edu/moral/publications/delMoral-Rozzell2005.pdf",
+    "https://www.mshslc.org/?p=822",
+    "https://grokipedia.com/page/1980_eruption_of_Mount_St._Helens"
+   ]
+  }
+ }
+}

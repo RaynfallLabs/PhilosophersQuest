@@ -1,0 +1,69 @@
+{"unit": "clues-to-common-ancestry",
+ "questions": {
+  "c6e1066c93": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "Two of the three wrong choices simply restate the predicted order: 'A fish in rock older than the first rabbits' and 'A microbe in rock older than the first fish'. Anyone who knows that fish came before rabbits drops both, so only 'A fish in rock younger than the first rabbits' (the ladder misconception, M1) is live.",
+    "fix": "Make each wrong choice look odd while breaking nothing: 'A rabbit in rock older than the first fish' / 'A fish in rock younger than the first rabbits' / 'A microbe in rock younger than the first rabbits' / 'A mammal in rock older than the first rabbits'. Older groups live on beside their descendants (fish, microbes), and rabbits descend from older mammals, so none of the three breaks the order."},
+   {"axis": "fact", "severity": "low",
+    "what": "In the context, 'fish appear about 490 million years ago' may be too young: the Chengjiang fish (Haikouichthys, Myllokunmingia) are usually dated to about 518 million years. Also, the Precambrian now ends at about 538.8 million years, not 541. The Haldane anecdote is told properly ('is said to have named', never keyed).",
+    "fix": "For the fact-checker: confirm the first-fish date (perhaps 'over 500 million years ago') and write 'more than about 539 million years old' or 'more than 540 million'."}]},
+
+  "5edfc7fc12": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The stem brackets the answer: lobe-finned fish at 380 million years, four-legged animals at 365, the rock at 375. The only choice that lies between a fish and a four-legged animal is the key. The other three are a plain fish twice and a reptile beyond the bracket. A student who has never heard of Tiktaalik or transitional fossils picks the in-between one. The key's neck and arm bones also describe what was found more than what was predicted (Berkeley: they expected a set of characteristics).",
+    "fix": "Move the two dates into the context, so the student must know where the fish-to-land move falls: 'Neil Shubin's team searched Arctic rock about 375 million years old, laid down by ancient streams, and found Tiktaalik there in 2004. Why did they search rock of that age?' Key: 'It fell between the last fins-only fish and the first four-legged animals'. Wrong: 'It held the oldest fossils of any animals with backbones' / 'It was laid down when the first reptiles appeared' / 'It was laid down just after the dinosaurs died out'. The context then says what Tiktaalik had: scales, gills and fins, but also a neck and arm bones in its fins."}]},
+
+  "b4e537f7fd": {"verdict": "revise", "issues": [
+   {"axis": "clarity", "severity": "medium",
+    "what": "'From which animals do these features show that birds descend?' asks more than the features can give. Teeth, clawed fingers and a long bony tail fit pterosaurs as well, and the context admits that 'Pterosaurs had teeth and long tails too'. A careful student who knows pterosaurs can defend the wrong choice from the stem. The answer rests on Huxley's skeletal comparison and later finds, not on the three features named.",
+    "fix": "Name the comparison: '...Yet it also had teeth in its jaws, three clawed fingers on each wing and a long, bony tail. Thomas Huxley compared its skeleton with those of fossil reptiles in 1868, and biologists now agree with his reading. From which animals do birds descend?'"},
+   {"axis": "tell", "severity": "low",
+    "what": "'Early flying mammals, like bats' is weak: Archaeopteryx has feathers, not fur, and few 8th graders think birds came from mammals. Also, T2 hypothesis-theory-and-law's stem says a small meat-eating dinosaur may have been covered in feathers, which mildly hints at the key.",
+    "fix": "Replace the bat choice with 'Early lizards, like today's monitors'. It is a clean wrong choice: lizards are a separate reptile line."}]},
+
+  "2ce3e08045": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "Of the four orders, only two make sense under any theory: land to sea (the key) and sea to land (the 'life began in the sea' misconception). The two zig-zag orders, 'Ambulocetus, Pakicetus, Basilosaurus' and 'Basilosaurus, Pakicetus, Ambulocetus', are not live, so the question is a coin toss between two. Also, 2d10202d44's stem opens 'Fossils show that whales descend from four-legged mammals that walked on land', which gives this key away.",
+    "fix": "Give the order and ask what it shows: '...Pakicetus is the oldest, about 50 million years old, then Ambulocetus, and Basilosaurus the youngest. What does that order show?' Key: 'Whales' ancestors moved from land into the sea'. Wrong: 'Whales' ancestors moved out of the sea onto land' / 'Whales lost their legs because they stopped using them' / 'Whales grew legs once they reached shallow water'. The disuse choice is Lamarck's, a respectable wrong theory. Then cut the giveaway first sentence of 2d10202d44."}]},
+
+  "3d446e1dac": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The stem rules out a choice: after 'do very different jobs ... Yet each is built of' the same bones, 'All four are the best build for the job each does' cannot be right. 'All four arose by chance, each one separately' is weak against four identical builds. That leaves the key against Owen's ideal plan, and in a unit on common ancestry the key is the obvious one of those two.",
+    "fix": "Keep the key and Owen's archetype. Replace the other two with choices the stem does not rule out: 'Bones fit together into a limb in only that one way' (a constraint argument) and 'Each was shaped by the use its owner made of it' (use and disuse). Choices: 'All four were inherited from one shared ancestor' / 'All four follow one ideal plan for every limb' / 'Bones fit together into a limb in only that one way' / 'Each was shaped by the use its owner made of it'."}]},
+
+  "7298911a89": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "Two of the three wrong pairs, bat and butterfly wings and sparrow and honeybee wings, are the same idea twice (a backboned animal's wing against an insect's). One fact, that an insect's wing has no bones, removes both. That leaves the key against the eyes, and the key is the only pair of two familiar, closely related mammals, so it stands out.",
+    "fix": "Use a less obvious key that still does the same job as its partner: 'A lizard's foreleg and a horse's foreleg'. Replace the sparrow and honeybee pair with a different kind of analogy: 'A shark's back fin and a dolphin's back fin' (the dolphin's dorsal fin is boneless connective tissue; that needs a source). Choices: 'A lizard's foreleg and a horse's foreleg' / 'A bat's wing and a butterfly's wing' / 'A shark's back fin and a dolphin's back fin' / 'A human's eye and an octopus's eye'. Every pair still does one job, so the stem's definition of analogous cannot pick the key."}]},
+
+  "38996578d7": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The folds sit 'just behind its head', and the key is the only choice in the head and neck. Ribs and shoulders lie farther down, so a student can pick by place alone. 'Gills that close up and vanish' is the only live wrong choice.",
+    "fix": "Make every wrong choice a head-and-neck part that the arches do not build: 'Parts of the jaw, the middle ear and the throat' / 'Gills that close up and vanish before birth' / 'The bones of the neck, at the top of the spine' / 'The roof of the skull, over the brain'. The neck vertebrae come from somites and the skull roof is not an arch derivative; both need sourcing."},
+   {"axis": "fact", "severity": "medium",
+    "what": "'In a fish, the arches go on to build the supports of its gills' is not true of every arch. In a jawed fish such as a shark, the first arch builds the jaws and the second the hyoid arch; only the arches behind them carry gills. A simplification must stay true.",
+    "fix": "'In a fish, most of the arches go on to build the supports of its gills.'"},
+   {"axis": "grade", "severity": "low",
+    "what": "What each arch becomes in a human (jaw, ear bones, throat) is usually high-school anatomy. NGSS MS-LS4-3 asks only that 8th graders see the features embryos share. As the deeper step it is acceptable.",
+    "fix": "The grade_note should say the middle-school example is the arches every embryo has, and that their human fates are the stretch."}]},
+
+  "ecc16cc25f": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "Two wrong choices are not live. 'The embryos are more alike than his drawings show' cannot be right when the stem says the drawings look 'almost the same'. 'The embryos share no features with one another' clashes with the unit's whole case and with the next question's arches. With 'photographed real embryos' signalling a correction, only 'just as his drawings show' competes. Honesty: the context is truthful. It gives Richardson's 'one of the most famous fakes in biology' and his 'on a fundamental level, Haeckel was correct', and it rests the evidence on the features embryos really share.",
+    "fix": "Replace the two dead choices with real ideas: 'The embryos pass through their ancestors' adult forms, as Haeckel taught' (recapitulation, M4) and 'The embryos match his drawings in all but their sizes' (wrong: features were added and left out as well). Choices: 'The embryos differ more than his drawings show' / 'The embryos look just as his drawings show' / 'The embryos pass through their ancestors' adult forms, as Haeckel taught' / 'The embryos match his drawings in all but their sizes'."}]},
+
+  "2d10202d44": {"verdict": "ok", "issues": [
+   {"axis": "tell", "severity": "low",
+    "what": "The key is the only choice with a qualifying clause ('not joined to the spine'), which makes it a little more detailed than the rest.",
+    "fix": "Shorten the key to 'A pair of small hip bones, deep in its body', or give the flipper and fluke choices a matching clause."},
+   {"axis": "other", "severity": "low",
+    "what": "The opening sentence, 'Fossils show that whales descend from four-legged mammals that walked on land', states 2ce3e08045's lesson.",
+    "fix": "Open: 'A modern whale swims with its tail and shows no hind legs at all, yet its ancestors walked.' Or simply start at 'A modern whale...' and leave the ancestry to the context."}]},
+
+  "8c6ed9c371": {"verdict": "ok", "issues": [
+   {"axis": "tell", "severity": "low",
+    "what": "'Those muscles are anchored to it only before birth' is weak: nothing in the stem or in common belief suggests it.",
+    "fix": "Replace it with another real misreading of the word: 'A vestigial part is one that shows only in the embryo'."}]}
+ },
+ "unit_notes": "Overlap check against every final.json and this batch. No re-asks were found. fossils-layers-and-a-changing-earth and reading-deep-time (superposition, index fossils, the time scale) are not re-keyed; c6e1066c93 assumes rock ages but keys the order of descent. natural-and-artificial-selection, three-kinds-of-adaptation and classifying-living-things are untouched; classifying keys Linnaeus grouping by shared features, not homology as evidence. T1 rock-layers-and-fossils keys how fossils form. T2 hypothesis-theory-and-law's feathered small meat-eating dinosaur mildly hints at b4e537f7fd's key (low). T5 ground is respected: Darwin is named only in contexts (homology, Archaeopteryx), and there is no DNA, speciation, Wallace or Lenski. CROSS-QUESTION GIVEAWAY: 2d10202d44's first sentence states 2ce3e08045's answer; fix one or the other. BALANCE: one question on fossil order, three on transitional fossils, two on homology, two on embryos, two on vestigial structures. That covers the scope with no two questions on one fact. 3d446e1dac (why homology) and 7298911a89 (telling homology from analogy) are distinct. HONESTY: common descent is stated flatly throughout. Haldane's rabbit quip is told as reported ('is said to have'), never keyed, and fits facts.md's anecdotal sourcing. Haeckel is handled truthfully: the faked likeness, the 1997 photographs, and the shared arches and tail that are real. Owen's archetype is told fairly as the respectable rival reading of homology. LANES: every named fossil or species is evidence (a transition, a homology, a vestige), never anatomy for its own sake, and Bavaria, the Arctic and Pakistan only set scenes. The weak point across the unit is choice design. Eight of the ten questions have a choice that the stem's own words or one easy fact removes, so the unit does not pass as drafted. The facts and the honesty are sound. FOR THE FACT-CHECKER: c6e1066c93's first-fish date (490 million years against the Chengjiang fish at about 518 million) and the Precambrian's end (538.8 million years, not 541); 38996578d7's claim that all of a fish's arches support gills; the sources needed by the suggested fixes (a dolphin's boneless dorsal fin; neck vertebrae and the skull roof not built by the arches)."
+}

@@ -1,0 +1,57 @@
+{"unit": "photosynthesis-atoms-in-and-out",
+ "questions": {
+  "cae3013372": {"verdict": "ok", "issues": []},
+
+  "3004206b78": {"verdict": "ok", "issues": [
+   {"axis": "tell", "severity": "low",
+    "what": "'As new atoms in the glucose' is the only choice that is not a form of energy, so a careful reader of 'In what form does the plant store it?' drops it and three choices are left.",
+    "fix": "Keep the light-becomes-matter misconception (M2) but phrase it as an energy form: replace 'As new atoms in the glucose' with 'As light energy held in the glucose'. Choices: 'As chemical energy in glucose' / 'As light energy held in the glucose' / 'As light energy trapped in the chlorophyll' / 'As heat energy held in the leaves'."}]},
+
+  "38dad96be9": {"verdict": "ok", "issues": [
+   {"axis": "grade", "severity": "low",
+    "what": "Engelmann's prism experiment is usually met in high-school or AP biology. The fact it keys, that chlorophyll takes in red and blue light and little green, is 8th-grade light-and-colour content. The 'nuclei' half of the grid falls to the T2 key that the chloroplasts do the work, so the live contest is red and blue against green and yellow. That is acceptable for a 2x2 grid.",
+    "fix": "No change to the question. The grade_note could also name the 8th-grade light-and-colour line (NGSS MS-PS4-2: objects absorb some colours and reflect others) as the home of the absorption fact."}]},
+
+  "002cd35b96": {"verdict": "ok", "issues": [
+   {"axis": "clarity", "severity": "low",
+    "what": "'Heavy water' normally means deuterium water (D2O). Here it means water rich in oxygen-18, and a student who knows the usual term, or the fact-checker, may read it that way. The context repeats the phrase ('Only the algae given heavy water').",
+    "fix": "Key: 'Only the test with heavy-oxygen water'. Mirror choice: 'Only the test with heavy-oxygen carbon dioxide'. Context: 'Only the algae given the heavy-oxygen water gave off heavy oxygen gas...'."}]},
+
+  "7bdf0d5cbe": {"verdict": "drop", "issues": [
+   {"axis": "tell", "severity": "high",
+    "what": "The stem gives the answer away by analogy: 'where a plant takes in water (H2O), they take in hydrogen sulfide (H2S), and they give off no oxygen. What do they give off in its place?' A student who knows nothing of van Niel swaps the O for the S and picks 'Sulfur'.",
+    "fix": "Drop. If van Niel is wanted, give him one clause in 002cd35b96's context: in 1931 he predicted the heavy-oxygen result from bacteria that give off sulfur where plants give off oxygen."},
+   {"axis": "other", "severity": "medium",
+    "what": "Its only lesson is that a green plant's oxygen comes from its water, and its own context says so. That is the key of 002cd35b96. A rewrite that asks what van Niel argued would re-key that question.",
+    "fix": "Use the slot for a new fact (see unit_notes)."},
+   {"axis": "grade", "severity": "medium",
+    "what": "Photosynthesis in purple sulfur bacteria is college or AP content, not 8th grade. NGSS MS-LS1-6 leaves out the biochemical mechanism.",
+    "fix": "As above: drop."}]},
+
+  "0f27822f8c": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The T1 how-plants-make-food key (an oak's matter comes from air and water, not from the soil) rules out 37 kg and 74 kg at once. That leaves 57 grams against 570 grams, which is a remembered figure: next to a 74 kg gain, both say the soil barely changed. The question turns on the number, not on the finding, and the finding is the part T1 already taught.",
+    "fix": "Put the result in the stem and ask about the design, which is new at T4: '...For five years he gave it only rainwater or distilled water. At the start, and again at the end, he dried the soil in an oven before weighing it. The willow had gained about 74 kilograms, and the soil had lost only about 57 grams. Why did he dry the soil before each weighing?' Key: 'So water in it would not be weighed as soil'. Wrong: 'So the soil would soak up more of the rain' / 'So the willow's roots would grow down deeper' / 'So no dust from the air would settle on it'. The reason for the drying needs a source; it is the standard reading of the experiment."}]},
+
+  "df6ae9880c": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "high",
+    "what": "This re-asks the T1 keys. how-plants-make-food keys that a plant takes in carbon dioxide from the air, and that a tree's matter comes from air and water, not from the soil. Those two keys rule out humus and soil minerals. Water falls too, since H2O holds no carbon (T3 formula reading). The stem asks for 'carbon', and the only choice outside the soil that names a carbon compound is 'Carbon dioxide in the air'. De Saussure adds a name, not a fact.",
+    "fix": "Re-key to the small share of the tree that does come from the soil. T1 does not teach it, and it completes the atom budget: 'Dry wood is about half carbon by weight, and nearly all of its matter was built from carbon dioxide and water. When a log burns completely, a little ash is left, mostly calcium and potassium. Where did the tree get the atoms of that ash?' Key: 'From minerals in the soil'. Wrong: 'From carbon dioxide in the air' / 'From the sugar its leaves made' / 'From the sunlight its leaves absorbed'. F16 sources the ash, and F14 (plant minerals come from the soil) can carry de Saussure's name. Check it against chemical-reactions-conserve-mass, which may say a burning log's mass goes into the air but must not key the tree's mass."}]},
+
+  "b8e5f9dcec": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "Every wrong choice falls to the formula H2O alone, a T3 key. Water holds no carbon, which removes 'carbon' and 'carbon and hydrogen', and no calcium either. A student needs nothing from this unit, only to see which element water holds, and 'he was partly right' already hints at a part rather than the whole.",
+    "fix": "Give every choice a claim about the water that the formula alone cannot settle: 'Its hydrogen atoms' / 'All of its atoms, as van Helmont thought' / 'None of its atoms; the water only carried minerals in' / 'About half its atoms, the rest coming from the soil'. Each wrong choice is a real belief: van Helmont's own, water as a mere carrier, and the soil (M1). The key then needs this unit's point that water's own atoms are built into the sugar. The calcium choice goes, so it no longer clashes with the ash fix for df6ae9880c."}]},
+
+  "975015f19b": {"verdict": "ok", "issues": [
+   {"axis": "grade", "severity": "low",
+    "what": "The T1 key that a plant gives off oxygen (the pondweed's bubbles), together with the fact that a flame needs oxygen, predicts the result. It is acceptable because the scope names Priestley's mint as one of the first clues, and the T4 content is the experiment itself.",
+    "fix": "No change needed. If the lead wants it a step further from T1, ask instead what the control jar showed: in Priestley's split-air trial, a candle burned only in the half of the spent air that held a plant (F18)."}]},
+
+  "f0dd22e03a": {"verdict": "revise", "issues": [
+   {"axis": "tell", "severity": "medium",
+    "what": "The T1 unit teaches that plants make food with the energy of sunlight, and its pondweed bubbles on a sunny windowsill. So 'Only in the sunshine' is known before the stem is read. The choices never force the light-not-warmth point the question is built on. 'Neither in the sunshine nor in the warm room' is weak, because the stem's 'Where did the leaves give off the gas?' assumes they gave it off somewhere. The scope does not name Ingenhousz either.",
+    "fix": "Put both results in the stem and ask what the warm room showed, which goes past T1: '...Leaves in the sunlit jars gave off the gas, and leaves in the warm room that no sunshine reached gave off none. What did the warm room show?' Key: 'Warmth without light is not enough'. Wrong: 'Light without warmth is not enough' / 'Warmth alone is enough, given time' / 'Leaves give off the gas in the dark as well'. The key is worded so it does not overclaim, since the sunlit jars were warm too. Or drop the question and use the slot for a new fact (see unit_notes)."}]}
+ },
+ "unit_notes": "Overlap check against every final.json and this batch. how-plants-make-food (tier 1 in units.json) keys: the name photosynthesis; carbon dioxide taken from the air; the pondweed's bubbles are oxygen; the food is sugar; an oak's matter comes from air and water; photo means light. df6ae9880c re-asks two of those keys (high). The van Helmont 57 grams (0f27822f8c), Priestley (975015f19b) and Ingenhousz (f0dd22e03a) results can each be predicted from them. The experiment framing is the T4 depth the scope asks for, but the choices must make the T4 point decide (why the soil was dried; that warmth alone is not enough). T2's 'which part of the leaf cell makes food: the chloroplasts' takes half of Engelmann's grid, which is acceptable. chemical-reactions-conserve-mass owns other equations; cae3013372 reads only the photosynthesis equation, and the lead's ruling gives this unit the tree's mass, so neither crosses. No question strays into respiration or enzymes (T5); 3004206b78's 'draws on it long afterwards' stays clear of them. DUPLICATES: 002cd35b96 and 7bdf0d5cbe both teach that a plant's oxygen comes from its water, so drop 7bdf0d5cbe. Carbon from carbon dioxide appears three times: in cae3013372's reasoning, as df6ae9880c's key, and as b8e5f9dcec's wrong choice. That is another reason to re-key df6ae9880c to the ash. With 0f27822f8c, df6ae9880c and b8e5f9dcec, three questions ask where the tree's matter came from; the suggested fixes split them into design, soil minerals and water's atoms. SCOPE after the fixes: the equation (cae3013372), chloroplasts and chlorophyll (38dad96be9), oxygen from water (002cd35b96), carbon from the air (cae3013372, b8e5f9dcec), van Helmont (0f27822f8c), Priestley (975015f19b), light stored as chemical energy (3004206b78). Priestley's mouse, which the scope names, is in the context only. That is acceptable, since it is the same fact as the candle. COUNT: dropping 7bdf0d5cbe leaves 9 against target_q 10. One candidate replacement that ties this unit to TEKS 8.6E without re-asking the mass unit: a plant sealed in a jar on a balance grows for months in sunlight; what happens to the total mass? Key: it stays the same, as the plant only rearranges atoms already in the jar. Wrong: it rises, as the sunlight adds matter (M2); it rises, as the plant makes new matter; it falls, as the plant uses up the air. It needs a source, and a check against chemical-reactions-conserve-mass's sealed-vessel keys. GRADE: Engelmann and Ruben-Kamen are high-school experiments that key facts an 8th grader can be taught (red and blue absorption; oxygen from water); van Niel's bacteria are not 8th-grade content. The factcheck.json already in this folder checks the current wording, so any rewrite here needs a fresh check. VOICE: third person throughout, no exclamation marks, no stem opens on a date, every they/their is plural."
+}

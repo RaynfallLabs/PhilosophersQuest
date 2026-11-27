@@ -1,0 +1,196 @@
+{
+ "unit": "when-a-food-web-breaks",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "when-a-food-web-breaks",
+   "question": "Robert Paine pried every ochre sea star off a stretch of rocky shore at Mukkaw Bay, Washington, from 1963 on, and threw them far out into the bay; a stretch beside it he left alone. Fifteen species clung to the cleared rock at the start, and the sea stars there eat mostly mussels and barnacles. What happened to the number of species on the cleared rock within a year?",
+   "answer": "It fell to 8, as the mussels crowded out the rest",
+   "choices": [
+    "It fell to 8, as the mussels crowded out the rest",
+    "It rose to 22, as the sea stars' prey were spared",
+    "It stayed at 15, as each species grew more plentiful",
+    "It fell to 1, as the mussels covered all the rock"
+   ],
+   "context": "Without the sea stars, barnacles spread over the rock, and then mussels, the strongest competitors for space, crowded out the seaweeds, limpets and chitons; only years later did the mussels come close to taking it all. By eating the mussels, the sea star had kept room for everyone else. Paine called such a species, whose loss changes its community far more than its numbers suggest, a keystone species, after the stone that locks an arch together.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "8th grade (map line G8.L4, NGSS MS-LS2-4) teaches how removing a predator ripples through a community; Paine's sea-star removal is the classic experiment, and it gave ecology the keystone species."
+  },
+  {
+   "tier": 4,
+   "topic": "when-a-food-web-breaks",
+   "question": "Wolves had been gone from Yellowstone National Park for about 70 years when 31 wolves from Canada were set free there in 1995 and 1996. Over the next 15 years, young willows and aspens along some streams of the park's northern range began to grow taller. Ecologists who credit the wolves call it a trophic cascade. By their account, how did the wolves help the trees?",
+   "answer": "They cut the elk that browsed on the young shoots",
+   "choices": [
+    "They cut the elk that browsed on the young shoots",
+    "They cut the beavers that felled the young trees",
+    "They cut the bison that trampled the streambanks",
+    "They cut the hares that gnawed the young bark"
+   ],
+   "context": "Elk are the wolves' main prey, and the elk of the northern range fell from about 16,800 in 1995 to about 8,300 by 2004, so fewer were left to nibble young willow and aspen shoots; beavers, which need willow, rose from one colony to nine, and bison grew more plentiful. Ecologists still argue over how much was the wolves' doing: bears, human hunters, a hard winter and drought also cut the elk, beavers set free north of the park spread in, and measuring only the tallest young aspens made the comeback look bigger than it was.",
+   "facts": [
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F9"
+   ],
+   "grade_note": "8th grade (map line G8.L4) teaches the trophic cascade, a top predator's removal or return rippling down through its prey to the plants; Yellowstone's wolves are the textbook case, taught with its open debate."
+  },
+  {
+   "tier": 4,
+   "topic": "when-a-food-web-breaks",
+   "question": "Killer whales began hunting sea otters off Alaska's Aleutian Islands in the 1990s, as the seals and sea lions they usually eat grew scarce. Along the open coast otter numbers fell by about a quarter each year, while in a lagoon the whales could not enter, they held steady. Sea otters eat sea urchins. What happened to the kelp forests along the open coast?",
+   "answer": "They thinned out as the urchins multiplied and ate them",
+   "choices": [
+    "They thinned out as the urchins multiplied and ate them",
+    "They grew thicker as fewer otters were left to eat them",
+    "They grew thicker as the whales ate the urchins too",
+    "They stayed the same, since killer whales never eat kelp"
+   ],
+   "context": "With the otters gone, the urchins boomed and grazed the kelp down, until the kelp stood about a twelfth as thick as before. Four levels were linked, whale to otter to urchin to kelp, so a change at the top flipped the bottom: more whales meant less kelp. James Estes, who led the study, was sure the whales were to blame partly because the otters of Clam Lagoon, out of the whales' reach, did not decline.",
+   "facts": [
+    "F10",
+    "F11"
+   ],
+   "grade_note": "8th grade (map line G8.L4) teaches predicting how a crash at one level ripples through several others; the otter, urchin and kelp chain is a standard middle-school cascade, and the killer whales add a fourth level."
+  },
+  {
+   "tier": 4,
+   "topic": "when-a-food-web-breaks",
+   "question": "Cane toads, brought to Queensland in 1935 to eat beetles in the sugar cane, have spread across northern Australia, and glands in their skin hold a poison that kills many native animals that try to eat them. Ecologists studied a river valley in the Kimberley for years before and after the toads arrived. Crimson finches there neither eat the toads nor are eaten by them. What happened to the finches?",
+   "answer": "More of their chicks lived, as nest-raiding lizards died off",
+   "choices": [
+    "More of their chicks lived, as nest-raiding lizards died off",
+    "Fewer of their chicks lived, as the toads ate their insects",
+    "Fewer of their chicks lived, as toad poison fouled the water",
+    "Nothing changed, as the finches and the toads never met"
+   ],
+   "context": "Monitor lizards, which raid the finches' nests for eggs and chicks, died from eating the toads: the water monitors fell by close to half over five years, and the finches' fledging success, a measure of how many young lived to leave the nest, rose from 55 to 81 percent. An invader with no natural enemies can thus help one native species by killing its predator, two links away. The toads, meanwhile, never did control the cane beetles.",
+   "facts": [
+    "F12",
+    "F13",
+    "F14"
+   ],
+   "grade_note": "8th grade (map line G8.L4) teaches how an invasive species with no natural predators ripples through a food web; the cane toad is the standard Australian example."
+  },
+  {
+   "tier": 4,
+   "topic": "when-a-food-web-breaks",
+   "question": "Wild rabbits, set loose in Australia for hunting in 1859, spread across much of the continent. In its deserts, feral cats and foxes feed heavily on rabbits but also hunt native hopping mice. From 1995 a new rabbit virus cut the rabbits of South Australia's deserts sharply. What happened to the hopping mice over the following years?",
+   "answer": "They spread widely, as the cats and foxes grew fewer",
+   "choices": [
+    "They spread widely, as the cats and foxes grew fewer",
+    "They grew scarce, as the cats and foxes hunted them more",
+    "They grew scarce, as the virus spread to them as well",
+    "They stayed the same, as the rabbits never ate them"
+   ],
+   "context": "Four kinds of small native mammals, two hopping mice among them, came to cover several times as much of the desert as before. Ecologists credited both ends of the web: the rabbits no longer ate the native mammals' food, and the cats and foxes that lived on rabbits grew fewer with them. The virus infects only European rabbits, so it never touched the mice.",
+   "facts": [
+    "F15",
+    "F16",
+    "F17"
+   ],
+   "grade_note": "8th grade (map line G8.L4) teaches how invasive species and their removal ripple through a food web; rabbits in Australia are the classic invasive example."
+  },
+  {
+   "tier": 4,
+   "topic": "when-a-food-web-breaks",
+   "question": "Zebra mussels, carried to North America in ships' ballast water, appeared in New York's Hudson River in 1991. Within two years billions of them lived on the riverbed, straining floating algae from the water, and the algae fell by four-fifths. Shad and herring of the open river then grew fewer and grew more slowly. What linked the mussels to these fish?",
+   "answer": "The tiny animals that the fish feed on",
+   "choices": [
+    "The tiny animals that the fish feed on",
+    "The water plants that grow along the riverbed",
+    "The sunfish that share the river with them",
+    "The bigger fish that hunt them in open water"
+   ],
+   "context": "The floating algae feed zooplankton, tiny drifting animals, and zooplankton feed the young of open-water fish; with the algae strained out, small zooplankton nearly vanished and the larger kinds fell by about half, so the fish went short. The mussels never touched the fish: the harm climbed the food web from its base. The clearer water suited sunfish of the shallows, which grew more plentiful, while the river's native mussels, once over a billion, began to disappear.",
+   "facts": [
+    "F18",
+    "F19"
+   ],
+   "grade_note": "8th grade (map line G8.L4) teaches how an invasive species ripples through the transfer of energy in a food web; zebra mussels are a standard American example."
+  },
+  {
+   "tier": 4,
+   "topic": "when-a-food-web-breaks",
+   "question": "Hugh McGregor's team put video cameras on the collars of feral cats in northern Australia and filmed 101 of their hunts. Other cats, tracked by GPS, walked up to 12 kilometres beyond their home ranges to hunt on ground freshly burned by an intense fire, and stayed about two weeks. What did the films show that explains those trips?",
+   "answer": "Most hunts in open country ended in a kill",
+   "choices": [
+    "Most hunts in open country ended in a kill",
+    "Most hunts in thick grass ended in a kill",
+    "Most hunts among rocks ended in a kill",
+    "Hunts ended in a kill as often on any ground"
+   ],
+   "context": "The cats caught their prey in 70 percent of hunts in the open but in only 17 percent among dense grass or rocks, so a hot fire that strips away the cover leaves the small animals that live through the flames easy to catch. A fire's harm does not end when the flames die: it passes on through a predator. The researchers suggest fewer intense fires and denser grass and shrubs to cut the cats' kills.",
+   "facts": [
+    "F20",
+    "F21"
+   ],
+   "grade_note": "8th grade (map line G8.L4) teaches how a natural disaster such as a fire ripples through a food web; here the ripple runs through the predators."
+  },
+  {
+   "tier": 4,
+   "topic": "when-a-food-web-breaks",
+   "question": "Rinderpest, a cattle disease that also kills wildebeest, kept the wildebeest of the Serengeti few until it was wiped out there in the 1960s. The herds then grew from about a quarter of a million to more than a million by the late 1970s. Over the same years the number of trees in the Serengeti changed too. How did it change, and why?",
+   "answer": "It rose, as fewer fires swept the grazed grass",
+   "choices": [
+    "It rose, as fewer fires swept the grazed grass",
+    "It fell, as the herds ate more of the young trees",
+    "It fell, as the herds trampled more of the seedlings",
+    "It stayed the same, as the herds ate only grass"
+   ],
+   "context": "Grazed short by over a million mouths, the grass left too little fuel for the fires that had swept the plains, and fire tends to kill small trees. With fewer fires, young trees grew up, and Tony Sinclair, who watched it happen, judged there had not been so many trees since the 1800s. Ricardo Holdo's team weighed other causes, such as elephants and rainfall, and found that the fall in fire explained the trees best.",
+   "facts": [
+    "F22",
+    "F23"
+   ],
+   "grade_note": "8th grade (map line G8.L4) teaches how a population boom ripples through a food web; the Serengeti's wildebeest show it reaching the trees through fire."
+  },
+  {
+   "tier": 4,
+   "topic": "when-a-food-web-breaks",
+   "question": "George Woodwell's team measured the insecticide DDT (dichlorodiphenyltrichloroethane) along a food chain in a Long Island estuary in the 1960s. The water held about 3 parts per trillion, the plankton 0.04 parts per million, small fish 0.5, larger fish 2, and fish-eating birds such as ospreys about 25. What makes the level climb at each step up the chain?",
+   "answer": "Each eater stores the DDT from its many meals",
+   "choices": [
+    "Each eater stores the DDT from its many meals",
+    "Each bigger animal has more body to hold the DDT",
+    "Each bigger animal is hit by more of the spray",
+    "The DDT multiplies inside each animal's body"
+   ],
+   "context": "DDT dissolves in fat but hardly at all in water, and bodies break it down only slowly, so an animal stores most of what it swallows instead of passing it out. A fish eats a great many plankton and an osprey a great many fish, so each stores the DDT of countless meals, and by these numbers the level climbs more than eight million times from water to bird; ecologists call it biomagnification. Parts per million measure the DDT in each kilogram of body, so size alone cannot explain the climb, and Rachel Carson warned of just this building-up in Silent Spring in 1962.",
+   "facts": [
+    "F24",
+    "F25",
+    "F26",
+    "F27"
+   ],
+   "grade_note": "8th grade (map line G8.L4) teaches pollution rippling through a food web; DDT building up from plankton to fish-eating birds is the standard example of biomagnification."
+  },
+  {
+   "tier": 4,
+   "topic": "when-a-food-web-breaks",
+   "question": "Derek Ratcliffe kept finding broken eggs in the nests of peregrine falcons in Britain in the 1950s. He weighed and measured peregrine eggshells kept in museums and private collections, some laid more than a century before, and compared them with eggs from his own surveys. What did the shells show?",
+   "answer": "Steady for a century, then thinner from 1947 on",
+   "choices": [
+    "Steady for a century, then thinner from 1947 on",
+    "Thinner and thinner, little by little, for a century",
+    "No thinner than the shells laid a century before",
+    "Steady for a century, then thinner from 1939 on"
+   ],
+   "context": "Ratcliffe's measure of shell thickness held steady for over 125 years, then fell by about a sixth from 1947, two years after farmers in Europe and America began spraying DDT on a large scale (its power to kill insects had been found in 1939), and shells so thin cracked under the brooding parent. Joseph Hickey and Daniel Anderson found the same thinning in the United States, also from 1947, in birds such as ospreys and bald eagles, and captive kestrels fed DDE, a breakdown product of DDT, laid thinner shells. After the United States banned DDT in 1972 the birds came back: helped also by protection from shooting, bald eagle nesting pairs in the lower 48 states rose from 417 in 1963 to 9,789 by 2007.",
+   "facts": [
+    "F24",
+    "F28",
+    "F29",
+    "F30"
+   ],
+   "grade_note": "8th grade (map line G8.L4) teaches pollution rippling through a food web; DDT thinning the eggshells of eagles, ospreys and falcons, found by measuring old museum eggs, is its best-known result."
+  }
+ ]
+}

@@ -112,3 +112,14 @@ G1. 8th grade: curriculum map line G8.L2 (TEKS 8.13B; NGSS MS-LS3-1 and MS-LS3-2
 - Stevens's mealworm conclusion is told through sex cells and fertilization in her sources; the question keeps to the human pair and the parents' chromosomes, and the context gives her counts.
 - Muller's later warnings (shielding against needless X-rays) are left out; they touch the reproductive organs.
 - Lactase persistence was researched as a helpful mutation (Grokipedia, Lactase persistence) but not used: the sickle-cell trait already carries the helpful side.
+
+## Added in the revision (2026-11-26)
+
+F22. Tjio did not grow the human cells himself: NHGRI says he "began to look at the chromosomes in human embryonic lung fibroblasts, grown in tissue culture", and Tjio and Levan's 1956 Hereditas paper says the cultures were "very kindly supplied to us by Dr. RUNE GRUBB of the Virus Laboratory, Institute of Bacteriology, Lund" (search excerpts of the paper's scan, as the fact-check read them). Tjio treated, squashed and counted the cells. The paper says 46 "predominated", "only single cases deviating"; NHGRI: "all unbroken cells had 46 chromosomes". Hence "studied human cells grown in the laboratory" and "almost every whole cell".
+    https://www.genome.gov/25520285/online-education-kit-1955-a-46-human-chromosomes ; https://umaryland.cloud-cme.com/assets/umaryland/activities/15768/Hereditas%20-%20May%201956%20-%20TJIO%20-%20THE%20CHROMOSOME%20NUMBER%20OF%20MAN.pdf
+
+F23. Sutton's grasshopper (Brachystola magna): its cells "contain 23 chromosomes (22 ordinary + 1 accessory)", which "pair into 11 bivalents during the first meiotic division", while the "accessory chromosome (now recognized as the X chromosome)" stays unpaired in the male and goes to half of the sperm (Grokipedia, Boveri-Sutton chromosome theory). So nearly all, not all, of his chromosomes came in matched pairs.
+    https://grokipedia.com/page/Boveri%E2%80%93Sutton_chromosome_theory
+
+F24. The peach genome is laid out in "the eight peach chromosomes (2n = 16)" (Wikipedia, Peach; the International Peach Genome Initiative's sequence), and "nectarines belong to the same species as peaches" (Wikipedia); "Nectarines represent a glabrous (smooth-skinned) genetic variant of the peach, sharing the same species", "arising from a recessive gene mutation inhibiting fuzz development" (Grokipedia, Peach). A chromosome count database lists Prunus persica at 2n = 16; a small polyploid series is known in the species, but the nectarine's origin is the single-gene change of F21, not a doubled set.
+    https://en.wikipedia.org/wiki/Peach ; https://grokipedia.com/page/Peach ; https://ccdb.tau.ac.il/countsByMatchedName/Persica%20vulgaris%20Mill.

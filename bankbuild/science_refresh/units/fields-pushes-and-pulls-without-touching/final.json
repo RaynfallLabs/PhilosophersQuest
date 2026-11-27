@@ -1,0 +1,218 @@
+{
+ "unit": "fields-pushes-and-pulls-without-touching",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "fields-pushes-and-pulls-without-touching",
+   "question": "A boy rubs a rubber balloon briskly on his dry hair. Afterward the balloon and his hair pull toward each other, for one of them now carries a negative charge and the other a positive one. What has the rubbing done?",
+   "answer": "Moved electrons from his hair onto the balloon",
+   "choices": [
+    "Moved electrons from his hair onto the balloon",
+    "Moved electrons from the balloon onto his hair",
+    "Moved protons from the balloon onto his hair",
+    "Moved protons from his hair onto the balloon"
+   ],
+   "context": "Hair gives up electrons more easily than rubber, so the rubbing carries electrons from the hair onto the balloon: the balloon ends up with extra electrons and a negative charge, and the hair, short of electrons, is left positive. Protons stay fast in the nucleus of every atom. Rubbing makes no new charge; it only moves electrons from one thing to another.",
+   "facts": [
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "8th-grade lessons on electric forces (curriculum line G8.P9, NGSS MS-PS2-3) teach charging by rubbing as electrons moving from one object to the other, with the balloon and hair as the classic case."
+  },
+  {
+   "tier": 4,
+   "topic": "fields-pushes-and-pulls-without-touching",
+   "question": "A girl rubs two balloons on her hair, one after the other, and hangs them from the same hook on long threads. Instead of hanging straight down side by side, the two balloons swing apart and stay apart. What pushes them apart?",
+   "answer": "Like charges, which push each other away",
+   "choices": [
+    "Like charges, which push each other away",
+    "Unlike charges, which push each other away",
+    "Like magnetic poles, which push each other away",
+    "Unlike magnetic poles, which push each other away"
+   ],
+   "context": "Rubbing on the same hair gives both balloons the same kind of electric charge, and like charges repel, across the gap with nothing touching. The more charge each balloon carries, the harder the push, and it weakens as they swing apart. A rubbed balloon is no magnet, and unlike charges attract, just as unlike magnetic poles do.",
+   "facts": [
+    "F1",
+    "F4",
+    "F8",
+    "F9",
+    "F14",
+    "M1"
+   ],
+   "grade_note": "NGSS MS-PS2-5 asks 8th graders for evidence that charged objects push on each other without touching, and like charges repel is the rule they learn (curriculum line G8.P9)."
+  },
+  {
+   "tier": 4,
+   "topic": "fields-pushes-and-pulls-without-touching",
+   "question": "A boy rubs a balloon on his hair and holds it against a painted wall. When he lets go, the balloon stays there, though the wall carries no charge overall. What holds the balloon to the wall?",
+   "answer": "Its charge draws the wall's opposite charges nearer",
+   "choices": [
+    "Its charge draws the wall's opposite charges nearer",
+    "Its charge flows into the wall and holds it there",
+    "Air pressure pins it flat against the wall",
+    "The rubbing has turned it into a weak magnet"
+   ],
+   "context": "The balloon's charge pushes the like charges in the wall's atoms a little way back and draws the opposite ones a little nearer, so the surface just under the balloon carries a slight opposite charge, and unlike charges attract. The nearer opposite charge pulls harder than the farther like charge pushes, because electric forces weaken with distance. Pressed to a metal door, the balloon soon loses its charge into the metal and falls.",
+   "facts": [
+    "F1",
+    "F6",
+    "F9",
+    "M1"
+   ],
+   "grade_note": "8th-grade lessons on electric forces use the balloon stuck to a wall to show that a charged object attracts a neutral one by shifting its charges (curriculum line G8.P9, NGSS MS-PS2-5)."
+  },
+  {
+   "tier": 4,
+   "topic": "fields-pushes-and-pulls-without-touching",
+   "question": "A compass on a desk points north, lined up with Earth's magnetism. A girl slides a small bar magnet to within a few centimetres of it, and the needle swings round to point at the magnet instead. Why does so small a magnet win out over Earth here?",
+   "answer": "It is close, and magnetism fades with distance",
+   "choices": [
+    "It is close, and magnetism fades with distance",
+    "It is a stronger magnet than the whole of Earth",
+    "Its magnetism is a different kind from Earth's",
+    "It shields the needle from Earth's magnetism"
+   ],
+   "context": "Earth as a whole is a vastly stronger magnet, but its field at the surface is weak, and a magnet's field grows weaker very fast with distance. A few centimetres from the small magnet its field is many times Earth's, so the needle follows it; carried across the room, its field falls far below Earth's, and the needle swings back to north. The small magnet blocks nothing: its field and Earth's simply add, and the needle lines up with the sum.",
+   "facts": [
+    "F8",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "M5"
+   ],
+   "grade_note": "NGSS PS2.B (MS-PS2-3) teaches 8th graders that the size of a magnetic force depends on the magnets' strength and on the distance between the objects."
+  },
+  {
+   "tier": 4,
+   "topic": "fields-pushes-and-pulls-without-touching",
+   "question": "William Gilbert, an English physician, shaped a lodestone into a ball he called a terrella. Over it he held a small magnetised needle, pivoted so that it could tilt up and down, and carried it from the middle of the ball, halfway between its poles, to one of the poles. How did the needle lie along the way?",
+   "answer": "Level at the middle, dipping more steeply near the pole",
+   "choices": [
+    "Level at the middle, dipping more steeply near the pole",
+    "Dipping steeply at the middle, lying level at the pole",
+    "Lying level all the way, pointing along the surface",
+    "Pointing straight down into the ball all the way along"
+   ],
+   "context": "The needle lay level over the ball's middle and dipped more and more steeply toward a pole, until it pointed straight down over the pole itself. The mariner Robert Norman had found in 1581 that a compass needle free to tilt dips below level, and Gilbert's terrella dipped the same way, so he argued in De Magnete, in 1600, that Earth itself is a great magnet. He even proposed that a sailor could judge his latitude from the dip when clouds hid the sky, though in practice the dip gives latitude only roughly.",
+   "facts": [
+    "F14",
+    "F16",
+    "F30",
+    "F31"
+   ],
+   "grade_note": "8th-grade lessons on magnetism map a magnet's field and teach Earth as a giant magnet (curriculum line G8.P9); Gilbert's terrella in De Magnete (1600) is the experiment that showed Earth's field has a magnet's shape, dip and all."
+  },
+  {
+   "tier": 4,
+   "topic": "fields-pushes-and-pulls-without-touching",
+   "question": "A compass needle is a small magnet, and the end marked N swings round toward the far north. It points toward the North Magnetic Pole, a spot in the Arctic. What kind of magnetic pole is that spot?",
+   "answer": "A south pole, since unlike poles attract",
+   "choices": [
+    "A south pole, since unlike poles attract",
+    "A north pole, since like poles attract",
+    "A north pole, since it lies in the far north",
+    "Neither, since plain iron draws either end"
+   ],
+   "context": "The N end of a compass is its north-seeking pole, and unlike poles attract, so the magnetic pole that draws it in the Arctic must be a south pole. It is called the North Magnetic Pole for where it lies, not for its kind. Plain iron would draw either end of the needle, yet the needle's S end always turns away to the south.",
+   "facts": [
+    "F14",
+    "F15",
+    "F18",
+    "M4"
+   ],
+   "grade_note": "8th grade teaches like and unlike poles and Earth as a magnet; the south magnetic pole in the far north is the classic case that puts the two together."
+  },
+  {
+   "tier": 4,
+   "topic": "fields-pushes-and-pulls-without-touching",
+   "question": "Hans Christian Oersted held a wire just above a compass needle during a lecture at the University of Copenhagen in April 1820. When he joined the wire to a battery and current flowed, the needle swung away from north. What did the needle show?",
+   "answer": "The current in the wire made a magnetic field",
+   "choices": [
+    "The current in the wire made a magnetic field",
+    "The needle's own field made a current in the wire",
+    "The battery's metal plates were magnets themselves",
+    "Some current leaked from the wire into the needle"
+   ],
+   "context": "The current itself made a magnetic field around the wire, and that field turned the needle. With the circuit broken the needle settled back, though the battery's copper and zinc plates, which are not magnetic, stayed where they were; and the needle sat under glass, out of reach of any current. It was the first proof that electricity and magnetism are linked, and later tests that year showed the field runs in circles around the wire.",
+   "facts": [
+    "F20",
+    "F21",
+    "F25"
+   ],
+   "grade_note": "8th-grade lessons on electromagnetism open with Oersted's needle of 1820, the first evidence that an electric current makes a magnetic field (curriculum line G8.P9)."
+  },
+  {
+   "tier": 4,
+   "topic": "fields-pushes-and-pulls-without-touching",
+   "question": "A student winds a long insulated wire 20 times around an iron nail and joins its ends to a battery. The nail lifts six paper clips. She then makes one change at a time, to see which lets the nail lift more. Which change will do it?",
+   "answer": "Winding more turns of the same wire on the nail",
+   "choices": [
+    "Winding more turns of the same wire on the nail",
+    "Turning the battery round to reverse the current",
+    "Swapping the iron nail for a copper nail",
+    "Pulling the nail out, leaving the coil alone"
+   ],
+   "context": "An electromagnet grows stronger with more turns of wire and with more current, so winding more of the same long wire onto the nail, with the same current, lets it lift more; Joseph Henry wound silk-covered wire in layer on layer to get more turns. Turning the battery round only swaps the magnet's north and south ends. The iron core is what makes a coil strong, up to thousands of times stronger than the coil alone, while copper is not magnetic and adds nothing.",
+   "facts": [
+    "F24",
+    "F25",
+    "F26",
+    "F27"
+   ],
+   "grade_note": "NGSS MS-PS2-3 names this very test for 8th graders: the effect of the number of turns of wire on the strength of an electromagnet."
+  },
+  {
+   "tier": 4,
+   "topic": "fields-pushes-and-pulls-without-touching",
+   "question": "An electromagnetic lock holds a shop's back door shut. A coil in the door frame grips a steel plate on the door with a pull of about 1,200 pounds, and the lock has no moving parts. What happens to that grip if the power to the lock fails?",
+   "answer": "It vanishes at once, so the door comes free",
+   "choices": [
+    "It vanishes at once, so the door comes free",
+    "It holds on, so the door stays locked",
+    "It fades slowly, so the door comes free in hours",
+    "It lasts about a minute, as the coil runs down"
+   ],
+   "context": "The coil is no battery: it is a magnet only while current flows through it, so the moment the power stops, its grip is gone and the door opens with a push. That makes the lock fail-safe: if a fire alarm or a fault cuts the lock's power, nobody is trapped inside. A scrapyard crane drops its load of steel the same way, when the current to its electromagnet is switched off.",
+   "facts": [
+    "F23",
+    "F28",
+    "F29"
+   ],
+   "grade_note": "8th grade teaches that an electromagnet works only while current flows, which is what makes it useful in locks, cranes and switches (curriculum line G8.P9)."
+  }
+ ],
+ "revised": {
+  "cecfa85c4d": {
+   "old_hash": "c7f49404af",
+   "why": "Judge (medium, clarity): the stem said the wall 'itself carries no charge' and the key then spoke of 'the wall's opposite charges', so a student who took the stem at its word saw the key contradict it. The stem now says the wall carries no charge overall (the wording inside-the-atom uses); key, choices and context unchanged."
+  },
+  "d843da3ea3": {
+   "old_hash": "611d33ba98",
+   "why": "Judge (high, tell): the ball was glossed 'a little Earth' that acts 'just as on Earth', which handed over 'Earth is a magnet', a fact most 8th graders already bring. Re-aimed, as the lead asked, at what the experiment showed that a student would not guess: the dip, level over the terrella's middle and steeper toward the poles (F16, F30). The stem no longer calls the ball a little Earth or says how the needle lay. Wrong choices: the reverse pattern, the compass's look of lying level everywhere, and the gravity-like idea that it points into the ball everywhere. 'Earth is a great magnet' and Gilbert's latitude proposal (F31) move to the context."
+  },
+  "ee37ac9f0b": {
+   "old_hash": "6351254d5a",
+   "why": "Judge (medium, tell): 'Judged by how magnets push and pull' ruled out 'A north pole, since it lies in the far north'; the clause is gone, so the place-name choice is live. The clause 'where Earth's magnetism points straight down into the ground' is also gone, since it would hand the revised terrella question (d843da3ea3) the pole half of its answer. Key, choices and context unchanged."
+  },
+  "4d2e8efc0b": {
+   "old_hash": "395de94fda",
+   "why": "Judge (low, tell), fixed as cheap and safe: the stem planted 'leaving the rest of the wire loose', a detail only the key used. The clause is gone (a 'long' wire still leaves wire to spare) and the key reads 'Winding more turns of the same wire on the nail'. Context reordered so Henry's many turns sit beside the turns fact."
+  },
+  "77cd0e6e93": {
+   "old_hash": "d8fefb6a7e",
+   "why": "Judge (medium, tell): 'It turns to a push, so the door is flung open' read as a joke, leaving three live choices. It is replaced by 'It lasts about a minute, as the coil runs down', the belief that a coil stores power like a battery (the judge's 'holds on' suggestion would have doubled the 'holds on' outcome). Judge (low) and fact-check note: 'if the building's power fails' is now 'if the power to the lock fails', since real maglocks may run on a standby battery. The context says the coil is no battery (F23, F29)."
+  }
+ },
+ "added": {},
+ "dropped": [],
+ "lead_edits": [
+  {
+   "old_hash": "77cd0e6e93",
+   "new_hash": "77cd0e6e93",
+   "change": "context: \"in a fire alarm or a power cut, nobody is trapped inside.\" -> \"if a fire alarm or a fault cuts the lock's power, nobody is trapped inside.\"",
+   "why": "card writer: a building power cut need not cut a maglock with a standby battery"
+  }
+ ]
+}

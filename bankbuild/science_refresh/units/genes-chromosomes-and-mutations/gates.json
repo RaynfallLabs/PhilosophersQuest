@@ -1,17 +1,19 @@
 {
- "kind": "draft",
+ "kind": "final",
  "unit": [],
  "questions": {
-  "4f01f4d23b": {
+  "9960e29f5d": {
    "fail": [],
    "warn": [],
    "info": [],
    "flag": []
   },
-  "0245211bae": {
+  "e9d2375855": {
    "fail": [],
    "warn": [],
-   "info": [],
+   "info": [
+    "voice: long(71>70)"
+   ],
    "flag": []
   },
   "7347fa330c": {
@@ -20,11 +22,11 @@
    "info": [],
    "flag": []
   },
-  "9772a3fa91": {
+  "5f2318eb1d": {
    "fail": [],
    "warn": [],
    "info": [
-    "voice: short(37<40)"
+    "voice: short(32<40)"
    ],
    "flag": []
   },

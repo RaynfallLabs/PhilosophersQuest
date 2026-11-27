@@ -140,3 +140,20 @@ G1. The refresh's curriculum map line G8.L4 (TEKS 8.12A, NGSS MS-LS2-4, CK2023 G
 - The British peregrine crash of the late 1950s owed much to other pesticides as well (Grokipedia cites a 2021 British Birds review saying DDT's role was overstated); no question says DDT alone cut the peregrines, only that the shells thinned from 1947.
 - Lab doses of DDE were questioned by critics (Grokipedia, DDT); the context says only that captive kestrels fed DDE laid thinner shells.
 - The Time figures (F26) are a magazine's summary of Woodwell's chain; the plankton figure (0.04 ppm) matches the paper's abstract.
+
+## Added at revision (2026-11-26)
+
+F31. Leahy, Legge, Tuft, McGregor, Barmuta, Jones and Johnson, "Amplified predation after fire suppresses rodent populations in Australia's tropical savannas", Wildlife Research 42: 705-716 (2015). In northern Australia's savannas they live-trapped the pale field rat (Rattus tunneyi) and the western chestnut mouse (Pseudomys nanus) under a high-intensity burn, a low-intensity patchy burn and an unburnt control, and radio-tracked 38 pale field rats. Both species declined after fire, most sharply after the high-intensity burn. Of five tested causes (direct deaths in the fire, starvation from food lost, poorer breeding, emigration, more predation) only predation was supported: predation rose after fire with the loss of ground cover, feral cat and dingo activity rose on the burns, and predation by feral cats and snakes was found directly. The authors recommend cool, patchy burns and less area burnt. (The study site is not named in the abstract read; the stem says only "northern Australia".)
+    https://researchportalplus.anu.edu.au/en/publications/amplified-predation-after-fire-suppresses-rodent-populations-in-a/ ; https://publish.csiro.au/WR/WR15011 (abstract via search)
+
+F32. Paine's sea stars at Mukkaw Bay "ate barnacles, chitons, limpets, snails, and mussels"; "Mussels and chitons were the most important contributors to the starfish diet"; on the cleared plot "the two limpet and two chiton species had abandoned the plot" (Nautilus). So the limpets and chitons left rather than multiplying.
+    https://nautil.us/the-ecologist-who-threw-starfish-235831
+
+F33. The eggshell fall came quickly after DDT arrived: "The chemical industry claimed that shell thinning occurred too rapidly after the introduction of DDT in 1946" for DDT to be the cause; David Peakall later found DDE "in sufficient concentrations to account for significant eggshell thinning in 1946 in Great Britain" (Wikipedia, David Peakall). With F28 (a steady index of 1.82 for over 125 years, then 1.53 after the 1947 turning point), the record is steady, then a sudden drop.
+    https://en.wikipedia.org/wiki/David_Peakall ; https://www.birdsoutsidemywindow.org/2017/01/10/how-museums-saved-the-peregrine-falcon/
+
+F34. Cane toads are not free of enemies: keelback snakes eat toads without harm and meat ants kill young toads (Grokipedia, as read by the fact-check); Wikipedia: "no efficient natural predators". So: an invader that few native animals can safely eat.
+    https://grokipedia.com/page/Cane_toads_in_Australia ; https://en.wikipedia.org/wiki/Cane_toads_in_Australia
+
+F35. Corrections taken from the fact-check, each on its source above: the killer whales did not grow more numerous, they hunted otters more (as few as four whales could account for the decline, F11: "more hunting by the whales"); of the four small mammals of F17 only the spinifex hopping mouse spread less than several-fold (180 to 276-356 thousand km2), so "most of them several times as much"; the 3 parts per trillion water figure of F26 is Time's popular number, not the 1967 paper's, so it is not used; from plankton (0.04 ppm) to fish-eating birds (25 ppm) the rise is about 625 times, "more than six hundred times".
+    https://www1.ucsc.edu/oncampus/currents/98-99/10-19/killer.htm ; https://conservationevidencejournal.com/individual-study/7793 ; https://content.time.com/time/subscriber/article/0,33009,901002-2,00.html

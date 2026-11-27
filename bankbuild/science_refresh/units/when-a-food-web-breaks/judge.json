@@ -1,0 +1,91 @@
+{"unit": "when-a-food-web-breaks",
+ "questions": {
+  "da13ff27a2": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two choices carry the keyed mechanism ('as the mussels crowded out the rest' and 'as the mussels covered all the rock') and differ only by the count, 8 against 1. A student who knows the keystone lesson (taking the sea star away cut the number of species, because the strongest competitor for space spread) still has to recall a number to choose, and the voice rule allows a number as the key only when it is the basic fact. 'Fell to 1' is also near-true in the long run: the card itself says the mussels came close to taking the rock years later, so only the stem's 'within a year' separates the two.",
+     "fix": "Replace 'It fell to 1, as the mussels covered all the rock' with a wrong mechanism in the right direction: 'It fell to 8, as the seaweeds spread and smothered the rest' (the seaweeds were among those crowded out, F2). The two 'fell to 8' choices are then decided by the ecology, not the count."},
+    {"axis": "fact", "severity": "low",
+     "what": "'within a year' rests on a magazine's paraphrase (Scientific American, 'within a year, the total number of species had halved'); Nautilus and Wikipedia give 15 to 8 with no clear date. Worth confirming against Paine's 1966 paper.",
+     "fix": "If the 8-species count came later, say 'within a few years'; once 'fell to 1' is gone the stem no longer needs the year to rule it out."}
+   ]},
+
+  "2593fea18f": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'They cut the elk' reads oddly to an 8th grader ('cut' as wounded, or as fewer?), and the verb repeats in all four choices.",
+     "fix": "'They thinned out the elk that browsed on the young shoots', with 'thinned out the beavers / bison / hares' in the other three."},
+    {"axis": "stance", "severity": "low",
+     "what": "The debate is told honestly and nothing is overclaimed: the stem attributes the cascade ('Ecologists who credit the wolves... By their account'), says 'some streams', and the card names the other causes of the elk's fall (bears, hunters, a hard winter, drought), the beavers set free north of the park and the tall-aspen sampling bias. One small gap: many who credit the wolves also credit fear, elk browsing less by risky streams, and that mechanism is argued over too; the key's numbers-only account is a fair simplification, but the card does not say the 'how' is debated as well as the 'how much'.",
+     "fix": "Add to the card: 'Some ecologists add that elk wary of wolves browsed less by the streams, an idea that is disputed as well.'"}
+   ]},
+
+  "bcc48b8bb9": {"verdict": "revise",
+   "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "Overlap: the step asked is the T1 food-chains-and-food-webs pattern (a predator falls, its prey booms, the prey's food falls; the frogs and insects, whose card says the extra insects eat more of the plants). The stem hands over 'Sea otters eat sea urchins', so the question reduces to that one-step chain, and what is new at T4, the killer whales as a fourth level and the Clam Lagoon control, sits in the stem untested. The otter-urchin-kelp link is good 8th-grade keystone content, but it is not what is asked.",
+     "fix": "Drop 'Sea otters eat sea urchins' and give the result, so the student must know the keystone link: '...while in a lagoon the whales could not enter, they held steady. Within a few years the kelp along the open coast had thinned to about a twelfth of its old density. What linked the whales to the kelp?' Key: 'Urchins, freed from the otters, grazed it down'. Wrong: 'Otters, driven inshore, tore up the kelp'; 'Whales, hunting through it, broke the kelp apart'; 'Seals and sea lions, grown scarce, no longer fed it with their droppings'."},
+    {"axis": "tell", "severity": "low",
+     "what": "'They grew thicker as the whales ate the urchins too' is weak: no 8th grader pictures killer whales eating urchins, so with the stem's otter-urchin link only two choices are really live.",
+     "fix": "The rewrite above replaces all three wrong choices."}
+   ]},
+
+  "a93f48b7c3": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the one surprising gain, and this unit keys the counterintuitive ripple again and again (bcc48b8bb9, 3e5c758fab, 12576e0229 too), so a quiz-wise player learns to pick it. Here the stem's 'neither eat the toads nor are eaten by them' beside 'kills many native animals that try to eat them' already steers toward a predator dying off. The key still needs the lizards, so it stands.",
+     "fix": "Give the gain a rival in its own direction: replace 'Nothing changed, as the finches and the toads never met' with 'More of their chicks lived, as the toads' droppings fed the grasses they eat'."}
+   ]},
+
+  "3e5c758fab": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The card's 'came to cover several times as much of the desert' fits three of the four mammals (the dusky hopping mouse about five-fold, the plains mouse three- to four-fold, the mulgara far more) but not the spinifex hopping mouse, whose extent grew about one and a half to two times (180 to 276-356 thousand square kilometres, F17).",
+     "fix": "'came to cover far more of the desert, some of them several times as much as before'."},
+    {"axis": "tell", "severity": "low",
+     "what": "The key is again the lone choice in its direction (one 'spread' against two 'grew scarce' and a 'stayed the same'). 'They grew scarce, as the cats and foxes hunted them more' is a strong, honest lure (prey switching), so it stands.",
+     "fix": "Optional: replace 'They stayed the same, as the rabbits never ate them' with 'They spread widely, as the virus killed the fleas they carry'."}
+   ]},
+
+  "414382e90b": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'and grew more slowly' points to hunger, and 'The tiny animals that the fish feed on' is the only choice that is the fish's food, so the stem's chain (algae strained out, fish growing slowly) leads to it with little ecology needed. 'The bigger fish that hunt them in open water' has no stated link to the mussels.",
+     "fix": "Cut 'and grew more slowly' from the stem (keep it in the card) and give the wrong choices pathways of their own: 'The clearer water, which let birds spot the fish'; 'The water plants, which spread into the fish's open water'; keep 'The sunfish that share the river with them'."}
+   ]},
+
+  "959123f26d": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem names the solution. The cats travel to 'ground freshly burned by an intense fire', which is open ground, and the question asks what explains the trips; of the four habitats only 'open country' describes burned ground, 'thick grass' and 'rocks' are what a fire takes away or leaves untouched, and 'as often on any ground' explains nothing. A student who knows nothing of the study picks it.",
+     "fix": "Key what the GPS collars showed, the ripple itself: 'Ecologists fitted feral cats in the Kimberley of northern Australia with GPS collars and followed them after intense fires burned patches of their country. What did the cats do?' Key: 'Travelled many kilometres to hunt on the fresh burns'. Wrong: 'Moved away from the burns to unburned country'; 'Kept to their own ranges, burned or not'; 'Hunted at the fire front, then went home within a day'. The card gives the video result (70 against 17 percent) as the why, and the up-to-12-km trips of about two weeks."},
+    {"axis": "other", "severity": "low",
+     "what": "Lane: the current key is one predator's hunting success by habitat, close to the animal bank's ground; the food-web point (a fire's harm passing on through a predator) sits only in the card. The rewrite above keys the ripple.",
+     "fix": "As above."}
+   ]},
+
+  "12576e0229": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the lone 'rose' against two 'fell' and a 'stayed', and it is the unit's usual counterintuitive ripple; fire is never mentioned in the stem, so the key still needs knowledge. The stem also asks two things at once ('How did it change, and why?').",
+     "fix": "Ask 'What happened to the trees?' and give the rise a rival: replace 'It fell, as the herds trampled more of the seedlings' with 'It rose, as the herds' dung fed the young trees'."}
+   ]},
+
+  "08ccd41cf6": {"verdict": "ok",
+   "issues": [
+    {"axis": "voice", "severity": "low",
+     "what": "'(dichlorodiphenyltrichloroethane)' is a 31-letter word that tells an 8th grader nothing, is never taught or tested, and lengthens a stem already dense with five numbers in two units.",
+     "fix": "Drop the parenthesis: 'measured the insecticide DDT along a food chain in a Long Island estuary...'."},
+    {"axis": "fact", "severity": "low",
+     "what": "The chain (3 parts per trillion, 0.04, 0.5, 2, 25 ppm) is Time's 1969 rounding of Woodwell's results, the textbook version; the 1967 paper's own figures run from 0.04 ppm in plankton to 75 ppm in a ring-billed gull. The stem presents the rounded chain as his team's measurements. For the fact-check.",
+     "fix": "If the paper's own values differ, say 'A much-quoted summary of George Woodwell's measurements...'."}
+   ]},
+
+  "11870f3841": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key and 'Steady for a century, then thinner from 1939 on' differ only by a year, and the stem never names DDT or says when it came into use, so the choice between them is date recall (1947 against DDT's discovery in 1939), not ecology. A student who knows the eggshell story knows the shells turned thin suddenly after a long steady run; the year is not the grade's content, and the voice rule keeps numbers out of keys unless the number is the fact.",
+     "fix": "Key the shape, which is the evidence that pointed to a new cause: 'Steady for a century, then a sudden drop' / 'Thinner and thinner, little by little, for a century' / 'No thinner than the shells of a century before' / 'Thin in some years and thick in others, with no pattern'. The card keeps 1947, DDT's spread after 1945 and Hickey and Anderson's matching American result."}
+   ]}
+ },
+ "unit_notes": "Coverage of the scope is full: the keystone species (Paine), the trophic cascade (Yellowstone; whales, otters and kelp), invaders (cane toads, rabbits, zebra mussels), a boom (the Serengeti's wildebeest), a fire (feral cats), and DDT twice on different facts (how it builds up; what it did to eggshells). Flood and drought are not asked, which is acceptable. Every fact is 8th-grade content (MS-LS2-4) and nothing is babyish. One pattern runs through the unit: the key is almost always the counterintuitive, indirect ripple, and in bcc48b8bb9, a93f48b7c3, 3e5c758fab and 12576e0229 it is the lone choice in its direction, so a quiz-wise player learns to bet on the surprise; the fixes above give some keys a rival in their own direction. Overlaps: bcc48b8bb9 reduces to the T1 frogs-and-insects chain (fix above); nothing re-asks the ten-percent rule, the lynx-hare cycle, the St. Matthew reindeer, lichen or bees; the T3 natural-and-artificial-selection DDT question is about resistance in flies, a different fact. Within the batch: no question keys succession or biodiversity ground; da13ff27a2's fall in species is keystone ground, which this unit owns, and 12576e0229's trees rising with fewer fires is a boom's ripple, not succession. Honesty: the Yellowstone question states the debate fairly and attributes the cascade; DDT is told as science (fat-solubility, the measured chain, museum shells, the kestrel feeding test), Carson appears only as a warning, the ban's recovery is credited jointly with protection from shooting, and there is no political verdict. Lanes: every named place sets a scene and every key is ecology, except 959123f26d, whose key is cat hunting behaviour (fix above). No kitchen examples. Voice is clean: no second person, no exclamation marks, no date openers, no singular 'they'. Many stems run long and carry several numbers (08ccd41cf6 has five); acceptable at T4 but worth trimming where a number is not used."}

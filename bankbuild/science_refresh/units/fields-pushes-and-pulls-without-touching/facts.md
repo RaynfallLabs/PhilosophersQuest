@@ -129,3 +129,13 @@ G1. The refresh's curriculum map line G8.P9 (NGSS MS-PS2-3, MS-PS2-5; Core Knowl
 - The University of Wisconsin demo page calls the rubbed balloon positive, against the other sources (F4). Not used.
 - The Physics Classroom and Science Buddies pages refuse direct fetches; their lines in F3, F4 and F6 come from search excerpts of those pages, each matched by a fetched source (OpenStax, Science Learning Hub).
 - Grokipedia's Oersted page puts the first sighting both "during a lecture demonstration" and while "preparing" one; Oersted's own account (quoted by the old bank) says the first trial was made before the audience. The stem says "during a lecture".
+
+## Added in the revision (2026-11-26)
+
+F30. On Gilbert's terrella "the needle remains horizontal (0°) at the equator" and "achieves a perpendicular orientation (90°) at the magnetic poles" (Grokipedia, De Magnete); the dip angle "varied with latitude, increasing toward the poles", and Gilbert "replicated the dipping behavior first observed by mariner Robert Norman in 1581" with a pivoted needle held over different points of the terrella (Grokipedia, Terrella). Wikipedia (De Magnete): level at the equator, the dip "increases towards the poles". NASA (D. P. Stern's review of De Magnete): Gilbert's needle, pivoted on a horizontal axis, "slanted downwards at an angle", the dip Norman found in 1581.
+    https://grokipedia.com/page/De_Magnete ; https://grokipedia.com/page/Terrella ; https://en.wikipedia.org/wiki/De_Magnete ; https://pwg.gsfc.nasa.gov/earthmag/DMGRev2.htm
+
+F31. Gilbert proposed using the dip to "deduce latitude at sea" when "the skies were obscured"; "In practice this method won't give latitude very accurately" (NASA, D. P. Stern's review of De Magnete). Grokipedia (De Magnete, Book V): the dipping needle correlates "dip angles with latitude", aiding position at sea.
+    https://pwg.gsfc.nasa.gov/earthmag/DMGRev2.htm ; https://grokipedia.com/page/De_Magnete
+
+(Maglock wording: "if the power to the lock fails" follows F29, "the lock releases instantly when power is interrupted"; the fact-check noted that real maglock supplies may carry a standby battery, so the building's power is not the lock's power.)

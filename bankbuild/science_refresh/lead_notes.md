@@ -136,3 +136,18 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
     - the mechanism of why siblings differ (crossing over, independent assortment);
     - incomplete dominance, codominance, blood groups;
     - sex-linked traits.
+- **Stars ladder (lead's ruling, 2026-11-26).**
+  - `the-life-cycles-of-stars` (T4) owns:
+    - nebulae;
+    - mass deciding a star's life and death (red giant and white dwarf; supergiant, supernova, neutron star or black hole);
+    - colour as temperature;
+    - the H-R diagram and the main sequence;
+    - Chandrasekhar's limit and Eddington;
+    - the 1054 supernova, SN 1987A, and Bell Burnell's pulsar.
+  - `how-the-sun-shines` (T5) owns:
+    - fusion in the core;
+    - the Sun's age and halfway point;
+    - sunspots and space weather;
+    - stars forging the elements that supernovae scatter.
+  - `light-from-atoms` (T5) owns spectra and what stars are made of.
+  - `galaxies-and-the-expanding-universe` (T4) owns galaxies, the light-year, Leavitt, Hubble and the Big Bang.

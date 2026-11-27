@@ -1,0 +1,209 @@
+{
+ "unit": "biodiversity-and-stability",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "biodiversity-and-stability",
+   "question": "Two meadows hold the same 20 species of grasses and wildflowers, with the same number of plants of each. In the first, every plant grew from seed gathered from many wild parents. In the second, all the plants of each species were raised from cuttings of a single parent plant. Which meadow holds more biodiversity?",
+   "answer": "The first, for the variety in its genes",
+   "choices": [
+    "The first, for the variety in its genes",
+    "The second, for cuttings keep each species unchanged",
+    "Neither, for both hold the same 20 species",
+    "Neither, for both hold the same number of plants"
+   ],
+   "context": "Biodiversity is counted at three levels: the variety of genes within each species, the variety of species, and the variety of ecosystems. A cutting grows into a clone with its parent's genes, so the second meadow keeps each species unchanged but holds little variety within it, while seeds from many parents carry many different mixes of genes, so the first meadow holds far more genetic variety even if its plants look alike. Biodiversity is often taken to mean the number of species alone, but the genes count too.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3"
+   ],
+   "grade_note": "8th grade's line (G8.L6; NGSS MS-LS2-5) names genetic variety beside species variety as part of biodiversity, and students most often miss the genetic level."
+  },
+  {
+   "tier": 4,
+   "topic": "biodiversity-and-stability",
+   "question": "David Tilman and John Downing had measured the plant growth in over 200 grassland plots at Cedar Creek, Minnesota, for years when the worst drought in 50 years struck in 1987 and 1988. Plots with more plant species lost a smaller share of their growth. The two then asked how much each lost species weakened a plot against the drought. What did they find?",
+   "answer": "Each species lost hurt more than the one before it",
+   "choices": [
+    "Each species lost hurt more than the one before it",
+    "Each species lost hurt less than the one before it",
+    "Each species lost hurt about as much as any other",
+    "The first few species lost did no harm at all"
+   ],
+   "context": "Drought resistance fell along a curve: a few species lost from a rich plot cost a little, but each further loss cost more, so the plots down to their last few species were hit hardest. Tilman and Downing took this as support for the old idea that diversity brings stability, and against the idea that most species are redundant, doing jobs others already do. Critics noted that nitrogen fertilizer, added to many plots, had cut their species and changed their growth; the two found the pattern held when they allowed for it, though a 2017 conference reanalysis disputes this. Later experiments in which the number of species was set by sowing, not by fertilizer, found that richer plots did resist droughts and other extremes better, though they recovered no faster.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "grade_note": "8th grade's line (G8.L6) teaches that an ecosystem with many species withstands change better and that losing species weakens it; the Cedar Creek drought is the classic evidence."
+  },
+  {
+   "tier": 4,
+   "topic": "biodiversity-and-stability",
+   "question": "David Tilman followed the plants in 207 grassland plots at Cedar Creek, Minnesota, for 11 years. The total plant mass of the plots with many species swung less from year to year than that of plots with few species. How did the single species in the rich plots compare?",
+   "answer": "They swung more than in plots with few species",
+   "choices": [
+    "They swung more than in plots with few species",
+    "They swung less than in plots with few species",
+    "They swung about as much as in plots with few species",
+    "They swung up and down in step with one another"
+   ],
+   "context": "When the weather harms some species, the competitors it spares grow into the room and light they leave, so each species swings up and down more, yet the plot's total holds steady. The more species a plot holds, the likelier some of them can thrive in any year's weather, which ecologists call the insurance effect. Species that all rose and fell in step would make the total swing with them.",
+   "facts": [
+    "F4",
+    "F7"
+   ],
+   "grade_note": "8th grade's line (G8.L6) asks why an ecosystem with many species withstands change better; if one species fails, others take its place."
+  },
+  {
+   "tier": 4,
+   "topic": "biodiversity-and-stability",
+   "question": "Blast, a disease caused by a fungus, ravages a prized sticky rice grown in Yunnan, China. Zhu Youyong's team had farmers across whole townships plant single rows of the sticky rice between groups of four or six rows of a hybrid rice, in 1998 and 1999. Blast on the sticky rice fell by 94 percent. What helped cut it so sharply?",
+   "answer": "Most spores now met plants the fungus could not infect",
+   "choices": [
+    "Most spores now met plants the fungus could not infect",
+    "The farmers sprayed the mixed fields with more fungicide",
+    "The sticky rice caught resistance from the hybrid rice",
+    "The hybrid's roots gave off a poison that kills the fungus"
+   ],
+   "context": "The hybrid rice resists blast, so most spores from a sick sticky-rice plant now landed on rice they could not infect, and few reached another sticky-rice plant; ecologists call this the dilution effect. The sticky rice, standing 35 to 40 centimetres above the hybrid, also dried faster after the morning dew, and the fungus needs wet leaves; by the end of the two years the farmers no longer needed to spray fungicide at all. A plant's resistance genes come from its parents, and they never pass to a plant growing beside it.",
+   "facts": [
+    "F12",
+    "F13",
+    "F19",
+    "F20"
+   ],
+   "grade_note": "The unit's scope (G8.L6) teaches that a field of one crop is easy for one disease to sweep, and mixing varieties, the Yunnan trial, is the evidence for genetic variety as protection."
+  },
+  {
+   "tier": 4,
+   "topic": "biodiversity-and-stability",
+   "question": "The water mould Phytophthora infestans reached Ireland in 1845 and rotted potato fields across the island. Much of the crop was one variety, the Lumper, grown from pieces of its tubers, so every plant carried the same genes and the same weakness to late blight, the disease the mould causes. Where did breeders later find genes that let potatoes resist it?",
+   "answer": "In wild relatives of the potato",
+   "choices": [
+    "In wild relatives of the potato",
+    "In old potato varieties grown in Ireland",
+    "In seedlings raised from the Lumper's seeds",
+    "In potatoes sprayed for years against it"
+   ],
+   "context": "Early breeders took eleven resistance genes, R1 to R11, from Solanum demissum, a wild potato of Mexico; the mould has since overcome every one, so breeders now stack several, many from other wild Mexican species. The variety of genes in a crop's wild relatives is a store that one uniform crop lacks, and the Lumper and Ireland's few other varieties had no such resistance to give, by seed or by tuber. Spraying protects a plant but never changes the genes it passes on.",
+   "facts": [
+    "F2",
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "The unit's scope (G8.L6) uses Ireland's potato famine as the case of one uniform crop wiped out by one disease, and genetic variety, here in wild relatives, as what protects a crop."
+  },
+  {
+   "tier": 4,
+   "topic": "biodiversity-and-stability",
+   "question": "Lucas Garibaldi and dozens of colleagues watched crop flowers in 41 crop systems around the world. In each field they counted visits by wild insects and by honeybees from managed hives, and the share of flowers that went on to set fruit. How did the two kinds of visitor compare?",
+   "answer": "Wild insect visits raised fruit set about twice as much",
+   "choices": [
+    "Wild insect visits raised fruit set about twice as much",
+    "Honeybee visits raised fruit set about twice as much",
+    "Both kinds of visit raised fruit set about equally",
+    "Wild insects mattered only where honeybees were few"
+   ],
+   "context": "More visits by wild insects went with more fruit in all 41 systems, while more honeybee visits raised fruit set clearly in only 14 percent of them, and an equal rise in wild insect visits helped twice as much. Wild insects helped whether honeybees were many or few, so the authors concluded that hives add to the work of wild pollinators rather than replacing it.",
+   "facts": [
+    "F9",
+    "F11"
+   ],
+   "grade_note": "8th grade's line (G8.L6) teaches that losing biodiversity weakens the services an ecosystem gives, pollination among them; this study weighs wild pollinators against managed hives."
+  },
+  {
+   "tier": 4,
+   "topic": "biodiversity-and-stability",
+   "question": "American farmers in 1970 planted many named hybrids of corn. That summer a race of a fungus, race T, spread through the Corn Belt and cut the country's corn harvest by about 15 percent. Why could one race of fungus harm so many of the hybrids?",
+   "answer": "Most shared one inherited trait that race T attacked",
+   "choices": [
+    "Most shared one inherited trait that race T attacked",
+    "Every hybrid had been grown from copies of one plant",
+    "Race T could attack every kind of corn equally well",
+    "Race T had been building up in the fields for decades"
+   ],
+   "context": "To make hybrid seed without pulling off the tassels by hand, seed companies had bred a trait called Texas male-sterile cytoplasm into about 85 to 90 percent of American hybrids, and race T's poison struck corn with that trait in particular; corn without it held up. Hybrid seed comes from crossing inbred parent lines, not from copies of one plant, yet hybrids that differ in many genes can still share one weakness. Race T had appeared only a year or two before, and the danger passed by 1972 as seed companies went back to normal cytoplasm.",
+   "facts": [
+    "F17",
+    "F18",
+    "F21"
+   ],
+   "grade_note": "The unit's scope (G8.L6) teaches that a crop with little genetic variety is easy for one disease to sweep; the 1970 corn blight shows the uniformity can hide inside many named varieties."
+  },
+  {
+   "tier": 4,
+   "topic": "biodiversity-and-stability",
+   "question": "Short experiments, most about two years long, had found that more than six or eight plant species in a grassland plot gave no further benefit. Peter Reich's team followed plots at Cedar Creek, Minnesota, sown with 1 to 16 prairie species, for more than a decade. What did they find?",
+   "answer": "Each added species raised soil fertility and plant growth",
+   "choices": [
+    "Each added species raised soil fertility and plant growth",
+    "Species beyond the first eight still added nothing",
+    "The richest plots grew less as their plants crowded in",
+    "The extra species helped only in years of drought"
+   ],
+   "context": "Over the years every added species, up to 16, brought a gradual rise in both the soil's fertility and the plants' growth, because different species gather water, nutrients and carbon in different ways and hold them in the ecosystem. The short experiments had ended before these gains built up, so species that seem spare for a year or two prove their worth over a decade, and losing them costs more than a short study can show.",
+   "facts": [
+    "F8"
+   ],
+   "grade_note": "8th grade's line (G8.L6) teaches that losing biodiversity weakens an ecosystem and its services, fertile soil among them; Cedar Creek's long experiments are the evidence."
+  },
+  {
+   "tier": 4,
+   "topic": "biodiversity-and-stability",
+   "question": "Gene Likens and Herbert Bormann had every tree and shrub cut in one small valley of the Hubbard Brook forest in New Hampshire late in 1965, and weedkiller sprayed for the next three summers so that nothing grew back. They compared the valley's stream with streams from the uncut forest around it, measuring both its flow and its nitrate, a nitrogen compound. What did they find?",
+   "answer": "More water flowed, carrying far more nitrate",
+   "choices": [
+    "More water flowed, carrying far more nitrate",
+    "More water flowed, carrying far less nitrate",
+    "Less water flowed, carrying far more nitrate",
+    "Less water flowed, carrying far less nitrate"
+   ],
+   "context": "With no leaves left to give water back to the air, the stream ran about 40 percent fuller in the first year. With no roots to take up the nitrate that soil microbes keep making, it washed out of the soil: the stream carried 41 times the nitrate of undisturbed streams that year and 56 times the next, almost always more than is safe in drinking water. Keeping its streams clean is one of the services a living forest gives.",
+   "facts": [
+    "F22",
+    "F23"
+   ],
+   "grade_note": "8th grade's line (G8.L6; NGSS MS-LS2-5) names clean water among the services an ecosystem keeps providing; the Hubbard Brook clear-cut is the classic experiment that measured it."
+  }
+ ],
+ "revised": {
+  "6ea183bec5": {
+   "old_hash": "6ea183bec5",
+   "why": "Judge (medium): the key was the only choice naming a meadow (three said 'Neither'), so the odd one out could be picked without the fact. 'Neither, for each species' plants look alike' is replaced by 'The second, for cuttings keep each species unchanged' (keeping a species pure mistaken for keeping its variety), so the choices now name the first, the second and neither. Judge (low): 'as many plants' is now 'the same number of plants'. Stem and key unchanged; the context answers the new choice."
+  },
+  "31f9d2930c": {
+   "old_hash": "31f9d2930c",
+   "why": "Judge (low, stance) and the lead: the context left the idea looking overturned. It now calls the 2017 work a conference reanalysis and adds the later experiments that set diversity by sowing (Isbell's team, 46 experiments, F6): richer plots resisted climate extremes better, though they recovered no faster. Stem, choices and key unchanged."
+  },
+  "4721b8b5f3": {
+   "old_hash": "84f7dc8f85",
+   "why": "Judge (medium): with both results in the stem, logic alone solved it (a steady total of swinging parts needs parts that offset), and two wrong choices fell to that logic or to the shared weather. As the judge proposed, the stem now gives only the steadier totals and keys the surprising half, that the single species swung more in the rich plots (F7). Wrong: they swung less (the natural guess from the steady total), about as much (diversity steadies nothing below the total), and in step with the rest (synchrony, the opposite of the offsetting, F7). The context teaches the compensation and the insurance effect."
+  },
+  "11d036fe0d": {
+   "old_hash": "b1c6da2fa3",
+   "why": "Judge (medium): 'a hybrid rice that blast seldom harms' set up the key, which then only restated it; that clause is cut, so the student must know that a resistant neighbour dilutes the disease, and the card teaches the hybrid's resistance. The weak water choice is replaced by 'The hybrid's roots gave off a poison that kills the fungus' (not among the mechanisms studied in variety mixtures, F19, F20). The closer now asks what helped, not what best explains, since the taller sticky rice's drier leaves helped too (F19) and no choice offers it. Fact-check (uncertain): the context adds the drier leaves and now says resistance genes never pass to a plant beside it, rather than that resistance is never caught (induced resistance is real, F20). Key unchanged."
+  },
+  "3678fdc549": {
+   "old_hash": "8ae8afad67",
+   "why": "Judge (medium): 'every plant carried the same genes, and none could resist' ruled out the seedlings and weakened the Irish varieties. The stem now says every plant carried 'the same genes and the same weakness', as the judge proposed, which keeps the clonal point and leaves both choices live. Judge (low, lane): the key no longer names a country; it is 'In wild relatives of the potato', with Solanum demissum and Mexico in the card."
+  },
+  "b4eaa9de8a": {
+   "old_hash": "7139561bbd",
+   "why": "Fact-check (error): 'each grown from seed of a cross between two inbred parent lines' was false for 1970, when double-cross hybrids were still widely grown (F21); the clause is gone. Judge (low): that clause also killed 'Every hybrid had been grown from copies of one plant' (the T2 Gros Michel lure); the stem now says only 'many named hybrids', so the lure is live, and the card says hybrids come from crosses. The key was the longest choice; it is now 'Most shared one inherited trait that race T attacked' and the four choices are of equal length. 'a new race' is now 'a race', since 'new' ruled out 'Race T had been building up in the fields for decades'; the card says race T was new. Fact-check (uncertain): race T appeared 'a year or two before' (1968 or 1969 by source, F21)."
+  }
+ },
+ "added": {
+  "7ee723d067": "Replaces 4f4644d10a. Clean water is one of the scope's four named ecosystem services and was not asked anywhere in the bank; flood control is already keyed at T3 (watersheds-and-groundwater, the marsh as a sponge), so it was not used. Hubbard Brook's clear-cut is the classic experiment on a forest keeping its stream clean (F22, F23). The 2x2 choices (more or less water, more or less nitrate) need both halves, and the stem says nothing of what plants do with water or nitrate."
+ },
+ "dropped": [
+  {
+   "old_hash": "4f4644d10a",
+   "question": "Taylor Ricketts' team studied coffee bushes on a large farm in Costa Rica, at sites beside patches of forest and up to 1.6 kilometres away. At each site they dusted some branches' flowers with extra pollen by hand and left other branches alone. Near the forest, both kinds of branch set about the same crop; far from it, the hand-dusted ones set about a fifth more. What did this show?",
+   "why": "Judge (high): the hand-pollination design gives the answer (extra pollen helped only far away, and of the four only bees carry pollen), and 'bees pollinate' is already keyed at T1 and T2. Fact-check (error): the key's 'reached only the nearer bushes' overstates (bees did reach the far sites, less often) and the card's 'too little pollen' is the cause the paper rules out (F24). Without the design in the stem, nothing sets water, shade and pests aside, so a question on why distance from the forest mattered cannot single out the bees either (F24). Pollination stays covered by 88f024cb05; a clean-water question on a newly sourced fact (Hubbard Brook, F22, F23) takes its place."
+  }
+ ]
+}

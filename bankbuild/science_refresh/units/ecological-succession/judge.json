@@ -1,0 +1,66 @@
+{"unit": "ecological-succession",
+ "questions": {
+  "9102047137": {"verdict": "ok", "issues": []},
+
+  "44dcb8ec7d": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Two wrong choices fall to common sense: a thin crust of lichen gives off no heat worth the name and weighs next to nothing, so 'Heat it gives off as it grows cracks the rock' and 'Its weight slowly grinds the rock down to sand' are not live for an 8th grader, leaving acid against salt. The grade's real confusion, roots wedging rock apart (the T1 wind-water-and-ice key about a tree's roots; a lichen has no roots, M3), is missing.",
+     "fix": "Replace 'Its weight slowly grinds the rock down to sand' with 'Its roots grow into cracks and split the rock', and 'Heat it gives off as it grows cracks the rock' with 'Rain it soaks up softens the rock into mud'."}
+   ]},
+
+  "72ba9dad35": {"verdict": "ok", "issues": []},
+
+  "590e7b95ad": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Separate groups, each kept to its own climate' is weak: the bands lie within a walk of one another along one shore, so they share one climate. 'Its own kind of sand' and the wind-cut forest stay live and the key still needs Cowles's insight, so it stands.",
+     "fix": "Replace it with a respectable rival reading, zonation by exposure: 'Separate groups, each suited to its distance from the lake's wind and spray'."}
+   ]},
+
+  "ccd53fe51e": {"verdict": "revise",
+   "issues": [
+    {"axis": "clarity", "severity": "high",
+     "what": "More than one answer is defensible from the stem. Willows came in the 1920s and are still there a century later, alder and spruce are scarce, and nothing in the stem says forest grows anywhere on this ground (the spruce and hemlock nearer the bay's mouth are only in the card), so 'Willows are the final stage of succession there' reads the data as well as the key does, and 'Ground left by the ice can never grow a forest' is not refuted either. The key is also only one of the researchers' two explanations: they blamed seeds that cannot reach so far up the bay as well (F14), so 'What does the long count suggest?' has more than one honest answer.",
+     "fix": "Key what the plots show that the grade teaches, rising diversity: '...Willows moved into many plots in the 1920s and are still there, while alder and spruce are scarce. Over the century, how did the number of plant species in the plots change?' Key: 'It rose, most of all on the oldest ground'. Wrong: 'It fell, as the willows crowded the others out'; 'It stayed the same, as the willows held the ground'; 'It rose, then fell back once the willows spread'. The card keeps the willows' long hold and both of the researchers' explanations."},
+    {"axis": "grade", "severity": "medium",
+     "what": "Early arrivals holding the ground against later ones (priority effects, the inhibition pathway) is college ecology. 8th grade (TEKS 8.12B) teaches the march of stages and how diversity changes along it, so the grade's own teaching points a student toward the wrong reading.",
+     "fix": "The rewrite above keys diversity, which is 8.12B's own wording."}
+   ]},
+
+  "de0eb768d7": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The stem rules out every wrong choice. Asked what the flattened forest had 'that the plain did not': 'Open sunlight where the old trees had stood' fails because the pumice plain had no trees either; 'Heat that the blast had left in the ground' fails because the plain was buried by 'flows of hot rock'; 'Ash that had settled more thickly on its floor' fails because the plain lay under 'a deep plain of fresh pumice'. Only the key survives a careful reading.",
+     "fix": "Ask about the flattened forest alone: 'Mount St. Helens blew out its north side in May 1980, and the blast flattened the forest for kilometres around. Within months green shoots were coming up among the fallen trunks. Where did most of the first plants come from?' Key: 'Roots and plants that had lived through the blast'. Wrong: 'Seeds blown in from forests the blast had missed'; 'Lichens and mosses that settled on the bare ash'; 'Seeds that birds carried in from far away'. The card keeps the pumice-plain contrast and the lupine."}
+   ]},
+
+  "ea12b80195": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Warmth from their bodies as they nest' is weak: no nesting bird warms the ground enough to matter to plants, so three choices are live. The key still needs the nutrient idea, so it stands.",
+     "fix": "Replace it with 'Soil churned and loosened as they built their nests'."}
+   ]},
+
+  "a480b07ae6": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The frame and the choices leave the moderate answer standing. A 1916 claim set against 'today' signals that the old view was revised, which sets aside 'Just as he said'; 'A myth, since communities change at random with no pattern' is the obvious overcorrection; and 'Fixed, but found only in forests and never elsewhere' is weak, since nothing in the stem or the grade suggests that forests alone have climaxes.",
+     "fix": "Replace 'Fixed, but found only in forests and never elsewhere' with a second wrong revision: 'Fixed, but reached in decades rather than centuries'. Softening the frame helps too: 'How do most ecologists now judge Clements's climax?'"}
+   ]},
+
+  "67c98e9246": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key alone echoes the stem's word 'kinds' ('more kinds of food and shelter') and alone speaks to variety; the other three would explain more animals, not more kinds. 'Its shade keeps out the hawks and owls that hunt them' is weak, since forests are where owls and many hawks live. 'Its trees make food from sunlight, which mosses cannot' is a fair lure, though it contradicts the T1 food-chains-and-food-webs key that moss is a producer.",
+     "fix": "Reword the key without the echo: 'Its layers of plants offer food and hiding places of many sorts'. Replace the hawk-and-owl choice with 'Its deep soil keeps the ground from freezing in winter'."}
+   ]},
+
+  "a3323c7e2e": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The insects that eat seedlings slowly die out' is weak, and 'each bigger kind of plant' points toward bigger roots and so toward soil. The key (rotting plants build soil) is close to the T1 earths-resources stem ('rotting plants and animals mix in'), but the stage-by-stage readying of the ground is the 8th-grade step, so it is not a re-ask.",
+     "fix": "Replace the insect choice with the grade's real confusion, that succession is evolution: 'Each stage's plants slowly evolve into bigger kinds'."}
+   ]}
+ },
+ "unit_notes": "Coverage of the scope is complete: primary against secondary (9102047137), pioneers making soil (44dcb8ec7d), the stages and the soil they build (a3323c7e2e), secondary succession on an old field and why one stage yields to the next (72ba9dad35), the discovery stories (Cowles, Cooper, Mount St. Helens, Surtsey), the climax and its modern caveat (a480b07ae6), and diversity along the way (67c98e9246). The plain definition (the gradual change of a place's species over time) is never asked on its own but runs through every stem, which is acceptable at T4. Soil is the key or the premise of four questions (9102047137 soil left, 44dcb8ec7d lichen acids, de0eb768d7 survivors and soil, a3323c7e2e soil deepening), and 9102047137 and de0eb768d7 both test the primary-secondary contrast; the de0eb768d7 fix moves it to where the first plants came from. Overlaps: nothing re-asks a lower-tier key. The T1 solids-liquids lava-freezing key and the T2 rock-cycle cooling key are untouched (a3323c7e2e's lure that lava takes centuries to cool is answered by Surtsey's lichens, a new fact); the T3 physical-or-chemical-change rain-acid weathering key is a different agent from the lichen's acids; the T2 St. Matthew lichen is not used. Within the batch: no question keys a food-web cascade or biodiversity's stability; 67c98e9246's rising diversity is succession's own ground ('how diversity grows along the way'), and the ccd53fe51e fix keeps it there. Lanes: Lake Michigan, Glacier Bay, Mount St. Helens, Surtsey and the Piedmont set scenes only; every key is the process. No kitchen examples. Voice is clean: no second person, no exclamation marks, no date openers, no singular 'they'."}

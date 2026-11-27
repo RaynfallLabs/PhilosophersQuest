@@ -1,0 +1,92 @@
+{"unit": "ecological-succession",
+ "questions": {
+  "9102047137": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: primary vs secondary succession is decided by whether soil is left (primary on barren substrate lacking soil; secondary after a disturbance that leaves the soil)", "result": "ok", "source": "https://grokipedia.com/page/Ecological_succession", "note": ""},
+    {"claim": "Fire is a secondary-succession disturbance; it leaves soil and organic matter largely intact, with seed banks and roots; secondary is faster", "result": "ok", "source": "https://grokipedia.com/page/Secondary_succession", "note": ""},
+    {"claim": "Wrong: whether returning plants match the old ones (not the definition)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ecological_succession", "note": ""},
+    {"claim": "Wrong: heat decides it (glacier-bared cold rock is primary; context's rebuttal is sound)", "result": "ok", "source": "https://grokipedia.com/page/Ecological_succession", "note": ""},
+    {"claim": "Wrong: width of area laid bare decides it", "result": "ok", "source": "https://grokipedia.com/page/Ecological_succession", "note": ""},
+    {"claim": "Context: lava, glacier-scraped rock and new islands start primary succession", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ecological_succession", "note": ""}
+   ]},
+  "44dcb8ec7d": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: acids a lichen gives off weather the rock surface", "result": "ok", "source": "https://grokipedia.com/page/Lichen", "note": "Grokipedia: 'By producing oxalic acid and other chelators, they break down silicate rocks.' Reviews (Adamo and Violante) name oxalic acid secreted by the mycobiont as among the most active weathering agents; hyphal penetration is a second, physical mechanism, but no choice claims it, so the key stands."},
+    {"claim": "Context: the fungus gives off acids such as oxalic acid", "result": "ok", "source": "https://geo.mtu.edu/KeweenawGeoheritage/MiTEP_ESI-2/Lichen_Rings_files/AdamoViolanteAppClaySci.pdf", "note": ""},
+    {"claim": "Context: lichen has no roots and takes water from rain, dew and humid air", "result": "ok", "source": "https://grokipedia.com/page/Lichen", "note": ""},
+    {"claim": "Wrong: heat from growth cracks rock; salt gathered from rain; weight grinding rock to sand (none is a lichen mechanism)", "result": "ok", "source": "https://grokipedia.com/page/Lichen", "note": ""},
+    {"claim": "Context: rock grains plus dead lichen form first thin soil where mosses take hold", "result": "ok", "source": "https://grokipedia.com/page/Ecological_succession", "note": ""}
+   ]},
+  "72ba9dad35": {"verdict": "ok",
+   "checks": [
+    {"claim": "Piedmont NC old-field sequence: horseweed year 1, asters year 2, broomsedge from year 3, young pine forest years 19-30, hardwood transition 70-100, oak-hickory after 100", "result": "ok", "source": "https://dukeforest.duke.edu/forest-environment/forest-succession/", "note": ""},
+    {"claim": "Scene: abandoned cotton field in the NC Piedmont", "result": "ok", "source": "https://en.wikipedia.org/wiki/Duke_Forest", "note": "Duke Forest land was farmed for cotton like much of the Piedmont."},
+    {"claim": "Key: hardwood seedlings grow in shade where young pines cannot", "result": "ok", "source": "https://dukeforest.duke.edu/forest-environment/forest-succession/", "note": "Duke: pines cannot reproduce 'in their own shade'; shade-tolerant species grow beneath them. Duke also names greater soil-water use by the pines; 'shade does the work' is a fair 8th-grade simplification."},
+    {"claim": "Wrong: hardwood seedlings outgrow pines in bright sun (Duke: pines grow faster in high light)", "result": "ok", "source": "https://dukeforest.duke.edu/forest-environment/forest-succession/", "note": ""},
+    {"claim": "Wrong: hardwood root poison kills pines (no source supports it)", "result": "ok", "source": "https://dukeforest.duke.edu/forest-environment/forest-succession/", "note": ""},
+    {"claim": "Wrong: pines die of old age by 40; context: southern pines live 80 to 120 years", "result": "ok", "source": "https://dukeforest.duke.edu/forest-environment/forest-succession/", "note": ""},
+    {"claim": "Context: field becomes hardwood forest in a century or two", "result": "ok", "source": "https://dukeforest.duke.edu/forest-environment/forest-succession/", "note": ""}
+   ]},
+  "590e7b95ad": {"verdict": "ok",
+   "checks": [
+    {"claim": "Henry Chandler Cowles studied the Lake Michigan (Indiana) dunes in the 1890s; published 1899 (Botanical Gazette)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ecological_succession", "note": "Grokipedia's Cowles page 404s; Grokipedia's Ecological succession page credits his 1899 Lake Michigan dune studies."},
+    {"claim": "Sequence lake to inland: beach grass, cottonwoods, pines, oak forest", "result": "ok", "source": "https://news.uchicago.edu/explainer/what-is-ecological-succession", "note": ""},
+    {"claim": "Key: bands are stages over time (space read as time); farthest dunes oldest", "result": "ok", "source": "https://news.uchicago.edu/explainer/what-is-ecological-succession", "note": "UChicago: 'the linear succession of these communities in space also represented a linear progression in time.'"},
+    {"claim": "Context: shoreline moved out over time, inland dunes oldest (shore stood about a mile inland a few thousand years ago)", "result": "ok", "source": "https://www.nps.gov/indu/learn/nature/plant-succession.htm", "note": ""},
+    {"claim": "Wrong: separate groups kept to their own sand or climate; remains of one wind-cut forest (contrary to Cowles's conclusion)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ecological_succession", "note": ""},
+    {"claim": "Context: his study helped found the idea of primary succession", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ecological_succession", "note": ""}
+   ]},
+  "ccd53fe51e": {"verdict": "ok",
+   "checks": [
+    {"claim": "William S. Cooper set up plots at Glacier Bay in 1916 on recently deglaciated ground; revisited for a century (Cooper 25 years, Lawrence to late 1980s, relocated 2016)", "result": "ok", "source": "https://www.nps.gov/articles/cooper-succession-plots.htm", "note": "One plot had been bare about 24 years in 1916 (exposed ~1892); sources call the ground recently deglaciated or 'at a glacier's edge', so 'just left bare' is a fair simplification."},
+    {"claim": "Willows invaded many plots in the 1920s and remain; alder and spruce rarer", "result": "ok", "source": "https://www.nps.gov/articles/cooper-succession-plots.htm", "note": ""},
+    {"claim": "Key: early arrivals can keep later ones out (inhibition / priority effect)", "result": "ok", "source": "https://www.nps.gov/articles/cooper-succession-plots.htm", "note": "Buma et al. 2017 (Ecology 98:1513): the plots 'do not support the classic facilitation model'; 'stochastic early community assembly and subsequent inhibition have dominated'; where Salix dominates there is no establishment of later species like Picea. NPS: pioneers 'monopolize resources and resist invasion'."},
+    {"claim": "Wrong: willows are the final stage (spruce-hemlock forest grows on older ground at Bartlett Cove)", "result": "ok", "source": "https://www.nps.gov/glba/learn/nature/change.htm", "note": ""},
+    {"claim": "Wrong: ground loses species with age (species richness generally rose)", "result": "ok", "source": "https://www.nps.gov/articles/cooper-succession-plots.htm", "note": ""},
+    {"claim": "Wrong: ice-bared ground can never grow a forest", "result": "ok", "source": "https://www.nps.gov/glba/learn/nature/change.htm", "note": ""},
+    {"claim": "Context: dispersal limits far up the bay; richness rose over the century, most in the oldest plots near the bay's mouth", "result": "ok", "source": "https://www.nps.gov/articles/cooper-succession-plots.htm", "note": ""}
+   ]},
+  "de0eb768d7": {"verdict": "ok",
+   "checks": [
+    {"claim": "Mount St. Helens lateral blast out of the north flank, 18 May 1980", "result": "ok", "source": "https://grokipedia.com/page/1980_eruption_of_Mount_St._Helens", "note": ""},
+    {"claim": "Pyroclastic flows near the crater laid down the Pumice Plain; blast flattened forest farther out", "result": "ok", "source": "https://grokipedia.com/page/1980_eruption_of_Mount_St._Helens", "note": "Pyroclastic deposits 3-12 m on the pumice plain."},
+    {"claim": "Key: blowdown zone kept survivors (late snow shielded plants; plants in soil on rootwads; resprouting from roots); none survived in the pyroclastic zone; survivors speed recovery", "result": "ok", "source": "https://webharvest.gov/peth04/20041021031853/http:/biology.usgs.gov/s+t/SNT/noframe/np105.htm", "note": ""},
+    {"claim": "Wrong: open sunlight (the pumice plain was open too); leftover heat; thicker ash (pumice plain deposits were far thicker)", "result": "ok", "source": "https://webharvest.gov/peth04/20041021031853/http:/biology.usgs.gov/s+t/SNT/noframe/np105.htm", "note": ""},
+    {"claim": "Context: prairie lupine was the first plant on the Pumice Plain two years after the eruption; dead stems trapped seeds and made a seedbed; leaves added nitrogen and organic matter", "result": "ok", "source": "https://www.mshslc.org/?p=822", "note": ""}
+   ]},
+  "ea12b80195": {"verdict": "ok",
+   "checks": [
+    {"claim": "Surtsey eruption began November 1963 (reached surface 14 Nov 1963), ended 5 June 1967; only a few scientists may land", "result": "ok", "source": "https://grokipedia.com/page/Surtsey", "note": ""},
+    {"claim": "First 20 years: 20 species seen, only 10 established", "result": "ok", "source": "https://en.wikipedia.org/wiki/Surtsey", "note": ""},
+    {"claim": "Gull colony from the mid-1980s (1984 per Wikipedia; 'after 1985' per Magnusson et al. 2014); 'some twenty years' holds", "result": "ok", "source": "https://bg.copernicus.org/articles/11/5521/2014/", "note": ""},
+    {"claim": "Key: gulls bring sea nutrients in droppings; inside the colony cover, richness, diversity, biomass and soil carbon significantly higher; outside stayed relatively barren", "result": "ok", "source": "https://bg.copernicus.org/articles/11/5521/2014/", "note": "Grokipedia: guano rich in marine-derived nitrogen and phosphorus; cover up to 90% in seabird areas vs ~7% elsewhere."},
+    {"claim": "Wrong: shelter among nests, protection from insects, body warmth (none supported)", "result": "ok", "source": "https://grokipedia.com/page/Surtsey", "note": ""},
+    {"claim": "Context: birds also carried seeds, but nutrient transfer named as a major driver", "result": "ok", "source": "https://bg.copernicus.org/articles/11/5521/2014/", "note": "Abstract: seabirds 'through their transfer of nutrients from sea to land, are major drivers'. 'The main force' is a close paraphrase."}
+   ]},
+  "a480b07ae6": {"verdict": "error",
+   "checks": [
+    {"claim": "Clements, Plant Succession (1916): one climax per climate, self-perpetuating; community likened to an organism that arises, grows, matures and dies", "result": "ok", "source": "https://grokipedia.com/page/Climax_community", "note": "Wikipedia quotes Clements 1916: 'As an organism the formation arises, grows, matures, and dies.'"},
+    {"claim": "Key: today a climax is seen as less fixed, since disturbance keeps resetting patches", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ecological_succession", "note": "Wikipedia: 'the notion of a stable climax vegetation has been largely abandoned'; Grokipedia: climax now 'a transient or probabilistic configuration', patch dynamics."},
+    {"claim": "Wrong: just as he said; random with no pattern; fixed but only in forests (Grokipedia lists grassland and chaparral climaxes)", "result": "ok", "source": "https://grokipedia.com/page/Climax_community", "note": ""},
+    {"claim": "Context: Gleason 1926 called a plant association 'merely a coincidence', not an organism", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ecological_succession", "note": ""},
+    {"claim": "Context: Gleason challenged Clements 'as early as 1926'", "result": "error", "source": "https://en.wikipedia.org/wiki/Henry_A._Gleason", "note": "Gleason first challenged Clements in 1917 ('The Structure and Development of the Plant Association'); 1926 was the stronger, classic statement. 'As early as 1926' wrongly makes 1926 the start. Fix: 'Henry Gleason challenged Clements from 1917, and in 1926 called a plant community a coincidence rather than an organism.' (or simply 'in 1926')."}
+   ]},
+  "67c98e9246": {"verdict": "ok",
+   "checks": [
+    {"claim": "Glacier-bared ground: crusts and mosses first, shrubs, forest by about two centuries (hemlock canopy ~200 years at Glacier Bay)", "result": "ok", "source": "https://www.nps.gov/glba/learn/nature/change.htm", "note": ""},
+    {"claim": "Key: layered vegetation gives more food and shelter, so more animal species (animal richness rises with habitat complexity; foliage height diversity predicts bird diversity across seral stages)", "result": "ok", "source": "https://grokipedia.com/page/Ecological_succession", "note": "MacArthur and MacArthur 1961 and later work across successional stages support it."},
+    {"claim": "Wrong: forest oxygen (air is well mixed, ~21% O2 everywhere)", "result": "ok", "source": "https://grokipedia.com/page/Atmosphere_of_Earth", "note": ""},
+    {"claim": "Wrong: mosses cannot photosynthesize (they do)", "result": "ok", "source": "https://grokipedia.com/page/Moss", "note": ""},
+    {"claim": "Wrong: shade keeps out hawks and owls (unsupported; forests hold many raptors)", "result": "ok", "source": "https://grokipedia.com/page/Ecological_succession", "note": ""},
+    {"claim": "Context: lichen stage has sparse fauna; species climb as layers build", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ecological_succession", "note": ""}
+   ]},
+  "a3323c7e2e": {"verdict": "ok",
+   "checks": [
+    {"claim": "Key: each stage's dead remains deepen and enrich the soil, letting bigger plants in", "result": "ok", "source": "https://www.nps.gov/indu/learn/nature/plant-succession.htm", "note": "NPS: 'As plants die and decay, their remains enrich the soil.' Grokipedia: soil development progressively improves fertility."},
+    {"claim": "Wrong: each stage lets more sunlight reach the ground (later stages cast more shade; pioneers are shade-intolerant)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ecological_succession", "note": ""},
+    {"claim": "Wrong: lava takes centuries to cool; context: lichens on Surtsey's lava in 1970, three years after the eruption ended in June 1967", "result": "ok", "source": "https://en.wikipedia.org/wiki/Surtsey", "note": ""},
+    {"claim": "Wrong: seed-eating insects die out (unsupported)", "result": "ok", "source": "https://grokipedia.com/page/Ecological_succession", "note": ""},
+    {"claim": "Sequence lichens/mosses, grasses, shrubs, trees on new rock (textbook primary succession)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ecological_succession", "note": ""}
+   ]}
+ },
+ "unit_notes": "9 ok, 1 error. The one error is in a context line (Gleason's challenge began 1917, not 1926). Glacier Bay key checked against Buma et al. 2017: 'stochastic early community assembly and subsequent inhibition have dominated', so the inhibition reading is the paper's own. Lichen weathering: oxalic acid from the fungal partner is the main chemical agent; hyphal penetration also acts physically, but no choice claims it. Grokipedia pages for Henry Chandler Cowles and Henry Gleason return 404; Wikipedia and UChicago were used instead."}
