@@ -93,3 +93,14 @@ https://arxiv.org/abs/1602.06497
 - How Sonic Wind No. 1 was braked (water brakes are commonly said; not confirmed in the sources read).
 - Grokipedia's claim that Descartes's rules predicted an equal moving ball stopping dead (his sixth rule does not say this; not used).
 - Huygens's own pendulum demonstration with ivory balls (Grokipedia only; not used).
+
+## Added in the revision (2026-11-26)
+
+F21. Stapp's run of 10 December 1954 (NASA history of the Air Force's space biology work): "no windshield at all was used"; "Windblast was as high as 7.7 pounds per square inch, or better than 1,100 pounds per square foot"; "This test was designed to explore both deceleration and windblast". Water brakes stopped the sled in 1.4 seconds, with a plateau of 25 g or more for over a second and peaks of 35 and 40 g (Wikipedia and Grokipedia give the commonly cited 46.2 g, F16). "What the run proved, essentially, was that windblast" was "negligible and unnoticeable in comparison with deceleration effects of g-plateaus of more than 25 g's for 1.1 seconds." So the wind did press on him at top speed, but far less than the stop.
+    https://www.nasa.gov/wp-content/uploads/static/history/afspbio/part4-2.htm ; https://en.wikipedia.org/wiki/John_Stapp
+
+F22. Huygens's collision rules (De Motu Corporum ex Percussione) "derived rules for elastic impacts between bodies" (Grokipedia, Christiaan Huygens); at the Royal Society in 1668-1669 Wren and Huygens treated perfectly elastic (hard) bodies and Wallis perfectly inelastic (soft) ones (Oeuvres de Huygens XVI; arXiv 2512.22842). That motion turned into heat, heat being a form of energy, was established much later, by James Prescott Joule in the 1840s and 1850s (Grokipedia, Mechanical equivalent of heat: "experimentally established in the 1840s and 1850s by British physicist James Prescott Joule").
+    https://grokipedia.com/page/Christiaan_Huygens ; https://www.dbnl.org/tekst/huyg003oeuv16_01/huyg003oeuv16_01_0006.php ; https://arxiv.org/html/2512.22842v1 ; https://grokipedia.com/page/Mechanical_equivalent_of_heat
+
+F23. A crumple zone works during the crash, by folding once the car has hit: "the vehicle's change in momentum is fixed for a given speed and mass", and the crumpling lengthens the time over which that change happens (Grokipedia, Crumple zone; F18). It cannot lower the speed the car is going when it hits; the work-energy formula on the same page takes v as the impact velocity. MISCONCEPTION (for a wrong choice): that a crumple zone lowers the speed of impact.
+    https://grokipedia.com/page/Crumple_zone

@@ -161,3 +161,26 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
     - Ruben and Kamen's heavy oxygen;
     - Priestley's mint.
   - T4 life still keeps about 61 against its target of 55, so no top-up is needed. If the pick runs short, a top-up should ask Ingenhousz's leaves spoiling the air in the dark.
+- **The nucleus ladder (lead's ruling, 2026-11-26).**
+  - `inside-the-atom` (T4) keys:
+    - protons and neutrons in the nucleus;
+    - the atomic number;
+    - charge;
+    - Thomson and Rutherford;
+    - Geiger and Marsden;
+    - Bohr's levels;
+    - Chadwick's neutron.
+  - `fission-fusion-and-mass-energy` (T5) owns:
+    - the four forces;
+    - fission and the chain reaction;
+    - Meitner and Frisch;
+    - fusion in general (light nuclei joining; the huge heat needed; fusion power research);
+    - E = mc2 as a little mass becoming much energy;
+    - nuclear power's benefits and its waste.
+  - `how-the-sun-shines` (T5) owns:
+    - the Sun's core (15 million degrees);
+    - energy's long trip out, and the eight minutes;
+    - the Sun's age;
+    - sunspots and space weather;
+    - stars forging the elements.
+  - So the fission unit may name the Sun as fusion's example but must not key the Sun's core facts.

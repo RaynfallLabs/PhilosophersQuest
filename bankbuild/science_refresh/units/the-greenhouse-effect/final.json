@@ -1,0 +1,194 @@
+{
+ "unit": "the-greenhouse-effect",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "the-greenhouse-effect",
+   "question": "Sunlight passes through the air and warms the ground. The warm ground then gives off invisible infrared rays, which head upward toward space. Water vapour, carbon dioxide and a few other gases in the air keep the ground warmer than it would be without them. How do these greenhouse gases keep it warmer?",
+   "answer": "They absorb the rays and send part of them back down",
+   "choices": [
+    "They absorb the rays and send part of them back down",
+    "They reflect the rays back down, as a mirror does",
+    "They trap all the rays, so none escape into space",
+    "They stop warm air rising, as a glass roof does"
+   ],
+   "context": "A greenhouse gas molecule absorbs an infrared ray and soon gives the energy off again in any direction, so part of it heads back down to the ground and part goes on upward. Nothing bounces off the gases as light bounces off a mirror, and in the end Earth sends about as much energy out to space as it takes in from sunlight. A glass greenhouse works another way, mostly by keeping its warm air from rising and drifting off.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "grade_note": "8th grade (G8.E7; TEKS 8.11, NGSS MS-ESS3-5) teaches the greenhouse effect as gases trapping outgoing heat; the step a grade deeper than 7th is how they do it: absorbed, then sent out again, part back down."
+  },
+  {
+   "tier": 4,
+   "topic": "the-greenhouse-effect",
+   "question": "Eunice Foote set two matching glass cylinders, with thermometers inside them, in the sunshine in 1856. One cylinder was filled with carbon dioxide, and the other with ordinary air. She read the thermometers every few minutes, then took the cylinders out of the sunlight. What did she find?",
+   "answer": "The carbon dioxide grew hotter and stayed hot longer",
+   "choices": [
+    "The carbon dioxide grew hotter and stayed hot longer",
+    "The ordinary air grew hotter and stayed hot longer",
+    "The two grew equally hot and cooled at the same rate",
+    "The carbon dioxide grew hotter but cooled more quickly"
+   ],
+   "context": "Foote's carbon dioxide reached 125 degrees Fahrenheit, against 106 for ordinary air in her tests, and took many times as long to cool; she wrote that an atmosphere of that gas would give Earth a high temperature. Joseph Henry read her paper to a scientific meeting in Albany, New York, that August. Her cylinders took in the whole of sunlight, so they could not single out the infrared rays the ground gives off; John Tyndall's experiments did that three years later.",
+   "facts": [
+    "F12",
+    "F13",
+    "F14"
+   ],
+   "grade_note": "8th grade (G8.E7) teaches that carbon dioxide traps heat; Foote's side-by-side cylinders are the first experiment that showed it, and middle-school lessons on the greenhouse effect (the AIP's Foote and Tyndall guide) use them."
+  },
+  {
+   "tier": 4,
+   "topic": "the-greenhouse-effect",
+   "question": "John Tyndall began measuring how gases absorb heat at the Royal Institution in London in 1859. He sent invisible rays from a copper cube of boiling water down a long brass tube to a detector at the far end. Nitrogen and oxygen let almost all the heat pass, yet ordinary air from his laboratory absorbed far more. Which of that air's gases did most of the absorbing?",
+   "answer": "Its water vapour",
+   "choices": [
+    "Its water vapour",
+    "Its carbon dioxide",
+    "Its methane",
+    "Its ozone"
+   ],
+   "context": "Tyndall found that the water vapour in his laboratory air absorbed at least thirteen times as much heat as the dry air itself, which made it the strongest absorber among the air's gases. Carbon dioxide absorbed heat too, but there is far less of it in the air. He wrote that every change in the air's water vapour must change the climate.",
+   "facts": [
+    "F15",
+    "F16",
+    "F17",
+    "F18",
+    "M5"
+   ],
+   "grade_note": "8th grade (G8.E7) names water vapour with carbon dioxide and methane as greenhouse gases; Tyndall's tube is the classic experiment that measured gases absorbing heat."
+  },
+  {
+   "tier": 4,
+   "topic": "the-greenhouse-effect",
+   "question": "Svante Arrhenius, a Swedish chemist, worked through thousands of sums by hand and published the results in 1896. Using Samuel Langley's measurements of invisible heat rays from the Moon, he calculated how much warmer or colder each band of latitude would be with less carbon dioxide in the air, or with more. What puzzle had set him to work?",
+   "answer": "What had brought on the ice ages",
+   "choices": [
+    "What had brought on the ice ages",
+    "Why some years are warmer than others",
+    "Why Venus is far hotter than Earth",
+    "Why the poles are colder than the tropics"
+   ],
+   "context": "No one had a good explanation of how Earth's climate could have turned cold enough for an ice age. Arrhenius calculated that cutting the air's carbon dioxide to a little over half would cool the middle latitudes by 4 to 5 degrees Celsius, enough, he thought, for an ice age. He called the work tedious calculations.",
+   "facts": [
+    "F19",
+    "F20",
+    "F21"
+   ],
+   "grade_note": "8th grade (G8.E7) teaches the greenhouse gases and the natural causes of climate change; Arrhenius's 1896 calculation, with carbon dioxide as a cause of the ice ages, is the first estimate of how much the gas warms the planet."
+  },
+  {
+   "tier": 4,
+   "topic": "the-greenhouse-effect",
+   "question": "Many scientists of the 1950s expected the oceans to soak up nearly all the carbon dioxide given off by burning coal and oil. Charles David Keeling began measuring the gas in March 1958 at an observatory high on Mauna Loa, a volcano in Hawaii, standing on bare lava far from any continent. What had his readings shown by 1960?",
+   "answer": "The gas building up from one year to the next",
+   "choices": [
+    "The gas building up from one year to the next",
+    "The gas holding steady, soaked up by the oceans",
+    "The gas slowly falling, taken in by plants and seas",
+    "The gas jumping up and down, with no clear pattern"
+   ],
+   "context": "Keeling's first reading was 313 parts per million. The yearly average has risen every year since, and readings had reached about 430 parts per million by early 2026, the yearly rise having grown from about 0.7 to more than 2.5 parts per million. Roger Revelle and Hans Suess had already shown that the ocean's surface water takes up far less of the gas than a simple calculation predicts.",
+   "facts": [
+    "F22",
+    "F23",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "8th grade (G8.E7) teaches that burning fuels releases greenhouse gases; the Keeling record from Mauna Loa is the measurement the grade's lessons use to show carbon dioxide rising."
+  },
+  {
+   "tier": 4,
+   "topic": "the-greenhouse-effect",
+   "question": "Charles David Keeling's carbon dioxide record from Mauna Loa does not climb smoothly. Every year the readings fall from about May until October, then climb again until the next May, a swing of about six parts per million. What causes this yearly zigzag?",
+   "answer": "Northern forests and fields growing, then dying back",
+   "choices": [
+    "Northern forests and fields growing, then dying back",
+    "Southern forests and fields growing, then dying back",
+    "Polar sea ice freezing over, then melting away",
+    "The volcano below venting more, then venting less"
+   ],
+   "context": "Most of Earth's land, and so most of its plants, lies in the northern half of the world. Through the northern spring and summer those plants take carbon dioxide from the air as they grow, and in autumn and winter dead leaves and plants decay and give it back. The southern half has far less land, and the record at the South Pole shows almost no yearly swing.",
+   "facts": [
+    "F22",
+    "F26"
+   ],
+   "grade_note": "8th grade (G8.E8; TEKS 8.11C) teaches carbon moving between the air and living things by photosynthesis, respiration and decay; the Keeling zigzag is that exchange seen in the whole air."
+  },
+  {
+   "tier": 4,
+   "topic": "the-greenhouse-effect",
+   "question": "Carbon is always on the move between Earth's great stores, passing from one to another and back over time. Leaving aside the vast amount locked up in rocks such as limestone, which store holds the most carbon?",
+   "answer": "The oceans, dissolved in sea water",
+   "choices": [
+    "The oceans, dissolved in sea water",
+    "Living things and the soil beneath them",
+    "Fossil fuels, such as coal and oil",
+    "The air, as carbon dioxide gas"
+   ],
+   "context": "Sea water holds about 38,000 billion tonnes of carbon, some forty to fifty times as much as the air. Coal, oil and gas hold perhaps 5,000 to 10,000 billion tonnes, the soil 1,500 to 2,400 and living plants 450 to 650. Carbon moves between these stores all the time: plants take it from the air, breathing and decay return it, the sea dissolves it, and burning sends the carbon of fossil fuels, buried for millions of years, back into the air.",
+   "facts": [
+    "F27",
+    "F28",
+    "F35"
+   ],
+   "grade_note": "8th grade (G8.E8; TEKS 8.11C) teaches the carbon cycle's stores (air, living things, oceans, rocks and fossil fuels) and how carbon moves between them."
+  },
+  {
+   "tier": 4,
+   "topic": "the-greenhouse-effect",
+   "question": "Mount Tambora, a volcano on the island of Sumbawa in Indonesia, exploded in April 1815, the largest eruption in recorded history. Its cloud rose more than 40 kilometres, high into the stratosphere. The next year snow fell in New England in June, and crops failed across Europe. What in the cloud cooled the world?",
+   "answer": "Tiny droplets formed from its sulfur gas",
+   "choices": [
+    "Tiny droplets formed from its sulfur gas",
+    "Fine ash formed from its shattered rock",
+    "Steam formed from the water in its magma",
+    "Carbon dioxide given off by its magma"
+   ],
+   "context": "Tambora threw about 60 million tonnes of sulfur dioxide into the stratosphere, where it became a haze of tiny sulfuric acid droplets that reflected sunlight back into space for a year or more, and 1816 became the year without a summer. Ash falls out of the sky within days to weeks, and steam and carbon dioxide are greenhouse gases, which warm rather than cool.",
+   "facts": [
+    "F29",
+    "F30",
+    "F31",
+    "M6"
+   ],
+   "grade_note": "8th grade (G8.E7; TEKS 8.11A) teaches volcanic eruptions as a natural cause of climate change whose gases cool the planet; Tambora's year without a summer is the classic case."
+  }
+ ],
+ "revised": {
+  "8e509b1fb7": {
+   "old_hash": "8e509b1fb7",
+   "why": "Judge (medium, stance) and fact-check (uncertain): the card's doubling figure (5 to 6 degrees) is a climate-sensitivity number the unit's framing leaves to the T5 climate unit. The clause is gone; the card now says only that he 'calculated' the cooling, 'enough, he thought, for an ice age', which keeps his ice-age cause as his own hypothesis. Judge (low): the weak lure 'Why cities are warmer than the countryside' is now 'Why some years are warmer than others', which the stem's 'warmer or colder ... with less carbon dioxide in the air, or with more' leaves live. Stem unchanged."
+  },
+  "bca954deb3": {
+   "old_hash": "bca954deb3",
+   "why": "Judge (low): by 1960 Keeling had about two years of readings, so 'year after year' overstated the record he had then. The key is now 'The gas building up from one year to the next' (Scripps: the 1959 average had risen and rose further in 1960, F24), no longer than the lures. Stem and card unchanged."
+  },
+  "f239f496c8": {
+   "old_hash": "2e4b7e4caf",
+   "why": "Fact-check (uncertain): 'limestone and other rocks like it' set aside only the carbonate rocks, while kerogen in shale (about 15 million GtC) and the upper mantle (about 120 million GtC) are not like limestone and hold far more than the ocean. The stem now sets aside all rocks: 'the vast amount locked up in rocks such as limestone' (the lead's wording; F35). Choices, key and card unchanged; the limestone store itself is still not keyed (T3's)."
+  }
+ },
+ "added": {
+  "e706032189": "Replaces 597e80884c (dropped: above the grade). Applies the greenhouse mechanism to a new case: dry desert air sends little of the ground's infrared back, so El Paso cools far more than a humid town (F32 PSU METEO 3: El Paso near 90 F by day and 50 F at night, humid Southeast nights in the 70s even when clear and calm; F33 Grokipedia, Radiative cooling and Desert climate; F34 Grokipedia, Density of air, for the 'thinner' lure; F3, F6)."
+ },
+ "dropped": [
+  {
+   "old_hash": "597e80884c",
+   "question": "Nitrogen and oxygen make up about 99 percent of dry air, yet the infrared rays given off by the warm ground pass through them almost untouched. Water vapour, carbon dioxide and methane, present in far smaller amounts, absorb those rays. What sets nitrogen and oxygen apart?",
+   "why": "Judge (medium, grade): why nitrogen and oxygen let infrared through (each molecule two identical atoms, no changing charge when it vibrates) is high-school chemistry, beyond a typical 8th-grade course, and the key is a structural fact taken on trust. The fact cannot be brought to the grade by rewording, so the slot goes to an application of the grade's own mechanism (the judge's proposal): a dry desert night against a humid one."
+  },
+  {
+   "old_hash": "e706032189",
+   "question": "Two towns can both reach about 32 degrees Celsius on a clear, calm afternoon. In a humid town in the southeastern United States the night may stay above 21 degrees, while in El Paso, Texas, where the desert air is dry, it can fall to about 10. All night the ground in each town gives off its heat as infrared rays. Why does El Paso cool so much further?",
+   "why": "failed the re-check: The new question overstates the mechanism it applies. Dry desert air still holds all its carbon dioxide and some water vapour, and it still sends most of the ground's infrared back down. On a clear night the ground's net loss is 40-100 W/m2 (Grokipedia, Radiative cooling) against roughly 350-400 W/m2 emitted. A standard clear-sky (Brutsaert) estimate gives about 70 percent sent back in dry air, against about 85-90 percent in humid air. So the key's 'sends little of that heat back down' and the card's 'most of the ground's infrared escapes to space' are both false. PSU says only that dry air limits the amount of infrared the ground receives, and the unit's own first card has carbon dioxide sending heat back. Second problem: El Paso stands about 1,140 m up, so its air IS thinner than a lowland Southeast town's. The card's flat 'Dry air is not thinner than humid air' misleads for this town. The lure itself is still wrong, since rising warm air is not how the ground cools at night. Fix: key 'Its dry air sends less of that heat back down', and card 'more of the ground's infrared escapes to space'. Better also to drop 'thinner' from that lure, e.g. 'Its dry air lets warm air rise away faster'. Overlap cleared: T1 weather-and-climate-basics keys the word humidity (1e0d8ebf1a) and the sea breeze (f62f365e71), not night cooling. T3 heat-on-the-move keys radiation as a way heat travels, not back-radiation."
+  }
+ ]
+}

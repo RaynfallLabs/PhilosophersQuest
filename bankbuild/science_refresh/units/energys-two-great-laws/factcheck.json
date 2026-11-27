@@ -1,0 +1,117 @@
+{
+ "unit": "energys-two-great-laws",
+ "questions": {
+  "3446e123a2": {
+   "verdict": "error",
+   "checks": [
+    {"claim": "Joule was a brewer in Salford", "result": "ok", "source": "https://grokipedia.com/page/James_Prescott_Joule", "note": ""},
+    {"claim": "Falling weights turned a paddle wheel in a vessel of water; the warming was read on a fine thermometer", "result": "ok", "source": "https://grokipedia.com/page/James_Prescott_Joule", "note": "Brass paddle wheel with eight arms in a copper vessel; thermometers read to about 1/200 degree F. 'Can' for the copper vessel is a fair plain word."},
+    {"claim": "He tried mercury too, and an iron wheel grinding on iron (the 1850 paper's five series)", "result": "ok", "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4360093/", "note": "Five series: water with a brass wheel (772.692 ft-lb per Btu), mercury with a wrought-iron wheel (772.814, 775.352), a cast-iron wheel rubbing a stationary cast-iron wheel under mercury (776.045, 773.930)."},
+    {"claim": "Every way, the fall of 772 pounds through one foot warmed a pound of water by 1 degree F", "result": "error", "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4360093/", "note": "Minor. 772 is Joule's figure from the water series (the one he trusted most). The mercury and iron series gave 772.8 to 776.0, so the rate was not 772 'every way'. It was close to 772 every way. Fix: 'Every way, close to 772 pounds falling one foot made enough heat to warm a pound of water by one degree Fahrenheit.'"},
+    {"claim": "Key: the steady rate showed that work and heat are two forms of one thing", "result": "ok", "source": "https://grokipedia.com/page/James_Prescott_Joule", "note": "Strictly, heat and work are two ways of passing on energy, but 'two forms of one thing' (energy) is the standard 9th-grade reading of the mechanical equivalent."},
+    {"claim": "Wrong: rubbing squeezes out heat stored in matter (caloric view)", "result": "ok", "source": "https://grokipedia.com/page/Caloric_theory", "note": ""},
+    {"claim": "Wrong: friction destroys a share of the work", "result": "ok", "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4360093/", "note": "Joule's conclusion: the heat is always proportional to the force spent."},
+    {"claim": "Wrong: falling weights make new energy as they fall", "result": "ok", "source": "https://grokipedia.com/page/Conservation_of_energy", "note": ""},
+    {"claim": "Context: Mayer, a German ship's doctor, argued in 1842 that heat and work are one indestructible force", "result": "ok", "source": "https://grokipedia.com/page/Julius_von_Mayer", "note": "1842 paper 'Bemerkungen ueber die Kraefte der unbelebten Natur': force is indestructible and can only be changed in form; heat and motion are forms of it. He was ship's doctor on the Java in 1840-41 and a town physician in Heilbronn by 1842; 'a German ship's doctor' is a fair label, but 'a German doctor who had sailed as a ship's doctor' would be more exact."},
+    {"claim": "Context: Joule's measurements, set out in full in 1850, persuaded physicists", "result": "ok", "source": "https://grokipedia.com/page/James_Prescott_Joule", "note": "Grokipedia credits Joule's precise measurement for broad acceptance; Kelvin, sceptical in 1847, built on Joule by 1851."}
+   ]
+  },
+  "709939f019": {
+   "verdict": "error",
+   "checks": [
+    {"claim": "Rumford oversaw the boring of brass cannon at the Munich arsenal and reported in 1798", "result": "ok", "source": "https://av8n.com/physics/refs/rumford-1798.html", "note": "Philosophical Transactions 88 (1798); a brass six-pounder cast solid."},
+    {"claim": "Horses turned a blunt borer that ground against a cannon", "result": "error", "source": "https://av8n.com/physics/refs/rumford-1798.html", "note": "Backwards. Rumford's text: a blunt steel borer was 'forcibly shoved (by means of a strong screw) against the bottom of the bore', and 'the cylinder was turned round on its axis (by the force of horses)'. The horses turned the cannon. The borer was held still. Fix: 'A blunt borer was pressed hard into a cannon sealed in a box of cold water, and horses turned the cannon against it.'"},
+    {"claim": "Water started cold and boiled after two and a half hours with no fire", "result": "ok", "source": "https://av8n.com/physics/refs/rumford-1798.html", "note": "18.77 lb of water at 60 F; 'at two hours thirty minutes it actually boiled'."},
+    {"claim": "The heat kept coming as long as the horses walked (inexhaustible)", "result": "ok", "source": "https://av8n.com/physics/refs/rumford-1798.html", "note": ""},
+    {"claim": "Key: heat is a kind of motion, not a material substance", "result": "ok", "source": "https://av8n.com/physics/refs/rumford-1798.html", "note": "Anything a body can furnish without limit 'cannot possibly be a material substance'; he could think of it only as MOTION."},
+    {"claim": "Wrong choices: fluid squeezed from the brass; fluid drawn from water and air; chemical change in the metal", "result": "ok", "source": "https://av8n.com/physics/refs/rumford-1798.html", "note": "Each was tested and excluded by Rumford (chips vs slips, the water gaining heat, the air shut out, no change in the metal)."},
+    {"claim": "Context: chips ground off the gun warmed water just as solid brass did", "result": "ok", "source": "https://av8n.com/physics/refs/rumford-1798.html", "note": "Equal weights of chips and slips, heated alike and put in equal cold water, warmed it to the same degree."},
+    {"claim": "Context: caloric believers held their theory could be patched; it took Joule's 1840s measurements to retire it", "result": "ok", "source": "https://en.wikipedia.org/wiki/An_Inquiry_Concerning_the_Source_of_the_Heat_Which_Is_Excited_by_Friction", "note": "Caloric did survive Rumford: Henry and Thomas Thomson thought it could be adapted, and Carnot (1824) and Fourier still used it. Joule's measurements were 'pivotal'. Grokipedia (Caloric_theory) places the final retirement with Clausius and Thomson building on Joule around 1850. A fair simplification; 'Joule's measurements in the 1840s, and the theory built on them' would be more exact."}
+   ]
+  },
+  "83f7acd7e3": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Sadi Carnot, a French engineer, 1824, the most work a perfect frictionless engine can get from heat", "result": "ok", "source": "https://grokipedia.com/page/Nicolas_Léonard_Sadi_Carnot", "note": "French military engineer; Reflexions published Paris, June 1824; an ideal reversible engine with no friction."},
+    {"claim": "Coal steam at about 540 C; OTEC surface and deep water about 20 C apart", "result": "ok", "source": "https://grokipedia.com/page/Thermal_power_station", "note": "Subcritical coal plants 'typically at steam temperatures around 540C'. OTEC: 'typically a difference of 20C or more' (https://grokipedia.com/page/Ocean_thermal_energy_conversion)."},
+    {"claim": "Key: the steam engine gets more work, its sides differing more in temperature", "result": "ok", "source": "https://en.wikipedia.org/wiki/Heat_engine", "note": "Carnot limit 1 - Tc/Th: about 64% for 813 K against a 293 K river, about 7% for a 20-degree sea gap."},
+    {"claim": "Wrong choices: the sea engine (more water); the same (same heat); the same (no friction)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Heat_engine", "note": "Maximum efficiency 'depends only on the temperatures it operates between'."},
+    {"claim": "Context: the limit is fixed solely by the hot and cold temperatures, whatever the engine runs on; the wider the gap, the larger the share", "result": "ok", "source": "https://grokipedia.com/page/Nicolas_Léonard_Sadi_Carnot", "note": "Strictly it is the ratio of absolute temperatures, but with cold sides near the same temperature (as here) a wider gap means a larger share; fine for grade 9."},
+    {"claim": "Context: a perfect sea engine 6 to 8 percent; real coal plants about a third", "result": "ok", "source": "https://grokipedia.com/page/Ocean_thermal_energy_conversion", "note": "'Theoretical Carnot efficiency is capped at 6-8%'. Coal: 33-38% subcritical, US average 32-33% (Grokipedia, Thermal power station)."}
+   ]
+  },
+  "ca82339123": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Clausius in 1850, building on Carnot and Joule, worked out what happens to an engine's heat", "result": "ok", "source": "https://mdpi.org/lin/clausius/clausius.htm", "note": "'On the Moving Force of Heat' (1850)."},
+    {"claim": "Key: some heat becomes work, the rest flows to the cold side", "result": "ok", "source": "https://mdpi.org/lin/clausius/clausius.htm", "note": "Work requires 'an actual consumption of heat', and 'a transfer of heat from a hotter to a colder body always occurs' when heat does work. Wikipedia (Heat engine): part to useful work, 'the rest as waste heat to the cold temperature heat sink'."},
+    {"claim": "Wrong: all flows to the cold water, none used up (Carnot's caloric picture)", "result": "ok", "source": "https://mdpi.org/lin/clausius/clausius.htm", "note": "Clausius quotes Carnot that 'the quantity of heat remains unchanged' and rejects it."},
+    {"claim": "Wrong: all could become work with no friction", "result": "ok", "source": "https://en.wikipedia.org/wiki/Second_law_of_thermodynamics", "note": "Kelvin-Planck statement forbids it."},
+    {"claim": "Wrong: the rest is destroyed in the turbine", "result": "ok", "source": "https://grokipedia.com/page/Conservation_of_energy", "note": ""},
+    {"claim": "Context: Carnot took heat to be a fluid passing undiminished, like falling water", "result": "ok", "source": "https://grokipedia.com/page/Caloric_theory", "note": ""},
+    {"claim": "Context: Joule showed that work is made by using heat up", "result": "ok", "source": "https://chemteam.info/Chem-History/Joule-Heat-1845.html", "note": "Joule's 1845 air-rarefaction paper showed heat absorbed when air expands doing work, in proportion to the work. Defensible."},
+    {"claim": "Context: a coal plant's river or cooling towers carry off about half to two-thirds of the fuel's heat", "result": "ok", "source": "https://grokipedia.com/page/Thermal_power_station", "note": "Condenser losses 'typically 50-60% of input energy'; Grokipedia Cooling tower: up to two-thirds."}
+   ]
+  },
+  "94f2df5736": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key: the closed kitchen ends warmer, since the pumping work also becomes heat", "result": "ok", "source": "https://van.physics.illinois.edu/ask/listing/1790", "note": "'more heat gets dumped outside the fridge than gets pumped out'; 'The average room temperature in the room will rise.'"},
+    {"claim": "Wrong choices: lower (fridge sends cold); same (only moves heat); lower (destroys heat)", "result": "ok", "source": "https://energyeducation.ca/encyclopedia/Refrigerator", "note": "A fridge must exhaust more heat than it removes from inside."},
+    {"claim": "Context: a fridge moves heat cold to warm only with work, as Clausius's statement requires; the air by the door feels cool", "result": "ok", "source": "https://en.wikipedia.org/wiki/Second_law_of_thermodynamics", "note": "Clausius statement: heat cannot pass from colder to warmer without some other change."}
+   ]
+  },
+  "7043b921a3": {
+   "verdict": "error",
+   "checks": [
+    {"claim": "A car burns a full tank of gasoline driving across town and back", "result": "error", "source": "https://www.fueleconomy.gov/feg/atv.shtml", "note": "Minor, not physics: a full tank takes a car roughly 300 to 500 miles, far more than across town and back. Fix: 'A car burns a tank of gasoline on a long drive, then parks just where it started' (or 'burns a gallon of gasoline driving across town and back')."},
+    {"claim": "Engine, brakes and tyres turn the fuel's energy into heat that spreads into the air", "result": "ok", "source": "https://www.fueleconomy.gov/feg/atv.shtml", "note": "Most is lost in the engine as heat. Air drag, a large share at speed, also ends as heat in the air; the list is not given as complete, so it stands."},
+    {"claim": "Key: none of the energy used up, but nearly all its ability to do work", "result": "ok", "source": "https://openstax.org/books/college-physics-2e/pages/15-6-entropy-and-the-second-law-of-thermodynamics-disorder-and-the-unavailability-of-energy", "note": "'When entropy increases, a certain amount of energy becomes permanently unavailable to do work. The energy is not lost, but its character is changed.'"},
+    {"claim": "Wrong choices: energy destroyed by burning; destroyed by brakes; nothing lost at all", "result": "ok", "source": "https://grokipedia.com/page/Conservation_of_energy", "note": ""},
+    {"claim": "Context: entropy has risen; the energy is permanently unavailable to do work, which is what losing or saving energy really means", "result": "ok", "source": "https://openstax.org/books/college-physics-2e/pages/15-6-entropy-and-the-second-law-of-thermodynamics-disorder-and-the-unavailability-of-energy", "note": "Wording matches OpenStax. The last clause is interpretation but sound."}
+   ]
+  },
+  "bb878e42fc": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key: ways to lie broken far outnumber ways to be whole (the odds)", "result": "ok", "source": "https://grokipedia.com/page/Entropy_as_an_arrow_of_time", "note": "Reverse processes are 'overwhelmingly improbable' because high-entropy states vastly outnumber low ones, not forbidden. The context rightly counts the floor's warmth in too."},
+    {"claim": "Wrong: putting it back would take more energy than it has", "result": "ok", "source": "https://grokipedia.com/page/Entropy_as_an_arrow_of_time", "note": "The reversed film conserves energy (the floor's warmth would gather back into the pieces), so this is truly wrong."},
+    {"claim": "Wrong: the laws of motion run only forward", "result": "ok", "source": "https://grokipedia.com/page/Entropy_as_an_arrow_of_time", "note": "The microscopic laws are time-symmetric."},
+    {"claim": "Wrong: gravity keeps the pieces from rising", "result": "ok", "source": "https://grokipedia.com/page/Entropy_as_an_arrow_of_time", "note": ""},
+    {"claim": "Context: Eddington called it time's arrow in 1927", "result": "ok", "source": "https://en.wikipedia.org/wiki/Arrow_of_time", "note": "'developed in 1927 by ... Arthur Eddington' (his Gifford Lectures); the book The Nature of the Physical World followed in 1928."},
+    {"claim": "Context: why the universe began with low entropy is still open", "result": "ok", "source": "https://grokipedia.com/page/Entropy_as_an_arrow_of_time", "note": "'remains an unresolved challenge'; the Past Hypothesis is provisional."}
+   ]
+  },
+  "70caf8701b": {
+   "verdict": "error",
+   "checks": [
+    {"claim": "The Paris Academy of Sciences resolved in 1775 to examine no more perpetual-motion machines", "result": "ok", "source": "https://fr.wikipedia.org/wiki/Mouvement_perpétuel", "note": "Resolution of 3 May 1775: 'de ne plus examiner ... ni aucune machine annoncée comme un mouvement perpétuel' (with doubling the cube, trisecting the angle and squaring the circle)."},
+    {"claim": "The overbalanced wheel is among the oldest designs", "result": "ok", "source": "https://en.wikipedia.org/wiki/Perpetual_motion", "note": "Bhaskara II's wheel, about 1150 CE."},
+    {"claim": "Stem: the turning pulls of its two sides ALWAYS come out even; key: the far-out side ALWAYS carries fewer weights", "result": "error", "source": "https://grokipedia.com/page/Perpetual_motion", "note": "Overstated. The pulls balance where the wheel comes to rest ('zero net rotation once the system stabilizes', Grokipedia), not at every angle: turned by hand, it is pulled one way and then the other. Wikipedia says only that the far-out side 'has fewer weights' and 'the torque is balanced'. Fix the stem: 'Yet let go, it rocks to a stop with the turning pulls of its two sides even. What makes them even?' Fix the key: 'The far-out side carries fewer of the weights'."},
+    {"claim": "Wrong choices: gravity weaker far from the axle; folded weights press harder on the axle; far-out weights swing in before they pull", "result": "ok", "source": "https://en.wikipedia.org/wiki/Perpetual_motion", "note": "None is the reason; gravity does not weaken with distance from the axle."},
+    {"claim": "Context: a far-out weight turns the wheel harder, as on a seesaw, but the far-out side holds fewer weights", "result": "ok", "source": "https://en.wikipedia.org/wiki/Perpetual_motion", "note": "'weights further from the center apply a greater torque'; 'the side with weights further from the center has fewer weights'."},
+    {"claim": "Context: over a full turn every weight is lifted as far as it falls, so the wheel gains nothing (first law)", "result": "ok", "source": "https://grokipedia.com/page/Perpetual_motion", "note": "Correct: after a full turn every weight is back where it began, so gravity's net work is zero and nothing is left to beat friction or drive a mill."},
+    {"claim": "Context: the Academy put it that an effect is always equal to its cause", "result": "ok", "source": "https://www.universalis.fr/encyclopedie/mouvement-perpetuel/5-la-condamnation-est-elle-sans-appel/", "note": "Only a secondary paraphrase was found (Pierre Costabel in Universalis: the academic decisions held 'un effet étant toujours égal à sa cause'). The Academy's own text (Histoire de l'Académie royale des sciences for 1775, pp. 61-66) could not be read online. Given as a paraphrase, not a quote, so it stands."}
+   ]
+  },
+  "ad4e96afde": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key: the seawater ship breaks the second law, not the first", "result": "ok", "source": "https://grokipedia.com/page/Perpetual_motion", "note": "Second kind: extracts work from a single heat reservoir; it violates the second law, not the first. Lund's Fysikens frågelåda answers this ship case, quoting that a second-kind machine 'would not violate the first law' (https://fragelada.fysik.lu.se/?id=19554)."},
+    {"claim": "Wrong: first law (energy from nothing); first law (destroys heat); no law broken", "result": "ok", "source": "https://en.wikipedia.org/wiki/Second_law_of_thermodynamics", "note": "Kelvin-Planck: no cycle can take heat from one reservoir and turn all of it into work."},
+    {"claim": "Context: real ocean heat plants work only by pumping up cold deep water as the cold side", "result": "ok", "source": "https://grokipedia.com/page/Ocean_thermal_energy_conversion", "note": "Cold water piped from depth, up to about 1,000 m."}
+   ]
+  },
+  "584f521463": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "A gasoline engine loses about two thirds to three quarters of the fuel's energy", "result": "ok", "source": "https://www.fueleconomy.gov/feg/atv-ev.shtml", "note": "Engine losses 64% to 75% (fueleconomy.gov); about 25% typical engine efficiency (Wikipedia, Heat engine)."},
+    {"claim": "An electric car's motor and electronics lose about a sixth to a fifth of the energy from its battery", "result": "ok", "source": "https://www.fueleconomy.gov/feg/atv-ev.shtml", "note": "'An EV electric drive system is only responsible for a 15% to 20% energy loss'. Those shares are of grid energy, so of battery energy they run about 17% to 21%. 'About a sixth to a fifth' holds."},
+    {"claim": "Key: it runs on heat, and much heat must escape unused", "result": "ok", "source": "https://www.fueleconomy.gov/feg/atv.shtml", "note": "'most of the fuel's energy is lost in the engine, primarily as heat'. Even the ideal gasoline cycle must reject a large share of its heat."},
+    {"claim": "Wrong: burning destroys energy; it must first make electricity; most fuel passes unburned", "result": "ok", "source": "https://www.fueleconomy.gov/feg/atv.shtml", "note": "Friction, pumping and combustion inefficiency are only 'smaller amounts'."},
+    {"claim": "Context: an electric motor turns electrical energy straight into motion, so the heat-engine limit does not bind it; a fuel-burning power plant faces it", "result": "ok", "source": "https://en.wikipedia.org/wiki/Heat_engine", "note": "Heat engines 'distinguish themselves from other types of engines' in that their efficiency is 'fundamentally limited by Carnot's theorem'."}
+   ]
+  }
+ },
+ "unit_notes": "4 errors, none in a key's physics. (1) Joule: 772 was the water series; mercury and iron gave up to 776, so say 'close to 772'. (2) Rumford: the horses turned the cannon against a fixed blunt borer, not the borer. (3) Car: a full tank is far more than across town and back. (4) Overbalanced wheel: the pulls balance where it comes to rest, not 'always'; drop 'always' from the stem and the key. The Academy's 1775 resolution is confirmed (3 May 1775); its 'effect equal to its cause' reasoning was found only as Costabel's paraphrase in Universalis. Caloric did survive Rumford; Joule was pivotal, with Clausius and Thomson finishing it about 1850."
+}

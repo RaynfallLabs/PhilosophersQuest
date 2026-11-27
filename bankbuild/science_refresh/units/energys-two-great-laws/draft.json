@@ -1,0 +1,205 @@
+{
+ "unit": "energys-two-great-laws",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "energys-two-great-laws",
+   "question": "James Joule, a brewer in Salford, let weights fall to turn a paddle wheel in a can of water, and read the water's slight warming on a fine thermometer. He tried mercury too, and an iron wheel grinding on iron. Every way, the fall of 772 pounds through one foot made enough heat to warm a pound of water by one degree Fahrenheit. What did that steady rate show?",
+   "answer": "That work and heat are two forms of one thing",
+   "choices": [
+    "That work and heat are two forms of one thing",
+    "That rubbing squeezes out heat stored in matter",
+    "That friction destroys a share of the work done",
+    "That falling weights make new energy as they fall"
+   ],
+   "context": "One exchange rate in water, in mercury and in rubbing iron meant the heat was not wrung from a store inside the matter but made from the work itself, with none of the work lost: energy changes form but is never made or destroyed, the first law of thermodynamics. Julius Robert Mayer, a German ship's doctor, had argued in 1842 that heat and work are one indestructible force, but it was Joule's measurements, set out in full in 1850, that persuaded physicists.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7"
+   ],
+   "grade_note": "Ninth-grade physical science teaches conservation of energy (NGSS HS-PS3-1), and Joule's paddle wheel is the standard experiment showing that work and heat are exchanged at a fixed rate."
+  },
+  {
+   "tier": 5,
+   "topic": "energys-two-great-laws",
+   "question": "Count Rumford, who oversaw the boring of brass cannon at the arsenal in Munich, reported a test in 1798. Horses turned a blunt borer that ground against a cannon sealed in a box of cold water. After two and a half hours the water boiled, with no fire anywhere, and the heat kept coming for as long as the horses walked. What did he conclude heat must be?",
+   "answer": "A kind of motion, not a material substance",
+   "choices": [
+    "A kind of motion, not a material substance",
+    "A fluid squeezed out of the brass by grinding",
+    "A fluid drawn in from the water and the air",
+    "A chemical change in the metal of the cannon"
+   ],
+   "context": "Rumford reasoned that anything a body can go on giving without limit cannot possibly be a material substance, so heat must be motion; chips ground off the gun warmed water just as solid brass did, so nothing had been squeezed out of the metal, and the water, itself growing hotter, could not be the source. Most believers in caloric, the heat fluid, held that their theory could be patched to fit, and it took James Joule's measurements in the 1840s to retire it.",
+   "facts": [
+    "F7",
+    "F8",
+    "F9",
+    "F10"
+   ],
+   "grade_note": "High-school physical science teaches heat as energy of moving particles rather than a fluid, and Rumford's cannon is the classic evidence against the caloric theory."
+  },
+  {
+   "tier": 5,
+   "topic": "energys-two-great-laws",
+   "question": "Sadi Carnot, a French engineer, worked out in 1824 the most work a perfect engine, with no friction or leaks, can get from heat. Two such engines take in the same amount of heat. One works between steam at about 540 degrees Celsius and a cool river; the other between warm surface seawater and deep water about 20 degrees colder. Which gets more work from its heat?",
+   "answer": "The steam engine, since its two sides differ more in temperature",
+   "choices": [
+    "The steam engine, since its two sides differ more in temperature",
+    "The sea engine, since its heat is spread through far more water",
+    "Both the same, since both take in the same amount of heat",
+    "Both the same, since neither loses any work to friction"
+   ],
+   "context": "Carnot showed that the most work a perfect engine can get from heat is fixed solely by the temperatures of its hot and cold sides, whatever it runs on, and the wider the gap, the larger the share. On the sea's small gap even a perfect engine could turn only about 6 to 8 percent of its heat into work, while real coal plants turn about a third of theirs into electricity.",
+   "facts": [
+    "F11",
+    "F12",
+    "F13"
+   ],
+   "grade_note": "Ninth graders learn that a heat engine needs a hot and a cold side and that its efficiency depends on the temperature difference, the result Carnot reached in 1824."
+  },
+  {
+   "tier": 5,
+   "topic": "energys-two-great-laws",
+   "question": "A coal power plant burns fuel to boil water, the steam spins a turbine, and the spent steam is cooled back into water by a river or a cooling tower. Rudolf Clausius, building on the work of Sadi Carnot and James Joule, worked out in 1850 what happens to heat in an engine like this. What becomes of the heat the steam carries into the turbine?",
+   "answer": "Some becomes work, and the rest flows on to the cooling water",
+   "choices": [
+    "Some becomes work, and the rest flows on to the cooling water",
+    "All of it flows on to the cooling water, none of it used up",
+    "All of it could become work, if the turbine had no friction",
+    "Some becomes work, and the rest is destroyed in the turbine"
+   ],
+   "context": "Carnot, who took heat to be a fluid, had pictured it passing through an engine undiminished, like water falling from a height, while Joule showed that work is made by using heat up. Clausius joined them: an engine turns part of its heat into work and must pass the rest to something colder, which is why a coal plant's river or cooling towers carry off around half to two-thirds of its fuel's heat, and why no engine, however smooth, turns all of its heat into work.",
+   "facts": [
+    "F11",
+    "F14",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "Ninth-grade physical science teaches that no machine turns all its energy into useful work (map line G9.P5), and a power plant's waste heat is the standard case."
+  },
+  {
+   "tier": 5,
+   "topic": "energys-two-great-laws",
+   "question": "A boy shuts himself in a small kitchen on a hot day, every window and door closed, and props the fridge door wide open to cool the room. The fridge runs without stopping, pumping heat out of its cold inside and giving it off through the coils at its back. After a few hours, how does the kitchen's average temperature compare with when he began?",
+   "answer": "Higher, since the work of pumping the heat ends up as heat too",
+   "choices": [
+    "Higher, since the work of pumping the heat ends up as heat too",
+    "Lower, since the open fridge keeps sending its cold into the room",
+    "The same, since the fridge only moves heat and adds none",
+    "Lower, since the fridge destroys the heat it takes in"
+   ],
+   "context": "A fridge can move heat from cold to warm only by doing work, as Rudolf Clausius's statement of the second law requires, so it gives off more heat at its coils than it takes from inside. With the door open, the heat it pumps out flows straight back in, and the electrical energy its motor uses becomes heat as well, so the room slowly warms, though the air just in front of the door feels cool.",
+   "facts": [
+    "F1",
+    "F16",
+    "F19"
+   ],
+   "grade_note": "High-school physical science applies the first and second laws to everyday machines, and the open refrigerator is a standard test of whether a student can follow the energy."
+  },
+  {
+   "tier": 5,
+   "topic": "energys-two-great-laws",
+   "question": "A car burns a full tank of gasoline driving across town and back, then parks just where it started. On the way, its engine, its brakes and its tyres turned the fuel's energy into heat, which spread out into the air along the road. What did the trip use up?",
+   "answer": "None of the energy, but nearly all of its ability to do work",
+   "choices": [
+    "None of the energy, but nearly all of its ability to do work",
+    "Most of the energy, destroyed as the fuel was burned",
+    "None of the energy, and none of its ability to do work",
+    "Most of the energy, destroyed by the rubbing of the brake pads"
+   ],
+   "context": "Energy is never destroyed, so all of it is still there, warming the air a little; but heat spread thinly through the air can do almost no work, and no engine can gather it up again to drive the car home. Physicists say the entropy has risen: the energy has become permanently unavailable to do work, which is what people really mean by losing or saving energy.",
+   "facts": [
+    "F1",
+    "F17",
+    "F18"
+   ],
+   "grade_note": "Ninth graders learn that energy spreads out until it is evenly shared (the second law, NGSS HS-PS3-4), so energy can be conserved and still be lost for use."
+  },
+  {
+   "tier": 5,
+   "topic": "energys-two-great-laws",
+   "question": "A film shows an egg rolling off a kitchen table and smashing on the floor. Run backwards, the film shows shell, yolk and white leaping up off the floor and closing into a whole egg on the table, something no one has ever seen happen. What keeps a broken egg from putting itself back together?",
+   "answer": "Ways to lie broken far outnumber ways to be whole",
+   "choices": [
+    "Ways to lie broken far outnumber ways to be whole",
+    "Putting it back would take more energy than it has",
+    "The laws of motion run only forward in time",
+    "Gravity keeps the pieces from rising off the floor"
+   ],
+   "context": "Each bump between two molecules obeys the laws of motion just as well run backwards, and the reversed film breaks no law of energy; what the egg obeys is the odds, since its pieces and the floor's warmth have vastly more ways to lie scattered than to come together, so entropy rises and the reverse is overwhelmingly unlikely rather than forbidden. Arthur Eddington called this one-way direction time's arrow in 1927, and why the universe began with entropy low enough for the arrow to start is still an open question.",
+   "facts": [
+    "F17",
+    "F26",
+    "F27",
+    "F28"
+   ],
+   "grade_note": "Ninth-grade science explains the second law as energy spreading out, and the broken egg is the standard picture of why natural processes run one way."
+  },
+  {
+   "tier": 5,
+   "topic": "energys-two-great-laws",
+   "question": "The Paris Academy of Sciences resolved in 1775 to examine no more machines that claimed to run forever. Among the oldest designs was the overbalanced wheel, whose weights on hinged arms swing far out from the axle on the side going down and fold in close on the side coming up. Yet the turning pulls of its two sides always come out even. What makes them even?",
+   "answer": "The far-out side always carries fewer of the weights",
+   "choices": [
+    "The far-out side always carries fewer of the weights",
+    "Gravity pulls more weakly on weights far from the axle",
+    "Weights folded in close press harder on the axle",
+    "Each far-out weight swings back in before it can pull"
+   ],
+   "context": "A weight far from the axle turns a wheel harder, as on a seesaw, but the side where the arms swing out holds fewer weights than the side where they fold in, and the two turning pulls match. Over a full turn every weight is lifted as far as it falls, so the wheel gains nothing to drive a mill or to beat friction; the Academy put it that an effect is always equal to its cause.",
+   "facts": [
+    "F1",
+    "F20",
+    "F22",
+    "F23"
+   ],
+   "grade_note": "Ninth graders apply conservation of energy to judge a claimed device (NGSS HS-PS3-1, HS-PS3-3), and the overbalanced wheel is the oldest perpetual-motion design."
+  },
+  {
+   "tier": 5,
+   "topic": "energys-two-great-laws",
+   "question": "An inventor designs a ship that burns no fuel. Its engine draws in seawater, takes heat out of it, turns every bit of that heat into the work of driving the ship, and pours the chilled water out behind. Would such a ship break a law of thermodynamics?",
+   "answer": "Yes, the second, though it would create no energy",
+   "choices": [
+    "Yes, the second, though it would create no energy",
+    "Yes, the first, since it would create energy from nothing",
+    "Yes, the first, since it would destroy the heat it took in",
+    "No, since the heat in seawater is real energy it can use"
+   ],
+   "context": "The ship spends the sea's real heat, so it makes no energy from nothing and the first law has no quarrel with it; but no engine working round and round can take heat from one place and turn all of it into work, so this perpetual-motion machine of the second kind breaks the second law. Real ocean heat plants work only because they pump up cold water from the deep to serve as the colder side.",
+   "facts": [
+    "F16",
+    "F20",
+    "F21",
+    "F13"
+   ],
+   "grade_note": "Ninth-grade physical science teaches both laws of thermodynamics, and sorting an impossible machine by the law it breaks is the standard test of the second."
+  },
+  {
+   "tier": 5,
+   "topic": "energys-two-great-laws",
+   "question": "A gasoline car's engine loses about two thirds to three quarters of the energy in its fuel before any of it reaches the wheels. An electric car's motor and its electronics lose only about a sixth to a fifth of the energy drawn from its battery. What is the main reason the gasoline engine loses so much more?",
+   "answer": "It runs on heat, and much heat must escape unused",
+   "choices": [
+    "It runs on heat, and much heat must escape unused",
+    "Burning its fuel destroys a large share of the fuel's energy",
+    "It must first turn its fuel's energy into electricity",
+    "Most of its fuel goes through the engine without burning"
+   ],
+   "context": "A gasoline engine is a heat engine: it burns fuel to make hot gas and gets work from that heat, so like every heat engine it must give much of that heat away unused. An electric motor turns electrical energy straight into motion with no heat in between, so the second law's limit on heat engines does not bind it, though a power plant that makes the electricity by burning fuel faces that same limit.",
+   "facts": [
+    "F12",
+    "F15",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "Ninth graders compare the efficiency of real machines (map line G9.P5, NGSS HS-PS3-3), and a gasoline engine against an electric motor is the standard comparison."
+  }
+ ]
+}

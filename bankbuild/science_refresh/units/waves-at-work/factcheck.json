@@ -1,0 +1,29 @@
+{"unit": "waves-at-work",
+ "questions": {
+  "6d5565f8f3": {"verdict": "ok", "checks": [
+   {"claim": "Key: frequency x wavelength gives the wave's speed (v = f x wavelength)", "result": "ok", "source": "https://wp.optics.arizona.edu/oscoutreach/measure-the-speed-of-light-with-a-microwave", "note": ""},
+   {"claim": "Wrong: 'the energy of each microwave' (energy per photon is E = hf, not f x wavelength)", "result": "ok", "source": "https://grokipedia.com/page/Wavelength", "note": ""},
+   {"claim": "Wrong: 'the power of the oven' and 'the heat in the chocolate' are not f x wavelength", "result": "ok", "source": "https://wp.optics.arizona.edu/oscoutreach/measure-the-speed-of-light-with-a-microwave", "note": ""},
+   {"claim": "Oven frequency 2,450 MHz (2.45 GHz), printed on the back", "result": "ok", "source": "https://grokipedia.com/page/Microwave_oven", "note": ""},
+   {"claim": "Melted spots about 6 cm apart, each gap half a wavelength, so wavelength about 12 cm (free-space 12.2 cm; theory 6.1 cm between hot spots)", "result": "ok", "source": "https://uwaterloo.ca/chem13-news-magazine/node/619", "note": "Standing-wave antinodes are half a wavelength apart (grokipedia.com/page/Standing_wave)."},
+   {"claim": "Turntable removed so the hot spots stay put", "result": "ok", "source": "https://wp.optics.arizona.edu/oscoutreach/measure-the-speed-of-light-with-a-microwave", "note": ""},
+   {"claim": "Context: 2.45e9 x 0.12 m = 2.94e8 m/s, close to c (299,792,458 m/s) for all EM waves in empty space", "result": "ok", "source": "https://grokipedia.com/page/Speed_of_light", "note": ""},
+   {"claim": "Context: real ovens heat unevenly, spacing varies; averaging several gaps helps", "result": "ok", "source": "https://uwaterloo.ca/chem13-news-magazine/node/619", "note": ""}]},
+  "0d6ea71f96": {"verdict": "ok", "checks": [
+   {"claim": "Young's 1803 description: small hole in a window-shutter, sunbeam (reflected in by a looking-glass), 'a slip of card, about one-thirtieth of an inch in breadth'; lecture read 24 November 1803", "result": "ok", "source": "https://jimclifford.ca/philosophical-transactions-ocr-1665-1869/articles/jstor-107135/", "note": "Young used a mirror outside the shutter; 'let a thin beam of sunlight in' is a fair simplification."},
+   {"claim": "Fringes in the card's shadow from light passing both sides; blocking one side made them disappear ('all the fringes which had before been observed in the shadow on the wall immediately disappeared')", "result": "ok", "source": "https://jimclifford.ca/philosophical-transactions-ocr-1665-1869/articles/jstor-107135/", "note": "With sunlight Young saw coloured fringes; 'bright and dark bands' is a fair 9th-grade simplification (Grokipedia also says bright and dark fringes)."},
+   {"claim": "Key: in a dark band light from the two sides met crest on trough and cancelled (destructive interference)", "result": "ok", "source": "https://grokipedia.com/page/Young's_interference_experiment", "note": ""},
+   {"claim": "Wrong: crest on crest and added (that makes the bright bands)", "result": "ok", "source": "https://grokipedia.com/page/Wave_interference", "note": ""},
+   {"claim": "Wrong: particles colliding; card edges soaking up the light (blocking one side would not then remove the bands)", "result": "ok", "source": "https://grokipedia.com/page/Young's_interference_experiment", "note": ""},
+   {"claim": "Context: the fringes told against Newton's corpuscular theory", "result": "ok", "source": "https://grokipedia.com/page/Young's_interference_experiment", "note": ""},
+   {"claim": "Context: most scientists won over only after Fresnel's and Arago's work some fifteen years later (Poisson/Arago spot 1818, Fresnel prize memoir 1819)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Young%27s_interference_experiment", "note": ""},
+   {"claim": "Context: light behaves in some ways as a wave, in others as particles", "result": "ok", "source": "https://en.wikipedia.org/wiki/Double-slit_experiment", "note": ""}]},
+  "66d714be46": {"verdict": "ok", "checks": [
+   {"claim": "ANC: microphone picks up noise; speaker plays an inverted (opposite-phase) copy; destructive interference", "result": "ok", "source": "https://grokipedia.com/page/Active_noise_control", "note": ""},
+   {"claim": "Stem logic: inverted wave delayed a further half wave is back in phase, so crest meets crest and the drone is louder (whole-wave delay would still cancel, which is the distractor 'cancelled just as well')", "result": "ok", "source": "https://grokipedia.com/page/Wave_interference", "note": "Holds for the steady drone treated as one wave, as the stem does; a real drone's even harmonics would behave differently, beyond grade level."},
+   {"claim": "Wrong: cancelled as well as before; cut to half loudness; shifted to higher pitch (a delay does not change pitch)", "result": "ok", "source": "https://grokipedia.com/page/Wave_interference", "note": ""},
+   {"claim": "Context: works best on low, steady sounds (engine drone), worse on high-frequency or sudden sounds", "result": "ok", "source": "https://en.wikipedia.org/wiki/Active_noise_control", "note": ""},
+   {"claim": "Context: Paul Lueg patented the idea in 1936 (filed 1933; US 2,043,416 issued 1936)", "result": "ok", "source": "https://grokipedia.com/page/Active_noise_control", "note": ""},
+   {"claim": "Context: working versions followed in the 1950s (Olson and May; Fogel's cockpit systems; Meeker's 1957 earmuff)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Active_noise_control", "note": ""}]}
+ },
+ "unit_notes": ""}

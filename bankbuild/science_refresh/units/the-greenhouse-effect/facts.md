@@ -148,3 +148,19 @@ G2. The American Institute of Physics publishes a middle-school teaching guide, 
 - Arrhenius's work schedule (how many months): no source read gives it; the stems say only "thousands of sums by hand".
 - Whether Foote's 125 F and 106 F came from one side-by-side pair or from separate runs: the sources list them as her maxima for carbon dioxide and common air; the context says "in her tests".
 - How much of the recent warming people have caused, sensitivity, forecasts, and the record of climate: the T5 unit what-drives-earths-climate's ground; left out entirely.
+
+## Added in the revision (2026-11-26)
+
+F32. Water vapour and night cooling (Penn State, METEO 3, "Clouds, Water Vapor, and Temperature"): on humid nights "ample water vapor emits infrared radiation to the readily absorbing ground", which keeps nights warm; in the Southeast US, days "frequently reach 90 degrees or more" but "high dew points (high concentrations of water vapor) often help keep nighttime lows in the 70s" (F), even on clear, calm nights. Dry air: "reduced concentrations of water vapor limit the amount of infrared radiation that the ground receives from the atmosphere"; in El Paso, Texas, "daytime highs near 90 degrees Fahrenheit are sometimes followed by nights with temperatures near 50 degrees Fahrenheit". Deserts have the largest day-night ranges because their dry air "with low dew points" allows "major cooling at night". (90 F = 32 C; 70 F = 21 C; 50 F = 10 C.)
+    https://courses.ems.psu.edu/meteo3/node/1972
+
+F33. Grokipedia, Radiative cooling: the ground, warmed by day, "emits longwave infrared radiation"; "Clear skies minimize cloud-induced back-radiation, enhancing net loss", while "high humidity increases atmospheric absorption and re-emission, reducing cooling by up to 50%"; "In arid regions like deserts, drops of 15-20 C from sunset to sunrise are common". Grokipedia, Desert climate: nighttime lows fall because "rapid radiative cooling occurs in the absence of moisture to retain heat"; it also names the low heat capacity of sand and dry soil as a cause of the wide range (so no wrong choice in the dry-night question is about the ground itself).
+    https://grokipedia.com/page/Radiative_cooling ; https://grokipedia.com/page/Desert_climate
+
+F34. Grokipedia, Density of air: "moist air is less dense than dry air of the same temperature and pressure", because water vapour molecules are "lighter than the average dry air molecule" (so "dry air is thinner" is false).
+    https://grokipedia.com/page/Density_of_air
+
+F35. Grokipedia, Carbon cycle: oceans about 38,000 GtC; atmosphere about 900 GtC; sedimentary carbonate rocks 60 to 65 million GtC; "kerogen and other organic carbon in sediments add another 15 million GtC"; "upper mantle carbon alone on the order of 120 million GtC"; fossil fuels about 5,000-10,000 GtC; soils 1,500-2,400 GtC; vegetation 450-650 GtC. So with all rocks set aside (not only limestone-like ones), the oceans hold the most.
+    https://grokipedia.com/page/Carbon_cycle
+
+Revision notes: the Arrhenius card no longer gives his doubling figure (a climate-sensitivity number, left to the T5 climate unit); it says he "calculated" the ice-age cooling, "enough, he thought" (F19-F21). The Keeling key says the gas built up "from one year to the next" (F24: two years of rise by 1960).

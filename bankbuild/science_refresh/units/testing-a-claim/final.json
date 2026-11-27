@@ -1,0 +1,229 @@
+{
+ "unit": "testing-a-claim",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "testing-a-claim",
+   "question": "Benjamin Franklin led a royal commission that tested Franz Mesmer's 'animal magnetism' in 1784. Mesmer said an unseen fluid from the healer cured the sick. The chemist Antoine Lavoisier planned two kinds of trial: in some, patients were magnetised without knowing it, and in others, patients were told they were being magnetised when they were not. What were the two kinds of trial built to tell apart?",
+   "answer": "The fluid and the patients' belief",
+   "choices": [
+    "The fluid and the patients' belief",
+    "The fluid and an iron magnet's pull",
+    "The honest patients and the fakers",
+    "Mesmer's skill and that of his pupils"
+   ],
+   "context": "Lavoisier's plan pulled the two possible causes apart: if the fluid were real, patients magnetised in secret would react, and if belief were the cause, patients who only thought they were being treated would react. Blindfolds and screens kept the patients from knowing, which makes these trials among the first blind tests on record. The plan could not tell an honest patient from a faker, nor did it compare healers, for Mesmer refused to take part and the commission tested the practice of his follower Charles d'Eslon; Mesmer himself had long since given up iron magnets, saying the cure came from his fluid.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F12"
+   ],
+   "grade_note": "8th grade (curriculum line G8.M3) teaches how scientists test an explanation against evidence; the Franklin commission's two kinds of blind trial are a classic case of separating two possible causes."
+  },
+  {
+   "tier": 4,
+   "topic": "testing-a-claim",
+   "question": "Charles d'Eslon, a doctor who followed Mesmer's method, let Benjamin Franklin's commission test his patients. The commissioners persuaded one woman, sitting blindfolded, that d'Eslon was magnetising her, though he was not in the room. Another woman was magnetised for half an hour from behind a paper screen, and no one said a word to her about it. Which of the two women fell into a fit during her trial?",
+   "answer": "Only the one who believed it",
+   "choices": [
+    "Only the one who believed it",
+    "Only the one truly treated",
+    "Both of them, about equally",
+    "Neither of them at all"
+   ],
+   "context": "The blindfolded woman fell into a fit within about three minutes though nothing at all was done to her, while the woman behind the screen showed nothing in half an hour of real magnetising. Belief alone brought on a real fit. An effect like this, caused by expecting a treatment rather than by the treatment itself, is now called a placebo effect.",
+   "facts": [
+    "F4",
+    "F6",
+    "F11"
+   ],
+   "grade_note": "8th grade (G8.M3) teaches that a test must rule out the subject's own expectation; the placebo effect, belief alone producing a felt effect, is the plain-words idea behind blinding."
+  },
+  {
+   "tier": 4,
+   "topic": "testing-a-claim",
+   "question": "Thirteen judges, among them a vet, a circus manager, a cavalry officer, several schoolteachers and the director of the Berlin zoo, watched Wilhelm von Osten's horse, Clever Hans, answer questions by tapping a hoof. In September 1904 they reported that no tricks were involved. Oskar Pfungst, an assistant to the panel's leader, Carl Stumpf, went on testing the horse. What did his tests show about the judges' report?",
+   "answer": "No one cheated, yet Hans was not counting",
+   "choices": [
+    "No one cheated, yet Hans was not counting",
+    "No one cheated, and Hans really was counting",
+    "Von Osten cheated, giving Hans secret signs",
+    "A helper cheated, signalling from the crowd"
+   ],
+   "context": "The judges were right that no one was cheating: von Osten believed in his horse and charged nothing to watch him, and Hans did as well for strangers as for his owner. But ruling out tricks did not show that Hans could count, and Pfungst found that the answers came from the questioners, not from the horse. Finding no tricks had left the real question open.",
+   "facts": [
+    "F13",
+    "F14",
+    "F15"
+   ],
+   "grade_note": "8th grade (G8.M3) teaches that findings vary in certainty and are revised in light of new evidence; the 1904 panel's verdict, right about fraud but not the whole story, is the case."
+  },
+  {
+   "tier": 4,
+   "topic": "testing-a-claim",
+   "question": "Wilhelm von Osten, a retired mathematics teacher in Berlin, believed that his horse, Clever Hans, could do sums, spell and tell the time, answering by tapping a hoof. Oskar Pfungst set out to learn how Hans did it, and he changed the tests one way after another to see which change made the horse fail. Which change was it?",
+   "answer": "A questioner who did not know the answer",
+   "choices": [
+    "A questioner who did not know the answer",
+    "A questioner Hans had never met before",
+    "A question written down, not spoken aloud",
+    "A test with his owner out of the room"
+   ],
+   "context": "Hans did as well for strangers, for written questions and with von Osten away, so no one was feeding him answers on purpose. He failed only when the questioner did not know the answer himself, or stood where Hans could not see him: the answers had been coming from the questioner all along.",
+   "facts": [
+    "F13",
+    "F15",
+    "F16"
+   ],
+   "grade_note": "8th grade (G8.M3) teaches that scientists test an explanation by changing conditions and examining the results that do not fit; Pfungst's questioner who did not know the answer is the classic blind test."
+  },
+  {
+   "tier": 4,
+   "topic": "testing-a-claim",
+   "question": "Oskar Pfungst watched Clever Hans's questioners closely as the horse tapped out answers with a hoof. Each questioner waited, tense, as the taps went on. Pfungst found that something the questioner did at the right count told Hans to stop. What was it?",
+   "answer": "A tiny upward jerk of the head",
+   "choices": [
+    "A tiny upward jerk of the head",
+    "A small step back from the horse",
+    "A quick glance away toward the crowd",
+    "A slight lift of one hand"
+   ],
+   "context": "When the count reached the right number, the questioner's tension eased and his head rose a very little, about a millimetre by one account, and Hans stopped on that movement. Pfungst traced the signal to that small rise of the head, which the 1904 panel, looking for tricks, never noticed.",
+   "facts": [
+    "F14",
+    "F17",
+    "F29"
+   ],
+   "grade_note": "8th grade (G8.M3) teaches that scientists examine results closely instead of ignoring what does not fit; the questioner's unnoticed head movement was the mechanism Pfungst found."
+  },
+  {
+   "tier": 4,
+   "topic": "testing-a-claim",
+   "question": "Oskar Pfungst learned exactly which tiny movement Clever Hans was reading, the sign that told the horse to stop tapping. Then Pfungst stood before Hans, as von Osten did, and asked the questions himself. What happened?",
+   "answer": "He gave Hans the cue without meaning to",
+   "choices": [
+    "He gave Hans the cue without meaning to",
+    "He held still, so Hans could not answer",
+    "He held still, yet Hans answered anyway",
+    "He gave the cue, but Hans paid it no heed"
+   ],
+   "context": "Pfungst found himself giving the same tiny signs without meaning to, as von Osten and the strangers had, and Hans read them from him as well. A questioner cannot simply decide not to give a cue, so a fair test keeps the answer from the questioner, or keeps the questioner out of sight. The trap is now called the Clever Hans effect, and experiments are still built to avoid it.",
+   "facts": [
+    "F15",
+    "F18",
+    "F19"
+   ],
+   "grade_note": "8th grade (G8.M3) teaches that scientific knowledge is limited by human capacity; an honest tester's unnoticed cues are such a limit, and keeping the tester blind is the fix."
+  },
+  {
+   "tier": 4,
+   "topic": "testing-a-claim",
+   "question": "Emily Rosa was nine when she first tested therapeutic touch practitioners in 1996, for a school science fair. Each practitioner put both hands through holes at the foot of a tall screen. Emily held her own hand above one of them, picked by a coin toss, and the practitioner had to say which, by sensing what practitioners call the human energy field. Over 280 trials, 21 practitioners named the right hand 123 times. What does that score show?",
+   "answer": "No sign of a sense, about what guessing gives",
+   "choices": [
+    "No sign of a sense, about what guessing gives",
+    "No sign of a sense, since the screen blocked it",
+    "A weak sense, right almost half the time",
+    "A true sense, but read the wrong way round"
+   ],
+   "context": "With the hand picked by a coin toss, pure guessing names the right one about half the time, or about 140 times in 280, and the study's authors called the practitioners' 123, or 44 percent, close to what chance would give. A score a little under half is chance at work, not a sense read the wrong way round, and the screen hid the hands from the practitioner's eyes but never stood between her hand and his or hers. The authors noted that a true ability should have found her hand every time.",
+   "facts": [
+    "F20",
+    "F21",
+    "F22",
+    "F24",
+    "F27"
+   ],
+   "grade_note": "8th grade (G8.M1) teaches what data can and cannot show; comparing a score with what chance alone gives (half right, with two choices) is that skill."
+  },
+  {
+   "tier": 4,
+   "topic": "testing-a-claim",
+   "question": "Before Emily Rosa's trials began, the authors of her study decided that a practitioner would pass by naming the right hand at least 8 times in 10, though guessing gives about 5. Why did they set the pass mark so far above 5?",
+   "answer": "Guessing alone often reaches 6 or 7 of 10",
+   "choices": [
+    "Guessing alone often reaches 6 or 7 of 10",
+    "Guessing alone can never reach 8 of 10",
+    "A pass must be more right than wrong",
+    "A real sense should be right about 8 times in 10"
+   ],
+   "context": "By pure guessing, 6 or more right out of 10 comes up more than a third of the time, but 8 or more only about once in 18, so the mark sat where luck seldom reaches. The authors wrote that a true ability should find her hand every time, and they fixed the mark before testing began, so that it could not be moved once the scores were in. Many scientists now post such plans publicly before they gather any data.",
+   "facts": [
+    "F23",
+    "F24",
+    "F26",
+    "F27",
+    "F30"
+   ],
+   "grade_note": "8th grade (G8.M3) teaches that science judges explanations by evidence; deciding before a test what result counts as success keeps that judgement honest."
+  },
+  {
+   "tier": 4,
+   "topic": "testing-a-claim",
+   "question": "The 21 practitioners of therapeutic touch in Emily Rosa's trials had practised it for anything from 1 year to 27 years. Each, with both hands hidden behind a screen, tried to sense which one Emily held her own hand above. When the study's authors set each practitioner's score beside his or her years of practice, what did they find?",
+   "answer": "No clear link between the years and the scores",
+   "choices": [
+    "No clear link between the years and the scores",
+    "A clear link: the more years, the higher the score",
+    "A clear link: the more years, the lower the score",
+    "No clear link, as all of them got the same score"
+   ],
+   "context": "The authors found no significant link between the practitioners' scores and how long they had practised: whatever their years, long practice brought no clear gain in finding her hand. Before testing, every practitioner had said he or she could use therapeutic touch to real benefit, and each described the feelings used to sense the field, such as tingling, throbbing, heat or cold.",
+   "facts": [
+    "F21",
+    "F22",
+    "F24",
+    "F28"
+   ],
+   "grade_note": "8th grade (G8.M1, G8.M3) teaches what data can and cannot show and how a claim is judged by evidence; comparing two measures (score against years of practice) and reading the absence of a link is that skill."
+  }
+ ],
+ "revised": {
+  "c547f37cb7": {
+   "old_hash": "7b05d0aa44",
+   "why": "Judge (medium, tell): 'The fluid up close and from far away' matched nothing in the trials described, so only three choices were live, and the stem was long. Mesmer's teaching is now one short sentence (the judge's cut), and the dead lure is replaced by 'Mesmer's skill and that of his pupils', live because the trials tested a follower's practice and Mesmer later disowned the results as not his own (F4, F10), yet wrong for this design, which compared no healers; the card says so. The key is still a reading of the design, which is the unit's skill."
+  },
+  "9160822e13": {
+   "old_hash": "1c505e6cc6",
+   "why": "Judge (medium, tell): the key was the only cue that is seen, against three sounds, after the unit has taught that Hans failed when he could not see the questioner; and 'watched the hoof closely' (head down) primed the head coming up. Every choice is now a silent movement (the judge's set: a step back, a glance toward the crowd, a lift of one hand), none of them the cue Pfungst describes (F17, F29; the face, where some accounts put a lesser cue such as the eyebrows, is left out of the lures), and the stem says only that the questioner waited, tense. Judge (low): the card no longer says 'No questioner knew he was making it', which taught d1907add39's key; it ends on the 1904 panel never noticing the signal."
+  },
+  "a5e0250f63": {
+   "old_hash": "d1907add39",
+   "why": "Judge (medium, tell): 'knowing the cue well. What happened?' set up the twist, and 'He found Hans read only von Osten's cues' was dead (Hans answered strangers). The stem now says only that Pfungst had learned the movement and then asked the questions himself; the dead lure is replaced by 'He gave the cue, but Hans paid it no heed', so two choices have him give the cue and two have him hold still, and the key is not the odd one out (the judge's 'He gave no cue, and Hans got about half right by luck' would have made three no-cue choices against one). With 1c505e6cc6's card trimmed, the key is no longer taught in advance. Grokipedia: Pfungst, replicating the effect as questioner, found himself 'unwittingly providing similar cues himself' (F18)."
+  },
+  "1fe1716f21": {
+   "old_hash": "5d8c4d5a86",
+   "why": "Judge (medium, stance): the key 'No sense of her field, only guessing' took the energy field as real and claimed more than the data show, and it was the only 'No ...' choice. The key is now 'No sign of a sense, about what guessing gives', with a second 'No sign' lure, 'since the screen blocked it' (wrong: the screen hid the hands from view but stood nowhere between her hand and theirs, F22), as the judge proposed; 'dulled by the screen' is gone. Fact-check (uncertain): 123 of 280 sits just outside guessing's 95 percent band, so the card now uses the paper's own words, 'close to what chance would give' (F24). Judge (low): 'in 1996 and 1997' is cut from the stem; the coin toss stays and the card now says why it matters."
+  },
+  "42ea05a9a3": {
+   "old_hash": "06f7393ac8",
+   "why": "Judge (medium, tell): 'Why fix it ahead of time?' answered by 'So the mark cannot shift after the results' was a restatement. The question now asks the other half of the card, as the judge proposed: why the mark sat so far above 5 (key: guessing alone often reaches 6 or 7, more than a third of the time, F30). Lures: luck can never reach 8 (it does, about 1 time in 18, F27), a pass must be more right than wrong (that would set 6), a real sense should score about 8 (the authors expected every time, F24). The judge's 'The practitioners asked for a hard test' was not used, since no source says whether they did. Fixing the mark in advance (the scope's test announced in advance) stays in the stem and card."
+  }
+ },
+ "added": {
+  "fe331b916b": "Replaces 404a3b4aa7 (dropped), giving Emily Rosa a third question as the judge recommended (Hans now 4, Mesmer 2, Rosa 3). JAMA 1998: practice experience ranged from 1 to 27 years, and 'there was no significant correlation between the practitioners' scores and the length of time they had practiced TT' (r = 0.23); the practitioners' own pre-test claims and described sensations (F28)."
+ },
+ "dropped": [
+  {
+   "old_hash": "a13db2cc7f",
+   "question": "Charles d'Eslon magnetised one apricot tree in Benjamin Franklin's garden at Passy and brought a boy he had found sensitive to Mesmer's fluid. The boy was blindfolded and led from tree to tree, hugging each for two minutes, and he fell into a fit at the fourth, a tree that d'Eslon had never touched. What did the commission conclude had brought on fits like his?",
+   "why": "Judge (medium): a second question on 33937f905a's finding; that one keys belief alone bringing on the fit, this one the commission's word for the same thing (imagination), and the stem's 'a tree that d'Eslon had never touched' struck out the fluid choices. The judge's replacement (d'Eslon's answer to the report, key 'He accepted them') cannot be made right: the Public Domain Review says he 'accepted the main findings', but Wikipedia says he 'immediately published an attack on the commission's reports' and Grokipedia that he critiqued the experiments, so both the key and its 'He rejected them' lures would be defensible (F31). Dropped; the slot is not refilled from the Mesmer story, and the third Emily Rosa question replaces 404a3b4aa7."
+  },
+  {
+   "old_hash": "404a3b4aa7",
+   "question": "Oskar Pfungst fitted Clever Hans with blinders, shields beside the eyes that block a horse's side view, so that a questioner could stand either in the horse's sight or just out of it. With the questioner in sight, Hans answered 50 of 56 questions rightly. How many of 35 did he answer rightly with the questioner out of his sight?",
+   "why": "Judge (drop), and agreed: it re-asks 510ff53991's finding (Hans fails without the questioner's cue), and as a number question the one very low score is the only choice that fits a horse that cannot see his cue, so the figure is never needed. It was the fifth Clever Hans question of ten; its slot goes to a third Emily Rosa question (years of practice against score)."
+  }
+ ],
+ "lead_edits": [
+  {
+   "old_hash": "fe331b916b",
+   "new_hash": "fe331b916b",
+   "change": "choice: \"A clear link: the middle years scored best\" -> \"No clear link, as all of them got the same score\"",
+   "why": "re-checker's exact fix for its fail"
+  }
+ ]
+}

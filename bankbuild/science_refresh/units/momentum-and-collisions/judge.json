@@ -1,0 +1,51 @@
+{"unit": "momentum-and-collisions",
+ "questions": {
+  "7f9987bfaf": {"verdict": "ok", "issues": []},
+
+  "43bf4eeed6": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'No, since a still ball keeps its momentum stored' is a weak lure: a student who knows the unit's first fact (momentum is mass times velocity) sees at once that a still ball has none, so only three choices are live.",
+     "fix": "Replace it with the real misconception that only bouncing collisions keep momentum (F7, M3): 'No, since momentum is kept only in collisions that bounce'."},
+    {"axis": "tell", "severity": "low",
+     "what": "The stem's 'rolls on across the cloth of the pool table. It slows' points at friction, and the key alone repeats the stem's word 'cloth'.",
+     "fix": "Drop the echo from the key: 'No, since an outside force has acted on the ball' (the context can still name the cloth's friction)."}]},
+
+  "a4636320ba": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Pulls it tight against his shoulder' already pictures rifle and body as one, so the key's wording ('move back as one mass') can be matched to the picture without the conservation step.",
+     "fix": "Key the physics rather than the picture: 'The recoil is shared with his body's far greater mass'."}]},
+
+  "36f4aa94b5": {"verdict": "revise", "issues": [
+    {"axis": "other", "severity": "high",
+     "what": "Re-ask of T4. The question asks which skater glides off faster, given twice the mass and an equal push both ways. That is the T4 newtons-laws-force-mass-and-acceleration tackle's keyed fact (a tackler with twice the mass: the lighter one gets twice the acceleration) in a new scene. Only the qualifier separating the first two choices ('as much' vs 'more' momentum) carries the T5 fact. 'He does, since he gives the harder push' is also the T2 third-law misconception already keyed, and weak at 9th grade.",
+     "fix": "Ask the momentum outright. Stem ends: 'After the push, how does her momentum compare with his?' Choices: 'Equal in size, but in the opposite direction' / 'Twice his, since she glides off twice as fast' / 'Half his, since she has half his mass' / 'Zero, like his, since the two started still'."}]},
+
+  "1fc4e00807": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'The heat each collision gives off' is partly true. The stem's own clay example invites it, and a count of energy that includes the heat IS kept in every collision (conservation of energy). An 8th-grader who knows that energy is never lost, only turned to heat, can defend it as a count kept in every collision.",
+     "fix": "Replace it with 'The time each collision lasts'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "Huygens had two counts, and the context names both (mass times speed squared, kept for hard bodies, as well as the directed count). That makes 'The square of each body's speed' partly true of 'his count' unless the reader holds on to 'kept in every collision'.",
+     "fix": "End the stem 'What did that count, the one kept in every collision, take into account?'"}]},
+
+  "ba63ed1a27": {"verdict": "ok", "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Q5's stem already states that Huygens's count 'is kept in every collision', soft clay included, and that is this question's key. The two Huygens/Royal Society items overlap on the soft-collision fact.",
+     "fix": "Either soften Q5's stem to 'a count that is kept even in that collision', or key this one on what the wool balls lost that the steel kept: 'Much of their energy of motion' / 'Much of their momentum' / 'Some of their mass' / 'None of what they had'. (Q1 and Q2 also use the energy-vs-momentum split, so the first is lighter.)"},
+    {"axis": "clarity", "severity": "low",
+     "what": "Five names and two dates come before the ask. The first sentence (Wren, Huygens and Wallis giving rules) does no work for the question and loads a 9th-grader.",
+     "fix": "Open on Newton: 'Isaac Newton tested the Royal Society's rules for collisions with balls of steel, glass, cork and wound wool hung on ten-foot threads...'"}]},
+
+  "a979ea77bb": {"verdict": "ok", "issues": []},
+
+  "28269a7320": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'It springs back, so the car rebounds off whatever it hits' is ruled out by the stem's own 'built to crumple' (crumpled metal does not spring back), so only three choices are live.",
+     "fix": "Replace it with the impact-speed misconception: 'It lowers the car's speed at the moment it hits, so the crash is milder'."}]},
+
+  "ebceb95aa9": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The key can be found by elimination without knowing impulse. The stem shows her sinking down, so the time plainly differs. Common experience says the bent-knee landing is softer, so the force differs. 'How sharply she slows' is that force restated (F = ma, keyed at T4), so it falls with it. The key is then the only choice of a different kind, and the only one that names the unit's word.",
+     "fix": "Make it a two-by-two that needs the T5 fact. Stem ends: 'How does the bent-knee landing compare with the stiff-legged one?' Choices: 'The same change in her momentum, and a smaller force' / 'A smaller change in her momentum, and a smaller force' / 'The same change in her momentum, and the same force' / 'A smaller change in her momentum, and the same force'."}]}
+ },
+ "unit_notes": "Overlap sweep against every final.json and the batch. (1) Q4 re-asks the T4 tackle (see its issue). (2) Q2 reuses the T2 kinetic-and-potential-energy cue-ball scene. T2 asks where the energy went; Q2 asks the outside-force condition on conservation. That is a grade deeper, not a re-ask. (3) Nothing re-asks the T3 unbuckled passenger, the T2 rocket, rope skaters or bug, or the T4 truck, kick, catch or Saturn V. (4) Nothing overlaps fission or circuits. Within the unit: Q7 (Stapp), Q8 (crumple zone) and Q9 (landing) all key the impulse trade. Q7 and Q8 key the same direction of it (same momentum change, the stop's time sets the force). Q9 can be kept distinct by its fix (the momentum change is the invariant). If a slot is wanted for scope breadth, re-key Q7 or Q8 rather than add a fourth. Q5 and Q6 are both Huygens/Royal Society history and share the soft-collision fact (see Q6). Scope is covered: momentum as mass times velocity (Q1), conservation (Q2-Q6), recoil (Q3), the skater push-off (Q4), impulse (Q7-Q9). The scope's 'truck harder to stop than a bicycle at the same speed' appears only in Q1's context, which is fine. Lane: Q1's arithmetic (20 x 1/2 = 10) is in-the-head; no formula work. Safety, voice and they/them: clean. Nine questions, on target."}

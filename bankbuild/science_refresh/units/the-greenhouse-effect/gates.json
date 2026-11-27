@@ -1,5 +1,5 @@
 {
- "kind": "draft",
+ "kind": "final",
  "unit": [],
  "questions": {
   "4722514995": {
@@ -8,7 +8,7 @@
    "info": [],
    "flag": []
   },
-  "597e80884c": {
+  "e706032189": {
    "fail": [],
    "warn": [],
    "info": [],
@@ -44,11 +44,11 @@
    "info": [],
    "flag": []
   },
-  "2e4b7e4caf": {
+  "f239f496c8": {
    "fail": [],
    "warn": [],
    "info": [
-    "voice: short(39<40)"
+    "voice: short(37<40)"
    ],
    "flag": []
   },

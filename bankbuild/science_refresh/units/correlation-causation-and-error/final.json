@@ -1,0 +1,240 @@
+{
+ "unit": "correlation-causation-and-error",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "A seaside town's records show that on the days when its shops sell the most ice cream, the most people drown off its beaches. A town councillor wants to ban ice cream to save lives. If the ban goes ahead, what will most likely happen to the number of drownings?",
+   "answer": "It will hardly change, since hot weather drives both",
+   "choices": [
+    "It will hardly change, since hot weather drives both",
+    "It will hardly change, since the link is pure chance",
+    "It will fall sharply, since the two rise together",
+    "It will fall a little, since fewer swimmers get cramps"
+   ],
+   "context": "Hot days send people both to the ice-cream shops and into the sea, so the heat, a hidden third factor, raises both together; ice cream drowns no one, and a ban would leave the swimmers in the water. The link is no chance match either, since it comes back every summer. Eating before a swim does not raise the risk of cramps or of drowning, whatever the old warning says.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: distinguish causal from correlational relationships in data; curriculum line G8.M1) uses ice cream and drownings as the classic correlation with a hidden third factor."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Richard Stone and Graham Quinn, eye researchers in Philadelphia, reported in 1999 that children who had slept with a light on before the age of two were more often nearsighted later. Karla Zadnik's team at Ohio State University checked the claim in 2000 with more than 1,200 children. What did her team find?",
+   "answer": "Nearsighted parents more often used night lights",
+   "choices": [
+    "Nearsighted parents more often used night lights",
+    "Night lights harmed young eyes, as first reported",
+    "Room lights harmed eyes, but night lights did not",
+    "Parents had misremembered which rooms were lit"
+   ],
+   "context": "Zadnik's team found nearsightedness about as common among children who had slept in the dark (20 percent) as among those with a night light (17 percent) or a full room light (22 percent). Nearsightedness runs strongly in families, and nearsighted parents more often used night lights, so the parents' own eyes tied the lights to the children's eyes: a hidden third factor the first study had not checked. A team led by Jane Gwiazda found the same.",
+   "facts": [
+    "F3",
+    "F5",
+    "F6"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: distinguish causal from correlational relationships in data; curriculum line G8.M1) teaches that a hidden third factor can make a link look like a cause."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Ronald Fisher, who laid the foundations of modern statistics, argued in 1958 that the link between smoking and lung cancer did not prove smoking was to blame. He wrote that lung cancer begins with a hidden stage, lasting years, that brings a slight inflammation, and that cigarettes might be 'a real solace' to someone in those years. What kind of explanation of the link does this argument offer?",
+   "answer": "Reverse causation",
+   "choices": [
+    "Reverse causation",
+    "A hidden third factor",
+    "Survivorship bias",
+    "A dose-response link"
+   ],
+   "context": "Fisher's argument turned the arrow round: the hidden illness would lead people to smoke, rather than the smoking causing the illness, and a link explained that way is called reverse causation. In the same paper he offered a hidden third factor too, an inborn makeup leading to both, which he thought more likely. Fisher, a lifelong pipe smoker, was also paid as a consultant to the tobacco industry, and the evidence proved him wrong: doctors who gave up smoking went on to have far less lung cancer than those who kept on, which an inborn makeup could not explain.",
+   "facts": [
+    "F7",
+    "F10",
+    "F11",
+    "F12",
+    "F22"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: distinguish causal from correlational relationships in data; curriculum line G8.M1) asks which way the arrow of cause points, and reverse causation is one of the ways a link can mislead."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Richard Doll and Austin Bradford Hill learned how much some 40,000 British doctors smoked in 1951, then followed them for years to see who died of lung cancer. Lung-cancer deaths were rarest among the non-smokers, more common among light smokers and most common among heavy smokers. How is this step-by-step pattern best read?",
+   "answer": "It fits a cause that does more harm in bigger doses",
+   "choices": [
+    "It fits a cause that does more harm in bigger doses",
+    "It fits a link that chance made among so many doctors",
+    "It fits doctors who played down how much they smoked",
+    "It shows nothing, since a link alone never shows a cause"
+   ],
+   "context": "When more of a suspect brings more of the harm, step by step, the link is hard to explain any other way, and Bradford Hill later listed this dose-response as one of his tests for a cause, though no single test proves one. Chance seldom draws so neat a pattern among some 40,000 doctors, and doctors who played down their smoking would have blurred the steps, not made them. A link is not proof on its own, but it is evidence: heavy smokers died of lung cancer about 24 times as often as non-smokers, and Doll had first suspected the tar on new roads and the fumes of cars.",
+   "facts": [
+    "F8",
+    "F9",
+    "F10",
+    "F11"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: distinguish causal from correlational relationships in data; curriculum line G8.M1) asks how a correlation is built into a strong causal case, and Doll and Hill's smokers are the classic case."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Tyler Vigen, then a law student, built a website of strange matches between sets of yearly figures from public records. In one, from 1999 to 2009, the number of people in the United States who drowned by falling into a swimming pool rose and fell with the number of films Nicolas Cage appeared in. What best explains the match?",
+   "answer": "Out of thousands of pairs, a few match by chance",
+   "choices": [
+    "Out of thousands of pairs, a few match by chance",
+    "Both rose and fell with hot and cool summers",
+    "Both rose and fell with booms and slumps in jobs",
+    "The drownings were counted wrongly in those years"
+   ],
+   "context": "Vigen's website draws on thousands of sets of figures, and it says any large enough collection of data will throw up strong matches at random: compare enough pairs and some will rise and fall together by luck alone. Nothing links Cage's films to pool drownings, through the weather, jobs or anything else, so the match is a coincidence, not a cause and not a hidden factor. The more pairs anyone searches, the more such matches turn up.",
+   "facts": [
+    "F1",
+    "F13"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: distinguish causal from correlational relationships in data; curriculum line G8.M1) teaches that a correlation can arise by chance alone."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "A girl's true mass is 50 kilograms, as her doctor's carefully checked scale shows. At home she steps onto her bathroom scale five times in a row, and it reads 53 kilograms every time. How would a scientist describe the bathroom scale's readings?",
+   "answer": "Precise, but not accurate",
+   "choices": [
+    "Precise, but not accurate",
+    "Accurate, but not precise",
+    "Both precise and accurate",
+    "Neither precise nor accurate"
+   ],
+   "context": "Precision is how closely repeated readings agree, and accuracy is how close they come to the true value. Five readings of exactly 53 agree perfectly, but each one is 3 kilograms too heavy. Averaging more of them would never fix that; only checking the scale against a known mass and correcting it, which is called calibrating, would.",
+   "facts": [
+    "F14",
+    "F15"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: improve the precision and accuracy of data; curriculum line G8.M1) teaches precision against accuracy, a step past the 6th-grade idea of readings that agree."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "The main mirror of the Hubble Space Telescope, 2.4 metres across, was polished smooth to within about a hundred-thousandth of a millimetre. Yet once Hubble was at work in space in 1990, its pictures came back blurred. What had gone wrong?",
+   "answer": "The tool that tested its shape had been built wrong",
+   "choices": [
+    "The tool that tested its shape had been built wrong",
+    "The mirror had bent in the shaking of the launch",
+    "The small second mirror had been set out of line",
+    "The mirror had sagged under its own weight in tests"
+   ],
+   "context": "One lens in the testing tool sat 1.3 millimetres out of place, so the polishers ground the mirror with great care into the wrong shape: its outer edge came out about 2 thousandths of a millimetre too flat. Every reading from the faulty tool was wrong in the same way, two older testers that had shown the flaw were brushed aside, and the review board faulted NASA for trusting a single instrument. Checks in orbit cleared the second mirror, and astronauts fitted correcting optics in 1993.",
+   "facts": [
+    "F15",
+    "F16"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: consider the limits of data, such as measurement error; curriculum line G8.M1) teaches that a faulty instrument gives the same error every time, which repeating cannot reveal."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Amos Tversky and Daniel Kahneman, two psychologists, posed this puzzle. A town has two hospitals: about 45 babies are born each day in the large one and about 15 in the small one. About half of all babies are boys. For a year, each hospital marks the days on which more than 60 percent of its babies are boys. Which hospital marks more such days?",
+   "answer": "The small one, as small groups swing more by chance",
+   "choices": [
+    "The small one, as small groups swing more by chance",
+    "The large one, as it has more boys born in all",
+    "Both about the same, as the odds of a boy never change",
+    "The large one, as more births give more chances of a run of boys"
+   ],
+   "context": "Each day the share of boys wanders from one half by chance, and the fewer the babies, the farther it can wander, so the small hospital has many more lopsided days. A boy is no likelier in a small hospital than in a large one, and over half the people Tversky and Kahneman asked chose about the same. The fewer the cases, the more a result can swing by luck alone.",
+   "facts": [
+    "F17"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: use statistics, including variability, to analyse data; curriculum line G8.M1) asks why a bigger sample gives a steadier result."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "Abraham Wald, a statistician with the Statistical Research Group at Columbia University, worked out in 1943 how to judge where a bomber is weakest from the damage on the bombers that returned. In the usual telling of his work, the returning planes were full of bullet holes in their wings and bodies but had few in their engines, and he said the engines needed armour most. What was his reasoning?",
+   "answer": "Planes hit in the engines had mostly been lost",
+   "choices": [
+    "Planes hit in the engines had mostly been lost",
+    "Enemy gunners had learned to aim at the engines",
+    "Engine holes had been patched before the counting",
+    "Too few engine holes were seen to judge them safe"
+   ],
+   "context": "Wald took hits to be spread over the whole plane, so the missing engine hits had been on the bombers that never came back: a bomber could fly home with holes in its wings, but a hit in an engine often brought it down. Studying only the planes that survived hides the losses, a trap now called survivorship bias. The usual telling, with its hole counts and its red-dotted plane, first drawn around 2005, is a later simplification; Wald's memos of 1943 worked the idea out in mathematics.",
+   "facts": [
+    "F18",
+    "F19",
+    "F23"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: consider the limits of data; curriculum line G8.M1) asks what data can and cannot show, and survivorship bias is data that leaves out the failures."
+  },
+  {
+   "tier": 4,
+   "topic": "correlation-causation-and-error",
+   "question": "A biologist counts the bacteria in a flask of broth every 20 minutes. She plots her counts on a graph with evenly spaced times along the bottom and evenly spaced numbers up the side, and the points make a line that curves upward ever more steeply. What does that shape tell her about the bacteria?",
+   "answer": "The more there are, the more each step adds",
+   "choices": [
+    "The more there are, the more each step adds",
+    "The same number are added at every step",
+    "Each one splits sooner than its parent did",
+    "New bacteria keep drifting in from the air"
+   ],
+   "context": "Each bacterium splits in two about every 20 minutes, so the count doubles, say from 100 to 200 to 400, and the more bacteria there are, the more new ones each step adds; growing additions bend the line ever more steeply upward, the shape of exponential growth, while equal additions would make a straight line. Each bacterium goes on splitting at the same pace, and the new ones come from splitting, not from the air. When food runs low and wastes build up, the growth slows and the curve levels off.",
+   "facts": [
+    "F20",
+    "F21",
+    "F24"
+   ],
+   "grade_note": "8th grade (NGSS middle-school practice: interpret graphs of data to identify linear and nonlinear relationships; curriculum line G8.M1) asks what a curved line says about the data behind it; bacteria splitting in two are the case."
+  }
+ ],
+ "revised": {
+  "0393275cce": {
+   "old_hash": "39ffebc0c0",
+   "why": "Judge (high, tell): the stem's 'lung cancer itself ... might be one of the causes of smoking cigarettes' spelled out reverse causation, so the term could be matched from its words. The stem now gives Fisher's argument as he made it (a hidden early stage bringing a slight inflammation, and cigarettes 'a real solace' in those years; F22, York text of his 1958 paper), and the student must see for himself that it runs the arrow backwards. The 'hidden' stage now makes 'A hidden third factor' a live lure; 'A coincidence of chance' and 'A measurement error', dead against a causal story, are replaced by two of the unit's other terms, 'Survivorship bias' and 'A dose-response link', so all four choices are named ideas. Judge (medium, stance) and fact-check (uncertain): the card now says he was a lifelong pipe smoker and a paid consultant to the tobacco industry (Grokipedia; Hansard; F22), alleges no motive, and says the evidence proved him wrong; judge (low): the quitters are said to answer the inborn-makeup idea, which they answer cleanly."
+  },
+  "71f7272a93": {
+   "old_hash": "02f8fa5782",
+   "why": "Judge (medium, tell): the key was the only hedged choice against three absolutes, and 'giving up cannot lower the risk' did not follow from a pattern by amount at all. All four choices are now readings of the pattern (the judge's set): a cause with a dose-response (key), chance, misreported smoking, and the slogan over-learned ('a link alone never shows a cause'), which replaces the judge's age lure because an age difference between smoking groups could also make a gradient and so was defensible. The question sentence no longer asks what the pattern 'adds to the case against smoking', which would have ruled out every lure that is not a case against smoking. The card now says why chance and misreporting fail (F9, F10)."
+  },
+  "e123c46d69": {
+   "old_hash": "dc47a9be7b",
+   "why": "Judge (medium, tell): the stem's 'searched thousands of sets of yearly figures for pairs that rose and fell together' was echoed by the key's 'Out of so many pairs'. The stem now says only that he built a website of strange matches (the judge's wording), and the key carries the thousands itself (F13: the site holds over 25,000 variables). The silly lure 'The films lead viewers to take risks in water' is gone, and so is the generic 'A hidden third factor raises and lowers both', which would have been right whenever the judge's new summers lure was right; the two hidden-factor lures are now distinct and specific (hot and cool summers; booms and slumps in jobs), and both are wrong (Grokipedia: 'purely coincidental, as no causal mechanism links film releases to drownings')."
+  },
+  "65b335178c": {
+   "old_hash": "0a0cf8497e",
+   "why": "Judge (medium, tell): the key was the only cause on the ground, and 'The makers' final checks said the mirror's curve was right. Yet...' pointed at the checks. That sentence is gone, and 'The mirror had warped in the cold of space' is replaced by an Earth-side lure, 'The mirror had sagged under its own weight in tests', so two lures lie on the ground and two in space. The judge's 'The polishers had stopped grinding it too soon' was not used: the edge came out too flat, which could be read as too little ground there, so it was not cleanly wrong. The card (unchanged) traces the flaw to the testing tool (F16)."
+  },
+  "51a807b00b": {
+   "old_hash": "51a807b00b",
+   "why": "Judge (medium, tell): 'Neither, as about half of all babies are boys' did not answer 'which marks more' (a duplicate of 'about the same', or silly). It is replaced by the right hospital for a wrong reason, 'The small one, as boys are likelier where fewer are born', so the player must know why, not only which (F17). Judge (low): the card now ends on the variability itself, not on 'trust a big sample', and says why the new lure is wrong. Stem unchanged."
+  },
+  "4157f9e1e2": {
+   "old_hash": "c09682ef18",
+   "why": "Judge (high, tell): wings and bodies shared one role in the stem, so both could be struck out together, leaving the engines against 'Every part alike'. The question now keys the reasoning, as the judge proposed: why the few engine holes meant the engines needed armour (key: those planes had mostly been lost). The lures are other ways to read few engine holes: gunners aiming at the engines (Wald took hits to be spread over the plane, F18), engine holes patched before counting, too few holes to judge (a sample-size misreading). The key says 'been lost', so it does not echo the stem's 'returned'. Judge (medium, fact) and fact-check (uncertain): the stem no longer states the popular pattern as history; it is 'the usual telling of his work' (the lead's wording; Grokipedia calls the engine advice apocryphal). The card's 'famous scene of Wald pointing at a dotted bomber' is gone: the red-dot bomber is a drawing Cameron Moll made around 2005 (F23), and the card says so."
+  },
+  "c6facdd9ae": {
+   "old_hash": "e2a58708cd",
+   "why": "Judge (medium, tell; lane): each choice carried a reason checkable against the stem's own numbers, so only two were live, and the shape of a doubling sequence leaned into maths. The judge's second fix is taken: the stem now gives the shape and asks what it says about the bacteria (key: the more there are, the more each step adds). Lures: equal additions (the straight-line reading, M7), faster splitting (each bacterium keeps the same doubling time, F21, F24), bacteria drifting in from the air (new ones come from splitting). Fact-check (uncertain): the graph now has evenly spaced times and evenly spaced numbers, so a log axis is ruled out, and the card says growth levels off 'when food runs low and wastes build up' (F24), not only when the food runs out."
+  }
+ },
+ "added": {},
+ "dropped": [],
+ "lead_edits": [
+  {
+   "old_hash": "51a807b00b",
+   "new_hash": "51a807b00b",
+   "change": "choice: \"The small one, as boys are likelier where fewer are born\" -> \"The large one, as more births give more chances of a run of boys\"",
+   "why": "re-checker's exact fix for its fail"
+  },
+  {
+   "old_hash": "4157f9e1e2",
+   "new_hash": "4157f9e1e2",
+   "change": "context: \"its red-dotted bomber drawn around 2005\" -> \"its red-dotted plane, first drawn around 2005\"",
+   "why": "re-checker's exact fix for its fail"
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "unit": "correlation-causation-and-error",
+ "questions": {
+  "0393275cce": {
+   "verdict": "pass",
+   "why": "Old tell fixed. The stem gives Fisher's argument in his own terms (York text: the pre-cancerous condition involves 'slight chronic inflammation', and a cigarette 'might be a real solace' in the years of approaching lung cancer). The student must see for himself that the arrow runs backwards; Grokipedia calls it reverse causation (cancer prompting smoking). 'A hidden third factor' is live through 'hidden stage', but the stem puts that stage inside lung cancer itself, and Fisher set the genotype apart as the 'common cause'. The other two terms are wrong. The card is honest with no smear: a lifelong pipe smoker, tobacco-industry funding from 1958 (Grokipedia; Hansard 1957), no motive alleged, and the evidence proved him wrong. No overlap: f99e57ffca and 55dccca414 key the third factor.",
+   "sources": [
+    "https://www.york.ac.uk/depts/maths/histstat/fisher274.htm",
+    "https://grokipedia.com/page/Ronald_Fisher",
+    "https://api.parliament.uk/historic-hansard/written_answers/1957/jul/08/smoking-and-lung-cancer",
+    "https://grokipedia.com/page/British_Doctors_Study"
+   ]
+  },
+  "71f7272a93": {
+   "verdict": "pass",
+   "why": "Old tell fixed: three choices are now hedged readings ('It fits ...'), and the absolute is a lure, the slogan over-learned ('It shows nothing'), which is wrong because a gradient is evidence (Bradford Hill's biological gradient). Chance is wrong at some 40,000 doctors. Under-reporting would blur the steps, not make them. 'Best read' leaves one defensible answer. Card facts hold: about 24 times for 25 or more a day in the early reports; Doll first suspected tarmac and car fumes. No overlap.",
+   "sources": [
+    "https://grokipedia.com/page/Bradford_Hill_criteria",
+    "https://grokipedia.com/page/British_Doctors_Study",
+    "https://en.wikipedia.org/wiki/Richard_Doll"
+   ]
+  },
+  "e123c46d69": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the stem no longer says he searched thousands of pairs; the key carries 'thousands' itself, which holds (the site now holds 25,237 variables). The silly lure is gone. The two hidden-factor lures are specific, live (pool drownings do follow hot summers) and wrong: Grokipedia calls the match 'purely coincidental, as no causal mechanism links film releases to drownings'. Vigen was then a Harvard law student; the chart runs 1999-2009. No overlap.",
+   "sources": [
+    "https://tylervigen.com/spurious-correlations",
+    "https://grokipedia.com/page/Spurious_relationship",
+    "https://www.avclub.com/there-s-a-correlation-between-nic-cage-movies-and-swimm-1798268565"
+   ]
+  },
+  "65b335178c": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the 'final checks' sentence is gone, and two causes now lie on the ground and two in space. The new lure (sagged under its own weight in tests) is wrong: the mirror was held on 130 rods to simulate weightlessness, and the Allen board traced the flaw to the misassembled reflective null corrector, one lens 1.3 mm out. Orbit tests cleared the secondary mirror. Card facts hold (edge about 2,200 nm too flat; conventional correctors' results dismissed; NASA faulted for relying on a single instrument; optics fitted 1993). No overlap with 22b242dc56 or T2 measuring-like-a-scientist.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hubble_Space_Telescope",
+    "https://grokipedia.com/page/Hubble_Space_Telescope"
+   ]
+  },
+  "51a807b00b": {
+   "verdict": "pass",
+   "why": "Re-checker failed it and gave the exact fix; the lead applied it (choice: \"The small one, as boys are likelier where fewer are born\" -> \"The large one, as more births give more chances of a run of boys\"). The facts and the rest were judged sound.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Insensitivity_to_sample_size",
+    "https://grokipedia.com/page/Insensitivity_to_sample_size"
+   ]
+  },
+  "4157f9e1e2": {
+   "verdict": "pass",
+   "why": "Re-checker failed it and gave the exact fix; the lead applied it (context: \"its red-dotted bomber drawn around 2005\" -> \"its red-dotted plane, first drawn around 2005\"). The facts and the rest were judged sound.",
+   "sources": [
+    "https://cameronmoll.com/journal/abraham-wald-red-bullet-holes-origin-story",
+    "https://yuxi-liu-wired.github.io/logs/posts/2025-survivorship-bias",
+    "https://grokipedia.com/page/Abraham_Wald",
+    "https://en.wikipedia.org/wiki/Survivorship_bias"
+   ]
+  },
+  "c6facdd9ae": {
+   "verdict": "pass",
+   "why": "Old problems fixed. 'Evenly spaced numbers up the side' rules out a log axis. The question now asks the science behind the shape, not the shape, so it sits in science's lane and away from 7fcc917549's straight line. 'Splits sooner' would also steepen the curve, but the shape does not show it, and the doubling time stays constant in the exponential phase (Grokipedia, Bacterial growth). So the key is the one thing the shape tells. The card's levelling-off now says food runs low and wastes build up. No overlap with T2 competing-for-resources, which keys the slowing near carrying capacity.",
+   "sources": [
+    "https://grokipedia.com/page/Bacterial_growth",
+    "https://grokipedia.com/page/Exponential_growth"
+   ]
+  }
+ }
+}

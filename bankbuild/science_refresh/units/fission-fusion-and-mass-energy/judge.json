@@ -1,0 +1,38 @@
+{"unit": "fission-fusion-and-mass-energy",
+ "questions": {
+  "f363339b68": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem's 'packed side by side' (and 'at such close quarters') echoes the key 'To the particles right beside it'. A student who does not know the strong force's range can match 'beside' to 'side by side'.",
+     "fix": "Stem: 'holds two or more protons, packed tightly together'. Key: 'Only to its nearest neighbours'."}]},
+
+  "d485bd5b3e": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'The Moon and Earth hold no charged particles at all' is weak at T5: the T4 inside-the-atom unit taught that every atom holds protons and electrons.",
+     "fix": "Replace it with a live confusion of electric and magnetic pulls: 'The electric force acts only on metals, not on rock'."}]},
+
+  "d5daf201db": {"verdict": "ok", "issues": []},
+
+  "e456c6629c": {"verdict": "ok", "issues": []},
+
+  "af2403a085": {"verdict": "ok", "issues": []},
+
+  "120a8f0908": {"verdict": "ok", "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "Safety lane, mild. 'In a lump of such uranium, one split can set off others nearby ... so the splitting spreads through the lump' pictures a growing chain reaction in a lump of pure uranium-235, which is the bomb picture. It gives no design, enrichment or critical-mass detail, but the power-plant framing is the safer home.",
+     "fix": "Set it in a reactor: 'In a reactor's fuel, one split can set off another, and that one another, in what physicists call a chain reaction.'"}]},
+
+  "eff142c470": {"verdict": "ok", "issues": []},
+
+  "716758d5ea": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Only very hot fuel can burn with oxygen into helium' is weak. The stem says the fuel is hydrogen joined into helium, and no burning in oxygen yields helium, so a 9th-grader drops it.",
+     "fix": "Use the fission-fusion mix-up instead: 'Only very hot nuclei can soak up enough neutrons to grow'."}]},
+
+  "994f30454a": {"verdict": "ok", "issues": []},
+
+  "928d5d3fa3": {"verdict": "ok", "issues": [
+    {"axis": "stance", "severity": "low",
+     "what": "The stem states benefits and the waste as facts, with no verdict, which is right. But the context answers all three wrong choices with reassurance (solid, one football field, safe shipments) and gives the hazard one clause. Read as a whole, the card leans toward nuclear power.",
+     "fix": "Add the plain open fact from F27: 'the United States still has no permanent store; work at Yucca Mountain has been halted since 2010'. That states the waste problem as flatly as the benefits."}]}
+ },
+ "unit_notes": "Safety lane is clean: no enrichment, critical mass or weapon detail anywhere. NIF's stockpile mission stays out (Q6's 'lump' framing is the only mild note). The Sun's core is not keyed: Q8 is fusion on Earth and names no solar figure, so how-the-sun-shines keeps its ground. inside-the-atom (T4) is not re-asked. Protons and neutrons in the nucleus are premises only (Q1, Q4), alpha particles are given in Q5's stem, and Rutherford and Chadwick are absent. Within the unit: Q6 and Q7 both rest on neutrons carrying the chain, but they key distinct facts (the carrier; absorbing rather than slowing). Q3 and Q5 are both Meitner-Frisch, also with distinct facts (the reading of the barium; the test that could have failed). Q5 is a disproof-logic item that can be reasoned from the stem, the same type as the T5 bar's Snow brewery question. That is acceptable at T5. Scope coverage: the four forces (Q1, Q2), fission and Meitner-Frisch (Q3, Q5), the chain reaction and the reactor (Q6, Q7), E = mc2 and the mass defect (Q4), fusion and fusion research (Q8, Q9), power's benefits and waste (Q10). The weak force appears only in Q2's context. That is acceptable, but it is the one scope item never asked. Q4's mass defect sits at the top of 9th grade, but it is asked in words, with the term taught in the stem. Nuclear power's benefits and waste are stated as facts with no policy verdict. No overlap with the momentum or circuits units. Voice and they/them: clean. Ten questions, on target."}

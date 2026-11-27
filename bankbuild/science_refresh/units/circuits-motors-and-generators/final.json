@@ -1,0 +1,246 @@
+{
+ "unit": "circuits-motors-and-generators",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "circuits-motors-and-generators",
+   "question": "A girl testing the lights for a model house joins three identical bulbs to a single battery, and all three light up. Then she tries unscrewing them one at a time. Whichever bulb she takes out, the other two stay lit. How must the three bulbs be wired?",
+   "answer": "All three in parallel",
+   "choices": [
+    "All three in parallel",
+    "All three in series",
+    "Two in series, the third in parallel with them",
+    "Two in parallel, the third in series with them"
+   ],
+   "context": "In parallel each bulb sits on a branch of its own with its own path to the battery, so taking one out leaves the other paths whole. In a single series loop any bulb taken out breaks the only path and all go dark, as on the old strings of holiday lights; with two in series, unscrewing one puts out its partner, and a bulb in series with the rest puts them all out.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3"
+   ],
+   "grade_note": "High-school physical science (TEKS IPC 6B) compares series and parallel circuits, and predicting which bulbs stay lit when one is removed is the standard way the difference is taught."
+  },
+  {
+   "tier": 5,
+   "topic": "circuits-motors-and-generators",
+   "question": "A family's kitchen has a ceiling lamp, a fridge and a toaster, all running from the same house supply. Electricians wire every lamp and socket in a house in parallel, never in one long series loop. Why do they wire it that way?",
+   "answer": "So each gets the full voltage of the supply",
+   "choices": [
+    "So each gets the full voltage of the supply",
+    "So each gets an equal share of the voltage",
+    "So the house draws less current from the supply",
+    "So every appliance carries the same current"
+   ],
+   "context": "Joined straight across the supply, each lamp and socket gets the full voltage whatever else is on, and one can fail or be switched off while the rest work on. Parts in series share the voltage between them, so each would get only a part of it, and one fault would cut them all. Each branch draws its own current, which differs from one appliance to the next, so the house draws more current in all, not less.",
+   "facts": [
+    "F1",
+    "F2",
+    "F4",
+    "F5"
+   ],
+   "grade_note": "Ninth-grade physical science teaches that homes are wired in parallel, and why: each device gets the full voltage and runs independently."
+  },
+  {
+   "tier": 5,
+   "topic": "circuits-motors-and-generators",
+   "question": "A student lights a bulb with a battery and two wires. She has an ammeter, a meter that reads the current, the flow of charge, in amperes. She measures the current first in the wire leading into the bulb, then in the wire leading out of it, back to the battery. How do the two readings compare?",
+   "answer": "The same, since no charge is used up in the bulb",
+   "choices": [
+    "The same, since no charge is used up in the bulb",
+    "Lower leaving, since the bulb uses up some current",
+    "Lower leaving, since some charge becomes light",
+    "Higher leaving, since the bulb speeds the charge up"
+   ],
+   "context": "Every bit of charge that flows into the bulb flows out of it again, so the current is the same all the way round a single loop. What the bulb takes is energy, carried by the moving charge and given off as light and heat; the battery supplies energy, not a store of current that gets spent.",
+   "facts": [
+    "F6",
+    "F7"
+   ],
+   "grade_note": "Ninth-grade physical science defines current as the flow of charge in amperes, and the same current everywhere in a series loop is the classic answer to the 'used up' misconception."
+  },
+  {
+   "tier": 5,
+   "topic": "circuits-motors-and-generators",
+   "question": "Two old bulbs with glowing filaments, one marked 60 watts and the other 25 watts, sit in two lamps plugged into sockets in the same house. The 60-watt bulb shines brighter, because more current flows through its filament. What does that extra current show about its filament?",
+   "answer": "It has less resistance than the dim bulb's",
+   "choices": [
+    "It has less resistance than the dim bulb's",
+    "It has more resistance than the dim bulb's",
+    "It gets more voltage than the dim bulb's",
+    "It holds more charge than the dim bulb's"
+   ],
+   "context": "Both bulbs get the same voltage from the house sockets, and with the same push more current flows only where there is less resistance: that is what resistance means. The brighter filament resists less, not more. A filament stores no charge; the charge flows through it, and what it gives off as light and heat is energy.",
+   "facts": [
+    "F4",
+    "F7",
+    "F10",
+    "F11"
+   ],
+   "grade_note": "Ninth graders learn current, voltage and resistance in words (Ohm's law), and comparing two bulbs on the same voltage is the textbook use of it."
+  },
+  {
+   "tier": 5,
+   "topic": "circuits-motors-and-generators",
+   "question": "Georg Ohm, a teacher in Cologne, sent currents through wires of different lengths and thicknesses. His book of 1827 tied the current in a wire to the push driving it, now called the voltage, and to the wire's resistance. A reviewer in a Berlin journal called it \"a web of naked fancies.\" Gustav Fechner put the rule to careful tests in 1831. Which result would have counted against Ohm?",
+   "answer": "The same push, and more current, in a longer wire",
+   "choices": [
+    "The same push, and more current, in a longer wire",
+    "The same push, and more current, in a shorter wire",
+    "The same push, and more current, in a thicker wire",
+    "Twice the push, and twice the current, in one wire"
+   ],
+   "context": "Ohm's law says the current rises in step with the push and falls as the resistance rises, and a wire of one metal resists more the longer it is and less the thicker it is, so at the same push a shorter or a thicker wire carries more current and a longer one less; only the longer wire with more current would break the rule. Fechner's measurements agreed with Ohm. The doubters' quarrel was mostly with treating electricity by mathematics, which most German physicists of the day did not do; the Royal Society gave Ohm its Copley Medal in 1841, and resistance is now measured in ohms.",
+   "facts": [
+    "F9",
+    "F10",
+    "F12",
+    "F14",
+    "F15",
+    "F16",
+    "F32",
+    "F33"
+   ],
+   "grade_note": "Ninth-grade science asks which result would disprove a claim, and Ohm's law in words, with its hostile reception and later confirmation, is the standard history of the rule."
+  },
+  {
+   "tier": 5,
+   "topic": "circuits-motors-and-generators",
+   "question": "Michael Faraday stood a magnet upright in a deep basin of mercury at the Royal Institution in September 1821, with its top just above the surface. He hung a wire from above so that its lower end dipped into the mercury, a liquid metal, beside the magnet. Then he sent a current from a battery down the wire. What did the wire do?",
+   "answer": "It circled the magnet while the current ran",
+   "choices": [
+    "It circled the magnet while the current ran",
+    "It swung onto the magnet and clung to it",
+    "It swung away from the magnet and hung there",
+    "It twitched once, then hung still beside it"
+   ],
+   "context": "A magnet pushes on a wire carrying a current at right angles to both the current and the magnet's field, so the wire is shoved sideways, never pulled in, and the mercury let it keep going round the pole without breaking the circuit. It was the first electromagnetic motor, the first steady motion made from a current and a magnet, and most motors since turn on the same sideways push, with coils in place of the wire.",
+   "facts": [
+    "F20",
+    "F22",
+    "F35"
+   ],
+   "grade_note": "High-school physical science (NGSS HS-PS2-5) teaches that a magnetic field pushes on a current, which is how a motor turns electricity into motion, and Faraday's rotation is the first motor."
+  },
+  {
+   "tier": 5,
+   "topic": "circuits-motors-and-generators",
+   "question": "Michael Faraday wound two separate coils of wire onto opposite sides of an iron ring on 29 August 1831. He connected one coil to a battery. The other had no battery of its own and ran to a galvanometer, a meter that detects current. When, if at all, did the galvanometer's needle move?",
+   "answer": "Only as the battery was connected or disconnected",
+   "choices": [
+    "Only as the battery was connected or disconnected",
+    "All the while the battery's current flowed",
+    "Never, since no wire joined the two coils",
+    "Only as the battery was connected, not disconnected"
+   ],
+   "context": "The needle flicked one way when the battery was connected and the other way when it was disconnected, and sat still while the current flowed steadily: the current in one coil made a current in the other only while it was changing, though no wire joined the two coils. Faraday's earlier tries with steady currents and magnets at rest had found nothing. Joseph Henry in Albany found the effect on his own, but his results came out in 1832, and the credit generally goes to Faraday.",
+   "facts": [
+    "F23",
+    "F25",
+    "F26"
+   ],
+   "grade_note": "High-school physical science (NGSS HS-PS3-5, TEKS IPC 6) teaches electromagnetic induction, and Faraday's ring is the experiment that found it."
+  },
+  {
+   "tier": 5,
+   "topic": "circuits-motors-and-generators",
+   "question": "Michael Faraday pushed a bar magnet into a coil of wire in 1831, with the coil joined to a galvanometer, a meter that detects current, and the needle flicked as the magnet went in. A student repeats the test with the same magnet and coil, but pushes the magnet in much faster. How does the needle's flick change?",
+   "answer": "Bigger, since the field through the coil changes faster",
+   "choices": [
+    "Bigger, since the field through the coil changes faster",
+    "Bigger, since a faster magnet carries in more charge",
+    "Smaller, since the field has less time to act on the coil",
+    "The same, since the magnet and the coil are the same"
+   ],
+   "context": "A quicker push changes the field through the coil faster, and the faster the field through a coil changes, the bigger the current it drives; less time does not mean a smaller flick, and the magnet carries no charge in with it. Moving the coil instead of the magnet works just as well. The generators in power stations work this way.",
+   "facts": [
+    "F24",
+    "F25",
+    "F29"
+   ],
+   "grade_note": "Ninth-grade physical science teaches that a changing magnetic field makes a current, and reasoning out why the magnet must move is the heart of induction."
+  },
+  {
+   "tier": 5,
+   "topic": "circuits-motors-and-generators",
+   "question": "Michael Faraday built a new machine in October 1831: a copper disc on an axle, between the poles of a horseshoe magnet. One sliding contact touches the axle and another the disc's rim, and wires from both run to a galvanometer, a meter that detects current. The disc is turned at one steady speed. What does the needle show while it turns?",
+   "answer": "A current, for as long as the disc spins",
+   "choices": [
+    "A current, for as long as the disc spins",
+    "One flick as it starts to turn, then nothing",
+    "Nothing, since the magnet itself never moves",
+    "A current only while the disc speeds up"
+   ],
+   "context": "As the disc turns, each part of the copper sweeps across the magnet's field, and a conductor moving through a magnetic field has a current driven along it, so the current flows for as long as the turning lasts. The magnet need not move: what counts is the motion of the copper through its field. It was the first electromagnetic generator, turning motion into electricity, though it gave only a small voltage.",
+   "facts": [
+    "F28",
+    "F29",
+    "F34"
+   ],
+   "grade_note": "High-school physical science teaches that a generator turns motion into electricity by moving a conductor through a magnetic field (NGSS HS-PS3-3, HS-PS2-5), and Faraday's disc is the first such machine."
+  },
+  {
+   "tier": 5,
+   "topic": "circuits-motors-and-generators",
+   "question": "On a long downhill road, the driver of an electric car lifts her foot off the accelerator. The car's electric motor, which had been driving the wheels, now holds the car back, so she hardly needs the brake pads. Nothing inside the motor has been rebuilt or swapped. What is the motor doing now?",
+   "answer": "Working as a generator, charging the battery",
+   "choices": [
+    "Working as a generator, charging the battery",
+    "Working as a motor, pushing back on battery power",
+    "Working as a brake, rubbing on its own shaft",
+    "Working as a magnet, gripping the steel axle"
+   ],
+   "context": "The turning wheels now spin the motor, so it makes a current that refills the battery, and the energy it takes from the car's motion slows the car: regenerative braking. One machine turns electricity into motion or motion into electricity, as Hippolyte Fontaine showed by accident at Vienna in 1873, when he wired an idle Gramme generator to a working one and its shaft began to spin. Friction brakes are still needed for a full stop, because the effect fades at low speed.",
+   "facts": [
+    "F29",
+    "F30",
+    "F31",
+    "F36"
+   ],
+   "grade_note": "High-school physical science teaches that a generator turns motion into electricity and that a motor and a generator are the same machine run in opposite directions; regenerative braking is the everyday case."
+  }
+ ],
+ "revised": {
+  "85f077699b": {
+   "old_hash": "e7832ae654",
+   "why": "Judge (low, clarity): 'a model' left the reader asking a model of what; it is now 'a model house'. Nothing else changed."
+  },
+  "91d63125a4": {
+   "old_hash": "91d63125a4",
+   "why": "Judge (medium, tell): 'So a fault in one lamp cuts off all the others' named a drawback no electrician would choose, so only three choices were live; it is replaced by the series rule students hand to parallel circuits, 'So every appliance carries the same current' (wrong: each branch draws its own current, F2, F5, F11). Judge (low): the key's 'works alone' re-tested e7832ae654's fact; the key is now 'So each gets the full voltage of the supply', the new fact here (F2, F4). The card answers the new lure. Stem unchanged."
+  },
+  "85687baade": {
+   "old_hash": "4b86284c2b",
+   "why": "Judge (low, clarity): 'bulbs ... light two lamps plugged into the sockets of one house' read oddly; the bulbs now 'sit in two lamps plugged into sockets in the same house'. Fact-check (optional): a glowing filament is not an ohmic conductor, so the card no longer calls the comparison 'Ohm's law in words'; it says 'that is what resistance means' (F9, F11). The card also no longer says the sockets are 'wired in parallel, so both get the same full voltage', which taught 91d63125a4's key; it says only that both get the same voltage. Key and choices unchanged."
+  },
+  "4acb975991": {
+   "old_hash": "f92250411d",
+   "why": "Fact-check (error): 'Critics in Germany called it \"a web of naked fancies\"' put one review's words in many mouths; the stem now says 'A reviewer in a Berlin journal called it', as Dove's account has it (the Berlin Jahrbucher fur wissenschaftliche Kritik, F32), naming no one. Judge (medium, tell): the key 'twice the push, and the same current' was the plain negation of the stem's 'tied the current ... to the push', so it could be picked knowing nothing. The breaking result is now 'more current in a longer wire', which needs the fact that resistance grows with length (F9; Ohm's own law had the current fall as the wire's length rose, F33). Against it stand a shorter and a thicker wire (both fit, but a student who thinks thickness adds resistance can doubt the second) and twice the push with twice the current. Every result is a comparison of one metal, as the stem's wires are."
+  },
+  "54f93346d1": {
+   "old_hash": "54f93346d1",
+   "why": "Fact-check (error): 'every motor since turns on the same sideways push' is false (switched reluctance motors pull on iron, piezoelectric motors use no magnetism), and 'the first electric motor, the first steady motion ever made from electricity' clashes with the electrostatic motors of the 1740s and 1750s. The card now says 'the first electromagnetic motor, the first steady motion made from a current and a magnet' and 'most motors since' (F35). Stem, key and choices unchanged."
+  },
+  "af0a377cef": {
+   "old_hash": "f8a147a80f",
+   "why": "Judge (medium, tell): 'once the iron ring had grown warm' and 'after the current had run a few minutes' had nothing in the stem or the unit behind them, so only two choices were live. They are replaced by the judge's two: 'Never, since no wire joined the two coils' (the coils are separate) and 'Only as the battery was connected, not disconnected' (half the truth: the needle flicked both times, the other way on disconnecting, F23). The question now asks 'When, if at all', so its wording does not rule out 'Never'. Judge (low, clarity): 'joined or broken' is now 'connected or disconnected', in the stem, the key and the card."
+  },
+  "b080b04df5": {
+   "old_hash": "22ab0a1b87",
+   "why": "Judge (medium): this keyed the same fact as f8a147a80f (a current only while the field changes), and each stem gave the other's answer. It now keys what is new in F24, the judge's re-key: a faster push gives a bigger flick ('The faster the motion, the greater the emf', OpenStax; deflections 'proportional to the speed of motion', Grokipedia). The faster push is a student repeating the test, so Faraday is not credited with a push he may not have made, and the stem no longer describes the needle at zero with the magnet still, which taught the ring question's key. Lures: less time, less effect; nothing changed but speed, so nothing changes; and a bigger flick for the wrong reason (the old draft's carried-charge lure). Fact-check (error): 'Every generator works this way' is false (Faraday's own disc has no coils); the card now says 'The generators in power stations work this way', the lead's words (F29)."
+  },
+  "46b9eae5b9": {
+   "old_hash": "d8552fece9",
+   "why": "Fact-check (uncertain): 'as Hippolyte Fontaine found by accident' read as discovering reversibility first, which Siemens (1867) and Pacinotti had already announced or seen; the card now says he 'showed' it, at Vienna in 1873, true on every account (F36). Judge (low, clarity): 'eases off the pedal' did not say which pedal; it is now 'lifts her foot off the accelerator'. Key and choices unchanged."
+  }
+ },
+ "added": {
+  "f6ebfe36e7": "Takes the slot of the dropped 988d964a43, as the judge asked: the scope's generator, turning motion into electricity, which no question asked. Faraday's copper disc of October 1831, the first electromagnetic generator, which gave a continuous direct current while it turned (F28, F29, F34). The lures are the 'only a change makes a current' over-reach a student brings from the ring and the coil (one flick at the start; only while it speeds up) and the belief that the magnet itself must move."
+ },
+ "dropped": [
+  {
+   "old_hash": "988d964a43",
+   "question": "Michael Faraday, a blacksmith's son with only basic schooling, was apprenticed to a London bookbinder at fourteen and read the books that passed through the shop. Jane Marcet's Conversations on Chemistry, he wrote long after, gave him his foundation in that science. What did he do with the claims in her book?",
+   "why": "Judge (drop, high): off scope, since Faraday's schooling in chemistry from Jane Marcet's book is not circuits, motors or generators and is in neither the scope nor the lead's magnetism entry; and the key, testing the claims, was the scientist-as-hero answer a student could pick against trust, authority and rote with no knowledge of Faraday. Its slot goes to Faraday's copper disc generator, which the unit lacked."
+  }
+ ]
+}

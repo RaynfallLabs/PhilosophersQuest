@@ -1,0 +1,57 @@
+{
+ "unit": "testing-a-claim",
+ "questions": {
+  "c547f37cb7": {
+   "verdict": "pass",
+   "why": "Old problems fixed: the stem is shorter, and the dead lure is replaced by 'Mesmer's skill and that of his pupils'. That lure is live (the stem never says who did the magnetising) and wrong for this design, which compared no healers: Mesmer refused any part, and the commission tested d'Eslon's practice (Wikipedia, Godwin). The card's new clause is right. Lavoisier's plan separated magnetism from imagination. The card says 'among the first blind tests', which is safely hedged. No mockery of the believers; double-blind not keyed (T5's).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Royal_Commission_on_Animal_Magnetism",
+    "https://grokipedia.com/page/Franz_Mesmer",
+    "https://www.jameslindlibrary.org/?p=14283"
+   ]
+  },
+  "9160822e13": {
+   "verdict": "pass",
+   "why": "Old tell fixed: every choice is now a silent movement, and the stem's 'watched the hoof' is gone. Key confirmed: a slight upward jerk of the head (Wikipedia; Grokipedia, averaging 1 mm; NYT 1911 review via Britannica). No source read names a step back, a glance at a crowd or a lifted hand as the stop cue. Grokipedia's 'back-step variations' changed the tapping's rhythm, not the stop. The card no longer teaches a5e0250f63's key.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Clever_Hans",
+    "https://grokipedia.com/page/Clever_Hans",
+    "https://www.britannica.com/topic/Clever-Hans",
+    "https://digfir-published.macmillanusa.com/gray7e/gray7e_ch2_2.html"
+   ]
+  },
+  "a5e0250f63": {
+   "verdict": "pass",
+   "why": "Old tell fixed: no 'knowing the cue well' set-up, and the dead lure is replaced. Two choices now have him give the cue and two have him hold still, so the key is not the odd one out. 'He gave the cue, but Hans paid it no heed' is wrong, since Hans answered Pfungst. Key confirmed: Pfungst found himself 'unwittingly providing similar cues himself' (Grokipedia); questioners did not know they gave them (Wikipedia, Pfungst). The other cards say the cues were not given on purpose, but not that knowing the cue fails to stop it, so the key is not taught in advance.",
+   "sources": [
+    "https://grokipedia.com/page/Clever_Hans",
+    "https://en.wikipedia.org/wiki/Oskar_Pfungst",
+    "https://en.wikipedia.org/wiki/Clever_Hans"
+   ]
+  },
+  "1fe1716f21": {
+   "verdict": "pass",
+   "why": "Old problems fixed. The key no longer takes the field as real ('No sign of a sense'), and a second 'No sign' lure removes the odd-one-out shape. The card uses the paper's own 'close to what would be expected for random chance' for 123 of 280 (44 percent). The screen lure is wrong: the hands came through cutouts at the screen's base and a towel covered the arms, so nothing stood between her hand and theirs (JAMA). The field is attributed ('what practitioners call'); no mockery; 'his or hers', not 'their'.",
+   "sources": [
+    "https://jamanetwork.com/journals/jama/fullarticle/187390",
+    "https://pubmed.ncbi.nlm.nih.gov/9533499/",
+    "https://en.wikipedia.org/wiki/Therapeutic_touch"
+   ]
+  },
+  "42ea05a9a3": {
+   "verdict": "pass",
+   "why": "Old tell fixed: the question now asks why the mark sat so far above 5, not why it was fixed in advance. Key true: 6 or more of 10 by guessing is 386/1024, about 38 percent; 8 or more is 56/1024, about 1 in 18. JAMA calls 8 of 10 'a level considered significant in many clinical trials'. Lures wrong: luck can reach 8; 'more right than wrong' would set 6; the authors expected a real sense to find the hand '100% of the time'. Preregistration is only mentioned, not keyed.",
+   "sources": [
+    "https://jamanetwork.com/journals/jama/fullarticle/187390",
+    "https://grokipedia.com/page/Preregistration_(science)"
+   ]
+  },
+  "fe331b916b": {
+   "verdict": "pass",
+   "why": "Re-checker failed it and gave the exact fix; the lead applied it (choice: \"A clear link: the middle years scored best\" -> \"No clear link, as all of them got the same score\"). The facts and the rest were judged sound.",
+   "sources": [
+    "https://jamanetwork.com/journals/jama/fullarticle/187390"
+   ]
+  }
+ }
+}

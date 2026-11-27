@@ -1,0 +1,210 @@
+{
+ "unit": "momentum-and-collisions",
+ "questions": [
+  {
+   "tier": 5,
+   "topic": "momentum-and-collisions",
+   "question": "A pickup truck with 20 times the mass of a cyclist and his bike creeps across a car park at half a metre per second, while the cyclist speeds along a flat road at 10 metres per second. Brakes giving the same steady force are put on both at the same moment. Which one takes more time to stop?",
+   "answer": "Neither, since the two carry equal momentum",
+   "choices": [
+    "Neither, since the two carry equal momentum",
+    "The truck, since its mass is far greater",
+    "The cyclist, since his speed is far greater",
+    "The cyclist, since his energy is far greater"
+   ],
+   "context": "Momentum is mass times velocity, so 20 times the mass at a twentieth of the speed is exactly the cyclist's momentum, and a steady force takes momentum away at a steady rate: the two stop together. The cyclist does carry 20 times the energy of motion, so he rolls 20 times as far while braking, but for no longer. At the same speed as the bike, the truck would carry 20 times the momentum and need 20 times as long to stop.",
+   "facts": [
+    "F1",
+    "F2",
+    "F3",
+    "F8"
+   ],
+   "grade_note": "High-school physical science (NGSS HS-PS2, TEKS IPC 5) defines momentum as mass times velocity, and the heavy-slow against light-fast comparison is the standard way it is taught apart from mass, speed and kinetic energy."
+  },
+  {
+   "tier": 5,
+   "topic": "momentum-and-collisions",
+   "question": "A cue ball strikes a still ball of the same mass squarely and stops dead, and the struck ball rolls on across the cloth of the pool table. It slows, and a few seconds later both balls lie still. Their total momentum, large just after the hit, is now zero. Does that break the law of conservation of momentum?",
+   "answer": "No, since an outside force has acted on the balls",
+   "choices": [
+    "No, since an outside force has acted on the balls",
+    "No, since the momentum has all turned into heat",
+    "No, since momentum is kept only in collisions that bounce",
+    "Yes, since total momentum can never change at all"
+   ],
+   "context": "Total momentum stays the same only while no outside force acts. In the split-second hit, the cloth's friction is far too small to matter, so the struck ball leaves with all the momentum the cue ball brought; afterwards that friction pushes back on it and passes the momentum to the table and Earth, far too massive to be seen to move. Bouncing has nothing to do with it, and it is the ball's energy of motion, not its momentum, that ends up as heat.",
+   "facts": [
+    "F5",
+    "F6",
+    "F7",
+    "F15"
+   ],
+   "grade_note": "NGSS HS-PS2-2 teaches that total momentum is conserved when there is no net outside force, and a 9th-grader is expected to say when that condition holds."
+  },
+  {
+   "tier": 5,
+   "topic": "momentum-and-collisions",
+   "question": "A hunter fires the same rifle twice. The first time he holds the butt loosely, a little way off his shoulder, and the rifle slams back into him. The second time he pulls it tight against his shoulder, and the kick is far gentler. Why does the tight hold soften the kick?",
+   "answer": "His body and the rifle move back as one mass",
+   "choices": [
+    "His body and the rifle move back as one mass",
+    "His grip cancels out the momentum of the kick",
+    "His grip makes the kick last a shorter time",
+    "The bullet leaves with less momentum than before"
+   ],
+   "context": "Before the shot the total momentum is zero, so whatever moves back must carry as much momentum as the bullet and its gases carry forward. Held tight, the rifle and the hunter's body take that momentum together, and so much mass moves back only slowly; held loosely, the light rifle alone picks up speed and then strikes his shoulder hard. The bullet's momentum is the same both times.",
+   "facts": [
+    "F9",
+    "F10",
+    "F4"
+   ],
+   "grade_note": "Recoil is the standard high-school example of momentum conserved from rest (NGSS HS-PS2-2), and asking which masses move together is the 9th-grade step beyond the bare rule."
+  },
+  {
+   "tier": 5,
+   "topic": "momentum-and-collisions",
+   "question": "Two pair skaters stand still, face to face, on smooth ice, and he has twice her mass. They press their palms together and push off each other, and the two glide apart across the rink. How does her momentum compare in size with his after the push?",
+   "answer": "Just as big, since the total must stay zero",
+   "choices": [
+    "Just as big, since the total must stay zero",
+    "Twice as big, since she moves twice as fast",
+    "Half as big, since she has half his mass",
+    "Zero, like his, since the two started still"
+   ],
+   "context": "They start still, so their total momentum is zero, and it is still zero after the push: her momentum and his are equal in size and opposite in direction, so the two add up to nothing. Momentum is mass times velocity, so she, with half his mass, glides off at twice his speed, and half the mass at twice the speed is the same momentum. Each pushes on the other just as hard for the same moment, which is another way to see why the two momenta match.",
+   "facts": [
+    "F11",
+    "F5",
+    "F1"
+   ],
+   "grade_note": "Two skaters pushing apart is the textbook 'explosion' case of momentum conservation in high-school physical science (NGSS HS-PS2-2)."
+  },
+  {
+   "tier": 5,
+   "topic": "momentum-and-collisions",
+   "question": "René Descartes taught in his Principles of Philosophy (1644) that the total 'quantity of motion', each body's size times its speed, never changes. Two equal lumps of soft clay fly at each other at the same speed, meet head on, stick and stop dead. Counted Descartes's way, their motion is lost. Christiaan Huygens found a count, worked out for hard bodies, that is kept in these lumps too. What did his count take into account?",
+   "answer": "The direction each body moves in",
+   "choices": [
+    "The direction each body moves in",
+    "The square of each body's speed",
+    "The time each collision lasts",
+    "The push each body gives the other"
+   ],
+   "context": "Counting motion one way as plus and the other way as minus, the lumps held plus one and minus one before they met, a total of nothing, and nothing after: the quantity was kept. Huygens also found that mass times the square of the speed adds up the same when hard, bouncing bodies collide; it does not for soft ones like clay, which, as was learned much later, turn energy of motion into heat. His directed count, mass times velocity, is now called momentum.",
+   "facts": [
+    "F12",
+    "F13",
+    "F7",
+    "F22"
+   ],
+   "grade_note": "High-school physics teaches that momentum is a vector, so opposite motions cancel, and Huygens's correction of Descartes is the history of how that was found."
+  },
+  {
+   "tier": 5,
+   "topic": "momentum-and-collisions",
+   "question": "Christopher Wren and Christiaan Huygens gave the Royal Society rules for collisions of hard bodies in 1668 and 1669, and John Wallis rules for soft ones. Isaac Newton tested such rules with balls of steel, glass, cork and wound wool on ten-foot threads. Steel balls sprang apart almost as fast as they met, wool ones at little over half that speed. What did he find about each pair's total momentum?",
+   "answer": "It stayed the same for every kind of ball",
+   "choices": [
+    "It stayed the same for every kind of ball",
+    "It stayed the same only for the steel balls",
+    "It stayed the same only for equal-sized balls",
+    "It shrank in the pairs that sprang apart slowly"
+   ],
+   "context": "Newton read each ball's speed from the arc it swung through, and for equal and unequal balls alike the motion one ball gained in one direction matched the motion the other gained in the opposite one, within 3 inches on his ten-foot threads. The rule held 'as well in soft as in hard bodies'; only the bounce differed. A soft collision loses energy of motion to heat and squashing, never momentum.",
+   "facts": [
+    "F14",
+    "F15",
+    "F7"
+   ],
+   "grade_note": "Ninth-grade physical science separates elastic from inelastic collisions and teaches that momentum is conserved in both; Newton's pendulum test is the experiment behind that claim."
+  },
+  {
+   "tier": 5,
+   "topic": "momentum-and-collisions",
+   "question": "John Paul Stapp, an Air Force doctor, rode the rocket sled Sonic Wind No. 1 in New Mexico in December 1954 to learn what a human body can survive. Its rockets took him from a standstill to 632 miles per hour in five seconds, and then the sled was brought to a stop in 1.4 seconds. Which part of the run pressed hardest on his body?",
+   "answer": "The stop, which changed his speed in the least time",
+   "choices": [
+    "The stop, which changed his speed in the least time",
+    "The start, when the rockets drove him forward hard",
+    "The top speed, when he was moving at his fastest",
+    "Start and stop alike, as both changed his speed equally"
+   ],
+   "context": "His speed rose by 632 miles per hour and fell by the same amount, so he gained and lost the same momentum, but the stop took a little over a quarter of the time, so its force was far greater, reaching 46.2 g. The wind did beat on him at top speed, since the sled had no windshield, but it pressed on him far less than the stop did; a steady speed by itself presses on no one. Textbooks of the day put 18 g as the limit of human tolerance, and Stapp, strapped into a strong harness, lived through more than twice that.",
+   "facts": [
+    "F16",
+    "F3",
+    "F4",
+    "F21"
+   ],
+   "grade_note": "NGSS HS-PS2-3 asks students to reason about the force on a body in a collision from the time it lasts, and Stapp's sled runs are the classic test of what a stop can do to a person."
+  },
+  {
+   "tier": 5,
+   "topic": "momentum-and-collisions",
+   "question": "Béla Barényi, an engineer at Daimler-Benz, doubted the long-held view that a safe car had to be rigid. His patent, granted in 1952, gave a car a stiff cabin between a front and back built to crumple in a crash, and a 1959 Mercedes was the first car built to it. How does a front that crumples protect the people inside?",
+   "answer": "It makes the stop take longer, so the push on them is gentler",
+   "choices": [
+    "It makes the stop take longer, so the push on them is gentler",
+    "It makes the stop take less time, so the crash is over sooner",
+    "It soaks up the car's momentum, so none of it reaches them",
+    "It cuts the speed at which the car hits, so the crash is milder"
+   ],
+   "context": "A car that hits a wall at a given speed must lose all its momentum whatever its front is made of, and no front can change the speed it hits at; folding metal stretches that loss over more time, so the average force on the people in the cabin is smaller. A rigid car stops abruptly, which makes the jolt far harsher. The crumpled metal stays crumpled, taking in energy of motion, while the stiff cabin keeps its space around the people.",
+   "facts": [
+    "F17",
+    "F18",
+    "F4",
+    "F23"
+   ],
+   "grade_note": "NGSS HS-PS2-3 has students design a device that lowers the force in a collision by lengthening it, and Barényi's crumple zone is the standard real case."
+  },
+  {
+   "tier": 5,
+   "topic": "momentum-and-collisions",
+   "question": "A girl jumps down twice from the top of a low wall onto hard ground. On the first jump she lands stiff-legged. On the second she bends her knees as her feet touch the ground and lets her body sink down. How does the change in her momentum on the second landing compare with the first?",
+   "answer": "The same, since she lands just as fast and stops",
+   "choices": [
+    "The same, since she lands just as fast and stops",
+    "Smaller, since her bent knees soak up part of it",
+    "Smaller, since she takes longer to come to a stop",
+    "Larger, since the ground pushes on her for longer"
+   ],
+   "context": "She meets the ground just as fast both times and ends at rest, so her momentum changes by the same amount however she lands; a longer stop spreads that change out but neither shrinks nor grows it. Bending her knees stretches the stop over more time, so she slows less sharply and the force on her legs is smaller. A car's air bag, the crushing foam of a helmet and a catcher's padded glove work the same way.",
+   "facts": [
+    "F3",
+    "F4",
+    "F19",
+    "F20"
+   ],
+   "grade_note": "Impulse, the change in momentum that a force gives over a time, is taught in 9th-grade physical science with landing and catching as its everyday cases (NGSS HS-PS2-3)."
+  }
+ ],
+ "revised": {
+  "43bf4eeed6": {
+   "old_hash": "43bf4eeed6",
+   "why": "Judge (medium, tell): 'a still ball keeps its momentum stored' died at once for anyone who knows momentum is mass times velocity. It is replaced by the real misconception that momentum is kept only in bouncy collisions (M3; F7, F15), wrong because the law needs only that no outside force act. Judge (low): the key no longer repeats the stem's word 'cloth' ('an outside force has acted on the balls'); the card still names the cloth's friction. The stem is unchanged."
+  },
+  "17b2a36a11": {
+   "old_hash": "36f4aa94b5",
+   "why": "Judge (high): asking who glides off faster re-asked the T4 tackle (twice the mass, half the acceleration) in a new scene, and only one qualifier carried the momentum fact. The stem now asks how her momentum compares in size with his, the conservation fact itself (F11, F5). The lures are a speed-only count (she is faster, so more), a mass-only count (M2: she is lighter, so less), and the total-for-each mix-up (both started still, so each has none); the third-law lure ('he gives the harder push', keyed at T2) is gone. 'In opposite directions' left the stem so it could not echo the answer; the question asks size only."
+  },
+  "7d9a044f3c": {
+   "old_hash": "1fc4e00807",
+   "why": "Fact-check (error): the context made Huygens the finder of the soft-body failure and of heat; his rules treated hard bodies (soft ones were Wallis's) and motion turned into heat came with Joule in the 1840s. The sentence now reads as the fact-check and lead gave it (F22). Fact-check (uncertain): 'kept in every collision' credited Huygens with more than his hard-body rules said; the stem now says 'a count, worked out for hard bodies, that is kept in these lumps too' (the lead's words), which also softens the overlap with ba63ed1a27 that the judge noted. Judge (medium): 'The heat each collision gives off' was partly true (a count of energy that includes the heat is kept), so it is replaced by 'The time each collision lasts', the impulse mix-up, which is no part of any conserved count."
+  },
+  "a979ea77bb": {
+   "old_hash": "a979ea77bb",
+   "why": "Fact-check (error): 'Moving fast at a steady speed presses on no one' was said of a run on which the wind pressed hard on him at top speed (no windshield, windblast up to 7.7 psi). The context now says the wind did beat on him at top speed but far less than the stop, as NASA's history of the run reports (windblast 'negligible and unnoticeable in comparison with deceleration effects', F21), and keeps the inertia point as 'a steady speed by itself'. Stem, key and choices unchanged."
+  },
+  "28269a7320": {
+   "old_hash": "28269a7320",
+   "why": "Judge (medium, tell): 'It springs back, so the car rebounds' was ruled out by the stem's own 'built to crumple', so only three choices were live. It is replaced by the judge's impact-speed misconception, worded 'It cuts the speed at which the car hits, so the crash is milder': wrong, since the crumpling starts only once the car has hit and the momentum to lose is fixed by the car's mass and speed (F18, F23). The card says so in one clause. Stem and key unchanged."
+  },
+  "e0e900c697": {
+   "old_hash": "ebceb95aa9",
+   "why": "Judge (high, tell): 'What is the same?' fell to elimination: the time plainly differs, the force differs by common sense, and 'how sharply she slows' is the force again. The judge's two-by-two (momentum change by force) would still lose its two 'same force' choices to common sense, leaving two live, so the question now asks the momentum change alone, with three live misconceptions against the key: bent knees soak some of it up (M1), a slower stop means a smaller change (M6), and a longer push means a larger change (impulse half-learned, F3). 'From the same height' left the stem so 'the same' could not echo the key; the same wall top gives the same height. Same fact as before (F3, F19)."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

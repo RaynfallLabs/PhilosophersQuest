@@ -1,0 +1,62 @@
+{"unit": "circuits-motors-and-generators",
+ "questions": {
+  "e7832ae654": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Testing the lights for a model' leaves 'a model' unexplained (a model of what?).",
+     "fix": "'testing the lights for a model house'."}]},
+
+  "91d63125a4": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'So a fault in one lamp cuts off all the others' names a drawback no electrician would choose on purpose, so only three choices are live.",
+     "fix": "Replace it with the series property students hand to parallel: 'So the same current flows through every lamp'."},
+    {"axis": "other", "severity": "low",
+     "what": "The key's 'works alone' re-tests Q1's fact (in parallel each branch runs on its own). Q2's new fact is the full voltage.",
+     "fix": "Key: 'So each gets the full voltage of the supply'."}]},
+
+  "d0744255b5": {"verdict": "ok", "issues": []},
+
+  "4b86284c2b": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Light two lamps plugged into the sockets of one house' reads oddly (the bulbs 'light' the lamps).",
+     "fix": "'sit in two lamps plugged into sockets in the same house'."}]},
+
+  "f92250411d": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the plain negation of the stem's own words. The stem says Ohm 'tied the current ... to the push', so a doubled push with an unchanged current breaks any tie. A student who knows nothing of Ohm's law, or of how length and thickness set resistance, picks it with certainty. Only the three choices that fit need the unit's facts. (Frisch's and Snow's disproof items need an inference, from the control or from who drank what; this one needs none.)",
+     "fix": "Make the breaking result need the facts. Key: 'The same push, and more current, in a longer wire'. Others: 'The same push, and more current, in a thicker wire' / 'Twice the push, and twice the current, in one wire' / 'Half the push, and half the current, in one wire'."}]},
+
+  "988d964a43": {"verdict": "drop", "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "In a science quiz, three choices are ways of not testing a claim (trust, appeal to authority, rote) and one is testing it. The key is the scientist-as-hero answer the bank's voice celebrates, so it is guessable with no knowledge of Faraday.",
+     "fix": "Drop."},
+    {"axis": "other", "severity": "high",
+     "what": "Off scope. Faraday's self-schooling in chemistry from Marcet's book is not circuits, motors or generators. It is not in the unit's scope or in the lead's magnetism entry, so no rewrite keeps this fact in this unit.",
+     "fix": "Replace it with the scope's missing generator question, the Faraday disc (F28): 'Michael Faraday spun a copper disc between the poles of a horseshoe magnet in October 1831, with one wire touching its axle and another its rim, both running to a galvanometer. What did the needle show while the disc turned at a steady rate?' Key: 'A steady current, for as long as it spun'. Others: 'One flick as it started, then nothing' / 'Nothing, since the magnet never moved' / 'A current only while it sped up'."}]},
+
+  "54f93346d1": {"verdict": "ok", "issues": []},
+
+  "f8a147a80f": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Only once the iron ring had grown warm' and 'Only after the current had run a few minutes' are weak. Nothing in the stem or the unit suggests warmth or waiting, so only two choices are live: the key and 'All the while the battery's current flowed'.",
+     "fix": "Replace them with 'Never, since no wire joined the two coils' and 'Only as the battery was joined, never as it was broken'."},
+    {"axis": "clarity", "severity": "low",
+     "what": "'Joined or broken' for connecting and disconnecting a battery is a little opaque for a 9th-grader.",
+     "fix": "'Only as the battery was connected or disconnected' (and the same verbs in the stem and the new choice)."}]},
+
+  "22ab0a1b87": {"verdict": "revise", "issues": [
+    {"axis": "other", "severity": "medium",
+     "what": "Q8 already keys this fact: a current flows only while the field through the coil changes. The unit then holds two questions on one fact, and each stem gives the other's answer.",
+     "fix": "Keep the magnet and coil but key what is new in F24. Stem ends: 'He then pushed the magnet in faster. How did the needle's flick change?' Key: 'It grew bigger'. Others: 'It stayed the same, as the magnet was the same' / 'It grew smaller, as the field had less time to act' / 'It swung the other way'."},
+    {"axis": "tell", "severity": "low",
+     "what": "If kept as is: 'Only a moving magnet has a magnetic field at all' is weak, since a 9th-grader knows a magnet at rest still holds a paper clip.",
+     "fix": "Superseded by the re-key above."}]},
+
+  "d8552fece9": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Eases off the pedal' does not say which pedal, and the stem goes on to mention the brakes.",
+     "fix": "'lifts her foot off the accelerator'."},
+    {"axis": "tell", "severity": "low",
+     "what": "'Working as a magnet, gripping the steel axle' is the weakest of the four.",
+     "fix": "'Working as a flywheel, storing the motion in its spin'."}]}
+ },
+ "unit_notes": "Overlap sweep. T1 electric-circuits (closed loop, switch, copper, plastic, battery, tap water, the bird on a line) is not re-asked. Q1 and Q3 go beyond the closed loop to series vs parallel and current not used up. T4 fields-pushes-and-pulls-without-touching (Oersted, the current's field, the electromagnet's turns, the maglock) is not re-asked. Q7's sideways push on a wire is the new converse. The T1 energy-changes-form motor fact (electrical energy into motion) is deepened, not repeated, by Q7 and Q10. No overlap with momentum or fission. Fission Q7 names a turbine driving a generator only as a premise. Within the unit: Q6 is off scope (see its issue). Q8 and Q9 are one fact (see Q9). Q1 and Q2 overlap on independence (see Q2). Scope gap: no question asks how a generator turns motion into electricity, which the scope names. Q9's context and Q10 touch it, so Q6's slot should go to the Faraday disc. Ohm's law in words (Q4, Q5) and the series and parallel items have no arithmetic beyond doubling, so the lane is respected. Voice and they/them: clean. Ten questions, on target."}
