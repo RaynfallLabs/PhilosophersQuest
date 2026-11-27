@@ -65,9 +65,7 @@
    "flag": []
   },
   "74c56090f0": {
-   "fail": [
-    "singular they in context"
-   ],
+   "fail": [],
    "warn": [],
    "info": [
     "voice: long(71>70)"
@@ -83,5 +81,5 @@
    "flag": []
   }
  },
- "n_fail": 1
+ "n_fail": 0
 }

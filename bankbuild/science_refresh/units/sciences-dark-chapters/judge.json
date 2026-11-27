@@ -1,0 +1,94 @@
+{"unit": "sciences-dark-chapters",
+ "questions": {
+  "42ec043e2c": {"verdict": "revise",
+   "issues": [
+    {"axis": "stance", "severity": "medium",
+     "what": "The stem hides who did it. 'were taught to shape their brushes ... and were told the radium paint was harmless' names no one, and the card never names the companies either. The unit's rule is to name who did it, and this is the only question that states the lie the painters were told. It is also the unit's opening question on the Radium Girls.",
+     "fix": "'Young women painted glowing numbers on watch dials for the United States Radium Corporation in New Jersey and the Radium Dial Company in Illinois. The companies taught them to shape their brushes to a fine point with their lips and told them the radium paint was harmless. With every lick the women swallowed a trace of radium. Years later the radium was still inside them, giving off radiation. Why had their bodies kept it?'"},
+    {"axis": "fact", "severity": "low",
+     "what": "'in New Jersey and Illinois, from about 1917' dates both plants to 1917. The Ottawa, Illinois, company was set up in 1922 (F1).",
+     "fix": "Drop the date, as in the rewrite above, or say 'in the 1910s and 1920s'."},
+    {"axis": "tell", "severity": "low",
+     "what": "Radium and calcium share the '-ium' ending, and no other choice's element does. A guesser who matches sounds lands on the key.",
+     "fix": "Replace the vitamins lure with 'They held it in muscle cells, as they do potassium' (most of the body's potassium is inside muscle cells; it needs a source line), so two choices end in '-ium'."}
+   ]},
+  "b493ef879b": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'the women' appears without being introduced (the stem has only 'the company's dial-painting plant'), and the key's 'all were well' leaves the reader to guess who 'all' are. The question is otherwise strong: Roeder's infection story makes 'changed to blame an infection' a real lure, and the company is named.",
+     "fix": "'... and his report judged that radium was making the women who painted the dials ill.' Key: 'Drinker's report, changed to say the women were well'. To keep the lengths even, lengthen one lure to 'Drinker's report, changed to blame an outside infection'."}
+   ]},
+  "7dcdd22bd0": {"verdict": "drop",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "This is not a fair 8th-grade fact as written. What Robley Evans's 1941 committee capped (0.1 microgram of radium fixed in the body) is a footnote of health-physics history that no 8th-grade course teaches. The only 8th-grade content inside it, that swallowed radium stays in the body, is 42ec043e2c's fact. Every rewrite that keeps it fair for the grade turns back into that question (why so small an amount matters: it stays and keeps radiating).",
+     "fix": "Drop the question. Move its card's lines onto 42ec043e2c's card as what was learned: the 0.1 microgram limit drawn from the painters' cases, the radon breath test, and the Manhattan Project's plutonium limit patterned on radium."},
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is given away twice. 42ec043e2c's stem says 'Years later the radium was still inside them', and the quoted 'tolerance level' asks what a worker can bear. The key is also the only choice about the body. A pot of paint and a finished dial have nothing to do with a worker's tolerance, so only two choices are live.",
+     "fix": "Nothing is needed if the question is dropped."},
+    {"axis": "stance", "severity": "low",
+     "what": "The first sentence (Fryer's 1928 settlement, Donohue's 1938 case) is court history that the question does not use. The framing allows court history only as setting, and here it is a whole sentence of verdicts.",
+     "fix": "If any of it is kept elsewhere, cut that sentence."}
+   ]},
+  "2eda5c3829": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The two pregnancy lures fall together. A player who knows only the headline (thalidomide harmed unborn babies) rules out both at once, which leaves rats and mice against monkeys. The question is otherwise good: Grünenthal is named, and M2 (surviving huge doses is not safety) is the lesson.",
+     "fix": "Replace 'Many pregnant women had taken it safely' with 'Rabbits given it for months stayed well' (Grünenthal tested rodents only, F12; rabbits are not rodents). Keep 'Pregnant animals given it had healthy young' as the M2 lure."}
+   ]},
+  "ac5ccbf81a": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "25ebd2a5ce's stem says the 1938 law asked a company 'to show only that a new drug was safe'. A player who meets that question first can rule out 'It had failed to help patients sleep'. Otherwise the question is sound: M1 ('It had already harmed babies in Europe') is the right lure, and Kelsey's demand for evidence is the key.",
+     "fix": "Replace that lure with a timing lure from the record: 'It had been shown to damage nerves'. Florence's letter is dated 31 December 1960 and was read early in 1961 (F19), so it is false for November 1960."}
+   ]},
+  "00cf2f4370": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is thalidomide's headline. A player who knows only that the drug harmed unborn babies (as most do, and as 2eda5c3829's and ac5ccbf81a's choices say) picks it without knowing anything about the letter. Nothing in the stem's nerve-damage clue points to any choice. 'Proof it worked better than older pills' is also ruled out by 25ebd2a5ce's stem (the 1938 law asked only for safety).",
+     "fix": "Put the request in the stem and ask the reason, with the M1 timing myths as the lures: '... signs of nerve damage. The letter led Kelsey to ask the company for proof that the drug could not harm a baby before birth. Why did a letter about grown patients' nerves make her ask that?' Choices: 'So strange a side effect hinted at harms not yet found' (key; F19, F19b), 'Doctors in Europe had already linked it to birth defects' (false: late 1961, F14), 'Rabbit tests had already shown harm to unborn young' (false: later work, F13), 'The company had said the drug reached unborn babies' (false: Merrell claimed it did not cross the placenta, F19)."}
+   ]},
+  "25ebd2a5ce": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "Only two choices are live. The stem rules out 'Evidence that another country had approved it', because the drug was harming babies in Europe, where it was approved. A cost test is foreign to a law passed after a drug disaster. The key is also the only choice with a mark of quality ('from careful studies'), and in a unit about Kelsey's demand for evidence that marks it as the answer.",
+     "fix": "Choices: 'Evidence from well-controlled studies that it works' (key; 21 U.S.C. 355(d)), 'Evidence from doctors' praise that it works' (the testimonials the law replaced, F18; the card already says 'not doctors' praise'), 'Evidence that it works better than older drugs' (M3), 'Evidence that it causes no side effects at all' (a common belief; no law asks it)."}
+   ]},
+  "026cc989e2": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem says about 400 men 'had syphilis' when the study began, which weakens the M4 lure 'Whether men given syphilis would get well again'. It stays live only for a player who takes the 200 healthy men to be the ones 'given' it. The rest is good: the USPHS is named, there is no harm clause in the stem, and the card attributes the steel-man of 1932.",
+     "fix": "Fit the M4 idea to the stem: 'Whether healthy men would catch it from the rest' (the 200 healthy men keep it live; the card already says no one was given the disease)."}
+   ]},
+  "7d2b959afb": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "The card's 'Dozens of the men died of syphilis or its effects' is not in facts.md. Wikipedia's figures (28 dead of syphilis, about 100 more of its complications) make 'dozens' an understatement. That card sentence also gives two clauses of harm where the unit allows one.",
+     "fix": "Keep one sourced clause: 'More than a hundred of the men died of syphilis or its complications' (if the fact-checker confirms it), or keep only the wives-and-children clause (F31). Do not keep both."},
+    {"axis": "tell", "severity": "low",
+     "what": "A player who has met 026cc989e2, whose key is 'never treated', gets this one free, and 'still followed' points the same way. That is acceptable, since the card teaches it, but the two keys sit close together.",
+     "fix": "No change is required. Optionally, key 026cc989e2 as 'How syphilis harms the body over a lifetime' so that 'untreated' is left to this question."}
+   ]},
+  "033edf1190": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'A news story that made it public' sits badly beside 7d2b959afb's card, which says the study 'was no secret' and was published in journals for decades. A careful player sees a contradiction.",
+     "fix": "Key: 'A news story that told the whole nation'."},
+    {"axis": "fact", "severity": "low",
+     "what": "The card says 'Buxtun then passed the story to Jean Heller'. facts.md's own conflict list says the bank would not state this route, because other accounts run it through the AP's Edith Lederer.",
+     "fix": "'Buxtun took the story to the Associated Press, and its reporter Jean Heller broke it on 25 July 1972.'"},
+    {"axis": "clarity", "severity": "low",
+     "what": "'venereal diseases' is a word few 8th graders know.",
+     "fix": "'who interviewed patients with sexually transmitted diseases for the US Public Health Service'."}
+   ]},
+  "25515aa098": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only choice that describes a body with a stated purpose ('that weighs its ethics'); the other three name an office. 'Ethics' is also the unit's theme, so a test-wise player picks it without reading the others.",
+     "fix": "Use one frame for all four: 'A review board where the research is done' (key; local IRBs, F32), 'A panel in the Surgeon General's office', 'A federal judge, case by case', 'A panel of the scientists' professional society'. The card then teaches what the board weighs."},
+    {"axis": "tell", "severity": "medium",
+     "what": "Cross-question leak. The stem's 'after the ... study ... came to light' hands 033edf1190 its key ('A news story that made it public'), and '1974' rules out that question's 'new law' lure. The game draws questions at random, so a player who meets this stem first gets the other free.",
+     "fix": "'Congress passed the National Research Act in 1974 in answer to the US Public Health Service's syphilis study in Alabama.'"}
+   ]}
+ },
+ "unit_notes": "Stance and tone: sound across the unit. No question blames 'science' in general. US Radium, Roeder, Grünenthal, Richardson-Merrell and the USPHS are named (Q 42ec043e2c is the one gap, fixed above). Harm is one plain clause with no gore (7d2b959afb's card is the one exception). Kelsey's demand for evidence is the heroine in ac5ccbf81a, 00cf2f4370 and 25ebd2a5ce, with M1 (she knew of the birth defects) as the honest lure. Peltzman is attributed and his critics' answer given. The 1932 steel-man is attributed. There is no sermon and no smug line. Court and political history appear only as setting, except 7dcdd22bd0's first sentence. One thing outside the draft: the units.json title 'Science's Dark Chapters' pins the harm on science in general, against the 'name who did it' rule; the lead may want a title such as 'Dark Chapters in Medicine'. GRADE RULINGS: (1) The 1941 radium tolerance level is NOT a fair 8th-grade fact. It is a health-physics footnote, and its only grade-fit content is 42ec043e2c's fact. Drop 7dcdd22bd0 and fold its card into 42ec043e2c's. The unit then holds 10 questions, inside the unit rule's 8-10. The scope's 'lawsuits changed worker safety' is court history, which the framing note gives to the history bank, so leaving it unkeyed is right. (2) The 1962 law's evidence rule IS a fair 8th-grade fact: a new drug must be shown by controlled studies to work as well as to be safe. That is a plain impact-of-research lesson tied to 8th-grade fair tests (TEKS 8.4A). The law's name, Congress and the dates are setting. 25ebd2a5ce needs only its lures fixed. OVERLAPS (grep of all 117 final.json files): none keyed. viruses-bacteria-and-antibiotics keys penicillin's discovery (Fleming, Florey's mice, purification), not its use against syphilis. inside-the-atom has alpha particles only, which appear here only on 42ec043e2c's card. fair-trials-controls-and-placebos keys trial design (controls, chance, blinding, placebos), not the 1962 law. the-periodic-tables-patterns keys the alkali metals and halogens, not calcium's group. when-the-state-decides-the-science (T5, not yet written): this unit keys no eugenics, Buck v. Bell, Lysenko or Nuremberg Code. When that unit and vaccines-the-science-and-the-scrutiny (T5, also unbuilt) key consent through the Nuremberg Code, they should not key the IRB or the Belmont principles, which 25515aa098 keys and its card teaches. Informed consent, the scope's lesson, is taught on the 026cc989e2 and 25515aa098 cards and keyed only through the IRB. Given the T5 owners, that is acceptable. CROSS-QUESTION LEAKS: 25515aa098's stem leads to 033edf1190's key (medium, fixed above). 42ec043e2c's stem leads to 7dcdd22bd0's key (moot once it is dropped). 25ebd2a5ce's stem kills a lure in ac5ccbf81a and in 00cf2f4370 (low, fixed above)."}

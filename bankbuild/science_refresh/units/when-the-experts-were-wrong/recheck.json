@@ -1,0 +1,106 @@
+{
+  "unit": "when-the-experts-were-wrong",
+  "questions": {
+    "e48759f65f": {
+      "verdict": "pass",
+      "why": "Palmer fixed: the context now says the 1954 study 'found none of the spiral bacteria', which matches his paper (a search for spirochetes in 1,180 subjects with a stain that could not show them). The stem's trim to 'causes ulcers' no longer gives away the inflamed-lining half of de1f05fb1c's key. The doubters' reasons (acid kills germs, Palmer) stay in, with no smugness. The piglets keep the mice and monkey lures live. Voice clean.",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8568761",
+        "https://en.wikipedia.org/wiki/Timeline_of_peptic_ulcer_disease_and_Helicobacter_pylori",
+        "https://en.wikipedia.org/wiki/Barry_Marshall"
+      ]
+    },
+    "de1f05fb1c": {
+      "verdict": "pass",
+      "why": "The leak is cured: neither the stem nor the context says who swallowed the broth, so all four of e48759f65f's choices stay live. Asking what 'the camera and the sample' showed makes the ulcer lure (the popular myth) fair. Facts hold: gastritis with heavy colonisation on the tenth day, no ulcer, a 14-day mild illness, and the 1985 paper's 'predisposes' claim. 'All around it' makes the ulcer lure the longest choice. The passive 'a stomach whose lining had looked normal through a thin tube' is a little stiff but clear.",
+      "sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:3982345&resultType=core&format=json",
+        "https://grokipedia.com/page/Barry_Marshall"
+      ]
+    },
+    "018d630861": {
+      "verdict": "pass",
+      "why": "Lures now test the size and the lasting of the effect (slightly fewer; about as many; fewer at first, then as many). All three are false against 21 of every 100 against 84 at twelve months, and each is a result a doubter could have expected. The key is not the longest. The context keeps both sides: Marshall's 'everyone was against me' and the proper-scepticism view. NIH 1994 and the Nobel Prize of 2005 are right.",
+      "sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:2904568&resultType=core&format=json",
+        "https://en.wikipedia.org/wiki/Barry_Marshall"
+      ]
+    },
+    "86aa06d260": {
+      "verdict": "pass",
+      "why": "The symmetry tell is cured. Two lures are about atoms (tight packing) and form (flat faces), real misconceptions, so 'symmetry' no longer points at one choice. The alloy no longer kills a lure. The melt lure is live, since the stem's alloy was fast-cooled. All three are truly wrong: anhedral metal grains are crystals, ice is a crystal less dense than water, and salt grows from brine. The key is accurate for the pre-1992 definition, and the IUCr 1992 change is right.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Crystal",
+        "https://grokipedia.com/page/Crystal",
+        "https://grokipedia.com/page/Ice",
+        "https://en.wikipedia.org/wiki/Quasicrystal"
+      ]
+    },
+    "42198955a7": {
+      "verdict": "pass",
+      "why": "The order is now true. Shechtman hunted for twins on the afternoon of 8 April 1982 (NIST), and a Technion account says tests that day ruled twinning out. Pauling's twinning papers came in 1985 (Nature 317:512, cubic crystals) and 1987, and he held to the idea until 1994. 'Argued for years' and 'had already' carry that order, and the grade_note no longer says the test answered Pauling. The choices are two tenfold and two ordinary, the three lures being what twinning predicts. The key is the shortest and no longer echoes 'alone'. 'Already' gives the narrative only a faint lean, inherent to a what-did-the-test-show question; the stem never says who was right.",
+      "sources": [
+        "https://www.nist.gov/node/1109896",
+        "https://physicstoday.aip.org/news/nobel-prize-in-chemistry-honors-the-discovery-of-quasicrystals",
+        "https://ver2015.presidentsreport.technion.ac.il/?p=213",
+        "https://en.wikipedia.org/wiki/Quasicrystal"
+      ]
+    },
+    "e8872f66ec": {
+      "verdict": "pass",
+      "why": "Fact true: 'New mitochondria and plastids are formed only through binary fission', and a cell whose mitochondria are removed cannot make new ones (Wikipedia, Symbiogenesis; Grokipedia, Mitochondrion: new ones come from fission of existing ones). The history in the context is accurate: Bell and Muhlethaler (J Cell Biol 1964, the fern Pteridium) suggested new mitochondria 'may be generated from the complex evaginations of the nucleus', so 'The nucleus pinches off new ones' is a fair plain rendering. Diers (J Cell Biol 1966, the liverwort Sphaerocarpus) found 'no indications' of it. Grade: fair at T4, since it applies T3 two-ways-to-make-offspring (bacteria grow and split; yeast buds) to Margulis's claim, and budding is the real confusion. The only known support for budding is one group's cryo-electron tomography, which it calls a 'new hypothesis'; that does not make the budding lure defensible against the textbook consensus. No other stem or context in the unit says how mitochondria multiply, and no other unit keys it.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Symbiogenesis",
+        "https://grokipedia.com/page/Mitochondrion",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2106391",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2106934",
+        "https://www.osti.gov/pages/biblio/2507148-continuity-mitochondrial-budding-insights-from-bs-cells-situ-cryo-electron-tomography"
+      ]
+    },
+    "05c0582959": {
+      "verdict": "pass",
+      "why": "The root-nodule lure is live and truly wrong: rhizobia do live inside plant cells in symbiosomes, but plastid DNA clusters with cyanobacteria. 'Doolittle, Gray and others compared ... by 1982 the results were in' matches Berkeley and no longer overstates their part. Applying the T2 fact that chloroplasts make food from sunlight is fair at T4. The doubters' view (step by step inside the cell) stays in.",
+      "sources": [
+        "https://undsci.berkeley.edu/cells-within-cells-an-extraordinary-claim-with-extraordinary-evidence/the-smoking-gun-support-from-a-new-technology/",
+        "https://grokipedia.com/page/Root_nodule",
+        "https://grokipedia.com/page/Symbiogenesis"
+      ]
+    },
+    "3bbd071f01": {
+      "verdict": "pass",
+      "why": "The choices now balance, two with DNA and two without, so the key is no longer the odd one out. 'DNA like a spiral bacterium's' is Margulis's own prediction, which keeps the rebel-is-right lure honest. All lures are false: no genome has ever been tied to the flagellar apparatus, and flagellar proteins are carried in from the cell body. The context's 'sank the third' gives the balance without mockery.",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5426843/",
+        "https://grokipedia.com/page/Lynn_Margulis"
+      ]
+    },
+    "f997ddce6c": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact sentence replaced in the context. Re-checker's note: The revision means to stop the context giving away 74c56090f0's key, and it does not fully do so. The stem says Bretz's flood was 'one huge, sudden flood'. The new context then says the water 'came from a vast lake in western Montana, held back by a dam of glacier ice', the very lake of 74c56090f0's stem. Together they tell a player that the lake emptied in a sudden flood, which is 74c56090f0's key ('The lake had emptied in a fast, deep rush'), and they kill its three lures. 74c56090f0's own context already teaches the source. Exact fix: replace the sentence 'It came from a vast lake in western Montana, held back by a dam of glacier ice, whose old shorelines Joseph Pardee of the US Geological Survey had traced.' with 'Without one, careful geologists had good reason to wait for more evidence.' That keeps the steel-man and also clears the fact-check's Pardee note. Otherwise sound: the key is documented (UChicago Magazine), the lures are wrong, and Penrose 1979 and the forty years are right.",
+      "sources": [
+        "https://magazine.uchicago.edu/0912/features/legacy.shtml",
+        "https://en.wikipedia.org/wiki/Missoula_floods",
+        "https://en.wikipedia.org/wiki/J_Harlen_Bretz"
+      ]
+    },
+    "74c56090f0": {
+      "verdict": "pass",
+      "why": "The lures are now the slow and the glacial readings a doubter could offer (waves as the lake shrank, a river wandering for ages, glacier ice shoving ridges), each live against the stem. All are wrong: push and washboard moraines are real, but the Camas Prairie ridges are current ripples. The key is the shortest choice. The context names the moraine contrast and keeps Bretz 'right in kind, wrong in number'. Its remaining hint toward f997ddce6c's key is the low one the judge accepted.",
+      "sources": [
+        "https://grokipedia.com/page/Moraine",
+        "https://www.npshistory.com/publications/geology/inf/72-2/sec4.htm",
+        "https://magazine.uchicago.edu/0912/features/legacy.shtml",
+        "https://en.wikipedia.org/wiki/Missoula_floods"
+      ]
+    },
+    "5c64214887": {
+      "verdict": "pass",
+      "why": "'Heavy water, made with a heavier kind of hydrogen' is true (deuterium oxide) and clear to an 8th grader. The balance holds. Fleischmann's standing is given, and the consensus's reason (the Sun's core, deadly neutrons) is stated flatly. Replication settles it, and 'a few researchers still pursue the idea' is honest. Nothing mocks, and the banned words do not appear.",
+      "sources": [
+        "https://grokipedia.com/page/Heavy_water",
+        "https://grokipedia.com/page/Cold_fusion",
+        "https://en.wikipedia.org/wiki/Cold_fusion"
+      ]
+    }
+  }
+}

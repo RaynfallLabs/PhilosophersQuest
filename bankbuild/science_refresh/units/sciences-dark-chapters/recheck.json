@@ -1,0 +1,92 @@
+{
+  "unit": "sciences-dark-chapters",
+  "questions": {
+    "27278cb863": {
+      "verdict": "pass",
+      "why": "The stem now names the United States Radium Corporation, its supervisors' lip-pointing and the company's claim that the paint was harmless (Wikipedia, Radium Girls: 'USRC supervisors encouraged their workers to shape the brushes' point with their lips'; 'The workers had been told the paint was harmless'). The 1917 and Illinois problems are gone. The potassium lure is sourced (Grokipedia, Potassium in biology: about 98% inside cells, skeletal muscle the major reservoir), so the '-ium' tell is fixed. Only group-2 chemistry decides, which is 8th-grade content. The new card line is true: the painters' body measurements gave the 1941 tolerance level, and the first plutonium limit came by comparison with radium (ACHRE). It names no chair. There is no harm clause and no cross-question leak.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Radium_Girls",
+        "https://grokipedia.com/page/Radium",
+        "https://grokipedia.com/page/Potassium_in_biology",
+        "https://ehss.energy.gov/OHRE/roadmap/achre/chap5_1.html"
+      ]
+    },
+    "ea6f835067": {
+      "verdict": "pass",
+      "why": "The stem now introduces 'the women who painted the dials', so 'all were well' has a clear referent. The key is still true: USRC sent the report to the NJ Department of Labor 'with the results altered to show the company in a better light' (Wikipedia), and the state's copy said 'every girl is in perfect condition' (Harvard). Roeder's infection story keeps the 'blame an infection' lure live. There is no leak to or from the radium-in-bone question.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Radium_Girls",
+        "https://hsph.harvard.edu/news/centennial-radium-forged-report/"
+      ]
+    },
+    "ac5ccbf81a": {
+      "verdict": "pass",
+      "why": "The card now states the 1938 law correctly. The FDA could refuse a drug that 'had not been shown that it was safe', and an application 'automatically became effective if it was not disapproved' (Weinberger v. Hynson, 412 U.S. 609). The period was 60 days (Science History Institute: 'if they didn't do anything, the drug automatically became legal'; UChicago Medicine; Wikipedia). It agrees with the key. The new lure 'It had made patients depend on it' is believable for a sleeping pill and is wrong: thalidomide was sold on its low addiction potential, and no account of her grounds names dependence (Wikipedia, UChicago: 'insufficient data'). Because dependence is a safety matter, 25ebd2a5ce's stem no longer kills a lure here.",
+      "sources": [
+        "https://www.law.cornell.edu/supremecourt/text/412/609",
+        "https://sciencehistory.org/stories/disappearing-pod/the-woman-who-turned-back-a-plague-of-old-testament-proportions",
+        "https://www.uchicagomedicine.org/forefront/biological-sciences-articles/2020/march/courageous-physician-scientist-saved-the-us-from-a-birth-defects-catastrophe",
+        "https://en.wikipedia.org/wiki/Frances_Oldham_Kelsey",
+        "https://grokipedia.com/page/Thalidomide"
+      ]
+    },
+    "17be8bd269": {
+      "verdict": "pass",
+      "why": "LEAD FIX applied (2026-11-27): the re-checker's exact sentence replaced in the context. Re-checker's note: The question itself is sound. The key is true: Wikipedia says that in her wartime malaria research 'Oldham learned that some drugs are able to pass through the placental barrier', and that the neurological effects 'caused her to recall her earlier work on the mechanism of birth defects, so she also requested animal studies to demonstrate that the drug would not be harmful to the fetus'. Grokipedia says her 'prior research on quinine's placental transfer informed her skepticism'. The Europe lure is truly wrong for the time of her request. Her fetal-safety requests came after she read the letter in early 1961: Grokipedia dates a request letter to 25 May 1961, and Scientific American puts a repeat request in a late-September 1961 call. Lenz first tied the drug to birth defects in November 1961. The maker lure and the heredity lure are also wrong. The remaining problem is a cross-question giveaway in the card. The sentence quoting her May 1961 letter ('the burden of proof that the drug is safe' lay with the applicant) is not needed for this question, and it hands ac5ccbf81a its key ('It had not been shown to be safe'). Together with this card's 'late in 1961' line, which kills that question's babies lure, a player who reads this card first gets ac5ccbf81a free. EXACT FIX: in the context, replace \"In May 1961 she wrote to its maker, Richardson-Merrell, that 'the burden of proof that the drug is safe' lay with the applicant, and the company withdrew its application in March 1962.\" with \"Its maker, Richardson-Merrell, withdrew its application in March 1962.\" If the lead wants to keep the quote, it can move to ac5ccbf81a's card, where it teaches that question's own key.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Frances_Oldham_Kelsey",
+        "https://grokipedia.com/page/Frances_Oldham_Kelsey",
+        "https://www.scientificamerican.com/article/was-thalidomide-safe-frances-oldham-kelsey-was-not-convinced/",
+        "https://www.scientificamerican.com/article/medical-sleuthing-identified-the-dangers-of-thalidomide/",
+        "https://www.uchicagomedicine.org/forefront/biological-sciences-articles/2020/march/courageous-physician-scientist-saved-the-us-from-a-birth-defects-catastrophe"
+      ]
+    },
+    "25ebd2a5ce": {
+      "verdict": "pass",
+      "why": "All four choices begin 'Controlled studies showing it'. Only the key states the 1962 rule: 21 U.S.C. 355(d) asks for 'adequate and well-controlled investigations' showing the drug 'will have the effect it purports or is represented to have'. It does not ask that a drug beat existing drugs, cure the disease or work in every patient. 'Beats older drugs' is the real M3 misconception, and the other two are believable to an 8th grader. The stem rules out none of them. The card's new line is sourced (NHGRI: 'Not everyone responds to a medication in the same way'). Peltzman is still attributed, and there is no sermon.",
+      "sources": [
+        "https://www.law.cornell.edu/uscode/text/21/355",
+        "https://www.genome.gov/about-genomics/educational-resources/fact-sheets/pharmacogenomics",
+        "https://grokipedia.com/page/Kefauver%E2%80%93Harris_Amendment"
+      ]
+    },
+    "026cc989e2": {
+      "verdict": "pass",
+      "why": "The key 'when left untreated' fits both the first plan and the extension. CDC: 'supposed to observe the natural history of untreated syphilis'. ASU Embryo Project: designed to last 'only six to eight months', then extended 'for an indefinite amount of time' in late 1932. The card says so. The new lure 'Whether healthy men given syphilis would fall ill' stays live because of the 200 healthy men, and the card refutes it (CDC: the 399 'already had late-latent syphilis'). The PHS is named, and the 1932 case is attributed to its doctors. The stem has no harm clause. The tie with 7d2b959afb's key is the one the judge accepted, since each card teaches its own key.",
+      "sources": [
+        "https://www.cdc.gov/tuskegee/about/index.html",
+        "https://embryo.asu.edu/pages/tuskegee-syphilis-study-1932-1972",
+        "https://en.wikipedia.org/wiki/Tuskegee_Syphilis_Study"
+      ]
+    },
+    "7d2b959afb": {
+      "verdict": "pass",
+      "why": "The understated death toll is gone. The one harm clause is plain and true: Wikipedia says '40 of the patients' wives were infected with syphilis, and 19 children were born with congenital syphilis', and ASU gives the same figures. The PHS is named as the one keeping the men from treatment, and there is no gore. The stem, key and choices are unchanged.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tuskegee_Syphilis_Study",
+        "https://embryo.asu.edu/pages/tuskegee-syphilis-study-1932-1972",
+        "https://grokipedia.com/page/Tuskegee_Syphilis_Study"
+      ]
+    },
+    "2b31e6cc92": {
+      "verdict": "pass",
+      "why": "'A committee of the Public Health Service' is right for 1969. The CDC museum timeline says the NCDC 'becomes a bureau within the U.S. Public Health Service' in 1968 and is renamed Center for Disease Control only in 1970. The route to the press is now safe: Buxtun 'leaked the reports to the Associated Press' and Heller 'published a story about the study on 25 July 1972' (ASU), which also fits the AP's own account through Lederer, who is not named. The new key fits the card, and the 'published in journals' clash is gone. 'Sexually transmitted' replaces 'venereal'. Q10's stem no longer gives a year, so the 'new law' lure stays live.",
+      "sources": [
+        "https://www.cdc.gov/museum/timeline/1940-1970.html",
+        "https://embryo.asu.edu/pages/tuskegee-syphilis-study-1932-1972",
+        "https://en.wikipedia.org/wiki/Peter_Buxtun",
+        "https://www.nbcnewyork.com/news/national-international/50-years-ago-the-tuskegee-syphilis-study-was-exposed-how-a-reporter-broke-the-story/3793141/",
+        "https://www.cdc.gov/tuskegee/about/index.html"
+      ]
+    },
+    "a275e0d12a": {
+      "verdict": "pass",
+      "why": "All four choices are review boards, told apart by membership or seat. The key states the rule in 45 CFR 46.107: 'at least one member whose primary concerns are in nonscientific areas'. The scientists-only board is its exact opposite, and the other two are believable seats that are wrong. The stem no longer dates the act or says the study 'came to light', so 2b31e6cc92's key and its law lure are safe. 'Most' allows for the exempt categories. The card's Belmont dates are right: submitted 30 September 1978 and published in the Federal Register in 1979 (Grokipedia, Belmont Report). The IRB membership in the card matches 46.107.",
+      "sources": [
+        "https://www.law.cornell.edu/cfr/text/45/46.107",
+        "https://grokipedia.com/page/Belmont_Report",
+        "https://en.wikipedia.org/wiki/National_Research_Act"
+      ]
+    }
+  }
+}

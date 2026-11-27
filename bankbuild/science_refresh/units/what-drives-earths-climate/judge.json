@@ -1,0 +1,67 @@
+{"unit": "what-drives-earths-climate",
+ "questions": {
+  "342487825b": {"verdict": "ok", "issues": []},
+
+  "53680a9058": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Autumns that bring the first snow weeks early' is the weakest lure: nothing in Milankovic's scheme or the stem points at autumn, so a careful player sets it aside. The stem's 'season by season' also tilts the player away from 'Years in which the total sunlight falls sharply'. Two strong choices remain (cool summers, heavier winter snow), which is the real contest, so this is polish.",
+     "fix": "Replace the autumn lure with one that runs against his scheme but sounds like it: 'Winters that come when Earth is farthest from the Sun' (in his reckoning the cool northern summers fall when Earth is farthest from the Sun in that season, so the winters fall nearer it). Optionally say 'He traced the sunlight at 65 degrees north' without 'season by season'."}
+  ]},
+
+  "d14a5bfad2": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "A test of a famous theory by three named scientists invites the guess 'it was confirmed', and the key echoes the stem's 'three slow cycles' ('all three cycles'). 'Tilt alone' holds as a partial confirmation, but the sunspot lure is the only choice outside Milankovic's cycles and is the weakest once the stem says the cycles are 'tens of thousands of years long'.",
+     "fix": "Swap the sunspot lure for a second partial confirmation so the default guess does not settle it: 'Climate swings that kept time with the two shorter cycles only' (wrong: the 100,000-year beat was the strongest)."}
+  ]},
+
+  "8cea64e334": {"verdict": "revise", "issues": [
+    {"axis": "clarity", "severity": "medium",
+     "what": "The stem gives the forecast's timing (cool for a year or two, warm again later in the decade) but never its size, yet the key and two lures are about size ('about the size the model forecast', 'several times the size'). A careful player is left comparing against a number he was never told, and the one choice about timing ('lasted decades') is the only one he can check against the stem.",
+     "fix": "Give the forecast's size in the stem: '...published a forecast early in 1992: the world would cool by about half a degree Celsius for a year or two, then warm again later in the decade. What did the world's thermometers show?' Keep the key 'A cooling of about the size the model forecast' (Kerr, Science 1993: on target; the card already says the model cooled a little too much)."},
+    {"axis": "tell", "severity": "low",
+     "what": "'A cooling several times the size the model forecast' is the weakest lure; with the T4 Tambora fact (an eruption cools for a year or two) a player can strike 'lasted decades' and 'no cooling', leaving the key against one weak choice.",
+     "fix": "Replace 'several times the size' with the ash misconception from F13: 'A cooling that ended within weeks, as the ash fell out'."}
+  ]},
+
+  "45eccd7a02": {"verdict": "ok", "issues": []},
+
+  "2a428da5b5": {"verdict": "ok", "issues": []},
+
+  "c75e28dd19": {"verdict": "revise", "issues": [
+    {"axis": "other", "severity": "high",
+     "what": "Lane: the Thames belongs here as setting for the Little Ice Age, but the key is a fact of London's history and engineering (the medieval London Bridge, replaced in 1831), not a science fact. No 9th-grade Earth science course teaches London Bridge's arches; the player can know it only from London history. The method point (a record can have causes besides the climate) is sound, but it is carried by a local-history key.",
+     "fix": "Keep the frost fairs as setting and key a Little Ice Age science fact, attributed: 'The Thames froze across at London in 24 winters between 1400 and 1831, and in the hardest frosts Londoners held fairs on the ice, the last in 1814. Those centuries fell in the Little Ice Age, a cool spell that ended around 1850. Raphael Neukom's team compared hundreds of records of past climate from around the world, from tree rings, corals, ice and lake mud, and reported in 2019 when each region was coldest. What did they find?' Key: 'Each region's coldest spell came at its own time'. Wrong: 'Every region was coldest in the same few decades', 'Only Europe cooled, while the rest of the world did not', 'The cold spread steadily from the poles to the equator'. Move the bridge, the tide and the embankments into the card as the reason a frozen river is not a plain thermometer, and attribute the debate (F21-F22: critics say the Southern Hemisphere records are sparse)."},
+    {"axis": "tell", "severity": "medium",
+     "what": "All three lures describe changes that would make the river freeze MORE easily, not less: weirs that slow the flow and broad shallows are struck out by the everyday knowledge that still, shallow water freezes first (the card itself says so), and a barrier holding back the salty tide would leave calmer, fresher water. By elimination the bridge is the only choice left standing without the fact.",
+     "fix": "Resolved by the rewrite above. If the bridge question is kept against the lane ruling, every lure must be a change that would plausibly stop freezing (for example 'Its water was warmed by the city's factories and drains')."}
+  ]},
+
+  "318b2d93ee": {"verdict": "revise", "issues": [
+    {"axis": "clarity", "severity": "medium",
+     "what": "The key and the reversal lure turn on 'summaries' and 'the full reports', but the stem never says the IPCC publishes a long technical report and a short summary approved by governments. A 9th grader does not know which summaries are meant, so the key's central term is untaught.",
+     "fix": "Introduce the summary in the stem and use the singular in the choices: '...drew on more than 14,000 studies for its 2021 report, thousands of pages long, and governments approved its short summary line by line.' Key: 'That the summary and the press overstate the certainty'. Reversal lure: 'That the full report hides doubts its summary admits'."},
+    {"axis": "stance", "severity": "low",
+     "what": "The warming itself is settled, yet the only place the unit states it is inside the IPCC's attribution ('It found the world about 1.1 degrees Celsius warmer'), which reads as one body's claim. The argued parts (how much from people, the sensitivity range) are rightly attributed.",
+     "fix": "Open on the settled fact in the bank's own voice, then attribute the rest: 'The world has warmed about 1.1 to 1.3 degrees Celsius since the late 1800s. The Intergovernmental Panel on Climate Change (IPCC)... called it unequivocal that people had warmed it, and judged that doubling...'."},
+    {"axis": "fact", "severity": "low",
+     "what": "The card quotes Unsettled as saying the message is garbled 'from research to reports to the popular media', but F27 sources that phrase to the publisher's description on the Hoover and NYU pages, not to a verified sentence of the book.",
+     "fix": "Attribute it to the book's description ('the book's own description speaks of a game of telephone from research to reports to the popular media'), or quote his documented 2014 Wall Street Journal line that a reader of only the IPCC's 'Summary for Policy Makers' 'would gain little sense of the extent or implications of these deficiencies'."}
+  ]},
+
+  "8e6d37e3f2": {"verdict": "ok", "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "Al Gore is not introduced, and a 9th grader of 2026 may not know who he is; 'its earlier average' is loose (earlier than what?).",
+     "fix": "'Al Gore, a former Vice President of the United States, told...'; choices 'Ice every summer, below the average of earlier summers' / 'about the average' / 'above the average', with 'No ice at all in at least one summer' unchanged."},
+    {"axis": "stance", "severity": "low",
+     "what": "The quotation and Maslowski's disclaimer are exact and fair, with no mockery. For balance, Gore's side of the dispute (F30) is missing from the card.",
+     "fix": "Add to the card: 'Gore's office said the 75 percent was a ballpark figure Maslowski had used in a conversation years before.'"}
+  ]},
+
+  "0a454e9110": {"verdict": "ok", "issues": [
+    {"axis": "voice", "severity": "low",
+     "what": "Zhu's study carries its year (2016) but Chen's attribution does not, so the player cannot see that the second study came three years later.",
+     "fix": "'Chi Chen's team then reported in 2019 that China and India...'"}
+  ]}
+ },
+ "unit_notes": "Overlaps: all 118 units with a final.json were grepped (Milankovic, Pinatubo, Hansen, Eocene, Ellesmere, Little Ice Age, Thames, IPCC, Koonin, Gore, Maslowski, greening, albedo, sea ice, energy imbalance, ice ages, volcano). No key is repeated. Nearest neighbours: T4 the-greenhouse-effect keys Arrhenius's ice-age puzzle (carbon dioxide) and Tambora's sulfur droplets; here the ice-age questions key the orbital pacing and Pinatubo keys the forecast test, so they are distinct. T3 why-earth-supports-life (15 against -18 degrees, Venus, Mars) and T3 reading-deep-time (dating, the time scale) are not touched; Q5 uses an age without testing it. T4 how-hurricanes-form keys a hurricane cooling the sea, not the ocean's heat uptake (Q0). Also adjacent: winds-air-masses-and-fronts' tropics-and-poles balance (heat carried poleward) beside Q0's global imbalance, a different key; fossils-layers-and-a-changing-earth's Antarctic coal and Glossopteris, which make Q5's drift lure honest and live; why-we-have-seasons' tilt and 23.5 degrees, not re-asked. Within the unit, Q1/Q2 (Milankovic's mechanism, then its test) and Q4/Q8 (the ice-albedo feedback, then the dated forecast) share subjects but not facts. Stance, both directions: the warming and the physics are never balanced against; the argued parts (people's share, sensitivity, Koonin) are attributed with years, the IPCC first and steel-manned, Koonin as a credentialed physicist with named critics; Hansen's successful forecast (Q3) and the failed Copenhagen one (Q8) balance each other; the failed forecast is quoted exactly with its speaker, no mockery; no 'denier', no cult or sneering language, no alarm, no policy verdict. Only the settled warming needs stating flatly (Q7, low). Grade fit: Milankovic's cycles, the 1976 deep-sea cores, Hansen's Pinatubo forecast and the ocean's heat uptake all sit in the high-school standard on the causes of climate change by timescale (orbit and tilt, large eruptions) and on testing model forecasts against data; all fit 9th grade as 'how we know'. Lane: the Thames question keys a London-history fact and must become a Little Ice Age science question (high). Scope gaps, not failures: 'how much harm lies ahead' has no question of its own (only Koonin's card touches it); the Medieval Warm Period is left out (sources conflict, F21); the Sun's output appears only as a lure and in a card."
+}
