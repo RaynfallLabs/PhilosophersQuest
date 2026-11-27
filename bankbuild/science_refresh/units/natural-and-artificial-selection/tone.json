@@ -1,0 +1,13 @@
+{
+ "unit": "natural-and-artificial-selection",
+ "verdict": "clean",
+ "flags": [
+  {
+   "where": "card",
+   "rule": 6,
+   "severity": "low",
+   "what": "It is settled science, and it can be watched at work.",
+   "fix": "It can be watched at work, in the wild and in the lab."
+  }
+ ]
+}
