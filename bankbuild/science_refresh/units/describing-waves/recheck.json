@@ -1,0 +1,18 @@
+{"unit": "describing-waves",
+ "questions": {
+  "6822e704d8": {"verdict": "pass",
+   "why": "The misattribution is fixed. The stem now says musicians had known since ancient Greece that the shorter string sounds higher (Pythagoras, about 500 BCE). The question asks for Mersenne's own step, that the shorter string vibrates more often. The key is true and the wrong choices are wrong: amplitude sets loudness, and sound's speed does not depend on frequency. No T1-T3 unit keys pitch as frequency.",
+   "sources": ["https://grokipedia.com/page/Mersenne%27s_laws", "https://en.wikipedia.org/wiki/Mersenne%27s_laws", "https://grokipedia.com/page/Speed_of_sound"]},
+  "2db2770168": {"verdict": "pass",
+   "why": "The choice the stem ruled out ('They rise twice as high') is now 'They lie a quarter as far apart', the squared-ratio slip. All four choices are now about spacing, and the stem rules none of them out. The key holds: at the same speed, twice the frequency gives half the wavelength. The new context sentence is right. T2 waves-carry-energy does not key the frequency-wavelength rule.",
+   "sources": ["https://grokipedia.com/page/Wavelength", "https://openstax.org/books/physics/pages/14-1-speed-of-sound-frequency-and-wavelength"]},
+  "6b506a1276": {"verdict": "pass",
+   "why": "The dead 'lighter than air's' is now 'Its particles hold squeezed air that carries the sound', from the documented belief that air carries sound even in solids. The stem's 'through the steel, then through the air' does not rule it out, since a believer pictures squeezed air as faster. It is wrong: steel holds no such air, and pressure hardly changes sound's speed in a gas (Grokipedia). 'Heavier' and 'denser' were rightly avoided, so the key, stiffness from strong bonds, is the only defensible answer. The context and grade note no longer say 'close together'.",
+   "sources": ["https://grokipedia.com/page/Speed_of_sound", "https://openstax.org/books/physics/pages/14-1-speed-of-sound-frequency-and-wavelength"]},
+  "997bfc6563": {"verdict": "pass",
+   "why": "The stem's error is fixed. It now says Romer timed Io's eclipses as Io slid into or out of Jupiter's shadow, which matches Grokipedia: only entries are seen before opposition, and only exits after. The eclipses came later while Earth moved away and earlier while it approached, and Romer concluded in 1676 that light takes time to travel (presented 21 November 1676). The key and wrong choices are unchanged and sound. Q8's card names the 1676 Io estimate, which the teaching-card rule allows.",
+   "sources": ["https://grokipedia.com/page/R%C3%B8mer%27s_determination_of_the_speed_of_light", "https://en.wikipedia.org/wiki/R%C3%B8mer%27s_determination_of_the_speed_of_light"]},
+  "fb524a326b": {"verdict": "pass",
+   "why": "The context's error is fixed. It now says that years after 1787 Chladni showed his figures in Paris to Napoleon. Grokipedia gives a private demonstration at the Tuileries in 1809, so the line is true. The stem, key and choices are unchanged and sourced: a higher note gives more nodal lines, closer together.",
+   "sources": ["https://grokipedia.com/page/Ernst_Chladni", "https://amhistory.si.edu/science/chladni.htm"]}
+ }}

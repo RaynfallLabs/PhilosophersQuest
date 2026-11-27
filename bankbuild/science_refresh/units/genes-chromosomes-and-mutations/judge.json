@@ -1,0 +1,41 @@
+{"unit": "genes-chromosomes-and-mutations",
+ "questions": {
+  "4f01f4d23b": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'No chromosome carries any of them' is dead. The stem has just shown the chromosome pairs parting 'just as Gregor Mendel's factors for a trait part', so no reader will answer that chromosomes have nothing to do with the factors. Only three choices are live.",
+     "fix": "Replace it with 'Only the chromosomes of sex cells carry them', a real misconception (genes found only in the reproductive cells, M1) that the stem's sex-cell scene makes tempting."}]},
+  "0245211bae": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The three numbered choices 44, 46 and 48 are evenly spaced about the key, so a test-wise player takes the middle one.",
+     "fix": "Replace '44, in 22 pairs' with '92, in 46 pairs', the 46-pairs mix-up students really make; the key is then no longer the middle value."},
+    {"axis": "fact", "severity": "low",
+     "what": "The fact-check found that Tjio did not grow the cultures himself; they came from Rune Grubb's laboratory at Lund.",
+     "fix": "'...studied human cells grown in the laboratory late in 1955.'"}]},
+  "7347fa330c": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Both from one parent, a different one for each pair' is the longest and the oddest choice, and few will take it.",
+     "fix": "'Both from her mother, who passes on whole pairs', the belief that a mother gives more than a father."}]},
+  "9772a3fa91": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The key is the only choice in which both parents give genes. 'Each got all of her genes from one of the parents' and 'Each took after the parent she spent more time with' are dead to an 8th grader, since half from each parent is taught from 5th grade and eye colour is plainly not learned. The key stands out as the one sensible answer.",
+     "fix": "Wrong choices that also draw on both parents: 'Each got the same genes, which work out differently in each', 'Each got a blend of both parents' genes, mixed unevenly', 'Each got genes that changed in her parents between the births'."}]},
+  "4a33612afe": {"verdict": "ok", "issues": []},
+  "dbdb780159": {"verdict": "revise", "issues": [
+    {"axis": "clarity", "severity": "high",
+     "what": "Two answers are defensible. The choices split on 'same kinds' against 'new kinds' of change, but the stem itself calls what Muller sought 'new inherited changes that had not been in their parents', so 'New kinds of change, far more often' reads as right to a careful student. That the X-ray mutations were the same kinds as the ones that arise on their own is a fine historical detail, not 8th-grade content; the grade's fact is that radiation raises how often mutations happen. A student who knows that fact is left with a coin toss on the other half.",
+     "fix": "Use one axis only. Key 'Far more of them showed new inherited changes'; wrong 'About as many showed new inherited changes', 'Fewer showed them, since the X-rays killed the weakest', 'None showed them, since X-rays harm only the fly struck' (the body-cell-only misconception). The context can keep that the changes were the same white eyes and small wings that turn up on their own."},
+    {"axis": "fact", "severity": "low",
+     "what": "'The same kinds of change' is a simplification: X-rays also caused chromosome breaks and rearrangements seldom seen in untreated flies. For the fact-checker, if the 'same kinds' line stays in the context.",
+     "fix": "Context: 'many of them the same white eyes and small wings that turn up on their own'."}]},
+  "f7f7c7f3ac": {"verdict": "ok", "issues": []},
+  "ab23bb4c38": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem says the children 'inherit the changed gene', which hands f7f7c7f3ac its key ('A change in a single gene') if both are drawn in one run.",
+     "fix": "'Sickle-cell disease strikes children who inherit the sickle-cell gene from both parents...'"}]},
+  "d6b5c6e4e0": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Peaches, rubbed smooth for many years' is silly at 8th grade, and the stem's 'Its smooth skin is an inherited trait' rules it out. With two parallel 'crossed with' choices left, the key is the odd one out, and a test-wise player picks it.",
+     "fix": "Replace 'rubbed smooth' with 'Peaches, through changes in many genes'. The choices then come in two pairs (two crosses, two gene changes), and the key no longer stands alone."}]},
+  "03c627de4f": {"verdict": "ok", "issues": []}
+ },
+ "unit_notes": "Overlap check against every final.json and this batch. Mendel's crosses, dominance and Punnett squares (T3 mendels-peas-and-inherited-traits) are not re-keyed; blending appears only as a wrong choice. Sexual against asexual reproduction (T3 two-ways-to-make-offspring) is not re-asked. The double helix and protein-making (T5) are not keyed. The meiosis mechanism is not keyed: Sutton's stem describes the partners parting into sex cells only as set-up, and the sisters question keeps to the fact. Sex-linked traits are absent. T2 cells-the-building-blocks-of-life keys 'the nucleus holds the instructions'; the cheek-cell question goes a grade deeper (every body cell holds all the genes), which is right. The nectarine is close in kind to T3 natural-and-artificial-selection's teosinte ('a change in one gene leaves a kernel bare'), but it keys the mutation as the source of a new variety, not the farmers' choosing; it stands. XX and XY (4a33612afe) are told clinically: which parent passes which chromosome, with nothing on reproduction itself; the context's 'passes on one or the other' is fine. The two sickle-cell questions key different facts (a single changed gene; the carriers' survival against malaria), as the lead's ruling allows. Scope gaps: a neutral mutation ('neither') is never keyed, and 'a gene holds the instructions for a trait' appears only in contexts. A revised Muller question could carry the neutral case in its context, or a new question could key it. Two questions use eye colour (9772a3fa91, 03c627de4f) for different facts, which is fine."}

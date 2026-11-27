@@ -1,0 +1,66 @@
+{"unit": "newtons-laws-force-mass-and-acceleration",
+ "questions": {
+  "317e9f158e": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "'Trolley' is British. To a US 8th grader a trolley is a streetcar or a shopping cart, so the first picture is wrong. The bank otherwise uses American words ('sled', 'flashlight', 'truck'), and the unit's own scope says 'a light cart'. The physics and the key are sound: a fixed mass and a steady net force give a straight line through the origin.",
+     "fix": "'Students pull a cart along a track so smooth that friction hardly matters...' Use 'cart' in the card too."}
+   ]},
+
+  "44c80e886a": {"verdict": "ok", "issues": []},
+
+  "e0ee75a769": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Nine times as hard' is the weakest choice. Squaring the 3 tempts no one in a law the unit teaches as straight proportion, so about three choices are live. The question is also close to Q2's fact (the same law read from the force side, not the acceleration side), and 'sledge' is British where the bank's T2 unit says 'sled'.",
+     "fix": "Replace 'Nine times as hard' with 'Only a little harder, for the extra friction'. That is the facts sheet's own M5 confusion of mass with friction, and it competes with 'Just as hard as before'. Change 'sledge' to 'sled' in the stem and card."}
+   ]},
+
+  "46adde2b1d": {"verdict": "ok", "issues": []},
+
+  "9c223d0d70": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem does the second law's cancellation for the student. 'Many times as hard ... just as many times the feather's mass' tells him the two ratios match, so 'The same' follows from the wording alone, and the famous Apollo footage gives it away too. It still asks for the right 8th-grade reasoning, and no lower unit keys falling together. At 74 words the stem is long.",
+     "fix": "Say 'The Moon pulled on the hammer far harder than on the feather, and the hammer also had far more mass', so the student must know that the pull grows in step with the mass. Trim 'ready to drop them together where there is no air' to 'on the airless Moon'."}
+   ]},
+
+  "e422397088": {"verdict": "revise",
+   "issues": [
+    {"axis": "fact", "severity": "high",
+     "what": "The card says 'his weight all but vanishes'. The unit's own facts sheet (F6) defines weight as the gravitational force, and the T3 unit gravity-and-orbits keys that Earth's pull at the station's height is 'nearly as strong as on the ground' and that things there float because 'she, the pen and the station all fall together'. What vanishes is the scale reading, not the weight. As written, the card teaches the misconception the T3 unit was built to undo.",
+     "fix": "Card: 'In orbit his mass is unchanged, and Earth still pulls on him nearly as hard as on the ground, but he, the scale and the station all fall together, so he presses on nothing: neither pan of a balance would press down, and nothing drifts to the floor.' The stem's 'a bathroom scale reads nothing' is correct as it stands."},
+    {"axis": "tell", "severity": "low",
+     "what": "'By timing how fast he drifts down to the floor of the cabin' is ruled out by the stem's own 'a bathroom scale reads nothing': anyone who takes that in knows nothing drifts down. The pan balance is a good trap, since T3 taught that a balance reads the same on the Moon, and the volume choice is fair.",
+     "fix": "Replace it with 'By working it out from his height and the size of his waist', a live everyday estimate that uses no force at all."}
+   ]},
+
+  "292490c46c": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Halfway along its roll to the goal' is dead. The T1 unit pushes-pulls-and-gravity already keys that friction slows a rolling ball from the start, and no 8th grader thinks a ball rolling on grass is fastest halfway along. That leaves three live choices, and 'A moment after it leaves his boot' carries the impetus lure alone. The physics and key are right: the ball gains speed only while the boot pushes forward.",
+     "fix": "Replace it with 'The instant his boot first strikes it'. That is the real misconception that a kick gives all its speed at the first touch, and it competes directly with 'Midway through the boot's push on it'."}
+   ]},
+
+  "694ed54b14": {"verdict": "ok", "issues": []},
+
+  "3b6251df27": {"verdict": "ok", "issues": []},
+
+  "acbc7ab76d": {"verdict": "revise",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "The key is a biographical anecdote: Newton told Halley he had worked out the ellipse but lost the paper. No 8th-grade course teaches this, and it is not science. Under the config's tier rule the fact decides, not the framing. The scope's Principia line ('Newton set out the three laws in his Principia, 1687') is not what is tested: the question never touches the laws, what the book did, or how anything was known. Compare the T4 bar in inside-the-atom, where every story keys what the experiment showed. The stem is also 80 words, and 'if the Sun's pull weakened with the square of the distance' is beyond the grade, though not needed for the answer.",
+     "fix": "Keep the scene and key the science. 'When plague shut Cambridge University in 1665, Isaac Newton went home to his family's farm at Woolsthorpe. In 1684 Edmond Halley asked him what path a planet would follow under the Sun's pull, which weakens with distance, and Newton said at once that it was an ellipse. Johannes Kepler had already found, from years of observations, that the planets move in ellipses. What did Newton's answer add to Kepler's?' Answer: 'The reason, worked out from laws of force and motion'. Wrong choices: 'Sharper measurements from a better telescope' / 'The planets' true distances from the Sun' / 'Proof that the Sun pushes the planets along' (Kepler's own idea; source it, or swap in another rival). Move the lost paper and Halley's persuading into the card."}
+   ]},
+
+  "7272b2b2bd": {"verdict": "drop",
+   "issues": [
+    {"axis": "grade", "severity": "high",
+     "what": "Why the Royal Society could not pay for the printing (it had spent its money on Willughby's book of fishes) is publishing trivia with no science in it. No 8th-grade course teaches it. It is also a second question on the scope's one Principia line, next to Q10. No rewrite turns this fact into 8th-grade science.",
+     "fix": "Drop it. If wanted, put the fish book and Halley paying for the printing into the revised Q10's card, so the story is told without being tested. The unit falls to 10 questions, inside the unit rule's 8-10."},
+    {"axis": "tell", "severity": "medium",
+     "what": "'It had spent its money on a book about fish' is the odd, funny choice among three sober reasons, and a test-wise player picks the surprising one.",
+     "fix": "None needed once the question is dropped."}
+   ]}
+ },
+ "unit_notes": "The physics is right throughout, and each key is the one a physics teacher would mark right. Acceleration follows the net force in size and direction (Q1, Q7, Q8). Mass and acceleration trade off (Q2, Q3, Q4, Q9). The pull and the mass grow together in a fall (Q5), and F = ma finds a mass in orbit (Q6). The one physics slip is in Q6's card: 'his weight all but vanishes' contradicts T3 gravity-and-orbits, which teaches that Earth's pull at the station is nearly full strength and that things there fall together. Nothing in the unit says things in orbit float instead of falling. Overlaps were checked against all 79 final.json units. Nothing re-asks a lower fact. Q4 uses the same scene as T2 action-and-reaction's spacecraft (pushed by its gas) but keys the new fact: the acceleration grows as the craft gets lighter. Q6 goes a grade past T3 inertia's toolbox in orbit: that question asked which is harder to shove, this one asks how a known shove measures mass. Q7 builds on T1 pushes-pulls-and-gravity's friction-stopped soccer ball. Q8 goes past T3 speed-velocity's slowing bus: that question asked whether slowing is accelerating, this one asks which way the acceleration points. Q9 adds the second law to T2's equal-and-opposite bug and truck. Q8's catcher's mitt is also a T5 momentum-and-collisions example (the padded glove). This question keys the direction of the force, not impulse, and its card rightly says nothing of padding or stretching the stop. The scope's seat belts and air bags are correctly left unkeyed: T3 owns the unbuckled passenger and T5 owns air bags. Two questions on one fact: Q2 (twice the mass, half the acceleration) and Q3 (three times the mass, three times the force) are the same proportion read two ways, and Q9 uses it again. That is tolerable, because Q4 and Q9 each add a second idea (mass lost as fuel; the third law), but no more mass-ratio items should be added. The arithmetic stays at x2 and x3, inside the maths lane, and there is no kitchen. The two Principia questions (Q10, Q11) are the unit's real weakness: both key anecdotes, not science. Revise Q10 to key what Newton's laws explained, and drop Q11. Voice is clean: third person, no exclamation marks, no date openers, no singular 'they'. The bank otherwise uses American words, so make 'trolley' 'cart' and 'sledge' 'sled'."}

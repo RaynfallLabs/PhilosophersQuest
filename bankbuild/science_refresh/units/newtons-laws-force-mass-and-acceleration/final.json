@@ -1,0 +1,244 @@
+{
+ "unit": "newtons-laws-force-mass-and-acceleration",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "newtons-laws-force-mass-and-acceleration",
+   "question": "Students pull a cart along a track so smooth that friction hardly matters, using a spring scale that reads the pull in newtons. In each run they hold the reading steady: 1 newton, then 2, then 3, then 4. The cart's mass stays the same throughout. When they plot its acceleration against the pull, what shape does the graph take?",
+   "answer": "A straight line rising from zero",
+   "choices": [
+    "A straight line rising from zero",
+    "A flat line lying along zero",
+    "A line that rises, then levels off",
+    "A curve that grows ever steeper"
+   ],
+   "context": "Twice the pull gives twice the acceleration and three times the pull three times as much, so the points fall on a straight line through zero: with the mass fixed, acceleration grows in step with the net force. A steady pull gives a steady speeding up, not a steady speed, so the line does not lie along zero, and with friction made tiny nothing makes it level off. One newton is the force that speeds up 1 kilogram by 1 metre per second every second.",
+   "facts": [
+    "F1",
+    "F3",
+    "F5",
+    "M1"
+   ],
+   "grade_note": "8th grade (TEKS 8.7A, NGSS MS-PS2-2; map line G8.P5) teaches that a bigger net force gives a bigger acceleration, measured with a cart pulled by known forces in newtons."
+  },
+  {
+   "tier": 4,
+   "topic": "newtons-laws-force-mass-and-acceleration",
+   "question": "A delivery truck pulls away from a traffic light, once while empty and once loaded so heavily that its mass is twice as great. Both times the net force pushing it forward is the same. How does its acceleration when loaded compare with its acceleration when empty?",
+   "answer": "Half as great",
+   "choices": [
+    "Half as great",
+    "Just as great",
+    "Twice as great",
+    "A quarter as great"
+   ],
+   "context": "Acceleration is the net force divided by the mass, so the same net force on twice the mass gives half the acceleration, and the loaded truck takes twice as long to reach the same speed. The force alone does not settle the acceleration: the mass it has to speed up counts just as much.",
+   "facts": [
+    "F1",
+    "F4"
+   ],
+   "grade_note": "8th grade (map line G8.P5) teaches that the same push speeds a light object up more than a heavy one: twice the mass, half the acceleration."
+  },
+  {
+   "tier": 4,
+   "topic": "newtons-laws-force-mass-and-acceleration",
+   "question": "A father pulls his daughter on a light plastic sled across smooth ice, speeding it up steadily. Then two of her friends, each with the same mass as she has, climb on behind her. How hard must he pull now to give the sled the same acceleration as before?",
+   "answer": "Three times as hard",
+   "choices": [
+    "Three times as hard",
+    "Twice as hard",
+    "A little harder, for the extra friction",
+    "Just as hard as before"
+   ],
+   "context": "Three children have three times the mass, and giving three times the mass the same acceleration takes three times the net force: force equals mass times acceleration. Pulling twice as hard, counting only the two new riders, would give just two-thirds of the acceleration. Slick ice takes away friction but not mass, which still has to be sped up, so a little extra pull for friction falls far short.",
+   "facts": [
+    "F1",
+    "M5"
+   ],
+   "grade_note": "8th grade (map line G8.P5) teaches force = mass x acceleration as a trade-off: more mass needs more force for the same acceleration."
+  },
+  {
+   "tier": 4,
+   "topic": "newtons-laws-force-mass-and-acceleration",
+   "question": "A spacecraft far out in space fires its engine, which gives the same steady push for the whole burn. Most of the craft's mass at the start is fuel, and the engine burns it fast, blasting it out as hot gas. How does the craft's acceleration change during the burn?",
+   "answer": "It grows as the craft gets lighter",
+   "choices": [
+    "It grows as the craft gets lighter",
+    "It stays the same, as the push does",
+    "It shrinks as the fuel runs low",
+    "It drops to zero once the craft is fast"
+   ],
+   "context": "The same push acting on less and less mass gives more and more acceleration, so the craft speeds up fastest just before its fuel runs out. The Saturn V's first stage lost mass so fast on its climb from Earth that its acceleration rose until the crew felt about four times their usual weight, and its centre engine was shut down early to spare them. A steady push never gives a steady speed: while it acts, the craft keeps speeding up.",
+   "facts": [
+    "F1",
+    "F9",
+    "F10",
+    "M1"
+   ],
+   "grade_note": "8th grade (map lines G8.P5, G8.P6) applies the second law to rocket launches: the same force on a smaller mass gives a bigger acceleration."
+  },
+  {
+   "tier": 4,
+   "topic": "newtons-laws-force-mass-and-acceleration",
+   "question": "David Scott, the commander of Apollo 15, stood on the Moon in 1971 with a hammer in one hand and a falcon feather in the other, ready to drop them together where there is no air. The Moon pulled on the hammer many times as hard as on the feather, and the hammer had just as many times the feather's mass. By Newton's second law, how would the hammer's acceleration compare with the feather's?",
+   "answer": "The same as the feather's",
+   "choices": [
+    "The same as the feather's",
+    "Many times the feather's",
+    "A little more than the feather's",
+    "Far less than the feather's"
+   ],
+   "context": "Many times the pull acting on many times the mass gives exactly the same acceleration, so the second law predicts a tie, and in front of the television camera the two struck the dust at the same moment, as Galileo had concluded long before. On Earth a feather drifts down slowly only because the air holds it back: in a huge vacuum chamber in Ohio, a bowling ball and feathers fall together under Earth's full pull, so the Moon's weaker gravity is not what made them match.",
+   "facts": [
+    "F1",
+    "F6",
+    "F7",
+    "F8",
+    "M2"
+   ],
+   "grade_note": "8th grade (map line G8.P5) uses the second law to explain why heavy and light things fall alike without air: the pull and the mass grow together."
+  },
+  {
+   "tier": 4,
+   "topic": "newtons-laws-force-mass-and-acceleration",
+   "question": "An astronaut on a long stay aboard the International Space Station has his mass checked again and again. In orbit, though, a bathroom scale reads nothing. How is his mass measured?",
+   "answer": "By giving him a known push and measuring his acceleration",
+   "choices": [
+    "By giving him a known push and measuring his acceleration",
+    "By balancing him against metal masses on a pan balance",
+    "By measuring how much space his body fills in a water tank",
+    "By working it out from his height and the size of his waist"
+   ],
+   "context": "A device aboard the station shoves the astronaut with springs whose push is known and tracks how fast he speeds up; since mass is the force divided by the acceleration, a laptop works out his mass to within about 0.2 kilograms. In orbit his mass is unchanged, and Earth still pulls on him almost as hard as on the ground, but he and the station fall around Earth together, so he presses on nothing and neither pan of a balance would press down. A tape measure gives only his size, and the space a body fills is its volume, not its mass.",
+   "facts": [
+    "F1",
+    "F11",
+    "F12",
+    "F23",
+    "F27"
+   ],
+   "grade_note": "8th grade (map line G8.P5) teaches force = mass x acceleration; finding a mass from a known force and a measured acceleration is the law put to work."
+  },
+  {
+   "tier": 4,
+   "topic": "newtons-laws-force-mass-and-acceleration",
+   "question": "A striker kicks a ball on flat grass, and it rolls off toward the goal. His boot touches the ball for only a split second. When is the ball moving fastest?",
+   "answer": "The instant it leaves his boot",
+   "choices": [
+    "The instant it leaves his boot",
+    "A moment after it leaves his boot",
+    "Just as his boot first strikes it",
+    "Midway through the boot's push on it"
+   ],
+   "context": "The ball speeds up all the while the boot pushes it forward, since a thing accelerates the way the net force on it points: it has barely begun to move when the boot first strikes it, and it is still gaining speed midway through the push. Once it leaves the boot, the only forces along its path are the grass and the air, both pushing against its motion, so from that instant it slows. No store of force rides along with the ball: medieval thinkers called that imagined store impetus, and many people still picture one.",
+   "facts": [
+    "F2",
+    "F14",
+    "F26",
+    "M3"
+   ],
+   "grade_note": "8th grade (map line G8.P6) applies Newton's laws to sport: a kicked ball speeds up only while the foot's force acts on it."
+  },
+  {
+   "tier": 4,
+   "topic": "newtons-laws-force-mass-and-acceleration",
+   "question": "A pitcher throws a fastball, and the catcher's mitt stops it. While the ball is slowing down inside the mitt, which way do the net force on the ball and its acceleration point?",
+   "answer": "Both of them back toward the pitcher",
+   "choices": [
+    "Both of them back toward the pitcher",
+    "Both of them forward, the way it flew",
+    "The force back, the acceleration forward",
+    "The force forward, the acceleration back"
+   ],
+   "context": "The mitt pushes the ball back toward the pitcher, and acceleration always points the way the net force does, even while the ball is still moving forward: a slowing ball is accelerating backward. The ball pushes forward on the mitt just as hard, but that force acts on the mitt, not on the ball.",
+   "facts": [
+    "F2",
+    "F13",
+    "F15"
+   ],
+   "grade_note": "8th grade (map line G8.P6) applies Newton's laws to catches; the second law says acceleration points along the net force."
+  },
+  {
+   "tier": 4,
+   "topic": "newtons-laws-force-mass-and-acceleration",
+   "question": "In a football game, a tackler with twice the mass of the ball carrier slams into him head-on. During the hit, the two push on each other far harder than the ground pushes on either. How does the ball carrier's acceleration compare with the tackler's?",
+   "answer": "It is twice the tackler's",
+   "choices": [
+    "It is twice the tackler's",
+    "It is just the same as the tackler's",
+    "It is half the tackler's",
+    "It is four times the tackler's"
+   ],
+   "context": "By the third law each player pushes on the other exactly as hard, though many people expect the heavier one to push harder. By the second law that same-sized force gives half the mass twice the acceleration, so in the hit the ball carrier's motion changes twice as much as the tackler's.",
+   "facts": [
+    "F1",
+    "F13",
+    "M4"
+   ],
+   "grade_note": "8th grade (map line G8.P6) puts the laws together in sport: equal and opposite forces in a tackle, and the second law for who is jolted more."
+  },
+  {
+   "tier": 4,
+   "topic": "newtons-laws-force-mass-and-acceleration",
+   "question": "At liftoff, the five engines of the Saturn V rocket pushed it upward with about 34 million newtons, and the fully fuelled rocket weighed about 28 million newtons. Which force decided how fast it sped up as it left the pad?",
+   "answer": "The engines' push, less the rocket's weight",
+   "choices": [
+    "The engines' push, less the rocket's weight",
+    "The engines' full push, on its own",
+    "The engines' push, less the drag of the air",
+    "The engines' push and the weight added together"
+   ],
+   "context": "A rocket speeds up only by the net force on it, its engines' push less its weight, so the Saturn V had only about 6 million newtons left over to speed up nearly 3 million kilograms, and it gained only about 2 metres a second each second as it left the pad. The air's drag needs motion to arise, so at liftoff it hardly counts. Isaac Newton set out these laws in his Principia of 1687: by the third, the hot gas pushes up on the rocket as hard as the engines push the gas down, and by the second, only the force left over speeds the rocket up.",
+   "facts": [
+    "F1",
+    "F3",
+    "F13",
+    "F17",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "8th grade (TEKS 8.7A, NGSS MS-PS2-2; map lines G8.P5, G8.P6) teaches that acceleration depends on the net force, not on any one force, and applies Newton's laws to rocket launches."
+  }
+ ],
+ "revised": {
+  "7fcc917549": {
+   "old_hash": "317e9f158e",
+   "why": "Judge (low): 'trolley' is British and pictures a streetcar for a US 8th grader; the stem and grade note now say 'cart', as the unit's scope does. Key, choices and context unchanged."
+  },
+  "6bb36c25da": {
+   "old_hash": "e0ee75a769",
+   "why": "Judge (low): 'Nine times as hard' tempted no one in a law taught as straight proportion; it is now 'A little harder, for the extra friction', the M5 mix-up of mass with friction that competes with 'Just as hard as before'. 'Sledge' is now 'sled'. The context now says why a little extra pull for friction falls far short. Key unchanged."
+  },
+  "e422397088": {
+   "old_hash": "e422397088",
+   "why": "Judge (high) and fact-check (error): the context said his weight 'all but vanishes', against the bank's T3 gravity-and-orbits and NASA (gravity at the station is about 90 percent of the ground's, new F23). It now says, in the fact-check's words, that Earth still pulls on him almost as hard as on the ground but he and the station fall around Earth together, so he presses on nothing. Judge (low): 'By timing how fast he drifts down to the floor of the cabin' was ruled out by the stem's empty scale; it is now 'By working it out from his height and the size of his waist', the judge's everyday estimate that uses no force (F27). Stem and key unchanged."
+  },
+  "93ce58ca98": {
+   "old_hash": "292490c46c",
+   "why": "Judge (medium): 'Halfway along its roll to the goal' was dead. It is now 'Just as his boot first strikes it', the picture of a kick giving all its speed at the first blow, so the four choices run through the kick in order (first touch, midway, leaving, after). The stem no longer says the ball sits still, which would have ruled the new choice out. The context now says the ball has barely begun to move at the first touch (F26)."
+  }
+ },
+ "added": {
+  "08801e0218": "Replaces the dropped Halley question with a sourced second-law and laws-together point in the scope's rocket launch: the net force (push less weight), not the engines' push alone, sets the acceleration. Facts F1, F3, F24 (Saturn V liftoff push and mass, Grokipedia and Wikipedia), F25 (drag needs motion); the Principia of 1687 (F17) is told in the context. No final.json keys a net force of push less weight; Q4's context (the lighter rocket) is not given away."
+ },
+ "dropped": [
+  {
+   "old_hash": "acbc7ab76d",
+   "question": "When plague shut Cambridge University in 1665, Isaac Newton went home to his family's farm at Woolsthorpe and began working out his ideas on motion and gravity. In 1684 Edmond Halley came to ask him what path a planet would follow if the Sun's pull weakened with the square of the distance, a puzzle Robert Hooke and Christopher Wren had failed to settle. Newton named the path at once. When Halley asked how he knew, what did Newton tell him?",
+   "why": "Judge (high): the key, the lost paper, is a biographical anecdote, not 8th-grade science; fact-check (error): the Principia does not open with the laws. Re-keying it to what Newton's laws explained about Kepler's ellipses, or to the apple and the Moon as one pull, would key universal gravitation and Kepler, which belong to T5 keplers-laws-and-newtons-gravity. Replaced by a sourced second-law question on the Saturn V's net force, whose context tells the Principia of 1687."
+  },
+  {
+   "old_hash": "7272b2b2bd",
+   "question": "The Royal Society agreed in 1686 to publish Isaac Newton's Principia, the book that set out his three laws of motion. In the end Edmond Halley, who worked for the Society, paid the printing costs out of his own pocket. Why did the Society not pay?",
+   "why": "Judge (drop, agreed): why the Royal Society could not pay for the Principia's printing is publishing trivia, not 8th-grade science, and a second question on the scope's one Principia line; fact-check (error): its '75 unsold copies' was wrong (the minutes give 50 plus 20). No clean further second-law fact was found that the unit's other contexts (the steady push, the 4 g crew, the falling station) would not give away, so the unit ends at 10 questions."
+  }
+ ],
+ "lead_edits": [
+  {
+   "old_hash": "08801e0218",
+   "new_hash": "08801e0218",
+   "change": "context: \"push it down\" -> \"push the gas down\"",
+   "why": "re-checker's clarity note"
+  }
+ ]
+}

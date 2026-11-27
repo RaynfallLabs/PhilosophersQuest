@@ -118,3 +118,11 @@ G1. 8th grade: TEKS 8.6D (2024), "compare and contrast the properties of acids a
 - Litmus between pH 4.5 and 8.3 is purple, not red or blue (F13): no question asks blue litmus about a weak acid or neutral sample.
 - The cause of clean rain's pH of 5.6 (carbon dioxide): kept out by the lead's ruling.
 - The ACS lesson pages would not load as text; their content is from the search summary only, and is used for grade placement and F18's second line, never alone for a key.
+
+## Added in the revision (2026-11-26)
+
+F26. Granite does use up a little acid, only very slowly: its feldspars weather by reacting with water and acid (Grokipedia, Granite: feldspar "reacts with water and carbonic acid"), and that slow weathering is the small buffering that lakes on granite have; granite is classed as low-buffering bedrock (OSTI, "Granite weathering and the sensitivity of alpine lakes to acid deposition"). So a rock that resists acid "uses up very little of it", not nothing.
+    https://grokipedia.com/page/Granite ; https://www.osti.gov/scitech/biblio/5945569
+
+F27. The gullet does make a little base: in humans its submucosal glands secrete bicarbonate and mucin "in amounts sufficient to neutralize residual volumes of acid left in the esophagus after bolus clearance", and swallowed saliva brings bicarbonate too (read through the search summary). But it "lacks the mucus-bicarbonate barrier found in the stomach and duodenum": its gland mucins can lubricate but cannot form "a fixed viscoelastic protective mucus layer" (Orlando, Nature GIMO, via the search summary). Grokipedia (Heartburn): the gullet's lining "lacks the protective bicarbonate secretion and tight junctions of the gastric lining" (F20).
+    https://pmc.ncbi.nlm.nih.gov/articles/PMC3129871 ; https://www.nature.com/gimo/contents/pt1/full/gimo15.html ; https://grokipedia.com/page/Heartburn

@@ -1,0 +1,215 @@
+{
+ "unit": "acids-bases-and-ph",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "acids-bases-and-ph",
+   "question": "Rain made acid by the fumes of coal-burning power stations falls on a lake year after year, and the lake water slips from pH 7 to pH 5. At pH 5, most fish eggs can no longer hatch. How much more acidic has the lake become?",
+   "answer": "100 times as acidic",
+   "choices": [
+    "100 times as acidic",
+    "10 times as acidic",
+    "Twice as acidic",
+    "1,000 times as acidic"
+   ],
+   "context": "Each step down the pH scale means ten times as many hydrogen ions, so the two steps from 7 to 5 mean ten times ten, a hundredfold. Counting the numbers 7, 6 and 5 as three steps gives a thousand, and reading the gap of two as twice misses the tens altogether.",
+   "facts": [
+    "F4",
+    "F11",
+    "F12"
+   ],
+   "grade_note": "The 8th-grade map line's 'the farther from 7, the stronger' is taught with the tenfold step, and acid rain is the grade's example of an acid in nature."
+  },
+  {
+   "tier": 4,
+   "topic": "acids-bases-and-ph",
+   "question": "A nurse draws a sample of blood from a healthy man's arm for testing. His body keeps his blood within a very narrow band of pH, and he falls dangerously ill if it strays far outside it. Where on the pH scale is healthy blood held?",
+   "answer": "Just above 7, slightly basic",
+   "choices": [
+    "Just above 7, slightly basic",
+    "Just below 7, slightly acidic",
+    "Exactly at 7, perfectly neutral",
+    "Near 10, as basic as soapy water"
+   ],
+   "context": "Healthy blood stays between pH 7.35 and 7.45, a touch on the basic side of neutral. If it falls below 7.35 doctors call it acidosis, and below about 7.2 the danger to life climbs steeply. Soapy water, at about 9 to 10, is far more basic.",
+   "facts": [
+    "F8",
+    "F7"
+   ],
+   "grade_note": "8th-grade lessons place body fluids on the pH scale beside lab and household ones; blood, just above 7, is the standard body example of a base."
+  },
+  {
+   "tier": 4,
+   "topic": "acids-bases-and-ph",
+   "question": "Two bottles stand on a laboratory shelf. One holds battery acid, the sulfuric acid inside a car battery. The other holds lye, the sodium hydroxide in drain cleaners. Which of them can badly burn skin?",
+   "answer": "Both, as strong bases burn as acids do",
+   "choices": [
+    "Both, as strong bases burn as acids do",
+    "Only the battery acid, as only acids burn",
+    "Only the lye, as bases are the stronger kind",
+    "Neither, as only a hot liquid can burn"
+   ],
+   "context": "Battery acid sits below pH 1 and lye at 14, and the farther a liquid sits from 7, on either side, the stronger it is, so both ends of the scale burn. Lye eats deep into skin, and some strong bases do more harm than acids, though many people think only acids are dangerous; yet bases are not the stronger kind, since soap and blood are bases too. These are chemical burns, which need no heat: the liquid itself attacks the skin.",
+   "facts": [
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "M2"
+   ],
+   "grade_note": "The 8th-grade map line teaches 'the farther from 7, the stronger', with battery acid and strong household bases as its examples."
+  },
+  {
+   "tier": 4,
+   "topic": "acids-bases-and-ph",
+   "question": "Litmus, a dye made from lichens, has been known since about 1300. A chemist touches one strip of red litmus paper to soapy water and another to household ammonia. Both strips turn blue. What do the two blue strips show?",
+   "answer": "Both are bases, but not which is stronger",
+   "choices": [
+    "Both are bases, but not which is stronger",
+    "Both are bases, and of equal strength",
+    "Both are neutral, neither acid nor base",
+    "Both are acids, but not which is stronger"
+   ],
+   "context": "Red litmus turns blue in a base and blue litmus turns red in an acid, and that is all litmus says: one colour or the other, with no number. Soapy water sits near pH 9 or 10 and household ammonia near 11.5, far more basic, yet both strips turn the same blue. Telling them apart takes pH paper with many colours, or a pH meter.",
+   "facts": [
+    "F13",
+    "F14",
+    "F7",
+    "F17"
+   ],
+   "grade_note": "8th grade teaches indicators, litmus above all, as the way to show whether a substance is an acid or a base (curriculum line G8.P4)."
+  },
+  {
+   "tier": 4,
+   "topic": "acids-bases-and-ph",
+   "question": "A student boils chopped red cabbage in water and strains off the purple juice, an indicator she has made herself. A few drops of it turn red in an acid and green in soapy water. What makes the juice change colour?",
+   "answer": "Its pigment gains or loses hydrogen ions",
+   "choices": [
+    "Its pigment gains or loses hydrogen ions",
+    "Its pigment gains or loses electrons",
+    "Its pigment mixes with the sample's own colour",
+    "Its pigment clumps into specks that scatter light"
+   ],
+   "context": "The purple comes from a pigment called anthocyanin. An acid loads its molecules with hydrogen ions and a base strips them away, and each change reshapes the molecule and gives it a new colour: red, purple, blue, green, and yellow in the strongest bases. No electrons are added or taken and nothing clumps, and since a clear acid and pale soapy water have little colour of their own, every colour is the pigment's own.",
+   "facts": [
+    "F15",
+    "F16"
+   ],
+   "grade_note": "8th-grade classes make a red cabbage indicator as their test-it-yourself, and the grade's acids unit explains acids and bases by hydrogen ions."
+  },
+  {
+   "tier": 4,
+   "topic": "acids-bases-and-ph",
+   "question": "Heartburn is the burning felt behind the breastbone when acid from the stomach washes back up into the gullet. A man with heartburn chews an antacid tablet, a base that dissolves in his stomach juice. As the tablet works, what happens to the pH in his stomach?",
+   "answer": "It rises toward 7",
+   "choices": [
+    "It rises toward 7",
+    "It falls toward 0",
+    "It rises far past 7",
+    "It stays just the same"
+   ],
+   "context": "The base in the tablet reacts with some of the stomach's acid and uses it up, so fewer hydrogen ions are left and the pH climbs. A typical antacid lifts the stomach from between 1.5 and 3.5 to about 4 or 5: toward neutral, but not all the way, and never over into the bases.",
+   "facts": [
+    "F18",
+    "F19",
+    "F20",
+    "M3",
+    "M4"
+   ],
+   "grade_note": "The 8th-grade map line ends with an acid and a base neutralising each other; the antacid is the standard example of the pH moving toward 7."
+  },
+  {
+   "tier": 4,
+   "topic": "acids-bases-and-ph",
+   "question": "The same acid rain falls for years on two lakes. One lies in a basin of limestone, a rock made mostly of calcium carbonate. The other lies on granite, a hard rock of quartz and feldspar. Which lake stays closer to neutral?",
+   "answer": "The limestone lake, whose rock neutralises acid",
+   "choices": [
+    "The limestone lake, whose rock neutralises acid",
+    "The granite lake, whose rock neutralises acid",
+    "The granite lake, whose hard rock resists acid",
+    "Both alike, since the very same rain falls on each"
+   ],
+   "context": "Calcium carbonate acts as a base, and many antacid tablets are made of it, so as acid water soaks through limestone the rock dissolves a little and uses the acid up. Granite resists acid, which is why it lasts in buildings, but a rock that resists acid uses up very little of it, so lakes on granite and similar rocks grow more acidic than lakes on limestone.",
+   "facts": [
+    "F21",
+    "F26",
+    "F11",
+    "F18",
+    "F19"
+   ],
+   "grade_note": "8th grade applies neutralising to nature as well as the body: acid rain is the grade's example of an acid, and limestone's power to neutralise it is the rock example."
+  },
+  {
+   "tier": 4,
+   "topic": "acids-bases-and-ph",
+   "question": "Søren Sørensen ran the chemistry department of the Carlsberg Laboratory in Copenhagen, where he studied how acidity changes proteins. In 1909 he proposed a scale he called pH. What did his scale give chemists?",
+   "answer": "One short number for how acidic a sample is",
+   "choices": [
+    "One short number for how acidic a sample is",
+    "The first way to tell acids from bases",
+    "The first idea that acids give hydrogen ions",
+    "Numbers that rise as acids grow stronger"
+   ],
+   "context": "Chemists could already tell acids from bases with litmus, used since about 1300, and Svante Arrhenius had argued in 1884 that acids give water extra hydrogen ions. What they lacked was a simple, agreed way to write how many, amounts as tiny as 0.0000001 for pure water. Sørensen turned each into a short number: 7 for pure water, lower for acids and higher for bases.",
+   "facts": [
+    "F22",
+    "F23",
+    "F25",
+    "F14",
+    "F3",
+    "F2"
+   ],
+   "grade_note": "8th grade learns the pH scale itself, and its maker, Sørensen in 1909, is the how-we-know story behind it (curriculum line G8.P4)."
+  },
+  {
+   "tier": 4,
+   "topic": "acids-bases-and-ph",
+   "question": "The juice inside a person's stomach is hydrochloric acid at about pH 2, and it bathes the stomach wall from the inside. Yet the wall is not eaten away. What protects it?",
+   "answer": "A coat of mucus with a base mixed into it",
+   "choices": [
+    "A coat of mucus with a base mixed into it",
+    "A coat of chalky mineral, a base like limestone",
+    "A coat of tough skin, like the skin of the hand",
+    "A coat of cells that acid cannot dissolve"
+   ],
+   "context": "Soft, living cells in the stomach lining coat it with thick mucus and give off bicarbonate, a base, into that layer; there is no skin or mineral there. The base neutralises the acid that reaches it, so the pH climbs from about 2 in the middle of the stomach to nearly 7 against the wall. The cells themselves are not acid-proof: the gullet has no such thick coat of mucus and base, only a little base from small glands and swallowed spit, which is why acid splashing up into it burns as heartburn.",
+   "facts": [
+    "F9",
+    "F10",
+    "F20",
+    "F27"
+   ],
+   "grade_note": "8th grade's acids unit uses stomach acid, near pH 2, as its body example of an acid, and neutralising by a base is the unit's last idea."
+  }
+ ],
+ "revised": {
+  "c82ab10fa0": {
+   "old_hash": "e253e2f3c2",
+   "why": "Judge (medium): the stem's two pH figures ('below 1', 'of 14') handed over 'Both' by the unit's own far-from-7 rule, and 'Neither, unless the two are mixed' was dead. The figures are cut from the stem (they are in the context now), so the student must know that lye is a strong base. 'Only the lye, with the higher number' is now 'Only the lye, as bases are the stronger kind' and 'Only the battery acid, an acid' is 'Only the battery acid, as only acids burn' (M2), so all four give a reason in plain words; the key, 'Both, as each lies far from 7', is now 'Both, as strong bases burn as acids do', so it is not the only choice in the scale's words; the dead choice is now 'Neither, as only a hot liquid can burn', the heat-burn confusion the judge proposed."
+  },
+  "16c997f415": {
+   "old_hash": "9958df4296",
+   "why": "Judge (low): 'used to sort acids from bases' previewed the key's point that litmus sorts but does not measure. The stem now says only that litmus has been known since about 1300 (F14). Key, choices and context unchanged."
+  },
+  "39ad72ff48": {
+   "old_hash": "39ad72ff48",
+   "why": "Judge (medium): 'breaks apart into single atoms' was dead, 'bleached by the acid or base' was ruled out by the stem's red and green, and the key was the only choice in science words. The two dead lures are now 'gains or loses electrons' (a parallel particle change, wrong for a pH indicator, whose forms differ by hydrogen ions, F16) and 'clumps into specks that scatter light' (the judge's proposal, shortened). The context now says why each lure is wrong. Stem and key unchanged."
+  },
+  "e3282ae6b9": {
+   "old_hash": "e3282ae6b9",
+   "why": "Fact-check (error): granite 'does nothing to the acid' overstated it; granite's feldspars use up a little acid by slow weathering (F26). The context now says 'uses up very little of it', in the lead's words. Stem, key and choices unchanged."
+  },
+  "de0f5247c7": {
+   "old_hash": "de0f5247c7",
+   "why": "Judge (medium): the key was the only two-part answer and the only one in the unit's words, 'Cells made of something acid cannot harm' was vague, and 'An acid too weak to harm living cells' was ruled out by the stem's pH 2. All four choices now name a coat, as the judge proposed: the key; 'chalky mineral, a base like limestone', so the key is not the only choice with a base; 'tough skin'; 'cells that acid cannot dissolve'. The judge's 'coat of fat' was not used, since a fatty layer could be argued to be part of the stomach's barrier. Fact-check (error): 'The lining of the gullet makes no such base' is now, in the lead's words, 'the gullet has no such thick coat of mucus and base, only a little base from small glands and swallowed spit' (F27). Stem unchanged."
+  }
+ },
+ "added": {},
+ "dropped": [
+  {
+   "old_hash": "dfa764ba86",
+   "question": "A chemist fills a beaker with pure water and measures its pH: 7, the middle of the scale, neither acid nor base. Even pure water is not all whole molecules, for a tiny share of them are always split into charged pieces called ions. What makes the water neutral?",
+   "why": "Judge (medium): the stem's 'neither acid nor base' and the mirrored 'a few more X than Y' choices hand over 'just as many' to a test-wise student, and 'so few ions' is undercut by the stem; judge (low): water splitting itself is high-school content. The judge's re-key (what an acid does to the balance) has only two real outcomes once the balance is taught in the stem: any choice that adds or removes both kinds alike is ruled out by the stem's own logic, and 'takes hydroxide ions away' is partly true (the acid's hydrogen ions do join hydroxide ions). Its key, acids add hydrogen ions, is also printed in three other contexts of this unit (Q6, Q7, Q9). No fair version was found, so it is dropped; pure water at 7 is still taught in the contexts of Q2, Q3 and Q9."
+  }
+ ]
+}

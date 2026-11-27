@@ -1,0 +1,75 @@
+{"unit": "the-electromagnetic-spectrum",
+ "questions": {
+  "533492b378": {"verdict": "ok", "checks": [
+    {"claim": "Order from lowest to highest frequency: radio, microwaves, infrared, visible, ultraviolet, X-rays, gamma rays; key Microwaves comes next after radio", "result": "ok", "source": "https://grokipedia.com/page/Electromagnetic_spectrum", "note": ""},
+    {"claim": "Wrong choices Infrared, Ultraviolet, X-rays all lie further along than microwaves", "result": "ok", "source": "https://grokipedia.com/page/Electromagnetic_spectrum", "note": ""},
+    {"claim": "Context: waves grow shorter at every step; infrared just past the red; UV and X-rays beyond the violet", "result": "ok", "source": "https://grokipedia.com/page/Electromagnetic_spectrum", "note": ""}
+  ]},
+  "10e0e0d2a8": {"verdict": "ok", "checks": [
+    {"claim": "Violet about 400 nm; red the longest visible waves, about 700 nm", "result": "ok", "source": "https://grokipedia.com/page/Electromagnetic_spectrum", "note": ""},
+    {"claim": "Key: 650 nm light is red (red 625-750 nm; Grokipedia: red above 620 nm)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Visible_spectrum", "note": ""},
+    {"claim": "Wrong choices: blue 450-485, green 500-565, yellow 565-590 nm, none near 650", "result": "ok", "source": "https://en.wikipedia.org/wiki/Visible_spectrum", "note": ""},
+    {"claim": "Red has the lowest frequency of the colours (about 430 THz), violet the highest (about 790 THz)", "result": "ok", "source": "https://grokipedia.com/page/Visible_spectrum", "note": ""}
+  ]},
+  "9feca8fb6b": {"verdict": "uncertain", "checks": [
+    {"claim": "Herschel, 1800, glass prism, thermometers with blackened bulbs", "result": "ok", "source": "https://www.ipac.caltech.edu/Outreach/Edu/Herschel/herschel_bio.html", "note": ""},
+    {"claim": "Readings climbed from violet to red; just beyond the red, where no light showed, the highest temperature of all", "result": "ok", "source": "https://www.ipac.caltech.edu/Outreach/Edu/Herschel/herschel_bio.html", "note": ""},
+    {"claim": "Key: invisible rays in sunlight", "result": "ok", "source": "https://grokipedia.com/page/William_Herschel", "note": ""},
+    {"claim": "Wrong choices: room warming, prism warmed, black paint warming in the dark, ruled out by the two blackened control thermometers placed beyond the spectrum", "result": "ok", "source": "https://www.ipac.caltech.edu/Outreach/Edu/Herschel/herschel_bio.html", "note": "IPAC: 'the other two were placed beyond the spectrum as control samples'; Linda Hall: controls 'registering room temperature' (https://www.lindahall.org/about/news/scientist-of-the-day/william-herschel-4/)."},
+    {"claim": "Context: the rays reflect and bend as light does; called calorific rays; now called infrared", "result": "ok", "source": "https://www.ipac.caltech.edu/Outreach/Edu/Herschel/herschel_bio.html", "note": ""},
+    {"claim": "Context: 'Herschel found that the invisible rays reflect and bend through glass just as light does, so they were a kind of light from the Sun'", "result": "uncertain", "source": "https://makingscience.royalsociety.org/items/l-and-p_11_140", "note": "True in modern terms (IPAC: 'a form of light (or radiation) beyond red light'), but the 'so' reads as Herschel's own conclusion. His later 1800 paper set out to decide whether the rays of heat and light were 'the same, or different', stressed that the heat and light maxima did not coincide, and he came to treat them as distinct (APS News, Feb 2024, gives the same reading). Fix: '...just as light does. They are now known to be a kind of light: he called them calorific rays, and they are now called infrared.'"}
+  ]},
+  "30fa7d03ad": {"verdict": "ok", "checks": [
+    {"claim": "Ritter, 1801, motivated by Herschel's heat rays; prism, darkened room, silver chloride paper strips along the spectrum and beyond", "result": "ok", "source": "https://grokipedia.com/page/Johann_Wilhelm_Ritter", "note": ""},
+    {"claim": "Key: darkened fastest just beyond the violet end", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ultraviolet", "note": "Wikipedia: rays just past violet 'darkened silver chloride-soaked paper more quickly than violet light itself'."},
+    {"claim": "Wrong choices: beyond red, yellow, violet itself; darkening was weakest toward red and strongest past violet", "result": "ok", "source": "https://grokipedia.com/page/Johann_Wilhelm_Ritter", "note": ""},
+    {"claim": "Silver chloride is a salt that darkens in light", "result": "ok", "source": "https://grokipedia.com/page/Johann_Wilhelm_Ritter", "note": ""},
+    {"claim": "Context: Ritter called them chemical rays; ultraviolet means beyond the violet", "result": "ok", "source": "https://en.wikipedia.org/wiki/Johann_Wilhelm_Ritter", "note": ""}
+  ]},
+  "4932f8b3dc": {"verdict": "ok", "checks": [
+    {"claim": "Röntgen, Würzburg, 1895; discharge (Hittorf/Crookes) tube wrapped in black cardboard; darkened room", "result": "ok", "source": "https://grokipedia.com/page/Wilhelm_R%C3%B6ntgen", "note": ""},
+    {"claim": "A coated (barium platinocyanide) screen glowed across the room, even behind a book of a thousand pages", "result": "ok", "source": "https://web.lemoyne.edu/~giunta/roentgen.html", "note": "His paper: fluorescence 'still visible at two metres distance'; screen lights 'behind a book of a thousand pages'. 'Across his darkened room' is loose for about two metres but not wrong; 'a metre or two away' would be exact."},
+    {"claim": "Anna Bertha's hand on a photographic plate (22 Dec 1895): bones and wedding ring visible, flesh faint", "result": "ok", "source": "https://grokipedia.com/page/Wilhelm_R%C3%B6ntgen", "note": ""},
+    {"claim": "Key: bone stops more rays than flesh; wrong choices (lets more through, emits rays, reflects them) are wrong", "result": "ok", "source": "https://web.lemoyne.edu/~giunta/roentgen.html", "note": "Paper: 'the shadow shows the bones clearly'; density 'mainly affects their permeability'."},
+    {"claim": "Context: pass through paper, wood, flesh; lead 1.5 mm practically opaque", "result": "ok", "source": "https://web.lemoyne.edu/~giunta/roentgen.html", "note": ""}
+  ]},
+  "8d0745dad6": {"verdict": "ok", "checks": [
+    {"claim": "Hertz, Karlsruhe, 1887: spark gap between metal rods; receiver loop with its own gap sparks several metres away", "result": "ok", "source": "https://grokipedia.com/page/Heinrich_Hertz", "note": "Grokipedia: rods or spheres; loop with own spark gap; up to 12-16 m (IEEE: 18 m). Work ran 1886-1888; the zinc-plate standing waves were 1888 but the stem does not date that step."},
+    {"claim": "Reflected off a zinc sheet (standing waves), measured wavelength, worked out speed", "result": "ok", "source": "https://ethw.org/Milestones:First_Generation_and_Experimental_Proof_of_Electromagnetic_Waves,_1886-1888", "note": ""},
+    {"claim": "Key: they travel as fast as light; wrong choices (sound speed, faster than light, instant) are wrong", "result": "ok", "source": "https://en.wikipedia.org/wiki/Heinrich_Hertz", "note": "Wikipedia: 'the velocity of these waves was equal to the velocity of light'; IEEE plaque: 'the equality of their velocity of propagation with the velocity of light'."},
+    {"claim": "Context: reflect and bend (refraction through pitch prisms); Maxwell's predicted waves; every band crosses vacuum at that speed; sound needs a medium", "result": "ok", "source": "https://grokipedia.com/page/Electromagnetic_spectrum", "note": ""},
+    {"claim": "No 'of no use' quotation used", "result": "ok", "source": "https://grokipedia.com/page/Heinrich_Hertz", "note": "Grokipedia gives no such quote; Wikipedia's rests on a weak source. Correctly left out."}
+  ]},
+  "8436b7c73b": {"verdict": "ok", "checks": [
+    {"claim": "Key: phones talk to towers with radio waves, electromagnetic like light", "result": "ok", "source": "https://grokipedia.com/page/Radio_wave", "note": "Grokipedia counts microwaves as a higher-frequency subset of radio waves (to 300 GHz), so 'radio waves' is right even for phone bands above 1 GHz; no microwave choice is offered."},
+    {"claim": "Wrong choices: ultrasonic or faint sound, current through air", "result": "ok", "source": "https://openstax.org/books/college-physics-2e/pages/24-introduction-to-electromagnetic-waves", "note": "OpenStax: 'Many people confuse sound waves with radio waves'."},
+    {"claim": "Context: speed of light, cross vacuum; speaker turns the signal into sound at the end", "result": "ok", "source": "https://openstax.org/books/college-physics-2e/pages/24-introduction-to-electromagnetic-waves", "note": ""}
+  ]},
+  "2a5fea7080": {"verdict": "ok", "checks": [
+    {"claim": "Magnetron, 2.45 GHz, wavelength about 12 cm", "result": "ok", "source": "https://grokipedia.com/page/Microwave_oven", "note": ""},
+    {"claim": "Key: the field twists polar water molecules to and fro, billions of times a second, and the jostling heats the water", "result": "ok", "source": "https://en.wikipedia.org/wiki/Microwave_oven", "note": "Wikipedia: polar molecules 'rotate as they continually try to align themselves to the field'. The draft does not repeat the resonance myth (Wikipedia: 'a common misconception')."},
+    {"claim": "Wrong choices: breaking molecules, knocking out electrons, making atoms radioactive", "result": "ok", "source": "https://grokipedia.com/page/Microwave_oven", "note": "Non-ionizing; 'does not make food radioactive'."},
+    {"claim": "Context: glass hardly absorbs microwaves; metal walls reflect", "result": "ok", "source": "https://grokipedia.com/page/Microwave_oven", "note": ""}
+  ]},
+  "63ea3d4d70": {"verdict": "uncertain", "checks": [
+    {"claim": "Key: thermal camera picks up infrared given off by a warm body", "result": "ok", "source": "https://grokipedia.com/page/Thermography", "note": ""},
+    {"claim": "Wrong choices: reflected IR from a lamp (active IR, not thermal), brightened visible light (image intensifier), UV from skin", "result": "ok", "source": "https://grokipedia.com/page/Thermography", "note": "Thermography 'differs fundamentally from night-vision technologies that employ image intensification'; NASA: humans 'only emit infrared waves'."},
+    {"claim": "Context: works in total darkness and through smoke; TV remotes use infrared", "result": "ok", "source": "https://science.nasa.gov/ems/07_infraredwaves/", "note": ""},
+    {"claim": "Context: a body at 37 C 'gives off far more' infrared than the cool ground and trees", "result": "uncertain", "source": "https://grokipedia.com/page/Thermography", "note": "Radiated power goes as the fourth power of absolute temperature, so warm skin (about 305 K) against ground at about 280 K gives off only about 1.4 to 1.7 times as much; the camera shows him brightly because it maps small differences. 'Far more' overstates it. Fix: 'gives off more than the cooler ground and trees around it'."}
+  ]},
+  "599d4b10f3": {"verdict": "error", "checks": [
+    {"claim": "Key: 'Its waves have a higher frequency and carry more energy'", "result": "error", "source": "https://grokipedia.com/page/Electromagnetic_spectrum", "note": "Higher frequency means more energy PER PHOTON (E = hf). The stem pits UV against a BRIGHT red lamp, whose light may well carry more energy in total; that a light's waves carry more energy is set by brightness, not frequency, so the key as worded states the classic misconception. Fix the key: 'Each packet of it carries more energy, from its higher frequency' (the context already explains the packets)."},
+    {"claim": "UV-C at 254 nm used in drinking water; damages DNA/RNA so germs cannot multiply", "result": "ok", "source": "https://grokipedia.com/page/Ultraviolet_germicidal_irradiation", "note": ""},
+    {"claim": "Wrong choice: UV waves are longer (UV 100-400 nm, shorter than red)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ultraviolet", "note": ""},
+    {"claim": "Wrong choice: UV travels faster through water (water's index is higher in UV, so UV is slower)", "result": "ok", "source": "https://en.wikipedia.org/wiki/Optical_properties_of_water_and_ice", "note": "Index 1.349 at 300 nm vs 1.33 visible."},
+    {"claim": "Wrong choice: UV boils the water (UV disinfection is a photochemical, chemical-free process)", "result": "ok", "source": "https://grokipedia.com/page/Ultraviolet_germicidal_irradiation", "note": ""},
+    {"claim": "Context: UVB causes sunburn", "result": "ok", "source": "https://en.wikipedia.org/wiki/Ultraviolet", "note": ""}
+  ]},
+  "5c35ac2fad": {"verdict": "ok", "checks": [
+    {"claim": "Gamma Knife: about 200 (192-201) cobalt-60 sources around the head, beams converging on the target", "result": "ok", "source": "https://grokipedia.com/page/Radiosurgery", "note": "Hemispheric array; 'all around the head' is fair."},
+    {"claim": "Key: one strong beam would harm all healthy brain along its path; each thin beam low intensity", "result": "ok", "source": "https://en.wikipedia.org/wiki/Gamma_Knife", "note": "Wikipedia: 'Each individual beam is of relatively low intensity'."},
+    {"claim": "Wrong choices: burn only the scalp like UV, make the head radioactive, bend away", "result": "ok", "source": "https://www.mskcc.org/news/answers-common-questions-about-radiation-safety", "note": "MSK: external-beam therapy 'does not make a person radioactive in any way'; gamma rays penetrate tissue (Grokipedia, Gamma ray)."},
+    {"claim": "Context: gamma rays penetrate and damage DNA; UV stopped in skin; tumour 'gets a dose that destroys it'", "result": "ok", "source": "https://grokipedia.com/page/Gamma_ray", "note": "Wikipedia: radiosurgery 'aims to destroy target tissue', though success is often judged as the tumour no longer growing; acceptable simplification."}
+  ]}
+ },
+ "unit_notes": "Band order, speed of light, Herschel, Ritter, Röntgen, Hertz, phone, microwave oven (no resonance myth), Gamma Knife all check out. One error: the UV question's key says UV's waves 'carry more energy' against a BRIGHT red lamp; it must say each packet (photon) carries more. Two uncertain wording points: Herschel context's 'so they were a kind of light' reads as Herschel's own conclusion (he came to think heat and light rays distinct); thermal-camera context's 'far more' infrared overstates a 1.4-1.7x difference."}

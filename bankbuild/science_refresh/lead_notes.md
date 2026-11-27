@@ -97,3 +97,42 @@ These are cross-unit notes to pass into later briefs, so two units never ask the
     - an acid and a base neutralising each other, with the pH moving toward 7 (the antacid).
   - `balancing-equations-and-reaction-rates` (T5) may name neutralisation as one kind of reaction, and may ask what it makes (a salt and water). It must not re-ask the antacid or the pH moving to 7.
   - Ocean acidification stays out of the T4 unit; carbon dioxide and climate belong to the T4 greenhouse and T5 climate units.
+- **Magnetism and electromagnets ladder (lead's ruling, 2026-11-26).**
+  - Already keyed lower down:
+    - T1: magnets pull iron, not other metals; filings out of sand; the biggest magnet and the paper clips.
+    - T2 `forces-and-net-force`: magnetism acts without touching (the clip on a thread).
+    - T3 `physical-or-chemical-change`: a nail stroked into a magnet is a physical change.
+    - T3 `why-earth-supports-life`: Earth's field shields the air from the solar wind.
+  - `fields-pushes-and-pulls-without-touching` (T4) owns:
+    - like and unlike charges;
+    - rubbing moves electrons (the balloon);
+    - forces growing with more charge or a stronger magnet and fading with distance, in words, not the inverse square;
+    - Earth as a magnet and the compass (William Gilbert's De Magnete, 1600, and his terrella);
+    - Oersted's needle (1820);
+    - the electromagnet (more turns or more current make it stronger; it switches off).
+  - `circuits-motors-and-generators` (T5) owns:
+    - motors and generators;
+    - Faraday's induction;
+    - current, voltage and resistance.
+  - `keplers-laws-and-newtons-gravity` (T5) owns the inverse square.
+- **Genetics ladder (lead's ruling, 2026-11-26).**
+  - T3 `mendels-peas-and-inherited-traits` owns Mendel's crosses, dominant and recessive, and Punnett squares.
+  - T3 `two-ways-to-make-offspring` owns sexual against asexual reproduction, told through plants and microbes.
+  - `genes-chromosomes-and-mutations` (T4) owns:
+    - where genes sit: sections of DNA on chromosomes in the nucleus;
+    - the 23 pairs, one set from each parent;
+    - a gene as the instruction for a trait;
+    - that siblings differ because each gets a different half (the fact, not the mechanism);
+    - what a mutation is, and that it can be harmful, helpful or neither;
+    - mutations as a source of new variation;
+    - XX and XY, told clinically.
+    - It may key sickle-cell disease as a harmful mutation from a single change, and its link to malaria resistance as a helpful side.
+  - `from-dna-to-protein` (T5) owns:
+    - the double helix and base pairs;
+    - Franklin, Watson and Crick;
+    - transcription and translation;
+    - how a mutation changes one amino acid. It may use sickle cell for that, but must not re-key "a single change causes sickle-cell disease".
+  - `meiosis-and-patterns-of-inheritance` (T5) owns:
+    - the mechanism of why siblings differ (crossing over, independent assortment);
+    - incomplete dominance, codominance, blood groups;
+    - sex-linked traits.

@@ -137,3 +137,20 @@ G1. 8th grade: TEKS (2021) 8.6C, "Describe the properties of cohesion, adhesion,
 - "Wax repels water": Grokipedia's definition of a hydrophobe says "repel or avoid", but the same page says the effect "is not a true attractive force" and that water simply "cannot form hydrogen bonds with nonpolar surfaces". Too ambiguous for a wrong choice; not used.
 - Root pressure is real but small (Wikipedia: up to 145 kPa in a grapevine, about zero in some plants), so it is never a wrong choice here.
 - Water bond counts: Grokipedia gives liquid water 3.5 bonds a molecule on average, its Hydrogen bond page 3.2 to 3.4, Hawaii "up to three"; only ice's "exactly four" is used.
+
+## Added in the revision (2026-11-26)
+
+F30. Things aboard the space station float because they are falling: "The answer is that they are in free fall." "The spacecraft, its crew and everything aboard are all falling around Earth." "Since they are all falling together, the crew and objects appear to float." (NASA, What Is Microgravity?) The bank's gravity-and-orbits unit teaches the same.
+    https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-microgravity-grades-k-4/
+
+F31. Electric charge on a drop pushes it apart, not together: as a charged droplet shrinks to its Rayleigh limit, the repulsion of its like charges "becomes more powerful than the surface tension holding the droplet together" (Wikipedia, Electrospray ionization). So static electricity is not what rounds a floating drop.
+    https://en.wikipedia.org/wiki/Electrospray_ionization
+
+F32. A water molecule is neutral overall though its ends carry slight charges: ACS Middle School Chemistry (chapter 5, lesson 1) notes that the water molecule as a whole has 10 protons and 10 electrons, so it is neutral, and defines a polar molecule as one in which "a neutral molecule has a positive area at one end and a negative area at the other" (read through the search summary). No electron leaves or joins it; its shared electrons only sit nearer the oxygen (F1, F2).
+    https://www.acs.org/middleschoolchemistry/lessonplans/chapter5/lesson1.html ; https://grokipedia.com/page/Chemical_polarity
+
+F33. A hydrogen bond is mainly an electric attraction but has "partial covalent character due to charge transfer and orbital overlap" (Grokipedia, Hydrogen bond, via the fact-check), so the context says it is not a shared pair of electrons rather than that it shares none.
+    https://grokipedia.com/page/Hydrogen_bond
+
+F34. Water's surface tension against other liquids: water about 72.8 mN/m at 20 C, ethanol 22.3 (Grokipedia, Surface tension), so water's is about three times alcohol's. It is not second only to mercury, as USGS says: pure hydrogen peroxide is 80.4 mN/m at 20 C (Evonik data sheet) and room-temperature liquid metals such as Galinstan reach 535-718 (Wikipedia). So the context says "stronger than almost any other everyday liquid". Mercury's is about 465, over six times water's (F16).
+    https://grokipedia.com/page/Surface_tension ; https://active-oxygens.evonik.com/en/products-and-services/hydrogen-peroxide/general-information/physico-chemical-properties ; https://en.wikipedia.org/wiki/Galinstan

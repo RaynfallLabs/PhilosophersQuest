@@ -1,0 +1,155 @@
+{
+ "unit": "genes-chromosomes-and-mutations",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "genes-chromosomes-and-mutations",
+   "question": "Walter Sutton, a graduate student at Columbia University, watched the chromosomes of a large grasshopper under his microscope in 1902. They came in matched pairs, and as the grasshopper formed the cells that pass to its young, the two partners of each pair parted, one into each cell, just as Gregor Mendel's factors for a trait part. What did Sutton propose about the factors, later called genes?",
+   "answer": "Each chromosome carries many of them",
+   "choices": [
+    "Each chromosome carries many of them",
+    "Each chromosome is just one of them",
+    "Every chromosome carries all of them",
+    "No chromosome carries any of them"
+   ],
+   "context": "Sutton reasoned that an animal passes on far more traits than it has chromosomes, so one chromosome must carry many factors, and he set out the chromosome theory in 1903. Later work bore him out: each human chromosome carries hundreds to thousands of genes, each one a section of its long molecule of DNA, and Thomas Hunt Morgan's fruit flies showed from 1910 that genes really do ride on chromosomes.",
+   "facts": ["F1", "F2", "F3", "F7", "F8", "F9", "M2"],
+   "grade_note": "8th grade (curriculum line G8.L2; NGSS LS3.A) teaches that genes are sections of DNA carried on the chromosomes, many genes to each chromosome, and the chromosome theory is the experiment-led story of how that was found."
+  },
+  {
+   "tier": 4,
+   "topic": "genes-chromosomes-and-mutations",
+   "question": "Joe Hin Tjio, working in Albert Levan's laboratory at Lund in Sweden, grew human cells in the laboratory late in 1955. He stopped them partway through dividing with a drug called colchicine, swelled them in a weak salt solution and squashed them flat, so that the chromosomes lay apart, clear enough to count. Textbooks had printed another number for some thirty years. How many did he count in each cell?",
+   "answer": "46, in 23 pairs",
+   "choices": [
+    "46, in 23 pairs",
+    "48, in 24 pairs",
+    "44, in 22 pairs",
+    "23, none of them paired"
+   ],
+   "context": "Every whole cell Tjio examined held 46 chromosomes: 22 matched pairs and one pair of sex chromosomes. Theophilus Painter's count of 48 from the early 1920s had stood for about thirty years, though Painter's chromosomes had clumped and overlapped and he had wavered between 46 and 48 himself. The other great apes do have 48.",
+   "facts": ["F4", "F10", "F11"],
+   "grade_note": "8th grade (curriculum line G8.L2) teaches that human body cells hold 23 pairs of chromosomes, 46 in all; Tjio and Levan's count is how that number was settled."
+  },
+  {
+   "tier": 4,
+   "topic": "genes-chromosomes-and-mutations",
+   "question": "A karyotype is a photograph of the chromosomes from a single cell, cut apart and lined up in matching pairs by size and shape. In a girl's karyotype, the two chromosomes of every pair match each other in length and in the pattern of bands across them. Where did the two chromosomes of a pair come from?",
+   "answer": "One from her mother and one from her father",
+   "choices": [
+    "One from her mother and one from her father",
+    "Both from one parent, a different one for each pair",
+    "One from a parent and the other a copy of it",
+    "Each a blend of her mother's and her father's"
+   ],
+   "context": "Every pair holds one chromosome from the mother and one from the father, so a person carries two copies of nearly every gene, one from each parent. The partners match because they carry the same genes in the same order, though the versions of a gene on the two can differ. Neither partner is a copy of the other, and neither is a blend of the two parents.",
+   "facts": ["F3", "F4", "F12", "M3", "M5"],
+   "grade_note": "8th grade (curriculum line G8.L2; NGSS LS3.B) teaches that an offspring receives one set of chromosomes from each parent, so each pair has one from each."
+  },
+  {
+   "tier": 4,
+   "topic": "genes-chromosomes-and-mutations",
+   "question": "Two sisters, born two years apart, have the same mother and father, and neither is a twin. One has blue eyes and the other brown, and their faces are quite unlike. What explains the difference between them?",
+   "answer": "Each got a different half of each parent's genes",
+   "choices": [
+    "Each got a different half of each parent's genes",
+    "Each got genes that changed as she grew up",
+    "Each got all of her genes from one of the parents",
+    "Each took after the parent she spent more time with"
+   ],
+   "context": "Each parent carries two copies of every gene and passes one copy of each, chosen by chance, to each child, so each sister got her own half of her mother's genes and her own half of her father's. Full sisters share about half of their DNA on average; only identical twins share all of it. A girl keeps the genes she was born with, and her eye colour comes from them, not from the time she spends with a parent.",
+   "facts": ["F4", "F6", "F12", "F13"],
+   "grade_note": "8th grade (NGSS LS3.B) teaches that each parent contributes half of the genes, at random, which is why brothers and sisters differ; the mechanism (meiosis) waits for 9th grade."
+  },
+  {
+   "tier": 4,
+   "topic": "genes-chromosomes-and-mutations",
+   "question": "Nettie Stevens showed in 1905 that a mealworm's sex follows one pair of its chromosomes. Humans have such a pair too: one sex carries two X chromosomes, and the other carries one X and one Y. Whose chromosome decides whether a child is male or female?",
+   "answer": "The father's, for he carries an X and a Y",
+   "choices": [
+    "The father's, for he carries an X and a Y",
+    "The mother's, for she carries an X and a Y",
+    "The mother's, for she carries two X chromosomes",
+    "The father's, for he carries two X chromosomes"
+   ],
+   "context": "A mother carries two X chromosomes, so every child gets an X from her. A father carries an X and a Y and passes on one or the other: a child who gets his X is XX and female, and one who gets his Y is XY and male. Stevens had seen the same kind of pair in mealworms, 20 large chromosomes in a female's cells and 19 large and one small in a male's, when many biologists still thought an animal's surroundings settled its sex as it grew.",
+   "facts": ["F4", "F14", "F15"],
+   "grade_note": "8th-grade genetics (curriculum line G8.L2) teaches the sex chromosomes, XX in females and XY in males, as one of the 23 pairs; Stevens's mealworms are how they were found."
+  },
+  {
+   "tier": 4,
+   "topic": "genes-chromosomes-and-mutations",
+   "question": "Hermann Muller struck fruit flies with X-rays at the University of Texas in 1926, and he bred them beside flies that had no X-rays at all. Among the young of both, he searched for new inherited changes that had not been in their parents, such as white eyes or small wings. How did the young of the X-rayed flies compare with the others?",
+   "answer": "The same kinds of change, far more often",
+   "choices": [
+    "The same kinds of change, far more often",
+    "New kinds of change, far more often",
+    "The same kinds of change, about as often",
+    "New kinds of change, about as often"
+   ],
+   "context": "The X-rayed flies' young showed the same mutations that turn up now and then on their own, such as white eyes and small wings, but far more often: about 150 times as many deadly mutations as the untreated flies' young. Muller had shown that radiation can change genes, and most of the changes he made harmed the flies. He won the 1946 Nobel Prize in Physiology or Medicine for it.",
+   "facts": ["F9", "F16", "F17"],
+   "grade_note": "8th grade (curriculum line G8.L2; NGSS LS3.B) teaches that a mutation is a change in a gene and that genetic information can be altered by mutations; Muller's flies showed one cause."
+  },
+  {
+   "tier": 4,
+   "topic": "genes-chromosomes-and-mutations",
+   "question": "Ernest Irons, a young doctor in Chicago, looked at the blood of a dental student from Grenada and saw red blood cells bent into long, curved sickle shapes, and James Herrick reported the case in 1910. Such stiff cells jam in small blood vessels and cause bouts of severe pain. Doctors later found that sickle-cell disease is inherited. What causes it?",
+   "answer": "A change in a single gene",
+   "choices": [
+    "A change in a single gene",
+    "Changes in many genes at once",
+    "An extra copy of one chromosome",
+    "A chromosome missing from each cell"
+   ],
+   "context": "Sickle-cell disease comes from one small change in a single gene, a gene for haemoglobin, the protein that carries oxygen in red blood cells; a person who inherits the changed gene from both parents has the disease. It is a plain case of a harmful mutation. An extra or a missing chromosome, by contrast, adds or takes away copies of hundreds of genes at once.",
+   "facts": ["F3", "F16", "F18", "F19"],
+   "grade_note": "8th grade (curriculum line G8.L2; NGSS MS-LS3-1) teaches that a mutation can be harmful, and sickle-cell disease is the standard example of harm from a single changed gene."
+  },
+  {
+   "tier": 4,
+   "topic": "genes-chromosomes-and-mutations",
+   "question": "Sickle-cell disease strikes children who inherit the changed gene from both parents, and where there is little medical care, half or more of them die before the age of five. Yet when Anthony Allison tested nearly 5,000 people in East Africa in the early 1950s, more than a fifth of those on the coast, where malaria was common, carried the gene. Why had it stayed so common there?",
+   "answer": "Carriers of one copy survive malaria better",
+   "choices": [
+    "Carriers of one copy survive malaria better",
+    "Malaria changes the gene in people's cells",
+    "Mosquitoes carry the gene from person to person",
+    "Every carrier passes it on to every child"
+   ],
+   "context": "A child with one copy of the gene has the sickle-cell trait, usually with no illness, and is far better protected against deadly malaria; Allison found such children had fewer malaria parasites in their blood. Where malaria kills many children, more carriers survive to pass the gene on, so it stays common, though two copies cause the disease. Malaria does not make the gene and mosquitoes do not spread it: it passes only from parent to child, and each child of a carrier has an even chance of getting it from that parent.",
+   "facts": ["F16", "F18", "F20", "M7"],
+   "grade_note": "8th grade (NGSS MS-LS3-1) teaches that a mutation can be harmful, helpful or neutral; the sickle-cell gene, harmful in two copies and protective against malaria in one, is the classic case."
+  },
+  {
+   "tier": 4,
+   "topic": "genes-chromosomes-and-mutations",
+   "question": "A nectarine is a fruit with smooth, shiny skin, much like a peach without its fuzz, and it grows on a tree much like a peach tree. Its smooth skin is an inherited trait, passed down from parent trees to the trees grown from their seeds. Where did the nectarine come from?",
+   "answer": "Peaches, through a change in one gene",
+   "choices": [
+    "Peaches, through a change in one gene",
+    "Peaches, crossed with plums",
+    "Peaches, crossed with apricots",
+    "Peaches, rubbed smooth for many years"
+   ],
+   "context": "Nectarines and peaches are one species, and the smooth skin comes from a change in one gene that the fuzz needs; a study of that gene points to a single mutation, long ago, as the start of every nectarine. Nectarines have been grown in China for over 2,000 years. The belief that a nectarine is a peach crossed with a plum is a myth, and fuzz rubbed off a fruit is never inherited.",
+   "facts": ["F16", "F21", "M6", "M7"],
+   "grade_note": "8th grade (curriculum line G8.L2; NGSS LS3.B) teaches that mutations, changes in genes, are a source of new inherited variation."
+  },
+  {
+   "tier": 4,
+   "topic": "genes-chromosomes-and-mutations",
+   "question": "The genes that set a girl's eye colour do their work in her irises, the coloured rings of her eyes, where they control how much dark pigment, called melanin, is made. A few cells scraped from inside her cheek lie on a microscope slide. Do those cheek cells carry her eye-colour genes?",
+   "answer": "Yes, for each nucleus holds all of her genes",
+   "choices": [
+    "Yes, for each nucleus holds all of her genes",
+    "No, for each cell holds only the genes it uses",
+    "No, for those genes are kept only in her eyes",
+    "Yes, for her blood carries them in from her eyes"
+   ],
+   "context": "Virtually every cell in the body holds a complete copy of the person's DNA in its nucleus, so a cheek cell carries the eye-colour genes even though it never uses them, and a scrape of cheek cells serves for genetic tests. Mature red blood cells have no nucleus and carry no genes at all. Charles Darwin once proposed that particles from every part of the body gather to pass on its traits, but Francis Galton's blood transfusions between rabbits found no sign of them.",
+   "facts": ["F1", "F5", "F6", "M1", "M4"],
+   "grade_note": "8th grade (curriculum line G8.L2; NGSS LS3.A) teaches that genes sit on the chromosomes in the nucleus of a body's cells, a full set in each."
+  }
+ ]
+}

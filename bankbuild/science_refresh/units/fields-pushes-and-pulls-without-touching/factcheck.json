@@ -1,0 +1,100 @@
+{
+ "unit": "fields-pushes-and-pulls-without-touching",
+ "questions": {
+  "00a0735581": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key: rubbing a rubber balloon on hair moves electrons from the hair onto the balloon", "result": "ok", "source": "https://www.sciencelearn.org.nz/resources/2746-static-electricity-and-electrical-charge", "note": "Science Learning Hub: 'electrons are moved from the hair to the surface of the balloon'. Hair sits well above rubber balloon in classroom triboelectric series (Carolina, Physics Classroom)."},
+    {"claim": "The balloon ends negative and the hair positive (short of electrons)", "result": "ok", "source": "https://www.sciencelearn.org.nz/resources/2746-static-electricity-and-electrical-charge", "note": "'The balloon becomes negatively charged'; hair 'positively charged (fewer electrons than before)'."},
+    {"claim": "Hair gives up electrons more easily than rubber (triboelectric order)", "result": "ok", "source": "https://knowledge.carolina.com/uncategorized/the-triboelectric-series-an-introduction-for-static-electricity-labs/", "note": "Hair near the positive end, rubber balloon toward the negative end in school series; series are approximate, but the hair/balloon pair is consistent across sources."},
+    {"claim": "Wrong: electrons moved from the balloon onto the hair", "result": "ok", "source": "https://www.physicsclassroom.com/class/estatics/u8l2a", "note": "Opposite of the standard result; not defensible at this level."},
+    {"claim": "Wrong (both): protons moved between balloon and hair; protons stay in the nucleus", "result": "ok", "source": "https://openstax.org/books/physics/pages/18-1-electrical-charges-conservation-of-charge-and-transfer-of-charge", "note": "OpenStax: positive charge 'is carried by the proton, which is stuck firmly in the nucleus of atoms'; rubbing increases the transfer of electrons."},
+    {"claim": "Context: rubbing makes no new charge, only moves electrons", "result": "ok", "source": "https://openstax.org/books/physics/pages/18-1-electrical-charges-conservation-of-charge-and-transfer-of-charge", "note": "'The law of conservation of charge says that electrical charge cannot be created or destroyed.'"}
+   ]
+  },
+  "b44554c69d": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key: two balloons rubbed on the same hair carry like charge and repel", "result": "ok", "source": "https://openstax.org/books/college-physics-2e/pages/18-1-static-electricity-and-charge-conservation-of-charge", "note": "'Like charges repel, whereas unlike charges attract.' Both balloons gain electrons from the same hair, so both are negative."},
+    {"claim": "Wrong: unlike charges push each other away", "result": "ok", "source": "https://grokipedia.com/page/Static_electricity", "note": "Unlike charges attract."},
+    {"claim": "Wrong (both): magnetic poles push the balloons apart", "result": "ok", "source": "https://grokipedia.com/page/Static_electricity", "note": "A rubbed balloon is electrically charged, not magnetised; the force is electrostatic."},
+    {"claim": "Context: more charge, harder push; the force weakens with distance; unlike magnetic poles attract", "result": "ok", "source": "https://grokipedia.com/page/Coulomb's_law", "note": "Coulomb force proportional to the product of the charges and falls with distance; OpenStax 22-1: 'like poles repel and unlike poles attract'."}
+   ]
+  },
+  "c7f49404af": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key: the balloon's charge polarises the neutral wall, drawing opposite charge nearer", "result": "ok", "source": "https://openstax.org/books/college-physics-2e/pages/18-2-conductors-and-insulators", "note": "OpenStax: in an insulator 'the distribution of charge in atoms and molecules is shifted slightly'; 'Opposite charge is attracted nearer ... while like charge is repelled'; polarization is 'the separation of charges in an object that remains neutral'."},
+    {"claim": "Context: nearer opposite charge pulls harder than the farther like charge pushes, since force weakens with distance", "result": "ok", "source": "https://openstax.org/books/college-physics-2e/pages/18-2-conductors-and-insulators", "note": "Stated by OpenStax as the reason the neutral object is attracted overall."},
+    {"claim": "Wrong: its charge flows into the wall and holds it", "result": "ok", "source": "https://www.scientificamerican.com/article/bring-science-home-static-electricity-attraction/", "note": "The wall is an insulator so the charge stays on the balloon; if charge flowed away, the attraction would be lost, not gained."},
+    {"claim": "Wrong: air pressure pins it; the rubbing made it a weak magnet", "result": "ok", "source": "https://physicslabs.colorado.edu/demos/electricity-and-magnetism/electrostatics/induced-charge/balloon-on-a-wall/", "note": "The hold is electrostatic induction (polarisation), not air pressure or magnetism."},
+    {"claim": "Context: pressed to a metal door, the balloon loses its charge into the metal and falls", "result": "ok", "source": "https://www.scientificamerican.com/article/bring-science-home-static-electricity-attraction/", "note": "Scientific American / Science Buddies: on metal 'the extra electrons in the balloon quickly leave the balloon and move into the metal', so it does not adhere. A fair 8th-grade statement."}
+   ]
+  },
+  "ca9ee035f8": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key: the small magnet wins because it is close and its field fades fast with distance", "result": "ok", "source": "https://en.wikipedia.org/wiki/Magnet", "note": "Dipole field 'falls off inversely with the cube of the distance from the magnet's center'."},
+    {"claim": "Context: Earth's surface field is weak", "result": "ok", "source": "https://grokipedia.com/page/Earth's_magnetic_field", "note": "'about 25 to 65 microtesla'."},
+    {"claim": "Context: a few cm from a small bar magnet its field is many times Earth's; across the room it is far below", "result": "ok", "source": "https://en.wikipedia.org/wiki/Magnet", "note": "Good bar magnet m = 0.1 A m^2 (Wikipedia). On-axis B = 2e-8/r^3 T gives about 0.74 mT at 3 cm (about 15x Earth's ~50 uT) and about 0.02 uT at 1 m. Holds for a typical classroom bar magnet."},
+    {"claim": "Wrong: it is a stronger magnet than the whole of Earth", "result": "ok", "source": "https://grokipedia.com/page/Earth's_magnetic_field", "note": "Earth's dipole moment ~8 x 10^22 A m^2 vs ~0.1 A m^2 for a good bar magnet."},
+    {"claim": "Wrong: its magnetism is a different kind from Earth's", "result": "ok", "source": "https://grokipedia.com/page/Earth's_magnetic_field", "note": "Earth's field resembles 'a giant bar magnet'; both are magnetic fields acting on the same needle."},
+    {"claim": "Wrong: it shields the needle; context: the fields add and the needle follows the sum", "result": "ok", "source": "https://grokipedia.com/page/Magnetic_field", "note": "'the total field at any point is the vector sum of the fields produced by individual sources'; compass shows field by 'alignment with the local magnetic vector'."}
+   ]
+  },
+  "611d33ba98": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "William Gilbert was an English physician", "result": "ok", "source": "https://grokipedia.com/page/William_Gilbert_(physicist)", "note": "'an English physician, physicist, and natural philosopher'."},
+    {"claim": "Terrella: a lodestone shaped into a ball, a 'little Earth'", "result": "ok", "source": "https://grokipedia.com/page/Terrella", "note": "Made from 'a naturally occurring lodestone' shaped into a ball; Gilbert called it a 'little Earth'."},
+    {"claim": "A pivoted needle over it lined up with the ball's poles and dipped toward the surface, more steeply nearer the poles, as on Earth", "result": "ok", "source": "https://grokipedia.com/page/De_Magnete", "note": "'iron needles align precisely along meridians converging at the poles'; dip increases toward the poles, vertical at the poles. Wikipedia De Magnete: level at the equator, dip 'increases towards the poles'. Dip on Earth was found by Robert Norman, 1581 (Grokipedia Terrella)."},
+    {"claim": "De Magnete published 1600", "result": "ok", "source": "https://en.wikipedia.org/wiki/De_Magnete", "note": "Published 1600 in London by Peter Short."},
+    {"claim": "Key: Gilbert concluded Earth itself is a giant magnet", "result": "ok", "source": "https://en.wikipedia.org/wiki/William_Gilbert_(physicist)", "note": "He concluded 'Earth was itself magnetic', 'the reason why compasses point north'; Grokipedia: 'the Earth functions as a giant magnet'."},
+    {"claim": "Wrong: Pole Star draws needles; magnetic island at the North Pole (older explanations he set aside)", "result": "ok", "source": "https://en.wikipedia.org/wiki/William_Gilbert_(physicist)", "note": "Before him some held compasses pointed to 'the pole-star Polaris, or a large magnetic island on the north pole'; Grokipedia De Magnete: he rejected attributing magnetism to stars and the magnetic-mountain/island tales."},
+    {"claim": "Wrong: a needle seeks the north by its own nature", "result": "ok", "source": "https://pwg.gsfc.nasa.gov/earthmag/demagint.htm", "note": "Not his conclusion: De Magnete gave 'the first rational explanation' of north-pointing: 'the Earth itself was magnetic'."}
+   ]
+  },
+  "6351254d5a": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "The North Magnetic Pole is in the Arctic, where the field points straight down", "result": "ok", "source": "https://grokipedia.com/page/North_magnetic_pole", "note": "Field 'directed vertically downward'; WMM 2025 position 85.762 N, 139.298 E, Arctic Ocean."},
+    {"claim": "Key: it is a magnetic south pole, since unlike poles attract", "result": "ok", "source": "https://openstax.org/books/college-physics-2e/pages/22-1-magnets", "note": "'the magnetic pole that is near the geographic North Pole is actually a south magnetic pole'; 'like poles repel and unlike poles attract'. Grokipedia: it 'functions as a magnetic south pole'."},
+    {"claim": "Wrong: north pole since like poles attract; north pole since it lies in the north", "result": "ok", "source": "https://grokipedia.com/page/North_magnetic_pole", "note": "Like poles repel; the name comes from the compass end that points there, not its kind."},
+    {"claim": "Wrong: 'Neither, since plain iron draws either end'; context: plain iron would draw either end", "result": "ok", "source": "https://pwg.gsfc.nasa.gov/earthmag/inducemg.htm", "note": "NASA (Stern): ordinary iron is 'always attracted to a magnet', becoming 'a temporary magnet, of a polarity suitable for attraction'. A compass's S end turning south rules plain iron out."}
+   ]
+  },
+  "76305809c8": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Oersted, April 1820, University of Copenhagen, during a lecture", "result": "ok", "source": "https://grokipedia.com/page/Hans_Christian_%C3%98rsted", "note": "Grokipedia: 21 April 1820, lecture demonstration at the University of Copenhagen; Linda Hall: 21 April 'according to tradition'. Oersted's own later account (quoted at skullsinthestars.com/2011/04/03/the-birth-of-electromagnetism-1820/) says the first trial was made 'in the presence of the audience'. Wikipedia calls the story that he found it 'incidentally' during a lecture a myth; the stem does not say 'by accident', so it is safe."},
+    {"claim": "The wire was held just above the compass needle; the needle was under glass", "result": "ok", "source": "https://skullsinthestars.com/2011/04/03/the-birth-of-electromagnetism-1820/", "note": "Oersted's account: 'a very thin platina wire, which was placed over a compass covered with glass'. Grokipedia: wire 'positioned above a compass needle covered by glass'."},
+    {"claim": "Closing the circuit swung the needle from north; open circuit, no deflection", "result": "ok", "source": "https://grokipedia.com/page/Hans_Christian_%C3%98rsted", "note": "'No deflection occurred when the circuit was open or the current absent'; Wikipedia: needle 'deflected from magnetic north by a nearby electric current'."},
+    {"claim": "Key: the current in the wire made a magnetic field", "result": "ok", "source": "https://en.wikipedia.org/wiki/Hans_Christian_%C3%98rsted", "note": "'an electric current produces a circular magnetic field as it flows through a wire'."},
+    {"claim": "Wrong: the needle's field made a current; the plates were magnets; current leaked into the needle", "result": "ok", "source": "https://grokipedia.com/page/Ferromagnetism", "note": "The battery made the current; copper and zinc are not ferromagnetic; the glass-covered needle was outside the circuit and the effect passes through glass and wood (Oersted 1820, quoted at skullsinthestars)."},
+    {"claim": "Context: battery of copper and zinc plates", "result": "ok", "source": "https://grokipedia.com/page/Hans_Christian_%C3%98rsted", "note": "Grokipedia: 'a pile of approximately 20 copper and zinc plates'. Oersted's own account calls the lecture battery a small 'galvanic trough', which in that era was copper and zinc; fine."},
+    {"claim": "Context: first proof that electricity and magnetism are linked", "result": "ok", "source": "https://nationalmaglab.org/magnet-academy/history-of-electricity-magnetism/museum/oersteds-compass-1820", "note": "MagLab: 'the first indication most scientists had regarding the electricity-magnetism connection'; Linda Hall: before this 'no one found any magnetic effects of electrical current'. Romagnosi's 1802 report is usually read as electrostatic and unpublished, so the mainstream claim stands."},
+    {"claim": "Context: later tests that year showed the field runs in circles around the wire", "result": "ok", "source": "https://www.lindahall.org/about/news/scientist-of-the-day/hans-christian-oersted/", "note": "Linda Hall: 'an electric current generates a circular magnetic field around a wire'; Oersted's July 1820 paper: 'this conflict performs circles'."}
+   ]
+  },
+  "395de94fda": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Key: more turns of the same wire (same current) makes the electromagnet stronger", "result": "ok", "source": "https://grokipedia.com/page/Electromagnet", "note": "Strength 'quantified as ampere-turns (product of current and turns)'. Winding the loose part of the same wire keeps the circuit's resistance and so the current the same, as the context says. NGSS MS-PS2-3 names this test."},
+    {"claim": "Wrong: reversing the battery only swaps the poles", "result": "ok", "source": "https://van.physics.illinois.edu/ask/listing/2340", "note": "'To change the poles, just change which way the battery is hooked up. This changes the direction the current flows and reverses the field.' Same current, same strength."},
+    {"claim": "Wrong: copper nail; pulling the nail out", "result": "ok", "source": "https://en.wikipedia.org/wiki/Electromagnet", "note": "'A core can increase the magnetic field to thousands of times the strength of the field of the coil alone'; copper is not ferromagnetic (Grokipedia, Ferromagnetism)."},
+    {"claim": "Context: Joseph Henry wound silk-covered wire in many layers to get more turns", "result": "ok", "source": "https://en.wikipedia.org/wiki/Electromagnet", "note": "Henry used 'wire insulated by silk thread', letting him wind multiple layers; Sturgeon's bare wire allowed only one spaced layer, limiting turns."}
+   ]
+  },
+  "d8fefb6a7e": {
+   "verdict": "ok",
+   "checks": [
+    {"claim": "Maglock: electromagnet in the frame grips a steel plate on the door; about 1,200 lb; no moving parts", "result": "ok", "source": "https://grokipedia.com/page/Electromagnetic_lock", "note": "Electromagnet on the frame and armature plate on the door; holding force 600 to over 2,000 lb, standard 1,200 to 1,500 lbf; 'no moving parts to wear out'."},
+    {"claim": "Key: when power fails the grip vanishes at once and the door comes free", "result": "ok", "source": "https://grokipedia.com/page/Electromagnetic_lock", "note": "'the lock releases instantly when power is interrupted'. Grokipedia also notes slight residual magnetism can delay release; 'at once' is a fair 8th-grade simplification."},
+    {"claim": "Wrong: holds on; fades over hours; turns to a push", "result": "ok", "source": "https://en.wikipedia.org/wiki/Electromagnet", "note": "'The magnetic field disappears when the current is turned off'; an unpowered coil neither holds nor repels."},
+    {"claim": "Context: fail-safe, nobody trapped in a fire alarm or power cut", "result": "ok", "source": "https://grokipedia.com/page/Electromagnetic_lock", "note": "'inherently fail-safe', 'free egress in emergencies such as fire alarms or power outages'."},
+    {"claim": "Context: a scrapyard crane drops its steel when the current to its electromagnet is switched off", "result": "ok", "source": "https://grokipedia.com/page/Electromagnet", "note": "Crane magnets 'lift ferrous loads weighing several tons', 'de-energized to release the material at the destination'."}
+   ]
+  }
+ },
+ "unit_notes": "All nine questions check out. Optional wording only, not an error: in d8fefb6a7e, real maglock power supplies often carry a standby battery, so a sharp reader could say the lock holds through a building blackout; 'if the power to the lock fails' would close that gap. In 76305809c8, the stem rightly avoids the 'found it by accident' myth (Wikipedia calls it a myth); keep it that way. Q1's electrons-from-hair-to-balloon follows the school model and every main source; one University of Wisconsin demo page that calls the balloon positive is an outlier."
+}

@@ -1,0 +1,76 @@
+{
+ "kind": "final",
+ "unit": [],
+ "questions": {
+  "7fcc917549": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "44c80e886a": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "6bb36c25da": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "46adde2b1d": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "9c223d0d70": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: long(74>70)"
+   ],
+   "flag": []
+  },
+  "e422397088": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: short(31<40)"
+   ],
+   "flag": []
+  },
+  "93ce58ca98": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: short(31<40)"
+   ],
+   "flag": []
+  },
+  "694ed54b14": {
+   "fail": [],
+   "warn": [],
+   "info": [
+    "voice: short(33<40)",
+    "voice: closer_long(22)"
+   ],
+   "flag": []
+  },
+  "3b6251df27": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  },
+  "08801e0218": {
+   "fail": [],
+   "warn": [],
+   "info": [],
+   "flag": []
+  }
+ },
+ "n_fail": 0
+}

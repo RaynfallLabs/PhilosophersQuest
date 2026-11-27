@@ -1,0 +1,60 @@
+{"unit": "the-electromagnetic-spectrum",
+ "questions": {
+  "533492b378": {"verdict": "ok", "issues": []},
+
+  "10e0e0d2a8": {"verdict": "ok", "issues": []},
+
+  "9feca8fb6b": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key 'Rays in sunlight that eyes cannot see' echoes the stem's 'where no light could be seen', so the answer half-borrows the stem's words. The three confounds (room, prism, black paint) are good how-we-know lures, and the stem does not rule them out (the controls are only in the card), so the question works.",
+     "fix": "Change the stem's 'where no light could be seen' to 'where the bench looked dark', which keeps the mystery without supplying the key's words."}
+   ]},
+
+  "30fa7d03ad": {"verdict": "ok", "issues": []},
+
+  "4932f8b3dc": {"verdict": "ok", "issues": []},
+
+  "8d0745dad6": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem kills 'They cross in no time at all'. It says Hertz 'worked out how fast they travel', and waves crossing in no time have no speed to work out. 'They travel faster than light' is weak for teenagers who know nothing outruns light. That leaves light against sound, about two live choices. The key itself is right, and it is the spectrum unit's own fact (every band at light's speed), not the waves unit's 300,000 figure.",
+     "fix": "Replace 'They cross in no time at all' with 'They travel slower than light, faster than sound', the middle-ground guess for 'electric waves'. Only the fact that every band moves at one speed then rules it out."}
+   ]},
+
+  "8436b7c73b": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key carries an extra clause ('which are electromagnetic like light') that marks it as the textbook answer, and it is the only electromagnetic choice next to two sound-wave choices. The sound lures are well documented (M1), so the question works, but the key stands out.",
+     "fix": "Shorten the key to 'Radio waves sent out by the tower' and leave 'electromagnetic like light' to the card."}
+   ]},
+
+  "2a5fea7080": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The three wrong choices all damage the water (break it apart, knock electrons out, make it radioactive), so the key is the only gentle one, and a student who reasons that hot water is still water can pick it as the odd one out. The physics is right. The oven appears only as a physics device with beakers, with no food, so it keeps out of the cooking lane.",
+     "fix": "Replace 'They knock electrons out of its atoms' with 'They fill it with electric charge', a non-destructive lure from 'electromagnetic' that sits beside the key."}
+   ]},
+
+  "63ea3d4d70": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Thermal camera' tells any 8th grader that the camera sees heat. That kills 'Infrared light from the camera's lamp, bounced off him' and 'Faint visible light, made brighter by the camera', neither of which comes from his warmth. Only the key and the ultraviolet choice (both 'warm') stay live. The camera has to be named somehow, so the fix belongs in the choices.",
+     "fix": "Give every choice the heat frame, so that only knowledge of the band decides: 'Infrared light given off by his warm body' / 'Ultraviolet light given off by his warm skin' / 'Microwaves given off by his warm body' / 'Warm air rising off his body to the camera'. Keep the image intensifier and the active lamp in the card."}
+   ]},
+
+  "599d4b10f3": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The stem says 'a bright red lamp', and the key says ultraviolet's waves 'carry more energy'. A bright lamp's light can carry more energy in all, and the waves unit's Q1 has just taught that a bigger amplitude carries more energy, so a careful student can object to the key as worded. The card makes the right point, per packet. 'Its waves heat the water hot enough to boil it' is also weak, since no treatment plant boils its flow.",
+     "fix": "Key: 'Its waves have a higher frequency, so each bit carries more energy'. Replace the boiling choice with 'Its waves heat the germs until they die'. That is the live belief that ultraviolet kills by heat, where in fact it damages the germ's DNA."}
+   ]},
+
+  "5c35ac2fad": {"verdict": "ok",
+   "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem's set-up (thin beams aimed to cross at the tumour) lets a student reason out the key with no knowledge of gamma rays. The fact that gamma rays pass deep and harm the cells along their path is carried by the wrong choices ('burn only the scalp', 'radioactive'), so the question still teaches the band. The card's 'gamma rays pass straight through flesh and bone' overstates a little, since they are weakened on the way.",
+     "fix": "Card: 'gamma rays pass deep through flesh and bone'. The stem can stand."}
+   ]}
+ },
+ "unit_notes": "The scope is covered and fits 8th grade (TEKS 8.8A-B). The bands in order (Q1), colour set by wavelength (Q2), the three discoveries (Herschel Q3, Ritter Q4, Röntgen Q5) and Hertz's proof that the bands travel at light's speed (Q6) are all there. So are the uses: phones (Q7), the microwave oven as a physics device (Q8), thermal cameras with TV remotes in the card (Q9), ultraviolet sterilising (Q10), and gamma rays against cancer (Q11). Each discovery question keys what was found and what it meant, as T4 asks. The physics and keys are sound. Overlaps were checked against every final.json. T1 how-light-travels (white light is a mix) is only the premise of the prism questions and is never asked. T3 why-earth-supports-life (ozone and UV sunburn) is built on, not re-asked: Q10 keys why ultraviolet can harm (higher frequency, more energy each bit), and Q4 keys where ultraviolet lies. T3 two-ways-to-make-offspring's buttercup is untouched. Q9 builds on T3 heat-on-the-move (a warm body gives off heat rays) by naming the band, which is a grade deeper. Nothing keys the greenhouse, which belongs to T4 the-greenhouse-effect. Within the batch, nothing keys pitch or the 300,000 kilometres a second, which belong to the waves unit. The only wave-speed key is Q6's 'as fast as light', the spectrum's own scope line. The pitch word appears only in one of Q7's wrong choices. No arithmetic, and no food. Voice is clean: third person, no exclamation marks, no date openers, no singular 'they'. The two medium items share a pattern, a stem word that settles choices knowledge should settle: Q6's 'worked out how fast' and Q9's 'thermal'."}

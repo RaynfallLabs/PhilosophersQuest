@@ -1,0 +1,53 @@
+{"unit": "describing-waves",
+ "questions": {
+  "f357d0fd52": {"verdict": "ok", "issues": []},
+
+  "f9016219ba": {"verdict": "ok", "issues": []},
+
+  "2db2770168": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The stem kills 'They rise twice as high'. It says she moves her hand 'just as far as before', and any 8th grader reads that as crests no higher, so only three choices are live. The physics and key are right: at a fixed speed, twice the frequency gives half the wavelength.",
+     "fix": "Keep the stem and replace the choice with 'They lie a quarter as far apart'. That is the squared-ratio slip, all four choices are then about spacing, and only the frequency-wavelength rule decides."}
+   ]},
+
+  "f6e75fce1e": {"verdict": "ok",
+   "issues": [
+    {"axis": "clarity", "severity": "low",
+     "what": "The stem says Gassendi 'timed cannon' and 'asked whether a high sound travels faster than a low one', but not how cannon alone could compare high and low sounds, so a careful reader is left puzzling over the method. With two experiments and three dates the stem is dense for 8th grade, though the 2x2 grid of choices is parallel and fair.",
+     "fix": "'Pierre Gassendi timed distant gunfire in 1635, from each flash to its bang, and compared how fast low and high sounds arrive. In 1738 the Paris Academy of Sciences timed cannon along a line 28 kilometres long and compared loud bangs with faint ones. What did Gassendi and the Academy find?'"}
+   ]},
+
+  "54e9f40d4e": {"verdict": "ok", "issues": []},
+
+  "43c3c346fc": {"verdict": "ok", "issues": []},
+
+  "6b506a1276": {"verdict": "revise",
+   "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'Its particles are lighter than air's' is dead: no 8th grader thinks a steel railing's particles are lighter than air's, so only three choices are live. The other two wrong choices are good. 'Travel along with the sound' is the T2 unit waves-carry-energy's own misconception, and 'dart about faster' is the temperature mix-up.",
+     "fix": "Replace it with 'Its particles trap air that carries the sound', the belief that sound needs air even inside a solid. Do not use 'heavier' or 'denser': some middle-school books teach 'denser is faster', which would make a second defensible answer."}
+   ]},
+
+  "a7fbe25a17": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The Galileo story is decoration. The stem sets up what his lantern test could not show, then asks a bare number unconnected to it. The number is the scope's basic fact and fits the grade, so it stands.",
+     "fix": "Join the story to the number: '... Galileo could not tell whether light takes any time at all, because it crossed between the hills and back far too fast for anyone to time. About how far does light travel in one second?'"}
+   ]},
+
+  "66b6674b34": {"verdict": "ok",
+   "issues": [
+    {"axis": "fact", "severity": "low",
+     "what": "For the fact-checker: Io's emergence from Jupiter's shadow is seen only after opposition, while Earth moves away. While Earth moves toward Jupiter the eclipses are seen as Io goes in. So 'while Earth was moving toward Jupiter, [Io came out] earlier' simplifies the record. The key is right.",
+     "fix": "'Ole Rømer ... timed Io's eclipses, the moments when Io, a moon of Jupiter, slid into or out of Jupiter's shadow. In the months when Earth was moving away from Jupiter, the eclipses came later and later than the tables said, and while Earth was moving toward Jupiter, earlier.'"}
+   ]},
+
+  "fb524a326b": {"verdict": "ok",
+   "issues": [
+    {"axis": "other", "severity": "low",
+     "what": "The reasoning that decides this question (higher frequency, shorter waves) is the fact Q3 keys, so the two questions share their deciding idea. The Chladni result itself is new and sourced (F26), and the sand-at-the-still-lines set-up is clear to 8th grade, so it stands. 'It spread out evenly over the whole plate' is the weakest choice but still live.",
+     "fix": "No change needed. If the unit is trimmed, keep both questions but make sure Q3's choices are fixed first, since Q3 is the plain statement of the rule."}
+   ]}
+ },
+ "unit_notes": "The scope is covered: amplitude heard as loudness (Q1), frequency heard as pitch (Q2), wavelength and the frequency-wavelength rule (Q3, Q10), speed set by the medium and not by pitch or loudness (Q4), 343 metres a second and the thunder count (Q5), water (Q6), steel and why (Q7), light's 300,000 kilometres a second (Q8), and light taking time to travel (Q9). Every fact is 8th-grade content, and the experiments (Mersenne, Gassendi and the Academy, Colladon and Sturm, Rømer, Chladni) key what was found, as T4 asks. The physics and keys are sound. Overlaps were checked against every final.json. T2 waves-carry-energy owns the bell jar, the hydrophone, transverse and longitudinal waves, the trough and the rarefaction, and none is re-asked. Q6 goes past the hydrophone (sound travels through water) to how much faster it goes. Q7's card repeats T2's 'each particle shakes about its own place' only to explain a wrong choice. That sound needs a medium is rightly not keyed, since the bell jar owns it. Within the batch, the unit keys pitch and light's speed and never colour, so it respects the spectrum unit's ground. The spectrum unit's Hertz question keys 'as fast as light', not the 300,000 figure, so no question keys the other unit's fact. Q8 (the number) and Q9 (light takes time) are two light-speed questions on different facts, which is fine. Q6's card teaches stiffness, which is Q7's key, but under the teaching-card rule that is not a leak. The arithmetic (9 seconds divided by 3; about 1,435 against 343) is easy mental work, and there is no kitchen. Voice is clean: third person, no exclamation marks, no date openers, no singular 'they'. The two medium items both have one dead wrong choice: Q3's because the stem rules it out, Q7's because it is implausible."}

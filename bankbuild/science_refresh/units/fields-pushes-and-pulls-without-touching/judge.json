@@ -1,0 +1,37 @@
+{"unit": "fields-pushes-and-pulls-without-touching",
+ "questions": {
+  "00a0735581": {"verdict": "ok", "issues": []},
+  "b44554c69d": {"verdict": "ok", "issues": []},
+  "c7f49404af": {"verdict": "revise", "issues": [
+    {"axis": "clarity", "severity": "medium",
+     "what": "The stem says the wall 'itself carries no charge', and the key then speaks of 'the wall's opposite charges'. An 8th grader who takes 'no charge' at its word sees the key contradict the stem, which pushes him toward 'Air pressure pins it' or 'a weak magnet'. A neutral wall that can be polarised needs 'overall', the way inside-the-atom says it ('carries no charge overall').",
+     "fix": "Stem: 'When he lets go, the balloon stays there, though the wall carries no charge overall. What holds the balloon to the wall?' Keep the key and the choices."}]},
+  "ca9ee035f8": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The key is the only two-part choice ('It is close, and magnetism fades with distance'), and its 'close' echoes the stem's 'within a few centimetres'. The three wrong choices are single clauses.",
+     "fix": "Give each wrong choice a reason as well, e.g. 'It is stronger, for a small magnet packs its pull tight', 'Its magnetism is a different kind, which the needle prefers', 'It shields the needle, so Earth's pull cannot reach it'."}]},
+  "611d33ba98": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "high",
+     "what": "The answer can be worked out from the stem. The lodestone ball is glossed 'a little Earth', the needle lines up with 'the ball's poles' (so the ball is a magnet), and it behaves 'just as a needle free to tilt does on Earth'. A little Earth that is a magnet acts like Earth, so Earth is a magnet; the other three choices make no use of the experiment at all. 'Earth is a giant magnet' is also a fact most 8th graders bring from elementary school, so at T4 the question tests nothing new.",
+     "fix": "Ask what the terrella's needle did, the field-shape fact 8th graders learn by mapping a magnet's field: 'William Gilbert, an English physician, shaped a lodestone, a natural magnet, into a ball he called a terrella. He carried a small magnetised needle, free to tilt, over its surface. Over each of the ball's poles the needle stood straight up and down. How did it lie over the ball's middle, halfway between the poles?' Key 'Level, lying flat along the surface'; wrong 'Upright, just as it stood over the poles', 'Tilted halfway, pointing down at a slant', 'Spinning, with no way to settle'. The context then tells Robert Norman's dip on Earth and Gilbert's conclusion in De Magnete, 1600, that Earth itself is a great magnet."}]},
+  "6351254d5a": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "The clause 'Judged by how magnets push and pull' rules out 'A north pole, since it lies in the far north', which judges by place, not by push and pull. That leaves three choices, one of them the false rule 'like poles attract', so anyone who knows the basic rule that unlike poles attract has only 'Neither, since plain iron draws either end' to weigh against the key.",
+     "fix": "Delete the clause: '...where Earth's magnetism points straight down into the ground. What kind of magnetic pole is that spot?' The location-based wrong choice is then live, as it should be."}]},
+  "76305809c8": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "'Some current leaked from the wire into the needle' is weakened by the stem's 'held a wire just above a compass needle': a wire that does not touch the needle cannot leak current into it.",
+     "fix": "Replace it with 'The wire's electric charge tugged on the needle', the charge-for-magnetism mix-up (M1) that students really make."}]},
+  "395de94fda": {"verdict": "ok", "issues": [
+    {"axis": "tell", "severity": "low",
+     "what": "The stem plants 'leaving the rest of the wire loose', a detail only the key uses ('Winding more of the loose wire around the nail'). A test-wise player sees the setup and picks the choice that uses it.",
+     "fix": "Drop the clause: 'A student winds a long insulated wire 20 times around an iron nail and joins its ends to a battery.' Key: 'Winding more turns of the same wire on the nail' (same wire, so the current is unchanged)."}]},
+  "d8fefb6a7e": {"verdict": "revise", "issues": [
+    {"axis": "tell", "severity": "medium",
+     "what": "'It turns to a push, so the door is flung open' is silly: a steel plate is pulled by either pole, nothing in the stem hints at a push, and 'flung open' reads as a joke. Only three choices are live.",
+     "fix": "Replace it with 'It holds on, since the steel plate stays a magnet'. The context can add that a steel plate in a coil's field is a magnet only while that field is there (F15)."},
+    {"axis": "clarity", "severity": "low",
+     "what": "Real maglocks often run on a standby battery, so 'if the building's power fails' lets a sharp reader defend 'It holds on, so the door stays locked'.",
+     "fix": "'What happens to that grip if the power to the lock fails?'"}]}
+ },
+ "unit_notes": "Overlap check against every final.json and this batch: no T1-T3 key is re-asked. T1 (iron, not other metals; filings out of sand), T2 forces-and-net-force (magnetism without touching), T3 physical-or-chemical-change (the stroked nail) and T3 why-earth-supports-life (the field shields the air) are all left alone; Q8's copper-nail wrong choice leans on T1's iron-not-copper fact only as a distractor, which is fine. No motor, generator, Faraday or inverse square is keyed (Q7's 'the needle's own field made a current' is induction as a wrong choice only). Charge questions build properly on T4 inside-the-atom (protons fixed in the nucleus). Three of the nine questions (Q1-Q3) are a balloon rubbed on hair: three different facts, but one scene; consider moving one to a rubbed plastic comb and bits of paper. Q1's stem says the hair and balloon pull together because one is negative and the other positive, which hands Q2 its two 'unlike ... push each other away' eliminations if both are drawn in one run. Scope: the distance half of 'forces grow with more charge or a stronger magnet and weaken with distance' is keyed (Q4), and the strength half only through the electromagnet's turns (Q8); a charge-size question is not needed. Gravity as a field force is left to gravity-and-orbits (T3) and the T5 Kepler unit, which is right. If Q5 is rewritten as suggested, 'Earth is a magnet' stays in its context and in Q6's set-up."}

@@ -1,0 +1,222 @@
+{
+ "unit": "waters-sticky-properties",
+ "questions": [
+  {
+   "tier": 4,
+   "topic": "waters-sticky-properties",
+   "question": "A water molecule is one oxygen atom joined to two hydrogen atoms, each hydrogen held to the oxygen by a pair of electrons the two atoms share. The oxygen pulls those shared electrons nearer to itself than the hydrogens do. What does that leave on the molecule?",
+   "answer": "A slightly negative oxygen end and slightly positive hydrogen ends",
+   "choices": [
+    "A slightly negative oxygen end and slightly positive hydrogen ends",
+    "A slightly positive oxygen end and slightly negative hydrogen ends",
+    "A negative charge on the whole molecule, from its electrons",
+    "No charge at either end, since the molecule is neutral"
+   ],
+   "context": "Electrons carry a negative charge, so the oxygen end, which holds the shared electrons nearer, is left slightly negative, and each hydrogen end slightly positive. No electron leaves or joins the molecule, so it stays neutral as a whole; its charges are only shifted toward its ends. These slight charges are why water molecules cling to one another and to many other things.",
+   "facts": [
+    "F1",
+    "F2",
+    "F32"
+   ],
+   "grade_note": "8th-grade lessons on water's properties (TEKS 8.6C, curriculum line G8.P3) start from the polar molecule: a slightly negative oxygen end and slightly positive hydrogen ends."
+  },
+  {
+   "tier": 4,
+   "topic": "waters-sticky-properties",
+   "question": "A drop of water hangs from the end of a garden tap, stretching longer and longer before it falls. It holds together because its molecules cling to one another, far more strongly than the molecules of most liquids do. How do two neighbouring water molecules hold on to each other?",
+   "answer": "The oxygen end of one draws a hydrogen end of the other",
+   "choices": [
+    "The oxygen end of one draws a hydrogen end of the other",
+    "The oxygen end of one draws the oxygen end of the other",
+    "A hydrogen end of one draws a hydrogen end of the other",
+    "The two oxygen atoms share a pair of electrons between them"
+   ],
+   "context": "The slightly negative oxygen end of one molecule draws the slightly positive hydrogen end of the next, since opposite charges attract, and the pull is called a hydrogen bond. It is far weaker than the bonds inside a molecule and is not a shared pair of electrons, but each molecule makes several at once, and together they give water its cohesion, its cling to itself.",
+   "facts": [
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F33"
+   ],
+   "grade_note": "8th-grade water lessons explain cohesion (TEKS 8.6C) by the pull between one molecule's oxygen end and the next one's hydrogen end."
+  },
+  {
+   "tier": 4,
+   "topic": "waters-sticky-properties",
+   "question": "Aboard the International Space Station, where loose things drift about the cabin, an astronaut lets go of a blob of water. It settles into an almost perfect ball. What gives the water that shape?",
+   "answer": "Its molecules, pulling it into the shape with least surface",
+   "choices": [
+    "Its molecules, pulling it into the shape with least surface",
+    "Its own gravity, pulling it inward evenly from every side",
+    "The air in the cabin, pressing in on it all over at once",
+    "Static electricity on its surface, drawing it in all round"
+   ],
+   "context": "Water's molecules pull on one another and draw its surface in as tight as it will go, and of all shapes a ball has the least surface for the water inside it. On Earth gravity squashes a large drop out of round, but a drop's own gravity is far too weak to shape it: even an icy moon 420 kilometres across can stay lumpy. Electric charge on a drop pushes it apart rather than drawing it in.",
+   "facts": [
+    "F7",
+    "F8",
+    "F9",
+    "F10",
+    "F30",
+    "F31"
+   ],
+   "grade_note": "TEKS 8.6C ties cohesion and surface tension to the formation of droplets; in weightlessness the drop's round shape shows that pull alone."
+  },
+  {
+   "tier": 4,
+   "topic": "waters-sticky-properties",
+   "question": "A thin glass tube stands upright in a dish of water, and the water inside it climbs well above the level in the dish. Stood in a dish of mercury, the same tube shows the opposite: the mercury inside sits below the level outside. What makes the difference?",
+   "answer": "Water clings to glass more than to itself; mercury clings to itself more",
+   "choices": [
+    "Water clings to glass more than to itself; mercury clings to itself more",
+    "Mercury clings to glass more than to itself; water clings to itself more",
+    "Water is light enough for the glass to lift; mercury is too heavy",
+    "Air presses hard on the dense mercury; it presses lightly on water"
+   ],
+   "context": "Water clings to glass (adhesion) more strongly than to itself (cohesion), so it creeps up the wall and draws a column up behind it, its surface curving up at the edges. Mercury clings to itself far more than to glass, so its surface bulges and is held down in the tube. Weight alone would only leave a liquid level with the dish, as water stands level in a wide jar, and only the balance of the two pulls can hold mercury below the level outside.",
+   "facts": [
+    "F7",
+    "F11",
+    "F12",
+    "F13",
+    "M3",
+    "M4"
+   ],
+   "grade_note": "TEKS 8.6C teaches adhesion with water climbing narrow tubes; mercury, which does not wet glass, is the classic contrast in the grade's capillary lessons."
+  },
+  {
+   "tier": 4,
+   "topic": "waters-sticky-properties",
+   "question": "James Jurin, an English doctor, showed an experiment to the Royal Society in 1718. He stood glass tubes of many different widths upright in water and measured how high the water climbed inside each one. What did he find?",
+   "answer": "The narrower the tube, the higher the water climbed",
+   "choices": [
+    "The narrower the tube, the higher the water climbed",
+    "The wider the tube, the higher the water climbed",
+    "The water climbed just as high in every tube",
+    "The thicker the tube's glass, the higher the water climbed"
+   ],
+   "context": "The glass pulls the water up all round the edge of its surface, and a narrow tube has far less water to hold up for each bit of edge, so a tube half as wide lifts water twice as high. A tube 0.4 millimetres across lifts water about 7 centimetres, while in a wide jar water stands level. Francis Hauksbee had already shown that the thickness of the glass makes no difference.",
+   "facts": [
+    "F13",
+    "F14"
+   ],
+   "grade_note": "Water climbing narrow tubes, higher in narrower ones, is TEKS 8.6C's adhesion phenomenon; Jurin's measurements are the experiment that set the rule."
+  },
+  {
+   "tier": 4,
+   "topic": "waters-sticky-properties",
+   "question": "A water strider stands on a still pond, each of its feet pressing a small dent into the surface without breaking through. The top layer of the water acts like a skin. What makes it act that way?",
+   "answer": "Its molecules are pulled inward by the water around and below them",
+   "choices": [
+    "Its molecules are pulled inward by the water around and below them",
+    "Its molecules are squeezed together by the air pressing down on them",
+    "Its molecules are pulled upward by the air just above them",
+    "Its molecules are packed in tight rows, like the bricks of a wall"
+   ],
+   "context": "A molecule deep in the water is pulled equally on every side by its neighbours, so the pulls cancel. A molecule at the top has water only below and beside it and almost nothing pulling from the air above, so it is pulled inward, and the whole top layer draws tight like a skin while its molecules still slide past one another as in any liquid: surface tension. Clean water's skin is about three times as strong as alcohol's, stronger than almost any other everyday liquid.",
+   "facts": [
+    "F15",
+    "F16",
+    "F18",
+    "F34"
+   ],
+   "grade_note": "TEKS 8.6C names insects walking on water as the phenomenon surface tension explains; the grade explains it by the unbalanced pull on the surface molecules."
+  },
+  {
+   "tier": 4,
+   "topic": "waters-sticky-properties",
+   "question": "A steel paper clip, nearly eight times as dense as water, can rest on the water in a glass if it is laid down gently. A student touches a drop of liquid soap to the water near the clip, and the clip sinks at once. What has the soap done?",
+   "answer": "Weakened the pull of the surface molecules on each other",
+   "choices": [
+    "Weakened the pull of the surface molecules on each other",
+    "Made the water less dense, too thin to hold up the steel",
+    "Made the water so slippery that the clip slides through it",
+    "Coated the clip in a film heavy enough to drag it down"
+   ],
+   "context": "Each soap molecule has one end drawn to water and one end that is not, so soap crowds into the surface with those other ends poking into the air, and it weakens the pull between the water molecules there. The surface's pull falls to less than half its strength, too weak now to hold up steel. The water's density never held the clip up, since steel is nearly eight times denser, and a thin film of soap weighs far too little to drag it under.",
+   "facts": [
+    "F17",
+    "F19"
+   ],
+   "grade_note": "Floating a paper clip on water and breaking its surface with soap is the standard 8th-grade surface-tension experiment (curriculum line G8.P3)."
+  },
+  {
+   "tier": 4,
+   "topic": "waters-sticky-properties",
+   "question": "The tallest coast redwoods stand more than 100 metres high, and every day water climbs from their roots to their topmost leaves through thin tubes in the wood. Henry Dixon and John Joly explained the climb in 1894, and theirs is still the most widely accepted account. What lifts the water?",
+   "answer": "Evaporation at the leaves, pulling up a clinging chain of water",
+   "choices": [
+    "Evaporation at the leaves, pulling up a clinging chain of water",
+    "Living cells along the trunk, pumping water up from cell to cell",
+    "Air pressing on the soil, pushing water up the trunk from below",
+    "The thin tubes, drawing water all the way up as a wick does"
+   ],
+   "context": "As water evaporates from the leaves, it tugs on the water behind it in the tubes, and because water molecules cling to one another (cohesion) and to the tube walls (adhesion), the tug passes down an unbroken thread to the roots. Air pressure can hold water up only about 10 metres, wicking lifts it only a short way, and Eduard Strasburger showed that water still rises in plants whose living cells have been poisoned.",
+   "facts": [
+    "F20",
+    "F21",
+    "F22",
+    "F23",
+    "F24",
+    "F25"
+   ],
+   "grade_note": "TEKS 8.6C relates cohesion and adhesion to transport in plants; the grade's mechanism is evaporation from the leaves pulling a clinging column of water up the xylem."
+  },
+  {
+   "tier": 4,
+   "topic": "waters-sticky-properties",
+   "question": "Water expands by about 9 percent as it freezes, so a block of ice is less dense than liquid water and floats in it. What happens to water's molecules as they freeze that makes the ice take up more room?",
+   "answer": "They lock into an open pattern, held farther apart",
+   "choices": [
+    "They lock into an open pattern, held farther apart",
+    "They each swell, so every molecule takes up more room",
+    "They move faster, so they push one another farther apart",
+    "They let air fill the spaces between them"
+   ],
+   "context": "As water freezes, each molecule's charged ends lock onto exactly four neighbours, and together they build an open, six-sided pattern with empty gaps that holds them farther apart than in the liquid, where they tumble closer together. The molecules themselves stay whole and the same size, and no air fills the gaps. Freezing water is losing heat, so its molecules slow down rather than speed up.",
+   "facts": [
+    "F6",
+    "F26",
+    "F27",
+    "F28",
+    "M1",
+    "M7"
+   ],
+   "grade_note": "8th-grade water lessons give the molecular reason behind the 6th-grade fact that ice floats: hydrogen bonds lock the molecules into an open pattern (the unit's line G8.P3)."
+  }
+ ],
+ "revised": {
+  "0d8b6dc1fb": {
+   "old_hash": "5f695810b9",
+   "why": "Judge (medium): the two-by-two grid gave itself away and asked two things at once. The stem now gives the lean (the oxygen pulls the shared electrons nearer, F1) and asks its result, an apply step. Lures: the reversed charges; a negative charge on the whole molecule (wrong: no electron leaves or joins, F32); no charge at either end (the misconception that a neutral molecule has no charged ends). The judge's 'negative ends and a positive middle' was not used: in a bent H-O-H the middle is the oxygen, so it repeats the reversal."
+  },
+  "6dc233b500": {
+   "old_hash": "6dc233b500",
+   "why": "Fact-check (uncertain): 'shares no electrons' clashed with the hydrogen bond's partial covalent character (F33). The context now says it 'is not a shared pair of electrons'. Stem, key and choices unchanged."
+  },
+  "8e8da8f387": {
+   "old_hash": "33eed5d30e",
+   "why": "Judge (medium): 'float instead of falling' contradicted the bank's gravity card. The stem now says only that loose things 'drift about the cabin', as the judge proposed: no claim that they are not falling (NASA: all aboard are in free fall, F30), and no statement of gravity-and-orbits' key ('She, the pen and the station all fall together'), which 'fall freely along with the station' would have printed. Judge (low): 'The cold of space, freezing its outside into a round shell' was dead in a warm cabin; replaced with 'Static electricity on its surface, drawing it in all round', wrong because charge on a drop pushes it apart (F31), and the context says so."
+  },
+  "f48fd48205": {
+   "old_hash": "f48fd48205",
+   "why": "Judge (medium): the soaking lure was dead, the air lure weak, and the key alone weighed two pulls. All four choices are now two parallel clauses: the key; the cohesion-adhesion swap (M3); weight (M4); air pressing harder on the dense mercury. Key fact unchanged (F12)."
+  },
+  "110e152590": {
+   "old_hash": "3e56df99a0",
+   "why": "Fact-check (error): 'stronger than any other liquid but mercury' is false (hydrogen peroxide, Galinstan, F34); the context now says 'about three times as strong as alcohol's, stronger than almost any other everyday liquid'. Judge (medium): the frozen-sheet and dust lures were dead; replaced with 'pulled upward by the air just above them' (the mirror of the true pull) and 'packed in tight rows, like the bricks of a wall' (a solid's picture), as the judge proposed. 'stretched skin' is now 'skin', so the stem does not rule out the squeezing and packing lures."
+  },
+  "bf60c6fa56": {
+   "old_hash": "cfa3c7256c",
+   "why": "Judge (medium): 'Split the surface molecules into hydrogen and oxygen' was dead, and 'at the far side of the glass' ruled out the coating lure. The split lure is now 'Made the water less dense, too thin to hold up the steel', made tempting by the stem's density figure; the drop now touches the water near the clip, so the coating lure stays live. 'lie on the surface' is now 'rest on the water', so the key's 'surface' does not echo the stem. The context says why density and a film are wrong."
+  },
+  "9d76c4eba8": {
+   "old_hash": "9d76c4eba8",
+   "why": "Judge (low): 'They break apart into atoms' was weak; replaced with 'They let air fill the spaces between them' (M7, the gaps are empty, F26), as the judge proposed. Fact-check (optional): 'Freezing water is cooling water' is now 'losing heat'. Stem and key unchanged."
+  }
+ },
+ "added": {},
+ "dropped": []
+}

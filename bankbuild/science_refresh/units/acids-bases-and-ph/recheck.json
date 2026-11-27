@@ -1,0 +1,23 @@
+{"unit": "acids-bases-and-ph",
+ "questions": {
+  "c82ab10fa0": {"verdict": "pass",
+   "why": "",
+   "note": "The pH figures are out of the stem, so 'Both' no longer follows from reading two numbers; the student must know that a strong base burns. Each choice gives a plain reason, so the key is not the only one in the scale's words. 'Neither, as only a hot liquid can burn' is the weakest choice (few think battery acid is safe), but the judge proposed it as the heat-burn confusion, and the question stays fair with three strong choices. Grokipedia: lye (NaOH, pH about 14, 30-50% in drain cleaners) causes severe chemical burns. Drain cleaner is a household chemical, not cooking.",
+   "sources": ["https://grokipedia.com/page/Sodium_hydroxide", "https://grokipedia.com/page/Sulfuric_acid", "https://en.wikipedia.org/wiki/PH"]},
+  "16c997f415": {"verdict": "pass",
+   "why": "",
+   "note": "'Has been known since about 1300' no longer previews that litmus sorts but does not measure, and it stays true (Grokipedia: Arnaldus de Villa Nova, around 1300). Litmus is qualitative and gives no numerical pH; soap at 9-10 and ammonia at about 11.5 both turn red litmus blue. The choices are balanced: two 'but not which is stronger' and two 'bases'.",
+   "sources": ["https://grokipedia.com/page/Litmus", "https://grokipedia.com/page/PH_indicator", "https://grokipedia.com/page/Ammonia_solution"]},
+  "39ad72ff48": {"verdict": "pass",
+   "why": "",
+   "note": "The two dead lures are replaced. 'Gains or loses electrons' is a parallel particle change, so the key is not the only choice in particle words, and it is wrong: the forms differ by protonation, not redox. 'Clumps into specks' is wrong too. Grokipedia: the protonated and deprotonated forms absorb differently; red cabbage runs red, purple, blue, green, then yellow. Red cabbage is the lead's named test-it-yourself indicator, so it is not a cooking example. The key names hydrogen ions, which the unit's other contexts teach.",
+   "sources": ["https://grokipedia.com/page/PH_indicator", "https://grokipedia.com/page/Anthocyanin"]},
+  "e3282ae6b9": {"verdict": "pass",
+   "why": "",
+   "note": "Fact error fixed: granite 'uses up very little' acid, from slow feldspar weathering, not nothing. Key unchanged and right (Wikipedia: silicate-bedrock lakes are more acidic than limestone lakes, from 'buffering effects by carbonate minerals, even with the same amount of acid rain'). No ocean acidification. No overlap: the mass unit's marble question keys gas escaping, and physical-or-chemical-change's feldspar keys clay as a new mineral.",
+   "sources": ["https://en.wikipedia.org/wiki/Acid_rain", "https://grokipedia.com/page/Acid_rain", "https://grokipedia.com/page/Granite"]},
+  "de0f5247c7": {"verdict": "pass",
+   "why": "",
+   "note": "All four choices now name a coat, and 'chalky mineral, a base like limestone' means the key is not the only choice with a base, so the key no longer stands out. The lure that the stem's pH 2 ruled out is gone. Fact error fixed: the gullet has 'only a little base from small glands and swallowed spit'. Grokipedia, Gastric acid: bicarbonate secreted into an adherent mucus gel, pH from about 2 in the lumen to about 7 at the surface. Not a re-ask: the-bodys-defences keys stomach acid killing germs, and the-bodys-main-organs keys the stomach itself. No 'salt and water' key.",
+   "sources": ["https://grokipedia.com/page/Gastric_acid", "https://en.wikipedia.org/wiki/Gastric_acid", "https://pmc.ncbi.nlm.nih.gov/articles/PMC3129871"]}
+ }}

@@ -103,3 +103,17 @@ G1. TEKS 8.6E (2024): "investigate how mass is conserved in chemical reactions a
 - 2H2 + O2 -> 2H2O is T5's example and is not used.
 - A balloon over a flask is not used as a "closed" example: the swelling balloon adds buoyancy and the balance reads a little less, which would make the key arguable.
 - That Lavoisier read Boyle's account before his own trials is not claimed.
+
+## Added in the revision (2026-11-26)
+
+F22. Boyle's own reason for the in-rush of air (tin, Exp. V of the experiments annexed to Essays of Effluviums, 1673): "whereupon I heard the outward Fire rush in, because when the Retort was sealed the Air within it was highly rarified", that is, he had sealed the retort while it was hot. Of lead: "the external Air rushed in with a noise". His conclusion (Corollary III): "Igneous particles were trajected through the Glass". His gain was too large for a small, hot-sealed retort, and a history of technology article judges that "presumably the seal was not tight", so the context says only that his gain came from air, not from fire, and does not say from the air inside his flask.
+    https://distantreader.org/stacks/earlyprint/txt/A28965.txt (read again at the revision) ; https://library.hungaricana.hu/hu/view/ORSZ_KOZL_TechnTortSzle_10/?pg=133 (via the fact-check)
+
+F23. In phlogiston theory a metal was its calx plus phlogiston, and phlogiston gave it its metal nature: Stahl held that "metals were compounds containing phlogiston in combination with metallic oxides (calces)" (Wikipedia); in smelting "the calx regained its metallic properties upon absorbing phlogiston from the charcoal", and alloying "involved balancing phlogiston content to achieve desired properties, such as ductility" (Grokipedia). So the theory explained why a metal bends while its calx is a crumbly powder; it was the calx's gain in weight that it could not explain ("some metals gained mass after they burned, even though they were supposed to have lost phlogiston", Wikipedia).
+    https://grokipedia.com/page/Phlogiston_theory ; https://en.wikipedia.org/wiki/Phlogiston_theory
+
+F24. Soot carries off only a small share of burning wood: fine particles from wood burning come to about 5 to 9.5 g per kg of wood burned (Danish EPA, table after Larson and Koenig 1994), under 1 percent, and smoky open fires about 8 to 73 g per kg in one field study (search summary only); nearly all (99 percent) of the fuel carbon in burned wood becomes carbon dioxide (US EPA AP-42, 1.6, via the search summary). Wood smoke is "besides the major combustion products carbon dioxide and water, a complex mixture" (Danish EPA).
+    https://www2.mst.dk/Udgiv/publications/2008/978-87-7052-769-9/html/kap02_eng.htm ; https://gaftp.epa.gov/ap42/ch01/s06/final/c01s06_oct1996.pdf
+
+M6. Özmen and Ayas (2003, 150 Turkish 10th-graders) report, in their own words, that "One of the most common misconception encountered was that the total mass increases in a precipitation reaction because the precipitate produced is solid and it is heavier than a liquid." (Read again through the search summary of the paper's HTML page, 2026-11-26.) This is the lab partner's reasoning in the lead nitrate question.
+    https://pubs.rsc.org/en/content/articlehtml/2003/rp/b3rp90017g
